@@ -1,5 +1,10 @@
-<ion-view hide-nav-bar="skipMenu" view-title="History">
+<ion-view hide-nav-bar="hideNavigationMenu" view-title="History">
      <ion-content>
+     <ion-list>
+         <ion-item style="text-align:center;border-bottom: 1px solid rgb(221, 221, 221);" ng-show="state.loading">
+             <img src={{loaderImagePath}}>
+         </ion-item>
+     </ion-list>
       <ion-list>
           <div collection-repeat="historyItem in state.history" divider-collection-repeat>
               <ion-item  ng-click="editMeasurement(historyItem)">
@@ -7,8 +12,8 @@
                     <i class="{{historyItem.variableCategoryName | ImageByVariableCategoryName }}" style="color:#11c1f3;font-size: 75px;"></i>
                     <p style="font-weight:bold;white-space:normal">{{historyItem.variable}}</p>
                   </div>
-                  <div class="history_block" style="margin-left:10px;">
-                      <h2 style="font-weight:bold;white-space:normal"> {{historyItem.value}} {{getUnitFromUnitId(historyItem.unit).abbreviatedName}} {{historyItem.variable}}</h2>
+                  <div class="history-block" style="margin-left:10px;">
+                      <h2 style="font-weight:bold;white-space:normal"> {{historyItem.value}} {{historyItem.abbreviatedUnitName}} {{historyItem.variable}}</h2>
                     <h2 class="history_time" ng-repeat="line in (historyItem.startTime | time) track by $index">
                       {{line}}
                     </h2>
@@ -18,7 +23,7 @@
 
           </div>
       </ion-list> 
-      <div class="button-bar">
+      <div class="button-bar" ng-show="state.showLoadMoreButton">
         <a class="button button-clear button-calm" ng-click="getNext()" style="text-overflow: clip;"><i class="ion-refresh">  Load More</i></a>
       </div>
     </ion-content>
