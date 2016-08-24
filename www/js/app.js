@@ -149,12 +149,13 @@ angular.module('starter',
             $rootScope.appVersion = "1.8.5.2";
             $rootScope.appName = config.appSettings.appName;
 
-            if(window.private_keys.bugsnag_key) {
+            //$rootScope.bugsnagApiKey = window.private_keys.bugsnag_key;
+            $rootScope.bugsnagApiKey = "REDACTED";
+            if($rootScope.bugsnagApiKey) {
                 //Set Bugsnag Release Stage
-                $rootScope.bugsnagApiKey = window.private_keys.bugsnag_key;
-                Bugsnag.apiKey = window.private_keys.bugsnag_key;
+                Bugsnag.apiKey = $rootScope.bugsnagApiKey;
                 Bugsnag.releaseStage = config.getEnv();
-                Bugsnag.notifyReleaseStages = config.bugsnag.notifyReleaseStages;
+                Bugsnag.notifyReleaseStages = ['Production','Staging'];
                 Bugsnag.appVersion = $rootScope.appVersion;
                 Bugsnag.metaData = {
                     platform: ionic.Platform.platform(),
