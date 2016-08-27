@@ -159,22 +159,14 @@ angular.module('starter',
             $rootScope.appName = config.appSettings.appName;
 
             //$rootScope.bugsnagApiKey = window.private_keys.bugsnag_key;
-            $rootScope.bugsnagApiKey = "REDACTED";
-            if($rootScope.bugsnagApiKey) {
-                //Set Bugsnag Release Stage
-                Bugsnag.apiKey = $rootScope.bugsnagApiKey;
-                Bugsnag.notifyReleaseStages = ['Production','Staging'];
-                Bugsnag.appVersion = $rootScope.appVersion;
-                Bugsnag.metaData = {
-                    platform: ionic.Platform.platform(),
-                    platformVersion: ionic.Platform.version(),
-                    appName: config.appSettings.appName
-                };
-            } else {
-                console.error('intervalChecker: No bugsnag_key found in private config!');
-            }
-
-
+            Bugsnag.apiKey = "REDACTED";
+            //Bugsnag.notifyReleaseStages = ['Production','Staging'];
+            Bugsnag.appVersion = $rootScope.appVersion;
+            Bugsnag.metaData = {
+                platform: ionic.Platform.platform(),
+                platformVersion: ionic.Platform.version(),
+                appName: config.appSettings.appName
+            };
 
             $ionicPlatform.registerBackButtonAction(function (event) {
                 if($ionicHistory.currentStateName() === config.appSettings.defaultState){
