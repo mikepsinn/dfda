@@ -17,9 +17,11 @@ angular.module('starter')
 
                 //$rootScope.bugsnagApiKey = window.private_keys.bugsnag_key;
                 $rootScope.bugsnagApiKey = "REDACTED";
-                Bugsnag.releaseStage = utilsService.getEnv();
-                Bugsnag.apiKey = $rootScope.bugsnagApiKey;
-                Bugsnag.notify("ERROR: "+message, "Stacktrace: "+stacktrace, {}, "error");
+                if (typeof Bugsnag !== "undefined") {
+                    Bugsnag.releaseStage = utilsService.getEnv();
+                    Bugsnag.apiKey = $rootScope.bugsnagApiKey;
+                    Bugsnag.notify("ERROR: " + message, "Stacktrace: " + stacktrace, {}, "error");
+                }
             }
         };
 

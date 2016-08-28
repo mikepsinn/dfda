@@ -13,8 +13,11 @@ angular.module('fabric', ['ng']).config(['$provide', function($provide) {
       } else {
          stacktrace = "No stack trace provided with exception";
       }
-      Bugsnag.apiKey = "REDACTED";
-      Bugsnag.notify("ERROR: "+message, "Stacktrace: "+stacktrace, {}, "error");
+      if (typeof Bugsnag !== "undefined") {
+          Bugsnag.apiKey = "REDACTED";
+          Bugsnag.notify("ERROR: " + message, "Stacktrace: " + stacktrace, {}, "error");
+      }
+
       if(typeof navigator !== 'undefined' && typeof navigator.crashlytics !== 'undefined'){
         navigator.crashlytics.logException("ERROR: "+message+", stacktrace: "+stacktrace);
       } else {
