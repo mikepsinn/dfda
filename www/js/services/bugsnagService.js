@@ -15,11 +15,9 @@ angular.module('starter')
                     stacktrace = "No stack trace provided with exception";
                 }
 
-                //$rootScope.bugsnagApiKey = window.private_keys.bugsnag_key;
-                $rootScope.bugsnagApiKey = "REDACTED";
                 if (typeof Bugsnag !== "undefined") {
                     Bugsnag.releaseStage = utilsService.getEnv();
-                    Bugsnag.apiKey = $rootScope.bugsnagApiKey;
+                    Bugsnag.apiKey = "REDACTED";
                     Bugsnag.notify("ERROR: " + message, "Stacktrace: " + stacktrace, {}, "error");
                 }
             }
