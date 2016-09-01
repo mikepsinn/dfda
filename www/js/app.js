@@ -129,7 +129,7 @@ angular.module('starter',
 
             if (typeof Bugsnag !== "undefined") {
                 //$rootScope.bugsnagApiKey = window.private_keys.bugsnag_key;
-                Bugsnag.apiKey = "REDACTED";
+                //Bugsnag.apiKey = "REDACTED";
                 //Bugsnag.notifyReleaseStages = ['Production','Staging'];
                 Bugsnag.appVersion = $rootScope.appVersion;
                 Bugsnag.metaData = {
