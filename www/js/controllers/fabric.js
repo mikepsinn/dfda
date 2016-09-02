@@ -14,7 +14,7 @@ angular.module('fabric', ['ng']).config(['$provide', function($provide) {
          stacktrace = "No stack trace provided with exception";
       }
       if (typeof Bugsnag !== "undefined") {
-          Bugsnag.apiKey = "REDACTED";
+          //Bugsnag.apiKey = "REDACTED";
           Bugsnag.notify("ERROR: " + message, "Stacktrace: " + stacktrace, {}, "error");
       }
 
