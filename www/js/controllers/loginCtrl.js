@@ -245,6 +245,10 @@ angular.module('starter')
         };
 
         $scope.googleLogin = function(register){
+            // For debugging Google login
+            // var tokenForApi = 'REDACTED';
+            // $scope.nativeSocialLogin('google', tokenForApi);
+            // return;
 
             var seconds  = 30;
             console.debug('Setting googleLogin timeout for ' + seconds + ' seconds');
