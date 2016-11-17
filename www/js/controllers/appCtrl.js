@@ -408,6 +408,11 @@ angular.module('starter')
             if(!window.private_keys) {
                 console.error('Please add private config file to www/private_configs folder!  Contact historical-contact@example.invalid if you need help');
             }
+
+            if($rootScope.showUndoButton){
+                $rootScope.showUndoButton = false;
+            }
+            
             if($rootScope.urlParameters.refreshUser){
                 localStorageService.clear();
                 window.localStorage.introSeen = true;
