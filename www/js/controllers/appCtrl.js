@@ -2214,13 +2214,13 @@ angular.module('starter')
             }
         };
 
-        $scope.nativeSocialLogin = function(provider, accessToken, urlParams){
+        $scope.nativeSocialLogin = function(provider, accessToken, urlParams, path){
             quantimodoService.setLocalStorageItem('isWelcomed', true);
             $rootScope.isWelcomed = true;
             console.debug('$scope.nativeSocialLogin: Going to try to quantimodoService.getTokensAndUserViaNativeSocialLogin for ' +
                 provider + ' provider');
 
-            quantimodoService.getTokensAndUserViaNativeSocialLogin(provider, accessToken, urlParams)
+            quantimodoService.getTokensAndUserViaNativeSocialLogin(provider, accessToken, urlParams, path)
                 .then(function(response){
                     console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
                         JSON.stringify(response));
@@ -2279,66 +2279,53 @@ angular.module('starter')
                 });
         };
 
-        $scope.googleLogin = function(register){
-            // For debugging Google login
-            // var tokenForApi = 'REDACTED';
-            // $scope.nativeSocialLogin('google', tokenForApi);
-            // return;
+        $scope.googleLoginDebgging = function () {
+            var userData = JSON.parse('{"email":"historical-contact@example.invalid","idToken":"REDACTED","serverAuthCode":"REDACTED","userId":"118444693184829555362","displayName":"Mike Sinn","familyName":"Sinn","givenName":"Mike","imageUrl":"https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAE6L4/21DvgT-T5VM/s96-c/photo.jpg"}');
+            quantimodoService.getTokensAndUserViaNativeGoogleLogin(userData).then(function (response) {
+                console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
+                    JSON.stringify(response));
+                quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response);
+                quantimodoService.goToDefaultStateIfNoAfterLoginUrlOrState();
+            }, function (errorMessage) {
+                $scope.hideLoader();
+                quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to " +
+                    "quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
+                var register = true;
+                quantimodoService.nonNativeMobileLogin(register);
+            });
+        };
 
-            /* Too many undesirable redirects
-             var seconds  = 30;
-             console.debug('Setting googleLogin timeout for ' + seconds + ' seconds');
-             $timeout(function () {
-             if(!$rootScope.user){
-             quantimodoService.reportError('$scope.googleLogin: Could not get user within 30 seconds! Fallback to non-native registration...');
-             register = true;
-             quantimodoService.nonNativeMobileLogin(register);
-             //quantimodoService.showAlert('Facebook Login Issue', 'Please try to sign in using on of the other methods below');
-             }
-             }, seconds * 1000);
-             */
+        $scope.googleLogin = function(register) {
             $scope.showLoader('Logging you in...');
             document.addEventListener('deviceready', deviceReady, false);
             function deviceReady() {
                 //I get called when everything's ready for the plugin to be called!
                 console.debug('Device is ready!');
                 window.plugins.googleplus.login({
-                        'scopes': 'email https://www.googleapis.com/auth/fitness.activity.write https://www.googleapis.com/auth/fitness.body.write https://www.googleapis.com/auth/fitness.nutrition.write https://www.googleapis.com/auth/plus.login', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-                        'webClientId': '1052648855194.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-                        'offline': true // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
-                    },
-                    function (userData) {
-                        console.debug('$scope.googleLogin: successfully got user data-> ', JSON.stringify(userData));
-                        var tokenForApi = null;
-
-                        /** @namespace userData.oauthToken */
-                        /** @namespace userData.serverAuthCode */
-                        if(userData.oauthToken) {
-                            console.debug('userData.oauthToken is ' + userData.oauthToken);
-                            tokenForApi = userData.oauthToken;
-                        } else if(userData.serverAuthCode) {
-                            console.error('googleLogin: No userData.accessToken!  You might have to use cordova-plugin-googleplus@4.0.8 or update API to use serverAuthCode to get an accessToken from Google...');
-                            tokenForApi = userData.serverAuthCode;
-                        }
-
-                        if(!tokenForApi){
-                            Bugsnag.notify("ERROR: googleLogin could not get userData.oauthToken!  ", JSON.stringify(userData), {}, "error");
-                            console.error('googleLogin: No userData.accessToken or userData.idToken provided! Fallback to quantimodoService.nonNativeMobileLogin registration...');
-                            register = true;
-                            quantimodoService.nonNativeMobileLogin(register);
-                        } else {
-                            $scope.nativeSocialLogin('google', tokenForApi, userData);
-                        }
-                    },
-                    function (errorMessage) {
+                    'scopes': 'email https://www.googleapis.com/auth/fitness.activity.write https://www.googleapis.com/auth/fitness.body.write https://www.googleapis.com/auth/fitness.nutrition.write https://www.googleapis.com/auth/plus.login', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+                    'webClientId': '1052648855194.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+                    'offline': true // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
+                }, function (userData) {
+                    quantimodoService.getTokensAndUserViaNativeGoogleLogin(userData).then(function (response) {
+                        console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
+                            JSON.stringify(response));
+                        quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response);
+                        quantimodoService.goToDefaultStateIfNoAfterLoginUrlOrState();
+                    }, function (errorMessage) {
                         $scope.hideLoader();
-                        quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
-                        register = true;
+                        quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to " +
+                            "quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
+                        var register = true;
                         quantimodoService.nonNativeMobileLogin(register);
-                    }
-                );
+                    });
+                }, function (errorMessage) {
+                    $scope.hideLoader();
+                    quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to " +
+                        "quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
+                    register = true;
+                    quantimodoService.nonNativeMobileLogin(register);
+                });
             }
-
         };
 
         $scope.googleLogout = function(){
