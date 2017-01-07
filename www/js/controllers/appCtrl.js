@@ -2214,13 +2214,13 @@ angular.module('starter')
             }
         };
 
-        $scope.nativeSocialLogin = function(provider, accessToken, urlParams, path){
+        $scope.nativeSocialLogin = function(provider, accessToken){
             quantimodoService.setLocalStorageItem('isWelcomed', true);
             $rootScope.isWelcomed = true;
             console.debug('$scope.nativeSocialLogin: Going to try to quantimodoService.getTokensAndUserViaNativeSocialLogin for ' +
                 provider + ' provider');
 
-            quantimodoService.getTokensAndUserViaNativeSocialLogin(provider, accessToken, urlParams, path)
+            quantimodoService.getTokensAndUserViaNativeSocialLogin(provider, accessToken)
                 .then(function(response){
                     console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
                         JSON.stringify(response));
@@ -2277,22 +2277,6 @@ angular.module('starter')
                     quantimodoService.reportError("quantimodoService.getTokensAndUserViaNativeSocialLogin error occurred! " +
                         "Couldn't generate JWT! Error response: " + JSON.stringify(error));
                 });
-        };
-
-        $scope.googleLoginDebgging = function () {
-            var userData = JSON.parse('{"email":"historical-contact@example.invalid","idToken":"REDACTED","serverAuthCode":"REDACTED","userId":"118444693184829555362","displayName":"Mike Sinn","familyName":"Sinn","givenName":"Mike","imageUrl":"https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAE6L4/21DvgT-T5VM/s96-c/photo.jpg"}');
-            quantimodoService.getTokensAndUserViaNativeGoogleLogin(userData).then(function (response) {
-                console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
-                    JSON.stringify(response));
-                quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response);
-                quantimodoService.goToDefaultStateIfNoAfterLoginUrlOrState();
-            }, function (errorMessage) {
-                $scope.hideLoader();
-                quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to " +
-                    "quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
-                var register = true;
-                quantimodoService.nonNativeMobileLogin(register);
-            });
         };
 
         $scope.googleLogin = function(register) {
