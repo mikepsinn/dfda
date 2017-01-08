@@ -523,7 +523,6 @@ angular.module('starter')
                 });
         };
 
-
         $scope.addToFavoritesUsingVariableObject = function (variableObject) {
 
             var trackingReminder = {};
@@ -603,8 +602,6 @@ angular.module('starter')
         $scope.primaryOutcomeVariableAverageText = config.appSettings.primaryOutcomeVariableAverageText;
         /*Wrapper Config End*/
 
-
-
         // when view is changed
         $scope.$on('$ionicView.enter', function (e) {
             //$scope.showHelpInfoPopupIfNecessary(e);
@@ -636,7 +633,6 @@ angular.module('starter')
         $scope.$on('$ionicView.afterEnter', function (e) {
             quantimodoService.updateLocationVariablesAndPostMeasurementIfChanged();
         });
-
 
         $scope.highchartsReflow = function() {
             // Fixes chart width
@@ -1038,7 +1034,6 @@ angular.module('starter')
             }
         };
 
-
         $scope.upVote = function(correlationObject, $index){
             if (correlationObject.correlationCoefficient > 0) {
                 $scope.increasesDecreases = "increases";
@@ -1130,7 +1125,6 @@ angular.module('starter')
             }, seconds * 1000);
 
         };
-
 
         $scope.hideLoader = function () {
             $rootScope.isSyncing = false;
@@ -2181,8 +2175,7 @@ angular.module('starter')
             var register = true;
             $scope.login(register);
         };
-
-        // User wants to login
+        
         $scope.login = function(register) {
 
             if(window && window.plugins && window.plugins.googleplus){
@@ -2227,10 +2220,8 @@ angular.module('starter')
 
                     if(response.user){
                         $scope.hideLoader();
-                        quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
                         $rootScope.hideNavigationMenu = false;
-                        console.debug($scope.controller_name + ".getTokensAndUserViaNativeSocialLogin: Got user and going to default state");
-                        quantimodoService.goToDefaultStateIfNoAfterLoginUrlOrState();
+                        quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
                         return;
                     }
 
@@ -2280,6 +2271,22 @@ angular.module('starter')
                 });
         };
 
+        $scope.googleLoginDebug = function () {
+            var userData = '{"email":"historical-contact@example.invalid","idToken":"REDACTED","serverAuthCode":"REDACTED","userId":"118444693184829555362","displayName":"Mike Sinn","familyName":"Sinn","givenName":"Mike","imageUrl":"https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAE6L4/21DvgT-T5VM/s96-c/photo.jpg"}';
+            quantimodoService.getTokensAndUserViaNativeGoogleLogin(JSON.parse(userData)).then(function (response) {
+                $scope.hideLoader();
+                console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
+                    JSON.stringify(response));
+                quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
+            }, function (errorMessage) {
+                $scope.hideLoader();
+                quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to " +
+                    "quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
+                var register = true;
+                quantimodoService.nonNativeMobileLogin(register);
+            });
+        };
+
         $scope.googleLogin = function(register) {
             $scope.showLoader('Logging you in...');
             document.addEventListener('deviceready', deviceReady, false);
@@ -2296,7 +2303,6 @@ angular.module('starter')
                         console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' +
                             JSON.stringify(response));
                         quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
-                        quantimodoService.goToDefaultStateIfNoAfterLoginUrlOrState();
                     }, function (errorMessage) {
                         $scope.hideLoader();
                         quantimodoService.reportError("ERROR: googleLogin could not get userData!  Fallback to " +
