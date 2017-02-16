@@ -2130,7 +2130,7 @@ angular.module('starter')
                             .parent(angular.element(document.querySelector('#popupContainer')))
                             .clickOutsideToClose(true)
                             .title('Could not upgrade')
-                            .textContent(response.error + '  Please try again or contact historical-contact@example.invalid for help')
+                            .textContent(response.error + '  Please try again or contact historical-contact@example.invalid for help.')
                             .ariaLabel('Error')
                             .ok('OK')
                     );
