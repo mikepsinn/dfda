@@ -28,6 +28,7 @@ angular.module('starter')
         quantimodoService.setupBugsnag();
         quantimodoService.getUserAndSetupGoogleAnalytics();
         quantimodoService.refreshCommonVariables();
+        quantimodoService.syncTrackingReminders();
         if(!window.private_keys) { console.error('Please add private config file to www/private_configs folder!  Contact historical-contact@example.invalid if you need help'); }
         if($rootScope.urlParameters.refreshUser){
             quantimodoService.clearLocalStorage();
