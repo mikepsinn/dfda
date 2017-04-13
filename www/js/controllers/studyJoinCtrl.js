@@ -69,7 +69,7 @@ angular.module('starter').controller('StudyJoinCtrl', function($scope, $state, q
             $scope.showGetStartedButton = true;
         }, function (error) {
             $ionicLoading.hide();
-            quantimodoService.reportError(error);
+            quantimodoService.reportErrorDeferred(error);
             quantimodoService.showMaterialAlert("Could not join study!", "Please contact historical-contact@example.invalid and he'll fix it for you.  Thanks!");
         });
     };
