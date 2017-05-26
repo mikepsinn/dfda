@@ -36,7 +36,6 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
     };
     var leaveIfLoggedIn = function () {
         if($rootScope.user){
-            $scope.hideLoader();
             console.debug("Already logged in on login page.  goToDefaultStateIfNoAfterLoginUrlOrState...");
             quantimodoService.goToDefaultStateIfNoAfterLoginUrlOrState();
             return;
@@ -44,10 +43,10 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         if(quantimodoService.getAccessTokenFromUrlParameter()){
             quantimodoService.showLoader();
             quantimodoService.refreshUser().then(function () {
-                $ionicLoading.hide();
+                //quantimodoService.hideLoader();  // Causes loader to hide while still refreshing inbox
             }, function (error) {
                 console.error(error);
-                $ionicLoading.hide();
+                quantimodoService.hideLoader();
             });
         }
     };
@@ -127,7 +126,6 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         quantimodoService.getTokensAndUserViaNativeSocialLogin(provider, accessToken).then(function(response){
                 console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
                 if(response.user){
-                    $scope.hideLoader();
                     quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
                     return;
                 }
@@ -153,23 +151,19 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
                             quantimodoService.reportErrorDeferred(errorMessage);
                             // close inAppBrowser
                             ref.close();
-                            $scope.hideLoader();
                         }
                     }
                 });
             }, function(error){
-                $scope.hideLoader();
                 quantimodoService.reportErrorDeferred("quantimodoService.getTokensAndUserViaNativeSocialLogin error occurred Couldn't generate JWT! Error response: " + JSON.stringify(error));
             });
     };
     $scope.googleLoginDebug = function () {
         var userData = '{"email":"historical-contact@example.invalid","idToken":"REDACTED","serverAuthCode":"REDACTED","userId":"118444693184829555362","displayName":"Mike Sinn","familyName":"Sinn","givenName":"Mike","imageUrl":"https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAE6L4/21DvgT-T5VM/s96-c/photo.jpg"}';
         quantimodoService.getTokensAndUserViaNativeGoogleLogin(JSON.parse(userData)).then(function (response) {
-            $scope.hideLoader();
             console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
             quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
         }, function (errorMessage) {
-            $scope.hideLoader();
             quantimodoService.reportErrorDeferred("ERROR: googleLogin could not get userData!  Fallback to quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
             var register = true;
             quantimodoService.nonNativeMobileLogin(register);
@@ -194,19 +188,19 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
                 console.debug('window.plugins.googleplus.login response:' + JSON.stringify(userData));
                 quantimodoService.getTokensAndUserViaNativeGoogleLogin(userData).then(function (response) {
                     $timeout.cancel(timeout);
-                    $ionicLoading.hide();
+                    quantimodoService.hideLoader();
                     if(debugMode){alert('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));}
                     console.debug('$scope.nativeSocialLogin: Response from quantimodoService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
                     quantimodoService.setUserInLocalStorageBugsnagIntercomPush(response.user);
                 }, function (errorMessage) {
-                    $ionicLoading.hide();
+                    quantimodoService.hideLoader();
                     if(debugMode){alert("ERROR: googleLogin could not get userData!  Fallback to quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));}
                     quantimodoService.reportErrorDeferred("ERROR: googleLogin could not get userData!  Fallback to quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
                     var register = true;
                     quantimodoService.nonNativeMobileLogin(register);
                 });
             }, function (errorMessage) {
-                $ionicLoading.hide();
+                quantimodoService.hideLoader();
                 if(debugMode){alert("ERROR: googleLogin could not get userData!  Fallback to quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));}
                 quantimodoService.reportErrorDeferred("ERROR: googleLogin could not get userData!  Fallback to quantimodoService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
                 register = true;
@@ -223,7 +217,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         }
     };
     $scope.facebookLogin = function(){
-        $scope.showLoader('Logging you in...');
+        $scope.showSyncDisplayText('Logging you in...');
         console.debug("$scope.facebookLogin about to try $cordovaFacebook.login");
         var seconds  = 30;
         $scope.hideFacebookButton = true; // Hide button so user tries other options if it didn't work
