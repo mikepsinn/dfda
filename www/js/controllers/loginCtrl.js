@@ -12,10 +12,10 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         var $cordovaFacebook = {};
         var disableFacebookLogin = true;  // Causing failures on IPv6 networks according to iTunes reviewer
         if (!disableFacebookLogin && $rootScope.isIOS && $rootScope.appSettings.appDisplayName === "MoodiModo") {
-            console.debug('Injecting $cordovaFacebook');
+            qmService.logDebug('Injecting $cordovaFacebook');
             $cordovaFacebook = $injector.get('$cordovaFacebook');
             $scope.showFacebookLoginButton = true;
-        } else { console.debug("Could not inject $cordovaFacebook"); }
+        } else { qmService.logDebug("Could not inject $cordovaFacebook"); }
     }
     $scope.circlePage = {
         title: null,
@@ -37,7 +37,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
     };
     var leaveIfLoggedIn = function () {
         if($rootScope.user){
-            console.debug("Already logged in on login page.  goToDefaultStateIfNoAfterLoginGoToUrlOrState...");
+            qmService.logDebug("Already logged in on login page.  goToDefaultStateIfNoAfterLoginGoToUrlOrState...");
             qmService.goToDefaultStateIfNoAfterLoginGoToUrlOrState();
         }
         // Should already be doing this in AppCtrl
@@ -54,9 +54,9 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
     var loginTimeout = function () {
         qmService.showBlackRingLoader();
         $scope.circlePage.title = 'Logging in...';
-        console.debug('Setting login timeout...');
+        qmService.logDebug('Setting login timeout...');
         return $timeout(function () {
-            console.debug('Finished login timeout');
+            qmService.logDebug('Finished login timeout');
             if(!$rootScope.user){
                 $scope.circlePage.title = 'Please try logging in again';
                 qmService.reportErrorDeferred('Login failure');
@@ -78,25 +78,25 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         });
     }
     $scope.$on('$ionicView.beforeEnter', function(e) {
-        console.debug("beforeEnter in state " + $state.current.name);
+        qmService.logDebug("beforeEnter in state " + $state.current.name);
         leaveIfLoggedIn();
         if($rootScope.appSettings.appDisplayName !== "MoodiModo"){$scope.hideFacebookButton = true;}
         if(qmService.getUrlParameter('loggingIn') || qmService.getAccessTokenFromUrl()){
             loginTimeout();
         } else {
-            console.debug("refreshUser in beforeEnter in state " + $state.current.name + " in case we're on a Chrome extension that we can't redirect to with a token");
+            qmService.logDebug("refreshUser in beforeEnter in state " + $state.current.name + " in case we're on a Chrome extension that we can't redirect to with a token");
             tryToGetUser();
         }
     });
     $scope.$on('$ionicView.enter', function(){
         //leaveIfLoggedIn();  // Can't call this again because it will send to default state even if the leaveIfLoggedIn in beforeEnter sent us to another state
-        console.debug($state.current.name + ' enter...');
+        qmService.logDebug($state.current.name + ' enter...');
         $rootScope.hideNavigationMenu = true;
     });
     $scope.$on('$ionicView.afterEnter', function(){
         //leaveIfLoggedIn();  // Can't call this again because it will send to default state even if the leaveIfLoggedIn in beforeEnter sent us to another state
         if(navigator && navigator.splashscreen) {
-            console.debug('ReminderInbox: Hiding splash screen because app is ready');
+            qmService.logDebug('ReminderInbox: Hiding splash screen because app is ready');
             navigator.splashscreen.hide();
         }
         qmService.hideLoader(0.5);
@@ -108,16 +108,16 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
     };
     var oAuthBrowserLogin = function (register) {
         var url = qmService.generateV1OAuthUrl(register);
-        console.debug("Going to try logging in by opening new tab at url " + url);
+        qmService.logDebug("Going to try logging in by opening new tab at url " + url);
         qmService.showBlackRingLoader();
         var ref = window.open(url, '_blank');
         if (!ref) {
             alert("You must first unblock popups, and and refresh the page for this to work!");
         } else {
-            console.debug('Opened ' + url + ' and now broadcasting isLoggedIn message question every second to sibling tabs');
+            qmService.logDebug('Opened ' + url + ' and now broadcasting isLoggedIn message question every second to sibling tabs');
             var interval = setInterval(function () {ref.postMessage('isLoggedIn?', qmService.getRedirectUri());}, 1000);
             window.onMessageReceived = function (event) {  // handler when a message is received from a sibling tab
-                console.debug("message received from sibling tab", event.url);
+                qmService.logDebug("message received from sibling tab", event.url);
                 if(interval !== false){
                     clearInterval(interval);  // Don't ask login question anymore
                     interval = false;
@@ -134,7 +134,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         }
     };
     var browserLogin = function(register) {
-        console.debug("Browser Login");
+        qmService.logDebug("Browser Login");
         if (qmService.weShouldUseOAuthLogin()) {
             if($scope.$root.$$phase) {$timeout(function() {oAuthBrowserLogin(register);},0,false);} else {oAuthBrowserLogin(register);} // Avoid Error: [$rootScope:inprog]
         } else {
@@ -157,41 +157,41 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         } else if ($rootScope.isChromeExtension) {
             qmService.chromeExtensionLogin(register);
         } else if ($rootScope.isAndroid || $rootScope.isIOS || $rootScope.isWindows) {
-            console.debug("$scope.login: Browser and Chrome Not Detected.  Assuming mobile platform and using qmService.nonNativeMobileLogin");
+            qmService.logDebug("$scope.login: Browser and Chrome Not Detected.  Assuming mobile platform and using qmService.nonNativeMobileLogin");
             loginTimeout();
             qmService.nonNativeMobileLogin(register);
         } else {
             qmService.showBlackRingLoader();
             $scope.circlePage.title = 'Logging in...';
-            console.debug("$scope.login: Not windows, android or is so assuming browser.");
+            qmService.logDebug("$scope.login: Not windows, android or is so assuming browser.");
             browserLogin(register);
         }
         if($rootScope.user){
             qmService.createDefaultReminders();
-            console.debug($scope.controller_name + ".login: Got user and going to default state");
+            qmService.logDebug($scope.controller_name + ".login: Got user and going to default state");
             qmService.goToDefaultStateIfNoAfterLoginGoToUrlOrState();
         }
     };
     $scope.nativeSocialLogin = function(provider, accessToken){
-        console.debug('$scope.nativeSocialLogin: Going to try to qmService.getTokensAndUserViaNativeSocialLogin for ' + provider + ' provider');
+        qmService.logDebug('$scope.nativeSocialLogin: Going to try to qmService.getTokensAndUserViaNativeSocialLogin for ' + provider + ' provider');
         qmService.getTokensAndUserViaNativeSocialLogin(provider, accessToken).then(function(response){
-                console.debug('$scope.nativeSocialLogin: Response from qmService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
+                qmService.logDebug('$scope.nativeSocialLogin: Response from qmService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
                 if(response.user){
                     qmService.setUserInLocalStorageBugsnagIntercomPush(response.user);
                     return;
                 }
                 var JWTToken = response.jwtToken;
-                console.debug("nativeSocialLogin: Mobile device detected and provider is " + provider + ". Got JWT token " + JWTToken);
+                qmService.logDebug("nativeSocialLogin: Mobile device detected and provider is " + provider + ". Got JWT token " + JWTToken);
                 var url = qmService.generateV2OAuthUrl(JWTToken);
-                console.debug('nativeSocialLogin: open the auth window via inAppBrowser.');
+                qmService.logDebug('nativeSocialLogin: open the auth window via inAppBrowser.');
                 var ref = cordova.InAppBrowser.open(url,'_blank', 'location=no,toolbar=yes,clearcache=no,clearsessioncache=no');
-                console.debug('nativeSocialLogin: listen to event at ' + url + ' when the page changes.');
+                qmService.logDebug('nativeSocialLogin: listen to event at ' + url + ' when the page changes.');
                 ref.addEventListener('loadstart', function(event) {
-                    console.debug('nativeSocialLogin: loadstart event is ' + JSON.stringify(event));
-                    console.debug('nativeSocialLogin: check if changed url is the same as redirection url.');
+                    qmService.logDebug('nativeSocialLogin: loadstart event is ' + JSON.stringify(event));
+                    qmService.logDebug('nativeSocialLogin: check if changed url is the same as redirection url.');
                     if(qmService.getAuthorizationCodeFromEventUrl(event)) {
                         var authorizationCode = qmService.getAuthorizationCodeFromEventUrl(event);
-                        console.debug('nativeSocialLogin: Got authorization code: ' + authorizationCode + ' Closing inAppBrowser.');
+                        qmService.logDebug('nativeSocialLogin: Got authorization code: ' + authorizationCode + ' Closing inAppBrowser.');
                         ref.close();
                         var withJWT = true;
                         qmService.fetchAccessTokenAndUserDetails(authorizationCode, withJWT);  // get access token from authorization code
@@ -205,7 +205,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
     $scope.googleLoginDebug = function () {
         var userData = '{"email":"historical-contact@example.invalid","idToken":"REDACTED","serverAuthCode":"REDACTED","userId":"118444693184829555362","displayName":"Mike Sinn","familyName":"Sinn","givenName":"Mike","imageUrl":"https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAE6L4/21DvgT-T5VM/s96-c/photo.jpg"}';
         qmService.getTokensAndUserViaNativeGoogleLogin(JSON.parse(userData)).then(function (response) {
-            console.debug('$scope.nativeSocialLogin: Response from qmService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
+            qmService.logDebug('$scope.nativeSocialLogin: Response from qmService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
             qmService.setUserInLocalStorageBugsnagIntercomPush(response.user);
         }, function (errorMessage) {
             qmService.reportErrorDeferred("ERROR: googleLogin could not get userData!  Fallback to qmService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
@@ -218,7 +218,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         if(window.debugMode){alert(message);}
     }
     function loginLog(message) {
-        console.debug(message);
+        qmService.logDebug(message);
         if(window.debugMode){
             alert(message);
             qmService.reportErrorDeferred(message);
@@ -232,7 +232,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         function deviceReady() {
             //I get called when everything's ready for the plugin to be called!
             if(debugMode){alert('Device is ready in googleLogin!');}
-            console.debug('Device is ready in googleLogin!');
+            qmService.logDebug('Device is ready in googleLogin!');
             window.plugins.googleplus.login({
                 'scopes': 'email https://www.googleapis.com/auth/plus.login', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
                 'webClientId': '1052648855194.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
@@ -264,16 +264,16 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         document.addEventListener('deviceready', deviceReady, false);
         function deviceReady() {
             /** @namespace window.plugins.googleplus */
-            window.plugins.googleplus.logout(function (msg) {console.debug("logged out of google!");}, function (fail) {console.debug("failed to logout", fail);});
-            window.plugins.googleplus.disconnect(function (msg) {console.debug("disconnect google!");});
+            window.plugins.googleplus.logout(function (msg) {qmService.logDebug("logged out of google!");}, function (fail) {qmService.logDebug("failed to logout", fail);});
+            window.plugins.googleplus.disconnect(function (msg) {qmService.logDebug("disconnect google!");});
         }
     };
     $scope.facebookLogin = function(){
         qmService.showInfoToast('Logging you in...');
-        console.debug("$scope.facebookLogin about to try $cordovaFacebook.login");
+        qmService.logDebug("$scope.facebookLogin about to try $cordovaFacebook.login");
         var seconds  = 30;
         $scope.hideFacebookButton = true; // Hide button so user tries other options if it didn't work
-        console.debug('Setting facebookLogin timeout for ' + seconds + ' seconds');
+        qmService.logDebug('Setting facebookLogin timeout for ' + seconds + ' seconds');
         $timeout(function () {
             if(!$rootScope.user){
                 qmService.reportErrorDeferred('Could not get user $scope.facebookLogin within 30 seconds! Falling back to non-native registration...');
@@ -283,7 +283,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
         }, seconds * 1000);
         $cordovaFacebook.login(["public_profile", "email", "user_friends"])
             .then(function(response) {
-                console.debug("facebookLogin_success response->", JSON.stringify(response));
+                qmService.logDebug("facebookLogin_success response->", JSON.stringify(response));
                 var accessToken = response.authResponse.accessToken;
                 if(!accessToken){
                     qmService.reportErrorDeferred('ERROR: facebookLogin could not get accessToken! response: ' + JSON.stringify(response));
@@ -292,7 +292,7 @@ angular.module('starter').controller('LoginCtrl', function($scope, $state, $root
                 $scope.nativeSocialLogin('facebook', accessToken);
             }, function (error) {
                 Bugsnag.notify("ERROR: facebookLogin could not get accessToken!  ", JSON.stringify(error), {}, "error");
-                console.debug("facebook login error"+ JSON.stringify(error));
+                qmService.logDebug("facebook login error"+ JSON.stringify(error));
             });
     };
     var showLoginModal = function (ev) {
