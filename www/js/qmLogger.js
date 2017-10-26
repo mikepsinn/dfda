@@ -121,7 +121,7 @@ window.qmLog.setupBugsnag = function(){
     if (typeof Bugsnag !== "undefined") {
         //Bugsnag.apiKey = "REDACTED";
         //Bugsnag.notifyReleaseStages = ['Production','Staging'];
-        Bugsnag.releaseStage = getEnv();
+        Bugsnag.releaseStage = qmLog.getEnv();
         if(typeof config !== "undefined"){
             Bugsnag.appVersion = config.appSettings.versionNumber;
             Bugsnag.metaData.appDisplayName = config.appSettings.appDisplayName;
