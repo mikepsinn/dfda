@@ -1618,6 +1618,8 @@ window.qm = {
     },
     webNotifications: {
         registerServiceWorker: function () {
+            qm.firebaseWebNotifications.registerServiceWorker();
+            return;
             var serviceWorkerUrl = qm.urlHelper.getIonicAppBaseUrl()+'service-worker.js';
             qmLog.info("Registering service worker at " + serviceWorkerUrl);
             //Get the service worker registration object at the startup of the application.
@@ -1702,8 +1704,123 @@ window.qm = {
             }
             return outputArray;
         }
+    },
+    firebaseWebNotifications: {
+        registerServiceWorker: function () {
+            // Initialize Firebase
+            var config = {
+                apiKey: "REDACTED",
+                authDomain: "quantimo-do.firebaseapp.com",
+                databaseURL: "https://quantimo-do.firebaseio.com",
+                projectId: "quantimo-do",
+                storageBucket: "quantimo-do.appspot.com",
+                messagingSenderId: "1052648855194"
+            };
+            console.log("firebase.initializeApp(config)");
+            firebase.initializeApp(config);
+            var serviceWorkerUrl = qm.urlHelper.getIonicAppBaseUrl()+'firebase-messaging-sw.js';
+            navigator.serviceWorker.register(serviceWorkerUrl)
+                .then(function(registration) {
+                    const messaging = firebase.messaging();
+                    messaging.useServiceWorker(registration);
+                    qm.firebaseWebNotifications.subscribeUser(messaging);
+                })
+        },
+        showNotification: function () {
+            //when setting on even handlers in different areas of the application, use that registration object instance (must be done after the registration is available)
+            webNotification.showNotification('Example Notification', {
+                serviceWorkerRegistration: qm.webNotifications.serviceWorkerRegistration,
+                body: 'Notification Text...',
+                icon: 'my-icon.ico',
+                actions: [
+                    {
+                        action: 'Start',
+                        title: 'Start'
+                    },
+                    {
+                        action: 'Stop',
+                        title: 'Stop'
+                    }
+                ],
+                autoClose: 4000 //auto close the notification after 4 seconds (you can manually close it via hide function)
+            }, function onShow(error, hide) {
+                if (error) {
+                    window.alert('Unable to show notification: ' + error.message);
+                } else {
+                    console.log('Notification Shown.');
+
+                    setTimeout(function hideNotification() {
+                        console.log('Hiding notification....');
+                        hide(); //manually close the notification (you can skip this if you use the autoClose option)
+                    }, 5000);
+                }
+            });
+        },
+        applicationServerPublicKey: "BIBzRyyEXjXuWf_D_Rl4pOD6WjGGyB1bBV3I9bAl1_T3133mG-2ahzRlYtLLycDu74gVSJwFffDY00aOEzNFDDU",
+        isSubscribed: null,
+        subscribeUser: function(messaging) {
+            messaging.requestPermission()
+                .then(function() {
+                    console.log('Notification permission granted.');
+                    // TODO(developer): Retrieve an Instance ID token for use with FCM.
+                    // ...
+                    // Get Instance ID token. Initially this makes a network call, once retrieved
+                    // subsequent calls to getToken will return from cache.
+                    messaging.getToken()
+                        .then(function(currentToken) {
+                            if (currentToken) {
+                                console.log("FB token: "+ currentToken);
+                                qm.webNotifications.postWebPushSubscriptionToServer(currentToken);
+                                //updateUIForPushEnabled(currentToken);
+                            } else {
+                                // Show permission request.
+                                console.log('No Instance ID token available. Request permission to generate one.');
+                                // Show permission UI.
+                                //updateUIForPushPermissionRequired();
+                                qm.webNotifications.postWebPushSubscriptionToServer(false);
+                            }
+                        })
+                        .catch(function(err) {
+                            console.log('An error occurred while retrieving token. ', err);
+                            //showToken('Error retrieving Instance ID token. ', err);
+                            qm.webNotifications.postWebPushSubscriptionToServer(false);
+                        });
+                })
+                .catch(function(err) {
+                    console.log('Unable to get permission to notify.', err);
+                });
+        },
+        postWebPushSubscriptionToServer: function (subscription) {
+            if (subscription) {
+                console.log(JSON.stringify(subscription));
+                qm.api.configureClient();
+                var apiInstance = new Quantimodo.NotificationsApi();
+                function callback(error, data, response) {
+                    qm.api.generalResponseHandler(error, data, response, null, null, null, 'postWebPushSubscriptionToServer');
+                }
+                var params = qm.api.addGlobalParams({'platform': 'web', deviceToken: JSON.stringify(subscription)});
+                apiInstance.postDeviceToken(params, callback);
+            }
+        },
+        urlB64ToUint8Array: function (base64String) {
+            const padding = '='.repeat((4 - base64String.length % 4) % 4);
+            const base64 = (base64String + padding)
+                .replace(/\-/g, '+')
+                .replace(/_/g, '/');
+
+            const rawData = window.atob(base64);
+            const outputArray = new Uint8Array(rawData.length);
+
+            for (var i = 0; i < rawData.length; ++i) {
+                outputArray[i] = rawData.charCodeAt(i);
+            }
+            return outputArray;
+        }
     }
 };
+if(typeof qm === "undefined"){
+    var qm = window.qm;
+}
 // SubDomain : Filename
 var appConfigFileNames = {
     "app" : "quantimodo",
