@@ -1683,7 +1683,8 @@ window.qm = {
     webNotifications: {
         initializeFirebase: function(){
             if(qm.firebase){
-                qmLog.debug("Firebase already initialized")
+                qmLog.debug("Firebase already initialized");
+                return qm.firebase;
             }
             var config = {
                 apiKey: "REDACTED",
