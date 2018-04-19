@@ -274,6 +274,7 @@ window.qmLog.setupBugsnag = function(){
             Bugsnag.appVersion = qm.getAppSettings().versionNumber;
             Bugsnag.metaData.appDisplayName = qm.getAppSettings().appDisplayName;
         }
+        Bugsnag.apiKey = "REDACTED";
         if(qm.getUser()){Bugsnag.user = qmLog.obfuscateSecrets(qm.getUser());}
     } else {
         qmLog.error('Bugsnag is not defined');
