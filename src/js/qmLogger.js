@@ -42,7 +42,8 @@ window.qmLog = {
             }
         }
         return object;
-    }
+    },
+    metaData : {}
 };
 if(typeof bugsnag !== "undefined"){
     window.bugsnagClient = bugsnag("REDACTED");
