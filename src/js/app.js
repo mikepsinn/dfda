@@ -1381,9 +1381,9 @@ angular.module('starter',
 });
 angular.module('exceptionOverride', []).factory('$exceptionHandler', function () {
     return function (exception, cause) {
-        if (typeof Bugsnag !== "undefined") {
-            Bugsnag.apiKey = "REDACTED";
-            Bugsnag.notifyException(exception, {diagnostics: {cause: cause}});
+        if (typeof bugsnag !== "undefined") {
+            window.bugsnagClient = bugsnag("REDACTED");
+            bugsnagClient.notify(exception, {diagnostics: {cause: cause}});
         }
     };
 });
