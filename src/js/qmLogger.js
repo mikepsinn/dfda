@@ -43,7 +43,8 @@ window.qmLog = {
         }
         return object;
     },
-    metaData : {}
+    metaData : {},
+    context: null
 };
 if(typeof bugsnag !== "undefined"){
     window.bugsnagClient = bugsnag("REDACTED");
