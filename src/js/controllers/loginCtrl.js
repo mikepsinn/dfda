@@ -199,17 +199,6 @@ angular.module('starter').controller('LoginCtrl', ["$scope", "$state", "$rootSco
                 qmLogService.error("qmService.getTokensAndUserViaNativeSocialLogin error occurred Couldn't generate JWT! Error response: " + JSON.stringify(error));
             });
     };
-    $scope.googleLoginDebug = function () {
-        var userData = '{"email":"historical-contact@example.invalid","idToken":"REDACTED","serverAuthCode":"REDACTED","userId":"118444693184829555362","displayName":"Mike Sinn","familyName":"Sinn","givenName":"Mike","imageUrl":"https://lh6.googleusercontent.com/-BHr4hyUWqZU/AAAAAAAAAAI/AAAAAAAE6L4/21DvgT-T5VM/s96-c/photo.jpg"}';
-        qmService.getTokensAndUserViaNativeGoogleLogin(JSON.parse(userData)).then(function (response) {
-            qmLog.authDebug('$scope.nativeSocialLogin: Response from qmService.getTokensAndUserViaNativeSocialLogin:' + JSON.stringify(response));
-            qmService.setUserInLocalStorageBugsnagIntercomPush(response.user);
-        }, function (errorMessage) {
-            qmLogService.error("ERROR: googleLogin could not get userData!  Fallback to qmService.nonNativeMobileLogin registration. Error: " + JSON.stringify(errorMessage));
-            var register = true;
-            qmService.nonNativeMobileLogin(register);
-        });
-    };
     $scope.googleLogin = function(register) {
         $scope.hideGoogleLoginButton = true;
         var timeout = loginTimeout();
