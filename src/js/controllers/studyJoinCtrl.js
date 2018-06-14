@@ -1,9 +1,8 @@
-angular.module('starter').controller('StudyJoinCtrl', ["$scope", "$state", "qmService", "qmLogService", "$rootScope", "$stateParams", function($scope, $state, qmService, qmLogService, $rootScope, $stateParams) {
+angular.module('starter').controller('StudyJoinCtrl', ["$scope", "$state", "qmService", "qmLogService", "$rootScope", "$stateParams",
+    function($scope, $state, qmService, qmLogService, $rootScope, $stateParams) {
     $scope.controller_name = "StudyJoinCtrl";
-    if(window.debugMode){qmLogService.debug(null, $scope.controller_name + ' first starting in state: ' + $state.current.name, null);}
-    var green = { backgroundColor: "#0f9d58", circleColor: "#03c466" };
+    qmLogService.debug($scope.controller_name + ' first starting in state: ' + $state.current.name);
     var blue = { backgroundColor: "#3467d6", circleColor: "#5b95f9" };
-    var yellow = { backgroundColor: "#f09402", circleColor: "#fab952" };
     $scope.state = {
         title: 'Join Our Study',
         color: blue,
@@ -13,7 +12,7 @@ angular.module('starter').controller('StudyJoinCtrl', ["$scope", "$state", "qmSe
             "aggregated form as is done in epidemiological studies."
     };
     $scope.$on('$ionicView.beforeEnter', function(e) {
-        if(window.debugMode){qmLogService.debug(null, $scope.controller_name + ' $ionicView.beforeEnter in state: ' + $state.current.name, null);}
+        qmLogService.debug(null, $scope.controller_name + ' $ionicView.beforeEnter in state: ' + $state.current.name, null);
         if(!$rootScope.user){
             qmLogService.debug('Hiding nav menu because we do not have a user', null);
             qmService.navBar.hideNavigationMenu();
@@ -35,7 +34,7 @@ angular.module('starter').controller('StudyJoinCtrl', ["$scope", "$state", "qmSe
             $scope.requestParams.effectVariableName;
     });
     $scope.$on('$ionicView.enter', function(e) {
-        if(window.debugMode){qmLogService.debug(null, $scope.controller_name + ' $ionicView.enter in state: ' + $state.current.name, null);}
+        qmLogService.debug($scope.controller_name + ' $ionicView.enter in state: ' + $state.current.name, null);
         qmService.hideLoader();
         if(getParameterByName('alreadyJoined')){ $scope.joinStudy(); }
     });
@@ -55,9 +54,10 @@ angular.module('starter').controller('StudyJoinCtrl', ["$scope", "$state", "qmSe
     $scope.joinStudy = function () {
         $scope.hideJoinStudyButton = true;
         $scope.state.image.url = "img/robots/quantimodo-robot-happy.svg";
-        if(qmService.sendToLoginIfNecessaryAndComeBack(null, window.location.href + '&alreadyJoined=true')){return;}
+        if(qmService.login.sendToLoginIfNecessaryAndComeBack(null, window.location.href + '&alreadyJoined=true')){return;}
         $scope.state.title = "Joining study...";
         $scope.state.bodyText = "Thank you for helping us accelerate scientific discovery!";
+        qmService.showBasicLoader();
         qmService.joinStudyDeferred($scope.requestParams).then(function () {
             qmService.hideLoader();
             $scope.state.title = "Thank you!";
