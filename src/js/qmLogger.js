@@ -429,11 +429,11 @@ window.qmLog = {
 if(typeof bugsnag !== "undefined"){
     window.bugsnagClient = bugsnag("REDACTED");
 }
-if(!window.qmUser){
+if(!qm.qmUser){
     if(typeof localStorage !== "undefined"){
-        window.qmUser = localStorage.getItem('user');
+        qm.qmUser = localStorage.getItem('user');
     }
-    if(window.qmUser){window.qmUser = JSON.parse(window.qmUser);}
+    if(qm.qmUser){qm.qmUser = JSON.parse(qm.qmUser);}
 }
 window.isTruthy = function(value){return value && value !== "false"; };
 window.stringifyIfNecessary = function(variable){
