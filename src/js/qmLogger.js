@@ -368,17 +368,18 @@ window.qmLog = {
             }]);
         }
     },
-    setupBugsnag: function(){
+    setupBugsnag: function(user){
         if (typeof bugsnag !== "undefined") {
             var options = {
                 apiKey: "REDACTED",
                 releaseStage: qm.appMode.getAppMode(),
                 //notifyReleaseStages: [ 'staging', 'production' ],
                 metaData: qmLog.getGlobalMetaData(),
-                user: qmLog.obfuscateSecrets(qm.userHelper.getUserFromLocalStorage()),
                 beforeSend: function (report) {}
             };
-            if(qm.getUser()){options.user = qmLog.obfuscateSecrets(qm.getUser());}
+            if(user){
+                options.user = qmLog.obfuscateSecrets(user);
+            }
             if(qm.getAppSettings()){options.appVersion = qm.getAppSettings().androidVersionCode;}
             window.bugsnagClient = bugsnag(options);
         } else {
