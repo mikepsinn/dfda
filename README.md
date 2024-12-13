@@ -1,105 +1,110 @@
-<!-- PROJECT TITLE -->
-<h1 align="center">CuRoBoT</h1>
+# Turborepo starter
 
-An app for collecting, aggregating, and analyzing health data to identify the most effective ways to optimize your health and happiness. 
+This is an official starter turborepo.
 
-<details>
-<summary>Table of Contents</summary>
+## Using this example
 
-- [Project Demo](#demo)
-- [API](#api)
-- [Features and Screenshots](#features-and-screenshots)
-- [Technology Stack](#technology-stack)
-- [Local Development](#local-development)
-- [Getting Involved](#get-involved)
-- [License](#license)
+Run the following command:
 
-</details>
-
-## Demo
-
-Try the [demo](https://app.curedao.org)
-
-## API
-
-For more info about the types of data you can store and get from the API, try out our
-[Interactive API Explorer](https://curedao.readme.io) with the access token `demo`.
-
-## Quick Start
-
-1. Fork the project
-2. Click the `Open in Gitpod` button below in YOUR forked repo.
-3. Allow Gitpod to open port 5555.  It should then open the project in a new tab. 
-
-[![Open in Gitpod](https://camo.githubusercontent.com/1eb1ddfea6092593649f0117f7262ffa8fbd3017/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667)](https://gitpod-referer.now.sh/api/gitpod-referer-redirect)
-
-## Local Development
-
-**Step 1** 
-:wrench: Fork the project
-
-**Step 2**
-:octocat: Clone your forked version
-
-```bash
-$ git clone https://github.com/your_username/curobot.git
+```sh
+npx create-turbo@latest -e with-prisma
 ```
 
-**Step 3**
-:hammer: Install [Node.js](http://nodejs.org/).  (Windows Developers: We recommend [Visual Studio Code](https://code.visualstudio.com/) with the [recommended extensions](.vscode/extensions.json), which automatically installs everything you need!)
+## What's inside?
 
-**Step 5**
- :running: Run `npm install -g bower` and `bower install` in the root of this repository.
+This turborepo includes the following packages/apps:
 
-**Step 6**
-:ticket: Create your application and get your client ID [here](https://builder.quantimo.do).
+### Apps and Packages
 
-**Step 7** -
-Make a copy of .env.example in the root called .env and add your client id to it
+- `web`: a [Next.js](https://nextjs.org/) app
+- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/database`: [Prisma](https://prisma.io/) ORM wrapper to manage & access your database
+- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-**Step 8** -
-If you're using VSCode or Gitpod, right click on src/index.html and click "Open with FiveServer"
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-**Step 9**
- :raising_hand: Need help?  Please [create an issue](/issues) or [contact us](http://help.quantimo.do)
- 
- ## Features and Screenshots
+### Utilities
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/QuantiModo/quantimodo-android-chrome-ios-web-app/develop/resources-shared/screenshots/5.5-inch%20(iPhone%206%2B)%20-%20History%20Screenshot%201.jpg" width="300">
-&nbsp
-<img src="https://raw.githubusercontent.com/QuantiModo/quantimodo-android-chrome-ios-web-app/develop/resources-shared/screenshots/5.5-inch%20(iPhone%206+)%20-%20import%20data%20Screenshot%201.jpg" width="300">
-<br><br>
-<img src="https://raw.githubusercontent.com/QuantiModo/quantimodo-android-chrome-ios-web-app/develop/resources-shared/screenshots/5.5-inch%20(iPhone%206+)%20-%20bar%20chart%20Screenshot%201.jpg" width="300">
-&nbsp
-<img src="https://raw.githubusercontent.com/QuantiModo/quantimodo-android-chrome-ios-web-app/develop/resources-shared/screenshots/5.5-inch%20(iPhone%206+)%20-%20predictors%20Screenshot%201.jpg" width="300">
-<br><br>
-<img src="https://raw.githubusercontent.com/QuantiModo/quantimodo-android-chrome-ios-web-app/develop/resources-shared/screenshots/5.5-inch%20(iPhone%206+)%20-%20reminder%20inbox%20Screenshot%201.jpg?" width="300">
-<img src="https://user-images.githubusercontent.com/2808553/138347736-f3cbea7a-85fe-4288-921a-78a05b93026d.png" width="300">
-</p>
+This turborepo has some additional tools already setup for you:
 
-## Technology Stack
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
+- [Prisma](https://prisma.io/) for database ORM
+- [Docker Compose](https://docs.docker.com/compose/) for local database
 
-| Technology   | Description                                                              |
-| ------------ | ------------------------------------------------------------------------ |
-| JavaScript   | High-Level Programming Language                      |
-| TypeScript      | JavaScript with syntax for types                   |
-| CSS      | Cascading Style Sheets                                |
-| SCSS      | Syntactically Awesome Style Sheet                        |
-| Angular.js      |  front-end web framework                           |
-| HTML      | HyperText Markup Language                                |
-| Cypress      | standard in front-end testing                         |
-| Gitpod      | platform for remote development                        |
+### Database
 
-## Get Involved
+We use [Prisma](https://prisma.io/) to manage & access our database. As such you will need a database for this project, either locally or hosted in the cloud.
 
-[CONTRIBUTING](https://www.curedao.org/join-us)
+To make this process easier, we offer a [`docker-compose.yml`](https://docs.docker.com/compose/) file to deploy a MySQL server locally with a new database named `turborepo` (To change this update the `MYSQL_DATABASE` environment variable in the `docker-compose.yml` file):
 
-## License
+```bash
+cd my-turborepo
+docker-compose up -d
+```
 
-[![GitLicense](https://img.shields.io/badge/License-GNU-blue.svg)](https://github.com/cure-dao/curobot/blob/develop/LICENSE.md)
+Once deployed you will need to copy the `.env.example` file to `.env` in order for Prisma to have a `DATABASE_URL` environment variable to access.
 
+```bash
+cp .env.example .env
+```
 
+If you added a custom database name, or use a cloud based database, you will need to update the `DATABASE_URL` in your `.env` accordingly.
 
+Once deployed & up & running, you will need to create & deploy migrations to your database to add the necessary tables. This can be done using [Prisma Migrate](https://www.prisma.io/migrate):
 
+```bash
+npx prisma migrate dev
+```
 
+If you need to push any existing migrations to the database, you can use either the Prisma db push or the Prisma migrate deploy command(s):
+
+```bash
+yarn run db:push
+
+# OR
+
+yarn run db:migrate:deploy
+```
+
+There is slight difference between the two commands & [Prisma offers a breakdown on which command is best to use](https://www.prisma.io/docs/concepts/components/prisma-migrate/db-push#choosing-db-push-or-prisma-migrate).
+
+An optional additional step is to seed some initial or fake data to your database using [Prisma's seeding functionality](https://www.prisma.io/docs/guides/database/seed-database).
+
+To do this update check the seed script located in `packages/database/src/seed.ts` & add or update any users you wish to seed to the database.
+
+Once edited run the following command to run tell Prisma to run the seed script defined in the Prisma configuration:
+
+```bash
+yarn run db:seed
+```
+
+For further more information on migrations, seeding & more, we recommend reading through the [Prisma Documentation](https://www.prisma.io/docs/).
+
+### Build
+
+To build all apps and packages, run the following command:
+
+```bash
+yarn run build
+```
+
+### Develop
+
+To develop all apps and packages, run the following command:
+
+```bash
+yarn run dev
+```
+
+## Useful Links
+
+Learn more about the power of Turborepo:
+
+- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
+- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
+- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
+- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
+- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
