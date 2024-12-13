@@ -1,4 +1,5 @@
 import { prisma } from "@repo/database";
+import React from "react";
 
 export default async function IndexPage() {
   const users = await prisma.user.findMany();
