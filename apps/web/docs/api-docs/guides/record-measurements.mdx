@@ -1,0 +1,33 @@
+---
+title: Record Measurements
+description: See how to save treatments or symptom ratings for a user
+---
+
+First, [create a user and get an access token](guides/get-access-token) if you haven't done that already.
+
+Then, you can record measurements for a user.
+
+The request should include the user's access token in the `Authorization` header.
+
+There are examples of how to do this in any language in the
+[measurement endpoint documentation](../api-reference/measurements/save-measurements).
+
+However, here is an example using javascript:
+
+```javascript
+
+
+async function postMeasurements(dfdaUser, measurements) {
+  const response = await fetch(`https://safe.dfda.earth/api/v1/measurements`, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${dfdaUser.accessToken}`
+    },
+    body: JSON.stringify({
+      measurements
+    })
+  });
+}
+```
+

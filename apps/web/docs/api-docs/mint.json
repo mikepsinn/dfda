@@ -1,0 +1,181 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "The Decentralized FDA",
+  "logo": {
+    "light": "/logo/dfda-wide-text-logo-white-background.png",
+    "dark": "/logo/dfda-wide-text-logo-white-text.png",
+    "href": "/"
+  },
+  "favicon": "logo/dfda-favicon.png",
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373",
+    "anchors": {
+      "from": "#0D9373",
+      "to": "#07C983"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "https://github.com/FDA-AI/FDAi/issues"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://builder.dfda.earth"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Community",
+      "icon": "slack",
+      "url": "https://github.com/FDA-AI/FDAi/discussions"
+    },
+    {
+      "name": "News",
+      "icon": "newspaper",
+      "url": "https://dfda.earth"
+    },
+    {
+      "name": "Code",
+      "icon": "github",
+      "url": "https://github.com/FDA-AI/FDAi"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "guides/get-access-token",
+        "guides/get-user-variables",
+        "guides/record-measurements",
+        "development"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction",
+        {
+          "group": "Variables",
+          "pages": [
+            "api-reference/variables/delete-all-measurements-for-variable",
+            "api-reference/variables/delete-user-tag-or-ingredient",
+            "api-reference/variables/get-user-variables",
+            "api-reference/variables/post-or-update-user-tags-or-ingredients",
+            "api-reference/variables/reset-user-settings-for-a-variable-to-defaults",
+            "api-reference/variables/update-user-settings-for-a-variable",
+            "api-reference/variables/variable-categories"
+          ]
+        },
+        {
+          "group": "Measurements",
+          "pages": [
+            "api-reference/measurements/save-measurements",
+            "api-reference/measurements/delete-a-measurement",
+            "api-reference/measurements/get-measurements-for-this-user",
+            "api-reference/measurements/post-request-for-measurements-csv",
+            "api-reference/measurements/update-a-measurement",
+            "api-reference/measurements/upload-a-spreadsheet-with-measurements"
+          ]
+        },
+        {
+          "group": "Analytics",
+          "pages": [
+            "api-reference/analytics/get-correlations"
+          ]
+        },
+        {
+          "group": "App Settings",
+          "pages": [
+            "api-reference/appsettings/get-client-app-settings"
+          ]
+        },
+        {
+          "group": "Data Import",
+          "pages": [
+            "api-reference/connectors/list-of-connectors",
+            "api-reference/connectors/delete-stored-connection-info",
+            "api-reference/connectors/obtain-a-token-from-3rd-party-data-source",
+            "api-reference/connectors/sync-with-data-source"
+          ]
+        },
+        {
+          "group": "Feed",
+          "pages": [
+            "api-reference/feed/post-user-interactions-with-feed",
+            "api-reference/feed/tracking-reminder-notifications-messages-and-study-results"
+          ]
+        },
+        {
+          "group": "Notifications",
+          "pages": [
+            "api-reference/notifications/get-notificationpreferences",
+            "api-reference/notifications/post-devicetokens"
+          ]
+        },
+        {
+          "group": "Reminders",
+          "pages": [
+            "api-reference/reminders/delete-tracking-reminder",
+            "api-reference/reminders/get-repeating-tracking-reminder-settings",
+            "api-reference/reminders/get-specific-tracking-reminder-notifications",
+            "api-reference/reminders/snooze-skip-or-track-a-tracking-reminder-notification",
+            "api-reference/reminders/store-a-tracking-reminder"
+          ]
+        },
+        {
+          "group": "Shares",
+          "pages": [
+            "api-reference/shares/delete-share",
+            "api-reference/shares/get-authorized-apps-studies-and-individuals"
+          ]
+        },
+        {
+          "group": "Studies",
+          "pages": [
+            "api-reference/studies/create-a-study",
+            "api-reference/studies/delete-vote",
+            "api-reference/studies/get-personal-or-population-studies",
+            "api-reference/studies/get-studies-you-have-created",
+            "api-reference/studies/get-study",
+            "api-reference/studies/join-a-study",
+            "api-reference/studies/post-or-update-vote",
+            "api-reference/studies/publish-your-study",
+            "api-reference/studies/studies-you-have-joined",
+            "api-reference/studies/these-are-open-studies-that-anyone-can-join"
+          ]
+        },
+        {
+          "group": "Units",
+          "pages": [
+            "api-reference/units/get-unit-categories",
+            "api-reference/units/get-units"
+          ]
+        },
+        {
+          "group": "User",
+          "pages": [
+            "api-reference/user/post-user",
+            "api-reference/user/get-user",
+            "api-reference/user/delete-user",
+            "api-reference/user/get-users-who-shared-data"
+          ]
+        }
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/FDADAO",
+    "github": "https://github.com/FDA-AI/FDAi",
+    "linkedin": "https://www.linkedin.com/curedao"
+  }
+}

@@ -1,0 +1,53 @@
+---
+title: Get User Variables
+description: Variables are things like treatments or symptoms and include analysis settings and statistics.
+---
+
+his function fetches user-defined and public variables based on specified criteria.
+Variables can include treatments, symptoms, or any custom user data.
+It allows for filtering based on a search phrase, sorting by measurement time.
+
+First, create a `getDfdaAccessToken()` function as [described here](guides/get-access-token) if you haven't done that already.
+
+<Note>
+  You can check the [API documentation](../api-reference/variables/get-user-variables) to generate code to do this in any language.
+</Note>
+
+## Common Parameters
+| Property      | Description                                                                                   |
+|---------------|-----------------------------------------------------------------------------------------------|
+| searchPhrase  | Search phrase to filter variables by name or description.                                     |
+| includePublic | If true, this also returns variables for which the user has no measurements or reminders yet. |
+| sort          | The order in which variables are returned. Default is `-latestMeasurementTime`.               |
+
+
+```javascript
+async function fetchUserVariables(searchPhrase, includePublic = true, limit = 10, offset = 0, sort = '-latestMeasurementTime') {
+    const baseUrl = 'https://safe.dfda.earth/api/v3/userVariables';
+    const params = new URLSearchParams({
+        includePublic: includePublic,
+        limit: limit,
+        offset: offset,
+        searchPhrase: searchPhrase,
+        sort: sort
+    });
+
+    const response = await fetch(`${baseUrl}?${params.toString()}`, {
+        method: 'GET',
+        headers: {
+            'accept': 'application/json',
+            'Authorization': `Bearer ${getDfdaAccessToken()}`,
+        },
+        credentials: 'include'
+    });
+
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return await response.json();
+}
+```
+
+<Tip>Use the `sort` parameter to manage the order of returned variables, such as by their latest measurement time here.</Tip>
+
+

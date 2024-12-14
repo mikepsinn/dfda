@@ -1,0 +1,148 @@
+---
+title: Authenticate with OAuth
+description: Learn how to obtain an access token using OAuth 2.0 to interact with the dFDA API.
+---
+# Getting an Access Token via OAuth
+
+This guide explains how to obtain an access token using OAuth 2.0 to interact with the dFDA API.
+
+The examples are in Node.js, but the same principles apply to any programming language.
+
+## Prerequisites
+
+- Node.js installed on your system
+- Your client ID and client secret from https://builder.dfda.earth
+- A server capable of handling OAuth redirects
+
+## Setting Up Your Environment
+
+1. Install required packages:
+
+```bash
+npm install dotenv express node-fetch
+```
+
+2. Create a `.env` file in your project root:
+
+```
+DFDA_CLIENT_ID=your_client_id_here
+DFDA_CLIENT_SECRET=your_client_secret_here
+REDIRECT_URI=http://localhost:3000/callback
+```
+
+Replace the values with your actual client ID, client secret, and redirect URI.
+
+## Implementing OAuth Flow
+
+### Step 1: Redirect to Authorization Page
+
+Create a route that redirects the user to the dFDA authorization page:
+
+```javascript
+require('dotenv').config();
+const express = require('express');
+const app = express();
+
+app.get('/login', (req, res) => {
+  const authUrl = `https://safe.dfda.earth/oauth/authorize?client_id=${process.env.DFDA_CLIENT_ID}&redirect_uri=${encodeURIComponent(process.env.REDIRECT_URI)}&response_type=code`;
+  res.redirect(authUrl);
+});
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+```
+
+### Step 2: Handle the Callback
+
+Create a route to handle the callback from dFDA after user authorization:
+
+```javascript
+const fetch = require('node-fetch');
+
+app.get('/callback', async (req, res) => {
+  const { code } = req.query;
+
+  if (!code) {
+    return res.status(400).send('Authorization code not received');
+  }
+
+  try {
+    const tokenResponse = await fetch('https://safe.dfda.earth/oauth/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        grant_type: 'authorization_code',
+        client_id: process.env.DFDA_CLIENT_ID,
+        client_secret: process.env.DFDA_CLIENT_SECRET,
+        code: code,
+        redirect_uri: process.env.REDIRECT_URI,
+      }),
+    });
+
+    const tokenData = await tokenResponse.json();
+
+    if (tokenData.access_token) {
+      // Store the access token securely (e.g., in a database)
+      // For this example, we're just sending it back to the client
+      res.json({ access_token: tokenData.access_token });
+    } else {
+      res.status(400).json({ error: 'Failed to obtain access token' });
+    }
+  } catch (error) {
+    console.error('Error obtaining access token:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+```
+
+## Using the Access Token
+
+Once you have obtained the access token, you can use it to make authenticated requests to the dFDA API:
+
+```javascript
+async function makeAuthenticatedRequest(accessToken) {
+  const response = await fetch('https://safe.dfda.earth/api/v1/user', {
+    method: 'GET',
+    headers: {
+      'accept': 'application/json',
+      'Authorization': `Bearer ${accessToken}`,
+    },
+  });
+
+  return response.json();
+}
+```
+
+## Refreshing the Access Token
+
+Access tokens expire after a certain period. To continue using the API, you'll need to refresh the token using the refresh token provided along with the access token:
+
+```javascript
+async function refreshAccessToken(refreshToken) {
+  const response = await fetch('https://safe.dfda.earth/oauth/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      grant_type: 'refresh_token',
+      client_id: process.env.DFDA_CLIENT_ID,
+      client_secret: process.env.DFDA_CLIENT_SECRET,
+      refresh_token: refreshToken,
+    }),
+  });
+
+  return response.json();
+}
+```
+
+Remember to securely store both the access token and refresh token, and implement a mechanism to refresh the access token when it expires.
+
+## Security Considerations
+
+- Never expose your client secret in client-side code.
+- Store access tokens and refresh tokens securely, preferably encrypted in your database.
+- Use HTTPS for all OAuth-related communications.
+
+By following this guide, you should be able to implement OAuth 2.0 authentication with the dFDA API using Node.js. This allows your application to securely obtain and use access tokens for making authenticated requests to the API.

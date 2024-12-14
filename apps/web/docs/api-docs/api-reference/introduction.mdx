@@ -1,0 +1,54 @@
+---
+title: 'Getting Started'
+description: 'Introduction to the dFDA API and how to get started'
+---
+
+<Note>
+  Welcome to the dFDA API documentation! This guide will help you get started with using the dFDA API to build powerful applications and integrate data insights.
+</Note>
+
+## API Overview
+
+The dFDA API provides a comprehensive set of endpoints for tracking measurements, analyzing data, managing studies, and more. With the dFDA API, you can:
+
+- Record and manage user measurements
+- Retrieve user-specific analysis settings and statistics
+- Create and join studies
+- Access and manipulate variables and units
+- Perform advanced analytics and data correlations
+
+<Card
+  title="dFDA API Specification"
+  icon="file-code"
+  href="/api-reference/openapi.yml"
+>
+  Explore the OpenAPI specification file
+</Card>
+
+## Back End Authentication for Creating Users
+
+To authenticate your requests to the API, you need to include the following headers:
+
+- `X-CLIENT-ID`: Your client ID obtained from the [Developer Portal](https://builder.dfda.earth).
+- `X-CLIENT-SECRET`: Your client secret obtained from the [Developer Portal](https://builder.dfda.earth).
+
+Make sure to keep your client credentials secure and do not share them publicly.
+
+
+<Card
+  title="Authentication Guide"
+  icon="lock"
+  href="/guides/get-access-token"
+>
+Learn more about authenticating with the dFDA API
+</Card>
+
+Getting Started
+To start using the dFDA API, follow these steps:
+
+Sign up for an account at https://builder.dfda.earth to obtain your API credentials.
+Explore the API endpoints and their functionalities in the API Reference section.
+Check out the Guides section for tutorials and examples on how to use the dFDA API for various use cases.
+Start building your application by making requests to the dFDA API endpoints using your client credentials.
+
+If you have any questions or need assistance, feel free to [create an issue](https://github.com/FDA-AI/FDAi/issues/new)

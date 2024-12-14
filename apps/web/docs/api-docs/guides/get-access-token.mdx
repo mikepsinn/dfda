@@ -1,0 +1,120 @@
+---
+title: Getting an Access Token
+description: This is the first step to interact with the dFDA API. Learn how to create a user and get an access token.
+---
+
+You can check the [API documentation](../api-reference/user/post-user) to generate code to do this in any language.
+
+However, here is a simple example of how you can create a user if you're using Node.js and Prisma.
+
+<Info>
+  Ensure you have your client ID from https://builder.dfda.earth and access tokens set properly in your environment variables.
+</Info>
+
+To securely manage your FDAI client credentials (DFDA_CLIENT_ID and DFDA_CLIENT_SECRET),
+it's recommended to use environment variables.
+This approach helps in keeping sensitive information out of your source code.
+Here's how you can set up and use a .env file for this purpose:
+
+1. Create a .env File:
+In the root of your Node.js project, create a file named .env. Inside this file, you can define your FDAI client credentials like so:
+
+```
+ DFDA_CLIENT_ID=yourClientIdHere
+ DFDA_CLIENT_SECRET=yourClientSecretHere
+```
+Replace yourClientIdHere and yourClientSecretHere with your actual FDAI client ID and secret.
+
+<Warning>
+  Make sure to never expose your client secret in your client side code. This is strictly backend stuff.
+</Warning>
+
+2. Load Environment Variables:
+To load the variables from your .env file, you'll need a package like dotenv. If you haven't already installed dotenv, you can do so by running:
+
+```bash
+npm install dotenv
+```
+
+Then, at the very top of your main application file (or at least before you use any environment variables), require and configure dotenv:
+
+```javascript
+require('dotenv').config(); // Load environment variables
+```
+
+3. Access Environment Variables:
+Now, you can access DFDA_CLIENT_ID and DFDA_CLIENT_SECRET anywhere in your application using process.env.DFDA_CLIENT_ID and process.env.DFDA_CLIENT_SECRET, respectively.
+Here's an updated snippet of your function getDfdaAccessToken incorporating the loading of environment variables using dotenv:
+
+```javascript
+// Required Imports
+import fetch from 'node-fetch';
+import { PrismaClient } from '@prisma/client';
+require('dotenv').config(); // Load environment variables
+
+// Initialize Prisma Client
+const prisma = new PrismaClient();
+
+// Function to create or retrieve an FDAI user's access token linked to your system's user ID
+async function getDfdaAccessToken() {
+  const yourUserId = getLoggedInUserId(); // You'll need to implement this function to get the user ID
+  // Attempt to fetch the user from your database
+  let your_user = await prisma.user.findUnique({
+    where: { id: yourUserId }
+  });
+
+  // Check if the user already has an FDAI access token and return if exists
+  if (your_user && your_user.dfda_access_token) {
+    return your_user.dfda_access_token;
+  }
+
+  // If not, create a new FDAI user using the API
+  let response = await fetch(`https://safe.dfda.earth/api/v1/user`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Client-ID': process.env.DFDA_CLIENT_ID,
+      'X-Client-Secret': process.env.DFDA_CLIENT_SECRET
+    },
+    body: JSON.stringify({ clientUserId: yourUserId })
+  });
+
+  response = await response.json();
+  const dfdaUser = response.user;
+
+  // Update your user data with FDAI user access token details
+  await prisma.user.update({
+    where: { id: yourUserId },
+    data: {
+      dfda_user_id: dfdaUser.id,
+      dfda_access_token: dfdaUser.accessToken,
+      dfda_refresh_token: dfdaUser.refreshToken,
+      dfda_access_token_expires_at: new Date(dfdaUser.accessTokenExpires).toISOString()
+    }
+  });
+
+  // Return the FDAI user's access token
+  return dfdaUser.accessToken;
+}
+```
+
+## Usage
+
+You can then use the access token to make [authenticated requests](api-reference) to the FDAI API like this:
+
+```javascript
+  const response = await fetch(`https://safe.dfda.earth/api/v1/user`, {
+      method: 'GET',
+      headers: {
+          'accept': 'application/json',
+          'Authorization': `Bearer ${getDfdaAccessToken()}`,
+      },
+      credentials: 'include'
+  });
+```
+
+
+
+<Card title="Record Measurements" icon="pen-to-square" href={"/guides/record-measurements"}>
+  See an example of how to create a measurement using the access token.
+</Card>
