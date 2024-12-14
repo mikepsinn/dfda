@@ -87,7 +87,7 @@ The core characteristics that define the FDAi are:
 
 [](https://github.com/FDA-AI/FDAi#1-data-silo-api-gateway-nodes)
 
-[![dfda-gateway-api-node-silo.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
+[![dfda-gateway-api-node-silo.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
 
 [FDAi Gateway API Nodes](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](https://github.com/FDA-AI/FDAi#2-personalfda-nodes).
 
@@ -105,7 +105,7 @@ The core characteristics that define the FDAi are:
 
 [](https://github.com/FDA-AI/FDAi#21-digital-twin-safes)
 
-[![digital-twin-safe-no-text.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.png)aider
+[![digital-twin-safe-no-text.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)aider
 
 A local application for self-sovereign import and storage of personal data.
 
@@ -125,7 +125,7 @@ A local application for self-sovereign import and storage of personal data.
 
 [](https://github.com/FDA-AI/FDAi#3-clinipediathe-wikipedia-of-clinical-research)
 
-[![clinipedia_globe_circle.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/clinipedia/clinipedia_globe_circle.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/clinipedia/clinipedia.md)
+[![clinipedia_globe_circle.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/clinipedia/clinipedia_globe_circle.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/clinipedia/clinipedia.md)
 
 The [Clinipedia wiki](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 

@@ -1,6 +1,6 @@
 ## Data Silo API Gateway Nodes
 
-![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
+![dfda-gateway-api-node-silo.jpg](dfda-gateway-api-node-silo.jpg)
 
 FDAi Gateway API Nodes make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](../../home.md#2-personalfda-nodes). 
 
@@ -17,6 +17,6 @@ FDAi Gateway API Nodes make it easy for data silos, such as hospitals and digita
 
 ### Potential Implementations, Components or Inspiration
 
-There's a monolithic implementation of this in [apps/dfda-1](https://github.com/FDA-AI/FDAi/tree/develop/apps/dfda-1).
+There's a monolithic implementation of this in [apps/dfda-1](../../../apps/dfda-1).
 
 Please make a pull request and add links to any other open-source projects that could better fulfill this role.

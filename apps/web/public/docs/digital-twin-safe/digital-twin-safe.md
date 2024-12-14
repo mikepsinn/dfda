@@ -14,7 +14,7 @@ description: >-
 
 # Digital Twin Safe Product Requirements
 
-![digital-twin-safe-no-text.png](../../images/digital-twin-safe-no-text.png)
+![digital-twin-safe-no-text.jpg](../../images/digital-twin-safe-no-text.jpg)
 
 This outlines the requirements for a tool to allow people to create and manage their [digital twin](digital-twins.md). The platform will leverage automation, API integration, and AI to streamline the digital twin creation process.
 

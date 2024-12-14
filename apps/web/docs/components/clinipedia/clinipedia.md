@@ -1,6 +1,6 @@
 # The Wikipedia of Clinical Research
 
-![clinipedia_globe_circle.jpg](https://static.crowdsourcingcures.org/dfda/components/clinipedia/clinipedia_globe_circle.jpg)
+![clinipedia_globe_circle.jpg](clinipedia_globe_circle.jpg)
 
 The Clinipedia wiki contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.  It requires the following features:
 
@@ -20,4 +20,4 @@ The Clinipedia wiki contains the aggregate of all available data on the effects 
 - [Psychonaut Wiki](https://psychonautwiki.org/wiki/Psychoactive_substance_index) - A modified version of MediaWiki with additional quantitative metadata storage regarding the pharmacokinetics of various substances.
 - [Journal of Citizen Science](https://studies.crowdsourcingcures.org/) - Published outcome labels based on analysis of real-world data (RWD) from the [Crowdsourcing Cures](https://crowdsourcingcures.org/).
 
-![outcome-labels.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)
+![outcome-labels.png](../outcome-labels/outcome-labels.png)

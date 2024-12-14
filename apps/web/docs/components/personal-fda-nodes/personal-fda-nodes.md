@@ -6,7 +6,7 @@ PersonalFDA Nodes are composed of two components, a Digital Twin Safe and an AI 
 
 ### 2.1. Digital Twin Safe
 
-![digital-twin-safe.jpg](https://static.crowdsourcingcures.org/dfda/components/digital-twin-safe/digital-twin-safe.jpg)
+![digital-twin-safe.jpg](../digital-twin-safe/digital-twin-safe.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
