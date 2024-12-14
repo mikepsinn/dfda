@@ -504,9 +504,10 @@ export async function createDfdaApplication(
 export const getDataSources = async (
   final_callback_url: string
 ): Promise<any> => {
-  return dfdaGET("connectors/list", {
+  const response = await dfdaGET("connectors/list", {
     final_callback_url,
   })
+  return response.connectors
 }
 
 export type SortParam =
