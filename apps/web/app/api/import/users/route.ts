@@ -1,4 +1,4 @@
-import vital from '@/lib/vital-client'
+import vitalClient from '@/lib/vital-client'
 import { NextResponse } from 'next/server'
 
 export async function POST(request: Request) {
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const data = await vital.User.create(client_user_id)
+    const data = await vitalClient.user.create(client_user_id)
     return NextResponse.json(data)
   } catch (error) {
     return NextResponse.json(
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
-    const data = await vital.User.getAll()
+    const data = await vitalClient.user.getAll()
     return NextResponse.json(data)
   } catch (error) {
     return NextResponse.json(
