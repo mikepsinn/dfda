@@ -1,0 +1,2025 @@
+generator client {
+  provider = "prisma-client-js"
+  // Had to comment because I keep getting the error:
+  // Changed the `vector` extension. need to reset the "public" schema
+  // previewFeatures = ["postgresqlExtensions"]
+  // extensions      = ["(function)"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // extensions = [uuid_ossp(map: "uuid-ossp", schema: "public")]
+}
+
+model Account {
+  id                String   @id @default(cuid())
+  userId            String   @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String   @map("provider_account_id")
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id                                    String                                @id @default(cuid())
+  address                               String?
+  badges                                Json?
+  banned                                Boolean?
+  bio                                   String?
+  birthday                              DateTime?
+  blog                                  String?
+  city                                  String?
+  company                               String?
+  contributorsEnabled                   Boolean?
+  countryCode                           String?
+  createdAt                             DateTime                              @default(now())
+  createdAtTwitter                      DateTime?
+  deletedAt                             DateTime?
+  email                                 String?                               @unique
+  emailVerified                         DateTime?
+  favouritesCount                       Int?
+  firstName                             String?
+  followersCount                        Int?
+  followingCount                        Int?
+  gdprConsent                           Boolean                               @default(false)
+  gender                                String?
+  geoEnabled                            Boolean?
+  githubUsername                        String?
+  hireable                              Boolean?
+  image                                 String?
+  ipAddress                             String?                               @db.VarChar(45)
+  language                              String?
+  lastName                              String?
+  lastSignInAt                          BigInt?
+  likeCount                             Int?
+  listedCount                           Int?
+  location                              String?
+  name                                  String?
+  newsletterSubscribed                  Boolean                               @default(false)
+  phoneNumber                           String?
+  points                                Int?
+  postalCode                            String?
+  privateMetadata                       Json?
+  profileBannerUrl                      String?
+  protected                             Boolean?
+  publicMetadata                        Json?
+  referrerUserId                        String?
+  signatureTimestamp                    DateTime                              @default(now())
+  signedPetition                        Boolean                               @default(false)
+  stateProvince                         String?
+  statusesCount                         Int?
+  timeZone                              String?
+  tweetCount                            Int?
+  twitterHandle                         String?
+  type                                  String?
+  unsafeMetadata                        Json?
+  updatedAt                             DateTime                              @updatedAt
+  username                              String                                @unique @default(uuid())
+  verified                              Boolean?
+  warPercentageDesired                  Float?
+  warPercentageGuessed                  Float?
+  web3Wallet                            String?
+  website                               String?
+  admin                                 Boolean?                              @default(false)
+  activities                            Activity[]
+  agents                                Agent[]
+  apiKeys                               ApiKey[]
+  chats                                 Chat[]
+  comments                              Comment[]
+  datasources                           Datasource[]
+  educations                            Education[]
+  endorsements                          Endorsement[]
+  receivedFriendships                   Friendship[]                          @relation("ReceiverFriendships")
+  initiatedFriendships                  Friendship[]                          @relation("InitiatorFriendships")
+  createdGenieDAOs                      GenieDAO[]                            @relation("CreatedGenieDAOs")
+  genieDAOFeedback                      GenieDAOFeedback[]
+  globalProblems                        GlobalProblem[]
+  globalProblemPairAllocations          GlobalProblemPairAllocation[]
+  globalProblemSolutionsPairAllocations GlobalProblemSolutionPairAllocation[]
+  globalSolutions                       GlobalSolution[]
+  globalSolutionPairAllocations         GlobalSolutionPairAllocation[]
+  globalTasksCreated                    GlobalTask[]
+  llms                                  LLM[]
+  likes                                 Like[]
+  positions                             Position[]
+  posts                                 Post[]
+  proposalComparisons                   ProposalComparison[]
+  createdProposalProgressReports        ProposalProgressReport[]
+  recommenderRecommendations            Recommendation[]                      @relation("RecommenderRecommendations")
+  userRecommendations                   Recommendation[]                      @relation("UserRecommendations")
+  tools                                 Tool[]
+  userSkills                            UserSkill[]
+  userTasks                             UserTask[]
+  vectorDb                              VectorDb[]
+  createdWishFulfillmentProposals       WishFulfillmentProposal[]             @relation("CreatedProposals")
+  wishingWells                          WishingWell[]
+  wishingWellPairAllocations            WishingWellPairAllocation[]
+  workflows                             Workflow[]
+  workflowConfigs                       WorkflowConfig[]
+  accounts                              Account[]
+  sessions                              Session[]
+  joinedGenieDAOs                       GenieDAO[]                            @relation("JoinedGenieDAOs")
+  globalTaskAttachment                  GlobalTaskAttachment[]
+  globalTaskComment                     GlobalTaskComment[]
+  userTaskComment                       UserTaskComment[]
+  userTaskAttachment                    UserTaskAttachment[]
+  person                                Person?
+  personId                              String?
+  conditionReports                      DfdaUserConditionReport[]
+  symptomReports                        DfdaUserSymptomReport[]
+  treatmentReports                      DfdaUserTreatmentReport[]
+  sideEffectReports                     DfdaUserSideEffectReport[]
+  authoredArticles                      Article[]
+  articleComments                       ArticleComment[]
+  ownedOrganizations                    Organization[]
+  organizationFollows                   OrganizationFollower[]
+  StripeCustomer                        StripeCustomer?
+  createdPetitions                      Petition[]                            @relation("CreatedPetitions")
+  petitionSignatures                    PetitionSignature[]
+  referredSignatures                    PetitionSignature[]                   @relation("ReferredSignatures")
+  petitionComments                      PetitionComment[]
+  petitionFollows                       PetitionFollow[]
+  repMessages                           PetitionRepMessage[]
+  marketingEmails                       Boolean                               @default(false)
+  newsletterEmails                      Boolean                               @default(false)
+  unsubscribeFromAll                    Boolean                               @default(false)
+}
+
+// Need this to create digital twins for people that are not users
+model Person {
+  id               String                   @id @default(cuid())
+  bio              String?
+  birthday         DateTime?
+  blog             String?
+  city             String?
+  company          String?
+  createdAt        DateTime                 @default(now())
+  createdAtTwitter DateTime?
+  email            String?
+  firstName        String?
+  gender           String?
+  githubUsername   String?
+  hireable         Boolean?
+  image            String?
+  jobTitle         String?
+  lastName         String?
+  location         String?
+  memberships      OrganizationMembership[]
+  name             String
+  phoneNumber      String?
+  postalCode       String?
+  profileBannerUrl String?
+  stateProvince    String?
+  telephone        String?
+  timeZone         String?
+  twitterHandle    String?
+  updatedAt        DateTime                 @updatedAt
+  user             User?                    @relation(fields: [userId], references: [id])
+  userId           String?                  @unique
+  web3Wallet       String?
+  website          String?
+}
+
+model Education {
+  id           String    @id @default(cuid())
+  userId       String
+  school       String
+  degree       String?
+  fieldOfStudy String?
+  startDate    DateTime
+  endDate      DateTime?
+  user         User      @relation(fields: [userId], references: [id])
+}
+
+model Position {
+  id        String    @id @default(cuid())
+  userId    String
+  title     String
+  company   String
+  startDate DateTime
+  endDate   DateTime?
+  isCurrent Boolean
+  user      User      @relation(fields: [userId], references: [id])
+}
+
+model UserSkill {
+  id           String        @id @default(cuid())
+  userId       String
+  skillId      String
+  endorsements Endorsement[]
+  skill        Skill         @relation(fields: [skillId], references: [id])
+  user         User          @relation(fields: [userId], references: [id])
+
+  @@unique([userId, skillId])
+}
+
+model OrganizationSkill {
+  id             String       @id @default(cuid())
+  organizationId String
+  skillId        String
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  skill          Skill        @relation(fields: [skillId], references: [id])
+
+  @@unique([organizationId, skillId])
+}
+
+model GrantSkill {
+  id        String   @id @default(cuid())
+  grantId   String
+  skillId   String
+  grant     Grant    @relation(fields: [grantId], references: [id])
+  skill     Skill    @relation(fields: [skillId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([grantId, skillId])
+}
+
+model Skill {
+  id                 String              @id @default(cuid())
+  name               String              @unique
+  globalTasks        GlobalTaskSkill[]
+  userSkills         UserSkill[]
+  organizationSkills OrganizationSkill[]
+  grantSkills        GrantSkill[]
+}
+
+model Endorsement {
+  id          String     @id @default(cuid())
+  userId      String
+  userSkillId String?
+  user        User       @relation(fields: [userId], references: [id])
+  userSkill   UserSkill? @relation(fields: [userSkillId], references: [id])
+}
+
+model Recommendation {
+  id            String @id @default(cuid())
+  userId        String
+  recommenderId String
+  text          String
+  recommender   User   @relation("RecommenderRecommendations", fields: [recommenderId], references: [id])
+  user          User   @relation("UserRecommendations", fields: [userId], references: [id])
+}
+
+model Post {
+  id        String    @id @default(cuid())
+  userId    String
+  content   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  comments  Comment[]
+  likes     Like[]
+  user      User      @relation(fields: [userId], references: [id])
+}
+
+model Like {
+  id     String @id @default(cuid())
+  userId String
+  postId String
+  post   Post   @relation(fields: [postId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  userId    String
+  postId    String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  post      Post     @relation(fields: [postId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Friendship {
+  id        String   @id @default(cuid())
+  userId    String
+  friendId  String
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  friend    User     @relation("ReceiverFriendships", fields: [friendId], references: [id])
+  user      User     @relation("InitiatorFriendships", fields: [userId], references: [id])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Activity {
+  id           String        @id @default(cuid())
+  userId       String
+  name         String
+  description  String?
+  colorCode    String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  user         User          @relation(fields: [userId], references: [id])
+  activityLogs ActivityLog[]
+}
+
+model ActivityLog {
+  id         String   @id @default(cuid())
+  activityId String
+  date       DateTime @default(now())
+  count      Int      @default(1)
+  activity   Activity @relation(fields: [activityId], references: [id])
+}
+
+model GlobalProblem {
+  id                                    String                                @id @default(cuid())
+  userId                                String
+  name                                  String                                @unique
+  description                           String?                               @unique
+  content                               String?
+  featuredImage                         String?
+  createdAt                             DateTime                              @default(now())
+  updatedAt                             DateTime                              @updatedAt
+  averageAllocation                     Float?
+  embedding                             Unsupported("vector")?
+  user                                  User                                  @relation(fields: [userId], references: [id])
+  thatGlobalProblemAllocations          GlobalProblemPairAllocation[]         @relation("ThatGlobalProblemRelation")
+  thisGlobalProblemAllocations          GlobalProblemPairAllocation[]         @relation("ThisGlobalProblemRelation")
+  globalProblemSolutions                GlobalProblemSolution[]               @relation("GlobalProblemToSolution")
+  globalProblemSolutionsPairAllocations GlobalProblemSolutionPairAllocation[]
+}
+
+model GlobalProblemPairAllocation {
+  id                          String        @id @default(cuid())
+  userId                      String
+  thisGlobalProblemId         String
+  thatGlobalProblemId         String
+  thisGlobalProblemPercentage Float
+  createdAt                   DateTime      @default(now())
+  updatedAt                   DateTime      @updatedAt
+  thatGlobalProblem           GlobalProblem @relation("ThatGlobalProblemRelation", fields: [thatGlobalProblemId], references: [id])
+  thisGlobalProblem           GlobalProblem @relation("ThisGlobalProblemRelation", fields: [thisGlobalProblemId], references: [id])
+  user                        User          @relation(fields: [userId], references: [id])
+
+  @@unique([userId, thisGlobalProblemId, thatGlobalProblemId])
+}
+
+model GlobalSolution {
+  id                            String                         @id @default(cuid())
+  userId                        String
+  name                          String                         @unique
+  description                   String?                        @unique
+  content                       String?
+  featuredImage                 String?
+  createdAt                     DateTime                       @default(now())
+  updatedAt                     DateTime                       @updatedAt
+  averageAllocation             Float?
+  embedding                     Unsupported("vector")?
+  globalProblemSolutions        GlobalProblemSolution[]        @relation("GlobalSolutionToProblem")
+  user                          User                           @relation(fields: [userId], references: [id])
+  thatGlobalSolutionAllocations GlobalSolutionPairAllocation[] @relation("ThatGlobalSolutionRelation")
+  thisGlobalSolutionAllocations GlobalSolutionPairAllocation[] @relation("ThisGlobalSolutionRelation")
+  globalSolutionTasks           GlobalSolutionTask[]           @relation("GlobalSolutionToTask")
+}
+
+model GlobalSolutionPairAllocation {
+  id                           String         @id @default(cuid())
+  userId                       String
+  thisGlobalSolutionId         String
+  thatGlobalSolutionId         String
+  thisGlobalSolutionPercentage Float
+  createdAt                    DateTime       @default(now())
+  updatedAt                    DateTime       @updatedAt
+  thatGlobalSolution           GlobalSolution @relation("ThatGlobalSolutionRelation", fields: [thatGlobalSolutionId], references: [id])
+  thisGlobalSolution           GlobalSolution @relation("ThisGlobalSolutionRelation", fields: [thisGlobalSolutionId], references: [id])
+  user                         User           @relation(fields: [userId], references: [id])
+
+  @@unique([userId, thisGlobalSolutionId, thatGlobalSolutionId])
+}
+
+model GlobalProblemSolution {
+  id                                   String                                @id @default(cuid())
+  globalProblemId                      String
+  globalSolutionId                     String
+  createdAt                            DateTime                              @default(now())
+  updatedAt                            DateTime                              @updatedAt
+  content                              String?
+  description                          String?                               @unique
+  featuredImage                        String?
+  name                                 String                                @unique
+  averageAllocation                    Float?
+  globalProblem                        GlobalProblem                         @relation("GlobalProblemToSolution", fields: [globalProblemId], references: [id])
+  globalSolution                       GlobalSolution                        @relation("GlobalSolutionToProblem", fields: [globalSolutionId], references: [id])
+  thatGlobalProblemSolutionAllocations GlobalProblemSolutionPairAllocation[] @relation("ThatGlobalProblemSolutionRelation")
+  thisGlobalProblemSolutionAllocations GlobalProblemSolutionPairAllocation[] @relation("ThisGlobalProblemSolutionRelation")
+
+  @@unique([globalProblemId, globalSolutionId])
+}
+
+model GlobalProblemSolutionPairAllocation {
+  id                                  String                @id @default(cuid())
+  userId                              String
+  thisGlobalProblemSolutionId         String
+  thatGlobalProblemSolutionId         String
+  thisGlobalProblemSolutionPercentage Float
+  createdAt                           DateTime              @default(now())
+  updatedAt                           DateTime              @updatedAt
+  globalProblemId                     String?
+  globalProblem                       GlobalProblem?        @relation(fields: [globalProblemId], references: [id])
+  thatGlobalProblemSolution           GlobalProblemSolution @relation("ThatGlobalProblemSolutionRelation", fields: [thatGlobalProblemSolutionId], references: [id])
+  thisGlobalProblemSolution           GlobalProblemSolution @relation("ThisGlobalProblemSolutionRelation", fields: [thisGlobalProblemSolutionId], references: [id])
+  user                                User                  @relation(fields: [userId], references: [id])
+
+  @@unique([userId, thisGlobalProblemSolutionId, thatGlobalProblemSolutionId])
+}
+
+model GlobalSolutionTask {
+  id               String         @id @default(cuid())
+  globalTaskId     String
+  globalSolutionId String
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  globalSolution   GlobalSolution @relation("GlobalSolutionToTask", fields: [globalSolutionId], references: [id])
+  globalTask       GlobalTask     @relation("GlobalTaskToSolution", fields: [globalTaskId], references: [id])
+
+  @@unique([globalTaskId, globalSolutionId])
+}
+
+model GlobalTask {
+  id                  String                 @id @default(cuid())
+  userId              String
+  name                String                 @unique
+  description         String?                @unique
+  content             String?
+  featuredImage       String?
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+  priority            String?
+  status              TaskStatus             @default(NOT_STARTED)
+  dueDate             DateTime?
+  budget              Float?
+  comments            GlobalTaskComment[]
+  embedding           Unsupported("vector")?
+  creator             User                   @relation(fields: [userId], references: [id])
+  isAtomic            Boolean?
+  complexity          TaskComplexity?
+  tags                String[]
+  estimatedHours      Float?
+  actualHours         Float?
+  deliverable         String?
+  blockingTasks       GlobalTaskDependency[] @relation("BlockingTask")
+  dependentTasks      GlobalTaskDependency[] @relation("DependentTask")
+  skills              GlobalTaskSkill[]
+  globalSolutionTasks GlobalSolutionTask[]   @relation("GlobalTaskToSolution")
+  parentTasks         GlobalTaskRelation[]   @relation("ChildTasks")
+  childTasks          GlobalTaskRelation[]   @relation("ParentTasks")
+  userTasks           UserTask[]
+
+  attachments GlobalTaskAttachment[]
+  contextUrls GlobalTaskContextUrl[]
+}
+
+model GlobalTaskRelation {
+  id       String     @id @default(cuid())
+  parentId String
+  childId  String
+  parent   GlobalTask @relation("ParentTasks", fields: [parentId], references: [id])
+  child    GlobalTask @relation("ChildTasks", fields: [childId], references: [id])
+
+  @@unique([parentId, childId])
+}
+
+model GlobalTaskAttachment {
+  id        String     @id @default(cuid())
+  taskId    String
+  userId    String
+  fileName  String
+  fileUrl   String
+  createdAt DateTime   @default(now())
+  task      GlobalTask @relation(fields: [taskId], references: [id])
+  user      User       @relation(fields: [userId], references: [id])
+}
+
+model GlobalTaskComment {
+  id        String     @id @default(cuid())
+  taskId    String
+  userId    String
+  content   String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  task      GlobalTask @relation(fields: [taskId], references: [id])
+  user      User       @relation(fields: [userId], references: [id])
+}
+
+model GlobalTaskSkill {
+  id           String     @id @default(cuid())
+  globalTaskId String
+  skillId      String
+  globalTask   GlobalTask @relation(fields: [globalTaskId], references: [id])
+  skill        Skill      @relation(fields: [skillId], references: [id])
+
+  @@unique([globalTaskId, skillId])
+}
+
+model GlobalTaskDependency {
+  id              String     @id @default(cuid())
+  blockingTaskId  String
+  dependentTaskId String
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  blockingTask    GlobalTask @relation("BlockingTask", fields: [blockingTaskId], references: [id])
+  dependentTask   GlobalTask @relation("DependentTask", fields: [dependentTaskId], references: [id])
+
+  @@unique([blockingTaskId, dependentTaskId])
+}
+
+enum TaskComplexity {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model GlobalTaskContextUrl {
+  id           String     @id @default(cuid())
+  url          String     @unique
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  globalTask   GlobalTask @relation(fields: [globalTaskId], references: [id])
+  globalTaskId String
+}
+
+model UserTask {
+  id                 String               @id @default(cuid())
+  userId             String
+  globalTaskId       String
+  role               UserTaskRole         @default(ASSIGNEE)
+  status             TaskStatus           @default(NOT_STARTED)
+  startDate          DateTime?
+  endDate            DateTime?
+  estimatedHours     Float?
+  actualHours        Float?
+  comments           String?
+  assignedAt         DateTime             @default(now())
+  globalTask         GlobalTask           @relation(fields: [globalTaskId], references: [id])
+  user               User                 @relation(fields: [userId], references: [id])
+  UserTaskComment    UserTaskComment[]
+  UserTaskAttachment UserTaskAttachment[]
+
+  @@unique([userId, globalTaskId])
+}
+
+model UserTaskComment {
+  id         String   @id @default(cuid())
+  userTaskId String
+  userId     String
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  userTask   UserTask @relation(fields: [userTaskId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+}
+
+model UserTaskAttachment {
+  id        String   @id @default(cuid())
+  taskId    String
+  userId    String
+  fileName  String
+  fileUrl   String
+  createdAt DateTime @default(now())
+  userTask  UserTask @relation(fields: [taskId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model WishingWell {
+  id                         String                      @id @default(cuid())
+  userId                     String
+  name                       String                      @unique
+  description                String?
+  content                    String?
+  images                     String[]
+  featuredImage              String?
+  createdAt                  DateTime                    @default(now())
+  updatedAt                  DateTime                    @updatedAt
+  averageAllocation          Float?
+  embedding                  Unsupported("vector")?
+  proposals                  WishFulfillmentProposal[]
+  user                       User                        @relation(fields: [userId], references: [id])
+  wishingWellContributions   WishingWellContribution[]
+  thatWishingWellAllocations WishingWellPairAllocation[] @relation("ThatWishingWellRelation")
+  thisWishingWellAllocations WishingWellPairAllocation[] @relation("ThisWishingWellRelation")
+}
+
+model WishingWellPairAllocation {
+  id                        String      @id @default(cuid())
+  userId                    String
+  thisWishingWellId         String
+  thatWishingWellId         String
+  thisWishingWellPercentage Float
+  createdAt                 DateTime    @default(now())
+  updatedAt                 DateTime    @updatedAt
+  thatWishingWell           WishingWell @relation("ThatWishingWellRelation", fields: [thatWishingWellId], references: [id])
+  thisWishingWell           WishingWell @relation("ThisWishingWellRelation", fields: [thisWishingWellId], references: [id])
+  user                      User        @relation(fields: [userId], references: [id])
+
+  @@unique([userId, thisWishingWellId, thatWishingWellId])
+}
+
+model WishingWellContribution {
+  id            String      @id @default(cuid())
+  wishingWellId String
+  date          DateTime    @default(now())
+  count         Int         @default(1)
+  wishingWell   WishingWell @relation(fields: [wishingWellId], references: [id])
+}
+
+model GenieDAO {
+  id             String                    @id @default(cuid())
+  name           String
+  reputation     Float                     @default(0)
+  createdAt      DateTime                  @default(now())
+  updatedAt      DateTime                  @updatedAt
+  creatorId      String
+  embedding      Unsupported("vector")?
+  creator        User                      @relation("CreatedGenieDAOs", fields: [creatorId], references: [id])
+  feedback       GenieDAOFeedback[]
+  proposals      WishFulfillmentProposal[]
+  members        User[]                    @relation("JoinedGenieDAOs")
+  collaborations WishFulfillmentProposal[] @relation("ProposalCollaborators")
+}
+
+model WishFulfillmentProposal {
+  id            String                   @id @default(cuid())
+  wishingWellId String
+  genieDAOId    String
+  description   String
+  leadIndicator String
+  lagIndicator  String
+  wishTokens    Int
+  createdAt     DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+  creatorId     String
+  reports       ProposalProgressReport[]
+  creator       User                     @relation("CreatedProposals", fields: [creatorId], references: [id])
+  genieDAO      GenieDAO                 @relation(fields: [genieDAOId], references: [id])
+  wishingWell   WishingWell              @relation(fields: [wishingWellId], references: [id])
+  collaborators GenieDAO[]               @relation("ProposalCollaborators")
+}
+
+model ProposalProgressReport {
+  id         String                  @id @default(cuid())
+  proposalId String
+  content    String
+  createdAt  DateTime                @default(now())
+  updatedAt  DateTime                @updatedAt
+  creatorId  String
+  creator    User                    @relation(fields: [creatorId], references: [id])
+  proposal   WishFulfillmentProposal @relation(fields: [proposalId], references: [id])
+}
+
+model ProposalComparison {
+  id                     String   @id @default(cuid())
+  userId                 String
+  thisProposalId         String
+  thatProposalId         String
+  thisProposalPercentage Float
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  user                   User     @relation(fields: [userId], references: [id])
+}
+
+model GenieDAOFeedback {
+  id         String   @id @default(cuid())
+  userId     String
+  genieDAOId String
+  rating     Float
+  comment    String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  genieDAO   GenieDAO @relation(fields: [genieDAOId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+}
+
+model ApiKey {
+  id            String   @id @default(uuid())
+  name          String
+  displayApiKey String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "api_user_id")
+}
+
+model Agent {
+  id                   String            @id @default(uuid())
+  name                 String
+  userId               String
+  description          String            @default("Add a agent description...")
+  createdAt            DateTime          @default(now())
+  avatar               String?
+  initialMessage       String?           @default("Hello, how can I help you today?")
+  isActive             Boolean           @default(false)
+  llmModel             LLMModel?         @default(GPT_3_5_TURBO_16K_0613)
+  metadata             Json?
+  outputSchema         String?
+  prompt               String?           @default("You are a helpful AI Assistant")
+  type                 AgentType         @default(SUPERAGENT)
+  sharingLevel         SharingLevel      @default(PRIVATE)
+  updatedAt            DateTime          @updatedAt
+  conversationStarters String[]          @default(["What can you do?"])
+  user                 User              @relation(fields: [userId], references: [id])
+  datasources          AgentDatasource[]
+  llms                 AgentLLM[]
+  tools                AgentTool[]
+  workflowSteps        WorkflowStep[]
+  Chat                 Chat[]
+
+  @@unique([userId, name])
+}
+
+model Datasource {
+  id          String            @id @default(uuid())
+  name        String
+  content     String?
+  description String?
+  url         String?           @unique
+  type        DatasourceType
+  userId      String
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  metadata    String?
+  status      DatasourceStatus  @default(QUEUED)
+  vectorDbId  String?
+  datasources AgentDatasource[]
+  user        User              @relation(fields: [userId], references: [id])
+  vectorDb    VectorDb?         @relation(fields: [vectorDbId], references: [id])
+
+  @@unique([name, userId])
+}
+
+model AgentDatasource {
+  agentId      String
+  datasourceId String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  agent        Agent      @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  datasource   Datasource @relation(fields: [datasourceId], references: [id], onDelete: Cascade)
+
+  @@id([agentId, datasourceId])
+}
+
+model Tool {
+  id           String      @id @default(uuid())
+  name         String
+  description  String
+  type         ToolType
+  returnDirect Boolean     @default(false)
+  metadata     String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  userId       String
+  toolConfig   Json?
+  tools        AgentTool[]
+  user         User        @relation(fields: [userId], references: [id])
+}
+
+model AgentTool {
+  agentId   String
+  toolId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  agent     Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  tool      Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+
+  @@id([agentId, toolId])
+}
+
+model LLM {
+  id        String      @id @default(uuid())
+  provider  LLMProvider @default(OPENAI)
+  apiKey    String
+  options   Json?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  userId    String
+  agents    AgentLLM[]
+  user      User        @relation(fields: [userId], references: [id])
+}
+
+model AgentLLM {
+  agentId   String
+  llmId     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  agent     Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  llm       LLM      @relation(fields: [llmId], references: [id])
+
+  @@id([agentId, llmId])
+}
+
+model Workflow {
+  id              String           @id @default(uuid())
+  name            String
+  description     String?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  userId          String
+  user            User             @relation(fields: [userId], references: [id])
+  workflowConfigs WorkflowConfig[]
+  steps           WorkflowStep[]
+}
+
+model WorkflowConfig {
+  id         String   @id @default(uuid())
+  config     Json
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  workflowId String
+  userId     String?
+  User       User?    @relation(fields: [userId], references: [id])
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+}
+
+model WorkflowStep {
+  id         String   @id @default(uuid())
+  order      Int
+  workflowId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  input      String?
+  output     String?
+  agentId    String
+  agent      Agent    @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+}
+
+model VectorDb {
+  id          String           @id @default(uuid())
+  provider    VectorDbProvider @default(PINECONE)
+  options     Json
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  userId      String
+  datasources Datasource[]
+  user        User             @relation(fields: [userId], references: [id])
+}
+
+model GithubUser {
+  name                  String?
+  email                 String?
+  url                   String
+  bio                   String?
+  location              String?
+  company               String?
+  followers             Int
+  avatar_url            String
+  blog                  String?
+  events_url            String
+  followers_url         String
+  following             Int
+  following_url         String
+  generalDeveloperScore Float?
+  gists_url             String
+  gravatar_id           String?
+  hireable              Boolean?
+  html_url              String
+  login                 String
+  node_id               String
+  organizations_url     String
+  public_gists          Int
+  public_repos          Int
+  received_events_url   String
+  repos_url             String
+  site_admin            Boolean
+  starred_url           String
+  subscriptions_url     String
+  twitter_username      String?
+  type                  String
+  id                    Int                    @id
+  created_at            String
+  updated_at            String
+  githubIssuesCreated   GithubIssue[]
+  githubRepos           GithubRepo[]
+  repoDeveloperScores   RepoContributorScore[]
+}
+
+model GithubIssue {
+  title          String
+  url            String
+  number         Int
+  comments_url   String
+  events_url     String
+  githubUserId   Int
+  html_url       String
+  labels_url     String
+  node_id        String
+  repository_url String
+  id             Int        @id
+  creator        GithubUser @relation(fields: [githubUserId], references: [id])
+}
+
+model GithubRepo {
+  id           Int        @id
+  node_id      String
+  name         String
+  full_name    String
+  private      Boolean
+  githubUserId Int
+  owner        GithubUser @relation(fields: [githubUserId], references: [id])
+}
+
+model RepoContributorScore {
+  id                      Int        @id @default(autoincrement())
+  githubUserId            Int
+  repoOwner               String
+  repoName                String
+  score                   Float
+  commitsCount            Int
+  issuesCreatedCount      Int
+  issueCommentsCount      Int
+  commentReactionsScore   Float
+  mergedPullRequestsCount Int
+  totalPullRequestsCount  Int
+  githubUser              GithubUser @relation(fields: [githubUserId], references: [id])
+
+  @@unique([githubUserId, repoOwner, repoName])
+}
+
+model Library {
+  id          String   @id @default(cuid())
+  name        String
+  version     String
+  type        String
+  description String?
+  keywords    String[]
+  author      String
+  repository  String
+  githubUrl   String?
+  tags        String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Organization {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slug          String   @unique
+  alternateName String?
+  description   String?  @db.Text
+  url           String?  @unique
+  alternateUrls String[]
+  logo          String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  email         String?  @unique
+  telephone     String?  @unique
+
+  // Additional LinkedIn-like fields
+  industry             String?
+  companySize          CompanySize?
+  headquartersLocation String?
+  foundedYear          Int?
+  specialties          String[]
+  tagline              String?
+
+  // Social media and professional networking
+  linkedinUrl     String? @unique
+  twitterHandle   String? @unique
+  facebookPage    String? @unique
+  instagramHandle String? @unique
+  youtubeChannel  String? @unique
+
+  // Business details
+  companyType    CompanyType?
+  stockSymbol    String?      @unique
+  publiclyTraded Boolean?     @default(false)
+  revenue        String?
+  employeeCount  Int?
+
+  // Additional fields
+  mission String? @db.Text
+
+  // Existing relations
+  organizationMemberships OrganizationMembership[]
+  grantProposals          GrantProposal[]
+  organizationSkills      OrganizationSkill[]
+  ownerId                 String?
+  owner                   User?                    @relation(fields: [ownerId], references: [id])
+
+  // Additional relations
+  locations   OrganizationLocation[]
+  followers   OrganizationFollower[]
+  Product     Product[]
+  Service     Service[]
+  Event       Event[]
+  Partnership Partnership[]
+
+  @@unique([name, foundedYear])
+}
+
+enum CompanySize {
+  STARTUP
+  SMALL
+  MEDIUM
+  LARGE
+  ENTERPRISE
+}
+
+enum CompanyType {
+  PUBLIC
+  PRIVATE
+  NONPROFIT
+  GOVERNMENT
+  EDUCATIONAL
+}
+
+// New models to support additional LinkedIn-like features
+
+model OrganizationLocation {
+  id             String       @id @default(cuid())
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  address        String
+  city           String
+  state          String?
+  country        String
+  isHeadquarters Boolean      @default(false)
+}
+
+model OrganizationFollower {
+  id             String       @id @default(cuid())
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  userId         String
+  user           User         @relation(fields: [userId], references: [id])
+  followedAt     DateTime     @default(now())
+
+  @@unique([organizationId, userId])
+}
+
+model OrganizationMembership {
+  id             String       @id @default(cuid())
+  organizationId String
+  personId       String
+  role           String? // Role of the person in the organization
+  startDate      DateTime? // When the membership started
+  endDate        DateTime? // When the membership ended (null if still active)
+  permissions    Json? // Specific permissions in JSON format
+  status         String? // Status of the membership (active, suspended, etc.)
+  organization   Organization @relation(fields: [organizationId], references: [id])
+  person         Person       @relation(fields: [personId], references: [id])
+
+  @@unique([organizationId, personId])
+}
+
+model Chat {
+  id        String        @id @default(uuid())
+  title     String
+  userId    String
+  agentId   String?
+  createdAt DateTime      @default(now())
+  path      String
+  user      User          @relation(fields: [userId], references: [id])
+  messages  ChatMessage[]
+  agent     Agent?        @relation(fields: [agentId], references: [id])
+}
+
+model ChatMessage {
+  id            String      @id @default(uuid())
+  chatId        String
+  tool_call_id  String?
+  createdAt     DateTime    @default(now())
+  content       String
+  ui            String?
+  role          MessageRole
+  name          String?
+  function_call String?
+  data          Json?
+  tool_calls    String?
+  annotations   Json?
+  chat          Chat        @relation(fields: [chatId], references: [id])
+}
+
+model datasource_documents {
+  id                   String                 @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  content              String?
+  metadata             Json?
+  vector               Unsupported("vector")?
+  collection_id        String?                @db.Uuid
+  document_collections document_collections?  @relation(fields: [collection_id], references: [uuid], onDelete: Cascade, onUpdate: NoAction)
+}
+
+model document_collections {
+  uuid                 String                 @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name                 String?                @db.VarChar
+  cmetadata            Json?
+  datasource_documents datasource_documents[]
+
+  @@index([name], map: "idx_document_collections_name")
+}
+
+model document_upsertion_records {
+  uuid       String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  key        String
+  namespace  String
+  updated_at Float
+  group_id   String?
+
+  @@unique([key, namespace])
+  @@index([group_id], map: "group_id_index")
+  @@index([key], map: "key_index")
+  @@index([namespace], map: "namespace_index")
+  @@index([updated_at], map: "updated_at_index")
+}
+
+enum TaskStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+enum UserTaskRole {
+  ASSIGNEE
+  REVIEWER
+  COLLABORATOR
+}
+
+enum AgentType {
+  SUPERAGENT
+  OPENAI_ASSISTANT
+  LLM
+}
+
+enum SharingLevel {
+  UNPUBLISHED_LINK
+  PUBLISHED
+  PRIVATE
+}
+
+enum LLMProvider {
+  OPENAI
+  AZURE_OPENAI
+  HUGGINGFACE
+  PERPLEXITY
+  TOGETHER_AI
+  ANTHROPIC
+  BEDROCK
+  GROQ
+  MISTRAL
+  COHERE_CHAT
+}
+
+enum LLMModel {
+  GPT_3_5_TURBO
+  GPT_3_5_TURBO_16K_0613
+  GPT_3_5_TURBO_0613
+  GPT_3_5_TURBO_1106
+  GPT_3_5_TURBO_0125
+  GPT_4
+  GPT_4_0613
+  GPT_4_32K
+  GPT_4_32K_0613
+  GPT_4_1106_PREVIEW
+  GPT_4_0125_PREVIEW
+  GPT_4_TURBO
+  GPT_4_TURBO_PREVIEW
+  GPT_4_TURBO_2024_04_09
+  GPT_4_0
+  MISTRAL_7B_INSTRUCT_V01
+  MIXTRAL_8X7B_INSTRUCT_V01
+}
+
+enum ToolType {
+  ALGOLIA
+  BROWSER
+  BING_SEARCH
+  REPLICATE
+  WOLFRAM_ALPHA
+  ZAPIER_NLA
+  AGENT
+  OPENAPI
+  CHATGPT_PLUGIN
+  METAPHOR
+  PUBMED
+  CODE_EXECUTOR
+  OPENBB
+  GPT_VISION
+  TTS_1
+  HAND_OFF
+  FUNCTION
+  HTTP
+  SUPERRAG
+  RESEARCH
+  GITHUB
+  SCRAPER
+  ADVANCED_SCRAPER
+  GOOGLE_SEARCH
+  SEC
+}
+
+enum DatasourceType {
+  TXT
+  PDF
+  CSV
+  PPTX
+  XLSX
+  DOCX
+  GOOGLE_DOC
+  YOUTUBE
+  GITHUB_REPOSITORY
+  MARKDOWN
+  WEBPAGE
+  AIRTABLE
+  STRIPE
+  NOTION
+  SITEMAP
+  URL
+  FUNCTION
+}
+
+enum DatasourceStatus {
+  QUEUED
+  IN_PROGRESS
+  DONE
+  FAILED
+}
+
+enum VectorDbProvider {
+  PINECONE
+  ASTRA_DB
+  WEAVIATE
+  QDRANT
+  SUPABASE
+  POSTGRES
+}
+
+enum MessageRole {
+  system
+  user
+  assistant
+  function
+  data
+  tool
+}
+
+model DrugClassificationProfile {
+  id                       Int    @id @default(autoincrement())
+  name                     String @unique
+  efficacyRate             Float // Percentage (0-100)
+  adverseEventRate         Float // Percentage (0-100)
+  severeAdverseEventRate   Float // Percentage (0-100)
+  drugInteractionIndex     Float // Scale (0-10)
+  therapeuticIndex         Float // Ratio
+  abusePotentialScore      Float // Scale (0-100)
+  withdrawalSeverityIndex  Float // Scale (0-10)
+  overdoseRiskFactor       Float // Ratio
+  misuseProbability        Float // Percentage (0-100)
+  selfAdministrationSafety Float // Scale (0-10)
+  accessBenefitRatio       Float // Ratio
+  societalCostIndex        Float // Scale (0-100)
+
+  // Calculated fields (you may choose to store these or calculate on-the-fly)
+  otcScore                      Float?
+  prescriptionScore             Float?
+  schedulingScore               Float?
+  accessRestrictionBenefitScore Float?
+  finalClassificationScore      Float?
+
+  // Enum field for final classification
+  classification DrugClassification?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum DrugClassification {
+  OTC
+  PRESCRIPTION_ONLY
+  SCHEDULE_I
+  SCHEDULE_II
+  SCHEDULE_III
+  SCHEDULE_IV
+  SCHEDULE_V
+  UNSCHEDULED
+}
+
+model DfdaCondition {
+  id                  Int                       @id @default(autoincrement())
+  name                String                    @unique
+  description         String?                   @unique
+  content             String?
+  featuredImage       String?
+  updatedAt           DateTime                  @updatedAt
+  createdAt           DateTime                  @default(now())
+  deletedAt           DateTime?
+  numberOfTreatments  Int
+  numberOfSymptoms    Int?
+  numberOfCauses      Int
+  conditionSymptoms   DfdaConditionSymptom[]
+  conditionTreatments DfdaConditionTreatment[]
+  conditionCauses     DfdaConditionCause[]
+  userReports         DfdaUserConditionReport[]
+  symptomReports      DfdaUserSymptomReport[]
+  treatmentReports    DfdaUserTreatmentReport[]
+}
+
+model DfdaSymptom {
+  id                 Int                     @id @default(autoincrement())
+  name               String                  @unique
+  description        String?                 @unique
+  content            String?
+  featuredImage      String?
+  updatedAt          DateTime                @updatedAt
+  createdAt          DateTime                @default(now())
+  deletedAt          DateTime?
+  numberOfConditions Int
+  conditionSymptoms  DfdaConditionSymptom[]
+  userReports        DfdaUserSymptomReport[]
+}
+
+model DfdaTreatment {
+  id                   Int                        @id @default(autoincrement())
+  name                 String                     @unique
+  description          String?                    @unique
+  content              String?
+  featuredImage        String?
+  updatedAt            DateTime                   @updatedAt
+  createdAt            DateTime                   @default(now())
+  deletedAt            DateTime?
+  numberOfConditions   Int?
+  numberOfSideEffects  Int
+  conditionTreatments  DfdaConditionTreatment[]
+  treatmentSideEffects DfdaTreatmentSideEffect[]
+  userReports          DfdaUserTreatmentReport[]
+  sideEffectReports    DfdaUserSideEffectReport[]
+}
+
+model DfdaSideEffect {
+  id                   Int                        @id @default(autoincrement())
+  name                 String                     @unique
+  description          String?                    @unique
+  content              String?
+  featuredImage        String?
+  updatedAt            DateTime                   @updatedAt
+  createdAt            DateTime                   @default(now())
+  deletedAt            DateTime?
+  numberOfTreatments   Int
+  treatmentSideEffects DfdaTreatmentSideEffect[]
+  userReports          DfdaUserSideEffectReport[]
+}
+
+model DfdaCause {
+  id                 Int                  @id @default(autoincrement())
+  name               String               @unique
+  description        String?              @unique
+  content            String?
+  featuredImage      String?
+  updatedAt          DateTime             @updatedAt
+  createdAt          DateTime             @default(now())
+  deletedAt          DateTime?
+  numberOfConditions Int
+  conditionCauses    DfdaConditionCause[]
+}
+
+model DfdaConditionSymptom {
+  id          Int           @id @default(autoincrement())
+  condition   DfdaCondition @relation(fields: [conditionId], references: [id])
+  conditionId Int
+  symptom     DfdaSymptom   @relation(fields: [symptomId], references: [id])
+  symptomId   Int
+  votes       Int
+  extreme     Int?
+  severe      Int?
+  moderate    Int?
+  mild        Int?
+  minimal     Int?
+  noSymptoms  Int?
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+  createdAt   DateTime      @default(now())
+
+  @@unique([conditionId, symptomId])
+}
+
+model DfdaConditionTreatment {
+  id                  Int           @id @default(autoincrement())
+  condition           DfdaCondition @relation(fields: [conditionId], references: [id])
+  conditionId         Int
+  treatment           DfdaTreatment @relation(fields: [treatmentId], references: [id])
+  treatmentId         Int
+  majorImprovement    Int           @default(0)
+  moderateImprovement Int           @default(0)
+  noEffect            Int           @default(0)
+  worse               Int           @default(0)
+  muchWorse           Int           @default(0)
+  popularity          Int           @default(0)
+  averageEffect       Int           @default(0)
+  updatedAt           DateTime      @updatedAt
+  createdAt           DateTime      @default(now())
+  deletedAt           DateTime?
+
+  @@unique([treatmentId, conditionId])
+}
+
+model DfdaTreatmentSideEffect {
+  id           Int            @id @default(autoincrement())
+  treatment    DfdaTreatment  @relation(fields: [treatmentId], references: [id])
+  treatmentId  Int
+  sideEffect   DfdaSideEffect @relation(fields: [sideEffectId], references: [id])
+  sideEffectId Int
+  votesPercent Int
+  updatedAt    DateTime       @updatedAt
+  createdAt    DateTime       @default(now())
+  deletedAt    DateTime?
+
+  @@unique([treatmentId, sideEffectId])
+}
+
+model DfdaConditionCause {
+  id           Int           @id @default(autoincrement())
+  condition    DfdaCondition @relation(fields: [conditionId], references: [id])
+  conditionId  Int
+  cause        DfdaCause     @relation(fields: [causeId], references: [id])
+  causeId      Int
+  votesPercent Int
+  updatedAt    DateTime      @updatedAt
+  createdAt    DateTime      @default(now())
+  deletedAt    DateTime?
+
+  @@unique([causeId, conditionId])
+}
+
+model DfdaUserConditionReport {
+  id          Int           @id @default(autoincrement())
+  user        User          @relation(fields: [userId], references: [id])
+  userId      String
+  condition   DfdaCondition @relation(fields: [conditionId], references: [id])
+  conditionId Int
+  updatedAt   DateTime      @updatedAt
+  createdAt   DateTime      @default(now())
+  deletedAt   DateTime?
+  severity    Severity
+
+  @@unique([userId, conditionId])
+}
+
+model DfdaUserSymptomReport {
+  id          Int            @id @default(autoincrement())
+  user        User           @relation(fields: [userId], references: [id])
+  userId      String
+  symptom     DfdaSymptom    @relation(fields: [symptomId], references: [id])
+  symptomId   Int
+  condition   DfdaCondition? @relation(fields: [conditionId], references: [id])
+  conditionId Int?
+  updatedAt   DateTime       @updatedAt
+  createdAt   DateTime       @default(now())
+  deletedAt   DateTime?
+  severity    Severity
+
+  @@unique([userId, symptomId, conditionId])
+}
+
+model DfdaUserTreatmentReport {
+  id            Int            @id @default(autoincrement())
+  user          User           @relation(fields: [userId], references: [id])
+  userId        String
+  treatment     DfdaTreatment  @relation(fields: [treatmentId], references: [id])
+  treatmentId   Int
+  condition     DfdaCondition? @relation(fields: [conditionId], references: [id])
+  conditionId   Int?
+  updatedAt     DateTime       @updatedAt
+  createdAt     DateTime       @default(now())
+  deletedAt     DateTime?
+  effectiveness Effectiveness?
+  tried         Boolean
+
+  @@unique([userId, treatmentId, conditionId])
+}
+
+model DfdaUserSideEffectReport {
+  id           Int            @id @default(autoincrement())
+  user         User           @relation(fields: [userId], references: [id])
+  userId       String
+  sideEffect   DfdaSideEffect @relation(fields: [sideEffectId], references: [id])
+  sideEffectId Int
+  treatment    DfdaTreatment? @relation(fields: [treatmentId], references: [id])
+  treatmentId  Int?
+  updatedAt    DateTime       @updatedAt
+  createdAt    DateTime       @default(now())
+  deletedAt    DateTime?
+  severity     Severity
+
+  @@unique([userId, sideEffectId, treatmentId])
+}
+
+enum Severity {
+  MINIMAL
+  MILD
+  MODERATE
+  SEVERE
+  EXTREME
+}
+
+enum Effectiveness {
+  MUCH_WORSE
+  WORSE
+  NO_EFFECT
+  MODERATE_IMPROVEMENT
+  MAJOR_IMPROVEMENT
+}
+
+model Article {
+  id            String               @id @default(cuid())
+  title         String
+  slug          String               @unique
+  description   String
+  content       String               @db.Text
+  status        ArticleStatus        @default(DRAFT)
+  visibility    ArticleVisibility    @default(PUBLIC)
+  password      String?
+  publishedAt   DateTime?
+  updatedAt     DateTime             @updatedAt
+  createdAt     DateTime             @default(now())
+  deletedAt     DateTime?
+  commentStatus ArticleCommentStatus @default(OPEN)
+  sticky        Boolean              @default(false)
+  featuredImage String?
+  promptedTopic String?
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  categoryId String
+  category   ArticleCategory @relation(fields: [categoryId], references: [id])
+
+  tags              ArticleTag[]
+  sources           ArticleSource[]
+  searchResults     ArticleSearchResult[]
+  generationOptions ArticleGenerationOptions?
+  comments          ArticleComment[]
+
+  @@unique([userId, promptedTopic])
+  @@unique([userId, title])
+}
+
+enum ArticleStatus {
+  DRAFT
+  PENDING
+  PRIVATE
+  PUBLISH
+}
+
+enum ArticleVisibility {
+  PUBLIC
+  PASSWORD_PROTECTED
+  PRIVATE
+}
+
+enum ArticleCommentStatus {
+  OPEN
+  CLOSED
+}
+
+model ArticleCategory {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  articles    Article[]
+  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
+}
+
+model ArticleTag {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  articles  Article[]
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+}
+
+model ArticleSource {
+  id          String    @id @default(cuid())
+  url         String
+  title       String
+  description String?
+  articleId   String
+  article     Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime  @default(now())
+  deletedAt   DateTime?
+}
+
+model ArticleSearchResult {
+  id            String    @id @default(cuid())
+  score         Float
+  title         String
+  url           String
+  publishedDate DateTime?
+  author        String?
+  text          String    @db.Text
+  articleId     String
+  article       Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  updatedAt     DateTime  @updatedAt
+  createdAt     DateTime  @default(now())
+  deletedAt     DateTime?
+}
+
+model ArticleGenerationOptions {
+  id                                String  @id @default(cuid())
+  numberOfSearchQueryVariations     Int
+  numberOfWebResultsToInclude       Int
+  audience                          String
+  purpose                           String
+  maxCharactersOfSearchContentToUse Int
+  tone                              String
+  format                            String
+  modelName                         String?
+
+  // New fields for tracking model settings
+  temperature      Float? // Controls randomness (0-1)
+  topP             Float? // Alternative to temperature
+  maxTokens        Int? // Maximum length of generated content
+  presencePenalty  Float? // Penalize new topics (-2.0 to 2.0)
+  frequencyPenalty Float? // Penalize repeated tokens (-2.0 to 2.0)
+
+  // Quality metrics
+  generationTimeMs Int? // How long the generation took
+  tokenCount       Int? // Number of tokens in generated content
+  estimatedCost    Float? // Cost of generation
+  qualityScore     Float? // Could be used for user ratings/feedback
+
+  // Search-related settings
+  searchStrategy String? // e.g., "broad", "focused", "recent"
+  dateRangeStart DateTime? // For time-bounded searches
+  dateRangeEnd   DateTime? // For time-bounded searches
+  minSourceRank  Int? // Minimum authority/ranking of sources
+
+  // Content structure
+  citationStyle  String? // How citations are formatted
+  languageLevel  String? // e.g., "beginner", "expert"
+  wordLimit      Int? // Target word count
+  includeSummary Boolean? // Whether to include summary
+
+  articleId String    @unique
+  article   Article   @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+}
+
+model ArticleComment {
+  id        String    @id @default(cuid())
+  content   String    @db.Text
+  articleId String
+  article   Article   @relation(fields: [articleId], references: [id])
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+}
+
+model Grant {
+  id                 String          @id @default(cuid())
+  title              String          @unique
+  description        String?
+  funder             String
+  eligibility        String?
+  amount             String?
+  deadline           DateTime?
+  focusAreas         String[]
+  applicationProcess String?
+  requirements       String[]
+  url                String?         @unique
+  contactEmail       String?
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+  deletedAt          DateTime?
+  grantProposals     GrantProposal[]
+  grantSkills        GrantSkill[]
+}
+
+model GrantProposal {
+  id                     String         @id @default(cuid())
+  title                  String
+  executiveSummary       String         @db.Text
+  organizationBackground String         @db.Text
+  projectDescription     String         @db.Text
+  goals                  String[] // Stored as a JSON array
+  methodology            String         @db.Text
+  timeline               String         @db.Text
+  budget                 String         @db.Text
+  evaluation             String         @db.Text
+  sustainability         String         @db.Text
+  conclusion             String         @db.Text
+  status                 ProposalStatus @default(DRAFT)
+  createdAt              DateTime       @default(now())
+  updatedAt              DateTime       @updatedAt
+
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  grantId String?
+  grant   Grant?  @relation(fields: [grantId], references: [id])
+
+  @@unique([grantId, organizationId])
+  @@index([organizationId])
+  @@index([grantId])
+}
+
+enum ProposalStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+}
+
+model Product {
+  id             String       @id @default(cuid())
+  name           String
+  description    String?      @db.Text
+  price          Float
+  currency       String
+  available      Boolean      @default(true)
+  referralUrl    String?
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([name, organizationId])
+}
+
+model Service {
+  id             String       @id @default(cuid())
+  name           String
+  description    String?      @db.Text
+  price          Float
+  currency       String
+  available      Boolean      @default(true)
+  referralUrl    String?
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([name, organizationId])
+}
+
+model Event {
+  id                   String       @id @default(cuid())
+  name                 String
+  description          String?      @db.Text
+  startDate            DateTime
+  endDate              DateTime?
+  location             String?
+  organizationId       String
+  organization         Organization @relation(fields: [organizationId], references: [id])
+  url                  String? // URL of the online event
+  isOnline             Boolean      @default(false) // Indicates if the event is online
+  maxParticipants      Int? // Maximum number of participants
+  registrationRequired Boolean      @default(false) // Indicates if registration is required
+  registrationUrl      String? // URL for registration
+
+  @@unique([name, organizationId, startDate])
+}
+
+model Partnership {
+  id             String       @id @default(cuid())
+  partnerName    String
+  description    String?      @db.Text
+  startDate      DateTime
+  endDate        DateTime?
+  organizationId String
+  organization   Organization @relation(fields: [organizationId], references: [id])
+
+  @@unique([partnerName, organizationId, startDate])
+}
+
+model StripeCustomer {
+  id            String         @id
+  userId        String         @unique
+  user          User           @relation(fields: [userId], references: [id])
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id               String         @id
+  status           String
+  currentPeriodEnd DateTime
+  createdAt        DateTime       @default(now())
+  stripeCustomerId String
+  stripeCustomer   StripeCustomer @relation(fields: [stripeCustomerId], references: [id])
+}
+
+model ApiEndpointPricing {
+  id              String   @id @default(cuid())
+  endpoint        String
+  method          String
+  pricePerRequest Float
+  active          Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model ApiEndpointUsage {
+  endpointPricingId String
+  subscriptionId    String
+  period            String // YYYY-MM format
+  requestCount      Int    @default(0)
+  billableAmount    Float  @default(0)
+
+  @@id([endpointPricingId, subscriptionId, period])
+}
+
+model ApiRequest {
+  id                String   @id @default(cuid())
+  apiKeyId          String
+  endpoint          String
+  method            String
+  status            Int
+  duration          Int
+  endpointPricingId String?
+  billedAmount      Float?
+  error             String?
+  billable          Boolean  @default(true)
+  createdAt         DateTime @default(now())
+}
+
+model Petition {
+  id                String                 @id @default(cuid())
+  title             String
+  content           String                 @db.Text
+  summary           String
+  imageUrl          String?
+  targetCount       Int                    @default(1000)
+  status            PetitionStatus         @default(ACTIVE)
+  createdAt         DateTime               @default(now())
+  updatedAt         DateTime               @updatedAt
+  creatorId         String
+  creator           User                   @relation("CreatedPetitions", fields: [creatorId], references: [id])
+  signatures        PetitionSignature[]
+  comments          PetitionComment[]
+  followers         PetitionFollow[]
+  notifyOnComment   Boolean                @default(true)
+  notifyOnMilestone Boolean                @default(true)
+  statusUpdates     PetitionStatusUpdate[]
+  milestones        PetitionMilestone[]
+  categoryId        String?
+  category          PetitionCategory?      @relation(fields: [categoryId], references: [id])
+  tags              PetitionTag[]          @relation("PetitionToTags")
+  repMessages       PetitionRepMessage[]
+  targetLocation    String? // e.g., "state", "federal"
+  messageTemplate   String?                @db.Text // Default message template
+  callScript        String?                @db.Text // Default call script
+}
+
+model PetitionSignature {
+  id             String   @id @default(cuid())
+  petitionId     String
+  userId         String
+  referrerId     String?
+  signedAt       DateTime @default(now())
+  comment        String?  @db.Text
+  // Track where the referral came from
+  referralSource String? // e.g., 'email', 'twitter', 'facebook', 'copy_link'
+  petition       Petition @relation(fields: [petitionId], references: [id])
+  user           User     @relation(fields: [userId], references: [id])
+  referrer       User?    @relation("ReferredSignatures", fields: [referrerId], references: [id])
+
+  @@unique([petitionId, userId])
+}
+
+model PetitionComment {
+  id         String   @id @default(cuid())
+  content    String   @db.Text
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  petitionId String
+  userId     String
+  petition   Petition @relation(fields: [petitionId], references: [id])
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@unique([petitionId, userId])
+}
+
+model PetitionFollow {
+  id         String   @id @default(cuid())
+  petitionId String
+  userId     String
+  createdAt  DateTime @default(now())
+
+  // Notification preferences
+  notifyOnComment   Boolean @default(true)
+  notifyOnMilestone Boolean @default(true)
+  notifyOnUpdate    Boolean @default(true)
+  notifyOnSignature Boolean @default(false) // Default false since could be noisy
+
+  // Email frequency preferences
+  emailFrequency EmailFrequency @default(INSTANT)
+  lastEmailSent  DateTime?
+
+  petition Petition @relation(fields: [petitionId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@unique([petitionId, userId])
+}
+
+model PetitionStatusUpdate {
+  id         String   @id @default(cuid())
+  petitionId String
+  content    String   @db.Text
+  createdAt  DateTime @default(now())
+  petition   Petition @relation(fields: [petitionId], references: [id])
+}
+
+model PetitionMilestone {
+  id          String    @id @default(cuid())
+  petitionId  String
+  title       String
+  description String    @db.Text
+  threshold   Int // Number of signatures needed
+  reached     Boolean   @default(false)
+  reachedAt   DateTime?
+  createdAt   DateTime  @default(now())
+  petition    Petition  @relation(fields: [petitionId], references: [id])
+}
+
+enum PetitionStatus {
+  ACTIVE
+  CLOSED
+  SUCCESSFUL
+}
+
+enum EmailFrequency {
+  INSTANT
+  DAILY
+  WEEKLY
+  NEVER
+}
+
+model PetitionCategory {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  slug      String     @unique
+  petitions Petition[]
+}
+
+model PetitionTag {
+  id        String     @id @default(cuid())
+  name      String     @unique
+  slug      String     @unique
+  petitions Petition[] @relation("PetitionToTags")
+}
+
+model Representative {
+  id       String   @id @default(cuid())
+  name     String
+  office   String
+  division String // e.g., "country", "state", "district"
+  party    String?
+  phones   String[]
+  emails   String[]
+  photoUrl String?
+  urls     String[] // Official websites
+  address  Json? // Structured address
+  channels Json? // Social media channels
+
+  petitionMessages PetitionRepMessage[]
+}
+
+model PetitionRepMessage {
+  id               String         @id @default(cuid())
+  petitionId       String
+  representativeId String
+  messageTemplate  String         @db.Text
+  callScript       String         @db.Text
+  petition         Petition       @relation(fields: [petitionId], references: [id])
+  representative   Representative @relation(fields: [representativeId], references: [id])
+  User             User?          @relation(fields: [userId], references: [id])
+  userId           String?
+}
