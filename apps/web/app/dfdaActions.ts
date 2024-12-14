@@ -168,7 +168,7 @@ export async function getConditionByName(name: string) {
   })
 }
 
-export async function getMetaAnalysis(
+export async function getConditionTreatmentMetaAnalysis(
   treatmentName: string,
   conditionName: string
 ) {
@@ -178,6 +178,40 @@ export async function getMetaAnalysis(
 
   const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName} for ${conditionName}`
 
+  try {
+    const article = await findArticleByTopic(topic)
+    if (article) {
+      return article
+    }
+    return writeArticle(topic, "test-user")
+  } catch (error) {
+    console.error("Failed to generate meta-analysis:", error)
+    throw new Error("Failed to generate meta-analysis. Please try again later.")
+  }
+}
+
+export async function getTreatementMetaAnalysis(
+  treatmentName: string
+) {
+ 
+  const topic = `Meta-analysis on the comprehensive benefits and risks of ${treatmentName}`
+
+  try {
+    const article = await findArticleByTopic(topic)
+    if (article) {
+      return article
+    }
+    return writeArticle(topic, "test-user")
+  } catch (error) {
+    console.error("Failed to generate meta-analysis:", error)
+    throw new Error("Failed to generate meta-analysis. Please try again later.")
+  }
+}
+
+export async function getFoodMetaAnalysis(
+  foodName: string
+) {
+  const topic = `Meta-analysis on the comprehensive benefits and risks of ${foodName}`
   try {
     const article = await findArticleByTopic(topic)
     if (article) {

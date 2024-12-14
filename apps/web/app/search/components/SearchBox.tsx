@@ -85,7 +85,7 @@ export function SearchBox() {
           {results.map((result) => (
             <Link
               key={`${result.type}-${result.id}`}
-              href={result.type === 'treatment' ? `/dfda/treatments/${result.name}` : `/dfda/conditions/${result.name}`}
+              href={result.type === 'treatment' ? `/treatments/${result.name}` : `/conditions/${result.name}`}
               className="block p-4 bg-white border-4 border-black rounded-none 
               hover:bg-gray-50 hover:translate-x-[-4px] hover:translate-y-[-4px] 
               shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"

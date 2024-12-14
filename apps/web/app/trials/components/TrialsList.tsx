@@ -133,7 +133,7 @@ export default function TrialsList({ trialsData }: TrialsListProps) {
                   {interventions.map((intervention, i) => (
                     <Link
                       key={i}
-                      href={`/dfda/treatments/${intervention.name}`}
+                      href={`/treatments/${intervention.name}`}
                       className="rounded-full bg-blue-100 px-3 py-1 text-sm font-bold text-blue-800 transition-colors hover:bg-blue-200"
                     >
                       {intervention.name}

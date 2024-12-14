@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { getMetaAnalysis } from '@/app/dfdaActions'
+import { getConditionTreatmentMetaAnalysis } from '@/app/dfdaActions'
 import ArticleRenderer from '@/components/ArticleRenderer'
 import { ArticleWithRelations } from '@/lib/agents/researcher/researcher'
 import GlobalHealthOptimizationAgent from "@/components/landingPage/global-health-optimization-agent"
@@ -19,7 +19,7 @@ export function ConditionTreatmentContent({ treatmentName, conditionName }: Cond
         let isSubscribed = true
         async function fetchMetaAnalysis() {
             try {
-                const metaAnalysis = await getMetaAnalysis(treatmentName, conditionName)
+                const metaAnalysis = await getConditionTreatmentMetaAnalysis(treatmentName, conditionName)
                 if (isSubscribed) {
                     setArticle(metaAnalysis)
                 }

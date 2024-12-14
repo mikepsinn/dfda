@@ -104,7 +104,7 @@ export default async function TreatmentListPage({
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {treatments.map((treatment, index) => (
-          <Link href={`/dfda/treatments/${treatment.name}`} key={treatment.id}>
+          <Link href={`/treatments/${treatment.name}`} key={treatment.id}>
             <div
               className={`
                             transform border-4 border-black bg-white 
