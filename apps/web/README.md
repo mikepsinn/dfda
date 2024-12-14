@@ -68,19 +68,13 @@ This is a very high-level overview of the architecture. The three primary primit
 2. [PersonalFDA Nodes](#2-personalfda-nodes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-The core characteristics that define the FDAi are:
-- **Modularity** - a set of modular libraries and tools that can be reused in any project
-- **Protocols** - an abstract framework of core primitive components rather than a specific implementation
-- **Interoperability** - a directory of existing open-source projects that can be used to fulfill the requirements of each primitive or component
-- **Collective Intelligence** - a collaborative effort, so please feel free to [contribute or edit anything](docs/contributing.md)!
-
-![fdai-framework-diagram.png](docs/images/dfda-framework-diagram.png)
+![framework-diagram.png](docs/images/dfda-framework-diagram.png)
 
 ## 1. Data Silo API Gateway Nodes
 
-![dfda-gateway-api-node-silo.png](docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
+![dfda-gateway-api-node-silo.jpg](docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
 
-[FDAi Gateway API Nodes](docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
+[Gateway API Nodes](docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
 
 **👉 [Learn More About Gateway APIs](docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
 
@@ -92,7 +86,7 @@ The core characteristics that define the FDAi are:
 
 ### 2.1. Digital Twin Safes
 
-![digital-twin-safe-no-text.png](docs/components/digital-twin-safe/digital-twin-safe-no-text.png)aider
+![digital-twin-safe-no-text.jpg](docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
@@ -109,7 +103,7 @@ A local application for self-sovereign import and storage of personal data.
 
 ## 3. Clinipedia—The Wikipedia of Clinical Research
 
-[![clinipedia_globe_circle.png](docs/components/clinipedia/clinipedia_globe_circle.png)](docs/components/clinipedia/clinipedia.md)
+[![clinipedia_globe_circle.jpg](docs/components/clinipedia/clinipedia_globe_circle.jpg)](docs/components/clinipedia/clinipedia.md)
 
 The [Clinipedia wiki](docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
@@ -123,34 +117,6 @@ A key component of Clinipedia is [**Outcome Labels**](docs/components/outcome-la
 
 **👉 [Learn More About Outcome Labels](docs/components/outcome-labels/outcome-labels.md)**
 
-## Human-AI Collective Intelligence Platform
-
-A collective intelligence coordination platform is needed for facilitating cooperation, communication, and collaborative actions among contributors.
-
-**[👉 Learn More or Contribute to the Collaboration Framework](docs/components/human-ai-collective-intelligence-platform/dfda-collaboration-framework.md)**
-
-# Roadmap
-
-We'd love your help and input in determining an optimal roadmap for this project.
-
-**[👉 Click Here for a Detailed Roadmap](docs/roadmap.md)**
-
-
-# Why a Monorepo?
-
-Our goal is to develop [FAIR (Findable, Accessible, Interoperable, and Reusable)](docs/contributing/fair.md) data and analytical tools that can be used by any regulatory agencies, businesses, non-profits or individuals to quantify the effects of every food, drug, supplement, and treatment on every measurable aspect of human health and happiness.
-
-The [Monorepo](docs/contributing/repo-structure.md) is to achieve maximum interoperability and discoverability between the various
-projects to maximize the speed of development and minimize costs.
-This can be
-done by modularizing the codebase into libraries and plugins that can be shared between the various projects.
-
-# dFDA v1 Prototype
-
-We've got a monolithic centralized implementation of the FDAi at [apps/dfda-1](apps/dfda-1) that we're wanting to modularize and decentralize into a set of [FAIR](docs/contributing/fair.md) [libraries](libs) and plugins that can be shared with other apps.
-
-Currently, the main apps are the [Data Collection, Import, and Analysis App](https://safe.dfda.earth) and the
-[Journal of Citizen Science](https://studies.dfda.earth).
 
 ### Features
 
@@ -168,11 +134,11 @@ Currently, the main apps are the [Data Collection, Import, and Analysis App](htt
 
 <p align="center">
 
-<img src="apps/dfda-1/public/app/public/img/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
+<img src="https://github.com/FDA-AI/FDAi/raw/develop/apps/dfda-1/public/app/public/img/screenshots/reminder-inbox-screenshot-no-text.png)](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/public/app/public/img/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
 &nbsp
 </p>
 <p align="center">
-  <img src="apps/dfda-1/public/app/public/img/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
+  <img src="https://github.com/FDA-AI/FDAi/raw/develop/apps/dfda-1/public/app/public/img/screenshots/reminder-inbox-screenshot-no-text.png)](https://github.com/FDA-AI/FDAi/blob/develop/apps/dfda-1/public/app/public/img/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
 </p>
 
 Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medication, and anything else from dozens

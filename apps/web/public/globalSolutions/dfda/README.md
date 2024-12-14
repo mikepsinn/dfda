@@ -105,7 +105,7 @@ The core characteristics that define the FDAi are:
 
 [](https://github.com/FDA-AI/FDAi#21-digital-twin-safes)
 
-[![digital-twin-safe-no-text.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)aider
+[![digital-twin-safe-no-text.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
