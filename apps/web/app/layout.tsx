@@ -1,84 +1,97 @@
-import React from "react"
-import { Metadata } from "next"
+import "./globals.css";
+import "@/app/styles/neobrutalist.css";
 
-import { domainConfigs } from "@/config/domains"
-import { getNavigationForDomain } from "@/config/navigation"
-import { getCurrentUser } from "@/lib/session"
+import { Metadata, Viewport } from "next";
+import { Space_Grotesk } from "next/font/google";
+import { CopilotKit } from "@copilotkit/react-core";
+import { Analytics } from "@vercel/analytics/react";
+import NextTopLoader from "nextjs-toploader";
 
-import DFDAFooter from "./components/DFDAFooter"
-import DfdaTopNavbar from "./components/DfdaTopNavbar"
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
+import { Providers } from "@/app/providers"; // Import Providers
 
-interface DFDALayoutProps {
-  children: React.ReactNode
-}
-
-const dfdaConfig = domainConfigs["dfda.earth"]
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"]
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL(dfdaConfig.url.base),
+  metadataBase: new URL(siteConfig.url.base),
   title: {
-    default: dfdaConfig.name,
-    template: `%s | ${dfdaConfig.name}`,
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: dfdaConfig.description,
-  keywords: dfdaConfig.keywords,
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
   authors: [
     {
-      name: dfdaConfig.author,
-      url: dfdaConfig.url.author,
+      name: siteConfig.author,
+      url: siteConfig.url.author,
     },
   ],
-  creator: dfdaConfig.author,
+  creator: siteConfig.author,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: dfdaConfig.url.base,
-    title: dfdaConfig.name,
-    description: dfdaConfig.description,
-    siteName: dfdaConfig.name,
+    url: siteConfig.url.base,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
     images: [
       {
-        url: dfdaConfig.ogImage,
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: dfdaConfig.name,
+        alt: siteConfig.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: dfdaConfig.name,
-    description: dfdaConfig.description,
-    images: [dfdaConfig.ogImage],
-    creator: "@thinkbynumbers",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@FDADAO",
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: `${siteConfig.url.base}/site.webmanifest`,
 }
 
-export default async function DFDALayout({ children }: DFDALayoutProps) {
-  const user = await getCurrentUser()
-  const navigation = getNavigationForDomain("dfda.earth")
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+}
 
+interface RootLayoutProps {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-br from-cyan-300 to-purple-400 p-4 font-mono text-black md:p-8">
-      <DfdaTopNavbar
-        user={{
-          name: user?.name,
-          image: user?.image,
-          email: user?.email,
-        }}
-        topNavItems={navigation.topNav}
-        avatarNavItems={navigation.avatarNav}
-      />
-      <main className="flex-1">{children}</main>
-      <div className="px-4 pb-4">
-        <DFDAFooter navItems={navigation.footerNav} />
-      </div>
-    </div>
+    <html lang="en" suppressHydrationWarning>
+    <body className={cn("antialiased", spaceGrotesk.className)}>
+        <Providers> {/* Wrap the application with Providers */}
+          <CopilotKit url="/api/copilot/openai/">
+            <NextTopLoader color="#DC2645" height={2.5} showSpinner={false} />
+            <div
+              vaul-drawer-wrapper=""
+              className="flex min-h-screen flex-col bg-background"
+            >
+              {children}
+            </div>
+            <Toaster />
+          </CopilotKit>
+          <Analytics />
+        </Providers>
+      </body>
+    </html>
   )
 }
