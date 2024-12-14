@@ -25,10 +25,45 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env
+.env*.local
 
 # vercel
 .vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# extra
+/private_docs
+.vercel
+
+# IDE
+.idea/
+
+# Docker Compose Volumes
+/data/
+/.postgres
+/.obsidian
+/SystemSculpt
+/.redis/
+
+# Sentry Config File
+.env.sentry-build-plugin
+/test-results/
+/dumps/
+
+.trigger
+/.vscode
+
+.vercel
+/.env.vercel
+/run_anthropic_docker.ps1
+/logs
+
+*.heapsnapshot
+*.heaptimeline
+*.heapdump
+node_modules_bak
+/scripts/dep-analysis/unused-deps_20241129_191341.txt
