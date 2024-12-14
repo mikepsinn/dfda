@@ -6,8 +6,8 @@ export const domainConfigs: Record<string, SiteConfig> = {
     description: "Crowdsourcing clinical research",
     author: "mikepsinn",
     keywords: ["clinical research", "health data", "desci"],
-    defaultHomepage: "/dfda",
-    afterLoginPath: "/dfda",
+    defaultHomepage: "/",
+    afterLoginPath: "/dashboard",
     ogImage: "/globalSolutions/dfda/dfda-og.png",
     url: {
       base: "https://dfda.earth",
