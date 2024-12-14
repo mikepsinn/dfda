@@ -42,7 +42,7 @@ Say you want to solve a massive global problem like dementia, aging, animal suff
 This is a serious question. 
 Given the amount of death and suffering, it's probably the most serious question in the world.
 So if you have an answer, 
-skip reading the rest of this and [share it here](https://github.com/wishonia/wishonia/issues).
+skip reading the rest of this and [share it here](https://github.com/dfda/dfda/issues).
 
 Otherwise, 
 consider the fact that:
@@ -51,7 +51,7 @@ consider the fact that:
 3. there are thousands of problems, with thousands of potential solutions, and ultimately billions of tasks that need to be completed to solve them
 
 This is the proposed approach to addressing these challenges 
-[(please update if you have a better idea)](https://github.com/wishonia/wishonia/edit/main/README.md):
+[(please update if you have a better idea)](https://github.com/dfda/dfda/edit/main/README.md):
 
 1. List Problems - First, we need a list of global problems we're trying to solve.
 
@@ -149,7 +149,7 @@ It's able to coordinate thousands of people who don't even know each other exist
 The invisible hand kind of turns humanity into a magical genie
 that can produce innovations indistinguishable from magic to people who lived before Adam Smith.
 
-https://github.com/mikepsinn/wishonia/assets/2808553/95c056e1-ee9c-4e90-b956-4a2e60d3ad0a
+https://github.com/mikepsinn/dfda/assets/2808553/95c056e1-ee9c-4e90-b956-4a2e60d3ad0a
 
 # Public Goods
 

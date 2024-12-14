@@ -1,6 +1,6 @@
 # Project-specific rules for Cursor AI
 [project]
-name = "wishonia"
+name = "dfda"
 framework = "next.js"
 version = "15.0"
 router = "app"

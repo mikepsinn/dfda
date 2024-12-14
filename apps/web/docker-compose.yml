@@ -6,10 +6,10 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
-      POSTGRES_DB: wishonia_test
+      POSTGRES_DB: dfda_test
     ports:
       - "5433:5432"
-    container_name: wishonia-postgres
+    container_name: dfda-postgres
     volumes:
       - .postgres:/var/lib/postgresql/data
 
