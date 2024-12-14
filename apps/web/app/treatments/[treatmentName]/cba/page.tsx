@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExtendedMetaAnalysisReport} from "@/lib/agents/fdai/fdaiMetaAnalyzer";
 import MetaAnalysisReport from "@/app/components/MetaAnalysisReport";
-import BackButton from '../components/BackButton';
+import BackButton from '../../../components/BackButton';
 
 // Example report data
 const exampleReport: ExtendedMetaAnalysisReport = {

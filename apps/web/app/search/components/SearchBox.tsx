@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { X } from "lucide-react"
+import { X, Search } from "lucide-react"
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { searchTreatmentsAndConditions } from '../../dfdaActions'
@@ -49,41 +49,50 @@ export function SearchBox() {
   return (
     <div className="w-full">
       <div className="relative">
+        <div className="absolute left-4 top-1/2 -translate-y-1/2">
+          <Search className="h-6 w-6 text-gray-500" />
+        </div>
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search treatments or conditions..."
-          className="w-full p-4 border rounded-lg focus:outline-none focus:ring-2"
+          className="w-full pl-14 pr-12 p-4 bg-white border-4 border-black rounded-none 
+          focus:outline-none focus:ring-0 focus:translate-x-[-4px] focus:translate-y-[-4px]
+          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all
+          placeholder:text-gray-600 text-lg"
         />
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-4 top-1/2 -translate-y-1/2"
+            className="absolute right-4 top-1/2 -translate-y-1/2 
+            hover:scale-110 transition-transform"
             aria-label="Clear search"
           >
-            <X className="h-4 w-4 text-gray-500" />
+            <X className="h-6 w-6 text-black" />
           </button>
         )}
       </div>
 
       {isLoading && (
-        <div className="mt-4 text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
+        <div className="mt-8 text-center">
+          <div className="animate-spin rounded-none h-12 w-12 border-8 border-black border-t-transparent mx-auto"></div>
         </div>
       )}
 
       {results.length > 0 && (
-        <div className="mt-4 space-y-2">
+        <div className="mt-6 space-y-4">
           {results.map((result) => (
             <Link
               key={`${result.type}-${result.id}`}
               href={result.type === 'treatment' ? `/dfda/treatments/${result.name}` : `/dfda/conditions/${result.name}`}
-              className="block p-4 border rounded-lg hover:bg-gray-50"
+              className="block p-4 bg-white border-4 border-black rounded-none 
+              hover:bg-gray-50 hover:translate-x-[-4px] hover:translate-y-[-4px] 
+              shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               <div className="flex justify-between items-center">
-                <span>{result.name}</span>
-                <span className="text-sm text-gray-500 capitalize">{result.type}</span>
+                <span className="font-bold text-lg">{result.name}</span>
+                <span className="text-base bg-blue-300 px-3 py-1 border-2 border-black capitalize">{result.type}</span>
               </div>
             </Link>
           ))}
