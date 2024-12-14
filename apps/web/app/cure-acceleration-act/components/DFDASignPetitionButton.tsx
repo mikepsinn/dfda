@@ -1,7 +1,7 @@
 "use client"
 
 import { DFDA_PETITION_ID } from "@/lib/constants"
-import { SignPetitionButton } from "@/app/petitions/components/SignPetitionButton"
+import { SignPetitionButton } from "@/components/petitions/SignPetitionButton"
 
 interface DFDASignPetitionButtonProps {
   hasSigned: boolean

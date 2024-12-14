@@ -33,5 +33,7 @@ export const MODEL_PRICING: Record<ModelName, { input: number; output: number }>
   'gemini-1.5-pro-latest': { input: 0.0035, output: 0.0105 },
   'gemini-1.5-flash': { input: 0.00075, output: 0.0035 },
   'gemini-1.5-flash-latest': { input: 0.00075, output: 0.0035 },
-  'gemini-1.0-pro': { input: 0.0035, output: 0.0105 }
+  'gemini-1.0-pro': { input: 0.0035, output: 0.0105 },
+  'grok-beta': { input: 0.00015, output: 0.0006 },
+  'grok-vision-beta': { input: 0.00015, output: 0.0006 }
 } as const; 

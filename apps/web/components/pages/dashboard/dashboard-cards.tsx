@@ -2,8 +2,6 @@
 
 import { SearchParams } from "@/types"
 
-import { globalProblemsResultsLink } from "@/config/navigation/domains/dfda-nav"
-import { globalProblemsVoteLink } from "@/config/navigation/general-nav"
 import { LinkCard } from "@/components/link-card"
 
 interface DashboardCardsProps {
@@ -15,8 +13,6 @@ export function DashboardCards({ searchParams }: DashboardCardsProps) {
     <div className="grid gap-4 md:grid-cols-2">
       {/*            <LinkCard navItem={wishingWellsLink}/>
             <LinkCard navItem={wishingWellsResultsLink}/>*/}
-      <LinkCard navItem={globalProblemsVoteLink} />
-      <LinkCard navItem={globalProblemsResultsLink} />
       {/*<LinkCard navItem={globalSolutionsVoteLink}/>*/}
       {/*<LinkCard navItem={globalSolutionsResultsLink}/>*/}
     </div>

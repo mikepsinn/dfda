@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { Session } from "next-auth"
 
-import { LoginPromptButton } from "../../../../components/LoginPromptButton"
-import type { Study } from "../../../../types/models/Study"
-import { joinStudy, searchPredictors } from "../../../dfda/dfdaActions"
+import { LoginPromptButton } from "@/components/LoginPromptButton"
+import type { Study } from "@/types/models/Study"
+import { joinStudy, searchPredictors } from "@/app/dfdaActions"
 
 // Add this helper function to safely render HTML
 function createMarkup(html: string) {

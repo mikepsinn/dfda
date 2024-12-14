@@ -1,7 +1,7 @@
 "use client"
 
 import { DFDA_PETITION_ID } from "@/lib/constants"
-import { PetitionShareButtons } from "@/app/petitions/components/PetitionShareButtons"
+import { PetitionShareButtons } from "@/components/petitions/PetitionShareButtons"
 
 import { DFDASignPetitionButton } from "./DFDASignPetitionButton"
 import { GitHubEditButton } from "./GitHubEditButton"

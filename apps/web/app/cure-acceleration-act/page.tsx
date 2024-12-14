@@ -3,7 +3,7 @@ import { Metadata } from "next"
 import { DFDA_PETITION_ID } from "@/lib/constants"
 import { getMarkdownContent } from "@/lib/content/getMarkdownContent"
 import { getUserId } from "@/lib/getUserId"
-import { checkPetitionSignature } from "@/app/petitions/petitionActions"
+import { checkPetitionSignature } from "@/app/petitionActions"
 
 import { DFDAPetitionButtons } from "./components/DFDAPetitionButtons"
 import { FloatingPetitionButton } from "./components/FloatingPetitionButton"
