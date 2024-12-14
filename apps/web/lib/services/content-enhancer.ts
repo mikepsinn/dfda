@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { generateObject } from 'ai';
-import { getModel } from '@/lib/utils/modelUtils';
+import { getModelByName } from '@/lib/utils/modelUtils';
 
 export enum BlockType {
   AppendText = 'append-text',
@@ -48,7 +48,7 @@ export class ContentEnhancer {
 
   async analyzeContent(content: string, title?: string): Promise<ContentBlock[]> {
     const analysis = await generateObject({
-      model: getModel(),
+      model: getModelByName(),
       schema: ContentBlockSchema,
       prompt: `Think about how to convert the content provided belowinto an engaging article.  
       Then think about where your new article could use hyperlinks to sources, images from the web, or AI generated images. 

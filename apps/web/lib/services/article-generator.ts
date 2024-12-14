@@ -1,7 +1,7 @@
 import { FileService } from './file-service'
 import { generateObject } from 'ai'
 import { ArticleMetadataSchema } from '../schemas/article'
-import { getModel } from '@/lib/utils/modelUtils'
+import { getModelByName } from '@/lib/utils/modelUtils'
 import { z } from 'zod'
 import { MarkdownEnhancer } from '../content/markdownEnhancer'
 
@@ -42,7 +42,7 @@ export class ArticleGenerator {
     })
 
     const result = await generateObject({
-      model: getModel(),
+      model: getModelByName(),
       schema: ArticleContentSchema,
       prompt: `Write a comprehensive article about "${topic}".
 

@@ -38,7 +38,7 @@ export type ModelName = 'claude-3-5-sonnet-20240620' | 'claude-3-opus-20240229' 
     'gemini-1.5-flash-latest' | 'gemini-1.5-flash' | 'gemini-1.5-pro-latest' | 'gemini-1.5-pro' | 'gemini-1.0-pro';
 
 
-export function getModel(modelName: ModelName = DEFAULT_MODEL_NAME): LanguageModelV1 {
+export function getModelByName(modelName: ModelName = DEFAULT_MODEL_NAME): LanguageModelV1 {
   console.log(`🤖 Using AI model: ${modelName}`);
   
   if (modelName.includes("claude")) {

@@ -183,7 +183,14 @@ export async function getConditionTreatmentMetaAnalysis(
     if (article) {
       return article
     }
-    return writeArticle(topic, "test-user")
+
+    // Create new article with progress events
+    return writeArticle(topic, "test-user", {
+      format: "article",
+      purpose: "medical-analysis",
+      audience: "medical-professionals",
+      categoryName: "Medical Research"
+    })
   } catch (error) {
     console.error("Failed to generate meta-analysis:", error)
     throw new Error("Failed to generate meta-analysis. Please try again later.")

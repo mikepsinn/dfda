@@ -2,7 +2,7 @@ import { GlobalSolution, TaskStatus } from '@prisma/client';
 import { generateObject } from 'ai';
 import {z, ZodSchema} from 'zod';
 import { prisma } from '@/lib/db';
-import {getModel} from "@/lib/utils/modelUtils";
+import {getModelByName} from "@/lib/utils/modelUtils";
 
 const TaskSchema: ZodSchema = z.object({
   name: z.string().describe('Unique, long, descriptive name for the task specific to its goal to avoid duplication with similar tasks for different goals.'),
@@ -94,7 +94,7 @@ class GlobalSolutionDecomposerAgent {
     `;
 
     const result = await generateObject({
-      model: getModel(),
+      model: getModelByName(),
       schema: TaskHierarchySchema,
       prompt,
     });
@@ -195,7 +195,7 @@ class GlobalSolutionDecomposerAgent {
     `;
 
     const result = await generateObject({
-      model: getModel(),
+      model: getModelByName(),
       schema: TaskSchema,
       prompt,
     });
@@ -229,7 +229,7 @@ Important Notes:
     console.log(prompt);
     const result = await generateObject({
       //model: openai('gpt-4o'),
-      model: getModel(),
+      model: getModelByName(),
       schema: z.object({
         tasks: z.array(TaskSchema).optional().describe('Array of tasks that must be completed to achieve the goal'),
       }),

@@ -2,7 +2,7 @@ import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import { CoreMessage, streamObject } from 'ai'
 import { PartialRelated, relatedSchema } from '@/lib/schema/related'
 import SearchRelated from '@/app/search/components/search-related'
-import { getModel } from '../utils/index'
+import { getModelByEnv } from '../utils/index'
 
 export async function querySuggestor(
   uiStream: ReturnType<typeof createStreamableUI>,
@@ -20,7 +20,7 @@ export async function querySuggestor(
 
   let finalRelatedQueries: PartialRelated = {}
   await streamObject({
-    model: getModel(),
+    model: getModelByEnv(),
     system: `As a professional web researcher, your task is to generate a set of three queries that explore the subject matter more deeply, building upon the initial query and the information uncovered in its search results.
 
     For instance, if the original query was "Starship's third test flight key milestones", your output should follow this format:

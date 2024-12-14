@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 import * as pdf from 'pdf-parse';
 import { generateObject } from "ai";
 import { z } from "zod";
-import { getModel } from "@/lib/utils/modelUtils";
+import { getModelByName } from "@/lib/utils/modelUtils";
 
 const WordPressPostSchema = z.object({
   title: z.string().describe("The title of the post"),
@@ -136,7 +136,7 @@ export class PDFProcessor {
   }
 
   private async generateWordPressPost(pdfContent: string, pdfUrl: string): Promise<WordPressPost> {
-    const model: LanguageModelV1 = getModel();
+    const model: LanguageModelV1 = getModelByName();
     const originalUrls = this.extractUrls(pdfContent);
     
     const prompt = `

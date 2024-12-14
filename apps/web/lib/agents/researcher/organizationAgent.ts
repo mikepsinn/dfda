@@ -5,7 +5,7 @@ import {z} from "zod";
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 import {findOrCreateArticleByPromptedTopic, WriteArticleOptions} from "@/lib/agents/researcher/researcher";
-import {getModel} from "@/lib/utils/modelUtils";
+import {getModelByName} from "@/lib/utils/modelUtils";
 import {normalizeUrl} from "@/lib/utils/urlUtils";
 
 const OrganizationSchema = z.object({
@@ -92,7 +92,7 @@ export async function generateOrganizationFromUrlBySearch(
     })
 
     // Step 2: Use the generated article to extract organization information
-    const model = getModel(writeArticleOptions.modelName)
+    const model = getModelByName(writeArticleOptions.modelName)
 
     const prompt = `
     Based on the following article about an organization, 
@@ -206,7 +206,7 @@ async function generateAndSaveOrganization(
 export async function generateOrganizationFromUrl(
     url: string
 ): Promise<Organization> {
-    let model = getModel("gpt-4o")
+    let model = getModelByName("gpt-4o")
 
     // const perplexity = createOpenAI({
     //   name: 'perplexity',

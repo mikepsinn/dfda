@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { generateObject } from "ai";
-import { getModel } from "@/lib/utils/modelUtils";
+import { getModelByName } from "@/lib/utils/modelUtils";
 
 const SearchQueriesSchema = z.object({
     queries: z.array(z.string())
@@ -18,7 +18,7 @@ export async function generateSearchQueries(topic: string, n: number): Promise<s
         Each query should be optimized for finding high-quality, relevant information.`;
 
     const result = await generateObject({
-        model: getModel(),
+        model: getModelByName(),
         schema: SearchQueriesSchema,
         prompt: userPrompt,
     });

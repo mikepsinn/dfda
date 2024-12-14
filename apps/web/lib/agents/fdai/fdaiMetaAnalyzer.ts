@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { generateObject } from "ai";
 import Exa from 'exa-js';
-import {getModel} from "@/lib/utils/modelUtils";
+import {getModelByName} from "@/lib/utils/modelUtils";
 import { generateMetaAnalysisQuery } from '@/lib/meta-analysis/metaAnalysisQueries';
 
 const exa = new Exa(process.env.EXA_API_KEY);
@@ -113,7 +113,7 @@ export async function doMetaAnalysis(drugName: string, conditionName: string): P
   ${webResultsText}`;
 
   //const model = getModel("gemini-1.5-flash")
-  const model = getModel()
+  const model = getModelByName()
 
   const result = await generateObject({
     model,

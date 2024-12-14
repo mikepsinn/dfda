@@ -5,10 +5,20 @@ import { RegularSearchOptions, SearchResult } from "exa-js";
 import { z } from "zod";
 import { getSearchResults, getSearchResultsByUrl } from "@/lib/agents/researcher/getSearchResults";
 import { generateSearchQueries } from "@/lib/agents/researcher/searchQueryGenerator";
-import { DEFAULT_MODEL_NAME, getModel, ModelName } from "@/lib/utils/modelUtils";
+import { DEFAULT_MODEL_NAME, getModelByName, ModelName } from "@/lib/utils/modelUtils";
 import { slugify } from "@/lib/utils/slugify";
 import { MODEL_PRICING } from "@/lib/constants/llmModelPricing";
+import { EventEmitter } from 'events'
+
+// Initialize PrismaClient
 const prisma = new PrismaClient()
+
+export const researchEvents = new EventEmitter()
+
+export type ResearchStep = {
+  step: string
+  progress: number
+}
 
 const GeneratedReportSchema = z.object({
   title: z.string().describe("The title of the report"),
@@ -118,6 +128,11 @@ export async function writeArticle(
   userId: string,
   options: WriteArticleOptions = {}
 ): Promise<ArticleWithRelations> {
+  researchEvents.emit('research-progress', {
+    step: 'Initializing research process',
+    progress: 0
+  })
+
   const {
     numberOfSearchQueryVariations = 1,
     numberOfWebResultsToInclude = 10,
@@ -148,6 +163,11 @@ export async function writeArticle(
 • Format: ${format}
 • Sources: ${numberOfWebResultsToInclude}`)
 
+  researchEvents.emit('research-progress', {
+    step: 'Gathering information from reliable sources',
+    progress: 20
+  })
+
   let searchResults: SearchResult[]
   if (isUrl(topic)) {
     searchResults = await getSearchResultsByUrl(
@@ -164,7 +184,12 @@ export async function writeArticle(
 
   console.log("Synthesizing report...")
 
-  const model: LanguageModelV1 = getModel(options.modelName)
+  researchEvents.emit('research-progress', {
+    step: 'Analyzing and synthesizing information',
+    progress: 40
+  })
+
+  const model: LanguageModelV1 = getModelByName(options.modelName)
 
   let inputData = searchResults
     .map(
@@ -215,6 +240,11 @@ export async function writeArticle(
   `
 
   const startTime = Date.now()
+
+  researchEvents.emit('research-progress', {
+    step: 'Writing comprehensive analysis',
+    progress: 60
+  })
 
   const result = await generateObject({
     model: model,
@@ -391,6 +421,16 @@ export async function writeArticle(
 • ID: ${savedArticle.id}
 • Slug: ${savedArticle.slug}
 • Status: ${savedArticle.status}`)
+
+  researchEvents.emit('research-progress', {
+    step: 'Saving and finalizing report',
+    progress: 80
+  })
+
+  researchEvents.emit('research-progress', {
+    step: 'Research complete',
+    progress: 100
+  })
 
   return savedArticle
 }

@@ -2,7 +2,7 @@ import { SearchResults, SearchResultImage } from '@/lib/types/index'
 import { generateObject } from "ai"
 import { z } from "zod"
 import { LanguageModelV1 } from "@ai-sdk/provider"
-import { getModel } from "@/lib/utils/modelUtils"
+import { getModelByName } from "@/lib/utils/modelUtils"
 
 export interface ArticleOptions {
   topic: string
@@ -55,7 +55,7 @@ export class ArticleGenerator {
   private model: LanguageModelV1
 
   constructor() {
-    this.model = getModel() // Use default model or allow passing model name
+    this.model = getModelByName() // Use default model or allow passing model name
   }
 
   private processImages(images: Array<string | SearchResultImage>): ArticleImage[] {

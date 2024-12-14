@@ -1,7 +1,7 @@
 import { TavilyClient } from '../clients/tavily';
 import { z } from 'zod';
 import { generateObject } from 'ai';
-import { getModel } from '@/lib/utils/modelUtils';
+import { getModelByName } from '@/lib/utils/modelUtils';
 import { generateFeaturedImagePngBuffer, generateAndUploadFeaturedImageJpg } from '../imageGenerator';
 import path from 'path';
 import crypto from 'crypto';
@@ -42,7 +42,7 @@ export class ImageService {
     try {
       // Validate the image is relevant using LLM
       const validation = await generateObject({
-        model: getModel(),
+        model: getModelByName(),
         schema: ImageValidationSchema,
         prompt: `Evaluate this image for use in an article:
 

@@ -1,7 +1,7 @@
 import { createStreamableUI, createStreamableValue } from 'ai/rsc'
 import { CoreMessage, generateText, streamText } from 'ai'
 import { getTools } from './tools'
-import { getModel } from '../utils/index'
+import { getModelByEnv } from '@/lib/utils'
 import { AnswerSection } from '@/app/search/components/answer-section'
 
 const SYSTEM_PROMPT = `As a professional search expert, you possess the ability to search for any information on the web.
@@ -20,7 +20,7 @@ export async function researcher(
 
     const currentDate = new Date().toLocaleString()
     const result = await streamText({
-      model: getModel(),
+      model: getModelByEnv(),
       system: `${SYSTEM_PROMPT} Current date and time: ${currentDate}`,
       messages: messages,
       tools: getTools({
@@ -70,7 +70,7 @@ export async function researcherWithOllama(
 
     const currentDate = new Date().toLocaleString()
     const result = await generateText({
-      model: getModel(),
+      model: getModelByEnv(),
       system: `${SYSTEM_PROMPT} Current date and time: ${currentDate}`,
       messages: messages,
       tools: getTools({
