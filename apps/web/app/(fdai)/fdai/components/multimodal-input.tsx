@@ -111,7 +111,7 @@ function PureMultimodalInput({
   const [uploadQueue, setUploadQueue] = useState<Array<string>>([]);
 
   const submitForm = useCallback(() => {
-    window.history.replaceState({}, '', `/chat/${chatId}`);
+    window.history.replaceState({}, '', `/fdai/chat/${chatId}`);
 
     handleSubmit(undefined, {
       experimental_attachments: attachments,
@@ -137,7 +137,7 @@ function PureMultimodalInput({
     formData.append('file', file);
 
     try {
-      const response = await fetch('/api/files/upload', {
+      const response = await fetch('/fdai/api/files/upload', {
         method: 'POST',
         body: formData,
       });

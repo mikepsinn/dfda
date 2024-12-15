@@ -157,7 +157,7 @@ export function SidebarHistory({ user }: { user: User | undefined }) {
     data: history,
     isLoading,
     mutate,
-  } = useSWR<Array<Chat>>(user ? '/api/history' : null, fetcher, {
+  } = useSWR<Array<Chat>>(user ? '/fdai/api/history' : null, fetcher, {
     fallbackData: [],
   });
 

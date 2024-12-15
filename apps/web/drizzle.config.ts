@@ -6,8 +6,8 @@ config({
 });
 
 export default defineConfig({
-  schema: './app/fdai/lib/db/schema.ts',
-  out: './app/fdai/lib/db/migrations',
+  schema: './app/(fdai)/fdai/lib/db/schema.ts',
+  out: './app/(fdai)/fdai/lib/db/migrations',
   dialect: 'postgresql',
   dbCredentials: {
     // biome-ignore lint: Forbidden non-null assertion.

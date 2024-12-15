@@ -35,7 +35,14 @@
     "compress-images": "node scripts/compressImages.js",
     "clean-images": "node scripts/cleanUnusedImages.js",
     "check-unused": "depcheck",
-    "find-unused": "ts-node scripts/find-unused.ts"
+    "find-unused": "ts-node scripts/find-unused.ts",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "npx tsx app/(fdai)/fdai/lib/db/migrate.ts",
+    "drizzle:studio": "drizzle-kit studio",
+    "drizzle:push": "drizzle-kit push",
+    "drizzle:pull": "drizzle-kit pull",
+    "drizzle:check": "drizzle-kit check",
+    "drizzle:up": "drizzle-kit up"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
