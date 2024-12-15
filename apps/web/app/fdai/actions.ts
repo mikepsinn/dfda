@@ -1,47 +1,54 @@
-'use server'
+'use server';
 
-import { getModelByName } from '@/lib/utils/modelUtils'
-import { text2measurements } from '@/lib/text2measurements'
-import { StreamingTextResponse, OpenAIStream } from 'ai'
+import { type CoreUserMessage, generateText } from 'ai';
+import { cookies } from 'next/headers';
 
-export async function chatAction(prevState: any, formData: FormData) {
-  const messages = JSON.parse(formData.get('messages') as string)
-  const imageUrl = formData.get('imageUrl')
-  const model = getModelByName('gpt-4')
+import { customModel } from '@/app/fdai/lib/ai';
+import {
+  deleteMessagesByChatIdAfterTimestamp,
+  getMessageById,
+  updateChatVisiblityById,
+} from '@/app/fdai/lib/db/queries';
+import { VisibilityType } from '@/app/fdai/components/visibility-selector';
 
-  const prompt = `You are a helpful health assistant that helps users track their diet, treatments, and symptoms. 
-  Ask follow-up questions to gather more details about timing, dosage, and intensity of symptoms.
-  
-  Current conversation:
-  ${messages.map((m: any) => `${m.role}: ${m.content}`).join('\n')}
-  
-  ${imageUrl ? 'The user has also shared an image that may contain relevant health information.' : ''}
-  `
+export async function saveModelId(model: string) {
+  const cookieStore = await cookies();
+  cookieStore.set('model-id', model);
+}
 
-  const response = await model.chat.completions.create({
-    model: 'gpt-4-vision-preview',
-    stream: true,
-    messages: [
-      ...messages,
-      {
-        role: 'system',
-        content: prompt
-      },
-      ...(imageUrl ? [{
-        role: 'user',
-        content: [
-          { type: 'text', text: messages[messages.length - 1].content },
-          { type: 'image_url', image_url: imageUrl }
-        ]
-      }] : [])
-    ]
-  })
+export async function generateTitleFromUserMessage({
+  message,
+}: {
+  message: CoreUserMessage;
+}) {
+  const { text: title } = await generateText({
+    model: customModel('gpt-4o-mini'),
+    system: `\n
+    - you will generate a short title based on the first message a user begins a conversation with
+    - ensure it is not more than 80 characters long
+    - the title should be a summary of the user's message
+    - do not use quotes or colons`,
+    prompt: JSON.stringify(message),
+  });
 
-  // Process measurements from the response
-  const currentUtcDateTime = new Date().toISOString()
-  const timeZoneOffset = new Date().getTimezoneOffset()
-  await text2measurements(messages[messages.length - 1].content, currentUtcDateTime, timeZoneOffset)
+  return title;
+}
 
-  const stream = OpenAIStream(response)
-  return new StreamingTextResponse(stream)
-} 
+export async function deleteTrailingMessages({ id }: { id: string }) {
+  const [message] = await getMessageById({ id });
+
+  await deleteMessagesByChatIdAfterTimestamp({
+    chatId: message.chatId,
+    timestamp: message.createdAt,
+  });
+}
+
+export async function updateChatVisibility({
+  chatId,
+  visibility,
+}: {
+  chatId: string;
+  visibility: VisibilityType;
+}) {
+  await updateChatVisiblityById({ chatId, visibility });
+}

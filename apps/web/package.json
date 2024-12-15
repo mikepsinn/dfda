@@ -230,7 +230,27 @@
     "yt-transcript": "^0.0.2",
     "ytdl-core": "^4.11.5",
     "zod": "^3.22.4",
-    "zustand": "^4.3.9"
+    "zustand": "^4.3.9",
+    "@radix-ui/react-visually-hidden": "^1.1.0",
+    "@vercel/postgres": "^0.10.0",
+    "bcrypt-ts": "^5.0.2",
+    "diff-match-patch": "^1.0.5",
+    "drizzle-orm": "^0.34.0",
+    "fast-deep-equal": "^3.1.3",
+    "geist": "^1.3.1",
+    "orderedmap": "^2.1.1",
+    "postgres": "^3.4.4",
+    "prosemirror-example-setup": "^1.2.3",
+    "prosemirror-inputrules": "^1.4.0",
+    "prosemirror-markdown": "^1.13.1",
+    "prosemirror-model": "^1.23.0",
+    "prosemirror-schema-basic": "^1.2.3",
+    "prosemirror-schema-list": "^1.4.1",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.34.3",
+    "server-only": "^0.0.1",
+    "swr": "^2.2.5",
+    "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
@@ -282,7 +302,15 @@
     "ts-jest": "^29.1.4",
     "ts-node": "latest",
     "ts-prune": "^0.10.3",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "@biomejs/biome": "1.9.4",
+    "@types/d3-scale": "^4.0.8",
+    "@types/pdf-parse": "^1.1.4",
+    "drizzle-kit": "^0.25.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "tsx": "^4.19.1"
   },
   "trigger.dev": {
     "endpointId": "wishonia-RmKR"

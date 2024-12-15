@@ -1,14 +1,27 @@
-import { FdaiTalkingFace } from './components/FdaiTalkingFace'
-import { FdaiChat } from '@/app/fdai/components/FdaiChat'
+import { cookies } from 'next/headers';
 
-export default function FdaiPage() {
+import { Chat } from '@/app/fdai/components/chat';
+import { DEFAULT_MODEL_NAME, models } from '@/app/fdai/lib/ai/models';
+import { generateUUID } from '@/app/fdai/lib/utils';
+
+export default async function Page() {
+  const id = generateUUID();
+
+  const cookieStore = await cookies();
+  const modelIdFromCookie = cookieStore.get('model-id')?.value;
+
+  const selectedModelId =
+    models.find((model) => model.id === modelIdFromCookie)?.id ||
+    DEFAULT_MODEL_NAME;
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">FDAI Assistant</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <FdaiTalkingFace />
-        <FdaiChat />
-      </div>
-    </div>
-  )
-} 
+    <Chat
+      key={id}
+      id={id}
+      initialMessages={[]}
+      selectedModelId={selectedModelId}
+      selectedVisibilityType="private"
+      isReadonly={false}
+    />
+  );
+}

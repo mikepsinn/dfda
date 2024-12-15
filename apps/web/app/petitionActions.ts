@@ -3,11 +3,10 @@
 import { revalidatePath } from "next/cache"
 import { headers } from "next/headers"
 import { generateObject } from "ai"
-import { getServerSession } from "next-auth/next"
 import { z } from "zod"
 
+import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/lib/auth"
-import { emailer } from "@/lib/email/emailer"
 import { uploadImageToVercel } from "@/lib/imageUploader"
 import { logger } from "@/lib/logger"
 import { prisma } from "@/lib/prisma"
