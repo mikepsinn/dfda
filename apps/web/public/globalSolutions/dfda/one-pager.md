@@ -41,10 +41,7 @@
 🧑‍🔬 **Empowering Patients, Scientists, and Developers:**  
 - **🔍 Search and Compare Treatments:**  
    - Browse the **positive** ✅ and **negative** ❌ effects of foods and drugs.  
-   - See **ranked lists** for specific conditions 📋.  
-
-- **📊 Personalized Rankings:**  
-   - Enter your condition 🤕 to get FDAi’s tailored treatment recommendations.  
+   - See **ranked lists** of the most effective treatments for any condition!  
    - Compare options based on **safety**, **efficacy**, **cost**, and **real-world evidence** 🛠️.  
 
 - **⚡ Instant Trial Enrollment:**  
@@ -63,18 +60,15 @@
 
 ### 🌀 **How It Works**  
 
-- **For Scientists:** 🧪  
-   - Design trials using pre-built templates ✏️.  
-   - Recruit participants globally 🌍 through decentralized networks.  
-   - Collect and analyze data automatically 🖥️.  
-
 - **For Patients:** ❤️  
    - Search for treatments or conditions 🔍.  
-   - Get personalized recommendations via FDAi 🤖.  
+   - See the most effective treatments for any condition!   
    - Join trials, report outcomes, and contribute to research 📝.  
 
-- **For Developers:** 🚀  
-   - Create cures without regulatory fees 💰🚫.  
+- **For Scientists and Drug Developers:** 🚀  
+   - Instantly create trials and recruit participants globally 🌍  
+   - Collect and analyze data automatically 🖥️.  
+   - No regulatory fees! 💰🚫.  
    - Test treatments in decentralized trials with no delays 🕒.  
    - Receive real-world effectiveness data automatically 📊.  
 
