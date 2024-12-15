@@ -134,11 +134,11 @@ A key component of Clinipedia is [**Outcome Labels**](apps/web/docs/components/o
 
 <p align="center">
 
-<img src="docs/images/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
+<img src="apps/web/docs/images/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
 &nbsp
 </p>
 <p align="center">
-  <img src="docs/images/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
+  <img src="apps/web/docs/images/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
 </p>
 
 Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medication, and anything else from dozens
@@ -191,19 +191,7 @@ It then pairs every combination of variables and identifies likely causal relati
 
 
 
-# Turborepo starter
-
-This is an official starter turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-prisma
-```
-
-## What's inside?
+# Development
 
 This turborepo includes the following packages/apps:
 
