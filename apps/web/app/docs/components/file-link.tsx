@@ -48,7 +48,7 @@ export function FileLink({ file, searchQuery, title }: FileLinkProps): JSX.Eleme
 
   return (
     <Link
-      href={`/dfda/docs/${file.relativePath.replace('.md', '')}`}
+      href={`/docs/${file.relativePath.replace('.md', '')}`}
       className="group block rounded-none border-2 border-black bg-white p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
     >
       <div className="flex items-center gap-3">

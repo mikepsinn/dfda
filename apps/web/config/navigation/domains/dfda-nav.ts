@@ -4,13 +4,13 @@ import { commonLinks } from "../shared-links"
 export const dfdaLinks = {
   dfda: {
     title: "dFDA",
-    href: "/dfda",
+    href: "/",
     icon: "home",
     tooltip: "The Decentralized Food and Drug Administration",
   },
   digitalTwinSafe: {
     title: "Digital Twin Safe",
-    href: "/dfda/safe/redirect",
+    href: "/safe/redirect",
     icon: "safe",
     tooltip: "Import, record and analyze your medical data",
   },
@@ -28,20 +28,20 @@ export const dfdaLinks = {
   },
   petition: {
     title: "Cure Acceleration Act",
-    href: "/dfda/cure-acceleration-act",
+    href: "/cure-acceleration-act",
     icon: "petition",
     tooltip: "Help us transform healthcare by signing the Cure Acceleration Act",
   },
   healthSavingsSharing: {
     title: "50/50 Health Savings Sharing Program",
-    href: "/dfda/health-savings-sharing",
+    href: "/health-savings-sharing",
     icon: "savings",
     tooltip:
       "Incentivizing Cures With 50% of Long Term Healthcare Savings from Curative or Preventative Treatments",
   },
   dfdaDocs: {
     title: "Docs",
-    href: "/dfda/docs",
+    href: "/docs",
     icon: "book",
     tooltip: "Documentation for the Decentralized FDA",
   },
