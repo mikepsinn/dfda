@@ -7,6 +7,24 @@ router = "app"
 style = "tailwind"
 typescript = true
 
+# AI Object Generation Example
+
+import { getModel } from '@/lib/utils/modelUtils';
+import { z } from 'zod'
+import { generateObject } from 'ai'
+const TestSchema = z.object({
+    name: z.string().describe("A name for the item"),
+    description: z.string().describe("A detailed description"),
+    tags: z.array(z.string()).describe("Related tags"),
+    rating: z.number().min(0).max(5).describe("Rating from 0-5")
+});
+const result = await generateObject({
+    model: getModel(),
+    schema: TestSchema,
+    prompt: `Generate information about a random product.`,
+});
+
+
 # Define the project's architecture and conventions
 [architecture]
 server_components = [

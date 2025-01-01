@@ -30,7 +30,8 @@ describe("Health Economic Simulation Tests", () => {
                                 unit: "percent",
                                 confidence: 0.8,
                                 source: "Clinical trials of early intervention",
-                                timeframe: "annual"
+                                timeframe: "annual",
+                                populationAffected: "Adults 65+ with early-stage Alzheimer's"
                             }
                         }
                     },
@@ -42,7 +43,8 @@ describe("Health Economic Simulation Tests", () => {
                                 unit: "percent",
                                 confidence: 0.75,
                                 source: "Healthcare utilization studies",
-                                timeframe: "annual"
+                                timeframe: "annual",
+                                populationAffected: "Alzheimer's patients requiring hospitalization"
                             },
                             lengthOfStay: {
                                 name: "Average Length of Stay Reduction",
@@ -50,7 +52,8 @@ describe("Health Economic Simulation Tests", () => {
                                 unit: "days",
                                 confidence: 0.8,
                                 source: "Hospital records analysis",
-                                timeframe: "per admission"
+                                timeframe: "per admission",
+                                populationAffected: "Hospitalized Alzheimer's patients"
                             }
                         },
                         medicationUse: {
@@ -60,7 +63,8 @@ describe("Health Economic Simulation Tests", () => {
                                 unit: "percent",
                                 confidence: 0.9,
                                 source: "Medication adherence studies",
-                                timeframe: "annual"
+                                timeframe: "annual",
+                                populationAffected: "Alzheimer's patients on medication regimens"
                             }
                         }
                     },
@@ -72,7 +76,8 @@ describe("Health Economic Simulation Tests", () => {
                                 unit: "percent",
                                 confidence: 0.8,
                                 source: "Population health studies",
-                                timeframe: "annual"
+                                timeframe: "annual",
+                                populationAffected: "US population at risk for Alzheimer's"
                             }
                         }
                     }
