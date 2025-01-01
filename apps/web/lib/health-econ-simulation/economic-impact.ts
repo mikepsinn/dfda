@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { InterventionEffects } from "./intervention-effects";
+import { InterventionEffects, InterventionParameter } from "./intervention-effects";
 import { ParameterResearchEngine } from "./parameter-research";
 import { generateObject } from "ai";
 import { getModelByName, ModelName } from "@/lib/utils/modelUtils";
@@ -378,74 +378,202 @@ export class EconomicImpactCalculator {
 
   // Helper calculation methods
   private calculateDiseaseCostSavings(
-    progression: any,
+    progression: {
+      diseaseName: string;
+      progressionChangePercent: InterventionParameter;
+      severityReduction?: InterventionParameter;
+      hospitalizationRate?: InterventionParameter;
+      readmissionRate?: InterventionParameter;
+    },
     multipliers: EconomicMultipliers["disease"]
   ): number {
-    // Implementation of disease cost calculations
-    return 0; // Placeholder
+    const baselineCost = multipliers.chronicDiseaseAnnualCost;
+    const progressionReduction = progression.progressionChangePercent.value / 100;
+    
+    // Calculate direct cost reduction from slowing progression
+    let costSavings = baselineCost * progressionReduction;
+
+    // Add savings from severity reduction if available
+    if (progression.severityReduction) {
+      const severityEffect = progression.severityReduction.value / 100;
+      costSavings += baselineCost * severityEffect * multipliers.disabilityCostMultiplier;
+    }
+
+    // Add savings from reduced hospitalizations
+    if (progression.hospitalizationRate) {
+      const hospitalizationReduction = progression.hospitalizationRate.value / 100;
+      costSavings += multipliers.acuteDiseaseEpisodeCost * hospitalizationReduction;
+    }
+
+    // Add savings from reduced readmissions
+    if (progression.readmissionRate) {
+      const readmissionReduction = progression.readmissionRate.value / 100;
+      costSavings += multipliers.acuteDiseaseEpisodeCost * readmissionReduction * 0.5; // Readmissions typically cost ~50% of initial admission
+    }
+
+    return costSavings;
   }
 
   private calculateMortalityRelatedSavings(
-    mortality: any,
+    mortality: {
+      lifespanChangePercent?: InterventionParameter;
+      mortalityRiskReduction?: InterventionParameter;
+      qualityAdjustedLifeYears?: InterventionParameter;
+      disabilityAdjustedLifeYears?: InterventionParameter;
+    },
     multipliers: EconomicMultipliers["healthcare"]
   ): number {
-    // Implementation of mortality-related savings
-    return 0; // Placeholder
+    let savings = 0;
+
+    // Calculate savings from extended lifespan
+    if (mortality.lifespanChangePercent) {
+      const lifespanIncrease = mortality.lifespanChangePercent.value / 100;
+      savings += multipliers.annualCostPerPerson * lifespanIncrease * -1; // Negative because extended life means more healthcare costs
+    }
+
+    // Calculate savings from reduced mortality risk
+    if (mortality.mortalityRiskReduction) {
+      const riskReduction = mortality.mortalityRiskReduction.value / 100;
+      savings += multipliers.annualCostPerPerson * riskReduction * 5; // Assume 5 years of costs saved per prevented death
+    }
+
+    // Add QALY-based savings
+    if (mortality.qualityAdjustedLifeYears) {
+      const qalyGained = mortality.qualityAdjustedLifeYears.value;
+      savings += multipliers.annualCostPerPerson * qalyGained * 0.2; // Assume 20% of annual costs saved per QALY gained
+    }
+
+    return savings;
   }
 
   private calculateHospitalizationSavings(
-    hospitalizations: any,
+    hospitalizations: {
+      admissionRate?: InterventionParameter;
+      lengthOfStay?: InterventionParameter;
+      icuUtilization?: InterventionParameter;
+      readmissionRate?: InterventionParameter;
+    },
     multipliers: EconomicMultipliers["healthcare"]
   ): number {
-    // Implementation of hospitalization savings
-    return 0; // Placeholder
+    const averageHospitalizationCost = multipliers.annualCostPerPerson * 0.3; // Assume 30% of annual costs are hospitalization-related
+    const averageIcuCost = averageHospitalizationCost * 3; // ICU costs typically 3x regular hospitalization
+    let savings = 0;
+
+    // Calculate savings from reduced admissions
+    if (hospitalizations.admissionRate) {
+      const admissionReduction = hospitalizations.admissionRate.value / 100;
+      savings += averageHospitalizationCost * admissionReduction;
+    }
+
+    // Add savings from reduced length of stay
+    if (hospitalizations.lengthOfStay) {
+      const losReduction = hospitalizations.lengthOfStay.value;
+      savings += (averageHospitalizationCost / 5) * losReduction; // Assume 5-day average stay
+    }
+
+    // Add savings from reduced ICU utilization
+    if (hospitalizations.icuUtilization) {
+      const icuReduction = hospitalizations.icuUtilization.value / 100;
+      savings += averageIcuCost * icuReduction;
+    }
+
+    return savings;
   }
 
   private calculateMedicationSavings(
-    medication: any,
+    medication: {
+      prescriptionChanges?: InterventionParameter;
+      adherenceRate?: InterventionParameter;
+      adverseEvents?: InterventionParameter;
+    },
     multipliers: EconomicMultipliers["healthcare"]
   ): number {
-    // Implementation of medication savings
-    return 0; // Placeholder
+    const annualMedicationCost = multipliers.annualCostPerPerson * 0.15; // Assume 15% of healthcare costs are medication-related
+    let savings = 0;
+
+    // Calculate savings from prescription changes
+    if (medication.prescriptionChanges) {
+      const prescriptionChange = medication.prescriptionChanges.value / 100;
+      savings += annualMedicationCost * prescriptionChange;
+    }
+
+    // Add savings from improved adherence
+    if (medication.adherenceRate) {
+      const adherenceImprovement = medication.adherenceRate.value / 100;
+      savings += annualMedicationCost * adherenceImprovement * 0.25; // Better adherence reduces complications
+    }
+
+    // Add savings from reduced adverse events
+    if (medication.adverseEvents) {
+      const adverseEventReduction = medication.adverseEvents.value / 100;
+      savings += annualMedicationCost * adverseEventReduction * 0.4; // Adverse events typically increase costs by 40%
+    }
+
+    return savings;
   }
 
   private calculateMobilityProductivityGain(
-    mobility: any,
+    mobility: InterventionParameter,
     multipliers: EconomicMultipliers["productivity"]
   ): number {
-    // Implementation of mobility-related productivity gains
-    return 0; // Placeholder
+    const mobilityImprovement = mobility.value / 100;
+    const workingDaysAffected = multipliers.workdaysPerYear * mobilityImprovement;
+    
+    // Calculate productivity gain from improved mobility
+    return workingDaysAffected * multipliers.dailyProductivityValue;
   }
 
   private calculateIndependenceEffect(
-    independence: any,
+    independence: InterventionParameter,
     multipliers: EconomicMultipliers["productivity"]
   ): number {
-    // Implementation of independence effect on productivity
-    return 0; // Placeholder
+    const independenceImprovement = independence.value / 100;
+    
+    // Calculate increased workforce participation from improved independence
+    const additionalWorkDays = multipliers.workdaysPerYear * independenceImprovement;
+    return additionalWorkDays * multipliers.dailyProductivityValue * 0.5; // Assume 50% productivity of average worker
   }
 
   private calculateIQProductivityGain(
-    iq: any,
+    iq: InterventionParameter,
     multipliers: EconomicMultipliers["productivity"]
   ): number {
-    // Implementation of IQ-related productivity gains
-    return 0; // Placeholder
+    // Research shows each IQ point increases earnings by ~1-2%
+    const iqChange = iq.value;
+    const earningsIncrease = 0.015 * iqChange; // Use 1.5% per IQ point
+    
+    return multipliers.gdpPerCapita * earningsIncrease;
   }
 
   private calculateIQEducationEffect(
-    iq: any,
+    iq: InterventionParameter,
     multipliers: EconomicMultipliers
   ): number {
-    // Implementation of IQ effect on education
-    return 0; // Placeholder
+    // Research shows each IQ point:
+    // - Increases educational attainment
+    // - Reduces special education needs
+    // - Improves academic performance
+    const iqChange = iq.value;
+    const educationalBenefit = multipliers.productivity.gdpPerCapita * 0.01 * iqChange;
+    const specialEdSavings = multipliers.disease.disabilityCostMultiplier * 0.005 * iqChange;
+    
+    return educationalBenefit + specialEdSavings;
   }
 
   private calculateDisparitiesEffect(
-    disparities: any,
+    disparities: InterventionParameter,
     multipliers: EconomicMultipliers
   ): number {
-    // Implementation of health disparities effect
-    return 0; // Placeholder
+    const disparityReduction = disparities.value / 100;
+    
+    // Calculate savings from reduced health disparities:
+    // - Reduced emergency care utilization
+    // - Better preventive care access
+    // - Improved chronic disease management
+    const emergencyCareSavings = multipliers.healthcare.annualCostPerPerson * 0.1 * disparityReduction;
+    const preventiveCareSavings = multipliers.healthcare.annualCostPerPerson * 0.05 * disparityReduction;
+    const chronicCareSavings = multipliers.disease.chronicDiseaseAnnualCost * 0.15 * disparityReduction;
+    
+    return emergencyCareSavings + preventiveCareSavings + chronicCareSavings;
   }
 } 
