@@ -6,151 +6,151 @@ import { ParameterResearchEngine } from "./parameter-research";
 
 // Base schema for any intervention parameter
 export const InterventionParameterSchema = z.object({
-  name: z.string().describe("Name of the parameter being measured"),
-  value: z.number().describe("Magnitude of the change"),
-  unit: z.string().describe("Unit of measurement"),
-  confidence: z.number().describe("Confidence level in the estimate (0-1)"),
-  source: z.string().describe("Source of this parameter estimate"),
-  timeframe: z.string().optional().describe("Time period over which the effect occurs"),
-  populationAffected: z.string().optional().describe("Specific population segment affected"),
-});
+  name: z.string().describe("Name of the parameter being measured - should be specific and descriptive"),
+  value: z.number().describe("Quantitative magnitude of the change or effect"),
+  unit: z.string().describe("Standard unit of measurement for the parameter (e.g., percent, years, dollars)"),
+  confidence: z.number().describe("Statistical confidence level in the estimate, ranging from 0 to 1"),
+  source: z.string().describe("Citation or reference for the data source"),
+  timeframe: z.string().describe("Time period over which the effect occurs (e.g., annual, 5-year, per incident)"),
+  populationAffected: z.string().describe("Specific demographic or population segment experiencing the effect"),
+}).describe("Standard format for any measurable intervention parameter");
 
 export type InterventionParameter = z.infer<typeof InterventionParameterSchema>;
 
 // Physical Health Effects
 export const PhysicalHealthEffectSchema = z.object({
   bodyComposition: z.object({
-    muscleMassChange: InterventionParameterSchema.optional(),
-    fatMassChange: InterventionParameterSchema.optional(),
-    bmiChange: InterventionParameterSchema.optional(),
-    metabolicRate: InterventionParameterSchema.optional(),
-  }).optional(),
+    muscleMassChange: InterventionParameterSchema.describe("Change in lean muscle mass"),
+    fatMassChange: InterventionParameterSchema.describe("Change in body fat percentage or mass"),
+    bmiChange: InterventionParameterSchema.describe("Change in Body Mass Index"),
+    metabolicRate: InterventionParameterSchema.describe("Change in basal metabolic rate"),
+  }).describe("Changes in body composition and metabolism"),
   
   cardiovascular: z.object({
-    bloodPressureChange: InterventionParameterSchema.optional(),
-    cholesterolChange: InterventionParameterSchema.optional(),
-    heartDiseaseRisk: InterventionParameterSchema.optional(),
-    strokeRisk: InterventionParameterSchema.optional(),
-  }).optional(),
+    bloodPressureChange: InterventionParameterSchema.describe("Change in systolic/diastolic blood pressure"),
+    cholesterolChange: InterventionParameterSchema.describe("Change in cholesterol levels (LDL/HDL)"),
+    heartDiseaseRisk: InterventionParameterSchema.describe("Change in cardiovascular disease risk"),
+    strokeRisk: InterventionParameterSchema.describe("Change in stroke risk probability"),
+  }).describe("Cardiovascular health impacts"),
 
   metabolic: z.object({
-    diabetesRisk: InterventionParameterSchema.optional(),
-    insulinSensitivity: InterventionParameterSchema.optional(),
-    metabolicSyndromeRisk: InterventionParameterSchema.optional(),
-  }).optional(),
+    diabetesRisk: InterventionParameterSchema.describe("Change in type 2 diabetes risk"),
+    insulinSensitivity: InterventionParameterSchema.describe("Change in insulin response"),
+    metabolicSyndromeRisk: InterventionParameterSchema.describe("Change in metabolic syndrome risk"),
+  }).describe("Metabolic health impacts"),
   
   diseaseProgression: z.object({
-    diseaseName: z.string(),
-    progressionChangePercent: InterventionParameterSchema,
-    severityReduction: InterventionParameterSchema.optional(),
-    hospitalizationRate: InterventionParameterSchema.optional(),
-    readmissionRate: InterventionParameterSchema.optional(),
-  }).optional(),
+    diseaseName: z.string().describe("Name of the specific disease being tracked"),
+    progressionChangePercent: InterventionParameterSchema.describe("Rate of disease progression change"),
+    severityReduction: InterventionParameterSchema.describe("Reduction in disease severity"),
+    hospitalizationRate: InterventionParameterSchema.describe("Change in disease-related hospitalization rate"),
+    readmissionRate: InterventionParameterSchema.describe("Change in hospital readmission rate"),
+  }).describe("Disease progression metrics"),
   
   mortality: z.object({
-    lifespanChangePercent: InterventionParameterSchema.optional(),
-    mortalityRiskReduction: InterventionParameterSchema.optional(),
-    qualityAdjustedLifeYears: InterventionParameterSchema.optional(),
-    disabilityAdjustedLifeYears: InterventionParameterSchema.optional(),
-  }).optional(),
+    lifespanChangePercent: InterventionParameterSchema.describe("Percent change in life expectancy"),
+    mortalityRiskReduction: InterventionParameterSchema.describe("Reduction in mortality risk"),
+    qualityAdjustedLifeYears: InterventionParameterSchema.describe("QALYs gained from intervention"),
+    disabilityAdjustedLifeYears: InterventionParameterSchema.describe("DALYs averted by intervention"),
+  }).describe("Mortality and life expectancy impacts"),
 
   functionalStatus: z.object({
-    mobilityChange: InterventionParameterSchema.optional(),
-    strengthChange: InterventionParameterSchema.optional(),
-    balanceChange: InterventionParameterSchema.optional(),
-    adlIndependence: InterventionParameterSchema.optional(), // Activities of Daily Living
-  }).optional(),
-}).describe("Physical health impacts tracked by health agencies");
+    mobilityChange: InterventionParameterSchema.describe("Change in physical mobility"),
+    strengthChange: InterventionParameterSchema.describe("Change in muscular strength"),
+    balanceChange: InterventionParameterSchema.describe("Change in balance and stability"),
+    adlIndependence: InterventionParameterSchema.describe("Change in Activities of Daily Living independence"),
+  }).describe("Functional capacity and independence metrics"),
+}).describe("Comprehensive physical health impacts tracked by health agencies");
 
 // Cognitive and Mental Health Effects
 export const CognitiveEffectSchema = z.object({
   intelligence: z.object({
-    iqChange: InterventionParameterSchema.optional(),
-    cognitivePerformance: InterventionParameterSchema.optional(),
-    learningAbility: InterventionParameterSchema.optional(),
-    memoryFunction: InterventionParameterSchema.optional(),
-    executiveFunction: InterventionParameterSchema.optional(),
-  }).optional(),
+    iqChange: InterventionParameterSchema.describe("Change in Intelligence Quotient"),
+    cognitivePerformance: InterventionParameterSchema.describe("Change in cognitive test performance"),
+    learningAbility: InterventionParameterSchema.describe("Change in learning capacity"),
+    memoryFunction: InterventionParameterSchema.describe("Change in memory performance"),
+    executiveFunction: InterventionParameterSchema.describe("Change in executive function capacity"),
+  }).describe("Cognitive performance metrics"),
   
   mentalHealth: z.object({
-    depressionScore: InterventionParameterSchema.optional(),
-    anxietyLevel: InterventionParameterSchema.optional(),
-    stressLevel: InterventionParameterSchema.optional(),
-    qualityOfLife: InterventionParameterSchema.optional(),
-  }).optional(),
+    depressionScore: InterventionParameterSchema.describe("Change in depression assessment scores"),
+    anxietyLevel: InterventionParameterSchema.describe("Change in anxiety levels"),
+    stressLevel: InterventionParameterSchema.describe("Change in stress levels"),
+    qualityOfLife: InterventionParameterSchema.describe("Change in quality of life scores"),
+  }).describe("Mental health and wellbeing metrics"),
   
   neurodegeneration: z.object({
-    conditionName: z.string().optional(),
-    progressionSlowingPercent: InterventionParameterSchema.optional(),
-    symptomReduction: InterventionParameterSchema.optional(),
-    brainVolumeChange: InterventionParameterSchema.optional(),
-    cognitiveDeclineRate: InterventionParameterSchema.optional(),
-  }).optional(),
-}).describe("Cognitive and mental health impacts");
+    conditionName: z.string().describe("Name of the neurodegenerative condition"),
+    progressionSlowingPercent: InterventionParameterSchema.describe("Reduction in neurodegeneration rate"),
+    symptomReduction: InterventionParameterSchema.describe("Reduction in neurological symptoms"),
+    brainVolumeChange: InterventionParameterSchema.describe("Change in brain volume measurements"),
+    cognitiveDeclineRate: InterventionParameterSchema.describe("Change in cognitive decline rate"),
+  }).describe("Neurodegenerative disease impacts"),
+}).describe("Cognitive function and mental health impacts");
 
 // Healthcare Utilization Effects
 export const HealthcareUtilizationSchema = z.object({
   primaryCare: z.object({
-    visitFrequency: InterventionParameterSchema.optional(),
-    preventiveServices: InterventionParameterSchema.optional(),
-    screeningRates: InterventionParameterSchema.optional(),
-  }).optional(),
+    visitFrequency: InterventionParameterSchema.describe("Change in primary care visit frequency"),
+    preventiveServices: InterventionParameterSchema.describe("Change in preventive service utilization"),
+    screeningRates: InterventionParameterSchema.describe("Change in health screening rates"),
+  }).describe("Primary care utilization metrics"),
 
   hospitalizations: z.object({
-    admissionRate: InterventionParameterSchema.optional(),
-    lengthOfStay: InterventionParameterSchema.optional(),
-    icuUtilization: InterventionParameterSchema.optional(),
-    readmissionRate: InterventionParameterSchema.optional(),
-  }).optional(),
+    admissionRate: InterventionParameterSchema.describe("Change in hospital admission rates"),
+    lengthOfStay: InterventionParameterSchema.describe("Change in average length of stay"),
+    icuUtilization: InterventionParameterSchema.describe("Change in ICU utilization"),
+    readmissionRate: InterventionParameterSchema.describe("Change in hospital readmission rates"),
+  }).describe("Hospital utilization metrics"),
 
   medicationUse: z.object({
-    prescriptionChanges: InterventionParameterSchema.optional(),
-    adherenceRate: InterventionParameterSchema.optional(),
-    adverseEvents: InterventionParameterSchema.optional(),
-  }).optional(),
+    prescriptionChanges: InterventionParameterSchema.describe("Change in prescription medication use"),
+    adherenceRate: InterventionParameterSchema.describe("Change in medication adherence"),
+    adverseEvents: InterventionParameterSchema.describe("Change in medication adverse events"),
+  }).describe("Medication utilization metrics"),
 
   specialtyCare: z.object({
-    referralRate: InterventionParameterSchema.optional(),
-    specialistVisits: InterventionParameterSchema.optional(),
-    procedureRate: InterventionParameterSchema.optional(),
-  }).optional(),
+    referralRate: InterventionParameterSchema.describe("Change in specialty care referrals"),
+    specialistVisits: InterventionParameterSchema.describe("Change in specialist visit frequency"),
+    procedureRate: InterventionParameterSchema.describe("Change in medical procedure rates"),
+  }).describe("Specialty care utilization metrics"),
 }).describe("Healthcare system utilization impacts");
 
 // Public Health Effects
 export const PublicHealthEffectSchema = z.object({
   diseasePrevalence: z.object({
-    incidenceRate: InterventionParameterSchema.optional(),
-    prevalenceRate: InterventionParameterSchema.optional(),
-    riskReduction: InterventionParameterSchema.optional(),
-  }).optional(),
+    incidenceRate: InterventionParameterSchema.describe("Change in new case rates"),
+    prevalenceRate: InterventionParameterSchema.describe("Change in total case prevalence"),
+    riskReduction: InterventionParameterSchema.describe("Population-level risk reduction"),
+  }).describe("Disease prevalence metrics"),
 
   healthDisparities: z.object({
-    accessGap: InterventionParameterSchema.optional(),
-    outcomeDisparity: InterventionParameterSchema.optional(),
-    utilizationEquity: InterventionParameterSchema.optional(),
-  }).optional(),
+    accessGap: InterventionParameterSchema.describe("Change in healthcare access disparities"),
+    outcomeDisparity: InterventionParameterSchema.describe("Change in health outcome disparities"),
+    utilizationEquity: InterventionParameterSchema.describe("Change in care utilization equity"),
+  }).describe("Health equity metrics"),
 
   communityHealth: z.object({
-    communityWellness: InterventionParameterSchema.optional(),
-    socialDeterminants: InterventionParameterSchema.optional(),
-    environmentalHealth: InterventionParameterSchema.optional(),
-  }).optional(),
+    communityWellness: InterventionParameterSchema.describe("Change in community health scores"),
+    socialDeterminants: InterventionParameterSchema.describe("Impact on social health determinants"),
+    environmentalHealth: InterventionParameterSchema.describe("Impact on environmental health factors"),
+  }).describe("Community health metrics"),
 
   preventiveCare: z.object({
-    vaccinationRates: InterventionParameterSchema.optional(),
-    screeningRates: InterventionParameterSchema.optional(),
-    healthEducation: InterventionParameterSchema.optional(),
-  }).optional(),
+    vaccinationRates: InterventionParameterSchema.describe("Change in vaccination coverage"),
+    screeningRates: InterventionParameterSchema.describe("Change in health screening participation"),
+    healthEducation: InterventionParameterSchema.describe("Impact of health education programs"),
+  }).describe("Preventive care metrics"),
 }).describe("Population-level public health impacts");
 
 // Combined Effects Schema
 export const InterventionEffectsSchema = z.object({
-  physicalHealth: PhysicalHealthEffectSchema.optional(),
-  cognitiveHealth: CognitiveEffectSchema.optional(),
-  healthcareUtilization: HealthcareUtilizationSchema.optional(),
-  publicHealth: PublicHealthEffectSchema.optional(),
-  customEffects: z.array(InterventionParameterSchema).optional(),
-}).describe("Complete intervention effects profile with government health agency metrics");
+  physicalHealth: PhysicalHealthEffectSchema,
+  cognitiveHealth: CognitiveEffectSchema,
+  healthcareUtilization: HealthcareUtilizationSchema,
+  publicHealth: PublicHealthEffectSchema,
+  customEffects: z.array(InterventionParameterSchema).optional().describe("Additional custom parameters not covered by standard categories"),
+}).describe("Complete intervention effects profile with comprehensive health metrics");
 
 export type InterventionEffects = z.infer<typeof InterventionEffectsSchema>;
 
@@ -242,50 +242,14 @@ export class InterventionEffectsAnalyzer {
       
       Target schema:
       ${schema.toString()}
-
-      IMPORTANT: Each parameter value must be an object matching InterventionParameterSchema with:
-      - name: string
-      - value: number
-      - unit: string
-      - confidence: number (0-1)
-      - source: string
-      - timeframe: string (optional)
-      - populationAffected: string (optional)
-
-      Example format:
-      {
-        "mortality": {
-          "qualityAdjustedLifeYears": {
-            "name": "QALY Impact",
-            "value": 0.75,
-            "unit": "QALYs",
-            "confidence": 0.8,
-            "source": "Health economic study",
-            "timeframe": "annual",
-            "populationAffected": "Early-stage Alzheimer's patients"
-          }
-        }
-      }
     `;
 
-    try {
-      const result = await generateObject({
-        model: this.model,
-        schema: schema,
-        prompt,
-      });
+    const result = await generateObject({
+      model: this.model,
+      schema: schema,
+      prompt,
+    });
 
-      // Validate the result against the schema
-      const parsed = schema.parse(result.object);
-      return parsed;
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const errorMessage = error.errors
-          .map(e => `${e.path.join('.')}: ${e.message}`)
-          .join(', ');
-        throw new Error(`Schema validation failed: ${errorMessage}`);
-      }
-      throw error;
-    }
+    return result.object as T;
   }
 } 
