@@ -42,3 +42,15 @@ Here are the outputs you need in a health economic simulation for a given interv
    - Differences by age group, comorbidities, or socioeconomic status.
 
 Keep each of these outputs visible and easy to understand. This will help stakeholders see the full economic and health impact.
+
+# Example questions this model should be able to generate data for
+
+- If an intervention increases muscle mass by X  lb and decreases fat mass by Y lb over the entire population of the US what is the cumulative benefit?
+
+- If an intervention increases lifespan by X% how much does that equal in GDP and Medicare spending reduction?
+
+- If an intervention increases IQ by X points, what is that worth in total?
+
+- If an intervention slows Alzheimer's progression by X%, what is that worth in total?
+
+- If an intervention reduces kidney disease by a X% , what is that worth in total?

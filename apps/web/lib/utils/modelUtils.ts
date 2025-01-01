@@ -7,7 +7,7 @@ import {createOllama} from "ollama-ai-provider";
 import {createAzure} from "@ai-sdk/azure";
 
 function getDefaultModelName(): ModelName {
-  const defaultModel = 'grok-beta';
+  const defaultModel = 'gpt-4o-mini';
   const envModel = process.env.DEFAULT_AI_MODEL;
   if (!envModel) return defaultModel;
   
