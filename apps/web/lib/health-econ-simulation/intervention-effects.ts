@@ -170,18 +170,11 @@ export class InterventionEffectsAnalyzer {
     // Start with provided parameters if any
     let effects: Partial<InterventionEffects> = providedParameters || {};
 
-    // Research each major category of effects
-    const [
-      physicalHealth,
-      cognitiveHealth,
-      healthcareUtilization,
-      publicHealth,
-    ] = await Promise.all([
-      this.researchPhysicalHealth(interventionDescription),
-      this.researchCognitiveHealth(interventionDescription),
-      this.researchHealthcareUtilization(interventionDescription),
-      this.researchPublicHealth(interventionDescription),
-    ]);
+    // Research each major category of effects sequentially
+    const physicalHealth = await this.researchPhysicalHealth(interventionDescription);
+    const cognitiveHealth = await this.researchCognitiveHealth(interventionDescription);
+    const healthcareUtilization = await this.researchHealthcareUtilization(interventionDescription);
+    const publicHealth = await this.researchPublicHealth(interventionDescription);
 
     // Combine all effects
     const result: InterventionEffects = {
@@ -197,66 +190,46 @@ export class InterventionEffectsAnalyzer {
 
   private async researchPhysicalHealth(
     interventionDescription: string
-  ): Promise<z.infer<typeof PhysicalHealthEffectSchema> | null> {
-    try {
-      const parameters = await this.parameterEngine.researchParameter(
-        "physical health outcomes",
-        interventionDescription
-      );
-      
-      return this.convertToSchemaFormat(parameters, PhysicalHealthEffectSchema);
-    } catch (error) {
-      console.error("Error researching physical health:", error);
-      return null;
-    }
+  ): Promise<z.infer<typeof PhysicalHealthEffectSchema>> {
+    const parameters = await this.parameterEngine.researchParameter(
+      "physical health outcomes",
+      interventionDescription
+    );
+    
+    return this.convertToSchemaFormat(parameters, PhysicalHealthEffectSchema);
   }
 
   private async researchCognitiveHealth(
     interventionDescription: string
-  ): Promise<z.infer<typeof CognitiveEffectSchema> | null> {
-    try {
-      const parameters = await this.parameterEngine.researchParameter(
-        "cognitive and mental health outcomes",
-        interventionDescription
-      );
-      
-      return this.convertToSchemaFormat(parameters, CognitiveEffectSchema);
-    } catch (error) {
-      console.error("Error researching cognitive health:", error);
-      return null;
-    }
+  ): Promise<z.infer<typeof CognitiveEffectSchema>> {
+    const parameters = await this.parameterEngine.researchParameter(
+      "cognitive and mental health outcomes",
+      interventionDescription
+    );
+    
+    return this.convertToSchemaFormat(parameters, CognitiveEffectSchema);
   }
 
   private async researchHealthcareUtilization(
     interventionDescription: string
-  ): Promise<z.infer<typeof HealthcareUtilizationSchema> | null> {
-    try {
-      const parameters = await this.parameterEngine.researchParameter(
-        "healthcare utilization impacts",
-        interventionDescription
-      );
-      
-      return this.convertToSchemaFormat(parameters, HealthcareUtilizationSchema);
-    } catch (error) {
-      console.error("Error researching healthcare utilization:", error);
-      return null;
-    }
+  ): Promise<z.infer<typeof HealthcareUtilizationSchema>> {
+    const parameters = await this.parameterEngine.researchParameter(
+      "healthcare utilization impacts",
+      interventionDescription
+    );
+    
+    return this.convertToSchemaFormat(parameters, HealthcareUtilizationSchema);
   }
 
   private async researchPublicHealth(
     interventionDescription: string
-  ): Promise<z.infer<typeof PublicHealthEffectSchema> | null> {
-    try {
-      const parameters = await this.parameterEngine.researchParameter(
-        "public health impacts",
-        interventionDescription
-      );
-      
-      return this.convertToSchemaFormat(parameters, PublicHealthEffectSchema);
-    } catch (error) {
-      console.error("Error researching public health:", error);
-      return null;
-    }
+  ): Promise<z.infer<typeof PublicHealthEffectSchema>> {
+    const parameters = await this.parameterEngine.researchParameter(
+      "public health impacts",
+      interventionDescription
+    );
+    
+    return this.convertToSchemaFormat(parameters, PublicHealthEffectSchema);
   }
 
   private async convertToSchemaFormat<T>(
@@ -269,14 +242,50 @@ export class InterventionEffectsAnalyzer {
       
       Target schema:
       ${schema.toString()}
+
+      IMPORTANT: Each parameter value must be an object matching InterventionParameterSchema with:
+      - name: string
+      - value: number
+      - unit: string
+      - confidence: number (0-1)
+      - source: string
+      - timeframe: string (optional)
+      - populationAffected: string (optional)
+
+      Example format:
+      {
+        "mortality": {
+          "qualityAdjustedLifeYears": {
+            "name": "QALY Impact",
+            "value": 0.75,
+            "unit": "QALYs",
+            "confidence": 0.8,
+            "source": "Health economic study",
+            "timeframe": "annual",
+            "populationAffected": "Early-stage Alzheimer's patients"
+          }
+        }
+      }
     `;
 
-    const result = await generateObject({
-      model: this.model,
-      schema: schema,
-      prompt,
-    });
+    try {
+      const result = await generateObject({
+        model: this.model,
+        schema: schema,
+        prompt,
+      });
 
-    return result.object as T;
+      // Validate the result against the schema
+      const parsed = schema.parse(result.object);
+      return parsed;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const errorMessage = error.errors
+          .map(e => `${e.path.join('.')}: ${e.message}`)
+          .join(', ');
+        throw new Error(`Schema validation failed: ${errorMessage}`);
+      }
+      throw error;
+    }
   }
 } 

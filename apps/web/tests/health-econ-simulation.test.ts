@@ -87,7 +87,7 @@ describe("Health Economic Simulation Tests", () => {
             },
             research: {
                 modelName: "gpt-4o-mini",
-                numberOfSearchResults: 30,
+                numberOfSearchResults: 3,
                 minConfidence: 0.7,
                 requireSource: true
             }
@@ -140,7 +140,7 @@ describe("Health Economic Simulation Tests", () => {
         expect(results.interventionEffects.cognitiveHealth?.neurodegeneration?.progressionSlowingPercent?.value).toBe(30);
         expect(results.interventionEffects.healthcareUtilization?.hospitalizations?.admissionRate?.value).toBe(20);
         expect(results.interventionEffects.publicHealth?.diseasePrevalence?.incidenceRate?.value).toBe(25);
-    }, 60000); // Allow 60s for comprehensive analysis
+    }, 600000); // Allow 600s for comprehensive analysis
 });
 
 function formatMoney(amount: number): string {

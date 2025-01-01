@@ -5,6 +5,11 @@ import { getModelByName, ModelName, DEFAULT_MODEL_NAME } from "@/lib/utils/model
 import { z } from "zod";
 import { generateObject } from "ai";
 
+// Constants for context management
+const MAX_CHARS_PER_SOURCE = 1000; // Limit each source to 1000 characters
+const MAX_SOURCES_PER_QUERY = 5; // Limit number of sources per parameter
+const MAX_PROMPT_LENGTH = 32000; // Conservative limit for prompt length
+
 export interface ResearchOptions {
   modelName?: ModelName;
   numberOfSearchResults?: number;
@@ -49,48 +54,86 @@ export class ParameterResearchEngine {
       searchQueries = await this.generateSearchQueries(parameterName, context);
     }
 
-    // Gather search results
-    const searchResults: SearchResult[] = [];
+    // Gather and process search results
+    const searchResults = await this.gatherAndProcessSearchResults(
+      searchQueries,
+      parameterName
+    );
+
+    const estimate = await this.extractParameterEstimate(parameterName, context, searchResults);
+    
+    const isValid = await this.validateEstimate(estimate, parameterName);
+    if (!isValid) {
+      throw new Error(`Invalid parameter estimate for ${parameterName}: Failed validation checks`);
+    }
+
+    return estimate;
+  }
+
+  private async gatherAndProcessSearchResults(
+    searchQueries: string[],
+    parameterName: string
+  ): Promise<SearchResult[]> {
+    const allResults: SearchResult[] = [];
+    
     for (const query of searchQueries) {
       const results = await getSearchResultsByTopic(
         query,
         1,
         Math.ceil(this.options.numberOfSearchResults / searchQueries.length)
       );
-      searchResults.push(...results);
+      
+      // Process and filter results
+      const processedResults = results
+        .map(result => ({
+          ...result,
+          text: this.truncateText(result.text, MAX_CHARS_PER_SOURCE),
+          relevanceScore: this.calculateRelevanceScore(result, parameterName)
+        }))
+        .filter(result => result.relevanceScore > 0.5); // Filter out low relevance results
+      
+      allResults.push(...processedResults);
     }
 
-    return this.extractParameterEstimate(parameterName, context, searchResults);
+    // Sort by relevance and take top results
+    return allResults
+      .sort((a, b) => (b as any).relevanceScore - (a as any).relevanceScore)
+      .slice(0, MAX_SOURCES_PER_QUERY);
   }
 
-  private async generateSearchQueries(
-    parameterName: string,
-    context: string
-  ): Promise<string[]> {
-    const prompt = `
-      Generate specific search queries to find quantitative data about "${parameterName}"
-      in the context of ${context}.
-      Focus on finding:
-      1. Direct measurements or studies
-      2. Economic impact data
-      3. Population-level statistics
-      4. Meta-analyses or systematic reviews
-    `;
+  private truncateText(text: string, maxLength: number): string {
+    if (text.length <= maxLength) return text;
+    
+    // Try to truncate at sentence boundary
+    const truncated = text.slice(0, maxLength);
+    const lastPeriod = truncated.lastIndexOf('.');
+    if (lastPeriod > maxLength * 0.7) { // Only truncate at sentence if we keep at least 70% of content
+      return truncated.slice(0, lastPeriod + 1);
+    }
+    return truncated;
+  }
 
-    // Generate search queries using the model
-    const querySchema = z.object({
-      queries: z.array(z.string()).describe(
-        "List of specific search queries to find quantitative data. Each query should be focused and include relevant keywords."
-      ),
+  private calculateRelevanceScore(result: SearchResult, parameterName: string): number {
+    // Simple relevance scoring based on keyword presence and position
+    const lowerText = result.text.toLowerCase();
+    const lowerTitle = result.title?.toLowerCase() || '';
+    const keywords = parameterName.toLowerCase().split(' ');
+    
+    let score = 0;
+    
+    // Title matches are more important
+    keywords.forEach(keyword => {
+      if (lowerTitle.includes(keyword)) score += 0.4;
+      if (lowerText.includes(keyword)) score += 0.2;
     });
 
-    const result = await generateObject({
-      model: this.model,
-      schema: querySchema,
-      prompt,
-    });
-
-    return result.object.queries;
+    // Bonus for numerical content
+    if (/\d+(\.\d+)?%?/.test(result.text)) score += 0.2;
+    
+    // Bonus for academic/medical sources
+    if (result.url?.includes('.edu') || result.url?.includes('.gov')) score += 0.2;
+    
+    return Math.min(score, 1); // Normalize to 0-1
   }
 
   private async extractParameterEstimate(
@@ -108,7 +151,8 @@ export class ParameterResearchEngine {
       )
       .join("\n");
 
-    const prompt = `
+    // Ensure prompt doesn't exceed length limits
+    const basePrompt = `
       Extract or estimate the value of "${parameterName}" in the context of ${context}.
       
       Requirements:
@@ -123,10 +167,12 @@ export class ParameterResearchEngine {
       - Similar parameters from comparable contexts
       - Mathematical modeling from related variables
       - Expert opinions or consensus estimates
-      
-      Sources to analyze:
-      ${inputData}
     `;
+
+    const maxSourcesLength = MAX_PROMPT_LENGTH - basePrompt.length - 100; // Buffer for formatting
+    const truncatedInputData = this.truncateText(inputData, maxSourcesLength);
+
+    const prompt = `${basePrompt}\n\nSources to analyze:\n${truncatedInputData}`;
 
     const result = await generateObject({
       model: this.model,
@@ -137,7 +183,36 @@ export class ParameterResearchEngine {
     return result.object as ParameterEstimate;
   }
 
-  async validateEstimate(
+  private async generateSearchQueries(
+    parameterName: string,
+    context: string
+  ): Promise<string[]> {
+    const prompt = `
+      Generate specific search queries to find quantitative data about "${parameterName}"
+      in the context of ${context}.
+      Focus on finding:
+      1. Direct measurements or studies
+      2. Economic impact data
+      3. Population-level statistics
+      4. Meta-analyses or systematic reviews
+    `;
+
+    const querySchema = z.object({
+      queries: z.array(z.string()).describe(
+        "List of specific search queries to find quantitative data. Each query should be focused and include relevant keywords."
+      ),
+    });
+
+    const result = await generateObject({
+      model: this.model,
+      schema: querySchema,
+      prompt,
+    });
+
+    return result.object.queries;
+  }
+
+  private async validateEstimate(
     estimate: ParameterEstimate,
     parameterName: string
   ): Promise<boolean> {
@@ -164,7 +239,6 @@ export class ParameterResearchEngine {
     value: number,
     parameterName: string
   ): Promise<boolean> {
-    // Query for typical ranges
     const rangeSchema = z.object({
       min: z.number().describe("Minimum reasonable value based on literature"),
       max: z.number().describe("Maximum reasonable value based on literature"),
