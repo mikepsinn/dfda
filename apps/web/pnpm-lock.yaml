@@ -326,9 +326,6 @@ importers:
       github-slugger:
         specifier: ^2.0.0
         version: 2.0.0
-      glob:
-        specifier: ^10.3.12
-        version: 10.4.5
       gpt3-tokenizer:
         specifier: ^1.1.5
         version: 1.1.5
@@ -672,6 +669,9 @@ importers:
       '@types/fs-extra':
         specifier: ^9.0.12
         version: 9.0.13
+      '@types/glob':
+        specifier: ^8.1.0
+        version: 8.1.0
       '@types/jest':
         specifier: ^29.5.12
         version: 29.5.12
@@ -744,6 +744,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ^4.1.4
         version: 4.1.4(eslint@8.56.0(supports-color@8.1.1))
+      glob:
+        specifier: ^10.4.5
+        version: 10.4.5
       glob-promise:
         specifier: ^6.0.7
         version: 6.0.7(glob@10.4.5)
@@ -5959,6 +5962,9 @@ packages:
   '@types/fs-extra@9.0.13':
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
 
+  '@types/glob@8.1.0':
+    resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
+
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
 
@@ -6036,6 +6042,9 @@ packages:
 
   '@types/minimatch@3.0.5':
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
+
+  '@types/minimatch@5.1.2':
+    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
@@ -20561,6 +20570,11 @@ snapshots:
     dependencies:
       '@types/node': 20.11.17
 
+  '@types/glob@8.1.0':
+    dependencies:
+      '@types/minimatch': 5.1.2
+      '@types/node': 20.11.17
+
   '@types/graceful-fs@4.1.9':
     dependencies:
       '@types/node': 20.11.17
@@ -20644,6 +20658,8 @@ snapshots:
   '@types/mime-types@2.1.4': {}
 
   '@types/minimatch@3.0.5': {}
+
+  '@types/minimatch@5.1.2': {}
 
   '@types/minimist@1.2.5': {}
 
