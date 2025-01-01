@@ -176,12 +176,14 @@ export class EconomicImpactCalculator {
 
     // Calculate from physical health effects
     if (effects.physicalHealth) {
-      if (effects.physicalHealth.diseaseProgression) {
+      if (effects.physicalHealth.diseaseProgression?.progressionChangePercent) {
         const progression = effects.physicalHealth.diseaseProgression;
-        directCostSavings += this.calculateDiseaseCostSavings(
-          progression,
-          multipliers.disease
-        );
+        if (progression.progressionChangePercent) {
+          directCostSavings += this.calculateDiseaseCostSavings(
+            progression,
+            multipliers.disease
+          );
+        }
       }
 
       if (effects.physicalHealth.mortality) {
@@ -380,7 +382,7 @@ export class EconomicImpactCalculator {
   private calculateDiseaseCostSavings(
     progression: {
       diseaseName: string;
-      progressionChangePercent: InterventionParameter;
+      progressionChangePercent?: InterventionParameter;
       severityReduction?: InterventionParameter;
       hospitalizationRate?: InterventionParameter;
       readmissionRate?: InterventionParameter;
@@ -388,10 +390,13 @@ export class EconomicImpactCalculator {
     multipliers: EconomicMultipliers["disease"]
   ): number {
     const baselineCost = multipliers.chronicDiseaseAnnualCost;
-    const progressionReduction = progression.progressionChangePercent.value / 100;
+    let costSavings = 0;
     
     // Calculate direct cost reduction from slowing progression
-    let costSavings = baselineCost * progressionReduction;
+    if (progression.progressionChangePercent) {
+      const progressionReduction = progression.progressionChangePercent.value / 100;
+      costSavings += baselineCost * progressionReduction;
+    }
 
     // Add savings from severity reduction if available
     if (progression.severityReduction) {
