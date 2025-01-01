@@ -26,40 +26,74 @@ export interface QualityMetric extends HealthEconMetric {
 // Schema for extracting structured data from search results
 const HealthEconDataSchema = z.object({
   healthcareCosts: z.object({
-    directMedicalCosts: z.number(),
-    medicareMedicaidExpenditures: z.number(),
-    timeframe: z.string(),
-    currency: z.string(),
-  }),
+    directMedicalCosts: z.number().describe(
+      "Total direct medical costs saved annually in USD. Include costs of treatments, medications, hospitalizations, and outpatient care that would be saved."
+    ),
+    medicareMedicaidExpenditures: z.number().describe(
+      "Annual reduction in Medicare/Medicaid spending in USD due to the intervention."
+    ),
+    timeframe: z.string().describe(
+      "The time period over which costs are measured (e.g., 'annual', '5-year', 'lifetime')."
+    ),
+    currency: z.string().describe(
+      "The currency of the cost values, should be standardized to 'USD'."
+    ),
+  }).describe("Healthcare system cost impacts and savings from the intervention."),
   
   populationBenefit: z.object({
-    casesPrevented: z.number(),
-    mortalityRateChange: z.number(),
-    lifeYearsGained: z.number(),
-  }),
+    casesPrevented: z.number().describe(
+      "Number of disease cases prevented annually by the intervention."
+    ),
+    mortalityRateChange: z.number().describe(
+      "Percentage point reduction in mortality rate (e.g., -0.02 for 2% reduction)."
+    ),
+    lifeYearsGained: z.number().describe(
+      "Total life years gained across the affected population due to the intervention."
+    ),
+  }).describe("Population-level health outcomes and benefits."),
 
   qualityOfLife: z.object({
-    qalyGained: z.number(),
-    hrqolScoreChange: z.number(),
-  }),
+    qalyGained: z.number().describe(
+      "Quality-adjusted life years gained per person due to the intervention."
+    ),
+    hrqolScoreChange: z.number().describe(
+      "Change in Health-Related Quality of Life score on a 0-1 scale (e.g., 0.05 for 5% improvement)."
+    ),
+  }).describe("Quality of life improvements and QALY gains."),
 
   productivity: z.object({
-    gdpGains: z.number(),
-    reducedAbsenteeismDays: z.number(),
-    currency: z.string(),
-  }),
+    gdpGains: z.number().describe(
+      "Annual GDP gains in USD from increased workforce participation and productivity."
+    ),
+    reducedAbsenteeismDays: z.number().describe(
+      "Average number of work days saved per person per year from reduced sick leave and disability."
+    ),
+    currency: z.string().describe(
+      "The currency of the GDP gains, should be standardized to 'USD'."
+    ),
+  }).describe("Economic productivity and workforce impacts."),
 
   costEffectiveness: z.object({
-    icer: z.number(),
-    roi: z.number(),
-  }),
+    icer: z.number().describe(
+      "Incremental Cost-Effectiveness Ratio in USD per QALY gained. Lower values indicate better cost-effectiveness."
+    ),
+    roi: z.number().describe(
+      "Return on Investment ratio (e.g., 2.5 means $2.50 returned for every $1 invested)."
+    ),
+  }).describe("Cost-effectiveness and return on investment metrics."),
 
   budgetImpact: z.object({
-    upfrontCosts: z.number(),
-    annualCosts: z.number(),
-    currency: z.string(),
-  }),
-});
+    upfrontCosts: z.number().describe(
+      "Initial implementation costs in USD including research, development, and infrastructure."
+    ),
+    annualCosts: z.number().describe(
+      "Ongoing annual costs in USD for maintaining and operating the intervention."
+    ),
+    currency: z.string().describe(
+      "The currency of the budget values, should be standardized to 'USD'."
+    ),
+  }).describe("Budget requirements and financial planning figures."),
+}).describe("Comprehensive health economic evaluation data structure capturing costs, benefits, and impacts of the intervention.");
 
 export type HealthEconData = z.infer<typeof HealthEconDataSchema>;
 
