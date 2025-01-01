@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { WishingWell } from "@prisma/client"
 
 import BarChartGeneral from "@/components/bar-chart-general"
