@@ -26,22 +26,26 @@ export interface SimulationResult {
 
 export class HealthEconomicSimulation {
   private parameterEngine: ParameterResearchEngine;
+  private effectsAnalyzer: InterventionEffectsAnalyzer;
+  private impactCalculator: EconomicImpactCalculator;
   
   constructor(private options: SimulationOptions) {
     this.parameterEngine = new ParameterResearchEngine(options.research);
+    this.effectsAnalyzer = new InterventionEffectsAnalyzer(this.parameterEngine);
+    this.impactCalculator = new EconomicImpactCalculator(this.parameterEngine);
   }
 
   async simulate(): Promise<SimulationResult> {
     const startTime = Date.now();
 
     // 1. Analyze intervention effects
-    const effects = await InterventionEffectsAnalyzer.analyzeEffects(
+    const effects = await this.effectsAnalyzer.analyzeEffects(
       this.options.intervention.description,
       this.options.intervention.knownParameters
     );
 
     // 2. Calculate economic impact
-    const impact = await EconomicImpactCalculator.calculateImpact(
+    const impact = await this.impactCalculator.calculateImpact(
       effects,
       this.options.economic
     );

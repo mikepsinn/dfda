@@ -3,6 +3,7 @@ import { SearchResult } from "exa-js";
 import { getSearchResultsByTopic } from "@/lib/agents/researcher/researcher";
 import { getModelByName, ModelName, DEFAULT_MODEL_NAME } from "@/lib/utils/modelUtils";
 import { z } from "zod";
+import { generateObject } from "ai";
 
 export interface ResearchOptions {
   modelName?: ModelName;
@@ -76,8 +77,20 @@ export class ParameterResearchEngine {
       4. Meta-analyses or systematic reviews
     `;
 
-    // Implementation will use the model to generate targeted search queries
-    throw new Error("Not implemented yet");
+    // Generate search queries using the model
+    const querySchema = z.object({
+      queries: z.array(z.string()).describe(
+        "List of specific search queries to find quantitative data. Each query should be focused and include relevant keywords."
+      ),
+    });
+
+    const result = await generateObject({
+      model: this.model,
+      schema: querySchema,
+      prompt,
+    });
+
+    return result.object.queries;
   }
 
   private async extractParameterEstimate(
@@ -128,8 +141,42 @@ export class ParameterResearchEngine {
     estimate: ParameterEstimate,
     parameterName: string
   ): Promise<boolean> {
-    // Implementation will check if the estimate meets quality criteria
-    // Like minimum confidence, source requirements, etc.
-    throw new Error("Not implemented yet");
+    // Check confidence threshold
+    if (estimate.confidence < this.options.minConfidence) {
+      return false;
+    }
+
+    // Check source requirement
+    if (this.options.requireSource && (!estimate.sources || estimate.sources.length === 0)) {
+      return false;
+    }
+
+    // Validate value is reasonable (not extreme outlier)
+    const isOutlier = await this.checkForOutlier(estimate.value, parameterName);
+    if (isOutlier) {
+      return false;
+    }
+
+    return true;
+  }
+
+  private async checkForOutlier(
+    value: number,
+    parameterName: string
+  ): Promise<boolean> {
+    // Query for typical ranges
+    const rangeSchema = z.object({
+      min: z.number().describe("Minimum reasonable value based on literature"),
+      max: z.number().describe("Maximum reasonable value based on literature"),
+    });
+
+    const result = await generateObject({
+      model: this.model,
+      schema: rangeSchema,
+      prompt: `What are the reasonable minimum and maximum values for "${parameterName}" based on scientific literature?`,
+    });
+
+    const range = result.object;
+    return value < range.min || value > range.max;
   }
 } 
