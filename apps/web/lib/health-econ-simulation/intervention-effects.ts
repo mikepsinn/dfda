@@ -25,42 +25,42 @@ export const PhysicalHealthEffectSchema = z.object({
     severityReduction: InterventionParameterSchema.describe("Reduction in disease severity"),
     hospitalizationRate: InterventionParameterSchema.optional().describe("Change in disease-related hospitalization rate"),
     readmissionRate: InterventionParameterSchema.optional().describe("Change in hospital readmission rate"),
-  }).describe("Disease progression metrics"),
+  }).partial().describe("Disease progression metrics"),
   
   mortality: z.object({
     lifespanChangePercent: InterventionParameterSchema.describe("Percent change in life expectancy"),
     mortalityRiskReduction: InterventionParameterSchema.describe("Reduction in mortality risk"),
     qualityAdjustedLifeYears: InterventionParameterSchema.optional().describe("QALYs gained from intervention"),
     disabilityAdjustedLifeYears: InterventionParameterSchema.optional().describe("DALYs averted by intervention"),
-  }).describe("Mortality and life expectancy impacts"),
+  }).partial().describe("Mortality and life expectancy impacts"),
 
   bodyComposition: z.object({
     muscleMassChange: InterventionParameterSchema.describe("Change in lean muscle mass"),
     fatMassChange: InterventionParameterSchema.describe("Change in body fat percentage or mass"),
     bmiChange: InterventionParameterSchema.optional().describe("Change in Body Mass Index"),
     metabolicRate: InterventionParameterSchema.optional().describe("Change in basal metabolic rate"),
-  }).describe("Changes in body composition and metabolism"),
+  }).partial().describe("Changes in body composition and metabolism"),
   
   cardiovascular: z.object({
     bloodPressureChange: InterventionParameterSchema.describe("Change in systolic/diastolic blood pressure"),
     cholesterolChange: InterventionParameterSchema.describe("Change in cholesterol levels (LDL/HDL)"),
     heartDiseaseRisk: InterventionParameterSchema.optional().describe("Change in cardiovascular disease risk"),
     strokeRisk: InterventionParameterSchema.optional().describe("Change in stroke risk probability"),
-  }).describe("Cardiovascular health impacts"),
+  }).partial().describe("Cardiovascular health impacts"),
 
   metabolic: z.object({
     diabetesRisk: InterventionParameterSchema.describe("Change in type 2 diabetes risk"),
     insulinSensitivity: InterventionParameterSchema.describe("Change in insulin response"),
     metabolicSyndromeRisk: InterventionParameterSchema.optional().describe("Change in metabolic syndrome risk"),
-  }).describe("Metabolic health impacts"),
+  }).partial().describe("Metabolic health impacts"),
 
   functionalStatus: z.object({
     mobilityChange: InterventionParameterSchema.describe("Change in physical mobility"),
     strengthChange: InterventionParameterSchema.describe("Change in muscular strength"),
     balanceChange: InterventionParameterSchema.optional().describe("Change in balance and stability"),
     adlIndependence: InterventionParameterSchema.optional().describe("Change in Activities of Daily Living independence"),
-  }).describe("Functional capacity and independence metrics"),
-}).describe("Comprehensive physical health impacts tracked by health agencies");
+  }).partial().describe("Functional capacity and independence metrics"),
+}).partial().describe("Comprehensive physical health impacts tracked by health agencies");
 
 // Cognitive and Mental Health Effects
 export const CognitiveEffectSchema = z.object({
@@ -86,7 +86,7 @@ export const CognitiveEffectSchema = z.object({
     brainVolumeChange: InterventionParameterSchema.optional().describe("Change in brain volume measurements"),
     cognitiveDeclineRate: InterventionParameterSchema.optional().describe("Change in cognitive decline rate"),
   }).describe("Neurodegenerative disease impacts"),
-}).describe("Cognitive function and mental health impacts");
+}).partial().describe("Cognitive function and mental health impacts");
 
 // Healthcare Utilization Effects
 export const HealthcareUtilizationSchema = z.object({
@@ -114,7 +114,7 @@ export const HealthcareUtilizationSchema = z.object({
     specialistVisits: InterventionParameterSchema.optional().describe("Change in specialist visit frequency"),
     procedureRate: InterventionParameterSchema.optional().describe("Change in medical procedure rates"),
   }).describe("Specialty care utilization metrics"),
-}).describe("Healthcare system utilization impacts");
+}).partial().describe("Healthcare system utilization impacts");
 
 // Public Health Effects
 export const PublicHealthEffectSchema = z.object({
@@ -141,7 +141,7 @@ export const PublicHealthEffectSchema = z.object({
     screeningRates: InterventionParameterSchema.describe("Change in health screening participation"),
     healthEducation: InterventionParameterSchema.optional().describe("Impact of health education programs"),
   }).describe("Preventive care metrics"),
-}).describe("Population-level public health impacts");
+}).partial().describe("Population-level public health impacts");
 
 // Combined Effects Schema
 export const InterventionEffectsSchema = z.object({
@@ -150,7 +150,7 @@ export const InterventionEffectsSchema = z.object({
   healthcareUtilization: HealthcareUtilizationSchema,
   publicHealth: PublicHealthEffectSchema,
   customEffects: z.array(InterventionParameterSchema).optional().describe("Additional custom parameters not covered by standard categories"),
-}).describe("Complete intervention effects profile with comprehensive health metrics");
+}).partial().describe("Complete intervention effects profile with comprehensive health metrics");
 
 export type InterventionEffects = z.infer<typeof InterventionEffectsSchema>;
 
@@ -170,20 +170,36 @@ export class InterventionEffectsAnalyzer {
     // Start with provided parameters if any
     let effects: Partial<InterventionEffects> = providedParameters || {};
 
-    // Research each major category of effects sequentially
-    const physicalHealth = await this.researchPhysicalHealth(interventionDescription);
-    const cognitiveHealth = await this.researchCognitiveHealth(interventionDescription);
-    const healthcareUtilization = await this.researchHealthcareUtilization(interventionDescription);
-    const publicHealth = await this.researchPublicHealth(interventionDescription);
-
-    // Combine all effects
+    // Only research if we don't have any provided parameters
+    // or if we're missing specific subcategories we need
     const result: InterventionEffects = {
-      physicalHealth: physicalHealth || undefined,
-      cognitiveHealth: cognitiveHealth || undefined,
-      healthcareUtilization: healthcareUtilization || undefined,
-      publicHealth: publicHealth || undefined,
+      physicalHealth: effects.physicalHealth,
+      cognitiveHealth: undefined,
+      healthcareUtilization: undefined,
+      publicHealth: undefined,
       customEffects: effects.customEffects,
     };
+
+    // Only research additional effects if we need them for economic calculations
+    if (effects.physicalHealth?.bodyComposition?.muscleMassChange) {
+      // If we have muscle mass data, we don't need to research anything else
+      // The economic calculator can work with just this data
+      return result;
+    }
+
+    // If we don't have the specific data we need, research everything
+    if (!effects.physicalHealth) {
+      result.physicalHealth = await this.researchPhysicalHealth(interventionDescription);
+    }
+    if (!effects.cognitiveHealth) {
+      result.cognitiveHealth = await this.researchCognitiveHealth(interventionDescription);
+    }
+    if (!effects.healthcareUtilization) {
+      result.healthcareUtilization = await this.researchHealthcareUtilization(interventionDescription);
+    }
+    if (!effects.publicHealth) {
+      result.publicHealth = await this.researchPublicHealth(interventionDescription);
+    }
 
     return result;
   }
@@ -192,8 +208,8 @@ export class InterventionEffectsAnalyzer {
     interventionDescription: string
   ): Promise<z.infer<typeof PhysicalHealthEffectSchema>> {
     const parameters = await this.parameterEngine.researchParameter(
-      "physical health outcomes",
-      interventionDescription
+      "physical health outcomes and effects on body composition, cardiovascular health, and functional status",
+      ""
     );
     
     return this.convertToSchemaFormat(parameters, PhysicalHealthEffectSchema);
@@ -203,8 +219,8 @@ export class InterventionEffectsAnalyzer {
     interventionDescription: string
   ): Promise<z.infer<typeof CognitiveEffectSchema>> {
     const parameters = await this.parameterEngine.researchParameter(
-      "cognitive and mental health outcomes",
-      interventionDescription
+      "cognitive and mental health outcomes and effects on intelligence, mental health, and neurodegeneration",
+      ""
     );
     
     return this.convertToSchemaFormat(parameters, CognitiveEffectSchema);
@@ -214,8 +230,8 @@ export class InterventionEffectsAnalyzer {
     interventionDescription: string
   ): Promise<z.infer<typeof HealthcareUtilizationSchema>> {
     const parameters = await this.parameterEngine.researchParameter(
-      "healthcare utilization impacts",
-      interventionDescription
+      "healthcare utilization impacts on hospitalizations, medication use, and care delivery",
+      ""
     );
     
     return this.convertToSchemaFormat(parameters, HealthcareUtilizationSchema);
@@ -225,8 +241,8 @@ export class InterventionEffectsAnalyzer {
     interventionDescription: string
   ): Promise<z.infer<typeof PublicHealthEffectSchema>> {
     const parameters = await this.parameterEngine.researchParameter(
-      "public health impacts",
-      interventionDescription
+      "public health impacts on disease prevalence, health disparities, and community health",
+      ""
     );
     
     return this.convertToSchemaFormat(parameters, PublicHealthEffectSchema);

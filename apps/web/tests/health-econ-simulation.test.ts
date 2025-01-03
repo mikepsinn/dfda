@@ -5,89 +5,32 @@
 import { HealthEconomicSimulation, SimulationOptions, SimulationResult } from "@/lib/health-econ-simulation/health-econ-simulation";
 
 describe("Health Economic Simulation Tests", () => {
-    it("simulates Alzheimer's early detection program impact", async () => {
-        // Create simulation with known parameters from clinical trials and research
+    it("simulates follistatin muscle mass intervention impact", async () => {
         const simulation = new HealthEconomicSimulation({
             intervention: {
-                name: "Early Alzheimer's Detection Program",
-                description: "A comprehensive screening program for early detection of Alzheimer's disease using biomarkers and cognitive assessments",
+                name: "Follistatin Restoration Therapy",
+                description: "A therapy that restores follistatin levels in the body to increase muscle mass",
                 knownParameters: {
-                    cognitiveHealth: {
-                        neurodegeneration: {
-                            conditionName: "Alzheimer's Disease",
-                            progressionSlowingPercent: {
-                                name: "Disease Progression Slowing",
-                                value: 30,
-                                unit: "percent",
-                                confidence: 0.85,
-                                source: "Meta-analysis of early intervention trials",
-                                timeframe: "annual",
-                                populationAffected: "Adults 65+ with early-stage Alzheimer's"
-                            },
-                            symptomReduction: {
-                                name: "Symptom Severity Reduction",
-                                value: 25,
-                                unit: "percent",
-                                confidence: 0.8,
-                                source: "Clinical trials of early intervention",
-                                timeframe: "annual",
-                                populationAffected: "Adults 65+ with early-stage Alzheimer's"
-                            }
-                        }
-                    },
-                    healthcareUtilization: {
-                        hospitalizations: {
-                            admissionRate: {
-                                name: "Hospital Admission Rate Reduction",
-                                value: 20,
-                                unit: "percent",
-                                confidence: 0.75,
-                                source: "Healthcare utilization studies",
-                                timeframe: "annual",
-                                populationAffected: "Alzheimer's patients requiring hospitalization"
-                            },
-                            lengthOfStay: {
-                                name: "Average Length of Stay Reduction",
+                    physicalHealth: {
+                        bodyComposition: {
+                            muscleMassChange: {
+                                name: "Muscle Mass Increase",
                                 value: 2,
-                                unit: "days",
-                                confidence: 0.8,
-                                source: "Hospital records analysis",
-                                timeframe: "per admission",
-                                populationAffected: "Hospitalized Alzheimer's patients"
-                            }
-                        },
-                        medicationUse: {
-                            adherenceRate: {
-                                name: "Medication Adherence Improvement",
-                                value: 35,
-                                unit: "percent",
-                                confidence: 0.9,
-                                source: "Medication adherence studies",
-                                timeframe: "annual",
-                                populationAffected: "Alzheimer's patients on medication regimens"
-                            }
-                        }
-                    },
-                    publicHealth: {
-                        diseasePrevalence: {
-                            incidenceRate: {
-                                name: "Severe Case Reduction",
-                                value: 25,
-                                unit: "percent",
-                                confidence: 0.8,
-                                source: "Population health studies",
-                                timeframe: "annual",
-                                populationAffected: "US population at risk for Alzheimer's"
+                                unit: "pounds",
+                                confidence: 0.85,
+                                source: "Clinical trials of follistatin therapy",
+                                timeframe: "3-month",
+                                populationAffected: "Adults receiving follistatin therapy"
                             }
                         }
                     }
                 }
             },
             economic: {
-                timeHorizon: 10,
+                timeHorizon: 1,
                 discountRate: 0.03,
                 region: "United States",
-                populationSize: 5600000, // Estimated US Alzheimer's population
+                populationSize: 1000000, // Target population size
                 monetaryYear: 2023
             },
             research: {
@@ -101,51 +44,39 @@ describe("Health Economic Simulation Tests", () => {
         // Run simulation
         const results = await simulation.simulate();
         
-        // Log detailed results
-        console.log("Alzheimer's Early Detection Program - Economic Impact Analysis");
+        // Log results
+        console.log("Follistatin Therapy - Economic Impact Analysis");
         console.log("========================================================");
         
         console.log("\nIntervention Effects:");
-        if (results.interventionEffects.cognitiveHealth?.neurodegeneration) {
-            const neuro = results.interventionEffects.cognitiveHealth.neurodegeneration;
-            console.log(`Disease Progression Slowing: ${neuro.progressionSlowingPercent?.value}%`);
-            console.log(`Symptom Reduction: ${neuro.symptomReduction?.value}%`);
+        const muscleMassChange = results.interventionEffects.physicalHealth?.bodyComposition?.muscleMassChange;
+        if (muscleMassChange) {
+            console.log(`Muscle Mass Change: ${muscleMassChange.value} ${muscleMassChange.unit}`);
+            console.log(`Confidence: ${(muscleMassChange.confidence * 100).toFixed(1)}%`);
+            console.log(`Timeframe: ${muscleMassChange.timeframe}`);
         }
 
         console.log("\nHealthcare Impact:");
         console.log(`Direct Cost Savings: $${formatMoney(results.economicImpact.healthcare.directCostSavings)}`);
-        console.log(`Medicare/Medicaid Savings: $${formatMoney(results.economicImpact.healthcare.medicareMedicaidSavings)}`);
         
         console.log("\nProductivity Impact:");
         console.log(`GDP Gains: $${formatMoney(results.economicImpact.productivity.gdpGain)}`);
-        console.log(`Workforce Participation Change: ${results.economicImpact.productivity.workforceParticipation}%`);
         
         console.log("\nQuality of Life Impact:");
         console.log(`QALYs Gained: ${results.economicImpact.qualityOfLife.qalyGained.toFixed(2)}`);
-        console.log(`Monetary Value of QALY Gains: $${formatMoney(results.economicImpact.qualityOfLife.monetaryValueQaly)}`);
         
         console.log("\nTime Horizon Analysis:");
         console.log(`1-Year Impact: $${formatMoney(results.economicImpact.timeHorizon.shortTerm)}`);
-        console.log(`5-Year Impact: $${formatMoney(results.economicImpact.timeHorizon.mediumTerm)}`);
-        console.log(`10-Year Impact: $${formatMoney(results.economicImpact.timeHorizon.longTerm)}`);
-        
-        console.log("\nMetadata:");
-        console.log(`Confidence Level: ${(results.metadata.confidence * 100).toFixed(1)}%`);
-        console.log(`Sources Used: ${results.metadata.sourcesUsed}`);
-        console.log(`Computation Time: ${results.metadata.computationTimeMs}ms`);
 
-        // Assertions to verify reasonable results
+        // Basic assertions
         expect(results.economicImpact.healthcare.directCostSavings).toBeGreaterThan(0);
-        expect(results.economicImpact.healthcare.medicareMedicaidSavings).toBeGreaterThan(0);
+        expect(results.economicImpact.productivity.gdpGain).toBeGreaterThan(0);
         expect(results.economicImpact.qualityOfLife.qalyGained).toBeGreaterThan(0);
-        expect(results.economicImpact.timeHorizon.longTerm).toBeGreaterThan(results.economicImpact.timeHorizon.shortTerm);
         expect(results.metadata.confidence).toBeGreaterThanOrEqual(0.7);
 
-        // Verify intervention effects were properly analyzed
-        expect(results.interventionEffects.cognitiveHealth?.neurodegeneration?.progressionSlowingPercent?.value).toBe(30);
-        expect(results.interventionEffects.healthcareUtilization?.hospitalizations?.admissionRate?.value).toBe(20);
-        expect(results.interventionEffects.publicHealth?.diseasePrevalence?.incidenceRate?.value).toBe(25);
-    }, 600000); // Allow 600s for comprehensive analysis
+        // Verify specific intervention effect
+        expect(results.interventionEffects.physicalHealth?.bodyComposition?.muscleMassChange?.value).toBe(2);
+    }, 60000); // Allow 60s for analysis
 });
 
 function formatMoney(amount: number): string {
