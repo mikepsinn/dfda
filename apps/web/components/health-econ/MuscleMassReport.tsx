@@ -18,7 +18,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
   const health = model.calculate_health_outcomes();
   const economic = model.calculate_economic_impact(populationSize);
 
-  // Helper function for number formatting
+  // Helper function for number formatting (only used for population size display)
   const formatNumber = (num: number, decimals: number = 2) => {
     return new Intl.NumberFormat('en-US', {
       minimumFractionDigits: decimals,
@@ -26,39 +26,8 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
     }).format(num);
   };
 
-  // Helper function for currency formatting
-  const formatCurrency = (num: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(num);
-  };
-
-  // Helper function for percentage formatting
-  const formatPercent = (num: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'percent',
-      minimumFractionDigits: 1,
-      maximumFractionDigits: 1,
-    }).format(num);
-  };
-
-  // Helper function for formatting large currency values
-  const formatLargeCurrency = (num: number) => {
-    if (Math.abs(num) >= 1e9) {
-      return `$${(num / 1e9).toFixed(1)}B`;
-    } else if (Math.abs(num) >= 1e6) {
-      return `$${(num / 1e6).toFixed(1)}M`;
-    } else if (Math.abs(num) >= 1e3) {
-      return `$${(num / 1e3).toFixed(1)}K`;
-    }
-    return formatCurrency(num);
-  };
-
   // Helper function to render a metric with its metadata and calculation
-  const renderMetric = (value: number, metric: ExtendedModelParameter, formatFn: (n: number) => string = formatNumber) => {
+  const renderMetric = (value: number, metric: ExtendedModelParameter) => {
     const sensitivity = metric.calculateSensitivity(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize });
     
     return (
@@ -68,7 +37,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <h3 className="font-medium">{metric.displayName}</h3>
       </div>
       <span className="text-lg sm:text-xl font-semibold">
-        {formatFn(value)} {metric.unitName}
+        {metric.generateDisplayValue(value)}
       </span>
       <p className="text-gray-600 mb-2 text-sm sm:text-base">{metric.description}</p>
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
@@ -97,11 +66,11 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-2 gap-4">
           <div>
             <p className="text-gray-600">Best Case:</p>
-            <p className="font-semibold">{formatFn(sensitivity.bestCase)} {metric.unitName}</p>
+            <p className="font-semibold">{metric.generateDisplayValue(sensitivity.bestCase)}</p>
           </div>
           <div>
             <p className="text-gray-600">Worst Case:</p>
-            <p className="font-semibold">{formatFn(sensitivity.worstCase)} {metric.unitName}</p>
+            <p className="font-semibold">{metric.generateDisplayValue(sensitivity.worstCase)}</p>
           </div>
         </div>
         <div className="mt-2">
@@ -119,8 +88,6 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
   return (
     <article className="max-w-none">
-
-
       {/* Intervention Details */}
       <section className="mt-8">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Intervention Details</h2>
@@ -154,7 +121,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {Object.entries(health).map(([key, value]) => (
             <React.Fragment key={key}>
-              {renderMetric(value, healthOutcomeMetrics[key], formatPercent)}
+              {renderMetric(value, healthOutcomeMetrics[key])}
             </React.Fragment>
           ))}
         </div>
@@ -166,12 +133,11 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {Object.entries(economic).map(([key, value]) => (
             <React.Fragment key={key}>
-              {renderMetric(value, economicOutcomeMetrics[key], formatLargeCurrency)}
+              {renderMetric(value, economicOutcomeMetrics[key])}
             </React.Fragment>
           ))}
         </div>
       </section>
-
 
       {/* Model Parameters */}
       <section className="mt-8">

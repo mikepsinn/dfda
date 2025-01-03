@@ -1,5 +1,24 @@
 import { ModelParameter } from '../types';
 
+// Utility function to format large numbers with appropriate suffixes
+function formatLargeNumber(value: number): string {
+    const absValue = Math.abs(value);
+    if (absValue >= 1e9) {
+        return (value / 1e9).toFixed(1) + 'B';
+    } else if (absValue >= 1e6) {
+        return (value / 1e6).toFixed(1) + 'M';
+    } else if (absValue >= 1e3) {
+        return (value / 1e3).toFixed(1) + 'K';
+    }
+    return value.toFixed(1);
+}
+
+// Utility function to format currency
+function formatCurrency(value: number): string {
+    const formatted = formatLargeNumber(value);
+    return '$' + formatted;
+}
+
 export interface SensitivityAnalysis {
     bestCase: number;
     worstCase: number;
@@ -10,6 +29,7 @@ export interface ExtendedModelParameter extends ModelParameter {
     calculate: (muscleMassIncrease: number, baselineMetrics?: any) => number;
     generateCalculationExplanation: (muscleMassIncrease: number, baselineMetrics?: any) => string;
     calculateSensitivity: (muscleMassIncrease: number, baselineMetrics?: any) => SensitivityAnalysis;
+    generateDisplayValue: (value: number) => string;
 }
 
 // Helper function for sensitivity calculations
@@ -23,11 +43,12 @@ export const metabolicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     additional_daily_calories_burned: {
         displayName: "Additional Daily Calories Burned",
         defaultValue: 0,
-        unitName: "calories/day",
-        description: "Additional calories burned per day due to increased muscle mass",
+        unitName: "calories/day/person",
+        description: "Additional calories burned per day per person due to increased muscle mass",
         sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4535334/",
         emoji: "🔥",
         calculate: (muscleMassIncrease) => muscleMassIncrease * 8,
+        generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/day/person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle burns approximately 6-10 calories per day. Using a conservative estimate of 8 calories:</p>
@@ -52,11 +73,12 @@ export const metabolicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     annual_metabolic_impact: {
         displayName: "Annual Metabolic Impact",
         defaultValue: 0,
-        unitName: "calories/year",
-        description: "Total additional calories burned per year due to increased muscle mass",
+        unitName: "calories/year/person",
+        description: "Total additional calories burned per year per person due to increased muscle mass",
         sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4535334/",
         emoji: "📅",
         calculate: (muscleMassIncrease) => muscleMassIncrease * 8 * 365,
+        generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/year/person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
                 <p>Annual impact is calculated by multiplying daily caloric burn by 365 days:</p>
@@ -83,11 +105,12 @@ export const healthOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     insulin_sensitivity_improvement: {
         displayName: "Insulin Sensitivity Improvement",
         defaultValue: 0,
-        unitName: "relative improvement",
-        description: "Improvement in insulin sensitivity due to increased muscle mass",
+        unitName: "relative improvement per person",
+        description: "Improvement in insulin sensitivity per person due to increased muscle mass",
         sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/34054574/",
         emoji: "📊",
         calculate: (muscleMassIncrease) => muscleMassIncrease * 0.02,
+        generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle mass increases insulin sensitivity by approximately 2%:</p>
@@ -112,11 +135,12 @@ export const healthOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     fall_risk_reduction: {
         displayName: "Fall Risk Reduction",
         defaultValue: 0,
-        unitName: "probability reduction",
-        description: "Reduction in probability of falls due to increased muscle mass",
+        unitName: "probability reduction per person",
+        description: "Reduction in probability of falls per person due to increased muscle mass",
         sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8775372/",
         emoji: "🛡️",
         calculate: (muscleMassIncrease) => Math.min(0.30, muscleMassIncrease * 0.015),
+        generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle reduces fall risk by 1.5%, capped at 30% total reduction:</p>
@@ -141,11 +165,12 @@ export const healthOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     mortality_reduction: {
         displayName: "Mortality Risk Reduction",
         defaultValue: 0,
-        unitName: "probability reduction",
-        description: "Reduction in mortality risk due to increased muscle mass",
+        unitName: "probability reduction per person",
+        description: "Reduction in mortality risk per person due to increased muscle mass",
         sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9209691/",
         emoji: "❤️",
         calculate: (muscleMassIncrease) => Math.min(0.20, muscleMassIncrease * 0.01),
+        generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle reduces mortality risk by 1%, capped at 20% total reduction:</p>
@@ -173,8 +198,8 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     healthcare_savings: {
         displayName: "Healthcare Cost Savings",
         defaultValue: 0,
-        unitName: "USD/year",
-        description: "Annual healthcare cost savings from reduced falls and improved health outcomes",
+        unitName: "USD/year total",
+        description: "Total annual healthcare cost savings from reduced falls and improved health outcomes across population",
         sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6089380/",
         emoji: "💰",
         calculate: (muscleMassIncrease, baselineMetrics) => {
@@ -182,6 +207,7 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
             const fallReduction = Math.min(0.30, muscleMassIncrease * 0.015);
             return fallRisk * fallReduction * baselineMetrics.population_size * 10000;
         },
+        generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const fallRisk = baselineMetrics.fall_risk;
             const fallReduction = Math.min(0.30, muscleMassIncrease * 0.015);
@@ -217,11 +243,12 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     productivity_gains: {
         displayName: "Productivity Gains",
         defaultValue: 0,
-        unitName: "USD/year",
-        description: "Annual economic gains from improved workforce productivity",
+        unitName: "USD/year total",
+        description: "Total annual economic gains from improved workforce productivity across population",
         sourceUrl: "https://aspe.hhs.gov/sites/default/files/documents/e2b650cd64cf84aae8ff0fae7474af82/SDOH-Evidence-Review.pdf",
         emoji: "📈",
         calculate: (muscleMassIncrease, baselineMetrics) => muscleMassIncrease * 100 * baselineMetrics.population_size,
+        generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const gains = muscleMassIncrease * 100 * baselineMetrics.population_size;
             return `
@@ -248,8 +275,8 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     total_economic_benefit: {
         displayName: "Total Economic Benefit",
         defaultValue: 0,
-        unitName: "USD/year",
-        description: "Total annual economic benefit including healthcare savings and productivity gains",
+        unitName: "USD/year total",
+        description: "Total annual economic benefit including healthcare savings and productivity gains across population",
         sourceUrl: "https://aspe.hhs.gov/sites/default/files/documents/e2b650cd64cf84aae8ff0fae7474af82/SDOH-Evidence-Review.pdf",
         emoji: "💎",
         calculate: (muscleMassIncrease, baselineMetrics) => {
@@ -257,6 +284,7 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
             return healthcareSavings + productivityGains;
         },
+        generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
@@ -286,11 +314,12 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     qalys_gained: {
         displayName: "Quality-Adjusted Life Years Gained",
         defaultValue: 0,
-        unitName: "QALYs",
-        description: "Additional quality-adjusted life years gained from the intervention",
+        unitName: "QALYs total",
+        description: "Total additional quality-adjusted life years gained across population from the intervention",
         sourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6684801/",
         emoji: "✨",
         calculate: (muscleMassIncrease, baselineMetrics) => muscleMassIncrease * 0.02 * baselineMetrics.population_size,
+        generateDisplayValue: (value) => `${formatLargeNumber(value)} QALYs total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const qalys = muscleMassIncrease * 0.02 * baselineMetrics.population_size;
             return `
@@ -317,14 +346,15 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     medicare_spend_impact: {
         displayName: "Medicare Spend Impact",
         defaultValue: 0,
-        unitName: "USD/year",
-        description: "Annual impact on Medicare spending from improved health outcomes",
+        unitName: "USD/year total",
+        description: "Total annual impact on Medicare spending from improved health outcomes across population",
         sourceUrl: "https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata",
         emoji: "🏥",
         calculate: (muscleMassIncrease, baselineMetrics) => {
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * 0.01);
             return baselineMetrics.medicare_total_annual_spend * mortalityReduction;
         },
+        generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * 0.01);
             const impact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
@@ -356,8 +386,8 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
     long_term_savings: {
         displayName: "Long-Term Savings",
         defaultValue: 0,
-        unitName: "USD",
-        description: "Projected 10-year savings with discounted future value",
+        unitName: "USD total",
+        description: "Total projected 10-year savings with discounted future value across population",
         sourceUrl: "https://aspe.hhs.gov/sites/default/files/documents/e2b650cd64cf84aae8ff0fae7474af82/SDOH-Evidence-Review.pdf",
         emoji: "🎯",
         calculate: (muscleMassIncrease, baselineMetrics) => {
@@ -366,6 +396,7 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
             const discountRate = 0.03;
             return (healthcareSavings + productivityGains) * ((1 - Math.pow(1 + discountRate, -10)) / discountRate);
         },
+        generateDisplayValue: (value) => `${formatCurrency(value)} total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
