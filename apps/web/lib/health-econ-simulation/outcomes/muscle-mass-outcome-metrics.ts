@@ -1,4 +1,5 @@
 import { ModelParameter } from '../types';
+import { muscleMassParameters } from './muscle-mass-parameters';
 
 // Utility function to format large numbers with appropriate suffixes
 function formatLargeNumber(value: number): string {
@@ -45,20 +46,20 @@ export const metabolicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "calories/day/person",
         description: "Additional calories burned per day per person due to increased muscle mass",
-        sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4535334/",
+        sourceUrl: muscleMassParameters.muscle_calorie_burn.sourceUrl,
         emoji: "🔥",
-        calculate: (muscleMassIncrease) => muscleMassIncrease * 8,
+        calculate: (muscleMassIncrease) => 
+            muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue,
         generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/day/person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
-                <p>Each pound of muscle burns approximately 6-10 calories per day. Using a conservative estimate of 8 calories:</p>
+                <p>Each pound of muscle burns approximately ${muscleMassParameters.muscle_calorie_burn.defaultValue} calories per day:</p>
                 <div class="formula">
-                    ${muscleMassIncrease} lbs × 8 calories/day = ${muscleMassIncrease * 8} calories/day
+                    ${muscleMassIncrease} lbs × ${muscleMassParameters.muscle_calorie_burn.defaultValue} calories/day = ${muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue} calories/day
                 </div>
-            </div>`
-        ,
+            </div>`,
         calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = muscleMassIncrease * 8;
+            const baseValue = muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue;
             return {
                 bestCase: muscleMassIncrease * 10, // Upper range of calories burned
                 worstCase: muscleMassIncrease * 6, // Lower range of calories burned
@@ -75,20 +76,20 @@ export const metabolicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "calories/year/person",
         description: "Total additional calories burned per year per person due to increased muscle mass",
-        sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4535334/",
+        sourceUrl: muscleMassParameters.muscle_calorie_burn.sourceUrl,
         emoji: "📅",
-        calculate: (muscleMassIncrease) => muscleMassIncrease * 8 * 365,
+        calculate: (muscleMassIncrease) => 
+            muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue * 365,
         generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/year/person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
                 <p>Annual impact is calculated by multiplying daily caloric burn by 365 days:</p>
                 <div class="formula">
-                    (${muscleMassIncrease} lbs × 8 calories/day) × 365 days = ${muscleMassIncrease * 8 * 365} calories/year
+                    (${muscleMassIncrease} lbs × ${muscleMassParameters.muscle_calorie_burn.defaultValue} calories/day) × 365 days = ${muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue * 365} calories/year
                 </div>
-            </div>`
-        ,
+            </div>`,
         calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = muscleMassIncrease * 8 * 365;
+            const baseValue = muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue * 365;
             return {
                 bestCase: muscleMassIncrease * 10 * 365,
                 worstCase: muscleMassIncrease * 6 * 365,
@@ -107,20 +108,20 @@ export const healthOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "relative improvement per person",
         description: "Improvement in insulin sensitivity per person due to increased muscle mass",
-        sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/34054574/",
+        sourceUrl: muscleMassParameters.insulin_sensitivity_per_lb.sourceUrl,
         emoji: "📊",
-        calculate: (muscleMassIncrease) => muscleMassIncrease * 0.02,
+        calculate: (muscleMassIncrease) => 
+            muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue,
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
-                <p>Each pound of muscle mass increases insulin sensitivity by approximately 2%:</p>
+                <p>Each pound of muscle mass increases insulin sensitivity by ${(muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100)}%:</p>
                 <div class="formula">
-                    ${muscleMassIncrease} lbs × 0.02 = ${(muscleMassIncrease * 0.02).toFixed(3)} relative improvement
+                    ${muscleMassIncrease} lbs × ${(muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100)}% = ${(muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100).toFixed(1)}%
                 </div>
-            </div>`
-        ,
+            </div>`,
         calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = muscleMassIncrease * 0.02;
+            const baseValue = muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
             return {
                 bestCase: muscleMassIncrease * 0.03,
                 worstCase: muscleMassIncrease * 0.01,
@@ -137,20 +138,20 @@ export const healthOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "probability reduction per person",
         description: "Reduction in probability of falls per person due to increased muscle mass",
-        sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8775372/",
+        sourceUrl: muscleMassParameters.fall_risk_reduction_per_lb.sourceUrl,
         emoji: "🛡️",
-        calculate: (muscleMassIncrease) => Math.min(0.30, muscleMassIncrease * 0.015),
+        calculate: (muscleMassIncrease) => 
+            Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue),
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
-                <p>Each pound of muscle reduces fall risk by 1.5%, capped at 30% total reduction:</p>
+                <p>Each pound of muscle reduces fall risk by ${(muscleMassParameters.fall_risk_reduction_per_lb.defaultValue * 100)}%, capped at 30% total reduction:</p>
                 <div class="formula">
-                    min(30%, ${muscleMassIncrease} lbs × 1.5%) = ${(Math.min(0.30, muscleMassIncrease * 0.015) * 100).toFixed(1)}%
+                    min(30%, ${muscleMassIncrease} lbs × ${(muscleMassParameters.fall_risk_reduction_per_lb.defaultValue * 100)}%) = ${(Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue) * 100).toFixed(1)}%
                 </div>
-            </div>`
-        ,
+            </div>`,
         calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = Math.min(0.30, muscleMassIncrease * 0.015);
+            const baseValue = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
             return {
                 bestCase: Math.min(0.35, muscleMassIncrease * 0.02),
                 worstCase: Math.min(0.25, muscleMassIncrease * 0.01),
@@ -167,20 +168,20 @@ export const healthOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "probability reduction per person",
         description: "Reduction in mortality risk per person due to increased muscle mass",
-        sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9209691/",
+        sourceUrl: muscleMassParameters.mortality_reduction_per_lb.sourceUrl,
         emoji: "❤️",
-        calculate: (muscleMassIncrease) => Math.min(0.20, muscleMassIncrease * 0.01),
+        calculate: (muscleMassIncrease) => 
+            Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue),
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
         generateCalculationExplanation: (muscleMassIncrease) => `
             <div class="calculation-explanation">
-                <p>Each pound of muscle reduces mortality risk by 1%, capped at 20% total reduction:</p>
+                <p>Each pound of muscle reduces mortality risk by ${(muscleMassParameters.mortality_reduction_per_lb.defaultValue * 100)}%, capped at 20% total reduction:</p>
                 <div class="formula">
-                    min(20%, ${muscleMassIncrease} lbs × 1%) = ${(Math.min(0.20, muscleMassIncrease * 0.01) * 100).toFixed(1)}%
+                    min(20%, ${muscleMassIncrease} lbs × ${(muscleMassParameters.mortality_reduction_per_lb.defaultValue * 100)}%) = ${(Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue) * 100).toFixed(1)}%
                 </div>
-            </div>`
-        ,
+            </div>`,
         calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = Math.min(0.20, muscleMassIncrease * 0.01);
+            const baseValue = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
             return {
                 bestCase: Math.min(0.25, muscleMassIncrease * 0.015),
                 worstCase: Math.min(0.15, muscleMassIncrease * 0.005),
@@ -200,18 +201,18 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "USD/year total",
         description: "Total annual healthcare cost savings from reduced falls and improved health outcomes across population",
-        sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6089380/",
+        sourceUrl: muscleMassParameters.fall_cost.sourceUrl,
         emoji: "💰",
         calculate: (muscleMassIncrease, baselineMetrics) => {
-            const fallRisk = baselineMetrics.fall_risk;
-            const fallReduction = Math.min(0.30, muscleMassIncrease * 0.015);
-            return fallRisk * fallReduction * baselineMetrics.population_size * 10000;
+            const fallRisk = muscleMassParameters.fall_risk.defaultValue;
+            const fallReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
+            return fallRisk * fallReduction * baselineMetrics.population_size * muscleMassParameters.fall_cost.defaultValue;
         },
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
-            const fallRisk = baselineMetrics.fall_risk;
-            const fallReduction = Math.min(0.30, muscleMassIncrease * 0.015);
-            const savings = fallRisk * fallReduction * baselineMetrics.population_size * 10000;
+            const fallRisk = muscleMassParameters.fall_risk.defaultValue;
+            const fallReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
+            const savings = fallRisk * fallReduction * baselineMetrics.population_size * muscleMassParameters.fall_cost.defaultValue;
             return `
             <div class="calculation-explanation">
                 <p>Healthcare savings are calculated based on reduced falls:</p>
@@ -219,19 +220,20 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
                     <li>Baseline fall risk: ${(fallRisk * 100).toFixed(1)}%</li>
                     <li>Fall risk reduction: ${(fallReduction * 100).toFixed(1)}%</li>
                     <li>Population size: ${baselineMetrics.population_size.toLocaleString()}</li>
-                    <li>Average cost per fall: $10,000</li>
+                    <li>Average cost per fall: $${muscleMassParameters.fall_cost.defaultValue.toLocaleString()}</li>
                 </ul>
                 <div class="formula">
-                    ${(fallRisk * 100).toFixed(1)}% × ${(fallReduction * 100).toFixed(1)}% × ${baselineMetrics.population_size.toLocaleString()} × $10,000 = $${savings.toLocaleString()}
+                    ${(fallRisk * 100).toFixed(1)}% × ${(fallReduction * 100).toFixed(1)}% × ${baselineMetrics.population_size.toLocaleString()} × $${muscleMassParameters.fall_cost.defaultValue.toLocaleString()} = $${savings.toLocaleString()}
                 </div>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
-            const baseValue = baselineMetrics.fall_risk * Math.min(0.30, muscleMassIncrease * 0.015) * 
-                            baselineMetrics.population_size * 10000;
+            const baseValue = muscleMassParameters.fall_risk.defaultValue * 
+                            Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue) * 
+                            baselineMetrics.population_size * muscleMassParameters.fall_cost.defaultValue;
             return {
-                bestCase: baseValue * 1.3, // 30% higher savings
-                worstCase: baseValue * 0.7, // 30% lower savings
+                bestCase: baseValue * 1.3,
+                worstCase: baseValue * 0.7,
                 assumptions: [
                     'Healthcare cost variation of ±30%',
                     'Includes regional cost variations',
@@ -245,22 +247,23 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "USD/year total",
         description: "Total annual economic gains from improved workforce productivity across population",
-        sourceUrl: "https://aspe.hhs.gov/sites/default/files/documents/e2b650cd64cf84aae8ff0fae7474af82/SDOH-Evidence-Review.pdf",
+        sourceUrl: muscleMassParameters.productivity_gain_per_lb.sourceUrl,
         emoji: "📈",
-        calculate: (muscleMassIncrease, baselineMetrics) => muscleMassIncrease * 100 * baselineMetrics.population_size,
+        calculate: (muscleMassIncrease, baselineMetrics) => 
+            muscleMassIncrease * muscleMassParameters.productivity_gain_per_lb.defaultValue * baselineMetrics.population_size,
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
-            const gains = muscleMassIncrease * 100 * baselineMetrics.population_size;
+            const gains = muscleMassIncrease * muscleMassParameters.productivity_gain_per_lb.defaultValue * baselineMetrics.population_size;
             return `
             <div class="calculation-explanation">
-                <p>Productivity gains are estimated at $100 per pound of muscle mass per person per year:</p>
+                <p>Productivity gains are estimated at $${muscleMassParameters.productivity_gain_per_lb.defaultValue} per pound of muscle mass per person per year:</p>
                 <div class="formula">
-                    ${muscleMassIncrease} lbs × $100 × ${baselineMetrics.population_size.toLocaleString()} people = $${gains.toLocaleString()}
+                    ${muscleMassIncrease} lbs × $${muscleMassParameters.productivity_gain_per_lb.defaultValue} × ${baselineMetrics.population_size.toLocaleString()} people = $${gains.toLocaleString()}
                 </div>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
-            const baseValue = muscleMassIncrease * 100 * baselineMetrics.population_size;
+            const baseValue = muscleMassIncrease * muscleMassParameters.productivity_gain_per_lb.defaultValue * baselineMetrics.population_size;
             return {
                 bestCase: muscleMassIncrease * 150 * baselineMetrics.population_size,
                 worstCase: muscleMassIncrease * 50 * baselineMetrics.population_size,
@@ -277,7 +280,7 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "USD/year total",
         description: "Total annual economic benefit including healthcare savings and productivity gains across population",
-        sourceUrl: "https://aspe.hhs.gov/sites/default/files/documents/e2b650cd64cf84aae8ff0fae7474af82/SDOH-Evidence-Review.pdf",
+        sourceUrl: muscleMassParameters.productivity_gain_per_lb.sourceUrl,
         emoji: "💎",
         calculate: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
@@ -316,22 +319,23 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         defaultValue: 0,
         unitName: "QALYs total",
         description: "Total additional quality-adjusted life years gained across population from the intervention",
-        sourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6684801/",
+        sourceUrl: muscleMassParameters.qaly_gain_per_lb.sourceUrl,
         emoji: "✨",
-        calculate: (muscleMassIncrease, baselineMetrics) => muscleMassIncrease * 0.02 * baselineMetrics.population_size,
+        calculate: (muscleMassIncrease, baselineMetrics) => 
+            muscleMassIncrease * muscleMassParameters.qaly_gain_per_lb.defaultValue * baselineMetrics.population_size,
         generateDisplayValue: (value) => `${formatLargeNumber(value)} QALYs total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
-            const qalys = muscleMassIncrease * 0.02 * baselineMetrics.population_size;
+            const qalys = muscleMassIncrease * muscleMassParameters.qaly_gain_per_lb.defaultValue * baselineMetrics.population_size;
             return `
             <div class="calculation-explanation">
-                <p>Each pound of muscle mass adds approximately 0.02 QALYs per person:</p>
+                <p>Each pound of muscle mass adds ${muscleMassParameters.qaly_gain_per_lb.defaultValue} QALYs per person:</p>
                 <div class="formula">
-                    ${muscleMassIncrease} lbs × 0.02 QALYs × ${baselineMetrics.population_size.toLocaleString()} people = ${qalys.toLocaleString()} QALYs
+                    ${muscleMassIncrease} lbs × ${muscleMassParameters.qaly_gain_per_lb.defaultValue} QALYs × ${baselineMetrics.population_size.toLocaleString()} people = ${qalys.toLocaleString()} QALYs
                 </div>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
-            const baseValue = muscleMassIncrease * 0.02 * baselineMetrics.population_size;
+            const baseValue = muscleMassIncrease * muscleMassParameters.qaly_gain_per_lb.defaultValue * baselineMetrics.population_size;
             return {
                 bestCase: muscleMassIncrease * 0.03 * baselineMetrics.population_size,
                 worstCase: muscleMassIncrease * 0.01 * baselineMetrics.population_size,
@@ -351,12 +355,12 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         sourceUrl: "https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata",
         emoji: "🏥",
         calculate: (muscleMassIncrease, baselineMetrics) => {
-            const mortalityReduction = Math.min(0.20, muscleMassIncrease * 0.01);
+            const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
             return baselineMetrics.medicare_total_annual_spend * mortalityReduction;
         },
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
-            const mortalityReduction = Math.min(0.20, muscleMassIncrease * 0.01);
+            const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
             const impact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
             return `
             <div class="calculation-explanation">
@@ -371,7 +375,7 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
-            const baseValue = baselineMetrics.medicare_total_annual_spend * Math.min(0.20, muscleMassIncrease * 0.01);
+            const baseValue = baselineMetrics.medicare_total_annual_spend * Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
             return {
                 bestCase: baseValue * 1.25,
                 worstCase: baseValue * 0.75,
@@ -393,22 +397,21 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         calculate: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
-            const discountRate = 0.03;
+            const discountRate = muscleMassParameters.discount_rate.defaultValue;
             return (healthcareSavings + productivityGains) * ((1 - Math.pow(1 + discountRate, -10)) / discountRate);
         },
         generateDisplayValue: (value) => `${formatCurrency(value)} total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
-            const discountRate = 0.03;
-            const savings = (healthcareSavings + productivityGains) * ((1 - Math.pow(1 + discountRate, -10)) / discountRate);
+            const savings = (healthcareSavings + productivityGains) * ((1 - Math.pow(1 + muscleMassParameters.discount_rate.defaultValue, -10)) / muscleMassParameters.discount_rate.defaultValue);
             return `
             <div class="calculation-explanation">
-                <p>10-year savings calculated with 3% discount rate:</p>
+                <p>10-year savings calculated with ${(muscleMassParameters.discount_rate.defaultValue * 100)}% discount rate:</p>
                 <ul>
                     <li>Annual healthcare savings: $${healthcareSavings.toLocaleString()}</li>
                     <li>Annual productivity gains: $${productivityGains.toLocaleString()}</li>
-                    <li>Discount rate: 3%</li>
+                    <li>Discount rate: ${(muscleMassParameters.discount_rate.defaultValue * 100)}%</li>
                     <li>Time horizon: 10 years</li>
                 </ul>
                 <div class="formula">
@@ -419,8 +422,8 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
             const baseValue = economicOutcomeMetrics.long_term_savings.calculate(muscleMassIncrease, baselineMetrics);
             return {
-                bestCase: baseValue * 1.4, // 40% higher for optimistic scenario
-                worstCase: baseValue * 0.6, // 40% lower for pessimistic scenario
+                bestCase: baseValue * 1.4,
+                worstCase: baseValue * 0.6,
                 assumptions: [
                     'Best case: Lower discount rate (2%)',
                     'Worst case: Higher discount rate (4%)',
