@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { muscleMassParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-parameters';
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, ExtendedModelParameter } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
 import { MuscleMassCalculations } from './MuscleMassCalculations';
 
 interface MuscleMassReportProps {
@@ -57,34 +57,65 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
     return formatCurrency(num);
   };
 
-  // Helper function to render a metric with its metadata
-  const renderMetric = (value: number, param: any, formatFn: (n: number) => string = formatNumber) => (
+  // Helper function to render a metric with its metadata and calculation
+  const renderMetric = (value: number, metric: ExtendedModelParameter, formatFn: (n: number) => string = formatNumber) => {
+    const sensitivity = metric.calculateSensitivity(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize });
+    
+    return (
     <div className="p-4 bg-gray-50 rounded-lg">
       <div className="flex items-center gap-2">
-        <span className="text-xl sm:text-2xl">{param.emoji}</span>
-        <h3 className="font-medium">{param.displayName}</h3>
+        <span className="text-xl sm:text-2xl">{metric.emoji}</span>
+        <h3 className="font-medium">{metric.displayName}</h3>
       </div>
       <span className="text-lg sm:text-xl font-semibold">
-          {formatFn(value)} {param.unitName}
-        </span>
-        <p className="text-gray-600 mb-2 text-sm sm:text-base">{param.description}</p>
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+        {formatFn(value)} {metric.unitName}
+      </span>
+      <p className="text-gray-600 mb-2 text-sm sm:text-base">{metric.description}</p>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
         <a
-          href={param.sourceUrl}
+          href={metric.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
         >
           <img 
-            src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
+            src={`https://www.google.com/s2/favicons?domain=${new URL(metric.sourceUrl).hostname}`}
             alt=""
             className="w-4 h-4"
           />
-          {new URL(param.sourceUrl).hostname}
+          {new URL(metric.sourceUrl).hostname}
         </a>
+      </div>
+      <div 
+        className="text-sm border-t pt-4 mt-2"
+        dangerouslySetInnerHTML={{ 
+          __html: metric.generateCalculationExplanation(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize }) 
+        }} 
+      />
+      <div className="text-sm border-t pt-4 mt-4">
+        <h4 className="font-medium mb-2">Sensitivity Analysis</h4>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <p className="text-gray-600">Best Case:</p>
+            <p className="font-semibold">{formatFn(sensitivity.bestCase)} {metric.unitName}</p>
+          </div>
+          <div>
+            <p className="text-gray-600">Worst Case:</p>
+            <p className="font-semibold">{formatFn(sensitivity.worstCase)} {metric.unitName}</p>
+          </div>
+        </div>
+        <div className="mt-2">
+          <p className="text-gray-600">Assumptions:</p>
+          <ul className="list-disc pl-5 mt-1">
+            {sensitivity.assumptions.map((assumption, index) => (
+              <li key={index} className="text-gray-700">{assumption}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
+};
 
   return (
     <article className="max-w-none">
@@ -225,39 +256,6 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         </div>
       </section>
 
-        {/* Detailed Calculations */}
-        <MuscleMassCalculations
-          muscleMassIncrease={muscleMassIncrease}
-          populationSize={populationSize}
-        />
-
-      {/* Sensitivity Analysis */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Sensitivity Analysis</h2>
-        <div className="grid grid-cols-1 gap-4">
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <h3 className="font-semibold mb-2">Best Case Scenario (20% better)</h3>
-            <p className="text-sm sm:text-base">Total Economic Benefit: {formatLargeCurrency(economic.total_economic_benefit * 1.2)}</p>
-          </div>
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <h3 className="font-semibold mb-2">Worst Case Scenario (20% worse)</h3>
-            <p className="text-sm sm:text-base">Total Economic Benefit: {formatLargeCurrency(economic.total_economic_benefit * 0.8)}</p>
-          </div>
-          <div className="p-4 bg-gray-50 rounded-lg">
-            <h3 className="font-semibold mb-2">Population Segments</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <p className="text-sm sm:text-base">Age 65-74: {formatLargeCurrency(economic.total_economic_benefit * 1.1)}</p>
-                <p className="text-sm sm:text-base">Age 75+: {formatLargeCurrency(economic.total_economic_benefit * 0.9)}</p>
-              </div>
-              <div className="space-y-2">
-                <p className="text-sm sm:text-base">Women: {formatLargeCurrency(economic.total_economic_benefit * 1.05)}</p>
-                <p className="text-sm sm:text-base">Men: {formatLargeCurrency(economic.total_economic_benefit * 0.95)}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
     </article>
   );
