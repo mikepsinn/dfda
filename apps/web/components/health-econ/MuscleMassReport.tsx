@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { muscleMassParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-parameters';
-import { metabolicImpactParameters, healthOutcomeParameters, economicImpactParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-impact-parameters';
+import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
 import { MuscleMassCalculations } from './MuscleMassCalculations';
 
 interface MuscleMassReportProps {
@@ -111,7 +111,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {Object.entries(metabolic).map(([key, value]) => (
             <React.Fragment key={key}>
-              {renderMetric(value, metabolicImpactParameters[key])}
+              {renderMetric(value, metabolicOutcomeMetrics[key])}
             </React.Fragment>
           ))}
         </div>
@@ -123,7 +123,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {Object.entries(health).map(([key, value]) => (
             <React.Fragment key={key}>
-              {renderMetric(value, healthOutcomeParameters[key], formatPercent)}
+              {renderMetric(value, healthOutcomeMetrics[key], formatPercent)}
             </React.Fragment>
           ))}
         </div>
@@ -135,7 +135,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {Object.entries(economic).map(([key, value]) => (
             <React.Fragment key={key}>
-              {renderMetric(value, economicImpactParameters[key], formatLargeCurrency)}
+              {renderMetric(value, economicOutcomeMetrics[key], formatLargeCurrency)}
             </React.Fragment>
           ))}
         </div>

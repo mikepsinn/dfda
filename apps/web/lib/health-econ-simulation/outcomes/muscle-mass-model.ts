@@ -1,5 +1,5 @@
 import { ModelParameter } from '../types';
-import { metabolicImpactParameters, healthOutcomeParameters, economicImpactParameters } from './muscle-mass-impact-parameters';
+import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from './muscle-mass-outcome-metrics';
 
 interface BaselineMetrics {
     resting_metabolic_rate: number;  // calories per day
@@ -11,11 +11,11 @@ interface BaselineMetrics {
     medicare_total_annual_spend: number;  // Total Medicare spend in USD (2021 data)
 }
 
-interface MetabolicImpact extends Record<keyof typeof metabolicImpactParameters, number> {}
+interface MetabolicImpact extends Record<keyof typeof metabolicOutcomeMetrics, number> {}
 
-interface HealthOutcomes extends Record<keyof typeof healthOutcomeParameters, number> {}
+interface HealthOutcomes extends Record<keyof typeof healthOutcomeMetrics, number> {}
 
-interface EconomicImpact extends Record<keyof typeof economicImpactParameters, number> {}
+interface EconomicImpact extends Record<keyof typeof economicOutcomeMetrics, number> {}
 
 export class MuscleMassInterventionModel {
     private muscle_mass_increase: number;
@@ -97,11 +97,11 @@ export class MuscleMassInterventionModel {
     getParameterMetadata(category: 'metabolic' | 'health' | 'economic', key: string): ModelParameter | undefined {
         switch (category) {
             case 'metabolic':
-                return metabolicImpactParameters[key as keyof typeof metabolicImpactParameters];
+                return metabolicOutcomeMetrics[key as keyof typeof metabolicOutcomeMetrics];
             case 'health':
-                return healthOutcomeParameters[key as keyof typeof healthOutcomeParameters];
+                return healthOutcomeMetrics[key as keyof typeof healthOutcomeMetrics];
             case 'economic':
-                return economicImpactParameters[key as keyof typeof economicImpactParameters];
+                return economicOutcomeMetrics[key as keyof typeof economicOutcomeMetrics];
             default:
                 return undefined;
         }
