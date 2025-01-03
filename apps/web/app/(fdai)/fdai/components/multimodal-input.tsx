@@ -149,8 +149,8 @@ function PureMultimodalInput({
         return {
           url,
           name: pathname,
-          contentType: contentType,
-        };
+          contentType,
+        } satisfies Attachment;
       }
       const { error } = await response.json();
       toast.error(error);
@@ -169,7 +169,7 @@ function PureMultimodalInput({
         const uploadPromises = files.map((file) => uploadFile(file));
         const uploadedAttachments = await Promise.all(uploadPromises);
         const successfullyUploadedAttachments = uploadedAttachments.filter(
-          (attachment) => attachment !== undefined,
+          (attachment): attachment is NonNullable<typeof attachment> => attachment !== undefined
         );
 
         setAttachments((currentAttachments) => [

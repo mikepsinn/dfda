@@ -71,8 +71,8 @@ export async function POST(request: Request) {
   const coreMessages = convertToCoreMessages(messages);
   const userMessage = getMostRecentUserMessage(coreMessages);
 
-  if (!userMessage) {
-    return new Response('No user message found', { status: 400 });
+  if (!userMessage || userMessage.role !== 'user') {
+    return new Response('No valid user message found', { status: 400 });
   }
 
   const chat = await getChatById({ id });

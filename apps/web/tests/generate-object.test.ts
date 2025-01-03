@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { getModel } from '@/lib/utils/modelUtils';
+import { getModelByName } from '@/lib/utils/modelUtils';
 import { z } from 'zod'
 import { generateObject } from 'ai'
 
@@ -22,7 +22,7 @@ describe("Generate Object tests", () => {
       `Generate information about a random product.`;
   
     const result = await generateObject({
-      model: getModel(),
+      model: getModelByName(),
       schema: TestSchema,
       prompt: userPrompt,
     });
