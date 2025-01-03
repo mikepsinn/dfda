@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
 
 export default function MuscleMassAnalysisPage() {
-  const [muscleMassIncrease, setMuscleMassIncrease] = useState(5);
+  const [muscleMassIncrease, setMuscleMassIncrease] = useState(2);
   const [populationSize, setPopulationSize] = useState(335000000);
 
   // Helper function for number formatting
@@ -47,7 +47,7 @@ export default function MuscleMassAnalysisPage() {
               <input
                 type="range"
                 min="1000"
-                max="335000000"
+                max="8000000000"
                 step="100000"
                 value={populationSize}
                 onChange={(e) => setPopulationSize(Number(e.target.value))}

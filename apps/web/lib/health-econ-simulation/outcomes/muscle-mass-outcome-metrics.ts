@@ -355,33 +355,68 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         sourceUrl: "https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata",
         emoji: "🏥",
         calculate: (muscleMassIncrease, baselineMetrics) => {
+            // 1. Mortality reduction impact
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
-            return baselineMetrics.medicare_total_annual_spend * mortalityReduction;
+            const mortalityImpact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
+
+            // 2. Fall-related cost savings
+            const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
+            const fallCostSavings = baselineMetrics.population_size * muscleMassParameters.fall_risk.defaultValue * 
+                                  fallRiskReduction * muscleMassParameters.fall_cost.defaultValue * 0.65; // Medicare covers ~65% of fall costs
+
+            // 3. Insulin sensitivity improvement impact (diabetes-related costs)
+            const insulinSensitivityImprovement = muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
+            const diabetesCostReduction = baselineMetrics.population_size * 13800 * 0.20 * insulinSensitivityImprovement; // $13,800 annual diabetes cost per person, assuming 20% of population has diabetes risk
+
+            // 4. Hospitalization reduction from improved overall health
+            const hospitalizationReduction = Math.min(0.15, muscleMassIncrease * 0.005); // 0.5% reduction per pound, max 15%
+            const hospitalizationSavings = baselineMetrics.medicare_total_annual_spend * 0.30 * hospitalizationReduction; // 30% of Medicare spend is hospitalization
+
+            return mortalityImpact + fallCostSavings + diabetesCostReduction + hospitalizationSavings;
         },
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
-            const impact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
+            const mortalityImpact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
+
+            const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
+            const fallCostSavings = baselineMetrics.population_size * muscleMassParameters.fall_risk.defaultValue * 
+                                  fallRiskReduction * muscleMassParameters.fall_cost.defaultValue * 0.65;
+
+            const insulinSensitivityImprovement = muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
+            const diabetesCostReduction = baselineMetrics.population_size * 13800 * 0.20 * insulinSensitivityImprovement;
+
+            const hospitalizationReduction = Math.min(0.15, muscleMassIncrease * 0.005);
+            const hospitalizationSavings = baselineMetrics.medicare_total_annual_spend * 0.30 * hospitalizationReduction;
+
             return `
             <div class="calculation-explanation">
-                <p>Medicare spend impact is calculated based on mortality reduction:</p>
-                <ul>
-                    <li>Mortality reduction: ${(mortalityReduction * 100).toFixed(1)}%</li>
-                    <li>Total Medicare spend: $${baselineMetrics.medicare_total_annual_spend.toLocaleString()}</li>
-                </ul>
+                <p>Medicare spend impact is calculated based on multiple factors:</p>
+                <ol>
+                    <li>Mortality reduction impact (${(mortalityReduction * 100).toFixed(1)}% reduction):
+                        <br/>$${mortalityImpact.toLocaleString()}</li>
+                    <li>Fall-related cost savings (${(fallRiskReduction * 100).toFixed(1)}% fall risk reduction):
+                        <br/>$${fallCostSavings.toLocaleString()}</li>
+                    <li>Diabetes-related cost savings (${(insulinSensitivityImprovement * 100).toFixed(1)}% insulin sensitivity improvement):
+                        <br/>$${diabetesCostReduction.toLocaleString()}</li>
+                    <li>Hospitalization reduction (${(hospitalizationReduction * 100).toFixed(1)}% reduction):
+                        <br/>$${hospitalizationSavings.toLocaleString()}</li>
+                </ol>
                 <div class="formula">
-                    ${(mortalityReduction * 100).toFixed(1)}% × $${baselineMetrics.medicare_total_annual_spend.toLocaleString()} = $${impact.toLocaleString()}
+                    Total Impact: $${(mortalityImpact + fallCostSavings + diabetesCostReduction + hospitalizationSavings).toLocaleString()}
                 </div>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
-            const baseValue = baselineMetrics.medicare_total_annual_spend * Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
+            const baseValue = economicOutcomeMetrics.medicare_spend_impact.calculate(muscleMassIncrease, baselineMetrics);
             return {
-                bestCase: baseValue * 1.25,
-                worstCase: baseValue * 0.75,
+                bestCase: baseValue * 1.35,
+                worstCase: baseValue * 0.65,
                 assumptions: [
-                    'Variation of ±25% in Medicare spending impact',
+                    'Variation of ±35% in Medicare spending impact',
                     'Accounts for policy and demographic variations',
+                    'Includes uncertainty in hospitalization rates',
+                    'Considers variations in diabetes prevalence',
                     'Based on historical Medicare spending patterns'
                 ]
             };
