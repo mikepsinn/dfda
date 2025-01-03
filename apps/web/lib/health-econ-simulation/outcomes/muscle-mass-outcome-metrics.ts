@@ -449,70 +449,145 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         displayName: "Total Economic Benefit",
         defaultValue: 0,
         unitName: "USD/year total",
-        description: "Total annual economic benefit including healthcare savings and productivity gains across population",
+        description: "Total annual economic benefit including healthcare savings, productivity gains, and monetized QALY value across population",
         sourceUrl: muscleMassParameters.productivity_gain_per_lb.sourceUrl,
         emoji: "💎",
         calculate: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
-            return healthcareSavings + productivityGains;
+            
+            // Calculate annual value of QALYs
+            const lifetimeQalys = economicOutcomeMetrics.qalys_gained.calculate(muscleMassIncrease, baselineMetrics);
+            const QALY_VALUE = 100000; // Standard value per QALY in USD
+            const AVG_REMAINING_LIFE_EXPECTANCY = 40; // Should match value in qalys_gained
+            const annualQalyValue = (lifetimeQalys * QALY_VALUE) / AVG_REMAINING_LIFE_EXPECTANCY;
+
+            return healthcareSavings + productivityGains + annualQalyValue;
         },
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSavings = economicOutcomeMetrics.healthcare_savings.calculate(muscleMassIncrease, baselineMetrics);
             const productivityGains = economicOutcomeMetrics.productivity_gains.calculate(muscleMassIncrease, baselineMetrics);
+            const lifetimeQalys = economicOutcomeMetrics.qalys_gained.calculate(muscleMassIncrease, baselineMetrics);
+            
+            const QALY_VALUE = 100000;
+            const AVG_REMAINING_LIFE_EXPECTANCY = 40;
+            const annualQalyValue = (lifetimeQalys * QALY_VALUE) / AVG_REMAINING_LIFE_EXPECTANCY;
+
             return `
             <div class="calculation-explanation">
-                <p>Total economic benefit is the sum of healthcare savings and productivity gains:</p>
+                <p>Total economic benefit includes healthcare savings, productivity gains, and monetized QALY value:</p>
                 <div class="formula">
-                    Healthcare Savings: $${healthcareSavings.toLocaleString()}<br>
-                    Productivity Gains: $${productivityGains.toLocaleString()}<br>
-                    Total: $${(healthcareSavings + productivityGains).toLocaleString()}
+                    Healthcare Savings: $${healthcareSavings.toLocaleString()}/year<br>
+                    Productivity Gains: $${productivityGains.toLocaleString()}/year<br>
+                    Annual QALY Value: $${annualQalyValue.toLocaleString()}/year 
+                    <em>(${lifetimeQalys.toLocaleString()} lifetime QALYs × $${QALY_VALUE.toLocaleString()}/QALY ÷ ${AVG_REMAINING_LIFE_EXPECTANCY} years)</em><br>
+                    Total: $${(healthcareSavings + productivityGains + annualQalyValue).toLocaleString()}/year
                 </div>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
             const healthcareSensitivity = economicOutcomeMetrics.healthcare_savings.calculateSensitivity(muscleMassIncrease, baselineMetrics);
             const productivitySensitivity = economicOutcomeMetrics.productivity_gains.calculateSensitivity(muscleMassIncrease, baselineMetrics);
+            const qalySensitivity = economicOutcomeMetrics.qalys_gained.calculateSensitivity(muscleMassIncrease, baselineMetrics);
+            
+            // Calculate annual QALY values with different QALY monetary values
+            const LOW_QALY_VALUE = 50000;
+            const HIGH_QALY_VALUE = 150000;
+            const AVG_REMAINING_LIFE_EXPECTANCY = 40;
+            
+            const worstQalyValue = (qalySensitivity.worstCase * LOW_QALY_VALUE) / AVG_REMAINING_LIFE_EXPECTANCY;
+            const bestQalyValue = (qalySensitivity.bestCase * HIGH_QALY_VALUE) / AVG_REMAINING_LIFE_EXPECTANCY;
+
             return {
-                bestCase: healthcareSensitivity.bestCase + productivitySensitivity.bestCase,
-                worstCase: healthcareSensitivity.worstCase + productivitySensitivity.worstCase,
+                bestCase: healthcareSensitivity.bestCase + productivitySensitivity.bestCase + bestQalyValue,
+                worstCase: healthcareSensitivity.worstCase + productivitySensitivity.worstCase + worstQalyValue,
                 assumptions: [
                     'Combined sensitivity of healthcare savings and productivity gains',
+                    'QALY value range: $50,000-$150,000 per QALY',
+                    'Includes lifetime QALY gains converted to annual value',
                     'Assumes independent variation of components'
                 ]
             };
         }
     },
     qalys_gained: {
-        displayName: "Quality-Adjusted Life Years Gained",
+        displayName: "Lifetime QALYs Gained",
         defaultValue: 0,
-        unitName: "QALYs total",
-        description: "Total additional quality-adjusted life years gained across population from the intervention",
-        sourceUrl: muscleMassParameters.qaly_gain_per_lb.sourceUrl,
+        unitName: "lifetime QALYs total",
+        description: "Total lifetime quality-adjusted life years gained across population based on systematic review and meta-analysis of SMI impact on mortality",
+        sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/37285331/",
         emoji: "✨",
-        calculate: (muscleMassIncrease, baselineMetrics) => 
-            muscleMassIncrease * muscleMassParameters.qaly_gain_per_lb.defaultValue * baselineMetrics.population_size,
-        generateDisplayValue: (value) => `${formatLargeNumber(value)} QALYs total`,
+        calculate: (muscleMassIncrease, baselineMetrics) => {
+            // Constants from meta-analysis and model
+            const LBS_TO_KG = 0.453592;
+            const MORTALITY_REDUCTION_PER_KG = 0.075; // 7.5% reduction per kg/m² SMI
+            const AVG_REMAINING_LIFE_EXPECTANCY = 40; // Average remaining life expectancy in years
+            const AVG_BODY_SURFACE_AREA = 1.7; // Average body surface area in m²
+
+            // Calculate lifetime QALYs gained per person
+            const qalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
+                                (MORTALITY_REDUCTION_PER_KG * AVG_REMAINING_LIFE_EXPECTANCY);
+
+            // Calculate total lifetime QALYs across population
+            return qalyPerPerson * baselineMetrics.population_size;
+        },
+        generateDisplayValue: (value) => `${formatLargeNumber(value)} lifetime QALYs total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
-            const qalys = muscleMassIncrease * muscleMassParameters.qaly_gain_per_lb.defaultValue * baselineMetrics.population_size;
+            const LBS_TO_KG = 0.453592;
+            const MORTALITY_REDUCTION_PER_KG = 0.075;
+            const AVG_REMAINING_LIFE_EXPECTANCY = 40;
+            const AVG_BODY_SURFACE_AREA = 1.7;
+
+            const kgIncrease = muscleMassIncrease * LBS_TO_KG;
+            const qalyPerPerson = kgIncrease * (MORTALITY_REDUCTION_PER_KG * AVG_REMAINING_LIFE_EXPECTANCY);
+            const totalQalys = qalyPerPerson * baselineMetrics.population_size;
+
             return `
             <div class="calculation-explanation">
-                <p>Each pound of muscle mass adds ${muscleMassParameters.qaly_gain_per_lb.defaultValue} QALYs per person:</p>
+                <p>Lifetime QALYs are calculated based on systematic review and meta-analysis of SMI impact on mortality:</p>
+                <ul>
+                    <li>Muscle mass increase: ${muscleMassIncrease} lbs (${kgIncrease.toFixed(2)} kg)</li>
+                    <li>Mortality reduction: ${(MORTALITY_REDUCTION_PER_KG * 100)}% per kg/m² SMI</li>
+                    <li>Average remaining life expectancy: ${AVG_REMAINING_LIFE_EXPECTANCY} years</li>
+                    <li>Average body surface area: ${AVG_BODY_SURFACE_AREA} m²</li>
+                </ul>
                 <div class="formula">
-                    ${muscleMassIncrease} lbs × ${muscleMassParameters.qaly_gain_per_lb.defaultValue} QALYs × ${baselineMetrics.population_size.toLocaleString()} people = ${qalys.toLocaleString()} QALYs
+                    Lifetime QALYs per person = ${kgIncrease.toFixed(2)} kg × (${(MORTALITY_REDUCTION_PER_KG * 100)}% × ${AVG_REMAINING_LIFE_EXPECTANCY} years) = ${qalyPerPerson.toFixed(2)} QALYs<br>
+                    Total lifetime QALYs = ${qalyPerPerson.toFixed(2)} × ${baselineMetrics.population_size.toLocaleString()} people = ${totalQalys.toLocaleString()} QALYs
                 </div>
+                <p><em>Note: These are lifetime QALYs gained, not annual QALYs. The calculation represents the total quality-adjusted life years gained over the remaining life expectancy.</em></p>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
-            const baseValue = muscleMassIncrease * muscleMassParameters.qaly_gain_per_lb.defaultValue * baselineMetrics.population_size;
+            const LBS_TO_KG = 0.453592;
+            const MORTALITY_REDUCTION_PER_KG = 0.075;
+            const AVG_REMAINING_LIFE_EXPECTANCY = 40;
+            
+            // Base calculation
+            const baseQalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
+                                    (MORTALITY_REDUCTION_PER_KG * AVG_REMAINING_LIFE_EXPECTANCY);
+            const baseValue = baseQalyPerPerson * baselineMetrics.population_size;
+
+            // Best case: Higher mortality reduction and life expectancy
+            const bestQalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
+                                    (0.09 * 45); // 9% reduction, 45 years
+            const bestCase = bestQalyPerPerson * baselineMetrics.population_size;
+
+            // Worst case: Lower mortality reduction and life expectancy
+            const worstQalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
+                                     (0.06 * 35); // 6% reduction, 35 years
+            const worstCase = worstQalyPerPerson * baselineMetrics.population_size;
+
             return {
-                bestCase: muscleMassIncrease * 0.03 * baselineMetrics.population_size,
-                worstCase: muscleMassIncrease * 0.01 * baselineMetrics.population_size,
+                bestCase,
+                worstCase,
                 assumptions: [
-                    'Best case: 0.03 QALYs per pound',
-                    'Worst case: 0.01 QALYs per pound',
-                    'Based on quality of life assessment variations'
+                    'Mortality risk reduction range: 6-9% per kg/m² SMI',
+                    'Remaining life expectancy range: 35-45 years',
+                    'Linear relationship between muscle mass and mortality risk',
+                    'Each year of life gained equals 1 QALY',
+                    'Based on systematic review and meta-analysis data'
                 ]
             };
         }
