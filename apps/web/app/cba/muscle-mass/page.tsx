@@ -62,12 +62,10 @@ export default function MuscleMassAnalysisPage() {
       </div>
 
       {/* Report */}
-      <div className="rounded-lg shadow-md p-8">
-        <MuscleMassReport
+      <MuscleMassReport
           muscleMassIncrease={muscleMassIncrease}
           populationSize={populationSize}
         />
-      </div>
     </div>
   );
 }

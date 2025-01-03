@@ -47,13 +47,13 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
   return (
     <article className="prose prose-lg max-w-none">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold m-0">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold m-0 mb-4 sm:mb-0">
           Muscle Mass Intervention Analysis Report
         </h1>
         <button
           onClick={() => setShowCalculations(!showCalculations)}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
         >
           {showCalculations ? 'Hide Calculations' : 'Show Calculations'}
         </button>
@@ -64,32 +64,32 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
       {/* Intervention Details */}
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Intervention Details</h2>
-        <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Intervention Details</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
           <div>
             <p className="font-medium">Muscle Mass Increase</p>
-            <p className="text-xl">{muscleMassIncrease} lbs per person</p>
+            <p className="text-lg sm:text-xl">{muscleMassIncrease} lbs per person</p>
           </div>
           <div>
             <p className="font-medium">Target Population</p>
-            <p className="text-xl">{formatNumber(populationSize, 0)} individuals</p>
+            <p className="text-lg sm:text-xl">{formatNumber(populationSize, 0)} individuals</p>
           </div>
         </div>
       </section>
 
       {/* Metabolic Impact */}
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Metabolic Impact</h2>
-        <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Metabolic Impact</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
           <div>
             <p className="font-medium">Additional Daily Calories Burned</p>
-            <p className="text-xl">
+            <p className="text-lg sm:text-xl">
               {formatNumber(metabolic.additional_daily_calories_burned, 1)} calories/day
             </p>
           </div>
           <div>
             <p className="font-medium">Annual Metabolic Impact</p>
-            <p className="text-xl">
+            <p className="text-lg sm:text-xl">
               {formatNumber(metabolic.annual_metabolic_impact, 0)} calories/year
             </p>
           </div>
@@ -98,42 +98,42 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
       {/* Health Outcomes */}
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Health Outcomes</h2>
-        <div className="grid grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Health Outcomes</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
           <div>
             <p className="font-medium">Insulin Sensitivity Improvement</p>
-            <p className="text-xl">{formatPercent(health.insulin_sensitivity_improvement)}</p>
+            <p className="text-lg sm:text-xl">{formatPercent(health.insulin_sensitivity_improvement)}</p>
           </div>
           <div>
             <p className="font-medium">Fall Risk Reduction</p>
-            <p className="text-xl">{formatPercent(health.fall_risk_reduction)}</p>
+            <p className="text-lg sm:text-xl">{formatPercent(health.fall_risk_reduction)}</p>
           </div>
           <div>
             <p className="font-medium">Mortality Risk Reduction</p>
-            <p className="text-xl">{formatPercent(health.mortality_reduction)}</p>
+            <p className="text-lg sm:text-xl">{formatPercent(health.mortality_reduction)}</p>
           </div>
         </div>
       </section>
 
       {/* Economic Impact */}
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Economic Impact (Annual)</h2>
-        <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
-          <div>
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Economic Impact (Annual)</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+          <div className="space-y-2">
             <p className="font-medium">Healthcare Cost Savings</p>
-            <p className="text-xl">{formatCurrency(economic.healthcare_savings)}</p>
+            <p className="text-lg sm:text-xl">{formatCurrency(economic.healthcare_savings)}</p>
           </div>
-          <div>
+          <div className="space-y-2">
             <p className="font-medium">Productivity Gains</p>
-            <p className="text-xl">{formatCurrency(economic.productivity_gains)}</p>
+            <p className="text-lg sm:text-xl">{formatCurrency(economic.productivity_gains)}</p>
           </div>
-          <div>
+          <div className="space-y-2">
             <p className="font-medium">Medicare Total Annual Spend Impact</p>
-            <p className="text-xl">{formatCurrency(economic.medicare_spend_impact)}</p>
+            <p className="text-lg sm:text-xl">{formatCurrency(economic.medicare_spend_impact)}</p>
           </div>
-          <div>
+          <div className="space-y-2">
             <p className="font-medium">Total Economic Benefit</p>
-            <p className="text-xl font-bold text-green-600">
+            <p className="text-lg sm:text-xl font-bold text-green-600">
               {formatCurrency(economic.total_economic_benefit)}
             </p>
           </div>
@@ -150,16 +150,16 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
       {/* Model Parameters */}
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Model Parameters</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Model Parameters</h2>
+        <div className="grid grid-cols-1 gap-4">
           {Object.entries(muscleMassParameters).map(([key, param]) => (
             <div key={key} className="p-4 bg-gray-50 rounded-lg">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-2xl">{param.emoji}</span>
+                <span className="text-xl sm:text-2xl">{param.emoji}</span>
                 <h3 className="font-medium">{param.displayName}</h3>
               </div>
-              <p className="text-gray-600 mb-2">{param.description}</p>
-              <div className="flex justify-between items-center">
+              <p className="text-gray-600 mb-2 text-sm sm:text-base">{param.description}</p>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
                 <span className="text-sm text-gray-500">
                   {param.defaultValue} {param.unitName}
                 </span>
@@ -228,26 +228,26 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
       {/* Sensitivity Analysis */}
       <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Sensitivity Analysis</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Sensitivity Analysis</h2>
+        <div className="grid grid-cols-1 gap-4">
           <div className="p-4 bg-gray-50 rounded-lg">
             <h3 className="font-semibold mb-2">Best Case Scenario (20% better)</h3>
-            <p>Total Economic Benefit: {formatCurrency(economic.total_economic_benefit * 1.2)}</p>
+            <p className="text-sm sm:text-base">Total Economic Benefit: {formatCurrency(economic.total_economic_benefit * 1.2)}</p>
           </div>
           <div className="p-4 bg-gray-50 rounded-lg">
             <h3 className="font-semibold mb-2">Worst Case Scenario (20% worse)</h3>
-            <p>Total Economic Benefit: {formatCurrency(economic.total_economic_benefit * 0.8)}</p>
+            <p className="text-sm sm:text-base">Total Economic Benefit: {formatCurrency(economic.total_economic_benefit * 0.8)}</p>
           </div>
-          <div className="p-4 bg-gray-50 rounded-lg col-span-2">
+          <div className="p-4 bg-gray-50 rounded-lg">
             <h3 className="font-semibold mb-2">Population Segments</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p>Age 65-74: {formatCurrency(economic.total_economic_benefit * 1.1)}</p>
-                <p>Age 75+: {formatCurrency(economic.total_economic_benefit * 0.9)}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <p className="text-sm sm:text-base">Age 65-74: {formatCurrency(economic.total_economic_benefit * 1.1)}</p>
+                <p className="text-sm sm:text-base">Age 75+: {formatCurrency(economic.total_economic_benefit * 0.9)}</p>
               </div>
-              <div>
-                <p>Women: {formatCurrency(economic.total_economic_benefit * 1.05)}</p>
-                <p>Men: {formatCurrency(economic.total_economic_benefit * 0.95)}</p>
+              <div className="space-y-2">
+                <p className="text-sm sm:text-base">Women: {formatCurrency(economic.total_economic_benefit * 1.05)}</p>
+                <p className="text-sm sm:text-base">Men: {formatCurrency(economic.total_economic_benefit * 0.95)}</p>
               </div>
             </div>
           </div>
