@@ -65,10 +65,10 @@ export default function MuscleMassAnalysisPage() {
       </div>
 
       {/* Report */}
-      <MuscleMassReport
+      <MuscleMassReport 
           muscleMassIncrease={muscleMassIncrease}
-          populationSize={populationSize}
-        />
+          populationSize={populationSize} 
+      />
     </div>
   );
 }

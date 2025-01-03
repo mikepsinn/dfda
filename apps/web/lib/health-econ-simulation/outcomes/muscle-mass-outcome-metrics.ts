@@ -1,6 +1,6 @@
 import { ModelParameter } from '../types';
 
-export const metabolicImpactParameters: Record<string, ModelParameter> = {
+export const metabolicOutcomeMetrics: Record<string, ModelParameter> = {
     additional_daily_calories_burned: {
         displayName: "Additional Daily Calories Burned",
         defaultValue: 0,
@@ -19,7 +19,7 @@ export const metabolicImpactParameters: Record<string, ModelParameter> = {
     }
 };
 
-export const healthOutcomeParameters: Record<string, ModelParameter> = {
+export const healthOutcomeMetrics: Record<string, ModelParameter> = {
     insulin_sensitivity_improvement: {
         displayName: "Insulin Sensitivity Improvement",
         defaultValue: 0,
@@ -46,7 +46,7 @@ export const healthOutcomeParameters: Record<string, ModelParameter> = {
     }
 };
 
-export const economicImpactParameters: Record<string, ModelParameter> = {
+export const economicOutcomeMetrics: Record<string, ModelParameter> = {
     healthcare_savings: {
         displayName: "Healthcare Cost Savings",
         defaultValue: 0,

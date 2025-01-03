@@ -64,11 +64,11 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <span className="text-xl sm:text-2xl">{param.emoji}</span>
         <h3 className="font-medium">{param.displayName}</h3>
       </div>
-      <p className="text-gray-600 mb-2 text-sm sm:text-base">{param.description}</p>
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-        <span className="text-lg sm:text-xl font-semibold">
+      <span className="text-lg sm:text-xl font-semibold">
           {formatFn(value)} {param.unitName}
         </span>
+        <p className="text-gray-600 mb-2 text-sm sm:text-base">{param.description}</p>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
         <a
           href={param.sourceUrl}
           target="_blank"
@@ -152,25 +152,25 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
                 <span className="text-xl sm:text-2xl">{param.emoji}</span>
                 <h3 className="font-medium">{param.displayName}</h3>
               </div>
-              <p className="text-gray-600 mb-2 text-sm sm:text-base">{param.description}</p>
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                <span className="text-sm text-gray-500">
-                  {param.defaultValue} {param.unitName}
-                </span>
-                <a
-                  href={param.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
-                >
-                  <img 
-                    src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
-                    alt=""
-                    className="w-4 h-4"
-                  />
-                  {new URL(param.sourceUrl).hostname}
-                </a>
-              </div>
+              <span className="text-lg sm:text-xl font-semibold block mt-2">
+                {param.defaultValue} {param.unitName}
+              </span>
+              <p className="text-gray-500 mb-2 text-xs sm:text-sm">
+                {param.description}
+              </p>
+              <a
+                href={param.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
+              >
+                <img 
+                  src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
+                  alt=""
+                  className="w-4 h-4"
+                />
+                {new URL(param.sourceUrl).hostname}
+              </a>
             </div>
           ))}
         </div>
