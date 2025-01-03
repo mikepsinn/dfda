@@ -74,9 +74,14 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
           href={param.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 text-sm"
+          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
         >
-          Source →
+          <img 
+            src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
+            alt=""
+            className="w-4 h-4"
+          />
+          {new URL(param.sourceUrl).hostname}
         </a>
       </div>
     </div>
@@ -84,17 +89,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
   return (
     <article className="max-w-none">
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8">
-        <button
-          onClick={() => setShowCalculations(!showCalculations)}
-          className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-        >
-          {showCalculations ? 'Hide Calculations' : 'Show Calculations'}
-        </button>
-      </div>
-      <p className="text-sm text-gray-500">
-        Generated on: {new Date().toLocaleDateString()}
-      </p>
+
 
       {/* Intervention Details */}
       <section className="mt-8">
@@ -147,13 +142,6 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         </div>
       </section>
 
-      {/* Detailed Calculations */}
-      {showCalculations && (
-        <MuscleMassCalculations
-          muscleMassIncrease={muscleMassIncrease}
-          populationSize={populationSize}
-        />
-      )}
 
       {/* Model Parameters */}
       <section className="mt-8">
@@ -174,9 +162,14 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
                   href={param.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 text-sm"
+                  className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
                 >
-                  Source →
+                  <img 
+                    src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
+                    alt=""
+                    className="w-4 h-4"
+                  />
+                  {new URL(param.sourceUrl).hostname}
                 </a>
               </div>
             </div>
@@ -232,6 +225,12 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
           </ul>
         </div>
       </section>
+
+        {/* Detailed Calculations */}
+        <MuscleMassCalculations
+          muscleMassIncrease={muscleMassIncrease}
+          populationSize={populationSize}
+        />
 
       {/* Sensitivity Analysis */}
       <section className="mt-8">
