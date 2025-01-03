@@ -1,3 +1,6 @@
+import { ModelParameter } from '../types';
+import { metabolicImpactParameters, healthOutcomeParameters, economicImpactParameters } from './muscle-mass-impact-parameters';
+
 interface BaselineMetrics {
     resting_metabolic_rate: number;  // calories per day
     insulin_sensitivity: number;      // relative scale
@@ -8,25 +11,11 @@ interface BaselineMetrics {
     medicare_total_annual_spend: number;  // Total Medicare spend in USD (2021 data)
 }
 
-interface MetabolicImpact {
-    additional_daily_calories_burned: number;
-    annual_metabolic_impact: number;
-}
+interface MetabolicImpact extends Record<keyof typeof metabolicImpactParameters, number> {}
 
-interface HealthOutcomes {
-    insulin_sensitivity_improvement: number;
-    fall_risk_reduction: number;
-    mortality_reduction: number;
-}
+interface HealthOutcomes extends Record<keyof typeof healthOutcomeParameters, number> {}
 
-interface EconomicImpact {
-    healthcare_savings: number;
-    productivity_gains: number;
-    total_economic_benefit: number;
-    qalys_gained: number;
-    medicare_spend_impact: number;
-    long_term_savings: number;
-}
+interface EconomicImpact extends Record<keyof typeof economicImpactParameters, number> {}
 
 export class MuscleMassInterventionModel {
     private muscle_mass_increase: number;
@@ -102,6 +91,20 @@ export class MuscleMassInterventionModel {
             medicare_spend_impact,
             long_term_savings
         };
+    }
+
+    // Helper method to get parameter metadata
+    getParameterMetadata(category: 'metabolic' | 'health' | 'economic', key: string): ModelParameter | undefined {
+        switch (category) {
+            case 'metabolic':
+                return metabolicImpactParameters[key as keyof typeof metabolicImpactParameters];
+            case 'health':
+                return healthOutcomeParameters[key as keyof typeof healthOutcomeParameters];
+            case 'economic':
+                return economicImpactParameters[key as keyof typeof economicImpactParameters];
+            default:
+                return undefined;
+        }
     }
 
     generate_report(population_size?: number): string {

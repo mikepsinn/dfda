@@ -5,7 +5,7 @@ import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
 
 export default function MuscleMassAnalysisPage() {
   const [muscleMassIncrease, setMuscleMassIncrease] = useState(5);
-  const [populationSize, setPopulationSize] = useState(100000);
+  const [populationSize, setPopulationSize] = useState(335000000);
 
   // Helper function for number formatting
   const formatNumber = (num: number) => {
@@ -14,6 +14,9 @@ export default function MuscleMassAnalysisPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
+        <h1 className="text-2xl sm:text-3xl font-bold m-0 mb-4 sm:mb-0">
+          Heath and Economic Impact of Increasing Muscle Mass
+        </h1>
       {/* Input Controls */}
       <div className="mb-12 p-6 bg-white rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-6">Analysis Parameters</h2>
@@ -44,8 +47,8 @@ export default function MuscleMassAnalysisPage() {
               <input
                 type="range"
                 min="1000"
-                max="1000000"
-                step="1000"
+                max="335000000"
+                step="100000"
                 value={populationSize}
                 onChange={(e) => setPopulationSize(Number(e.target.value))}
                 className="w-full"

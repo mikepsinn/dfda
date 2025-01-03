@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { muscleMassParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-parameters';
+import { metabolicImpactParameters, healthOutcomeParameters, economicImpactParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-impact-parameters';
 import { MuscleMassCalculations } from './MuscleMassCalculations';
 
 interface MuscleMassReportProps {
@@ -45,12 +46,45 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
     }).format(num);
   };
 
+  // Helper function for formatting large currency values
+  const formatLargeCurrency = (num: number) => {
+    if (Math.abs(num) >= 1e9) {
+      return `$${(num / 1e9).toFixed(1)}B`;
+    } else if (Math.abs(num) >= 1e6) {
+      return `$${(num / 1e6).toFixed(1)}M`;
+    } else if (Math.abs(num) >= 1e3) {
+      return `$${(num / 1e3).toFixed(1)}K`;
+    }
+    return formatCurrency(num);
+  };
+
+  // Helper function to render a metric with its metadata
+  const renderMetric = (value: number, param: any, formatFn: (n: number) => string = formatNumber) => (
+    <div className="p-4 bg-gray-50 rounded-lg">
+      <div className="flex items-center gap-2">
+        <span className="text-xl sm:text-2xl">{param.emoji}</span>
+        <h3 className="font-medium">{param.displayName}</h3>
+      </div>
+      <p className="text-gray-600 mb-2 text-sm sm:text-base">{param.description}</p>
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+        <span className="text-lg sm:text-xl font-semibold">
+          {formatFn(value)} {param.unitName}
+        </span>
+        <a
+          href={param.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:text-blue-800 text-sm"
+        >
+          Source →
+        </a>
+      </div>
+    </div>
+  );
+
   return (
-    <article className="prose prose-lg max-w-none">
+    <article className="max-w-none">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold m-0 mb-4 sm:mb-0">
-          Muscle Mass Intervention Analysis Report
-        </h1>
         <button
           onClick={() => setShowCalculations(!showCalculations)}
           className="w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
@@ -80,63 +114,36 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
       {/* Metabolic Impact */}
       <section className="mt-8">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Metabolic Impact</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
-          <div>
-            <p className="font-medium">Additional Daily Calories Burned</p>
-            <p className="text-lg sm:text-xl">
-              {formatNumber(metabolic.additional_daily_calories_burned, 1)} calories/day
-            </p>
-          </div>
-          <div>
-            <p className="font-medium">Annual Metabolic Impact</p>
-            <p className="text-lg sm:text-xl">
-              {formatNumber(metabolic.annual_metabolic_impact, 0)} calories/year
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {Object.entries(metabolic).map(([key, value]) => (
+            <React.Fragment key={key}>
+              {renderMetric(value, metabolicImpactParameters[key])}
+            </React.Fragment>
+          ))}
         </div>
       </section>
 
       {/* Health Outcomes */}
       <section className="mt-8">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Health Outcomes</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
-          <div>
-            <p className="font-medium">Insulin Sensitivity Improvement</p>
-            <p className="text-lg sm:text-xl">{formatPercent(health.insulin_sensitivity_improvement)}</p>
-          </div>
-          <div>
-            <p className="font-medium">Fall Risk Reduction</p>
-            <p className="text-lg sm:text-xl">{formatPercent(health.fall_risk_reduction)}</p>
-          </div>
-          <div>
-            <p className="font-medium">Mortality Risk Reduction</p>
-            <p className="text-lg sm:text-xl">{formatPercent(health.mortality_reduction)}</p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Object.entries(health).map(([key, value]) => (
+            <React.Fragment key={key}>
+              {renderMetric(value, healthOutcomeParameters[key], formatPercent)}
+            </React.Fragment>
+          ))}
         </div>
       </section>
 
       {/* Economic Impact */}
       <section className="mt-8">
         <h2 className="text-xl sm:text-2xl font-semibold mb-4">Economic Impact (Annual)</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
-          <div className="space-y-2">
-            <p className="font-medium">Healthcare Cost Savings</p>
-            <p className="text-lg sm:text-xl">{formatCurrency(economic.healthcare_savings)}</p>
-          </div>
-          <div className="space-y-2">
-            <p className="font-medium">Productivity Gains</p>
-            <p className="text-lg sm:text-xl">{formatCurrency(economic.productivity_gains)}</p>
-          </div>
-          <div className="space-y-2">
-            <p className="font-medium">Medicare Total Annual Spend Impact</p>
-            <p className="text-lg sm:text-xl">{formatCurrency(economic.medicare_spend_impact)}</p>
-          </div>
-          <div className="space-y-2">
-            <p className="font-medium">Total Economic Benefit</p>
-            <p className="text-lg sm:text-xl font-bold text-green-600">
-              {formatCurrency(economic.total_economic_benefit)}
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {Object.entries(economic).map(([key, value]) => (
+            <React.Fragment key={key}>
+              {renderMetric(value, economicImpactParameters[key], formatLargeCurrency)}
+            </React.Fragment>
+          ))}
         </div>
       </section>
 
@@ -154,7 +161,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 gap-4">
           {Object.entries(muscleMassParameters).map(([key, param]) => (
             <div key={key} className="p-4 bg-gray-50 rounded-lg">
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center">
                 <span className="text-xl sm:text-2xl">{param.emoji}</span>
                 <h3 className="font-medium">{param.displayName}</h3>
               </div>
@@ -232,22 +239,22 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="grid grid-cols-1 gap-4">
           <div className="p-4 bg-gray-50 rounded-lg">
             <h3 className="font-semibold mb-2">Best Case Scenario (20% better)</h3>
-            <p className="text-sm sm:text-base">Total Economic Benefit: {formatCurrency(economic.total_economic_benefit * 1.2)}</p>
+            <p className="text-sm sm:text-base">Total Economic Benefit: {formatLargeCurrency(economic.total_economic_benefit * 1.2)}</p>
           </div>
           <div className="p-4 bg-gray-50 rounded-lg">
             <h3 className="font-semibold mb-2">Worst Case Scenario (20% worse)</h3>
-            <p className="text-sm sm:text-base">Total Economic Benefit: {formatCurrency(economic.total_economic_benefit * 0.8)}</p>
+            <p className="text-sm sm:text-base">Total Economic Benefit: {formatLargeCurrency(economic.total_economic_benefit * 0.8)}</p>
           </div>
           <div className="p-4 bg-gray-50 rounded-lg">
             <h3 className="font-semibold mb-2">Population Segments</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <p className="text-sm sm:text-base">Age 65-74: {formatCurrency(economic.total_economic_benefit * 1.1)}</p>
-                <p className="text-sm sm:text-base">Age 75+: {formatCurrency(economic.total_economic_benefit * 0.9)}</p>
+                <p className="text-sm sm:text-base">Age 65-74: {formatLargeCurrency(economic.total_economic_benefit * 1.1)}</p>
+                <p className="text-sm sm:text-base">Age 75+: {formatLargeCurrency(economic.total_economic_benefit * 0.9)}</p>
               </div>
               <div className="space-y-2">
-                <p className="text-sm sm:text-base">Women: {formatCurrency(economic.total_economic_benefit * 1.05)}</p>
-                <p className="text-sm sm:text-base">Men: {formatCurrency(economic.total_economic_benefit * 0.95)}</p>
+                <p className="text-sm sm:text-base">Women: {formatLargeCurrency(economic.total_economic_benefit * 1.05)}</p>
+                <p className="text-sm sm:text-base">Men: {formatLargeCurrency(economic.total_economic_benefit * 0.95)}</p>
               </div>
             </div>
           </div>
