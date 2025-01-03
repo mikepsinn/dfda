@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { muscleMassParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-parameters';
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, ExtendedModelParameter } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
-import { MuscleMassCalculations } from './MuscleMassCalculations';
 
 interface MuscleMassReportProps {
   muscleMassIncrease: number;
@@ -55,12 +54,14 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
           {new URL(metric.sourceUrl).hostname}
         </a>
       </div>
-      <div 
-        className="text-sm border-t pt-4 mt-2"
-        dangerouslySetInnerHTML={{ 
-          __html: metric.generateCalculationExplanation(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize }) 
-        }} 
-      />
+      <div className="text-sm border-t pt-4 mt-2">
+        <div
+          className="prose prose-sm max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_p]:mb-2 [&_.formula]:pl-4 [&_.formula]:border-l-2 [&_.formula]:border-gray-200 [&_.formula]:my-2"
+          dangerouslySetInnerHTML={{
+            __html: metric.generateCalculationExplanation(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize })
+          }}
+        />
+      </div>
       <div className="text-sm border-t pt-4 mt-4">
         <h4 className="font-medium mb-2">Sensitivity Analysis</h4>
         <div className="grid grid-cols-2 gap-4">

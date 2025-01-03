@@ -351,73 +351,153 @@ export const economicOutcomeMetrics: Record<string, ExtendedModelParameter> = {
         displayName: "Medicare Spend Impact",
         defaultValue: 0,
         unitName: "USD/year total",
-        description: "Total annual impact on Medicare spending from improved health outcomes across population",
+        description: "Total annual impact on Medicare spending from improved health outcomes across Medicare-eligible population",
         sourceUrl: "https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata",
         emoji: "🏥",
         calculate: (muscleMassIncrease, baselineMetrics) => {
-            // 1. Mortality reduction impact
+            // Medicare population adjustments
+            const medicareEligibleRatio = 0.186; // 18.6% of US population on Medicare (2023 data)
+            const medicarePopulation = baselineMetrics.population_size * medicareEligibleRatio;
+            
+            // Age distribution weights (based on Medicare enrollment data)
+            const ageDistribution = {
+                '65-74': { weight: 0.51, riskMultiplier: 1.0 },    // 51% of Medicare population
+                '75-84': { weight: 0.33, riskMultiplier: 1.5 },    // 33% of Medicare population, 1.5x risk
+                '85+': { weight: 0.16, riskMultiplier: 2.5 }       // 16% of Medicare population, 2.5x risk
+            };
+
+            // 1. Mortality reduction impact (adjusted by age)
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
-            const mortalityImpact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
+            const mortalityImpact = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const ageGroupPopulation = medicarePopulation * data.weight;
+                const adjustedReduction = mortalityReduction * data.riskMultiplier;
+                return total + (baselineMetrics.medicare_total_annual_spend * adjustedReduction * data.weight);
+            }, 0);
 
-            // 2. Fall-related cost savings
+            // 2. Fall-related cost savings (higher impact on older population)
             const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
-            const fallCostSavings = baselineMetrics.population_size * muscleMassParameters.fall_risk.defaultValue * 
-                                  fallRiskReduction * muscleMassParameters.fall_cost.defaultValue * 0.65; // Medicare covers ~65% of fall costs
+            const fallCostSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const ageGroupPopulation = medicarePopulation * data.weight;
+                const adjustedFallRisk = muscleMassParameters.fall_risk.defaultValue * data.riskMultiplier;
+                return total + (ageGroupPopulation * adjustedFallRisk * fallRiskReduction * 
+                              muscleMassParameters.fall_cost.defaultValue * 0.65 * data.riskMultiplier);
+            }, 0);
 
-            // 3. Insulin sensitivity improvement impact (diabetes-related costs)
+            // 3. Diabetes-related cost savings (adjusted for Medicare population)
             const insulinSensitivityImprovement = muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
-            const diabetesCostReduction = baselineMetrics.population_size * 13800 * 0.20 * insulinSensitivityImprovement; // $13,800 annual diabetes cost per person, assuming 20% of population has diabetes risk
+            const diabetesPrevalenceInMedicare = 0.33; // 33% of Medicare beneficiaries have diabetes
+            const diabetesCostReduction = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const ageGroupPopulation = medicarePopulation * data.weight;
+                return total + (ageGroupPopulation * 13800 * diabetesPrevalenceInMedicare * 
+                              insulinSensitivityImprovement * data.riskMultiplier);
+            }, 0);
 
-            // 4. Hospitalization reduction from improved overall health
-            const hospitalizationReduction = Math.min(0.15, muscleMassIncrease * 0.005); // 0.5% reduction per pound, max 15%
-            const hospitalizationSavings = baselineMetrics.medicare_total_annual_spend * 0.30 * hospitalizationReduction; // 30% of Medicare spend is hospitalization
+            // 4. Hospitalization reduction (adjusted for age-specific rates)
+            const hospitalizationReduction = Math.min(0.15, muscleMassIncrease * 0.005);
+            const hospitalizationSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const adjustedReduction = hospitalizationReduction * data.riskMultiplier;
+                return total + (baselineMetrics.medicare_total_annual_spend * 0.30 * 
+                              adjustedReduction * data.weight);
+            }, 0);
 
             return mortalityImpact + fallCostSavings + diabetesCostReduction + hospitalizationSavings;
         },
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
+            const medicareEligibleRatio = 0.186;
+            const medicarePopulation = baselineMetrics.population_size * medicareEligibleRatio;
+
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
-            const mortalityImpact = baselineMetrics.medicare_total_annual_spend * mortalityReduction;
-
             const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
-            const fallCostSavings = baselineMetrics.population_size * muscleMassParameters.fall_risk.defaultValue * 
-                                  fallRiskReduction * muscleMassParameters.fall_cost.defaultValue * 0.65;
-
             const insulinSensitivityImprovement = muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
-            const diabetesCostReduction = baselineMetrics.population_size * 13800 * 0.20 * insulinSensitivityImprovement;
-
             const hospitalizationReduction = Math.min(0.15, muscleMassIncrease * 0.005);
-            const hospitalizationSavings = baselineMetrics.medicare_total_annual_spend * 0.30 * hospitalizationReduction;
+
+            // Recalculate impacts using the same logic as the calculate function
+            const ageDistribution = {
+                '65-74': { weight: 0.51, riskMultiplier: 1.0 },
+                '75-84': { weight: 0.33, riskMultiplier: 1.5 },
+                '85+': { weight: 0.16, riskMultiplier: 2.5 }
+            };
+
+            const mortalityImpact = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const ageGroupPopulation = medicarePopulation * data.weight;
+                const adjustedReduction = mortalityReduction * data.riskMultiplier;
+                return total + (baselineMetrics.medicare_total_annual_spend * adjustedReduction * data.weight);
+            }, 0);
+
+            const fallCostSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const ageGroupPopulation = medicarePopulation * data.weight;
+                const adjustedFallRisk = muscleMassParameters.fall_risk.defaultValue * data.riskMultiplier;
+                return total + (ageGroupPopulation * adjustedFallRisk * fallRiskReduction * 
+                              muscleMassParameters.fall_cost.defaultValue * 0.65 * data.riskMultiplier);
+            }, 0);
+
+            const diabetesCostReduction = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const ageGroupPopulation = medicarePopulation * data.weight;
+                return total + (ageGroupPopulation * 13800 * 0.33 * 
+                              insulinSensitivityImprovement * data.riskMultiplier);
+            }, 0);
+
+            const hospitalizationSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
+                const adjustedReduction = hospitalizationReduction * data.riskMultiplier;
+                return total + (baselineMetrics.medicare_total_annual_spend * 0.30 * 
+                              adjustedReduction * data.weight);
+            }, 0);
+
+            const totalImpact = mortalityImpact + fallCostSavings + diabetesCostReduction + hospitalizationSavings;
+            const perPersonImpact = totalImpact / medicarePopulation;
+            const currentPerPersonSpend = baselineMetrics.medicare_total_annual_spend / medicarePopulation;
 
             return `
             <div class="calculation-explanation">
-                <p>Medicare spend impact is calculated based on multiple factors:</p>
+                <p>Medicare spend impact is calculated based on multiple factors, adjusted for Medicare demographics:</p>
+                <p>Current Annual Medicare Spend:</p>
+                <ul>
+                    <li>Total: $${baselineMetrics.medicare_total_annual_spend.toLocaleString()}</li>
+                    <li>Per Medicare Beneficiary: $${Math.round(currentPerPersonSpend).toLocaleString()}/year</li>
+                </ul>
+                <p>Medicare Population: ${Math.round(medicarePopulation).toLocaleString()} (${(medicareEligibleRatio * 100).toFixed(1)}% of total)</p>
+                <p>Age Distribution:</p>
+                <ul>
+                    <li>65-74: 51% (baseline risk)</li>
+                    <li>75-84: 33% (1.5x risk)</li>
+                    <li>85+: 16% (2.5x risk)</li>
+                </ul>
                 <ol>
-                    <li>Mortality reduction impact (${(mortalityReduction * 100).toFixed(1)}% reduction):
-                        <br/>$${mortalityImpact.toLocaleString()}</li>
-                    <li>Fall-related cost savings (${(fallRiskReduction * 100).toFixed(1)}% fall risk reduction):
-                        <br/>$${fallCostSavings.toLocaleString()}</li>
-                    <li>Diabetes-related cost savings (${(insulinSensitivityImprovement * 100).toFixed(1)}% insulin sensitivity improvement):
-                        <br/>$${diabetesCostReduction.toLocaleString()}</li>
-                    <li>Hospitalization reduction (${(hospitalizationReduction * 100).toFixed(1)}% reduction):
-                        <br/>$${hospitalizationSavings.toLocaleString()}</li>
+                    <li>Age-adjusted mortality reduction impact:
+                        <br/>$${mortalityImpact.toLocaleString()} (${((mortalityImpact / baselineMetrics.medicare_total_annual_spend) * 100).toFixed(2)}% of total spend)</li>
+                    <li>Age-adjusted fall-related cost savings:
+                        <br/>$${fallCostSavings.toLocaleString()} (${((fallCostSavings / baselineMetrics.medicare_total_annual_spend) * 100).toFixed(2)}% of total spend)</li>
+                    <li>Diabetes-related cost savings (33% prevalence):
+                        <br/>$${diabetesCostReduction.toLocaleString()} (${((diabetesCostReduction / baselineMetrics.medicare_total_annual_spend) * 100).toFixed(2)}% of total spend)</li>
+                    <li>Age-adjusted hospitalization reduction:
+                        <br/>$${hospitalizationSavings.toLocaleString()} (${((hospitalizationSavings / baselineMetrics.medicare_total_annual_spend) * 100).toFixed(2)}% of total spend)</li>
                 </ol>
                 <div class="formula">
-                    Total Impact: $${(mortalityImpact + fallCostSavings + diabetesCostReduction + hospitalizationSavings).toLocaleString()}
+                    <p><strong>Total Medicare Impact:</strong></p>
+                    <ul>
+                        <li>Total Savings: $${totalImpact.toLocaleString()}/year
+                            <br/><em>(${((totalImpact / baselineMetrics.medicare_total_annual_spend) * 100).toFixed(2)}% of total Medicare spend)</em>
+                        </li>
+                        <li>Per Beneficiary Savings: $${Math.round(perPersonImpact).toLocaleString()}/year
+                            <br/><em>(${((perPersonImpact / currentPerPersonSpend) * 100).toFixed(2)}% reduction in per-person spend)</em>
+                        </li>
+                    </ul>
                 </div>
             </div>`
         },
         calculateSensitivity: (muscleMassIncrease, baselineMetrics) => {
             const baseValue = economicOutcomeMetrics.medicare_spend_impact.calculate(muscleMassIncrease, baselineMetrics);
             return {
-                bestCase: baseValue * 1.35,
-                worstCase: baseValue * 0.65,
+                bestCase: baseValue * 1.40,
+                worstCase: baseValue * 0.60,
                 assumptions: [
-                    'Variation of ±35% in Medicare spending impact',
-                    'Accounts for policy and demographic variations',
-                    'Includes uncertainty in hospitalization rates',
-                    'Considers variations in diabetes prevalence',
-                    'Based on historical Medicare spending patterns'
+                    'Variation of ±40% in Medicare spending impact',
+                    'Accounts for age distribution uncertainty',
+                    'Includes variations in disease prevalence by age group',
+                    'Considers demographic shifts in Medicare population',
+                    'Based on historical Medicare spending patterns',
+                    'Accounts for regional variations in healthcare costs'
                 ]
             };
         }
