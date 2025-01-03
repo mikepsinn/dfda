@@ -28,6 +28,25 @@ export default withAuth(
     const isAuth = !!token
     const pathname = req.nextUrl.pathname
 
+    // Handle /dfda/ prefix redirects
+    if (pathname.startsWith('/dfda/')) {
+      const newPath = pathname.replace('/dfda/', '/')
+      const newUrl = new URL(newPath, req.url)
+      
+      // Preserve query parameters
+      const searchParams = new URLSearchParams(req.nextUrl.search)
+      searchParams.forEach((value, key) => {
+        newUrl.searchParams.set(key, value)
+      })
+
+      // Preserve hash fragment
+      if (req.nextUrl.hash) {
+        newUrl.hash = req.nextUrl.hash
+      }
+
+      return NextResponse.redirect(newUrl, { status: 308 })
+    }
+
     // Check redirects first
     const redirect = redirects.find(r => r.source === pathname)
     if (redirect) {
@@ -96,7 +115,6 @@ export const config = {
     "/dashboard/:path*",
     "/signin",
     "/signup",
-    "/dfda/right-to-trial",
-    "/dfda/right-to-trial-act",
+    "/dfda/:path*",
   ],
 }
