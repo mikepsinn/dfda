@@ -13,7 +13,6 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
   muscleMassIncrease,
   populationSize = 100000,
 }) => {
-  const [showCalculations, setShowCalculations] = useState(false);
   const model = new MuscleMassInterventionModel(muscleMassIncrease, populationSize);
   const metabolic = model.calculate_metabolic_impact();
   const health = model.calculate_health_outcomes();

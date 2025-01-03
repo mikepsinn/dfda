@@ -128,7 +128,6 @@ export class MuscleMassInterventionModel {
 
         return `
 # Muscle Mass Intervention Analysis Report
-Generated on: ${new Date().toISOString().split('T')[0]}
 
 ## Intervention Details
 - Muscle Mass Increase: ${this.muscle_mass_increase} lbs per person
