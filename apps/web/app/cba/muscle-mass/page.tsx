@@ -62,7 +62,7 @@ export default function MuscleMassAnalysisPage() {
       </div>
 
       {/* Report */}
-      <div className="bg-white rounded-lg shadow-md p-8">
+      <div className="rounded-lg shadow-md p-8">
         <MuscleMassReport
           muscleMassIncrease={muscleMassIncrease}
           populationSize={populationSize}
