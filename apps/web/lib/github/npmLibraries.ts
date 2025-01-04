@@ -57,7 +57,7 @@ function extractRepoFromPackageData(data: {
   if (!repositoryUrl && data.bugs && typeof data.bugs === "object") {
     repositoryUrl = data.bugs.url
   }
-  if (!repositoryUrl && data.bugs && data.bugs.url) {
+  if (!repositoryUrl && data.bugs?.url) {
     repositoryUrl = data.bugs.url
   }
   if (repositoryUrl) {

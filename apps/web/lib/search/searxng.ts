@@ -236,7 +236,7 @@ export async function advancedSearchXNGSearch(
     generalResults = generalResults.slice(0, maxResults)
 
     const imageResults = (data.results || [])
-      .filter((result: SearXNGResult) => result && result.img_src)
+      .filter((result: SearXNGResult) => result?.img_src)
       .slice(0, maxResults)
 
     console.log(`✨ Search completed with ${generalResults.length} results`)

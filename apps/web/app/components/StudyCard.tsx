@@ -105,14 +105,14 @@ export default function StudyCard({ study }: StudyCardProps) {
       {/* Statistics */}
       {study.statistics && <StudyStatistics statistics={study.statistics} />}
 
-      {study.causeVariable && study.causeVariable.charts && (
+      {study.causeVariable?.charts && (
         <div className="neobrutalist-container bg-white p-6 mb-8">
           <h2 className="neobrutalist-h2 mb-6">Cause Variable Data</h2>
           <GlobalVariableCharts globalVariable={study.causeVariable} />
         </div>
       )}
 
-      {study.effectVariable && study.effectVariable.charts && (
+      {study.effectVariable?.charts && (
         <div className="neobrutalist-container bg-white p-6 mb-8">
           <h2 className="neobrutalist-h2 mb-6">Effect Variable Data</h2>
           <GlobalVariableCharts globalVariable={study.effectVariable} />
@@ -120,7 +120,7 @@ export default function StudyCard({ study }: StudyCardProps) {
       )}
 
       {/* Study Charts */}
-      {study.studyCharts && study.studyCharts.correlationScatterPlot && (
+      {study.studyCharts?.correlationScatterPlot && (
         <div className="neobrutalist-container bg-white p-6 mb-8">
           <h2 className="neobrutalist-h2 mb-6">Study Data</h2>
           <div className="grid grid-cols-1 gap-8">

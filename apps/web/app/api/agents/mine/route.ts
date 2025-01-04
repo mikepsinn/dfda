@@ -5,7 +5,7 @@ import { getCurrentUser } from "@/lib/session"
 export async function GET() {
   try {
     const currentUser = await getCurrentUser()
-    if (!currentUser || !currentUser.id) {
+    if (!currentUser?.id) {
       return new NextResponse("Unauthorized", { status: 401 })
     }
     const records = await prisma.agent.findMany({

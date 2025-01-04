@@ -83,7 +83,7 @@ export async function searchFdaTreatments(treatment: string): Promise<string[]> 
         }
         
         return data.results
-            .filter((item: any) => item.openfda && item.openfda.brand_name)
+            .filter((item: any) => item.openfda?.brand_name)
             .map((item: any) => item.openfda.brand_name[0]);
     } catch (error) {
         console.error("Error in searchFdaTreatments:", error);

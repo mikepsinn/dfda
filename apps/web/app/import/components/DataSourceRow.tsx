@@ -50,7 +50,7 @@ export const DataSourceRow = ({ data }: Props): React.ReactElement => (
       {data.longDescription || data.shortDescription}
     </p>
     <div className="flex flex-wrap gap-3">
-      {data.buttons && data.buttons.map((button, index) => {
+      {data.buttons?.map((button, index) => {
         updateDataSourceButtonLink(button)
         return (
           <DataSourceButton key={index} bgColor={button.color} href={button.link}>

@@ -73,7 +73,7 @@ export async function DELETE(
   context: z.infer<typeof routeContextSchema>
 ) {
   const currentUser = await getCurrentUser()
-  if (!currentUser || !currentUser.id) {
+  if (!currentUser?.id) {
     return new Response("Unauthorized", { status: 401 })
   }
   try {

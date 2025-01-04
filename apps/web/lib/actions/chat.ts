@@ -128,7 +128,7 @@ export async function getSharedChat(id: string) {
   const redis = await getRedis()
   const chat = await redis.hgetall<Chat>(`chat:${id}`)
 
-  if (!chat || !chat.sharePath) {
+  if (!chat?.sharePath) {
     return null
   }
 

@@ -309,7 +309,7 @@ export async function getOrCreateDfdaUser(
   }
 
   const jsonResponse = await response.json()
-  if (!jsonResponse.user || !jsonResponse.user.id) {
+  if (!jsonResponse.user?.id) {
     throw new Error("Invalid response from DFDA API")
   }
 

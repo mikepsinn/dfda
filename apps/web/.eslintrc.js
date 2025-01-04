@@ -6,6 +6,18 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint"],
+  parserOptions: {
+    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
+  },
+  overrides: [
+    {
+      files: ["*.js"],
+      parserOptions: {
+        project: null,
+      },
+    },
+  ],
   rules: {
     // Disable common annoying warnings
     "@next/next/no-img-element": "off",

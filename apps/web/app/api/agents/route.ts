@@ -9,7 +9,7 @@ import {SharingLevel} from "@prisma/client";
 export async function GET() {
   try {
     const currentUser = await getCurrentUser()
-    if (!currentUser || !currentUser.id) {
+    if (!currentUser?.id) {
       return new NextResponse("Unauthorized", { status: 401 })
     }
 
@@ -31,7 +31,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const currentUser = await getCurrentUser()
-    if (!currentUser || !currentUser.id) {
+    if (!currentUser?.id) {
       return new NextResponse("Unauthorized", { status: 401 })
     }
     const json = await req.json()
