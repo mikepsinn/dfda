@@ -79,27 +79,76 @@ async function findComponentUsage(componentName, componentPath) {
     ignore: ['**/*.test.{ts,tsx,js,jsx}', '**/*.spec.{ts,tsx,js,jsx}']
   });
 
-  let occurrences = 0;
+  let usageCount = 0;
+  const componentFile = path.resolve(componentPath);
   
   for (const file of allFiles) {
+    // Skip checking the component's own file
+    if (path.resolve(file) === componentFile) {
+      continue;
+    }
+
     try {
       const content = await readFile(file, 'utf8');
-      // Count how many times the component name appears in other files
-      const matches = content.match(new RegExp(componentName, 'g')) || [];
-      occurrences += matches.length;
       
-      // If we find more than one occurrence, the component is being used
-      if (occurrences > 1) {
-        return false; // Not unused
+      // Check for various import patterns
+      const importPatterns = [
+        // Named imports
+        new RegExp(`import\\s+{[^}]*\\b${componentName}\\b[^}]*}\\s+from`, 'g'),
+        // Default imports
+        new RegExp(`import\\s+${componentName}\\s+from`, 'g'),
+        // Namespace imports
+        new RegExp(`import\\s+\\*\\s+as\\s+${componentName}\\s+from`, 'g'),
+        // Dynamic imports
+        new RegExp(`import\\s*\\(\\s*['"\`][^'"\`]*['"\`]\\s*\\)\\s*\\.\\s*then\\s*\\(\\s*${componentName}\\s*=>`, 'g'),
+        // Type imports
+        new RegExp(`import\\s+type\\s+{[^}]*\\b${componentName}\\b[^}]*}\\s+from`, 'g'),
+      ];
+
+      // Check for JSX/TSX usage patterns
+      const jsxPatterns = [
+        // Standard JSX usage
+        new RegExp(`<${componentName}[\\s/>]`, 'g'),
+        // Dynamic component usage
+        new RegExp(`component\\s*=\\s*{\\s*${componentName}\\s*}`, 'g'),
+        // Spread props usage
+        new RegExp(`<\\s*\\.\\.\\.${componentName}\\s*>`, 'g'),
+      ];
+      
+      // Check for code reference patterns
+      const referencePatterns = [
+        // Function calls
+        new RegExp(`\\b${componentName}\\s*\\(`, 'g'),
+        // Object property access
+        new RegExp(`\\b${componentName}\\.`, 'g'),
+        // Object destructuring
+        new RegExp(`(?:const|let|var)\\s*{[^}]*\\b${componentName}\\b[^}]*}\\s*=`, 'g'),
+        // Array destructuring
+        new RegExp(`(?:const|let|var)\\s*\\[[^\\]]*\\b${componentName}\\b[^\\]]*\\]\\s*=`, 'g'),
+        // Type usage in TypeScript
+        new RegExp(`:\\s*${componentName}\\b`, 'g'),
+        // Object property shorthand
+        new RegExp(`({|,)\\s*${componentName}\\b`, 'g'),
+      ];
+
+      // Check all patterns
+      const allPatterns = [...importPatterns, ...jsxPatterns, ...referencePatterns];
+      
+      for (const pattern of allPatterns) {
+        const matches = content.match(pattern);
+        if (matches) {
+          usageCount += matches.length;
+          if (usageCount > 0) {
+            return false; // Component is used
+          }
+        }
       }
     } catch (error) {
       console.error(`Error reading file ${file}:`, error);
     }
   }
   
-  // If we only found one or zero occurrences, the component is unused
-  // (one occurrence would be the definition itself)
-  return occurrences <= 1;
+  return usageCount === 0; // Return true if component is unused
 }
 
 async function main() {
@@ -139,30 +188,38 @@ async function main() {
   console.log('1. Used via dynamic imports');
   console.log('2. Part of the public API');
   console.log('3. Used in markdown/MDX files');
-  console.log('\nTo delete after review, run: pnpm clean:unused --delete');
-  
-  if (process.argv.includes('--delete')) {
-    console.log('\nAre you sure you want to delete these files? (y/N)');
-    process.stdin.resume();
-    process.stdin.setEncoding('utf8');
-    
-    process.stdin.once('data', function (text) {
-      if (text.trim().toLowerCase() === 'y') {
-        console.log('\nDeleting unused components...');
-        for (const [name, file] of unusedComponents) {
-          try {
-            fs.unlinkSync(file);
-            console.log(`Deleted: ${file} (${name})`);
-          } catch (error) {
-            console.error(`Error deleting ${file}:`, error);
-          }
-        }
-      } else {
-        console.log('Deletion cancelled.');
-      }
-      process.exit();
+
+  const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  const confirmDelete = () => {
+    return new Promise((resolve) => {
+      readline.question(`\nDelete all ${unusedComponents.size} unused components? (y/N) `, (answer) => {
+        resolve(answer.trim().toLowerCase() === 'y');
+      });
     });
-  }
+  };
+
+  // Use async IIFE to handle async/await in the deletion process
+  await (async () => {
+    const shouldDelete = await confirmDelete();
+    if (shouldDelete) {
+      console.log('\nDeleting unused components...');
+      for (const [name, file] of unusedComponents) {
+        try {
+          fs.unlinkSync(file);
+          console.log(`✓ Deleted: ${file}`);
+        } catch (error) {
+          console.error(`✗ Error deleting ${file}:`, error);
+        }
+      }
+    } else {
+      console.log('Deletion cancelled.');
+    }
+    readline.close();
+  })();
 }
 
 main().catch(console.error); 
