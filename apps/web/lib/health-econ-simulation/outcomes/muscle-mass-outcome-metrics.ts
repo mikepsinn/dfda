@@ -229,8 +229,8 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             // 1. Fall-related cost savings (adjusted by age)
             const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
             const fallCostSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
-                const adjustedFallRisk = muscleMassParameters.fall_risk.defaultValue * data.riskMultiplier;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
+                const adjustedFallRisk = baselineMetrics.fall_risk.defaultValue * data.riskMultiplier;
                 const baseFallCost = muscleMassParameters.fall_cost.defaultValue * 1.2; // Increased base cost by 20%
                 return total + (ageGroupPopulation * adjustedFallRisk * fallRiskReduction * 
                               baseFallCost * data.riskMultiplier);
@@ -241,7 +241,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             const diabetesPrevalence = 0.11; // 11% of general population has diabetes
             const annualDiabetesCost = 19800; // Increased from 16,750 based on latest data
             const diabetesCostReduction = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedPrevalence = diabetesPrevalence * (data.riskMultiplier ** 0.7); // Increased age impact
                 return total + (ageGroupPopulation * annualDiabetesCost * adjustedPrevalence * 
                               insulinSensitivityImprovement * data.riskMultiplier);
@@ -252,7 +252,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             const annualHospitalizationCost = 18500; // Increased from 15,800
             const baseHospitalizationRate = 0.11; // Increased from 0.09
             const hospitalizationSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedRate = baseHospitalizationRate * (data.riskMultiplier ** 1.2); // Increased age impact
                 const adjustedReduction = hospitalizationReduction * data.riskMultiplier;
                 return total + (ageGroupPopulation * annualHospitalizationCost * adjustedRate * 
@@ -264,7 +264,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             const avgEndOfLifeCost = 95000; // Increased from 80,000
             const annualMortalityRate = 0.0085;
             const mortalitySavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedMortalityRate = annualMortalityRate * (data.riskMultiplier ** 1.5); // Increased age impact
                 return total + (ageGroupPopulation * avgEndOfLifeCost * adjustedMortalityRate * 
                               mortalityReduction * data.riskMultiplier);
@@ -274,7 +274,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             const baseAnnualHealthcareCost = 14500; // Increased from 12,000
             const utilizationReduction = Math.min(0.12, muscleMassIncrease * 0.004); // Increased from 0.10 and 0.003
             const utilizationSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedCost = baseAnnualHealthcareCost * (data.riskMultiplier ** 1.3); // Increased age impact
                 return total + (ageGroupPopulation * adjustedCost * utilizationReduction * data.riskMultiplier);
             }, 0);
@@ -301,35 +301,35 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
 
             // Calculate components using the same logic as the calculate function
             const fallCostSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
-                const adjustedFallRisk = muscleMassParameters.fall_risk.defaultValue * data.riskMultiplier;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
+                const adjustedFallRisk = baselineMetrics.fall_risk.defaultValue * data.riskMultiplier;
                 return total + (ageGroupPopulation * adjustedFallRisk * fallRiskReduction * 
                               muscleMassParameters.fall_cost.defaultValue * data.riskMultiplier);
             }, 0);
 
             const diabetesCostReduction = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedPrevalence = 0.11 * (data.riskMultiplier ** 0.7);
                 return total + (ageGroupPopulation * 19800 * adjustedPrevalence * 
                               insulinSensitivityImprovement * data.riskMultiplier);
             }, 0);
 
             const hospitalizationSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedRate = 0.11 * (data.riskMultiplier ** 1.2);
                 return total + (ageGroupPopulation * 18500 * adjustedRate * 
                               hospitalizationReduction * data.riskMultiplier);
             }, 0);
 
             const mortalitySavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 const adjustedMortalityRate = 0.0085 * (data.riskMultiplier ** 1.5);
                 return total + (ageGroupPopulation * 95000 * adjustedMortalityRate * 
                               mortalityReduction * data.riskMultiplier);
             }, 0);
 
             const utilizationSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
-                const ageGroupPopulation = baselineMetrics.population_size * data.weight;
+                const ageGroupPopulation = baselineMetrics.population_size.defaultValue * data.weight;
                 return total + (ageGroupPopulation * 14500 * data.riskMultiplier * 
                               utilizationReduction * data.riskMultiplier);
             }, 0);
@@ -362,7 +362,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
                 </ol>
                 <div class="formula">
                     <p><strong>Total Healthcare Savings:</strong> $${totalSavings.toLocaleString()}/year</p>
-                    <p><em>Per Person Average: $${Math.round(totalSavings / baselineMetrics.population_size).toLocaleString()}/year</em></p>
+                    <p><em>Per Person Average: $${Math.round(totalSavings / baselineMetrics.population_size.defaultValue).toLocaleString()}/year</em></p>
                 </div>
             </div>`
         },
@@ -402,7 +402,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
                 (muscleMassIncrease * LBS_TO_KG) * COGNITIVE_COEFFICIENT * PRODUCTIVITY_CONVERSION;
             
             // Calculate monetary impact across population
-            return productivityGainPercent * AVG_ANNUAL_SALARY * baselineMetrics.population_size;
+            return productivityGainPercent * AVG_ANNUAL_SALARY * baselineMetrics.population_size.defaultValue;
         },
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
@@ -413,7 +413,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
 
             const kgIncrease = muscleMassIncrease * LBS_TO_KG;
             const productivityGainPercent = kgIncrease * COGNITIVE_COEFFICIENT * PRODUCTIVITY_CONVERSION;
-            const monetaryImpact = productivityGainPercent * AVG_ANNUAL_SALARY * baselineMetrics.population_size;
+            const monetaryImpact = productivityGainPercent * AVG_ANNUAL_SALARY * baselineMetrics.population_size.defaultValue;
 
             return `
             <div class="calculation-explanation">
@@ -423,11 +423,11 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
                     <li>Cognitive improvement coefficient: ${COGNITIVE_COEFFICIENT} per kg (Nature study)</li>
                     <li>Productivity conversion: ${(PRODUCTIVITY_CONVERSION * 100)}% per cognitive SD</li>
                     <li>Average annual salary: $${AVG_ANNUAL_SALARY.toLocaleString()}</li>
-                    <li>Population size: ${baselineMetrics.population_size.toLocaleString()}</li>
+                    <li>Population size: ${baselineMetrics?.population_size?.defaultValue?.toLocaleString() ?? 0}</li>
                 </ul>
                 <div class="formula">
                     Productivity gain: ${(productivityGainPercent * 100).toFixed(3)}%<br>
-                    Monetary impact: ${(productivityGainPercent * 100).toFixed(3)}% × $${AVG_ANNUAL_SALARY.toLocaleString()} × ${baselineMetrics.population_size.toLocaleString()} = $${monetaryImpact.toLocaleString()}
+                    Monetary impact: ${(productivityGainPercent * 100).toFixed(3)}% × $${AVG_ANNUAL_SALARY.toLocaleString()} × ${baselineMetrics?.population_size?.defaultValue?.toLocaleString() ?? 0} = $${monetaryImpact.toLocaleString()}
                 </div>
             </div>`
         },
@@ -439,13 +439,13 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             const AVG_ANNUAL_SALARY = 55000;
 
             const baseValue = (muscleMassIncrease * LBS_TO_KG) * COGNITIVE_COEFFICIENT * 
-                            PRODUCTIVITY_CONVERSION * AVG_ANNUAL_SALARY * baselineMetrics.population_size;
+                            PRODUCTIVITY_CONVERSION * AVG_ANNUAL_SALARY * baselineMetrics.population_size.defaultValue;
 
             // Calculate with confidence interval bounds from the Nature study
             const bestCase = (muscleMassIncrease * LBS_TO_KG) * (COGNITIVE_COEFFICIENT * 1.25) * 
-                           (PRODUCTIVITY_CONVERSION * 1.33) * AVG_ANNUAL_SALARY * baselineMetrics.population_size;
+                           (PRODUCTIVITY_CONVERSION * 1.33) * AVG_ANNUAL_SALARY * baselineMetrics.population_size.defaultValue;
             const worstCase = (muscleMassIncrease * LBS_TO_KG) * (COGNITIVE_COEFFICIENT * 0.75) * 
-                            (PRODUCTIVITY_CONVERSION * 0.67) * AVG_ANNUAL_SALARY * baselineMetrics.population_size;
+                            (PRODUCTIVITY_CONVERSION * 0.67) * AVG_ANNUAL_SALARY * baselineMetrics.population_size.defaultValue;
 
             return {
                 bestCase,
@@ -553,7 +553,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
                                 (MORTALITY_REDUCTION_PER_KG * AVG_REMAINING_LIFE_EXPECTANCY);
 
             // Calculate total lifetime QALYs across population
-            return qalyPerPerson * baselineMetrics.population_size;
+            return qalyPerPerson * baselineMetrics.population_size.defaultValue;
         },
         generateDisplayValue: (value) => `${formatLargeNumber(value)} lifetime QALYs total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
@@ -564,7 +564,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
 
             const kgIncrease = muscleMassIncrease * LBS_TO_KG;
             const qalyPerPerson = kgIncrease * (MORTALITY_REDUCTION_PER_KG * AVG_REMAINING_LIFE_EXPECTANCY);
-            const totalQalys = qalyPerPerson * baselineMetrics.population_size;
+            const totalQalys = qalyPerPerson * baselineMetrics.population_size.defaultValue;
 
             return `
             <div class="calculation-explanation">
@@ -577,7 +577,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
                 </ul>
                 <div class="formula">
                     Lifetime QALYs per person = ${kgIncrease.toFixed(2)} kg × (${(MORTALITY_REDUCTION_PER_KG * 100)}% × ${AVG_REMAINING_LIFE_EXPECTANCY} years) = ${qalyPerPerson.toFixed(2)} QALYs<br>
-                    Total lifetime QALYs = ${qalyPerPerson.toFixed(2)} × ${baselineMetrics.population_size.toLocaleString()} people = ${totalQalys.toLocaleString()} QALYs
+                    Total lifetime QALYs = ${qalyPerPerson.toFixed(2)} × ${baselineMetrics?.population_size?.defaultValue?.toLocaleString() ?? 0} people = ${totalQalys.toLocaleString()} QALYs
                 </div>
                 <p><em>Note: These are lifetime QALYs gained, not annual QALYs. The calculation represents the total quality-adjusted life years gained over the remaining life expectancy.</em></p>
             </div>`
@@ -590,17 +590,17 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             // Base calculation
             const baseQalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
                                     (MORTALITY_REDUCTION_PER_KG * AVG_REMAINING_LIFE_EXPECTANCY);
-            const baseValue = baseQalyPerPerson * baselineMetrics.population_size;
+            const baseValue = baseQalyPerPerson * baselineMetrics.population_size.defaultValue;
 
             // Best case: Higher mortality reduction and life expectancy
             const bestQalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
                                     (0.09 * 45); // 9% reduction, 45 years
-            const bestCase = bestQalyPerPerson * baselineMetrics.population_size;
+            const bestCase = bestQalyPerPerson * baselineMetrics.population_size.defaultValue;
 
             // Worst case: Lower mortality reduction and life expectancy
             const worstQalyPerPerson = (muscleMassIncrease * LBS_TO_KG) * 
                                      (0.06 * 35); // 6% reduction, 35 years
-            const worstCase = worstQalyPerPerson * baselineMetrics.population_size;
+            const worstCase = worstQalyPerPerson * baselineMetrics.population_size.defaultValue;
 
             return {
                 bestCase,
@@ -633,7 +633,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
         calculate: (muscleMassIncrease, baselineMetrics) => {
             // Medicare population adjustments
             const medicareEligibleRatio = 0.186; // 18.6% of US population on Medicare (2023 data)
-            const medicarePopulation = baselineMetrics.population_size * medicareEligibleRatio;
+            const medicarePopulation = baselineMetrics.population_size.defaultValue * medicareEligibleRatio;
             
             // Age distribution weights (based on Medicare enrollment data)
             const ageDistribution = {
@@ -654,7 +654,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
             const fallCostSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
                 const ageGroupPopulation = medicarePopulation * data.weight;
-                const adjustedFallRisk = muscleMassParameters.fall_risk.defaultValue * data.riskMultiplier;
+                const adjustedFallRisk = baselineMetrics.fall_risk.defaultValue * data.riskMultiplier;
                 return total + (ageGroupPopulation * adjustedFallRisk * fallRiskReduction * 
                               muscleMassParameters.fall_cost.defaultValue * 0.65 * data.riskMultiplier);
             }, 0);
@@ -681,7 +681,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
         generateDisplayValue: (value) => `${formatCurrency(value)}/year total`,
         generateCalculationExplanation: (muscleMassIncrease, baselineMetrics) => {
             const medicareEligibleRatio = 0.186;
-            const medicarePopulation = baselineMetrics.population_size * medicareEligibleRatio;
+            const medicarePopulation = baselineMetrics.population_size.defaultValue * medicareEligibleRatio;
 
             const mortalityReduction = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
             const fallRiskReduction = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
@@ -703,7 +703,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
 
             const fallCostSavings = Object.entries(ageDistribution).reduce((total, [age, data]) => {
                 const ageGroupPopulation = medicarePopulation * data.weight;
-                const adjustedFallRisk = muscleMassParameters.fall_risk.defaultValue * data.riskMultiplier;
+                const adjustedFallRisk = baselineMetrics.fall_risk.defaultValue * data.riskMultiplier;
                 return total + (ageGroupPopulation * adjustedFallRisk * fallRiskReduction * 
                               muscleMassParameters.fall_cost.defaultValue * 0.65 * data.riskMultiplier);
             }, 0);

@@ -1,16 +1,20 @@
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, ExtendedModelParameter } from './muscle-mass-outcome-metrics';
+import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from './muscle-mass-outcome-metrics';
 import ReactDOMServer from 'react-dom/server';
 import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
+import { ModelParameter } from '../types';
+import { baselineMetrics } from './baseline-metrics';
 
-interface BaselineMetrics {
-    resting_metabolic_rate: number;  // calories per day
-    insulin_sensitivity: number;      // relative scale
-    fall_risk: number;               // annual probability
-    healthcare_costs: number;         // annual per person
-    disability_risk: number;          // annual probability
-    mortality_risk: number;          // annual probability
-    medicare_total_annual_spend: number;  // Total Medicare spend in USD (2021 data)
+// Fixed baseline metrics from configuration
+type FixedBaselineMetrics = typeof baselineMetrics;
+
+// Variable parameters that can be set per model instance
+interface VariableParameters {
     population_size: number;
+}
+
+// Combined metrics type for use in calculations
+interface ModelMetrics extends FixedBaselineMetrics {
+    population_size: ModelParameter;
 }
 
 interface MetabolicImpact extends Record<keyof typeof metabolicOutcomeMetrics, number> {}
@@ -19,26 +23,36 @@ interface EconomicImpact extends Record<keyof typeof economicOutcomeMetrics, num
 
 export class MuscleMassInterventionModel {
     private muscle_mass_increase: number;
-    private population_size: number;
-    private baseline_metrics: BaselineMetrics;
+    private variable_params: VariableParameters;
+    private model_metrics: ModelMetrics;
 
     constructor(muscle_mass_increase_lbs: number, population_size: number = 100000) {
         this.muscle_mass_increase = muscle_mass_increase_lbs;
-        this.population_size = population_size;
-        this.baseline_metrics = {
-            resting_metabolic_rate: 1800,  // calories per day
-            insulin_sensitivity: 1.0,      // relative scale
-            fall_risk: 0.15,              // annual probability
-            healthcare_costs: 11000,       // annual per person
-            disability_risk: 0.10,         // annual probability
-            mortality_risk: 0.02,          // annual probability
-            medicare_total_annual_spend: 829000000000,  // Total Medicare spend in USD (2021 data)
-            population_size: population_size
+        this.variable_params = {
+            population_size
+        };
+        
+        // Combine fixed and variable parameters into model metrics
+        this.model_metrics = {
+            ...baselineMetrics,
+            population_size: {
+                displayName: "Target Population Size",
+                defaultValue: population_size,
+                unitName: "people",
+                description: "Size of the population being analyzed",
+                sourceUrl: "",
+                emoji: "👥",
+                generateDisplayValue: (value: number) => value.toLocaleString()
+            }
         };
     }
 
-    get baselineMetrics(): BaselineMetrics {
-        return this.baseline_metrics;
+    get baselineMetrics(): ModelMetrics {
+        return this.model_metrics;
+    }
+
+    get variableParameters(): VariableParameters {
+        return this.variable_params;
     }
 
     calculate_metabolic_impact(): MetabolicImpact {
@@ -60,7 +74,15 @@ export class MuscleMassInterventionModel {
     }
 
     calculate_economic_impact(population_size?: number): EconomicImpact {
-        const metrics = { ...this.baseline_metrics, population_size: population_size || this.population_size };
+        // Update model metrics if a new population size is provided
+        const metrics = population_size ? {
+            ...this.model_metrics,
+            population_size: {
+                ...this.model_metrics.population_size,
+                defaultValue: population_size
+            }
+        } : this.model_metrics;
+
         return Object.fromEntries(
             Object.entries(economicOutcomeMetrics).map(([key, metric]) => [
                 key,
@@ -69,7 +91,7 @@ export class MuscleMassInterventionModel {
         ) as EconomicImpact;
     }
 
-    getParameterMetadata(category: 'metabolic' | 'health' | 'economic', key: string): ExtendedModelParameter | undefined {
+    getParameterMetadata(category: 'metabolic' | 'health' | 'economic', key: string): OutcomeMetric | undefined {
         switch (category) {
             case 'metabolic':
                 return metabolicOutcomeMetrics[key as keyof typeof metabolicOutcomeMetrics];
@@ -87,7 +109,7 @@ export class MuscleMassInterventionModel {
         const html = ReactDOMServer.renderToString(
             MuscleMassReport({
                 muscleMassIncrease: this.muscle_mass_increase,
-                populationSize: this.population_size
+                populationSize: this.variable_params.population_size
             })
         );
 
