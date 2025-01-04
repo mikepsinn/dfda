@@ -4,6 +4,8 @@ module.exports = {
     "next/core-web-vitals",
     "prettier"
   ],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   rules: {
     // Disable common annoying warnings
     "@next/next/no-img-element": "off",
