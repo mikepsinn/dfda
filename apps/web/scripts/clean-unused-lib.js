@@ -114,6 +114,64 @@ async function findFileUsage(filePath, exports) {
   return true; // File appears to be unused
 }
 
+// Helper function to check if directory is empty
+function isDirectoryEmpty(dirPath) {
+  try {
+    const files = fs.readdirSync(dirPath);
+    // Filter out .DS_Store files on macOS and Thumbs.db on Windows
+    const realFiles = files.filter(file => !/(^|\/)\.[^\/\.]/g.test(file) && file !== 'Thumbs.db');
+    return realFiles.length === 0;
+  } catch (error) {
+    console.error(`Error checking directory ${dirPath}:`, error.message);
+    return false;
+  }
+}
+
+// Helper function to delete empty directories recursively
+function deleteEmptyDirs(dirPath) {
+  let deletedCount = 0;
+  
+  function deleteRecursively(dir) {
+    if (!fs.existsSync(dir)) return;
+    
+    // Get all items in directory
+    let items;
+    try {
+      items = fs.readdirSync(dir);
+    } catch (error) {
+      console.error(`Error reading directory ${dir}:`, error.message);
+      return;
+    }
+    
+    // Recursively process subdirectories
+    for (const item of items) {
+      const fullPath = path.join(dir, item);
+      try {
+        const stat = fs.statSync(fullPath);
+        if (stat.isDirectory()) {
+          deleteRecursively(fullPath);
+        }
+      } catch (error) {
+        console.error(`Error processing ${fullPath}:`, error.message);
+      }
+    }
+    
+    // Check if directory is empty after processing subdirectories
+    if (isDirectoryEmpty(dir)) {
+      try {
+        fs.rmdirSync(dir);
+        console.log(`✓ Deleted empty directory: ${dir}`);
+        deletedCount++;
+      } catch (error) {
+        console.error(`✗ Error deleting directory ${dir}:`, error.message);
+      }
+    }
+  }
+  
+  deleteRecursively(dirPath);
+  return deletedCount;
+}
+
 async function main() {
   console.log('Finding unused files in lib directory...\n');
   console.log('Note: This tool looks for files that are not imported or whose exports are not used anywhere.');
@@ -169,7 +227,7 @@ async function main() {
   console.log('4. Used in markdown/MDX files');
   console.log('5. Referenced by external tools or scripts');
   
-  console.log('\nAre you sure you want to delete these files? (y/N)');
+  console.log('\nAre you sure you want to delete these files and empty folders? (y/N)');
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   
@@ -188,7 +246,14 @@ async function main() {
           errorCount++;
         }
       }
-      console.log(`\nDeletion complete: ${deletedCount} files deleted, ${errorCount} errors`);
+      console.log(`\nFile deletion complete: ${deletedCount} files deleted, ${errorCount} errors`);
+      
+      // After deleting files, clean up empty directories
+      console.log('\nCleaning up empty directories...');
+      const deletedDirs = deleteEmptyDirs('lib');
+      console.log(`Directory cleanup complete: ${deletedDirs} empty directories removed`);
+      
+      console.log('\nAll cleanup operations completed!');
     } else {
       console.log('Deletion cancelled.');
     }
