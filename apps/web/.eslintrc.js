@@ -16,6 +16,10 @@ module.exports = {
       parserOptions: {
         project: null,
       },
+      rules: {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/prefer-optional-chain": "off",
+      },
     },
   ],
   rules: {
