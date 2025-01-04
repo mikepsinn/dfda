@@ -4,7 +4,6 @@ import "@/app/styles/neobrutalist.css";
 import { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { CopilotKit } from "@copilotkit/react-core";
-import { Analytics } from "@vercel/analytics/react";
 import NextTopLoader from "nextjs-toploader";
 
 import { siteConfig } from "@/config/site";

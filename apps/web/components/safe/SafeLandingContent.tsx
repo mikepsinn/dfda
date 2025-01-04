@@ -10,6 +10,8 @@ interface SafeLandingContentProps {
 
 export function SafeLandingContent({ session }: SafeLandingContentProps) {
   return (
-    
+    <div>
+      <h1>Safe Landing Content</h1>
+    </div>
   )
 } 
