@@ -9,7 +9,6 @@ export default async function Home() {
   return (
       <main>
           <DFDAHomePage />
-          <OpenSource/>
           <PWARedirect/>
       </main>
   )
