@@ -109,7 +109,6 @@ export default async function RootLayout({children}: RootLayoutProps) {
           </div>
           <Toaster/>
         </CopilotKit>
-        <Analytics/>
       </Providers>
       </body>
       </html>

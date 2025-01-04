@@ -1,5 +1,7 @@
 import { ModelParameter } from '../types';
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, ExtendedModelParameter } from './muscle-mass-outcome-metrics';
+import ReactDOMServer from 'react-dom/server';
+import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
 
 interface BaselineMetrics {
     resting_metabolic_rate: number;  // calories per day
@@ -79,5 +81,36 @@ export class MuscleMassInterventionModel {
             default:
                 return undefined;
         }
+    }
+
+    generate_report(): string {
+        // Render the React component to static HTML
+        const html = ReactDOMServer.renderToString(
+            MuscleMassReport({
+                muscleMassIncrease: this.muscle_mass_increase,
+                populationSize: this.population_size
+            })
+        );
+
+        // Add necessary HTML wrapper and styles
+        return `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Mass Intervention Analysis Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add any additional styles needed for the report */
+        .prose { max-width: none; }
+        .list-circle { list-style-type: circle; }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        ${html}
+    </div>
+</body>
+</html>`;
     }
 }

@@ -4,16 +4,15 @@
 
 import { MuscleMassInterventionModel } from "@/lib/health-econ-simulation/outcomes/muscle-mass-model";
 
-
 describe("Health Economic Simulation Tests", () => {
     it("simulates follistatin muscle mass intervention impact", async () => {
         // Import and use the MuscleMassInterventionModel
         const model = new MuscleMassInterventionModel(5); // 5 lbs muscle mass increase
         const report = model.generate_report();
         
-        // Save report to markdown file
+        // Save report to HTML file
         const fs = require('fs');
-        const outputPath = './reports/muscle-mass-intervention-report.md';
+        const outputPath = './reports/muscle-mass-intervention-report.html';
         
         // Ensure reports directory exists
         if (!fs.existsSync('./reports')) {
@@ -25,8 +24,9 @@ describe("Health Economic Simulation Tests", () => {
         // Verify report was generated correctly
         expect(fs.existsSync(outputPath)).toBe(true);
         const savedReport = fs.readFileSync(outputPath, 'utf-8');
+        expect(savedReport).toContain("<!DOCTYPE html>");
         expect(savedReport).toContain("Muscle Mass Intervention Analysis Report");
-        expect(savedReport).toContain("Muscle Mass Increase: 5 lbs per person");
+        expect(savedReport).toContain("5 lbs per person");
         
     }, 60000); // Allow 60s for analysis
 });
