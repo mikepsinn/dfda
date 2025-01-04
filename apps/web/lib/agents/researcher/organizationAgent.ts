@@ -206,7 +206,7 @@ async function generateAndSaveOrganization(
 export async function generateOrganizationFromUrl(
     url: string
 ): Promise<Organization> {
-    let model = getModelByName("gpt-4o")
+    const model = getModelByName("gpt-4o")
 
     // const perplexity = createOpenAI({
     //   name: 'perplexity',

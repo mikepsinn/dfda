@@ -3,8 +3,7 @@ import GlobalCoordinationAgent from "@/components/landingPage/global-coordinatio
 import GlobalHealthOptimizationAgent from "@/components/landingPage/global-health-optimization-agent";
 import React from "react";
 
-const WorldOptimizationHeader = () => {
-  return (
+const WorldOptimizationHeader = () => (
     <header className="relative mx-4 overflow-hidden p-6 text-center sm:mx-8 md:mx-12 lg:mx-16">
       <div className="relative -skew-x-12 transform rounded-lg border-4 border-cyan-500 bg-black p-6">
         <div className="skew-x-12 transform">
@@ -18,19 +17,16 @@ const WorldOptimizationHeader = () => {
       </div>
     </header>
   )
-}
 
-const WorldOptimizationDashboard = () => {
-  return (
+const WorldOptimizationDashboard = () => (
     <div className="min-h-screen font-mono">
       <WorldOptimizationHeader />
 
       <main className="flex flex-col justify-center p-2 md:flex-row md:flex-wrap">
-        <GlobalCoordinationAgent></GlobalCoordinationAgent>
-        <GlobalHealthOptimizationAgent></GlobalHealthOptimizationAgent>
+        <GlobalCoordinationAgent />
+        <GlobalHealthOptimizationAgent />
       </main>
     </div>
   );
-};
 
 export default WorldOptimizationDashboard;

@@ -40,7 +40,7 @@ export async function PATCH(
     const body = agentCreateUpdateSchema.parse(json)
     const {datasources} = body;
     delete body.datasources;
-    let agent = await prisma.agent.update({
+    const agent = await prisma.agent.update({
       where: {
         id: params.agentId,
       },
@@ -56,7 +56,7 @@ export async function PATCH(
       },
     })
     if(datasources?.length){
-      for(let dataSourceID of datasources){
+      for(const dataSourceID of datasources){
         await createAgentDatasource(agent.id,dataSourceID)
       }
     }

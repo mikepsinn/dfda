@@ -18,12 +18,10 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
   const economic = model.calculate_economic_impact(populationSize);
 
   // Helper function for number formatting (only used for population size display)
-  const formatNumber = (num: number, decimals: number = 2) => {
-    return new Intl.NumberFormat('en-US', {
+  const formatNumber = (num: number, decimals: number = 2) => new Intl.NumberFormat('en-US', {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
     }).format(num);
-  };
 
   // Helper function to render a metric with its metadata and calculation
   const renderMetric = (value: number, metric: ExtendedModelParameter) => {

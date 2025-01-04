@@ -256,7 +256,7 @@ export async function getWishingWellCountByDate(
   const result: WishingWellByDate[] = []
 
   if (earliestNonZeroDate) {
-    let currentDate = new Date(earliestNonZeroDate)
+    const currentDate = new Date(earliestNonZeroDate)
 
     while (currentDate <= new Date(dateRange.to)) {
       const currentDateISOString = currentDate.toISOString()

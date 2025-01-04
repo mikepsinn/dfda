@@ -54,7 +54,7 @@ export async function POST(req: Request) {
       },
     })
     if(body.datasources?.length){
-      for(let dataSourceID of body.datasources){
+      for(const dataSourceID of body.datasources){
         await createAgentDatasource(agent.id,dataSourceID)
       }
     }

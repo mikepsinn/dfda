@@ -38,17 +38,13 @@ export function groupMessagesByConversation(messages: Message[]) {
   return groupedMessages;
 }
 
-const formatChatHistory = (history: Message[]): string => {
-  return history
+const formatChatHistory = (history: Message[]): string => history
     .map((message) => `${message.role}: ${message.content}`)
-    .join('\n');
-}
+    .join('\n')
 
-const formatDocs = (docs: Document[]): string => {
-  return docs
+const formatDocs = (docs: Document[]): string => docs
     .map((doc, i) => `<doc id='${i}'>${doc.pageContent}</doc>`)
-    .join('\n');
-}
+    .join('\n')
 
 const serializeHistory = (input: any): Message[] => {
   const chatHistory = input.chat_history || [];

@@ -54,8 +54,7 @@ export async function findRepresentatives(address: string): Promise<Representati
 
   const data: CivicApiResponse = await response.json()
   
-  return data.offices.flatMap((office, index) => {
-    return office.officialIndices.map(officialIndex => {
+  return data.offices.flatMap((office, index) => office.officialIndices.map(officialIndex => {
       const official = data.officials[officialIndex]
       return {
         id: `${office.divisionId}-${officialIndex}`,
@@ -70,6 +69,5 @@ export async function findRepresentatives(address: string): Promise<Representati
         address: official.address?.[0],
         channels: official.channels || []
       }
-    })
-  })
+    }))
 } 

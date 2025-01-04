@@ -72,7 +72,7 @@ const fdaiVimeoComponent = (
           height: "100%",
         }}
         title="FDAi - Let's Automate Clinical Research!"
-      ></iframe>
+       />
     </div>
     <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" id="vimeo-player" />
   </>

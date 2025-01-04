@@ -88,7 +88,7 @@ export async function conversation2measurements(
   }
   const str = await textCompletion(promptText, "json_object")
   const measurements: Measurement[] = []
-  let jsonArray = JSON.parse(str)
+  const jsonArray = JSON.parse(str)
   jsonArray.measurements.forEach((measurement: Measurement) => {
     measurements.push(measurement)
   })
@@ -99,7 +99,7 @@ export async function getNextQuestion(
   currentStatement: string,
   previousStatements: string | null | undefined
 ): Promise<string> {
-  let promptText = `
+  const promptText = `
   You are a robot designed to collect diet, treatment, and symptom data from the user.
 
 Immediately begin asking the user the following questions
@@ -128,7 +128,7 @@ export async function haveConversation(
   questionForUser: string
   measurements: Measurement[]
 }> {
-  let questionForUser = await getNextQuestion(statement, previousStatements)
+  const questionForUser = await getNextQuestion(statement, previousStatements)
   const measurements = await text2measurements(
     statement,
     utcDateTime,

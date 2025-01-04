@@ -8,8 +8,7 @@ interface AnalyzeButtonProps {
 export const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({
   onClick,
   uploadProgress,
-}) => {
-  return (
+}) => (
     <div className="mb-5 flex items-center justify-center">
       {uploadProgress === 0 || uploadProgress === 100 ? (
         <button
@@ -19,8 +18,7 @@ export const AnalyzeButton: React.FC<AnalyzeButtonProps> = ({
           Analyze Image
         </button>
       ) : (
-        <progress value={uploadProgress} max="100" className="w-1/2"></progress>
+        <progress value={uploadProgress} max="100" className="w-1/2" />
       )}
     </div>
   )
-}

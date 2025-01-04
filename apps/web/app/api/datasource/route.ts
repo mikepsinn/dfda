@@ -25,7 +25,7 @@ export async function POST(
     const json = await req.json()
     const { name, type, url ,agentId } = dataSourceCreateSchema.parse(json)
     const dataSourceType = type as DatasourceType
-    let dataSource = await createDataSource(
+    const dataSource = await createDataSource(
       name,
       dataSourceType,
       url,

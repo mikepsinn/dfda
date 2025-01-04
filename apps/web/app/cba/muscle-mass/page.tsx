@@ -8,9 +8,7 @@ export default function MuscleMassAnalysisPage() {
   const [populationSize, setPopulationSize] = useState(335000000);
 
   // Helper function for number formatting
-  const formatNumber = (num: number) => {
-    return new Intl.NumberFormat('en-US').format(num);
-  };
+  const formatNumber = (num: number) => new Intl.NumberFormat('en-US').format(num);
 
   return (
     <div className="container mx-auto px-4 py-8">

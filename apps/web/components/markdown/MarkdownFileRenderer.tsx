@@ -70,9 +70,7 @@ const MarkdownFileRenderer: FC<MarkdownRendererProps> = ({
           const mermaidRegex = /mermaid([^`]*)/g
           return markdownContent.replace(
             mermaidRegex,
-            (match, mermaidContent) => {
-              return `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`
-            }
+            (match, mermaidContent) => `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`
           )
         }
         updatedMarkdownContent = replaceMermaidSyntax(updatedMarkdownContent)
@@ -173,9 +171,9 @@ const MarkdownFileRenderer: FC<MarkdownRendererProps> = ({
           )}
 
           <div className="flex items-center justify-end gap-x-2">
-            <Link href={githubEditUrl} target={"_blank"}>
+            <Link href={githubEditUrl} target="_blank">
               <Button variant={variant}>
-                <Github className="mr-2"></Github>
+                <Github className="mr-2" />
                 Edit Me on GitHub
               </Button>
             </Link>

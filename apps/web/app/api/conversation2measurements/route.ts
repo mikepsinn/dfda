@@ -6,7 +6,7 @@ import { handleError } from "@/lib/errorHandler"
 import {postMeasurements} from "@/app/dfdaActions";
 
 export async function POST(request: NextRequest) {
-  let { statement, utcDateTime, timeZoneOffset, previousStatements } =
+  const { statement, utcDateTime, timeZoneOffset, previousStatements } =
     await request.json()
 
   try {

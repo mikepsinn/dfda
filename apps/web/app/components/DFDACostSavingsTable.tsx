@@ -23,17 +23,13 @@ export default function DFDACostSavingsTable() {
     }
   }, [])
 
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat("en-US", {
+  const formatCurrency = (amount: number) => new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
       maximumFractionDigits: 0,
     }).format(amount)
-  }
 
-  const calculateSavings = (current: number, new_: number) => {
-    return (((current - new_) / current) * 100).toFixed(1)
-  }
+  const calculateSavings = (current: number, new_: number) => (((current - new_) / current) * 100).toFixed(1)
 
   const DetailPanel = ({ item }: { item: CostItem }) => (
     <motion.div

@@ -14,8 +14,7 @@ interface ProblemCardProps {
   onClick: () => void
 }
 
-const ProblemCard = ({ name, description, icon, onClick }: ProblemCardProps) => {
-  return (
+const ProblemCard = ({ name, description, icon, onClick }: ProblemCardProps) => (
     <div
       className="rounded-lg border-4 border-black bg-white p-4 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none cursor-pointer"
       onClick={onClick}
@@ -25,10 +24,8 @@ const ProblemCard = ({ name, description, icon, onClick }: ProblemCardProps) => 
       <p className="mb-4 font-bold text-gray-700">{description}</p>
     </div>
   )
-}
 
-const FullScreenModal = ({ problem, onClose }: { problem: ProcessedMarkdownFile; onClose: () => void }) => {
-  return createPortal(
+const FullScreenModal = ({ problem, onClose }: { problem: ProcessedMarkdownFile; onClose: () => void }) => createPortal(
     <div className="fixed inset-0 z-[100] flex flex-col bg-white">
       {/* Sticky header with close button */}
       <div className="sticky top-0 z-10 flex justify-end p-4">
@@ -50,7 +47,6 @@ const FullScreenModal = ({ problem, onClose }: { problem: ProcessedMarkdownFile;
     </div>,
     document.body
   )
-}
 
 const ProblemsWithCurrentSystem = () => {
   const [problems, setProblems] = useState<ProcessedMarkdownFile[]>([])

@@ -139,7 +139,7 @@ export default function DFDAHomePage() {
     <div className="">
       {isLoading && (
         <div className="neobrutalist-loading">
-          <div className="neobrutalist-loading-spinner"></div>
+          <div className="neobrutalist-loading-spinner" />
         </div>
       )}
       <header className="neobrutalist-container mb-12">

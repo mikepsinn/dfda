@@ -108,13 +108,11 @@ const exampleReport: ExtendedMetaAnalysisReport = {
   ]
 };
 
-const App = () => {
-  return (
+const App = () => (
     <div className="container mx-auto p-4">
       <BackButton />
       <MetaAnalysisReport report={exampleReport} />
     </div>
   );
-};
 
 export default App;

@@ -121,7 +121,7 @@ export default function CreateStudyForm({ userId }: CreateStudyFormProps) {
         >
           {isLoading ? (
             <>
-              <span className="neobrutalist-loading-spinner"></span>
+              <span className="neobrutalist-loading-spinner" />
               Creating Study...
             </>
           ) : (

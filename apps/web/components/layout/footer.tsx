@@ -28,7 +28,7 @@ export default function Footer({ footerNavItems }: FooterProps) {
               const Icon = Icons[item.icon || "next"]
               return (
                 item.href && (
-                  <li key={index} className={"p-2"}>
+                  <li key={index} className="p-2">
                     <Link
                       href={item.disabled ? "/" : item.href}
                       className="mr-4 hover:underline md:mr-6"

@@ -123,7 +123,7 @@ const ImpactTrackerVisualizer: React.FC = () => {
                                 <span className="text-sm">Reliability: {(source.reliability * 100).toFixed(0)}%</span>
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-600 mt-1">
-                                <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: `${source.reliability * 100}%` }}></div>
+                                <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: `${source.reliability * 100}%` }} />
                             </div>
                         </div>
                     ))}

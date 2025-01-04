@@ -168,12 +168,10 @@ export const getElevenLabTTS = async () => {
 
   return {
     models: [],
-    voices: voices.map((e) => {
-      return {
+    voices: voices.map((e) => ({
         label: e.name,
         value: e.voice_id,
-      }
-    }),
+      })),
   }
 }
 export const getOpenAITTS = async () => {
@@ -267,6 +265,4 @@ export const textToSpeechOpenAI = async (
   return response.data
 }
 
-export const isOpenAIAPIKeyPresent = () => {
-  return !!process.env.OPENAI_API_KEY
-}
+export const isOpenAIAPIKeyPresent = () => !!process.env.OPENAI_API_KEY

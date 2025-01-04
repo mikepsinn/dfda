@@ -76,7 +76,7 @@ export function SearchBox() {
 
       {isLoading && (
         <div className="mt-8 text-center">
-          <div className="animate-spin rounded-none h-12 w-12 border-8 border-black border-t-transparent mx-auto"></div>
+          <div className="animate-spin rounded-none h-12 w-12 border-8 border-black border-t-transparent mx-auto" />
         </div>
       )}
 

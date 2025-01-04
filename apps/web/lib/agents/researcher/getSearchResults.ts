@@ -5,7 +5,7 @@ const exa = new Exa(process.env.EXA_API_KEY);
 const cacheService = CacheService.getInstance();
 
 export async function getSearchResults(queries: string[], options?: RegularSearchOptions): Promise<SearchResult[]> {
-    let results: SearchResult[] = [];
+    const results: SearchResult[] = [];
     for (const query of queries) {
         // Generate cache key based on query and options
         const cacheKey = `exa:${query}:${JSON.stringify(options)}`;
@@ -34,7 +34,7 @@ export async function getSearchResults(queries: string[], options?: RegularSearc
 }
 
 export async function getSearchResultsByDomain(domain: string, queries: string[], options?: RegularSearchOptions): Promise<SearchResult[]> {
-    let results: SearchResult[] = [];
+    const results: SearchResult[] = [];
     for (const query of queries) {
         // Generate cache key based on domain, query and options
         const cacheKey = `exa:domain:${domain}:${query}:${JSON.stringify(options)}`;

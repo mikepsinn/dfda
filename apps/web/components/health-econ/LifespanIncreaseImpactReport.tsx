@@ -16,31 +16,25 @@ export const LifespanIncreaseImpactReport: React.FC<LifespanIncreaseImpactReport
   const results = model.calculate_impacts(lifespanIncreasePct, populationSize);
 
   // Helper function for number formatting
-  const formatNumber = (num: number, decimals: number = 2) => {
-    return new Intl.NumberFormat('en-US', {
+  const formatNumber = (num: number, decimals: number = 2) => new Intl.NumberFormat('en-US', {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
     }).format(num);
-  };
 
   // Helper function for currency formatting
-  const formatCurrency = (num: number) => {
-    return new Intl.NumberFormat('en-US', {
+  const formatCurrency = (num: number) => new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(num);
-  };
 
   // Helper function for percentage formatting
-  const formatPercent = (num: number) => {
-    return new Intl.NumberFormat('en-US', {
+  const formatPercent = (num: number) => new Intl.NumberFormat('en-US', {
       style: 'percent',
       minimumFractionDigits: 1,
       maximumFractionDigits: 1,
     }).format(num);
-  };
 
   // Helper function for formatting large currency values
   const formatLargeCurrency = (num: number) => {

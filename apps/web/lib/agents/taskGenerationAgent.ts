@@ -209,7 +209,7 @@ class GlobalSolutionDecomposerAgent {
         ? `\nTask Hierarchy: ${taskHierarchy.parentChain.join(' > ')} > ${taskHierarchy.task.name}`
         : '';
 
-    let prompt = `
+    const prompt = `
     We're recursively breaking down the goal of "${globalSolution?.name}" into atomic tasks.
     
 Decompose the following ${taskHierarchy ? 'Parent Task' : 'Goal'}:

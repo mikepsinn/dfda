@@ -132,7 +132,7 @@ export default function TreatmentList({ condition }: TreatmentListProps) {
                                                 <div
                                                     className="bg-primary h-2.5 rounded-full"
                                                     style={{ width: `${effectivenessScore}%` }}
-                                                ></div>
+                                                 />
                                             </div>
                                             <span className="text-xs font-semibold ml-2">{Math.round(effectivenessScore)}%</span>
                                         </div>

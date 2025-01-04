@@ -26,17 +26,11 @@ export async function scoreGeneralDeveloper(username: string): Promise<void> {
   const githubUser = await getGithubUser(username)
   const repos = await getRepos(username)
 
-  const starsCount = repos.reduce((acc, repo) => {
-    return acc + repo.stargazers_count
-  })
+  const starsCount = repos.reduce((acc, repo) => acc + repo.stargazers_count)
 
-  const forksCount = repos.reduce((acc, repo) => {
-    return acc + repo.forks_count
-  })
+  const forksCount = repos.reduce((acc, repo) => acc + repo.forks_count)
 
-  const watchersCount = repos.reduce((acc, repo) => {
-    return acc + repo.watchers_count
-  })
+  const watchersCount = repos.reduce((acc, repo) => acc + repo.watchers_count)
 
   let score =
     starsCount * 0.4 +

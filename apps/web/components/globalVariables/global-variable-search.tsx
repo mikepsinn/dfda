@@ -14,6 +14,4 @@ export const GlobalVariableSearch: FC<GlobalVariableSearchProps> = ({
   user,
 }: {
   user: any
-}) => {
-  return <GenericVariableSearch user={user} includePublic={true} />
-}
+}) => <GenericVariableSearch user={user} includePublic={true} />

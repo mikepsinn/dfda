@@ -171,8 +171,7 @@ const MetaAnalysisReport = ({
   report,
 }: {
   report: ExtendedMetaAnalysisReport
-}) => {
-  return (
+}) => (
     <div className="space-y-4">
       <Card>
         <CardHeader>
@@ -371,6 +370,5 @@ const MetaAnalysisReport = ({
       </div>
     </div>
   )
-}
 
 export default MetaAnalysisReport

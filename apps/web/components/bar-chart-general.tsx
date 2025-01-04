@@ -58,7 +58,7 @@ const BarChart = <T,>({
               {thisPercentageDesired}% to {getItemName(thisItem)}
             </span>
             <div
-              id={`thisItemBar`}
+              id="thisItemBar"
               style={{
                 height: `${thisPercentageDesired}%`,
                 width: "100%",
@@ -68,7 +68,7 @@ const BarChart = <T,>({
                 backgroundSize: getItemImage(thisItem) ? "cover" : "auto",
                 backgroundPosition: "center",
               }}
-            ></div>
+             />
           </div>
           <div
             style={{
@@ -87,7 +87,7 @@ const BarChart = <T,>({
               {thatPercentageDesired}% to {getItemName(thatItem)}
             </span>
             <div
-              id={`thatItemBar`}
+              id="thatItemBar"
               style={{
                 height: `${thatPercentageDesired}%`,
                 width: "100%",
@@ -97,7 +97,7 @@ const BarChart = <T,>({
                 backgroundSize: getItemImage(thatItem) ? "cover" : "auto",
                 backgroundPosition: "center",
               }}
-            ></div>
+             />
           </div>
         </div>
       </div>

@@ -1,9 +1,8 @@
 // apiUtils.ts
 import { undefined } from "zod"
 
-export const postVoteData = (): Promise<any> => {
-  return new Promise((resolve, reject) => {
-    let referrerUserId = localStorage.getItem("referrerUserId")
+export const postVoteData = (): Promise<any> => new Promise((resolve, reject) => {
+    const referrerUserId = localStorage.getItem("referrerUserId")
     localStorage.removeItem("referrerUserId")
     const wishingWellPairAllocation = localStorage.getItem(
       "wishingWellPairAllocation"
@@ -70,4 +69,3 @@ export const postVoteData = (): Promise<any> => {
         reject(error)
       })
   })
-}

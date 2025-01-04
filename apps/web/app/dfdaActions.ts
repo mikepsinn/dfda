@@ -365,8 +365,8 @@ export async function getUserVariable(
   if (params) {
     path += `?${new URLSearchParams(params).toString()}`
   }
-  let response = await fetch(path)
-  let jsonResponse = await response.json()
+  const response = await fetch(path)
+  const jsonResponse = await response.json()
   return jsonResponse[0]
 }
 

@@ -20,9 +20,7 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = ({
 }) => {
   const replaceMermaidSyntax = (markdownContent: string): string => {
     const mermaidRegex = /mermaid([^`]*)/g
-    return markdownContent.replace(mermaidRegex, (match, mermaidContent) => {
-      return `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`
-    })
+    return markdownContent.replace(mermaidRegex, (match, mermaidContent) => `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`)
   }
   if (content) {
     content = replaceMermaidSyntax(content)

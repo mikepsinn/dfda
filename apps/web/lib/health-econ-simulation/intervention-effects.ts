@@ -168,7 +168,7 @@ export class InterventionEffectsAnalyzer {
     providedParameters?: Partial<InterventionEffects>
   ): Promise<InterventionEffects> {
     // Start with provided parameters if any
-    let effects: Partial<InterventionEffects> = providedParameters || {};
+    const effects: Partial<InterventionEffects> = providedParameters || {};
 
     // Only research if we don't have any provided parameters
     // or if we're missing specific subcategories we need
