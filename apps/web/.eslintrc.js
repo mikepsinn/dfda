@@ -16,6 +16,20 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": "off",
     "react-hooks/exhaustive-deps": "off",
     "no-debugger": "off",
-    "turbo/no-undeclared-env-vars": "off"
+    "turbo/no-undeclared-env-vars": "off",
+    // Disable Next.js script warnings
+    "@next/next/no-sync-scripts": "off",
+    "@next/next/inline-script-id": "off",
+
+    // Add useful warnings
+    "react/jsx-key": "warn",                    // Warn about missing key props in iterators
+    "react/self-closing-comp": "warn",          // Suggest self-closing tags
+    "react/jsx-curly-brace-presence": "warn",   // Suggest when to use curly braces in JSX
+    "@typescript-eslint/no-empty-function": "warn", // Warn about empty functions
+    "@typescript-eslint/prefer-optional-chain": "warn", // Suggest optional chaining
+    "prefer-const": "warn",                     // Suggest const when variables aren't reassigned
+    "no-duplicate-imports": "warn",             // Warn about duplicate imports
+    "no-unneeded-ternary": "warn",             // Suggest simpler alternatives to ternaries
+    "arrow-body-style": ["warn", "as-needed"]   // Suggest shorter arrow functions when possible
   }
 }

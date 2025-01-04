@@ -1,5 +1,6 @@
 import React, { useMemo } from "react"
 import Link from "next/link"
+import Script from "next/script"
 import { Bot, LucideIcon, Network, Vote } from "lucide-react"
 
 interface FeatureCardProps {
@@ -73,7 +74,7 @@ const fdaiVimeoComponent = (
         title="FDAi - Let's Automate Clinical Research!"
       ></iframe>
     </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+    <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" id="vimeo-player" />
   </>
 )
 

@@ -75,6 +75,7 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = ({
         <Script
           type="module"
           strategy="afterInteractive"
+          id="mermaid-script"
           dangerouslySetInnerHTML={{
             __html: `
         import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
