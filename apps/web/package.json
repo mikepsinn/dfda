@@ -36,7 +36,8 @@
     "clean-images": "node scripts/cleanUnusedImages.js",
     "check-unused": "depcheck",
     "find-unused": "ts-node scripts/find-unused.ts",
-    "clean:unused": "node scripts/clean-unused.js"
+    "find:unused": "eslint . --ext .ts,.tsx --rule \"unused-imports/no-unused-imports: error\" --rule \"unused-imports/no-unused-vars: error\"",
+    "find:unused-components": "ts-prune --error | findstr /i \".tsx\" | findstr /v \"used in module\" | findstr /v \"layout.tsx\\|loading.tsx\\|page.tsx\\|error.tsx\\|not-found.tsx\\|opengraph-image.tsx\""
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
