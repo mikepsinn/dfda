@@ -1,5 +1,4 @@
 import React from "react"
-import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
 import { MuscleMassSimulator } from '@/components/health-econ/MuscleMassSimulator';
 
 export default async function MuscleMassAnalysisPage() {
