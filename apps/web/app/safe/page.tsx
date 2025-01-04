@@ -1,13 +1,14 @@
 import { getSafeRedirectUrl } from "../dfdaActions"
-import { getCurrentUser } from "@/lib/session"
 import { LoginPromptButton } from "@/components/LoginPromptButton"
 import { SafeLandingContent } from "@/components/safe/SafeLandingContent"
+import { authOptions } from "@/lib/auth"
+import { getServerSession } from "next-auth"
 
 export default async function DfdaSafePage() {
-  const session = await getCurrentUser()
+  const session = await getServerSession(authOptions)
 
   if (session) {
-    const redirectUrl = await getSafeRedirectUrl(session.id)
+    const redirectUrl = await getSafeRedirectUrl(session.user.id)
 
     if (redirectUrl) {
       //redirect(redirectUrl)
