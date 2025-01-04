@@ -20,7 +20,7 @@ export default function MuscleMassAnalysisPage() {
           Health and Economic Impact of Increasing Muscle Mass
         </h1>
         <p className="neobrutalist-description">
-          This page simulates the societal benefits of an intervention that increases muscle mass across a population. Adjust the parameters below to explore how varying levels of muscle mass increase and population sizes can influence health outcomes and economic impacts.
+          This model simulates the societal benefits of an intervention that increases muscle mass across a population. Adjust the parameters below to explore how varying levels of muscle mass increase and population sizes can influence health outcomes and economic impacts.
         </p>
       </div>
 
