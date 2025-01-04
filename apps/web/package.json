@@ -36,6 +36,7 @@
     "clean-images": "node scripts/cleanUnusedImages.js",
     "check-unused": "depcheck",
     "find-unused": "ts-node scripts/find-unused.ts",
+    "generate-routes": "ts-node scripts/generateRouteTree.ts",
     "find:unused": "eslint . --ext .ts,.tsx --rule \"unused-imports/no-unused-imports: error\" --rule \"unused-imports/no-unused-vars: error\"",
     "find:unused-components": "ts-prune --error | findstr /i \".tsx\" | findstr /v \"used in module\" | findstr /v \"layout.tsx\\|loading.tsx\\|page.tsx\\|error.tsx\\|not-found.tsx\\|opengraph-image.tsx\""
   },

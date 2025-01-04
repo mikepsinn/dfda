@@ -3,9 +3,9 @@
 import React from "react"
 import { motion } from "framer-motion"
 
-import Benefits from "@/app/cure-acceleration-act/components/Benefits"
-import FinancialIncentives from "@/app/cure-acceleration-act/components/FinancialIncentives"
-import UniversalAccess from "@/app/cure-acceleration-act/components/UniversalAccess"
+import Benefits from "@/app/docs/cure-acceleration-act/components/Benefits"
+import FinancialIncentives from "@/app/docs/cure-acceleration-act/components/FinancialIncentives"
+import UniversalAccess from "@/app/docs/cure-acceleration-act/components/UniversalAccess"
 
 import Header from "./Header"
 import OpenTrialPlatform from "./OpenTrialPlatform"

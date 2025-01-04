@@ -19,7 +19,7 @@ export default function RatedTreatmentsSearchFilter() {
     }
     params.set("page", "1")
     startTransition(() => {
-      router.push(`/dfda/treatments?${params.toString()}`)
+      router.push(`/treatments?${params.toString()}`)
     })
   }, 300)
 
@@ -28,7 +28,7 @@ export default function RatedTreatmentsSearchFilter() {
     params.delete("search")
     params.set("page", "1")
     startTransition(() => {
-      router.push(`/dfda/treatments?${params.toString()}`)
+      router.push(`/treatments?${params.toString()}`)
     })
   }
 

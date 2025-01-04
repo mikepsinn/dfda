@@ -34,15 +34,15 @@ export function MeasurementMenu({
   const router = useRouter()
 
   const handleViewCharts = () => {
-    router.push(`/dfda/userVariables/${measurement.variableId}/charts`)
+    router.push(`/userVariables/${measurement.variableId}/charts`)
   }
 
   const handleVariableSettings = () => {
-    router.push(`/dfda/userVariables/${measurement.variableId}/settings`)
+    router.push(`/userVariables/${measurement.variableId}/settings`)
   }
 
   const handleAddReminder = () => {
-    router.push(`/dfda/trackingReminders?variableId=${measurement.variableId}`)
+    router.push(`/trackingReminders?variableId=${measurement.variableId}`)
   }
 
   return (

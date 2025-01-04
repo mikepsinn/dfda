@@ -183,7 +183,7 @@ export default async function TreatmentListPage({
         <div className="mt-8 flex justify-center gap-2">
           {currentPage > 1 && (
             <Link
-              href={`/dfda/treatments?page=${currentPage - 1}${search ? `&search=${search}` : ""}`}
+              href={`/treatments?page=${currentPage - 1}${search ? `&search=${search}` : ""}`}
               className="
                                 border-4 border-black bg-white
                                 px-4 py-2
@@ -202,7 +202,7 @@ export default async function TreatmentListPage({
           </span>
           {currentPage < totalPages && (
             <Link
-              href={`/dfda/treatments?page=${currentPage + 1}${search ? `&search=${search}` : ""}`}
+              href={`/treatments?page=${currentPage + 1}${search ? `&search=${search}` : ""}`}
               className="
                                 border-4 border-black bg-white
                                 px-4 py-2

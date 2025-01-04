@@ -239,7 +239,7 @@ export function MeasurementForm({ variable }: MeasurementFormProps) {
                 <PopoverTrigger asChild>
                   <FormControl>
                     <Button
-                      variant="outline"
+                      variant={"outline"}
                       className={cn(
                         "w-full border-2 border-black bg-white pl-3 text-left font-normal text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none",
                         !field.value && "text-gray-500"

@@ -25,7 +25,7 @@ export default function DFDAHomePage() {
   const handleDigitalTwinSafeClick = async (path: string) => {
     setIsLoading(true)
     // send to /safe/redirect/[path]
-    router.push(`/dfda/safe/redirect/${path}`)
+    router.push(`/safe/redirect/${path}`)
   }
 
   const features = [
@@ -38,7 +38,7 @@ export default function DFDAHomePage() {
       onClick: async () => {
         console.log("Cure Acceleration Act clicked")
         setIsLoading(true)
-        router.push("/dfda/cure-acceleration-act")
+        router.push("/dfda/docs/cure-acceleration-act")
       },
     },
     {
@@ -139,7 +139,7 @@ export default function DFDAHomePage() {
     <div className="">
       {isLoading && (
         <div className="neobrutalist-loading">
-          <div className="neobrutalist-loading-spinner" />
+          <div className="neobrutalist-loading-spinner"></div>
         </div>
       )}
       <header className="neobrutalist-container mb-12">

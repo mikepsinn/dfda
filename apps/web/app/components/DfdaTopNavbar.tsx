@@ -34,14 +34,16 @@ export default function DfdaTopNavbar({
     avatarNavItems = navigation.avatarNav
   }
 
-  const isExternalLink = (href: string) => href.startsWith("http://") || href.startsWith("https://")
+  const isExternalLink = (href: string) => {
+    return href.startsWith("http://") || href.startsWith("https://")
+  }
 
   return (
     <header className="select-none">
       <nav className="mx-auto flex items-center justify-between lg:max-w-7xl">
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
-            <DfdaLogoNavMenu navItems={logoNavItems} />
+            <DfdaLogoNavMenu navItems={logoNavItems}></DfdaLogoNavMenu>
           </div>
         </div>
         <div className="hidden md:block">
@@ -50,7 +52,8 @@ export default function DfdaTopNavbar({
             style={{ width: "100%", maxWidth: "20rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 opacity-60 md:flex-row md:space-x-6 md:space-y-0">
-              {topNavItems.map((item, index) => (
+              {topNavItems.map((item, index) => {
+                return (
                   item.href && (
                     <Link
                       key={index}
@@ -66,7 +69,8 @@ export default function DfdaTopNavbar({
                       {item.title}
                     </Link>
                   )
-                ))}
+                )
+              })}
             </ul>
           </div>
         </div>

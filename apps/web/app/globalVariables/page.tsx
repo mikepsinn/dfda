@@ -24,7 +24,7 @@ export default async function GlobalVariablesPage() {
       <DashboardHeader
         heading="Global Variables"
         text="Search for a food, drug, symptom or anything else."
-       />
+      ></DashboardHeader>
       <GlobalVariableSearch user={user} />
     </Shell>
   )

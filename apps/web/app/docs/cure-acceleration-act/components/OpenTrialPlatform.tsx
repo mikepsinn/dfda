@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 
-import DFDACostSavingsTable from "../../components/DFDACostSavingsTable"
+
 import ListCard from "./ListCard"
+import DFDACostSavingsTable from "@/app/components/DFDACostSavingsTable"
 
 export default function OpenTrialPlatform() {
   const sections = [

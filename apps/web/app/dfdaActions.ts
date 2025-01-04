@@ -880,3 +880,43 @@ export async function getStudy(studyId: string, userId?: string) {
     throw error
   }
 }
+
+export async function getTreatmentMetaAnalysis(
+    treatmentName: string
+) {
+  const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName}`
+  return findOrWriteArticle(topic)
+}
+
+export async function getTreatmentConditionMetaAnalysis(
+    treatmentName: string,
+    conditionName: string
+) {
+  if (!treatmentName?.trim() || !conditionName?.trim()) {
+    throw new Error("Treatment name and condition name are required")
+  }
+
+  const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName} for ${conditionName}`
+
+  return findOrWriteArticle(topic)
+}
+
+export async function getConditionMetaAnalysis(
+    conditionName: string
+) {
+  const topic = `Meta-analysis on the most effective treatments for ${conditionName}`
+  return findOrWriteArticle(topic)
+}
+
+async function findOrWriteArticle(topic: string) {
+  try {
+    const article = await findArticleByTopic(topic)
+    if(article) {
+      return article
+    }
+    return writeArticle(topic, "test-user")
+  } catch (error) {
+    console.error("Failed to generate meta-analysis:", error)
+    throw new Error("Failed to generate meta-analysis. Please try again later.")
+  }
+}

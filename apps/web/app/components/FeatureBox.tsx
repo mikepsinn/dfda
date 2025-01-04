@@ -47,7 +47,7 @@ const MediaContent = ({ media }: { media: string }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         title="Embedded video"
-       />
+      ></iframe>
     )
   } else if (media.endsWith('.gif') || media.match(/\.(jpeg|jpg|png|webp)$/i)) {
     return (
@@ -64,7 +64,8 @@ const MediaContent = ({ media }: { media: string }) => {
   }
 }
 
-export const FeatureBox: React.FC<FeatureBoxProps> = ({ title, desc, color, icon: Icon, media, index, onClick }) => (
+export const FeatureBox: React.FC<FeatureBoxProps> = ({ title, desc, color, icon: Icon, media, index, onClick }) => {
+  return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -83,3 +84,4 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({ title, desc, color, icon
       </button>
     </motion.div>
   )
+}
