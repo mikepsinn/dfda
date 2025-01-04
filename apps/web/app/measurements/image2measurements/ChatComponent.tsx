@@ -1,73 +1,54 @@
 import React from "react"
-import { FunctionCallHandler, nanoid } from "ai"
 import { Message, useChat } from "ai/react"
+import { type CoreTool } from "ai"
+import { z } from "zod"
 
 interface ChatComponentProps {
   base64Image: string
 }
 
+const CustomDescriptionSchema = z.object({
+  prompt: z.string().describe("The prompt to analyze the image with")
+})
+
 const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
   console.log("Base64 image:", base64Image)
-  const functionCallHandler: FunctionCallHandler = async (
-    chatMessages,
-    functionCall
-  ) => {
-    if (functionCall.name === "get_custom_description") {
-      if (functionCall.arguments) {
-        const parsedFunctionCallArguments: { prompt: string } = JSON.parse(
-          functionCall.arguments
-        )
-        // Here you can handle the custom description logic
-        // For example, you can send a request to your API to get the custom description
-        // Then, you can add the custom description to the chat messages
 
-        // Send a request to the GPT-4 Vision API with the base64 image and the new prompt
-        const customDescriptionResponse = await fetch(
-          "/api/image2measurements",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              file: base64Image,
-              prompt: parsedFunctionCallArguments.prompt,
-              max_tokens: 100, // replace 100 with the number of tokens you want
-              // Include any other parameters you need
-            }),
-          }
-        )
+  const getCustomDescriptionTool: CoreTool = {
+    parameters: CustomDescriptionSchema,
+    description: "Get a custom description of the image based on a specific prompt",
+    execute: async (args: z.infer<typeof CustomDescriptionSchema>, { toolCallId }) => {
+      const customDescriptionResponse = await fetch("/api/image2measurements", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          file: base64Image,
+          prompt: args.prompt,
+          max_tokens: 100,
+        }),
+      })
 
-        const responseData = await customDescriptionResponse.json()
-        const customDescription = responseData.analysis
-
-        return {
-          messages: [
-            ...chatMessages,
-            {
-              id: nanoid(),
-              name: "get_custom_description",
-              role: "function" as const,
-              content: customDescription,
-            },
-          ],
-        }
-      }
+      const responseData = await customDescriptionResponse.json()
+      return responseData.analysis
     }
   }
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "/api/chat-with-functions",
-    experimental_onFunctionCall: functionCallHandler,
+    body: {
+      tools: [getCustomDescriptionTool]
+    }
   })
 
-  const roleToColorMap: { [key: string]: string } = {
+  const roleToColorMap: Record<string, string> = {
     system: "red",
     user: "black",
     function: "blue",
     assistant: "green",
-    data: "purple", // Added color for 'data'
-    tool: "orange", // Added color for 'tool'
+    data: "purple",
+    tool: "orange",
   }
 
   return (
@@ -77,10 +58,10 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
             <div
               key={m.id}
               className="whitespace-pre-wrap"
-              style={{ color: roleToColorMap[m.role] || "defaultColor" }} // Provide a default color if the role is not found
+              style={{ color: roleToColorMap[m.role] || "defaultColor" }}
             >
               <strong>{`${m.role}: `}</strong>
-              {m.content || JSON.stringify(m.function_call)}
+              {m.content}
               <br />
               <br />
             </div>
