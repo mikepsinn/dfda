@@ -7,6 +7,7 @@ export interface ModelParameter {
   description: string;
   sourceUrl: string;
   emoji: string;
+  generateDisplayValue?: (value: number) => string;
 }
 
 // Zod schema for validation
@@ -16,7 +17,8 @@ export const modelParameterSchema = z.object({
   unitName: z.string(),
   description: z.string(),
   sourceUrl: z.string().url(),
-  emoji: z.string()
+  emoji: z.string(),
+  generateDisplayValue: z.function().args(z.number()).returns(z.string()).optional()
 });
 
 export const modelParametersSchema = z.record(modelParameterSchema); 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { muscleMassParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-parameters';
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, ExtendedModelParameter } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
 
 interface MuscleMassReportProps {
   muscleMassIncrease: number;
@@ -24,7 +24,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
     }).format(num);
 
   // Helper function to render a metric with its metadata and calculation
-  const renderMetric = (value: number, metric: ExtendedModelParameter) => {
+  const renderMetric = (value: number, metric: OutcomeMetric) => {
     const sensitivity = metric.calculateSensitivity(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize });
     
     return (
@@ -53,12 +53,45 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         </a>
       </div>
       <div className="text-sm border-t pt-4 mt-2">
+        <h4 className="font-medium mb-2 text-base">Calculations</h4>
         <div
           className="prose prose-sm max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_p]:mb-2 [&_.formula]:pl-4 [&_.formula]:border-l-2 [&_.formula]:border-gray-200 [&_.formula]:my-2"
           dangerouslySetInnerHTML={{
             __html: metric.generateCalculationExplanation(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize })
           }}
         />
+      </div>
+      <div className="text-sm border-t pt-4 mt-4">
+        <h4 className="font-medium mb-2">Model Parameters</h4>
+        <div className="grid gap-3">
+          {metric.modelParameters.map((param, index) => (
+            <div key={index} className="bg-white p-3 rounded border">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{param.emoji}</span>
+                <h5 className="font-medium">{param.displayName}</h5>
+              </div>
+              <p className="text-sm text-gray-600 mt-1">{param.description}</p>
+              <div className="flex items-center gap-2 mt-2">
+                <span className="text-sm font-medium">
+                  {param.generateDisplayValue ? param.generateDisplayValue(param.defaultValue) : `${param.defaultValue} ${param.unitName}`}
+                </span>
+                <a
+                  href={param.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                >
+                  <img 
+                    src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
+                    alt=""
+                    className="w-3 h-3"
+                  />
+                  {new URL(param.sourceUrl).hostname}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="text-sm border-t pt-4 mt-4">
         <h4 className="font-medium mb-2">Sensitivity Analysis</h4>
@@ -75,7 +108,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div className="mt-2">
           <p className="text-gray-600">Assumptions:</p>
           <ul className="list-disc pl-5 mt-1">
-            {sensitivity.assumptions.map((assumption, index) => (
+            {sensitivity.assumptions.map((assumption: string, index: number) => (
               <li key={index} className="text-gray-700">{assumption}</li>
             ))}
           </ul>
@@ -138,40 +171,6 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         </div>
       </section>
 
-      {/* Model Parameters */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Model Parameters</h2>
-        <div className="grid grid-cols-1 gap-4">
-          {Object.entries(muscleMassParameters).map(([key, param]) => (
-            <div key={key} className="p-4 bg-gray-50 rounded-lg">
-              <div className="flex items-center">
-                <span className="text-xl sm:text-2xl">{param.emoji}</span>
-                <h3 className="font-medium">{param.displayName}</h3>
-              </div>
-              <span className="text-lg sm:text-xl font-semibold block mt-2">
-                {param.defaultValue} {param.unitName}
-              </span>
-              <p className="text-gray-500 mb-2 text-xs sm:text-sm">
-                {param.description}
-              </p>
-              <a
-                href={param.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 text-sm"
-              >
-                <img 
-                  src={`https://www.google.com/s2/favicons?domain=${new URL(param.sourceUrl).hostname}`}
-                  alt=""
-                  className="w-4 h-4"
-                />
-                {new URL(param.sourceUrl).hostname}
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Methodology Notes */}
       <section className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">Methodology Notes</h2>
@@ -220,8 +219,6 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
           </ul>
         </div>
       </section>
-
-
     </article>
   );
 }; 
