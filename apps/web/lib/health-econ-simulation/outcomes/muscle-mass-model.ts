@@ -32,10 +32,17 @@ export class MuscleMassInterventionModel {
     private population_config: PopulationConfig;
     private health_metrics: typeof populationHealthMetrics;
 
-    constructor(muscle_mass_increase_lbs: number, population_config: PopulationConfig = { population_size: 100000 }) {
+    constructor(muscle_mass_increase_lbs: number, population_config: Partial<PopulationConfig> = {}) {
         this.muscle_mass_increase = muscle_mass_increase_lbs;
+        
+        // Create a complete population config with defaults
+        const complete_config = {
+            population_size: 100000,
+            ...population_config
+        };
+        
         // Validate population config at runtime
-        this.population_config = populationConfigSchema.parse(population_config);
+        this.population_config = populationConfigSchema.parse(complete_config);
         this.health_metrics = populationHealthMetrics;
     }
 

@@ -1,5 +1,6 @@
 import { ModelParameter } from '../types';
 import { muscleMassParameters } from './muscle-mass-parameters';
+import { populationHealthMetrics } from '../population-health-metrics';
 
 // Utility function to format large numbers with appropriate suffixes
 function formatLargeNumber(value: number): string {
@@ -49,7 +50,7 @@ export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
         description: "Additional calories burned per day per person due to increased muscle mass",
         sourceUrl: muscleMassParameters.muscle_calorie_burn.sourceUrl,
         emoji: "🔥",
-        modelParameters: [muscleMassParameters.muscle_calorie_burn, muscleMassParameters.resting_metabolic_rate],
+        modelParameters: [muscleMassParameters.muscle_calorie_burn, populationHealthMetrics.resting_metabolic_rate],
         calculate: (muscleMassIncrease) => 
             muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue,
         generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/day/person`,
@@ -80,7 +81,7 @@ export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
         description: "Total additional calories burned per year per person due to increased muscle mass",
         sourceUrl: muscleMassParameters.muscle_calorie_burn.sourceUrl,
         emoji: "📅",
-        modelParameters: [muscleMassParameters.muscle_calorie_burn, muscleMassParameters.resting_metabolic_rate],
+        modelParameters: [muscleMassParameters.muscle_calorie_burn, populationHealthMetrics.resting_metabolic_rate],
         calculate: (muscleMassIncrease) => 
             muscleMassIncrease * muscleMassParameters.muscle_calorie_burn.defaultValue * 365,
         generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/year/person`,
@@ -113,7 +114,7 @@ export const healthOutcomeMetrics: Record<string, OutcomeMetric> = {
         description: "Improvement in insulin sensitivity per person due to increased muscle mass",
         sourceUrl: muscleMassParameters.insulin_sensitivity_per_lb.sourceUrl,
         emoji: "📊",
-        modelParameters: [muscleMassParameters.insulin_sensitivity_per_lb, muscleMassParameters.insulin_sensitivity],
+        modelParameters: [muscleMassParameters.insulin_sensitivity_per_lb, populationHealthMetrics.insulin_sensitivity],
         calculate: (muscleMassIncrease) => 
             muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue,
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
@@ -144,7 +145,7 @@ export const healthOutcomeMetrics: Record<string, OutcomeMetric> = {
         description: "Reduction in probability of falls per person due to increased muscle mass",
         sourceUrl: muscleMassParameters.fall_risk_reduction_per_lb.sourceUrl,
         emoji: "🛡️",
-        modelParameters: [muscleMassParameters.fall_risk_reduction_per_lb, muscleMassParameters.fall_risk],
+        modelParameters: [muscleMassParameters.fall_risk_reduction_per_lb, populationHealthMetrics.fall_risk],
         calculate: (muscleMassIncrease) => 
             Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue),
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
@@ -175,7 +176,7 @@ export const healthOutcomeMetrics: Record<string, OutcomeMetric> = {
         description: "Reduction in mortality risk per person due to increased muscle mass",
         sourceUrl: muscleMassParameters.mortality_reduction_per_lb.sourceUrl,
         emoji: "❤️",
-        modelParameters: [muscleMassParameters.mortality_reduction_per_lb, muscleMassParameters.mortality_risk],
+        modelParameters: [muscleMassParameters.mortality_reduction_per_lb, populationHealthMetrics.mortality_risk],
         calculate: (muscleMassIncrease) => 
             Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue),
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
@@ -211,9 +212,9 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
         emoji: "💰",
         modelParameters: [
             muscleMassParameters.fall_cost,
-            muscleMassParameters.fall_risk,
+            populationHealthMetrics.fall_risk,
             muscleMassParameters.fall_risk_reduction_per_lb,
-            muscleMassParameters.healthcare_costs,
+            populationHealthMetrics.healthcare_costs,
             muscleMassParameters.mortality_reduction_per_lb
         ],
         calculate: (muscleMassIncrease, baselineMetrics) => {
@@ -469,9 +470,9 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
         modelParameters: [
             muscleMassParameters.productivity_gain_per_lb,
             muscleMassParameters.fall_cost,
-            muscleMassParameters.fall_risk,
+            populationHealthMetrics.fall_risk,
             muscleMassParameters.fall_risk_reduction_per_lb,
-            muscleMassParameters.healthcare_costs,
+            populationHealthMetrics.healthcare_costs,
             muscleMassParameters.mortality_reduction_per_lb
         ],
         calculate: (muscleMassIncrease, baselineMetrics) => {
@@ -626,7 +627,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             muscleMassParameters.fall_cost,
             muscleMassParameters.fall_risk,
             muscleMassParameters.fall_risk_reduction_per_lb,
-            muscleMassParameters.healthcare_costs,
+            populationHealthMetrics.healthcare_costs,
             muscleMassParameters.mortality_reduction_per_lb,
             muscleMassParameters.insulin_sensitivity_per_lb
         ],
@@ -790,7 +791,7 @@ export const economicOutcomeMetrics: Record<string, OutcomeMetric> = {
             muscleMassParameters.fall_cost,
             muscleMassParameters.fall_risk,
             muscleMassParameters.fall_risk_reduction_per_lb,
-            muscleMassParameters.healthcare_costs,
+            populationHealthMetrics.healthcare_costs,
             muscleMassParameters.mortality_reduction_per_lb
         ],
         calculate: (muscleMassIncrease, baselineMetrics) => {
