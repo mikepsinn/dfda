@@ -1,6 +1,7 @@
 import React from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+import { WorkInProgressDisclaimer } from './WorkInProgressDisclaimer';
 
 interface MuscleMassReportProps {
   muscleMassIncrease: number;
@@ -118,111 +119,111 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 };
 
   return (
-    <article className="max-w-none">
-      {/* Intervention Details */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Intervention Details</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
-          <div>
-            <p className="font-medium">Muscle Mass Increase</p>
-            <p className="text-lg sm:text-xl">{muscleMassIncrease} lbs per person</p>
+    <>
+      <WorkInProgressDisclaimer></WorkInProgressDisclaimer>
+      <article className="max-w-none">
+        {/* Intervention Details */}
+        <section className="mt-8">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">Intervention Details</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
+            <div>
+              <p className="font-medium">Muscle Mass Increase</p>
+              <p className="text-lg sm:text-xl">{muscleMassIncrease} lbs per person</p>
+            </div>
+            <div>
+              <p className="font-medium">Target Population</p>
+              <p className="text-lg sm:text-xl">{formatNumber(populationSize, 0)} individuals</p>
+            </div>
           </div>
-          <div>
-            <p className="font-medium">Target Population</p>
-            <p className="text-lg sm:text-xl">{formatNumber(populationSize, 0)} individuals</p>
+        </section>
+
+        {/* Economic Impact */}
+        <section className="mt-8">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">Economic Impact (Annual)</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {Object.entries(economic).map(([key, value]) => (
+              <React.Fragment key={key}>
+                {renderMetric(value, economicOutcomeMetrics[key])}
+              </React.Fragment>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
+        {/* Methodology Notes */}
+        <section className="mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Methodology Notes</h2>
+          <div className="p-4 bg-gray-50 rounded-lg">
+            <ul className="list-disc pl-5 space-y-2">
+              <li>All calculations use validated equations from peer-reviewed research</li>
+              <li>Health outcomes are based on conservative estimates from meta-analyses</li>
+              <li>Economic impact includes direct healthcare savings and indirect productivity gains</li>
+              <li>Risk reductions are calculated using linear scaling with established upper bounds</li>
+            </ul>
+          </div>
+        </section>
 
+        {/* Limitations */}
+        <section className="mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Limitations</h2>
+          <div className="p-4 bg-gray-50 rounded-lg">
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Individual results may vary based on age, gender, and baseline health status</li>
+              <li>Long-term adherence to muscle mass maintenance not considered</li>
+              <li>Intervention costs not included in economic calculations</li>
+              <li>Results are based on population-level statistics and may not reflect individual outcomes</li>
+              <li>Muscle mass measurements in source studies used bioelectrical impedance, which may have some measurement limitations</li>
+            </ul>
+          </div>
+        </section>
 
-      {/* Economic Impact */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Economic Impact (Annual)</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {Object.entries(economic).map(([key, value]) => (
-            <React.Fragment key={key}>
-              {renderMetric(value, economicOutcomeMetrics[key])}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
+        {/* Statistical Validation */}
+        <section className="mt-8">
+          <h2 className="text-2xl font-semibold mb-4">Statistical Validation</h2>
+          <div className="p-4 bg-gray-50 rounded-lg">
+            <p className="mb-4">The mortality predictions in our model are based on robust statistical analyses from the NHANES III study, which used:</p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Modified Poisson regression with robust estimation</li>
+              <li>Cox proportional hazards regression</li>
+              <li>Adjustment for multiple covariates including:
+                <ul className="list-circle pl-5 mt-2">
+                  <li>Age, sex, race/ethnicity</li>
+                  <li>Smoking status</li>
+                  <li>Cancer history</li>
+                  <li>Central obesity</li>
+                  <li>Cardiovascular risk factors</li>
+                  <li>Glucose metabolism measures</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-      {/* Methodology Notes */}
-      <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Methodology Notes</h2>
-        <div className="p-4 bg-gray-50 rounded-lg">
-          <ul className="list-disc pl-5 space-y-2">
-            <li>All calculations use validated equations from peer-reviewed research</li>
-            <li>Health outcomes are based on conservative estimates from meta-analyses</li>
-            <li>Economic impact includes direct healthcare savings and indirect productivity gains</li>
-            <li>Risk reductions are calculated using linear scaling with established upper bounds</li>
-          </ul>
-        </div>
-      </section>
+        {/* Metabolic Impact */}
+        <section className="mt-8">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+            Metabolic Impact
+          </h2>      
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {Object.entries(metabolic).map(([key, value]) => (
+              <React.Fragment key={key}>
+                {renderMetric(value, metabolicOutcomeMetrics[key])}
+              </React.Fragment>
+            ))}
+          </div>
+        </section>
 
-      {/* Limitations */}
-      <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Limitations</h2>
-        <div className="p-4 bg-gray-50 rounded-lg">
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Individual results may vary based on age, gender, and baseline health status</li>
-            <li>Long-term adherence to muscle mass maintenance not considered</li>
-            <li>Intervention costs not included in economic calculations</li>
-            <li>Results are based on population-level statistics and may not reflect individual outcomes</li>
-            <li>Muscle mass measurements in source studies used bioelectrical impedance, which may have some measurement limitations</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Statistical Validation */}
-      <section className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4">Statistical Validation</h2>
-        <div className="p-4 bg-gray-50 rounded-lg">
-          <p className="mb-4">The mortality predictions in our model are based on robust statistical analyses from the NHANES III study, which used:</p>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Modified Poisson regression with robust estimation</li>
-            <li>Cox proportional hazards regression</li>
-            <li>Adjustment for multiple covariates including:
-              <ul className="list-circle pl-5 mt-2">
-                <li>Age, sex, race/ethnicity</li>
-                <li>Smoking status</li>
-                <li>Cancer history</li>
-                <li>Central obesity</li>
-                <li>Cardiovascular risk factors</li>
-                <li>Glucose metabolism measures</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-            {/* Metabolic Impact */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-          Metabolic Impact
-        </h2>      
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {Object.entries(metabolic).map(([key, value]) => (
-            <React.Fragment key={key}>
-              {renderMetric(value, metabolicOutcomeMetrics[key])}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
-
-      {/* Health Outcomes */} 
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Health Outcomes</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {Object.entries(health).map(([key, value]) => (
-            <React.Fragment key={key}>
-              {renderMetric(value, healthOutcomeMetrics[key])}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
-      
-    </article>
+        {/* Health Outcomes */} 
+        <section className="mt-8">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">Health Outcomes</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {Object.entries(health).map(([key, value]) => (
+              <React.Fragment key={key}>
+                {renderMetric(value, healthOutcomeMetrics[key])}
+              </React.Fragment>
+            ))}
+          </div>
+        </section>
+      </article>
+    </>
   );
 }; 
