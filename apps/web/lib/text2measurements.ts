@@ -221,6 +221,7 @@ export async function text2measurements(
   const userId = await getUserId()
   if (userId) {
     const response = await postMeasurements(measurements, userId)
+    console.log(response)
   }
   return measurements
 }
