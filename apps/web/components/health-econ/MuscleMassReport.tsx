@@ -1,6 +1,5 @@
 import React from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
-import { muscleMassParameters } from '@/lib/health-econ-simulation/outcomes/muscle-mass-parameters';
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
 
 interface MuscleMassReportProps {
