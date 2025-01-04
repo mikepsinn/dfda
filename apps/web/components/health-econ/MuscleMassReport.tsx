@@ -139,7 +139,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
         {/* Economic Impact */}
         <section className="mt-8">
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4">Economic Impact (Annual)</h2>
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4">Economic Impact</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {Object.entries(economic).map(([key, value]) => (
               <React.Fragment key={key}>
