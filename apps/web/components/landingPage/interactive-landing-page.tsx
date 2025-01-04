@@ -192,7 +192,7 @@ const InteractiveLandingPage = () => {
           className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden p-8"
         >
           <div className="absolute inset-0 opacity-10">
-            <div className="bg-grid-pattern animate-grid h-full w-full"></div>
+            <div className="bg-grid-pattern animate-grid h-full w-full" />
           </div>
           <div className="glitch-text relative z-10 max-w-4xl font-mono text-3xl md:text-5xl">
             <SentenceComponent />

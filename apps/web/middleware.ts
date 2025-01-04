@@ -2,21 +2,26 @@ import { NextResponse } from "next/server"
 import { getToken } from "next-auth/jwt"
 import { withAuth } from "next-auth/middleware"
 
-import { getDomainConfig } from "@/lib/utils/domain-config"
 
 // Define redirects with string literals
 const redirects = [
   {
     source: "/dfda/right-to-trial",
-    destination: "/dfda/cure-acceleration-act",
+    destination: "/docs/cure-acceleration-act",
     permanent: true,
     description: "Redirect to new name of the Right to Trial Act",
   },
   {
     source: "/dfda/right-to-trial-act",
-    destination: "/dfda/cure-acceleration-act",
+    destination: "/docs/cure-acceleration-act",
     permanent: true,
     description: "Redirect to new name of the Right to Trial Act",
+  },
+  {
+    source: "/dfda/health-savings-sharing",
+    destination: "/docs/health-savings-sharing",
+    permanent: true,
+    description: "Redirect to health savings sharing documentation",
   },
   // Add more redirects here
   // Make sure to add the source path to the matcher array below 👇
@@ -27,6 +32,25 @@ export default withAuth(
     const token = await getToken({ req })
     const isAuth = !!token
     const pathname = req.nextUrl.pathname
+
+    // Handle /dfda/ prefix redirects
+    if (pathname.startsWith('/dfda/')) {
+      const newPath = pathname.replace('/dfda/', '/')
+      const newUrl = new URL(newPath, req.url)
+      
+      // Preserve query parameters
+      const searchParams = new URLSearchParams(req.nextUrl.search)
+      searchParams.forEach((value, key) => {
+        newUrl.searchParams.set(key, value)
+      })
+
+      // Preserve hash fragment
+      if (req.nextUrl.hash) {
+        newUrl.hash = req.nextUrl.hash
+      }
+
+      return NextResponse.redirect(newUrl, { status: 308 })
+    }
 
     // Check redirects first
     const redirect = redirects.find(r => r.source === pathname)
@@ -50,33 +74,6 @@ export default withAuth(
       )
     }
 
-    const isAuthPage =
-      req.nextUrl.pathname.startsWith("/signin") ||
-      req.nextUrl.pathname.startsWith("/signup")
-
-    const hostname = req.headers.get("host")
-    const domainConfig = getDomainConfig(hostname)
-
-    // Check if we're on the root path
-    if (req.nextUrl.pathname === "/") {
-      // Only redirect if defaultHomepage is not root path
-      if (domainConfig.defaultHomepage !== "/") {
-        return NextResponse.redirect(
-          new URL(domainConfig.defaultHomepage, req.url)
-        )
-      }
-      return null
-    }
-
-    // Handle auth pages
-    if (isAuthPage) {
-      if (isAuth) {
-        return NextResponse.redirect(
-          new URL(domainConfig.afterLoginPath, req.url)
-        )
-      }
-      return null
-    }
 
     return null
   },
@@ -96,7 +93,6 @@ export const config = {
     "/dashboard/:path*",
     "/signin",
     "/signup",
-    "/dfda/right-to-trial",
-    "/dfda/right-to-trial-act",
+    "/dfda/:path*",
   ],
 }

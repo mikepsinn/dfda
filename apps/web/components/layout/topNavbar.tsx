@@ -30,7 +30,7 @@ export default function TopNavbar({
       <nav className="mx-auto flex items-center justify-between px-4 md:px-8 lg:max-w-7xl">
         <div>
           <div className="flex items-center justify-between py-3 md:block md:py-5">
-            <LogoNavMenu navItems={logoNavItems}></LogoNavMenu>
+            <LogoNavMenu navItems={logoNavItems} />
           </div>
         </div>
         <div className="hidden md:block">
@@ -39,8 +39,7 @@ export default function TopNavbar({
             style={{ width: "100%", maxWidth: "20rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 opacity-60 md:flex-row md:space-x-6 md:space-y-0">
-              {topNavItems.map((item, index) => {
-                return (
+              {topNavItems.map((item, index) => (
                   item.href && (
                     <Link
                       key={index}
@@ -50,8 +49,7 @@ export default function TopNavbar({
                       {item.title}
                     </Link>
                   )
-                )
-              })}
+                ))}
             </ul>
           </div>
         </div>

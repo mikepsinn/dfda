@@ -7,7 +7,7 @@ import {createOllama} from "ollama-ai-provider";
 import {createAzure} from "@ai-sdk/azure";
 
 function getDefaultModelName(): ModelName {
-  const defaultModel = 'grok-beta';
+  const defaultModel = 'gpt-4o-mini';
   const envModel = process.env.DEFAULT_AI_MODEL;
   if (!envModel) return defaultModel;
   
@@ -82,10 +82,10 @@ export function getModelByEnv(useSubModel = false) {
 
   const openaiApiBase = process.env.OPENAI_API_BASE
   const openaiApiKey = process.env.OPENAI_API_KEY
-  let openaiApiModel = process.env.OPENAI_API_MODEL || "gpt-4o"
+  const openaiApiModel = process.env.OPENAI_API_MODEL || "gpt-4o"
   const azureResourceName = process.env.AZURE_RESOURCE_NAME
   const azureApiKey = process.env.AZURE_API_KEY
-  let azureDeploymentName = process.env.AZURE_DEPLOYMENT_NAME || "gpt-4o"
+  const azureDeploymentName = process.env.AZURE_DEPLOYMENT_NAME || "gpt-4o"
   const googleApiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY
   const anthropicApiKey = process.env.ANTHROPIC_API_KEY
   const groqApiKey = process.env.GROQ_API_KEY

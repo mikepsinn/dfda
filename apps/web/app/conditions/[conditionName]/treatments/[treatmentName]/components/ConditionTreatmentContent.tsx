@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { getConditionTreatmentMetaAnalysis } from '@/app/dfdaActions'
+import { getTreatmentConditionMetaAnalysis } from '@/app/dfdaActions'
 import ArticleRenderer from '@/components/ArticleRenderer'
 import { ArticleWithRelations } from '@/lib/agents/researcher/researcher'
 import MetaAnalysisProgress from '@/components/MetaAnalysisProgress'
@@ -25,7 +25,7 @@ export function ConditionTreatmentContent({ treatmentName, conditionName }: Cond
             const startTime = Date.now()
 
             try {
-                const metaAnalysis = await getConditionTreatmentMetaAnalysis(treatmentName, conditionName)
+                const metaAnalysis = await getTreatmentConditionMetaAnalysis(treatmentName, conditionName)
                 if (isSubscribed) {
                     // Calculate remaining time to meet minimum loading duration
                     const elapsedTime = Date.now() - startTime

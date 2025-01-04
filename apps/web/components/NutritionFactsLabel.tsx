@@ -27,8 +27,7 @@ interface NutritionFactsLabelProps {
   data: NutritionDataItem[]
 }
 
-const NutritionFactsLabel: React.FC<NutritionFactsLabelProps> = ({ data }) => {
-  return (
+const NutritionFactsLabel: React.FC<NutritionFactsLabelProps> = ({ data }) => (
     <div className="nutrition-facts-label">
       {data.map((item, index) => (
         <div key={index} className="food-item">
@@ -66,6 +65,5 @@ const NutritionFactsLabel: React.FC<NutritionFactsLabelProps> = ({ data }) => {
       ))}
     </div>
   )
-}
 
 export default NutritionFactsLabel

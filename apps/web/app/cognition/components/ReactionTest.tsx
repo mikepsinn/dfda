@@ -104,7 +104,7 @@ export default function ReactionTest() {
       {variableId && (
         <div className="mt-6">
           <Link 
-            href={`/dfda/userVariables/${variableId}`}
+            href={`/userVariables/${variableId}`}
             className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
           >
             View Your Reaction Time History

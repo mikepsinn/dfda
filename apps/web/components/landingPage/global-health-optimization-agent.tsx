@@ -77,7 +77,7 @@ const GlobalHealthOptimizationAgent = () => {
             <div
                 className="h-full bg-gradient-to-r from-purple-600 via-cyan-400 to-purple-600 animate-gradient"
                 style={{width: `${taskProgress}%`}}
-            ></div>
+             />
           </div>
           <p className="absolute top-full left-0 text-xs text-cyan-400 mt-1">
             Task Decomposition Progress: {taskProgress}%
@@ -108,7 +108,7 @@ const GlobalHealthOptimizationAgent = () => {
                   <div
                       className="bg-cyan-500 h-2 rounded-full animate-pulse"
                       style={{width: `${progressWidths[index]}%`}}
-                  ></div>
+                   />
                 </div>
               </div>
           ))}

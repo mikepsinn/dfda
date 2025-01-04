@@ -77,9 +77,7 @@ const options = {
     datalabels: {
       align: "end" as const,
       anchor: "end" as const, // Explicitly type as 'end'
-      formatter: (value: any, context: any) => {
-        return "$" + value + "B"
-      },
+      formatter: (value: any, context: any) => "$" + value + "B",
       color: "#000",
       font: {
         size: 10,

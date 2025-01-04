@@ -7,7 +7,6 @@ import {
   SearXNGResult,
   SearchResultItem
 } from '@/lib/types/index'
-import { Agent } from 'http'
 import { Redis } from '@upstash/redis'
 import { createClient } from 'redis'
 
@@ -237,7 +236,7 @@ export async function advancedSearchXNGSearch(
     generalResults = generalResults.slice(0, maxResults)
 
     const imageResults = (data.results || [])
-      .filter((result: SearXNGResult) => result && result.img_src)
+      .filter((result: SearXNGResult) => result?.img_src)
       .slice(0, maxResults)
 
     console.log(`✨ Search completed with ${generalResults.length} results`)

@@ -8,6 +8,18 @@ export const dfdaLinks = {
     icon: "home",
     tooltip: "The Decentralized Food and Drug Administration",
   },
+  conditions: {
+    title: "Conditions",
+    href: "/conditions",
+    icon: "conditions",
+    tooltip: "Conditions and treatments",
+  },
+  treatments: {
+    title: "Treatments",
+    href: "/treatments",
+    icon: "treatments",
+    tooltip: "Treatments and conditions",
+  },
   digitalTwinSafe: {
     title: "Digital Twin Safe",
     href: "/safe/redirect",

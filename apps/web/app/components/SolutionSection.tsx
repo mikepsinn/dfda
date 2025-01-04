@@ -21,7 +21,7 @@ export default function SolutionSection() {
       media: "https://fdai.earth/wp-content/uploads/2024/03/import.gif",
       onClick: () => {
         setIsLoading(true)
-        redirect(`/dfda/safe/redirect`)
+        redirect(`/safe/redirect`)
       },
     },
     {
@@ -33,7 +33,7 @@ export default function SolutionSection() {
         "https://fdai.earth/wp-content/uploads/2024/03/root-cause-analysis-4x-small.gif",
       onClick: () => {
         setIsLoading(true)
-        redirect(`/dfda/safe/redirect`)
+        redirect(`/safe/redirect`)
       },
     },
     {
@@ -45,7 +45,7 @@ export default function SolutionSection() {
         "https://fdai.earth/wp-content/uploads/2024/03/real-time-decision-support-notifications-personalized-app-image.png",
       onClick: () => {
         setIsLoading(true)
-        redirect(`/dfda/safe/redirect`)
+        redirect(`/safe/redirect`)
       },
     },
   ]

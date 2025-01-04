@@ -4,8 +4,7 @@ interface AnalysisResultProps {
   result: string
 }
 
-export const AnalysisResult: React.FC<AnalysisResultProps> = ({ result }) => {
-  return (
+export const AnalysisResult: React.FC<AnalysisResultProps> = ({ result }) => (
     <div className="mt-5">
       <strong>Analysis Result:</strong>
       <textarea
@@ -15,4 +14,3 @@ export const AnalysisResult: React.FC<AnalysisResultProps> = ({ result }) => {
       />
     </div>
   )
-}

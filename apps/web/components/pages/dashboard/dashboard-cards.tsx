@@ -2,7 +2,6 @@
 
 import { SearchParams } from "@/types"
 
-import { LinkCard } from "@/components/link-card"
 
 interface DashboardCardsProps {
   searchParams?: SearchParams

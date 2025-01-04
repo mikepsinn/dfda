@@ -82,7 +82,7 @@ export default function MetaAnalysisProgress({
             <div
               className="h-full bg-gradient-to-r from-purple-600 via-cyan-400 to-purple-600 animate-gradient"
               style={{ width: `${taskProgress}%` }}
-            ></div>
+             />
           </div>
           <p className="absolute top-full left-0 text-xs text-cyan-400 mt-1">
             Progress: {taskProgress}%
@@ -129,7 +129,7 @@ export default function MetaAnalysisProgress({
                         : 0
                     }%`,
                   }}
-                ></div>
+                 />
               </div>
             </div>
           ))}

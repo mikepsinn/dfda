@@ -31,7 +31,7 @@ export async function createMeasurement(
     // Format the measurement for the DFDA API
     const measurement = {
       variableId: validated.variableId,
-      sourceName: "The Decentralized FDA",
+      sourceName: "Wishonia",
       unitAbbreviatedName: validated.unitAbbreviatedName,
       value: validated.value,
       note: validated.note,

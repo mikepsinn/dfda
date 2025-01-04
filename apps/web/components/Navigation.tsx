@@ -5,7 +5,6 @@ import Link from "next/link"
 import {
   GithubLogo,
   Globe,
-  LinkedinLogo,
   LinkSimple,
   SignIn,
 } from "@phosphor-icons/react"
@@ -89,8 +88,7 @@ export default function Navigation() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
+>(({ className, title, children, ...props }, ref) => (
     <li className="w-full">
       <NavigationMenuLink className="w-full" asChild>
         <a
@@ -106,6 +104,5 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
+  ))
 ListItem.displayName = "ListItem"

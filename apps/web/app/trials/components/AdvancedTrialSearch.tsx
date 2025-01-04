@@ -237,7 +237,7 @@ export default function AdvancedTrialSearch({
         queryParams.set("filterAdvanced", advancedFilters.join(","))
       }
 
-      const searchUrl = `/dfda/trials/search?${queryParams.toString()}`
+      const searchUrl = `/trials/search?${queryParams.toString()}`
       console.log("Navigating to:", searchUrl)
 
       await router.push(searchUrl)

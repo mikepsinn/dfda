@@ -1,4 +1,5 @@
-import { ConditionTreatmentContent } from './components/ConditionTreatmentContent'
+import { DFDABreadcrumbs } from '@/components/Breadcrumbs/DFDABreadcrumbs'
+import { ConditionTreatmentMetaAnalysis } from './components/ConditionTreatmentMetaAnalysis'
 
 interface PageProps {
   params: {
@@ -11,5 +12,16 @@ export default function TreatmentForConditionPage({ params }: PageProps) {
   const treatmentName = decodeURIComponent(params.treatmentName)
   const conditionName = decodeURIComponent(params.conditionName)
   
-  return <ConditionTreatmentContent treatmentName={treatmentName} conditionName={conditionName} />
+  return (
+    <div>
+      <DFDABreadcrumbs dynamicValues={{ 
+        conditionName,
+        treatmentName 
+      }} />
+      <ConditionTreatmentMetaAnalysis 
+        treatmentName={treatmentName} 
+        conditionName={conditionName} 
+      />
+    </div>
+  )
 }

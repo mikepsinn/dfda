@@ -13,8 +13,7 @@ interface MarkdownRendererProps {
   item: WishingWell | GlobalProblem | GlobalProblemSolution
 }
 
-const MarkdownRendererForItem: FC<MarkdownRendererProps> = ({ item }) => {
-  return (
+const MarkdownRendererForItem: FC<MarkdownRendererProps> = ({ item }) => (
     <div className="relative">
       <div className="p-6 sm:p-8">
         <div className="space-y-4">
@@ -28,6 +27,5 @@ const MarkdownRendererForItem: FC<MarkdownRendererProps> = ({ item }) => {
       </div>
     </div>
   )
-}
 
 export default MarkdownRendererForItem

@@ -135,7 +135,7 @@ export function MeasurementsAddForm({
                 <PopoverTrigger asChild>
                   <FormControl>
                     <Button
-                      variant={"outline"}
+                      variant="outline"
                       className={cn(
                         "w-full pl-3 text-left font-normal sm:w-[320px]",
                         !field.value && "text-muted-foreground"

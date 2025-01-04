@@ -6,7 +6,7 @@ export const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || "",
 })
 
-const defaultModel = process.env.OPENAI_MODEL || "gpt-4"
+const defaultModel = process.env.OPENAI_MODEL || "gpt-4o-mini"
 export async function textCompletion(
   promptText: string,
   returnType: "text" | "json_object"

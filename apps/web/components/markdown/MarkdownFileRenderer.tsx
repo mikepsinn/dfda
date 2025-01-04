@@ -5,7 +5,7 @@ import Link from "next/link"
 import Script from "next/script"
 import axios from "axios"
 import matter from "gray-matter"
-import { AiFillGithub } from "react-icons/ai"
+import { Github } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 import rehypeRaw from "rehype-raw"
 
@@ -70,9 +70,7 @@ const MarkdownFileRenderer: FC<MarkdownRendererProps> = ({
           const mermaidRegex = /mermaid([^`]*)/g
           return markdownContent.replace(
             mermaidRegex,
-            (match, mermaidContent) => {
-              return `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`
-            }
+            (match, mermaidContent) => `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`
           )
         }
         updatedMarkdownContent = replaceMermaidSyntax(updatedMarkdownContent)
@@ -173,9 +171,9 @@ const MarkdownFileRenderer: FC<MarkdownRendererProps> = ({
           )}
 
           <div className="flex items-center justify-end gap-x-2">
-            <Link href={githubEditUrl} target={"_blank"}>
+            <Link href={githubEditUrl} target="_blank">
               <Button variant={variant}>
-                <AiFillGithub className="mr-2"></AiFillGithub>
+                <Github className="mr-2" />
                 Edit Me on GitHub
               </Button>
             </Link>
@@ -183,6 +181,7 @@ const MarkdownFileRenderer: FC<MarkdownRendererProps> = ({
           <Script
             type="module"
             strategy="afterInteractive"
+            id="mermaid-script"
             dangerouslySetInnerHTML={{
               __html: `
         import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";

@@ -14,8 +14,7 @@ export const DataSourceButton = ({
   bgColor = '#4A5568', 
   href, 
   children 
-}: DataSourceButtonProps) => {
-  return (
+}: DataSourceButtonProps) => (
     <a
       href={href}
       className={cn(
@@ -27,10 +26,8 @@ export const DataSourceButton = ({
       {children}
     </a>
   )
-}
 
-export const ButtonIcon = ({ src }: { src: string }) => {
-  return (
+export const ButtonIcon = ({ src }: { src: string }) => (
     <div className="w-5 h-5 relative">
       <Image
         src={src}
@@ -39,5 +36,4 @@ export const ButtonIcon = ({ src }: { src: string }) => {
         className="object-contain"
       />
     </div>
-  )
-} 
+  ) 

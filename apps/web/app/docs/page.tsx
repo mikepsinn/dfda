@@ -30,6 +30,28 @@ function getTitleFromPath(filePath: string): string {
     .join(' ')
 }
 
+// Add folder cards data
+const folderCards = [
+  {
+    title: "Cure Acceleration Act",
+    description: "Learn about the proposed legislation to accelerate cures",
+    icon: "🧪",
+    href: "/dfda/docs/cure-acceleration-act",
+  },
+  {
+    title: "Health Savings Sharing",
+    description: "Details about the 50/50 health savings sharing program",
+    icon: "💰",
+    href: "/dfda/docs/health-savings-sharing",
+  },
+  {
+    title: "Blueprint",
+    description: "A blueprint for a world without disease",
+    icon: "🗺️",
+    href: "/dfda/docs/blueprint",
+  },
+]
+
 export default async function MarkdownPageListPage() {
   const result = await getDocumentationFiles()
   
@@ -65,45 +87,22 @@ export default async function MarkdownPageListPage() {
       <div className="mx-auto max-w-4xl py-8">
         <h1 className="mb-8 text-3xl font-bold">Documentation</h1>
         
-        {/* Featured Cards */}
-        <div className="mb-8 grid gap-4 md:grid-cols-2">
-          <Link href="/health-savings-sharing">
-            <div className="cursor-pointer rounded-lg border-4 border-black bg-green-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
-              <h3 className="mb-2 text-xl font-bold">💰 Health Savings Sharing</h3>
-              <p className="font-bold text-gray-800">
-                Learn how the 50/50 Health Savings Sharing Program incentivizes cures and reduces healthcare costs
-              </p>
-            </div>
-          </Link>
-
-          <Link href="/cure-acceleration-act">
-            <div className="cursor-pointer rounded-lg border-4 border-black bg-purple-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
-              <h3 className="mb-2 text-xl font-bold">⚡ Cure Acceleration Act</h3>
-              <p className="font-bold text-gray-800">
-                Explore the comprehensive plan for faster cures, lower costs, and universal access
-              </p>
-            </div>
-          </Link>
-
-          <a href="https://docs.dfda.earth" target="_blank" rel="noopener noreferrer">
-            <div className="cursor-pointer rounded-lg border-4 border-black bg-blue-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
-              <h3 className="mb-2 text-xl font-bold">📚 API Documentation</h3>
-              <p className="font-bold text-gray-800">
-                Comprehensive API documentation for developers building on the DFDA platform
-              </p>
-            </div>
-          </a>
-
-          <a href="https://builder.dfda.earth" target="_blank" rel="noopener noreferrer">
-            <div className="cursor-pointer rounded-lg border-4 border-black bg-yellow-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
-              <h3 className="mb-2 text-xl font-bold">🔨 No Code App Builder</h3>
-              <p className="font-bold text-gray-800">
-                Build custom healthcare applications without writing code using our visual builder
-              </p>
-            </div>
-          </a>
+        {/* Folder Cards Grid */}
+        <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {folderCards.map((card) => (
+            <Link 
+              key={card.href}
+              href={card.href}
+              className="group block rounded-lg border-4 border-black bg-white p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+            >
+              <div className="mb-4 text-4xl">{card.icon}</div>
+              <h2 className="mb-2 text-xl font-bold">{card.title}</h2>
+              <p className="text-gray-600">{card.description}</p>
+            </Link>
+          ))}
         </div>
 
+        {/* Existing Search and File List */}
         <DocsSearch files={filesWithTitles} />
       </div>
     </Shell>

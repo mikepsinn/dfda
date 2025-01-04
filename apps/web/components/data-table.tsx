@@ -74,8 +74,7 @@ export function DataTable<TData, TValue>({
               {table
                   .getAllColumns()
                   .filter((column) => column.getCanHide())
-                  .map((column) => {
-                    return (
+                  .map((column) => (
                         <DropdownMenuCheckboxItem
                             key={column.id}
                             className="capitalize"
@@ -86,8 +85,7 @@ export function DataTable<TData, TValue>({
                         >
                           {column.id.split("_")[0]}
                         </DropdownMenuCheckboxItem>
-                    )
-                  })}
+                    ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -96,8 +94,7 @@ export function DataTable<TData, TValue>({
             <TableHeader>
               {table.getHeaderGroups().map((headerGroup) => (
                   <TableRow key={headerGroup.id}>
-                    {headerGroup.headers.map((header) => {
-                      return (
+                    {headerGroup.headers.map((header) => (
                           <TableHead key={header.id}>
                             {header.isPlaceholder
                                 ? null
@@ -106,8 +103,7 @@ export function DataTable<TData, TValue>({
                                     header.getContext()
                                 )}
                           </TableHead>
-                      )
-                    })}
+                      ))}
                   </TableRow>
               ))}
             </TableHeader>

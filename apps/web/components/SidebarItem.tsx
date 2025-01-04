@@ -57,8 +57,7 @@ function SidebarItem({ index, chat, children }: SidebarItemProps) {
         </div>
         <span className="... w-3/4 truncate whitespace-nowrap">
           {" "}
-          {chat.title.split("").map((character, index) => {
-            return (
+          {chat.title.split("").map((character, index) => (
               <motion.span
                 key={index}
                 variants={{
@@ -87,8 +86,7 @@ function SidebarItem({ index, chat, children }: SidebarItemProps) {
               >
                 {character}
               </motion.span>
-            )
-          })}
+            ))}
         </span>
       </Link>
       {isActive && <div className="absolute right-2 top-0">{children}</div>}

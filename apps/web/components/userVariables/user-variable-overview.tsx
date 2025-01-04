@@ -82,7 +82,7 @@ export const UserVariableOverview: FC<UserVariableOverviewProps> = ({
         user={user}
         variableId={variableId}
         measurementsDateRange={measurementsDateRange}
-      ></MeasurementsList>
+       />
     </>
   )
 }

@@ -21,7 +21,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import { Icons } from "../icons"
 
 interface GlobalVariableChartsProps
   extends React.HTMLAttributes<HTMLFormElement> {
@@ -30,9 +29,7 @@ interface GlobalVariableChartsProps
 
 export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
   globalVariable,
-}) => {
-
-  return (
+}) => (
     <Card>
       <CardHeader>
         <CardTitle>{globalVariable?.name}</CardTitle>
@@ -62,7 +59,6 @@ export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
             />
           </div>
         </CardContent>
-      <CardFooter></CardFooter>
+      <CardFooter />
     </Card>
   )
-}

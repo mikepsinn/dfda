@@ -6,8 +6,7 @@ interface ArticleCardProps {
     article: Article;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({article}) => {
-    return (
+const ArticleCard: React.FC<ArticleCardProps> = ({article}) => (
         <Card>
             <CardHeader>
                 <CardTitle>{article.title}</CardTitle>
@@ -29,6 +28,5 @@ const ArticleCard: React.FC<ArticleCardProps> = ({article}) => {
             </CardContent>
         </Card>
     );
-};
 
 export default ArticleCard;

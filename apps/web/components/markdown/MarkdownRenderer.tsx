@@ -20,9 +20,7 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = ({
 }) => {
   const replaceMermaidSyntax = (markdownContent: string): string => {
     const mermaidRegex = /mermaid([^`]*)/g
-    return markdownContent.replace(mermaidRegex, (match, mermaidContent) => {
-      return `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`
-    })
+    return markdownContent.replace(mermaidRegex, (match, mermaidContent) => `<pre class="mermaid bg-white flex justify-center">${mermaidContent.trim()}</pre>`)
   }
   if (content) {
     content = replaceMermaidSyntax(content)
@@ -75,6 +73,7 @@ const MarkdownRenderer: FC<MarkdownRendererProps> = ({
         <Script
           type="module"
           strategy="afterInteractive"
+          id="mermaid-script"
           dangerouslySetInnerHTML={{
             __html: `
         import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs";
