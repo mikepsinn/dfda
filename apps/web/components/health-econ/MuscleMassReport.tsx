@@ -134,29 +134,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         </div>
       </section>
 
-      {/* Metabolic Impact */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Metabolic Impact</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {Object.entries(metabolic).map(([key, value]) => (
-            <React.Fragment key={key}>
-              {renderMetric(value, metabolicOutcomeMetrics[key])}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
 
-      {/* Health Outcomes */}
-      <section className="mt-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Health Outcomes</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {Object.entries(health).map(([key, value]) => (
-            <React.Fragment key={key}>
-              {renderMetric(value, healthOutcomeMetrics[key])}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
 
       {/* Economic Impact */}
       <section className="mt-8">
@@ -218,6 +196,33 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
           </ul>
         </div>
       </section>
+
+            {/* Metabolic Impact */}
+      <section className="mt-8">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
+          Metabolic Impact
+        </h2>      
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {Object.entries(metabolic).map(([key, value]) => (
+            <React.Fragment key={key}>
+              {renderMetric(value, metabolicOutcomeMetrics[key])}
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
+
+      {/* Health Outcomes */} 
+      <section className="mt-8">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Health Outcomes</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Object.entries(health).map(([key, value]) => (
+            <React.Fragment key={key}>
+              {renderMetric(value, healthOutcomeMetrics[key])}
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
+      
     </article>
   );
 }; 
