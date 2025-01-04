@@ -1,4 +1,3 @@
-import { ModelParameter } from '../types';
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, ExtendedModelParameter } from './muscle-mass-outcome-metrics';
 import ReactDOMServer from 'react-dom/server';
 import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';

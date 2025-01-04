@@ -1,5 +1,3 @@
-import { redirect } from "next/navigation"
-
 import { getSafeRedirectUrl } from "../dfdaActions"
 import { getCurrentUser } from "@/lib/session"
 import { LoginPromptButton } from "@/components/LoginPromptButton"

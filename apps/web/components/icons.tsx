@@ -1,8 +1,6 @@
 import {
   Activity,
   AlertTriangle,
-  ArrowLeft,
-  ArrowRight,
   ArrowUpDown,
   Banknote,
   BarChart3,
@@ -19,7 +17,6 @@ import {
   ChevronRight,
   ChevronUp,
   Clipboard,
-  Copy,
   Cross,
   Edit,
   Eye,
@@ -53,7 +50,6 @@ import {
   Vote,
   Wand2,
   X,
-  type LucideIcon,
 } from "lucide-react"
 
 export type IconKeys = keyof typeof icons

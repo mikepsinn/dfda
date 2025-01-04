@@ -1,14 +1,8 @@
 'use client'
 
-import { ExtendedUser } from "@/types/auth"
-import { LoginPromptButton } from "@/components/LoginPromptButton"
-import Image from 'next/image'
+import type { Session } from "next-auth"
 
-interface SafeLandingContentProps {
-  session?: ExtendedUser | null
-}
-
-export function SafeLandingContent({ session }: SafeLandingContentProps) {
+export function SafeLandingContent({ session: _session }: { session: Session | null }) {
   return (
     <div>
       <h1>Safe Landing Content</h1>
