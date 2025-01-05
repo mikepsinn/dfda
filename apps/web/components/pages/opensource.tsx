@@ -5,7 +5,7 @@ import { Icons } from "@/components/icons"
 
 export default async function OpenSource() {
   const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/dfda/dfda",
+    "https://api.github.com/repos/decentralized-fda/decentralized-fda",
     {
       next: { revalidate: 60 },
     }
@@ -13,17 +13,17 @@ export default async function OpenSource() {
     .then((res) => res.json())
     .catch((e) => console.error(e))
 
-  const buttonText = `Fork Me On GitHub!`
+  const buttonText = `Fork This Website On GitHub!`
 
   return (
     <section className="neobrutalist-markdown-container">
       <div className="flex flex-col items-center gap-8">
         <div className="neobrutalist-gradient-container neobrutalist-gradient-pink text-center text-white">
           <h1 className="neobrutalist-hero-title">
-            Think the dFDA sucks?
+            Think this website sucks?
           </h1>
           <p className="neobrutalist-description">
-            Unlike normal government agencies, you can just fork it and make a better one!
+            Unlike normal government agencies, you can just fork it and fix it!
           </p>
         </div>
         <Link

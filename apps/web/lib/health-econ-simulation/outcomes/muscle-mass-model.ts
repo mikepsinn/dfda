@@ -1,6 +1,16 @@
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from './muscle-mass-outcome-metrics';
 import ReactDOMServer from 'react-dom/server';
 import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
+import { populationHealthMetrics } from '../population-health-metrics';
+import { z } from 'zod';
+
+// Zod schema for runtime validation
+const populationConfigSchema = z.object({
+    population_size: z.number().positive(),
+    description: z.string().optional()
+});
+
+export type PopulationConfig = z.infer<typeof populationConfigSchema>;
 
 interface BaselineMetrics {
     resting_metabolic_rate: number;  // calories per day
@@ -19,26 +29,30 @@ interface EconomicImpact extends Record<keyof typeof economicOutcomeMetrics, num
 
 export class MuscleMassInterventionModel {
     private muscle_mass_increase: number;
-    private population_size: number;
-    private baseline_metrics: BaselineMetrics;
+    private population_config: PopulationConfig;
+    private health_metrics: typeof populationHealthMetrics;
 
-    constructor(muscle_mass_increase_lbs: number, population_size: number = 100000) {
+    constructor(muscle_mass_increase_lbs: number, population_config: Partial<PopulationConfig> = {}) {
         this.muscle_mass_increase = muscle_mass_increase_lbs;
-        this.population_size = population_size;
-        this.baseline_metrics = {
-            resting_metabolic_rate: 1800,  // calories per day
-            insulin_sensitivity: 1.0,      // relative scale
-            fall_risk: 0.15,              // annual probability
-            healthcare_costs: 11000,       // annual per person
-            disability_risk: 0.10,         // annual probability
-            mortality_risk: 0.02,          // annual probability
-            medicare_total_annual_spend: 829000000000,  // Total Medicare spend in USD (2021 data)
-            population_size: population_size
+        
+        // Create a complete population config with defaults
+        const complete_config = {
+            population_size: 100000,
+            ...population_config
         };
+        
+        // Validate population config at runtime
+        this.population_config = populationConfigSchema.parse(complete_config);
+        this.health_metrics = populationHealthMetrics;
     }
 
-    get baselineMetrics(): BaselineMetrics {
-        return this.baseline_metrics;
+    get baselineMetrics() {
+        return {
+            ...Object.fromEntries(
+                Object.entries(this.health_metrics).map(([key, metric]) => [key, metric.defaultValue])
+            ),
+            population_size: this.population_config.population_size
+        };
     }
 
     calculate_metabolic_impact(): MetabolicImpact {
@@ -60,7 +74,10 @@ export class MuscleMassInterventionModel {
     }
 
     calculate_economic_impact(population_size?: number): EconomicImpact {
-        const metrics = { ...this.baseline_metrics, population_size: population_size || this.population_size };
+        const metrics = { 
+            ...this.baselineMetrics,
+            population_size: population_size || this.population_config.population_size 
+        };
         return Object.fromEntries(
             Object.entries(economicOutcomeMetrics).map(([key, metric]) => [
                 key,
@@ -87,7 +104,7 @@ export class MuscleMassInterventionModel {
         const html = ReactDOMServer.renderToString(
             MuscleMassReport({
                 muscleMassIncrease: this.muscle_mass_increase,
-                populationSize: this.population_size
+                populationSize: this.population_config.population_size
             })
         );
 
