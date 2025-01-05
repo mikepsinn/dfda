@@ -33,6 +33,13 @@ export default withAuth(
     const isAuth = !!token
     const pathname = req.nextUrl.pathname
 
+    // Handle bare /dfda with hash
+    if (pathname === '/dfda' && req.nextUrl.hash) {
+      const newUrl = new URL('/', req.url)
+      newUrl.hash = req.nextUrl.hash
+      return NextResponse.redirect(newUrl, { status: 308 })
+    }
+
     // Handle /dfda/ prefix redirects
     if (pathname.startsWith('/dfda/')) {
       const newPath = pathname.replace('/dfda/', '/')
