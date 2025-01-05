@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
 import { WorkInProgressDisclaimer } from './WorkInProgressDisclaimer';
+import { reportSections } from '@/lib/health-econ-simulation/report-config';
+import { generateMuscleMassReportData } from '@/lib/health-econ-simulation/report-utils';
+import { generateMarkdownReport } from '@/lib/health-econ-simulation/report-generator';
+import { Download, Copy, Check } from 'lucide-react';
 
 interface MuscleMassReportProps {
   muscleMassIncrease: number;
@@ -12,7 +16,10 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
   muscleMassIncrease,
   populationSize = 100000,
 }) => {
-  const model = new MuscleMassInterventionModel(muscleMassIncrease, populationSize);
+  const [copied, setCopied] = useState(false);
+  const model = new MuscleMassInterventionModel(muscleMassIncrease, { 
+    population_size: populationSize 
+  });
   const metabolic = model.calculate_metabolic_impact();
   const health = model.calculate_health_outcomes();
   const economic = model.calculate_economic_impact(populationSize);
@@ -22,6 +29,34 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
     }).format(num);
+
+  // Helper function to generate and handle the report
+  const generateReport = () => {
+    const reportData = generateMuscleMassReportData(model, muscleMassIncrease, populationSize);
+    return generateMarkdownReport(reportData);
+  };
+
+  // Handle report download
+  const handleDownload = () => {
+    const markdown = generateReport();
+    const blob = new Blob([markdown], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `muscle-mass-report-${new Date().toISOString().split('T')[0]}.md`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  // Handle copy to clipboard
+  const handleCopy = async () => {
+    const markdown = generateReport();
+    await navigator.clipboard.writeText(markdown);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Helper function to render a metric with its metadata and calculation
   const renderMetric = (value: number, metric: OutcomeMetric) => {
@@ -122,6 +157,33 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
     <>
       <WorkInProgressDisclaimer></WorkInProgressDisclaimer>
       <article className="max-w-none">
+        {/* Report Actions */}
+        <div className="flex gap-2 mb-4">
+          <button
+            onClick={handleDownload}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Download Report
+          </button>
+          <button
+            onClick={handleCopy}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
+          >
+            {copied ? (
+              <>
+                <Check className="w-4 h-4" />
+                Copied!
+              </>
+            ) : (
+              <>
+                <Copy className="w-4 h-4" />
+                Copy to Clipboard
+              </>
+            )}
+          </button>
+        </div>
+
         {/* Intervention Details */}
         <section className="mt-8">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">Intervention Details</h2>
@@ -151,47 +213,43 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
         {/* Methodology Notes */}
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4">Methodology Notes</h2>
+          <h2 className="text-2xl font-semibold mb-4">{reportSections.methodology.title}</h2>
           <div className="p-4 bg-gray-50 rounded-lg">
             <ul className="list-disc pl-5 space-y-2">
-              <li>All calculations use validated equations from peer-reviewed research</li>
-              <li>Health outcomes are based on conservative estimates from meta-analyses</li>
-              <li>Economic impact includes direct healthcare savings and indirect productivity gains</li>
-              <li>Risk reductions are calculated using linear scaling with established upper bounds</li>
+              {reportSections.methodology.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
           </div>
         </section>
 
         {/* Limitations */}
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4">Limitations</h2>
+          <h2 className="text-2xl font-semibold mb-4">{reportSections.limitations.title}</h2>
           <div className="p-4 bg-gray-50 rounded-lg">
             <ul className="list-disc pl-5 space-y-2">
-              <li>Individual results may vary based on age, gender, and baseline health status</li>
-              <li>Long-term adherence to muscle mass maintenance not considered</li>
-              <li>Intervention costs not included in economic calculations</li>
-              <li>Results are based on population-level statistics and may not reflect individual outcomes</li>
-              <li>Muscle mass measurements in source studies used bioelectrical impedance, which may have some measurement limitations</li>
+              {reportSections.limitations.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
           </div>
         </section>
 
         {/* Statistical Validation */}
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4">Statistical Validation</h2>
+          <h2 className="text-2xl font-semibold mb-4">{reportSections.statisticalValidation.title}</h2>
           <div className="p-4 bg-gray-50 rounded-lg">
-            <p className="mb-4">The mortality predictions in our model are based on robust statistical analyses from the NHANES III study, which used:</p>
+            <p className="mb-4">{reportSections.statisticalValidation.description}</p>
             <ul className="list-disc pl-5 space-y-2">
-              <li>Modified Poisson regression with robust estimation</li>
-              <li>Cox proportional hazards regression</li>
-              <li>Adjustment for multiple covariates including:
+              {reportSections.statisticalValidation.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+              <li>
+                {reportSections.statisticalValidation.covariates.title}
                 <ul className="list-circle pl-5 mt-2">
-                  <li>Age, sex, race/ethnicity</li>
-                  <li>Smoking status</li>
-                  <li>Cancer history</li>
-                  <li>Central obesity</li>
-                  <li>Cardiovascular risk factors</li>
-                  <li>Glucose metabolism measures</li>
+                  {reportSections.statisticalValidation.covariates.points.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
                 </ul>
               </li>
             </ul>
