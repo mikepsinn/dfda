@@ -134,11 +134,11 @@ A key component of Clinipedia is [**Outcome Labels**](docs/components/outcome-la
 
 <p align="center">
 
-<img src="docs/images/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
+<img src="public/img/screenshots/record-inbox-import-connectors-analyze-study.jpg" width="800" alt="screenshots">
 &nbsp
 </p>
 <p align="center">
-  <img src="docs/images/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
+  <img src="public/img/screenshots/reminder-inbox-screenshot-no-text.jpg" width="300" alt="Reminder Inbox">
 </p>
 
 Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medication, and anything else from dozens
