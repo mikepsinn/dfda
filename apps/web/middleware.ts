@@ -33,6 +33,21 @@ export default withAuth(
     const isAuth = !!token
     const pathname = req.nextUrl.pathname
 
+    // Handle /dfda path (with or without trailing slash)
+    if (pathname === '/dfda' || pathname === '/dfda/') {
+      const newUrl = new URL('/', req.url)
+      // Preserve query parameters
+      const searchParams = new URLSearchParams(req.nextUrl.search)
+      searchParams.forEach((value, key) => {
+        newUrl.searchParams.set(key, value)
+      })
+      // Preserve hash fragment
+      if (req.nextUrl.hash) {
+        newUrl.hash = req.nextUrl.hash
+      }
+      return NextResponse.redirect(newUrl, { status: 308 })
+    }
+
     // Handle /dfda/ prefix redirects
     if (pathname.startsWith('/dfda/')) {
       const newPath = pathname.replace('/dfda/', '/')
@@ -93,6 +108,7 @@ export const config = {
     "/dashboard/:path*",
     "/signin",
     "/signup",
+    "/dfda",
     "/dfda/:path*",
   ],
 }
