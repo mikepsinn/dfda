@@ -5,7 +5,13 @@ import { WorkInProgressDisclaimer } from './WorkInProgressDisclaimer';
 import { reportSections } from '@/lib/health-econ-simulation/report-config';
 import { generateMuscleMassReportData } from '@/lib/health-econ-simulation/report-utils';
 import { generateMarkdownReport } from '@/lib/health-econ-simulation/report-generator';
-import { Download, Copy, Check } from 'lucide-react';
+import { Download, Copy, Check, MoreVertical } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface MuscleMassReportProps {
   muscleMassIncrease: number;
@@ -158,30 +164,32 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
       <WorkInProgressDisclaimer></WorkInProgressDisclaimer>
       <article className="max-w-none">
         {/* Report Actions */}
-        <div className="flex gap-2 mb-4">
-          <button
-            onClick={handleDownload}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-          >
-            <Download className="w-4 h-4" />
-            Download Report
-          </button>
-          <button
-            onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
-          >
-            {copied ? (
-              <>
-                <Check className="w-4 h-4" />
-                Copied!
-              </>
-            ) : (
-              <>
-                <Copy className="w-4 h-4" />
-                Copy to Clipboard
-              </>
-            )}
-          </button>
+        <div className="flex justify-end mb-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded transition-colors">
+              <MoreVertical className="w-4 h-4" />
+              Export
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={handleDownload} className="cursor-pointer">
+                <Download className="w-4 h-4 mr-2" />
+                Download as Markdown
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={handleCopy} className="cursor-pointer">
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4 mr-2" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 mr-2" />
+                    Copy to Clipboard
+                  </>
+                )}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Intervention Details */}
