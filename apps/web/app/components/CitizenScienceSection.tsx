@@ -12,7 +12,7 @@ export default function CitizenScienceSection() {
       color: "bg-purple-400",
       icon: Microscope,
       media: "https://fdai.earth/wp-content/uploads/2024/03/create-study.gif",
-      onClick: () => window.location.href = "https://safe.fdai.earth/app/public/#/app/study-creation"
+      onClick: () => window.location.href = "/safe/redirect/study-creation"
     },
     {
       title: "Global Scale Studies",
