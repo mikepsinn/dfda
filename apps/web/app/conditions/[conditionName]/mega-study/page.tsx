@@ -1,5 +1,4 @@
 import {getConditionByName} from "@/app/dfdaActions";
-import TreatmentRatingsList from "@/app/components/TreatmentRatingsList";
 import { DFDABreadcrumbs } from "@/components/Breadcrumbs/DFDABreadcrumbs";
 
 
