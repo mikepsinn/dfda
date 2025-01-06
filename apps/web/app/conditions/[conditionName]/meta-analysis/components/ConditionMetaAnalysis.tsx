@@ -5,6 +5,7 @@ import { ArticleWithRelations } from "@/lib/agents/researcher/researcher"
 import ArticleRenderer from '@/components/ArticleRenderer';
 import GlobalHealthOptimizationAgent from "@/components/landingPage/global-health-optimization-agent";
 import { getConditionMetaAnalysis } from '@/app/dfdaActions';
+import MetaAnalysisProgress from '@/components/MetaAnalysisProgress';
 
 interface ConditionMetaAnalysisProps {
     conditionName: string
@@ -42,7 +43,7 @@ export function ConditionMetaAnalysis({ conditionName }: ConditionMetaAnalysisPr
     }, [conditionName])
 
     if (loading) {
-        return <div>Loading...</div>
+        return <MetaAnalysisProgress isLoading={loading} conditionName={conditionName} />
     }
 
     if (!article) {

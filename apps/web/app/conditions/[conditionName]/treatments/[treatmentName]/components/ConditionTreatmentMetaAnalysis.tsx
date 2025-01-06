@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { getTreatmentConditionMetaAnalysis } from '@/app/dfdaActions'
 import ArticleRenderer from '@/components/ArticleRenderer'
 import { ArticleWithRelations } from '@/lib/agents/researcher/researcher'
-import GlobalHealthOptimizationAgent from "@/components/landingPage/global-health-optimization-agent"
+import MetaAnalysisProgress from '@/components/MetaAnalysisProgress'
 
 interface ConditionTreatmentMetaAnalysisProps {
     treatmentName: string
@@ -43,7 +43,12 @@ export function ConditionTreatmentMetaAnalysis({ treatmentName, conditionName }:
     }, [treatmentName, conditionName])
 
     if (loading) {
-        return <div>Loading...</div>
+        return <MetaAnalysisProgress 
+            isLoading={loading}
+            treatmentName={treatmentName}
+            conditionName={conditionName}
+            onComplete={() => setLoading(false)}
+        />
     }
 
     if (!article) {
@@ -56,14 +61,8 @@ export function ConditionTreatmentMetaAnalysis({ treatmentName, conditionName }:
     }
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-2xl font-bold mb-4">
-                {treatmentName} for {conditionName}
-            </h1>
+        <div className="">
             <ArticleRenderer article={article} />
-            <div className="mt-8">
-                <GlobalHealthOptimizationAgent />
-            </div>
         </div>
     )
 } 

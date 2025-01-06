@@ -57,6 +57,8 @@ const routeTree = generateRouteTree()
 console.log('Generated route tree:', JSON.stringify(routeTree, null, 2))
 
 const output = `// Generated route tree - do not edit manually
+// Regenerate after adding new pages with: 
+// npx ts-node scripts/generateRouteTree.ts
 export const routeTree = ${JSON.stringify(routeTree, null, 2)} as const;
 
 export type RouteNode = {
