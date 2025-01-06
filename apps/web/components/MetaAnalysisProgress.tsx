@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react'
 
 interface MetaAnalysisProgressProps {
   isLoading: boolean
-  treatmentName: string
-  conditionName: string
+  treatmentName?: string
+  conditionName?: string
   onComplete?: () => void
 }
 
@@ -68,9 +68,12 @@ export default function MetaAnalysisProgress({
         </h2>
 
         <div className="mb-8">
-          <p className="text-lg text-purple-400 mb-2">Analyzing Treatment:</p>
+          <p className="text-lg text-purple-400 mb-2">Analyzing:</p>
           <p className="text-2xl font-bold text-white animate-neon">
-            {treatmentName} for {conditionName}
+            {treatmentName && conditionName ? `${treatmentName} for ${conditionName}` :
+             treatmentName ? `Generating meta-analysis of the effectiveness of ${treatmentName} for various conditions` :
+             conditionName ? `Generating meta-analysis of the best treatments for ${conditionName}` :
+             'Generating Meta-Analysis'}
           </p>
         </div>
 
