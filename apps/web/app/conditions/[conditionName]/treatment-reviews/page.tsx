@@ -18,7 +18,7 @@ export default async function ConditionTreatmentRatingsPage({ params }: { params
         <DFDABreadcrumbs dynamicValues={{ 
             conditionName: condition.name,
         }} />
-            <h1 className="text-2xl font-bold mb-4">{condition.name}</h1>
+            <h1 className="text-2xl font-bold mb-4">{condition.name} Treatment Ratings</h1>
             <TreatmentRatingsList condition={condition} />
         </div>
     )

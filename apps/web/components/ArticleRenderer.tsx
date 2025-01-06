@@ -195,7 +195,7 @@ ${sources?.map((source) => `- [${source.title}](${source.url})`).join("\n")}
   }
 
   return (
-    <div className="container mx-auto max-w-6xl p-4">
+    <div className="container mx-auto max-w-6xl p-2">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>

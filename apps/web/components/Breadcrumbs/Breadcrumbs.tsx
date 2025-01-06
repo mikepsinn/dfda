@@ -116,6 +116,10 @@ function BreadcrumbItem({ segment, node, currentPath, isLast, dynamicValues }: B
   const hasChildren = children.length > 0
   const hasSingleChild = children.length === 1
   const displayName = node.isDynamic ? dynamicValues[node.name] || `[${node.name}]` : segment
+  // Format displayName to be more readable
+  const formattedDisplayName = node.isDynamic 
+    ? `[${node.name.split(/(?=[A-Z])/).join(' ')}]`  // Split on capital letters for camelCase
+    : node.name.split(/(?=[A-Z])/).join(' ') // Split camelCase into spaces
 
   console.log('BreadcrumbItem:', {
     segment,

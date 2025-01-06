@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
-import { Card, CardContent } from "@/components/ui/card"
 import Link from 'next/link'
 import { DfdaCondition, DfdaConditionTreatment } from "@prisma/client";
-import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input"
+import { Search, X } from "lucide-react"
 
 type TreatmentListProps = {
     condition: DfdaCondition & {
@@ -60,13 +60,16 @@ function toTitleCase(str: string): string {
 }
 
 export default function TreatmentRatingsList({ condition }: TreatmentListProps) {
-
     const [treatments, setTreatments] = useState(condition.conditionTreatments)
     const [sortBy, setSortBy] = useState<'effectiveness' | 'popularity'>('effectiveness')
+    const [searchQuery, setSearchQuery] = useState('')
 
     const handleSort = (type: 'effectiveness' | 'popularity') => {
         setSortBy(type)
-        const sorted = [...treatments].sort((a, b) =>
+        const filtered = condition.conditionTreatments.filter(treatment => 
+            treatment.treatment.name.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        const sorted = [...filtered].sort((a, b) =>
             type === 'popularity'
                 ? b.popularity - a.popularity
                 : calculateEffectivenessScore(b) - calculateEffectivenessScore(a)
@@ -74,75 +77,110 @@ export default function TreatmentRatingsList({ condition }: TreatmentListProps) 
         setTreatments(sorted)
     }
 
+    const handleSearch = (query: string) => {
+        setSearchQuery(query)
+        const filtered = condition.conditionTreatments.filter(treatment => 
+            treatment.treatment.name.toLowerCase().includes(query.toLowerCase())
+        )
+        const sorted = [...filtered].sort((a, b) =>
+            sortBy === 'popularity'
+                ? b.popularity - a.popularity
+                : calculateEffectivenessScore(b) - calculateEffectivenessScore(a)
+        )
+        setTreatments(sorted)
+    }
+
     const getConfidence = (popularity: number) => {
-        if (popularity > 50) return { level: 'HIGH', color: 'bg-green-500' };
-        if (popularity > 25) return { level: 'MEDIUM', color: 'bg-yellow-500' };
-        return { level: 'LOW', color: 'bg-red-500' };
+        if (popularity > 50) return { level: 'HIGH', color: 'bg-[#00CC66]' };
+        if (popularity > 25) return { level: 'MEDIUM', color: 'bg-[#FFB800]' };
+        return { level: 'LOW', color: 'bg-[#FF3366]' };
     }
 
     return (
-        <>
-            <div className="flex justify-between items-center mb-4">
-                <h2
-                    className={`text-xl font-semibold cursor-pointer ${sortBy === 'popularity' ? 'text-primary' : 'text-muted-foreground'}`}
-                    onClick={() => handleSort('popularity')}
-                >
-                    MOST TRIED
-                </h2>
-                <h2
-                    className={`text-xl font-semibold cursor-pointer ${sortBy === 'effectiveness' ? 'text-primary' : 'text-muted-foreground'}`}
-                    onClick={() => handleSort('effectiveness')}
-                >
-                    HIGHEST AVERAGE RATING
-                </h2>
+        <div className="space-y-4">
+            <div className="space-y-3">
+                <div className="relative">
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                        <Search className="h-4 w-4" />
+                    </div>
+                    <Input
+                        type="text"
+                        placeholder="Filter treatments..."
+                        value={searchQuery}
+                        onChange={(e) => handleSearch(e.target.value)}
+                        className="neobrutalist-gradient-container pl-9 pr-9 border-4 border-black bg-white focus-visible:ring-0 focus-visible:ring-offset-0"
+                    />
+                    {searchQuery && (
+                        <button
+                            onClick={() => handleSearch('')}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-black/5 rounded-full p-0.5"
+                        >
+                            <X className="h-4 w-4" />
+                            <span className="sr-only">Clear search</span>
+                        </button>
+                    )}
+                </div>
+                <div className="flex items-center gap-3">
+                    <Select onValueChange={(value) => handleSort(value as 'effectiveness' | 'popularity')} defaultValue="effectiveness">
+                        <SelectTrigger className="neobrutalist-button w-full">
+                            <SelectValue placeholder="Sort by" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="effectiveness">SORT BY HIGHEST AVERAGE RATING</SelectItem>
+                            <SelectItem value="popularity">SORT BY MOST TRIED</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
             </div>
-            <Select>
-                <SelectTrigger className="w-full">
-                    <SelectValue placeholder="All treatments" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectItem value="all">All treatments</SelectItem>
-                </SelectContent>
-            </Select>
-            <div className="space-y-4 mt-4">
-                {treatments.map((treatment, index) => {
+
+            <div className="space-y-4">
+                {treatments.map((treatment) => {
                     const effectivenessScore = calculateEffectivenessScore(treatment);
                     const confidence = getConfidence(treatment.popularity);
+                    const maxRatings = Math.max(...treatments.map(t => t.popularity));
+                    const confidenceWidth = (treatment.popularity / maxRatings) * 100;
+                    
                     return (
-                        <Card key={treatment.id} className="hover:shadow-lg transition-shadow duration-200">
-                            <CardContent className="flex items-start p-4">
-                                <div className="mr-4 flex flex-col items-center">
-                                    <span className="text-xs text-muted-foreground mb-1">Confidence</span>
-                                    <Badge className={`${confidence.color} text-white`}>
-                                        {confidence.level}
-                                    </Badge>
-                                </div>
-                                <div className="flex-grow">
-                                    <div className="text-primary font-bold">#{index + 1}</div>
-                                    <Link
-                                        href={`/conditions/${encodeURIComponent(condition.name)}/treatments/${encodeURIComponent(treatment.treatment.name)}`}
-                                        className="hover:underline"
-                                    >
-                                        <h3 className="font-bold">{toTitleCase(treatment.treatment.name)}</h3>
-                                    </Link>
-                                    <div className="mt-2">
+                        <Link
+                            href={`/conditions/${encodeURIComponent(condition.name)}/treatments/${encodeURIComponent(treatment.treatment.name)}`}
+                            key={treatment.id}
+                            className="block hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                        >
+                            <div className="neobrutalist-gradient-container">
+                                <div className="flex flex-col">
+                                    <h3 className="font-black text-lg mb-3">{toTitleCase(treatment.treatment.name)}</h3>
+                                    <div className="space-y-3">
                                         <div className="flex items-center">
-                                            <span className="text-xs text-muted-foreground mr-2">Effectiveness</span>
-                                            <div className="flex-grow bg-secondary rounded-full h-2.5">
+                                            <span className="text-xs sm:text-sm font-bold mr-2 sm:mr-3">Effectiveness</span>
+                                            <div className="flex-grow h-3 sm:h-4 bg-white rounded-xl border-2 border-black">
                                                 <div
-                                                    className="bg-primary h-2.5 rounded-full"
+                                                    className="h-full rounded-xl bg-[#FF3366]"
                                                     style={{ width: `${effectivenessScore}%` }}
                                                 ></div>
                                             </div>
-                                            <span className="text-xs font-semibold ml-2">{Math.round(effectivenessScore)}%</span>
+                                            <span className="text-xs sm:text-sm font-black ml-2 sm:ml-3">{Math.round(effectivenessScore)}%</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <span className="text-xs sm:text-sm font-bold mr-2 sm:mr-3">
+                                                Confidence
+                                            </span>
+                                            <div className="flex-grow h-3 sm:h-4 bg-white rounded-xl border-2 border-black">
+                                                <div
+                                                    className={`h-full rounded-xl ${confidence.color}`}
+                                                    style={{ width: `${confidenceWidth}%` }}
+                                                ></div>
+                                            </div>
+                                            <span className="text-xs sm:text-sm font-black ml-2 sm:ml-3">
+                                                {treatment.popularity} ratings
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </Link>
                     )
                 })}
             </div>
-        </>
+        </div>
     )
 }
