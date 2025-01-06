@@ -14,7 +14,7 @@ A local application for self-sovereign import and storage of personal data.
 
 ### 2.2. Optimitron AI Agent
 
-![data-import-and-analysis.gif](../../images/data-import-and-analysis.gif)
+![data-import-and-analysis.gif](../../../img/data-import-and-analysis.gif)
 
 Optimitron is an AI agent that lives in your PersonalFDA node that uses causal inference to estimate how various factors affect your health.
 
