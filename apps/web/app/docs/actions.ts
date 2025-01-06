@@ -4,7 +4,7 @@ import { getMarkdownFilesFromRepo } from "@/lib/markdown/repo-markdown"
 
 export async function getDocumentationFiles() {
   try {
-    const files = await getMarkdownFilesFromRepo("public/globalSolutions/dfda")
+    const files = await getMarkdownFilesFromRepo("public/docs")
     const filesWithContent = files?.map(file => ({
       ...file,
       content: file.content || ''

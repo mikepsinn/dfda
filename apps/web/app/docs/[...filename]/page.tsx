@@ -27,7 +27,7 @@ export default async function Docs({ params }: DocsProps) {
   }
 
   // Update the path to point to the correct directory
-  const mdPath = `/globalSolutions/dfda/${filename}.md`
+  const mdPath = `/docs/${filename}.md`
   console.log("Final markdown path:", mdPath)
 
   return <MarkdownFileRenderer url={mdPath} variant="neobrutalist" />
