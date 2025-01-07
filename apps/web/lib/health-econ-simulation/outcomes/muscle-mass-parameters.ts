@@ -126,7 +126,7 @@ export const muscleMassParameters: Record<string, ModelParameter> = {
         defaultValue: 100,
         unitName: "USD/lb/year",
         description: "Estimated annual productivity gain per pound of muscle mass based on health outcomes research",
-        sourceUrl: "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf",
+        sourceUrl: "https://www.hhs.govhttps://aspe.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf",
         emoji: "💼",
         generateDisplayValue: formatCurrencyPerPoundPerYear
     },
