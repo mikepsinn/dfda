@@ -13,9 +13,10 @@ Additionally, [150,000](https://www.weforum.org/agenda/2020/05/how-many-people-d
 
 Since 2014, healthcare spending per person has been [increasing faster than ever](https://fred.stlouisfed.org/series/HLTHSCPCHCSA) before.
 
-![health spending](../img/us-healthcare-expenditure-per-person.png)
+![health spending](../img/us-healthcare-expenditure.svg)
 
-Despite this additional spending, life expectancy has actually been \[declining]\(.. /assets/life-expectancy/life-expectancy-chart.png) since 2014.
+
+Despite this additional spending, life expectancy has actually been declining.
 
 The current system of clinical research, diagnosis, and treatment is  failing the billions of people are suffering from chronic diseases.
 
@@ -30,7 +31,7 @@ It costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-
 * The process takes over 10 years.
 * It costs [$36k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials.
 
-![clinical trial cost](../assets/cost/cost-of-clinical-trials.png) [source: clinicalresearch.io](https://www.clinicalresearch.io/blog/industry-trends/cost-of-clinical-trials-breakdown/)
+![clinical trial cost](../img/cost-of-clinical-trials.png) [source: clinicalresearch.io](https://www.clinicalresearch.io/blog/industry-trends/cost-of-clinical-trials-breakdown/)
 
 This high cost leads to the following problems:
 
@@ -40,7 +41,7 @@ We still know next to nothing about the long-term effects of 99.9% of the 4 poun
 
 Under the current system of research, it costs [$41k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001#:\~:text=The%20clinical%20trials%20cost%20a,and%20benchmarking%20clinical%20trial%20costs.) per subject in Phase III clinical trials. As a result, there is not a sufficient profit incentive for anyone to research the effects of any factor besides a molecule that can be patented.
 
-![how much we know](../assets/charts/how-much-we-know.png)
+![how much we know](../img/how-much-we-know.png)
 
 **Lack of Incentive to Discover the Full Range of Applications for Off-Patent Treatments**
 
@@ -86,7 +87,7 @@ Furthermore, patient sample sizes are very small. The number of subjects per tri
 * [70](https://www.ncbi.nlm.nih.gov/books/NBK50886/) patients per depression trial
 * [100](https://www.ncbi.nlm.nih.gov/books/NBK50886/) per diabetes trial
 
-![wellbutrin small sample size](../assets/trials/wellbutrin-effectiveness-small-sample-size.png)
+![wellbutrin small sample size](../img/wellbutrin-effectiveness-small-sample-size.png)
 
 In the example in graphic above a drug is prescribed to millions of patients based on a study with only 36 subjects, where a representation of the general public is questionable.
 
@@ -105,12 +106,14 @@ Tracking any variable in isolation is nearly useless in that it cannot provide t
 
 ### 1.2.1 $157 Billion Wasted on Duplication of Effort
 
-There are more than [350,000](https://www.emarketer.com/content/over-350k-digital-health-apps-flooding-market-here-s-how-apps-stand) health apps. Mobile health app development costs [$425,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) on average.  Most of these
+There are more than [350,000](https://www.emarketer.com/content/over-350k-digital-health-apps-flooding-market-here-s-how-apps-stand) health apps. Mobile health app development costs [$425,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) on average. 
+
+Most of these
 have a ton of overlap in functionality representing [$157,500,000,000](https://www.mobihealthnews.com/content/mobile-health-app-development-costs-425000-average-likely-continuing-rise) wasted on duplication of effort.
 
 If this code was freely shared, everyone could build on what everyone else had done.
 Theoretically, this could increase the rate of progress by 350,000 times.
 
-![closed source competition vs open source collaboration](../assets/open-source/closed-source-competition-vs-open-source-collaboration.sketch.png)
+![closed source competition vs open source collaboration](../img/closed-source-competition-vs-open-source-collaboration.sketch.png)
 
 The obstacle has been the free-rider problem. Software Developers that open source their code give their closed-source competitors an unfair advantage.  This increases their likelihood of bankruptcy even higher than the 90% failure rate they already faced.

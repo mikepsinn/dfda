@@ -286,11 +286,11 @@ You might say "I don't know how much the efficacy regulations contribute to or h
 
 A [three-way fixed-effects analysis](https://pubmed.ncbi.nlm.nih.gov/30912800) of 66 diseases in 27 countries, suggests that if no new drugs had been launched after 1981, the number of years of life lost would have been 2.16 times higher it actually was. It estimates that pharmaceutical expenditure per life-year saved was [$2837](https://pubmed.ncbi.nlm.nih.gov/30912800).
 
-![Graph showing the shift in relative mortality among major diseases over 60 years.](http://valueofinnovation.org/assets/images/power-of-innovation/disease-causing-death-shift.gif)
+![Graph showing the shift in relative mortality among major diseases over 60 years.](../img/disease-causing-death-shift.gif)
 
 More people survive as more treatments are developed. There's a [strong correlation](http://valueofinnovation.org/power-of-innovation) between the development of new cancer treatments and cancer survival over 30 years.
 
-![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](http://valueofinnovation.org/assets/images/power-of-innovation/more-surviving-more-therapies.gif)
+![Graph showing the correlation of developing new cancer treatments and cancer survival over 30 years.](../img/more-surviving-more-therapies.gif)
 
 ### FDA Mandate is Not to Maximize Lives Saved
 
@@ -346,10 +346,5 @@ The currently highly restrictive overly cautious method of clinical research pre
 
 We’re at the very beginning of thousands or millions of years of systematic discovery. So it’s unlikely that this decline in lifespan growth is the result of diminishing returns due to our running out of things to discover.
 
-However, to validate the theory that large-scale real-world evidence can produce better health outcomes requires further validation of this method of experimentation. That's the purpose of deFDA.
+However, to validate the theory that large-scale real-world evidence can produce better health outcomes requires further validation of this method of experimentation. That's the purpose of dFDA.
 
-##
-
-#### [Next 3. Platform](broken-reference/) 👉
-
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
