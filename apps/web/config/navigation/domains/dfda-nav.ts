@@ -11,13 +11,13 @@ export const dfdaLinks = {
   conditions: {
     title: "Conditions",
     href: "/conditions",
-    icon: "conditions",
+    icon: "health",
     tooltip: "Conditions and treatments",
   },
   treatments: {
     title: "Treatments",
     href: "/treatments",
-    icon: "treatments",
+    icon: "treatment",
     tooltip: "Treatments and conditions",
   },
   digitalTwinSafe: {
@@ -63,6 +63,7 @@ export const dfdaNavigation: DomainNavigation = {
   topNav: [dfdaLinks.clinipedia, dfdaLinks.digitalTwinSafe, dfdaLinks.petition],
   sidebarNav: [
     dfdaLinks.dfda,
+    dfdaLinks.conditions,
     dfdaLinks.clinipedia,
     dfdaLinks.digitalTwinSafe,
     dfdaLinks.fdai,

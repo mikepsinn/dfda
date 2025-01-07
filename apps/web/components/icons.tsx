@@ -50,6 +50,7 @@ import {
   Vote,
   Wand2,
   X,
+  BriefcaseMedical,
 } from "lucide-react"
 
 export type IconKeys = keyof typeof icons
@@ -95,7 +96,7 @@ const icons = {
   bomb: Flame,
   skull: Skull,
   vote: Vote,
-  health: Brain,
+  health: BriefcaseMedical,
   peace: HandMetal,
   results: BarChart3,
   disease: Cross,
@@ -152,7 +153,10 @@ const icons = {
   wiki: BookOpen,
   studies: GraduationCap,
   petition: ScrollText,
-  savings: Banknote
+  savings: Banknote,
+  treatment: BriefcaseMedical,
+  condition: BriefcaseMedical,
+  medical: BriefcaseMedical,
 }
 
 export const Icons: IconsType = icons
