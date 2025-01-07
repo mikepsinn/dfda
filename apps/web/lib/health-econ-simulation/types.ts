@@ -26,6 +26,7 @@ export interface ModelParameter {
   description: string;
   sourceUrl: string;
   emoji: string;
+  sourceQuote?: string;
   generateDisplayValue?: (value: number) => string;
 }
 
