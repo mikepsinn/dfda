@@ -769,7 +769,7 @@ export async function skipAllNotifications(
 }
 
 export async function getProblems(): Promise<ProcessedMarkdownFile[]> {
-  return getMarkdownFiles("public/globalSolutions/dfda/problems")
+  return getMarkdownFiles("public/docs/problems")
 }
 export async function searchDfdaVariables(
   searchPhrase?: string,

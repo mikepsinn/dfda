@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export function GitHubEditButton() {
   return (
     <a
-      href="https://github.com/decentralized-fda/decentralized-fda/edit/main/public/globalSolutions/dfda/cure-acceleration-act.md"
+      href="https://github.com/decentralized-fda/decentralized-fda/edit/main/public/docs/cure-acceleration-act.md"
       target="_blank"
       rel="noopener noreferrer"
     >
