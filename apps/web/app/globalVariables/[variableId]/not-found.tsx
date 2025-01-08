@@ -16,10 +16,10 @@ export default function NotFound() {
           This globalVariable could not be found. Please try again.
         </EmptyPlaceholder.Description>
         <Link
-          href="/dashboard"
+          href="/globalVariables"
           className={buttonVariants({ variant: "outline" })}
         >
-          Go to Dashboard
+          Go Back
         </Link>
       </EmptyPlaceholder>
     </div>
