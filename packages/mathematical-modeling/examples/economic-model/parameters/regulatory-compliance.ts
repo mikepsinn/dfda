@@ -1,60 +1,67 @@
-import { StratifiedParameter } from '../../../src/types';
+import { StratifiedParameter } from '../../../src/models/parameters/StratifiedParameter';
 import { formatCurrency } from '../../../src/format';
 
-export const regulatoryCompliance: StratifiedParameter = {
-  id: 'regulatory_compliance',
-  parameterType: 'stratified',
-  displayName: 'Regulatory Compliance Cost',
-  defaultValue: 200_000,
-  unitName: 'USD/trial',
-  description: 'Regulatory compliance costs including documentation, monitoring, and reporting',
-  sourceUrl: 'https://example.com',
-  emoji: '📋',
-  generateDisplayValue: (value: number) => formatCurrency(value) + '/trial',
-  tags: ['variable', 'regulatory', 'compliance', 'per-trial'],
-  metadata: {
-    costCategory: 'variable',
-    scalability: 'step-wise',
-    components: ['documentation', 'monitoring', 'reporting'],
-    automationLevel: 'high'
+const complianceStrata = [
+  {
+    id: 'fda_clearance',
+    name: 'FDA Clearance',
+    value: 2000000,
+    weight: 1,
+    sampleSize: 100,
+    standardError: 200000
   },
-
-  // Stratification dimensions
-  dimensions: ['region', 'trial_phase', 'component', 'complexity'],
-  
-  // Possible values for each dimension
-  stratification: {
-    'region': ['us', 'eu', 'asia', 'row'],
-    'trial_phase': ['phase_1', 'phase_2', 'phase_3', 'phase_4'],
-    'component': ['documentation', 'monitoring', 'reporting'],
-    'complexity': ['standard', 'complex', 'novel_therapy']
+  {
+    id: 'hipaa_compliance',
+    name: 'HIPAA Compliance',
+    value: 500000,
+    weight: 1,
+    sampleSize: 150,
+    standardError: 50000
   },
-
-  // Values for each combination (example subset)
-  values: {
-    // US Phase 1
-    'us:phase_1:documentation:standard': 50000,
-    'us:phase_1:monitoring:standard': 25000,
-    'us:phase_1:reporting:standard': 25000,
-    'us:phase_1:documentation:complex': 75000,
-    'us:phase_1:monitoring:complex': 35000,
-    'us:phase_1:reporting:complex': 35000,
-    'us:phase_1:documentation:novel_therapy': 100000,
-    'us:phase_1:monitoring:novel_therapy': 50000,
-    'us:phase_1:reporting:novel_therapy': 50000,
-
-    // EU Phase 1 (slightly higher due to additional requirements)
-    'eu:phase_1:documentation:standard': 60000,
-    'eu:phase_1:monitoring:standard': 30000,
-    'eu:phase_1:reporting:standard': 30000,
-    // ... would continue for all combinations
+  {
+    id: 'gdpr_compliance',
+    name: 'GDPR Compliance',
+    value: 300000,
+    weight: 0.5, // Less weight for non-US market
+    sampleSize: 80,
+    standardError: 30000
   },
-
-  // Aggregation functions
-  aggregationFunctions: {
-    byRegion: (values: number[]) => values.reduce((a, b) => a + b, 0) / values.length,
-    byPhase: (values: number[]) => values.reduce((a, b) => a + b, 0),
-    byComponent: (values: number[]) => values.reduce((a, b) => a + b, 0),
-    totalCost: (values: number[]) => values.reduce((a, b) => a + b, 0),
+  {
+    id: 'quality_system',
+    name: 'Quality System',
+    value: 1000000,
+    weight: 1,
+    sampleSize: 120,
+    standardError: 100000
+  },
+  {
+    id: 'security_audits',
+    name: 'Security Audits',
+    value: 250000,
+    weight: 1,
+    sampleSize: 200,
+    standardError: 25000
   }
-}; 
+];
+
+export const regulatoryCompliance = new StratifiedParameter(
+  'regulatory_compliance',
+  'Regulatory Compliance Cost',
+  4050000, // Sum of all compliance costs
+  'USD',
+  'Annual costs for maintaining regulatory compliance across different requirements',
+  'https://example.com',
+  '📋',
+  complianceStrata,
+  'Based on industry standards and regulatory requirements for medical devices',
+  ['recurring', 'compliance', 'regulatory'],
+  {
+    costCategory: 'fixed',
+    phase: 'operational',
+    complexity: 'high',
+    riskLevel: 'high',
+    updateFrequency: 'annual',
+    geographicScope: ['US', 'EU'],
+    regulatoryFrameworks: ['FDA', 'HIPAA', 'GDPR', 'ISO 13485']
+  }
+); 

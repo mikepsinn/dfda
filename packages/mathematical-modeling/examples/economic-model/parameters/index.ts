@@ -1,16 +1,12 @@
-import { initialDevelopment } from './initial-development';
-import { aiInference } from './ai-inference';
-import { annualMaintenance } from './annual-maintenance';
-import { aiTraining } from './ai-training';
-import { regulatoryCompliance } from './regulatory-compliance';
+// One-time fixed costs
+export { initialDevelopment } from './initial-development';
+export { aiTraining } from './ai-training';
 
-export {
-  // One-time fixed costs (constants)
-  initialDevelopment,
-  aiTraining,
-  
-  // Recurring and variable costs
-  annualMaintenance,
-  aiInference,
-  regulatoryCompliance
-};
+// Recurring fixed costs
+export { annualMaintenance } from './annual-maintenance';
+
+// Variable costs per patient/trial
+export { perPatientCosts } from './per-patient-costs';
+export { aiInference } from './ai-inference';
+export { regulatoryCompliance } from './regulatory-compliance';
+export { safetyMonitoring } from './safety-monitoring';

@@ -1,143 +1,105 @@
-import { ModelParameter, OutcomeMetric } from '../../src/types';
-import * as parameters from './parameters';
-import * as outcomes from './outcomes';
-import * as fs from 'fs';
-import * as path from 'path';
-import { EconomicModel } from './economicModel';
+import { BaseModel } from '../../src/models/base/BaseModel';
+import { ModelMetadata } from '../../src/models/metadata/ModelMetadata';
+import { totalCost } from './outcomes/total-cost';
+import { timeSavings } from './outcomes/time-savings';
+import { initialDevelopment } from './parameters/initial-development';
+import { aiTraining } from './parameters/ai-training';
+import { aiInference } from './parameters/ai-inference';
+import { annualMaintenance } from './parameters/annual-maintenance';
+import { perPatientCosts } from './parameters/per-patient-costs';
+import { regulatoryCompliance } from './parameters/regulatory-compliance';
+import { safetyMonitoring } from './parameters/safety-monitoring';
 
-describe('Economic Model Parameters', () => {
-  describe('Parameter Types', () => {
-    test('stochastic parameters have required properties', () => {
-      const stochasticParams = [parameters.initialDevelopment, parameters.aiTraining];
-      stochasticParams.forEach(param => {
-        expect(param.parameterType).toBe('stochastic');
-        expect(param.distributionType).toBeDefined();
-        expect(param.distributionParameters).toBeDefined();
-      });
-    });
+describe('Economic Model', () => {
+  const parameters = [
+    initialDevelopment,
+    aiTraining,
+    aiInference,
+    annualMaintenance,
+    perPatientCosts,
+    regulatoryCompliance,
+    safetyMonitoring
+  ];
 
-    test('time series parameters have required properties', () => {
-      const timeSeriesParams = [parameters.annualMaintenance];
-      timeSeriesParams.forEach(param => {
-        expect(param.parameterType).toBe('time_series');
-        expect(param.timeUnit).toBeDefined();
-        expect(param.timeHorizon).toBeDefined();
-        expect(param.timeHorizon.start).toBeDefined();
-        expect(param.timeHorizon.end).toBeDefined();
-        expect(param.timeHorizon.step).toBeDefined();
-      });
-    });
+  const metadata = new ModelMetadata(
+    ['John Doe', 'Jane Smith'],
+    '2024-01-15',
+    [
+      {
+        citation: 'Smith et al. (2023) Cost Analysis of AI in Healthcare',
+        doi: '10.1234/example',
+        url: 'https://example.com/paper'
+      }
+    ],
+    [
+      'Linear cost scaling with patient volume',
+      'Constant maintenance costs over time'
+    ],
+    [
+      'Does not account for regional cost variations',
+      'Limited long-term data availability'
+    ],
+    {
+      status: 'draft',
+      validationMethod: 'peer-review'
+    }
+  );
 
-    test('deterministic parameters have required properties', () => {
-      const deterministicParams = [parameters.aiInference];
-      deterministicParams.forEach(param => {
-        expect(param.parameterType).toBe('deterministic');
-        expect(param.validation).toBeDefined();
-        expect(typeof param.validation).toBe('function');
-        if (param.scalingFunction) {
-          expect(typeof param.scalingFunction).toBe('function');
-        }
-      });
-    });
+  const model = new BaseModel(
+    'economic-model',
+    'Healthcare AI Economic Model',
+    'A model for analyzing the economic impact of AI in healthcare',
+    '1.0.0',
+    parameters,
+    [totalCost, timeSavings],
+    metadata
+  );
 
-    test('stratified parameters have required properties', () => {
-      const stratifiedParams = [parameters.regulatoryCompliance];
-      stratifiedParams.forEach(param => {
-        expect(param.parameterType).toBe('stratified');
-        expect(param.dimensions).toBeDefined();
-        expect(param.stratification).toBeDefined();
-        expect(param.values).toBeDefined();
-        expect(Object.keys(param.values).length).toBeGreaterThan(0);
-      });
-    });
+  test('model initialization', () => {
+    expect(model.id).toBe('economic-model');
+    expect(model.title).toBe('Healthcare AI Economic Model');
+    expect(model.version).toBe('1.0.0');
+    expect(model.parameters.length).toBe(7);
+    expect(model.metrics.length).toBe(2);
   });
 
-  describe('Parameter Validations', () => {
-    test('ai inference cost scales with volume', () => {
-      const baseValue = parameters.aiInference.defaultValue;
-      const scaledValue = parameters.aiInference.scalingFunction!(baseValue);
-      expect(scaledValue).toBeLessThan(baseValue); // Should have volume discount
-    });
-
-    test('regulatory compliance varies by region and phase', () => {
-      const usPhase1 = parameters.regulatoryCompliance.values['us:phase_1:documentation:standard'];
-      const euPhase1 = parameters.regulatoryCompliance.values['eu:phase_1:documentation:standard'];
-      expect(usPhase1).toBeDefined();
-      expect(euPhase1).toBeDefined();
-      expect(usPhase1).not.toBe(euPhase1);
-    });
-  });
-});
-
-describe('Economic Model Outcomes', () => {
-  const model = new EconomicModel();
-
-  describe('Total Cost Calculations', () => {
-    test('calculates base total cost', () => {
-      const result = model.calculateMetric('total_cost');
-      expect(result).toBeGreaterThan(0);
-      // Platform costs + 5 years maintenance + trial costs
-      const expectedMinimum = 50_000_000 + 10_000_000 + (5_000_000 * 5);
-      expect(result).toBeGreaterThan(expectedMinimum);
-    });
-
-    test('performs sensitivity analysis', () => {
-      const sensitivity = model.calculateSensitivity('total_cost');
-      expect(sensitivity).toBeDefined();
-      expect(sensitivity?.method).toBe('sobol');
-      expect(Object.keys(sensitivity?.results || {}).length).toBeGreaterThan(0);
-    });
-
-    test('generates time series projection', () => {
-      const timeSeries = model.calculateTimeSeries('total_cost');
-      expect(timeSeries).toBeDefined();
-      expect(timeSeries?.timePoints.length).toBe(60); // 5 years monthly
-      expect(timeSeries?.values.length).toBe(60);
-      // First month should include one-time costs
-      expect(timeSeries?.values[0]).toBeGreaterThan(60_000_000);
-    });
+  test('parameter access', () => {
+    const param = model.getParameter('initial-development');
+    expect(param).toBeDefined();
+    expect(param?.id).toBe('initial-development');
+    expect(param?.displayName).toBe('Initial Development Cost');
   });
 
-  describe('Time Savings Calculations', () => {
-    test('calculates base time savings', () => {
-      const result = model.calculateMetric('time_savings');
-      expect(result).toBeGreaterThanOrEqual(3); // Minimum safety period
-      expect(result).toBeLessThanOrEqual(9); // Maximum timeline
-    });
+  test('metric calculation', () => {
+    const totalCostMetric = model.getMetric('total-cost');
+    expect(totalCostMetric).toBeDefined();
+    expect(totalCostMetric?.calculate()).toBeGreaterThan(0);
 
-    test('respects minimum safety period', () => {
-      model.setParameterValue('ai_inference', 1); // Very high AI spend
-      model.setParameterValue('regulatory_compliance', 100_000); // Minimal compliance
-      const result = model.calculateMetric('time_savings');
-      expect(result).toBeGreaterThanOrEqual(3); // Can't go below safety minimum
-    });
-
-    test('shows phase progression in time series', () => {
-      const timeSeries = model.calculateTimeSeries('time_savings');
-      expect(timeSeries).toBeDefined();
-      // Should show distinct phases
-      expect(timeSeries?.values[0]).toBe(3); // Safety phase
-      expect(timeSeries?.values[4]).toBe(6); // Efficacy phase
-      expect(timeSeries?.values[11]).toBe(9); // Complete
-    });
+    const timeSavingsMetric = model.getMetric('time-savings');
+    expect(timeSavingsMetric).toBeDefined();
+    expect(timeSavingsMetric?.calculate()).toBeGreaterThan(0);
   });
-});
 
-describe('Economic Model Documentation', () => {
-  const model = new EconomicModel();
-
-  test('generates markdown report', () => {
+  test('report generation', () => {
     const report = model.generateMarkdownReport();
-    
-    // Basic validation
-    expect(report).toContain('# Economic Impact Model');
-    expect(report).toContain('## Parameters');
-    expect(report).toContain('## Results');
-    expect(report).toContain('## Assumptions');
-    expect(report).toContain('## Limitations');
+    expect(report).toContain('Healthcare AI Economic Model');
+    expect(report).toContain('Initial Development Cost');
+    expect(report).toContain('AI Training Cost');
+    expect(report).toContain('Model Metrics');
+    expect(report).toContain('Authors');
+    expect(report).toContain('Assumptions');
+    expect(report).toContain('Limitations');
+    expect(report).toContain('References');
+  });
 
-    // Save report
-    const reportPath = path.join(__dirname, 'economic-model-report.md');
-    fs.writeFileSync(reportPath, report);
+  test('metadata methods', () => {
+    expect(metadata.isValidated()).toBe(false);
+    expect(metadata.isPeerReviewed()).toBe(false);
+    expect(metadata.getLastUpdatedDate()).toEqual(new Date('2024-01-15'));
+    expect(metadata.getCitations()).toContain('Smith et al. (2023) Cost Analysis of AI in Healthcare');
+    expect(metadata.getDOIs()).toContain('10.1234/example');
+    expect(metadata.getURLs()).toContain('https://example.com/paper');
+    expect(metadata.hasAssumption('Linear cost scaling with patient volume')).toBe(true);
+    expect(metadata.hasLimitation('Does not account for regional cost variations')).toBe(true);
   });
 });

@@ -2,6 +2,7 @@ import { BaseParameter } from './BaseParameter';
 import { OutcomeMetric } from './OutcomeMetric';
 import { SensitivityAnalysis } from '../analysis/SensitivityAnalysis';
 import { TimeSeriesResult } from '../types/results';
+import { ModelMetadata } from '../metadata/ModelMetadata';
 
 export interface ModelMetadata {
   authors?: string[];
@@ -111,43 +112,105 @@ export class BaseModel {
   }
 
   generateMarkdownReport(): string {
-    const report = [
-      `# ${this.title}`,
-      '',
-      `## Description`,
-      this.description,
-      '',
-      `## Version`,
-      this.version,
-      '',
-      `## Parameters`,
-      ...this.parameters.map((p: BaseParameter) => [
-        `### ${p.displayName}`,
-        `- Description: ${p.description}`,
-        `- Default Value: ${p.generateDisplayValue(p.defaultValue)}`,
-        `- Source: ${p.sourceUrl}`,
-        p.sourceQuote ? `- Quote: "${p.sourceQuote}"` : '',
-        ''
-      ].filter(Boolean).join('\n')),
-      '',
-      `## Metrics`,
-      ...this.metrics.map((m: OutcomeMetric) => [
-        `### ${m.displayName}`,
-        `- Description: ${m.description}`,
-        `- Unit: ${m.unitName}`,
-        `- Value: ${m.generateDisplayValue(this.calculateMetric(m.id))}`,
-        `- Calculation: ${m.generateCalculationExplanation()}`,
-        ''
-      ].join('\n')),
-      '',
-      `## Metadata`,
-      ...(this.metadata?.authors ? [`### Authors`, ...this.metadata.authors.map((a: string) => `- ${a}`), ''] : []),
-      ...(this.metadata?.assumptions ? [`### Assumptions`, ...this.metadata.assumptions.map((a: string) => `- ${a}`), ''] : []),
-      ...(this.metadata?.limitations ? [`### Limitations`, ...this.metadata.limitations.map((l: string) => `- ${l}`), ''] : []),
-      '',
-      `Generated on: ${new Date().toISOString()}`
-    ].join('\n');
+    const sections: string[] = [];
 
-    return report;
+    // Title and Description
+    sections.push(`# ${this.title}\n`);
+    sections.push(`${this.description}\n`);
+    sections.push(`Version: ${this.version}\n`);
+
+    // Parameters Section
+    sections.push('## Model Parameters\n');
+    
+    // Group parameters by type
+    const fixedParams = this.parameters.filter(p => p.metadata?.costCategory === 'fixed');
+    const variableParams = this.parameters.filter(p => p.metadata?.costCategory === 'variable');
+    
+    if (fixedParams.length > 0) {
+      sections.push('### Fixed Costs\n');
+      fixedParams.forEach(param => {
+        sections.push(`#### ${param.displayName}\n`);
+        sections.push(`- Default Value: ${param.generateDisplayValue(param.defaultValue)}`);
+        sections.push(`- Description: ${param.description}`);
+        if (param.metadata) {
+          sections.push('- Additional Information:');
+          Object.entries(param.metadata).forEach(([key, value]) => {
+            sections.push(`  - ${key}: ${JSON.stringify(value)}`);
+          });
+        }
+        sections.push('');
+      });
+    }
+
+    if (variableParams.length > 0) {
+      sections.push('### Variable Costs\n');
+      variableParams.forEach(param => {
+        sections.push(`#### ${param.displayName}\n`);
+        sections.push(`- Base Value: ${param.generateDisplayValue(param.defaultValue)}`);
+        sections.push(`- Description: ${param.description}`);
+        if (param.metadata) {
+          sections.push('- Additional Information:');
+          Object.entries(param.metadata).forEach(([key, value]) => {
+            sections.push(`  - ${key}: ${JSON.stringify(value)}`);
+          });
+        }
+        sections.push('');
+      });
+    }
+
+    // Metrics Section
+    if (this.metrics.length > 0) {
+      sections.push('## Model Metrics\n');
+      this.metrics.forEach(metric => {
+        sections.push(`### ${metric.title}\n`);
+        sections.push(`${metric.description}\n`);
+        sections.push('#### Calculation Method\n');
+        sections.push(metric.generateCalculationExplanation());
+        sections.push('');
+      });
+    }
+
+    // Metadata Section
+    if (this.metadata) {
+      sections.push('## Additional Information\n');
+
+      if (this.metadata.authors?.length) {
+        sections.push('### Authors\n');
+        sections.push(this.metadata.authors.join(', ') + '\n');
+      }
+
+      if (this.metadata.lastUpdated) {
+        sections.push('### Last Updated\n');
+        sections.push(new Date(this.metadata.lastUpdated).toLocaleDateString() + '\n');
+      }
+
+      if (this.metadata.assumptions?.length) {
+        sections.push('### Assumptions\n');
+        this.metadata.assumptions.forEach(assumption => {
+          sections.push(`- ${assumption}`);
+        });
+        sections.push('');
+      }
+
+      if (this.metadata.limitations?.length) {
+        sections.push('### Limitations\n');
+        this.metadata.limitations.forEach(limitation => {
+          sections.push(`- ${limitation}`);
+        });
+        sections.push('');
+      }
+
+      if (this.metadata.references?.length) {
+        sections.push('### References\n');
+        this.metadata.references.forEach(ref => {
+          sections.push(`- ${ref.citation}`);
+          if (ref.doi) sections.push(`  DOI: ${ref.doi}`);
+          if (ref.url) sections.push(`  URL: ${ref.url}`);
+        });
+        sections.push('');
+      }
+    }
+
+    return sections.join('\n');
   }
 } 
