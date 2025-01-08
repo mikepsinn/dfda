@@ -43,7 +43,7 @@ export default function Navigation() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/sign-in" legacyBehavior passHref>
+          <Link href="/signin" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <span className="flex items-center space-x-1.5">
                 <span>

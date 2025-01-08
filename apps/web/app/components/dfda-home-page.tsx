@@ -233,7 +233,7 @@ export default function DFDAHomePage() {
               analysis 🔬, and get your drug to patients ASAP!
             </p>
             <Link
-              href="/dfda/drug-companies/register-drug"
+              href="/drug-companies/register-drug"
               className="neobrutalist-button group"
             >
               Register Now
