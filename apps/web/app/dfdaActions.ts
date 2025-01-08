@@ -23,7 +23,7 @@ function getDFDAClientId(): string {
   return process.env.DFDA_CLIENT_ID
 }
 
-export async function fetchConditions() {
+export async function fetchDfdaConditions() {
   return prisma.dfdaCondition.findMany()
 }
 

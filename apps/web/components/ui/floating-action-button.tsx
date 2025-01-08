@@ -15,12 +15,12 @@ const actionItems: ActionItem[] = [
   {
     label: "Add a Reminder",
     icon: <Bell className="h-5 w-5" />,
-    href: "/dfda/reminders/add",
+    href: "/reminders/add",
   },
   {
     label: "Record a Measurement",
     icon: <PlusCircle className="h-5 w-5" />,
-    href: "/dfda/safe/measurements/add",
+    href: "/measurements/add",
   },
   {
     label: "Import Data",

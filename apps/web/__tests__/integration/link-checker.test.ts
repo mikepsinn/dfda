@@ -8,6 +8,21 @@ import path from 'path'
 describe('Integration - Link Checker', () => {
   const MAX_CONCURRENT_CHECKS = 5 // Limit concurrent requests
 
+  // Helper to check if dev server is running
+  async function isDevServerRunning(): Promise<boolean> {
+    try {
+      await fetch('http://localhost:3000', {
+        method: 'HEAD',
+        headers: {
+          'User-Agent': 'DFDA Link Checker'
+        }
+      })
+      return true
+    } catch (error) {
+      return false
+    }
+  }
+
   async function getAllTsxFiles(dir: string): Promise<string[]> {
     const files: string[] = []
     const items = fs.readdirSync(dir)
@@ -94,6 +109,15 @@ describe('Integration - Link Checker', () => {
   }
 
   it('should validate all links in the codebase', async () => {
+    // Check if dev server is running first
+    const serverRunning = await isDevServerRunning()
+    if (!serverRunning) {
+      console.error('\n❌ Development server is not running!')
+      console.error('Please start it with "npm run dev" or "pnpm dev" first.\n')
+      // Fail the test immediately
+      throw new Error('Development server must be running to check links')
+    }
+
     // Get all TSX files from app and components directories
     const tsxFiles = [
       ...await getAllTsxFiles(path.join(process.cwd(), 'app')),
