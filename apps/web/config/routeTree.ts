@@ -1,403 +1,511 @@
 // Generated route tree - do not edit manually
-// Regenerate after adding new pages with: 
-// npx ts-node scripts/generateRouteTree.ts
+// Regenerate with: pnpm generate-routes
 export const routeTree = {
   "name": "root",
   "path": "/",
   "isDynamic": false,
-  "displayName": "Root",
   "children": {
     "(frontpage)": {
       "name": "(frontpage)",
       "path": "/(frontpage)",
       "isDynamic": false,
-      "displayName": "(frontpage)",
       "children": {
         "contact-us": {
           "name": "contact-us",
           "path": "/(frontpage)/contact-us",
           "isDynamic": false,
-          "displayName": "Contact us",
-          "children": {}
+          "children": {},
+          "emoji": "✉️",
+          "description": "📞 Get in touch with us through the contact form",
+          "displayName": "Contact Us"
         },
         "privacy": {
           "name": "privacy",
           "path": "/(frontpage)/privacy",
           "isDynamic": false,
-          "displayName": "Privacy",
-          "children": {}
+          "children": {},
+          "emoji": "🔒",
+          "description": "🛡️ Read our privacy policy and data handling practices",
+          "displayName": "Privacy Policy"
         }
-      }
+      },
+      "emoji": "📰",
+      "description": "📄 View the front page with featured content and updates",
+      "displayName": "Front Page"
     },
     "articles": {
       "name": "articles",
       "path": "/articles",
       "isDynamic": false,
-      "displayName": "Articles",
       "children": {
         "authors": {
           "name": "authors",
           "path": "/articles/authors",
           "isDynamic": false,
-          "displayName": "Authors",
-          "children": {}
+          "children": {},
+          "emoji": "✍️",
+          "description": "👥 Explore articles by different authors",
+          "displayName": "Authors"
         },
         "categories": {
           "name": "categories",
           "path": "/articles/categories",
           "isDynamic": false,
-          "displayName": "Categories",
-          "children": {}
+          "children": {},
+          "emoji": "📂",
+          "description": "📁 View articles organized by categories",
+          "displayName": "Categories"
         },
         "tags": {
           "name": "tags",
           "path": "/articles/tags",
           "isDynamic": false,
-          "displayName": "Tags",
-          "children": {}
+          "children": {},
+          "emoji": "🏷️",
+          "description": "🏷️ Discover articles by tags and keywords",
+          "displayName": "Tags"
         }
-      }
+      },
+      "emoji": "📝",
+      "description": "📚 Browse a collection of articles on various topics",
+      "displayName": "Articles"
     },
     "cba": {
       "name": "cba",
       "path": "/cba",
       "isDynamic": false,
-      "displayName": "Cba",
       "children": {
         "muscle-mass": {
           "name": "muscle-mass",
           "path": "/cba/muscle-mass",
           "isDynamic": false,
-          "displayName": "Muscle mass",
-          "children": {}
+          "children": {},
+          "emoji": "💪",
+          "description": "📉 Analyze cost-benefit data related to muscle mass",
+          "displayName": "Muscle Mass CBA"
         }
-      }
+      },
+      "emoji": "📊",
+      "description": "📈 Access cost-benefit analysis resources",
+      "displayName": "Cost-Benefit Analysis"
     },
     "cognition": {
       "name": "cognition",
       "path": "/cognition",
       "isDynamic": false,
-      "displayName": "Cognition",
       "children": {
         "reaction-test": {
           "name": "reaction-test",
           "path": "/cognition/reaction-test",
           "isDynamic": false,
-          "displayName": "Reaction test",
-          "children": {}
+          "children": {},
+          "emoji": "⚡",
+          "description": "⏱️ Take a test to measure your reaction time",
+          "displayName": "Reaction Test"
         }
-      }
+      },
+      "emoji": "🧠",
+      "description": "🧠 Explore cognitive science resources and information",
+      "displayName": "Cognition"
     },
     "conditions": {
       "name": "conditions",
       "path": "/conditions",
       "isDynamic": false,
-      "displayName": "Conditions",
       "children": {
         "conditionName": {
           "name": "conditionName",
           "path": "/conditions/[conditionName]",
           "isDynamic": true,
-          "displayName": "[condition Name]",
           "children": {
             "mega-study": {
               "name": "mega-study",
               "path": "/conditions/[conditionName]/mega-study",
               "isDynamic": false,
-              "displayName": "Mega study",
-              "children": {}
+              "children": {},
+              "emoji": "📊",
+              "description": "📚 Access comprehensive studies related to the condition",
+              "displayName": "Mega Study"
             },
             "meta-analysis": {
               "name": "meta-analysis",
               "path": "/conditions/[conditionName]/meta-analysis",
               "isDynamic": false,
-              "displayName": "Meta analysis",
-              "children": {}
+              "children": {},
+              "emoji": "📈",
+              "description": "📉 Review meta-analyses for the specified condition",
+              "displayName": "Meta Analysis"
             },
             "treatment-reviews": {
               "name": "treatment-reviews",
               "path": "/conditions/[conditionName]/treatment-reviews",
               "isDynamic": false,
-              "displayName": "Treatment reviews",
-              "children": {}
+              "children": {},
+              "emoji": "📝",
+              "description": "🩺 Read reviews of treatments for the condition",
+              "displayName": "Treatment Reviews"
             },
             "treatments": {
               "name": "treatments",
               "path": "/conditions/[conditionName]/treatments",
               "isDynamic": false,
-              "displayName": "Treatments",
               "children": {
                 "treatmentName": {
                   "name": "treatmentName",
                   "path": "/conditions/[conditionName]/treatments/[treatmentName]",
                   "isDynamic": true,
-                  "displayName": "[treatment Name]",
                   "children": {
                     "cost-benefit-analysis": {
                       "name": "cost-benefit-analysis",
                       "path": "/conditions/[conditionName]/treatments/[treatmentName]/cost-benefit-analysis",
                       "isDynamic": false,
-                      "displayName": "Cost benefit analysis",
-                      "children": {}
+                      "children": {},
+                      "emoji": "📊",
+                      "description": "📈 Analyze the cost-benefit of a specific treatment",
+                      "displayName": "Treatment CBA"
                     }
-                  }
+                  },
+                  "emoji": "💉",
+                  "description": "💉 View detailed information about a specific treatment",
+                  "displayName": "Treatment Details"
                 }
-              }
+              },
+              "emoji": "💊",
+              "description": "💊 Explore available treatments for the condition",
+              "displayName": "Treatments"
             }
-          }
+          },
+          "emoji": "🩹",
+          "description": "🔍 View detailed information about a specific condition",
+          "displayName": "Condition Details"
         }
-      }
+      },
+      "emoji": "⚕️",
+      "description": "🩺 Browse various medical conditions and their details",
+      "displayName": "Conditions"
     },
     "docs": {
       "name": "docs",
       "path": "/docs",
       "isDynamic": false,
-      "displayName": "Docs",
       "children": {
         "blueprint": {
           "name": "blueprint",
           "path": "/docs/blueprint",
           "isDynamic": false,
-          "displayName": "Blueprint",
-          "children": {}
+          "children": {},
+          "emoji": "📋",
+          "description": "📑 View the blueprint for the application",
+          "displayName": "Blueprint"
         },
         "cure-acceleration-act": {
           "name": "cure-acceleration-act",
           "path": "/docs/cure-acceleration-act",
           "isDynamic": false,
-          "displayName": "Cure acceleration act",
-          "children": {}
+          "children": {},
+          "emoji": "📜",
+          "description": "📜 Read about the Cure Acceleration Act",
+          "displayName": "Cure Acceleration Act"
         },
         "health-savings-sharing": {
           "name": "health-savings-sharing",
           "path": "/docs/health-savings-sharing",
           "isDynamic": false,
-          "displayName": "Health savings sharing",
-          "children": {}
+          "children": {},
+          "emoji": "💰",
+          "description": "💵 Learn about health savings and sharing options",
+          "displayName": "Health Savings Sharing"
         },
         "...filename": {
           "name": "...filename",
           "path": "/docs/[...filename]",
           "isDynamic": true,
-          "displayName": "[...filename]",
-          "children": {}
+          "children": {},
+          "emoji": "📄",
+          "description": "📄 Access specific documentation files",
+          "displayName": "Documentation File"
         }
-      }
+      },
+      "emoji": "📚",
+      "description": "📖 Access documentation and resources",
+      "displayName": "Documentation"
     },
     "globalVariables": {
       "name": "globalVariables",
       "path": "/globalVariables",
       "isDynamic": false,
-      "displayName": "Global Variables",
       "children": {
         "variableId": {
           "name": "variableId",
           "path": "/globalVariables/[variableId]",
           "isDynamic": true,
-          "displayName": "[variable Id]",
           "children": {
             "charts": {
               "name": "charts",
               "path": "/globalVariables/[variableId]/charts",
               "isDynamic": false,
-              "displayName": "Charts",
-              "children": {}
+              "children": {},
+              "emoji": "📊",
+              "description": "📈 View charts related to the global variable",
+              "displayName": "Variable Charts"
             },
             "settings": {
               "name": "settings",
               "path": "/globalVariables/[variableId]/settings",
               "isDynamic": false,
-              "displayName": "Settings",
-              "children": {}
+              "children": {},
+              "emoji": "⚙️",
+              "description": "⚙️ Configure settings for the global variable",
+              "displayName": "Variable Settings"
             }
-          }
+          },
+          "emoji": "🔍",
+          "description": "🔍 View details for a specific global variable",
+          "displayName": "Global Variable Details"
         }
-      }
+      },
+      "emoji": "🌍",
+      "description": "🌐 View and manage global variables used in the application",
+      "displayName": "Global Variables"
     },
     "import": {
       "name": "import",
       "path": "/import",
       "isDynamic": false,
-      "displayName": "Import",
-      "children": {}
+      "children": {},
+      "emoji": "⬆️",
+      "description": "📤 Import data into the application",
+      "displayName": "Import Data"
     },
     "inbox": {
       "name": "inbox",
       "path": "/inbox",
       "isDynamic": false,
-      "displayName": "Inbox",
-      "children": {}
+      "children": {},
+      "emoji": "📥",
+      "description": "📬 Check your inbox for messages and notifications",
+      "displayName": "Inbox"
     },
     "measurements": {
       "name": "measurements",
       "path": "/measurements",
       "isDynamic": false,
-      "displayName": "Measurements",
       "children": {
         "image2measurements": {
           "name": "image2measurements",
           "path": "/measurements/image2measurements",
           "isDynamic": false,
-          "displayName": "Image2measurements",
-          "children": {}
+          "children": {},
+          "emoji": "🖼️",
+          "description": "📷 Convert images into measurable data",
+          "displayName": "Image to Measurements"
         },
         "text2measurements": {
           "name": "text2measurements",
           "path": "/measurements/text2measurements",
           "isDynamic": false,
-          "displayName": "Text2measurements",
-          "children": {}
+          "children": {},
+          "emoji": "📝",
+          "description": "📄 Convert text into measurable data",
+          "displayName": "Text to Measurements"
         }
-      }
+      },
+      "emoji": "📏",
+      "description": "📐 View and manage various measurements",
+      "displayName": "Measurements"
     },
     "predictor-search": {
       "name": "predictor-search",
       "path": "/predictor-search",
       "isDynamic": false,
-      "displayName": "Predictor search",
-      "children": {}
+      "children": {},
+      "emoji": "🔍",
+      "description": "🔎 Search for predictors and related data",
+      "displayName": "Predictor Search"
     },
     "researcher": {
       "name": "researcher",
       "path": "/researcher",
       "isDynamic": false,
-      "displayName": "Researcher",
       "children": {
         "enhance": {
           "name": "enhance",
           "path": "/researcher/enhance",
           "isDynamic": false,
-          "displayName": "Enhance",
-          "children": {}
+          "children": {},
+          "emoji": "✨",
+          "description": "🌟 Enhance your research with additional tools",
+          "displayName": "Enhance Research"
         }
-      }
+      },
+      "emoji": "🔬",
+      "description": "🔍 Access resources for researchers",
+      "displayName": "Researcher"
     },
     "safe": {
       "name": "safe",
       "path": "/safe",
       "isDynamic": false,
-      "displayName": "Safe",
       "children": {
         "redirect": {
           "name": "redirect",
           "path": "/safe/redirect",
           "isDynamic": false,
-          "displayName": "Redirect",
           "children": {
             "path": {
               "name": "path",
               "path": "/safe/redirect/[path]",
               "isDynamic": true,
-              "displayName": "[path]",
-              "children": {}
+              "children": {},
+              "emoji": "🔗",
+              "description": "🔗 Redirect to a specific path securely",
+              "displayName": "Secure Redirect"
             }
-          }
+          },
+          "emoji": "➡️",
+          "description": "🔄 Redirect to a specified safe location",
+          "displayName": "Redirect"
         }
-      }
+      },
+      "emoji": "🔒",
+      "description": "🔐 Access secure areas of the application",
+      "displayName": "Safe Area"
     },
     "search": {
       "name": "search",
       "path": "/search",
       "isDynamic": false,
-      "displayName": "Search",
-      "children": {}
+      "children": {},
+      "emoji": "🔍",
+      "description": "🔎 Search the application for content and resources",
+      "displayName": "Search"
     },
     "study": {
       "name": "study",
       "path": "/study",
       "isDynamic": false,
-      "displayName": "Study",
       "children": {
         "create": {
           "name": "create",
           "path": "/study/create",
           "isDynamic": false,
-          "displayName": "Create",
-          "children": {}
+          "children": {},
+          "emoji": "➕",
+          "description": "➕ Create a new study",
+          "displayName": "Create Study"
         },
         "studyId": {
           "name": "studyId",
           "path": "/study/[studyId]",
           "isDynamic": true,
-          "displayName": "[study Id]",
-          "children": {}
+          "children": {},
+          "emoji": "📄",
+          "description": "📄 View details for a specific study",
+          "displayName": "Study Details"
         }
-      }
+      },
+      "emoji": "📖",
+      "description": "📚 Access study resources and information",
+      "displayName": "Study"
     },
     "treatments": {
       "name": "treatments",
       "path": "/treatments",
       "isDynamic": false,
-      "displayName": "Treatments",
       "children": {
         "treatmentName": {
           "name": "treatmentName",
           "path": "/treatments/[treatmentName]",
           "isDynamic": true,
-          "displayName": "[treatment Name]",
           "children": {
             "cba": {
               "name": "cba",
               "path": "/treatments/[treatmentName]/cba",
               "isDynamic": false,
-              "displayName": "Cba",
-              "children": {}
+              "children": {},
+              "emoji": "📊",
+              "description": "📈 Analyze the cost-benefit of a specific treatment",
+              "displayName": "Treatment CBA"
             }
-          }
+          },
+          "emoji": "💉",
+          "description": "💉 View details for a specific treatment",
+          "displayName": "Treatment Details"
         }
-      }
+      },
+      "emoji": "💊",
+      "description": "💊 Browse available treatments",
+      "displayName": "Treatments"
     },
     "trials": {
       "name": "trials",
       "path": "/trials",
       "isDynamic": false,
-      "displayName": "Trials",
       "children": {
         "search": {
           "name": "search",
           "path": "/trials/search",
           "isDynamic": false,
-          "displayName": "Search",
-          "children": {}
+          "children": {},
+          "emoji": "🔍",
+          "description": "🔎 Search for clinical trials",
+          "displayName": "Trial Search"
         }
-      }
+      },
+      "emoji": "⚖️",
+      "description": "⚖️ Explore clinical trials and their details",
+      "displayName": "Trials"
     },
     "userVariables": {
       "name": "userVariables",
       "path": "/userVariables",
       "isDynamic": false,
-      "displayName": "User Variables",
       "children": {
         "variableId": {
           "name": "variableId",
           "path": "/userVariables/[variableId]",
           "isDynamic": true,
-          "displayName": "[variable Id]",
           "children": {
             "charts": {
               "name": "charts",
               "path": "/userVariables/[variableId]/charts",
               "isDynamic": false,
-              "displayName": "Charts",
-              "children": {}
+              "children": {},
+              "emoji": "📊",
+              "description": "📈 View charts related to the user variable",
+              "displayName": "User Variable Charts"
             },
             "settings": {
               "name": "settings",
               "path": "/userVariables/[variableId]/settings",
               "isDynamic": false,
-              "displayName": "Settings",
-              "children": {}
+              "children": {},
+              "emoji": "⚙️",
+              "description": "⚙️ Configure settings for the user variable",
+              "displayName": "User Variable Settings"
             }
-          }
+          },
+          "emoji": "🔍",
+          "description": "🔍 View details for a specific user variable",
+          "displayName": "User Variable Details"
         }
-      }
+      },
+      "emoji": "👤",
+      "description": "👥 View and manage user-specific variables",
+      "displayName": "User Variables"
     }
-  }
+  },
+  "emoji": "🏠",
+  "description": "🌐 Access the main landing page of the application",
+  "displayName": "Home"
 } as const;
 
 export type RouteNode = {
   name: string;
   path: string;
   isDynamic: boolean;
+  emoji?: string;
+  description?: string;
+  displayName?: string;
   children: { [key: string]: RouteNode };
 };
