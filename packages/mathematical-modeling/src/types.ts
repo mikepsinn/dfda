@@ -72,12 +72,30 @@ export type ModelParameter =
   | TimeSeriesParameter 
   | StratifiedParameter;
 
+export interface ModelMetadata {
+  authors?: string[];
+  lastUpdated?: string;
+  references?: Array<{
+    citation: string;
+    doi?: string;
+    url?: string;
+  }>;
+  assumptions?: string[];
+  limitations?: string[];
+  validationStatus?: {
+    status: 'draft' | 'peer-reviewed' | 'validated';
+    validatedBy?: string[];
+    validationDate?: string;
+    validationMethod?: string;
+  };
+}
+
 export interface OutcomeMetric extends BaseParameter {
   type: 'outcome';
   // Core calculation
   calculate: (modelParameters: Record<string, ModelParameter>) => number;
   generateCalculationExplanation: (modelParameters: Record<string, ModelParameter>) => string;
-  modelParameters: ModelParameter[];
+  modelParameters: Record<string, ModelParameter>;
   
   // Analysis methods
   sensitivity?: {
@@ -152,46 +170,104 @@ export interface StratificationResult {
   };
 }
 
-export interface Model {
-  // Core properties
+export class BaseModel {
   readonly id: string;
   readonly title: string;
   readonly description: string;
   readonly version: string;
-  readonly metadata?: {
-    authors?: string[];
-    lastUpdated?: string;
-    references?: Array<{
-      citation: string;
-      doi?: string;
-      url?: string;
-    }>;
-    assumptions?: string[];
-    limitations?: string[];
-    validationStatus?: {
-      status: 'draft' | 'peer-reviewed' | 'validated';
-      validatedBy?: string[];
-      validationDate?: string;
-      validationMethod?: string;
-    };
-  };
-
-  // Parameters and metrics
   readonly parameters: ModelParameter[];
   readonly metrics: OutcomeMetric[];
+  readonly metadata?: ModelMetadata;
 
-  // Core methods
-  getMetric(id: string): OutcomeMetric | undefined;
-  getParameter(id: string): ModelParameter | undefined;
-  setParameterValue(id: string, value: number): void;
-  calculateMetric(id: string): number;
+  constructor(config: {
+    id: string;
+    title: string;
+    description: string;
+    version: string;
+    parameters: ModelParameter[];
+    metrics: OutcomeMetric[];
+    metadata?: ModelMetadata;
+  }) {
+    this.id = config.id;
+    this.title = config.title;
+    this.description = config.description;
+    this.version = config.version;
+    this.parameters = config.parameters;
+    this.metrics = config.metrics;
+    this.metadata = config.metadata;
+  }
 
-  // Analysis methods
-  calculateSensitivity(metricId: string): SensitivityAnalysis | undefined;
-  calculateUncertainty(metricId: string): UncertaintyAnalysis | undefined;
-  calculateTimeSeries(metricId: string): TimeSeriesResult | undefined;
-  calculateBySubgroup(metricId: string, strata: string[]): StratificationResult | undefined;
+  getMetric(id: string): OutcomeMetric | undefined {
+    return this.metrics.find(m => m.id === id);
+  }
 
-  // Report generation
-  generateMarkdownReport(): string;
+  getParameter(id: string): ModelParameter | undefined {
+    return this.parameters.find(p => p.id === id);
+  }
+
+  setParameterValue(id: string, value: number): void {
+    const param = this.getParameter(id);
+    if (param) {
+      if (param.parameterType === 'deterministic') {
+        param.defaultValue = value;
+      }
+    }
+  }
+
+  calculateMetric(id: string): number {
+    const metric = this.getMetric(id);
+    if (!metric) {
+      throw new Error(`Metric ${id} not found`);
+    }
+    return metric.calculate(this.getParametersAsRecord());
+  }
+
+  private getParametersAsRecord(): Record<string, ModelParameter> {
+    return this.parameters.reduce((acc, param) => {
+      acc[param.id] = param;
+      return acc;
+    }, {} as Record<string, ModelParameter>);
+  }
+
+  generateMarkdownReport(): string {
+    const parametersRecord = this.getParametersAsRecord();
+    
+    const report = [
+      `# ${this.title}`,
+      '',
+      `## Description`,
+      this.description,
+      '',
+      `## Version`,
+      this.version,
+      '',
+      `## Parameters`,
+      ...this.parameters.map((p: ModelParameter) => [
+        `### ${p.displayName}`,
+        `- Description: ${p.description}`,
+        `- Default Value: ${p.defaultValue} ${p.unitName}`,
+        `- Source: ${p.sourceUrl}`,
+        p.sourceQuote ? `- Quote: "${p.sourceQuote}"` : '',
+        ''
+      ].filter(Boolean).join('\n')),
+      '',
+      `## Metrics`,
+      ...this.metrics.map((m: OutcomeMetric) => [
+        `### ${m.displayName}`,
+        `- Description: ${m.description}`,
+        `- Unit: ${m.unitName}`,
+        `- Calculation: ${m.generateCalculationExplanation(parametersRecord)}`,
+        ''
+      ].join('\n')),
+      '',
+      `## Metadata`,
+      ...(this.metadata?.authors ? [`### Authors`, ...this.metadata.authors.map((a: string) => `- ${a}`), ''] : []),
+      ...(this.metadata?.assumptions ? [`### Assumptions`, ...this.metadata.assumptions.map((a: string) => `- ${a}`), ''] : []),
+      ...(this.metadata?.limitations ? [`### Limitations`, ...this.metadata.limitations.map((l: string) => `- ${l}`), ''] : []),
+      '',
+      `Generated on: ${new Date().toISOString()}`
+    ].join('\n');
+
+    return report;
+  }
 }
