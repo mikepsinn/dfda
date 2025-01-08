@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "type-check": "tsc --noEmit",
+    "lint": "next lint",
+    "build": "next build",
     "turbo": "next dev --turbo",
     "start": "next start",
-    "lint": "next lint",
     "preview": "next build && next start",
     "postinstall": "prisma generate",
     "prettier": "prettier --write .",
