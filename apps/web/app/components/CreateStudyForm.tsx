@@ -82,14 +82,16 @@ export default function CreateStudyForm({ userId }: CreateStudyFormProps) {
     if (variable) {
       return (
         <div className="flex flex-col items-center justify-center p-4">
-          <div className="relative w-32 h-32 mb-4">
-            <Image
-              src={variable.pngUrl || '/placeholder-variable.png'}
-              alt={variable.name}
-              fill
-              className="object-contain"
-            />
-          </div>
+          {variable.pngUrl && (
+            <div className="relative w-32 h-32 mb-4">
+              <Image
+                src={variable.pngUrl}
+                alt={variable.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
           <h3 className="text-2xl font-bold text-white text-center">
             {variable.name}
           </h3>

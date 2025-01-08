@@ -20,6 +20,16 @@ const DYNAMIC_ROUTES = [
   '/treatments/[treatmentName]',
 ]
 
+// Patterns that indicate a dynamic URL that shouldn't be checked
+const DYNAMIC_URL_PATTERNS = [
+  /\$\{.*?\}/,  // ${variable}
+  /\[.*?\]/,    // [param]
+  /\/:[^\/]+/,  // /:param
+  /\/%.*?%/,    // %param%
+  /\/\(.*?\)/,  // /(group)
+  /encodeURIComponent\(.*?\)/, // encodeURIComponent(param)
+]
+
 // Known valid routes that might not be available during testing
 const KNOWN_VALID_ROUTES = [
   '/signin',
@@ -65,6 +75,17 @@ export async function checkLink(url: string, location?: LinkLocation): Promise<L
       }
     }
 
+    // Skip checking URLs with dynamic patterns
+    if (DYNAMIC_URL_PATTERNS.some(pattern => pattern.test(url))) {
+      return {
+        url,
+        isValid: true,
+        statusCode: 200,
+        location,
+        error: 'Skipped: Dynamic URL'
+      }
+    }
+
     // Consider known valid routes as valid
     if (KNOWN_VALID_ROUTES.includes(url)) {
       return {
@@ -79,20 +100,6 @@ export async function checkLink(url: string, location?: LinkLocation): Promise<L
     const fullUrl = url.startsWith('http') 
       ? url 
       : `http://localhost:3000${url}`
-
-    // First check if dev server is running for internal links
-    if (!url.startsWith('http')) {
-      try {
-        await fetch('http://localhost:3000', {
-          method: 'HEAD',
-          headers: {
-            'User-Agent': 'DFDA Link Checker'
-          }
-        })
-      } catch (error) {
-        throw new Error('Development server is not running. Please start it with "npm run dev" or "pnpm dev" first.')
-      }
-    }
 
     const response = await fetch(fullUrl, {
       method: 'HEAD', // Only fetch headers
