@@ -1,5 +1,5 @@
 import { Model } from '../../src/model';
-import { ModelParameter, OutcomeMetric, ModelConfig } from '../../src/types';
+import { ModelParameter, OutcomeMetric } from '../../src/types';
 import * as parameters from './parameters';
 import * as outcomes from './outcomes';
 import * as fs from 'fs';
@@ -70,99 +70,12 @@ describe('Economic Model Parameters', () => {
 });
 
 describe('Economic Model Outcomes', () => {
-  const model = new Model({
-    id: 'economic_model',
-    title: 'Economic Model',
-    description: 'Test economic model',
-    version: '1.0.0',
-    parameters: Object.values(parameters),
-    metrics: Object.values(outcomes)
-  });
-
-  const defaultParams = {
-    initial_development: 50_000_000,
-    ai_training: 10_000_000,
-    annual_maintenance: 5_000_000,
-    ai_inference: 0.01,
-    regulatory_compliance: 200_000,
-    patient_costs: 2.65
-  };
-
-  describe('Total Cost Calculations', () => {
-    test('calculates base total cost', () => {
-      const result = model.calculateMetric('total_cost', defaultParams);
-      expect(result).toBeGreaterThan(0);
-      // Platform costs + 5 years maintenance + trial costs
-      const expectedMinimum = 50_000_000 + 10_000_000 + (5_000_000 * 5);
-      expect(result).toBeGreaterThan(expectedMinimum);
-    });
-
-    test('performs sensitivity analysis', () => {
-      const metric = model.getMetric('total_cost');
-      const sensitivity = metric?.sensitivity?.calculate(defaultParams);
-      expect(sensitivity).toBeDefined();
-      expect(sensitivity?.method).toBe('sobol');
-      expect(Object.keys(sensitivity?.results || {}).length).toBeGreaterThan(0);
-    });
-
-    test('generates time series projection', () => {
-      const metric = model.getMetric('total_cost');
-      const timeSeries = metric?.timeSeries?.calculate(defaultParams);
-      expect(timeSeries).toBeDefined();
-      expect(timeSeries?.timePoints.length).toBe(60); // 5 years monthly
-      expect(timeSeries?.values.length).toBe(60);
-      // First month should include one-time costs
-      expect(timeSeries?.values[0]).toBeGreaterThan(60_000_000);
-    });
-  });
-
-  describe('Time Savings Calculations', () => {
-    test('calculates base time savings', () => {
-      const result = model.calculateMetric('time_savings', defaultParams);
-      expect(result).toBeGreaterThanOrEqual(3); // Minimum safety period
-      expect(result).toBeLessThanOrEqual(9); // Maximum timeline
-    });
-
-    test('respects minimum safety period', () => {
-      const fastParams = {
-        ...defaultParams,
-        ai_inference: 1, // Very high AI spend
-        regulatory_compliance: 100_000 // Minimal compliance
-      };
-      const result = model.calculateMetric('time_savings', fastParams);
-      expect(result).toBeGreaterThanOrEqual(3); // Can't go below safety minimum
-    });
-
-    test('shows phase progression in time series', () => {
-      const metric = model.getMetric('time_savings');
-      const timeSeries = metric?.timeSeries?.calculate(defaultParams);
-      expect(timeSeries).toBeDefined();
-      // Should show distinct phases
-      expect(timeSeries?.values[0]).toBe(3); // Safety phase
-      expect(timeSeries?.values[4]).toBe(6); // Efficacy phase
-      expect(timeSeries?.values[11]).toBe(9); // Complete
-    });
-  });
-});
-
-describe('Economic Model Documentation', () => {
-  const defaultParams = {
-    initial_development: 50_000_000,
-    ai_training: 10_000_000,
-    annual_maintenance: 5_000_000,
-    ai_inference: 0.01,
-    regulatory_compliance: 200_000,
-    patient_costs: 2.65
-  };
-
-  const modelConfig: ModelConfig = {
-    id: 'economic_model',
-    title: 'Economic Model',
-    description: 'Test economic model',
-    version: '1.0.0',
-    parameters: Object.values(parameters),
-    metrics: Object.values(outcomes),
-    metadata: {
+  const model = new Model(
+    'economic_model',
+    'Economic Model',
+    'Test economic model',
+    '1.0.0',
+    {
       authors: ['Test Author'],
       lastUpdated: new Date().toISOString(),
       references: [{
@@ -177,65 +90,104 @@ describe('Economic Model Documentation', () => {
       limitations: [
         'Does not account for market competition',
         'Limited to US market dynamics'
-      ]
+      ],
+      validationStatus: {
+        status: 'draft',
+        validatedBy: ['Test Author'],
+        validationDate: new Date().toISOString(),
+        validationMethod: 'Unit tests'
+      }
     },
-    generateMarkdownReport: (results: Record<string, number>): string => {
-      const report = [
-        `# ${modelConfig.title} v${modelConfig.version}`,
-        '',
-        `## Overview`,
-        modelConfig.description,
-        '',
-        `## Parameters`,
-        ...modelConfig.parameters.map((p: ModelParameter) => [
-          `### ${p.displayName} (${p.emoji})`,
-          p.description,
-          `- Default: ${p.defaultValue} ${p.unitName}`,
-          `- Source: ${p.sourceUrl}`,
-          p.sourceQuote ? `- Quote: "${p.sourceQuote}"` : '',
-          ''
-        ].filter(Boolean).join('\n')),
-        '',
-        `## Outcomes`,
-        ...modelConfig.metrics.map((m: OutcomeMetric) => [
-          `### ${m.displayName} (${m.emoji})`,
-          m.description,
-          `- Value: ${results[m.id]} ${m.unitName}`,
-          `- Explanation: ${m.generateCalculationExplanation(results)}`,
-          ''
-        ].join('\n')),
-        '',
-        `## Assumptions`,
-        ...(modelConfig.metadata?.assumptions?.map(a => `- ${a}`) ?? []),
-        '',
-        `## Limitations`,
-        ...(modelConfig.metadata?.limitations?.map(l => `- ${l}`) ?? []),
-        '',
-        `## References`,
-        ...(modelConfig.metadata?.references?.map(r => 
-          `- ${r.citation}${r.doi ? ` (DOI: ${r.doi})` : ''}${r.url ? ` [Link](${r.url})` : ''}`
-        ) ?? []),
-        '',
-        `Generated on: ${new Date().toISOString()}`
-      ].join('\n');
+    Object.values(parameters),
+    Object.values(outcomes)
+  );
 
-      return report;
-    }
-  };
+  describe('Total Cost Calculations', () => {
+    test('calculates base total cost', () => {
+      const result = model.calculateMetric('total_cost');
+      expect(result).toBeGreaterThan(0);
+      // Platform costs + 5 years maintenance + trial costs
+      const expectedMinimum = 50_000_000 + 10_000_000 + (5_000_000 * 5);
+      expect(result).toBeGreaterThan(expectedMinimum);
+    });
 
-  const model = new Model(modelConfig);
+    test('performs sensitivity analysis', () => {
+      const sensitivity = model.calculateSensitivity('total_cost');
+      expect(sensitivity).toBeDefined();
+      expect(sensitivity?.method).toBe('sobol');
+      expect(Object.keys(sensitivity?.results || {}).length).toBeGreaterThan(0);
+    });
+
+    test('generates time series projection', () => {
+      const timeSeries = model.calculateTimeSeries('total_cost');
+      expect(timeSeries).toBeDefined();
+      expect(timeSeries?.timePoints.length).toBe(60); // 5 years monthly
+      expect(timeSeries?.values.length).toBe(60);
+      // First month should include one-time costs
+      expect(timeSeries?.values[0]).toBeGreaterThan(60_000_000);
+    });
+  });
+
+  describe('Time Savings Calculations', () => {
+    test('calculates base time savings', () => {
+      const result = model.calculateMetric('time_savings');
+      expect(result).toBeGreaterThanOrEqual(3); // Minimum safety period
+      expect(result).toBeLessThanOrEqual(9); // Maximum timeline
+    });
+
+    test('respects minimum safety period', () => {
+      model.setParameterValue('ai_inference', 1); // Very high AI spend
+      model.setParameterValue('regulatory_compliance', 100_000); // Minimal compliance
+      const result = model.calculateMetric('time_savings');
+      expect(result).toBeGreaterThanOrEqual(3); // Can't go below safety minimum
+    });
+
+    test('shows phase progression in time series', () => {
+      const timeSeries = model.calculateTimeSeries('time_savings');
+      expect(timeSeries).toBeDefined();
+      // Should show distinct phases
+      expect(timeSeries?.values[0]).toBe(3); // Safety phase
+      expect(timeSeries?.values[4]).toBe(6); // Efficacy phase
+      expect(timeSeries?.values[11]).toBe(9); // Complete
+    });
+  });
+});
+
+describe('Economic Model Documentation', () => {
+  const model = new Model(
+    'economic_model',
+    'Economic Model',
+    'Test economic model',
+    '1.0.0',
+    {
+      authors: ['Test Author'],
+      lastUpdated: new Date().toISOString(),
+      references: [{
+        citation: 'Example citation',
+        doi: '10.1234/example',
+        url: 'https://example.com'
+      }],
+      assumptions: [
+        'Assumes linear scaling of costs',
+        'Assumes constant regulatory environment'
+      ],
+      limitations: [
+        'Does not account for market competition',
+        'Limited to US market dynamics'
+      ],
+      validationStatus: {
+        status: 'draft',
+        validatedBy: ['Test Author'],
+        validationDate: new Date().toISOString(),
+        validationMethod: 'Unit tests'
+      }
+    },
+    Object.values(parameters),
+    Object.values(outcomes)
+  );
 
   test('generates markdown report', () => {
-    const results = {
-      total_cost: model.calculateMetric('total_cost', defaultParams),
-      time_savings: model.calculateMetric('time_savings', defaultParams)
-    };
-
-    // Pass the full parameters for calculation explanations
-    const report = modelConfig.generateMarkdownReport!({
-      ...defaultParams,
-      ...results
-    });
+    const report = model.generateMarkdownReport();
     
     // Basic validation
     expect(report).toContain('# Economic Model');
@@ -248,10 +200,5 @@ describe('Economic Model Documentation', () => {
     // Save report
     const reportPath = path.join(__dirname, 'economic-model-report.md');
     fs.writeFileSync(reportPath, report);
-    
-    // Verify file was written
-    expect(fs.existsSync(reportPath)).toBe(true);
-    const content = fs.readFileSync(reportPath, 'utf8');
-    expect(content).toBe(report);
   });
 });

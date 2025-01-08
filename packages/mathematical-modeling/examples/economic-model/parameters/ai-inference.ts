@@ -1,4 +1,5 @@
 import { DeterministicParameter } from '../../../src/types';
+import { formatCurrency } from '../../../src/format';
 
 export const aiInference: DeterministicParameter = {
   id: 'ai_inference',
@@ -9,7 +10,8 @@ export const aiInference: DeterministicParameter = {
   description: 'Cost per patient interaction for AI inference including matching and analysis',
   sourceUrl: 'https://example.com',
   emoji: '🤖',
-  tags: ['ai', 'operational', 'per-interaction'],
+  generateDisplayValue: (value: number) => formatCurrency(value, 'none') + '/interaction',
+  tags: ['variable', 'ai', 'operations'],
   metadata: {
     costCategory: 'variable',
     scalability: 'sublinear',

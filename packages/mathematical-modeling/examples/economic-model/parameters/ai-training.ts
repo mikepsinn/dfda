@@ -1,4 +1,5 @@
 import { StochasticParameter } from '../../../src/types';
+import { formatCurrency } from '../../../src/format';
 
 export const aiTraining: StochasticParameter = {
   id: 'ai_training',
@@ -10,7 +11,8 @@ export const aiTraining: StochasticParameter = {
   sourceUrl: 'https://example.com',
   emoji: '🧠',
   sourceQuote: 'Training large language models can cost between $1M to $20M depending on model size and complexity',
-  tags: ['ai', 'training', 'one-time'],
+  generateDisplayValue: (value: number) => formatCurrency(value),
+  tags: ['one-time', 'ai', 'training'],
   metadata: {
     costCategory: 'fixed',
     phase: 'initial',

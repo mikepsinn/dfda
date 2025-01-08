@@ -1,4 +1,5 @@
 import { TimeSeriesParameter } from '../../../src/types';
+import { formatCurrency } from '../../../src/format';
 
 export const annualMaintenance: TimeSeriesParameter = {
   id: 'annual_maintenance',
@@ -9,7 +10,8 @@ export const annualMaintenance: TimeSeriesParameter = {
   description: 'Annual platform maintenance including cloud infrastructure, security updates, and operational costs',
   sourceUrl: 'https://example.com',
   emoji: '🔧',
-  tags: ['platform', 'maintenance', 'operational'],
+  generateDisplayValue: (value: number) => formatCurrency(value) + '/year',
+  tags: ['recurring', 'maintenance', 'operations'],
   metadata: {
     costCategory: 'recurring',
     scalability: 'sublinear',

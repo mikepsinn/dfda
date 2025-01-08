@@ -1,4 +1,5 @@
 import { StochasticParameter } from '../../../src/types';
+import { formatCurrency } from '../../../src/format';
 
 export const initialDevelopment: StochasticParameter = {
   id: 'initial_development',
@@ -10,7 +11,8 @@ export const initialDevelopment: StochasticParameter = {
   sourceUrl: 'https://example.com',
   emoji: '💻',
   sourceQuote: 'Average cost of clinical trials ranges from $2,211 per patient for basic studies to millions for complex trials',
-  tags: ['platform', 'development', 'infrastructure'],
+  generateDisplayValue: (value: number) => formatCurrency(value),
+  tags: ['one-time', 'development', 'infrastructure'],
   metadata: {
     costCategory: 'fixed',
     phase: 'initial',

@@ -152,54 +152,13 @@ export interface StratificationResult {
   };
 }
 
-export interface ModelReport {
-  title: string;
-  description: string;
-  version: string;
-  metadata?: {
-    authors?: string[];
-    lastUpdated?: string;
-    validationStatus?: string;
-  };
-  parameters: {
-    id: string;
-    displayName: string;
-    description: string;
-    type: string;
-    defaultValue: string;
-    unit: string;
-    source?: string;
-  }[];
-  outcomes: {
-    id: string;
-    displayName: string;
-    description: string;
-    unit: string;
-    value: string;
-    explanation: string;
-    analysis?: {
-      sensitivity?: SensitivityAnalysis;
-      uncertainty?: UncertaintyAnalysis;
-      timeSeries?: TimeSeriesResult;
-    };
-  }[];
-  assumptions?: string[];
-  limitations?: string[];
-  references?: Array<{
-    citation: string;
-    doi?: string;
-    url?: string;
-  }>;
-}
-
-export interface ModelConfig {
-  id: string;
-  title: string;
-  description: string;
-  parameters: ModelParameter[];
-  metrics: OutcomeMetric[];
-  version: string;
-  metadata?: {
+export interface Model {
+  // Core properties
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly version: string;
+  readonly metadata?: {
     authors?: string[];
     lastUpdated?: string;
     references?: Array<{
@@ -216,16 +175,23 @@ export interface ModelConfig {
       validationMethod?: string;
     };
   };
-  // Model-specific configuration
-  settings?: Record<string, unknown>;
-  // Computational requirements/constraints
-  requirements?: {
-    computeIntensive?: boolean;
-    parallelizable?: boolean;
-    memoryRequirements?: string;
-    expectedRuntime?: string;
-  };
-  generateMarkdownReport?: (results: Record<string, number>) => string;
-}
 
-export type ModelConfiguration = ModelConfig;
+  // Parameters and metrics
+  readonly parameters: ModelParameter[];
+  readonly metrics: OutcomeMetric[];
+
+  // Core methods
+  getMetric(id: string): OutcomeMetric | undefined;
+  getParameter(id: string): ModelParameter | undefined;
+  setParameterValue(id: string, value: number): void;
+  calculateMetric(id: string): number;
+
+  // Analysis methods
+  calculateSensitivity(metricId: string): SensitivityAnalysis | undefined;
+  calculateUncertainty(metricId: string): UncertaintyAnalysis | undefined;
+  calculateTimeSeries(metricId: string): TimeSeriesResult | undefined;
+  calculateBySubgroup(metricId: string, strata: string[]): StratificationResult | undefined;
+
+  // Report generation
+  generateMarkdownReport(): string;
+}

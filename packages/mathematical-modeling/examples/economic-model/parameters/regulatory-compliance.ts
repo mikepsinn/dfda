@@ -1,4 +1,5 @@
 import { StratifiedParameter } from '../../../src/types';
+import { formatCurrency } from '../../../src/format';
 
 export const regulatoryCompliance: StratifiedParameter = {
   id: 'regulatory_compliance',
@@ -9,7 +10,8 @@ export const regulatoryCompliance: StratifiedParameter = {
   description: 'Regulatory compliance costs including documentation, monitoring, and reporting',
   sourceUrl: 'https://example.com',
   emoji: '📋',
-  tags: ['regulatory', 'compliance', 'per-trial'],
+  generateDisplayValue: (value: number) => formatCurrency(value) + '/trial',
+  tags: ['variable', 'regulatory', 'compliance', 'per-trial'],
   metadata: {
     costCategory: 'variable',
     scalability: 'step-wise',
