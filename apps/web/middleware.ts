@@ -23,6 +23,12 @@ const redirects = [
     permanent: true,
     description: "Redirect to health savings sharing documentation",
   },
+  {
+    source: "/cure-acceleration-act",
+    destination: "/docs/cure-acceleration-act",
+    permanent: true,
+    description: "Redirect to Cure Acceleration Act",
+  },
   // Add more redirects here
   // Make sure to add the source path to the matcher array below 👇
 ] as const
@@ -110,5 +116,6 @@ export const config = {
     "/signup",
     "/dfda",
     "/dfda/:path*",
+    "/cure-acceleration-act",
   ],
 }
