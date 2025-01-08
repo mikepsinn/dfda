@@ -38,11 +38,6 @@ export default function AuthErrorPage({
           <Button asChild variant="outline">
             <Link href="/signin">Sign In</Link>
           </Button>
-          <Button asChild>
-            <Link href="/dashboard/settings/connections">
-              Back to Connections
-            </Link>
-          </Button>
         </div>
       </div>
     </Shell>

@@ -96,7 +96,7 @@ export function MeasurementForm({ variable }: MeasurementFormProps) {
         description: `Recorded ${data.value} ${data.unitAbbreviatedName} for ${data.variableName} on ${format(data.startAt, "PPP")}`,
       })
 
-      router.push("/dfda/safe/measurements")
+      router.push("/measurements")
       router.refresh()
     } catch (error) {
       toast({

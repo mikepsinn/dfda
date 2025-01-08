@@ -33,4 +33,5 @@ yarn-error.log*
 .turbo
 .idea
 .history/  
-packages/mathematical-modeling/dist/tsconfig.tsbuildinfo
+dist/
+

@@ -8,8 +8,7 @@ interface BackButtonProps {
   label?: string;
 }
 
-export default function BackButton({ href='/dfda', label = 'Back' }: BackButtonProps) {
-  if(!href) {href = '/dfda'}
+export default function BackButton({ href='/', label = 'Back' }: BackButtonProps) {
   return (
     <Link 
       href={href}

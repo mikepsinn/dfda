@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import { fetchConditions } from '../dfdaActions'
+import { fetchDfdaConditions } from '../dfdaActions'
 import { DFDABreadcrumbs } from '@/components/Breadcrumbs/DFDABreadcrumbs'
 import ConditionSearchSection from '../components/ConditionSearchSection'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 export default async function ConditionListPage() {
-    const conditions = await fetchConditions()
+    const conditions = await fetchDfdaConditions()
     const sortedConditions = conditions.sort((a, b) => b.numberOfTreatments - a.numberOfTreatments)
 
     return (
