@@ -8,7 +8,6 @@ import {
   Book,
   BookOpen,
   Bot,
-  Brain,
   Calendar,
   Camera,
   Check,
