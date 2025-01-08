@@ -30,12 +30,12 @@ Regulatory compliance costs including documentation, monitoring, and reporting
 ## Outcomes
 ### Total Cost (💰)
 Total cost of running trials including platform costs and per-trial costs
-- Value: 1098300000 USD
+- Value: 492466949.7181587 USD
 - Explanation: Total cost calculated as:
     Platform Setup: $60.00M
-    Annual Costs (5 years): $25.00M
-    Per-trial Costs (5,000 trials): $1,000.00M
-    Per-patient Costs (5,000,000 patients): $13.30M
+    Annual Costs (5 years, 35% efficiency gain): $16.25M
+    Per-trial Costs (5,000 trials, 37% volume discount): $409.57M
+    Per-patient Costs (5,000,000 patients, 50% volume discount): $6.65M
 
 ### Time to Market Reduction (⏱️)
 Reduction in time to market for new treatments through automated trials
@@ -58,4 +58,4 @@ Reduction in time to market for new treatments through automated trials
 ## References
 - Example citation (DOI: 10.1234/example) [Link](https://example.com)
 
-Generated on: 2025-01-08T01:09:45.331Z
+Generated on: 2025-01-08T01:18:31.839Z

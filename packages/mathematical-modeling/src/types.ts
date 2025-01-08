@@ -7,7 +7,7 @@ export interface BaseParameter {
   sourceUrl: string;
   emoji: string;
   sourceQuote?: string;
-  generateDisplayValue?: (value: number) => string;
+  generateDisplayValue: (value: number) => string;
   tags?: string[];
   metadata?: Record<string, unknown>;
 }
@@ -75,26 +75,26 @@ export type ModelParameter =
 export interface OutcomeMetric extends BaseParameter {
   type: 'outcome';
   // Core calculation
-  calculate: (modelParameters: Record<string, number>) => number;
-  generateCalculationExplanation: (modelParameters: Record<string, number>) => string;
+  calculate: (modelParameters: Record<string, ModelParameter>) => number;
+  generateCalculationExplanation: (modelParameters: Record<string, ModelParameter>) => string;
   modelParameters: ModelParameter[];
   
   // Analysis methods
   sensitivity?: {
     type: 'local' | 'global' | 'sobol';
-    calculate: (modelParameters: Record<string, number>) => SensitivityAnalysis;
+    calculate: (modelParameters: Record<string, ModelParameter>) => SensitivityAnalysis;
   };
   uncertainty?: {
     type: 'monte_carlo' | 'bootstrap' | 'interval';
-    calculate: (modelParameters: Record<string, number>) => UncertaintyAnalysis;
+    calculate: (modelParameters: Record<string, ModelParameter>) => UncertaintyAnalysis;
   };
   timeSeries?: {
     resolution: string;
-    calculate: (modelParameters: Record<string, number>) => TimeSeriesResult;
+    calculate: (modelParameters: Record<string, ModelParameter>) => TimeSeriesResult;
   };
   stratification?: {
     dimensions: string[];
-    calculate: (modelParameters: Record<string, number>, strata: string[]) => StratificationResult;
+    calculate: (modelParameters: Record<string, ModelParameter>, strata: string[]) => StratificationResult;
   };
 }
 
