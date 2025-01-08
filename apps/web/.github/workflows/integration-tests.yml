@@ -1,10 +1,10 @@
 name: Integration Tests
 
 on:
+  # Run on all pushes
   push:
-    branches: [ main ]
+  # Run on all PRs
   pull_request:
-    branches: [ main ]
 
 jobs:
   test:
