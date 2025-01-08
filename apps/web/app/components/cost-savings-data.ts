@@ -1,4 +1,4 @@
-import { CostItem } from '@/app/cost-savings'
+import {CostItem} from "@/lib/health-econ-simulation/types";
 
 export const clinicalTrialCostData: CostItem[] = [
   {
@@ -7,8 +7,12 @@ export const clinicalTrialCostData: CostItem[] = [
     currentExplanation: "Costs for data collection, storage, cleaning, and analysis",
     newCost: 10000,
     reductionExplanation: "Automated data collection and AI-driven analysis",
-    remainingExplanation: "Minimal costs for system maintenance and updates",
-    emoji: "💾"
+    remainingExplanation: "Trial-specific data processing and validation",
+    emoji: "💾",
+    remainingCosts: [
+      { item: "Data validation specialist (0.1 FTE)", cost: 8000 },
+      { item: "System usage fees (trial-specific)", cost: 2000 }
+    ]
   },
   {
     name: "Cost Per IRB Approvals",
@@ -16,8 +20,12 @@ export const clinicalTrialCostData: CostItem[] = [
     currentExplanation: "Fees for ethical review board submissions and approvals",
     newCost: 5000,
     reductionExplanation: "AI-generated protocols with built-in ethical considerations",
-    remainingExplanation: "Small fee for regulatory body to review AI system",
-    emoji: "✅"
+    remainingExplanation: "Regulatory review and oversight",
+    emoji: "✅",
+    remainingCosts: [
+      { item: "Regulatory specialist review (0.05 FTE)", cost: 4000 },
+      { item: "System audit fees", cost: 1000 }
+    ]
   },
   {
     name: "Cost of IRB Amendments",
@@ -32,19 +40,27 @@ export const clinicalTrialCostData: CostItem[] = [
     name: "SDV Costs",
     currentCost: 1486250,
     currentExplanation: "Expenses for verifying source data against reported data",
-    newCost: 0,
+    newCost: 25000,
     reductionExplanation: "Blockchain-like technology ensures data integrity",
-    remainingExplanation: "No verification needed",
-    emoji: "🔍"
+    remainingExplanation: "Exception handling and quality checks",
+    emoji: "🔍",
+    remainingCosts: [
+      { item: "Data quality analyst (0.1 FTE)", cost: 15000 },
+      { item: "System exception handling", cost: 10000 }
+    ]
   },
   {
     name: "Patient Recruitment Costs",
     currentCost: 805785,
     currentExplanation: "Advertising, screening, and enrollment expenses",
-    newCost: 5000,
+    newCost: 15000,
     reductionExplanation: "Automated matching of patients to trials via EHR integration",
-    remainingExplanation: "Minimal costs for system operation",
-    emoji: "🤝"
+    remainingExplanation: "Patient support and screening",
+    emoji: "🤝",
+    remainingCosts: [
+      { item: "Patient support specialist (0.2 FTE)", cost: 12000 },
+      { item: "Screening system fees", cost: 3000 }
+    ]
   },
   {
     name: "Patient Retention Costs",
@@ -56,13 +72,17 @@ export const clinicalTrialCostData: CostItem[] = [
     emoji: "🎯"
   },
   {
-    name: "RN/CRA Costs",
+    name: "Nurse/Research Associate Costs",
     currentCost: 2379605,
     currentExplanation: "Salaries for nurses and clinical research associates",
-    newCost: 50000,
+    newCost: 150000,
     reductionExplanation: "Mostly automated, with minimal human oversight",
-    remainingExplanation: "Salary for a small team to handle exceptions",
-    emoji: "👨‍⚕️"
+    remainingExplanation: "Clinical oversight and safety monitoring",
+    emoji: "👨‍⚕️",
+    remainingCosts: [
+      { item: "Clinical safety officer (0.3 FTE)", cost: 90000 },
+      { item: "Nurse consultant (0.2 FTE)", cost: 60000 }
+    ]
   },
   {
     name: "Physician Costs",
@@ -113,10 +133,14 @@ export const clinicalTrialCostData: CostItem[] = [
     name: "Administrative Staff Costs",
     currentCost: 7229968,
     currentExplanation: "Salaries for staff managing trial operations",
-    newCost: 50000,
+    newCost: 100000,
     reductionExplanation: "AI-driven administrative tasks",
-    remainingExplanation: "Minimal human oversight needed",
-    emoji: "👥"
+    remainingExplanation: "Trial coordination and oversight",
+    emoji: "👥",
+    remainingCosts: [
+      { item: "Trial coordinator (0.3 FTE)", cost: 75000 },
+      { item: "Regulatory compliance specialist (0.1 FTE)", cost: 25000 }
+    ]
   },
   {
     name: "Site Monitoring Costs",

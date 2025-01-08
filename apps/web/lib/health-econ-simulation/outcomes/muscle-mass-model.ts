@@ -12,17 +12,6 @@ const populationConfigSchema = z.object({
 
 export type PopulationConfig = z.infer<typeof populationConfigSchema>;
 
-interface BaselineMetrics {
-    resting_metabolic_rate: number;  // calories per day
-    insulin_sensitivity: number;      // relative scale
-    fall_risk: number;               // annual probability
-    healthcare_costs: number;         // annual per person
-    disability_risk: number;          // annual probability
-    mortality_risk: number;          // annual probability
-    medicare_total_annual_spend: number;  // Total Medicare spend in USD (2021 data)
-    population_size: number;
-}
-
 interface MetabolicImpact extends Record<keyof typeof metabolicOutcomeMetrics, number> {}
 interface HealthOutcomes extends Record<keyof typeof healthOutcomeMetrics, number> {}
 interface EconomicImpact extends Record<keyof typeof economicOutcomeMetrics, number> {}

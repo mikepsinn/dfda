@@ -14,7 +14,7 @@
   * [📃 Lack of Incentive to Discover the Full Range of Applications for Off-Patent Treatments](problems/lack-of-incentive-to-discover-the-full-range-of-applications-for-off-patent-treatments.md)
   * [🤒 People With Rare Disease are Severely Punished](problems/people-with-rare-disease-are-severely-punished.md)
   * [🔮 Pre-Determining Clinical Endpoints Requires Psychic Powers](pre-determining-clinical-endpoints-requires-psychic-powers.md)
-* [🎯 Benefits of a Decentralized Model](2-solution.md)
+* [🎯 Benefits of a Decentralized Model](02-solution)
   * [🎭 More Cures and Less Lifelong Attempts at Masking Symptoms](more-cures-and-less-lifelong-attempts-at-masking-symptoms.md)
   * [🧐 Greater Competitive Innovation and Fewer Monopolies](greater-competitive-innovation-and-fewer-monopolies.md)
   * [👀 Lower Costs of Validated Observational Research for Efficacy](lower-costs-of-validated-observational-research-for-efficacy.md)
