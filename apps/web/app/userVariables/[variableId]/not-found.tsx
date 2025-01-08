@@ -16,7 +16,7 @@ export default function NotFound() {
           This userVariable could not be found. Please try again.
         </EmptyPlaceholder.Description>
         <Link
-          href="/dashboard"
+          href="/userVariables"
           className={buttonVariants({ variant: "outline" })}
         >
           Go to Dashboard

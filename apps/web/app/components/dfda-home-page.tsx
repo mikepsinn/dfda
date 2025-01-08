@@ -97,7 +97,7 @@ export default function DFDAHomePage() {
       icon: Info,
       media:
         "https://thinkbynumbers.org/wp-content/uploads/2021/03/news-story-headline-1-1024x563.png",
-      href: "/dfda/why",
+      href: "https://why.dfda.earth",
       onClick: () => {
         // open https://dfda.earth in a new tab
         window.open("https://why.dfda.earth", "_blank")
@@ -233,7 +233,7 @@ export default function DFDAHomePage() {
               analysis 🔬, and get your drug to patients ASAP!
             </p>
             <Link
-              href="/dfda/drug-companies/register-drug"
+              href="/drug-companies/register-drug"
               className="neobrutalist-button group"
             >
               Register Now

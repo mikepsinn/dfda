@@ -21,14 +21,16 @@ export default function StudyHeaderHtml({ study }: StudyHeaderHtmlProps) {
       <div className="flex items-center justify-around max-w-4xl mx-auto mb-8">
         {/* Cause Variable Image */}
         <div className="w-1/6 relative">
-          <div className="relative w-24 h-24 md:w-32 md:h-32">
-            <Image
-              src={study.causeVariable?.imageUrl || '/placeholder-variable.png'}
-              alt={`${study.causeVariableName} image`}
-              fill
-              className="object-contain"
-            />
-          </div>
+          {study.causeVariable?.imageUrl && (
+            <div className="relative w-24 h-24 md:w-32 md:h-32">
+              <Image
+                src={study.causeVariable.imageUrl}
+                alt={`${study.causeVariableName} image`}
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
         </div>
 
         {/* Gauge Image */}
@@ -52,16 +54,18 @@ export default function StudyHeaderHtml({ study }: StudyHeaderHtmlProps) {
         </div>
 
         {/* Effect Variable Image */}
-        <div className="w-1/6 relative">
-          <div className="relative w-24 h-24 md:w-32 md:h-32">
-            <Image
-              src={study.effectVariable?.imageUrl || '/placeholder-variable.png'}
-              alt={`${study.effectVariableName} image`}
-              fill
-              className="object-contain"
-            />
+        {study.effectVariable?.imageUrl && (
+          <div className="w-1/6 relative">
+            <div className="relative w-24 h-24 md:w-32 md:h-32">
+              <Image
+                src={study.effectVariable.imageUrl}
+                alt={`${study.effectVariableName} image`}
+                fill
+                className="object-contain"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Tagline */}

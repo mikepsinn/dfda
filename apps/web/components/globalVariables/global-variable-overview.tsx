@@ -51,7 +51,7 @@ export const GlobalVariableOverview: FC<GlobalVariableOverviewProps> = ({
       >
         <div className="flex items-center gap-4">
           <a
-            href="/dfda/globalVariables"
+            href="/globalVariables"
             className={cn(buttonVariants({ variant: "outline" }), "gap-2")}
           >
             <Icons.chevronLeft className="h-4 w-4" />

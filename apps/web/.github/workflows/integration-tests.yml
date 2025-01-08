@@ -1,0 +1,70 @@
+name: Integration Tests
+
+on:
+  # Run on all pushes
+  push:
+  # Run on all PRs
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+            
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Build the Next.js app
+      - name: Build Next.js
+        run: pnpm build
+
+      # Start the Next.js server
+      - name: Start Next.js
+        run: |
+          pnpm start &
+          # Wait for the server to be ready
+          echo "Waiting for Next.js to be ready..."
+          timeout 30 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:3000)" != "200" ]]; do sleep 2; done' || false
+
+      # Run integration tests
+      - name: Run integration tests
+        run: pnpm test:integration
+        env:
+          CI: true
+
+      # Optional: Upload test results as artifacts
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            coverage/
+            test-results/
+            **/junit.xml
+          retention-days: 30 
