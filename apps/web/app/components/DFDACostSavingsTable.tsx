@@ -9,7 +9,8 @@ import {
   TOTAL_CURRENT_COST,
   TOTAL_NEW_COST,
 } from "@/app/components/cost-savings-data"
-import type { CostItem } from "@/app/cost-savings"
+
+import {CostItem} from "@/lib/health-econ-simulation/types";
 
 export default function DFDACostSavingsTable() {
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
