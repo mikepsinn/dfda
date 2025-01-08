@@ -1,5 +1,3 @@
-import { headers } from 'next/headers'
-
 export type LinkLocation = {
   filePath: string;
   lineNumber: number;
