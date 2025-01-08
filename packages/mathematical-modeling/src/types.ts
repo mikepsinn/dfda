@@ -170,6 +170,16 @@ export interface StratificationResult {
   };
 }
 
+export interface ModelConfig {
+  id: string;
+  title: string;
+  description: string;
+  version: string;
+  parameters: ModelParameter[];
+  metrics: OutcomeMetric[];
+  metadata?: ModelMetadata;
+}
+
 export class BaseModel {
   readonly id: string;
   readonly title: string;
@@ -222,7 +232,23 @@ export class BaseModel {
     return metric.calculate(this.getParametersAsRecord());
   }
 
-  private getParametersAsRecord(): Record<string, ModelParameter> {
+  calculateSensitivity(metricId: string): SensitivityAnalysis | undefined {
+    const metric = this.getMetric(metricId);
+    if (!metric || !metric.sensitivity) {
+      return undefined;
+    }
+    return metric.sensitivity.calculate(this.getParametersAsRecord());
+  }
+
+  calculateTimeSeries(metricId: string): TimeSeriesResult | undefined {
+    const metric = this.getMetric(metricId);
+    if (!metric || !metric.timeSeries) {
+      return undefined;
+    }
+    return metric.timeSeries.calculate(this.getParametersAsRecord());
+  }
+
+  protected getParametersAsRecord(): Record<string, ModelParameter> {
     return this.parameters.reduce((acc, param) => {
       acc[param.id] = param;
       return acc;

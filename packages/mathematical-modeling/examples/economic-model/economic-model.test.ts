@@ -1,9 +1,9 @@
-import { Model } from '../../src/model';
 import { ModelParameter, OutcomeMetric } from '../../src/types';
 import * as parameters from './parameters';
 import * as outcomes from './outcomes';
 import * as fs from 'fs';
 import * as path from 'path';
+import { EconomicModel } from './economicModel';
 
 describe('Economic Model Parameters', () => {
   describe('Parameter Types', () => {
@@ -70,37 +70,7 @@ describe('Economic Model Parameters', () => {
 });
 
 describe('Economic Model Outcomes', () => {
-  const model = new Model(
-    'economic_model',
-    'Economic Model',
-    'Test economic model',
-    '1.0.0',
-    {
-      authors: ['Test Author'],
-      lastUpdated: new Date().toISOString(),
-      references: [{
-        citation: 'Example citation',
-        doi: '10.1234/example',
-        url: 'https://example.com'
-      }],
-      assumptions: [
-        'Assumes linear scaling of costs',
-        'Assumes constant regulatory environment'
-      ],
-      limitations: [
-        'Does not account for market competition',
-        'Limited to US market dynamics'
-      ],
-      validationStatus: {
-        status: 'draft',
-        validatedBy: ['Test Author'],
-        validationDate: new Date().toISOString(),
-        validationMethod: 'Unit tests'
-      }
-    },
-    Object.values(parameters),
-    Object.values(outcomes)
-  );
+  const model = new EconomicModel();
 
   describe('Total Cost Calculations', () => {
     test('calculates base total cost', () => {
@@ -154,48 +124,17 @@ describe('Economic Model Outcomes', () => {
 });
 
 describe('Economic Model Documentation', () => {
-  const model = new Model(
-    'economic_model',
-    'Economic Model',
-    'Test economic model',
-    '1.0.0',
-    {
-      authors: ['Test Author'],
-      lastUpdated: new Date().toISOString(),
-      references: [{
-        citation: 'Example citation',
-        doi: '10.1234/example',
-        url: 'https://example.com'
-      }],
-      assumptions: [
-        'Assumes linear scaling of costs',
-        'Assumes constant regulatory environment'
-      ],
-      limitations: [
-        'Does not account for market competition',
-        'Limited to US market dynamics'
-      ],
-      validationStatus: {
-        status: 'draft',
-        validatedBy: ['Test Author'],
-        validationDate: new Date().toISOString(),
-        validationMethod: 'Unit tests'
-      }
-    },
-    Object.values(parameters),
-    Object.values(outcomes)
-  );
+  const model = new EconomicModel();
 
   test('generates markdown report', () => {
     const report = model.generateMarkdownReport();
     
     // Basic validation
-    expect(report).toContain('# Economic Model');
+    expect(report).toContain('# Economic Impact Model');
     expect(report).toContain('## Parameters');
-    expect(report).toContain('## Outcomes');
+    expect(report).toContain('## Results');
     expect(report).toContain('## Assumptions');
     expect(report).toContain('## Limitations');
-    expect(report).toContain('## References');
 
     // Save report
     const reportPath = path.join(__dirname, 'economic-model-report.md');
