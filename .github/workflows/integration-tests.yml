@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
     
     steps:
       - uses: actions/checkout@v4
@@ -22,22 +25,27 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
+          run_install: false
           
       - name: Get pnpm store directory
+        id: pnpm-cache
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
         name: Setup pnpm cache
         with:
-          path: ${{ env.STORE_PATH }}
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
             
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          cd ../..
+          pnpm install --frozen-lockfile
+          cd apps/web
 
       # Build the Next.js app
       - name: Build Next.js
@@ -59,12 +67,12 @@ jobs:
 
       # Optional: Upload test results as artifacts
       - name: Upload test results
-        if: always()
+        if: always() && (hashFiles('apps/web/coverage/**') != '' || hashFiles('apps/web/test-results/**') != '' || hashFiles('apps/web/**/junit.xml') != '')
         uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: |
-            coverage/
-            test-results/
-            **/junit.xml
+            apps/web/coverage/
+            apps/web/test-results/
+            apps/web/**/junit.xml
           retention-days: 30 
