@@ -146,6 +146,9 @@ importers:
       '@tryvital/vital-node':
         specifier: ^3.1.147
         version: 3.1.152
+      '@types/change-case':
+        specifier: ^2.3.5
+        version: 2.3.5
       '@types/jsdom':
         specifier: ^21.1.7
         version: 21.1.7
@@ -179,6 +182,12 @@ importers:
       axios:
         specifier: ^1.6.8
         version: 1.7.7
+      camel-case:
+        specifier: ^5.0.0
+        version: 5.0.0
+      change-case:
+        specifier: ^5.4.4
+        version: 5.4.4
       chart.js:
         specifier: ^4.4.2
         version: 4.4.4
@@ -287,6 +296,12 @@ importers:
       openai-edge:
         specifier: ^1.2.2
         version: 1.2.2
+      param-case:
+        specifier: ^4.0.0
+        version: 4.0.0
+      pascal-case:
+        specifier: ^4.0.0
+        version: 4.0.0
       pg:
         specifier: ^8.12.0
         version: 8.12.0
@@ -374,6 +389,9 @@ importers:
       slugify:
         specifier: ^1.6.6
         version: 1.6.6
+      snake-case:
+        specifier: ^4.0.0
+        version: 4.0.0
       sonner:
         specifier: ^1.4.41
         version: 1.7.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -3587,6 +3605,10 @@ packages:
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
 
+  '@types/change-case@2.3.5':
+    resolution: {integrity: sha512-JvctDvBuY3MVSEisGbSgaAdJTcs+2JjBKO60W1Isr3GnX2YZCyJYLDY96bV4eWensEUrQLRGEL+egAkIXYrW1Q==}
+    deprecated: This is a stub types definition. change-case provides its own type definitions, so you do not need this installed.
+
   '@types/common-tags@1.8.4':
     resolution: {integrity: sha512-S+1hLDJPjWNDhcGxsxEbepzaxWqURP/o+3cP4aa2w7yBXgdcmKGQtZzP8JbyfOd0m+33nh+8+kvxYE2UJtBDkg==}
 
@@ -4271,6 +4293,10 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
+  camel-case@5.0.0:
+    resolution: {integrity: sha512-AKcwhlfnTqKiYjkjZ0CSRjIGgUDEZQHqBBkdwrSxFPzRQDriAUxXNn+rFN7Qvb5nkPg6Hxncp44G1/zz88M5xw==}
+    deprecated: Use `change-case`
+
   camelcase-css@2.0.1:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
@@ -4316,6 +4342,9 @@ packages:
   chalk@5.3.0:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
+  change-case@5.4.4:
+    resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
 
   char-regex@1.0.2:
     resolution: {integrity: sha512-kWWXztvZ5SBQV+eRgKFeh8q5sLuZY2+8WUIzlxWVTg+oGwY14qylx1KbKzHd8P6ZYkAg0xyIDU9JMHhyJMZ1jw==}
@@ -7173,6 +7202,10 @@ packages:
       react: '>= 16.0.0'
       react-dom: '>= 16.0.0'
 
+  no-case@4.0.0:
+    resolution: {integrity: sha512-WmS3EUGw+vXHlTgiUPi3NzbZNwH6+uGX0QLGgqG+aFSJ5rkX/Ee0nuwHBJfZTfQwwR8lGO819NEIwQ7CGhkdEQ==}
+    deprecated: Use `change-case`
+
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
@@ -7432,6 +7465,10 @@ packages:
   pako@1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
 
+  param-case@4.0.0:
+    resolution: {integrity: sha512-+kVIBemYVaPPzBX6Z9FcBvaY0YSIBxD1fyShn6P3HkWOIbsOkT8OmEgLrQSaAHRDyYKdu7YH5RRiACiJLSJ2pw==}
+    deprecated: Use `change-case`
+
   parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
     engines: {node: '>=6'}
@@ -7464,6 +7501,10 @@ packages:
 
   partial-json@0.1.7:
     resolution: {integrity: sha512-Njv/59hHaokb/hRUjce3Hdv12wd60MtM9Z5Olmn+nehe0QDAsRtRbJPvJ0Z91TusF0SuZRIvnM+S4l6EIP8leA==}
+
+  pascal-case@4.0.0:
+    resolution: {integrity: sha512-DPrSBfN1ivlJ5WwTdcBfCfmOHZXjaeW+b8DMHXcUWiR8wmO92T6N8elBsJj/v3g+INObw8Zx/q6eFAjA1w071Q==}
+    deprecated: Use `change-case`
 
   path-browserify@1.0.1:
     resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
@@ -8329,6 +8370,10 @@ packages:
   slugify@1.6.6:
     resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
     engines: {node: '>=8.0.0'}
+
+  snake-case@4.0.0:
+    resolution: {integrity: sha512-slvG6efKZ3GYUUZdhPOq/lLIqutwQ4TdPViD1VKqsbf0u76U/aPRswPKjOaAS9T7fAPmRmXuN6C/nM0xsMaFLQ==}
+    deprecated: Use `change-case`
 
   sonner@1.7.0:
     resolution: {integrity: sha512-W6dH7m5MujEPyug3lpI2l3TC3Pp1+LTgK0Efg+IHDrBbtEjyCmCHHo6yfNBOsf1tFZ6zf+jceWwB38baC8yO9g==}
@@ -13419,6 +13464,10 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.0
 
+  '@types/change-case@2.3.5':
+    dependencies:
+      change-case: 5.4.4
+
   '@types/common-tags@1.8.4': {}
 
   '@types/d3-array@3.2.1': {}
@@ -14242,6 +14291,10 @@ snapshots:
 
   callsites@3.1.0: {}
 
+  camel-case@5.0.0:
+    dependencies:
+      no-case: 4.0.0
+
   camelcase-css@2.0.1: {}
 
   camelcase-keys@6.2.2:
@@ -14287,6 +14340,8 @@ snapshots:
       supports-color: 7.2.0
 
   chalk@5.3.0: {}
+
+  change-case@5.4.4: {}
 
   char-regex@1.0.2: {}
 
@@ -18042,6 +18097,8 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
+  no-case@4.0.0: {}
+
   node-domexception@1.0.0: {}
 
   node-emoji@1.11.0:
@@ -18325,6 +18382,10 @@ snapshots:
   pako@1.0.11:
     optional: true
 
+  param-case@4.0.0:
+    dependencies:
+      no-case: 4.0.0
+
   parent-module@1.0.1:
     dependencies:
       callsites: 3.1.0
@@ -18375,6 +18436,10 @@ snapshots:
       peberminta: 0.9.0
 
   partial-json@0.1.7: {}
+
+  pascal-case@4.0.0:
+    dependencies:
+      no-case: 4.0.0
 
   path-browserify@1.0.1: {}
 
@@ -19338,6 +19403,10 @@ snapshots:
   slash@3.0.0: {}
 
   slugify@1.6.6: {}
+
+  snake-case@4.0.0:
+    dependencies:
+      no-case: 4.0.0
 
   sonner@1.7.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
