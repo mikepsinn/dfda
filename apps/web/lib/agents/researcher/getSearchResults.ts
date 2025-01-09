@@ -1,4 +1,4 @@
-import Exa, {RegularSearchOptions, SearchResult, ContentsOptions, TextContentsOptions} from "exa-js";
+import Exa, {RegularSearchOptions, SearchResult, TextContentsOptions} from "exa-js";
 import { CacheService } from '@/lib/services/cache-service';
 
 const exa = new Exa(process.env.EXA_API_KEY);
@@ -11,6 +11,13 @@ const defaultTextOptions: TextContentsOptions = {
 
 type DefaultContentsOptions = {
     text: TextContentsOptions;
+    highlights: {
+        numSentences: 3,
+        highlightsPerUrl: 5
+    };
+    extras: {
+        imageLinks: 5
+    };
 };
 
 export async function getSearchResults(queries: string[], options?: RegularSearchOptions): Promise<SearchResult<DefaultContentsOptions>[]> {
@@ -33,7 +40,15 @@ export async function getSearchResults(queries: string[], options?: RegularSearc
             numResults: options?.numResults ?? 5,
             useAutoprompt: options?.useAutoprompt ?? false,
             ...options,
-            text: defaultTextOptions
+            text: defaultTextOptions,
+            highlights: {
+                numSentences: 3,
+                highlightsPerUrl: 5,
+                query
+            },
+            extras: {
+                imageLinks: 5
+            }
         });
         
         // Cache the results
@@ -64,7 +79,15 @@ export async function getSearchResultsByDomain(domain: string, queries: string[]
             useAutoprompt: options?.useAutoprompt ?? false,
             includeDomains: [domain],
             ...options,
-            text: defaultTextOptions
+            text: defaultTextOptions,
+            highlights: {
+                numSentences: 3,
+                highlightsPerUrl: 5,
+                query
+            },
+            extras: {
+                imageLinks: 5
+            }
         });
         
         // Cache the results
@@ -90,9 +113,16 @@ export async function getSearchResultsByUrl(url: string, linksPerQuery: number =
     const searchResponse = await exa.getContents(
         [url],
         {
-          text: defaultTextOptions
+            text: defaultTextOptions,
+            highlights: {
+                numSentences: 3,
+                highlightsPerUrl: 5
+            },
+            extras: {
+                imageLinks: 5
+            }
         }
-      );
+    );
     
     // Cache the results
     await cacheService.set(cacheKey, searchResponse.results);
