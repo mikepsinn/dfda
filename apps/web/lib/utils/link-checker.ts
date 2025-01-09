@@ -30,19 +30,6 @@ const DYNAMIC_URL_PATTERNS = [
   /encodeURIComponent\(.*?\)/, // encodeURIComponent(param)
 ]
 
-// Known valid routes that might not be available during testing
-const KNOWN_VALID_ROUTES = [
-  '/signin',
-  '/signup',
-  '/cba/muscle-mass',
-  '/cognition/reaction-test',
-  '/drug-companies/register-drug',
-  '/docs/cure-acceleration-act',
-  '/trials',
-  '/globalVariables',
-  '/userVariables',
-]
-
 export async function checkLink(url: string, location?: LinkLocation): Promise<LinkCheckResult> {
   try {
     // Handle hash links
@@ -83,16 +70,6 @@ export async function checkLink(url: string, location?: LinkLocation): Promise<L
         statusCode: 200,
         location,
         error: 'Skipped: Dynamic URL'
-      }
-    }
-
-    // Consider known valid routes as valid
-    if (KNOWN_VALID_ROUTES.includes(url)) {
-      return {
-        url,
-        isValid: true,
-        statusCode: 200,
-        location
       }
     }
 
