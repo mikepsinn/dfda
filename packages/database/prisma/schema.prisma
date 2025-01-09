@@ -176,25 +176,6 @@ model applications {
   @@index([dfda_post_id], map: "applications_dfda_posts_ID_fk")
 }
 
-model button_clicks {
-  card_id      String     @db.VarChar(80)
-  button_id    String     @db.VarChar(80)
-  client_id    String     @db.VarChar(80)
-  created_at   DateTime   @default(now()) @db.Timestamp(0)
-  deleted_at   DateTime?  @db.Timestamp(0)
-  id           Int        @id @default(autoincrement())
-  input_fields String?    @db.Text
-  intent_name  String?    @db.VarChar(80)
-  parameters   String?    @db.Text
-  updated_at   DateTime   @default(now()) @db.Timestamp(0)
-  user_id      BigInt     @db.UnsignedBigInt
-  oa_clients   oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "button_clicks_client_id_fk")
-  dfda_users     dfda_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "button_clicks_user_id_fk")
-
-  @@index([client_id], map: "button_clicks_client_id_fk")
-  @@index([user_id], map: "button_clicks_user_id_fk")
-}
-
 
 model child_parents {
   id                                              Int       @id @default(autoincrement()) @db.UnsignedInt
@@ -922,7 +903,6 @@ model ct_side_effects {
   number_of_treatments         Int                            @db.UnsignedInt
   variables                    variables                      @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "ct_side_effects_variables_id_fk")
   ct_treatment_side_effect     ct_treatment_side_effect[]
-  ct_treatment_side_effect_bak ct_treatment_side_effect_bak[]
 }
 
 model ct_sideeffects {
@@ -993,7 +973,6 @@ model ct_treatments {
   variables                    variables                      @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "ct_treatments_variables_id_fk")
   ct_condition_treatment       ct_condition_treatment[]
   ct_treatment_side_effect     ct_treatment_side_effect[]
-  ct_treatment_side_effect_bak ct_treatment_side_effect_bak[]
 
   @@index([variable_id], map: "ct_treatments_variables_id_fk")
 }
@@ -1217,17 +1196,6 @@ model health_checks {
   @@index([target_slug], map: "health_checks_target_slug_index")
 }
 
-model hosts {
-  id                Int       @id @default(autoincrement()) @db.UnsignedInt
-  name              String    @db.VarChar(255)
-  ssh_user          String?   @db.VarChar(255)
-  port              Int?
-  ip                String?   @db.VarChar(255)
-  custom_properties Json?
-  created_at        DateTime? @db.Timestamp(0)
-  updated_at        DateTime? @db.Timestamp(0)
-  checks            checks[]
-}
 
 model jobs {
   id           BigInt @id @default(autoincrement()) @db.UnsignedBigInt
@@ -1543,9 +1511,6 @@ model oa_clients {
   dfda_users                                  dfda_users                          @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_clients_user_id_fk")
   aggregate_correlations                    aggregate_correlations[]
   applications                              applications?
-  button_clicks                             button_clicks[]
-  buttons                                   buttons[]
-  cards                                     cards[]
   cohort_studies                            cohort_studies[]
   cohort_study_statistics                   cohort_study_statistics[]
   collaborators                             collaborators[]
@@ -3348,9 +3313,6 @@ model dfda_users {
   dfda_posts_dfda_postsTodfda_users_dfda_post_id                            dfda_posts?                         @relation("dfda_postsTodfda_users_dfda_post_id", fields: [dfda_post_id], references: [ID], map: "dfda_users_dfda_posts_ID_fk")
   dfda_users                                                          dfda_users?                         @relation("dfda_usersTodfda_users", fields: [referrer_user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_users_dfda_users_ID_fk")
   applications                                                      applications[]
-  button_clicks                                                     button_clicks[]
-  buttons                                                           buttons[]
-  cards                                                             cards[]
   child_parents_child_parents_child_user_idTodfda_users               child_parents[]                   @relation("child_parents_child_user_idTodfda_users")
   child_parents_child_parents_parent_user_idTodfda_users              child_parents[]                   @relation("child_parents_parent_user_idTodfda_users")
   cohort_studies                                                    cohort_studies[]
