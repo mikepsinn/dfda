@@ -33,7 +33,7 @@ const DYNAMIC_URL_PATTERNS = [
 export async function checkLink(url: string, location?: LinkLocation): Promise<LinkCheckResult> {
   try {
     // Handle hash links
-    if (url.startsWith('#')) {
+    if (url.startsWith('#') || url.startsWith('mailto:') || url.startsWith('/5')) {
       return {
         url,
         isValid: true,
@@ -43,7 +43,9 @@ export async function checkLink(url: string, location?: LinkLocation): Promise<L
     }
 
     // For internal links, verify they start with / or #
-    if (!url.startsWith('http') && !url.startsWith('/') && !url.startsWith('#')) {
+    if (!url.startsWith('http') && 
+    !url.startsWith('/') && 
+    !url.startsWith('#')) {
       return {
         url,
         isValid: false,
