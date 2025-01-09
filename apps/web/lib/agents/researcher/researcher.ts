@@ -1,7 +1,7 @@
 import { LanguageModelV1 } from "@ai-sdk/provider";
 import { Prisma, PrismaClient, ArticleStatus } from "@prisma/client";
 import { generateObject } from "ai";
-import { RegularSearchOptions, SearchResult } from "exa-js";
+import { RegularSearchOptions, SearchResult, ContentsOptions, TextContentsOptions } from "exa-js";
 import { z } from "zod";
 import { getSearchResults, getSearchResultsByUrl } from "@/lib/agents/researcher/getSearchResults";
 import { generateSearchQueries } from "@/lib/agents/researcher/searchQueryGenerator";
@@ -19,6 +19,10 @@ export type ResearchStep = {
   step: string
   progress: number
 }
+
+type DefaultContentsOptions = {
+  text: TextContentsOptions;
+};
 
 const GeneratedReportSchema = z.object({
   title: z.string().describe("The title of the report"),
@@ -46,7 +50,7 @@ const GeneratedReportSchema = z.object({
 type GeneratedReport = z.infer<typeof GeneratedReportSchema>
 
 export type ReportOutput = GeneratedReport & {
-  searchResults: SearchResult[]
+  searchResults: SearchResult<DefaultContentsOptions>[]
   featuredImage?: string
   generationOptions?: object
   id?: string
@@ -168,7 +172,7 @@ export async function writeArticle(
     progress: 20
   })
 
-  let searchResults: SearchResult[]
+  let searchResults: SearchResult<DefaultContentsOptions>[]
   if (isUrl(topic)) {
     searchResults = await getSearchResultsByUrl(
       topic,
@@ -193,7 +197,7 @@ export async function writeArticle(
 
   let inputData = searchResults
     .map(
-      (item) => `--START ITEM: ${item.title}--\n
+      (item: SearchResult<DefaultContentsOptions>) => `--START ITEM: ${item.title}--\n
     TITLE: ${item.title}\n
     URL: ${item.url}\n
     CONTENT: ${item.text.slice(0, maxCharactersOfSearchContentToUse)}\n

@@ -1,17 +1,26 @@
-import Exa, {RegularSearchOptions, SearchResult} from "exa-js";
+import Exa, {RegularSearchOptions, SearchResult, ContentsOptions, TextContentsOptions} from "exa-js";
 import { CacheService } from '@/lib/services/cache-service';
 
 const exa = new Exa(process.env.EXA_API_KEY);
 const cacheService = CacheService.getInstance();
 
-export async function getSearchResults(queries: string[], options?: RegularSearchOptions): Promise<SearchResult[]> {
-    const results: SearchResult[] = [];
+const defaultTextOptions: TextContentsOptions = {
+    maxCharacters: 10000,
+    includeHtmlTags: false
+};
+
+type DefaultContentsOptions = {
+    text: TextContentsOptions;
+};
+
+export async function getSearchResults(queries: string[], options?: RegularSearchOptions): Promise<SearchResult<DefaultContentsOptions>[]> {
+    const results: SearchResult<DefaultContentsOptions>[] = [];
     for (const query of queries) {
         // Generate cache key based on query and options
         const cacheKey = `exa:${query}:${JSON.stringify(options)}`;
         
         // Try to get cached results
-        const cachedResults = await cacheService.get<SearchResult[]>(cacheKey);
+        const cachedResults = await cacheService.get<SearchResult<DefaultContentsOptions>[]>(cacheKey);
         if (cachedResults) {
             console.log(`Cache hit for Exa search: ${query}`);
             results.push(...cachedResults);
@@ -24,6 +33,7 @@ export async function getSearchResults(queries: string[], options?: RegularSearc
             numResults: options?.numResults ?? 5,
             useAutoprompt: options?.useAutoprompt ?? false,
             ...options,
+            text: defaultTextOptions
         });
         
         // Cache the results
@@ -33,14 +43,14 @@ export async function getSearchResults(queries: string[], options?: RegularSearc
     return results;
 }
 
-export async function getSearchResultsByDomain(domain: string, queries: string[], options?: RegularSearchOptions): Promise<SearchResult[]> {
-    const results: SearchResult[] = [];
+export async function getSearchResultsByDomain(domain: string, queries: string[], options?: RegularSearchOptions): Promise<SearchResult<DefaultContentsOptions>[]> {
+    const results: SearchResult<DefaultContentsOptions>[] = [];
     for (const query of queries) {
         // Generate cache key based on domain, query and options
         const cacheKey = `exa:domain:${domain}:${query}:${JSON.stringify(options)}`;
         
         // Try to get cached results
-        const cachedResults = await cacheService.get<SearchResult[]>(cacheKey);
+        const cachedResults = await cacheService.get<SearchResult<DefaultContentsOptions>[]>(cacheKey);
         if (cachedResults) {
             console.log(`Cache hit for Exa domain search: ${domain}:${query}`);
             results.push(...cachedResults);
@@ -54,6 +64,7 @@ export async function getSearchResultsByDomain(domain: string, queries: string[]
             useAutoprompt: options?.useAutoprompt ?? false,
             includeDomains: [domain],
             ...options,
+            text: defaultTextOptions
         });
         
         // Cache the results
@@ -63,12 +74,12 @@ export async function getSearchResultsByDomain(domain: string, queries: string[]
     return results;
 }
 
-export async function getSearchResultsByUrl(url: string, linksPerQuery: number = 5): Promise<SearchResult[]> {
+export async function getSearchResultsByUrl(url: string, linksPerQuery: number = 5): Promise<SearchResult<DefaultContentsOptions>[]> {
     // Generate cache key based on URL and options
     const cacheKey = `exa:url:${url}:${linksPerQuery}`;
     
     // Try to get cached results
-    const cachedResults = await cacheService.get<SearchResult[]>(cacheKey);
+    const cachedResults = await cacheService.get<SearchResult<DefaultContentsOptions>[]>(cacheKey);
     if (cachedResults) {
         console.log(`Cache hit for Exa URL search: ${url}`);
         return cachedResults;
@@ -79,10 +90,7 @@ export async function getSearchResultsByUrl(url: string, linksPerQuery: number =
     const searchResponse = await exa.getContents(
         [url],
         {
-          text: {
-            maxCharacters: 10000,
-            includeHtmlTags: false
-          }
+          text: defaultTextOptions
         }
       );
     
