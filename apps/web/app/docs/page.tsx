@@ -33,10 +33,10 @@ function getTitleFromPath(filePath: string): string {
 // Add folder cards data
 const folderCards = [
   {
-    title: "Cure Acceleration Act",
+    title: "Disease Eradication Act",
     description: "Learn about the proposed legislation to accelerate cures",
     icon: "🧪",
-    href: "/dfda/docs/cure-acceleration-act",
+    href: "/dfda/docs/disease-eradication-act",
   },
   {
     title: "Health Savings Sharing",

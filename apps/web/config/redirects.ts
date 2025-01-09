@@ -8,7 +8,7 @@ type Redirect = {
 export const redirects: Redirect[] = [
   {
     source: "/dfda/right-to-trial",
-    destination: "/dfda/cure-acceleration-act",
+    destination: "/dfda/disease-eradication-act",
     permanent: true, // 308 redirect
   },
   // Add more redirects here as needed

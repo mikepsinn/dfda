@@ -67,13 +67,13 @@ export function DFDADisclaimer({ children }: DFDADisclaimerProps) {
               the highest standards of safety and efficacy.
             </p>
             <p>
-              Help us transform healthcare by signing the Cure Acceleration Act
+              Help us transform healthcare by signing the Disease Eradication Act
               petition, which aims to update FDA.gov to support automated and
               decentralized clinical trials.
             </p>
             <div className="mt-4">
               <a
-                href="/docs/cure-acceleration-act"
+                href="/docs/disease-eradication-act"
                 className="inline-flex items-center gap-1.5 rounded-full border-2 border-black bg-white px-3 py-1 text-sm font-medium shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 Sign to Show Your Support!

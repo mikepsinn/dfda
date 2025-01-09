@@ -9,9 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
     
     steps:
       - uses: actions/checkout@v4
@@ -42,26 +39,17 @@ jobs:
             ${{ runner.os }}-pnpm-store-
             
       - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+            
+      # Build and test web app
+      - name: Build and test web app
+        working-directory: apps/web
         run: |
-          cd ../..
-          pnpm install --frozen-lockfile
-          cd apps/web
-
-      # Build the Next.js app
-      - name: Build Next.js
-        run: pnpm build
-
-      # Start the Next.js server
-      - name: Start Next.js
-        run: |
+          pnpm build
           pnpm start &
-          # Wait for the server to be ready
           echo "Waiting for Next.js to be ready..."
           timeout 30 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:3000)" != "200" ]]; do sleep 2; done' || false
-
-      # Run integration tests
-      - name: Run integration tests
-        run: pnpm test:integration
+          pnpm test:integration
         env:
           CI: true
 

@@ -2,10 +2,10 @@
 
 /*
   Usage:
-    node rename-cases.js "Old Name" "New Name"
+    node scripts/rename-cases.js "Old Name" "New Name"
   
   Example:
-    node rename-cases.js "Disease Eradication Act" "Disease Eradication Act"
+    node scripts/rename-cases.js "Disease Eradication Act" "Disease Eradication Act"
 
   This script:
   1. Reads the old and new names from the command line.
@@ -92,7 +92,8 @@ function shouldSkipDir(dirName) {
   return dirName === '.git' || dirName === 'node_modules';
 }
 
-function getAllFiles(dirPath, fileArray = []) {
+// Collect all files and directories
+function getAllPaths(dirPath, fileArray = [], dirArray = []) {
   const entries = fs.readdirSync(dirPath);
   for (const entry of entries) {
     const fullPath = path.join(dirPath, entry);
@@ -100,15 +101,16 @@ function getAllFiles(dirPath, fileArray = []) {
       continue;
     }
     if (isDirectory(fullPath)) {
-      getAllFiles(fullPath, fileArray);
+      dirArray.push(fullPath);
+      getAllPaths(fullPath, fileArray, dirArray);
     } else {
       fileArray.push(fullPath);
     }
   }
-  return fileArray;
+  return { files: fileArray, directories: dirArray };
 }
 
-const allFiles = getAllFiles(process.cwd());
+const { files: allFiles, directories: allDirs } = getAllPaths(process.cwd());
 
 // Filter to text-like files
 const textExtensions = /\.(txt|md|js|ts|jsx|tsx|json|html|css|scss|yml|yaml)$/i;
@@ -136,14 +138,17 @@ textFiles.forEach(filePath => {
 });
 
 // 2. Rename files and directories
-// We'll rename only those that exist in our allFiles list (files).
-// Then do a separate pass for directories by walking again.
-const sortedPaths = [...allFiles].sort((a, b) => {
-  // Deeper paths first
+// Sort paths by depth (deeper first) to avoid conflicts
+const sortedDirs = [...allDirs].sort((a, b) => {
   return b.split(path.sep).length - a.split(path.sep).length;
 });
 
-sortedPaths.forEach(oldFullPath => {
+const sortedFiles = [...allFiles].sort((a, b) => {
+  return b.split(path.sep).length - a.split(path.sep).length;
+});
+
+// First rename directories (deeper first)
+sortedDirs.forEach(oldFullPath => {
   const dirname = path.dirname(oldFullPath);
   const basename = path.basename(oldFullPath);
 
@@ -151,7 +156,6 @@ sortedPaths.forEach(oldFullPath => {
   Object.keys(oldVariants).forEach(k => {
     const oldVal = oldVariants[k];
     const newVal = newVariants[k];
-    // Replace once per variant
     newBasename = newBasename.replace(oldVal, newVal);
   });
 
@@ -159,9 +163,32 @@ sortedPaths.forEach(oldFullPath => {
     const newFullPath = path.join(dirname, newBasename);
     if (!fs.existsSync(newFullPath)) {
       fs.renameSync(oldFullPath, newFullPath);
-      console.log(`Renamed: ${oldFullPath} -> ${newFullPath}`);
+      console.log(`Renamed directory: ${oldFullPath} -> ${newFullPath}`);
     } else {
-      console.warn(`Skipping rename (target exists): ${oldFullPath} -> ${newFullPath}`);
+      console.warn(`Skipping directory rename (target exists): ${oldFullPath} -> ${newFullPath}`);
+    }
+  }
+});
+
+// Then rename files
+sortedFiles.forEach(oldFullPath => {
+  const dirname = path.dirname(oldFullPath);
+  const basename = path.basename(oldFullPath);
+
+  let newBasename = basename;
+  Object.keys(oldVariants).forEach(k => {
+    const oldVal = oldVariants[k];
+    const newVal = newVariants[k];
+    newBasename = newBasename.replace(oldVal, newVal);
+  });
+
+  if (newBasename !== basename) {
+    const newFullPath = path.join(dirname, newBasename);
+    if (!fs.existsSync(newFullPath)) {
+      fs.renameSync(oldFullPath, newFullPath);
+      console.log(`Renamed file: ${oldFullPath} -> ${newFullPath}`);
+    } else {
+      console.warn(`Skipping file rename (target exists): ${oldFullPath} -> ${newFullPath}`);
     }
   }
 });

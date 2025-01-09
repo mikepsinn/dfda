@@ -7,15 +7,15 @@ import { checkPetitionSignature } from "@/app/petitionActions"
 
 import { DFDAPetitionButtons } from "./components/DFDAPetitionButtons"
 import { FloatingPetitionButton } from "./components/FloatingPetitionButton"
-import CureAccelerationAct from "./components/cure-acceleration-act"
+import DiseaseEradicationAct from "./components/disease-eradication-act"
 
 export const metadata: Metadata = {
-  title: "Cure Acceleration Act | DFDA",
+  title: "Disease Eradication Act | DFDA",
   description: "Faster Cures, Lower Costs, Universal Access 🚀",
 }
 export default async function CureAccelerationPage() {
   const { html, data } = await getMarkdownContent(
-    "docs/cure-acceleration-act.md"
+    "docs/disease-eradication-act.md"
   )
 
   const hasSigned = await checkPetitionSignature(DFDA_PETITION_ID)
@@ -24,7 +24,7 @@ export default async function CureAccelerationPage() {
 
   return (
     <main className="">
-      <CureAccelerationAct />
+      <DiseaseEradicationAct />
       <FloatingPetitionButton />
       {/* Petition Sign Section */}
       <DFDAPetitionButtons hasSigned={hasSigned} userId={userId} />

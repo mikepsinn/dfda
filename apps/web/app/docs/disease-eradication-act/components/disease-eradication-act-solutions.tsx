@@ -49,7 +49,7 @@ const SolutionCard = ({
   )
 }
 
-export default function CureAccelerationActSolutions() {
+export default function DiseaseEradicationActSolutions() {
   const solutions = [
     {
       title: "Decentralized FDA",

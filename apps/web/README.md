@@ -15,7 +15,7 @@ Billions of people are suffering needlessly because the current system of clinic
 
 ## 💡 The Solution
 
-The Cure Acceleration Act creates:
+The Disease Eradication Act creates:
 
 * ✅ **Universal Trial Access** - Every person's right to try safe treatments
 * 🤖 **Decentralized Autonomous FDA** - Free, open infrastructure for real-world evidence collection
@@ -23,7 +23,7 @@ The Cure Acceleration Act creates:
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
 
-[👉 Read the Full Cure Acceleration Act](docs/cure-acceleration-act.md)
+[👉 Read the Full Disease Eradication Act](docs/disease-eradication-act.md)
 
 # 😕 Why are we doing this?
 

@@ -39,10 +39,10 @@ export const dfdaLinks = {
     tooltip: "An autonomous AI Food and Drug Administration",
   },
   petition: {
-    title: "Cure Acceleration Act",
-    href: "/cure-acceleration-act",
+    title: "Disease Eradication Act",
+    href: "/disease-eradication-act",
     icon: "petition",
-    tooltip: "Help us transform healthcare by signing the Cure Acceleration Act",
+    tooltip: "Help us transform healthcare by signing the Disease Eradication Act",
   },
   healthSavingsSharing: {
     title: "50/50 Health Savings Sharing Program",
