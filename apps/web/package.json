@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "type-check": "tsc --noEmit",
+    "check-links": "jest __tests__/integration/link-checker.test.ts",
     "lint": "next lint",
     "build": "next build",
     "turbo": "next dev --turbo",
@@ -27,7 +28,6 @@
     "format": "pnpm prettier . --write",
     "format:check": "pnpm prettier . --check",
     "seed": "jest tests/seed.test.ts",
-    "check-links": "jest __tests__/integration/link-checker.test.ts",
     "json-to-prisma": "json-to-prisma-schema-convertor convert --inputPath='./prisma/schema.json' --outputPath='./prisma/schema.prisma'",
     "analyze": "cross-env ANALYZE=true next build",
     "deps:check": "depcheck",

@@ -9,5 +9,5 @@ These are available on Android, iOS, and desktop browsers.
 ## Related Code
 
 - [Service Worker to Display Notifications](https://github.com/FDA-AI/FDAi/tree/develop/apps/dfda-1/public/app/public/firebase-messaging-sw.js)
-- [Push Notification Data Model](/apps/dfda-1/app/Slim/Model/Notifications/PushNotificationData.php)
-- [Notification Sender Job](/apps/dfda-1/app/PhpUnitJobs/Reminders/PushNotificationsJob.php)
+- [Push Notification Data Model](https://github.com/FDA-AI/FDAi/tree/develop/apps/dfda-1/app/Slim/Model/Notifications/PushNotificationData.php)
+- [Notification Sender Job](https://github.com/FDA-AI/FDAi/tree/develop/apps/dfda-1/app/PhpUnitJobs/Reminders/PushNotificationsJob.php)

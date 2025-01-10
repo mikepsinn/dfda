@@ -6,7 +6,7 @@ import {dfdaGET, dfdaPOST} from "@/app/dfdaActions";
 
 const routeContextSchema = z.object({
   params: z.object({
-    dfdaPath: z.string(),
+    dfdaPath: z.array(z.string()),
   }),
 })
 
@@ -18,7 +18,8 @@ export async function GET(
   const urlParams = Object.fromEntries(new URL(req.url).searchParams)
   const userId = await getUserIdServer()
   try {
-    const response = await dfdaGET(params.dfdaPath, urlParams, userId)
+    const fullPath = params.dfdaPath.join('/')
+    const response = await dfdaGET(fullPath, urlParams, userId)
     const data = response.data ?? response
     return new Response(JSON.stringify(data), {
       status: 200,
@@ -38,7 +39,8 @@ export async function POST(
   const body = await req.json()
   const userId = await getUserIdServer()
   try {
-    const response = await dfdaPOST(params.dfdaPath, body, userId, urlParams)
+    const fullPath = params.dfdaPath.join('/')
+    const response = await dfdaPOST(fullPath, body, userId, urlParams)
     const data = response.data ?? response
     return new Response(JSON.stringify(data), {
       status: response.status,
@@ -47,4 +49,4 @@ export async function POST(
   } catch (error) {
     return handleError(error, "POST dfdaPath")
   }
-}
+} 
