@@ -60,7 +60,12 @@ export const dfdaLinks = {
 } as const
 
 export const dfdaNavigation: DomainNavigation = {
-  topNav: [dfdaLinks.clinipedia, dfdaLinks.digitalTwinSafe, dfdaLinks.petition],
+  topNav: [
+    dfdaLinks.clinipedia,
+    dfdaLinks.digitalTwinSafe,
+    dfdaLinks.petition,
+    commonLinks.contributeOnGithub,
+  ],
   sidebarNav: [
     dfdaLinks.dfda,
     dfdaLinks.conditions,

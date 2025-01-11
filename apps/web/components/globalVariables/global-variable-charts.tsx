@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { FC } from "react"
-import Highcharts from "highcharts"
+import { FC, useEffect } from "react"
+import Highcharts, { Options as HighchartsOptions, SeriesOptionsType } from "highcharts"
 import HighchartsReact from "highcharts-react-official"
 
 import { GlobalVariable } from "@/types/models/GlobalVariable"
@@ -21,15 +21,146 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+const defaultChartOptions: HighchartsOptions = {
+  chart: {
+    animation: false,
+    type: 'line'
+  },
+  title: {
+    text: 'No Data Available'
+  },
+  xAxis: {
+    type: 'category',
+    crosshair: false,
+    title: {
+      text: null
+    }
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  },
+  tooltip: {
+    enabled: true,
+    shared: false,
+    useHTML: false,
+    formatter: function() {
+      const point = this.point;
+      return `<b>${point.name || point.category || ''}</b><br/>${this.series.name}: ${point.y}`;
+    }
+  },
+  plotOptions: {
+    series: {
+      animation: false,
+      states: {
+        hover: {
+          enabled: true
+        }
+      },
+      point: {
+        events: {}
+      }
+    },
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
+    }
+  },
+  series: [{
+    type: 'line',
+    name: 'No Data',
+    data: []
+  }],
+  credits: {
+    enabled: false
+  }
+}
 
 interface GlobalVariableChartsProps
   extends React.HTMLAttributes<HTMLFormElement> {
   globalVariable: GlobalVariable
 }
 
+const getChartOptions = (config: Partial<HighchartsOptions> | undefined): HighchartsOptions | null => {
+  if (!config) return null
+  
+  try {
+    const mergedOptions: HighchartsOptions = {
+      ...defaultChartOptions,
+      ...config,
+      chart: {
+        ...defaultChartOptions.chart,
+        ...config.chart,
+        animation: false
+      },
+      tooltip: defaultChartOptions.tooltip,
+      plotOptions: {
+        ...defaultChartOptions.plotOptions,
+        ...config.plotOptions,
+        series: {
+          ...defaultChartOptions.plotOptions?.series,
+          ...config.plotOptions?.series,
+          animation: false,
+          states: {
+            hover: { enabled: true }
+          },
+          point: { events: {} }
+        }
+      }
+    }
+
+    // Validate that required properties exist and data is properly formatted
+    if (!mergedOptions.series || !Array.isArray(mergedOptions.series)) {
+      console.warn('Invalid series configuration, using default')
+      return defaultChartOptions
+    }
+
+    // Ensure each series has valid data
+    mergedOptions.series = mergedOptions.series.map((series: SeriesOptionsType) => ({
+      ...series,
+      data: Array.isArray((series as any).data) ? 
+        (series as any).data.map((point: any) => {
+          if (typeof point === 'number') return point;
+          if (typeof point === 'object' && point !== null) {
+            return {
+              ...point,
+              y: typeof point.y === 'number' ? point.y : 0,
+              name: point.name || '',
+              category: point.category || ''
+            }
+          }
+          return 0;
+        }) : []
+    }));
+
+    return mergedOptions
+  } catch (error) {
+    console.error('Error creating chart options:', error)
+    return defaultChartOptions
+  }
+}
+
+const ChartSection: FC<{ config: Partial<HighchartsOptions> | undefined }> = ({ config }) => (
+  <div className="mb-4">
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={getChartOptions(config)}
+    />
+  </div>
+)
+
 export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
   globalVariable,
-}) => (
+}) => {
+  useEffect(() => {
+    console.log('Global Variable Data:', globalVariable)
+    console.log('Line Chart Config:', globalVariable?.charts?.lineChartWithSmoothing?.highchartConfig)
+    console.log('Monthly Chart Config:', globalVariable?.charts?.monthlyColumnChart?.highchartConfig)
+    console.log('Weekday Chart Config:', globalVariable?.charts?.weekdayColumnChart?.highchartConfig)
+  }, [globalVariable])
+
+  return (
     <Card>
       <CardHeader>
         <CardTitle>{globalVariable?.name}</CardTitle>
@@ -37,28 +168,14 @@ export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
           <CardDescription>{globalVariable.description}</CardDescription>
         )}
       </CardHeader>
-        <CardContent id="chart-card" className="space-y-4">
-          <div className="card transparent-bg highcharts-container">
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={
-                globalVariable?.charts?.lineChartWithSmoothing?.highchartConfig
-              }
-            />
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={
-                globalVariable?.charts?.monthlyColumnChart?.highchartConfig
-              }
-            />
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={
-                globalVariable?.charts?.weekdayColumnChart?.highchartConfig
-              }
-            />
-          </div>
-        </CardContent>
+      <CardContent id="chart-card" className="space-y-4">
+        <div className="card transparent-bg highcharts-container">
+          <ChartSection config={globalVariable?.charts?.lineChartWithSmoothing?.highchartConfig} />
+          <ChartSection config={globalVariable?.charts?.monthlyColumnChart?.highchartConfig} />
+          <ChartSection config={globalVariable?.charts?.weekdayColumnChart?.highchartConfig} />
+        </div>
+      </CardContent>
       <CardFooter />
     </Card>
   )
+}

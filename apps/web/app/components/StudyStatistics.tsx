@@ -150,26 +150,31 @@ export function StudyStatistics({ statistics }: StudyStatisticsProps) {
     <div className="neobrutalist-container bg-white p-6 mb-8">
       <h2 className="neobrutalist-h2 mb-6">Quick Statistics</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {stats.map(({ label, value, suffix, explanation }) => value && (
-          <div key={label} className="neobrutalist-container bg-gray-50 p-4">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-sm">{label}</span>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <InfoIcon className="h-4 w-4 text-gray-500" />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="max-w-xs text-sm">{explanation}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+        {stats.map(({ label, value, suffix, explanation }) => {
+          // Only render if value exists and is not 0
+          if (!value && value !== 0) return null;
+          
+          return (
+            <div key={label} className="neobrutalist-container bg-gray-50 p-4">
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-sm">{label}</span>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <InfoIcon className="h-4 w-4 text-gray-500" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p className="max-w-xs text-sm">{explanation}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
+              <span className="text-lg">
+                {typeof value === 'number' ? value.toString() : value}{suffix || ''}
+              </span>
             </div>
-            <span className="text-lg">
-              {value}{suffix || ''}
-            </span>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   )

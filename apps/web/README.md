@@ -1,13 +1,15 @@
 ---
-title: "💊 OBJECTIVE: MAXIMUM CURE ACCELERATION 🚀"
-description: We are a borg-like entity devoted to minimizing suffering by any and all means necessary.
+title: "💊 OBJECTIVE: DISEASE ERADICATION 🚀"
+description: Help us create a world without disease.
 ---
 
-# 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
+# 💖 The World We Live In
+
+
 
 Billions of people are suffering needlessly because the current system of clinical research, diagnosis, and treatment sucks because:
 
-* ⏳ **Counterproductive Regulatory Barriers** to clinical research block life-saving treatments by 7-12 years
+* ⏳ Patients suffer and die for 
 * 🚫 **97% of patients** are excluded from clinical trials
 * 💰 **Drug development costs** of $2.6B are passed on to patients
 * ⏱️ **Terminal patients** wait 4+ years for breakthrough therapy approvals
@@ -23,13 +25,13 @@ The Disease Eradication Act creates:
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
 
-[👉 Read the Full Disease Eradication Act](docs/disease-eradication-act.md)
+[👉 Read the Full Disease Eradication Act](public/docs/disease-eradication-act.md)
 
 # 😕 Why are we doing this?
 
 The current system of clinical research, diagnosis, and treatment is failing the billions of people are suffering from chronic diseases.
 
-[👉 Problems we're trying to fix...](docs/stuff-that-sucks.md)
+[👉 Problems we're trying to fix...](public/docs/01-problem.md)
 
 # 🧪 Our Hypothesis
 
@@ -68,69 +70,69 @@ This is a very high-level overview of the architecture. The three primary primit
 2. [PersonalFDA Nodes](#2-personalfda-nodes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-![framework-diagram.png](docs/images/dfda-framework-diagram.png)
+![framework-diagram.png](public/img/dfda-framework-diagram.png)
 
 ## 1. Data Silo API Gateway Nodes
 
-![dfda-gateway-api-node-silo.jpg](docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
+![dfda-gateway-api-node-silo.jpg](public/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
 
-[Gateway API Nodes](docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
+[Gateway API Nodes](public/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
 
-**👉 [Learn More About Gateway APIs](docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
+**👉 [Learn More About Gateway APIs](public/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
 
 ## 2. PersonalFDA Nodes
 
-[PersonalFDA Nodes](docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
+[PersonalFDA Nodes](public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
 
-[PersonalFDA Nodes](docs/components/personal-fda-nodes/personal-fda-nodes.md) are composed of two components, a [Digital Twin Safe](docs/components/digital-twin-safe/digital-twin-safe.md) and a [personal AI agent](docs/components/optimiton-ai-agent/optomitron-ai-agent.md) applies causal inference algorithms to estimate how various factors affect your health.
+[PersonalFDA Nodes](public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are composed of two components, a [Digital Twin Safe](public/docs/components/digital-twin-safe/digital-twin-safe.md) and a [personal AI agent](public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) applies causal inference algorithms to estimate how various factors affect your health.
 
 ### 2.1. Digital Twin Safes
 
-![digital-twin-safe-no-text.jpg](docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
+![digital-twin-safe-no-text.jpg](public/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
-**👉[Learn More or Contribute to Digital Twin Safe](docs/components/digital-twin-safe/digital-twin-safe.md)**
+**👉[Learn More or Contribute to Digital Twin Safe](public/docs/components/digital-twin-safe/digital-twin-safe.md)**
 
 ### 2.2. Personal AI Agents
 
-[Personal AI agents](docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
+[Personal AI agents](public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](public/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
 
-[![data-import-and-analysis.gif](docs/images/data-import-and-analysis.gif)](docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
+[![data-import-and-analysis.gif](public/img/data-import-and-analysis.gif)](public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
 
-**👉[Learn More](docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
+**👉[Learn More](public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
 
 
 ## 3. Clinipedia—The Wikipedia of Clinical Research
 
-[![clinipedia_globe_circle.jpg](docs/components/clinipedia/clinipedia_globe_circle.jpg)](docs/components/clinipedia/clinipedia.md)
+[![clinipedia_globe_circle.jpg](public/docs/components/clinipedia/clinipedia_globe_circle.jpg)](public/docs/components/clinipedia/clinipedia.md)
 
-The [Clinipedia wiki](docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
+The [Clinipedia wiki](public/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-**[👉 Learn More or Contribute to the Clinipedia](docs/components/clinipedia/clinipedia.md)**
+**[👉 Learn More or Contribute to the Clinipedia](public/docs/components/clinipedia/clinipedia.md)**
 
 ### 3.1 Outcome Labels
 
-A key component of Clinipedia is [**Outcome Labels**](docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
+A key component of Clinipedia is [**Outcome Labels**](public/docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
 
-![outcome-labels.png](docs/components/outcome-labels/outcome-labels.png)
+![outcome-labels.png](public/docs/components/outcome-labels/outcome-labels.png)
 
-**👉 [Learn More About Outcome Labels](docs/components/outcome-labels/outcome-labels.md)**
+**👉 [Learn More About Outcome Labels](public/docs/components/outcome-labels/outcome-labels.md)**
 
 
 ### Features
 
-* [Data Collection](docs/components/data-collection/data-collection.md)
-* [Data Import](docs/components/data-import/data-import.md)
+* [Data Collection](public/docs/components/data-collection/data-collection.md)
+* [Data Import](public/docs/components/data-import/data-import.md)
 * [Data Analysis](#data-analysis)
    * [🏷️Outcome Labels](#-outcome-labels)
-   * [🔮Predictor Search Engine](docs/components/predictor-search-engine/predictor-search-engine.md)
-   * [🥕 Root Cause Analysis Reports](docs/components/root-cause-analysis-reports/root-cause-analysis-reports.md)
-   * [📜Observational Mega-Studies](docs/components/observational-studies/observational-studies.md)
-* [Real-Time Decision Support Notifications](docs/components/decision-support-notifications)
-* [No Code Health App Builder](docs/components/no-code-app-builder)
-* [Personal AI Agent](docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
-* [Browser Extension](docs/components/browser-extension)
+   * [🔮Predictor Search Engine](public/docs/components/predictor-search-engine/predictor-search-engine.md)
+   * [🥕 Root Cause Analysis Reports](public/docs/components/root-cause-analysis-reports/root-cause-analysis-reports.md)
+   * [📜Observational Mega-Studies](public/docs/components/observational-studies/observational-studies.md)
+* [Real-Time Decision Support Notifications](public/docs/components/decision-support-notifications)
+* [No Code Health App Builder](public/docs/components/no-code-app-builder)
+* [Personal AI Agent](public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
+* [Browser Extension](public/docs/components/browser-extension)
 
 <p align="center">
 
@@ -149,13 +151,13 @@ chronic illness.
 
 Web and mobile push notifications with action buttons.
 
-![web notification action buttons](docs/components/data-collection/web-notification-action-buttons.png)
+![web notification action buttons](public/docs/components/data-collection/web-notification-action-buttons.png)
 
 ### Browser Extensions
 
 By using the Browser Extension, you can track your mood, symptoms, or any outcome you want to optimize in a fraction of a second using a unique popup interface.
 
-![Chrome Extension](docs/components/browser-extension/browser-extension.png)
+![Chrome Extension](public/docs/components/browser-extension/browser-extension.png)
 
 ### Data Analysis
 
@@ -163,29 +165,65 @@ The Analytics Engine performs temporal precedence accounting, longitudinal data 
 
 It then pairs every combination of variables and identifies likely causal relationships using correlation mining algorithms in conjunction with a pharmacokinetic model.  The algorithms first identify the onset delay and duration of action for each hypothetical factor. It then identifies the optimal daily values for each factor.
 
-[👉 More info about data analysis](docs/components/data-analysis/data-analysis.md)
+[👉 More info about data analysis](public/docs/components/data-analysis/data-analysis.md)
 
 ### 🏷 Outcome Labels
 
-![outcome-labels-plugin.png](docs/components/outcome-labels/outcome-labels.png)
+![outcome-labels-plugin.png](public/docs/components/outcome-labels/outcome-labels.png)
 
-[More info about outcome labels](docs/components/outcome-labels/outcome-labels.md)
+[More info about outcome labels](public/docs/components/outcome-labels/outcome-labels.md)
 
 ### Real-time Decision Support Notifications
 
-![](docs/components/decision-support-notifications/notifications-screenshot-slide.png)
+![](public/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
 
-[More info about real time decision support](docs/components/outcome-labels/outcome-labels.md)
+[More info about real time decision support](public/docs/components/outcome-labels/outcome-labels.md)
 
 ### 📈 Predictor Search Engine
 
-[![Predictor Search Engine](docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](docs/components/predictor-search-engine/predictor-search-engine.md)
+[![Predictor Search Engine](public/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](public/docs/components/predictor-search-engine/predictor-search-engine.md)
 
-[👉 More info about the predictor search engine...](docs/components/predictor-search-engine/predictor-search-engine.md)
+[👉 More info about the predictor search engine...](public/docs/components/predictor-search-engine/predictor-search-engine.md)
 
 ### Auto-Generated Observational Studies
 
-![](docs/components/observational-studies/observational-studies.png)
+![](public/docs/components/observational-studies/observational-studies.png)
 
-[👉 More info about observational studies...](docs/components/observational-studies/observational-studies.md)
+[👉 More info about observational studies...](public/docs/components/observational-studies/observational-studies.md)
+
+## Deploying to AWS Amplify
+
+1. Install and configure the AWS Amplify CLI:
+```bash
+npm install -g @aws-amplify/cli
+amplify configure
+```
+
+2. Initialize Amplify in your project:
+```bash
+amplify init
+```
+
+3. Push your code to a Git repository (GitHub, GitLab, or BitBucket).
+
+4. Go to AWS Amplify Console and click "New App" > "Host Web App"
+
+5. Connect your repository and select the branch you want to deploy.
+
+6. Use the following build settings (they are already configured in amplify.yml):
+   - Build Command: pnpm run build
+   - Output Directory: .next
+
+7. Add the following environment variables in Amplify Console:
+   - `NEXTAUTH_URL`: Your production URL
+   - `NEXTAUTH_SECRET`: Your auth secret
+   - Add any other environment variables from your .env file
+
+8. Deploy! Amplify will automatically deploy new changes when you push to your connected branch.
+
+### Important Notes
+- Server Actions are supported out of the box with this configuration
+- The deployment uses pnpm for faster, more reliable builds
+- Build cache is enabled for node_modules and pnpm store
+- The configuration supports Next.js 14 SSR features
 
