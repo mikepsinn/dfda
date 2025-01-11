@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { FC, useEffect } from "react"
-import Highcharts, { Options as HighchartsOptions } from "highcharts"
+import Highcharts, { Options as HighchartsOptions, SeriesOptionsType } from "highcharts"
 import HighchartsReact from "highcharts-react-official"
 
 import { GlobalVariable } from "@/types/models/GlobalVariable"
@@ -42,11 +42,29 @@ const defaultChartOptions: HighchartsOptions = {
     }
   },
   tooltip: {
-    enabled: true
+    enabled: true,
+    shared: false,
+    useHTML: false,
+    formatter: function() {
+      const point = this.point;
+      return `<b>${point.name || point.category || ''}</b><br/>${this.series.name}: ${point.y}`;
+    }
   },
   plotOptions: {
     series: {
-      animation: false
+      animation: false,
+      states: {
+        hover: {
+          enabled: true
+        }
+      },
+      point: {
+        events: {}
+      }
+    },
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
     }
   },
   series: [{
@@ -74,8 +92,8 @@ export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
     console.log('Weekday Chart Config:', globalVariable?.charts?.weekdayColumnChart?.highchartConfig)
   }, [globalVariable])
 
-  const getChartOptions = (config: Partial<HighchartsOptions> | undefined): HighchartsOptions => {
-    if (!config) return defaultChartOptions
+  const getChartOptions = (config: Partial<HighchartsOptions> | undefined): HighchartsOptions | null => {
+    if (!config) return null
     
     try {
       const mergedOptions: HighchartsOptions = {
@@ -86,22 +104,63 @@ export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
           ...config.chart,
           animation: false
         },
+        tooltip: {
+          enabled: true,
+          shared: false,
+          useHTML: false,
+          formatter: function() {
+            const point = this.point;
+            return `<b>${point.name || point.category || ''}</b><br/>${this.series.name}: ${point.y}`;
+          }
+        },
         plotOptions: {
           ...defaultChartOptions.plotOptions,
           ...config.plotOptions,
           series: {
             ...defaultChartOptions.plotOptions?.series,
             ...config.plotOptions?.series,
-            animation: false
+            animation: false,
+            states: {
+              hover: {
+                enabled: true
+              }
+            },
+            point: {
+              events: {}
+            }
           }
         }
       }
 
-      // Validate that required properties exist
+      // Validate that required properties exist and data is properly formatted
       if (!mergedOptions.series || !Array.isArray(mergedOptions.series)) {
         console.warn('Invalid series configuration, using default')
         return defaultChartOptions
       }
+
+      // Ensure each series has valid data
+      mergedOptions.series = mergedOptions.series.map((series: SeriesOptionsType) => {
+        const validData = Array.isArray((series as any).data) ? 
+          (series as any).data.map((point: any) => {
+            if (typeof point === 'number') {
+              return point;
+            }
+            if (typeof point === 'object' && point !== null) {
+              return {
+                ...point,
+                y: typeof point.y === 'number' ? point.y : 0,
+                name: point.name || '',
+                category: point.category || ''
+              }
+            }
+            return 0;
+          }) : [];
+
+        return {
+          ...series,
+          data: validData
+        };
+      });
 
       return mergedOptions
     } catch (error) {

@@ -2,13 +2,12 @@
 
 import { Study } from '@/types/models/Study'
 import { Button } from '@/components/ui/button'
-import Highcharts from "highcharts"
 import { useRouter } from 'next/navigation'
 import { GlobalVariableCharts } from '@/components/globalVariables/global-variable-charts'
-import HighchartsReact from 'highcharts-react-official'
 import StudyHeaderHtml from './StudyHeaderHtml'
 import { SanitizedContent } from './SanitizedContent'
 import { StudyStatistics } from './StudyStatistics'
+import StudyCharts from './StudyCharts'
 import { Link, Twitter, Facebook, Linkedin } from 'lucide-react'
 
 interface StudyCardProps {
@@ -191,29 +190,7 @@ export default function StudyCard({ study }: StudyCardProps) {
       )}
 
       {/* Study Charts */}
-      {study.studyCharts && (
-        <div className="neobrutalist-container bg-white p-6 mb-8">
-          <h2 className="neobrutalist-h2 mb-6">Study Data</h2>
-          <div className="grid grid-cols-1 gap-8">
-            {Object.entries(study.studyCharts).map(([key, chart]) => (
-              chart && chart.highchartConfig ? (
-                <div key={key} className="item-text-wrap">
-                  {chart.chartTitle && (
-                    <h3 className="neobrutalist-h3 mb-4">{chart.chartTitle}</h3>
-                  )}
-                  <HighchartsReact
-                    highcharts={Highcharts}
-                    options={chart.highchartConfig}
-                  />
-                  {chart.explanation && (
-                    <p className="neobrutalist-p mt-4">{chart.explanation}</p>
-                  )}
-                </div>
-              ) : null
-            ))}
-          </div>
-        </div>
-      )}
+      {study.studyCharts && <StudyCharts studyCharts={study.studyCharts} />}
 
       {/* Action Buttons */}
       <div className="flex justify-center gap-4">
