@@ -1,13 +1,15 @@
 ---
-title: "💊 OBJECTIVE: MAXIMUM CURE ACCELERATION 🚀"
-description: We are a borg-like entity devoted to minimizing suffering by any and all means necessary.
+title: "💊 OBJECTIVE: DISEASE ERADICATION 🚀"
+description: Help us create a world without disease.
 ---
 
-# 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
+# 💖 The World We Live In
+
+
 
 Billions of people are suffering needlessly because the current system of clinical research, diagnosis, and treatment sucks because:
 
-* ⏳ **Counterproductive Regulatory Barriers** to clinical research block life-saving treatments by 7-12 years
+* ⏳ Patients suffer and die for 
 * 🚫 **97% of patients** are excluded from clinical trials
 * 💰 **Drug development costs** of $2.6B are passed on to patients
 * ⏱️ **Terminal patients** wait 4+ years for breakthrough therapy approvals
