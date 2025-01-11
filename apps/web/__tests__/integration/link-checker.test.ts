@@ -614,7 +614,7 @@ describe('Integration - Link Checker', () => {
     return '\nBroken Links Report:\n' + [header, separator, ...rows].join('\n') + '\n'
   }
 
-  it.skip('should validate all links in the codebase', async () => {
+  it('should validate all links in the codebase', async () => {
     // Check if dev server is running first
     const serverRunning = await isDevServerRunning()
     if (!serverRunning) {
