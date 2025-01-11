@@ -191,3 +191,39 @@ It then pairs every combination of variables and identifies likely causal relati
 
 [👉 More info about observational studies...](docs/components/observational-studies/observational-studies.md)
 
+## Deploying to AWS Amplify
+
+1. Install and configure the AWS Amplify CLI:
+```bash
+npm install -g @aws-amplify/cli
+amplify configure
+```
+
+2. Initialize Amplify in your project:
+```bash
+amplify init
+```
+
+3. Push your code to a Git repository (GitHub, GitLab, or BitBucket).
+
+4. Go to AWS Amplify Console and click "New App" > "Host Web App"
+
+5. Connect your repository and select the branch you want to deploy.
+
+6. Use the following build settings (they are already configured in amplify.yml):
+   - Build Command: pnpm run build
+   - Output Directory: .next
+
+7. Add the following environment variables in Amplify Console:
+   - `NEXTAUTH_URL`: Your production URL
+   - `NEXTAUTH_SECRET`: Your auth secret
+   - Add any other environment variables from your .env file
+
+8. Deploy! Amplify will automatically deploy new changes when you push to your connected branch.
+
+### Important Notes
+- Server Actions are supported out of the box with this configuration
+- The deployment uses pnpm for faster, more reliable builds
+- Build cache is enabled for node_modules and pnpm store
+- The configuration supports Next.js 14 SSR features
+

@@ -82,6 +82,74 @@ interface GlobalVariableChartsProps
   globalVariable: GlobalVariable
 }
 
+const getChartOptions = (config: Partial<HighchartsOptions> | undefined): HighchartsOptions | null => {
+  if (!config) return null
+  
+  try {
+    const mergedOptions: HighchartsOptions = {
+      ...defaultChartOptions,
+      ...config,
+      chart: {
+        ...defaultChartOptions.chart,
+        ...config.chart,
+        animation: false
+      },
+      tooltip: defaultChartOptions.tooltip,
+      plotOptions: {
+        ...defaultChartOptions.plotOptions,
+        ...config.plotOptions,
+        series: {
+          ...defaultChartOptions.plotOptions?.series,
+          ...config.plotOptions?.series,
+          animation: false,
+          states: {
+            hover: { enabled: true }
+          },
+          point: { events: {} }
+        }
+      }
+    }
+
+    // Validate that required properties exist and data is properly formatted
+    if (!mergedOptions.series || !Array.isArray(mergedOptions.series)) {
+      console.warn('Invalid series configuration, using default')
+      return defaultChartOptions
+    }
+
+    // Ensure each series has valid data
+    mergedOptions.series = mergedOptions.series.map((series: SeriesOptionsType) => ({
+      ...series,
+      data: Array.isArray((series as any).data) ? 
+        (series as any).data.map((point: any) => {
+          if (typeof point === 'number') return point;
+          if (typeof point === 'object' && point !== null) {
+            return {
+              ...point,
+              y: typeof point.y === 'number' ? point.y : 0,
+              name: point.name || '',
+              category: point.category || ''
+            }
+          }
+          return 0;
+        }) : []
+    }));
+
+    return mergedOptions
+  } catch (error) {
+    console.error('Error creating chart options:', error)
+    return defaultChartOptions
+  }
+}
+
+const ChartSection: FC<{ config: Partial<HighchartsOptions> | undefined }> = ({ config }) => (
+  <div className="mb-4">
+    <HighchartsReact
+      highcharts={Highcharts}
+      options={getChartOptions(config)}
+    />
+  </div>
+)
+
 export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
   globalVariable,
 }) => {
@@ -91,83 +159,6 @@ export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
     console.log('Monthly Chart Config:', globalVariable?.charts?.monthlyColumnChart?.highchartConfig)
     console.log('Weekday Chart Config:', globalVariable?.charts?.weekdayColumnChart?.highchartConfig)
   }, [globalVariable])
-
-  const getChartOptions = (config: Partial<HighchartsOptions> | undefined): HighchartsOptions | null => {
-    if (!config) return null
-    
-    try {
-      const mergedOptions: HighchartsOptions = {
-        ...defaultChartOptions,
-        ...config,
-        chart: {
-          ...defaultChartOptions.chart,
-          ...config.chart,
-          animation: false
-        },
-        tooltip: {
-          enabled: true,
-          shared: false,
-          useHTML: false,
-          formatter: function() {
-            const point = this.point;
-            return `<b>${point.name || point.category || ''}</b><br/>${this.series.name}: ${point.y}`;
-          }
-        },
-        plotOptions: {
-          ...defaultChartOptions.plotOptions,
-          ...config.plotOptions,
-          series: {
-            ...defaultChartOptions.plotOptions?.series,
-            ...config.plotOptions?.series,
-            animation: false,
-            states: {
-              hover: {
-                enabled: true
-              }
-            },
-            point: {
-              events: {}
-            }
-          }
-        }
-      }
-
-      // Validate that required properties exist and data is properly formatted
-      if (!mergedOptions.series || !Array.isArray(mergedOptions.series)) {
-        console.warn('Invalid series configuration, using default')
-        return defaultChartOptions
-      }
-
-      // Ensure each series has valid data
-      mergedOptions.series = mergedOptions.series.map((series: SeriesOptionsType) => {
-        const validData = Array.isArray((series as any).data) ? 
-          (series as any).data.map((point: any) => {
-            if (typeof point === 'number') {
-              return point;
-            }
-            if (typeof point === 'object' && point !== null) {
-              return {
-                ...point,
-                y: typeof point.y === 'number' ? point.y : 0,
-                name: point.name || '',
-                category: point.category || ''
-              }
-            }
-            return 0;
-          }) : [];
-
-        return {
-          ...series,
-          data: validData
-        };
-      });
-
-      return mergedOptions
-    } catch (error) {
-      console.error('Error creating chart options:', error)
-      return defaultChartOptions
-    }
-  }
 
   return (
     <Card>
@@ -179,24 +170,9 @@ export const GlobalVariableCharts: FC<GlobalVariableChartsProps> = ({
       </CardHeader>
       <CardContent id="chart-card" className="space-y-4">
         <div className="card transparent-bg highcharts-container">
-          <div className="mb-4">
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={getChartOptions(globalVariable?.charts?.lineChartWithSmoothing?.highchartConfig as Partial<HighchartsOptions>)}
-            />
-          </div>
-          <div className="mb-4">
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={getChartOptions(globalVariable?.charts?.monthlyColumnChart?.highchartConfig as Partial<HighchartsOptions>)}
-            />
-          </div>
-          <div className="mb-4">
-            <HighchartsReact
-              highcharts={Highcharts}
-              options={getChartOptions(globalVariable?.charts?.weekdayColumnChart?.highchartConfig as Partial<HighchartsOptions>)}
-            />
-          </div>
+          <ChartSection config={globalVariable?.charts?.lineChartWithSmoothing?.highchartConfig} />
+          <ChartSection config={globalVariable?.charts?.monthlyColumnChart?.highchartConfig} />
+          <ChartSection config={globalVariable?.charts?.weekdayColumnChart?.highchartConfig} />
         </div>
       </CardContent>
       <CardFooter />
