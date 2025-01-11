@@ -7,13 +7,13 @@ import { withAuth } from "next-auth/middleware"
 const redirects = [
   {
     source: "/dfda/right-to-trial",
-    destination: "/docs/cure-acceleration-act",
+    destination: "/docs/disease-eradication-act",
     permanent: true,
     description: "Redirect to new name of the Right to Trial Act",
   },
   {
     source: "/dfda/right-to-trial-act",
-    destination: "/docs/cure-acceleration-act",
+    destination: "/docs/disease-eradication-act",
     permanent: true,
     description: "Redirect to new name of the Right to Trial Act",
   },
@@ -25,9 +25,9 @@ const redirects = [
   },
   {
     source: "/cure-acceleration-act",
-    destination: "/docs/cure-acceleration-act",
+    destination: "/docs/disease-eradication-act",
     permanent: true,
-    description: "Redirect to Cure Acceleration Act",
+    description: "Redirect to Disease Eradication Act",
   },
   // Add more redirects here
   // Make sure to add the source path to the matcher array below 👇
@@ -117,5 +117,6 @@ export const config = {
     "/dfda",
     "/dfda/:path*",
     "/cure-acceleration-act",
+    "/right-to-trial-act",
   ],
 }

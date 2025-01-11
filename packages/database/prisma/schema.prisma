@@ -11,29 +11,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model action_events {
-  id              BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  batch_id        String    @db.Char(36)
-  user_id         BigInt    @db.UnsignedBigInt
-  name            String    @db.VarChar(255)
-  actionable_type String    @db.VarChar(255)
-  actionable_id   BigInt    @db.UnsignedBigInt
-  target_type     String    @db.VarChar(255)
-  target_id       BigInt    @db.UnsignedBigInt
-  model_type      String    @db.VarChar(255)
-  model_id        BigInt?   @db.UnsignedBigInt
-  fields          String    @db.Text
-  status          String    @default("running") @db.VarChar(25)
-  exception       String    @db.Text
-  created_at      DateTime? @db.Timestamp(0)
-  updated_at      DateTime? @db.Timestamp(0)
-  original        String?   @db.Text
-  changes         String?   @db.Text
 
-  @@index([actionable_type, actionable_id], map: "action_events_actionable_type_actionable_id_index")
-  @@index([batch_id, model_type, model_id], map: "action_events_batch_id_model_type_model_id_index")
-  @@index([user_id], map: "action_events_user_id_index")
-}
 
 model aggregate_correlations {
   id                                                                                          Int                                     @id @default(autoincrement())
@@ -75,7 +53,7 @@ model aggregate_correlations {
   grouped_cause_value_closest_to_value_predicting_high_outcome                                Float
   client_id                                                                                   String?                                 @db.VarChar(255)
   published_at                                                                                DateTime?                               @db.Timestamp(0)
-  wp_post_id                                                                                  BigInt?                                 @db.UnsignedBigInt
+  dfda_post_id                                                                                  BigInt?                                 @db.UnsignedBigInt
   cause_variable_category_id                                                                  Int                                     @db.UnsignedTinyInt
   effect_variable_category_id                                                                 Int                                     @db.UnsignedTinyInt
   interesting_variable_category_pair                                                          Boolean
@@ -120,7 +98,7 @@ model aggregate_correlations {
   oa_clients                                                                                  oa_clients?                             @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "aggregate_correlations_client_id_fk")
   variable_categories_aggregate_correlations_effect_variable_category_idTovariable_categories variable_categories                     @relation("aggregate_correlations_effect_variable_category_idTovariable_categories", fields: [effect_variable_category_id], references: [id], onUpdate: Restrict, map: "aggregate_correlations_effect_variable_category_id_fk")
   variables_aggregate_correlations_effect_variable_idTovariables                              variables                               @relation("aggregate_correlations_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "aggregate_correlations_effect_variables_id_fk")
-  wp_posts                                                                                    wp_posts?                               @relation(fields: [wp_post_id], references: [ID], map: "aggregate_correlations_wp_posts_ID_fk")
+  dfda_posts                                                                                    dfda_posts?                               @relation(fields: [dfda_post_id], references: [ID], map: "aggregate_correlations_dfda_posts_ID_fk")
   correlation_causality_votes                                                                 correlation_causality_votes[]
   correlation_usefulness_votes                                                                correlation_usefulness_votes[]
   correlations                                                                                correlations[]
@@ -135,7 +113,7 @@ model aggregate_correlations {
   @@index([client_id], map: "aggregate_correlations_client_id_fk")
   @@index([effect_variable_category_id], map: "aggregate_correlations_effect_variable_category_id_fk")
   @@index([effect_variable_id], map: "aggregate_correlations_effect_variable_id_index")
-  @@index([wp_post_id], map: "aggregate_correlations_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "aggregate_correlations_dfda_posts_ID_fk")
 }
 
 model applications {
@@ -180,7 +158,7 @@ model applications {
   additional_settings                                     String?         @db.Text
   app_status                                              String?         @db.Text
   build_enabled                                           Boolean         @default(false)
-  wp_post_id                                              BigInt?         @db.UnsignedBigInt
+  dfda_post_id                                              BigInt?         @db.UnsignedBigInt
   number_of_collaborators_where_app                       Int?            @db.UnsignedInt
   is_public                                               Boolean?
   sort_order                                              Int
@@ -188,129 +166,16 @@ model applications {
   oa_clients                                              oa_clients      @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "applications_client_id_fk")
   variables_applications_outcome_variable_idTovariables   variables?      @relation("applications_outcome_variable_idTovariables", fields: [outcome_variable_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "applications_outcome_variable_id_fk")
   variables_applications_predictor_variable_idTovariables variables?      @relation("applications_predictor_variable_idTovariables", fields: [predictor_variable_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "applications_predictor_variable_id_fk")
-  wp_users                                                wp_users        @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "applications_user_id_fk")
-  wp_posts                                                wp_posts?       @relation(fields: [wp_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "applications_wp_posts_ID_fk")
+  dfda_users                                                dfda_users        @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "applications_user_id_fk")
+  dfda_posts                                                dfda_posts?       @relation(fields: [dfda_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "applications_dfda_posts_ID_fk")
   collaborators                                           collaborators[]
 
   @@index([outcome_variable_id], map: "applications_outcome_variable_id_fk")
   @@index([predictor_variable_id], map: "applications_predictor_variable_id_fk")
   @@index([user_id], map: "applications_user_id_fk")
-  @@index([wp_post_id], map: "applications_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "applications_dfda_posts_ID_fk")
 }
 
-model button_clicks {
-  card_id      String     @db.VarChar(80)
-  button_id    String     @db.VarChar(80)
-  client_id    String     @db.VarChar(80)
-  created_at   DateTime   @default(now()) @db.Timestamp(0)
-  deleted_at   DateTime?  @db.Timestamp(0)
-  id           Int        @id @default(autoincrement())
-  input_fields String?    @db.Text
-  intent_name  String?    @db.VarChar(80)
-  parameters   String?    @db.Text
-  updated_at   DateTime   @default(now()) @db.Timestamp(0)
-  user_id      BigInt     @db.UnsignedBigInt
-  oa_clients   oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "button_clicks_client_id_fk")
-  wp_users     wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "button_clicks_user_id_fk")
-
-  @@index([client_id], map: "button_clicks_client_id_fk")
-  @@index([user_id], map: "button_clicks_user_id_fk")
-}
-
-model buttons {
-  accessibility_text     String?    @db.VarChar(100)
-  action                 String?    @db.VarChar(20)
-  additional_information String?    @db.VarChar(20)
-  client_id              String     @db.VarChar(80)
-  color                  String?    @db.VarChar(20)
-  confirmation_text      String?    @db.VarChar(100)
-  created_at             DateTime   @default(now()) @db.Timestamp(0)
-  deleted_at             DateTime?  @db.Timestamp(0)
-  function_name          String?    @db.VarChar(20)
-  function_parameters    String?    @db.Text
-  html                   String?    @db.VarChar(200)
-  element_id             String     @db.VarChar(80)
-  image                  String?    @db.VarChar(100)
-  input_fields           String?    @db.Text
-  ion_icon               String?    @db.VarChar(20)
-  link                   String?    @db.VarChar(100)
-  state_name             String?    @db.VarChar(20)
-  state_params           String?    @db.Text
-  success_alert_body     String?    @db.VarChar(200)
-  success_alert_title    String?    @db.VarChar(80)
-  success_toast_text     String?    @db.VarChar(80)
-  text                   String?    @db.VarChar(80)
-  title                  String?    @db.VarChar(80)
-  tooltip                String?    @db.VarChar(80)
-  type                   String     @db.VarChar(80)
-  updated_at             DateTime   @default(now()) @db.Timestamp(0)
-  user_id                BigInt     @db.UnsignedBigInt
-  id                     Int        @id @unique(map: "buttons_id_uindex") @default(autoincrement())
-  slug                   String?    @unique(map: "buttons_slug_uindex") @db.VarChar(200)
-  oa_clients             oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "buttons_client_id_fk")
-  wp_users               wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "buttons_user_id_fk")
-
-  @@index([client_id], map: "buttons_client_id_fk")
-  @@index([user_id], map: "buttons_user_id_fk")
-}
-
-model cards {
-  action_sheet_buttons String?    @db.Text
-  avatar               String?    @db.VarChar(100)
-  avatar_circular      String?    @db.VarChar(100)
-  background_color     String?    @db.VarChar(20)
-  buttons              String?    @db.Text
-  client_id            String     @db.VarChar(80)
-  content              String?    @db.Text
-  created_at           DateTime   @default(now()) @db.Timestamp(0)
-  deleted_at           DateTime?  @db.Timestamp(0)
-  header_title         String?    @db.VarChar(100)
-  html                 String?    @db.Text
-  html_content         String?    @db.Text
-  element_id           String     @db.VarChar(80)
-  image                String?    @db.VarChar(100)
-  input_fields         String?    @db.Text
-  intent_name          String?    @db.VarChar(80)
-  ion_icon             String?    @db.VarChar(20)
-  link                 String?    @db.VarChar(2083)
-  parameters           String?    @db.Text
-  sharing_body         String?    @db.Text
-  sharing_buttons      String?    @db.Text
-  sharing_title        String?    @db.VarChar(80)
-  sub_header           String?    @db.VarChar(80)
-  sub_title            String?    @db.VarChar(80)
-  title                String?    @db.VarChar(80)
-  type                 String     @db.VarChar(80)
-  updated_at           DateTime   @default(now()) @db.Timestamp(0)
-  user_id              BigInt     @db.UnsignedBigInt
-  url                  String?    @db.VarChar(2083)
-  id                   Int        @id
-  slug                 String?    @unique(map: "cards_slug_uindex") @db.VarChar(200)
-  oa_clients           oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "cards_client_id_fk")
-  wp_users             wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "cards_user_id_fk")
-
-  @@index([client_id], map: "cards_client_id_fk")
-  @@index([user_id], map: "cards_user_id_fk")
-}
-
-model checks {
-  id                                          Int       @id @default(autoincrement()) @db.UnsignedInt
-  host_id                                     Int       @db.UnsignedInt
-  type                                        String    @db.VarChar(255)
-  status                                      String?   @db.VarChar(255)
-  enabled                                     Boolean   @default(true)
-  last_run_message                            String?   @db.Text
-  last_run_output                             Json?
-  last_ran_at                                 DateTime? @db.Timestamp(0)
-  next_run_in_minutes                         Int?
-  started_throttling_failing_notifications_at DateTime? @db.Timestamp(0)
-  custom_properties                           Json?
-  created_at                                  DateTime? @db.Timestamp(0)
-  updated_at                                  DateTime? @db.Timestamp(0)
-  hosts                                       hosts     @relation(fields: [host_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "checks_host_id_foreign")
-
-  @@index([host_id], map: "checks_host_id_foreign")
-}
 
 model child_parents {
   id                                              Int       @id @default(autoincrement()) @db.UnsignedInt
@@ -320,91 +185,13 @@ model child_parents {
   created_at                                      DateTime  @default(now()) @db.Timestamp(0)
   updated_at                                      DateTime  @default(now()) @db.Timestamp(0)
   deleted_at                                      DateTime? @db.Timestamp(0)
-  wp_users_child_parents_child_user_idTowp_users  wp_users  @relation("child_parents_child_user_idTowp_users", fields: [child_user_id], references: [ID], onUpdate: Restrict, map: "child_parents_wp_users_ID_fk")
-  wp_users_child_parents_parent_user_idTowp_users wp_users  @relation("child_parents_parent_user_idTowp_users", fields: [parent_user_id], references: [ID], onUpdate: Restrict, map: "child_parents_wp_users_ID_fk_2")
+  dfda_users_child_parents_child_user_idTodfda_users  dfda_users  @relation("child_parents_child_user_idTodfda_users", fields: [child_user_id], references: [ID], onUpdate: Restrict, map: "child_parents_dfda_users_ID_fk")
+  dfda_users_child_parents_parent_user_idTodfda_users dfda_users  @relation("child_parents_parent_user_idTodfda_users", fields: [parent_user_id], references: [ID], onUpdate: Restrict, map: "child_parents_dfda_users_ID_fk_2")
 
   @@unique([child_user_id, parent_user_id], map: "child_user_id_parent_user_id_uindex")
-  @@index([parent_user_id], map: "child_parents_wp_users_ID_fk_2")
+  @@index([parent_user_id], map: "child_parents_dfda_users_ID_fk_2")
 }
 
-model clockwork {
-  id                       String  @id @db.VarChar(100)
-  version                  Int?
-  type                     String? @db.VarChar(100)
-  time                     Float?
-  method                   String? @db.VarChar(10)
-  url                      String? @db.MediumText
-  uri                      String? @db.MediumText
-  headers                  String? @db.MediumText
-  controller               String? @db.VarChar(250)
-  getData                  String? @db.MediumText
-  postData                 String? @db.MediumText
-  requestData              String? @db.MediumText
-  sessionData              String? @db.MediumText
-  authenticatedUser        String? @db.MediumText
-  cookies                  String? @db.MediumText
-  responseTime             Float?
-  responseStatus           Int?
-  responseDuration         Float?
-  memoryUsage              Float?
-  middleware               String? @db.MediumText
-  databaseQueries          String? @db.MediumText
-  databaseQueriesCount     Int?
-  databaseSlowQueries      Int?
-  databaseSelects          Int?
-  databaseInserts          Int?
-  databaseUpdates          Int?
-  databaseDeletes          Int?
-  databaseOthers           Int?
-  databaseDuration         Float?
-  cacheQueries             String? @db.MediumText
-  cacheReads               Int?
-  cacheHits                Int?
-  cacheWrites              Int?
-  cacheDeletes             Int?
-  cacheTime                Float?
-  modelsActions            String? @db.MediumText
-  modelsRetrieved          String? @db.MediumText
-  modelsCreated            String? @db.MediumText
-  modelsUpdated            String? @db.MediumText
-  modelsDeleted            String? @db.MediumText
-  redisCommands            String? @db.MediumText
-  queueJobs                String? @db.MediumText
-  timelineData             String? @db.MediumText
-  log                      String? @db.MediumText
-  events                   String? @db.MediumText
-  routes                   String? @db.MediumText
-  notifications            String? @db.MediumText
-  emailsData               String? @db.MediumText
-  viewsData                String? @db.MediumText
-  userData                 String? @db.MediumText
-  subrequests              String? @db.MediumText
-  xdebug                   String? @db.MediumText
-  commandName              String? @db.MediumText
-  commandArguments         String? @db.MediumText
-  commandArgumentsDefaults String? @db.MediumText
-  commandOptions           String? @db.MediumText
-  commandOptionsDefaults   String? @db.MediumText
-  commandExitCode          Int?
-  commandOutput            String? @db.MediumText
-  jobName                  String? @db.MediumText
-  jobDescription           String? @db.MediumText
-  jobStatus                String? @db.MediumText
-  jobPayload               String? @db.MediumText
-  jobQueue                 String? @db.MediumText
-  jobConnection            String? @db.MediumText
-  jobOptions               String? @db.MediumText
-  testName                 String? @db.MediumText
-  testStatus               String? @db.MediumText
-  testStatusMessage        String? @db.MediumText
-  testAsserts              String? @db.MediumText
-  clientMetrics            String? @db.MediumText
-  webVitals                String? @db.MediumText
-  parent                   String? @db.MediumText
-  updateToken              String? @db.VarChar(100)
-
-  @@index([time], map: "clockwork_time_index")
-}
 
 model cohort_studies {
   id                                                     Int         @id
@@ -424,7 +211,7 @@ model cohort_studies {
   updated_at                                             DateTime    @default(now()) @db.Timestamp(0)
   client_id                                              String?     @db.VarChar(255)
   published_at                                           DateTime?   @db.Timestamp(0)
-  wp_post_id                                             Int?
+  dfda_post_id                                             Int?
   cohort_correlation_id                                  Int?
   newest_data_at                                         DateTime?   @db.Timestamp(0)
   analysis_requested_at                                  DateTime?   @db.Timestamp(0)
@@ -441,7 +228,7 @@ model cohort_studies {
   variables_cohort_studies_cause_variable_idTovariables  variables   @relation("cohort_studies_cause_variable_idTovariables", fields: [cause_variable_id], references: [id], onUpdate: Restrict, map: "cohort_studies_cause_variable_id_variables_id_fk")
   oa_clients                                             oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "cohort_studies_client_id_fk")
   variables_cohort_studies_effect_variable_idTovariables variables   @relation("cohort_studies_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "cohort_studies_effect_variable_id_variables_id_fk")
-  wp_users                                               wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "cohort_studies_user_id_fk")
+  dfda_users                                               dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "cohort_studies_user_id_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id], map: "user_cause_effect")
   @@index([cause_variable_id], map: "cause_variable_id")
@@ -491,7 +278,7 @@ model cohort_study_statistics {
   grouped_cause_value_closest_to_value_predicting_high_outcome                                 Float
   client_id                                                                                    String?                                  @db.VarChar(255)
   published_at                                                                                 DateTime?                                @db.Timestamp(0)
-  wp_post_id                                                                                   BigInt?                                  @db.UnsignedBigInt
+  dfda_post_id                                                                                   BigInt?                                  @db.UnsignedBigInt
   cause_variable_category_id                                                                   Int                                      @db.UnsignedTinyInt
   effect_variable_category_id                                                                  Int                                      @db.UnsignedTinyInt
   interesting_variable_category_pair                                                           Boolean
@@ -556,7 +343,7 @@ model collaborators {
   client_id    String?            @db.VarChar(80)
   applications applications       @relation(fields: [app_id], references: [id], onDelete: Cascade, map: "collaborators_applications_id_fk")
   oa_clients   oa_clients?        @relation(fields: [client_id], references: [client_id], onDelete: Cascade, map: "collaborators_client_id_fk")
-  wp_users     wp_users           @relation(fields: [user_id], references: [ID], onDelete: Cascade, map: "collaborators_user_id_fk")
+  dfda_users     dfda_users           @relation(fields: [user_id], references: [ID], onDelete: Cascade, map: "collaborators_user_id_fk")
 
   @@unique([user_id, client_id], map: "collaborators_user_client_index")
   @@index([app_id], map: "collaborators_applications_id_fk")
@@ -611,7 +398,7 @@ model connections {
   reason_for_import                 String?              @db.VarChar(255)
   user_error_message                String?              @db.Text
   internal_error_message            String?              @db.Text
-  wp_post_id                        BigInt?              @db.UnsignedBigInt
+  dfda_post_id                        BigInt?              @db.UnsignedBigInt
   number_of_connector_imports       Int?                 @db.UnsignedInt
   number_of_connector_requests      Int?                 @db.UnsignedInt
   credentials                       String?              @db.Text
@@ -623,8 +410,8 @@ model connections {
   meta                              String?              @db.Text
   oa_clients                        oa_clients?          @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "connections_client_id_fk")
   connectors                        connectors           @relation(fields: [connector_id], references: [id], onUpdate: Restrict, map: "connections_connectors_id_fk")
-  wp_users                          wp_users             @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "connections_user_id_fk")
-  wp_posts                          wp_posts?            @relation(fields: [wp_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "connections_wp_posts_ID_fk")
+  dfda_users                          dfda_users             @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "connections_user_id_fk")
+  dfda_posts                          dfda_posts?            @relation(fields: [dfda_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "connections_dfda_posts_ID_fk")
   connector_imports                 connector_imports[]
   connector_requests                connector_requests[]
   measurements                      measurements[]
@@ -633,7 +420,7 @@ model connections {
   @@index([connect_status], map: "IDX_status")
   @@index([client_id], map: "connections_client_id_fk")
   @@index([connector_id], map: "connections_connectors_id_fk")
-  @@index([wp_post_id], map: "connections_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "connections_dfda_posts_ID_fk")
   @@index([update_status], map: "status")
   @@index([update_requested_at, update_status], map: "status_update_requested")
 }
@@ -686,7 +473,7 @@ model connector_imports {
   oa_clients                                               oa_clients?          @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "connector_imports_client_id_fk")
   connections                                              connections?         @relation(fields: [connection_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "connector_imports_connections_id_fk")
   connectors                                               connectors           @relation(fields: [connector_id], references: [id], onUpdate: Restrict, map: "connector_imports_connectors_id_fk")
-  wp_users                                                 wp_users             @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "connector_imports_wp_users_ID_fk")
+  dfda_users                                                 dfda_users             @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "connector_imports_dfda_users_ID_fk")
   connector_requests_connector_importsToconnector_requests connector_requests[]
   measurements                                             measurements[]
 
@@ -716,12 +503,12 @@ model connector_requests {
   connections           connections?      @relation(fields: [connection_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "connector_requests_connections_id_fk")
   connector_imports     connector_imports @relation(fields: [connector_import_id], references: [id], onUpdate: Restrict, map: "connector_requests_connector_imports_id_fk")
   connectors            connectors        @relation(fields: [connector_id], references: [id], onUpdate: Restrict, map: "connector_requests_connectors_id_fk")
-  wp_users              wp_users          @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "connector_requests_wp_users_ID_fk")
+  dfda_users              dfda_users          @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "connector_requests_dfda_users_ID_fk")
 
   @@index([connection_id], map: "connector_requests_connections_id_fk")
   @@index([connector_import_id], map: "connector_requests_connector_imports_id_fk")
   @@index([connector_id], map: "connector_requests_connectors_id_fk")
-  @@index([user_id], map: "connector_requests_wp_users_ID_fk")
+  @@index([user_id], map: "connector_requests_dfda_users_ID_fk")
 }
 
 model connectors {
@@ -739,7 +526,7 @@ model connectors {
   updated_at                   DateTime             @default(now()) @db.Timestamp(0)
   client_id                    String?              @db.VarChar(80)
   deleted_at                   DateTime?            @db.Timestamp(0)
-  wp_post_id                   BigInt?              @db.UnsignedBigInt
+  dfda_post_id                   BigInt?              @db.UnsignedBigInt
   number_of_connections        Int?                 @db.UnsignedInt
   number_of_connector_imports  Int?                 @db.UnsignedInt
   number_of_connector_requests Int?                 @db.UnsignedInt
@@ -749,14 +536,14 @@ model connectors {
   slug                         String?              @unique(map: "connectors_slug_uindex") @db.VarChar(200)
   available_outside_us         Boolean              @default(true)
   oa_clients                   oa_clients?          @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "connectors_client_id_fk")
-  wp_posts                     wp_posts?            @relation(fields: [wp_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "connectors_wp_posts_ID_fk")
+  dfda_posts                     dfda_posts?            @relation(fields: [dfda_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "connectors_dfda_posts_ID_fk")
   connections                  connections[]
   connector_imports            connector_imports[]
   connector_requests           connector_requests[]
   measurements                 measurements[]
 
   @@index([client_id], map: "connectors_client_id_fk")
-  @@index([wp_post_id], map: "connectors_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "connectors_dfda_posts_ID_fk")
 }
 
 model correlation_causality_votes {
@@ -777,7 +564,7 @@ model correlation_causality_votes {
   oa_clients                                                          oa_clients?             @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "correlation_causality_votes_client_id_fk")
   correlations                                                        correlations?           @relation(fields: [correlation_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "correlation_causality_votes_correlations_id_fk")
   variables_correlation_causality_votes_effect_variable_idTovariables variables               @relation("correlation_causality_votes_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "correlation_causality_votes_effect_variables_id_fk")
-  wp_users                                                            wp_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "correlation_causality_votes_wp_users_ID_fk")
+  dfda_users                                                            dfda_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "correlation_causality_votes_dfda_users_ID_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id], map: "correlation_causality_votes_user_cause_effect_uindex")
   @@index([aggregate_correlation_id], map: "correlation_causality_votes_aggregate_correlations_id_fk")
@@ -805,7 +592,7 @@ model correlation_usefulness_votes {
   oa_clients                                                           oa_clients?             @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "correlation_usefulness_votes_client_id_fk")
   correlations                                                         correlations?           @relation(fields: [correlation_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "correlation_usefulness_votes_correlations_id_fk")
   variables_correlation_usefulness_votes_effect_variable_idTovariables variables               @relation("correlation_usefulness_votes_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "correlation_usefulness_votes_effect_variables_id_fk")
-  wp_users                                                             wp_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "correlation_usefulness_votes_wp_users_ID_fk")
+  dfda_users                                                             dfda_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "correlation_usefulness_votes_dfda_users_ID_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id], map: "correlation_usefulness_votes_user_cause_effect_uindex")
   @@index([aggregate_correlation_id], map: "correlation_usefulness_votes_aggregate_correlations_id_fk")
@@ -866,7 +653,7 @@ model correlations {
   grouped_cause_value_closest_to_value_predicting_high_outcome                      Float
   client_id                                                                         String?                        @db.VarChar(255)
   published_at                                                                      DateTime?                      @db.Timestamp(0)
-  wp_post_id                                                                        BigInt?                        @db.UnsignedBigInt
+  dfda_post_id                                                                        BigInt?                        @db.UnsignedBigInt
   status                                                                            String?                        @db.VarChar(25)
   cause_variable_category_id                                                        Int                            @db.UnsignedTinyInt
   effect_variable_category_id                                                       Int                            @db.UnsignedTinyInt
@@ -922,10 +709,10 @@ model correlations {
   oa_clients                                                                        oa_clients?                    @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "correlations_client_id_fk")
   variable_categories_correlations_effect_variable_category_idTovariable_categories variable_categories            @relation("correlations_effect_variable_category_idTovariable_categories", fields: [effect_variable_category_id], references: [id], onUpdate: Restrict, map: "correlations_effect_variable_category_id_fk")
   variables_correlations_effect_variable_idTovariables                              variables                      @relation("correlations_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "correlations_effect_variable_id_fk")
-  wp_users                                                                          wp_users                       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "correlations_user_id_fk")
-  user_variables_correlations_cause_user_variable_idTouser_variables                user_variables                 @relation("correlations_cause_user_variable_idTouser_variables", fields: [cause_user_variable_id], references: [id], onDelete: Cascade, map: "correlations_user_variables_cause_user_variable_id_fk")
-  user_variables_correlations_effect_user_variable_idTouser_variables               user_variables                 @relation("correlations_effect_user_variable_idTouser_variables", fields: [effect_user_variable_id], references: [id], onDelete: Cascade, map: "correlations_user_variables_effect_user_variable_id_fk")
-  wp_posts                                                                          wp_posts?                      @relation(fields: [wp_post_id], references: [ID], map: "correlations_wp_posts_ID_fk")
+  dfda_users                                                                          dfda_users                       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "correlations_user_id_fk")
+  user_variables_correlations_cause_user_variable_idTouser_variables                user_variables                 @relation("correlations_cause_user_variable_idTouser_variables", fields: [cause_user_variable_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "correlations_user_variables_cause_user_variable_id_fk")
+  user_variables_correlations_effect_user_variable_idTouser_variables               user_variables                 @relation("correlations_effect_user_variable_idTouser_variables", fields: [effect_user_variable_id], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "correlations_user_variables_effect_user_variable_id_fk")
+  dfda_posts                                                                          dfda_posts?                      @relation(fields: [dfda_post_id], references: [ID], map: "correlations_dfda_posts_ID_fk")
   correlation_causality_votes                                                       correlation_causality_votes[]
   correlation_usefulness_votes                                                      correlation_usefulness_votes[]
   user_studies                                                                      user_studies?
@@ -948,7 +735,7 @@ model correlations {
   @@index([user_id, deleted_at, qm_score], map: "correlations_user_id_deleted_at_qm_score_index")
   @@index([cause_user_variable_id], map: "correlations_user_variables_cause_user_variable_id_fk")
   @@index([effect_user_variable_id], map: "correlations_user_variables_effect_user_variable_id_fk")
-  @@index([wp_post_id], map: "correlations_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "correlations_dfda_posts_ID_fk")
   @@index([user_id, cause_variable_id, deleted_at, qm_score], map: "user_id_cause_variable_id_deleted_at_qm_score_index")
   @@index([user_id, effect_variable_id, deleted_at, qm_score], map: "user_id_effect_variable_id_deleted_at_qm_score_index")
 }
@@ -966,33 +753,14 @@ model credentials {
   deleted_at   DateTime?   @db.Timestamp(0)
   client_id    String?     @db.VarChar(255)
   oa_clients   oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "credentials_client_id_fk")
-  wp_users     wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "credentials_user_id_fk")
+  dfda_users     dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "credentials_user_id_fk")
 
   @@id([user_id, connector_id, attr_key])
   @@index([connector_id, expires_at, status], map: "IDX_status_expires_connector")
   @@index([client_id], map: "credentials_client_id_fk")
 }
 
-model crypto_trades {
-  id                     Int       @id @default(autoincrement()) @db.UnsignedInt
-  datetime               DateTime? @db.Timestamp(0)
-  side                   String    @db.VarChar(255)
-  symbol                 String    @db.VarChar(255)
-  exchange               String    @db.VarChar(255)
-  amount                 Float
-  createdUnixTimeSeconds Int?
-  fee                    Float?
-  info                   String?   @db.LongText
-  ohlcv                  String?   @db.LongText
-  price                  Float?
-  tradeParameters        String?   @db.LongText
-  type                   String?   @db.VarChar(255)
-  created_at             DateTime  @default(now()) @db.Timestamp(0)
-  deleted_at             DateTime? @db.Timestamp(0)
-  updated_at             DateTime  @default(now()) @db.Timestamp(0)
 
-  @@unique([createdUnixTimeSeconds, exchange, side, symbol], map: "unique_index_name_here")
-}
 
 model ct_causes {
   id                   Int                  @id @default(autoincrement())
@@ -1135,7 +903,6 @@ model ct_side_effects {
   number_of_treatments         Int                            @db.UnsignedInt
   variables                    variables                      @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "ct_side_effects_variables_id_fk")
   ct_treatment_side_effect     ct_treatment_side_effect[]
-  ct_treatment_side_effect_bak ct_treatment_side_effect_bak[]
 }
 
 model ct_sideeffects {
@@ -1180,22 +947,7 @@ model ct_treatment_side_effect {
   @@index([side_effect_id], map: "treatment_side_effect_side_effects_id_fk")
 }
 
-model ct_treatment_side_effect_bak {
-  id                      Int?
-  treatment_id            Int
-  side_effect_id          Int
-  votes_percent           Int
-  updated_at              DateTime        @default(now()) @db.Timestamp(0)
-  created_at              DateTime        @default(now()) @db.Timestamp(0)
-  deleted_at              DateTime?       @db.Timestamp(0)
-  treatment_variable_id   Int?            @db.UnsignedInt
-  side_effect_variable_id Int             @db.UnsignedInt
-  ct_side_effects         ct_side_effects @relation(fields: [side_effect_id], references: [id], onUpdate: Restrict, map: "ct_treatment_side_effect_ct_side_effects_id_fk")
-  ct_treatments           ct_treatments   @relation(fields: [treatment_id], references: [id], onUpdate: Restrict, map: "ct_treatment_side_effect_ct_treatments_id_fk")
 
-  @@id([treatment_id, side_effect_id])
-  @@index([side_effect_id], map: "seID")
-}
 
 model ct_treatment_sideeffect {
   treID        Int
@@ -1221,7 +973,6 @@ model ct_treatments {
   variables                    variables                      @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "ct_treatments_variables_id_fk")
   ct_condition_treatment       ct_condition_treatment[]
   ct_treatment_side_effect     ct_treatment_side_effect[]
-  ct_treatment_side_effect_bak ct_treatment_side_effect_bak[]
 
   @@index([variable_id], map: "ct_treatments_variables_id_fk")
 }
@@ -1244,7 +995,7 @@ model device_tokens {
   server_hostname                                   String?     @db.VarChar(255)
   client_id                                         String?     @db.VarChar(255)
   oa_clients                                        oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "device_tokens_client_id_fk")
-  wp_users                                          wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "device_tokens_user_id_fk")
+  dfda_users                                          dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "device_tokens_user_id_fk")
 
   @@index([client_id], map: "device_tokens_client_id_fk")
   @@index([user_id], map: "index_user_id")
@@ -1374,10 +1125,10 @@ model github_repositories {
   network_count          Int
   subscribers_count      Int
   oa_clients             oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "github_repositories_oa_clients_client_id_fk")
-  wp_users               wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "github_repositories_wp_users_ID_fk")
+  dfda_users               dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "github_repositories_dfda_users_ID_fk")
 
   @@index([client_id], map: "github_repositories_oa_clients_client_id_fk")
-  @@index([user_id], map: "github_repositories_wp_users_ID_fk")
+  @@index([user_id], map: "github_repositories_dfda_users_ID_fk")
 }
 
 model global_studies {
@@ -1400,7 +1151,7 @@ model global_studies {
   updated_at                                             DateTime                @default(now()) @db.Timestamp(0)
   client_id                                              String?                 @db.VarChar(255)
   published_at                                           DateTime?               @db.Timestamp(0)
-  wp_post_id                                             Int?
+  dfda_post_id                                             Int?
   newest_data_at                                         DateTime?               @db.Timestamp(0)
   analysis_requested_at                                  DateTime?               @db.Timestamp(0)
   reason_for_analysis                                    String?                 @db.VarChar(255)
@@ -1417,7 +1168,7 @@ model global_studies {
   variables_global_studies_cause_variable_idTovariables  variables               @relation("global_studies_cause_variable_idTovariables", fields: [cause_variable_id], references: [id], onUpdate: Restrict, map: "global_studies_cause_variable_id_variables_id_fk")
   oa_clients                                             oa_clients?             @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "global_studies_client_id_fk")
   variables_global_studies_effect_variable_idTovariables variables               @relation("global_studies_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "global_studies_effect_variable_id_variables_id_fk")
-  wp_users                                               wp_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "global_studies_user_id_fk")
+  dfda_users                                               dfda_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "global_studies_user_id_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id], map: "user_cause_effect")
   @@index([aggregate_correlation_id], map: "global_studies_aggregate_correlations_id_fk")
@@ -1445,17 +1196,6 @@ model health_checks {
   @@index([target_slug], map: "health_checks_target_slug_index")
 }
 
-model hosts {
-  id                Int       @id @default(autoincrement()) @db.UnsignedInt
-  name              String    @db.VarChar(255)
-  ssh_user          String?   @db.VarChar(255)
-  port              Int?
-  ip                String?   @db.VarChar(255)
-  custom_properties Json?
-  created_at        DateTime? @db.Timestamp(0)
-  updated_at        DateTime? @db.Timestamp(0)
-  checks            checks[]
-}
 
 model jobs {
   id           BigInt @id @default(autoincrement()) @db.UnsignedBigInt
@@ -1581,7 +1321,7 @@ model measurement_exports {
   updated_at    DateTime                        @default(now()) @db.Timestamp(0)
   deleted_at    DateTime?                       @db.Timestamp(0)
   oa_clients    oa_clients?                     @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "measurement_exports_client_id_fk")
-  wp_users      wp_users                        @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "measurement_exports_user_id_fk")
+  dfda_users      dfda_users                        @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "measurement_exports_user_id_fk")
 
   @@index([client_id], map: "measurement_exports_client_id_fk")
   @@index([user_id], map: "measurement_exports_user_id_fk")
@@ -1604,7 +1344,7 @@ model measurement_imports {
   user_error_message     String?     @db.VarChar(255)
   internal_error_message String?     @db.VarChar(255)
   oa_clients             oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "measurement_imports_client_id_fk")
-  wp_users               wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "measurement_imports_user_id_fk")
+  dfda_users               dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "measurement_imports_user_id_fk")
 
   @@index([client_id], map: "measurement_imports_client_id_fk")
   @@index([user_id], map: "measurement_imports_user_id_fk")
@@ -1644,7 +1384,7 @@ model measurements {
   connectors                                 connectors?         @relation(fields: [connector_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "measurements_connectors_id_fk")
   units_measurements_original_unit_idTounits units               @relation("measurements_original_unit_idTounits", fields: [original_unit_id], references: [id], onUpdate: Restrict, map: "measurements_original_unit_id_fk")
   units_measurements_unit_idTounits          units               @relation("measurements_unit_idTounits", fields: [unit_id], references: [id], onUpdate: Restrict, map: "measurements_unit_id_fk")
-  wp_users                                   wp_users            @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "measurements_user_id_fk")
+  dfda_users                                   dfda_users            @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "measurements_user_id_fk")
   user_variables                             user_variables      @relation(fields: [user_variable_id], references: [id], onUpdate: Restrict, map: "measurements_user_variables_user_variable_id_fk")
   variable_categories                        variable_categories @relation(fields: [variable_category_id], references: [id], onUpdate: Restrict, map: "measurements_variable_category_id_fk")
   variables                                  variables           @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "measurements_variables_id_fk")
@@ -1709,7 +1449,7 @@ model oa_access_tokens {
   created_at   DateTime   @default(now()) @db.Timestamp(0)
   deleted_at   DateTime?  @db.Timestamp(0)
   oa_clients   oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "access_tokens_client_id_fk")
-  wp_users     wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_access_tokens_user_id_fk")
+  dfda_users     dfda_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_access_tokens_user_id_fk")
 
   @@index([client_id], map: "access_tokens_client_id_fk")
   @@index([user_id], map: "bshaffer_oauth_access_tokens_user_id_fk")
@@ -1726,7 +1466,7 @@ model oa_authorization_codes {
   created_at         DateTime   @default(now()) @db.Timestamp(0)
   deleted_at         DateTime?  @db.Timestamp(0)
   oa_clients         oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "bshaffer_oauth_authorization_codes_client_id_fk")
-  wp_users           wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_authorization_codes_user_id_fk")
+  dfda_users           dfda_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_authorization_codes_user_id_fk")
 
   @@index([client_id], map: "bshaffer_oauth_authorization_codes_client_id_fk")
   @@index([user_id], map: "bshaffer_oauth_authorization_codes_user_id_fk")
@@ -1768,12 +1508,9 @@ model oa_clients {
   number_of_user_variables                  Int?                              @db.UnsignedInt
   number_of_variables                       Int?                              @db.UnsignedInt
   number_of_votes                           Int?                              @db.UnsignedInt
-  wp_users                                  wp_users                          @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_clients_user_id_fk")
+  dfda_users                                  dfda_users                          @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_clients_user_id_fk")
   aggregate_correlations                    aggregate_correlations[]
   applications                              applications?
-  button_clicks                             button_clicks[]
-  buttons                                   buttons[]
-  cards                                     cards[]
   cohort_studies                            cohort_studies[]
   cohort_study_statistics                   cohort_study_statistics[]
   collaborators                             collaborators[]
@@ -1826,7 +1563,7 @@ model oa_refresh_tokens {
   created_at    DateTime   @default(now()) @db.Timestamp(0)
   deleted_at    DateTime?  @db.Timestamp(0)
   oa_clients    oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "bshaffer_oauth_refresh_tokens_client_id_fk")
-  wp_users      wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_refresh_tokens_user_id_fk")
+  dfda_users      dfda_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "bshaffer_oauth_refresh_tokens_user_id_fk")
 
   @@index([user_id], map: "bshaffer_oauth_refresh_tokens_user_id_fk")
   @@index([client_id], map: "refresh_tokens_client_id_fk")
@@ -1896,11 +1633,11 @@ model patient_physicians {
   created_at                                              DateTime  @default(now()) @db.Timestamp(0)
   updated_at                                              DateTime  @default(now()) @db.Timestamp(0)
   deleted_at                                              DateTime? @db.Timestamp(0)
-  wp_users_patient_physicians_patient_user_idTowp_users   wp_users  @relation("patient_physicians_patient_user_idTowp_users", fields: [patient_user_id], references: [ID], onUpdate: Restrict, map: "patient_physicians_wp_users_ID_fk")
-  wp_users_patient_physicians_physician_user_idTowp_users wp_users  @relation("patient_physicians_physician_user_idTowp_users", fields: [physician_user_id], references: [ID], onUpdate: Restrict, map: "patient_physicians_wp_users_ID_fk_2")
+  dfda_users_patient_physicians_patient_user_idTodfda_users   dfda_users  @relation("patient_physicians_patient_user_idTodfda_users", fields: [patient_user_id], references: [ID], onUpdate: Restrict, map: "patient_physicians_dfda_users_ID_fk")
+  dfda_users_patient_physicians_physician_user_idTodfda_users dfda_users  @relation("patient_physicians_physician_user_idTodfda_users", fields: [physician_user_id], references: [ID], onUpdate: Restrict, map: "patient_physicians_dfda_users_ID_fk_2")
 
   @@unique([patient_user_id, physician_user_id], map: "patients_patient_user_id_physician_user_id_uindex")
-  @@index([physician_user_id], map: "patient_physicians_wp_users_ID_fk_2")
+  @@index([physician_user_id], map: "patient_physicians_dfda_users_ID_fk_2")
 }
 
 model permission_role {
@@ -1925,7 +1662,7 @@ model permission_user {
   updated_at    DateTime?   @db.Timestamp(0)
   deleted_at    DateTime?   @db.Timestamp(0)
   permissions   permissions @relation(fields: [permission_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "permission_user_permission_id_foreign")
-  wp_users      wp_users    @relation(fields: [user_id], references: [ID], onDelete: Cascade, onUpdate: Restrict, map: "permission_user_user_id_foreign")
+  dfda_users      dfda_users    @relation(fields: [user_id], references: [ID], onDelete: Cascade, onUpdate: Restrict, map: "permission_user_user_id_foreign")
 
   @@index([permission_id], map: "permission_user_permission_id_index")
   @@index([user_id], map: "permission_user_user_id_index")
@@ -1962,7 +1699,7 @@ model phrases {
   number_of_times_heard     Int?
   interpretative_confidence Float?
   oa_clients                oa_clients @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "phrases_client_id_fk")
-  wp_users                  wp_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "phrases_user_id_fk")
+  dfda_users                  dfda_users   @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "phrases_user_id_fk")
 
   @@index([client_id], map: "phrases_client_id_fk")
   @@index([user_id], map: "phrases_user_id_fk")
@@ -1983,7 +1720,7 @@ model purchases {
   refunded_at                          DateTime?                       @db.Date
   deleted_at                           DateTime?                       @db.Timestamp(0)
   oa_clients                           oa_clients?                     @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "purchases_client_id_fk")
-  wp_users                             wp_users                        @relation(fields: [subscriber_user_id], references: [ID], onUpdate: Restrict, map: "purchases_wp_users_ID_fk")
+  dfda_users                             dfda_users                        @relation(fields: [subscriber_user_id], references: [ID], onUpdate: Restrict, map: "purchases_dfda_users_ID_fk")
 
   @@unique([subscriber_user_id, referrer_user_id], map: "subscriber_referrer")
   @@index([client_id], map: "purchases_client_id_fk")
@@ -1997,7 +1734,7 @@ model role_user {
   updated_at DateTime? @db.Timestamp(0)
   deleted_at DateTime? @db.Timestamp(0)
   roles      roles     @relation(fields: [role_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "role_user_role_id_foreign")
-  wp_users   wp_users  @relation(fields: [user_id], references: [ID], onDelete: Cascade, onUpdate: Restrict, map: "role_user_user_id_foreign")
+  dfda_users   dfda_users  @relation(fields: [user_id], references: [ID], onDelete: Cascade, onUpdate: Restrict, map: "role_user_user_id_foreign")
 
   @@index([role_id], map: "role_user_role_id_index")
   @@index([user_id], map: "role_user_user_id_index")
@@ -2064,16 +1801,16 @@ model sent_emails {
   slug          String?     @db.VarChar(100)
   response      String?     @db.VarChar(140)
   content       String?     @db.Text
-  wp_post_id    BigInt?     @db.UnsignedBigInt
+  dfda_post_id    BigInt?     @db.UnsignedBigInt
   email_address String?     @db.VarChar(255)
   subject       String      @db.VarChar(78)
   oa_clients    oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "sent_emails_client_id_fk")
-  wp_users      wp_users?   @relation(fields: [user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "sent_emails_user_id_fk")
-  wp_posts      wp_posts?   @relation(fields: [wp_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "sent_emails_wp_posts_ID_fk")
+  dfda_users      dfda_users?   @relation(fields: [user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "sent_emails_user_id_fk")
+  dfda_posts      dfda_posts?   @relation(fields: [dfda_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "sent_emails_dfda_posts_ID_fk")
 
   @@index([client_id], map: "sent_emails_client_id_fk")
   @@index([user_id, type], map: "sent_emails_user_id_type_index")
-  @@index([wp_post_id], map: "sent_emails_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "sent_emails_dfda_posts_ID_fk")
 }
 
 model sessions {
@@ -2094,11 +1831,11 @@ model sharer_trustees {
   created_at                                         DateTime                          @default(now()) @db.Timestamp(0)
   updated_at                                         DateTime                          @default(now()) @db.Timestamp(0)
   deleted_at                                         DateTime?                         @db.Timestamp(0)
-  wp_users_sharer_trustees_sharer_user_idTowp_users  wp_users                          @relation("sharer_trustees_sharer_user_idTowp_users", fields: [sharer_user_id], references: [ID], onUpdate: Restrict, map: "sharer_trustees_wp_users_ID_fk")
-  wp_users_sharer_trustees_trustee_user_idTowp_users wp_users                          @relation("sharer_trustees_trustee_user_idTowp_users", fields: [trustee_user_id], references: [ID], onUpdate: Restrict, map: "sharer_trustees_wp_users_ID_fk_2")
+  dfda_users_sharer_trustees_sharer_user_idTodfda_users  dfda_users                          @relation("sharer_trustees_sharer_user_idTodfda_users", fields: [sharer_user_id], references: [ID], onUpdate: Restrict, map: "sharer_trustees_dfda_users_ID_fk")
+  dfda_users_sharer_trustees_trustee_user_idTodfda_users dfda_users                          @relation("sharer_trustees_trustee_user_idTodfda_users", fields: [trustee_user_id], references: [ID], onUpdate: Restrict, map: "sharer_trustees_dfda_users_ID_fk_2")
 
   @@unique([sharer_user_id, trustee_user_id], map: "sharer_user_id_trustee_user_id_uindex")
-  @@index([trustee_user_id], map: "sharer_trustees_wp_users_ID_fk_2")
+  @@index([trustee_user_id], map: "sharer_trustees_dfda_users_ID_fk_2")
 }
 
 model source_platforms {
@@ -2126,15 +1863,15 @@ model spreadsheet_importers {
   updated_at                    DateTime    @default(now()) @db.Timestamp(0)
   client_id                     String?     @db.VarChar(80)
   deleted_at                    DateTime?   @db.Timestamp(0)
-  wp_post_id                    BigInt?     @db.UnsignedBigInt
+  dfda_post_id                    BigInt?     @db.UnsignedBigInt
   number_of_measurement_imports Int?        @db.UnsignedInt
   number_of_measurements        Int?        @db.UnsignedInt
   sort_order                    Int
   oa_clients                    oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "spreadsheet_importers_client_id_fk")
-  wp_posts                      wp_posts?   @relation(fields: [wp_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "spreadsheet_importers_wp_posts_ID_fk")
+  dfda_posts                      dfda_posts?   @relation(fields: [dfda_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "spreadsheet_importers_dfda_posts_ID_fk")
 
   @@index([client_id], map: "spreadsheet_importers_client_id_fk")
-  @@index([wp_post_id], map: "spreadsheet_importers_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "spreadsheet_importers_dfda_posts_ID_fk")
 }
 
 model studies {
@@ -2155,7 +1892,7 @@ model studies {
   updated_at                                      DateTime    @default(now()) @db.Timestamp(0)
   client_id                                       String?     @db.VarChar(255)
   published_at                                    DateTime?   @db.Timestamp(0)
-  wp_post_id                                      Int?
+  dfda_post_id                                      Int?
   newest_data_at                                  DateTime?   @db.Timestamp(0)
   analysis_requested_at                           DateTime?   @db.Timestamp(0)
   reason_for_analysis                             String?     @db.VarChar(255)
@@ -2171,7 +1908,7 @@ model studies {
   variables_studies_cause_variable_idTovariables  variables   @relation("studies_cause_variable_idTovariables", fields: [cause_variable_id], references: [id], onUpdate: Restrict, map: "studies_cause_variable_id_variables_id_fk")
   oa_clients                                      oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "studies_client_id_fk")
   variables_studies_effect_variable_idTovariables variables   @relation("studies_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "studies_effect_variable_id_variables_id_fk")
-  wp_users                                        wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "studies_user_id_fk")
+  dfda_users                                        dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "studies_user_id_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id, type], map: "user_cause_effect_type")
   @@index([cause_variable_id], map: "cause_variable_id")
@@ -2190,7 +1927,7 @@ model subscriptions {
   ends_at       DateTime? @db.Timestamp(0)
   created_at    DateTime? @db.Timestamp(0)
   updated_at    DateTime? @db.Timestamp(0)
-  wp_users      wp_users  @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "subscriptions_user_id_fk")
+  dfda_users      dfda_users  @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "subscriptions_user_id_fk")
 
   @@index([user_id], map: "subscriptions_user_id_fk")
 }
@@ -2268,7 +2005,7 @@ model third_party_correlations {
   grouped_cause_value_closest_to_value_predicting_high_outcome                                  Float?
   client_id                                                                                     String?              @db.VarChar(255)
   published_at                                                                                  DateTime?            @db.Timestamp(0)
-  wp_post_id                                                                                    Int?
+  dfda_post_id                                                                                    Int?
   status                                                                                        String?              @db.VarChar(25)
   cause_variable_category_id                                                                    Int?                 @db.UnsignedTinyInt
   effect_variable_category_id                                                                   Int?                 @db.UnsignedTinyInt
@@ -2307,7 +2044,7 @@ model tracker_log {
   user_id       BigInt      @db.UnsignedBigInt
   deleted_at    DateTime?   @db.Timestamp(0)
   oa_clients    oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "tracker_log_client_id_fk")
-  wp_users      wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "tracker_log_user_id_fk")
+  dfda_users      dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "tracker_log_user_id_fk")
 
   @@index([client_id], map: "tracker_log_client_id_fk")
   @@index([created_at], map: "tracker_log_created_at_index")
@@ -2337,7 +2074,7 @@ model tracker_sessions {
   deleted_at DateTime?   @db.Timestamp(0)
   client_id  String?     @db.VarChar(255)
   oa_clients oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "tracker_sessions_client_id_fk")
-  wp_users   wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "tracker_sessions_user_id_fk")
+  dfda_users   dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "tracker_sessions_user_id_fk")
 
   @@index([agent_id], map: "tracker_sessions_agent_id_index")
   @@index([client_id], map: "tracker_sessions_client_id_fk")
@@ -2366,7 +2103,7 @@ model tracking_reminder_notifications {
   user_variable_id     Int                @db.UnsignedInt
   oa_clients           oa_clients?        @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "tracking_reminder_notifications_client_id_fk")
   tracking_reminders   tracking_reminders @relation(fields: [tracking_reminder_id], references: [id], onDelete: Cascade, map: "tracking_reminder_notifications_tracking_reminders_id_fk")
-  wp_users             wp_users           @relation(fields: [user_id], references: [ID], onDelete: Cascade, onUpdate: Restrict, map: "tracking_reminder_notifications_user_id_fk")
+  dfda_users             dfda_users           @relation(fields: [user_id], references: [ID], onDelete: Cascade, onUpdate: Restrict, map: "tracking_reminder_notifications_user_id_fk")
   user_variables       user_variables     @relation(fields: [user_variable_id], references: [id], onDelete: Cascade, map: "tracking_reminder_notifications_user_variables_id_fk")
   variables            variables          @relation(fields: [variable_id], references: [id], onDelete: Cascade, map: "tracking_reminder_notifications_variables_id_fk")
 
@@ -2404,7 +2141,7 @@ model tracking_reminders {
   latest_tracking_reminder_notification_notify_at                       DateTime?                         @db.Timestamp(0)
   number_of_tracking_reminder_notifications                             Int?                              @db.UnsignedInt
   oa_clients                                                            oa_clients                        @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "tracking_reminders_client_id_fk")
-  wp_users                                                              wp_users                          @relation(fields: [user_id], references: [ID], onDelete: Cascade, map: "tracking_reminders_user_id_fk")
+  dfda_users                                                              dfda_users                          @relation(fields: [user_id], references: [ID], onDelete: Cascade, map: "tracking_reminders_user_id_fk")
   user_variables_tracking_reminders_user_id_variable_idTouser_variables user_variables                    @relation("tracking_reminders_user_id_variable_idTouser_variables", fields: [user_id, variable_id], references: [user_id, variable_id], onUpdate: Restrict, map: "tracking_reminders_user_variables_user_id_variable_id_fk")
   user_variables_tracking_reminders_user_variable_idTouser_variables    user_variables                    @relation("tracking_reminders_user_variable_idTouser_variables", fields: [user_variable_id], references: [id], onDelete: Cascade, map: "tracking_reminders_user_variables_user_variable_id_fk")
   variables                                                             variables                         @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "tracking_reminders_variables_id_fk")
@@ -2521,7 +2258,7 @@ model user_clients {
   updated_at              DateTime    @default(now()) @db.Timestamp(0)
   user_id                 BigInt      @db.UnsignedBigInt
   oa_clients              oa_clients? @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "user_clients_client_id_fk")
-  wp_users                wp_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_clients_user_id_fk")
+  dfda_users                dfda_users    @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_clients_user_id_fk")
 
   @@unique([user_id, client_id], map: "user")
   @@index([client_id], map: "user_clients_client_id_fk")
@@ -2560,7 +2297,7 @@ model user_studies {
   updated_at                                                          DateTime       @default(now()) @db.Timestamp(0)
   client_id                                                           String?        @db.VarChar(255)
   published_at                                                        DateTime?      @db.Timestamp(0)
-  wp_post_id                                                          Int?
+  dfda_post_id                                                          Int?
   newest_data_at                                                      DateTime?      @db.Timestamp(0)
   analysis_requested_at                                               DateTime?      @db.Timestamp(0)
   reason_for_analysis                                                 String?        @db.VarChar(255)
@@ -2578,7 +2315,7 @@ model user_studies {
   correlations                                                        correlations?  @relation(fields: [correlation_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "user_studies_correlations_id_fk")
   user_variables_user_studies_effect_user_variable_idTouser_variables user_variables @relation("user_studies_effect_user_variable_idTouser_variables", fields: [effect_user_variable_id], references: [id], onUpdate: Restrict, map: "user_studies_effect_user_variables_id_fk")
   variables_user_studies_effect_variable_idTovariables                variables      @relation("user_studies_effect_variable_idTovariables", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "user_studies_effect_variables_id_fk")
-  wp_users                                                            wp_users       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_studies_user_id_fk")
+  dfda_users                                                            dfda_users       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_studies_user_id_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id], map: "user_studies_user_cause_effect")
   @@index([cause_user_variable_id], map: "user_studies_cause_user_variables_id_fk")
@@ -2604,7 +2341,7 @@ model user_tags {
   variables_user_tags_tag_variable_idTovariables                   variables       @relation("user_tags_tag_variable_idTovariables", fields: [tag_variable_id], references: [id], onUpdate: Restrict, map: "user_tags_tag_variable_id_variables_id_fk")
   user_variables_user_tags_tagged_user_variable_idTouser_variables user_variables? @relation("user_tags_tagged_user_variable_idTouser_variables", fields: [tagged_user_variable_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "user_tags_tagged_user_variable_id_fk")
   variables_user_tags_tagged_variable_idTovariables                variables       @relation("user_tags_tagged_variable_idTovariables", fields: [tagged_variable_id], references: [id], onUpdate: Restrict, map: "user_tags_tagged_variable_id_variables_id_fk")
-  wp_users                                                         wp_users        @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_tags_user_id_fk")
+  dfda_users                                                         dfda_users        @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_tags_user_id_fk")
 
   @@unique([tagged_variable_id, tag_variable_id, user_id], map: "UK_user_tag_tagged")
   @@index([tag_variable_id], map: "fk_conversionUnit")
@@ -2627,7 +2364,7 @@ model user_variable_clients {
   user_variable_id        Int            @db.UnsignedInt
   variable_id             Int            @db.UnsignedInt
   oa_clients              oa_clients     @relation(fields: [client_id], references: [client_id], onUpdate: Restrict, map: "user_variable_clients_client_id_fk")
-  wp_users                wp_users       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_variable_clients_user_id_fk")
+  dfda_users                dfda_users       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_variable_clients_user_id_fk")
   user_variables          user_variables @relation(fields: [user_variable_id], references: [id], onUpdate: Restrict, map: "user_variable_clients_user_variables_user_variable_id_fk")
   variables               variables      @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "user_variable_clients_variable_id_fk")
 
@@ -2764,7 +2501,7 @@ model user_variables {
   earliest_tagged_measurement_start_at                                            DateTime?                             @db.Timestamp(0)
   latest_non_tagged_measurement_start_at                                          DateTime?                             @db.Timestamp(0)
   earliest_non_tagged_measurement_start_at                                        DateTime?                             @db.Timestamp(0)
-  wp_post_id                                                                      BigInt?                               @db.UnsignedBigInt
+  dfda_post_id                                                                      BigInt?                               @db.UnsignedBigInt
   number_of_soft_deleted_measurements                                             Int?
   best_user_correlation_id                                                        Int?
   number_of_measurements                                                          Int?                                  @db.UnsignedInt
@@ -2795,10 +2532,10 @@ model user_variables {
   correlations_correlationsTouser_variables_best_user_correlation_id              correlations?                         @relation("correlationsTouser_variables_best_user_correlation_id", fields: [best_user_correlation_id], references: [id], onUpdate: Restrict, map: "user_variables_correlations_qm_score_fk")
   units_unitsTouser_variables_default_unit_id                                     units?                                @relation("unitsTouser_variables_default_unit_id", fields: [default_unit_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "user_variables_default_unit_id_fk")
   units_unitsTouser_variables_last_unit_id                                        units?                                @relation("unitsTouser_variables_last_unit_id", fields: [last_unit_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "user_variables_last_unit_id_fk")
-  wp_users                                                                        wp_users                              @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_variables_user_id_fk")
+  dfda_users                                                                        dfda_users                              @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "user_variables_user_id_fk")
   variable_categories                                                             variable_categories?                  @relation(fields: [variable_category_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "user_variables_variable_category_id_fk")
   variables                                                                       variables                             @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "user_variables_variables_id_fk")
-  wp_posts                                                                        wp_posts?                             @relation(fields: [wp_post_id], references: [ID], map: "user_variables_wp_posts_ID_fk")
+  dfda_posts                                                                        dfda_posts?                             @relation(fields: [dfda_post_id], references: [ID], map: "user_variables_dfda_posts_ID_fk")
   correlations_correlations_cause_user_variable_idTouser_variables                correlations[]                        @relation("correlations_cause_user_variable_idTouser_variables")
   correlations_correlations_effect_user_variable_idTouser_variables               correlations[]                        @relation("correlations_effect_user_variable_idTouser_variables")
   measurements                                                                    measurements[]
@@ -2824,7 +2561,7 @@ model user_variables {
   @@index([last_unit_id], map: "user_variables_last_unit_id_fk")
   @@index([user_id], map: "user_variables_user_id_latest_tagged_measurement_time_index")
   @@index([variable_category_id], map: "user_variables_variable_category_id_fk")
-  @@index([wp_post_id], map: "user_variables_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "user_variables_dfda_posts_ID_fk")
   @@index([analysis_ended_at], map: "variables_analysis_ended_at_index")
 }
 
@@ -2859,7 +2596,7 @@ model variable_categories {
   minimum_allowed_seconds_between_measurements                                                       Int?
   average_seconds_between_measurements                                                               Int?
   median_seconds_between_measurements                                                                Int?
-  wp_post_id                                                                                         BigInt?                                   @db.UnsignedBigInt
+  dfda_post_id                                                                                         BigInt?                                   @db.UnsignedBigInt
   filling_type                                                                                       variable_categories_filling_type?
   number_of_outcome_population_studies                                                               Int?                                      @db.UnsignedInt
   number_of_predictor_population_studies                                                             Int?                                      @db.UnsignedInt
@@ -2884,7 +2621,7 @@ model variable_categories {
   controllable                                                                                       variable_categories_controllable
   slug                                                                                               String?                                   @unique(map: "variable_categories_slug_uindex") @db.VarChar(200)
   units                                                                                              units?                                    @relation(fields: [default_unit_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "variable_categories_default_unit_id_fk")
-  wp_posts                                                                                           wp_posts?                                 @relation(fields: [wp_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "variable_categories_wp_posts_ID_fk")
+  dfda_posts                                                                                           dfda_posts?                                 @relation(fields: [dfda_post_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "variable_categories_dfda_posts_ID_fk")
   aggregate_correlations_aggregate_correlations_cause_variable_category_idTovariable_categories      aggregate_correlations[]                  @relation("aggregate_correlations_cause_variable_category_idTovariable_categories")
   aggregate_correlations_aggregate_correlations_effect_variable_category_idTovariable_categories     aggregate_correlations[]                  @relation("aggregate_correlations_effect_variable_category_idTovariable_categories")
   cohort_study_statistics_cohort_study_statistics_cause_variable_category_idTovariable_categories    cohort_study_statistics[]                 @relation("cohort_study_statistics_cause_variable_category_idTovariable_categories")
@@ -2902,7 +2639,7 @@ model variable_categories {
   variables                                                                                          variables[]
 
   @@index([default_unit_id], map: "variable_categories_default_unit_id_fk")
-  @@index([wp_post_id], map: "variable_categories_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "variable_categories_dfda_posts_ID_fk")
 }
 
 model variable_outcome_category {
@@ -2952,7 +2689,7 @@ model variable_user_sources {
   earliest_measurement_start_at                                            DateTime?      @db.Timestamp(0)
   latest_measurement_start_at                                              DateTime?      @db.Timestamp(0)
   oa_clients                                                               oa_clients?    @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "variable_user_sources_client_id_fk")
-  wp_users                                                                 wp_users       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "variable_user_sources_user_id_fk")
+  dfda_users                                                                 dfda_users       @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "variable_user_sources_user_id_fk")
   user_variables_user_variablesTovariable_user_sources_user_id_variable_id user_variables @relation("user_variablesTovariable_user_sources_user_id_variable_id", fields: [user_id, variable_id], references: [user_id, variable_id], onUpdate: Restrict, map: "variable_user_sources_user_variables_user_id_variable_id_fk")
   user_variables_user_variablesTovariable_user_sources_user_variable_id    user_variables @relation("user_variablesTovariable_user_sources_user_variable_id", fields: [user_variable_id], references: [id], onDelete: Cascade, map: "variable_user_sources_user_variables_user_variable_id_fk")
   variables                                                                variables      @relation(fields: [variable_id], references: [id], onUpdate: Restrict, map: "variable_user_sources_variable_id_fk")
@@ -3043,7 +2780,7 @@ model variables {
   earliest_tagged_measurement_start_at                                                    DateTime?                          @db.Timestamp(0)
   latest_non_tagged_measurement_start_at                                                  DateTime?                          @db.Timestamp(0)
   earliest_non_tagged_measurement_start_at                                                DateTime?                          @db.Timestamp(0)
-  wp_post_id                                                                              BigInt?                            @db.UnsignedBigInt
+  dfda_post_id                                                                              BigInt?                            @db.UnsignedBigInt
   number_of_soft_deleted_measurements                                                     Int?
   charts                                                                                  Json?
   creator_user_id                                                                         BigInt                             @db.UnsignedBigInt
@@ -3096,7 +2833,7 @@ model variables {
   oa_clients                                                                              oa_clients?                        @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "variables_client_id_fk")
   units                                                                                   units                              @relation(fields: [default_unit_id], references: [id], onUpdate: Restrict, map: "variables_default_unit_id_fk")
   variable_categories                                                                     variable_categories                @relation(fields: [variable_category_id], references: [id], onUpdate: Restrict, map: "variables_variable_category_id_fk")
-  wp_posts                                                                                wp_posts?                          @relation(fields: [wp_post_id], references: [ID], map: "variables_wp_posts_ID_fk")
+  dfda_posts                                                                                dfda_posts?                          @relation(fields: [dfda_post_id], references: [ID], map: "variables_dfda_posts_ID_fk")
   aggregate_correlations_aggregate_correlations_cause_variable_idTovariables              aggregate_correlations[]           @relation("aggregate_correlations_cause_variable_idTovariables")
   aggregate_correlations_aggregate_correlations_effect_variable_idTovariables             aggregate_correlations[]           @relation("aggregate_correlations_effect_variable_idTovariables")
   applications_applications_outcome_variable_idTovariables                                applications[]                     @relation("applications_outcome_variable_idTovariables")
@@ -3150,7 +2887,7 @@ model variables {
   other_variables_variablesTovariables_best_effect_variable_id                            variables[]                        @relation("variablesTovariables_best_effect_variable_id")
   votes_variablesTovotes_cause_variable_id                                                votes[]                            @relation("variablesTovotes_cause_variable_id")
   votes_variablesTovotes_effect_variable_id                                               votes[]                            @relation("variablesTovotes_effect_variable_id")
-  wp_users                                                                                wp_users[]
+  dfda_users                                                                                dfda_users[]
 
   @@index([variable_category_id, default_unit_id, name, number_of_user_variables, id], map: "IDX_cat_unit_public_name")
   @@index([default_unit_id], map: "fk_variableDefaultUnit")
@@ -3161,7 +2898,7 @@ model variables {
   @@index([best_effect_variable_id], map: "variables_best_effect_variable_id_fk")
   @@index([client_id], map: "variables_client_id_fk")
   @@index([name, number_of_user_variables], map: "variables_public_name_number_of_user_variables_index")
-  @@index([wp_post_id], map: "variables_wp_posts_ID_fk")
+  @@index([dfda_post_id], map: "variables_dfda_posts_ID_fk")
 }
 
 model votes {
@@ -3182,7 +2919,7 @@ model votes {
   oa_clients                                    oa_clients?             @relation(fields: [client_id], references: [client_id], onDelete: Restrict, onUpdate: Restrict, map: "votes_client_id_fk")
   correlations                                  correlations?           @relation(fields: [correlation_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "votes_correlations_id_fk")
   variables_variablesTovotes_effect_variable_id variables               @relation("variablesTovotes_effect_variable_id", fields: [effect_variable_id], references: [id], onUpdate: Restrict, map: "votes_effect_variable_id_fk_2")
-  wp_users                                      wp_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "votes_user_id_fk")
+  dfda_users                                      dfda_users                @relation(fields: [user_id], references: [ID], onUpdate: Restrict, map: "votes_user_id_fk")
 
   @@unique([user_id, cause_variable_id, effect_variable_id], map: "votes_user_id_cause_variable_id_effect_variable_id_uindex")
   @@index([aggregate_correlation_id], map: "votes_aggregate_correlations_id_fk")
@@ -3192,7 +2929,7 @@ model votes {
   @@index([effect_variable_id], map: "votes_effect_variable_id_index")
 }
 
-model wp_blog_versions {
+model dfda_blog_versions {
   blog_id      BigInt    @id @default(0)
   db_version   String    @default("") @db.VarChar(20)
   last_updated DateTime  @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
@@ -3204,7 +2941,7 @@ model wp_blog_versions {
   @@index([db_version], map: "db_version")
 }
 
-model wp_blogs {
+model dfda_blogs {
   blog_id      BigInt    @id @default(autoincrement())
   site_id      BigInt    @default(0)
   domain       String    @default("") @db.VarChar(200)
@@ -3226,7 +2963,7 @@ model wp_blogs {
   @@index([lang_id], map: "lang_id")
 }
 
-model wp_commentmeta {
+model dfda_commentmeta {
   meta_id     BigInt       @id @default(autoincrement()) @db.UnsignedBigInt
   comment_id  BigInt?      @db.UnsignedBigInt
   meta_key    String?      @db.VarChar(255)
@@ -3235,13 +2972,13 @@ model wp_commentmeta {
   created_at  DateTime     @default(now()) @db.Timestamp(0)
   deleted_at  DateTime?    @db.Timestamp(0)
   client_id   String?      @db.VarChar(255)
-  wp_comments wp_comments? @relation(fields: [comment_id], references: [comment_ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_commentmeta_wp_comments_comment_ID_fk")
+  dfda_comments dfda_comments? @relation(fields: [comment_id], references: [comment_ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_commentmeta_dfda_comments_comment_ID_fk")
 
   @@index([comment_id], map: "comment_id")
   @@index([meta_key(length: 191)], map: "meta_key")
 }
 
-model wp_comments {
+model dfda_comments {
   comment_ID           BigInt           @id @default(autoincrement()) @db.UnsignedBigInt
   comment_post_ID      BigInt?          @db.UnsignedBigInt
   comment_author       String?          @db.TinyText
@@ -3261,9 +2998,9 @@ model wp_comments {
   created_at           DateTime         @default(now()) @db.Timestamp(0)
   deleted_at           DateTime?        @db.Timestamp(0)
   client_id            String?          @db.VarChar(255)
-  wp_posts             wp_posts?        @relation(fields: [comment_post_ID], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_comments_wp_posts_ID_fk")
-  wp_users             wp_users?        @relation(fields: [user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_comments_wp_users_ID_fk")
-  wp_commentmeta       wp_commentmeta[]
+  dfda_posts             dfda_posts?        @relation(fields: [comment_post_ID], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_comments_dfda_posts_ID_fk")
+  dfda_users             dfda_users?        @relation(fields: [user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_comments_dfda_users_ID_fk")
+  dfda_commentmeta       dfda_commentmeta[]
 
   @@index([comment_approved, comment_date_gmt], map: "comment_approved_date_gmt")
   @@index([comment_author_email(length: 10)], map: "comment_author_email")
@@ -3271,12 +3008,12 @@ model wp_comments {
   @@index([comment_parent], map: "comment_parent")
   @@index([comment_post_ID], map: "comment_post_ID")
   @@index([comment_type], map: "woo_idx_comment_type")
-  @@index([user_id], map: "wp_comments_user_id_fk")
+  @@index([user_id], map: "dfda_comments_user_id_fk")
 }
 
-model wp_links {
+model dfda_links {
   link_id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  link_url         String    @unique(map: "wp_links_link_url_uindex") @db.VarChar(760)
+  link_url         String    @unique(map: "dfda_links_link_url_uindex") @db.VarChar(760)
   link_name        String?   @db.VarChar(255)
   link_image       String?   @db.VarChar(255)
   link_target      String?   @db.VarChar(25)
@@ -3292,13 +3029,13 @@ model wp_links {
   created_at       DateTime  @default(now()) @db.Timestamp(0)
   deleted_at       DateTime? @db.Timestamp(0)
   client_id        String?   @db.VarChar(255)
-  wp_users         wp_users? @relation(fields: [link_owner], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_links_wp_users_ID_fk")
+  dfda_users         dfda_users? @relation(fields: [link_owner], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_links_dfda_users_ID_fk")
 
   @@index([link_visible], map: "link_visible")
-  @@index([link_owner], map: "wp_links_wp_users_ID_fk")
+  @@index([link_owner], map: "dfda_links_dfda_users_ID_fk")
 }
 
-model wp_options {
+model dfda_options {
   option_id    BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
   option_name  String?   @unique(map: "option_name")
   option_value String?   @db.LongText
@@ -3309,7 +3046,7 @@ model wp_options {
   client_id    String?   @db.VarChar(255)
 }
 
-model wp_postmeta {
+model dfda_postmeta {
   meta_id    BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
   post_id    BigInt?   @db.UnsignedBigInt
   meta_key   String?   @db.VarChar(255)
@@ -3318,13 +3055,13 @@ model wp_postmeta {
   created_at DateTime  @default(now()) @db.Timestamp(0)
   deleted_at DateTime? @db.Timestamp(0)
   client_id  String?   @db.VarChar(255)
-  wp_posts   wp_posts? @relation(fields: [post_id], references: [ID], onDelete: Cascade, map: "wp_postmeta_wp_posts_ID_fk")
+  dfda_posts   dfda_posts? @relation(fields: [post_id], references: [ID], onDelete: Cascade, map: "dfda_postmeta_dfda_posts_ID_fk")
 
   @@index([meta_key(length: 191)], map: "meta_key")
   @@index([post_id], map: "post_id")
 }
 
-model wp_posts {
+model dfda_posts {
   ID                                      BigInt                   @id @default(autoincrement()) @db.UnsignedBigInt
   post_author                             BigInt?                  @db.UnsignedBigInt
   post_date                               DateTime                 @default(now()) @db.Timestamp(0)
@@ -3353,7 +3090,7 @@ model wp_posts {
   deleted_at                              DateTime?                @db.Timestamp(0)
   client_id                               String?                  @db.VarChar(255)
   record_size_in_kb                       Int?
-  wp_users_wp_posts_post_authorTowp_users wp_users?                @relation("wp_posts_post_authorTowp_users", fields: [post_author], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_posts_wp_users_ID_fk")
+  dfda_users_dfda_posts_post_authorTodfda_users dfda_users?                @relation("dfda_posts_post_authorTodfda_users", fields: [post_author], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_posts_dfda_users_ID_fk")
   aggregate_correlations                  aggregate_correlations[]
   applications                            applications[]
   connections                             connections[]
@@ -3364,20 +3101,20 @@ model wp_posts {
   user_variables                          user_variables[]
   variable_categories                     variable_categories[]
   variables                               variables[]
-  wp_comments                             wp_comments[]
-  wp_postmeta                             wp_postmeta[]
-  wp_term_relationships                   wp_term_relationships[]
-  wp_users_wp_postsTowp_users_wp_post_id  wp_users[]               @relation("wp_postsTowp_users_wp_post_id")
+  dfda_comments                             dfda_comments[]
+  dfda_postmeta                             dfda_postmeta[]
+  dfda_term_relationships                   dfda_term_relationships[]
+  dfda_users_dfda_postsTodfda_users_dfda_post_id  dfda_users[]               @relation("dfda_postsTodfda_users_dfda_post_id")
 
-  @@index([post_author, post_modified, deleted_at], map: "idx_wp_posts_post_author_post_modified_deleted_at")
+  @@index([post_author, post_modified, deleted_at], map: "idx_dfda_posts_post_author_post_modified_deleted_at")
   @@index([post_author], map: "post_author")
   @@index([post_name(length: 191)], map: "post_name")
   @@index([post_parent], map: "post_parent")
   @@index([post_type, post_status, post_date, ID], map: "type_status_date")
-  @@index([post_modified], map: "wp_posts_post_modified_index")
+  @@index([post_modified], map: "dfda_posts_post_modified_index")
 }
 
-model wp_term_relationships {
+model dfda_term_relationships {
   object_id        BigInt           @db.UnsignedBigInt
   term_taxonomy_id BigInt           @db.UnsignedBigInt
   term_order       Int?
@@ -3385,14 +3122,14 @@ model wp_term_relationships {
   created_at       DateTime         @default(now()) @db.Timestamp(0)
   deleted_at       DateTime?        @db.Timestamp(0)
   client_id        String?          @db.VarChar(255)
-  wp_posts         wp_posts         @relation(fields: [object_id], references: [ID], onDelete: Cascade, map: "wp_term_relationships_wp_posts_ID_fk")
-  wp_term_taxonomy wp_term_taxonomy @relation(fields: [term_taxonomy_id], references: [term_taxonomy_id], onUpdate: Restrict, map: "wp_term_relationships_wp_term_taxonomy_term_taxonomy_id_fk")
+  dfda_posts         dfda_posts         @relation(fields: [object_id], references: [ID], onDelete: Cascade, map: "dfda_term_relationships_dfda_posts_ID_fk")
+  dfda_term_taxonomy dfda_term_taxonomy @relation(fields: [term_taxonomy_id], references: [term_taxonomy_id], onUpdate: Restrict, map: "dfda_term_relationships_dfda_term_taxonomy_term_taxonomy_id_fk")
 
   @@id([object_id, term_taxonomy_id])
   @@index([term_taxonomy_id], map: "term_taxonomy_id")
 }
 
-model wp_term_taxonomy {
+model dfda_term_taxonomy {
   term_taxonomy_id      BigInt                  @id @default(autoincrement()) @db.UnsignedBigInt
   term_id               BigInt?                 @db.UnsignedBigInt
   taxonomy              String?                 @db.VarChar(32)
@@ -3403,14 +3140,14 @@ model wp_term_taxonomy {
   created_at            DateTime                @default(now()) @db.Timestamp(0)
   deleted_at            DateTime?               @db.Timestamp(0)
   client_id             String?                 @db.VarChar(255)
-  wp_terms              wp_terms?               @relation(fields: [term_id], references: [term_id], onDelete: Restrict, onUpdate: Restrict, map: "wp_term_taxonomy_wp_terms_term_id_fk")
-  wp_term_relationships wp_term_relationships[]
+  dfda_terms              dfda_terms?               @relation(fields: [term_id], references: [term_id], onDelete: Restrict, onUpdate: Restrict, map: "dfda_term_taxonomy_dfda_terms_term_id_fk")
+  dfda_term_relationships dfda_term_relationships[]
 
   @@unique([term_id, taxonomy], map: "term_id_taxonomy")
   @@index([taxonomy], map: "taxonomy")
 }
 
-model wp_termmeta {
+model dfda_termmeta {
   meta_id    BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
   term_id    BigInt    @default(0) @db.UnsignedBigInt
   meta_key   String?   @db.VarChar(255)
@@ -3424,7 +3161,7 @@ model wp_termmeta {
   @@index([term_id], map: "term_id")
 }
 
-model wp_terms {
+model dfda_terms {
   term_id          BigInt             @id @default(autoincrement()) @db.UnsignedBigInt
   name             String?            @db.VarChar(200)
   slug             String?            @db.VarChar(200)
@@ -3433,13 +3170,13 @@ model wp_terms {
   created_at       DateTime           @default(now()) @db.Timestamp(0)
   deleted_at       DateTime?          @db.Timestamp(0)
   client_id        String?            @db.VarChar(255)
-  wp_term_taxonomy wp_term_taxonomy[]
+  dfda_term_taxonomy dfda_term_taxonomy[]
 
   @@index([name(length: 191)], map: "name")
   @@index([slug(length: 191)], map: "slug")
 }
 
-model wp_usermeta {
+model dfda_usermeta {
   umeta_id   BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
   user_id    BigInt?   @db.UnsignedBigInt
   meta_key   String?   @db.VarChar(255)
@@ -3448,13 +3185,13 @@ model wp_usermeta {
   created_at DateTime  @default(now()) @db.Timestamp(0)
   deleted_at DateTime? @db.Timestamp(0)
   client_id  String?   @db.VarChar(255)
-  wp_users   wp_users? @relation(fields: [user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_usermeta_wp_users_ID_fk")
+  dfda_users   dfda_users? @relation(fields: [user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_usermeta_dfda_users_ID_fk")
 
   @@index([meta_key], map: "meta_key")
   @@index([user_id], map: "user_id")
 }
 
-model wp_users {
+model dfda_users {
   ID                                                                BigInt                            @id @default(autoincrement()) @db.UnsignedBigInt
   client_id                                                         String                            @db.VarChar(255)
   user_login                                                        String?                           @unique(map: "user_login_key") @db.VarChar(60)
@@ -3495,7 +3232,7 @@ model wp_users {
   send_reminder_notification_emails                                 Boolean?                          @default(false)
   send_predictor_emails                                             Boolean?                          @default(true)
   get_preview_builds                                                Boolean?                          @default(false)
-  subscription_provider                                             wp_users_subscription_provider?
+  subscription_provider                                             dfda_users_subscription_provider?
   last_sms_tracking_reminder_notification_id                        BigInt?                           @db.UnsignedBigInt
   sms_notifications_enabled                                         Boolean?                          @default(false)
   phone_verification_code                                           String?                           @db.VarChar(25)
@@ -3535,7 +3272,7 @@ model wp_users {
   last_email_at                                                     DateTime?                         @db.Timestamp(0)
   last_push_at                                                      DateTime?                         @db.Timestamp(0)
   primary_outcome_variable_id                                       Int?                              @db.UnsignedInt
-  wp_post_id                                                        BigInt?                           @db.UnsignedBigInt
+  dfda_post_id                                                        BigInt?                           @db.UnsignedBigInt
   analysis_ended_at                                                 DateTime?                         @db.Timestamp(0)
   analysis_requested_at                                             DateTime?                         @db.Timestamp(0)
   analysis_started_at                                               DateTime?                         @db.Timestamp(0)
@@ -3570,17 +3307,14 @@ model wp_users {
   sort_order                                                        Int
   number_of_sharers                                                 Int                               @db.UnsignedInt
   number_of_trustees                                                Int                               @db.UnsignedInt
-  slug                                                              String?                           @unique(map: "wp_users_slug_uindex") @db.VarChar(200)
+  slug                                                              String?                           @unique(map: "dfda_users_slug_uindex") @db.VarChar(200)
   eth_address                                                       String?                           @db.VarChar(255)
-  variables                                                         variables?                        @relation(fields: [primary_outcome_variable_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "wp_users_variables_id_fk")
-  wp_posts_wp_postsTowp_users_wp_post_id                            wp_posts?                         @relation("wp_postsTowp_users_wp_post_id", fields: [wp_post_id], references: [ID], map: "wp_users_wp_posts_ID_fk")
-  wp_users                                                          wp_users?                         @relation("wp_usersTowp_users", fields: [referrer_user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "wp_users_wp_users_ID_fk")
+  variables                                                         variables?                        @relation(fields: [primary_outcome_variable_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "dfda_users_variables_id_fk")
+  dfda_posts_dfda_postsTodfda_users_dfda_post_id                            dfda_posts?                         @relation("dfda_postsTodfda_users_dfda_post_id", fields: [dfda_post_id], references: [ID], map: "dfda_users_dfda_posts_ID_fk")
+  dfda_users                                                          dfda_users?                         @relation("dfda_usersTodfda_users", fields: [referrer_user_id], references: [ID], onDelete: Restrict, onUpdate: Restrict, map: "dfda_users_dfda_users_ID_fk")
   applications                                                      applications[]
-  button_clicks                                                     button_clicks[]
-  buttons                                                           buttons[]
-  cards                                                             cards[]
-  child_parents_child_parents_child_user_idTowp_users               child_parents[]                   @relation("child_parents_child_user_idTowp_users")
-  child_parents_child_parents_parent_user_idTowp_users              child_parents[]                   @relation("child_parents_parent_user_idTowp_users")
+  child_parents_child_parents_child_user_idTodfda_users               child_parents[]                   @relation("child_parents_child_user_idTodfda_users")
+  child_parents_child_parents_parent_user_idTodfda_users              child_parents[]                   @relation("child_parents_parent_user_idTodfda_users")
   cohort_studies                                                    cohort_studies[]
   collaborators                                                     collaborators[]
   connections                                                       connections[]
@@ -3600,15 +3334,15 @@ model wp_users {
   oa_authorization_codes                                            oa_authorization_codes[]
   oa_clients                                                        oa_clients[]
   oa_refresh_tokens                                                 oa_refresh_tokens[]
-  patient_physicians_patient_physicians_patient_user_idTowp_users   patient_physicians[]              @relation("patient_physicians_patient_user_idTowp_users")
-  patient_physicians_patient_physicians_physician_user_idTowp_users patient_physicians[]              @relation("patient_physicians_physician_user_idTowp_users")
+  patient_physicians_patient_physicians_patient_user_idTodfda_users   patient_physicians[]              @relation("patient_physicians_patient_user_idTodfda_users")
+  patient_physicians_patient_physicians_physician_user_idTodfda_users patient_physicians[]              @relation("patient_physicians_physician_user_idTodfda_users")
   permission_user                                                   permission_user[]
   phrases                                                           phrases[]
   purchases                                                         purchases[]
   role_user                                                         role_user[]
   sent_emails                                                       sent_emails[]
-  sharer_trustees_sharer_trustees_sharer_user_idTowp_users          sharer_trustees[]                 @relation("sharer_trustees_sharer_user_idTowp_users")
-  sharer_trustees_sharer_trustees_trustee_user_idTowp_users         sharer_trustees[]                 @relation("sharer_trustees_trustee_user_idTowp_users")
+  sharer_trustees_sharer_trustees_sharer_user_idTodfda_users          sharer_trustees[]                 @relation("sharer_trustees_sharer_user_idTodfda_users")
+  sharer_trustees_sharer_trustees_trustee_user_idTodfda_users         sharer_trustees[]                 @relation("sharer_trustees_trustee_user_idTodfda_users")
   studies                                                           studies[]
   subscriptions                                                     subscriptions[]
   tracker_log                                                       tracker_log[]
@@ -3622,356 +3356,17 @@ model wp_users {
   user_variables                                                    user_variables[]
   variable_user_sources                                             variable_user_sources[]
   votes                                                             votes[]
-  wp_comments                                                       wp_comments[]
-  wp_links                                                          wp_links[]
-  wp_posts_wp_posts_post_authorTowp_users                           wp_posts[]                        @relation("wp_posts_post_authorTowp_users")
-  wp_usermeta                                                       wp_usermeta[]
-  other_wp_users                                                    wp_users[]                        @relation("wp_usersTowp_users")
+  dfda_comments                                                       dfda_comments[]
+  dfda_links                                                          dfda_links[]
+  dfda_posts_dfda_posts_post_authorTodfda_users                           dfda_posts[]                        @relation("dfda_posts_post_authorTodfda_users")
+  dfda_usermeta                                                       dfda_usermeta[]
+  other_dfda_users                                                    dfda_users[]                        @relation("dfda_usersTodfda_users")
 
   @@index([user_nicename], map: "user_nicename")
-  @@index([eth_address], map: "wp_users_eth_address_index")
-  @@index([primary_outcome_variable_id], map: "wp_users_variables_id_fk")
-  @@index([wp_post_id], map: "wp_users_wp_posts_ID_fk")
-  @@index([referrer_user_id], map: "wp_users_wp_users_ID_fk")
-}
-
-model wp_wc_admin_note_actions {
-  action_id  BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
-  note_id    BigInt  @db.UnsignedBigInt
-  name       String  @db.VarChar(255)
-  label      String  @db.VarChar(255)
-  query      String  @db.LongText
-  status     String  @db.VarChar(255)
-  is_primary Boolean @default(false)
-
-  @@index([note_id], map: "note_id")
-}
-
-model wp_wc_admin_notes {
-  note_id       BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  name          String    @db.VarChar(255)
-  type          String    @db.VarChar(20)
-  locale        String    @db.VarChar(20)
-  title         String    @db.LongText
-  content       String    @db.LongText
-  icon          String    @db.VarChar(200)
-  content_data  String?   @db.LongText
-  status        String    @db.VarChar(200)
-  source        String    @db.VarChar(200)
-  date_created  DateTime  @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  date_reminder DateTime? @db.DateTime(0)
-  is_snoozable  Boolean   @default(false)
-}
-
-model wp_wc_category_lookup {
-  category_tree_id BigInt @db.UnsignedBigInt
-  category_id      BigInt @db.UnsignedBigInt
-
-  @@id([category_tree_id, category_id])
-}
-
-model wp_wc_customer_lookup {
-  customer_id      BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  user_id          BigInt?   @unique(map: "user_id") @db.UnsignedBigInt
-  username         String    @default("") @db.VarChar(60)
-  first_name       String    @db.VarChar(255)
-  last_name        String    @db.VarChar(255)
-  email            String?   @db.VarChar(100)
-  date_last_active DateTime? @db.Timestamp(0)
-  date_registered  DateTime? @db.Timestamp(0)
-  country          String    @default("") @db.Char(2)
-  postcode         String    @default("") @db.VarChar(20)
-  city             String    @default("") @db.VarChar(100)
-  state            String    @default("") @db.VarChar(100)
-
-  @@index([email], map: "email")
-}
-
-model wp_wc_download_log {
-  download_log_id                                 BigInt                                          @id @default(autoincrement()) @db.UnsignedBigInt
-  timestamp                                       DateTime                                        @db.DateTime(0)
-  permission_id                                   BigInt                                          @db.UnsignedBigInt
-  user_id                                         BigInt?                                         @db.UnsignedBigInt
-  user_ip_address                                 String?                                         @default("") @db.VarChar(100)
-  wp_woocommerce_downloadable_product_permissions wp_woocommerce_downloadable_product_permissions @relation(fields: [permission_id], references: [permission_id], onDelete: Cascade, onUpdate: Restrict, map: "fk_wp_wc_download_log_permission_id")
-
-  @@index([permission_id], map: "permission_id")
-  @@index([timestamp], map: "timestamp")
-}
-
-model wp_wc_order_coupon_lookup {
-  order_id        BigInt   @db.UnsignedBigInt
-  coupon_id       BigInt   @db.UnsignedBigInt
-  date_created    DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  discount_amount Float    @default(0)
-
-  @@id([order_id, coupon_id])
-  @@index([coupon_id], map: "coupon_id")
-  @@index([date_created], map: "date_created")
-}
-
-model wp_wc_order_product_lookup {
-  order_item_id         BigInt   @id @db.UnsignedBigInt
-  order_id              BigInt   @db.UnsignedBigInt
-  product_id            BigInt   @db.UnsignedBigInt
-  variation_id          BigInt   @db.UnsignedBigInt
-  customer_id           BigInt?  @db.UnsignedBigInt
-  date_created          DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  product_qty           Int
-  product_net_revenue   Float    @default(0)
-  product_gross_revenue Float    @default(0)
-  coupon_amount         Float    @default(0)
-  tax_amount            Float    @default(0)
-  shipping_amount       Float    @default(0)
-  shipping_tax_amount   Float    @default(0)
-
-  @@index([customer_id], map: "customer_id")
-  @@index([date_created], map: "date_created")
-  @@index([order_id], map: "order_id")
-  @@index([product_id], map: "product_id")
-}
-
-model wp_wc_order_stats {
-  order_id           BigInt   @id @db.UnsignedBigInt
-  parent_id          BigInt   @default(0) @db.UnsignedBigInt
-  date_created       DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  date_created_gmt   DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  num_items_sold     Int      @default(0)
-  total_sales        Float    @default(0)
-  tax_total          Float    @default(0)
-  shipping_total     Float    @default(0)
-  net_total          Float    @default(0)
-  returning_customer Boolean?
-  status             String   @db.VarChar(200)
-  customer_id        BigInt   @db.UnsignedBigInt
-
-  @@index([customer_id], map: "customer_id")
-  @@index([date_created], map: "date_created")
-  @@index([status(length: 191)], map: "status")
-}
-
-model wp_wc_order_tax_lookup {
-  order_id     BigInt   @db.UnsignedBigInt
-  tax_rate_id  BigInt   @db.UnsignedBigInt
-  date_created DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  shipping_tax Float    @default(0)
-  order_tax    Float    @default(0)
-  total_tax    Float    @default(0)
-
-  @@id([order_id, tax_rate_id])
-  @@index([date_created], map: "date_created")
-  @@index([tax_rate_id], map: "tax_rate_id")
-}
-
-model wp_wc_product_meta_lookup {
-  product_id     BigInt   @id
-  sku            String?  @default("") @db.VarChar(100)
-  virtual        Boolean? @default(false)
-  downloadable   Boolean? @default(false)
-  min_price      Decimal? @db.Decimal(10, 2)
-  max_price      Decimal? @db.Decimal(10, 2)
-  onsale         Boolean? @default(false)
-  stock_quantity Float?
-  stock_status   String?  @default("instock") @db.VarChar(100)
-  rating_count   BigInt?  @default(0)
-  average_rating Decimal? @default(0.00) @db.Decimal(3, 2)
-  total_sales    BigInt?  @default(0)
-
-  @@index([downloadable], map: "downloadable")
-  @@index([min_price, max_price], map: "min_max_price")
-  @@index([onsale], map: "onsale")
-  @@index([stock_quantity], map: "stock_quantity")
-  @@index([stock_status], map: "stock_status")
-  @@index([virtual], map: "virtual")
-}
-
-model wp_wc_tax_rate_classes {
-  tax_rate_class_id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  name              String @default("") @db.VarChar(200)
-  slug              String @unique(map: "slug", length: 191) @default("") @db.VarChar(200)
-}
-
-model wp_wc_webhooks {
-  webhook_id        BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
-  status            String   @db.VarChar(200)
-  name              String   @db.Text
-  user_id           BigInt   @db.UnsignedBigInt
-  delivery_url      String   @db.Text
-  secret            String   @db.Text
-  topic             String   @db.VarChar(200)
-  date_created      DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  date_created_gmt  DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  date_modified     DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  date_modified_gmt DateTime @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  api_version       Int      @db.SmallInt
-  failure_count     Int      @default(0) @db.SmallInt
-  pending_delivery  Boolean  @default(false)
-
-  @@index([user_id], map: "user_id")
-}
-
-model wp_woocommerce_api_keys {
-  key_id          BigInt    @id @default(autoincrement()) @db.UnsignedBigInt
-  user_id         BigInt    @db.UnsignedBigInt
-  description     String?   @db.VarChar(200)
-  permissions     String    @db.VarChar(10)
-  consumer_key    String    @db.Char(64)
-  consumer_secret String    @db.Char(43)
-  nonces          String?   @db.LongText
-  truncated_key   String    @db.Char(7)
-  last_access     DateTime? @db.DateTime(0)
-
-  @@index([consumer_key], map: "consumer_key")
-  @@index([consumer_secret], map: "consumer_secret")
-}
-
-model wp_woocommerce_attribute_taxonomies {
-  attribute_id      BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
-  attribute_name    String  @db.VarChar(200)
-  attribute_label   String? @db.VarChar(200)
-  attribute_type    String  @db.VarChar(20)
-  attribute_orderby String  @db.VarChar(20)
-  attribute_public  Int     @default(1)
-
-  @@index([attribute_name(length: 20)], map: "attribute_name")
-}
-
-model wp_woocommerce_downloadable_product_permissions {
-  permission_id       BigInt               @id @default(autoincrement()) @db.UnsignedBigInt
-  download_id         String               @db.VarChar(36)
-  product_id          BigInt               @db.UnsignedBigInt
-  order_id            BigInt               @default(0) @db.UnsignedBigInt
-  order_key           String               @db.VarChar(200)
-  user_email          String               @db.VarChar(200)
-  user_id             BigInt?              @db.UnsignedBigInt
-  downloads_remaining String?              @db.VarChar(9)
-  access_granted      DateTime             @default(dbgenerated("'0000-00-00 00:00:00'")) @db.DateTime(0)
-  access_expires      DateTime?            @db.DateTime(0)
-  download_count      BigInt               @default(0) @db.UnsignedBigInt
-  wp_wc_download_log  wp_wc_download_log[]
-
-  @@index([product_id, order_id, order_key(length: 16), download_id], map: "download_order_key_product")
-  @@index([download_id, order_id, product_id], map: "download_order_product")
-  @@index([order_id], map: "order_id")
-  @@index([user_id, order_id, downloads_remaining, access_expires], map: "user_order_remaining_expires")
-}
-
-model wp_woocommerce_log {
-  log_id    BigInt   @id @default(autoincrement()) @db.UnsignedBigInt
-  timestamp DateTime @db.DateTime(0)
-  level     Int      @db.SmallInt
-  source    String   @db.VarChar(200)
-  message   String   @db.LongText
-  context   String?  @db.LongText
-
-  @@index([level], map: "level")
-}
-
-model wp_woocommerce_order_itemmeta {
-  meta_id       BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
-  order_item_id BigInt  @db.UnsignedBigInt
-  meta_key      String? @db.VarChar(255)
-  meta_value    String? @db.LongText
-
-  @@index([meta_key(length: 32)], map: "meta_key")
-  @@index([order_item_id], map: "order_item_id")
-}
-
-model wp_woocommerce_order_items {
-  order_item_id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  order_item_name String @db.Text
-  order_item_type String @default("") @db.VarChar(200)
-  order_id        BigInt @db.UnsignedBigInt
-
-  @@index([order_id], map: "order_id")
-}
-
-model wp_woocommerce_payment_tokenmeta {
-  meta_id          BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
-  payment_token_id BigInt  @db.UnsignedBigInt
-  meta_key         String? @db.VarChar(255)
-  meta_value       String? @db.LongText
-
-  @@index([meta_key(length: 32)], map: "meta_key")
-  @@index([payment_token_id], map: "payment_token_id")
-}
-
-model wp_woocommerce_payment_tokens {
-  token_id   BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
-  gateway_id String  @db.VarChar(200)
-  token      String  @db.Text
-  user_id    BigInt  @default(0) @db.UnsignedBigInt
-  type       String  @db.VarChar(200)
-  is_default Boolean @default(false)
-
-  @@index([user_id], map: "user_id")
-}
-
-model wp_woocommerce_sessions {
-  session_id     BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  session_key    String @unique(map: "session_key") @db.Char(32)
-  session_value  String @db.LongText
-  session_expiry BigInt @db.UnsignedBigInt
-}
-
-model wp_woocommerce_shipping_zone_locations {
-  location_id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  zone_id       BigInt @db.UnsignedBigInt
-  location_code String @db.VarChar(200)
-  location_type String @db.VarChar(40)
-
-  @@index([location_id], map: "location_id")
-  @@index([location_type(length: 10), location_code(length: 20)], map: "location_type_code")
-}
-
-model wp_woocommerce_shipping_zone_methods {
-  zone_id      BigInt  @db.UnsignedBigInt
-  instance_id  BigInt  @id @default(autoincrement()) @db.UnsignedBigInt
-  method_id    String  @db.VarChar(200)
-  method_order BigInt  @db.UnsignedBigInt
-  is_enabled   Boolean @default(true)
-}
-
-model wp_woocommerce_shipping_zones {
-  zone_id    BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  zone_name  String @db.VarChar(200)
-  zone_order BigInt @db.UnsignedBigInt
-}
-
-model wp_woocommerce_tax_rate_locations {
-  location_id   BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  location_code String @db.VarChar(200)
-  tax_rate_id   BigInt @db.UnsignedBigInt
-  location_type String @db.VarChar(40)
-
-  @@index([location_type(length: 10), location_code(length: 20)], map: "location_type_code")
-  @@index([tax_rate_id], map: "tax_rate_id")
-}
-
-model wp_woocommerce_tax_rates {
-  tax_rate_id       BigInt @id @default(autoincrement()) @db.UnsignedBigInt
-  tax_rate_country  String @default("") @db.VarChar(2)
-  tax_rate_state    String @default("") @db.VarChar(200)
-  tax_rate          String @default("") @db.VarChar(8)
-  tax_rate_name     String @default("") @db.VarChar(200)
-  tax_rate_priority BigInt @db.UnsignedBigInt
-  tax_rate_compound Int    @default(0)
-  tax_rate_shipping Int    @default(1)
-  tax_rate_order    BigInt @db.UnsignedBigInt
-  tax_rate_class    String @default("") @db.VarChar(200)
-
-  @@index([tax_rate_class(length: 10)], map: "tax_rate_class")
-  @@index([tax_rate_country], map: "tax_rate_country")
-  @@index([tax_rate_priority], map: "tax_rate_priority")
-  @@index([tax_rate_state(length: 2)], map: "tax_rate_state")
-}
-
-model wp_wpreactions_reacted_users {
-  id           Int      @id @default(autoincrement()) @db.MediumInt
-  bind_id      Int
-  react_id     String   @db.VarChar(30)
-  reacted_to   String   @db.VarChar(10)
-  reacted_date DateTime @db.DateTime(0)
+  @@index([eth_address], map: "dfda_users_eth_address_index")
+  @@index([primary_outcome_variable_id], map: "dfda_users_variables_id_fk")
+  @@index([dfda_post_id], map: "dfda_users_dfda_posts_ID_fk")
+  @@index([referrer_user_id], map: "dfda_users_dfda_users_ID_fk")
 }
 
 enum collaborators_type {
@@ -4051,7 +3446,7 @@ enum variable_categories_is_goal {
   NEVER
 }
 
-enum wp_users_subscription_provider {
+enum dfda_users_subscription_provider {
   stripe
   apple
   google

@@ -1,10 +1,10 @@
-# Cure Acceleration Act
+# Disease Eradication Act
 
 ## Section 1. Short Title and Findings
 
 ### 1.1 Title
 
-Cited as the "Cure Acceleration Act."
+Cited as the "Disease Eradication Act."
 
 ### 1.2 Core Findings
 

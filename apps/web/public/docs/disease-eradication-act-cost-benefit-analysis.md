@@ -1,8 +1,8 @@
-# Quantitative Cost-Benefit Analysis of the Cure Acceleration Act
+# Quantitative Cost-Benefit Analysis of the Disease Eradication Act
 
 ## Executive Summary
 
-The [**Cure Acceleration Act**](./cure-acceleration-act.md) proposes transformative changes to the healthcare system, aiming to reduce drug development costs, expedite access to treatments, and incentivize cures and preventive care. This analysis quantifies the potential economic impacts, balancing the estimated benefits against the anticipated costs.
+The [**Disease Eradication Act**](./disease-eradication-act.md) proposes transformative changes to the healthcare system, aiming to reduce drug development costs, expedite access to treatments, and incentivize cures and preventive care. This analysis quantifies the potential economic impacts, balancing the estimated benefits against the anticipated costs.
 
 - **Total Estimated Annual Benefits**: **Up to \$2.25 trillion**
 - **Total Estimated Annual Costs**: **Approximately \$10 billion (initial and ongoing)**
@@ -12,7 +12,7 @@ The [**Cure Acceleration Act**](./cure-acceleration-act.md) proposes transformat
 
 ## Table of Contents
 
-- [Quantitative Cost-Benefit Analysis of the Cure Acceleration Act](#quantitative-cost-benefit-analysis-of-the-cure-acceleration-act)
+- [Quantitative Cost-Benefit Analysis of the Disease Eradication Act](#quantitative-cost-benefit-analysis-of-the-disease-eradication-act)
   - [Executive Summary](#executive-summary)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
@@ -52,7 +52,7 @@ The [**Cure Acceleration Act**](./cure-acceleration-act.md) proposes transformat
 
 ## Introduction
 
-The current healthcare system faces significant challenges, including high drug development costs, lengthy approval processes, limited patient access to clinical trials, and escalating drug prices. The **Cure Acceleration Act** aims to address these issues by overhauling the drug development and approval process, leveraging technology, and aligning financial incentives with health outcomes.
+The current healthcare system faces significant challenges, including high drug development costs, lengthy approval processes, limited patient access to clinical trials, and escalating drug prices. The **Disease Eradication Act** aims to address these issues by overhauling the drug development and approval process, leveraging technology, and aligning financial incentives with health outcomes.
 
 This analysis provides a quantitative evaluation of the Act's potential economic benefits and costs.
 
@@ -231,7 +231,7 @@ The benefits overwhelmingly outweigh the costs, even when considering potential 
 
 ## Conclusion
 
-The **Cure Acceleration Act** presents a compelling economic case, with potential annual benefits exceeding \$1 trillion against relatively modest implementation and operational costs. By reducing drug development expenses, lowering drug prices through global competition, accelerating access to treatments, and incentivizing preventive care and cures, the Act could transform healthcare economics.
+The **Disease Eradication Act** presents a compelling economic case, with potential annual benefits exceeding \$1 trillion against relatively modest implementation and operational costs. By reducing drug development expenses, lowering drug prices through global competition, accelerating access to treatments, and incentivizing preventive care and cures, the Act could transform healthcare economics.
 
 ## Assumptions and Limitations
 

@@ -1,7 +1,7 @@
 import { LanguageModelV1 } from "@ai-sdk/provider";
 import { Prisma, PrismaClient, ArticleStatus } from "@prisma/client";
 import { generateObject } from "ai";
-import { RegularSearchOptions, SearchResult } from "exa-js";
+import { RegularSearchOptions, SearchResult, TextContentsOptions } from "exa-js";
 import { z } from "zod";
 import { getSearchResults, getSearchResultsByUrl } from "@/lib/agents/researcher/getSearchResults";
 import { generateSearchQueries } from "@/lib/agents/researcher/searchQueryGenerator";
@@ -20,6 +20,10 @@ export type ResearchStep = {
   progress: number
 }
 
+type DefaultContentsOptions = {
+  text: TextContentsOptions;
+};
+
 const GeneratedReportSchema = z.object({
   title: z.string().describe("The title of the report"),
   description: z
@@ -28,7 +32,7 @@ const GeneratedReportSchema = z.object({
   content: z
     .string()
     .describe(
-      "The main content of the report in markdown format. DO NOT include the title."
+      "The main content of the report in markdown format. DO NOT include the title. Use the provided highlights as relevant quotes in the content."
     ),
   sources: z
     .array(
@@ -36,17 +40,20 @@ const GeneratedReportSchema = z.object({
         url: z.string(),
         title: z.string(),
         description: z.string(),
+        relevantQuotes: z.array(z.string()).optional().describe("Key quotes from this source"),
+        imageUrls: z.array(z.string()).optional().describe("Relevant images from this source")
       })
     )
     .describe("An array of sources used in the report"),
   tags: z.array(z.string()).describe("Relevant tags for the report"),
   categoryName: z.string().describe("The main category of the report"),
+  featuredImageUrl: z.string().optional().describe("URL of the most relevant image to use as featured image")
 })
 
 type GeneratedReport = z.infer<typeof GeneratedReportSchema>
 
 export type ReportOutput = GeneratedReport & {
-  searchResults: SearchResult[]
+  searchResults: SearchResult<DefaultContentsOptions>[]
   featuredImage?: string
   generationOptions?: object
   id?: string
@@ -168,7 +175,7 @@ export async function writeArticle(
     progress: 20
   })
 
-  let searchResults: SearchResult[]
+  let searchResults: SearchResult<DefaultContentsOptions>[]
   if (isUrl(topic)) {
     searchResults = await getSearchResultsByUrl(
       topic,
@@ -193,10 +200,18 @@ export async function writeArticle(
 
   let inputData = searchResults
     .map(
-      (item) => `--START ITEM: ${item.title}--\n
+      (item: SearchResult<DefaultContentsOptions>) => `--START ITEM: ${item.title}--\n
     TITLE: ${item.title}\n
     URL: ${item.url}\n
     CONTENT: ${item.text.slice(0, maxCharactersOfSearchContentToUse)}\n
+    RELEVANT QUOTES:
+    ${(item as any).highlights?.map((quote: string, i: number) => 
+        `${i + 1}. "${quote}" (Score: ${(item as any).highlightScores?.[i] || 'N/A'})`
+    ).join('\n    ') || 'No relevant quotes found'}\n
+    IMAGES:
+    ${(item as any).extras?.imageLinks?.map((url: string, i: number) => 
+        `${i + 1}. ${url}`
+    ).join('\n    ') || 'No images found'}\n
     --END ITEM: ${item.title}--\n`
     )
     .join("")
@@ -226,6 +241,9 @@ export async function writeArticle(
     If the topic is a question with a quantitative answer, please answer in the first sentence.
     Separate sections with headings.
     
+    IMPORTANT: Use the provided relevant quotes (highlights) from sources to support key points.
+    Include relevant images where they add value to the content.
+    
     Audience: ${audience}
     Purpose: ${purpose}
     Tone: ${tone}
@@ -235,7 +253,8 @@ export async function writeArticle(
     ${includeSummary ? "Include a brief summary at the beginning." : ""}
 
 # Web Search Results
-    Here is a list of web pages and excerpts from them that you can use to write the report:
+    Here is a list of web pages and excerpts from them that you can use to write the report.
+    For each result, I'm providing the full text, relevant quotes (highlights), and any relevant images:
     ${inputData}
   `
 

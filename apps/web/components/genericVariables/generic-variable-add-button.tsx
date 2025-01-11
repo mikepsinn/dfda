@@ -13,7 +13,7 @@ export function GenericVariableAddButton({
 }: GlobalVariableAddButtonProps) {
   const router = useRouter()
   async function onClick() {
-    router.push(`/dashboard/globalVariables`)
+    router.push(`/globalVariables`)
     router.refresh()
   }
 

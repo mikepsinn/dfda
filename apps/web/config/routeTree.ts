@@ -198,14 +198,14 @@ export const routeTree = {
           "description": "📑 View the blueprint for the application",
           "displayName": "Blueprint"
         },
-        "cure-acceleration-act": {
-          "name": "cure-acceleration-act",
-          "path": "/docs/cure-acceleration-act",
+        "disease-eradication-act": {
+          "name": "disease-eradication-act",
+          "path": "/docs/disease-eradication-act",
           "isDynamic": false,
           "children": {},
           "emoji": "📜",
-          "description": "📜 Read about the Cure Acceleration Act",
-          "displayName": "Cure Acceleration Act"
+          "description": "📜 Read about the Disease Eradication Act",
+          "displayName": "Disease Eradication Act"
         },
         "health-savings-sharing": {
           "name": "health-savings-sharing",

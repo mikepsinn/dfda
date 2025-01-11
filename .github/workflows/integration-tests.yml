@@ -9,9 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
     
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +21,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9.15.3
           run_install: false
           
       - name: Get pnpm store directory
@@ -43,25 +40,23 @@ jobs:
             
       - name: Install dependencies
         run: |
-          cd ../..
+          pnpm install
           pnpm install --frozen-lockfile
-          cd apps/web
-
-      # Build the Next.js app
-      - name: Build Next.js
-        run: pnpm build
-
-      # Start the Next.js server
-      - name: Start Next.js
+            
+      # Setup environment variables
+      - name: Setup environment variables
+        working-directory: apps/web
+        run: cp .env.example .env
+            
+      # Build and test web app
+      - name: Build and test web app
+        working-directory: apps/web
         run: |
+          pnpm build
           pnpm start &
-          # Wait for the server to be ready
           echo "Waiting for Next.js to be ready..."
           timeout 30 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:3000)" != "200" ]]; do sleep 2; done' || false
-
-      # Run integration tests
-      - name: Run integration tests
-        run: pnpm test:integration
+          pnpm test:integration
         env:
           CI: true
 

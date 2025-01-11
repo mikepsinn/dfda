@@ -1,4 +1,4 @@
-export const DFDA_PETITION_ID = "cure-acceleration-act"
+export const DFDA_PETITION_ID = "disease-eradication-act"
 
 export const COLOURS = {
   "1C Enterprise": {
