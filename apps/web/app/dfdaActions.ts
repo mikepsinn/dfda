@@ -543,11 +543,12 @@ export async function createDfdaApplication(
 }
 
 export const getDataSources = async (
-  final_callback_url: string
+  final_callback_url: string,
+  userId: string
 ): Promise<any> => {
   const response = await dfdaGET("connectors/list", {
     final_callback_url,
-  })
+  }, userId)
   return response.connectors
 }
 

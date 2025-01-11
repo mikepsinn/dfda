@@ -1,26 +1,23 @@
 import React from 'react'
-import { getDataSources } from '@/app/dfdaActions'
-import { DataSourceRow } from './components/DataSourceRow'
-import { DataSource } from '@/types/models/DataSource'
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "@/lib/auth"
+import { redirect } from 'next/navigation'
+import { DataSourceList } from './components/DataSourceList'
+
+export const dynamic = 'force-dynamic'
 
 export default async function ImportPage() {
-  const dataSources =
-   await getDataSources(`${process.env.NEXT_PUBLIC_BASE_URL}/import`) as DataSource[]
-  
+  const session = await getServerSession(authOptions)
+  if(!session?.user?.id) {
+    return redirect('/signin?callbackUrl=/import')
+  }
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">Import Your Data</h1>
-      <div className="space-y-6">
-        {Array.isArray(dataSources) && dataSources.length > 0 ? (
-          dataSources.map((source, index) => (
-            <DataSourceRow key={index} data={source} />
-          ))
-        ) : (
-          <div className="text-center text-gray-600">
-            No data sources available
-          </div>
-        )}
-      </div>
+      <DataSourceList 
+        userId={session?.user?.id}
+      />
     </div>
   )
 }
