@@ -249,9 +249,6 @@ importers:
       highcharts-react-official:
         specifier: ^3.2.1
         version: 3.2.1(highcharts@11.4.8)(react@18.2.0)
-      ignore:
-        specifier: ^5.3.1
-        version: 5.3.2
       ioredis:
         specifier: ^5.4.1
         version: 5.4.2(supports-color@8.1.1)
@@ -508,6 +505,9 @@ importers:
       eslint-plugin-unused-imports:
         specifier: ^4.1.4
         version: 4.1.4(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.3.3))(eslint@8.57.1(supports-color@8.1.1))(supports-color@8.1.1)(typescript@5.3.3))(eslint@8.57.1(supports-color@8.1.1))
+      ignore:
+        specifier: ^5.3.2
+        version: 5.3.2
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.11.17)(supports-color@8.1.1)(ts-node@10.9.2(@types/node@20.11.17)(typescript@5.3.3))

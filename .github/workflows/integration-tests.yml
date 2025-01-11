@@ -43,6 +43,11 @@ jobs:
           pnpm install
           pnpm install --frozen-lockfile
             
+      # Setup environment variables
+      - name: Setup environment variables
+        working-directory: apps/web
+        run: cp .env.example .env
+            
       # Build and test web app
       - name: Build and test web app
         working-directory: apps/web
