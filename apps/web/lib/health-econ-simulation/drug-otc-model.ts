@@ -1,5 +1,4 @@
 import { ModelParameter, OutcomeMetric } from './types';
-import { z } from 'zod';
 import { findOrCreateArticleByPromptedTopic } from '@/lib/agents/researcher/researcher';
 
 // Model parameters for OTC vs Prescription analysis
