@@ -17,6 +17,8 @@ import DFDACostSavingsTable from "./DFDACostSavingsTable"
 import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
+import ProblemSection from "./ProblemSection"
+import DeathTollTimer from "./DeathTollTimer"
 
 export default function DFDAHomePage() {
   const router = useRouter()
@@ -149,7 +151,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Let's Upgrade FDA.gov!
+          HELP US ERADICATE DISEASE
         </motion.h1>
         <motion.p
           className="neobrutalist-description"
@@ -157,10 +159,11 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          🚀 Decentralizing and automating clinical research to determine the
-          positive and negative effects of every food and drug in the world! 💊
+          🚀 with the power of automated and decentralized clinical research! 💊
         </motion.p>
       </header>
+
+      <DeathTollTimer />
 
       <main className="space-y-12">
         <DFDADisclaimer />
