@@ -203,15 +203,3 @@ export const authOptions: NextAuthOptions = {
     },
   },
 }
-
-export async function requireAuth(redirectTo: string) {
-  const session = await getServerSession(authOptions)
-  
-  if (!session?.user) {
-    const signInPath = authOptions?.pages?.signIn || "/signin"
-    const redirectUrl = `${signInPath}?callbackUrl=${encodeURIComponent(redirectTo)}`
-    redirect(redirectUrl)
-  }
-  
-  return session
-}
