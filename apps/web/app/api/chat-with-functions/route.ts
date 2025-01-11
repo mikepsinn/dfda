@@ -16,8 +16,8 @@ export async function POST(req: Request) {
         getCustomDescription: tool({
           description: 'Get a custom description of an image based on a specific prompt',
           parameters: z.object({
-            prompt: z.string().describe('The prompt to analyze the image with'),
-            file: z.string().describe('The base64 encoded image data')
+            prompt: z.string(),
+            file: z.string()
           }),
           execute: async ({ prompt, file }) => {
             const response = await fetch('/api/image2measurements', {
