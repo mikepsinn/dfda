@@ -19,6 +19,7 @@ import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
 import DeathTollTimer from "./DeathTollTimer"
 import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
+import HowItWorksSection from "./HowItWorksSection"
 
 export default function DFDAHomePage() {
   const router = useRouter()
@@ -167,6 +168,7 @@ export default function DFDAHomePage() {
 
       <main className="space-y-12">
         <DFDADisclaimer />
+        <HowItWorksSection />
         <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">See Effects of Foods🍟</h2>

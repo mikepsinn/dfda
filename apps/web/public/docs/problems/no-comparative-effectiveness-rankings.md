@@ -1,3 +1,8 @@
+---
+description: >-
+  Shockingly, the existing system does not give us a ranked list of the most safe and effective treatments for a given condition.
+---
+
 # 📊 No Treatment Effectiveness Rankings
 
 Placebo-controlled randomized controlled trials (RCTs) have long been the gold standard for evaluating new treatments. However, this approach has significant limitations when it comes to determining how treatments compare to each other in real-world settings.

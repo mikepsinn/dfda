@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import ConditionSearchAutocomplete from './ConditionSearchAutocomplete'
+import ClinicalTrialConditionSearchAutocomplete from './ClinicalTrialConditionSearchAutocomplete'
 import { useRouter } from 'next/navigation'
 
 export default function ConditionSearchSection() {
@@ -9,7 +9,7 @@ export default function ConditionSearchSection() {
 
   return (
     <div className="max-w-xl mb-8">
-      <ConditionSearchAutocomplete 
+      <ClinicalTrialConditionSearchAutocomplete
         onConditionSelect={(condition) => {
           router.push(`/conditions/${condition}`)
         }}

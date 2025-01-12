@@ -27,6 +27,22 @@ export async function fetchDfdaConditions() {
   return prisma.dfdaCondition.findMany()
 }
 
+export async function searchRatedConditions(query: string) {
+  return prisma.dfdaCondition.findMany({
+    where: {
+      name: {
+        contains: query,
+        mode: "insensitive",
+      },
+    },
+    select: {
+      id: true,
+      name: true,
+    },
+    take: 5,
+  })
+}
+
 export async function addTreatment(
   userId: string,
   conditionName: string,
@@ -144,7 +160,7 @@ export async function searchTreatmentsAndConditions(query: string) {
   ]
 }
 
-export async function getConditionByName(name: string) {
+export async function getConditionByNameWithTreatmentRatings(name: string) {
   return prisma.dfdaCondition.findFirst({
     where: {
       name: {
