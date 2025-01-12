@@ -9,7 +9,7 @@ Consider these realities:
 - The average time from drug discovery to patient access is 12 years
 - 95% of experimental drugs fail in clinical trials, wasting precious resources
 
-# The solution: Informed Patient Rights
+# The solution: Upgrading FDA.gov
 
 1. Patient Rights
 
@@ -34,22 +34,6 @@ This system would create a unified global platform where patients could:
 
 Patients could effortlessly report positive and negative effects through the website, forms, or automated systems like robocalls. This data would continuously improve the effectiveness rankings of treatments, ensuring the system evolves and adapts based on real-world evidence.
 
-A global open-source decentralized clinical trial network could transform healthcare delivery. Based on economic modeling from Johns Hopkins, CBO, and JAMA studies, we estimate:
-- Initial investment: $100-150 million for prototype development
-- Development timeline: 24 months for initial prototype
-- Ongoing costs: $1-2 per person annually across participating nations
-
-These investments could yield trillions in healthcare savings while making treatments accessible to all.
-
-We propose a three-phase implementation:
-1. Pilot Phase (24 months): Develop core platform with 3 key disease areas
-2. Expansion Phase (4 years): Scale to cover 30% of major diseases
-3. Global Rollout (7 years): Full implementation across all disease areas
-
-The time to act is now. Every day we delay, thousands more lives are lost to treatable conditions. We urge you to join us in creating this transformative system that will:
-- Save millions of lives annually
-- Make effective treatments accessible and affordable to all
-- Massively reduce the suffering of those with chronic disease
 
 Let us work together to build a future where no one suffers or dies waiting for treatments they need and deserve.
 
