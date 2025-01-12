@@ -17,8 +17,8 @@ import DFDACostSavingsTable from "./DFDACostSavingsTable"
 import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
-import ProblemSection from "./ProblemSection"
 import DeathTollTimer from "./DeathTollTimer"
+import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
 
 export default function DFDAHomePage() {
   const router = useRouter()
@@ -151,7 +151,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          HELP US ERADICATE DISEASE
+          Let's upgrade FDA.gov
         </motion.h1>
         <motion.p
           className="neobrutalist-description"
@@ -159,7 +159,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          🚀 with the power of automated and decentralized clinical research! 💊
+          🚀 And eradicate disease with the power of automated and decentralized clinical research! 💊
         </motion.p>
       </header>
 
@@ -167,6 +167,7 @@ export default function DFDAHomePage() {
 
       <main className="space-y-12">
         <DFDADisclaimer />
+        <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">See Effects of Foods🍟</h2>
           <div className="flex flex-col gap-4 md:flex-row">
