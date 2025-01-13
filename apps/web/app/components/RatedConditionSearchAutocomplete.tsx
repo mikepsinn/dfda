@@ -54,7 +54,7 @@ export default function RatedConditionSearchAutocomplete({
   }
 
   return (
-    <div className="relative">
+    <div className="relative z-[100]">
       <div className="relative">
         <Input
           type="text"
@@ -79,7 +79,7 @@ export default function RatedConditionSearchAutocomplete({
         )}
       </div>
       {showDropdown && suggestions.length > 0 && (
-        <ul className="absolute z-10 w-full mt-2 neobrutalist-container !p-0 max-h-60 overflow-auto">
+        <ul className="absolute z-[100] w-full mt-2 neobrutalist-container !p-0 max-h-60 overflow-auto">
           {suggestions.map((suggestion, index) => (
             <li
               key={index}

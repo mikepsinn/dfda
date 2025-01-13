@@ -8,7 +8,9 @@ featuredImage: "treatment-time.jpg"
 source: "https://dfda.earth"
 ---
 
-Traditional drug development takes an average of 15 years from initial research to patient availability. Through automation of administrative tasks, AI-assisted protocol development, and decentralized trial management, we can dramatically compress this timeline:
+From initial research to clinical practice, new medical treatments take an average of [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) to complete the development process and reach patients. 
+
+Through automation of administrative tasks, AI-assisted protocol development, and decentralized trial management, we can dramatically compress this timeline:
 
 - Protocol Development: 2 months (vs 2 years)
 - Patient Recruitment: 1 month (vs 2 years)
@@ -16,4 +18,4 @@ Traditional drug development takes an average of 15 years from initial research 
 - Data Analysis: 1 month (vs 1 year)
 - Regulatory Review: 5 months (vs 2 years)
 
-This 12x acceleration means potentially life-saving treatments reach patients faster while maintaining rigorous safety standards through automated monitoring and real-time data analysis. 
+This acceleration means potentially life-saving treatments reach patients faster while maintaining rigorous safety standards through automated monitoring and real-time data analysis. 

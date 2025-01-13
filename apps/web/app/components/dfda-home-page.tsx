@@ -172,6 +172,7 @@ export default function DFDAHomePage() {
       <main className="space-y-12">
         <DFDADisclaimer />
         <DFDAComparisonTable />
+        <HowItWorksSection />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
           <h2 className="neobrutalist-title mb-6">The World We Live In</h2>
           <ProblemStatisticsGrid />
@@ -184,7 +185,6 @@ export default function DFDAHomePage() {
           <BenefitStatisticsGrid />
           
         </section>
-        <HowItWorksSection />
         <section className="mt-12">
           <DFDACostSavingsTable />
         </section>
@@ -248,7 +248,7 @@ export default function DFDAHomePage() {
           <AdvancedTrialSearch />
         </section>
 
-        <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
+{/*         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">
             🏢 Drug Companies: Create Your Trial 📝
           </h2>
@@ -266,7 +266,7 @@ export default function DFDAHomePage() {
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-        </section>
+        </section> */}
 
 
         <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

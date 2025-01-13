@@ -8,7 +8,7 @@ featuredImage: "patient-participation.jpg"
 source: "https://dfda.earth"
 ---
 
-Traditional clinical trials exclude up to 85% of willing participants due to strict eligibility criteria and geographical limitations. Our decentralized approach removes these barriers by:
+Traditional clinical trials exclude up to [85%](https://www.ncbi.nlm.nih.gov/pubmed/14628985) of willing participants due to strict eligibility criteria and geographical limitations. Our decentralized approach removes these barriers by:
 
 - Enabling participation from any location through remote monitoring
 - Including patients with multiple conditions or medications
@@ -17,3 +17,7 @@ Traditional clinical trials exclude up to 85% of willing participants due to str
 - Reducing the burden of in-person visits
 
 This increased inclusivity means trial results better represent real-world patients, leading to more accurate and applicable treatment data. 
+
+Sources:
+- [Exclusion Criteria](https://www.ncbi.nlm.nih.gov/pubmed/14628985)
+

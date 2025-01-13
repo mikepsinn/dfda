@@ -113,7 +113,7 @@ export default function HowItWorksSection() {
       desc: "Report treatment effects easily through your preferred apps, EHR systems, or automated calls.",
       color: "bg-fuchsia-400",
       icon: MessageSquareText,
-      media: "https://static.crowdsourcingcures.org/video/import.gif",
+      media: "https://static.crowdsourcingcures.org/video/reminder-inbox.gif",
       onClick: () => {},
     },
     {
@@ -135,11 +135,7 @@ export default function HowItWorksSection() {
         Use a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov to allow ANY patient ANYWHERE in the world to:
       </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 gap-8 md:grid-cols-3"
-      >
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {features.map((feature, index) => (
           <FeatureBox
             key={feature.title}
@@ -153,7 +149,7 @@ export default function HowItWorksSection() {
             onClick={feature.onClick}
           />
         ))}
-      </motion.div>
+      </div>
     </section>
   )
 } 
