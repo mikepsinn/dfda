@@ -4,6 +4,7 @@ import * as React from "react"
 import { signIn } from "next-auth/react"
 import { Icons } from "@/components/icons"
 import { cn } from "@/lib/utils"
+import { subscribeToNewsletter } from "@/app/emailActions"
 
 interface EmailSignupFormProps extends React.HTMLAttributes<HTMLDivElement> {
   callbackUrl?: string
@@ -25,23 +26,33 @@ export function EmailSignupForm({
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [email, setEmail] = React.useState<string>("")
   const [emailSent, setEmailSent] = React.useState<boolean>(false)
+  const [error, setError] = React.useState<string | null>(null)
 
   const handleEmailSignIn = async () => {
     setIsLoading(true)
+    setError(null)
     try {
+      // First subscribe to newsletter
+      const subscribeResult = await subscribeToNewsletter(email)
+      if (!subscribeResult.success) {
+        throw new Error(subscribeResult.error)
+      }
+
+      // Then sign in
       const result = await signIn("email", {
         email,
         redirect: false,
         callbackUrl,
       })
       if (result?.error) {
-        console.error("Email sign-in error:", result.error)
+        throw new Error(result.error)
       } else {
         setEmailSent(true)
         onEmailSent?.()
       }
     } catch (error) {
       console.error("Email sign-in error:", error)
+      setError(error instanceof Error ? error.message : "An error occurred")
     } finally {
       setIsLoading(false)
     }
@@ -84,6 +95,11 @@ export function EmailSignupForm({
               )}
             </button>
           </div>
+          {error && (
+            <div className="neobrutalist-gradient-container neobrutalist-gradient-pink text-center mt-2">
+              <p className="text-white font-bold">{error}</p>
+            </div>
+          )}
         </div>
       )}
     </div>

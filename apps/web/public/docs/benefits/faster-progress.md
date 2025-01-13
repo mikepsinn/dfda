@@ -3,7 +3,7 @@ number: 20X
 textFollowingNumber: "increase in the speed of curing diseases"
 title: "20X Increase in the Speed of Curing Diseases"
 description: "By reducing the cost of clinical trials by 96%, we can run 20 times more trials with the same resources, dramatically accelerating the discovery of new treatments and cures."
-emoji: "👥"
+emoji: "🚀"
 featuredImage: "cost-per-participant.jpg"
 source: "https://dfda.earth#cost-savings"
 ---

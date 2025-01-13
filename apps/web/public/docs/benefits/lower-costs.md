@@ -3,7 +3,7 @@ number: 95%
 textFollowingNumber: "lower costs of clinical trials and treatments"
 title: "95% Lower Costs of Clinical Trials and Treatments"
 description: "By automating clinical trials and treatments, we can reduce costs by 95%"
-emoji: "👥"
+emoji: "📉"
 featuredImage: "cost-per-participant.jpg"
 source: "https://dfda.earth#cost-savings"
 ---

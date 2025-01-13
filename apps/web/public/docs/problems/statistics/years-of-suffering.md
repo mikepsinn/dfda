@@ -3,7 +3,7 @@ number: 17 years
 textFollowingNumber: "of suffering until a new treatment reaches patients"
 title: "17 Years of Suffering Until a New Treatment Reaches Patients"
 description: "On average, it takes 17 years for medical research to translate into clinical practice and reach patients"
-emoji: "⌛"
+emoji: "🤒"
 featuredImage: "years-of-suffering.jpg"
 ---
 

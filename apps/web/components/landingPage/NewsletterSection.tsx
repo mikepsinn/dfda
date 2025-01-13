@@ -12,7 +12,7 @@ export function NewsletterSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <h2 className="neobrutalist-subtitle mb-4">Stay Up to Date!</h2>
+        <h2 className="neobrutalist-title mb-4">Stay Up to Date!</h2>
         <p className="text-gray-600 mb-6">
           Join our newsletter to receive updates on clinical trials, research breakthroughs, and ways to get involved.
         </p>
