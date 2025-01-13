@@ -15,6 +15,7 @@ import {
   writeArticle,
 } from "@/lib/agents/researcher/researcher"
 import { prisma } from "@/lib/db"
+import { searchClinicalTrialConditions, searchClinicalTrialInterventions } from '@/lib/clinicaltables'
 
 // Helper function to get DFDA client ID
 function getDFDAClientId(): string {
@@ -217,19 +218,22 @@ export async function getConditionTreatmentMetaAnalysis(
 export async function getTreatementMetaAnalysis(
   treatmentName: string
 ) {
- 
-  const topic = `Meta-analysis on the comprehensive benefits and risks of ${treatmentName}`
-
-  try {
-    const article = await findArticleByTopic(topic)
-    if (article) {
-      return article
-    }
-    return writeArticle(topic, "test-user")
-  } catch (error) {
-    console.error("Failed to generate meta-analysis:", error)
-    throw new Error("Failed to generate meta-analysis. Please try again later.")
+  if (!treatmentName?.trim()) {
+    throw new Error("Treatment name is required")
   }
+
+  // Validate treatment exists in ClinicalTrials.gov
+  const treatments = await searchClinicalTrialInterventions(treatmentName)
+  const treatmentExists = treatments.some(t => 
+    t.toLowerCase() === treatmentName.toLowerCase()
+  )
+
+  if (!treatmentExists) {
+    throw new Error(`Treatment "${treatmentName}" was not found in clinical trials database`)
+  }
+
+  const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName}`
+  return findOrWriteArticle(topic)
 }
 
 export async function getFoodMetaAnalysis(
@@ -902,6 +906,20 @@ export async function getStudy(studyId: string, userId?: string) {
 export async function getTreatmentMetaAnalysis(
     treatmentName: string
 ) {
+  if (!treatmentName?.trim()) {
+    throw new Error("Treatment name is required")
+  }
+
+  // Validate treatment exists in ClinicalTrials.gov
+  const treatments = await searchClinicalTrialInterventions(treatmentName)
+  const treatmentExists = treatments.some(t => 
+    t.toLowerCase() === treatmentName.toLowerCase()
+  )
+
+  if (!treatmentExists) {
+    throw new Error(`Treatment "${treatmentName}" was not found in clinical trials database`)
+  }
+
   const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName}`
   return findOrWriteArticle(topic)
 }
@@ -914,14 +932,48 @@ export async function getTreatmentConditionMetaAnalysis(
     throw new Error("Treatment name and condition name are required")
   }
 
-  const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName} for ${conditionName}`
+  // Validate condition and treatment exist in ClinicalTrials.gov
+  const [conditions, treatments] = await Promise.all([
+    searchClinicalTrialConditions(conditionName),
+    searchClinicalTrialInterventions(treatmentName)
+  ])
 
+  const conditionExists = conditions.some(c => 
+    c.toLowerCase() === conditionName.toLowerCase()
+  )
+  const treatmentExists = treatments.some(t => 
+    t.toLowerCase() === treatmentName.toLowerCase()
+  )
+
+  if (!conditionExists && !treatmentExists) {
+    throw new Error(`Neither "${treatmentName}" nor "${conditionName}" were found in clinical trials database`)
+  } else if (!conditionExists) {
+    throw new Error(`Condition "${conditionName}" was not found in clinical trials database`)
+  } else if (!treatmentExists) {
+    throw new Error(`Treatment "${treatmentName}" was not found in clinical trials database`)
+  }
+
+  const topic = `Meta-analysis on the safety and effectiveness of ${treatmentName} for ${conditionName}`
   return findOrWriteArticle(topic)
 }
 
 export async function getConditionMetaAnalysis(
     conditionName: string
 ) {
+  if (!conditionName?.trim()) {
+    throw new Error("Condition name is required")
+  }
+
+  // Validate condition exists in ClinicalTrials.gov
+  const conditions = await searchClinicalTrialConditions(conditionName)
+  const conditionExists = conditions.some(c => 
+    c.toLowerCase() === conditionName.toLowerCase()
+  )
+
+  if (!conditionExists) {
+    throw new Error(`Condition "${conditionName}" was not found in clinical trials database`)
+  }
+
   const topic = `Meta-analysis on the most effective treatments for ${conditionName}`
   return findOrWriteArticle(topic)
 }

@@ -14,10 +14,13 @@ interface ConditionTreatmentMetaAnalysisProps {
 export function ConditionTreatmentMetaAnalysis({ treatmentName, conditionName }: ConditionTreatmentMetaAnalysisProps) {
     const [article, setArticle] = useState<ArticleWithRelations | null>(null)
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
         let isSubscribed = true
         async function fetchMetaAnalysis() {
+            setError(null)
+            setLoading(true)
             try {
                 const metaAnalysis = await getTreatmentConditionMetaAnalysis(treatmentName, conditionName)
                 if (isSubscribed) {
@@ -26,7 +29,7 @@ export function ConditionTreatmentMetaAnalysis({ treatmentName, conditionName }:
             } catch (error) {
                 if (isSubscribed) {
                     setArticle(null)
-                    // Consider using a toast notification or error state
+                    setError(error instanceof Error ? error.message : 'An error occurred')
                     console.error('Error fetching meta-analysis:', error)
                 }
             } finally {
@@ -49,6 +52,17 @@ export function ConditionTreatmentMetaAnalysis({ treatmentName, conditionName }:
             conditionName={conditionName}
             onComplete={() => setLoading(false)}
         />
+    }
+
+    if (error) {
+        return <div className="container mx-auto px-4 py-8">
+            <h1 className="text-2xl font-bold mb-4">
+                {treatmentName} for {conditionName}
+            </h1>
+            <div className="p-4 border-l-4 border-red-500 bg-red-50">
+                <p className="text-red-700">{error}</p>
+            </div>
+        </div>
     }
 
     if (!article) {
