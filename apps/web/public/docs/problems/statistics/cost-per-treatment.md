@@ -1,6 +1,6 @@
 ---
 number: $2.3 Billion
-textFollowingNumber: "cost falls on patients per new treatment developed"
+textFollowingNumber: "cost to develop a new treatment falls on patients"
 title: "$2.3 Billion Per New Treatment Falls on Patients"
 description: "The total cost passed to patients for each new medical treatment developed"
 emoji: "💸"

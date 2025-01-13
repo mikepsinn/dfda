@@ -172,7 +172,7 @@ export default function DFDAHomePage() {
       <main className="space-y-12">
         <DFDADisclaimer />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
-          <h2 className="neobrutalist-title mb-6">The Problem</h2>
+          <h2 className="neobrutalist-title mb-6">The Problem We Can Solve</h2>
           <ProblemStatisticsGrid />
         </section>
         <HowItWorksSection />
