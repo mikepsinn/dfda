@@ -57,7 +57,7 @@ export default function SolutionSection() {
   return (
     <section className="relative overflow-visible rounded-xl border-4 border-black bg-gradient-to-r from-green-400 to-teal-400 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       <h2 className="mb-6 text-4xl font-black uppercase">
-        The Solution: Automated Clinical Research
+        Automated Clinical Research
       </h2>
 
       <motion.div

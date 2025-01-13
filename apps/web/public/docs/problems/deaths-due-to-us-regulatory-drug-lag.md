@@ -1,9 +1,12 @@
 ---
+title: Deaths Due to US Regulatory Drug Lag
 description: >-
   Delays in new interventions cost anywhere from 21,000 to 120,000 US lives per decade.
+emoji: ⏱
+featuredImage: https://static.crowdsourcingcures.org/dfda/assets/us-swiss-life-expectancy-drug-approvals.png
 ---
 
-# ⏱ Deaths Due to Regulatory "Drug Lag"
+# ⏱ Deaths Due to US Regulatory "Drug Lag"
 
 **Delayed Life-Saving Treatments**
 
@@ -44,3 +47,7 @@ Perhaps it's a coincidence, but you can see an increase in drug approvals in the
 ![US vs Swiss Life Expectancy](https://static.crowdsourcingcures.org/dfda/assets/us-swiss-life-expectancy-drug-approvals.png)
 
 ****
+
+**Increase in Patent Monopoly**
+
+Industry agitation surrounding the “drug lag” finally led to the modification of the drug patenting system in the Drug Price Competition and Patent Term Restoration Act of 1984. This further extended the life of drug patents. Thus Kefauver's amendments ultimately made drugs more expensive by granting longer monopolies.

@@ -1,11 +1,11 @@
-This system would create a unified global platform where patients could:
+This system would create a unified global platform where patients can:
 
 1. A ranked list of all potential treatments for their condition, based on comparative effectiveness generated using all available meta-analysis, pre-clinical, clinical, patient-reported outcomes, and post-clinical data.
 2. The ability to join clinical trials with a single click, especially if their current treatments are inadequate.
 3. Comprehensive and quantitative information on the positive and negative effects of each treatment.
 4. Seamless options to send approved treatments to their pharmacy or physician, schedule necessary lab tests, and report outcomes.
-
-Patients could effortlessly report positive and negative effects through the website, forms, or automated systems like robocalls. This data would continuously improve the effectiveness rankings of treatments, ensuring the system evolves and adapts based on real-world evidence.
+5. Patients could effortlessly report positive and negative effects through the website, forms, or automated systems like robocalls. 
+6. This data would continuously improve the effectiveness rankings of treatments, ensuring the system evolves and adapts based on real-world evidence.
 
 ## Economic Model of Automated Global Trials
 

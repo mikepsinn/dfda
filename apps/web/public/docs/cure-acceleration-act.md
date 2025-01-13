@@ -10,7 +10,7 @@ This Act may be cited as the **"Disease Eradication Act"**.
 
 Today's healthcare system is broken because:
 
-* ⏳ **Bureaucratic FDA delays** block life-saving treatments by 7-12 years
+* ⏳ **Bureaucratic delays** block life-saving treatments by 7-12 years
 
 * 🚫 **[97% of patients](https://academic.oup.com/jnci/article/111/3/245/5307078)** are excluded from clinical trials for various reasons, denying access to promising treatments
 * 💰 **[Drug development costs](https://csdd.tufts.edu/csddnews/2018/3/9/march-2016-tufts-csdd-rd-cost-study)** average $2.6B, which is passed on to patients in the form of higher prices

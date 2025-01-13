@@ -1,0 +1,19 @@
+{
+  "id": "com.decentralizedfda.app",
+  "title": "Decentralized FDA",
+  "author": "DFDA Team",
+  "description": "A decentralized platform for medical research and treatment reviews",
+  "tagline": "Democratizing medical research",
+  "version": "1.0.0",
+  "healthCheckPath": "/api/health",
+  "httpPort": 3000,
+  "addons": {
+    "postgresql": {}
+  },
+  "manifestVersion": 2,
+  "website": "https://github.com/cure-dao/decentralized-fda",
+  "contactEmail": "",
+  "icon": "",
+  "tags": ["medical", "research", "healthcare"],
+  "mediaLinks": []
+} 

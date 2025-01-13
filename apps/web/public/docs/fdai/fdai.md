@@ -102,7 +102,7 @@ This data will then make it possible to provide real time decision support to te
 
 ### through automated:
 
-![](https://static.crowdsourcingcures.org/video/autonomous-study-search-300x198.gif)
+![](https://static.crowdsourcingcures.org/video/autonomous-study-search.gif)
 
 #### 1\. Trial Search
 
@@ -112,7 +112,7 @@ If you're one of the inadequately treated 2 billion chronically ill and nothing 
 
 If you want to participate, it should automatically enroll you and get the treatment shipped to you or whatever.
 
-![](https://static.crowdsourcingcures.org/video/autonomous-study-join-300x198.gif)
+![](https://static.crowdsourcingcures.org/video/autonomous-study-join.gif)
 
 ![](https://static.crowdsourcingcures.org/video/autonomous-lab-order.gif)
 

@@ -1,10 +1,12 @@
 ---
+title: Pre-Determining Clinical Endpoints Requires Psychic Powers
 description: >-
-  Current Regulation Expects Drug Developers to Have Psychic Powers Needed to
+  Drug Developers to Have Psychic Powers Needed to
   Pre-Determine Very Specific Clinical Endpoints Before Collecting Data
+emoji: 🔮
 ---
 
-# 🔮 Pre-Determining Clinical Endpoints Requires Psychic Powers
+# 🔮 Failure to Identify All Treatable Conditions
 
 When running an efficacy trial, the FDA expects that the drug developer has the psychic ability to predict which conditions a treatment will be most effective for in advance of collecting the human trial data. If it was possible to magically determine this without any trials, it would render efficacy trials completely pointless.
 

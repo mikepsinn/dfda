@@ -42,7 +42,7 @@ export const dfdaLinks = {
     title: "Disease Eradication Act",
     href: "/disease-eradication-act",
     icon: "petition",
-    tooltip: "Help us transform healthcare by signing the Disease Eradication Act",
+    tooltip: "Help us end suffering by signing the Global Disease Eradication Act",
   },
   healthSavingsSharing: {
     title: "50/50 Health Savings Sharing Program",
