@@ -11,6 +11,7 @@ Despite significant advances in medical research, only about 5% of diseases have
 
 The FDA approved [55 drugs in 2023](https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2023), but many were for conditions that **already had treatments**
 
+
 ## Impact
 
 - Many patients rely on off-label treatments or experimental therapies

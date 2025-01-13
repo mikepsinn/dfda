@@ -8,6 +8,16 @@ featuredImage: "cost-per-participant.jpg"
 source: "https://dfda.earth#cost-savings"
 ---
 
+Traditional clinical trials cost an average of $41,413 per participant, making large-scale research prohibitively expensive. Our system reduces this to $1,500 per participant through:
+
+- Elimination of physical site costs
+- Automated data collection and verification
+- AI-driven patient monitoring and safety checks
+- Reduced administrative overhead
+- Integration with existing healthcare infrastructure
+
+This 95% cost reduction means research institutions can run larger trials with more diverse participants, leading to more robust and representative results. 
+
 | Cost Category | Current Cost | New Cost | Reduction | Explanation |
 |--------------|------------:|----------:|----------:|-------------|
 | Data Management | $198,014 | $10,000 | 95% | Automated data collection and AI-driven analysis |
@@ -27,4 +37,6 @@ source: "https://dfda.earth#cost-savings"
 | Site Overhead | $7,386,816 | $0 | 100% | No physical sites required |
 | Other Costs | $17,096,703 | $100,000 | 99% | Drastically reduced miscellaneous costs |
 | **Total** | **$56,988,007** | **$2,025,000** | **96%** | **Overall cost reduction through automation and decentralization** |
+
+See the [cost savings](https://dfda.earth#cost-savings) for more details.
 

@@ -155,7 +155,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Let's upgrade FDA.gov
+          We Can Eradicate Disease
         </motion.h1>
         <motion.p
           className="neobrutalist-description"
@@ -163,7 +163,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          🚀 And eradicate disease with the power of automated and decentralized clinical research! 💊
+          🚀 by giving all patients the right to effortlessly participate in decentralized clinical research 💊
         </motion.p>
       </header>
 
@@ -171,18 +171,24 @@ export default function DFDAHomePage() {
 
       <main className="space-y-12">
         <DFDADisclaimer />
+        <DFDAComparisonTable />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
-          <h2 className="neobrutalist-title mb-6">The Problem We Can Solve</h2>
+          <h2 className="neobrutalist-title mb-6">The World We Live In</h2>
           <ProblemStatisticsGrid />
+        </section>
+        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
+          <h2 className="neobrutalist-title mb-6">The World You Can Create</h2>
+          <p className="neobrutalist-description mb-6">
+            What if there was a way to acheive:
+          </p>
+          <BenefitStatisticsGrid />
+          
         </section>
         <HowItWorksSection />
         <section className="mt-12">
           <DFDACostSavingsTable />
         </section>
-        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
-          <h2 className="neobrutalist-title mb-6">Benefits</h2>
-          <BenefitStatisticsGrid />
-        </section>
+
         <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">See Effects of Foods🍟</h2>
@@ -262,7 +268,6 @@ export default function DFDAHomePage() {
           </div>
         </section>
 
-        <DFDAComparisonTable />
 
         <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (

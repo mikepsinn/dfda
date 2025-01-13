@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { ChevronRight, X } from "lucide-react"
+import { X } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 
 import { comparisonData } from "./dfda-comparison-data"
@@ -58,7 +58,7 @@ export default function DFDAComparisonTable() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          ⚔️ FDA 🆚 dFDA
+          Benefits of the Global Disease Eradication Act
         </motion.h1>
 
         <motion.h2
@@ -66,31 +66,36 @@ export default function DFDAComparisonTable() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Look at all these great features of decentralizing and automating
-          clinical research! 🚀
+          Look at all these great features giving patients the right to particpate in decentralized clinical trials! 🚀
+   
         </motion.h2>
 
         {/* Mobile View */}
         <div className="block sm:hidden">
-          {comparisonData.map((item, index) => (
-            <motion.div
-              key={index}
-              className="mb-4 cursor-pointer rounded-lg border-2 border-black p-4 hover:bg-gray-50"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-              onClick={() => setSelectedItem(index)}
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="font-bold">{item.category}</h3>
-                <ChevronRight className="h-5 w-5" />
-              </div>
-              <div className="mt-2 space-y-2 text-sm">
-                <div className="text-gray-600">{item.regularFDA}</div>
+          <div className="rounded-lg border-2 border-black">
+            {/* Header */}
+            <div className="grid grid-cols-3 gap-2 border-b-2 border-black bg-yellow-300 p-3">
+              <div className="font-black">Category</div>
+              <div className="font-black">FDA v1</div>
+              <div className="font-black">FDA v2</div>
+            </div>
+            
+            {/* Rows */}
+            {comparisonData.map((item, index) => (
+              <motion.div
+                key={index}
+                className="grid cursor-pointer grid-cols-3 gap-2 border-b-2 border-black p-3 hover:bg-gray-50 last:border-b-0"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                onClick={() => setSelectedItem(index)}
+              >
+                <div className="font-bold">{item.category}</div>
+                <div className="font-medium">{item.regularFDA}</div>
                 <div className="font-medium">{item.decentralizedFDA}</div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Desktop View */}
@@ -100,9 +105,9 @@ export default function DFDAComparisonTable() {
               <thead>
                 <tr className="border-b-4 border-black bg-yellow-300">
                   <th className="p-4 text-left font-black">Category</th>
-                  <th className="p-4 text-left font-black">Regular FDA</th>
+                  <th className="p-4 text-left font-black">FDA v1</th>
                   <th className="p-4 text-left font-black">
-                    Decentralized FDA
+                    FDA v2
                   </th>
                 </tr>
               </thead>
@@ -134,17 +139,6 @@ export default function DFDAComparisonTable() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-xl border-2 border-black bg-blue-100 p-4">
-          <h3 className="mb-2 font-black">
-            💡 Key Benefits of a Decentralized FDA
-          </h3>
-          <ul className="list-inside list-disc space-y-2 text-sm sm:text-base">
-            <li>Faster drug approvals through data-driven decisions</li>
-            <li>Transparent process with full accountability</li>
-            <li>Lower costs for drug development</li>
-            <li>Better representation of real-world patients</li>
-          </ul>
-        </div>
       </div>
 
       <AnimatePresence>

@@ -1,8 +1,8 @@
 ---
-number: 15 months
-textFollowingNumber: "to bring new treatments to patients"
-title: "15 Months From Research to Treatment"
-description: "By streamlining the clinical trial process through automation and decentralization, we can reduce the time from initial research to patient availability from 15 years to just 15 months"
+number: 2 Years
+textFollowingNumber: "instead of 17 years to get new treatments to patients"
+title: "17 years to 2 Year From Research to Treatment"
+description: "By streamlining the clinical trial process through automation and decentralization, we can reduce the time from initial research to patient availability from 17 years to just 2 years"
 emoji: "⚡"
 featuredImage: "treatment-time.jpg"
 source: "https://dfda.earth"

@@ -1,8 +1,8 @@
 ---
-number: 85%
-textFollowingNumber: "more patients can participate in trials"
-title: "85% More Patient Participation in Trials"
-description: "By removing traditional barriers and using decentralized trials, we can include the 85% of patients typically excluded from clinical research"
+number: 100%
+textFollowingNumber: "of patients can participate in trials"
+title: "100% Patient Participation in Trials"
+description: "By removing traditional barriers and using decentralized trials, we can include the 100% of patients typically excluded from clinical research"
 emoji: "🌍"
 featuredImage: "patient-participation.jpg"
 source: "https://dfda.earth"
