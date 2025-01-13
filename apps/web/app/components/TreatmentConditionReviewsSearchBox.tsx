@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Input } from "@/components/ui/input"
 import {Loader2, Search} from "lucide-react"
 import Link from 'next/link'
-import {searchTreatmentsAndConditions} from "@/app/dfdaActions";
+import {searchReviewedTreatmentsAndConditions} from "@/app/dfdaActions";
 
 type SearchResult = {
     id: number
@@ -23,7 +23,7 @@ export default function TreatmentConditionReviewsSearchBox() {
         const handleSearch = async () => {
             if (query.length > 2) {
                 setIsLoading(true)
-                const searchResults = await searchTreatmentsAndConditions(query)
+                const searchResults = await searchReviewedTreatmentsAndConditions(query)
                 setResults(searchResults.map(result => ({
                     ...result,
                     type: result.type as 'treatment' | 'condition'

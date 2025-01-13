@@ -1,11 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
-
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
 import { UserAuthForm } from "@/components/user/user-auth-form"
-import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Sign up",

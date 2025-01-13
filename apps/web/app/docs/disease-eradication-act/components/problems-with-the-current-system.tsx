@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { NeoBrutalMarkdown } from "@/components/markdown/neo-brutal-markdown"
 import { getProblems } from "@/app/dfdaActions"
 import type { ProcessedMarkdownFile } from "@/lib/markdown/get-markdown-files"
 import { FullScreenModal } from "@/app/components/FullScreenModal"

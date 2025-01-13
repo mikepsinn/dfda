@@ -125,7 +125,7 @@ export async function updateTreatmentReport(
   return userTreatment
 }
 
-export async function searchTreatmentsAndConditions(query: string) {
+export async function searchReviewedTreatmentsAndConditions(query: string) {
   const treatments = await prisma.dfdaTreatment.findMany({
     where: {
       name: {
