@@ -7,7 +7,9 @@ import { DEFAULT_MODEL_NAME, getModelByName, ModelName } from "@/lib/utils/model
 
 // Schema for a single statistical finding
 const StatisticalFindingSchema = z.object({
-  number: z.number().describe("The numerical value found"),
+  number: z.number().optional().describe("The numerical value found"),
+  min: z.number().optional().describe("The minimum value in the range, if this statistic represents a range"),
+  max: z.number().optional().describe("The maximum value in the range, if this statistic represents a range"),
   unit: z.string().describe("The unit of measurement (e.g., USD, years, percentage)"),
   context: z.string().describe("A detailed explanation of what this statistic represents and its significance"),
   methodology: z.string().describe("Information about how this statistic was calculated or measured, if available"),
@@ -49,11 +51,11 @@ export async function findStatistics(
   options: StatisticFinderOptions = {}
 ): Promise<StatisticalFindings> {
   const {
-    numberOfSearchQueryVariations = 2,
-    numberOfWebResultsToInclude = 15,
-    minConfidence = 0.7,
-    requireRecentData = true,
-    maxYearsOld = 5,
+    numberOfSearchQueryVariations = 1,
+    numberOfWebResultsToInclude = 5,
+    minConfidence = 0.1,
+    requireRecentData = false,
+    maxYearsOld = null,
     modelName = DEFAULT_MODEL_NAME,
     requireMethodology = false
   } = options
@@ -181,8 +183,12 @@ ${searchContent}
 `
 
   const model: LanguageModelV1 = getModelByName(modelName)
+  const tokens = prompt.length * 1.5
 
-  console.log("Analyzing sources for statistical findings...")
+  console.log("generateObject: Analyzing sources for statistical findings...", {
+    promptLength: prompt.length,
+    modelName: modelName,
+  })
 
   const result = await generateObject({
     model,
@@ -190,7 +196,9 @@ ${searchContent}
     prompt,
   })
 
+
   const findings = result.object as StatisticalFindings
+  console.log("StatisticalFindings from generateObject:", result)
 
   // Filter findings based on confidence, methodology requirements, and number validation
   findings.findings = findings.findings.filter(finding => {
@@ -200,16 +208,31 @@ ${searchContent}
     // Check methodology requirement
     if (requireMethodology && !finding.methodology) return false
     
-    // Validate number exists in allNumbers (within 20% tolerance)
+    // Validate that at least one number field exists
+    if (finding.number === undefined && finding.min === undefined && finding.max === undefined) {
+      console.log(`⚠️ Filtering out finding - no number values provided`)
+      return false
+    }
+
+    // Validate numbers exist in allNumbers (within 20% tolerance)
     const tolerance = 0.2
-    const numberExists = allNumbers.some(n => {
-      const min = n * (1 - tolerance)
-      const max = n * (1 + tolerance)
-      return finding.number >= min && finding.number <= max
+    const numbersToValidate = [
+      finding.number,
+      finding.min,
+      finding.max
+    ].filter((n): n is number => n !== undefined)
+
+    const numberExists = numbersToValidate.every(n => {
+      return allNumbers.some(sourceNum => {
+        const min = sourceNum * (1 - tolerance)
+        const max = sourceNum * (1 + tolerance)
+        return n >= min && n <= max
+      })
     })
     
     if (!numberExists) {
-      console.log(`⚠️ Filtering out finding with number ${finding.number} - not found in source text`)
+      const values = numbersToValidate.join(', ')
+      console.log(`⚠️ Filtering out finding with numbers [${values}] - not found in source text`)
       return false
     }
     

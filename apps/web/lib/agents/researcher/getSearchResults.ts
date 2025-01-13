@@ -69,10 +69,10 @@ export async function getSearchResults(queries: string[], options?: RegularSearc
             });
             
             // Cache the serializable results
-            if (searchResponse?.results) {
+            if (searchResponse?.results?.length > 0) {
                 const serializableResults = searchResponse.results.map(getSerializableResult);
                 await cacheService.set(cacheKey, serializableResults);
-                results.push(...searchResponse.results);
+                results.push(...serializableResults);
             }
         } catch (error) {
             console.error(`Error processing query "${query}":`, error);
@@ -104,10 +104,10 @@ export async function getSearchResultsByDomain(domain: string, queries: string[]
             // If not in cache, perform the search
             console.log(`Cache miss for Exa domain search: ${domain}:${query}`);
             const searchResponse = await exa.searchAndContents(query, {
+                ...options,
                 numResults: options?.numResults ?? 5,
                 useAutoprompt: options?.useAutoprompt ?? false,
                 includeDomains: [domain],
-                ...options,
                 text: defaultTextOptions,
                 highlights: {
                     numSentences: 3,
@@ -120,10 +120,10 @@ export async function getSearchResultsByDomain(domain: string, queries: string[]
             });
             
             // Cache the serializable results
-            if (searchResponse?.results) {
+            if (searchResponse?.results?.length > 0) {
                 const serializableResults = searchResponse.results.map(getSerializableResult);
                 await cacheService.set(cacheKey, serializableResults);
-                results.push(...searchResponse.results);
+                results.push(...serializableResults);
             }
         } catch (error) {
             console.error(`Error processing domain search "${domain}:${query}":`, error);
@@ -162,10 +162,10 @@ export async function getSearchResultsByUrl(url: string, linksPerQuery: number =
         );
         
         // Cache the serializable results
-        if (searchResponse?.results) {
+        if (searchResponse?.results?.length > 0) {
             const serializableResults = searchResponse.results.map(getSerializableResult);
             await cacheService.set(cacheKey, serializableResults);
-            return searchResponse.results;
+            return serializableResults;
         }
         return [];
     } catch (error) {
