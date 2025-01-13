@@ -1,4 +1,4 @@
-import {getConditionByName} from "@/app/dfdaActions";
+import {getConditionByNameWithTreatmentRatings} from "@/app/dfdaActions";
 import { DFDABreadcrumbs } from "@/components/Breadcrumbs/DFDABreadcrumbs";
 import Link from 'next/link';
 
@@ -6,7 +6,7 @@ export default async function ConditionPage({ params }: { params: { conditionNam
     // Decode the conditionName from the URL
     const decodedConditionName = decodeURIComponent(params.conditionName);
     
-    const condition = await getConditionByName(decodedConditionName)
+    const condition = await getConditionByNameWithTreatmentRatings(decodedConditionName)
 
     if (!condition) {
         return <div>Condition not found</div>

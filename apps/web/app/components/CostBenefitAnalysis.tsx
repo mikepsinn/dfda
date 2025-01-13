@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Stethoscope, Pill, BarChart } from "lucide-react"
-import ConditionSearchAutocomplete from './ConditionSearchAutocomplete'
+import ClinicalTrialConditionSearchAutocomplete from './ClinicalTrialConditionSearchAutocomplete'
 import TreatmentSearchAutocomplete from './TreatmentSearchAutocomplete'
 import { GlobalVariable } from '@/types/models/GlobalVariable'
 
@@ -33,7 +33,7 @@ export default function CostBenefitAnalysis() {
                     <form onSubmit={handleAnalyze} className="space-y-4">
                         <div className="flex items-center space-x-2">
                             <Stethoscope className="text-gray-500" />
-                            <ConditionSearchAutocomplete
+                            <ClinicalTrialConditionSearchAutocomplete
                                 onConditionSelect={setCondition}
                                 placeholder="Enter medical condition"
                             />

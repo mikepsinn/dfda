@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Search } from 'lucide-react'
-import {searchConditions} from "@/lib/clinicaltables";
+import {searchClinicalTrialConditions} from "@/lib/clinicaltables";
 
 export default function FindTreatments() {
     const [condition, setCondition] = useState('')
@@ -12,7 +12,7 @@ export default function FindTreatments() {
         e.preventDefault()
         console.log('Searching for:', condition)
         // Implement search functionality here
-        const results = searchConditions(condition)
+        const results = searchClinicalTrialConditions(condition)
     }
 
     return (

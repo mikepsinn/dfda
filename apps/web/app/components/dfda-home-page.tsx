@@ -9,6 +9,7 @@ import { Activity, ArrowRight, Info, Pill, Scroll, Users } from "lucide-react"
 
 import { GlobalVariable } from "@/types/models/all"
 import VariableSearchAutocomplete from "@/app/components/VariableSearchAutocomplete"
+import { NewsletterSection } from "@/components/landingPage/NewsletterSection"
 
 import AdvancedTrialSearch from "../trials/components/AdvancedTrialSearch"
 import CitizenScienceSection from "./CitizenScienceSection"
@@ -17,6 +18,11 @@ import DFDACostSavingsTable from "./DFDACostSavingsTable"
 import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
+import DeathTollTimer from "./DeathTollTimer"
+import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
+import HowItWorksSection from "./HowItWorksSection"
+import ProblemStatisticsGrid from "./ProblemStatisticsGrid"
+import BenefitStatisticsGrid from "./BenefitStatisticsGrid"
 
 export default function DFDAHomePage() {
   const router = useRouter()
@@ -149,7 +155,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Let's Upgrade FDA.gov!
+          Let's upgrade FDA.gov
         </motion.h1>
         <motion.p
           className="neobrutalist-description"
@@ -157,13 +163,27 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          🚀 Decentralizing and automating clinical research to determine the
-          positive and negative effects of every food and drug in the world! 💊
+          🚀 And eradicate disease with the power of automated and decentralized clinical research! 💊
         </motion.p>
       </header>
 
+      <DeathTollTimer />
+
       <main className="space-y-12">
         <DFDADisclaimer />
+        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
+          <h2 className="neobrutalist-title mb-6">The Problem</h2>
+          <ProblemStatisticsGrid />
+        </section>
+        <HowItWorksSection />
+        <section className="mt-12">
+          <DFDACostSavingsTable />
+        </section>
+        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
+          <h2 className="neobrutalist-title mb-6">Benefits</h2>
+          <BenefitStatisticsGrid />
+        </section>
+        <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">See Effects of Foods🍟</h2>
           <div className="flex flex-col gap-4 md:flex-row">
@@ -254,10 +274,7 @@ export default function DFDAHomePage() {
         <GoodNewsSection /> */}
         <SolutionSection />
         <CitizenScienceSection />
-
-        <section className="mt-12">
-          <DFDACostSavingsTable />
-        </section>
+        <NewsletterSection />
       </main>
     </div>
   )

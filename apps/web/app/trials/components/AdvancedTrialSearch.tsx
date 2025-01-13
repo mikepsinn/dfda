@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowRight, ChevronDown, Loader2, Search } from "lucide-react"
 
-import { searchConditions } from "@/lib/clinicaltables"
+import { searchClinicalTrialConditions } from "@/lib/clinicaltables"
 
 import { ListStudiesRequest } from "../../lib/clinical-trials-gov"
 
@@ -257,7 +257,7 @@ export default function AdvancedTrialSearch({
     // Removed the character length limitation
     setLoading(true)
     try {
-      const results = await searchConditions(value)
+      const results = await searchClinicalTrialConditions(value)
       setSuggestions(results.slice(0, 5))
     } catch (error) {
       console.error("Error fetching suggestions:", error)
@@ -269,7 +269,7 @@ export default function AdvancedTrialSearch({
     // Fetch default suggestions when the input is focused
     setLoading(true)
     try {
-      const results = await searchConditions("")
+      const results = await searchClinicalTrialConditions("")
       setSuggestions(results.slice(0, 5))
     } catch (error) {
       console.error("Error fetching suggestions on focus:", error)

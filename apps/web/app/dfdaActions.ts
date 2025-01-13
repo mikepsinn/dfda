@@ -3,6 +3,7 @@
 import { Account, Effectiveness, User } from "@prisma/client"
 import { getMarkdownFiles } from "@/lib/markdown/get-markdown-files"
 import type { ProcessedMarkdownFile } from "@/lib/markdown/get-markdown-files"
+import type { MarkdownFile } from "@/interfaces/markdownFile"
 
 import type { GetStudiesResponse } from "@/types/models/GetStudiesResponse"
 import { GetTrackingReminderNotificationsResponse } from "@/types/models/GetTrackingReminderNotificationsResponse"
@@ -25,6 +26,22 @@ function getDFDAClientId(): string {
 
 export async function fetchDfdaConditions() {
   return prisma.dfdaCondition.findMany()
+}
+
+export async function searchRatedConditions(query: string) {
+  return prisma.dfdaCondition.findMany({
+    where: {
+      name: {
+        contains: query,
+        mode: "insensitive",
+      },
+    },
+    select: {
+      id: true,
+      name: true,
+    },
+    take: 5,
+  })
 }
 
 export async function addTreatment(
@@ -108,7 +125,7 @@ export async function updateTreatmentReport(
   return userTreatment
 }
 
-export async function searchTreatmentsAndConditions(query: string) {
+export async function searchReviewedTreatmentsAndConditions(query: string) {
   const treatments = await prisma.dfdaTreatment.findMany({
     where: {
       name: {
@@ -144,7 +161,7 @@ export async function searchTreatmentsAndConditions(query: string) {
   ]
 }
 
-export async function getConditionByName(name: string) {
+export async function getConditionByNameWithTreatmentRatings(name: string) {
   return prisma.dfdaCondition.findFirst({
     where: {
       name: {
@@ -920,4 +937,40 @@ async function findOrWriteArticle(topic: string) {
     console.error("Failed to generate meta-analysis:", error)
     throw new Error("Failed to generate meta-analysis. Please try again later.")
   }
+}
+
+interface Statistic extends MarkdownFile {
+  emoji: string
+  number: string
+  textFollowingNumber: string
+}
+
+async function getMarkdownStatistics(dirPath: string): Promise<Statistic[]> {
+  const files = await getMarkdownFiles(dirPath)
+  
+  return files.map(file => {
+    const emoji = file.metadata.emoji || ""
+    const hasHeaderInContent = file.content.trim().startsWith('#')
+    
+    // Add title with emoji if not present
+    const content = hasHeaderInContent 
+      ? file.content 
+      : `# ${emoji} ${file.name}\n\n${file.content}`
+    
+    return {
+      ...file,
+      content,
+      emoji,
+      number: file.metadata.number || "",
+      textFollowingNumber: file.metadata.textFollowingNumber || ""
+    }
+  })
+}
+
+export async function getBenefitStatistics(): Promise<Statistic[]> {
+  return getMarkdownStatistics('public/docs/benefits')
+}
+
+export async function getProblemStatistics(): Promise<Statistic[]> {
+  return getMarkdownStatistics('public/docs/problems/statistics')
 }

@@ -1,6 +1,6 @@
 "use server"
 
-import { ListStudiesRequest, StudiesApi } from "../lib/clinical-trials-gov"
+import { ListStudiesRequest } from "../lib/clinical-trials-gov"
 import { Configuration } from "../lib/clinical-trials-gov/runtime"
 
 // Create API client with custom configuration to intercept and log requests
@@ -44,7 +44,7 @@ const config = new Configuration({
 })
 
 // TODO: Fix this
-const studiesApi = new StudiesApi(config)
+//const studiesApi = new StudiesApi(config)
 
 // Define the type for the parameters we actually use
 export type TrialSearchParams = Pick<

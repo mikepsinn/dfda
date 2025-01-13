@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import ConditionSearchAutocomplete from './ConditionSearchAutocomplete'
+import ClinicalTrialConditionSearchAutocomplete from './ClinicalTrialConditionSearchAutocomplete'
 
 export default function TopTreatments() {
     const handleViewRankings = (selectedCondition: string) => {
@@ -20,7 +20,7 @@ export default function TopTreatments() {
                 <CardContent>
                     <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                         <div className="flex-grow">
-                            <ConditionSearchAutocomplete onConditionSelect={handleViewRankings} />
+                            <ClinicalTrialConditionSearchAutocomplete onConditionSelect={handleViewRankings} />
                         </div>
                     </div>
                 </CardContent>
