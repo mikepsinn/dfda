@@ -50,7 +50,10 @@ export async function getMarkdownFiles(
 
         // Extract emoji from title
         const emojiMatch = title.match(/^([^\w\s]+)/)
-        const icon = emojiMatch ? emojiMatch[1].trim() : ""
+        let icon = emojiMatch ? emojiMatch[1].trim() : ""
+
+        if(data.icon) {icon = data.icon}
+        if(data.emoji) {icon = data.emoji}
 
         // Clean title by removing emoji
         const cleanTitle = title.replace(/^[^\w\s]+\s*/, "").trim()

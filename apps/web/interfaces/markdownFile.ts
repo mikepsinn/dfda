@@ -14,4 +14,5 @@ export type MarkdownFile = {
   preview?: boolean
   absFilePath: string
   url: string
+  emoji?: string
 }

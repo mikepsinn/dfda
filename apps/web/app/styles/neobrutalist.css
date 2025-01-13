@@ -49,19 +49,19 @@
 }
 
 .neobrutalist-h2 {
-    @apply mb-4 text-3xl font-black;
+    @apply mb-4 text-3xl font-black text-black;
 }
 
 .neobrutalist-h3 {
-    @apply mb-2 text-xl font-bold;
+    @apply mb-2 text-xl font-bold text-black;
 }
 
 .neobrutalist-h4 {
-    @apply mb-3 mt-6 text-xl font-bold ;
+    @apply mb-3 mt-6 text-xl font-bold text-black;
 }
 
 .neobrutalist-h5 {
-    @apply mb-2 mt-4 text-xl font-bold;
+    @apply mb-2 mt-4 text-xl font-bold text-black;
 }
 
 .neobrutalist-ul {

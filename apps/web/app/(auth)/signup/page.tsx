@@ -14,30 +14,15 @@ export const metadata: Metadata = {
 
 export default function Signup() {
   return (
-    <main className="container flex h-screen w-screen flex-col items-center justify-center">
-      <Link
-        href="/"
-        className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-4 top-4 md:left-8 md:top-8"
-        )}
-      >
-        <>
-          <Icons.back className="mr-2 h-4 w-4" />
-          Back
-        </>
-      </Link>
-      <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+    <div className="flex min-h-screen items-center justify-center px-4">
+      <div className="w-full max-w-sm space-y-2">
         <div className="flex flex-col space-y-2 text-center">
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Join {siteConfig.name}
+          <h1 className="text-2xl font-black tracking-tight">
+            Sign Up!
           </h1>
-          <p className="text-sm text-muted-foreground">
-            Select a provider to verify your identity
-          </p>
         </div>
         <UserAuthForm />
-        <p className="px-8 text-center text-sm text-muted-foreground">
+        <p className="text-center text-sm text-muted-foreground">
           Already a citizen?{" "}
           <Link
             href="/signin"
@@ -47,6 +32,6 @@ export default function Signup() {
           </Link>
         </p>
       </div>
-    </main>
+    </div>
   )
 }

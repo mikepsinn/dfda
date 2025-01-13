@@ -49,7 +49,7 @@ const ProblemsWithCurrentSystem = () => {
     >
       <NeoBrutalistBox className="bg-red-500 text-center">
         <h2 className="mb-4 text-4xl font-black uppercase tracking-tight">
-          Problems With The Current System 🏥
+          Problems a Decentralized FDA Could Solve
         </h2>
       </NeoBrutalistBox>
 
@@ -59,7 +59,7 @@ const ProblemsWithCurrentSystem = () => {
             key={index}
             name={problem.name}
             description={problem.description}
-            icon={problem.metadata?.icon}
+            icon={problem.metadata?.icon || problem?.emoji}
             onClick={() => setSelectedProblem(problem)}
           />
         ))}

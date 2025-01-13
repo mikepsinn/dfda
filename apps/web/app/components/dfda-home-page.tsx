@@ -9,6 +9,7 @@ import { Activity, ArrowRight, Info, Pill, Scroll, Users } from "lucide-react"
 
 import { GlobalVariable } from "@/types/models/all"
 import VariableSearchAutocomplete from "@/app/components/VariableSearchAutocomplete"
+import { NewsletterSection } from "@/components/landingPage/NewsletterSection"
 
 import AdvancedTrialSearch from "../trials/components/AdvancedTrialSearch"
 import CitizenScienceSection from "./CitizenScienceSection"
@@ -168,8 +169,6 @@ export default function DFDAHomePage() {
 
       <DeathTollTimer />
 
-
-
       <main className="space-y-12">
         <DFDADisclaimer />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
@@ -275,8 +274,7 @@ export default function DFDAHomePage() {
         <GoodNewsSection /> */}
         <SolutionSection />
         <CitizenScienceSection />
-
-
+        <NewsletterSection />
       </main>
     </div>
   )

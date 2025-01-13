@@ -9,6 +9,14 @@ featuredImage: "fda-treatments.jpg"
 
 Despite significant advances in medical research, only about 5% of diseases have FDA-approved treatments. This means that 95% of diseases, affecting millions of patients worldwide, lack approved therapies.
 
-Sources:
-- https://www.gao.gov/products/gao-25-106774
-- https://www.fda.gov/patients/rare-diseases-fda
+The FDA approved [55 drugs in 2023](https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2023), but many were for conditions that **already had treatments**
+
+## Impact
+
+- Many patients rely on off-label treatments or experimental therapies
+- The rest just suffer ☹️
+
+## Sources
+- [GAO Report on Drug Development](https://www.gao.gov/products/gao-25-106774)
+- [FDA Information on Disease](https://www.fda.gov/patients/rare-diseases-fda)
+
