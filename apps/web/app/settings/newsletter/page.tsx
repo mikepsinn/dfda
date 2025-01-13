@@ -1,5 +1,3 @@
-"use server"
-
 import { Metadata } from "next"
 import { getServerSession } from "next-auth/next"
 
