@@ -1,6 +1,6 @@
 ---
-number: 44
-textFollowingNumber: "years since we last cured something"
+number: 44 years
+textFollowingNumber: "since we last cured a disease"
 title: "44 Years Since Last Cure"
 description: "The medical research community has not discovered a complete cure for any disease since 1980"
 emoji: "⏳"

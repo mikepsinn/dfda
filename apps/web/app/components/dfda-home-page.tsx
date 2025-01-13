@@ -18,6 +18,7 @@ import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
 import DeathTollTimer from "./DeathTollTimer"
+import StatisticsGrid from "./StatisticsGrid"
 import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
 import HowItWorksSection from "./HowItWorksSection"
 
@@ -166,8 +167,14 @@ export default function DFDAHomePage() {
 
       <DeathTollTimer />
 
+
+
       <main className="space-y-12">
         <DFDADisclaimer />
+        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
+          <h2 className="neobrutalist-title mb-6">The Problem</h2>
+          <StatisticsGrid />
+        </section>
         <HowItWorksSection />
         <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">

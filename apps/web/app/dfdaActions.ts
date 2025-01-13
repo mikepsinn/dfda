@@ -14,6 +14,9 @@ import {
   writeArticle,
 } from "@/lib/agents/researcher/researcher"
 import { prisma } from "@/lib/db"
+import path from 'path'
+import fs from 'fs'
+import matter from 'gray-matter'
 
 // Helper function to get DFDA client ID
 function getDFDAClientId(): string {
@@ -936,4 +939,32 @@ async function findOrWriteArticle(topic: string) {
     console.error("Failed to generate meta-analysis:", error)
     throw new Error("Failed to generate meta-analysis. Please try again later.")
   }
+}
+
+interface Statistic {
+  emoji: string
+  number: string
+  textFollowingNumber: string
+  content: string
+}
+
+export async function getStatistics(): Promise<Statistic[]> {
+  const statisticsDir = path.join(process.cwd(), 'public/docs/problems/statistics')
+  const files = fs.readdirSync(statisticsDir)
+  
+  const statistics = files
+    .filter(file => file.endsWith('.md'))
+    .map(file => {
+      const fullPath = path.join(statisticsDir, file)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
+      const { data, content } = matter(fileContents)
+      return {
+        emoji: data.emoji,
+        number: data.number,
+        textFollowingNumber: data.textFollowingNumber,
+        content
+      }
+    })
+
+  return statistics
 }

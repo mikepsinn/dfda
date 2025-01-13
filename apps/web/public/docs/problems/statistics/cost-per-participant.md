@@ -1,11 +1,10 @@
 ---
-number: 56000
-textFollowingNumber: "per participant in a decentralized clinical trial"
-title: "$56,000 Per Trial Participant"
-description: "The cost per participant in decentralized clinical trials"
+number: $41k
+textFollowingNumber: "cost per participant in traditional clinical trials"
+title: "Clinical Trials Cost $41,413 Per Trial Participant"
+description: "The cost per participant in clinical trials is a staggering $41,413"
 emoji: "👥"
 featuredImage: "cost-per-participant.jpg"
+source: "https://clinicalresearch.io/blog/running-a-study/cost-of-clinical-trials-breakdown/"
 ---
-
-Decentralized clinical trials are estimated to cost approximately $56,000 per participant. This figure includes remote monitoring technology, data collection systems, and participant support infrastructure. 
-
+The average cost per participant in a clinical trial is $41,413, according to a study published on [ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC7295430/). You can see a breakdown of clinical trial costs in this [infographic](https://clinicalresearch.io/blog/running-a-study/cost-of-clinical-trials-breakdown/).

@@ -93,7 +93,7 @@ export default function HowItWorksSection() {
       onClick: () => {},
     },
     {
-      title: "3. Join Clinical Trials",
+      title: "3. Join Clinical Trials from Home",
       desc: "Instantly enroll in decentralized trials for promising treatments that interest you.",
       color: "bg-violet-400",
       icon: TestTubes,
@@ -101,15 +101,15 @@ export default function HowItWorksSection() {
       onClick: () => {},
     },
     {
-      title: "4. Automated Treatment Access",
-      desc: "Get treatments delivered to your pharmacy and schedule necessary lab tests automatically.",
+      title: "4. Get Treatment Delivered",
+      desc: "Get treatments delivered to your pharmacy or physician and schedule necessary lab tests automatically.",
       color: "bg-purple-400",
       icon: Pill,
       media: "https://static.crowdsourcingcures.org/video/autonomous-cvs.gif",
       onClick: () => {},
     },
     {
-      title: "5. Effortless Reporting",
+      title: "5. Effortlessly Report Outcomes",
       desc: "Report treatment effects easily through your preferred apps, EHR systems, or automated calls.",
       color: "bg-fuchsia-400",
       icon: MessageSquareText,
@@ -117,7 +117,7 @@ export default function HowItWorksSection() {
       onClick: () => {},
     },
     {
-      title: "6. Continuous Improvement",
+      title: "6. Continuously Improve Rankings",
       desc: "Your data helps improve treatment rankings and benefits future patients globally.",
       color: "bg-pink-400",
       icon: BarChart3,
@@ -129,12 +129,10 @@ export default function HowItWorksSection() {
   return (
     <section className="relative overflow-visible rounded-xl border-4 border-black bg-gradient-to-r from-blue-400 to-purple-400 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       <h2 className="mb-6 text-4xl font-black uppercase">
-        Our Proposal
+        The Solution: Upgrade FDA.gov 🚀
       </h2>
       <p className="mb-6 text-lg">
-        2 billion people are suffering from over 7000 diseases because it currently takes over $2 billion and 17 years
-        to get a new treatment to patients. 
-        To solve this problem, we propose the upgrade of FDA.gov to allow you to:
+        Use a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov to allow ANY patient ANYWHERE in the world to:
       </p>
 
       <motion.div
