@@ -22,6 +22,6 @@ This extensive timeline means:
 * Medical progress is severely bottlenecked by process inefficiencies
 
 Sources:
-- https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/
-- https://www.nature.com/articles/d41586-023-03172-6
-- https://www.biostock.se/en/2023/01/drug-development-the-four-phases/
+- [NIH - PMC Article on Research Translation](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/)
+- [Nature - Drug Development Timeline Analysis](https://www.nature.com/articles/d41586-023-03172-6)
+- [BioStock - The Four Phases of Drug Development](https://www.biostock.se/en/2023/01/drug-development-the-four-phases/)

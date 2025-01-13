@@ -1,7 +1,9 @@
 ---
+title: Pre-Determining Clinical Endpoints Requires Psychic Powers
 description: >-
   Drug Developers to Have Psychic Powers Needed to
   Pre-Determine Very Specific Clinical Endpoints Before Collecting Data
+emoji: 🔮
 ---
 
 # 🔮 Failure to Identify All Treatable Conditions

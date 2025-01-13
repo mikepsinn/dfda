@@ -1,24 +1,22 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FullScreenModal } from './FullScreenModal'
-import { getStatistics } from '@/app/dfdaActions'
 import { NeoBrutalistBox } from './NeoBrutalistBox'
 
-interface Statistic {
+export interface Statistic {
   emoji: string
   number: string
   textFollowingNumber: string
   content: string
 }
 
-export default function StatisticsGrid() {
-  const [selectedStat, setSelectedStat] = useState<Statistic | null>(null)
-  const [statistics, setStatistics] = useState<Statistic[]>([])
+interface SharedStatisticsGridProps {
+  statistics: Statistic[]
+}
 
-  useEffect(() => {
-    getStatistics().then(setStatistics)
-  }, [])
+export function SharedStatisticsGrid({ statistics }: SharedStatisticsGridProps) {
+  const [selectedStat, setSelectedStat] = useState<Statistic | null>(null)
 
   return (
     <>

@@ -1,6 +1,8 @@
 ---
+title: No Long-Term Outcome Data
 description: >-
   Current trials often only last a few months, so we have no idea what the long-term positive or negative effects of a drug are!
+emoji: 🗓
 ---
 
 # 🗓 No Long-Term Outcome Data

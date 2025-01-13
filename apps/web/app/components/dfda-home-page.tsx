@@ -18,9 +18,10 @@ import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
 import DeathTollTimer from "./DeathTollTimer"
-import StatisticsGrid from "./StatisticsGrid"
 import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
 import HowItWorksSection from "./HowItWorksSection"
+import ProblemStatisticsGrid from "./ProblemStatisticsGrid"
+import BenefitStatisticsGrid from "./BenefitStatisticsGrid"
 
 export default function DFDAHomePage() {
   const router = useRouter()
@@ -173,9 +174,16 @@ export default function DFDAHomePage() {
         <DFDADisclaimer />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
           <h2 className="neobrutalist-title mb-6">The Problem</h2>
-          <StatisticsGrid />
+          <ProblemStatisticsGrid />
         </section>
         <HowItWorksSection />
+        <section className="mt-12">
+          <DFDACostSavingsTable />
+        </section>
+        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
+          <h2 className="neobrutalist-title mb-6">Benefits</h2>
+          <BenefitStatisticsGrid />
+        </section>
         <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">See Effects of Foods🍟</h2>
@@ -268,9 +276,7 @@ export default function DFDAHomePage() {
         <SolutionSection />
         <CitizenScienceSection />
 
-        <section className="mt-12">
-          <DFDACostSavingsTable />
-        </section>
+
       </main>
     </div>
   )

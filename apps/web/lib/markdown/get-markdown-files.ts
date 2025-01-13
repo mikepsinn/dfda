@@ -43,7 +43,10 @@ export async function getMarkdownFiles(
 
         // Extract first H1 title with emoji
         const titleMatch = markdownContent.match(/# ([^\n]+)/)
-        const title = titleMatch ? titleMatch[1] : ""
+        let title = titleMatch ? titleMatch[1] : ""
+
+        if(data.title) {title = data.title}
+        if(data.name) {title = data.name}
 
         // Extract emoji from title
         const emojiMatch = title.match(/^([^\w\s]+)/)

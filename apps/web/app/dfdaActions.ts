@@ -3,6 +3,7 @@
 import { Account, Effectiveness, User } from "@prisma/client"
 import { getMarkdownFiles } from "@/lib/markdown/get-markdown-files"
 import type { ProcessedMarkdownFile } from "@/lib/markdown/get-markdown-files"
+import type { MarkdownFile } from "@/interfaces/markdownFile"
 
 import type { GetStudiesResponse } from "@/types/models/GetStudiesResponse"
 import { GetTrackingReminderNotificationsResponse } from "@/types/models/GetTrackingReminderNotificationsResponse"
@@ -14,9 +15,6 @@ import {
   writeArticle,
 } from "@/lib/agents/researcher/researcher"
 import { prisma } from "@/lib/db"
-import path from 'path'
-import fs from 'fs'
-import matter from 'gray-matter'
 
 // Helper function to get DFDA client ID
 function getDFDAClientId(): string {
@@ -941,30 +939,38 @@ async function findOrWriteArticle(topic: string) {
   }
 }
 
-interface Statistic {
+interface Statistic extends MarkdownFile {
   emoji: string
   number: string
   textFollowingNumber: string
-  content: string
 }
 
-export async function getStatistics(): Promise<Statistic[]> {
-  const statisticsDir = path.join(process.cwd(), 'public/docs/problems/statistics')
-  const files = fs.readdirSync(statisticsDir)
+async function getMarkdownStatistics(dirPath: string): Promise<Statistic[]> {
+  const files = await getMarkdownFiles(dirPath)
   
-  const statistics = files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const fullPath = path.join(statisticsDir, file)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(fileContents)
-      return {
-        emoji: data.emoji,
-        number: data.number,
-        textFollowingNumber: data.textFollowingNumber,
-        content
-      }
-    })
+  return files.map(file => {
+    const emoji = file.metadata.emoji || ""
+    const hasHeaderInContent = file.content.trim().startsWith('#')
+    
+    // Add title with emoji if not present
+    const content = hasHeaderInContent 
+      ? file.content 
+      : `# ${emoji} ${file.name}\n\n${file.content}`
+    
+    return {
+      ...file,
+      content,
+      emoji,
+      number: file.metadata.number || "",
+      textFollowingNumber: file.metadata.textFollowingNumber || ""
+    }
+  })
+}
 
-  return statistics
+export async function getBenefitStatistics(): Promise<Statistic[]> {
+  return getMarkdownStatistics('public/docs/benefits')
+}
+
+export async function getProblemStatistics(): Promise<Statistic[]> {
+  return getMarkdownStatistics('public/docs/problems/statistics')
 }

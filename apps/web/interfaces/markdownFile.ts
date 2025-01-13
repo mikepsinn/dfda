@@ -15,17 +15,3 @@ export type MarkdownFile = {
   absFilePath: string
   url: string
 }
-
-export type MarkdownMeta = {
-  slug?: string
-  name: string
-  date?: string
-  featuredImage?: string
-  author?: Author
-  description?: string
-  ogImage?: {
-    url: string
-  }
-  preview?: boolean
-  url: string
-}

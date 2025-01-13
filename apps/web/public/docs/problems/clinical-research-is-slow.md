@@ -1,6 +1,7 @@
 ---
 title: Clinical Research is Slow
 description: It takes an average of 17 years for new treatments to reach patients.
+emoji: ⌛
 ---
 
 # ⌛ Clinical Research is Slow!
