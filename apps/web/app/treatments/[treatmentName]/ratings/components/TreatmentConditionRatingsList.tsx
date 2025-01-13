@@ -53,14 +53,14 @@ function RatingBar({ count, total, label, color }: { count: number; total: numbe
   const percentage = total > 0 ? (count / total) * 100 : 0;
   return (
     <div className="flex items-center gap-2 text-sm">
-      <div className="w-24 text-right font-medium">{label}</div>
+      <div className="w-24 text-right font-bold">{label}</div>
       <div className="flex-grow h-2 bg-white rounded-xl border-2 border-black">
         <div
           className={`h-full rounded-xl ${color}`}
           style={{ width: `${percentage}%` }}
         />
       </div>
-      <div className="w-16 text-right font-medium">{count}</div>
+      <div className="w-16 text-right font-bold">{count}</div>
     </div>
   );
 }
@@ -115,40 +115,42 @@ export function TreatmentConditionRatingsList({ treatment }: { treatment: Treatm
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between mb-6">
-        {/* Search Input */}
-        <div className="relative flex-grow max-w-md">
-          <div className="absolute left-3 top-1/2 -translate-y-1/2">
-            <Search className="h-4 w-4 text-gray-500" />
+      <div className="neobrutalist-container mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+          {/* Search Input */}
+          <div className="relative flex-grow max-w-md">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2">
+              <Search className="h-4 w-4" />
+            </div>
+            <Input
+              type="text"
+              placeholder="Search conditions..."
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="pl-9 pr-9 rounded-xl border-2 border-black font-bold"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => handleSearch('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-black/5 rounded-full p-0.5"
+              >
+                <X className="h-4 w-4" />
+                <span className="sr-only">Clear search</span>
+              </button>
+            )}
           </div>
-          <Input
-            type="text"
-            placeholder="Search conditions..."
-            value={searchQuery}
-            onChange={(e) => handleSearch(e.target.value)}
-            className="pl-9 pr-9 neobrutalist-input"
-          />
-          {searchQuery && (
-            <button
-              onClick={() => handleSearch('')}
-              className="absolute right-3 top-1/2 -translate-y-1/2 hover:bg-gray-100 rounded-full p-0.5"
-            >
-              <X className="h-4 w-4 text-gray-500" />
-              <span className="sr-only">Clear search</span>
-            </button>
-          )}
-        </div>
 
-        {/* Sort Select */}
-        <Select onValueChange={handleSort} defaultValue={sortBy}>
-          <SelectTrigger className="w-[200px] neobrutalist-button">
-            <SelectValue placeholder="Sort by" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="effectiveness">Sort by Effectiveness</SelectItem>
-            <SelectItem value="popularity">Sort by Most Reviews</SelectItem>
-          </SelectContent>
-        </Select>
+          {/* Sort Select */}
+          <Select onValueChange={handleSort} defaultValue={sortBy}>
+            <SelectTrigger className="neobrutalist-button min-w-[200px]">
+              <SelectValue placeholder="Sort by" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="effectiveness">Sort by Effectiveness</SelectItem>
+              <SelectItem value="popularity">Sort by Most Reviews</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <div className="space-y-4">
@@ -172,7 +174,7 @@ export function TreatmentConditionRatingsList({ treatment }: { treatment: Treatm
             >
               <div className="neobrutalist-gradient-container">
                 <div className="flex flex-col">
-                  <h3 className="font-black text-lg mb-3">{ct.condition.name}</h3>
+                  <h3 className="neobrutalist-h3 mb-3">{ct.condition.name}</h3>
                   
                   {/* Overall Effectiveness */}
                   <div className="mb-4">
@@ -244,11 +246,11 @@ export function TreatmentConditionRatingsList({ treatment }: { treatment: Treatm
         })}
 
         {displayedTreatments.length === 0 && (
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="neobrutalist-container">
             {searchQuery ? (
-              <p className="text-gray-600">No conditions found matching "{searchQuery}"</p>
+              <p className="text-gray-600 font-bold">No conditions found matching "{searchQuery}"</p>
             ) : (
-              <p className="text-gray-600">No condition reviews available yet for {treatment.name}.</p>
+              <p className="text-gray-600 font-bold">No condition reviews available yet for {treatment.name}.</p>
             )}
           </div>
         )}

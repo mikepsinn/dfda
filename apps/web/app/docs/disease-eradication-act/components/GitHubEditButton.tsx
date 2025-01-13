@@ -1,11 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-
+import { dfdaLinks } from "@/config/navigation/domains/dfda-nav"
 export function GitHubEditButton() {
+  const url = dfdaLinks.editDiseaseEradicationAct.href
   return (
     <a
-      href="https://github.com/decentralized-fda/decentralized-fda/edit/main/public/docs/disease-eradication-act.md"
+      href={url}
       target="_blank"
       rel="noopener noreferrer"
     >
