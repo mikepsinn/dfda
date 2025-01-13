@@ -68,22 +68,9 @@ export async function findStatistics(
 
   // Generate search queries focused on finding statistics
   const baseQueries = await generateSearchQueries(topic, numberOfSearchQueryVariations)
-  const statisticsQueries = baseQueries.map(q => 
-    q.toLowerCase().includes('cost') ? 
-      `${q} average median statistics research data methodology` :
-      `${q} statistics research data methodology findings`
-  )
-
-  // Add topic-specific queries
-  if (topic.toLowerCase().includes('clinical trial')) {
-    statisticsQueries.push(
-      'clinical trial statistics methodology findings research',
-      'clinical research statistical analysis methodology data'
-    )
-  }
 
   // Get search results with expanded scope
-  const searchResults = await getSearchResults(statisticsQueries, {
+  const searchResults = await getSearchResults(baseQueries, {
     numResults: numberOfWebResultsToInclude,
     useAutoprompt: true
   })
@@ -116,8 +103,8 @@ export async function findStatistics(
   console.log(`📊 Search Results Analysis:
 • Total Results: ${searchResults.length}
 • Results with Statistics: ${resultsWithNumbers.length}
-• Filtering Rate: ${((1 - resultsWithNumbers.length / searchResults.length) * 100).toFixed(1)}%
-• Search Queries: ${statisticsQueries.map(q => `"${q}"`).join('\n  ')}`)
+• Percent of Results with Statistics: ${((1 - resultsWithNumbers.length / searchResults.length) * 100).toFixed(1)}%
+• Search Queries: ${baseQueries.map(q => `"${q}"`).join('\n  ')}`)
 
   // If no results with numbers, return early
   if (resultsWithNumbers.length === 0) {

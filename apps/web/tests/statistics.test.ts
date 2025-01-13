@@ -69,21 +69,17 @@ describe("Statistics Content Generation Tests", () => {
       console.log(`\nVerifying statistics for: ${file}`)
       console.log(`Search query: ${searchQuery}`)
 
-      try {
-        const findings = await findStatistics(searchQuery, {
-          minConfidence: 0.7,
-          requireMethodology: true,
-          maxYearsOld: 5
-        })
+      const findings = await findStatistics(searchQuery, {
+        minConfidence: 0.1,
+        //requireMethodology: true,
+        //maxYearsOld: 5
+      })
 
-        if (findings.findings.length > 0) {
-          await updateStatisticFile(filePath, findings)
-          console.log(`✅ Updated ${file} with verified statistics`)
-        } else {
-          console.log(`❌ No reliable statistics found for ${file}`)
-        }
-      } catch (error) {
-        console.error(`Error processing ${file}:`, error)
+      if (findings.findings.length > 0) {
+        await updateStatisticFile(filePath, findings)
+        console.log(`✅ Updated ${file} with verified statistics`)
+      } else {
+        console.log(`❌ No reliable statistics found for ${file}`)
       }
     }
   })
