@@ -69,6 +69,7 @@ export const dfdaNavigation: DomainNavigation = {
   sidebarNav: [
     dfdaLinks.dfda,
     dfdaLinks.conditions,
+    dfdaLinks.treatments,
     dfdaLinks.clinipedia,
     dfdaLinks.digitalTwinSafe,
     dfdaLinks.fdai,

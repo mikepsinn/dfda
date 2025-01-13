@@ -43,7 +43,7 @@ export default function TrialsList({ trialsData }: TrialsListProps) {
 
   return (
     <div className="space-y-6">
-      <div className="text-lg font-bold">
+      <div className="text-lg font-bold mt-4">
         Found {totalCount} matching trials
       </div>
 

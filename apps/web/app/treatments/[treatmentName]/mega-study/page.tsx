@@ -8,7 +8,7 @@ export default async function TreatmentTreatmentRatingsPage({ params }: { params
     return (
         <div className="container mx-auto p-4">
         <DFDABreadcrumbs dynamicValues={{ 
-            treatmentName: treatment.name,
+            treatmentName: decodedTreatmentName,
         }} />
             <h1 className="text-2xl font-bold mb-4">{decodedTreatmentName}</h1>
             <div className="h-[calc(100vh-12rem)] w-full bg-white">

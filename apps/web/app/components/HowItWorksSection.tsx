@@ -78,7 +78,7 @@ export default function HowItWorksSection() {
   const features = [
     {
       title: "1. Enter Your Condition",
-      desc: "Simply input your medical condition to begin your personalized treatment journey.",
+      desc: "Simply input the condition that's making you miserable.",
       color: "bg-blue-400",
       icon: Search,
       component: searchComponent,
@@ -86,7 +86,7 @@ export default function HowItWorksSection() {
     },
     {
       title: "2. View Ranked Treatments",
-      desc: "See evidence-based rankings of treatments using comprehensive clinical and real-world data.",
+      desc: "See a ranked list of the most save and effective treatments based on the entire universe of clinical and real-world data.",
       color: "bg-indigo-400", 
       icon: ListFilter,
       component: treatmentListComponent,

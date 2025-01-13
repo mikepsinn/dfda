@@ -16,8 +16,17 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "✉️",
-          "description": "📞 Get in touch with us through the contact form",
+          "description": "📞 Get in touch with us for inquiries or support",
           "displayName": "Contact Us"
+        },
+        "help": {
+          "name": "help",
+          "path": "/(frontpage)/help",
+          "isDynamic": false,
+          "children": {},
+          "emoji": "❓",
+          "description": "🆘 Find assistance and answers to common questions",
+          "displayName": "Help"
         },
         "privacy": {
           "name": "privacy",
@@ -25,13 +34,13 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "🔒",
-          "description": "🛡️ Read our privacy policy and data handling practices",
+          "description": "🔏 Review our privacy policy and data handling practices",
           "displayName": "Privacy Policy"
         }
       },
       "emoji": "📰",
-      "description": "📄 View the front page with featured content and updates",
-      "displayName": "Front Page"
+      "description": "📄 Explore the main content and features of the application",
+      "displayName": "Frontpage"
     },
     "articles": {
       "name": "articles",
@@ -44,7 +53,7 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "✍️",
-          "description": "👥 Explore articles by different authors",
+          "description": "👥 Discover the authors behind our articles",
           "displayName": "Authors"
         },
         "categories": {
@@ -53,7 +62,7 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "📂",
-          "description": "📁 View articles organized by categories",
+          "description": "📁 Explore articles by different categories",
           "displayName": "Categories"
         },
         "tags": {
@@ -62,12 +71,12 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "🏷️",
-          "description": "🏷️ Discover articles by tags and keywords",
+          "description": "🏷️ Find articles using various tags and keywords",
           "displayName": "Tags"
         }
       },
       "emoji": "📝",
-      "description": "📚 Browse a collection of articles on various topics",
+      "description": "📚 Browse through a collection of articles and publications",
       "displayName": "Articles"
     },
     "cba": {
@@ -100,12 +109,12 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "⚡",
-          "description": "⏱️ Take a test to measure your reaction time",
+          "description": "⏱️ Test your reaction time with our interactive tool",
           "displayName": "Reaction Test"
         }
       },
       "emoji": "🧠",
-      "description": "🧠 Explore cognitive science resources and information",
+      "description": "🧠 Explore cognitive science resources and studies",
       "displayName": "Cognition"
     },
     "conditions": {
@@ -124,7 +133,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "📊",
-              "description": "📚 Access comprehensive studies related to the condition",
+              "description": "📊 Access comprehensive studies on the specified condition",
               "displayName": "Mega Study"
             },
             "meta-analysis": {
@@ -133,7 +142,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "📈",
-              "description": "📉 Review meta-analyses for the specified condition",
+              "description": "📈 Review meta-analyses related to the specified condition",
               "displayName": "Meta Analysis"
             },
             "treatment-reviews": {
@@ -142,7 +151,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "📝",
-              "description": "🩺 Read reviews of treatments for the condition",
+              "description": "📝 Read reviews of treatments for the specified condition",
               "displayName": "Treatment Reviews"
             },
             "treatments": {
@@ -161,28 +170,37 @@ export const routeTree = {
                       "isDynamic": false,
                       "children": {},
                       "emoji": "📊",
-                      "description": "📈 Analyze the cost-benefit of a specific treatment",
+                      "description": "📊 Analyze the cost-benefit of a specific treatment",
                       "displayName": "Treatment CBA"
                     }
                   },
                   "emoji": "💉",
-                  "description": "💉 View detailed information about a specific treatment",
+                  "description": "💉 Get detailed information about a specific treatment",
                   "displayName": "Treatment Details"
                 }
               },
               "emoji": "💊",
-              "description": "💊 Explore available treatments for the condition",
+              "description": "💊 Explore available treatments for the specified condition",
               "displayName": "Treatments"
             }
           },
           "emoji": "🩹",
-          "description": "🔍 View detailed information about a specific condition",
+          "description": "📖 View detailed information about a specific health condition",
           "displayName": "Condition Details"
         }
       },
       "emoji": "⚕️",
-      "description": "🩺 Browse various medical conditions and their details",
+      "description": "🩺 Browse various health conditions and related information",
       "displayName": "Conditions"
+    },
+    "dashboard": {
+      "name": "dashboard",
+      "path": "/dashboard",
+      "isDynamic": false,
+      "children": {},
+      "emoji": "📊",
+      "description": "📊 View your personal dashboard with key metrics and recent activity",
+      "displayName": "Dashboard"
     },
     "docs": {
       "name": "docs",
@@ -194,8 +212,8 @@ export const routeTree = {
           "path": "/docs/blueprint",
           "isDynamic": false,
           "children": {},
-          "emoji": "📋",
-          "description": "📑 View the blueprint for the application",
+          "emoji": "🗺️",
+          "description": "🗺️ Review the application blueprint and architecture",
           "displayName": "Blueprint"
         },
         "disease-eradication-act": {
@@ -204,7 +222,7 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "📜",
-          "description": "📜 Read about the Disease Eradication Act",
+          "description": "📜 Learn about the Disease Eradication Act and its implications",
           "displayName": "Disease Eradication Act"
         },
         "health-savings-sharing": {
@@ -213,7 +231,7 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "💰",
-          "description": "💵 Learn about health savings and sharing options",
+          "description": "💰 Understand health savings and sharing options",
           "displayName": "Health Savings Sharing"
         },
         "...filename": {
@@ -227,7 +245,7 @@ export const routeTree = {
         }
       },
       "emoji": "📚",
-      "description": "📖 Access documentation and resources",
+      "description": "📖 Access documentation and resources for the application",
       "displayName": "Documentation"
     },
     "globalVariables": {
@@ -246,7 +264,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "📊",
-              "description": "📈 View charts related to the global variable",
+              "description": "📊 Visualize data related to a specific global variable",
               "displayName": "Variable Charts"
             },
             "settings": {
@@ -255,7 +273,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "⚙️",
-              "description": "⚙️ Configure settings for the global variable",
+              "description": "⚙️ Configure settings for a specific global variable",
               "displayName": "Variable Settings"
             }
           },
@@ -265,7 +283,7 @@ export const routeTree = {
         }
       },
       "emoji": "🌍",
-      "description": "🌐 View and manage global variables used in the application",
+      "description": "🌐 Manage global variables used throughout the application",
       "displayName": "Global Variables"
     },
     "import": {
@@ -274,7 +292,7 @@ export const routeTree = {
       "isDynamic": false,
       "children": {},
       "emoji": "⬆️",
-      "description": "📤 Import data into the application",
+      "description": "⬆️ Import data into the application",
       "displayName": "Import Data"
     },
     "inbox": {
@@ -283,7 +301,7 @@ export const routeTree = {
       "isDynamic": false,
       "children": {},
       "emoji": "📥",
-      "description": "📬 Check your inbox for messages and notifications",
+      "description": "📬 Check your messages and notifications",
       "displayName": "Inbox"
     },
     "measurements": {
@@ -291,13 +309,22 @@ export const routeTree = {
       "path": "/measurements",
       "isDynamic": false,
       "children": {
+        "add": {
+          "name": "add",
+          "path": "/measurements/add",
+          "isDynamic": false,
+          "children": {},
+          "emoji": "➕",
+          "description": "➕ Add new measurements to your profile",
+          "displayName": "Add Measurement"
+        },
         "image2measurements": {
           "name": "image2measurements",
           "path": "/measurements/image2measurements",
           "isDynamic": false,
           "children": {},
           "emoji": "🖼️",
-          "description": "📷 Convert images into measurable data",
+          "description": "🖼️ Convert images into measurable data",
           "displayName": "Image to Measurements"
         },
         "text2measurements": {
@@ -306,12 +333,12 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "📝",
-          "description": "📄 Convert text into measurable data",
+          "description": "📝 Convert text into measurable data",
           "displayName": "Text to Measurements"
         }
       },
       "emoji": "📏",
-      "description": "📐 View and manage various measurements",
+      "description": "📏 View and manage your measurements",
       "displayName": "Measurements"
     },
     "predictor-search": {
@@ -320,7 +347,7 @@ export const routeTree = {
       "isDynamic": false,
       "children": {},
       "emoji": "🔍",
-      "description": "🔎 Search for predictors and related data",
+      "description": "🔍 Search for predictors in the application",
       "displayName": "Predictor Search"
     },
     "researcher": {
@@ -334,12 +361,12 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "✨",
-          "description": "🌟 Enhance your research with additional tools",
+          "description": "✨ Enhance your research capabilities with our tools",
           "displayName": "Enhance Research"
         }
       },
       "emoji": "🔬",
-      "description": "🔍 Access resources for researchers",
+      "description": "🔬 Access researcher tools and resources",
       "displayName": "Researcher"
     },
     "safe": {
@@ -359,16 +386,16 @@ export const routeTree = {
               "children": {},
               "emoji": "🔗",
               "description": "🔗 Redirect to a specific path securely",
-              "displayName": "Secure Redirect"
+              "displayName": "Safe Redirect"
             }
           },
           "emoji": "➡️",
-          "description": "🔄 Redirect to a specified safe location",
+          "description": "➡️ Redirect to a specified safe location",
           "displayName": "Redirect"
         }
       },
       "emoji": "🔒",
-      "description": "🔐 Access secure areas of the application",
+      "description": "🔒 Access secure areas of the application",
       "displayName": "Safe Area"
     },
     "search": {
@@ -377,8 +404,36 @@ export const routeTree = {
       "isDynamic": false,
       "children": {},
       "emoji": "🔍",
-      "description": "🔎 Search the application for content and resources",
+      "description": "🔍 Search for content within the application",
       "displayName": "Search"
+    },
+    "settings": {
+      "name": "settings",
+      "path": "/settings",
+      "isDynamic": false,
+      "children": {
+        "accounts": {
+          "name": "accounts",
+          "path": "/settings/accounts",
+          "isDynamic": false,
+          "children": {},
+          "emoji": "👤",
+          "description": "👥 Manage your account settings and preferences",
+          "displayName": "Account Settings"
+        },
+        "newsletter": {
+          "name": "newsletter",
+          "path": "/settings/newsletter",
+          "isDynamic": false,
+          "children": {},
+          "emoji": "📰",
+          "description": "📰 Subscribe or manage your newsletter preferences",
+          "displayName": "Newsletter Settings"
+        }
+      },
+      "emoji": "⚙️",
+      "description": "⚙️ Configure your account and application preferences",
+      "displayName": "Settings"
     },
     "study": {
       "name": "study",
@@ -391,7 +446,7 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "➕",
-          "description": "➕ Create a new study",
+          "description": "➕ Create a new study in the application",
           "displayName": "Create Study"
         },
         "studyId": {
@@ -400,12 +455,12 @@ export const routeTree = {
           "isDynamic": true,
           "children": {},
           "emoji": "📄",
-          "description": "📄 View details for a specific study",
+          "description": "📄 View details of a specific study",
           "displayName": "Study Details"
         }
       },
       "emoji": "📖",
-      "description": "📚 Access study resources and information",
+      "description": "📖 Explore various studies and research topics",
       "displayName": "Study"
     },
     "treatments": {
@@ -424,17 +479,44 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "📊",
-              "description": "📈 Analyze the cost-benefit of a specific treatment",
+              "description": "📊 Analyze the cost-benefit of a specific treatment",
               "displayName": "Treatment CBA"
+            },
+            "mega-study": {
+              "name": "mega-study",
+              "path": "/treatments/[treatmentName]/mega-study",
+              "isDynamic": false,
+              "children": {},
+              "emoji": "📊",
+              "description": "📊 Access comprehensive studies on the specified treatment",
+              "displayName": "Treatment Mega Study"
+            },
+            "meta-analysis": {
+              "name": "meta-analysis",
+              "path": "/treatments/[treatmentName]/meta-analysis",
+              "isDynamic": false,
+              "children": {},
+              "emoji": "📈",
+              "description": "📈 Review meta-analyses related to the specified treatment",
+              "displayName": "Treatment Meta Analysis"
+            },
+            "trials": {
+              "name": "trials",
+              "path": "/treatments/[treatmentName]/trials",
+              "isDynamic": false,
+              "children": {},
+              "emoji": "🧪",
+              "description": "🧪 Explore clinical trials related to the specified treatment",
+              "displayName": "Treatment Trials"
             }
           },
           "emoji": "💉",
-          "description": "💉 View details for a specific treatment",
+          "description": "💉 Get detailed information about a specific treatment",
           "displayName": "Treatment Details"
         }
       },
       "emoji": "💊",
-      "description": "💊 Browse available treatments",
+      "description": "💊 Browse available treatments and therapies",
       "displayName": "Treatments"
     },
     "trials": {
@@ -448,12 +530,12 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "🔍",
-          "description": "🔎 Search for clinical trials",
+          "description": "🔍 Search for specific clinical trials",
           "displayName": "Trial Search"
         }
       },
-      "emoji": "⚖️",
-      "description": "⚖️ Explore clinical trials and their details",
+      "emoji": "🔬",
+      "description": "🔬 Browse through various clinical trials",
       "displayName": "Trials"
     },
     "userVariables": {
@@ -472,7 +554,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "📊",
-              "description": "📈 View charts related to the user variable",
+              "description": "📊 Visualize data related to a specific user variable",
               "displayName": "User Variable Charts"
             },
             "settings": {
@@ -481,7 +563,7 @@ export const routeTree = {
               "isDynamic": false,
               "children": {},
               "emoji": "⚙️",
-              "description": "⚙️ Configure settings for the user variable",
+              "description": "⚙️ Configure settings for a specific user variable",
               "displayName": "User Variable Settings"
             }
           },
@@ -491,12 +573,12 @@ export const routeTree = {
         }
       },
       "emoji": "👤",
-      "description": "👥 View and manage user-specific variables",
+      "description": "👤 Manage user-specific variables in the application",
       "displayName": "User Variables"
     }
   },
   "emoji": "🏠",
-  "description": "🌐 Access the main landing page of the application",
+  "description": "🌐 Welcome to the homepage of the application",
   "displayName": "Home"
 } as const;
 
