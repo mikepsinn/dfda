@@ -80,12 +80,35 @@ function BreadcrumbDropdown({ node, currentPath, currentSegment, onClose, dynami
       )}
 
       {Object.entries(node.children)
+        .filter(([key]) => !key.startsWith('(') && !key.endsWith(')'))
         .filter(([_, childNode]) => !childNode.name.startsWith('...'))
         .filter(([_, childNode]) => !childNode.isDynamic || dynamicValues[childNode.name])
         .map(([key, childNode]) => {
           // For child links, use the actual route name
           const childSegment = childNode.isDynamic ? childNode.name : key
-          const href = `${basePath}/${childSegment}`
+          let href = childNode.path || `/${childSegment}`
+          
+          // Replace any dynamic segments in the path with their values
+          if (href) {
+            Object.entries(dynamicValues).forEach(([paramName, value]) => {
+              href = href.replace(`[${paramName}]`, value)
+            })
+          }
+
+          console.log('Dropdown child link:', {
+            key,
+            childSegment,
+            href,
+            path: childNode.path,
+            isDynamic: childNode.isDynamic,
+            dynamicValues
+          })
+          
+          // Skip rendering links with unresolved dynamic segments
+          if (href.includes('[') && href.includes(']')) {
+            return null
+          }
+
           return (
             <Link
               key={key}
@@ -96,7 +119,7 @@ function BreadcrumbDropdown({ node, currentPath, currentSegment, onClose, dynami
               {childNode.isDynamic ? dynamicValues[childNode.name] : childNode.name}
             </Link>
           )
-      })}
+      }).filter(Boolean)}
     </div>
   )
 }
@@ -113,6 +136,7 @@ function BreadcrumbItem({ segment, node, currentPath, isLast, dynamicValues }: B
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const children = Object.entries(node.children)
+    .filter(([key]) => !key.startsWith('(') && !key.endsWith(')'))
   const hasChildren = children.length > 0
   const hasSingleChild = children.length === 1
   const displayName = node.isDynamic ? dynamicValues[node.name] || `[${node.name}]` : segment
@@ -132,9 +156,27 @@ function BreadcrumbItem({ segment, node, currentPath, isLast, dynamicValues }: B
 
   // Keep full path including startSegment for links, but don't add child
   const segmentIndex = currentPath.indexOf(segment)
+  
+  console.log('URL Construction Debug:', {
+    segment,
+    currentPath,
+    segmentIndex,
+    pathSlice: currentPath.slice(0, segmentIndex + 1),
+    joinedPath: currentPath.slice(0, segmentIndex + 1).join('/'),
+    startsWithSlash: currentPath.slice(0, segmentIndex + 1).join('/').startsWith('/')
+  })
+  
   const singleChildHref = hasSingleChild ? 
-    '/' + currentPath.slice(0, segmentIndex + 1).join('/') : 
+    (currentPath.slice(0, segmentIndex + 1).join('/').startsWith('/') ? '' : '/') + 
+    currentPath.slice(0, segmentIndex + 1).join('/') : 
     undefined
+
+  console.log('Final URL:', {
+    singleChildHref,
+    hasSingleChild
+  })
+
+  // if it doesn't start with http or /
 
   const handleDropdownClick = () => {
     console.log('Dropdown clicked:', {

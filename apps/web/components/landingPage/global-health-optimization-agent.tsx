@@ -8,32 +8,26 @@ const GlobalHealthOptimizationAgent = () => {
   const [activeAgents, setActiveAgents] = useState(0);
 
   const diseases = [
-    'Alzheimer\'s Disease',
-    'Chronic Pain Syndrome',
-    'Major Depressive Disorder',
-    'Amyotrophic Lateral Sclerosis',
-    'Pancreatic Cancer',
-    'Cerebral Malaria',
-    'Multi-Drug Resistant Tuberculosis'
+    '�� Alzheimer\'s Disease',
+    '⚡ Chronic Pain Syndrome',
+    '💭 Major Depressive Disorder',
+    '🔄 Amyotrophic Lateral Sclerosis',
+    '🎯 Pancreatic Cancer',
+    '🦠 Cerebral Malaria',
+    '💊 Multi-Drug Resistant Tuberculosis'
   ];
 
   const tasks = [
-    'Genetic Analysis',
-    'Protein Folding Simulation',
-    'Clinical Trial Design',
-    'Drug Interaction Modeling',
-    'Patient Data Mining',
-    'Biomarker Identification',
-    'Treatment Protocol Optimization'
+    '🧬 Genetic Analysis',
+    '🔬 Protein Folding Simulation',
+    '📊 Clinical Trial Design',
+    '💊 Drug Interaction Modeling',
+    '📈 Patient Data Mining',
+    '🔍 Biomarker Identification',
+    '📋 Treatment Protocol Optimization'
   ];
 
-  const [progressWidths, setProgressWidths] =
-      useState<number[]>([]);
-
-  useEffect(() => {  
-    setProgressWidths(['Data Analysis', 'Experimental Design', 'Clinical Trials', 'Treatment Development']
-        .map(() => Math.random() * 100));
-  }, []);  
+  const [progressWidths, setProgressWidths] = useState<number[]>([0, 0, 0, 0]);
 
   useEffect(() => {
     const diseaseInterval = setInterval(() => {
@@ -48,73 +42,83 @@ const GlobalHealthOptimizationAgent = () => {
       setActiveAgents(prev => (prev < 1000 ? prev + 5 : 0));
     }, 100);
 
+    const progressBarsInterval = setInterval(() => {
+      setProgressWidths(prev => prev.map(width => {
+        const increment = Math.random() * 1.5 + 0.5;
+        return width >= 100 ? 0 : Math.min(width + increment, 100);
+      }));
+    }, 100);
+
     return () => {
       clearInterval(diseaseInterval);
       clearInterval(progressInterval);
       clearInterval(agentInterval);
+      clearInterval(progressBarsInterval);
     };
   }, []);
 
   return (
-    <div className="flex items-center justify-center p-4 text-cyan-300 overflow-hidden">
-      <div
-          className="relative w-full max-w-4xl p-4 bg-black border-4 border-cyan-500 rounded-lg">
-
-
-        <h1 className="text-4xl font-bold text-cyan-400 mb-6 animate-glitch">
-          GLOBAL HEALTH OPTIMIZATION AGENT v3.0
+    <div className="flex items-center justify-center p-4">
+      <div className="relative w-full max-w-4xl rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+        <h1 className="mb-6 text-4xl font-black uppercase tracking-tight text-black">
+          🤖 GLOBAL HEALTH OPTIMIZATION AGENT v3.0
         </h1>
 
-        <div className="mb-8">
-          <p className="text-lg text-purple-400 mb-2">Current Disease Focus:</p>
-          <p className="text-3xl font-bold text-white animate-neon">
+        <div className="mb-8 rounded-xl border-4 border-black bg-gradient-to-r from-pink-400 to-purple-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <p className="text-xl font-bold text-black mb-2">🔬 Current Disease Focus:</p>
+          <p className="text-2xl font-black text-black">
             {currentDisease}
           </p>
         </div>
 
-        <div className="mb-6 relative">
-          <div className="w-full h-4 bg-gray-800 rounded-full overflow-hidden">
+        <div className="mb-8">
+          <div className="w-full h-8 bg-white rounded-xl border-4 border-black overflow-hidden">
             <div
-                className="h-full bg-gradient-to-r from-purple-600 via-cyan-400 to-purple-600 animate-gradient"
-                style={{width: `${taskProgress}%`}}
-             />
+              className="h-full bg-gradient-to-r from-pink-400 to-purple-400"
+              style={{width: `${taskProgress}%`}}
+            />
           </div>
-          <p className="absolute top-full left-0 text-xs text-cyan-400 mt-1">
-            Task Decomposition Progress: {taskProgress}%
+          <p className="mt-2 font-bold text-black">
+            Task Progress: {taskProgress}%
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="bg-gray-800 p-4 rounded-lg border border-purple-500">
-            <p className="text-purple-400 text-sm mb-2">Active Problem Solvers</p>
-            <p className="text-2xl font-bold text-white">{activeAgents.toLocaleString()}</p>
-            <p className="text-xs text-purple-300 mt-1">Experts collaborating globally</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="rounded-xl border-4 border-black bg-gradient-to-r from-green-400 to-emerald-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p className="text-xl font-bold text-black mb-2">👥 Active Problem Solvers</p>
+            <p className="text-3xl font-black text-black">{activeAgents.toLocaleString()}</p>
+            <p className="mt-2 font-bold text-black">🌍 Experts collaborating globally</p>
           </div>
-          <div className="bg-gray-800 p-4 rounded-lg border border-cyan-500">
-            <p className="text-cyan-400 text-sm mb-2">Current Task Assignment</p>
-            <p className="text-lg font-bold text-white animate-blink">
+          <div className="rounded-xl border-4 border-black bg-gradient-to-r from-blue-400 to-indigo-400 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <p className="text-xl font-bold text-black mb-2">⚡ Current Task Assignment</p>
+            <p className="text-2xl font-black text-black">
               {tasks[Math.floor(taskProgress / 100 * tasks.length)]}
             </p>
-            <p className="text-xs text-cyan-300 mt-1">Matching experts to specific tasks</p>
+            <p className="mt-2 font-bold text-black">🔄 Matching experts to specific tasks</p>
           </div>
         </div>
 
-        <div className="space-y-2">
-          <p className="text-sm text-cyan-400 mb-1">Resource Allocation by Research Phase:</p>
-          {['Data Analysis', 'Experimental Design', 'Clinical Trials', 'Treatment Development'].map((phase, index) => (
-              <div key={index} className="w-full">
-                <p className="text-xs text-purple-300 mb-1">{phase}</p>
-                <div className="w-full bg-gray-700 rounded-full h-2">
-                  <div
-                      className="bg-cyan-500 h-2 rounded-full animate-pulse"
-                      style={{width: `${progressWidths[index]}%`}}
-                   />
-                </div>
+        <div className="space-y-4">
+          <p className="text-xl font-bold text-black">📊 Resource Allocation by Research Phase:</p>
+          {[
+            '📚 Data Analysis', 
+            '🧪 Experimental Design', 
+            '🔬 Clinical Trials', 
+            '💊 Treatment Development'
+          ].map((phase, index) => (
+            <div key={index} className="w-full">
+              <p className="font-bold text-black mb-2">{phase}</p>
+              <div className="w-full h-6 bg-white rounded-xl border-4 border-black overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-orange-400 to-red-400"
+                  style={{width: `${progressWidths[index]}%`}}
+                />
               </div>
+            </div>
           ))}
         </div>
 
-        <div className="p-4 w-3/5 mx-auto">
+        <div className="mt-8 rounded-xl border-4 border-black overflow-hidden">
           <GlobalBrainNetwork/>
         </div>
       </div>

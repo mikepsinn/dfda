@@ -21,11 +21,13 @@ export default function TreatmentTrialsPage({
   params,
   searchParams,
 }: TreatmentTrialsPageProps) {
+  const decodedTreatmentName = decodeURIComponent(params.treatmentName);
+  
   return (
     <div className="mx-auto max-w-6xl">
       <TrialSearchAndResults 
         searchParams={searchParams}
-        defaultIntervention={params.treatmentName}
+        defaultIntervention={decodedTreatmentName}
       />
     </div>
   )

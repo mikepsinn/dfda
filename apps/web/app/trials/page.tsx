@@ -1,10 +1,14 @@
 import { Clock, MapPin, Microscope, Search } from "lucide-react"
 
 import AdvancedTrialSearch from "./components/AdvancedTrialSearch"
+import { DFDABreadcrumbs } from "@/components/Breadcrumbs/DFDABreadcrumbs"
 
 export default function TrialsSearchPage() {
   return (
     <div className="">
+      <DFDABreadcrumbs dynamicValues={{ 
+        page: 'trials'
+      }} />
       <header className="relative mb-12 overflow-hidden rounded-xl border-4 border-black bg-white p-6 text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
         <h1 className="mb-4 text-6xl font-black uppercase tracking-tight">
           Clinical Trials Search 🔬

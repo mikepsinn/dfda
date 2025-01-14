@@ -77,7 +77,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
     <div className={component ? "relative" : ""}>
       <button
         onClick={onClick}
-        className={`group relative ${component ? "overflow-visible" : "overflow-hidden"} rounded-xl border-4 border-black ${color} p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none block w-full text-left`}
+        className={`group relative ${component ? "overflow-visible" : "overflow-hidden"} rounded-xl border-4 border-black ${color} p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] block w-full text-left`}
       >
         <div className="absolute inset-0 bg-black opacity-0 transition-opacity group-hover:opacity-10" />
         <Icon className="mb-4 h-12 w-12" />

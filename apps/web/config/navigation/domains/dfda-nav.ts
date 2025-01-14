@@ -20,6 +20,12 @@ export const dfdaLinks = {
     icon: "treatment",
     tooltip: "Treatments and conditions",
   },
+  trials: {
+    title: "Trials",
+    href: "/trials",
+    icon: "trials",
+    tooltip: "Clinical trials",
+  },
   digitalTwinSafe: {
     title: "Digital Twin Safe",
     href: "/safe/redirect",
@@ -76,6 +82,7 @@ export const dfdaNavigation: DomainNavigation = {
     dfdaLinks.dfda,
     dfdaLinks.conditions,
     dfdaLinks.treatments,
+    dfdaLinks.trials,
     dfdaLinks.clinipedia,
     dfdaLinks.digitalTwinSafe,
     dfdaLinks.fdai,

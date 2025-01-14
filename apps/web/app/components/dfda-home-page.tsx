@@ -23,6 +23,7 @@ import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/component
 import HowItWorksSection from "./HowItWorksSection"
 import ProblemStatisticsGrid from "./ProblemStatisticsGrid"
 import BenefitStatisticsGrid from "./BenefitStatisticsGrid"
+import GlobalHealthOptimizationAgent from "@/components/landingPage/global-health-optimization-agent"
 
 export default function DFDAHomePage() {
   const router = useRouter()

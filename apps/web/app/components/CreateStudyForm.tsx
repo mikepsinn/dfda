@@ -195,7 +195,7 @@ export default function CreateStudyForm({ userId }: CreateStudyFormProps) {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="neobrutalist-gradient-container neobrutalist-gradient-purple mb-8">
+      <div className="neobrutalist-gradient-container neobrutalist-gradient-purple mb-8 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
         <h1 className="text-4xl font-bold text-white text-center mb-4">Create a Study</h1>
         <p className="text-gray-200 text-center mb-12 max-w-2xl mx-auto">
           After selecting a predictor and outcome variable, you'll be given a shareable url that you can use to recruit participants. You'll also get a link to the full study which will update in real time as more participants anonymously share their data.

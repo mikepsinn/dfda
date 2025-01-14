@@ -108,7 +108,7 @@ export default function MiniTreatmentList({ condition }: MiniTreatmentListProps)
                                     </span>
                                 </div>
                                 <Link 
-                                    href={`/treatments/${encodeURIComponent(treatment.treatment.name)}/mega-study`}
+                                    href={`/treatments/${encodeURIComponent(treatment.treatment.name)}`}
                                     className="neobrutalist-button !py-1 text-xs font-bold hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
                                 >
                                     Join Trial
