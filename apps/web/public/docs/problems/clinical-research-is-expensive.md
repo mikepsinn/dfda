@@ -1,6 +1,6 @@
 ---
 title: Clinical Research is Expensive
-description: It costs $2.6 billion to bring a drug to market (including failed attempts) and trials currently cost over $36k per participant.
+description: It costs $1.6 billion to bring a drug to market (including failed attempts) and trials currently cost over $36k per participant.
 emoji: 💰
 featuredImage: https://static.crowdsourcingcures.org/dfda/assets/cost-of-clinical-trials.png
 ---
@@ -9,7 +9,7 @@ featuredImage: https://static.crowdsourcingcures.org/dfda/assets/cost-of-clinica
 
 #### The Cost of Clinical Research
 
-* It costs [$2.6 billion](https://www.semanticscholar.org/paper/Innovation-in-the-pharmaceutical-industry%3A-New-of-DiMasi-Grabowski/3275f31c072ac11c6ca7a5260bd535720f07df41) to bring a drug to market (including failed attempts).
+* It costs [$1.6 billion](https://jamanetwork.com/journals/jama/fullarticle/2762311) to bring a drug to market (including failed attempts).
 * The process takes over 10 years.
 * It costs [$36k](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001) per subject in Phase III clinical trials.
 * Nearly 85% of clinical trials experience delays, costing [$600,000 to $8 million](https://www.businesswire.com/news/home/20220113005740/en/New-Study-Decentralized-Clinical-Trials-Can-Achieve-Net-Financial-Benefits-of-5X-to-14X-Due-to-Reduced-Trial-Timelines-and-Other-Factors) per day of delay.

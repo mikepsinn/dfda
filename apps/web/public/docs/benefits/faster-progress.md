@@ -1,8 +1,8 @@
 ---
 number: 20X
-textFollowingNumber: "increase in the speed of curing diseases"
-title: "20X Increase in the Speed of Curing Diseases"
-description: "By reducing the cost of clinical trials by 96%, we can run 20 times more trials with the same resources, dramatically accelerating the discovery of new treatments and cures."
+textFollowingNumber: "the rate of treatment discovery"
+title: "20X the Speed of Curing Diseases"
+description: "By reducing the cost of clinical trials by 95%, we can run 20 times more trials with the same resources, dramatically accelerating the discovery of new treatments and cures."
 emoji: "🚀"
 featuredImage: "cost-per-participant.jpg"
 source: "https://dfda.earth#cost-savings"
@@ -29,4 +29,6 @@ The dramatic cost reductions shown below would revolutionize medical research by
 | Site Overhead | $7,386,816 | $0 | 100% | No physical sites required |
 | Other Costs | $17,096,703 | $100,000 | 99% | Drastically reduced miscellaneous costs |
 | **Total** | **$56,988,007** | **$2,025,000** | **96%** | **Overall cost reduction through automation and decentralization** |
+
+See the [cost savings](https://dfda.earth#cost-savings) for more details.
 

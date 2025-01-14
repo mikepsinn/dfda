@@ -107,6 +107,12 @@ export default function MiniTreatmentList({ condition }: MiniTreatmentListProps)
                                         {confidence.text}
                                     </span>
                                 </div>
+                                <Link 
+                                    href={`/treatments/${encodeURIComponent(treatment.treatment.name)}`}
+                                    className="inline-flex items-center rounded border-2 border-black bg-white px-2 py-0.5 text-xs font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none transition-all"
+                                >
+                                    Join Trial
+                                </Link>
                             </div>
                         </div>
                     </div>

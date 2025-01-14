@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit",
     "check-links": "jest __tests__/integration/link-checker.test.ts",
     "lint": "next lint",
+    "generate-routes": "ts-node --project scripts/tsconfig.json scripts/generateRouteTree.ts",
     "build": "next build",
     "turbo": "next dev --turbo",
     "start": "next start",
@@ -41,7 +42,6 @@
     "clean-images": "node scripts/cleanUnusedImages.js",
     "check-unused": "depcheck",
     "find-unused": "ts-node scripts/find-unused.ts",
-    "generate-routes": "ts-node --project scripts/tsconfig.json scripts/generateRouteTree.ts",
     "find:unused": "eslint . --ext .ts,.tsx --rule \"unused-imports/no-unused-imports: error\" --rule \"unused-imports/no-unused-vars: error\"",
     "find:unused-components": "ts-prune --error | findstr /i \".tsx\" | findstr /v \"used in module\" | findstr /v \"layout.tsx\\|loading.tsx\\|page.tsx\\|error.tsx\\|not-found.tsx\\|opengraph-image.tsx\"",
     "generate-icons": "ts-node scripts/generate-icons.ts"

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { 
   Search,
   ListFilter,
@@ -78,7 +77,7 @@ export default function HowItWorksSection() {
   const features = [
     {
       title: "1. Enter Your Condition",
-      desc: "Simply input your medical condition to begin your personalized treatment journey.",
+      desc: "Simply input the condition that's making you miserable.",
       color: "bg-blue-400",
       icon: Search,
       component: searchComponent,
@@ -86,7 +85,7 @@ export default function HowItWorksSection() {
     },
     {
       title: "2. View Ranked Treatments",
-      desc: "See evidence-based rankings of treatments using comprehensive clinical and real-world data.",
+      desc: "See a ranked list of the most save and effective treatments based on the entire universe of clinical and real-world data.",
       color: "bg-indigo-400", 
       icon: ListFilter,
       component: treatmentListComponent,
@@ -113,7 +112,7 @@ export default function HowItWorksSection() {
       desc: "Report treatment effects easily through your preferred apps, EHR systems, or automated calls.",
       color: "bg-fuchsia-400",
       icon: MessageSquareText,
-      media: "https://static.crowdsourcingcures.org/video/import.gif",
+      media: "https://static.crowdsourcingcures.org/video/reminder-inbox.gif",
       onClick: () => {},
     },
     {
@@ -135,11 +134,7 @@ export default function HowItWorksSection() {
         Use a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov to allow ANY patient ANYWHERE in the world to:
       </p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 gap-8 md:grid-cols-3"
-      >
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {features.map((feature, index) => (
           <FeatureBox
             key={feature.title}
@@ -153,7 +148,7 @@ export default function HowItWorksSection() {
             onClick={feature.onClick}
           />
         ))}
-      </motion.div>
+      </div>
     </section>
   )
 } 

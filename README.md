@@ -23,13 +23,13 @@ The Cure Acceleration Act creates:
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
 
-[👉 Read the Full Cure Acceleration Act](apps/web/docs/cure-acceleration-act.md)
+[👉 Read the Full Cure Acceleration Act](apps/web/public/docs/cure-acceleration-act.md)
 
 # 😕 Why are we doing this?
 
 The current system of clinical research, diagnosis, and treatment is failing the billions of people are suffering from chronic diseases.
 
-[👉 Problems we're trying to fix...](apps/web/docs/stuff-that-sucks.md)
+[👉 Problems we're trying to fix...](apps/web/public/docs/stuff-that-sucks.md)
 
 # 🧪 Our Hypothesis
 
@@ -68,77 +68,77 @@ This is a very high-level overview of the architecture. The three primary primit
 2. [PersonalFDA Nodes](#2-personalfda-nodes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-![framework-diagram.png](apps/web/docs/images/dfda-framework-diagram.png)
+![framework-diagram.png](apps/web/public/docs/images/dfda-framework-diagram.png)
 
 ## 1. Data Silo API Gateway Nodes
 
-![dfda-gateway-api-node-silo.jpg](apps/web/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
+![dfda-gateway-api-node-silo.jpg](apps/web/public/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
 
-[Gateway API Nodes](apps/web/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
+[Gateway API Nodes](apps/web/public/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
 
-**👉 [Learn More About Gateway APIs](apps/web/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
+**👉 [Learn More About Gateway APIs](apps/web/public/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
 
 ## 2. PersonalFDA Nodes
 
-[PersonalFDA Nodes](apps/web/docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
+[PersonalFDA Nodes](apps/web/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
 
-[PersonalFDA Nodes](apps/web/docs/components/personal-fda-nodes/personal-fda-nodes.md) are composed of two components, a [Digital Twin Safe](apps/web/docs/components/digital-twin-safe/digital-twin-safe.md) and a [personal AI agent](apps/web/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) applies causal inference algorithms to estimate how various factors affect your health.
+[PersonalFDA Nodes](apps/web/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are composed of two components, a [Digital Twin Safe](apps/web/public/docs/components/digital-twin-safe/digital-twin-safe.md) and a [personal AI agent](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) applies causal inference algorithms to estimate how various factors affect your health.
 
 ### 2.1. Digital Twin Safes
 
-![digital-twin-safe-no-text.jpg](apps/web/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
+![digital-twin-safe-no-text.jpg](apps/web/public/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
-**👉[Learn More or Contribute to Digital Twin Safe](apps/web/docs/components/digital-twin-safe/digital-twin-safe.md)**
+**👉[Learn More or Contribute to Digital Twin Safe](apps/web/public/docs/components/digital-twin-safe/digital-twin-safe.md)**
 
 ### 2.2. Personal AI Agents
 
-[Personal AI agents](apps/web/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](apps/web/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](apps/web/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
+[Personal AI agents](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](apps/web/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
 
-[![data-import-and-analysis.gif](apps/web/docs/images/data-import-and-analysis.gif)](apps/web/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
+[![data-import-and-analysis.gif](apps/web/public/docs/images/data-import-and-analysis.gif)](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
 
-**👉[Learn More](apps/web/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
+**👉[Learn More](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
 
 
 ## 3. Clinipedia—The Wikipedia of Clinical Research
 
-[![clinipedia_globe_circle.jpg](apps/web/docs/components/clinipedia/clinipedia_globe_circle.jpg)](apps/web/docs/components/clinipedia/clinipedia.md)
+[![clinipedia_globe_circle.jpg](apps/web/public/docs/components/clinipedia/clinipedia_globe_circle.jpg)](apps/web/public/docs/components/clinipedia/clinipedia.md)
 
-The [Clinipedia wiki](apps/web/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
+The [Clinipedia wiki](apps/web/public/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-**[👉 Learn More or Contribute to the Clinipedia](apps/web/docs/components/clinipedia/clinipedia.md)**
+**[👉 Learn More or Contribute to the Clinipedia](apps/web/public/docs/components/clinipedia/clinipedia.md)**
 
 ### 3.1 Outcome Labels
 
-A key component of Clinipedia is [**Outcome Labels**](apps/web/docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
+A key component of Clinipedia is [**Outcome Labels**](apps/web/public/docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
 
-![outcome-labels.png](apps/web/docs/components/outcome-labels/outcome-labels.png)
+![outcome-labels.png](apps/web/public/docs/components/outcome-labels/outcome-labels.png)
 
-**👉 [Learn More About Outcome Labels](apps/web/docs/components/outcome-labels/outcome-labels.md)**
+**👉 [Learn More About Outcome Labels](apps/web/public/docs/components/outcome-labels/outcome-labels.md)**
 
 
 ### Features
 
-* [Data Collection](apps/web/docs/components/data-collection/data-collection.md)
-* [Data Import](apps/web/docs/components/data-import/data-import.md)
+* [Data Collection](apps/web/public/docs/components/data-collection/data-collection.md)
+* [Data Import](apps/web/public/docs/components/data-import/data-import.md)
 * [Data Analysis](#data-analysis)
     * [🏷️Outcome Labels](#-outcome-labels)
-    * [🔮Predictor Search Engine](apps/web/docs/components/predictor-search-engine/predictor-search-engine.md)
-    * [🥕 Root Cause Analysis Reports](apps/web/docs/components/root-cause-analysis-reports/root-cause-analysis-reports.md)
-    * [📜Observational Mega-Studies](apps/web/docs/components/observational-studies/observational-studies.md)
-* [Real-Time Decision Support Notifications](apps/web/docs/components/decision-support-notifications)
-* [No Code Health App Builder](apps/web/docs/components/no-code-app-builder)
-* [Personal AI Agent](apps/web/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
-* [Browser Extension](apps/web/docs/components/browser-extension)
+    * [🔮Predictor Search Engine](apps/web/public/docs/components/predictor-search-engine/predictor-search-engine.md)
+    * [🥕 Root Cause Analysis Reports](apps/web/public/docs/components/root-cause-analysis-reports/root-cause-analysis-reports.md)
+    * [📜Observational Mega-Studies](apps/web/public/docs/components/observational-studies/observational-studies.md)
+* [Real-Time Decision Support Notifications](apps/web/public/docs/components/decision-support-notifications)
+* [No Code Health App Builder](apps/web/public/docs/components/no-code-app-builder)
+* [Personal AI Agent](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
+* [Browser Extension](apps/web/public/docs/components/browser-extension)
 
 <p align="center">
 
-<img src="apps/web/docs/images/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
+<img src="apps/web/public/img/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
 &nbsp
 </p>
 <p align="center">
-  <img src="apps/web/docs/images/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
+  <img src="apps/web/public/img/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
 </p>
 
 Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medication, and anything else from dozens
@@ -149,13 +149,13 @@ chronic illness.
 
 Web and mobile push notifications with action buttons.
 
-![web notification action buttons](apps/web/docs/components/data-collection/web-notification-action-buttons.png)
+![web notification action buttons](apps/web/public/docs/components/data-collection/web-notification-action-buttons.png)
 
 ### Browser Extensions
 
 By using the Browser Extension, you can track your mood, symptoms, or any outcome you want to optimize in a fraction of a second using a unique popup interface.
 
-![Chrome Extension](apps/web/docs/components/browser-extension/browser-extension.png)
+![Chrome Extension](apps/web/public/docs/components/browser-extension/browser-extension.png)
 
 ### Data Analysis
 
@@ -163,31 +163,31 @@ The Analytics Engine performs temporal precedence accounting, longitudinal data 
 
 It then pairs every combination of variables and identifies likely causal relationships using correlation mining algorithms in conjunction with a pharmacokinetic model.  The algorithms first identify the onset delay and duration of action for each hypothetical factor. It then identifies the optimal daily values for each factor.
 
-[👉 More info about data analysis](apps/web/docs/components/data-analysis/data-analysis.md)
+[👉 More info about data analysis](apps/web/public/docs/components/data-analysis/data-analysis.md)
 
 ### 🏷 Outcome Labels
 
-![outcome-labels-plugin.png](apps/web/docs/components/outcome-labels/outcome-labels.png)
+![outcome-labels-plugin.png](apps/web/public/docs/components/outcome-labels/outcome-labels.png)
 
-[More info about outcome labels](apps/web/docs/components/outcome-labels/outcome-labels.md)
+[More info about outcome labels](apps/web/public/docs/components/outcome-labels/outcome-labels.md)
 
 ### Real-time Decision Support Notifications
 
-![](apps/web/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
+![](apps/web/public/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
 
-[More info about real time decision support](apps/web/docs/components/outcome-labels/outcome-labels.md)
+[More info about real time decision support](apps/web/public/docs/components/outcome-labels/outcome-labels.md)
 
 ### 📈 Predictor Search Engine
 
-[![Predictor Search Engine](apps/web/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](apps/web/docs/components/predictor-search-engine/predictor-search-engine.md)
+[![Predictor Search Engine](apps/web/public/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](apps/web/public/docs/components/predictor-search-engine/predictor-search-engine.md)
 
-[👉 More info about the predictor search engine...](apps/web/docs/components/predictor-search-engine/predictor-search-engine.md)
+[👉 More info about the predictor search engine...](apps/web/public/docs/components/predictor-search-engine/predictor-search-engine.md)
 
 ### Auto-Generated Observational Studies
 
-![](apps/web/docs/components/observational-studies/observational-studies.png)
+![](apps/web/public/docs/components/observational-studies/observational-studies.png)
 
-[👉 More info about observational studies...](apps/web/docs/components/observational-studies/observational-studies.md)
+[👉 More info about observational studies...](apps/web/public/docs/components/observational-studies/observational-studies.md)
 
 
 
@@ -204,88 +204,3 @@ This turborepo includes the following packages/apps:
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Prisma](https://prisma.io/) for database ORM
-- [Docker Compose](https://docs.docker.com/compose/) for local database
-
-### Database
-
-We use [Prisma](https://prisma.io/) to manage & access our database. As such you will need a database for this project, either locally or hosted in the cloud.
-
-To make this process easier, we offer a [`docker-compose.yml`](https://docs.docker.com/compose/) file to deploy a MySQL server locally with a new database named `turborepo` (To change this update the `MYSQL_DATABASE` environment variable in the `docker-compose.yml` file):
-
-```bash
-cd my-turborepo
-docker-compose up -d
-```
-
-Once deployed you will need to copy the `.env.example` file to `.env` in order for Prisma to have a `DATABASE_URL` environment variable to access.
-
-```bash
-cp .env.example .env
-```
-
-If you added a custom database name, or use a cloud based database, you will need to update the `DATABASE_URL` in your `.env` accordingly.
-
-Once deployed & up & running, you will need to create & deploy migrations to your database to add the necessary tables. This can be done using [Prisma Migrate](https://www.prisma.io/migrate):
-
-```bash
-npx prisma migrate dev
-```
-
-If you need to push any existing migrations to the database, you can use either the Prisma db push or the Prisma migrate deploy command(s):
-
-```bash
-yarn run db:push
-
-# OR
-
-yarn run db:migrate:deploy
-```
-
-There is slight difference between the two commands & [Prisma offers a breakdown on which command is best to use](https://www.prisma.io/docs/concepts/components/prisma-migrate/db-push#choosing-db-push-or-prisma-migrate).
-
-An optional additional step is to seed some initial or fake data to your database using [Prisma's seeding functionality](https://www.prisma.io/docs/guides/database/seed-database).
-
-To do this update check the seed script located in `packages/database/src/seed.ts` & add or update any users you wish to seed to the database.
-
-Once edited run the following command to run tell Prisma to run the seed script defined in the Prisma configuration:
-
-```bash
-yarn run db:seed
-```
-
-For further more information on migrations, seeding & more, we recommend reading through the [Prisma Documentation](https://www.prisma.io/docs/).
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```bash
-yarn run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```bash
-yarn run dev
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)

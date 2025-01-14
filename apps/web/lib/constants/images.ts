@@ -13,7 +13,7 @@ export const COST_IMAGES = {
   CLINICAL_TRIALS: {
     url: '/img/cost-of-clinical-trials.png',
     alt: 'Graph showing the high costs of clinical trials',
-    description: 'Visualization of the $2.6 billion cost to bring a drug to market'
+    description: 'Visualization of the $1.6 billion cost to bring a drug to market'
   },
   DRUG_DEVELOPMENT: {
     url: '/img/cost-to-develop-a-drug-chart.png',

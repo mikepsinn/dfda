@@ -1,187 +1,218 @@
 export interface ComparisonItem {
   category: string
-  regularFDA: string
-  decentralizedFDA: string
-  details: string
+  regularFDA: {
+    value: string
+    content: string
+    icon?: string
+  }
+  decentralizedFDA: {
+    value: string
+    content: string
+    icon?: string
+  }
 }
 
 export const comparisonData: ComparisonItem[] = [
   {
-    category: "🎯 Drug Development Success Rate",
-    regularFDA: "❌ Only 13.8% success rate",
-    decentralizedFDA: "✅ Targeting 3x higher success rate",
-    details: `
-Current FDA statistics:
-- Only 13.8% of all drugs entering clinical trials get approved [Clinical Development Success Rates 2006-2015, BIO Industry Analysis]
-- 90% of drugs fail in early clinical trials
-- $2.6B average cost per drug development due to failures
-- Phase II success rate only 30.7%, Phase III only 58.1%
+    category: "⏱️ Years Until Patients Can Access Treatment",
+    regularFDA: {
+      value: "17 years",
+      icon: "⏳",
+      content: `# Time to Treatment is Too Long 📅
 
-DFDA improvements:
-- AI prediction models to identify promising candidates early
-- Continuous monitoring reduces late-stage failures
-- Real-time efficacy tracking
-- Historical data analysis to predict success
-- Estimated 30-40% success rate through better candidate selection`,
+The current clinical trial process takes far too long, causing unnecessary suffering and death. Here's why:
+
+## Current Timeline: [17 Years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) Average
+- Protocol Development: 2 years
+- Site Selection: 1 year
+- Patient Recruitment: 2 years
+- Trial Duration: 3 years
+- Data Analysis: 1 year
+- FDA Review: 2 years
+- Post-Market Studies: 6 years
+
+## Key Problems
+- Each phase requires extensive paperwork and bureaucracy
+- Site selection and setup is time consuming
+- Patient recruitment is slow and difficult
+- Data collection and verification takes too long
+- Review process has many delays
+- Post-market studies drag on for years
+
+## Impact
+- Patients suffer and die waiting for treatments
+- Researchers waste time on administrative tasks
+- Promising treatments are abandoned due to delays
+- Innovation is stifled by long timelines
+- Healthcare costs increase due to inefficiency`
+    },
+    decentralizedFDA: {
+      value: "➡️ 2 years",
+      icon: "🚀",
+      content: `# Dramatically Faster Treatment Access ⚡
+
+The DFDA enables a much faster path to treatment while maintaining safety:
+
+## New Timeline: 2 Years Average
+- Protocol Development: 2 months (AI-assisted)
+- Patient Recruitment: 1 month (direct-to-patient)
+- Trial Duration: 6 months (real-world data)
+- Data Analysis: 1 month (automated)
+- Review Process: 5 months (continuous)
+- Post-Market: Ongoing monitoring
+
+## Key Improvements
+- AI-assisted protocol development
+- Direct patient recruitment
+- Real-world data collection
+- Automated analysis
+- Continuous review process
+- Real-time safety monitoring
+
+## Benefits
+- Faster access to treatments
+- Reduced patient suffering
+- More efficient use of resources
+- Increased innovation
+- Lower healthcare costs
+- Better safety monitoring`
+    }
   },
   {
-    category: "💰 Clinical Research Costs",
-    regularFDA: "❌ $2.6B per drug approval",
-    decentralizedFDA: "✅ Est. $150M per drug (-95%)",
-    details: `
-Current costs (per successful drug):
-- Total cost: $2.6B (Tufts Center for Drug Development)
-- Clinical trials: $1.5B
-- Pre-clinical: $1.1B
-- Time cost: $1.2B
-- Out-of-pocket: $1.4B
+    category: "💰 Cost of Clinical Trials",
+    regularFDA: {
+      value: "$57M",
+      icon: "💸",
+      content: `# Clinical Research is Too Expensive 💰
 
-Detailed DFDA cost reductions:
-- Site costs: -100% ($7.4M → $0)
-- Admin overhead: -99% ($7.2M → $50K)
-- Patient recruitment: -99% ($805K → $5K)
-- Data management: -95% ($198K → $10K)
-- Physician costs: -95% ($1.97M → $100K)
+The current clinical trial process is prohibitively expensive, limiting innovation and access to treatments.
+
+## Current Costs: [$57M Average Per Trial](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0)
+- Site Costs: $7.4M
+- Staff Costs: $4.3M
+- Administrative: $7.2M
+- Other Costs: $38.1M
+
+## Key Cost Drivers
+- Multiple physical trial sites
+- Large administrative staff
+- Complex paperwork requirements
+- Lengthy timelines
+- High patient recruitment costs
+- Expensive data collection
+
+## Impact
+- Many promising treatments never get tested
+- Small patient populations are ignored
+- Innovation is limited to large companies
+- Healthcare costs are inflated
+- Research focuses on profitable areas only
 
 Sources:
-- DiMasi JA, et al. Innovation in the pharmaceutical industry: New estimates of R&D costs
-- Cost-savings-data.ts analysis`,
-  },
-  {
-    category: "⏱️ Drug Approval Timeline",
-    regularFDA: "❌ 12+ years average",
-    decentralizedFDA: "✅ Target 3-4 years",
-    details: `
-Current FDA timeline:
-- Pre-clinical: 3-6 years
-- Phase I: 1-2 years
-- Phase II: 2-3 years
-- Phase III: 3-4 years
-- FDA review: 1-2 years
-- Total: 12-15 years average
+- [ASPE - Clinical Trial Costs](https://aspe.hhs.gov/reports/examination-clinical-trial-costs-barriers-drug-development-0)
+`
+    },
+    decentralizedFDA: {
+      value: "➡️ $2M",
+      icon: "💎",
+      content: `# Dramatically Lower Research Costs 📉
 
-DFDA timeline reduction through:
-- Parallel processing: -40% time
-- Real-time data analysis: -30% review time
-- Automated recruitment: -60% enrollment time
-- Continuous monitoring: -50% trial duration
-- AI-powered protocol optimization: -25% setup time
+The DFDA enables much more cost-effective research while improving quality:
 
-Source: FDA Drug Development Process - Step by Step`,
-  },
-  {
-    category: "📊 Real-World Evidence Usage",
-    regularFDA: "❌ <5% of approvals use RWE",
-    decentralizedFDA: "✅ 100% RWE integration",
-    details: `
-Current FDA limitations:
-- Only 4.7% of drug approvals use RWE (2016-2019)
-- 95% of real-world data unused
-- Limited post-market surveillance
-- Delayed safety signal detection
+## New Costs: $2M Average Per Trial
+- Virtual Sites: $0
+- Core Staff: $250K
+- Administration: $100K
+- Technology: $1.65M
 
-DFDA RWE advantages:
-- 100% of approvals use RWE
-- Continuous monitoring of all approved drugs
-- Real-time safety signal detection
-- Integration with 100+ health systems
-- Machine learning on billions of data points
+## Cost Reductions
+- No physical sites needed
+- Minimal administrative overhead
+- Automated data collection
+- Faster timelines
+- Direct patient recruitment
+- Efficient technology platform
 
-Source: Analysis of FDA's RWE Framework (2018-2022)`,
-  },
-  {
-    category: "🦠 Rare Disease Development",
-    regularFDA: "❌ 95% have no treatment",
-    decentralizedFDA: "✅ Accelerated rare disease program",
-    details: `
-Current situation:
-- 7,000+ known rare diseases
-- 95% have no FDA-approved treatment
-- Average cost: $4B+ for rare disease drug
-- Patient population often <1,000
-- 50% affect children
-
-DFDA rare disease approach:
-- 80% lower development costs
-- Global patient matching
-- Adaptive trial designs
-- Shared control arms
-- Biomarker validation
-- Historical data usage
+## Benefits
+- 96% cost reduction
+- More treatments tested
+- Rare diseases get attention
+- Smaller companies can innovate
+- Lower healthcare costs
+- Better research coverage
 
 Sources:
-- NIH Rare Diseases Database
-- FDA Orphan Drug Development Program Statistics`,
+- [Business Wire - DFDA Study](https://www.businesswire.com/news/home/20220113005740/en/New-Study-Decentralized-Clinical-Trials-Can-Achieve-Net-Financial-Benefits-of-5X-to-14X-Due-to-Reduced-Trial-Timelines-and-Other-Factors)
+`
+    }
   },
   {
-    category: "👥 Trial Patient Diversity",
-    regularFDA: "❌ 75% white participants",
-    decentralizedFDA: "✅ Representative demographics",
-    details: `
-Current FDA trials:
-- 75% white participants
-- 11% Hispanic participation
-- 8% Black participation
-- 6% Asian participation
+    category: "👥 Percent of Patients Able to Join Trials",
+    regularFDA: {
+      value: "15%",
+      icon: "🚫",
+      content: `# Trials Aren't Representative of Real Patients 🏥
+
+Current clinical trials exclude most patients, leading to poor real-world results.
+
+## Current Exclusions
+- 60% excluded due to location
+- 45% excluded by strict criteria
+- 30% excluded by scheduling
+- 25% excluded by language
+- Only 15% can participate
+
+## Key Problems
 - Geographic limitations
-- Income/insurance barriers
+- Strict inclusion criteria
+- Rigid scheduling
+- Language barriers
+- Transportation issues
+- Work conflicts
+- Childcare needs
 
-DFDA improvements:
-- Matches US census demographics
-- Remote participation enabled
-- No geographic barriers
-- Income-neutral access
-- Multi-language support
-- Cultural competency
-
-Source: FDA Drug Trials Snapshots Summary Report`,
-  },
-  {
-    category: "🔒 Data Privacy & Security",
-    regularFDA: "❌ 4,500 breaches since 2009",
-    decentralizedFDA: "✅ Zero-knowledge architecture",
-    details: `
-Current system issues:
-- 4,500+ healthcare data breaches since 2009
-- 300M+ patients affected
-- Average breach cost: $9.2M
-- Centralized vulnerability
-- Limited audit trails
-
-DFDA security features:
-- Zero-knowledge proofs
-- Homomorphic encryption
-- Distributed storage
-- Quantum-resistant encryption
-- Immutable audit logs
-- Patient-controlled sharing
+## Impact
+- Results don't reflect reality
+- Many patients can't access trials
+- Treatments may not work as expected
+- Health disparities increase
+- Innovation is limited
 
 Sources:
-- HHS Healthcare Data Breaches Portal
-- IBM Cost of Data Breach Report 2023`,
-  },
-  {
-    category: "📖 Publication Bias",
-    regularFDA: "❌ 50% of trials unpublished",
-    decentralizedFDA: "✅ 100% results transparency",
-    details: `
-Current problems:
-- 50% of clinical trials never published
-- 68% of negative results unpublished
-- Average delay: 2 years to publication
-- Selective outcome reporting
-- Missing adverse events
+- [Clinical Leader - Patient Exclusions](https://www.clinicalleader.com/doc/getting-a-handle-on-clinical-trial-costs-0001)
+`
+    },
+    decentralizedFDA: {
+      value: "➡️ 100%",
+      icon: "✨",
+      content: `# Universal Trial Access 🌍
 
-DFDA solutions:
-- Real-time results posting
-- Automated trial registration
-- Mandatory outcome reporting
-- Public access to all data
-- Standardized reporting
-- Negative result repository
+The DFDA enables all patients to participate in research:
 
-Sources:
-- AllTrials Initiative Statistics
-- WHO Clinical Trials Registry Platform`,
-  },
+## New Approach
+- Remote participation
+- Flexible criteria
+- Patient-centric scheduling
+- Any language supported
+- No travel required
+- Work-friendly
+- Family-friendly
+
+## Key Features
+- Virtual trial sites
+- Real-world data collection
+- Automated translation
+- Flexible scheduling
+- Remote monitoring
+- Direct communication
+
+## Benefits
+- Better representation
+- More accurate results
+- Equal access for all
+- Reduced disparities
+- Faster recruitment
+- Better outcomes`
+    }
+  }
 ]

@@ -3,7 +3,6 @@ import { ModelParameter } from '../types';
 // Utility functions for formatting values with units
 const formatCaloriesPerDay = (value: number): string => `${value.toFixed(0)} calories/day`;
 const formatCaloriesPerPoundPerDay = (value: number): string => `${value.toFixed(1)} calories/lb/day`;
-const formatPercent = (value: number): string => `${(value * 100).toFixed(1)}%`;
 const formatPercentPerPound = (value: number): string => `${(value * 100).toFixed(1)}%/lb`;
 const formatCurrency = (value: number): string => {
     return new Intl.NumberFormat('en-US', {
@@ -15,7 +14,6 @@ const formatCurrency = (value: number): string => {
 };
 const formatCurrencyPerYear = (value: number): string => `${formatCurrency(value)}/year`;
 const formatCurrencyPerPoundPerYear = (value: number): string => `${formatCurrency(value)}/lb/year`;
-const formatQALYs = (value: number): string => `${value.toFixed(3)} QALYs`;
 const formatQALYsPerPound = (value: number): string => `${value.toFixed(3)} QALYs/lb`;
 const formatRate = (value: number): string => `${(value * 100).toFixed(1)}% annually`;
 const formatRelativeScale = (value: number): string => value.toFixed(2);

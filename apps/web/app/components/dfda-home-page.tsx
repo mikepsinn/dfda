@@ -1,11 +1,10 @@
 "use client"
 
 import React, { useState } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Robot } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
-import { Activity, ArrowRight, Info, Pill, Scroll, Users } from "lucide-react"
+import { Activity, Info, Pill, Scroll, Users } from "lucide-react"
 
 import { GlobalVariable } from "@/types/models/all"
 import VariableSearchAutocomplete from "@/app/components/VariableSearchAutocomplete"
@@ -155,7 +154,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Let's upgrade FDA.gov
+          We Can Eradicate Disease
         </motion.h1>
         <motion.p
           className="neobrutalist-description"
@@ -163,7 +162,7 @@ export default function DFDAHomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          🚀 And eradicate disease with the power of automated and decentralized clinical research! 💊
+          🚀 by giving all patients the right to effortlessly participate in decentralized clinical research 💊
         </motion.p>
       </header>
 
@@ -171,18 +170,24 @@ export default function DFDAHomePage() {
 
       <main className="space-y-12">
         <DFDADisclaimer />
+        <DFDAComparisonTable />
+        <HowItWorksSection />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
-          <h2 className="neobrutalist-title mb-6">The Problem</h2>
+          <h2 className="neobrutalist-title mb-6">The World We Live In</h2>
           <ProblemStatisticsGrid />
         </section>
-        <HowItWorksSection />
+        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
+          <h2 className="neobrutalist-title mb-6">The World You Can Create</h2>
+          <p className="neobrutalist-description mb-6">
+            What if there was a way to acheive:
+          </p>
+          <BenefitStatisticsGrid />
+          
+        </section>
         <section className="mt-12">
           <DFDACostSavingsTable />
         </section>
-        <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
-          <h2 className="neobrutalist-title mb-6">Benefits</h2>
-          <BenefitStatisticsGrid />
-        </section>
+
         <ProblemsWithCurrentSystem />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">See Effects of Foods🍟</h2>
@@ -242,7 +247,7 @@ export default function DFDAHomePage() {
           <AdvancedTrialSearch />
         </section>
 
-        <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
+{/*         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink">
           <h2 className="neobrutalist-title">
             🏢 Drug Companies: Create Your Trial 📝
           </h2>
@@ -260,9 +265,8 @@ export default function DFDAHomePage() {
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-        </section>
+        </section> */}
 
-        <DFDAComparisonTable />
 
         <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (

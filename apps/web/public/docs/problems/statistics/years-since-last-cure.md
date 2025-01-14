@@ -15,7 +15,7 @@ Several factors contribute to the slow pace of developing cures:
 
 1. **Profitability Challenges**: Pharmaceutical companies often [prioritize treatments over cures](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7872909/) because chronic treatments provide ongoing revenue streams, while cures are one-time treatments. This creates a financial disincentive for developing curative therapies.
 
-2. **High Development Costs**: Developing new cures requires significant investment in research and clinical trials, with no guarantee of success. The [average cost to develop a new drug](https://www.cbo.gov/publication/57126) is estimated at $2.6 billion, with only about 12% of drugs that enter clinical trials ultimately gaining FDA approval.
+2. **High Development Costs**: Developing new cures requires significant investment in research and clinical trials, with no guarantee of success. The [average cost to develop a new drug](https://www.cbo.gov/publication/57126) is estimated at $1.6 billion, with only about 12% of drugs that enter clinical trials ultimately gaining FDA approval.
 
 3. **Regulatory Hurdles**: Strict safety and efficacy requirements, while necessary, can slow down the approval process for new cures. The [average time from discovery to market approval](https://www.cbo.gov/publication/57126) is 10-15 years, with clinical trials alone taking 6-7 years on average.
 

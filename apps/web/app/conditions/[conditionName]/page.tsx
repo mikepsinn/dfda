@@ -21,7 +21,7 @@ export default async function ConditionPage({ params }: { params: { conditionNam
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 {/* Treatment Reviews Box */}
-                <Link href={`/conditions/${condition.name}/treatments/ratings`} 
+                <Link href={`/conditions/${condition.name}/treatment-reviews`} 
                    className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
                     <div className="flex items-center gap-3 mb-3">
                         <span className="text-3xl">📊</span>

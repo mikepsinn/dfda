@@ -7,9 +7,10 @@ emoji: "💊"
 featuredImage: "fda-treatments.jpg"
 ---
 
-Despite significant advances in medical research, only about 5% of diseases have FDA-approved treatments. This means that 95% of diseases, affecting millions of patients worldwide, lack approved therapies.
+Despite significant advances in medical research, only about 5% of diseases have FDA-approved treatments. This means that [95% of diseases](https://ncats.nih.gov/sites/default/files/NCATS_RareDiseasesFactSheet.pdf), affecting millions of patients worldwide, lack approved therapies.
 
 The FDA approved [55 drugs in 2023](https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2023), but many were for conditions that **already had treatments**
+
 
 ## Impact
 

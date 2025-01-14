@@ -71,21 +71,21 @@ export function UserAuthForm({
   }
 
   return (
-    <div className={cn("mx-auto w-full max-w-sm", className)} {...props}>
+    <div className={cn("mx-auto w-full max-w-sm text-black", className)} {...props}>
       {emailSent ? (
-        <div className="neobrutalist-container text-center">
+        <div className="neobrutalist-container text-center bg-white">
           <div className="text-xl font-black mb-2">Email Sent! 📧</div>
           <div className="neobrutalist-description">
             Check your email for a login link. You can close this window.
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 bg-white p-6 rounded-lg">
           {showSocialLogins && (
             <>
               <button
                 type="button"
-                className="neobrutalist-button group w-64"
+                className="neobrutalist-button group w-64 text-black bg-white hover:bg-gray-100"
                 onClick={() => {
                   setIsGoogleLoading(true)
                   setIsLoading(true)
@@ -105,7 +105,7 @@ export function UserAuthForm({
               </button>
               <button
                 type="button"
-                className="neobrutalist-button group w-64"
+                className="neobrutalist-button group w-64 text-black bg-white hover:bg-gray-100"
                 onClick={() => {
                   setIsGithubLoading(true)
                   setIsLoading(true)
@@ -129,7 +129,7 @@ export function UserAuthForm({
                   <div className="w-full border-4 border-black rounded-full" />
                 </div>
                 <div className="relative flex justify-center">
-                  <span className="bg-white px-4 font-black text-lg">OR</span>
+                  <span className="bg-white px-4 font-black text-lg text-black">OR</span>
                 </div>
               </div>
             </>
@@ -141,14 +141,14 @@ export function UserAuthForm({
                 type="email"
                 name="email"
                 placeholder="Enter your email"
-                className="w-full rounded-xl border-4 border-black p-2 text-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none transition-all bg-white"
+                className="w-full rounded-xl border-4 border-black p-2 text-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:translate-x-1 focus:translate-y-1 focus:shadow-none focus:outline-none transition-all bg-white text-black placeholder:text-gray-500"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isEmailLoading || isLoading}
               />
               <button
                 type="button"
-                className="neobrutalist-button group w-full"
+                className="neobrutalist-button group w-full text-black bg-white hover:bg-gray-100"
                 onClick={handleEmailSignIn}
                 disabled={isEmailLoading || isLoading || !email}
               >

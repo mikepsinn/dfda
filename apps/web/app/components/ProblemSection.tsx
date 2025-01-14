@@ -43,7 +43,7 @@ export default function ProblemSection() {
     {
       icon: <Clock className="h-12 w-12" />,
       title: "10+ Years to Market",
-      description: "It takes over 10 years and $2.6 billion to bring a drug to market (including failed attempts).",
+      description: "It takes over 10 years and $1.6 billion to bring a drug to market (including failed attempts).",
       stats: {
         highlight: "$20M",
         subtext: "saved by catching failures earlier"

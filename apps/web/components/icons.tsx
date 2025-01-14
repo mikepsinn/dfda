@@ -156,6 +156,7 @@ const icons = {
   treatment: BriefcaseMedical,
   condition: BriefcaseMedical,
   medical: BriefcaseMedical,
+  trials: BriefcaseMedical,
 }
 
 export const Icons: IconsType = icons

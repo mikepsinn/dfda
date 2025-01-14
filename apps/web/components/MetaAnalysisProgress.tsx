@@ -29,7 +29,12 @@ export default function MetaAnalysisProgress({
   const [activeResearchers, setActiveResearchers] = useState(0)
 
   useEffect(() => {
-    if (!isLoading) return
+    if (!isLoading) {
+      if (onComplete) {
+        onComplete()
+      }
+      return
+    }
 
     const progressInterval = setInterval(() => {
       setTaskProgress(prev => {
@@ -37,8 +42,8 @@ export default function MetaAnalysisProgress({
           // Move to next task
           setCurrentTask(current => {
             if (current >= ANALYSIS_TASKS.length - 1) {
-              if (onComplete) onComplete()
-              return 0
+              clearInterval(progressInterval)
+              return current
             }
             return current + 1
           })

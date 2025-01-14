@@ -20,6 +20,12 @@ export const dfdaLinks = {
     icon: "treatment",
     tooltip: "Treatments and conditions",
   },
+  trials: {
+    title: "Trials",
+    href: "/trials",
+    icon: "trials",
+    tooltip: "Clinical trials",
+  },
   digitalTwinSafe: {
     title: "Digital Twin Safe",
     href: "/safe/redirect",
@@ -40,13 +46,13 @@ export const dfdaLinks = {
   },
   petition: {
     title: "Disease Eradication Act",
-    href: "/disease-eradication-act",
+    href: "/docs/disease-eradication-act",
     icon: "petition",
     tooltip: "Help us end suffering by signing the Global Disease Eradication Act",
   },
   healthSavingsSharing: {
     title: "50/50 Health Savings Sharing Program",
-    href: "/health-savings-sharing",
+    href: "/docs/health-savings-sharing",
     icon: "savings",
     tooltip:
       "Incentivizing Cures With 50% of Long Term Healthcare Savings from Curative or Preventative Treatments",
@@ -56,6 +62,12 @@ export const dfdaLinks = {
     href: "/docs",
     icon: "book",
     tooltip: "Documentation for the Decentralized FDA",
+  },
+  editDiseaseEradicationAct: {
+    title: "Edit Disease Eradication Act",
+    href: "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/docs/disease-eradication-act.md",
+    icon: "edit",
+    tooltip: "Edit the Disease Eradication Act",
   },
 } as const
 
@@ -69,6 +81,8 @@ export const dfdaNavigation: DomainNavigation = {
   sidebarNav: [
     dfdaLinks.dfda,
     dfdaLinks.conditions,
+    dfdaLinks.treatments,
+    dfdaLinks.trials,
     dfdaLinks.clinipedia,
     dfdaLinks.digitalTwinSafe,
     dfdaLinks.fdai,
