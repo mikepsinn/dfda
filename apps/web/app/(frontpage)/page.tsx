@@ -1,6 +1,5 @@
 import React from "react"
 
-import OpenSource from "@/components/pages/opensource"
 import { PWARedirect } from "@/components/pwa-redirect";
 import DFDAHomePage from "@/app/components/dfda-home-page";
 

@@ -1,11 +1,10 @@
 "use client"
 
 import React, { useState } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Robot } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
-import { Activity, ArrowRight, Info, Pill, Scroll, Users } from "lucide-react"
+import { Activity, Info, Pill, Scroll, Users } from "lucide-react"
 
 import { GlobalVariable } from "@/types/models/all"
 import VariableSearchAutocomplete from "@/app/components/VariableSearchAutocomplete"
@@ -23,7 +22,6 @@ import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/component
 import HowItWorksSection from "./HowItWorksSection"
 import ProblemStatisticsGrid from "./ProblemStatisticsGrid"
 import BenefitStatisticsGrid from "./BenefitStatisticsGrid"
-import GlobalHealthOptimizationAgent from "@/components/landingPage/global-health-optimization-agent"
 
 export default function DFDAHomePage() {
   const router = useRouter()

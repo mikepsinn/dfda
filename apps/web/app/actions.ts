@@ -115,18 +115,6 @@ export async function removeChat({ id, path }: { id: string; path: string }) {
       id,
     },
   })
-  const queryCache = new QueryCache({
-    onError: (error) => {
-      console.log(error)
-    },
-    onSuccess: (data) => {
-      console.log(data)
-    },
-    onSettled: (data, error) => {
-      console.log(data, error)
-    },
-  })
-  const query = queryCache.find({ queryKey: ["profiles"] })
 
   revalidatePath("/")
   return revalidatePath(path)

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ExtendedMetaAnalysisReport } from "@/lib/agents/fdai/fdaiMetaAnalyzer";
 import CostBenefitAnalysisReport from "@/app/components/CostBenefitAnalysisReport";
 import BackButton from '../../../../../components/BackButton';
 import { DFDABreadcrumbs } from '@/components/Breadcrumbs/DFDABreadcrumbs';
