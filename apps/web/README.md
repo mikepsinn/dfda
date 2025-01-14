@@ -5,11 +5,21 @@ description: Help us create a world without disease.
 
 # Here's the Deal Folks
 
-**[2 billion](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)** people are suffering from chronic diseases. **[95%](https://globalgenes.org/rare-facts/)** of diseases have no FDA-approved treatment. The **[$2.4 billion](https://www.semanticscholar.org/paper/Innovation-in-the-pharmaceutical-industry%3A-New-of-DiMasi-Grabowski/3275f31c072ac11c6ca7a5260bd535720f07df41)** cost of developing a drug prevents treatments from being developed. We haven't cured a single disease in over 40 years, because lifelong drug subscriptions are more profitable. **[85%](https://www.ncbi.nlm.nih.gov/pubmed/14628985)** of patients are unable to participate in clinical trials due to exclusion criteria, distance, or regulatory reasons. Even when a treatment is developed, it can take over **[17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/)** before it's generally available to patients due to regulatory and other delays.
+**[2 billion](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)** people are suffering from chronic diseases. 
 
-# The Solution: 20X the Rate of Disase Eradication by Upgrading FDA.gov
+**[95%](https://globalgenes.org/rare-facts/)** of diseases have no FDA-approved treatment.
 
-We would like to upgrade FDA.gov into a global decentralized clinical trial platform that allows any patient to:
+ The **[$1.6 billion](https://jamanetwork.com/journals/jama/fullarticle/2762311)** cost of developing a drug prevents treatments from being developed. 
+
+ We haven't cured a single disease in over 40 years, because lifelong drug subscriptions are more profitable. 
+
+ Even after a drug is proven safe in phase 1 trials, **[85%](https://www.ncbi.nlm.nih.gov/pubmed/14628985)** of patients are unable to participate in clinical efficacy trials due to exclusion criteria, distance, or regulatory reasons. 
+ 
+ Even when a treatment is developed, it can take over **[17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/)** before it's generally available to patients due to regulatory and other delays.
+
+# The Solution: 20X the Rate of Disease Eradication by Upgrading FDA.gov and Patient's Right to Trials
+
+We would like to upgrade FDA.gov into a global decentralized clinical trial platform and give any patient the right to:
 
 1. Enter their condition
 2. See the most effective treatments based on clinical data and real-world evidence
@@ -18,18 +28,6 @@ We would like to upgrade FDA.gov into a global decentralized clinical trial plat
 5. Anonymously share their data to eternally improve treatment effectiveness rankings
 
 Through automation and increased efficiency, this would reduce treatment development costs by **[95%](https://www.dfda.earth/#cost-savings)** and result in a **[20X acceleration](https://www.dfda.earth/#cost-savings)** in the rate of curing disease.
-
----
-
-#💖 The World We Live In
-
-Billions of people are suffering needlessly because the current system of clinical research, diagnosis, and treatment sucks because:
-
-* ⏳ Patients suffer and die for 
-* 🚫 **97% of patients** are excluded from clinical trials
-* 💰 **Drug development costs** of $2.6B are passed on to patients
-* ⏱️ **Terminal patients** wait 4+ years for breakthrough therapy approvals
-* 📊 The system ignores **real-world evidence** about effective treatments
 
 ## 💡 The Solution
 

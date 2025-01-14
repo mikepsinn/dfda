@@ -1,6 +1,6 @@
 Dear Nations of the World,
 
-Every 4 seconds, someone dies from a chronic disease. With over 2 billion people affected worldwide and more than 2,000 diseases still without cures, our current healthcare systems are failing to keep pace with human suffering. The staggering $2.4 billion cost to develop a single treatment creates an impossible burden - one that leaves patients waiting years for life-saving therapies while facing unaffordable prices even when treatments become available.
+Every 4 seconds, someone dies from a chronic disease. With over 2 billion people affected worldwide and more than 2,000 diseases still without cures, our current healthcare systems are failing to keep pace with human suffering. The [$1.6 billion](https://jamanetwork.com/journals/jama/fullarticle/2762311) cost to develop a single treatment creates an impossible burden - one that leaves patients waiting years for life-saving therapies while facing unaffordable prices even when treatments become available.
 
 # The problem
 

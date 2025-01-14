@@ -10,12 +10,10 @@ source: "https://dfda.earth"
 
 From initial research to clinical practice, new medical treatments take an average of [17 years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) to complete the development process and reach patients. 
 
-Through automation of administrative tasks, AI-assisted protocol development, and decentralized trial management, we can dramatically compress this timeline:
+Phase 1 clinical trials are used to determine the safety and effects of a new drug. These take 1-2 years.
 
-- Protocol Development: 2 months (vs 2 years)
-- Patient Recruitment: 1 month (vs 2 years)
-- Trial Execution: 6 months (vs 3 years)
-- Data Analysis: 1 month (vs 1 year)
-- Regulatory Review: 5 months (vs 2 years)
+At this point, it should be possible for patients to join a trials for the treatments with the most promise.
+
+Through automation of administrative tasks, AI-assisted protocol development, and decentralized trial management, we can dramatically compress this timeline.
 
 This acceleration means potentially life-saving treatments reach patients faster while maintaining rigorous safety standards through automated monitoring and real-time data analysis. 

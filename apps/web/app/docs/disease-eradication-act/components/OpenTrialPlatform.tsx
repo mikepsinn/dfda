@@ -48,7 +48,7 @@ export default function OpenTrialPlatform() {
         "⚙️ Automate trial recruitment, monitoring, and analysis",
         "🤝 Connect patients and doctors globally",
         "🌐 Share results through open access",
-        "💰 From $2.6B trials to $100M cures - 96% cost reduction",
+        "💰 From $1.6B trials to $100M cures - 96% cost reduction",
       ],
       bgColor: "bg-purple-100",
     },

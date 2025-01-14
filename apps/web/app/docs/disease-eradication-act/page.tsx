@@ -10,7 +10,7 @@ import { FloatingPetitionButton } from "./components/FloatingPetitionButton"
 import DiseaseEradicationAct from "./components/disease-eradication-act"
 
 export const metadata: Metadata = {
-  title: "Disease Eradication Act | DFDA",
+  title: "Disease Eradication Act",
   description: "Faster Cures, Lower Costs, Universal Access 🚀",
 }
 export default async function CureAccelerationPage() {
