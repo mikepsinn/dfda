@@ -170,20 +170,20 @@ export default function DFDAHomePage() {
 
       <main className="space-y-12">
         <DFDADisclaimer />
-        <DFDAComparisonTable />
-        <HowItWorksSection />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
           <h2 className="neobrutalist-title mb-6">The World We Live In</h2>
           <ProblemStatisticsGrid />
         </section>
         <section className="neobrutalist-gradient-container neobrutalist-gradient-blue mb-12">
-          <h2 className="neobrutalist-title mb-6">The World You Can Create</h2>
+          <h2 className="neobrutalist-title mb-6">The World We Can Create</h2>
           <p className="neobrutalist-description mb-6">
-            What if there was a way to acheive:
+            If we gave every patient the right to effortlessly participate in decentralized clinical trials, we could achieve:
           </p>
           <BenefitStatisticsGrid />
           
         </section>
+        <HowItWorksSection />
+        <DFDAComparisonTable />
         <section className="mt-12">
           <DFDACostSavingsTable />
         </section>
