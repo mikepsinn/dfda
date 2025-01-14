@@ -16,7 +16,7 @@ export const comparisonData: ComparisonItem[] = [
   {
     category: "⏱️ Years Until Patients Can Access Treatment",
     regularFDA: {
-      value: "17",
+      value: "17 years",
       icon: "⏳",
       content: `# Time to Treatment is Too Long 📅
 
@@ -47,7 +47,7 @@ The current clinical trial process takes far too long, causing unnecessary suffe
 - Healthcare costs increase due to inefficiency`
     },
     decentralizedFDA: {
-      value: "➡️ 2",
+      value: "➡️ 2 years",
       icon: "🚀",
       content: `# Dramatically Faster Treatment Access ⚡
 
