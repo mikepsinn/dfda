@@ -22,7 +22,7 @@ export const comparisonData: ComparisonItem[] = [
 
 The current clinical trial process takes far too long, causing unnecessary suffering and death. Here's why:
 
-## Current Timeline: [17 Years](https://pmc.ncbi.nlm.nih.gov/articles/PMC3241518/) Average
+## Current Timeline: 17 Years Average
 - Protocol Development: 2 years
 - Site Selection: 1 year
 - Patient Recruitment: 2 years

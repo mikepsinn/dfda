@@ -7,6 +7,7 @@ const DEATHS_PER_SECOND = 1.736 // 150,000 deaths per day = 1.736 per second
 const MAX_VISIBLE_SKULLS = 1000 // Increased for more impact
 const SKULL_SIZE = 48 // Size of skull emoji in pixels
 const FALL_DURATION = 3 // Duration of fall animation in seconds
+const LOCAL_STORAGE_KEY = 'dfda-death-toll-dismissed'
 
 // Text shadow for creating border effect
 const textBorderStyle = {
@@ -29,9 +30,22 @@ export default function DeathTollTimer() {
   const [deathCount, setDeathCount] = useState(0)
   const [startTime] = useState(Date.now())
   const [skullPositions, setSkullPositions] = useState<SkullPosition[]>([])
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false) // Start with false
   const containerRef = useRef<HTMLDivElement>(null)
   const [windowHeight, setWindowHeight] = useState(0)
+
+  // Check local storage on mount
+  useEffect(() => {
+    const isDismissed = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if (!isDismissed) {
+      setIsVisible(true)
+    }
+  }, [])
+
+  const handleDismiss = () => {
+    setIsVisible(false)
+    localStorage.setItem(LOCAL_STORAGE_KEY, 'true')
+  }
 
   // Update window height on mount and resize
   useEffect(() => {
@@ -102,7 +116,7 @@ export default function DeathTollTimer() {
       {/* Close Button */}
       <motion.button
         className="absolute right-8 top-8 z-20 text-4xl font-bold text-white transition-colors hover:text-red-600"
-        onClick={() => setIsVisible(false)}
+        onClick={handleDismiss}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -159,7 +173,7 @@ export default function DeathTollTimer() {
           {/* Dismiss Button */}
           <motion.button
             className="mt-2 border-2 border-white bg-black px-16 py-4 text-2xl font-bold text-white transition-colors hover:bg-red-600 hover:border-red-600 hover:text-white"
-            onClick={() => setIsVisible(false)}
+            onClick={handleDismiss}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}

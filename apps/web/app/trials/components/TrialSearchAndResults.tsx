@@ -166,7 +166,7 @@ export default async function TrialSearchAndResults({
   return (
     <div>
       <div className="rounded-xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-        <h1 className="mb-4 text-3xl font-black">Modify Search</h1>
+        <h1 className="mb-4 text-3xl font-black">Trial Search</h1>
         <AdvancedTrialSearch initialFilters={initialFilters} />
       </div>
 

@@ -128,10 +128,11 @@ export default function HowItWorksSection() {
   return (
     <section className="relative overflow-visible rounded-xl border-4 border-black bg-gradient-to-r from-blue-400 to-purple-400 p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       <h2 className="mb-6 text-4xl font-black uppercase">
-        The Solution: Upgrade FDA.gov 🚀
+        How it Works: Upgrade FDA.gov 🚀
       </h2>
       <p className="mb-6 text-lg">
-        Use a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov to allow ANY patient ANYWHERE in the world to:
+        Use a small fraction of the FDA's $7 billion annual budget to upgrade FDA.gov to 
+        allow ANY patient ANYWHERE in the world to:
       </p>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
