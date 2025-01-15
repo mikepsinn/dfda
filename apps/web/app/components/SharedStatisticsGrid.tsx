@@ -18,9 +18,18 @@ interface SharedStatisticsGridProps {
 export function SharedStatisticsGrid({ statistics }: SharedStatisticsGridProps) {
   const [selectedStat, setSelectedStat] = useState<Statistic | null>(null)
 
+  // Calculate optimal grid columns based on statistics length
+  const getGridCols = (length: number) => {
+    if (length <= 2) return 'grid-cols-1 md:grid-cols-2'
+    if (length <= 4) return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4'
+    if (length <= 6) return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+    if (length = 9) return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+    return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+  }
+
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className={`grid ${getGridCols(statistics.length)} gap-6`}>
         {statistics.map((stat, index) => (
           <NeoBrutalistBox 
             key={index}
