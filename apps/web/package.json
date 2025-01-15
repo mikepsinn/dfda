@@ -44,7 +44,16 @@
     "find-unused": "ts-node scripts/find-unused.ts",
     "find:unused": "eslint . --ext .ts,.tsx --rule \"unused-imports/no-unused-imports: error\" --rule \"unused-imports/no-unused-vars: error\"",
     "find:unused-components": "ts-prune --error | findstr /i \".tsx\" | findstr /v \"used in module\" | findstr /v \"layout.tsx\\|loading.tsx\\|page.tsx\\|error.tsx\\|not-found.tsx\\|opengraph-image.tsx\"",
-    "generate-icons": "ts-node scripts/generate-icons.ts"
+    "generate-icons": "ts-node scripts/generate-icons.ts",
+    "deploy:tenant": "ts-node deploy/cli.ts",
+    "deploy:tenant:provision": "ts-node deploy/cli.ts provision",
+    "deploy:tenant:list": "ts-node deploy/cli.ts list",
+    "deploy:tenant:delete": "ts-node deploy/cli.ts delete",
+    "deploy:tenant:update": "ts-node deploy/cli.ts update",
+    "deploy:tenant:backup": "ts-node deploy/cli.ts backup",
+    "deploy:tenant:restore": "ts-node deploy/cli.ts restore",
+    "deploy:tenant:migrate": "ts-node deploy/cli.ts migrate",
+    "deploy:tenant:monitor": "ts-node deploy/cli.ts monitor"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -186,7 +195,11 @@
     "vaul": "^0.9.0",
     "yargs": "^17.7.2",
     "zod": "^3.22.4",
-    "zustand": "^4.3.9"
+    "zustand": "^4.3.9",
+    "@aws-sdk/client-secrets-manager": "^3.0.0",
+    "@aws-sdk/client-lightsail": "^3.0.0",
+    "@aws-sdk/client-rds": "^3.0.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",

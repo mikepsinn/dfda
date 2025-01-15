@@ -7,6 +7,8 @@ emoji: 🤪
 
 # Lack of Logical Reasoning Based on Quantitative Cost-Benefit Analysis in FDA Decision
 
+Ideally, the FDA would allow patients to access treatments if the potential benefits vastly exceeded their harms.  Unfortunately, this is not the current policy.
+
 The most recent example of this is the FDA's decision to revoke the EUA for monoclonal antibodies (mAbs) and deny even an investigational use pathway, all while failing to establish a real-world monitoring system.
 
 This is a catastrophic failure in logic, equity, and risk management.

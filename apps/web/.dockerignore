@@ -1,0 +1,10 @@
+.next
+.git
+.env.*
+!.env
+*.log
+.turbo
+.vercel
+test-outputs
+coverage
+node_modules 

@@ -45,7 +45,7 @@ describe("Statistic Finder Tests", () => {
 
     console.log("Drug Development Cost Statistics:", 
       drugDevelopmentFindings.findings.map(f => ({
-        cost: formatNumber(f.number, f.unit),
+        cost: f.number !== undefined ? formatNumber(f.number, f.unit) : 'N/A',
         year: f.year,
         confidence: f.confidence,
         methodology: f.methodology?.slice(0, 100) + '...' // Truncate for cleaner logs
@@ -72,7 +72,7 @@ describe("Statistic Finder Tests", () => {
 
     console.log("Clinical Trial Participant Cost Statistics:", 
       findings.findings.map(f => ({
-        cost: formatNumber(f.number, f.unit),
+        cost: f.number !== undefined ? formatNumber(f.number, f.unit) : 'N/A',
         year: f.year,
         confidence: f.confidence,
         methodology: f.methodology?.slice(0, 100) + '...',
@@ -105,7 +105,7 @@ describe("Statistic Finder Tests", () => {
 
     console.log("Clinical Trial Success Rate Statistics:", 
       findings.findings.map(f => ({
-        rate: formatNumber(f.number, f.unit),
+        rate: f.number !== undefined ? formatNumber(f.number, f.unit) : 'N/A',
         year: f.year,
         confidence: f.confidence,
         methodology: f.methodology?.slice(0, 100) + '...'
