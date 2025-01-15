@@ -167,6 +167,7 @@ model User {
   newsletterEmails                      Boolean                               @default(false)
   unsubscribeFromAll                    Boolean                               @default(false)
   callSchedulesCreated                  CallSchedule[]
+  createdPeople                         Person[]                              @relation("CreatedPeople")
 }
 
 // Need this to create digital twins for people that are not users
@@ -206,6 +207,8 @@ model Person {
   globalProblems   PersonGlobalProblem[]
   globalSolutions  PersonGlobalSolution[]
   callSummaryRecipients CallSummaryRecipient[]
+  creatorUserId String?
+  creatorUser User? @relation("CreatedPeople", fields: [creatorUserId], references: [id])
 
   // Add index for common queries
   @@index([name])
@@ -2089,7 +2092,7 @@ model ScheduledCall {
   createdAt    DateTime    @default(now())
   updatedAt    DateTime    @updatedAt
   completedAt  DateTime?   // When call was completed/failed/cancelled
-
+  transcript   String?     @db.Text  // Full transcript of the call
   // Add fields for call summary and notifications
   callSummary  String?    @db.Text  // AI-generated summary of the call
 
