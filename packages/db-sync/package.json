@@ -1,0 +1,33 @@
+{
+  "name": "db-sync",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "clean": "rimraf dist node_modules",
+    "dev": "tsup src/index.ts --format cjs,esm --watch --dts",
+    "lint": "eslint . --max-warnings 0",
+    "sync": "tsx src/index.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "mysql2": "^3.9.2",
+    "pg": "^8.11.3",
+    "pg-format": "^1.0.4",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.2",
+    "@types/pg-format": "^1.0.5",
+    "@types/mysql2": "github:types/mysql2",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "tsx": "4.19.1",
+    "typescript": "5.5.4"
+  }
+} 
