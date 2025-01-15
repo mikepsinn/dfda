@@ -68,5 +68,12 @@ export async function requireApiKey(req: Request): Promise<Response | User> {
     );
   }
 
+  if (!result.user) {
+    return new Response(
+      JSON.stringify({ error: "User not found" }),
+      { status: 401 }
+    );
+  }
+
   return result.user;
 } 
