@@ -95,9 +95,56 @@ export {
   getSafeRedirectUrl,
 }
 
-// Get list of available data sources
-export async function getDataSources() {
-  return dfdaGET("connectors/list")
+
+export const getDataSources = async (
+  final_callback_url: string,
+  userId: string
+): Promise<any> => {
+  const response = await dfdaGET("connectors/list", {
+    final_callback_url,
+  }, userId)
+  return response.connectors
 }
 
-// ... rest of the file
+export type SortParam =
+  | "-qmScore"
+  | "correlationCoefficient"
+  | "-correlationCoefficient"
+  | "-numberOfUsers"
+  | "pValue"
+
+export async function searchPredictors(params: {
+  query?: string
+  sort?: SortParam
+  limit?: number
+  offset?: number
+  effectVariableName?: string
+  causeVariableName?: string
+  correlationCoefficient?: string
+}) {
+  try {
+    const apiParams: Record<string, string> = {
+      limit: (params.limit || 10).toString(),
+      offset: (params.offset || 0).toString(),
+    }
+
+    if (params.effectVariableName) {
+      apiParams.effectVariableName = params.effectVariableName
+    }
+
+    if (params.sort) {
+      apiParams.sort = params.sort
+    }
+
+    if (params.correlationCoefficient) {
+      apiParams.correlationCoefficient = params.correlationCoefficient
+    }
+
+    const response = (await dfdaGET("studies", apiParams)) as GetStudiesResponse
+
+    return response.studies || []
+  } catch (error) {
+    console.error("Error searching studies:", error)
+    throw new Error("Failed to search studies")
+  }
+}
