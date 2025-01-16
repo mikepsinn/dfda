@@ -13,7 +13,9 @@ interface TenantConfig {
   region: string;
 }
 
-async function provisionTenant(config: TenantConfig) {
+export type { TenantConfig };
+
+export async function provisionTenant(config: TenantConfig) {
   const secrets = new SecretsManager({ region: config.region });
   const lightsail = new Lightsail({ region: config.region });
   const rds = new RDS({ region: config.region });

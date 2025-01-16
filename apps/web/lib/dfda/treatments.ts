@@ -1,4 +1,4 @@
-import { dfdaGET, dfdaPOST } from "./api-client"
+import { dfdaPOST } from "./api-client"
 import { Effectiveness } from "@prisma/client"
 import { prisma } from "@/lib/db"
 

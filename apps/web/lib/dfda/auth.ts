@@ -1,6 +1,5 @@
 import { Account, User } from "@prisma/client"
 import { prisma } from "@/lib/db"
-import { getDFDAClientId } from "./api-client"
 
 // Function to get or create a basic user
 async function getYourUser(yourUserId: string): Promise<User | null> {
