@@ -45,6 +45,8 @@ import {
   getProblems,
 } from "@/lib/dfda/statistics"
 
+import { getSafeRedirectUrl } from "@/lib/dfda/auth"
+
 export {
   // Treatment functions
   fetchDfdaConditions,
@@ -89,6 +91,13 @@ export {
   getBenefitStatistics,
   getProblemStatistics,
   getProblems,
+
+  getSafeRedirectUrl,
+}
+
+// Get list of available data sources
+export async function getDataSources() {
+  return dfdaGET("connectors/list")
 }
 
 // ... rest of the file

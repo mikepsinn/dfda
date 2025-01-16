@@ -9,6 +9,13 @@ function getDFDAClientId(): string {
   return process.env.DFDA_CLIENT_ID
 }
 
+class DFDAAuthError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'DFDAAuthError'
+  }
+}
+
 async function dfdaFetch(
   method: "GET" | "POST",
   path: string,
@@ -43,11 +50,12 @@ async function dfdaFetch(
   console.log(`Making ${method} request to ${dfdaApiUrl}`)
   const response = await fetch(dfdaApiUrl, init)
   if (!response.ok) {
-    // Check if token expired
+    // Check if token expired or unauthorized
     if (response.status === 401) {
       const errorText = await response.text()
-      if (errorText.includes("expired") && yourUserId) {
-        // Try to refresh the token
+      
+      // If we have a user ID, try to refresh the token
+      if (yourUserId && errorText.includes("expired")) {
         const newToken = await refreshAccessToken(yourUserId)
         if (newToken) {
           // Retry the request with new token
@@ -58,7 +66,11 @@ async function dfdaFetch(
           }
         }
       }
+      
+      // If we couldn't refresh or don't have a user ID, throw auth error
+      throw new DFDAAuthError('Authentication required')
     }
+    
     console.error(`DFDA API Error: ${response.status} ${response.statusText}`)
     console.error("URL:", dfdaApiUrl)
     const errorText = await response.text()
