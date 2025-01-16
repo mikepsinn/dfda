@@ -25,6 +25,12 @@ async function provisionTenant(config: TenantConfig) {
     DBInstanceIdentifier: `${config.name}-db`,
     Engine: 'postgres',
     DBName: config.dbName,
+    DBInstanceClass: 'db.t3.micro',
+    MasterUsername: 'postgres',
+    MasterUserPassword: await generateSecureSecret(),
+    AllocatedStorage: 20,
+    PubliclyAccessible: false,
+    VpcSecurityGroupIds: [],
     // Add other DB configuration as needed
   });
 
@@ -64,7 +70,7 @@ async function provisionTenant(config: TenantConfig) {
   console.log(`Tenant provisioned successfully: ${config.name}`);
   return {
     serviceUrl: containerService.containerService?.url,
-    dbEndpoint: dbInstance.DBInstance?.Endpoint,
+    dbEndpoint: dbInstance.DBInstance?.Endpoint?.Address,
   };
 }
 
