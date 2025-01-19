@@ -1,43 +1,58 @@
 import { BaseParameter } from './BaseParameter';
 
-export abstract class OutcomeMetric extends BaseParameter {
+export type MetricMetadata = {
+  category?: string;
+  assumptions?: string[];
+  notes?: string[];
+};
+
+export abstract class OutcomeMetric {
   constructor(
-    config: {
-      id: string;
-      displayName: string;
-      defaultValue: number;
-      unitName: string;
-      description: string;
-      sourceUrl: string;
-      emoji: string;
-      sourceQuote?: string;
-      tags?: string[];
-      metadata?: Record<string, unknown>;
-    },
-    readonly modelParameters: Record<string, BaseParameter>
-  ) {
-    super(
-      config.id,
-      config.displayName,
-      config.defaultValue,
-      config.unitName,
-      config.description,
-      config.sourceUrl,
-      config.emoji,
-      config.sourceQuote,
-      config.tags,
-      config.metadata
-    );
-  }
+    readonly id: string,
+    readonly displayName: string,
+    readonly description: string,
+    readonly unitName: string,
+    readonly emoji: string,
+    protected parameters: BaseParameter[],
+    readonly metadata?: MetricMetadata
+  ) {}
 
   abstract calculate(): number;
-  abstract generateCalculationExplanation(): string;
 
-  protected getParameterValue(id: string): number {
-    const param = this.modelParameters[id];
+  getParameterValue(parameterId: string): number {
+    const param = this.parameters.find(p => p.id === parameterId);
     if (!param) {
-      throw new Error(`Parameter ${id} not found`);
+      throw new Error(`Parameter ${parameterId} not found`);
     }
-    return param.defaultValue;
+    return param.value;
+  }
+
+  generateCalculationExplanation(): string {
+    return `Calculation for ${this.displayName}:\n${this.description}`;
+  }
+
+  generateReport(): string {
+    const value = this.calculate();
+    const sections = [
+      `# ${this.displayName} ${this.emoji}`,
+      this.description,
+      '\n## Parameters Used',
+      ...this.parameters.map(p => 
+        `- ${p.displayName}: ${p.generateDisplayValue()}`
+      ),
+      '\n## Calculation Method',
+      this.generateCalculationExplanation(),
+      '\n## Result',
+      `${value} ${this.unitName}`
+    ];
+
+    if (this.metadata?.assumptions?.length) {
+      sections.push(
+        '\n## Assumptions',
+        ...this.metadata.assumptions.map(a => `- ${a}`)
+      );
+    }
+
+    return sections.join('\n');
   }
 } 

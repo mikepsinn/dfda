@@ -1,53 +1,39 @@
-import { useEffect, useState, useCallback } from 'react';
-import { Model } from './model';
+import { useState } from 'react';
+import { BaseModel } from './models/base/BaseModel';
 
-export function useModel(model: Model) {
-  const [parameters, setParameters] = useState<Record<string, number>>({});
-  const [results, setResults] = useState<Record<string, number>>({});
-  const [isValid, setIsValid] = useState(false);
+export interface ModelHookResult {
+  parameters: Record<string, number>;
+  setParameters: (params: Record<string, number>) => void;
+  results: Record<string, number>;
+  isValid: boolean;
+}
 
-  useEffect(() => {
-    // Initialize parameters with default values
-    const initialParams = model.metrics.reduce((acc, metric) => {
-      metric.modelParameters.forEach(param => {
-        acc[param.id] = param.defaultValue;
-      });
-      return acc;
-    }, {} as Record<string, number>);
-    
-    setParameters(initialParams);
-    setIsValid(model.validateParameters(initialParams));
-  }, [model]);
+export function useModel(model: BaseModel): ModelHookResult {
+  // Initialize parameters from model with proper type assertion
+  const initialParams = model.parameters.reduce<Record<string, number>>((acc, param) => {
+    acc[param.id] = param.value;
+    return acc;
+  }, {});
 
-  const updateParameter = useCallback((id: string, value: number) => {
-    setParameters(prev => {
-      const newParams = {...prev, [id]: value};
-      setIsValid(model.validateParameters(newParams));
-      return newParams;
-    });
-  }, [model]);
+  const [parameters, setParameters] = useState<Record<string, number>>(initialParams);
+  const [isValid, setIsValid] = useState(true);
 
-  const calculate = useCallback(() => {
-    if (!isValid) return;
-    
-    const newResults = model.metrics.reduce((acc, metric) => {
-      acc[metric.id] = metric.calculate(parameters);
-      return acc;
-    }, {} as Record<string, number>);
-    
-    setResults(newResults);
-  }, [model, parameters, isValid]);
+  // Update parameters and validate
+  const updateParameters = (newParams: Record<string, number>): void => {
+    setParameters(newParams);
+    setIsValid(model.parameters.every(param => param.validate(newParams[param.id])));
+  };
+
+  // Calculate results with proper type assertion
+  const results = model.metrics.reduce<Record<string, number>>((acc, metric) => {
+    acc[metric.id] = metric.calculate();
+    return acc;
+  }, {});
 
   return {
     parameters,
+    setParameters: updateParameters,
     results,
-    isValid,
-    updateParameter,
-    calculate,
-    reset: () => {
-      setParameters({});
-      setResults({});
-      setIsValid(false);
-    }
+    isValid
   };
 }

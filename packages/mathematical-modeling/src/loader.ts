@@ -1,52 +1,37 @@
-import { ModelConfig } from './types';
-import { economicModel } from './models/economic-model/model';
+import { BaseModel } from './models/base/BaseModel';
+import { BaseParameter } from './models/base/BaseParameter';
+import { OutcomeMetric } from './models/base/OutcomeMetric';
 
-export class ModelLoader {
-  private models: Record<string, ModelConfig> = {};
-
-  constructor() {
-    this.registerModel(economicModel);
-  }
-
-  registerModel(model: ModelConfig) {
-    if (this.models[model.id]) {
-      throw new Error(`Model with id ${model.id} already exists`);
-    }
-    this.models[model.id] = model;
-  }
-
-  getModel(id: string): ModelConfig {
-    const model = this.models[id];
-    if (!model) {
-      throw new Error(`Model with id ${id} not found`);
-    }
-    return model;
-  }
-
-  getAllModels(): ModelConfig[] {
-    return Object.values(this.models);
-  }
-
-  validateModel(model: ModelConfig) {
-    // Validate required fields
-    if (!model.id || !model.title || !model.description) {
-      throw new Error('Model is missing required fields');
-    }
-
-    // Validate parameters
-    model.parameters.forEach(param => {
-      if (!param.id || !param.displayName || param.defaultValue === undefined) {
-        throw new Error(`Invalid parameter configuration in model ${model.id}`);
-      }
-    });
-
-    // Validate metrics
-    model.metrics.forEach(metric => {
-      if (!metric.id || !metric.displayName || !metric.calculate) {
-        throw new Error(`Invalid metric configuration in model ${model.id}`);
-      }
-    });
-  }
+export function loadModel(id: string): BaseModel {
+  // TODO: Implement dynamic model loading
+  throw new Error(`Model ${id} not found`);
 }
 
-export const modelLoader = new ModelLoader();
+export function validateModel(model: BaseModel): void {
+  // Validate model structure
+  if (!model.id || !model.title || !model.description || !model.version) {
+    throw new Error('Model missing required fields');
+  }
+
+  // Validate parameters
+  if (!model.parameters || !Array.isArray(model.parameters)) {
+    throw new Error('Model must have parameters array');
+  }
+
+  model.parameters.forEach((param: BaseParameter) => {
+    if (!param.id || !param.displayName || param.defaultValue === undefined) {
+      throw new Error(`Invalid parameter: ${param.id}`);
+    }
+  });
+
+  // Validate metrics
+  if (!model.metrics || !Array.isArray(model.metrics)) {
+    throw new Error('Model must have metrics array');
+  }
+
+  model.metrics.forEach((metric: OutcomeMetric) => {
+    if (!metric.id || !metric.displayName || !metric.calculate) {
+      throw new Error(`Invalid metric: ${metric.id}`);
+    }
+  });
+}
