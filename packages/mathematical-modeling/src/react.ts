@@ -1,39 +1,29 @@
-import { useState } from 'react';
-import { BaseModel } from './models/base/BaseModel';
+import { PopulationInterventionModel } from './models/base/PopulationInterventionModel';
+import { InputParameter } from './models/base/InputParameter';
+import { OutcomeMetric } from './models/base/OutcomeMetric';
 
-export interface ModelHookResult {
-  parameters: Record<string, number>;
-  setParameters: (params: Record<string, number>) => void;
+export type InterventionHookResult = {
+  parameters: InputParameter[];
+  metrics: OutcomeMetric[];
   results: Record<string, number>;
-  isValid: boolean;
-}
+  setParameterValue: (id: string, value: number) => void;
+  generateReport: () => string;
+};
 
-export function useModel(model: BaseModel): ModelHookResult {
-  // Initialize parameters from model with proper type assertion
-  const initialParams = model.parameters.reduce<Record<string, number>>((acc, param) => {
-    acc[param.id] = param.value;
-    return acc;
-  }, {});
-
-  const [parameters, setParameters] = useState<Record<string, number>>(initialParams);
-  const [isValid, setIsValid] = useState(true);
-
-  // Update parameters and validate
-  const updateParameters = (newParams: Record<string, number>): void => {
-    setParameters(newParams);
-    setIsValid(model.parameters.every(param => param.validate(newParams[param.id])));
+/**
+ * React hook for integrating a population intervention model into a component.
+ * Manages parameter state and calculates results based on parameter changes.
+ */
+export function useInterventionModel(model: PopulationInterventionModel): InterventionHookResult {
+  const setParameterValue = (id: string, value: number) => {
+    model.setParameterValue(id, value);
   };
 
-  // Calculate results with proper type assertion
-  const results = model.metrics.reduce<Record<string, number>>((acc, metric) => {
-    acc[metric.id] = metric.calculate();
-    return acc;
-  }, {});
-
   return {
-    parameters,
-    setParameters: updateParameters,
-    results,
-    isValid
+    parameters: model.parameters,
+    metrics: model.metrics,
+    results: model.calculateMetrics(),
+    setParameterValue,
+    generateReport: () => model.generateReport()
   };
 }

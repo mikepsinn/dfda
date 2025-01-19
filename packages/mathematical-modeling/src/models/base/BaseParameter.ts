@@ -1,8 +1,7 @@
-export type ParameterMetadata = {
+import { ModelComponent, ComponentMetadata } from './ModelComponent';
+
+export type ParameterMetadata = ComponentMetadata & {
   costCategory?: 'fixed' | 'variable';
-  source?: string;
-  assumptions?: string[];
-  notes?: string[];
 };
 
 export type ParameterJSON = {
@@ -15,16 +14,18 @@ export type ParameterJSON = {
   metadata?: ParameterMetadata;
 };
 
-export class BaseParameter {
+export class BaseParameter extends ModelComponent {
   constructor(
-    readonly id: string,
-    readonly displayName: string,
+    id: string,
+    displayName: string,
     public value: number,
-    readonly unitName: string,
-    readonly description: string,
-    readonly emoji: string,
-    readonly metadata?: ParameterMetadata
-  ) {}
+    unitName: string,
+    description: string,
+    emoji: string,
+    metadata?: ParameterMetadata
+  ) {
+    super(id, displayName, description, unitName, emoji, metadata);
+  }
 
   validate(value: number): boolean {
     return !isNaN(value) && isFinite(value);
@@ -43,13 +44,8 @@ export class BaseParameter {
 
   toJSON(): ParameterJSON {
     return {
-      id: this.id,
-      displayName: this.displayName,
-      value: this.value,
-      unitName: this.unitName,
-      description: this.description,
-      emoji: this.emoji,
-      metadata: this.metadata
+      ...super.toJSON() as Omit<ParameterJSON, 'value'>,
+      value: this.value
     };
   }
 } 

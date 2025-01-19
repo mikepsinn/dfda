@@ -1,21 +1,30 @@
-import { BaseParameter } from './BaseParameter';
+import { InputParameter } from './InputParameter';
+import { AbstractModelElement, ComponentMetadata } from './ModelElement';
 
-export type MetricMetadata = {
-  category?: string;
-  assumptions?: string[];
-  notes?: string[];
+export type MetricMetadata = ComponentMetadata;
+
+export type MetricJSON = {
+  id: string;
+  displayName: string;
+  description: string;
+  unitName: string;
+  emoji: string;
+  metadata?: MetricMetadata;
+  value?: number;
 };
 
-export abstract class OutcomeMetric {
+export abstract class OutcomeMetric extends AbstractModelElement {
   constructor(
-    readonly id: string,
-    readonly displayName: string,
-    readonly description: string,
-    readonly unitName: string,
-    readonly emoji: string,
-    protected parameters: BaseParameter[],
-    readonly metadata?: MetricMetadata
-  ) {}
+    id: string,
+    displayName: string,
+    description: string,
+    unitName: string,
+    emoji: string,
+    protected parameters: InputParameter[],
+    metadata?: MetricMetadata
+  ) {
+    super(id, displayName, description, unitName, emoji, metadata);
+  }
 
   abstract calculate(): number;
 
@@ -25,6 +34,11 @@ export abstract class OutcomeMetric {
       throw new Error(`Parameter ${parameterId} not found`);
     }
     return param.value;
+  }
+
+  generateDisplayValue(): string {
+    const value = this.calculate();
+    return `${value}${this.unitName ? ` ${this.unitName}` : ''}`;
   }
 
   generateCalculationExplanation(): string {
@@ -54,5 +68,12 @@ export abstract class OutcomeMetric {
     }
 
     return sections.join('\n');
+  }
+
+  toJSON(): MetricJSON {
+    return {
+      ...super.toJSON() as Omit<MetricJSON, 'value'>,
+      value: this.calculate()
+    };
   }
 } 
