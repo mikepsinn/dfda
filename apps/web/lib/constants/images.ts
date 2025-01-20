@@ -21,7 +21,7 @@ export const COST_IMAGES = {
     description: 'Chart showing the breakdown of drug development costs'
   },
   TRIAL_EXPENSES: {
-    url: '/img/why-trials-are-so-expensive-cost.png',
+    url: 'https://static.crowdsourcingcures.org/img/why-trials-are-so-expensive-cost.png',
     alt: 'Why clinical trials are expensive',
     description: 'Detailed breakdown of clinical trial costs'
   },
