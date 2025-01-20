@@ -46,6 +46,7 @@ import {
 } from "@/lib/dfda/statistics"
 
 import { getSafeRedirectUrl } from "@/lib/dfda/auth"
+import { GetStudiesResponse } from "@/types/models/GetStudiesResponse"
 
 export {
   // Treatment functions
