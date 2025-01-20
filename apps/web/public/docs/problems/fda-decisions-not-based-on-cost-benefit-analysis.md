@@ -5,7 +5,7 @@ description: >-
 emoji: 🤪
 ---
 
-# Lack of Logical Reasoning Based on Quantitative Cost-Benefit Analysis in FDA Decision
+# Lack of Logical Reasoning Based on Quantitative Cost-Benefit Analysis in FDA Decisions
 
 Ideally, the FDA would allow patients to access treatments if the potential benefits vastly exceeded their harms.  Unfortunately, this is not the current policy.
 
