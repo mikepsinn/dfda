@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 export default async function CureAccelerationPage() {
   const { html, data } = await getMarkdownContent(
-    "docs/disease-eradication-act.md"
+    "docs/disease-eradication-act/disease-eradication-act.md"
   )
 
   const hasSigned = await checkPetitionSignature(DFDA_PETITION_ID)
