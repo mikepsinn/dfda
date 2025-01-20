@@ -18,7 +18,6 @@ yargs(hideBin(process.argv))
       });
       console.log('Application deployed successfully!');
       console.log('Service URL:', result.serviceUrl);
-      console.log('Database endpoint:', result.dbEndpoint);
     } catch (error) {
       console.error('Failed to deploy:', error);
       process.exit(1);
