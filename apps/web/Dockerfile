@@ -1,59 +1,37 @@
-# Base image
-FROM node:20-slim AS base
+# Build stage
+FROM node:20-slim AS builder
+RUN npm install -g pnpm
 
-# Install pnpm and prisma
-RUN npm install -g pnpm prisma
-
-# Install dependencies required for Prisma and other tools
-RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl python3 make g++
-
-# Builder stage
-FROM base AS builder
 WORKDIR /app
-
-# Copy package files and lockfile
 COPY package.json pnpm-lock.yaml ./
-
-# Copy prisma schema
 COPY prisma ./prisma/
 
-# Install dependencies
-RUN pnpm install --frozen-lockfile
+# Only install dependencies needed for building
+RUN pnpm install --frozen-lockfile --prod=false
 
-# Generate Prisma client
-RUN prisma generate
-
-# Copy source code
 COPY . .
-
-# Build the app
 RUN pnpm build
 
-# Production image
-FROM base AS runner
+# Production stage
+FROM node:20-slim AS runner
+RUN npm install -g pnpm
+
 WORKDIR /app
+ENV NODE_ENV=production
 
-# Don't run production as root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-# Create .next directory and set permissions
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-# Create cache directory with proper permissions
-RUN mkdir -p .next/cache
-RUN chown -R nextjs:nodejs .next
-
-# Copy built files from builder
+# Copy only necessary files
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/pnpm-lock.yaml ./
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/prisma ./prisma
 
-USER nextjs
+# Install only production dependencies
+RUN pnpm install --frozen-lockfile --prod=true
+
+# Generate Prisma client
+RUN npx prisma generate
 
 EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-
-CMD ["node", "server.js"] 
+CMD ["pnpm", "start"] 
