@@ -139,7 +139,7 @@
     "isomorphic-dompurify": "^2.17.0",
     "js-yaml": "^4.1.0",
     "jsdom": "^25.0.1",
-    "katex": "^0.16.10",
+    "katex": "^0.16.21",
     "lodash": "^4.17.21",
     "lucide-react": "^0.363.0",
     "mime-types": "^2.1.35",
