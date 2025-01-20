@@ -1,5 +1,6 @@
 # Build stage
 FROM node:20-slim AS builder
+RUN apt-get update -y && apt-get install -y openssl
 RUN npm install -g pnpm
 
 WORKDIR /app
@@ -14,6 +15,7 @@ RUN pnpm build
 
 # Production stage
 FROM node:20-slim AS runner
+RUN apt-get update -y && apt-get install -y openssl
 RUN npm install -g pnpm
 
 WORKDIR /app
@@ -27,11 +29,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/prisma ./prisma
 
-# Install only production dependencies
-RUN pnpm install --frozen-lockfile --prod=true
-
-# Generate Prisma client
-RUN npx prisma generate
+# Install production dependencies and generate Prisma client
+RUN pnpm install --frozen-lockfile --prod=true && \
+    npx prisma generate
 
 EXPOSE 3000
 CMD ["pnpm", "start"] 
