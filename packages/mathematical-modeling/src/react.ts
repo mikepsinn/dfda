@@ -1,53 +1,29 @@
-import { useEffect, useState, useCallback } from 'react';
-import { Model } from './model';
+import { PopulationInterventionModel } from './models/base/PopulationInterventionModel';
+import { InputParameter } from './models/base/InputParameter';
+import { OutcomeMetric } from './models/base/OutcomeMetric';
 
-export function useModel(model: Model) {
-  const [parameters, setParameters] = useState<Record<string, number>>({});
-  const [results, setResults] = useState<Record<string, number>>({});
-  const [isValid, setIsValid] = useState(false);
+export type InterventionHookResult = {
+  parameters: InputParameter[];
+  metrics: OutcomeMetric[];
+  results: Record<string, number>;
+  setParameterValue: (id: string, value: number) => void;
+  generateReport: () => string;
+};
 
-  useEffect(() => {
-    // Initialize parameters with default values
-    const initialParams = model.metrics.reduce((acc, metric) => {
-      metric.modelParameters.forEach(param => {
-        acc[param.id] = param.defaultValue;
-      });
-      return acc;
-    }, {} as Record<string, number>);
-    
-    setParameters(initialParams);
-    setIsValid(model.validateParameters(initialParams));
-  }, [model]);
-
-  const updateParameter = useCallback((id: string, value: number) => {
-    setParameters(prev => {
-      const newParams = {...prev, [id]: value};
-      setIsValid(model.validateParameters(newParams));
-      return newParams;
-    });
-  }, [model]);
-
-  const calculate = useCallback(() => {
-    if (!isValid) return;
-    
-    const newResults = model.metrics.reduce((acc, metric) => {
-      acc[metric.id] = metric.calculate(parameters);
-      return acc;
-    }, {} as Record<string, number>);
-    
-    setResults(newResults);
-  }, [model, parameters, isValid]);
+/**
+ * React hook for integrating a population intervention model into a component.
+ * Manages parameter state and calculates results based on parameter changes.
+ */
+export function useInterventionModel(model: PopulationInterventionModel): InterventionHookResult {
+  const setParameterValue = (id: string, value: number) => {
+    model.setParameterValue(id, value);
+  };
 
   return {
-    parameters,
-    results,
-    isValid,
-    updateParameter,
-    calculate,
-    reset: () => {
-      setParameters({});
-      setResults({});
-      setIsValid(false);
-    }
+    parameters: model.parameters,
+    metrics: model.metrics,
+    results: model.calculateMetrics(),
+    setParameterValue,
+    generateReport: () => model.generateReport()
   };
 }

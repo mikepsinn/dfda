@@ -8,19 +8,24 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "test": "jest",
-    "lint": "eslint src --ext .ts,.tsx",
-    "format": "prettier --write src/**/*.{ts,tsx}"
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "react": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "typescript": "^5.0.0",
     "eslint": "^8.0.0",
     "prettier": "^3.0.0",
     "jest": "^29.0.0",
-    "ts-jest": "^29.0.0"
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.9.2"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
