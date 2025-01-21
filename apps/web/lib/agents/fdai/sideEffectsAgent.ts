@@ -2,7 +2,7 @@ import { anthropic } from "@ai-sdk/anthropic"
 import { generateObject } from "ai"
 import Exa from "exa-js"
 import { z } from "zod"
-const exa = new Exa(process.env.EXA_API_KEY);
+const exa = new Exa(process.env.EXASEARCH_API_KEY);
 
 const SideEffectSchema = z.object({
     effect: z.string(),
