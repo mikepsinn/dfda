@@ -15,13 +15,17 @@ import OpenAI from "openai"
 
 import { handleError } from "@/lib/errorHandler"
 
-// Initialize the OpenAI client with the API key. This key is essential for authenticating
-// the requests with OpenAI's API services.
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
 
 export async function POST(request: NextRequest) {
+  if(!process.env.OPENAI_API_KEY) {
+    return NextResponse.json({ success: false, message: "OPENAI_API_KEY is not set" })
+  }
+  // Initialize the OpenAI client with the API key. This key is essential for authenticating
+  // the requests with OpenAI's API services.
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  })
+
   // Logging the start of the image processing API call
   console.log("Starting the image processing API call")
 
