@@ -17,7 +17,7 @@ export const env = createEnv({
     DFDA_CLIENT_SECRET: z.string().min(1).optional(),
   },
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().min(1).optional(),
     NEXT_PUBLIC_SITE_NAME: z.string().optional(),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().optional(),
     NEXT_PUBLIC_SITE_AUTHOR: z.string().optional(),
