@@ -1,23 +1,23 @@
 import { createEnv } from "@t3-oss/env-nextjs"
 import { z } from "zod"
-// vars need to be optional for docker build on fly.io
+
 export const env = createEnv({
   server: {
     NEXTAUTH_URL: z.string().url().optional(),
-    NEXTAUTH_SECRET: z.string().min(1).optional(),
-    GOOGLE_CLIENT_ID: z.string().min(1).optional(),
-    GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
-    GITHUB_CLIENT_ID: z.string().min(1).optional(),
-    GITHUB_CLIENT_SECRET: z.string().min(1).optional(),
-    DATABASE_URL: z.string().min(1).optional(),
-    EMAIL_SERVER: z.string().min(1).optional(),
-    EMAIL_FROM: z.string().min(1).optional(),
+    NEXTAUTH_SECRET: z.string().min(1),
+    GOOGLE_CLIENT_ID: z.string().min(1),
+    GOOGLE_CLIENT_SECRET: z.string().min(1),
+    GITHUB_CLIENT_ID: z.string().min(1),
+    GITHUB_CLIENT_SECRET: z.string().min(1),
+    DATABASE_URL: z.string().min(1),
+    EMAIL_SERVER: z.string().min(1),
+    EMAIL_FROM: z.string().min(1),
     TEST_DOMAIN: z.string().optional(),
-    DFDA_CLIENT_ID: z.string().min(1).optional(),
-    DFDA_CLIENT_SECRET: z.string().min(1).optional(),
+    DFDA_CLIENT_ID: z.string().min(1),
+    DFDA_CLIENT_SECRET: z.string().min(1),
   },
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().min(1).optional(),
+    NEXT_PUBLIC_APP_URL: z.string().min(1),
     NEXT_PUBLIC_SITE_NAME: z.string().optional(),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().optional(),
     NEXT_PUBLIC_SITE_AUTHOR: z.string().optional(),
