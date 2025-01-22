@@ -1,5 +1,5 @@
 import { InputParameter } from './InputParameter';
-import { AbstractModelElement, ComponentMetadata } from './ModelElement';
+import { AbstractModelElement, ComponentMetadata } from './AbstractModelElement';
 
 export type MetricMetadata = ComponentMetadata;
 

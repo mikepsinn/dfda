@@ -1,4 +1,4 @@
-import { AbstractModelElement, ComponentMetadata } from './ModelElement';
+import { AbstractModelElement, ComponentMetadata } from './AbstractModelElement';
 
 export type ParameterMetadata = ComponentMetadata & {
   costCategory?: 'fixed' | 'variable';
