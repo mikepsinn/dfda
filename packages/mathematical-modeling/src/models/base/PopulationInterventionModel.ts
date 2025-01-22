@@ -78,20 +78,41 @@ export class PopulationInterventionModel {
     );
   }
 
+  /**
+   * Generates a structured markdown report with model configuration and results
+   * @example
+   * const report = model.generateReport();
+   * fs.writeFileSync('model-report.md', report);
+   */
   generateReport(): string {
-    const sections = [
+    const sections: string[] = [];
+    
+    // Header section
+    sections.push(
       `# ${this.title} v${this.version}`,
-      this.description,
+      this.description
+    );
+
+    // Metadata section
+    sections.push(
       '\n## Model Metadata',
-      `- Intervention Type: ${this.metadata.interventionType}`,
-      `- Population: ${this.metadata.populationDescription}`,
-      `- Time Horizon: ${this.metadata.timeHorizon}`,
-      `- Geographic Scope: ${this.metadata.geographicScope}`,
-      '\n## Parameters',
-      ...this.parameters.map(p => `### ${p.displayName} ${p.emoji}\n${p.description}\nCurrent Value: ${p.generateDisplayValue()}`),
-      '\n## Metrics',
-      ...this.metrics.map(m => m.generateReport())
-    ];
+      `- **Intervention Type**: ${this.metadata.interventionType}`,
+      `- **Population**: ${this.metadata.populationDescription}`,
+      `- **Time Horizon**: ${this.metadata.timeHorizon}`,
+      `- **Geographic Scope**: ${this.metadata.geographicScope}`
+    );
+
+    // Parameters section
+    sections.push('\n## Parameters');
+    sections.push(...this.parameters.map(p =>
+      `### ${p.displayName} ${p.emoji}\n` +
+      `${p.description}\n` +
+      `**Current Value**: ${p.generateDisplayValue()}`
+    ));
+
+    // Metrics section
+    sections.push('\n## Metrics');
+    sections.push(...this.metrics.map(m => m.generateReport()));
 
     if (this.metadata.assumptions?.length) {
       sections.push(

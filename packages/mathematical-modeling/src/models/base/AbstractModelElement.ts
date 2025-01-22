@@ -1,10 +1,45 @@
-export type ComponentMetadata = {
+export const EMOJI_REGEX = /\p{Emoji}/u;
+
+export type Metadata = {
+  /** Key assumptions affecting this element's behavior */
   assumptions?: string[];
+  /** Developer notes for implementation context */
   notes?: string[];
+  /** Categorization tags for discovery */
   tags?: string[];
+  /** URL to primary data source */
   sourceUrl?: string;
+  /** Relevant excerpt from source material */
   sourceQuote?: string;
+  /** Type-specific metadata extensions */
+  extensions?: Record<string, unknown>;
 };
+
+export type ElementMetadata = Metadata & {
+  /** Additional element-specific metadata */
+};
+
+export type ModelMetadata = Metadata & {
+  /** Type of intervention (health, environmental, etc) */
+  interventionType: 'health' | 'environmental' | 'educational' | 'social' | 'infrastructure' | 'economic' | 'other';
+  /** Description of target population */
+  populationDescription: string;
+  /** Time horizon for analysis */
+  timeHorizon: string;
+  /** Geographic scope of analysis */
+  geographicScope: string;
+  /** Implementation phases */
+  implementationPhases?: string[];
+  /** Relevant stakeholders */
+  stakeholders?: string[];
+  /** Population subgroups */
+  subgroups?: string[];
+  /** Model limitations */
+  limitations?: string[];
+  /** References */
+  references?: string[];
+};
+
 
 /**
  * Abstract base class representing a core element of a population intervention model.
@@ -25,12 +60,12 @@ export abstract class AbstractModelElement {
     public readonly description: string,
     public readonly unitName: string,
     public readonly emoji: string,
-    public readonly metadata?: ComponentMetadata
+    public readonly metadata?: ElementMetadata
   ) {}
 
   abstract generateDisplayValue(): string;
 
-  toJSON(): Omit<ComponentMetadata & {
+  toJSON(): Omit<ElementMetadata & {
     id: string;
     displayName: string;
     description: string;

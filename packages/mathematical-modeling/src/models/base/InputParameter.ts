@@ -1,18 +1,20 @@
-import { AbstractModelElement, ComponentMetadata } from './AbstractModelElement';
+import { AbstractModelElement, ModelMetadata } from './AbstractModelElement';
 
-export type ParameterMetadata = ComponentMetadata & {
+export type ParameterMetadata = ModelMetadata & {
   costCategory?: 'fixed' | 'variable';
 };
 
-export type ParameterJSON = {
-  id: string;
-  displayName: string;
+export type ParameterJSON = ReturnType<AbstractModelElement['toJSON']> & {
   value: number;
-  unitName: string;
-  description: string;
-  emoji: string;
   metadata?: ParameterMetadata;
 };
+
+export interface ParameterConstraints {
+  min?: number;
+  max?: number;
+  step?: number;
+  allowedValues?: number[];
+}
 
 /**
  * Represents an input parameter that can be adjusted to analyze different scenarios
@@ -32,8 +34,17 @@ export class InputParameter extends AbstractModelElement {
     super(id, displayName, description, unitName, emoji, metadata);
   }
 
-  validate(value: number): boolean {
-    return !isNaN(value) && isFinite(value);
+  validate(value: number, constraints?: ParameterConstraints): boolean {
+    if (!Number.isFinite(value)) return false;
+    
+    if (constraints) {
+      if (constraints.min !== undefined && value < constraints.min) return false;
+      if (constraints.max !== undefined && value > constraints.max) return false;
+      if (constraints.step !== undefined && (value % constraints.step) !== 0) return false;
+      if (constraints.allowedValues && !constraints.allowedValues.includes(value)) return false;
+    }
+    
+    return true;
   }
 
   generateDisplayValue(): string {
