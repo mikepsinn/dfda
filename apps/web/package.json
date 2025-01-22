@@ -201,6 +201,7 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.2",
     "@playwright/test": "^1.44.1",
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.4.2",
