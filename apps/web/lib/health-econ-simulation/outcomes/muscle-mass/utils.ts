@@ -1,5 +1,18 @@
 import { ModelParameter } from '../../types';
 
+// Utility function to validate muscle mass input
+export function validateMuscleMass(muscleMassIncreasePerPerson: number, context: string = ''): void {
+    if (typeof muscleMassIncreasePerPerson !== 'number') {
+        throw new Error(`${context ? context + ': ' : ''}Muscle mass increase must be a number`);
+    }
+    if (muscleMassIncreasePerPerson > 100) {
+        throw new Error(`${context ? context + ': ' : ''}Muscle mass increase per person should be in pounds, not total population pounds`);
+    }
+    if (muscleMassIncreasePerPerson < 0) {
+        throw new Error(`${context ? context + ': ' : ''}Muscle mass increase cannot be negative`);
+    }
+}
+
 // Utility function to format large numbers with appropriate suffixes
 export function formatLargeNumber(value: number): string {
     const absValue = Math.abs(value);

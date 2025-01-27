@@ -1,6 +1,6 @@
 import { muscleMassParameters } from '../muscle-mass-parameters';
 import { populationHealthMetrics } from '../../population-health-metrics';
-import { OutcomeMetric, formatLargeNumber } from './utils';
+import { OutcomeMetric, formatLargeNumber, validateMuscleMass } from './utils';
 
 export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
     additional_daily_calories_burned: {
@@ -11,17 +11,23 @@ export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
         sourceUrl: muscleMassParameters.muscle_calorie_burn.sourceUrl,
         emoji: "🔥",
         modelParameters: [muscleMassParameters.muscle_calorie_burn, populationHealthMetrics.resting_metabolic_rate],
-        calculate: (muscleMassIncreasePerPerson) => 
-            muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue,
+        calculate: (muscleMassIncreasePerPerson) => {
+            validateMuscleMass(muscleMassIncreasePerPerson, 'Additional Daily Calories Burned');
+            return muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue;
+        },
         generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/day/person`,
-        generateCalculationExplanation: (muscleMassIncreasePerPerson) => `
+        generateCalculationExplanation: (muscleMassIncreasePerPerson) => {
+            validateMuscleMass(muscleMassIncreasePerPerson, 'Additional Daily Calories Explanation');
+            return `
             <div class="calculation-explanation">
                 <p>Each pound of muscle burns approximately ${muscleMassParameters.muscle_calorie_burn.defaultValue} calories per day:</p>
                 <div class="formula">
                     ${muscleMassIncreasePerPerson} lbs × ${muscleMassParameters.muscle_calorie_burn.defaultValue} calories/day = ${muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue} calories/day
                 </div>
-            </div>`,
+            </div>`;
+        },
         calculateSensitivity: (muscleMassIncreasePerPerson) => {
+            validateMuscleMass(muscleMassIncreasePerPerson, 'Additional Daily Calories Sensitivity');
             const baseValue = muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue;
             return {
                 bestCase: muscleMassIncreasePerPerson * 10, // Upper range of calories burned
@@ -42,17 +48,23 @@ export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
         sourceUrl: muscleMassParameters.muscle_calorie_burn.sourceUrl,
         emoji: "📅",
         modelParameters: [muscleMassParameters.muscle_calorie_burn, populationHealthMetrics.resting_metabolic_rate],
-        calculate: (muscleMassIncreasePerPerson) => 
-            muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue * 365,
+        calculate: (muscleMassIncreasePerPerson) => {
+            validateMuscleMass(muscleMassIncreasePerPerson, 'Annual Metabolic Impact');
+            return muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue * 365;
+        },
         generateDisplayValue: (value) => `${formatLargeNumber(value)} calories/year/person`,
-        generateCalculationExplanation: (muscleMassIncreasePerPerson) => `
+        generateCalculationExplanation: (muscleMassIncreasePerPerson) => {
+            validateMuscleMass(muscleMassIncreasePerPerson, 'Annual Metabolic Impact Explanation');
+            return `
             <div class="calculation-explanation">
                 <p>Annual impact is calculated by multiplying daily caloric burn by 365 days:</p>
                 <div class="formula">
                     (${muscleMassIncreasePerPerson} lbs × ${muscleMassParameters.muscle_calorie_burn.defaultValue} calories/day) × 365 days = ${muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue * 365} calories/year
                 </div>
-            </div>`,
+            </div>`;
+        },
         calculateSensitivity: (muscleMassIncreasePerPerson) => {
+            validateMuscleMass(muscleMassIncreasePerPerson, 'Annual Metabolic Impact Sensitivity');
             const baseValue = muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue * 365;
             return {
                 bestCase: muscleMassIncreasePerPerson * 10 * 365,

@@ -31,7 +31,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
   });
   const metabolic = model.calculate_metabolic_impact();
   const health = model.calculate_health_outcomes();
-  const economic = model.calculate_economic_impact(populationSize);
+  const economic = model.calculate_economic_impact();
 
   // Helper function for number formatting (only used for population size display)
   const formatNumber = (num: number, decimals: number = 2) => new Intl.NumberFormat('en-US', {
@@ -41,7 +41,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
   // Helper function to generate and handle the report
   const generateReport = () => {
-    const reportData = generateMuscleMassReportData(model, muscleMassIncreasePerPerson, populationSize);
+    const reportData = generateMuscleMassReportData(model);
     return generateMarkdownReport(reportData);
   };
 

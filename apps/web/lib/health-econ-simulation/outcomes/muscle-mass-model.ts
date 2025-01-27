@@ -20,7 +20,7 @@ interface HealthOutcomes extends Record<keyof typeof healthOutcomeMetrics, numbe
 interface EconomicImpact extends Record<keyof typeof economicOutcomeMetrics, number> {}
 
 export class MuscleMassInterventionModel {
-    private muscle_mass_increase_per_person: number;
+    muscle_mass_increase_per_person: number;
     private population_config: PopulationConfig;
     private health_metrics: typeof populationHealthMetrics;
 
@@ -65,11 +65,8 @@ export class MuscleMassInterventionModel {
         ) as HealthOutcomes;
     }
 
-    calculate_economic_impact(population_size?: number): EconomicImpact {
-        const metrics = { 
-            ...this.baselineMetrics,
-            population_size: population_size || this.population_config.population_size 
-        };
+    calculate_economic_impact(): EconomicImpact {
+        const metrics = this.baselineMetrics;
         return Object.fromEntries(
             Object.entries(economicOutcomeMetrics).map(([key, metric]) => [
                 key,
