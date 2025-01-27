@@ -11,21 +11,21 @@ export const healthOutcomeMetrics: Record<string, OutcomeMetric> = {
         sourceUrl: muscleMassParameters.insulin_sensitivity_per_lb.sourceUrl,
         emoji: "📊",
         modelParameters: [muscleMassParameters.insulin_sensitivity_per_lb, populationHealthMetrics.insulin_sensitivity],
-        calculate: (muscleMassIncrease) => 
-            muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue,
+        calculate: (muscleMassIncreasePerPerson) => 
+            muscleMassIncreasePerPerson * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue,
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
-        generateCalculationExplanation: (muscleMassIncrease) => `
+        generateCalculationExplanation: (muscleMassIncreasePerPerson) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle mass increases insulin sensitivity by ${(muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100)}%:</p>
                 <div class="formula">
-                    ${muscleMassIncrease} lbs × ${(muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100)}% = ${(muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100).toFixed(1)}%
+                    ${muscleMassIncreasePerPerson} lbs × ${(muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100)}% = ${(muscleMassIncreasePerPerson * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue * 100).toFixed(1)}%
                 </div>
             </div>`,
-        calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = muscleMassIncrease * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
+        calculateSensitivity: (muscleMassIncreasePerPerson) => {
+            const baseValue = muscleMassIncreasePerPerson * muscleMassParameters.insulin_sensitivity_per_lb.defaultValue;
             return {
-                bestCase: muscleMassIncrease * 0.03,
-                worstCase: muscleMassIncrease * 0.01,
+                bestCase: muscleMassIncreasePerPerson * 0.03,
+                worstCase: muscleMassIncreasePerPerson * 0.01,
                 assumptions: [
                     'Upper bound: 3% improvement per pound',
                     'Lower bound: 1% improvement per pound',
@@ -42,21 +42,21 @@ export const healthOutcomeMetrics: Record<string, OutcomeMetric> = {
         sourceUrl: muscleMassParameters.fall_risk_reduction_per_lb.sourceUrl,
         emoji: "🛡️",
         modelParameters: [muscleMassParameters.fall_risk_reduction_per_lb, populationHealthMetrics.fall_risk],
-        calculate: (muscleMassIncrease) => 
-            Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue),
+        calculate: (muscleMassIncreasePerPerson) => 
+            Math.min(0.30, muscleMassIncreasePerPerson * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue),
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
-        generateCalculationExplanation: (muscleMassIncrease) => `
+        generateCalculationExplanation: (muscleMassIncreasePerPerson) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle reduces fall risk by ${(muscleMassParameters.fall_risk_reduction_per_lb.defaultValue * 100)}%, capped at 30% total reduction:</p>
                 <div class="formula">
-                    min(30%, ${muscleMassIncrease} lbs × ${(muscleMassParameters.fall_risk_reduction_per_lb.defaultValue * 100)}%) = ${(Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue) * 100).toFixed(1)}%
+                    min(30%, ${muscleMassIncreasePerPerson} lbs × ${(muscleMassParameters.fall_risk_reduction_per_lb.defaultValue * 100)}%) = ${(Math.min(0.30, muscleMassIncreasePerPerson * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue) * 100).toFixed(1)}%
                 </div>
             </div>`,
-        calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = Math.min(0.30, muscleMassIncrease * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
+        calculateSensitivity: (muscleMassIncreasePerPerson) => {
+            const baseValue = Math.min(0.30, muscleMassIncreasePerPerson * muscleMassParameters.fall_risk_reduction_per_lb.defaultValue);
             return {
-                bestCase: Math.min(0.35, muscleMassIncrease * 0.02),
-                worstCase: Math.min(0.25, muscleMassIncrease * 0.01),
+                bestCase: Math.min(0.35, muscleMassIncreasePerPerson * 0.02),
+                worstCase: Math.min(0.25, muscleMassIncreasePerPerson * 0.01),
                 assumptions: [
                     'Upper cap increased to 35% for best case',
                     'Lower cap reduced to 25% for worst case',
@@ -73,21 +73,21 @@ export const healthOutcomeMetrics: Record<string, OutcomeMetric> = {
         sourceUrl: muscleMassParameters.mortality_reduction_per_lb.sourceUrl,
         emoji: "❤️",
         modelParameters: [muscleMassParameters.mortality_reduction_per_lb, populationHealthMetrics.mortality_risk],
-        calculate: (muscleMassIncrease) => 
-            Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue),
+        calculate: (muscleMassIncreasePerPerson) => 
+            Math.min(0.20, muscleMassIncreasePerPerson * muscleMassParameters.mortality_reduction_per_lb.defaultValue),
         generateDisplayValue: (value) => `${(value * 100).toFixed(1)}% per person`,
-        generateCalculationExplanation: (muscleMassIncrease) => `
+        generateCalculationExplanation: (muscleMassIncreasePerPerson) => `
             <div class="calculation-explanation">
                 <p>Each pound of muscle reduces mortality risk by ${(muscleMassParameters.mortality_reduction_per_lb.defaultValue * 100)}%, capped at 20% total reduction:</p>
                 <div class="formula">
-                    min(20%, ${muscleMassIncrease} lbs × ${(muscleMassParameters.mortality_reduction_per_lb.defaultValue * 100)}%) = ${(Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue) * 100).toFixed(1)}%
+                    min(20%, ${muscleMassIncreasePerPerson} lbs × ${(muscleMassParameters.mortality_reduction_per_lb.defaultValue * 100)}%) = ${(Math.min(0.20, muscleMassIncreasePerPerson * muscleMassParameters.mortality_reduction_per_lb.defaultValue) * 100).toFixed(1)}%
                 </div>
             </div>`,
-        calculateSensitivity: (muscleMassIncrease) => {
-            const baseValue = Math.min(0.20, muscleMassIncrease * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
+        calculateSensitivity: (muscleMassIncreasePerPerson) => {
+            const baseValue = Math.min(0.20, muscleMassIncreasePerPerson * muscleMassParameters.mortality_reduction_per_lb.defaultValue);
             return {
-                bestCase: Math.min(0.25, muscleMassIncrease * 0.015),
-                worstCase: Math.min(0.15, muscleMassIncrease * 0.005),
+                bestCase: Math.min(0.25, muscleMassIncreasePerPerson * 0.015),
+                worstCase: Math.min(0.15, muscleMassIncreasePerPerson * 0.005),
                 assumptions: [
                     'Upper cap increased to 25% for best case',
                     'Lower cap reduced to 15% for worst case',

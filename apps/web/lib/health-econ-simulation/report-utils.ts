@@ -4,7 +4,7 @@ import { ReportData } from './report-generator';
 
 export function generateMuscleMassReportData(
     model: MuscleMassInterventionModel,
-    muscleMassIncrease: number,
+    muscleMassIncreasePerPerson: number,
     populationSize: number
 ): ReportData {
     const metabolic = model.calculate_metabolic_impact();
@@ -17,7 +17,7 @@ export function generateMuscleMassReportData(
         description: "Analysis of health and economic impacts from increasing muscle mass in a population.",
         intervention: {
             name: "Muscle Mass Increase",
-            value: muscleMassIncrease,
+            value: muscleMassIncreasePerPerson,
             unit: "lbs per person",
             populationSize
         },

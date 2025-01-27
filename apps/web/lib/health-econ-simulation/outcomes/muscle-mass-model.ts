@@ -20,12 +20,12 @@ interface HealthOutcomes extends Record<keyof typeof healthOutcomeMetrics, numbe
 interface EconomicImpact extends Record<keyof typeof economicOutcomeMetrics, number> {}
 
 export class MuscleMassInterventionModel {
-    private muscle_mass_increase: number;
+    private muscle_mass_increase_per_person: number;
     private population_config: PopulationConfig;
     private health_metrics: typeof populationHealthMetrics;
 
-    constructor(muscle_mass_increase_lbs: number, population_config: Partial<PopulationConfig> = {}) {
-        this.muscle_mass_increase = muscle_mass_increase_lbs;
+    constructor(muscle_mass_increase_per_person_lbs: number, population_config: Partial<PopulationConfig> = {}) {
+        this.muscle_mass_increase_per_person = muscle_mass_increase_per_person_lbs;
         
         // Create a complete population config with defaults
         const complete_config = {
@@ -51,7 +51,7 @@ export class MuscleMassInterventionModel {
         return Object.fromEntries(
             Object.entries(metabolicOutcomeMetrics).map(([key, metric]) => [
                 key,
-                metric.calculate(this.muscle_mass_increase)
+                metric.calculate(this.muscle_mass_increase_per_person)
             ])
         ) as MetabolicImpact;
     }
@@ -60,7 +60,7 @@ export class MuscleMassInterventionModel {
         return Object.fromEntries(
             Object.entries(healthOutcomeMetrics).map(([key, metric]) => [
                 key,
-                metric.calculate(this.muscle_mass_increase)
+                metric.calculate(this.muscle_mass_increase_per_person)
             ])
         ) as HealthOutcomes;
     }
@@ -73,7 +73,7 @@ export class MuscleMassInterventionModel {
         return Object.fromEntries(
             Object.entries(economicOutcomeMetrics).map(([key, metric]) => [
                 key,
-                metric.calculate(this.muscle_mass_increase, metrics)
+                metric.calculate(this.muscle_mass_increase_per_person, metrics)
             ])
         ) as EconomicImpact;
     }
@@ -95,7 +95,7 @@ export class MuscleMassInterventionModel {
         // Render the React component to static HTML
         const html = ReactDOMServer.renderToString(
             MuscleMassReport({
-                muscleMassIncrease: this.muscle_mass_increase,
+                muscleMassIncreasePerPerson: this.muscle_mass_increase_per_person,
                 populationSize: this.population_config.population_size
             })
         );

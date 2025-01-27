@@ -15,9 +15,9 @@ import { economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/mu
 describe('Muscle Mass Report Generation', () => {
     it('generates and saves report without NaN values', async () => {
         // Create model instance with test parameters
-        const muscleMassIncrease = 5;
+        const muscleMassIncreasePerPerson = 5;
         const populationSize = 10000;
-        const model = new MuscleMassInterventionModel(muscleMassIncrease, { population_size: populationSize });
+        const model = new MuscleMassInterventionModel(muscleMassIncreasePerPerson, { population_size: populationSize });
         
         // Calculate impacts
         const metabolic = model.calculate_metabolic_impact();
@@ -33,7 +33,7 @@ describe('Muscle Mass Report Generation', () => {
             description: "Analysis of health and economic impacts from increasing muscle mass in a population.",
             intervention: {
                 name: "Muscle Mass Increase",
-                value: muscleMassIncrease,
+                value: muscleMassIncreasePerPerson,
                 unit: "lbs per person",
                 populationSize
             },
