@@ -6,7 +6,11 @@ import fs from 'fs/promises';
 import path from 'path';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { generateMarkdownReport } from '@/lib/health-econ-simulation/report-generator';
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+
+
+import { metabolicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/metabolic-metrics';
+import { healthOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/health-metrics';
+import { economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/economic-metrics';
 
 describe('Muscle Mass Report Generation', () => {
     it('generates and saves report without NaN values', async () => {

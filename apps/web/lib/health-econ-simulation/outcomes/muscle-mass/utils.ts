@@ -1,7 +1,7 @@
-import { ModelParameter } from '../types';
+import { ModelParameter } from '../../types';
 
 // Utility function to format large numbers with appropriate suffixes
-function formatLargeNumber(value: number): string {
+export function formatLargeNumber(value: number): string {
     const absValue = Math.abs(value);
     if (absValue >= 1e9) {
         return (value / 1e9).toFixed(1) + 'B';
@@ -13,6 +13,11 @@ function formatLargeNumber(value: number): string {
     return value.toFixed(1);
 }
 
+// Utility function to format currency
+export function formatCurrency(value: number): string {
+    const formatted = formatLargeNumber(value);
+    return '$' + formatted;
+}
 
 export interface SensitivityAnalysis {
     bestCase: number;
@@ -28,5 +33,9 @@ export interface OutcomeMetric extends ModelParameter {
     modelParameters: ModelParameter[];
 }
 
-
-
+// Helper function for sensitivity calculations
+export const calculateVariation = (baseValue: number, variationPercent: number = 20): SensitivityAnalysis => ({
+    bestCase: baseValue * (1 + variationPercent/100),
+    worstCase: baseValue * (1 - variationPercent/100),
+    assumptions: [`Variation of ±${variationPercent}% based on meta-analysis confidence intervals`]
+}); 

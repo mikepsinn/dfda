@@ -1,5 +1,5 @@
 import { MuscleMassInterventionModel } from './outcomes/muscle-mass-model';
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from './outcomes/muscle-mass-outcome-metrics';
+import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from './outcomes/muscle-mass';
 import { ReportData } from './report-generator';
 
 export function generateMuscleMassReportData(

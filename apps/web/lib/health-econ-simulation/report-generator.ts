@@ -1,4 +1,4 @@
-import { OutcomeMetric } from './outcomes/muscle-mass-outcome-metrics';
+import { OutcomeMetric } from './outcomes/muscle-mass';
 import { reportSections } from './report-config';
 
 // Helper function for number formatting

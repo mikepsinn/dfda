@@ -1,8 +1,11 @@
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from './muscle-mass-outcome-metrics';
+import { OutcomeMetric } from './muscle-mass-outcome-metrics';
 import ReactDOMServer from 'react-dom/server';
 import { MuscleMassReport } from '@/components/health-econ/MuscleMassReport';
 import { populationHealthMetrics } from '../population-health-metrics';
 import { z } from 'zod';
+import { metabolicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/metabolic-metrics';
+import { healthOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/health-metrics';
+import { economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/economic-metrics';
 
 // Zod schema for runtime validation
 const populationConfigSchema = z.object({
