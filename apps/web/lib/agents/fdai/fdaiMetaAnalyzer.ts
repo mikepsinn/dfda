@@ -4,7 +4,7 @@ import Exa from 'exa-js';
 import {getModelByName} from "@/lib/utils/modelUtils";
 import { generateMetaAnalysisQuery } from '@/lib/meta-analysis/metaAnalysisQueries';
 
-const exa = new Exa(process.env.EXA_API_KEY);
+const exa = new Exa(process.env.EXASEARCH_API_KEY);
 
 const SafetyRatingEnum = z.enum(['Low', 'Moderate', 'High']);
 

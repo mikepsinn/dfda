@@ -70,3 +70,5 @@ node_modules_bak
 /.env.test
 
 .vercel
+
+.ssh/

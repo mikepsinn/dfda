@@ -171,7 +171,10 @@ export default function DFDAHomePage() {
       <main className="space-y-12">
         <DFDADisclaimer />
         <section className="neobrutalist-gradient-container neobrutalist-gradient-green mb-12 ">
-          <h2 className="neobrutalist-title mb-6">A World With Disease 💀</h2>
+          <h2 className="neobrutalist-title mb-6">Problems We Can Solve</h2>
+          <p className="neobrutalist-description mb-6">
+            To have any hope of eradicating disease, we first need to solve the following problems:
+          </p>
           <ProblemStatisticsGrid />
         </section>
         <section className="neobrutalist-gradient-container neobrutalist-gradient-pink mb-12">

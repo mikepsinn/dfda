@@ -1,37 +1,63 @@
-# Build stage
-FROM node:20-slim AS builder
-RUN apt-get update -y && apt-get install -y openssl
-RUN npm install -g pnpm
+# syntax = docker/dockerfile:1
 
+# Adjust NODE_VERSION as desired
+ARG NODE_VERSION=20.11.1
+FROM node:${NODE_VERSION}-slim AS base
+
+LABEL fly_launch_runtime="Next.js/Prisma"
+
+# Next.js/Prisma app lives here
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-COPY prisma ./prisma/
 
-# Only install dependencies needed for building
+# Set production environment
+ENV NODE_ENV="production"
+
+# Install pnpm
+ARG PNPM_VERSION=9.1.4
+RUN npm install -g pnpm@$PNPM_VERSION
+
+
+# Throw-away build stage to reduce size of final image
+FROM base AS build
+
+# Install packages needed to build node modules
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential node-gyp openssl pkg-config python-is-python3
+
+# Install node modules
+COPY .npmrc package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod=false
 
+# Generate Prisma Client
+COPY prisma .
+RUN npx prisma generate
+
+# Copy application code
 COPY . .
-RUN pnpm build
 
-# Production stage
-FROM node:20-slim AS runner
-RUN apt-get update -y && apt-get install -y openssl
-RUN npm install -g pnpm
+# Build application
+RUN npx next build --experimental-build-mode compile
 
-WORKDIR /app
-ENV NODE_ENV=production
 
-# Copy only necessary files
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/pnpm-lock.yaml ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/prisma ./prisma
+# Final stage for app image
+FROM base
 
-# Install production dependencies and generate Prisma client
-RUN pnpm install --frozen-lockfile --prod=true && \
-    npx prisma generate
+# Install packages needed for deployment
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y openssl && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+# Copy built application
+COPY --from=build /app/.next/standalone /app
+COPY --from=build /app/.next/static /app/.next/static
+COPY --from=build /app/public /app/public
+
+# Adjust entrypoint to be executable on Linux
+RUN chmod +x ./docker-entrypoint.js
+
+# Entrypoint prepares the database.
+ENTRYPOINT [ "/app/docker-entrypoint.js" ]
+
+# Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["pnpm", "start"] 
+CMD [ "node", "server.js" ]

@@ -1,4 +1,7 @@
 import { Metadata } from "next"
+import { redirect } from "next/navigation"
+import fs from "fs/promises"
+import path from "path"
 
 import MarkdownFileRenderer from "@/components/markdown/MarkdownFileRenderer"
 
@@ -29,6 +32,15 @@ export default async function Docs({ params }: DocsProps) {
   // Update the path to point to the correct directory
   const mdPath = `/docs/${filename}.md`
   console.log("Final markdown path:", mdPath)
+
+  // Check if file exists
+  try {
+    const filePath = path.join(process.cwd(), "public", mdPath)
+    await fs.access(filePath)
+  } catch (error) {
+    console.error("File not found:", mdPath)
+    redirect("/docs") // Explicitly redirect to /docs
+  }
 
   return <MarkdownFileRenderer url={mdPath} variant="neobrutalist" />
 }

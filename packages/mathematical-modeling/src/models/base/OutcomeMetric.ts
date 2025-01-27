@@ -1,16 +1,9 @@
 import { InputParameter } from './InputParameter';
-import { AbstractModelElement, ComponentMetadata } from './ModelElement';
+import { AbstractModelElement, ElementMetadata } from './AbstractModelElement';
 
-export type MetricMetadata = ComponentMetadata;
-
-export type MetricJSON = {
-  id: string;
-  displayName: string;
-  description: string;
-  unitName: string;
-  emoji: string;
-  metadata?: MetricMetadata;
+export type MetricJSON = Omit<ReturnType<AbstractModelElement['toJSON']>, 'metadata'> & {
   value?: number;
+  metadata?: ElementMetadata;
 };
 
 export abstract class OutcomeMetric extends AbstractModelElement {
@@ -21,7 +14,7 @@ export abstract class OutcomeMetric extends AbstractModelElement {
     unitName: string,
     emoji: string,
     protected parameters: InputParameter[],
-    metadata?: MetricMetadata
+    metadata?: ElementMetadata
   ) {
     super(id, displayName, description, unitName, emoji, metadata);
   }
@@ -47,18 +40,26 @@ export abstract class OutcomeMetric extends AbstractModelElement {
 
   generateReport(): string {
     const value = this.calculate();
-    const sections = [
+    const sections: string[] = [
       `# ${this.displayName} ${this.emoji}`,
-      this.description,
-      '\n## Parameters Used',
-      ...this.parameters.map(p => 
-        `- ${p.displayName}: ${p.generateDisplayValue()}`
-      ),
+      this.description
+    ];
+
+    if (this.parameters.length > 0) {
+      sections.push(
+        '\n## Parameters Used',
+        ...this.parameters.map(p =>
+          `- ${p.displayName}: ${p.generateDisplayValue()}`
+        )
+      );
+    }
+
+    sections.push(
       '\n## Calculation Method',
       this.generateCalculationExplanation(),
       '\n## Result',
       `${value} ${this.unitName}`
-    ];
+    );
 
     if (this.metadata?.assumptions?.length) {
       sections.push(

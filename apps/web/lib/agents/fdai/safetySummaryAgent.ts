@@ -5,7 +5,7 @@ import { z } from "zod"
 import { generateSearchQueries } from "@/lib/agents/researcher/searchQueryGenerator"
 import { getModelByName } from "@/lib/utils/modelUtils"
 
-const exa = new Exa(process.env.EXA_API_KEY)
+const exa = new Exa(process.env.EXASEARCH_API_KEY)
 
 const SafetyRatingSchema = z
   .enum(["Low", "Moderate", "High"])

@@ -43,3 +43,6 @@ The Disease Eradication Act offers significant advantages:
 * **Faster:** Removes years of delays, automates processes, and enables real-time monitoring.
 * **Better:** Includes all willing patients, generates real-world evidence, and continuously improves treatments.
 
+## [Read the Full Act](/docs/disease-eradication-act)
+
+

@@ -1,7 +1,7 @@
 import Exa, {RegularSearchOptions, SearchResult, TextContentsOptions} from "exa-js";
 import { CacheService } from '@/lib/services/cache-service';
 
-const exa = new Exa(process.env.EXA_API_KEY);
+const exa = new Exa(process.env.EXASEARCH_API_KEY);
 const cacheService = CacheService.getInstance();
 
 const defaultTextOptions: TextContentsOptions = {

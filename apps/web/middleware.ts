@@ -29,6 +29,12 @@ const redirects = [
     permanent: true,
     description: "Redirect to Disease Eradication Act",
   },
+  {
+    source: "/docs/disease-eradication-act-summary",
+    destination: "/docs/disease-eradication-act",
+    permanent: true,
+    description: "Redirect to Disease Eradication Act Summary",
+  }
   // Add more redirects here
   // Make sure to add the source path to the matcher array below 👇
 ] as const
@@ -118,5 +124,6 @@ export const config = {
     "/dfda/:path*",
     "/cure-acceleration-act",
     "/right-to-trial-act",
+    "/docs/disease-eradication-act-summary"
   ],
 }

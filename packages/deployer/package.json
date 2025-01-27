@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "deploy": "ts-node scripts/deploy.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7"
+  }
+}

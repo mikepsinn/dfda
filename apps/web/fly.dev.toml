@@ -1,0 +1,25 @@
+# Development environment - Cost optimized
+app = "dfda-dev"
+primary_region = "iad"
+
+[build]
+  image = "dfda:dev"
+
+[env]
+  NODE_ENV = "development"
+
+[http_service]
+  internal_port = 3000
+  force_https = false
+  auto_stop_machines = true
+  auto_start_machines = false
+  min_machines_running = 0
+
+[deploy]
+  release_command = 'npx prisma migrate deploy'
+  seed_command = 'ts-node --compiler-options {"module":"CommonJS"} prisma/seed.ts'
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1 

@@ -45,7 +45,7 @@
     "find:unused": "eslint . --ext .ts,.tsx --rule \"unused-imports/no-unused-imports: error\" --rule \"unused-imports/no-unused-vars: error\"",
     "find:unused-components": "ts-prune --error | findstr /i \".tsx\" | findstr /v \"used in module\" | findstr /v \"layout.tsx\\|loading.tsx\\|page.tsx\\|error.tsx\\|not-found.tsx\\|opengraph-image.tsx\"",
     "generate-icons": "ts-node scripts/generate-icons.ts",
-    "deploy:tenant": "ts-node deploy/cli.ts",
+    "deploy:tenant": "tsx deploy/cli.ts",
     "deploy:tenant:provision": "ts-node deploy/cli.ts provision",
     "deploy:tenant:list": "ts-node deploy/cli.ts list",
     "deploy:tenant:delete": "ts-node deploy/cli.ts delete",
@@ -201,6 +201,7 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.2",
     "@playwright/test": "^1.44.1",
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.4.2",
