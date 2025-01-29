@@ -1,6 +1,23 @@
 ---
 title: Overall Economic Benefits
 description: >-
+  Quantitative analysis of global economic benefits from decentralized clinical trials and automated FDA processes
+emoji: 📈
+toc: true
+---
+
+**Key Sections**  
+[1. Trial Cost Savings](#1-trial-cost-savings)  
+[2. Earlier Patient Access](#2-earlier-access-7-years-sooner)  
+[3. Treatment Matching](#3-comparative-effectiveness-matching)  
+[4. QALY Valuation](#4-valuing-those-qalys)  
+[5. Drug Price Reductions](#5-reduced-drug-prices)  
+[6. Niche Therapies](#6-more-therapies-for-smaller-markets)  
+[7. Summary Table](#7-annual-benefits-summary)  
+[8. References](#8-references)
+---
+title: Overall Economic Benefits
+description: >-
   This model estimates the global economic benefits of a decentralized, automated FDA trial platform.
 emoji: 📈
 ---
@@ -31,8 +48,14 @@ All figures have wide confidence intervals (CIs). These estimates are not exact 
 3. Savings per Trial: ~\$133M (30–\$280M range)  
 4. Annual Trials: 2,000 (1,500–3,000 range)
 
+| Item                  | Old Cost (M) | New Cost (M) | Savings (M) |
+| --------------------- | ------------ | ------------ | ----------- |
+| Cost per Trial        | \$140         | \$7           | \$133        |
+| Number of Trials/Year | 2,000        | 2,000        | -           |
+| **Total Savings/Year**| **-**        | **-**        | **\$266B**   |
+
 \[
-\text{Total Savings} \approx 133\text{M} \times 2{,}000 
+\text{Total Savings} \approx 133\text{M} \times 2{,}000
 = \$266 \text{B per year (90% CI: \$45–\$840B)}.
 \]
 
@@ -63,6 +86,14 @@ All figures have wide confidence intervals (CIs). These estimates are not exact 
 
 That’s 14 million QALYs if patients can use the drug 7 years earlier. The 90% CI might range from 1 million to 105+ million QALYs, depending on the parameters above.
 
+| Item                      | Value               |
+| ------------------------- | ------------------- |
+| Therapies/Year            | 50                  |
+| Patients/Therapy          | 200,000             |
+| Major Life Extension Rate | 20%                 |
+| QALYs Gained/Patient      | 7                   |
+| **Total QALYs/Year**      | **14,000,000**      |
+
 ---
 
 ## 3. Comparative-Effectiveness Matching
@@ -83,9 +114,16 @@ Applying a 20% multiplier to the QALYs above yields ~16.8 million QALYs (baselin
 
 - Many health economists use \$50k/QALY as a modest baseline, with 90% CI of \$20k–\$150k.  
 
-**Baseline Calculation**  
+**Baseline Calculation**
+
+| Item                     | Value             |
+| ------------------------ | ----------------- |
+| Baseline QALYs           | 16.8 million      |
+| Value per QALY           | \$50,000           |
+| **Total Value per Year** | **\$840 billion** |
+
 \[
-16.8 \text{ million QALYs} \times \$50{,}000 
+16.8 \text{ million QALYs} \times \$50{,}000
 = \$840 \text{ billion/year}.
 \]
 
@@ -113,11 +151,19 @@ Applying a 20% multiplier to the QALYs above yields ~16.8 million QALYs (baselin
 - 60–80% of that is on brand/patented products.  
 - Over 5–10 years, broad adoption of these methods could cut brand spending by 40–70%.  
 
-**Moderate Scenario**:  
-- ~50% of brand spending sees a ~40% price drop. That’s \$280B in cuts. Possibly \$200–\$300B total.  
+**Moderate Scenario**:
 
-**Aggressive Scenario**:  
-- Nearly all brand spending (say \$1T) sees a 50%+ cut over time, yielding \$500B+.  
+| Item                          | Value             |
+| ----------------------------- | ----------------- |
+| Global Brand Drug Spending    | \$1.4T             |
+| % Spending with Price Drops  | 50%               |
+| Price Drop Percentage         | 40%               |
+| **Total Price Reduction**     | **\$280 billion** |
+
+- ~50% of brand spending sees a ~40% price drop. That’s \$280B in cuts. Possibly \$200–\$300B total.
+
+**Aggressive Scenario**:
+- Nearly all brand spending (say \$1T) sees a 50%+ cut over time, yielding \$500B+.
 
 ---
 
@@ -149,12 +195,20 @@ Below is a rough tally of annual benefits once the system is widely adopted:
 3. **Drug Price Reductions**:  
    - Baseline: \$200–\$300B in moderate scenario; could exceed \$500B in a high-competition scenario.  
 
-4. **Rare/Niche Therapies**:  
-   - Possibly another \$5–\$20B intangible.  
+4. **Rare/Niche Therapies**:
+   - Possibly another \$5–\$20B intangible.
 
-**Baseline Sum**:  
+| Benefit Category              | Baseline Value |
+| ----------------------------- | -------------- |
+| Trial Cost Savings            | \$266B          |
+| Earlier Access + Better Matching| \$840B          |
+| Drug Price Reductions         | \$250B          |
+| Rare/Niche Therapies          | \$10B           |
+| **Total Annual Benefit**      | **\$1.37T**     |
+
+**Baseline Sum**:
 \[
-266 + 840 + 250 + 10 
+266 + 840 + 250 + 10
 \approx \$1.37 \text{ trillion per year.}
 \]
 
