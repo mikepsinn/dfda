@@ -1,6 +1,8 @@
 import { DomainNavigation } from "../nav-types"
 import { commonLinks } from "../shared-links"
 
+export const PATH_TO_DISEASE_ERADICATION_ACT = "docs/disease-eradication-act/disease-eradication-act.md"
+
 export const dfdaLinks = {
   dfda: {
     title: "dFDA",
@@ -65,7 +67,7 @@ export const dfdaLinks = {
   },
   editDiseaseEradicationAct: {
     title: "Edit Disease Eradication Act",
-    href: "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/docs/disease-eradication-act.md",
+    href: "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/" + PATH_TO_DISEASE_ERADICATION_ACT,
     icon: "edit",
     tooltip: "Edit the Disease Eradication Act",
   },
