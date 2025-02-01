@@ -147,8 +147,8 @@ async function waitForDeployment(serviceName: string) {
             if (response.containerServices && response.containerServices.length > 0) {
                 const state = response.containerServices[0].state;
                 console.log(`Current state: ${state}`);
-                if (state === 'READY') {
-                    console.log('Container service is READY. Deployment complete.');
+                if (state === 'READY' || state === 'RUNNING') {
+                    console.log('Container service is running. Deployment complete.');
                     break;
                 } else {
                     console.log('Deployment in progress. Waiting 15 seconds...');
