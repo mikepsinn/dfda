@@ -31,12 +31,12 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: npm ci
+        run: cd apps/web && npm ci
 
       # Build and push container using custom script
       - name: Build and push container
-        run: npx ts-node apps/web/scripts/build-and-push-container.ts
+        run: cd apps/web && npx ts-node scripts/build-and-push-container.ts
 
       # Deploy to Lightsail using custom script
       - name: Deploy to Lightsail
-        run: npx ts-node apps/web/scripts/deploy-lightsail.ts
+        run: cd apps/web && npx ts-node scripts/deploy-lightsail.ts
