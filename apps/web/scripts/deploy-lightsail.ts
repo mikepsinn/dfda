@@ -99,13 +99,13 @@ async function deployToLightsail() {
                     image: 'curedao/dfda-web:1.0.0',
                     environment: envVars,
                     ports: {
-                        '8000': 'HTTP'
+                        '3000': 'HTTP'
                     }
                 }
             },
             publicEndpoint: {
                 containerName,
-                containerPort: 8000,
+                containerPort: 3000,
                 healthCheck: {
                     healthyThreshold: 2,
                     unhealthyThreshold: 2,

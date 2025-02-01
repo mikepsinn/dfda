@@ -58,12 +58,6 @@ COPY --from=build /app/.next/standalone /app
 COPY --from=build /app/.next/static /app/.next/static
 COPY --from=build /app/public /app/public
 
-# Adjust entrypoint to be executable on Linux
-RUN chmod +x ./docker-entrypoint.js
-
-# Entrypoint prepares the database.
-ENTRYPOINT [ "/app/docker-entrypoint.js" ]
-
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD [ "node", "server.js" ]
