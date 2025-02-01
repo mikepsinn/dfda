@@ -96,11 +96,17 @@ async function deployToLightsail() {
         const envVars = { DOPPLER_TOKEN: process.env.DOPPLER_TOKEN! };
         console.log('Deploying with DOPPLER_TOKEN');
         
+        if (!(process.env.DOCKER_IMAGE_NAME && process.env.DOCKER_IMAGE_TAG)) {
+            console.error('Error: DOCKER_IMAGE_NAME and/or DOCKER_IMAGE_TAG is not set in the environment.');
+            process.exit(1);
+        }
+        const image = `${process.env.DOCKER_IMAGE_NAME}:${process.env.DOCKER_IMAGE_TAG}`;
+
         await lightsail.send(new CreateContainerServiceDeploymentCommand({
             serviceName,
             containers: {
                 [containerName]: {
-                    image: 'curedao/dfda-web:1.0.0',
+                    image: image,
                     environment: envVars,
                     ports: {
                         '3000': 'HTTP'
