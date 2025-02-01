@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { MuscleMassReport } from './MuscleMassReport';
 
 export function MuscleMassSimulator() {
-  const [muscleMassIncrease, setMuscleMassIncrease] = useState(2);
+  const [muscleMassIncreasePerPerson, setMuscleMassIncreasePerPerson] = useState(2);
   const [populationSize, setPopulationSize] = useState(335000000);
 
   // Helper function for number formatting
@@ -24,13 +24,13 @@ export function MuscleMassSimulator() {
               <input
                 type="range"
                 min="1"
-                max="20"
-                value={muscleMassIncrease}
-                onChange={(e) => setMuscleMassIncrease(Number(e.target.value))}
+                max="5"
+                value={muscleMassIncreasePerPerson}
+                onChange={(e) => setMuscleMassIncreasePerPerson(Number(e.target.value))}
                 className="w-full"
               />
               <span className="text-lg font-semibold min-w-[4rem]">
-                {muscleMassIncrease} lbs
+                {muscleMassIncreasePerPerson} lbs
               </span>
             </div>
           </div>
@@ -61,7 +61,7 @@ export function MuscleMassSimulator() {
 
       {/* Report */}
       <MuscleMassReport 
-        muscleMassIncrease={muscleMassIncrease}
+        muscleMassIncreasePerPerson={muscleMassIncreasePerPerson}
         populationSize={populationSize} 
       />
     </>

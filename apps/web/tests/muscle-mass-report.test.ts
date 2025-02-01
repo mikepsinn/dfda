@@ -6,14 +6,18 @@ import fs from 'fs/promises';
 import path from 'path';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
 import { generateMarkdownReport } from '@/lib/health-econ-simulation/report-generator';
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+
+
+import { metabolicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/metabolic-metrics';
+import { healthOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/health-metrics';
+import { economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/economic-metrics';
 
 describe('Muscle Mass Report Generation', () => {
     it('generates and saves report without NaN values', async () => {
         // Create model instance with test parameters
-        const muscleMassIncrease = 5;
+        const muscleMassIncreasePerPerson = 5;
         const populationSize = 10000;
-        const model = new MuscleMassInterventionModel(muscleMassIncrease, { population_size: populationSize });
+        const model = new MuscleMassInterventionModel(muscleMassIncreasePerPerson, { population_size: populationSize });
         
         // Calculate impacts
         const metabolic = model.calculate_metabolic_impact();
@@ -29,7 +33,7 @@ describe('Muscle Mass Report Generation', () => {
             description: "Analysis of health and economic impacts from increasing muscle mass in a population.",
             intervention: {
                 name: "Muscle Mass Increase",
-                value: muscleMassIncrease,
+                value: muscleMassIncreasePerPerson,
                 unit: "lbs per person",
                 populationSize
             },

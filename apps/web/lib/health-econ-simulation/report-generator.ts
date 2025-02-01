@@ -1,4 +1,4 @@
-import { OutcomeMetric } from './outcomes/muscle-mass-outcome-metrics';
+import { OutcomeMetric } from './outcomes/muscle-mass';
 import { reportSections } from './report-config';
 
 // Helper function for number formatting
@@ -92,6 +92,12 @@ function formatMetricValue(value: number, metric: OutcomeMetric): string {
 }
 
 function generateMetricDetails(value: number, metric: OutcomeMetric, baselineMetrics?: Record<string, any>): string {
+    console.log('[generateMetricDetails] Input:', {
+        value,
+        metricName: metric.displayName,
+        baselineMetrics
+    });
+
     const sections = [];
     
     // Main value and description
@@ -107,7 +113,11 @@ function generateMetricDetails(value: number, metric: OutcomeMetric, baselineMet
     
     // Calculations section
     sections.push('\n#### Calculations');
-    const calculationExplanation = metric.generateCalculationExplanation(value, baselineMetrics);
+    console.log('[generateMetricDetails] Calling generateCalculationExplanation for', metric.displayName);
+    const calculationExplanation = metric.generateCalculationExplanation(
+        baselineMetrics?.muscle_mass_increase_per_person || 0,
+        baselineMetrics
+    );
     sections.push(convertCalculationHtmlToMarkdown(calculationExplanation));
     
     // Model parameters section
@@ -129,8 +139,11 @@ function generateMetricDetails(value: number, metric: OutcomeMetric, baselineMet
     
     // Sensitivity analysis section
     if (metric.calculateSensitivity) {
-        const sensitivity = metric.calculateSensitivity(value, baselineMetrics);
         sections.push('\n#### Sensitivity Analysis');
+        const sensitivity = metric.calculateSensitivity(
+            baselineMetrics?.muscle_mass_increase_per_person || 0,
+            baselineMetrics
+        );
         sections.push(`**Best Case:** ${formatMetricValue(sensitivity.bestCase, metric)}`);
         sections.push(`**Worst Case:** ${formatMetricValue(sensitivity.worstCase, metric)}`);
         
@@ -185,10 +198,15 @@ export function generateMarkdownReport(data: ReportData): string {
         for (const [key, value] of Object.entries(section.metrics)) {
             const metric = section.metricDefinitions[key];
             if (metric) {
-                sections.push(generateMetricDetails(value, metric, {
-                    ...section.baselineMetrics,
-                    population_size: data.intervention.populationSize
-                }));
+                sections.push(generateMetricDetails(
+                    value, 
+                    metric, 
+                    {
+                        ...section.baselineMetrics,
+                        population_size: data.intervention.populationSize,
+                        muscle_mass_increase_per_person: data.intervention.value
+                    }
+                ));
             }
         }
     }
