@@ -34,7 +34,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: cd apps/web && npm ci
+        run: cd apps/web && pnpm install
 
       # Build and push container using custom script
       - name: Build and push container
