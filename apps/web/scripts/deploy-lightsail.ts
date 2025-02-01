@@ -1,4 +1,4 @@
-import { LightsailClient, CreateContainerServiceCommand, UpdateContainerServiceCommand, CreateContainerServiceDeploymentCommand } from "@aws-sdk/client-lightsail";
+import { LightsailClient, CreateContainerServiceCommand, UpdateContainerServiceCommand, CreateContainerServiceDeploymentCommand, GetContainerServicesCommand } from "@aws-sdk/client-lightsail";
 import * as dotenv from 'dotenv';
 import path from 'path';
 import fs from 'fs';
@@ -89,6 +89,10 @@ async function deployToLightsail() {
 
         // Deploy the container
         console.log('Creating deployment...');
+        if (!process.env.DOPPLER_TOKEN) {
+            console.error('Error: DOPPLER_TOKEN is not set in the environment.');
+            process.exit(1);
+        }
         const envVars = { DOPPLER_TOKEN: process.env.DOPPLER_TOKEN! };
         console.log('Deploying with DOPPLER_TOKEN');
         
@@ -117,9 +121,10 @@ async function deployToLightsail() {
             }
         }));
 
+        // After deployment initiation, add polling for deployment status
         console.log('Deployment initiated successfully!');
-        console.log('Note: It may take a few minutes for the deployment to complete.');
-        console.log('You can check the status in the AWS Lightsail Console.');
+        console.log('Waiting for the container service to become READY...');
+        await waitForDeployment(serviceName);
 
     } catch (error) {
         console.error('Deployment failed:', error);
@@ -127,4 +132,30 @@ async function deployToLightsail() {
     }
 }
 
+// Add the waitForDeployment function at the end of the file before calling deployToLightsail
+async function waitForDeployment(serviceName: string) {
+    console.log('Polling Lightsail container service status...');
+    while (true) {
+        try {
+            const response = await lightsail.send(new GetContainerServicesCommand({ serviceName }));
+            if (response.containerServices && response.containerServices.length > 0) {
+                const state = response.containerServices[0].state;
+                console.log(`Current state: ${state}`);
+                if (state === 'READY') {
+                    console.log('Container service is READY. Deployment complete.');
+                    break;
+                } else {
+                    console.log('Deployment in progress. Waiting 15 seconds...');
+                }
+            } else {
+                console.error('Unable to retrieve container service status.');
+            }
+        } catch (err) {
+            console.error('Error fetching container service status:', err);
+        }
+        await new Promise(resolve => setTimeout(resolve, 15000));
+    }
+}
+
+// Call the deploy function
 deployToLightsail(); 
