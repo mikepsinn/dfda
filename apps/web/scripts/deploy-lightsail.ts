@@ -89,8 +89,8 @@ async function deployToLightsail() {
 
         // Deploy the container
         console.log('Creating deployment...');
-        const envVars = getContainerEnvVars();
-        console.log('Deploying with environment variables:', Object.keys(envVars));
+        const envVars = { DOPPLER_TOKEN: process.env.DOPPLER_TOKEN! };
+        console.log('Deploying with DOPPLER_TOKEN');
         
         await lightsail.send(new CreateContainerServiceDeploymentCommand({
             serviceName,

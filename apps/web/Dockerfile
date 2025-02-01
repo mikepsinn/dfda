@@ -17,6 +17,14 @@ ARG PNPM_VERSION=9.1.4
 RUN npm install -g pnpm@$PNPM_VERSION
 
 
+# Install Doppler CLI
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg && \
+    curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | tee /etc/apt/sources.list.d/doppler-cli.list && \
+    apt-get update && \
+    apt-get -y install doppler
+
+
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
@@ -60,4 +68,4 @@ COPY --from=build /app/public /app/public
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "node", "server.js" ]
+CMD [ "doppler", "run", "--", "node", "server.js" ]
