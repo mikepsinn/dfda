@@ -24,19 +24,25 @@ FROM base AS build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential node-gyp openssl pkg-config python-is-python3
 
-# Install node modules
+# Copy node package files and Prisma schema for installation
 COPY .npmrc package.json pnpm-lock.yaml ./
+COPY prisma/ ./prisma/
 RUN pnpm install --frozen-lockfile --prod=false
 
 # Generate Prisma Client
-COPY prisma .
 RUN npx prisma generate
 
 # Copy application code
 COPY . .
 
+# Copy .env.example to .env for build process
+RUN cp .env.example .env
+
 # Build application
 RUN npx next build --experimental-build-mode compile
+
+# Remove .env so that no environment variables are stored in the build
+RUN rm -f .env
 
 
 # Final stage for app image
