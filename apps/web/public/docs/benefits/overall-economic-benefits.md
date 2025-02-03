@@ -67,8 +67,8 @@ All figures have wide confidence intervals (CIs). These estimates are not exact 
 
 - Patients get new therapies right after Phase 1 safety, typically 7 years sooner than current Phase II/III + approval timelines.  
 - Gains are measured in QALYs (quality-adjusted life years).  
-- We assume 50 “highly impactful” therapies per year (30–70 range).  
-- Each therapy affects ~200k patients in those 7 “waiting years.”  
+- We assume 50 "highly impactful" therapies per year (30–70 range).  
+- Each therapy affects ~200k patients in those 7 "waiting years."  
 - ~20% (10%–30%) see major life extension, each gaining ~7 extra QALYs (3–10 range).  
 
 **QALY Estimate (Baseline)**
@@ -84,7 +84,7 @@ All figures have wide confidence intervals (CIs). These estimates are not exact 
 = 14{,}000{,}000 \text{ QALYs}.
 \]
 
-That’s 14 million QALYs if patients can use the drug 7 years earlier. The 90% CI might range from 1 million to 105+ million QALYs, depending on the parameters above.
+That's 14 million QALYs if patients can use the drug 7 years earlier. The 90% CI might range from 1 million to 105+ million QALYs, depending on the parameters above.
 
 | Item                      | Value               |
 | ------------------------- | ------------------- |
@@ -160,7 +160,7 @@ Applying a 20% multiplier to the QALYs above yields ~16.8 million QALYs (baselin
 | Price Drop Percentage         | 40%               |
 | **Total Price Reduction**     | **\$280 billion** |
 
-- ~50% of brand spending sees a ~40% price drop. That’s \$280B in cuts. Possibly \$200–\$300B total.
+- ~50% of brand spending sees a ~40% price drop. That's \$280B in cuts. Possibly \$200–\$300B total.
 
 **Aggressive Scenario**:
 - Nearly all brand spending (say \$1T) sees a 50%+ cut over time, yielding \$500B+.
@@ -176,7 +176,7 @@ Applying a 20% multiplier to the QALYs above yields ~16.8 million QALYs (baselin
    - Nonprofits and patient groups can run large-scale comparative trials on ultra-rare diseases or unpatentable compounds.  
    - This yields treatments that otherwise might never be studied.
 
-Quantifying the financial upside is harder, but it might add \$5–\$20B in intangible benefits and QALY gains. For patients with rare, life-threatening conditions, it’s enormous.
+Quantifying the financial upside is harder, but it might add \$5–\$20B in intangible benefits and QALY gains. For patients with rare, life-threatening conditions, it's enormous.
 
 ---
 
@@ -212,7 +212,7 @@ Below is a rough tally of annual benefits once the system is widely adopted:
 \approx \$1.37 \text{ trillion per year.}
 \]
 
-With more conservative assumptions, you might see “only” \$200–\$300B total. In a high-end scenario, benefits could exceed **\$2–\$3 trillion** (or even higher if off-patent discoveries displace many brand drugs).
+With more conservative assumptions, you might see "only" \$200–\$300B total. In a high-end scenario, benefits could exceed **\$2–\$3 trillion** (or even higher if off-patent discoveries displace many brand drugs).
 
 ---
 
@@ -225,3 +225,13 @@ With more conservative assumptions, you might see “only” \$200–\$300B tota
 - **Total Gains** plausibly exceed **\$1 trillion per year** under a midrange scenario, with even higher upside if widely adopted.
 
 This framework remains a high-level approximation. Real-world adoption speed, global regulations, and market dynamics will shape the final outcome. Yet, even on the conservative end, the potential is extraordinary.
+
+## Appendix A: Calculation Methodology
+- Discount rate: 3% annual for future QALYs (per WHO guidelines)
+- Inflation adjustment: All figures in 2023 USD
+- Trial cost basis: 2022 Tufts CSDD benchmark study
+
+## Appendix B: Recommended Visualizations
+1. Tornado diagram showing parameter sensitivity
+2. Adoption S-curve for technology penetration
+3. QALY value distribution histogram
