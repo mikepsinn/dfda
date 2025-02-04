@@ -1,6 +1,7 @@
 /**
  * @jest-environment node
  */
+import { beforeAll, describe, expect, it, jest } from '@jest/globals';
 import { AutonomousResearcher } from '../researcher';
 
 describe("Autonomous Researcher tests", () => {
