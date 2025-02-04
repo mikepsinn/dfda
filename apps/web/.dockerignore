@@ -1,10 +1,47 @@
-.next
-.git
-.env.*
-!env.mjs
-*.log
-.turbo
-.vercel
-test-outputs
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# testing
 coverage
-node_modules 
+test-outputs
+
+# next.js
+.next/
+out/
+build
+dist
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env
+.env.*
+!.env.example
+.env.local
+.env.development
+.env.test
+.env.production
+
+# turbo
+.turbo
+
+# vercel
+.vercel
+
+# git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode 
