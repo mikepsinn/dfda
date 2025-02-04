@@ -74,5 +74,14 @@ export const populationHealthMetrics: Record<string, ModelParameter> = {
         sourceUrl: "https://www.cms.gov/research-statistics-data-and-systems/statistics-trends-and-reports/nationalhealthexpenddata",
         emoji: "🏥",
         generateDisplayValue: formatCurrency
+    },
+    diabetes_risk: {
+        displayName: "Diabetes Risk",
+        defaultValue: 0.11,  // 11% of US population has diabetes
+        unitName: "probability",
+        description: "Probability of having or developing diabetes in the general population",
+        sourceUrl: "hhttps://www.cdc.gov/diabetes/php/data-research/methods.html?CDC_AAref_Val=https://www.cdc.gov/diabetes/data/statistics-report/index.html",
+        emoji: "🩺",
+        generateDisplayValue: formatRate
     }
 }; 

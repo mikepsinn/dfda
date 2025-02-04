@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { MuscleMassInterventionModel } from '@/lib/health-econ-simulation/outcomes/muscle-mass-model';
-import { metabolicOutcomeMetrics, healthOutcomeMetrics, economicOutcomeMetrics, OutcomeMetric } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+import { OutcomeMetric } from '@/lib/health-econ-simulation/outcomes/muscle-mass-outcome-metrics';
+import { metabolicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/metabolic-metrics';
+import { healthOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/health-metrics';
+import { economicOutcomeMetrics } from '@/lib/health-econ-simulation/outcomes/muscle-mass/economic-metrics';
 import { WorkInProgressDisclaimer } from './WorkInProgressDisclaimer';
 import { reportSections } from '@/lib/health-econ-simulation/report-config';
 import { generateMuscleMassReportData } from '@/lib/health-econ-simulation/report-utils';
@@ -14,21 +17,21 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 interface MuscleMassReportProps {
-  muscleMassIncrease: number;
+  muscleMassIncreasePerPerson: number;
   populationSize?: number;
 }
 
 export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
-  muscleMassIncrease,
+  muscleMassIncreasePerPerson,
   populationSize = 100000,
 }) => {
   const [copied, setCopied] = useState(false);
-  const model = new MuscleMassInterventionModel(muscleMassIncrease, { 
+  const model = new MuscleMassInterventionModel(muscleMassIncreasePerPerson, { 
     population_size: populationSize 
   });
   const metabolic = model.calculate_metabolic_impact();
   const health = model.calculate_health_outcomes();
-  const economic = model.calculate_economic_impact(populationSize);
+  const economic = model.calculate_economic_impact();
 
   // Helper function for number formatting (only used for population size display)
   const formatNumber = (num: number, decimals: number = 2) => new Intl.NumberFormat('en-US', {
@@ -38,7 +41,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
   // Helper function to generate and handle the report
   const generateReport = () => {
-    const reportData = generateMuscleMassReportData(model, muscleMassIncrease, populationSize);
+    const reportData = generateMuscleMassReportData(model);
     return generateMarkdownReport(reportData);
   };
 
@@ -66,7 +69,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
 
   // Helper function to render a metric with its metadata and calculation
   const renderMetric = (value: number, metric: OutcomeMetric) => {
-    const sensitivity = metric.calculateSensitivity(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize });
+    const sensitivity = metric.calculateSensitivity(muscleMassIncreasePerPerson, { ...model.baselineMetrics, population_size: populationSize });
     
     return (
     <div className="p-4 bg-gray-50 rounded-lg">
@@ -98,7 +101,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
         <div
           className="prose prose-sm max-w-none [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_p]:mb-2 [&_.formula]:pl-4 [&_.formula]:border-l-2 [&_.formula]:border-gray-200 [&_.formula]:my-2"
           dangerouslySetInnerHTML={{
-            __html: metric.generateCalculationExplanation(muscleMassIncrease, { ...model.baselineMetrics, population_size: populationSize })
+            __html: metric.generateCalculationExplanation(muscleMassIncreasePerPerson, { ...model.baselineMetrics, population_size: populationSize })
           }}
         />
       </div>
@@ -198,7 +201,7 @@ export const MuscleMassReport: React.FC<MuscleMassReportProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg">
             <div>
               <p className="font-medium">Muscle Mass Increase</p>
-              <p className="text-lg sm:text-xl">{muscleMassIncrease} lbs per person</p>
+              <p className="text-lg sm:text-xl">{muscleMassIncreasePerPerson} lbs per person</p>
             </div>
             <div>
               <p className="font-medium">Target Population</p>
