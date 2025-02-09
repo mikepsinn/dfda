@@ -23,12 +23,24 @@ function buildContainer() {
 }
 
 function pushContainer() {
-  console.log(`Pushing Docker image ${fullImageName}...`);
+  // Tag the image as latest
+  const latestTag = `${imageName}:latest`;
+  console.log(`Tagging Docker image as ${latestTag}...`);
   try {
-    execSync(`docker push ${fullImageName}`, { stdio: 'inherit' });
-    console.log('Docker image pushed successfully.');
+    execSync(`docker tag ${fullImageName} ${latestTag}`, { stdio: 'inherit' });
+    console.log('Docker image tagged as latest successfully.');
   } catch (error) {
-    console.error('Docker push failed:', error);
+    console.error('Docker tag failed:', error);
+    process.exit(1);
+  }
+
+  // Push all tags (both the version-specific and latest) at once
+  console.log(`Pushing all tags for ${imageName}...`);
+  try {
+    execSync(`docker push --all-tags ${imageName}`, { stdio: 'inherit' });
+    console.log('All Docker tags pushed successfully.');
+  } catch (error) {
+    console.error('Docker push for all tags failed:', error);
     process.exit(1);
   }
 }
