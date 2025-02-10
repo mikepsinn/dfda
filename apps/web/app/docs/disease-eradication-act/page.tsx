@@ -8,6 +8,7 @@ import { checkPetitionSignature } from "@/app/petitionActions"
 import { DFDAPetitionButtons } from "./components/DFDAPetitionButtons"
 import { FloatingPetitionButton } from "./components/FloatingPetitionButton"
 import DiseaseEradicationAct from "./components/disease-eradication-act"
+import { PATH_TO_DISEASE_ERADICATION_ACT } from "@/config/navigation/domains/dfda-nav"
 
 export const metadata: Metadata = {
   title: "Disease Eradication Act",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 }
 export default async function CureAccelerationPage() {
   const { html, data } = await getMarkdownContent(
-    "docs/disease-eradication-act/disease-eradication-act.md"
+    PATH_TO_DISEASE_ERADICATION_ACT
   )
 
   const hasSigned = await checkPetitionSignature(DFDA_PETITION_ID)

@@ -26,9 +26,6 @@ importers:
       '@ai-sdk/xai':
         specifier: ^1.0.6
         version: 1.1.0(zod@3.24.1)
-      '@aws-sdk/client-lightsail':
-        specifier: ^3.0.0
-        version: 3.731.1
       '@aws-sdk/client-rds':
         specifier: ^3.0.0
         version: 3.731.1
@@ -429,6 +426,9 @@ importers:
         specifier: ^4.3.9
         version: 4.5.6(@types/react@18.2.55)(react@18.2.0)
     devDependencies:
+      '@aws-sdk/client-lightsail':
+        specifier: ^3.731.1
+        version: 3.731.1
       '@flydotio/dockerfile':
         specifier: ^0.7.2
         version: 0.7.2(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.3(supports-color@8.1.1)(svelte@5.19.1)(vite@6.0.11(@types/node@20.11.17)(jiti@1.21.7)(tsx@4.19.2)(yaml@2.7.0)))(svelte@5.19.1)(vite@6.0.11(@types/node@20.11.17)(jiti@1.21.7)(tsx@4.19.2)(yaml@2.7.0)))
@@ -699,6 +699,7 @@ packages:
   '@aws-sdk/client-s3@3.731.1':
     resolution: {integrity: sha512-Ab2PA/8Th6JkurCkxnQJZHPE/JnnSsX/XHQzirkQb+JpKOyWMRC/YZUBfAaiwhxqX65RHgklrwil+UbFl4TtAQ==}
     engines: {node: '>=18.0.0'}
+    deprecated: Please upgrade to >=3.735.0, which contains fixes for checksum validation in S3 getObject calls. Details https://github.com/aws/aws-sdk-js-v3/issues/6827
 
   '@aws-sdk/client-secrets-manager@3.731.1':
     resolution: {integrity: sha512-uLyvWKOtTSxxdUjii5Xcvp6nuOw1G3cSpTRlTNXWcj5UZ1bzdZUM++koGcMQX1GPycB9IVoiiXJ/mYpZrcRLig==}

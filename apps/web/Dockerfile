@@ -17,6 +17,14 @@ ARG PNPM_VERSION=9.1.4
 RUN npm install -g pnpm@$PNPM_VERSION
 
 
+# Install Doppler CLI
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg wget && \
+    curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | tee /etc/apt/sources.list.d/doppler-cli.list && \
+    apt-get update && \
+    apt-get -y install doppler
+
+
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
@@ -24,19 +32,25 @@ FROM base AS build
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential node-gyp openssl pkg-config python-is-python3
 
-# Install node modules
+# Copy node package files and Prisma schema for installation
 COPY .npmrc package.json pnpm-lock.yaml ./
+COPY prisma/ ./prisma/
 RUN pnpm install --frozen-lockfile --prod=false
 
 # Generate Prisma Client
-COPY prisma .
 RUN npx prisma generate
 
 # Copy application code
 COPY . .
 
+# Copy .env.example to .env for build process
+RUN cp .env.example .env
+
 # Build application
 RUN npx next build --experimental-build-mode compile
+
+# Remove .env so that no environment variables are stored in the build
+RUN rm -f .env
 
 
 # Final stage for app image
@@ -52,12 +66,6 @@ COPY --from=build /app/.next/standalone /app
 COPY --from=build /app/.next/static /app/.next/static
 COPY --from=build /app/public /app/public
 
-# Adjust entrypoint to be executable on Linux
-RUN chmod +x ./docker-entrypoint.js
-
-# Entrypoint prepares the database.
-ENTRYPOINT [ "/app/docker-entrypoint.js" ]
-
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "node", "server.js" ]
+CMD [ "doppler", "run", "--", "node", "server.js" ]

@@ -7,11 +7,12 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: ${{ secrets.AWS_REGION }}
-  LIGHTSAIL_SERVICE_NAME: ${{ secrets.LIGHTSAIL_SERVICE_NAME }}
+  LIGHTSAIL_REGION: ${{ secrets.LIGHTSAIL_REGION }}
+  LIGHTSAIL_ACCESS_KEY_ID: ${{ secrets.LIGHTSAIL_ACCESS_KEY_ID }}
+  LIGHTSAIL_SECRET_ACCESS_KEY: ${{ secrets.LIGHTSAIL_SECRET_ACCESS_KEY }}
   DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
-  DOPPLER_PROJECT: ${{ secrets.DOPPLER_PROJECT }}
-  DOPPLER_CONFIG: ${{ secrets.DOPPLER_CONFIG }}
+  DOCKER_IMAGE_NAME: ${{ secrets.DOCKER_IMAGE_NAME }}
+  # DOCKER_IMAGE_TAG will be set dynamically in a step
 
 jobs:
   deploy:
@@ -23,99 +24,24 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+      - name: Set Docker image tag
+        run: echo "DOCKER_IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-      - name: Get Lightsail container service info
-        id: service-info
-        run: |
-          endpoint=$(aws lightsail get-container-services --service-name ${{ env.LIGHTSAIL_SERVICE_NAME }} --query 'containerServices[0].privateRegistryAccess.registryEndpoint' --output text)
-          echo "REGISTRY_ENDPOINT=$endpoint" >> $GITHUB_ENV
+      # Install dependencies
+      - name: Install dependencies
+        run: cd apps/web && pnpm install
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+      # Build and push container using custom script
+      - name: Build and push container
+        run: cd apps/web && npx ts-node scripts/build-and-push-container.ts
 
-      - name: Build and push
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./apps/web/Dockerfile
-          push: true
-          tags: ${{ env.REGISTRY_ENDPOINT }}/${{ env.LIGHTSAIL_SERVICE_NAME }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
+      # Deploy to Lightsail using custom script
       - name: Deploy to Lightsail
-        run: |
-          # Get current deployment state
-          aws lightsail get-container-service-deployments --service-name ${{ env.LIGHTSAIL_SERVICE_NAME }} > current-deployment.json
-
-          # Create deployment config with Doppler environment variables
-          cat > deployment.json << EOF
-          {
-            "containers": {
-              "web": {
-                "image": "${{ env.REGISTRY_ENDPOINT }}/${{ env.LIGHTSAIL_SERVICE_NAME }}:${{ github.sha }}",
-                "ports": {
-                  "3000": "HTTP"
-                },
-                "environment": {
-                  "NODE_ENV": "production",
-                  "DOPPLER_TOKEN": "${{ secrets.DOPPLER_TOKEN }}",
-                  "DOPPLER_PROJECT": "${{ secrets.DOPPLER_PROJECT }}",
-                  "DOPPLER_CONFIG": "${{ secrets.DOPPLER_CONFIG }}"
-                }
-              }
-            },
-            "publicEndpoint": {
-              "containerName": "web",
-              "containerPort": 3000,
-              "healthCheck": {
-                "healthyThreshold": 2,
-                "unhealthyThreshold": 2,
-                "timeoutSeconds": 2,
-                "intervalSeconds": 5,
-                "path": "/",
-                "successCodes": "200-499"
-              }
-            }
-          }
-          EOF
-
-          # Create new deployment
-          aws lightsail create-container-service-deployment \
-            --service-name ${{ env.LIGHTSAIL_SERVICE_NAME }} \
-            --containers file://deployment.json \
-            --public-endpoint file://deployment.json
-
-      - name: Wait for deployment
-        run: |
-          echo "Waiting for deployment to complete..."
-          while true; do
-            STATUS=$(aws lightsail get-container-services \
-              --service-name ${{ env.LIGHTSAIL_SERVICE_NAME }} \
-              --query 'containerServices[0].state' \
-              --output text)
-            
-            echo "Current status: $STATUS"
-            
-            if [ "$STATUS" = "RUNNING" ]; then
-              echo "Deployment complete!"
-              URL=$(aws lightsail get-container-services \
-                --service-name ${{ env.LIGHTSAIL_SERVICE_NAME }} \
-                --query 'containerServices[0].url' \
-                --output text)
-              echo "Application is available at: $URL"
-              break
-            elif [ "$STATUS" = "FAILED" ]; then
-              echo "Deployment failed!"
-              exit 1
-            fi
-            
-            sleep 10
-          done
+        run: cd apps/web && npx ts-node scripts/deploy-lightsail.ts
