@@ -49,6 +49,11 @@ function isValidModelName(model: string): model is ModelName {
 }
 
 export function getModelByName(modelName: ModelName = DEFAULT_MODEL_NAME): LanguageModelV1 {
+  if (!isValidModelName(modelName)) {
+    console.warn(`Invalid model name: ${modelName}, falling back to default model`);
+    return getModelByName(DEFAULT_MODEL_NAME);
+  }
+
   console.log(`🤖 Using AI model: ${modelName}`);
   
   if (modelName.includes("claude")) {

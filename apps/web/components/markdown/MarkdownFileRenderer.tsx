@@ -39,7 +39,7 @@ const MarkdownFileRenderer: FC<MarkdownRendererProps> = ({
   const [isLoading, setIsLoading] = useState(true)
   const [metadata, setMetadata] = useState<Metadata | null>(null)
 
-  const githubEditUrl = `${siteConfig.links.github}/edit/main/public${url}`
+  const githubEditUrl = `${siteConfig.links.github}/edit/master/public${url}`
   const folder = url.split("/").slice(0, -1).join("/")
 
   useEffect(() => {

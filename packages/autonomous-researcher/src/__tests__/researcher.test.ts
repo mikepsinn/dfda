@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { beforeAll, describe, expect, it, jest } from '@jest/globals';
+import { beforeAll, describe, expect, it, jest, beforeEach } from '@jest/globals';
 import { AutonomousResearcher } from '../researcher';
 
 describe("Autonomous Researcher tests", () => {
@@ -17,6 +17,10 @@ describe("Autonomous Researcher tests", () => {
     researcher = new AutonomousResearcher(exaApiKey);
   });
 
+  beforeEach(() => {
+    jest.setTimeout(120000); // 2 minutes per test
+  });
+
   it("Generates report by URL", async () => {
     const url = `https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(23)00685-0/fulltext`;
     
@@ -30,12 +34,14 @@ describe("Autonomous Researcher tests", () => {
       format: "article",
     });
 
-    expect(report).toBeDefined();
-    expect(report.title).toBeDefined();
-    expect(report.content).toBeDefined();
-    expect(report.sources).toBeInstanceOf(Array);
-    expect(report.tags).toBeInstanceOf(Array);
-    expect(report.searchResults).toBeInstanceOf(Array);
+    expect(report.title).toMatch(/^[\w\s\-:,]+$/);
+    expect(report.content.length).toBeGreaterThan(500);
+    expect(report.sources.length).toBeGreaterThan(0);
+    expect(report.sources[0]).toHaveProperty('url');
+    expect(report.sources[0]).toHaveProperty('title');
+    expect(report.tags).toHaveLength(expect.any(Number));
+    expect(report.tags[0]).toMatch(/^[\w\s\-]+$/);
+    expect(report.searchResults.length).toBeLessThanOrEqual(10);
   });
 
   it("Generates report by topic", async () => {
@@ -51,12 +57,18 @@ describe("Autonomous Researcher tests", () => {
       format: "article",
     });
 
-    expect(report).toBeDefined();
-    expect(report.title).toBeDefined();
-    expect(report.content).toBeDefined();
-    expect(report.sources).toBeInstanceOf(Array);
-    expect(report.tags).toBeInstanceOf(Array);
-    expect(report.searchResults).toBeInstanceOf(Array);
+    expect(report.title.toLowerCase()).toContain('ido1');
+    expect(report.content.length).toBeGreaterThan(500);
+    expect(report.content.toLowerCase()).toContain('depression');
+    expect(report.sources).toSatisfyAll(source => {
+      return (
+        typeof source.url === 'string' &&
+        typeof source.title === 'string' &&
+        source.url.startsWith('http')
+      );
+    });
+    expect(report.tags).toContain(expect.stringMatching(/depression|ido1/i));
+    expect(report.searchResults.length).toBeLessThanOrEqual(10);
   });
 
   it("Emits progress events", async () => {
@@ -79,4 +91,15 @@ describe("Autonomous Researcher tests", () => {
     expect(progressEvents).toContain('Writing comprehensive analysis');
     expect(progressEvents).toContain('Research complete');
   });
-}); 
+
+  it("Handles invalid URLs gracefully", async () => {
+    const invalidUrl = "https://invalid-url-that-doesnt-exist.com/article";
+    
+    await expect(researcher.research(invalidUrl, {
+      numberOfSearchQueryVariations: 1,
+      numberOfWebResultsToInclude: 5,
+      format: "article",
+    })).rejects.toThrow();
+  });
+
+});
