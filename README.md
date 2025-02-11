@@ -68,11 +68,12 @@ This is a very high-level overview of the architecture. The three primary primit
 2. [PersonalFDA Nodes](#2-personalfda-nodes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-![framework-diagram.png](apps/web/public/docs/images/dfda-framework-diagram.png)
+![framework-diagram.png](https://static.crowdsourcingcures.org/img/dfda-framework-diagram.png)
 
 ## 1. Data Silo API Gateway Nodes
 
-![dfda-gateway-api-node-silo.jpg](apps/web/public/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
+![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
+
 
 [Gateway API Nodes](apps/web/public/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
 
@@ -86,7 +87,7 @@ This is a very high-level overview of the architecture. The three primary primit
 
 ### 2.1. Digital Twin Safes
 
-![digital-twin-safe-no-text.jpg](apps/web/public/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
+![digital-twin-safe-no-text.jpg](https://static.crowdsourcingcures.org/dfda/components/digital-twin-safe/digital-twin-safe-no-text.png)
 
 A local application for self-sovereign import and storage of personal data.
 
@@ -96,14 +97,17 @@ A local application for self-sovereign import and storage of personal data.
 
 [Personal AI agents](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](apps/web/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
 
-[![data-import-and-analysis.gif](apps/web/public/docs/images/data-import-and-analysis.gif)](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
+![data-import-and-analysis.gif](https://static.crowdsourcingcures.org/img/data-import-and-analysis.gif)
+
+
 
 **👉[Learn More](apps/web/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
 
 
 ## 3. Clinipedia—The Wikipedia of Clinical Research
 
-[![clinipedia_globe_circle.jpg](apps/web/public/docs/components/clinipedia/clinipedia_globe_circle.jpg)](apps/web/public/docs/components/clinipedia/clinipedia.md)
+![clinipedia_globe_circle.jpg](https://static.crowdsourcingcures.org/dfda/components/clinipedia/clinipedia_globe_circle.png)
+
 
 The [Clinipedia wiki](apps/web/public/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
@@ -113,12 +117,13 @@ The [Clinipedia wiki](apps/web/public/docs/components/clinipedia/clinipedia.md) 
 
 A key component of Clinipedia is [**Outcome Labels**](apps/web/public/docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
 
-![outcome-labels.png](apps/web/public/docs/components/outcome-labels/outcome-labels.png)
+![outcome-labels.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)
 
 **👉 [Learn More About Outcome Labels](apps/web/public/docs/components/outcome-labels/outcome-labels.md)**
 
 
 ### Features
+
 
 * [Data Collection](apps/web/public/docs/components/data-collection/data-collection.md)
 * [Data Import](apps/web/public/docs/components/data-import/data-import.md)
@@ -134,11 +139,11 @@ A key component of Clinipedia is [**Outcome Labels**](apps/web/public/docs/compo
 
 <p align="center">
 
-<img src="apps/web/public/img/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
+<img src="https://static.crowdsourcingcures.org/img/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
 &nbsp
 </p>
 <p align="center">
-  <img src="apps/web/public/img/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
+  <img src="https://static.crowdsourcingcures.org/img/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
 </p>
 
 Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medication, and anything else from dozens
@@ -149,13 +154,13 @@ chronic illness.
 
 Web and mobile push notifications with action buttons.
 
-![web notification action buttons](apps/web/public/docs/components/data-collection/web-notification-action-buttons.png)
+![web notification action buttons](https://static.crowdsourcingcures.org/dfda/components/data-collection/web-notification-action-buttons.png)
 
 ### Browser Extensions
 
 By using the Browser Extension, you can track your mood, symptoms, or any outcome you want to optimize in a fraction of a second using a unique popup interface.
 
-![Chrome Extension](apps/web/public/docs/components/browser-extension/browser-extension.png)
+![Chrome Extension](https://static.crowdsourcingcures.org/dfda/components/browser-extension/browser-extension.png)
 
 ### Data Analysis
 
@@ -165,11 +170,6 @@ It then pairs every combination of variables and identifies likely causal relati
 
 [👉 More info about data analysis](apps/web/public/docs/components/data-analysis/data-analysis.md)
 
-### 🏷 Outcome Labels
-
-![outcome-labels-plugin.png](apps/web/public/docs/components/outcome-labels/outcome-labels.png)
-
-[More info about outcome labels](apps/web/public/docs/components/outcome-labels/outcome-labels.md)
 
 ### Real-time Decision Support Notifications
 
