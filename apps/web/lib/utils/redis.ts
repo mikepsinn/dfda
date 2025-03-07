@@ -86,7 +86,7 @@ export function getRedisClient() {
   return new Redis(process.env.REDIS_URL || "redis://localhost:6379")
 }
 
-// Our own Redis cache implementation to replace Langchain's
+// Custom Redis cache implementation
 export class RedisCache implements Cache {
   private client: Redis
   private ttl?: number
