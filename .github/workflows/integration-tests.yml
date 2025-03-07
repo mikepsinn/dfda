@@ -52,7 +52,7 @@ jobs:
       - name: Build and test web app
         working-directory: apps/web
         run: |
-          pnpm build
+          pnpm run build
           pnpm start &
           echo "Waiting for Next.js to be ready..."
           timeout 30 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:3000)" != "200" ]]; do sleep 2; done' || false
