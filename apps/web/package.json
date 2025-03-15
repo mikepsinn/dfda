@@ -53,7 +53,8 @@
     "deploy:tenant:backup": "ts-node deploy/cli.ts backup",
     "deploy:tenant:restore": "ts-node deploy/cli.ts restore",
     "deploy:tenant:migrate": "ts-node deploy/cli.ts migrate",
-    "deploy:tenant:monitor": "ts-node deploy/cli.ts monitor"
+    "deploy:tenant:monitor": "ts-node deploy/cli.ts monitor",
+    "deploy:lightsail": "tsx scripts/deploy-lightsail.ts"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -65,7 +66,6 @@
     "@ai-sdk/openai": "1.0.8",
     "@ai-sdk/provider": "1.0.2",
     "@ai-sdk/xai": "^1.0.6",
-    "@aws-sdk/client-lightsail": "^3.0.0",
     "@aws-sdk/client-rds": "^3.0.0",
     "@aws-sdk/client-s3": "^3.722.0",
     "@aws-sdk/client-secrets-manager": "^3.0.0",
@@ -201,6 +201,7 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
+    "@aws-sdk/client-lightsail": "^3.731.1",
     "@flydotio/dockerfile": "^0.7.2",
     "@playwright/test": "^1.44.1",
     "@tailwindcss/typography": "^0.5.15",
