@@ -7,6 +7,24 @@ import GoogleProvider from "next-auth/providers/google"
 import { env } from "@/env.mjs"
 import { prisma } from "@/lib/prisma"
 
+// Extend the built-in session types
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string
+      name?: string | null
+      email?: string | null
+      image?: string | null
+      role?: string | null
+    }
+  }
+  
+  interface JWT {
+    id: string
+    role?: string | null
+  }
+}
+
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   session: {
@@ -43,7 +61,7 @@ export const authOptions: NextAuthOptions = {
         session.user.name = token.name
         session.user.email = token.email
         session.user.image = token.picture
-        session.user.role = token.role
+        session.user.role = token.role as string | null
       }
       return session
     },

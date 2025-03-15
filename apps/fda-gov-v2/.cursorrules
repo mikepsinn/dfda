@@ -1,1 +1,8 @@
-Regularly run tests and ts error checks and fix everything. 
+Regularly run 
+- lint and ts fixes
+- tests
+- ts error checks 
+
+and fix everything. 
+
+Don't ask permission. Just run them and fix stuff.

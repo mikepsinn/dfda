@@ -191,16 +191,305 @@ It then pairs every combination of variables and identifies likely causal relati
 
 
 
-# Development
+## Key Components
 
-This turborepo includes the following packages/apps:
+### Applications (apps/)
 
-### Apps and Packages
+| App | Description
+|-----|-----
+| **marketplace** | Main dFDA platform web application for trial discovery and enrollment
+| **admin** | Administrative dashboard for dFDA operators
+| **sponsor-portal** | Sponsor-specific dashboard for trial creation and management
+| **digital-twin-safe-web** | Web version of the Digital Twin Safe for patient health data
+| **digital-twin-safe-mobile** | Mobile app version of Digital Twin Safe (iOS/Android)
+| **developer-portal** | Documentation and tools for third-party developers
+| **api** | Core API services for the platform
+| **auth-server** | OAuth 2.0/OpenID Connect server for authentication
+| **data-import-server** | Service for importing data from external sources
+| **reminder-service** | Scheduling and delivery of patient reminders
+| **outcomes-engine** | Analysis of trial outcomes and effectiveness rankings
+| **ai-meta-analysis** | AI-powered analysis of clinical trial data
+| **external-registry-sync** | Synchronization with ClinicalTrials.gov and other registries
+| **blockchain-node** | Blockchain node implementation
+| **smart-contract-service** | Service for interacting with smart contracts
+| **gateway-node** | Reference implementation of Gateway Node for data exchange
+| **docs** | Public documentation site
 
-- `web`: a [Next.js](https://nextjs.org/) app
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/database`: [Prisma](https://prisma.io/) ORM wrapper to manage & access your database
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Packages (packages/)
+
+| Package Category | Packages | Purpose
+|-----|-----
+| **UI & Design** | ui, icons, charts | Shared UI components and design system
+| **Core Functionality** | auth, api-client, forms, config, utils | Common utilities and functionality
+| **Domain-Specific** | trial-engine, health-connectors, insurance-api, supply-chain, outcomes | Business logic for specific domains
+| **AI & Analytics** | ai-models, meta-analysis, ai-agent, analytics | AI and data analysis capabilities
+| **Blockchain** | blockchain-core, smart-contracts, wallet, blockchain-client | Blockchain functionality
+| **Data & Integration** | database-client, registry-connectors, data-connectors | Data access and external integrations
+| **Infrastructure** | logger, testing, tsconfig | Development and operational tools
+
+
+## Technology Stack
+
+- **Frontend**: React, Next.js, React Native
+- **Backend**: Node.js, NestJS
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: OAuth 2.0/OpenID Connect
+- **API**: REST and GraphQL
+- **Blockchain**: Ethereum/Polygon (public) and Hyperledger Fabric (private)
+- **AI/ML**: TensorFlow, PyTorch, Hugging Face Transformers
+- **DevOps**: Docker, Kubernetes, GitHub Actions
+- **Monitoring**: Prometheus, Grafana, OpenTelemetry
+
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm 8+
+- Docker and Docker Compose
+- Git LFS
+
+
+### Installation
+
+1. Clone the repository:
+
+```shellscript
+git clone https://github.com/dFDA-network/dFDA-network.git
+cd dFDA-network
+```
+
+
+2. Install dependencies:
+
+```shellscript
+pnpm install
+```
+
+
+3. Set up environment variables:
+
+```shellscript
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+
+4. Start the development environment:
+
+```shellscript
+pnpm dev
+```
+
+
+
+
+### Development Environment
+
+The development environment includes:
+
+- Local PostgreSQL database
+- Local blockchain node
+- Mock Gateway Nodes
+- Simulated ClinicalTrials.gov API
+
+
+## Development Workflow
+
+### Monorepo Structure
+
+The dFDA Network uses Turborepo for monorepo management, with the following structure:
+
+```plaintext
+dFDA-network/
+├── apps/           # Deployable applications
+├── packages/       # Shared libraries
+├── tools/          # Development tools
+├── docs/           # Documentation
+├── scripts/        # Build and deployment scripts
+└── .github/        # GitHub workflows and templates
+```
+
+### Commands
+
+- `pnpm dev` - Start all applications in development mode
+- `pnpm build` - Build all applications and packages
+- `pnpm test` - Run tests across the monorepo
+- `pnpm lint` - Lint all code
+- `pnpm clean` - Clean build artifacts
+
+
+### Adding New Features
+
+1. Determine if the feature belongs in an existing app, a new app, or a shared package
+2. Create a new branch: `feature/your-feature-name`
+3. Implement the feature following the architectural guidelines
+4. Add tests and documentation
+5. Submit a pull request
+
+
+## Blockchain Integration
+
+The dFDA Network incorporates blockchain technology for:
+
+1. **Patient Identity and Consent**
+
+1. Verifiable credentials for patient identity
+2. Immutable consent records
+3. Privacy-preserving data sharing
+
+
+
+2. **Trial Smart Contracts**
+
+1. Automated trial enrollment and participation tracking
+2. Transparent protocol definitions
+3. Auditable trial history
+
+
+
+3. **Supply Chain Tracking**
+
+1. Medication provenance verification
+2. Counterfeit detection
+3. Adverse event correlation
+
+
+
+4. **Payments and Incentives**
+
+1. Automated participant compensation
+2. Deposit management
+3. Milestone-based payments
+
+
+
+
+
+### Blockchain Architecture
+
+The blockchain components are designed to integrate with existing services rather than replacing them, providing a gradual adoption path that can evolve over time.
+
+
+## Deployment
+
+The dFDA Network is designed for deployment in various environments:
+
+### Local Development
+
+- Docker Compose for local services
+- Minikube for Kubernetes testing
+
+
+### Staging Environment
+
+- Kubernetes cluster with namespaces for different components
+- CI/CD pipeline for automated deployments
+- Synthetic data for testing
+
+
+### Production Environment
+
+- Multi-region Kubernetes deployment
+- High-availability configuration
+- Disaster recovery procedures
+- HIPAA-compliant infrastructure
+
+
+### Deployment Commands
+
+- `pnpm deploy:staging` - Deploy to staging environment
+- `pnpm deploy:production` - Deploy to production environment
+- `pnpm deploy:blockchain` - Deploy blockchain nodes and contracts
+
+
+## Contributing
+
+We welcome contributions to the dFDA Network! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
+
+- Code of conduct
+- Development process
+- Pull request workflow
+- Coding standards
+- Testing requirements
+
+
+### Key Areas for Contribution
+
+- AI models for meta-analysis
+- Blockchain smart contracts
+- Gateway Node implementations
+- Mobile app features
+- Documentation and tutorials
+- Internationalization and accessibility
+
+
+## Roadmap
+
+### Phase 1: Core Infrastructure (Q1-Q2 2025)
+
+- Marketplace MVP
+- Digital Twin Safe basic functionality
+- Authentication and API foundation
+- Initial Gateway Node implementation
+
+
+### Phase 2: Enhanced Functionality (Q3-Q4 2025)
+
+- AI Meta-Analysis engine
+- ClinicalTrials.gov integration
+- Reminder system
+- Sponsor portal advanced features
+
+
+### Phase 3: Blockchain Integration (Q1-Q2 2026)
+
+- Blockchain node deployment
+- Smart contracts for trials
+- Identity and consent management
+- Supply chain tracking
+
+
+### Phase 4: Ecosystem Expansion (Q3-Q4 2026)
+
+- Developer platform and third-party apps
+- Advanced AI capabilities
+- International expansion
+- Regulatory approval pathways
+
+
+## Key Features
+
+### For Patients
+
+- Discover trials matched to your health profile
+- Securely store and control your health data
+- Track your participation and outcomes
+- Receive personalized insights and recommendations
+
+
+### For Sponsors
+
+- Create and manage decentralized trials
+- Access diverse patient populations
+- Reduce administrative overhead
+- Analyze real-time trial data
+
+
+### For Providers
+
+- Refer patients to appropriate trials
+- Monitor patient participation
+- Access comparative effectiveness data
+- Integrate with existing EHR systems
+
+
+### For Developers
+
+- Build on the dFDA API platform
+- Create specialized tools for clinical research
+- Integrate with Gateway Nodes
+- Leverage blockchain for trust and transparency
 
