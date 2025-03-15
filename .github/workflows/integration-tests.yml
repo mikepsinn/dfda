@@ -40,8 +40,8 @@ jobs:
             
       - name: Install dependencies
         run: |
-          pnpm install
           pnpm install --frozen-lockfile
+          pnpm -F dfda install --frozen-lockfile
             
       # Setup environment variables
       - name: Setup environment variables
