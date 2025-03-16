@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@ai-sdk/anthropic": "1.0.5",
+    "@ai-sdk/azure": "^0.0.41",
     "@ai-sdk/google": "1.0.10",
     "@ai-sdk/openai": "1.0.8",
     "@ai-sdk/provider": "1.0.2",

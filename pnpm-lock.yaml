@@ -166,6 +166,9 @@ importers:
       '@ai-sdk/anthropic':
         specifier: 1.0.5
         version: 1.0.5(zod@3.24.2)
+      '@ai-sdk/azure':
+        specifier: ^0.0.41
+        version: 0.0.41(zod@3.24.2)
       '@ai-sdk/google':
         specifier: 1.0.10
         version: 1.0.10(zod@3.24.2)
@@ -925,6 +928,12 @@ packages:
     peerDependencies:
       zod: ^3.0.0
 
+  '@ai-sdk/azure@0.0.41':
+    resolution: {integrity: sha512-dE2iUD1nzzseLwiP2Eu35BlZU5dPsJrcehk9Dx05o44hm+HhA0YXfN/22Nmd4g9azFefitlJeBUGZaSfsajWsQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+
   '@ai-sdk/google@1.0.10':
     resolution: {integrity: sha512-8fvwy1luTLHJmuldDp7NZM+1jo20qMhqgzmONkb2ACNwRCnHtpcLEP2j/tJ7FIFLuvl5wHQP83smKHvdyUD9qA==}
     engines: {node: '>=18'}
@@ -933,6 +942,12 @@ packages:
 
   '@ai-sdk/openai-compatible@0.1.15':
     resolution: {integrity: sha512-iuylARLylTkaVYXKdgA1GeGU2TwANaJ3RlhJqmN0cVO5uEt3qVKvedrzR3jrQIyy9hu3gngsiXfFBMW2UQ7Ntg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+
+  '@ai-sdk/openai@0.0.63':
+    resolution: {integrity: sha512-VX4yDfP1zoKIoKqkFuBJGPjQ7aYFxE2GgPW8hMAolCBolQyx3+0+mgID+JmU5Jaq3PAPWtxWuuiwasPqh+e8zQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -10365,6 +10380,13 @@ snapshots:
       '@ai-sdk/provider-utils': 2.0.4(zod@3.24.2)
       zod: 3.24.2
 
+  '@ai-sdk/azure@0.0.41(zod@3.24.2)':
+    dependencies:
+      '@ai-sdk/openai': 0.0.63(zod@3.24.2)
+      '@ai-sdk/provider': 0.0.24
+      '@ai-sdk/provider-utils': 1.0.20(zod@3.24.2)
+      zod: 3.24.2
+
   '@ai-sdk/google@1.0.10(zod@3.24.2)':
     dependencies:
       '@ai-sdk/provider': 1.0.2
@@ -10375,6 +10397,12 @@ snapshots:
     dependencies:
       '@ai-sdk/provider': 1.0.11
       '@ai-sdk/provider-utils': 2.1.13(zod@3.24.2)
+      zod: 3.24.2
+
+  '@ai-sdk/openai@0.0.63(zod@3.24.2)':
+    dependencies:
+      '@ai-sdk/provider': 0.0.24
+      '@ai-sdk/provider-utils': 1.0.20(zod@3.24.2)
       zod: 3.24.2
 
   '@ai-sdk/openai@1.0.8(zod@3.24.2)':
