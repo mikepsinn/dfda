@@ -22,7 +22,7 @@ describe('Muscle Mass Report Generation', () => {
         // Calculate impacts
         const metabolic = model.calculate_metabolic_impact();
         const health = model.calculate_health_outcomes();
-        const economic = model.calculate_economic_impact(populationSize);
+        const economic = model.calculate_economic_impact();
         
         // Get baseline metrics
         const baselineMetrics = model.baselineMetrics;
