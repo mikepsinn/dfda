@@ -42,7 +42,7 @@ describe('Configuration', () => {
       const jsxContent = '<Link href="/about">About</Link>';
       fs.writeFileSync(jsxFilePath, jsxContent);
 
-      const results = await scanLinks(testDir, ['*.md']);
+      const results = await scanLinks(testDir, { exclude: ['*.md'] });
       expect(results).toHaveLength(1);
       expect(results[0].url).toBe('/about');
     });
@@ -51,17 +51,16 @@ describe('Configuration', () => {
   describe('Skip Configuration', () => {
     it('should create and load skip configuration', async () => {
       const config: SkipConfig = {
-        skippedLinks: [
-          {
-            url: 'https://example.com',
-            reason: 'Test skip',
-            addedAt: new Date().toISOString(),
-          },
-        ],
+        skippedLinks: [{
+          url: 'https://example.com',
+          statusCode: 404,
+          location: { filePath: 'test.md', lineNumber: 1, columnNumber: 1 },
+          lastChecked: Date.now()
+        }]
       };
 
-      await saveSkipConfig(config, skipConfigPath);
-      const loadedConfig = await loadSkipConfig(skipConfigPath);
+      await saveSkipConfig(config, { configPath: skipConfigPath });
+      const loadedConfig = await loadSkipConfig({ configPath: skipConfigPath });
       expect(loadedConfig).toEqual(config);
     });
 
@@ -70,22 +69,53 @@ describe('Configuration', () => {
         skippedLinks: [],
       };
 
-      await saveSkipConfig(initialConfig, skipConfigPath);
+      await saveSkipConfig(initialConfig, { configPath: skipConfigPath });
 
       const linkToSkip: LinkInfo = {
         url: 'https://example.com',
-        filePath: 'test.md',
-        line: 1,
-        column: 1,
+        location: { filePath: 'test.md', lineNumber: 1, columnNumber: 1 }
       };
 
-      const reason = 'Test skip';
-      await updateSkipConfig(skipConfigPath, linkToSkip, reason);
-
-      const updatedConfig = await loadSkipConfig(skipConfigPath);
+      await updateSkipConfig([linkToSkip], { configPath: skipConfigPath });
+      const updatedConfig = await loadSkipConfig({ configPath: skipConfigPath });
       expect(updatedConfig.skippedLinks).toHaveLength(1);
       expect(updatedConfig.skippedLinks[0].url).toBe(linkToSkip.url);
-      expect(updatedConfig.skippedLinks[0].reason).toBe(reason);
     });
+  });
+
+  const mockFiles = [
+    path.join(process.cwd(), 'test1.md'),
+    path.join(process.cwd(), 'test2.md')
+  ];
+
+  beforeEach(() => {
+    jest.resetAllMocks();
+    const fg = require('fast-glob');
+    fg.mockResolvedValue(mockFiles);
+  });
+
+  it('should respect custom cwd option', async () => {
+    const fs = require('fs');
+    fs.readFileSync.mockReturnValue('# Test\n[Link](https://example.com)');
+
+    const customCwd = '/custom/path';
+    const result = await scanLinks('**/*.md', { cwd: customCwd });
+    const allLinks = [...result.valid, ...result.invalid];
+    
+    expect(allLinks.length).toBe(2);
+    expect(allLinks[0]).toEqual({
+      url: 'https://example.com',
+      filePath: 'test1.md',
+      lineNumber: 1
+    });
+  });
+
+  it('should respect exclude patterns', async () => {
+    const fs = require('fs');
+    fs.readFileSync.mockReturnValue('# Test\n[Link](https://example.com)');
+
+    const result = await scanLinks('**/*.md', { exclude: ['test2.md'] });
+    const allLinks = [...result.valid, ...result.invalid];
+    expect(allLinks.length).toBe(1);
   });
 });

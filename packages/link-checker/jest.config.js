@@ -1,23 +1,14 @@
+/** @type {import('jest').Config} */
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ['<rootDir>/tests'],
-  testMatch: [
-    '**/__tests__/**/*.+(ts|tsx|js)',
-    '**/?(*.)+(spec|test).+(ts|tsx|js)'
-  ],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest'
-  },
-  coverageDirectory: 'coverage',
-  collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!src/**/*.d.ts'
-  ],
-  moduleNameMapper: {
-    '^node-fetch$': 'node-fetch/lib/index.js'
+    '^.+\\.tsx?$': 'ts-jest'
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(node-fetch)/)'
-  ]
-}; 
+    'node_modules/(?!(unified|remark-parse|remark-rehype|rehype-parse|unist-util-visit)/.*)'
+  ],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1'
+  }
+} 

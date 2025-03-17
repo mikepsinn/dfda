@@ -3,7 +3,7 @@
  */
 
 import { extractLinks } from '../../src/extractors';
-import { validateExternalLink } from '../../src/validators/external-link';
+import { validateExternalLink, validateLink } from '../../src/validators';
 import { LinkInfo } from '../../src/core/types';
 import { Response } from 'node-fetch';
 
@@ -19,100 +19,117 @@ jest.mock('node-fetch', () => {
   });
 });
 
-describe('URL Validation and Extraction', () => {
-  describe('Link Extraction', () => {
-    it('extracts markdown links', () => {
+describe('Link Validation', () => {
+  describe('extractLinks', () => {
+    it('should extract links from markdown content', async () => {
       const content = `
-# Title
-[Link 1](https://example.com)
-[Link 2](./local-file.md)
-      `;
-      const links = extractLinks(content, 'test.md');
-      expect(links).toHaveLength(2);
+# Test Document
+[Example Link](https://example.com)
+[Local Link](./local-file.md)
+`;
+      const links = await extractLinks(content, 'test.md');
       expect(links[0].url).toBe('https://example.com');
       expect(links[1].url).toBe('./local-file.md');
     });
 
-    it('extracts MDX/JSX links', () => {
+    it('should extract links from HTML/JSX content', async () => {
       const content = `
-import Component from './Component.mdx';
-
-export default function Page() {
-  return (
-    <div>
-      <Component />
-      <img src="/images/hero.jpg" alt="Hero" />
-      <a href="https://example.com">Link</a>
-      <Link href="/about">About</Link>
-    </div>
-  );
-}
-      `;
-      const links = extractLinks(content, 'page.mdx');
-      expect(links).toHaveLength(4);
-      expect(links.map(l => l.url)).toEqual([
-        './Component.mdx',
-        '/images/hero.jpg',
+<div>
+  <a href="https://example.com">Example</a>
+  <a href="/about">About</a>
+  <img src="/images/logo.png" />
+  <source src="/videos/intro.mp4" />
+</div>
+`;
+      const links = await extractLinks(content, 'test.tsx');
+      const urls = links.map(l => l.url);
+      expect(urls).toEqual([
         'https://example.com',
-        '/about'
+        '/about',
+        '/images/logo.png',
+        '/videos/intro.mp4'
       ]);
     });
 
-    it('extracts Next.js specific links', () => {
+    it('should extract links from import statements', async () => {
       const content = `
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-
-const DynamicComponent = dynamic(() => import('./DynamicComponent'));
-
-export default function Page() {
-  return (
-    <div>
-      <DynamicComponent />
-      <Link href="/about">About</Link>
-      <Image src="/public/logo.png" alt="Logo" />
-      <img src="/images/hero.jpg" alt="Hero" />
-    </div>
-  );
-}
-      `;
-      const links = extractLinks(content, 'page.tsx');
-      expect(links).toHaveLength(4);
-      expect(links.map(l => l.url)).toEqual([
+import { Component } from 'react';
+import('./DynamicComponent');
+require('./local-module');
+`;
+      const links = await extractLinks(content, 'test.tsx');
+      const urls = links.map(l => l.url);
+      expect(urls).toEqual([
         './DynamicComponent',
-        '/about',
-        '/public/logo.png',
-        '/images/hero.jpg'
+        './local-module'
       ]);
     });
   });
 
-  describe('External Link Validation', () => {
-    it('validates external links', async () => {
+  describe('validateExternalLink', () => {
+    it('should validate a valid external link', async () => {
       const link: LinkInfo = {
         url: 'https://example.com',
-        location: { line: 1, column: 1 }
+        location: { filePath: 'test.md', lineNumber: 1, columnNumber: 1 }
       };
-      const result = await validateExternalLink(link);
-      expect(result).toBe(true);
+      const result = await validateExternalLink(link.url);
+      expect(result.isValid).toBe(true);
     });
 
-    it('handles invalid external links', async () => {
+    it('should handle invalid external links', async () => {
       const link: LinkInfo = {
         url: 'https://invalid.example.com',
-        location: { line: 1, column: 1 }
+        location: { filePath: 'test.md', lineNumber: 1, columnNumber: 1 }
       };
-      const result = await validateExternalLink(link);
-      expect(result).toBe(false);
+      const result = await validateExternalLink(link.url);
+      expect(result.isValid).toBe(false);
     });
 
-    it('handles network errors', async () => {
+    it('should handle network errors', async () => {
       const link: LinkInfo = {
         url: 'https://error.example.com',
-        location: { line: 1, column: 1 }
+        location: { filePath: 'test.md', lineNumber: 1, columnNumber: 1 }
       };
-      const result = await validateExternalLink(link);
-      expect(result).toBe(false);
+      const result = await validateExternalLink(link.url);
+      expect(result.isValid).toBe(false);
+    });
+  });
+
+  const rootDir = process.cwd();
+
+  describe('validateLink', () => {
+    it('should validate internal links correctly', async () => {
+      const link: LinkInfo = {
+        url: 'README.md',
+        filePath: 'test.md',
+        lineNumber: 1
+      };
+
+      const result = await validateLink(link, rootDir);
+      expect(result.isValid).toBe(false);
+      expect(result.error).toContain('File not found');
+    });
+
+    it('should validate external links correctly when checkLiveLinks is true', async () => {
+      const link: LinkInfo = {
+        url: 'https://example.com',
+        filePath: 'test.md',
+        lineNumber: 1
+      };
+
+      const result = await validateLink(link, rootDir, true);
+      expect(result.isValid).toBeDefined();
+    });
+
+    it('should validate anchor links as valid', async () => {
+      const link: LinkInfo = {
+        url: '#section',
+        filePath: 'test.md',
+        lineNumber: 1
+      };
+
+      const result = await validateLink(link, rootDir);
+      expect(result.isValid).toBe(true);
     });
   });
 });

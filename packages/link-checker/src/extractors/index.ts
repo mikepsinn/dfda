@@ -1,59 +1,87 @@
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeParse from 'rehype-parse';
+import { visit } from 'unist-util-visit';
 import { LinkInfo } from '../core/types';
 
-// Regular expressions for different types of links
-const URL_REGEX = /https?:\/\/[^\s<>"')\]]+/g;
-const MARKDOWN_LINK_REGEX = /\[([^\]]*?)\]\(([^\s)]+)\)/g;
-const HTML_LINK_REGEX = /(?:href|src)=["']([^"']+)["']/g;
-const IMPORT_REGEX = /(?:import|require)\(?['"]([^'"]+)['"]\)?/g;
-const DYNAMIC_IMPORT_REGEX = /dynamic\(\(\)\s*=>\s*import\(['"]([^'"]+)['"]\)\)/g;
-const MDX_IMPORT_REGEX = /import\s+(?:[A-Z][A-Za-z0-9]*\s+from\s+)?['"]([^'"]+\.(?:jsx?|tsx?|mdx?))['"]/g;
-const NEXTJS_LINK_REGEX = /<Link\s+[^>]*href=["']([^"']+)["']/g;
-const NEXTJS_IMAGE_REGEX = /<Image\s+[^>]*src=["']([^"']+)["']/g;
+function getLineNumber(content: string, index: number): number {
+  const lines = content.slice(0, index).split('\n');
+  return lines.length;
+}
 
-export function extractLinks(content: string, filePath: string): LinkInfo[] {
+function getColumnNumber(content: string, index: number): number {
+  const lines = content.slice(0, index).split('\n');
+  const lastLine = lines[lines.length - 1];
+  return lastLine.length + 1;
+}
+
+export async function extractLinks(content: string, filePath: string): Promise<LinkInfo[]> {
   const links: LinkInfo[] = [];
-  const seenUrls = new Set<string>();
-  const lines = content.split('\n');
 
-  lines.forEach((line, index) => {
-    // Skip comment lines
-    if (line.trim().startsWith('//') || line.trim().startsWith('/*')) {
-      return;
-    }
-
-    const regexes = [
-      NEXTJS_LINK_REGEX,
-      NEXTJS_IMAGE_REGEX,
-      MARKDOWN_LINK_REGEX,
-      HTML_LINK_REGEX,
-      IMPORT_REGEX,
-      DYNAMIC_IMPORT_REGEX,
-      MDX_IMPORT_REGEX,
-      URL_REGEX
-    ];
-
-    for (const regex of regexes) {
-      let match;
-      while ((match = regex.exec(line)) !== null) {
-        const url = match[1] || match[0];
-        if (!seenUrls.has(url)) {
-          seenUrls.add(url);
-          links.push({
-            url,
-            location: {
-              filePath,
-              lineNumber: index + 1,
-              columnNumber: getColumnNumber(line, match.index)
-            }
-          });
-        }
+  // Extract import statements using regex
+  const importRegex = /(?:import|require)\s*\(['"]([^'"]+)['"]\)/g;
+  let match;
+  while ((match = importRegex.exec(content)) !== null) {
+    links.push({
+      url: match[1],
+      location: {
+        filePath,
+        lineNumber: getLineNumber(content, match.index),
+        columnNumber: getColumnNumber(content, match.index)
       }
+    });
+  }
+
+  // Parse Markdown content
+  if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) {
+    const processor = unified()
+      .use(remarkParse)
+      .use(remarkRehype);
+
+    const ast = processor.parse(content);
+
+    visit(ast, ['link', 'image'], (node: any) => {
+      if (node.url) {
+        links.push({
+          url: node.url,
+          location: {
+            filePath,
+            lineNumber: node.position?.start.line || 1,
+            columnNumber: node.position?.start.column || 1
+          }
+        });
+      }
+    });
+  }
+
+  // Parse HTML/JSX content
+  const processor = unified()
+    .use(rehypeParse, { fragment: true });
+
+  const htmlAst = processor.parse(content);
+
+  visit(htmlAst, 'element', (node: any) => {
+    if (node.tagName === 'a' && node.properties?.href) {
+      links.push({
+        url: node.properties.href.toString(),
+        location: {
+          filePath,
+          lineNumber: node.position?.start.line || 1,
+          columnNumber: node.position?.start.column || 1
+        }
+      });
+    } else if ((node.tagName === 'img' || node.tagName === 'source') && node.properties?.src) {
+      links.push({
+        url: node.properties.src.toString(),
+        location: {
+          filePath,
+          lineNumber: node.position?.start.line || 1,
+          columnNumber: node.position?.start.column || 1
+        }
+      });
     }
   });
 
   return links;
-}
-
-function getColumnNumber(line: string, index: number): number {
-  return line.slice(0, index).length + 1;
 }

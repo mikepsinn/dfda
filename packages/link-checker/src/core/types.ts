@@ -1,39 +1,29 @@
 export interface LinkLocation {
   filePath: string;
   lineNumber: number;
-  columnNumber?: number;
+  columnNumber: number;
 }
 
 export interface LinkInfo {
   url: string;
-  location: LinkLocation;
-  isValid?: boolean;
-  error?: string;
-  statusCode?: number;
+  filePath: string;
+  lineNumber: number;
+  validationResult?: ValidationResult;
 }
 
 export interface ScanOptions {
-  // Whether to validate external URLs (HTTP/HTTPS)
+  /** Working directory for resolving relative paths */
+  cwd?: string;
+  /** Glob patterns to exclude */
+  exclude?: string[];
+  /** Whether to check if external links are live */
   checkLiveLinks?: boolean;
-  
-  // Glob patterns for files to include in the scan
-  includePatterns?: string[];
-  
-  // Glob patterns for files to exclude from the scan
-  excludePatterns?: string[];
-  
-  // Maximum number of concurrent requests for link validation
-  concurrent?: number;
-  
-  // Timeout in milliseconds for external link validation
-  timeout?: number;
 }
 
 export interface ValidationResult {
   isValid: boolean;
+  statusCode?: number;
   error?: string;
-  filePath?: string;
-  lineNumber?: number;
 }
 
 export interface BrokenLink {
@@ -43,19 +33,16 @@ export interface BrokenLink {
   error: string;
 }
 
-export function formatBrokenLinksTable(brokenLinks: BrokenLink[]): string {
-  const maxUrlWidth = Math.max(...brokenLinks.map(link => link.url.length), 10);
-  const maxPathWidth = Math.max(...brokenLinks.map(link => link.filePath.length), 10);
-  const maxErrorWidth = Math.max(...brokenLinks.map(link => link.error.length), 10);
+export function formatBrokenLinksTable(links: BrokenLink[]): string {
+  if (links.length === 0) return 'No broken links found!';
 
-  const header = `| ${'URL'.padEnd(maxUrlWidth)} | ${'File Path'.padEnd(maxPathWidth)} | ${'Line'.toString().padEnd(6)} | ${'Error'.padEnd(maxErrorWidth)} |\n` +
-                 `|${'-'.repeat(maxUrlWidth + 2)}|${'-'.repeat(maxPathWidth + 2)}|${'-'.repeat(8)}|${'-'.repeat(maxErrorWidth + 2)}|`;
+  const table = ['File | Line | URL | Error', '-----|------|-----|-------'];
 
-  const rows = brokenLinks.map(link => 
-    `| ${link.url.padEnd(maxUrlWidth)} | ${link.filePath.padEnd(maxPathWidth)} | ${link.lineNumber.toString().padEnd(6)} | ${link.error.padEnd(maxErrorWidth)} |`
-  ).join('\n');
+  links.forEach(link => {
+    table.push(`${link.filePath} | ${link.lineNumber} | ${link.url} | ${link.error}`);
+  });
 
-  return `${header}\n${rows}`;
+  return table.join('\n');
 }
 
 export interface SkipConfig {

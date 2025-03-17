@@ -1,88 +1,69 @@
 import { readFileSync } from 'fs';
 import { relative } from 'path';
-import { glob } from 'glob';
-import { LinkInfo, LinkLocation, ScanOptions, ValidationResult } from './types';
-import { validateInternalLink } from '../validators/internal';
-import { validateExternalLink } from '../validators/external';
-import { extractLinks as extractMarkdownLinks } from '../extractors/markdown';
-import { extractLinks as extractJsxLinks } from '../extractors/jsx';
-import * as fs from 'fs';
-import * as path from 'path';
+import fg from 'fast-glob';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
+import { visit } from 'unist-util-visit';
+import { LinkInfo } from './types';
+import { validateLink } from '../validators';
 
-async function validateLink(link: LinkInfo, rootDir: string, checkLiveLinks: boolean): Promise<ValidationResult> {
-  try {
-    // Check if it's an external URL
-    const isExternal = /^https?:\/\//i.test(link.url);
-
-    if (isExternal) {
-      if (checkLiveLinks) {
-        return await validateExternalLink(link);
-      } else {
-        // Basic URL validation for external links when not checking live
-        try {
-          new URL(link.url);
-          return { isValid: true };
-        } catch {
-          return { isValid: false, error: 'Invalid URL format' };
-        }
-      }
-    } else {
-      // Internal link validation
-      return await validateInternalLink(link, rootDir);
-    }
-  } catch (e) {
-    return { 
-      isValid: false, 
-      error: e instanceof Error ? e.message : 'Unknown error' 
-    };
-  }
-}
-
-export async function scanLinks(directory: string, exclude?: string[]): Promise<LinkInfo[]> {
+async function extractLinks(content: string, filePath: string): Promise<LinkInfo[]> {
   const links: LinkInfo[] = [];
-  const files = glob.sync('**/*.{md,mdx,js,jsx,ts,tsx}', {
-    cwd: directory,
-    ignore: exclude || [],
-    absolute: true
+  const processor = remark().use(remarkHtml);
+  const ast = processor.parse(content);
+
+  visit(ast, 'link', (node: any) => {
+    links.push({
+      url: node.url,
+      filePath,
+      lineNumber: node.position?.start.line || 0
+    });
   });
-
-  for (const file of files) {
-    const content = fs.readFileSync(file, 'utf-8');
-    const ext = path.extname(file);
-    const filePath = path.relative(directory, file);
-
-    if (ext === '.md') {
-      links.push(...extractMarkdownLinks(content, filePath));
-    } else {
-      links.push(...extractJsxLinks(content, filePath));
-    }
-  }
 
   return links;
 }
 
-export function formatReport(results: LinkInfo[]): string {
-  const validLinks = results.filter(r => r.isValid);
-  const invalidLinks = results.filter(r => !r.isValid);
+export async function scanLinks(patterns: string | string[], options: {
+  cwd?: string;
+  exclude?: string[];
+  checkLiveLinks?: boolean;
+} = {}): Promise<{
+  valid: LinkInfo[];
+  invalid: LinkInfo[];
+}> {
+  const globOptions = {
+    cwd: options.cwd || process.cwd(),
+    ignore: options.exclude || [],
+    absolute: true
+  };
 
-  let report = 'Link Checker Report\n';
-  report += '=================\n\n';
-  report += `Total Links: ${results.length}\n`;
-  report += `Valid Links: ${validLinks.length}\n`;
-  report += `Invalid Links: ${invalidLinks.length}\n`;
+  const files = await fg(patterns, globOptions);
+  const results: LinkInfo[] = [];
 
-  if (invalidLinks.length > 0) {
-    report += '\nInvalid Links:\n';
-    report += '-------------\n\n';
-    invalidLinks.forEach(link => {
-      report += `URL: ${link.url}\n`;
-      report += `Location: ${link.location.filePath}:${link.location.lineNumber}\n`;
-      if (link.error) {
-        report += `Error: ${link.error}\n`;
+  for (const file of files) {
+    const content = readFileSync(file, 'utf-8');
+    const relativeFilePath = relative(globOptions.cwd, file);
+    const fileLinks = await extractLinks(content, relativeFilePath);
+    
+    if (options.checkLiveLinks) {
+      for (const link of fileLinks) {
+        const validationResult = await validateLink(link, globOptions.cwd, true);
+        link.validationResult = validationResult;
       }
-      report += '\n';
-    });
+    }
+
+    results.push(...fileLinks);
   }
 
-  return report;
+  return {
+    valid: results.filter(link => !link.validationResult || link.validationResult.isValid),
+    invalid: results.filter(link => link.validationResult && !link.validationResult.isValid)
+  };
+}
+
+export function filterValidLinks(links: LinkInfo[]): { valid: LinkInfo[]; invalid: LinkInfo[] } {
+  return {
+    valid: links.filter(link => !link.error),
+    invalid: links.filter(link => link.error)
+  };
 }
