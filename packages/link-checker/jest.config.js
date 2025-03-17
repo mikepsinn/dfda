@@ -13,5 +13,11 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/*.d.ts'
+  ],
+  moduleNameMapper: {
+    '^node-fetch$': 'node-fetch/lib/index.js'
+  },
+  transformIgnorePatterns: [
+    'node_modules/(?!(node-fetch)/)'
   ]
 }; 

@@ -1,34 +1,91 @@
+/**
+ * @jest-environment node
+ */
+
 import { scanLinks } from '../../src/core/scanner';
-import { formatReport } from '../../src/core/scanner';
+import { loadSkipConfig, saveSkipConfig, updateSkipConfig } from '../../src/core/skip-config';
+import type { LinkInfo, SkipConfig } from '../../src/core/types';
+import fs from 'fs';
 import path from 'path';
+import os from 'os';
 
-describe('Configuration and Performance', () => {
-  const testDir = path.join(__dirname, '../fixtures');
+describe('Configuration', () => {
+  let testDir: string;
+  let skipConfigPath: string;
 
-  it('should respect concurrent option', async () => {
-    const results = await scanLinks(testDir, { concurrent: 2 });
-    expect(results).toBeDefined();
+  beforeEach(() => {
+    testDir = fs.mkdtempSync(path.join(os.tmpdir(), 'link-checker-test-'));
+    skipConfigPath = path.join(testDir, 'link-checker-skip.json');
   });
 
-  it('should respect timeout option', async () => {
-    const results = await scanLinks(testDir, { timeout: 1000 });
-    expect(results).toBeDefined();
+  afterEach(() => {
+    fs.rmSync(testDir, { recursive: true, force: true });
   });
 
-  it('should generate detailed report', async () => {
-    const results = await scanLinks(testDir);
-    const report = formatReport(results);
-    
-    expect(report).toContain('Link Checker Report');
-    expect(report).toContain('Total Links');
-    expect(report).toContain('Valid Links');
-    expect(report).toContain('Invalid Links');
+  describe('Basic Configuration', () => {
+    it('scans files with default configuration', async () => {
+      const filePath = path.join(testDir, 'test.md');
+      const content = '[Test Link](https://example.com)';
+      fs.writeFileSync(filePath, content);
+
+      const links = await scanLinks([filePath]);
+      expect(links).toHaveLength(1);
+      expect(links[0].url).toBe('https://example.com');
+    });
+
+    it('scans files with exclude patterns', async () => {
+      const mdFilePath = path.join(testDir, 'test.md');
+      const mdContent = '[Test Link](https://example.com)';
+      fs.writeFileSync(mdFilePath, mdContent);
+
+      const jsxFilePath = path.join(testDir, 'test.jsx');
+      const jsxContent = '<Link href="/about">About</Link>';
+      fs.writeFileSync(jsxFilePath, jsxContent);
+
+      const results = await scanLinks(testDir, ['*.md']);
+      expect(results).toHaveLength(1);
+      expect(results[0].url).toBe('/about');
+    });
   });
 
-  it('should cache results for repeated scans', async () => {
-    const firstScan = await scanLinks(testDir);
-    const secondScan = await scanLinks(testDir);
-    
-    expect(firstScan).toEqual(secondScan);
+  describe('Skip Configuration', () => {
+    it('should create and load skip configuration', async () => {
+      const config: SkipConfig = {
+        skippedLinks: [
+          {
+            url: 'https://example.com',
+            reason: 'Test skip',
+            addedAt: new Date().toISOString(),
+          },
+        ],
+      };
+
+      await saveSkipConfig(config, skipConfigPath);
+      const loadedConfig = await loadSkipConfig(skipConfigPath);
+      expect(loadedConfig).toEqual(config);
+    });
+
+    it('should update skip configuration', async () => {
+      const initialConfig: SkipConfig = {
+        skippedLinks: [],
+      };
+
+      await saveSkipConfig(initialConfig, skipConfigPath);
+
+      const linkToSkip: LinkInfo = {
+        url: 'https://example.com',
+        filePath: 'test.md',
+        line: 1,
+        column: 1,
+      };
+
+      const reason = 'Test skip';
+      await updateSkipConfig(skipConfigPath, linkToSkip, reason);
+
+      const updatedConfig = await loadSkipConfig(skipConfigPath);
+      expect(updatedConfig.skippedLinks).toHaveLength(1);
+      expect(updatedConfig.skippedLinks[0].url).toBe(linkToSkip.url);
+      expect(updatedConfig.skippedLinks[0].reason).toBe(reason);
+    });
   });
 });

@@ -1,8 +1,10 @@
-export { scanLinks } from './scanner';
-export { validateLink } from './validators/external';
+export { scanLinks } from './core/scanner';
+export { loadSkipConfig, saveSkipConfig, updateSkipConfig } from './core/skip-config';
 export type {
   LinkInfo,
   LinkLocation,
-  LinkValidator,
-  ScanOptions
-} from './types'; 
+  ScanOptions,
+  SkipConfig,
+  SkipConfigOptions,
+  SkipConfigResult
+} from './core/types'; 

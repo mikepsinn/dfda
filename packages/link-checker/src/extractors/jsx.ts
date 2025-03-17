@@ -1,44 +1,67 @@
-import { LinkInfo } from '../types';
+import { LinkInfo } from '../core/types';
 
-// Regex for Next.js Link components
-const NEXT_LINK_REGEX = /(?:<Link[^>]*href=["']([^"']+)["'][^>]*>|href=["']([^"']+)["'])/g;
+// Regex for JSX attributes
+const HREF_REGEX = /href=["']([^"']+)["']/g;
+const SRC_REGEX = /src=["']([^"']+)["']/g;
 
-// Regex for string literals in JSX attributes
-const STRING_LITERAL_REGEX = /(?:href|to|url|path)=["']([^"']+)["']/g;
+// Regex for dynamic imports
+const DYNAMIC_IMPORT_REGEX = /import\(['"]([^'"]+)['"]\)/g;
 
-export function extractJsxLinks(content: string, filePath: string): LinkInfo[] {
+function isValidUrl(url: string): boolean {
+  return url.startsWith('/') || url.startsWith('./') || url.startsWith('../') || url.startsWith('http');
+}
+
+export function extractLinks(content: string, filePath: string): LinkInfo[] {
   const links: LinkInfo[] = [];
+  const seenUrls = new Set<string>();
+
   const lines = content.split('\n');
-
-  lines.forEach((line, index) => {
-    // Find Next.js Link components and href attributes
+  lines.forEach((line, lineIndex) => {
     let match;
-    while ((match = NEXT_LINK_REGEX.exec(line)) !== null) {
-      const url = (match[1] || match[2]).trim();
-      links.push({
-        url,
-        location: {
-          filePath,
-          lineNumber: index + 1,
-          columnNumber: match.index + match[0].indexOf(url)
-        }
-      });
-    }
 
-    // Find other URL string literals
-    while ((match = STRING_LITERAL_REGEX.exec(line)) !== null) {
-      const url = match[1].trim();
-      // Skip if already found by NEXT_LINK_REGEX
-      if (!links.some(link => 
-        link.location.lineNumber === index + 1 && 
-        link.url === url
-      )) {
+    // Extract href attributes
+    while ((match = HREF_REGEX.exec(line)) !== null) {
+      const [, url] = match;
+      if (isValidUrl(url) && !seenUrls.has(url)) {
+        seenUrls.add(url);
         links.push({
           url,
           location: {
             filePath,
-            lineNumber: index + 1,
-            columnNumber: match.index + match[0].indexOf(url)
+            lineNumber: lineIndex + 1,
+            columnNumber: match.index + 6 // href="
+          }
+        });
+      }
+    }
+
+    // Extract src attributes
+    while ((match = SRC_REGEX.exec(line)) !== null) {
+      const [, url] = match;
+      if (isValidUrl(url) && !seenUrls.has(url)) {
+        seenUrls.add(url);
+        links.push({
+          url,
+          location: {
+            filePath,
+            lineNumber: lineIndex + 1,
+            columnNumber: match.index + 5 // src="
+          }
+        });
+      }
+    }
+
+    // Extract dynamic imports
+    while ((match = DYNAMIC_IMPORT_REGEX.exec(line)) !== null) {
+      const [, url] = match;
+      if (isValidUrl(url) && !seenUrls.has(url)) {
+        seenUrls.add(url);
+        links.push({
+          url,
+          location: {
+            filePath,
+            lineNumber: lineIndex + 1,
+            columnNumber: match.index + 8 // import('
           }
         });
       }

@@ -4,7 +4,8 @@
 
 import fs from 'fs'
 import path from 'path'
-import { checkLinks, LinkLocation, LinkInfo } from '../../../packages/link-checker/src/core/types'
+import { resolve } from 'path'
+import { scanLinks, updateSkipConfig, type LinkInfo, type LinkLocation } from '@decentralized-fda/link-checker'
 
 // Configuration for skipped links
 const SKIP_CONFIG_FILE = path.join(process.cwd(), 'link-checker-skip.json')
@@ -62,74 +63,103 @@ function loadSkipConfig(): SkipConfig {
 }
 
 // Save failed and successful links to skip config
-function updateSkipConfig(results: LinkCheckResult[]) {
-  const config = loadSkipConfig()
-  const now = new Date().toISOString()
-  
-  // Process all results
-  results.forEach(link => {
-    // Convert absolute path to relative path
-    const relativePath = path.relative(process.cwd(), link.location.filePath)
-    const locationStr = `${relativePath}:${link.location.lineNumber}`
-    const isExternal = link.url.startsWith('http')
-    
-    if (link.isValid) {
-      // Handle successful links
-      const linkData = {
-        url: link.url,
-        statusCode: link.statusCode || 200,
-        location: locationStr,
-        lastChecked: now
-      }
+function updateSkipConfig(results: LinkInfo[]) {
+  const configPath = path.resolve(process.cwd(), 'link-checker-skip.json')
+  console.log('\nDebug: Current working directory:', process.cwd())
+  console.log('Debug: Absolute config path:', configPath)
 
-      if (isExternal) {
-        const existingIndex = config.successfulExternalLinks.findIndex(s => s.url === link.url)
-        if (existingIndex >= 0) {
-          config.successfulExternalLinks[existingIndex] = linkData
-        } else {
-          config.successfulExternalLinks.push(linkData)
-        }
+  // Check if directory exists and is writable
+  const configDir = path.dirname(configPath)
+  console.log('Debug: Config directory:', configDir)
+  
+  try {
+    // Create directory if it doesn't exist
+    if (!fs.existsSync(configDir)) {
+      console.log('Debug: Creating directory:', configDir)
+      fs.mkdirSync(configDir, { recursive: true })
+    }
+
+    // Verify directory exists and is writable
+    try {
+      fs.accessSync(configDir, fs.constants.W_OK)
+      console.log('Debug: Directory is writable:', configDir)
+    } catch (accessError) {
+      console.error('Debug: Directory is not writable:', accessError)
+      throw accessError
+    }
+
+    const config = {
+      successfulExternalLinks: results.filter(r => r.isValid && r.url.startsWith('http')).map(result => ({
+        url: result.url,
+        statusCode: result.statusCode,
+        location: result.location,
+        lastChecked: new Date().toISOString()
+      })),
+      failedExternalLinks: results.filter(r => !r.isValid && r.url.startsWith('http')).map(result => ({
+        url: result.url,
+        error: result.error,
+        location: result.location,
+        lastChecked: new Date().toISOString()
+      })),
+      successfulInternalLinks: results.filter(r => r.isValid && !r.url.startsWith('http')).map(result => ({
+        url: result.url,
+        statusCode: result.statusCode,
+        location: result.location,
+        lastChecked: new Date().toISOString()
+      })),
+      failedInternalLinks: results.filter(r => !r.isValid && !r.url.startsWith('http')).map(result => ({
+        url: result.url,
+        error: result.error,
+        location: result.location,
+        lastChecked: new Date().toISOString()
+      }))
+    }
+
+    // Convert to string with pretty formatting
+    const configString = JSON.stringify(config, null, 2)
+    console.log('Debug: Config string length:', configString.length)
+    
+    // Write synchronously with explicit encoding
+    console.log('Debug: Attempting to write file...')
+    fs.writeFileSync(configPath, configString, { encoding: 'utf8' })
+    console.log('Debug: Write operation completed')
+    
+    // Verify the file was written
+    if (fs.existsSync(configPath)) {
+      const stats = fs.statSync(configPath)
+      console.log('Debug: File exists with size:', stats.size)
+      
+      // Double check content was written correctly
+      const written = fs.readFileSync(configPath, 'utf8')
+      if (written === configString) {
+        console.log(`✅ Config file written successfully (${stats.size} bytes)`)
+        console.log('\n💾 Updated skip configuration in', configPath)
       } else {
-        const existingIndex = config.successfulInternalLinks.findIndex(s => s.url === link.url)
-        if (existingIndex >= 0) {
-          config.successfulInternalLinks[existingIndex] = linkData
-        } else {
-          config.successfulInternalLinks.push(linkData)
-        }
+        console.error('Debug: Content verification failed')
+        console.error('Debug: Expected length:', configString.length)
+        console.error('Debug: Actual length:', written.length)
+        throw new Error('Config file content verification failed')
       }
     } else {
-      // Handle failed links
-      const linkData = {
-        url: link.url,
-        error: link.error || `Status: ${link.statusCode}`,
-        location: locationStr,
-        lastChecked: now
-      }
-
-      if (isExternal) {
-        const existingIndex = config.failedExternalLinks.findIndex(f => f.url === link.url)
-        if (existingIndex >= 0) {
-          config.failedExternalLinks[existingIndex] = linkData
-        } else {
-          config.failedExternalLinks.push(linkData)
-        }
-      } else {
-        const existingIndex = config.failedInternalLinks.findIndex(f => f.url === link.url)
-        if (existingIndex >= 0) {
-          config.failedInternalLinks[existingIndex] = linkData
-        } else {
-          config.failedInternalLinks.push(linkData)
-        }
-      }
+      console.error('Debug: File does not exist after write')
+      throw new Error('Config file does not exist after writing')
     }
-  })
-
-  // Update timestamp
-  config.lastUpdated = now
-
-  // Write updated config
-  fs.writeFileSync(SKIP_CONFIG_FILE, JSON.stringify(config, null, 2))
-  console.log(`\n💾 Updated skip configuration in ${SKIP_CONFIG_FILE}`)
+  } catch (error) {
+    console.error('Debug: Error details:', error)
+    console.error('Failed to write skip configuration:', error)
+    
+    // Try writing to project root as fallback with explicit path
+    const fallbackPath = path.resolve(__dirname, '../../../link-checker-skip.json')
+    console.log('Debug: Fallback path:', fallbackPath)
+    
+    try {
+      fs.writeFileSync(fallbackPath, JSON.stringify(config, null, 2), 'utf8')
+      console.log('\n💾 Wrote skip configuration to fallback location:', fallbackPath)
+    } catch (fallbackError) {
+      console.error('Debug: Fallback error details:', fallbackError)
+      console.error('Failed to write to fallback location:', fallbackError)
+    }
+  }
 }
 
 // Check if a link should be skipped
@@ -622,7 +652,7 @@ export type LinkLocation = {
   url: string
 }
 
-function filterInvalidInternalLinks(links: LinkLocation[]): LinkLocation[] {
+function filterInvalidInternalLinks(links: LinkInfo[]): LinkInfo[] {
   return links.filter(link => {
     const url = link.url;
     
@@ -728,15 +758,16 @@ describe('Integration - Link Checker', () => {
   }
 
   // Function to collect all links from a set of files
-  async function collectAllLinks(): Promise<Array<{ url: string; location: { filePath: string; lineNumber: number; columnNumber: number } }>> {
-    const allLinks: Array<{ url: string; location: { filePath: string; lineNumber: number; columnNumber: number } }> = []
+  async function collectAllLinks(): Promise<Array<{ url: string; location: LinkLocation }>> {
+    const allLinks: Array<{ url: string; location: LinkLocation }> = []
     
     // Get all files from included directories, respecting exclusions
-    const allFiles = (await Promise.all(
-      INCLUDED_FOLDERS.map(async folder => 
-        await getAllFiles(path.join(process.cwd(), folder))
+    const fileArrays = await Promise.all(
+      INCLUDED_FOLDERS.map(folder => 
+        getAllFiles(path.join(process.cwd(), folder))
       )
-    )).flat()
+    );
+    const allFiles = fileArrays.reduce((acc, curr) => acc.concat(curr), []);
 
     // Process each file
     for (const file of allFiles) {
@@ -882,7 +913,7 @@ describe('Integration - Link Checker', () => {
         console.log(table)
 
         // Update skip config with all results BEFORE throwing the error
-        await updateSkipConfig([...results.valid, ...results.invalid])
+        updateSkipConfig([...results.valid, ...results.invalid])
         
         // Display skip instructions
         console.log('\n📝 To skip specific links in future runs:')
@@ -900,7 +931,7 @@ describe('Integration - Link Checker', () => {
       } else {
         console.log('\n✅ All links are valid!\n')
         // Still update skip config to track successful links
-        await updateSkipConfig(results.valid)
+        updateSkipConfig(results.valid)
       }
     } catch (error) {
       // Make sure we save the config even if there's an error during validation
@@ -914,7 +945,7 @@ describe('Integration - Link Checker', () => {
           }
           
           // Save both valid and invalid results
-          await updateSkipConfig([...results.valid, ...results.invalid])
+          updateSkipConfig([...results.valid, ...results.invalid])
           console.log('\n💾 Saved skip configuration despite test failure')
         } catch (configError) {
           console.error('Failed to save skip configuration:', configError)
@@ -1262,4 +1293,52 @@ describe('Integration - Link Checker', () => {
       }
     }
   })
+
+  async function checkLinks() {
+    const results = await collectAllLinks();
+    
+    // Update skip configuration with invalid links
+    const skipResult = updateSkipConfig(results, {
+      configPath: resolve(process.cwd(), 'link-checker-skip.json'),
+      createIfMissing: true
+    });
+
+    if (!skipResult.success) {
+      console.error('Failed to update skip configuration:', skipResult.error);
+    } else {
+      console.log('Skip configuration updated at:', skipResult.configPath);
+    }
+
+    // Filter out valid links
+    const invalidLinks = results.filter(result => !result.isValid);
+    if (invalidLinks.length > 0) {
+      throw new Error(`Found ${invalidLinks.length} broken links`);
+    }
+  }
+
+  it('should validate all links in the documentation', async () => {
+    const results = await scanLinks(process.cwd(), {
+      includePatterns: INCLUDED_FOLDERS.map(folder => path.join(folder, '**/*')),
+      checkLiveLinks: true,
+      timeout: 10000
+    });
+
+    // Update skip configuration with invalid links
+    const skipResult = updateSkipConfig(results, {
+      configPath: path.resolve(process.cwd(), 'link-checker-skip.json'),
+      createIfMissing: true
+    });
+
+    if (!skipResult.success) {
+      console.error('Failed to update skip configuration:', skipResult.error);
+    } else {
+      console.log('Skip configuration updated at:', skipResult.configPath);
+    }
+
+    // Filter out valid links
+    const invalidLinks = results.filter(result => !result.isValid);
+    if (invalidLinks.length > 0) {
+      throw new Error(`Found ${invalidLinks.length} broken links`);
+    }
+  });
 }) 

@@ -198,7 +198,8 @@
     "vaul": "^0.9.0",
     "yargs": "^17.7.2",
     "zod": "^3.22.4",
-    "zustand": "^4.3.9"
+    "zustand": "^4.3.9",
+    "@decentralized-fda/link-checker": "workspace:*"
   },
   "devDependencies": {
     "@aws-sdk/client-lightsail": "^3.731.1",

@@ -9,6 +9,7 @@ export interface LinkInfo {
   location: LinkLocation;
   isValid?: boolean;
   error?: string;
+  statusCode?: number;
 }
 
 export interface ScanOptions {
@@ -55,4 +56,24 @@ export function formatBrokenLinksTable(brokenLinks: BrokenLink[]): string {
   ).join('\n');
 
   return `${header}\n${rows}`;
+}
+
+export interface SkipConfig {
+  skippedLinks: {
+    url: string;
+    statusCode?: number;
+    location: LinkLocation;
+    lastChecked: number;
+  }[];
+}
+
+export interface SkipConfigOptions {
+  configPath?: string;
+  createIfMissing?: boolean;
+}
+
+export interface SkipConfigResult {
+  success: boolean;
+  error?: string;
+  configPath: string;
 }

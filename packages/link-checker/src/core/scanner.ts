@@ -4,7 +4,10 @@ import { glob } from 'glob';
 import { LinkInfo, LinkLocation, ScanOptions, ValidationResult } from './types';
 import { validateInternalLink } from '../validators/internal';
 import { validateExternalLink } from '../validators/external';
-import { extractLinks } from '../extractors';
+import { extractLinks as extractMarkdownLinks } from '../extractors/markdown';
+import { extractLinks as extractJsxLinks } from '../extractors/jsx';
+import * as fs from 'fs';
+import * as path from 'path';
 
 async function validateLink(link: LinkInfo, rootDir: string, checkLiveLinks: boolean): Promise<ValidationResult> {
   try {
@@ -35,62 +38,27 @@ async function validateLink(link: LinkInfo, rootDir: string, checkLiveLinks: boo
   }
 }
 
-export async function scanLinks(rootDir: string, options: ScanOptions = {}): Promise<LinkInfo[]> {
-  const {
-    checkLiveLinks = false,
-    includePatterns = ['**/*'],
-    excludePatterns = ['node_modules', '.git', '.next', 'dist', 'coverage'],
-    concurrent = 5,
-    timeout = 5000
-  } = options;
+export async function scanLinks(directory: string, exclude?: string[]): Promise<LinkInfo[]> {
+  const links: LinkInfo[] = [];
+  const files = glob.sync('**/*.{md,mdx,js,jsx,ts,tsx}', {
+    cwd: directory,
+    ignore: exclude || [],
+    absolute: true
+  });
 
-  // Build glob pattern for each file type
-  const patterns = [
-    '**/*.ts',
-    '**/*.tsx',
-    '**/*.js',
-    '**/*.jsx',
-    '**/*.md',
-    '**/*.mdx'
-  ];
+  for (const file of files) {
+    const content = fs.readFileSync(file, 'utf-8');
+    const ext = path.extname(file);
+    const filePath = path.relative(directory, file);
 
-  const results: LinkInfo[] = [];
-
-  // Process each pattern
-  for (const pattern of patterns) {
-    // Find all files matching the pattern
-    const files = glob.sync(pattern, {
-      ignore: excludePatterns,
-      nodir: true,
-      absolute: true,
-      cwd: rootDir
-    });
-
-    // Process each file
-    for (const file of files) {
-      try {
-        const content = readFileSync(file, 'utf8');
-        const relativePath = relative(rootDir, file);
-        
-        // Extract links from file
-        const links = extractLinks(content, relativePath);
-        
-        // Validate each link
-        for (const link of links) {
-          const { isValid, error } = await validateLink(link, rootDir, checkLiveLinks);
-          results.push({
-            ...link,
-            isValid,
-            error
-          });
-        }
-      } catch (error) {
-        console.error(`Error processing file ${file}:`, error);
-      }
+    if (ext === '.md') {
+      links.push(...extractMarkdownLinks(content, filePath));
+    } else {
+      links.push(...extractJsxLinks(content, filePath));
     }
   }
 
-  return results;
+  return links;
 }
 
 export function formatReport(results: LinkInfo[]): string {
