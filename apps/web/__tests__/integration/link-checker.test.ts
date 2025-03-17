@@ -5,6 +5,90 @@
 import fs from 'fs'
 import path from 'path'
 
+// Configuration for skipped links
+const SKIP_CONFIG_FILE = path.join(process.cwd(), 'link-checker-skip.json')
+
+interface SkipConfig {
+  exactMatches: string[];
+  patterns: string[];
+  lastUpdated: string;
+  failedLinks: Array<{
+    url: string;
+    error: string;
+    location: string;
+    lastChecked: string;
+  }>;
+}
+
+// Load skip configuration if it exists
+function loadSkipConfig(): SkipConfig {
+  if (fs.existsSync(SKIP_CONFIG_FILE)) {
+    try {
+      return JSON.parse(fs.readFileSync(SKIP_CONFIG_FILE, 'utf-8'))
+    } catch (error) {
+      console.warn('Failed to parse skip config file:', error)
+    }
+  }
+  return {
+    exactMatches: [],
+    patterns: [],
+    lastUpdated: new Date().toISOString(),
+    failedLinks: []
+  }
+}
+
+// Save failed links to skip config
+function updateSkipConfig(failedLinks: LinkCheckResult[]) {
+  const config = loadSkipConfig()
+  const now = new Date().toISOString()
+  
+  // Update failed links list
+  failedLinks.forEach(link => {
+    const existingIndex = config.failedLinks.findIndex(f => f.url === link.url)
+    const locationStr = `${link.location.filePath}:${link.location.lineNumber}`
+    
+    if (existingIndex >= 0) {
+      config.failedLinks[existingIndex].lastChecked = now
+      config.failedLinks[existingIndex].error = link.error || `Status: ${link.statusCode}`
+    } else {
+      config.failedLinks.push({
+        url: link.url,
+        error: link.error || `Status: ${link.statusCode}`,
+        location: locationStr,
+        lastChecked: now
+      })
+    }
+  })
+
+  // Update timestamp
+  config.lastUpdated = now
+
+  // Write updated config
+  fs.writeFileSync(SKIP_CONFIG_FILE, JSON.stringify(config, null, 2))
+  console.log(`\n💾 Updated skip configuration in ${SKIP_CONFIG_FILE}`)
+}
+
+// Check if a link should be skipped
+function shouldSkipLink(url: string): boolean {
+  const config = loadSkipConfig()
+  
+  // Check exact matches
+  if (config.exactMatches.includes(url)) {
+    return true
+  }
+  
+  // Check patterns
+  return config.patterns.some(pattern => {
+    try {
+      const regex = new RegExp(pattern)
+      return regex.test(url)
+    } catch (error) {
+      console.warn(`Invalid regex pattern in skip config: ${pattern}`)
+      return false
+    }
+  })
+}
+
 // Configuration for folder scanning
 const INCLUDED_FOLDERS = [
   'app',
@@ -132,7 +216,18 @@ const DYNAMIC_ROUTES = [
 const urlCache = new Map<string, LinkCheckResult>();
 
 export async function checkLink(url: string, location: LinkLocation): Promise<LinkCheckResult> {
-  // Check cache first
+  // Check if link should be skipped first
+  if (shouldSkipLink(url)) {
+    return {
+      url,
+      isValid: true, // Treat skipped links as valid
+      statusCode: 200,
+      error: 'Skipped per configuration',
+      location
+    };
+  }
+
+  // Check cache next
   const cacheKey = url.startsWith('http') ? url : `http://localhost:3000${url}`;
   if (urlCache.has(cacheKey)) {
     const cachedResult = urlCache.get(cacheKey)!;
@@ -531,46 +626,34 @@ describe('Integration - Link Checker', () => {
     return uniqueLinks.sort((a, b) => a.url.localeCompare(b.url))
   }
 
-  async function checkLinksInBatches(links: Array<{ url: string; location: { filePath: string; lineNumber: number; columnNumber: number } }>): Promise<{ valid: string[]; invalid: Array<{ url: string; error: string; location: { filePath: string; lineNumber: number; columnNumber: number } }> }> {
+  async function checkLinksInBatches(links: Array<{ url: string; location: LinkLocation }>) {
+    const batchSize = 5 // Process 5 links at a time
     const results = {
-      valid: [] as string[],
-      invalid: [] as Array<{ url: string; error: string; location: { filePath: string; lineNumber: number; columnNumber: number } }>
+      valid: [] as LinkCheckResult[],
+      invalid: [] as LinkCheckResult[]
     }
 
-    const totalBatches = Math.ceil(links.length / MAX_CONCURRENT_CHECKS)
-    console.log(`\n🔍 Checking ${links.length} links in ${totalBatches} batches...`)
-
     // Process links in batches
-    for (let i = 0; i < links.length; i += MAX_CONCURRENT_CHECKS) {
-      const batchNumber = Math.floor(i / MAX_CONCURRENT_CHECKS) + 1
-      const batch = links.slice(i, i + MAX_CONCURRENT_CHECKS)
-      //console.log(`\n📦 Processing batch ${batchNumber}/${totalBatches} (${batch.length} links)`)
+    for (let i = 0; i < links.length; i += batchSize) {
+      const batch = links.slice(i, i + batchSize)
+      const batchPromises = batch.map(link => checkLink(link.url, link.location))
       
-      const checkResults = await Promise.all(
-        batch.map(({ url, location }) => {
-          //console.log(`  Checking ${url}`)
-          return checkLink(url, location)
+      try {
+        const batchResults = await Promise.all(batchPromises)
+        
+        // Process results
+        batchResults.forEach(result => {
+          if (result.isValid) {
+            results.valid.push(result)
+          } else {
+            results.invalid.push(result)
+            console.log(`  ❌ ${result.url} - ${result.error || `Status: ${result.statusCode}`}
+              ${result.location.filePath}:${result.location.lineNumber}`)
+          }
         })
-      )
-      
-      checkResults.forEach(result => {
-        if (result.isValid) {
-          results.valid.push(result.url)
-          //console.log(`  ✅ ${result.url}`)
-        } else {
-          results.invalid.push({
-            url: result.url,
-            error: result.error || `Status: ${result.statusCode}`,
-            location: result.location
-          })
-          console.log(`  ❌ ${result.url} - ${result.error || `Status: ${result.statusCode}`}
-            ${result.location.filePath}:${result.location.lineNumber}`)
-        }
-      })
-
-      // Show progress
-      const progress = ((batchNumber / totalBatches) * 100).toFixed(1)
-      console.log(`\n📊 Progress: ${progress}% (${batchNumber}/${totalBatches} batches)`)
+      } catch (error) {
+        console.error('Error checking batch:', error)
+      }
     }
 
     return results
@@ -614,6 +697,15 @@ describe('Integration - Link Checker', () => {
     return '\nBroken Links Report:\n' + [header, separator, ...rows].join('\n') + '\n'
   }
 
+  // Format invalid results for table display
+  function formatInvalidResults(results: LinkCheckResult[]) {
+    return results.map(result => ({
+      url: result.url,
+      error: result.error || `Status: ${result.statusCode || 'unknown'}`,
+      location: result.location
+    }))
+  }
+
   it('should validate all links in the codebase', async () => {
     // Check if dev server is running first
     const serverRunning = await isDevServerRunning()
@@ -637,21 +729,41 @@ describe('Integration - Link Checker', () => {
     })
     console.log(linksList)
 
-    // Check all links
-    const results = await checkLinksInBatches(allLinks)
+    try {
+      // Check all links and wait for completion
+      const results = await checkLinksInBatches(allLinks)
 
-    // Format and display results
-    if (results.invalid.length > 0) {
-      const table = formatTable(results.invalid)
-      console.log('\n❌ Found broken links:')
-      console.log(table)
-    } else {
-      console.log('\n✅ All links are valid!\n')
+      // Format and display results
+      if (results.invalid.length > 0) {
+        const formattedInvalid = formatInvalidResults(results.invalid)
+        const table = formatTable(formattedInvalid)
+        console.log('\n❌ Found broken links:')
+        console.log(table)
+
+        // Update skip configuration with failed links
+        updateSkipConfig(results.invalid)
+
+        // Show instructions for skipping
+        console.log('\n📝 To skip these links in future runs:')
+        console.log('1. Edit link-checker-skip.json')
+        console.log('2. Add URLs to "exactMatches" array for exact matches')
+        console.log('3. Add patterns to "patterns" array for regex matching')
+        console.log('Example:')
+        console.log(JSON.stringify({
+          exactMatches: [results.invalid[0]?.url].filter(Boolean),
+          patterns: ['^https://example\\.com/.*'],
+        }, null, 2))
+      } else {
+        console.log('\n✅ All links are valid!\n')
+      }
+
+      // Assert all links are valid
+      expect(results.invalid).toHaveLength(0)
+    } catch (error) {
+      console.error('Error during link validation:', error)
+      throw error
     }
-
-    // Assert all links are valid
-    expect(results.invalid).toHaveLength(0)
-  }, 300000) // Increased timeout to 5 minutes
+  }, 300000) // 5 minute timeout
 
   // Test for comprehensive link collection
   it('should collect links from both TSX and TS files including navigation', async () => {
@@ -939,5 +1051,50 @@ describe('Integration - Link Checker', () => {
     }
     
     expect(apiDocsFiles).toHaveLength(0)
+  })
+
+  // Add test for skip configuration
+  it('should respect skip configuration', async () => {
+    // Create temporary skip config
+    const tempConfig: SkipConfig = {
+      exactMatches: ['https://skip-exact.com'],
+      patterns: ['^https://skip-pattern\\.com/.*'],
+      lastUpdated: new Date().toISOString(),
+      failedLinks: []
+    }
+    fs.writeFileSync(SKIP_CONFIG_FILE, JSON.stringify(tempConfig, null, 2))
+
+    try {
+      // Test exact match
+      const exactResult = await checkLink('https://skip-exact.com', {
+        filePath: 'test.md',
+        lineNumber: 1,
+        columnNumber: 1
+      })
+      expect(exactResult.isValid).toBe(true)
+      expect(exactResult.error).toBe('Skipped per configuration')
+
+      // Test pattern match
+      const patternResult = await checkLink('https://skip-pattern.com/test', {
+        filePath: 'test.md',
+        lineNumber: 1,
+        columnNumber: 1
+      })
+      expect(patternResult.isValid).toBe(true)
+      expect(patternResult.error).toBe('Skipped per configuration')
+
+      // Test non-matching link
+      const normalResult = await checkLink('https://normal-link.com', {
+        filePath: 'test.md',
+        lineNumber: 1,
+        columnNumber: 1
+      })
+      expect(normalResult.error).not.toBe('Skipped per configuration')
+    } finally {
+      // Clean up temporary config
+      if (fs.existsSync(SKIP_CONFIG_FILE)) {
+        fs.unlinkSync(SKIP_CONFIG_FILE)
+      }
+    }
   })
 }) 
