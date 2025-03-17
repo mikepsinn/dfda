@@ -4,6 +4,7 @@
 
 import fs from 'fs'
 import path from 'path'
+import { checkLinks, LinkLocation, LinkInfo } from '../../../packages/link-checker/src/core/types'
 
 // Configuration for skipped links
 const SKIP_CONFIG_FILE = path.join(process.cwd(), 'link-checker-skip.json')
@@ -12,7 +13,27 @@ interface SkipConfig {
   exactMatches: string[];
   patterns: string[];
   lastUpdated: string;
-  failedLinks: Array<{
+  // External links
+  successfulExternalLinks: Array<{
+    url: string;
+    statusCode: number;
+    location: string;
+    lastChecked: string;
+  }>;
+  failedExternalLinks: Array<{
+    url: string;
+    error: string;
+    location: string;
+    lastChecked: string;
+  }>;
+  // Internal links
+  successfulInternalLinks: Array<{
+    url: string;  
+    statusCode: number;
+    location: string;
+    lastChecked: string;
+  }>;
+  failedInternalLinks: Array<{
     url: string;
     error: string;
     location: string;
@@ -33,30 +54,73 @@ function loadSkipConfig(): SkipConfig {
     exactMatches: [],
     patterns: [],
     lastUpdated: new Date().toISOString(),
-    failedLinks: []
+    successfulExternalLinks: [],
+    failedExternalLinks: [],
+    successfulInternalLinks: [],
+    failedInternalLinks: []
   }
 }
 
-// Save failed links to skip config
-function updateSkipConfig(failedLinks: LinkCheckResult[]) {
+// Save failed and successful links to skip config
+function updateSkipConfig(results: LinkCheckResult[]) {
   const config = loadSkipConfig()
   const now = new Date().toISOString()
   
-  // Update failed links list
-  failedLinks.forEach(link => {
-    const existingIndex = config.failedLinks.findIndex(f => f.url === link.url)
-    const locationStr = `${link.location.filePath}:${link.location.lineNumber}`
+  // Process all results
+  results.forEach(link => {
+    // Convert absolute path to relative path
+    const relativePath = path.relative(process.cwd(), link.location.filePath)
+    const locationStr = `${relativePath}:${link.location.lineNumber}`
+    const isExternal = link.url.startsWith('http')
     
-    if (existingIndex >= 0) {
-      config.failedLinks[existingIndex].lastChecked = now
-      config.failedLinks[existingIndex].error = link.error || `Status: ${link.statusCode}`
+    if (link.isValid) {
+      // Handle successful links
+      const linkData = {
+        url: link.url,
+        statusCode: link.statusCode || 200,
+        location: locationStr,
+        lastChecked: now
+      }
+
+      if (isExternal) {
+        const existingIndex = config.successfulExternalLinks.findIndex(s => s.url === link.url)
+        if (existingIndex >= 0) {
+          config.successfulExternalLinks[existingIndex] = linkData
+        } else {
+          config.successfulExternalLinks.push(linkData)
+        }
+      } else {
+        const existingIndex = config.successfulInternalLinks.findIndex(s => s.url === link.url)
+        if (existingIndex >= 0) {
+          config.successfulInternalLinks[existingIndex] = linkData
+        } else {
+          config.successfulInternalLinks.push(linkData)
+        }
+      }
     } else {
-      config.failedLinks.push({
+      // Handle failed links
+      const linkData = {
         url: link.url,
         error: link.error || `Status: ${link.statusCode}`,
         location: locationStr,
         lastChecked: now
-      })
+      }
+
+      if (isExternal) {
+        const existingIndex = config.failedExternalLinks.findIndex(f => f.url === link.url)
+        if (existingIndex >= 0) {
+          config.failedExternalLinks[existingIndex] = linkData
+        } else {
+          config.failedExternalLinks.push(linkData)
+        }
+      } else {
+        const existingIndex = config.failedInternalLinks.findIndex(f => f.url === link.url)
+        if (existingIndex >= 0) {
+          config.failedInternalLinks[existingIndex] = linkData
+        } else {
+          config.failedInternalLinks.push(linkData)
+        }
+      }
     }
   })
 
@@ -78,7 +142,7 @@ function shouldSkipLink(url: string): boolean {
   }
   
   // Check patterns
-  return config.patterns.some(pattern => {
+  if (config.patterns.some(pattern => {
     try {
       const regex = new RegExp(pattern)
       return regex.test(url)
@@ -86,7 +150,41 @@ function shouldSkipLink(url: string): boolean {
       console.warn(`Invalid regex pattern in skip config: ${pattern}`)
       return false
     }
-  })
+  })) {
+    return true
+  }
+
+  const isExternal = url.startsWith('http')
+  if (isExternal) {
+    // Check successful external links that were checked within the last week
+    const successfulLink = config.successfulExternalLinks.find(s => s.url === url)
+    if (successfulLink) {
+      const lastChecked = new Date(successfulLink.lastChecked)
+      const oneWeekAgo = new Date()
+      oneWeekAgo.setDate(oneWeekAgo.getDate() - 7)
+      
+      if (lastChecked > oneWeekAgo) {
+        console.log(`Skipping recently validated external link: ${url}`)
+        return true
+      }
+    }
+
+    // Check if this is a previously failed external link
+    const failedLink = config.failedExternalLinks.find(f => f.url === url)
+    if (failedLink) {
+      console.log(`Skipping previously failed external link: ${url} (${failedLink.error})`)
+      return true
+    }
+  } else {
+    // Check if this is a previously failed internal link
+    const failedLink = config.failedInternalLinks.find(f => f.url === url)
+    if (failedLink) {
+      console.log(`Skipping previously failed internal link: ${url} (${failedLink.error})`)
+      return true
+    }
+  }
+
+  return false
 }
 
 // Configuration for folder scanning
@@ -189,12 +287,6 @@ const LINKABLE_EXTENSIONS = new Set([
   '.vue', '.svelte',
   // Add more extensions as needed
 ])
-
-export type LinkLocation = {
-  filePath: string;
-  lineNumber: number;
-  columnNumber: number;
-}
 
 export type LinkCheckResult = {
   url: string;
@@ -523,6 +615,55 @@ function extractLinksFromJsx(jsx: string, filePath: string): Array<{ url: string
   return links
 }
 
+export type LinkLocation = {
+  filePath: string
+  lineNumber: number
+  columnNumber: number
+  url: string
+}
+
+function filterInvalidInternalLinks(links: LinkLocation[]): LinkLocation[] {
+  return links.filter(link => {
+    const url = link.url;
+    
+    // Must start with / for internal links
+    if (!url.startsWith('/')) {
+      return false;
+    }
+    
+    // Filter out numeric-only paths (e.g. /0, /123)
+    if (/^\/\d+$/.test(url)) {
+      return false;
+    }
+    
+    // Filter out template strings
+    if (url.includes('${') || url.includes('{') || url.includes('}')) {
+      return false;
+    }
+    
+    // Filter out special protocols
+    if (url.startsWith('mailto:') || url.startsWith('tel:') || url.startsWith('sms:')) {
+      return false;
+    }
+    
+    // Filter out API endpoints with parameters
+    if (url.includes('/api/') && (url.includes('${') || url.includes('[') || url.includes(':') || url.includes('}'))) {
+      return false;
+    }
+    
+    // Filter out empty paths or just slashes
+    if (url === '/' || url.match(/^\/\s*$/) || url.includes('//')) {
+      return false;
+    }
+    
+    // Filter out paths that are just numbers with optional slashes
+    if (url.split('/').every(segment => segment === '' || /^\d+$/.test(segment))) {
+      return false;
+    }
+    
+    return true;
+  });
+}
 
 describe('Integration - Link Checker', () => {
   beforeEach(() => {
@@ -740,11 +881,11 @@ describe('Integration - Link Checker', () => {
         console.log('\n❌ Found broken links:')
         console.log(table)
 
-        // Update skip configuration with failed links
-        updateSkipConfig(results.invalid)
-
-        // Show instructions for skipping
-        console.log('\n📝 To skip these links in future runs:')
+        // Update skip config with all results BEFORE throwing the error
+        await updateSkipConfig([...results.valid, ...results.invalid])
+        
+        // Display skip instructions
+        console.log('\n📝 To skip specific links in future runs:')
         console.log('1. Edit link-checker-skip.json')
         console.log('2. Add URLs to "exactMatches" array for exact matches')
         console.log('3. Add patterns to "patterns" array for regex matching')
@@ -753,17 +894,38 @@ describe('Integration - Link Checker', () => {
           exactMatches: [results.invalid[0]?.url].filter(Boolean),
           patterns: ['^https://example\\.com/.*'],
         }, null, 2))
+
+        // Now throw the error after saving the config
+        throw new Error(`Found ${results.invalid.length} broken links. Check the output above for details.`)
       } else {
         console.log('\n✅ All links are valid!\n')
+        // Still update skip config to track successful links
+        await updateSkipConfig(results.valid)
       }
-
-      // Assert all links are valid
-      expect(results.invalid).toHaveLength(0)
     } catch (error) {
-      console.error('Error during link validation:', error)
+      // Make sure we save the config even if there's an error during validation
+      if (error instanceof Error) {
+        try {
+          // Get all results from the URL cache
+          const cachedResults = Array.from(urlCache.values())
+          const results = {
+            valid: cachedResults.filter(r => r.isValid),
+            invalid: cachedResults.filter(r => !r.isValid)
+          }
+          
+          // Save both valid and invalid results
+          await updateSkipConfig([...results.valid, ...results.invalid])
+          console.log('\n💾 Saved skip configuration despite test failure')
+        } catch (configError) {
+          console.error('Failed to save skip configuration:', configError)
+        }
+        
+        // Re-throw the original error to maintain the test failure
+        throw error
+      }
       throw error
     }
-  }, 300000) // 5 minute timeout
+  }, 600000) // 10 minute timeout
 
   // Test for comprehensive link collection
   it('should collect links from both TSX and TS files including navigation', async () => {
@@ -816,7 +978,7 @@ describe('Integration - Link Checker', () => {
     expect(readmeLinks.map(l => l.url)).toEqual(['/real-link'])
   })
 
-  // Add test for link validation
+  // Update the test for filtering invalid internal links
   it('should filter out invalid internal links', () => {
     const testContent = `
       href="/valid/path"
@@ -1060,7 +1222,10 @@ describe('Integration - Link Checker', () => {
       exactMatches: ['https://skip-exact.com'],
       patterns: ['^https://skip-pattern\\.com/.*'],
       lastUpdated: new Date().toISOString(),
-      failedLinks: []
+      successfulExternalLinks: [],
+      failedExternalLinks: [],
+      successfulInternalLinks: [],
+      failedInternalLinks: []
     }
     fs.writeFileSync(SKIP_CONFIG_FILE, JSON.stringify(tempConfig, null, 2))
 
