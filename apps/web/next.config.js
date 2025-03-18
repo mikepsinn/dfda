@@ -38,6 +38,16 @@ const nextConfig = {
     ]
   },
   output: 'standalone',
+  // Enable build cache
+  distDir: process.env.CI ? '.next-ci' : '.next',
+  generateBuildId: async () => {
+    // In CI, use a deterministic build ID based on the commit hash
+    if (process.env.GITHUB_SHA) {
+      return process.env.GITHUB_SHA
+    }
+    // In development, use a timestamp
+    return `dev-${Date.now()}`
+  },
 }
 
 module.exports = withBundleAnalyzer(nextConfig)

@@ -44,10 +44,16 @@ jobs:
         with:
           path: |
             apps/web/.next/cache
+            apps/web/.next-ci/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('apps/web/**.[jt]s', 'apps/web/**.[jt]sx', 'apps/web/package.json') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
             ${{ runner.os }}-nextjs-
+
+      # Ensure cache directories exist
+      - name: Create cache directories
+        run: mkdir -p apps/web/.next/cache apps/web/.next-ci/cache
+        shell: bash
             
       - name: Install dependencies
         run: |
