@@ -73,13 +73,27 @@ jobs:
           pnpm start &
           echo "Waiting for Next.js to be ready..."
           timeout 30 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:3000)" != "200" ]]; do sleep 2; done' || false
-          pnpm test:integration
+          pnpm test:integration --reporters=default --reporters=github-actions --verbose
         env:
           CI: true
 
-      # Optional: Upload test results as artifacts
+      # Upload test results and coverage reports
       - name: Upload test results
-        if: always() && (hashFiles('apps/web/coverage/**') != '' || hashFiles('apps/web/test-results/**') != '' || hashFiles('apps/web/**/junit.xml') != '')
+        if: always()
+        run: |
+          mkdir -p apps/web/coverage apps/web/test-results
+          find apps/web -name "junit.xml" -o -name "test-report.html" -o -path "apps/web/coverage/*" -o -path "apps/web/test-results/*" > artifact_list.txt
+          if [ -s artifact_list.txt ]; then
+            echo "Found test artifacts to upload"
+            cat artifact_list.txt
+          else
+            echo "No test artifacts found to upload"
+            exit 0
+          fi
+        shell: bash
+
+      - name: Upload artifacts
+        if: always() && success()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
@@ -87,4 +101,5 @@ jobs:
             apps/web/coverage/
             apps/web/test-results/
             apps/web/**/junit.xml
+            apps/web/test-report.html
           retention-days: 30 

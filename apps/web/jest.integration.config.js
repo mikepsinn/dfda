@@ -24,9 +24,26 @@ const customJestConfig = {
         ['jest-junit', {
           outputDirectory: 'test-results',
           outputName: 'integration-junit.xml',
+          includeConsoleOutput: true,
+          classNameTemplate: '{filepath}',
+          titleTemplate: '{title}',
+          ancestorSeparator: ' › ',
+        }],
+        ['github-actions', {silent: false}],
+        ['jest-html-reporter', {
+          pageTitle: 'Integration Test Report',
+          outputPath: 'test-report.html',
+          includeFailureMsg: true,
+          includeSuiteFailure: true,
+          includeConsoleLog: true,
+          includeStackTrace: true,
+          sort: 'status',
         }]
       ]
     : ['default'],
+  collectCoverage: process.env.CI === 'true',
+  coverageReporters: ['text', 'html', 'cobertura'],
+  coverageDirectory: 'coverage',
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
