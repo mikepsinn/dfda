@@ -19,7 +19,7 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@10.6.4",
   "name": "dfda",
   "dependencies": {
     "@prisma/client": "5.10.2"
