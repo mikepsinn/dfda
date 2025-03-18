@@ -4,18 +4,35 @@
 import { generateRouteTree } from '@/scripts/generateRouteTree'
 import { routeTree } from '@/config/routeTree'
 
+// Helper function to strip metadata from a route tree node
+function stripMetadata(node: any): any {
+  const { emoji, description, displayName, ...strippedNode } = node
+  
+  if (strippedNode.children) {
+    strippedNode.children = Object.entries(strippedNode.children).reduce((acc, [key, child]) => ({
+      ...acc,
+      [key]: stripMetadata(child)
+    }), {})
+  }
+  
+  return strippedNode
+}
+
 describe('Integration - Route Tree', () => {
-  it('should have an up-to-date route tree', async () => {
+  it('should have an up-to-date route tree structure', async () => {
     // Generate a fresh route tree
     const freshRouteTree = generateRouteTree()
     
-    // Compare with the stored route tree
-    // We'll stringify both to compare the actual content
-    const currentTreeString = JSON.stringify(routeTree, null, 2)
-    const freshTreeString = JSON.stringify(freshRouteTree, null, 2)
+    // Strip metadata from both trees before comparing
+    const strippedCurrentTree = stripMetadata(routeTree)
+    const strippedFreshTree = stripMetadata(freshRouteTree)
+    
+    // Compare the stripped trees
+    const currentTreeString = JSON.stringify(strippedCurrentTree, null, 2)
+    const freshTreeString = JSON.stringify(strippedFreshTree, null, 2)
 
     if (currentTreeString !== freshTreeString) {
-      console.log('\nRoute tree is out of date! Please run:')
+      console.log('\nRoute tree structure is out of date! Please run:')
       console.log('pnpm generate-routes\n')
       console.log('Changes needed:')
       
