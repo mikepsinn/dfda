@@ -1,7 +1,7 @@
 /**
  * Represents the location of a link within a file
  */
-export interface LinkLocation {
+export interface Location {
   filePath: string;
   lineNumber: number;
   columnNumber: number;
@@ -12,7 +12,6 @@ export interface LinkLocation {
  */
 export interface ValidationResult {
   isValid: boolean;
-  statusCode?: number;
   error?: string;
   checkedAt: Date;
 }
@@ -22,8 +21,28 @@ export interface ValidationResult {
  */
 export interface LinkInfo {
   url: string;
-  location: LinkLocation;
+  location: Location;
   validationResult?: ValidationResult;
+  error?: string;
+}
+
+/**
+ * Represents a link status in the configuration
+ */
+export interface LinkStatus {
+  lastChecked: string;
+  locations: string[];
+  error?: string;
+}
+
+/**
+ * Represents the configuration file structure
+ */
+export interface Config {
+  version: string;
+  lastUpdated: string;
+  successfulLinks: Record<string, Omit<LinkStatus, 'error'>>;
+  failedLinks: Record<string, LinkStatus>;
 }
 
 /**
@@ -44,6 +63,7 @@ export interface ScanOptions {
   exclude?: string[];
   /** Whether to check if external links are live */
   checkLiveLinks?: boolean;
+  configPath?: string;
 }
 
 export interface BrokenLink {
@@ -65,15 +85,16 @@ export function formatBrokenLinksTable(links: BrokenLink[]): string {
   return table.join('\n');
 }
 
+/**
+ * Configuration for skipping URLs
+ */
 export interface SkipConfig {
-  skippedLinks: {
-    url: string;
-    statusCode?: number;
-    location: LinkLocation;
-    lastChecked: number;
-  }[];
+  links: LinkInfo[];
 }
 
+/**
+ * Options for skip configuration
+ */
 export interface SkipConfigOptions {
   configPath?: string;
   createIfMissing?: boolean;
@@ -83,4 +104,10 @@ export interface SkipConfigResult {
   success: boolean;
   error?: string;
   configPath: string;
+}
+
+export interface LinkLocation {
+  filePath: string;
+  lineNumber: number;
+  columnNumber: number;
 }

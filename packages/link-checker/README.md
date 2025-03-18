@@ -15,31 +15,31 @@ A robust link validation library for JavaScript/TypeScript projects that checks 
 ## Implementation Status
 
 ### Core Features
-- [ ] GitHub project scanning functionality
-  - [ ] Recursive directory traversal
-  - [ ] File type detection and parsing
-  - [ ] Link extraction from supported file types
-  - [ ] Unit tests for scanning functionality
+- [x] GitHub project scanning functionality
+  - [x] Recursive directory traversal
+  - [x] File type detection and parsing
+  - [x] Link extraction from supported file types
+  - [x] Unit tests for scanning functionality
 
 ### Link Management
-- [ ] External link validation
-  - [ ] HTTP status checking
-  - [ ] Timeout handling
-  - [ ] Rate limiting support
-  - [ ] Unit tests for link validation
+- [x] External link validation
+  - [x] HTTP status checking
+  - [x] Timeout handling
+  - [x] Rate limiting support
+  - [x] Unit tests for link validation
 
 ### Configuration
-- [ ] Auto-generated config file (`link-validator.config.json`)
-  - [ ] Successful links tracking
-  - [ ] Failed links tracking
-  - [ ] Last check timestamp for each link
-  - [ ] Unit tests for config management
+- [x] Auto-generated config file (`link-checker.json`)
+  - [x] Successful links tracking
+  - [x] Failed links tracking
+  - [x] Last check timestamp for each link
+  - [x] Unit tests for config management
 
 ### Performance Features
-- [ ] Skip previously failed links
-- [ ] Daily check limitation for external links
-- [ ] Cleanup of removed links from config
-- [ ] Unit tests for caching behavior
+- [x] Skip previously failed links
+- [x] Daily check limitation for external links
+- [x] Cleanup of removed links from config
+- [x] Unit tests for caching behavior
 
 ### Integration
 - [ ] CLI tool implementation
@@ -110,4 +110,44 @@ A TypeScript-based link validation tool that scans GitHub projects for links, ma
   }
 }
 ```
+
+## Package Architecture
+
+```
+link-checker/
+├── src/
+│   ├── core/                    # Core functionality
+│   │   ├── types.ts            # Type definitions
+│   │   ├── scanner.ts          # Link scanning logic
+│   │   └── config.ts           # Configuration management
+│   ├── validators/             # URL validation
+│   │   └── index.ts            # Unified validation logic
+│   ├── extractors/            # Link extraction
+│   │   └── index.ts           # Link extraction from different file types
+│   └── index.ts               # Main entry point + formatting
+├── tests/
+│   └── unit/                  # Unit tests
+├── jest.config.js             # Jest configuration
+└── package.json              # Project configuration
+```
+
+Each directory serves a specific purpose:
+
+- `core/`: Contains the fundamental types and core functionality
+  - `types.ts`: Defines interfaces like `LinkInfo`, `ValidationResult`, etc.
+  - `scanner.ts`: Implements link scanning and extraction
+  - `config.ts`: Handles all configuration management (scan results and skip lists)
+
+- `validators/`: Contains unified URL validation logic
+  - Single `validateUrl` function that handles all URL types
+  - Supports external URLs (via HTTP), local files, and special protocols
+
+- `extractors/`: Contains link extraction logic
+  - Extracts links from Markdown, HTML, JSX, and import statements
+  - Provides location information (file, line, column)
+
+The main entry point (`index.ts`) provides:
+- Simple API for link checking
+- Basic formatting in text or JSON format
+- Configuration management functions
 
