@@ -12,8 +12,6 @@ export const MODEL_PRICING: Record<ModelName, { input: number; output: number }>
   
   // OpenAI GPT-4-O Models
   'gpt-4o': { input: 0.0025, output: 0.01 },
-  'gpt-4o-2024-05-13': { input: 0.0025, output: 0.01 },
-  'gpt-4o-2024-08-06': { input: 0.0025, output: 0.01 },
   'gpt-4o-mini': { input: 0.00015, output: 0.0006 },
   'gpt-4o-mini-2024-07-18': { input: 0.00015, output: 0.0006 },
   
