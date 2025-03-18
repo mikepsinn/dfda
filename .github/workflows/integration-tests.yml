@@ -47,6 +47,14 @@ jobs:
       - name: Setup environment variables
         working-directory: apps/web
         run: cp .env.example .env
+
+      # Start database and other services
+      - name: Start Docker services
+        working-directory: apps/web
+        run: |
+          docker-compose up -d db
+          echo "Waiting for database to be ready..."
+          timeout 30 bash -c 'until docker exec dfda-postgres pg_isready; do sleep 2; done' || false
             
       # Build and test web app
       - name: Build and test web app
@@ -59,6 +67,7 @@ jobs:
           pnpm test:integration
         env:
           CI: true
+          DATABASE_URL: postgresql://user:pass@localhost:5433/dfda_test
 
       # Optional: Upload test results as artifacts
       - name: Upload test results
