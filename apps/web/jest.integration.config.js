@@ -10,7 +10,10 @@ const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'node',
   testMatch: [
-    "**/__tests__/integration/**/*.[jt]s?(x)",
+    "**/tests/integration/**/*.[jt]s?(x)",
+  ],
+  modulePathIgnorePatterns: [
+    "<rootDir>/.next/"
   ],
   testTimeout: 60000, // 60 seconds timeout for integration tests
   verbose: true,
