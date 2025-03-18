@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "jest",
+    "test": "npm run typecheck && jest",
     "lint": "eslint . --ext .ts",
     "typecheck": "tsc --noEmit"
   },

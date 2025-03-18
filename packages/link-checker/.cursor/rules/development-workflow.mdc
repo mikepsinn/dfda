@@ -1,10 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
 description: Development workflow for link-validator project focusing on test-driven development and documentation
-globs: *
 alwaysApply: true
 
-# Link Validator Development Workflow
-
-## Feature Development Cycle
+## Development Cycle
 
 1. **Before Starting a New Feature**
    - Identify the feature from README.md checklist

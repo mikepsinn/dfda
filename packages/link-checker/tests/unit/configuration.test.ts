@@ -8,6 +8,8 @@ import type { LinkInfo, SkipConfig } from '../../src/core/types';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
+import { loadConfig, saveConfig } from '../../src/core/config';
+import { ScanResult } from '../../src/core/types';
 
 describe('Configuration', () => {
   let testDir: string;
@@ -117,5 +119,100 @@ describe('Configuration', () => {
     const result = await scanLinks('**/*.md', { exclude: ['test2.md'] });
     const allLinks = [...result.valid, ...result.invalid];
     expect(allLinks.length).toBe(1);
+  });
+});
+
+jest.mock('fs', () => ({
+  readFileSync: jest.fn(),
+  writeFileSync: jest.fn(),
+  existsSync: jest.fn()
+}));
+
+describe('Configuration Management', () => {
+  const mockConfig = {
+    version: '1.0',
+    lastUpdated: new Date().toISOString(),
+    successfulLinks: {
+      'https://example.com': {
+        lastChecked: new Date().toISOString(),
+        locations: ['test.md']
+      }
+    },
+    failedLinks: {
+      '/about': {
+        lastChecked: new Date().toISOString(),
+        error: '404 Not Found',
+        locations: ['test.md']
+      }
+    }
+  };
+
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
+  describe('loadConfig', () => {
+    it('loads existing configuration', () => {
+      const fs = require('fs');
+      fs.existsSync.mockReturnValue(true);
+      fs.readFileSync.mockReturnValue(JSON.stringify(mockConfig));
+
+      const config = loadConfig();
+      const links = config.successfulLinks['https://example.com'];
+      expect(links.locations).toContain('test.md');
+    });
+
+    it('creates new configuration if none exists', () => {
+      const fs = require('fs');
+      fs.existsSync.mockReturnValue(false);
+
+      const config = loadConfig();
+      expect(config).toEqual({
+        version: '1.0',
+        lastUpdated: expect.any(String),
+        successfulLinks: {},
+        failedLinks: {}
+      });
+    });
+  });
+
+  describe('saveConfig', () => {
+    it('saves configuration to file', () => {
+      const fs = require('fs');
+      const result: ScanResult = {
+        valid: [
+          {
+            url: 'https://example.com',
+            location: {
+              filePath: 'test.md',
+              lineNumber: 1,
+              columnNumber: 1
+            }
+          }
+        ],
+        invalid: [
+          {
+            url: '/about',
+            location: {
+              filePath: 'test.md',
+              lineNumber: 1,
+              columnNumber: 1
+            },
+            validationResult: {
+              isValid: false,
+              error: '404 Not Found',
+              checkedAt: new Date()
+            }
+          }
+        ]
+      };
+
+      saveConfig(result);
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.stringContaining('"version":"1.0"')
+      );
+    });
   });
 });

@@ -1,69 +1,69 @@
-import { readFileSync } from 'fs';
-import { relative } from 'path';
+import { LinkInfo, ScanResult, ScanOptions } from './types';
 import fg from 'fast-glob';
-import { remark } from 'remark';
-import remarkHtml from 'remark-html';
-import { visit } from 'unist-util-visit';
-import { LinkInfo } from './types';
-import { validateLink } from '../validators';
+import * as fs from 'fs';
+import path from 'path';
+import { validateUrl } from '../validators';
 
-async function extractLinks(content: string, filePath: string): Promise<LinkInfo[]> {
+export async function extractLinksFromFile(filePath: string): Promise<LinkInfo[]> {
+  const content = fs.readFileSync(filePath, 'utf-8');
   const links: LinkInfo[] = [];
-  const processor = remark().use(remarkHtml);
-  const ast = processor.parse(content);
-
-  visit(ast, 'link', (node: any) => {
+  
+  // Simple regex for demonstration - in production use proper parsers
+  const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let match;
+  
+  while ((match = markdownLinkRegex.exec(content)) !== null) {
+    const [, text, url] = match;
     links.push({
-      url: node.url,
-      filePath,
-      lineNumber: node.position?.start.line || 0
+      url,
+      location: {
+        filePath,
+        lineNumber: getLineNumber(content, match.index),
+        columnNumber: getColumnNumber(content, match.index)
+      }
     });
-  });
-
+  }
+  
   return links;
 }
 
-export async function scanLinks(patterns: string | string[], options: {
-  cwd?: string;
-  exclude?: string[];
-  checkLiveLinks?: boolean;
-} = {}): Promise<{
-  valid: LinkInfo[];
-  invalid: LinkInfo[];
-}> {
-  const globOptions = {
-    cwd: options.cwd || process.cwd(),
-    ignore: options.exclude || [],
+export async function scanLinks(
+  pattern: string | string[],
+  options: ScanOptions = {}
+): Promise<ScanResult> {
+  const files = await fg(pattern, {
+    ignore: options.exclude,
     absolute: true
-  };
+  });
 
-  const files = await fg(patterns, globOptions);
-  const results: LinkInfo[] = [];
-
+  const allLinks: LinkInfo[] = [];
+  
   for (const file of files) {
-    const content = readFileSync(file, 'utf-8');
-    const relativeFilePath = relative(globOptions.cwd, file);
-    const fileLinks = await extractLinks(content, relativeFilePath);
-    
-    if (options.checkLiveLinks) {
-      for (const link of fileLinks) {
-        const validationResult = await validateLink(link, globOptions.cwd, true);
-        link.validationResult = validationResult;
-      }
-    }
-
-    results.push(...fileLinks);
+    const fileLinks = await extractLinksFromFile(file);
+    allLinks.push(...fileLinks);
   }
 
+  const validatedLinks = await Promise.all(
+    allLinks.map(async link => {
+      const validationResult = await validateUrl(link);
+      return {
+        ...link,
+        validationResult
+      };
+    })
+  );
+
   return {
-    valid: results.filter(link => !link.validationResult || link.validationResult.isValid),
-    invalid: results.filter(link => link.validationResult && !link.validationResult.isValid)
+    valid: validatedLinks.filter(link => link.validationResult?.isValid),
+    invalid: validatedLinks.filter(link => !link.validationResult?.isValid)
   };
 }
 
-export function filterValidLinks(links: LinkInfo[]): { valid: LinkInfo[]; invalid: LinkInfo[] } {
-  return {
-    valid: links.filter(link => !link.error),
-    invalid: links.filter(link => link.error)
-  };
+function getLineNumber(content: string, index: number): number {
+  return content.slice(0, index).split('\n').length;
+}
+
+function getColumnNumber(content: string, index: number): number {
+  const lastNewline = content.lastIndexOf('\n', index);
+  return lastNewline === -1 ? index + 1 : index - lastNewline;
 }

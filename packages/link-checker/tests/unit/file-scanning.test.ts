@@ -3,12 +3,16 @@
  */
 
 import { scanLinks } from '../../src/core/scanner';
-import { LinkInfo } from '../../src/core/types';
+import { LinkInfo, ScanResult, ScanOptions } from '../../src/core/types';
 import path from 'path';
 import * as fs from 'fs';
 
 jest.mock('fs', () => ({
-  readFileSync: jest.fn()
+  readFileSync: jest.fn(),
+  mkdtempSync: jest.fn(),
+  rmSync: jest.fn(),
+  writeFileSync: jest.fn(),
+  mkdirSync: jest.fn()
 }));
 
 jest.mock('fast-glob', () => jest.fn());
@@ -34,8 +38,8 @@ describe('Scanner', () => {
     `;
     fs.writeFileSync(filePath, content);
 
-    const links = await scanLinks(testDir);
-    expect(links).toEqual([
+    const result: ScanResult = await scanLinks(testDir);
+    expect(result.valid).toEqual([
       {
         url: 'https://example.com',
         location: {
@@ -80,9 +84,9 @@ describe('Scanner', () => {
       '[Included Link](https://included.com)'
     );
 
-    const links = await scanLinks(testDir, { exclude: ['**/excluded/**'] });
-    expect(links).toHaveLength(1);
-    expect(links[0].url).toBe('https://included.com');
+    const result: ScanResult = await scanLinks(testDir, { exclude: ['**/excluded/**'] });
+    expect(result.valid).toHaveLength(1);
+    expect(result.valid[0].url).toBe('https://included.com');
   });
 
   it('handles files with mixed content types', async () => {
@@ -96,8 +100,9 @@ describe('Scanner', () => {
     `;
     fs.writeFileSync(path.join(testDir, 'mixed.md'), content);
 
-    const links = await scanLinks(testDir);
-    expect(links.map(l => l.url)).toEqual([
+    const result: ScanResult = await scanLinks(testDir);
+    const urls = result.valid.map(link => link.url);
+    expect(urls).toEqual([
       'https://api.example.com',
       'https://docs.example.com'
     ]);
@@ -112,14 +117,13 @@ describe('Scanner', () => {
     `;
     fs.writeFileSync(path.join(testDir, 'malformed.md'), content);
 
-    const links = await scanLinks(testDir);
-    // Should only include the valid URL
-    expect(links).toHaveLength(1);
-    expect(links[0].url).toBe('https://example.com');
+    const result: ScanResult = await scanLinks(testDir);
+    expect(result.valid).toHaveLength(1);
+    expect(result.valid[0].url).toBe('https://example.com');
   });
 });
 
-describe('scanLinks', () => {
+describe('scanLinks with live validation', () => {
   const mockFiles = [
     path.join(process.cwd(), 'test1.md'),
     path.join(process.cwd(), 'test2.md')
@@ -135,13 +139,15 @@ describe('scanLinks', () => {
     const fs = require('fs');
     fs.readFileSync.mockReturnValue('# Test\n[Link](https://example.com)');
 
-    const result = await scanLinks('**/*.md');
-    const allLinks = [...result.valid, ...result.invalid];
-    expect(allLinks.length).toBe(2);
-    expect(allLinks[0]).toEqual({
+    const result: ScanResult = await scanLinks('**/*.md');
+    expect(result.valid.length + result.invalid.length).toBe(2);
+    expect(result.valid[0]).toEqual({
       url: 'https://example.com',
-      filePath: 'test1.md',
-      lineNumber: 1
+      location: {
+        filePath: 'test1.md',
+        lineNumber: 1,
+        columnNumber: expect.any(Number)
+      }
     });
   });
 
@@ -149,10 +155,9 @@ describe('scanLinks', () => {
     const fs = require('fs');
     fs.readFileSync.mockReturnValue('# Test\n[Link](https://example.com)');
 
-    const result = await scanLinks('**/*.md', { checkLiveLinks: true });
-    const allLinks = [...result.valid, ...result.invalid];
-    expect(allLinks.length).toBe(2);
-    expect(allLinks[0].validationResult).toBeDefined();
+    const result: ScanResult = await scanLinks('**/*.md', { checkLiveLinks: true });
+    expect(result.valid.length + result.invalid.length).toBe(2);
+    expect(result.valid[0].validationResult).toBeDefined();
   });
 
   it('should handle multiple links in a file', async () => {
@@ -163,9 +168,8 @@ describe('scanLinks', () => {
       [Link 2](https://example2.com)
     `);
 
-    const result = await scanLinks('**/*.md');
-    const allLinks = [...result.valid, ...result.invalid];
-    const urls = allLinks.map(l => l.url);
+    const result: ScanResult = await scanLinks('**/*.md');
+    const urls = [...result.valid, ...result.invalid].map(link => link.url);
     expect(urls).toContain('https://example1.com');
     expect(urls).toContain('https://example2.com');
   });

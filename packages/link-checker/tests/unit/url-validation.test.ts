@@ -6,6 +6,8 @@ import { extractLinks } from '../../src/extractors';
 import { validateExternalLink, validateLink } from '../../src/validators';
 import { LinkInfo } from '../../src/core/types';
 import { Response } from 'node-fetch';
+import { validateUrl } from '../../src/core/validator';
+import fetch from 'isomorphic-fetch';
 
 jest.mock('node-fetch', () => {
   return jest.fn((url: string) => {
@@ -18,6 +20,8 @@ jest.mock('node-fetch', () => {
     return Promise.reject(new Error('Network error'));
   });
 });
+
+jest.mock('isomorphic-fetch');
 
 describe('Link Validation', () => {
   describe('extractLinks', () => {
@@ -130,6 +134,101 @@ require('./local-module');
 
       const result = await validateLink(link, rootDir);
       expect(result.isValid).toBe(true);
+    });
+  });
+
+  describe('URL Validation', () => {
+    beforeEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('validates a successful URL', async () => {
+      const mockResponse = {
+        ok: true,
+        status: 200
+      };
+      (fetch as jest.Mock).mockResolvedValue(mockResponse);
+
+      const link: LinkInfo = {
+        url: 'https://example.com',
+        location: {
+          filePath: 'test.md',
+          lineNumber: 1,
+          columnNumber: 1
+        }
+      };
+
+      const result = await validateUrl(link);
+      expect(result.isValid).toBe(true);
+      expect(result.statusCode).toBe(200);
+    });
+
+    it('handles failed URLs', async () => {
+      const mockResponse = {
+        ok: false,
+        status: 404
+      };
+      (fetch as jest.Mock).mockResolvedValue(mockResponse);
+
+      const link: LinkInfo = {
+        url: 'https://example.com/404',
+        location: {
+          filePath: 'test.md',
+          lineNumber: 1,
+          columnNumber: 1
+        }
+      };
+
+      const result = await validateUrl(link);
+      expect(result.isValid).toBe(false);
+      expect(result.statusCode).toBe(404);
+      expect(result.error).toBeDefined();
+    });
+
+    it('handles network errors', async () => {
+      (fetch as jest.Mock).mockRejectedValue(new Error('Network error'));
+
+      const link: LinkInfo = {
+        url: 'https://invalid-domain.com',
+        location: {
+          filePath: 'test.md',
+          lineNumber: 1,
+          columnNumber: 1
+        }
+      };
+
+      const result = await validateUrl(link);
+      expect(result.isValid).toBe(false);
+      expect(result.error).toBe('Network error');
+    });
+
+    it('validates relative URLs', async () => {
+      const link: LinkInfo = {
+        url: '/about',
+        location: {
+          filePath: 'test.md',
+          lineNumber: 1,
+          columnNumber: 1
+        }
+      };
+
+      const result = await validateUrl(link, { baseUrl: 'https://example.com' });
+      expect(fetch).toHaveBeenCalledWith('https://example.com/about', expect.any(Object));
+    });
+
+    it('skips validation for mailto links', async () => {
+      const link: LinkInfo = {
+        url: 'mailto:test@example.com',
+        location: {
+          filePath: 'test.md',
+          lineNumber: 1,
+          columnNumber: 1
+        }
+      };
+
+      const result = await validateUrl(link);
+      expect(result.isValid).toBe(true);
+      expect(fetch).not.toHaveBeenCalled();
     });
   });
 });

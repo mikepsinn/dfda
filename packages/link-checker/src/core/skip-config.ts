@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { dirname, resolve } from 'path';
-import { LinkInfo, SkipConfig, SkipConfigOptions, SkipConfigResult } from './types';
+import { LinkInfo, SkipConfig, SkipConfigOptions, SkipConfigResult, ValidationResult } from './types';
 
 const DEFAULT_CONFIG_PATH = 'link-checker-skip.json';
 
@@ -11,11 +11,11 @@ export function loadSkipConfig(options: SkipConfigOptions = {}): SkipConfig {
   try {
     if (!existsSync(absolutePath)) {
       if (options.createIfMissing) {
-        const defaultConfig: SkipConfig = { skippedLinks: [] };
+        const defaultConfig: SkipConfig = { lastChecked: '', skipUrls: {} };
         saveSkipConfig(defaultConfig, { configPath });
         return defaultConfig;
       }
-      return { skippedLinks: [] };
+      return { lastChecked: '', skipUrls: {} };
     }
 
     const content = readFileSync(absolutePath, 'utf8');
@@ -23,7 +23,7 @@ export function loadSkipConfig(options: SkipConfigOptions = {}): SkipConfig {
     return config;
   } catch (error) {
     console.error(`Error loading skip config from ${absolutePath}:`, error);
-    return { skippedLinks: [] };
+    return { lastChecked: '', skipUrls: {} };
   }
 }
 
@@ -67,18 +67,35 @@ export function saveSkipConfig(config: SkipConfig, options: SkipConfigOptions = 
   }
 }
 
-export function updateSkipConfig(results: LinkInfo[], options: SkipConfigOptions = {}): SkipConfigResult {
-  const config = loadSkipConfig(options);
-  
-  // Update skipped links
-  config.skippedLinks = results
-    .filter(result => !result.isValid)
-    .map(result => ({
-      url: result.url,
-      statusCode: result.statusCode,
-      location: result.location,
-      lastChecked: Date.now()
-    }));
+export function shouldSkipUrl(url: string, config: SkipConfig): boolean {
+  const skipInfo = config.skipUrls[url];
+  if (!skipInfo) {
+    return false;
+  }
 
-  return saveSkipConfig(config, options);
+  const lastChecked = new Date(skipInfo.lastChecked);
+  const oneDayAgo = new Date();
+  oneDayAgo.setDate(oneDayAgo.getDate() - 1);
+
+  return lastChecked > oneDayAgo;
+}
+
+export function updateSkipConfig(results: LinkInfo[]): SkipConfig {
+  const now = new Date().toISOString();
+  const skipUrls: SkipConfig['skipUrls'] = {};
+
+  results
+    .filter(result => result.validationResult && !result.validationResult.isValid)
+    .forEach(result => {
+      skipUrls[result.url] = {
+        lastChecked: now,
+        statusCode: result.validationResult?.statusCode,
+        error: result.validationResult?.error
+      };
+    });
+
+  return {
+    lastChecked: now,
+    skipUrls
+  };
 } 
