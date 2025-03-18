@@ -48,11 +48,15 @@ jobs:
         working-directory: apps/web
         run: cp .env.example .env
 
+      # Setup Docker and Docker Compose
+      - name: Set up Docker Compose
+        uses: docker/setup-buildx-action@v3
+
       # Start database and other services
       - name: Start Docker services
         working-directory: apps/web
         run: |
-          docker-compose up -d db
+          docker compose up -d db
           echo "Waiting for database to be ready..."
           timeout 30 bash -c 'until docker exec dfda-postgres pg_isready; do sleep 2; done' || false
             
