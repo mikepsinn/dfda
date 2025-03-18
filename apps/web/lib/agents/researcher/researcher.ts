@@ -166,7 +166,7 @@ export async function writeArticle(
 
   console.log(`🚀 Starting Article Generation:
 • Topic: "${topic}"
-• Model: ${options.modelName || DEFAULT_MODEL_NAME}
+• Model: ${options.modelName || DEFAULT_MODEL_NAME()}
 • Format: ${format}
 • Sources: ${numberOfWebResultsToInclude}`)
 
@@ -283,7 +283,7 @@ export async function writeArticle(
   report.generationOptions = options
 
   // Calculate token usage and costs
-  const modelName = options.modelName || DEFAULT_MODEL_NAME
+  const modelName = options.modelName || DEFAULT_MODEL_NAME()
   const pricing = MODEL_PRICING[modelName] || { input: 0, output: 0 }
   
   const tokenUsage = {
@@ -395,7 +395,7 @@ export async function writeArticle(
             options.maxCharactersOfSearchContentToUse || 999999,
           tone: options.tone || "neutral",
           format: options.format || "article",
-          modelName: options.modelName || DEFAULT_MODEL_NAME,
+          modelName: options.modelName || DEFAULT_MODEL_NAME(),
           temperature: options.temperature,
           topP: options.topP,
           maxTokens: options.maxTokens,
