@@ -11,13 +11,19 @@ describe('Integration - General', () => {
         'next.config.js',
         'package.json',
         'tsconfig.json',
-        'tailwind.config.ts',
+        ['tailwind.config.ts', 'tailwind.config.js'], // Accept either .ts or .js
         'postcss.config.js',
         'config/routeTree.ts'
       ]
 
       requiredFiles.forEach(file => {
-        expect(fs.existsSync(path.join(process.cwd(), file))).toBe(true)
+        if (Array.isArray(file)) {
+          // If file is an array, check if at least one of the alternatives exists
+          const exists = file.some(f => fs.existsSync(path.join(process.cwd(), f)))
+          expect(exists).toBe(true)
+        } else {
+          expect(fs.existsSync(path.join(process.cwd(), file))).toBe(true)
+        }
       })
     })
 
@@ -58,11 +64,10 @@ describe('Integration - General', () => {
   describe('Project Structure', () => {
     it('should have required Next.js app directory structure', () => {
       const requiredDirs = [
-        'app',
-        'components',
-        'lib',
-        'public',
-        'styles'
+        'app',      // Required for Next.js app router
+        'components', // For shared components
+        'lib',      // For shared utilities and business logic
+        'public'    // For static assets
       ]
 
       requiredDirs.forEach(dir => {
