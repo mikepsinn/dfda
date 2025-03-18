@@ -60,6 +60,11 @@ jobs:
           echo "Waiting for database to be ready..."
           timeout 30 bash -c 'until docker exec dfda-postgres pg_isready; do sleep 2; done' || false
             
+      # Setup database schema
+      - name: Setup database schema
+        working-directory: apps/web
+        run: pnpm prisma:migrate
+            
       # Build and test web app
       - name: Build and test web app
         working-directory: apps/web
