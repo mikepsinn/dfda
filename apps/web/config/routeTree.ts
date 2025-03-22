@@ -585,7 +585,10 @@ export const routeTree = {
       "description": "👤 Manage user variables",
       "displayName": "User Variables"
     }
-  }
+  },
+  "emoji": "🏠",
+  "description": "🏠 Navigate to the application's homepage",
+  "displayName": "Home"
 } as const;
 
 export type RouteNode = {
