@@ -41,12 +41,14 @@ function getAllPathsAndMetadata(tree: RouteNode): { paths: string[], metadata: M
   
   if (tree.path) {
     paths.push(tree.path)
+    // Only add metadata if at least one field exists
     if (tree.emoji || tree.description || tree.displayName) {
-      metadata.set(tree.path, {
-        emoji: tree.emoji,
-        description: tree.description,
-        displayName: tree.displayName
-      })
+      const metadataObj: any = {}
+      // Only include fields that actually exist
+      if (tree.emoji) metadataObj.emoji = tree.emoji
+      if (tree.description) metadataObj.description = tree.description
+      if (tree.displayName) metadataObj.displayName = tree.displayName
+      metadata.set(tree.path, metadataObj)
     }
   }
   
@@ -54,7 +56,19 @@ function getAllPathsAndMetadata(tree: RouteNode): { paths: string[], metadata: M
     Object.values(tree.children).forEach((child) => {
       const { paths: childPaths, metadata: childMetadata } = getAllPathsAndMetadata(child)
       paths = [...paths, ...childPaths]
-      childMetadata.forEach((value, key) => metadata.set(key, value))
+      childMetadata.forEach((value, key) => {
+        // Merge metadata if both exist, otherwise just set
+        if (metadata.has(key)) {
+          const existing = metadata.get(key)
+          metadata.set(key, {
+            emoji: existing.emoji || value.emoji,
+            description: existing.description || value.description,
+            displayName: existing.displayName || value.displayName
+          })
+        } else {
+          metadata.set(key, value)
+        }
+      })
     })
   }
   
@@ -67,20 +81,29 @@ function addMetadataToTree(tree: RouteNode, metadata: any[], existingMetadata: M
   
   // Find metadata for current path
   if (newTree.path) {
-    // Check for existing metadata first
+    // First, apply any existing metadata from the current tree
+    const currentMetadata = {
+      emoji: newTree.emoji,
+      description: newTree.description,
+      displayName: newTree.displayName
+    }
+
+    // Then, apply any metadata from the existing metadata map
     const existing = existingMetadata.get(newTree.path)
     if (existing) {
-      // Preserve existing metadata
-      newTree.emoji = existing.emoji
-      newTree.description = existing.description
-      newTree.displayName = existing.displayName
-    } else {
-      // Use new metadata only if no existing metadata
+      // Only use existing metadata if it exists and isn't already set in current tree
+      if (!currentMetadata.emoji) newTree.emoji = existing.emoji
+      if (!currentMetadata.description) newTree.description = existing.description
+      if (!currentMetadata.displayName) newTree.displayName = existing.displayName
+    }
+
+    // Finally, only apply new metadata if we still have missing fields
+    if (!newTree.emoji || !newTree.description || !newTree.displayName) {
       const routeMetadata = metadata.find(m => m.path === newTree.path)
       if (routeMetadata) {
-        newTree.emoji = routeMetadata.emoji
-        newTree.description = routeMetadata.description
-        newTree.displayName = routeMetadata.displayName
+        if (!newTree.emoji) newTree.emoji = routeMetadata.emoji
+        if (!newTree.description) newTree.description = routeMetadata.description
+        if (!newTree.displayName) newTree.displayName = routeMetadata.displayName
       }
     }
   }
@@ -140,16 +163,40 @@ export function generateRouteTree(dir: string = 'app', parentPath: string = ''):
   return root
 }
 
-async function generateRouteDescriptions(routeTree: RouteNode): Promise<RouteNode> {
-  // Get all paths and existing metadata
-  const { paths, metadata: existingMetadata } = getAllPathsAndMetadata(routeTree)
+async function generateRouteDescriptions(routeTree: RouteNode, existingRouteTree: RouteNode | null = null): Promise<RouteNode> {
+  // If we have an existing tree, use it as the source of metadata
+  const existingMetadata = new Map<string, any>()
+  if (existingRouteTree) {
+    const { metadata } = getAllPathsAndMetadata(existingRouteTree)
+    metadata.forEach((value, key) => existingMetadata.set(key, value))
+  }
+
+  // Get all paths and existing metadata from current tree
+  const { paths, metadata: currentMetadata } = getAllPathsAndMetadata(routeTree)
   
-  // Filter out paths that already have metadata
-  const pathsNeedingMetadata = paths.filter(path => !existingMetadata.has(path))
+  // Merge existing metadata with current metadata
+  currentMetadata.forEach((value, key) => {
+    if (existingMetadata.has(key)) {
+      const existing = existingMetadata.get(key)
+      existingMetadata.set(key, {
+        emoji: value.emoji || existing.emoji,
+        description: value.description || existing.description,
+        displayName: value.displayName || existing.displayName
+      })
+    } else {
+      existingMetadata.set(key, value)
+    }
+  })
+  
+  // Filter out paths that already have complete metadata
+  const pathsNeedingMetadata = paths.filter(path => {
+    const existing = existingMetadata.get(path)
+    return !existing || !existing.emoji || !existing.description || !existing.displayName
+  })
   
   if (pathsNeedingMetadata.length === 0) {
-    console.log('✨ All routes already have metadata!')
-    return routeTree
+    console.log('✨ All routes already have complete metadata!')
+    return addMetadataToTree(routeTree, [], existingMetadata)
   }
   
   // Create a prompt that explains the context
@@ -172,9 +219,9 @@ ${pathsNeedingMetadata.map(p => `- ${p}`).join('\n')}
 `
 
   // Generate metadata only for routes that need it
-  console.log('🤖 Generating metadata with model...');
-  const model = getModelByName();
-  console.log('🔧 Using model:', model);
+  console.log(`🤖 Generating metadata for ${pathsNeedingMetadata.length} routes...`)
+  const model = getModelByName()
+  console.log('🔧 Using model:', model)
   
   const result = await generateObject({
     model,
@@ -192,9 +239,26 @@ async function main() {
   const routeTree = generateRouteTree()
   console.log('Generated route tree:', JSON.stringify(routeTree, null, 2))
 
-  // Then enhance it with metadata
+  // Read existing route tree if it exists
+  let existingRouteTree: RouteNode | null = null
+  const routeTreePath = path.join(process.cwd(), 'config/routeTree.ts')
+  if (fs.existsSync(routeTreePath)) {
+    try {
+      const fileContent = fs.readFileSync(routeTreePath, 'utf8')
+      // Extract the route tree object from the file content using regex
+      const match = fileContent.match(/export const routeTree = (\{[\s\S]*?\}) as const;/)
+      if (match) {
+        existingRouteTree = JSON.parse(match[1])
+        console.log('Found existing route tree')
+      }
+    } catch (error) {
+      console.warn('Error reading existing route tree:', error)
+    }
+  }
+
+  // Then enhance it with metadata, using existing metadata if available
   console.log('\nGenerating route descriptions...')
-  const enhancedTree = await generateRouteDescriptions(routeTree)
+  const enhancedTree = await generateRouteDescriptions(routeTree, existingRouteTree)
 
   // Save the enhanced route tree
   const output = `// Generated route tree - do not edit manually
