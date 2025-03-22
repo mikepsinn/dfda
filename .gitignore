@@ -38,3 +38,4 @@ tmp/
 .env*
 !.env.example
 management-ui/logs/
+.temp
