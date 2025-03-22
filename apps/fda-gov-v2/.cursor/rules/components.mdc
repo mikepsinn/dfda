@@ -1,0 +1,53 @@
+---
+description: creating or updating components
+globs: 
+alwaysApply: false
+---
+# Component and TypeScript Guidelines
+
+## Component Organization
+- All reusable UI components should be placed in `@/components/ui/`
+- Auth-related components should be in `@/components/auth/`
+- Feature-specific components should be in their respective feature directories
+- No duplicate components across directories
+- Follow Radix UI + shadcn/ui patterns for component structure
+
+## TypeScript Best Practices
+- Always use explicit type annotations in scripts and utility files
+- Use proper type imports from Next.js and React
+- Follow Next.js TypeScript configuration - don't modify tsconfig.json unnecessarily
+- Use TypeScript's strict mode settings as configured by Next.js
+
+## Script Guidelines
+- Use CommonJS require() syntax for scripts to maintain compatibility
+- Scripts should work with default Next.js TypeScript settings
+- Always handle file system operations safely with proper error checking
+- Use path.join() for cross-platform compatibility
+- Test scripts on both Windows and Unix systems
+
+## File Patterns
+```glob
+components/**/*.tsx
+scripts/**/*.ts
+```
+
+## Examples
+Good script structure:
+```typescript
+const fs = require('fs')
+const path = require('path')
+
+// Explicit types
+const filePath: string = path.join(process.cwd(), 'components')
+
+// Safe file operations
+if (fs.existsSync(filePath)) {
+  // Operation
+}
+```
+
+Bad script structure:
+```typescript
+import fs from 'fs' // Don't use ES modules in scripts
+const filePath = './components' // Don't use relative paths directly
+``` 

@@ -1,8 +1,9 @@
-import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { signIn } from 'next-auth/react';
 import { useToast } from '@/hooks/use-toast';
 import SignInForm from './signin-form';
+import { act } from 'react-dom/test-utils';
 
 // Mock next-auth signIn
 jest.mock('next-auth/react', () => ({
