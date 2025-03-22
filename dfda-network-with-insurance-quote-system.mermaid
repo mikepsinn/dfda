@@ -1,0 +1,29 @@
+graph TD;
+    A["dFDA Marketplace<br/>(Core Platform)"] --> B["Patient Portal"]
+    A --> C["Sponsor Dashboard"]
+    A --> D["Digital Twin Safe"]
+    
+    E["Gateway Nodes"] <--> D
+    E <--> A
+    
+    F["Communication System"] --> B
+    F --> C
+    
+    G["Developer Portal"] --> H["App Directory<br/>(Simplified App Store)"]
+    
+    I["Supply Chain Tracking"] --> J["Adverse Event<br/>Monitoring"]
+    I --> K["Counterfeit<br/>Detection"]
+    
+    L["Insurance Quote System"] --> M["Risk Assessment<br/>Engine"]
+    L --> N["Insurance Provider<br/>Integrations"]
+    L --> O["Policy Management"]
+    
+    C --> I
+    B --> I
+    C --> L
+    
+    H --> B
+    H --> C
+    
+    P["Trial Creation<br/>Workflow"] --> L
+    C --> P

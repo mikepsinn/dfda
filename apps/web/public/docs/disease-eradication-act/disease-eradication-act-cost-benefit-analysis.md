@@ -59,7 +59,7 @@ This analysis provides a quantitative evaluation of the Act's potential economic
 ## Key Components of the Act
 
 - **Decentralized Trial Platform**: Creation of a free, open-source platform for clinical trials.
-- **FDAi System**: An AI-powered system to analyze treatment outcomes continuously.
+- **FDAi**: An autonomous agent to help you collect and analyze the effects of foods and drugs on specific conditions.
 - **Universal Treatment Access**: Guaranteed right for patients to try treatments after basic safety testing.
 - **Elimination of Regulatory Fees**: Removal of government-imposed fees that hinder innovation.
 - **Global Drug Importation**: Allowing importation from trusted international regulatory bodies.

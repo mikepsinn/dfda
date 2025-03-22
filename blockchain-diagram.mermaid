@@ -1,0 +1,12 @@
+graph TD;
+    A["Blockchain Network"] --> B["Smart Contracts"]
+    B --> C["Trial Contracts"]
+    B --> D["Identity Contracts"]
+    B --> E["Payment Contracts"]
+    B --> F["Supply Chain Contracts"]
+    
+    G["apps/blockchain-node"] --> A
+    H["apps/smart-contract-service"] --> B
+    
+    I["packages/blockchain-client"] --> J["dFDA Applications"]
+    J --> B

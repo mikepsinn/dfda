@@ -12,152 +12,142 @@ A robust link validation library for JavaScript/TypeScript projects that checks 
 - 📊 **Detailed Reporting**: Get precise link locations and error information
 - 🔒 **Type-Safe**: Written in TypeScript with full type definitions
 
-## Installation
+## Implementation Status
 
-```bash
-npm install link-validator
-```
+### Core Features
+- [x] GitHub project scanning functionality
+  - [x] Recursive directory traversal
+  - [x] File type detection and parsing
+  - [x] Link extraction from supported file types
+  - [x] Unit tests for scanning functionality
 
-## Quick Start
+### Link Management
+- [x] External link validation
+  - [x] HTTP status checking
+  - [x] Timeout handling
+  - [x] Rate limiting support
+  - [x] Unit tests for link validation
 
-```typescript
-import { scanLinks } from 'link-validator';
+### Configuration
+- [x] Auto-generated config file (`link-checker.json`)
+  - [x] Successful links tracking
+  - [x] Failed links tracking
+  - [x] Last check timestamp for each link
+  - [x] Unit tests for config management
 
-const results = await scanLinks('./docs', {
-  checkLiveLinks: true,
-  excludePatterns: ['node_modules/**']
-});
+### Performance Features
+- [x] Skip previously failed links
+- [x] Daily check limitation for external links
+- [x] Cleanup of removed links from config
+- [x] Unit tests for caching behavior
 
-// Handle results
-results.forEach(link => {
-  if (!link.isValid) {
-    console.log(`❌ Invalid link: ${link.url}`);
-    console.log(`   Location: ${link.location.filePath}:${link.location.lineNumber}`);
-    console.log(`   Error: ${link.error}`);
-  }
-});
-```
+### Integration
+- [ ] CLI tool implementation
+- [ ] Package.json integration
+- [ ] Documentation
+- [ ] Integration tests
 
-## API Reference
+## Product Requirements Document (PRD)
 
-### `scanLinks(rootDir: string, options?: ScanOptions): Promise<LinkInfo[]>`
+### Overview
+A TypeScript-based link validation tool that scans GitHub projects for links, maintains a configuration file of link statuses, and optimizes validation through intelligent caching and failure tracking.
 
-Scans a directory recursively for links in supported file types.
+### Core Requirements
 
-#### Options
+1. **Project Scanning**
+   - Scan all supported file types in a GitHub project
+   - Support for MD, MDX, TS, TSX, JS, and JSX files
+   - Extract both external and internal links
 
-```typescript
-interface ScanOptions {
-  checkLiveLinks?: boolean;        // Validate external URLs (default: false)
-  includePatterns?: string[];      // Glob patterns for files to include
-  excludePatterns?: string[];      // Glob patterns for files to exclude
-  concurrent?: number;             // Max concurrent requests (default: 5)
-  timeout?: number;                // Request timeout in ms (default: 5000)
-}
-```
+2. **Configuration Management**
+   - Generate `link-validator.config.json` in project root
+   - Store successful and failed external links
+   - Track last validation timestamp for each link
+   - Auto-cleanup of non-existent links
 
-#### Return Type
+3. **Link Validation**
+   - Validate external links with proper HTTP checks
+   - Skip previously failed links
+   - Limit external link checks to once per day
+   - Support for timeout and rate limiting
 
-```typescript
-interface LinkInfo {
-  url: string;                     // The URL or link path
-  location: {
-    filePath: string;             // File containing the link
-    lineNumber: number;           // Line number in file
-    columnNumber?: number;        // Column number in file
-  };
-  isValid?: boolean;              // Validation result
-  error?: string;                 // Error message if invalid
-}
-```
+### Technical Requirements
 
-### `validateLink(url: string): Promise<boolean>`
+1. **Performance**
+   - Efficient file traversal
+   - Caching of validation results
+   - Parallel link validation where appropriate
 
-Validates a single URL.
+2. **Dependencies**
+   - Use established libraries for:
+     - File system operations
+     - HTTP requests
+     - Link parsing
+     - Config file management
 
-```typescript
-import { validateLink } from 'link-validator';
+3. **Testing**
+   - Unit tests for core functionality
+   - Integration tests for full workflow
+   - Mock HTTP responses for testing
 
-const isValid = await validateLink('https://example.com');
-```
-
-## Examples
-
-### Basic Usage
-
-```typescript
-import { scanLinks } from 'link-validator';
-
-// Check all markdown files
-const results = await scanLinks('./content', {
-  includePatterns: ['**/*.md'],
-  checkLiveLinks: true
-});
-```
-
-### Custom Error Handling
-
-```typescript
-import { scanLinks } from 'link-validator';
-
-try {
-  const results = await scanLinks('./src');
-  const invalidLinks = results.filter(link => !link.isValid);
-  
-  if (invalidLinks.length > 0) {
-    console.error('Found invalid links:');
-    invalidLinks.forEach(link => {
-      console.error(`- ${link.url} in ${link.location.filePath}`);
-    });
-    process.exit(1);
-  }
-} catch (error) {
-  console.error('Error scanning links:', error);
-  process.exit(1);
-}
-```
-
-### CI Integration
-
-```typescript
-import { scanLinks } from 'link-validator';
-
-async function validateInCI() {
-  const results = await scanLinks('.', {
-    checkLiveLinks: true,
-    excludePatterns: [
-      'node_modules/**',
-      'dist/**',
-      'coverage/**'
-    ]
-  });
-
-  const invalidLinks = results.filter(link => !link.isValid);
-  if (invalidLinks.length > 0) {
-    console.error('CI Check Failed: Invalid links found');
-    process.exit(1);
+### Configuration File Structure
+```json
+{
+  "version": "1.0",
+  "lastUpdated": "ISO-8601-timestamp",
+  "successfulLinks": {
+    "https://example.com": {
+      "lastChecked": "ISO-8601-timestamp",
+      "locations": ["path/to/file1.md", "path/to/file2.tsx"]
+    }
+  },
+  "failedLinks": {
+    "https://failed-example.com": {
+      "lastChecked": "ISO-8601-timestamp",
+      "error": "404 Not Found",
+      "locations": ["path/to/file3.md"]
+    }
   }
 }
 ```
 
-## Contributing
+## Package Architecture
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+```
+link-checker/
+├── src/
+│   ├── core/                    # Core functionality
+│   │   ├── types.ts            # Type definitions
+│   │   ├── scanner.ts          # Link scanning logic
+│   │   └── config.ts           # Configuration management
+│   ├── validators/             # URL validation
+│   │   └── index.ts            # Unified validation logic
+│   ├── extractors/            # Link extraction
+│   │   └── index.ts           # Link extraction from different file types
+│   └── index.ts               # Main entry point + formatting
+├── tests/
+│   └── unit/                  # Unit tests
+├── jest.config.js             # Jest configuration
+└── package.json              # Project configuration
+```
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+Each directory serves a specific purpose:
 
-## License
+- `core/`: Contains the fundamental types and core functionality
+  - `types.ts`: Defines interfaces like `LinkInfo`, `ValidationResult`, etc.
+  - `scanner.ts`: Implements link scanning and extraction
+  - `config.ts`: Handles all configuration management (scan results and skip lists)
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- `validators/`: Contains unified URL validation logic
+  - Single `validateUrl` function that handles all URL types
+  - Supports external URLs (via HTTP), local files, and special protocols
 
-## Author
+- `extractors/`: Contains link extraction logic
+  - Extracts links from Markdown, HTML, JSX, and import statements
+  - Provides location information (file, line, column)
 
-Mike P. Sinn
+The main entry point (`index.ts`) provides:
+- Simple API for link checking
+- Basic formatting in text or JSON format
+- Configuration management functions
 
-## Repository
-
-[GitHub Repository](https://github.com/mikepsinn/link-validator) 

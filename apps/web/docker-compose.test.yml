@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  db:
+    image: ankane/pgvector:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: dfda_test
+    ports:
+      - "5433:5432"
+    container_name: dfda-postgres
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly no # Disable persistence for tests 

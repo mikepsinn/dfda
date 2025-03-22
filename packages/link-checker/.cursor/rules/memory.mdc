@@ -1,0 +1,58 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Storing Rules
+We will create a rule file in which to store instructions (essentially, our “memory”).
+## Location
+.cursor/rules/
+## File Name
+Use a name composed of letters, digits, and hyphens.
+## File Extension
+mdc
+## Content
+The content is stored in a code block. The frontmatter changes depending on the rule type:
+```
+description:
+globs:
+alwaysApply:
+```
+## Rule Title
+Provide the rule content in proper Markdown format.
+## Rule Types
+Rules can have the following types. Choose the one that best fits your needs:
+Always: Always applied.
+Auto Attached: Automatically applied to files matching specified globs.
+Agent Requested: Applied only when an agent decides it’s relevant, based on the description.
+Manual: Applied only when the user explicitly says so.
+## Frontmatter Details
+The frontmatter differs based on the rule type. Include the proper fields:
+### Always
+```
+globs: *
+```
+### Auto Attached
+Leave description blank. Include globs. If you specify multiple globs, separate them with commas:
+```
+description:
+globs: comma-separated globs
+```
+### Agent Requested
+Include a description. Do not include globs; otherwise, it becomes Auto Attached:
+```
+description: Put your description here
+globs:
+alwaysApply: false
+```
+### Manual
+Leave description and globs empty. Set alwaysApply to false:
+```
+description:
+globs:
+alwaysApply: false
+```
+## Reporting After Creation
+Once you create your rule file, report:
+  - Which rule type you chose and why
+  - An explanation of the rule’s content

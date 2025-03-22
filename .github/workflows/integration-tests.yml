@@ -37,32 +37,80 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      # Cache Next.js build output
+      - name: Cache Next.js build
+        uses: actions/cache@v3
+        with:
+          path: |
+            apps/web/.next/cache
+            apps/web/.next-ci/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('apps/web/**.[jt]s', 'apps/web/**.[jt]sx', 'apps/web/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+            ${{ runner.os }}-nextjs-
+
+      # Ensure cache directories exist
+      - name: Create cache directories
+        run: mkdir -p apps/web/.next/cache apps/web/.next-ci/cache
+        shell: bash
             
       - name: Install dependencies
         run: |
-          pnpm install
           pnpm install --frozen-lockfile
+          pnpm -F dfda install --frozen-lockfile
             
       # Setup environment variables
       - name: Setup environment variables
         working-directory: apps/web
         run: cp .env.example .env
+
+      # Setup Docker and Docker Compose
+      - name: Set up Docker Compose
+        uses: docker/setup-buildx-action@v3
+
+      # Start database for tests
+      - name: Start test database
+        working-directory: apps/web
+        run: |
+          docker compose -f docker-compose.test.yml up -d db
+          echo "Waiting for database to be ready..."
+          timeout 30 bash -c 'until docker exec dfda-postgres pg_isready; do sleep 2; done' || false
+            
+      # Setup database schema
+      - name: Setup database schema
+        working-directory: apps/web
+        run: pnpm prisma:migrate
             
       # Build and test web app
       - name: Build and test web app
         working-directory: apps/web
         run: |
-          pnpm build
+          pnpm run build
           pnpm start &
           echo "Waiting for Next.js to be ready..."
           timeout 30 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:3000)" != "200" ]]; do sleep 2; done' || false
-          pnpm test:integration
+          pnpm test:integration --reporters=default --reporters=github-actions --verbose
         env:
           CI: true
 
-      # Optional: Upload test results as artifacts
+      # Upload test results and coverage reports
       - name: Upload test results
-        if: always() && (hashFiles('apps/web/coverage/**') != '' || hashFiles('apps/web/test-results/**') != '' || hashFiles('apps/web/**/junit.xml') != '')
+        if: always()
+        run: |
+          mkdir -p apps/web/coverage apps/web/test-results
+          find apps/web -name "junit.xml" -o -name "test-report.html" -o -path "apps/web/coverage/*" -o -path "apps/web/test-results/*" > artifact_list.txt
+          if [ -s artifact_list.txt ]; then
+            echo "Found test artifacts to upload"
+            cat artifact_list.txt
+          else
+            echo "No test artifacts found to upload"
+            exit 0
+          fi
+        shell: bash
+
+      - name: Upload artifacts
+        if: always() && success()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
@@ -70,4 +118,5 @@ jobs:
             apps/web/coverage/
             apps/web/test-results/
             apps/web/**/junit.xml
+            apps/web/test-report.html
           retention-days: 30 

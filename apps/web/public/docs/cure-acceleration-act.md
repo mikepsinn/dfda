@@ -29,7 +29,7 @@ This Act:
 * 🏆 **Rewards** companies for developing actual cures and prevention
 * 🚪 **Removes** barriers blocking access to effective treatments
 * 📈 **Measures and rewards** real-world results through comprehensive data collection
-* 🤖 **Establishes** an AI-powered system (FDAi) to continuously analyze treatment outcomes
+* 🤖 **Establishes** an AI-powered system (FDAi) to help you collect and analyze the effects of foods and drugs on specific conditions
 
 ### 1.4 💸 Economic Impact
 
