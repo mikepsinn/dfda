@@ -39,7 +39,7 @@ const nextConfig = {
   },
   output: 'standalone',
   // Enable build cache
-  distDir: process.env.CI ? '.next-ci' : '.next',
+  distDir: '.next',
   generateBuildId: async () => {
     // In CI, use a deterministic build ID based on the commit hash
     if (process.env.GITHUB_SHA) {
