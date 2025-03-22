@@ -1,38 +1,69 @@
-export interface LinkLocation {
+/**
+ * Represents the location of a link within a file
+ */
+export interface Location {
   filePath: string;
   lineNumber: number;
-  columnNumber?: number;
+  columnNumber: number;
 }
 
-export interface LinkInfo {
-  url: string;
-  location: LinkLocation;
-  isValid?: boolean;
-  error?: string;
-}
-
-export interface ScanOptions {
-  // Whether to validate external URLs (HTTP/HTTPS)
-  checkLiveLinks?: boolean;
-  
-  // Glob patterns for files to include in the scan
-  includePatterns?: string[];
-  
-  // Glob patterns for files to exclude from the scan
-  excludePatterns?: string[];
-  
-  // Maximum number of concurrent requests for link validation
-  concurrent?: number;
-  
-  // Timeout in milliseconds for external link validation
-  timeout?: number;
-}
-
+/**
+ * Represents the validation result of a link
+ */
 export interface ValidationResult {
   isValid: boolean;
   error?: string;
-  filePath?: string;
-  lineNumber?: number;
+  checkedAt: Date;
+}
+
+/**
+ * Represents information about a discovered link
+ */
+export interface LinkInfo {
+  url: string;
+  location: Location;
+  validationResult?: ValidationResult;
+  error?: string;
+}
+
+/**
+ * Represents a link status in the configuration
+ */
+export interface LinkStatus {
+  lastChecked: string;
+  locations: string[];
+  error?: string;
+}
+
+/**
+ * Represents the configuration file structure
+ */
+export interface Config {
+  version: string;
+  lastUpdated: string;
+  successfulLinks: Record<string, Omit<LinkStatus, 'error'>>;
+  failedLinks: Record<string, LinkStatus>;
+}
+
+/**
+ * Represents the result of a link scanning operation
+ */
+export interface ScanResult {
+  valid: LinkInfo[];
+  invalid: LinkInfo[];
+}
+
+/**
+ * Options for scanning links
+ */
+export interface ScanOptions {
+  /** Working directory for resolving relative paths */
+  cwd?: string;
+  /** Glob patterns to exclude */
+  exclude?: string[];
+  /** Whether to check if external links are live */
+  checkLiveLinks?: boolean;
+  configPath?: string;
 }
 
 export interface BrokenLink {
@@ -42,17 +73,41 @@ export interface BrokenLink {
   error: string;
 }
 
-export function formatBrokenLinksTable(brokenLinks: BrokenLink[]): string {
-  const maxUrlWidth = Math.max(...brokenLinks.map(link => link.url.length), 10);
-  const maxPathWidth = Math.max(...brokenLinks.map(link => link.filePath.length), 10);
-  const maxErrorWidth = Math.max(...brokenLinks.map(link => link.error.length), 10);
+export function formatBrokenLinksTable(links: BrokenLink[]): string {
+  if (links.length === 0) return 'No broken links found!';
 
-  const header = `| ${'URL'.padEnd(maxUrlWidth)} | ${'File Path'.padEnd(maxPathWidth)} | ${'Line'.toString().padEnd(6)} | ${'Error'.padEnd(maxErrorWidth)} |\n` +
-                 `|${'-'.repeat(maxUrlWidth + 2)}|${'-'.repeat(maxPathWidth + 2)}|${'-'.repeat(8)}|${'-'.repeat(maxErrorWidth + 2)}|`;
+  const table = ['File | Line | URL | Error', '-----|------|-----|-------'];
 
-  const rows = brokenLinks.map(link => 
-    `| ${link.url.padEnd(maxUrlWidth)} | ${link.filePath.padEnd(maxPathWidth)} | ${link.lineNumber.toString().padEnd(6)} | ${link.error.padEnd(maxErrorWidth)} |`
-  ).join('\n');
+  links.forEach(link => {
+    table.push(`${link.filePath} | ${link.lineNumber} | ${link.url} | ${link.error}`);
+  });
 
-  return `${header}\n${rows}`;
+  return table.join('\n');
+}
+
+/**
+ * Configuration for skipping URLs
+ */
+export interface SkipConfig {
+  links: LinkInfo[];
+}
+
+/**
+ * Options for skip configuration
+ */
+export interface SkipConfigOptions {
+  configPath?: string;
+  createIfMissing?: boolean;
+}
+
+export interface SkipConfigResult {
+  success: boolean;
+  error?: string;
+  configPath: string;
+}
+
+export interface LinkLocation {
+  filePath: string;
+  lineNumber: number;
+  columnNumber: number;
 }

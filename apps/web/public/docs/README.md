@@ -24,7 +24,7 @@ This [monorepo](https://github.com/FDA-AI/FDAi/blob/develop/docs/contributing/re
 * [apps](https://github.com/FDA-AI/FDAi/blob/develop/apps)
 * autonomous agents to help people and organizations quantify the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness.
 
-[![fdai-framework-diagram.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/images/fdai-framework-diagram.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/images/fdai-framework-diagram.png)
+[![dfda-framework-diagram.png](https://static.crowdsourcingcures.org/dfda/images/dfda-framework-diagram.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/images/dfda-framework-diagram.png)
 
 # 😕 Why are we doing this?
 
@@ -66,7 +66,7 @@ Our crazy theory is that we can accomplish the same great feat in the realm of c
 
 # 🖥️ FDAi Framework Components
 
-[](https://github.com/FDA-AI/FDAi#%EF%B8%8F-fdai-framework-components)
+[](https://github.com/FDA-AI/FDAi#%EF%B8%8F-dfda-framework-components)
 
 This is a very high-level overview of the architecture. The three primary primitive components of the FDAi framework are:
 
@@ -81,13 +81,13 @@ The core characteristics that define the FDAi are:
 * **Interoperability** - a directory of existing open-source projects that can be used to fulfill the requirements of each primitive or component
 * **Collective Intelligence** - a collaborative effort, so please feel free to [contribute or edit anything](https://github.com/FDA-AI/FDAi/blob/develop/docs/contributing.md)!
 
-[![fdai-framework-diagram.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/images/fdai-framework-diagram.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/images/fdai-framework-diagram.png)
+[![dfda-framework-diagram.png](https://static.crowdsourcingcures.org/img/dfda-framework-diagram.png)](https://static.crowdsourcingcures.org/img/dfda-framework-diagram.png)
 
 ## 1. Data Silo API Gateway Nodes
 
 [](https://github.com/FDA-AI/FDAi#1-data-silo-api-gateway-nodes)
 
-[![dfda-gateway-api-node-silo.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
+[![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
 
 [FDAi Gateway API Nodes](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](https://github.com/FDA-AI/FDAi#2-personalfda-nodes).
 
@@ -105,7 +105,7 @@ The core characteristics that define the FDAi are:
 
 [](https://github.com/FDA-AI/FDAi#21-digital-twin-safes)
 
-[![digital-twin-safe-no-text.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
+[![digital-twin-safe-no-text.jpg](https://static.crowdsourcingcures.org/img/digital-twin-safe-no-text.jpg)](https://static.crowdsourcingcures.org/img/digital-twin-safe-no-text.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
@@ -117,7 +117,7 @@ A local application for self-sovereign import and storage of personal data.
 
 [Personal AI agents](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
 
-[![data-import-and-analysis.gif](https://github.com/FDA-AI/FDAi/raw/develop/docs/images/data-import-and-analysis.gif)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
+[![data-import-and-analysis.gif](https://static.crowdsourcingcures.org/img/data-import-and-analysis.gif)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
 
 **👉[Learn More About Optimitron](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
 
@@ -125,7 +125,7 @@ A local application for self-sovereign import and storage of personal data.
 
 [](https://github.com/FDA-AI/FDAi#3-clinipediathe-wikipedia-of-clinical-research)
 
-[![clinipedia_globe_circle.jpg](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/clinipedia/clinipedia_globe_circle.jpg)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/clinipedia/clinipedia.md)
+[![clinipedia_globe_circle.jpg](https://static.crowdsourcingcures.org/dfda/components/clinipedia/clinipedia_globe_circle.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/clinipedia/clinipedia.md)
 
 The [Clinipedia wiki](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
@@ -137,7 +137,7 @@ The [Clinipedia wiki](https://github.com/FDA-AI/FDAi/blob/develop/docs/component
 
 A key component of Clinipedia is [**Outcome Labels**](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
 
-[![outcome-labels.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/outcome-labels/outcome-labels.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.png)
+[![outcome-labels.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.png)
 
 **👉 [Learn More About Outcome Labels](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.md)**
 
@@ -194,7 +194,7 @@ Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medicat
 
 Web and mobile push notifications with action buttons.
 
-[![web notification action buttons](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/data-collection/web-notification-action-buttons.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-collection/web-notification-action-buttons.png)
+[![web notification action buttons](https://static.crowdsourcingcures.org/dfda/components/data-collection/web-notification-action-buttons.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/data-collection/web-notification-action-buttons.png)
 
 ### Browser Extensions
 
@@ -202,7 +202,7 @@ Web and mobile push notifications with action buttons.
 
 By using the Browser Extension, you can track your mood, symptoms, or any outcome you want to optimize in a fraction of a second using a unique popup interface.
 
-[![Chrome Extension](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/browser-extension/browser-extension.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/browser-extension/browser-extension.png)
+[![Chrome Extension](https://static.crowdsourcingcures.org/dfda/components/browser-extension/browser-extension.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/browser-extension/browser-extension.png)
 
 ### Data Analysis
 
@@ -218,7 +218,7 @@ It then pairs every combination of variables and identifies likely causal relati
 
 [](https://github.com/FDA-AI/FDAi#-outcome-labels)
 
-[![outcome-labels-plugin.png](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/outcome-labels/outcome-labels.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.png)
+[![outcome-labels-plugin.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.png)
 
 [More info about outcome labels](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.md)
 
@@ -226,7 +226,7 @@ It then pairs every combination of variables and identifies likely causal relati
 
 [](https://github.com/FDA-AI/FDAi#real-time-decision-support-notifications)
 
-[![](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/decision-support-notifications/notifications-screenshot-slide.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
+[![](https://static.crowdsourcingcures.org/dfda/components/decision-support-notifications/notifications-screenshot-slide.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
 
 [More info about real time decision support](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/outcome-labels/outcome-labels.md)
 
@@ -234,7 +234,7 @@ It then pairs every combination of variables and identifies likely causal relati
 
 [](https://github.com/FDA-AI/FDAi#-predictor-search-engine)
 
-[![Predictor Search Engine](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/predictor-search-engine/predictor-search-engine.md)
+[![Predictor Search Engine](https://static.crowdsourcingcures.org/dfda/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/predictor-search-engine/predictor-search-engine.md)
 
 [👉 More info about the predictor search engine...](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/predictor-search-engine/predictor-search-engine.md)
 
@@ -242,7 +242,7 @@ It then pairs every combination of variables and identifies likely causal relati
 
 [](https://github.com/FDA-AI/FDAi#auto-generated-observational-studies)
 
-[![](https://github.com/FDA-AI/FDAi/raw/develop/docs/components/observational-studies/observational-studies.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/observational-studies/observational-studies.png)
+[![](https://static.crowdsourcingcures.org/dfda/components/observational-studies/observational-studies.png)](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/observational-studies/observational-studies.png)
 
 [👉 More info about observational studies...](https://github.com/FDA-AI/FDAi/blob/develop/docs/components/observational-studies/observational-studies.md)
 

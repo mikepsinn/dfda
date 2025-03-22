@@ -1,12 +1,24 @@
 export function getUtcDateTimeWithTimezone() {
   const date = new Date()
-  const timezoneOffset = date.getTimezoneOffset()
-  return new Date(date.getTime() - timezoneOffset * 60000).toISOString()
+  const jsTimezoneOffsetWest = date.getTimezoneOffset() // JS returns minutes WEST of UTC
+  return new Date(date.getTime() - jsTimezoneOffsetWest * 60000).toISOString()
 }
 
-export function convertToUTC(localDateTime: string, timezoneOffset: number) {
-  const localDate = new Date(localDateTime)
-  return new Date(localDate.getTime() + timezoneOffset * 60000).toISOString()
+export function convertToUTC(localDateTime: string, hoursFromUtc: number) {
+  // hoursFromUtc: positive means ahead of UTC (e.g. +2 for UTC+2)
+  //               negative means behind UTC (e.g. -5 for UTC-5)
+  
+  // Parse the local time components
+  const [year, month, day, hours, minutes, seconds] = localDateTime
+    .split(/[-T:]/)
+    .map(Number)
+  
+  // Create Date in UTC by specifying components in UTC
+  const localDate = Date.UTC(year, month - 1, day, hours, minutes, seconds)
+  const offsetMs = hoursFromUtc * 60 * 60 * 1000 // Convert hours to milliseconds
+  
+  // To get UTC from local: subtract hours ahead, add hours behind
+  return new Date(localDate - offsetMs).toISOString()
 }
 
 export function throwErrorIfDateInFuture(utcDateTime: string) {
@@ -27,11 +39,15 @@ export function getTimeZoneOffset() {
 
 export function convertToLocalDateTime(
   utcDateTime: string | number | Date,
-  timeZoneOffset: number
+  hoursFromUtc: number
 ) {
+  // hoursFromUtc: positive means ahead of UTC (e.g. +2 for UTC+2)
+  //               negative means behind UTC (e.g. -5 for UTC-5)
   const utcDate = new Date(utcDateTime)
+  const offsetMs = hoursFromUtc * 60 * 60 * 1000 // Convert hours to milliseconds
+  // To get local from UTC: add hours ahead, subtract hours behind
   const localDate = new Date(
-    utcDate.getTime() - timeZoneOffset * 60 * 60 * 1000
+    utcDate.getTime() + offsetMs
   )
   return localDate.toISOString()
 }

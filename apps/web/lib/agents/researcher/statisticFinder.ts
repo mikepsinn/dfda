@@ -56,7 +56,7 @@ export async function findStatistics(
     minConfidence = 0.1,
     requireRecentData = false,
     maxYearsOld = null,
-    modelName = DEFAULT_MODEL_NAME,
+    modelName = DEFAULT_MODEL_NAME(),
     requireMethodology = false
   } = options
 

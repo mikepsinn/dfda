@@ -1,11 +1,11 @@
-import fs from 'fs'
+import dotenv from 'dotenv'
 import path from 'path'
+import fs from 'fs'
 import { z } from 'zod'
 import { generateObject } from 'ai'
 import { getModelByName } from '../lib/utils/modelUtils'
-import dotenv from 'dotenv'
 
-// Load environment variables
+// Load environment variables first
 const envPath = path.join(process.cwd(), '.env')
 if (fs.existsSync(envPath)) {
   console.log('Loading environment from .env file...')
@@ -172,8 +172,12 @@ ${pathsNeedingMetadata.map(p => `- ${p}`).join('\n')}
 `
 
   // Generate metadata only for routes that need it
+  console.log('🤖 Generating metadata with model...');
+  const model = getModelByName();
+  console.log('🔧 Using model:', model);
+  
   const result = await generateObject({
-    model: getModelByName(),
+    model,
     schema: RouteMetadataSchema,
     prompt,
   })

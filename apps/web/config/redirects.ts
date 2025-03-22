@@ -11,5 +11,10 @@ export const redirects: Redirect[] = [
     destination: "/dfda/disease-eradication-act",
     permanent: true, // 308 redirect
   },
+  {
+    source: "/community",
+    destination: "https://github.com/orgs/decentralized-fda/discussions",
+    permanent: true, // 308 redirect
+  },
   // Add more redirects here as needed
 ] 

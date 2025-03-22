@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-03-18T04:20:09.300Z",
+  "successfulLinks": {
+    "https://example.com": {
+      "lastChecked": "2025-03-18T04:18:20.826Z",
+      "locations": [
+        "test-files/test.md"
+      ]
+    },
+    "https://google.com": {
+      "lastChecked": "2025-03-18T04:18:21.063Z",
+      "locations": [
+        "test-files/test.md"
+      ]
+    },
+    "https://github.com": {
+      "lastChecked": "2025-03-18T04:18:21.226Z",
+      "locations": [
+        "test-files/test.md"
+      ]
+    }
+  },
+  "failedLinks": {
+    "https://this-is-not-a-real-domain-123.com": {
+      "lastChecked": "2025-03-18T04:18:24.408Z",
+      "error": "getaddrinfo ENOTFOUND this-is-not-a-real-domain-123.com",
+      "locations": [
+        "test-files/test.md"
+      ]
+    }
+  }
+}

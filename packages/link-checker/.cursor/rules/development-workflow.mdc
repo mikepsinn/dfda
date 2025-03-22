@@ -1,0 +1,51 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+description: Development workflow for link-validator project focusing on test-driven development and documentation
+alwaysApply: true
+
+## Development Cycle
+
+1. **Before Starting a New Feature**
+   - Identify the feature from README.md checklist
+   - Create a new test file for the feature
+   - Write failing tests first
+
+2. **During Development**
+   - Implement the feature
+   - Run type checks: `npm run type-check`
+   - Run tests: `npm test`
+   - Fix any type or test issues before proceeding
+
+3. **After Feature Completion**
+   - Ensure all tests pass
+   - Update README.md checklist
+     - Mark feature as completed: `- [x]`
+     - Mark associated tests as completed
+   - Commit changes with format: `feat(scope): description`
+
+4. **Quality Gates**
+   - All TypeScript types must be explicit (no `any`)
+   - Test coverage must be maintained
+   - README checklist must be updated
+   - Config file schema must be maintained
+
+## Checklist Template
+
+```markdown
+### Feature Implementation
+- [ ] Write failing tests
+- [ ] Implement feature
+- [ ] Pass type checks
+- [ ] Pass all tests
+- [ ] Update README checklist
+- [ ] Commit changes
+```
+
+## Notes
+- Never move to a new feature until current feature is fully tested
+- Keep README.md checklist as single source of truth for progress
+- Always run tests before committing
+- Document any config file schema changes 

@@ -6,57 +6,85 @@ import { xai } from '@ai-sdk/xai';
 import {createOllama} from "ollama-ai-provider";
 import {createAzure} from "@ai-sdk/azure";
 
-function getDefaultModelName(): ModelName {
+const validModels = [
+  'claude-3-5-sonnet-20240620',
+  'claude-3-opus-20240229',
+  'claude-3-sonnet-20240229',
+  'claude-3-haiku-20240307',
+  'gpt-4o',                                    // $30/1M input, $60/1M output tokens
+  'gpt-4o-mini',                              // $10/1M input, $30/1M output tokens
+  'gpt-4-turbo',                              // $10/1M input, $30/1M output tokens
+  'gpt-4',                                    // $30/1M input, $60/1M output tokens
+  'gpt-3.5-turbo',                            // $0.50/1M input, $1.50/1M output tokens
+  'gemini-2.0-pro-exp-02-05',                  // $0.10/1M input, $0.40/1M output - Supports structured output
+  'gemini-2.0-flash-thinking-exp-01-21',       // $0.15/1M input, $0.60/1M output - No JSON support
+  'gemini-2.0-flash-lite',                     // $0.075/1M input, $0.30/1M output - Supports structured output
+  'gemini-1.5-flash',                          // $0.075/1M input, $0.30/1M output (<128k) - No JSON support
+  'gemini-1.5-flash-8b',                       // $0.0375/1M input, $0.15/1M output (<128k) - Supports JSON mode
+  'gemini-1.5-flash-8b-latest',                // $0.0375/1M input, $0.15/1M output (<128k) - Supports JSON mode
+  'gemini-1.5-pro-latest',                     // $1.25/1M input, $5.00/1M output (<128k) - Supports JSON output
+  'gemini-1.5-pro',                            // $1.25/1M input, $5.00/1M output (<128k) - Supports JSON output
+  'gemini-1.0-pro',                            // Legacy model, pricing varies - Limited JSON support
+  'gemini-1.0-pro-vision',                     // Vision model pricing - Text & image input, text output only
+  'grok-beta',
+  'grok-vision-beta'
+] as const;
+
+export type ModelName = typeof validModels[number];
+
+export function getDefaultModelName(): ModelName {
   const defaultModel = 'gpt-4o-mini';
+  console.log('🔍 Starting model selection...');
+  console.log('📁 Current working directory:', process.cwd());
+  
   const envModel = process.env.DEFAULT_AI_MODEL;
-  if (!envModel) return defaultModel;
+  // console.log('🔍 Model Selection Debug:', {
+  //   defaultModel,
+  //   envModel,
+  //   processEnv: process.env.DEFAULT_AI_MODEL,
+  //   isValid: envModel ? isValidModelName(envModel) : false,
+  //   envKeys: Object.keys(process.env).filter(key => key.includes('AI') || key.includes('MODEL'))
+  // });
+  
+  if (!envModel) {
+    console.log('⚠️ No environment model found, using default:', defaultModel);
+    return defaultModel;
+  }
   
   // Validate that the env value is a valid ModelName
   if (isValidModelName(envModel)) {
+    console.log('✅ Environment model is valid:', envModel);
     return envModel as ModelName;
   }
   
-  console.warn(`Invalid model name in DEFAULT_AI_MODEL: ${envModel}, falling back to ${defaultModel}`);
-  return defaultModel;
+  console.log('❌ Invalid model specified:', envModel);
+  throw new Error(`Invalid model name in DEFAULT_AI_MODEL: ${envModel}. Valid models are: ${validModels.join(', ')}`);
 }
 
 // Type guard to validate model names
 function isValidModelName(model: string): model is ModelName {
-  const validModels = [
-    'claude-3-5-sonnet-20240620', 'claude-3-opus-20240229', 'claude-3-sonnet-20240229',
-    'claude-3-haiku-20240307', 'gpt-4o', 'gpt-4o-2024-05-13', 'gpt-4o-2024-08-06',
-    'gpt-4o-mini', 'gpt-4o-mini-2024-07-18', 'gpt-4-turbo', 'gpt-4-turbo-2024-04-09',
-    'gpt-4-turbo-preview', 'gpt-4-0125-preview', 'gpt-4-1106-preview', 'gpt-4',
-    'gpt-4-0613', 'gpt-3.5-turbo-0125', 'gpt-3.5-turbo', 'gpt-3.5-turbo-1106',
-    'gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-1.5-pro-latest',
-    'gemini-1.5-pro', 'gemini-1.0-pro', 'grok-beta', 'grok-vision-beta'
-  ] as const;
-  
   return validModels.includes(model as ModelName);
 }
 
-export const DEFAULT_MODEL_NAME = getDefaultModelName();
+export function DEFAULT_MODEL_NAME(): ModelName {
+  return getDefaultModelName();
+}
 
-export type ModelName = 'claude-3-5-sonnet-20240620' | 'claude-3-opus-20240229' | 'claude-3-sonnet-20240229' | 'claude-3-haiku-20240307' |
-    'gpt-4o' | 'gpt-4o-2024-05-13' | 'gpt-4o-2024-08-06' | 'gpt-4o-mini' | 'gpt-4o-mini-2024-07-18' | 'gpt-4-turbo' | 'gpt-4-turbo-2024-04-09' | 'gpt-4-turbo-preview' | 'gpt-4-0125-preview' | 'gpt-4-1106-preview' | 'gpt-4' | 'gpt-4-0613' | 'gpt-3.5-turbo-0125' | 'gpt-3.5-turbo' | 'gpt-3.5-turbo-1106' |
-    'gemini-1.5-flash-latest' | 'gemini-1.5-flash' | 'gemini-1.5-pro-latest' | 'gemini-1.5-pro' | 'gemini-1.0-pro'
-    | 'grok-beta' | 'grok-vision-beta';
-
-
-export function getModelByName(modelName: ModelName = DEFAULT_MODEL_NAME): LanguageModelV1 {
-  console.log(`🤖 Using AI model: ${modelName}`);
+export function getModelByName(modelName?: ModelName): LanguageModelV1 {
+  const model = modelName || DEFAULT_MODEL_NAME();
+  console.log(`🤖 Using AI model: ${model}`);
   
-  if (modelName.includes("claude")) {
-    return anthropic(modelName)
+  if (model.includes("claude")) {
+    return anthropic(model)
   }
-  if (modelName.includes("gpt")) {
-    return openai(modelName)
+  if (model.includes("gpt")) {
+    return openai(model)
   }
-  if (modelName.includes("grok")) {
-    return xai(modelName);
+  if (model.includes("grok")) {
+    return xai(model);
   }
-  if (modelName.includes("gemini")) {
-    return google("models/" + modelName, {
+  if (model.includes("gemini")) {
+    return google("models/" + model, {
       //topK: 0,
       safetySettings: [
         { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
@@ -72,80 +100,64 @@ export function getModelByName(modelName: ModelName = DEFAULT_MODEL_NAME): Langu
       ],
     })
   }
-  return anthropic(DEFAULT_MODEL_NAME) // Default model
+  return anthropic(DEFAULT_MODEL_NAME()) // Default model
 }
 
-export function getModelByEnv(useSubModel = false) {
-  const ollamaBaseUrl = process.env.OLLAMA_BASE_URL + "/api"
+export function getModelByEnv(useSubModel = false): LanguageModelV1 {
+  // Check for Ollama configuration first since it's a special case
+  const ollamaBaseUrl = process.env.OLLAMA_BASE_URL
   const ollamaModel = process.env.OLLAMA_MODEL
   const ollamaSubModel = process.env.OLLAMA_SUB_MODEL
 
-  const openaiApiBase = process.env.OPENAI_API_BASE
-  const openaiApiKey = process.env.OPENAI_API_KEY
-  const openaiApiModel = process.env.OPENAI_API_MODEL || "gpt-4o"
-  const azureResourceName = process.env.AZURE_RESOURCE_NAME
-  const azureApiKey = process.env.AZURE_API_KEY
-  const azureDeploymentName = process.env.AZURE_DEPLOYMENT_NAME || "gpt-4o"
-  const googleApiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY
-  const anthropicApiKey = process.env.ANTHROPIC_API_KEY
-  const groqApiKey = process.env.GROQ_API_KEY
-  const groqApiModel = process.env.GROQ_API_MODEL
-
-  if (
-      !(ollamaBaseUrl && ollamaModel) &&
-      !openaiApiKey &&
-      !googleApiKey &&
-      !anthropicApiKey &&
-      !(azureApiKey && azureResourceName)
-  ) {
-    throw new Error(
-        "Missing environment variables for Ollama, OpenAI, Azure OpenAI, Google or Anthropic"
-    )
-  }
-  // Ollama
   if (ollamaBaseUrl && ollamaModel) {
-    const ollama = createOllama({ baseURL: ollamaBaseUrl })
-
-    if (useSubModel && ollamaSubModel) {
-      return ollama(ollamaSubModel)
-    }
-
-    return ollama(ollamaModel)
+    const ollama = createOllama({ baseURL: ollamaBaseUrl + "/api" })
+    return ollama(useSubModel && ollamaSubModel ? ollamaSubModel : ollamaModel)
   }
 
-  if (googleApiKey) {
-    return google("gemini-1.5-pro-002")
+  // Get the model name from environment variable or default
+  const modelName = process.env.DEFAULT_AI_MODEL
+
+  // If we have a valid model name, use it with getModelByName
+  if (modelName && isValidModelName(modelName)) {
+    return getModelByName(modelName)
   }
 
-  if (anthropicApiKey) {
-    return anthropic("claude-3-5-sonnet-20240620")
+  // Otherwise, determine the model based on available API keys
+  if (process.env.ANTHROPIC_API_KEY) {
+    return getModelByName('claude-3-5-sonnet-20240620')
+  }
+  
+  if (process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    return getModelByName('gemini-1.5-pro-latest')
   }
 
-  if (azureApiKey && azureResourceName) {
+  if (process.env.AZURE_API_KEY && process.env.AZURE_RESOURCE_NAME) {
     const azure = createAzure({
-      apiKey: azureApiKey,
-      resourceName: azureResourceName,
+      apiKey: process.env.AZURE_API_KEY,
+      resourceName: process.env.AZURE_RESOURCE_NAME,
     })
-
-    return azure.chat(azureDeploymentName)
+    return azure.chat(process.env.AZURE_DEPLOYMENT_NAME || 'gpt-4o')
   }
 
-  if (groqApiKey && groqApiModel) {
+  if (process.env.GROQ_API_KEY) {
     const groq = createOpenAI({
-      apiKey: groqApiKey,
+      apiKey: process.env.GROQ_API_KEY,
       baseURL: "https://api.groq.com/openai/v1",
     })
-
-    return groq.chat(groqApiModel)
+    return groq.chat(process.env.GROQ_API_MODEL || 'mixtral-8x7b-32768')
   }
 
-  // Fallback to OpenAI instead
-  const openai = createOpenAI({
-    baseURL: openaiApiBase, // optional base URL for proxies etc.
-    apiKey: openaiApiKey, // optional API key, default to env property OPENAI_API_KEY
-    organization: "", // optional organization
-  })
+  if (process.env.OPENAI_API_KEY) {
+    const customOpenAI = process.env.OPENAI_API_BASE ? createOpenAI({
+      baseURL: process.env.OPENAI_API_BASE,
+      apiKey: process.env.OPENAI_API_KEY,
+    }) : openai
 
-  return openai.chat(openaiApiModel)
+    return customOpenAI.chat(process.env.OPENAI_API_MODEL || 'gpt-4o')
+  }
+
+  throw new Error(
+    "No valid AI configuration found. Please set up at least one provider (OpenAI, Anthropic, Google, Azure, Groq, or Ollama)"
+  )
 }
 

@@ -15,7 +15,7 @@ export default function SolutionSection() {
   const features = [
     {
       title: "Automated Data Collection",
-      desc: "Import data from wearables and apps while leveraging AI-powered collection methods for comprehensive health insights.",
+      desc: "Import data from wearables and apps.",
       color: "bg-green-400",
       icon: Database,
       media: "https://fdai.earth/wp-content/uploads/2024/03/import.gif",
