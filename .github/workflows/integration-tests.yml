@@ -63,19 +63,24 @@ jobs:
       # Setup environment variables
       - name: Setup environment variables
         working-directory: apps/web
-        run: cp .env.example .env
+        run: |
+          cp .env.example .env
+          echo "USE_LOCAL_REDIS=true" >> .env
+          echo "LOCAL_REDIS_URL=redis://localhost:6379" >> .env
 
       # Setup Docker and Docker Compose
       - name: Set up Docker Compose
         uses: docker/setup-buildx-action@v3
 
       # Start database for tests
-      - name: Start test database
+      - name: Start test database and Redis
         working-directory: apps/web
         run: |
-          docker compose -f docker-compose.test.yml up -d db
+          docker compose -f docker-compose.test.yml up -d db redis
           echo "Waiting for database to be ready..."
           timeout 30 bash -c 'until docker exec dfda-postgres pg_isready; do sleep 2; done' || false
+          echo "Waiting for Redis to be ready..."
+          timeout 30 bash -c 'until docker exec redis redis-cli ping; do sleep 2; done' || false
             
       # Setup database schema
       - name: Setup database schema
