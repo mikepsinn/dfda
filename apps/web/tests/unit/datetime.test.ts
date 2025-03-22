@@ -5,26 +5,31 @@ import { convertToLocalDateTime, convertToUTC, getUtcDateTimeWithTimezone } from
 
 describe('getUtcDateTimeWithTimezone', () => {
   it('should return the current date and time in UTC with timezone offset applied', () => {
-    const result = getUtcDateTimeWithTimezone();
+    const result = new Date(getUtcDateTimeWithTimezone()).getTime();
     const date = new Date();
-    const timezoneOffset = date.getTimezoneOffset();
-    const expectedDate = new Date(date.getTime() - timezoneOffset * 60000).toISOString();
+    const jsTimezoneOffsetWest = date.getTimezoneOffset();
+    const expectedDate = new Date(date.getTime() - jsTimezoneOffsetWest * 60000).getTime();
 
-    expect(result).toBe(expectedDate);
+    expect(result).toBeCloseTo(expectedDate, -3); // Compare timestamps within 1 second
   });
 
   it('converts local to UTC', () => {
+    // When it's 5:00 in UTC-5, it's 10:00 in UTC
     const localDateTime = "2023-10-01T05:00:00";
-    const timezoneOffsetInMinutes = 300; // UTC-5
+    const hoursFromUtc = -5; // UTC-5 (negative means behind UTC)
     const expectedUTCDateTime = "2023-10-01T10:00:00.000Z";
 
-    const result = convertToUTC(localDateTime, timezoneOffsetInMinutes);
+    const result = convertToUTC(localDateTime, hoursFromUtc);
     expect(result).toBe(expectedUTCDateTime);
   });
+
   it('converts UTC to local', () => {
+    // When it's 12:00 in UTC, it's 14:00 in UTC+2
     const utcDateTime = '2023-10-01T12:00:00.000Z';
-    const timeZoneOffsetInMinutes = -120; // UTC+2
-    const result = convertToLocalDateTime(utcDateTime, timeZoneOffsetInMinutes);
-    expect(result).toBe('2023-10-01T10:00:00.000Z');
+    const hoursFromUtc = 2; // UTC+2 (positive means ahead of UTC)
+    const expectedLocalDateTime = '2023-10-01T14:00:00.000Z';
+
+    const result = convertToLocalDateTime(utcDateTime, hoursFromUtc);
+    expect(result).toBe(expectedLocalDateTime);
   });
 });

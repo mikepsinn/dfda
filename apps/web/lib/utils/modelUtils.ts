@@ -38,13 +38,13 @@ export function getDefaultModelName(): ModelName {
   console.log('📁 Current working directory:', process.cwd());
   
   const envModel = process.env.DEFAULT_AI_MODEL;
-  console.log('🔍 Model Selection Debug:', {
-    defaultModel,
-    envModel,
-    processEnv: process.env.DEFAULT_AI_MODEL,
-    isValid: envModel ? isValidModelName(envModel) : false,
-    envKeys: Object.keys(process.env).filter(key => key.includes('AI') || key.includes('MODEL'))
-  });
+  // console.log('🔍 Model Selection Debug:', {
+  //   defaultModel,
+  //   envModel,
+  //   processEnv: process.env.DEFAULT_AI_MODEL,
+  //   isValid: envModel ? isValidModelName(envModel) : false,
+  //   envKeys: Object.keys(process.env).filter(key => key.includes('AI') || key.includes('MODEL'))
+  // });
   
   if (!envModel) {
     console.log('⚠️ No environment model found, using default:', defaultModel);
