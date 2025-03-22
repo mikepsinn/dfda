@@ -1,4 +1,4 @@
-name: Integration Tests
+name: Web Tests
 
 on:
   # Run on all pushes
@@ -81,9 +81,16 @@ jobs:
       - name: Setup database schema
         working-directory: apps/web
         run: pnpm prisma:migrate
+
+      # Run unit tests
+      - name: Run unit tests
+        working-directory: apps/web
+        run: pnpm test:unit --reporters=default --reporters=github-actions
+        env:
+          CI: true
             
-      # Build and test web app
-      - name: Build and test web app
+      # Build and run integration tests
+      - name: Build and run integration tests
         working-directory: apps/web
         run: |
           pnpm run build
@@ -119,4 +126,5 @@ jobs:
             apps/web/test-results/
             apps/web/**/junit.xml
             apps/web/test-report.html
+            apps/web/unit-test-report.html
           retention-days: 30 
