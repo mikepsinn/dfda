@@ -24,9 +24,6 @@ importers:
       tsx:
         specifier: 4.19.1
         version: 4.19.1
-      turbo:
-        specifier: ^2.0.3
-        version: 2.3.3
 
   apps/fda-gov-v2:
     dependencies:
