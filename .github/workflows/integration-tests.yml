@@ -55,10 +55,10 @@ jobs:
         run: mkdir -p apps/web/.next/cache apps/web/.next-ci/cache
         shell: bash
             
+      # Install dependencies
       - name: Install dependencies
-        run: |
-          pnpm install --frozen-lockfile
-          pnpm -F dfda install --frozen-lockfile
+        working-directory: apps/web
+        run: pnpm install --frozen-lockfile
             
       # Setup environment variables
       - name: Setup environment variables
