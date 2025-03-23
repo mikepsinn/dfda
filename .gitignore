@@ -39,3 +39,4 @@ tmp/
 !.env.example
 management-ui/logs/
 .temp
+test-results/*
