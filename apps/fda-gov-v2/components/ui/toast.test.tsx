@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { act } from 'react-dom/test-utils';
 import { Toast, ToastAction, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from './toast';
 
@@ -39,8 +38,7 @@ describe('Toast Components', () => {
 
   it('renders toast with action button', async () => {
     const handleAction = jest.fn();
-    const user = userEvent.setup();
-
+    
     act(() => {
       renderToast(
         <>
@@ -66,8 +64,7 @@ describe('Toast Components', () => {
 
   it('renders toast with close button', async () => {
     const handleClose = jest.fn();
-    const user = userEvent.setup();
-
+    
     act(() => {
       renderToast(
         <>
@@ -89,7 +86,7 @@ describe('Toast Components', () => {
   });
 
   it('renders toast with different variants', () => {
-    let rerender: any;
+    let rerender: ReturnType<typeof render>['rerender'];
     
     act(() => {
       const result = render(
