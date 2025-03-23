@@ -2,34 +2,39 @@
 
 import * as React from "react"
 import { signIn } from "next-auth/react"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { toast } from "@/components/ui/use-toast"
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {
+  type?: "signin" | "signup"
+}
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+export function UserAuthForm({
+  type = "signin",
+}: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [email, setEmail] = React.useState<string>("")
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault()
+  async function onSubmit(event: React.SyntheticEvent) {
+    event.preventDefault()
     setIsLoading(true)
 
     try {
-      const signInResult = await signIn("email", {
+      const result = await signIn("email", {
         email,
         redirect: false,
+        callbackUrl: type === "signin" ? "/dashboard" : "/auth/verify",
       })
 
-      if (signInResult?.error) {
-        throw new Error(signInResult.error)
+      if (!result?.ok) {
+        throw new Error("Failed to sign in")
       }
 
       toast({
-        title: "Check your email",
+        title: type === "signin" ? "Check your email" : "Verification email sent",
         description: "We sent you a login link. Be sure to check your spam too.",
       })
     } catch (error) {
@@ -44,7 +49,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   }
 
   return (
-    <div className="grid gap-6" {...props}>
+    <div className="grid gap-6">
       <form onSubmit={onSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">
