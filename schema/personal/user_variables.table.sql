@@ -6,7 +6,7 @@ CREATE TABLE personal.user_variables (
     variable_id bigint NOT NULL REFERENCES reference.variables(id),
     display_name text,
     description text,
-    unit_id bigint REFERENCES reference.units_of_measurement(id),
+    unit_id VARCHAR(50) REFERENCES reference.units_of_measurement(id),
     default_value numeric,
     minimum_value numeric,
     maximum_value numeric,

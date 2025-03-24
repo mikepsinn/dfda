@@ -5,7 +5,7 @@ CREATE TABLE cohort.interventions (
     arm_id UUID NOT NULL REFERENCES cohort.trial_arms(id) ON DELETE CASCADE,
     variable_id bigint NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
     dosage DECIMAL,
-    unit_id bigint REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
+    unit_id VARCHAR(50) REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
     frequency TEXT,
     duration TEXT,
     notes TEXT,

@@ -5,7 +5,7 @@ CREATE TABLE personal.user_lab_results (
     user_id UUID NOT NULL REFERENCES core.profiles(id) ON DELETE CASCADE,
     lab_test_type_id bigint NOT NULL REFERENCES reference.lab_test_types(id),
     value DECIMAL,
-    unit_id bigint REFERENCES reference.units_of_measurement(id),
+    unit_id VARCHAR(50) REFERENCES reference.units_of_measurement(id),
     status VARCHAR(20),
     specimen_type VARCHAR(50),
     collection_at TIMESTAMP WITH TIME ZONE,

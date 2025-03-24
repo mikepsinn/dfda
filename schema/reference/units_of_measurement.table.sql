@@ -1,7 +1,7 @@
 -- Table: reference.units_of_measurement
 
 CREATE TABLE reference.units_of_measurement (
-    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    id VARCHAR(50) PRIMARY KEY,
     code VARCHAR(255),
     name VARCHAR(100) NOT NULL UNIQUE,
     descriptive_name VARCHAR(255),
@@ -13,7 +13,7 @@ CREATE TABLE reference.units_of_measurement (
     kind_of_quantity VARCHAR(255),
     concept_id VARCHAR(255),
     dimension VARCHAR(255),
-    unit_category_id SMALLINT REFERENCES reference.unit_categories(id),
+    unit_category_id VARCHAR(50) REFERENCES reference.unit_categories(id),
     minimum_value DECIMAL,
     maximum_value DECIMAL,
     maximum_daily_value DECIMAL,

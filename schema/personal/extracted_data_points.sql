@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS personal.extracted_data_points (
     variable_id bigint REFERENCES reference.variables(id) ON DELETE CASCADE,
     extracted_value text NOT NULL,
     parsed_value decimal,
-    unit_id bigint REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
+    unit_id VARCHAR(50) REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
     timestamp timestamptz,
     confidence_score decimal CHECK (confidence_score BETWEEN 0 AND 1),
     requires_review boolean DEFAULT false,

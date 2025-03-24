@@ -5,7 +5,7 @@ CREATE TABLE reference.variable_ingredients (
     parent_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     ingredient_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     amount numeric,                    -- Specific amount of the ingredient
-    unit_id bigint REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
+    unit_id VARCHAR(50) REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
     proportion DECIMAL,                -- Alternative to amount/unit for relative proportions
     is_active_ingredient BOOLEAN DEFAULT FALSE,  -- Particularly relevant for medications
     version_number INTEGER NOT NULL DEFAULT 1,   -- For tracking formulation changes
