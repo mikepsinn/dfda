@@ -69,7 +69,6 @@ async function generateTree(startPath, indent = '', isLast = true) {
                 sortedItems.push({
                     name: item,
                     isDirectory: stat.isDirectory(),
-                    size: stat.size,
                     path: fullPath
                 });
             }
@@ -91,9 +90,8 @@ async function generateTree(startPath, indent = '', isLast = true) {
             if (item.isDirectory) {
                 treeOutput += await generateTree(item.path, newIndent, itemIsLast);
             } else if (item.name.endsWith('.sql')) {
-                // Add file with size
-                const sizeStr = formatSize(item.size);
-                treeOutput += `${newIndent}${itemIsLast ? '└── ' : '├── '}${item.name} (${sizeStr})\n`;
+                // Add file name only
+                treeOutput += `${newIndent}${itemIsLast ? '└── ' : '├── '}${item.name}\n`;
                 
                 // Extract and add SQL objects
                 try {
@@ -139,19 +137,6 @@ async function hasAnySqlFiles(dirPath) {
         }
     }
     return false;
-}
-
-function formatSize(bytes) {
-    const units = ['B', 'KB', 'MB', 'GB'];
-    let size = bytes;
-    let unitIndex = 0;
-
-    while (size >= 1024 && unitIndex < units.length - 1) {
-        size /= 1024;
-        unitIndex++;
-    }
-
-    return `${size.toFixed(1)}${units[unitIndex]}`;
 }
 
 async function main() {

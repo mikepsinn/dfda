@@ -1,11 +1,7 @@
--- =============================================
--- TRIALS SCHEMA - Document Management
--- =============================================
-
 -- Trial Documents
-CREATE TABLE trials.documents (
+CREATE TABLE cohort.documents (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    protocol_id UUID NOT NULL REFERENCES trials.protocols(id) ON DELETE CASCADE,
+    protocol_id UUID NOT NULL REFERENCES cohort.protocols(id) ON DELETE CASCADE,
     document_type TEXT NOT NULL,
     title TEXT NOT NULL,
     description TEXT,
@@ -18,21 +14,21 @@ CREATE TABLE trials.documents (
 );
 
 -- Enable RLS
-ALTER TABLE trials.documents ENABLE ROW LEVEL SECURITY;
+ALTER TABLE cohort.documents ENABLE ROW LEVEL SECURITY;
 
 -- Documents Policies
 CREATE POLICY "Documents are viewable with protocol"
-    ON trials.documents FOR SELECT
+    ON cohort.documents FOR SELECT
     USING (EXISTS (
-        SELECT 1 FROM trials.protocols p 
+        SELECT 1 FROM cohort.protocols p 
         WHERE p.id = protocol_id 
         AND (p.status IN ('active', 'completed') OR p.created_by = auth.uid())
     ));
 
 CREATE POLICY "Trial creators can manage documents"
-    ON trials.documents FOR ALL
+    ON cohort.documents FOR ALL
     USING (EXISTS (
-        SELECT 1 FROM trials.protocols p 
+        SELECT 1 FROM cohort.protocols p 
         WHERE p.id = protocol_id 
         AND p.created_by = auth.uid()
     )); 

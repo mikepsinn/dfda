@@ -3,10 +3,9 @@ description: designing database schema or creating migrations
 globs: 
 alwaysApply: false
 ---
-
-# 📗 **Comprehensive Database Schema & Naming Decision Tree**
-
 ## 🎯 **Goals:**
+- Create initial schema for decentralized FDA. Don't worry about migrations. This is the initial schema
+- Make sure each table and view is stored in its own SQL file. Do not put multiple tables or views in the same sql file
 - Explicitly clear, intuitive, self-documenting naming conventions.
 - Zero data duplication; simplest possible row-level security (RLS).
 - Explicitly unified treatments/outcomes as **variables**.
@@ -14,174 +13,7 @@ alwaysApply: false
 - No ambiguous prefixes (`user_`) in naming.
 - Intermediate relational tables explicitly named by ownership relationship (`parent_child`).
 - Avoid overly complex or overloaded schemas.
-
----
-
-## 🌳 **Step 1: Schema Selection Decision Tree**
-
-Explicitly choose a schema for each new data object:
-
-```
-Given a new data object, does it store:
-│
-├─ 📚 Static, universal metadata explicitly?
-│   └─ YES → schema = reference
-│
-├─ 🌐 Aggregated anonymous statistical summaries explicitly?
-│   ├─ Aggregated across ALL users explicitly → schema = global
-│   └─ Aggregated across explicitly defined subsets/groups → schema = cohort
-│
-├─ 🧪 Defined multi-user studies/trials/protocol definitions explicitly?
-│   └─ YES → schema = cohort
-│
-├─ 👤 Individual user-specific data or single-user (N=1) trials explicitly?
-│   └─ YES → schema = personal
-│
-├─ 🔐 Internal admin, authentication, or auditing explicitly?
-│   └─ YES → schema = core
-│
-├─ 💳 Commerce, transactions, inventory explicitly?
-│   └─ YES → schema = commerce
-│
-└─ ⚠️ Unclear explicitly?
-    └─ Explicitly reconsider and redefine clearly.
-```
-
----
-
-## 🛢️ **Step 2: Table vs. View Decision**
-
-```
-- Original/raw data stored explicitly → TABLE
-- Derived/calculated explicitly → VIEW (Materialized if performance-critical)
-```
-
----
-
-## 📏 **Step 3: Naming Conventions**
-
-Explicitly use clear nouns without schema repetition or prefixes:
-
-| Schema    | Recommended Names                                              |
-|-----------|-------------------------------------------------------------------------|
-| reference | `variables`, `units_of_measurement`, `variable_synonyms`                |
-| global    | `treatment_rankings`, `variable_effectiveness`, `variable_global_stats` |
-| cohort    | `trials`, `trial_phases`, `protocols`, `outcomes`, `trial_group_stats`  |
-| personal  | `trials`, `trial_phases`, `measurements`, `variable_user_stats`         |
-| core      | `users`, `audit_logs`, `permissions`                                    |
-| commerce  | `orders`, `inventory`, `transactions`                                   |
-
-**Rule:** Never prefix tables with `user_`.
-
----
-
-## 🔗 **Step 4: Intermediate Relational Table Rules**
-
-Explicitly name relational tables as `[parent_entity]_[child_entity]` (no alphabetical ordering):
-
-| Schema    | Intermediate Tables (clear ownership order)     |
-|-----------|----------------------------------------------------------|
-| reference | `variables_synonyms`, `variables_ingredients`            |
-| cohort    | `trials_participants`, `protocols_variables`             |
-| personal  | `users_variables`, `trials_variables`                    |
-| core      | `groups_users`, `permissions_users`                      |
-| commerce  | `orders_products`, `shipments_orders`                    |
-
-**Explicitly remove redundant `participants` table** unless explicitly needed for additional participant metadata.
-
----
-
-## ⚙️ **Step 5: Handling of User-Specific Variable Settings**
-
-- For minimal user settings explicitly store directly in relational tables (`users_variables`).
-- **If extensive settings exist**, explicitly separate into:
-  ```sql
-  personal.variable_settings (
-      user_id,
-      variable_id,
-      tracking_enabled,
-      reminder_frequency,
-      preferred_display_unit_id,
-      goal_value,
-      PRIMARY KEY (user_id, variable_id)
-  )
-  ```
-
-- Explicitly avoid `personal.variables` table as redundant.
-
----
-
-## 🔑 **Step 6: Unified Data Handling**
-
-Explicitly unify treatments, outcomes, biomarkers as `variables`.
-
-Explicitly unify numeric time-series data as `measurements`.
-
-```sql
-reference.variables
-  (variable_id, name, category, default_unit_id, description)
-
-personal.measurements
-  (measurement_id, user_id, variable_id, timestamp, value)
-```
-
----
-
-## 📊 **Step 7: Outcome Rankings & Derived View Naming**
-
-Explicitly standardized naming convention for derived outcome views:
-
-- Global stats: explicitly suffix `_global_stats`
-- Cohort stats: explicitly suffix `_group_stats`
-- Personal stats: explicitly suffix `_user_stats`
-
-Examples explicitly:
-
-| Schema   | Derived Views                           |
-|----------|--------------------------------------------------|
-| global   | `treatment_rankings`, `variable_global_stats`    |
-| cohort   | `trial_outcome_group_stats`, `variable_group_stats` |
-| personal | `variable_user_stats`                            |
-
----
-
-## 🛡️ **Step 8: Row-Level Security (RLS)**
-
-Explicitly simplified RLS per schema:
-
-| Schema    | RLS Rules                              |
-|-----------|-------------------------------------------------|
-| reference | Public read-only explicitly                     |
-| global    | Public read-only explicitly aggregated          |
-| cohort    | Restricted explicitly to study participants/admin|
-| personal  | User-private explicitly, optionally shareable   |
-| core      | Internal/admin-only explicitly                  |
-| commerce  | Customer(s)/admin explicitly                    |
-
----
-
-## ⚖️ **Step 9: Measurement Unit Enforcement**
-
-- Explicitly store all measurements only in global default unit (`reference.variables.default_unit_id`).
-- Explicitly enforce conversion before insertion.
-- Explicitly no alternate units stored.
-
----
-
-## 📋 **Checklist**
-
-Verify explicitly for every new table/view:
-
-✅ Schema explicitly selected from decision tree.  
-✅ Table or view explicitly chosen.  
-✅ naming without prefixes explicitly followed.  
-✅ `[parent_child]` relational table naming explicitly used.  
-✅ Unified variable & measurement handling.  
-✅ Explicitly simplify user variable settings (within relational or dedicated table).  
-✅ Explicitly enforce default units explicitly.  
-✅ RLS explicitly clear and simple.
-
----
+- Migration folder names must explicitly match schema names (e.g., migrations/150_global = global schema).
 
 ## 🗂️ **Schema Structure**
 
@@ -221,3 +53,17 @@ supabase/
         ├── orders_products
         └── shipments_orders
 ```
+
+## 📋 **Checklist**
+
+Verify explicitly for every new table/view:
+
+✅ Schema explicitly selected from decision tree.  
+✅ Table or view explicitly chosen.  
+✅ naming without prefixes explicitly followed.  
+✅ `[parent_child]` relational table naming explicitly used.  
+✅ Unified variable & measurement handling.  
+✅ Explicitly simplify user variable settings (within relational or dedicated table).  
+✅ Explicitly enforce default units explicitly.  
+✅ RLS explicitly clear and simple.
+✅ Migration folder name explicitly matches schema name. 

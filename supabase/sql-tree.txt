@@ -1,146 +1,189 @@
 .
 └── supabase/
     ├── migrations/
-    │   ├── 100_reference/
-    │   │   ├── 101_reference_schema.sql (117.0B)
-    │   │   ├── 102_variable_categories.sql (2.3KB)
+    │   ├── cohort/
+    │   │   ├── tables/
+    │   │   │   ├── adverse_events.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.adverse_events
+    │   │   │   ├── arms.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.arms
+    │   │   │   ├── data_points.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.data_points
+    │   │   │   ├── documents.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.documents
+    │   │   │   ├── interventions.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.interventions
+    │   │   │   ├── outcomes.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.outcomes
+    │   │   │   ├── participants.sql
+    │   │   │   │   ├── Tables:
+    │   │   │   │   └── cohort.participants
+    │   │   │   └── protocols.sql
+    │   │   │       ├── Tables:
+    │   │   │       └── cohort.protocols
+    │   │   └── schema.sql
+    │   ├── commerce/
+    │   │   ├── cart_items.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.variable_categories
-    │   │   ├── 103_units_of_measurement.sql (578.0B)
+    │   │   │   └── commerce.cart_items
+    │   │   ├── commerce_schema.sql
+    │   │   ├── discounts.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.units_of_measurement
-    │   │   ├── 103_variable_relationships.sql (3.8KB)
+    │   │   │   └── commerce.discounts
+    │   │   ├── order_items.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.variable_relationships
-    │   │   ├── 104_global_variables.sql (1.6KB)
+    │   │   │   └── commerce.order_items
+    │   │   ├── orders.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.global_variables
-    │   │   ├── 105_lab_test_types.sql (577.0B)
+    │   │   │   └── commerce.orders
+    │   │   ├── product_images.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.lab_test_types
-    │   │   ├── 106_data_quality_rules.sql (1.8KB)
+    │   │   │   └── commerce.product_images
+    │   │   ├── product_reviews.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.data_quality_rules
-    │   │   ├── 107_variable_ingredients.sql (3.7KB)
+    │   │   │   └── commerce.product_reviews
+    │   │   ├── products.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.variable_ingredients
-    │   │   ├── 108_data_sources.sql (2.9KB)
+    │   │   │   └── commerce.products
+    │   │   ├── wishlist_items.sql
     │   │   │   ├── Tables:
-    │   │   │   └── reference.data_sources
-    │   │   └── 109_variable_synonyms.sql (2.7KB)
+    │   │   │   └── commerce.wishlist_items
+    │   │   └── wishlists.sql
     │   │       ├── Tables:
-    │   │       └── reference.variable_synonyms
-    │   ├── 125_core/
-    │   │   ├── 100_profiles.sql (1.3KB)
-    │   │   │   ├── Tables:
-    │   │   │   ├── core.addresses
-    │   │   │   └── core.profiles
-    │   │   ├── 200_access_control.sql (1.5KB)
+    │   │       └── commerce.wishlists
+    │   ├── core/
+    │   │   ├── access_control.sql
     │   │   │   ├── Tables:
     │   │   │   ├── core.user_group_members
     │   │   │   ├── core.user_groups
     │   │   │   └── core.user_permissions
-    │   │   ├── 300_consents.sql (2.1KB)
-    │   │   │   ├── Tables:
-    │   │   │   ├── core.data_sharing_agreements
-    │   │   │   ├── core.user_consents
-    │   │   │   └── core.user_data_exports
-    │   │   ├── 400_notifications.sql (1.3KB)
-    │   │   │   ├── Tables:
-    │   │   │   ├── core.notifications
-    │   │   │   ├── core.tagged_items
-    │   │   │   └── core.tags
-    │   │   ├── 500_audit.sql (2.8KB)
+    │   │   ├── audit.sql
     │   │   │   ├── Tables:
     │   │   │   ├── core.audit_trail
     │   │   │   ├── core.integration_connections
     │   │   │   ├── core.integration_providers
     │   │   │   └── core.integration_sync_logs
-    │   │   └── 600_policies.sql (3.8KB)
-    │   ├── 150_aggregate/
-    │   │   ├── 101_aggregate_schema.sql (108.0B)
-    │   │   ├── 102_treatment_ratings_views.sql (4.7KB)
-    │   │   │   └── Views:
-    │   │   │   ├── aggregate.aggregated_treatment_ratings (materialized)
-    │   │   │   └── aggregate.combined_treatment_ratings
-    │   │   ├── 103_aggregate_user_variable_relationships.sql (2.7KB)
-    │   │   │   └── Views:
-    │   │   │   └── aggregate.aggregate_user_variable_relationships (materialized)
-    │   │   └── 104_aggregate_user_variable_stats.sql (3.5KB)
-    │   │       └── Views:
-    │   │       └── aggregate.aggregate_user_variable_stats (materialized)
-    │   ├── 175_cohort/
-    │   │   ├── 101_cohort_schema.sql (3.7KB)
+    │   │   ├── consents.sql
     │   │   │   ├── Tables:
-    │   │   │   ├── trials.arms
-    │   │   │   ├── trials.interventions
-    │   │   │   └── trials.protocols
-    │   │   ├── 102_outcomes.sql (2.8KB)
+    │   │   │   ├── core.data_sharing_agreements
+    │   │   │   ├── core.user_consents
+    │   │   │   └── core.user_data_exports
+    │   │   ├── notifications.sql
     │   │   │   ├── Tables:
-    │   │   │   ├── trials.data_points
-    │   │   │   └── trials.outcomes
-    │   │   ├── 103_participants.sql (3.4KB)
-    │   │   │   ├── Tables:
-    │   │   │   ├── trials.adverse_events
-    │   │   │   └── trials.participants
-    │   │   └── 104_documents.sql (1.3KB)
+    │   │   │   ├── core.notifications
+    │   │   │   ├── core.tagged_items
+    │   │   │   └── core.tags
+    │   │   ├── policies.sql
+    │   │   └── profiles.sql
     │   │       ├── Tables:
-    │   │       └── trials.documents
-    │   ├── 200_personal/
-    │   │   ├── 101_personal_schema.sql (105.0B)
-    │   │   ├── 202_user_variables.sql (1.5KB)
+    │   │       ├── core.addresses
+    │   │       └── core.profiles
+    │   ├── finance/
+    │   │   ├── credit_transactions.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_variables
-    │   │   ├── 203_user_treatment_effectiveness_ratings.sql (1.7KB)
+    │   │   │   └── finance.credit_transactions
+    │   │   ├── credits.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_treatment_effectiveness_ratings
-    │   │   ├── 204_user_external_treatment_effectiveness_ratings.sql (2.5KB)
+    │   │   │   └── finance.credits
+    │   │   ├── finance_schema.sql
+    │   │   ├── invoice_items.sql
+    │   │   ├── invoices.sql
+    │   │   ├── payment_methods.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_external_treatment_effectiveness_ratings
-    │   │   ├── 205_user_conditions.sql (1.2KB)
+    │   │   │   └── finance.payment_methods
+    │   │   ├── subscription_items.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_conditions
-    │   │   ├── 207_user_lab_results.sql (1.1KB)
+    │   │   │   └── finance.subscription_items
+    │   │   ├── subscriptions.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_lab_results
-    │   │   ├── 208_user_documents.sql (1.1KB)
+    │   │   │   └── finance.subscriptions
+    │   │   └── transactions.sql
+    │   │       ├── Tables:
+    │   │       └── finance.transactions
+    │   ├── global/
+    │   │   ├── global_schema.sql
+    │   │   └── user_variable_global_stats.sql
+    │   │       └── Views:
+    │   │       └── global.variable_global_stats (materialized)
+    │   ├── logistics/
+    │   │   ├── inventory_transactions.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_documents
-    │   │   ├── 209_user_variable_relationships.sql (3.5KB)
+    │   │   │   └── logistics.inventory_transactions
+    │   │   ├── inventory.sql
     │   │   │   ├── Tables:
-    │   │   │   └── personal.user_variable_relationships
-    │   │   ├── 210_user_variable_relationship_stats.sql (5.0KB)
-    │   │   │   └── Views:
-    │   │   │   └── personal.user_variable_relationship_stats (materialized)
-    │   │   ├── 211_communication_messages.sql (3.4KB)
+    │   │   │   └── logistics.inventory
+    │   │   ├── logistics_schema.sql
+    │   │   ├── return_items.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── logistics.return_items
+    │   │   ├── returns.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── logistics.returns
+    │   │   ├── shipment_items.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── logistics.shipment_items
+    │   │   ├── shipments.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── logistics.shipments
+    │   │   ├── shipping_methods.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── logistics.shipping_methods
+    │   │   ├── shipping_rates.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── logistics.shipping_rates
+    │   │   └── warehouses.sql
+    │   │       ├── Tables:
+    │   │       └── logistics.warehouses
+    │   ├── oauth2/
+    │   │   ├── access_tokens.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── oauth2.access_tokens
+    │   │   ├── authorization_codes.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── oauth2.authorization_codes
+    │   │   ├── clients.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── oauth2.clients
+    │   │   ├── oauth2_schema.sql
+    │   │   ├── refresh_tokens.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── oauth2.refresh_tokens
+    │   │   └── user_consents.sql
+    │   │       ├── Tables:
+    │   │       └── oauth2.user_consents
+    │   ├── personal/
+    │   │   ├── client_data_functions.sql
+    │   │   ├── communication_functions.sql
+    │   │   ├── communication_messages.sql
     │   │   │   ├── Tables:
     │   │   │   └── personal.communication_messages
-    │   │   ├── 211a_communication_transcripts_view.sql (1.0KB)
+    │   │   ├── communication_transcripts.sql
     │   │   │   └── Views:
     │   │   │   └── personal.communication_transcripts
-    │   │   ├── 211a_session_transcripts_view.sql (976.0B)
-    │   │   │   └── Views:
-    │   │   │   └── personal.checkin_session_transcripts
-    │   │   ├── 211b_communication_functions.sql (2.0KB)
-    │   │   ├── 212_upcoming_notifications_view.sql (1.1KB)
-    │   │   │   └── Views:
-    │   │   │   └── personal.upcoming_notifications
-    │   │   ├── 213_user_notifications.sql (4.5KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── personal.user_notifications
-    │   │   ├── 214_measurements.sql (2.9KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── personal.measurements
-    │   │   ├── 215_user_variable_stats.sql (4.1KB)
-    │   │   │   └── Views:
-    │   │   │   └── personal.user_variable_stats (materialized)
-    │   │   ├── 216_data_imports.sql (3.9KB)
+    │   │   ├── data_imports.sql
     │   │   │   ├── Tables:
     │   │   │   └── personal.data_imports
-    │   │   ├── 217_extracted_data_points.sql (2.1KB)
+    │   │   ├── extracted_data_points.sql
     │   │   │   ├── Tables:
     │   │   │   └── personal.extracted_data_points
-    │   │   ├── 218_n1_trial_phases.sql (16.3KB)
+    │   │   ├── import_processing_functions.sql
+    │   │   ├── import_statistics.sql
+    │   │   │   └── Views:
+    │   │   │   ├── for
+    │   │   │   └── personal.import_statistics
+    │   │   ├── measurement_sources.sql
+    │   │   │   └── Views:
+    │   │   │   └── personal.measurement_sources
+    │   │   ├── measurements.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── personal.measurements
+    │   │   ├── n1_trial_phases.sql
     │   │   │   ├── Tables:
     │   │   │   ├── personal.n1_trial_phases
     │   │   │   ├── Views:
@@ -150,137 +193,97 @@
     │   │   │   ├── personal.n1_trial_phase_effectiveness
     │   │   │   ├── personal.n1_trial_severity_analysis
     │   │   │   └── personal.n1_trial_severity_changes
-    │   │   ├── 219_import_statistics_view.sql (1.3KB)
+    │   │   ├── personal_schema.sql
+    │   │   ├── session_transcripts.sql
     │   │   │   └── Views:
-    │   │   │   ├── for
-    │   │   │   └── personal.import_statistics
-    │   │   ├── 220_measurement_sources_view.sql (1.1KB)
+    │   │   │   └── personal.checkin_session_transcripts
+    │   │   ├── upcoming_notifications.sql
     │   │   │   └── Views:
-    │   │   │   └── personal.measurement_sources
-    │   │   ├── 221_import_processing_functions.sql (5.6KB)
-    │   │   └── 222_client_data_functions.sql (5.3KB)
-    │   ├── 225_commerce/
-    │   │   ├── 101_commerce_schema.sql (178.0B)
-    │   │   ├── 102_products.sql (1.5KB)
+    │   │   │   └── personal.upcoming_notifications
+    │   │   ├── user_conditions.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.products
-    │   │   ├── 103_product_images.sql (1019.0B)
+    │   │   │   └── personal.user_conditions
+    │   │   ├── user_documents.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.product_images
-    │   │   ├── 104_cart_items.sql (826.0B)
+    │   │   │   └── personal.user_documents
+    │   │   ├── user_external_treatment_effectiveness_ratings.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.cart_items
-    │   │   ├── 105_orders.sql (1.6KB)
+    │   │   │   └── personal.user_external_treatment_effectiveness_ratings
+    │   │   ├── user_lab_results.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.orders
-    │   │   ├── 106_order_items.sql (1.2KB)
+    │   │   │   └── personal.user_lab_results
+    │   │   ├── user_notifications.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.order_items
-    │   │   ├── 107_discounts.sql (1.2KB)
+    │   │   │   └── personal.user_notifications
+    │   │   ├── user_treatment_effectiveness_ratings.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.discounts
-    │   │   ├── 108_product_reviews.sql (1.3KB)
+    │   │   │   └── personal.user_treatment_effectiveness_ratings
+    │   │   ├── user_variable_relationship_stats.sql
+    │   │   │   └── Views:
+    │   │   │   └── personal.user_variable_relationship_stats (materialized)
+    │   │   ├── user_variable_relationships.sql
     │   │   │   ├── Tables:
-    │   │   │   └── commerce.product_reviews
-    │   │   ├── 109_wishlists.sql (740.0B)
-    │   │   │   ├── Tables:
-    │   │   │   └── commerce.wishlists
-    │   │   └── 110_wishlist_items.sql (1005.0B)
+    │   │   │   └── personal.user_variable_relationships
+    │   │   ├── user_variable_stats.sql
+    │   │   │   └── Views:
+    │   │   │   └── personal.user_variable_stats (materialized)
+    │   │   └── user_variables.sql
     │   │       ├── Tables:
-    │   │       └── commerce.wishlist_items
-    │   ├── 225_logistics/
-    │   │   ├── 101_logistics_schema.sql (187.0B)
-    │   │   ├── 102_warehouses.sql (1.0KB)
+    │   │       └── personal.user_variables
+    │   ├── reference/
+    │   │   ├── data_quality_rules.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.warehouses
-    │   │   ├── 103_inventory.sql (1.4KB)
+    │   │   │   └── reference.data_quality_rules
+    │   │   ├── data_sources.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.inventory
-    │   │   ├── 104_inventory_transactions.sql (1.2KB)
+    │   │   │   └── reference.data_sources
+    │   │   ├── global_variables.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.inventory_transactions
-    │   │   ├── 105_shipping_methods.sql (928.0B)
+    │   │   │   └── reference.global_variables
+    │   │   ├── lab_test_types.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.shipping_methods
-    │   │   ├── 106_shipping_rates.sql (1.3KB)
+    │   │   │   └── reference.lab_test_types
+    │   │   ├── reference_schema.sql
+    │   │   ├── units_of_measurement.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.shipping_rates
-    │   │   ├── 107_shipments.sql (1.5KB)
+    │   │   │   └── reference.units_of_measurement
+    │   │   ├── variable_categories.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.shipments
-    │   │   ├── 108_shipment_items.sql (1.4KB)
+    │   │   │   └── reference.variable_categories
+    │   │   ├── variable_ingredients.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.shipment_items
-    │   │   ├── 109_returns.sql (1.3KB)
+    │   │   │   └── reference.variable_ingredients
+    │   │   ├── variable_relationships.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.returns
-    │   │   └── 110_return_items.sql (1.4KB)
+    │   │   │   └── reference.variable_relationships
+    │   │   └── variable_synonyms.sql
     │   │       ├── Tables:
-    │   │       └── logistics.return_items
-    │   ├── 235_scheduling/
-    │   │   ├── 101_scheduling_schema.sql (189.0B)
-    │   │   ├── 102_service_types.sql (944.0B)
+    │   │       └── reference.variable_synonyms
+    │   ├── scheduling/
+    │   │   ├── appointment_feedback.sql
     │   │   │   ├── Tables:
-    │   │   │   └── scheduling.service_types
-    │   │   ├── 103_service_providers.sql (797.0B)
-    │   │   │   ├── Tables:
-    │   │   │   └── scheduling.service_providers
-    │   │   ├── 104_provider_services.sql (1.0KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── scheduling.provider_services
-    │   │   ├── 105_provider_schedules.sql (1.1KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── scheduling.provider_schedules
-    │   │   ├── 106_schedule_exceptions.sql (1.1KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── scheduling.schedule_exceptions
-    │   │   ├── 107_appointments.sql (1.7KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── scheduling.appointments
-    │   │   ├── 108_appointment_reminders.sql (1.1KB)
+    │   │   │   └── scheduling.appointment_feedback
+    │   │   ├── appointment_reminders.sql
     │   │   │   ├── Tables:
     │   │   │   └── scheduling.appointment_reminders
-    │   │   └── 109_appointment_feedback.sql (1.4KB)
+    │   │   ├── appointments.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── scheduling.appointments
+    │   │   ├── provider_schedules.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── scheduling.provider_schedules
+    │   │   ├── provider_services.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── scheduling.provider_services
+    │   │   ├── schedule_exceptions.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── scheduling.schedule_exceptions
+    │   │   ├── scheduling_schema.sql
+    │   │   ├── service_providers.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── scheduling.service_providers
+    │   │   └── service_types.sql
     │   │       ├── Tables:
-    │   │       └── scheduling.appointment_feedback
-    │   ├── 245_finance/
-    │   │   ├── 101_finance_schema.sql (175.0B)
-    │   │   ├── 102_payment_methods.sql (1.0KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── finance.payment_methods
-    │   │   ├── 103_transactions.sql (1.4KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── finance.transactions
-    │   │   ├── 104_invoices.sql (1.0B)
-    │   │   ├── 105_invoice_items.sql (1.0B)
-    │   │   ├── 106_subscriptions.sql (1.7KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── finance.subscriptions
-    │   │   ├── 107_subscription_items.sql (1.4KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── finance.subscription_items
-    │   │   ├── 108_credits.sql (1.3KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── finance.credits
-    │   │   └── 109_credit_transactions.sql (1.3KB)
-    │   │       ├── Tables:
-    │   │       └── finance.credit_transactions
-    │   ├── 250_oauth2/
-    │   │   ├── 101_oauth2_schema.sql (186.0B)
-    │   │   ├── 102_clients.sql (1.5KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── oauth2.clients
-    │   │   ├── 103_access_tokens.sql (925.0B)
-    │   │   │   ├── Tables:
-    │   │   │   └── oauth2.access_tokens
-    │   │   ├── 104_refresh_tokens.sql (1018.0B)
-    │   │   │   ├── Tables:
-    │   │   │   └── oauth2.refresh_tokens
-    │   │   ├── 105_authorization_codes.sql (1.1KB)
-    │   │   │   ├── Tables:
-    │   │   │   └── oauth2.authorization_codes
-    │   │   └── 106_user_consents.sql (1.3KB)
-    │   │       ├── Tables:
-    │   │       └── oauth2.user_consents
-    │   ├── 20250321043239_init_extensions.sql (1.0B)
-    │   └── 20250321043250_seed_data.sql (10.2KB)
+    │   │       └── scheduling.service_types
+    │   ├── 20250321043239_init_extensions.sql
+    │   └── 20250321043250_seed_data.sql
