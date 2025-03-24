@@ -3,8 +3,8 @@ CREATE TABLE cohort.trial_measurements (
     id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
     trial_id uuid REFERENCES cohort.trials(id) ON DELETE CASCADE NOT NULL,
     measurement_id bigint REFERENCES personal.measurements(id) ON DELETE CASCADE NOT NULL,
-    created_at timestamp with time zone DEFAULT now() NOT NULL,
-    updated_at timestamp with time zone DEFAULT now() NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     created_by uuid REFERENCES auth.users(id),
     updated_by uuid REFERENCES auth.users(id),
     UNIQUE(trial_id, measurement_id)
@@ -36,10 +36,4 @@ CREATE POLICY "Trial measurements are insertable by trial creators" ON cohort.tr
             WHERE t.id = trial_id
             AND t.created_by = auth.uid()
         )
-    );
-
--- Create updated_at trigger
-CREATE TRIGGER set_updated_at
-    BEFORE UPDATE ON cohort.trial_measurements
-    FOR EACH ROW
-    EXECUTE FUNCTION common.set_updated_at(); 
+    ); 

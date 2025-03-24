@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS personal.n1_trial_phases (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id uuid NOT NULL REFERENCES core.profiles(id) ON DELETE CASCADE,
-    variable_id uuid NOT NULL REFERENCES medical_ref.variables(id) ON DELETE CASCADE,
+    variable_id uuid NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
     start_date timestamptz NOT NULL,
     end_date timestamptz,
     phase_type text NOT NULL CHECK (phase_type IN (
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS personal.n1_trial_phases (
     comparison_phase_id uuid REFERENCES personal.n1_trial_phases(id), -- For explicit phase comparisons
     
     -- Intervention details (for experimental phases)
-    intervention_variable_id uuid REFERENCES medical_ref.variables(id), -- What's being tested
+    intervention_variable_id uuid REFERENCES reference.variables(id), -- What's being tested
     target_dosage numeric,
     target_frequency text,
     schedule jsonb, -- Detailed timing/protocol schedule
@@ -219,8 +219,8 @@ SELECT
         ELSE NULL
     END as effectiveness_score
 FROM PhaseStats ps
-JOIN medical_ref.variables gv ON ps.variable_id = gv.id
-LEFT JOIN medical_ref.variables iv ON ps.intervention_variable_id = iv.id
+JOIN reference.variables gv ON ps.variable_id = gv.id
+LEFT JOIN reference.variables iv ON ps.intervention_variable_id = iv.id
 LEFT JOIN PhaseStats cp ON cp.id = (
     SELECT tp2.comparison_phase_id 
     FROM personal.n1_trial_phases tp2 
@@ -251,7 +251,7 @@ SELECT
         ELSE NULL
     END as adjusted_cost_effectiveness
 FROM personal.n1_trial_phases tp
-JOIN medical_ref.variables gv ON tp.intervention_variable_id = gv.id
+JOIN reference.variables gv ON tp.intervention_variable_id = gv.id
 WHERE tp.phase_type = 'experimental'
 AND tp.total_cost IS NOT NULL
 AND tp.effectiveness_rating IS NOT NULL;
@@ -330,7 +330,7 @@ SELECT
         WHEN (lm.latest_value - bm.reference_avg_value) >= bm.reference_stddev THEN 'worsened'
     END AS calculated_severity_change
 FROM BaselineMeasurements bm
-JOIN medical_ref.variables gv ON bm.variable_id = gv.id
+JOIN reference.variables gv ON bm.variable_id = gv.id
 LEFT JOIN LatestMeasurements lm ON bm.user_id = lm.user_id AND bm.variable_id = lm.variable_id;
 
 -- Add RLS policies

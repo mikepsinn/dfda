@@ -38,9 +38,3 @@ INSERT INTO reference.unit_categories (
     (11, 'Temperature', false, 0, '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
     (12, 'Currency', true, 0, '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
     (13, 'Count', true, 0, '2020-08-12 02:38:03', '2020-08-12 02:38:03');
-
--- Create trigger for updated_at
-CREATE TRIGGER set_updated_at
-    BEFORE UPDATE ON reference.unit_categories
-    FOR EACH ROW
-    EXECUTE FUNCTION common.set_updated_at(); 

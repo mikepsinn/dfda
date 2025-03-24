@@ -4,11 +4,11 @@ CREATE TABLE cohort.trial_phases (
     trial_id uuid REFERENCES cohort.trials(id) ON DELETE CASCADE NOT NULL,
     name text NOT NULL,
     description text,
-    start_date timestamp with time zone,
-    end_date timestamp with time zone,
+    start_date TIMESTAMP WITH TIME ZONE,
+    end_date TIMESTAMP WITH TIME ZONE,
     sequence_order integer NOT NULL,
-    created_at timestamp with time zone DEFAULT now() NOT NULL,
-    updated_at timestamp with time zone DEFAULT now() NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     created_by uuid REFERENCES auth.users(id),
     updated_by uuid REFERENCES auth.users(id)
 );
@@ -36,10 +36,4 @@ CREATE POLICY "Trial phases are updatable by trial creators" ON cohort.trial_pha
             FROM cohort.trials 
             WHERE id = trial_id
         )
-    );
-
--- Create updated_at trigger
-CREATE TRIGGER set_updated_at
-    BEFORE UPDATE ON cohort.trial_phases
-    FOR EACH ROW
-    EXECUTE FUNCTION common.set_updated_at(); 
+    ); 

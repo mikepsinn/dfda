@@ -2,7 +2,7 @@
 CREATE TABLE cohort.outcomes (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     protocol_id UUID NOT NULL REFERENCES cohort.protocols(id) ON DELETE CASCADE,
-    variable_id UUID NOT NULL REFERENCES medical_ref.variables(id) ON DELETE CASCADE,
+    variable_id UUID NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
     outcome_type TEXT CHECK (outcome_type IN ('primary', 'secondary', 'exploratory')),
     measurement_schedule TEXT,
     target_difference DECIMAL,

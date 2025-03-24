@@ -24,10 +24,4 @@ CREATE POLICY "Trials are insertable by authenticated users" ON cohort.trials
     FOR INSERT WITH CHECK (auth.role() = 'authenticated');
 
 CREATE POLICY "Trials are updatable by creators" ON cohort.trials
-    FOR UPDATE USING (auth.uid() = created_by);
-
--- Create updated_at trigger
-CREATE TRIGGER set_updated_at
-    BEFORE UPDATE ON cohort.trials
-    FOR EACH ROW
-    EXECUTE FUNCTION common.set_updated_at(); 
+    FOR UPDATE USING (auth.uid() = created_by); 

@@ -5,8 +5,8 @@ CREATE TABLE cohort.trial_arms (
     name text NOT NULL,
     description text,
     type text NOT NULL,
-    created_at timestamp with time zone DEFAULT now() NOT NULL,
-    updated_at timestamp with time zone DEFAULT now() NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     created_by uuid REFERENCES auth.users(id),
     updated_by uuid REFERENCES auth.users(id)
 );
@@ -34,10 +34,4 @@ CREATE POLICY "Trial arms are updatable by trial creators" ON cohort.trial_arms
             FROM cohort.trials 
             WHERE id = trial_id
         )
-    );
-
--- Create updated_at trigger
-CREATE TRIGGER set_updated_at
-    BEFORE UPDATE ON cohort.trial_arms
-    FOR EACH ROW
-    EXECUTE FUNCTION common.set_updated_at(); 
+    ); 
