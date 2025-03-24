@@ -15,12 +15,13 @@ function getAllFiles(dir) {
             files = files.concat(getAllFiles(fullPath));
         } else if (entry.isFile()) {
             // Skip timestamp-prefixed files (20250321...)
-            if (!/^20\d{12}_/.test(entry.name) && /^\d+_/.test(entry.name)) {
+            // But catch numeric prefixes with optional letter suffixes (e.g., 211a_)
+            if (!/^20\d{12}_/.test(entry.name) && /^\d+[a-z]?_/.test(entry.name)) {
                 files.push({
                     oldPath: fullPath,
                     oldName: entry.name,
-                    // Remove the numeric prefix and underscore
-                    newName: entry.name.replace(/^\d+_/, '')
+                    // Remove the numeric prefix, letter suffix, and underscore
+                    newName: entry.name.replace(/^\d+[a-z]?_/, '')
                 });
             }
         }
