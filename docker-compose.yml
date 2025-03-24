@@ -43,6 +43,8 @@ services:
     ports:
       - "9999:9999"
     environment:
+      API_EXTERNAL_URL: ${NEXT_PUBLIC_APP_URL}
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@supabase:5432/postgres
       GOTRUE_JWT_SECRET: ${JWT_SECRET}
       GOTRUE_JWT_EXP: 3600
       GOTRUE_DB_DRIVER: postgres

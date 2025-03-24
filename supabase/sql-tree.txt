@@ -69,6 +69,7 @@
     │   │   │   └── core.user_permissions
     │   │   ├── audit.sql
     │   │   │   ├── Tables:
+    │   │   │   ├── core.audit_settings
     │   │   │   ├── core.audit_trail
     │   │   │   ├── core.integration_connections
     │   │   │   ├── core.integration_providers
@@ -84,10 +85,16 @@
     │   │   │   ├── core.tagged_items
     │   │   │   └── core.tags
     │   │   ├── policies.sql
-    │   │   └── profiles.sql
+    │   │   ├── profiles.sql
+    │   │   │   ├── Tables:
+    │   │   │   ├── core.addresses
+    │   │   │   └── core.profiles
+    │   │   ├── user_groups.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── core.user_groups
+    │   │   └── user_permissions.sql
     │   │       ├── Tables:
-    │   │       ├── core.addresses
-    │   │       └── core.profiles
+    │   │       └── core.user_permissions
     │   ├── finance/
     │   │   ├── credit_transactions.sql
     │   │   │   ├── Tables:
@@ -111,8 +118,12 @@
     │   │       ├── Tables:
     │   │       └── finance.transactions
     │   ├── global/
+    │   │   ├── 000_types.sql
     │   │   ├── global_schema.sql
-    │   │   └── user_variable_global_stats.sql
+    │   │   ├── user_variable_global_stats.sql
+    │   │   │   └── Views:
+    │   │   │   └── global.variable_global_stats (materialized)
+    │   │   └── variable_global_stats.sql
     │   │       └── Views:
     │   │       └── global.variable_global_stats (materialized)
     │   ├── logistics/
@@ -137,13 +148,57 @@
     │   │   │   └── logistics.shipments
     │   │   ├── shipping_methods.sql
     │   │   │   ├── Tables:
-    │   │   │   └── logistics.shipping_methods
+    │   │   │   ├── logistics.shipping_methods
+    │   │   │   └── logistics.shipping_rates
     │   │   ├── shipping_rates.sql
     │   │   │   ├── Tables:
     │   │   │   └── logistics.shipping_rates
     │   │   └── warehouses.sql
     │   │       ├── Tables:
     │   │       └── logistics.warehouses
+    │   ├── models/
+    │   │   ├── calculation_views.sql
+    │   │   │   └── Views:
+    │   │   │   ├── models.annual_metabolic_impact (materialized)
+    │   │   │   ├── models.cascading_outcome_effects (materialized)
+    │   │   │   ├── models.cost_breakdown_summary (materialized)
+    │   │   │   ├── models.daily_metabolic_impact (materialized)
+    │   │   │   ├── models.health_outcomes (materialized)
+    │   │   │   ├── models.intervention_outcome_effects (materialized)
+    │   │   │   ├── models.long_term_projections (materialized)
+    │   │   │   ├── models.medicare_impact_summary (materialized)
+    │   │   │   ├── models.outcome_cost_impacts (materialized)
+    │   │   │   ├── models.population_adjusted_effects (materialized)
+    │   │   │   ├── models.population_benefits (materialized)
+    │   │   │   ├── models.qaly_impact_summary (materialized)
+    │   │   │   └── models.total_economic_impact (materialized)
+    │   │   ├── cost_breakdowns.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── models.cost_breakdowns
+    │   │   ├── intervention_effects.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── models.intervention_effects
+    │   │   ├── model_equations.sql
+    │   │   │   ├── Tables:
+    │   │   │   ├── models.model_equations
+    │   │   │   ├── Views:
+    │   │   │   └── models.equation_dependencies
+    │   │   ├── models_schema.sql
+    │   │   ├── parameter_sets.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── models.parameter_sets
+    │   │   ├── parameter_sources.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── models.parameter_sources
+    │   │   ├── population_demographics.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── models.population_demographics
+    │   │   ├── simulation_outputs.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── models.simulation_outputs
+    │   │   └── statistical_validation.sql
+    │   │       ├── Tables:
+    │   │       └── models.statistical_validation
     │   ├── oauth2/
     │   │   ├── access_tokens.sql
     │   │   │   ├── Tables:
@@ -231,9 +286,12 @@
     │   │   ├── user_variable_stats.sql
     │   │   │   └── Views:
     │   │   │   └── personal.user_variable_stats (materialized)
-    │   │   └── user_variables.sql
+    │   │   ├── user_variables.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── personal.user_variables
+    │   │   └── variable_relationships.sql
     │   │       ├── Tables:
-    │   │       └── personal.user_variables
+    │   │       └── personal.variable_relationships
     │   ├── reference/
     │   │   ├── data_quality_rules.sql
     │   │   │   ├── Tables:
@@ -244,7 +302,13 @@
     │   │   ├── lab_test_types.sql
     │   │   │   ├── Tables:
     │   │   │   └── reference.lab_test_types
+    │   │   ├── population_segments.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── reference.population_segments
     │   │   ├── reference_schema.sql
+    │   │   ├── unit_categories.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── reference.unit_categories
     │   │   ├── units_of_measurement.sql
     │   │   │   ├── Tables:
     │   │   │   └── reference.units_of_measurement
@@ -289,5 +353,137 @@
     │   │   └── service_types.sql
     │   │       ├── Tables:
     │   │       └── scheduling.service_types
-    │   ├── 20250321043239_init_extensions.sql
-    │   └── 20250321043250_seed_data.sql
+    │   ├── seeds/
+    │   │   └── muscle_mass_impact_seed.sql
+    │   └── views/
+    │       └── muscle_mass_impact_report.sql
+    │           └── Views:
+    │           └── models.muscle_mass_impact_report
+    └── combined_migrations.sql
+        ├── Tables:
+        ├── cohort.adverse_events
+        ├── cohort.interventions
+        ├── cohort.outcomes
+        ├── cohort.protocols
+        ├── cohort.trial_arms
+        ├── cohort.trial_documents
+        ├── cohort.trial_measurements
+        ├── cohort.trial_phases
+        ├── cohort.trials
+        ├── cohort.trials_participants
+        ├── commerce.cart_items
+        ├── commerce.discounts
+        ├── commerce.order_items
+        ├── commerce.orders
+        ├── commerce.product_images
+        ├── commerce.product_reviews
+        ├── commerce.products
+        ├── commerce.wishlist_items
+        ├── commerce.wishlists
+        ├── core.addresses
+        ├── core.audit_settings
+        ├── core.audit_trail
+        ├── core.data_sharing_agreements
+        ├── core.integration_connections
+        ├── core.integration_providers
+        ├── core.integration_sync_logs
+        ├── core.notifications
+        ├── core.profiles
+        ├── core.tagged_items
+        ├── core.tags
+        ├── core.user_consents
+        ├── core.user_data_exports
+        ├── core.user_group_members
+        ├── core.user_groups
+        ├── core.user_permissions
+        ├── finance.credit_transactions
+        ├── finance.credits
+        ├── finance.payment_methods
+        ├── finance.subscription_items
+        ├── finance.subscriptions
+        ├── finance.transactions
+        ├── logistics.inventory
+        ├── logistics.inventory_transactions
+        ├── logistics.return_items
+        ├── logistics.returns
+        ├── logistics.shipment_items
+        ├── logistics.shipments
+        ├── logistics.shipping_methods
+        ├── logistics.shipping_rates
+        ├── logistics.warehouses
+        ├── models.cost_breakdowns
+        ├── models.intervention_effects
+        ├── models.model_equations
+        ├── models.parameter_sets
+        ├── models.parameter_sources
+        ├── models.population_demographics
+        ├── models.simulation_outputs
+        ├── models.statistical_validation
+        ├── oauth2.access_tokens
+        ├── oauth2.authorization_codes
+        ├── oauth2.clients
+        ├── oauth2.refresh_tokens
+        ├── oauth2.user_consents
+        ├── personal.communication_messages
+        ├── personal.data_imports
+        ├── personal.extracted_data_points
+        ├── personal.measurements
+        ├── personal.n1_trial_phases
+        ├── personal.user_conditions
+        ├── personal.user_documents
+        ├── personal.user_external_treatment_effectiveness_ratings
+        ├── personal.user_lab_results
+        ├── personal.user_notifications
+        ├── personal.user_treatment_effectiveness_ratings
+        ├── personal.user_variable_relationships
+        ├── personal.user_variables
+        ├── personal.variable_relationships
+        ├── reference.data_quality_rules
+        ├── reference.data_sources
+        ├── reference.lab_test_types
+        ├── reference.population_segments
+        ├── reference.unit_categories
+        ├── reference.units_of_measurement
+        ├── reference.variable_categories
+        ├── reference.variable_ingredients
+        ├── reference.variable_relationships
+        ├── reference.variable_synonyms
+        ├── reference.variables
+        ├── scheduling.appointment_feedback
+        ├── scheduling.appointment_reminders
+        ├── scheduling.appointments
+        ├── scheduling.provider_schedules
+        ├── scheduling.provider_services
+        ├── scheduling.schedule_exceptions
+        ├── scheduling.service_providers
+        ├── scheduling.service_types
+        ├── Views:
+        ├── for
+        ├── global.variable_global_stats (materialized)
+        ├── models.annual_metabolic_impact (materialized)
+        ├── models.cascading_outcome_effects (materialized)
+        ├── models.cost_breakdown_summary (materialized)
+        ├── models.daily_metabolic_impact (materialized)
+        ├── models.equation_dependencies
+        ├── models.health_outcomes (materialized)
+        ├── models.intervention_outcome_effects (materialized)
+        ├── models.long_term_projections (materialized)
+        ├── models.medicare_impact_summary (materialized)
+        ├── models.muscle_mass_impact_report
+        ├── models.outcome_cost_impacts (materialized)
+        ├── models.population_adjusted_effects (materialized)
+        ├── models.population_benefits (materialized)
+        ├── models.qaly_impact_summary (materialized)
+        ├── models.total_economic_impact (materialized)
+        ├── personal.checkin_session_transcripts
+        ├── personal.communication_transcripts
+        ├── personal.import_statistics
+        ├── personal.measurement_sources
+        ├── personal.n1_trial_intervention_effectiveness
+        ├── personal.n1_trial_phase_comparisons
+        ├── personal.n1_trial_phase_effectiveness
+        ├── personal.n1_trial_severity_analysis
+        ├── personal.n1_trial_severity_changes
+        ├── personal.upcoming_notifications
+        ├── personal.user_variable_relationship_stats (materialized)
+        └── personal.user_variable_stats (materialized)
