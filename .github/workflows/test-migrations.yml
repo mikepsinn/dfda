@@ -1,0 +1,47 @@
+name: Test Database Migrations
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths:
+      - 'supabase/migrations/**'
+  pull_request:
+    paths:
+      - 'supabase/migrations/**'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  test-migrations:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Start Supabase Services
+        run: DOTENV_FILE=.env.testing docker compose up -d
+
+      - name: Wait for Services
+        run: |
+          echo "Waiting for services to be ready..."
+          timeout 60 bash -c 'until curl -s http://localhost:8000/health > /dev/null; do sleep 2; done' || false
+          echo "Services are ready"
+
+      - name: Run Local Migrations
+        run: |
+          DOTENV_FILE=.env.testing supabase db reset --linked=false  # Run migrations on local test db
+          DOTENV_FILE=.env.testing supabase db diff  # Show what changed
+
+      - name: Run Migration Tests
+        if: success()
+        run: |
+          # Add your migration tests here
+          # For example:
+          # DOTENV_FILE=.env.testing pnpm test:migrations
+          echo "Running migration tests..." 
