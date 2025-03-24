@@ -1,7 +1,7 @@
 -- Trial Adverse Events
 CREATE TABLE cohort.adverse_events (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    participant_id UUID NOT NULL REFERENCES cohort.participants(id) ON DELETE CASCADE,
+    participant_id UUID NOT NULL REFERENCES cohort.trial_participants(id) ON DELETE CASCADE,
     variable_id UUID NOT NULL REFERENCES medical_ref.variables(id) ON DELETE CASCADE,
     onset_date TIMESTAMP WITH TIME ZONE NOT NULL,
     resolution_date TIMESTAMP WITH TIME ZONE,
@@ -23,7 +23,7 @@ ALTER TABLE cohort.adverse_events ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Participants can view their own adverse events"
     ON cohort.adverse_events FOR SELECT
     USING (EXISTS (
-        SELECT 1 FROM cohort.participants p 
+        SELECT 1 FROM cohort.trial_participants p 
         WHERE p.id = participant_id 
         AND p.user_id = auth.uid()
     ));
@@ -31,7 +31,7 @@ CREATE POLICY "Participants can view their own adverse events"
 CREATE POLICY "Trial creators can view all adverse events"
     ON cohort.adverse_events FOR SELECT
     USING (EXISTS (
-        SELECT 1 FROM cohort.participants p
+        SELECT 1 FROM cohort.trial_participants p
         JOIN cohort.protocols pr ON pr.id = p.protocol_id
         WHERE p.id = participant_id 
         AND pr.created_by = auth.uid()
@@ -40,7 +40,7 @@ CREATE POLICY "Trial creators can view all adverse events"
 CREATE POLICY "Trial creators can manage adverse events"
     ON cohort.adverse_events FOR ALL
     USING (EXISTS (
-        SELECT 1 FROM cohort.participants p
+        SELECT 1 FROM cohort.trial_participants p
         JOIN cohort.protocols pr ON pr.id = p.protocol_id
         WHERE p.id = participant_id 
         AND pr.created_by = auth.uid()
