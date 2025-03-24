@@ -20,6 +20,7 @@ INSERT INTO reference.unit_categories (
     ('count', 'Count', true, 130, '1', '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
     ('area', 'Area', true, 140, 'L2', '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
     ('concentration', 'Concentration', false, 150, 'L-3N', '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
+    ('osmolality', 'Osmolality', false, 155, 'N.M-1', '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
 
     -- Additional UCUM categories
     ('electric_current', 'Electric Current', false, 160, 'I', '2020-08-12 02:38:03', '2020-08-12 02:38:03'),
