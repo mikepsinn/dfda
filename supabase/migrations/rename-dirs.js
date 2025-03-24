@@ -14,14 +14,29 @@ function getAllFiles(dir) {
             // Recursively get files from subdirectories
             files = files.concat(getAllFiles(fullPath));
         } else if (entry.isFile()) {
+            let shouldRename = false;
+            let newName = entry.name;
+
             // Skip timestamp-prefixed files (20250321...)
-            // But catch numeric prefixes with optional letter suffixes (e.g., 211a_)
-            if (!/^20\d{12}_/.test(entry.name) && /^\d+[a-z]?_/.test(entry.name)) {
+            if (!/^20\d{12}_/.test(entry.name)) {
+                // Remove numeric prefixes with optional letter suffixes (e.g., 211a_)
+                if (/^\d+[a-z]?_/.test(entry.name)) {
+                    shouldRename = true;
+                    newName = newName.replace(/^\d+[a-z]?_/, '');
+                }
+                
+                // Remove _view suffix before .sql
+                if (newName.endsWith('_view.sql')) {
+                    shouldRename = true;
+                    newName = newName.replace('_view.sql', '.sql');
+                }
+            }
+
+            if (shouldRename) {
                 files.push({
                     oldPath: fullPath,
                     oldName: entry.name,
-                    // Remove the numeric prefix, letter suffix, and underscore
-                    newName: entry.name.replace(/^\d+[a-z]?_/, '')
+                    newName: newName
                 });
             }
         }
