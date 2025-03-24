@@ -5,6 +5,7 @@ alwaysApply: false
 ---
 ## 🎯 **Goals:**
 - Create initial schema for decentralized FDA. Don't worry about migrations. This is the initial schema
+- Don't prefix files or folders with numbers
 - Make sure each table and view is stored in its own SQL file. Do not put multiple tables or views in the same sql file
 - Explicitly clear, intuitive, self-documenting naming conventions.
 - Zero data duplication; simplest possible row-level security (RLS).
@@ -18,8 +19,7 @@ alwaysApply: false
 ## 🗂️ **Schema Structure**
 
 ```
-supabase/
-└── migrations/
+ migrations/
     ├── reference/          # schema = reference
         ├── variables
         ├── variables_synonyms
