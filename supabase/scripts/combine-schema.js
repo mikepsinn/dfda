@@ -4,7 +4,7 @@ const path = require('path');
 // Order of schemas to create - core schemas first
 const SCHEMA_ORDER = [
     'global',    // Global types and enums MUST be first
-    'core',      // Core functionality]
+    'core',      // Core functionality
     'oauth2',    // OAuth functionality
     'reference', // Reference data
     'personal',  // Personal data
@@ -16,16 +16,16 @@ const SCHEMA_ORDER = [
     'scheduling' // Scheduling
 ];
 
-// Order of object types to create
+// Order of object types to create - moved alters to the end
 const OBJECT_TYPES = [
     { suffix: '.type.sql', subdir: null },        // Types first
     { suffix: '.table.sql', subdir: null },       // Then tables
     { suffix: '.function.sql', subdir: null },    // Functions
     { suffix: '.view.sql', subdir: null },        // Views
     { suffix: '.trigger.sql', subdir: 'triggers' },// Triggers
-    { suffix: '.alter.sql', subdir: 'alters' },   // Alter statements (including foreign keys)
-    { suffix: '.policy.sql', subdir: 'policies' },// Policies
-    { suffix: '.seed.sql', subdir: 'seeds' }      // Seed data last
+    { suffix: '.seed.sql', subdir: 'seeds' },     // Seed data
+    { suffix: '.alter.sql', subdir: 'alters' },   // Alter statements last
+    { suffix: '.policy.sql', subdir: 'policies' } // Policies after alters
 ];
 
 function extractTableInfo(sql) {
@@ -189,6 +189,7 @@ async function createMigration() {
     // Then collect all tables and other objects from all schemas
     const allTables = [];
     const allSeeds = [];
+    const allAlters = [];
     const otherObjects = new Map(); // schema -> type -> content[]
     
     for (const schema of SCHEMA_ORDER) {
@@ -205,6 +206,8 @@ async function createMigration() {
                     allTables.push(...files);
                 } else if (objectType.suffix === '.seed.sql') {
                     allSeeds.push(...files);
+                } else if (objectType.suffix === '.alter.sql') {
+                    allAlters.push(...files);
                 } else {
                     if (!otherObjects.has(schema)) {
                         otherObjects.set(schema, new Map());
@@ -234,7 +237,8 @@ async function createMigration() {
         for (const objectType of OBJECT_TYPES) {
             if (objectType.suffix === '.table.sql' || 
                 objectType.suffix === '.type.sql' || 
-                objectType.suffix === '.seed.sql') continue; // Already handled or will be handled later
+                objectType.suffix === '.seed.sql' ||
+                objectType.suffix === '.alter.sql') continue; // Already handled or will be handled later
             
             const objects = schemaObjects.get(objectType.suffix);
             if (objects && objects.length > 0) {
@@ -243,6 +247,13 @@ async function createMigration() {
                 migrationParts.push('');
             }
         }
+    }
+    
+    // Add all ALTER statements after all tables and other objects
+    if (allAlters.length > 0) {
+        migrationParts.push('-- Alter statements (after all tables are created)');
+        migrationParts.push(allAlters.join('\n\n'));
+        migrationParts.push('');
     }
     
     // Sort seeds by dependencies (including table dependencies)

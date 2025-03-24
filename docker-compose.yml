@@ -36,7 +36,7 @@ services:
     volumes:
       - supabase_db:/var/lib/postgresql/data
       - ./supabase:/supabase
-      - ./supabase/migrations:/docker-entrypoint-initdb.d
+      - ./supabase/migrations:/migrations
 
   auth:
     image: supabase/gotrue:v2.132.3
