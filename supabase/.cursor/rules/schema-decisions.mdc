@@ -188,14 +188,14 @@ Verify explicitly for every new table/view:
 ```
 supabase/
 └── migrations/
-    ├── reference/
+    ├── reference/          # schema = reference
         ├── variables
         ├── variables_synonyms
         └── units_of_measurement
-    ├── global/
+    ├── global/            # schema = global
         ├── treatment_rankings
         └── variable_global_stats
-    ├── cohort/
+    ├── cohort/           # schema = cohort
         ├── trials
         ├── trial_phases
         ├── protocols
@@ -203,22 +203,21 @@ supabase/
         ├── trials_participants
         ├── protocols_variables
         └── variable_group_stats
-    ├── personal/
+    ├── personal/         # schema = personal
         ├── trials
         ├── trial_phases
         ├── measurements
         ├── users_variables (with minimal user settings)
         └── variable_user_stats
-    ├── core/
+    ├── core/            # schema = core
         ├── users
         ├── audit_logs
         ├── permissions
         ├── groups_users
         └── permissions_users
-    └── commerce/
+    └── commerce/        # schema = commerce
         ├── orders
         ├── inventory
         ├── orders_products
         └── shipments_orders
 ```
-
