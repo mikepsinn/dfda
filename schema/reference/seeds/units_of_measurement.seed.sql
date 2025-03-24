@@ -76,8 +76,8 @@ INSERT INTO reference.units_of_measurement (
 ('parts-per-million', 'Parts per Million', 'ppm', 'miscellany', 0, NULL, 'none', 'ratio', true, false, '[]', NULL, 'parts-per-million', 'ucum', 'ppm'),
 ('decibels', 'Decibels', 'dB', 'miscellany', 0, NULL, 'none', 'ratio', true, false, '[]', NULL, 'decibels', 'ucum', 'dB'),
 ('ph', 'pH', 'pH', 'miscellany', 0, 14, 'none', 'ratio', true, false, '[]', NULL, 'ph', 'ucum', '[pH]'), -- UCUM addition for pH
-('beats', 'Beats', 'beats', 'miscellany', 0, NULL, 'none', 'count', true, false, '[]', NULL, 'beats', 'ucum', 'beats'), -- UCUM addition for beats (as a count)
-('breaths', 'Breaths', 'breaths', 'miscellany', 0, NULL, 'none', 'count', true, false, '[]', NULL, 'breaths', 'ucum', 'breaths'), -- UCUM addition for breaths (as a count)
+('beats', 'Beats', 'beats', 'miscellany', 0, NULL, 'none', 'ratio', true, false, '[]', NULL, 'beats', 'ucum', 'beats'), -- UCUM addition for beats (as a count)
+('breaths', 'Breaths', 'breaths', 'miscellany', 0, NULL, 'none', 'ratio', true, false, '[]', NULL, 'breaths', 'ucum', 'breaths'), -- UCUM addition for breaths (as a count)
 
 -- Energy units (Existing)
 ('kilocalories', 'Kilocalories', 'kcal', 'energy', NULL, NULL, 'none', 'ratio', true, false, '[]', 20000, 'kilocalories', 'ucum', 'kcal'),

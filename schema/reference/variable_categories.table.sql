@@ -16,7 +16,7 @@ CREATE TABLE reference.variable_categories (
     boring BOOLEAN DEFAULT false,
     
     -- Measurement constraints
-    default_unit_id INTEGER REFERENCES reference.units_of_measurement(id) ON DELETE SET NULL,
+    default_unit_id VARCHAR(50) REFERENCES reference.units_of_measurement(id) ON DELETE SET NULL,
     minimum_allowed_value DOUBLE PRECISION,
     maximum_allowed_value DOUBLE PRECISION,
     minimum_allowed_seconds_between_measurements INTEGER,
