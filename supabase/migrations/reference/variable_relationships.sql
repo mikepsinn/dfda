@@ -2,8 +2,8 @@
 -- from various sources (research papers, expert knowledge, aggregate analysis)
 CREATE TABLE reference.variable_relationships (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    predictor_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
-    outcome_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    predictor_variable_id bigint NOT NULL REFERENCES reference.variables(id),
+    outcome_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     relationship_type text NOT NULL CHECK (relationship_type IN (
         'predicts', 'may_predict', 'treats', 'may_treat',
         'prevents', 'may_prevent', 'increases_risk_of', 'decreases_risk_of'

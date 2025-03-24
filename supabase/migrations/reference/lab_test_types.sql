@@ -8,7 +8,7 @@ CREATE TABLE reference.lab_test_types (
     name text NOT NULL UNIQUE,
     display_name text NOT NULL,
     description text,
-    variable_id bigint REFERENCES reference.global_variables(id),
+    variable_id bigint REFERENCES reference.variables(id),
     loinc_code text UNIQUE,
     deleted_at timestamptz,
     created_at timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,

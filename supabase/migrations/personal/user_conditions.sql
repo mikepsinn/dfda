@@ -6,7 +6,7 @@
 CREATE TABLE personal.user_conditions (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id uuid NOT NULL REFERENCES core.profiles(id),
-    condition_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    condition_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     onset_at timestamptz NOT NULL,
     resolution_at timestamptz,
     status text NOT NULL CHECK (status IN ('active', 'resolved', 'recurring')),

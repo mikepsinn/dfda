@@ -2,32 +2,36 @@
 └── supabase/
     ├── migrations/
     │   ├── cohort/
-    │   │   ├── tables/
-    │   │   │   ├── adverse_events.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.adverse_events
-    │   │   │   ├── arms.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.arms
-    │   │   │   ├── data_points.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.data_points
-    │   │   │   ├── documents.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.documents
-    │   │   │   ├── interventions.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.interventions
-    │   │   │   ├── outcomes.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.outcomes
-    │   │   │   ├── participants.sql
-    │   │   │   │   ├── Tables:
-    │   │   │   │   └── cohort.participants
-    │   │   │   └── protocols.sql
-    │   │   │       ├── Tables:
-    │   │   │       └── cohort.protocols
-    │   │   └── schema.sql
+    │   │   ├── adverse_events.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.adverse_events
+    │   │   ├── interventions.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.interventions
+    │   │   ├── outcomes.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.outcomes
+    │   │   ├── protocols.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.protocols
+    │   │   ├── trial_arms.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.trial_arms
+    │   │   ├── trial_documents.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.trial_documents
+    │   │   ├── trial_measurements.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.trial_measurements
+    │   │   ├── trial_phases.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.trial_phases
+    │   │   ├── trials_participants.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── cohort.trials_participants
+    │   │   └── trials.sql
+    │   │       ├── Tables:
+    │   │       └── cohort.trials
     │   ├── commerce/
     │   │   ├── cart_items.sql
     │   │   │   ├── Tables:
@@ -237,9 +241,6 @@
     │   │   ├── data_sources.sql
     │   │   │   ├── Tables:
     │   │   │   └── reference.data_sources
-    │   │   ├── global_variables.sql
-    │   │   │   ├── Tables:
-    │   │   │   └── reference.global_variables
     │   │   ├── lab_test_types.sql
     │   │   │   ├── Tables:
     │   │   │   └── reference.lab_test_types
@@ -256,9 +257,12 @@
     │   │   ├── variable_relationships.sql
     │   │   │   ├── Tables:
     │   │   │   └── reference.variable_relationships
-    │   │   └── variable_synonyms.sql
+    │   │   ├── variable_synonyms.sql
+    │   │   │   ├── Tables:
+    │   │   │   └── reference.variable_synonyms
+    │   │   └── variables.sql
     │   │       ├── Tables:
-    │   │       └── reference.variable_synonyms
+    │   │       └── reference.variables
     │   ├── scheduling/
     │   │   ├── appointment_feedback.sql
     │   │   │   ├── Tables:

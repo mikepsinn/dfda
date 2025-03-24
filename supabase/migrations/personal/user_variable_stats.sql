@@ -72,7 +72,7 @@ SELECT
     vs.analysis_settings,
     NOW() as last_updated
 FROM variable_settings vs
-JOIN reference.global_variables gv ON vs.variable_id = gv.id
+JOIN reference.variables gv ON vs.variable_id = gv.id
 LEFT JOIN measurement_stats ms ON vs.user_id = ms.user_id AND vs.variable_id = ms.variable_id;
 
 -- Create indexes for better query performance

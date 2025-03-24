@@ -13,8 +13,8 @@
 --
 CREATE TABLE reference.variable_ingredients (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    parent_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
-    ingredient_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    parent_variable_id bigint NOT NULL REFERENCES reference.variables(id),
+    ingredient_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     amount numeric,                    -- Specific amount of the ingredient
     unit_id bigint REFERENCES reference.units_of_measurement(id) ON DELETE RESTRICT,
     proportion DECIMAL,                -- Alternative to amount/unit for relative proportions

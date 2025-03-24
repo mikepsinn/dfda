@@ -15,7 +15,7 @@
 --
 CREATE TABLE reference.variable_synonyms (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    variable_id bigint NOT NULL REFERENCES reference.variables(id),
     name text NOT NULL,                -- Alternative name or translation
     language_code text NOT NULL DEFAULT 'en',  -- ISO 639-1 language code
     source_type text NOT NULL CHECK (source_type IN ('reference', 'user', 'expert', 'aggregate')),

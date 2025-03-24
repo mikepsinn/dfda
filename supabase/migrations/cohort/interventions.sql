@@ -2,7 +2,7 @@
 CREATE TABLE cohort.interventions (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     arm_id UUID NOT NULL REFERENCES cohort.arms(id) ON DELETE CASCADE,
-    variable_id UUID NOT NULL REFERENCES medical_ref.global_variables(id) ON DELETE CASCADE,
+    variable_id UUID NOT NULL REFERENCES medical_ref.variables(id) ON DELETE CASCADE,
     dosage DECIMAL,
     unit_id UUID REFERENCES medical_ref.units_of_measurement(id) ON DELETE RESTRICT,
     frequency TEXT,

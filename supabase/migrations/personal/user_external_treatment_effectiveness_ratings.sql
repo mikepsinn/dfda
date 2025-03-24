@@ -6,8 +6,8 @@
 CREATE TABLE personal.user_external_treatment_effectiveness_ratings (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id uuid NOT NULL REFERENCES core.profiles(id),
-    treatment_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
-    condition_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    treatment_variable_id bigint NOT NULL REFERENCES reference.variables(id),
+    condition_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     source_type text NOT NULL CHECK (source_type IN ('doctor', 'research', 'anecdotal')),
     source_name text,
     source_url text,

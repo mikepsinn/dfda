@@ -41,7 +41,7 @@ SELECT
     vs.latest_measurement,
     vs.avg_measurements_per_day,
     NOW() as last_updated
-FROM reference.global_variables gv
+FROM reference.variables gv
 LEFT JOIN variable_stats vs ON gv.id = vs.variable_id
 WHERE gv.deleted_at IS NULL;
 
@@ -71,5 +71,5 @@ AFTER INSERT OR UPDATE OR DELETE ON personal.variable_user_stats
 FOR EACH STATEMENT EXECUTE FUNCTION global.refresh_variable_global_stats();
 
 CREATE TRIGGER refresh_variable_global_stats_reference
-AFTER INSERT OR UPDATE OR DELETE ON reference.global_variables
+AFTER INSERT OR UPDATE OR DELETE ON reference.variables
 FOR EACH STATEMENT EXECUTE FUNCTION global.refresh_variable_global_stats(); 

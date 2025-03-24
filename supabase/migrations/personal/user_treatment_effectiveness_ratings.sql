@@ -6,8 +6,8 @@
 CREATE TABLE personal.user_treatment_effectiveness_ratings (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id uuid NOT NULL REFERENCES core.profiles(id),
-    treatment_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
-    condition_variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    treatment_variable_id bigint NOT NULL REFERENCES reference.variables(id),
+    condition_variable_id bigint NOT NULL REFERENCES reference.variables(id),
     effectiveness_rating text CHECK (effectiveness_rating IN ('much_worse', 'worse', 'no_effect', 'better', 'much_better')),
     side_effects_rating text CHECK (side_effects_rating IN ('none', 'mild', 'moderate', 'severe', 'intolerable')),
     adherence_rating text CHECK (adherence_rating IN ('never', 'rarely', 'sometimes', 'usually', 'always')),

@@ -6,7 +6,7 @@
 CREATE TABLE personal.measurements (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id uuid NOT NULL REFERENCES core.profiles(id),
-    variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    variable_id bigint NOT NULL REFERENCES reference.variables(id),
     value numeric NOT NULL,
     unit_id bigint REFERENCES reference.units_of_measurement(id),
     source_type text NOT NULL CHECK (source_type IN ('manual', 'import', 'api', 'device', 'calculation')),

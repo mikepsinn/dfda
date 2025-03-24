@@ -6,7 +6,7 @@
 CREATE TABLE personal.user_variables (
     id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id uuid NOT NULL REFERENCES core.profiles(id),
-    variable_id bigint NOT NULL REFERENCES reference.global_variables(id),
+    variable_id bigint NOT NULL REFERENCES reference.variables(id),
     display_name text,
     description text,
     unit_id bigint REFERENCES reference.units_of_measurement(id),
