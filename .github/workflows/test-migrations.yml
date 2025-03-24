@@ -19,13 +19,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Docker
+        run: |
+          docker info
+          docker compose version
+
       - name: Setup Supabase CLI
         uses: supabase/setup-cli@v1
         with:
           version: latest
 
+      - name: Verify Environment
+        run: |
+          ls -la
+          cat .env.testing
+          echo "Current directory: $(pwd)"
+
       - name: Start Supabase Services
-        run: DOTENV_FILE=.env.testing docker compose up -d
+        run: |
+          DOTENV_FILE=.env.testing docker compose up -d
+          docker ps
 
       - name: Wait for Services
         run: |

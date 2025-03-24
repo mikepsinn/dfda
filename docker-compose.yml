@@ -23,7 +23,7 @@ services:
       - database:/var/lib/mysql
 
   supabase:
-    image: supabase/supabase-postgres:15.1.0.103
+    image: ghcr.io/supabase/postgres:15.1.0.103
     container_name: supabase_db
     restart: always
     ports:
