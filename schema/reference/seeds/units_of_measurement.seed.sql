@@ -43,7 +43,6 @@ INSERT INTO reference.units_of_measurement (
 -- Volume units
 ('Milliliters', 'mL', 4, 0, NULL, 'zero', 'ratio', false, true, '[{"operation":"MULTIPLY","value":0.001}]', 1000000),
 ('Liters', 'L', 4, 0, NULL, 'zero', 'ratio', true, true, '[]', 10),
-('Ounces', 'oz', 4, 0, NULL, 'zero', 'ratio', true, true, '[{"operation":"MULTIPLY","value":0.0295735}]', NULL),
 ('Quarts', 'qt', 4, 0, NULL, 'zero', 'ratio', true, true, '[{"operation":"MULTIPLY","value":0.946353}]', NULL),
 ('Cubic Meters', 'm³', 4, 0, NULL, 'zero', 'ratio', true, false, '[{"operation":"MULTIPLY","value":1000}]', NULL),
 ('Cubic Centimeters', 'cm³', 4, 0, NULL, 'zero', 'ratio', true, false, '[{"operation":"MULTIPLY","value":0.001}]', NULL),
