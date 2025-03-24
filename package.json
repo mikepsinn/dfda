@@ -15,7 +15,8 @@
     "db:branch": "supabase db branch",
     "db:push": "supabase db push",
     "db:status": "supabase status",
-    "db:generate-migration": "node supabase/scripts/combine-schema.js # Combines schema definitions into a migration"
+    "db:generate-migration": "node supabase/scripts/combine-schema.js # Combines schema definitions into a migration",
+    "db:reset-schema": "node supabase/scripts/reset-schema.js"
   },
   "dependencies": {
     "@prisma/client": "5.10.2"

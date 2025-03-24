@@ -1,0 +1,13 @@
+-- Type: personal.notification_type
+
+CREATE TYPE personal.notification_type AS ENUM (
+    'MEDICATION_REMINDER',
+    'LAB_RESULT',
+    'APPOINTMENT_REMINDER',
+    'MEASUREMENT_REMINDER',
+    'CONDITION_UPDATE',
+    'CORRELATION_FOUND',
+    'TREATMENT_SUGGESTION',
+    'DATA_IMPORT_COMPLETE',
+    'SYSTEM_ALERT'
+);

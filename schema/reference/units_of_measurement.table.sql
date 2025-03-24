@@ -1,0 +1,31 @@
+-- Table: reference.units_of_measurement
+
+CREATE TABLE reference.units_of_measurement (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    code VARCHAR(255),
+    name VARCHAR(100) NOT NULL UNIQUE,
+    descriptive_name VARCHAR(255),
+    abbreviation VARCHAR(20),
+    code_system VARCHAR(255),
+    definition TEXT,
+    synonym VARCHAR(255),
+    status VARCHAR(50),
+    kind_of_quantity VARCHAR(255),
+    concept_id VARCHAR(255),
+    dimension VARCHAR(255),
+    unit_category_id SMALLINT REFERENCES reference.unit_categories(id),
+    minimum_value DECIMAL,
+    maximum_value DECIMAL,
+    maximum_daily_value DECIMAL,
+    conversion_steps JSONB,
+    filling_type filling_type_enum NOT NULL DEFAULT 'none',
+    filling_value DECIMAL,
+    scale scale_type_enum NOT NULL DEFAULT 'ratio',
+    advanced BOOLEAN NOT NULL DEFAULT false,
+    manual_tracking BOOLEAN NOT NULL DEFAULT true,
+    sort_order INTEGER NOT NULL DEFAULT 0,
+    slug VARCHAR(200) UNIQUE,
+    deleted_at TIMESTAMP WITH TIME ZONE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
