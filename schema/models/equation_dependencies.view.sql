@@ -19,7 +19,7 @@ WITH RECURSIVE deps AS (
         array_cat(d.deps, e.input_variables) as deps,
         d.depth + 1 as depth
     FROM deps d
-    JOIN models.model_equations e ON ANY(d.deps) = e.output_variable_id
+    JOIN models.model_equations e ON e.output_variable_id = ANY(d.deps)
     WHERE d.depth < 10  -- Prevent infinite recursion
 )
 SELECT DISTINCT ON (id)
