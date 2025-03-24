@@ -4,10 +4,6 @@
 -- Includes conversion factors, display information, and metadata
 --
 
--- Create necessary ENUMs
-CREATE TYPE filling_type_enum AS ENUM ('zero', 'none', 'interpolation', 'value');
-CREATE TYPE scale_type_enum AS ENUM ('nominal', 'interval', 'ratio', 'ordinal');
-
 CREATE TABLE reference.units_of_measurement (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     code VARCHAR(255),
