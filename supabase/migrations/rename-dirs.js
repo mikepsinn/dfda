@@ -1,47 +1,49 @@
 const fs = require('fs');
 const path = require('path');
 
-// Get all directories in migrations folder
+// Get all entries in migrations folder and subdirectories
 const migrationsDir = __dirname;
-const entries = fs.readdirSync(migrationsDir, { withFileTypes: true });
 
-// Process only directories and skip files
-const dirs = entries
-    .filter(entry => entry.isDirectory())
-    // Only process dirs that start with numbers
-    .filter(dir => /^\d+_/.test(dir.name))
-    .map(dir => ({
-        oldName: dir.name,
-        // Remove the numeric prefix and underscore
-        newName: dir.name.replace(/^\d+_/, '')
-    }));
+function getAllFiles(dir) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    let files = [];
 
-// Print planned changes
-console.log('Will rename the following directories:');
-dirs.forEach(({ oldName, newName }) => {
-    console.log(`  ${oldName} -> ${newName}`);
-});
-
-// Confirm with user
-console.log('\nProceed with renaming? (y/n)');
-process.stdin.once('data', (data) => {
-    const answer = data.toString().trim().toLowerCase();
-    if (answer === 'y') {
-        // Perform renames
-        dirs.forEach(({ oldName, newName }) => {
-            const oldPath = path.join(migrationsDir, oldName);
-            const newPath = path.join(migrationsDir, newName);
-            
-            try {
-                fs.renameSync(oldPath, newPath);
-                console.log(`✓ Renamed ${oldName} to ${newName}`);
-            } catch (err) {
-                console.error(`✗ Failed to rename ${oldName}: ${err.message}`);
+    entries.forEach(entry => {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+            // Recursively get files from subdirectories
+            files = files.concat(getAllFiles(fullPath));
+        } else if (entry.isFile()) {
+            // Skip timestamp-prefixed files (20250321...)
+            if (!/^20\d{12}_/.test(entry.name) && /^\d+_/.test(entry.name)) {
+                files.push({
+                    oldPath: fullPath,
+                    oldName: entry.name,
+                    // Remove the numeric prefix and underscore
+                    newName: entry.name.replace(/^\d+_/, '')
+                });
             }
-        });
-        console.log('\nDone!');
-    } else {
-        console.log('Aborted.');
+        }
+    });
+
+    return files;
+}
+
+const files = getAllFiles(migrationsDir);
+
+if (files.length === 0) {
+    console.log('No files found that need renaming.');
+    process.exit(0);
+}
+
+// Print and execute changes
+console.log('Renaming the following files:');
+files.forEach(({ oldPath, oldName, newName }) => {
+    const newPath = path.join(path.dirname(oldPath), newName);
+    try {
+        fs.renameSync(oldPath, newPath);
+        console.log(`✓ ${path.relative(migrationsDir, oldPath)} -> ${newName}`);
+    } catch (err) {
+        console.error(`✗ Failed to rename ${oldName}: ${err.message}`);
     }
-    process.exit();
 }); 
