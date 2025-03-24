@@ -125,7 +125,8 @@ function sortTablesByDependencies(tables) {
 async function readSqlFiles(schemaDir, objectType) {
     const files = [];
     try {
-        const baseDir = path.join(schemaDir, objectType.subdir || '.');
+        // Update path to look in root directory's schema folder
+        const baseDir = path.join(__dirname, '..', '..', 'schema', schemaDir, objectType.subdir || '.');
         const dirContents = await fs.readdir(baseDir, { withFileTypes: true }).catch(() => []);
         
         for (const entry of dirContents) {
@@ -176,7 +177,7 @@ async function createMigration() {
     // First create all types from all schemas
     migrationParts.push('-- Types and Enums');
     for (const schema of SCHEMA_ORDER) {
-        const schemaDir = path.join('schema', schema);
+        const schemaDir = schema;  // Changed from path.join('schema', schema)
         const typeFiles = await readSqlFiles(schemaDir, { suffix: '.type.sql', subdir: null });
         
         if (typeFiles.length > 0) {
@@ -193,7 +194,7 @@ async function createMigration() {
     const otherObjects = new Map(); // schema -> type -> content[]
     
     for (const schema of SCHEMA_ORDER) {
-        const schemaDir = path.join('schema', schema);
+        const schemaDir = schema;
         
         // Process each object type except types (already handled)
         for (const objectType of OBJECT_TYPES) {
@@ -265,7 +266,7 @@ async function createMigration() {
     migrationParts.push('');
     
     // Write the combined migration
-    const migrationDir = 'supabase/migrations';
+    const migrationDir = path.join(__dirname, '..', 'migrations');
     await fs.mkdir(migrationDir, { recursive: true });
     
     // Use 00000000000000 for initial schema migration

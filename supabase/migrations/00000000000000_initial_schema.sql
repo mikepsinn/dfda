@@ -1827,7 +1827,229 @@ ORDER BY id, depth DESC;
 COMMENT ON VIEW models.equation_dependencies IS 'Shows all variable dependencies for each equation, including indirect dependencies';
 
 
--- models .alter
+-- Alter statements (after all tables are created)
+-- Alter: core.addresses
+-- Alter statements for core.addresses
+
+ALTER TABLE core.addresses ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.data_sharing_agreements
+-- Alter statements for core.data_sharing_agreements
+
+ALTER TABLE core.data_sharing_agreements ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.integration_connections
+-- Alter statements for core.integration_connections
+
+ALTER TABLE core.integration_connections ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.integration_sync_logs
+-- Alter statements for core.integration_sync_logs
+
+ALTER TABLE core.integration_sync_logs ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.profiles
+-- Alter statements for core.profiles
+
+ALTER TABLE core.profiles ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.user_consents
+-- Alter statements for core.user_consents
+
+ALTER TABLE core.user_consents ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.user_data_exports
+-- Alter statements for core.user_data_exports
+
+ALTER TABLE core.user_data_exports ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.user_groups
+-- Alter statements for core.user_groups
+
+ALTER TABLE core.user_groups ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.user_group_members
+-- Alter statements for core.user_group_members
+
+ALTER TABLE core.user_group_members ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: core.user_permissions
+-- Alter statements for core.user_permissions
+
+ALTER TABLE core.user_permissions ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: oauth2.access_tokens
+-- Alter statements for oauth2.access_tokens
+
+ALTER TABLE oauth2.access_tokens ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: oauth2.authorization_codes
+-- Alter statements for oauth2.authorization_codes
+
+ALTER TABLE oauth2.authorization_codes ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: oauth2.clients
+-- Alter statements for oauth2.clients
+
+ALTER TABLE oauth2.clients ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: oauth2.refresh_tokens
+-- Alter statements for oauth2.refresh_tokens
+
+ALTER TABLE oauth2.refresh_tokens ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: oauth2.user_consents
+-- Alter statements for oauth2.user_consents
+
+ALTER TABLE oauth2.user_consents ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: reference.population_segments
+-- Alter statements for reference.population_segments
+
+ALTER TABLE reference.population_segments ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: reference.variables
+-- Alter statements for reference.variables
+
+ALTER TABLE reference.variables ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: reference.variable_categories
+-- Alter statements for reference.variable_categories
+
+ALTER TABLE reference.variable_categories ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: reference.variable_ingredients
+-- Alter statements for reference.variable_ingredients
+
+ALTER TABLE reference.variable_ingredients ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: reference.variable_synonyms
+-- Alter statements for reference.variable_synonyms
+
+ALTER TABLE reference.variable_synonyms ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.measurements
+-- Alter statements for personal.measurements
+
+ALTER TABLE personal.measurements ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.user_conditions
+-- Alter statements for personal.user_conditions
+
+ALTER TABLE personal.user_conditions ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.user_documents
+-- Alter statements for personal.user_documents
+
+ALTER TABLE personal.user_documents ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.user_external_treatment_effectiveness_ratings
+-- Alter statements for personal.user_external_treatment_effectiveness_ratings
+
+ALTER TABLE personal.user_external_treatment_effectiveness_ratings ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.user_lab_results
+-- Alter statements for personal.user_lab_results
+
+ALTER TABLE personal.user_lab_results ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.user_treatment_effectiveness_ratings
+-- Alter statements for personal.user_treatment_effectiveness_ratings
+
+ALTER TABLE personal.user_treatment_effectiveness_ratings ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: personal.user_variables
+-- Alter statements for personal.user_variables
+
+ALTER TABLE personal.user_variables ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.adverse_events
+-- Alter statements for cohort.adverse_events
+
+ALTER TABLE cohort.adverse_events ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.interventions
+-- Alter statements for cohort.interventions
+
+ALTER TABLE cohort.interventions ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.outcomes
+-- Alter statements for cohort.outcomes
+
+ALTER TABLE cohort.outcomes ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.protocols
+-- Alter statements for cohort.protocols
+
+ALTER TABLE cohort.protocols ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.trials
+-- Alter statements for cohort.trials
+
+ALTER TABLE cohort.trials ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.trial_participants
+-- Alter statements for cohort.trial_participants
+
+ALTER TABLE cohort.trial_participants ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.trial_arms
+-- Alter statements for cohort.trial_arms
+
+ALTER TABLE cohort.trial_arms ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.trial_documents
+-- Alter statements for cohort.trial_documents
+
+ALTER TABLE cohort.trial_documents ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.trial_measurements
+-- Alter statements for cohort.trial_measurements
+
+ALTER TABLE cohort.trial_measurements ENABLE ROW LEVEL SECURITY;
+
+
+-- Alter: cohort.trial_phases
+-- Alter statements for cohort.trial_phases
+
+ALTER TABLE cohort.trial_phases ENABLE ROW LEVEL SECURITY;
+
+
 -- Alter: models.cost_breakdowns
 -- Alter statements for models.cost_breakdowns
 
@@ -1876,7 +2098,6 @@ ALTER TABLE models.simulation_outputs ENABLE ROW LEVEL SECURITY;
 ALTER TABLE models.statistical_validation ENABLE ROW LEVEL SECURITY;
 
 
--- finance .alter
 -- Alter: finance.credits
 -- Alter statements for finance.credits
 
@@ -1913,7 +2134,6 @@ ALTER TABLE finance.subscription_items ENABLE ROW LEVEL SECURITY;
 ALTER TABLE finance.transactions ENABLE ROW LEVEL SECURITY;
 
 
--- commerce .alter
 -- Alter: commerce.cart_items
 -- Alter statements for commerce.cart_items
 
@@ -1968,7 +2188,6 @@ ALTER TABLE commerce.wishlists ENABLE ROW LEVEL SECURITY;
 ALTER TABLE commerce.wishlist_items ENABLE ROW LEVEL SECURITY;
 
 
--- logistics .alter
 -- Alter: logistics.inventory
 -- Alter statements for logistics.inventory
 
@@ -2023,7 +2242,6 @@ ALTER TABLE logistics.shipping_rates ENABLE ROW LEVEL SECURITY;
 ALTER TABLE logistics.warehouses ENABLE ROW LEVEL SECURITY;
 
 
--- scheduling .alter
 -- Alter: scheduling.appointments
 -- Alter statements for scheduling.appointments
 
