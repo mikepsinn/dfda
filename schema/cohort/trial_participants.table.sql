@@ -1,6 +1,6 @@
--- Table: cohort.trials_participants
+-- Table: cohort.trial_participants
 
-CREATE TABLE cohort.trials_participants (
+CREATE TABLE cohort.trial_participants (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     trial_id UUID NOT NULL REFERENCES cohort.trials(id) ON DELETE CASCADE,
     user_id UUID NOT NULL REFERENCES core.profiles(id) ON DELETE CASCADE,

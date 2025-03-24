@@ -2,7 +2,7 @@
 
 CREATE TABLE commerce.products (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    variable_id UUID NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
+    variable_id bigint NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     description TEXT,
     short_description TEXT,

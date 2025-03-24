@@ -3,7 +3,7 @@
 CREATE TABLE cohort.adverse_events (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     participant_id UUID NOT NULL REFERENCES cohort.trial_participants(id) ON DELETE CASCADE,
-    variable_id UUID NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
+    variable_id bigint NOT NULL REFERENCES reference.variables(id) ON DELETE CASCADE,
     onset_date TIMESTAMP WITH TIME ZONE NOT NULL,
     resolution_date TIMESTAMP WITH TIME ZONE,
     severity TEXT CHECK (severity IN ('mild', 'moderate', 'severe', 'life_threatening', 'death')),
