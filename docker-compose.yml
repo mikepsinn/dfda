@@ -31,8 +31,12 @@ services:
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: postgres
+      SUPABASE_DIR: /supabase
+      SUPABASE_CONFIG_FILE: /supabase/config.toml
     volumes:
       - supabase_db:/var/lib/postgresql/data
+      - ./supabase:/supabase
+      - ./supabase/migrations:/docker-entrypoint-initdb.d
 
   auth:
     image: supabase/gotrue:v2.132.3

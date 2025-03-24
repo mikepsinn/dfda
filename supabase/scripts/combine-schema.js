@@ -4,8 +4,7 @@ const path = require('path');
 // Order of schemas to create - core schemas first
 const SCHEMA_ORDER = [
     'global',    // Global types and enums MUST be first
-    'core',      // Core functionality
-    'auth',      // Authentication
+    'core',      // Core functionality]
     'oauth2',    // OAuth functionality
     'reference', // Reference data
     'personal',  // Personal data
@@ -71,6 +70,22 @@ function extractTableInfo(sql) {
     };
 }
 
+function extractSeedInfo(sql) {
+    // Extract table name from INSERT INTO statement
+    const tableMatch = sql.match(/INSERT\s+INTO\s+(?:(\w+)\.)?(\w+)/i);
+    if (!tableMatch) return null;
+    
+    const [_, schemaName, tableName] = tableMatch;
+    
+    return {
+        name: `${schemaName || 'public'}.${tableName}`,
+        schema: schemaName,
+        sql: sql,
+        // The seed data depends on its corresponding table
+        dependencies: [`${schemaName || 'public'}.${tableName}`]
+    };
+}
+
 function sortTablesByDependencies(tables) {
     const sorted = [];
     const visited = new Set();
@@ -117,11 +132,17 @@ async function readSqlFiles(schemaDir, objectType) {
             if (entry.isFile() && entry.name.endsWith(objectType.suffix)) {
                 const content = await fs.readFile(path.join(baseDir, entry.name), 'utf8');
                 
-                // If these are tables, we need to handle dependencies
+                // If these are tables or seeds, we need to handle dependencies
                 if (objectType.suffix === '.table.sql') {
                     const tableInfo = extractTableInfo(content);
                     if (tableInfo) {
                         files.push(tableInfo);
+                        continue;
+                    }
+                } else if (objectType.suffix === '.seed.sql') {
+                    const seedInfo = extractSeedInfo(content);
+                    if (seedInfo) {
+                        files.push(seedInfo);
                         continue;
                     }
                 }
@@ -165,8 +186,9 @@ async function createMigration() {
         }
     }
     
-    // Then collect all tables from all schemas
+    // Then collect all tables and other objects from all schemas
     const allTables = [];
+    const allSeeds = [];
     const otherObjects = new Map(); // schema -> type -> content[]
     
     for (const schema of SCHEMA_ORDER) {
@@ -181,6 +203,8 @@ async function createMigration() {
             if (files.length > 0) {
                 if (objectType.suffix === '.table.sql') {
                     allTables.push(...files);
+                } else if (objectType.suffix === '.seed.sql') {
+                    allSeeds.push(...files);
                 } else {
                     if (!otherObjects.has(schema)) {
                         otherObjects.set(schema, new Map());
@@ -202,13 +226,15 @@ async function createMigration() {
     migrationParts.push(sortedTables.map(t => t.sql).join('\n\n'));
     migrationParts.push('');
     
-    // Then add other objects schema by schema
+    // Add non-seed objects schema by schema
     for (const schema of SCHEMA_ORDER) {
         if (!otherObjects.has(schema)) continue;
         
         const schemaObjects = otherObjects.get(schema);
         for (const objectType of OBJECT_TYPES) {
-            if (objectType.suffix === '.table.sql' || objectType.suffix === '.type.sql') continue; // Already handled
+            if (objectType.suffix === '.table.sql' || 
+                objectType.suffix === '.type.sql' || 
+                objectType.suffix === '.seed.sql') continue; // Already handled or will be handled later
             
             const objects = schemaObjects.get(objectType.suffix);
             if (objects && objects.length > 0) {
@@ -218,6 +244,14 @@ async function createMigration() {
             }
         }
     }
+    
+    // Sort seeds by dependencies (including table dependencies)
+    const sortedSeeds = sortTablesByDependencies([...sortedTables, ...allSeeds]);
+    
+    // Add seeds (only the ones that weren't in sortedTables)
+    migrationParts.push('-- Seed data (in dependency order)');
+    migrationParts.push(sortedSeeds.filter(obj => allSeeds.includes(obj)).map(s => s.sql).join('\n\n'));
+    migrationParts.push('');
     
     // Write the combined migration
     const migrationDir = 'supabase/migrations';
