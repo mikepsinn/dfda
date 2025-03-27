@@ -1,44 +1,36 @@
 import { test, expect } from '@playwright/test';
-import { createClient } from '@supabase/supabase-js';
-import { Database } from '@/lib/database.types';
+import { supabase, setupTestDatabase, cleanupTestData } from './setup/test-setup';
 
 test.describe('Demo Login Flow', () => {
-  const supabase = createClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY! // Using service role key for admin operations
-  );
-
   test.beforeAll(async () => {
-    // Ensure the profiles table exists and has the correct schema
-    const { error: createTableError } = await supabase.rpc('create_profiles_if_not_exists');
-    if (createTableError) {
-      console.error('Error creating profiles table:', createTableError);
-    }
+    await setupTestDatabase();
   });
 
   test.beforeEach(async () => {
-    // Clean up any existing demo accounts
-    const { data: profiles } = await supabase
-      .from('profiles')
-      .select('id')
-      .eq('email', 'demo-patient@dfda.earth');
-
-    if (profiles && profiles.length > 0) {
-      // Delete auth user and profile
-      await supabase.auth.admin.deleteUser(profiles[0].id);
-      await supabase.from('profiles').delete().eq('id', profiles[0].id);
-    }
+    await cleanupTestData();
   });
 
   test('should login with demo account and redirect to dashboard', async ({ page }) => {
+    // Enable console logging for debugging
+    page.on('console', msg => console.log(`Browser console: ${msg.text()}`));
+    page.on('pageerror', err => console.error(`Browser error: ${err}`));
+
     // Start from the login page
     await page.goto('/login');
+    console.log('Navigated to login page');
+    
+    // Wait for the page to be ready
+    await page.waitForLoadState('networkidle');
     
     // Click the demo login button
-    await page.getByRole('button', { name: /demo/i }).click();
+    const demoButton = await page.getByRole('button', { name: /demo/i });
+    await expect(demoButton).toBeVisible();
+    await demoButton.click();
+    console.log('Clicked demo button');
     
     // Wait for redirect to dashboard
-    await page.waitForURL('/patient/dashboard');
+    await page.waitForURL('/patient/dashboard', { timeout: 30000 });
+    console.log('Redirected to dashboard');
     
     // Verify we're on the dashboard
     expect(page.url()).toContain('/patient/dashboard');
@@ -58,12 +50,20 @@ test.describe('Demo Login Flow', () => {
   });
 
   test('should handle demo login errors gracefully', async ({ page }) => {
+    // Enable console logging for debugging
+    page.on('console', msg => console.log(`Browser console: ${msg.text()}`));
+    page.on('pageerror', err => console.error(`Browser error: ${err}`));
+
     // Break the database connection temporarily
     const originalUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:12345';
     
     await page.goto('/login');
-    await page.getByRole('button', { name: /demo/i }).click();
+    await page.waitForLoadState('networkidle');
+    
+    const demoButton = await page.getByRole('button', { name: /demo/i });
+    await expect(demoButton).toBeVisible();
+    await demoButton.click();
     
     // Should show error message
     await expect(page.getByText(/failed to log in/i)).toBeVisible();
@@ -73,15 +73,6 @@ test.describe('Demo Login Flow', () => {
   });
 
   test.afterAll(async () => {
-    // Clean up all test data
-    const { data: profiles } = await supabase
-      .from('profiles')
-      .select('id')
-      .eq('email', 'demo-patient@dfda.earth');
-
-    if (profiles && profiles.length > 0) {
-      await supabase.auth.admin.deleteUser(profiles[0].id);
-      await supabase.from('profiles').delete().eq('id', profiles[0].id);
-    }
+    await cleanupTestData();
   });
 }); 
