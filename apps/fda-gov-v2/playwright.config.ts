@@ -36,10 +36,11 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1, // Run tests sequentially
+  maxFailures: 1, // Stop after first test failure
   reporter: [
-    ['html', { open: 'never' }],  // Prevent auto-opening the report
-    ['list'], // DOES NOT ADD CONSOLE OUTPUT BUT IT SEEMS LIKE IT SHOULD
-    ['line']  // DOES NOT ADD CONSOLE OUTPUT BUT IT SEEMS LIKE IT SHOULD
+    ['list'],
+    ['line'],
+    ['html', { open: 'never' }]  // Prevent auto-opening the report
   ],
   use: {
     baseURL: `http://localhost:${TEST_PORT}`,
