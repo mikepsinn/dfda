@@ -1,6 +1,10 @@
 import '@testing-library/jest-dom'
 import fs from 'fs'
 import path from 'path'
+import dotenv from 'dotenv'
+
+// Load test environment variables
+dotenv.config({ path: '.env.test' })
 
 // Check for required test configuration
 function validateTestConfig() {
@@ -15,13 +19,36 @@ validateTestConfig()
 
 // Mock next/navigation
 jest.mock('next/navigation', () => ({
-  useRouter: () => ({
-    push: jest.fn(),
-    replace: jest.fn(),
-    prefetch: jest.fn(),
-  }),
-  useSearchParams: () => new URLSearchParams(),
-  usePathname: () => '',
+  useRouter() {
+    return {
+      route: '/',
+      pathname: '',
+      query: '',
+      asPath: '',
+      push: jest.fn(),
+      replace: jest.fn(),
+    }
+  },
+  usePathname() {
+    return ''
+  },
+  useSearchParams() {
+    return new URLSearchParams()
+  },
+}))
+
+// Mock next/headers
+jest.mock('next/headers', () => ({
+  cookies() {
+    return {
+      get: jest.fn(),
+      set: jest.fn(),
+      delete: jest.fn(),
+    }
+  },
+  headers() {
+    return new Headers()
+  },
 }))
 
 // Mock Supabase client

@@ -31,32 +31,40 @@ requiredEnvVars.forEach(key => {
 });
 
 export default defineConfig({
-  testDir: './e2e',
-  fullyParallel: false, // Set to false to avoid port conflicts
+  testDir: './tests/e2e',
+  globalSetup: './tests/e2e/e2e-setup.ts',
+  /* Maximum time one test can run for */
+  timeout: 30000,
+  /* Maximum number of failures before stopping */
+  maxFailures: process.env.CI ? 10 : 1,
+  /* Run tests in files in parallel */
+  fullyParallel: true,
+  /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
+  /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  workers: 1, // Run tests sequentially
-  maxFailures: 1, // Stop after first test failure
-  reporter: [
-    ['list'],
-    ['line'],
-    ['html', { open: 'never' }]  // Prevent auto-opening the report
-  ],
+  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  reporter: 'html',
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: `http://localhost:${TEST_PORT}`,
+    /* Base URL to use in actions like `await page.goto('/')`. */
+    baseURL: `http://127.0.0.1:${TEST_PORT}`,
+    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
+  /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
   ],
+  /* Run your local dev server before starting the tests */
   webServer: {
-    command: `pnpm dev --port ${TEST_PORT}`,
-    port: TEST_PORT,
+    command: 'pnpm dev',
+    url: `http://127.0.0.1:${TEST_PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: testEnv,

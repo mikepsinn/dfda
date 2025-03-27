@@ -27,7 +27,7 @@ describe('Treatment Ratings API', () => {
       rpc: jest.fn()
     }
     ;(createServerClient as jest.Mock).mockReturnValue(mockSupabase)
-    // Spy on console.error
+    // Mock console.error to keep test output clean
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
   })
 

@@ -8,12 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
+    
+    "test:unit": "jest -c jest.unit.config.mjs",
+    "test:integration": "jest -c jest.integration.config.mjs",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:e2e:debug": "playwright test --debug",
+    
     "sb:local:start": "supabase start",
     "sb:local:stop": "supabase stop",
     "sb:local:status": "supabase status",
