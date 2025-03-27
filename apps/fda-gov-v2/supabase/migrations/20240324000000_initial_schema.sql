@@ -32,16 +32,52 @@ CREATE TABLE IF NOT EXISTS treatment_effectiveness (
 );
 
 CREATE TABLE IF NOT EXISTS profiles (
-  id UUID PRIMARY KEY,
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   email TEXT NOT NULL UNIQUE,
+  -- Common fields
   first_name TEXT,
   last_name TEXT,
-  organization_name TEXT,
-  contact_name TEXT,
-  user_type TEXT NOT NULL,
+  user_type TEXT NOT NULL DEFAULT 'patient',
+  -- Doctor specific fields
+  specialties TEXT[] DEFAULT '{}',
+  license_number TEXT,
+  -- Sponsor specific fields
+  organization TEXT,
+  role TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Enable RLS on profiles
+ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
+
+-- Create RLS policies for profiles
+CREATE POLICY "Users can view own profile"
+  ON profiles FOR SELECT
+  USING (auth.uid() = id);
+
+CREATE POLICY "Users can update own profile"
+  ON profiles FOR UPDATE
+  USING (auth.uid() = id);
+
+-- Create function to handle new user creation
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS trigger
+LANGUAGE plpgsql
+SECURITY DEFINER SET search_path = public
+AS $$
+BEGIN
+  INSERT INTO public.profiles (id, email)
+  VALUES (new.id, new.email);
+  RETURN new;
+END;
+$$;
+
+-- Create trigger for new user creation
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
 
 CREATE TABLE IF NOT EXISTS treatment_ratings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

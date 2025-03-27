@@ -14,104 +14,71 @@ export async function demoLogin(userType: UserType = "patient") {
   const account = DEMO_ACCOUNTS[userType]
 
   try {
-    console.log('[DEMO-LOGIN] Checking if demo account exists...', {
-      email: account.email
-    });
-
-    // Check if the demo account exists
-    const { data: existingUser, error: checkError } = await supabase
-      .from("profiles")
-      .select("id")
-      .eq("email", account.email)
-      .single()
-
-    if (checkError && checkError.code !== "PGRST116") {
-      console.error("[DEMO-LOGIN] Error checking for demo account:", {
-        error: checkError,
-        code: checkError.code,
-        message: checkError.message
-      })
-      throw new Error(`Failed to check for demo account: ${checkError.message}`)
-    }
-
-    if (!existingUser) {
-      console.log('[DEMO-LOGIN] Demo account does not exist, creating new account...');
-      // Create the demo account if it doesn't exist
-      const { data: authData, error: signUpError } = await supabase.auth.signUp({
-        email: account.email,
-        password: account.password,
-      })
-
-      if (signUpError) {
-        console.error("[DEMO-LOGIN] Error creating demo account:", {
-          error: signUpError,
-          code: signUpError.status,
-          message: signUpError.message
-        })
-        throw new Error(`Failed to create demo account: ${signUpError.message}`)
-      }
-
-      console.log('[DEMO-LOGIN] Auth signup successful', {
-        userId: authData?.user?.id
-      });
-
-      // Create the profile
-      if (authData?.user) {
-        console.log('[DEMO-LOGIN] Creating demo profile...');
-        const { error: profileError } = await supabase.from("profiles").insert({
-          id: authData.user.id,
-          email: account.email,
-          ...account.data,
-        })
-
-        if (profileError) {
-          console.error("[DEMO-LOGIN] Error creating demo profile:", {
-            error: profileError,
-            code: profileError.code,
-            message: profileError.message
-          })
-          throw new Error(`Failed to create demo profile: ${profileError.message}`)
-        }
-        console.log('[DEMO-LOGIN] Demo profile created successfully');
-      } else {
-        console.error('[DEMO-LOGIN] No user data returned from auth signup');
-        throw new Error('No user data returned from auth signup')
-      }
-    } else {
-      console.log('[DEMO-LOGIN] Demo account exists', {
-        userId: existingUser.id
-      });
-    }
-
-    console.log('[DEMO-LOGIN] Attempting to sign in with demo account...');
-    // Sign in with the demo account
+    // Try to sign in first - most common case
+    console.log('[DEMO-LOGIN] Attempting to sign in...');
     const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
       email: account.email,
       password: account.password,
     })
 
-    if (signInError) {
-      console.error("[DEMO-LOGIN] Error signing in:", {
-        error: signInError,
-        code: signInError.status,
-        message: signInError.message
-      })
-      throw new Error(`Failed to sign in: ${signInError.message}`)
+    // If sign in worked, update profile and redirect
+    if (!signInError && signInData?.user) {
+      console.log('[DEMO-LOGIN] Sign in successful');
+      
+      // Update profile with latest demo data
+      const { error: updateError } = await supabase
+        .from('profiles')
+        .update(account.data)
+        .eq('id', signInData.user.id)
+
+      if (updateError) {
+        console.error('[DEMO-LOGIN] Failed to update profile:', updateError)
+      }
+
+      const redirectUrl = `/(protected)/${userType}/dashboard`
+      console.log('[DEMO-LOGIN] Redirecting to', { redirectUrl });
+      redirect(redirectUrl)
     }
 
-    console.log('[DEMO-LOGIN] Sign in successful', {
-      userId: signInData?.user?.id,
-      session: !!signInData?.session
-    });
+    // If error is not "Invalid login credentials", something else is wrong
+    if (signInError && signInError.message !== 'Invalid login credentials') {
+      throw signInError
+    }
 
-    // Get session to verify it was set properly
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
-    console.log('[DEMO-LOGIN] Current session state:', {
-      hasSession: !!session,
-      sessionError: sessionError?.message || null
-    });
+    // If we get here, user doesn't exist - create them
+    console.log('[DEMO-LOGIN] Account not found, creating new account...');
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+      email: account.email,
+      password: account.password,
+      options: {
+        data: account.data, // Store user_type in auth metadata
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback`
+      }
+    })
 
-    // Determine the redirect URL based on user type
+    if (signUpError) {
+      console.error("[DEMO-LOGIN] Failed to create account:", signUpError)
+      throw signUpError
+    }
+
+    if (!signUpData.user) {
+      throw new Error('No user returned from signUp')
+    }
+
+    console.log('[DEMO-LOGIN] Account created successfully');
+
+    // Profile will be created by the database trigger
+    // Try signing in again
+    const { error: finalSignInError } = await supabase.auth.signInWithPassword({
+      email: account.email,
+      password: account.password,
+    })
+
+    if (finalSignInError) {
+      console.error("[DEMO-LOGIN] Failed to sign in after creation:", finalSignInError)
+      throw finalSignInError
+    }
+
     const redirectUrl = `/(protected)/${userType}/dashboard`
     console.log('[DEMO-LOGIN] Redirecting to', { redirectUrl });
     redirect(redirectUrl)

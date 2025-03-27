@@ -17,7 +17,11 @@
     "db:types": "cross-env-shell \"npx supabase gen types typescript --project-id %SUPABASE_PROJECT_ID% > lib/database.types.ts\"",
     "db:pull": "cross-env-shell \"npx supabase db pull --project-id %SUPABASE_PROJECT_ID%\"",
     "db:diff": "cross-env-shell \"npx supabase db diff --project-id %SUPABASE_PROJECT_ID% -f migrations\"",
-    "db:push": "cross-env-shell \"npx supabase db push --project-id %SUPABASE_PROJECT_ID%\""
+    "db:push": "cross-env-shell \"npx supabase db push --project-id %SUPABASE_PROJECT_ID%\"",
+    "supabase:start": "npx supabase start",
+    "supabase:stop": "npx supabase stop",
+    "supabase:status": "npx supabase status",
+    "supabase:reset": "npx supabase reset"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
