@@ -23,9 +23,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ScrollToHashElement />
-        <Header />
-        {children}
-        <Footer />
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1 py-6 md:py-10">
+            <div className="container">
+              <div className="mx-auto max-w-6xl">
+                {children}
+              </div>
+            </div>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   )

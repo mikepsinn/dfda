@@ -90,8 +90,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="container flex h-16 items-center justify-between px-4">
+        <div className="flex items-center gap-2 pl-2">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/images/dfda-logo.png" alt="dFDA Logo" width={28} height={28} className="h-7 w-7" />
             <span className="text-xl font-bold">FDA.gov v2</span>
