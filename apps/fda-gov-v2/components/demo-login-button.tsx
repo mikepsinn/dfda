@@ -5,17 +5,27 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { demoLogin } from "@/app/actions/demo-login"
 import { Loader2 } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { toast } from "sonner"
 
 export function DemoLoginButton() {
+  const router = useRouter()
   const [userType, setUserType] = useState<"patient" | "doctor" | "sponsor">("patient")
   const [isLoading, setIsLoading] = useState(false)
 
   const handleDemoLogin = async () => {
     setIsLoading(true)
     try {
-      await demoLogin(userType)
+      const result = await demoLogin(userType)
+      if (result.success && result.redirectUrl) {
+        router.push(result.redirectUrl)
+      } else if (result.error) {
+        toast.error(result.error)
+        setIsLoading(false)
+      }
     } catch (error) {
       console.error("Demo login error:", error)
+      toast.error("Failed to log in with demo account")
       setIsLoading(false)
     }
   }

@@ -2,7 +2,6 @@
 
 import { createServerClient } from "@/lib/supabase"
 import { cookies } from "next/headers"
-import { redirect } from "next/navigation"
 
 type UserType = "patient" | "doctor" | "sponsor"
 
@@ -105,21 +104,21 @@ export async function demoLogin(userType: UserType = "patient") {
       throw new Error('No user data returned from sign in')
     }
 
-    console.log('Sign in successful, redirecting to dashboard...');
-    // Redirect to the appropriate dashboard
+    console.log('Sign in successful, determining redirect URL...');
+    // Return success with the appropriate redirect URL
+    let redirectUrl = "/patient/dashboard"
     switch (userType) {
-      case "patient":
-        redirect("/patient/dashboard")
       case "doctor":
-        redirect("/doctor/dashboard")
+        redirectUrl = "/doctor/dashboard"
+        break
       case "sponsor":
-        redirect("/sponsor/dashboard")
-      default:
-        redirect("/patient/dashboard")
+        redirectUrl = "/sponsor/dashboard"
+        break
     }
+    
+    return { success: true, redirectUrl }
   } catch (error) {
     console.error("Demo login error:", error)
-    // Return a more detailed error message
     return { 
       success: false, 
       error: error instanceof Error ? error.message : "Failed to log in with demo account" 

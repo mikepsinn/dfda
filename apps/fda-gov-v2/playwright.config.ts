@@ -37,7 +37,11 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1, // Run tests sequentially
-  reporter: 'html',
+  reporter: [
+    ['html'],
+    ['list'], // DOES NOT ADD CONSOLE OUTPUT BUT IT SEEMS LIKE IT SHOULD
+    ['line']  // DOES NOT ADD CONSOLE OUTPUT BUT IT SEEMS LIKE IT SHOULD
+  ],
   use: {
     baseURL: `http://localhost:${TEST_PORT}`,
     trace: 'on-first-retry',
@@ -56,5 +60,7 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: testEnv,
+    stdout: 'pipe',
+    stderr: 'pipe',
   },
 }); 
