@@ -11,9 +11,10 @@ import { getTreatmentEffectiveness } from "@/lib/api/treatment-effectiveness"
 interface TreatmentRankingListProps {
   condition: string
   treatments?: any[]
+  baseUrl?: string
 }
 
-export function TreatmentRankingList({ condition, treatments: initialTreatments }: TreatmentRankingListProps) {
+export function TreatmentRankingList({ condition, treatments: initialTreatments, baseUrl = "/treatment/" }: TreatmentRankingListProps) {
   const [treatments, setTreatments] = useState<any[]>(initialTreatments || [])
   const [isLoading, setIsLoading] = useState(!initialTreatments)
 
@@ -82,7 +83,7 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments 
           </div>
           <Progress value={treatment.effectiveness} className="h-2" />
           <div className="flex justify-end">
-            <Link href={`/treatment/${encodeURIComponent(treatment.id)}?condition=${encodeURIComponent(condition)}`}>
+            <Link href={`${baseUrl}${encodeURIComponent(treatment.id)}?condition=${encodeURIComponent(condition)}`}>
               <Button size="sm" variant="outline" className="mr-2">
                 View Details
               </Button>

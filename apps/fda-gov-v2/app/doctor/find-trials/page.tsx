@@ -157,7 +157,6 @@ export default function FindTrials() {
                       onConditionSelect={handleConditionSelect}
                       initialSearchTerm={selectedCondition}
                       placeholder="Search for a condition (e.g., Alzheimer's, Parkinson's)"
-                      showPopularConditions={false}
                     />
                   </CardContent>
                 </Card>

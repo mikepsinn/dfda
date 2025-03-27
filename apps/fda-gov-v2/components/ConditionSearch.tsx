@@ -11,12 +11,16 @@ interface ConditionSearchProps {
   onConditionSelect: (condition: string) => void
   initialSearchTerm?: string
   initialConditions?: { id: string; name: string }[]
+  availableConditions?: string[]
+  placeholder?: string
 }
 
 export function ConditionSearch({
   onConditionSelect,
   initialSearchTerm = "",
   initialConditions = [],
+  availableConditions,
+  placeholder = "Search for a condition (e.g., diabetes, arthritis, depression)...",
 }: ConditionSearchProps) {
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
   const [suggestions, setSuggestions] = useState<{ id: string; name: string }[]>([])
@@ -82,7 +86,7 @@ export function ConditionSearch({
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
           type="search"
-          placeholder="Search for a condition (e.g., diabetes, arthritis, depression)..."
+          placeholder={placeholder}
           className="pl-8"
           value={searchTerm}
           onChange={handleSearchChange}

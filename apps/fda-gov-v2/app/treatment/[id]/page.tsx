@@ -6,7 +6,9 @@ import { getTreatmentAverageRating, getTreatmentRatings, getUserTreatmentRating 
 import { TreatmentHeader } from "./components/treatment-header"
 import { TreatmentDetails } from "./components/treatment-details"
 import { TreatmentReviews } from "./components/treatment-reviews"
-import { TreatmentRating } from "@/lib/types"
+import type { Database } from "@/lib/database.types"
+
+type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row']
 
 interface TreatmentPageProps {
   params: {
