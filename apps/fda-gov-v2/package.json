@@ -23,8 +23,10 @@
     "db:local:diff": "cross-env npx supabase db diff --local -f migrations",
     "db:local:types": "cross-env npx supabase gen types typescript --local > lib/database.types.ts",
     "db:cloud:link": "cross-env npx supabase link --project-ref $SUPABASE_PROJECT_ID",
-    "db:cloud:push": "cross-env npx supabase db push",
-    "db:cloud:pull": "cross-env npx supabase db pull",
+    "db:cloud:push": "cross-env npx supabase db push --project-ref $SUPABASE_PROJECT_ID",
+    "db:cloud:pull": "cross-env npx supabase db pull --project-ref $SUPABASE_PROJECT_ID",
+    "db:cloud:diff": "cross-env npx supabase db diff --project-ref $SUPABASE_PROJECT_ID -f migrations",
+    "db:cloud:types": "cross-env npx supabase gen types typescript --project-ref $SUPABASE_PROJECT_ID > lib/database.types.ts",
     "db:cloud:reset": "cross-env npx supabase db reset --project-ref $SUPABASE_PROJECT_ID"
   },
   "dependencies": {
