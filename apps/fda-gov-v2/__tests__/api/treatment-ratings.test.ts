@@ -18,20 +18,22 @@ jest.mock('next/headers', () => ({
 }))
 
 describe('Treatment Ratings API', () => {
-  const mockSupabase = {
-    from: jest.fn(() => ({
-      select: jest.fn().mockReturnThis(),
-      insert: jest.fn().mockReturnThis(),
-      eq: jest.fn().mockReturnThis(),
-      order: jest.fn().mockReturnThis(),
-      single: jest.fn()
-    })),
-    rpc: jest.fn()
-  }
-  
+  let mockSupabase: any
+  let consoleErrorSpy: jest.SpyInstance
+
   beforeEach(() => {
-    jest.clearAllMocks();
-    (createServerClient as jest.Mock).mockReturnValue(mockSupabase)
+    mockSupabase = {
+      from: jest.fn(),
+      rpc: jest.fn()
+    }
+    ;(createServerClient as jest.Mock).mockReturnValue(mockSupabase)
+    // Spy on console.error
+    consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
+  })
+
+  afterEach(() => {
+    // Restore console.error
+    consoleErrorSpy.mockRestore()
   })
 
   describe('getTreatmentRatings', () => {
@@ -41,23 +43,40 @@ describe('Treatment Ratings API', () => {
         { id: '2', rating: 5, review: 'Excellent results' }
       ]
 
-      mockSupabase.from().select.mockResolvedValue({ data: mockRatings, error: null })
+      const mockChain = {
+        select: jest.fn().mockReturnThis(),
+        eq: jest.fn().mockReturnThis(),
+        order: jest.fn().mockResolvedValue({ data: mockRatings, error: null })
+      }
+      mockSupabase.from.mockReturnValue(mockChain)
 
       const result = await getTreatmentRatings('treatment-1', 'condition-1')
       
       expect(result).toEqual(mockRatings)
       expect(mockSupabase.from).toHaveBeenCalledWith('treatment_ratings')
-      expect(mockSupabase.from().select).toHaveBeenCalled()
+      expect(mockChain.select).toHaveBeenCalled()
+      expect(mockChain.eq).toHaveBeenCalledTimes(2)
+      expect(mockChain.order).toHaveBeenCalledWith('created_at', { ascending: false })
     })
 
     it('handles errors gracefully', async () => {
-      mockSupabase.from().select.mockResolvedValue({ 
-        data: null, 
-        error: { message: 'Database error' } 
-      })
+      const mockChain = {
+        select: jest.fn().mockReturnThis(),
+        eq: jest.fn().mockReturnThis(),
+        order: jest.fn().mockResolvedValue({ 
+          data: null, 
+          error: { message: 'Database error' } 
+        })
+      }
+      mockSupabase.from.mockReturnValue(mockChain)
 
       await expect(getTreatmentRatings('treatment-1', 'condition-1'))
         .rejects.toThrow('Failed to fetch treatment ratings')
+      
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        'Error fetching treatment ratings:',
+        { message: 'Database error' }
+      )
     })
   })
 
@@ -84,6 +103,11 @@ describe('Treatment Ratings API', () => {
 
       await expect(getTreatmentAverageRating('treatment-1', 'condition-1'))
         .rejects.toThrow('Failed to fetch average treatment rating')
+      
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        'Error fetching average treatment rating:',
+        { message: 'Database error' }
+      )
     })
   })
 
@@ -94,43 +118,54 @@ describe('Treatment Ratings API', () => {
         condition_id: 'condition-1',
         user_id: 'user-1',
         rating: 5,
-        review: 'Excellent treatment'
+        review: 'Excellent treatment',
+        user_type: 'patient'
       }
 
       const mockCreatedRating = { ...newRating, id: '1' }
-      mockSupabase.from().insert.mockReturnValue({
-        select: jest.fn().mockReturnValue({
-          single: jest.fn().mockResolvedValue({ data: mockCreatedRating, error: null })
-        })
-      })
+      const mockChain = {
+        insert: jest.fn().mockReturnThis(),
+        select: jest.fn().mockReturnThis(),
+        single: jest.fn().mockResolvedValue({ data: mockCreatedRating, error: null })
+      }
+      mockSupabase.from.mockReturnValue(mockChain)
 
       const result = await createTreatmentRating(newRating)
       
       expect(result).toEqual(mockCreatedRating)
       expect(mockSupabase.from).toHaveBeenCalledWith('treatment_ratings')
-      expect(mockSupabase.from().insert).toHaveBeenCalledWith(newRating)
+      expect(mockChain.insert).toHaveBeenCalledWith(newRating)
+      expect(mockChain.select).toHaveBeenCalled()
+      expect(mockChain.single).toHaveBeenCalled()
     })
 
     it('handles errors gracefully', async () => {
-      mockSupabase.from().insert.mockReturnValue({
-        select: jest.fn().mockReturnValue({
-          single: jest.fn().mockResolvedValue({ 
-            data: null, 
-            error: { message: 'Database error' } 
-          })
+      const mockChain = {
+        insert: jest.fn().mockReturnThis(),
+        select: jest.fn().mockReturnThis(),
+        single: jest.fn().mockResolvedValue({ 
+          data: null, 
+          error: { message: 'Database error' } 
         })
-      })
+      }
+      mockSupabase.from.mockReturnValue(mockChain)
 
       const newRating = {
         treatment_id: 'treatment-1',
         condition_id: 'condition-1',
         user_id: 'user-1',
         rating: 5,
-        review: 'Excellent treatment'
+        review: 'Excellent treatment',
+        user_type: 'patient'
       }
 
       await expect(createTreatmentRating(newRating))
         .rejects.toThrow('Failed to create treatment rating')
+      
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        'Error creating treatment rating:',
+        { message: 'Database error' }
+      )
     })
   })
 }) 

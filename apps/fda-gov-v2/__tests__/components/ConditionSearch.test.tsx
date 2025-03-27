@@ -1,7 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ConditionSearch } from '@/components/ConditionSearch'
 import { getConditions } from '@/lib/api/conditions'
+import { act } from 'react'
 
 // Mock the getConditions function
 jest.mock('@/lib/api/conditions', () => ({
@@ -33,21 +35,30 @@ describe('ConditionSearch', () => {
   })
 
   it('shows suggestions when typing', async () => {
+    const user = userEvent.setup()
     render(<ConditionSearch {...defaultProps} />)
     const input = screen.getByRole('searchbox')
     
-    await userEvent.type(input, 'Alz')
+    await user.type(input, 'Alz')
     
-    expect(screen.getByText('Alzheimer\'s Disease')).toBeInTheDocument()
-    expect(screen.queryByText('Parkinson\'s Disease')).not.toBeInTheDocument()
+    await waitFor(() => {
+      expect(screen.getByText('Alzheimer\'s Disease')).toBeInTheDocument()
+      expect(screen.queryByText('Parkinson\'s Disease')).not.toBeInTheDocument()
+    })
   })
 
   it('calls onConditionSelect when a suggestion is clicked', async () => {
+    const user = userEvent.setup()
     render(<ConditionSearch {...defaultProps} />)
     const input = screen.getByRole('searchbox')
     
-    await userEvent.type(input, 'Alz')
-    await userEvent.click(screen.getByText('Alzheimer\'s Disease'))
+    await user.type(input, 'Alz')
+    
+    await waitFor(() => {
+      expect(screen.getByText('Alzheimer\'s Disease')).toBeInTheDocument()
+    })
+
+    await user.click(screen.getByText('Alzheimer\'s Disease'))
     
     expect(mockOnConditionSelect).toHaveBeenCalledWith('Alzheimer\'s Disease')
   })
@@ -56,6 +67,13 @@ describe('ConditionSearch', () => {
     render(<ConditionSearch {...defaultProps} initialConditions={[]} />)
     
     expect(getConditions).toHaveBeenCalled()
-    expect(screen.getByText('Loading conditions...')).toBeInTheDocument()
+    
+    await waitFor(() => {
+      expect(screen.getByText('Loading conditions...')).toBeInTheDocument()
+    })
+    
+    await waitFor(() => {
+      expect(screen.queryByText('Loading conditions...')).not.toBeInTheDocument()
+    }, { timeout: 3000 })
   })
 }) 
