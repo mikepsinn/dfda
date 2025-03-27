@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { describe, it, expect } from '@jest/globals'
+import { describe, it, expect, beforeAll } from '@jest/globals'
 import dotenv from 'dotenv'
 import { DEMO_ACCOUNTS } from '@/lib/constants/demo-accounts'
 
@@ -11,6 +11,21 @@ const supabase = createClient(
 )
 
 describe('Demo Account Credentials', () => {
+  beforeAll(async () => {
+    const { email, password } = DEMO_ACCOUNTS.patient
+    
+    // Try to sign up the demo account first
+    const { error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+    })
+
+    // Ignore error if account already exists
+    if (signUpError && !signUpError.message.includes('already registered')) {
+      throw signUpError
+    }
+  })
+
   it('should be able to sign in with demo patient account', async () => {
     const { email, password } = DEMO_ACCOUNTS.patient
 
