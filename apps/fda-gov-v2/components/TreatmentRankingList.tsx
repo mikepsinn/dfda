@@ -27,7 +27,7 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments 
     async function fetchTreatmentEffectiveness() {
       setIsLoading(true)
       try {
-        const data = await getTreatmentEffectiveness(condition)
+        const data = await getTreatmentEffectiveness(condition, condition)
         setTreatments(data)
       } catch (error) {
         console.error("Error fetching treatment effectiveness:", error)

@@ -15,7 +15,7 @@ export function HealthMetrics({ userId }: HealthMetricsProps) {
   const [metrics, setMetrics] = useState({
     submissions: 0,
     completionRate: 0,
-    nextSubmission: null,
+    nextSubmission: null as string | null,
   })
   const [loading, setLoading] = useState(true)
 

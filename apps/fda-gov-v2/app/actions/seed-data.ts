@@ -103,16 +103,27 @@ export async function seedDatabase() {
     const { data: conditionData } = await supabase.from("conditions").select("id, name")
     const { data: treatmentData } = await supabase.from("treatments").select("id, name")
 
-    const conditionMap = {}
-    const treatmentMap = {}
+    // Define explicit index signatures for the maps
+    interface StringKeyMap {
+      [key: string]: string
+    }
 
-    conditionData.forEach((condition) => {
-      conditionMap[condition.name] = condition.id
-    })
+    // Initialize with proper types
+    const conditionMap: StringKeyMap = {}
+    const treatmentMap: StringKeyMap = {}
 
-    treatmentData.forEach((treatment) => {
-      treatmentMap[treatment.name] = treatment.id
-    })
+    // Null check before forEach
+    if (conditionData) {
+      conditionData.forEach((condition) => {
+        conditionMap[condition.name] = condition.id
+      })
+    }
+
+    if (treatmentData) {
+      treatmentData.forEach((treatment) => {
+        treatmentMap[treatment.name] = treatment.id
+      })
+    }
 
     // Seed treatment effectiveness
     const effectiveness = [

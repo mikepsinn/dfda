@@ -284,7 +284,7 @@ export default function InterventionAssignment({ params }) {
                           {interventionOptions.map((option) => (
                             <div key={option.id} className="rounded-lg border p-4">
                               <div className="flex items-start space-x-2">
-                                <RadioGroupItem value={option.id} id={`option-${option.id}`} className="mt-1" />
+                                <RadioGroupItem value={String(option.id)} id={`option-${option.id}`} className="mt-1" />
                                 <div className="flex-1">
                                   <Label htmlFor={`option-${option.id}`} className="text-base font-medium">
                                     {option.name}

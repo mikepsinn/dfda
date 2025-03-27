@@ -91,6 +91,12 @@ export async function getAverageTreatmentRating(treatmentId: string, conditionId
   return data[0]
 }
 
+// Alias for backward compatibility with app/treatment/[id]/page.tsx
+export const getTreatmentAverageRating = getAverageTreatmentRating
+
+// Alias for backward compatibility with components/treatment-reviews-list.tsx
+export const markReviewAsHelpful = markRatingAsHelpful
+
 // Create a new rating
 export async function createTreatmentRating(rating: TreatmentRatingInsert) {
   const cookieStore = cookies()

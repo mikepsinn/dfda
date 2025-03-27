@@ -3,19 +3,24 @@ import { cookies } from "next/headers"
 import type { Database } from "./database.types"
 
 // For server components
-export function createServerClient() {
-  const cookieStore = cookies()
+export function createServerClient(cookieStore = cookies()) {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
   return createClient<Database>(supabaseUrl, supabaseKey, {
-    cookies: {
-      get(name: string) {
-        return cookieStore.get(name)?.value
-      },
+    global: {
+      fetch: fetch.bind(globalThis)
     },
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+      detectSessionInUrl: false
+    }
   })
 }
+
+// Alias for backward compatibility
+export const createServerSupabaseClient = createServerClient
 
 // For client components (singleton pattern)
 let clientInstance: ReturnType<typeof createClient<Database>> | null = null
@@ -29,4 +34,7 @@ export function createBrowserClient() {
   clientInstance = createClient<Database>(supabaseUrl, supabaseKey)
   return clientInstance
 }
+
+// Alias for backward compatibility
+export const createClientSupabaseClient = createBrowserClient
 

@@ -158,7 +158,7 @@ export default function CreateForm() {
           <div className="space-y-2">
             <Label>{question.question}</Label>
             <div className="space-y-2">
-              {question.options.choices.map((choice, index) => (
+              {question.options?.choices.map((choice, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   {question.options.allowMultiple ? (
                     <input type="checkbox" disabled />
@@ -437,12 +437,12 @@ export default function CreateForm() {
                                       <div className="space-y-2">
                                         <Label>Answer Choices</Label>
                                         <div className="space-y-2">
-                                          {question.options.choices.map((choice, index) => (
+                                          {question.options?.choices.map((choice, index) => (
                                             <div key={index} className="flex items-center gap-2">
                                               <Input
                                                 value={choice.label}
                                                 onChange={(e) => {
-                                                  const newChoices = [...question.options.choices]
+                                                  const newChoices = (question.options?.choices ? [...question.options?.choices] : [])
                                                   newChoices[index] = {
                                                     ...newChoices[index],
                                                     label: e.target.value,
@@ -457,14 +457,14 @@ export default function CreateForm() {
                                                 variant="ghost"
                                                 size="icon"
                                                 onClick={() => {
-                                                  const newChoices = question.options.choices.filter(
+                                                  const newChoices = question.options?.choices.filter(
                                                     (_, i) => i !== index,
                                                   )
                                                   updateQuestion(question.id, {
                                                     options: { ...question.options, choices: newChoices },
                                                   })
                                                 }}
-                                                disabled={question.options.choices.length <= 1}
+                                                disabled={question.options?.choices.length <= 1}
                                               >
                                                 <X className="h-4 w-4" />
                                                 <span className="sr-only">Remove</span>
@@ -476,7 +476,7 @@ export default function CreateForm() {
                                           variant="outline"
                                           size="sm"
                                           onClick={() => {
-                                            const newChoices = [...question.options.choices]
+                                            const newChoices = (question.options?.choices ? [...question.options?.choices] : [])
                                             newChoices.push({
                                               value: `${newChoices.length + 1}`,
                                               label: `Option ${newChoices.length + 1}`,
