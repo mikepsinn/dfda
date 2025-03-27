@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
-import { Beaker, Menu, ChevronDown, ChevronUp } from "lucide-react"
+import { Menu, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -15,11 +16,11 @@ export function Header() {
   const primaryNavItems = [
     {
       title: "Sponsors",
-      href: "/sponsor/create-trial",
+      href: "/sponsor",
     },
     {
       title: "Patients",
-      href: "/patient/find-trials",
+      href: "/patient",
     },
     {
       title: "Providers",
@@ -51,7 +52,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
-            <Beaker className="h-6 w-6 text-primary" />
+            <Image src="/images/dfda-logo.png" alt="dFDA Logo" width={28} height={28} className="h-7 w-7" />
             <span className="text-xl font-bold">FDA.gov v2</span>
           </Link>
         </div>
@@ -104,7 +105,7 @@ export function Header() {
           <SheetHeader className="border-b pb-4 mb-4">
             <SheetTitle>
               <div className="flex items-center gap-2">
-                <Beaker className="h-6 w-6 text-primary" />
+                <Image src="/images/dfda-logo.png" alt="dFDA Logo" width={24} height={24} className="h-6 w-6" />
                 <span>FDA.gov v2</span>
               </div>
             </SheetTitle>

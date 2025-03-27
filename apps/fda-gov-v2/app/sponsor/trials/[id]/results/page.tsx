@@ -6,13 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-interface TrialResultsParams {
-  params: {
-    id: string
-  }
-}
-
-export default function TrialResults({ params }: TrialResultsParams) {
+export default function TrialResults({ params }) {
   const trialId = params.id
 
   // Mock trial data

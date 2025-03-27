@@ -7,23 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
-type Intervention = {
-  name: string
-  effectiveness: number
-  trials: number
-  participants: number
-  sideEffects: Array<{
-    name: string
-    percentage: number
-  }>
-}
-
-type ConditionData = {
-  [key: string]: Intervention[]
-}
-
 // Example comparative effectiveness data for various conditions
-const comparativeEffectivenessData: ConditionData = {
+const comparativeEffectivenessData = {
   "Type 2 Diabetes": [
     {
       name: "Metformin",
@@ -357,13 +342,27 @@ export function ComparativeEffectivenessSection() {
                             </Tooltip>
                           </TooltipProvider>
                         ))}
-                        <Button variant="secondary" size="sm" className="text-xs rounded-full ml-auto sm:ml-2" asChild>
-                          <Link
-                            href={`/patient/find-trials?treatment=${intervention.name}&condition=${selectedCondition}`}
+                        <Link
+                          href={`/patient/join-trial/${encodeURIComponent(intervention.name)}/${encodeURIComponent(selectedCondition)}`}
+                          className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800 border border-purple-300 hover:bg-purple-200 transition-colors ml-auto sm:ml-2"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="mr-1"
                           >
-                            Join Trial
-                          </Link>
-                        </Button>
+                            <path d="M12 5v14"></path>
+                            <path d="M5 12h14"></path>
+                          </svg>
+                          Join Trial
+                        </Link>
                       </div>
                     </div>
                   </div>

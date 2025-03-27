@@ -1,22 +1,29 @@
-import { HeroSection } from "@/components/HeroSection"
-import { ComparativeEffectivenessSection } from "@/components/ComparativeEffectivenessSection"
-import { HowItWorksSection } from "@/components/HowItWorksSection"
-import { KeyBenefitsSection } from "@/components/KeyBenefitsSection"
-import { RevolutionizingMedicalProgressSection } from "@/components/RevolutionizingMedicalProgressSection"
-import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection"
+import { getFeaturedTrials, getStatistics } from "@/lib/api/homepage";
+import { HeroSection } from "@/components/HeroSection";
+import { ComparativeEffectivenessSection } from "@/components/ComparativeEffectivenessSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { KeyBenefitsSection } from "@/components/KeyBenefitsSection";
+import { RevolutionizingMedicalProgressSection } from "@/components/RevolutionizingMedicalProgressSection";
+import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection";
+import { FeaturedTrialsSection } from "@/components/FeaturedTrialsSection";
 
-export default function Home() {
+export default async function Home() {
+  // Fetch data on the server
+  const featuredTrials = await getFeaturedTrials();
+  const statistics = await getStatistics();
+  
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         <HeroSection />
         <ComparativeEffectivenessSection />
+        <OutcomeLabelsSection />
         <HowItWorksSection />
         <KeyBenefitsSection />
-        <RevolutionizingMedicalProgressSection />
-        <OutcomeLabelsSection />
+        <RevolutionizingMedicalProgressSection stats={statistics} />
+        <FeaturedTrialsSection trials={featuredTrials} />
       </main>
     </div>
-  )
+  );
 }
 

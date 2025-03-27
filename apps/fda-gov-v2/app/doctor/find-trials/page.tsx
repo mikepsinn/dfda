@@ -12,103 +12,117 @@ import { Separator } from "@/components/ui/separator"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { ConditionSearch } from "@/components/ConditionSearch"
+import { TreatmentRankingList } from "@/components/TreatmentRankingList"
+import { comparativeEffectivenessData } from "@/lib/treatment-data"
+
+// Neurological condition trials data
+const trials = [
+  {
+    id: 1,
+    name: "Lecanemab (Anti-Amyloid Antibody) for Early Alzheimer's Disease",
+    sponsor: "Eisai/Biogen Collaborative Research",
+    phase: "Phase 3",
+    duration: "18 months",
+    visits: 12,
+    compensation: "$750 per patient",
+    patientMatch: 8,
+    specialties: ["Neurology", "Geriatrics"],
+    conditions: ["Early Alzheimer's Disease", "Mild Cognitive Impairment"],
+    description:
+      "This pragmatic trial evaluates Lecanemab, a monoclonal antibody targeting amyloid beta, in patients with early Alzheimer's disease. The trial aims to assess cognitive decline reduction in real-world clinical settings with less intensive monitoring than traditional trials.",
+    status: "Recruiting",
+  },
+  {
+    id: 2,
+    name: "Donanemab vs Standard of Care in Mild Alzheimer's Disease",
+    sponsor: "Eli Lilly Neuroscience Foundation",
+    phase: "Phase 3",
+    duration: "24 months",
+    visits: 14,
+    compensation: "$850 per patient",
+    patientMatch: 12,
+    specialties: ["Neurology", "Geriatrics"],
+    conditions: ["Mild Alzheimer's Disease"],
+    description:
+      "This trial compares Donanemab, an antibody targeting N3pG amyloid beta, to standard of care in patients with mild Alzheimer's disease. The study focuses on real-world effectiveness with integration into routine clinical care.",
+    status: "Recruiting",
+  },
+  {
+    id: 3,
+    name: "ABBV-951 (Foslevodopa/Foscarbidopa) Subcutaneous Infusion for Advanced Parkinson's Disease",
+    sponsor: "AbbVie Parkinson's Research Consortium",
+    phase: "Phase 3",
+    duration: "12 months",
+    visits: 10,
+    compensation: "$700 per patient",
+    patientMatch: 15,
+    specialties: ["Neurology", "Movement Disorders"],
+    conditions: ["Advanced Parkinson's Disease"],
+    description:
+      "This study evaluates ABBV-951, a 24-hour subcutaneous infusion of foslevodopa/foscarbidopa, for patients with advanced Parkinson's disease experiencing motor fluctuations. The trial aims to assess its effectiveness in reducing 'off' time in everyday clinical settings.",
+    status: "Recruiting",
+  },
+  {
+    id: 4,
+    name: "NLY01 (GLP-1R Agonist) for Early-Stage Parkinson's Disease",
+    sponsor: "Neuraly Therapeutics",
+    phase: "Phase 2",
+    duration: "18 months",
+    visits: 8,
+    compensation: "$650 per patient",
+    patientMatch: 9,
+    specialties: ["Neurology", "Movement Disorders"],
+    conditions: ["Early-Stage Parkinson's Disease"],
+    description:
+      "This trial investigates NLY01, a novel GLP-1R agonist designed to target neuroinflammation, in patients with early-stage Parkinson's disease. The study aims to determine if NLY01 can slow disease progression when integrated into standard clinical care.",
+    status: "Recruiting",
+  },
+  {
+    id: 5,
+    name: "Tolebrutinib (BTK Inhibitor) for Relapsing Multiple Sclerosis",
+    sponsor: "Sanofi Genzyme MS Research Initiative",
+    phase: "Phase 3",
+    duration: "24 months",
+    visits: 10,
+    compensation: "$800 per patient",
+    patientMatch: 11,
+    specialties: ["Neurology", "Neuroimmunology"],
+    conditions: ["Relapsing Multiple Sclerosis"],
+    description:
+      "This pragmatic trial evaluates Tolebrutinib, an oral Bruton's tyrosine kinase (BTK) inhibitor, in patients with relapsing multiple sclerosis. The study focuses on real-world effectiveness in reducing relapses and disability progression with integration into routine neurological care.",
+    status: "Recruiting",
+  },
+  {
+    id: 6,
+    name: "Fenfluramine for Dravet Syndrome and Lennox-Gastaut Syndrome",
+    sponsor: "Zogenix Rare Epilepsy Consortium",
+    phase: "Phase 4",
+    duration: "12 months",
+    visits: 6,
+    compensation: "$600 per patient",
+    patientMatch: 4,
+    specialties: ["Neurology", "Pediatric Neurology", "Epileptology"],
+    conditions: ["Dravet Syndrome", "Lennox-Gastaut Syndrome"],
+    description:
+      "This post-approval study evaluates the real-world effectiveness and safety of Fenfluramine in reducing seizure frequency in patients with Dravet syndrome and Lennox-Gastaut syndrome, two devastating forms of childhood-onset epilepsy.",
+    status: "Recruiting",
+  },
+]
 
 export default function FindTrials() {
   const [searchQuery, setSearchQuery] = useState("")
+  const [selectedCondition, setSelectedCondition] = useState("")
+  const [showTreatments, setShowTreatments] = useState(false)
 
-  // Replace the mock trials data with these neurological condition trials
-  const trials = [
-    {
-      id: 1,
-      name: "Lecanemab (Anti-Amyloid Antibody) for Early Alzheimer's Disease",
-      sponsor: "Eisai/Biogen Collaborative Research",
-      phase: "Phase 3",
-      duration: "18 months",
-      visits: 12,
-      compensation: "$750 per patient",
-      patientMatch: 8,
-      specialties: ["Neurology", "Geriatrics"],
-      conditions: ["Early Alzheimer's Disease", "Mild Cognitive Impairment"],
-      description:
-        "This pragmatic trial evaluates Lecanemab, a monoclonal antibody targeting amyloid beta, in patients with early Alzheimer's disease. The trial aims to assess cognitive decline reduction in real-world clinical settings with less intensive monitoring than traditional trials.",
-      status: "Recruiting",
-    },
-    {
-      id: 2,
-      name: "Donanemab vs Standard of Care in Mild Alzheimer's Disease",
-      sponsor: "Eli Lilly Neuroscience Foundation",
-      phase: "Phase 3",
-      duration: "24 months",
-      visits: 14,
-      compensation: "$850 per patient",
-      patientMatch: 12,
-      specialties: ["Neurology", "Geriatrics"],
-      conditions: ["Mild Alzheimer's Disease"],
-      description:
-        "This trial compares Donanemab, an antibody targeting N3pG amyloid beta, to standard of care in patients with mild Alzheimer's disease. The study focuses on real-world effectiveness with integration into routine clinical care.",
-      status: "Recruiting",
-    },
-    {
-      id: 3,
-      name: "ABBV-951 (Foslevodopa/Foscarbidopa) Subcutaneous Infusion for Advanced Parkinson's Disease",
-      sponsor: "AbbVie Parkinson's Research Consortium",
-      phase: "Phase 3",
-      duration: "12 months",
-      visits: 10,
-      compensation: "$700 per patient",
-      patientMatch: 15,
-      specialties: ["Neurology", "Movement Disorders"],
-      conditions: ["Advanced Parkinson's Disease"],
-      description:
-        "This study evaluates ABBV-951, a 24-hour subcutaneous infusion of foslevodopa/foscarbidopa, for patients with advanced Parkinson's disease experiencing motor fluctuations. The trial aims to assess its effectiveness in reducing 'off' time in everyday clinical settings.",
-      status: "Recruiting",
-    },
-    {
-      id: 4,
-      name: "NLY01 (GLP-1R Agonist) for Early-Stage Parkinson's Disease",
-      sponsor: "Neuraly Therapeutics",
-      phase: "Phase 2",
-      duration: "18 months",
-      visits: 8,
-      compensation: "$650 per patient",
-      patientMatch: 9,
-      specialties: ["Neurology", "Movement Disorders"],
-      conditions: ["Early-Stage Parkinson's Disease"],
-      description:
-        "This trial investigates NLY01, a novel GLP-1R agonist designed to target neuroinflammation, in patients with early-stage Parkinson's disease. The study aims to determine if NLY01 can slow disease progression when integrated into standard clinical care.",
-      status: "Recruiting",
-    },
-    {
-      id: 5,
-      name: "Tolebrutinib (BTK Inhibitor) for Relapsing Multiple Sclerosis",
-      sponsor: "Sanofi Genzyme MS Research Initiative",
-      phase: "Phase 3",
-      duration: "24 months",
-      visits: 10,
-      compensation: "$800 per patient",
-      patientMatch: 11,
-      specialties: ["Neurology", "Neuroimmunology"],
-      conditions: ["Relapsing Multiple Sclerosis"],
-      description:
-        "This pragmatic trial evaluates Tolebrutinib, an oral Bruton's tyrosine kinase (BTK) inhibitor, in patients with relapsing multiple sclerosis. The study focuses on real-world effectiveness in reducing relapses and disability progression with integration into routine neurological care.",
-      status: "Recruiting",
-    },
-    {
-      id: 6,
-      name: "Fenfluramine for Dravet Syndrome and Lennox-Gastaut Syndrome",
-      sponsor: "Zogenix Rare Epilepsy Consortium",
-      phase: "Phase 4",
-      duration: "12 months",
-      visits: 6,
-      compensation: "$600 per patient",
-      patientMatch: 4,
-      specialties: ["Neurology", "Pediatric Neurology", "Epileptology"],
-      conditions: ["Dravet Syndrome", "Lennox-Gastaut Syndrome"],
-      description:
-        "This post-approval study evaluates the real-world effectiveness and safety of Fenfluramine in reducing seizure frequency in patients with Dravet syndrome and Lennox-Gastaut syndrome, two devastating forms of childhood-onset epilepsy.",
-      status: "Recruiting",
-    },
-  ]
+  // Handle condition selection
+  const handleConditionSelect = (condition: string) => {
+    setSelectedCondition(condition)
+    setShowTreatments(true)
+  }
+
+  const interventions = comparativeEffectivenessData[selectedCondition] || []
+  const availableConditions = Object.keys(comparativeEffectivenessData)
 
   const filteredTrials = trials.filter(
     (trial) =>
@@ -132,6 +146,52 @@ export default function FindTrials() {
 
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-2/3 space-y-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Search by Condition</CardTitle>
+                    <CardDescription>Find evidence-based treatments for your patients</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ConditionSearch
+                      availableConditions={availableConditions}
+                      onConditionSelect={handleConditionSelect}
+                      initialSearchTerm={selectedCondition}
+                      placeholder="Search for a condition (e.g., Alzheimer's, Parkinson's)"
+                      showPopularConditions={false}
+                    />
+                  </CardContent>
+                </Card>
+
+                {showTreatments && selectedCondition && (
+                  <Card>
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <CardTitle>Treatments for {selectedCondition}</CardTitle>
+                          <CardDescription>Ranked by comparative effectiveness</CardDescription>
+                        </div>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => {
+                            setSelectedCondition("")
+                            setShowTreatments(false)
+                          }}
+                        >
+                          Clear Results
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <TreatmentRankingList
+                        treatments={interventions}
+                        condition={selectedCondition}
+                        baseUrl="/doctor/trials/"
+                      />
+                    </CardContent>
+                  </Card>
+                )}
+
                 <div className="flex items-center gap-2">
                   <div className="relative flex-1">
                     <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -374,7 +434,7 @@ export default function FindTrials() {
                       <div>
                         <h3 className="font-medium">Pragmatic Design</h3>
                         <p className="text-sm text-muted-foreground">
-                          Our trials integrate with your existing workflow and clinical practice.
+                          The Decentralized FDA trials integrate with your existing workflow and clinical practice.
                         </p>
                       </div>
                     </div>

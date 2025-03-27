@@ -10,10 +10,38 @@ import { CodeBlock } from "./CodeBlock"
 export function DocContent() {
   const contentRef = useRef<HTMLDivElement>(null)
 
-  // Add cleanup for any potential observers
+  // Add a useLayoutEffect to stabilize layout before ResizeObserver runs
+  useEffect(() => {
+    // Force a stable layout by ensuring content has a fixed width initially
+    if (contentRef.current) {
+      const originalWidth = contentRef.current.style.width
+      contentRef.current.style.width = `${contentRef.current.offsetWidth}px`
+
+      // After a short delay, restore original width to allow natural resizing
+      const timer = setTimeout(() => {
+        if (contentRef.current) {
+          contentRef.current.style.width = originalWidth
+        }
+      }, 100)
+
+      return () => {
+        clearTimeout(timer)
+        if (contentRef.current) {
+          contentRef.current.style.width = originalWidth
+        }
+      }
+    }
+  }, [])
+
+  // Replace the existing cleanup useEffect with:
   useEffect(() => {
     return () => {
-      // This empty cleanup function helps ensure any implicit observers are cleaned up
+      // Force any ResizeObservers to disconnect by ensuring the element
+      // has a stable size when unmounting
+      if (contentRef.current) {
+        contentRef.current.style.height = "auto"
+        contentRef.current.style.width = "auto"
+      }
     }
   }, [])
 

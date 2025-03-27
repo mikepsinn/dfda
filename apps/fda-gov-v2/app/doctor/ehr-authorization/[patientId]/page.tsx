@@ -14,25 +14,19 @@ import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
-type EhrCategory = 'demographics' | 'diagnoses' | 'medications' | 'allergies' | 'labResults' | 'vitalSigns' | 'procedures' | 'imaging' | 'notes' | 'immunizations' | 'socialHistory' | 'familyHistory'
-
-type SelectedCategories = {
-  [K in EhrCategory]: boolean
-}
-
-export default function EhrAuthorization({ params }: { params: { patientId: string } }) {
+export default function EhrAuthorization({ params }) {
   const patientId = params.patientId
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const [selectedCategories, setSelectedCategories] = useState<SelectedCategories>({
-    demographics: false,
-    diagnoses: false,
-    medications: false,
-    allergies: false,
-    labResults: false,
-    vitalSigns: false,
+  const [selectedCategories, setSelectedCategories] = useState({
+    demographics: true,
+    diagnoses: true,
+    medications: true,
+    allergies: true,
+    labResults: true,
+    vitalSigns: true,
     procedures: false,
-    imaging: false,
+    imaging: true,
     notes: false,
     immunizations: false,
     socialHistory: false,
@@ -54,7 +48,7 @@ export default function EhrAuthorization({ params }: { params: { patientId: stri
     lastVisit: "May 5, 2025",
   }
 
-  const handleCategoryChange = (category: EhrCategory) => {
+  const handleCategoryChange = (category) => {
     setSelectedCategories({
       ...selectedCategories,
       [category]: !selectedCategories[category],

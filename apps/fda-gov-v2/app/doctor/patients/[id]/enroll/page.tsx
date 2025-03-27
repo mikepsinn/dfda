@@ -515,7 +515,7 @@ export default function PatientEnrollment({ params }: { params: { id: string } }
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="h-4 w-4 text-green-600 mt-0.5" />
-                        <span>Review trial protocol and documentation in your dashboard</span>
+                        <span>Review trial protocol and documentation in the Decentralized FDA</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="h-4 w-4 text-green-600 mt-0.5" />

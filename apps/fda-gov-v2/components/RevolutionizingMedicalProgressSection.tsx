@@ -1,150 +1,162 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Clock, Heart, TrendingUp, Users } from "lucide-react"
 import Link from "next/link"
+import { ArrowRight, Users, Building, Stethoscope, FileText } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 
-export function RevolutionizingMedicalProgressSection() {
+interface StatisticsProps {
+  trialsLaunched: number;
+  patientsEnrolled: number;
+  costSavings: number;
+  successfulTreatments: number;
+}
+
+const defaultStats: StatisticsProps = {
+  trialsLaunched: 245,
+  patientsEnrolled: 18500,
+  costSavings: 278000000,
+  successfulTreatments: 37
+};
+
+interface RevolutionizingMedicalProgressSectionProps {
+  stats?: StatisticsProps;
+}
+
+export function RevolutionizingMedicalProgressSection({ stats = defaultStats }: RevolutionizingMedicalProgressSectionProps) {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+          <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium">
+            <span className="text-primary">Transforming Medical Research</span>
+          </div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Revolutionizing Medical Progress
           </h2>
           <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Our platform dramatically accelerates the pace of clinical trials, bringing life-changing treatments to
-            patients faster
+            FDA v2 is changing how medical research is conducted, making it more efficient, accessible, and
+            patient-centered
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-4xl">
-          <Card>
-            <CardHeader>
-              <CardTitle>Efficiency Comparison</CardTitle>
-              <CardDescription>Traditional NIH Trials vs. Decentralized Pragmatic Trials</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                  <div className="w-full md:w-1/2 p-4 border rounded-lg">
-                    <h3 className="font-semibold text-lg mb-2">NIH RECOVER Initiative</h3>
-                    <ul className="list-disc list-inside space-y-2 text-sm">
-                      <li>$1.6 Billion budget</li>
-                      <li>4 years duration</li>
-                      <li>0 completed clinical trials</li>
-                      <li>$48,000 per patient cost</li>
-                    </ul>
-                  </div>
-                  <div className="w-full md:w-1/2 p-4 border rounded-lg bg-primary/5">
-                    <h3 className="font-semibold text-lg mb-2">Oxford UK Recovery Trial</h3>
-                    <ul className="list-disc list-inside space-y-2 text-sm">
-                      <li>$3 Million budget</li>
-                      <li>18 therapies tested</li>
-                      <li>4 effective treatments discovered</li>
-                      <li>$500 per patient cost</li>
-                      <li>Over 1 million lives saved</li>
-                    </ul>
-                  </div>
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12 mt-12">
+          {/* Testimonials */}
+          <div className="space-y-6">
+            <div className="rounded-lg border bg-background p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-2">
+                  <Users className="h-5 w-5 text-primary" />
                 </div>
-                <div className="text-center">
-                  <p className="font-semibold">Our platform scales the efficient pragmatic trial approach</p>
-                  <p className="text-sm text-muted-foreground">
-                    Accelerating medical progress and improving patient outcomes
+                <div>
+                  <h3 className="font-semibold">Patient Testimonial</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    "I was able to join a groundbreaking trial for my condition without traveling hundreds of miles. FDA
+                    v2 made it easy to track my progress and I felt like a true partner in the research."
                   </p>
+                  <p className="mt-2 text-sm font-medium">— Sarah K., Trial Participant</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
 
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-6 text-center">Real Patient Benefits</h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="border-l-4 border-l-green-500">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-green-100 p-2">
-                      <Clock className="h-5 w-5 text-green-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">Faster Access to Treatments</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Patients gain access to promising treatments <strong>3.5 years sooner</strong> on average,
-                        critical for those with serious conditions who can't wait for traditional approval timelines.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-l-4 border-l-blue-500">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-blue-100 p-2">
-                      <Heart className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">Personalized Health Insights</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Participants receive detailed n-of-1 studies showing exactly how treatments affect{" "}
-                        <strong>their specific health patterns</strong>, not just population averages.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-l-4 border-l-purple-500">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-purple-100 p-2">
-                      <Users className="h-5 w-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">Inclusive Participation</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Remote participation enables <strong>93% more diverse patient populations</strong>, including
-                        rural, elderly, and disabled patients who are typically excluded from traditional site-based
-                        trials.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-l-4 border-l-amber-500">
-                <CardContent className="pt-6">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-full bg-amber-100 p-2">
-                      <TrendingUp className="h-5 w-5 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">Better Treatment Decisions</h4>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Comparative effectiveness data helps patients and doctors choose treatments with{" "}
-                        <strong>42% better outcomes</strong> by showing real-world effectiveness, not just whether a
-                        treatment is better than placebo.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="rounded-lg border bg-background p-6 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-2">
+                  <Building className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Sponsor Testimonial</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    "We reduced our per-patient costs by 78% and launched our trial in just 3 weeks. The quality of data
+                    we received exceeded our expectations and led to faster regulatory approval."
+                  </p>
+                  <p className="mt-2 text-sm font-medium">— Dr. James R., BioInnovate Research</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <div className="flex flex-col gap-4 sm:flex-row justify-center">
-              <Button size="lg">Join a Trial Today</Button>
-              <Link href="/developers">
-                <Button size="lg" variant="outline">
-                  Access Our API
-                </Button>
-              </Link>
+          {/* Success Metrics */}
+          <div className="rounded-lg border bg-background p-6 shadow-sm">
+            <h3 className="text-xl font-bold mb-6">FDA v2 Success Metrics</h3>
+
+            <div className="space-y-6">
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-sm font-medium">Trials Launched</span>
+                  <span className="text-sm font-bold">{stats.trialsLaunched}+</span>
+                </div>
+                <div className="h-2 w-full rounded-full bg-muted">
+                  <div className="h-2 rounded-full bg-primary" style={{ width: "85%" }}></div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-sm font-medium">Patient Participants</span>
+                  <span className="text-sm font-bold">{stats.patientsEnrolled.toLocaleString()}+</span>
+                </div>
+                <div className="h-2 w-full rounded-full bg-muted">
+                  <div className="h-2 rounded-full bg-primary" style={{ width: "75%" }}></div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-sm font-medium">Cost Savings Generated</span>
+                  <span className="text-sm font-bold">${(stats.costSavings / 1000000).toFixed(0)}M+</span>
+                </div>
+                <div className="h-2 w-full rounded-full bg-muted">
+                  <div className="h-2 rounded-full bg-primary" style={{ width: "92%" }}></div>
+                </div>
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-2">
+                  <span className="text-sm font-medium">Successful Treatments</span>
+                  <span className="text-sm font-bold">{stats.successfulTreatments}</span>
+                </div>
+                <div className="h-2 w-full rounded-full bg-muted">
+                  <div className="h-2 rounded-full bg-primary" style={{ width: "65%" }}></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="flex items-center gap-2">
+                <Stethoscope className="h-4 w-4 text-primary" />
+                <span className="text-sm">120+ Medical Conditions</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FileText className="h-4 w-4 text-primary" />
+                <span className="text-sm">98% Data Compliance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-3xl mt-12">
+          <div className="rounded-lg border bg-background p-8 shadow-sm">
+            <div className="flex flex-col items-center gap-4 text-center">
+              <h3 className="text-2xl font-bold">Ready to Transform Medical Research?</h3>
+              <p className="text-muted-foreground">
+                Join thousands of researchers and patients who are already benefiting from FDA v2's revolutionary
+                approach.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/sponsor/create-trial">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Start a Trial <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/patient/find-trials">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                    Join as a Patient <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 

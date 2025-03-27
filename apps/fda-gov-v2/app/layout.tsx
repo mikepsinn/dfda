@@ -5,13 +5,13 @@ import "./globals.css"
 import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
-import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "FDA.gov v2",
   description: "Revolutionizing Clinical Trials Through Decentralization",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -20,20 +20,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        inter.className
-      )}>
+    <html lang="en">
+      <body className={inter.className}>
         <ScrollToHashElement />
         <Header />
-        <div className="relative flex min-h-screen flex-col">
-          {children}
-        </div>
+        {children}
         <Footer />
       </body>
     </html>
   )
 }
 
+
+
+import './globals.css'

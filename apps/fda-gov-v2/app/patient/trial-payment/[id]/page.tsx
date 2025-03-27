@@ -3,34 +3,27 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { ArrowLeft, CheckCircle, Lock, Shield, Info } from "lucide-react"
+import { ArrowLeft, CheckCircle, CreditCard, Info, Lock, Shield, Percent, Home } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Badge } from "@/components/ui/badge"
 
-interface TrialPaymentParams {
-  params: {
-    id: string
-  }
-}
-
-export default function TrialPayment({ params }: TrialPaymentParams) {
+export default function TrialPayment({ params }) {
   const router = useRouter()
   const [isProcessing, setIsProcessing] = useState(false)
   const [paymentComplete, setPaymentComplete] = useState(false)
-  const [cardNumber, setCardNumber] = useState("")
-  const [expiryDate, setExpiryDate] = useState("")
+  const [formErrors, setFormErrors] = useState({
+    cardNumber: "",
+    cardName: "",
+    expiryDate: "",
+    cvv: "",
+  })
 
   const trialId = params.id
 
@@ -45,6 +38,9 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
       enrollmentFee: 199,
       refundableDeposit: 100,
       totalDue: 299,
+      traditionalCost: 995,
+      savingsPercent: 80,
+      savingsAmount: 796,
       refundPolicy: "Full refund available within 14 days of enrollment if you decide to withdraw.",
     },
   }
@@ -59,7 +55,7 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
 
     let isValid = true
 
-    const cardNumberInput = document.getElementById("card-number") as HTMLInputElement
+    const cardNumberInput = document.getElementById("cardNumber") as HTMLInputElement
     if (!cardNumberInput?.value || cardNumberInput.value.replace(/\s/g, "").length !== 16) {
       errors.cardNumber = "Please enter a valid 16-digit card number"
       isValid = false
@@ -71,7 +67,7 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
       isValid = false
     }
 
-    const expiryDateInput = document.getElementById("expiry") as HTMLInputElement
+    const expiryDateInput = document.getElementById("expiryDate") as HTMLInputElement
     if (!expiryDateInput?.value || !/^\d{2}\/\d{2}$/.test(expiryDateInput.value)) {
       errors.expiryDate = "Please enter a valid expiry date (MM/YY)"
       isValid = false
@@ -83,10 +79,11 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
       isValid = false
     }
 
+    setFormErrors(errors)
     return isValid
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!validateForm()) {
@@ -102,18 +99,26 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
     }, 2000)
   }
 
-  const handleCardNumberInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, "")
-    const formattedValue = value.replace(/(\d{4})/g, "$1 ").trim()
-    setCardNumber(formattedValue)
+  const handleCardNumberInput = (e) => {
+    // Format card number with spaces every 4 digits
+    let value = e.target.value.replace(/\s/g, "")
+    if (value.length > 16) value = value.slice(0, 16)
+
+    // Add spaces every 4 digits
+    const formatted = value.replace(/(\d{4})/g, "$1 ").trim()
+    e.target.value = formatted
   }
 
-  const handleExpiryDateInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, "")
-    if (value.length <= 4) {
-      const formattedValue = value.replace(/(\d{2})(\d{0,2})/, "$1/$2").trim()
-      setExpiryDate(formattedValue)
+  const handleExpiryDateInput = (e) => {
+    let value = e.target.value.replace(/\D/g, "")
+
+    if (value.length > 4) value = value.slice(0, 4)
+
+    if (value.length > 2) {
+      value = value.slice(0, 2) + "/" + value.slice(2)
     }
+
+    e.target.value = value
   }
 
   return (
@@ -138,55 +143,94 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
                       <CardDescription>Enter your payment information securely</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="space-y-6">
-                        <form onSubmit={handleSubmit}>
-                          <div className="space-y-4">
-                            <div className="space-y-2">
-                              <Label htmlFor="card-number">Card Number</Label>
-                              <Input
-                                id="card-number"
-                                placeholder="0000 0000 0000 0000"
-                                value={cardNumber}
-                                onChange={handleCardNumberInput}
-                                required
-                              />
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                              <div className="space-y-2">
-                                <Label htmlFor="expiry">Expiry Date</Label>
-                                <Input
-                                  id="expiry"
-                                  placeholder="MM/YY"
-                                  value={expiryDate}
-                                  onChange={handleExpiryDateInput}
-                                  required
-                                />
-                              </div>
-                              <div className="space-y-2">
-                                <Label htmlFor="cvv">CVV</Label>
-                                <Input id="cvv" placeholder="123" maxLength={3} required />
-                              </div>
-                            </div>
-                            <div className="pt-4">
-                              <Alert variant="default" className="border-primary/20 bg-primary/5">
-                                <Lock className="h-4 w-4 text-primary" />
-                                <AlertTitle>Secure Payment</AlertTitle>
-                                <AlertDescription>
-                                  Your payment information is encrypted and secure.
-                                </AlertDescription>
-                              </Alert>
-                            </div>
+                      <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="cardNumber">Card Number</Label>
+                          <div className="relative">
+                            <Input
+                              id="cardNumber"
+                              placeholder="1234 5678 9012 3456"
+                              className={formErrors.cardNumber ? "border-destructive" : ""}
+                              onChange={handleCardNumberInput}
+                            />
+                            <CreditCard className="absolute right-3 top-2.5 h-5 w-5 text-muted-foreground" />
                           </div>
-                          <Button type="submit" className="mt-6 w-full" disabled={isProcessing}>
-                            {isProcessing ? (
-                              <>Processing...</>
-                            ) : (
-                              <>Pay ${trial.paymentDetails.totalDue}</>
+                          {formErrors.cardNumber && <p className="text-sm text-destructive">{formErrors.cardNumber}</p>}
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="cardName">Name on Card</Label>
+                          <Input
+                            id="cardName"
+                            placeholder="John Smith"
+                            className={formErrors.cardName ? "border-destructive" : ""}
+                          />
+                          {formErrors.cardName && <p className="text-sm text-destructive">{formErrors.cardName}</p>}
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="expiryDate">Expiry Date</Label>
+                            <Input
+                              id="expiryDate"
+                              placeholder="MM/YY"
+                              className={formErrors.expiryDate ? "border-destructive" : ""}
+                              onChange={handleExpiryDateInput}
+                            />
+                            {formErrors.expiryDate && (
+                              <p className="text-sm text-destructive">{formErrors.expiryDate}</p>
                             )}
-                          </Button>
-                        </form>
-                      </div>
+                          </div>
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-1">
+                              <Label htmlFor="cvv">CVV</Label>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <Info className="h-4 w-4 text-muted-foreground" />
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>The 3 or 4 digit security code on the back of your card</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                            <Input
+                              id="cvv"
+                              placeholder="123"
+                              maxLength={4}
+                              className={formErrors.cvv ? "border-destructive" : ""}
+                            />
+                            {formErrors.cvv && <p className="text-sm text-destructive">{formErrors.cvv}</p>}
+                          </div>
+                        </div>
+
+                        <div className="pt-4">
+                          <Alert variant="outline" className="border-primary/20 bg-primary/5">
+                            <Lock className="h-4 w-4 text-primary" />
+                            <AlertTitle>Secure Payment</AlertTitle>
+                            <AlertDescription>
+                              Your payment information is encrypted and secure. We do not store your full card details.
+                            </AlertDescription>
+                          </Alert>
+                        </div>
+                      </form>
                     </CardContent>
+                    <CardFooter className="flex flex-col space-y-4">
+                      <Button className="w-full" onClick={handleSubmit} disabled={isProcessing}>
+                        {isProcessing ? "Processing..." : `Pay $${trial.paymentDetails.totalDue}`}
+                      </Button>
+                      <p className="text-xs text-center text-muted-foreground">
+                        By clicking "Pay", you agree to our{" "}
+                        <Link href="/terms" className="underline">
+                          Terms of Service
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/privacy" className="underline">
+                          Privacy Policy
+                        </Link>
+                      </p>
+                    </CardFooter>
                   </Card>
                 </div>
 
@@ -199,6 +243,14 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
                       <div>
                         <h3 className="font-medium">{trial.name}</h3>
                         <p className="text-sm text-muted-foreground">Sponsored by {trial.sponsor}</p>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          <Badge variant="outline" className="bg-primary/5 text-primary border-primary/20">
+                            <Home className="mr-1 h-3 w-3" /> 100% Remote
+                          </Badge>
+                          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                            <Percent className="mr-1 h-3 w-3" /> 80% Savings
+                          </Badge>
+                        </div>
                       </div>
 
                       <Separator />
@@ -228,6 +280,21 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
                         <div className="flex justify-between font-medium">
                           <span>Total Due Today</span>
                           <span>${trial.paymentDetails.totalDue}</span>
+                        </div>
+                      </div>
+
+                      <div className="rounded-lg bg-green-50 p-3 text-sm border border-green-100">
+                        <div className="flex items-start gap-2">
+                          <Percent className="h-4 w-4 text-green-600 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-green-800">
+                              You're saving ${trial.paymentDetails.savingsAmount}
+                            </p>
+                            <p className="text-green-700 mt-1">
+                              Traditional cost:{" "}
+                              <span className="line-through">${trial.paymentDetails.traditionalCost}</span>
+                            </p>
+                          </div>
                         </div>
                       </div>
 
@@ -280,6 +347,12 @@ export default function TrialPayment({ params }: TrialPaymentParams) {
                         <div className="flex justify-between">
                           <span className="text-muted-foreground">Payment Method:</span>
                           <span className="font-medium">Credit Card (•••• 3456)</span>
+                        </div>
+                        <div className="flex justify-between text-green-600">
+                          <span>You saved:</span>
+                          <span className="font-medium">
+                            ${trial.paymentDetails.savingsAmount} ({trial.paymentDetails.savingsPercent}%)
+                          </span>
                         </div>
                       </div>
                     </div>

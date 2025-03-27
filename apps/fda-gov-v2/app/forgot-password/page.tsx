@@ -13,7 +13,7 @@ export default function ForgotPassword() {
   const [submitted, setSubmitted] = useState(false)
   const [email, setEmail] = useState("")
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setSubmitted(true)
   }

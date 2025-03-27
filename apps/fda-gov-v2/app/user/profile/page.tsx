@@ -12,7 +12,7 @@ import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function UserProfile() {
-  const [isSuccess, setIsSuccess] = useState(false)
+  const [updateSuccess, setUpdateSuccess] = useState(false)
 
   // Mock user data
   const userData = {
@@ -24,12 +24,14 @@ export default function UserProfile() {
     dateJoined: "December 10, 2024",
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    // Simulate API call
+    setUpdateSuccess(true)
+
+    // Hide success message after 3 seconds
     setTimeout(() => {
-      setIsSuccess(true)
-    }, 1500)
+      setUpdateSuccess(false)
+    }, 3000)
   }
 
   return (
@@ -62,7 +64,7 @@ export default function UserProfile() {
                     <CardDescription>Update your personal details and contact information</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {isSuccess && (
+                    {updateSuccess && (
                       <div className="mb-4 rounded-lg bg-green-50 p-4 text-green-700 flex items-center gap-2">
                         <Check className="h-5 w-5" />
                         <span>Your profile has been updated successfully</span>

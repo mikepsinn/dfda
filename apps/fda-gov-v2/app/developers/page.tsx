@@ -1,17 +1,5 @@
 import Link from "next/link"
-import {
-  ArrowLeft,
-  Key,
-  Code,
-  Lock,
-  Database,
-  Zap,
-  Copy,
-  ExternalLink,
-  ChevronDown,
-  FileText,
-  Mail,
-} from "lucide-react"
+import { ArrowLeft, Key, Code, Database, Copy, ExternalLink, ChevronDown, FileText, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -35,9 +23,12 @@ export default function DeveloperPortal() {
           <div className="space-y-8">
             <div className="rounded-lg bg-primary/5 p-8">
               <div className="mx-auto max-w-3xl text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">FDA.gov v2 API</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Supercharge Your Health App with FDA.gov v2 API
+                </h2>
                 <p className="mt-4 text-muted-foreground md:text-xl">
-                  Access clinical trial data, comparative effectiveness information, and outcome labels programmatically
+                  Integrate real-world clinical data, personalized insights, and trial access directly into your health
+                  applications
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
                   <Button size="lg">
@@ -58,13 +49,13 @@ export default function DeveloperPortal() {
                   <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-2">
                     <Database className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle>Comprehensive Data</CardTitle>
-                  <CardDescription>Access data from thousands of clinical trials</CardDescription>
+                  <CardTitle>Real-World Clinical Data</CardTitle>
+                  <CardDescription>Access comprehensive patient outcomes</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Our API provides access to data from over 50,000 clinical trials, including comparative
-                    effectiveness metrics, patient outcomes, and side effect profiles.
+                    Integrate real-world data from over 50,000 clinical trials, including patient-reported outcomes,
+                    side effect profiles, and comparative effectiveness metrics that aren't available anywhere else.
                   </p>
                 </CardContent>
               </Card>
@@ -72,15 +63,28 @@ export default function DeveloperPortal() {
               <Card>
                 <CardHeader className="space-y-1">
                   <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-2">
-                    <Lock className="h-6 w-6 text-primary" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6 text-primary"
+                    >
+                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                    </svg>
                   </div>
-                  <CardTitle>Secure Access</CardTitle>
-                  <CardDescription>Enterprise-grade security and authentication</CardDescription>
+                  <CardTitle>Personalized Health Insights</CardTitle>
+                  <CardDescription>Deliver tailored recommendations</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Our API uses OAuth 2.0 and API keys for authentication, with HTTPS encryption for all requests.
-                    Patient data is anonymized and protected.
+                    Leverage our AI-powered outcome labels and comparative effectiveness data to provide your users with
+                    personalized treatment insights based on their specific health profile and preferences.
                   </p>
                 </CardContent>
               </Card>
@@ -88,15 +92,31 @@ export default function DeveloperPortal() {
               <Card>
                 <CardHeader className="space-y-1">
                   <div className="flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 mb-2">
-                    <Zap className="h-6 w-6 text-primary" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6 text-primary"
+                    >
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
                   </div>
-                  <CardTitle>High Performance</CardTitle>
-                  <CardDescription>Fast, reliable API with 99.9% uptime</CardDescription>
+                  <CardTitle>Seamless Trial Integration</CardTitle>
+                  <CardDescription>Connect patients to cutting-edge treatments</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Our API is built for performance, with response times under 100ms and a 99.9% uptime SLA for
-                    enterprise customers.
+                    Enable your users to discover, apply for, and participate in clinical trials directly through your
+                    app with our OAuth2 integration, creating new revenue streams and improving health outcomes.
                   </p>
                 </CardContent>
               </Card>
@@ -451,6 +471,195 @@ export default function DeveloperPortal() {
                 </div>
               </CardContent>
             </Card>
+
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold text-center mb-6">What You Can Build</h2>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">EHR Integration</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Securely connect patient health records to clinical trials with user consent, streamlining data
+                      collection and improving trial matching.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">Treatment Comparison Tools</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Build interactive tools that help patients and providers compare treatment options based on
+                      real-world effectiveness data.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">Personalized Health Dashboards</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Create customized health dashboards that combine user data with aggregated insights from similar
+                      patients.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-lg">Trial Matching Platforms</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      Develop sophisticated matching algorithms that connect patients to the most promising trials for
+                      their specific condition.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div className="mt-16 bg-primary/5 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-center mb-8">Trusted by Leading Health Tech Companies</h2>
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="bg-background rounded-lg p-6 shadow-sm">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+                      <span className="font-bold text-blue-600">HC</span>
+                    </div>
+                    <div>
+                      <h3 className="font-medium">HealthConnect</h3>
+                      <p className="text-sm text-muted-foreground">Digital Health Platform</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">
+                    "The FDA.gov v2 API has been transformative for our patient engagement platform. We've seen a 43%
+                    increase in clinical trial participation and significantly improved patient outcomes."
+                  </p>
+                </div>
+
+                <div className="bg-background rounded-lg p-6 shadow-sm">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                      <span className="font-bold text-green-600">MR</span>
+                    </div>
+                    <div>
+                      <h3 className="font-medium">MedRecord</h3>
+                      <p className="text-sm text-muted-foreground">EHR Solutions</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">
+                    "Integrating with the FDA.gov v2 API allowed us to offer our providers real-time access to
+                    comparative effectiveness data, improving clinical decision-making and patient care."
+                  </p>
+                </div>
+
+                <div className="bg-background rounded-lg p-6 shadow-sm">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center">
+                      <span className="font-bold text-purple-600">TM</span>
+                    </div>
+                    <div>
+                      <h3 className="font-medium">TrialMatch</h3>
+                      <p className="text-sm text-muted-foreground">Clinical Trial Platform</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground italic">
+                    "The OAuth2 integration with FDA.gov v2 has streamlined our trial enrollment process, reducing
+                    patient onboarding time by 67% and dramatically improving our data collection capabilities."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16">
+              <h2 className="text-2xl font-bold text-center mb-6">Technical Advantages</h2>
+              <div className="grid gap-6 md:grid-cols-3">
+                <div className="rounded-lg border p-4">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-4 rounded-full bg-primary/10 p-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-6 w-6 text-primary"
+                      >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                      </svg>
+                    </div>
+                    <h3 className="font-medium">HIPAA Compliant</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Built with privacy and security at its core, ensuring all patient data is handled according to
+                      healthcare regulations
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border p-4">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-4 rounded-full bg-primary/10 p-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-6 w-6 text-primary"
+                      >
+                        <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
+                      </svg>
+                    </div>
+                    <h3 className="font-medium">Standardized Health Data</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Access to FHIR-compatible data formats and standardized medical terminologies (SNOMED CT, ICD-11,
+                      etc.)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border p-4">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="mb-4 rounded-full bg-primary/10 p-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-6 w-6 text-primary"
+                      >
+                        <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
+                        <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
+                      </svg>
+                    </div>
+                    <h3 className="font-medium">Webhooks & Real-time Updates</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      Receive instant notifications about trial updates, new outcome data, and patient activities
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

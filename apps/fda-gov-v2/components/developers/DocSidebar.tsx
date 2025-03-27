@@ -124,14 +124,19 @@ export function DocSidebar() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      // Use scrollIntoView with a timeout to prevent layout thrashing
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
-        // Close mobile menu after navigation on small screens
-        if (window.innerWidth < 1024) {
-          setMobileMenuOpen(false)
-        }
-      }, 10)
+      // Use window.scrollTo instead of scrollIntoView to avoid ResizeObserver issues
+      const yOffset = -80 // Adjust this value based on your header height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      })
+
+      // Close mobile menu after navigation on small screens
+      if (window.innerWidth < 1024) {
+        setMobileMenuOpen(false)
+      }
     }
   }
 
@@ -148,7 +153,11 @@ export function DocSidebar() {
   // Clean up any potential observers on unmount
   useEffect(() => {
     return () => {
-      // This empty cleanup function helps ensure any implicit observers are cleaned up
+      // Explicitly clean up any potential observers
+      if (sidebarRef.current) {
+        // This forces any potential observers to disconnect
+        sidebarRef.current.style.height = "auto"
+      }
     }
   }, [])
 

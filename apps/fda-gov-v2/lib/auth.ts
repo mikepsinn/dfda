@@ -1,91 +1,44 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { NextAuthOptions } from "next-auth"
-import EmailProvider from "next-auth/providers/email"
-import GitHubProvider from "next-auth/providers/github"
-import GoogleProvider from "next-auth/providers/google"
+"use client"
 
-import { env } from "@/env.mjs"
-import { prisma } from "@/lib/prisma"
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
-// Extend the built-in session types
-declare module "next-auth" {
-  interface Session {
-    user: {
-      id: string
-      name?: string | null
-      email?: string | null
-      image?: string | null
-      role?: string | null
-    }
-  }
-  
-  interface JWT {
-    id: string
-    role?: string | null
+// Create a singleton instance of the Supabase client for client components
+const supabase = createClientComponentClient()
+
+export async function signInWithGoogle() {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${window.location.origin}/auth/callback`,
+    },
+  })
+
+  if (error) {
+    console.error("Error signing in with Google:", error)
+    throw error
   }
 }
 
-export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
-  session: {
-    strategy: "jwt",
-  },
-  pages: {
-    signIn: "/signin",
-  },
-  providers: [
-    EmailProvider({
-      server: {
-        host: env.SMTP_HOST,
-        port: Number(env.SMTP_PORT),
-        auth: {
-          user: env.SMTP_USER,
-          pass: env.SMTP_PASSWORD,
-        },
-      },
-      from: env.SMTP_FROM,
-    }),
-    GitHubProvider({
-      clientId: env.GITHUB_CLIENT_ID,
-      clientSecret: env.GITHUB_CLIENT_SECRET,
-    }),
-    GoogleProvider({
-      clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET,
-    }),
-  ],
-  callbacks: {
-    async session({ token, session }) {
-      if (token) {
-        session.user.id = token.id
-        session.user.name = token.name
-        session.user.email = token.email
-        session.user.image = token.picture
-        session.user.role = token.role as string | null
-      }
-      return session
-    },
-    async jwt({ token, user }) {
-      const dbUser = await prisma.user.findFirst({
-        where: {
-          email: token.email,
-        },
-      })
+export async function signOut() {
+  const { error } = await supabase.auth.signOut()
 
-      if (!dbUser) {
-        if (user) {
-          token.id = user?.id
-        }
-        return token
-      }
+  if (error) {
+    console.error("Error signing out:", error)
+    throw error
+  }
+}
 
-      return {
-        id: dbUser.id,
-        name: dbUser.name,
-        email: dbUser.email,
-        picture: dbUser.image,
-        role: dbUser.role,
-      }
-    },
-  },
-} 
+export async function getCurrentUser() {
+  const {
+    data: { user },
+    error,
+  } = await supabase.auth.getUser()
+
+  if (error) {
+    console.error("Error getting current user:", error)
+    return null
+  }
+
+  return user
+}
+
