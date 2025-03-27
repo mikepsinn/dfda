@@ -17,8 +17,8 @@ export const DEMO_ACCOUNTS = {
       first_name: "Demo",
       last_name: "Doctor",
       user_type: "doctor" as const,
-      specialties: ["Cardiology", "Internal Medicine"],
-      license_number: "DEMO-12345",
+      organization_name: "City General Hospital",
+      contact_name: "Dr. Demo Doctor",
     },
   },
   sponsor: {
@@ -28,8 +28,8 @@ export const DEMO_ACCOUNTS = {
       first_name: "Demo",
       last_name: "Sponsor",
       user_type: "sponsor" as const,
-      organization: "Demo Pharma Inc.",
-      role: "Clinical Trial Manager",
+      organization_name: "Demo Pharma Inc.",
+      contact_name: "Clinical Research Division",
     },
   },
 } as const 
