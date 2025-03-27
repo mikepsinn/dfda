@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
-import path from 'path';
 
 // Always load test environment variables for Playwright
 dotenv.config({ path: '.env.test' });
@@ -38,7 +37,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 1, // Run tests sequentially
   reporter: [
-    ['html'],
+    ['html', { open: 'never' }],  // Prevent auto-opening the report
     ['list'], // DOES NOT ADD CONSOLE OUTPUT BUT IT SEEMS LIKE IT SHOULD
     ['line']  // DOES NOT ADD CONSOLE OUTPUT BUT IT SEEMS LIKE IT SHOULD
   ],

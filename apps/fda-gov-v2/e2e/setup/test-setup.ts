@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from '@/lib/database.types';
+import { DEMO_ACCOUNTS, UserType } from '@/lib/constants/demo-accounts';
 
 // Initialize Supabase client for test setup
 export const supabase = createClient<Database>(
@@ -10,16 +11,8 @@ export const supabase = createClient<Database>(
 // Setup function to ensure database is ready
 export async function setupTestDatabase() {
   try {
-    // Create the profiles table and its dependencies
-    const { error: createTableError } = await supabase.rpc('create_profiles_if_not_exists');
-    if (createTableError) {
-      console.error('Error creating profiles table:', createTableError);
-      throw createTableError;
-    }
-
     // Clean up any existing test data
     await cleanupTestData();
-
   } catch (error) {
     console.error('Error setting up test database:', error);
     throw error;
@@ -29,16 +22,34 @@ export async function setupTestDatabase() {
 // Cleanup function to remove test data
 export async function cleanupTestData() {
   try {
-    const { data: profiles } = await supabase
+    // Get all demo account emails
+    const demoEmails = Object.values(DEMO_ACCOUNTS).map(account => account.email);
+    
+    // Find all demo profiles
+    const { data: profiles, error: selectError } = await supabase
       .from('profiles')
-      .select('id')
-      .eq('email', 'demo-patient@dfda.earth');
+      .select('id, email')
+      .in('email', demoEmails);
+
+    if (selectError) {
+      console.error('Error selecting demo profiles:', selectError);
+      throw selectError;
+    }
 
     if (profiles && profiles.length > 0) {
+      console.log(`Found ${profiles.length} demo profiles to clean up`);
+      
       for (const profile of profiles) {
-        await supabase.auth.admin.deleteUser(profile.id);
-        await supabase.from('profiles').delete().eq('id', profile.id);
+        // Delete auth user first (cascades to profile)
+        const { error: deleteError } = await supabase.auth.admin.deleteUser(profile.id);
+        if (deleteError) {
+          console.error(`Error deleting user ${profile.email}:`, deleteError);
+        } else {
+          console.log(`Cleaned up demo account: ${profile.email}`);
+        }
       }
+    } else {
+      console.log('No demo profiles found to clean up');
     }
   } catch (error) {
     console.error('Error cleaning up test data:', error);
