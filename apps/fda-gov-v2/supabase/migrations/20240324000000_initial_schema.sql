@@ -37,13 +37,13 @@ CREATE TABLE IF NOT EXISTS profiles (
   -- Common fields
   first_name TEXT,
   last_name TEXT,
-  user_type TEXT NOT NULL DEFAULT 'patient',
+  user_type TEXT NOT NULL CHECK (user_type IN ('patient', 'doctor', 'sponsor')) DEFAULT 'patient',
   -- Doctor specific fields
   specialties TEXT[] DEFAULT '{}',
   license_number TEXT,
   -- Sponsor specific fields
-  organization TEXT,
-  role TEXT,
+  organization_name TEXT,
+  contact_name TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -52,13 +52,21 @@ CREATE TABLE IF NOT EXISTS profiles (
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 
 -- Create RLS policies for profiles
-CREATE POLICY "Users can view own profile"
+CREATE POLICY "Public profiles are viewable by everyone"
   ON profiles FOR SELECT
-  USING (auth.uid() = id);
+  USING (true);
+
+CREATE POLICY "Users can insert their own profile"
+  ON profiles FOR INSERT
+  WITH CHECK (auth.uid() = id);
 
 CREATE POLICY "Users can update own profile"
   ON profiles FOR UPDATE
   USING (auth.uid() = id);
+
+-- Create indexes for profiles
+CREATE INDEX profiles_user_type_idx ON profiles(user_type);
+CREATE INDEX profiles_email_idx ON profiles(email);
 
 -- Create function to handle new user creation
 CREATE OR REPLACE FUNCTION public.handle_new_user()
