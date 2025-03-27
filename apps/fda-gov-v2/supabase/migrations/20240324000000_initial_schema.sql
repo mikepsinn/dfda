@@ -52,9 +52,17 @@ CREATE TABLE IF NOT EXISTS profiles (
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 
 -- Create RLS policies for profiles
-CREATE POLICY "Public profiles are viewable by everyone"
+CREATE POLICY "Users can view own profile"
   ON profiles FOR SELECT
-  USING (true);
+  USING (auth.uid() = id);
+
+CREATE POLICY "Anyone can view doctor profiles"
+  ON profiles FOR SELECT
+  USING (user_type = 'doctor');
+
+CREATE POLICY "Anyone can view sponsor profiles"
+  ON profiles FOR SELECT
+  USING (user_type = 'sponsor');
 
 CREATE POLICY "Users can insert their own profile"
   ON profiles FOR INSERT
@@ -82,7 +90,6 @@ END;
 $$;
 
 -- Create trigger for new user creation
-DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
