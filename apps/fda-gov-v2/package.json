@@ -12,6 +12,7 @@
     "test:unit": "jest -c jest.unit.config.mjs",
     "test:integration": "jest -c jest.integration.config.mjs",
     "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     
     "sb:local:start": "supabase start",
     "sb:local:stop": "supabase stop",
@@ -21,12 +22,12 @@
     "db:local:pull": "supabase db pull --local",
     "db:local:diff": "supabase db diff --local -f migrations",
     "db:local:types": "supabase gen types typescript --local > lib/database.types.ts",
-    "db:cloud:link": "supabase link --project-ref $SUPABASE_PROJECT_ID",
-    "db:cloud:push": "supabase db push --project-ref $SUPABASE_PROJECT_ID",
-    "db:cloud:pull": "supabase db pull --project-ref $SUPABASE_PROJECT_ID",
-    "db:cloud:diff": "supabase db diff --project-ref $SUPABASE_PROJECT_ID -f migrations",
-    "db:cloud:types": "supabase gen types typescript --project-ref $SUPABASE_PROJECT_ID > lib/database.types.ts",
-    "db:cloud:reset": "supabase db reset --project-ref $SUPABASE_PROJECT_ID"
+    "db:cloud:link": "supabase link --project-ref %SUPABASE_PROJECT_ID%",
+    "db:cloud:push": "supabase db push --linked",
+    "db:cloud:pull": "supabase db pull --linked",
+    "db:cloud:diff": "supabase db diff --linked -f migrations",
+    "db:cloud:types": "supabase gen types typescript --linked > lib/database.types.ts",
+    "db:cloudy:reset": "supabase db reset --linked"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

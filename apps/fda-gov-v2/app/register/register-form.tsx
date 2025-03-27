@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Check } from "lucide-react"
+import { Check, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -11,21 +11,75 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { signUpWithEmail, signInWithGoogle } from "@/lib/auth"
 
 export function RegisterForm() {
   const [registrationComplete, setRegistrationComplete] = useState(false)
   const [userType, setUserType] = useState("patient")
+  const [error, setError] = useState<{ type: 'email_not_confirmed' | 'other' | null; message: string | null }>({ 
+    type: null, 
+    message: null 
+  })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setRegistrationComplete(true)
+  const handleError = (error: { type: 'email_not_confirmed' | 'other', message: string }) => {
+    setError({ type: error.type, message: error.message })
   }
 
-  const handleGoogleSignIn = () => {
-    // In a real implementation, this would trigger Supabase Google OAuth
-    console.log("Google sign in clicked")
-    // For demo purposes, we'll just show the registration complete screen
-    setRegistrationComplete(true)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError({ type: null, message: null })
+    
+    const formData = new FormData(e.target)
+    const email = formData.get(userType === 'patient' ? 'email' : 'sponsor-email') as string
+    const password = formData.get(userType === 'patient' ? 'password' : 'sponsor-password') as string
+    
+    try {
+      const { error: signUpError } = await signUpWithEmail(email, password)
+      
+      if (signUpError) {
+        if (signUpError.message.includes('email not confirmed')) {
+          setError({
+            type: 'email_not_confirmed',
+            message: 'Please check your email to complete registration. You will need to verify your email address before signing in.'
+          })
+        } else {
+          setError({
+            type: 'other',
+            message: 'An error occurred during registration. Please contact help@dfda.earth for assistance.'
+          })
+        }
+        return
+      }
+      
+      setRegistrationComplete(true)
+    } catch (err: any) {
+      setError({
+        type: 'other',
+        message: 'An error occurred during registration. Please contact help@dfda.earth for assistance.'
+      })
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const { error: signInError } = await signInWithGoogle()
+      
+      if (signInError) {
+        setError({
+          type: 'other',
+          message: 'An error occurred during Google sign in. Please contact help@dfda.earth for assistance.'
+        })
+        return
+      }
+      
+      // Google OAuth will redirect to callback URL
+    } catch (err: any) {
+      setError({
+        type: 'other',
+        message: 'An error occurred during Google sign in. Please contact help@dfda.earth for assistance.'
+      })
+    }
   }
 
   if (registrationComplete) {
@@ -62,6 +116,13 @@ export function RegisterForm() {
         <CardDescription>Join the FDA.gov v2 platform to participate in or create clinical trials</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
+        {error.message && (
+          <Alert variant={error.type === 'email_not_confirmed' ? 'default' : 'destructive'}>
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>{error.message}</AlertDescription>
+          </Alert>
+        )}
+        
         {/* Google Sign In Button */}
         <Button
           variant="outline"
@@ -96,7 +157,7 @@ export function RegisterForm() {
           <Separator className="flex-1" />
         </div>
 
-        <DemoLoginButton />
+        <DemoLoginButton onError={handleError} />
 
         <Tabs defaultValue="patient" onValueChange={setUserType} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
@@ -108,20 +169,20 @@ export function RegisterForm() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="first-name">First name</Label>
-                  <Input id="first-name" required />
+                  <Input id="first-name" name="first-name" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="last-name">Last name</Label>
-                  <Input id="last-name" required />
+                  <Input id="last-name" name="last-name" required />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required />
+                <Input id="email" name="email" type="email" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
-                <Input id="password" type="password" required />
+                <Input id="password" name="password" type="password" required />
               </div>
               <div className="space-y-2">
                 <Label>Are you currently managing any health conditions?</Label>

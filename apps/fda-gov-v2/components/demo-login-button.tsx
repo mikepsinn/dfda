@@ -6,9 +6,12 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { demoLogin } from "@/app/actions/demo-login"
 import { Loader2 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { toast } from "sonner"
 
-export function DemoLoginButton() {
+interface DemoLoginButtonProps {
+  onError?: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
+}
+
+export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
   const router = useRouter()
   const [userType, setUserType] = useState<"patient" | "doctor" | "sponsor">("patient")
   const [isLoading, setIsLoading] = useState(false)
@@ -21,16 +24,33 @@ export function DemoLoginButton() {
       await demoLogin(userType)
       // If we get here, something went wrong because demoLogin should redirect
       console.error('[DEMO] Login completed without redirect')
-      toast.error('Login failed - no redirect received')
+      onError?.({ 
+        type: 'other', 
+        message: 'Login failed - please contact help@dfda.earth for assistance' 
+      })
     } catch (error) {
       // NEXT_REDIRECT means success
       if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
         console.log('[DEMO] Login successful - redirecting')
         return
       }
-      
+
       console.error('[DEMO] Login failed:', error)
-      toast.error('Failed to log in with demo account')
+      
+      // Check if it's an email confirmation error
+      if (error instanceof Error && 
+          'code' in error && 
+          error.code === 'email_not_confirmed') {
+        onError?.({ 
+          type: 'email_not_confirmed',
+          message: 'Please check your email to complete registration. You will need to verify your email address before signing in.'
+        })
+      } else {
+        onError?.({ 
+          type: 'other',
+          message: 'Failed to log in with demo account. Please contact help@dfda.earth for assistance'
+        })
+      }
     } finally {
       setIsLoading(false)
     }

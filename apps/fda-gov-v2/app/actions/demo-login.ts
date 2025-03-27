@@ -30,7 +30,7 @@ export async function demoLogin(userType: UserType = "patient") {
         console.error('[DEMO] Profile update failed:', updateError.message)
       }
 
-      const redirectUrl = `/(protected)/${userType}/dashboard`
+      const redirectUrl = `/${userType}/dashboard`
       console.log('[DEMO] Redirecting to dashboard')
       redirect(redirectUrl)
     }
@@ -73,7 +73,7 @@ export async function demoLogin(userType: UserType = "patient") {
       throw finalSignInError
     }
 
-    const redirectUrl = `/(protected)/${userType}/dashboard`
+    const redirectUrl = `/${userType}/dashboard`
     console.log('[DEMO] Redirecting to dashboard')
     redirect(redirectUrl)
   } catch (error) {
