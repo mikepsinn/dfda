@@ -40,3 +40,5 @@ tmp/
 management-ui/logs/
 test-results/*
 volumes/
+test-results/
+playwright-report/
