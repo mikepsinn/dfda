@@ -13,6 +13,16 @@ export default async function ProtectedLayout({
     redirect("/login")
   }
 
-  return <div className="min-h-screen flex flex-col">{children}</div>
+  return (
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1 py-6 md:py-10">
+        <div className="container">
+          <div className="mx-auto max-w-6xl">
+            {children}
+          </div>
+        </div>
+      </main>
+    </div>
+  )
 }
 
