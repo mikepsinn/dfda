@@ -1,4 +1,17 @@
 import '@testing-library/jest-dom'
+import fs from 'fs'
+import path from 'path'
+
+// Check for required test configuration
+function validateTestConfig() {
+  const envTestPath = path.join(process.cwd(), '.env.test')
+  if (!fs.existsSync(envTestPath)) {
+    throw new Error('.env.test file is missing. Please create one from .env.test.example')
+  }
+}
+
+// Run config validation
+validateTestConfig()
 
 // Mock next/navigation
 jest.mock('next/navigation', () => ({
