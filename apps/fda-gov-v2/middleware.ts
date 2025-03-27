@@ -1,17 +1,42 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs"
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 
 export async function middleware(request: NextRequest) {
-  const response = NextResponse.next()
-  const supabase = createMiddlewareClient({ req: request, res: response })
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
+  })
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          return request.cookies.get(name)?.value
+        },
+        set(name: string, value: string, options: CookieOptions) {
+          response.cookies.set({
+            name,
+            value,
+            ...options,
+          })
+        },
+        remove(name: string, options: CookieOptions) {
+          response.cookies.set({
+            name,
+            value: '',
+            ...options,
+          })
+        },
+      },
+    }
+  )
 
-  // Check if the user is authenticated
-  const isAuthenticated = !!session
+  const { data: { user } } = await supabase.auth.getUser()
+  const isAuthenticated = !!user
 
   // Define protected routes
   const protectedPaths = [
@@ -41,7 +66,6 @@ export async function middleware(request: NextRequest) {
 
   if (isAuthPath && isAuthenticated) {
     // Determine which dashboard to redirect to based on user type
-    // In a real app, you would check the user's type in the session
     return NextResponse.redirect(new URL("/patient/dashboard", request.url))
   }
 
@@ -50,6 +74,14 @@ export async function middleware(request: NextRequest) {
 
 // Only run middleware on specific paths
 export const config = {
-  matcher: ["/patient/:path*", "/doctor/:path*", "/sponsor/:path*", "/user/:path*", "/login", "/register"],
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    "/patient/:path*", 
+    "/doctor/:path*", 
+    "/sponsor/:path*", 
+    "/user/:path*", 
+    "/login", 
+    "/register"
+  ],
 }
 

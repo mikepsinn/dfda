@@ -1,6 +1,5 @@
 import { getServerUser } from "@/lib/server-auth"
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-import { cookies } from "next/headers"
+import { createClient } from "@/lib/supabase/server"
 import { DashboardHeader } from "./dashboard-header"
 import { EnrolledTrials } from "./enrolled-trials"
 import { RecommendedTrials } from "./recommended-trials"
@@ -8,7 +7,7 @@ import { HealthMetrics } from "./health-metrics"
 
 export default async function PatientDashboard() {
   const user = await getServerUser()
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = await createClient()
 
   // Fetch user profile data
   const { data: profile } = await supabase.from("users").select("*").eq("id", user?.id).single()

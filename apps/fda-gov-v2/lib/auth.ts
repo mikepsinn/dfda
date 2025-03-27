@@ -1,44 +1,51 @@
 "use client"
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
+import { createClient } from '@/lib/supabase/client'
 
-// Create a singleton instance of the Supabase client for client components
-const supabase = createClientComponentClient()
+export async function getUser() {
+  const supabase = createClient()
+  const { data: { user }, error } = await supabase.auth.getUser()
+  return { user, error }
+}
+
+export async function signOut() {
+  const supabase = createClient()
+  const { error } = await supabase.auth.signOut()
+  return { error }
+}
+
+export async function signInWithEmail(email: string, password: string) {
+  const supabase = createClient()
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  })
+  return { data, error }
+}
+
+export async function signUpWithEmail(email: string, password: string) {
+  const supabase = createClient()
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+  })
+  return { data, error }
+}
 
 export async function signInWithGoogle() {
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
+  const supabase = createClient()
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
     options: {
       redirectTo: `${window.location.origin}/auth/callback`,
     },
   })
-
-  if (error) {
-    console.error("Error signing in with Google:", error)
-    throw error
-  }
-}
-
-export async function signOut() {
-  const { error } = await supabase.auth.signOut()
-
-  if (error) {
-    console.error("Error signing out:", error)
-    throw error
-  }
+  return { data, error }
 }
 
 export async function getCurrentUser() {
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser()
-
-  if (error) {
-    console.error("Error getting current user:", error)
-    return null
-  }
-
-  return user
+  const supabase = createClient()
+  const { data: { user }, error } = await supabase.auth.getUser()
+  return { user, error }
 }
 

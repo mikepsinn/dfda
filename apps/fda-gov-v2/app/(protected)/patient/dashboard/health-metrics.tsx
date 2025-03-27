@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
+import { createClient } from "@/lib/supabase/client"
 import { PlusCircle } from "lucide-react"
 
 interface HealthMetricsProps {
@@ -24,7 +24,7 @@ export function HealthMetrics({ userId }: HealthMetricsProps) {
     async function fetchMetrics() {
       if (!userId || userId === undefined) return
 
-      const supabase = createClientComponentClient()
+      const supabase = createClient()
 
       // Fetch data submission metrics
       const { data: submissions } = await supabase

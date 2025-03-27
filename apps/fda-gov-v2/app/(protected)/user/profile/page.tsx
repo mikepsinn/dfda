@@ -1,12 +1,11 @@
 import { getServerUser } from "@/lib/server-auth"
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-import { cookies } from "next/headers"
+import { createClient } from "@/lib/supabase/server"
 import { ProfileForm } from "./profile-form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default async function ProfilePage() {
   const user = await getServerUser()
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = await createClient()
 
   // Fetch user profile data
   const { data: profile } = await supabase.from("users").select("*").eq("id", user?.id).single()

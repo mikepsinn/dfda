@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
+import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
 
 interface ProfileFormProps {
@@ -29,7 +29,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     setLoading(true)
 
     try {
-      const supabase = createClientComponentClient()
+      const supabase = createClient()
 
       const { error } = await supabase
         .from("users")
