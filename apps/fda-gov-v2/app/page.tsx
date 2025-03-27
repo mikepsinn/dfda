@@ -13,17 +13,15 @@ export default async function Home() {
   const statistics = await getStatistics();
   
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="flex-1">
-        <HeroSection />
-        <ComparativeEffectivenessSection />
-        <OutcomeLabelsSection />
-        <HowItWorksSection />
-        <KeyBenefitsSection />
-        <RevolutionizingMedicalProgressSection stats={statistics} />
-        <FeaturedTrialsSection trials={featuredTrials as any} />
-      </main>
-    </div>
+    <>
+      <HeroSection />
+      <ComparativeEffectivenessSection />
+      <OutcomeLabelsSection />
+      <HowItWorksSection />
+      <KeyBenefitsSection />
+      <RevolutionizingMedicalProgressSection stats={statistics} />
+      <FeaturedTrialsSection trials={featuredTrials as any} />
+    </>
   );
 }
 

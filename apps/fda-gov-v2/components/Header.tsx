@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, ChevronDown, ChevronUp, User, LogOut, Settings } from "lucide-react"
+import { Menu, ChevronDown, ChevronUp, User as UserIcon, LogOut, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { 
@@ -15,11 +15,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { createClient } from '@/lib/supabase/client'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import type { User } from '@supabase/supabase-js'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isMoreOpen, setIsMoreOpen] = useState(false)
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
   const [userInitials, setUserInitials] = useState("")
   const supabase = createClient()
 
@@ -90,8 +91,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-2 pl-2">
+      <div className="container px-4 md:px-6 mx-auto flex h-16 items-center justify-between">
+        <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/images/dfda-logo.png" alt="dFDA Logo" width={28} height={28} className="h-7 w-7" />
             <span className="text-xl font-bold">FDA.gov v2</span>
@@ -143,7 +144,7 @@ export function Header() {
               <DropdownMenuContent className="w-56" align="end" forceMount>
                 <DropdownMenuItem asChild>
                   <Link href="/user/profile" className="flex items-center">
-                    <User className="mr-2 h-4 w-4" />
+                    <UserIcon className="mr-2 h-4 w-4" />
                     <span>Profile</span>
                   </Link>
                 </DropdownMenuItem>
@@ -200,7 +201,7 @@ export function Header() {
                 <>
                   <Link href="/user/profile" className="block mb-3">
                     <Button variant="outline" className="w-full flex items-center justify-center gap-2">
-                      <User className="h-4 w-4" />
+                      <UserIcon className="h-4 w-4" />
                       Profile
                     </Button>
                   </Link>
