@@ -28,7 +28,7 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments 
       setIsLoading(true)
       try {
         const data = await getTreatmentEffectiveness(condition, condition)
-        setTreatments(data)
+        setTreatments(Array.isArray(data) ? data : [data].filter(Boolean))
       } catch (error) {
         console.error("Error fetching treatment effectiveness:", error)
       } finally {
@@ -99,4 +99,5 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments 
     </div>
   )
 }
+
 

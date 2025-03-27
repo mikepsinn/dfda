@@ -106,12 +106,12 @@ export default async function SponsorDashboard() {
 
             <TrialEnrollment trials={sponsorData.activeTrials} />
 
-            <RecentActivity activities={sponsorData.recentActivity} />
+            <RecentActivity activities={sponsorData.recentActivity as any} />
 
             <TrialManagement
               activeTrials={sponsorData.activeTrials}
               completedTrials={sponsorData.completedTrials}
-              pendingApproval={sponsorData.pendingApproval}
+              pendingApproval={sponsorData.pendingApproval as any}
             />
           </div>
         </main>
@@ -119,4 +119,5 @@ export default async function SponsorDashboard() {
     </div>
   )
 }
+
 

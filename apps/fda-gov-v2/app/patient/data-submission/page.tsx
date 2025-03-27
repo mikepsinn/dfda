@@ -49,16 +49,16 @@ export default async function DataSubmission() {
 
   const trialData = {
     id: enrollment.trial_id,
-    name: Array.isArray(enrollment.trials) ? enrollment.trials[0].name : enrollment.trials.name,
-    sponsor: Array.isArray(enrollment.trials) ? enrollment.trials[0].sponsor_name : enrollment.trials.sponsor_name,
-    currentMilestone: Array.isArray(enrollment.trials) ? enrollment.trials[0].current_milestone : enrollment.trials.current_milestone,
-    dueDate: new Date(Array.isArray(enrollment.trials) ? enrollment.trials[0].milestone_due_date : enrollment.trials.milestone_due_date).toLocaleDateString("en-US", {
+    name: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].name : (enrollment.trials as any).name,
+    sponsor: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].sponsor_name : (enrollment.trials as any).sponsor_name,
+    currentMilestone: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].current_milestone : (enrollment.trials as any).current_milestone,
+    dueDate: new Date(Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].milestone_due_date : (enrollment.trials as any).milestone_due_date).toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
       year: "numeric",
     }),
-    refundAmount: Array.isArray(enrollment.trials) ? enrollment.trials[0].refund_amount : enrollment.trials.refund_amount,
-    progress: Array.isArray(enrollment.trials) ? enrollment.trials[0].progress : enrollment.trials.progress,
+    refundAmount: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].refund_amount : (enrollment.trials as any).refund_amount,
+    progress: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].progress : (enrollment.trials as any).progress,
     enrollmentId: enrollment.id,
   }
 
@@ -82,4 +82,5 @@ export default async function DataSubmission() {
     </div>
   )
 }
+
 

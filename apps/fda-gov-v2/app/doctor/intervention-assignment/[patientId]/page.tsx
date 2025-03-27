@@ -16,9 +16,22 @@ import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
+interface Intervention {
+  id: number;
+  name: string;
+  description: string;
+  details: string;
+  frequency: string;
+  route: string;
+  duration: string;
+  monitoring: string;
+  sideEffects: { name: string; frequency: string; }[];
+  contraindications: string[];
+}
+
 export default function InterventionAssignment({ params }) {
   const patientId = params.patientId
-  const [selectedIntervention, setSelectedIntervention] = useState(null)
+  const [selectedIntervention, setSelectedIntervention] = useState<Intervention | null>(null)
   const [clinicalNotes, setClinicalNotes] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
@@ -276,10 +289,13 @@ export default function InterventionAssignment({ params }) {
 
                       <div className="space-y-6">
                         <RadioGroup
-                          value={selectedIntervention?.id}
-                          onValueChange={(value) =>
-                            setSelectedIntervention(interventionOptions.find((o) => o.id === Number.parseInt(value)))
-                          }
+                          value={selectedIntervention?.id ? String(selectedIntervention.id) : undefined}
+                          onValueChange={(value) => {
+                            const found = interventionOptions.find((o) => o.id === Number.parseInt(value));
+                            if (found) {
+                              setSelectedIntervention(found);
+                            }
+                          }}
                         >
                           {interventionOptions.map((option) => (
                             <div key={option.id} className="rounded-lg border p-4">

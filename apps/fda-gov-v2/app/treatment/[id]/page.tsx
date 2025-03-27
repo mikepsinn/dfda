@@ -6,6 +6,7 @@ import { getTreatmentAverageRating, getTreatmentRatings, getUserTreatmentRating 
 import { TreatmentHeader } from "./components/treatment-header"
 import { TreatmentDetails } from "./components/treatment-details"
 import { TreatmentReviews } from "./components/treatment-reviews"
+import { TreatmentRating } from "@/lib/types"
 
 interface TreatmentPageProps {
   params: {
@@ -69,9 +70,10 @@ export default async function TreatmentPage({ params, searchParams }: TreatmentP
   const { average: averageRating, count: totalReviews } = await getTreatmentAverageRating(params.id, conditionId)
 
   // Get user's existing rating if logged in
-  let userRating = null
+  let userRating: TreatmentRating | null = null
   if (user) {
-    userRating = await getUserTreatmentRating(user.id, params.id, conditionId)
+    const tempRating = await getUserTreatmentRating(user.id, params.id, conditionId)
+    userRating = tempRating
   }
 
   // Get user type (patient or doctor)

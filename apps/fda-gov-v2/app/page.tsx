@@ -21,9 +21,10 @@ export default async function Home() {
         <HowItWorksSection />
         <KeyBenefitsSection />
         <RevolutionizingMedicalProgressSection stats={statistics} />
-        <FeaturedTrialsSection trials={featuredTrials} />
+        <FeaturedTrialsSection trials={featuredTrials as any} />
       </main>
     </div>
   );
 }
+
 

@@ -8,7 +8,8 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { PlusCircle } from "lucide-react"
 
 interface HealthMetricsProps {
-  userId: string
+  userId?: string
+  
 }
 
 export function HealthMetrics({ userId }: HealthMetricsProps) {
@@ -21,7 +22,7 @@ export function HealthMetrics({ userId }: HealthMetricsProps) {
 
   useEffect(() => {
     async function fetchMetrics() {
-      if (!userId) return
+      if (!userId || userId === undefined) return
 
       const supabase = createClientComponentClient()
 
