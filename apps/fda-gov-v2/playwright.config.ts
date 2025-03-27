@@ -45,8 +45,8 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  /* Reporter configuration */
+  reporter: [['html', { open: 'never' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -67,6 +67,7 @@ export default defineConfig({
   webServer: {
     command: `pnpm dev --port ${TEST_PORT}`,
     port: TEST_PORT,
+    url: `http://127.0.0.1:${TEST_PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: testEnv,
