@@ -7,14 +7,14 @@ export async function getFeaturedTrials() {
     .from("trials")
     .select(`
       id,
-      name,
+      title,
       description,
       sponsor_id,
       treatment_id,
       condition_id,
       status,
-      target_participants,
-      enrolled_participants,
+      enrollment_target,
+      current_enrollment,
       start_date,
       end_date,
       created_at,

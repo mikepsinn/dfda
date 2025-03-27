@@ -34,16 +34,11 @@ CREATE TABLE IF NOT EXISTS treatment_effectiveness (
 CREATE TABLE IF NOT EXISTS profiles (
   id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
   email TEXT NOT NULL UNIQUE,
-  -- Common fields
   first_name TEXT,
   last_name TEXT,
-  user_type TEXT NOT NULL CHECK (user_type IN ('patient', 'doctor', 'sponsor')) DEFAULT 'patient',
-  -- Doctor specific fields
-  specialties TEXT[] DEFAULT '{}',
-  license_number TEXT,
-  -- Sponsor specific fields
   organization_name TEXT,
   contact_name TEXT,
+  user_type TEXT NOT NULL CHECK (user_type IN ('patient', 'doctor', 'sponsor')) DEFAULT 'patient',
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );

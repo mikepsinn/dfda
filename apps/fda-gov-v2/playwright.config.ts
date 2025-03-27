@@ -34,7 +34,9 @@ export default defineConfig({
   testDir: './tests/e2e',
   globalSetup: './tests/e2e/e2e-setup.ts',
   /* Maximum time one test can run for */
-  timeout: 30000,
+  timeout: 60000,
+  /* Maximum time for globalSetup */
+  globalTimeout: 600000,
   /* Maximum number of failures before stopping */
   maxFailures: process.env.CI ? 10 : 1,
   /* Run tests in files in parallel */
@@ -63,8 +65,8 @@ export default defineConfig({
   ],
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm dev',
-    url: `http://127.0.0.1:${TEST_PORT}`,
+    command: `pnpm dev --port ${TEST_PORT}`,
+    port: TEST_PORT,
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: testEnv,

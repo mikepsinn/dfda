@@ -48,19 +48,39 @@ export async function cleanupTestData() {
 // Setup Supabase for tests
 export async function setupSupabase() {
   try {
-    // Start Supabase if not running
-    execSync('supabase status', { stdio: 'pipe' });
-  } catch (e) {
-    console.log('Starting Supabase...');
-    execSync('supabase start', { stdio: 'inherit' });
-  }
+    // First, ensure Supabase is running
+    try {
+      execSync('supabase status', { stdio: 'pipe' });
+      console.log('Supabase is already running');
+    } catch (e) {
+      console.log('Starting Supabase...');
+      execSync('supabase start', { stdio: 'inherit' });
+      console.log('Supabase started successfully');
+    }
 
-  // Reset database to clean state
-  console.log('Resetting database...');
-  execSync('supabase db reset --local', { stdio: 'inherit' });
-  
-  // Clean up any existing test data
-  await cleanupTestData();
+    // Reset database to clean state
+    console.log('Resetting database...');
+    execSync('supabase db reset --local', { stdio: 'inherit' });
+    console.log('Database reset completed');
+    
+    // Wait a moment for the database to be ready
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Clean up any existing test data
+    console.log('Cleaning up test data...');
+    await cleanupTestData();
+    console.log('Test data cleanup completed');
+
+    // Verify database connection
+    const { error } = await supabase.from('profiles').select('count');
+    if (error) {
+      throw new Error(`Database connection check failed: ${error.message}`);
+    }
+    console.log('Database connection verified');
+  } catch (error) {
+    console.error('Failed to setup Supabase:', error);
+    throw error;
+  }
 }
 
 // Cleanup Supabase (optional, typically used in afterAll)
