@@ -5,17 +5,12 @@ import { redirect } from 'next/navigation'
 import { DEMO_ACCOUNTS, UserType } from '@/lib/constants/demo-accounts'
 
 export async function demoLogin(userType: UserType = "patient") {
-  console.log('[DEMO-LOGIN] Starting demo login', {
-    userType,
-    timestamp: new Date().toISOString()
-  });
-
+  console.log('[DEMO] Starting login process for:', userType)
   const supabase = await createClient()
   const account = DEMO_ACCOUNTS[userType]
 
   try {
     // Try to sign in first - most common case
-    console.log('[DEMO-LOGIN] Attempting to sign in...');
     const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
       email: account.email,
       password: account.password,
@@ -23,7 +18,7 @@ export async function demoLogin(userType: UserType = "patient") {
 
     // If sign in worked, update profile and redirect
     if (!signInError && signInData?.user) {
-      console.log('[DEMO-LOGIN] Sign in successful');
+      console.log('[DEMO] Sign in successful, updating profile')
       
       // Update profile with latest demo data
       const { error: updateError } = await supabase
@@ -32,11 +27,11 @@ export async function demoLogin(userType: UserType = "patient") {
         .eq('id', signInData.user.id)
 
       if (updateError) {
-        console.error('[DEMO-LOGIN] Failed to update profile:', updateError)
+        console.error('[DEMO] Profile update failed:', updateError.message)
       }
 
       const redirectUrl = `/(protected)/${userType}/dashboard`
-      console.log('[DEMO-LOGIN] Redirecting to', { redirectUrl });
+      console.log('[DEMO] Redirecting to dashboard')
       redirect(redirectUrl)
     }
 
@@ -46,18 +41,18 @@ export async function demoLogin(userType: UserType = "patient") {
     }
 
     // If we get here, user doesn't exist - create them
-    console.log('[DEMO-LOGIN] Account not found, creating new account...');
+    console.log('[DEMO] Account not found, creating new account')
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email: account.email,
       password: account.password,
       options: {
-        data: account.data, // Store user_type in auth metadata
+        data: account.data,
         emailRedirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/auth/callback`
       }
     })
 
     if (signUpError) {
-      console.error("[DEMO-LOGIN] Failed to create account:", signUpError)
+      console.error("[DEMO] Account creation failed:", signUpError.message)
       throw signUpError
     }
 
@@ -65,9 +60,8 @@ export async function demoLogin(userType: UserType = "patient") {
       throw new Error('No user returned from signUp')
     }
 
-    console.log('[DEMO-LOGIN] Account created successfully');
+    console.log('[DEMO] Account created, attempting final sign in')
 
-    // Profile will be created by the database trigger
     // Try signing in again
     const { error: finalSignInError } = await supabase.auth.signInWithPassword({
       email: account.email,
@@ -75,25 +69,21 @@ export async function demoLogin(userType: UserType = "patient") {
     })
 
     if (finalSignInError) {
-      console.error("[DEMO-LOGIN] Failed to sign in after creation:", finalSignInError)
+      console.error("[DEMO] Final sign in failed:", finalSignInError.message)
       throw finalSignInError
     }
 
     const redirectUrl = `/(protected)/${userType}/dashboard`
-    console.log('[DEMO-LOGIN] Redirecting to', { redirectUrl });
+    console.log('[DEMO] Redirecting to dashboard')
     redirect(redirectUrl)
   } catch (error) {
     // Don't treat NEXT_REDIRECT as an error since it's our success path
     if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
-      throw error; // Re-throw to let Next.js handle the redirect
+      throw error
     }
 
-    console.error("[DEMO-LOGIN] Fatal error:", {
-      error: error instanceof Error ? error.message : error,
-      stack: error instanceof Error ? error.stack : undefined
-    });
-    
-    throw error;
+    console.error("[DEMO] Fatal error:", error instanceof Error ? error.message : error)
+    throw error
   }
 }
 

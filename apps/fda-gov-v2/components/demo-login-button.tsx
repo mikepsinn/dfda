@@ -14,18 +14,24 @@ export function DemoLoginButton() {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleDemoLogin = async () => {
+    console.log('[DEMO] Attempting login as:', userType)
     setIsLoading(true)
+    
     try {
-      const result = await demoLogin(userType)
-      if (result.success && result.redirectUrl) {
-        router.push(result.redirectUrl)
-      } else if (result.error) {
-        toast.error(result.error)
-        setIsLoading(false)
-      }
+      await demoLogin(userType)
+      // If we get here, something went wrong because demoLogin should redirect
+      console.error('[DEMO] Login completed without redirect')
+      toast.error('Login failed - no redirect received')
     } catch (error) {
-      console.error("Demo login error:", error)
-      toast.error("Failed to log in with demo account")
+      // NEXT_REDIRECT means success
+      if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
+        console.log('[DEMO] Login successful - redirecting')
+        return
+      }
+      
+      console.error('[DEMO] Login failed:', error)
+      toast.error('Failed to log in with demo account')
+    } finally {
       setIsLoading(false)
     }
   }

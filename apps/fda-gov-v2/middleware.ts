@@ -35,7 +35,13 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  const { data: { user }, error: authError } = await supabase.auth.getUser()
+  console.log('[AUTH] Current state:', { 
+    path: request.nextUrl.pathname,
+    isAuthenticated: !!user,
+    hasError: !!authError
+  });
+
   const isAuthenticated = !!user
 
   // Define protected routes
@@ -55,6 +61,7 @@ export async function middleware(request: NextRequest) {
 
   // Redirect to login if accessing a protected route without authentication
   if (isProtectedPath && !isAuthenticated) {
+    console.log('[AUTH] Redirecting to login - unauthorized access attempt')
     const redirectUrl = new URL("/login", request.url)
     redirectUrl.searchParams.set("redirect", request.nextUrl.pathname)
     return NextResponse.redirect(redirectUrl)
@@ -65,7 +72,7 @@ export async function middleware(request: NextRequest) {
   const isAuthPath = authPaths.some((path) => request.nextUrl.pathname === path)
 
   if (isAuthPath && isAuthenticated) {
-    // Determine which dashboard to redirect to based on user type
+    console.log('[AUTH] Redirecting to dashboard - already authenticated')
     return NextResponse.redirect(new URL("/patient/dashboard", request.url))
   }
 
