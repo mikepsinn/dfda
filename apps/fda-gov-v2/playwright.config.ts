@@ -8,14 +8,20 @@ dotenv.config({ path: '.env.test' });
 const TEST_PORT = 3001;
 
 // Environment variables for tests
-const testEnv: Record<string, string | undefined> = {
+const testEnv = Object.entries({
   ...process.env, // Include all existing env variables
   NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
   NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '',
   SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY ?? '',
   NODE_ENV: 'development', // Use development mode for tests since we're using dev server
   PORT: TEST_PORT.toString(),
-};
+}).reduce((acc, [key, value]) => {
+  // Only include defined values and convert them to strings
+  if (value !== undefined) {
+    acc[key] = String(value);
+  }
+  return acc;
+}, {} as Record<string, string>);
 
 // Validate required env variables
 const requiredEnvVars = [

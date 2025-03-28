@@ -5,7 +5,7 @@ import { ThumbsUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TreatmentRankingList } from "@/components/TreatmentRankingList"
-import { getTreatmentsForCondition } from "@/lib/api/treatments"
+import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
 
 interface TreatmentResultsProps {
   condition: string
@@ -20,7 +20,7 @@ export function TreatmentResults({ condition, onClear }: TreatmentResultsProps) 
     async function loadTreatments() {
       setIsLoading(true)
       try {
-        const data = await getTreatmentsForCondition(condition)
+        const data = await getTreatmentsForConditionAction(condition)
         setTreatments(data)
       } catch (error) {
         console.error("Error loading treatments:", error)
@@ -78,4 +78,3 @@ export function TreatmentResults({ condition, onClear }: TreatmentResultsProps) 
     </div>
   )
 }
-

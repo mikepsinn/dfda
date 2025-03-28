@@ -5,23 +5,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ClipboardList, ArrowRight } from "lucide-react"
+import type { Database } from "@/lib/database.types"
 
-// TODO: Define a proper type for Enrollment based on database schema
-interface Enrollment {
-  id: string;
-  trial_name: string; // Example property
-  status: string;     // Example property
-  // Add other relevant properties
-  trials: {
-    id: string;
-    name: string;
+type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
+
+interface Enrollment extends TrialEnrollment {
+  trials: (Trial & {
     conditions: {
       name: string;
-    };
+    }[];
     treatments: {
       name: string;
-    };
-  };
+    }[];
+  })[];
 }
 
 interface EnrolledTrialsProps {
@@ -65,14 +62,14 @@ export function EnrolledTrials({ enrollments }: EnrolledTrialsProps) {
             >
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-medium">{enrollment.trials.name}</h3>
+                  <h3 className="font-medium">{enrollment.trials[0].title}</h3>
                   <Badge variant={getStatusVariant(enrollment.status)}>{formatStatus(enrollment.status)}</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  {enrollment.trials.conditions.name} • {enrollment.trials.treatments.name}
+                  {enrollment.trials[0].conditions[0].name} • {enrollment.trials[0].treatments[0].name}
                 </p>
               </div>
-              <Link href={`/patient/trial-details/${enrollment.trials.id}`}>
+              <Link href={`/patient/trial-details/${enrollment.trials[0].id}`}>
                 <Button variant="ghost" size="sm" className="gap-1">
                   Details
                   <ArrowRight className="h-4 w-4" />

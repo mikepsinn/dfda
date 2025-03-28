@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { StarRating } from "@/components/ui/star-rating"
-import { createTreatmentRating, updateTreatmentRating } from "@/lib/api/treatment-ratings"
+import { createTreatmentRatingAction, updateTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 import { useToast } from "@/hooks/use-toast"
 
 interface TreatmentReviewFormProps {
@@ -53,7 +53,7 @@ export function TreatmentReviewForm({
 
     try {
       if (existingReview) {
-        await updateTreatmentRating(existingReview.id, {
+        await updateTreatmentRatingAction(existingReview.id, {
           rating,
           review,
           updated_at: new Date().toISOString(),
@@ -63,7 +63,7 @@ export function TreatmentReviewForm({
           description: "Your review has been updated successfully",
         })
       } else {
-        await createTreatmentRating({
+        await createTreatmentRatingAction({
           user_id: userId,
           treatment_id: treatmentId,
           condition_id: conditionId,
@@ -121,4 +121,3 @@ export function TreatmentReviewForm({
     </form>
   )
 }
-

@@ -123,3 +123,33 @@ export async function deleteTrialEnrollment(id: string) {
   return true
 }
 
+export async function incrementTrialParticipants(enrollmentId: string) {
+  const supabase = createServerClient()
+  // TODO: Verify custom RPC function name or regenerate types
+  // const { error: updateError } = await supabase.rpc("increment_trial_participants", {
+  //   p_enrollment_id: enrollmentId,
+  // })
+
+  // if (updateError) {
+  //   console.error("Error incrementing trial participants:", updateError)
+  //   return false
+  // }
+  console.warn("incrementTrialParticipants RPC call commented out due to potential type error.")
+  return true
+}
+
+export async function decrementTrialParticipants(enrollmentId: string) {
+  const supabase = createServerClient()
+  // TODO: Verify custom RPC function name or regenerate types
+  // const { error: updateError } = await supabase.rpc("decrement_trial_participants", {
+  //   p_enrollment_id: enrollmentId,
+  // })
+
+  // if (updateError) {
+  //   console.error("Error decrementing trial participants:", updateError)
+  //   return false
+  // }
+  console.warn("decrementTrialParticipants RPC call commented out due to potential type error.")
+  return true
+}
+

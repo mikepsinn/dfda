@@ -2,7 +2,7 @@
 
 import { createServerClient } from "@/lib/supabase"
 import type { Database } from "@/lib/database.types"
-import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabaseMutationResponse } from "@/lib/api/helpers"
+import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabaseMutationResponse } from "@/lib/actions-helpers"
 import { revalidatePath } from "next/cache"
 
 export type Condition = Database["public"]["Tables"]["conditions"]["Row"]

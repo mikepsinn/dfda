@@ -1,4 +1,4 @@
-import { getFeaturedTrials, getStatistics } from "@/lib/api/homepage";
+import { getFeaturedTrialsAction, getStatisticsAction } from "@/app/actions/homepage";
 import { HeroSection } from "@/components/HeroSection";
 import { ComparativeEffectivenessSection } from "@/components/ComparativeEffectivenessSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
@@ -9,8 +9,8 @@ import { FeaturedTrialsSection } from "@/components/FeaturedTrialsSection";
 
 export default async function Home() {
   // Fetch data on the server
-  const featuredTrials = await getFeaturedTrials();
-  const statistics = await getStatistics();
+  const featuredTrials = await getFeaturedTrialsAction();
+  const statistics = await getStatisticsAction();
   
   return (
     <>

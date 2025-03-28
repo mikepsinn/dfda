@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { StarRating } from "@/components/ui/star-rating"
-import { getTreatmentEffectiveness } from "@/lib/api/treatment-effectiveness"
+import { getEffectivenessForConditionAction } from "@/app/actions/treatment-effectiveness"
 
 interface TreatmentRankingListProps {
   condition: string
@@ -28,7 +28,7 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments,
     async function fetchTreatmentEffectiveness() {
       setIsLoading(true)
       try {
-        const data = await getTreatmentEffectiveness(condition, condition)
+        const data = await getEffectivenessForConditionAction(condition)
         setTreatments(Array.isArray(data) ? data : [data].filter(Boolean))
       } catch (error) {
         console.error("Error fetching treatment effectiveness:", error)
@@ -100,5 +100,3 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments,
     </div>
   )
 }
-
-

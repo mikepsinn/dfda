@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { createServerClient } from "@/lib/supabase"
 import { getServerUser } from "@/lib/server-auth"
-import { getTreatmentAverageRating, getTreatmentRatings, getUserTreatmentRating } from "@/lib/api/treatment-ratings"
+import { getAverageTreatmentRatingAction, getTreatmentRatingsAction, getUserTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 import { TreatmentHeader } from "./components/treatment-header"
 import { TreatmentDetails } from "./components/treatment-details"
 import { TreatmentReviews } from "./components/treatment-reviews"
@@ -84,13 +84,13 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
   // }
 
   // Get treatment ratings
-  const ratings = await getTreatmentRatings(params.id, conditionId)
-  const { average: averageRating, count: totalReviews } = await getTreatmentAverageRating(params.id, conditionId)
+  const ratings = await getTreatmentRatingsAction(params.id, conditionId)
+  const { average: averageRating, count: totalReviews } = await getAverageTreatmentRatingAction(params.id, conditionId)
 
   // Get user's existing rating if logged in
   let userRating: TreatmentRating | null = null
   if (user) {
-    const tempRating = await getUserTreatmentRating(user.id, params.id, conditionId)
+    const tempRating = await getUserTreatmentRatingAction(user.id, params.id, conditionId)
     userRating = tempRating
   }
 

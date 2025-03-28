@@ -3,66 +3,11 @@ description:
 globs: 
 alwaysApply: true
 ---
-# TypeScript Error Management
 
-## Continuous Error Checking
-- Run TypeScript checks frequently during development using `pnpm type-check`
-- Fix TypeScript errors immediately when detected, without asking for permission
-- Never commit code with TypeScript errors
-- Run checks before and after making significant changes
-
-## Error Resolution Priority
-1. Type definition errors
-2. Missing imports
-3. Incorrect type assertions
-4. Generic type constraints
-5. Interface implementations
-
-## Automatic Fixes
-- Apply automatic fixes for common TypeScript errors:
-  - Add missing type annotations
-  - Fix incorrect imports
-  - Update interface implementations
-  - Correct type assertions
-  - Add missing properties to objects
-
-## Best Practices
-- Use strict TypeScript configuration
-- Avoid `any` type unless absolutely necessary
-- Prefer explicit type annotations over inference for public APIs
-- Use proper type guards for runtime checks
-- Document complex type relationships with comments
-
-## Error Prevention
-- Write types first before implementation
-- Use TypeScript's built-in utility types when appropriate
-- Keep type definitions close to their usage
-- Break down complex types into smaller, reusable interfaces
-
-## Testing
-- Include type testing in unit tests
-- Test edge cases for generic types
-- Verify type guards work as expected
-- Test overloaded function signatures
-
-## Development Workflow
-1. Write/modify code
-2. Run `pnpm type-check` immediately
-3. Fix any errors before continuing
-4. Run tests to verify changes
-5. Commit only when all checks pass
-
-## Commands to Run Regularly
-```bash
-# Check for TypeScript errors
-pnpm type-check
-
-# Run linting
-pnpm lint
-
-# Run tests
-pnpm test
-
-# Fix linting issues
-pnpm lint:fix
-``` 
+- Run `pnpm check` regularly and fix errors (just run, don't ask for permission)
+- Use server actions whenever possible instead of api routes
+- Use Custom Logger: Use the logger from lib/logger.ts for errors instead of console.error
+- Root Lib/Components: Place library code in /lib and components in /components at the root level, not inside /app
+- Prioritize using generated types from lib/database.types.ts over creating new ones
+- Use server components whenever possible and always for pages
+- don't create new interfaces, use @lib/database.types.ts

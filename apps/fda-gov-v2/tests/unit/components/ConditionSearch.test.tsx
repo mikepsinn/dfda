@@ -2,19 +2,38 @@ import '@testing-library/jest-dom'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ConditionSearch } from '@/components/ConditionSearch'
-import { getConditions } from '@/lib/api/conditions'
+import { getConditionsAction } from '@/app/actions/conditions'
 import { act } from 'react'
 
-// Mock the getConditions function
-jest.mock('@/lib/api/conditions', () => ({
-  getConditions: jest.fn()
+// Mock the getConditionsAction function
+jest.mock('@/app/actions/conditions', () => ({
+  getConditionsAction: jest.fn(),
+  searchConditionsAction: jest.fn()
 }))
 
 describe('ConditionSearch', () => {
   const mockOnConditionSelect = jest.fn()
   const mockConditions = [
-    { id: '1', name: 'Alzheimer\'s Disease' },
-    { id: '2', name: 'Parkinson\'s Disease' }
+    { 
+      id: '1', 
+      name: 'Alzheimer\'s Disease',
+      description: 'A progressive neurologic disorder that causes the brain to shrink and brain cells to die.',
+      icd_code: 'G30',
+      global_variable_id: null,
+      created_at: '2024-03-01T00:00:00.000Z',
+      updated_at: '2024-03-01T00:00:00.000Z',
+      deleted_at: null
+    },
+    { 
+      id: '2', 
+      name: 'Parkinson\'s Disease',
+      description: 'A brain disorder that leads to shaking, stiffness, and difficulty with walking, balance, and coordination.',
+      icd_code: 'G20',
+      global_variable_id: null,
+      created_at: '2024-03-01T00:00:00.000Z',
+      updated_at: '2024-03-01T00:00:00.000Z',
+      deleted_at: null
+    }
   ]
   
   const defaultProps = {
@@ -26,7 +45,7 @@ describe('ConditionSearch', () => {
 
   beforeEach(() => {
     mockOnConditionSelect.mockClear();
-    (getConditions as jest.Mock).mockResolvedValue(mockConditions)
+    (getConditionsAction as jest.Mock).mockResolvedValue(mockConditions)
   })
 
   it('renders with placeholder text', () => {
@@ -66,7 +85,7 @@ describe('ConditionSearch', () => {
   it('fetches conditions if no initial conditions provided', async () => {
     render(<ConditionSearch {...defaultProps} initialConditions={[]} />)
     
-    expect(getConditions).toHaveBeenCalled()
+    expect(getConditionsAction).toHaveBeenCalled()
     
     await waitFor(() => {
       expect(screen.getByText('Loading conditions...')).toBeInTheDocument()

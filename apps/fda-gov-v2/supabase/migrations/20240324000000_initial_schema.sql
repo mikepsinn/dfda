@@ -804,4 +804,54 @@ CREATE INDEX idx_patient_conditions_deleted_at ON patient_conditions(deleted_at)
 CREATE INDEX idx_notifications_user_id ON notifications(user_id);
 CREATE INDEX idx_notifications_scheduled_for ON notifications(scheduled_for);
 CREATE INDEX idx_notifications_is_read ON notifications(is_read) WHERE is_read = false;
-CREATE INDEX idx_notifications_deleted_at ON notifications(deleted_at) WHERE deleted_at IS NOT NULL; 
+CREATE INDEX idx_notifications_deleted_at ON notifications(deleted_at) WHERE deleted_at IS NOT NULL;
+
+-- Contact messages table
+CREATE TABLE IF NOT EXISTS public.contact_messages (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now(),
+  deleted_at TIMESTAMPTZ,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  inquiry_type TEXT NOT NULL,
+  message TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'new',
+  resolved_at TIMESTAMPTZ,
+  resolved_by UUID REFERENCES public.profiles(id)
+);
+
+-- Add RLS policies for contact_messages
+ALTER TABLE public.contact_messages ENABLE ROW LEVEL SECURITY;
+
+-- Allow anyone to insert
+CREATE POLICY "Allow anyone to insert contact messages"
+  ON public.contact_messages
+  FOR INSERT
+  WITH CHECK (true);
+
+-- Only allow admins to view/update/delete
+CREATE POLICY "Allow admins to view contact messages"
+  ON public.contact_messages
+  FOR SELECT
+  USING (auth.jwt() ->> 'role' = 'admin');
+
+CREATE POLICY "Allow admins to update contact messages"
+  ON public.contact_messages
+  FOR UPDATE
+  USING (auth.jwt() ->> 'role' = 'admin');
+
+CREATE POLICY "Allow admins to delete contact messages"
+  ON public.contact_messages
+  FOR DELETE
+  USING (auth.jwt() ->> 'role' = 'admin');
+
+-- Add trigger for updated_at
+CREATE TRIGGER update_contact_messages_updated_at
+  BEFORE UPDATE ON contact_messages
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+-- Add index for contact_messages
+CREATE INDEX idx_contact_messages_status ON contact_messages(status);
+CREATE INDEX idx_contact_messages_deleted_at ON contact_messages(deleted_at) WHERE deleted_at IS NOT NULL; 

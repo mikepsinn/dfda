@@ -1,0 +1,8 @@
+---
+description: changing database schema or other database related changes
+globs: 
+alwaysApply: false
+---
+
+- Modify the existing initial migration file (supabase/migrations/20240324000000_initial_schema.sql) for database changes during this prototyping phase.
+- Run pnpm run db:local:reset-types after making schema changes in the migration file.

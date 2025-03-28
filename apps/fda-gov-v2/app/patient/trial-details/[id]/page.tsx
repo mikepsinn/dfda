@@ -23,10 +23,12 @@ export async function generateMetadata({ params }: TrialDetailsPageProps): Promi
     }
   }
 
-  return {
-    title: `${trial.name} | FDA v2`,
+  const metadata = {
+    title: `${trial.title} | FDA v2`,
     description: trial.description || "View details about this clinical trial and enrollment options.",
   }
+
+  return metadata
 }
 
 export default async function TrialDetailsPage({ params }: TrialDetailsPageProps) {
