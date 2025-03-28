@@ -5,11 +5,7 @@ import type React from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 
-interface OutcomeLabelsTabsWrapperProps {
-  children?: React.ReactNode
-}
-
-export function OutcomeLabelsTabsWrapper({ children }: OutcomeLabelsTabsWrapperProps) {
+export function OutcomeLabelsTabsWrapper() {
   return (
     <Tabs defaultValue="medications">
       <TabsList className="grid w-full grid-cols-4">
@@ -89,4 +85,3 @@ export function OutcomeLabelsTabsWrapper({ children }: OutcomeLabelsTabsWrapperP
     </Tabs>
   )
 }
-

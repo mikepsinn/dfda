@@ -3,7 +3,7 @@ import { cookies } from "next/headers"
 import type { Database } from "./database.types"
 
 // For server components
-export function createServerClient(cookieStore = cookies()) {
+export function createServerClient() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string
 
@@ -37,4 +37,3 @@ export function createBrowserClient() {
 
 // Alias for backward compatibility
 export const createClientSupabaseClient = createBrowserClient
-

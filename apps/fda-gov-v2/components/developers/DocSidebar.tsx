@@ -152,11 +152,14 @@ export function DocSidebar() {
 
   // Clean up any potential observers on unmount
   useEffect(() => {
+    // Capture the current ref value
+    const sidebarElement = sidebarRef.current;
+    
     return () => {
       // Explicitly clean up any potential observers
-      if (sidebarRef.current) {
+      if (sidebarElement) {
         // This forces any potential observers to disconnect
-        sidebarRef.current.style.height = "auto"
+        sidebarElement.style.height = "auto"
       }
     }
   }, [])
@@ -249,4 +252,3 @@ export function DocSidebar() {
     </>
   )
 }
-

@@ -1,7 +1,6 @@
 "use server"
 
 import { createServerClient } from "@/lib/supabase"
-import { cookies } from "next/headers"
 import type { Database } from "@/lib/database.types"
 import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabaseMutationResponse } from "@/lib/api/helpers"
 import { revalidatePath } from "next/cache"
@@ -12,8 +11,7 @@ export type ConditionUpdate = Database["public"]["Tables"]["conditions"]["Update
 
 // Get all conditions
 export async function getConditionsAction() {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = createServerClient()
 
   const response = await supabase.from("conditions").select("*").order("name")
 
@@ -27,8 +25,7 @@ export async function getConditionsAction() {
 
 // Get a condition by ID
 export async function getConditionByIdAction(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = createServerClient()
 
   const response = await supabase.from("conditions").select("*").eq("id", id).single()
 
@@ -42,8 +39,7 @@ export async function getConditionByIdAction(id: string) {
 
 // Search conditions by name
 export async function searchConditionsAction(query: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = createServerClient()
 
   const response = await supabase
     .from("conditions")
@@ -62,8 +58,7 @@ export async function searchConditionsAction(query: string) {
 
 // Create a new condition
 export async function createConditionAction(condition: ConditionInsert) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = createServerClient()
 
   const response = await supabase.from("conditions").insert(condition).select().single()
 
@@ -79,8 +74,7 @@ export async function createConditionAction(condition: ConditionInsert) {
 
 // Update a condition
 export async function updateConditionAction(id: string, updates: ConditionUpdate) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = createServerClient()
 
   const response = await supabase
     .from("conditions")
@@ -102,8 +96,7 @@ export async function updateConditionAction(id: string, updates: ConditionUpdate
 
 // Delete a condition
 export async function deleteConditionAction(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = createServerClient()
 
   const response = await supabase.from("conditions").delete().eq("id", id)
 

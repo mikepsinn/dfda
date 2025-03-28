@@ -14,20 +14,21 @@ export function DocContent() {
   useEffect(() => {
     // Force a stable layout by ensuring content has a fixed width initially
     if (contentRef.current) {
-      const originalWidth = contentRef.current.style.width
-      contentRef.current.style.width = `${contentRef.current.offsetWidth}px`
+      const contentElement = contentRef.current;
+      const originalWidth = contentElement.style.width
+      contentElement.style.width = `${contentElement.offsetWidth}px`
 
       // After a short delay, restore original width to allow natural resizing
       const timer = setTimeout(() => {
-        if (contentRef.current) {
-          contentRef.current.style.width = originalWidth
+        if (contentElement) {
+          contentElement.style.width = originalWidth
         }
       }, 100)
 
       return () => {
         clearTimeout(timer)
-        if (contentRef.current) {
-          contentRef.current.style.width = originalWidth
+        if (contentElement) {
+          contentElement.style.width = originalWidth
         }
       }
     }
@@ -39,8 +40,9 @@ export function DocContent() {
       // Force any ResizeObservers to disconnect by ensuring the element
       // has a stable size when unmounting
       if (contentRef.current) {
-        contentRef.current.style.height = "auto"
-        contentRef.current.style.width = "auto"
+        const contentElement = contentRef.current;
+        contentElement.style.height = "auto"
+        contentElement.style.width = "auto"
       }
     }
   }, [])
@@ -901,4 +903,3 @@ async function handleCallback(code) {
     </div>
   )
 }
-

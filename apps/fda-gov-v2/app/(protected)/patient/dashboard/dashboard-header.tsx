@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { PlusCircle } from "lucide-react"
 import Link from "next/link"
+import type { User } from "@supabase/supabase-js"
 
 interface DashboardHeaderProps {
-  user: any
+  user: User | null
 }
 
 export function DashboardHeader({ user }: DashboardHeaderProps) {
@@ -14,7 +15,7 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
     <Card>
       <CardContent className="flex items-center justify-between p-6">
         <div>
-          <h1 className="text-2xl font-bold">Welcome, {user?.name || "Patient"}</h1>
+          <h1 className="text-2xl font-bold">Welcome, {user?.user_metadata?.name || "Patient"}</h1>
           <p className="text-muted-foreground mt-1">Manage your clinical trials and health data</p>
         </div>
         <Link href="/patient/find-trials">
@@ -27,4 +28,3 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
     </Card>
   )
 }
-

@@ -1,0 +1,12 @@
+
+- Use pnpm: Use pnpm for all package management commands (pnpm install, pnpm build, etc.). 
+- Run pnpm check: Frequently run pnpm check (lint --fix and type check) and fix errors immediately.
+
+- Unused Variable Handling: Analyze unused variables. Use them if needed, otherwise delete or prefix with _.
+- Default to Server Components: Keep Next.js pages as Server Components by default. Extract client logic to separate components using 'use client'.
+- Use Custom Logger: Use the logger from lib/logger.ts for errors instead of console.error.
+- Root Lib/Components: Place library code in /lib and components in /components at the root level, not inside /app.
+
+- Prioritize using generated types from lib/database.types.ts over creating new ones.
+- Modify the existing initial migration file (supabase/migrations/20240324000000_initial_schema.sql) for database changes during this prototyping phase.
+- Run pnpm run db:local:reset-types after making schema changes in the migration file.

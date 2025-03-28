@@ -5,14 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { demoLogin } from "@/app/actions/demo-login"
 import { Loader2 } from "lucide-react"
-import { useRouter } from "next/navigation"
 
 interface DemoLoginButtonProps {
   onError?: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
 }
 
 export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
-  const router = useRouter()
   const [userType, setUserType] = useState<"patient" | "doctor" | "sponsor">("patient")
   const [isLoading, setIsLoading] = useState(false)
 
@@ -79,4 +77,3 @@ export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
     </div>
   )
 }
-

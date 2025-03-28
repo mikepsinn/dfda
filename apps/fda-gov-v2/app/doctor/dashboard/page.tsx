@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 // TODO: Uncomment when doctor user data is needed
 // import { getServerUser } from "@/lib/supabase/auth-utils.server"
-import { createClient as createServerSupabaseClient } from "@/lib/supabase/server"
 import { DashboardHeader } from "./components/dashboard-header"
 import { DashboardStats } from "./components/dashboard-stats"
 import { ActiveTrials } from "./components/active-trials"

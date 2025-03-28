@@ -15,7 +15,7 @@ export async function createClient() {
           const cookieStore = await cookies()
           try {
             cookieStore.set({ name, value, ...options })
-          } catch (error) {
+          } catch (_error) {
             // This can happen if the cookie is set in a Server Component
             // We can safely ignore this error since cookies will be handled by middleware
           }
@@ -24,7 +24,7 @@ export async function createClient() {
           const cookieStore = await cookies()
           try {
             cookieStore.delete({ name, ...options })
-          } catch (error) {
+          } catch (_error) {
             // This can happen if the cookie is removed in a Server Component
             // We can safely ignore this error since cookies will be handled by middleware
           }

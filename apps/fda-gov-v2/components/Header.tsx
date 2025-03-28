@@ -48,7 +48,7 @@ export function Header() {
     })
 
     return () => subscription.unsubscribe()
-  }, [])
+  }, [supabase.auth])
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
@@ -233,4 +233,3 @@ export function Header() {
     </header>
   )
 }
-

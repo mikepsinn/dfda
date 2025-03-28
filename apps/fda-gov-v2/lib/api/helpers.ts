@@ -1,4 +1,4 @@
-import { PostgrestError, PostgrestSingleResponse } from "@supabase/supabase-js"
+import { PostgrestSingleResponse } from "@supabase/supabase-js"
 
 /**
  * Safe type casting for Supabase data results

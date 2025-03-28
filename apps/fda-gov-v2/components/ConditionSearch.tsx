@@ -11,7 +11,6 @@ interface ConditionSearchProps {
   onConditionSelect: (condition: string) => void
   initialSearchTerm?: string
   initialConditions?: Condition[]
-  availableConditions?: string[]
   placeholder?: string
 }
 
@@ -19,7 +18,6 @@ export function ConditionSearch({
   onConditionSelect,
   initialSearchTerm = "",
   initialConditions = [],
-  availableConditions,
   placeholder = "Search for a condition (e.g., diabetes, arthritis, depression)...",
 }: ConditionSearchProps) {
   const [allConditions, setAllConditions] = useState<Condition[]>(initialConditions)
