@@ -1,11 +1,11 @@
 "use server"
 
 import { createServerClient } from "@/lib/supabase"
-import { cookies } from "next/headers"
+
 
 export async function seedDatabase() {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   try {
     // Seed conditions

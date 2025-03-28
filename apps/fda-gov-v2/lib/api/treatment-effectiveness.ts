@@ -1,5 +1,5 @@
 import { createServerClient } from "@/lib/supabase"
-import { cookies } from "next/headers"
+
 import type { Database } from "@/lib/database.types"
 
 export type TreatmentEffectiveness = Database["public"]["Tables"]["treatment_effectiveness"]["Row"]
@@ -8,8 +8,8 @@ export type TreatmentEffectivenessUpdate = Database["public"]["Tables"]["treatme
 
 // Get effectiveness data for a treatment and condition
 export async function getTreatmentEffectiveness(treatmentId: string, conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_effectiveness")
@@ -28,8 +28,8 @@ export async function getTreatmentEffectiveness(treatmentId: string, conditionId
 
 // Get all effectiveness data for a condition
 export async function getEffectivenessForCondition(conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_effectiveness")
@@ -50,8 +50,8 @@ export async function getEffectivenessForCondition(conditionId: string) {
 
 // Create new effectiveness data
 export async function createTreatmentEffectiveness(effectiveness: TreatmentEffectivenessInsert) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("treatment_effectiveness").insert(effectiveness).select().single()
 
@@ -69,8 +69,8 @@ export async function updateTreatmentEffectiveness(
   conditionId: string,
   updates: TreatmentEffectivenessUpdate,
 ) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_effectiveness")
@@ -90,8 +90,8 @@ export async function updateTreatmentEffectiveness(
 
 // Delete effectiveness data
 export async function deleteTreatmentEffectiveness(treatmentId: string, conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { error } = await supabase
     .from("treatment_effectiveness")

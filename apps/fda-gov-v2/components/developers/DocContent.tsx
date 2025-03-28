@@ -36,13 +36,15 @@ export function DocContent() {
 
   // Replace the existing cleanup useEffect with:
   useEffect(() => {
+    // Capture the ref value at the beginning of the effect
+    const currentContentRef = contentRef.current;
+    
     return () => {
       // Force any ResizeObservers to disconnect by ensuring the element
       // has a stable size when unmounting
-      if (contentRef.current) {
-        const contentElement = contentRef.current;
-        contentElement.style.height = "auto"
-        contentElement.style.width = "auto"
+      if (currentContentRef) {
+        currentContentRef.style.height = "auto"
+        currentContentRef.style.width = "auto"
       }
     }
   }, [])

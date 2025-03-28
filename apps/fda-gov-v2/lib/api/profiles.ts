@@ -1,5 +1,5 @@
 import { createServerClient } from "@/lib/supabase"
-import { cookies } from "next/headers"
+
 import type { Database } from "@/lib/database.types"
 
 export type Profile = Database["public"]["Tables"]["profiles"]["Row"]
@@ -8,8 +8,8 @@ export type ProfileUpdate = Database["public"]["Tables"]["profiles"]["Update"]
 
 // Get a user profile by ID
 export async function getProfileById(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("profiles").select("*").eq("id", id).single()
 
@@ -23,8 +23,8 @@ export async function getProfileById(id: string) {
 
 // Get profiles by user type
 export async function getProfilesByType(userType: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("profiles")
@@ -42,8 +42,8 @@ export async function getProfilesByType(userType: string) {
 
 // Create a new profile
 export async function createProfile(profile: ProfileInsert) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("profiles").insert(profile).select().single()
 
@@ -57,8 +57,8 @@ export async function createProfile(profile: ProfileInsert) {
 
 // Update a profile
 export async function updateProfile(id: string, updates: ProfileUpdate) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("profiles")
@@ -77,8 +77,8 @@ export async function updateProfile(id: string, updates: ProfileUpdate) {
 
 // Delete a profile
 export async function deleteProfile(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { error } = await supabase.from("profiles").delete().eq("id", id)
 
@@ -92,8 +92,8 @@ export async function deleteProfile(id: string) {
 
 // Get the current user's profile
 export async function getCurrentProfile() {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const {
     data: { user },

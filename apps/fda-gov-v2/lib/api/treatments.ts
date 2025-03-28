@@ -1,5 +1,5 @@
 import { createServerClient } from "@/lib/supabase"
-import { cookies } from "next/headers"
+
 import type { Database } from "@/lib/database.types"
 
 export type Treatment = Database["public"]["Tables"]["treatments"]["Row"]
@@ -8,8 +8,8 @@ export type TreatmentUpdate = Database["public"]["Tables"]["treatments"]["Update
 
 // Get all treatments
 export async function getTreatments() {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("treatments").select("*").order("name")
 
@@ -23,8 +23,8 @@ export async function getTreatments() {
 
 // Get a treatment by ID
 export async function getTreatmentById(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("treatments").select("*").eq("id", id).single()
 
@@ -38,8 +38,8 @@ export async function getTreatmentById(id: string) {
 
 // Search treatments by name
 export async function searchTreatments(query: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatments")
@@ -58,8 +58,8 @@ export async function searchTreatments(query: string) {
 
 // Get treatments for a specific condition
 export async function getTreatmentsForCondition(conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_effectiveness")
@@ -90,8 +90,8 @@ export async function getTreatmentsForCondition(conditionId: string) {
 
 // Create a new treatment
 export async function createTreatment(treatment: TreatmentInsert) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("treatments").insert(treatment).select().single()
 
@@ -105,8 +105,8 @@ export async function createTreatment(treatment: TreatmentInsert) {
 
 // Update a treatment
 export async function updateTreatment(id: string, updates: TreatmentUpdate) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatments")
@@ -125,8 +125,8 @@ export async function updateTreatment(id: string, updates: TreatmentUpdate) {
 
 // Delete a treatment
 export async function deleteTreatment(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { error } = await supabase.from("treatments").delete().eq("id", id)
 

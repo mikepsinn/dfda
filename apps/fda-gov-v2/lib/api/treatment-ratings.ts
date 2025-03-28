@@ -1,5 +1,5 @@
 import { createServerClient } from "@/lib/supabase"
-import { cookies } from "next/headers"
+
 import type { Database } from "@/lib/database.types"
 
 export type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
@@ -8,8 +8,8 @@ export type TreatmentRatingUpdate = Database["public"]["Tables"]["treatment_rati
 
 // Get all ratings for a treatment and condition
 export async function getTreatmentRatings(treatmentId: string, conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_ratings")
@@ -31,8 +31,8 @@ export async function getTreatmentRatings(treatmentId: string, conditionId: stri
 
 // Get a specific rating by ID
 export async function getTreatmentRatingById(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_ratings")
@@ -53,8 +53,8 @@ export async function getTreatmentRatingById(id: string) {
 
 // Get a user's rating for a treatment and condition
 export async function getUserTreatmentRating(userId: string, treatmentId: string, conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_ratings")
@@ -75,8 +75,8 @@ export async function getUserTreatmentRating(userId: string, treatmentId: string
 
 // Get average rating for a treatment and condition
 export async function getAverageTreatmentRating(treatmentId: string, conditionId: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.rpc("get_average_treatment_rating", {
     p_treatment_id: treatmentId,
@@ -99,8 +99,8 @@ export const markReviewAsHelpful = markRatingAsHelpful
 
 // Create a new rating
 export async function createTreatmentRating(rating: TreatmentRatingInsert) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase.from("treatment_ratings").insert(rating).select().single()
 
@@ -114,8 +114,8 @@ export async function createTreatmentRating(rating: TreatmentRatingInsert) {
 
 // Update a rating
 export async function updateTreatmentRating(id: string, updates: TreatmentRatingUpdate) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { data, error } = await supabase
     .from("treatment_ratings")
@@ -134,8 +134,8 @@ export async function updateTreatmentRating(id: string, updates: TreatmentRating
 
 // Delete a rating
 export async function deleteTreatmentRating(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { error } = await supabase.from("treatment_ratings").delete().eq("id", id)
 
@@ -149,8 +149,8 @@ export async function deleteTreatmentRating(id: string) {
 
 // Mark a rating as helpful
 export async function markRatingAsHelpful(id: string) {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  
+  const supabase = createServerClient()
 
   const { error } = await supabase.rpc("increment_helpful_count", {
     p_rating_id: id,
