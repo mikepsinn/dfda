@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS conditions (
   description TEXT NOT NULL,
   icd_code TEXT,
   global_variable_id UUID, -- Will be linked to global_variables
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -17,6 +18,7 @@ CREATE TABLE IF NOT EXISTS treatments (
   manufacturer TEXT,
   approval_status TEXT NOT NULL,
   global_variable_id UUID, -- Will be linked to global_variables
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -29,6 +31,7 @@ CREATE TABLE IF NOT EXISTS treatment_effectiveness (
   side_effects_score NUMERIC NOT NULL,
   cost_effectiveness_score NUMERIC NOT NULL,
   evidence_level TEXT NOT NULL,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -41,6 +44,7 @@ CREATE TABLE IF NOT EXISTS unit_categories (
   name TEXT NOT NULL,
   description TEXT,
   emoji TEXT, -- Emoji representation
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -55,6 +59,7 @@ CREATE TABLE IF NOT EXISTS units (
   conversion_factor NUMERIC DEFAULT 1, -- For linear conversions: new_value = old_value * factor + offset
   conversion_offset NUMERIC DEFAULT 0, -- For offset conversions like Celsius to Fahrenheit
   is_default BOOLEAN DEFAULT false,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT unique_unit_abbreviation_per_category UNIQUE (abbreviation, unit_category_id)
@@ -66,6 +71,7 @@ CREATE TABLE IF NOT EXISTS variable_categories (
   name TEXT NOT NULL UNIQUE,
   description TEXT,
   emoji TEXT, -- Emoji representation
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -78,6 +84,7 @@ CREATE TABLE IF NOT EXISTS global_variables (
   default_unit_id UUID REFERENCES units(id) ON DELETE SET NULL,
   description TEXT,
   emoji TEXT, -- Emoji representation
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT unique_name_per_category UNIQUE (name, variable_category_id)
@@ -100,8 +107,27 @@ CREATE TABLE IF NOT EXISTS profiles (
   organization_name TEXT,
   contact_name TEXT,
   user_type TEXT NOT NULL CHECK (user_type IN ('patient', 'doctor', 'sponsor')) DEFAULT 'patient',
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Direct patient-condition relationship table
+CREATE TABLE IF NOT EXISTS patient_conditions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  patient_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  condition_id UUID NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
+  diagnosing_doctor_id UUID REFERENCES profiles(id) ON DELETE SET NULL,
+  diagnosis_date TIMESTAMP WITH TIME ZONE NOT NULL,
+  end_date TIMESTAMP WITH TIME ZONE, -- For conditions that have been resolved
+  notes TEXT,
+  severity TEXT, -- mild, moderate, severe, etc.
+  status TEXT NOT NULL DEFAULT 'active', -- active, resolved, in_remission, etc.
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT unique_patient_condition UNIQUE (patient_id, condition_id) 
+    WHERE deleted_at IS NULL AND end_date IS NULL
 );
 
 -- User variables table (variables that users track)
@@ -119,9 +145,11 @@ CREATE TABLE IF NOT EXISTS user_variables (
   reminder_start_date DATE,
   reminder_end_date DATE,
   custom_recurrence_rule TEXT, -- RFC 5545 (iCalendar) RRULE for complex patterns
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT unique_user_variable UNIQUE (user_id, variable_id)
+  CONSTRAINT unique_user_variable UNIQUE (user_id, variable_id) 
+    WHERE deleted_at IS NULL
 );
 
 -- Measurements table
@@ -135,6 +163,26 @@ CREATE TABLE IF NOT EXISTS measurements (
   start_at TIMESTAMP WITH TIME ZONE NOT NULL,
   end_at TIMESTAMP WITH TIME ZONE,
   notes TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Notifications table
+CREATE TABLE IF NOT EXISTS notifications (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  message TEXT NOT NULL,
+  notification_type TEXT NOT NULL, -- reminder, alert, info, etc.
+  related_entity_type TEXT, -- condition, treatment, measurement, etc.
+  related_entity_id UUID, -- ID of the related entity
+  is_read BOOLEAN DEFAULT false,
+  read_at TIMESTAMP WITH TIME ZONE,
+  scheduled_for TIMESTAMP WITH TIME ZONE NOT NULL, -- When to show the notification
+  expires_at TIMESTAMP WITH TIME ZONE, -- When the notification expires
+  action_url TEXT, -- URL to navigate to when notification is clicked
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -147,9 +195,11 @@ CREATE TABLE IF NOT EXISTS treatment_side_effect_ratings (
   side_effect_variable_id UUID NOT NULL REFERENCES global_variables(id) ON DELETE CASCADE,
   severity_rating INTEGER NOT NULL CHECK (severity_rating BETWEEN 1 AND 10),
   notes TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT unique_user_treatment_side_effect UNIQUE (user_id, treatment_id, side_effect_variable_id)
+    WHERE deleted_at IS NULL
 );
 
 -- Enable RLS on profiles
@@ -158,15 +208,15 @@ ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 -- Create RLS policies for profiles
 CREATE POLICY "Users can view own profile"
   ON profiles FOR SELECT
-  USING (auth.uid() = id);
+  USING (auth.uid() = id AND deleted_at IS NULL);
 
 CREATE POLICY "Anyone can view doctor profiles"
   ON profiles FOR SELECT
-  USING (user_type = 'doctor');
+  USING (user_type = 'doctor' AND deleted_at IS NULL);
 
 CREATE POLICY "Anyone can view sponsor profiles"
   ON profiles FOR SELECT
-  USING (user_type = 'sponsor');
+  USING (user_type = 'sponsor' AND deleted_at IS NULL);
 
 CREATE POLICY "Users can insert their own profile"
   ON profiles FOR INSERT
@@ -176,9 +226,148 @@ CREATE POLICY "Users can update own profile"
   ON profiles FOR UPDATE
   USING (auth.uid() = id);
 
+-- Enable RLS on key tables
+ALTER TABLE measurements ENABLE ROW LEVEL SECURITY;
+ALTER TABLE user_variables ENABLE ROW LEVEL SECURITY;
+ALTER TABLE patient_conditions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE notifications ENABLE ROW LEVEL SECURITY;
+ALTER TABLE treatment_side_effect_ratings ENABLE ROW LEVEL SECURITY;
+
+-- Create RLS policies for measurements
+CREATE POLICY "Users can select own measurements"
+  ON measurements FOR SELECT
+  USING (auth.uid() = user_id AND deleted_at IS NULL);
+
+CREATE POLICY "Users can insert own measurements"
+  ON measurements FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own measurements"
+  ON measurements FOR UPDATE
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can delete own measurements"
+  ON measurements FOR DELETE
+  USING (auth.uid() = user_id);
+
+-- Create RLS policies for user_variables
+CREATE POLICY "Users can select own user_variables"
+  ON user_variables FOR SELECT
+  USING (auth.uid() = user_id AND deleted_at IS NULL);
+
+CREATE POLICY "Users can insert own user_variables"
+  ON user_variables FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own user_variables"
+  ON user_variables FOR UPDATE
+  USING (auth.uid() = user_id);
+
+CREATE POLICY "Users can delete own user_variables"
+  ON user_variables FOR DELETE
+  USING (auth.uid() = user_id);
+
+-- Create RLS policies for patient_conditions
+CREATE POLICY "Patients can select own conditions"
+  ON patient_conditions FOR SELECT
+  USING (auth.uid() = patient_id AND deleted_at IS NULL);
+
+CREATE POLICY "Doctors can select their patients' conditions"
+  ON patient_conditions FOR SELECT
+  USING (
+    EXISTS (
+      SELECT 1 FROM profiles
+      WHERE id = auth.uid() AND user_type = 'doctor' AND deleted_at IS NULL
+    ) AND deleted_at IS NULL
+  );
+
+CREATE POLICY "Patients can insert own conditions"
+  ON patient_conditions FOR INSERT
+  WITH CHECK (auth.uid() = patient_id);
+
+CREATE POLICY "Doctors can insert patient conditions"
+  ON patient_conditions FOR INSERT
+  WITH CHECK (
+    EXISTS (
+      SELECT 1 FROM profiles
+      WHERE id = auth.uid() AND user_type = 'doctor' AND deleted_at IS NULL
+    )
+  );
+
+CREATE POLICY "Patients can update own conditions"
+  ON patient_conditions FOR UPDATE
+  USING (auth.uid() = patient_id);
+
+CREATE POLICY "Doctors can update patient conditions"
+  ON patient_conditions FOR UPDATE
+  USING (
+    EXISTS (
+      SELECT 1 FROM profiles
+      WHERE id = auth.uid() AND user_type = 'doctor' AND deleted_at IS NULL
+    )
+  );
+
+-- Create RLS policies for notifications
+CREATE POLICY "Users can select own notifications"
+  ON notifications FOR SELECT
+  USING (auth.uid() = user_id AND deleted_at IS NULL);
+
+CREATE POLICY "Users can update own notifications"
+  ON notifications FOR UPDATE
+  USING (auth.uid() = user_id);
+
+-- Create RLS policies for treatment_side_effect_ratings
+CREATE POLICY "Users can select own treatment_side_effect_ratings"
+  ON treatment_side_effect_ratings FOR SELECT
+  USING (auth.uid() = user_id AND deleted_at IS NULL);
+
+CREATE POLICY "Users can insert own treatment_side_effect_ratings"
+  ON treatment_side_effect_ratings FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
+CREATE POLICY "Users can update own treatment_side_effect_ratings"
+  ON treatment_side_effect_ratings FOR UPDATE
+  USING (auth.uid() = user_id);
+
 -- Create indexes for profiles
 CREATE INDEX profiles_user_type_idx ON profiles(user_type);
 CREATE INDEX profiles_email_idx ON profiles(email);
+CREATE INDEX profiles_deleted_at_idx ON profiles(deleted_at) WHERE deleted_at IS NOT NULL;
+
+-- Function for soft delete and restore
+CREATE OR REPLACE FUNCTION soft_delete_record(p_table_name TEXT, p_record_id UUID)
+RETURNS BOOLEAN AS $$
+DECLARE
+  v_sql TEXT;
+  v_result BOOLEAN;
+BEGIN
+  v_sql := 'UPDATE ' || quote_ident(p_table_name) || 
+           ' SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL';
+  
+  EXECUTE v_sql USING p_record_id;
+  
+  GET DIAGNOSTICS v_result = ROW_COUNT;
+  
+  RETURN v_result > 0;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE FUNCTION restore_soft_deleted_record(p_table_name TEXT, p_record_id UUID)
+RETURNS BOOLEAN AS $$
+DECLARE
+  v_sql TEXT;
+  v_result BOOLEAN;
+BEGIN
+  v_sql := 'UPDATE ' || quote_ident(p_table_name) || 
+           ' SET deleted_at = NULL WHERE id = $1 AND deleted_at IS NOT NULL';
+  
+  EXECUTE v_sql USING p_record_id;
+  
+  GET DIAGNOSTICS v_result = ROW_COUNT;
+  
+  RETURN v_result > 0;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
 
 -- Create function to handle new user creation
 CREATE OR REPLACE FUNCTION public.handle_new_user()
@@ -208,6 +397,7 @@ CREATE TABLE IF NOT EXISTS treatment_ratings (
   user_type TEXT NOT NULL,
   verified BOOLEAN DEFAULT false,
   helpful_count INTEGER DEFAULT 0,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -229,6 +419,7 @@ CREATE TABLE IF NOT EXISTS trials (
   compensation NUMERIC,
   inclusion_criteria JSONB,
   exclusion_criteria JSONB,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -242,6 +433,7 @@ CREATE TABLE IF NOT EXISTS trial_enrollments (
   enrollment_date TIMESTAMP WITH TIME ZONE NOT NULL,
   completion_date TIMESTAMP WITH TIME ZONE,
   notes TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -256,18 +448,19 @@ CREATE TABLE IF NOT EXISTS data_submissions (
   reviewed_by UUID REFERENCES profiles(id) ON DELETE SET NULL,
   review_date TIMESTAMP WITH TIME ZONE,
   review_notes TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Insert default variable categories
-INSERT INTO variable_categories (name, description) VALUES 
-('Conditions', 'Medical conditions and diagnoses'),
-('Treatments', 'Medications and other medical treatments'),
-('Symptoms', 'Patient-reported symptoms'),
-('Side Effects', 'Adverse effects from treatments'),
-('Foods', 'Food and nutrition intake'),
-('Vital Signs', 'Medical vital measurements');
+INSERT INTO variable_categories (name, description, emoji) VALUES 
+('Conditions', 'Medical conditions and diagnoses', '🩺'),
+('Treatments', 'Medications and other medical treatments', '💊'),
+('Symptoms', 'Patient-reported symptoms', '🤒'),
+('Side Effects', 'Adverse effects from treatments', '⚠️'),
+('Foods', 'Food and nutrition intake', '🍎'),
+('Vital Signs', 'Medical vital measurements', '❤️');
 
 -- Create functions for syncing between interface tables and global_variables
 
@@ -370,7 +563,8 @@ BEGIN
     COUNT(*) as count
   FROM treatment_ratings
   WHERE treatment_id = p_treatment_id
-  AND condition_id = p_condition_id;
+  AND condition_id = p_condition_id
+  AND deleted_at IS NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -379,7 +573,8 @@ RETURNS void AS $$
 BEGIN
   UPDATE treatment_ratings
   SET helpful_count = helpful_count + 1
-  WHERE id = p_rating_id;
+  WHERE id = p_rating_id
+  AND deleted_at IS NULL;
 END;
 $$ LANGUAGE plpgsql;
 
@@ -433,7 +628,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 -- Create a view to get all patient conditions
-CREATE VIEW patient_conditions AS
+CREATE VIEW patient_conditions_view AS
 SELECT 
   m.user_id AS patient_id,
   g.id AS variable_id,
@@ -447,10 +642,13 @@ FROM measurements m
 JOIN global_variables g ON m.variable_id = g.id
 JOIN conditions c ON c.global_variable_id = g.id
 WHERE g.variable_category_id = (SELECT id FROM variable_categories WHERE name = 'Conditions')
+AND m.deleted_at IS NULL
+AND g.deleted_at IS NULL
+AND c.deleted_at IS NULL
 GROUP BY m.user_id, g.id, c.id, g.name, c.description, c.icd_code;
 
 -- Create a view to get all patient treatments
-CREATE VIEW patient_treatments AS
+CREATE VIEW patient_treatments_view AS
 SELECT 
   m.user_id AS patient_id,
   g.id AS variable_id,
@@ -465,6 +663,9 @@ FROM measurements m
 JOIN global_variables g ON m.variable_id = g.id
 JOIN treatments t ON t.global_variable_id = g.id
 WHERE g.variable_category_id = (SELECT id FROM variable_categories WHERE name = 'Treatments')
+AND m.deleted_at IS NULL
+AND g.deleted_at IS NULL
+AND t.deleted_at IS NULL
 GROUP BY m.user_id, g.id, t.id, g.name, t.description, t.treatment_type, t.manufacturer;
 
 -- Create triggers for updated_at
@@ -552,12 +753,43 @@ CREATE TRIGGER update_treatment_side_effect_ratings_updated_at
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
 
+CREATE TRIGGER update_patient_conditions_updated_at
+  BEFORE UPDATE ON patient_conditions
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_notifications_updated_at
+  BEFORE UPDATE ON notifications
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
 -- Create indexes for better performance
 CREATE INDEX idx_measurements_user_id ON measurements(user_id);
 CREATE INDEX idx_measurements_variable_id ON measurements(variable_id);
 CREATE INDEX idx_measurements_start_at ON measurements(start_at);
+CREATE INDEX idx_measurements_deleted_at ON measurements(deleted_at) WHERE deleted_at IS NOT NULL;
+
 CREATE INDEX idx_user_variables_user_id ON user_variables(user_id);
+CREATE INDEX idx_user_variables_deleted_at ON user_variables(deleted_at) WHERE deleted_at IS NOT NULL;
+
 CREATE INDEX idx_global_variables_category_id ON global_variables(variable_category_id);
+CREATE INDEX idx_global_variables_deleted_at ON global_variables(deleted_at) WHERE deleted_at IS NOT NULL;
+
 CREATE INDEX idx_treatment_side_effect_ratings_user_id ON treatment_side_effect_ratings(user_id);
+CREATE INDEX idx_treatment_side_effect_ratings_deleted_at ON treatment_side_effect_ratings(deleted_at) WHERE deleted_at IS NOT NULL;
+
 CREATE INDEX idx_conditions_global_variable_id ON conditions(global_variable_id);
-CREATE INDEX idx_treatments_global_variable_id ON treatments(global_variable_id); 
+CREATE INDEX idx_conditions_deleted_at ON conditions(deleted_at) WHERE deleted_at IS NOT NULL;
+
+CREATE INDEX idx_treatments_global_variable_id ON treatments(global_variable_id);
+CREATE INDEX idx_treatments_deleted_at ON treatments(deleted_at) WHERE deleted_at IS NOT NULL;
+
+CREATE INDEX idx_patient_conditions_patient_id ON patient_conditions(patient_id);
+CREATE INDEX idx_patient_conditions_condition_id ON patient_conditions(condition_id);
+CREATE INDEX idx_patient_conditions_status ON patient_conditions(status);
+CREATE INDEX idx_patient_conditions_deleted_at ON patient_conditions(deleted_at) WHERE deleted_at IS NOT NULL;
+
+CREATE INDEX idx_notifications_user_id ON notifications(user_id);
+CREATE INDEX idx_notifications_scheduled_for ON notifications(scheduled_for);
+CREATE INDEX idx_notifications_is_read ON notifications(is_read) WHERE is_read = false;
+CREATE INDEX idx_notifications_deleted_at ON notifications(deleted_at) WHERE deleted_at IS NOT NULL; 
