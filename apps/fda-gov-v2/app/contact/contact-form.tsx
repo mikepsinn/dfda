@@ -57,7 +57,7 @@ export function ContactForm() {
         </div>
         <h3 className="text-xl font-semibold mb-2">Message Sent Successfully</h3>
         <p className="text-muted-foreground mb-6">
-          Thank you for reaching out! We've received your message and will get back to you as soon as possible.
+          Thank you for reaching out! We&apos;ve received your message and will get back to you as soon as possible.
         </p>
         <Button onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
       </div>
@@ -105,4 +105,3 @@ export function ContactForm() {
     </form>
   )
 }
-

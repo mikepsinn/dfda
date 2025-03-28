@@ -55,7 +55,7 @@ export default function DeveloperPortal() {
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
                     Integrate real-world data from over 50,000 clinical trials, including patient-reported outcomes,
-                    side effect profiles, and comparative effectiveness metrics that aren't available anywhere else.
+                    side effect profiles, and comparative effectiveness metrics that aren&apos;t available anywhere else.
                   </p>
                 </CardContent>
               </Card>
@@ -140,8 +140,8 @@ export default function DeveloperPortal() {
                     <div className="space-y-2">
                       <h3 className="text-lg font-medium">1. Request an API Key</h3>
                       <p className="text-sm text-muted-foreground">
-                        Fill out the form below to request an API key. We'll review your request and send your API key
-                        to the provided email address.
+                        Fill out the form below to request an API key. We&apos;ll review your request and send your API
+                        key to the provided email address.
                       </p>
                       <div className="rounded-lg border p-4 mt-4">
                         <ApiKeyRequestForm />
@@ -162,7 +162,8 @@ export default function DeveloperPortal() {
                     <div className="space-y-2">
                       <h3 className="text-lg font-medium">2. Authentication</h3>
                       <p className="text-sm text-muted-foreground">
-                        Once you receive your API key, you'll need to include it in the header of all your API requests.
+                        Once you receive your API key, you&apos;ll need to include it in the header of all your API
+                        requests.
                       </p>
                       <div className="rounded-lg bg-muted p-4 mt-2">
                         <div className="flex items-center justify-between">
@@ -539,8 +540,8 @@ export default function DeveloperPortal() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground italic">
-                    "The FDA.gov v2 API has been transformative for our patient engagement platform. We've seen a 43%
-                    increase in clinical trial participation and significantly improved patient outcomes."
+                    "The FDA.gov v2 API has been transformative for our patient engagement platform. We&apos;ve seen a
+                    43% increase in clinical trial participation and significantly improved patient outcomes."
                   </p>
                 </div>
 
@@ -622,7 +623,7 @@ export default function DeveloperPortal() {
                         strokeLinejoin="round"
                         className="h-6 w-6 text-primary"
                       >
-                        <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
+                        <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
                       </svg>
                     </div>
                     <h3 className="font-medium">Standardized Health Data</h3>
@@ -666,4 +667,3 @@ export default function DeveloperPortal() {
     </main>
   )
 }
-

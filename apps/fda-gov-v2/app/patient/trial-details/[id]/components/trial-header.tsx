@@ -1,5 +1,6 @@
 import { CalendarClock, MapPin, Users } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image" // Import next/image
 
 interface TrialHeaderProps {
   trial: any // Using any for brevity, but should be properly typed
@@ -22,10 +23,12 @@ export function TrialHeader({ trial }: TrialHeaderProps) {
         {trial.sponsor && (
           <div className="flex items-center gap-2 bg-muted/50 p-3 rounded-lg">
             {trial.sponsor.logo_url ? (
-              <img
+              <Image
                 src={trial.sponsor.logo_url || "/placeholder.svg"}
                 alt={trial.sponsor.name}
-                className="h-8 w-8 object-contain"
+                width={32}
+                height={32}
+                className="object-contain"
               />
             ) : (
               <div className="h-8 w-8 bg-primary/10 rounded-full flex items-center justify-center">
@@ -75,4 +78,3 @@ export function TrialHeader({ trial }: TrialHeaderProps) {
     </div>
   )
 }
-

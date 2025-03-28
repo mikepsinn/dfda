@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { signUpWithEmail, signInWithGoogle } from "@/lib/auth"
+import { logger } from "@/lib/logger"
 
 export function RegisterForm() {
   const [registrationComplete, setRegistrationComplete] = useState(false)
@@ -53,7 +54,8 @@ export function RegisterForm() {
       }
       
       setRegistrationComplete(true)
-    } catch (err: any) {
+    } catch (err) {
+      logger.error("Registration error:", err)
       setError({
         type: 'other',
         message: 'An error occurred during registration. Please contact help@dfda.earth for assistance.'
@@ -74,7 +76,8 @@ export function RegisterForm() {
       }
       
       // Google OAuth will redirect to callback URL
-    } catch (err: any) {
+    } catch (err) {
+      logger.error("Google sign-in error:", err)
       setError({
         type: 'other',
         message: 'An error occurred during Google sign in. Please contact help@dfda.earth for assistance.'
@@ -270,4 +273,3 @@ export function RegisterForm() {
     </Card>
   )
 }
-

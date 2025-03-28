@@ -1,6 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
-import { type EmailOtpType } from '@supabase/supabase-js'
 
 export async function GET(request: Request) {
   console.log('[AUTH-CALLBACK] Handling auth callback request');
@@ -35,4 +34,3 @@ export async function GET(request: Request) {
   // Return the user to an error page with some instructions
   return NextResponse.redirect(new URL('/auth/auth-code-error', request.url))
 }
-

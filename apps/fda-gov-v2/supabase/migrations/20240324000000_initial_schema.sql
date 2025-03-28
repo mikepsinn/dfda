@@ -126,9 +126,13 @@ CREATE TABLE IF NOT EXISTS patient_conditions (
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT unique_patient_condition UNIQUE (patient_id, condition_id) 
-    WHERE deleted_at IS NULL AND end_date IS NULL
+  CONSTRAINT unique_patient_condition UNIQUE (patient_id, condition_id)
 );
+
+-- Create a partial unique index for active patient conditions
+CREATE UNIQUE INDEX IF NOT EXISTS unique_active_patient_condition_idx
+ON patient_conditions (patient_id, condition_id)
+WHERE deleted_at IS NULL AND end_date IS NULL;
 
 -- User variables table (variables that users track)
 CREATE TABLE IF NOT EXISTS user_variables (
@@ -149,8 +153,12 @@ CREATE TABLE IF NOT EXISTS user_variables (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT unique_user_variable UNIQUE (user_id, variable_id) 
-    WHERE deleted_at IS NULL
 );
+
+-- Create a partial unique index for active user variables
+CREATE UNIQUE INDEX IF NOT EXISTS unique_active_user_variable_idx
+ON user_variables (user_id, variable_id)
+WHERE deleted_at IS NULL;
 
 -- Measurements table
 CREATE TABLE IF NOT EXISTS measurements (
@@ -199,8 +207,12 @@ CREATE TABLE IF NOT EXISTS treatment_side_effect_ratings (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT unique_user_treatment_side_effect UNIQUE (user_id, treatment_id, side_effect_variable_id)
-    WHERE deleted_at IS NULL
 );
+
+-- Create a partial unique index for active treatment side effects
+CREATE UNIQUE INDEX IF NOT EXISTS unique_active_treatment_side_effect_idx
+ON treatment_side_effect_ratings (user_id, treatment_id, side_effect_variable_id)
+WHERE deleted_at IS NULL;
 
 -- Enable RLS on profiles
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;

@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, Shield, Wallet, Percent, Home } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { SearchContainer } from "./components/search-container"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { ConditionSearch } from "@/components/ConditionSearch"
+import { getConditionsAction } from "@/app/actions/conditions"
 import { PatientBenefits } from "./components/patient-benefits"
 import { HealthJourney } from "./components/health-journey"
-import { getConditions } from "@/lib/api/conditions"
 
 export const metadata: Metadata = {
   title: "Find Clinical Trials | Decentralized FDA",
@@ -38,8 +38,8 @@ const patientBenefits = [
 ]
 
 export default async function FindTrials() {
-  // Fetch conditions for search suggestions
-  const conditions = await getConditions()
+  // Fetch initial data (e.g., all conditions) server-side
+  const allConditions = await getConditionsAction()
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -60,7 +60,11 @@ export default async function FindTrials() {
                 <CardDescription>Find evidence-based treatments ranked by effectiveness</CardDescription>
               </CardHeader>
               <CardContent>
-                <SearchContainer initialConditions={conditions} />
+                <p className="mb-4 text-muted-foreground">
+                  Start by selecting a health condition you are interested in finding clinical trials for.
+                </p>
+                {/* Pass initial conditions to the client component */}
+                <ConditionSearch initialConditions={allConditions} onConditionSelect={() => { /* Handle selection, maybe navigate */ }} />
               </CardContent>
             </Card>
 
@@ -74,4 +78,3 @@ export default async function FindTrials() {
     </div>
   )
 }
-

@@ -5,12 +5,12 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
-import { getConditions } from "@/lib/api/conditions"
+import { getConditionsAction, searchConditionsAction, type Condition } from "@/app/actions/conditions"
 
 interface ConditionSearchProps {
   onConditionSelect: (condition: string) => void
   initialSearchTerm?: string
-  initialConditions?: { id: string; name: string }[]
+  initialConditions?: Condition[]
   availableConditions?: string[]
   placeholder?: string
 }
@@ -22,27 +22,30 @@ export function ConditionSearch({
   availableConditions,
   placeholder = "Search for a condition (e.g., diabetes, arthritis, depression)...",
 }: ConditionSearchProps) {
+  const [allConditions, setAllConditions] = useState<Condition[]>(initialConditions)
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
-  const [suggestions, setSuggestions] = useState<{ id: string; name: string }[]>([])
-  const [conditions, setConditions] = useState<{ id: string; name: string }[]>(initialConditions)
+  const [suggestions, setSuggestions] = useState<Condition[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [isLoading, setIsLoading] = useState(initialConditions.length === 0)
   const suggestionsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (initialConditions.length === 0) {
-      const fetchConditions = async () => {
+      const fetchInitialConditions = async () => {
+        setIsLoading(true)
         try {
-          const data = await getConditions()
-          setConditions(data)
+          const conditions = await getConditionsAction()
+          if (conditions) {
+            setAllConditions(conditions)
+          }
         } catch (error) {
-          console.error("Error fetching conditions:", error)
+          console.error("Failed to fetch conditions:", error)
         } finally {
           setIsLoading(false)
         }
       }
 
-      fetchConditions()
+      fetchInitialConditions()
     }
   }, [initialConditions])
 
@@ -61,22 +64,47 @@ export function ConditionSearch({
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
+      setSuggestions(allConditions.slice(0, 10))
+      return
+    }
+
+    const filtered = allConditions.filter((condition) => condition.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    setSuggestions(filtered)
+  }, [searchTerm, allConditions])
+
+  const handleSearchChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value
+    setSearchTerm(query)
+
+    if (query.length === 0) {
+      setSuggestions(allConditions.slice(0, 10))
+      setShowSuggestions(true)
+      return
+    }
+
+    if (query.length < 2) {
+      setShowSuggestions(true)
       setSuggestions([])
       return
     }
 
-    const filtered = conditions.filter((condition) => condition.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    setSuggestions(filtered.slice(0, 10))
-  }, [searchTerm, conditions])
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value)
     setShowSuggestions(true)
+    setIsLoading(true)
+    try {
+      const searchedConditions = await searchConditionsAction(query)
+      if (searchedConditions) {
+        setSuggestions(searchedConditions)
+      }
+    } catch (error) {
+      console.error("Failed to search conditions:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
-  const handleSuggestionClick = (condition: string) => {
-    setSearchTerm(condition)
-    onConditionSelect(condition)
+  const handleSuggestionClick = (condition: Condition) => {
+    setSearchTerm(condition.name)
+    onConditionSelect(condition.name)
     setShowSuggestions(false)
   }
 
@@ -94,30 +122,25 @@ export function ConditionSearch({
         />
       </div>
 
-      {isLoading && <div className="mt-2 text-sm text-muted-foreground">Loading conditions...</div>}
-
-      {showSuggestions && suggestions.length > 0 && (
-        <div ref={suggestionsRef} className="absolute z-10 mt-1 w-full rounded-md border bg-background shadow-lg">
-          <ul className="py-1">
-            {suggestions.map((condition) => (
-              <li
-                key={condition.id}
-                className="cursor-pointer px-4 py-2 hover:bg-muted"
-                onClick={() => handleSuggestionClick(condition.name)}
-              >
-                {condition.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {showSuggestions && searchTerm && suggestions.length === 0 && !isLoading && (
-        <div className="absolute z-10 mt-1 w-full rounded-md border bg-background p-4 shadow-lg">
-          <p className="text-sm text-muted-foreground">No conditions found matching "{searchTerm}"</p>
-        </div>
+      {isLoading ? (
+        <div className="p-2 text-center text-sm text-muted-foreground">Loading...</div>
+      ) : (
+        showSuggestions && (
+          <div ref={suggestionsRef} className="absolute z-10 mt-1 w-full rounded-md border bg-background shadow-lg">
+            <ul className="py-1">
+              {suggestions.map((condition) => (
+                <li
+                  key={condition.id}
+                  className="cursor-pointer px-4 py-2 hover:bg-muted"
+                  onClick={() => handleSuggestionClick(condition)}
+                >
+                  {condition.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
       )}
     </div>
   )
 }
-

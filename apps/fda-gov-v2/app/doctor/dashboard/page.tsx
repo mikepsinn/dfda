@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
-import { getServerUser } from "@/lib/server-auth"
-import { createServerSupabaseClient } from "@/lib/supabase"
+// TODO: Uncomment when doctor user data is needed
+// import { getServerUser } from "@/lib/supabase/auth-utils.server"
+import { createClient as createServerSupabaseClient } from "@/lib/supabase/server"
 import { DashboardHeader } from "./components/dashboard-header"
 import { DashboardStats } from "./components/dashboard-stats"
 import { ActiveTrials } from "./components/active-trials"
@@ -13,13 +14,13 @@ export const metadata: Metadata = {
 }
 
 // Types for the data we'll fetch
-interface DoctorData {
-  id: string
-  name: string
-  email: string
-  specialty?: string
-  organization?: string
-}
+// interface DoctorData {
+//   id: string
+//   name: string
+//   email: string
+//   specialty?: string
+//   organization?: string
+// }
 
 interface Trial {
   id: number
@@ -63,11 +64,14 @@ interface PendingAction {
 }
 
 export default async function DoctorDashboard() {
-  const user = await getServerUser()
-  const supabase = createServerSupabaseClient()
+  // TODO: Uncomment when doctor user data is needed
+  // const user = await getServerUser()
+  // TODO: Uncomment when supabase client is needed for data fetching
+  // const supabase = createServerSupabaseClient()
 
+  // TODO: Uncomment when doctor profile data is needed
   // Fetch doctor profile data
-  const { data: doctorProfile } = await supabase.from("users").select("*").eq("id", user?.id).single()
+  // const { data: doctorProfile } = await supabase.from("users").select("*").eq("id", user?.id).single()
 
   // In a real app, we would fetch this data from the database
   // For now, we'll use mock data similar to what was in the client component
@@ -256,4 +260,3 @@ export default async function DoctorDashboard() {
     </div>
   )
 }
-

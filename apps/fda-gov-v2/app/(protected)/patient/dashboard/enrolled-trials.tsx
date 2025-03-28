@@ -6,8 +6,26 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ClipboardList, ArrowRight } from "lucide-react"
 
+// TODO: Define a proper type for Enrollment based on database schema
+interface Enrollment {
+  id: string;
+  trial_name: string; // Example property
+  status: string;     // Example property
+  // Add other relevant properties
+  trials: {
+    id: string;
+    name: string;
+    conditions: {
+      name: string;
+    };
+    treatments: {
+      name: string;
+    };
+  };
+}
+
 interface EnrolledTrialsProps {
-  enrollments: any[]
+  enrollments: Enrollment[]
 }
 
 export function EnrolledTrials({ enrollments }: EnrolledTrialsProps) {
@@ -86,4 +104,3 @@ function getStatusVariant(status: string) {
 function formatStatus(status: string) {
   return status.charAt(0).toUpperCase() + status.slice(1)
 }
-

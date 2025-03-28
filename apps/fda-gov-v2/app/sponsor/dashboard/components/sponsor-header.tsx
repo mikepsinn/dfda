@@ -9,7 +9,7 @@ interface SponsorHeaderProps {
 export function SponsorHeader({ name }: SponsorHeaderProps) {
   return (
     <div className="flex items-center justify-between">
-      <h1 className="text-2xl font-bold">Sponsor Dashboard</h1>
+      <h1 className="text-2xl font-bold">Welcome, {name || "Sponsor"}</h1>
       <div className="flex items-center gap-2">
         <Link href="/sponsor/create-trial">
           <Button>
@@ -21,4 +21,3 @@ export function SponsorHeader({ name }: SponsorHeaderProps) {
     </div>
   )
 }
-
