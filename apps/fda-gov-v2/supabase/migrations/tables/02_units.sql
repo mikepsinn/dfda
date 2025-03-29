@@ -1,0 +1,11 @@
+-- Create units table
+CREATE TABLE IF NOT EXISTS units (
+  id TEXT PRIMARY KEY,
+  category_id TEXT NOT NULL REFERENCES unit_categories(id) ON DELETE RESTRICT,
+  name TEXT NOT NULL,
+  abbreviation TEXT NOT NULL,
+  conversion_factor NUMERIC NOT NULL,
+  is_si BOOLEAN DEFAULT false,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+); 

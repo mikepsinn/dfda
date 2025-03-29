@@ -1,0 +1,11 @@
+-- Create user_variables table
+CREATE TABLE IF NOT EXISTS user_variables (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  name TEXT NOT NULL,
+  description TEXT,
+  unit_category_id TEXT REFERENCES unit_categories(id) ON DELETE RESTRICT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+); 

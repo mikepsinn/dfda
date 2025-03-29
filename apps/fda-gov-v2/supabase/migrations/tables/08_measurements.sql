@@ -1,0 +1,15 @@
+-- Create measurements table
+CREATE TABLE IF NOT EXISTS measurements (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+  variable_id TEXT NOT NULL REFERENCES global_variables(id) ON DELETE CASCADE,
+  user_variable_id UUID REFERENCES user_variables(id) ON DELETE CASCADE,
+  value NUMERIC NOT NULL,
+  unit_id TEXT NOT NULL REFERENCES units(id) ON DELETE RESTRICT,
+  start_at TIMESTAMP WITH TIME ZONE NOT NULL,
+  end_at TIMESTAMP WITH TIME ZONE,
+  notes TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+); 
