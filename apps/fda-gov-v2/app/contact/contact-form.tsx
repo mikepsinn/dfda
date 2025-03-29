@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { createBrowserClient } from "@/lib/supabase"
+import { createClient } from '@/lib/supabase/client'
 import { Check } from "lucide-react"
 import { logger } from "@/lib/logger"
 
@@ -19,7 +19,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [formError, setFormError] = useState<string | null>(null)
-  const supabase = createBrowserClient()
+  const supabase = createClient()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

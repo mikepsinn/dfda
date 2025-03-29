@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { StarRating } from "@/components/ui/star-rating"
 import { createTreatmentRatingAction, updateTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 import { useToast } from "@/hooks/use-toast"
-import { createBrowserClient } from "@/lib/supabase"
+import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
 
 type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
@@ -58,7 +58,7 @@ export function TreatmentReviewForm({
     setIsSubmitting(true)
 
     try {
-      const supabase = createBrowserClient()
+      const supabase = createClient()
 
       if (existingReview) {
         await updateTreatmentRatingAction(existingReview.id, {

@@ -8,7 +8,7 @@ export default async function ProfilePage() {
   const supabase = await createClient()
 
   // Fetch user profile data
-  const { data: profile } = await supabase.from("users").select("*").eq("id", user?.id).single()
+  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user?.id).single()
 
   return (
     <div className="space-y-8">

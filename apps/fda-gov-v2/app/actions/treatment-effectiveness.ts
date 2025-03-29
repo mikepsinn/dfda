@@ -11,8 +11,8 @@ export type TreatmentEffectivenessInsert = Database["public"]["Tables"]["treatme
 export type TreatmentEffectivenessUpdate = Database["public"]["Tables"]["treatment_ratings"]["Update"]
 
 // Get effectiveness data for a treatment and condition
-export async function getTreatmentEffectivenessAction(treatmentId: string, conditionId: string) {
-  const supabase = createServerClient()
+export async function getTreatmentEffectivenessAction(treatmentId: string, conditionId: string): Promise<TreatmentEffectiveness> {
+  const supabase = await createServerClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -30,8 +30,8 @@ export async function getTreatmentEffectivenessAction(treatmentId: string, condi
 }
 
 // Get all effectiveness data for a condition
-export async function getEffectivenessForConditionAction(conditionId: string) {
-  const supabase = createServerClient()
+export async function getEffectivenessForConditionAction(conditionId: string): Promise<TreatmentEffectiveness[]> {
+  const supabase = await createServerClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -51,8 +51,8 @@ export async function getEffectivenessForConditionAction(conditionId: string) {
 }
 
 // Create new effectiveness data
-export async function createTreatmentEffectivenessAction(effectiveness: TreatmentEffectivenessInsert) {
-  const supabase = createServerClient()
+export async function createTreatmentEffectivenessAction(effectiveness: TreatmentEffectivenessInsert): Promise<TreatmentEffectiveness> {
+  const supabase = await createServerClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -77,8 +77,8 @@ export async function updateTreatmentEffectivenessAction(
   treatmentId: string,
   conditionId: string,
   updates: TreatmentEffectivenessUpdate,
-) {
-  const supabase = createServerClient()
+): Promise<TreatmentEffectiveness> {
+  const supabase = await createServerClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -100,22 +100,82 @@ export async function updateTreatmentEffectivenessAction(
   return handleDatabaseResponse<TreatmentEffectiveness>(response)
 }
 
-// Delete effectiveness data
-export async function deleteTreatmentEffectivenessAction(treatmentId: string, conditionId: string) {
-  const supabase = createServerClient()
+// Delete a treatment effectiveness rating
+export async function deleteTreatmentEffectivenessAction(id: string): Promise<void> {
+  const supabase = await createServerClient()
+
+  const response = await supabase
+    .from('treatment_ratings')
+    .delete()
+    .eq('id', id)
+
+  if (response.error) {
+    logger.error('Error deleting treatment effectiveness:', { error: response.error })
+    throw new Error('Failed to delete treatment effectiveness')
+  }
+}
+
+export async function getTreatmentEffectivenessByTreatmentAction(treatmentId: string): Promise<TreatmentEffectiveness[]> {
+  const supabase = await createServerClient()
 
   const response = await supabase
     .from("treatment_ratings")
-    .delete()
+    .select("*")
+    .eq("treatment_id", treatmentId)
+
+  if (response.error) {
+    logger.error("Error fetching treatment effectiveness:", { error: response.error })
+    throw new Error("Failed to fetch treatment effectiveness")
+  }
+
+  return handleDatabaseCollectionResponse(response)
+}
+
+export async function getTreatmentEffectivenessByConditionAction(conditionId: string): Promise<TreatmentEffectiveness[]> {
+  const supabase = await createServerClient()
+
+  const response = await supabase
+    .from("treatment_ratings")
+    .select("*")
+    .eq("condition_id", conditionId)
+
+  if (response.error) {
+    logger.error("Error fetching treatment effectiveness:", { error: response.error })
+    throw new Error("Failed to fetch treatment effectiveness")
+  }
+
+  return handleDatabaseCollectionResponse(response)
+}
+
+export async function getTreatmentEffectivenessByPatientAction(patientId: string): Promise<TreatmentEffectiveness[]> {
+  const supabase = await createServerClient()
+
+  const response = await supabase
+    .from("treatment_ratings")
+    .select("*")
+    .eq("patient_id", patientId)
+
+  if (response.error) {
+    logger.error("Error fetching treatment effectiveness:", { error: response.error })
+    throw new Error("Failed to fetch treatment effectiveness")
+  }
+
+  return handleDatabaseCollectionResponse(response)
+}
+
+export async function getTreatmentEffectivenessByTreatmentAndConditionAction(treatmentId: string, conditionId: string): Promise<TreatmentEffectiveness[]> {
+  const supabase = await createServerClient()
+
+  const response = await supabase
+    .from("treatment_ratings")
+    .select("*")
     .eq("treatment_id", treatmentId)
     .eq("condition_id", conditionId)
 
-  // Revalidate relevant paths
-  revalidatePath(`/treatment/${treatmentId}`)
-  revalidatePath(`/condition/${conditionId}`)
-  
-  return handleDatabaseMutationResponse<TreatmentEffectiveness>(
-    response, 
-    "Failed to delete treatment effectiveness"
-  )
+  if (response.error) {
+    logger.error("Error fetching treatment effectiveness:", { error: response.error })
+    throw new Error("Failed to fetch treatment effectiveness")
+  }
+
+  return handleDatabaseCollectionResponse(response)
 }

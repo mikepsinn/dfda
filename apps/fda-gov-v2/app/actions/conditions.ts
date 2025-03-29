@@ -12,7 +12,7 @@ type ConditionUpdate = Database["public"]["Tables"]["conditions"]["Update"]
 
 // Get all conditions from the view which includes the name
 export async function getConditionsAction(): Promise<ConditionView[]> {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   // Query the patient_conditions_view which already has the joins
   const response = await supabase
@@ -31,7 +31,7 @@ export async function getConditionsAction(): Promise<ConditionView[]> {
 
 // Get a condition by ID with joined name from global_variables
 export async function getConditionByIdAction(id: string): Promise<ConditionView | null> {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   // Query the patient_conditions_view which already has the joins
   const response = await supabase
@@ -55,7 +55,7 @@ export async function getConditionByIdAction(id: string): Promise<ConditionView 
 
 // Search conditions by name
 export async function searchConditionsAction(query: string): Promise<ConditionView[]> {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   // Query the patient_conditions_view which already has the joins
   const response = await supabase
@@ -75,7 +75,7 @@ export async function searchConditionsAction(query: string): Promise<ConditionVi
 
 // Create a new condition
 export async function createConditionAction(condition: ConditionInsert) {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   const response = await supabase.from("conditions").insert(condition).select().single()
 
@@ -91,7 +91,7 @@ export async function createConditionAction(condition: ConditionInsert) {
 
 // Update a condition
 export async function updateConditionAction(id: string, updates: ConditionUpdate) {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   const response = await supabase
     .from("conditions")
@@ -113,7 +113,7 @@ export async function updateConditionAction(id: string, updates: ConditionUpdate
 
 // Delete a condition
 export async function deleteConditionAction(id: string) {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   const response = await supabase.from("conditions").delete().eq("id", id)
 

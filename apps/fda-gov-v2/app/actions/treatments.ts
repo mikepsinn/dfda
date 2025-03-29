@@ -1,211 +1,167 @@
 "use server"
 
-import { createServerClient } from "@/lib/supabase"
-import type { Database } from "@/lib/database.types"
-import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabaseMutationResponse } from "@/lib/actions-helpers"
-import { revalidatePath } from "next/cache"
-import { logger } from "@/lib/logger"
+import { createClient } from '@/lib/supabase/server'
+import type { Database } from '@/lib/database.types'
+import { revalidatePath } from 'next/cache'
+import { logger } from '@/lib/logger'
 
-// Base type from database schema
-type BaseTreatment = Database["public"]["Tables"]["treatments"]["Row"]
+// Use the database view type directly
+export type Treatment = Database['public']['Views']['patient_treatments_view']['Row']
+export type TreatmentInsert = Database['public']['Tables']['treatments']['Insert']
+export type TreatmentUpdate = Database['public']['Tables']['treatments']['Update']
 
-// Extended type with properties joined from global_variables
-export interface Treatment extends BaseTreatment {
-  name: string
-  description?: string
-}
-
-export type TreatmentInsert = Database["public"]["Tables"]["treatments"]["Insert"]
-export type TreatmentUpdate = Database["public"]["Tables"]["treatments"]["Update"]
-
-// Get all treatments with joined names from global_variables
-export async function getTreatmentsAction() {
-  const supabase = createServerClient()
+// Get all treatments from the view
+export async function getTreatmentsAction(): Promise<Treatment[]> {
+  const supabase = await createClient()
 
   const response = await supabase
-    .from("patient_treatments_view")
-    .select("treatment_id, treatment_name, treatment_description, treatment_type, manufacturer")
-    .order("treatment_name")
+    .from('patient_treatments_view')
+    .select('*')
+    .order('treatment_name')
     .limit(50)
 
   if (response.error) {
-    logger.error("Error fetching treatments:", { error: response.error })
-    throw new Error("Failed to fetch treatments")
+    logger.error('Error fetching treatments:', { error: response.error })
+    throw new Error('Failed to fetch treatments')
   }
 
-  // Transform the data to match our Treatment interface
-  const treatments = response.data
-    .filter(item => item.treatment_id && item.treatment_name && item.treatment_type) // Filter required fields
-    .map(item => ({
-      id: item.treatment_id as string,
-      treatment_type: item.treatment_type as string,
-      manufacturer: item.manufacturer,
-      created_at: null,
-      updated_at: null,
-      deleted_at: null,
-      name: item.treatment_name as string,
-      description: item.treatment_description || undefined
-    }));
-
-  return treatments;
+  return response.data
 }
 
-// Get a treatment by ID with joined name from global_variables
-export async function getTreatmentByIdAction(id: string) {
-  const supabase = createServerClient()
+// Get a treatment by ID from the view
+export async function getTreatmentByIdAction(id: string): Promise<Treatment | null> {
+  const supabase = await createClient()
 
   const response = await supabase
-    .from("patient_treatments_view")
-    .select("treatment_id, treatment_name, treatment_description, treatment_type, manufacturer")
-    .eq("treatment_id", id)
-    .limit(1)
-    .maybeSingle() // Use maybeSingle to handle the case where no results are found
+    .from('patient_treatments_view')
+    .select('*')
+    .eq('treatment_id', id)
+    .maybeSingle()
 
   if (response.error) {
-    logger.error("Error fetching treatment:", { error: response.error })
-    throw new Error("Failed to fetch treatment")
+    logger.error('Error fetching treatment:', { error: response.error })
+    throw new Error('Failed to fetch treatment')
   }
 
-  if (!response.data || !response.data.treatment_id || !response.data.treatment_name || !response.data.treatment_type) {
-    throw new Error("Treatment not found or invalid data")
-  }
-
-  // Transform to match our Treatment interface
-  const treatment: Treatment = {
-    id: response.data.treatment_id as string,
-    treatment_type: response.data.treatment_type as string,
-    manufacturer: response.data.manufacturer,
-    created_at: null,
-    updated_at: null,
-    deleted_at: null,
-    name: response.data.treatment_name as string,
-    description: response.data.treatment_description || undefined
-  };
-
-  return treatment;
+  return response.data
 }
 
 // Search treatments by name
-export async function searchTreatmentsAction(query: string) {
-  const supabase = createServerClient()
+export async function searchTreatmentsAction(query: string): Promise<Treatment[]> {
+  const supabase = await createClient()
 
   const response = await supabase
-    .from("patient_treatments_view")
-    .select("treatment_id, treatment_name, treatment_description, treatment_type, manufacturer")
-    .ilike("treatment_name", `%${query}%`)
-    .order("treatment_name")
+    .from('patient_treatments_view')
+    .select('*')
+    .ilike('treatment_name', `%${query}%`)
+    .order('treatment_name')
     .limit(10)
 
   if (response.error) {
-    logger.error("Error searching treatments:", { error: response.error })
-    throw new Error("Failed to search treatments")
+    logger.error('Error searching treatments:', { error: response.error })
+    throw new Error('Failed to search treatments')
   }
 
-  // Transform the data to match our Treatment interface
-  const treatments = response.data
-    .filter(item => item.treatment_id && item.treatment_name && item.treatment_type)
-    .map(item => ({
-      id: item.treatment_id as string,
-      treatment_type: item.treatment_type as string,
-      manufacturer: item.manufacturer,
-      created_at: null,
-      updated_at: null,
-      deleted_at: null,
-      name: item.treatment_name as string,
-      description: item.treatment_description || undefined
-    }));
-
-  return treatments;
+  return response.data
 }
 
 // Get treatments for a specific condition
-export async function getTreatmentsForConditionAction(conditionId: string) {
-  const supabase = createServerClient()
+export async function getTreatmentsForConditionAction(conditionId: string): Promise<Treatment[]> {
+  const supabase = await createClient()
 
   const response = await supabase
-    .from("treatment_ratings")
-    .select(`
-      id,
-      effectiveness_out_of_ten,
-      treatments:treatment_id(*)
-    `)
-    .eq("condition_id", conditionId)
-    .order("effectiveness_out_of_ten", { ascending: false })
+    .from('patient_treatments_view')
+    .select('*')
+    .eq('condition_id', conditionId)
+    .order('effectiveness_out_of_ten', { ascending: false })
 
   if (response.error) {
-    logger.error("Error fetching treatments for condition:", { error: response.error })
-    throw new Error("Failed to fetch treatments for condition")
+    logger.error('Error fetching treatments for condition:', { error: response.error })
+    throw new Error('Failed to fetch treatments for condition')
   }
 
-  return response.data.map((item) => ({
-    ...item.treatments,
-    effectiveness_out_of_ten: item.effectiveness_out_of_ten,
-  }))
+  return response.data
 }
 
 // Create a new treatment
-export async function createTreatmentAction(treatment: TreatmentInsert) {
-  const supabase = createServerClient()
+export async function createTreatmentAction(treatment: TreatmentInsert): Promise<Treatment> {
+  const supabase = await createClient()
 
-  const response = await supabase
-    .from("treatments")
+  // First create the treatment
+  const insertResponse = await supabase
+    .from('treatments')
     .insert(treatment)
     .select()
     .single()
 
-  if (response.error) {
-    logger.error("Error creating treatment:", { error: response.error })
-    throw new Error("Failed to create treatment")
+  if (insertResponse.error) {
+    logger.error('Error creating treatment:', { error: insertResponse.error })
+    throw new Error('Failed to create treatment')
   }
 
-  // Revalidate relevant paths
-  revalidatePath("/treatments")
-  
-  return handleDatabaseResponse<Treatment>(response)
+  // Then fetch it from the view to get the complete data
+  const viewResponse = await supabase
+    .from('patient_treatments_view')
+    .select('*')
+    .eq('treatment_id', insertResponse.data.id)
+    .single()
+
+  if (viewResponse.error) {
+    logger.error('Error fetching created treatment:', { error: viewResponse.error })
+    throw new Error('Failed to fetch created treatment')
+  }
+
+  revalidatePath('/treatments')
+  return viewResponse.data
 }
 
 // Update a treatment
-export async function updateTreatmentAction(id: string, updates: TreatmentUpdate) {
-  const supabase = createServerClient()
+export async function updateTreatmentAction(id: string, updates: TreatmentUpdate): Promise<Treatment> {
+  const supabase = await createClient()
 
-  const response = await supabase
-    .from("treatments")
+  // First update the treatment
+  const updateResponse = await supabase
+    .from('treatments')
     .update({ ...updates, updated_at: new Date().toISOString() })
-    .eq("id", id)
+    .eq('id', id)
     .select()
     .single()
 
-  if (response.error) {
-    logger.error("Error updating treatment:", { error: response.error })
-    throw new Error("Failed to update treatment")
+  if (updateResponse.error) {
+    logger.error('Error updating treatment:', { error: updateResponse.error })
+    throw new Error('Failed to update treatment')
   }
 
-  // Revalidate relevant paths
+  // Then fetch it from the view to get the complete data
+  const viewResponse = await supabase
+    .from('patient_treatments_view')
+    .select('*')
+    .eq('treatment_id', id)
+    .single()
+
+  if (viewResponse.error) {
+    logger.error('Error fetching updated treatment:', { error: viewResponse.error })
+    throw new Error('Failed to fetch updated treatment')
+  }
+
   revalidatePath(`/treatment/${id}`)
-  revalidatePath("/treatments")
-  
-  return handleDatabaseResponse<Treatment>(response)
+  revalidatePath('/treatments')
+  return viewResponse.data
 }
 
 // Delete a treatment
-export async function deleteTreatmentAction(id: string) {
-  const supabase = createServerClient()
+export async function deleteTreatmentAction(id: string): Promise<void> {
+  const supabase = await createClient()
 
   const response = await supabase
-    .from("treatments")
+    .from('treatments')
     .delete()
-    .eq("id", id)
+    .eq('id', id)
 
   if (response.error) {
-    logger.error("Error deleting treatment:", { error: response.error })
-    throw new Error("Failed to delete treatment")
+    logger.error('Error deleting treatment:', { error: response.error })
+    throw new Error('Failed to delete treatment')
   }
 
-  // Revalidate relevant paths
-  revalidatePath("/treatments")
-  
-  return handleDatabaseMutationResponse<Treatment>(
-    response, 
-    "Failed to delete treatment"
-  )
+  revalidatePath('/treatments')
 }

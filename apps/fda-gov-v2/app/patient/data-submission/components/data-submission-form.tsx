@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
 import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
-import { createBrowserClient } from "@/lib/supabase"
+import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
@@ -33,7 +33,7 @@ export interface TrialSubmissionData {
 
 export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionData }) {
   const [submissionComplete, setSubmissionComplete] = useState(false)
-  const supabase = createBrowserClient()
+  const supabase = createClient()
 
   if (!trialData.submission) {
     return (

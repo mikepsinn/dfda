@@ -1,7 +1,7 @@
 "use server"
 
-import { createServerClient } from "@/lib/supabase"
-import type { Database } from "@/lib/database.types"
+import { createClient } from '@/lib/supabase/server'
+import type { Database } from '@/lib/database.types'
 import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
 
@@ -26,7 +26,7 @@ export async function findTrialsForConditionsAction(
     return []
   }
 
-  const supabase = createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("trials")
@@ -45,13 +45,12 @@ export async function findTrialsForConditionsAction(
     throw new Error("Failed to find trials")
   }
 
-  // Return results as TrialWithRelations[]
   return response.data as unknown as TrialWithRelations[]
 }
 
 // Get a trial by ID
 export async function getTrialByIdAction(id: string): Promise<TrialWithRelations | null> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("trials")
@@ -78,7 +77,7 @@ export async function getTrialByIdAction(id: string): Promise<TrialWithRelations
 
 // Get all trials
 export async function getTrialsAction(): Promise<TrialWithRelations[]> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
   
   const response = await supabase
     .from("trials")
@@ -100,7 +99,7 @@ export async function getTrialsAction(): Promise<TrialWithRelations[]> {
 
 // Get trials by condition
 export async function getTrialsByConditionAction(conditionId: string): Promise<TrialWithRelations[]> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
   
   const response = await supabase
     .from("trials")
@@ -124,7 +123,7 @@ export async function getTrialsByConditionAction(conditionId: string): Promise<T
 
 // Get trials by treatment
 export async function getTrialsByTreatmentAction(treatmentId: string): Promise<TrialWithRelations[]> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
   
   const response = await supabase
     .from("trials")
@@ -148,7 +147,7 @@ export async function getTrialsByTreatmentAction(treatmentId: string): Promise<T
 
 // Create a new trial
 export async function createTrialAction(trial: TrialInsert): Promise<Trial> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
   
   const response = await supabase
     .from("trials")
@@ -169,7 +168,7 @@ export async function createTrialAction(trial: TrialInsert): Promise<Trial> {
 
 // Update a trial
 export async function updateTrialAction(id: string, updates: TrialUpdate): Promise<Trial> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
   
   const response = await supabase
     .from("trials")
@@ -191,8 +190,8 @@ export async function updateTrialAction(id: string, updates: TrialUpdate): Promi
 }
 
 // Delete a trial
-export async function deleteTrialAction(id: string): Promise<boolean> {
-  const supabase = createServerClient()
+export async function deleteTrialAction(id: string): Promise<void> {
+  const supabase = await createClient()
   
   const response = await supabase
     .from("trials")
@@ -207,5 +206,4 @@ export async function deleteTrialAction(id: string): Promise<boolean> {
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
   revalidatePath("/sponsor/dashboard")
-  return true
 } 

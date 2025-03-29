@@ -1,38 +1,25 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { logger } from '@/lib/logger'
+import { Database } from '@/lib/database.types'
 
-export async function createClient() {
-  return createServerClient(
+export const createClient = async () => {
+  const cookieStore = await cookies()
+
+  return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        async get(name: string) {
-          const cookieStore = await cookies()
+        get(name: string) {
           return cookieStore.get(name)?.value
         },
-        async set(name: string, value: string, options: CookieOptions) {
-          const cookieStore = await cookies()
-          try {
-            cookieStore.set({ name, value, ...options })
-          } catch (_error) {
-            logger.debug('Error setting cookie (server component)', { _error })
-            // This can happen if the cookie is set in a Server Component
-            // We can safely ignore this error since cookies will be handled by middleware
-          }
+        set(name: string, value: string, options: { path?: string }) {
+          cookieStore.set({ name, value, ...options })
         },
-        async remove(name: string, options: CookieOptions) {
-          const cookieStore = await cookies()
-          try {
-            cookieStore.delete({ name, ...options })
-          } catch (_error) {
-            logger.debug('Error removing cookie (server component)', { _error })
-            // This can happen if the cookie is removed in a Server Component
-            // We can safely ignore this error since cookies will be handled by middleware
-          }
+        remove(name: string, options: { path?: string }) {
+          cookieStore.set({ name, value: '', ...options, maxAge: 0 })
         },
       },
     }
   )
-}
+} 

@@ -22,7 +22,7 @@ export default async function SponsorDashboard() {
     redirect("/login?callbackUrl=/sponsor/dashboard")
   }
 
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   // Get sponsor profile
   const { data: sponsorProfile } = await supabase

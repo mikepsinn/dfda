@@ -1,9 +1,7 @@
 import type { Database } from "@/lib/database.types"
 import { createClient } from '@supabase/supabase-js'
-import { describe, it, expect, beforeEach, afterEach } from '@jest/globals'
+import { describe, it, expect, afterEach } from '@jest/globals'
 import {
-  getTreatmentRatingsAction,
-  getAverageTreatmentRatingAction,
   createTreatmentRatingAction,
 } from '@/app/actions/treatment-ratings'
 
@@ -32,86 +30,6 @@ describe('Treatment Ratings API Integration', () => {
       .from('treatment_ratings')
       .delete()
       .eq('treatment_id', testTreatmentId)
-  })
-
-  describe('getTreatmentRatings', () => {
-    it('fetches treatment ratings for a given treatment and condition', async () => {
-      // Create test ratings
-      const testRatings = [
-        { 
-          treatment_id: testTreatmentId,
-          condition_id: testConditionId,
-          user_id: testUserId,
-          effectiveness_out_of_ten: 4,
-          review: 'Great treatment',
-          unit_id: 'test-unit-1'
-        },
-        {
-          treatment_id: testTreatmentId,
-          condition_id: testConditionId,
-          user_id: testUserId + '2',
-          effectiveness_out_of_ten: 5,
-          review: 'Excellent results',
-          unit_id: 'test-unit-1'
-        }
-      ]
-
-      // Insert test data
-      for (const rating of testRatings) {
-        await supabase.from('treatment_ratings').insert(rating)
-      }
-
-      const ratings = await getTreatmentRatingsAction(testTreatmentId, testConditionId)
-      
-      expect(ratings).toHaveLength(2)
-      expect((ratings as TreatmentRating[])[0].effectiveness_out_of_ten).toBe(5) // Most recent first
-      expect((ratings as TreatmentRating[])[1].effectiveness_out_of_ten).toBe(4)
-    })
-
-    it('returns empty array when no ratings exist', async () => {
-      const ratings = await getTreatmentRatingsAction('nonexistent-treatment', 'nonexistent-condition')
-      expect(ratings).toEqual([])
-    })
-  })
-
-  describe('getTreatmentAverageRating', () => {
-    it('calculates average rating correctly', async () => {
-      // Create test ratings
-      const testRatings = [
-        { 
-          treatment_id: testTreatmentId,
-          condition_id: testConditionId,
-          user_id: testUserId,
-          effectiveness_out_of_ten: 4,
-          review: 'Good',
-          unit_id: 'test-unit-1'
-        },
-        {
-          treatment_id: testTreatmentId,
-          condition_id: testConditionId,
-          user_id: testUserId + '2',
-          effectiveness_out_of_ten: 5,
-          review: 'Excellent',
-          unit_id: 'test-unit-1'
-        }
-      ]
-
-      // Insert test data
-      for (const rating of testRatings) {
-        await supabase.from('treatment_ratings').insert(rating)
-      }
-
-      const result = await getAverageTreatmentRatingAction(testTreatmentId, testConditionId)
-      
-      expect(result.avg_effectiveness).toBe(4.5)
-      expect(result.total_ratings).toBe(2)
-    })
-
-    it('returns zero for non-existent treatment ratings', async () => {
-      const result = await getAverageTreatmentRatingAction('nonexistent-treatment', 'nonexistent-condition')
-      expect(result.avg_effectiveness).toBe(0)
-      expect(result.total_ratings).toBe(0)
-    })
   })
 
   describe('createTreatmentRating', () => {

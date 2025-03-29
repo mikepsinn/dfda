@@ -8,8 +8,8 @@ export type Profile = Database["public"]["Tables"]["profiles"]["Row"]
 export type ProfileInsert = Database["public"]["Tables"]["profiles"]["Insert"]
 export type ProfileUpdate = Database["public"]["Tables"]["profiles"]["Update"]
 
-export async function getProfileByIdAction(id: string) {
-  const supabase = createServerClient()
+export async function getProfileByIdAction(id: string): Promise<Profile | null> {
+  const supabase = await createServerClient()
   const { data, error } = await supabase.from("profiles").select("*").eq("id", id).single()
 
   if (error) {
@@ -20,12 +20,12 @@ export async function getProfileByIdAction(id: string) {
   return data as Profile
 }
 
-export async function getProfilesByTypeAction(userType: string) {
-  const supabase = createServerClient()
+export async function getProfilesByTypeAction(type: string): Promise<Profile[]> {
+  const supabase = await createServerClient()
   const { data, error } = await supabase
     .from("profiles")
     .select("*")
-    .eq("user_type", userType)
+    .eq("user_type", type)
     .order("created_at", { ascending: false })
 
   if (error) {
@@ -36,8 +36,8 @@ export async function getProfilesByTypeAction(userType: string) {
   return data as Profile[]
 }
 
-export async function createProfileAction(profile: ProfileInsert) {
-  const supabase = createServerClient()
+export async function createProfileAction(profile: ProfileInsert): Promise<Profile> {
+  const supabase = await createServerClient()
   const { data, error } = await supabase.from("profiles").insert(profile).select().single()
 
   if (error) {
@@ -48,8 +48,8 @@ export async function createProfileAction(profile: ProfileInsert) {
   return data as Profile
 }
 
-export async function updateProfileAction(id: string, updates: ProfileUpdate) {
-  const supabase = createServerClient()
+export async function updateProfileAction(id: string, updates: ProfileUpdate): Promise<Profile> {
+  const supabase = await createServerClient()
   const { data, error } = await supabase
     .from("profiles")
     .update({ ...updates, updated_at: new Date().toISOString() })
@@ -65,20 +65,18 @@ export async function updateProfileAction(id: string, updates: ProfileUpdate) {
   return data as Profile
 }
 
-export async function deleteProfileAction(id: string) {
-  const supabase = createServerClient()
+export async function deleteProfileAction(id: string): Promise<void> {
+  const supabase = await createServerClient()
   const { error } = await supabase.from("profiles").delete().eq("id", id)
 
   if (error) {
     logger.error("Error deleting profile:", error)
     throw new Error("Failed to delete profile")
   }
-
-  return true
 }
 
-export async function getCurrentProfileAction() {
-  const supabase = createServerClient()
+export async function getCurrentUserProfileAction(): Promise<Profile | null> {
+  const supabase = await createServerClient()
   const {
     data: { user },
     error: userError,

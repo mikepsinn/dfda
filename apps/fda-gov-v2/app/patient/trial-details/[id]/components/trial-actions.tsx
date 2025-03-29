@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { createClientSupabaseClient } from "@/lib/supabase"
+import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
 
 interface TrialActionsProps {
@@ -27,7 +27,7 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
     setIsLoading(true)
 
     try {
-      const supabase = createClientSupabaseClient()
+      const supabase = createClient()
       const { data: { user } } = await supabase.auth.getUser()
 
       if (!user) {
