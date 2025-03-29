@@ -28,7 +28,7 @@ export function RecentActivity({ activities }: RecentActivityProps) {
               <div className="flex items-center justify-between">
                 <h3 className="font-semibold">{activity.trial.title}</h3>
                 <span className="text-sm text-muted-foreground">
-                  {new Date(activity.created_at).toLocaleDateString()}
+                  {activity.created_at ? new Date(activity.created_at).toLocaleDateString() : 'No date'}
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
