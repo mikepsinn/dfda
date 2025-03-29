@@ -9,11 +9,55 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      action_types: {
+        Row: {
+          can_be_recurring: boolean | null
+          category: Database["public"]["Enums"]["action_category"]
+          created_at: string | null
+          default_duration_minutes: number | null
+          deleted_at: string | null
+          description: string | null
+          id: string
+          metadata: Json | null
+          name: string
+          requires_results: boolean | null
+          requires_scheduling: boolean | null
+          updated_at: string | null
+        }
+        Insert: {
+          can_be_recurring?: boolean | null
+          category: Database["public"]["Enums"]["action_category"]
+          created_at?: string | null
+          default_duration_minutes?: number | null
+          deleted_at?: string | null
+          description?: string | null
+          id?: string
+          metadata?: Json | null
+          name: string
+          requires_results?: boolean | null
+          requires_scheduling?: boolean | null
+          updated_at?: string | null
+        }
+        Update: {
+          can_be_recurring?: boolean | null
+          category?: Database["public"]["Enums"]["action_category"]
+          created_at?: string | null
+          default_duration_minutes?: number | null
+          deleted_at?: string | null
+          description?: string | null
+          id?: string
+          metadata?: Json | null
+          name?: string
+          requires_results?: boolean | null
+          requires_scheduling?: boolean | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       conditions: {
         Row: {
           created_at: string | null
           deleted_at: string | null
-          global_variable_id: string
           icd_code: string | null
           id: string
           updated_at: string | null
@@ -21,7 +65,6 @@ export type Database = {
         Insert: {
           created_at?: string | null
           deleted_at?: string | null
-          global_variable_id: string
           icd_code?: string | null
           id: string
           updated_at?: string | null
@@ -29,72 +72,64 @@ export type Database = {
         Update: {
           created_at?: string | null
           deleted_at?: string | null
-          global_variable_id?: string
           icd_code?: string | null
           id?: string
           updated_at?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "conditions_global_variable_id_fkey"
-            columns: ["global_variable_id"]
-            isOneToOne: false
+            foreignKeyName: "conditions_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
             referencedRelation: "global_variables"
             referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "conditions_global_variable_id_fkey"
-            columns: ["global_variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
           },
         ]
       }
       contact_messages: {
         Row: {
+          assigned_to: string | null
           created_at: string | null
           deleted_at: string | null
           email: string
           id: string
-          inquiry_type: string
           message: string
           name: string
           resolved_at: string | null
-          resolved_by: string | null
           status: string
+          subject: string
           updated_at: string | null
         }
         Insert: {
+          assigned_to?: string | null
           created_at?: string | null
           deleted_at?: string | null
           email: string
           id?: string
-          inquiry_type: string
           message: string
           name: string
           resolved_at?: string | null
-          resolved_by?: string | null
           status?: string
+          subject: string
           updated_at?: string | null
         }
         Update: {
+          assigned_to?: string | null
           created_at?: string | null
           deleted_at?: string | null
           email?: string
           id?: string
-          inquiry_type?: string
           message?: string
           name?: string
           resolved_at?: string | null
-          resolved_by?: string | null
           status?: string
+          subject?: string
           updated_at?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "contact_messages_resolved_by_fkey"
-            columns: ["resolved_by"]
+            foreignKeyName: "contact_messages_assigned_to_fkey"
+            columns: ["assigned_to"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -156,7 +191,7 @@ export type Database = {
             foreignKeyName: "data_submissions_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
-            referencedRelation: "profiles"
+            referencedRelation: "patients"
             referencedColumns: ["id"]
           },
           {
@@ -174,7 +209,6 @@ export type Database = {
           default_unit_id: string | null
           deleted_at: string | null
           description: string | null
-          emoji: string | null
           id: string
           name: string
           updated_at: string | null
@@ -185,7 +219,6 @@ export type Database = {
           default_unit_id?: string | null
           deleted_at?: string | null
           description?: string | null
-          emoji?: string | null
           id: string
           name: string
           updated_at?: string | null
@@ -196,7 +229,6 @@ export type Database = {
           default_unit_id?: string | null
           deleted_at?: string | null
           description?: string | null
-          emoji?: string | null
           id?: string
           name?: string
           updated_at?: string | null
@@ -224,6 +256,7 @@ export type Database = {
           created_at: string | null
           deleted_at: string | null
           end_at: string | null
+          global_variable_id: string
           id: string
           notes: string | null
           start_at: string
@@ -232,12 +265,12 @@ export type Database = {
           user_id: string
           user_variable_id: string | null
           value: number
-          variable_id: string
         }
         Insert: {
           created_at?: string | null
           deleted_at?: string | null
           end_at?: string | null
+          global_variable_id: string
           id?: string
           notes?: string | null
           start_at: string
@@ -246,12 +279,12 @@ export type Database = {
           user_id: string
           user_variable_id?: string | null
           value: number
-          variable_id: string
         }
         Update: {
           created_at?: string | null
           deleted_at?: string | null
           end_at?: string | null
+          global_variable_id?: string
           id?: string
           notes?: string | null
           start_at?: string
@@ -260,9 +293,15 @@ export type Database = {
           user_id?: string
           user_variable_id?: string | null
           value?: number
-          variable_id?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "measurements_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "measurements_unit_id_fkey"
             columns: ["unit_id"]
@@ -284,71 +323,42 @@ export type Database = {
             referencedRelation: "user_variables"
             referencedColumns: ["id"]
           },
-          {
-            foreignKeyName: "measurements_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
-            referencedRelation: "global_variables"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "measurements_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
         ]
       }
       notifications: {
         Row: {
-          action_url: string | null
           created_at: string | null
           deleted_at: string | null
-          expires_at: string | null
           id: string
-          is_read: boolean | null
+          link: string | null
           message: string
-          notification_type: string
           read_at: string | null
-          related_entity_id: string | null
-          related_entity_type: string | null
-          scheduled_for: string
           title: string
+          type: string
           updated_at: string | null
           user_id: string
         }
         Insert: {
-          action_url?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          expires_at?: string | null
           id?: string
-          is_read?: boolean | null
+          link?: string | null
           message: string
-          notification_type: string
           read_at?: string | null
-          related_entity_id?: string | null
-          related_entity_type?: string | null
-          scheduled_for: string
           title: string
+          type: string
           updated_at?: string | null
           user_id: string
         }
         Update: {
-          action_url?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          expires_at?: string | null
           id?: string
-          is_read?: boolean | null
+          link?: string | null
           message?: string
-          notification_type?: string
           read_at?: string | null
-          related_entity_id?: string | null
-          related_entity_type?: string | null
-          scheduled_for?: string
           title?: string
+          type?: string
           updated_at?: string | null
           user_id?: string
         }
@@ -367,28 +377,31 @@ export type Database = {
           client_id: string
           created_at: string | null
           expires_at: string
+          id: string
           revoked_at: string | null
-          scope: string | null
+          scope: string
           token: string
-          user_id: string | null
+          user_id: string
         }
         Insert: {
           client_id: string
           created_at?: string | null
           expires_at: string
+          id?: string
           revoked_at?: string | null
-          scope?: string | null
+          scope: string
           token: string
-          user_id?: string | null
+          user_id: string
         }
         Update: {
           client_id?: string
           created_at?: string | null
           expires_at?: string
+          id?: string
           revoked_at?: string | null
-          scope?: string | null
+          scope?: string
           token?: string
-          user_id?: string | null
+          user_id?: string
         }
         Relationships: [
           {
@@ -396,45 +409,14 @@ export type Database = {
             columns: ["client_id"]
             isOneToOne: false
             referencedRelation: "oauth_clients"
-            referencedColumns: ["client_id"]
+            referencedColumns: ["id"]
           },
-        ]
-      }
-      oauth_authorization_codes: {
-        Row: {
-          client_id: string
-          code: string
-          created_at: string | null
-          expires_at: string
-          redirect_uri: string
-          scope: string | null
-          user_id: string
-        }
-        Insert: {
-          client_id: string
-          code: string
-          created_at?: string | null
-          expires_at: string
-          redirect_uri: string
-          scope?: string | null
-          user_id: string
-        }
-        Update: {
-          client_id?: string
-          code?: string
-          created_at?: string | null
-          expires_at?: string
-          redirect_uri?: string
-          scope?: string | null
-          user_id?: string
-        }
-        Relationships: [
           {
-            foreignKeyName: "oauth_authorization_codes_client_id_fkey"
-            columns: ["client_id"]
+            foreignKeyName: "oauth_access_tokens_user_id_fkey"
+            columns: ["user_id"]
             isOneToOne: false
-            referencedRelation: "oauth_clients"
-            referencedColumns: ["client_id"]
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
           },
         ]
       }
@@ -445,13 +427,15 @@ export type Database = {
           client_secret: string
           client_uri: string | null
           created_at: string | null
+          deleted_at: string | null
           grant_types: string[]
+          id: string
           logo_uri: string | null
-          owner_id: string | null
+          owner_id: string
           policy_uri: string | null
           redirect_uris: string[]
           response_types: string[]
-          scope: string | null
+          scope: string
           tos_uri: string | null
           updated_at: string | null
         }
@@ -461,13 +445,15 @@ export type Database = {
           client_secret: string
           client_uri?: string | null
           created_at?: string | null
-          grant_types?: string[]
+          deleted_at?: string | null
+          grant_types: string[]
+          id?: string
           logo_uri?: string | null
-          owner_id?: string | null
+          owner_id: string
           policy_uri?: string | null
           redirect_uris: string[]
-          response_types?: string[]
-          scope?: string | null
+          response_types: string[]
+          scope: string
           tos_uri?: string | null
           updated_at?: string | null
         }
@@ -477,13 +463,15 @@ export type Database = {
           client_secret?: string
           client_uri?: string | null
           created_at?: string | null
+          deleted_at?: string | null
           grant_types?: string[]
+          id?: string
           logo_uri?: string | null
-          owner_id?: string | null
+          owner_id?: string
           policy_uri?: string | null
           redirect_uris?: string[]
           response_types?: string[]
-          scope?: string | null
+          scope?: string
           tos_uri?: string | null
           updated_at?: string | null
         }
@@ -499,69 +487,73 @@ export type Database = {
       }
       oauth_refresh_tokens: {
         Row: {
-          access_token: string
+          access_token_id: string
           client_id: string
           created_at: string | null
           expires_at: string
+          id: string
           revoked_at: string | null
-          scope: string | null
+          scope: string
           token: string
           user_id: string
         }
         Insert: {
-          access_token: string
+          access_token_id: string
           client_id: string
           created_at?: string | null
           expires_at: string
+          id?: string
           revoked_at?: string | null
-          scope?: string | null
+          scope: string
           token: string
           user_id: string
         }
         Update: {
-          access_token?: string
+          access_token_id?: string
           client_id?: string
           created_at?: string | null
           expires_at?: string
+          id?: string
           revoked_at?: string | null
-          scope?: string | null
+          scope?: string
           token?: string
           user_id?: string
         }
         Relationships: [
           {
-            foreignKeyName: "oauth_refresh_tokens_access_token_fkey"
-            columns: ["access_token"]
+            foreignKeyName: "oauth_refresh_tokens_access_token_id_fkey"
+            columns: ["access_token_id"]
             isOneToOne: false
             referencedRelation: "oauth_access_tokens"
-            referencedColumns: ["token"]
+            referencedColumns: ["id"]
           },
           {
             foreignKeyName: "oauth_refresh_tokens_client_id_fkey"
             columns: ["client_id"]
             isOneToOne: false
             referencedRelation: "oauth_clients"
-            referencedColumns: ["client_id"]
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "oauth_refresh_tokens_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
           },
         ]
       }
       oauth_scopes: {
         Row: {
-          created_at: string | null
-          description: string
-          is_default: boolean | null
+          description: string | null
           scope: string
         }
         Insert: {
-          created_at?: string | null
-          description: string
-          is_default?: boolean | null
+          description?: string | null
           scope: string
         }
         Update: {
-          created_at?: string | null
-          description?: string
-          is_default?: boolean | null
+          description?: string | null
           scope?: string
         }
         Relationships: []
@@ -571,42 +563,36 @@ export type Database = {
           condition_id: string
           created_at: string | null
           deleted_at: string | null
-          diagnosing_doctor_id: string | null
-          diagnosis_date: string
-          end_date: string | null
+          diagnosed_at: string | null
           id: string
           notes: string | null
           patient_id: string
           severity: string | null
-          status: string
+          status: string | null
           updated_at: string | null
         }
         Insert: {
           condition_id: string
           created_at?: string | null
           deleted_at?: string | null
-          diagnosing_doctor_id?: string | null
-          diagnosis_date: string
-          end_date?: string | null
+          diagnosed_at?: string | null
           id?: string
           notes?: string | null
           patient_id: string
           severity?: string | null
-          status?: string
+          status?: string | null
           updated_at?: string | null
         }
         Update: {
           condition_id?: string
           created_at?: string | null
           deleted_at?: string | null
-          diagnosing_doctor_id?: string | null
-          diagnosis_date?: string
-          end_date?: string | null
+          diagnosed_at?: string | null
           id?: string
           notes?: string | null
           patient_id?: string
           severity?: string | null
-          status?: string
+          status?: string | null
           updated_at?: string | null
         }
         Relationships: [
@@ -625,64 +611,51 @@ export type Database = {
             referencedColumns: ["condition_id"]
           },
           {
-            foreignKeyName: "patient_conditions_diagnosing_doctor_id_fkey"
-            columns: ["diagnosing_doctor_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "patient_conditions_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
-            referencedRelation: "profiles"
+            referencedRelation: "patients"
             referencedColumns: ["id"]
           },
         ]
       }
       patients: {
         Row: {
+          allergies: string[] | null
           blood_type: string | null
           created_at: string | null
           date_of_birth: string | null
           deleted_at: string | null
-          emergency_contact_name: string | null
-          emergency_contact_phone: string | null
           gender: string | null
           height: number | null
           id: string
-          insurance_id: string | null
-          insurance_provider: string | null
+          medications: string[] | null
           updated_at: string | null
           weight: number | null
         }
         Insert: {
+          allergies?: string[] | null
           blood_type?: string | null
           created_at?: string | null
           date_of_birth?: string | null
           deleted_at?: string | null
-          emergency_contact_name?: string | null
-          emergency_contact_phone?: string | null
           gender?: string | null
           height?: number | null
           id: string
-          insurance_id?: string | null
-          insurance_provider?: string | null
+          medications?: string[] | null
           updated_at?: string | null
           weight?: number | null
         }
         Update: {
+          allergies?: string[] | null
           blood_type?: string | null
           created_at?: string | null
           date_of_birth?: string | null
           deleted_at?: string | null
-          emergency_contact_name?: string | null
-          emergency_contact_phone?: string | null
           gender?: string | null
           height?: number | null
           id?: string
-          insurance_id?: string | null
-          insurance_provider?: string | null
+          medications?: string[] | null
           updated_at?: string | null
           weight?: number | null
         }
@@ -698,107 +671,155 @@ export type Database = {
       }
       profiles: {
         Row: {
-          contact_name: string | null
+          avatar_url: string | null
           created_at: string | null
           deleted_at: string | null
           email: string
           first_name: string | null
           id: string
           last_name: string | null
-          organization_name: string | null
           updated_at: string | null
           user_type: string
         }
         Insert: {
-          contact_name?: string | null
+          avatar_url?: string | null
           created_at?: string | null
           deleted_at?: string | null
           email: string
           first_name?: string | null
           id: string
           last_name?: string | null
-          organization_name?: string | null
           updated_at?: string | null
-          user_type?: string
+          user_type: string
         }
         Update: {
-          contact_name?: string | null
+          avatar_url?: string | null
           created_at?: string | null
           deleted_at?: string | null
           email?: string
           first_name?: string | null
           id?: string
           last_name?: string | null
-          organization_name?: string | null
           updated_at?: string | null
           user_type?: string
         }
         Relationships: []
       }
-      treatment_effectiveness: {
+      protocol_versions: {
         Row: {
-          condition_id: string
-          cost_effectiveness_score: number
+          approved_by: string | null
           created_at: string | null
           deleted_at: string | null
-          effectiveness_score: number
-          evidence_level: string
+          effective_date: string | null
           id: string
-          side_effects_score: number
-          treatment_id: string
+          metadata: Json | null
+          schedule: Json
+          status: string
+          trial_id: string
           updated_at: string | null
+          version_number: number
         }
         Insert: {
-          condition_id: string
-          cost_effectiveness_score: number
+          approved_by?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          effectiveness_score: number
-          evidence_level: string
+          effective_date?: string | null
           id?: string
-          side_effects_score: number
-          treatment_id: string
+          metadata?: Json | null
+          schedule: Json
+          status: string
+          trial_id: string
           updated_at?: string | null
+          version_number: number
         }
         Update: {
-          condition_id?: string
-          cost_effectiveness_score?: number
+          approved_by?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          effectiveness_score?: number
-          evidence_level?: string
+          effective_date?: string | null
           id?: string
-          side_effects_score?: number
-          treatment_id?: string
+          metadata?: Json | null
+          schedule?: Json
+          status?: string
+          trial_id?: string
           updated_at?: string | null
+          version_number?: number
         }
         Relationships: [
           {
-            foreignKeyName: "treatment_effectiveness_condition_id_fkey"
-            columns: ["condition_id"]
+            foreignKeyName: "protocol_versions_approved_by_fkey"
+            columns: ["approved_by"]
             isOneToOne: false
-            referencedRelation: "conditions"
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "treatment_effectiveness_condition_id_fkey"
-            columns: ["condition_id"]
+            foreignKeyName: "protocol_versions_trial_id_fkey"
+            columns: ["trial_id"]
             isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["condition_id"]
+            referencedRelation: "patient_eligible_trials_view"
+            referencedColumns: ["trial_id"]
           },
           {
-            foreignKeyName: "treatment_effectiveness_treatment_id_fkey"
+            foreignKeyName: "protocol_versions_trial_id_fkey"
+            columns: ["trial_id"]
+            isOneToOne: false
+            referencedRelation: "trials"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      reported_side_effects: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          description: string
+          id: string
+          severity: number | null
+          treatment_id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          description: string
+          id?: string
+          severity?: number | null
+          treatment_id: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          description?: string
+          id?: string
+          severity?: number | null
+          treatment_id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reported_side_effects_treatment_id_fkey"
             columns: ["treatment_id"]
             isOneToOne: false
             referencedRelation: "patient_treatments_view"
             referencedColumns: ["treatment_id"]
           },
           {
-            foreignKeyName: "treatment_effectiveness_treatment_id_fkey"
+            foreignKeyName: "reported_side_effects_treatment_id_fkey"
             columns: ["treatment_id"]
             isOneToOne: false
             referencedRelation: "treatments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reported_side_effects_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
         ]
@@ -806,36 +827,39 @@ export type Database = {
       treatment_ratings: {
         Row: {
           condition_id: string
-          created_at: string
+          created_at: string | null
+          deleted_at: string | null
+          effectiveness: number | null
+          helpful_count: number | null
           id: string
-          rating: number
           review: string | null
           treatment_id: string
-          updated_at: string
+          updated_at: string | null
           user_id: string
-          verified: boolean | null
         }
         Insert: {
           condition_id: string
-          created_at?: string
+          created_at?: string | null
+          deleted_at?: string | null
+          effectiveness?: number | null
+          helpful_count?: number | null
           id?: string
-          rating: number
           review?: string | null
           treatment_id: string
-          updated_at?: string
+          updated_at?: string | null
           user_id: string
-          verified?: boolean | null
         }
         Update: {
           condition_id?: string
-          created_at?: string
+          created_at?: string | null
+          deleted_at?: string | null
+          effectiveness?: number | null
+          helpful_count?: number | null
           id?: string
-          rating?: number
           review?: string | null
           treatment_id?: string
-          updated_at?: string
+          updated_at?: string | null
           user_id?: string
-          verified?: boolean | null
         }
         Relationships: [
           {
@@ -875,121 +899,29 @@ export type Database = {
           },
         ]
       }
-      treatment_side_effect_ratings: {
-        Row: {
-          condition_id: string
-          created_at: string | null
-          deleted_at: string | null
-          id: string
-          notes: string | null
-          severity_rating: number
-          side_effect_variable_id: string
-          treatment_id: string
-          updated_at: string | null
-          user_id: string
-        }
-        Insert: {
-          condition_id: string
-          created_at?: string | null
-          deleted_at?: string | null
-          id?: string
-          notes?: string | null
-          severity_rating: number
-          side_effect_variable_id: string
-          treatment_id: string
-          updated_at?: string | null
-          user_id: string
-        }
-        Update: {
-          condition_id?: string
-          created_at?: string | null
-          deleted_at?: string | null
-          id?: string
-          notes?: string | null
-          severity_rating?: number
-          side_effect_variable_id?: string
-          treatment_id?: string
-          updated_at?: string | null
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "treatment_side_effect_ratings_condition_id_fkey"
-            columns: ["condition_id"]
-            isOneToOne: false
-            referencedRelation: "conditions"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_condition_id_fkey"
-            columns: ["condition_id"]
-            isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["condition_id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_side_effect_variable_id_fkey"
-            columns: ["side_effect_variable_id"]
-            isOneToOne: false
-            referencedRelation: "global_variables"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_side_effect_variable_id_fkey"
-            columns: ["side_effect_variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_treatment_id_fkey"
-            columns: ["treatment_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments_view"
-            referencedColumns: ["treatment_id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_treatment_id_fkey"
-            columns: ["treatment_id"]
-            isOneToOne: false
-            referencedRelation: "treatments"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       treatments: {
         Row: {
-          approval_status: string
+          approval_status: string | null
           created_at: string | null
           deleted_at: string | null
-          global_variable_id: string
           id: string
           manufacturer: string | null
           treatment_type: string
           updated_at: string | null
         }
         Insert: {
-          approval_status: string
+          approval_status?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          global_variable_id: string
           id: string
           manufacturer?: string | null
           treatment_type: string
           updated_at?: string | null
         }
         Update: {
-          approval_status?: string
+          approval_status?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          global_variable_id?: string
           id?: string
           manufacturer?: string | null
           treatment_type?: string
@@ -997,18 +929,150 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "treatments_global_variable_id_fkey"
-            columns: ["global_variable_id"]
-            isOneToOne: false
+            foreignKeyName: "treatments_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
             referencedRelation: "global_variables"
             referencedColumns: ["id"]
           },
+        ]
+      }
+      trial_actions: {
+        Row: {
+          action_type_id: string
+          cancellation_reason: string | null
+          cancelled_at: string | null
+          cancelled_by: string | null
+          completed_at: string | null
+          completed_by: string | null
+          created_at: string | null
+          deleted_at: string | null
+          description: string | null
+          due_date: string
+          enrollment_id: string
+          id: string
+          is_protocol_required: boolean | null
+          metadata: Json | null
+          parent_action_id: string | null
+          priority: string
+          protocol_version_id: string | null
+          scheduled_date: string | null
+          status: string
+          title: string
+          trial_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          action_type_id: string
+          cancellation_reason?: string | null
+          cancelled_at?: string | null
+          cancelled_by?: string | null
+          completed_at?: string | null
+          completed_by?: string | null
+          created_at?: string | null
+          deleted_at?: string | null
+          description?: string | null
+          due_date: string
+          enrollment_id: string
+          id?: string
+          is_protocol_required?: boolean | null
+          metadata?: Json | null
+          parent_action_id?: string | null
+          priority?: string
+          protocol_version_id?: string | null
+          scheduled_date?: string | null
+          status: string
+          title: string
+          trial_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          action_type_id?: string
+          cancellation_reason?: string | null
+          cancelled_at?: string | null
+          cancelled_by?: string | null
+          completed_at?: string | null
+          completed_by?: string | null
+          created_at?: string | null
+          deleted_at?: string | null
+          description?: string | null
+          due_date?: string
+          enrollment_id?: string
+          id?: string
+          is_protocol_required?: boolean | null
+          metadata?: Json | null
+          parent_action_id?: string | null
+          priority?: string
+          protocol_version_id?: string | null
+          scheduled_date?: string | null
+          status?: string
+          title?: string
+          trial_id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
           {
-            foreignKeyName: "treatments_global_variable_id_fkey"
-            columns: ["global_variable_id"]
+            foreignKeyName: "trial_actions_action_type_id_fkey"
+            columns: ["action_type_id"]
             isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
+            referencedRelation: "action_types"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_cancelled_by_fkey"
+            columns: ["cancelled_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_completed_by_fkey"
+            columns: ["completed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_enrollment_id_fkey"
+            columns: ["enrollment_id"]
+            isOneToOne: false
+            referencedRelation: "trial_enrollments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_parent_action_id_fkey"
+            columns: ["parent_action_id"]
+            isOneToOne: false
+            referencedRelation: "pending_actions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_parent_action_id_fkey"
+            columns: ["parent_action_id"]
+            isOneToOne: false
+            referencedRelation: "trial_actions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_protocol_version_id_fkey"
+            columns: ["protocol_version_id"]
+            isOneToOne: false
+            referencedRelation: "protocol_versions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_trial_id_fkey"
+            columns: ["trial_id"]
+            isOneToOne: false
+            referencedRelation: "patient_eligible_trials_view"
+            referencedColumns: ["trial_id"]
+          },
+          {
+            foreignKeyName: "trial_actions_trial_id_fkey"
+            columns: ["trial_id"]
+            isOneToOne: false
+            referencedRelation: "trials"
+            referencedColumns: ["id"]
           },
         ]
       }
@@ -1017,8 +1081,8 @@ export type Database = {
           completion_date: string | null
           created_at: string | null
           deleted_at: string | null
-          doctor_id: string | null
-          enrollment_date: string
+          doctor_id: string
+          enrollment_date: string | null
           id: string
           notes: string | null
           patient_id: string
@@ -1030,8 +1094,8 @@ export type Database = {
           completion_date?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          doctor_id?: string | null
-          enrollment_date: string
+          doctor_id: string
+          enrollment_date?: string | null
           id?: string
           notes?: string | null
           patient_id: string
@@ -1043,8 +1107,8 @@ export type Database = {
           completion_date?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          doctor_id?: string | null
-          enrollment_date?: string
+          doctor_id?: string
+          enrollment_date?: string | null
           id?: string
           notes?: string | null
           patient_id?: string
@@ -1064,14 +1128,14 @@ export type Database = {
             foreignKeyName: "trial_enrollments_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
-            referencedRelation: "profiles"
+            referencedRelation: "patients"
             referencedColumns: ["id"]
           },
           {
             foreignKeyName: "trial_enrollments_trial_id_fkey"
             columns: ["trial_id"]
             isOneToOne: false
-            referencedRelation: "patient_eligible_trials"
+            referencedRelation: "patient_eligible_trials_view"
             referencedColumns: ["trial_id"]
           },
           {
@@ -1090,16 +1154,16 @@ export type Database = {
           created_at: string | null
           current_enrollment: number | null
           deleted_at: string | null
-          description: string
+          description: string | null
           end_date: string | null
-          enrollment_target: number
-          exclusion_criteria: Json | null
+          enrollment_target: number | null
+          exclusion_criteria: string[] | null
           id: string
-          inclusion_criteria: Json | null
+          inclusion_criteria: string[] | null
           location: string | null
-          phase: string
+          phase: string | null
           sponsor_id: string
-          start_date: string
+          start_date: string | null
           status: string
           title: string
           treatment_id: string
@@ -1111,16 +1175,16 @@ export type Database = {
           created_at?: string | null
           current_enrollment?: number | null
           deleted_at?: string | null
-          description: string
+          description?: string | null
           end_date?: string | null
-          enrollment_target: number
-          exclusion_criteria?: Json | null
+          enrollment_target?: number | null
+          exclusion_criteria?: string[] | null
           id?: string
-          inclusion_criteria?: Json | null
+          inclusion_criteria?: string[] | null
           location?: string | null
-          phase: string
+          phase?: string | null
           sponsor_id: string
-          start_date: string
+          start_date?: string | null
           status: string
           title: string
           treatment_id: string
@@ -1132,16 +1196,16 @@ export type Database = {
           created_at?: string | null
           current_enrollment?: number | null
           deleted_at?: string | null
-          description?: string
+          description?: string | null
           end_date?: string | null
-          enrollment_target?: number
-          exclusion_criteria?: Json | null
+          enrollment_target?: number | null
+          exclusion_criteria?: string[] | null
           id?: string
-          inclusion_criteria?: Json | null
+          inclusion_criteria?: string[] | null
           location?: string | null
-          phase?: string
+          phase?: string | null
           sponsor_id?: string
-          start_date?: string
+          start_date?: string | null
           status?: string
           title?: string
           treatment_id?: string
@@ -1187,71 +1251,70 @@ export type Database = {
       }
       unit_categories: {
         Row: {
+          base_unit_id: string | null
           created_at: string | null
-          deleted_at: string | null
           description: string | null
-          emoji: string | null
           id: string
           name: string
           updated_at: string | null
         }
         Insert: {
+          base_unit_id?: string | null
           created_at?: string | null
-          deleted_at?: string | null
           description?: string | null
-          emoji?: string | null
           id: string
           name: string
           updated_at?: string | null
         }
         Update: {
+          base_unit_id?: string | null
           created_at?: string | null
-          deleted_at?: string | null
           description?: string | null
-          emoji?: string | null
           id?: string
           name?: string
           updated_at?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "fk_unit_categories_base_unit"
+            columns: ["base_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       units: {
         Row: {
-          abbreviation: string
-          conversion_factor: number | null
-          conversion_offset: number | null
+          abbreviated_name: string
+          conversion_factor: number
+          conversion_offset: number
           created_at: string | null
-          deleted_at: string | null
-          emoji: string | null
           id: string
-          is_default: boolean | null
           name: string
+          ucum_code: string | null
           unit_category_id: string
           updated_at: string | null
         }
         Insert: {
-          abbreviation: string
-          conversion_factor?: number | null
-          conversion_offset?: number | null
+          abbreviated_name: string
+          conversion_factor: number
+          conversion_offset?: number
           created_at?: string | null
-          deleted_at?: string | null
-          emoji?: string | null
           id: string
-          is_default?: boolean | null
           name: string
+          ucum_code?: string | null
           unit_category_id: string
           updated_at?: string | null
         }
         Update: {
-          abbreviation?: string
-          conversion_factor?: number | null
-          conversion_offset?: number | null
+          abbreviated_name?: string
+          conversion_factor?: number
+          conversion_offset?: number
           created_at?: string | null
-          deleted_at?: string | null
-          emoji?: string | null
           id?: string
-          is_default?: boolean | null
           name?: string
+          ucum_code?: string | null
           unit_category_id?: string
           updated_at?: string | null
         }
@@ -1268,61 +1331,50 @@ export type Database = {
       user_variables: {
         Row: {
           created_at: string | null
-          custom_recurrence_rule: string | null
           deleted_at: string | null
+          description: string | null
+          global_variable_id: string
           id: string
-          reminder_days: number[] | null
-          reminder_enabled: boolean | null
-          reminder_end_date: string | null
-          reminder_frequency: string | null
-          reminder_interval: number | null
-          reminder_start_date: string | null
-          reminder_times: string[] | null
+          name: string
+          unit_category_id: string | null
           updated_at: string | null
-          user_default_unit_id: string | null
           user_id: string
-          variable_id: string
         }
         Insert: {
           created_at?: string | null
-          custom_recurrence_rule?: string | null
           deleted_at?: string | null
+          description?: string | null
+          global_variable_id: string
           id?: string
-          reminder_days?: number[] | null
-          reminder_enabled?: boolean | null
-          reminder_end_date?: string | null
-          reminder_frequency?: string | null
-          reminder_interval?: number | null
-          reminder_start_date?: string | null
-          reminder_times?: string[] | null
+          name: string
+          unit_category_id?: string | null
           updated_at?: string | null
-          user_default_unit_id?: string | null
           user_id: string
-          variable_id: string
         }
         Update: {
           created_at?: string | null
-          custom_recurrence_rule?: string | null
           deleted_at?: string | null
+          description?: string | null
+          global_variable_id?: string
           id?: string
-          reminder_days?: number[] | null
-          reminder_enabled?: boolean | null
-          reminder_end_date?: string | null
-          reminder_frequency?: string | null
-          reminder_interval?: number | null
-          reminder_start_date?: string | null
-          reminder_times?: string[] | null
+          name?: string
+          unit_category_id?: string | null
           updated_at?: string | null
-          user_default_unit_id?: string | null
           user_id?: string
-          variable_id?: string
         }
         Relationships: [
           {
-            foreignKeyName: "user_variables_user_default_unit_id_fkey"
-            columns: ["user_default_unit_id"]
+            foreignKeyName: "user_variables_global_variable_id_fkey"
+            columns: ["global_variable_id"]
             isOneToOne: false
-            referencedRelation: "units"
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_variables_unit_category_id_fkey"
+            columns: ["unit_category_id"]
+            isOneToOne: false
+            referencedRelation: "unit_categories"
             referencedColumns: ["id"]
           },
           {
@@ -1332,54 +1384,37 @@ export type Database = {
             referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
-          {
-            foreignKeyName: "user_variables_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
-            referencedRelation: "global_variables"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "user_variables_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
         ]
       }
       variable_categories: {
         Row: {
           created_at: string | null
-          deleted_at: string | null
-          display_order: number
-          emoji: string
+          display_order: number | null
+          emoji: string | null
           id: string
-          long_description: string
+          long_description: string | null
           name: string
-          short_description: string
+          short_description: string | null
           updated_at: string | null
         }
         Insert: {
           created_at?: string | null
-          deleted_at?: string | null
-          display_order?: number
-          emoji: string
+          display_order?: number | null
+          emoji?: string | null
           id: string
-          long_description: string
+          long_description?: string | null
           name: string
-          short_description: string
+          short_description?: string | null
           updated_at?: string | null
         }
         Update: {
           created_at?: string | null
-          deleted_at?: string | null
-          display_order?: number
-          emoji?: string
+          display_order?: number | null
+          emoji?: string | null
           id?: string
-          long_description?: string
+          long_description?: string | null
           name?: string
-          short_description?: string
+          short_description?: string | null
           updated_at?: string | null
         }
         Relationships: []
@@ -1393,33 +1428,47 @@ export type Database = {
           description: string | null
           diagnosed_at: string | null
           icd_code: string | null
+          id: string | null
           measurement_count: number | null
+          notes: string | null
           patient_id: string | null
-          variable_id: string | null
+          severity: string | null
+          status: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "measurements_user_id_fkey"
+            foreignKeyName: "conditions_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_conditions_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
-            referencedRelation: "profiles"
+            referencedRelation: "patients"
             referencedColumns: ["id"]
           },
         ]
       }
-      patient_eligible_trials: {
+      patient_eligible_trials_view: {
         Row: {
           condition_name: string | null
           current_enrollment: number | null
           description: string | null
           end_date: string | null
           enrollment_target: number | null
+          manufacturer: string | null
           patient_id: string | null
           phase: string | null
+          sponsor_first_name: string | null
+          sponsor_last_name: string | null
           start_date: string | null
           status: string | null
           title: string | null
           treatment_name: string | null
+          treatment_type: string | null
           trial_id: string | null
         }
         Relationships: [
@@ -1427,7 +1476,7 @@ export type Database = {
             foreignKeyName: "patient_conditions_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
-            referencedRelation: "profiles"
+            referencedRelation: "patients"
             referencedColumns: ["id"]
           },
         ]
@@ -1436,21 +1485,28 @@ export type Database = {
         Row: {
           approval_status: string | null
           end_at: string | null
+          global_variable_id: string | null
           manufacturer: string | null
           measurement_id: string | null
           notes: string | null
           start_at: string | null
+          treatment_description: string | null
           treatment_id: string | null
+          treatment_name: string | null
           treatment_type: string | null
-          unit_abbreviation: string | null
+          unit_abbreviated_name: string | null
           unit_name: string | null
           user_id: string | null
           value: number | null
-          variable_description: string | null
-          variable_id: string | null
-          variable_name: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "measurements_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "measurements_user_id_fkey"
             columns: ["user_id"]
@@ -1459,18 +1515,55 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "measurements_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
+            foreignKeyName: "treatments_id_fkey"
+            columns: ["treatment_id"]
+            isOneToOne: true
             referencedRelation: "global_variables"
             referencedColumns: ["id"]
           },
+        ]
+      }
+      pending_actions: {
+        Row: {
+          action_category: Database["public"]["Enums"]["action_category"] | null
+          action_type: string | null
+          description: string | null
+          doctor_name: string | null
+          due_date: string | null
+          enrollment_id: string | null
+          id: string | null
+          is_protocol_required: boolean | null
+          patient_name: string | null
+          priority: string | null
+          protocol_version: number | null
+          scheduled_date: string | null
+          status: string | null
+          title: string | null
+          trial_id: string | null
+          trial_title: string | null
+          urgency: string | null
+        }
+        Relationships: [
           {
-            foreignKeyName: "measurements_variable_id_fkey"
-            columns: ["variable_id"]
+            foreignKeyName: "trial_actions_enrollment_id_fkey"
+            columns: ["enrollment_id"]
             isOneToOne: false
-            referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
+            referencedRelation: "trial_enrollments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_actions_trial_id_fkey"
+            columns: ["trial_id"]
+            isOneToOne: false
+            referencedRelation: "patient_eligible_trials_view"
+            referencedColumns: ["trial_id"]
+          },
+          {
+            foreignKeyName: "trial_actions_trial_id_fkey"
+            columns: ["trial_id"]
+            isOneToOne: false
+            referencedRelation: "trials"
+            referencedColumns: ["id"]
           },
         ]
       }
@@ -1484,14 +1577,45 @@ export type Database = {
         }
         Returns: number
       }
+      generate_protocol_actions: {
+        Args: {
+          enrollment_id: string
+          protocol_version_id?: string
+        }
+        Returns: {
+          action_type_id: string
+          cancellation_reason: string | null
+          cancelled_at: string | null
+          cancelled_by: string | null
+          completed_at: string | null
+          completed_by: string | null
+          created_at: string | null
+          deleted_at: string | null
+          description: string | null
+          due_date: string
+          enrollment_id: string
+          id: string
+          is_protocol_required: boolean | null
+          metadata: Json | null
+          parent_action_id: string | null
+          priority: string
+          protocol_version_id: string | null
+          scheduled_date: string | null
+          status: string
+          title: string
+          trial_id: string
+          updated_at: string | null
+        }[]
+      }
       get_average_treatment_rating: {
         Args: {
           p_treatment_id: string
           p_condition_id: string
         }
         Returns: {
-          average: number
-          count: number
+          avg_effectiveness: number
+          avg_side_effects: number
+          total_ratings: number
         }[]
       }
       increment_helpful_count: {
@@ -1500,23 +1624,17 @@ export type Database = {
         }
         Returns: undefined
       }
-      restore_soft_deleted_record: {
-        Args: {
-          p_table_name: string
-          p_record_id: string
-        }
-        Returns: boolean
-      }
-      soft_delete_record: {
-        Args: {
-          p_table_name: string
-          p_record_id: string
-        }
-        Returns: boolean
-      }
     }
     Enums: {
-      [_ in never]: never
+      action_category:
+        | "lab_work"
+        | "imaging"
+        | "assessment"
+        | "review"
+        | "procedure"
+        | "consultation"
+        | "medication"
+        | "other"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -2070,7 +2188,18 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      action_category: [
+        "lab_work",
+        "imaging",
+        "assessment",
+        "review",
+        "procedure",
+        "consultation",
+        "medication",
+        "other",
+      ],
+    },
   },
   storage: {
     Enums: {},
