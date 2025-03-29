@@ -6,7 +6,9 @@ CREATE TABLE IF NOT EXISTS user_variables (
   name TEXT NOT NULL,
   description TEXT,
   unit_category_id TEXT REFERENCES unit_categories(id) ON DELETE RESTRICT,
+  emoji TEXT,
+  image_url TEXT,
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-); 
+);
