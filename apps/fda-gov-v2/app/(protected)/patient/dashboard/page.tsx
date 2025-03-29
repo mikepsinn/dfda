@@ -19,15 +19,32 @@ export default async function PatientDashboard() {
       id,
       status,
       enrollment_date,
-      trials (
+      created_at,
+      updated_at,
+      deleted_at,
+      doctor_id,
+      patient_id,
+      trial_id,
+      notes,
+      completion_date,
+      trials:trial_id (
         id,
-        name,
+        title,
         description,
         status,
         treatment_id,
         condition_id,
-        treatments (name),
-        conditions (name)
+        treatments:treatment_id (
+          id,
+          title,
+          treatment_type,
+          manufacturer
+        ),
+        conditions:condition_id (
+          id,
+          title,
+          icd_code
+        )
       )
     `)
     .eq("patient_id", user?.id)
@@ -37,13 +54,22 @@ export default async function PatientDashboard() {
     .from("trials")
     .select(`
       id,
-      name,
+      title,
       description,
       status,
       treatment_id,
       condition_id,
-      treatments (name),
-      conditions (name)
+      treatments:treatment_id (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      ),
+      conditions:condition_id (
+        id,
+        title,
+        icd_code
+      )
     `)
     .eq("status", "active")
     .limit(5)

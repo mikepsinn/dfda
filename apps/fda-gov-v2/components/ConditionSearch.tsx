@@ -1,143 +1,113 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect, useRef } from "react"
-import { Search } from "lucide-react"
+import React, { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { getConditionsAction, searchConditionsAction, type Condition } from "@/app/actions/conditions"
+import { Label } from "@/components/ui/label"
+import { searchConditionsAction } from "@/app/actions/conditions"
+import type { Database } from "@/lib/database.types"
 
+// Use the database view type directly
+type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+
+// Update the props interface to use the new type
 interface ConditionSearchProps {
-  onConditionSelect: (condition: string) => void
-  initialSearchTerm?: string
-  initialConditions?: Condition[]
-  placeholder?: string
+  onSelect: (condition: ConditionView) => void
+  initialConditions?: ConditionView[]
 }
 
 export function ConditionSearch({
-  onConditionSelect,
-  initialSearchTerm = "",
+  onSelect,
   initialConditions = [],
-  placeholder = "Search for a condition (e.g., diabetes, arthritis, depression)...",
 }: ConditionSearchProps) {
-  const [allConditions, setAllConditions] = useState<Condition[]>(initialConditions)
-  const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
-  const [suggestions, setSuggestions] = useState<Condition[]>([])
+  const [searchTerm, setSearchTerm] = useState("")
+  const [suggestions, setSuggestions] = useState<ConditionView[]>([])
+  const [conditions, setConditions] = useState<ConditionView[]>(initialConditions)
   const [showSuggestions, setShowSuggestions] = useState(false)
-  const [isLoading, setIsLoading] = useState(initialConditions.length === 0)
-  const suggestionsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (initialConditions.length === 0) {
-      const fetchInitialConditions = async () => {
-        setIsLoading(true)
-        try {
-          const conditions = await getConditionsAction()
-          if (conditions) {
-            setAllConditions(conditions)
-          }
-        } catch (error) {
-          console.error("Failed to fetch conditions:", error)
-        } finally {
-          setIsLoading(false)
-        }
+    const fetchSuggestions = async () => {
+      if (searchTerm.length < 2) {
+        setSuggestions([])
+        return
       }
 
-      fetchInitialConditions()
-    }
-  }, [initialConditions])
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
-        setShowSuggestions(false)
+      try {
+        const results = await searchConditionsAction(searchTerm)
+        setSuggestions(results)
+      } catch (error) {
+        console.error("Error fetching suggestions:", error)
+        setSuggestions([])
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
+    fetchSuggestions()
+  }, [searchTerm])
 
-  useEffect(() => {
-    if (searchTerm.trim() === "") {
-      setSuggestions(allConditions.slice(0, 10))
-      return
-    }
-
-    const filtered = allConditions.filter((condition) => condition.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    setSuggestions(filtered)
-  }, [searchTerm, allConditions])
-
-  const handleSearchChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value
-    setSearchTerm(query)
-
-    if (query.length === 0) {
-      setSuggestions(allConditions.slice(0, 10))
-      setShowSuggestions(true)
-      return
-    }
-
-    if (query.length < 2) {
-      setShowSuggestions(true)
-      setSuggestions([])
-      return
-    }
-
-    setShowSuggestions(true)
-    setIsLoading(true)
-    try {
-      const searchedConditions = await searchConditionsAction(query)
-      if (searchedConditions) {
-        setSuggestions(searchedConditions)
-      }
-    } catch (error) {
-      console.error("Failed to search conditions:", error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  const handleSuggestionClick = (condition: Condition) => {
-    setSearchTerm(condition.name)
-    onConditionSelect(condition.name)
+  const handleSelectCondition = (condition: ConditionView) => {
+    onSelect(condition)
+    setSearchTerm("")
+    setSuggestions([])
     setShowSuggestions(false)
+    setConditions([...conditions, condition])
   }
 
   return (
-    <div className="relative">
-      <div className="relative">
-        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-        <Input
-          type="search"
-          placeholder={placeholder}
-          className="pl-8"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          onFocus={() => setShowSuggestions(true)}
-        />
-      </div>
-
-      {isLoading ? (
-        <div className="p-2 text-center text-sm text-muted-foreground">Loading...</div>
-      ) : (
-        showSuggestions && (
-          <div ref={suggestionsRef} className="absolute z-10 mt-1 w-full rounded-md border bg-background shadow-lg">
-            <ul className="py-1">
-              {suggestions.map((condition) => (
-                <li
-                  key={condition.id}
-                  className="cursor-pointer px-4 py-2 hover:bg-muted"
-                  onClick={() => handleSuggestionClick(condition)}
+    <div className="w-full space-y-2">
+      <div className="space-y-1">
+        <Label htmlFor="condition-search">Search Conditions</Label>
+        <div className="relative">
+          <Input
+            id="condition-search"
+            placeholder="Type to search conditions..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onFocus={() => setShowSuggestions(true)}
+            autoComplete="off"
+          />
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="absolute z-10 w-full max-h-60 mt-1 overflow-auto bg-white border border-gray-300 rounded-md shadow-lg">
+              {suggestions.map((suggestion) => (
+                <div
+                  key={suggestion.condition_id}
+                  className="p-2 cursor-pointer hover:bg-gray-100"
+                  onClick={() => handleSelectCondition(suggestion)}
                 >
-                  {condition.name}
-                </li>
+                  {suggestion.condition_name}
+                </div>
               ))}
-            </ul>
+            </div>
+          )}
+        </div>
+      </div>
+      
+      {conditions.length > 0 && (
+        <div className="space-y-2">
+          <Label>Selected Conditions</Label>
+          <div className="space-y-1">
+            {conditions.map((condition) => (
+              <div
+                key={condition.condition_id}
+                className="flex items-center justify-between p-2 bg-gray-100 rounded-md"
+              >
+                <span>{condition.condition_name}</span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setConditions(
+                      conditions.filter(
+                        (c) => c.condition_id !== condition.condition_id
+                      )
+                    )
+                  }}
+                >
+                  Remove
+                </Button>
+              </div>
+            ))}
           </div>
-        )
+        </div>
       )}
     </div>
   )

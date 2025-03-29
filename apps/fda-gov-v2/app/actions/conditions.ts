@@ -5,47 +5,64 @@ import type { Database } from "@/lib/database.types"
 import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabaseMutationResponse } from "@/lib/actions-helpers"
 import { revalidatePath } from "next/cache"
 
-export type Condition = Database["public"]["Tables"]["conditions"]["Row"]
-export type ConditionInsert = Database["public"]["Tables"]["conditions"]["Insert"]
-export type ConditionUpdate = Database["public"]["Tables"]["conditions"]["Update"]
+// Use the database view type directly 
+type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+type ConditionInsert = Database["public"]["Tables"]["conditions"]["Insert"]
+type ConditionUpdate = Database["public"]["Tables"]["conditions"]["Update"]
 
-// Get all conditions
-export async function getConditionsAction() {
+// Get all conditions from the view which includes the name
+export async function getConditionsAction(): Promise<ConditionView[]> {
   const supabase = createServerClient()
 
-  const response = await supabase.from("conditions").select("*").order("name")
+  // Query the patient_conditions_view which already has the joins
+  const response = await supabase
+    .from("patient_conditions_view")
+    .select("*")
+    .order("condition_name")
+    .limit(50)
 
   if (response.error) {
     console.error("Error fetching conditions:", response.error)
     throw new Error("Failed to fetch conditions")
   }
 
-  return handleDatabaseCollectionResponse<Condition>(response)
+  return response.data;
 }
 
-// Get a condition by ID
-export async function getConditionByIdAction(id: string) {
+// Get a condition by ID with joined name from global_variables
+export async function getConditionByIdAction(id: string): Promise<ConditionView | null> {
   const supabase = createServerClient()
 
-  const response = await supabase.from("conditions").select("*").eq("id", id).single()
+  // Query the patient_conditions_view which already has the joins
+  const response = await supabase
+    .from("patient_conditions_view")
+    .select("*")
+    .eq("condition_id", id)
+    .limit(1)
+    .single()
 
   if (response.error) {
+    if (response.error.code === 'PGRST116') {
+      // Not found
+      return null;
+    }
     console.error("Error fetching condition:", response.error)
     throw new Error("Failed to fetch condition")
   }
 
-  return handleDatabaseResponse<Condition>(response)
+  return response.data;
 }
 
 // Search conditions by name
-export async function searchConditionsAction(query: string) {
+export async function searchConditionsAction(query: string): Promise<ConditionView[]> {
   const supabase = createServerClient()
 
+  // Query the patient_conditions_view which already has the joins
   const response = await supabase
-    .from("conditions")
+    .from("patient_conditions_view")
     .select("*")
-    .ilike("name", `%${query}%`)
-    .order("name")
+    .ilike("condition_name", `%${query}%`)
+    .order("condition_name")
     .limit(10)
 
   if (response.error) {
@@ -53,7 +70,7 @@ export async function searchConditionsAction(query: string) {
     throw new Error("Failed to search conditions")
   }
 
-  return handleDatabaseCollectionResponse<Condition>(response)
+  return response.data;
 }
 
 // Create a new condition
@@ -69,7 +86,7 @@ export async function createConditionAction(condition: ConditionInsert) {
 
   revalidatePath("/admin/conditions") // Example path, adjust as needed
   revalidatePath("/") // Revalidate root or specific data-displaying paths
-  return handleDatabaseResponse<Condition>(response)
+  return response.data;
 }
 
 // Update a condition
@@ -91,7 +108,7 @@ export async function updateConditionAction(id: string, updates: ConditionUpdate
   revalidatePath(`/admin/conditions/${id}`) // Example
   revalidatePath("/admin/conditions")
   revalidatePath("/")
-  return handleDatabaseResponse<Condition>(response)
+  return response.data;
 }
 
 // Delete a condition
@@ -102,5 +119,5 @@ export async function deleteConditionAction(id: string) {
 
   revalidatePath("/admin/conditions")
   revalidatePath("/")
-  return handleDatabaseMutationResponse<Condition>(response, "Failed to delete condition")
+  return response.status === 204; // Success
 }

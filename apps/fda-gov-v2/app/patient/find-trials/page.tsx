@@ -1,80 +1,72 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowLeft, Shield, Wallet, Percent, Home } from "lucide-react"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Metadata } from "next"
+import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { SearchContainer } from "./components/search-container"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ConditionSearch } from "@/components/ConditionSearch"
-import { getConditionsAction } from "@/app/actions/conditions"
-import { PatientBenefits } from "./components/patient-benefits"
-import { HealthJourney } from "./components/health-journey"
+import { getServerSession } from "@/lib/server-auth"
+import { redirect } from "next/navigation"
+import { Database } from "@/lib/database.types"
 
 export const metadata: Metadata = {
-  title: "Find Clinical Trials | Decentralized FDA",
-  description:
-    "Search for clinical trials by condition and discover evidence-based treatments ranked by effectiveness.",
+  title: "Find Clinical Trials | FDA v2",
+  description: "Search for clinical trials related to your conditions",
 }
 
-// Updated patient-focused benefits
-const patientBenefits = [
-  {
-    icon: Percent,
-    title: "80% Lower Cost",
-    description: "Access treatments at a fraction of traditional healthcare costs.",
-  },
-  {
-    icon: Home,
-    title: "100% Decentralized",
-    description: "Participate entirely from home with no travel or clinic visits required.",
-  },
-  {
-    icon: Shield,
-    title: "Enhanced Monitoring",
-    description: "Receive closer health monitoring and personalized medical attention.",
-  },
-  {
-    icon: Wallet,
-    title: "Transparent Pricing",
-    description: "Clear, upfront pricing with no hidden fees or surprise costs.",
-  },
-]
+// Use the database view type directly
+type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
 
-export default async function FindTrials() {
-  // Fetch initial data (e.g., all conditions) server-side
-  const allConditions = await getConditionsAction()
+export default async function FindTrialsPage() {
+  const session = await getServerSession()
+  if (!session) {
+    redirect('/login?callbackUrl=/patient/find-trials')
+  }
+
+  // Fetch the user's conditions
+  const userConditions = await getPatientConditionsAction()
+
+  // No special transformation needed as we use the database view type directly
+  const allConditions = userConditions
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="flex-1 py-6 md:py-10">
-        <div className="container">
-          <div className="mx-auto max-w-4xl">
-            <div className="mb-8 flex items-center gap-2">
-              <Link href="/" className="text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="h-4 w-4" />
-                <span className="sr-only">Back</span>
-              </Link>
-              <h1 className="text-2xl font-bold">Find Clinical Trials</h1>
-            </div>
+    <div className="container max-w-6xl py-6 space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold">Find Clinical Trials</h1>
+        <p className="text-muted-foreground">
+          Search for clinical trials based on your medical conditions
+        </p>
+      </div>
 
-            <Card className="mb-6">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-xl">Search Interventions by Condition</CardTitle>
-                <CardDescription>Find evidence-based treatments ranked by effectiveness</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-muted-foreground">
-                  Start by selecting a health condition you are interested in finding clinical trials for.
-                </p>
-                {/* Pass initial conditions to the client component */}
-                <ConditionSearch initialConditions={allConditions} onConditionSelect={() => { /* Handle selection, maybe navigate */ }} />
-              </CardContent>
-            </Card>
-
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <PatientBenefits benefits={patientBenefits} />
-              <HealthJourney />
+      {userConditions.length === 0 ? (
+        <Card>
+          <CardHeader>
+            <CardTitle>No Conditions Found</CardTitle>
+            <CardDescription>
+              You don't have any medical conditions associated with your profile yet.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground mb-4">
+              To search for relevant clinical trials, you need to add your medical conditions first.
+              You can add them by:
+            </p>
+            <ol className="list-decimal list-inside space-y-2 mb-4">
+              <li>Going to your <a href="/patient/conditions" className="text-primary hover:underline">conditions page</a></li>
+              <li>Adding your diagnosed conditions</li>
+              <li>Returning here to search for relevant trials</li>
+            </ol>
+            <p>
+              Or you can search for conditions below to see relevant trials even if they're not yet added to your profile.
+            </p>
+            <div className="mt-4">
+              <ConditionSearch 
+                onSelect={() => {}} // We'll handle this in the component
+              />
             </div>
-          </div>
-        </div>
-      </main>
+          </CardContent>
+        </Card>
+      ) : (
+        <SearchContainer initialConditions={allConditions} />
+      )}
     </div>
   )
 }

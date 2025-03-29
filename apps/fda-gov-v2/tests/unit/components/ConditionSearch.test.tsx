@@ -2,8 +2,9 @@ import '@testing-library/jest-dom'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ConditionSearch } from '@/components/ConditionSearch'
-import { getConditionsAction } from '@/app/actions/conditions'
+import { getConditionsAction, searchConditionsAction } from '@/app/actions/conditions'
 import { act } from 'react'
+import type { Database } from "@/lib/database.types"
 
 // Mock the getConditionsAction function
 jest.mock('@/app/actions/conditions', () => ({
@@ -11,33 +12,42 @@ jest.mock('@/app/actions/conditions', () => ({
   searchConditionsAction: jest.fn()
 }))
 
+// Use the database view type directly
+type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+
 describe('ConditionSearch', () => {
   const mockOnConditionSelect = jest.fn()
-  const mockConditions = [
-    { 
-      id: '1', 
-      name: 'Alzheimer\'s Disease',
-      description: 'A progressive neurologic disorder that causes the brain to shrink and brain cells to die.',
-      icd_code: 'G30',
-      global_variable_id: null,
-      created_at: '2024-03-01T00:00:00.000Z',
-      updated_at: '2024-03-01T00:00:00.000Z',
-      deleted_at: null
+  const mockConditions: ConditionView[] = [
+    {
+      condition_id: "1",
+      condition_name: "Diabetes",
+      description: "A metabolic disease",
+      icd_code: "E11",
+      id: "101",
+      patient_id: null,
+      diagnosed_at: null,
+      severity: null,
+      status: null,
+      notes: null,
+      measurement_count: null
     },
-    { 
-      id: '2', 
-      name: 'Parkinson\'s Disease',
-      description: 'A brain disorder that leads to shaking, stiffness, and difficulty with walking, balance, and coordination.',
-      icd_code: 'G20',
-      global_variable_id: null,
-      created_at: '2024-03-01T00:00:00.000Z',
-      updated_at: '2024-03-01T00:00:00.000Z',
-      deleted_at: null
-    }
+    {
+      condition_id: "2",
+      condition_name: "Hypertension",
+      description: "High blood pressure",
+      icd_code: "I10",
+      id: "102",
+      patient_id: null,
+      diagnosed_at: null,
+      severity: null,
+      status: null,
+      notes: null,
+      measurement_count: null
+    },
   ]
   
   const defaultProps = {
-    onConditionSelect: mockOnConditionSelect,
+    onSelect: mockOnConditionSelect,
     initialSearchTerm: '',
     placeholder: 'Search conditions...',
     initialConditions: mockConditions
@@ -94,5 +104,44 @@ describe('ConditionSearch', () => {
     await waitFor(() => {
       expect(screen.queryByText('Loading conditions...')).not.toBeInTheDocument()
     }, { timeout: 3000 })
+  })
+
+  it("renders correctly", () => {
+    render(<ConditionSearch {...defaultProps} />)
+    expect(screen.getByLabelText(/search conditions/i)).toBeInTheDocument()
+  })
+
+  it("shows suggestions when typing search term", async () => {
+    render(<ConditionSearch {...defaultProps} />)
+    
+    const searchInput = screen.getByLabelText(/search conditions/i)
+    fireEvent.focus(searchInput)
+    fireEvent.change(searchInput, { target: { value: "diab" } })
+    
+    // Wait for the suggestions to appear
+    await waitFor(() => {
+      expect(searchConditionsAction).toHaveBeenCalledWith("diab")
+      expect(screen.getByText("Diabetes")).toBeInTheDocument()
+    })
+  })
+
+  it("calls onSelect when a suggestion is clicked", async () => {
+    render(<ConditionSearch {...defaultProps} />)
+    
+    const searchInput = screen.getByLabelText(/search conditions/i)
+    fireEvent.focus(searchInput)
+    fireEvent.change(searchInput, { target: { value: "diab" } })
+    
+    await waitFor(() => {
+      expect(screen.getByText("Diabetes")).toBeInTheDocument()
+    })
+    
+    fireEvent.click(screen.getByText("Diabetes"))
+    expect(defaultProps.onSelect).toHaveBeenCalledWith(mockConditions[0])
+  })
+
+  it("handles empty initial conditions", () => {
+    render(<ConditionSearch {...defaultProps} initialConditions={[]} />)
+    expect(screen.getByLabelText(/search conditions/i)).toBeInTheDocument()
   })
 }) 

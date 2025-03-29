@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import type { Database } from "@/lib/database.types"
 
 import { useState } from "react"
 import { Calendar, Upload } from "lucide-react"
@@ -15,18 +16,21 @@ import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
 import { createBrowserClient } from "@/lib/supabase"
 
-interface TrialData {
-  id: number
-  name: string
-  sponsor: string
-  currentMilestone: string
-  dueDate: string
-  refundAmount: number
-  progress: number
-  enrollmentId: number
+type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Insert"]
+type Trial = Database["public"]["Tables"]["trials"]["Row"]
+
+export interface TrialSubmissionData {
+  trial: Trial
+  submission: {
+    currentMilestone: string
+    dueDate: string
+    refundAmount: number
+    progress: number
+  }
+  enrollmentId: string
 }
 
-export function DataSubmissionForm({ trialData }: { trialData: TrialData }) {
+export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionData }) {
   const [submissionComplete, setSubmissionComplete] = useState(false)
   const supabase = createBrowserClient()
 
@@ -34,6 +38,12 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialData }) {
     e.preventDefault()
 
     const formData = new FormData(e.currentTarget)
+    const user = (await supabase.auth.getUser()).data.user
+
+    if (!user) {
+      console.error("No user found")
+      return
+    }
 
     // Extract form values
     const bloodGlucose = formData.get("blood-glucose") as string
@@ -45,29 +55,34 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialData }) {
     const hba1c = formData.get("hba1c") as string
     const comments = formData.get("comments") as string
 
-    // Submit data to database
-    const { error } = await supabase.from("data_submissions").insert({
-      trial_enrollment_id: trialData.enrollmentId,
-      trial_id: trialData.id,
-      blood_glucose: Number.parseFloat(bloodGlucose),
-      hypoglycemic_episodes: hypoglycemia === "yes",
-      energy_level: Number.parseInt(energyLevel),
-      side_effects: sideEffects,
-      medication_adherence: adherence,
-      missed_doses_reason: missedDoses,
-      hba1c: hba1c ? Number.parseFloat(hba1c) : null,
-      additional_comments: comments,
-      milestone: trialData.currentMilestone,
+    const submission: DataSubmission = {
+      enrollment_id: trialData.enrollmentId,
+      patient_id: user.id,
+      data: {
+        blood_glucose: Number.parseFloat(bloodGlucose),
+        hypoglycemic_episodes: hypoglycemia === "yes",
+        energy_level: Number.parseInt(energyLevel),
+        side_effects: sideEffects,
+        medication_adherence: adherence,
+        missed_doses_reason: missedDoses,
+        hba1c: hba1c ? Number.parseFloat(hba1c) : null,
+        additional_comments: comments,
+        milestone: trialData.submission.currentMilestone,
+      },
       submission_date: new Date().toISOString(),
-    })
+      status: "pending_review"
+    }
+
+    // Submit data to database
+    const { error } = await supabase.from("data_submissions").insert(submission)
 
     if (!error) {
       // Update the enrollment to mark data submission as complete
       await supabase
         .from("trial_enrollments")
         .update({
-          data_submission_required: false,
-          last_submission_date: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          notes: "Data submission completed"
         })
         .eq("id", trialData.enrollmentId)
 
@@ -87,13 +102,13 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialData }) {
       <CardHeader>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <CardTitle>{trialData.name}</CardTitle>
+            <CardTitle>{trialData.trial.title}</CardTitle>
             <CardDescription>
-              {trialData.currentMilestone} - Due {trialData.dueDate}
+              {trialData.submission.currentMilestone} - Due {trialData.submission.dueDate}
             </CardDescription>
           </div>
           <div className="rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-            ${trialData.refundAmount} refund available
+            ${trialData.submission.refundAmount} refund available
           </div>
         </div>
       </CardHeader>
@@ -102,9 +117,9 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialData }) {
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
               <span>Trial Progress</span>
-              <span>{trialData.progress}% complete</span>
+              <span>{trialData.submission.progress}% complete</span>
             </div>
-            <Progress value={trialData.progress} className="h-2" />
+            <Progress value={trialData.submission.progress} className="h-2" />
           </div>
 
           <Separator />

@@ -1,12 +1,15 @@
-import { createServerSupabaseClient } from "../supabase"
-import type { Database } from "../database.types"
+"use server"
+
+import { createServerClient } from "@/lib/supabase"
+import { logger } from "@/lib/logger"
+import type { Database } from "@/lib/database.types"
 
 export type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]
 export type DataSubmissionInsert = Database["public"]["Tables"]["data_submissions"]["Insert"]
 export type DataSubmissionUpdate = Database["public"]["Tables"]["data_submissions"]["Update"]
 
-export async function getDataSubmissionsByEnrollment(enrollmentId: string) {
-  const supabase = createServerSupabaseClient()
+export async function getDataSubmissionsByEnrollmentAction(enrollmentId: string) {
+  const supabase = createServerClient()
   const { data, error } = await supabase
     .from("data_submissions")
     .select("*")
@@ -14,27 +17,27 @@ export async function getDataSubmissionsByEnrollment(enrollmentId: string) {
     .order("submission_date", { ascending: false })
 
   if (error) {
-    console.error(`Error fetching data submissions for enrollment ${enrollmentId}:`, error)
+    logger.error(`Error fetching data submissions for enrollment ${enrollmentId}:`, error)
     throw error
   }
 
   return data
 }
 
-export async function createDataSubmission(submission: DataSubmissionInsert) {
-  const supabase = createServerSupabaseClient()
+export async function createDataSubmissionAction(submission: DataSubmissionInsert) {
+  const supabase = createServerClient()
   const { data, error } = await supabase.from("data_submissions").insert(submission).select().single()
 
   if (error) {
-    console.error("Error creating data submission:", error)
+    logger.error("Error creating data submission:", error)
     throw error
   }
 
   return data
 }
 
-export async function updateDataSubmission(id: string, updates: DataSubmissionUpdate) {
-  const supabase = createServerSupabaseClient()
+export async function updateDataSubmissionAction(id: string, updates: DataSubmissionUpdate) {
+  const supabase = createServerClient()
   const { data, error } = await supabase
     .from("data_submissions")
     .update({ ...updates, updated_at: new Date().toISOString() })
@@ -43,22 +46,21 @@ export async function updateDataSubmission(id: string, updates: DataSubmissionUp
     .single()
 
   if (error) {
-    console.error(`Error updating data submission with id ${id}:`, error)
+    logger.error(`Error updating data submission with id ${id}:`, error)
     throw error
   }
 
   return data
 }
 
-export async function deleteDataSubmission(id: string) {
-  const supabase = createServerSupabaseClient()
+export async function deleteDataSubmissionAction(id: string) {
+  const supabase = createServerClient()
   const { error } = await supabase.from("data_submissions").delete().eq("id", id)
 
   if (error) {
-    console.error(`Error deleting data submission with id ${id}:`, error)
+    logger.error(`Error deleting data submission with id ${id}:`, error)
     throw error
   }
 
   return true
-}
-
+} 

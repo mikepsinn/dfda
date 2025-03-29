@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { formatDistanceToNow } from "date-fns"
-import { ThumbsUp, User, Shield, Filter } from "lucide-react"
+import { ThumbsUp, User, Filter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StarRating } from "@/components/ui/star-rating"
 import { Card, CardContent } from "@/components/ui/card"
@@ -14,6 +14,7 @@ import type { Database } from "@/lib/database.types"
 type Profile = Database["public"]["Tables"]["profiles"]["Row"]
 type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
 
+// Use the existing database fields instead of adding new ones
 type Review = TreatmentRating & {
   user: Profile
 }
@@ -36,20 +37,23 @@ export function TreatmentReviewsList({
 
   const filteredReviews = reviews.filter((review) => {
     if (filter === "all") return true
-    return review.user_type === filter
+    return review.user.user_type === filter
   })
 
   const sortedReviews = [...filteredReviews].sort((a, b) => {
     switch (sort) {
       case "highest":
-        return b.rating - a.rating
+        return (b.effectiveness_out_of_ten || 0) - (a.effectiveness_out_of_ten || 0)
       case "lowest":
-        return a.rating - b.rating
+        return (a.effectiveness_out_of_ten || 0) - (b.effectiveness_out_of_ten || 0)
       case "helpful":
-        return b.helpful_count - a.helpful_count
+        return (b.helpful_count || 0) - (a.helpful_count || 0)
       case "recent":
       default:
-        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        // Handle potential null created_at values
+        const bDate = b.created_at ? new Date(b.created_at).getTime() : 0
+        const aDate = a.created_at ? new Date(a.created_at).getTime() : 0
+        return bDate - aDate
     }
   })
 
@@ -59,7 +63,7 @@ export function TreatmentReviewsList({
 
       setReviews((prev) =>
         prev.map((review) =>
-          review.id === reviewId ? { ...review, helpful_count: review.helpful_count + 1 } : review,
+          review.id === reviewId ? { ...review, helpful_count: (review.helpful_count || 0) + 1 } : review,
         ),
       )
 
@@ -131,22 +135,16 @@ export function TreatmentReviewsList({
                     </div>
                     <div>
                       <div className="font-medium">
-                        {review.user.name || "Anonymous User"}
-                        {review.verified && (
-                          <span className="inline-flex items-center ml-2 text-green-600 text-xs">
-                            <Shield className="h-3 w-3 mr-1" />
-                            Verified
-                          </span>
-                        )}
+                        {`${review.user.first_name || ''} ${review.user.last_name || ''}`.trim() || "Anonymous User"}
                       </div>
                       <div className="text-xs text-muted-foreground flex items-center gap-2">
-                        <span className="capitalize">{review.user_type}</span>
+                        <span className="capitalize">{review.user.user_type}</span>
                         <span>•</span>
-                        <span>{formatDistanceToNow(new Date(review.created_at), { addSuffix: true })}</span>
+                        <span>{review.created_at ? formatDistanceToNow(new Date(review.created_at), { addSuffix: true }) : 'Unknown date'}</span>
                       </div>
                     </div>
                   </div>
-                  <StarRating rating={review.rating} readOnly size="sm" />
+                  <StarRating rating={review.effectiveness_out_of_ten || 0} readOnly size="sm" />
                 </div>
 
                 {review.review && <div className="mt-3">{review.review}</div>}

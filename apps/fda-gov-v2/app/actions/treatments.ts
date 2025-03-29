@@ -6,43 +6,83 @@ import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabas
 import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
 
-export type Treatment = Database["public"]["Tables"]["treatments"]["Row"]
+// Base type from database schema
+type BaseTreatment = Database["public"]["Tables"]["treatments"]["Row"]
+
+// Extended type with properties joined from global_variables
+export interface Treatment extends BaseTreatment {
+  name: string
+  description?: string
+}
+
 export type TreatmentInsert = Database["public"]["Tables"]["treatments"]["Insert"]
 export type TreatmentUpdate = Database["public"]["Tables"]["treatments"]["Update"]
 
-// Get all treatments
+// Get all treatments with joined names from global_variables
 export async function getTreatmentsAction() {
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatments")
-    .select("*")
-    .order("name")
+    .from("patient_treatments_view")
+    .select("treatment_id, treatment_name, treatment_description, treatment_type, manufacturer")
+    .order("treatment_name")
+    .limit(50)
 
   if (response.error) {
     logger.error("Error fetching treatments:", { error: response.error })
     throw new Error("Failed to fetch treatments")
   }
 
-  return handleDatabaseCollectionResponse<Treatment>(response)
+  // Transform the data to match our Treatment interface
+  const treatments = response.data
+    .filter(item => item.treatment_id && item.treatment_name && item.treatment_type) // Filter required fields
+    .map(item => ({
+      id: item.treatment_id as string,
+      treatment_type: item.treatment_type as string,
+      manufacturer: item.manufacturer,
+      created_at: null,
+      updated_at: null,
+      deleted_at: null,
+      name: item.treatment_name as string,
+      description: item.treatment_description || undefined
+    }));
+
+  return treatments;
 }
 
-// Get a treatment by ID
+// Get a treatment by ID with joined name from global_variables
 export async function getTreatmentByIdAction(id: string) {
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatments")
-    .select("*")
-    .eq("id", id)
-    .single()
+    .from("patient_treatments_view")
+    .select("treatment_id, treatment_name, treatment_description, treatment_type, manufacturer")
+    .eq("treatment_id", id)
+    .limit(1)
+    .maybeSingle() // Use maybeSingle to handle the case where no results are found
 
   if (response.error) {
     logger.error("Error fetching treatment:", { error: response.error })
     throw new Error("Failed to fetch treatment")
   }
 
-  return handleDatabaseResponse<Treatment>(response)
+  if (!response.data || !response.data.treatment_id || !response.data.treatment_name || !response.data.treatment_type) {
+    throw new Error("Treatment not found or invalid data")
+  }
+
+  // Transform to match our Treatment interface
+  const treatment: Treatment = {
+    id: response.data.treatment_id as string,
+    treatment_type: response.data.treatment_type as string,
+    manufacturer: response.data.manufacturer,
+    created_at: null,
+    updated_at: null,
+    deleted_at: null,
+    name: response.data.treatment_name as string,
+    description: response.data.treatment_description || undefined
+  };
+
+  return treatment;
 }
 
 // Search treatments by name
@@ -50,10 +90,10 @@ export async function searchTreatmentsAction(query: string) {
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatments")
-    .select("*")
-    .ilike("name", `%${query}%`)
-    .order("name")
+    .from("patient_treatments_view")
+    .select("treatment_id, treatment_name, treatment_description, treatment_type, manufacturer")
+    .ilike("treatment_name", `%${query}%`)
+    .order("treatment_name")
     .limit(10)
 
   if (response.error) {
@@ -61,7 +101,21 @@ export async function searchTreatmentsAction(query: string) {
     throw new Error("Failed to search treatments")
   }
 
-  return handleDatabaseCollectionResponse<Treatment>(response)
+  // Transform the data to match our Treatment interface
+  const treatments = response.data
+    .filter(item => item.treatment_id && item.treatment_name && item.treatment_type)
+    .map(item => ({
+      id: item.treatment_id as string,
+      treatment_type: item.treatment_type as string,
+      manufacturer: item.manufacturer,
+      created_at: null,
+      updated_at: null,
+      deleted_at: null,
+      name: item.treatment_name as string,
+      description: item.treatment_description || undefined
+    }));
+
+  return treatments;
 }
 
 // Get treatments for a specific condition

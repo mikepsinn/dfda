@@ -7,16 +7,31 @@ import Link from "next/link"
 import { ClipboardList, ArrowRight } from "lucide-react"
 import type { Database } from "@/lib/database.types"
 
-type Trial = Database["public"]["Tables"]["trials"]["Row"]
-type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
-type Condition = Database["public"]["Tables"]["conditions"]["Row"]
-type Treatment = Database["public"]["Tables"]["treatments"]["Row"]
+// Base types from database
+type BaseTrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
+type BaseTrial = Database["public"]["Tables"]["trials"]["Row"] 
+type BaseCondition = Database["public"]["Tables"]["conditions"]["Row"]
+type BaseTreatment = Database["public"]["Tables"]["treatments"]["Row"]
 
-type Enrollment = TrialEnrollment & {
-  trials: (Trial & {
-    conditions: Condition[];
-    treatments: Treatment[];
-  })[];
+// Extended types with additional properties from joins/views
+type Condition = BaseCondition & {
+  name: string
+  description?: string
+}
+
+type Treatment = BaseTreatment & {
+  name: string
+  description?: string
+}
+
+type Trial = BaseTrial & {
+  title?: string
+  conditions: Condition[]
+  treatments: Treatment[]
+}
+
+type Enrollment = BaseTrialEnrollment & {
+  trials: Trial[]
 }
 
 interface EnrolledTrialsProps {
@@ -64,7 +79,7 @@ export function EnrolledTrials({ enrollments }: EnrolledTrialsProps) {
                   <Badge variant={getStatusVariant(enrollment.status)}>{formatStatus(enrollment.status)}</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  {enrollment.trials[0].conditions[0].name} • {enrollment.trials[0].treatments[0].name}
+                  {enrollment.trials[0].conditions?.[0]?.name || 'Unknown condition'} • {enrollment.trials[0].treatments?.[0]?.name || 'Unknown treatment'}
                 </p>
               </div>
               <Link href={`/patient/trial-details/${enrollment.trials[0].id}`}>

@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import type { Database } from "@/lib/database.types"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -10,6 +11,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { createBrowserClient } from "@/lib/supabase"
 import { Check } from "lucide-react"
+
+type ContactMessage = Database["public"]["Tables"]["contact_messages"]["Insert"]
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -23,19 +26,15 @@ export function ContactForm() {
     setFormError(null)
 
     const formData = new FormData(e.currentTarget)
-    const name = formData.get("name") as string
-    const email = formData.get("email") as string
-    const inquiryType = formData.get("inquiryType") as string
-    const message = formData.get("message") as string
+    const message: ContactMessage = {
+      email: formData.get("email") as string,
+      subject: formData.get("inquiryType") as string,
+      message: formData.get("message") as string,
+      status: "new",
+    }
 
     try {
-      const { error } = await supabase.from("contact_messages").insert({
-        name,
-        email,
-        inquiry_type: inquiryType,
-        message,
-        status: "new",
-      })
+      const { error } = await supabase.from("contact_messages").insert(message)
 
       if (error) throw error
 
@@ -66,11 +65,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" required />
-      </div>
-
       <div className="space-y-2">
         <Label htmlFor="email">Email</Label>
         <Input id="email" name="email" type="email" required />
