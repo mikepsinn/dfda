@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 import { describe, it, expect, beforeEach, afterEach } from '@jest/globals'
 import {
-  getTreatmentRatings,
-  getTreatmentAverageRating,
-  createTreatmentRating,
-} from '@/lib/api/treatment-ratings'
+  getTreatmentRatingsAction,
+  getAverageTreatmentRatingAction,
+  createTreatmentRatingAction,
+} from '@/app/actions/treatment-ratings'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -51,7 +51,7 @@ describe('Treatment Ratings API Integration', () => {
         await supabase.from('treatment_ratings').insert(rating)
       }
 
-      const ratings = await getTreatmentRatings(testTreatmentId, testConditionId)
+      const ratings = await getTreatmentRatingsAction(testTreatmentId, testConditionId)
       
       expect(ratings).toHaveLength(2)
       expect(ratings[0].rating).toBe(5) // Most recent first
@@ -59,7 +59,7 @@ describe('Treatment Ratings API Integration', () => {
     })
 
     it('returns empty array when no ratings exist', async () => {
-      const ratings = await getTreatmentRatings('nonexistent-treatment', 'nonexistent-condition')
+      const ratings = await getTreatmentRatingsAction('nonexistent-treatment', 'nonexistent-condition')
       expect(ratings).toEqual([])
     })
   })
@@ -91,14 +91,14 @@ describe('Treatment Ratings API Integration', () => {
         await supabase.from('treatment_ratings').insert(rating)
       }
 
-      const result = await getTreatmentAverageRating(testTreatmentId, testConditionId)
+      const result = await getAverageTreatmentRatingAction(testTreatmentId, testConditionId)
       
       expect(result.average).toBe(4.5)
       expect(result.count).toBe(2)
     })
 
     it('returns zero for non-existent treatment ratings', async () => {
-      const result = await getTreatmentAverageRating('nonexistent-treatment', 'nonexistent-condition')
+      const result = await getAverageTreatmentRatingAction('nonexistent-treatment', 'nonexistent-condition')
       expect(result.average).toBe(0)
       expect(result.count).toBe(0)
     })
@@ -115,7 +115,7 @@ describe('Treatment Ratings API Integration', () => {
         user_type: 'patient'
       }
 
-      const result = await createTreatmentRating(newRating)
+      const result = await createTreatmentRatingAction(newRating)
       
       expect(result).toMatchObject(newRating)
       expect(result.id).toBeDefined()
@@ -141,10 +141,10 @@ describe('Treatment Ratings API Integration', () => {
       }
 
       // Create first rating
-      await createTreatmentRating(rating)
+      await createTreatmentRatingAction(rating)
 
       // Attempt to create duplicate rating
-      await expect(createTreatmentRating({
+      await expect(createTreatmentRatingAction({
         ...rating,
         review: 'Second review'
       })).rejects.toThrow()
