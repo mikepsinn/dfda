@@ -13,36 +13,34 @@ interface TrialDetailsPageProps {
 }
 
 export async function generateMetadata({ params }: TrialDetailsPageProps): Promise<Metadata> {
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
   const { data: trial } = await supabase.from("trials").select("*").eq("id", params.id).single()
 
   if (!trial) {
     return {
-      title: "Trial Not Found | FDA v2",
-      description: "The requested trial could not be found.",
+      title: "Trial Not Found",
     }
   }
 
-  const metadata = {
-    title: `${trial.title} | FDA v2`,
-    description: trial.description || "View details about this clinical trial and enrollment options.",
+  return {
+    title: trial.title,
+    description: trial.description,
   }
-
-  return metadata
 }
 
 export default async function TrialDetailsPage({ params }: TrialDetailsPageProps) {
   const user = await getServerUser()
-  const supabase = createServerClient()
+  const supabase = await createServerClient()
 
   // Fetch trial data
   const { data: trial, error } = await supabase
     .from("trials")
     .select(`
       *,
-      sponsor:sponsor_id(name, logo_url),
-      conditions:trial_conditions(condition_id, conditions(name)),
-      treatments:trial_treatments(treatment_id, treatments(name, description))
+      sponsor:sponsor_id(name),
+      condition:condition_id(name),
+      treatment:treatment_id(name),
+      protocol_versions(*)
     `)
     .eq("id", params.id)
     .single()
@@ -52,17 +50,12 @@ export default async function TrialDetailsPage({ params }: TrialDetailsPageProps
   }
 
   // Check if user is enrolled
-  let isEnrolled = false
-  if (user) {
-    const { data: enrollment } = await supabase
+  const { data: enrollment } = await supabase
       .from("trial_enrollments")
       .select("*")
       .eq("trial_id", params.id)
-      .eq("user_id", user.id)
+      .eq("patient_id", user?.id)
       .single()
-
-    isEnrolled = !!enrollment
-  }
 
   // For demo purposes, let's create some mock data for the trial details
   // In a real app, this would come from the database
@@ -111,7 +104,7 @@ export default async function TrialDetailsPage({ params }: TrialDetailsPageProps
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <TrialHeader trial={trialDetails} />
+      <TrialHeader trial={trialDetails} enrollment={enrollment} />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
         <div className="md:col-span-2">
@@ -119,7 +112,7 @@ export default async function TrialDetailsPage({ params }: TrialDetailsPageProps
         </div>
 
         <div className="md:col-span-1">
-          <TrialActions trialId={params.id} isEnrolled={isEnrolled} userId={user?.id} />
+          <TrialActions trialId={params.id} isEnrolled={!!enrollment} userId={user?.id} />
         </div>
       </div>
     </div>

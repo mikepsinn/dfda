@@ -15,7 +15,6 @@ interface TreatmentReviewsProps {
   totalReviews: number
   userRating: any | null
   userId?: string
-  userType: "patient" | "doctor"
   isLoggedIn: boolean
 }
 
@@ -27,7 +26,6 @@ export function TreatmentReviews({
   totalReviews,
   userRating,
   userId,
-  userType,
   isLoggedIn,
 }: TreatmentReviewsProps) {
   const [showReviewForm, setShowReviewForm] = useState(false)
