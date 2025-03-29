@@ -18,16 +18,15 @@ import { createBrowserClient } from "@/lib/supabase"
 
 type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Insert"]
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type DataSubmissionRow = Database["public"]["Tables"]["data_submissions"]["Row"]
 
-export interface TrialSubmissionData {
+// Extend with UI-specific properties
+interface TrialSubmissionData {
   trial: Trial
-  submission: {
-    currentMilestone: string
-    dueDate: string
-    refundAmount: number
-    progress: number
-  }
-  enrollmentId: string
+  submission: DataSubmissionRow
+  currentMilestone?: string
+  refundAmount?: number
+  progress?: number
 }
 
 export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionData }) {
@@ -56,7 +55,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
     const comments = formData.get("comments") as string
 
     const submission: DataSubmission = {
-      enrollment_id: trialData.enrollmentId,
+      enrollment_id: trialData.submission.enrollment_id,
       patient_id: user.id,
       data: {
         blood_glucose: Number.parseFloat(bloodGlucose),
@@ -67,7 +66,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
         missed_doses_reason: missedDoses,
         hba1c: hba1c ? Number.parseFloat(hba1c) : null,
         additional_comments: comments,
-        milestone: trialData.submission.currentMilestone,
+        milestone: trialData.currentMilestone,
       },
       submission_date: new Date().toISOString(),
       status: "pending_review"
@@ -84,7 +83,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
           updated_at: new Date().toISOString(),
           notes: "Data submission completed"
         })
-        .eq("id", trialData.enrollmentId)
+        .eq("id", trialData.submission.enrollment_id)
 
       setSubmissionComplete(true)
     } else {
@@ -104,11 +103,11 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
           <div>
             <CardTitle>{trialData.trial.title}</CardTitle>
             <CardDescription>
-              {trialData.submission.currentMilestone} - Due {trialData.submission.dueDate}
+              {trialData.currentMilestone} - Due {trialData.submission.submission_date}
             </CardDescription>
           </div>
           <div className="rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-            ${trialData.submission.refundAmount} refund available
+            ${trialData.refundAmount} refund available
           </div>
         </div>
       </CardHeader>
@@ -117,9 +116,9 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
               <span>Trial Progress</span>
-              <span>{trialData.submission.progress}% complete</span>
+              <span>{trialData.progress}% complete</span>
             </div>
-            <Progress value={trialData.submission.progress} className="h-2" />
+            <Progress value={trialData.progress} className="h-2" />
           </div>
 
           <Separator />

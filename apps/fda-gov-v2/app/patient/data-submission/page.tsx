@@ -25,19 +25,25 @@ export default async function DataSubmission() {
     .from("trial_enrollments")
     .select(`
       id,
-      trial_id,
-      trials:trial_id (
-        name,
-        sponsor_name,
-        current_milestone,
-        milestone_due_date,
-        refund_amount,
-        progress
+      trial:trial_id!inner (
+        id,
+        title,
+        description,
+        status,
+        treatment_id,
+        condition_id,
+        created_at,
+        updated_at,
+        deleted_at,
+        start_date,
+        end_date,
+        enrollment_target,
+        current_enrollment,
+        compensation
       )
     `)
-    .eq("user_id", user.id)
+    .eq("patient_id", user.id)
     .eq("status", "active")
-    .eq("data_submission_required", true)
     .order("created_at", { ascending: false })
     .limit(1)
     .single()
@@ -47,19 +53,25 @@ export default async function DataSubmission() {
     redirect("/patient/dashboard")
   }
 
+  // Create an empty submission for this enrollment
+  const { data: submission } = await supabase
+    .from("data_submissions")
+    .insert({
+      enrollment_id: enrollment.id,
+      patient_id: user.id,
+      status: "pending",
+      data: {},
+      submission_date: new Date().toISOString()
+    })
+    .select()
+    .single()
+
   const trialData = {
-    id: enrollment.trial_id,
-    name: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].name : (enrollment.trials as any).name,
-    sponsor: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].sponsor_name : (enrollment.trials as any).sponsor_name,
-    currentMilestone: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].current_milestone : (enrollment.trials as any).current_milestone,
-    dueDate: new Date(Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].milestone_due_date : (enrollment.trials as any).milestone_due_date).toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    }),
-    refundAmount: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].refund_amount : (enrollment.trials as any).refund_amount,
-    progress: Array.isArray((enrollment.trials as any)) ? (enrollment.trials as any)[0].progress : (enrollment.trials as any).progress,
-    enrollmentId: enrollment.id,
+    trial: enrollment.trial,
+    submission,
+    currentMilestone: "Week 4 Check-in",
+    refundAmount: 50,
+    progress: 33
   }
 
   return (
