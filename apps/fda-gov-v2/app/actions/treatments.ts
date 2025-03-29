@@ -69,17 +69,14 @@ export async function getTreatmentsForConditionAction(conditionId: string) {
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatment_effectiveness")
+    .from("treatment_ratings")
     .select(`
-      treatment_id,
-      effectiveness_score,
-      side_effects_score,
-      cost_effectiveness_score,
-      evidence_level,
+      id,
+      effectiveness_out_of_ten,
       treatments:treatment_id(*)
     `)
     .eq("condition_id", conditionId)
-    .order("effectiveness_score", { ascending: false })
+    .order("effectiveness_out_of_ten", { ascending: false })
 
   if (response.error) {
     logger.error("Error fetching treatments for condition:", { error: response.error })
@@ -88,10 +85,7 @@ export async function getTreatmentsForConditionAction(conditionId: string) {
 
   return response.data.map((item) => ({
     ...item.treatments,
-    effectiveness_score: item.effectiveness_score,
-    side_effects_score: item.side_effects_score,
-    cost_effectiveness_score: item.cost_effectiveness_score,
-    evidence_level: item.evidence_level,
+    effectiveness_out_of_ten: item.effectiveness_out_of_ten,
   }))
 }
 

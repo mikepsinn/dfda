@@ -6,16 +6,16 @@ import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabas
 import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
 
-export type TreatmentEffectiveness = Database["public"]["Tables"]["treatment_effectiveness"]["Row"]
-export type TreatmentEffectivenessInsert = Database["public"]["Tables"]["treatment_effectiveness"]["Insert"]
-export type TreatmentEffectivenessUpdate = Database["public"]["Tables"]["treatment_effectiveness"]["Update"]
+export type TreatmentEffectiveness = Database["public"]["Tables"]["treatment_ratings"]["Row"]
+export type TreatmentEffectivenessInsert = Database["public"]["Tables"]["treatment_ratings"]["Insert"]
+export type TreatmentEffectivenessUpdate = Database["public"]["Tables"]["treatment_ratings"]["Update"]
 
 // Get effectiveness data for a treatment and condition
 export async function getTreatmentEffectivenessAction(treatmentId: string, conditionId: string) {
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatment_effectiveness")
+    .from("treatment_ratings")
     .select("*")
     .eq("treatment_id", treatmentId)
     .eq("condition_id", conditionId)
@@ -34,7 +34,7 @@ export async function getEffectivenessForConditionAction(conditionId: string) {
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatment_effectiveness")
+    .from("treatment_ratings")
     .select(`
       *,
       treatments:treatment_id(id, name)
@@ -55,7 +55,7 @@ export async function createTreatmentEffectivenessAction(effectiveness: Treatmen
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatment_effectiveness")
+    .from("treatment_ratings")
     .insert(effectiveness)
     .select()
     .single()
@@ -81,7 +81,7 @@ export async function updateTreatmentEffectivenessAction(
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatment_effectiveness")
+    .from("treatment_ratings")
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq("treatment_id", treatmentId)
     .eq("condition_id", conditionId)
@@ -105,7 +105,7 @@ export async function deleteTreatmentEffectivenessAction(treatmentId: string, co
   const supabase = createServerClient()
 
   const response = await supabase
-    .from("treatment_effectiveness")
+    .from("treatment_ratings")
     .delete()
     .eq("treatment_id", treatmentId)
     .eq("condition_id", conditionId)
