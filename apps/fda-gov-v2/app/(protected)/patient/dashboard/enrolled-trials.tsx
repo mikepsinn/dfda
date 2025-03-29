@@ -9,15 +9,13 @@ import type { Database } from "@/lib/database.types"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
 type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
+type Condition = Database["public"]["Tables"]["conditions"]["Row"]
+type Treatment = Database["public"]["Tables"]["treatments"]["Row"]
 
-interface Enrollment extends TrialEnrollment {
+type Enrollment = TrialEnrollment & {
   trials: (Trial & {
-    conditions: {
-      name: string;
-    }[];
-    treatments: {
-      name: string;
-    }[];
+    conditions: Condition[];
+    treatments: Treatment[];
   })[];
 }
 

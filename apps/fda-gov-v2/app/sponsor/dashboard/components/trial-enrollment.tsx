@@ -5,20 +5,13 @@ import { ChevronRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
+import type { Database } from "@/lib/database.types"
 
-interface Trial {
-  id: number
-  name: string
-  status: string
-  progress: number
-  enrolled: number
-  target: number
-  startDate: string
-  endDate: string
-}
+// Use the auto-generated database type and extend it with UI-specific properties
+type TrialRow = Database["public"]["Tables"]["trials"]["Row"]
 
 interface TrialEnrollmentProps {
-  trials: Trial[]
+  trials: TrialRow[]
 }
 
 export function TrialEnrollment({ trials }: TrialEnrollmentProps) {
@@ -34,19 +27,22 @@ export function TrialEnrollment({ trials }: TrialEnrollmentProps) {
             <div key={trial.id} className="space-y-2">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="font-medium">{trial.name}</div>
+                  <div className="font-medium">{trial.title}</div>
                   <div className="text-sm text-muted-foreground">
-                    {trial.startDate} - {trial.endDate}
+                    {new Date(trial.start_date).toLocaleDateString()} - {trial.end_date ? new Date(trial.end_date).toLocaleDateString() : 'Ongoing'}
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium">{trial.status}</span>
                   <span className="text-sm text-muted-foreground">
-                    {trial.enrolled}/{trial.target} enrolled
+                    {trial.current_enrollment || 0}/{trial.enrollment_target} enrolled
                   </span>
                 </div>
               </div>
-              <Progress value={trial.progress} className="h-2" />
+              <Progress 
+                value={((trial.current_enrollment || 0) / trial.enrollment_target) * 100} 
+                className="h-2" 
+              />
               <div className="flex justify-end">
                 <Link href={`/sponsor/trials/${trial.id}`}>
                   <Button variant="ghost" size="sm">
@@ -61,4 +57,3 @@ export function TrialEnrollment({ trials }: TrialEnrollmentProps) {
     </Card>
   )
 }
-

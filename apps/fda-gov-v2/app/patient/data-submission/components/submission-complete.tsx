@@ -5,19 +5,22 @@ import { Calendar, Check, ChevronRight } from "lucide-react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
+import type { Database } from "@/lib/database.types"
 
-interface TrialData {
-  id: number
-  name: string
-  sponsor: string
-  currentMilestone: string
-  dueDate: string
-  refundAmount: number
-  progress: number
-  enrollmentId: number
+// Use the auto-generated database types
+type TrialRow = Database["public"]["Tables"]["trials"]["Row"]
+type DataSubmissionRow = Database["public"]["Tables"]["data_submissions"]["Row"]
+
+// Extend with UI-specific properties
+type TrialSubmissionData = {
+  trial: TrialRow
+  submission: DataSubmissionRow
+  currentMilestone?: string
+  refundAmount?: number
+  progress?: number
 }
 
-export function SubmissionComplete({ trialData }: { trialData: TrialData }) {
+export function SubmissionComplete({ trialData }: { trialData: TrialSubmissionData }) {
   return (
     <Card>
       <CardHeader>
@@ -38,9 +41,9 @@ export function SubmissionComplete({ trialData }: { trialData: TrialData }) {
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
               <span>Updated Trial Progress</span>
-              <span>{trialData.progress + 33}% complete</span>
+              <span>{trialData.progress ? trialData.progress + 33 : 33}% complete</span>
             </div>
-            <Progress value={trialData.progress + 33} className="h-2" />
+            <Progress value={trialData.progress ? trialData.progress + 33 : 33} className="h-2" />
           </div>
           <div className="mt-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -54,7 +57,7 @@ export function SubmissionComplete({ trialData }: { trialData: TrialData }) {
         <Link href="/patient/dashboard">
           <Button>Return to Dashboard</Button>
         </Link>
-        <Link href={`/patient/trial-details/${trialData.id}`}>
+        <Link href={`/patient/trial-details/${trialData.trial.id}`}>
           <Button variant="outline">
             View Trial Details
             <ChevronRight className="ml-2 h-4 w-4" />
@@ -64,4 +67,3 @@ export function SubmissionComplete({ trialData }: { trialData: TrialData }) {
     </Card>
   )
 }
-

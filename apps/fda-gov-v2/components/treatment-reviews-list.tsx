@@ -9,21 +9,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { markRatingAsHelpfulAction } from "@/app/actions/treatment-ratings"
 import { useToast } from "@/hooks/use-toast"
+import type { Database } from "@/lib/database.types"
 
-interface ReviewUser {
-  id: string
-  name: string | null
-}
+type Profile = Database["public"]["Tables"]["profiles"]["Row"]
+type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
 
-interface Review {
-  id: string
-  rating: number
-  review: string | null
-  user_type: "patient" | "doctor"
-  verified: boolean
-  helpful_count: number
-  created_at: string
-  user: ReviewUser
+type Review = TreatmentRating & {
+  user: Profile
 }
 
 interface TreatmentReviewsListProps {
