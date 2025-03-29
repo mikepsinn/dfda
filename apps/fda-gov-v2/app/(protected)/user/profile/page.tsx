@@ -2,13 +2,18 @@ import { getServerUser } from "@/lib/server-auth"
 import { createClient } from "@/lib/supabase/server"
 import { ProfileForm } from "./profile-form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { redirect } from "next/navigation"
 
 export default async function ProfilePage() {
   const user = await getServerUser()
+  if (!user) {
+    redirect("/login?callbackUrl=/user/profile")
+  }
+
   const supabase = await createClient()
 
   // Fetch user profile data
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user?.id).single()
+  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).single()
 
   return (
     <div className="space-y-8">
@@ -34,10 +39,10 @@ export default async function ProfilePage() {
             <div className="flex items-center justify-between py-2">
               <div>
                 <h3 className="font-medium">Email Address</h3>
-                <p className="text-sm text-muted-foreground">{user?.email}</p>
+                <p className="text-sm text-muted-foreground">{user.email}</p>
               </div>
               <div className="text-sm text-muted-foreground">
-                {user?.email_confirmed_at ? "Verified" : "Not verified"}
+                {user.email_confirmed_at ? "Verified" : "Not verified"}
               </div>
             </div>
 
@@ -45,7 +50,7 @@ export default async function ProfilePage() {
               <div>
                 <h3 className="font-medium">Google Account</h3>
                 <p className="text-sm text-muted-foreground">
-                  {user?.app_metadata?.provider === "google" ? "Connected" : "Not connected"}
+                  {user.app_metadata?.provider === "google" ? "Connected" : "Not connected"}
                 </p>
               </div>
             </div>

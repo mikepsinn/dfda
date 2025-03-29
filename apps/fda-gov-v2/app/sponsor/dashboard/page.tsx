@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import type { Database } from "@/lib/database.types"
 import { getServerUser } from "@/lib/server-auth"
 import { createServerClient } from "@/lib/supabase"
 import { redirect } from "next/navigation"
@@ -7,8 +6,6 @@ import { SponsorOverview } from "./components/sponsor-overview"
 import { TrialEnrollment } from "./components/trial-enrollment"
 import { TrialManagement } from "./components/trial-management"
 import { RecentActivity } from "./components/recent-activity"
-
-type Trial = Database["public"]["Tables"]["trials"]["Row"]
 
 export const metadata: Metadata = {
   title: "Sponsor Dashboard | FDA v2",
