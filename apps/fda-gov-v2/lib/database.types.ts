@@ -382,6 +382,210 @@ export type Database = {
           },
         ]
       }
+      oauth_access_tokens: {
+        Row: {
+          client_id: string
+          created_at: string | null
+          expires_at: string
+          revoked_at: string | null
+          scope: string | null
+          token: string
+          user_id: string | null
+        }
+        Insert: {
+          client_id: string
+          created_at?: string | null
+          expires_at: string
+          revoked_at?: string | null
+          scope?: string | null
+          token: string
+          user_id?: string | null
+        }
+        Update: {
+          client_id?: string
+          created_at?: string | null
+          expires_at?: string
+          revoked_at?: string | null
+          scope?: string | null
+          token?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "oauth_access_tokens_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "oauth_clients"
+            referencedColumns: ["client_id"]
+          },
+        ]
+      }
+      oauth_authorization_codes: {
+        Row: {
+          client_id: string
+          code: string
+          created_at: string | null
+          expires_at: string
+          redirect_uri: string
+          scope: string | null
+          user_id: string
+        }
+        Insert: {
+          client_id: string
+          code: string
+          created_at?: string | null
+          expires_at: string
+          redirect_uri: string
+          scope?: string | null
+          user_id: string
+        }
+        Update: {
+          client_id?: string
+          code?: string
+          created_at?: string | null
+          expires_at?: string
+          redirect_uri?: string
+          scope?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "oauth_authorization_codes_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "oauth_clients"
+            referencedColumns: ["client_id"]
+          },
+        ]
+      }
+      oauth_clients: {
+        Row: {
+          client_id: string
+          client_name: string
+          client_secret: string
+          client_uri: string | null
+          created_at: string | null
+          grant_types: string[]
+          logo_uri: string | null
+          owner_id: string | null
+          policy_uri: string | null
+          redirect_uris: string[]
+          response_types: string[]
+          scope: string | null
+          tos_uri: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          client_id: string
+          client_name: string
+          client_secret: string
+          client_uri?: string | null
+          created_at?: string | null
+          grant_types?: string[]
+          logo_uri?: string | null
+          owner_id?: string | null
+          policy_uri?: string | null
+          redirect_uris: string[]
+          response_types?: string[]
+          scope?: string | null
+          tos_uri?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          client_id?: string
+          client_name?: string
+          client_secret?: string
+          client_uri?: string | null
+          created_at?: string | null
+          grant_types?: string[]
+          logo_uri?: string | null
+          owner_id?: string | null
+          policy_uri?: string | null
+          redirect_uris?: string[]
+          response_types?: string[]
+          scope?: string | null
+          tos_uri?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "oauth_clients_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      oauth_refresh_tokens: {
+        Row: {
+          access_token: string
+          client_id: string
+          created_at: string | null
+          expires_at: string
+          revoked_at: string | null
+          scope: string | null
+          token: string
+          user_id: string
+        }
+        Insert: {
+          access_token: string
+          client_id: string
+          created_at?: string | null
+          expires_at: string
+          revoked_at?: string | null
+          scope?: string | null
+          token: string
+          user_id: string
+        }
+        Update: {
+          access_token?: string
+          client_id?: string
+          created_at?: string | null
+          expires_at?: string
+          revoked_at?: string | null
+          scope?: string | null
+          token?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "oauth_refresh_tokens_access_token_fkey"
+            columns: ["access_token"]
+            isOneToOne: false
+            referencedRelation: "oauth_access_tokens"
+            referencedColumns: ["token"]
+          },
+          {
+            foreignKeyName: "oauth_refresh_tokens_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "oauth_clients"
+            referencedColumns: ["client_id"]
+          },
+        ]
+      }
+      oauth_scopes: {
+        Row: {
+          created_at: string | null
+          description: string
+          is_default: boolean | null
+          scope: string
+        }
+        Insert: {
+          created_at?: string | null
+          description: string
+          is_default?: boolean | null
+          scope: string
+        }
+        Update: {
+          created_at?: string | null
+          description?: string
+          is_default?: boolean | null
+          scope?: string
+        }
+        Relationships: []
+      }
       patient_conditions: {
         Row: {
           condition_id: string

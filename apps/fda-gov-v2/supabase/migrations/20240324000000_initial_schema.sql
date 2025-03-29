@@ -854,4 +854,113 @@ CREATE TRIGGER update_contact_messages_updated_at
 
 -- Add index for contact_messages
 CREATE INDEX idx_contact_messages_status ON contact_messages(status);
-CREATE INDEX idx_contact_messages_deleted_at ON contact_messages(deleted_at) WHERE deleted_at IS NOT NULL; 
+CREATE INDEX idx_contact_messages_deleted_at ON contact_messages(deleted_at) WHERE deleted_at IS NOT NULL;
+
+
+-- OAuth Clients Table: Stores registered applications
+CREATE TABLE IF NOT EXISTS oauth_clients (
+                                             client_id TEXT PRIMARY KEY, -- Public identifier for the client
+                                             client_secret TEXT NOT NULL, -- Secret for the client (store securely, e.g., hashed)
+                                             client_name TEXT NOT NULL,
+                                             redirect_uris TEXT[] NOT NULL, -- Allowed redirect URIs
+                                             grant_types TEXT[] NOT NULL DEFAULT ARRAY['authorization_code', 'refresh_token']::TEXT[], -- e.g., authorization_code, client_credentials, refresh_token
+                                             response_types TEXT[] NOT NULL DEFAULT ARRAY['code']::TEXT[], -- e.g., code, token
+                                             scope TEXT, -- Space-separated list of default scopes allowed for the client
+                                             owner_id UUID REFERENCES profiles(id) ON DELETE SET NULL, -- Link to the user/profile who registered the client
+                                             logo_uri TEXT,
+                                             client_uri TEXT, -- URL of the client application's homepage
+                                             tos_uri TEXT, -- URL to terms of service
+                                             policy_uri TEXT, -- URL to privacy policy
+                                             created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                             updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- OAuth Scopes Table: Defines available permissions
+CREATE TABLE IF NOT EXISTS oauth_scopes (
+                                            scope TEXT PRIMARY KEY,
+                                            description TEXT NOT NULL,
+                                            is_default BOOLEAN DEFAULT false, -- Whether scope is granted by default without explicit request
+                                            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Initial basic scopes (examples, tailor these to your needs)
+INSERT INTO oauth_scopes (scope, description) VALUES
+                                                  ('openid', 'Access basic user profile information'),
+                                                  ('profile', 'Access detailed user profile information'),
+                                                  ('email', 'Access user email address'),
+                                                  ('offline_access', 'Allow issuance of refresh tokens for long-lived access'),
+                                                  ('trials:read', 'Read trial information'),
+                                                  ('patients:read', 'Read patient data user has access to'),
+                                                  ('measurements:read', 'Read measurement data user has access to'),
+                                                  ('measurements:write', 'Submit measurement data on behalf of the user')
+ON CONFLICT (scope) DO NOTHING;
+
+
+-- OAuth Authorization Codes Table: Stores temporary codes for auth code flow
+CREATE TABLE IF NOT EXISTS oauth_authorization_codes (
+                                                         code TEXT PRIMARY KEY,
+                                                         client_id TEXT NOT NULL REFERENCES oauth_clients(client_id) ON DELETE CASCADE,
+                                                         user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+                                                         redirect_uri TEXT NOT NULL,
+                                                         scope TEXT, -- Space-separated list of scopes granted
+                                                         expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
+                                                         created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- OAuth Access Tokens Table: Stores issued access tokens
+CREATE TABLE IF NOT EXISTS oauth_access_tokens (
+                                                   token TEXT PRIMARY KEY, -- Could be the token itself (if opaque) or a hash (if JWT)
+                                                   client_id TEXT NOT NULL REFERENCES oauth_clients(client_id) ON DELETE CASCADE,
+                                                   user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE, -- Nullable for client_credentials grant
+                                                   scope TEXT, -- Space-separated list of scopes granted
+                                                   expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
+                                                   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                                   revoked_at TIMESTAMP WITH TIME ZONE -- To mark revoked tokens
+);
+
+-- OAuth Refresh Tokens Table: Stores refresh tokens for renewing access tokens
+CREATE TABLE IF NOT EXISTS oauth_refresh_tokens (
+                                                    token TEXT PRIMARY KEY,
+                                                    access_token TEXT NOT NULL REFERENCES oauth_access_tokens(token) ON DELETE CASCADE,
+                                                    client_id TEXT NOT NULL REFERENCES oauth_clients(client_id) ON DELETE CASCADE,
+                                                    user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+                                                    scope TEXT, -- Original scope granted
+                                                    expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
+                                                    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                                    revoked_at TIMESTAMP WITH TIME ZONE -- To mark revoked tokens
+);
+
+-- Indexes for performance
+CREATE INDEX IF NOT EXISTS idx_oauth_access_tokens_user_id ON oauth_access_tokens(user_id);
+CREATE INDEX IF NOT EXISTS idx_oauth_access_tokens_client_id ON oauth_access_tokens(client_id);
+CREATE INDEX IF NOT EXISTS idx_oauth_refresh_tokens_user_id ON oauth_refresh_tokens(user_id);
+CREATE INDEX IF NOT EXISTS idx_oauth_refresh_tokens_client_id ON oauth_refresh_tokens(client_id);
+CREATE INDEX IF NOT EXISTS idx_oauth_authorization_codes_expires_at ON oauth_authorization_codes(expires_at);
+CREATE INDEX IF NOT EXISTS idx_oauth_access_tokens_expires_at ON oauth_access_tokens(expires_at);
+CREATE INDEX IF NOT EXISTS idx_oauth_refresh_tokens_expires_at ON oauth_refresh_tokens(expires_at);
+
+
+-- Enable RLS (policies need to be defined separately based on auth logic)
+ALTER TABLE oauth_clients ENABLE ROW LEVEL SECURITY;
+ALTER TABLE oauth_scopes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE oauth_authorization_codes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE oauth_access_tokens ENABLE ROW LEVEL SECURITY;
+ALTER TABLE oauth_refresh_tokens ENABLE ROW LEVEL SECURITY;
+
+-- Basic RLS policies (examples - refine these based on actual needs)
+-- Allow users to see their own registered clients
+CREATE POLICY "Allow owner read access" ON oauth_clients
+    FOR SELECT USING (auth.uid() = owner_id);
+
+-- Allow authenticated users to read scopes (adjust if scopes should be restricted)
+CREATE POLICY "Allow authenticated read access" ON oauth_scopes
+    FOR SELECT USING (auth.role() = 'authenticated');
+
+-- Access to codes/tokens should likely be restricted to backend service roles or specific functions
+-- Example: Allow service role full access (replace 'service_role' if needed)
+CREATE POLICY "Allow service role full access on auth codes" ON oauth_authorization_codes
+    FOR ALL USING (auth.role() = 'service_role');
+CREATE POLICY "Allow service role full access on access tokens" ON oauth_access_tokens
+    FOR ALL USING (auth.role() = 'service_role');
+CREATE POLICY "Allow service role full access on refresh tokens" ON oauth_refresh_tokens
+    FOR ALL USING (auth.role() = 'service_role');
