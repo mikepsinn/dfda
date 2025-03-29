@@ -8,5 +8,5 @@
 - Root Lib/Components: Place library code in /lib and components in /components at the root level, not inside /app.
 
 - Prioritize using generated types from lib/database.types.ts over creating new ones.
-- Modify the existing initial migration file (supabase/migrations/20240324000000_initial_schema.sql) for database changes during this prototyping phase.
 - Run pnpm run db:local:reset-types after making schema changes in the migration file.
+- one table/view, etc per migration and prefix the word part with the type like table_, view_, etc.

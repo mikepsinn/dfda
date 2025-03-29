@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS units (
   ucum_code TEXT, -- UCUM code where applicable (e.g., 'kg', '[lb_av]')
   conversion_factor NUMERIC NOT NULL,
   conversion_offset NUMERIC DEFAULT 0 NOT NULL,
-  is_si BOOLEAN DEFAULT false,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (unit_category_id, ucum_code) -- Ensure UCUM code is unique within a category if present
