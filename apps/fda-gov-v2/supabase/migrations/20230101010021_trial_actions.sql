@@ -1,0 +1,54 @@
+-- Create action categories enum
+CREATE TYPE action_category AS ENUM (
+  'lab_work',
+  'imaging',
+  'assessment',
+  'review',
+  'procedure',
+  'consultation',
+  'medication',
+  'other'
+);
+
+-- Create action types table
+CREATE TABLE IF NOT EXISTS action_types (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  category action_category NOT NULL,
+  description TEXT,
+  requires_scheduling BOOLEAN DEFAULT false,
+  requires_results BOOLEAN DEFAULT false,
+  can_be_recurring BOOLEAN DEFAULT false,
+  default_duration_minutes INTEGER,
+  metadata JSONB,
+  deleted_at TIMESTAMP WITH TIME ZONE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (name, category)
+);
+
+-- Create trial actions table
+CREATE TABLE IF NOT EXISTS trial_actions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  trial_id UUID NOT NULL REFERENCES trials(id) ON DELETE CASCADE,
+  protocol_version_id UUID REFERENCES protocol_versions(id),
+  enrollment_id UUID NOT NULL REFERENCES trial_enrollments(id) ON DELETE CASCADE,
+  action_type_id UUID NOT NULL REFERENCES action_types(id),
+  title TEXT NOT NULL,
+  description TEXT,
+  status TEXT NOT NULL CHECK (status IN ('pending', 'scheduled', 'in_progress', 'completed', 'cancelled', 'overdue')),
+  priority TEXT NOT NULL CHECK (priority IN ('low', 'medium', 'high', 'urgent')) DEFAULT 'medium',
+  scheduled_date TIMESTAMP WITH TIME ZONE,
+  due_date TIMESTAMP WITH TIME ZONE NOT NULL,
+  completed_at TIMESTAMP WITH TIME ZONE,
+  completed_by UUID REFERENCES profiles(id),
+  cancelled_at TIMESTAMP WITH TIME ZONE,
+  cancelled_by UUID REFERENCES profiles(id),
+  cancellation_reason TEXT,
+  is_protocol_required BOOLEAN DEFAULT false,
+  parent_action_id UUID REFERENCES trial_actions(id),
+  metadata JSONB,
+  deleted_at TIMESTAMP WITH TIME ZONE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+); 
