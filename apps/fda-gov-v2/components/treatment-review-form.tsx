@@ -9,6 +9,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { StarRating } from "@/components/ui/star-rating"
 import { createTreatmentRatingAction, updateTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 import { useToast } from "@/hooks/use-toast"
+import { supabase } from "@/lib/supabase"
+import { logger } from "@/lib/logger"
 
 interface TreatmentReviewFormProps {
   userId: string
@@ -34,6 +36,7 @@ export function TreatmentReviewForm({
   const [rating, setRating] = useState(existingReview?.rating || 0)
   const [review, setReview] = useState(existingReview?.review || "")
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const router = useRouter()
   const { toast } = useToast()
 
@@ -63,15 +66,25 @@ export function TreatmentReviewForm({
           description: "Your review has been updated successfully",
         })
       } else {
-        await createTreatmentRatingAction({
-          user_id: userId,
+        const newReview = {
           treatment_id: treatmentId,
           condition_id: conditionId,
-          rating,
-          review,
-          user_type: userType,
-          verified: false,
-        })
+          user_id: userId,
+          effectiveness_out_of_ten: rating,
+          review: review,
+          unit_id: 'test-unit-1' // TODO: Get actual unit ID
+        }
+
+        const { error } = await supabase
+          .from('treatment_ratings')
+          .insert(newReview)
+
+        if (error) {
+          logger.error('Error submitting review:', error)
+          setError('Failed to submit review. Please try again.')
+          return
+        }
+
         toast({
           title: "Review submitted",
           description: "Your review has been submitted successfully",

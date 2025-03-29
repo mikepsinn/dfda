@@ -1,121 +1,115 @@
 import type { Metadata } from "next"
+import type { Database } from "@/lib/database.types"
 import { getServerUser } from "@/lib/server-auth"
-import { createServerSupabaseClient } from "@/lib/supabase"
-import { SponsorHeader } from "./components/sponsor-header"
-import { SponsorStats } from "./components/sponsor-stats"
+import { createServerClient } from "@/lib/supabase"
+import { redirect } from "next/navigation"
+import { SponsorOverview } from "./components/sponsor-overview"
 import { TrialEnrollment } from "./components/trial-enrollment"
-import { RecentActivity } from "./components/recent-activity"
 import { TrialManagement } from "./components/trial-management"
+import { RecentActivity } from "./components/recent-activity"
+
+type Trial = Database["public"]["Tables"]["trials"]["Row"]
 
 export const metadata: Metadata = {
   title: "Sponsor Dashboard | FDA v2",
-  description: "Manage your clinical trials and monitor enrollment progress",
+  description: "Manage your clinical trials and view enrollment statistics.",
 }
 
 export default async function SponsorDashboard() {
   const user = await getServerUser()
-  const supabase = createServerSupabaseClient()
 
-  // Fetch sponsor profile data
-  const { data: sponsorProfile } = await supabase.from("users").select("*").eq("id", user?.id).single()
+  if (!user) {
+    redirect("/login?callbackUrl=/sponsor/dashboard")
+  }
 
-  // In a real app, we would fetch this data from the database
-  // For now, we'll use mock data similar to what was in the client component
+  const supabase = createServerClient()
 
-  // Mock sponsor data
+  // Get sponsor profile
+  const { data: sponsorProfile } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single()
+
+  // Get active trials
+  const { data: activeTrials } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      conditions (
+        id,
+        title,
+        icd_code
+      ),
+      treatments (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      )
+    `)
+    .eq("sponsor_id", user.id)
+    .eq("status", "active")
+
+  // Get completed trials
+  const { data: completedTrials } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      conditions (
+        id,
+        title,
+        icd_code
+      ),
+      treatments (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      )
+    `)
+    .eq("sponsor_id", user.id)
+    .eq("status", "completed")
+
   const sponsorData = {
-    name: sponsorProfile?.name || "Innovative Therapeutics Inc.",
-    activeTrials: [
-      {
-        id: 1,
-        name: "Efficacy of Treatment A for Type 2 Diabetes",
-        status: "Recruiting",
-        progress: 68,
-        enrolled: 342,
-        target: 500,
-        startDate: "Jan 15, 2025",
-        endDate: "Jul 15, 2025",
-      },
-      {
-        id: 2,
-        name: "Comparative Study of Treatments B and C for Rheumatoid Arthritis",
-        status: "Recruiting",
-        progress: 45,
-        enrolled: 135,
-        target: 300,
-        startDate: "Feb 1, 2025",
-        endDate: "Aug 1, 2025",
-      },
-    ],
-    completedTrials: [
-      {
-        id: 3,
-        name: "Safety Study of Treatment D for Hypertension",
-        status: "Completed",
-        enrolled: 250,
-        target: 250,
-        startDate: "Sep 10, 2024",
-        endDate: "Dec 10, 2024",
-        results: "Positive efficacy, minimal side effects",
-      },
-    ],
-    pendingApproval: [
-      {
-        id: 4,
-        name: "Novel Therapy for Depression",
-        status: "Pending Approval",
-        submittedDate: "Mar 1, 2025",
-      },
-    ],
-    recentActivity: [
-      {
-        type: "enrollment",
-        trial: "Efficacy of Treatment A for Type 2 Diabetes",
-        date: "Mar 4, 2025",
-        description: "5 new participants enrolled",
-      },
-      {
-        type: "data",
-        trial: "Comparative Study of Treatments B and C for Rheumatoid Arthritis",
-        date: "Mar 3, 2025",
-        description: "15 participants submitted 4-week follow-up data",
-      },
-      {
-        type: "milestone",
-        trial: "Efficacy of Treatment A for Type 2 Diabetes",
-        date: "Mar 1, 2025",
-        description: "Reached 300+ participants milestone",
-      },
-    ],
+    name: sponsorProfile?.full_name || "Innovative Therapeutics Inc.",
+    activeTrials: activeTrials || [],
+    completedTrials: completedTrials || [],
+    totalEnrollment: (activeTrials || []).reduce((sum, trial) => sum + (trial.current_enrollment || 0), 0),
+    totalTrials: (activeTrials || []).length + (completedTrials || []).length,
   }
 
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="flex flex-1">
-        <main className="flex-1 overflow-auto p-6">
-          <div className="mx-auto max-w-4xl space-y-6">
-            <SponsorHeader name={sponsorData.name} />
+      <main className="flex-1 py-6 md:py-10">
+        <div className="container">
+          <div className="mx-auto max-w-5xl space-y-8">
+            <SponsorOverview
+              name={sponsorData.name}
+              totalTrials={sponsorData.totalTrials}
+              totalEnrollment={sponsorData.totalEnrollment}
+            />
 
-            <div className="grid gap-4 md:grid-cols-3">
-              <SponsorStats
-                activeTrials={sponsorData.activeTrials.length}
-                totalParticipants={sponsorData.activeTrials.reduce((sum, trial) => sum + trial.enrolled, 0)}
-                pendingApproval={sponsorData.pendingApproval.length}
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold">Trial Enrollment</h2>
+              <TrialEnrollment trials={sponsorData.activeTrials} />
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold">Trial Management</h2>
+              <TrialManagement
+                activeTrials={sponsorData.activeTrials}
+                completedTrials={sponsorData.completedTrials}
               />
             </div>
 
-            <TrialEnrollment trials={sponsorData.activeTrials} />
-
-            <RecentActivity activities={sponsorData.recentActivity as any} />
-
-            <TrialManagement
-              activeTrials={sponsorData.activeTrials}
-              completedTrials={sponsorData.completedTrials}
-              pendingApproval={sponsorData.pendingApproval as any}
-            />
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold">Recent Activity</h2>
+              <RecentActivity trials={sponsorData.activeTrials} />
+            </div>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   )
 }

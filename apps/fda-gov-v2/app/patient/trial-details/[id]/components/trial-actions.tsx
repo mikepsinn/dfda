@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { createClientSupabaseClient } from "@/lib/supabase"
+import { logger } from "@/lib/logger"
 
 interface TrialActionsProps {
   trialId: string
@@ -15,6 +16,7 @@ interface TrialActionsProps {
 export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps) {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleEnroll = async () => {
     if (!userId) {
@@ -26,14 +28,22 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
 
     try {
       const supabase = createClientSupabaseClient()
+      const user = await supabase.auth.getUser()
 
-      // Create enrollment record
-      await supabase.from("trial_enrollments").insert({
+      // Create enrollment
+      const { error } = await supabase.from("trial_enrollments").insert({
         trial_id: trialId,
-        user_id: userId,
+        patient_id: user.data.user.id,
         status: "pending",
         enrollment_date: new Date().toISOString(),
+        notes: "Initial enrollment request"
       })
+
+      if (error) {
+        logger.error("Error enrolling in trial:", error)
+        setError("Failed to enroll in trial. Please try again.")
+        return
+      }
 
       // Refresh the page to show updated enrollment status
       router.refresh()

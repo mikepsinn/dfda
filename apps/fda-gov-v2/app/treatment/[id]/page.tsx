@@ -27,10 +27,12 @@ export async function generateMetadata({ params }: TreatmentPageProps): Promise<
     }
   }
 
-  return {
-    title: `${treatment.name} | FDA v2`,
+  const metadata: Metadata = {
+    title: `${treatment.title} | FDA v2`,
     description: treatment.description || "View details about this treatment and patient reviews.",
   }
+
+  return metadata
 }
 
 export default async function TreatmentPage({ params }: TreatmentPageProps) {
@@ -85,7 +87,9 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
 
   // Get treatment ratings
   const ratings = await getTreatmentRatingsAction(params.id, conditionId)
-  const { average: averageRating, count: totalReviews } = await getAverageTreatmentRatingAction(params.id, conditionId)
+  const stats = await getAverageTreatmentRatingAction(params.id, conditionId)
+  const averageRating = stats.avg_effectiveness
+  const totalReviews = stats.total_ratings
 
   // Get user's existing rating if logged in
   let userRating: TreatmentRating | null = null
