@@ -18,12 +18,11 @@ import { createBrowserClient } from "@/lib/supabase"
 import { logger } from "@/lib/logger"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
-type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Insert"]
-type DataSubmissionRow = Database["public"]["Tables"]["data_submissions"]["Row"]
+type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]
 
-type TrialSubmissionData = {
+export interface TrialSubmissionData {
   trial: Trial
-  submission: DataSubmissionRow
+  submission: DataSubmission | null
   currentMilestone: string
   refundAmount: number
   progress: number

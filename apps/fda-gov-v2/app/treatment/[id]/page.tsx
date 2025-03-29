@@ -7,8 +7,10 @@ import { TreatmentHeader } from "./components/treatment-header"
 import { TreatmentDetails } from "./components/treatment-details"
 import { TreatmentReviews } from "./components/treatment-reviews"
 import type { Database } from "@/lib/database.types"
+import { createClient } from "@/lib/supabase/server"
 
 type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row']
+type Treatment = Database["public"]["Tables"]["treatments"]["Row"]
 
 interface TreatmentPageProps {
   params: {
@@ -17,10 +19,10 @@ interface TreatmentPageProps {
 }
 
 export async function generateMetadata({ params }: TreatmentPageProps): Promise<Metadata> {
-  const supabase = createServerClient()
+  const supabase = await createClient()
   const { data: treatment } = await supabase
     .from("treatments")
-    .select("title, description")
+    .select("name, description")
     .eq("id", params.id)
     .single()
 
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: TreatmentPageProps): Promise<
   }
 
   const metadata: Metadata = {
-    title: `${treatment.title} | FDA v2`,
+    title: `${treatment.name} | FDA v2`,
     description: treatment.description || "View details about this treatment and patient reviews.",
   }
 
@@ -41,22 +43,19 @@ export async function generateMetadata({ params }: TreatmentPageProps): Promise<
 
 export default async function TreatmentPage({ params }: TreatmentPageProps) {
   const user = await getServerUser()
-  const supabase = createServerClient()
+  const supabase = await createClient()
 
   let conditionId = ""
 
   // Fetch treatment data
-  const { data: treatment, error } = await supabase
+  const { data: treatment } = await supabase
     .from("treatments")
-    .select("*, conditions (*)") // Also fetch related condition data
+    .select("name, description, conditions (*)") // Also fetch related condition data
     .eq("id", params.id)
     .single()
 
-  if (error) {
-    // logger.error(`Error fetching treatment ${params.id}:`, error)
-    notFound()
-  }
   if (!treatment) {
+    // logger.error(`Error fetching treatment ${params.id}:`, error)
     notFound()
   }
 
