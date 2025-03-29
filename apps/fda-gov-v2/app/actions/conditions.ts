@@ -11,14 +11,15 @@ export type ConditionView = Database['public']['Views']['patient_conditions_view
 export type ConditionInsert = Database['public']['Tables']['conditions']['Insert']
 export type ConditionUpdate = Database['public']['Tables']['conditions']['Update']
 
-// Get all conditions from the view which includes the name
-export async function getConditionsAction(): Promise<ConditionView[]> {
+// Get all conditions from global_variables
+export async function getConditionsAction() {
   const supabase = await createClient()
 
   const response = await supabase
-    .from('patient_conditions_view')
-    .select()
-    .order('condition_name')
+    .from('global_variables')
+    .select('id, name, description, emoji')
+    .eq('variable_category_id', VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY)
+    .order('name')
     .limit(50)
 
   if (response.error) {
@@ -65,7 +66,7 @@ export async function searchConditionsAction(query: string) {
       throw error
     }
 
-    logger.info('Found conditions:', { count: conditions?.length, conditions })
+    logger.info('Found conditions:', { count: conditions?.length })
     return conditions || []
   } catch (error) {
     logger.error('Error in searchConditionsAction:', { error })

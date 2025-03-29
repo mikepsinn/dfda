@@ -1,14 +1,12 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { searchConditionsAction } from "@/app/actions/conditions"
+import { searchConditionsAction, getConditionsAction } from "@/app/actions/conditions"
 import type { Database } from "@/lib/database.types"
+import { logger } from "@/lib/logger"
 
-// Use the database view type directly
-type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+type GlobalVariable = Database["public"]["Tables"]["global_variables"]["Row"]
 
 interface ConditionSearchProps {
   onSelect: (condition: { id: string; name: string }) => void
@@ -20,74 +18,102 @@ export function ConditionSearch({
   selected,
 }: ConditionSearchProps) {
   const [searchTerm, setSearchTerm] = useState("")
-  const [suggestions, setSuggestions] = useState<ConditionView[]>([])
+  const [suggestions, setSuggestions] = useState<GlobalVariable[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
+  // Load initial conditions
+  useEffect(() => {
+    const loadInitialConditions = async () => {
+      try {
+        setIsLoading(true)
+        const results = await getConditionsAction()
+        setSuggestions(results)
+      } catch (error) {
+        logger.error("Error loading initial conditions:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadInitialConditions()
+  }, [])
+
+  // Handle search when typing
   useEffect(() => {
     const fetchSuggestions = async () => {
-      if (searchTerm.length < 2) {
-        setSuggestions([])
-        return
-      }
+      if (!searchTerm) return
 
       try {
+        setIsLoading(true)
         const results = await searchConditionsAction(searchTerm)
         setSuggestions(results)
       } catch (error) {
-        console.error("Error fetching suggestions:", error)
+        logger.error("Error fetching suggestions:", error)
         setSuggestions([])
+      } finally {
+        setIsLoading(false)
       }
     }
 
-    fetchSuggestions()
+    const debounce = setTimeout(fetchSuggestions, 300)
+    return () => clearTimeout(debounce)
   }, [searchTerm])
 
-  const handleSelectCondition = (condition: ConditionView) => {
-    // Only call onSelect if we have both required fields
-    if (condition.condition_id && condition.condition_name) {
-      onSelect({
-        id: condition.condition_id,
-        name: condition.condition_name
-      })
-      setSearchTerm("")
-      setSuggestions([])
-      setShowSuggestions(false)
-    }
+  const handleSelectCondition = (condition: GlobalVariable) => {
+    onSelect({
+      id: condition.id,
+      name: condition.name
+    })
+    setSearchTerm("")
+    setShowSuggestions(false)
   }
 
   return (
-    <div className="w-full space-y-2">
-      <div className="space-y-1">
-        <div className="relative">
-          <Input
-            id="condition-search"
-            placeholder="Type to search conditions..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onFocus={() => setShowSuggestions(true)}
-            autoComplete="off"
-          />
-          {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute z-10 w-full max-h-60 mt-1 overflow-auto bg-white border border-gray-300 rounded-md shadow-lg">
-              {suggestions.map((suggestion) => (
-                suggestion.condition_id && suggestion.condition_name ? (
-                  <div
-                    key={suggestion.condition_id}
-                    className="p-2 cursor-pointer hover:bg-gray-100"
-                    onClick={() => handleSelectCondition(suggestion)}
-                  >
-                    {suggestion.condition_name}
-                  </div>
-                ) : null
-              ))}
+    <div className="relative">
+      <Input
+        type="search"
+        placeholder="Search conditions..."
+        value={searchTerm}
+        onChange={(e) => {
+          setSearchTerm(e.target.value)
+          setShowSuggestions(true)
+        }}
+        onFocus={() => setShowSuggestions(true)}
+        aria-label="Search conditions"
+      />
+
+      {showSuggestions && (
+        <div className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+          {isLoading ? (
+            <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+              Loading conditions...
             </div>
+          ) : suggestions.length === 0 ? (
+            <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
+              No conditions found
+            </div>
+          ) : (
+            suggestions.map((condition) => (
+              <div
+                key={condition.id}
+                className="relative cursor-pointer select-none py-2 px-4 hover:bg-gray-100"
+                onClick={() => handleSelectCondition(condition)}
+              >
+                <div className="flex items-center">
+                  {condition.emoji && (
+                    <span className="mr-2">{condition.emoji}</span>
+                  )}
+                  <span className="font-medium">{condition.name}</span>
+                </div>
+                {condition.description && (
+                  <p className="mt-1 text-sm text-gray-500">
+                    {condition.description}
+                  </p>
+                )}
+              </div>
+            ))
           )}
-        </div>
-      </div>
-      
-      {selected && (
-        <div className="p-2 bg-gray-100 rounded-md">
-          <span>{selected.name}</span>
         </div>
       )}
     </div>
