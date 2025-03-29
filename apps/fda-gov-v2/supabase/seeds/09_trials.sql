@@ -21,9 +21,9 @@ INSERT INTO data_submissions (enrollment_id, patient_id, submission_date, data, 
  '10000000-0000-0000-0000-000000000001', 
  '2025-03-10', 
  '{"blood_glucose": 142, "weight": 84, "medication_adherence": 95, "side_effects": ["mild nausea"], "notes": "Feeling better overall"}', 
- 'submitted'),
+ 'pending'),
 ((SELECT id FROM trial_enrollments WHERE trial_id = '33333333-3333-3333-3333-333333333333' AND patient_id = '10000000-0000-0000-0000-000000000002' LIMIT 1), 
  '10000000-0000-0000-0000-000000000002', 
  '2025-02-15', 
  '{"joint_pain_score": 4, "mobility_score": 7, "medication_adherence": 100, "side_effects": [], "notes": "Noticeable improvement in morning stiffness"}', 
- 'submitted');
+ 'pending');

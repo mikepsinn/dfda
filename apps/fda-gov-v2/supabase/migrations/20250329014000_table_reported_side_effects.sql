@@ -1,13 +1,15 @@
--- Create treatment_ratings table
-CREATE TABLE IF NOT EXISTS treatment_ratings (
+-- Create reported_side_effects table
+CREATE TABLE IF NOT EXISTS reported_side_effects (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
   treatment_id TEXT NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
-  condition_id TEXT NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
-  effectiveness INT CHECK (effectiveness BETWEEN 1 AND 10),
-  review TEXT,
-  helpful_count INT DEFAULT 0,
+  description TEXT NOT NULL,
+  severity INT CHECK (severity BETWEEN 1 AND 5),
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Add index for faster lookups
+CREATE INDEX IF NOT EXISTS idx_reported_side_effects_treatment_user 
+ON reported_side_effects(treatment_id, user_id);
