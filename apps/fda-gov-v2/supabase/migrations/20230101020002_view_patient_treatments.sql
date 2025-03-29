@@ -14,8 +14,7 @@ SELECT
   m.notes,
   t.id as treatment_id, -- This is the same as global_variable_id in this context
   t.treatment_type,
-  t.manufacturer,
-  t.approval_status
+  t.manufacturer
 FROM measurements m
 JOIN treatments t ON t.id = m.global_variable_id -- Join measurement variable to treatment id, use renamed column
 JOIN global_variables gv ON gv.id = t.id -- Join treatment to its global_variable definition

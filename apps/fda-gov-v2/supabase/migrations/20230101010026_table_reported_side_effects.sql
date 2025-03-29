@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS reported_side_effects (
   user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
   treatment_id TEXT NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
   description TEXT NOT NULL,
-  severity INT CHECK (severity BETWEEN 1 AND 5),
+  severity_out_of_ten INT CHECK (severity_out_of_ten BETWEEN 1 AND 10), -- Changed name and range
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
