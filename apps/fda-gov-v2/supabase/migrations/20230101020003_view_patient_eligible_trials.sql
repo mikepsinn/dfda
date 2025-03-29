@@ -17,8 +17,8 @@ SELECT
   t.end_date,
   t.enrollment_target,
   t.current_enrollment,
-  c.name as condition_name,
-  tr.name as treatment_name,
+  gvc.name as condition_name, -- Get from global_variables
+  gvt.name as treatment_name, -- Get from global_variables
   tr.treatment_type,
   tr.manufacturer,
   p.first_name as sponsor_first_name,
@@ -26,8 +26,14 @@ SELECT
 FROM patient_active_conditions pac
 JOIN trials t ON t.condition_id = pac.condition_id
 JOIN conditions c ON c.id = t.condition_id
+JOIN global_variables gvc ON gvc.id = c.id -- Join conditions to global_variables
 JOIN treatments tr ON tr.id = t.treatment_id
+JOIN global_variables gvt ON gvt.id = tr.id -- Join treatments to global_variables
 JOIN profiles p ON p.id = t.sponsor_id
 WHERE t.deleted_at IS NULL
+  AND c.deleted_at IS NULL
+  AND tr.deleted_at IS NULL
+  AND gvc.deleted_at IS NULL -- Add check for global_variables (conditions)
+  AND gvt.deleted_at IS NULL -- Add check for global_variables (treatments)
   AND t.status IN ('recruiting', 'pending_approval')
-  AND t.current_enrollment < t.enrollment_target; 
+  AND t.current_enrollment < t.enrollment_target;
