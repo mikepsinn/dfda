@@ -22,13 +22,13 @@ BEGIN
   END IF;
 
   -- Get 'from' unit details
-  SELECT conversion_factor, conversion_offset, category_id
+  SELECT conversion_factor, conversion_offset, unit_category_id
   INTO v_from_factor, v_from_offset, v_from_category
   FROM units
   WHERE id = p_from_unit_id;
 
   -- Get 'to' unit details
-  SELECT conversion_factor, conversion_offset, category_id
+  SELECT conversion_factor, conversion_offset, unit_category_id
   INTO v_to_factor, v_to_offset, v_to_category
   FROM units
   WHERE id = p_to_unit_id;

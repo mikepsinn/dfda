@@ -5,7 +5,7 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 BEGIN
-  INSERT INTO global_variables (id, category_id, name, description)
+  INSERT INTO global_variables (id, variable_category_id, name, description)
   VALUES (NEW.id::text, 'conditions', NEW.name, NEW.description)
   ON CONFLICT (id) DO UPDATE
   SET name = EXCLUDED.name,
@@ -20,7 +20,7 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 BEGIN
-  INSERT INTO global_variables (id, category_id, name, description)
+  INSERT INTO global_variables (id, variable_category_id, name, description)
   VALUES (NEW.id::text, 'treatments', NEW.name, NEW.description)
   ON CONFLICT (id) DO UPDATE
   SET name = EXCLUDED.name,
