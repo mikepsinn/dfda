@@ -1,5 +1,5 @@
 import type { Database } from "@/lib/database.types"
-import { createTestClient } from "@/lib/supabase/test-client"
+import { createClient } from '@supabase/supabase-js'
 import { describe, it, expect, beforeEach, afterEach } from '@jest/globals'
 import {
   getTreatmentRatingsAction,
@@ -13,6 +13,12 @@ type TreatmentStats = {
   avg_side_effects: number
   total_ratings: number
 }
+
+// Create test client
+const createTestClient = () => createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 
 describe('Treatment Ratings API Integration', () => {
   const supabase = createTestClient()
@@ -36,17 +42,17 @@ describe('Treatment Ratings API Integration', () => {
           treatment_id: testTreatmentId,
           condition_id: testConditionId,
           user_id: testUserId,
-          rating: 4,
+          effectiveness_out_of_ten: 4,
           review: 'Great treatment',
-          user_type: 'patient'
+          unit_id: 'test-unit-1'
         },
         {
           treatment_id: testTreatmentId,
           condition_id: testConditionId,
           user_id: testUserId + '2',
-          rating: 5,
+          effectiveness_out_of_ten: 5,
           review: 'Excellent results',
-          user_type: 'patient'
+          unit_id: 'test-unit-1'
         }
       ]
 
@@ -58,8 +64,8 @@ describe('Treatment Ratings API Integration', () => {
       const ratings = await getTreatmentRatingsAction(testTreatmentId, testConditionId)
       
       expect(ratings).toHaveLength(2)
-      expect(ratings[0].rating).toBe(5) // Most recent first
-      expect(ratings[1].rating).toBe(4)
+      expect((ratings as TreatmentRating[])[0].effectiveness_out_of_ten).toBe(5) // Most recent first
+      expect((ratings as TreatmentRating[])[1].effectiveness_out_of_ten).toBe(4)
     })
 
     it('returns empty array when no ratings exist', async () => {
@@ -76,17 +82,17 @@ describe('Treatment Ratings API Integration', () => {
           treatment_id: testTreatmentId,
           condition_id: testConditionId,
           user_id: testUserId,
-          rating: 4,
+          effectiveness_out_of_ten: 4,
           review: 'Good',
-          user_type: 'patient'
+          unit_id: 'test-unit-1'
         },
         {
           treatment_id: testTreatmentId,
           condition_id: testConditionId,
           user_id: testUserId + '2',
-          rating: 5,
+          effectiveness_out_of_ten: 5,
           review: 'Excellent',
-          user_type: 'patient'
+          unit_id: 'test-unit-1'
         }
       ]
 
@@ -97,14 +103,14 @@ describe('Treatment Ratings API Integration', () => {
 
       const result = await getAverageTreatmentRatingAction(testTreatmentId, testConditionId)
       
-      expect(result.average).toBe(4.5)
-      expect(result.count).toBe(2)
+      expect(result.avg_effectiveness).toBe(4.5)
+      expect(result.total_ratings).toBe(2)
     })
 
     it('returns zero for non-existent treatment ratings', async () => {
       const result = await getAverageTreatmentRatingAction('nonexistent-treatment', 'nonexistent-condition')
-      expect(result.average).toBe(0)
-      expect(result.count).toBe(0)
+      expect(result.avg_effectiveness).toBe(0)
+      expect(result.total_ratings).toBe(0)
     })
   })
 
@@ -114,9 +120,9 @@ describe('Treatment Ratings API Integration', () => {
         treatment_id: testTreatmentId,
         condition_id: testConditionId,
         user_id: testUserId,
-        rating: 5,
+        effectiveness_out_of_ten: 5,
         review: 'Excellent treatment',
-        user_type: 'patient'
+        unit_id: 'test-unit-1'
       }
 
       const result = await createTreatmentRatingAction(newRating)
@@ -139,9 +145,9 @@ describe('Treatment Ratings API Integration', () => {
         treatment_id: testTreatmentId,
         condition_id: testConditionId,
         user_id: testUserId,
-        rating: 5,
+        effectiveness_out_of_ten: 5,
         review: 'First review',
-        user_type: 'patient'
+        unit_id: 'test-unit-1'
       }
 
       // Create first rating
@@ -163,8 +169,8 @@ describe('Treatment Ratings API Integration', () => {
 
     expect(ratings).toBeDefined()
     expect(ratings).toHaveLength(2)
-    expect((ratings as TreatmentRating[])[0].effectiveness_rating).toBe(5) // Most recent first
-    expect((ratings as TreatmentRating[])[1].effectiveness_rating).toBe(4)
+    expect((ratings as TreatmentRating[])[0].effectiveness_out_of_ten).toBe(5) // Most recent first
+    expect((ratings as TreatmentRating[])[1].effectiveness_out_of_ten).toBe(4)
   })
 
   it("should calculate average rating", async () => {
