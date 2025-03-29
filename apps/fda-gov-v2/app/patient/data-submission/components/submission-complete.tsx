@@ -1,16 +1,21 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { TrialSubmissionData } from "./data-submission-form"
 
-export function SubmissionComplete() {
+interface SubmissionCompleteProps {
+  trialData: TrialSubmissionData
+}
+
+export function SubmissionComplete({ trialData }: SubmissionCompleteProps) {
   return (
     <Card>
       <CardHeader>
         <CardTitle>Submission Complete</CardTitle>
+        <CardDescription>Thank you for submitting your data for {trialData.trial.title}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="mb-4">Thank you for your submission!</p>
         <Button asChild>
           <a href="/patient/dashboard">Return to Dashboard</a>
         </Button>

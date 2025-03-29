@@ -82,7 +82,6 @@ export function TreatmentReviews({
                     userId={userId!}
                     treatmentId={treatmentId}
                     conditionId={conditionId}
-                    userType={userType}
                     onSuccess={handleReviewSuccess}
                   />
                 ) : (

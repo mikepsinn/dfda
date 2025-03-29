@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { createServerSupabaseClient } from "@/lib/supabase"
+import { createServerClient } from "@/lib/supabase"
 import { getServerUser } from "@/lib/server-auth"
 import { TrialHeader } from "./components/trial-header"
 import { TrialContent } from "./components/trial-content"
@@ -13,7 +13,7 @@ interface TrialDetailsPageProps {
 }
 
 export async function generateMetadata({ params }: TrialDetailsPageProps): Promise<Metadata> {
-  const supabase = createServerSupabaseClient()
+  const supabase = createServerClient()
   const { data: trial } = await supabase.from("trials").select("*").eq("id", params.id).single()
 
   if (!trial) {
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: TrialDetailsPageProps): Promi
 
 export default async function TrialDetailsPage({ params }: TrialDetailsPageProps) {
   const user = await getServerUser()
-  const supabase = createServerSupabaseClient()
+  const supabase = createServerClient()
 
   // Fetch trial data
   const { data: trial, error } = await supabase
