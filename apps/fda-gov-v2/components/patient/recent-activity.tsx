@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Database } from "@/lib/database.types"
 import Link from "next/link"
 
-type Enrollment = Database["public"]["Tables"]["enrollments"]["Row"] & {
+type Enrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"] & {
   trial: Database["public"]["Tables"]["trials"]["Row"]
 }
 

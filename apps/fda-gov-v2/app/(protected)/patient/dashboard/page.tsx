@@ -1,9 +1,9 @@
 import { getServerUser } from "@/lib/server-auth"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
-import { EnrolledTrials } from "./components/enrolled-trials"
-import { PatientOverview } from "./components/patient-overview"
-import { RecentActivity } from "./components/recent-activity"
+import { EnrolledTrials } from "@/components/patient/enrolled-trials"
+import { PatientOverview } from "@/components/patient/patient-overview"
+import { RecentActivity } from "@/components/patient/recent-activity"
 import { Database } from "@/lib/database.types"
 import { SupabaseClient } from "@supabase/supabase-js"
 
