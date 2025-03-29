@@ -13,53 +13,40 @@ export type Database = {
         Row: {
           created_at: string | null
           deleted_at: string | null
-          description: string
-          global_variable_id: string | null
+          global_variable_id: string
           icd_code: string | null
           id: string
-          name: string
           updated_at: string | null
         }
         Insert: {
           created_at?: string | null
           deleted_at?: string | null
-          description: string
-          global_variable_id?: string | null
+          global_variable_id: string
           icd_code?: string | null
-          id?: string
-          name: string
+          id: string
           updated_at?: string | null
         }
         Update: {
           created_at?: string | null
           deleted_at?: string | null
-          description?: string
-          global_variable_id?: string | null
+          global_variable_id?: string
           icd_code?: string | null
           id?: string
-          name?: string
           updated_at?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "fk_conditions_global_variable"
+            foreignKeyName: "conditions_global_variable_id_fkey"
             columns: ["global_variable_id"]
             isOneToOne: false
             referencedRelation: "global_variables"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "fk_conditions_global_variable"
+            foreignKeyName: "conditions_global_variable_id_fkey"
             columns: ["global_variable_id"]
             isOneToOne: false
             referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
-          {
-            foreignKeyName: "fk_conditions_global_variable"
-            columns: ["global_variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments_view"
             referencedColumns: ["variable_id"]
           },
         ]
@@ -199,7 +186,7 @@ export type Database = {
           deleted_at?: string | null
           description?: string | null
           emoji?: string | null
-          id?: string
+          id: string
           name: string
           updated_at?: string | null
           variable_category_id: string
@@ -309,13 +296,6 @@ export type Database = {
             columns: ["variable_id"]
             isOneToOne: false
             referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
-          {
-            foreignKeyName: "measurements_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments_view"
             referencedColumns: ["variable_id"]
           },
         ]
@@ -826,44 +806,35 @@ export type Database = {
       treatment_ratings: {
         Row: {
           condition_id: string
-          created_at: string | null
-          deleted_at: string | null
-          helpful_count: number | null
+          created_at: string
           id: string
           rating: number
           review: string | null
           treatment_id: string
-          updated_at: string | null
+          updated_at: string
           user_id: string
-          user_type: string
           verified: boolean | null
         }
         Insert: {
           condition_id: string
-          created_at?: string | null
-          deleted_at?: string | null
-          helpful_count?: number | null
+          created_at?: string
           id?: string
           rating: number
           review?: string | null
           treatment_id: string
-          updated_at?: string | null
+          updated_at?: string
           user_id: string
-          user_type: string
           verified?: boolean | null
         }
         Update: {
           condition_id?: string
-          created_at?: string | null
-          deleted_at?: string | null
-          helpful_count?: number | null
+          created_at?: string
           id?: string
           rating?: number
           review?: string | null
           treatment_id?: string
-          updated_at?: string | null
+          updated_at?: string
           user_id?: string
-          user_type?: string
           verified?: boolean | null
         }
         Relationships: [
@@ -906,6 +877,7 @@ export type Database = {
       }
       treatment_side_effect_ratings: {
         Row: {
+          condition_id: string
           created_at: string | null
           deleted_at: string | null
           id: string
@@ -917,6 +889,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          condition_id: string
           created_at?: string | null
           deleted_at?: string | null
           id?: string
@@ -928,6 +901,7 @@ export type Database = {
           user_id: string
         }
         Update: {
+          condition_id?: string
           created_at?: string | null
           deleted_at?: string | null
           id?: string
@@ -940,6 +914,20 @@ export type Database = {
         }
         Relationships: [
           {
+            foreignKeyName: "treatment_side_effect_ratings_condition_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: false
+            referencedRelation: "conditions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "treatment_side_effect_ratings_condition_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: false
+            referencedRelation: "patient_conditions_view"
+            referencedColumns: ["condition_id"]
+          },
+          {
             foreignKeyName: "treatment_side_effect_ratings_side_effect_variable_id_fkey"
             columns: ["side_effect_variable_id"]
             isOneToOne: false
@@ -951,13 +939,6 @@ export type Database = {
             columns: ["side_effect_variable_id"]
             isOneToOne: false
             referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
-          {
-            foreignKeyName: "treatment_side_effect_ratings_side_effect_variable_id_fkey"
-            columns: ["side_effect_variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments_view"
             referencedColumns: ["variable_id"]
           },
           {
@@ -988,11 +969,9 @@ export type Database = {
           approval_status: string
           created_at: string | null
           deleted_at: string | null
-          description: string
-          global_variable_id: string | null
+          global_variable_id: string
           id: string
           manufacturer: string | null
-          name: string
           treatment_type: string
           updated_at: string | null
         }
@@ -1000,11 +979,9 @@ export type Database = {
           approval_status: string
           created_at?: string | null
           deleted_at?: string | null
-          description: string
-          global_variable_id?: string | null
-          id?: string
+          global_variable_id: string
+          id: string
           manufacturer?: string | null
-          name: string
           treatment_type: string
           updated_at?: string | null
         }
@@ -1012,34 +989,25 @@ export type Database = {
           approval_status?: string
           created_at?: string | null
           deleted_at?: string | null
-          description?: string
-          global_variable_id?: string | null
+          global_variable_id?: string
           id?: string
           manufacturer?: string | null
-          name?: string
           treatment_type?: string
           updated_at?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "fk_treatments_global_variable"
+            foreignKeyName: "treatments_global_variable_id_fkey"
             columns: ["global_variable_id"]
             isOneToOne: false
             referencedRelation: "global_variables"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "fk_treatments_global_variable"
+            foreignKeyName: "treatments_global_variable_id_fkey"
             columns: ["global_variable_id"]
             isOneToOne: false
             referencedRelation: "patient_conditions_view"
-            referencedColumns: ["variable_id"]
-          },
-          {
-            foreignKeyName: "fk_treatments_global_variable"
-            columns: ["global_variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments_view"
             referencedColumns: ["variable_id"]
           },
         ]
@@ -1232,7 +1200,7 @@ export type Database = {
           deleted_at?: string | null
           description?: string | null
           emoji?: string | null
-          id?: string
+          id: string
           name: string
           updated_at?: string | null
         }
@@ -1268,7 +1236,7 @@ export type Database = {
           created_at?: string | null
           deleted_at?: string | null
           emoji?: string | null
-          id?: string
+          id: string
           is_default?: boolean | null
           name: string
           unit_category_id: string
@@ -1378,41 +1346,40 @@ export type Database = {
             referencedRelation: "patient_conditions_view"
             referencedColumns: ["variable_id"]
           },
-          {
-            foreignKeyName: "user_variables_variable_id_fkey"
-            columns: ["variable_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments_view"
-            referencedColumns: ["variable_id"]
-          },
         ]
       }
       variable_categories: {
         Row: {
           created_at: string | null
           deleted_at: string | null
-          description: string | null
-          emoji: string | null
+          display_order: number
+          emoji: string
           id: string
+          long_description: string
           name: string
+          short_description: string
           updated_at: string | null
         }
         Insert: {
           created_at?: string | null
           deleted_at?: string | null
-          description?: string | null
-          emoji?: string | null
-          id?: string
+          display_order?: number
+          emoji: string
+          id: string
+          long_description: string
           name: string
+          short_description: string
           updated_at?: string | null
         }
         Update: {
           created_at?: string | null
           deleted_at?: string | null
-          description?: string | null
-          emoji?: string | null
+          display_order?: number
+          emoji?: string
           id?: string
+          long_description?: string
           name?: string
+          short_description?: string
           updated_at?: string | null
         }
         Relationships: []
@@ -1467,23 +1434,43 @@ export type Database = {
       }
       patient_treatments_view: {
         Row: {
-          description: string | null
-          last_taken_at: string | null
+          approval_status: string | null
+          end_at: string | null
           manufacturer: string | null
-          measurement_count: number | null
-          patient_id: string | null
+          measurement_id: string | null
+          notes: string | null
+          start_at: string | null
           treatment_id: string | null
-          treatment_name: string | null
           treatment_type: string | null
+          unit_abbreviation: string | null
+          unit_name: string | null
+          user_id: string | null
+          value: number | null
+          variable_description: string | null
           variable_id: string | null
+          variable_name: string | null
         }
         Relationships: [
           {
             foreignKeyName: "measurements_user_id_fkey"
-            columns: ["patient_id"]
+            columns: ["user_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "measurements_variable_id_fkey"
+            columns: ["variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "measurements_variable_id_fkey"
+            columns: ["variable_id"]
+            isOneToOne: false
+            referencedRelation: "patient_conditions_view"
+            referencedColumns: ["variable_id"]
           },
         ]
       }
