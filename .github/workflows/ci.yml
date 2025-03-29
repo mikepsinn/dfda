@@ -2,11 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
     paths:
       - 'apps/fda-gov-v2/**'
   pull_request:
-    branches: [ main ]
     paths:
       - 'apps/fda-gov-v2/**'
 
