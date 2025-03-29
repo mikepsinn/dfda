@@ -3,7 +3,7 @@ CREATE OR REPLACE VIEW patient_treatments_view AS
 SELECT 
   m.id as measurement_id,
   m.user_id,
-  m.variable_id, -- Keep the original variable_id from measurement
+  m.global_variable_id, -- Use renamed column
   gv.name as treatment_name, -- Get name from global_variables
   gv.description as treatment_description, -- Get description from global_variables
   m.value,
@@ -12,12 +12,12 @@ SELECT
   m.start_at,
   m.end_at,
   m.notes,
-  t.id as treatment_id, -- This is the same as variable_id in this context
+  t.id as treatment_id, -- This is the same as global_variable_id in this context
   t.treatment_type,
   t.manufacturer,
   t.approval_status
 FROM measurements m
-JOIN treatments t ON t.id = m.variable_id -- Join measurement variable to treatment id
+JOIN treatments t ON t.id = m.global_variable_id -- Join measurement variable to treatment id, use renamed column
 JOIN global_variables gv ON gv.id = t.id -- Join treatment to its global_variable definition
 JOIN units u ON u.id = m.unit_id
 WHERE m.deleted_at IS NULL
