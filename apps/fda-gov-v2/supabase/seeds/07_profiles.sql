@@ -43,32 +43,26 @@ WHERE id = '10000000-0000-0000-0000-000000000003';
 UPDATE profiles SET
   first_name = 'Dr. David',
   last_name = 'Williams',
-  user_type = 'doctor',
-  organization_name = 'Metro Medical Center'
+  user_type = 'doctor'
 WHERE id = '20000000-0000-0000-0000-000000000001';
 
 UPDATE profiles SET
   first_name = 'Dr. Emily',
   last_name = 'Chen',
-  user_type = 'doctor',
-  organization_name = 'University Hospital'
+  user_type = 'doctor'
 WHERE id = '20000000-0000-0000-0000-000000000002';
 
 -- Update sponsor profiles
 UPDATE profiles SET
   first_name = 'John',
   last_name = 'Davis',
-  user_type = 'sponsor',
-  organization_name = 'Pharma Inc.',
-  contact_name = 'John Davis'
+  user_type = 'sponsor'
 WHERE id = '30000000-0000-0000-0000-000000000001';
 
 UPDATE profiles SET
   first_name = 'Lisa',
   last_name = 'Martinez',
-  user_type = 'sponsor',
-  organization_name = 'BioAdvance Research',
-  contact_name = 'Lisa Martinez'
+  user_type = 'sponsor'
 WHERE id = '30000000-0000-0000-0000-000000000002';
 
 -- Insert patient details
