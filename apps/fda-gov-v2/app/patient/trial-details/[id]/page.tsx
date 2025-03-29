@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { createServerClient } from "@/lib/supabase"
 import { getServerUser } from "@/lib/server-auth"
+import type { Database } from "@/lib/database.types"
 import { TrialHeader } from "./components/trial-header"
 import { TrialContent } from "./components/trial-content"
 import { TrialActions } from "./components/trial-actions"
@@ -50,12 +51,16 @@ export default async function TrialDetailsPage({ params }: TrialDetailsPageProps
   }
 
   // Check if user is enrolled
-  const { data: enrollment } = await supabase
+  let enrollment: Database["public"]["Tables"]["trial_enrollments"]["Row"] | null = null
+  if (user?.id) {
+    const { data } = await supabase
       .from("trial_enrollments")
       .select("*")
       .eq("trial_id", params.id)
-      .eq("patient_id", user?.id)
+      .eq("patient_id", user.id)
       .single()
+    enrollment = data
+  }
 
   // For demo purposes, let's create some mock data for the trial details
   // In a real app, this would come from the database
@@ -104,7 +109,7 @@ export default async function TrialDetailsPage({ params }: TrialDetailsPageProps
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <TrialHeader trial={trialDetails} enrollment={enrollment} />
+      <TrialHeader trial={trialDetails} />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
         <div className="md:col-span-2">
