@@ -28,15 +28,24 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
 
     try {
       const supabase = createClientSupabaseClient()
-      const user = await supabase.auth.getUser()
+      const { data: { user } } = await supabase.auth.getUser()
+
+      if (!user) {
+        logger.error("No user found during enrollment")
+        setError("Failed to enroll in trial. Please try again.")
+        return
+      }
 
       // Create enrollment
       const { error } = await supabase.from("trial_enrollments").insert({
         trial_id: trialId,
-        patient_id: user.data.user.id,
+        patient_id: user.id,
+        doctor_id: "system", // TODO: Get actual doctor ID
         status: "pending",
         enrollment_date: new Date().toISOString(),
-        notes: "Initial enrollment request"
+        notes: "Initial enrollment request",
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
       })
 
       if (error) {

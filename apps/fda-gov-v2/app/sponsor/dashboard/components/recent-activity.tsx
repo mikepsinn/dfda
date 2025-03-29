@@ -37,7 +37,7 @@ export function RecentActivity({ activities }: RecentActivityProps) {
                 <p className="text-sm">{activity.message}</p>
               </div>
               <div className="text-sm text-muted-foreground">
-                {new Date(activity.created_at || activity.scheduled_for).toLocaleDateString()}
+                {new Date(activity.created_at || new Date().toISOString()).toLocaleDateString()}
               </div>
             </div>
           ))}

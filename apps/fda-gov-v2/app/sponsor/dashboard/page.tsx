@@ -27,7 +27,7 @@ export default async function SponsorDashboard() {
   // Get sponsor profile
   const { data: sponsorProfile } = await supabase
     .from("profiles")
-    .select("*")
+    .select("first_name, last_name")
     .eq("id", user.id)
     .single()
 
@@ -71,10 +71,35 @@ export default async function SponsorDashboard() {
     .eq("sponsor_id", user.id)
     .eq("status", "completed")
 
+  // Get pending trials
+  const { data: pendingTrials } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      conditions (
+        id,
+        title,
+        icd_code
+      ),
+      treatments (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      )
+    `)
+    .eq("sponsor_id", user.id)
+    .eq("status", "pending")
+
+  const sponsorName = sponsorProfile?.first_name && sponsorProfile?.last_name
+    ? `${sponsorProfile.first_name} ${sponsorProfile.last_name}`
+    : "Innovative Therapeutics Inc."
+
   const sponsorData = {
-    name: sponsorProfile?.full_name || "Innovative Therapeutics Inc.",
+    name: sponsorName,
     activeTrials: activeTrials || [],
     completedTrials: completedTrials || [],
+    pendingTrials: pendingTrials || [],
     totalEnrollment: (activeTrials || []).reduce((sum, trial) => sum + (trial.current_enrollment || 0), 0),
     totalTrials: (activeTrials || []).length + (completedTrials || []).length,
   }
@@ -100,12 +125,13 @@ export default async function SponsorDashboard() {
               <TrialManagement
                 activeTrials={sponsorData.activeTrials}
                 completedTrials={sponsorData.completedTrials}
+                pendingApproval={sponsorData.pendingTrials}
               />
             </div>
 
             <div className="space-y-6">
               <h2 className="text-2xl font-bold">Recent Activity</h2>
-              <RecentActivity trials={sponsorData.activeTrials} />
+              <RecentActivity activities={sponsorData.activeTrials} />
             </div>
           </div>
         </div>

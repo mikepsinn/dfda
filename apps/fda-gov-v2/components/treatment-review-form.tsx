@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import type { Database } from "@/lib/database.types"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -9,8 +10,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { StarRating } from "@/components/ui/star-rating"
 import { createTreatmentRatingAction, updateTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 import { useToast } from "@/hooks/use-toast"
-import { supabase } from "@/lib/supabase"
+import { createBrowserClient } from "@/lib/supabase"
 import { logger } from "@/lib/logger"
+
+type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
 
 interface TreatmentReviewFormProps {
   userId: string
@@ -19,7 +22,7 @@ interface TreatmentReviewFormProps {
   userType: "patient" | "doctor"
   existingReview?: {
     id: string
-    rating: number
+    effectiveness_out_of_ten: number
     review: string
   }
   onSuccess?: () => void
@@ -33,7 +36,7 @@ export function TreatmentReviewForm({
   existingReview,
   onSuccess,
 }: TreatmentReviewFormProps) {
-  const [rating, setRating] = useState(existingReview?.rating || 0)
+  const [rating, setRating] = useState(existingReview?.effectiveness_out_of_ten || 0)
   const [review, setReview] = useState(existingReview?.review || "")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -55,9 +58,11 @@ export function TreatmentReviewForm({
     setIsSubmitting(true)
 
     try {
+      const supabase = createBrowserClient()
+
       if (existingReview) {
         await updateTreatmentRatingAction(existingReview.id, {
-          rating,
+          effectiveness_out_of_ten: rating,
           review,
           updated_at: new Date().toISOString(),
         })
@@ -97,7 +102,7 @@ export function TreatmentReviewForm({
 
       router.refresh()
     } catch (error) {
-      console.error("Error submitting review:", error)
+      logger.error("Error submitting review:", error)
       toast({
         title: "Error",
         description: "There was an error submitting your review. Please try again.",

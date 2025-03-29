@@ -18,7 +18,11 @@ interface TreatmentPageProps {
 
 export async function generateMetadata({ params }: TreatmentPageProps): Promise<Metadata> {
   const supabase = createServerClient()
-  const { data: treatment } = await supabase.from("treatments").select("*").eq("id", params.id).single()
+  const { data: treatment } = await supabase
+    .from("treatments")
+    .select("title, description")
+    .eq("id", params.id)
+    .single()
 
   if (!treatment) {
     return {

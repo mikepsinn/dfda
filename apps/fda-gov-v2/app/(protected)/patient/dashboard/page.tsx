@@ -1,96 +1,63 @@
 import { getServerUser } from "@/lib/server-auth"
 import { createClient } from "@/lib/supabase/server"
-import { DashboardHeader } from "./dashboard-header"
-import { EnrolledTrials } from "./enrolled-trials"
-import { RecommendedTrials } from "./recommended-trials"
-import { HealthMetrics } from "./health-metrics"
+import { redirect } from "next/navigation"
+import { EnrolledTrials } from "./components/enrolled-trials"
+import { PatientOverview } from "./components/patient-overview"
+import { RecentActivity } from "./components/recent-activity"
+import { Database } from "@/lib/database.types"
+
+type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type Enrollment = Database["public"]["Tables"]["enrollments"]["Row"] & {
+  trial: Trial
+}
 
 export default async function PatientDashboard() {
+  const supabase = createClient()
   const user = await getServerUser()
-  const supabase = await createClient()
 
-  // Fetch user profile data
-  const { data: profile } = await supabase.from("users").select("*").eq("id", user?.id).single()
+  if (!user) {
+    redirect("/login")
+  }
 
-  // Fetch enrolled trials
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("first_name, last_name")
+    .eq("id", user.id)
+    .single()
+
   const { data: enrollments } = await supabase
-    .from("trial_enrollments")
+    .from("enrollments")
     .select(`
       id,
       status,
-      enrollment_date,
       created_at,
-      updated_at,
-      deleted_at,
-      doctor_id,
-      patient_id,
-      trial_id,
-      notes,
-      completion_date,
-      trials:trial_id (
+      trial:trials (
         id,
         title,
         description,
         status,
-        treatment_id,
-        condition_id,
-        treatments:treatment_id (
-          id,
-          title,
-          treatment_type,
-          manufacturer
-        ),
-        conditions:condition_id (
-          id,
-          title,
-          icd_code
-        )
+        sponsor_id,
+        created_at
       )
     `)
-    .eq("patient_id", user?.id)
+    .eq("patient_id", user.id)
+    .order("created_at", { ascending: false })
 
-  // Fetch recommended trials based on user's conditions
-  const { data: recommendations } = await supabase
-    .from("trials")
-    .select(`
-      id,
-      title,
-      description,
-      status,
-      treatment_id,
-      condition_id,
-      treatments:treatment_id (
-        id,
-        title,
-        treatment_type,
-        manufacturer
-      ),
-      conditions:condition_id (
-        id,
-        title,
-        icd_code
-      )
-    `)
-    .eq("status", "active")
-    .limit(5)
+  const patientName = profile ? `${profile.first_name} ${profile.last_name}` : "Patient"
+  const patientData = {
+    name: patientName,
+    enrollments: enrollments as Enrollment[] || [],
+    totalEnrollment: enrollments?.length || 0,
+  }
 
   return (
-    <main className="flex-1 py-6 md:py-10">
-      <div className="container">
-        <DashboardHeader user={profile} />
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <div className="md:col-span-2 space-y-6">
-            <EnrolledTrials enrollments={enrollments || []} />
-            <RecommendedTrials trials={recommendations || []} />
-          </div>
-
-          <div className="space-y-6">
-            <HealthMetrics userId={user?.id} />
-          </div>
-        </div>
+    <div className="container space-y-8 py-8">
+      <PatientOverview {...patientData} />
+      <div className="grid gap-8 md:grid-cols-2">
+        <EnrolledTrials enrollments={patientData.enrollments} />
+        <RecentActivity activities={patientData.enrollments} />
       </div>
-    </main>
+    </div>
   )
 }
 
