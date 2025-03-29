@@ -52,7 +52,6 @@ export default async function TreatmentPage({ params }: { params: { id: string }
           totalReviews={totalReviews}
           userRating={userRating}
           userId={user?.id}
-          userType="patient"
           isLoggedIn={!!user}
         />
       </Suspense>
