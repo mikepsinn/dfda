@@ -38,7 +38,6 @@ requiredEnvVars.forEach(key => {
 
 export default defineConfig({
   testDir: './tests/e2e',
-  globalSetup: './tests/e2e/e2e-setup.ts',
   /* Maximum time one test can run for */
   timeout: 60000,
   /* Maximum time for globalSetup */
@@ -65,16 +64,26 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'setup-db',
+      testMatch: /global\.setup\.ts/,
+    },
+    {
+      name: 'auth-tests',
+      testMatch: /.*login\.test\.ts/,
+      // Auth tests don't need database setup
+      dependencies: [],
+    },
+    {
+      name: 'data-tests',
+      testMatch: /.*(?<!login)\.test\.ts/,
+      dependencies: ['setup-db'], // These tests need database setup
       use: { ...devices['Desktop Chrome'] },
     },
   ],
   /* Run your local dev server before starting the tests */
   webServer: {
     command: `pnpm dev --port ${TEST_PORT}`,
-    //port: TEST_PORT, Can only specify one of port or url
     url: `http://127.0.0.1:${TEST_PORT}`,
-    //reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000,
     env: testEnv,
     stdout: 'pipe',

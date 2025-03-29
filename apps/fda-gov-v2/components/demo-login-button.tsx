@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { demoLogin } from "@/app/actions/demo-login"
 import { Loader2 } from "lucide-react"
+import { createLogger } from '@/lib/logger'
+
+const logger = createLogger('demo-login-button')
 
 interface DemoLoginButtonProps {
   onError?: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
@@ -15,13 +18,13 @@ export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleDemoLogin = async () => {
-    console.log('[DEMO] Attempting login as:', userType)
+    logger.info('Attempting login', { userType })
     setIsLoading(true)
     
     try {
       await demoLogin(userType)
       // If we get here, something went wrong because demoLogin should redirect
-      console.error('[DEMO] Login completed without redirect')
+      logger.error('Login completed without redirect')
       onError?.({ 
         type: 'other', 
         message: 'Login failed - please contact help@dfda.earth for assistance' 
@@ -29,11 +32,11 @@ export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
     } catch (error) {
       // NEXT_REDIRECT means success
       if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
-        console.log('[DEMO] Login successful - redirecting')
+        logger.info('Login successful - redirecting')
         return
       }
 
-      console.error('[DEMO] Login failed:', error)
+      logger.error('Login failed', { error })
       
       // Check if it's an email confirmation error
       if (error instanceof Error && 
