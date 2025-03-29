@@ -14,8 +14,6 @@ import type { Database } from "@/lib/database.types"
 // Use the auto-generated database types
 type ProfileRow = Database["public"]["Tables"]["profiles"]["Row"]
 type PatientRow = Database["public"]["Tables"]["patients"]["Row"]
-type TrialRow = Database["public"]["Tables"]["trials"]["Row"]
-type TrialEnrollmentRow = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 
 // Helper function to calculate age from date of birth
 function calculateAge(dateOfBirth: string | null | undefined): number {

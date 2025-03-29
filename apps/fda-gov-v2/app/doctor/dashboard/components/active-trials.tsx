@@ -7,13 +7,13 @@ import { Badge } from "@/components/ui/badge"
 import { Brain, Calendar, AlertCircle, ChevronRight } from "lucide-react"
 
 interface Trial {
-  id: number
+  id: string
   name: string
   sponsor: string
   enrolledPatients: number
   targetPatients: number
   progress: number
-  nextVisit: string
+  nextVisit?: string
   pendingActions: number
 }
 
@@ -89,4 +89,3 @@ export function ActiveTrials({ trials, className = "" }: ActiveTrialsProps) {
     </Card>
   )
 }
-

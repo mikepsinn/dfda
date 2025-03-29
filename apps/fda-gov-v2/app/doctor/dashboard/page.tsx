@@ -1,261 +1,216 @@
 import type { Metadata } from "next"
-// TODO: Uncomment when doctor user data is needed
-// import { getServerUser } from "@/lib/supabase/auth-utils.server"
+import { getServerUser } from "@/lib/server-auth"
 import { DashboardHeader } from "./components/dashboard-header"
 import { DashboardStats } from "./components/dashboard-stats"
 import { ActiveTrials } from "./components/active-trials"
 import { PendingActions } from "./components/pending-actions"
 import { PatientManagement } from "./components/patient-management"
+import { createClient } from "@/lib/supabase/server"
+import { redirect } from "next/navigation"
+import type { Database } from "@/lib/database.types"
+import { createUnifiedLogger } from "@/lib/logger"
 
 export const metadata: Metadata = {
   title: "Doctor Dashboard | FDA v2",
   description: "Manage your clinical trials, patients, and interventions",
 }
 
-// Types for the data we'll fetch
-// interface DoctorData {
-//   id: string
-//   name: string
-//   email: string
-//   specialty?: string
-//   organization?: string
-// }
+// Define types from database schema
+type Trial = Database["public"]["Tables"]["trials"]["Row"]
 
-interface Trial {
-  id: number
+// Extended types for UI components
+type DashboardTrial = Trial & {
   name: string
   sponsor: string
   enrolledPatients: number
   targetPatients: number
   progress: number
-  nextVisit: string
+  nextVisit?: string
   pendingActions: number
 }
 
-interface Patient {
-  id: number
-  name: string
-  age: number
-  condition: string
-  eligibleTrials: { id: number; name: string }[]
+type EligiblePatientUI = Database["public"]["Tables"]["profiles"]["Row"] & Database["public"]["Tables"]["patients"]["Row"] & {
+  eligibleTrials: { id: string; name: string }[]
   lastVisit: string
   status: string
+  condition: string
 }
 
-interface EnrolledPatient {
-  id: number
-  name: string
-  age: number
-  condition: string
+type EnrolledPatientUI = Database["public"]["Tables"]["profiles"]["Row"] & Database["public"]["Tables"]["patients"]["Row"] & {
   trial: string
   enrollmentDate: string
   nextVisit: string
+  condition: string
   pendingActions: { type: string; name: string; due: string }[]
 }
 
-interface PendingAction {
-  id: number
-  patient: string
-  action: string
-  trial: string
-  due: string
-  type: string
-}
-
 export default async function DoctorDashboard() {
-  // TODO: Uncomment when doctor user data is needed
-  // const user = await getServerUser()
-  // TODO: Uncomment when supabase client is needed for data fetching
-  // const supabase = createServerSupabaseClient()
+  const logger = createUnifiedLogger("DoctorDashboard")
+  const supabase = await createClient()
+  const user = await getServerUser()
+  
+  if (!user) {
+    redirect("/login")
+  }
 
-  // TODO: Uncomment when doctor profile data is needed
-  // Fetch doctor profile data
-  // const { data: doctorProfile } = await supabase.from("users").select("*").eq("id", user?.id).single()
+  // Fetch doctor profile
+  const { data: doctorProfile, error: profileError } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single()
 
-  // In a real app, we would fetch this data from the database
-  // For now, we'll use mock data similar to what was in the client component
+  if (profileError) {
+    logger.error("Error fetching doctor profile", { error: profileError })
+    // Consider how to handle the error - redirect or show error message?
+    // For now, just log and continue, might result in partial data display
+  }
 
-  // Mock data for active trials
-  const activeTrials: Trial[] = [
-    {
-      id: 1,
-      name: "Lecanemab for Early Alzheimer's Disease",
-      sponsor: "Eisai/Biogen Collaborative Research",
-      enrolledPatients: 8,
-      targetPatients: 12,
-      progress: 66,
-      nextVisit: "May 15, 2025",
-      pendingActions: 3,
-    },
-    {
-      id: 2,
-      name: "ABBV-951 for Advanced Parkinson's Disease",
-      sponsor: "AbbVie Parkinson's Research Consortium",
-      enrolledPatients: 5,
-      targetPatients: 10,
-      progress: 50,
-      nextVisit: "May 18, 2025",
-      pendingActions: 1,
-    },
-  ]
+  if (!doctorProfile) {
+    throw new Error("Doctor profile not found")
+  }
 
-  // Mock data for eligible patients
-  const eligiblePatients: Patient[] = [
-    {
-      id: 1,
-      name: "Eleanor Thompson",
-      age: 72,
-      condition: "Early Alzheimer's Disease",
-      eligibleTrials: [
-        { id: 1, name: "Lecanemab for Early Alzheimer's Disease" },
-        { id: 2, name: "Donanemab vs Standard of Care in Mild Alzheimer's Disease" },
-      ],
-      lastVisit: "April 28, 2025",
-      status: "Eligible for enrollment",
-    },
-    {
-      id: 2,
-      name: "Robert Chen",
-      age: 68,
-      condition: "Advanced Parkinson's Disease",
-      eligibleTrials: [{ id: 3, name: "ABBV-951 Subcutaneous Infusion for Advanced Parkinson's Disease" }],
-      lastVisit: "May 2, 2025",
-      status: "Pending consent",
-    },
-    {
-      id: 3,
-      name: "Sarah Williams",
-      age: 42,
-      condition: "Relapsing Multiple Sclerosis",
-      eligibleTrials: [{ id: 5, name: "Tolebrutinib (BTK Inhibitor) for Relapsing Multiple Sclerosis" }],
-      lastVisit: "April 30, 2025",
-      status: "Eligible for enrollment",
-    },
-    {
-      id: 4,
-      name: "Michael Davis",
-      age: 76,
-      condition: "Mild Alzheimer's Disease",
-      eligibleTrials: [{ id: 2, name: "Donanemab vs Standard of Care in Mild Alzheimer's Disease" }],
-      lastVisit: "May 5, 2025",
-      status: "Eligible for enrollment",
-    },
-  ]
+  // Fetch active trials with related data
+  const { data: trials, error: trialsError } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      sponsor:profiles!trials_sponsor_id_fkey(*),
+      trial_enrollments(
+        id,
+        patient_id,
+        enrollment_date,
+        next_visit_date
+      ),
+      trial_actions(
+        id,
+        status
+      )
+    `)
+    .eq("status", "active")
 
-  // Mock data for enrolled patients
-  const enrolledPatients: EnrolledPatient[] = [
-    {
-      id: 5,
-      name: "James Wilson",
-      age: 74,
-      condition: "Early Alzheimer's Disease",
-      trial: "Lecanemab for Early Alzheimer's Disease",
-      enrollmentDate: "March 15, 2025",
-      nextVisit: "May 15, 2025",
-      pendingActions: [
-        { type: "form", name: "Cognitive Assessment", due: "May 15, 2025" },
-        { type: "intervention", name: "Lecanemab Administration", due: "May 15, 2025" },
-      ],
-    },
-    {
-      id: 6,
-      name: "Patricia Moore",
-      age: 71,
-      condition: "Early Alzheimer's Disease",
-      trial: "Lecanemab for Early Alzheimer's Disease",
-      enrollmentDate: "March 18, 2025",
-      nextVisit: "May 18, 2025",
-      pendingActions: [{ type: "form", name: "Quality of Life Assessment", due: "May 10, 2025" }],
-    },
-    {
-      id: 7,
-      name: "David Johnson",
-      age: 65,
-      condition: "Advanced Parkinson's Disease",
-      trial: "ABBV-951 for Advanced Parkinson's Disease",
-      enrollmentDate: "April 2, 2025",
-      nextVisit: "May 14, 2025",
-      pendingActions: [{ type: "intervention", name: "ABBV-951 Infusion Setup", due: "May 14, 2025" }],
-    },
-  ]
+  if (trialsError) {
+    logger.error("Error fetching active trials", { error: trialsError })
+    // trials will be null, handled by downstream checks
+  }
 
-  // Mock data for pending actions
-  const pendingActions: PendingAction[] = [
-    {
-      id: 1,
-      patient: "James Wilson",
-      action: "Complete Cognitive Assessment",
-      trial: "Lecanemab for Early Alzheimer's Disease",
-      due: "May 15, 2025",
-      type: "form",
-    },
-    {
-      id: 2,
-      patient: "James Wilson",
-      action: "Administer Lecanemab Infusion",
-      trial: "Lecanemab for Early Alzheimer's Disease",
-      due: "May 15, 2025",
-      type: "intervention",
-    },
-    {
-      id: 3,
-      patient: "Patricia Moore",
-      action: "Complete Quality of Life Assessment",
-      trial: "Lecanemab for Early Alzheimer's Disease",
-      due: "May 10, 2025",
-      type: "form",
-    },
-    {
-      id: 4,
-      patient: "David Johnson",
-      action: "Setup ABBV-951 Subcutaneous Infusion",
-      trial: "ABBV-951 for Advanced Parkinson's Disease",
-      due: "May 14, 2025",
-      type: "intervention",
-    },
-    {
-      id: 5,
-      patient: "Robert Chen",
-      action: "Obtain Informed Consent",
-      trial: "ABBV-951 for Advanced Parkinson's Disease",
-      due: "May 12, 2025",
-      type: "consent",
-    },
-  ]
+  const activeTrials: DashboardTrial[] = trials?.map(trial => ({
+    ...trial,
+    name: trial.title || "Untitled Trial",
+    sponsor: trial.sponsor?.first_name || "Unknown Sponsor",
+    enrolledPatients: trial.current_enrollment || 0,
+    targetPatients: trial.enrollment_target || 0,
+    progress: trial.current_enrollment && trial.enrollment_target 
+      ? (trial.current_enrollment / trial.enrollment_target) * 100 
+      : 0,
+    nextVisit: trial.trial_enrollments?.[0]?.next_visit_date,
+    pendingActions: trial.trial_actions?.filter(a => a.status === "pending").length || 0
+  })) || []
+
+  // Fetch pending actions
+  const { data: pendingActions, error: actionsError } = await supabase
+    .from("trial_actions")
+    .select(`
+      *,
+      trial:trials(*),
+      enrollment:trial_enrollments(
+        patient:profiles(*)
+      )
+    `)
+    .eq("status", "pending")
+    .order("due_date", { ascending: true })
+
+  if (actionsError) {
+    logger.error("Error fetching pending actions", { error: actionsError })
+    // pendingActions will be null, handled by downstream checks
+  }
+
+  // Calculate dashboard stats
+  const statsData = {
+    activeTrials: activeTrials.length,
+    enrolledPatients: activeTrials.reduce((sum, trial) => sum + (trial.current_enrollment || 0), 0),
+    pendingActions: pendingActions?.length || 0,
+    eligiblePatients: 0, // Use calculated eligible count
+    pendingActionsDueSoon: pendingActions?.filter(a => { 
+      if (!a.due_date) return false;
+      const dueDate = new Date(a.due_date);
+      const threeDaysFromNow = new Date();
+      threeDaysFromNow.setDate(threeDaysFromNow.getDate() + 3);
+      return dueDate <= threeDaysFromNow;
+    }).length || 0,
+    upcomingVisits: 0, // Placeholder
+    upcomingVisitsThisWeek: 0, // Placeholder
+    upcomingVisitsNextWeek: 0 // Placeholder
+  }
+
+  // Fetch patients with their conditions and enrollments
+  const { data: patients, error: patientsError } = await supabase
+    .from("patients")
+    .select(`
+      *,
+      profile:profiles!inner(*),
+      conditions:patient_conditions(
+        *,
+        condition:conditions(*)
+      ),
+      enrollments:trial_enrollments(
+        *,
+        trial:trials(*),
+        actions:trial_actions(*)
+      )
+    `)
+
+  if (patientsError) {
+    logger.error("Error fetching patients", { error: patientsError })
+    // patients will be null, handled by downstream checks
+  }
+
+  // Split patients into eligible and enrolled, map to component types
+  const eligiblePatientsUI: EligiblePatientUI[] = patients?.filter(p => !p.enrollments?.length).map(p => ({
+    ...p,
+    ...p.profile, // Flatten profile
+    condition: p.conditions?.[0]?.condition?.name || "N/A",
+    eligibleTrials: [], // Placeholder
+    lastVisit: "N/A", // Placeholder
+    status: "Eligible", // Placeholder
+
+  })) || []
+
+  const enrolledPatientsUI: EnrolledPatientUI[] = patients?.filter(p => p.enrollments?.length).map(p => ({
+    ...p,
+    ...p.profile, // Flatten profile
+    trial: p.enrollments?.[0]?.trial?.title || "N/A",
+    enrollmentDate: p.enrollments?.[0]?.enrollment_date ? new Date(p.enrollments[0].enrollment_date).toLocaleDateString() : "N/A",
+    nextVisit: p.enrollments?.[0]?.next_visit_date ? new Date(p.enrollments[0].next_visit_date).toLocaleDateString() : "N/A",
+    condition: p.conditions?.[0]?.condition?.name || "N/A",
+    pendingActions: p.enrollments?.[0]?.actions?.filter(a => a.status === "pending").map(a => ({
+      type: a.action_type_id || "Unknown", // Placeholder - needs mapping from action_types table
+      name: a.description || "Action Required",
+      due: a.due_date ? new Date(a.due_date).toLocaleDateString() : "N/A",
+    })) || []
+  })) || []
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="flex-1 py-6 md:py-10">
-        <div className="container">
-          <div className="flex flex-col gap-8">
-            <DashboardHeader
-              title="Doctor Dashboard"
-              description="Manage your clinical trials, patients, and interventions"
-            />
+    <div className="container mx-auto py-6 space-y-8">
+      <DashboardHeader title="Doctor Dashboard" description={`Welcome back, ${doctorProfile.first_name || 'Doctor'}`} />
+      <DashboardStats 
+        activeTrials={statsData.activeTrials}
+        enrolledPatients={statsData.enrolledPatients}
+        pendingActions={statsData.pendingActions}
+        eligiblePatients={statsData.eligiblePatients} 
+        pendingActionsDueSoon={statsData.pendingActionsDueSoon}
+        upcomingVisits={statsData.upcomingVisits}
+        upcomingVisitsThisWeek={statsData.upcomingVisitsThisWeek}
+        upcomingVisitsNextWeek={statsData.upcomingVisitsNextWeek}
+      />
 
-            <DashboardStats
-              activeTrials={activeTrials.length}
-              enrolledPatients={enrolledPatients.length}
-              eligiblePatients={eligiblePatients.length}
-              pendingActions={pendingActions.length}
-              pendingActionsDueSoon={
-                pendingActions.filter((a) => new Date(a.due) < new Date(Date.now() + 86400000 * 3)).length
-              }
-              upcomingVisits={8}
-              upcomingVisitsThisWeek={3}
-              upcomingVisitsNextWeek={5}
-            />
-
-            <div className="grid gap-4 grid-cols-1 lg:grid-cols-3">
-              <ActiveTrials trials={activeTrials} className="lg:col-span-2" />
-
-              <PendingActions actions={pendingActions.slice(0, 5)} totalActions={pendingActions.length} />
-            </div>
-
-            <PatientManagement eligiblePatients={eligiblePatients} enrolledPatients={enrolledPatients} />
-          </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ActiveTrials trials={activeTrials} className="md:col-span-2" /> 
+        <div className="space-y-6">
+          <PendingActions actions={pendingActions || []} totalActions={pendingActions?.length || 0} />
+          <PatientManagement eligiblePatients={eligiblePatientsUI} enrolledPatients={enrolledPatientsUI} />
         </div>
-      </main>
+      </div>
     </div>
   )
 }

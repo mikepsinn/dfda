@@ -6,7 +6,6 @@ import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useState } from "react"
-import type { Database } from "@/lib/database.types"
 
 // Since there's no insurance table in the database yet, we'll define a minimal type
 // This could be added to the database schema in the future

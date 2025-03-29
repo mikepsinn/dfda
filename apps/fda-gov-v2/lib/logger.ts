@@ -32,7 +32,7 @@ const safeStringify = (obj: any): string => {
 }
 
 // Create the appropriate logger based on environment
-const createUnifiedLogger = (name = 'app'): Logger => {
+export function createUnifiedLogger(name = 'app'): Logger {
   // In the browser or development, use a simple console-based logger
   if (isClient || isDev) {
     const logLevels = {
