@@ -7,7 +7,7 @@ SELECT
   gv.description as variable_description,
   m.value,
   u.name as unit_name,
-  u.abbreviation as unit_abbreviation,
+  u.abbreviated_name as unit_abbreviated_name,
   m.start_at,
   m.end_at,
   m.notes,
@@ -21,5 +21,5 @@ JOIN global_variables gv ON gv.id = m.variable_id
 JOIN units u ON u.id = m.unit_id
 JOIN treatments t ON t.name = gv.name
 WHERE m.deleted_at IS NULL
-  AND gv.category_id = 'treatments'
-  AND t.deleted_at IS NULL; 
+  AND gv.variable_category_id = 'intake-and-interventions'
+  AND t.deleted_at IS NULL;

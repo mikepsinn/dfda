@@ -4,113 +4,113 @@
 -- Conversion factor/offset defined as converting FROM base unit TO this unit.
 
 -- Clear existing units before inserting new ones to avoid conflicts
-DELETE FROM units;
+DELETE FROM units CASCADE;
 
 -- Insert units
--- Columns: id, name, abbreviation, category_id, conversion_factor, conversion_offset, is_si
-INSERT INTO units (id, name, abbreviation, category_id, conversion_factor, conversion_offset, is_si)
+-- Columns: id, unit_category_id, name, abbreviated_name, ucum_code, conversion_factor, conversion_offset, is_si
+INSERT INTO units (id, unit_category_id, name, abbreviated_name, ucum_code, conversion_factor, conversion_offset, is_si)
 VALUES
--- Dimensionless (Base: '1')
-('1', 'Dimensionless', '1', 'dimensionless', 1, 0, false), -- Base Unit
-('one-to-five', 'One to Five Scale', '1-5', 'dimensionless', 1, 0, false), -- Factor assumes normalization happens elsewhere
-('one-to-ten', 'One to Ten Scale', '1-10', 'dimensionless', 1, 0, false), -- Factor assumes normalization happens elsewhere
-('kg/m2', 'Kilograms per Square Meter', 'kg/m2', 'dimensionless', 1, 0, false), -- BMI - treated as dimensionless score
+-- Dimensionless (Base: 'dimensionless-unit')
+('dimensionless-unit', 'dimensionless', 'Dimensionless', '1', '1', 1, 0, false), -- Base Unit (using '1' for UCUM)
+('one-to-five-scale', 'dimensionless', 'One to Five Scale', '1-5', NULL, 1, 0, false), -- Factor assumes normalization happens elsewhere
+('one-to-ten-scale', 'dimensionless', 'One to Ten Scale', '1-10', NULL, 1, 0, false), -- Factor assumes normalization happens elsewhere
+('kilograms-per-square-meter', 'dimensionless', 'Kilograms per Square Meter', 'kg/m2', 'kg/m2', 1, 0, false), -- BMI - treated as dimensionless score
 
--- Weight / Mass (Base: 'kg')
-('kg', 'Kilogram', 'kg', 'weight', 1, 0, true), -- Base Unit, UCUM base unit for mass
-('g', 'Gram', 'g', 'weight', 1000, 0, false), -- 1 kg = 1000 g
-('mg', 'Milligram', 'mg', 'weight', 1000000, 0, false), -- 1 kg = 1,000,000 mg
-('ug', 'Microgram', 'ug', 'weight', 1000000000, 0, false), -- 1 kg = 1,000,000,000 ug
-('[lb_av]', 'Pound', '[lb_av]', 'weight', 2.20462, 0, false), -- UCUM uses [lb_av] for avoirdupois pound; 1 kg = 2.20462 lb
+-- Weight / Mass (Base: 'kilogram')
+('kilogram', 'weight', 'Kilogram', 'kg', 'kg', 1, 0, true), -- Base Unit, UCUM base unit for mass
+('gram', 'weight', 'Gram', 'g', 'g', 1000, 0, false), -- 1 kg = 1000 g
+('milligram', 'weight', 'Milligram', 'mg', 'mg', 1000000, 0, false), -- 1 kg = 1,000,000 mg
+('microgram', 'weight', 'Microgram', 'ug', 'ug', 1000000000, 0, false), -- 1 kg = 1,000,000,000 ug
+('pound', 'weight', 'Pound', 'lb', '[lb_av]', 2.20462, 0, false), -- UCUM uses [lb_av] for avoirdupois pound; 1 kg = 2.20462 lb
 
--- Length (Base: 'm')
-('m', 'Meter', 'm', 'length', 1, 0, true), -- Base Unit, UCUM base unit
-('km', 'Kilometer', 'km', 'length', 0.001, 0, false), -- 1 m = 0.001 km
-('cm', 'Centimeter', 'cm', 'length', 100, 0, false), -- 1 m = 100 cm
-('mm', 'Millimeter', 'mm', 'length', 1000, 0, false), -- 1 m = 1000 mm
-('[in_i]', 'Inch', '[in_i]', 'length', 39.3701, 0, false), -- UCUM uses [in_i]; 1 m = 39.3701 in
-('[ft_i]', 'Foot', '[ft_i]', 'length', 3.28084, 0, false), -- UCUM uses [ft_i]; 1 m = 3.28084 ft
-('[mi_i]', 'Mile', '[mi_i]', 'length', 0.000621371, 0, false), -- UCUM uses [mi_i]; 1 m = 0.000621371 mi
+-- Length (Base: 'meter')
+('meter', 'length', 'Meter', 'm', 'm', 1, 0, true), -- Base Unit, UCUM base unit
+('kilometer', 'length', 'Kilometer', 'km', 'km', 0.001, 0, false), -- 1 m = 0.001 km
+('centimeter', 'length', 'Centimeter', 'cm', 'cm', 100, 0, false), -- 1 m = 100 cm
+('millimeter', 'length', 'Millimeter', 'mm', 'mm', 1000, 0, false), -- 1 m = 1000 mm
+('inch', 'length', 'Inch', 'in', '[in_i]', 39.3701, 0, false), -- UCUM uses [in_i]; 1 m = 39.3701 in
+('foot', 'length', 'Foot', 'ft', '[ft_i]', 3.28084, 0, false), -- UCUM uses [ft_i]; 1 m = 3.28084 ft
+('mile', 'length', 'Mile', 'mi', '[mi_i]', 0.000621371, 0, false), -- UCUM uses [mi_i]; 1 m = 0.000621371 mi
 
--- Temperature (Base: 'Cel')
-('Cel', 'Celsius', 'Cel', 'temperature', 1, 0, true), -- Base Unit, UCUM symbol
-('[degF]', 'Fahrenheit', '[degF]', 'temperature', 1.8, 32, false), -- UCUM symbol; F = C * 1.8 + 32
+-- Temperature (Base: 'celsius')
+('celsius', 'temperature', 'Celsius', '°C', 'Cel', 1, 0, true), -- Base Unit, UCUM symbol
+('fahrenheit', 'temperature', 'Fahrenheit', '°F', '[degF]', 1.8, 32, false), -- UCUM symbol; F = C * 1.8 + 32
 
--- Concentration (Base: 'mmol/L' - Common SI unit in medicine)
-('mmol/L', 'Millimoles per Liter', 'mmol/L', 'concentration', 1, 0, true), -- Base Unit
-('mg/dL', 'Milligrams per Deciliter', 'mg/dL', 'concentration', 18.0182, 0, false), -- Approx factor for Glucose (molar mass ~180.16 g/mol). Note: factor depends on substance! Use specific units if needed.
-('g/L', 'Grams per Liter', 'g/L', 'concentration', 1, 0, false), -- Placeholder: factor depends on substance molar mass
+-- Concentration (Base: 'millimoles-per-liter' - Common SI unit in medicine)
+('millimoles-per-liter', 'concentration', 'Millimoles per Liter', 'mmol/L', 'mmol/L', 1, 0, true), -- Base Unit
+('milligrams-per-deciliter', 'concentration', 'Milligrams per Deciliter', 'mg/dL', 'mg/dL', 18.0182, 0, false), -- Approx factor for Glucose (molar mass ~180.16 g/mol). Note: factor depends on substance! Use specific units if needed.
+('grams-per-liter', 'concentration', 'Grams per Liter', 'g/L', 'g/L', 1, 0, false), -- Placeholder: factor depends on substance molar mass
 
--- Cell Count (Base: '/uL')
-('/uL', 'Per Microliter', '/uL', 'cell-count', 1, 0, true), -- Base Unit
+-- Cell Count (Base: 'per-microliter')
+('per-microliter', 'cell-count', 'Per Microliter', '/uL', '/uL', 1, 0, true), -- Base Unit
 
--- Volume (Base: 'L')
-('L', 'Liter', 'L', 'volume', 1, 0, true), -- Base Unit
-('mL', 'Milliliter', 'mL', 'volume', 1000, 0, false), -- 1 L = 1000 mL
-('dL', 'Deciliter', 'dL', 'volume', 10, 0, false), -- 1 L = 10 dL
+-- Volume (Base: 'liter')
+('liter', 'volume', 'Liter', 'L', 'L', 1, 0, true), -- Base Unit
+('milliliter', 'volume', 'Milliliter', 'mL', 'mL', 1000, 0, false), -- 1 L = 1000 mL
+('deciliter', 'volume', 'Deciliter', 'dL', 'dL', 10, 0, false), -- 1 L = 10 dL
 
--- Energy (Base: 'kJ')
-('kJ', 'Kilojoule', 'kJ', 'energy', 1, 0, true), -- Base Unit (SI)
-('kcal', 'Kilocalorie', 'kcal', 'energy', 0.239006, 0, false), -- 1 kJ = 0.239006 kcal
+-- Energy (Base: 'kilojoule')
+('kilojoule', 'energy', 'Kilojoule', 'kJ', 'kJ', 1, 0, true), -- Base Unit (SI)
+('kilocalorie', 'energy', 'Kilocalorie', 'kcal', 'kcal', 0.239006, 0, false), -- 1 kJ = 0.239006 kcal
 
--- Frequency (Base: '/d')
-('/d', 'Per Day', '/d', 'frequency', 1, 0, true), -- Base Unit
-('/wk', 'Per Week', '/wk', 'frequency', 0.142857, 0, false), -- 1/d = (1/7)/wk
-('/mo', 'Per Month', '/mo', 'frequency', 0.0328767, 0, false), -- 1/d = (1/30.4)/mo (approx)
+-- Frequency (Base: 'per-day')
+('per-day', 'frequency', 'Per Day', '/d', '/d', 1, 0, true), -- Base Unit
+('per-week', 'frequency', 'Per Week', '/wk', '/wk', 0.142857, 0, false), -- 1/d = (1/7)/wk
+('per-month', 'frequency', 'Per Month', '/mo', '/mo', 0.0328767, 0, false), -- 1/d = (1/30.4)/mo (approx)
 
--- Rate (Base: '/s')
-('/s', 'Per Second', '/s', 'rate', 1, 0, true), -- Base Unit
-('/min', 'Per Minute', '/min', 'rate', 60, 0, false), -- 1/s = 60/min
+-- Rate (Base: 'per-second')
+('per-second', 'rate', 'Per Second', '/s', '/s', 1, 0, true), -- Base Unit
+('per-minute', 'rate', 'Per Minute', '/min', '/min', 60, 0, false), -- 1/s = 60/min
 
--- Pressure (Base: 'Pa')
-('Pa', 'Pascal', 'Pa', 'pressure', 1, 0, true), -- Base Unit (SI)
-('mm[Hg]', 'Millimeters of Mercury', 'mm[Hg]', 'pressure', 0.00750062, 0, false), -- 1 Pa = 0.00750062 mmHg
-('atm', 'Atmosphere', 'atm', 'pressure', 0.00000986923, 0, false), -- 1 Pa = 9.86923e-6 atm
+-- Pressure (Base: 'pascal')
+('pascal', 'pressure', 'Pascal', 'Pa', 'Pa', 1, 0, true), -- Base Unit (SI)
+('millimeters-of-mercury', 'pressure', 'Millimeters of Mercury', 'mmHg', 'mm[Hg]', 0.00750062, 0, false), -- 1 Pa = 0.00750062 mmHg
+('atmosphere', 'pressure', 'Atmosphere', 'atm', 'atm', 0.00000986923, 0, false), -- 1 Pa = 9.86923e-6 atm
 
--- Time (Base: 's')
-('s', 'Second', 's', 'time', 1, 0, true), -- Base Unit, UCUM base unit
-('min', 'Minute', 'min', 'time', 0.0166667, 0, false), -- 1 s = 1/60 min
-('h', 'Hour', 'h', 'time', 0.000277778, 0, false), -- 1 s = 1/3600 h
-('d', 'Day', 'd', 'time', 0.0000115741, 0, false), -- 1 s = 1/86400 d
-('wk', 'Week', 'wk', 'time', 0.00000165344, 0, false), -- 1 s = 1/604800 wk
-('mo', 'Month', 'mo', 'time', 3.80517e-7, 0, false), -- 1 s = 1/(30.4*86400) mo (approx)
-('a', 'Year', 'a', 'time', 3.17098e-8, 0, false), -- 1 s = 1/(365.25*86400) a (approx)
+-- Time (Base: 'second')
+('second', 'time', 'Second', 's', 's', 1, 0, true), -- Base Unit, UCUM base unit
+('minute', 'time', 'Minute', 'min', 'min', 0.0166667, 0, false), -- 1 s = 1/60 min
+('hour', 'time', 'Hour', 'h', 'h', 0.000277778, 0, false), -- 1 s = 1/3600 h
+('day', 'time', 'Day', 'd', 'd', 0.0000115741, 0, false), -- 1 s = 1/86400 d
+('week', 'time', 'Week', 'wk', 'wk', 0.00000165344, 0, false), -- 1 s = 1/604800 wk
+('month', 'time', 'Month', 'mo', 'mo', 3.80517e-7, 0, false), -- 1 s = 1/(30.4*86400) mo (approx)
+('year', 'time', 'Year', 'a', 'a', 3.17098e-8, 0, false), -- 1 s = 1/(365.25*86400) a (approx)
 
--- Noise (Base: 'dB') - Note: dB is logarithmic, direct factor conversion is not standard. Stored as is.
-('dB', 'Decibel', 'dB', 'noise', 1, 0, true), -- Base Unit
+-- Noise (Base: 'decibel') - Note: dB is logarithmic, direct factor conversion is not standard. Stored as is.
+('decibel', 'noise', 'Decibel', 'dB', 'dB', 1, 0, true), -- Base Unit
 
--- Air Quality (Base: 'ug/m3' - common for PM2.5 etc.)
-('ug/m3', 'Micrograms per Cubic Meter', 'ug/m3', 'air-quality', 1, 0, true), -- Base Unit
-('ppm', 'Parts Per Million', 'ppm', 'air-quality', 1, 0, false), -- Placeholder: conversion depends on substance molar mass and conditions
-('ppb', 'Parts Per Billion', 'ppb', 'air-quality', 1, 0, false), -- Placeholder: conversion depends on substance molar mass and conditions
+-- Air Quality (Base: 'micrograms-per-cubic-meter' - common for PM2.5 etc.)
+('micrograms-per-cubic-meter', 'air-quality', 'Micrograms per Cubic Meter', 'µg/m³', 'ug/m3', 1, 0, true), -- Base Unit
+('parts-per-million', 'air-quality', 'Parts Per Million', 'ppm', 'ppm', 1, 0, false), -- Placeholder: conversion depends on substance molar mass and conditions
+('parts-per-billion', 'air-quality', 'Parts Per Billion', 'ppb', 'ppb', 1, 0, false), -- Placeholder: conversion depends on substance molar mass and conditions
 
--- Percentage (Base: '%')
-('%', 'Percent', '%', 'percentage', 1, 0, true), -- Base Unit
+-- Percentage (Base: 'percent')
+('percent', 'percentage', 'Percent', '%', '%', 1, 0, true), -- Base Unit
 
--- Currency (Base: 'USD') - Note: Exchange rates vary, factor is placeholder only.
-('[USD]', 'US Dollar', 'USD', 'currency', 1, 0, true), -- Base Unit
-('[EUR]', 'Euro', 'EUR', 'currency', 1, 0, false), -- Placeholder
-('[GBP]', 'British Pound', 'GBP', 'currency', 1, 0, false), -- Placeholder
+-- Currency (Base: 'us-dollar') - Note: Exchange rates vary, factor is placeholder only.
+('us-dollar', 'currency', 'US Dollar', 'USD', '[USD]', 1, 0, true), -- Base Unit
+('euro', 'currency', 'Euro', 'EUR', '[EUR]', 1, 0, false), -- Placeholder
+('british-pound', 'currency', 'British Pound', 'GBP', '[GBP]', 1, 0, false), -- Placeholder
 
--- Age (Base: 'a' - year)
-('a', 'Years (age)', 'a', 'age', 1, 0, true); -- Base Unit, UCUM unit for year
+-- Age (Base: 'year-age')
+('year-age', 'age', 'Years (age)', 'yr', 'a', 1, 0, true); -- Base Unit, UCUM unit for year
 
 -- Update unit_categories with their base unit IDs
 -- This must run AFTER units are inserted
-UPDATE unit_categories SET base_unit_id = '1' WHERE id = 'dimensionless';
-UPDATE unit_categories SET base_unit_id = 'kg' WHERE id = 'weight';
-UPDATE unit_categories SET base_unit_id = 'm' WHERE id = 'length';
-UPDATE unit_categories SET base_unit_id = 'Cel' WHERE id = 'temperature';
-UPDATE unit_categories SET base_unit_id = 'mmol/L' WHERE id = 'concentration';
-UPDATE unit_categories SET base_unit_id = '/uL' WHERE id = 'cell-count';
-UPDATE unit_categories SET base_unit_id = 'L' WHERE id = 'volume';
-UPDATE unit_categories SET base_unit_id = 'kJ' WHERE id = 'energy';
-UPDATE unit_categories SET base_unit_id = '/d' WHERE id = 'frequency';
-UPDATE unit_categories SET base_unit_id = '/s' WHERE id = 'rate';
-UPDATE unit_categories SET base_unit_id = 'Pa' WHERE id = 'pressure';
-UPDATE unit_categories SET base_unit_id = 's' WHERE id = 'time';
-UPDATE unit_categories SET base_unit_id = 'dB' WHERE id = 'noise';
-UPDATE unit_categories SET base_unit_id = 'ug/m3' WHERE id = 'air-quality';
-UPDATE unit_categories SET base_unit_id = '%' WHERE id = 'percentage';
-UPDATE unit_categories SET base_unit_id = '[USD]' WHERE id = 'currency';
-UPDATE unit_categories SET base_unit_id = 'a' WHERE id = 'age';
+UPDATE unit_categories SET base_unit_id = 'dimensionless-unit' WHERE id = 'dimensionless';
+UPDATE unit_categories SET base_unit_id = 'kilogram' WHERE id = 'weight';
+UPDATE unit_categories SET base_unit_id = 'meter' WHERE id = 'length';
+UPDATE unit_categories SET base_unit_id = 'celsius' WHERE id = 'temperature';
+UPDATE unit_categories SET base_unit_id = 'millimoles-per-liter' WHERE id = 'concentration';
+UPDATE unit_categories SET base_unit_id = 'per-microliter' WHERE id = 'cell-count';
+UPDATE unit_categories SET base_unit_id = 'liter' WHERE id = 'volume';
+UPDATE unit_categories SET base_unit_id = 'kilojoule' WHERE id = 'energy';
+UPDATE unit_categories SET base_unit_id = 'per-day' WHERE id = 'frequency';
+UPDATE unit_categories SET base_unit_id = 'per-second' WHERE id = 'rate';
+UPDATE unit_categories SET base_unit_id = 'pascal' WHERE id = 'pressure';
+UPDATE unit_categories SET base_unit_id = 'second' WHERE id = 'time';
+UPDATE unit_categories SET base_unit_id = 'decibel' WHERE id = 'noise';
+UPDATE unit_categories SET base_unit_id = 'micrograms-per-cubic-meter' WHERE id = 'air-quality';
+UPDATE unit_categories SET base_unit_id = 'percent' WHERE id = 'percentage';
+UPDATE unit_categories SET base_unit_id = 'us-dollar' WHERE id = 'currency';
+UPDATE unit_categories SET base_unit_id = 'year-age' WHERE id = 'age';

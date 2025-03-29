@@ -2,11 +2,13 @@
 -- Contains seed data for medical conditions
 
 -- Insert sample conditions
-INSERT INTO conditions (id, global_variable_id, icd_code) VALUES
-('type-2-diabetes', 'type-2-diabetes', 'E11'),
-('hypertension', 'hypertension', 'I10'),
-('rheumatoid-arthritis', 'rheumatoid-arthritis', 'M05'),
-('major-depressive-disorder', 'major-depressive-disorder', 'F33'),
-('asthma', 'asthma', 'J45'),
-('headache', 'headache', 'R51'),
-('pain', 'pain', 'R52');
+-- The id references the global_variable_id and is the primary key
+INSERT INTO conditions (id, icd_code)
+VALUES
+('type-2-diabetes', 'E11'),
+('hypertension', 'I10'),
+('rheumatoid-arthritis', 'M05'),
+('major-depressive-disorder', 'F33'),
+('asthma', 'J45'),
+('headache', 'R51'),
+('pain', 'R52');

@@ -37,52 +37,52 @@ VALUES
 INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id)
 VALUES
 ('blood-pressure', 'Blood Pressure', 'Pressure of circulating blood against the walls of blood vessels', 
- 'health-and-physiology', NULL),
+ 'health-and-physiology', 'millimeters-of-mercury'), -- Default unit: mmHg
 ('heart-rate', 'Heart Rate', 'Number of times your heart beats per minute', 
- 'health-and-physiology', NULL),
+ 'health-and-physiology', 'per-minute'), -- Default unit: /min
 ('blood-glucose', 'Blood Glucose', 'Concentration of glucose in the blood', 
- 'health-and-physiology', NULL),
+ 'health-and-physiology', 'milligrams-per-deciliter'), -- Default unit: mg/dL (common in US)
 ('body-temperature', 'Body Temperature', 'Measure of the body''s ability to generate and get rid of heat', 
- 'health-and-physiology', NULL),
+ 'health-and-physiology', 'celsius'), -- Default unit: Celsius
 ('respiratory-rate', 'Respiratory Rate', 'Number of breaths taken per minute', 
- 'health-and-physiology', NULL),
+ 'health-and-physiology', 'per-minute'), -- Default unit: /min
 ('oxygen-saturation', 'Oxygen Saturation', 'Percentage of oxygen-saturated hemoglobin relative to total hemoglobin in the blood', 
- 'health-and-physiology', NULL);
+ 'health-and-physiology', 'percent'); -- Default unit: %
 
 -- Insert global variables for treatments and interventions
 INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id)
 VALUES
 ('metformin', 'Metformin', 'First-line medication for the treatment of type 2 diabetes.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('lisinopril', 'Lisinopril', 'Medication to treat high blood pressure and heart failure.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('adalimumab', 'Adalimumab', 'Biologic medication used to treat rheumatoid arthritis and other inflammatory conditions.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('escitalopram', 'Escitalopram', 'Selective serotonin reuptake inhibitor (SSRI) used to treat depression and anxiety disorders.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('albuterol', 'Albuterol', 'Medication that opens up the bronchial tubes (air passages) in the lungs when they are spasming.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'microgram'), -- Typically dosed in ug (micrograms)
 ('semaglutide', 'Semaglutide', 'GLP-1 receptor agonist used for the treatment of type 2 diabetes and weight management.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('ketamine', 'Ketamine', 'NMDA receptor antagonist with rapid antidepressant effects for treatment-resistant depression.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Dosage varies (often mg)
 ('tocilizumab', 'Tocilizumab', 'Monoclonal antibody against the interleukin-6 receptor (IL-6R) used to treat rheumatoid arthritis.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('aspirin', 'Aspirin', 'Common pain reliever and anti-inflammatory medication.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('ibuprofen', 'Ibuprofen', 'Nonsteroidal anti-inflammatory drug used for pain relief and reducing inflammation.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('sitagliptin', 'Sitagliptin', 'DPP-4 inhibitor used for improving glycemic control in type 2 diabetes.', 
- 'intake-and-interventions', NULL),
+ 'intake-and-interventions', 'milligram'), -- Typically dosed in mg
 ('venlafaxine', 'Venlafaxine', 'Serotonin-norepinephrine reuptake inhibitor (SNRI) used to treat depression and anxiety disorders.', 
- 'intake-and-interventions', NULL);
+ 'intake-and-interventions', 'milligram'); -- Typically dosed in mg
 
 -- Insert global variables for anthropometric measurements
 INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id)
 VALUES
 ('weight', 'Weight', 'Body weight', 
- 'health-and-physiology', 'kg'),
+ 'health-and-physiology', 'kilogram'),
 ('height', 'Height', 'Body height', 
- 'health-and-physiology', 'm'),
+ 'health-and-physiology', 'meter'),
 ('bmi', 'Body Mass Index', 'Body Mass Index calculated from weight and height', 
- 'health-and-physiology', 'kg/m2');
+ 'health-and-physiology', 'kilograms-per-square-meter');
