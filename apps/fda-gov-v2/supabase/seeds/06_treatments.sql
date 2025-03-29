@@ -3,15 +3,15 @@
 
 -- Insert sample treatments
 INSERT INTO treatments (id, treatment_type, manufacturer, approval_status) VALUES
-('metformin', 'Medication', 'Various', 'Approved'),
-('lisinopril', 'Medication', 'Various', 'Approved'),
-('adalimumab', 'Biologic', 'AbbVie', 'Approved'),
-('escitalopram', 'Medication', 'Various', 'Approved'),
-('albuterol', 'Medication', 'Various', 'Approved'),
-('semaglutide', 'Medication', 'Novo Nordisk', 'Approved'),
-('ketamine', 'Medication', 'Various', 'investigational'),
-('tocilizumab', 'Biologic', 'Genentech', 'Approved'),
-('aspirin', 'Medication', 'Various', 'Approved'),
-('ibuprofen', 'Medication', 'Various', 'Approved'),
-('sitagliptin', 'Medication', 'Merck', 'Approved'),
-('venlafaxine', 'Medication', 'Various', 'Approved');
+('metformin', 'drug', 'Various', 'approved'),
+('lisinopril', 'drug', 'Various', 'approved'),
+('adalimumab', 'biologic', 'AbbVie', 'approved'),
+('escitalopram', 'drug', 'Various', 'approved'),
+('albuterol', 'drug', 'Various', 'approved'),
+('semaglutide', 'drug', 'Novo Nordisk', 'approved'),
+('ketamine', 'drug', 'Various', 'investigational'),
+('tocilizumab', 'biologic', 'Genentech', 'approved'),
+('aspirin', 'drug', 'Various', 'approved'),
+('ibuprofen', 'drug', 'Various', 'approved'),
+('sitagliptin', 'drug', 'Merck', 'approved'),
+('venlafaxine', 'drug', 'Various', 'approved');
