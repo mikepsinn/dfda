@@ -4,16 +4,16 @@ import { useState } from "react"
 
 export interface ConditionSearchProps {
   onConditionSelect: (condition: string) => void
-  initialSearchTerm?: string
-  placeholder?: string
   availableConditions: string[]
+  placeholder?: string
+  initialSearchTerm?: string
 }
 
 export function ConditionSearch({ 
   onConditionSelect, 
-  initialSearchTerm = "", 
+  availableConditions,
   placeholder = "Search conditions...",
-  availableConditions 
+  initialSearchTerm = "" 
 }: ConditionSearchProps) {
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm)
   const [isOpen, setIsOpen] = useState(false)

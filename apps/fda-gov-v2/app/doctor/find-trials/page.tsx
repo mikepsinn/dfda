@@ -12,9 +12,13 @@ import { Separator } from "@/components/ui/separator"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ConditionSearch } from "@/components/ConditionSearch"
+import { ConditionSearch } from "@/components/condition-search"
 import { TreatmentRankingList } from "@/components/TreatmentRankingList"
 import { comparativeEffectivenessData } from "@/lib/treatment-data"
+import { getServerUser } from "@/lib/server-auth"
+import { createClient } from "@/lib/supabase/server"
+import { redirect } from "next/navigation"
+import { Database } from "@/lib/database.types"
 
 // Neurological condition trials data
 const trials = [
@@ -110,7 +114,22 @@ const trials = [
   },
 ]
 
-export default function FindTrials() {
+export default async function FindTrialsPage() {
+  const user = await getServerUser()
+  const supabase = await createClient()
+
+  if (!user) {
+    redirect("/login")
+  }
+
+  // Get all available conditions
+  const { data: conditions } = await supabase
+    .from("conditions")
+    .select("id, name")
+    .order("name")
+
+  const availableConditions = conditions?.map(c => c.name) || []
+
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCondition, setSelectedCondition] = useState("")
   const [showTreatments, setShowTreatments] = useState(false)
@@ -122,7 +141,6 @@ export default function FindTrials() {
   }
 
   const interventions = comparativeEffectivenessData[selectedCondition] || []
-  const availableConditions = Object.keys(comparativeEffectivenessData)
 
   const filteredTrials = trials.filter(
     (trial) =>
@@ -153,10 +171,9 @@ export default function FindTrials() {
                   </CardHeader>
                   <CardContent>
                     <ConditionSearch
-                      availableConditions={availableConditions}
                       onConditionSelect={handleConditionSelect}
-                      initialSearchTerm={selectedCondition}
-                      placeholder="Search for a condition (e.g., Alzheimer's, Parkinson's)"
+                      availableConditions={availableConditions}
+                      placeholder="Search for a medical condition..."
                     />
                   </CardContent>
                 </Card>

@@ -8,10 +8,16 @@ import { redirect } from "next/navigation"
 import { Database } from "@/lib/database.types"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]
+
+interface EnrollmentWithTrial extends TrialEnrollment {
+  trial: Trial
+}
 
 interface TrialSubmissionData {
   trial: Trial
+  enrollment: TrialEnrollment
   submission: DataSubmission | null
   currentMilestone: string
   refundAmount: number
@@ -34,32 +40,42 @@ export default async function DataSubmissionPage() {
   // Get the user's active trial enrollment
   const { data: enrollment } = await supabase
     .from("trial_enrollments")
-    .select(`
+    .select<string, EnrollmentWithTrial>(`
       id,
-      trial:trials (
+      trial_id,
+      patient_id,
+      doctor_id,
+      status,
+      enrollment_date,
+      completion_date,
+      notes,
+      created_at,
+      updated_at,
+      deleted_at,
+      trial:trials!inner (
         id,
         title,
         description,
-        status,
         sponsor_id,
-        created_at,
-        updated_at,
-        deleted_at,
         condition_id,
         treatment_id,
+        status,
+        phase,
         start_date,
         end_date,
-        target_enrollment,
+        enrollment_target,
         current_enrollment,
-        phase,
         location,
         compensation,
         inclusion_criteria,
-        exclusion_criteria
+        exclusion_criteria,
+        created_at,
+        updated_at,
+        deleted_at
       )
     `)
     .eq("patient_id", user.id)
-    .eq("status", "active")
+    .eq("status", "approved")
     .single()
 
   if (!enrollment) {
@@ -77,6 +93,19 @@ export default async function DataSubmissionPage() {
 
   const trialData: TrialSubmissionData = {
     trial: enrollment.trial,
+    enrollment: {
+      id: enrollment.id,
+      trial_id: enrollment.trial_id,
+      patient_id: enrollment.patient_id,
+      doctor_id: enrollment.doctor_id,
+      status: enrollment.status,
+      enrollment_date: enrollment.enrollment_date,
+      completion_date: enrollment.completion_date,
+      notes: enrollment.notes,
+      created_at: enrollment.created_at,
+      updated_at: enrollment.updated_at,
+      deleted_at: enrollment.deleted_at
+    },
     submission: submission || null,
     currentMilestone: "Week 4 Check-in", // This should come from your milestone tracking logic
     refundAmount: enrollment.trial.compensation || 0,

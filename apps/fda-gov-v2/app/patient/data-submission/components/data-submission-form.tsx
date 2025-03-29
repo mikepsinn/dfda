@@ -18,11 +18,13 @@ import { createBrowserClient } from "@/lib/supabase"
 import { logger } from "@/lib/logger"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 type DataSubmissionInsert = Database["public"]["Tables"]["data_submissions"]["Insert"]
 type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]
 
 export interface TrialSubmissionData {
   trial: Trial
+  enrollment: TrialEnrollment
   submission: DataSubmission | null
   currentMilestone: string
   refundAmount: number
@@ -66,7 +68,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
     const comments = formData.get("comments") as string
 
     const submission: DataSubmissionInsert = {
-      enrollment_id: trialData.submission.enrollment_id,
+      enrollment_id: trialData.enrollment.id,
       patient_id: user.id,
       data: {
         blood_glucose: Number.parseFloat(bloodGlucose),
@@ -80,7 +82,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
         milestone: trialData.currentMilestone,
       },
       submission_date: new Date().toISOString(),
-      status: "pending_review"
+      status: "pending"
     }
 
     // Submit data to database
@@ -94,7 +96,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
           updated_at: new Date().toISOString(),
           notes: "Data submission completed"
         })
-        .eq("id", trialData.submission.enrollment_id)
+        .eq("id", trialData.enrollment.id)
 
       setSubmissionComplete(true)
     } else {
@@ -114,7 +116,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
           <div>
             <CardTitle>{trialData.trial.title}</CardTitle>
             <CardDescription>
-              {trialData.currentMilestone} - Due {new Date(trialData.submission.submission_date).toLocaleDateString()}
+              {trialData.currentMilestone} - Due {new Date().toLocaleDateString()}
             </CardDescription>
           </div>
           <div className="rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
