@@ -1,42 +1,4 @@
 -- Create tables
-CREATE TABLE IF NOT EXISTS conditions (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  name TEXT NOT NULL,
-  description TEXT NOT NULL,
-  icd_code TEXT,
-  global_variable_id UUID, -- Will be linked to global_variables
-  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS treatments (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  name TEXT NOT NULL,
-  description TEXT NOT NULL,
-  treatment_type TEXT NOT NULL,
-  manufacturer TEXT,
-  approval_status TEXT NOT NULL,
-  global_variable_id UUID, -- Will be linked to global_variables
-  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS treatment_effectiveness (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  treatment_id UUID NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
-  condition_id UUID NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
-  effectiveness_score NUMERIC NOT NULL,
-  side_effects_score NUMERIC NOT NULL,
-  cost_effectiveness_score NUMERIC NOT NULL,
-  evidence_level TEXT NOT NULL,
-  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
--- New tables for measurement tracking
 
 -- Unit categories table
 CREATE TABLE IF NOT EXISTS unit_categories (
@@ -90,14 +52,38 @@ CREATE TABLE IF NOT EXISTS global_variables (
   CONSTRAINT unique_name_per_category UNIQUE (name, variable_category_id)
 );
 
--- Now add foreign key constraints after all tables are created
-ALTER TABLE conditions 
-ADD CONSTRAINT fk_conditions_global_variable 
-FOREIGN KEY (global_variable_id) REFERENCES global_variables(id) ON DELETE SET NULL;
+CREATE TABLE IF NOT EXISTS conditions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  global_variable_id UUID NOT NULL REFERENCES global_variables(id) ON DELETE CASCADE,
+  icd_code TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 
-ALTER TABLE treatments 
-ADD CONSTRAINT fk_treatments_global_variable 
-FOREIGN KEY (global_variable_id) REFERENCES global_variables(id) ON DELETE SET NULL;
+CREATE TABLE IF NOT EXISTS treatments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  global_variable_id UUID NOT NULL REFERENCES global_variables(id) ON DELETE CASCADE,
+  treatment_type TEXT NOT NULL,
+  manufacturer TEXT,
+  approval_status TEXT NOT NULL,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS treatment_effectiveness (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  treatment_id UUID NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
+  condition_id UUID NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
+  effectiveness_score NUMERIC NOT NULL,
+  side_effects_score NUMERIC NOT NULL,
+  cost_effectiveness_score NUMERIC NOT NULL,
+  evidence_level TEXT NOT NULL,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE IF NOT EXISTS profiles (
   id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -200,19 +186,48 @@ CREATE TABLE IF NOT EXISTS treatment_side_effect_ratings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
   treatment_id UUID NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
+  condition_id UUID NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
   side_effect_variable_id UUID NOT NULL REFERENCES global_variables(id) ON DELETE CASCADE,
   severity_rating INTEGER NOT NULL CHECK (severity_rating BETWEEN 1 AND 10),
   notes TEXT,
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  CONSTRAINT unique_user_treatment_side_effect UNIQUE (user_id, treatment_id, side_effect_variable_id)
+  CONSTRAINT unique_user_treatment_side_effect UNIQUE (user_id, treatment_id, condition_id, side_effect_variable_id)
 );
+
+COMMENT ON COLUMN treatment_side_effect_ratings.severity_rating IS 'Severity scale: 1 (Very Mild) to 10 (Severe/Intolerable)';
 
 -- Create a partial unique index for active treatment side effects
 CREATE UNIQUE INDEX IF NOT EXISTS unique_active_treatment_side_effect_idx
-ON treatment_side_effect_ratings (user_id, treatment_id, side_effect_variable_id)
+ON treatment_side_effect_ratings (user_id, treatment_id, condition_id, side_effect_variable_id)
 WHERE deleted_at IS NULL;
+
+-- Treatment Ratings Table
+CREATE TABLE treatment_ratings (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
+    treatment_id UUID NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
+    condition_id UUID NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
+    rating INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 10),
+    review TEXT,
+    verified BOOLEAN DEFAULT false,
+    created_at TIMESTAMPTZ DEFAULT now() NOT NULL,
+    updated_at TIMESTAMPTZ DEFAULT now() NOT NULL,
+    CONSTRAINT unique_user_treatment_condition UNIQUE (user_id, treatment_id, condition_id)
+);
+
+COMMENT ON COLUMN treatment_ratings.rating IS 'Rating scale: 1 (Very Poor) to 10 (Excellent)';
+COMMENT ON COLUMN treatment_ratings.verified IS 'Indicates if the rating comes from a verified source (e.g., clinical trial data vs. patient self-report)';
+
+-- Enable RLS
+ALTER TABLE treatment_ratings ENABLE ROW LEVEL SECURITY;
+
+-- Policies for treatment_ratings
+CREATE POLICY "Allow public read access" ON treatment_ratings FOR SELECT USING (true);
+CREATE POLICY "Allow individual insert access" ON treatment_ratings FOR INSERT WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Allow individual update access" ON treatment_ratings FOR UPDATE USING (auth.uid() = user_id);
+CREATE POLICY "Allow individual delete access" ON treatment_ratings FOR DELETE USING (auth.uid() = user_id);
 
 -- Enable RLS on profiles
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
@@ -403,21 +418,6 @@ $$;
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
-
-CREATE TABLE IF NOT EXISTS treatment_ratings (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES profiles(id) ON DELETE CASCADE,
-  treatment_id UUID NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
-  condition_id UUID NOT NULL REFERENCES conditions(id) ON DELETE CASCADE,
-  rating INTEGER NOT NULL,
-  review TEXT,
-  user_type TEXT NOT NULL,
-  verified BOOLEAN DEFAULT false,
-  helpful_count INTEGER DEFAULT 0,
-  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
 
 CREATE TABLE IF NOT EXISTS trials (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
