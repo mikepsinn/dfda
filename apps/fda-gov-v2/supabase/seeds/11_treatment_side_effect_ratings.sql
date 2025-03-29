@@ -4,9 +4,9 @@
 -- Seed Treatment Side Effect Ratings
 INSERT INTO treatment_side_effect_ratings (user_id, treatment_id, condition_id, side_effect_variable_id, severity_rating, notes)
 VALUES
-    -- Charlie reports Nausea for Experimental Drug A for Type 2 Diabetes
+    -- Charlie reports Nausea for Sitagliptin for Type 2 Diabetes
     ((SELECT id FROM profiles WHERE email = 'charlie@example.com'),
-     'experimental-drug-a',
+     'sitagliptin',
      'type-2-diabetes',
      'nausea',
      4, 'Mild nausea experienced shortly after taking the drug.'),
@@ -25,9 +25,9 @@ VALUES
      'dry-cough',
      5, 'Developed a persistent dry cough after a few weeks.'),
      
-    -- Charlie reports Headache for Experimental Drug B for Major Depressive Disorder
+    -- Charlie reports Headache for Venlafaxine for Major Depressive Disorder
     ((SELECT id FROM profiles WHERE email = 'charlie@example.com'),
-     'experimental-drug-b',
+     'venlafaxine',
      'major-depressive-disorder',
      'headache',
      2, 'Occasional mild headaches, not severe enough to discontinue.');
