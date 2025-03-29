@@ -5,15 +5,16 @@ import { EnrolledTrials } from "./components/enrolled-trials"
 import { PatientOverview } from "./components/patient-overview"
 import { RecentActivity } from "./components/recent-activity"
 import { Database } from "@/lib/database.types"
+import { SupabaseClient } from "@supabase/supabase-js"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
-type Enrollment = Database["public"]["Tables"]["enrollments"]["Row"] & {
+type Enrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"] & {
   trial: Trial
 }
 
 export default async function PatientDashboard() {
-  const supabase = createClient()
   const user = await getServerUser()
+  const supabase = await createClient() as SupabaseClient<Database>
 
   if (!user) {
     redirect("/login")
@@ -26,11 +27,12 @@ export default async function PatientDashboard() {
     .single()
 
   const { data: enrollments } = await supabase
-    .from("enrollments")
+    .from("trial_enrollments")
     .select(`
       id,
       status,
       created_at,
+      patient_id,
       trial:trials (
         id,
         title,
@@ -46,7 +48,7 @@ export default async function PatientDashboard() {
   const patientName = profile ? `${profile.first_name} ${profile.last_name}` : "Patient"
   const patientData = {
     name: patientName,
-    enrollments: enrollments as Enrollment[] || [],
+    enrollments: (enrollments || []) as Enrollment[],
     totalEnrollment: enrollments?.length || 0,
   }
 
