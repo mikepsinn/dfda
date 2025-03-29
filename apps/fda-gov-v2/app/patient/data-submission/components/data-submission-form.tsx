@@ -18,6 +18,7 @@ import { createBrowserClient } from "@/lib/supabase"
 import { logger } from "@/lib/logger"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type DataSubmissionInsert = Database["public"]["Tables"]["data_submissions"]["Insert"]
 type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]
 
 export interface TrialSubmissionData {
@@ -31,6 +32,17 @@ export interface TrialSubmissionData {
 export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionData }) {
   const [submissionComplete, setSubmissionComplete] = useState(false)
   const supabase = createBrowserClient()
+
+  if (!trialData.submission) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>{trialData.trial.title}</CardTitle>
+          <CardDescription>No submission data available</CardDescription>
+        </CardHeader>
+      </Card>
+    )
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -53,7 +65,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
     const hba1c = formData.get("hba1c") as string
     const comments = formData.get("comments") as string
 
-    const submission: DataSubmission = {
+    const submission: DataSubmissionInsert = {
       enrollment_id: trialData.submission.enrollment_id,
       patient_id: user.id,
       data: {
@@ -102,7 +114,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
           <div>
             <CardTitle>{trialData.trial.title}</CardTitle>
             <CardDescription>
-              {trialData.currentMilestone} - Due {trialData.submission.submission_date}
+              {trialData.currentMilestone} - Due {new Date(trialData.submission.submission_date).toLocaleDateString()}
             </CardDescription>
           </div>
           <div className="rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
