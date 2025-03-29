@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
+import { VARIABLE_CATEGORIES } from '@/lib/constants/variable-categories'
 
 // Use the database view type directly 
 export type ConditionView = Database['public']['Views']['patient_conditions_view']['Row']
@@ -17,7 +18,7 @@ export async function getConditionsAction(): Promise<ConditionView[]> {
   const response = await supabase
     .from('patient_conditions_view')
     .select()
-    .order('name')
+    .order('condition_name')
     .limit(50)
 
   if (response.error) {
@@ -46,22 +47,30 @@ export async function getConditionByIdAction(id: string): Promise<ConditionView 
   return response.data
 }
 
-// Search conditions by name
-export async function searchConditionsAction(query: string): Promise<ConditionView[]> {
+// Search conditions by name in global_variables
+export async function searchConditionsAction(query: string) {
   const supabase = await createClient()
+  logger.info('Searching conditions with query:', { query, categoryId: VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY })
 
-  const response = await supabase
-    .from('patient_conditions_view')
-    .select()
-    .textSearch('name', query)
-    .limit(10)
+  try {
+    const { data: conditions, error } = await supabase
+      .from('global_variables')
+      .select('id, name, description, emoji')
+      .eq('variable_category_id', VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY)
+      .ilike('name', `%${query}%`)
+      .order('name')
 
-  if (response.error) {
-    logger.error('Error searching conditions:', { error: response.error })
-    throw new Error('Failed to search conditions')
+    if (error) {
+      logger.error('Error searching conditions:', { error })
+      throw error
+    }
+
+    logger.info('Found conditions:', { count: conditions?.length, conditions })
+    return conditions || []
+  } catch (error) {
+    logger.error('Error in searchConditionsAction:', { error })
+    throw error
   }
-
-  return response.data
 }
 
 // Create a new condition

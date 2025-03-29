@@ -1740,6 +1740,13 @@ export type Database = {
         }
         Returns: undefined
       }
+      list_views: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          schema_name: string
+          view_name: string
+        }[]
+      }
     }
     Enums: {
       action_category:

@@ -6,11 +6,14 @@ import { Footer } from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { getServerUser } from "@/lib/server-auth"
 
-export default function ProviderResources() {
+export default async function ProviderResourcesPage() {
+  const user = await getServerUser()
+
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header initialUser={user} />
       <main className="flex-1 py-6 md:py-10">
         <div className="container">
           <div className="mx-auto max-w-5xl">

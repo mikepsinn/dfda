@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Menu, ChevronDown, ChevronUp, User as UserIcon, LogOut, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
@@ -13,65 +13,74 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu"
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '../lib/supabase/client'
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import type { User } from '@supabase/supabase-js'
 
-export function Header() {
+interface NavItem {
+  title: string
+  href: string
+}
+
+interface HeaderProps {
+  initialUser: User | null
+}
+
+export function Header({ initialUser }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isMoreOpen, setIsMoreOpen] = useState(false)
-  const [user, setUser] = useState<User | null>(null)
-  const [userInitials, setUserInitials] = useState("")
   const supabase = createClient()
 
-  useEffect(() => {
-    // Get initial auth state
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      if (session?.user?.user_metadata?.name) {
-        const name = session.user.user_metadata.name
-        setUserInitials(name.split(' ').map(n => n[0]).join('').toUpperCase())
-      } else {
-        setUserInitials(session?.user?.email?.[0].toUpperCase() ?? 'U')
-      }
-    })
+  const userInitials = initialUser?.user_metadata?.name
+    ? initialUser.user_metadata.name.split(' ').map(n => n[0]).join('').toUpperCase()
+    : initialUser?.email?.[0].toUpperCase() ?? 'U'
 
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
-      if (session?.user?.user_metadata?.name) {
-        const name = session.user.user_metadata.name
-        setUserInitials(name.split(' ').map(n => n[0]).join('').toUpperCase())
-      } else {
-        setUserInitials(session?.user?.email?.[0].toUpperCase() ?? 'U')
-      }
-    })
-
-    return () => subscription.unsubscribe()
-  }, [supabase.auth])
+  const userType = initialUser?.user_metadata?.user_type ?? 'patient'
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
+    window.location.href = '/'
   }
 
-  // Primary navigation items (most important)
-  const primaryNavItems = [
-    {
-      title: "Sponsors",
-      href: "/sponsor",
-    },
-    {
-      title: "Patients",
-      href: "/patient",
-    },
-    {
-      title: "Providers",
-      href: "/doctor/dashboard",
-    },
-  ]
+  // Navigation items based on user role
+  const getNavItems = (): NavItem[] => {
+    const items: NavItem[] = []
+
+    // Patient dashboard is accessible to all logged-in users
+    if (initialUser) {
+      items.push({
+        title: "Patient Dashboard",
+        href: "/patient/dashboard",
+      })
+      if (userType === 'patient') {
+        items.push({
+          title: "Treatments",
+          href: "/patient/treatments",
+        })
+      }
+    }
+
+    // Doctor-specific items
+    if (userType === 'doctor') {
+      items.push({
+        title: "Provider Dashboard",
+        href: "/doctor/dashboard",
+      })
+    }
+
+    // Sponsor-specific items
+    if (userType === 'sponsor') {
+      items.push({
+        title: "Sponsor Dashboard",
+        href: "/sponsor",
+      })
+    }
+
+    return items
+  }
 
   // Secondary navigation items (in the "More" dropdown)
-  const secondaryNavItems = [
+  const secondaryNavItems: NavItem[] = [
     {
       title: "Developers",
       href: "/developers",
@@ -86,7 +95,7 @@ export function Header() {
     },
   ]
 
-  // All navigation items for mobile menu
+  const primaryNavItems = getNavItems()
   const allNavItems = [...primaryNavItems, ...secondaryNavItems]
 
   return (
@@ -132,7 +141,7 @@ export function Header() {
             <span className="sr-only">Open menu</span>
           </Button>
 
-          {user ? (
+          {initialUser ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -196,37 +205,6 @@ export function Header() {
                 {item.title}
               </Link>
             ))}
-            <div className="border-t my-2 pt-4">
-              {user ? (
-                <>
-                  <Link href="/user/profile" className="block mb-3">
-                    <Button variant="outline" className="w-full flex items-center justify-center gap-2">
-                      <UserIcon className="h-4 w-4" />
-                      Profile
-                    </Button>
-                  </Link>
-                  <Button 
-                    className="w-full flex items-center justify-center gap-2 text-red-600" 
-                    variant="outline"
-                    onClick={handleSignOut}
-                  >
-                    <LogOut className="h-4 w-4" />
-                    Sign Out
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Link href="/login" className="block mb-3">
-                    <Button variant="outline" className="w-full">
-                      Sign In
-                    </Button>
-                  </Link>
-                  <Link href="/register">
-                    <Button className="w-full">Register</Button>
-                  </Link>
-                </>
-              )}
-            </div>
           </nav>
         </SheetContent>
       </Sheet>

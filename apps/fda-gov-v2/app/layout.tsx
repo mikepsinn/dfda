@@ -5,6 +5,7 @@ import "./globals.css"
 import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
+import { getServerUser } from "@/lib/server-auth"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -14,17 +15,19 @@ export const metadata: Metadata = {
     generator: 'v0.dev'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const user = await getServerUser()
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <ScrollToHashElement />
         <div className="min-h-screen flex flex-col">
-          <Header />
+          <Header initialUser={user} />
           <main className="flex-1 py-6 md:py-10 w-full bg-background">
             <div className="container px-4 md:px-6 mx-auto">
               {children}

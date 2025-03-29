@@ -1,6 +1,6 @@
 "use server"
 
-import { createServerClient } from "@/lib/supabase"
+import { createClient } from '@/lib/supabase/server'
 import type { Database } from "@/lib/database.types"
 import { handleDatabaseResponse, handleDatabaseCollectionResponse } from "@/lib/actions-helpers"
 import { revalidatePath } from "next/cache"
@@ -25,7 +25,7 @@ export type TreatmentConditionEffectiveness = {
 
 // Get effectiveness stats for a treatment and condition
 export async function getTreatmentEffectivenessAction(treatmentId: string, conditionId: string): Promise<EffectivenessStats> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -54,7 +54,7 @@ export async function getTreatmentEffectivenessAction(treatmentId: string, condi
 
 // Get all conditions a treatment has been rated for with effectiveness stats
 export async function getTreatmentConditionsWithEffectivenessAction(treatmentId: string): Promise<TreatmentConditionEffectiveness[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -93,7 +93,7 @@ export async function getTreatmentConditionsWithEffectivenessAction(treatmentId:
 
 // Get all effectiveness data for a condition
 export async function getEffectivenessForConditionAction(conditionId: string): Promise<TreatmentEffectiveness[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -115,12 +115,12 @@ export async function getEffectivenessForConditionAction(conditionId: string): P
 
 // Get effectiveness data by patient
 export async function getTreatmentEffectivenessByPatientAction(patientId: string): Promise<TreatmentEffectiveness[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
     .select("*")
-    .eq("patient_id", patientId)
+    .eq("user_id", patientId)
     .not('deleted_at', 'is', null)
 
   if (response.error) {
@@ -133,7 +133,7 @@ export async function getTreatmentEffectivenessByPatientAction(patientId: string
 
 // Create new effectiveness data
 export async function createTreatmentEffectivenessAction(effectiveness: TreatmentEffectivenessInsert): Promise<TreatmentEffectiveness> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -159,7 +159,7 @@ export async function updateTreatmentEffectivenessAction(
   conditionId: string,
   updates: TreatmentEffectivenessUpdate,
 ): Promise<TreatmentEffectiveness> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -183,7 +183,7 @@ export async function updateTreatmentEffectivenessAction(
 
 // Delete a treatment effectiveness rating
 export async function deleteTreatmentEffectivenessAction(id: string): Promise<void> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from('treatment_ratings')
@@ -197,7 +197,7 @@ export async function deleteTreatmentEffectivenessAction(id: string): Promise<vo
 }
 
 export async function getTreatmentEffectivenessByTreatmentAction(treatmentId: string): Promise<TreatmentEffectiveness[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -213,7 +213,7 @@ export async function getTreatmentEffectivenessByTreatmentAction(treatmentId: st
 }
 
 export async function getTreatmentEffectivenessByConditionAction(conditionId: string): Promise<TreatmentEffectiveness[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")
@@ -229,7 +229,7 @@ export async function getTreatmentEffectivenessByConditionAction(conditionId: st
 }
 
 export async function getTreatmentEffectivenessByTreatmentAndConditionAction(treatmentId: string, conditionId: string): Promise<TreatmentEffectiveness[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
   const response = await supabase
     .from("treatment_ratings")

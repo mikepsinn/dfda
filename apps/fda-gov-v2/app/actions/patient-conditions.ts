@@ -9,9 +9,33 @@ export type PatientCondition = Database['public']['Views']['patient_conditions_v
 export type PatientConditionInsert = Database['public']['Tables']['patient_conditions']['Insert']
 export type PatientConditionUpdate = Database['public']['Tables']['patient_conditions']['Update']
 
+// Debug function to list all views
+async function logAvailableViews() {
+  const supabase = await createClient()
+  
+  const { data: views, error } = await supabase
+    .rpc('list_views')
+
+  if (error) {
+    logger.error('Error fetching views:', error)
+  } else {
+    logger.info('Available views in public schema:', views)
+  }
+}
+
 // Get all conditions for a patient
 export async function getPatientConditionsAction(patientId: string): Promise<PatientCondition[]> {
   const supabase = await createClient()
+
+  // Log available views first
+  await logAvailableViews()
+
+  // Log the request details
+  logger.info('Fetching patient conditions:', {
+    table: 'patient_conditions_view',
+    patientId,
+    url: process.env.NEXT_PUBLIC_SUPABASE_URL
+  })
 
   const response = await supabase
     .from('patient_conditions_view')
@@ -20,7 +44,11 @@ export async function getPatientConditionsAction(patientId: string): Promise<Pat
     .order('diagnosed_at', { ascending: false })
 
   if (response.error) {
-    logger.error('Error fetching patient conditions:', { error: response.error })
+    logger.error('Error fetching patient conditions:', { 
+      error: response.error,
+      status: response.status,
+      statusText: response.statusText
+    })
     throw new Error('Failed to fetch patient conditions')
   }
 

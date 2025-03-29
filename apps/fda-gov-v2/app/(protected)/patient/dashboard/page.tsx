@@ -1,64 +1,114 @@
 import { getServerUser } from "@/lib/server-auth"
-import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
-import { EnrolledTrials } from "@/components/patient/enrolled-trials"
-import { PatientOverview } from "@/components/patient/patient-overview"
-import { RecentActivity } from "@/components/patient/recent-activity"
-import { Database } from "@/lib/database.types"
-import { SupabaseClient } from "@supabase/supabase-js"
-
-type Trial = Database["public"]["Tables"]["trials"]["Row"]
-type Enrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"] & {
-  trial: Trial
-}
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Plus } from "lucide-react"
+import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { getTreatmentEffectivenessByPatientAction } from "@/app/actions/treatment-effectiveness"
+import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
 
 export default async function PatientDashboard() {
   const user = await getServerUser()
-  const supabase = await createClient() as SupabaseClient<Database>
-
   if (!user) {
     redirect("/login")
   }
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("first_name, last_name")
-    .eq("id", user.id)
-    .single()
+  // Fetch conditions and treatments
+  const conditions = await getPatientConditionsAction(user.id)
+  const treatmentEffectiveness = await getTreatmentEffectivenessByPatientAction(user.id)
 
-  const { data: enrollments } = await supabase
-    .from("trial_enrollments")
-    .select(`
-      id,
-      status,
-      created_at,
-      patient_id,
-      trial:trials (
-        id,
-        title,
-        description,
-        status,
-        sponsor_id,
-        created_at
-      )
-    `)
-    .eq("patient_id", user.id)
-    .order("created_at", { ascending: false })
+  // Get treatment details for each condition
+  const conditionsWithTreatments = await Promise.all(
+    conditions.map(async (condition) => {
+      if (!condition.condition_id) return null
+      const treatments = await getTreatmentsForConditionAction(condition.condition_id)
+      const effectivenessMap = treatmentEffectiveness.reduce((acc, curr) => {
+        acc[curr.treatment_id] = curr.effectiveness_out_of_ten || 0
+        return acc
+      }, {} as Record<string, number>)
 
-  const patientName = profile ? `${profile.first_name} ${profile.last_name}` : "Patient"
-  const patientData = {
-    name: patientName,
-    enrollments: (enrollments || []) as Enrollment[],
-    totalEnrollment: enrollments?.length || 0,
-  }
+      return {
+        id: condition.id || "",
+        condition_name: condition.condition_name || "Unknown Condition",
+        treatments: treatments.map(t => ({
+          id: t.id,
+          effectiveness_out_of_ten: effectivenessMap[t.id] || 0,
+          treatment: {
+            global_variables: {
+              name: t.name,
+              description: t.description || ""
+            }
+          }
+        }))
+      }
+    })
+  ).then(results => results.filter((r): r is NonNullable<typeof r> => r !== null))
 
   return (
     <div className="container space-y-8 py-8">
-      <PatientOverview {...patientData} />
-      <div className="grid gap-8 md:grid-cols-2">
-        <EnrolledTrials enrollments={patientData.enrollments} />
-        <RecentActivity activities={patientData.enrollments} />
-      </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>{user.user_metadata?.name || "Patient"}'s Dashboard</CardTitle>
+          <CardDescription>Manage your conditions and treatments</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <p className="text-2xl font-bold">{conditions.length}</p>
+              <p className="text-sm text-muted-foreground">Active Conditions</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-2xl font-bold">{treatmentEffectiveness.length}</p>
+              <p className="text-sm text-muted-foreground">Active Treatments</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <div>
+            <CardTitle>Your Conditions & Treatments</CardTitle>
+            <CardDescription>Track your health conditions and treatment effectiveness</CardDescription>
+          </div>
+          <Link href="/patient/treatments">
+            <Button variant="outline" size="sm">
+              <Plus className="mr-2 h-4 w-4" />
+              Add New
+            </Button>
+          </Link>
+        </CardHeader>
+        <CardContent>
+          {conditions.length > 0 ? (
+            <div className="space-y-4">
+              {conditionsWithTreatments.map((condition) => (
+                <div key={condition.id} className="border-b pb-4 last:border-0">
+                  <h3 className="font-medium">{condition.condition_name}</h3>
+                  {condition.treatments && condition.treatments.length > 0 ? (
+                    <div className="mt-2 space-y-2">
+                      {condition.treatments.map((treatment) => (
+                        <div key={treatment.id} className="text-sm text-muted-foreground">
+                          {treatment.treatment.global_variables.name} - Effectiveness: {treatment.effectiveness_out_of_ten}/10
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground mt-2">No treatments added yet</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-6 text-muted-foreground">
+              <p>No conditions added yet.</p>
+              <Link href="/patient/treatments" className="text-primary hover:underline">
+                Add your first condition
+              </Link>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   )
 }

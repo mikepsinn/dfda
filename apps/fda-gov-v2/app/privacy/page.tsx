@@ -2,11 +2,14 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
+import { getServerUser } from "@/lib/server-auth"
 
-export default function PrivacyPolicy() {
+export default async function PrivacyPolicy() {
+  const user = await getServerUser()
+
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <Header initialUser={user} />
       <main className="flex-1 py-6 md:py-10">
         <div className="container">
           <div className="mx-auto max-w-3xl">
