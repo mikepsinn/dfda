@@ -9,7 +9,7 @@ INSERT INTO treatments (id, treatment_type, manufacturer, approval_status) VALUE
 ('escitalopram', 'Medication', 'Various', 'Approved'),
 ('albuterol', 'Medication', 'Various', 'Approved'),
 ('semaglutide', 'Medication', 'Novo Nordisk', 'Approved'),
-('ketamine', 'Medication', 'Various', 'Off-label'),
+('ketamine', 'Medication', 'Various', 'investigational'),
 ('tocilizumab', 'Biologic', 'Genentech', 'Approved'),
 ('aspirin', 'Medication', 'Various', 'Approved'),
 ('ibuprofen', 'Medication', 'Various', 'Approved'),
