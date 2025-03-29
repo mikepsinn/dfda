@@ -98,27 +98,35 @@ export async function getTrialsAction(): Promise<TrialWithRelations[]> {
 }
 
 // Get trials by condition
-export async function getTrialsByConditionAction(conditionId: string): Promise<TrialWithRelations[]> {
+export async function getTrialsByConditionAction(conditionId: string) {
   const supabase = await createClient()
-  
-  const response = await supabase
+
+  const { data, error } = await supabase
     .from("trials")
     .select(`
       *,
-      conditions:condition_id(id, name),
-      treatments:treatment_id(id, name),
-      sponsors:sponsor_id(id, name)
+      sponsor:profiles!trials_sponsor_id_fkey (
+        first_name,
+        last_name
+      ),
+      conditions!trial_conditions (
+        condition_id
+      )
     `)
-    .eq("condition_id", conditionId)
+    .eq("conditions.condition_id", conditionId)
     .eq("status", "active")
-    .order("created_at", { ascending: false })
 
-  if (response.error) {
-    logger.error(`Error fetching trials for condition ${conditionId}:`, response.error)
-    throw new Error("Failed to fetch trials for condition")
+  if (error) {
+    logger.error("Error fetching trials by condition:", { error })
+    throw new Error("Failed to fetch trials")
   }
 
-  return response.data as unknown as TrialWithRelations[]
+  return data.map(trial => ({
+    ...trial,
+    sponsor_name: trial.sponsor ? 
+      `${trial.sponsor.first_name || ''} ${trial.sponsor.last_name || ''}`.trim() || 'Unknown Sponsor' 
+      : 'Unknown Sponsor'
+  }))
 }
 
 // Get trials by treatment
