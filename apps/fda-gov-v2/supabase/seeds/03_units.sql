@@ -6,7 +6,7 @@
 -- TRUNCATE TABLE units RESTART IDENTITY CASCADE; -- Use if needed, be cautious
 
 -- Insert units
-INSERT INTO units (id, name, abbreviation, unit_category_id, is_default)
+INSERT INTO units (id, name, abbreviation, category_id, is_default)
 VALUES
 -- Dimensionless (Counts, Scores, Normalized Ratings)
 ('1', 'Dimensionless', '1', 'dimensionless', true), -- Default for counts, normalized scores/ratings
