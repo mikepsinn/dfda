@@ -205,36 +205,49 @@ export type Database = {
       }
       global_variables: {
         Row: {
+          canonical_global_variable_id: string | null
           created_at: string | null
           default_unit_id: string | null
           deleted_at: string | null
           description: string | null
+          emoji: string | null
           id: string
           name: string
           updated_at: string | null
           variable_category_id: string
         }
         Insert: {
+          canonical_global_variable_id?: string | null
           created_at?: string | null
           default_unit_id?: string | null
           deleted_at?: string | null
           description?: string | null
+          emoji?: string | null
           id: string
           name: string
           updated_at?: string | null
           variable_category_id: string
         }
         Update: {
+          canonical_global_variable_id?: string | null
           created_at?: string | null
           default_unit_id?: string | null
           deleted_at?: string | null
           description?: string | null
+          emoji?: string | null
           id?: string
           name?: string
           updated_at?: string | null
           variable_category_id?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "global_variables_canonical_global_variable_id_fkey"
+            columns: ["canonical_global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "global_variables_default_unit_id_fkey"
             columns: ["default_unit_id"]
@@ -329,7 +342,9 @@ export type Database = {
         Row: {
           created_at: string | null
           deleted_at: string | null
+          emoji: string | null
           id: string
+          image_url: string | null
           link: string | null
           message: string
           read_at: string | null
@@ -341,7 +356,9 @@ export type Database = {
         Insert: {
           created_at?: string | null
           deleted_at?: string | null
+          emoji?: string | null
           id?: string
+          image_url?: string | null
           link?: string | null
           message: string
           read_at?: string | null
@@ -353,7 +370,9 @@ export type Database = {
         Update: {
           created_at?: string | null
           deleted_at?: string | null
+          emoji?: string | null
           id?: string
+          image_url?: string | null
           link?: string | null
           message?: string
           read_at?: string | null
@@ -769,14 +788,72 @@ export type Database = {
           },
         ]
       }
+      regulatory_approvals: {
+        Row: {
+          agency: string
+          created_at: string | null
+          decision_date: string | null
+          deleted_at: string | null
+          id: string
+          indication: string | null
+          notes: string | null
+          region: string
+          status: string
+          treatment_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          agency: string
+          created_at?: string | null
+          decision_date?: string | null
+          deleted_at?: string | null
+          id?: string
+          indication?: string | null
+          notes?: string | null
+          region: string
+          status: string
+          treatment_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          agency?: string
+          created_at?: string | null
+          decision_date?: string | null
+          deleted_at?: string | null
+          id?: string
+          indication?: string | null
+          notes?: string | null
+          region?: string
+          status?: string
+          treatment_id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "regulatory_approvals_treatment_id_fkey"
+            columns: ["treatment_id"]
+            isOneToOne: false
+            referencedRelation: "patient_treatments_view"
+            referencedColumns: ["treatment_id"]
+          },
+          {
+            foreignKeyName: "regulatory_approvals_treatment_id_fkey"
+            columns: ["treatment_id"]
+            isOneToOne: false
+            referencedRelation: "treatments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reported_side_effects: {
         Row: {
           created_at: string | null
           deleted_at: string | null
           description: string
           id: string
-          severity: number | null
+          severity_out_of_ten: number | null
           treatment_id: string
+          unit_id: string
           updated_at: string | null
           user_id: string
         }
@@ -785,8 +862,9 @@ export type Database = {
           deleted_at?: string | null
           description: string
           id?: string
-          severity?: number | null
+          severity_out_of_ten?: number | null
           treatment_id: string
+          unit_id?: string
           updated_at?: string | null
           user_id: string
         }
@@ -795,8 +873,9 @@ export type Database = {
           deleted_at?: string | null
           description?: string
           id?: string
-          severity?: number | null
+          severity_out_of_ten?: number | null
           treatment_id?: string
+          unit_id?: string
           updated_at?: string | null
           user_id?: string
         }
@@ -816,6 +895,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "reported_side_effects_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "reported_side_effects_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
@@ -829,11 +915,12 @@ export type Database = {
           condition_id: string
           created_at: string | null
           deleted_at: string | null
-          effectiveness: number | null
+          effectiveness_out_of_ten: number | null
           helpful_count: number | null
           id: string
           review: string | null
           treatment_id: string
+          unit_id: string
           updated_at: string | null
           user_id: string
         }
@@ -841,11 +928,12 @@ export type Database = {
           condition_id: string
           created_at?: string | null
           deleted_at?: string | null
-          effectiveness?: number | null
+          effectiveness_out_of_ten?: number | null
           helpful_count?: number | null
           id?: string
           review?: string | null
           treatment_id: string
+          unit_id?: string
           updated_at?: string | null
           user_id: string
         }
@@ -853,11 +941,12 @@ export type Database = {
           condition_id?: string
           created_at?: string | null
           deleted_at?: string | null
-          effectiveness?: number | null
+          effectiveness_out_of_ten?: number | null
           helpful_count?: number | null
           id?: string
           review?: string | null
           treatment_id?: string
+          unit_id?: string
           updated_at?: string | null
           user_id?: string
         }
@@ -891,6 +980,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+            foreignKeyName: "treatment_ratings_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "treatment_ratings_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
@@ -901,7 +997,6 @@ export type Database = {
       }
       treatments: {
         Row: {
-          approval_status: string | null
           created_at: string | null
           deleted_at: string | null
           id: string
@@ -910,7 +1005,6 @@ export type Database = {
           updated_at: string | null
         }
         Insert: {
-          approval_status?: string | null
           created_at?: string | null
           deleted_at?: string | null
           id: string
@@ -919,7 +1013,6 @@ export type Database = {
           updated_at?: string | null
         }
         Update: {
-          approval_status?: string | null
           created_at?: string | null
           deleted_at?: string | null
           id?: string
@@ -1253,24 +1346,33 @@ export type Database = {
         Row: {
           base_unit_id: string | null
           created_at: string | null
+          deleted_at: string | null
           description: string | null
+          emoji: string | null
           id: string
+          image_url: string | null
           name: string
           updated_at: string | null
         }
         Insert: {
           base_unit_id?: string | null
           created_at?: string | null
+          deleted_at?: string | null
           description?: string | null
+          emoji?: string | null
           id: string
+          image_url?: string | null
           name: string
           updated_at?: string | null
         }
         Update: {
           base_unit_id?: string | null
           created_at?: string | null
+          deleted_at?: string | null
           description?: string | null
+          emoji?: string | null
           id?: string
+          image_url?: string | null
           name?: string
           updated_at?: string | null
         }
@@ -1290,7 +1392,9 @@ export type Database = {
           conversion_factor: number
           conversion_offset: number
           created_at: string | null
+          emoji: string | null
           id: string
+          image_url: string | null
           name: string
           ucum_code: string | null
           unit_category_id: string
@@ -1301,7 +1405,9 @@ export type Database = {
           conversion_factor: number
           conversion_offset?: number
           created_at?: string | null
+          emoji?: string | null
           id: string
+          image_url?: string | null
           name: string
           ucum_code?: string | null
           unit_category_id: string
@@ -1312,7 +1418,9 @@ export type Database = {
           conversion_factor?: number
           conversion_offset?: number
           created_at?: string | null
+          emoji?: string | null
           id?: string
+          image_url?: string | null
           name?: string
           ucum_code?: string | null
           unit_category_id?: string
@@ -1333,8 +1441,10 @@ export type Database = {
           created_at: string | null
           deleted_at: string | null
           description: string | null
+          emoji: string | null
           global_variable_id: string
           id: string
+          image_url: string | null
           name: string
           unit_category_id: string | null
           updated_at: string | null
@@ -1344,8 +1454,10 @@ export type Database = {
           created_at?: string | null
           deleted_at?: string | null
           description?: string | null
+          emoji?: string | null
           global_variable_id: string
           id?: string
+          image_url?: string | null
           name: string
           unit_category_id?: string | null
           updated_at?: string | null
@@ -1355,8 +1467,10 @@ export type Database = {
           created_at?: string | null
           deleted_at?: string | null
           description?: string | null
+          emoji?: string | null
           global_variable_id?: string
           id?: string
+          image_url?: string | null
           name?: string
           unit_category_id?: string | null
           updated_at?: string | null
@@ -1392,6 +1506,7 @@ export type Database = {
           display_order: number | null
           emoji: string | null
           id: string
+          image_url: string | null
           long_description: string | null
           name: string
           short_description: string | null
@@ -1402,6 +1517,7 @@ export type Database = {
           display_order?: number | null
           emoji?: string | null
           id: string
+          image_url?: string | null
           long_description?: string | null
           name: string
           short_description?: string | null
@@ -1412,6 +1528,7 @@ export type Database = {
           display_order?: number | null
           emoji?: string | null
           id?: string
+          image_url?: string | null
           long_description?: string | null
           name?: string
           short_description?: string | null
@@ -1483,7 +1600,6 @@ export type Database = {
       }
       patient_treatments_view: {
         Row: {
-          approval_status: string | null
           end_at: string | null
           global_variable_id: string | null
           manufacturer: string | null
