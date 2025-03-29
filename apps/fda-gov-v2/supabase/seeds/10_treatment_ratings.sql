@@ -2,7 +2,7 @@
 -- Contains seed data for treatment ratings
 
 -- Insert treatment ratings (with 1-10 scale for effectiveness)
-INSERT INTO treatment_ratings (user_id, treatment_id, condition_id, effectiveness, review)
+INSERT INTO treatment_ratings (user_id, treatment_id, condition_id, effectiveness_out_of_ten, review)
 VALUES
     -- Alice rates Aspirin for headaches (Original Rating: 8)
     ((SELECT id FROM profiles WHERE email = 'alice@example.com'), 'aspirin', 'headache', 8, 'Works well for my headaches.'),
