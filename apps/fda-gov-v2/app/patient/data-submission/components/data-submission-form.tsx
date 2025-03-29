@@ -15,18 +15,18 @@ import { Textarea } from "@/components/ui/textarea"
 import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
 import { createBrowserClient } from "@/lib/supabase"
+import { logger } from "@/lib/logger"
 
-type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Insert"]
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Insert"]
 type DataSubmissionRow = Database["public"]["Tables"]["data_submissions"]["Row"]
 
-// Extend with UI-specific properties
-interface TrialSubmissionData {
+type TrialSubmissionData = {
   trial: Trial
   submission: DataSubmissionRow
-  currentMilestone?: string
-  refundAmount?: number
-  progress?: number
+  currentMilestone: string
+  refundAmount: number
+  progress: number
 }
 
 export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionData }) {
@@ -40,7 +40,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
     const user = (await supabase.auth.getUser()).data.user
 
     if (!user) {
-      console.error("No user found")
+      logger.error("No user found during data submission")
       return
     }
 
@@ -87,7 +87,7 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
 
       setSubmissionComplete(true)
     } else {
-      console.error("Error submitting data:", error)
+      logger.error("Error submitting trial data:", error)
       // Handle error (could add toast notification here)
     }
   }

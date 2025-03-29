@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { createBrowserClient } from "@/lib/supabase"
 import { Check } from "lucide-react"
+import { logger } from "@/lib/logger"
 
 type ContactMessage = Database["public"]["Tables"]["contact_messages"]["Insert"]
 
@@ -30,6 +31,7 @@ export function ContactForm() {
       email: formData.get("email") as string,
       subject: formData.get("inquiryType") as string,
       message: formData.get("message") as string,
+      name: "Anonymous", // Default name for now
       status: "new",
     }
 
@@ -41,7 +43,7 @@ export function ContactForm() {
       setIsSubmitted(true)
       e.currentTarget.reset()
     } catch (error) {
-      console.error("Error submitting form:", error)
+      logger.error("Error submitting contact form:", error)
       setFormError("There was an error submitting your message. Please try again.")
     } finally {
       setIsSubmitting(false)

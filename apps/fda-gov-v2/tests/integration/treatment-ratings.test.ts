@@ -1,4 +1,5 @@
-import { createClient } from '@supabase/supabase-js'
+import type { Database } from "@/lib/database.types"
+import { createTestClient } from "@/lib/supabase/test-client"
 import { describe, it, expect, beforeEach, afterEach } from '@jest/globals'
 import {
   getTreatmentRatingsAction,
@@ -6,12 +7,15 @@ import {
   createTreatmentRatingAction,
 } from '@/app/actions/treatment-ratings'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
+type TreatmentStats = {
+  avg_effectiveness: number
+  avg_side_effects: number
+  total_ratings: number
+}
 
 describe('Treatment Ratings API Integration', () => {
+  const supabase = createTestClient()
   const testTreatmentId = 'test-treatment-1'
   const testConditionId = 'test-condition-1'
   const testUserId = 'test-user-1'
@@ -149,5 +153,37 @@ describe('Treatment Ratings API Integration', () => {
         review: 'Second review'
       })).rejects.toThrow()
     })
+  })
+
+  it("should get ratings sorted by date", async () => {
+    const { data: ratings } = await supabase
+      .from("treatment_ratings")
+      .select()
+      .order("created_at", { ascending: false })
+
+    expect(ratings).toBeDefined()
+    expect(ratings).toHaveLength(2)
+    expect((ratings as TreatmentRating[])[0].effectiveness_rating).toBe(5) // Most recent first
+    expect((ratings as TreatmentRating[])[1].effectiveness_rating).toBe(4)
+  })
+
+  it("should calculate average rating", async () => {
+    const { data: result } = await supabase
+      .rpc("get_treatment_stats", { treatment_id: "test-treatment" })
+
+    expect(result).toBeDefined()
+    const stats = result as TreatmentStats
+    expect(stats.avg_effectiveness).toBe(4.5)
+    expect(stats.total_ratings).toBe(2)
+  })
+
+  it("should handle no ratings", async () => {
+    const { data: result } = await supabase
+      .rpc("get_treatment_stats", { treatment_id: "non-existent" })
+
+    expect(result).toBeDefined()
+    const stats = result as TreatmentStats
+    expect(stats.avg_effectiveness).toBe(0)
+    expect(stats.total_ratings).toBe(0)
   })
 }) 
