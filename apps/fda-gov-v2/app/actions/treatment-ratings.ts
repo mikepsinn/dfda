@@ -2,24 +2,37 @@
 
 import { createClient } from '@/lib/supabase/server'
 import type { Database } from '@/lib/database.types'
-import { handleDatabaseResponse, handleDatabaseCollectionResponse, handleDatabaseMutationResponse } from '@/lib/actions-helpers'
+import { handleDatabaseResponse, handleDatabaseCollectionResponse } from '@/lib/actions-helpers'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
 
-export type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row']
+export type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row'] & {
+  profiles?: {
+    first_name: string | null
+    last_name: string | null
+    user_type: string | null
+  } | null
+}
 export type TreatmentRatingInsert = Database['public']['Tables']['treatment_ratings']['Insert']
 export type TreatmentRatingUpdate = Database['public']['Tables']['treatment_ratings']['Update']
 
 // Get all ratings for a treatment and condition
-export async function getTreatmentRatingsAction(): Promise<TreatmentRating[]> {
+export async function getTreatmentRatingsAction(treatmentId: string, conditionId: string): Promise<TreatmentRating[]> {
   const supabase = await createClient()
 
   const response = await supabase
     .from('treatment_ratings')
     .select(`
       *,
-      profiles:user_id(first_name, last_name, user_type)
+      profiles:user_id (
+        first_name,
+        last_name,
+        user_type
+      )
     `)
+    .eq('treatment_id', treatmentId)
+    .eq('condition_id', conditionId)
+    .is('deleted_at', null)
     .order('created_at', { ascending: false })
 
   if (response.error) {
@@ -38,7 +51,11 @@ export async function getTreatmentRatingByIdAction(id: string): Promise<Treatmen
     .from('treatment_ratings')
     .select(`
       *,
-      profiles:user_id(first_name, last_name, user_type)
+      profiles:user_id (
+        first_name,
+        last_name,
+        user_type
+      )
     `)
     .eq('id', id)
     .single()
@@ -52,7 +69,7 @@ export async function getTreatmentRatingByIdAction(id: string): Promise<Treatmen
 }
 
 // Get a user's rating for a treatment and condition
-export async function getUserTreatmentRatingAction(userId: string, treatmentId: string, conditionId: string) {
+export async function getUserTreatmentRatingAction(userId: string, treatmentId: string, conditionId: string): Promise<TreatmentRating | null> {
   const supabase = await createClient()
 
   const response = await supabase
@@ -61,6 +78,7 @@ export async function getUserTreatmentRatingAction(userId: string, treatmentId: 
     .eq('user_id', userId)
     .eq('treatment_id', treatmentId)
     .eq('condition_id', conditionId)
+    .is('deleted_at', null)
     .single()
 
   if (response.error && response.error.code !== 'PGRST116') {
@@ -96,7 +114,14 @@ export async function createTreatmentRatingAction(rating: TreatmentRatingInsert)
   const response = await supabase
     .from('treatment_ratings')
     .insert(rating)
-    .select()
+    .select(`
+      *,
+      profiles:user_id (
+        first_name,
+        last_name,
+        user_type
+      )
+    `)
     .single()
 
   if (response.error) {
@@ -107,6 +132,9 @@ export async function createTreatmentRatingAction(rating: TreatmentRatingInsert)
   // Revalidate relevant paths
   if ('treatment_id' in rating && rating.treatment_id) {
     revalidatePath(`/treatment/${rating.treatment_id}`)
+  }
+  if ('condition_id' in rating && rating.condition_id) {
+    revalidatePath(`/condition/${rating.condition_id}`)
   }
   
   return handleDatabaseResponse<TreatmentRating>(response)
@@ -120,7 +148,14 @@ export async function updateTreatmentRatingAction(id: string, updates: Treatment
     .from('treatment_ratings')
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq('id', id)
-    .select()
+    .select(`
+      *,
+      profiles:user_id (
+        first_name,
+        last_name,
+        user_type
+      )
+    `)
     .single()
 
   if (response.error) {
@@ -129,20 +164,21 @@ export async function updateTreatmentRatingAction(id: string, updates: Treatment
   }
 
   // Get the rating to revalidate the correct paths
-  const rating = await getTreatmentRatingByIdAction(id) as TreatmentRating | null
-  if (rating && rating.treatment_id) {
+  const rating = await getTreatmentRatingByIdAction(id)
+  if (rating) {
     revalidatePath(`/treatment/${rating.treatment_id}`)
+    revalidatePath(`/condition/${rating.condition_id}`)
   }
   
   return handleDatabaseResponse<TreatmentRating>(response)
 }
 
 // Delete a rating
-export async function deleteTreatmentRatingAction(id: string) {
+export async function deleteTreatmentRatingAction(id: string): Promise<void> {
   const supabase = await createClient()
   
   // Get the rating before deleting to revalidate the correct paths
-  const rating = await getTreatmentRatingByIdAction(id) as TreatmentRating | null
+  const rating = await getTreatmentRatingByIdAction(id)
 
   const response = await supabase
     .from('treatment_ratings')
@@ -155,18 +191,14 @@ export async function deleteTreatmentRatingAction(id: string) {
   }
 
   // Revalidate relevant paths
-  if (rating && rating.treatment_id) {
+  if (rating) {
     revalidatePath(`/treatment/${rating.treatment_id}`)
+    revalidatePath(`/condition/${rating.condition_id}`)
   }
-  
-  return handleDatabaseMutationResponse<TreatmentRating>(
-    response, 
-    'Failed to delete treatment rating'
-  )
 }
 
 // Mark a rating as helpful
-export async function markRatingAsHelpfulAction(id: string) {
+export async function markRatingAsHelpfulAction(id: string): Promise<boolean> {
   const supabase = await createClient()
 
   const response = await supabase.rpc('increment_helpful_count', {
@@ -179,9 +211,10 @@ export async function markRatingAsHelpfulAction(id: string) {
   }
 
   // Get the rating to revalidate the correct paths
-  const rating = await getTreatmentRatingByIdAction(id) as TreatmentRating | null
-  if (rating && rating.treatment_id) {
+  const rating = await getTreatmentRatingByIdAction(id)
+  if (rating) {
     revalidatePath(`/treatment/${rating.treatment_id}`)
+    revalidatePath(`/condition/${rating.condition_id}`)
   }
   
   return true

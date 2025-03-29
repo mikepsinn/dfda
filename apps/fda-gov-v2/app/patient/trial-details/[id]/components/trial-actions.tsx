@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button"
 import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
+import { useToast } from '@/components/ui/use-toast'
 
 interface TrialActionsProps {
   trialId: string
@@ -15,8 +16,8 @@ interface TrialActionsProps {
 
 export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps) {
   const router = useRouter()
+  const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
 
   const handleEnroll = async () => {
     if (!userId) {
@@ -32,7 +33,11 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
 
       if (!user) {
         logger.error("No user found during enrollment")
-        setError("Failed to enroll in trial. Please try again.")
+        toast({
+          title: 'Error',
+          description: 'Failed to enroll in trial. Please try again.',
+          variant: 'destructive',
+        })
         return
       }
 
@@ -50,14 +55,28 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
 
       if (error) {
         logger.error("Error enrolling in trial:", error)
-        setError("Failed to enroll in trial. Please try again.")
+        toast({
+          title: 'Error',
+          description: 'Failed to enroll in trial. Please try again.',
+          variant: 'destructive',
+        })
         return
       }
 
       // Refresh the page to show updated enrollment status
       router.refresh()
+
+      toast({
+        title: 'Success',
+        description: 'You have been enrolled in the trial.',
+      })
     } catch (error) {
       console.error("Error enrolling in trial:", error)
+      toast({
+        title: 'Error',
+        description: 'Failed to enroll in trial. Please try again.',
+        variant: 'destructive',
+      })
     } finally {
       setIsLoading(false)
     }
