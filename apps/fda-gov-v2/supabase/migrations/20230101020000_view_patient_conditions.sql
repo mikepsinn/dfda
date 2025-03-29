@@ -18,7 +18,7 @@ JOIN global_variables gv ON gv.id = c.id -- Join conditions with global_variable
 LEFT JOIN measurements m ON m.user_id = pc.patient_id
 WHERE pc.deleted_at IS NULL
   AND c.deleted_at IS NULL
-  AND gv.deleted_at IS NULL
+  AND gv.deleted_at IS NULL -- global_variables does now have soft delete
 GROUP BY 
   pc.id,
   pc.patient_id,

@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS global_variables (
   name TEXT NOT NULL,
   description TEXT,
   default_unit_id TEXT REFERENCES units(id) ON DELETE RESTRICT, -- Renamed from unit_category_id, references specific unit
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
