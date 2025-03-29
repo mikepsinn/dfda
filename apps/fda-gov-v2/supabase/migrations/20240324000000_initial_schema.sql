@@ -390,6 +390,11 @@ AS $$
 BEGIN
   INSERT INTO public.profiles (id, email)
   VALUES (new.id, new.email);
+  
+  -- If the user is a patient (default), create a patient record
+  INSERT INTO public.patients (id)
+  VALUES (new.id);
+  
   RETURN new;
 END;
 $$;
@@ -856,6 +861,111 @@ CREATE TRIGGER update_contact_messages_updated_at
 CREATE INDEX idx_contact_messages_status ON contact_messages(status);
 CREATE INDEX idx_contact_messages_deleted_at ON contact_messages(deleted_at) WHERE deleted_at IS NOT NULL;
 
+-- Patients table
+CREATE TABLE IF NOT EXISTS patients (
+  id UUID PRIMARY KEY REFERENCES profiles(id) ON DELETE CASCADE,
+  date_of_birth DATE,
+  gender TEXT,
+  height NUMERIC,
+  weight NUMERIC,
+  blood_type TEXT,
+  insurance_provider TEXT,
+  insurance_id TEXT,
+  emergency_contact_name TEXT,
+  emergency_contact_phone TEXT,
+  deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Enable RLS on patients
+ALTER TABLE patients ENABLE ROW LEVEL SECURITY;
+
+-- Create RLS policies for patients
+CREATE POLICY "Patients can view own record"
+  ON patients FOR SELECT
+  USING (auth.uid() = id AND deleted_at IS NULL);
+
+CREATE POLICY "Doctors can view patient records"
+  ON patients FOR SELECT
+  USING (
+    EXISTS (
+      SELECT 1 FROM profiles
+      WHERE id = auth.uid() AND user_type = 'doctor' AND deleted_at IS NULL
+    ) AND deleted_at IS NULL
+  );
+
+CREATE POLICY "Patients can update own record"
+  ON patients FOR UPDATE
+  USING (auth.uid() = id);
+
+CREATE POLICY "Doctors can update patient records"
+  ON patients FOR UPDATE
+  USING (
+    EXISTS (
+      SELECT 1 FROM profiles
+      WHERE id = auth.uid() AND user_type = 'doctor' AND deleted_at IS NULL
+    )
+  );
+
+-- Create indexes for patients
+CREATE INDEX patients_deleted_at_idx ON patients(deleted_at) WHERE deleted_at IS NOT NULL;
+
+-- Update the handle_new_user function to create a patient record for patient user type
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS trigger
+LANGUAGE plpgsql
+SECURITY DEFINER SET search_path = public
+AS $$
+BEGIN
+  INSERT INTO public.profiles (id, email)
+  VALUES (new.id, new.email);
+  
+  -- If the user is a patient (default), create a patient record
+  INSERT INTO public.patients (id)
+  VALUES (new.id);
+  
+  RETURN new;
+END;
+$$;
+
+-- Create a view to get eligible trials for patients based on their conditions
+CREATE OR REPLACE VIEW patient_eligible_trials AS
+SELECT 
+  pc.patient_id,
+  t.id AS trial_id,
+  t.title,
+  t.description,
+  t.status,
+  t.phase,
+  t.start_date,
+  t.end_date,
+  t.enrollment_target,
+  t.current_enrollment,
+  c.name AS condition_name,
+  tr.name AS treatment_name
+FROM 
+  patient_conditions pc
+JOIN 
+  trials t ON pc.condition_id = t.condition_id
+JOIN 
+  conditions c ON t.condition_id = c.id
+JOIN 
+  treatments tr ON t.treatment_id = tr.id
+WHERE 
+  pc.deleted_at IS NULL
+  AND t.deleted_at IS NULL
+  AND c.deleted_at IS NULL
+  AND tr.deleted_at IS NULL
+  AND t.status = 'recruiting'
+  AND pc.status = 'active'
+  AND NOT EXISTS (
+    -- Exclude trials the patient is already enrolled in
+    SELECT 1 FROM trial_enrollments te
+    WHERE te.patient_id = pc.patient_id
+    AND te.trial_id = t.id
+    AND te.deleted_at IS NULL
+  );
 
 -- OAuth Clients Table: Stores registered applications
 CREATE TABLE IF NOT EXISTS oauth_clients (
@@ -894,7 +1004,6 @@ INSERT INTO oauth_scopes (scope, description) VALUES
                                                   ('measurements:read', 'Read measurement data user has access to'),
                                                   ('measurements:write', 'Submit measurement data on behalf of the user')
 ON CONFLICT (scope) DO NOTHING;
-
 
 -- OAuth Authorization Codes Table: Stores temporary codes for auth code flow
 CREATE TABLE IF NOT EXISTS oauth_authorization_codes (
@@ -938,7 +1047,6 @@ CREATE INDEX IF NOT EXISTS idx_oauth_refresh_tokens_client_id ON oauth_refresh_t
 CREATE INDEX IF NOT EXISTS idx_oauth_authorization_codes_expires_at ON oauth_authorization_codes(expires_at);
 CREATE INDEX IF NOT EXISTS idx_oauth_access_tokens_expires_at ON oauth_access_tokens(expires_at);
 CREATE INDEX IF NOT EXISTS idx_oauth_refresh_tokens_expires_at ON oauth_refresh_tokens(expires_at);
-
 
 -- Enable RLS (policies need to be defined separately based on auth logic)
 ALTER TABLE oauth_clients ENABLE ROW LEVEL SECURITY;

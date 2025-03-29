@@ -9,30 +9,45 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Search, User, Activity, Microscope, FileText, Pill, ChevronRight } from "lucide-react"
+import type { Database } from "@/lib/database.types"
 
-interface Patient {
-  id: number
-  name: string
-  age: number
-  condition: string
-  eligibleTrials: { id: number; name: string }[]
-  lastVisit: string
-  status: string
+// Use the auto-generated database types
+type ProfileRow = Database["public"]["Tables"]["profiles"]["Row"]
+type PatientRow = Database["public"]["Tables"]["patients"]["Row"]
+type TrialRow = Database["public"]["Tables"]["trials"]["Row"]
+type TrialEnrollmentRow = Database["public"]["Tables"]["trial_enrollments"]["Row"]
+
+// Helper function to calculate age from date of birth
+function calculateAge(dateOfBirth: string | null | undefined): number {
+  if (!dateOfBirth) return 0
+  const dob = new Date(dateOfBirth)
+  const today = new Date()
+  let age = today.getFullYear() - dob.getFullYear()
+  const monthDifference = today.getMonth() - dob.getMonth()
+  if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < dob.getDate())) {
+    age--
+  }
+  return age
 }
 
-interface EnrolledPatient {
-  id: number
-  name: string
-  age: number
+// Extend with UI-specific properties
+type EligiblePatient = ProfileRow & PatientRow & {
+  eligibleTrials: { id: string; name: string }[]
+  lastVisit: string
+  status: string
   condition: string
+}
+
+type EnrolledPatient = ProfileRow & PatientRow & {
   trial: string
   enrollmentDate: string
   nextVisit: string
+  condition: string
   pendingActions: { type: string; name: string; due: string }[]
 }
 
 interface PatientManagementProps {
-  eligiblePatients: Patient[]
+  eligiblePatients: EligiblePatient[]
   enrolledPatients: EnrolledPatient[]
 }
 
@@ -42,13 +57,15 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
   // Filter patients based on search query
   const filteredEligiblePatients = eligiblePatients.filter(
     (patient) =>
-      patient.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      patient.first_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      patient.last_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       patient.condition.toLowerCase().includes(searchQuery.toLowerCase()),
   )
 
   const filteredEnrolledPatients = enrolledPatients.filter(
     (patient) =>
-      patient.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      patient.first_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      patient.last_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       patient.condition.toLowerCase().includes(searchQuery.toLowerCase()) ||
       patient.trial.toLowerCase().includes(searchQuery.toLowerCase()),
   )
@@ -87,16 +104,13 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
                     <div className="flex items-center gap-3">
                       <Avatar>
                         <AvatarFallback>
-                          {patient.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
+                          {`${patient.first_name?.[0] || ''}${patient.last_name?.[0] || ''}`}
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <h3 className="font-medium">{patient.name}</h3>
+                        <h3 className="font-medium">{`${patient.first_name || ''} ${patient.last_name || ''}`}</h3>
                         <p className="text-sm text-muted-foreground">
-                          {patient.age} years • {patient.condition}
+                          {calculateAge(patient.date_of_birth)} years • {patient.condition}
                         </p>
                       </div>
                     </div>
@@ -145,16 +159,13 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
                     <div className="flex items-center gap-3">
                       <Avatar>
                         <AvatarFallback>
-                          {patient.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .join("")}
+                          {`${patient.first_name?.[0] || ''}${patient.last_name?.[0] || ''}`}
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <h3 className="font-medium">{patient.name}</h3>
+                        <h3 className="font-medium">{`${patient.first_name || ''} ${patient.last_name || ''}`}</h3>
                         <p className="text-sm text-muted-foreground">
-                          {patient.age} years • {patient.condition}
+                          {calculateAge(patient.date_of_birth)} years • {patient.condition}
                         </p>
                       </div>
                     </div>
@@ -235,4 +246,3 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
     </Card>
   )
 }
-

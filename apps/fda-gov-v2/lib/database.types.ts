@@ -660,6 +660,62 @@ export type Database = {
           },
         ]
       }
+      patients: {
+        Row: {
+          blood_type: string | null
+          created_at: string | null
+          date_of_birth: string | null
+          deleted_at: string | null
+          emergency_contact_name: string | null
+          emergency_contact_phone: string | null
+          gender: string | null
+          height: number | null
+          id: string
+          insurance_id: string | null
+          insurance_provider: string | null
+          updated_at: string | null
+          weight: number | null
+        }
+        Insert: {
+          blood_type?: string | null
+          created_at?: string | null
+          date_of_birth?: string | null
+          deleted_at?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          gender?: string | null
+          height?: number | null
+          id: string
+          insurance_id?: string | null
+          insurance_provider?: string | null
+          updated_at?: string | null
+          weight?: number | null
+        }
+        Update: {
+          blood_type?: string | null
+          created_at?: string | null
+          date_of_birth?: string | null
+          deleted_at?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
+          gender?: string | null
+          height?: number | null
+          id?: string
+          insurance_id?: string | null
+          insurance_provider?: string | null
+          updated_at?: string | null
+          weight?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patients_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           contact_name: string | null
@@ -1047,6 +1103,13 @@ export type Database = {
             foreignKeyName: "trial_enrollments_trial_id_fkey"
             columns: ["trial_id"]
             isOneToOne: false
+            referencedRelation: "patient_eligible_trials"
+            referencedColumns: ["trial_id"]
+          },
+          {
+            foreignKeyName: "trial_enrollments_trial_id_fkey"
+            columns: ["trial_id"]
+            isOneToOne: false
             referencedRelation: "trials"
             referencedColumns: ["id"]
           },
@@ -1370,6 +1433,31 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "measurements_user_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_eligible_trials: {
+        Row: {
+          condition_name: string | null
+          current_enrollment: number | null
+          description: string | null
+          end_date: string | null
+          enrollment_target: number | null
+          patient_id: string | null
+          phase: string | null
+          start_date: string | null
+          status: string | null
+          title: string | null
+          treatment_name: string | null
+          trial_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_conditions_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
             referencedRelation: "profiles"
