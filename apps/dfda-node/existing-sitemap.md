@@ -68,7 +68,7 @@ This document outlines the existing directory structure of the dfda-node app bef
   - app/provider/patients/[id]/enroll
 - app/provider-resources (Provider resources)
 
-### Research Partner Routes (To be removed/merged)
+### Research Partner Routes
 - app/research-partner (Research partner features)
   - app/research-partner/create-trial
   - app/research-partner/dashboard

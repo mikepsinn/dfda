@@ -1174,11 +1174,11 @@ export type Database = {
           completion_date: string | null
           created_at: string | null
           deleted_at: string | null
-          provider_id: string
           enrollment_date: string | null
           id: string
           notes: string | null
           patient_id: string
+          provider_id: string
           status: string
           trial_id: string
           updated_at: string | null
@@ -1187,11 +1187,11 @@ export type Database = {
           completion_date?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          provider_id: string
           enrollment_date?: string | null
           id?: string
           notes?: string | null
           patient_id: string
+          provider_id: string
           status: string
           trial_id: string
           updated_at?: string | null
@@ -1200,28 +1200,28 @@ export type Database = {
           completion_date?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          provider_id?: string
           enrollment_date?: string | null
           id?: string
           notes?: string | null
           patient_id?: string
+          provider_id?: string
           status?: string
           trial_id?: string
           updated_at?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "trial_enrollments_provider_id_fkey"
-            columns: ["provider_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-          {
             foreignKeyName: "trial_enrollments_patient_id_fkey"
             columns: ["patient_id"]
             isOneToOne: false
             referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trial_enrollments_provider_id_fkey"
+            columns: ["provider_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
           {
@@ -1644,7 +1644,6 @@ export type Database = {
           action_category: Database["public"]["Enums"]["action_category"] | null
           action_type: string | null
           description: string | null
-          provider_name: string | null
           due_date: string | null
           enrollment_id: string | null
           id: string | null
@@ -1652,6 +1651,7 @@ export type Database = {
           patient_name: string | null
           priority: string | null
           protocol_version: number | null
+          provider_name: string | null
           scheduled_date: string | null
           status: string | null
           title: string | null
