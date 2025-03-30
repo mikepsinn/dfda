@@ -1174,7 +1174,7 @@ export type Database = {
           completion_date: string | null
           created_at: string | null
           deleted_at: string | null
-          doctor_id: string
+          provider_id: string
           enrollment_date: string | null
           id: string
           notes: string | null
@@ -1187,7 +1187,7 @@ export type Database = {
           completion_date?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          doctor_id: string
+          provider_id: string
           enrollment_date?: string | null
           id?: string
           notes?: string | null
@@ -1200,7 +1200,7 @@ export type Database = {
           completion_date?: string | null
           created_at?: string | null
           deleted_at?: string | null
-          doctor_id?: string
+          provider_id?: string
           enrollment_date?: string | null
           id?: string
           notes?: string | null
@@ -1211,8 +1211,8 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "trial_enrollments_doctor_id_fkey"
-            columns: ["doctor_id"]
+            foreignKeyName: "trial_enrollments_provider_id_fkey"
+            columns: ["provider_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -1255,7 +1255,7 @@ export type Database = {
           inclusion_criteria: string[] | null
           location: string | null
           phase: string | null
-          sponsor_id: string
+          research_partner_id: string
           start_date: string | null
           status: string
           title: string
@@ -1276,7 +1276,7 @@ export type Database = {
           inclusion_criteria?: string[] | null
           location?: string | null
           phase?: string | null
-          sponsor_id: string
+          research_partner_id: string
           start_date?: string | null
           status: string
           title: string
@@ -1297,7 +1297,7 @@ export type Database = {
           inclusion_criteria?: string[] | null
           location?: string | null
           phase?: string | null
-          sponsor_id?: string
+          research_partner_id?: string
           start_date?: string | null
           status?: string
           title?: string
@@ -1320,8 +1320,8 @@ export type Database = {
             referencedColumns: ["condition_id"]
           },
           {
-            foreignKeyName: "trials_sponsor_id_fkey"
-            columns: ["sponsor_id"]
+            foreignKeyName: "trials_research_partner_id_fkey"
+            columns: ["research_partner_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -1579,8 +1579,8 @@ export type Database = {
           manufacturer: string | null
           patient_id: string | null
           phase: string | null
-          sponsor_first_name: string | null
-          sponsor_last_name: string | null
+          research_partner_first_name: string | null
+          research_partner_last_name: string | null
           start_date: string | null
           status: string | null
           title: string | null
@@ -1644,7 +1644,7 @@ export type Database = {
           action_category: Database["public"]["Enums"]["action_category"] | null
           action_type: string | null
           description: string | null
-          doctor_name: string | null
+          provider_name: string | null
           due_date: string | null
           enrollment_id: string | null
           id: string | null

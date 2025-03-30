@@ -15,7 +15,7 @@ export type Enrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"
 export type TrialWithRelations = Trial & {
   conditions?: { id: string; name: string }[]
   treatments?: { id: string; name: string }[]
-  sponsors?: { id: string; name: string }[]
+  research_partners?: { id: string; name: string }[]
 }
 
 // Find trials matching the given condition IDs
@@ -34,7 +34,7 @@ export async function findTrialsForConditionsAction(
       *,
       conditions:condition_id(id, name),
       treatments:treatment_id(id, name),
-      sponsors:sponsor_id(id, name)
+      research_partners:research_partner_id(id, name)
     `)
     .in("condition_id", conditionIds)
     .eq("status", "active")
@@ -58,7 +58,7 @@ export async function getTrialByIdAction(id: string): Promise<TrialWithRelations
       *,
       conditions:condition_id(id, name),
       treatments:treatment_id(id, name),
-      sponsors:sponsor_id(id, name)
+      research_partners:research_partner_id(id, name)
     `)
     .eq("id", id)
     .single()
@@ -85,7 +85,7 @@ export async function getTrialsAction(): Promise<TrialWithRelations[]> {
       *,
       conditions:condition_id(id, name),
       treatments:treatment_id(id, name),
-      sponsors:sponsor_id(id, name)
+      research_partners:research_partner_id(id, name)
     `)
     .order("created_at", { ascending: false })
 
@@ -105,7 +105,7 @@ export async function getTrialsByConditionAction(conditionId: string) {
     .from("trials")
     .select(`
       *,
-      sponsor:profiles!trials_sponsor_id_fkey (
+      research_partner:profiles!trials_research_partner_id_fkey (
         first_name,
         last_name
       ),
@@ -123,8 +123,8 @@ export async function getTrialsByConditionAction(conditionId: string) {
 
   return data.map(trial => ({
     ...trial,
-    sponsor_name: trial.sponsor ? 
-      `${trial.sponsor.first_name || ''} ${trial.sponsor.last_name || ''}`.trim() || 'Unknown Sponsor' 
+    research_partner_name: trial.research_partner ? 
+      `${trial.research_partner.first_name || ''} ${trial.research_partner.last_name || ''}`.trim() || 'Unknown Sponsor' 
       : 'Unknown Sponsor'
   }))
 }
@@ -139,7 +139,7 @@ export async function getTrialsByTreatmentAction(treatmentId: string): Promise<T
       *,
       conditions:condition_id(id, name),
       treatments:treatment_id(id, name),
-      sponsors:sponsor_id(id, name)
+      research_partners:research_partner_id(id, name)
     `)
     .eq("treatment_id", treatmentId)
     .eq("status", "active")
@@ -170,7 +170,7 @@ export async function createTrialAction(trial: TrialInsert): Promise<Trial> {
 
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
-  revalidatePath("/sponsor/dashboard")
+  revalidatePath("/research-partner/dashboard")
   return response.data
 }
 
@@ -193,7 +193,7 @@ export async function updateTrialAction(id: string, updates: TrialUpdate): Promi
   revalidatePath(`/trials/${id}`)
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
-  revalidatePath("/sponsor/dashboard")
+  revalidatePath("/research-partner/dashboard")
   return response.data
 }
 
@@ -213,5 +213,5 @@ export async function deleteTrialAction(id: string): Promise<void> {
 
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
-  revalidatePath("/sponsor/dashboard")
+  revalidatePath("/research-partner/dashboard")
 } 

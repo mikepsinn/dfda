@@ -21,15 +21,15 @@ SELECT
   gvt.name as treatment_name, -- Get from global_variables
   tr.treatment_type,
   tr.manufacturer,
-  p.first_name as sponsor_first_name,
-  p.last_name as sponsor_last_name
+  p.first_name as research_partner_first_name,
+  p.last_name as research_partner_last_name
 FROM patient_active_conditions pac
 JOIN trials t ON t.condition_id = pac.condition_id
 JOIN conditions c ON c.id = t.condition_id
 JOIN global_variables gvc ON gvc.id = c.id -- Join conditions to global_variables
 JOIN treatments tr ON tr.id = t.treatment_id
 JOIN global_variables gvt ON gvt.id = tr.id -- Join treatments to global_variables
-JOIN profiles p ON p.id = t.sponsor_id
+JOIN profiles p ON p.id = t.research_partner_id
 WHERE t.deleted_at IS NULL
   AND c.deleted_at IS NULL
   AND tr.deleted_at IS NULL

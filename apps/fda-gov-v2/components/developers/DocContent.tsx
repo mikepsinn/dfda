@@ -292,7 +292,7 @@ fetch('https://api.fdav2.gov/v1/user/profile', { headers })
     {
       "id": "trial-123",
       "name": "Efficacy of Treatment A for Type 2 Diabetes",
-      "sponsor": "Innovative Therapeutics Inc.",
+      "research-partner": "Innovative Therapeutics Inc.",
       "phase": "Phase 2",
       "status": "Recruiting",
       "condition": "Type 2 Diabetes",
@@ -310,7 +310,7 @@ fetch('https://api.fdav2.gov/v1/user/profile', { headers })
     {
       "id": "trial-456",
       "name": "Comparative Study of Treatments B and C for Type 2 Diabetes",
-      "sponsor": "DiabetesCare Research",
+      "research-partner": "DiabetesCare Research",
       "phase": "Phase 3",
       "status": "Recruiting",
       "condition": "Type 2 Diabetes",
@@ -380,7 +380,7 @@ fetch('https://api.fdav2.gov/v1/user/profile', { headers })
   "data": {
     "id": "trial-123",
     "name": "Efficacy of Treatment A for Type 2 Diabetes",
-    "sponsor": "Innovative Therapeutics Inc.",
+    "research-partner": "Innovative Therapeutics Inc.",
     "phase": "Phase 2",
     "status": "Recruiting",
     "condition": "Type 2 Diabetes",

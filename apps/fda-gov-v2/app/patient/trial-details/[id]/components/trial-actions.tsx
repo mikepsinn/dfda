@@ -45,7 +45,7 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
       const { error } = await supabase.from("trial_enrollments").insert({
         trial_id: trialId,
         patient_id: user.id,
-        doctor_id: "system", // TODO: Get actual doctor ID
+        provider_id: "system", // TODO: Get actual provider ID
         status: "pending",
         enrollment_date: new Date().toISOString(),
         notes: "Initial enrollment request",

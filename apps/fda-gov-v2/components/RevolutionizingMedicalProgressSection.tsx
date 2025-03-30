@@ -62,7 +62,7 @@ export function RevolutionizingMedicalProgressSection({ stats = defaultStats }: 
                   <Building className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">Sponsor Testimonial</h3>
+                  <h3 className="font-semibold">Research Partner Testimonial</h3>
                   <p className="mt-2 text-muted-foreground">
                     "We reduced our per-patient costs by 78% and launched our trial in just 3 weeks. The quality of data
                     we received exceeded our expectations and led to faster regulatory approval."
@@ -141,7 +141,7 @@ export function RevolutionizingMedicalProgressSection({ stats = defaultStats }: 
                 approach.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/sponsor/create-trial">
+                <Link href="/research-partner/create-trial">
                   <Button size="lg" className="w-full sm:w-auto">
                     Start a Trial <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>

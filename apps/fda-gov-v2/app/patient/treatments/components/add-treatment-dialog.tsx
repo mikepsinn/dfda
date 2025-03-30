@@ -24,6 +24,9 @@ import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { TreatmentSearch } from "./treatment-search"
 import type { PatientCondition } from "@/lib/database.types"
+import { createLogger } from "@/lib/logger"
+
+const logger = createLogger("add-treatment-dialog")
 
 interface AddTreatmentDialogProps {
   userId: string
@@ -45,6 +48,8 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
 
     setIsLoading(true)
     try {
+      logger.info("Adding treatment for user", { userId, treatmentId: selectedTreatment.id })
+      
       // First create the patient treatment
       const response = await fetch("/api/patient/treatments", {
         method: "POST",
@@ -52,6 +57,7 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          user_id: userId,
           treatment_id: selectedTreatment.id,
           condition_id: selectedCondition,
           effectiveness_out_of_ten: effectiveness,
@@ -72,6 +78,13 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
       setEffectiveness(null)
       setReview("")
     } catch (error) {
+      logger.error("Failed to add treatment", { 
+        error, 
+        userId, 
+        treatmentId: selectedTreatment?.id, 
+        conditionId: selectedCondition 
+      })
+      
       toast({
         title: "Error",
         description: "Failed to add treatment. Please try again.",

@@ -32,8 +32,8 @@ export function RegisterForm() {
     setError({ type: null, message: null })
     
     const formData = new FormData(e.target)
-    const email = formData.get(userType === 'patient' ? 'email' : 'sponsor-email') as string
-    const password = formData.get(userType === 'patient' ? 'password' : 'sponsor-password') as string
+    const email = formData.get(userType === 'patient' ? 'email' : 'research-partner-email') as string
+    const password = formData.get(userType === 'patient' ? 'password' : 'research-partner-password') as string
     
     try {
       const { error: signUpError } = await signUpWithEmail(email, password)
@@ -100,9 +100,9 @@ export function RegisterForm() {
           <p className="text-center text-muted-foreground mb-6">
             {userType === "patient"
               ? "Your patient account has been created. You can now find and join clinical trials."
-              : "Your sponsor account has been created. You can now create and manage clinical trials."}
+              : "Your research partner account has been created. You can now create and manage clinical trials."}
           </p>
-          <Link href={userType === "patient" ? "/patient/dashboard" : "/sponsor/create-trial"} className="w-full">
+          <Link href={userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"} className="w-full">
             <Button className="w-full">
               {userType === "patient" ? "Go to Patient Dashboard" : "Create Your First Trial"}
             </Button>
@@ -165,7 +165,7 @@ export function RegisterForm() {
         <Tabs defaultValue="patient" onValueChange={setUserType} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="patient">Patient</TabsTrigger>
-            <TabsTrigger value="sponsor">Trial Sponsor</TabsTrigger>
+            <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
           </TabsList>
           <TabsContent value="patient" className="space-y-4 pt-4">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -205,7 +205,7 @@ export function RegisterForm() {
               </Button>
             </form>
           </TabsContent>
-          <TabsContent value="sponsor" className="space-y-4 pt-4">
+          <TabsContent value="research-partner" className="space-y-4 pt-4">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="organization-name">Organization Name</Label>
@@ -216,12 +216,12 @@ export function RegisterForm() {
                 <Input id="contact-name" required />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="sponsor-email">Email</Label>
-                <Input id="sponsor-email" type="email" required />
+                <Label htmlFor="research-partner-email">Email</Label>
+                <Input id="research-partner-email" type="email" required />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="sponsor-password">Password</Label>
-                <Input id="sponsor-password" type="password" required />
+                <Label htmlFor="research-partner-password">Password</Label>
+                <Input id="research-partner-password" type="password" required />
               </div>
               <div className="space-y-2">
                 <Label>Organization Type</Label>
@@ -245,7 +245,7 @@ export function RegisterForm() {
                 </RadioGroup>
               </div>
               <Button type="submit" className="w-full">
-                Create Sponsor Account
+                Create Research Partner Account
               </Button>
             </form>
           </TabsContent>

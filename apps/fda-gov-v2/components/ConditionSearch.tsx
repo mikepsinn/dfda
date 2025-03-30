@@ -60,6 +60,14 @@ export function ConditionSearch({
     return () => clearTimeout(debounce)
   }, [searchTerm])
 
+  // Set search term if selected is provided
+  useEffect(() => {
+    if (selected) {
+      setSearchTerm(selected.name);
+      logger.info("Selected condition set", { id: selected.id, name: selected.name });
+    }
+  }, [selected]);
+
   const handleSelectCondition = (condition: GlobalVariable) => {
     onSelect({
       id: condition.id,

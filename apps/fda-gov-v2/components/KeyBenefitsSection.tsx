@@ -242,7 +242,7 @@ export function KeyBenefitsSection() {
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/sponsor/create-trial">
+              <Link href="/research-partner/create-trial">
                 <Button size="lg" className="w-full sm:w-auto gap-1">
                   Create a Trial <ArrowRight className="h-4 w-4" />
                 </Button>

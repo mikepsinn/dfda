@@ -1,4 +1,4 @@
-import { SponsorHowItWorks } from "./how-it-works/SponsorHowItWorks"
+import { ResearchPartnerHowItWorks } from "./how-it-works/ResearchPartnerHowItWorks"
 import { PatientHowItWorks } from "./how-it-works/PatientHowItWorks"
 
 export function HowItWorksSection() {
@@ -13,11 +13,11 @@ export function HowItWorksSection() {
             How the Decentralized FDA Works
           </h2>
           <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            The Decentralized FDA connects trial sponsors with patients through an intuitive, streamlined process
+            The Decentralized FDA connects research partners with patients through an intuitive, streamlined process
           </p>
         </div>
 
-        <SponsorHowItWorks />
+        <ResearchPartnerHowItWorks />
 
         <PatientHowItWorks />
       </div>

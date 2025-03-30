@@ -49,19 +49,21 @@ export default async function TermsPage() {
               </p>
 
               <h2>4. User Responsibilities</h2>
-              <h3>4.1 For Trial Sponsors</h3>
-              <p>As a trial sponsor, you are responsible for:</p>
-              <ul>
-                <li>Providing accurate and complete information about your clinical trials</li>
-                <li>Ensuring all trial protocols comply with applicable laws and regulations</li>
-                <li>Maintaining appropriate insurance coverage for trial participants</li>
-                <li>Protecting participant data in accordance with privacy laws</li>
-                <li>Accurately reporting trial results</li>
+              <p>All users of the FDA.gov v2 platform must adhere to the following responsibilities:</p>
+
+              <h3>4.1 For Research Partners</h3>
+              <p>As a research partner, you are responsible for:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Ensuring all trial information is accurate and compliant with relevant regulations</li>
+                <li>Obtaining all necessary regulatory approvals before initiating a trial</li>
+                <li>Protecting participant privacy and maintaining data security</li>
+                <li>Promptly reporting adverse events in accordance with regulations</li>
+                <li>Providing timely updates and results of trials</li>
               </ul>
 
               <h3>4.2 For Patients</h3>
               <p>As a patient participant, you are responsible for:</p>
-              <ul>
+              <ul className="list-disc pl-6 space-y-2">
                 <li>Providing accurate personal and health information</li>
                 <li>Following trial protocols as agreed upon enrollment</li>
                 <li>Reporting adverse events promptly</li>
@@ -71,7 +73,7 @@ export default async function TermsPage() {
               <h2>5. Data Privacy and Security</h2>
               <p>
                 We take data privacy and security seriously. All personal and health information is handled in
-                accordance with our Privacy Policy and applicable laws. Trial sponsors must adhere to strict data
+                accordance with our Privacy Policy and applicable laws. Trial research partners must adhere to strict data
                 protection standards.
               </p>
 

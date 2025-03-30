@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { ArrowLeft, CheckCircle, CreditCard, Info, Lock, Shield, Percent, Home } from "lucide-react"
+import { ArrowLeft, CheckCircle, CreditCard, Info, Lock, Shield, Percent, Beaker } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -31,7 +31,7 @@ export default function TrialPayment({ params }) {
   const trial = {
     id: trialId,
     name: "Efficacy of Treatment A for Rheumatoid Arthritis",
-    sponsor: "Innovative Therapeutics Inc.",
+    research_partner: "Innovative Therapeutics Inc.",
     phase: "Phase 2",
     status: "Recruiting",
     paymentDetails: {
@@ -240,17 +240,23 @@ export default function TrialPayment({ params }) {
                       <CardTitle>Order Summary</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div>
-                        <h3 className="font-medium">{trial.name}</h3>
-                        <p className="text-sm text-muted-foreground">Sponsored by {trial.sponsor}</p>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          <Badge variant="outline" className="bg-primary/5 text-primary border-primary/20">
-                            <Home className="mr-1 h-3 w-3" /> 100% Remote
-                          </Badge>
-                          <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                            <Percent className="mr-1 h-3 w-3" /> 80% Savings
-                          </Badge>
+                      <div className="flex items-center gap-2">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Beaker className="h-5 w-5 text-primary" />
                         </div>
+                        <div>
+                          <p className="font-semibold">{trial.name}</p>
+                          <p className="text-sm text-muted-foreground">Provided by {trial.research_partner}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <Badge variant="outline" className="bg-primary/5 text-primary border-primary/20">
+                          100% Remote
+                        </Badge>
+                        <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                          80% Savings
+                        </Badge>
                       </div>
 
                       <Separator />

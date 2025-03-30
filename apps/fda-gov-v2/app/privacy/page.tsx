@@ -65,12 +65,16 @@ export default async function PrivacyPolicy() {
 
               <h2>3. How We Share Your Information</h2>
 
-              <h3>3.1 With Trial Sponsors</h3>
+              <h3>3.1 With Research Partners</h3>
               <p>
-                When you enroll in a clinical trial, we share relevant health information with the trial sponsor. This
-                information is anonymized whenever possible and shared only to the extent necessary for trial
-                participation.
+                If you enroll in a clinical trial, your data will be shared with the research partner conducting the
+                trial. This includes:
               </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Your health information and trial-related data</li>
+                <li>De-identified data for analysis</li>
+                <li>Contact information for trial-related communications</li>
+              </ul>
 
               <h3>3.2 With Service Providers</h3>
               <p>

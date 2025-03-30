@@ -38,7 +38,7 @@ export default async function TrialDetailsPage({ params }: TrialDetailsPageProps
     .from("trials")
     .select(`
       *,
-      sponsor:sponsor_id(name),
+      research_partner:research_partner_id(name),
       condition:condition_id(name),
       treatment:treatment_id(name),
       protocol_versions(*)

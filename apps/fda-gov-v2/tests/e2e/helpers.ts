@@ -4,7 +4,7 @@ import { createLogger } from '@/lib/logger'
 
 const logger = createLogger('e2e-helpers')
 
-export type UserType = 'patient' | 'doctor'
+export type UserType = 'patient' | 'provider'
 
 export async function loginAsDemoUser(page: Page, userType: UserType) {
   logger.info('Starting demo login flow', { userType })

@@ -6,7 +6,7 @@ SELECT
   t.title as trial_title,
   a.enrollment_id,
   p.first_name || ' ' || p.last_name as patient_name,
-  d.first_name || ' ' || d.last_name as doctor_name,
+  d.first_name || ' ' || d.last_name as provider_name,
   at.name as action_type,
   at.category as action_category,
   a.title,
@@ -26,7 +26,7 @@ FROM trial_actions a
 JOIN trials t ON a.trial_id = t.id
 JOIN trial_enrollments e ON a.enrollment_id = e.id
 JOIN profiles p ON e.patient_id = p.id
-JOIN profiles d ON e.doctor_id = d.id
+JOIN profiles d ON e.provider_id = d.id
 JOIN action_types at ON a.action_type_id = at.id
 LEFT JOIN protocol_versions pv ON a.protocol_version_id = pv.id
 WHERE 

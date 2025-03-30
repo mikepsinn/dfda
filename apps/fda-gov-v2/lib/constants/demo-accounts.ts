@@ -1,4 +1,4 @@
-export type UserType = "patient" | "doctor" | "sponsor"
+export type UserType = "patient" | "provider" | "research-partner"
 
 export const DEMO_ACCOUNTS = {
   patient: {
@@ -10,24 +10,24 @@ export const DEMO_ACCOUNTS = {
       user_type: "patient" as const,
     },
   },
-  doctor: {
-    email: "demo-doctor@dfda.earth",
-    password: "demo-doctor-123",
+  provider: {
+    email: "demo-provider@dfda.earth",
+    password: "demo-provider-123",
     data: {
       first_name: "Demo",
-      last_name: "Doctor",
-      user_type: "doctor" as const,
+      last_name: "Provider",
+      user_type: "provider" as const,
       organization_name: "City General Hospital",
-      contact_name: "Dr. Demo Doctor",
+      contact_name: "Dr. Demo Provider",
     },
   },
-  sponsor: {
-    email: "demo-sponsor@dfda.earth",
-    password: "demo-sponsor-123",
+  research_partner: {
+    email: "demo-research-partner@dfda.earth",
+    password: "demo-research-partner-123",
     data: {
       first_name: "Demo",
       last_name: "Sponsor",
-      user_type: "sponsor" as const,
+      user_type: "research-partner" as const,
       organization_name: "Demo Pharma Inc.",
       contact_name: "Clinical Research Division",
     },

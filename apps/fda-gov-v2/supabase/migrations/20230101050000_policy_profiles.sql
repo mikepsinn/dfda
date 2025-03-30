@@ -6,13 +6,17 @@ CREATE POLICY "Users can view own profile"
   ON profiles FOR SELECT
   USING (auth.uid() = id AND deleted_at IS NULL);
 
-CREATE POLICY "Anyone can view doctor profiles"
+CREATE POLICY "Anyone can view provider profiles"
   ON profiles FOR SELECT
-  USING (user_type = 'doctor' AND deleted_at IS NULL);
+  USING (user_type = 'provider' AND deleted_at IS NULL);
 
 CREATE POLICY "Anyone can view sponsor profiles"
   ON profiles FOR SELECT
-  USING (user_type = 'sponsor' AND deleted_at IS NULL);
+  USING (user_type = 'research-partner' AND deleted_at IS NULL);
+
+CREATE POLICY "Anyone can view developer profiles"
+  ON profiles FOR SELECT
+  USING (user_type = 'developer' AND deleted_at IS NULL);
 
 CREATE POLICY "Users can update own profile"
   ON profiles FOR UPDATE

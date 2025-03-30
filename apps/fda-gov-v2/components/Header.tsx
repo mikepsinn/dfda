@@ -60,19 +60,19 @@ export function Header({ initialUser }: HeaderProps) {
       }
     }
 
-    // Doctor-specific items
-    if (userType === 'doctor') {
+    // Provider-specific items
+    if (userType === 'provider') {
       items.push({
         title: "Provider Dashboard",
-        href: "/doctor/dashboard",
+        href: "/provider/dashboard",
       })
     }
 
-    // Sponsor-specific items
-    if (userType === 'sponsor') {
+    // Research Partner-specific items (formerly Sponsor)
+    if (userType === 'research-partner') {
       items.push({
-        title: "Sponsor Dashboard",
-        href: "/sponsor",
+        title: "Research Partner Dashboard",
+        href: "/research-partner",
       })
     }
 

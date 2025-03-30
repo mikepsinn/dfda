@@ -58,7 +58,7 @@ const trialData = {
       ],
       cost: 199,
       refundPolicy: "80% refund if all data submissions are completed",
-      sponsors: "FDA v2 Diabetes Research Consortium",
+      research_partners: "FDA v2 Diabetes Research Consortium",
     },
   },
   "TNF Inhibitors": {
@@ -89,7 +89,7 @@ const trialData = {
       ],
       cost: 299,
       refundPolicy: "75% refund if all data submissions are completed",
-      sponsors: "FDA v2 Rheumatology Research Network",
+      research_partners: "FDA v2 Rheumatology Research Network",
     },
   },
 }
@@ -159,7 +159,7 @@ export default function JoinTrialPage() {
       ],
       cost: Math.floor(Math.random() * 200) + 99,
       refundPolicy: "75% refund if all data submissions are completed",
-      sponsors: "FDA v2 Research Consortium",
+      research_partners: "FDA v2 Research Consortium",
     }
   }
 
@@ -248,7 +248,7 @@ export default function JoinTrialPage() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="text-sm font-medium">Sponsor</h4>
-                  <p className="text-sm text-muted-foreground">{trial.sponsors}</p>
+                  <p className="text-sm text-muted-foreground">{trial.research_partners}</p>
                 </div>
               </div>
 
@@ -856,38 +856,38 @@ export default function JoinTrialPage() {
                   </div>
 
                   <div
-                    className={`flex items-start space-x-3 rounded-lg border p-4 ${deliveryOption === "doctor" ? "border-primary bg-primary/5" : ""}`}
+                    className={`flex items-start space-x-3 rounded-lg border p-4 ${deliveryOption === "provider" ? "border-primary bg-primary/5" : ""}`}
                   >
-                    <RadioGroupItem value="doctor" id="delivery-doctor" className="mt-1" />
+                    <RadioGroupItem value="provider" id="delivery-provider" className="mt-1" />
                     <div className="grid gap-1.5 leading-none">
-                      <Label htmlFor="delivery-doctor" className="text-base font-medium">
-                        My Doctor's Office
+                      <Label htmlFor="delivery-provider" className="text-base font-medium">
+                        My Provider's Office
                       </Label>
                       <p className="text-sm text-muted-foreground">
-                        We'll coordinate with your doctor to provide the medication at your next visit.
+                        We'll coordinate with your provider to provide the medication at your next visit.
                       </p>
-                      {deliveryOption === "doctor" && (
+                      {deliveryOption === "provider" && (
                         <div className="mt-3 space-y-3">
                           <div className="grid gap-2">
-                            <Label htmlFor="doctor-name">Doctor's Name</Label>
+                            <Label htmlFor="provider-name">Provider's Name</Label>
                             <input
-                              id="doctor-name"
+                              id="provider-name"
                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                               placeholder="Dr. Smith"
                             />
                           </div>
                           <div className="grid gap-2">
-                            <Label htmlFor="doctor-practice">Practice Name</Label>
+                            <Label htmlFor="provider-practice">Practice Name</Label>
                             <input
-                              id="doctor-practice"
+                              id="provider-practice"
                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                               placeholder="City Medical Group"
                             />
                           </div>
                           <div className="grid gap-2">
-                            <Label htmlFor="doctor-phone">Phone Number</Label>
+                            <Label htmlFor="provider-phone">Phone Number</Label>
                             <input
-                              id="doctor-phone"
+                              id="provider-phone"
                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                               placeholder="(555) 123-4567"
                             />

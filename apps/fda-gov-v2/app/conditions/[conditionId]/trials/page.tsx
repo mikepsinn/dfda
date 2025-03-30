@@ -52,7 +52,7 @@ export default async function ConditionTrialsPage({
                 <div className="flex items-start justify-between">
                   <div>
                     <CardTitle>{trial.title}</CardTitle>
-                    <CardDescription>{trial.sponsor_name}</CardDescription>
+                    <CardDescription>{trial.research_partner_name}</CardDescription>
                   </div>
                   <Badge>{trial.phase}</Badge>
                 </div>

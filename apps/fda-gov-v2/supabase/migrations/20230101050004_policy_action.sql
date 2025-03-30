@@ -22,18 +22,18 @@ USING (
   EXISTS (
     SELECT 1 FROM trials t
     WHERE t.id = protocol_versions.trial_id
-    AND t.sponsor_id = auth.uid()
+    AND t.research_partner_id = auth.uid()
   )
 );
 
-CREATE POLICY "Doctors can view protocols for their trials"
+CREATE POLICY "Providers can view protocols for their trials"
 ON protocol_versions FOR SELECT
 TO authenticated
 USING (
   EXISTS (
     SELECT 1 FROM trial_enrollments e
     WHERE e.trial_id = protocol_versions.trial_id
-    AND e.doctor_id = auth.uid()
+    AND e.provider_id = auth.uid()
   )
 );
 
@@ -66,14 +66,14 @@ USING (
   )
 );
 
-CREATE POLICY "Doctors can view and modify their trial actions"
+CREATE POLICY "Providers can view and modify their trial actions"
 ON trial_actions FOR ALL
 TO authenticated
 USING (
   EXISTS (
     SELECT 1 FROM trial_enrollments e
     WHERE e.id = trial_actions.enrollment_id
-    AND e.doctor_id = auth.uid()
+    AND e.provider_id = auth.uid()
   )
 );
 
@@ -84,7 +84,7 @@ USING (
   EXISTS (
     SELECT 1 FROM trials t
     WHERE t.id = trial_actions.trial_id
-    AND t.sponsor_id = auth.uid()
+    AND t.research_partner_id = auth.uid()
   )
 );
 

@@ -14,7 +14,7 @@ interface DemoLoginButtonProps {
 }
 
 export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
-  const [userType, setUserType] = useState<"patient" | "doctor" | "sponsor">("patient")
+  const [userType, setUserType] = useState<"patient" | "provider" | "research-partner">("patient")
   const [isLoading, setIsLoading] = useState(false)
 
   const handleDemoLogin = async () => {
@@ -62,8 +62,8 @@ export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
       <Tabs defaultValue="patient" onValueChange={(value) => setUserType(value as any)} className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="patient">Patient</TabsTrigger>
-          <TabsTrigger value="doctor">Doctor</TabsTrigger>
-          <TabsTrigger value="sponsor">Sponsor</TabsTrigger>
+          <TabsTrigger value="provider">Provider</TabsTrigger>
+          <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
         </TabsList>
       </Tabs>
 

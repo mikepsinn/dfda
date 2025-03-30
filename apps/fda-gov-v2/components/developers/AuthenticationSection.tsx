@@ -56,7 +56,7 @@ grant_type=authorization_code
             <div>trials:read</div>
             <div>View public trials</div>
             <div>trials:write</div>
-            <div>Create and manage trials (for sponsors)</div>
+            <div>Create and manage trials (for research partners)</div>
             <div>user:read</div>
             <div>Access basic user profile</div>
             <div>user.trials:read</div>

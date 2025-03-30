@@ -14,7 +14,7 @@ export async function getFeaturedTrialsAction() {
       id,
       title,
       description,
-      sponsor_id,
+      research_partner_id,
       treatment_id,
       condition_id,
       status,

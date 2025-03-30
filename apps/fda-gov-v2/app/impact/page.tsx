@@ -27,7 +27,7 @@ export default function ImpactPage() {
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="patients">For Patients</TabsTrigger>
             <TabsTrigger value="providers">For Providers</TabsTrigger>
-            <TabsTrigger value="sponsors">For Sponsors</TabsTrigger>
+            <TabsTrigger value="research-partners">For Research Partners</TabsTrigger>
           </TabsList>
 
           <TabsContent value="patients" className="mt-6">
@@ -106,12 +106,12 @@ export default function ImpactPage() {
             </div>
           </TabsContent>
 
-          <TabsContent value="sponsors" className="mt-6">
+          <TabsContent value="research-partners" className="mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h2 className="text-2xl font-bold mb-4">Accelerating Medical Innovation</h2>
                 <p className="text-muted-foreground mb-4">
-                  Trial sponsors have experienced dramatic improvements in efficiency, cost, and data quality.
+                  Trial research partners have experienced dramatic improvements in efficiency, cost, and data quality.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-start gap-2">
@@ -127,7 +127,7 @@ export default function ImpactPage() {
                     <span>87% more diverse patient populations in trials</span>
                   </li>
                 </ul>
-                <Link href="/sponsor">
+                <Link href="/research-partner">
                   <Button>Learn More</Button>
                 </Link>
               </div>
@@ -189,8 +189,8 @@ export default function ImpactPage() {
         <div className="bg-muted rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Join the Healthcare Revolution</h2>
           <p className="text-lg mb-6 max-w-2xl mx-auto">
-            Whether you're a patient seeking treatment options, a healthcare provider looking to offer more to your
-            patients, or a sponsor wanting to run more efficient trials, the Decentralized FDA platform can help.
+            Whether you're a patient looking for treatment options, a provider seeking better outcomes for your
+            patients, or a research partner wanting to run more efficient trials, the Decentralized FDA platform can help.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/patient">
@@ -199,8 +199,8 @@ export default function ImpactPage() {
             <Link href="/provider-resources">
               <Button variant="outline">For Providers</Button>
             </Link>
-            <Link href="/sponsor">
-              <Button variant="outline">For Sponsors</Button>
+            <Link href="/research-partner">
+              <Button variant="outline">For Research Partners</Button>
             </Link>
           </div>
         </div>

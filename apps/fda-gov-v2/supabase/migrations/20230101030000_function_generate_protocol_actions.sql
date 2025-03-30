@@ -10,7 +10,7 @@ AS $$
 DECLARE
   v_trial_id UUID;
   v_patient_id UUID;
-  v_doctor_id UUID;
+  v_provider_id UUID;
   v_protocol protocol_versions;
   v_schedule JSONB;
   v_action JSONB;
@@ -20,8 +20,8 @@ BEGIN
   SELECT 
     e.trial_id,
     e.patient_id,
-    e.doctor_id
-  INTO v_trial_id, v_patient_id, v_doctor_id
+    e.provider_id
+  INTO v_trial_id, v_patient_id, v_provider_id
   FROM trial_enrollments e
   WHERE e.id = enrollment_id;
 

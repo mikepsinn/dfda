@@ -1,4 +1,4 @@
-import { CalendarClock, MapPin, Users } from "lucide-react"
+import { CalendarClock, MapPin, Users, Building } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image" // Import next/image
 
@@ -20,23 +20,23 @@ export function TrialHeader({ trial }: TrialHeaderProps) {
           </div>
         </div>
 
-        {trial.sponsor && (
+        {trial.research_partner && (
           <div className="flex items-center gap-2 bg-muted/50 p-3 rounded-lg">
-            {trial.sponsor.logo_url ? (
+            {trial.research_partner.logo_url ? (
               <Image
-                src={trial.sponsor.logo_url || "/placeholder.svg"}
-                alt={trial.sponsor.name}
+                src={trial.research_partner.logo_url || "/placeholder.svg"}
+                alt={trial.research_partner.name}
                 width={32}
                 height={32}
                 className="object-contain"
               />
             ) : (
               <div className="h-8 w-8 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-primary font-medium text-sm">{trial.sponsor.name.charAt(0)}</span>
+                <span className="text-primary font-medium text-sm">{trial.research_partner.name.charAt(0)}</span>
               </div>
             )}
             <div>
-              <p className="text-sm font-medium">{trial.sponsor.name}</p>
+              <p className="text-sm font-medium">{trial.research_partner.name}</p>
               <p className="text-xs text-muted-foreground">Sponsor</p>
             </div>
           </div>
@@ -72,6 +72,16 @@ export function TrialHeader({ trial }: TrialHeaderProps) {
             <p className="text-sm text-muted-foreground">
               {trial.enrolled || "0"}/{trial.target_enrollment || "500"} enrolled
             </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10">
+            <Building className="h-3 w-3 text-primary" />
+          </div>
+          <div>
+            <p className="text-xs text-muted-foreground">Research Partner</p>
+            <p className="text-sm font-medium">{trial.research_partner}</p>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export function TreatmentReviewsList({
   totalReviews,
 }: TreatmentReviewsListProps) {
   const [reviews, setReviews] = useState(initialReviews)
-  const [filter, setFilter] = useState<"all" | "patient" | "doctor">("all")
+  const [filter, setFilter] = useState<"all" | "patient" | "provider">("all")
   const [sort, setSort] = useState<"recent" | "highest" | "lowest" | "helpful">("recent")
   const { toast } = useToast()
 
@@ -103,7 +103,7 @@ export function TreatmentReviewsList({
             <SelectContent>
               <SelectItem value="all">All Reviews</SelectItem>
               <SelectItem value="patient">Patients Only</SelectItem>
-              <SelectItem value="doctor">Doctors Only</SelectItem>
+              <SelectItem value="provider">Providers Only</SelectItem>
             </SelectContent>
           </Select>
 

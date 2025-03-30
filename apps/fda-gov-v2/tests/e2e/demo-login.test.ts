@@ -9,8 +9,8 @@ test.describe('Demo Login', () => {
     expect(displayedEmail).toBe(userEmail);
   });
 
-  test('should allow demo doctor login', async ({ page }) => {
-    const userEmail = await loginAsDemoUser(page, 'doctor');
+  test('should allow demo provider login', async ({ page }) => {
+    const userEmail = await loginAsDemoUser(page, 'provider');
     const displayedEmail = await page.getByTestId('user-email').textContent();
     expect(displayedEmail).toBe(userEmail);
   });

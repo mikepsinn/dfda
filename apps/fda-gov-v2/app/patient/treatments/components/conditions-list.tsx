@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
 import type { PatientCondition } from "@/lib/database.types"
 
 interface ConditionsListProps {

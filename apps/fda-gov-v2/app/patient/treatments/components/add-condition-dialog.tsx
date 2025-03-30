@@ -14,6 +14,9 @@ import { createPatientConditionAction } from "@/app/actions/patient-conditions"
 import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { ConditionSearch } from "@/components/ConditionSearch"
+import { createLogger } from "@/lib/logger"
+
+const logger = createLogger("add-condition-dialog")
 
 interface AddConditionDialogProps {
   userId: string
@@ -40,6 +43,7 @@ export function AddConditionDialog({ userId }: AddConditionDialogProps) {
 
       setOpen(false)
     } catch (error) {
+      logger.error("Failed to add condition", { error, conditionId: condition.id, userId });
       toast({
         title: "Error",
         description: "Failed to add condition. Please try again.",

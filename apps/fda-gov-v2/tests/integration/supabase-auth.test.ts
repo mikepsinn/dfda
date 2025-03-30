@@ -7,7 +7,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-const userTypes: UserType[] = ['patient', 'doctor', 'sponsor']
+const userTypes: UserType[] = ['patient', 'provider', 'research-partner']
 
 describe('Supabase Authentication & Account Management', () => {
   // Clean up before and after all tests

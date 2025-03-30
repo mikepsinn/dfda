@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS trials (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL,
   description TEXT,
-  sponsor_id UUID NOT NULL REFERENCES profiles(id) ON DELETE RESTRICT,
+  research_partner_id UUID NOT NULL REFERENCES profiles(id) ON DELETE RESTRICT,
   condition_id TEXT NOT NULL REFERENCES conditions(id) ON DELETE RESTRICT,
   treatment_id TEXT NOT NULL REFERENCES treatments(id) ON DELETE RESTRICT,
   status TEXT NOT NULL CHECK (status IN ('draft', 'pending_approval', 'recruiting', 'active', 'completed', 'terminated')),

@@ -9,22 +9,53 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
+import { signIn } from "next-auth/react"
+import { createLogger } from "@/lib/logger"
+
+const logger = createLogger("login-form")
 
 export function LoginForm() {
   const [userType, setUserType] = useState("patient")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real app, we would authenticate the user here
-    // For now, just redirect to the appropriate dashboard
-    window.location.href = userType === "patient" ? "/patient/dashboard" : "/sponsor/create-trial"
+    setLoading(true)
+    logger.info("Login attempt", { userType })
+    
+    try {
+      const email = e.currentTarget.querySelector("input[type='email']")?.value
+      const password = e.currentTarget.querySelector("input[type='password']")?.value
+      
+      const user = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      })
+
+      if (user?.ok) {
+        logger.info("Login successful", { userType })
+        setLoading(false)
+        window.location.href = userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"
+      } else {
+        logger.error("Login failed - invalid credentials", { userType })
+        setError("Invalid credentials")
+        setLoading(false)
+      }
+    } catch (error) {
+      logger.error("Login error", { error, userType })
+      setError("Something went wrong")
+      setLoading(false)
+      window.location.href = userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"
+    }
   }
 
   const handleGoogleSignIn = () => {
     // In a real implementation, this would trigger Supabase Google OAuth
     console.log("Google sign in clicked")
     // For demo purposes, we'll just redirect to the dashboard
-    window.location.href = userType === "patient" ? "/patient/dashboard" : "/sponsor/create-trial"
+    window.location.href = userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"
   }
 
   return (
@@ -73,7 +104,7 @@ export function LoginForm() {
         <Tabs defaultValue="patient" onValueChange={setUserType} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="patient">Patient</TabsTrigger>
-            <TabsTrigger value="sponsor">Trial Sponsor</TabsTrigger>
+            <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
           </TabsList>
           <TabsContent value="patient" className="space-y-4 pt-4">
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -95,23 +126,23 @@ export function LoginForm() {
               </Button>
             </form>
           </TabsContent>
-          <TabsContent value="sponsor" className="space-y-4 pt-4">
+          <TabsContent value="research-partner" className="space-y-4 pt-4">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="sponsor-email">Email</Label>
-                <Input id="sponsor-email" type="email" required />
+                <Label htmlFor="research-partner-email">Email</Label>
+                <Input id="research-partner-email" type="email" required />
               </div>
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="sponsor-password">Password</Label>
+                  <Label htmlFor="research-partner-password">Password</Label>
                   <Link href="/forgot-password" className="text-sm text-primary hover:underline">
                     Forgot password?
                   </Link>
                 </div>
-                <Input id="sponsor-password" type="password" required />
+                <Input id="research-partner-password" type="password" required />
               </div>
               <Button type="submit" className="w-full">
-                Sign In as Sponsor
+                Sign In as Research Partner
               </Button>
             </form>
           </TabsContent>

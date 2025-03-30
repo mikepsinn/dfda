@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   email TEXT NOT NULL UNIQUE,
   first_name TEXT,
   last_name TEXT,
-  user_type TEXT NOT NULL CHECK (user_type IN ('patient', 'doctor', 'sponsor', 'admin')),
+  user_type TEXT NOT NULL CHECK (user_type IN ('patient', 'provider', 'research-partner', 'admin', 'developer')),
   avatar_url TEXT,
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,

@@ -62,7 +62,7 @@ export default function OutcomeLabels() {
                       <p className="mt-1 text-sm text-muted-foreground">
                         Traditional drug labels focus primarily on whether a treatment is better than placebo for a
                         single outcome. Outcome Labels provide a complete picture of all health effects, helping
-                        patients and doctors make truly informed decisions based on what matters most to them.
+                        patients and providers make truly informed decisions based on what matters most to them.
                       </p>
                     </div>
                   </div>

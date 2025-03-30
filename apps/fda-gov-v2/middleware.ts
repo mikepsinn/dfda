@@ -49,10 +49,13 @@ export async function middleware(request: NextRequest) {
     "/patient/dashboard",
     "/patient/find-trials",
     "/patient/data-submission",
-    "/doctor/dashboard",
-    "/doctor/find-trials",
-    "/sponsor/dashboard",
-    "/sponsor/create-trial",
+    "/provider/dashboard",
+    "/provider/find-trials",
+    "/research-partner/dashboard",
+    "/research-partner/create-trial",
+    "/developer/dashboard",
+    "/developer/api-keys",
+    "/developer/documentation",
     "/user/profile",
   ]
 
@@ -84,8 +87,9 @@ export const config = {
   matcher: [
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
     "/patient/:path*", 
-    "/doctor/:path*", 
-    "/sponsor/:path*", 
+    "/provider/:path*", 
+    "/research-partner/:path*", 
+    "/developer/:path*",
     "/user/:path*", 
     "/login", 
     "/register"

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Badge } from "@/components/ui/badge"
 import {
   Card,
   CardContent,
@@ -11,9 +10,11 @@ import {
 } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
-import { Button } from "@/components/ui/button"
 import { ThumbsUp, ThumbsDown, AlertCircle } from "lucide-react"
 import type { PatientCondition } from "@/lib/database.types"
+import { createLogger } from "@/lib/logger"
+
+const logger = createLogger("treatments-list")
 
 interface TreatmentsListProps {
   conditions: PatientCondition[]
@@ -22,6 +23,9 @@ interface TreatmentsListProps {
 
 export function TreatmentsList({ conditions, userId }: TreatmentsListProps) {
   const [selectedTreatment, setSelectedTreatment] = useState<string | null>(null)
+
+  // Log the userId for audit purposes
+  logger.info("Rendering treatments list for user", { userId, conditionCount: conditions.length })
 
   const getEffectivenessColor = (rating: number) => {
     if (rating >= 7) return "text-green-600"
