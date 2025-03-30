@@ -115,13 +115,6 @@ CREATE TABLE patient_insights (
 );
 ```
 
-## Deferred Patient Features (For Later Phases)
-
-The following tables are deferred to later implementation phases:
-
-- [ ] **Deferred:** `patient_health_goals` table
-- [ ] **Deferred:** `learning_resources` table 
-- [ ] **Deferred:** `patient_learning_progress` table
 
 ## AI Doctor Module
 

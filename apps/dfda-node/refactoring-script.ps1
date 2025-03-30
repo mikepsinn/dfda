@@ -43,8 +43,7 @@ foreach ($route in $publicRoutes) {
     
     if (Test-Path $source) {
         Write-Host "Moving $source to $destination" -ForegroundColor Cyan
-        # Copy-Item -Path $source -Destination $destination -Recurse -Force
-        # This is commented out for dry-run. Uncomment to execute.
+        Copy-Item -Path $source -Destination $destination -Recurse -Force
     } else {
         Write-Host "Source directory doesn't exist: $source" -ForegroundColor Red
     }
@@ -53,8 +52,7 @@ foreach ($route in $publicRoutes) {
 # Copy homepage
 if (Test-Path "apps/dfda-node/app/page.tsx") {
     Write-Host "Copying homepage to (public)" -ForegroundColor Cyan
-    # Copy-Item -Path "apps/dfda-node/app/page.tsx" -Destination "apps/dfda-node/app/(public)/page.tsx" -Force
-    # This is commented out for dry-run. Uncomment to execute.
+    Copy-Item -Path "apps/dfda-node/app/page.tsx" -Destination "apps/dfda-node/app/(public)/page.tsx" -Force
 }
 
 ###########################
@@ -75,8 +73,7 @@ foreach ($route in $authRoutes) {
     
     if (Test-Path $source) {
         Write-Host "Moving $source to $destination" -ForegroundColor Cyan
-        # Copy-Item -Path $source -Destination $destination -Recurse -Force
-        # This is commented out for dry-run. Uncomment to execute.
+        Copy-Item -Path $source -Destination $destination -Recurse -Force
     } else {
         Write-Host "Source directory doesn't exist: $source" -ForegroundColor Red
     }
@@ -98,8 +95,7 @@ foreach ($route in $sharedRoutes) {
     
     if (Test-Path $source) {
         Write-Host "Moving $source to $destination" -ForegroundColor Cyan
-        # Copy-Item -Path $source -Destination $destination -Recurse -Force
-        # This is commented out for dry-run. Uncomment to execute.
+        Copy-Item -Path $source -Destination $destination -Recurse -Force
     } else {
         Write-Host "Source directory doesn't exist: $source" -ForegroundColor Red
     }
@@ -124,8 +120,7 @@ foreach ($template in $sharedTemplates) {
     
     if (-not (Test-Path $path)) {
         Write-Host "Creating $path" -ForegroundColor Cyan
-        # New-Item -Path $path -ItemType $template.Type -Force | Out-Null
-        # This is commented out for dry-run. Uncomment to execute.
+        New-Item -Path $path -ItemType $template.Type -Force | Out-Null
     }
 }
 
@@ -216,8 +211,7 @@ foreach ($template in $adminTemplates) {
     
     if (-not (Test-Path $path)) {
         Write-Host "Creating $path" -ForegroundColor Cyan
-        # New-Item -Path $path -ItemType $template.Type -Force | Out-Null
-        # This is commented out for dry-run. Uncomment to execute.
+        New-Item -Path $path -ItemType $template.Type -Force | Out-Null
     }
 }
 
@@ -249,5 +243,5 @@ foreach ($componentDir in $providerComponents) {
     # This requires careful review of each component
 }
 
-Write-Host "Refactoring script completion. This was a DRY RUN - no files were modified." -ForegroundColor Green
-Write-Host "To execute the changes, remove the comment markers from the Copy-Item and New-Item commands." -ForegroundColor Yellow 
+Write-Host "Refactoring script completed. File operations have been performed." -ForegroundColor Green
+Write-Host "Please check the new directory structure and verify that files were copied correctly." -ForegroundColor Yellow 
