@@ -19,7 +19,7 @@ This document outlines the necessary changes to the current project structure to
 ```
 *Note: Marketing site included in monorepo for initial solo-dev convenience. `dfda-connect` is a separate deployable app.*
 
-**Target Roles within `dfda-node` Instance:** Admin, Provider, Patient.
+**Target Roles within `dfda-node` Instance:** Admin, Provider, Patient, Research Partner, Developer.
 
 ## Phase 1 Actions:
 
@@ -36,14 +36,14 @@ This document outlines the necessary changes to the current project structure to
 
 | Current Directory (`apps/instance-template/...`) | Proposed Action      | Rationale & Notes                                                                                                                               |
 | :----------------------------------------------- | :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `app/(protected)/`                               | `[ ]` Keep & Refactor      | Concept remains. Routes within change based on Admin, Provider, Patient roles.                                                                  |
+| `app/(protected)/`                               | `[ ]` Keep & Refactor      | Concept remains. Routes within change based on Admin, Provider, Patient, Research Partner, Developer roles.                                                                  |
 | `app/actions/`                                   | `[ ]` Keep & Refactor      | Server actions needed. Update implementations for new features/models/roles.                                                                    |
 | `app/admin/`                                     | `[ ]` Keep & Refactor      | Core role. Heavy refactoring for new features (trial/user mgmt, billing, modules, settings).                                                    |
 | `app/auth/`                                      | `[ ]` Keep & Refactor      | Core auth logic. May need instance context updates. Consolidate `login`, `register`, `forgot-password`.                                         |
 | `components/` (within instance-template)         | `[ ]` Refactor/Move to `packages/ui` | Identify truly shared components vs. instance-specific ones. Move shared to `packages/ui`.                                                |
 | `app/conditions/`                                | `[ ]` Keep & Refactor      | Fits `/public/conditions/[id]`.                                                                                                                 |
 | `app/contact/`                                   | `[ ]` Keep & Refactor      | Fits `/public/contact`.                                                                                                                         |
-| `app/developers/`                                | `[ ]` Keep & Refactor      | Developer portal content. API key management UI (`/developers/api-keys`) restricted to Admin role.                                            |
+| `app/developers/`                                | `[ ]` Keep & Refactor      | Developer portal content. Retain developer role functionality.                                            |
 | `app/doctor/`                                    | `[ ]` **Remove / Merge**   | Merge functionality into `/provider`.                                                                                                           |
 | `app/find-trials/`                               | `[ ]` Keep & Refactor      | Fits `/public/find-trials`.                                                                                                                     |
 | `app/forgot-password/`                           | `[ ]` **Remove** (Merged)  | Merged into `app/auth/`.                                                                                                                        |
@@ -59,13 +59,13 @@ This document outlines the necessary changes to the current project structure to
 | `app/provider/`                                  | `[ ]` Keep & Refactor      | Core role. Refactor for defined features.                                                                                                       |
 | `app/provider-resources/`                        | `[ ]` **Remove / Merge**   | Merge into `/about` or manage via `/admin/content`.                                                                                             |
 | `app/register/`                                  | `[ ]` **Remove** (Merged)  | Merged into `app/auth/`.                                                                                                                        |
-| `app/research-partner/`                          | `[ ]` **Remove**           | Functionality moved to `app/admin/`.                                                                                                            |
+| `app/research-partner/`                          | `[ ]` Keep & Refactor      | Retain research partner functionality and enhance for trial management features.                                                                                            |
 | `app/terms/`                                     | `[ ]` Keep & Refactor      | Fits `/public/terms`. Needs templating.                                                                                                         |
 | `app/treatment/`                                 | `[ ]` Keep & Refactor      | Fits `/public/treatments/[id]`. Relevant for logging/e-commerce.                                                                                |
 
 | Current Directory        | Proposed Action      | Rationale & Notes                                                                                                                               |
 | :----------------------- | :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `(protected)/`           | `[ ]` Keep & Refactor      | Concept of protected routes remains. Specific routes within will change based on the new sitemap roles (Admin, Provider, Patient).                |
+| `(protected)/`           | `[ ]` Keep & Refactor      | Concept of protected routes remains. Specific routes within will change based on the new sitemap roles (Admin, Provider, Patient, Research Partner, Developer).                |
 | `actions/`               | `[ ]` Keep & Refactor      | Server actions are needed, but implementations must be updated to match the new features, data models, and roles.                               |
 | `admin/`                 | `[ ]` Keep & Refactor      | Core role exists. Needs heavy refactoring to implement new features: trial mgmt, user mgmt (Provider/Patient), billing, module mgmt, settings etc. |
 | `auth/`                  | `[ ]` Keep & Refactor      | Core authentication logic (Login, Register, Password Reset) is essential. May need updates for instance-specific context.                       |
@@ -88,15 +88,15 @@ This document outlines the necessary changes to the current project structure to
 | `provider/`              | `[ ]` Keep & Refactor      | Core role exists. Needs refactoring based on the defined provider features (patient mgmt within trials, data view, AI consultation).             |
 | `provider-resources/`    | `[ ]` **Remove / Merge**   | Public info. Could be merged into `/about` or documentation managed via `/admin/content`.                                                       |
 | `register/`              | `[ ]` Merge into `auth/`   | Consolidate auth flows under `/auth`. Needs to handle patient registration/enrollment.                                                          |
-| `research-partner/`      | `[ ]` **Remove**           | This role's functionality (trial creation, budget, analytics) is moved to the `/admin` role of the instance.                                    |
+| `research-partner/`      | `[ ]` Keep & Refactor      | Retain research partner functionality and enhance for trial management features.                                                                                            |
 | `terms/`                 | `[ ]` Keep & Refactor      | Public info fits `/public/terms`. Content needs to be instance-configurable/template.                                                           |
 | `treatment/`             | `[ ]` Keep & Refactor      | Public info fits `/public/treatments/[id]`. Also relevant for `/patient/log/treatment` and the optional E-commerce module.                      |
 
 **Summary of Major Changes:**
 
-*   **Role Consolidation:** `research-partner` and `doctor` roles removed/merged.
-*   **Feature Relocation:** Research partner functions move to `admin`.
-*   **Significant Refactoring:** `admin`, `patient`, `provider` directories require major updates and expansion.
+*   **Role Preservation:** Keep `research-partner` and `developer` roles while enhancing their functionality.
+*   **Doctor Role Consolidation:** Merge `doctor` role into `provider`.
+*   **Significant Refactoring:** `admin`, `patient`, `provider`, `research-partner` directories require major updates and expansion.
 *   **New Structure:** Need to implement the route grouping (`/(public)/`, `/(auth)/`, `/(shared)/` etc.) defined in the sitemap.
 *   **Modularity:** Implement logic for optional modules (E-commerce, AI Doctor, Network Insights) likely controlled via `/admin/module-management`.
 *   **White-Labeling:** Implement mechanisms for instance-specific configuration (branding, content, UI settings) managed via `/admin`.
@@ -110,12 +110,11 @@ This plan provides a clear path for restructuring the existing `app/` directory 
 The following database changes are required to support the target architecture and features. These will likely involve creating new migration files.
 
 *   **Roles & Policies:**
-    *   `[ ]` Update `profiles.user_type` CHECK constraint/enum to reflect instance roles (Admin, Provider, Patient).
-    *   `[ ]` Remove or repurpose `research-partner` and `developer` user types within the instance context. (API Key management becomes an Admin function).
-    *   `[ ]` **Overhaul RLS Policies:** Rewrite policies for all relevant tables based on Admin, Provider, Patient roles within the instance. Remove/adapt policies referencing `research-partner` and `developer`. Ensure API key management routes are Admin-only.
+    *   `[ ]` Keep existing user types and enhance roles as needed: Admin, Provider, Patient, Research Partner, Developer.
+    *   `[ ]` **Update RLS Policies:** Review and enhance policies for all relevant tables based on all roles within the instance. Ensure appropriate access control for each role.
 *   **API Access & OAuth:**
-    *   `[ ]` **Remove OAuth Tables (for MVP):** Remove migrations creating `oauth_clients`, `oauth_access_tokens`, `oauth_refresh_tokens`, `oauth_scopes` to simplify MVP organizational integrations. Note: Full OAuth (SMART on FHIR) will likely be needed for future Patient-Facing API (see Roadmap).
-    *   `[ ]` Create table `api_keys` for managing instance-level API keys (scoped appropriately, managed by Admins for organizational integrations).
+    *   `[ ]` **Maintain OAuth Tables:** Keep `oauth_clients`, `oauth_access_tokens`, `oauth_refresh_tokens`, `oauth_scopes` for Patient-Facing API integration. Will be needed for SMART on FHIR implementation.
+    *   `[ ]` Create table `api_keys` for managing instance-level API keys (scoped appropriately, managed by appropriate roles for organizational integrations).
 *   **Patient Data Expansion:**
     *   `[ ]` Ensure `/patient/data/export` functionality is planned and robust.
     *   `[ ]` Create table/columns for `patient_food_log`.
