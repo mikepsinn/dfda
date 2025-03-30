@@ -1,10 +1,3 @@
-let userConfig = undefined
-try {
-  userConfig = await import('./v0-user-next.config')
-} catch (e) {
-  // ignore error
-}
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -20,10 +13,11 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+    typedRoutes: true,
   },
 }
 
-mergeConfig(nextConfig, userConfig)
+mergeConfig(nextConfig)
 
 function mergeConfig(nextConfig, userConfig) {
   if (!userConfig) {

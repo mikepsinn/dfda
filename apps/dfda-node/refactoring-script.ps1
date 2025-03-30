@@ -1,247 +1,224 @@
 ##################################################
-# DFDA Node App Refactoring Script
-# This script implements the restructuring outlined in refactoring-plan.md
+# DFDA Node App Structure Reorganization Script
+# This script reorganizes the existing app structure to be more intuitive
 ##################################################
 
-Write-Host "Starting DFDA Node App Refactoring..." -ForegroundColor Green
+Write-Host "Starting DFDA Node App Structure Reorganization..." -ForegroundColor Green
 
-# Create directory structure if it doesn't exist
-$directories = @(
+# Create backup of the entire app directory
+$backupDir = "app-backup-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
+Write-Host "Creating backup of the entire app directory to $backupDir" -ForegroundColor Magenta
+Copy-Item -Path "app" -Destination $backupDir -Recurse -Force
+
+# Create route groups if they don't exist
+$routeGroups = @(
     "app/(public)",
     "app/(auth)",
-    "app/(shared)"
+    "app/(shared)",
+    "app/(protected)" # Keep existing protected group but reorganize contents
 )
 
-foreach ($dir in $directories) {
-    $path = "apps/dfda-node/$dir"
-    if (-not (Test-Path $path)) {
-        Write-Host "Creating directory: $path" -ForegroundColor Cyan
-        New-Item -Path $path -ItemType Directory -Force | Out-Null
+foreach ($dir in $routeGroups) {
+    if (-not (Test-Path $dir)) {
+        Write-Host "Creating route group: $dir" -ForegroundColor Cyan
+        New-Item -Path $dir -ItemType Directory -Force | Out-Null
+    }
+}
+
+# Function to check for import path issues after moving
+function Check-ImportPaths {
+    param (
+        [string]$directory
+    )
+    
+    Write-Host "Checking for potential import path issues in $directory..." -ForegroundColor Yellow
+    
+    $files = Get-ChildItem -Path $directory -Recurse -File -Filter "*.tsx"
+    foreach ($file in $files) {
+        $content = Get-Content $file.FullName -Raw
+        if ($content -match "from ['""]\.\.\/\.\.\/") {
+            Write-Host "WARNING: Potential import path issue in $($file.FullName)" -ForegroundColor Red
+        }
     }
 }
 
 ###########################
 # MOVE PUBLIC ROUTES
 ###########################
-Write-Host "Moving public routes..." -ForegroundColor Yellow
+Write-Host "Moving public routes to (public) group..." -ForegroundColor Yellow
 
-# Routes to move to (public)
 $publicRoutes = @(
-    @{Source="app/terms"; Destination="app/(public)/terms"},
-    @{Source="app/privacy"; Destination="app/(public)/privacy"},
-    @{Source="app/contact"; Destination="app/(public)/contact"},
-    @{Source="app/impact"; Destination="app/(public)/impact"},
-    @{Source="app/find-trials"; Destination="app/(public)/find-trials"},
-    @{Source="app/conditions"; Destination="app/(public)/conditions"},
-    @{Source="app/treatment"; Destination="app/(public)/treatment"}
-    # outcome-labels removed as it's being integrated into admin analytics
+    "app/conditions",
+    "app/contact",
+    "app/find-trials",
+    "app/impact",
+    "app/privacy",
+    "app/terms",
+    "app/treatment"
 )
 
 foreach ($route in $publicRoutes) {
-    $source = "apps/dfda-node/$($route.Source)"
-    $destination = "apps/dfda-node/$($route.Destination)"
+    $source = $route
+    $destination = "app/(public)/" + (Split-Path -Leaf $route)
     
     if (Test-Path $source) {
         Write-Host "Moving $source to $destination" -ForegroundColor Cyan
-        Copy-Item -Path $source -Destination $destination -Recurse -Force
+        
+        # Create parent directory if it doesn't exist
+        $parentDir = Split-Path -Parent $destination
+        if (-not (Test-Path $parentDir)) {
+            New-Item -Path $parentDir -ItemType Directory -Force | Out-Null
+        }
+        
+        Move-Item -Path $source -Destination $destination -Force
     } else {
         Write-Host "Source directory doesn't exist: $source" -ForegroundColor Red
     }
 }
 
-# Copy homepage
-if (Test-Path "apps/dfda-node/app/page.tsx") {
-    Write-Host "Copying homepage to (public)" -ForegroundColor Cyan
-    Copy-Item -Path "apps/dfda-node/app/page.tsx" -Destination "apps/dfda-node/app/(public)/page.tsx" -Force
+# Move homepage
+if (Test-Path "app/page.tsx") {
+    Write-Host "Moving homepage to (public) group" -ForegroundColor Cyan
+    Copy-Item -Path "app/page.tsx" -Destination "app/page.tsx.backup" -Force
+    Move-Item -Path "app/page.tsx" -Destination "app/(public)/page.tsx" -Force
 }
 
 ###########################
 # MOVE AUTH ROUTES
 ###########################
-Write-Host "Moving auth routes..." -ForegroundColor Yellow
+Write-Host "Moving auth routes to (auth) group..." -ForegroundColor Yellow
 
-# Routes to move to (auth)
 $authRoutes = @(
-    @{Source="app/login"; Destination="app/(auth)/login"},
-    @{Source="app/register"; Destination="app/(auth)/register"},
-    @{Source="app/forgot-password"; Destination="app/(auth)/forgot-password"}
+    "app/login",
+    "app/register",
+    "app/forgot-password"
 )
 
+# Also move app/auth directory contents if they exist
+if (Test-Path "app/auth") {
+    Write-Host "Moving app/auth directory contents to (auth) group..." -ForegroundColor Cyan
+    Get-ChildItem -Path "app/auth" -Recurse | ForEach-Object {
+        $relativePath = $_.FullName.Substring((Get-Item "app/auth").FullName.Length + 1)
+        $destination = "app/(auth)/$relativePath"
+        
+        if (-not $_.PSIsContainer) {
+            $destinationDir = Split-Path -Parent $destination
+            if (-not (Test-Path $destinationDir)) {
+                New-Item -Path $destinationDir -ItemType Directory -Force | Out-Null
+            }
+            
+            Copy-Item -Path $_.FullName -Destination $destination -Force
+        }
+    }
+}
+
 foreach ($route in $authRoutes) {
-    $source = "apps/dfda-node/$($route.Source)"
-    $destination = "apps/dfda-node/$($route.Destination)"
+    $source = $route
+    $destination = "app/(auth)/" + (Split-Path -Leaf $route)
     
     if (Test-Path $source) {
         Write-Host "Moving $source to $destination" -ForegroundColor Cyan
-        Copy-Item -Path $source -Destination $destination -Recurse -Force
+        Move-Item -Path $source -Destination $destination -Force
     } else {
         Write-Host "Source directory doesn't exist: $source" -ForegroundColor Red
     }
 }
 
 ###########################
-# MOVE SHARED ROUTES
+# CREATE SHARED ROUTES
 ###########################
-Write-Host "Moving shared routes..." -ForegroundColor Yellow
+Write-Host "Setting up shared routes..." -ForegroundColor Yellow
 
-# User profile and other shared functionality
+# Create shared route structure
 $sharedRoutes = @(
-    @{Source="app/(protected)/user"; Destination="app/(shared)/user"}
+    "app/(shared)/profile",
+    "app/(shared)/dashboard",
+    "app/(shared)/settings"
 )
 
 foreach ($route in $sharedRoutes) {
-    $source = "apps/dfda-node/$($route.Source)"
-    $destination = "apps/dfda-node/$($route.Destination)"
-    
-    if (Test-Path $source) {
-        Write-Host "Moving $source to $destination" -ForegroundColor Cyan
-        Copy-Item -Path $source -Destination $destination -Recurse -Force
-    } else {
-        Write-Host "Source directory doesn't exist: $source" -ForegroundColor Red
+    if (-not (Test-Path $route)) {
+        Write-Host "Creating $route" -ForegroundColor Cyan
+        New-Item -Path $route -ItemType Directory -Force | Out-Null
     }
 }
 
-###########################
-# CREATE SHARED ROUTES (TEMPLATES)
-###########################
-Write-Host "Creating shared route templates..." -ForegroundColor Yellow
+# Move user profile if it exists
+if (Test-Path "app/(protected)/user") {
+    Write-Host "Moving user profile to shared routes..." -ForegroundColor Cyan
+    Move-Item -Path "app/(protected)/user" -Destination "app/(shared)/user" -Force
+}
 
-$sharedTemplates = @(
-    @{Path="app/(shared)/profile"; Type="Directory"},
-    @{Path="app/(shared)/dashboard"; Type="Directory"},
-    @{Path="app/(shared)/notifications"; Type="Directory"},
-    @{Path="app/(shared)/settings"; Type="Directory"},
-    @{Path="app/(shared)/settings/account"; Type="Directory"},
-    @{Path="app/(shared)/settings/consent"; Type="Directory"}
+###########################
+# SIMPLIFY ADMIN STRUCTURE
+###########################
+Write-Host "Simplifying admin structure..." -ForegroundColor Yellow
+
+# Create core admin directories
+$adminDirs = @(
+    "app/admin/dashboard",
+    "app/admin/users",
+    "app/admin/roles",
+    "app/admin/trials",
+    "app/admin/billing",
+    "app/admin/settings"
 )
 
-foreach ($template in $sharedTemplates) {
-    $path = "apps/dfda-node/$($template.Path)"
-    
-    if (-not (Test-Path $path)) {
-        Write-Host "Creating $path" -ForegroundColor Cyan
-        New-Item -Path $path -ItemType $template.Type -Force | Out-Null
+foreach ($dir in $adminDirs) {
+    if (-not (Test-Path $dir)) {
+        Write-Host "Creating $dir" -ForegroundColor Cyan
+        New-Item -Path $dir -ItemType Directory -Force | Out-Null
     }
 }
 
-###########################
-# ENHANCE RESEARCH-PARTNER ROUTES
-###########################
-Write-Host "Enhancing research-partner routes..." -ForegroundColor Yellow
-
-# Identify the research partner routes to enhance
-$rpRoutes = @(
-    "app/research-partner/create-trial",
-    "app/research-partner/dashboard",
-    "app/research-partner/trials"
+# Delete redundant admin directories if they exist
+$redundantAdminDirs = @(
+    "app/admin/recruitment-tools",
+    "app/admin/budget-tracking",
+    "app/admin/ui-settings"
 )
 
-foreach ($route in $rpRoutes) {
-    $path = "apps/dfda-node/$route"
-    
-    if (Test-Path $path) {
-        Write-Host "Research Partner route identified for enhancement: $path" -ForegroundColor Cyan
-        # We're not moving or modifying these routes in this script
-        # This is just a placeholder for future feature enhancements
-    } else {
-        Write-Host "Route path doesn't exist: $path" -ForegroundColor Red
+foreach ($dir in $redundantAdminDirs) {
+    if (Test-Path $dir) {
+        Write-Host "Removing redundant admin directory: $dir" -ForegroundColor Red
+        Remove-Item -Path $dir -Recurse -Force
     }
 }
 
-###########################
-# MERGE DOCTOR FUNCTIONALITY INTO PROVIDER
-###########################
-Write-Host "Merging doctor functionality into provider..." -ForegroundColor Yellow
-
-# Identify doctor routes to be merged
-if (Test-Path "apps/dfda-node/app/doctor") {
-    Write-Host "Doctor directory found. Functionality will be merged into provider role." -ForegroundColor Cyan
-    # This requires manual integration, not just copying
-}
 
 ###########################
-# REMOVE LOW-VALUE PAGES
+# REMOVE PROVIDER-RESOURCES
 ###########################
-Write-Host "Identifying low-value pages to remove..." -ForegroundColor Yellow
+Write-Host "Removing provider-resources..." -ForegroundColor Yellow
 
-$lowValuePages = @(
-    "app/outcome-labels",
-    "app/provider-resources"
-)
-
-foreach ($page in $lowValuePages) {
-    $path = "apps/dfda-node/$page"
+if (Test-Path "app/provider-resources") {
+    Write-Host "Provider resources will be managed via admin/content..." -ForegroundColor Cyan
     
-    if (Test-Path $path) {
-        Write-Host "Low-value page identified for removal: $path" -ForegroundColor Cyan
-        # This will be handled manually to ensure any valuable functionality is preserved
-    } else {
-        Write-Host "Page path doesn't exist: $path" -ForegroundColor Red
+    # Create admin/content if it doesn't exist
+    if (-not (Test-Path "app/admin/content")) {
+        New-Item -Path "app/admin/content" -ItemType Directory -Force | Out-Null
     }
-}
-
-###########################
-# CREATE/UPDATE ADMIN ROUTE STRUCTURE (TEMPLATES)
-###########################
-Write-Host "Creating admin route templates..." -ForegroundColor Yellow
-
-$adminTemplates = @(
-    @{Path="app/admin/trials"; Type="Directory"},
-    @{Path="app/admin/users"; Type="Directory"},
-    @{Path="app/admin/roles"; Type="Directory"},
-    @{Path="app/admin/billing"; Type="Directory"},
-    @{Path="app/admin/analytics"; Type="Directory"},
-    @{Path="app/admin/analytics/outcome-labels"; Type="Directory"}, # New location for outcome labels
-    @{Path="app/admin/recruitment-tools"; Type="Directory"},
-    @{Path="app/admin/budget-tracking"; Type="Directory"},
-    @{Path="app/admin/content"; Type="Directory"},
-    @{Path="app/admin/branding"; Type="Directory"},
-    @{Path="app/admin/ui-settings"; Type="Directory"},
-    @{Path="app/admin/module-management"; Type="Directory"},
-    @{Path="app/admin/settings"; Type="Directory"},
-    @{Path="app/admin/settings/general"; Type="Directory"},
-    @{Path="app/admin/settings/network"; Type="Directory"},
-    @{Path="app/admin/settings/integrations"; Type="Directory"},
-    @{Path="app/admin/settings/compliance"; Type="Directory"},
-    @{Path="app/admin/settings/usage-monitoring"; Type="Directory"}
-)
-
-foreach ($template in $adminTemplates) {
-    $path = "apps/dfda-node/$($template.Path)"
     
-    if (-not (Test-Path $path)) {
-        Write-Host "Creating $path" -ForegroundColor Cyan
-        New-Item -Path $path -ItemType $template.Type -Force | Out-Null
-    }
+    # Copy provider-resources for reference
+    Copy-Item -Path "app/provider-resources/*" -Destination "app/admin/content/provider-resources-reference" -Recurse -Force
+    
+    # Remove original directory
+    Remove-Item -Path "app/provider-resources" -Recurse -Force
 }
 
 ###########################
-# MOVE/REFACTOR PATIENT COMPONENTS
+# CHECK FOR IMPORT ISSUES
 ###########################
-Write-Host "Identifying patient components to move to root components directory..." -ForegroundColor Yellow
+Write-Host "Checking for potential import issues in moved files..." -ForegroundColor Yellow
 
-# This finds component files within patient directories
-$patientComponents = Get-ChildItem -Path "apps/dfda-node/app/patient" -Recurse -Filter "components" -Directory
+Check-ImportPaths -directory "app/(public)"
+Check-ImportPaths -directory "app/(auth)"
+Check-ImportPaths -directory "app/(shared)"
 
-foreach ($componentDir in $patientComponents) {
-    Write-Host "Patient components found: $($componentDir.FullName)" -ForegroundColor Cyan
-    # Here we would need to move specific components to the root components directory
-    # This requires careful review of each component
-}
-
-###########################
-# MOVE/REFACTOR PROVIDER COMPONENTS
-###########################
-Write-Host "Identifying provider components to move to root components directory..." -ForegroundColor Yellow
-
-# This finds component files within provider directories
-$providerComponents = Get-ChildItem -Path "apps/dfda-node/app/provider" -Recurse -Filter "components" -Directory
-
-foreach ($componentDir in $providerComponents) {
-    Write-Host "Provider components found: $($componentDir.FullName)" -ForegroundColor Cyan
-    # Here we would need to move specific components to the root components directory
-    # This requires careful review of each component
-}
-
-Write-Host "Refactoring script completed. File operations have been performed." -ForegroundColor Green
-Write-Host "Please check the new directory structure and verify that files were copied correctly." -ForegroundColor Yellow 
+Write-Host "`nStructure reorganization completed!" -ForegroundColor Green
+Write-Host "A backup of the original app directory was created at $backupDir" -ForegroundColor Cyan
+Write-Host "`nWARNING: You will need to update import paths in moved files!" -ForegroundColor Red
+Write-Host "Recommended next steps:" -ForegroundColor Yellow
+Write-Host "1. Check all moved files for import path issues" -ForegroundColor Yellow
+Write-Host "2. Update layout files in each route group" -ForegroundColor Yellow
+Write-Host "3. Test the application to ensure all routes work correctly" -ForegroundColor Yellow
