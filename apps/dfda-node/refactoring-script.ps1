@@ -33,8 +33,8 @@ $publicRoutes = @(
     @{Source="app/impact"; Destination="app/(public)/impact"},
     @{Source="app/find-trials"; Destination="app/(public)/find-trials"},
     @{Source="app/conditions"; Destination="app/(public)/conditions"},
-    @{Source="app/treatment"; Destination="app/(public)/treatment"},
-    @{Source="app/outcome-labels"; Destination="app/(public)/outcome-labels"}
+    @{Source="app/treatment"; Destination="app/(public)/treatment"}
+    # outcome-labels removed as it's being integrated into admin analytics
 )
 
 foreach ($route in $publicRoutes) {
@@ -154,6 +154,38 @@ foreach ($route in $rpRoutes) {
 }
 
 ###########################
+# MERGE DOCTOR FUNCTIONALITY INTO PROVIDER
+###########################
+Write-Host "Merging doctor functionality into provider..." -ForegroundColor Yellow
+
+# Identify doctor routes to be merged
+if (Test-Path "apps/dfda-node/app/doctor") {
+    Write-Host "Doctor directory found. Functionality will be merged into provider role." -ForegroundColor Cyan
+    # This requires manual integration, not just copying
+}
+
+###########################
+# REMOVE LOW-VALUE PAGES
+###########################
+Write-Host "Identifying low-value pages to remove..." -ForegroundColor Yellow
+
+$lowValuePages = @(
+    "app/outcome-labels",
+    "app/provider-resources"
+)
+
+foreach ($page in $lowValuePages) {
+    $path = "apps/dfda-node/$page"
+    
+    if (Test-Path $path) {
+        Write-Host "Low-value page identified for removal: $path" -ForegroundColor Cyan
+        # This will be handled manually to ensure any valuable functionality is preserved
+    } else {
+        Write-Host "Page path doesn't exist: $path" -ForegroundColor Red
+    }
+}
+
+###########################
 # CREATE/UPDATE ADMIN ROUTE STRUCTURE (TEMPLATES)
 ###########################
 Write-Host "Creating admin route templates..." -ForegroundColor Yellow
@@ -164,6 +196,7 @@ $adminTemplates = @(
     @{Path="app/admin/roles"; Type="Directory"},
     @{Path="app/admin/billing"; Type="Directory"},
     @{Path="app/admin/analytics"; Type="Directory"},
+    @{Path="app/admin/analytics/outcome-labels"; Type="Directory"}, # New location for outcome labels
     @{Path="app/admin/recruitment-tools"; Type="Directory"},
     @{Path="app/admin/budget-tracking"; Type="Directory"},
     @{Path="app/admin/content"; Type="Directory"},

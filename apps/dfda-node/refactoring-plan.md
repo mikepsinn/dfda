@@ -52,16 +52,16 @@ This document outlines the necessary changes to the current project structure to
 | `app/layout.tsx`                                 | `[ ]` Keep & Refactor      | Root layout for instance template. Needs context/theme updates.                                                                                 |
 | `lib/` (within instance-template)                | `[ ]` Refactor/Move to `packages/utils` | Identify shared utilities vs. instance-specific ones. Move shared to `packages/utils`.                                                    |
 | `app/login/`                                     | `[ ]` **Remove** (Merged)  | Merged into `app/auth/`.                                                                                                                        |
-| `app/outcome-labels/`                            | `[ ]` **Keep & Refactor**  | Keep for dFDA value. Integrate into public section/analytics.                                                                                   |
+| `app/outcome-labels/`                            | `[ ]` **Remove / Merge**   | Integrate functionality into admin analytics dashboard instead of having a standalone page.                                                                                   |
 | `app/page.tsx`                                   | `[ ]` Keep & Refactor      | Root public homepage (`/`). Needs instance configuration.                                                                                       |
-| `app/patient/`                                   | `[ ]` Keep & Refactor      | Core role. **Significant expansion/refactoring** for new features.                                                                              |
+| `app/patient/`                                   | `[ ]` Keep & Refactor      | Core role. **Significant expansion/refactoring** for new features. Defer community, goals and learning sections for later phases.                                                                              |
 | `app/privacy/`                                   | `[ ]` Keep & Refactor      | Fits `/public/privacy`. Needs templating.                                                                                                       |
-| `app/provider/`                                  | `[ ]` Keep & Refactor      | Core role. Refactor for defined features.                                                                                                       |
-| `app/provider-resources/`                        | `[ ]` **Remove / Merge**   | Merge into `/about` or manage via `/admin/content`.                                                                                             |
+| `app/provider/`                                  | `[ ]` Keep & Refactor      | Core role. Refactor for defined features. Incorporate relevant doctor functionality.                                                                                                      |
+| `app/provider-resources/`                        | `[ ]` **Remove / Merge**   | Remove and make content manageable via `/admin/content`.                                                                                             |
 | `app/register/`                                  | `[ ]` **Remove** (Merged)  | Merged into `app/auth/`.                                                                                                                        |
 | `app/research-partner/`                          | `[ ]` Keep & Refactor      | Retain research partner functionality and enhance for trial management features.                                                                                            |
 | `app/terms/`                                     | `[ ]` Keep & Refactor      | Fits `/public/terms`. Needs templating.                                                                                                         |
-| `app/treatment/`                                 | `[ ]` Keep & Refactor      | Fits `/public/treatments/[id]`. Relevant for logging/e-commerce.                                                                                |
+| `app/treatment/`                                 | `[ ]` Keep & Refactor      | Fits `/public/treatments/[id]`. Relevant for logging. E-commerce integration deferred to later phase.                                                                                |
 
 | Current Directory        | Proposed Action      | Rationale & Notes                                                                                                                               |
 | :----------------------- | :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -81,12 +81,12 @@ This document outlines the necessary changes to the current project structure to
 | `layout.tsx`             | `[ ]` Keep & Refactor      | Root layout is essential. Needs updates for potential context providers, theme changes based on instance branding.                              |
 | `lib/`                   | `[ ]` Keep & Refactor      | Utility functions are needed. Review and refactor for new architecture and features.                                                            |
 | `login/`                 | `[ ]` Merge into `auth/`   | Consolidate auth flows under `/auth`.                                                                                                           |
-| `outcome-labels/`        | `[ ]` **Keep & Refactor**  | Keep for dFDA value illustration. Integrate into public section (e.g., `/public/outcomes`) and/or `/admin/analytics`.                         |
+| `outcome-labels/`        | `[ ]` **Remove / Merge**   | Integrate functionality into admin analytics dashboard instead of having a standalone page.                                                                                   |
 | `page.tsx`               | `[ ]` Keep & Refactor      | Represents the root public homepage (`/`). Content needs to be instance-configurable.                                                           |
 | `patient/`               | `[ ]` Keep & Refactor      | Core role exists. Needs **significant expansion and refactoring** based on the detailed patient features (logging, insights, AI doc, store etc.). |
 | `privacy/`               | `[ ]` Keep & Refactor      | Public info fits `/public/privacy`. Content needs to be instance-configurable/template.                                                         |
 | `provider/`              | `[ ]` Keep & Refactor      | Core role exists. Needs refactoring based on the defined provider features (patient mgmt within trials, data view, AI consultation).             |
-| `provider-resources/`    | `[ ]` **Remove / Merge**   | Public info. Could be merged into `/about` or documentation managed via `/admin/content`.                                                       |
+| `provider-resources/`    | `[ ]` **Remove / Merge**   | Remove and make content manageable via `/admin/content`.                                                                                             |
 | `register/`              | `[ ]` Merge into `auth/`   | Consolidate auth flows under `/auth`. Needs to handle patient registration/enrollment.                                                          |
 | `research-partner/`      | `[ ]` Keep & Refactor      | Retain research partner functionality and enhance for trial management features.                                                                                            |
 | `terms/`                 | `[ ]` Keep & Refactor      | Public info fits `/public/terms`. Content needs to be instance-configurable/template.                                                           |
@@ -96,9 +96,12 @@ This document outlines the necessary changes to the current project structure to
 
 *   **Role Preservation:** Keep `research-partner` and `developer` roles while enhancing their functionality.
 *   **Doctor Role Consolidation:** Merge `doctor` role into `provider`.
+*   **Page Simplification:** Remove or simplify low-value pages (outcome-labels, provider-resources).
+*   **Feature Deferral:** Defer implementation of patient community, goals, learning sections, and e-commerce module.
+*   **Dashboard Consolidation:** Streamline dashboard views to reduce redundancy.
 *   **Significant Refactoring:** `admin`, `patient`, `provider`, `research-partner` directories require major updates and expansion.
 *   **New Structure:** Need to implement the route grouping (`/(public)/`, `/(auth)/`, `/(shared)/` etc.) defined in the sitemap.
-*   **Modularity:** Implement logic for optional modules (E-commerce, AI Doctor, Network Insights) likely controlled via `/admin/module-management`.
+*   **Modularity:** Implement logic for essential modules first, defer optional modules (E-commerce) to later phases.
 *   **White-Labeling:** Implement mechanisms for instance-specific configuration (branding, content, UI settings) managed via `/admin`.
 
 This plan provides a clear path for restructuring the existing `app/` directory to build the foundation for the white-labeled Trial & Health Management Platform instances.

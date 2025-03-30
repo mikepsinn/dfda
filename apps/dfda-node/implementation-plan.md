@@ -18,7 +18,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Move find-trials -> (public)/find-trials
 - [ ] Move conditions -> (public)/conditions
 - [ ] Move treatment -> (public)/treatment
-- [ ] Move outcome-labels -> (public)/outcome-labels
+- [ ] ~~Move outcome-labels -> (public)/outcome-labels~~ (Remove/Merge into analytics)
 - [ ] Test all moved routes to ensure proper functioning
 
 ### 1.3 Move Authentication Routes (Priority: High)
@@ -30,6 +30,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 ### 1.4 Setup Shared Routes (Priority: Medium)
 - [ ] Move (protected)/user -> (shared)/user
 - [ ] Create templates for shared routes: profile, dashboard, notifications, settings
+- [ ] Streamline dashboard views to reduce redundancy
 - [ ] Test shared routes with basic rendering
 
 ## Phase 2: Feature Refactoring and Enhancement
@@ -48,6 +49,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Create templates for enhanced admin routes (users, roles, billing, analytics, etc.)
 - [ ] Implement basic UI for new admin features
 - [ ] Implement module management UI (/admin/module-management)
+- [ ] Integrate outcome labels functionality into analytics dashboard
 - [ ] Test extended admin functionality
 
 ### 2.4 Component Refactoring (Priority: Medium)
@@ -56,6 +58,11 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Move/refactor provider components to root components directory
 - [ ] Update imports in all affected files
 - [ ] Test components in their new locations
+
+### 2.5 Provider Consolidation (Priority: Medium)
+- [ ] Merge doctor role functionality into provider role
+- [ ] Remove provider-resources and make content manageable via admin interface
+- [ ] Test consolidated provider functionality
 
 ## Phase 3: Database Schema Refactoring
 
@@ -76,9 +83,9 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Create patient_condition_events table
 - [ ] Create patient_data_import_sources table
 - [ ] Create patient_insights table
-- [ ] Create patient_health_goals table
-- [ ] Create learning_resources table
-- [ ] Create patient_learning_progress table
+- [ ] ~~Create patient_health_goals table~~ (Deferred)
+- [ ] ~~Create learning_resources table~~ (Deferred)
+- [ ] ~~Create patient_learning_progress table~~ (Deferred)
 - [ ] Implement basic UI for patient data logging
 - [ ] Test patient data functionality
 
@@ -91,7 +98,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 
 ### 3.5 Module-Specific Tables (Priority: Low)
 - [ ] Create AI Doctor module tables (if module planned for early implementation)
-- [ ] Create E-commerce module tables (if module planned for early implementation)
+- [ ] ~~Create E-commerce module tables~~ (Deferred to later phase)
 - [ ] Test module-specific functionality
 
 ## Phase 4: Feature Implementation for Core Modules
@@ -101,6 +108,9 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Implement comprehensive health logging
 - [ ] Implement data import connections
 - [ ] Implement trial enrollment and management
+- [ ] ~~Implement community features~~ (Deferred)
+- [ ] ~~Implement goals functionality~~ (Deferred)
+- [ ] ~~Implement learning section~~ (Deferred)
 - [ ] Test patient core features
 
 ### 4.2 Provider Core Features (Priority: High)
@@ -116,7 +126,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Implement instance configuration
 - [ ] Test admin core features
 
-## Phase 5: Optional Module Implementation
+## Phase 5: Optional Module Implementation (Deferred Phase)
 
 ### 5.1 AI Doctor Module (Priority: Low)
 - [ ] Implement patient AI Doctor interface
@@ -124,7 +134,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Implement session sharing functionality
 - [ ] Test AI Doctor module
 
-### 5.2 E-commerce Module (Priority: Low)
+### 5.2 E-commerce Module (Priority: Low, Deferred)
 - [ ] Implement product catalog
 - [ ] Implement shopping cart
 - [ ] Implement checkout process
@@ -135,6 +145,7 @@ This document outlines the step-by-step implementation plan to refactor the DFDA
 - [ ] Implement data contribution mechanism
 - [ ] Implement insights display
 - [ ] Test Network Insights module
+
 
 ## Implementation Notes
 

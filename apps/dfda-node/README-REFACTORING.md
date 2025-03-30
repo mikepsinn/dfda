@@ -73,11 +73,24 @@ The `implementation-plan.md` file provides a prioritized approach to the refacto
 1. Route Structure Refactoring (high priority)
 2. Feature Refactoring and Enhancement (medium priority)
    - This includes enhancing Research Partner and Developer roles
+   - Removing or merging low-value pages like outcome-labels and provider-resources
+   - Merging doctor role functionality into provider role
 3. Database Schema Refactoring (high/medium priority)
 4. Feature Implementation for Core Modules (high priority)
-5. Optional Module Implementation (low priority)
+5. Optional Module Implementation (low priority, mostly deferred)
 
 Each phase should be completed with thorough testing before moving to the next.
+
+## Deferred Features
+
+The following features have been identified as lower priority and deferred to later phases:
+
+1. **Patient Community Features** - Messaging, forums, social features
+2. **Patient Goals** - Goal tracking and progress monitoring
+3. **Learning Resources** - Educational content for patients
+4. **E-commerce Module** - Product catalog, cart, checkout, orders 
+
+These features are not included in the initial refactoring scope.
 
 ## Manual Steps Required
 
@@ -87,7 +100,9 @@ Some aspects of the refactoring cannot be automated and require manual intervent
 2. Enhancing research-partner and developer functionality
 3. Moving components from app subdirectories to the root components directory
 4. Updating API calls to reflect new endpoints/routes
-5. Testing each refactored section
+5. Merging doctor functionality into provider role
+6. Integrating outcome labels functionality into admin analytics dashboard
+7. Testing each refactored section
 
 ## Version Control Recommendations
 

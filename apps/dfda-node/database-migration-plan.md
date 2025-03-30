@@ -115,53 +115,13 @@ CREATE TABLE patient_insights (
 );
 ```
 
-- [ ] Create `patient_health_goals` table:
-```sql
-CREATE TABLE patient_health_goals (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  patient_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  title TEXT NOT NULL,
-  description TEXT,
-  target_value DECIMAL,
-  current_value DECIMAL,
-  unit TEXT,
-  start_date TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  target_date TIMESTAMP WITH TIME ZONE,
-  status TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-```
+## Deferred Patient Features (For Later Phases)
 
-- [ ] Create `learning_resources` table:
-```sql
-CREATE TABLE learning_resources (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  title TEXT NOT NULL,
-  description TEXT,
-  resource_type TEXT NOT NULL,
-  content_url TEXT,
-  content TEXT,
-  related_condition_id UUID REFERENCES conditions(id),
-  related_treatment_id UUID REFERENCES treatments(id),
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  created_by UUID REFERENCES profiles(id)
-);
-```
+The following tables are deferred to later implementation phases:
 
-- [ ] Create `patient_learning_progress` table:
-```sql
-CREATE TABLE patient_learning_progress (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  patient_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  resource_id UUID REFERENCES learning_resources(id) ON DELETE CASCADE,
-  progress_percent INTEGER DEFAULT 0,
-  completed BOOLEAN DEFAULT false,
-  last_accessed TIMESTAMP WITH TIME ZONE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-```
+- [ ] **Deferred:** `patient_health_goals` table
+- [ ] **Deferred:** `learning_resources` table 
+- [ ] **Deferred:** `patient_learning_progress` table
 
 ## AI Doctor Module
 
@@ -192,72 +152,15 @@ CREATE TABLE ai_doctor_sharing_permissions (
 );
 ```
 
-## E-commerce Module (Optional)
+## E-commerce Module (Deferred to Later Phase)
 
-- [ ] Create `products` table:
-```sql
-CREATE TABLE products (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  name TEXT NOT NULL,
-  description TEXT,
-  treatment_id UUID REFERENCES treatments(id),
-  manufacturer TEXT,
-  batch_lot_info TEXT,
-  sku TEXT,
-  price DECIMAL,
-  inventory_count INTEGER,
-  is_prescription_required BOOLEAN DEFAULT false,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-```
+The following E-commerce related tables are deferred to later implementation phases:
 
-- [ ] Create `orders` table:
-```sql
-CREATE TABLE orders (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  patient_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  order_date TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  status TEXT NOT NULL,
-  total_amount DECIMAL,
-  shipping_address JSONB,
-  billing_address JSONB,
-  payment_method_id TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-```
-
-- [ ] Create `order_items` table:
-```sql
-CREATE TABLE order_items (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  order_id UUID REFERENCES orders(id) ON DELETE CASCADE,
-  product_id UUID REFERENCES products(id),
-  quantity INTEGER NOT NULL,
-  price_per_unit DECIMAL NOT NULL,
-  batch_lot_info TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-```
-
-- [ ] Create `cart_items` table:
-```sql
-CREATE TABLE cart_items (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  patient_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  product_id UUID REFERENCES products(id),
-  quantity INTEGER NOT NULL,
-  added_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
-```
-
-- [ ] Modify `measurements` table to link with purchases:
-```sql
-ALTER TABLE measurements
-ADD COLUMN order_item_id UUID REFERENCES order_items(id);
-```
+- [ ] **Deferred:** `products` table
+- [ ] **Deferred:** `orders` table
+- [ ] **Deferred:** `order_items` table
+- [ ] **Deferred:** `cart_items` table
+- [ ] **Deferred:** Add `order_item_id` column to `measurements` table
 
 ## Instance Configuration
 
