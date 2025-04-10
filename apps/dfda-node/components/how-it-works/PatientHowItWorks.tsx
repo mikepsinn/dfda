@@ -12,7 +12,7 @@ export function PatientHowItWorks() {
         <PatientSteps />
 
         <div className="flex justify-center mt-12">
-          <Link href="/patient/find-trials">
+          <Link href="/app/(protected)/patient/find-trials">
             <Button size="lg" variant="outline" className="gap-1">
               Find a Trial <ArrowRight className="h-4 w-4" />
             </Button>

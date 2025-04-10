@@ -36,7 +36,7 @@ export function FeaturedTrialsSection({ trials }: FeaturedTrialsSectionProps) {
                   <p className="text-sm text-gray-500 line-clamp-3">{trial.description}</p>
                 </CardContent>
                 <CardFooter>
-                  <Link href={`/patient/trial-details/${trial.id}`} passHref>
+                  <Link href={`/app/(protected)/patient/trial-details/${trial.id}`} passHref>
                     <Button className="w-full">View Details</Button>
                   </Link>
                 </CardFooter>
@@ -49,7 +49,7 @@ export function FeaturedTrialsSection({ trials }: FeaturedTrialsSectionProps) {
           )}
         </div>
         <div className="flex justify-center mt-8">
-          <Link href="/patient/find-trials" passHref>
+          <Link href="/app/(protected)/patient/find-trials" passHref>
             <Button variant="outline">View All Trials</Button>
           </Link>
         </div>

@@ -30,7 +30,7 @@ export function RecommendedTrials({ trials }: RecommendedTrialsProps) {
                   {trial.conditions.name} • {trial.treatments.name}
                 </p>
               </div>
-              <Link href={`/patient/trial-details/${trial.id}`}>
+              <Link href={`/app/(protected)/patient/trial-details/${trial.id}`}>
                 <Button variant="ghost" size="sm" className="gap-1">
                   Details
                   <ArrowRight className="h-4 w-4" />

@@ -12,7 +12,7 @@ export function ResearchPartnerHowItWorks() {
         <ResearchPartnerSteps />
 
         <div className="flex justify-center mt-12">
-          <Link href="/research-partner/create-trial">
+          <Link href="/app/(protected)/research-partner/create-trial">
             <Button size="lg" className="gap-1">
               Create a Trial <ArrowRight className="h-4 w-4" />
             </Button>

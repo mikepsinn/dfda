@@ -141,12 +141,12 @@ export function RevolutionizingMedicalProgressSection({ stats = defaultStats }: 
                 approach.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/research-partner/create-trial">
+                <Link href="/app/(protected)/research-partner/create-trial">
                   <Button size="lg" className="w-full sm:w-auto">
                     Start a Trial <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/patient/find-trials">
+                <Link href="/app/(protected)/patient/find-trials">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
                     Join as a Patient <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>

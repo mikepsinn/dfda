@@ -88,7 +88,7 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments,
                 View Details
               </Button>
             </Link>
-            <Link href={`/patient/join-trial/${encodeURIComponent(treatment.name)}/${encodeURIComponent(condition)}`}>
+            <Link href={`/app/(protected)/patient/join-trial/${encodeURIComponent(treatment.name)}/${encodeURIComponent(condition)}`}>
               <Button size="sm">
                 View Trials
                 <ChevronRight className="ml-1 h-4 w-4" />
