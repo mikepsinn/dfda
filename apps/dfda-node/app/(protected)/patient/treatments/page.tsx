@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getServerUser } from "@/lib/server-auth"
@@ -8,29 +11,38 @@ import { AddTreatmentDialog } from "./components/add-treatment-dialog"
 import { ConditionsList } from "./components/conditions-list"
 import { TreatmentsList } from "./components/treatments-list"
 import { TreatmentSearch } from "./components/treatment-search"
+import { getPatientConditionsAction } from '@/app/actions/patient-conditions'
 import { Music } from "lucide-react"
+import type { Database } from "@/lib/database.types"
+
+// Define PatientCondition type alias
+type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 
 export default async function TreatmentsPage() {
-  const user = await getServerUser()
-  if (!user) redirect("/login")
-
   const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
 
-  // Fetch user's conditions with their treatments
-  const { data: conditions } = await supabase
-    .from("patient_conditions_view")
-    .select(`
-      *,
-      treatments:patient_treatments(
-        *,
-        treatment:treatments(
-          *,
-          global_variables(name, description)
-        )
-      )
-    `)
-    .eq("patient_id", user.id)
-    .is("deleted_at", null)
+  if (!user) {
+    redirect("/login")
+  }
+
+  // Fetch conditions directly, handle potential errors with try/catch
+  let conditions: PatientCondition[] = []
+  let conditionsError: Error | null = null
+  try {
+    conditions = await getPatientConditionsAction(user.id)
+  } catch (error) {
+    conditionsError = error instanceof Error ? error : new Error('Failed to fetch conditions')
+    // Log the error or handle it as needed
+    console.error("Error fetching conditions in page:", conditionsError)
+  }
+
+  const [selectedTreatment, setSelectedTreatment] = useState<{ id: string; name: string } | null>(null)
+
+  const handleSelectTreatment = (treatment: { id: string; name: string }) => {
+    setSelectedTreatment(treatment)
+    // TODO: Do something with the selected treatment, e.g., show details
+  }
 
   return (
     <div className="container py-6">
@@ -95,7 +107,10 @@ export default async function TreatmentsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <TreatmentSearch />
+              <TreatmentSearch 
+                onSelect={handleSelectTreatment}
+                selected={selectedTreatment}
+              />
             </CardContent>
           </Card>
         </TabsContent>

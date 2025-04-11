@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
+import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ConditionSearch } from "@/components/ConditionSearch"
 import type { Database } from "@/lib/database.types"
@@ -9,9 +10,13 @@ type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row
 
 export default function FindTrialsPage() {
   const router = useRouter()
+  const [selectedConditions, setSelectedConditions] = useState<{ id: string; name: string }[]>([])
 
-  const handleConditionSelect = (condition: ConditionView) => {
-    router.push(`/conditions/${condition.condition_id}/trials`)
+  const handleConditionSelect = (condition: { id: string; name: string }) => {
+    if (condition && !selectedConditions.some(c => c.id === condition.id)) {
+      setSelectedConditions([...selectedConditions, condition])
+    }
+    router.push(`/conditions/${condition.id}/trials`)
   }
 
   return (
@@ -31,7 +36,7 @@ export default function FindTrialsPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ConditionSearch onSelect={handleConditionSelect} />
+          <ConditionSearch onSelect={handleConditionSelect} selected={null} />
         </CardContent>
       </Card>
     </div>

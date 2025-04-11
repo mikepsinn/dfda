@@ -23,8 +23,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { TreatmentSearch } from "./treatment-search"
-import type { PatientCondition } from "@/lib/database.types"
+import type { Database } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
+
+type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
 
 const logger = createLogger("add-treatment-dialog")
 
@@ -122,9 +124,9 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
                   <SelectValue placeholder="Select condition" />
                 </SelectTrigger>
                 <SelectContent>
-                  {conditions.map((condition) => (
-                    <SelectItem key={condition.id} value={condition.id}>
-                      {condition.name}
+                  {conditions.filter(condition => condition.id !== null).map((condition) => (
+                    <SelectItem key={condition.id!} value={condition.id!}>
+                      {condition.condition_name}
                     </SelectItem>
                   ))}
                 </SelectContent>

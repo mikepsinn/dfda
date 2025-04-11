@@ -7,6 +7,7 @@ import { findTrialsForConditionsAction, TrialWithRelations } from "@/app/actions
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { Database } from "@/lib/database.types"
+import { logger } from "@/lib/logger"
 
 // Use the database view type directly
 type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
@@ -20,16 +21,19 @@ export function SearchContainer({ initialConditions = [] }: SearchContainerProps
   const [selectedConditions, setSelectedConditions] = useState<ConditionView[]>(initialConditions)
   const [searchResults, setSearchResults] = useState<TrialWithRelations[]>([])
   const [isSearching, setIsSearching] = useState(false)
+  const [selectedCondition, setSelectedCondition] = useState<{ id: string; name: string } | null>(null)
 
-  const handleSelectCondition = useCallback((condition: ConditionView) => {
+  const handleSelectCondition = (condition: { id: string; name: string }) => {
+    setSelectedCondition(condition)
+    logger.info("Condition selected:", condition)
     setSelectedConditions(prev => {
       // Check if condition is already selected
-      if (prev.some(c => c.condition_id === condition.condition_id)) {
+      if (prev.some(c => c.condition_id === condition.id)) {
         return prev
       }
-      return [...prev, condition]
+      return [...prev, { condition_id: condition.id, condition_name: condition.name, id: null, description: null, diagnosed_at: null, icd_code: null, measurement_count: null, notes: null, patient_id: null, severity: null, status: null }]
     })
-  }, [])
+  }
 
   const handleSearch = async () => {
     if (selectedConditions.length === 0) return
@@ -63,8 +67,8 @@ export function SearchContainer({ initialConditions = [] }: SearchContainerProps
         <CardContent>
           <div className="space-y-4">
             <ConditionSearch
-              initialConditions={selectedConditions}
               onSelect={handleSelectCondition}
+              selected={selectedCondition}
             />
             
             <Button 

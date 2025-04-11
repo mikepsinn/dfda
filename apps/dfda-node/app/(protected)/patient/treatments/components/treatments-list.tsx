@@ -11,10 +11,12 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import { ThumbsUp, ThumbsDown, AlertCircle } from "lucide-react"
-import type { PatientCondition } from "@/lib/database.types"
+import type { Database } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
 
 const logger = createLogger("treatments-list")
+
+type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
 
 interface TreatmentsListProps {
   conditions: PatientCondition[]
@@ -43,49 +45,12 @@ export function TreatmentsList({ conditions, userId }: TreatmentsListProps) {
     <ScrollArea className="h-[400px] pr-4">
       <div className="space-y-6">
         {conditions.map((condition) => (
-          <div key={condition.id}>
-            <h3 className="font-medium mb-3">{condition.name}</h3>
+          <div key={condition.id!}>
+            <h3 className="font-medium mb-3">{condition.condition_name}</h3>
             <div className="space-y-3">
-              {condition.treatments?.map((treatment) => (
-                <Card
-                  key={treatment.id}
-                  className={`cursor-pointer transition-colors ${
-                    selectedTreatment === treatment.id ? 'border-primary' : ''
-                  }`}
-                  onClick={() => setSelectedTreatment(treatment.id)}
-                >
-                  <CardHeader className="p-4">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-base">
-                          {treatment.treatment.global_variables.name}
-                        </CardTitle>
-                        <CardDescription>
-                          {treatment.treatment.global_variables.description}
-                        </CardDescription>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className={`flex items-center gap-1 ${
-                          getEffectivenessColor(treatment.effectiveness_out_of_ten || 0)
-                        }`}>
-                          {getEffectivenessIcon(treatment.effectiveness_out_of_ten || 0)}
-                          {treatment.effectiveness_out_of_ten}/10
-                        </span>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  {treatment.review && (
-                    <CardContent className="pt-0 pb-4 px-4">
-                      <p className="text-sm text-muted-foreground">{treatment.review}</p>
-                    </CardContent>
-                  )}
-                </Card>
-              ))}
-              {!condition.treatments?.length && (
-                <div className="text-center py-4 text-muted-foreground">
-                  No treatments added for this condition yet.
-                </div>
-              )}
+              <div className="text-center py-4 text-muted-foreground"> 
+                Treatment display temporarily disabled. 
+              </div>
             </div>
             <Separator className="my-4" />
           </div>

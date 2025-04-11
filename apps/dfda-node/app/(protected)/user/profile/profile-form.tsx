@@ -31,8 +31,8 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     try {
       const supabase = createClient()
 
-      const { error } = await supabase
-        .from("users")
+      const { data, error } = await supabase
+        .from("profiles")
         .update({
           name: formData.name,
           phone: formData.phone,

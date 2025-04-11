@@ -10,7 +10,9 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import type { PatientCondition } from "@/lib/database.types"
+import type { Database } from "@/lib/database.types"
+
+type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
 
 interface ConditionsListProps {
   conditions: PatientCondition[]
@@ -19,7 +21,8 @@ interface ConditionsListProps {
 export function ConditionsList({ conditions }: ConditionsListProps) {
   const [selectedCondition, setSelectedCondition] = useState<string | null>(null)
 
-  const formatDate = (date: string) => {
+  const formatDate = (date: string | null): string => {
+    if (!date) return "N/A"
     return new Date(date).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
@@ -41,7 +44,7 @@ export function ConditionsList({ conditions }: ConditionsListProps) {
             <CardHeader className="p-4">
               <div className="flex items-start justify-between">
                 <div>
-                  <CardTitle className="text-base">{condition.name}</CardTitle>
+                  <CardTitle className="text-base">{condition.condition_name}</CardTitle>
                   <CardDescription>
                     Diagnosed {formatDate(condition.diagnosed_at)}
                   </CardDescription>

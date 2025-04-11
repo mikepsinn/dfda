@@ -4,144 +4,147 @@ import userEvent from '@testing-library/user-event'
 import { ConditionSearch } from '@/components/ConditionSearch'
 import { getConditionsAction, searchConditionsAction } from '@/app/actions/conditions'
 import { act } from 'react'
-import type { Database } from "@/lib/database.types"
+// No need for Database type here if we define the action return type directly
 
-// Mock the getConditionsAction function
+// Mock the actions
 jest.mock('@/app/actions/conditions', () => ({
   getConditionsAction: jest.fn(),
   searchConditionsAction: jest.fn()
 }))
 
-// Use the database view type directly
-type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+// Define the type returned by the actions based on their select statement
+type ConditionActionReturn = {
+  id: string;
+  name: string;
+  description: string | null;
+  emoji: string | null;
+};
+
+// Define the simplified type expected by onSelect and selected props
+type SimpleCondition = { id: string; name: string };
+
 
 describe('ConditionSearch', () => {
-  const mockOnConditionSelect = jest.fn()
-  const mockConditions: ConditionView[] = [
-    {
-      condition_id: "1",
-      condition_name: "Diabetes",
-      description: "A metabolic disease",
-      icd_code: "E11",
-      id: "101",
-      patient_id: null,
-      diagnosed_at: null,
-      severity: null,
-      status: null,
-      notes: null,
-      measurement_count: null
-    },
-    {
-      condition_id: "2",
-      condition_name: "Hypertension",
-      description: "High blood pressure",
-      icd_code: "I10",
-      id: "102",
-      patient_id: null,
-      diagnosed_at: null,
-      severity: null,
-      status: null,
-      notes: null,
-      measurement_count: null
-    },
+  const mockOnSelect = jest.fn()
+  const mockActionReturnData: ConditionActionReturn[] = [
+    { id: "1", name: "Diabetes", description: "A metabolic disease", emoji: "🩸" },
+    { id: "2", name: "Hypertension", description: "High blood pressure", emoji: "🩺" },
+    { id: "3", name: "Alzheimer's Disease", description: "A progressive disease", emoji: "🧠" },
   ]
-  
+
   const defaultProps = {
-    onSelect: mockOnConditionSelect,
-    initialSearchTerm: '',
-    placeholder: 'Search conditions...',
-    initialConditions: mockConditions
+    onSelect: mockOnSelect,
+    selected: null as SimpleCondition | null, // Start with null selection
   }
 
   beforeEach(() => {
-    mockOnConditionSelect.mockClear();
-    (getConditionsAction as jest.Mock).mockResolvedValue(mockConditions)
+    jest.clearAllMocks();
+    // Mock the initial load action
+    (getConditionsAction as jest.Mock).mockResolvedValue(mockActionReturnData);
+    // Mock the search action
+    (searchConditionsAction as jest.Mock).mockImplementation(async (query: string) => {
+      return mockActionReturnData.filter(c => c.name.toLowerCase().includes(query.toLowerCase()));
+    });
   })
 
-  it('renders with placeholder text', () => {
+  it('renders with placeholder text', async () => {
     render(<ConditionSearch {...defaultProps} />)
+    // Wait for initial load to finish
+    await waitFor(() => expect(getConditionsAction).toHaveBeenCalled())
     expect(screen.getByPlaceholderText('Search conditions...')).toBeInTheDocument()
+  })
+
+  it('loads initial conditions on mount', async () => {
+    render(<ConditionSearch {...defaultProps} />);
+    await waitFor(() => {
+      expect(getConditionsAction).toHaveBeenCalledTimes(1);
+    });
+    // Check if an initial condition is visible after loading (assuming suggestions are shown initially or on focus)
+    const input = screen.getByRole('searchbox')
+    await userEvent.click(input) // Open suggestions
+    await waitFor(() => {
+       expect(screen.getByText('Diabetes')).toBeInTheDocument()
+    })
   })
 
   it('shows suggestions when typing', async () => {
     const user = userEvent.setup()
     render(<ConditionSearch {...defaultProps} />)
+    // Wait for initial load
+    await waitFor(() => expect(getConditionsAction).toHaveBeenCalled())
+
     const input = screen.getByRole('searchbox')
-    
+    await user.click(input) // Focus to show initial/potentially empty list first
     await user.type(input, 'Alz')
-    
+
     await waitFor(() => {
-      expect(screen.getByText('Alzheimer\'s Disease')).toBeInTheDocument()
-      expect(screen.queryByText('Parkinson\'s Disease')).not.toBeInTheDocument()
+      expect(searchConditionsAction).toHaveBeenCalledWith('Alz')
+    })
+
+    await waitFor(() => {
+      // Check suggestions based on the new mock data
+      expect(screen.getByText("Alzheimer's Disease")).toBeInTheDocument()
+      expect(screen.queryByText('Diabetes')).not.toBeInTheDocument() // Should be filtered out
     })
   })
 
-  it('calls onConditionSelect when a suggestion is clicked', async () => {
+  it('calls onSelect with {id, name} when a suggestion is clicked', async () => {
     const user = userEvent.setup()
     render(<ConditionSearch {...defaultProps} />)
+    await waitFor(() => expect(getConditionsAction).toHaveBeenCalled()) // Wait for load
+
     const input = screen.getByRole('searchbox')
-    
-    await user.type(input, 'Alz')
-    
+    await user.click(input) // Open suggestions
+    await user.type(input, 'Diab') // Search for Diabetes
+
     await waitFor(() => {
-      expect(screen.getByText('Alzheimer\'s Disease')).toBeInTheDocument()
+       expect(screen.getByText('Diabetes')).toBeInTheDocument()
     })
 
-    await user.click(screen.getByText('Alzheimer\'s Disease'))
-    
-    expect(mockOnConditionSelect).toHaveBeenCalledWith('Alzheimer\'s Disease')
-  })
+    await user.click(screen.getByText('Diabetes'))
 
-  it('fetches conditions if no initial conditions provided', async () => {
-    render(<ConditionSearch {...defaultProps} initialConditions={[]} />)
-    
-    expect(getConditionsAction).toHaveBeenCalled()
-    
+    // Check if onSelect was called with the correct simplified object
+    expect(mockOnSelect).toHaveBeenCalledWith({ id: "1", name: "Diabetes" })
+    expect(mockOnSelect).toHaveBeenCalledTimes(1)
+
+    // Input should be cleared and suggestions hidden after selection
+    expect(input).toHaveValue('')
     await waitFor(() => {
-      expect(screen.getByText('Loading conditions...')).toBeInTheDocument()
+      expect(screen.queryByText('Diabetes')).not.toBeInTheDocument()
     })
-    
-    await waitFor(() => {
-      expect(screen.queryByText('Loading conditions...')).not.toBeInTheDocument()
-    }, { timeout: 3000 })
   })
 
-  it("renders correctly", () => {
+  it("shows 'No conditions found' when search yields no results", async () => {
+    const user = userEvent.setup()
     render(<ConditionSearch {...defaultProps} />)
-    expect(screen.getByLabelText(/search conditions/i)).toBeInTheDocument()
-  })
+    await waitFor(() => expect(getConditionsAction).toHaveBeenCalled())
 
-  it("shows suggestions when typing search term", async () => {
-    render(<ConditionSearch {...defaultProps} />)
-    
-    const searchInput = screen.getByLabelText(/search conditions/i)
-    fireEvent.focus(searchInput)
-    fireEvent.change(searchInput, { target: { value: "diab" } })
-    
-    // Wait for the suggestions to appear
+    const input = screen.getByRole('searchbox')
+    await user.click(input)
+    await user.type(input, 'NonExistentCondition')
+
     await waitFor(() => {
-      expect(searchConditionsAction).toHaveBeenCalledWith("diab")
-      expect(screen.getByText("Diabetes")).toBeInTheDocument()
+      expect(searchConditionsAction).toHaveBeenCalledWith('NonExistentCondition')
+    })
+
+    await waitFor(() => {
+      expect(screen.getByText('No conditions found')).toBeInTheDocument()
     })
   })
 
-  it("calls onSelect when a suggestion is clicked", async () => {
-    render(<ConditionSearch {...defaultProps} />)
-    
-    const searchInput = screen.getByLabelText(/search conditions/i)
-    fireEvent.focus(searchInput)
-    fireEvent.change(searchInput, { target: { value: "diab" } })
-    
+  it('displays the selected condition name in the input when passed via props', async () => {
+    const selectedProps = {
+      ...defaultProps,
+      selected: { id: "2", name: "Hypertension" },
+    };
+    render(<ConditionSearch {...selectedProps} />);
+    await waitFor(() => expect(getConditionsAction).toHaveBeenCalled()); // Ensure component loaded
+
+    const input = screen.getByRole('searchbox') as HTMLInputElement;
+    // The value should be set via useEffect in the component
     await waitFor(() => {
-      expect(screen.getByText("Diabetes")).toBeInTheDocument()
-    })
-    
-    fireEvent.click(screen.getByText("Diabetes"))
-    expect(defaultProps.onSelect).toHaveBeenCalledWith(mockConditions[0])
+      expect(input.value).toBe("Hypertension");
+    });
   })
 
-  it("handles empty initial conditions", () => {
-    render(<ConditionSearch {...defaultProps} initialConditions={[]} />)
-    expect(screen.getByLabelText(/search conditions/i)).toBeInTheDocument()
-  })
 }) 

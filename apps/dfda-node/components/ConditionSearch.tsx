@@ -3,10 +3,15 @@
 import React, { useEffect, useState } from "react"
 import { Input } from "@/components/ui/input"
 import { searchConditionsAction, getConditionsAction } from "@/app/actions/conditions"
-import type { Database } from "@/lib/database.types"
 import { logger } from "@/lib/logger"
 
-type GlobalVariable = Database["public"]["Tables"]["global_variables"]["Row"]
+// Define the type based on what the actions actually return
+type ConditionSuggestion = {
+  id: string
+  name: string
+  description: string | null
+  emoji: string | null
+}
 
 interface ConditionSearchProps {
   onSelect: (condition: { id: string; name: string }) => void
@@ -18,7 +23,8 @@ export function ConditionSearch({
   selected,
 }: ConditionSearchProps) {
   const [searchTerm, setSearchTerm] = useState("")
-  const [suggestions, setSuggestions] = useState<GlobalVariable[]>([])
+  // Use the correct type for suggestions state
+  const [suggestions, setSuggestions] = useState<ConditionSuggestion[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -28,6 +34,7 @@ export function ConditionSearch({
       try {
         setIsLoading(true)
         const results = await getConditionsAction()
+        // The results should match ConditionSuggestion[] now
         setSuggestions(results)
       } catch (error) {
         logger.error("Error loading initial conditions:", error)
@@ -47,6 +54,7 @@ export function ConditionSearch({
       try {
         setIsLoading(true)
         const results = await searchConditionsAction(searchTerm)
+        // The results should match ConditionSuggestion[] now
         setSuggestions(results)
       } catch (error) {
         logger.error("Error fetching suggestions:", error)
@@ -68,7 +76,8 @@ export function ConditionSearch({
     }
   }, [selected]);
 
-  const handleSelectCondition = (condition: GlobalVariable) => {
+  // Parameter type should match the state type
+  const handleSelectCondition = (condition: ConditionSuggestion) => {
     onSelect({
       id: condition.id,
       name: condition.name
