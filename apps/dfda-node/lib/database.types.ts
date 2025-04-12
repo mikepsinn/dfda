@@ -698,7 +698,7 @@ export type Database = {
           id: string
           last_name: string | null
           updated_at: string | null
-          user_type: string
+          user_type: Database["public"]["Enums"]["user_role_enum"]
         }
         Insert: {
           avatar_url?: string | null
@@ -709,7 +709,7 @@ export type Database = {
           id: string
           last_name?: string | null
           updated_at?: string | null
-          user_type: string
+          user_type: Database["public"]["Enums"]["user_role_enum"]
         }
         Update: {
           avatar_url?: string | null
@@ -720,7 +720,7 @@ export type Database = {
           id?: string
           last_name?: string | null
           updated_at?: string | null
-          user_type?: string
+          user_type?: Database["public"]["Enums"]["user_role_enum"]
         }
         Relationships: []
       }
@@ -1746,6 +1746,12 @@ export type Database = {
         | "consultation"
         | "medication"
         | "other"
+      user_role_enum:
+        | "patient"
+        | "provider"
+        | "research-partner"
+        | "admin"
+        | "developer"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -2286,6 +2292,13 @@ export const Constants = {
         "consultation",
         "medication",
         "other",
+      ],
+      user_role_enum: [
+        "patient",
+        "provider",
+        "research-partner",
+        "admin",
+        "developer",
       ],
     },
   },
