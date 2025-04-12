@@ -6,61 +6,101 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
-import { signIn } from "next-auth/react"
-import { createLogger } from "@/lib/logger"
-
-const logger = createLogger("login-form")
+import { MailCheck, AlertCircle } from "lucide-react"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { signInWithOtp, signInWithGoogle } from "@/lib/auth"
+import { logger } from "@/lib/logger"
 
 export function LoginForm() {
-  const [userType, setUserType] = useState("patient")
+  const [emailSent, setEmailSent] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    logger.info("Login attempt", { userType })
-    
-    try {
-      const email = e.currentTarget.querySelector("input[type='email']")?.value
-      const password = e.currentTarget.querySelector("input[type='password']")?.value
-      
-      const user = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      })
+    setError(null)
+    setEmailSent(false)
+    logger.info("Login attempt (OTP)")
 
-      if (user?.ok) {
-        logger.info("Login successful", { userType })
-        window.location.href = userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"
-      } else {
-        logger.error("Login failed - invalid credentials", { userType })
-        // Consider adding user feedback here, e.g., using a toast notification
+    const formData = new FormData(e.currentTarget)
+    const email = formData.get("email") as string;
+
+    if (!email) {
+      setError("Email is required.");
+      return;
+    }
+
+    try {
+      const { error: otpError } = await signInWithOtp(email);
+
+      if (otpError) {
+        logger.error("OTP Sign in error:", otpError);
+        setError(
+          "Failed to send magic link. Please check your email or contact support."
+        );
+        return;
       }
-    } catch (error) {
-      logger.error("Login error", { error, userType })
-      // Consider adding user feedback here
-      // For demo purposes, redirecting even on error to avoid getting stuck
-      window.location.href = userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"
+
+      setEmailSent(true);
+    } catch (err) {
+      logger.error("Login error", { err });
+      setError("An unexpected error occurred. Please try again.");
+    }
+  };
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const { error: signInError } = await signInWithGoogle()
+      
+      if (signInError) {
+        setError('An error occurred during Google sign in. Please contact help@dfda.earth for assistance.')
+        return
+      }
+    } catch (err) {
+      logger.error("Google sign-in error:", err)
+      setError('An error occurred during Google sign in. Please contact help@dfda.earth for assistance.')
     }
   }
 
-  const handleGoogleSignIn = () => {
-    // In a real implementation, this would trigger Supabase Google OAuth
-    console.log("Google sign in clicked")
-    // For demo purposes, we'll just redirect to the dashboard
-    window.location.href = userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"
+  if (emailSent) {
+    return (
+      <Card>
+        <CardHeader>
+          <CardTitle>Check Your Email</CardTitle>
+          <CardDescription>
+            We've sent a magic link to your email address.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col items-center justify-center py-8">
+          <div className="rounded-full bg-blue-100 p-3 mb-4">
+            <MailCheck className="h-8 w-8 text-blue-600" />
+          </div>
+          <h3 className="text-xl font-semibold mb-2">Magic Link Sent!</h3>
+          <p className="text-center text-muted-foreground">
+            Click the link in the email to complete your sign in. You can close
+            this window.
+          </p>
+        </CardContent>
+      </Card>
+    );
   }
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Welcome Back</CardTitle>
-        <CardDescription>Sign in to your FDA.gov v2 account</CardDescription>
+        <CardTitle>Sign In</CardTitle>
+        <CardDescription>
+          Enter your email to receive a magic link to sign in.
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        {/* Google Sign In Button */}
+        {error && (
+          <Alert variant="destructive">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
         <Button
           variant="outline"
           className="w-full flex items-center justify-center gap-2"
@@ -94,63 +134,26 @@ export function LoginForm() {
           <Separator className="flex-1" />
         </div>
 
-        <DemoLoginButton />
+        <DemoLoginButton showAll={true} onError={(err) => setError(err.message)} />
 
-        <Tabs defaultValue="patient" onValueChange={setUserType} className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="patient">Patient</TabsTrigger>
-            <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
-          </TabsList>
-          <TabsContent value="patient" className="space-y-4 pt-4">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required />
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="password">Password</Label>
-                  <Link href="/forgot-password" className="text-sm text-primary hover:underline">
-                    Forgot password?
-                  </Link>
-                </div>
-                <Input id="password" type="password" required />
-              </div>
-              <Button type="submit" className="w-full">
-                Sign In as Patient
-              </Button>
-            </form>
-          </TabsContent>
-          <TabsContent value="research-partner" className="space-y-4 pt-4">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="research-partner-email">Email</Label>
-                <Input id="research-partner-email" type="email" required />
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <Label htmlFor="research-partner-password">Password</Label>
-                  <Link href="/forgot-password" className="text-sm text-primary hover:underline">
-                    Forgot password?
-                  </Link>
-                </div>
-                <Input id="research-partner-password" type="password" required />
-              </div>
-              <Button type="submit" className="w-full">
-                Sign In as Research Partner
-              </Button>
-            </form>
-          </TabsContent>
-        </Tabs>
+        <form onSubmit={handleSubmit} className="space-y-4 pt-4">
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" name="email" type="email" required placeholder="Enter your email address" />
+          </div>
+          <Button type="submit" className="w-full">
+            Send Magic Link
+          </Button>
+        </form>
       </CardContent>
       <CardFooter className="flex justify-center">
         <div className="text-center text-sm">
           Don't have an account?{" "}
           <Link href="/register" className="text-primary hover:underline">
-            Register
+            Register here
           </Link>
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }

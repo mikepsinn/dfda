@@ -3,13 +3,11 @@ import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
   console.log('[AUTH-CALLBACK] Handling auth callback request');
-  const { searchParams } = new URL(request.url)
+  const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get('code')
-  const next = searchParams.get('next') ?? '/patient/dashboard'
   
   console.log('[AUTH-CALLBACK] Parameters:', {
     hasCode: !!code,
-    next,
     url: request.url
   });
   
@@ -23,14 +21,14 @@ export async function GET(request: Request) {
         error: error.message,
         status: error.status
       });
-      return NextResponse.redirect(new URL('/auth/auth-code-error', request.url))
+      return NextResponse.redirect(`${origin}/auth/auth-code-error`)
     }
 
-    console.log('[AUTH-CALLBACK] Successfully exchanged code for session, redirecting to:', next);
-    return NextResponse.redirect(new URL(next, request.url))
+    console.log('[AUTH-CALLBACK] Successfully exchanged code for session, redirecting to select-role');
+    return NextResponse.redirect(`${origin}/select-role`)
   }
 
   console.log('[AUTH-CALLBACK] No code provided, redirecting to error page');
   // Return the user to an error page with some instructions
-  return NextResponse.redirect(new URL('/auth/auth-code-error', request.url))
+  return NextResponse.redirect(`${origin}/auth/auth-code-error`)
 }

@@ -1686,18 +1686,11 @@ export type Database = {
     }
     Functions: {
       convert_measurement_value: {
-        Args: {
-          p_value: number
-          p_from_unit_id: string
-          p_to_unit_id: string
-        }
+        Args: { p_value: number; p_from_unit_id: string; p_to_unit_id: string }
         Returns: number
       }
       generate_protocol_actions: {
-        Args: {
-          enrollment_id: string
-          protocol_version_id?: string
-        }
+        Args: { enrollment_id: string; protocol_version_id?: string }
         Returns: {
           action_type_id: string
           cancellation_reason: string | null
@@ -1724,10 +1717,7 @@ export type Database = {
         }[]
       }
       get_average_treatment_rating: {
-        Args: {
-          p_treatment_id: string
-          p_condition_id: string
-        }
+        Args: { p_treatment_id: string; p_condition_id: string }
         Returns: {
           avg_effectiveness: number
           avg_side_effects: number
@@ -1735,9 +1725,7 @@ export type Database = {
         }[]
       }
       increment_helpful_count: {
-        Args: {
-          p_rating_id: string
-        }
+        Args: { p_rating_id: string }
         Returns: undefined
       }
       list_views: {
@@ -2017,62 +2005,39 @@ export type Database = {
     }
     Functions: {
       add_prefixes: {
-        Args: {
-          _bucket_id: string
-          _name: string
-        }
+        Args: { _bucket_id: string; _name: string }
         Returns: undefined
       }
       can_insert_object: {
-        Args: {
-          bucketid: string
-          name: string
-          owner: string
-          metadata: Json
-        }
+        Args: { bucketid: string; name: string; owner: string; metadata: Json }
         Returns: undefined
       }
       delete_prefix: {
-        Args: {
-          _bucket_id: string
-          _name: string
-        }
+        Args: { _bucket_id: string; _name: string }
         Returns: boolean
       }
       extension: {
-        Args: {
-          name: string
-        }
+        Args: { name: string }
         Returns: string
       }
       filename: {
-        Args: {
-          name: string
-        }
+        Args: { name: string }
         Returns: string
       }
       foldername: {
-        Args: {
-          name: string
-        }
+        Args: { name: string }
         Returns: string[]
       }
       get_level: {
-        Args: {
-          name: string
-        }
+        Args: { name: string }
         Returns: number
       }
       get_prefix: {
-        Args: {
-          name: string
-        }
+        Args: { name: string }
         Returns: string
       }
       get_prefixes: {
-        Args: {
-          name: string
-        }
+        Args: { name: string }
         Returns: string[]
       }
       get_size_by_bucket: {

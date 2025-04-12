@@ -1,4 +1,4 @@
-export type UserType = "patient" | "provider" | "research-partner"
+export type UserType = keyof typeof DEMO_ACCOUNTS;
 
 export const DEMO_ACCOUNTS = {
   patient: {
@@ -32,4 +32,13 @@ export const DEMO_ACCOUNTS = {
       contact_name: "Clinical Research Division",
     },
   },
+  developer: {
+    email: "demo-developer@dfda.earth",
+    password: "demo-developer-123",
+    data: {
+      first_name: "Demo",
+      last_name: "Developer",
+      user_type: "developer" as const,
+    },
+  }
 } as const 

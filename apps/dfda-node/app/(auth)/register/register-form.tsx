@@ -2,74 +2,61 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Check, AlertCircle } from "lucide-react"
+import { MailCheck, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { signUpWithEmail, signInWithGoogle } from "@/lib/auth"
+import { signInWithOtp, signInWithGoogle } from "@/lib/auth"
 import { logger } from "@/lib/logger"
 
 export function RegisterForm() {
-  const [registrationComplete, setRegistrationComplete] = useState(false)
-  const [userType, setUserType] = useState("patient")
-  const [error, setError] = useState<{ type: 'email_not_confirmed' | 'other' | null; message: string | null }>({ 
-    type: null, 
-    message: null 
+  const [emailSent, setEmailSent] = useState(false)
+  const [error, setError] = useState<{ type: 'other' | null; message: string | null }>({
+    type: null,
+    message: null
   })
 
-  const handleError = (error: { type: 'email_not_confirmed' | 'other', message: string }) => {
-    setError({ type: error.type, message: error.message })
+  const handleError = (error: { type: 'email_not_confirmed' | 'other'; message: string }) => {
+    setError({ type: 'other', message: error.message })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError({ type: null, message: null })
-    
-    const formData = new FormData(e.target)
-    let email = ""
-    let password = ""
+    setEmailSent(false)
 
-    if (userType === 'patient') {
-      email = formData.get('email') as string
-      password = formData.get('password') as string
-    } else if (userType === 'research-partner') {
-      email = formData.get('research-partner-email') as string
-      password = formData.get('research-partner-password') as string
-    } else if (userType === 'developer') {
-      email = formData.get('developer-email') as string
-      password = formData.get('developer-password') as string
+    const formData = new FormData(e.currentTarget)
+    const email = formData.get('email') as string
+
+    if (!email) {
+      setError({ type: 'other', message: 'Email is required.' });
+      return;
     }
-    
+
     try {
-      const { error: signUpError } = await signUpWithEmail(email, password)
-      
-      if (signUpError) {
-        if (signUpError.message.includes('email not confirmed')) {
-          setError({
-            type: 'email_not_confirmed',
-            message: 'Please check your email to complete registration. You will need to verify your email address before signing in.'
-          })
-        } else {
-          setError({
-            type: 'other',
-            message: 'An error occurred during registration. Please contact help@dfda.earth for assistance.'
-          })
-        }
+      logger.info("Attempting passwordless sign in/up", { email });
+      const { error: otpError } = await signInWithOtp(email)
+
+      if (otpError) {
+        logger.error("OTP Sign in error:", otpError);
+        setError({
+          type: 'other',
+          message: 'An error occurred. Please check your email or contact help@dfda.earth for assistance.'
+        })
         return
       }
-      
-      setRegistrationComplete(true)
+
+      setEmailSent(true)
+
     } catch (err) {
-      logger.error("Registration error:", err)
+      logger.error("Sign in/up error:", err)
       setError({
         type: 'other',
-        message: 'An error occurred during registration. Please contact help@dfda.earth for assistance.'
+        message: 'An unexpected error occurred. Please try again or contact support.'
       })
     }
   }
@@ -96,36 +83,22 @@ export function RegisterForm() {
     }
   }
 
-  if (registrationComplete) {
+  if (emailSent) {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>Registration Complete</CardTitle>
-          <CardDescription>Your account has been created successfully</CardDescription>
+          <CardTitle>Check Your Email</CardTitle>
+          <CardDescription>We've sent a magic link to your email address.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center py-8">
-          <div className="rounded-full bg-green-100 p-3 mb-4">
-            <Check className="h-8 w-8 text-green-600" />
+          <div className="rounded-full bg-blue-100 p-3 mb-4">
+            <MailCheck className="h-8 w-8 text-blue-600" />
           </div>
-          <h3 className="text-xl font-semibold mb-2">Welcome to FDA.gov v2!</h3>
-          <p className="text-center text-muted-foreground mb-6">
-            {userType === "patient"
-              ? "Your patient account has been created. You can now find and join clinical trials."
-              : userType === "research-partner"
-              ? "Your research partner account has been created. You can now create and manage clinical trials."
-              : "Your developer account has been created. You can now manage your API keys and applications."}
+          <h3 className="text-xl font-semibold mb-2">Magic Link Sent!</h3>
+          <p className="text-center text-muted-foreground"> 
+            Click the link in the email to complete your sign in or registration. 
+            You can close this window.
           </p>
-          <Link href={
-            userType === "patient" ? "/patient/dashboard" :
-            userType === "research-partner" ? "/research-partner/create-trial" :
-            "/developer"
-          } className="w-full">
-            <Button className="w-full">
-              {userType === "patient" ? "Go to Patient Dashboard" :
-               userType === "research-partner" ? "Create Your First Trial" :
-               "Go to Developer Dashboard"}
-            </Button>
-          </Link>
         </CardContent>
       </Card>
     )
@@ -134,18 +107,19 @@ export function RegisterForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Register</CardTitle>
-        <CardDescription>Join the FDA.gov v2 platform to participate in or create clinical trials</CardDescription>
+        <CardTitle>Register or Sign In</CardTitle>
+        <CardDescription>
+          Enter your email to receive a magic link to sign in or create an account.
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         {error.message && (
-          <Alert variant={error.type === 'email_not_confirmed' ? 'default' : 'destructive'}>
+          <Alert variant={error.type === 'other' ? 'destructive' : 'default'}>
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>{error.message}</AlertDescription>
           </Alert>
         )}
         
-        {/* Google Sign In Button */}
         <Button
           variant="outline"
           className="w-full flex items-center justify-center gap-2"
@@ -179,78 +153,27 @@ export function RegisterForm() {
           <Separator className="flex-1" />
         </div>
 
-        <DemoLoginButton onError={handleError} />
+        <DemoLoginButton onError={handleError} showAll={true} />
 
-        <Tabs defaultValue="patient" onValueChange={setUserType} className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="patient">Patient</TabsTrigger>
-            <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
-            <TabsTrigger value="developer">Developer</TabsTrigger>
-          </TabsList>
-          <TabsContent value="patient" className="space-y-4 pt-4">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" name="password" type="password" required />
-              </div>
-              <Button type="submit" className="w-full">
-                Create Patient Account
-              </Button>
-            </form>
-          </TabsContent>
-          <TabsContent value="research-partner" className="space-y-4 pt-4">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="research-partner-email">Email</Label>
-                <Input id="research-partner-email" name="research-partner-email" type="email" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="research-partner-password">Password</Label>
-                <Input id="research-partner-password" name="research-partner-password" type="password" required />
-              </div>
-              <Button type="submit" className="w-full">
-                Create Research Partner Account
-              </Button>
-            </form>
-          </TabsContent>
-          <TabsContent value="developer" className="space-y-4 pt-4">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="developer-email">Email</Label>
-                <Input id="developer-email" name="developer-email" type="email" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="developer-password">Password</Label>
-                <Input id="developer-password" name="developer-password" type="password" required />
-              </div>
-              <Button type="submit" className="w-full">
-                Create Developer Account
-              </Button>
-            </form>
-          </TabsContent>
-        </Tabs>
+        <form onSubmit={handleSubmit} className="space-y-4 pt-4">
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" name="email" type="email" required placeholder="Enter your email address" />
+          </div>
+          <Button type="submit" className="w-full">
+            Send Magic Link
+          </Button>
+        </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-4">
-        <div className="text-center text-sm text-muted-foreground">
-          By creating an account, you agree to our{" "}
-          <Link href="#" className="underline underline-offset-4 hover:text-primary">
-            Terms of Service
-          </Link>{" "}
-          and{" "}
-          <Link href="#" className="underline underline-offset-4 hover:text-primary">
-            Privacy Policy
-          </Link>
-          .
-        </div>
         <div className="text-center text-sm">
           Already have an account?{" "}
           <Link href="/login" className="text-primary hover:underline">
-            Sign in
+            Sign in here
           </Link>
+        </div>
+         <div className="text-center text-sm text-muted-foreground">
+          Need help? Contact <Link href="mailto:help@dfda.earth" className="underline">help@dfda.earth</Link>
         </div>
       </CardFooter>
     </Card>

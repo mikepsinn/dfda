@@ -2,81 +2,70 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { demoLogin } from "@/app/actions/demo-login"
-import { Loader2 } from "lucide-react"
-import { createLogger } from '@/lib/logger'
-
-const logger = createLogger('demo-login-button')
+import { AlertCircle } from "lucide-react"
+import { logger } from "@/lib/logger"
+import type { UserType } from "@/lib/constants/demo-accounts"
 
 interface DemoLoginButtonProps {
-  onError?: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
+  onError: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
+  showAll?: boolean;
 }
 
-export function DemoLoginButton({ onError }: DemoLoginButtonProps) {
-  const [userType, setUserType] = useState<"patient" | "provider" | "research-partner">("patient")
-  const [isLoading, setIsLoading] = useState(false)
+export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonProps) {
+  const [isLoading, setIsLoading] = useState<UserType | null>(null)
 
-  const handleDemoLogin = async () => {
-    logger.info('Attempting login', { userType })
-    setIsLoading(true)
-    
+  const handleDemoLogin = async (userType: UserType) => {
+    setIsLoading(userType)
     try {
       await demoLogin(userType)
-      // If we get here, something went wrong because demoLogin should redirect
-      logger.error('Login completed without redirect')
-      onError?.({ 
+    } catch (error: any) {
+      logger.error("Demo login failed:", { error, userType });
+      onError({ 
         type: 'other', 
-        message: 'Login failed - please contact help@dfda.earth for assistance' 
-      })
-    } catch (error) {
-      // NEXT_REDIRECT means success
-      if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
-        logger.info('Login successful - redirecting')
-        return
-      }
-
-      logger.error('Login failed', { error })
-      
-      // Check if it's an email confirmation error
-      if (error instanceof Error && 
-          'code' in error && 
-          error.code === 'email_not_confirmed') {
-        onError?.({ 
-          type: 'email_not_confirmed',
-          message: 'Please check your email to complete registration. You will need to verify your email address before signing in.'
-        })
-      } else {
-        onError?.({ 
-          type: 'other',
-          message: 'Failed to log in with demo account. Please contact help@dfda.earth for assistance'
-        })
-      }
+        message: error?.message ?? "Demo login failed. Please try again or contact support."
+      });
     } finally {
-      setIsLoading(false)
+      setIsLoading(null)
     }
   }
 
-  return (
-    <div className="space-y-4">
-      <Tabs defaultValue="patient" onValueChange={(value) => setUserType(value as any)} className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="patient">Patient</TabsTrigger>
-          <TabsTrigger value="provider">Provider</TabsTrigger>
-          <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
-        </TabsList>
-      </Tabs>
+  if (showAll) {
+    return (
+      <div className="space-y-2 text-center">
+         <p className="text-xs text-muted-foreground">Or use a demo account:</p>
+         <div className="flex flex-wrap gap-2 justify-center">
+          {(['patient', 'research-partner', 'developer'] as UserType[]).map((role) => (
+            <Button
+              key={role}
+              variant="outline"
+              size="sm"
+              onClick={() => handleDemoLogin(role)}
+              disabled={!!isLoading}
+              className="text-xs flex-grow sm:flex-grow-0"
+            >
+              {isLoading === role ? "Loading..." : `Demo ${role.replace('-', ' ')}`}
+            </Button>
+          ))}
+         </div>
+      </div>
+    )
+  }
 
-      <Button onClick={handleDemoLogin} className="w-full" variant="secondary" disabled={isLoading}>
-        {isLoading ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Logging in...
-          </>
-        ) : (
-          `Try Demo as ${userType.charAt(0).toUpperCase() + userType.slice(1)}`
-        )}
-      </Button>
-    </div>
+  return (
+    <Button
+      variant="secondary"
+      className="w-full"
+      onClick={() => handleDemoLogin('patient')}
+      disabled={!!isLoading}
+    >
+      {isLoading ? (
+        "Loading..."
+      ) : (
+        <>
+          <AlertCircle className="mr-2 h-4 w-4" /> Use Demo Account
+        </>
+      )}
+    </Button>
   )
 }

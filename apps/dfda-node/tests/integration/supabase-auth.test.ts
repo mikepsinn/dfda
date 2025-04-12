@@ -1,13 +1,15 @@
 import { createClient } from '@supabase/supabase-js'
 import { describe, it, expect, beforeAll, afterAll } from '@jest/globals'
-import { DEMO_ACCOUNTS, UserType } from '@/lib/constants/demo-accounts'
+import { DEMO_ACCOUNTS } from '@/lib/constants/demo-accounts'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-const userTypes: UserType[] = ['patient', 'provider', 'research-partner']
+// Explicitly define the type here for the test
+type TestUserType = 'patient' | 'provider' | 'research-partner' | 'developer';
+const userTypes: TestUserType[] = ['patient', 'provider', 'research-partner', 'developer']
 
 describe('Supabase Authentication & Account Management', () => {
   // Clean up before and after all tests

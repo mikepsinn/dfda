@@ -23,13 +23,13 @@ export async function signInWithEmail(email: string, password: string) {
   return { data, error }
 }
 
-export async function signUpWithEmail(email: string, password: string) {
+export async function signInWithOtp(email: string) {
   const supabase = createClient()
-  const { data, error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signInWithOtp({
     email,
-    password,
     options: {
-      emailRedirectTo: `${window.location.origin}/auth/callback`
+      shouldCreateUser: true,
+      emailRedirectTo: `${window.location.origin}/auth/callback`,
     }
   })
   return { data, error }
