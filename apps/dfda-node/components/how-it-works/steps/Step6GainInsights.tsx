@@ -1,9 +1,9 @@
 import { Lightbulb } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step6GainInsights() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={6}
       title="Gain Personal Insights"
       icon={<Lightbulb className="h-5 w-5 text-primary" />}

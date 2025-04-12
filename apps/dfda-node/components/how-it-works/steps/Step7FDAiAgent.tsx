@@ -1,9 +1,9 @@
 import { Bot, Phone, MessageSquare, Brain } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step7FDAiAgent() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={7}
       title="Connect with Your FDAi AI Agent"
       icon={<Bot className="h-5 w-5 text-primary" />}

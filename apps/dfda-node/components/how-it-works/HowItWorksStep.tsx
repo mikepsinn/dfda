@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import { ArrowRight } from "lucide-react"
 
-interface PatientStepProps {
+interface HowItWorksStepProps {
   stepNumber: number
   title: string
   icon: ReactNode
@@ -11,11 +11,11 @@ interface PatientStepProps {
   reverse: boolean
 }
 
-export function PatientStep({ stepNumber, title, icon, description, benefits, preview, reverse }: PatientStepProps) {
+export function HowItWorksStep({ stepNumber, title, icon, description, benefits, preview, reverse }: HowItWorksStepProps) {
   return (
-    <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+    <div className="grid md:grid-cols-2 gap-4 md:gap-12 items-center">
       <div className={`order-2 ${reverse ? "md:order-2" : "md:order-1"}`}>
-        <div className="rounded-lg border bg-card p-6 shadow-sm">
+        <div className="rounded-lg border bg-card p-4 md:p-6 shadow-sm">
           <div className="flex items-center gap-4 mb-4">
             <div className="rounded-full bg-primary/10 p-2 flex-shrink-0">{icon}</div>
             <h4 className="text-xl font-semibold">{title}</h4>
@@ -32,7 +32,7 @@ export function PatientStep({ stepNumber, title, icon, description, benefits, pr
         </div>
       </div>
       <div className={`order-1 ${reverse ? "md:order-1" : "md:order-2"} flex justify-center`}>
-        <div className="relative">
+        <div className="relative w-full flex justify-center">
           <div
             className={`absolute ${reverse ? "-right-4" : "-left-4"} top-1/2 -translate-y-1/2 rounded-full bg-primary text-primary-foreground w-8 h-8 flex items-center justify-center font-bold text-sm z-10 hidden md:flex`}
           >

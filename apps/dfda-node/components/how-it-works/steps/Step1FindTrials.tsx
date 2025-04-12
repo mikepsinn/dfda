@@ -1,9 +1,9 @@
 import { Search } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step1FindTrials() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={1}
       title="Find the Most Promising Treatment for Your Condition"
       icon={<Search className="h-5 w-5 text-primary" />}

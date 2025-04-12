@@ -1,9 +1,9 @@
 import { ClipboardCheck } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step3JoinTrial() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={3}
       title="Join a Trial"
       icon={<ClipboardCheck className="h-5 w-5 text-primary" />}

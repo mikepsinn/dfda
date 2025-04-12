@@ -83,7 +83,7 @@ export function Header({ initialUser }: HeaderProps) {
   const secondaryNavItems: NavItem[] = [
     {
       title: "Patients",
-      href: "/#patients",
+      href: "/#how-it-works-patient",
     },
     {
       title: "Providers",
@@ -91,7 +91,7 @@ export function Header({ initialUser }: HeaderProps) {
     },
     {
       title: "Research Partners",
-      href: "/#research-partners",
+      href: "/#how-it-works-research-partner",
     },
     {
       title: "Developers",
@@ -112,8 +112,8 @@ export function Header({ initialUser }: HeaderProps) {
 
   // Define primary links to show when logged out
   const loggedOutPrimaryNavItems: NavItem[] = [
-    { title: "Patients", href: "/#patients" },
-    { title: "Research Partners", href: "/#research-partners" },
+    { title: "Patients", href: "/#how-it-works-patient" },
+    { title: "Research Partners", href: "/#how-it-works-research-partner" },
   ]
 
   return (

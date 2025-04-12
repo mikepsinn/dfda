@@ -1,9 +1,9 @@
 import { Calendar } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step4CoordinateCare() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={4}
       title="Coordinate Your Care"
       icon={<Calendar className="h-5 w-5 text-primary" />}

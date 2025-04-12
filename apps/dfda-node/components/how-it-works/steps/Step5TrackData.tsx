@@ -1,9 +1,9 @@
 import { LineChart } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step5TrackData() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={5}
       title="Track Your Data"
       icon={<LineChart className="h-5 w-5 text-primary" />}

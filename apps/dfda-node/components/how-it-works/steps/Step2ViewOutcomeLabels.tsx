@@ -1,9 +1,9 @@
 import { FileText } from "lucide-react"
-import { PatientStep } from "../PatientStep"
+import { HowItWorksStep } from "../HowItWorksStep"
 
 export function Step2ViewOutcomeLabels() {
   return (
-    <PatientStep
+    <HowItWorksStep
       stepNumber={2}
       title="View Outcome Labels"
       icon={<FileText className="h-5 w-5 text-primary" />}
