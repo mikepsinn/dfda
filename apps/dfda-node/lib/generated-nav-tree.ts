@@ -8,46 +8,99 @@ export interface SimpleNavInfo {
   href: string; // Original URL path
 }
 
-export const navigationTreeObject: Record<string, SimpleNavInfo> = {
+// --- Generated Interface --- START
+export interface GeneratedNavTree {
+  readonly 'admin': SimpleNavInfo;
+  readonly 'conditions': SimpleNavInfo;
+  readonly 'conditions_conditionid': SimpleNavInfo;
+  readonly 'conditions_conditionid_trials': SimpleNavInfo;
+  readonly 'contact': SimpleNavInfo;
+  readonly 'developer': SimpleNavInfo;
+  readonly 'developers': SimpleNavInfo;
+  readonly 'developers_documentation': SimpleNavInfo;
+  readonly 'find_trials': SimpleNavInfo;
+  readonly 'forgot_password': SimpleNavInfo;
+  readonly 'impact': SimpleNavInfo;
+  readonly 'login': SimpleNavInfo;
+  readonly 'outcome_labels': SimpleNavInfo;
+  readonly 'patient': SimpleNavInfo;
+  readonly 'patient_data_submission': SimpleNavInfo;
+  readonly 'patient_join_trial': SimpleNavInfo;
+  readonly 'patient_join_trial_treatment': SimpleNavInfo;
+  readonly 'patient_join_trial_treatment_condition': SimpleNavInfo;
+  readonly 'patient_treatments': SimpleNavInfo;
+  readonly 'patient_trial_details': SimpleNavInfo;
+  readonly 'patient_trial_details_id': SimpleNavInfo;
+  readonly 'patient_trial_payment': SimpleNavInfo;
+  readonly 'patient_trial_payment_id': SimpleNavInfo;
+  readonly 'privacy': SimpleNavInfo;
+  readonly 'provider': SimpleNavInfo;
+  readonly 'provider_ehr_authorization': SimpleNavInfo;
+  readonly 'provider_ehr_authorization_patientid': SimpleNavInfo;
+  readonly 'provider_form_management': SimpleNavInfo;
+  readonly 'provider_form_management_create': SimpleNavInfo;
+  readonly 'provider_intervention_assignment': SimpleNavInfo;
+  readonly 'provider_intervention_assignment_patientid': SimpleNavInfo;
+  readonly 'provider_patients': SimpleNavInfo;
+  readonly 'provider_patients_id': SimpleNavInfo;
+  readonly 'provider_patients_id_enroll': SimpleNavInfo;
+  readonly 'providers': SimpleNavInfo;
+  readonly 'register': SimpleNavInfo;
+  readonly 'research_partner': SimpleNavInfo;
+  readonly 'research_partner_create_trial': SimpleNavInfo;
+  readonly 'research_partner_trials': SimpleNavInfo;
+  readonly 'research_partner_trials_id': SimpleNavInfo;
+  readonly 'research_partner_trials_id_results': SimpleNavInfo;
+  readonly 'root': SimpleNavInfo;
+  readonly 'select_role': SimpleNavInfo;
+  readonly 'terms': SimpleNavInfo;
+  readonly 'treatments': SimpleNavInfo;
+  readonly 'treatments_id': SimpleNavInfo;
+  readonly 'user': SimpleNavInfo;
+  readonly 'user_profile': SimpleNavInfo;
+}
+// --- Generated Interface --- END
+
+export const navigationTreeObject: GeneratedNavTree = {
   "admin": {
     "title": "Admin",
-    "href": "admin"
+    "href": "/admin"
   },
   "conditions": {
     "title": "Conditions",
-    "href": "conditions"
+    "href": "/conditions"
   },
   "conditions_conditionid": {
     "title": "Dynamic (conditionId)",
-    "href": "conditions/[conditionId]"
+    "href": "/conditions/[conditionId]"
   },
   "conditions_conditionid_trials": {
     "title": "Trials",
-    "href": "conditions/[conditionId]/trials"
+    "href": "/conditions/[conditionId]/trials"
   },
   "contact": {
     "title": "Contact",
-    "href": "contact"
+    "href": "/contact"
   },
   "developer": {
     "title": "Developer",
-    "href": "developer"
+    "href": "/developer"
   },
   "developers": {
     "title": "Developers",
-    "href": "developers"
+    "href": "/developers"
   },
   "developers_documentation": {
     "title": "Documentation",
-    "href": "developers/documentation"
+    "href": "/developers/documentation"
   },
   "find_trials": {
     "title": "Find Trials",
-    "href": "find-trials"
+    "href": "/find-trials"
   },
   "forgot_password": {
     "title": "Forgot Password",
-    "href": "forgot-password"
+    "href": "/forgot-password"
   },
   "root": {
     "title": "Home",
@@ -55,158 +108,150 @@ export const navigationTreeObject: Record<string, SimpleNavInfo> = {
   },
   "impact": {
     "title": "Impact",
-    "href": "impact"
+    "href": "/impact"
   },
   "login": {
     "title": "Login",
-    "href": "login"
+    "href": "/login"
   },
   "outcome_labels": {
     "title": "Outcome Labels",
-    "href": "outcome-labels"
+    "href": "/outcome-labels"
   },
   "patient": {
     "title": "Patient",
-    "href": "patient"
+    "href": "/patient"
   },
   "patient_data_submission": {
     "title": "Data Submission",
-    "href": "patient/data-submission"
+    "href": "/patient/data-submission"
   },
   "patient_join_trial": {
     "title": "Join Trial",
-    "href": "patient/join-trial"
+    "href": "/patient/join-trial"
   },
   "patient_join_trial_treatment": {
     "title": "Dynamic (treatment)",
-    "href": "patient/join-trial/[treatment]"
+    "href": "/patient/join-trial/[treatment]"
   },
   "patient_join_trial_treatment_condition": {
     "title": "Dynamic (condition)",
-    "href": "patient/join-trial/[treatment]/[condition]"
-  },
-  "patient_profile": {
-    "title": "Profile",
-    "href": "patient/profile"
+    "href": "/patient/join-trial/[treatment]/[condition]"
   },
   "patient_treatments": {
     "title": "Treatments",
-    "href": "patient/treatments"
+    "href": "/patient/treatments"
   },
   "patient_trial_details": {
     "title": "Trial Details",
-    "href": "patient/trial-details"
+    "href": "/patient/trial-details"
   },
   "patient_trial_details_id": {
     "title": "Dynamic (id)",
-    "href": "patient/trial-details/[id]"
+    "href": "/patient/trial-details/[id]"
   },
   "patient_trial_payment": {
     "title": "Trial Payment",
-    "href": "patient/trial-payment"
+    "href": "/patient/trial-payment"
   },
   "patient_trial_payment_id": {
     "title": "Dynamic (id)",
-    "href": "patient/trial-payment/[id]"
+    "href": "/patient/trial-payment/[id]"
   },
   "privacy": {
     "title": "Privacy",
-    "href": "privacy"
+    "href": "/privacy"
   },
   "provider": {
     "title": "Provider",
-    "href": "provider"
+    "href": "/provider"
   },
   "provider_ehr_authorization": {
     "title": "Ehr Authorization",
-    "href": "provider/ehr-authorization"
+    "href": "/provider/ehr-authorization"
   },
   "provider_ehr_authorization_patientid": {
     "title": "Dynamic (patientId)",
-    "href": "provider/ehr-authorization/[patientId]"
+    "href": "/provider/ehr-authorization/[patientId]"
   },
   "provider_form_management": {
     "title": "Form Management",
-    "href": "provider/form-management"
+    "href": "/provider/form-management"
   },
   "provider_form_management_create": {
     "title": "Create",
-    "href": "provider/form-management/create"
+    "href": "/provider/form-management/create"
   },
   "provider_intervention_assignment": {
     "title": "Intervention Assignment",
-    "href": "provider/intervention-assignment"
+    "href": "/provider/intervention-assignment"
   },
   "provider_intervention_assignment_patientid": {
     "title": "Dynamic (patientId)",
-    "href": "provider/intervention-assignment/[patientId]"
+    "href": "/provider/intervention-assignment/[patientId]"
   },
   "provider_patients": {
     "title": "Patients",
-    "href": "provider/patients"
+    "href": "/provider/patients"
   },
   "provider_patients_id": {
     "title": "Dynamic (id)",
-    "href": "provider/patients/[id]"
+    "href": "/provider/patients/[id]"
   },
   "provider_patients_id_enroll": {
     "title": "Enroll",
-    "href": "provider/patients/[id]/enroll"
+    "href": "/provider/patients/[id]/enroll"
   },
   "providers": {
     "title": "Providers",
-    "href": "providers"
+    "href": "/providers"
   },
   "register": {
     "title": "Register",
-    "href": "register"
+    "href": "/register"
   },
   "research_partner": {
     "title": "Research Partner",
-    "href": "research-partner"
+    "href": "/research-partner"
   },
   "research_partner_create_trial": {
     "title": "Create Trial",
-    "href": "research-partner/create-trial"
-  },
-  "research_partner_profile": {
-    "title": "Profile",
-    "href": "research-partner/profile"
+    "href": "/research-partner/create-trial"
   },
   "research_partner_trials": {
     "title": "Trials",
-    "href": "research-partner/trials"
+    "href": "/research-partner/trials"
   },
   "research_partner_trials_id": {
     "title": "Dynamic (id)",
-    "href": "research-partner/trials/[id]"
+    "href": "/research-partner/trials/[id]"
   },
   "research_partner_trials_id_results": {
     "title": "Results",
-    "href": "research-partner/trials/[id]/results"
+    "href": "/research-partner/trials/[id]/results"
   },
   "select_role": {
     "title": "Select Role",
-    "href": "select-role"
+    "href": "/select-role"
   },
   "terms": {
     "title": "Terms",
-    "href": "terms"
+    "href": "/terms"
   },
   "treatments": {
     "title": "Treatments",
-    "href": "treatments"
+    "href": "/treatments"
   },
   "treatments_id": {
     "title": "Dynamic (id)",
-    "href": "treatments/[id]"
+    "href": "/treatments/[id]"
   },
   "user": {
     "title": "User",
-    "href": "user"
+    "href": "/user"
   },
   "user_profile": {
     "title": "Profile",
-    "href": "user/profile"
+    "href": "/user/profile"
   }
 };

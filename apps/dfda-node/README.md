@@ -161,14 +161,6 @@ This is the core application template described by the sitemap below.
   - [x] `/forgot-password` - Password recovery (Score: 6)
   - [ ] `/reset-password` - Password reset (Score: 6)
 
-## Shared Authenticated Features
-- [ ] `/(shared)/`
-  - [ ] `/profile` - User profile management (Admin, Provider, Patient) (Score: 7)
-  - [ ] `/` - Role-adaptive dashboard (Admin, Provider, Patient) (Score: 8)
-  - [ ] `/notifications` - User notifications center (Score: 7)
-  - [ ] `/settings/account` - Manage account settings (password, MFA) (Score: 7)
-  - [ ] `/settings/consent` - Manage data sharing and usage consents (especially for Patients) (Score: 10)
-
 ## Patient Features (Auth Required)
   - [x] `/patient/` - Personalized overview, alerts, insights summary (Score: 8)
   - [ ] `/patient/log` - Central logging hub (Score: 9)

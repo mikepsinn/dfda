@@ -92,7 +92,9 @@ function generateNavTreeRecursive(dirPath: string, currentPath: string): NavNode
          ? path.basename(path.dirname(dirPath))
          : currentSegment;
 
-       const nodePath = currentPath === '' ? '/' : currentPath.replace(/\\/g, '/');
+       // Ensure nodePath always starts with / unless it IS /
+       const normalizedPath = currentPath.replace(/\\/g, '/');
+       const nodePath = normalizedPath === '' ? '/' : '/' + normalizedPath;
        const nodeName = dirPath === appDirectory ? 'Home' : formatSegmentName(nodeNameSegment);
        console.log(`${LOG_PREFIX}   -> Creating node: Name="${nodeName}", Path="${nodePath}", Children=${children.length > 0}`);
 
@@ -193,6 +195,17 @@ const navigationTreeObject: Record<string, SimpleNavInfo> = {};
 convertTreeToObjectRecursive(navigationTreeArray, navigationTreeObject);
 console.log(`${LOG_PREFIX} Conversion complete. Generated ${Object.keys(navigationTreeObject).length} keys.`);
 
+// --- Generate the specific interface --- START
+const generatedKeys = Object.keys(navigationTreeObject);
+const interfaceProperties = generatedKeys
+  .sort() // Sort keys alphabetically for consistent output
+  .map(key => `  readonly '${key}': SimpleNavInfo;`) // Use readonly and quote keys if needed
+  .join('\n');
+const generatedInterfaceString = `export interface GeneratedNavTree {
+${interfaceProperties}
+}`;
+// --- Generate the specific interface --- END
+
 // Define the output path
 const outputPath = path.resolve(process.cwd(), 'lib', 'generated-nav-tree.ts');
 
@@ -213,7 +226,11 @@ export interface SimpleNavInfo {
   href: string; // Original URL path
 }
 
-export const navigationTreeObject: Record<string, SimpleNavInfo> = ${JSON.stringify(navigationTreeObject, null, 2)};
+// --- Generated Interface --- START
+${generatedInterfaceString}
+// --- Generated Interface --- END
+
+export const navigationTreeObject: GeneratedNavTree = ${JSON.stringify(navigationTreeObject, null, 2)};
 `;
 
 // Write the content to the file
@@ -221,26 +238,6 @@ fs.writeFileSync(outputPath, fileContent, 'utf8');
 
 console.log(`${LOG_PREFIX} Navigation tree generated successfully at ${path.relative(process.cwd(), outputPath)}`);
 
-// Define the NavNode interface again or import it - need to export it for the generated file
-// Let's create a separate file for the interface for better structure
-const interfacePath = path.resolve(process.cwd(), 'lib', 'nav-node.ts');
-const interfaceContent = `// Shared interface for navigation nodes
-export interface NavNode {
-  name: string; // User-friendly name
-  path: string; // URL path
-  children?: NavNode[];
-}
-`;
-
-// Write the interface file only if it doesn't exist or needs update (optional)
-if (!fs.existsSync(interfacePath)) {
-  fs.writeFileSync(interfacePath, interfaceContent, 'utf8');
-  console.log(`NavNode interface created at ${interfacePath}`);
-} else {
-  // Optional: Check if content is different and update if needed
-  const existingInterfaceContent = fs.readFileSync(interfacePath, 'utf8');
-  if (existingInterfaceContent !== interfaceContent) {
-    fs.writeFileSync(interfacePath, interfaceContent, 'utf8');
-    console.log(`NavNode interface updated at ${interfacePath}`);
-  }
-} 
+// Remove the separate NavNode interface generation if not needed elsewhere
+// const interfacePath = path.resolve(process.cwd(), 'lib', 'nav-node.ts');
+// ... (rest of the old interface file logic can be removed or commented out) 
