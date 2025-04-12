@@ -40,14 +40,14 @@ export async function middleware(request: NextRequest) {
 
   // Define protected routes
   const protectedPaths = [
-    "/patient/dashboard",
+    "/patient/",
     "/patient/find-trials",
     "/patient/data-submission",
-    "/provider/dashboard",
+    "/provider/",
     "/provider/find-trials",
-    "/research-partner/dashboard",
+    "/research-partner/",
     "/research-partner/create-trial",
-    "/developer/dashboard",
+    "/developer/",
     "/developer/api-keys",
     "/developer/documentation",
     "/user/profile",
@@ -70,7 +70,7 @@ export async function middleware(request: NextRequest) {
 
   if (isAuthPath && isAuthenticated) {
     console.log('[AUTH] Redirecting to dashboard - already authenticated')
-    return NextResponse.redirect(new URL("/patient/dashboard", request.url))
+    return NextResponse.redirect(new URL("/patient/", request.url))
   }
 
   // Return the response object from updateSession (contains potentially updated cookies)

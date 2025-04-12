@@ -79,7 +79,7 @@ export default async function DataSubmissionPage() {
     .single()
 
   if (!enrollment) {
-    redirect("/patient/dashboard")
+    redirect("/patient/")
   }
 
   // Get the latest data submission for this enrollment
@@ -118,7 +118,7 @@ export default async function DataSubmissionPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <div className="mb-8 flex items-center gap-2">
-              <Link href="/patient/dashboard" className="text-muted-foreground hover:text-foreground">
+              <Link href="/patient/" className="text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" />
                 <span className="sr-only">Back to dashboard</span>
               </Link>

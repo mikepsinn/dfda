@@ -342,7 +342,7 @@ export function PatientEnrollmentWizard({ patientId }: PatientEnrollmentWizardPr
             <Link href={`/provider/intervention-assignment/${patientId}`}>
               <Button>Assign Intervention Details</Button>
             </Link>
-            <Link href="/provider/dashboard">
+            <Link href="/provider/">
               <Button variant="outline">Return to Dashboard</Button>
             </Link>
           </CardFooter>

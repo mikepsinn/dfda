@@ -17,7 +17,7 @@ export function SubmissionComplete({ trialData }: SubmissionCompleteProps) {
       </CardHeader>
       <CardContent>
         <Button asChild>
-          <a href="/patient/dashboard">Return to Dashboard</a>
+          <a href="/patient/">Return to Dashboard</a>
         </Button>
       </CardContent>
     </Card>

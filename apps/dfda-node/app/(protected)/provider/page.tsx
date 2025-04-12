@@ -1,94 +1,180 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, LayoutDashboard, ListChecks, Users, FileText, Search, ShieldCheck } from "lucide-react";
-import { DashboardStats } from "../../(protected)/provider/dashboard/components/dashboard-stats";
+import type { Metadata } from "next"
+import { getServerUser } from "@/lib/server-auth"
+import { createServerClient } from "@/lib/supabase"
+import { redirect } from "next/navigation"
+import type { Database } from "@/lib/database.types"
+import { createUnifiedLogger } from "@/lib/logger"
 
-const features = [
-  {
-    name: "Dashboard",
-    description: "Get an overview of your activities and statistics.",
-    href: "/provider/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    name: "Intervention Assignment",
-    description: "Manage and assign interventions to patients.",
-    href: "/provider/intervention-assignment",
-    icon: ListChecks,
-  },
-  {
-    name: "Patients",
-    description: "View and manage your patient roster.",
-    href: "/provider/patients",
-    icon: Users,
-  },
-  {
-    name: "Form Management",
-    description: "Create and manage forms for data collection.",
-    href: "/provider/form-management",
-    icon: FileText,
-  },
-  {
-    name: "Find Trials",
-    description: "Search for relevant clinical trials.",
-    href: "/provider/find-trials",
-    icon: Search,
-  },
-  {
-    name: "EHR Authorization",
-    description: "Manage patient EHR authorizations.",
-    href: "/provider/ehr-authorization",
-    icon: ShieldCheck,
-  },
-];
+export const metadata: Metadata = {
+  title: "Provider Dashboard | FDA v2",
+  description: "Manage your clinical trials, patients, and interventions",
+}
 
-export default function ProviderPage() {
-  const fakeStats = {
-    activeTrials: 5,
-    enrolledPatients: 42,
-    eligiblePatients: 115,
-    pendingActions: 8,
-    pendingActionsDueSoon: 3,
-    upcomingVisits: 15,
-    upcomingVisitsThisWeek: 6,
-    upcomingVisitsNextWeek: 9,
-  };
+// Define types from database schema
+type Trial = Database["public"]["Tables"]["trials"]["Row"]
+type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
+type TrialAction = Database["public"]["Tables"]["trial_actions"]["Row"]
+type Profile = Database["public"]["Tables"]["profiles"]["Row"]
+type ActionType = Database["public"]["Tables"]["action_types"]["Row"]
 
-  return (
-    <div className="relative mt-12 mb-16">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <h3 className="text-2xl font-bold text-center mb-8">Provider Overview</h3>
+// Extended types for UI components
+type DashboardTrial = Trial & {
+  enrolledPatients: number
+  targetPatients: number
+  progress: number
+  pendingActions: number
+  trial_enrollments?: TrialEnrollment[]
+  trial_actions?: (TrialAction & {
+    action_type: ActionType
+  })[]
+  research_partner_profile?: Profile
+}
 
-        <div className="mb-12">
-          <DashboardStats {...fakeStats} />
-        </div>
+type EligiblePatientUI = {
+  id: string
+  name: string
+  conditions: string[]
+  eligibleTrials: { id: string; name: string }[]
+  status: string
+}
 
-        <h4 className="text-xl font-semibold text-center mb-8">Manage Your Activities</h4>
+type EnrolledPatientUI = {
+  id: string
+  name: string
+  trial: string
+  enrollmentDate: string
+  pendingActions: {
+    type: string
+    name: string
+    due: string
+  }[]
+}
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div key={feature.name} className="flex flex-col items-center text-center p-6 border rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <feature.icon className="h-10 w-10 mb-4 text-primary" />
-              <h4 className="text-lg font-semibold mb-2">{feature.name}</h4>
-              <p className="text-muted-foreground text-sm mb-4">{feature.description}</p>
-              <Link href={feature.href} passHref>
-                <Button variant="outline" size="sm" className="mt-auto gap-1">
-                  Go to {feature.name} <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          ))}
-        </div>
+export default async function ProviderDashboard(): Promise<{
+  trials: DashboardTrial[],
+  eligiblePatients: EligiblePatientUI[],
+  enrolledPatients: EnrolledPatientUI[]
+}> {
+  const logger = createUnifiedLogger("ProviderDashboard")
+  const supabase = await createServerClient()
+  const user = await getServerUser()
+  
+  if (!user) {
+    redirect("/login")
+  }
 
-        {/* Optional: Add a primary call to action, e.g., link to dashboard */}
-        {/* <div className="flex justify-center mt-12">
-          <Link href="/provider/dashboard">
-            <Button size="lg" className="gap-1">
-              Go to Dashboard <ArrowRight className="h-4 w-4" />
-            </Button>
-          </Link>
-        </div> */}
-      </div>
-    </div>
-  );
-} 
+  // Fetch provider profile
+  const { data: providerProfile, error: profileError } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single()
+
+  if (profileError) {
+    logger.error("Error fetching provider profile", { error: profileError })
+  }
+
+  if (!providerProfile) {
+    throw new Error("Provider profile not found")
+  }
+
+  // Fetch active trials with related data
+  const { data: trials, error: trialsError } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      trial_enrollments!inner (*),
+      trial_actions!inner (
+        *,
+        action_type:action_types!inner (*)
+      ),
+      research_partner_profile:profiles!trials_research_partner_id_fkey (*)
+    `)
+    .eq("status", "active")
+    .is("deleted_at", null)
+
+  if (trialsError) {
+    logger.error("Error fetching active trials", { error: trialsError })
+  }
+
+  const dashboardTrials: DashboardTrial[] = (trials || []).map((trial) => ({
+    ...trial,
+    enrolledPatients: trial.trial_enrollments?.length || 0,
+    targetPatients: trial.enrollment_target || 0,
+    progress: trial.enrollment_target ? (trial.trial_enrollments?.length || 0) / trial.enrollment_target * 100 : 0,
+    pendingActions: trial.trial_actions?.filter(a => a.status === 'pending').length || 0,
+  }))
+
+  // Fetch patients with their conditions and enrollments
+  const { data: patients, error: patientsError } = await supabase
+    .from("patients")
+    .select(`
+      *,
+      profile:profiles!patients_id_fkey (*),
+      conditions:patient_conditions!inner (
+        condition:conditions!inner (
+          *,
+          name:global_variables!conditions_id_fkey (
+            name
+          )
+        )
+      )
+    `)
+    .is("deleted_at", null)
+
+  if (patientsError) {
+    logger.error("Error fetching patients", { error: patientsError })
+  }
+
+  const eligiblePatients: EligiblePatientUI[] = (patients || []).map((patient) => ({
+    id: patient.id,
+    name: `${patient.profile.first_name} ${patient.profile.last_name}`,
+    conditions: patient.conditions.map(c => c.condition.name.name),
+    eligibleTrials: dashboardTrials
+      .filter(t => patient.conditions.some(c => c.condition.id === t.condition_id))
+      .map(t => ({ id: t.id, name: t.title })),
+    status: "eligible"
+  }))
+
+  // Get enrolled patients
+  const { data: enrollments, error: enrollmentsError } = await supabase
+    .from("trial_enrollments")
+    .select(`
+      *,
+      patient:patients!inner (
+        *,
+        profile:profiles!patients_id_fkey (*)
+      ),
+      trial:trials!inner (*),
+      trial_actions!inner (
+        *,
+        action_type:action_types!inner (*)
+      )
+    `)
+    .eq("provider_id", providerProfile.id)
+    .is("deleted_at", null)
+
+  if (enrollmentsError) {
+    throw enrollmentsError
+  }
+
+  const enrolledPatients: EnrolledPatientUI[] = (enrollments || []).map((enrollment) => ({
+    id: enrollment.patient.id,
+    name: `${enrollment.patient.profile.first_name} ${enrollment.patient.profile.last_name}`,
+    trial: enrollment.trial.title,
+    enrollmentDate: new Date(enrollment.enrollment_date || '').toLocaleDateString(),
+    pendingActions: enrollment.trial_actions
+      .filter(action => action.status === 'pending')
+      .map(action => ({
+        type: action.action_type.name,
+        name: action.title,
+        due: new Date(action.due_date).toLocaleDateString()
+      }))
+  }))
+
+  return {
+    trials: dashboardTrials,
+    eligiblePatients,
+    enrolledPatients
+  }
+}

@@ -50,7 +50,7 @@ export function Header({ initialUser }: HeaderProps) {
     if (initialUser) {
       items.push({
         title: "Patient Dashboard",
-        href: "/patient/dashboard",
+        href: "/patient/",
       })
       if (userType === 'patient') {
         items.push({
@@ -64,7 +64,7 @@ export function Header({ initialUser }: HeaderProps) {
     if (userType === 'provider') {
       items.push({
         title: "Provider Dashboard",
-        href: "/provider/dashboard",
+        href: "/provider/",
       })
     }
 

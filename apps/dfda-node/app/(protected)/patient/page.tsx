@@ -1,70 +1,115 @@
-import { Search, HeartPulse, Shield } from "lucide-react"
-import { PatientHowItWorks } from "@/components/how-it-works/PatientHowItWorks"
+import { getServerUser } from "@/lib/server-auth"
+import { redirect } from "next/navigation"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Plus } from "lucide-react"
+import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { getTreatmentEffectivenessByPatientAction } from "@/app/actions/treatment-effectiveness"
+import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
 
-export default function PatientPage() {
+export default async function PatientDashboard() {
+  const user = await getServerUser()
+  if (!user) {
+    redirect("/login")
+  }
+
+  // Fetch conditions and treatments
+  const conditions = await getPatientConditionsAction(user.id)
+  const treatmentEffectiveness = await getTreatmentEffectivenessByPatientAction(user.id)
+
+  // Get treatment details for each condition
+  const conditionsWithTreatments = await Promise.all(
+    conditions.map(async (condition) => {
+      if (!condition.condition_id) return null
+      const treatments = await getTreatmentsForConditionAction(condition.condition_id)
+      const effectivenessMap = treatmentEffectiveness.reduce((acc, curr) => {
+        acc[curr.treatment_id] = curr.effectiveness_out_of_ten || 0
+        return acc
+      }, {} as Record<string, number>)
+
+      return {
+        id: condition.id || "",
+        condition_name: condition.condition_name || "Unknown Condition",
+        treatments: treatments.map(t => ({
+          id: t.id,
+          effectiveness_out_of_ten: effectivenessMap[t.id] || 0,
+          treatment: {
+            global_variables: {
+              name: t.name,
+              description: t.description || ""
+            }
+          }
+        }))
+      }
+    })
+  ).then(results => results.filter((r): r is NonNullable<typeof r> => r !== null))
+
   return (
-    <main className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col justify-center space-y-6 max-w-3xl mx-auto text-center">
+    <div className="container space-y-8 py-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>{user.user_metadata?.name || "Patient"}'s Dashboard</CardTitle>
+          <CardDescription>Manage your conditions and treatments</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <p className="text-2xl font-bold">{conditions.length}</p>
+              <p className="text-sm text-muted-foreground">Active Conditions</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-2xl font-bold">{treatmentEffectiveness.length}</p>
+              <p className="text-sm text-muted-foreground">Active Treatments</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          <div>
+            <CardTitle>Your Conditions & Treatments</CardTitle>
+            <CardDescription>Track your health conditions and treatment effectiveness</CardDescription>
+          </div>
+          <Link href="/patient/treatments">
+            <Button variant="outline" size="sm">
+              <Plus className="mr-2 h-4 w-4" />
+              Add New
+            </Button>
+          </Link>
+        </CardHeader>
+        <CardContent>
+          {conditions.length > 0 ? (
             <div className="space-y-4">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                Access Breakthrough Treatments
-              </h1>
-              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Join decentralized clinical trials from anywhere, track your progress, and contribute to medical
-                advancements while receiving personalized care.
-              </p>
+              {conditionsWithTreatments.map((condition) => (
+                <div key={condition.id} className="border-b pb-4 last:border-0">
+                  <h3 className="font-medium">{condition.condition_name}</h3>
+                  {condition.treatments && condition.treatments.length > 0 ? (
+                    <div className="mt-2 space-y-2">
+                      {condition.treatments.map((treatment) => (
+                        <div key={treatment.id} className="text-sm text-muted-foreground">
+                          {treatment.treatment.global_variables.name} - Effectiveness: {treatment.effectiveness_out_of_ten}/10
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-muted-foreground mt-2">No treatments added yet</p>
+                  )}
+                </div>
+              ))}
             </div>
-          </div>
-
-          <PatientHowItWorks />
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Patient Benefits</h2>
-            <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Why patients choose the Decentralized FDA platform
-            </p>
-          </div>
-
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 lg:gap-12 mt-12">
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
-                <Search className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold">Universal Access</h3>
-              <p className="text-muted-foreground">
-                Participate in trials from anywhere, removing geographic barriers to cutting-edge treatments.
-              </p>
+          ) : (
+            <div className="text-center py-6 text-muted-foreground">
+              <p>No conditions added yet.</p>
+              <Link href="/patient/treatments" className="text-primary hover:underline">
+                Add your first condition
+              </Link>
             </div>
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
-                <HeartPulse className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold">Personalized Care</h3>
-              <p className="text-muted-foreground">
-                Receive treatments tailored to your specific condition with continuous monitoring and support.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
-                <Shield className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold">Data Privacy</h3>
-              <p className="text-muted-foreground">
-                Your health data is secure and private, with transparent control over how it's used in research.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+          )}
+        </CardContent>
+      </Card>
+    </div>
   )
 }
 

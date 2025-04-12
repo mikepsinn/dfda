@@ -170,7 +170,7 @@ export async function createTrialAction(trial: TrialInsert): Promise<Trial> {
 
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
-  revalidatePath("/research-partner/dashboard")
+  revalidatePath("/research-partner/")
   return response.data
 }
 
@@ -193,7 +193,7 @@ export async function updateTrialAction(id: string, updates: TrialUpdate): Promi
   revalidatePath(`/trials/${id}`)
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
-  revalidatePath("/research-partner/dashboard")
+  revalidatePath("/research-partner/")
   return response.data
 }
 
@@ -213,5 +213,5 @@ export async function deleteTrialAction(id: string): Promise<void> {
 
   revalidatePath("/trials")
   revalidatePath("/admin/trials")
-  revalidatePath("/research-partner/dashboard")
+  revalidatePath("/research-partner/")
 } 

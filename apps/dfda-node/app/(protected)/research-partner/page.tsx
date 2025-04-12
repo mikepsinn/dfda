@@ -1,63 +1,143 @@
-import { ResearchPartnerHowItWorks } from "@/components/how-it-works/ResearchPartnerHowItWorks"
+import type { Metadata } from "next"
+import { getServerUser } from "@/lib/server-auth"
+import { createServerClient } from "@/lib/supabase"
+import { redirect } from "next/navigation"
+import { ResearchPartnerOverview } from "./components/research-partner-overview"
+import { TrialEnrollment } from "./components/trial-enrollment"
+import { TrialManagement } from "./components/trial-management"
+import { RecentActivity } from "./components/recent-activity"
 
-export default function ResearchPartnerPage() {
+export const metadata: Metadata = {
+  title: "Research Partner Dashboard | FDA v2",
+  description: "Manage your clinical trials and view enrollment statistics.",
+}
+
+export default async function ResearchPartnerDashboard() {
+  const user = await getServerUser()
+
+  if (!user) {
+    redirect("/login?callbackUrl=/research-partner/")
+  }
+
+  const supabase = await createServerClient()
+
+  // Get research partner profile
+  const { data: researchPartnerProfile } = await supabase
+    .from("profiles")
+    .select("first_name, last_name")
+    .eq("id", user.id)
+    .single()
+
+  // Get active trials
+  // Note: Database field is still 'research_partner_id' but represents research_partner_id
+  const { data: activeTrials } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      conditions (
+        id,
+        title,
+        icd_code
+      ),
+      treatments (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      )
+    `)
+    .eq("research_partner_id", user.id) // Using research_partner_id field for research partner ID
+    .eq("status", "active")
+
+  // Get completed trials
+  // Note: Database field is still 'research_partner_id' but represents research_partner_id
+  const { data: completedTrials } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      conditions (
+        id,
+        title,
+        icd_code
+      ),
+      treatments (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      )
+    `)
+    .eq("research_partner_id", user.id) // Using research_partner_id field for research partner ID
+    .eq("status", "completed")
+
+  // Get pending trials
+  // Note: Database field is still 'research_partner_id' but represents research_partner_id
+  const { data: pendingTrials } = await supabase
+    .from("trials")
+    .select(`
+      *,
+      conditions (
+        id,
+        title,
+        icd_code
+      ),
+      treatments (
+        id,
+        title,
+        treatment_type,
+        manufacturer
+      )
+    `)
+    .eq("research_partner_id", user.id) // Using research_partner_id field for research partner ID
+    .eq("status", "pending")
+
+  const researchPartnerName = researchPartnerProfile?.first_name && researchPartnerProfile?.last_name
+    ? `${researchPartnerProfile.first_name} ${researchPartnerProfile.last_name}`
+    : "Innovative Therapeutics Inc."
+
+  const researchPartnerData = {
+    name: researchPartnerName,
+    activeTrials: activeTrials || [],
+    completedTrials: completedTrials || [],
+    pendingTrials: pendingTrials || [],
+    totalEnrollment: (activeTrials || []).reduce((sum, trial) => sum + (trial.current_enrollment || 0), 0),
+    totalTrials: (activeTrials || []).length + (completedTrials || []).length,
+  }
+
   return (
-    <main className="flex-1">
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <div className="inline-flex items-center rounded-full border px-4 py-1.5 text-sm font-medium">
-              <span className="text-primary">Simple & Streamlined Process</span>
-            </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Treat Patients and Fund Your Trial
-            </h2>
-            <p className="max-w-[85%] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Create and manage trials with our intuitive, streamlined process
-            </p>
-          </div>
+    <div className="flex min-h-screen flex-col">
+      <main className="flex-1 py-6 md:py-10">
+        <div className="container">
+          <div className="mx-auto max-w-5xl space-y-8">
+            <ResearchPartnerOverview
+              name={researchPartnerData.name}
+              totalTrials={researchPartnerData.totalTrials}
+              totalEnrollment={researchPartnerData.totalEnrollment}
+            />
 
-          <ResearchPartnerHowItWorks />
-        </div>
-      </section>
-
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto grid max-w-5xl items-center gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Benefits for Research Partners</h2>
-              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                The Decentralized FDA platform offers unprecedented advantages for trial research partners
-              </p>
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold">Trial Enrollment</h2>
+              <TrialEnrollment trials={researchPartnerData.activeTrials} />
             </div>
-            <div className="grid gap-6">
-              <div className="grid gap-1">
-                <h3 className="text-xl font-bold">Broader Patient Access</h3>
-                <p className="text-gray-500">
-                  Reach patients regardless of geographic location, increasing diversity and representation
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-xl font-bold">Reduced Costs</h3>
-                <p className="text-gray-500">Eliminate expensive site management and streamline patient recruitment</p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-xl font-bold">Real-World Data</h3>
-                <p className="text-gray-500">
-                  Collect comprehensive real-world evidence on treatment efficacy and safety
-                </p>
-              </div>
-              <div className="grid gap-1">
-                <h3 className="text-xl font-bold">Faster Time to Market</h3>
-                <p className="text-gray-500">
-                  Accelerate the approval process with streamlined data collection and analysis
-                </p>
-              </div>
+
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold">Trial Management</h2>
+              <TrialManagement
+                activeTrials={researchPartnerData.activeTrials}
+                completedTrials={researchPartnerData.completedTrials}
+                pendingApproval={researchPartnerData.pendingTrials}
+              />
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold">Recent Activity</h2>
+              <RecentActivity activities={researchPartnerData.activeTrials} />
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
   )
 }
+
 

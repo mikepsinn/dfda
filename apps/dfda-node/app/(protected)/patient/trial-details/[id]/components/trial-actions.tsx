@@ -113,7 +113,7 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
         <CardFooter className="flex flex-col space-y-2">
           {isEnrolled ? (
             <>
-              <Button className="w-full" onClick={() => router.push("/patient/dashboard")}>
+              <Button className="w-full" onClick={() => router.push("/patient/")}>
                 Go to Dashboard
               </Button>
               <Button

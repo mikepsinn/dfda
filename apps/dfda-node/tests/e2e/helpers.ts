@@ -15,7 +15,7 @@ export async function loginAsDemoUser(page: Page, userType: UserType) {
   await page.getByRole('button', { name: `Try Demo as ${userType.charAt(0).toUpperCase() + userType.slice(1)}` }).click()
   logger.debug('Clicked demo login button')
   
-  await page.waitForURL(userType === 'patient' ? '/patient/dashboard' : '/dashboard')
+  await page.waitForURL(userType === 'patient' ? '/patient/' : '/')
   logger.debug('Redirected to dashboard')
   
   // Wait for user email to be visible
@@ -38,6 +38,6 @@ export async function loginWithCredentials(page: Page, email: string, password: 
   await page.click('button[type="submit"]')
   logger.debug('Submitted login form')
   
-  await page.waitForURL('/dashboard')
+  await page.waitForURL('/')
   logger.info('Credential login successful', { email })
 } 

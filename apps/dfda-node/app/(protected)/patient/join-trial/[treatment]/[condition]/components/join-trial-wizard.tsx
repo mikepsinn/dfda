@@ -568,7 +568,7 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
             </CardContent>
             <CardFooter className="flex-col gap-4">
               <Button size="lg" asChild>
-                <Link href="/patient/dashboard">Go to Patient Dashboard</Link>
+                <Link href="/patient/">Go to Patient Dashboard</Link>
               </Button>
               <Button variant="outline" onClick={handleBack}>Review Previous Steps</Button>
             </CardFooter>

@@ -287,7 +287,7 @@ export function TrialPaymentForm({ trialId }: TrialPaymentFormProps) {
                  <Link href={`/patient/trial-details/${trialId}`}>
                    <Button variant="outline">View Trial Details</Button>
                 </Link>
-                 <Link href="/patient/dashboard">
+                 <Link href="/patient/">
                     <Button>Go to Dashboard</Button>
                 </Link>
               </div>

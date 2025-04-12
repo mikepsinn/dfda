@@ -218,7 +218,7 @@ Write-Log "Setting up shared routes..." "Yellow"
 # Create shared route structure
 $sharedRoutes = @(
     "app/(shared)/profile",
-    "app/(shared)/dashboard",
+    "app/(shared)/",
     "app/(shared)/settings"
 )
 
@@ -270,7 +270,7 @@ Write-Log "Simplifying admin structure..." "Yellow"
 
 # Create core admin directories
 $adminDirs = @(
-    "app/admin/dashboard",
+    "app/admin/",
     "app/admin/users",
     "app/admin/roles",
     "app/admin/trials",
