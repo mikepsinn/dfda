@@ -86,8 +86,8 @@ export function HeroSection() {
 
                 <div className="grid grid-cols-3 gap-2 text-sm border-t pt-2">
                   <div>Patient Retention</div>
-                  <div className="text-muted-foreground">70%</div>
-                  <div className="text-primary font-bold">92%</div>
+                  <div className="text-muted-foreground">~70%</div>
+                  <div className="text-primary font-bold">~92%</div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-sm border-t pt-2">

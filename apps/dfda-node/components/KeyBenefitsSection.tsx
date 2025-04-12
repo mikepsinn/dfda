@@ -16,7 +16,7 @@ export function KeyBenefitsSection() {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 py-12 md:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col h-full rounded-lg border bg-background p-6 shadow-sm">
             <div className="mb-4 rounded-full bg-primary/10 p-4 w-fit">
               <Users className="h-6 w-6 text-primary" />
@@ -70,6 +70,21 @@ export function KeyBenefitsSection() {
                   </div>
                   <span>Personalized health insights for every participant</span>
                 </li>
+                <li className="flex items-start gap-2">
+                  <div className="rounded-full bg-primary/10 p-1 mt-0.5">
+                    <svg
+                      width="8"
+                      height="8"
+                      viewBox="0 0 6 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="text-primary"
+                    >
+                      <circle cx="3" cy="3" r="3" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <span>Increase trial accessibility from 15% to 100% of patients</span>
+                </li>
               </ul>
             </div>
             <div className="mt-6 pt-4 border-t">
@@ -118,7 +133,7 @@ export function KeyBenefitsSection() {
                       <circle cx="3" cy="3" r="3" fill="currentColor" />
                     </svg>
                   </div>
-                  <span>$15,000+ savings per participant</span>
+                  <span>~$35,500 savings per participant (from $36k down to $450)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="rounded-full bg-primary/10 p-1 mt-0.5">
@@ -134,6 +149,21 @@ export function KeyBenefitsSection() {
                     </svg>
                   </div>
                   <span>70% reduction in administrative overhead</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="rounded-full bg-primary/10 p-1 mt-0.5">
+                    <svg
+                      width="8"
+                      height="8"
+                      viewBox="0 0 6 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="text-primary"
+                    >
+                      <circle cx="3" cy="3" r="3" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <span>95%+ reduction in overall clinical trial costs</span>
                 </li>
               </ul>
             </div>
@@ -211,6 +241,44 @@ export function KeyBenefitsSection() {
               </Link>
             </div>
           </div>
+
+          {/* New Card for Faster Access */}
+          <div className="flex flex-col h-full rounded-lg border bg-background p-6 shadow-sm lg:col-span-1"> {/* Adjust col-span as needed */}
+            <div className="mb-4 rounded-full bg-primary/10 p-4 w-fit">
+              <Clock className="h-6 w-6 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold">Faster Access to Treatments</h3>
+            <div className="mt-2 text-muted-foreground flex-grow">
+              <p className="mb-4">Reduce the wait for life-changing treatments:</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <div className="rounded-full bg-primary/10 p-1 mt-0.5">
+                    <svg
+                      width="8"
+                      height="8"
+                      viewBox="0 0 6 6"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="text-primary"
+                    >
+                      <circle cx="3" cy="3" r="3" fill="currentColor" />
+                    </svg>
+                  </div>
+                  <span>Reduces time from discovery to patient access from 17 years to 2 years</span>
+                </li>
+                {/* Add more relevant points if desired */}
+              </ul>
+            </div>
+            <div className="mt-6 pt-4 border-t">
+              <Link
+                href="/impact" // Or a relevant link
+                className="text-primary text-sm font-medium inline-flex items-center hover:underline"
+              >
+                Learn about our impact <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+
         </div>
 
         <div className="mx-auto max-w-4xl mt-8">

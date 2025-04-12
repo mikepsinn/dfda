@@ -93,7 +93,7 @@ export default async function TrialResultsPage({ params }: { params: { id: strin
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/public">Home</BreadcrumbLink>
+                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>

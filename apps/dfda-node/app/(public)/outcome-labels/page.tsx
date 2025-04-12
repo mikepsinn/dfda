@@ -12,7 +12,7 @@ export default function OutcomeLabels() {
       <div className="container">
         <div className="mx-auto max-w-5xl">
           <div className="mb-8 flex items-center gap-2">
-            <Link href="/public" className="text-muted-foreground hover:text-foreground">
+            <Link href="/" className="text-muted-foreground hover:text-foreground">
               <ArrowLeft className="h-4 w-4" />
               <span className="sr-only">Back</span>
             </Link>

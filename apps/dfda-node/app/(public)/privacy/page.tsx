@@ -1,20 +1,17 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { getServerUser } from "@/lib/server-auth"
 
 export default async function PrivacyPolicy() {
-  const user = await getServerUser()
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header initialUser={user} />
       <main className="flex-1 py-6 md:py-10">
         <div className="container">
           <div className="mx-auto max-w-3xl">
             <div className="mb-8 flex items-center gap-2">
-              <Link href="/public" className="text-muted-foreground hover:text-foreground">
+              <Link href="/" className="text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" />
                 <span className="sr-only">Back</span>
               </Link>
@@ -139,7 +136,6 @@ export default async function PrivacyPolicy() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   )
 }
