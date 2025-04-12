@@ -1,37 +1,36 @@
 import type { User } from '@supabase/supabase-js'
 import { navigationTreeObject } from '../lib/generated-nav-tree' // Import generated object
 
+// Ensure NavItem interface matches the structure in generated-nav-tree.ts
 export interface NavItem {
   title: string
   href: string
 }
 
-// --- Navigation Definitions ---
-
-// Logged-in Primary Items per Role (Using generated paths)
+// Logged-in Primary Items per Role (Using generated objects directly)
 const patientNavItems: NavItem[] = [
-  { title: "Patient Dashboard", href: navigationTreeObject.patient.href },
-  { title: "Treatments", href: navigationTreeObject.patient_treatments.href },
+  navigationTreeObject.patient, // Uses generated title (e.g., "Patient") and href
+  navigationTreeObject.patient_treatments,
 ]
 
 const providerNavItems: NavItem[] = [
-  { title: "Provider Dashboard", href: navigationTreeObject.provider.href },
+  navigationTreeObject.provider, // Uses generated title (e.g., "Provider") and href
   // Add other provider-specific items here, e.g.:
-  // { title: "Patients", href: navigationTreeObject.provider_patients.href },
+  // navigationTreeObject.provider_patients,
 ]
 
 const developerNavItems: NavItem[] = [
-  { title: "Developer Dashboard", href: navigationTreeObject.developer.href },
-  // { title: "Documentation", href: navigationTreeObject.developers_documentation.href },
+  navigationTreeObject.developer, // Uses generated title (e.g., "Developer") and href
+  // navigationTreeObject.developers_documentation,
 ]
 
 const researchPartnerNavItems: NavItem[] = [
-  { title: "Research Partner Dashboard", href: navigationTreeObject.research_partner.href },
-  // { title: "Create Trial", href: navigationTreeObject.research_partner_create_trial.href },
+  navigationTreeObject.research_partner, // Uses generated title (e.g., "Research Partner") and href
+  // navigationTreeObject.research_partner_create_trial,
 ]
 
 const adminNavItems: NavItem[] = [
-  { title: "Admin Dashboard", href: navigationTreeObject.admin.href },
+  navigationTreeObject.admin, // Uses generated title (e.g., "Admin") and href
 ]
 
 // Map roles to their specific navigation items
@@ -43,18 +42,18 @@ const roleNavItemsMap: Record<string, NavItem[]> = {
   'admin': adminNavItems,
 }
 
-// Logged-out Primary Items
+// Logged-out Primary Items (Keep as is - uses fragments)
 export const loggedOutPrimaryNavItems: NavItem[] = [
   { title: "Patients", href: "/#how-it-works-patient" },
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
 ]
 
-// Secondary Items (Public Info - shown in "More" or mobile when logged out)
+// Secondary Items (Public Info - Use generated objects where applicable)
 export const secondaryNavItems: NavItem[] = [
   { title: "Patients", href: "/#how-it-works-patient" },
-  { title: "Providers", href: navigationTreeObject.providers.href }, // Use href
+  navigationTreeObject.providers, // Use generated object
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
-  { title: "Developers", href: navigationTreeObject.developers.href }, // Use href
+  navigationTreeObject.developers, // Use generated object
   { title: "How It Works", href: "/#how-it-works" },
   { title: "About", href: "/#key-benefits" },
 ]
