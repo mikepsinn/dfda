@@ -1,11 +1,15 @@
 -- Migration: Create global_variable_synonyms table
 
-CREATE TABLE public.global_variable_synonyms (
+-- Enable pgcrypto extension if not already enabled
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+-- Create global_variable_synonyms table
+CREATE TABLE IF NOT EXISTS public.global_variable_synonyms (
     id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-    global_variable_id uuid NOT NULL,
-    name text NOT NULL,
-    created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
-    updated_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+    global_variable_id TEXT NOT NULL,
+    name TEXT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
 
     CONSTRAINT global_variable_synonyms_global_variable_id_fkey FOREIGN KEY (global_variable_id)
         REFERENCES public.global_variables (id) ON DELETE CASCADE,
@@ -28,7 +32,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.global_variable_synonyms TO
 ALTER TABLE public.global_variable_synonyms ENABLE ROW LEVEL SECURITY;
 
 -- Optional: Create an index for faster lookups by name (useful for search)
-CREATE INDEX IF NOT EXISTS idx_global_variable_synonyms_name ON public.global_variable_synonyms USING gin (name gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS idx_global_variable_synonyms_name ON public.global_variable_synonyms(name);
 
 -- Optional: Create an index for faster lookups by global_variable_id
 CREATE INDEX IF NOT EXISTS idx_global_variable_synonyms_global_variable_id ON public.global_variable_synonyms(global_variable_id);
@@ -37,4 +41,17 @@ CREATE INDEX IF NOT EXISTS idx_global_variable_synonyms_global_variable_id ON pu
 CREATE TRIGGER handle_updated_at
 BEFORE UPDATE ON public.global_variable_synonyms
 FOR EACH ROW
-EXECUTE FUNCTION moddatetime (updated_at); 
+EXECUTE FUNCTION update_updated_at_column();
+
+-- Create policies
+CREATE POLICY "Allow read access to everyone" ON public.global_variable_synonyms
+    FOR SELECT USING (TRUE);
+
+CREATE POLICY "Allow insert access to authenticated users" ON public.global_variable_synonyms
+    FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
+CREATE POLICY "Allow update access to admins" ON public.global_variable_synonyms
+    FOR UPDATE USING (auth.role() = 'admin') WITH CHECK (auth.role() = 'admin');
+
+CREATE POLICY "Allow delete access to admins" ON public.global_variable_synonyms
+    FOR DELETE USING (auth.role() = 'admin'); 

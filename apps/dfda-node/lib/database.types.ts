@@ -203,6 +203,38 @@ export type Database = {
           },
         ]
       }
+      global_variable_synonyms: {
+        Row: {
+          created_at: string
+          global_variable_id: string
+          id: string
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          global_variable_id: string
+          id?: string
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          global_variable_id?: string
+          id?: string
+          name?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_variable_synonyms_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       global_variables: {
         Row: {
           canonical_global_variable_id: string | null

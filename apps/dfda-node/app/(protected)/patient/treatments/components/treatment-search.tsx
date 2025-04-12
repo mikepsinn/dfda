@@ -17,6 +17,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { createClient } from "@/lib/supabase/client"
+import { Database } from "@/lib/database.types"
 
 interface TreatmentSearchProps {
   onSelect: (treatment: { id: string; name: string }) => void
@@ -33,32 +34,60 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
   useEffect(() => {
     const searchTreatments = async () => {
       setLoading(true)
+      setTreatments([])
+      const supabase = createClient()
+
       try {
-        const supabase = createClient()
-        let query = supabase
+        let treatmentQuery = supabase
           .from("treatments")
-          .select(`
+          .select(
+            `
             id,
-            name:global_variables!inner(name)
-          `)
+            global_variables!inner(name)
+          `,
+          )
           .is("deleted_at", null)
           .limit(10)
 
-        if (searchQuery) {
-          query = query.ilike('global_variables.name', `${searchQuery}%`)
+        if (searchQuery.trim()) {
+          const { data: synonyms, error: synonymError } = await supabase
+            .from("global_variable_synonyms")
+            .select("global_variable_id")
+            .ilike("name", `${searchQuery}%`)
+            .limit(50)
+
+          if (synonymError) throw synonymError
+
+          const matchingVarIds = synonyms?.map((s) => s.global_variable_id) || []
+          const uniqueMatchingVarIds = [...new Set(matchingVarIds)]
+
+          console.log(
+            "[TreatmentSearch] Matching Global Variable IDs via Synonyms:",
+            uniqueMatchingVarIds,
+          )
+
+          if (uniqueMatchingVarIds.length === 0) {
+            setTreatments([])
+            setLoading(false)
+            return
+          }
+          treatmentQuery = treatmentQuery.in("id", uniqueMatchingVarIds)
         }
 
-        if (conditionId) {
-          //query = query.eq("condition_id", conditionId)
-        }
+        const { data, error } = await treatmentQuery
 
-        const { data, error } = await query
-
-        console.log("[TreatmentSearch] Supabase response:", { data, error });
+        console.log("[TreatmentSearch] Final Supabase response:", { data, error })
 
         if (error) throw error
 
-        setTreatments(data ? data.map(t => ({ id: t.id, name: t.name.name })) : [])
+        const formattedTreatments = data
+          ? data.map((t) => ({
+              id: t.id,
+              name: (t.global_variables as any)?.name || "Unknown Treatment Name",
+            }))
+          : []
+
+        setTreatments(formattedTreatments)
       } catch (error) {
         console.error("Error searching treatments:", error)
         setTreatments([])
@@ -67,8 +96,11 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
       }
     }
 
-    const debounce = setTimeout(searchTreatments, 300)
-    return () => clearTimeout(debounce)
+    const debounceTimeout = setTimeout(() => {
+      searchTreatments()
+    }, 300)
+
+    return () => clearTimeout(debounceTimeout)
   }, [searchQuery, conditionId])
 
   return (
@@ -79,13 +111,22 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
           role="combobox"
           aria-expanded={open}
           className="w-full justify-between"
+          style={{ minWidth: "200px" }}
         >
-          {selected ? selected.name : "Select treatment..."}
+          <span className="truncate">
+            {selected ? selected.name : "Select treatment..."}
+          </span>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[400px] p-0">
-        <Command>
+      <PopoverContent
+        className="p-0"
+        style={{
+          width: "var(--radix-popover-trigger-width)",
+          maxHeight: "var(--radix-popover-content-available-height)",
+        }}
+      >
+        <Command shouldFilter={false}>
           <CommandInput
             placeholder="Search treatments..."
             value={searchQuery}
@@ -94,7 +135,7 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
           <CommandEmpty>
             {loading ? "Searching..." : "No treatments found."}
           </CommandEmpty>
-          <CommandGroup>
+          <CommandGroup className="overflow-auto max-h-[300px]">
             {treatments.map((treatment) => (
               <CommandItem
                 key={treatment.id}
@@ -103,6 +144,7 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
                   onSelect(treatment)
                   setOpen(false)
                 }}
+                className="cursor-pointer"
               >
                 <Check
                   className={cn(
@@ -110,7 +152,9 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
                     selected?.id === treatment.id ? "opacity-100" : "opacity-0"
                   )}
                 />
-                {treatment.name}
+                <span className="truncate">
+                  {treatment.name}
+                </span>
               </CommandItem>
             ))}
           </CommandGroup>
