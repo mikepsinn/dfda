@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "generate:nav": "ts-node scripts/generate-nav-tree.ts",
+    "generate:nav": "pnpm run build:scripts && node ./dist/scripts/generate-nav-tree.js",
     "test:unit": "jest -c jest.unit.config.mjs",
     "test:integration": "jest -c jest.integration.config.mjs",
     "test:e2e": "playwright test",
