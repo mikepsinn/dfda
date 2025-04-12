@@ -1,4 +1,5 @@
 import type { User } from '@supabase/supabase-js'
+import { navigationTreeObject } from '../lib/generated-nav-tree' // Import generated object
 
 export interface NavItem {
   title: string
@@ -7,26 +8,30 @@ export interface NavItem {
 
 // --- Navigation Definitions ---
 
-// Logged-in Primary Items per Role
+// Logged-in Primary Items per Role (Using generated paths)
 const patientNavItems: NavItem[] = [
-  { title: "Patient Dashboard", href: "/patient/" },
-  { title: "Treatments", href: "/patient/treatments" },
+  { title: "Patient Dashboard", href: navigationTreeObject.patient.href },
+  { title: "Treatments", href: navigationTreeObject.patient_treatments.href },
 ]
 
 const providerNavItems: NavItem[] = [
-  { title: "Provider Dashboard", href: "/provider/" },
+  { title: "Provider Dashboard", href: navigationTreeObject.provider.href },
+  // Add other provider-specific items here, e.g.:
+  // { title: "Patients", href: navigationTreeObject.provider_patients.href },
 ]
 
 const developerNavItems: NavItem[] = [
-  { title: "Developer Dashboard", href: "/developer" },
+  { title: "Developer Dashboard", href: navigationTreeObject.developer.href },
+  // { title: "Documentation", href: navigationTreeObject.developers_documentation.href },
 ]
 
 const researchPartnerNavItems: NavItem[] = [
-  { title: "Research Partner Dashboard", href: "/research-partner" },
+  { title: "Research Partner Dashboard", href: navigationTreeObject.research_partner.href },
+  // { title: "Create Trial", href: navigationTreeObject.research_partner_create_trial.href },
 ]
 
 const adminNavItems: NavItem[] = [
-  { title: "Admin Dashboard", href: "/admin" },
+  { title: "Admin Dashboard", href: navigationTreeObject.admin.href },
 ]
 
 // Map roles to their specific navigation items
@@ -47,9 +52,9 @@ export const loggedOutPrimaryNavItems: NavItem[] = [
 // Secondary Items (Public Info - shown in "More" or mobile when logged out)
 export const secondaryNavItems: NavItem[] = [
   { title: "Patients", href: "/#how-it-works-patient" },
-  { title: "Providers", href: "/providers" },
+  { title: "Providers", href: navigationTreeObject.providers.href }, // Use href
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
-  { title: "Developers", href: "/developers" },
+  { title: "Developers", href: navigationTreeObject.developers.href }, // Use href
   { title: "How It Works", href: "/#how-it-works" },
   { title: "About", href: "/#key-benefits" },
 ]

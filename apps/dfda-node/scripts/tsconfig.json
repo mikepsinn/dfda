@@ -1,9 +1,8 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "moduleResolution": "node",
-    "outDir": "../dist/scripts",
+    "outDir": "./dist",
     "rootDir": ".",
     "noEmit": false,
     "isolatedModules": false,
@@ -11,7 +10,7 @@
     "skipLibCheck": true
   },
   "include": [
-    "**/*.ts"
+    "scripts/**/*.ts"
   ],
   "exclude": [
     "node_modules",
