@@ -58,7 +58,7 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
         <div className="container">
           <div className="mx-auto max-w-5xl">
             <div className="mb-8 flex items-center gap-2">
-              <Link href="/app/(protected)/provider/dashboard" className="text-muted-foreground hover:text-foreground">
+              <Link href="/provider/dashboard" className="text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" />
                 <span className="sr-only">Back to dashboard</span>
               </Link>
@@ -295,7 +295,7 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                         </div>
                         <div className="flex gap-2">
                           <Button variant="outline">View Details</Button>
-                          <Link href={`/app/(protected)/provider/trials/${trial.id}/join`}>
+                          <Link href={`/provider/trials/${trial.id}/join`}>
                             <Button>Join Trial</Button>
                           </Link>
                         </div>

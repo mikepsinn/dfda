@@ -339,10 +339,10 @@ export function PatientEnrollmentWizard({ patientId }: PatientEnrollmentWizardPr
             <p className="text-sm"><span className="font-semibold">Assigned Intervention:</span> [Selected Arm Name]</p> {/* Display selected arm */}
           </CardContent>
           <CardFooter className="flex-col gap-3 sm:flex-row sm:justify-center">
-            <Link href={`/app/(protected)/provider/intervention-assignment/${patientId}`}>
+            <Link href={`/provider/intervention-assignment/${patientId}`}>
               <Button>Assign Intervention Details</Button>
             </Link>
-            <Link href="/app/(protected)/provider/dashboard">
+            <Link href="/provider/dashboard">
               <Button variant="outline">Return to Dashboard</Button>
             </Link>
           </CardFooter>

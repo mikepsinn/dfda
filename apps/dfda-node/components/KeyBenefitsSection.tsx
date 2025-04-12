@@ -74,7 +74,7 @@ export function KeyBenefitsSection() {
             </div>
             <div className="mt-6 pt-4 border-t">
               <Link
-                href="/app/(protected)/patient/find-trials"
+                href="/patient/find-trials"
                 className="text-primary text-sm font-medium inline-flex items-center hover:underline"
               >
                 Find a trial <ArrowRight className="ml-1 h-3 w-3" />
@@ -242,12 +242,12 @@ export function KeyBenefitsSection() {
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/app/(protected)/research-partner/create-trial">
+              <Link href="/research-partner/create-trial">
                 <Button size="lg" className="w-full sm:w-auto gap-1">
                   Create a Trial <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/app/(protected)/patient/find-trials">
+              <Link href="/patient/find-trials">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto gap-1">
                   Find a Trial <ArrowRight className="h-4 w-4" />
                 </Button>

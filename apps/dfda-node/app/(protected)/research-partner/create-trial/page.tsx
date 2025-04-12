@@ -10,7 +10,7 @@ export default function CreateTrialPage() {
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <div className="mb-8 flex items-center gap-2">
-              <Link href="/app/(protected)/research-partner/dashboard" className="text-muted-foreground hover:text-foreground">
+              <Link href="/research-partner/dashboard" className="text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" />
                 <span className="sr-only">Back</span>
               </Link>

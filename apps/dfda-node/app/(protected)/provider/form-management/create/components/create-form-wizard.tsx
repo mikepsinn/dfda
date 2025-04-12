@@ -408,10 +408,10 @@ export function CreateFormWizard() {
                 Your form "{formTitle}" has been created and is ready to be assigned to patients.
               </p>
               <div className="mt-6 flex gap-4">
-                <Link href="/app/(protected)/provider/dashboard">
+                <Link href="/provider/dashboard">
                   <Button variant="outline">Return to Dashboard</Button>
                 </Link>
-                <Link href="/app/(protected)/provider/form-management">
+                <Link href="/provider/form-management">
                   <Button>Manage Forms</Button>
                 </Link>
               </div>

@@ -15,13 +15,13 @@ export function DashboardHeader({ title, description }: DashboardHeaderProps) {
         <p className="text-muted-foreground">{description}</p>
       </div>
       <div className="flex gap-2">
-        <Link href="/app/(protected)/provider/find-trials">
+        <Link href="/provider/find-trials">
           <Button>
             <Microscope className="mr-2 h-4 w-4" />
             Find Trials
           </Button>
         </Link>
-        <Link href="/app/(protected)/provider/form-management/create">
+        <Link href="/provider/form-management/create">
           <Button variant="outline">
             <FileText className="mr-2 h-4 w-4" />
             Create Form

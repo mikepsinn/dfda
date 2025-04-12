@@ -19,7 +19,7 @@ export function TreatmentHeader({ treatment, conditionId, averageRating, totalRe
   return (
     <div>
       <Link
-        href={`/app/(protected)/patient/find-trials?condition=${conditionId}`}
+        href={`/patient/find-trials?condition=${conditionId}`}
         className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />

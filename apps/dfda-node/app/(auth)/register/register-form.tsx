@@ -102,7 +102,7 @@ export function RegisterForm() {
               ? "Your patient account has been created. You can now find and join clinical trials."
               : "Your research partner account has been created. You can now create and manage clinical trials."}
           </p>
-          <Link href={userType === "patient" ? "/patient/dashboard" : "/app/(protected)/research-partner/create-trial"} className="w-full">
+          <Link href={userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"} className="w-full">
             <Button className="w-full">
               {userType === "patient" ? "Go to Patient Dashboard" : "Create Your First Trial"}
             </Button>

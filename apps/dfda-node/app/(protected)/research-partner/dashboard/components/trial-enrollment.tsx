@@ -52,7 +52,7 @@ export function TrialEnrollment({ trials }: TrialEnrollmentProps) {
                 />
               </div>
               <div className="flex justify-end">
-                <Link href={`/app/(protected)/research-partner/trials/${trial.id}`}>
+                <Link href={`/research-partner/trials/${trial.id}`}>
                   <Button size="sm" variant="outline">
                     View Trial
                   </Button>

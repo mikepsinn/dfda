@@ -52,7 +52,7 @@ export function PendingActions({ actions, totalActions }: PendingActionsProps) {
                 </div>
               </div>
               <Link
-                href={`/app/(protected)/provider/${action.type === "form" ? "forms" : action.type === "intervention" ? "intervention-assignment" : "patients"}/${action.id}`}
+                href={`/provider/${action.type === "form" ? "forms" : action.type === "intervention" ? "intervention-assignment" : "patients"}/${action.id}`}
               >
                 <Button size="sm" variant="ghost">
                   <ChevronRight className="h-4 w-4" />

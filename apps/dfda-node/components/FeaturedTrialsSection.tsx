@@ -10,6 +10,9 @@ interface FeaturedTrialsSectionProps {
 }
 
 export function FeaturedTrialsSection({ trials }: FeaturedTrialsSectionProps) {
+  if (trials.length === 0) {
+    return null
+  }
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
       <div className="container px-4 md:px-6">
@@ -36,7 +39,7 @@ export function FeaturedTrialsSection({ trials }: FeaturedTrialsSectionProps) {
                   <p className="text-sm text-gray-500 line-clamp-3">{trial.description}</p>
                 </CardContent>
                 <CardFooter>
-                  <Link href={`/app/(protected)/patient/trial-details/${trial.id}`} passHref>
+                  <Link href={`/patient/trial-details/${trial.id}`} passHref>
                     <Button className="w-full">View Details</Button>
                   </Link>
                 </CardFooter>
@@ -49,7 +52,7 @@ export function FeaturedTrialsSection({ trials }: FeaturedTrialsSectionProps) {
           )}
         </div>
         <div className="flex justify-center mt-8">
-          <Link href="/app/(protected)/patient/find-trials" passHref>
+          <Link href="/patient/find-trials" passHref>
             <Button variant="outline">View All Trials</Button>
           </Link>
         </div>

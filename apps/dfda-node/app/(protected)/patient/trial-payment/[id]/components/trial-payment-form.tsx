@@ -284,10 +284,10 @@ export function TrialPaymentForm({ trialId }: TrialPaymentFormProps) {
                 You will receive an email confirmation shortly.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                 <Link href={`/app/(protected)/patient/trial-details/${trialId}`}>
+                 <Link href={`/patient/trial-details/${trialId}`}>
                    <Button variant="outline">View Trial Details</Button>
                 </Link>
-                 <Link href="/app/(protected)/patient/dashboard">
+                 <Link href="/patient/dashboard">
                     <Button>Go to Dashboard</Button>
                 </Link>
               </div>

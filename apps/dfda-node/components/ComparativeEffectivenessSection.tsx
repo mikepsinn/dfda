@@ -343,7 +343,7 @@ export function ComparativeEffectivenessSection() {
                           </TooltipProvider>
                         ))}
                         <Link
-                          href={`/app/(protected)/patient/join-trial/${encodeURIComponent(intervention.name)}/${encodeURIComponent(selectedCondition)}`}
+                          href={`/patient/join-trial/${encodeURIComponent(intervention.name)}/${encodeURIComponent(selectedCondition)}`}
                           className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800 border border-purple-300 hover:bg-purple-200 transition-colors ml-auto sm:ml-2"
                         >
                           <svg
@@ -371,7 +371,7 @@ export function ComparativeEffectivenessSection() {
             </CardContent>
             <CardFooter className="flex justify-between">
               <p className="text-sm text-muted-foreground">Data updated: June 2025</p>
-              <Link href="/app/(protected)/patient/find-trials">
+              <Link href="/patient/find-trials">
                 <Button variant="outline">
                   Explore More Conditions <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>

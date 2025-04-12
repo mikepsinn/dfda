@@ -123,7 +123,7 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
                       {patient.eligibleTrials.map((trial) => (
                         <div key={trial.id} className="flex items-center justify-between rounded-lg bg-muted p-2">
                           <span className="text-sm">{trial.name}</span>
-                          <Link href={`/app/(protected)/provider/patients/${patient.id}/enroll?trial=${trial.id}`}>
+                          <Link href={`/provider/patients/${patient.id}/enroll?trial=${trial.id}`}>
                             <Button size="sm">Enroll</Button>
                           </Link>
                         </div>
@@ -133,7 +133,7 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
 
                   <div className="mt-4 flex justify-between items-center">
                     <div className="text-sm text-muted-foreground">Last visit: {patient.lastVisit}</div>
-                    <Link href={`/app/(protected)/provider/patients/${patient.id}`}>
+                    <Link href={`/provider/patients/${patient.id}`}>
                       <Button variant="outline" size="sm">
                         View Patient
                         <ChevronRight className="ml-2 h-4 w-4" />
@@ -207,17 +207,17 @@ export function PatientManagement({ eligiblePatients, enrolledPatients }: Patien
                   )}
 
                   <div className="mt-4 flex justify-end gap-2">
-                    <Link href={`/app/(protected)/provider/ehr-authorization/${patient.id}`}>
+                    <Link href={`/provider/ehr-authorization/${patient.id}`}>
                       <Button variant="outline" size="sm">
                         EHR Data
                       </Button>
                     </Link>
-                    <Link href={`/app/(protected)/provider/intervention-assignment/${patient.id}`}>
+                    <Link href={`/provider/intervention-assignment/${patient.id}`}>
                       <Button variant="outline" size="sm">
                         Assign Intervention
                       </Button>
                     </Link>
-                    <Link href={`/app/(protected)/provider/patients/${patient.id}`}>
+                    <Link href={`/provider/patients/${patient.id}`}>
                       <Button size="sm">View Patient</Button>
                     </Link>
                   </div>

@@ -147,10 +147,10 @@ export function InterventionAssignmentForm({ patientId }: InterventionAssignment
                 You have successfully assigned {selectedIntervention?.name} to {patient.name}.
               </p>
               <div className="mt-6 flex gap-4">
-                <Link href="/app/(protected)/provider/dashboard">
+                <Link href="/provider/dashboard">
                   <Button variant="outline">Return to Dashboard</Button>
                 </Link>
-                <Link href={`/app/(protected)/provider/patients/${patientId}`}>
+                <Link href={`/provider/patients/${patientId}`}>
                   <Button>View Patient</Button>
                 </Link>
               </div>

@@ -55,7 +55,7 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
             onChange={(e) => setSearchTerm(e.target.value)}
             className="max-w-sm"
           />
-          <Link href="/app/(protected)/research-partner/create-trial">
+          <Link href="/research-partner/create-trial">
             <Button>
               <Plus className="mr-2 h-4 w-4" />
               New Trial
@@ -83,7 +83,7 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                         </p>
                       </div>
                       <div className="flex items-center justify-end">
-                        <Link href={`/app/(protected)/research-partner/trials/${trial.id}`}>
+                        <Link href={`/research-partner/trials/${trial.id}`}>
                           <Button variant="ghost" size="sm">
                             View Details <ChevronRight className="ml-1 h-4 w-4" />
                           </Button>
@@ -106,7 +106,7 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                 <p className="mb-4 text-sm text-muted-foreground">
                   {searchTerm ? "Try a different search term" : "Create a new trial to get started"}
                 </p>
-                <Link href="/app/(protected)/research-partner/create-trial">
+                <Link href="/research-partner/create-trial">
                   <Button>
                     <Plus className="mr-2 h-4 w-4" />
                     New Trial
@@ -134,7 +134,7 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                           Results
                         </Button>
                         <div className="flex items-center justify-end">
-                          <Link href={`/app/(protected)/research-partner/trials/${trial.id}`}>
+                          <Link href={`/research-partner/trials/${trial.id}`}>
                             <Button variant="ghost" size="sm">
                               View Details <ChevronRight className="ml-1 h-4 w-4" />
                             </Button>
@@ -173,7 +173,7 @@ export function TrialManagement({ activeTrials, completedTrials, pendingApproval
                         <p className="text-sm text-muted-foreground">Submitted for approval</p>
                       </div>
                       <div className="flex items-center justify-end">
-                        <Link href={`/app/(protected)/research-partner/trials/${trial.id}`}>
+                        <Link href={`/research-partner/trials/${trial.id}`}>
                           <Button variant="ghost" size="sm">
                             View Details <ChevronRight className="ml-1 h-4 w-4" />
                           </Button>

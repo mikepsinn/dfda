@@ -83,7 +83,7 @@ export function Header({ initialUser }: HeaderProps) {
   const secondaryNavItems: NavItem[] = [
     {
       title: "Patients",
-      href: "/patients",
+      href: "/#patients",
     },
     {
       title: "Providers",
@@ -91,7 +91,7 @@ export function Header({ initialUser }: HeaderProps) {
     },
     {
       title: "Research Partners",
-      href: "/research-partners",
+      href: "/#research-partners",
     },
     {
       title: "Developers",
@@ -110,6 +110,12 @@ export function Header({ initialUser }: HeaderProps) {
   const primaryNavItems = getNavItems()
   const allNavItems = [...primaryNavItems, ...secondaryNavItems]
 
+  // Define primary links to show when logged out
+  const loggedOutPrimaryNavItems: NavItem[] = [
+    { title: "Patients", href: "/#patients" },
+    { title: "Research Partners", href: "/#research-partners" },
+  ]
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container px-4 md:px-6 mx-auto flex h-16 items-center justify-between">
@@ -121,15 +127,28 @@ export function Header({ initialUser }: HeaderProps) {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6">
-          {/* Primary Nav Items */}
-          {primaryNavItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-medium hover:underline">
-              {item.title}
-            </Link>
-          ))}
+        <nav className="hidden md:flex gap-6 items-center">
+          {initialUser ? (
+            <>
+              {/* Logged-in Primary Nav Items */}
+              {primaryNavItems.map((item) => (
+                <Link key={item.href} href={item.href} className="text-sm font-medium hover:underline">
+                  {item.title}
+                </Link>
+              ))}
+            </>
+          ) : (
+            <>
+              {/* Logged-out Primary Nav Items */}
+              {loggedOutPrimaryNavItems.map((item) => (
+                <Link key={item.href} href={item.href} className="text-sm font-medium hover:underline">
+                  {item.title}
+                </Link>
+              ))}
+            </>
+          )}
 
-          {/* More Dropdown */}
+          {/* More Dropdown - Keep all secondary items here */}
           <DropdownMenu open={isMoreOpen} onOpenChange={setIsMoreOpen}>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-1 text-sm font-medium hover:underline">

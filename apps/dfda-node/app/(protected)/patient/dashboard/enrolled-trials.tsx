@@ -52,7 +52,7 @@ export function EnrolledTrials({ enrollments }: EnrolledTrialsProps) {
           <p className="text-muted-foreground mb-6 max-w-md">
             Find and join clinical trials to contribute to medical research and potentially benefit from new treatments.
           </p>
-          <Link href="/app/(protected)/patient/find-trials">
+          <Link href="/patient/find-trials">
             <Button>Find Trials to Join</Button>
           </Link>
         </CardContent>
@@ -82,7 +82,7 @@ export function EnrolledTrials({ enrollments }: EnrolledTrialsProps) {
                   {enrollment.trials[0].conditions?.[0]?.name || 'Unknown condition'} • {enrollment.trials[0].treatments?.[0]?.name || 'Unknown treatment'}
                 </p>
               </div>
-              <Link href={`/app/(protected)/patient/trial-details/${enrollment.trials[0].id}`}>
+              <Link href={`/patient/trial-details/${enrollment.trials[0].id}`}>
                 <Button variant="ghost" size="sm" className="gap-1">
                   Details
                   <ArrowRight className="h-4 w-4" />

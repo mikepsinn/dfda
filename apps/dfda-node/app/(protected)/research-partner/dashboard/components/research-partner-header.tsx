@@ -11,7 +11,7 @@ export function ResearchPartnerHeader({ name }: ResearchPartnerHeaderProps) {
     <div className="flex items-center justify-between">
       <h1 className="text-2xl font-bold">Welcome, {name || "Research Partner"}</h1>
       <div className="flex items-center gap-2">
-        <Link href="/app/(protected)/research-partner/create-trial">
+        <Link href="/research-partner/create-trial">
           <Button>
             <Plus className="mr-2 h-4 w-4" />
             Create New Trial

@@ -83,7 +83,7 @@ export default async function TrialResultsPage({ params }: { params: { id: strin
         <div className="container">
           <div className="mx-auto max-w-5xl">
             <div className="mb-8 flex items-center gap-2">
-              <Link href={`/app/(protected)/research-partner/trials/${trialId}`} className="text-muted-foreground hover:text-foreground">
+              <Link href={`/research-partner/trials/${trialId}`} className="text-muted-foreground hover:text-foreground">
                 <ArrowLeft className="h-4 w-4" />
                 <span className="sr-only">Back to trial</span>
               </Link>
@@ -97,7 +97,7 @@ export default async function TrialResultsPage({ params }: { params: { id: strin
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink href={`/app/(protected)/research-partner/trials/${trialId}`} className="text-muted-foreground hover:text-foreground">
+                  <BreadcrumbLink href={`/research-partner/trials/${trialId}`} className="text-muted-foreground hover:text-foreground">
                     Trial Details
                   </BreadcrumbLink>
                 </BreadcrumbItem>
