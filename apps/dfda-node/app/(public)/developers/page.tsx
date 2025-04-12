@@ -22,7 +22,7 @@ export default function DeveloperPortal() {
                   applications
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-                  <Link href="/developers/signup">
+                  <Link href="/register?role=developer">
                     <Button size="lg">
                       <Key className="mr-2 h-4 w-4" /> Sign Up for API Access
                     </Button>
@@ -135,7 +135,7 @@ export default function DeveloperPortal() {
                       <p className="text-sm text-muted-foreground">
                         Sign up to get an API key. Optionally, you can also register an OAuth2 application if you need to access user-specific data.
                       </p>
-                      <Link href="/developers/signup">
+                      <Link href="/developer">
                         <Button variant="outline" className="mt-2">
                           <Key className="mr-2 h-4 w-4" /> Sign Up for Access
                         </Button>

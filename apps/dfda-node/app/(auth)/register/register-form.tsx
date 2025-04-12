@@ -32,8 +32,19 @@ export function RegisterForm() {
     setError({ type: null, message: null })
     
     const formData = new FormData(e.target)
-    const email = formData.get(userType === 'patient' ? 'email' : 'research-partner-email') as string
-    const password = formData.get(userType === 'patient' ? 'password' : 'research-partner-password') as string
+    let email = ""
+    let password = ""
+
+    if (userType === 'patient') {
+      email = formData.get('email') as string
+      password = formData.get('password') as string
+    } else if (userType === 'research-partner') {
+      email = formData.get('research-partner-email') as string
+      password = formData.get('research-partner-password') as string
+    } else if (userType === 'developer') {
+      email = formData.get('developer-email') as string
+      password = formData.get('developer-password') as string
+    }
     
     try {
       const { error: signUpError } = await signUpWithEmail(email, password)
@@ -100,11 +111,19 @@ export function RegisterForm() {
           <p className="text-center text-muted-foreground mb-6">
             {userType === "patient"
               ? "Your patient account has been created. You can now find and join clinical trials."
-              : "Your research partner account has been created. You can now create and manage clinical trials."}
+              : userType === "research-partner"
+              ? "Your research partner account has been created. You can now create and manage clinical trials."
+              : "Your developer account has been created. You can now manage your API keys and applications."}
           </p>
-          <Link href={userType === "patient" ? "/patient/dashboard" : "/research-partner/create-trial"} className="w-full">
+          <Link href={
+            userType === "patient" ? "/patient/dashboard" :
+            userType === "research-partner" ? "/research-partner/create-trial" :
+            "/developer"
+          } className="w-full">
             <Button className="w-full">
-              {userType === "patient" ? "Go to Patient Dashboard" : "Create Your First Trial"}
+              {userType === "patient" ? "Go to Patient Dashboard" :
+               userType === "research-partner" ? "Create Your First Trial" :
+               "Go to Developer Dashboard"}
             </Button>
           </Link>
         </CardContent>
@@ -163,22 +182,13 @@ export function RegisterForm() {
         <DemoLoginButton onError={handleError} />
 
         <Tabs defaultValue="patient" onValueChange={setUserType} className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="patient">Patient</TabsTrigger>
             <TabsTrigger value="research-partner">Research Partner</TabsTrigger>
+            <TabsTrigger value="developer">Developer</TabsTrigger>
           </TabsList>
           <TabsContent value="patient" className="space-y-4 pt-4">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="first-name">First name</Label>
-                  <Input id="first-name" name="first-name" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="last-name">Last name</Label>
-                  <Input id="last-name" name="last-name" required />
-                </div>
-              </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input id="email" name="email" type="email" required />
@@ -186,19 +196,6 @@ export function RegisterForm() {
               <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" name="password" type="password" required />
-              </div>
-              <div className="space-y-2">
-                <Label>Are you currently managing any health conditions?</Label>
-                <RadioGroup defaultValue="yes">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="yes" id="health-yes" />
-                    <Label htmlFor="health-yes">Yes</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="no" id="health-no" />
-                    <Label htmlFor="health-no">No</Label>
-                  </div>
-                </RadioGroup>
               </div>
               <Button type="submit" className="w-full">
                 Create Patient Account
@@ -208,44 +205,30 @@ export function RegisterForm() {
           <TabsContent value="research-partner" className="space-y-4 pt-4">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="organization-name">Organization Name</Label>
-                <Input id="organization-name" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="contact-name">Contact Person</Label>
-                <Input id="contact-name" required />
-              </div>
-              <div className="space-y-2">
                 <Label htmlFor="research-partner-email">Email</Label>
-                <Input id="research-partner-email" type="email" required />
+                <Input id="research-partner-email" name="research-partner-email" type="email" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="research-partner-password">Password</Label>
-                <Input id="research-partner-password" type="password" required />
-              </div>
-              <div className="space-y-2">
-                <Label>Organization Type</Label>
-                <RadioGroup defaultValue="pharma">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="pharma" id="type-pharma" />
-                    <Label htmlFor="type-pharma">Pharmaceutical Company</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="academic" id="type-academic" />
-                    <Label htmlFor="type-academic">Academic Institution</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="research" id="type-research" />
-                    <Label htmlFor="type-research">Research Organization</Label>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="other" id="type-other" />
-                    <Label htmlFor="type-other">Other</Label>
-                  </div>
-                </RadioGroup>
+                <Input id="research-partner-password" name="research-partner-password" type="password" required />
               </div>
               <Button type="submit" className="w-full">
                 Create Research Partner Account
+              </Button>
+            </form>
+          </TabsContent>
+          <TabsContent value="developer" className="space-y-4 pt-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="developer-email">Email</Label>
+                <Input id="developer-email" name="developer-email" type="email" required />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="developer-password">Password</Label>
+                <Input id="developer-password" name="developer-password" type="password" required />
+              </div>
+              <Button type="submit" className="w-full">
+                Create Developer Account
               </Button>
             </form>
           </TabsContent>
