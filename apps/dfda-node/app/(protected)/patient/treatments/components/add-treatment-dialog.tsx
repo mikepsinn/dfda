@@ -40,7 +40,6 @@ interface AddTreatmentDialogProps {
 }
 
 const NOT_SPECIFIED_VALUE = "not-specified"
-const RATING_UNIT_ID = "PLACEHOLDER_RATING_UNIT_ID"
 
 export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogProps) {
   const [open, setOpen] = useState(false)
@@ -76,7 +75,6 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
         condition_id: selectedCondition === NOT_SPECIFIED_VALUE ? null : selectedCondition,
         effectiveness_out_of_ten: selectedCondition === NOT_SPECIFIED_VALUE ? null : effectiveness,
         review: review || null,
-        unit_id: RATING_UNIT_ID
       }
 
       logger.info("Submitting treatment rating data", { ratingData })

@@ -6,7 +6,7 @@ import { DEMO_ACCOUNTS, UserType } from "@/lib/constants/demo-accounts";
 import type { Database } from "@/lib/database.types";
 
 // Helper function to clear existing demo data for a user
-async function clearExistingDemoData(supabase: ReturnType<typeof createClient>, userId: string, userType: UserType) {
+async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, userType: UserType) {
   logger.info("Clearing existing demo data for user", { userId, userType });
 
   // Order matters due to foreign keys

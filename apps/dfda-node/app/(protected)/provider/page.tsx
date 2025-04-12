@@ -60,6 +60,7 @@ type EligiblePatientForUI = Profile & Database["public"]["Tables"]["patients"]["
   lastVisit: string // Placeholder - needs data source
   status: string // Placeholder - needs data source
   condition: string
+  avatar_url: string | null
 }
 
 type EnrolledPatientForUI = Profile & Database["public"]["Tables"]["patients"]["Row"] & {
@@ -172,37 +173,78 @@ export default async function ProviderDashboard() {
     // nextVisit: Needs calculation/data source
   }));
 
-  const eligiblePatientsForUI: EligiblePatientForUI[] = (fetchedPatients || []).map((patient) => ({
-    ...patient, // Spread patient row data
-    ...patient.profile, // Spread profile data (might overwrite patient.id if profile has it)
-    id: patient.id, // Ensure patient id is used
-    condition: patient.conditions[0]?.condition?.name?.name || 'N/A', // Simplified: Use first condition name
-    eligibleTrials: (fetchedTrials || [])
-      .filter(t => patient.conditions.some(c => c.condition?.id === t.condition_id))
-      .map(t => ({ id: t.id, name: t.title })),
-    // lastVisit: Needs data source
-    lastVisit: 'N/A',
-    // status: Needs data source (e.g., check consent status)
-    status: 'Eligible' // Placeholder
-  }));
+  const eligiblePatientsForUI: EligiblePatientForUI[] = (fetchedPatients || []).map((patient) => {
+    const profile = patient.profile; // Get the profile object (could be null)
+
+    return {
+      // --- Fields from patients["Row"] ---
+      id: patient.id, // Use patient ID as primary
+      allergies: patient.allergies ?? null,
+      blood_type: patient.blood_type ?? null,
+      date_of_birth: patient.date_of_birth ?? null,
+      gender: patient.gender ?? null,
+      height: patient.height ?? null,
+      medications: patient.medications ?? null,
+      weight: patient.weight ?? null,
+      // --- Fields from Profile --- (check if profile exists before accessing)
+      email: profile?.email ?? '', // Profile requires string
+      first_name: profile?.first_name ?? null,
+      last_name: profile?.last_name ?? null,
+      user_type: profile?.user_type ?? null,
+      avatar_url: profile?.avatar_url ?? null,
+      // --- Overlapping fields (use patient's creation/update/deletion time) ---
+      created_at: patient.created_at ?? null, // Use patient's created_at
+      updated_at: patient.updated_at ?? null, // Use patient's updated_at
+      deleted_at: patient.deleted_at ?? null, // Use patient's deleted_at
+      // --- Fields specific to EligiblePatientForUI ---
+      condition: patient.conditions[0]?.condition?.name?.name || 'N/A',
+      eligibleTrials: (fetchedTrials || [])
+        .filter(t => patient.conditions.some(c => c.condition?.id === t.condition_id))
+        .map(t => ({ id: t.id, name: t.title })),
+      lastVisit: 'N/A', // Placeholder
+      status: 'Eligible' // Placeholder
+    };
+  });
   
-  const enrolledPatientsForUI: EnrolledPatientForUI[] = (fetchedEnrollments || []).map((enrollment) => ({
-    ...enrollment.patient, // Spread patient row data
-    ...enrollment.patient.profile, // Spread profile data
-    id: enrollment.patient_id, // Ensure correct ID
-    trial: enrollment.trial.title,
-    enrollmentDate: new Date(enrollment.enrollment_date || '').toLocaleDateString(),
-    condition: eligiblePatientsForUI.find(p => p.id === enrollment.patient_id)?.condition || 'N/A', // Find condition from eligible list
-    pendingActions: enrollment.trial_actions
-      .filter(action => action.status === 'pending')
-      .map(action => ({
-        type: action.action_type.category, // Use category as type
-        name: action.title,
-        due: new Date(action.due_date).toLocaleDateString(),
-      })),
-    // nextVisit: Needs calculation/logic
-    nextVisit: 'N/A'
-  }));
+  const enrolledPatientsForUI: EnrolledPatientForUI[] = (fetchedEnrollments || []).map((enrollment) => {
+    const patient = enrollment.patient; // Get the patient object (should exist based on query)
+    const profile = patient?.profile; // Get the profile object (could be null)
+
+    return {
+      // --- Fields from patients["Row"] ---
+      id: patient.id, // Use patient ID as primary
+      allergies: patient.allergies ?? null,
+      blood_type: patient.blood_type ?? null,
+      date_of_birth: patient.date_of_birth ?? null,
+      gender: patient.gender ?? null,
+      height: patient.height ?? null,
+      medications: patient.medications ?? null,
+      weight: patient.weight ?? null,
+      // --- Fields from Profile ---
+      email: profile?.email ?? '',
+      first_name: profile?.first_name ?? null,
+      last_name: profile?.last_name ?? null,
+      user_type: profile?.user_type ?? null,
+      avatar_url: profile?.avatar_url ?? null,
+      // --- Overlapping fields ---
+      created_at: patient.created_at ?? null,
+      updated_at: patient.updated_at ?? null,
+      deleted_at: patient.deleted_at ?? null,
+      // --- Fields specific to EnrolledPatientForUI ---
+      trial: enrollment.trial.title,
+      enrollmentDate: new Date(enrollment.enrollment_date || '').toLocaleDateString(),
+      // Find condition from the previously mapped eligiblePatientsForUI
+      condition: eligiblePatientsForUI.find(p => p.id === enrollment.patient_id)?.condition || 'N/A', 
+      pendingActions: enrollment.trial_actions
+        .filter(action => action.status === 'pending')
+        .map(action => ({
+          type: action.action_type.category, // Use category as type
+          name: action.title,
+          due: new Date(action.due_date).toLocaleDateString(),
+        })),
+      nextVisit: 'N/A' // Placeholder
+    };
+  });
 
   const allPendingActionsForUI: PendingActionForUI[] = (fetchedEnrollments || []).flatMap(enrollment => 
      enrollment.trial_actions

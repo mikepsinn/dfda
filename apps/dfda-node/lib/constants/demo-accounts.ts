@@ -76,11 +76,11 @@ export const DEMO_ACCOUNTS = {
         { title: 'Trial Information Updated', message: 'New information about the Semaglutide trial is available.', type: 'info', read_at: new Date().toISOString(), emoji: '📣' },
       ],
       ratings: [
-        { treatment_id: 'metformin', condition_id: 'type-2-diabetes', effectiveness_out_of_ten: 7, review: 'Helps control my blood sugar, some initial side effects but they passed.', unit_id: 'zero-to-ten-scale' },
-        { treatment_id: 'lisinopril', condition_id: 'hypertension', effectiveness_out_of_ten: 9, review: 'Excellent for my blood pressure.', unit_id: 'zero-to-ten-scale' },
+        { treatment_id: 'metformin', condition_id: 'type-2-diabetes', effectiveness_out_of_ten: 7, review: 'Helps control my blood sugar, some initial side effects but they passed.'},
+        { treatment_id: 'lisinopril', condition_id: 'hypertension', effectiveness_out_of_ten: 9, review: 'Excellent for my blood pressure.'},
       ],
       sideEffects: [
-        { treatment_id: 'metformin', description: 'initial side effects (e.g., mild gastrointestinal discomfort)', severity_out_of_ten: 2, unit_id: 'zero-to-ten-scale' },
+        { treatment_id: 'metformin', description: 'initial side effects (e.g., mild gastrointestinal discomfort)', severity_out_of_ten: 2 },
       ],
     } satisfies DemoPatientSeedData // Use satisfies for type checking
   },
