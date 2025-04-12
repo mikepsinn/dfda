@@ -5,6 +5,13 @@ import { redirect } from "next/navigation"
 import type { Database } from "@/lib/database.types"
 import { createUnifiedLogger } from "@/lib/logger"
 
+// Import Dashboard Components
+import { DashboardHeader } from "./components/dashboard-header"
+import { DashboardStats } from "./components/dashboard-stats"
+import { ActiveTrials } from "./components/active-trials"
+import { PatientManagement } from "./components/patient-management"
+import { PendingActions } from "./components/pending-actions"
+
 export const metadata: Metadata = {
   title: "Provider Dashboard | FDA v2",
   description: "Manage your clinical trials, patients, and interventions",
@@ -17,44 +24,62 @@ type TrialAction = Database["public"]["Tables"]["trial_actions"]["Row"]
 type Profile = Database["public"]["Tables"]["profiles"]["Row"]
 type ActionType = Database["public"]["Tables"]["action_types"]["Row"]
 
-// Extended types for UI components
-type DashboardTrial = Trial & {
+// Extended types used in data fetching
+type FetchedTrial = Trial & {
+  trial_enrollments: TrialEnrollment[];
+  trial_actions: (TrialAction & { action_type: ActionType })[];
+  research_partner_profile: Profile | null;
+}
+
+type FetchedPatient = Database["public"]["Tables"]["patients"]["Row"] & {
+  profile: Profile | null;
+  conditions: { condition: { id: string; name: { name: string | null } | null } | null }[];
+}
+
+type FetchedEnrollment = TrialEnrollment & {
+  patient: (Database["public"]["Tables"]["patients"]["Row"] & { profile: Profile | null });
+  trial: Trial;
+  trial_actions: (TrialAction & { action_type: ActionType })[];
+}
+
+// --- Types for Component Props (Transform fetched data into these) ---
+
+type ActiveTrialForUI = {
+  id: string
+  name: string
+  research_partner: string
   enrolledPatients: number
   targetPatients: number
   progress: number
+  nextVisit?: string // Placeholder - needs logic to determine
   pendingActions: number
-  trial_enrollments?: TrialEnrollment[]
-  trial_actions?: (TrialAction & {
-    action_type: ActionType
-  })[]
-  research_partner_profile?: Profile
 }
 
-type EligiblePatientUI = {
-  id: string
-  name: string
-  conditions: string[]
+type EligiblePatientForUI = Profile & Database["public"]["Tables"]["patients"]["Row"] & {
   eligibleTrials: { id: string; name: string }[]
-  status: string
+  lastVisit: string // Placeholder - needs data source
+  status: string // Placeholder - needs data source
+  condition: string
 }
 
-type EnrolledPatientUI = {
-  id: string
-  name: string
+type EnrolledPatientForUI = Profile & Database["public"]["Tables"]["patients"]["Row"] & {
   trial: string
   enrollmentDate: string
-  pendingActions: {
-    type: string
-    name: string
-    due: string
-  }[]
+  nextVisit: string // Placeholder - needs logic to determine
+  condition: string
+  pendingActions: { type: string; name: string; due: string }[]
 }
 
-export default async function ProviderDashboard(): Promise<{
-  trials: DashboardTrial[],
-  eligiblePatients: EligiblePatientUI[],
-  enrolledPatients: EnrolledPatientUI[]
-}> {
+type PendingActionForUI = {
+  id: number // Needs a unique ID - maybe trial_action id?
+  patient: string
+  action: string
+  trial: string
+  due: string
+  type: string // Needs mapping (e.g., action_type.category or name)
+}
+
+export default async function ProviderDashboard() {
   const logger = createUnifiedLogger("ProviderDashboard")
   const supabase = await createServerClient()
   const user = await getServerUser()
@@ -68,113 +93,165 @@ export default async function ProviderDashboard(): Promise<{
     .from("profiles")
     .select("*")
     .eq("id", user.id)
-    .single()
+    .single<Profile>() // Specify type
 
   if (profileError) {
     logger.error("Error fetching provider profile", { error: profileError })
+    return <div>Error loading provider profile.</div>
   }
-
   if (!providerProfile) {
-    throw new Error("Provider profile not found")
+    return <div>Provider profile not found.</div>
   }
 
-  // Fetch active trials with related data
-  const { data: trials, error: trialsError } = await supabase
+  // Fetch active trials
+  const { data: fetchedTrials, error: trialsError } = await supabase
     .from("trials")
     .select(`
       *,
       trial_enrollments!inner (*),
-      trial_actions!inner (
-        *,
-        action_type:action_types!inner (*)
-      ),
+      trial_actions!inner ( *,
+        action_type:action_types!inner (*) ),
       research_partner_profile:profiles!trials_research_partner_id_fkey (*)
     `)
     .eq("status", "active")
     .is("deleted_at", null)
+    .returns<FetchedTrial[]>() // Specify return type
 
   if (trialsError) {
     logger.error("Error fetching active trials", { error: trialsError })
+    return <div>Error loading trial data.</div>
   }
 
-  const dashboardTrials: DashboardTrial[] = (trials || []).map((trial) => ({
-    ...trial,
-    enrolledPatients: trial.trial_enrollments?.length || 0,
-    targetPatients: trial.enrollment_target || 0,
-    progress: trial.enrollment_target ? (trial.trial_enrollments?.length || 0) / trial.enrollment_target * 100 : 0,
-    pendingActions: trial.trial_actions?.filter(a => a.status === 'pending').length || 0,
-  }))
-
-  // Fetch patients with their conditions and enrollments
-  const { data: patients, error: patientsError } = await supabase
+  // Fetch patients 
+  const { data: fetchedPatients, error: patientsError } = await supabase
     .from("patients")
     .select(`
       *,
       profile:profiles!patients_id_fkey (*),
-      conditions:patient_conditions!inner (
-        condition:conditions!inner (
-          *,
-          name:global_variables!conditions_id_fkey (
-            name
-          )
-        )
-      )
+      conditions:patient_conditions!inner ( condition:conditions!inner ( *,
+          name:global_variables!conditions_id_fkey ( name ) ) )
     `)
     .is("deleted_at", null)
+    .returns<FetchedPatient[]>() // Specify return type
 
   if (patientsError) {
     logger.error("Error fetching patients", { error: patientsError })
+    return <div>Error loading patient data.</div>
   }
 
-  const eligiblePatients: EligiblePatientUI[] = (patients || []).map((patient) => ({
-    id: patient.id,
-    name: `${patient.profile.first_name} ${patient.profile.last_name}`,
-    conditions: patient.conditions.map(c => c.condition.name.name),
-    eligibleTrials: dashboardTrials
-      .filter(t => patient.conditions.some(c => c.condition.id === t.condition_id))
-      .map(t => ({ id: t.id, name: t.title })),
-    status: "eligible"
-  }))
-
-  // Get enrolled patients
-  const { data: enrollments, error: enrollmentsError } = await supabase
+  // Fetch enrollments for this provider
+  const { data: fetchedEnrollments, error: enrollmentsError } = await supabase
     .from("trial_enrollments")
     .select(`
       *,
-      patient:patients!inner (
-        *,
-        profile:profiles!patients_id_fkey (*)
-      ),
+      patient:patients!inner ( *,
+        profile:profiles!patients_id_fkey (*) ),
       trial:trials!inner (*),
-      trial_actions!inner (
-        *,
-        action_type:action_types!inner (*)
-      )
+      trial_actions!inner ( *,
+        action_type:action_types!inner (*) )
     `)
     .eq("provider_id", providerProfile.id)
     .is("deleted_at", null)
+    .returns<FetchedEnrollment[]>() // Specify return type
 
   if (enrollmentsError) {
-    throw enrollmentsError
+    logger.error("Error fetching enrollments", { error: enrollmentsError })
+    return <div>Error loading enrollment data.</div>
   }
 
-  const enrolledPatients: EnrolledPatientUI[] = (enrollments || []).map((enrollment) => ({
-    id: enrollment.patient.id,
-    name: `${enrollment.patient.profile.first_name} ${enrollment.patient.profile.last_name}`,
+  // --- Transform data for components ---
+  
+  const activeTrialsForUI: ActiveTrialForUI[] = (fetchedTrials || []).map((trial) => ({
+    id: trial.id,
+    name: trial.title,
+    research_partner: trial.research_partner_profile?.first_name ? `${trial.research_partner_profile.first_name} ${trial.research_partner_profile.last_name}` : 'Unknown Sponsor',
+    enrolledPatients: trial.trial_enrollments?.length || 0,
+    targetPatients: trial.enrollment_target || 0,
+    progress: trial.enrollment_target ? ((trial.trial_enrollments?.length || 0) / trial.enrollment_target) * 100 : 0,
+    pendingActions: trial.trial_actions?.filter(a => a.status === 'pending').length || 0,
+    // nextVisit: Needs calculation/data source
+  }));
+
+  const eligiblePatientsForUI: EligiblePatientForUI[] = (fetchedPatients || []).map((patient) => ({
+    ...patient, // Spread patient row data
+    ...patient.profile, // Spread profile data (might overwrite patient.id if profile has it)
+    id: patient.id, // Ensure patient id is used
+    condition: patient.conditions[0]?.condition?.name?.name || 'N/A', // Simplified: Use first condition name
+    eligibleTrials: (fetchedTrials || [])
+      .filter(t => patient.conditions.some(c => c.condition?.id === t.condition_id))
+      .map(t => ({ id: t.id, name: t.title })),
+    // lastVisit: Needs data source
+    lastVisit: 'N/A',
+    // status: Needs data source (e.g., check consent status)
+    status: 'Eligible' // Placeholder
+  }));
+  
+  const enrolledPatientsForUI: EnrolledPatientForUI[] = (fetchedEnrollments || []).map((enrollment) => ({
+    ...enrollment.patient, // Spread patient row data
+    ...enrollment.patient.profile, // Spread profile data
+    id: enrollment.patient_id, // Ensure correct ID
     trial: enrollment.trial.title,
     enrollmentDate: new Date(enrollment.enrollment_date || '').toLocaleDateString(),
+    condition: eligiblePatientsForUI.find(p => p.id === enrollment.patient_id)?.condition || 'N/A', // Find condition from eligible list
     pendingActions: enrollment.trial_actions
       .filter(action => action.status === 'pending')
       .map(action => ({
-        type: action.action_type.name,
+        type: action.action_type.category, // Use category as type
         name: action.title,
-        due: new Date(action.due_date).toLocaleDateString()
-      }))
-  }))
+        due: new Date(action.due_date).toLocaleDateString(),
+      })),
+    // nextVisit: Needs calculation/logic
+    nextVisit: 'N/A'
+  }));
 
-  return {
-    trials: dashboardTrials,
-    eligiblePatients,
-    enrolledPatients
-  }
+  const allPendingActionsForUI: PendingActionForUI[] = (fetchedEnrollments || []).flatMap(enrollment => 
+     enrollment.trial_actions
+       .filter(action => action.status === 'pending')
+       .map(action => ({
+         id: parseInt(action.id.replace(/-/g, ''), 16) % 1000000, // Attempt to create a numeric ID from UUID for key prop
+         patient: `${enrollment.patient.profile?.first_name} ${enrollment.patient.profile?.last_name}`,
+         action: action.title,
+         trial: enrollment.trial.title,
+         due: new Date(action.due_date).toLocaleDateString(),
+         type: action.action_type.category || 'other' // Map to type needed by component
+       }))
+  );
+
+  // --- Calculate Stats ---
+  const totalEnrolled = enrolledPatientsForUI.length;
+  const totalEligible = eligiblePatientsForUI.length;
+  const totalPendingActions = allPendingActionsForUI.length;
+  // TODO: Calculate pendingActionsDueSoon, upcomingVisits, upcomingVisitsThisWeek, upcomingVisitsNextWeek
+  const pendingActionsDueSoon = 0; // Placeholder
+  const upcomingVisits = 0; // Placeholder
+  const upcomingVisitsThisWeek = 0; // Placeholder
+  const upcomingVisitsNextWeek = 0; // Placeholder
+
+  // --- Render Page ---
+  return (
+    <div className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
+      <DashboardHeader 
+        title="Provider Dashboard"
+        description={`Welcome back, ${providerProfile.first_name || 'Provider'}. Manage your trials and patients.`}
+      />
+      <DashboardStats 
+        activeTrials={activeTrialsForUI.length}
+        enrolledPatients={totalEnrolled}
+        eligiblePatients={totalEligible}
+        pendingActions={totalPendingActions}
+        pendingActionsDueSoon={pendingActionsDueSoon}
+        upcomingVisits={upcomingVisits}
+        upcomingVisitsThisWeek={upcomingVisitsThisWeek}
+        upcomingVisitsNextWeek={upcomingVisitsNextWeek}
+      />
+      <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
+        <ActiveTrials trials={activeTrialsForUI} className="xl:col-span-2" />
+        <PendingActions actions={allPendingActionsForUI.slice(0, 5)} totalActions={totalPendingActions} /> 
+      </div>
+      <PatientManagement 
+        eligiblePatients={eligiblePatientsForUI} 
+        enrolledPatients={enrolledPatientsForUI} 
+      />
+    </div>
+  )
 }

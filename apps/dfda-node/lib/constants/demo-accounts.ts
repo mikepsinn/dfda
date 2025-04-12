@@ -1,3 +1,6 @@
+import type { Database } from "@/lib/database.types";
+type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"];
+
 export type UserType = keyof typeof DEMO_ACCOUNTS;
 
 export const DEMO_ACCOUNTS = {
@@ -7,7 +10,7 @@ export const DEMO_ACCOUNTS = {
     data: {
       first_name: "Demo",
       last_name: "Patient",
-      user_type: "patient" as const,
+      user_type: "patient" as UserRoleEnum,
     },
   },
   provider: {
@@ -16,18 +19,18 @@ export const DEMO_ACCOUNTS = {
     data: {
       first_name: "Demo",
       last_name: "Provider",
-      user_type: "provider" as const,
+      user_type: "provider" as UserRoleEnum,
       organization_name: "City General Hospital",
       contact_name: "Dr. Demo Provider",
     },
   },
-  research_partner: {
+  "research-partner": {
     email: "demo-research-partner@dfda.earth",
     password: "demo-research-partner-123",
     data: {
       first_name: "Demo",
       last_name: "Sponsor",
-      user_type: "research-partner" as const,
+      user_type: "research-partner" as UserRoleEnum,
       organization_name: "Demo Pharma Inc.",
       contact_name: "Clinical Research Division",
     },
@@ -38,7 +41,7 @@ export const DEMO_ACCOUNTS = {
     data: {
       first_name: "Demo",
       last_name: "Developer",
-      user_type: "developer" as const,
+      user_type: "developer" as UserRoleEnum,
     },
   }
 } as const 

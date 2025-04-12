@@ -108,17 +108,18 @@ export async function getTrialsByConditionAction(conditionId: string) {
       research_partner:profiles!trials_research_partner_id_fkey (
         first_name,
         last_name
-      ),
-      conditions!trial_conditions (
-        condition_id
       )
     `)
-    .eq("conditions.condition_id", conditionId)
+    .eq("condition_id", conditionId)
     .eq("status", "active")
 
   if (error) {
-    logger.error("Error fetching trials by condition:", { error })
+    logger.error("Error fetching trials by condition:", { error, conditionId })
     throw new Error("Failed to fetch trials")
+  }
+
+  if (!data) {
+    return [];
   }
 
   return data.map(trial => ({

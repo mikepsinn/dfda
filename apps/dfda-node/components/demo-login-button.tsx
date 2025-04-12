@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { demoLogin } from "@/app/actions/demo-login"
 import { AlertCircle } from "lucide-react"
 import { logger } from "@/lib/logger"
-import type { UserType } from "@/lib/constants/demo-accounts"
+import type { Database } from "@/lib/database.types"
+type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"]
 
 interface DemoLoginButtonProps {
   onError: (error: { type: 'email_not_confirmed' | 'other', message: string }) => void;
@@ -13,9 +14,9 @@ interface DemoLoginButtonProps {
 }
 
 export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonProps) {
-  const [isLoading, setIsLoading] = useState<UserType | null>(null)
+  const [isLoading, setIsLoading] = useState<UserRoleEnum | null>(null)
 
-  const handleDemoLogin = async (userType: UserType) => {
+  const handleDemoLogin = async (userType: UserRoleEnum) => {
     setIsLoading(userType)
     try {
       await demoLogin(userType)
@@ -35,7 +36,7 @@ export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonPro
       <div className="space-y-2 text-center">
          <p className="text-xs text-muted-foreground">Or use a demo account:</p>
          <div className="flex flex-wrap gap-2 justify-center">
-          {(['patient', 'research-partner', 'developer'] as UserType[]).map((role) => (
+          {(['patient', 'provider', 'research-partner', 'developer'] as UserRoleEnum[]).map((role) => (
             <Button
               key={role}
               variant="outline"

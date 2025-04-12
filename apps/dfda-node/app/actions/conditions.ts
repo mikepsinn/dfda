@@ -4,21 +4,27 @@ import { createClient } from '@/lib/supabase/server'
 import type { Database } from '@/lib/database.types'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
-import { VARIABLE_CATEGORIES } from '@/lib/constants/variable-categories'
+// Remove VARIABLE_CATEGORIES import if no longer needed elsewhere
+// import { VARIABLE_CATEGORIES } from '@/lib/constants/variable-categories'
 
 // Use the database view type directly 
 export type ConditionView = Database['public']['Views']['patient_conditions_view']['Row']
 export type ConditionInsert = Database['public']['Tables']['conditions']['Insert']
 export type ConditionUpdate = Database['public']['Tables']['conditions']['Update']
 
-// Get all conditions from global_variables
+// Get all conditions present in the conditions table
 export async function getConditionsAction() {
   const supabase = await createClient()
 
   const response = await supabase
     .from('global_variables')
-    .select('id, name, description, emoji')
-    .eq('variable_category_id', VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY)
+    .select(`
+      id,
+      name,
+      description,
+      emoji,
+      conditions!inner(*)
+    `)
     .order('name')
     .limit(50)
 
@@ -27,10 +33,15 @@ export async function getConditionsAction() {
     throw new Error('Failed to fetch conditions')
   }
 
-  return response.data
+  // Filter out the join artifacts if needed, or adjust select
+  // The data structure might change slightly due to the join.
+  // Assuming the goal is to return the global_variables data for matched conditions.
+  return response.data.map(({ conditions, ...globalVarData }) => globalVarData);
 }
 
 // Get a condition by ID with joined name from global_variables
+// This function already seems okay as it uses patient_conditions_view
+// which likely already joins conditions and global_variables.
 export async function getConditionByIdAction(id: string): Promise<ConditionView | null> {
   const supabase = await createClient()
 
@@ -48,16 +59,59 @@ export async function getConditionByIdAction(id: string): Promise<ConditionView 
   return response.data
 }
 
-// Search conditions by name in global_variables
+// Get a condition by name/slug, ensuring it exists in the conditions table
+export async function getConditionByNameAction(name: string) {
+  const supabase = await createClient();
+  logger.info('Fetching condition by name:', { name });
+
+  try {
+    const { data: condition, error } = await supabase
+      .from('global_variables')
+      .select(`
+        id,
+        name,
+        description,
+        emoji,
+        conditions!inner(*)
+      `)
+      .ilike('name', name) // Case-insensitive match for the name
+      .maybeSingle(); // Use maybeSingle() in case name isn't found
+
+    if (error) {
+      logger.error('Error fetching condition by name:', { error });
+      throw error;
+    }
+
+    if (!condition) {
+       logger.warn('Condition not found by name or not in conditions table:', { name });
+       return null;
+    }
+
+    // Destructure to remove the join artifact
+    const { conditions, ...globalVarData } = condition;
+    logger.info('Found condition by name:', { condition: globalVarData });
+    return globalVarData;
+  } catch (error) {
+    logger.error('Error in getConditionByNameAction:', { error });
+    throw new Error(`Failed to fetch condition by name: ${name}`);
+  }
+}
+
+// Search conditions by name, ensuring they exist in the conditions table
 export async function searchConditionsAction(query: string) {
   const supabase = await createClient()
-  logger.info('Searching conditions with query:', { query, categoryId: VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY })
+  logger.info('Searching conditions with query:', { query })
 
   try {
     const { data: conditions, error } = await supabase
       .from('global_variables')
-      .select('id, name, description, emoji')
-      .eq('variable_category_id', VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY)
+      .select(`
+        id,
+        name,
+        description,
+        emoji,
+        conditions!inner(*)
+      `)
       .ilike('name', `%${query}%`)
       .order('name')
 
@@ -66,8 +120,10 @@ export async function searchConditionsAction(query: string) {
       throw error
     }
 
-    logger.info('Found conditions:', { count: conditions?.length })
-    return conditions || []
+    // Map to remove join artifacts
+    const results = (conditions || []).map(({ conditions, ...globalVarData }) => globalVarData);
+    logger.info('Found conditions:', { count: results.length });
+    return results;
   } catch (error) {
     logger.error('Error in searchConditionsAction:', { error })
     throw error

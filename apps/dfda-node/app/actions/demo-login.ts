@@ -76,7 +76,7 @@ export async function demoLogin(userType: UserType = "patient") {
       throw finalSignInError
     }
 
-    const redirectUrl = `/${userType}/dashboard`
+    const redirectUrl = `/${userType}/`
     logger.info('Redirecting to dashboard', { redirectUrl })
     redirect(redirectUrl)
   } catch (error) {

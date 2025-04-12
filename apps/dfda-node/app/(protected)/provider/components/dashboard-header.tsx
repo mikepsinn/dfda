@@ -15,7 +15,7 @@ export function DashboardHeader({ title, description }: DashboardHeaderProps) {
         <p className="text-muted-foreground">{description}</p>
       </div>
       <div className="flex gap-2">
-        <Link href="/provider/find-trials">
+        <Link href="/find-trials">
           <Button>
             <Microscope className="mr-2 h-4 w-4" />
             Find Trials

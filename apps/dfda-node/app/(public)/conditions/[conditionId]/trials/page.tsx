@@ -1,4 +1,4 @@
-import { getConditionByIdAction } from "@/app/actions/conditions"
+import { getConditionByNameAction } from "@/app/actions/conditions"
 import { getTrialsByConditionAction } from "@/app/actions/trials"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -12,25 +12,28 @@ export default async function ConditionTrialsPage({
 }: {
   params: { conditionId: string }
 }) {
-  const condition = await getConditionByIdAction(params.conditionId)
+  const conditionSlug = decodeURIComponent(params.conditionId);
+
+  const condition = await getConditionByNameAction(conditionSlug);
+
   if (!condition) {
-    notFound()
+    notFound();
   }
 
-  const trials = await getTrialsByConditionAction(params.conditionId)
+  const trials = await getTrialsByConditionAction(conditionSlug);
 
   return (
     <div className="container max-w-4xl py-6 space-y-6">
       <div className="flex items-center gap-4">
         <Button variant="ghost" size="icon" asChild>
-          <Link href="/find-trials">
+          <Link href="/conditions">
             <ArrowLeft className="h-4 w-4" />
           </Link>
         </Button>
         <div>
-          <h1 className="text-3xl font-bold">{condition.condition_name}</h1>
+          <h1 className="text-3xl font-bold">{condition.name}</h1>
           <p className="text-muted-foreground">
-            Clinical trials for {condition.condition_name}
+            Clinical trials for {condition.name}
           </p>
         </div>
       </div>
@@ -52,14 +55,14 @@ export default async function ConditionTrialsPage({
                 <div className="flex items-start justify-between">
                   <div>
                     <CardTitle>{trial.title}</CardTitle>
-                    <CardDescription>{trial.research_partner_name}</CardDescription>
+                    <CardDescription>{trial.research_partner_name || 'Unknown Sponsor'}</CardDescription>
                   </div>
-                  <Badge>{trial.phase}</Badge>
+                  <Badge>{trial.phase || 'N/A'}</Badge>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <p>{trial.description}</p>
+                  <p>{trial.description || 'No description available.'}</p>
                   <div className="flex gap-2">
                     <Button asChild>
                       <Link href={`/trials/${trial.id}`}>View Details</Link>

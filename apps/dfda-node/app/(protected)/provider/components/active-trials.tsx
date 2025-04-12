@@ -77,7 +77,7 @@ export function ActiveTrials({ trials, className = "" }: ActiveTrialsProps) {
           ))}
 
           <div className="flex justify-center">
-            <Link href="/provider/find-trials">
+            <Link href="/find-trials">
               <Button variant="outline">
                 Find More Trials
                 <ChevronRight className="ml-2 h-4 w-4" />
