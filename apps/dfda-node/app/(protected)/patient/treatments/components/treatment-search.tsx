@@ -32,8 +32,6 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
 
   useEffect(() => {
     const searchTreatments = async () => {
-      if (!searchQuery) return
-
       setLoading(true)
       try {
         const supabase = createClient()
@@ -43,21 +41,27 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
             id,
             name:global_variables!inner(name)
           `)
-          .textSearch('global_variables.name', searchQuery)
           .is("deleted_at", null)
           .limit(10)
 
+        if (searchQuery) {
+          query = query.ilike('global_variables.name', `${searchQuery}%`)
+        }
+
         if (conditionId) {
-          query = query.eq("condition_id", conditionId)
+          //query = query.eq("condition_id", conditionId)
         }
 
         const { data, error } = await query
 
+        console.log("[TreatmentSearch] Supabase response:", { data, error });
+
         if (error) throw error
 
-        setTreatments(data.map(t => ({ id: t.id, name: t.name.name })))
+        setTreatments(data ? data.map(t => ({ id: t.id, name: t.name.name })) : [])
       } catch (error) {
         console.error("Error searching treatments:", error)
+        setTreatments([])
       } finally {
         setLoading(false)
       }
