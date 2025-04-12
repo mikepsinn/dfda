@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 export function DocSupportSection() {
   return (
@@ -16,9 +17,11 @@ export function DocSupportSection() {
           <p className="text-sm text-muted-foreground mb-4">
             Join our developer community to ask questions, share solutions, and connect with other developers.
           </p>
-          <Button variant="outline" className="w-full">
-            <ExternalLink className="mr-2 h-4 w-4" /> Join Community Forum
-          </Button>
+          <Link href="https://github.com/orgs/decentralized-fda/discussions" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="w-full">
+              <ExternalLink className="mr-2 h-4 w-4" /> Join Community Forum
+            </Button>
+          </Link>
         </div>
 
         <div className="rounded-lg border p-4">
@@ -26,9 +29,11 @@ export function DocSupportSection() {
           <p className="text-sm text-muted-foreground mb-4">
             Report bugs, request features, or contribute to our open-source SDKs on GitHub.
           </p>
-          <Button variant="outline" className="w-full">
-            <ExternalLink className="mr-2 h-4 w-4" /> View GitHub Repository
-          </Button>
+          <Link href="https://github.com/decentralized-fda/decentralized-fda" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="w-full">
+              <ExternalLink className="mr-2 h-4 w-4" /> View GitHub Repository
+            </Button>
+          </Link>
         </div>
 
         <div className="rounded-lg border p-4">
@@ -36,9 +41,11 @@ export function DocSupportSection() {
           <p className="text-sm text-muted-foreground mb-4">
             Contact our developer support team for assistance with integration issues.
           </p>
-          <Button variant="outline" className="w-full">
-            <ExternalLink className="mr-2 h-4 w-4" /> Contact Support
-          </Button>
+          <a href="mailto:help@dfda.earth">
+            <Button variant="outline" className="w-full">
+              <ExternalLink className="mr-2 h-4 w-4" /> Contact Support
+            </Button>
+          </a>
         </div>
 
         <div className="rounded-lg border p-4">
