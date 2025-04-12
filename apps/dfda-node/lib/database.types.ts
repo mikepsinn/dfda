@@ -670,6 +670,67 @@ export type Database = {
           },
         ]
       }
+      patient_treatments: {
+        Row: {
+          created_at: string | null
+          end_date: string | null
+          id: string
+          is_prescribed: boolean
+          patient_id: string
+          patient_notes: string | null
+          start_date: string | null
+          status: string
+          treatment_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          end_date?: string | null
+          id?: string
+          is_prescribed?: boolean
+          patient_id: string
+          patient_notes?: string | null
+          start_date?: string | null
+          status?: string
+          treatment_id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          end_date?: string | null
+          id?: string
+          is_prescribed?: boolean
+          patient_id?: string
+          patient_notes?: string | null
+          start_date?: string | null
+          status?: string
+          treatment_id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_treatments_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_treatments_treatment_id_fkey"
+            columns: ["treatment_id"]
+            isOneToOne: false
+            referencedRelation: "patient_treatments_view"
+            referencedColumns: ["treatment_id"]
+          },
+          {
+            foreignKeyName: "patient_treatments_treatment_id_fkey"
+            columns: ["treatment_id"]
+            isOneToOne: false
+            referencedRelation: "treatments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       patients: {
         Row: {
           allergies: string[] | null
@@ -716,6 +777,115 @@ export type Database = {
             columns: ["id"]
             isOneToOne: true
             referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pharmacies: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      prescriptions: {
+        Row: {
+          allow_substitutions: boolean | null
+          created_at: string | null
+          dosage_amount: number | null
+          dosage_form: string | null
+          dosage_unit: string | null
+          duration_days: number | null
+          frequency: string | null
+          id: string
+          patient_treatment_id: string
+          pharmacy_id: string | null
+          prescriber_notes: string | null
+          prescription_date: string
+          provider_id: string
+          quantity_to_dispense: string
+          refills_authorized: number
+          route: string | null
+          sig: string | null
+          status: string
+          updated_at: string | null
+        }
+        Insert: {
+          allow_substitutions?: boolean | null
+          created_at?: string | null
+          dosage_amount?: number | null
+          dosage_form?: string | null
+          dosage_unit?: string | null
+          duration_days?: number | null
+          frequency?: string | null
+          id?: string
+          patient_treatment_id: string
+          pharmacy_id?: string | null
+          prescriber_notes?: string | null
+          prescription_date?: string
+          provider_id: string
+          quantity_to_dispense: string
+          refills_authorized?: number
+          route?: string | null
+          sig?: string | null
+          status?: string
+          updated_at?: string | null
+        }
+        Update: {
+          allow_substitutions?: boolean | null
+          created_at?: string | null
+          dosage_amount?: number | null
+          dosage_form?: string | null
+          dosage_unit?: string | null
+          duration_days?: number | null
+          frequency?: string | null
+          id?: string
+          patient_treatment_id?: string
+          pharmacy_id?: string | null
+          prescriber_notes?: string | null
+          prescription_date?: string
+          provider_id?: string
+          quantity_to_dispense?: string
+          refills_authorized?: number
+          route?: string | null
+          sig?: string | null
+          status?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "prescriptions_patient_treatment_id_fkey"
+            columns: ["patient_treatment_id"]
+            isOneToOne: false
+            referencedRelation: "patient_treatments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "prescriptions_pharmacy_id_fkey"
+            columns: ["pharmacy_id"]
+            isOneToOne: false
+            referencedRelation: "pharmacies"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "prescriptions_provider_id_fkey"
+            columns: ["provider_id"]
+            isOneToOne: false
+            referencedRelation: "providers"
             referencedColumns: ["id"]
           },
         ]
@@ -820,6 +990,53 @@ export type Database = {
           },
         ]
       }
+      providers: {
+        Row: {
+          created_at: string | null
+          credentials: string | null
+          id: string
+          license_number: string | null
+          license_state: string | null
+          npi_number: string | null
+          office_address: string | null
+          office_phone: string | null
+          specialty: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          credentials?: string | null
+          id: string
+          license_number?: string | null
+          license_state?: string | null
+          npi_number?: string | null
+          office_address?: string | null
+          office_phone?: string | null
+          specialty?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          credentials?: string | null
+          id?: string
+          license_number?: string | null
+          license_state?: string | null
+          npi_number?: string | null
+          office_address?: string | null
+          office_phone?: string | null
+          specialty?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "providers_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       regulatory_approvals: {
         Row: {
           agency: string
@@ -877,6 +1094,72 @@ export type Database = {
           },
         ]
       }
+      reminder_schedules: {
+        Row: {
+          created_at: string | null
+          end_date: string | null
+          id: string
+          is_active: boolean
+          next_trigger_at: string | null
+          notification_message_template: string | null
+          notification_title_template: string | null
+          rrule: string
+          start_date: string
+          time_of_day: string
+          timezone: string
+          updated_at: string | null
+          user_id: string
+          user_variable_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          end_date?: string | null
+          id?: string
+          is_active?: boolean
+          next_trigger_at?: string | null
+          notification_message_template?: string | null
+          notification_title_template?: string | null
+          rrule: string
+          start_date?: string
+          time_of_day: string
+          timezone: string
+          updated_at?: string | null
+          user_id: string
+          user_variable_id: string
+        }
+        Update: {
+          created_at?: string | null
+          end_date?: string | null
+          id?: string
+          is_active?: boolean
+          next_trigger_at?: string | null
+          notification_message_template?: string | null
+          notification_title_template?: string | null
+          rrule?: string
+          start_date?: string
+          time_of_day?: string
+          timezone?: string
+          updated_at?: string | null
+          user_id?: string
+          user_variable_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reminder_schedules_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reminder_schedules_user_variable_id_fkey"
+            columns: ["user_variable_id"]
+            isOneToOne: false
+            referencedRelation: "user_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reported_side_effects: {
         Row: {
           created_at: string | null
@@ -927,6 +1210,50 @@ export type Database = {
             foreignKeyName: "reported_side_effects_user_id_fkey"
             columns: ["user_id"]
             isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      research_partners: {
+        Row: {
+          contact_email: string | null
+          created_at: string | null
+          department: string | null
+          id: string
+          institution_name: string
+          is_institution: boolean
+          research_focus_areas: string[] | null
+          updated_at: string | null
+          website_url: string | null
+        }
+        Insert: {
+          contact_email?: string | null
+          created_at?: string | null
+          department?: string | null
+          id: string
+          institution_name: string
+          is_institution?: boolean
+          research_focus_areas?: string[] | null
+          updated_at?: string | null
+          website_url?: string | null
+        }
+        Update: {
+          contact_email?: string | null
+          created_at?: string | null
+          department?: string | null
+          id?: string
+          institution_name?: string
+          is_institution?: boolean
+          research_focus_areas?: string[] | null
+          updated_at?: string | null
+          website_url?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "research_partners_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
             referencedRelation: "profiles"
             referencedColumns: ["id"]
           },

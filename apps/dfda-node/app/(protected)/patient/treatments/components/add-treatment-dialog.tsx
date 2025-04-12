@@ -54,41 +54,55 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!selectedTreatment || !selectedCondition) return
-    if (selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) return
+    if (!selectedTreatment) return
+    if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) return
 
     setIsLoading(true)
     try {
-      logger.info("Adding treatment rating for user", { userId, treatmentId: selectedTreatment.id, conditionId: selectedCondition })
-
-      if (selectedCondition !== NOT_SPECIFIED_VALUE && !isExistingPatientCondition) {
+      // --- Logic for Condition & Rating --- 
+      let conditionAdded = false
+      // Add condition if it's specified, new, and not the placeholder
+      if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && !isExistingPatientCondition) {
         logger.info("Adding new condition for patient", { userId, conditionId: selectedCondition })
         const conditionResult = await addPatientConditionAction(userId, selectedCondition)
         if (!conditionResult.success) {
           throw new Error(conditionResult.error || "Failed to add condition")
         }
+        conditionAdded = true
       }
 
-      const ratingData: Omit<TreatmentRatingInsert, 'condition_id'> & { condition_id: string | null } = {
-        user_id: userId,
-        treatment_id: selectedTreatment.id,
-        condition_id: selectedCondition === NOT_SPECIFIED_VALUE ? null : selectedCondition,
-        effectiveness_out_of_ten: selectedCondition === NOT_SPECIFIED_VALUE ? null : effectiveness,
-        review: review || null,
+      // Only add rating if a valid condition is selected
+      if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE) {
+        logger.info("Adding treatment rating for user", { userId, treatmentId: selectedTreatment.id, conditionId: selectedCondition })
+        const ratingData: TreatmentRatingInsert = {
+          user_id: userId,
+          treatment_id: selectedTreatment.id,
+          condition_id: selectedCondition, // Already checked it's not empty or NOT_SPECIFIED
+          effectiveness_out_of_ten: effectiveness, // Already checked it's not null
+          review: review || null,
+        }
+
+        logger.info("Submitting treatment rating data", { ratingData })
+        const ratingResult = await addTreatmentRatingAction(ratingData)
+
+        if (!ratingResult.success) {
+          throw new Error(ratingResult.error || "Failed to add treatment rating")
+        }
+
+        toast({
+          title: "Treatment Rated",
+          description: `${selectedTreatment.name} rating for the selected condition has been added successfully.`
+        })
+      } else {
+        // If no condition was selected, just show a success message
+        logger.info("Treatment added without rating for user", { userId, treatmentId: selectedTreatment.id })
+        toast({
+          title: "Treatment Added",
+          description: `${selectedTreatment.name} has been added to your list.`
+        })
       }
 
-      logger.info("Submitting treatment rating data", { ratingData })
-      const ratingResult = await addTreatmentRatingAction(ratingData as any)
-
-      if (!ratingResult.success) {
-        throw new Error(ratingResult.error || "Failed to add treatment rating")
-      }
-
-      toast({
-        title: "Treatment added",
-        description: `${selectedTreatment.name} has been added successfully.`
-      })
-
+      // Reset form state
       setOpen(false)
       setSelectedTreatment(null)
       setSelectedCondition("")
@@ -112,8 +126,20 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
     }
   }
 
+  // Reset form state if dialog is closed without submitting
+  const handleOpenChange = (isOpen: boolean) => {
+    setOpen(isOpen)
+    if (!isOpen) {
+      setSelectedTreatment(null)
+      setSelectedCondition("")
+      setEffectiveness(null)
+      setReview("")
+      setIsLoading(false) // Reset loading state as well
+    }
+  }
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
@@ -153,6 +179,7 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
                   <Select
                     value={effectiveness?.toString() || ""}
                     onValueChange={(value) => setEffectiveness(parseInt(value))}
+                    required // Make effectiveness required if condition is selected
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Rate effectiveness" />
@@ -184,8 +211,8 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
               type="submit" 
               disabled={
                 !selectedTreatment || 
-                !selectedCondition || 
-                (selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) || 
+                // Disable if a specific condition is selected but effectiveness is not
+                (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) || 
                 isLoading
               }
             >
