@@ -20,7 +20,7 @@ export const heroSectionCitations: Record<string, Citation[]> = {
     {
       title: "Revolutionizing Clinical Trials: Scaling RECOVERY's Efficiency...",
       url: "https://wiki.dfda.earth/en/reference/recovery-trial",
-      quote: "At approximately £43 (~$55) per patient, this is nearly 750 times more cost-efficient..." / Cites ~$500 from Manhattan Institute.
+      quote: "At approximately £43 (~$55) per patient, this is nearly 750 times more cost-efficient...", // Moved comment: Cites ~$500 from Manhattan Institute.
       context:
         "Highlights the drastic cost reduction achieved in the RECOVERY trial, supporting the ~$450 figure used for FDA v2. Note: HeroSection uses $36k vs $450.",
       accessedDate: "2024-08-22",
@@ -30,8 +30,7 @@ export const heroSectionCitations: Record<string, Citation[]> = {
       url: "https://link.springer.com/content/pdf/10.1007/s43441-022-00454-5.pdf",
       author: "DiMasi et al.",
       publishedDate: "2022-09-14",
-      quote:
-        "If we assume that DCT methods are applied to both phase II and phase III trials the increase in value is $20 million per drug that enters phase II, with a seven-fold ROI.",
+      quote: `If we assume that DCT methods are applied to both phase II and phase III trials the increase in value is $20 million per drug that enters phase II, with a seven-fold ROI.`,
       context: "Demonstrates substantial overall financial value and ROI for DCTs.",
     },
   ],
@@ -47,8 +46,7 @@ export const heroSectionCitations: Record<string, Citation[]> = {
       title: "Decentralized or Traditional? Clinical Trials in Comparison",
       url: "https://climedo.de/en/blog/decentralized-or-traditional-clinical-trials-in-comparison/",
       publishedDate: "2021-11-11",
-      quote:
-        "80% of all traditional clinical trials are not completed on time and one-fifth of them experience delays of at least six months." / "choosing a decentralized study can save almost 3 months until completion.",
+      quote: `80% of all traditional clinical trials are not completed on time and one-fifth of them experience delays of at least six months. choosing a decentralized study can save almost 3 months until completion.`,
       context:
         "Indicates common delays in traditional trials and time savings in DCT completion. Does not directly confirm the 6-12mo vs 2-4wk *launch* times used in HeroSection.",
     },

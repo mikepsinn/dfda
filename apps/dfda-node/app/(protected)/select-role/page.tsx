@@ -5,9 +5,12 @@ import { logger } from "@/lib/logger"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { User, Briefcase, Code } from 'lucide-react' // Icons for roles
+import type { Database } from "@/lib/database.types"
+
+type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"]
 
 // Server Action to set user role
-async function setUserRole(role: string) {
+async function setUserRole(role: UserRoleEnum) {
   'use server'
 
   const supabase = await createClient()

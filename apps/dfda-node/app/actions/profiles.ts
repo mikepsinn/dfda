@@ -7,6 +7,7 @@ import type { Database } from "@/lib/database.types"
 export type Profile = Database["public"]["Tables"]["profiles"]["Row"]
 export type ProfileInsert = Database["public"]["Tables"]["profiles"]["Insert"]
 export type ProfileUpdate = Database["public"]["Tables"]["profiles"]["Update"]
+type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"]
 
 export async function getProfileByIdAction(id: string): Promise<Profile | null> {
   const supabase = await createServerClient()
@@ -20,7 +21,7 @@ export async function getProfileByIdAction(id: string): Promise<Profile | null> 
   return data as Profile
 }
 
-export async function getProfilesByTypeAction(type: string): Promise<Profile[]> {
+export async function getProfilesByTypeAction(type: UserRoleEnum): Promise<Profile[]> {
   const supabase = await createServerClient()
   const { data, error } = await supabase
     .from("profiles")
