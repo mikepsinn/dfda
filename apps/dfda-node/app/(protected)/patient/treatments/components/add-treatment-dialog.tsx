@@ -25,8 +25,12 @@ import { Plus } from "lucide-react"
 import { TreatmentSearch } from "./treatment-search"
 import type { Database } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
+import { ConditionCombobox } from "./condition-combobox"
+import { addPatientConditionAction } from "@/app/actions/patientConditions"
+import { addTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+type TreatmentRatingInsert = Database["public"]["Tables"]["treatment_ratings"]["Insert"]
 
 const logger = createLogger("add-treatment-dialog")
 
@@ -34,6 +38,9 @@ interface AddTreatmentDialogProps {
   userId: string
   conditions: PatientCondition[]
 }
+
+const NOT_SPECIFIED_VALUE = "not-specified"
+const RATING_UNIT_ID = "PLACEHOLDER_RATING_UNIT_ID"
 
 export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogProps) {
   const [open, setOpen] = useState(false)
@@ -44,34 +51,44 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
 
+  const isExistingPatientCondition = conditions.some(pc => pc.condition_id === selectedCondition)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!selectedTreatment || !selectedCondition || effectiveness === null) return
+    if (!selectedTreatment || !selectedCondition) return
+    if (selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) return
 
     setIsLoading(true)
     try {
-      logger.info("Adding treatment for user", { userId, treatmentId: selectedTreatment.id })
-      
-      // First create the patient treatment
-      const response = await fetch("/api/patient/treatments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          user_id: userId,
-          treatment_id: selectedTreatment.id,
-          condition_id: selectedCondition,
-          effectiveness_out_of_ten: effectiveness,
-          review: review || null,
-        }),
-      })
+      logger.info("Adding treatment rating for user", { userId, treatmentId: selectedTreatment.id, conditionId: selectedCondition })
 
-      if (!response.ok) throw new Error("Failed to add treatment")
+      if (selectedCondition !== NOT_SPECIFIED_VALUE && !isExistingPatientCondition) {
+        logger.info("Adding new condition for patient", { userId, conditionId: selectedCondition })
+        const conditionResult = await addPatientConditionAction(userId, selectedCondition)
+        if (!conditionResult.success) {
+          throw new Error(conditionResult.error || "Failed to add condition")
+        }
+      }
+
+      const ratingData: Omit<TreatmentRatingInsert, 'condition_id'> & { condition_id: string | null } = {
+        user_id: userId,
+        treatment_id: selectedTreatment.id,
+        condition_id: selectedCondition === NOT_SPECIFIED_VALUE ? null : selectedCondition,
+        effectiveness_out_of_ten: selectedCondition === NOT_SPECIFIED_VALUE ? null : effectiveness,
+        review: review || null,
+        unit_id: RATING_UNIT_ID
+      }
+
+      logger.info("Submitting treatment rating data", { ratingData })
+      const ratingResult = await addTreatmentRatingAction(ratingData as any)
+
+      if (!ratingResult.success) {
+        throw new Error(ratingResult.error || "Failed to add treatment rating")
+      }
 
       toast({
         title: "Treatment added",
-        description: `${selectedTreatment.name} has been added to your treatments.`
+        description: `${selectedTreatment.name} has been added successfully.`
       })
 
       setOpen(false)
@@ -79,9 +96,9 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
       setSelectedCondition("")
       setEffectiveness(null)
       setReview("")
-    } catch (error) {
-      logger.error("Failed to add treatment", { 
-        error, 
+    } catch (error: any) {
+      logger.error("Failed to add treatment/rating", { 
+        error: error?.message ?? String(error), 
         userId, 
         treatmentId: selectedTreatment?.id, 
         conditionId: selectedCondition 
@@ -89,7 +106,7 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
       
       toast({
         title: "Error",
-        description: "Failed to add treatment. Please try again.",
+        description: error?.message || "Failed to add treatment. Please try again.",
         variant: "destructive"
       })
     } finally {
@@ -115,66 +132,64 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
             <div className="grid gap-2">
-              <Label htmlFor="condition">Condition</Label>
-              <Select
-                value={selectedCondition}
-                onValueChange={setSelectedCondition}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select condition" />
-                </SelectTrigger>
-                <SelectContent>
-                  {conditions.filter(condition => condition.id !== null).map((condition) => (
-                    <SelectItem key={condition.id!} value={condition.id!}>
-                      {condition.condition_name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="grid gap-2">
               <Label htmlFor="treatment">Treatment</Label>
               <TreatmentSearch
                 onSelect={(treatment) => setSelectedTreatment(treatment)}
                 selected={selectedTreatment}
-                conditionId={selectedCondition}
               />
             </div>
 
             <div className="grid gap-2">
-              <Label htmlFor="effectiveness">Effectiveness (0-10)</Label>
-              <Select
-                value={effectiveness?.toString() || ""}
-                onValueChange={(value) => setEffectiveness(parseInt(value))}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Rate effectiveness" />
-                </SelectTrigger>
-                <SelectContent>
-                  {Array.from({ length: 11 }, (_, i) => (
-                    <SelectItem key={i} value={i.toString()}>
-                      {i} - {i === 0 ? "Not effective" : i === 10 ? "Very effective" : ""}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="grid gap-2">
-              <Label htmlFor="review">Review (Optional)</Label>
-              <Textarea
-                id="review"
-                value={review}
-                onChange={(e) => setReview(e.target.value)}
-                placeholder="Share your experience with this treatment..."
+              <Label htmlFor="condition">Condition</Label>
+              <ConditionCombobox
+                patientConditions={conditions}
+                value={selectedCondition}
+                onValueChange={setSelectedCondition}
               />
             </div>
+
+            {selectedTreatment && selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && (
+              <>
+                <div className="grid gap-2">
+                  <Label htmlFor="effectiveness">Effectiveness (0-10)</Label>
+                  <Select
+                    value={effectiveness?.toString() || ""}
+                    onValueChange={(value) => setEffectiveness(parseInt(value))}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Rate effectiveness" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {Array.from({ length: 11 }, (_, i) => (
+                        <SelectItem key={i} value={i.toString()}>
+                          {i} - {i === 0 ? "Not effective" : i === 10 ? "Very effective" : ""}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="grid gap-2">
+                  <Label htmlFor="review">Review (Optional)</Label>
+                  <Textarea
+                    id="review"
+                    value={review}
+                    onChange={(e) => setReview(e.target.value)}
+                    placeholder="Share your experience with this treatment..."
+                  />
+                </div>
+              </>
+            )}
           </div>
           <DialogFooter>
             <Button 
               type="submit" 
-              disabled={!selectedTreatment || !selectedCondition || effectiveness === null || isLoading}
+              disabled={
+                !selectedTreatment || 
+                !selectedCondition || 
+                (selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) || 
+                isLoading
+              }
             >
               {isLoading ? "Adding..." : "Add Treatment"}
             </Button>

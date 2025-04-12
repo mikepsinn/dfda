@@ -219,3 +219,70 @@ export async function markRatingAsHelpfulAction(id: string): Promise<boolean> {
   
   return true
 }
+
+/**
+ * Adds a treatment rating for a specific user and condition.
+ * @param ratingData The data for the new treatment rating.
+ * This function differs from createTreatmentRatingAction by returning a success/error structure
+ * suitable for form submissions and not selecting profile data by default.
+ */
+export async function addTreatmentRatingAction(ratingData: TreatmentRatingInsert) {
+  // Basic validation
+  if (!ratingData.user_id || !ratingData.treatment_id) {
+    logger.error("Missing user_id or treatment_id for addTreatmentRatingAction", { ratingData })
+    throw new Error("User ID and Treatment ID are required.")
+  }
+  // Ensure condition_id is present, even if null (for "Not Specified")
+  if (ratingData.condition_id === undefined) {
+    logger.error("Missing condition_id for addTreatmentRatingAction", { ratingData })
+    throw new Error("Condition ID is required (can be null).")
+  }
+  // Effectiveness required only if condition_id is not null
+  if (ratingData.condition_id !== null && ratingData.effectiveness_out_of_ten === undefined) {
+    logger.error("Missing effectiveness for addTreatmentRatingAction when condition is specified", { ratingData })
+    throw new Error("Effectiveness is required when a specific condition is selected.")
+  }
+
+  const supabase = await createClient()
+  logger.info("Attempting to add treatment rating", { ratingData })
+
+  try {
+    // Prepare the data, ensuring nulls are handled correctly
+    const insertData: TreatmentRatingInsert = {
+      ...ratingData,
+      condition_id: ratingData.condition_id,
+      effectiveness_out_of_ten: ratingData.effectiveness_out_of_ten ?? null,
+      review: ratingData.review || null, // Ensure empty string becomes null
+      // unit_id IS required - ensure it's provided in ratingData
+      // helpful_count defaults to null or 0 based on schema
+    }
+
+    const { data: newRating, error: insertError } = await supabase
+      .from("treatment_ratings")
+      .insert(insertData)
+      .select() // Select only the inserted row data
+      .single()
+
+    if (insertError) {
+      logger.error("Error adding treatment rating", { ratingData, error: insertError })
+      throw insertError
+    }
+
+    logger.info("Successfully added treatment rating", { newRating })
+
+    // Revalidate paths
+    revalidatePath("/patient/treatments")
+    if (ratingData.treatment_id) {
+        revalidatePath(`/treatments/${ratingData.treatment_id}`)
+    }
+    if (ratingData.condition_id) {
+        revalidatePath(`/conditions/${ratingData.condition_id}`)
+    }
+
+    return { success: true, data: newRating, message: "Treatment rating added successfully." }
+
+  } catch (error) {
+    logger.error("Failed in addTreatmentRatingAction", { ratingData, error })
+    return { success: false, error: error instanceof Error ? error.message : "An unknown error occurred." }
+  }
+}
