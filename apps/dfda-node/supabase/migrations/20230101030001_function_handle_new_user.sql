@@ -1,5 +1,5 @@
 -- Create handle_new_user function
--- Inserts into profiles (if not exists) and creates a patients record if user_type is 'patient'
+-- Inserts into profiles (if not exists) and creates role-specific records (patients, providers, research_partners)
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger
 LANGUAGE plpgsql
@@ -18,12 +18,22 @@ BEGIN
   -- or being updated later.
   profile_user_type := (NEW.raw_user_meta_data ->> 'user_type')::public.user_role_enum;
 
-  -- If the user is a patient, create a corresponding patients record
+  -- Create role-specific records based on user_type
   IF profile_user_type = 'patient' THEN
     INSERT INTO public.patients (id)
     VALUES (NEW.id)
-    ON CONFLICT (id) DO NOTHING; -- Avoid error if patient record somehow exists
+    ON CONFLICT (id) DO NOTHING;
+  ELSIF profile_user_type = 'provider' THEN
+    INSERT INTO public.providers (id)
+    VALUES (NEW.id)
+    ON CONFLICT (id) DO NOTHING;
+  ELSIF profile_user_type = 'research-partner' THEN
+    -- Insert with a default institution name, as it's required
+    INSERT INTO public.research_partners (id, institution_name)
+    VALUES (NEW.id, '[Pending Institution Name]')
+    ON CONFLICT (id) DO NOTHING;
   END IF;
+  -- Add other role checks (admin, developer) here if needed
 
   RETURN NEW;
 END;

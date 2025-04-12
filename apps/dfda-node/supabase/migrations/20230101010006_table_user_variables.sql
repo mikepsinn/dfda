@@ -10,5 +10,8 @@ CREATE TABLE IF NOT EXISTS user_variables (
   image_url TEXT,
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+
+  -- Add unique constraint to prevent duplicate tracking
+  CONSTRAINT user_variables_user_global_variable_unique UNIQUE (user_id, global_variable_id)
 );

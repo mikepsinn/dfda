@@ -13,6 +13,7 @@ import { AddConditionDialog } from "./add-condition-dialog"
 import { AddTreatmentDialog } from "./add-treatment-dialog"
 import { ConditionsList } from "./conditions-list"
 import { TreatmentSearch } from "./treatment-search"
+import { SideEffectsDialog } from "./side-effects-dialog"
 
 const logger = createLogger("treatments-client")
 
@@ -23,6 +24,21 @@ type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"];
 type UserTreatment = TreatmentRating & {
   treatment_name: string; // Need to fetch this
   condition_name?: string; // Optional, as rating might not have condition
+};
+
+// Use patient_treatments type directly now
+type PatientTreatment = Database["public"]["Tables"]["patient_treatments"]["Row"] & {
+  treatment_name: string; // Need to join or fetch this
+  condition_name?: string; // Optional, fetchable via patient_conditions
+  // Add fields from the base patient_treatments table
+  start_date: string | null;
+  status: string;
+  patient_notes: string | null;
+  is_prescribed: boolean;
+  // Add rating details if joining?
+  effectiveness_out_of_ten?: number | null;
+  review?: string | null;
+  rating_id?: string | null; // ID of the rating if found
 };
 
 interface TreatmentsClientProps {
@@ -37,7 +53,7 @@ export function TreatmentsClient({
   conditionsError
 }: TreatmentsClientProps) {
   const [selectedTreatmentForSearch, setSelectedTreatmentForSearch] = useState<{ id: string; name: string } | null>(null)
-  const [userTreatments, setUserTreatments] = useState<UserTreatment[]>([])
+  const [userTreatments, setUserTreatments] = useState<PatientTreatment[]>([])
   const [isLoadingTreatments, setIsLoadingTreatments] = useState(true)
   const [treatmentsError, setTreatmentsError] = useState<string | null>(null)
 
@@ -45,57 +61,61 @@ export function TreatmentsClient({
   const [isRatingDialogOpen, setIsRatingDialogOpen] = useState(false)
   const [isSideEffectsDialogOpen, setIsSideEffectsDialogOpen] = useState(false)
   const [isReminderDialogOpen, setIsReminderDialogOpen] = useState(false)
-  const [selectedTreatmentForDialog, setSelectedTreatmentForDialog] = useState<UserTreatment | null>(null)
+  const [selectedTreatmentForDialog, setSelectedTreatmentForDialog] = useState<PatientTreatment | null>(null)
 
-  useEffect(() => {
-    const fetchUserTreatments = async () => {
-      setIsLoadingTreatments(true)
-      setTreatmentsError(null)
-      const supabase = createClient()
-      try {
-        // Fetch ratings linked to the user, joining with treatments and conditions
-        // Using left joins to ensure treatments without conditions/ratings are included if schema changes
-        const { data, error } = await supabase
-          .from('treatment_ratings') // Start from ratings as they link user and treatment
-          .select(`
-            *,
-            treatments!inner(id, global_variables!inner(name)),
-            conditions(id, global_variables!inner(name))
-          `)
-          .eq('user_id', userId)
-          .is('deleted_at', null)
-          .order('created_at', { ascending: false });
+  // Define fetchUserTreatments function here so it's accessible
+  const fetchUserTreatments = async () => {
+    setIsLoadingTreatments(true)
+    setTreatmentsError(null)
+    const supabase = createClient()
+    try {
+      // Fetch patient_treatments and join necessary related data
+      const { data, error } = await supabase
+        .from('patient_treatments')
+        .select(`
+          *,
+          treatments!inner(id, global_variables!inner(name)),
+          treatment_ratings(id, effectiveness_out_of_ten, review)
+        `)
+        .eq('patient_id', userId)
+        .order('created_at', { ascending: false });
 
-        if (error) {
-          // Handle case where no ratings exist gracefully (PGRST116: No rows found)
-          if (error.code === 'PGRST116') {
-             setUserTreatments([]);
-          } else {
-            throw error; // Rethrow other errors
-          }
+      if (error) {
+        // Handle case where no ratings exist gracefully (PGRST116: No rows found)
+        if (error.code === 'PGRST116') {
+           setUserTreatments([]);
         } else {
-          // Format the data
-          const formattedTreatments = data.map(rating => ({
-            ...rating,
-            // Safely access nested properties
-            treatment_name: (rating.treatments as any)?.global_variables?.name ?? 'Unknown Treatment',
-            condition_name: (rating.conditions as any)?.global_variables?.name ?? undefined,
-          }));
-
-          logger.info("Fetched user treatments", { userId, count: formattedTreatments.length });
-          setUserTreatments(formattedTreatments);
+          throw error; // Rethrow other errors
         }
-      } catch (error: any) {
-        logger.error("Error fetching user treatments", { userId, error: error.message });
-        setTreatmentsError("Failed to load your treatments. Please try again.");
-      } finally {
-        setIsLoadingTreatments(false);
+      } else {
+        // Format the data - combine patient_treatment with treatment name and optional rating
+        const formattedTreatments = data.map(pt => {
+          const rating = (pt.treatment_ratings as any)?.[0]; // Assuming one rating per patient_treatment for now
+          return {
+            ...pt,
+            treatment_name: (pt.treatments as any)?.global_variables?.name ?? 'Unknown Treatment',
+            // Condition name would require another join or separate fetch based on condition link if needed
+            effectiveness_out_of_ten: rating?.effectiveness_out_of_ten,
+            review: rating?.review,
+            rating_id: rating?.id,
+          };
+        });
+
+        logger.info("Fetched user patient treatments", { userId, count: formattedTreatments.length });
+        setUserTreatments(formattedTreatments);
       }
-    };
+    } catch (error: any) {
+      logger.error("Error fetching user patient treatments", { userId, error: error.message });
+      setTreatmentsError("Failed to load your treatments. Please try again.");
+    } finally {
+      setIsLoadingTreatments(false);
+    }
+  };
 
+  // Use the function in useEffect
+  useEffect(() => {
     fetchUserTreatments();
-  }, [userId]);
-
+  }, [userId]); // Dependency array might need fetchUserTreatments if it weren't stable
 
   const handleSelectTreatmentForSearch = (treatment: { id: string; name: string }) => {
     setSelectedTreatmentForSearch(treatment)
@@ -103,22 +123,21 @@ export function TreatmentsClient({
     console.log("Selected treatment in search:", treatment)
   }
 
-  const openRatingDialog = (treatment: UserTreatment) => {
+  const openRatingDialog = (treatment: PatientTreatment) => {
     setSelectedTreatmentForDialog(treatment);
     // setIsRatingDialogOpen(true); // Uncomment when dialog is created
-    alert(`Rating dialog for ${treatment.treatment_name} (ID: ${treatment.treatment_id}) - Coming Soon!`);
+    alert(`Rating dialog for ${treatment.treatment_name} (PatientTreatment ID: ${treatment.id}) - Coming Soon!`);
   }
 
-  const openSideEffectsDialog = (treatment: UserTreatment) => {
+  const openSideEffectsDialog = (treatment: PatientTreatment) => {
     setSelectedTreatmentForDialog(treatment);
-    // setIsSideEffectsDialogOpen(true); // Uncomment when dialog is created
-    alert(`Side Effects dialog for ${treatment.treatment_name} (ID: ${treatment.treatment_id}) - Coming Soon!`);
+    setIsSideEffectsDialogOpen(true); // Enable opening the dialog
   }
 
-  const openReminderDialog = (treatment: UserTreatment) => {
+  const openReminderDialog = (treatment: PatientTreatment) => {
     setSelectedTreatmentForDialog(treatment);
     // setIsReminderDialogOpen(true); // Uncomment when dialog is created
-    alert(`Reminder dialog for ${treatment.treatment_name} (ID: ${treatment.treatment_id}) - Coming Soon! DB schema needs update.`);
+    alert(`Reminder dialog for ${treatment.treatment_name} (PatientTreatment ID: ${treatment.id}) - Coming Soon! DB schema needs update.`);
   }
 
 
@@ -160,7 +179,7 @@ export function TreatmentsClient({
                 userTreatments.length === 0 ? (
                   <div className="text-center py-6">
                     <Music className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                    <p className="text-muted-foreground mb-4">No treatments added yet.</p>
+                    <p className="text-muted-foreground mb-4">No treatments being tracked yet.</p>
                     <AddTreatmentDialog userId={userId} conditions={initialConditions || []} />
                   </div>
                 ) : (
@@ -169,14 +188,15 @@ export function TreatmentsClient({
                       <Card key={treatment.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 gap-4">
                         <div className='flex-grow'>
                           <h4 className="font-semibold">{treatment.treatment_name}</h4>
-                          {treatment.condition_name && (
+                          {/* Display relevant info from patient_treatments */}
+                          <p className="text-sm text-muted-foreground">Status: <span className="capitalize">{treatment.status}</span></p>
+                          {treatment.start_date && 
                             <p className="text-sm text-muted-foreground">
-                              For: {treatment.condition_name}
-                            </p>
-                          )}
-                           {treatment.effectiveness_out_of_ten !== null && (
+                              Started: {new Date(treatment.start_date).toLocaleDateString()}
+                            </p>}
+                           {treatment.effectiveness_out_of_ten !== null && treatment.effectiveness_out_of_ten !== undefined && (
                              <p className="text-sm text-muted-foreground">
-                               Your Rating: {treatment.effectiveness_out_of_ten}/10
+                               Rating: {treatment.effectiveness_out_of_ten}/10
                              </p>
                            )}
                            {treatment.review && (
@@ -184,9 +204,15 @@ export function TreatmentsClient({
                                Review: "{treatment.review}"
                              </p>
                            )}
+                           {treatment.patient_notes && (
+                             <p className="text-sm text-muted-foreground mt-1">
+                               Notes: {treatment.patient_notes}
+                             </p>
+                           )}
                         </div>
                         <div className="flex flex-wrap gap-2 shrink-0">
-                          <Button variant="outline" size="sm" onClick={() => openRatingDialog(treatment)}>
+                           {/* Pass patient_treatment.id to dialogs */}
+                           <Button variant="outline" size="sm" onClick={() => openRatingDialog(treatment)}>
                             <Edit className="mr-1 h-4 w-4" /> Rate
                           </Button>
                           <Button variant="outline" size="sm" onClick={() => openSideEffectsDialog(treatment)}>
@@ -246,9 +272,19 @@ export function TreatmentsClient({
         </TabsContent>
       </Tabs>
 
+      {/* Render SideEffectsDialog conditionally */}
+      {isSideEffectsDialogOpen && selectedTreatmentForDialog && (
+          <SideEffectsDialog 
+              patientTreatmentId={selectedTreatmentForDialog.id} 
+              treatmentName={selectedTreatmentForDialog.treatment_name}
+              open={isSideEffectsDialogOpen} 
+              onOpenChange={setIsSideEffectsDialogOpen}
+              onSuccess={fetchUserTreatments} // Re-fetch treatments after success
+          />
+      )}
+
       {/* Placeholder for Dialogs - Implement these components next */}
       {/* {isRatingDialogOpen && <TreatmentRatingDialog treatment={selectedTreatmentForDialog} onClose={() => setIsRatingDialogOpen(false)} />} */}
-      {/* {isSideEffectsDialogOpen && <SideEffectsDialog treatment={selectedTreatmentForDialog} onClose={() => setIsSideEffectsDialogOpen(false)} />} */}
       {/* {isReminderDialogOpen && <ReminderDialog treatment={selectedTreatmentForDialog} onClose={() => setIsReminderDialogOpen(false)} />} */}
     </>
   )
