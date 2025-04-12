@@ -10,6 +10,8 @@ import { DeveloperPricingPlans } from "@/components/developers/DeveloperPricingP
 import { DeveloperTestimonials } from "@/components/developers/DeveloperTestimonials"
 
 export default function DeveloperPortal() {
+  const showPricingTab = false // Set to false to hide the pricing tab
+
   return (
     <main className="py-6 md:py-10">
       <div className="container">
@@ -120,11 +122,11 @@ export default function DeveloperPortal() {
             </div>
 
             <Tabs defaultValue="get-started">
-              <TabsList className="grid w-full grid-cols-4">
+              <TabsList className={`grid w-full ${showPricingTab ? "grid-cols-4" : "grid-cols-3"}`}>
                 <TabsTrigger value="get-started">Get Started</TabsTrigger>
                 <TabsTrigger value="documentation">Documentation</TabsTrigger>
                 <TabsTrigger value="examples">Code Examples</TabsTrigger>
-                <TabsTrigger value="pricing">Pricing</TabsTrigger>
+                {showPricingTab && <TabsTrigger value="pricing">Pricing</TabsTrigger>}
               </TabsList>
 
               <TabsContent value="get-started" className="space-y-6 pt-6">
@@ -270,17 +272,19 @@ export default function DeveloperPortal() {
                 </Card>
               </TabsContent>
 
-              <TabsContent value="pricing" className="space-y-6 pt-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>API Pricing</CardTitle>
-                    <CardDescription>Choose the plan that fits your needs</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <DeveloperPricingPlans />
-                  </CardContent>
-                </Card>
-              </TabsContent>
+              {showPricingTab && (
+                <TabsContent value="pricing" className="space-y-6 pt-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>API Pricing</CardTitle>
+                      <CardDescription>Choose the plan that fits your needs</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <DeveloperPricingPlans />
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              )}
             </Tabs>
 
             <Card>
@@ -340,7 +344,7 @@ export default function DeveloperPortal() {
 
             <DeveloperWhatYouCanBuild />
 
-            <DeveloperTestimonials />
+            {/* <DeveloperTestimonials /> */}
 
             <div className="mt-16 bg-primary/5 rounded-lg p-8">
               <h2 className="text-2xl font-bold text-center mb-8">Trusted by Leading Health Tech Companies</h2>
