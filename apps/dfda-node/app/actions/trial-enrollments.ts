@@ -3,6 +3,7 @@
 import { createServerClient } from "@/lib/supabase"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
+import { createClient } from '@/lib/supabase/server'
 
 export type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 export type TrialEnrollmentInsert = Database["public"]["Tables"]["trial_enrollments"]["Insert"]
@@ -167,4 +168,6 @@ export async function getTrialEnrollmentByTrialAndPatientAction(trialId: string,
   }
 
   return data
-} 
+}
+
+// Add action functions here later if needed 

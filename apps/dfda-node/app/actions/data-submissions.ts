@@ -120,4 +120,6 @@ export async function getDataSubmissionsAction(): Promise<DataSubmission[]> {
     logger.error('Error getting data submissions:', error)
     return []
   }
-} 
+}
+
+// Add action functions here later if needed 

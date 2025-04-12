@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "sb:local:start": "npx supabase start",
+    "db:local:reset-types": "pnpm run db:local:reset && pnpm run db:local:types",
     "check": "pnpm run type-check",
     "build": "next build",
     "build:scripts": "tsc --project ./scripts/tsconfig.json",
@@ -23,7 +24,6 @@
     "db:local:pull": "npx supabase db pull --local",
     "db:local:diff": "npx supabase db diff --local -f migrations",
     "db:local:types": "npx supabase gen types typescript --local > lib/database.types.ts",
-    "db:local:reset-types": "pnpm run db:local:reset && pnpm run db:local:types",
     "db:cloud:link": "npx supabase link --project-ref %SUPABASE_PROJECT_ID%",
     "db:cloud:push": "npx supabase db push --linked",
     "db:cloud:pull": "npx supabase db pull --linked",
