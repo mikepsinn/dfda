@@ -698,7 +698,7 @@ export type Database = {
           id: string
           last_name: string | null
           updated_at: string | null
-          user_type: Database["public"]["Enums"]["user_role_enum"]
+          user_type: Database["public"]["Enums"]["user_role_enum"] | null
         }
         Insert: {
           avatar_url?: string | null
@@ -709,7 +709,7 @@ export type Database = {
           id: string
           last_name?: string | null
           updated_at?: string | null
-          user_type: Database["public"]["Enums"]["user_role_enum"]
+          user_type?: Database["public"]["Enums"]["user_role_enum"] | null
         }
         Update: {
           avatar_url?: string | null
@@ -720,7 +720,7 @@ export type Database = {
           id?: string
           last_name?: string | null
           updated_at?: string | null
-          user_type?: Database["public"]["Enums"]["user_role_enum"]
+          user_type?: Database["public"]["Enums"]["user_role_enum"] | null
         }
         Relationships: []
       }
