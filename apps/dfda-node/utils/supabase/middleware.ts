@@ -57,7 +57,6 @@ export async function updateSession(request: NextRequest) {
   // refreshing the auth session may set a new cookie, which will be passed to
   // Server Components by the next().
   // https://supabase.com/docs/guides/auth/server-side/nextjs#managing-session-with-middleware
-  await supabase.auth.getUser()
 
   return response
 } 
