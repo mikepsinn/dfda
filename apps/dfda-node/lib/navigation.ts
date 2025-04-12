@@ -11,22 +11,24 @@ export interface NavItem {
 const patientNavItems: NavItem[] = [
   navigationTreeObject.patient, // Uses generated title (e.g., "Patient") and href
   navigationTreeObject.patient_treatments,
+  navigationTreeObject.patient_profile,
 ]
 
 const providerNavItems: NavItem[] = [
   navigationTreeObject.provider, // Uses generated title (e.g., "Provider") and href
-  // Add other provider-specific items here, e.g.:
-  // navigationTreeObject.provider_patients,
+  navigationTreeObject.provider_patients,
 ]
 
 const developerNavItems: NavItem[] = [
   navigationTreeObject.developer, // Uses generated title (e.g., "Developer") and href
-  // navigationTreeObject.developers_documentation,
+  navigationTreeObject.developers_documentation,
 ]
 
 const researchPartnerNavItems: NavItem[] = [
   navigationTreeObject.research_partner, // Uses generated title (e.g., "Research Partner") and href
-  // navigationTreeObject.research_partner_create_trial,
+  navigationTreeObject.research_partner_trials,
+  navigationTreeObject.research_partner_create_trial,
+  navigationTreeObject.research_partner_profile,
 ]
 
 const adminNavItems: NavItem[] = [
@@ -54,8 +56,12 @@ export const secondaryNavItems: NavItem[] = [
   navigationTreeObject.providers, // Use generated object
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
   navigationTreeObject.developers, // Use generated object
+  navigationTreeObject.find_trials,
   { title: "How It Works", href: "/#how-it-works" },
   { title: "About", href: "/#key-benefits" },
+  navigationTreeObject.contact,
+  navigationTreeObject.privacy,
+  navigationTreeObject.terms,
 ]
 
 // --- Navigation Logic Functions ---
