@@ -1,10 +1,8 @@
 import Link from "next/link"
-import { ArrowLeft, Key, Code, Database, Copy, ExternalLink, ChevronDown, FileText, Mail } from "lucide-react"
+import { Key, Code, Database, Copy, ExternalLink, ChevronDown, FileText, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm"
-import { OAuthApplicationForm } from "@/components/developers/OAuthApplicationForm"
 import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
 
 export default function DeveloperPortal() {
@@ -12,13 +10,6 @@ export default function DeveloperPortal() {
     <main className="py-6 md:py-10">
       <div className="container">
         <div className="mx-auto max-w-5xl">
-          <div className="mb-8 flex items-center gap-2">
-            <Link href="/public" className="text-muted-foreground hover:text-foreground">
-              <ArrowLeft className="h-4 w-4" />
-              <span className="sr-only">Back</span>
-            </Link>
-            <h1 className="text-2xl font-bold">Developer Portal</h1>
-          </div>
 
           <div className="space-y-8">
             <div className="rounded-lg bg-primary/5 p-8">
@@ -31,10 +22,12 @@ export default function DeveloperPortal() {
                   applications
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row justify-center gap-4">
-                  <Button size="lg">
-                    <Key className="mr-2 h-4 w-4" /> Get API Key
-                  </Button>
-                  <Link href="/app/(public)/developers/documentation">
+                  <Link href="/developers/signup">
+                    <Button size="lg">
+                      <Key className="mr-2 h-4 w-4" /> Sign Up for API Access
+                    </Button>
+                  </Link>
+                  <Link href="/developers/documentation">
                     <Button variant="outline" size="lg">
                       <Code className="mr-2 h-4 w-4" /> View Documentation
                     </Button>
@@ -138,25 +131,15 @@ export default function DeveloperPortal() {
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <div className="space-y-2">
-                      <h3 className="text-lg font-medium">1. Request an API Key</h3>
+                      <h3 className="text-lg font-medium">1. Sign Up</h3>
                       <p className="text-sm text-muted-foreground">
-                        Fill out the form below to request an API key. We&apos;ll review your request and send your API
-                        key to the provided email address.
+                        Sign up to get an API key. Optionally, you can also register an OAuth2 application if you need to access user-specific data.
                       </p>
-                      <div className="rounded-lg border p-4 mt-4">
-                        <ApiKeyRequestForm />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-medium">1.5. Register an OAuth2 Application (Optional)</h3>
-                      <p className="text-sm text-muted-foreground">
-                        If you need to access user-specific data or perform actions on behalf of users, register your
-                        application for OAuth2 access.
-                      </p>
-                      <div className="rounded-lg border p-4 mt-4">
-                        <OAuthApplicationForm />
-                      </div>
+                      <Link href="/developers/signup">
+                        <Button variant="outline" className="mt-2">
+                          <Key className="mr-2 h-4 w-4" /> Sign Up for Access
+                        </Button>
+                      </Link>
                     </div>
 
                     <div className="space-y-2">
@@ -197,7 +180,7 @@ export default function DeveloperPortal() {
                       <p className="text-sm text-muted-foreground">
                         Check out our comprehensive documentation to learn about all available endpoints and parameters.
                       </p>
-                      <Link href="/app/(public)/developers/documentation">
+                      <Link href="/developers/documentation">
                         <Button variant="outline" className="mt-2">
                           <ExternalLink className="mr-2 h-4 w-4" /> View Full Documentation
                         </Button>
@@ -224,7 +207,7 @@ export default function DeveloperPortal() {
                         <p className="text-sm text-muted-foreground mb-4">
                           Learn the basics of the API and how to make your first request.
                         </p>
-                        <Link href="/app/(public)/developers/documentation#getting-started">
+                        <Link href="/developers/documentation#getting-started">
                           <Button variant="outline" size="sm">
                             View Section
                           </Button>
@@ -235,7 +218,7 @@ export default function DeveloperPortal() {
                         <p className="text-sm text-muted-foreground mb-4">
                           Learn about API keys and OAuth 2.0 authentication.
                         </p>
-                        <Link href="/app/(public)/developers/documentation#auth">
+                        <Link href="/developers/documentation#auth">
                           <Button variant="outline" size="sm">
                             View Section
                           </Button>
@@ -246,7 +229,7 @@ export default function DeveloperPortal() {
                         <p className="text-sm text-muted-foreground mb-4">
                           Explore all available API endpoints and their parameters.
                         </p>
-                        <Link href="/app/(public)/developers/documentation#endpoints">
+                        <Link href="/developers/documentation#endpoints">
                           <Button variant="outline" size="sm">
                             View Section
                           </Button>
@@ -257,14 +240,14 @@ export default function DeveloperPortal() {
                         <p className="text-sm text-muted-foreground mb-4">
                           Learn how to handle errors and troubleshoot issues.
                         </p>
-                        <Link href="/app/(public)/developers/documentation#error-handling">
+                        <Link href="/developers/documentation#error-handling">
                           <Button variant="outline" size="sm">
                             View Section
                           </Button>
                         </Link>
                       </div>
                     </div>
-                    <Link href="/app/(public)/developers/documentation">
+                    <Link href="/developers/documentation">
                       <Button className="w-full">View Full Documentation</Button>
                     </Link>
                   </CardContent>
@@ -449,7 +432,7 @@ export default function DeveloperPortal() {
                       <p className="mt-1 text-sm text-muted-foreground">
                         Browse our comprehensive API documentation and guides
                       </p>
-                      <Link href="/app/(public)/developers/documentation">
+                      <Link href="/developers/documentation">
                         <Button variant="outline" size="sm" className="mt-4">
                           View Docs
                         </Button>
