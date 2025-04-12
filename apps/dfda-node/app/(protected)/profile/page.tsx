@@ -6,6 +6,7 @@ import { getServerUser } from "@/lib/server-auth"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from 'next/navigation'
 import { logger } from "@/lib/logger"
+import { ProfileForm } from '../user/profile/profile-form';
 
 // Server Action to update patient profile
 async function updatePatientProfile(formData: FormData) {
@@ -66,8 +67,7 @@ export default async function PatientProfilePage() {
     <main className="py-6 md:py-10">
       <div className="container">
         <div className="mx-auto max-w-2xl space-y-8">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Patient Profile</h1>
-          <p className="text-muted-foreground">Complete your profile to help us find relevant clinical trials for you.</p>
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Profile</h1>
 
           <Card>
             <CardHeader>
