@@ -1,5 +1,10 @@
 import type { User } from '@supabase/supabase-js'
 import { navigationTreeObject } from '../lib/generated-nav-tree' // Import generated object
+import type { Database } from './database.types' // Import Database type
+import { logger } from './logger' // Import the logger
+
+// Define UserRole type alias for clarity
+type UserRole = Database["public"]["Enums"]["user_role_enum"]
 
 // Ensure NavItem interface matches the structure in generated-nav-tree.ts
 export interface NavItem {
@@ -35,8 +40,8 @@ const adminNavItems: NavItem[] = [
   navigationTreeObject.admin, // Uses generated title (e.g., "Admin") and href
 ]
 
-// Map roles to their specific navigation items
-const roleNavItemsMap: Record<string, NavItem[]> = {
+// Map roles to their specific navigation items using the enum type for keys
+const roleNavItemsMap: Record<UserRole, NavItem[]> = {
   'patient': patientNavItems,
   'provider': providerNavItems,
   'developer': developerNavItems,
@@ -68,10 +73,35 @@ export const secondaryNavItems: NavItem[] = [
 
 // Function to get primary navigation items based *strictly* on user role via map lookup
 export const getLoggedInPrimaryNavItems = (user: User | null): NavItem[] => {
-  if (!user) return []
-  const userType = user.user_metadata?.user_type
-  // Return the specific array for the role, or an empty array if role not found/null
-  return userType ? roleNavItemsMap[userType] ?? [] : []
+  logger.debug('getLoggedInPrimaryNavItems called with user:', user)
+  if (!user) {
+    logger.debug('User is null, returning empty array.')
+    return []
+  }
+  // Log the raw user_type from metadata before casting
+  const rawUserType = user.user_metadata?.user_type
+  logger.debug('Raw user_metadata.user_type:', rawUserType)
+
+  // Ensure user_type exists
+  if (!rawUserType) {
+    logger.error('User object is missing user_metadata.user_type. Cannot determine navigation.', { userId: user.id })
+    throw new Error('User metadata (user_type) is missing. Check user data fetching.')
+  }
+
+  // Explicitly cast user_type to the enum type
+  const userType = rawUserType as UserRole
+  logger.debug('Cast userType:', userType)
+
+  // Return the specific array for the role, or an empty array if role not found
+  const items = roleNavItemsMap[userType]
+  if (items) {
+    logger.debug('Found items for role:', userType, items)
+    return items
+  } else {
+    // This case should ideally not happen if user_type is valid and in the enum
+    logger.warn('No navigation items defined for valid user_type:', userType)
+    return []
+  }
 }
 
 // Combine navigation items for mobile view

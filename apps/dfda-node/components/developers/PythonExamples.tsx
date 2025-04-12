@@ -21,7 +21,7 @@ def get_trials():
     }
 
     try:
-        response = requests.get('https://api.fdav2.gov/v1/trials', headers=headers, params=params)
+        response = requests.get('https://api.dfda.earth/v1/trials', headers=headers, params=params)
         response.raise_for_status()  # Raise exception for 4XX/5XX responses
 
         data = response.json()
@@ -46,7 +46,7 @@ def get_outcome_label(outcome_id):
     }
 
     try:
-        response = requests.get(f'https://api.fdav2.gov/v1/outcomes/{outcome_id}', headers=headers)
+        response = requests.get(f'https://api.dfda.earth/v1/outcomes/{outcome_id}', headers=headers)
         response.raise_for_status()
 
         data = response.json()

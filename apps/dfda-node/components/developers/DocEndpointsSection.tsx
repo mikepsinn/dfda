@@ -61,7 +61,7 @@ export function DocEndpointsSection() {
               </TabsList>
               <TabsContent value="request" className="mt-2">
                 <CodeBlock title="Example Request">
-                  {`curl -X GET "https://api.fdav2.gov/v1/trials?condition=diabetes&limit=2" \
+                  {`curl -X GET "https://api.dfda.earth/v1/trials?condition=diabetes&limit=2" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json"`}
                 </CodeBlock>
@@ -150,7 +150,7 @@ export function DocEndpointsSection() {
               </TabsList>
               <TabsContent value="request" className="mt-2">
                 <CodeBlock title="Example Request">
-                  {`curl -X GET "https://api.fdav2.gov/v1/trials/trial-123" \
+                  {`curl -X GET "https://api.dfda.earth/v1/trials/trial-123" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json"`}
                 </CodeBlock>
@@ -233,7 +233,7 @@ export function DocEndpointsSection() {
               </TabsList>
               <TabsContent value="request" className="mt-2">
                 <CodeBlock title="Example Request">
-                  {`curl -X GET "https://api.fdav2.gov/v1/user/profile" \
+                  {`curl -X GET "https://api.dfda.earth/v1/user/profile" \
   -H "Authorization: Bearer USER_ACCESS_TOKEN" \
   -H "Content-Type: application/json"`}
                 </CodeBlock>
@@ -272,7 +272,7 @@ export function DocEndpointsSection() {
               </TabsList>
               <TabsContent value="request" className="mt-2">
                 <CodeBlock title="Example Request">
-                  {`curl -X GET "https://api.fdav2.gov/v1/user/trials" \
+                  {`curl -X GET "https://api.dfda.earth/v1/user/trials" \
   -H "Authorization: Bearer USER_ACCESS_TOKEN" \
   -H "Content-Type: application/json"`}
                 </CodeBlock>
@@ -320,7 +320,7 @@ export function DocEndpointsSection() {
               </TabsList>
               <TabsContent value="request" className="mt-2">
                 <CodeBlock title="Example Request">
-                  {`curl -X POST "https://api.fdav2.gov/v1/user/trials/trial-456/enroll" \
+                  {`curl -X POST "https://api.dfda.earth/v1/user/trials/trial-456/enroll" \
   -H "Authorization: Bearer USER_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{

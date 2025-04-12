@@ -13,7 +13,7 @@ export function DocIntroductionSection() {
       <div className="rounded-lg bg-primary/5 p-4 mb-6">
         <h3 className="font-medium mb-2">Base URL</h3>
         <div className="flex items-center justify-between bg-muted rounded p-2">
-          <code className="text-sm">https://api.fdav2.gov/v1</code>
+          <code className="text-sm">https://api.dfda.earth/v1</code>
           <Button variant="ghost" size="sm">
             <Copy className="h-4 w-4" />
             <span className="sr-only">Copy</span>

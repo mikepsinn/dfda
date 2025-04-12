@@ -9,7 +9,7 @@ const API_KEY = 'your_api_key';
 
 async function getTrials() {
   try {
-    const response = await fetch('https://api.fdav2.gov/v1/trials?condition=diabetes&limit=10', {
+    const response = await fetch('https://api.dfda.earth/v1/trials?condition=diabetes&limit=10', {
       headers: {
         'Authorization': \`Bearer \${API_KEY}\`,
         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const API_KEY = 'your_api_key';
 
 async function compareEffectiveness() {
   try {
-    const response = await axios.get('https://api.fdav2.gov/v1/effectiveness/compare', {
+    const response = await axios.get('https://api.dfda.earth/v1/effectiveness/compare', {
       params: {
         treatments: 'metformin,glp1-agonists,sglt2-inhibitors',
         condition: 'type-2-diabetes'
@@ -66,7 +66,7 @@ const REDIRECT_URI = 'https://your-app.com/callback';
 
 // Step 1: Redirect user to authorization page
 function redirectToAuth() {
-  const authUrl = new URL('https://api.fdav2.gov/oauth/authorize');
+  const authUrl = new URL('https://api.dfda.earth/oauth/authorize');
   authUrl.searchParams.append('client_id', CLIENT_ID);
   authUrl.searchParams.append('redirect_uri', REDIRECT_URI);
   authUrl.searchParams.append('response_type', 'code');
@@ -84,7 +84,7 @@ async function handleCallback() {
   if (code) {
     try {
       // Exchange code for access token
-      const response = await fetch('https://api.fdav2.gov/oauth/token', {
+      const response = await fetch('https://api.dfda.earth/oauth/token', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -117,7 +117,7 @@ async function getUserProfile() {
   const accessToken = localStorage.getItem('access_token');
 
   try {
-    const response = await fetch('https://api.fdav2.gov/v1/user/profile', {
+    const response = await fetch('https://api.dfda.earth/v1/user/profile', {
       headers: {
         'Authorization': \`Bearer \${accessToken}\`,
         'Content-Type': 'application/json'

@@ -36,13 +36,7 @@ async function setUserRole(role: UserRoleEnum) {
       return // Stay on page if error
     } else {
       logger.info('User role set successfully', { userId: user.id, role });
-      // Redirect based on newly set role
-      const redirectPath = 
-        role === 'patient' ? '/patient/profile' : // Go to profile first
-        role === 'research-partner' ? '/research-partner/profile' : // Go to profile first
-        role === 'developer' ? '/developer' :
-        '/login'; // Fallback
-      redirect(redirectPath)
+      redirect(`/${role}`)
     }
   } catch (err) {
     logger.error('Unexpected error setting user role:', err)
@@ -73,12 +67,7 @@ export default async function SelectRolePage() {
   // If role exists, redirect to appropriate dashboard/profile
   if (profile?.user_type) {
     logger.info('User already has role, redirecting', { userId: user.id, role: profile.user_type });
-    const redirectPath = 
-      profile.user_type === 'patient' ? '/patient/profile' :
-      profile.user_type === 'research-partner' ? '/research-partner/profile' :
-      profile.user_type === 'developer' ? '/developer' :
-      '/'; // Fallback to homepage or a generic dashboard
-    redirect(redirectPath)
+    redirect(`/${profile.user_type}`)
   }
 
   // If no role, show selection options

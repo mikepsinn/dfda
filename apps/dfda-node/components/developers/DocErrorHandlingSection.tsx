@@ -68,7 +68,7 @@ export function DocErrorHandlingSection() {
     "code": "invalid_request",
     "message": "The 'condition' parameter is required",
     "status": 400,
-    "documentation_url": "https://api.fdav2.gov/docs/errors#invalid_request"
+    "documentation_url": "https://api.dfda.earth/docs/errors#invalid_request"
   }
 }`}
           </CodeBlock>

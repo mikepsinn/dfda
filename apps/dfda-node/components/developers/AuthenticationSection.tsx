@@ -22,7 +22,7 @@ export function AuthenticationSection() {
           <h5 className="text-sm font-medium">Authorization Flow</h5>
           <ol className="list-decimal list-inside text-sm text-muted-foreground space-y-1">
             <li>
-              Redirect users to <code>https://api.fdav2.gov/oauth/authorize</code>
+              Redirect users to <code>https://api.dfda.earth/oauth/authorize</code>
             </li>
             <li>User authenticates and grants permission to your app</li>
             <li>User is redirected back to your app with an authorization code</li>
@@ -33,7 +33,7 @@ export function AuthenticationSection() {
           <h5 className="text-sm font-medium mt-3">Example Token Request</h5>
           <div className="rounded-lg bg-muted p-4 mt-1">
             <pre className="text-sm overflow-auto">
-              {`POST https://api.fdav2.gov/oauth/token
+              {`POST https://api.dfda.earth/oauth/token
 Content-Type: application/x-www-form-urlencoded
 
 grant_type=authorization_code

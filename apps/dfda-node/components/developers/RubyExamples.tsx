@@ -12,7 +12,7 @@ require 'json'
 API_KEY = 'your_api_key'
 
 def get_trials
-  uri = URI('https://api.fdav2.gov/v1/trials')
+  uri = URI('https://api.dfda.earth/v1/trials')
   uri.query = URI.encode_www_form({
     condition: 'diabetes',
     limit: 10
@@ -57,7 +57,7 @@ def compare_effectiveness
   }
 
   begin
-    response = HTTParty.get('https://api.fdav2.gov/v1/effectiveness/compare', options)
+    response = HTTParty.get('https://api.dfda.earth/v1/effectiveness/compare', options)
 
     if response.success?
       puts response.parsed_response

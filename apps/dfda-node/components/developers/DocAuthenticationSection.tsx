@@ -19,7 +19,7 @@ export function DocAuthenticationSection() {
           </p>
           <CodeBlock title="API Key Authentication">
             {`// Include in all API requests
-const headers = {\n  'Authorization': 'Bearer YOUR_API_KEY',\n  'Content-Type': 'application/json'\n};\n\nfetch('https://api.fdav2.gov/v1/trials', { headers })\n  .then(response => response.json())\n  .then(data => console.log(data));`}
+const headers = {\n  'Authorization': 'Bearer YOUR_API_KEY',\n  'Content-Type': 'application/json'\n};\n\nfetch('https://api.dfda.earth/v1/trials', { headers })\n  .then(response => response.json())\n  .then(data => console.log(data));`}
           </CodeBlock>
         </div>
 
@@ -45,7 +45,7 @@ const headers = {\n  'Authorization': 'Bearer YOUR_API_KEY',\n  'Content-Type': 
 const REDIRECT_URI = 'https://your-app.com/callback';
 const SCOPES = 'user:read user.trials:read';
 
-function redirectToAuth() {\n  const authUrl = new URL('https://api.fdav2.gov/oauth/authorize');
+function redirectToAuth() {\n  const authUrl = new URL('https://api.dfda.earth/oauth/authorize');
   authUrl.searchParams.append('client_id', CLIENT_ID);
   authUrl.searchParams.append('redirect_uri', REDIRECT_URI);
   authUrl.searchParams.append('response_type', 'code');
@@ -57,7 +57,7 @@ function redirectToAuth() {\n  const authUrl = new URL('https://api.fdav2.gov/oa
 
             <CodeBlock title="2. Exchange Code for Token">
               {`// After receiving the code in your redirect URI
-async function exchangeCodeForToken(code) {\n  const response = await fetch('https://api.fdav2.gov/oauth/token', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/x-www-form-urlencoded',\n    },\n    body: new URLSearchParams({\n      grant_type: 'authorization_code',\n      code: code,\n      redirect_uri: REDIRECT_URI,\n      client_id: CLIENT_ID,\n      client_secret: 'YOUR_CLIENT_SECRET'\n    })\n  });
+async function exchangeCodeForToken(code) {\n  const response = await fetch('https://api.dfda.earth/oauth/token', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/x-www-form-urlencoded',\n    },\n    body: new URLSearchParams({\n      grant_type: 'authorization_code',\n      code: code,\n      redirect_uri: REDIRECT_URI,\n      client_id: CLIENT_ID,\n      client_secret: 'YOUR_CLIENT_SECRET'\n    })\n  });
 
   const data = await response.json();
   // Store tokens securely
@@ -74,7 +74,7 @@ const accessToken = localStorage.getItem('access_token');
 
 const headers = {\n  'Authorization': \`Bearer \${accessToken}\`,\n  'Content-Type': 'application/json'\n};\n
 
-fetch('https://api.fdav2.gov/v1/user/profile', { headers })\n  .then(response => response.json())\n  .then(data => console.log(data));`}
+fetch('https://api.dfda.earth/v1/user/profile', { headers })\n  .then(response => response.json())\n  .then(data => console.log(data));`}
             </CodeBlock>
           </div>
         </div>

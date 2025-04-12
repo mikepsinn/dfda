@@ -172,7 +172,7 @@ export default function DeveloperPortal() {
                       </p>
                       <div className="rounded-lg bg-muted p-4 mt-2">
                         <div className="flex items-center justify-between">
-                          <code className="text-sm">GET https://api.fdav2.gov/v1/trials</code>
+                          <code className="text-sm">GET https://api.dfda.earth/v1/trials</code>
                           <Button variant="ghost" size="sm">
                             <Copy className="h-4 w-4" />
                             <span className="sr-only">Copy</span>
