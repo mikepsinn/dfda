@@ -8,7 +8,7 @@ interface NavNode {
 }
 
 const appDirectory = path.resolve(process.cwd(), 'app');
-const ignoredSegments = new Set(['(auth)', '(public)', '(protected)', '(shared)', 'api', 'lib', 'actions', 'components']); // Add other segments/groups to ignore entirely
+const ignoredSegments = new Set(['lib', 'actions', 'components']); // Add other segments/groups to ignore entirely
 const ignoredFiles = new Set(['layout.tsx', 'loading.tsx', 'error.tsx', 'template.tsx', 'not-found.tsx']);
 
 const LOG_PREFIX = '[generate-nav-tree]';

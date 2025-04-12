@@ -7,6 +7,7 @@
     "sb:local:start": "npx supabase start",
     "check": "pnpm run type-check",
     "build": "next build",
+    "build:scripts": "tsc --project ./scripts/tsconfig.json",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
