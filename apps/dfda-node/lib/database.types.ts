@@ -885,7 +885,6 @@ export type Database = {
           id: string
           severity_out_of_ten: number | null
           treatment_id: string
-          unit_id: string
           updated_at: string | null
           user_id: string
         }
@@ -896,7 +895,6 @@ export type Database = {
           id?: string
           severity_out_of_ten?: number | null
           treatment_id: string
-          unit_id?: string
           updated_at?: string | null
           user_id: string
         }
@@ -907,7 +905,6 @@ export type Database = {
           id?: string
           severity_out_of_ten?: number | null
           treatment_id?: string
-          unit_id?: string
           updated_at?: string | null
           user_id?: string
         }
@@ -924,13 +921,6 @@ export type Database = {
             columns: ["treatment_id"]
             isOneToOne: false
             referencedRelation: "treatments"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "reported_side_effects_unit_id_fkey"
-            columns: ["unit_id"]
-            isOneToOne: false
-            referencedRelation: "units"
             referencedColumns: ["id"]
           },
           {
@@ -952,7 +942,6 @@ export type Database = {
           id: string
           review: string | null
           treatment_id: string
-          unit_id: string
           updated_at: string | null
           user_id: string
         }
@@ -965,7 +954,6 @@ export type Database = {
           id?: string
           review?: string | null
           treatment_id: string
-          unit_id?: string
           updated_at?: string | null
           user_id: string
         }
@@ -978,7 +966,6 @@ export type Database = {
           id?: string
           review?: string | null
           treatment_id?: string
-          unit_id?: string
           updated_at?: string | null
           user_id?: string
         }
@@ -1009,13 +996,6 @@ export type Database = {
             columns: ["treatment_id"]
             isOneToOne: false
             referencedRelation: "treatments"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "treatment_ratings_unit_id_fkey"
-            columns: ["unit_id"]
-            isOneToOne: false
-            referencedRelation: "units"
             referencedColumns: ["id"]
           },
           {
