@@ -2,11 +2,11 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
-import { DEMO_ACCOUNTS, UserType } from "@/lib/constants/demo-accounts";
+import { DEMO_ACCOUNTS, DemoUserType } from "@/lib/constants/demo-accounts";
 import type { Database } from "@/lib/database.types";
 
 // Helper function to clear existing demo data for a user
-async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, userType: UserType) {
+async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, userType: DemoUserType) {
   logger.info("Clearing existing demo data for user", { userId, userType });
 
   // Order matters due to foreign keys
@@ -36,7 +36,7 @@ async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createC
 }
 
 // Main function to seed data for a specific demo user
-export async function setupDemoUserData(userId: string, userType: UserType) {
+export async function setupDemoUserData(userId: string, userType: DemoUserType) {
   const supabase = await createClient();
   const account = DEMO_ACCOUNTS[userType];
   const seedData = account.seedData as any; 

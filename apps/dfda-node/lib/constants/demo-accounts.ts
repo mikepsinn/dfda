@@ -35,7 +35,7 @@ interface DemoResearchPartnerSeedData {
 
 // --- Demo Account Configuration --- 
 
-export type UserType = keyof typeof DEMO_ACCOUNTS;
+export type DemoUserType = keyof typeof DEMO_ACCOUNTS;
 
 export const DEMO_ACCOUNTS = {
   patient: {

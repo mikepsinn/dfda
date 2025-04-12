@@ -2,7 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import { DEMO_ACCOUNTS, UserType } from '@/lib/constants/demo-accounts'
+import { DEMO_ACCOUNTS, DemoUserType } from '@/lib/constants/demo-accounts'
 import { createLogger } from '@/lib/logger'
 import { AuthApiError } from '@supabase/supabase-js'
 import { setupDemoUserData } from './seed-demo-data' // Import the new seeding function
@@ -10,7 +10,7 @@ import { setupDemoUserData } from './seed-demo-data' // Import the new seeding f
 const logger = createLogger('demo-login')
 
 // Helper function to upsert profile data (now simpler, only profile fields)
-async function upsertProfile(userId: string, userType: UserType) {
+async function upsertProfile(userId: string, userType: DemoUserType) {
   const supabase = await createClient()
   const account = DEMO_ACCOUNTS[userType]
   logger.info('Upserting profile data', { userId, userType })
@@ -29,7 +29,7 @@ async function upsertProfile(userId: string, userType: UserType) {
 }
 
 // Updated demoLogin: Calls setupDemoUserData after successful auth
-export async function demoLogin(userType: UserType = "patient") {
+export async function demoLogin(userType: DemoUserType = "patient") {
   logger.info('Starting login process', { userType })
   const supabase = await createClient()
   const account = DEMO_ACCOUNTS[userType]
