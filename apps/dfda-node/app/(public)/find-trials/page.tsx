@@ -1,24 +1,6 @@
-"use client"
-
-import { useRouter } from "next/navigation"
-import { useState } from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ConditionSearch } from "@/components/ConditionSearch"
-import type { Database } from "@/lib/database.types"
-
-type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+import { FindTrialsForm } from "./components/find-trials-form"
 
 export default function FindTrialsPage() {
-  const router = useRouter()
-  const [selectedConditions, setSelectedConditions] = useState<{ id: string; name: string }[]>([])
-
-  const handleConditionSelect = (condition: { id: string; name: string }) => {
-    if (condition && !selectedConditions.some(c => c.id === condition.id)) {
-      setSelectedConditions([...selectedConditions, condition])
-    }
-    router.push(`/conditions/${condition.id}/trials`)
-  }
-
   return (
     <div className="container max-w-2xl py-6 space-y-6">
       <div>
@@ -27,18 +9,7 @@ export default function FindTrialsPage() {
           Search for clinical trials by medical condition
         </p>
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Search Conditions</CardTitle>
-          <CardDescription>
-            Search for a medical condition to find relevant clinical trials
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ConditionSearch onSelect={handleConditionSelect} selected={null} />
-        </CardContent>
-      </Card>
+      <FindTrialsForm />
     </div>
   )
 } 

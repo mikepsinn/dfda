@@ -1,31 +1,9 @@
-"use client"
-
-import { useState } from "react"
 import Link from "next/link"
-// Update the import for Check icon
 import { ArrowLeft } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Step1TrialDetails } from "./components/step-1-trial-details"
-import { Step2Insurance } from "./components/step-2-insurance"
-import { Step3Parameters } from "./components/step-3-parameters"
-import { Step4Review } from "./components/step-4-review"
-import { StepIndicator } from "./components/step-indicator"
+import { CreateTrialWizard } from "./components/create-trial-wizard"
 
-// Update the page component to handle step clicks
-export default function CreateTrial() {
-  const [step, setStep] = useState(1)
-
-  const nextStep = () => setStep(step + 1)
-  const prevStep = () => setStep(step - 1)
-  const goToStep = (stepNumber: number) => setStep(stepNumber)
-
-  const steps = [
-    { number: 1, label: "Trial Details" },
-    { number: 2, label: "Insurance" },
-    { number: 3, label: "Parameters" },
-    { number: 4, label: "Review & Submit" },
-  ]
-
+// Keep this a Server Component
+export default function CreateTrialPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1 py-6 md:py-10">
@@ -39,14 +17,7 @@ export default function CreateTrial() {
               <h1 className="text-2xl font-bold">Create a Decentralized Clinical Trial</h1>
             </div>
 
-            <StepIndicator currentStep={step} steps={steps} onStepClick={goToStep} />
-
-            <Card>
-              {step === 1 && <Step1TrialDetails nextStep={nextStep} />}
-              {step === 2 && <Step2Insurance nextStep={nextStep} prevStep={prevStep} />}
-              {step === 3 && <Step3Parameters nextStep={nextStep} prevStep={prevStep} />}
-              {step === 4 && <Step4Review prevStep={prevStep} />}
-            </Card>
+            <CreateTrialWizard />
           </div>
         </div>
       </main>

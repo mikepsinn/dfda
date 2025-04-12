@@ -116,7 +116,7 @@ export async function getTreatmentsForConditionAction(conditionId: string): Prom
     `)
     .eq('treatment_ratings.condition_id', conditionId)
     .not('deleted_at', 'is', null)
-    .order('treatment_ratings.effectiveness_out_of_ten', { ascending: false })
+    .order('effectiveness_out_of_ten', { foreignTable: 'treatment_ratings', ascending: false })
 
   if (response.error) {
     logger.error('Error fetching treatments for condition:', { error: response.error })

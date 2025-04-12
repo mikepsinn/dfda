@@ -1,17 +1,15 @@
-"use client"
 import Link from "next/link"
-import { ArrowLeft, BarChart, Download, FileText, LineChart, PieChart, Users } from "lucide-react"
-
+import { ArrowLeft, Download, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
+import { TrialResultsTabs } from "./components/trial-results-tabs"
 
-export default function TrialResults({ params }) {
-  const trialId = params.id
-
-  // Mock trial data
-  const trialData = {
+// Mock trial data (Ideally fetched in Server Component)
+const getTrialData = (trialId: string) => {
+  // In a real scenario, fetch data based on trialId here
+  // For now, return the mock data structure
+  return {
     id: trialId,
     name: "Efficacy of Treatment A for Type 2 Diabetes",
     research_partner: "Innovative Therapeutics Inc.",
@@ -71,7 +69,13 @@ export default function TrialResults({ params }) {
         { name: "Allergic Reaction", treatment: 1, control: 0 },
       ],
     },
+    // Add engagement data if needed
   }
+}
+
+export default async function TrialResultsPage({ params }: { params: { id: string } }) {
+  const trialId = params.id
+  const trialData = getTrialData(trialId) // Fetch or get mock data
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -149,274 +153,7 @@ export default function TrialResults({ params }) {
               </CardContent>
             </Card>
 
-            <Tabs defaultValue="efficacy" className="space-y-4">
-              <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="efficacy">Efficacy</TabsTrigger>
-                <TabsTrigger value="safety">Safety</TabsTrigger>
-                <TabsTrigger value="demographics">Demographics</TabsTrigger>
-                <TabsTrigger value="engagement">Engagement</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="efficacy" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Primary Endpoint</CardTitle>
-                    <CardDescription>{trialData.efficacy.primaryEndpoint.name}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="h-[300px] flex items-center justify-center">
-                      <div className="text-center">
-                        <BarChart className="mx-auto h-12 w-12 text-muted-foreground" />
-                        <h3 className="mt-4 text-lg font-medium">Primary Endpoint Results</h3>
-                        <div className="mt-4 grid grid-cols-2 gap-8 max-w-md mx-auto">
-                          <div className="rounded-lg border p-4">
-                            <div className="text-sm text-muted-foreground">Treatment Group</div>
-                            <div className="text-2xl font-bold text-primary">
-                              {trialData.efficacy.primaryEndpoint.treatmentGroup > 0 ? "+" : ""}
-                              {trialData.efficacy.primaryEndpoint.treatmentGroup}%
-                            </div>
-                          </div>
-                          <div className="rounded-lg border p-4">
-                            <div className="text-sm text-muted-foreground">Control Group</div>
-                            <div className="text-2xl font-bold">
-                              {trialData.efficacy.primaryEndpoint.controlGroup > 0 ? "+" : ""}
-                              {trialData.efficacy.primaryEndpoint.controlGroup}%
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mt-4 text-sm">
-                          <span className="font-medium">p-value:</span> {trialData.efficacy.primaryEndpoint.pValue}
-                          <span className="ml-2 text-green-600 font-medium">(Statistically Significant)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Secondary Endpoints</CardTitle>
-                    <CardDescription>Additional efficacy measurements</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-6">
-                      {trialData.efficacy.secondaryEndpoints.map((endpoint, index) => (
-                        <div key={index} className="rounded-lg border p-4">
-                          <h3 className="font-medium mb-4">{endpoint.name}</h3>
-                          <div className="grid grid-cols-2 gap-4 mb-4">
-                            <div className="rounded-lg bg-muted p-3 text-center">
-                              <div className="text-sm text-muted-foreground">Treatment Group</div>
-                              <div className="text-xl font-bold text-primary">
-                                {endpoint.treatmentGroup > 0 ? "+" : ""}
-                                {endpoint.treatmentGroup} {endpoint.unit}
-                              </div>
-                            </div>
-                            <div className="rounded-lg bg-muted p-3 text-center">
-                              <div className="text-sm text-muted-foreground">Control Group</div>
-                              <div className="text-xl font-bold">
-                                {endpoint.controlGroup > 0 ? "+" : ""}
-                                {endpoint.controlGroup} {endpoint.unit}
-                              </div>
-                            </div>
-                          </div>
-                          <div className="text-sm">
-                            <span className="font-medium">p-value:</span> {endpoint.pValue}
-                            {endpoint.pValue < 0.05 && (
-                              <span className="ml-2 text-green-600 font-medium">(Statistically Significant)</span>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="safety" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Adverse Events</CardTitle>
-                    <CardDescription>Reported side effects and adverse events</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="h-[300px] flex items-center justify-center">
-                      <div className="text-center">
-                        <BarChart className="mx-auto h-12 w-12 text-muted-foreground" />
-                        <h3 className="mt-4 text-lg font-medium">Adverse Events Comparison</h3>
-                        <div className="mt-6 space-y-4 max-w-2xl mx-auto">
-                          {trialData.safety.adverseEvents.map((event, index) => (
-                            <div key={index} className="grid grid-cols-3 items-center gap-4">
-                              <div className="text-sm font-medium text-right">{event.name}</div>
-                              <div className="col-span-2 flex items-center gap-2">
-                                <div className="w-full bg-gray-200 rounded-full h-2.5">
-                                  <div
-                                    className="bg-primary h-2.5 rounded-full"
-                                    style={{ width: `${(event.treatment / 100) * 100}%` }}
-                                  ></div>
-                                </div>
-                                <span className="text-sm">{event.treatment}%</span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Serious Adverse Events</CardTitle>
-                    <CardDescription>Serious adverse events reported during the trial</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {trialData.safety.seriousEvents.length > 0 ? (
-                        trialData.safety.seriousEvents.map((event, index) => (
-                          <div key={index} className="rounded-lg border p-4">
-                            <div className="flex justify-between items-center">
-                              <h3 className="font-medium">{event.name}</h3>
-                              <div className="flex gap-4">
-                                <div className="text-center">
-                                  <div className="text-sm text-muted-foreground">Treatment Group</div>
-                                  <div className="font-bold">{event.treatment} cases</div>
-                                </div>
-                                <div className="text-center">
-                                  <div className="text-sm text-muted-foreground">Control Group</div>
-                                  <div className="font-bold">{event.control} cases</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))
-                      ) : (
-                        <div className="text-center py-8">
-                          <p className="text-muted-foreground">No serious adverse events reported</p>
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="demographics" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Participant Demographics</CardTitle>
-                    <CardDescription>Demographic breakdown of trial participants</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-4">Gender Distribution</h3>
-                        <div className="h-[200px] flex items-center justify-center">
-                          <PieChart className="h-12 w-12 text-muted-foreground" />
-                        </div>
-                        <div className="mt-4 grid grid-cols-2 gap-4 text-center">
-                          <div>
-                            <div className="text-sm text-muted-foreground">Male</div>
-                            <div className="font-bold">{trialData.demographics.gender.male}%</div>
-                          </div>
-                          <div>
-                            <div className="text-sm text-muted-foreground">Female</div>
-                            <div className="font-bold">{trialData.demographics.gender.female}%</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-4">Age Distribution</h3>
-                        <div className="h-[200px] flex items-center justify-center">
-                          <BarChart className="h-12 w-12 text-muted-foreground" />
-                        </div>
-                        <div className="mt-4 grid grid-cols-4 gap-2 text-center">
-                          {Object.entries(trialData.demographics.ageGroups).map(([range, percentage]) => (
-                            <div key={range}>
-                              <div className="text-sm text-muted-foreground">{range}</div>
-                              <div className="font-bold">{percentage}%</div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg border p-4 md:col-span-2">
-                        <h3 className="font-medium mb-4">Ethnicity Distribution</h3>
-                        <div className="h-[200px] flex items-center justify-center">
-                          <BarChart className="h-12 w-12 text-muted-foreground" />
-                        </div>
-                        <div className="mt-4 grid grid-cols-5 gap-2 text-center">
-                          {Object.entries(trialData.demographics.ethnicity).map(([group, percentage]) => (
-                            <div key={group}>
-                              <div className="text-sm text-muted-foreground">{group}</div>
-                              <div className="font-bold">{percentage}%</div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="engagement" className="space-y-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Participant Engagement</CardTitle>
-                    <CardDescription>Metrics on participant engagement and retention</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-4">Data Completion Rate</h3>
-                        <div className="h-[200px] flex items-center justify-center">
-                          <LineChart className="h-12 w-12 text-muted-foreground" />
-                        </div>
-                        <div className="mt-4 text-center">
-                          <div className="text-sm text-muted-foreground">Overall Completion Rate</div>
-                          <div className="text-2xl font-bold text-primary">87%</div>
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg border p-4">
-                        <h3 className="font-medium mb-4">Retention Rate</h3>
-                        <div className="h-[200px] flex items-center justify-center">
-                          <Users className="h-12 w-12 text-muted-foreground" />
-                        </div>
-                        <div className="mt-4 text-center">
-                          <div className="text-sm text-muted-foreground">Participant Retention</div>
-                          <div className="text-2xl font-bold text-primary">95%</div>
-                          <div className="text-xs text-muted-foreground mt-1">
-                            {trialData.participants.withdrawn} withdrawals out of {trialData.participants.total}{" "}
-                            participants
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="rounded-lg border p-4 md:col-span-2">
-                        <h3 className="font-medium mb-4">Follow-up Completion by Milestone</h3>
-                        <div className="h-[200px] flex items-center justify-center">
-                          <BarChart className="h-12 w-12 text-muted-foreground" />
-                        </div>
-                        <div className="mt-4 grid grid-cols-3 gap-4 text-center">
-                          <div>
-                            <div className="text-sm text-muted-foreground">Baseline</div>
-                            <div className="font-bold">100%</div>
-                          </div>
-                          <div>
-                            <div className="text-sm text-muted-foreground">4-Week</div>
-                            <div className="font-bold">92%</div>
-                          </div>
-                          <div>
-                            <div className="text-sm text-muted-foreground">8-Week</div>
-                            <div className="font-bold">87%</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </TabsContent>
-            </Tabs>
+            <TrialResultsTabs trialData={trialData} />
           </div>
         </div>
       </main>

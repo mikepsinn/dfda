@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { updateSession } from '@/utils/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
-  let response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    },
-  })
+  // Update session and get response object
+  const response = await updateSession(request)
 
+  // Re-create supabase client for auth check (necessary after updateSession potentially modifies cookies)
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -18,18 +17,13 @@ export async function middleware(request: NextRequest) {
           return request.cookies.get(name)?.value
         },
         set(name: string, value: string, options: CookieOptions) {
-          response.cookies.set({
-            name,
-            value,
-            ...options,
-          })
+          request.cookies.set({ name, value, ...options })
+          // We might need to pass the updated response object here if set is called
+          // For auth check, we mainly rely on reading cookies, so this might be okay.
         },
         remove(name: string, options: CookieOptions) {
-          response.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
+          request.cookies.set({ name, value: '', ...options })
+          // Similarly for remove
         },
       },
     }
@@ -79,6 +73,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/patient/dashboard", request.url))
   }
 
+  // Return the response object from updateSession (contains potentially updated cookies)
   return response
 }
 

@@ -82,6 +82,18 @@ export function Header({ initialUser }: HeaderProps) {
   // Secondary navigation items (in the "More" dropdown)
   const secondaryNavItems: NavItem[] = [
     {
+      title: "Patients",
+      href: "/patients",
+    },
+    {
+      title: "Providers",
+      href: "/providers",
+    },
+    {
+      title: "Research Partners",
+      href: "/research-partners",
+    },
+    {
       title: "Developers",
       href: "/developers",
     },

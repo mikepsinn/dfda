@@ -1,19 +1,10 @@
-"use client"
-
-import { useState } from 'react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { getServerUser } from "@/lib/server-auth"
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { AddConditionDialog } from "./components/add-condition-dialog"
 import { AddTreatmentDialog } from "./components/add-treatment-dialog"
-import { ConditionsList } from "./components/conditions-list"
-import { TreatmentsList } from "./components/treatments-list"
-import { TreatmentSearch } from "./components/treatment-search"
 import { getPatientConditionsAction } from '@/app/actions/patient-conditions'
-import { Music } from "lucide-react"
 import type { Database } from "@/lib/database.types"
+import { TreatmentsClient } from "./components/treatments-client"
 
 // Define PatientCondition type alias
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
@@ -37,13 +28,6 @@ export default async function TreatmentsPage() {
     console.error("Error fetching conditions in page:", conditionsError)
   }
 
-  const [selectedTreatment, setSelectedTreatment] = useState<{ id: string; name: string } | null>(null)
-
-  const handleSelectTreatment = (treatment: { id: string; name: string }) => {
-    setSelectedTreatment(treatment)
-    // TODO: Do something with the selected treatment, e.g., show details
-  }
-
   return (
     <div className="container py-6">
       <div className="flex justify-between items-center mb-8">
@@ -57,64 +41,12 @@ export default async function TreatmentsPage() {
         </div>
       </div>
 
-      <Tabs defaultValue="conditions" className="space-y-4">
-        <TabsList>
-          <TabsTrigger value="conditions">My Conditions & Treatments</TabsTrigger>
-          <TabsTrigger value="search">Search Treatments</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="conditions" className="space-y-4">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle>Active Conditions</CardTitle>
-                <CardDescription>Your current health conditions</CardDescription>
-              </CardHeader>
-              <CardContent>
-                {conditions && conditions.length > 0 ? (
-                  <ConditionsList conditions={conditions} />
-                ) : (
-                  <div className="text-center py-6">
-                    <Music className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                    <p className="text-muted-foreground mb-4">No conditions added yet.</p>
-                    <AddConditionDialog userId={user.id} />
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
-            <Card className="md:col-span-2">
-              <CardHeader>
-                <CardTitle>Current Treatments</CardTitle>
-                <CardDescription>Treatments you're currently using</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <TreatmentsList 
-                  conditions={conditions || []} 
-                  userId={user.id}
-                />
-              </CardContent>
-            </Card>
-          </div>
-        </TabsContent>
-
-        <TabsContent value="search">
-          <Card>
-            <CardHeader>
-              <CardTitle>Treatment Search</CardTitle>
-              <CardDescription>
-                Search for treatments and see their effectiveness ratings
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <TreatmentSearch 
-                onSelect={handleSelectTreatment}
-                selected={selectedTreatment}
-              />
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+      {/* Render the client component, passing server-fetched data */}
+      <TreatmentsClient 
+        userId={user.id} 
+        initialConditions={conditions} 
+        conditionsError={conditionsError}
+      />
     </div>
   )
 } 
