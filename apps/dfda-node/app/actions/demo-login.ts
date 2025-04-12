@@ -33,7 +33,7 @@ export async function demoLogin(userType: UserType = "patient") {
         logger.error('Profile update failed', { error: updateError })
       }
 
-      const redirectUrl = `/${userType}/dashboard`
+      const redirectUrl = `/${userType}/`
       logger.info('Redirecting to dashboard', { redirectUrl })
       redirect(redirectUrl)
     }

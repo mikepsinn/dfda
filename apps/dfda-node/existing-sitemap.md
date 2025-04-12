@@ -55,7 +55,7 @@ This document outlines the existing directory structure of the dfda-node app bef
 
 ### Provider Routes
 - app/provider (Provider features)
-  - app/provider/dashboard
+  - app/provider/
   - app/provider/ehr-authorization
   - app/provider/ehr-authorization/[patientId]
   - app/provider/find-trials
@@ -71,7 +71,7 @@ This document outlines the existing directory structure of the dfda-node app bef
 ### Research Partner Routes
 - app/research-partner (Research partner features)
   - app/research-partner/create-trial
-  - app/research-partner/dashboard
+  - app/research-partner/
   - app/research-partner/trials
   - app/research-partner/trials/[id]
   - app/research-partner/trials/[id]/results

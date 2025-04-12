@@ -9,7 +9,7 @@ export function HeroSection() {
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
-              A New Era in Medical Research
+              Accelerating Discovery
             </div>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               FDA v2: Making Clinical Trials <span className="text-primary">80X Cheaper</span> & More Accessible

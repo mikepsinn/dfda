@@ -1,0 +1,25 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "../dist/scripts",
+    "rootDir": ".",
+    "noEmit": false,
+    "isolatedModules": false,
+    "target": "ES2017",
+    "skipLibCheck": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "app",
+    "components",
+    "lib",
+    "tests",
+    ".next",
+    "dist"
+  ]
+} 

@@ -164,13 +164,13 @@ This is the core application template described by the sitemap below.
 ## Shared Authenticated Features
 - [ ] `/(shared)/`
   - [ ] `/profile` - User profile management (Admin, Provider, Patient) (Score: 7)
-  - [ ] `/dashboard` - Role-adaptive dashboard (Admin, Provider, Patient) (Score: 8)
+  - [ ] `/` - Role-adaptive dashboard (Admin, Provider, Patient) (Score: 8)
   - [ ] `/notifications` - User notifications center (Score: 7)
   - [ ] `/settings/account` - Manage account settings (password, MFA) (Score: 7)
   - [ ] `/settings/consent` - Manage data sharing and usage consents (especially for Patients) (Score: 10)
 
 ## Patient Features (Auth Required)
-  - [x] `/patient/dashboard` - Personalized overview, alerts, insights summary (Score: 8)
+  - [x] `/patient/` - Personalized overview, alerts, insights summary (Score: 8)
   - [ ] `/patient/log` - Central logging hub (Score: 9)
     - [ ] `/patient/log/treatment` - Log medications, therapies, etc. (Link to purchased item if applicable) (Score: 9)
     - [ ] `/patient/log/symptom` - Log symptoms, severity, duration (Score: 9)
@@ -207,7 +207,7 @@ This is the core application template described by the sitemap below.
 
 
 ## Provider Features (Auth Required)
-  - [x] `/provider/dashboard` - Provider-specific dashboard view (Score: 8)
+  - [x] `/provider/` - Provider-specific dashboard view (Score: 8)
   - [ ] `/provider/trials` - View assigned trials (Score: 8)
   - [ ] `/provider/trials/[id]/patients` - Manage patients enrolled in a specific trial (Score: 9)
   - [ ] `/provider/patients/[id]/profile` - View patient profile overview (Score: 7)
@@ -231,7 +231,7 @@ This is the core application template described by the sitemap below.
   - [ ] `/developers/api-keys` - Manage API keys for instance integration (Score: 7)
 
 ## Admin Features (Instance Configuration & Management)
-  - [x] `/admin/dashboard` - Overview of instance activity, usage metrics, billing status (Score: 8)
+  - [x] `/admin/` - Overview of instance activity, usage metrics, billing status (Score: 8)
   - [ ] `/admin/users` - Manage Provider & Patient accounts (Seat/Patient limits based on subscription) (Score: 9)
   - [ ] `/admin/roles` - Manage user roles and permissions within the instance (Score: 8)
   - [ ] `/admin/trials` - Create & Oversee trials run on this instance (Active trial limits based on subscription/usage) (Score: 10)

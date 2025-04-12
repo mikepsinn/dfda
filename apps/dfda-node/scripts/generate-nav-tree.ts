@@ -1,0 +1,194 @@
+import fs from 'fs';
+import path from 'path';
+
+interface NavNode {
+  name: string; // User-friendly name
+  path: string; // URL path
+  children?: NavNode[];
+}
+
+const appDirectory = path.resolve(process.cwd(), 'app');
+const ignoredSegments = new Set(['(auth)', '(public)', '(protected)', '(shared)', 'api', 'lib', 'actions', 'components']); // Add other segments/groups to ignore entirely
+const ignoredFiles = new Set(['layout.tsx', 'loading.tsx', 'error.tsx', 'template.tsx', 'not-found.tsx']);
+
+const LOG_PREFIX = '[generate-nav-tree]';
+
+console.log(`${LOG_PREFIX} Starting navigation tree generation from: ${path.relative(process.cwd(), appDirectory)}`);
+
+// Helper to format directory/segment names into titles
+function formatSegmentName(segment: string): string {
+  if (segment.startsWith('[...') && segment.endsWith(']')) {
+    return `Catch-all (${segment.slice(4, -1)})`;
+  }
+  if (segment.startsWith('[') && segment.endsWith(']')) {
+    return `Dynamic (${segment.slice(1, -1)})`;
+  }
+  // Convert kebab-case or snake_case to Title Case
+  return segment
+    .replace(/[-_]/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function generateNavTreeRecursive(dirPath: string, currentPath: string): NavNode | null {
+  console.log(`${LOG_PREFIX} Processing directory: ${path.relative(process.cwd(), dirPath)} (Path: ${currentPath || '/'})`);
+  try {
+    const stats = fs.statSync(dirPath);
+    if (!stats.isDirectory()) {
+      console.log(`${LOG_PREFIX}   -> Not a directory, skipping.`);
+      return null;
+    }
+
+    const children: NavNode[] = [];
+    let hasPage = false;
+    let currentSegment = path.basename(dirPath);
+
+    if (fs.existsSync(path.join(dirPath, 'page.tsx'))) {
+      console.log(`${LOG_PREFIX}   -> Found page.tsx`);
+      hasPage = true;
+    }
+
+    const entries = fs.readdirSync(dirPath);
+
+    for (const entry of entries) {
+      const fullEntryPath = path.join(dirPath, entry);
+      const entryStats = fs.statSync(fullEntryPath);
+
+      if (entryStats.isDirectory()) {
+        if (ignoredSegments.has(entry)) {
+          console.log(`${LOG_PREFIX}   -> Skipping ignored segment: ${entry}`);
+          continue;
+        }
+
+        if (entry.startsWith('(') && entry.endsWith(')')) {
+          console.log(`${LOG_PREFIX}   -> Processing route group: ${entry}`);
+          const groupNode = generateNavTreeRecursive(fullEntryPath, currentPath);
+          if (groupNode) {
+             if (groupNode.path === currentPath) { // Group node itself represents a page
+                 console.log(`${LOG_PREFIX}     -> Route group ${entry} contained page.tsx directly.`);
+                 hasPage = true; // Mark parent as having a page if group does
+             }
+             if (groupNode.children) {
+                console.log(`${LOG_PREFIX}     -> Merging children from group: ${entry}`);
+                children.push(...groupNode.children);
+             }
+          }
+        } else {
+          console.log(`${LOG_PREFIX}   -> Recursing into child directory: ${entry}`);
+          const nextPath = path.join(currentPath, entry).replace(/\\/g, '/');
+          const childNode = generateNavTreeRecursive(fullEntryPath, nextPath);
+          if (childNode) {
+            children.push(childNode);
+          }
+        }
+      } else if (entry === 'page.tsx' && !hasPage) {
+        // This condition should technically not be needed anymore with the check at the start,
+        // but we keep the logic just in case.
+        hasPage = true;
+      }
+    }
+
+    if (hasPage || children.length > 0) {
+       const nodeNameSegment = (currentSegment.startsWith('(') && currentSegment.endsWith(')'))
+         ? path.basename(path.dirname(dirPath))
+         : currentSegment;
+
+       const nodePath = currentPath === '' ? '/' : currentPath.replace(/\\/g, '/');
+       const nodeName = dirPath === appDirectory ? 'Home' : formatSegmentName(nodeNameSegment);
+       console.log(`${LOG_PREFIX}   -> Creating node: Name="${nodeName}", Path="${nodePath}", Children=${children.length > 0}`);
+
+       const node: NavNode = {
+           name: nodeName,
+           path: nodePath,
+       };
+       if (children.length > 0) {
+           node.children = children.sort((a, b) => a.name.localeCompare(b.name));
+       }
+       return node;
+    } else {
+        console.log(`${LOG_PREFIX}   -> Skipping directory: No page.tsx and no navigable children.`);
+        return null;
+    }
+
+  } catch (error) {
+    if (error instanceof Error && 'code' in error && (error.code === 'ENOENT' || error.code === 'EACCES')) {
+        console.warn(`${LOG_PREFIX} Skipping inaccessible path ${path.relative(process.cwd(), dirPath)}: ${error.message}`);
+        return null;
+    }
+    console.error(`${LOG_PREFIX} Error processing directory ${path.relative(process.cwd(), dirPath)}:`, error);
+    return null;
+  }
+}
+
+function generateNavTree(): NavNode[] {
+    console.log(`${LOG_PREFIX} Starting navigation tree generation from: ${path.relative(process.cwd(), appDirectory)}`);
+    const rootNode = generateNavTreeRecursive(appDirectory, '');
+    if (rootNode) {
+        if (rootNode.path === '/' && rootNode.children) {
+             const topLevelNodes = rootNode.children;
+             if (fs.existsSync(path.join(appDirectory, 'page.tsx'))) {
+                 console.log(`${LOG_PREFIX} Prepending Home node for root page.tsx`);
+                 topLevelNodes.unshift({ name: 'Home', path: '/' });
+             }
+             return topLevelNodes.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (rootNode.path === '/') {
+            return [rootNode];
+        } else {
+             console.warn("${LOG_PREFIX} Root node generation resulted in unexpected structure:", rootNode);
+             return [rootNode];
+        }
+    } else {
+        console.log("${LOG_PREFIX} No navigable root node found.");
+    }
+    return [];
+}
+
+// --- Execution & Output ---
+
+const navigationTree = generateNavTree();
+
+// Define the output path
+const outputPath = path.resolve(process.cwd(), 'lib', 'generated-nav-tree.ts');
+
+// Ensure the output directory exists
+const outputDir = path.dirname(outputPath);
+if (!fs.existsSync(outputDir)){
+    fs.mkdirSync(outputDir, { recursive: true });
+}
+
+// Format the output as a TypeScript export
+const fileContent = `// This file is auto-generated by scripts/generate-nav-tree.ts
+// Do not edit this file directly.
+
+import type { NavNode } from './nav-node'; // Assuming you might create a shared type definition
+
+export const navigationTree: NavNode[] = ${JSON.stringify(navigationTree, null, 2)};
+`;
+
+// Write the content to the file
+fs.writeFileSync(outputPath, fileContent, 'utf8');
+
+console.log(`Navigation tree generated successfully at ${outputPath}`);
+
+// Define the NavNode interface again or import it - need to export it for the generated file
+// Let's create a separate file for the interface for better structure
+const interfacePath = path.resolve(process.cwd(), 'lib', 'nav-node.ts');
+const interfaceContent = `// Shared interface for navigation nodes
+export interface NavNode {
+  name: string; // User-friendly name
+  path: string; // URL path
+  children?: NavNode[];
+}
+`;
+
+// Write the interface file only if it doesn't exist or needs update (optional)
+if (!fs.existsSync(interfacePath)) {
+  fs.writeFileSync(interfacePath, interfaceContent, 'utf8');
+  console.log(`NavNode interface created at ${interfacePath}`);
+} else {
+  // Optional: Check if content is different and update if needed
+  const existingInterfaceContent = fs.readFileSync(interfacePath, 'utf8');
+  if (existingInterfaceContent !== interfaceContent) {
+    fs.writeFileSync(interfacePath, interfaceContent, 'utf8');
+    console.log(`NavNode interface updated at ${interfacePath}`);
+  }
+} 
