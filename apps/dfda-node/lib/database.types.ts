@@ -1740,39 +1740,27 @@ export type Database = {
         Row: {
           created_at: string | null
           deleted_at: string | null
-          description: string | null
-          emoji: string | null
           global_variable_id: string
           id: string
-          image_url: string | null
-          name: string
-          unit_category_id: string | null
+          preferred_unit_id: string | null
           updated_at: string | null
           user_id: string
         }
         Insert: {
           created_at?: string | null
           deleted_at?: string | null
-          description?: string | null
-          emoji?: string | null
           global_variable_id: string
           id?: string
-          image_url?: string | null
-          name: string
-          unit_category_id?: string | null
+          preferred_unit_id?: string | null
           updated_at?: string | null
           user_id: string
         }
         Update: {
           created_at?: string | null
           deleted_at?: string | null
-          description?: string | null
-          emoji?: string | null
           global_variable_id?: string
           id?: string
-          image_url?: string | null
-          name?: string
-          unit_category_id?: string | null
+          preferred_unit_id?: string | null
           updated_at?: string | null
           user_id?: string
         }
@@ -1785,10 +1773,10 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "user_variables_unit_category_id_fkey"
-            columns: ["unit_category_id"]
+            foreignKeyName: "user_variables_preferred_unit_id_fkey"
+            columns: ["preferred_unit_id"]
             isOneToOne: false
-            referencedRelation: "unit_categories"
+            referencedRelation: "units"
             referencedColumns: ["id"]
           },
           {

@@ -1,17 +1,11 @@
 -- Migration: create_patient_treatments_table
 BEGIN;
 
--- Trigger function to ensure a user_variable exists for the treatment
+-- Trigger function to ensure a user_variable exists for the treatment (Simplified)
 CREATE OR REPLACE FUNCTION public.ensure_user_variable_for_treatment()
 RETURNS TRIGGER AS $$
 DECLARE
   v_user_variable_id UUID;
-  v_treatment_name TEXT;
-  v_variable_category_id TEXT;
-  v_unit_category_id TEXT;
-  v_emoji TEXT;
-  v_image_url TEXT;
-  v_description TEXT;
 BEGIN
   -- Check if user_variable exists for this user and treatment (global_variable_id)
   SELECT id INTO v_user_variable_id
@@ -19,22 +13,11 @@ BEGIN
   WHERE user_id = NEW.patient_id
   AND global_variable_id = NEW.treatment_id;
 
-  -- If not found, create it
+  -- If not found, create a basic entry
   IF v_user_variable_id IS NULL THEN
-    -- Fetch details from the global variable (treatment) to populate user_variable
-    SELECT gv.name, gv.variable_category_id, u.unit_category_id, gv.emoji, gv.image_url, gv.description
-    INTO v_treatment_name, v_variable_category_id, v_unit_category_id, v_emoji, v_image_url, v_description
-    FROM public.global_variables gv
-    LEFT JOIN public.units u ON gv.default_unit_id = u.id -- Join to get unit category
-    WHERE gv.id = NEW.treatment_id;
-
-    -- If global variable details aren't found, raise an error (shouldn't happen with FKs)
-    IF v_treatment_name IS NULL THEN
-       RAISE EXCEPTION 'Treatment global variable not found for id %', NEW.treatment_id;
-    END IF;
-
-    INSERT INTO public.user_variables (user_id, global_variable_id, name, variable_category_id, unit_category_id, emoji, image_url, description)
-    VALUES (NEW.patient_id, NEW.treatment_id, v_treatment_name, v_variable_category_id, v_unit_category_id, v_emoji, v_image_url, v_description)
+    -- No need to fetch global variable details anymore
+    INSERT INTO public.user_variables (user_id, global_variable_id) -- Only insert essential keys
+    VALUES (NEW.patient_id, NEW.treatment_id)
     RETURNING id INTO v_user_variable_id;
   END IF;
 

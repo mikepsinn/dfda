@@ -1,9 +1,6 @@
 -- Migration: Define treatment_ratings table linking to patient_treatments AND patient_conditions
 BEGIN;
 
--- Drop existing table if it exists (for prototype simplicity)
-DROP TABLE IF EXISTS public.treatment_ratings CASCADE;
-
 -- Create the table with the new structure
 CREATE TABLE public.treatment_ratings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -14,7 +11,7 @@ CREATE TABLE public.treatment_ratings (
   -- Link to the specific patient_condition record (patient's instance of the condition)
   patient_condition_id UUID NOT NULL REFERENCES public.patient_conditions(id) ON DELETE CASCADE,
 
-  effectiveness_out_of_ten INT CHECK (effectiveness_out_of_ten BETWEEN 0 AND 10),
+  effectiveness_out_of_ten SMALLINT, -- Changed to SMALLINT, removed inline CHECK
   review TEXT,
   helpful_count INT DEFAULT 0,
 
@@ -23,7 +20,10 @@ CREATE TABLE public.treatment_ratings (
   updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 
   -- Ensure only one rating per patient_treatment and patient_condition combination
-  CONSTRAINT unique_rating_per_patient_treatment_patient_condition UNIQUE (patient_treatment_id, patient_condition_id)
+  CONSTRAINT unique_rating_per_patient_treatment_patient_condition UNIQUE (patient_treatment_id, patient_condition_id),
+
+  -- Use named constraint that allows NULL
+  CONSTRAINT check_effectiveness_range CHECK (effectiveness_out_of_ten IS NULL OR (effectiveness_out_of_ten >= 0 AND effectiveness_out_of_ten <= 10))
 );
 
 -- Add indexes
