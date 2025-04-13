@@ -18,7 +18,7 @@ interface ConditionSearchProps {
   selected: { id: string; name: string } | null
 }
 
-export function ConditionSearch({
+export function ConditionSearchInput({
   onSelect,
   selected,
 }: ConditionSearchProps) {

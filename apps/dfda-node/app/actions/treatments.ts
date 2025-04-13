@@ -107,20 +107,20 @@ export async function getTreatmentsForConditionAction(conditionId: string): Prom
   const response = await supabase
     .from('patient_treatments') // Start from patient_treatments
     .select(`
-      treatment:treatments!inner ( // Join treatments
+      treatment:treatments!inner (
         id,
         created_at,
         deleted_at,
         manufacturer,
         treatment_type,
         updated_at,
-        gv:global_variables!inner ( // Join global_variables from treatments
+        gv:global_variables!inner (
           name,
           description
         )
       ),
-      treatment_ratings!inner( // Join ratings
-         pc:patient_conditions!inner(condition_id) // Join conditions via ratings
+      treatment_ratings!inner(
+         pc:patient_conditions!inner(condition_id)
       )
     `)
     // Filter based on the condition_id in the nested patient_conditions table

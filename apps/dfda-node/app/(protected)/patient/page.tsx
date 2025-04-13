@@ -7,9 +7,13 @@ import { Plus } from "lucide-react"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
 import { getRatingsByPatientAction } from "@/app/actions/treatment-ratings"
 import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
-// import { TreatmentCard } from "@/components/treatment-card" // Commented out - Component path/existence uncertain
-// import { PatientConditionsCard } from "@/components/patient-conditions-card" // Commented out - Component not found
-// import { PatientTreatmentsCard } from "@/components/patient-treatments-card" // Commented out - Component not found
+// Import the new components
+import { PatientConditionsCard } from "@/components/patient/PatientConditionsCard"
+import { PatientTreatmentsCard } from "@/components/patient/PatientTreatmentsCard"
+// Import the Tracking Inbox
+import { TrackingInbox } from "@/components/patient/TrackingInbox"
+// Import action to pre-fetch tasks for SSR
+import { getPendingReminderTasksAction } from "@/app/actions/reminder-schedules"
 
 export default async function PatientDashboard() {
   const user = await getServerUser()
@@ -20,6 +24,8 @@ export default async function PatientDashboard() {
   // Fetch conditions and treatments
   const conditions = await getPatientConditionsAction(user.id)
   const patientRatings = await getRatingsByPatientAction(user.id)
+  // Pre-fetch initial tasks for the inbox
+  const initialTasks = await getPendingReminderTasksAction(user.id)
 
   // Get treatment details for each condition
   const conditionsWithTreatments = await Promise.all(
@@ -35,16 +41,13 @@ export default async function PatientDashboard() {
 
       return {
         id: condition.id || "",
+        condition_id: condition.condition_id,
         condition_name: condition.condition_name || "Unknown Condition",
         treatments: treatments.map(t => ({
           id: t.id,
+          name: t.name,
+          description: t.description,
           effectiveness_out_of_ten: effectivenessMap[t.id] || 0,
-          treatment: {
-            global_variables: {
-              name: t.name,
-              description: t.description || ""
-            }
-          }
         }))
       }
     })
@@ -58,6 +61,11 @@ export default async function PatientDashboard() {
 
   return (
     <div className="container space-y-8 py-8">
+      {/* Optional: Add a welcome message or summary card first */}
+
+      {/* Tracking Inbox */}
+      <TrackingInbox userId={user.id} initialTasks={initialTasks} />
+
       <Card>
         <CardHeader>
           <CardTitle>{user.user_metadata?.name || "Patient"}'s Dashboard</CardTitle>
@@ -91,40 +99,45 @@ export default async function PatientDashboard() {
           </Link>
         </CardHeader>
         <CardContent>
-          {/* Commenting out usage of missing components */}
-          {/* <CardContent>
-            {conditions.length > 0 ? (
-              <div className="space-y-8">
-                <PatientConditionsCard conditions={conditions} />
-                <PatientTreatmentsCard conditions={conditionsWithTreatments} />
-              </div>
-            ) : (
-               <div className="text-center py-6 text-muted-foreground">
-                 <p>No conditions added yet.</p>
-                 <Link href="/patient/treatments" className="text-primary hover:underline">
-                   Add your first condition
-                 </Link>
-               </div>
-            )}
-          </CardContent> */}
           {conditions.length > 0 ? (
-            <div className="space-y-4">
-              {conditionsWithTreatments.map((condition) => (
-                <div key={condition.id} className="border-b pb-4 last:border-0">
-                  <h3 className="font-medium">{condition.condition_name}</h3>
-                  {condition.treatments && condition.treatments.length > 0 ? (
-                    <div className="mt-2 space-y-2">
-                      {condition.treatments.map((treatment) => (
-                        <div key={treatment.id} className="text-sm text-muted-foreground">
-                          {treatment.treatment.global_variables.name} - Effectiveness: {treatment.effectiveness_out_of_ten ?? "Not Rated"}/10
-                        </div>
-                      ))}
+            <div className="grid gap-6 md:grid-cols-2">
+              {/* Left Column: Conditions */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Your Conditions</h3>
+                {conditions.map((condition) => (
+                  // Pass the full condition object from the action
+                  <PatientConditionsCard key={condition.id} condition={condition} />
+                ))}
+              </div>
+
+              {/* Right Column: Treatments (Grouped by Condition) */}
+              <div className="space-y-6">
+                <h3 className="text-lg font-semibold">Treatments & Effectiveness</h3>
+                {conditionsWithTreatments.length > 0 ? (
+                  conditionsWithTreatments.map((conditionGroup) => (
+                    <div key={conditionGroup.id} className="space-y-4">
+                      {/* Optional: Sub-header for the condition if showing treatments grouped */}
+                      {/* <h4 className="font-medium text-md">{conditionGroup.condition_name}</h4> */} 
+                      {conditionGroup.treatments && conditionGroup.treatments.length > 0 ? (
+                        conditionGroup.treatments.map((treatment) => (
+                          <PatientTreatmentsCard 
+                            key={`${conditionGroup.id}-${treatment.id}`}
+                            treatment={treatment} 
+                            conditionId={conditionGroup.id} // Pass patient_condition_id
+                            conditionName={conditionGroup.condition_name} // Pass condition name
+                          />
+                        ))
+                      ) : (
+                        <p className="text-sm text-muted-foreground pl-2">
+                          No treatments logged for {conditionGroup.condition_name} yet.
+                        </p>
+                      )}
                     </div>
-                  ) : (
-                    <p className="text-sm text-muted-foreground mt-2">No treatments added yet</p>
-                  )}
-                </div>
-              ))}
+                  ))
+                ) : (
+                   <p className="text-sm text-muted-foreground">No treatments found.</p>
+                )}
+              </div>
             </div>
           ) : (
             <div className="text-center py-6 text-muted-foreground">

@@ -13,7 +13,7 @@ import {
 import { createPatientConditionAction } from "@/app/actions/patient-conditions"
 import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
-import { ConditionSearch } from "@/components/ConditionSearch"
+import { ConditionSearchInput } from "@/components/ConditionSearchInput"
 import { createLogger } from "@/lib/logger"
 
 const logger = createLogger("add-condition-dialog")
@@ -68,7 +68,7 @@ export function AddConditionDialog({ userId }: AddConditionDialogProps) {
           </DialogDescription>
         </DialogHeader>
         <div className="py-4">
-          <ConditionSearch
+          <ConditionSearchInput
             onSelect={handleSelectCondition}
             selected={null}
           />

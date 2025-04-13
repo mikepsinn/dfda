@@ -20,17 +20,17 @@ import {
 } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
+import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { TreatmentSearch } from "./treatment-search"
 import type { Database } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
 import { ConditionCombobox } from "./condition-combobox"
 import { addPatientConditionAction } from "@/app/actions/patientConditions"
-import { upsertTreatmentRatingAction, type TreatmentRatingUpsertData } from "@/app/actions/treatment-ratings"
-import { Loader2 } from "lucide-react"
+import { addTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
+type TreatmentRatingInsert = Database["public"]["Tables"]["treatment_ratings"]["Insert"]
 
 const logger = createLogger("add-treatment-dialog")
 
@@ -48,47 +48,79 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
   const [effectiveness, setEffectiveness] = useState<number | null>(null)
   const [review, setReview] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const { toast } = useToast()
 
   const isExistingPatientCondition = conditions.some(pc => pc.condition_id === selectedCondition)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!selectedTreatment) return
+    if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && effectiveness === null) return
+
     setIsLoading(true)
-    logger.info("Submitting new treatment rating", { 
-      patientTreatmentId: selectedTreatment?.id, 
-      conditionId: selectedCondition, 
-      rating: effectiveness, 
-      review 
-    })
-
-    if (!selectedTreatment || !selectedCondition || effectiveness === null) {
-      toast.error("Missing required information (treatment, condition, or effectiveness rating).")
-      setIsLoading(false)
-      return
-    }
-
-    const ratingData: TreatmentRatingUpsertData = {
-      patient_treatment_id: selectedTreatment.id,
-      patient_condition_id: selectedCondition,
-      effectiveness_out_of_ten: effectiveness,
-      review: review || null,
-    }
-
     try {
-      const result = await upsertTreatmentRatingAction(ratingData)
-      if (result.success) {
-        toast.success(result.message || "Rating added successfully!")
-        setOpen(false)
-        setSelectedTreatment(null)
-        setSelectedCondition("")
-        setEffectiveness(null)
-        setReview("")
-      } else {
-        toast.error(result.error || "Failed to add rating.")
+      // --- Logic for Condition & Rating --- 
+      let conditionAdded = false
+      // Add condition if it's specified, new, and not the placeholder
+      if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && !isExistingPatientCondition) {
+        logger.info("Adding new condition for patient", { userId, conditionId: selectedCondition })
+        const conditionResult = await addPatientConditionAction(userId, selectedCondition)
+        if (!conditionResult.success) {
+          throw new Error(conditionResult.error || "Failed to add condition")
+        }
+        conditionAdded = true
       }
-    } catch (error) {
-      logger.error("Error submitting treatment rating", { error, ratingData })
-      toast.error("An unexpected error occurred.")
+
+      // Only add rating if a valid condition is selected
+      if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE) {
+        logger.info("Adding treatment rating for user", { userId, treatmentId: selectedTreatment.id, conditionId: selectedCondition })
+        const ratingData: TreatmentRatingInsert = {
+          user_id: userId,
+          treatment_id: selectedTreatment.id,
+          condition_id: selectedCondition, // Already checked it's not empty or NOT_SPECIFIED
+          effectiveness_out_of_ten: effectiveness, // Already checked it's not null
+          review: review || null,
+        }
+
+        logger.info("Submitting treatment rating data", { ratingData })
+        const ratingResult = await addTreatmentRatingAction(ratingData)
+
+        if (!ratingResult.success) {
+          throw new Error(ratingResult.error || "Failed to add treatment rating")
+        }
+
+        toast({
+          title: "Treatment Rated",
+          description: `${selectedTreatment.name} rating for the selected condition has been added successfully.`
+        })
+      } else {
+        // If no condition was selected, just show a success message
+        logger.info("Treatment added without rating for user", { userId, treatmentId: selectedTreatment.id })
+        toast({
+          title: "Treatment Added",
+          description: `${selectedTreatment.name} has been added to your list.`
+        })
+      }
+
+      // Reset form state
+      setOpen(false)
+      setSelectedTreatment(null)
+      setSelectedCondition("")
+      setEffectiveness(null)
+      setReview("")
+    } catch (error: any) {
+      logger.error("Failed to add treatment/rating", { 
+        error: error?.message ?? String(error), 
+        userId, 
+        treatmentId: selectedTreatment?.id, 
+        conditionId: selectedCondition 
+      })
+      
+      toast({
+        title: "Error",
+        description: error?.message || "Failed to add treatment. Please try again.",
+        variant: "destructive"
+      })
     } finally {
       setIsLoading(false)
     }
@@ -184,7 +216,7 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
                 isLoading
               }
             >
-              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : "Add Treatment"}
+              {isLoading ? "Adding..." : "Add Treatment"}
             </Button>
           </DialogFooter>
         </form>

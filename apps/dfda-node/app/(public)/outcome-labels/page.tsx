@@ -1,10 +1,9 @@
 import Link from "next/link"
 import { ArrowLeft, Beaker, FileText, BarChart, Search, Download, Share2, Code } from "lucide-react"
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { OutcomeLabelsTabsWrapper } from "@/components/OutcomeLabelsTabsWrapper"
-import { SearchInputWrapper } from "@/components/SearchInputWrapper"
-import { ButtonWrapper } from "@/components/ButtonWrapper"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export default function OutcomeLabels() {
   return (
@@ -111,7 +110,7 @@ export default function OutcomeLabels() {
                     </div>
                   </div>
                   <div className="w-full mt-4">
-                    <ButtonWrapper className="w-full">Browse Outcome Labels</ButtonWrapper>
+                    <Button className="w-full">Browse Outcome Labels</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -156,9 +155,9 @@ export default function OutcomeLabels() {
                     </div>
                   </div>
                   <div className="w-full mt-4">
-                    <ButtonWrapper variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full">
                       Provider Resources
-                    </ButtonWrapper>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -171,7 +170,10 @@ export default function OutcomeLabels() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <SearchInputWrapper />
+                  <div className="relative">
+                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Input placeholder="Search for a medication, supplement, or food..." className="pl-8" />
+                  </div>
                 </div>
 
                 <OutcomeLabelsTabsWrapper />
@@ -180,9 +182,9 @@ export default function OutcomeLabels() {
                   <p className="text-sm text-muted-foreground">Data updated: June 2025</p>
                   <Link href="/developers">
                     <div className="inline-block">
-                      <ButtonWrapper variant="outline" size="sm">
+                      <Button variant="outline" size="sm">
                         <Code className="mr-2 h-4 w-4" /> Access via API
-                      </ButtonWrapper>
+                      </Button>
                     </div>
                   </Link>
                 </div>
@@ -202,12 +204,12 @@ export default function OutcomeLabels() {
                 </p>
                 <div className="flex flex-col gap-2 sm:flex-row">
                   <div className="inline-block">
-                    <ButtonWrapper size="lg">Join as a Patient</ButtonWrapper>
+                    <Button size="lg">Join as a Patient</Button>
                   </div>
                   <div className="inline-block">
-                    <ButtonWrapper size="lg" variant="outline">
+                    <Button size="lg" variant="outline">
                       Join as a Provider
-                    </ButtonWrapper>
+                    </Button>
                   </div>
                 </div>
               </div>

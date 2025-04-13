@@ -153,4 +153,51 @@ export async function deletePatientConditionAction(id: string): Promise<void> {
   }
 
   revalidatePath('/conditions')
+}
+
+// Action for bulk-adding conditions during onboarding
+export async function addInitialPatientConditionsAction(
+  patientId: string, 
+  conditions: { id: string; name: string }[]
+): Promise<{ success: boolean; error?: string }> {
+  const supabase = await createClient();
+  logger.info('Adding initial patient conditions', { patientId, count: conditions.length });
+
+  if (!patientId || !conditions || conditions.length === 0) {
+    logger.warn('Attempted to add initial conditions with invalid input', { patientId, conditions });
+    return { success: false, error: 'Invalid input provided.' };
+  }
+
+  const conditionsToInsert: PatientConditionInsert[] = conditions.map(c => ({
+    patient_id: patientId,
+    condition_id: c.id, // This is the global condition ID
+    // You might want default values or nulls here depending on your table definition
+    status: 'active', // Default status
+    diagnosed_at: new Date().toISOString(), // Default diagnosed date
+  }));
+
+  const { error } = await supabase
+    .from('patient_conditions')
+    .insert(conditionsToInsert);
+
+  if (error) {
+    logger.error('Error inserting initial patient conditions:', { 
+      patientId, 
+      conditionIds: conditions.map(c => c.id),
+      error 
+    });
+    return { success: false, error: 'Failed to save conditions.' };
+  }
+
+  // Revalidate relevant paths after successful insertion
+  try {
+    revalidatePath(`/patient/${patientId}`); // Revalidate the main patient dashboard
+    revalidatePath(`/patient/conditions`); // Revalidate the conditions list page
+  } catch (revalError) {
+    logger.error('Error during revalidation after initial condition add', { revalError, patientId });
+    // Don't fail the whole operation for a revalidation error
+  }
+
+  logger.info('Successfully added initial patient conditions', { patientId, count: conditions.length });
+  return { success: true };
 } 

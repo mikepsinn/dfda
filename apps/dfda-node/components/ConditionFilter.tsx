@@ -9,7 +9,7 @@ export interface ConditionSearchProps {
   initialSearchTerm?: string
 }
 
-export function ConditionSearch({ 
+export function ConditionFilter({ 
   onConditionSelect, 
   availableConditions,
   placeholder = "Search conditions...",
