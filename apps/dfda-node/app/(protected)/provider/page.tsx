@@ -192,6 +192,7 @@ export default async function ProviderDashboard() {
       last_name: profile?.last_name ?? null,
       user_type: profile?.user_type ?? null,
       avatar_url: profile?.avatar_url ?? null,
+      timezone: profile?.timezone ?? null, // Add timezone from profile
       // --- Overlapping fields (use patient's creation/update/deletion time) ---
       created_at: patient.created_at ?? null, // Use patient's created_at
       updated_at: patient.updated_at ?? null, // Use patient's updated_at
@@ -226,6 +227,7 @@ export default async function ProviderDashboard() {
       last_name: profile?.last_name ?? null,
       user_type: profile?.user_type ?? null,
       avatar_url: profile?.avatar_url ?? null,
+      timezone: profile?.timezone ?? null, // Add timezone from profile
       // --- Overlapping fields ---
       created_at: patient.created_at ?? null,
       updated_at: patient.updated_at ?? null,

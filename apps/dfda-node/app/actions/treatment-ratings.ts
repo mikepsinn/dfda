@@ -6,283 +6,363 @@ import { handleDatabaseResponse, handleDatabaseCollectionResponse } from '@/lib/
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
 
-export type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row'] & {
-  profiles?: {
-    first_name: string | null
-    last_name: string | null
-    user_type: string | null
-  } | null
-}
+// Types using the updated schema
+export type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row']
 export type TreatmentRatingInsert = Database['public']['Tables']['treatment_ratings']['Insert']
 export type TreatmentRatingUpdate = Database['public']['Tables']['treatment_ratings']['Update']
 
-// Get all ratings for a treatment and condition
-export async function getTreatmentRatingsAction(treatmentId: string, conditionId: string): Promise<TreatmentRating[]> {
-  const supabase = await createClient()
-
-  const response = await supabase
-    .from('treatment_ratings')
-    .select(`
-      *,
-      profiles:user_id (
-        first_name,
-        last_name,
-        user_type
-      )
-    `)
-    .eq('treatment_id', treatmentId)
-    .eq('condition_id', conditionId)
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-
-  if (response.error) {
-    logger.error('Error fetching treatment ratings:', { error: response.error })
-    throw new Error('Failed to fetch treatment ratings')
-  }
-
-  return handleDatabaseCollectionResponse(response)
+// Define the expected shape for inserting/upserting data via actions
+export type TreatmentRatingUpsertData = {
+  patient_treatment_id: string;
+  patient_condition_id: string;
+  effectiveness_out_of_ten: number;
+  review?: string | null;
 }
 
-// Get a specific rating by ID
-export async function getTreatmentRatingByIdAction(id: string): Promise<TreatmentRating | null> {
-  const supabase = await createClient()
+// --- HELPER for Revalidation ---
+// Renamed supabase client type for clarity inside function
+type SupabaseClientType = Awaited<ReturnType<typeof createClient>>;
+async function revalidateTreatmentPaths(supabase: SupabaseClientType, patientTreatmentId: string, patientConditionId: string) {
+   try {
+    // Fetch patient_treatment to get related IDs for path revalidation
+    const { data: pt, error: ptError } = await supabase
+      .from('patient_treatments')
+      .select('patient_id, treatment_id') // Select fields needed for paths
+      .eq('id', patientTreatmentId)
+      .single();
 
-  const response = await supabase
-    .from('treatment_ratings')
-    .select(`
-      *,
-      profiles:user_id (
-        first_name,
-        last_name,
-        user_type
-      )
-    `)
-    .eq('id', id)
-    .single()
+    if (ptError) throw ptError; // Rethrow error if fetching patient_treatment fails
 
-  if (response.error) {
-    logger.error('Error fetching treatment rating:', { error: response.error })
-    throw new Error('Failed to fetch treatment rating')
+    if (pt) {
+      revalidatePath(`/patient/treatments`); // General page where list is shown
+      // Example specific paths (uncomment/adjust if these pages exist)
+      // logger.info('Revalidating specific paths', { treatmentId: pt.treatment_id, patientId: pt.patient_id });
+      // revalidatePath(`/treatment/${pt.treatment_id}`);
+      // revalidatePath(`/patient/${pt.patient_id}/treatments`); // Potential patient-specific page
+    } else {
+       logger.warn('Patient treatment not found during revalidation', { patientTreatmentId });
+       revalidatePath(`/patient/treatments`); // Fallback revalidation
+    }
+  } catch (revalError) {
+      logger.error('Error during revalidation path fetching', { patientTreatmentId, error: revalError instanceof Error ? revalError.message : String(revalError) });
+      revalidatePath(`/patient/treatments`); // Fallback revalidation
   }
-
-  return handleDatabaseResponse(response)
 }
 
-// Get a user's rating for a treatment and condition
-export async function getUserTreatmentRatingAction(userId: string, treatmentId: string, conditionId: string): Promise<TreatmentRating | null> {
+// --- UPDATED/NEW ACTIONS ---
+
+// Get the rating for a specific patient_treatment and patient_condition
+export async function getRatingForPatientTreatmentPatientConditionAction(
+    patientTreatmentId: string,
+    patientConditionId: string
+): Promise<TreatmentRating | null> {
   const supabase = await createClient()
+  logger.info("Fetching rating for patient treatment and patient condition", { patientTreatmentId, patientConditionId });
+
+  if (!patientTreatmentId || !patientConditionId) {
+    logger.warn('getRatingForPatientTreatmentPatientConditionAction missing IDs', { patientTreatmentId, patientConditionId });
+    return null;
+  }
 
   const response = await supabase
     .from('treatment_ratings')
     .select('*')
-    .eq('user_id', userId)
-    .eq('treatment_id', treatmentId)
-    .eq('condition_id', conditionId)
-    .is('deleted_at', null)
-    .single()
+    .eq('patient_treatment_id', patientTreatmentId)
+    .eq('patient_condition_id', patientConditionId)
+    .maybeSingle()
 
   if (response.error && response.error.code !== 'PGRST116') {
-    // PGRST116 is "no rows returned" error
-    logger.error('Error fetching user treatment rating:', { error: response.error })
-    throw new Error('Failed to fetch user treatment rating')
+    logger.error('Error fetching treatment rating:', { patientTreatmentId, patientConditionId, error: response.error })
+    throw new Error('Failed to fetch treatment rating');
   }
 
-  return response.error ? null : handleDatabaseResponse<TreatmentRating>(response)
+  return response.data;
 }
 
-// Get average rating for a treatment and condition
-export async function getAverageTreatmentRatingAction(treatmentId: string, conditionId: string) {
+// Upsert (create or update) a rating for a specific patient_treatment and patient_condition
+export async function upsertTreatmentRatingAction(
+  ratingData: TreatmentRatingUpsertData
+): Promise<{ success: boolean; data?: TreatmentRating; error?: string; message?: string }> {
   const supabase = await createClient()
+  logger.info("Upserting treatment rating", { patientTreatmentId: ratingData.patient_treatment_id, patientConditionId: ratingData.patient_condition_id });
 
-  const response = await supabase.rpc('get_average_treatment_rating', {
-    p_treatment_id: treatmentId,
-    p_condition_id: conditionId
-  })
-
-  if (response.error) {
-    logger.error('Error fetching average treatment rating:', { error: response.error })
-    throw new Error('Failed to fetch average treatment rating')
+  // Validation
+  if (!ratingData.patient_treatment_id || !ratingData.patient_condition_id) {
+    return { success: false, error: "Patient Treatment ID and Patient Condition ID are required." };
+  }
+  if (ratingData.effectiveness_out_of_ten === undefined || ratingData.effectiveness_out_of_ten === null) {
+     return { success: false, error: "Effectiveness rating (0-10) is required." };
+  }
+  if (ratingData.effectiveness_out_of_ten < 0 || ratingData.effectiveness_out_of_ten > 10) {
+      return { success: false, error: "Effectiveness must be between 0 and 10." };
   }
 
-  return response.data[0]
+  try {
+    const upsertData = {
+        patient_treatment_id: ratingData.patient_treatment_id,
+        patient_condition_id: ratingData.patient_condition_id,
+        effectiveness_out_of_ten: ratingData.effectiveness_out_of_ten,
+        review: ratingData.review || null,
+    };
+
+    const { data: upsertedRating, error } = await supabase
+      .from('treatment_ratings')
+      .upsert(upsertData, {
+          // Upsert based on the unique combination
+          onConflict: 'patient_treatment_id, patient_condition_id',
+      })
+      .select()
+      .single()
+
+    if (error) {
+      logger.error("Error upserting treatment rating", { ratingData, error })
+      throw error
+    }
+
+    logger.info("Successfully upserted treatment rating", { upsertedRating })
+
+    // Revalidate paths - Await client creation and pass instance
+    const supabaseClient = await createClient();
+    await revalidateTreatmentPaths(supabaseClient, ratingData.patient_treatment_id, ratingData.patient_condition_id);
+
+    return { success: true, data: upsertedRating, message: "Treatment rating saved successfully." }
+
+  } catch (error) {
+    logger.error("Failed in upsertTreatmentRatingAction", { ratingData, error: error instanceof Error ? error.message : String(error) })
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+    return { success: false, error: errorMessage }
+  }
 }
 
-// Create a new rating
-export async function createTreatmentRatingAction(rating: TreatmentRatingInsert): Promise<TreatmentRating> {
+// --- OTHER ACTIONS (Delete, Helpful, GetByID) ---
+
+// Delete a rating (operates on rating ID)
+export async function deleteTreatmentRatingAction(id: string): Promise<{success: boolean, error?: string}> {
   const supabase = await createClient()
+  logger.warn('Deleting treatment rating', { ratingId: id });
 
-  const response = await supabase
-    .from('treatment_ratings')
-    .insert(rating)
-    .select(`
-      *,
-      profiles:user_id (
-        first_name,
-        last_name,
-        user_type
-      )
-    `)
-    .single()
-
-  if (response.error) {
-    logger.error('Error creating treatment rating:', { error: response.error })
-    throw new Error('Failed to create treatment rating')
+  // Get the rating before deleting to get patient_treatment_id for revalidation
+  const rating = await getTreatmentRatingByIdAction(id); // Use existing action to get full record
+  if (!rating || !rating.patient_treatment_id || !rating.patient_condition_id) {
+      logger.error('Rating not found or missing required IDs for deletion', { ratingId: id });
+      return { success: false, error: 'Rating not found or cannot be deleted.' };
   }
+  const patientTreatmentId = rating.patient_treatment_id;
+  const patientConditionId = rating.patient_condition_id;
 
-  // Revalidate relevant paths
-  if ('treatment_id' in rating && rating.treatment_id) {
-    revalidatePath(`/treatment/${rating.treatment_id}`)
-  }
-  if ('condition_id' in rating && rating.condition_id) {
-    revalidatePath(`/condition/${rating.condition_id}`)
-  }
-  
-  return handleDatabaseResponse<TreatmentRating>(response)
-}
-
-// Update a rating
-export async function updateTreatmentRatingAction(id: string, updates: TreatmentRatingUpdate): Promise<TreatmentRating> {
-  const supabase = await createClient()
-
-  const response = await supabase
-    .from('treatment_ratings')
-    .update({ ...updates, updated_at: new Date().toISOString() })
-    .eq('id', id)
-    .select(`
-      *,
-      profiles:user_id (
-        first_name,
-        last_name,
-        user_type
-      )
-    `)
-    .single()
-
-  if (response.error) {
-    logger.error('Error updating treatment rating:', { error: response.error })
-    throw new Error('Failed to update treatment rating')
-  }
-
-  // Get the rating to revalidate the correct paths
-  const rating = await getTreatmentRatingByIdAction(id)
-  if (rating) {
-    revalidatePath(`/treatment/${rating.treatment_id}`)
-    revalidatePath(`/condition/${rating.condition_id}`)
-  }
-  
-  return handleDatabaseResponse<TreatmentRating>(response)
-}
-
-// Delete a rating
-export async function deleteTreatmentRatingAction(id: string): Promise<void> {
-  const supabase = await createClient()
-  
-  // Get the rating before deleting to revalidate the correct paths
-  const rating = await getTreatmentRatingByIdAction(id)
-
-  const response = await supabase
+  const { error } = await supabase
     .from('treatment_ratings')
     .delete()
-    .eq('id', id)
+    .eq('id', id);
 
-  if (response.error) {
-    logger.error('Error deleting treatment rating:', { error: response.error })
-    throw new Error('Failed to delete treatment rating')
+  if (error) {
+    logger.error('Error deleting treatment rating:', { error: error, ratingId: id })
+    return { success: false, error: 'Failed to delete rating.' };
+  }
+
+  // Revalidate relevant paths using the fetched patientTreatmentId
+  // Await client creation and pass instance
+  const supabaseClient = await createClient();
+  await revalidateTreatmentPaths(supabaseClient, patientTreatmentId, patientConditionId);
+  return { success: true };
+}
+
+// Mark a rating as helpful (operates on rating ID)
+export async function markRatingAsHelpfulAction(id: string): Promise<{success: boolean, error?: string}> {
+  const supabase = await createClient()
+  logger.info('Marking rating as helpful', { ratingId: id });
+
+  // Get the rating first to ensure it exists and get patient_treatment_id
+  const rating = await getTreatmentRatingByIdAction(id);
+  if (!rating || !rating.patient_treatment_id || !rating.patient_condition_id) {
+      logger.error('Rating not found or missing required IDs for helpful mark', { ratingId: id });
+      return { success: false, error: 'Rating not found.' };
+  }
+  const patientTreatmentId = rating.patient_treatment_id;
+  const patientConditionId = rating.patient_condition_id;
+
+  // Increment helpful_count using an update rpc seems better if exists
+  // Let's try calling an RPC function assuming one exists or can be created
+  // const { error: rpcError } = await supabase.rpc('increment_helpful_count', { p_rating_id: id });
+  // Fallback to update if RPC doesn't exist/fails:
+   const { error: updateError } = await supabase
+     .from('treatment_ratings')
+     .update({ helpful_count: (rating.helpful_count || 0) + 1 })
+     .eq('id', id);
+
+  if (updateError) { // Replace with rpcError if using RPC
+    logger.error('Error marking rating as helpful:', { error: updateError, ratingId: id })
+    return { success: false, error: 'Failed to mark rating as helpful.' };
   }
 
   // Revalidate relevant paths
-  if (rating) {
-    revalidatePath(`/treatment/${rating.treatment_id}`)
-    revalidatePath(`/condition/${rating.condition_id}`)
-  }
+  // Await client creation and pass instance
+  const supabaseClient = await createClient();
+  await revalidateTreatmentPaths(supabaseClient, patientTreatmentId, patientConditionId);
+  return { success: true };
 }
 
-// Mark a rating as helpful
-export async function markRatingAsHelpfulAction(id: string): Promise<boolean> {
+// Get a specific rating by ID (Keep as is, it's useful for getting full record)
+export async function getTreatmentRatingByIdAction(id: string): Promise<TreatmentRating | null> {
   const supabase = await createClient()
+  logger.info('Fetching treatment rating by ID', { ratingId: id });
 
-  const response = await supabase.rpc('increment_helpful_count', {
-    p_rating_id: id,
-  })
+  const response = await supabase
+    .from('treatment_ratings')
+    .select('*') // Select all including patient_treatment_id
+    .eq('id', id)
+    .maybeSingle() // Use maybeSingle
 
-  if (response.error) {
-    logger.error('Error marking rating as helpful:', { error: response.error })
-    throw new Error('Failed to mark rating as helpful')
+  if (response.error && response.error.code !== 'PGRST116') {
+    logger.error('Error fetching treatment rating by ID:', { error: response.error, ratingId: id })
+    throw new Error('Failed to fetch treatment rating by ID')
   }
 
-  // Get the rating to revalidate the correct paths
-  const rating = await getTreatmentRatingByIdAction(id)
-  if (rating) {
-    revalidatePath(`/treatment/${rating.treatment_id}`)
-    revalidatePath(`/condition/${rating.condition_id}`)
+  return response.data; // Will be null if not found or PGRST116
+}
+
+// --- DEPRECATED / NEEDS REWORK ---
+// Consider removing these from export if they are no longer used externally
+
+// /* DEPRECATED - Was for specific treatment/condition, less relevant now */
+// export async function getTreatmentRatingsAction(...) {}
+
+// /* DEPRECATED - Replaced by getRatingForPatientTreatmentAction */
+// export async function getUserTreatmentRatingAction(...) {}
+
+// /* NEEDS REWORK - RPC needs rework based on patient_treatments or calculation done differently */
+// export async function getAverageTreatmentRatingAction(...) {}
+
+// /* DEPRECATED - Replaced by upsertTreatmentRatingAction */
+// export async function addTreatmentRatingAction(...) {}
+
+// --- ADDED ACTIONS (Moved from effectiveness file) ---
+
+/**
+ * Get all ratings for a specific condition (global ID), joining treatment info.
+ */
+export async function getRatingsForConditionAction(
+  conditionId: string 
+): Promise<(TreatmentRating & { treatment_name: string | null })[]> { 
+  const supabase = await createClient();
+  logger.info('Fetching ratings for condition', { conditionId });
+
+  const { data, error } = await supabase
+    .from('treatment_ratings')
+    .select(`
+      *,
+      pc:patient_conditions!inner(condition_id),
+      pt:patient_treatments!inner(
+        treatment:treatments!inner(
+           gv:global_variables!inner( name ) 
+        )
+      )
+    `)
+    .eq('pc.condition_id', conditionId)
+    .not('deleted_at', 'is', null)
+    .order('effectiveness_out_of_ten', { ascending: false });
+
+  if (error) {
+    logger.error("Error fetching ratings for condition:", { conditionId, error });
+    throw new Error("Failed to fetch ratings for condition");
   }
-  
-  return true
+   if (!data) return [];
+
+   // Map the data, extracting the treatment name from the nested structure
+   const result = data.map(row => {
+     // Use type assertion for clarity, adjust based on exact generated types if needed
+     const typedRow = row as any;
+     const treatmentName = typedRow.pt?.treatment?.gv?.name ?? null;
+     // Remove nested join objects (pt, pc) before returning
+     const { pt, pc, ...rest } = typedRow;
+     return { ...rest, treatment_name: treatmentName };
+   });
+
+   return result as (TreatmentRating & { treatment_name: string | null })[];
 }
 
 /**
- * Adds a treatment rating for a specific user and condition.
- * @param ratingData The data for the new treatment rating.
- * This function differs from createTreatmentRatingAction by returning a success/error structure
- * suitable for form submissions and not selecting profile data by default.
+ * Get all ratings submitted by a specific patient.
  */
-export async function addTreatmentRatingAction(ratingData: TreatmentRatingInsert) {
-  // Basic validation
-  if (!ratingData.user_id || !ratingData.treatment_id) {
-    logger.error("Missing user_id or treatment_id for addTreatmentRatingAction", { ratingData })
-    throw new Error("User ID and Treatment ID are required.")
+export async function getRatingsByPatientAction(
+  patientId: string
+): Promise<TreatmentRating[]> {
+  const supabase = await createClient();
+  logger.info('Fetching ratings for patient', { patientId });
+
+  // Assuming patient_id is available via patient_conditions join
+  const response = await supabase
+    .from("treatment_ratings")
+    .select(`
+      *,
+      pc:patient_conditions!inner(patient_id) 
+    `)
+    .eq("pc.patient_id", patientId)
+    .not('deleted_at', 'is', null);
+
+  if (response.error) {
+    logger.error("Error fetching patient ratings:", { patientId, error: response.error });
+    throw new Error("Failed to fetch patient ratings");
   }
-  // Ensure condition_id is present, even if null (for "Not Specified")
-  if (ratingData.condition_id === undefined) {
-    logger.error("Missing condition_id for addTreatmentRatingAction", { ratingData })
-    throw new Error("Condition ID is required (can be null).")
+  
+  // Remove the intermediate join object before returning
+  return (response.data || []).map(({ pc, ...rest }) => rest);
+}
+
+/**
+ * Get all ratings linked to a specific treatment (global ID).
+ */
+export async function getRatingsByTreatmentAction(
+  treatmentId: string 
+): Promise<TreatmentRating[]> {
+  const supabase = await createClient();
+   logger.info('Fetching ratings by treatment', { treatmentId });
+
+  // Assuming treatment_id is available via patient_treatments join
+  const response = await supabase
+    .from("treatment_ratings")
+    .select(`
+      *,
+      pt:patient_treatments!inner(treatment_id)
+    `)
+    .eq("pt.treatment_id", treatmentId) 
+    .not('deleted_at', 'is', null);
+
+  if (response.error) {
+    logger.error("Error fetching ratings by treatment:", { treatmentId, error: response.error });
+    throw new Error("Failed to fetch ratings by treatment");
   }
-  // Effectiveness required only if condition_id is not null
-  if (ratingData.condition_id !== null && ratingData.effectiveness_out_of_ten === undefined) {
-    logger.error("Missing effectiveness for addTreatmentRatingAction when condition is specified", { ratingData })
-    throw new Error("Effectiveness is required when a specific condition is selected.")
+
+  // Remove the intermediate join object before returning
+  return (response.data || []).map(({ pt, ...rest }) => rest);
+}
+
+/**
+ * Get all ratings linked to a specific treatment AND condition (global IDs).
+ */
+export async function getRatingsByTreatmentAndConditionAction(
+  treatmentId: string, 
+  conditionId: string
+): Promise<TreatmentRating[]> {
+  const supabase = await createClient();
+  logger.info('Fetching ratings by treatment and condition', { treatmentId, conditionId });
+
+  const response = await supabase
+    .from("treatment_ratings")
+    .select(`
+      *,
+      pt:patient_treatments!inner(treatment_id),
+      pc:patient_conditions!inner(condition_id)
+    `)
+    .eq("pt.treatment_id", treatmentId) 
+    .eq("pc.condition_id", conditionId) 
+    .not('deleted_at', 'is', null);
+
+  if (response.error) {
+    logger.error("Error fetching ratings by treatment and condition:", { treatmentId, conditionId, error: response.error });
+    throw new Error("Failed to fetch ratings by treatment and condition");
   }
 
-  const supabase = await createClient()
-  logger.info("Attempting to add treatment rating", { ratingData })
-
-  try {
-    // Prepare the data, ensuring nulls are handled correctly
-    const insertData: TreatmentRatingInsert = {
-      ...ratingData,
-      condition_id: ratingData.condition_id,
-      effectiveness_out_of_ten: ratingData.effectiveness_out_of_ten ?? null,
-      review: ratingData.review || null, // Ensure empty string becomes null
-      // unit_id IS required - ensure it's provided in ratingData
-      // helpful_count defaults to null or 0 based on schema
-    }
-
-    const { data: newRating, error: insertError } = await supabase
-      .from("treatment_ratings")
-      .insert(insertData)
-      .select() // Select only the inserted row data
-      .single()
-
-    if (insertError) {
-      logger.error("Error adding treatment rating", { ratingData, error: insertError })
-      throw insertError
-    }
-
-    logger.info("Successfully added treatment rating", { newRating })
-
-    // Revalidate paths
-    revalidatePath("/patient/treatments")
-    if (ratingData.treatment_id) {
-        revalidatePath(`/treatments/${ratingData.treatment_id}`)
-    }
-    if (ratingData.condition_id) {
-        revalidatePath(`/conditions/${ratingData.condition_id}`)
-    }
-
-    return { success: true, data: newRating, message: "Treatment rating added successfully." }
-
-  } catch (error) {
-    logger.error("Failed in addTreatmentRatingAction", { ratingData, error })
-    return { success: false, error: error instanceof Error ? error.message : "An unknown error occurred." }
-  }
+  // Remove the intermediate join objects before returning
+  return (response.data || []).map(({ pt, pc, ...rest }) => rest);
 }

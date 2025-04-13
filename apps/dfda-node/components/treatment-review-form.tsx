@@ -4,7 +4,12 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
-import { createTreatmentRatingAction } from "@/app/actions/treatment-ratings"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { upsertTreatmentRatingAction, type TreatmentRatingUpsertData } from "@/app/actions/treatment-ratings"
+import { logger } from "@/lib/logger"
+import { Loader2 } from "lucide-react"
 
 interface TreatmentReviewFormProps {
   userId: string
@@ -24,21 +29,31 @@ export function TreatmentReviewForm({ userId, treatmentId, conditionId, onSucces
     setIsSubmitting(true)
 
     try {
-      await createTreatmentRatingAction({
-        user_id: userId,
-        treatment_id: treatmentId,
-        condition_id: conditionId,
+      const ratingData: TreatmentRatingUpsertData = {
+        patient_treatment_id: treatmentId,
+        patient_condition_id: conditionId,
         effectiveness_out_of_ten: rating,
-        review: review,
-      })
+        review: review || null,
+      }
 
-      toast({
-        title: "Success",
-        description: "Your review has been submitted.",
-      })
+      logger.info("Submitting treatment review", { ratingData })
+      const result = await upsertTreatmentRatingAction(ratingData)
 
-      if (onSuccess) {
-        onSuccess()
+      if (result.success) {
+        toast({
+          title: "Success",
+          description: "Your review has been submitted.",
+        })
+
+        if (onSuccess) {
+          onSuccess()
+        }
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to submit review. Please try again.",
+          variant: "destructive",
+        })
       }
     } catch {
       toast({

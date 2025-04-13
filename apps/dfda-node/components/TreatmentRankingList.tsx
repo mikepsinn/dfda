@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { StarRating } from "@/components/ui/star-rating"
-import { getEffectivenessForConditionAction } from "@/app/actions/treatment-effectiveness"
+import { getRatingsForConditionAction } from "@/app/actions/treatment-ratings"
 
 interface TreatmentRankingListProps {
   condition: string
@@ -28,8 +28,15 @@ export function TreatmentRankingList({ condition, treatments: initialTreatments,
     async function fetchTreatmentEffectiveness() {
       setIsLoading(true)
       try {
-        const data = await getEffectivenessForConditionAction(condition)
-        setTreatments(Array.isArray(data) ? data : [data].filter(Boolean))
+        const data = await getRatingsForConditionAction(condition)
+        const mappedTreatments = (Array.isArray(data) ? data : []).map(item => ({
+          id: item.patient_treatment_id,
+          name: item.treatment_name || "Unknown Treatment",
+          description: item.review,
+          effectiveness: item.effectiveness_out_of_ten ? (item.effectiveness_out_of_ten * 10) : 0,
+          rating: item.effectiveness_out_of_ten ?? 0
+        }))
+        setTreatments(mappedTreatments)
       } catch (error) {
         console.error("Error fetching treatment effectiveness:", error)
       } finally {

@@ -2,7 +2,10 @@ import type { Database } from "@/lib/database.types"
 import { createClient } from '@supabase/supabase-js'
 import { describe, it, expect, afterEach } from '@jest/globals'
 import {
-  createTreatmentRatingAction,
+  getRatingForPatientTreatmentPatientConditionAction,
+  upsertTreatmentRatingAction,
+  deleteTreatmentRatingAction,
+  type TreatmentRatingUpsertData,
 } from '@/app/actions/treatment-ratings'
 
 type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
@@ -34,48 +37,97 @@ describe('Treatment Ratings API Integration', () => {
 
   describe('createTreatmentRating', () => {
     it('creates a new treatment rating', async () => {
-      const newRating = {
-        treatment_id: testTreatmentId,
-        condition_id: testConditionId,
-        user_id: testUserId,
-        effectiveness_out_of_ten: 5,
-        review: 'Excellent treatment',
-        unit_id: 'test-unit-1'
+      const newRating: TreatmentRatingUpsertData = {
+        patient_treatment_id: 'mock-patient-treatment-id-1',
+        patient_condition_id: 'mock-patient-condition-id-1',
+        effectiveness_out_of_ten: 8,
+        review: 'Test review create',
       }
 
-      const result = await createTreatmentRatingAction(newRating)
+      const result = await upsertTreatmentRatingAction(newRating)
       
-      expect(result).toMatchObject(newRating)
-      expect(result.id).toBeDefined()
+      expect(result.success).toBe(true)
+      expect(result.data).toBeDefined()
+      expect(result.data?.id).toBeDefined()
+      expect(result.data).toMatchObject(newRating)
 
-      // Verify it was actually created in the database
-      const { data } = await supabase
+      const { data: dbRating } = await supabase
         .from('treatment_ratings')
-        .select()
-        .eq('id', result.id)
+        .select('*')
+        .eq('id', result.data!.id)
         .single()
 
-      expect(data).toMatchObject(newRating)
+      expect(dbRating).toMatchObject(newRating)
     })
 
-    it('prevents duplicate ratings from same user for same treatment/condition', async () => {
-      const rating = {
-        treatment_id: testTreatmentId,
-        condition_id: testConditionId,
-        user_id: testUserId,
+    it('should update an existing rating using upsert', async () => {
+      const initialRating: TreatmentRatingUpsertData = {
+        patient_treatment_id: 'mock-patient-treatment-id-upsert',
+        patient_condition_id: 'mock-patient-condition-id-upsert',
         effectiveness_out_of_ten: 5,
-        review: 'First review',
-        unit_id: 'test-unit-1'
+        review: 'Initial review for upsert test',
       }
 
-      // Create first rating
-      await createTreatmentRatingAction(rating)
+      const initialResult = await upsertTreatmentRatingAction(initialRating)
+      expect(initialResult.success).toBe(true)
+      expect(initialResult.data).toBeDefined()
+      const ratingId = initialResult.data!.id
 
-      // Attempt to create duplicate rating
-      await expect(createTreatmentRatingAction({
-        ...rating,
-        review: 'Second review'
-      })).rejects.toThrow()
+      const updatedRatingData: TreatmentRatingUpsertData = {
+        patient_treatment_id: 'mock-patient-treatment-id-upsert',
+        patient_condition_id: 'mock-patient-condition-id-upsert',
+        effectiveness_out_of_ten: 9,
+        review: 'Updated review for upsert test',
+      }
+
+      const updateResult = await upsertTreatmentRatingAction(updatedRatingData)
+      expect(updateResult.success).toBe(true)
+      expect(updateResult.data).toBeDefined()
+      expect(updateResult.data?.id).toBe(ratingId)
+      expect(updateResult.data?.effectiveness_out_of_ten).toBe(9)
+      expect(updateResult.data?.review).toBe('Updated review for upsert test')
+
+      const { data: dbRating } = await supabase
+        .from('treatment_ratings')
+        .select('*')
+        .eq('id', ratingId)
+        .single()
+      expect(dbRating?.effectiveness_out_of_ten).toBe(9)
+    })
+
+    it('should delete a rating', async () => {
+      const newRating: TreatmentRatingUpsertData = {
+        patient_treatment_id: 'mock-patient-treatment-id-1',
+        patient_condition_id: 'mock-patient-condition-id-1',
+        effectiveness_out_of_ten: 8,
+        review: 'Test review create',
+      }
+
+      const result = await upsertTreatmentRatingAction(newRating)
+      
+      expect(result.success).toBe(true)
+      expect(result.data).toBeDefined()
+      expect(result.data?.id).toBeDefined()
+      expect(result.data).toMatchObject(newRating)
+
+      const { data: dbRating } = await supabase
+        .from('treatment_ratings')
+        .select('*')
+        .eq('id', result.data!.id)
+        .single()
+
+      expect(dbRating).toMatchObject(newRating)
+
+      const deleteResult = await deleteTreatmentRatingAction(result.data!.id)
+      expect(deleteResult.success).toBe(true)
+
+      const { data: deletedRating } = await supabase
+        .from('treatment_ratings')
+        .select('*')
+        .eq('id', result.data!.id)
+        .single()
+
+      expect(deletedRating).toBeNull()
     })
   })
 

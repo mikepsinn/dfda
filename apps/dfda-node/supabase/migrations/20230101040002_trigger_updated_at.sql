@@ -32,10 +32,6 @@ CREATE TRIGGER update_patient_conditions_updated_at
     BEFORE UPDATE ON patient_conditions
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
-CREATE TRIGGER update_treatment_ratings_updated_at
-    BEFORE UPDATE ON treatment_ratings
-    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
-
 CREATE TRIGGER update_trials_updated_at
     BEFORE UPDATE ON trials
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();

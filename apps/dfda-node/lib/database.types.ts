@@ -902,6 +902,7 @@ export type Database = {
           first_name: string | null
           id: string
           last_name: string | null
+          timezone: string | null
           updated_at: string | null
           user_type: Database["public"]["Enums"]["user_role_enum"] | null
         }
@@ -913,6 +914,7 @@ export type Database = {
           first_name?: string | null
           id: string
           last_name?: string | null
+          timezone?: string | null
           updated_at?: string | null
           user_type?: Database["public"]["Enums"]["user_role_enum"] | null
         }
@@ -924,6 +926,7 @@ export type Database = {
           first_name?: string | null
           id?: string
           last_name?: string | null
+          timezone?: string | null
           updated_at?: string | null
           user_type?: Database["public"]["Enums"]["user_role_enum"] | null
         }
@@ -1240,68 +1243,58 @@ export type Database = {
       }
       treatment_ratings: {
         Row: {
-          condition_id: string
           created_at: string | null
           deleted_at: string | null
           effectiveness_out_of_ten: number | null
           helpful_count: number | null
           id: string
+          patient_condition_id: string
+          patient_treatment_id: string
           review: string | null
-          treatment_id: string
           updated_at: string | null
-          user_id: string
         }
         Insert: {
-          condition_id: string
           created_at?: string | null
           deleted_at?: string | null
           effectiveness_out_of_ten?: number | null
           helpful_count?: number | null
           id?: string
+          patient_condition_id: string
+          patient_treatment_id: string
           review?: string | null
-          treatment_id: string
           updated_at?: string | null
-          user_id: string
         }
         Update: {
-          condition_id?: string
           created_at?: string | null
           deleted_at?: string | null
           effectiveness_out_of_ten?: number | null
           helpful_count?: number | null
           id?: string
+          patient_condition_id?: string
+          patient_treatment_id?: string
           review?: string | null
-          treatment_id?: string
           updated_at?: string | null
-          user_id?: string
         }
         Relationships: [
           {
-            foreignKeyName: "treatment_ratings_condition_id_fkey"
-            columns: ["condition_id"]
+            foreignKeyName: "treatment_ratings_patient_condition_id_fkey"
+            columns: ["patient_condition_id"]
             isOneToOne: false
-            referencedRelation: "conditions"
+            referencedRelation: "patient_conditions"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "treatment_ratings_condition_id_fkey"
-            columns: ["condition_id"]
+            foreignKeyName: "treatment_ratings_patient_condition_id_fkey"
+            columns: ["patient_condition_id"]
             isOneToOne: false
             referencedRelation: "patient_conditions_view"
-            referencedColumns: ["condition_id"]
-          },
-          {
-            foreignKeyName: "treatment_ratings_treatment_id_fkey"
-            columns: ["treatment_id"]
-            isOneToOne: false
-            referencedRelation: "treatments"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "treatment_ratings_user_id_fkey"
-            columns: ["user_id"]
+            foreignKeyName: "treatment_ratings_patient_treatment_id_fkey"
+            columns: ["patient_treatment_id"]
             isOneToOne: false
-            referencedRelation: "profiles"
+            referencedRelation: "patient_treatments"
             referencedColumns: ["id"]
           },
         ]
@@ -1942,6 +1935,40 @@ export type Database = {
             columns: ["trial_id"]
             isOneToOne: false
             referencedRelation: "trials"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      treatment_ratings_stats: {
+        Row: {
+          average_effectiveness: number | null
+          condition_id: string | null
+          negative_ratings_count: number | null
+          neutral_ratings_count: number | null
+          positive_ratings_count: number | null
+          total_ratings: number | null
+          treatment_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_conditions_condition_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: false
+            referencedRelation: "conditions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_conditions_condition_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: false
+            referencedRelation: "patient_conditions_view"
+            referencedColumns: ["condition_id"]
+          },
+          {
+            foreignKeyName: "patient_treatments_treatment_id_fkey"
+            columns: ["treatment_id"]
+            isOneToOne: false
+            referencedRelation: "treatments"
             referencedColumns: ["id"]
           },
         ]

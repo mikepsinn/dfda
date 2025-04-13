@@ -23,8 +23,8 @@ interface DemoPatientSeedData {
   // Submissions need trial_id for linking during the seeding process
   submissions: (Omit<DataSubmissionInsert, 'patient_id' | 'enrollment_id' | 'id'> & { trial_id_for_linking: string })[]; 
   notifications: Omit<NotificationInsert, 'user_id' | 'id'>[];
-  ratings: Omit<TreatmentRatingInsert, 'user_id' | 'id'>[];
-  sideEffects: Omit<ReportedSideEffectInsert, 'user_id' | 'id'>[];
+  ratings?: Omit<TreatmentRatingInsert, 'user_id' | 'id'>[];
+  sideEffects?: Omit<ReportedSideEffectInsert, 'user_id' | 'id'>[];
 }
 
 // Added for Research Partner
@@ -75,14 +75,9 @@ export const DEMO_ACCOUNTS = {
         { title: 'Data Submission Reminder', message: 'Your weekly data submission for the Semaglutide trial is due tomorrow.', type: 'info', read_at: null, emoji: '📅' },
         { title: 'Trial Information Updated', message: 'New information about the Semaglutide trial is available.', type: 'info', read_at: new Date().toISOString(), emoji: '📣' },
       ],
-      ratings: [
-        { treatment_id: 'metformin', condition_id: 'type-2-diabetes', effectiveness_out_of_ten: 7, review: 'Helps control my blood sugar, some initial side effects but they passed.'},
-        { treatment_id: 'lisinopril', condition_id: 'hypertension', effectiveness_out_of_ten: 9, review: 'Excellent for my blood pressure.'},
-      ],
-      sideEffects: [
-        { treatment_id: 'metformin', description: 'initial side effects (e.g., mild gastrointestinal discomfort)', severity_out_of_ten: 2 },
-      ],
-    } satisfies DemoPatientSeedData // Use satisfies for type checking
+      // ratings: [...] // Keep commented/removed as intended
+      // sideEffects: [...] // Keep commented/removed as intended
+    } satisfies DemoPatientSeedData // This should now satisfy the updated (optional) interface
   },
   provider: {
     id: '20000000-0000-0000-0000-000000000000',
@@ -155,4 +150,6 @@ export const DEMO_ACCOUNTS = {
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
     seedData: {} // No specific seed data for developer currently
   }
-} as const; 
+} as const;
+
+// Removed stray logger call

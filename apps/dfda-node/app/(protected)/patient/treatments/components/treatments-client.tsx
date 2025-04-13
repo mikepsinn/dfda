@@ -14,6 +14,7 @@ import { AddTreatmentDialog } from "./add-treatment-dialog"
 import { ConditionsList } from "./conditions-list"
 import { TreatmentSearch } from "./treatment-search"
 import { SideEffectsDialog } from "./side-effects-dialog"
+import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 
 const logger = createLogger("treatments-client")
 
@@ -49,7 +50,7 @@ interface TreatmentsClientProps {
 
 export function TreatmentsClient({
   userId,
-  initialConditions,
+  initialConditions: patientConditions,
   conditionsError
 }: TreatmentsClientProps) {
   const [selectedTreatmentForSearch, setSelectedTreatmentForSearch] = useState<{ id: string; name: string } | null>(null)
@@ -125,8 +126,7 @@ export function TreatmentsClient({
 
   const openRatingDialog = (treatment: PatientTreatment) => {
     setSelectedTreatmentForDialog(treatment);
-    // setIsRatingDialogOpen(true); // Uncomment when dialog is created
-    alert(`Rating dialog for ${treatment.treatment_name} (PatientTreatment ID: ${treatment.id}) - Coming Soon!`);
+    setIsRatingDialogOpen(true); // Enable opening the dialog
   }
 
   const openSideEffectsDialog = (treatment: PatientTreatment) => {
@@ -136,10 +136,8 @@ export function TreatmentsClient({
 
   const openReminderDialog = (treatment: PatientTreatment) => {
     setSelectedTreatmentForDialog(treatment);
-    // setIsReminderDialogOpen(true); // Uncomment when dialog is created
-    alert(`Reminder dialog for ${treatment.treatment_name} (PatientTreatment ID: ${treatment.id}) - Coming Soon! DB schema needs update.`);
+    alert(`Reminder dialog for ${treatment.treatment_name} (PatientTreatment ID: ${treatment.id}) - Coming Soon!`);
   }
-
 
   // Handle condition fetching errors passed from server component
   if (conditionsError) {
@@ -180,7 +178,7 @@ export function TreatmentsClient({
                   <div className="text-center py-6">
                     <Music className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
                     <p className="text-muted-foreground mb-4">No treatments being tracked yet.</p>
-                    <AddTreatmentDialog userId={userId} conditions={initialConditions || []} />
+                    <AddTreatmentDialog userId={userId} conditions={patientConditions || []} />
                   </div>
                 ) : (
                   <div className="space-y-4">
@@ -211,16 +209,15 @@ export function TreatmentsClient({
                            )}
                         </div>
                         <div className="flex flex-wrap gap-2 shrink-0">
-                           {/* Pass patient_treatment.id to dialogs */}
                            <Button variant="outline" size="sm" onClick={() => openRatingDialog(treatment)}>
-                            <Edit className="mr-1 h-4 w-4" /> Rate
-                          </Button>
-                          <Button variant="outline" size="sm" onClick={() => openSideEffectsDialog(treatment)}>
-                            <AlertTriangle className="mr-1 h-4 w-4" /> Effects
-                          </Button>
-                          <Button variant="outline" size="sm" onClick={() => openReminderDialog(treatment)}>
-                            <BellRing className="mr-1 h-4 w-4" /> Reminder
-                          </Button>
+                              <Edit className="mr-1 h-4 w-4" /> Rate
+                           </Button>
+                           <Button variant="outline" size="sm" onClick={() => openSideEffectsDialog(treatment)}>
+                              <AlertTriangle className="mr-1 h-4 w-4" /> Effects
+                           </Button>
+                           <Button variant="outline" size="sm" onClick={() => openReminderDialog(treatment)}>
+                              <BellRing className="mr-1 h-4 w-4" /> Reminder
+                           </Button>
                         </div>
                       </Card>
                     ))}
@@ -239,8 +236,8 @@ export function TreatmentsClient({
               <CardDescription>Your current health conditions</CardDescription>
             </CardHeader>
             <CardContent>
-              {initialConditions && initialConditions.length > 0 ? (
-                <ConditionsList conditions={initialConditions} />
+              {patientConditions && patientConditions.length > 0 ? (
+                <ConditionsList conditions={patientConditions} />
               ) : (
                 <div className="text-center py-6">
                   <Music className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
@@ -283,8 +280,18 @@ export function TreatmentsClient({
           />
       )}
 
+      {/* Render TreatmentRatingDialog conditionally */}
+      {isRatingDialogOpen && selectedTreatmentForDialog && (
+          <TreatmentRatingDialog 
+              patientTreatment={selectedTreatmentForDialog}
+              patientConditions={patientConditions || []} // Pass patient conditions
+              open={isRatingDialogOpen} 
+              onOpenChange={setIsRatingDialogOpen}
+              onSuccess={fetchUserTreatments} // Re-fetch treatments after success
+          />
+      )}
+
       {/* Placeholder for Dialogs - Implement these components next */}
-      {/* {isRatingDialogOpen && <TreatmentRatingDialog treatment={selectedTreatmentForDialog} onClose={() => setIsRatingDialogOpen(false)} />} */}
       {/* {isReminderDialogOpen && <ReminderDialog treatment={selectedTreatmentForDialog} onClose={() => setIsReminderDialogOpen(false)} />} */}
     </>
   )

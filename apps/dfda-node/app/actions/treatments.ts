@@ -100,34 +100,75 @@ export async function searchTreatmentsAction(query: string): Promise<Treatment[]
 
 // Get treatments for a specific condition
 export async function getTreatmentsForConditionAction(conditionId: string): Promise<Treatment[]> {
-  const supabase = await createClient()
+  const supabase = await createClient();
+  logger.info('Fetching treatments associated with condition via ratings', { conditionId });
 
+  // Revised Query: Start from patient_treatments, join treatments, then join ratings filtered by condition
   const response = await supabase
-    .from('treatments')
+    .from('patient_treatments') // Start from patient_treatments
     .select(`
-      *,
-      global_variables!inner (
-        name,
-        description
+      treatment:treatments!inner ( // Join treatments
+        id,
+        created_at,
+        deleted_at,
+        manufacturer,
+        treatment_type,
+        updated_at,
+        gv:global_variables!inner ( // Join global_variables from treatments
+          name,
+          description
+        )
       ),
-      treatment_ratings!inner (
-        effectiveness_out_of_ten
+      treatment_ratings!inner( // Join ratings
+         pc:patient_conditions!inner(condition_id) // Join conditions via ratings
       )
     `)
-    .eq('treatment_ratings.condition_id', conditionId)
-    .not('deleted_at', 'is', null)
-    .order('effectiveness_out_of_ten', { foreignTable: 'treatment_ratings', ascending: false })
+    // Filter based on the condition_id in the nested patient_conditions table
+    .eq('treatment_ratings.pc.condition_id', conditionId)
+    // Ensure the treatment itself is not deleted
+    .not('treatment.deleted_at', 'is', null);
+    // Ordering by effectiveness here can be complex and might duplicate treatments;
+    // It's often better to get distinct treatments first, then fetch stats/ratings if needed.
 
   if (response.error) {
-    logger.error('Error fetching treatments for condition:', { error: response.error })
-    throw new Error('Failed to fetch treatments for condition')
+    logger.error('Error fetching treatments for condition:', { conditionId, error: response.error });
+    // Log the specific Supabase error details for better debugging
+    console.error("Supabase Error Details:", JSON.stringify(response.error, null, 2));
+    throw new Error('Failed to fetch treatments for condition');
   }
 
-  return response.data.map(treatment => ({
-    ...treatment,
-    name: treatment.global_variables.name,
-    description: treatment.global_variables.description
-  }))
+  if (!response.data) {
+    return [];
+  }
+
+  // Extract unique treatments using a Map
+  const treatmentsMap = new Map<string, Treatment>();
+  response.data.forEach(item => {
+    // Add type assertion to bypass incorrect type inference from complex join
+    const typedItem = item as any; 
+
+    // Check if treatment and its global_variable data exist and if the treatment hasn't been added yet
+    // Use typedItem now
+    if (typedItem.treatment && typedItem.treatment.gv && !treatmentsMap.has(typedItem.treatment.id)) {
+      treatmentsMap.set(typedItem.treatment.id, {
+        // Spread the fields from typedItem.treatment
+        id: typedItem.treatment.id,
+        created_at: typedItem.treatment.created_at,
+        deleted_at: typedItem.treatment.deleted_at,
+        manufacturer: typedItem.treatment.manufacturer,
+        treatment_type: typedItem.treatment.treatment_type,
+        updated_at: typedItem.treatment.updated_at,
+        // Add the fields from the joined global_variables
+        name: typedItem.treatment.gv.name,
+        description: typedItem.treatment.gv.description
+      });
+    }
+  });
+
+  const uniqueTreatments = Array.from(treatmentsMap.values());
+  logger.info(`Found ${uniqueTreatments.length} unique treatments for condition`, { conditionId });
+
+  return uniqueTreatments;
 }
 
 // Create a new treatment

@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-import { getTreatmentEffectivenessByPatientAction } from "@/app/actions/treatment-effectiveness"
+import { getRatingsByPatientAction } from "@/app/actions/treatment-ratings"
 import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
+// import { TreatmentCard } from "@/components/treatment-card" // Commented out - Component path/existence uncertain
+// import { PatientConditionsCard } from "@/components/patient-conditions-card" // Commented out - Component not found
+// import { PatientTreatmentsCard } from "@/components/patient-treatments-card" // Commented out - Component not found
 
 export default async function PatientDashboard() {
   const user = await getServerUser()
@@ -16,15 +19,17 @@ export default async function PatientDashboard() {
 
   // Fetch conditions and treatments
   const conditions = await getPatientConditionsAction(user.id)
-  const treatmentEffectiveness = await getTreatmentEffectivenessByPatientAction(user.id)
+  const patientRatings = await getRatingsByPatientAction(user.id)
 
   // Get treatment details for each condition
   const conditionsWithTreatments = await Promise.all(
     conditions.map(async (condition) => {
       if (!condition.condition_id) return null
       const treatments = await getTreatmentsForConditionAction(condition.condition_id)
-      const effectivenessMap = treatmentEffectiveness.reduce((acc, curr) => {
-        acc[curr.treatment_id] = curr.effectiveness_out_of_ten || 0
+      const effectivenessMap = patientRatings.reduce((acc, curr) => {
+        if (curr.patient_treatment_id) {
+          acc[curr.patient_treatment_id] = curr.effectiveness_out_of_ten || 0
+        }
         return acc
       }, {} as Record<string, number>)
 
@@ -45,6 +50,12 @@ export default async function PatientDashboard() {
     })
   ).then(results => results.filter((r): r is NonNullable<typeof r> => r !== null))
 
+  // Process ratings (Example - adjust based on actual needs)
+  // const ratingsByTreatment = (fetchedRatings || []).reduce((acc, curr) => {
+  //   acc[curr.treatment_id] = curr.effectiveness_out_of_ten || 0 // Error: treatment_id doesn't exist
+  //   return acc;
+  // }, {} as Record<string, number>); 
+
   return (
     <div className="container space-y-8 py-8">
       <Card>
@@ -59,8 +70,8 @@ export default async function PatientDashboard() {
               <p className="text-sm text-muted-foreground">Active Conditions</p>
             </div>
             <div className="space-y-2">
-              <p className="text-2xl font-bold">{treatmentEffectiveness.length}</p>
-              <p className="text-sm text-muted-foreground">Active Treatments</p>
+              <p className="text-2xl font-bold">{patientRatings.length}</p>
+              <p className="text-sm text-muted-foreground">Rated Treatments</p>
             </div>
           </div>
         </CardContent>
@@ -80,6 +91,22 @@ export default async function PatientDashboard() {
           </Link>
         </CardHeader>
         <CardContent>
+          {/* Commenting out usage of missing components */}
+          {/* <CardContent>
+            {conditions.length > 0 ? (
+              <div className="space-y-8">
+                <PatientConditionsCard conditions={conditions} />
+                <PatientTreatmentsCard conditions={conditionsWithTreatments} />
+              </div>
+            ) : (
+               <div className="text-center py-6 text-muted-foreground">
+                 <p>No conditions added yet.</p>
+                 <Link href="/patient/treatments" className="text-primary hover:underline">
+                   Add your first condition
+                 </Link>
+               </div>
+            )}
+          </CardContent> */}
           {conditions.length > 0 ? (
             <div className="space-y-4">
               {conditionsWithTreatments.map((condition) => (
@@ -89,7 +116,7 @@ export default async function PatientDashboard() {
                     <div className="mt-2 space-y-2">
                       {condition.treatments.map((treatment) => (
                         <div key={treatment.id} className="text-sm text-muted-foreground">
-                          {treatment.treatment.global_variables.name} - Effectiveness: {treatment.effectiveness_out_of_ten}/10
+                          {treatment.treatment.global_variables.name} - Effectiveness: {treatment.effectiveness_out_of_ten ?? "Not Rated"}/10
                         </div>
                       ))}
                     </div>

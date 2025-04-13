@@ -20,14 +20,8 @@ export async function getSideEffectReportsForPatientTreatmentAction(
 
   const response = await supabase
     .from('reported_side_effects')
-    .select(` 
-      id,
-      description,
-      severity_out_of_ten,
-      created_at
-      // Note: Cannot easily join profile info here without user_id
-      // If profile info is needed, fetch patient_id from patient_treatments first
-    `)
+    // Fetch all fields, profile info cannot be easily joined here
+    .select('*' )
     .eq('patient_treatment_id', patientTreatmentId)
     .is('deleted_at', null)
     .order('created_at', { ascending: false })
