@@ -1,0 +1,129 @@
+"use client"
+
+import { useState } from "react";
+import { useRouter } from 'next/navigation'; 
+import { createLogger } from "@/lib/logger";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { TreatmentSearch } from "@/components/treatment-search";
+import { addInitialPatientTreatmentsAction } from "@/app/actions/patient-treatments";
+import { createDefaultReminderAction } from "@/app/actions/reminder-schedules";
+// TODO: Add toast import if needed e.g. import { useToast } from "@/components/ui/use-toast";
+
+const logger = createLogger("patient-onboarding-treatments-form");
+
+// Simplified interface for selected treatments
+interface SelectedTreatment {
+  treatmentId: string;
+  treatmentName: string;
+}
+
+interface PatientOnboardingTreatmentsFormProps {
+  userId: string;
+  // Removed conditions prop
+}
+
+export function PatientOnboardingTreatmentsForm({ userId }: PatientOnboardingTreatmentsFormProps) {
+  
+  // Simplified state: just a list of selected treatments
+  const [selectedTreatments, setSelectedTreatments] = useState<SelectedTreatment[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  // const { toast } = useToast(); // Uncomment if using toast
+
+  // When a treatment is selected from the search input
+  const handleTreatmentSelect = (treatment: { id: string; name: string }) => {
+     logger.info('Treatment selected', { treatmentId: treatment.id });
+     // Avoid adding duplicates
+     if (!selectedTreatments.some(t => t.treatmentId === treatment.id)) {
+         setSelectedTreatments(prev => [...prev, { treatmentId: treatment.id, treatmentName: treatment.name }]);
+     }
+  };
+
+  const handleRemoveTreatment = (treatmentId: string) => {
+     setSelectedTreatments(prev => prev.filter(t => t.treatmentId !== treatmentId));
+  };
+
+  const handleNext = async () => {
+    setIsLoading(true);
+    logger.info("Submitting initial treatments", { userId, count: selectedTreatments.length });
+    try {
+       // Call the server action with the simplified list
+       // NOTE: We expect addInitialPatientTreatmentsAction to be updated 
+       // to accept this simpler format.
+       const result = await addInitialPatientTreatmentsAction(userId, selectedTreatments);
+       
+       if (!result.success) {
+         throw new Error(result.error || "Server action failed");
+       }
+       logger.info('Initial treatments saved', { userId });
+
+       // Attempt to create default reminders for treatments added (fire-and-forget)
+       // Assuming a default daily reminder for now
+       logger.info("Attempting to create default treatment reminders", { userId });
+       selectedTreatments.forEach(treatment => {
+          // TODO: Maybe create a more specific default rule? FREQ=DAILY?
+          createDefaultReminderAction(userId, treatment.treatmentId, treatment.treatmentName, 'treatment')
+             .then(reminderResult => {
+                 if (!reminderResult.success) {
+                    logger.warn('Failed to create default reminder for treatment', { userId, treatmentId: treatment.treatmentId, error: reminderResult.error });
+                 }
+              })
+              .catch(err => { 
+                 logger.error('Error calling createDefaultReminderAction for treatment', { userId, treatmentId: treatment.treatmentId, err });
+              });
+       });
+
+       logger.info('Navigating to dashboard after treatment submission and reminder attempts', { userId });
+       // Navigate to dashboard after saving
+       // TODO: Replace alert with toast notification
+       alert("Treatments saved! Onboarding complete.");
+       router.push('/patient');
+    } catch (error) {
+      logger.error("Failed to save treatments", { userId, error });
+      // TODO: Replace alert with toast notification
+      alert("Failed to save treatments. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Your Treatments</CardTitle>
+        <CardDescription>Add the treatments, medications, or supplements you are currently taking.</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        <div>
+          <Label className="mb-1 block text-sm font-medium">Search and add treatments:</Label>
+          <TreatmentSearch 
+             onSelect={handleTreatmentSelect} 
+             selected={null} // Reset selection after adding
+             />
+        </div>
+
+        {selectedTreatments.length > 0 && (
+          <div className="space-y-2">
+            <h4 className="font-medium">Selected Treatments:</h4>
+            <ul className="list-disc space-y-1 pl-5">
+              {selectedTreatments.map(t => (
+                <li key={t.treatmentId} className="flex items-center justify-between">
+                  <span>{t.treatmentName}</span>
+                  <Button variant="ghost" size="sm" onClick={() => handleRemoveTreatment(t.treatmentId)}>&times;</Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="flex justify-end pt-4">
+          <Button onClick={handleNext} disabled={isLoading || selectedTreatments.length === 0}>
+              {isLoading ? "Saving..." : "Finish Onboarding"}
+           </Button>
+        </div>
+      </CardContent>
+    </Card>
+  )
+} 

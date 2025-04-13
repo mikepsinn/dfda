@@ -29,42 +29,42 @@ export type ReminderScheduleDbData = Omit<Database['public']['Tables']['reminder
 
 // --- Server Actions ---
 
-// Get all reminder schedules for a user variable
-export async function getReminderSchedulesForUserVariableAction(userVariableId: string): Promise<ReminderSchedule[]> {
+// Get all reminder schedules for a global variable concept
+export async function getReminderSchedulesForUserVariableAction(globalVariableId: string): Promise<ReminderSchedule[]> {
     const supabase = await createClient();
-    logger.info('Fetching reminder schedules', { userVariableId });
+    logger.info('Fetching reminder schedules', { globalVariableId });
 
-    if (!userVariableId) {
-        logger.warn('getReminderSchedulesForUserVariableAction called with no userVariableId');
+    if (!globalVariableId) {
+        logger.warn('getReminderSchedulesForUserVariableAction called with no globalVariableId');
         return [];
     }
 
     const { data, error } = await supabase
         .from('reminder_schedules')
         .select('*')
-        .eq('user_variable_id', userVariableId)
+        .eq('user_variable_id', globalVariableId)
         .order('created_at', { ascending: true });
 
     if (error) {
-        logger.error('Error fetching reminder schedules', { userVariableId, error });
+        logger.error('Error fetching reminder schedules', { globalVariableId, error });
         throw new Error('Could not fetch reminder schedules.');
     }
     return data || [];
 }
 
-// Upsert a reminder schedule for a user variable
+// Upsert a reminder schedule for a global variable concept
 export async function upsertReminderScheduleAction(
-    userVariableId: string,
+    globalVariableId: string,
     scheduleData: ReminderScheduleClientData,
-    userId: string, // Pass userId for validation
-    scheduleIdToUpdate?: string | null // Optional ID if updating a specific schedule
+    userId: string,
+    scheduleIdToUpdate?: string | null
 ): Promise<{ success: boolean; data?: ReminderSchedule; error?: string; message?: string }> {
     const supabase = await createClient();
-    logger.info('Upserting reminder schedule', { userVariableId, scheduleIdToUpdate, isActive: scheduleData.isActive });
+    logger.info('Upserting reminder schedule', { globalVariableId, scheduleIdToUpdate, isActive: scheduleData.isActive });
 
     // Validation
-    if (!userVariableId) {
-        return { success: false, error: 'User Variable ID is required.' };
+    if (!globalVariableId) {
+        return { success: false, error: 'Global Variable ID is required.' };
     }
     if (!scheduleData.timeOfDay?.match(/^([01]\d|2[0-3]):([0-5]\d)$/)) { // Basic HH:mm validation
         return { success: false, error: 'Invalid time format (HH:mm required).' };
@@ -128,19 +128,19 @@ export async function upsertReminderScheduleAction(
                 logger.info('Calculated next trigger time', { nextTriggerAtIso, timezone: scheduleData.timezone });
             } else {
                 // No future occurrences found (rule ended or invalid)
-                logger.info('No future occurrences found for rule', { userVariableId, scheduleIdToUpdate });
+                logger.info('No future occurrences found for rule', { globalVariableId, scheduleIdToUpdate });
                 nextTriggerAtIso = null;
             }
         } else {
             // Schedule is inactive
-            logger.info('Schedule is inactive, setting next_trigger_at to null', { userVariableId, scheduleIdToUpdate });
+            logger.info('Schedule is inactive, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
             nextTriggerAtIso = null;
         }
 
 
         const dbData: ReminderScheduleDbData & { user_id: string } = {
             user_id: userId,
-            user_variable_id: userVariableId,
+            user_variable_id: globalVariableId,
             is_active: scheduleData.isActive,
             rrule: scheduleData.rruleString,
             time_of_day: scheduleData.timeOfDay,
@@ -177,7 +177,7 @@ export async function upsertReminderScheduleAction(
         }
 
         if (response.error) {
-            logger.error('Error upserting reminder schedule', { error: response.error, userVariableId });
+            logger.error('Error upserting reminder schedule', { error: response.error, globalVariableId });
             throw response.error;
         }
 
@@ -185,12 +185,12 @@ export async function upsertReminderScheduleAction(
 
         // Revalidate paths (could be more specific if needed)
         revalidatePath('/patient/reminders'); // Assuming a general reminders page
-        // revalidatePath(`/patient/variables/${userVariableId}`);
+        // revalidatePath(`/patient/variables/${globalVariableId}`);
 
         return { success: true, data: response.data, message: 'Reminder schedule saved.' };
 
     } catch (error) {
-        logger.error("Failed in upsertReminderScheduleAction", { userVariableId, error: error instanceof Error ? error.message : String(error) });
+        logger.error("Failed in upsertReminderScheduleAction", { globalVariableId, error: error instanceof Error ? error.message : String(error) });
         const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
         return { success: false, error: errorMessage };
     }
@@ -239,14 +239,14 @@ export async function deleteReminderScheduleAction(
  */
 export async function createDefaultReminderAction(
   userId: string,
-  userVariableId: string,
+  globalVariableId: string,
   variableName: string, // e.g., "Diabetes Type 2" or "Metformin"
   reminderType: 'condition' | 'treatment' // To customize messages
 ): Promise<{ success: boolean; error?: string }> {
   const supabase = await createClient();
-  logger.info('Creating default reminder', { userId, userVariableId, variableName, reminderType });
+  logger.info('Creating default reminder', { userId, globalVariableId, variableName, reminderType });
 
-  if (!userId || !userVariableId || !variableName) {
+  if (!userId || !globalVariableId || !variableName) {
     return { success: false, error: 'Missing required information for default reminder.' };
   }
 
@@ -276,14 +276,14 @@ export async function createDefaultReminderAction(
     // Call the existing upsert action to handle RRULE parsing and next_trigger_at calculation
     // We are *inserting*, so no scheduleIdToUpdate is provided.
     const result = await upsertReminderScheduleAction(
-        userVariableId,
+        globalVariableId,
         scheduleData,
         userId
         // scheduleIdToUpdate is omitted for insertion
     );
 
     if (!result.success || !result.data) {
-      logger.error('Failed to create default reminder via upsert', { userId, userVariableId, error: result.error });
+      logger.error('Failed to create default reminder via upsert', { userId, globalVariableId, error: result.error });
       return { success: false, error: result.error || 'Failed to create default reminder.' };
     }
 
@@ -302,11 +302,11 @@ export async function createDefaultReminderAction(
          // Don't fail the whole operation for this
     }
 
-    logger.info('Successfully created default reminder', { userId, userVariableId, scheduleId: result.data.id });
+    logger.info('Successfully created default reminder', { userId, globalVariableId, scheduleId: result.data.id });
     return { success: true };
 
   } catch (error) {
-    logger.error('Error in createDefaultReminderAction', { userId, userVariableId, error: error instanceof Error ? error.message : String(error) });
+    logger.error('Error in createDefaultReminderAction', { userId, globalVariableId, error: error instanceof Error ? error.message : String(error) });
     return { success: false, error: 'An unexpected error occurred while creating the default reminder.' };
   }
 } 

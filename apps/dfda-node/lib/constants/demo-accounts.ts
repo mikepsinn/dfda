@@ -150,6 +150,6 @@ export const DEMO_ACCOUNTS = {
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
     seedData: {} // No specific seed data for developer currently
   }
-} as const;
+} as const; 
 
 // Removed stray logger call

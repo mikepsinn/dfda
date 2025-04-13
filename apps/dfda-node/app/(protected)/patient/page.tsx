@@ -14,6 +14,7 @@ import { PatientTreatmentsCard } from "@/components/patient/PatientTreatmentsCar
 import { TrackingInbox } from "@/components/patient/TrackingInbox"
 // Import action to pre-fetch tasks for SSR
 import { getPendingReminderTasksAction } from "@/app/actions/reminder-schedules"
+import { logger } from "@/lib/logger"
 
 export default async function PatientDashboard() {
   const user = await getServerUser()
@@ -21,10 +22,17 @@ export default async function PatientDashboard() {
     redirect("/login")
   }
 
-  // Fetch conditions and treatments
+  // Fetch conditions first to check for onboarding status
   const conditions = await getPatientConditionsAction(user.id)
+
+  // If no conditions, redirect to onboarding
+  if (conditions.length === 0) {
+    logger.info("User has no conditions, redirecting to onboarding", { userId: user.id });
+    redirect("/patient/onboarding");
+  }
+
+  // Fetch other data only if conditions exist
   const patientRatings = await getRatingsByPatientAction(user.id)
-  // Pre-fetch initial tasks for the inbox
   const initialTasks = await getPendingReminderTasksAction(user.id)
 
   // Get treatment details for each condition

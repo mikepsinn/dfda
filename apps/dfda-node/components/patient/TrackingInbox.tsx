@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, XCircle, Clock, MessageSquareQuestion, ClipboardPenLine } from "lucide-react"
+import { CheckCircle, XCircle, Clock, MessageSquareMore, ClipboardPenLine } from "lucide-react"
 import { 
     getPendingReminderTasksAction, 
     completeReminderTaskAction, 
@@ -91,7 +92,14 @@ export function TrackingInbox({ userId, initialTasks = [] }: TrackingInboxProps)
       </CardHeader>
       <CardContent>
         {isLoading && tasks.length === 0 && <p>Loading tasks...</p>}
-        {!isLoading && tasks.length === 0 && <p className="text-muted-foreground">No pending tracking tasks.</p>}
+        {!isLoading && tasks.length === 0 && (
+          <div className="text-center text-muted-foreground">
+            <p className="mb-4">No pending tracking tasks.</p>
+            <Link href="/patient/onboarding" passHref>
+              <Button variant="secondary">Setup Reminders</Button>
+            </Link>
+          </div>
+        )}
         
         {tasks.length > 0 && (
           <div className="space-y-4">

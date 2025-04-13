@@ -63,7 +63,7 @@ export default async function TreatmentPage({ params, searchParams }: TreatmentP
         <CardContent>
           <Suspense fallback={<p>Loading details...</p>}>
             <TreatmentDetails treatment={treatment} conditionId={searchParams.condition || ''} />
-          </Suspense>
+      </Suspense>
         </CardContent>
       </Card>
     </div>

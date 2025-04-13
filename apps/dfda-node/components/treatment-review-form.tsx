@@ -40,13 +40,13 @@ export function TreatmentReviewForm({ userId, treatmentId, conditionId, onSucces
       const result = await upsertTreatmentRatingAction(ratingData)
 
       if (result.success) {
-        toast({
-          title: "Success",
-          description: "Your review has been submitted.",
-        })
+      toast({
+        title: "Success",
+        description: "Your review has been submitted.",
+      })
 
-        if (onSuccess) {
-          onSuccess()
+      if (onSuccess) {
+        onSuccess()
         }
       } else {
         toast({
