@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, ChevronDown, ChevronUp } from "lucide-react"
+import { Menu } from "lucide-react"
 import {
   Sheet,
   SheetContent,

@@ -1,15 +1,14 @@
 "use server"
 
 import { createClient } from '@/lib/supabase/server'
-import type { Database } from '@/lib/database.types'
-import { handleDatabaseResponse, handleDatabaseCollectionResponse } from '@/lib/actions-helpers'
-import { revalidatePath } from 'next/cache'
+import type { Database, Tables, TablesInsert, TablesUpdate } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
+import { revalidatePath } from 'next/cache'
 
 // Types using the updated schema
-export type TreatmentRating = Database['public']['Tables']['treatment_ratings']['Row']
-export type TreatmentRatingInsert = Database['public']['Tables']['treatment_ratings']['Insert']
-export type TreatmentRatingUpdate = Database['public']['Tables']['treatment_ratings']['Update']
+type TreatmentRating = Tables<"treatment_ratings">;
+type TreatmentRatingInsert = TablesInsert<"treatment_ratings">;
+type TreatmentRatingUpdate = TablesUpdate<"treatment_ratings">;
 
 // Define the expected shape for inserting/upserting data via actions
 export type TreatmentRatingUpsertData = {
@@ -365,4 +364,67 @@ export async function getRatingsByTreatmentAndConditionAction(
 
   // Remove the intermediate join objects before returning
   return (response.data || []).map(({ pt, pc, ...rest }) => rest);
+}
+
+// Fetch average treatment rating for a condition
+async function getAverageTreatmentRatingAction(treatmentId: string, conditionId: string) {
+  const supabase = await createClient();
+  try {
+    const { data, error } = await supabase
+      .rpc('get_average_treatment_rating', { p_treatment_id: treatmentId, p_condition_id: conditionId })
+      .single(); // Assuming the function returns a single row object
+
+    if (error) {
+      logger.error('Error fetching average treatment rating:', { treatmentId, conditionId, error });
+      return null; // Return null or default object on error
+    }
+    return data;
+  } catch (error) {
+    logger.error("Error fetching treatment ratings with details:", { error });
+    return null;
+  }
+}
+
+// Fetch user specific treatment rating for a condition
+async function getUserTreatmentRatingAction(userId: string, treatmentId: string, conditionId: string) {
+  const supabase = await createClient();
+  try {
+    const { data, error } = await supabase
+      .from('treatment_ratings')
+      .select('*')
+      .eq('patient_treatment_id', `(${getPatientTreatmentSubquery(userId, treatmentId)})`) // Find the correct patient_treatment_id
+      .eq('patient_condition_id', `(${getPatientConditionSubquery(userId, conditionId)})`) // Find the correct patient_condition_id
+      .maybeSingle();
+
+    if (error) {
+      logger.error('Error fetching user treatment rating:', { userId, treatmentId, conditionId, error });
+      return null;
+    }
+    return data;
+  } catch (error) {
+    logger.error("Error fetching user treatment rating:", { error });
+    return null;
+  }
+}
+
+// Helper subquery to find patient_treatment_id
+function getPatientTreatmentSubquery(userId: string, treatmentId: string) {
+  return supabase
+    .from('patient_treatments')
+    .select('id')
+    .eq('patient_id', userId)
+    .eq('treatment_id', treatmentId)
+    .limit(1)
+    .single(); // This might need adjustment if subqueries aren't directly supported like this
+}
+
+// Helper subquery to find patient_condition_id
+function getPatientConditionSubquery(userId: string, conditionId: string) {
+  return supabase
+    .from('patient_conditions')
+    .select('id')
+    .eq('patient_id', userId)
+    .eq('condition_id', conditionId)
+    .limit(1)
+    .single(); // This might need adjustment
 }

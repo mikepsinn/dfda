@@ -2,7 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import type { Database } from '@/lib/database.types'
-import { handleDatabaseResponse, handleDatabaseCollectionResponse } from '@/lib/actions-helpers'
+import { handleDatabaseResponse } from '@/lib/actions-helpers'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
 

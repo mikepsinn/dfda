@@ -1,16 +1,16 @@
 "use server"
 
-import { createServerClient } from "@/lib/supabase"
+import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
-import type { Database } from "@/lib/database.types"
-import { createClient } from '@/lib/supabase/server'
+import { Database } from "@/lib/database.types"
+import { createClient } from "@/lib/supabase/server"
 
 export type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 export type TrialEnrollmentInsert = Database["public"]["Tables"]["trial_enrollments"]["Insert"]
 export type TrialEnrollmentUpdate = Database["public"]["Tables"]["trial_enrollments"]["Update"]
 
 export async function getTrialEnrollmentsAction(): Promise<TrialEnrollment[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from("trial_enrollments")
     .select(`
@@ -35,7 +35,7 @@ export async function getTrialEnrollmentsAction(): Promise<TrialEnrollment[]> {
 }
 
 export async function getTrialEnrollmentsByPatientAction(patientId: string): Promise<TrialEnrollment[]> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from("trial_enrollments")
     .select(`
@@ -61,7 +61,7 @@ export async function getTrialEnrollmentsByPatientAction(patientId: string): Pro
 }
 
 export async function getTrialEnrollmentsByTrialAction(trialId: string) {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from("trial_enrollments")
     .select(`
@@ -80,7 +80,7 @@ export async function getTrialEnrollmentsByTrialAction(trialId: string) {
 }
 
 export async function createTrialEnrollmentAction(enrollment: TrialEnrollmentInsert) {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase.from("trial_enrollments").insert(enrollment).select().single()
 
   if (error) {
@@ -92,7 +92,7 @@ export async function createTrialEnrollmentAction(enrollment: TrialEnrollmentIns
 }
 
 export async function updateTrialEnrollmentAction(id: string, updates: TrialEnrollmentUpdate) {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from("trial_enrollments")
     .update({ ...updates, updated_at: new Date().toISOString() })
@@ -109,7 +109,7 @@ export async function updateTrialEnrollmentAction(id: string, updates: TrialEnro
 }
 
 export async function deleteTrialEnrollmentAction(id: string) {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { error } = await supabase.from("trial_enrollments").delete().eq("id", id)
 
   if (error) {
@@ -121,7 +121,7 @@ export async function deleteTrialEnrollmentAction(id: string) {
 }
 
 export async function updateEnrollmentStatusAction(enrollmentId: string, status: TrialEnrollment['status']) {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from('trial_enrollments')
     .update({ status, updated_at: new Date().toISOString() })
@@ -138,7 +138,7 @@ export async function updateEnrollmentStatusAction(enrollmentId: string, status:
 }
 
 export async function getTrialEnrollmentByIdAction(id: string): Promise<TrialEnrollment | null> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from("trial_enrollments")
     .select()
@@ -154,7 +154,7 @@ export async function getTrialEnrollmentByIdAction(id: string): Promise<TrialEnr
 }
 
 export async function getTrialEnrollmentByTrialAndPatientAction(trialId: string, patientId: string): Promise<TrialEnrollment | null> {
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const { data, error } = await supabase
     .from("trial_enrollments")
     .select()
