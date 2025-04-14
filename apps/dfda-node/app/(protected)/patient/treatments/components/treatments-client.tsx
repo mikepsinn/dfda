@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Music, Edit, AlertTriangle } from 'lucide-react'
 import { ColumnDef } from "@tanstack/react-table"
@@ -16,6 +16,7 @@ import { TreatmentSearch } from "@/components/treatment-search"
 import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 import type { Database } from '@/lib/database.types'
+import { toast } from "@/components/ui/use-toast"
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 type PatientTreatmentWithDetails = Database["public"]["Tables"]["patient_treatments"]["Row"] & {
@@ -44,7 +45,7 @@ export function TreatmentsClient({
   const [isRatingDialogOpen, setIsRatingDialogOpen] = useState(false)
   const [isSideEffectsDialogOpen, setIsSideEffectsDialogOpen] = useState(false)
 
-  const fetchUserTreatments = async () => {
+  const fetchUserTreatments = useCallback(async () => {
     setIsLoadingTreatments(true)
     setTreatmentsError(null)
     try {
@@ -72,6 +73,7 @@ export function TreatmentsClient({
       }));
       
       setUserTreatments(formattedData)
+      logger.info("Fetched user treatments successfully", { userId, count: formattedData.length });
     } catch (err) {
       logger.error("Error fetching user treatments:", err)
       setTreatmentsError("Failed to load treatments.")
@@ -79,11 +81,11 @@ export function TreatmentsClient({
     } finally {
       setIsLoadingTreatments(false)
     }
-  }
+  }, [userId])
   
   useEffect(() => {
     fetchUserTreatments()
-  }, [userId])
+  }, [fetchUserTreatments])
 
   const handleSelectTreatmentForSearch = (treatment: { id: string; name: string }) => {
     setSelectedTreatmentForSearch(treatment)

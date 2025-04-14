@@ -60,7 +60,7 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
     setIsLoading(true)
     try {
       // --- Logic for Condition & Rating --- 
-      let conditionAdded = false
+      // let conditionAdded = false // Removed assignment
       // Add condition if it's specified, new, and not the placeholder
       if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && !isExistingPatientCondition) {
         logger.info("Adding new condition for patient", { userId, conditionId: selectedCondition })
@@ -68,7 +68,7 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
         if (!conditionResult.success) {
           throw new Error(conditionResult.error || "Failed to add condition")
         }
-        conditionAdded = true
+        // conditionAdded = true // Removed assignment
       }
 
       // --- Add Patient Treatment Logic (Placeholder - Requires new action) ---

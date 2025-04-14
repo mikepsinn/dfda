@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Dialog, DialogClose,
@@ -49,29 +49,27 @@ export function SideEffectsDialog({
   const [isLoadingExisting, setIsLoadingExisting] = useState(false)
   const { toast } = useToast()
 
-  // Function to fetch existing effects, callable on open and after submit
-  const fetchExisting = async () => {
-      if (!patientTreatmentId) return; // Don't fetch if ID is missing
-      setIsLoadingExisting(true)
-      logger.info('Fetching existing side effects', { patientTreatmentId })
-      try {
-        const effects = await getSideEffectReportsForPatientTreatmentAction(patientTreatmentId)
-        setExistingEffects(effects || [])
-        logger.info('Successfully fetched existing side effects', { patientTreatmentId, count: effects.length })
-      } catch (error: any) {
-        logger.error('Error fetching existing side effects', { patientTreatmentId, error: error.message })
-        toast({ title: "Error", description: "Could not load existing side effects.", variant: "destructive" })
-      } finally {
-        setIsLoadingExisting(false)
-      }
+  const fetchExisting = useCallback(async () => {
+    if (!patientTreatmentId) return; // Don't fetch if ID is missing
+    setIsLoadingExisting(true)
+    logger.info('Fetching existing side effects', { patientTreatmentId })
+    try {
+      const effects = await getSideEffectReportsForPatientTreatmentAction(patientTreatmentId)
+      setExistingEffects(effects || [])
+      logger.info('Successfully fetched existing side effects', { patientTreatmentId, count: effects.length })
+    } catch (error: any) {
+      logger.error('Error fetching existing side effects', { patientTreatmentId, error: error.message })
+      toast({ title: "Error", description: "Could not load existing side effects.", variant: "destructive" })
+    } finally {
+      setIsLoadingExisting(false)
     }
+  }, [patientTreatmentId])
 
-  // Fetch existing side effects when the dialog opens or patientTreatmentId changes
   useEffect(() => {
     if (open) {
-      fetchExisting()
+      fetchExisting();
     }
-  }, [open, patientTreatmentId]) // Removed toast from dependencies, fetchExisting uses it directly
+  }, [open, fetchExisting])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
