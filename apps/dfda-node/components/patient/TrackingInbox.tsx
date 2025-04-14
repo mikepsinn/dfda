@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, XCircle, Clock, MessageSquareMore, ClipboardPenLine } from "lucide-react"
+import { Clock, ClipboardPenLine } from "lucide-react"
 import { 
     getPendingReminderTasksAction, 
     completeReminderTaskAction, 
@@ -26,11 +26,9 @@ interface TrackingInboxProps {
 export function TrackingInbox({ userId, initialTasks = [] }: TrackingInboxProps) {
   const [tasks, setTasks] = useState<PendingReminderTask[]>(initialTasks);
   const [isLoading, setIsLoading] = useState(false);
-  // State to manage which logging dialog is open (example)
-  const [loggingTask, setLoggingTask] = useState<PendingReminderTask | null>(null);
 
-  // Function to refresh tasks
-  const refreshTasks = async () => {
+  // Function to refresh tasks - Wrap in useCallback
+  const refreshTasks = useCallback(async () => {
     setIsLoading(true);
     try {
       const fetchedTasks = await getPendingReminderTasksAction(userId);
@@ -41,14 +39,14 @@ export function TrackingInbox({ userId, initialTasks = [] }: TrackingInboxProps)
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [userId]); // Add userId as dependency for useCallback
 
   // Initial load if tasks weren't provided
   useEffect(() => {
     if (initialTasks.length === 0) {
        refreshTasks();
     }
-  }, []); // Run only once on mount if initialTasks is empty
+  }, [initialTasks.length, refreshTasks]);
 
   const handleCompleteTask = async (task: PendingReminderTask, skipped: boolean, logData?: any) => {
      try {
@@ -73,7 +71,6 @@ export function TrackingInbox({ userId, initialTasks = [] }: TrackingInboxProps)
 
   const handleLogAction = (task: PendingReminderTask) => {
      logger.info("Log action clicked for task", { scheduleId: task.scheduleId });
-     setLoggingTask(task);
      // Here you would open the appropriate dialog based on task type/title/message
      // Example:
      // if (task.title?.includes('Severity')) openSeverityDialog(task);
@@ -81,7 +78,6 @@ export function TrackingInbox({ userId, initialTasks = [] }: TrackingInboxProps)
      alert(`Placeholder: Open logging dialog for: ${task.title || task.variableName}`);
      // For now, just mark as complete after alert
      handleCompleteTask(task, false, { logged: true }); 
-     setLoggingTask(null); // Close dialog placeholder
   };
 
   return (
