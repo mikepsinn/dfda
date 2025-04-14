@@ -1,71 +1,50 @@
-import { Suspense } from 'react'
-import { TreatmentHeader } from './components/treatment-header'
-import { TreatmentDetails } from './components/treatment-details'
-import { TreatmentReviews } from './components/treatment-reviews'
-import { getTreatmentByIdAction } from '@/app/actions/treatments'
-// import { getAverageTreatmentRatingAction, getTreatmentRatingsAction, getUserTreatmentRatingAction } from '@/app/actions/treatment-ratings' // Commented out - deprecated/renamed actions
-import { getServerUser } from '@/lib/server-auth'
-// Adjust path for TreatmentSideEffectsList if needed
-// import { TreatmentSideEffectsList } from "@/components/treatment-side-effects-list" 
-import { createClient } from "@/lib/supabase/server"
-// Correct action import name
-import { reportSideEffectAction } from "@/app/actions/treatment-side-effects"
-// import { TreatmentSideEffectsCard } from "./components/treatment-side-effects-card" // Commented out - Component not found
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { getTreatmentByIdAction } from "@/app/actions/treatments"
+// import { getTreatmentReviewsAction } from "@/app/actions/treatment-ratings"
+// import ReportSideEffectDialog from "@/components/report-side-effect/ReportSideEffectDialog"
+// import { TreatmentNotFound } from "@/components/treatment/TreatmentNotFound"
+// import { TreatmentPageContent } from "@/components/treatment/TreatmentPageContent"
+import { Separator } from "@/components/ui/separator"
+// import { cookies } from "next/headers"
 
-interface TreatmentPageProps {
-  params: { id: string }
-  searchParams: { condition?: string } // Add searchParams for conditionId
-}
+// import { createClient } from "@/lib/supabase/server"
+// import { reportSideEffectAction } from "@/app/actions/reported-side-effects"
 
-export default async function TreatmentPage({ params, searchParams }: TreatmentPageProps) {
+export default async function TreatmentPage({ params }: { params: { id: string } }) {
+  // const cookieStore = cookies()
+  // const supabase = createClient(cookieStore)
+
+  // const {
+  //  data: { user },
+  // } = await supabase.auth.getUser()
+
+  // const treatmentId = Number(params.id) // Use params.id directly
+
+  // if (!params.id) { // Check params.id directly
+  //  return <TreatmentNotFound />
+  // }
+
   const treatment = await getTreatmentByIdAction(params.id)
-  const user = await getServerUser()
+  // const conditionId = treatment?.condition_id // Optional chaining for potential null
 
   if (!treatment) {
-    return (
-      <main className="container py-6">
-        <h1 className="text-3xl font-bold mb-6">Treatment Not Found</h1>
-        <p>The treatment you're looking for doesn't exist.</p>
-      </main>
-    )
+    // return <TreatmentNotFound /> // Need to handle not found case, maybe render a simple message
+    return <div>Treatment not found.</div>
   }
 
-  // Default to empty string for conditionId since we're viewing the treatment directly
-  const conditionId = ''
+  // const reviewsResult = await getTreatmentReviewsAction({ treatmentId: params.id }) // Removed reviews logic
+  // const reviews = reviewsResult.data ?? [] // Removed reviews logic
 
-  // Get treatment ratings and stats
-  // const ratings = await getTreatmentRatingsAction(treatment.id, conditionId)
-  // const stats = await getAverageTreatmentRatingAction(treatment.id, conditionId)
-  // const averageRating = stats?.avg_effectiveness || 0
-  // const totalReviews = stats?.total_ratings || 0
-
-  // Get user's rating if logged in
-  // const userRating = user ? await getUserTreatmentRatingAction(user.id, treatment.id, conditionId) : null
-
-  // Fetch side effects using the correct action
-  // const sideEffectsData = await reportSideEffectAction(params.id) // Assuming this action fetches effects for a treatment ID?
-  // This seems incorrect, reportSideEffectAction likely submits data.
-  // Let's assume side effects fetching is not implemented yet or needs a different action.
-  const sideEffects = []; // Placeholder
-
-  // const averageRatingData = averageRating // Commented out
+  // const sideEffectsResult = await getReportedSideEffectsAction({ treatmentId: params.id })
+  // const sideEffects = sideEffectsResult.data ?? []
 
   return (
-    <div className="container space-y-8 py-8">
-      <Card>
-        <CardHeader>
-          <CardTitle>Treatment Details & Ratings</CardTitle>
-          <CardDescription>
-            Detailed information and user ratings for this treatment.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Suspense fallback={<p>Loading details...</p>}>
-            <TreatmentDetails treatment={treatment} conditionId={searchParams.condition || ''} />
-      </Suspense>
-        </CardContent>
-      </Card>
+    <div className="container mx-auto px-4 py-8">
+      {/* Placeholder content - Need to replace with actual component or structure */}
+      <h1>{treatment.name}</h1>
+      <Separator className="my-4" />
+      <p>{treatment.description}</p>
+      {/* <TreatmentPageContent treatment={treatment} reviews={reviews} /> */}
+      {/* Render ReportSideEffectDialog if needed */}
     </div>
   )
 }
