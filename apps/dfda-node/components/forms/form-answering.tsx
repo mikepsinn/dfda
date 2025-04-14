@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, Controller } from "react-hook-form"
 import { z } from "zod"
@@ -70,56 +70,55 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
 
       switch (q.type) {
         case 'text':
-          fieldSchema = z.string();
-          if (!q.is_required) fieldSchema = fieldSchema.optional().nullable();
-          else fieldSchema = fieldSchema.min(1, { message: "This field is required" });
+          let textSchema = z.string();
+          if (!q.is_required) fieldSchema = textSchema.optional().nullable();
+          else fieldSchema = textSchema.min(1, { message: "This field is required" });
           defaults[questionId] = '';
           break;
         case 'multiple-choice':
         case 'dropdown':
-          fieldSchema = z.string();
-          if (!q.is_required) fieldSchema = fieldSchema.optional().nullable();
-          else fieldSchema = fieldSchema.min(1, { message: "Please select an option" });
+          let stringSchema = z.string();
+          if (!q.is_required) fieldSchema = stringSchema.optional().nullable();
+          else fieldSchema = stringSchema.min(1, { message: "Please select an option" });
           defaults[questionId] = undefined;
           break;
         case 'checkbox':
-          // Represent checkboxes as an array of selected string values
-          fieldSchema = z.array(z.string());
-          if (q.is_required) fieldSchema = fieldSchema.min(1, { message: "Please select at least one option" });
-          else fieldSchema = fieldSchema.optional();
+          let arraySchema = z.array(z.string());
+          if (q.is_required) fieldSchema = arraySchema.min(1, { message: "Please select at least one option" });
+          else fieldSchema = arraySchema.optional();
           defaults[questionId] = [];
           break;
         case 'scale':
-          // Store scale as a number
-          fieldSchema = z.number();
+          let numberSchema = z.number();
           const scaleOpts = q.options as ScaleQuestionOptions | null;
           if (scaleOpts) {
-             fieldSchema = fieldSchema.min(scaleOpts.min).max(scaleOpts.max);
+             numberSchema = numberSchema.min(scaleOpts.min).max(scaleOpts.max);
           }
-          if (!q.is_required) fieldSchema = fieldSchema.optional().nullable();
-          // Default value might be tricky, leave undefined or set to min?
+          if (!q.is_required) fieldSchema = numberSchema.optional().nullable();
+          else fieldSchema = numberSchema;
           defaults[questionId] = undefined; 
           break;
         case 'date':
-          fieldSchema = z.date();
-          if (!q.is_required) fieldSchema = fieldSchema.optional().nullable();
+          let dateSchema = z.date();
+          if (!q.is_required) fieldSchema = dateSchema.optional().nullable();
+          else fieldSchema = dateSchema;
           defaults[questionId] = undefined;
           break;
         case 'file_upload':
-          // Store file upload as the ID (string/UUID) of the uploaded_files record
           const fileOpts = q.options as FileUploadQuestionOptions | null;
           if (fileOpts?.allowMultiple) {
-             fieldSchema = z.array(z.string().uuid()).optional(); // Array of UUIDs
-              if (q.is_required) fieldSchema = fieldSchema.min(1, { message: "Please upload at least one file" });
+             let fileArraySchema = z.array(z.string().uuid());
+             if (q.is_required) fieldSchema = fileArraySchema.min(1, { message: "Please upload at least one file" });
+             else fieldSchema = fileArraySchema.optional();
+             defaults[questionId] = [];
           } else {
-             fieldSchema = z.string().uuid(); // Single UUID
-             if (!q.is_required) fieldSchema = fieldSchema.optional().nullable();
-             else fieldSchema = fieldSchema.refine(val => !!val, { message: "File upload is required" });
+             let fileStringSchema = z.string().uuid();
+             if (!q.is_required) fieldSchema = fileStringSchema.optional().nullable();
+             else fieldSchema = fileStringSchema.refine(val => !!val, { message: "File upload is required" });
+             defaults[questionId] = undefined;
           }
-          defaults[questionId] = fileOpts?.allowMultiple ? [] : undefined;
           break;
         default:
-          // Fallback for unknown types - treat as optional string
           fieldSchema = z.string().optional().nullable();
           defaults[questionId] = undefined;
       }

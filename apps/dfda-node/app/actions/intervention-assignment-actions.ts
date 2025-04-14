@@ -1,6 +1,6 @@
 'use server'
 
-import { createServerClient } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 import { cookies } from 'next/headers'
 import { Database, Tables } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
@@ -22,8 +22,7 @@ export type PatientAssignmentDetails =
   }
 
 export async function getPatientDetailsForAssignment(patientId: string): Promise<PatientAssignmentDetails | null> {
-    const cookieStore = cookies()
-    const supabase = createServerClient(cookieStore)
+    const supabase = await createClient()
 
     // TODO: Add proper user role check (e.g., only providers can fetch this)
     const { data: { user }, error: authError } = await supabase.auth.getUser()
@@ -72,8 +71,7 @@ export type InterventionOption = Pick<Tables<'treatments'>, 'id' | 'treatment_ty
 }
 
 export async function getInterventionOptionsForTrial(trialId: string): Promise<InterventionOption[]> {
-    const cookieStore = cookies()
-    const supabase = createServerClient(cookieStore)
+    const supabase = await createClient()
 
     // Basic auth check
     const { data: { user }, error: authError } = await supabase.auth.getUser()
@@ -103,7 +101,9 @@ export async function getInterventionOptionsForTrial(trialId: string): Promise<I
     // TODO: Map the fetched data (treatments/protocol details) to the InterventionOption structure.
     // This will likely involve fetching more related data (side effects, contraindications, etc.)
     // For now, returning mock-like data based on treatment name.
-    const options: InterventionOption[] = data.treatments.map((t: any, index: number) => ({
+    // Wrap data.treatments in an array if it exists and isn't already an array
+    const treatmentsArray = data.treatments ? (Array.isArray(data.treatments) ? data.treatments : [data.treatments]) : [];
+    const options: InterventionOption[] = treatmentsArray.map((t: any, index: number) => ({
         id: t.id, // Use treatment ID
         treatment_type: t.treatment_type,
         name: t.global_variables?.name || `Intervention ${index + 1}`, // Use name from global_variables
@@ -145,8 +145,7 @@ interface AssignInterventionPayload {
 }
 
 export async function assignIntervention(payload: AssignInterventionPayload): Promise<{ success: boolean; error?: string }> {
-    const cookieStore = cookies()
-    const supabase = createServerClient(cookieStore)
+    const supabase = await createClient()
 
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {

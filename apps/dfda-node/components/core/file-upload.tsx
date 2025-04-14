@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
-import { createBrowserClient } from '@/lib/supabase/client'
+import { createClient } from '@/lib/supabase/client'
 import { recordUploadMetadata } from '@/lib/actions/file-upload-actions'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
@@ -24,7 +24,7 @@ export function FileUploadComponent({
   bucketName = 'user_uploads', // Default bucket name
   onUploadComplete 
 }: FileUploadComponentProps) {
-  const supabase = createBrowserClient()
+  const supabase = createClient()
   const { toast } = useToast()
   const [file, setFile] = useState<File | null>(null)
   const [isUploading, setIsUploading] = useState(false)

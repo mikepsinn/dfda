@@ -1,7 +1,6 @@
 'use server'
 
-import { createServerClient } from '@/lib/supabase/server'
-import { cookies } from 'next/headers'
+import { createClient } from '@/lib/supabase/server'
 import { Database } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 
@@ -20,8 +19,7 @@ interface FileMetadata {
 export async function recordUploadMetadata(
   metadata: FileMetadata,
 ): Promise<string | null> {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = await createClient()
 
   const { data: { user }, error: authError } = await supabase.auth.getUser()
 
