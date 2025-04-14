@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useMemo } from 'react'
-// @ts-ignore - Suppress module not found error
-import { RRule, RRuleSet, rrulestr, Weekday, type Options as RRuleOptions } from 'rrule'
+import { RRule, rrulestr, Weekday, type Options as RRuleOptions } from 'rrule'
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
@@ -11,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar } from "@/components/ui/calendar" // Assuming Shadcn calendar
 import { Switch } from "@/components/ui/switch"
-import { CalendarIcon, ClockIcon } from 'lucide-react'
+import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
 // import { TimeField } from "@/components/ui/time-field" // Commented out - Component not found
 // import { type RRuleOption, getRRuleOptions } from "@/lib/rrule-options" // Commented out - Module not found
@@ -29,7 +28,6 @@ export interface ReminderScheduleData {
 interface ReminderSchedulerProps {
   initialSchedule?: Partial<ReminderScheduleData>; // Allow passing partial initial state
   onChange: (schedule: ReminderScheduleData) => void;
-  userId: string; // Needed for timezone context, potentially
 }
 
 // Simple TimePicker Component (Replace with a proper one if available)
@@ -42,7 +40,7 @@ const SimpleTimePicker = ({ value, onChange }: { value: string, onChange: (value
   />
 );
 
-export function ReminderScheduler({ initialSchedule, onChange, userId }: ReminderSchedulerProps) {
+export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedulerProps) {
   const [freq, setFreq] = useState<number>(RRule.DAILY); // Default to Daily
   const [interval, setInterval] = useState<number>(1);
   const [byWeekday, setByWeekday] = useState<Weekday[]>([]); // For weekly
@@ -59,7 +57,6 @@ export function ReminderScheduler({ initialSchedule, onChange, userId }: Reminde
   useEffect(() => {
       if (initialSchedule?.rruleString) {
           try {
-              // Type assertion might be needed if rrulestr returns a broader type
               const rule = rrulestr(initialSchedule.rruleString) as RRule;
               if (rule.options.freq !== undefined) setFreq(rule.options.freq);
               if (rule.options.interval !== undefined) setInterval(rule.options.interval);

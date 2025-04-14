@@ -1,37 +1,36 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import React, { useState } from 'react'
+import { StarRating as Rating } from "@/components/ui/star-rating"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import { Button } from "@/components/ui/button"
+import { toast } from 'sonner'
 import { upsertTreatmentRatingAction, type TreatmentRatingUpsertData } from "@/app/actions/treatment-ratings"
 import { logger } from "@/lib/logger"
-import { Loader2 } from "lucide-react"
 
 interface TreatmentReviewFormProps {
-  userId: string
-  treatmentId: string
-  conditionId: string
-  onSuccess?: () => void
+  treatmentId: string;
+  patientConditionId: string; 
+  onReviewSubmitted?: () => void;
 }
 
-export function TreatmentReviewForm({ userId, treatmentId, conditionId, onSuccess }: TreatmentReviewFormProps) {
+export function TreatmentReviewForm({ 
+  treatmentId, 
+  patientConditionId, 
+  onReviewSubmitted 
+}: TreatmentReviewFormProps) {
   const [rating, setRating] = useState(0)
   const [review, setReview] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault()
     setIsSubmitting(true)
 
     try {
       const ratingData: TreatmentRatingUpsertData = {
         patient_treatment_id: treatmentId,
-        patient_condition_id: conditionId,
+        patient_condition_id: patientConditionId,
         effectiveness_out_of_ten: rating,
         review: review || null,
       }
@@ -40,27 +39,16 @@ export function TreatmentReviewForm({ userId, treatmentId, conditionId, onSucces
       const result = await upsertTreatmentRatingAction(ratingData)
 
       if (result.success) {
-      toast({
-        title: "Success",
-        description: "Your review has been submitted.",
-      })
+      toast.success("Your review has been submitted.")
 
-      if (onSuccess) {
-        onSuccess()
+      if (onReviewSubmitted) {
+        onReviewSubmitted()
         }
       } else {
-        toast({
-          title: "Error",
-          description: "Failed to submit review. Please try again.",
-          variant: "destructive",
-        })
+        toast.error("Failed to submit review. Please try again.")
       }
     } catch {
-      toast({
-        title: "Error",
-        description: "Failed to submit review. Please try again.",
-        variant: "destructive",
-      })
+      toast.error("Failed to submit review. Please try again.")
     } finally {
       setIsSubmitting(false)
     }
@@ -71,19 +59,12 @@ export function TreatmentReviewForm({ userId, treatmentId, conditionId, onSucces
       <div>
         <label className="block text-sm font-medium mb-2">Rating (0-10)</label>
         <p className="text-sm text-muted-foreground mb-3">0 = Not effective at all, 10 = Extremely effective</p>
-        <div className="flex gap-2 flex-wrap">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => (
-            <Button
-              key={value}
-              type="button"
-              variant={rating === value ? "default" : "outline"}
-              onClick={() => setRating(value)}
-              className="w-10 h-10 p-0"
-            >
-              {value}
-            </Button>
-          ))}
-        </div>
+        <Rating 
+           rating={rating}
+           onChange={setRating}
+           maxRating={10}
+           size="lg"
+        />
       </div>
 
       <div>
