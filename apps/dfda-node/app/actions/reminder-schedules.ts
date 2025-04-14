@@ -341,6 +341,7 @@ export type PendingReminderTask = {
   scheduleId: string;
   userVariableId: string;
   variableName: string;
+  globalVariableId: string;
   title: string | null;
   message: string | null;
   dueAt: string; // The original next_trigger_at timestamp
@@ -373,6 +374,7 @@ export async function getPendingReminderTasksAction(
       timezone,
       rrule,
       user_variables!inner(
+        global_variable_id,
         global_variables!inner( name )
       )
     `)
@@ -397,8 +399,9 @@ export async function getPendingReminderTasksAction(
   const tasks: PendingReminderTask[] = schedules.map(s => ({
     scheduleId: s.id,
     userVariableId: s.user_variable_id,
-    // Access the name through the nested structure
+    // Access the name and global ID through the nested structure
     variableName: s.user_variables?.global_variables?.name || 'Unknown Item',
+    globalVariableId: s.user_variables?.global_variable_id || '',
     title: s.notification_title_template,
     message: s.notification_message_template,
     // Ensure next_trigger_at is treated as string
