@@ -349,8 +349,8 @@ export async function getPendingReminderTasksAction(
       time_of_day,
       timezone,
       rrule,
-      user_variable:user_variables!inner(
-        name
+      user_variables!inner(
+        global_variables!inner( name )
       )
     `)
     .eq('user_id', userId)
@@ -374,8 +374,8 @@ export async function getPendingReminderTasksAction(
   const tasks: PendingReminderTask[] = schedules.map(s => ({
     scheduleId: s.id,
     userVariableId: s.user_variable_id,
-    // Handle potential null user_variable - though inner join should prevent this
-    variableName: s.user_variable?.name || 'Unknown Item',
+    // Access the name through the nested structure
+    variableName: s.user_variables?.global_variables?.name || 'Unknown Item',
     title: s.notification_title_template,
     message: s.notification_message_template,
     // Ensure next_trigger_at is treated as string

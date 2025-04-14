@@ -19,7 +19,7 @@
     "test:e2e:ui": "playwright test --ui",
     "sb:local:stop": "npx supabase stop",
     "sb:local:status": "npx supabase status",
-    "sb:logs:local:tail": "docker logs -f supabase_db_supabase",
+    "sb:logs:local:tail": "docker logs -f supabase_db_fda-gov-v2",
     "db:local:reset": "npx supabase db reset --local",
     "db:local:push": "npx supabase db push --local",
     "db:local:pull": "npx supabase db pull --local",
