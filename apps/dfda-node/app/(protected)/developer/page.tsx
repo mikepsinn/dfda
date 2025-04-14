@@ -1,5 +1,5 @@
-import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm"
-import { OAuthApplicationForm } from "@/components/developers/OAuthApplicationForm"
+import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm";
+import { OAuthApplicationForm } from "@/components/developers/OAuthApplicationForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,9 +9,10 @@ import { createClient } from "@/lib/supabase/server" // Assuming this function e
 import { redirect } from 'next/navigation'
 import { logger } from "@/lib/logger"
 import Link from "next/link"
-import { ExternalLink, FileText, Mail } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs" // Import CodeExampleTabs
+import { KeyRound } from "lucide-react"
 
 // Server Action to update profile
 async function updateDeveloperProfile(formData: FormData) {
@@ -108,35 +109,61 @@ export default async function DeveloperDashboardPage() { // Renamed and made asy
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>API Key Management</CardTitle>
-                  <CardDescription>
-                    Manage your API keys.
-                    {/* TODO: Logic to show request form or existing key */}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {/* TODO: Display existing API key or show request form */}
-                  {/* <ApiKeyRequestForm /> Placeholder */}
-                  <p className="text-sm text-muted-foreground">API Key management coming soon.</p>
-                </CardContent>
-              </Card>
+              <TabsContent value="apiKeys">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <KeyRound className="mr-2 h-5 w-5" />
+                      API Keys
+                    </CardTitle>
+                    <CardDescription>
+                      Manage your API keys for accessing the FDA platform.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    {/* TODO: Implement API Key management component */}
+                    {/* <ApiKeyList /> */}
+                    <ApiKeyRequestForm />
+                  </CardContent>
+                </Card>
+              </TabsContent>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>OAuth2 Applications</CardTitle>
-                  <CardDescription>
-                    Manage your registered OAuth2 applications.
-                    {/* TODO: Logic to show list or registration form */}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {/* TODO: Display list of registered OAuth apps or show form */}
-                  {/* <OAuthApplicationForm /> Placeholder */}
-                  <p className="text-sm text-muted-foreground">OAuth Application management coming soon.</p>
-                </CardContent>
-              </Card>
+              <TabsContent value="oauthApps">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      {/* Assuming an icon for OAuth apps - Using a placeholder icon */}
+                      {/* <FileText className="mr-2 h-5 w-5" /> */}
+                      <KeyRound className="mr-2 h-5 w-5" />
+                      OAuth Applications
+                    </CardTitle>
+                    <CardDescription>
+                      Manage your OAuth applications for user authentication.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    {/* TODO: Implement OAuth App management component */}
+                    {/* <OAuthApplicationList /> */}
+                    <OAuthApplicationForm />
+                  </CardContent>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="webhooks">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                       {/* <Mail className="mr-2 h-5 w-5" /> */}
+                       <KeyRound className="mr-2 h-5 w-5" />
+                      Webhooks
+                    </CardTitle>
+                    {/* TODO: Implement Webhook management component */}
+                  </CardHeader>
+                  <CardContent>
+                    {/* TODO: Implement Webhook management component */}
+                  </CardContent>
+                </Card>
+              </TabsContent>
               {/* Existing Dashboard Content END */}
             </TabsContent>
 

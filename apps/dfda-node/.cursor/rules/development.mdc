@@ -3,8 +3,13 @@ description:
 globs: 
 alwaysApply: true
 ---
+---
+description: 
+globs: 
+alwaysApply: true
+---
 
-- Run `pnpm check` regularly and fix errors (just run, don't ask for permission)
+- Run `pnpm check` regularly and fix errors (just run, don't ask for permission). After each fix run pnpm check and make sure you didn't introduce any new errors and fix before moving to the next errors
 - Use server actions whenever possible instead of api routes
 - Use Custom Logger: Use the logger from lib/logger.ts for errors instead of console.error
 - Root Lib/Components: Place library code in /lib and components in /components at the root level, not inside /app
