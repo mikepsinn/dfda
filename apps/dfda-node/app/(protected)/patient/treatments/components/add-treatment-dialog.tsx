@@ -27,7 +27,6 @@ import { ConditionCombobox } from "@/components/condition-combobox"
 import type { Database } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
 import { addPatientConditionAction } from "@/app/actions/patientConditions"
-import { upsertTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
 // Use TreatmentRatingUpsertData type if needed for future rating logic

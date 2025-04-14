@@ -2,8 +2,7 @@
 
 import { useState, useRef, FormEvent } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { ArrowLeft, CheckCircle, CreditCard, Info, Lock, Shield, Percent, Beaker } from "lucide-react"
+import { CheckCircle, CreditCard, Info, Lock, Percent, Beaker } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -11,14 +10,12 @@ import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Badge } from "@/components/ui/badge"
 
 interface TrialPaymentFormProps {
   trialId: string;
 }
 
 export function TrialPaymentForm({ trialId }: TrialPaymentFormProps) {
-  const router = useRouter()
   const [isProcessing, setIsProcessing] = useState(false)
   const [paymentComplete, setPaymentComplete] = useState(false)
   const [formErrors, setFormErrors] = useState({

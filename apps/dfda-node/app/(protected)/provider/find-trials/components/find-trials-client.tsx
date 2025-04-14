@@ -1,4 +1,6 @@
-import { useState } from "react"
+'use client'
+
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { ArrowLeft, Check, Filter, Search, Users } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -11,7 +13,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Separator } from "@/components/ui/separator"
 import { ConditionSearchInput } from "@/components/ConditionSearchInput"
 import { TreatmentRankingList } from "@/components/TreatmentRankingList"
-import { findTrialsForConditionsAction, TrialWithRelations } from "@/app/actions/trials"
 import { logger } from "@/lib/logger"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
@@ -23,7 +24,6 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedCondition, setSelectedCondition] = useState<{ id: string; name: string } | null>(null)
   const [showTreatments, setShowTreatments] = useState(false)
-  const [isLoadingConditions, setIsLoadingConditions] = useState(false)
 
   // Handle condition selection
   const handleConditionSelect = (condition: { id: string; name: string }) => {
@@ -86,18 +86,14 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                       selected={selectedCondition}
                     />
                     <ScrollArea className="mt-4 h-[400px] rounded-md border p-4">
-                      {isLoadingConditions ? (
-                        <div>Loading conditions...</div>
-                      ) : (
-                        <div className="space-y-4">
-                          {availableConditions.map((condition) => (
-                            <div key={condition} className="flex items-center space-x-2">
-                              <Checkbox id={`condition-${condition.replace(/\s+/g, '-').toLowerCase()}`} />
-                              <Label htmlFor={`condition-${condition.replace(/\s+/g, '-').toLowerCase()}`}>{condition}</Label>
-                            </div>
-                          ))}
-                        </div>
-                      )}
+                      <div className="space-y-4">
+                        {availableConditions.map((condition) => (
+                          <div key={condition} className="flex items-center space-x-2">
+                            <Checkbox id={`condition-${condition.replace(/\s+/g, '-').toLowerCase()}`} />
+                            <Label htmlFor={`condition-${condition.replace(/\s+/g, '-').toLowerCase()}`}>{condition}</Label>
+                          </div>
+                        ))}
+                      </div>
                     </ScrollArea>
                   </CardContent>
                 </Card>
