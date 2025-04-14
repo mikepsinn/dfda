@@ -208,65 +208,174 @@ async function deploySupabaseInstance() {
             console.log(`Firewall rule '${FIREWALL_RULE_NAME}' created successfully.`);
         }
 
-        // 3. Define and create the GCE instance for Supabase
-        console.log(`Creating GCE instance '${INSTANCE_NAME}' in zone ${GCP_ZONE}...`);
-        const instanceConfig = {
-            name: INSTANCE_NAME,
-            machineType: `zones/${GCP_ZONE}/machineTypes/${MACHINE_TYPE}`,
-            disks: [{
-                initializeParams: {
-                    sourceImage: sourceImageUri,
-                    diskSizeGb: DISK_SIZE_GB.toString(),
-                    diskType: `zones/${GCP_ZONE}/diskTypes/pd-standard`,
-                },
-                autoDelete: true,
-                boot: true,
-            }],
-            networkInterfaces: [{
-                name: 'global/networks/default',
-                accessConfigs: [{
-                    name: 'External NAT',
-                    type: 'ONE_TO_ONE_NAT',
-                }],
-            }],
-            tags: {
-                items: [NETWORK_TAG],
-            },
-            metadata: {
-                items: [
-                    {
-                        key: 'startup-script',
-                        value: STARTUP_SCRIPT,
-                    },
-                ],
-            },
-        };
-
-        const [instanceOpResponse] = await instancesClient.insert({
-            project: GCP_PROJECT_ID,
-            zone: GCP_ZONE,
-            instanceResource: instanceConfig,
-        });
-
-        // Wait for the instance operation to complete using the new method
-        if (instanceOpResponse.latestResponse.name) {
-            console.log('Waiting for instance creation operation to complete...');
-            await zoneOperationsClient.wait({
-                operation: instanceOpResponse.latestResponse.name,
+        // 3. Check if GCE instance exists, create if not, otherwise provide info
+        let instanceExists = false;
+        let instanceData: any = null; 
+        console.log(`Checking if GCE instance '${INSTANCE_NAME}' exists in zone ${GCP_ZONE}...`);
+        try {
+            const [existingInstance] = await instancesClient.get({
                 project: GCP_PROJECT_ID,
                 zone: GCP_ZONE,
+                instance: INSTANCE_NAME,
             });
-            console.log('Instance operation completed.');
-        } else {
-             console.warn('Instance operation did not return an operation name.');
+            // Explicitly confirm success and set flag
+            console.log(`Instance '${INSTANCE_NAME}' found.`);
+            instanceExists = true;
+            instanceData = existingInstance;
+        } catch (error: any) {
+            // Handle 'Not Found' errors (code 5 or 404)
+            if (error.code === 5 || error.code === 404) {
+                console.log(`Instance '${INSTANCE_NAME}' not found. Proceeding with creation.`);
+                instanceExists = false; // Ensure flag is false
+            } else {
+                // For any other error during check, log it and re-throw immediately
+                console.error(`Error checking instance '${INSTANCE_NAME}':`, error);
+                throw error; 
+            }
         }
 
-        console.log(`Instance '${INSTANCE_NAME}' created successfully in zone ${GCP_ZONE}.`);
-        console.log('Supabase installation is running via the startup script.');
-        console.log('--- IMPORTANT --- ');
-        console.log('Generated secrets (POSTGRES_PASSWORD, JWT_SECRET, ANON_KEY, SERVICE_ROLE_KEY, DASHBOARD_PASSWORD) have been logged to the GCE instance\'s Serial Console (Port 1).');
-        console.log('Please retrieve them securely as soon as possible.');
-        console.log('It might take several minutes for Supabase services to be fully up and running.');
+        // Now, branch based on the explicitly set instanceExists flag
+        if (instanceExists) {
+             // Instance already exists - Check and potentially enable serial port, then log access info
+             console.log("Checking if serial port access is enabled on existing instance...");
+             const metadata = instanceData.metadata;
+             const serialPortEnabled = metadata?.items?.some((item: any) => item.key === 'serial-port-enable' && item.value === 'true');
+
+             if (!serialPortEnabled) {
+                 console.log("Serial port access not enabled. Attempting to enable...");
+                 if (!metadata?.fingerprint) {
+                     console.error("Error: Cannot enable serial port. Metadata fingerprint is missing.");
+                     // Optionally throw an error or exit, depending on desired behavior
+                     throw new Error("Metadata fingerprint missing, cannot update serial port setting.");
+                 }
+                 try {
+                     const updatedItems = metadata.items ? [...metadata.items] : [];
+                     const existingSerialIndex = updatedItems.findIndex((item: any) => item.key === 'serial-port-enable');
+                     if (existingSerialIndex > -1) {
+                         updatedItems[existingSerialIndex].value = 'true';
+                     } else {
+                         updatedItems.push({ key: 'serial-port-enable', value: 'true' });
+                     }
+
+                     const [setMetadataOp] = await instancesClient.setMetadata({
+                         project: GCP_PROJECT_ID,
+                         zone: GCP_ZONE,
+                         instance: INSTANCE_NAME,
+                         metadataResource: {
+                             fingerprint: metadata.fingerprint,
+                             items: updatedItems,
+                         },
+                     });
+
+                     console.log("Waiting for setMetadata operation to complete...");
+                     if (setMetadataOp.latestResponse.name) {
+                         await zoneOperationsClient.wait({
+                             operation: setMetadataOp.latestResponse.name,
+                             project: GCP_PROJECT_ID,
+                             zone: GCP_ZONE,
+                         });
+                         console.log("Serial port access enabled successfully.");
+                     } else {
+                         console.warn("setMetadata operation did not return an operation name. Assuming completion.");
+                     }
+                 } catch (setMetaError) {
+                     console.error("Error enabling serial port:", setMetaError);
+                     // Log the error but continue to provide existing access info
+                 }
+             } else {
+                 console.log("Serial port access is already enabled.");
+             }
+
+             // Log access information (existing code)
+             const externalIp = instanceData?.networkInterfaces?.[0]?.accessConfigs?.[0]?.natIP || '<EXTERNAL_IP_NOT_FOUND>';
+             const instanceConsoleLink = `https://console.cloud.google.com/compute/instancesDetail/zones/${GCP_ZONE}/instances/${INSTANCE_NAME}?project=${GCP_PROJECT_ID}`;
+             const serialConsoleLink = `${instanceConsoleLink}&page=serialconsole&port=1`;
+             const gcloudSshCommand = `gcloud compute ssh ${INSTANCE_NAME} --zone ${GCP_ZONE} --project ${GCP_PROJECT_ID}`;
+             const gcloudSerialCommand = `gcloud compute connect-to-serial-port ${INSTANCE_NAME} --zone ${GCP_ZONE} --project ${GCP_PROJECT_ID} --port 1`;
+             const supabaseUrl = externalIp !== '<EXTERNAL_IP_NOT_FOUND>' ? `http://${externalIp}:8000` : `http://<EXTERNAL_IP>:8000 (Find External IP in console)`;
+
+             console.log('\n--- Instance Already Exists ---');
+             console.log(`The GCE instance '${INSTANCE_NAME}' already exists in zone ${GCP_ZONE}.`);
+             console.log('You can access it using the following methods:');
+             console.log(`  - SSH via gcloud: ${gcloudSshCommand}`);
+             console.log(`  - Google Cloud Console: ${instanceConsoleLink}`);
+             console.log('\n--- Retrieve Secrets (if needed) ---');
+             console.log('If you need the generated Supabase secrets, access the Serial Console (Port 1):');
+             console.log(`  - Via Cloud Console: ${serialConsoleLink}`);
+             console.log(`  - Via gcloud: ${gcloudSerialCommand}`);
+             console.log('\n--- Access Supabase ---');
+             console.log(`Access Supabase Studio/API at: ${supabaseUrl}`);
+             if (externalIp === '<EXTERNAL_IP_NOT_FOUND>') {
+                 console.log(`  (You can find the External IP address on the instance details page in the Cloud Console)`);
+             }
+             console.log('Note: It might take several minutes for Supabase services to become fully available after instance start.');
+        } else {
+            // Instance does NOT exist - Create it
+            console.log(`Creating GCE instance '${INSTANCE_NAME}' in zone ${GCP_ZONE}...`);
+            const instanceConfig = {
+                name: INSTANCE_NAME,
+                machineType: `zones/${GCP_ZONE}/machineTypes/${MACHINE_TYPE}`,
+                disks: [{
+                    initializeParams: {
+                        sourceImage: sourceImageUri,
+                        diskSizeGb: DISK_SIZE_GB.toString(),
+                        diskType: `zones/${GCP_ZONE}/diskTypes/pd-standard`,
+                    },
+                    autoDelete: true,
+                    boot: true,
+                }],
+                networkInterfaces: [{
+                    name: 'global/networks/default',
+                    accessConfigs: [{
+                        name: 'External NAT',
+                        type: 'ONE_TO_ONE_NAT',
+                    }],
+                }],
+                tags: {
+                    items: [NETWORK_TAG],
+                },
+                metadata: {
+                    items: [
+                        {
+                            key: 'startup-script',
+                            value: STARTUP_SCRIPT,
+                        },
+                        {
+                            // Ensure serial port is enabled for new instances
+                            key: 'serial-port-enable',
+                            value: 'true',
+                        },
+                    ],
+                },
+            };
+    
+            const [instanceOpResponse] = await instancesClient.insert({
+                project: GCP_PROJECT_ID,
+                zone: GCP_ZONE,
+                instanceResource: instanceConfig,
+            });
+    
+            // Wait for the instance operation to complete using the new method
+            if (instanceOpResponse.latestResponse.name) {
+                console.log('Waiting for instance creation operation to complete...');
+                await zoneOperationsClient.wait({
+                    operation: instanceOpResponse.latestResponse.name,
+                    project: GCP_PROJECT_ID,
+                    zone: GCP_ZONE,
+                });
+                console.log('Instance operation completed.');
+            } else {
+                 console.warn('Instance operation did not return an operation name.');
+            }
+    
+            console.log(`Instance '${INSTANCE_NAME}' created successfully in zone ${GCP_ZONE}.`);
+            console.log('Supabase installation is running via the startup script.');
+            console.log('--- IMPORTANT --- ');
+            console.log('Generated secrets (POSTGRES_PASSWORD, JWT_SECRET, ANON_KEY, SERVICE_ROLE_KEY, DASHBOARD_PASSWORD) have been logged to the GCE instance\'s Serial Console (Port 1).');
+            console.log('Please retrieve them securely as soon as possible.');
+            console.log('It might take several minutes for Supabase services to be fully up and running.');
+        
+        }
 
     } catch (error) {
         console.error('Supabase Deployment failed:', error);
