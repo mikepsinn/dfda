@@ -30,7 +30,10 @@
     "db:cloud:pull": "npx supabase db pull --linked",
     "db:cloud:diff": "npx supabase db diff --linked -f migrations",
     "db:cloud:types": "npx supabase gen types typescript --linked > lib/database.types.ts",
-    "db:cloud:reset": "npx supabase db reset --linked"
+    "db:cloud:reset": "npx supabase db reset --linked",
+    "setup:storage": "tsx ./scripts/setup-supabase.ts",
+    "setup:local:cron": "tsx ./scripts/configure-local-cron.ts",
+    "setup:local:full": "tsx ./scripts/setup-local-full.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -99,6 +102,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^22",
+    "@types/pg": "^8.11.13",
     "@types/pino": "^7.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -113,9 +117,11 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "pg": "^8.14.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.1",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }

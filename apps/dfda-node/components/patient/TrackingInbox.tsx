@@ -61,7 +61,7 @@ export function TrackingInbox({ userId }: TrackingInboxProps) {
   }, [userId, toast]);
 
   useEffect(() => {
-    refreshTasks();
+       refreshTasks();
   }, [refreshTasks]);
 
   const handleLogMeasurement = (task: PendingNotificationTask) => {
@@ -190,11 +190,11 @@ export function TrackingInbox({ userId }: TrackingInboxProps) {
                     return newState;
                 });
                 refreshTasks();
-            } else {
+       } else {
                 logger.error("Failed to undo log", { error: result.error, input: undoInput });
                 toast({ title: "Error Undoing Log", description: result.error || "Could not undo the previous log.", variant: "destructive"});
-            }
-        } catch (error) {
+       }
+     } catch (error) {
             logger.error("Error calling undo action", { error, notificationId: task.notificationId });
             toast({ title: "Error", description: "An unexpected error occurred during undo.", variant: "destructive"});
         }
@@ -343,16 +343,16 @@ export function TrackingInbox({ userId }: TrackingInboxProps) {
                  <div key={task.scheduleId} className="rounded-md border p-4">
                     {/* Task Info */}
                     <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1 space-y-1">
-                            <p className="font-medium">{task.title || task.variableName}</p>
-                            {task.message && (
-                                <p className="text-sm text-muted-foreground">{task.message}</p>
-                            )}
-                            <p className="text-xs text-muted-foreground">
-                                Due: {formatDistanceToNow(new Date(task.dueAt), { addSuffix: true })}
-                                {' '}({new Date(task.dueAt).toLocaleTimeString([], { timeStyle: 'short' })})
-                            </p>
-                        </div>
+                <div className="flex-1 space-y-1">
+                  <p className="font-medium">{task.title || task.variableName}</p>
+                  {task.message && (
+                     <p className="text-sm text-muted-foreground">{task.message}</p>
+                  )}
+                   <p className="text-xs text-muted-foreground">
+                     Due: {formatDistanceToNow(new Date(task.dueAt), { addSuffix: true })}
+                     {' '}({new Date(task.dueAt).toLocaleTimeString([], { timeStyle: 'short' })})
+                   </p>
+                </div>
                         {/* Show Skip only if not already logged */} 
                         {!loggedTasks[task.scheduleId] && (
                             <Button 
@@ -365,7 +365,7 @@ export function TrackingInbox({ userId }: TrackingInboxProps) {
                             >
                                 <Clock className="h-4 w-4" />
                                 <span className="sr-only">Skip</span>
-                            </Button>
+                  </Button>
                         )}
                     </div>
 
@@ -378,7 +378,7 @@ export function TrackingInbox({ userId }: TrackingInboxProps) {
             ))}
           </div>
         )}
-        
+
       </CardContent>
     </Card>
   )

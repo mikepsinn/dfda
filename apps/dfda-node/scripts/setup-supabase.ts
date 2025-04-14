@@ -2,15 +2,15 @@ import { createClient } from '@supabase/supabase-js';
 import dotenv from 'dotenv';
 import path from 'path';
 
-// Load environment variables from .env.local
-dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
+// Load environment variables from .env (instead of .env.local)
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const bucketName = 'user_uploads'; // The name of the bucket we want to ensure exists
 
 if (!supabaseUrl) {
-  console.error('Error: NEXT_PUBLIC_SUPABASE_URL is not set in .env.local');
+  console.error('Error: NEXT_PUBLIC_SUPABASE_URL is not set in .env');
   process.exit(1);
 }
 
