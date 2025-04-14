@@ -4,7 +4,9 @@ import * as fs from 'fs';
 import {
     InstancesClient,
     FirewallsClient,
-    ImagesClient
+    ImagesClient,
+    GlobalOperationsClient,
+    ZoneOperationsClient
 } from '@google-cloud/compute';
 
 dotenv.config(); // Load environment variables from .env file
@@ -124,6 +126,8 @@ const clientOptions = {
 const instancesClient = new InstancesClient(clientOptions);
 const firewallsClient = new FirewallsClient(clientOptions);
 const imagesClient = new ImagesClient(clientOptions);
+const globalOperationsClient = new GlobalOperationsClient(clientOptions);
+const zoneOperationsClient = new ZoneOperationsClient(clientOptions);
 
 // --- Helper Functions (same as index.ts) ---
 async function getLatestImageUri(project: string, family: string): Promise<string> {
@@ -148,29 +152,61 @@ async function deploySupabaseInstance() {
         // 1. Get the latest Ubuntu 22.04 image
         const sourceImageUri = await getLatestImageUri(IMAGE_PROJECT, IMAGE_FAMILY);
 
-        // 2. Define and create the Supabase firewall rule
-        console.log(`Creating firewall rule '${FIREWALL_RULE_NAME}'...`);
-        const firewallRule = {
-            name: FIREWALL_RULE_NAME,
-            direction: 'INGRESS',
-            priority: 1000,
-            network: `projects/${GCP_PROJECT_ID}/global/networks/default`,
-            allowed: [
-                { IPProtocol: 'tcp', ports: ['22'] },          // SSH
-                { IPProtocol: 'tcp', ports: ['8000'] },       // Supabase API Gateway/Studio
-                { IPProtocol: 'tcp', ports: ['5432'] },       // Postgres Direct/Session
-                { IPProtocol: 'tcp', ports: ['6543'] },       // Supavisor Pooler
-            ],
-            targetTags: [NETWORK_TAG],
-            sourceRanges: ['0.0.0.0/0'],
-        };
+        // 2. Check if firewall rule exists, create if not
+        let firewallExists = false;
+        console.log(`Checking if firewall rule '${FIREWALL_RULE_NAME}' exists...`);
+        try {
+            await firewallsClient.get({
+                project: GCP_PROJECT_ID,
+                firewall: FIREWALL_RULE_NAME,
+            });
+            console.log(`Firewall rule '${FIREWALL_RULE_NAME}' already exists. Skipping creation.`);
+            firewallExists = true;
+        } catch (error: any) {
+            // Handle 'Not Found' errors (code 5 or 404) - means we need to create it
+            if (error.code === 5 || error.code === 404) { 
+                console.log(`Firewall rule '${FIREWALL_RULE_NAME}' not found. Proceeding with creation.`);
+            } else {
+                console.error(`Error checking firewall rule '${FIREWALL_RULE_NAME}':`, error);
+                throw error; // Re-throw other errors
+            }
+        }
 
-        const [firewallOp] = await firewallsClient.insert({
-            project: GCP_PROJECT_ID,
-            firewallResource: firewallRule,
-        });
-        await firewallOp.promise();
-        console.log(`Firewall rule '${FIREWALL_RULE_NAME}' created successfully.`);
+        if (!firewallExists) {
+            console.log(`Creating firewall rule '${FIREWALL_RULE_NAME}'...`);
+            const firewallRule = {
+                name: FIREWALL_RULE_NAME,
+                direction: 'INGRESS',
+                priority: 1000,
+                network: `projects/${GCP_PROJECT_ID}/global/networks/default`,
+                allowed: [
+                    { IPProtocol: 'tcp', ports: ['22'] },          // SSH
+                    { IPProtocol: 'tcp', ports: ['8000'] },       // Supabase API Gateway/Studio
+                    { IPProtocol: 'tcp', ports: ['5432'] },       // Postgres Direct/Session
+                    { IPProtocol: 'tcp', ports: ['6543'] },       // Supavisor Pooler
+                ],
+                targetTags: [NETWORK_TAG],
+                sourceRanges: ['0.0.0.0/0'],
+            };
+    
+            const [firewallOpResponse] = await firewallsClient.insert({
+                project: GCP_PROJECT_ID,
+                firewallResource: firewallRule,
+            });
+    
+            // Wait for the firewall operation to complete using the new method
+            if (firewallOpResponse.latestResponse.name) {
+                await globalOperationsClient.wait({
+                    operation: firewallOpResponse.latestResponse.name,
+                    project: GCP_PROJECT_ID,
+                });
+            } else {
+                // Handle the case where operation name is missing (optional, but good practice)
+                console.warn('Firewall operation did not return an operation name. Assuming completion.');
+            }
+    
+            console.log(`Firewall rule '${FIREWALL_RULE_NAME}' created successfully.`);
+        }
 
         // 3. Define and create the GCE instance for Supabase
         console.log(`Creating GCE instance '${INSTANCE_NAME}' in zone ${GCP_ZONE}...`);
@@ -206,13 +242,24 @@ async function deploySupabaseInstance() {
             },
         };
 
-        const [instanceOp] = await instancesClient.insert({
+        const [instanceOpResponse] = await instancesClient.insert({
+            project: GCP_PROJECT_ID,
             zone: GCP_ZONE,
             instanceResource: instanceConfig,
         });
 
-        console.log('Waiting for instance creation to complete...');
-        await instanceOp.promise();
+        // Wait for the instance operation to complete using the new method
+        if (instanceOpResponse.latestResponse.name) {
+            console.log('Waiting for instance creation operation to complete...');
+            await zoneOperationsClient.wait({
+                operation: instanceOpResponse.latestResponse.name,
+                project: GCP_PROJECT_ID,
+                zone: GCP_ZONE,
+            });
+            console.log('Instance operation completed.');
+        } else {
+             console.warn('Instance operation did not return an operation name.');
+        }
 
         console.log(`Instance '${INSTANCE_NAME}' created successfully in zone ${GCP_ZONE}.`);
         console.log('Supabase installation is running via the startup script.');
