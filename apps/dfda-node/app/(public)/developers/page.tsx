@@ -7,7 +7,6 @@ import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
 import { DeveloperWhatYouCanBuild } from "@/components/developers/DeveloperWhatYouCanBuild"
 import { DeveloperTechnicalAdvantages } from "@/components/developers/DeveloperTechnicalAdvantages"
 import { DeveloperPricingPlans } from "@/components/developers/DeveloperPricingPlans"
-import { DeveloperTestimonials } from "@/components/developers/DeveloperTestimonials"
 
 export default function DeveloperPortal() {
   const showPricingTab = false // Set to false to hide the pricing tab

@@ -1,7 +1,5 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { Footer } from "@/components/Footer"
-import { getServerUser } from "@/lib/server-auth"
 
 export default async function PrivacyPolicy() {
 

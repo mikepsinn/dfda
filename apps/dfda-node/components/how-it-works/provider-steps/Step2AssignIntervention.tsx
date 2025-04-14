@@ -1,4 +1,5 @@
-import { FileText, ClipboardCheck } from "lucide-react";
+'use client'
+import { FlaskConical } from "lucide-react";
 import { HowItWorksStep } from "../HowItWorksStep";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -8,7 +9,7 @@ export function Step2AssignIntervention() {
     <HowItWorksStep
       stepNumber={2}
       title="Assign Patients to Trial Arms with Confidence"
-      icon={<ClipboardCheck className="h-5 w-5 text-primary" />}
+      icon={<FlaskConical className="h-5 w-5 text-primary" />}
       description="Review detailed outcome labels, compare trial arms (including placebo/standard of care), and assign patients directly."
       benefits={[
         "Make informed decisions with transparent outcome data",
