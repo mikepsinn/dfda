@@ -60,3 +60,5 @@ next-env.d.ts
 /playwright-report
 /playwright-trace
 /test-results
+
+.trigger

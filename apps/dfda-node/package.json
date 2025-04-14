@@ -32,7 +32,6 @@
     "db:cloud:types": "npx supabase gen types typescript --linked > lib/database.types.ts",
     "db:cloud:reset": "npx supabase db reset --linked",
     "setup:storage": "tsx ./scripts/setup-supabase.ts",
-    "setup:local:cron": "tsx ./scripts/configure-local-cron.ts",
     "setup:local:full": "tsx ./scripts/setup-local-full.ts"
   },
   "dependencies": {
@@ -66,6 +65,9 @@
     "@radix-ui/react-tooltip": "latest",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
+    "@trigger.dev/nextjs": "^3.3.12",
+    "@trigger.dev/sdk": "^3.3.12",
+    "@trigger.dev/supabase": "^3.3.12",
     "@types/luxon": "^3.6.2",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
@@ -100,6 +102,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "@trigger.dev/build": "^3.3.12",
     "@types/jest": "^29.5.14",
     "@types/node": "^22",
     "@types/pg": "^8.11.13",

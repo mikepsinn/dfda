@@ -13,7 +13,7 @@ import { PatientTreatmentsCard } from "@/components/patient/PatientTreatmentsCar
 // Import the Tracking Inbox
 import { TrackingInbox } from "@/components/patient/TrackingInbox"
 // Import action to pre-fetch tasks for SSR
-import { getPendingReminderTasksAction } from "@/app/actions/reminder-schedules"
+// import { getPendingReminderTasksAction } from "@/app/actions/reminder-schedules"
 import { logger } from "@/lib/logger"
 
 export default async function PatientDashboard() {
@@ -33,7 +33,7 @@ export default async function PatientDashboard() {
 
   // Fetch other data only if conditions exist
   const patientRatings = await getRatingsByPatientAction(user.id)
-  const initialTasks = await getPendingReminderTasksAction(user.id)
+  // const initialTasks = await getPendingReminderTasksAction(user.id)
 
   // Get treatment details for each condition
   const conditionsWithTreatments = await Promise.all(
@@ -72,7 +72,8 @@ export default async function PatientDashboard() {
       {/* Optional: Add a welcome message or summary card first */}
 
       {/* Tracking Inbox */}
-      <TrackingInbox userId={user.id} initialTasks={initialTasks} />
+      {/* <TrackingInbox userId={user.id} initialTasks={initialTasks} /> */}
+      <TrackingInbox userId={user.id} /* initialTasks={initialTasks} */ /> {/* Temp remove prop */}
 
       <Card>
         <CardHeader>

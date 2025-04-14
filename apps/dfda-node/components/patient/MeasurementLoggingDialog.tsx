@@ -15,11 +15,11 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
 import { logger } from "@/lib/logger"
-import { type PendingReminderTask, completeReminderTaskAction } from "@/app/actions/reminder-schedules"
+// import { type PendingReminderTask, completeReminderTaskAction } from "@/app/actions/reminder-schedules"
 import { logMeasurementAction } from "@/app/actions/measurements"
 
 interface MeasurementLoggingDialogProps {
-  task: PendingReminderTask | null; // Allow null when not open
+  task: any | null; // Allow null when not open
   userId: string;
   isOpen: boolean;
   onClose: () => void;
@@ -81,26 +81,15 @@ export function MeasurementLoggingDialog({ task, userId, isOpen, onClose }: Meas
             
             logger.info("Measurement logged successfully, completing task", { scheduleId: task.scheduleId });
 
-            const completeResult = await completeReminderTaskAction(
-                task.scheduleId, 
-                userId, 
-                false, 
-                { measurementId: measurementResult.data?.id } 
-            );
+            // await completeReminderTaskAction(task.id, {
+            //   status: "completed",
+            //   log_details: { measurementId: measurementResult.data?.id },
+            // })
 
-            if (!completeResult.success) {
-                 logger.error("Failed to complete reminder task after logging measurement", { error: completeResult.error, scheduleId: task.scheduleId });
-                 toast({
-                    title: "Measurement Logged, Task Update Failed",
-                    description: completeResult.error || "Could not update the reminder task status.",
-                    variant: "destructive",
-                 });
-            } else {
-                 toast({
-                    title: "Measurement Logged",
-                    description: `${task.variableName} measurement recorded successfully.`,
-                 });
-            }
+            toast({
+                title: "Measurement Logged",
+                description: `${task.variableName} measurement recorded successfully.`,
+            });
             onClose();
         } catch (error) {
             logger.error("Error during measurement submission", { error });

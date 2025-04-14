@@ -3,9 +3,7 @@ import path from 'path';
 
 // Utility to run a command and pipe its output using spawn
 async function runCommand(command: string, args: string[], options?: any): Promise<void> {
-  console.log(`
---- Running: ${command} ${args.join(' ')} ---
-`);
+  console.log(`\n--- Running: ${command} ${args.join(' ')} ---\n`);
   return new Promise((resolve, reject) => {
     // Determine the actual command/executable for cross-platform compatibility
     // npm/pnpm/npx often need '.cmd' on Windows
@@ -20,8 +18,7 @@ async function runCommand(command: string, args: string[], options?: any): Promi
     });
 
     child.on('error', (error) => {
-      console.error(`
---- Error spawning command: ${command} ${args.join(' ')} ---`);
+      console.error(`\n--- Error spawning command: ${command} ${args.join(' ')} ---`);
       console.error(error.message);
       console.error('--------------------------------------');
       reject(error); // Reject the promise on spawn error
@@ -29,13 +26,11 @@ async function runCommand(command: string, args: string[], options?: any): Promi
 
     child.on('close', (code) => {
       if (code === 0) {
-        console.log(`
---- Completed: ${command} ${args.join(' ')} ---`);
+        console.log(`\n--- Completed: ${command} ${args.join(' ')} ---`);
         resolve(); // Resolve the promise on successful exit
       } else {
         const error = new Error(`Command exited with code ${code}`);
-        console.error(`
---- Error running command: ${command} ${args.join(' ')} ---`);
+        console.error(`\n--- Error running command: ${command} ${args.join(' ')} ---`);
         console.error(error.message);
         console.error('--------------------------------------');
         reject(error); // Reject the promise on non-zero exit code
@@ -50,29 +45,23 @@ function sleep(ms: number): Promise<void> {
 }
 
 async function setupLocalFull() {
-  console.log('Starting full local Supabase setup...');
+  console.log('Starting simplified local Supabase setup...');
   
   try {
     // 1. Start Supabase
     await runCommand('pnpm', ['sb:local:start']);
 
     // 2. Wait for services (adjust time if needed)
-    console.log('Waiting 10 seconds for services to stabilize...');
-    await sleep(10000);
+    console.log('Waiting 1 seconds for services to stabilize...');
+    await sleep(1000);
 
-    // 3. Reset DB & Generate Types
+    // 3. Reset DB & Generate Types (this applies all migrations, including the new function and cron schedule)
     await runCommand('pnpm', ['db:local:reset-types']);
 
-    // 4. Deploy Edge Functions LOCALLY
-    await runCommand('npx', ['supabase', 'functions', 'deploy', 'generate-notifications', '--no-verify-jwt', '--local']);
-
-    // 5. Configure local cron job
-    await runCommand('pnpm', ['setup:local:cron']);
-
-    // 6. Setup Storage Bucket
+    // 4. Setup Storage Bucket (if needed)
     await runCommand('pnpm', ['setup:storage']);
 
-    console.log('\n✅✅✅ Full local setup completed successfully! ✅✅✅\n');
+    console.log('\n✅✅✅ Simplified local setup completed successfully! ✅✅✅\n');
 
   } catch (error) {
     console.error('\n❌❌❌ Local setup failed! ❌❌❌\n');
