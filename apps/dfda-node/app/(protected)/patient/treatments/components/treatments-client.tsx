@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
-import { Music, Edit, AlertTriangle } from 'lucide-react'
+import { Music, Edit, AlertTriangle, Search, X } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
@@ -125,13 +125,25 @@ export function TreatmentsClient({
         {!isLoadingTreatments && !treatmentsError && (
           <>
             {userTreatments.length > 0 && (
-              <div className="mb-4">
+              <div className="mb-4 relative">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Filter treatments by name..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="max-w-sm"
+                  className="max-w-sm pl-8 pr-8"
                 />
+                {searchTerm && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-1 top-1/2 -translate-y-1/2 h-6 w-6 p-0 rounded-full"
+                    onClick={() => setSearchTerm("")}
+                    aria-label="Clear search"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                )}
               </div>
             )}
 
