@@ -29,8 +29,10 @@ type SearchedCondition = Pick<Database["public"]["Tables"]["global_variables"]["
 
 interface ConditionComboboxProps {
   patientConditions: PatientCondition[] // User's existing conditions
-  value: string // Currently selected condition ID or "not-specified"
-  onValueChange: (value: string) => void
+  value: string // Currently selected patient_condition UUID or "not-specified"
+  onValueChange: (value: string) => void // Passes back patient_condition UUID or "not-specified"
+  // Add a prop to control if adding new conditions is allowed/relevant
+  // allowAddingNew?: boolean; // Example, not implemented here
 }
 
 const NOT_SPECIFIED_VALUE = "not-specified"
@@ -44,38 +46,40 @@ export function ConditionCombobox({ patientConditions, value, onValueChange }: C
   const [isLoading, setIsLoading] = React.useState(false)
 
   React.useEffect(() => {
+    // Decide if searching should be enabled based on component usage
+    // if (debouncedSearchQuery && allowAddingNew) { ... }
     if (debouncedSearchQuery) {
       setIsLoading(true)
       searchConditionsAction(debouncedSearchQuery)
         .then((data) => {
             // Filter out conditions the patient already has from search results
-            const existingIds = new Set(patientConditions.map(pc => pc.condition_id))
-            setSearchResults(data.filter(c => !existingIds.has(c.id)))
+            // Note: This compares global_variable text IDs
+            const existingGlobalIds = new Set(patientConditions.map(pc => pc.condition_id))
+            setSearchResults(data.filter(c => !existingGlobalIds.has(c.id)))
         })
         .catch(console.error) // Add proper logging/error handling
         .finally(() => setIsLoading(false))
     } else {
       setSearchResults([])
     }
-  }, [debouncedSearchQuery, patientConditions])
+  }, [debouncedSearchQuery, patientConditions]) // Add allowAddingNew if implemented
 
+  // Map patient conditions for display, using the patient_condition UUID as the primary identifier
   const patientConditionItems = patientConditions
-    .filter(pc => pc.condition_id && pc.condition_name) // Ensure valid data
+    .filter(pc => pc.id && pc.condition_name) // Ensure valid data (pc.id is the UUID)
     .map(pc => ({
-        id: pc.condition_id!,
-        name: pc.condition_name!,
+        patientConditionId: pc.id!,         // The UUID of the patient_conditions record
+        conditionName: pc.condition_name!, // The readable name
+        // conditionId: pc.condition_id // The TEXT ID from global_variables (might still be useful)
         // emoji: pc.emoji // Add if available in patient_conditions_view
     }));
 
-  const allSortedResults = [
-    ...patientConditionItems,
-    ...searchResults.filter(sr => !patientConditionItems.some(pc => pc.id === sr.id)) // Avoid duplicates
-  ];
-
+  // Function to find the display name based on the selected patient_condition UUID
   const findSelectedConditionName = () => {
     if (value === NOT_SPECIFIED_VALUE) return NOT_SPECIFIED_LABEL
-    const found = allSortedResults.find(c => c.id === value)
-    return found?.name
+    // Find based on the patientConditionId (UUID)
+    const found = patientConditionItems.find(c => c.patientConditionId === value)
+    return found?.conditionName
   }
 
   return (
@@ -87,14 +91,14 @@ export function ConditionCombobox({ patientConditions, value, onValueChange }: C
           aria-expanded={open}
           className="w-full justify-between"
         >
-          {value ? findSelectedConditionName() : "Select condition..."}
+          {value && value !== NOT_SPECIFIED_VALUE ? findSelectedConditionName() : "Select condition..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[--radix-popover-trigger-width] p-0">
         <Command shouldFilter={false}> {/* We handle filtering via server action */}
           <CommandInput
-            placeholder="Search condition..."
+            placeholder="Search or select condition..." // Updated placeholder
             value={searchQuery}
             onValueChange={setSearchQuery}
             disabled={isLoading}
@@ -105,9 +109,9 @@ export function ConditionCombobox({ patientConditions, value, onValueChange }: C
               {/* Not Specified Option */}
               <CommandItem
                 key={NOT_SPECIFIED_VALUE}
-                value={NOT_SPECIFIED_VALUE}
+                value={NOT_SPECIFIED_VALUE} // Special value
                 onSelect={() => {
-                  onValueChange(NOT_SPECIFIED_VALUE)
+                  onValueChange(NOT_SPECIFIED_VALUE) // Pass back special value
                   setOpen(false)
                   setSearchQuery("")
                 }}
@@ -121,15 +125,16 @@ export function ConditionCombobox({ patientConditions, value, onValueChange }: C
                 {NOT_SPECIFIED_LABEL}
               </CommandItem>
 
-              {/* Patient's Conditions */}
+              {/* Patient's Conditions - Use patientConditionId (UUID) */}
               {patientConditionItems.length > 0 && (
                   <CommandSeparator />
               )}
               {patientConditionItems.map((condition) => (
                 <CommandItem
-                  key={condition.id}
-                  value={condition.id} // Use ID as value
+                  key={condition.patientConditionId} // Use UUID as key
+                  value={condition.patientConditionId} // Use UUID as value
                   onSelect={(currentValue) => {
+                    // currentValue is the patientConditionId (UUID)
                     onValueChange(currentValue === value ? "" : currentValue)
                     setOpen(false)
                     setSearchQuery("") // Clear search on select
@@ -138,36 +143,44 @@ export function ConditionCombobox({ patientConditions, value, onValueChange }: C
                   <Check
                     className={cn(
                       "mr-2 h-4 w-4",
-                      value === condition.id ? "opacity-100" : "opacity-0"
+                      // Compare against the UUID value
+                      value === condition.patientConditionId ? "opacity-100" : "opacity-0"
                     )}
                   />
-                  {/* {condition.emoji && <span className="mr-2">{condition.emoji}</span>} */}
-                  {condition.name}
+                  {/* {condition.emoji && <span className="mr-2\">{condition.emoji}</span>} */}
+                  {condition.conditionName} {/* Display the name */}
                 </CommandItem>
               ))}
 
-             {/* Search Results (excluding patient's existing ones) */}
+             {/* Search Results (Global Conditions) - Consider disabling/modifying for rating */}
              {searchResults.length > 0 && (
                 <CommandSeparator />
              )}
               {searchResults.map((condition) => (
                  <CommandItem
-                 key={condition.id}
-                 value={condition.id} // Use ID as value
-                 onSelect={(currentValue) => {
-                   onValueChange(currentValue === value ? "" : currentValue)
+                 key={condition.id} // Use global variable TEXT ID as key
+                 value={condition.id} // Use global variable TEXT ID as value
+                 // Make these non-selectable or visually distinct in rating context
+                 // For now, selecting them will pass the TEXT ID back, which is wrong for rating
+                 // Option 1: Disable them
+                 disabled
+                 // Option 2: Style them differently
+                 className="text-muted-foreground italic"
+                 // Option 3: Handle differently in onSelect (e.g., pass special value)
+                 /*
+                 onSelect={() => {
+                   // Indicate this is not a valid selection for rating
+                   // onValueChange("INVALID_SELECTION_GLOBAL");
+                   onValueChange("") // Or simply clear selection
                    setOpen(false)
-                   setSearchQuery("") // Clear search on select
+                   setSearchQuery("")
                  }}
+                 */
                >
-                 <Check
-                   className={cn(
-                     "mr-2 h-4 w-4",
-                     value === condition.id ? "opacity-100" : "opacity-0"
-                   )}
-                 />
-                 {/* {condition.emoji && <span className="mr-2">{condition.emoji}</span>} */}
-                 {condition.name}
+                 {/* No checkmark for these in rating context */}
+                 <span className="mr-2 h-4 w-4" /> {/* Placeholder for alignment */}
+                 {/* {condition.emoji && <span className="mr-2\">{condition.emoji}</span>} */}
+                 {condition.name} (Add New) {/* Indicate it's a global condition */}
                </CommandItem>
               ))}
             </CommandGroup>

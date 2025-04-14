@@ -1,6 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
-import { AddConditionDialog } from "./components/add-condition-dialog"
 import { AddTreatmentDialog } from "./components/add-treatment-dialog"
 import { getPatientConditionsAction } from '@/app/actions/patient-conditions'
 import type { Database } from "@/lib/database.types"
@@ -30,13 +29,12 @@ export default async function TreatmentsPage() {
 
   return (
     <div className="container py-6">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Treatments & Conditions</h1>
-          <p className="text-muted-foreground">Manage your conditions and track treatment effectiveness</p>
+          <h1 className="text-3xl font-bold tracking-tight">Your Treatments</h1>
+          <p className="text-muted-foreground">Manage your treatments, rate effectiveness, and track side effects</p>
         </div>
         <div className="flex gap-4">
-          <AddConditionDialog userId={user.id} />
           <AddTreatmentDialog userId={user.id} conditions={conditions || []} />
         </div>
       </div>
