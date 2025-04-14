@@ -14,8 +14,8 @@ import type { TreatmentRating, TreatmentRatingUpsertData } from '@/app/actions/t
 import type { Database } from "@/lib/database.types"
 import { logger } from '@/lib/logger' // Use console.log for client-side debugging
 
-// Type for the full treatment details passed from server page
-type FullPatientTreatmentDetail = 
+// Export the type for the full treatment details
+export type FullPatientTreatmentDetail = 
     Database["public"]["Tables"]["patient_treatments"]["Row"] 
     & { treatments: { global_variables: { name: string } } | null }
     & { treatment_ratings: (TreatmentRating & { // Use imported TreatmentRating type
@@ -49,6 +49,22 @@ interface EditableRatingState {
     }
 }
 
+// Re-use or redefine rating options to map values to emojis
+const ratingOptionsMap: { [key: string]: string } = { 
+    '0': '😭',
+    '2.5': '😟',
+    '5': '😐',
+    '7.5': '😊',
+    '10': '😁',
+};
+
+const getEmojiForRating = (ratingValue: string | null | undefined): string => {
+    if (ratingValue === null || ratingValue === undefined || ratingValue === "") {
+        return ""; // Or a default placeholder like '❔'
+    }
+    return ratingOptionsMap[ratingValue] || ""; // Return emoji or empty string if no match
+}
+
 export function TreatmentDetailClient({ 
     initialTreatmentDetails, 
     patientConditions 
@@ -68,33 +84,34 @@ export function TreatmentDetailClient({
 
     // Initialize editable ratings state from initial props
     useEffect(() => {
-        // Add check: Only run if initialTreatmentDetails is available
         if (!initialTreatmentDetails) {
             console.log("[TreatmentDetailClient] useEffect skipped: initialTreatmentDetails not available yet.");
             return; 
         }
+        // Log the received ratings array
+        console.log("[TreatmentDetailClient] useEffect received initialTreatmentDetails.treatment_ratings:", initialTreatmentDetails.treatment_ratings);
 
         const initialRatingsState: EditableRatingState = {};
-        // Add another check to ensure treatment_ratings is actually an array
         if (Array.isArray(initialTreatmentDetails.treatment_ratings)) {
             initialTreatmentDetails.treatment_ratings.forEach(rating => {
                 // Use patient_condition_id as the key for the state
-                if (rating.patient_condition_id) { 
+                 if (rating.patient_condition_id) { 
                     initialRatingsState[rating.patient_condition_id] = {
                         ratingId: rating.id, // Store the actual rating ID
                         currentValue: rating.effectiveness_out_of_ten?.toString() ?? "",
                         isSaving: false,
                         conditionName: rating.patient_conditions?.conditions?.global_variables?.name ?? 'Unknown Condition',
                     };
-                }
+                 } else {
+                    console.warn("[TreatmentDetailClient] Rating found without patient_condition_id:", rating);
+                 }
             });
         } else {
              console.warn("[TreatmentDetailClient] initialTreatmentDetails.treatment_ratings is not an array or is undefined.");
         }
 
-        console.log("[TreatmentDetailClient] Initialized editable ratings state:", initialRatingsState);
+        console.log("[TreatmentDetailClient] Setting editable ratings state:", initialRatingsState);
         setEditableRatings(initialRatingsState);
-        // Dependency array still includes initialTreatmentDetails so it re-runs if prop changes
     }, [initialTreatmentDetails]);
 
 
@@ -175,26 +192,31 @@ export function TreatmentDetailClient({
         treatment_name: initialTreatmentDetails.treatments?.global_variables?.name ?? 'Unknown Treatment'
     };
 
+    // Log the state right before rendering
+    console.log("[TreatmentDetailClient] Rendering with editableRatings state:", editableRatings);
+
     return (
         <>
             {/* Render the editable ratings using FaceRatingInput */} 
             {Object.keys(editableRatings).length > 0 ? (
                  <div className="space-y-4">
-                    {Object.entries(editableRatings).map(([patientConditionId, ratingState]) => (
-                        <div key={patientConditionId} className="border p-4 rounded-md bg-muted/50 space-y-2">
-                            <p className="font-medium text-sm">
-                                For: {ratingState.conditionName}
-                            </p>
-                            <FaceRatingInput
-                                value={ratingState.currentValue}
-                                onValueChange={(newValue) => handleInlineRatingChange(patientConditionId, newValue)}
-                                disabled={ratingState.isSaving}
-                                labelId={`rating-label-${patientConditionId}`} // Unique label ID
-                            />
-                            {/* We could display the review fetched initially here if needed */}
-                            {/* {initialTreatmentDetails.treatment_ratings.find(r => r.patient_condition_id === patientConditionId)?.review && ... } */} 
-                        </div>
-                    ))}
+                    {Object.entries(editableRatings).map(([patientConditionId, ratingState]) => {
+                        const emoji = getEmojiForRating(ratingState.currentValue);
+                        return (
+                            <div key={patientConditionId} className="border p-4 rounded-md bg-muted/50 space-y-2">
+                                <p className="font-medium text-sm flex items-center"> {/* Use flex to align emoji and text */} 
+                                    {emoji && <span className="text-xl mr-2">{emoji}</span>} {/* Display emoji */} 
+                                    For: {ratingState.conditionName}
+                                </p>
+                                <FaceRatingInput
+                                    value={ratingState.currentValue}
+                                    onValueChange={(newValue) => handleInlineRatingChange(patientConditionId, newValue)}
+                                    disabled={ratingState.isSaving}
+                                    labelId={`rating-label-${patientConditionId}`} // Unique label ID
+                                />
+                            </div>
+                        )
+                    })}
                  </div>
              ) : (
                  <p className="text-muted-foreground text-center py-4">No effectiveness ratings recorded yet.</p>

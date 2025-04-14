@@ -11,7 +11,7 @@ CREATE TABLE public.treatment_ratings (
   -- Link to the specific patient_condition record (patient's instance of the condition)
   patient_condition_id UUID NOT NULL REFERENCES public.patient_conditions(id) ON DELETE CASCADE,
 
-  effectiveness_out_of_ten SMALLINT, -- Changed to SMALLINT, removed inline CHECK
+  effectiveness_out_of_ten NUMERIC(3, 1), -- Changed from SMALLINT to allow decimals (e.g., 7.5)
   review TEXT,
   helpful_count INT DEFAULT 0,
 
@@ -36,7 +36,7 @@ ON public.treatment_ratings(patient_condition_id);
 COMMENT ON TABLE public.treatment_ratings IS 'Stores user effectiveness ratings and reviews for specific treatment periods (patient_treatments) FOR specific patient condition instances.';
 COMMENT ON COLUMN public.treatment_ratings.patient_treatment_id IS 'Links to the specific patient treatment instance being rated.';
 COMMENT ON COLUMN public.treatment_ratings.patient_condition_id IS 'Links to the patient''s specific record of having the condition for which effectiveness is rated.';
-COMMENT ON COLUMN public.treatment_ratings.effectiveness_out_of_ten IS 'User effectiveness rating from 0 (none) to 10 (very effective).';
+COMMENT ON COLUMN public.treatment_ratings.effectiveness_out_of_ten IS 'User effectiveness rating from 0 (none) to 10 (very effective). Allows for one decimal place.';
 COMMENT ON COLUMN public.treatment_ratings.review IS 'User textual review of their experience during the treatment period for the specified condition instance.';
 
 -- Row Level Security

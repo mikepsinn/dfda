@@ -8,7 +8,7 @@ CREATE TABLE public.reported_side_effects (
   patient_treatment_id UUID NOT NULL REFERENCES public.patient_treatments(id) ON DELETE CASCADE,
 
   description TEXT NOT NULL,
-  severity_out_of_ten INT CHECK (severity_out_of_ten BETWEEN 0 AND 10),
+  severity_out_of_ten NUMERIC(3, 1) CHECK (severity_out_of_ten BETWEEN 0 AND 10),
 
   deleted_at TIMESTAMP WITH TIME ZONE, -- Soft delete
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
