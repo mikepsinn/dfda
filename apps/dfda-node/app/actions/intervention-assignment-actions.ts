@@ -1,10 +1,9 @@
 'use server'
 
 import { createClient } from '@/lib/supabase/server'
-import { cookies } from 'next/headers'
-import { Database, Tables } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
+import { Tables } from "@/lib/database.types" // Import only Tables
 
 // --- Fetch Patient Details ---
 // This combines data from multiple tables needed for the assignment view
@@ -186,4 +185,4 @@ export async function assignIntervention(payload: AssignInterventionPayload): Pr
     // revalidatePath(`/provider/intervention-assignment/${payload.enrollmentId}`); // Also revalidate assignment form?
 
     return { success: true };
-} 
+}

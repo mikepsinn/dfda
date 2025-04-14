@@ -1,8 +1,7 @@
 'use server'
 
 import { createClient } from '@/lib/supabase/server'
-import { cookies } from 'next/headers'
-import { Database, Tables, Enums } from '@/lib/database.types'
+import { Tables } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 
 // Type for the returned form definition including questions
