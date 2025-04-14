@@ -1,10 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { getServerUser } from "@/lib/server-auth"
 
 export default async function TermsPage() {
-  const user = await getServerUser()
-
   return (
     <div className="flex min-h-screen flex-col">
 
