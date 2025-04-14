@@ -2,7 +2,7 @@ services:
   next-app:
     container_name: next-app
     build:
-      context: ./next-app
+      context: .
       dockerfile: dev.Dockerfile
 
     # Set environment variables directly in the compose file
@@ -14,8 +14,9 @@ services:
     env_file:
       - .env
     volumes:
-      - ./next-app/src:/app/src
-      - ./next-app/public:/app/public
+      - .:/app  # Mount the entire project directory
+      - /app/node_modules # Keep container's node_modules separate
+      - /app/.next # Keep container's .next separate
     restart: always
     ports:
       - 3000:3000

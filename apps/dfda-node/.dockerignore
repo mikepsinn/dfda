@@ -1,0 +1,30 @@
+Dockerfile
+.dockerignore
+node_modules
+.next
+.git
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode
+# Optional: Ignore specific config files if they shouldn't be in the image
+# compose.dev.yaml
+# compose.prod.yaml
+# compose.prod-without-multistage.yaml
+# dev.Dockerfile
+# prod.Dockerfile
+# prod-without-multistage.Dockerfile
+
+# Ignore Playwright test results and cache
+/test-results/
+/playwright/.cache/
+
+# Ignore Jest cache
+/coverage/
+
+# Ignore build outputs if not needed (handled by .next usually)
+# /dist/

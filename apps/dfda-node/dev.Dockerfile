@@ -14,9 +14,14 @@ RUN \
   else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install; \
   fi
 
-COPY src ./src
+COPY app ./app
+COPY lib ./lib
+COPY components ./components
+COPY hooks ./hooks
+COPY utils ./utils
+COPY middleware.ts ./
 COPY public ./public
-COPY next.config.js .
+COPY next.config.mjs .
 COPY tsconfig.json .
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
