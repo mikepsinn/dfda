@@ -5,7 +5,7 @@ import type { Database } from '@/lib/database.types'
 import { RRule, rrulestr } from 'rrule'
 import { DateTime } from 'luxon'
 import { toZonedTime } from 'date-fns-tz'
-import { handleDatabaseCollectionResponse } from '@/lib/actions-helpers'
+// import { handleDatabaseCollectionResponse } from '@/lib/actions-helpers' // Unused import
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 
@@ -72,10 +72,10 @@ export async function upsertReminderScheduleAction(
         // Basic check - could validate against a known list if needed
         return { success: false, error: 'Timezone is required.' };
     }
-    let rule: RRule;
+    // let rule: RRule; // rule assignment is never used
     try {
         // Validate RRULE string basic structure and parse it
-        rule = rrulestr(scheduleData.rruleString) as RRule;
+        /* rule = */ rrulestr(scheduleData.rruleString) as RRule; // Removed unused assignment
     } catch (e) {
         logger.error('Invalid RRULE string provided', { rruleString: scheduleData.rruleString, error: e });
         return { success: false, error: 'Invalid recurrence rule format.' };

@@ -14,7 +14,6 @@ interface TreatmentReviewsProps {
   averageRating: number
   totalReviews: number
   userRating: any | null
-  userId?: string
   isLoggedIn: boolean
 }
 
@@ -25,7 +24,6 @@ export function TreatmentReviews({
   averageRating,
   totalReviews,
   userRating,
-  userId,
   isLoggedIn,
 }: TreatmentReviewsProps) {
   const [showReviewForm, setShowReviewForm] = useState(false)
@@ -77,10 +75,9 @@ export function TreatmentReviews({
               <div>
                 {showReviewForm ? (
                   <TreatmentReviewForm
-                    userId={userId!}
                     treatmentId={treatmentId}
-                    conditionId={conditionId}
-                    onSuccess={handleReviewSuccess}
+                    patientConditionId={conditionId}
+                    onReviewSubmitted={handleReviewSuccess}
                   />
                 ) : (
                   <div className="text-center py-4">
