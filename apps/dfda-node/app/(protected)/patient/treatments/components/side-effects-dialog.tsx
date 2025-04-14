@@ -63,7 +63,7 @@ export function SideEffectsDialog({
     } finally {
       setIsLoadingExisting(false)
     }
-  }, [patientTreatmentId])
+  }, [patientTreatmentId, toast])
 
   useEffect(() => {
     if (open) {
