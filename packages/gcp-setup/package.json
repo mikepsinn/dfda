@@ -1,0 +1,25 @@
+{
+  "name": "gcp-setup",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "clean": "rimraf dist",
+    "start": "node dist/index.js",
+    "deploy:coolify": "ts-node src/deployCoolify.ts",
+    "deploy:supabase": "ts-node src/deploySupabase.ts"
+  },
+  "dependencies": {
+    "@google-cloud/compute": "^4.4.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  }
+} 
