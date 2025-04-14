@@ -6,7 +6,10 @@ import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 
 // Types using the updated schema
-type TreatmentRating = Tables<"treatment_ratings">;
+/**
+ * Represents a TreatmentRating record.
+ */
+export type TreatmentRating = Tables<"treatment_ratings">;
 type TreatmentRatingInsert = TablesInsert<"treatment_ratings">;
 type TreatmentRatingUpdate = TablesUpdate<"treatment_ratings">;
 
@@ -392,8 +395,8 @@ async function getUserTreatmentRatingAction(userId: string, treatmentId: string,
     const { data, error } = await supabase
       .from('treatment_ratings')
       .select('*')
-      .eq('patient_treatment_id', `(${getPatientTreatmentSubquery(userId, treatmentId)})`) // Find the correct patient_treatment_id
-      .eq('patient_condition_id', `(${getPatientConditionSubquery(userId, conditionId)})`) // Find the correct patient_condition_id
+      .eq('patient_treatment_id', `(${getPatientTreatmentSubquery(supabase, userId, treatmentId)})`) // Find the correct patient_treatment_id
+      .eq('patient_condition_id', `(${getPatientConditionSubquery(supabase, userId, conditionId)})`) // Find the correct patient_condition_id
       .maybeSingle();
 
     if (error) {
@@ -408,7 +411,7 @@ async function getUserTreatmentRatingAction(userId: string, treatmentId: string,
 }
 
 // Helper subquery to find patient_treatment_id
-function getPatientTreatmentSubquery(userId: string, treatmentId: string) {
+function getPatientTreatmentSubquery(supabase: SupabaseClientType, userId: string, treatmentId: string) {
   return supabase
     .from('patient_treatments')
     .select('id')
@@ -419,7 +422,7 @@ function getPatientTreatmentSubquery(userId: string, treatmentId: string) {
 }
 
 // Helper subquery to find patient_condition_id
-function getPatientConditionSubquery(userId: string, conditionId: string) {
+function getPatientConditionSubquery(supabase: SupabaseClientType, userId: string, conditionId: string) {
   return supabase
     .from('patient_conditions')
     .select('id')
