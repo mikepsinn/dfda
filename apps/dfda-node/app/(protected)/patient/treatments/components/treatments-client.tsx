@@ -12,6 +12,7 @@ import { AddTreatmentDialog } from "./add-treatment-dialog"
 import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 import type { Database } from '@/lib/database.types'
+import Link from 'next/link'
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 type PatientTreatmentWithDetails = Database["public"]["Tables"]["patient_treatments"]["Row"] & {
@@ -47,7 +48,8 @@ export function TreatmentsClient({
   const [isSideEffectsDialogOpen, setIsSideEffectsDialogOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState("");
 
-  const fetchUserTreatments = useCallback(async () => {
+  const fetchUserTreatments = useCallback(async (triggeredBy?: string) => {
+    console.log(`[TreatmentsClient] fetchUserTreatments called`, { triggeredBy: triggeredBy || 'initial/unknown' }); 
     setIsLoadingTreatments(true)
     setTreatmentsError(null)
     try {
@@ -61,9 +63,11 @@ export function TreatmentsClient({
         `)
         .eq('patient_id', userId)
         .order('start_date', { ascending: false });
+      
+      console.log(`[TreatmentsClient] Data fetched from Supabase:`, { data, error });
 
       if (error) {
-        console.error("Supabase fetch error (patient treatments):", JSON.stringify(error, null, 2));
+        console.error("[TreatmentsClient] Supabase fetch error:", error);
         throw error
       }
 
@@ -78,10 +82,10 @@ export function TreatmentsClient({
          };
       });
       
+      console.log(`[TreatmentsClient] Setting user treatments state with ${formattedData.length} items.`);
       setUserTreatments(formattedData)
-      logger.info("Fetched user treatments successfully", { userId, count: formattedData.length });
-    } catch (err) {
-      logger.error("Error fetching user treatments:", err instanceof Error ? err.message : err)
+    } catch (err: any) {
+      console.error("[TreatmentsClient] Error in fetchUserTreatments:", err); 
       setTreatmentsError("Failed to load treatments.")
       setUserTreatments([])
     } finally {
@@ -90,8 +94,13 @@ export function TreatmentsClient({
   }, [userId])
   
   useEffect(() => {
-    fetchUserTreatments()
+    fetchUserTreatments('useEffect')
   }, [fetchUserTreatments])
+
+  const handleAddTreatmentSuccess = useCallback(() => {
+      console.log("[TreatmentsClient] handleAddTreatmentSuccess (onSuccess callback) triggered.");
+      fetchUserTreatments('onSuccess callback');
+  }, [fetchUserTreatments]);
 
   const openRatingDialog = (treatment: PatientTreatmentWithDetails) => {
     setSelectedTreatmentForDialog(treatment);
@@ -154,27 +163,29 @@ export function TreatmentsClient({
             {filteredTreatments.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredTreatments.map((treatment) => (
-                  <Card key={treatment.id}>
-                    <CardHeader>
-                      <CardTitle>{treatment.treatment_name}</CardTitle>
-                      {treatment.status && (
-                        <Badge variant={treatment.status === 'active' ? 'default' : 'secondary'} className="w-fit">
-                          {treatment.status}
-                        </Badge>
-                      )}
-                    </CardHeader>
-                    <CardContent className="space-y-2">
-                      {treatment.start_date && (
-                        <p className="text-sm text-muted-foreground">
-                          Started: {new Date(treatment.start_date).toLocaleDateString()}
-                        </p>
-                      )}
-                      <div>
-                        <span className="text-sm font-medium">Effectiveness: </span>
-                        <DisplayRating rating={treatment.effectiveness_out_of_ten} />
-                      </div>
-                    </CardContent>
-                    <CardFooter className="flex justify-end gap-2">
+                  <Card key={treatment.id} className="flex flex-col justify-between hover:shadow-md transition-shadow duration-150">
+                    <Link href={`/patient/treatments/${treatment.id}`} className="flex-grow block cursor-pointer">
+                      <CardHeader>
+                        <CardTitle>{treatment.treatment_name}</CardTitle>
+                        {treatment.status && (
+                          <Badge variant={treatment.status === 'active' ? 'default' : 'secondary'} className="w-fit">
+                            {treatment.status}
+                          </Badge>
+                        )}
+                      </CardHeader>
+                      <CardContent className="space-y-2">
+                        {treatment.start_date && (
+                          <p className="text-sm text-muted-foreground">
+                            Started: {new Date(treatment.start_date).toLocaleDateString()}
+                          </p>
+                        )}
+                        <div>
+                          <span className="text-sm font-medium">Effectiveness: </span>
+                          <DisplayRating rating={treatment.effectiveness_out_of_ten} />
+                        </div>
+                      </CardContent>
+                    </Link>
+                    <CardFooter className="flex justify-end gap-2 border-t pt-4">
                       <Button variant="outline" size="sm" onClick={() => openRatingDialog(treatment)}>
                           <Edit className="mr-1 h-4 w-4" /> Rate
                       </Button>
@@ -192,13 +203,19 @@ export function TreatmentsClient({
                 <Music className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
                 <h3 className="text-lg font-medium mb-2">No treatments tracked yet</h3>
                 <p className="text-muted-foreground mb-4">Add your first treatment to start tracking.</p>
-                <AddTreatmentDialog userId={userId} conditions={initialConditions || []} />
+                <AddTreatmentDialog 
+                    userId={userId} 
+                    onSuccess={handleAddTreatmentSuccess}
+                />
               </div>
             )}
 
             {userTreatments.length > 0 && (
               <div className="mt-6 flex justify-center">
-                  <AddTreatmentDialog userId={userId} conditions={initialConditions || []} />
+                  <AddTreatmentDialog 
+                      userId={userId} 
+                      onSuccess={handleAddTreatmentSuccess}
+                  />
               </div>
             )}
           </>
@@ -211,7 +228,7 @@ export function TreatmentsClient({
            onOpenChange={setIsRatingDialogOpen} 
            patientTreatment={selectedTreatmentForDialog}
            patientConditions={initialConditions || []}
-           onSuccess={fetchUserTreatments} 
+           onSuccess={fetchUserTreatments}
         />
       )}
       {selectedTreatmentForDialog && (
@@ -220,7 +237,7 @@ export function TreatmentsClient({
            onOpenChange={setIsSideEffectsDialogOpen} 
            patientTreatmentId={selectedTreatmentForDialog.id}
            treatmentName={selectedTreatmentForDialog.treatment_name}
-           onSuccess={fetchUserTreatments} 
+           onSuccess={fetchUserTreatments}
          />
        )}
     </>

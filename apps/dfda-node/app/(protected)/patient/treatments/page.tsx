@@ -35,7 +35,7 @@ export default async function TreatmentsPage() {
           <p className="text-muted-foreground">Manage your treatments, rate effectiveness, and track side effects</p>
         </div>
         <div className="flex gap-4">
-          <AddTreatmentDialog userId={user.id} conditions={conditions || []} />
+          <AddTreatmentDialog userId={user.id}/>
         </div>
       </div>
 
