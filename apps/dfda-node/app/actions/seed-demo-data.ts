@@ -3,7 +3,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/logger";
 import { DEMO_ACCOUNTS, DemoUserType } from "@/lib/constants/demo-accounts";
-import type { Database } from "@/lib/database.types";
 
 // Helper function to clear existing demo data for a user
 async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, userType: DemoUserType) {
@@ -81,7 +80,7 @@ export async function setupDemoUserData(userId: string, userType: DemoUserType) 
         if (conditionError) throw new Error(`Patient conditions seeding failed: ${conditionError.message}`);
       }
 
-      let createdEnrollmentIds: { [trialId: string]: string } = {};
+      const createdEnrollmentIds: { [trialId: string]: string } = {};
       if (seedData.enrollments && seedData.enrollments.length > 0) {
         logger.info("Seeding trial enrollments", { userId, count: seedData.enrollments.length });
         const enrollmentsToInsert = seedData.enrollments.map((enr: any) => ({ ...enr, patient_id: userId }));
