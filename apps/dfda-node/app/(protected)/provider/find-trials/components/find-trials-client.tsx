@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, Check, Filter, Search, Users } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
