@@ -53,19 +53,20 @@ export function TreatmentsClient({
         .from('patient_treatments')
         .select(`
           *,
-          global_variables ( name ), 
+          treatments!inner ( global_variables!inner ( name ) ),
           treatment_ratings ( effectiveness_out_of_ten, review, id )
         `)
         .eq('patient_id', userId)
         .order('start_date', { ascending: false });
 
       if (error) {
+        console.error("Supabase fetch error (patient treatments):", JSON.stringify(error, null, 2));
         throw error
       }
 
       const formattedData: PatientTreatmentWithDetails[] = data.map(pt => ({
          ...pt,
-         treatment_name: (pt.global_variables as any)?.name ?? 'Unknown Treatment',
+         treatment_name: (pt.treatments as any)?.global_variables?.name ?? 'Unknown Treatment',
          effectiveness_out_of_ten: (pt.treatment_ratings as any)?.[0]?.effectiveness_out_of_ten ?? null,
          review: (pt.treatment_ratings as any)?.[0]?.review ?? null,
          rating_id: (pt.treatment_ratings as any)?.[0]?.id ?? null,
@@ -74,7 +75,7 @@ export function TreatmentsClient({
       setUserTreatments(formattedData)
       logger.info("Fetched user treatments successfully", { userId, count: formattedData.length });
     } catch (err) {
-      logger.error("Error fetching user treatments:", err)
+      logger.error("Error fetching user treatments:", err instanceof Error ? err.message : err)
       setTreatmentsError("Failed to load treatments.")
       setUserTreatments([])
     } finally {

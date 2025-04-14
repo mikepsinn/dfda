@@ -255,25 +255,43 @@ export async function createDefaultReminderAction(
     return { success: false, error: 'Missing required information for default reminder.' };
   }
 
-  // --- Define Default Settings --- 
-  const defaultTime = "19:00"; // 7 PM
-  const defaultTimezone = "America/New_York"; // TODO: Get user's actual timezone from profile!
-  const defaultRRule = `FREQ=DAILY;DTSTART=${new Date().toISOString().split('T')[0].replace(/-/g, '')}T000000Z`; // Daily starting today (UTC date part)
-  const defaultTitle = reminderType === 'condition' 
+  try {
+    // --- Get User Timezone --- 
+    let userTimezone: string = 'UTC'; // Default fallback timezone
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('timezone')
+      .eq('id', userId)
+      .single();
+
+    if (profileError) {
+      logger.warn('Could not fetch user profile for timezone', { userId, error: profileError });
+      // Proceed with fallback timezone
+    } else if (profile?.timezone) {
+      userTimezone = profile.timezone;
+      logger.info('Using user timezone for default reminder', { userId, timezone: userTimezone });
+    } else {
+      logger.warn('User profile does not have a timezone set, using fallback', { userId, fallback: userTimezone });
+    }
+    // --- End Get User Timezone --- 
+
+    // --- Define Default Settings --- 
+    const defaultTime = "20:00"; // 8 PM
+    const defaultRRule = `FREQ=DAILY;DTSTART=${new Date().toISOString().split('T')[0].replace(/-/g, '')}T000000Z`; // Daily starting today (UTC date part)
+    const defaultTitle = reminderType === 'condition' 
                          ? `Track ${variableName} Severity` 
                          : `Track ${variableName} Adherence`;
-  const defaultMessage = reminderType === 'condition'
+    const defaultMessage = reminderType === 'condition'
                          ? `How has your ${variableName} been today?`
                          : `Did you take your ${variableName} today? How effective was it?`;
-  // --- End Default Settings --- 
+    // --- End Default Settings --- 
   
-  try {
     // Simplified data for insertion - calculation of next_trigger_at handled by upsert action logic
     // We need to call upsert instead of direct insert to leverage that logic
     const scheduleData: ReminderScheduleClientData = {
         rruleString: defaultRRule,
         timeOfDay: defaultTime,
-        timezone: defaultTimezone, // Use default for now
+        timezone: userTimezone, // Use fetched or fallback timezone
         startDate: new Date(), // Start today
         isActive: true,
     };
