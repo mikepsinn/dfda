@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server"
 import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
+import { createDefaultReminderAction } from "./reminder-schedules"
 
 type PatientConditionInsert = Database["public"]["Tables"]["patient_conditions"]["Insert"]
 
@@ -64,6 +65,30 @@ export async function addPatientConditionAction(userId: string, conditionId: str
     }
 
     logger.info("Successfully added patient condition", { userId, conditionId, newRecord: newPatientCondition })
+    
+    // Fetch condition name for default reminder
+    const { data: conditionDetails, error: nameError } = await supabase
+        .from('global_variables')
+        .select('name')
+        .eq('id', conditionId)
+        .single();
+    
+    if (nameError || !conditionDetails?.name) {
+      logger.warn("Could not fetch condition name for default reminder", { userId, conditionId, error: nameError });
+    } else {
+      // Call action to create default reminder (fire and forget, log errors)
+      createDefaultReminderAction(userId, conditionId, conditionDetails.name, 'condition')
+          .then(result => {
+              if (!result.success) {
+                  logger.error("Failed to create default reminder for new condition", { userId, conditionId, error: result.error });
+              } else {
+                  logger.info("Successfully created default reminder for new condition", { userId, conditionId });
+              }
+          })
+          .catch(err => {
+               logger.error("Error calling createDefaultReminderAction for condition", { userId, conditionId, error: err });
+          });
+    }
     
     // Revalidate relevant paths
     revalidatePath("/patient/conditions") // Or the specific page where patient conditions are listed

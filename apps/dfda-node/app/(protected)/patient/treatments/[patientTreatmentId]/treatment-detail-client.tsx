@@ -12,7 +12,6 @@ import { FaceRatingInput } from '@/components/face-rating-input' // Import FaceR
 import { upsertTreatmentRatingAction } from '@/app/actions/treatment-ratings' // Import action
 import type { TreatmentRating, TreatmentRatingUpsertData } from '@/app/actions/treatment-ratings' // Import types
 import type { Database } from "@/lib/database.types"
-import { logger } from '@/lib/logger' // Use console.log for client-side debugging
 
 // Export the type for the full treatment details
 export type FullPatientTreatmentDetail = 
@@ -70,22 +69,18 @@ export function TreatmentDetailClient({
     patientConditions 
 }: TreatmentDetailClientProps) {
     
-    // If the initial data hasn't arrived yet, don't render anything or show loading
-    if (!initialTreatmentDetails) {
-        console.log("[TreatmentDetailClient] Rendering null because initialTreatmentDetails is missing.");
-        return null; // Or return a loading skeleton/spinner
-    }
-
+    // Move hooks to the top level
     const [isRatingDialogOpen, setIsRatingDialogOpen] = useState(false);
-    // Initialize state to hold the ratings fetched from the server
     const [editableRatings, setEditableRatings] = useState<EditableRatingState>({}); 
     const router = useRouter(); 
     const { toast } = useToast();
 
     // Initialize editable ratings state from initial props
     useEffect(() => {
+        // The effect's logic can still depend on initialTreatmentDetails
         if (!initialTreatmentDetails) {
             console.log("[TreatmentDetailClient] useEffect skipped: initialTreatmentDetails not available yet.");
+            setEditableRatings({}); // Ensure state is cleared or set to default if details missing
             return; 
         }
         // Log the received ratings array
@@ -94,10 +89,9 @@ export function TreatmentDetailClient({
         const initialRatingsState: EditableRatingState = {};
         if (Array.isArray(initialTreatmentDetails.treatment_ratings)) {
             initialTreatmentDetails.treatment_ratings.forEach(rating => {
-                // Use patient_condition_id as the key for the state
                  if (rating.patient_condition_id) { 
                     initialRatingsState[rating.patient_condition_id] = {
-                        ratingId: rating.id, // Store the actual rating ID
+                        ratingId: rating.id, 
                         currentValue: rating.effectiveness_out_of_ten?.toString() ?? "",
                         isSaving: false,
                         conditionName: rating.patient_conditions?.conditions?.global_variables?.name ?? 'Unknown Condition',
@@ -114,6 +108,12 @@ export function TreatmentDetailClient({
         setEditableRatings(initialRatingsState);
     }, [initialTreatmentDetails]);
 
+    // If the initial data hasn't arrived yet, don't render anything or show loading
+    // Keep this check *after* the hooks
+    if (!initialTreatmentDetails) {
+        console.log("[TreatmentDetailClient] Rendering null because initialTreatmentDetails is missing.");
+        return null; // Or return a loading skeleton/spinner
+    }
 
     const handleRatingSuccess = () => {
         console.log("[TreatmentDetailClient] Dialog Rating success, refreshing page data...");

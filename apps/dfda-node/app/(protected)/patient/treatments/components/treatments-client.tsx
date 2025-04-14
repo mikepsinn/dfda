@@ -3,10 +3,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Music, Edit, AlertTriangle, Search, X } from 'lucide-react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
-import { logger } from '@/lib/logger'
 import { createClient } from '@/lib/supabase/client'
 import { AddTreatmentDialog } from "./add-treatment-dialog"
 import { SideEffectsDialog } from "./side-effects-dialog"

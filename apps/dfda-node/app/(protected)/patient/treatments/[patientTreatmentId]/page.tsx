@@ -1,19 +1,17 @@
 import { createClient } from "@/lib/supabase/server"
 import type { SupabaseClient } from "@supabase/supabase-js"
 import { redirect, notFound } from "next/navigation"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
-import { TreatmentDetailClient } from "./treatment-detail-client"
+import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
 
-// Type for PatientCondition (can share or redefine)
-type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
-
 // Define specific types for fetched data
+/* 
 type PatientTreatmentDetail = 
     Database["public"]["Tables"]["patient_treatments"]["Row"] 
     & { treatments: { global_variables: { name: string } } | null }
@@ -30,41 +28,39 @@ type PatientTreatmentDetail =
           description: string; 
           severity_out_of_ten: number | null; 
       })[] };
+*/
 
-async function fetchTreatmentDetails(supabase: SupabaseClient<Database>, patientTreatmentId: string, userId: string): Promise<PatientTreatmentDetail | null> {
+// Update fetch function to return the imported FullPatientTreatmentDetail type
+async function fetchTreatmentDetails(supabase: SupabaseClient<Database>, patientTreatmentId: string, userId: string): Promise<FullPatientTreatmentDetail | null> {
     const { data, error } = await supabase
         .from("patient_treatments")
         .select(`
             *,
             treatments!inner ( global_variables!inner ( name ) ),
             treatment_ratings (
-                id, 
-                effectiveness_out_of_ten, 
-                review, 
+                *, 
                 patient_conditions ( 
+                    id,
                     conditions!inner ( global_variables!inner ( name ) ) 
                 ) 
             ),
             reported_side_effects ( id, description, severity_out_of_ten )
         `)
         .eq('id', patientTreatmentId)
-        .eq('patient_id', userId) // Ensure user owns this record
+        .eq('patient_id', userId) 
         .single();
 
     if (error) {
         logger.error("Error fetching treatment details", { patientTreatmentId, userId, error: error.message });
-        return null; // Let the calling function handle notFound
+        return null;
     }
-
-    // Type assertion after successful fetch
-    return data as PatientTreatmentDetail;
+    return data as FullPatientTreatmentDetail;
 }
 
-export default async function TreatmentDetailPage({ 
-    params: { patientTreatmentId } 
-}: { 
-    params: { patientTreatmentId: string } 
-}) {
+export default async function TreatmentDetailPage(props: { params: { patientTreatmentId: string } }) {
+  const patientTreatmentId = props.params.patientTreatmentId;
+  console.log(`[TreatmentDetailPage] Received patientTreatmentId: ${patientTreatmentId}`);
+
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
@@ -72,33 +68,32 @@ export default async function TreatmentDetailPage({
     redirect("/login?message=Please log in to view treatment details.")
   }
 
+  console.log(`[TreatmentDetailPage] Fetching data for user: ${user.id} and treatment: ${patientTreatmentId}`);
   // Fetch treatment details AND patient conditions in parallel
   const [treatmentDetails, patientConditionsResult] = await Promise.all([
       fetchTreatmentDetails(supabase, patientTreatmentId, user.id),
-      getPatientConditionsAction(user.id) // Fetch conditions needed by the dialog
+      getPatientConditionsAction(user.id)
   ]);
+  console.log(`[TreatmentDetailPage] Fetched treatmentDetails:`, treatmentDetails ? `Found (ID: ${treatmentDetails.id})` : 'Not Found');
+  console.log(`[TreatmentDetailPage] Fetched patientConditionsResult:`, patientConditionsResult);
 
   if (!treatmentDetails) {
-    notFound(); // Show 404 if treatment not found or doesn't belong to user
+    console.log(`[TreatmentDetailPage] treatmentDetails not found, rendering 404.`);
+    notFound();
   }
   
-  // Handle potential error fetching conditions (optional, could show message)
-   const patientConditions = Array.isArray(patientConditionsResult) ? patientConditionsResult : [];
-   if (!Array.isArray(patientConditionsResult)) {
-      logger.error("Error fetching patient conditions for dialog", { userId: user.id, error: (patientConditionsResult as any)?.error });
-      // Decide how to proceed - maybe disable rating button? For now, pass empty array.
-   }
+  const patientConditions = Array.isArray(patientConditionsResult) ? patientConditionsResult : [];
+  if (!Array.isArray(patientConditionsResult)) {
+     logger.error("Error fetching patient conditions for dialog", { userId: user.id, error: (patientConditionsResult as any)?.error });
+  }
 
   const treatmentName = treatmentDetails.treatments?.global_variables?.name ?? "Unknown Treatment";
   
-  // Prepare the simplified treatment summary for the client component
-  // Pass necessary fields that TreatmentRatingDialog might indirectly need via its props
-  const treatmentSummary = {
-      id: treatmentDetails.id,
-      treatment_name: treatmentName
-      // Add other fields from treatmentDetails if the dialog component requires them
-      // status: treatmentDetails.status, 
-  };
+  // Log the exact data being passed to the client component
+  console.log("[TreatmentDetailPage] Data being passed to TreatmentDetailClient:", {
+      initialTreatmentDetails: treatmentDetails, // Log the whole object
+      patientConditions: patientConditions
+  });
 
   return (
     <div className="container py-6 space-y-6">
@@ -150,7 +145,7 @@ export default async function TreatmentDetailPage({
       <Card>
          <CardHeader>
              <CardTitle>Effectiveness Ratings</CardTitle>
-             <CardDescription>How effective this treatment was for specific conditions.</CardDescription>
+             <CardDescription>Rate how effective this treatment was for specific conditions by clicking the faces.</CardDescription>
          </CardHeader>
          <CardContent>
              {treatmentDetails.treatment_ratings.length > 0 ? (
@@ -172,11 +167,11 @@ export default async function TreatmentDetailPage({
              ) : (
                  <p className="text-muted-foreground text-center py-4">No effectiveness ratings recorded yet.</p>
              )}
+             <TreatmentDetailClient 
+                initialTreatmentDetails={treatmentDetails} 
+                patientConditions={patientConditions} 
+             />
          </CardContent>
-         <TreatmentDetailClient 
-            patientTreatment={treatmentSummary}
-            patientConditions={patientConditions} 
-         />
       </Card>
 
       {/* Side Effects Section */}
