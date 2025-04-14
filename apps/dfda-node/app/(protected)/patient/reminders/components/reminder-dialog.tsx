@@ -2,15 +2,13 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog'
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useToast } from "@/components/ui/use-toast"
 import { ReminderScheduler, type ReminderScheduleData } from '@/components/reminder-scheduler'
 import {
-    getReminderSchedulesForUserVariableAction,
     upsertReminderScheduleAction,
     deleteReminderScheduleAction,
     type ReminderSchedule,
-    type ReminderScheduleClientData,
 } from '@/app/actions/reminder-schedules'
 import { createLogger } from '@/lib/logger'
 import { Loader2 } from 'lucide-react'
@@ -145,7 +143,6 @@ export function ReminderDialog({
                         key={existingSchedule?.id || 'new'} // Force re-render when schedule changes
                         initialSchedule={initialSchedulerData} // Pass mapped data
                         onChange={handleScheduleChange}
-                        userId={userId}
                     />
                 }
                 <DialogFooter className='flex justify-between w-full pt-4'>

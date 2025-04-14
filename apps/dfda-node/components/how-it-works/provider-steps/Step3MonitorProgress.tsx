@@ -1,4 +1,5 @@
-import { Activity, LineChart } from "lucide-react";
+'use client'
+import { TrendingUp } from "lucide-react";
 import { HowItWorksStep } from "../HowItWorksStep";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -7,7 +8,7 @@ export function Step3MonitorProgress() {
     <HowItWorksStep
       stepNumber={3}
       title="Monitor Patient Progress & Trial Performance"
-      icon={<Activity className="h-5 w-5 text-primary" />}
+      icon={<TrendingUp className="h-5 w-5 text-primary" />}
       description="Track key metrics, patient-reported outcomes, and overall trial status through an intuitive dashboard."
       benefits={[
         "Visualize patient progress over time",

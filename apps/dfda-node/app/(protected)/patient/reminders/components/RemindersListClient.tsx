@@ -17,8 +17,6 @@ const logger = createLogger("reminders-list-client")
 // Helper to get human-readable text from RRULE
 function getRRuleText(rruleString: string): string {
   try {
-    // Temporarily suppress rrule errors for display
-    // @ts-ignore
     const rule = RRule.fromString(rruleString);
     return rule.toText();
   } catch (e) {
@@ -44,7 +42,7 @@ export function RemindersListClient({ userId, globalVariableId, variableName, in
       if (!confirm('Are you sure you want to delete this reminder schedule?')) {
          return;
       }
-      let schedulesBeforeDelete = [...schedules]; // Store current state for potential revert
+      const schedulesBeforeDelete = [...schedules]; // Store current state for potential revert
       try {
          // Optimistic update
          setSchedules(prev => prev.filter(s => s.id !== scheduleId));

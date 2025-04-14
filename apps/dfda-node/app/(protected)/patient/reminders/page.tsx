@@ -3,7 +3,6 @@ import { redirect } from "next/navigation"
 import { notFound } from 'next/navigation'
 import { getGlobalVariableByIdAction } from "@/app/actions/global-variables"
 import { getReminderSchedulesForUserVariableAction } from "@/app/actions/reminder-schedules"
-import type { ReminderSchedule } from "@/app/actions/reminder-schedules"
 import { createLogger } from "@/lib/logger"
 import { Suspense } from "react"
 

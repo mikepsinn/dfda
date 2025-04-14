@@ -1,5 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckSquare, Clock, Code, DatabaseZap, Rocket, Server } from "lucide-react"
 import React from "react"
 
 export function DeveloperTechnicalAdvantages() {
