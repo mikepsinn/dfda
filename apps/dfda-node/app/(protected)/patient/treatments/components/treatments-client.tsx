@@ -16,7 +16,6 @@ import { TreatmentSearch } from "@/components/treatment-search"
 import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 import type { Database } from '@/lib/database.types'
-import { toast } from "@/components/ui/use-toast"
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 type PatientTreatmentWithDetails = Database["public"]["Tables"]["patient_treatments"]["Row"] & {
