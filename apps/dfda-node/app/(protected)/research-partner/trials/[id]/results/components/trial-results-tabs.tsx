@@ -2,7 +2,9 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { BarChart, LineChart, PieChart, Users } from "lucide-react"
+import {
+  BarChart, LineChart, PieChart
+} from "lucide-react"
 
 // Define a more specific type for the data needed by the tabs
 // This should ideally come from your actual data types
