@@ -2,7 +2,16 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Check, ChevronRight, Copy, Edit, Eye, FileText, Grip, Plus, Save, Trash, X } from "lucide-react"
+import {
+  Check,
+  ClipboardList,
+  PlusCircle,
+  Trash2,
+  Settings,
+  Eye,
+  Grip,
+  Edit,
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,7 +22,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
-import { Badge } from "@/components/ui/badge"
 
 // Define interfaces for question structure (optional but good practice)
 interface ChoiceOption {
@@ -268,7 +276,7 @@ export function CreateFormWizard() {
             </Select>
             <div className="flex-1"></div> { /* Spacer */}
             <Button variant="ghost" size="icon" onClick={() => removeQuestion(question.id)}>
-              <Trash className="h-4 w-4" />
+              <Trash2 className="h-4 w-4" />
             </Button>
           </div>
           <div className="grid grid-cols-1 gap-4">
@@ -344,7 +352,7 @@ export function CreateFormWizard() {
                      const newChoices = (question.options as MultipleChoiceQuestionOptions).choices.filter((_, i) => i !== index);
                      updateQuestionOptions(question.id, { choices: newChoices });
                   }}>
-                    <X className="h-4 w-4" />
+                    <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
               ))}
@@ -352,7 +360,7 @@ export function CreateFormWizard() {
                  const newChoices = [...(question.options as MultipleChoiceQuestionOptions).choices, { value: `option-${Date.now()}`, label: "New Choice" } ]
                  updateQuestionOptions(question.id, { choices: newChoices });
               }}>
-                <Plus className="mr-2 h-4 w-4" /> Add Choice
+                <PlusCircle className="mr-2 h-4 w-4" /> Add Choice
               </Button>
                <div className="flex items-center space-x-2 pt-2">
                 <Switch
@@ -428,11 +436,11 @@ export function CreateFormWizard() {
               </div>
               <div className="flex gap-2">
                 <Button variant="outline" size="sm" disabled> {/* TODO: Implement */}
-                  <Copy className="mr-2 h-4 w-4" />
+                  <ClipboardList className="mr-2 h-4 w-4" />
                   Import Template
                 </Button>
                 <Button variant="outline" size="sm" disabled> {/* TODO: Implement */}
-                  <Save className="mr-2 h-4 w-4" />
+                  <Settings className="mr-2 h-4 w-4" />
                   Save Draft
                 </Button>
               </div>
@@ -480,7 +488,7 @@ export function CreateFormWizard() {
                 </div>
 
                 <Button variant="secondary" onClick={addQuestion}>
-                  <Plus className="mr-2 h-4 w-4" /> Add Question
+                  <PlusCircle className="mr-2 h-4 w-4" /> Add Question
                 </Button>
               </CardContent>
             </TabsContent>
