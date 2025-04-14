@@ -11,6 +11,7 @@ import {
   Eye,
   Grip,
   Edit,
+  UploadCloud,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -23,42 +24,58 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 
-// Define interfaces for question structure (optional but good practice)
+// --- Import Database Types ---
+import { Database, Tables, Enums } from "@/lib/database.types";
+
+// --- Define specific option types expected within the JSONB --- 
 interface ChoiceOption {
-  value: string;
+  value: string; // Consider if value should be distinct from label later
   label: string;
 }
 
-interface BaseQuestionOptions {
-  // Base options if any
-}
-
-interface TextQuestionOptions extends BaseQuestionOptions {
+type TextQuestionOptions = {
   multiline?: boolean;
   placeholder?: string;
-}
+};
 
-interface MultipleChoiceQuestionOptions extends BaseQuestionOptions {
+type ChoiceBasedQuestionOptions = {
   choices: ChoiceOption[];
-  allowMultiple?: boolean;
-}
+  allowMultiple?: boolean; // Differentiates checkbox from radio/dropdown
+};
 
-interface ScaleQuestionOptions extends BaseQuestionOptions {
+type ScaleQuestionOptions = {
   min: number;
   max: number;
   step?: number;
   minLabel?: string;
   maxLabel?: string;
-}
+};
 
-interface FormQuestion {
-  id: number;
-  type: 'text' | 'multiple-choice' | 'scale';
-  question: string;
-  description?: string;
-  required?: boolean;
-  options: TextQuestionOptions | MultipleChoiceQuestionOptions | ScaleQuestionOptions;
-}
+type DateQuestionOptions = {
+  // Future options: date range limits, etc.
+};
+
+type FileUploadQuestionOptions = {
+  allowMultiple?: boolean;
+  // Future options: allowedTypes, maxSizeMB etc.
+};
+
+// Combine specific options into a union type
+type FormQuestionOptions = 
+  | TextQuestionOptions 
+  | ChoiceBasedQuestionOptions 
+  | ScaleQuestionOptions 
+  | DateQuestionOptions
+  | FileUploadQuestionOptions;
+
+// --- Define the Frontend Form Question Type ---
+// Use DB Row type but override options and handle temporary IDs
+type FormQuestionFE = Omit<Tables<'form_questions'>, 'id' | 'options' | 'created_at' | 'updated_at' | 'form_id'> & {
+  id: string | number; // Use UUID string from DB or temporary number for new questions
+  options: FormQuestionOptions | null; // Use our specific options union
+};
+
+type FormQuestionType = Enums<'form_question_type'>;
 
 export function CreateFormWizard() {
   const [formTitle, setFormTitle] = useState("Alzheimer's Disease Assessment Scale-Cognitive Subscale (ADAS-Cog)")
@@ -68,27 +85,30 @@ export function CreateFormWizard() {
   const [activeTab, setActiveTab] = useState("design")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const [questions, setQuestions] = useState<FormQuestion[]>([
+  const [questions, setQuestions] = useState<FormQuestionFE[]>([
+    // Initial state adapted to new types/field names
     {
-      id: 1,
+      id: 1, // Temp ID
       type: "scale",
-      question: "Word Recall Task",
+      order: 1,
+      question_text: "Word Recall Task",
       description: "Ability to remember a list of 10 words after three trials",
-      required: true,
+      is_required: true,
       options: {
         min: 0,
         max: 10,
         step: 1,
         minLabel: "No words recalled",
         maxLabel: "All words recalled",
-      },
+      } as ScaleQuestionOptions,
     },
     {
       id: 2,
       type: "multiple-choice",
-      question: "Naming Objects and Fingers",
+      order: 2,
+      question_text: "Naming Objects and Fingers",
       description: "Ability to name objects and fingers when prompted",
-      required: true,
+      is_required: true,
       options: {
         choices: [
           { value: "0", label: "0 - No impairment" },
@@ -99,14 +119,15 @@ export function CreateFormWizard() {
           { value: "5", label: "5 - Severe impairment" },
         ],
         allowMultiple: false,
-      },
+      } as ChoiceBasedQuestionOptions,
     },
     {
       id: 3,
       type: "multiple-choice",
-      question: "Commands",
+      order: 3,
+      question_text: "Commands",
       description: "Ability to follow simple commands",
-      required: true,
+      is_required: true,
       options: {
         choices: [
           { value: "0", label: "0 - No impairment" },
@@ -117,14 +138,15 @@ export function CreateFormWizard() {
           { value: "5", label: "5 - Severe impairment" },
         ],
         allowMultiple: false,
-      },
+      } as ChoiceBasedQuestionOptions,
     },
     {
       id: 4,
       type: "multiple-choice",
-      question: "Constructional Praxis",
+      order: 4,
+      question_text: "Constructional Praxis",
       description: "Ability to copy geometric forms",
-      required: true,
+      is_required: true,
       options: {
         choices: [
           { value: "0", label: "0 - No impairment" },
@@ -135,56 +157,75 @@ export function CreateFormWizard() {
           { value: "5", label: "5 - Severe impairment" },
         ],
         allowMultiple: false,
-      },
+      } as ChoiceBasedQuestionOptions,
     },
     {
       id: 5,
       type: "text",
-      question: "Clinician Observations",
+      order: 5,
+      question_text: "Clinician Observations",
       description: "Additional observations about patient's cognitive state",
-      required: false,
+      is_required: false,
       options: {
         multiline: true,
         placeholder: "Enter any additional observations here...",
-      },
+      } as TextQuestionOptions,
     },
+    {
+        id: 6,
+        type: "file_upload",
+        order: 6,
+        question_text: "Upload recent Lab Report (PDF)",
+        description: "Please upload your latest blood test results.",
+        is_required: false,
+        options: {
+            allowMultiple: false,
+        } as FileUploadQuestionOptions
+    }
   ])
 
   const addQuestion = () => {
-    const newId = questions.length > 0 ? Math.max(...questions.map((q) => q.id)) + 1 : 1
+    const newId = questions.length > 0 ? Math.max(...questions.map((q) => typeof q.id === 'number' ? q.id : 0)) + 1 : 1;
+    const newOrder = questions.length > 0 ? Math.max(...questions.map((q) => q.order)) + 1 : 1;
     setQuestions([
       ...questions,
       {
         id: newId,
-        type: "text", // Default new question type
-        question: "New Question",
+        type: "text", 
+        order: newOrder,
+        question_text: "New Question",
         description: "",
-        required: false,
+        is_required: false,
         options: {
           multiline: false,
           placeholder: "",
-        },
-      } as FormQuestion, // Assertion needed if options type isn't guaranteed initially
+        } as TextQuestionOptions,
+      } as FormQuestionFE,
     ])
   }
 
-  const removeQuestion = (id: number) => {
+  const removeQuestion = (id: string | number) => {
     setQuestions(questions.filter((q) => q.id !== id))
+    // TODO: Re-order questions sequentially after removal?
   }
 
-  const updateQuestion = (id: number, updates: Partial<FormQuestion>) => {
+  const updateQuestion = (id: string | number, updates: Partial<FormQuestionFE>) => {
     setQuestions(questions.map((q) => (q.id === id ? { ...q, ...updates } : q)))
   }
 
-  // Function to update nested options (example for text type)
-  const updateQuestionOptions = (id: number, optionUpdates: Partial<TextQuestionOptions | MultipleChoiceQuestionOptions | ScaleQuestionOptions>) => {
-    setQuestions(questions.map((q) => (
-      q.id === id ? { ...q, options: { ...q.options, ...optionUpdates } } : q
-    )))
+  // Function to update nested options 
+  const updateQuestionOptions = (id: string | number, optionUpdates: Partial<FormQuestionOptions>) => {
+    setQuestions(questions.map((q) => {
+      if (q.id !== id) return q;
+      // Ensure options is not null before spreading
+      const currentOptions = q.options || {}; 
+      return { ...q, options: { ...currentOptions, ...optionUpdates } };
+    }))
   }
 
   const handleSubmit = () => {
     setIsSubmitting(true)
+    // TODO: Prepare data for API: Convert temp IDs, structure options for JSONB
     console.log("Submitting form:", { title: formTitle, description: formDescription, questions });
     // Simulate API call
     setTimeout(() => {
@@ -194,30 +235,33 @@ export function CreateFormWizard() {
   }
 
   // Helper function to render question preview
-  const renderQuestionPreview = (question: FormQuestion) => {
+  const renderQuestionPreview = (question: FormQuestionFE) => {
     switch (question.type) {
       case "text":
-        const textOptions = question.options as TextQuestionOptions;
+        const textOptions = question.options as TextQuestionOptions | null;
         return (
           <div className="space-y-2">
-            <Label>{question.question}{question.required && " *"}</Label>
-            {textOptions.multiline ? (
-              <Textarea placeholder={textOptions.placeholder || "Enter your answer..."} disabled />
+            <Label>{question.question_text}{question.is_required && " *"}</Label>
+            {textOptions?.multiline ? (
+              <Textarea placeholder={textOptions?.placeholder || "Enter your answer..."} disabled rows={3} />
             ) : (
-              <Input placeholder={textOptions.placeholder || "Enter your answer..."} disabled />
+              <Input placeholder={textOptions?.placeholder || "Enter your answer..."} disabled />
             )}
-            {question.description && <p className="text-xs text-muted-foreground">{question.description}</p>}
+            {question.description && <p className="text-xs text-muted-foreground pt-1">{question.description}</p>}
           </div>
         )
       case "multiple-choice":
-        const mcOptions = question.options as MultipleChoiceQuestionOptions;
+      case "checkbox": // Checkbox and Dropdown use ChoiceBased options too
+      case "dropdown":
+        const mcOptions = question.options as ChoiceBasedQuestionOptions | null;
+        const isMultiple = question.type === 'checkbox'; // Or check mcOptions.allowMultiple which should align
         return (
           <div className="space-y-2">
-            <Label>{question.question}{question.required && " *"}</Label>
-            <div className="space-y-2">
-              {(mcOptions.choices || []).map((choice, index) => (
+            <Label>{question.question_text}{question.is_required && " *"}</Label>
+            <div className="space-y-2 pt-1">
+              {(mcOptions?.choices || []).map((choice, index) => (
                 <div key={index} className="flex items-center space-x-2">
-                  {mcOptions.allowMultiple ? (
+                  {isMultiple ? (
                     <input type="checkbox" disabled className="form-checkbox h-4 w-4"/>
                   ) : (
                     <input type="radio" name={`preview-question-${question.id}`} disabled className="form-radio h-4 w-4"/>
@@ -226,75 +270,128 @@ export function CreateFormWizard() {
                 </div>
               ))}
             </div>
-            {question.description && <p className="text-xs text-muted-foreground">{question.description}</p>}
+            {question.description && <p className="text-xs text-muted-foreground pt-1">{question.description}</p>}
           </div>
         )
       case "scale":
-        const scaleOptions = question.options as ScaleQuestionOptions;
+        const scaleOptions = question.options as ScaleQuestionOptions | null;
         return (
           <div className="space-y-2">
-            <Label>{question.question}{question.required && " *"}</Label>
-            <div className="space-y-2">
+            <Label>{question.question_text}{question.is_required && " *"}</Label>
+            <div className="space-y-2 pt-1">
               <div className="flex justify-between text-sm">
-                <span>{scaleOptions.minLabel || scaleOptions.min}</span>
-                <span>{scaleOptions.maxLabel || scaleOptions.max}</span>
+                <span>{scaleOptions?.minLabel || (scaleOptions?.min ?? 0)}</span>
+                <span>{scaleOptions?.maxLabel || (scaleOptions?.max ?? 10)}</span>
               </div>
               <input
                 type="range"
-                min={scaleOptions.min}
-                max={scaleOptions.max}
-                step={scaleOptions.step || 1}
+                min={scaleOptions?.min ?? 0}
+                max={scaleOptions?.max ?? 10}
+                step={scaleOptions?.step || 1}
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
                 disabled
               />
             </div>
-            {question.description && <p className="text-xs text-muted-foreground">{question.description}</p>}
+            {question.description && <p className="text-xs text-muted-foreground pt-1">{question.description}</p>}
           </div>
         )
+      case 'file_upload': 
+        const fileOptions = question.options as FileUploadQuestionOptions | null;
+        return (
+          <div className="space-y-2">
+            <Label>{question.question_text}{question.is_required && " *"}</Label>
+            {question.description && <p className="text-xs text-muted-foreground pt-1 pb-2">{question.description}</p>}
+            <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-lg border-muted-foreground/50">
+                <UploadCloud className="h-10 w-10 mb-2 text-muted-foreground/50" />
+                <p className="text-sm text-muted-foreground/80">
+                  {fileOptions?.allowMultiple ? 'File upload area for multiple files' : 'File upload area'}
+                </p>
+            </div>
+          </div>
+        )
+      // TODO: Add case for 'date'
       default:
-        return null
+        return (
+          <div className="space-y-2">
+            <Label>{question.question_text}{question.is_required && " *"}</Label>
+            <Input placeholder={`Answer for ${question.type}...`} disabled />
+            {question.description && <p className="text-xs text-muted-foreground pt-1">{question.description}</p>}
+          </div>
+        )
     }
   }
 
   // Helper function to render question editor controls
-  const renderQuestionEditor = (question: FormQuestion) => {
+  const renderQuestionEditor = (question: FormQuestionFE) => {
+    const questionId = question.id;
+    const questionOptions = question.options;
+
     return (
       <>
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Grip className="h-5 w-5 text-muted-foreground cursor-move" />
-            <Select value={question.type} onValueChange={(value) => updateQuestion(question.id, { type: value as FormQuestion["type"] })}>
+            <Grip className="h-5 w-5 text-muted-foreground cursor-move" /> {/* TODO: Implement drag & drop reordering */} 
+            <Select 
+              value={question.type} 
+              onValueChange={(value: FormQuestionType) => {
+                  let defaultOptions: FormQuestionOptions | null = {};
+                  switch(value) {
+                    case 'text': 
+                      defaultOptions = { multiline: false, placeholder: '' } as TextQuestionOptions;
+                      break;
+                    case 'multiple-choice':
+                    case 'checkbox':
+                    case 'dropdown':
+                      defaultOptions = { choices: [{value: 'option1', label: 'Option 1'}], allowMultiple: value === 'checkbox' } as ChoiceBasedQuestionOptions;
+                      break;
+                    case 'scale':
+                      defaultOptions = { min: 0, max: 5 } as ScaleQuestionOptions;
+                      break;
+                    case 'file_upload':
+                      defaultOptions = { allowMultiple: false } as FileUploadQuestionOptions;
+                      break;
+                    case 'date':
+                       defaultOptions = {} as DateQuestionOptions; // No specific options yet
+                       break;
+                    default: 
+                       defaultOptions = null; // Or empty object?
+                  }
+                  updateQuestion(questionId, { type: value, options: defaultOptions });
+              }}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Question Type" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="text">Text Input</SelectItem>
                 <SelectItem value="multiple-choice">Multiple Choice</SelectItem>
+                <SelectItem value="checkbox">Checkboxes</SelectItem>
+                <SelectItem value="dropdown">Dropdown</SelectItem>
                 <SelectItem value="scale">Scale</SelectItem>
-                {/* Add other types */}
+                <SelectItem value="date">Date</SelectItem>
+                <SelectItem value="file_upload">File Upload</SelectItem> 
               </SelectContent>
             </Select>
             <div className="flex-1"></div> { /* Spacer */}
-            <Button variant="ghost" size="icon" onClick={() => removeQuestion(question.id)}>
+            <Button variant="ghost" size="icon" onClick={() => removeQuestion(questionId)}>
               <Trash2 className="h-4 w-4" />
             </Button>
           </div>
           <div className="grid grid-cols-1 gap-4">
             <div>
-              <Label htmlFor={`q-text-${question.id}`}>Question Text</Label>
+              <Label htmlFor={`q-text-${questionId}`}>Question Text</Label>
               <Input
-                id={`q-text-${question.id}`}
-                value={question.question}
-                onChange={(e) => updateQuestion(question.id, { question: e.target.value })}
+                id={`q-text-${questionId}`}
+                value={question.question_text}
+                onChange={(e) => updateQuestion(questionId, { question_text: e.target.value })}
                 placeholder="Enter the question text"
               />
             </div>
             <div>
-              <Label htmlFor={`q-desc-${question.id}`}>Description / Helper Text (Optional)</Label>
+              <Label htmlFor={`q-desc-${questionId}`}>Description / Helper Text (Optional)</Label>
               <Textarea
-                id={`q-desc-${question.id}`}
+                id={`q-desc-${questionId}`}
                 value={question.description || ""}
-                onChange={(e) => updateQuestion(question.id, { description: e.target.value })}
+                onChange={(e) => updateQuestion(questionId, { description: e.target.value })}
                 placeholder="Enter description or instructions"
                 rows={2}
               />
@@ -302,106 +399,133 @@ export function CreateFormWizard() {
           </div>
           <div className="flex items-center space-x-2">
             <Switch
-              id={`q-required-${question.id}`}
-              checked={question.required}
-              onCheckedChange={(checked) => updateQuestion(question.id, { required: checked })}
+              id={`q-required-${questionId}`}
+              checked={question.is_required}
+              onCheckedChange={(checked) => updateQuestion(questionId, { is_required: checked })}
             />
-            <Label htmlFor={`q-required-${question.id}`}>Required</Label>
+            <Label htmlFor={`q-required-${questionId}`}>Required</Label>
           </div>
 
           {/* --- Options specific to question type --- */}
-          {question.type === "text" && (
+          {question.type === "text" && questionOptions && 'multiline' in questionOptions && (
             <div className="border-t pt-4 mt-4 space-y-2">
               <h4 className="font-medium text-sm">Text Options</h4>
               <div className="flex items-center space-x-2">
                 <Switch
-                  id={`q-multiline-${question.id}`}
-                  checked={(question.options as TextQuestionOptions).multiline}
-                  onCheckedChange={(checked) => updateQuestionOptions(question.id, { multiline: checked })}
+                  id={`q-multiline-${questionId}`}
+                  checked={(questionOptions as TextQuestionOptions).multiline}
+                  onCheckedChange={(checked) => updateQuestionOptions(questionId, { multiline: checked })}
                 />
-                <Label htmlFor={`q-multiline-${question.id}`}>Allow multiple lines (Textarea)</Label>
+                <Label htmlFor={`q-multiline-${questionId}`}>Allow multiple lines (Textarea)</Label>
               </div>
                <div>
-                <Label htmlFor={`q-placeholder-${question.id}`}>Placeholder Text</Label>
+                <Label htmlFor={`q-placeholder-${questionId}`}>Placeholder Text</Label>
                 <Input
-                  id={`q-placeholder-${question.id}`}
-                  value={(question.options as TextQuestionOptions).placeholder || ""}
-                  onChange={(e) => updateQuestionOptions(question.id, { placeholder: e.target.value })}
+                  id={`q-placeholder-${questionId}`}
+                  value={(questionOptions as TextQuestionOptions).placeholder || ""}
+                  onChange={(e) => updateQuestionOptions(questionId, { placeholder: e.target.value })}
                   placeholder="Optional placeholder text"
                 />
               </div>
             </div>
           )}
 
-          {question.type === "multiple-choice" && (
+          {(question.type === "multiple-choice" || question.type === "checkbox" || question.type === "dropdown") && 
+           questionOptions && 'choices' in questionOptions && (
             <div className="border-t pt-4 mt-4 space-y-4">
-              <h4 className="font-medium text-sm">Multiple Choice Options</h4>
-              {(question.options as MultipleChoiceQuestionOptions).choices.map((choice, index) => (
+              <h4 className="font-medium text-sm">Choice Options</h4>
+              {(questionOptions as ChoiceBasedQuestionOptions).choices.map((choice, index) => (
                 <div key={index} className="flex items-center gap-2">
                   <Input
                     value={choice.label}
                     onChange={(e) => {
-                      const newChoices = [...(question.options as MultipleChoiceQuestionOptions).choices];
-                      newChoices[index] = { ...newChoices[index], label: e.target.value };
-                      updateQuestionOptions(question.id, { choices: newChoices });
+                      const currentChoices = (questionOptions as ChoiceBasedQuestionOptions).choices;
+                      const newChoices = [...currentChoices];
+                      // Keep value same as label for simplicity for now 
+                      newChoices[index] = { ...newChoices[index], label: e.target.value, value: e.target.value }; 
+                      updateQuestionOptions(questionId, { choices: newChoices });
                     }}
                     placeholder={`Choice ${index + 1}`}
                     className="flex-grow"
                   />
                   <Button variant="ghost" size="icon" onClick={() => {
-                     const newChoices = (question.options as MultipleChoiceQuestionOptions).choices.filter((_, i) => i !== index);
-                     updateQuestionOptions(question.id, { choices: newChoices });
-                  }}>
+                     const currentChoices = (questionOptions as ChoiceBasedQuestionOptions).choices;
+                     const newChoices = currentChoices.filter((_, i) => i !== index);
+                     updateQuestionOptions(questionId, { choices: newChoices });
+                  }} className="shrink-0">
                     <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>
               ))}
               <Button variant="outline" size="sm" onClick={() => {
-                 const newChoices = [...(question.options as MultipleChoiceQuestionOptions).choices, { value: `option-${Date.now()}`, label: "New Choice" } ]
-                 updateQuestionOptions(question.id, { choices: newChoices });
+                 const currentChoices = (questionOptions as ChoiceBasedQuestionOptions).choices;
+                 const newChoices = [...currentChoices, { value: `New Choice ${Date.now()}`, label: "New Choice" } ]
+                 updateQuestionOptions(questionId, { choices: newChoices });
               }}>
                 <PlusCircle className="mr-2 h-4 w-4" /> Add Choice
               </Button>
-               <div className="flex items-center space-x-2 pt-2">
-                <Switch
-                  id={`q-allowMultiple-${question.id}`}
-                  checked={(question.options as MultipleChoiceQuestionOptions).allowMultiple}
-                  onCheckedChange={(checked) => updateQuestionOptions(question.id, { allowMultiple: checked })}
-                />
-                <Label htmlFor={`q-allowMultiple-${question.id}`}>Allow multiple selections</Label>
-              </div>
+               {/* Allow multiple switch only relevant for Checkbox type, but logic is coupled now */}
+               {question.type === 'checkbox' && (
+                 <div className="flex items-center space-x-2 pt-2">
+                  <Switch
+                    id={`q-allowMultiple-${questionId}`}
+                    checked={(questionOptions as ChoiceBasedQuestionOptions).allowMultiple}
+                    onCheckedChange={(checked) => updateQuestionOptions(questionId, { allowMultiple: checked })}
+                    disabled // Should always be true for checkbox type?
+                  />
+                  <Label htmlFor={`q-allowMultiple-${questionId}`}>Allow multiple selections</Label>
+                 </div>
+               )}
             </div>
           )}
 
-          {question.type === "scale" && (
+          {question.type === "scale" && questionOptions && 'min' in questionOptions && (
              <div className="border-t pt-4 mt-4 space-y-4">
                <h4 className="font-medium text-sm">Scale Options</h4>
                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor={`q-scale-min-${question.id}`}>Min Value</Label>
-                    <Input type="number" id={`q-scale-min-${question.id}`} value={(question.options as ScaleQuestionOptions).min} onChange={(e) => updateQuestionOptions(question.id, { min: parseInt(e.target.value, 10) || 0 })} />
+                    <Label htmlFor={`q-scale-min-${questionId}`}>Min Value</Label>
+                    <Input type="number" id={`q-scale-min-${questionId}`} value={(questionOptions as ScaleQuestionOptions).min} onChange={(e) => updateQuestionOptions(questionId, { min: parseInt(e.target.value, 10) || 0 })} />
                   </div>
                    <div>
-                    <Label htmlFor={`q-scale-max-${question.id}`}>Max Value</Label>
-                    <Input type="number" id={`q-scale-max-${question.id}`} value={(question.options as ScaleQuestionOptions).max} onChange={(e) => updateQuestionOptions(question.id, { max: parseInt(e.target.value, 10) || 10 })} />
+                    <Label htmlFor={`q-scale-max-${questionId}`}>Max Value</Label>
+                    <Input type="number" id={`q-scale-max-${questionId}`} value={(questionOptions as ScaleQuestionOptions).max} onChange={(e) => updateQuestionOptions(questionId, { max: parseInt(e.target.value, 10) || 10 })} />
                   </div>
                    <div>
-                    <Label htmlFor={`q-scale-minlabel-${question.id}`}>Min Label (Optional)</Label>
-                    <Input id={`q-scale-minlabel-${question.id}`} value={(question.options as ScaleQuestionOptions).minLabel || ""} onChange={(e) => updateQuestionOptions(question.id, { minLabel: e.target.value })} placeholder="e.g., \'Worst\'" />
+                    <Label htmlFor={`q-scale-minlabel-${questionId}`}>Min Label (Optional)</Label>
+                    <Input id={`q-scale-minlabel-${questionId}`} value={(questionOptions as ScaleQuestionOptions).minLabel || ""} onChange={(e) => updateQuestionOptions(questionId, { minLabel: e.target.value })} placeholder="e.g., 'Worst'" />
                   </div>
                    <div>
-                    <Label htmlFor={`q-scale-maxlabel-${question.id}`}>Max Label (Optional)</Label>
-                    <Input id={`q-scale-maxlabel-${question.id}`} value={(question.options as ScaleQuestionOptions).maxLabel || ""} onChange={(e) => updateQuestionOptions(question.id, { maxLabel: e.target.value })} placeholder="e.g., \'Best\'" />
+                    <Label htmlFor={`q-scale-maxlabel-${questionId}`}>Max Label (Optional)</Label>
+                    <Input id={`q-scale-maxlabel-${questionId}`} value={(questionOptions as ScaleQuestionOptions).maxLabel || ""} onChange={(e) => updateQuestionOptions(questionId, { maxLabel: e.target.value })} placeholder="e.g., 'Best'" />
                   </div>
                </div>
              </div>
           )}
 
+          {question.type === 'file_upload' && questionOptions && (
+            <div className="border-t pt-4 mt-4 space-y-2">
+                <h4 className="font-medium text-sm">File Upload Options</h4>
+                <div className="flex items-center space-x-2">
+                  <Switch
+                    id={`q-allowMultiple-file-${questionId}`}
+                    checked={(questionOptions as FileUploadQuestionOptions).allowMultiple}
+                    onCheckedChange={(checked) => updateQuestionOptions(questionId, { allowMultiple: checked })}
+                    disabled // TODO: Implement multiple file upload in FileUploadComponent first
+                  />
+                  <Label htmlFor={`q-allowMultiple-file-${questionId}`}>Allow multiple files (Coming Soon)</Label>
+                </div>
+                {/* TODO: Add options for allowed file types, max size */}
+            </div>
+          )}
+
+          {/* TODO: Add editors for date */} 
+
         </div>
       </>
     )
   }
-
+  
   return (
     <>
       {isSuccess ? (
@@ -457,6 +581,7 @@ export function CreateFormWizard() {
 
             <TabsContent value="design">
               <CardContent className="space-y-6 pt-6">
+                {/* Form Title and Description Inputs */}
                 <div className="space-y-2">
                   <Label htmlFor="form-title">Form Title</Label>
                   <Input
@@ -479,8 +604,9 @@ export function CreateFormWizard() {
 
                 <Separator />
 
+                {/* Question Editor List */}
                 <div className="space-y-4">
-                  {questions.map((q, index) => (
+                  {questions.map((q) => (
                     <Card key={q.id} className="p-4 bg-muted/30">
                       {renderQuestionEditor(q)}
                     </Card>
@@ -498,8 +624,9 @@ export function CreateFormWizard() {
                 <h3 className="font-semibold text-lg">{formTitle}</h3>
                 {formDescription && <p className="text-sm text-muted-foreground mb-4">{formDescription}</p>}
                 <Separator />
+                {/* Question Preview List */}
                 {questions.map((q) => (
-                  <div key={`preview-${q.id}`} className="py-4">{renderQuestionPreview(q)}</div>
+                  <div key={`preview-${q.id}`} className="py-4 border-b last:border-b-0">{renderQuestionPreview(q)}</div>
                 ))}
                 {questions.length === 0 && (
                     <p className="text-center text-muted-foreground py-8">No questions added yet. Switch to the Design tab.</p>
@@ -517,4 +644,4 @@ export function CreateFormWizard() {
       )}
     </>
   )
-} 
+}

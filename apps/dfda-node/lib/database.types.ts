@@ -203,6 +203,164 @@ export type Database = {
           },
         ]
       }
+      form_answers: {
+        Row: {
+          answer_value: Json
+          created_at: string
+          id: string
+          question_id: string
+          submission_id: string
+          updated_at: string
+        }
+        Insert: {
+          answer_value: Json
+          created_at?: string
+          id?: string
+          question_id: string
+          submission_id: string
+          updated_at?: string
+        }
+        Update: {
+          answer_value?: Json
+          created_at?: string
+          id?: string
+          question_id?: string
+          submission_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "form_answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "form_questions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "form_answers_submission_id_fkey"
+            columns: ["submission_id"]
+            isOneToOne: false
+            referencedRelation: "form_submissions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      form_questions: {
+        Row: {
+          created_at: string
+          description: string | null
+          form_id: string
+          id: string
+          is_required: boolean
+          options: Json | null
+          order: number
+          question_text: string
+          type: Database["public"]["Enums"]["form_question_type"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          form_id: string
+          id?: string
+          is_required?: boolean
+          options?: Json | null
+          order: number
+          question_text: string
+          type: Database["public"]["Enums"]["form_question_type"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          form_id?: string
+          id?: string
+          is_required?: boolean
+          options?: Json | null
+          order?: number
+          question_text?: string
+          type?: Database["public"]["Enums"]["form_question_type"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "form_questions_form_id_fkey"
+            columns: ["form_id"]
+            isOneToOne: false
+            referencedRelation: "forms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      form_submissions: {
+        Row: {
+          created_at: string
+          form_id: string
+          id: string
+          patient_id: string
+          submitted_at: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          form_id: string
+          id?: string
+          patient_id: string
+          submitted_at?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          form_id?: string
+          id?: string
+          patient_id?: string
+          submitted_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "form_submissions_form_id_fkey"
+            columns: ["form_id"]
+            isOneToOne: false
+            referencedRelation: "forms"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "form_submissions_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forms: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          id: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       global_variable_synonyms: {
         Row: {
           created_at: string
@@ -1736,6 +1894,47 @@ export type Database = {
           },
         ]
       }
+      uploaded_files: {
+        Row: {
+          created_at: string
+          file_name: string
+          id: string
+          mime_type: string
+          size_bytes: number
+          storage_path: string
+          updated_at: string
+          uploader_user_id: string
+        }
+        Insert: {
+          created_at?: string
+          file_name: string
+          id?: string
+          mime_type: string
+          size_bytes: number
+          storage_path: string
+          updated_at?: string
+          uploader_user_id: string
+        }
+        Update: {
+          created_at?: string
+          file_name?: string
+          id?: string
+          mime_type?: string
+          size_bytes?: number
+          storage_path?: string
+          updated_at?: string
+          uploader_user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "uploaded_files_uploader_user_id_fkey"
+            columns: ["uploader_user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_variables: {
         Row: {
           created_at: string | null
@@ -2027,6 +2226,14 @@ export type Database = {
         | "consultation"
         | "medication"
         | "other"
+      form_question_type:
+        | "text"
+        | "multiple-choice"
+        | "checkbox"
+        | "dropdown"
+        | "scale"
+        | "date"
+        | "file_upload"
       user_role_enum:
         | "patient"
         | "provider"
@@ -2573,6 +2780,15 @@ export const Constants = {
         "consultation",
         "medication",
         "other",
+      ],
+      form_question_type: [
+        "text",
+        "multiple-choice",
+        "checkbox",
+        "dropdown",
+        "scale",
+        "date",
+        "file_upload",
       ],
       user_role_enum: [
         "patient",
