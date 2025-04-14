@@ -1,6 +1,6 @@
 'use server'
 
-import { createServerClient } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 import { cookies } from 'next/headers'
 import { Database, Tables, Enums } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
@@ -18,8 +18,7 @@ export type FormDefinition = Tables<'forms'> & {
  * @returns The form definition or null if not found or on error.
  */
 export async function getFormDefinition(formId: string): Promise<FormDefinition | null> {
-  const cookieStore = cookies()
-  const supabase = createServerClient(cookieStore)
+  const supabase = await createClient()
 
   const { data: { user }, error: authError } = await supabase.auth.getUser()
   if (authError || !user) {
