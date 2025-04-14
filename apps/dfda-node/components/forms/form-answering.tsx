@@ -9,7 +9,7 @@ import { CalendarIcon, Loader2 } from "lucide-react"
 
 import { getFormDefinition, submitFormAnswers, FormDefinition } from '@/lib/actions/form-actions'
 import { createBrowserClient } from '@/lib/supabase/client'
-import { Database, Tables, Enums } from '@/lib/database.types'
+import type { Tables } from '@/lib/database.types'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -33,7 +33,7 @@ interface ChoiceOption {
 type TextQuestionOptions = { multiline?: boolean; placeholder?: string };
 type ChoiceBasedQuestionOptions = { choices: ChoiceOption[]; allowMultiple?: boolean };
 type ScaleQuestionOptions = { min: number; max: number; step?: number; minLabel?: string; maxLabel?: string };
-type DateQuestionOptions = {};
+type DateQuestionOptions = Record<string, unknown>;
 type FileUploadQuestionOptions = { allowMultiple?: boolean };
 type FormQuestionOptions =
   | TextQuestionOptions | ChoiceBasedQuestionOptions | ScaleQuestionOptions
@@ -70,20 +70,20 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
 
       switch (q.type) {
         case 'text':
-          let textSchema = z.string();
+          const textSchema = z.string();
           if (!q.is_required) fieldSchema = textSchema.optional().nullable();
           else fieldSchema = textSchema.min(1, { message: "This field is required" });
           defaults[questionId] = '';
           break;
         case 'multiple-choice':
         case 'dropdown':
-          let stringSchema = z.string();
+          const stringSchema = z.string();
           if (!q.is_required) fieldSchema = stringSchema.optional().nullable();
           else fieldSchema = stringSchema.min(1, { message: "Please select an option" });
           defaults[questionId] = undefined;
           break;
         case 'checkbox':
-          let arraySchema = z.array(z.string());
+          const arraySchema = z.array(z.string());
           if (q.is_required) fieldSchema = arraySchema.min(1, { message: "Please select at least one option" });
           else fieldSchema = arraySchema.optional();
           defaults[questionId] = [];
@@ -99,20 +99,20 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
           defaults[questionId] = undefined; 
           break;
         case 'date':
-          let dateSchema = z.date();
+          const dateSchema = z.date();
           if (!q.is_required) fieldSchema = dateSchema.optional().nullable();
           else fieldSchema = dateSchema;
           defaults[questionId] = undefined;
           break;
         case 'file_upload':
-          const fileOpts = q.options as FileUploadQuestionOptions | null;
-          if (fileOpts?.allowMultiple) {
-             let fileArraySchema = z.array(z.string().uuid());
+          const fileUploadOpts = q.options as FileUploadQuestionOptions | null;
+          if (fileUploadOpts?.allowMultiple) {
+             const fileArraySchema = z.array(z.string().uuid());
              if (q.is_required) fieldSchema = fileArraySchema.min(1, { message: "Please upload at least one file" });
              else fieldSchema = fileArraySchema.optional();
              defaults[questionId] = [];
           } else {
-             let fileStringSchema = z.string().uuid();
+             const fileStringSchema = z.string().uuid();
              if (!q.is_required) fieldSchema = fileStringSchema.optional().nullable();
              else fieldSchema = fileStringSchema.refine(val => !!val, { message: "File upload is required" });
              defaults[questionId] = undefined;
@@ -234,7 +234,6 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
   const renderQuestionInput = (question: FormQuestionFE) => {
     const questionId = question.id;
     const opts = question.options;
-    const fieldError = form.formState.errors[questionId];
 
     switch (question.type) {
       case 'text':
@@ -393,22 +392,28 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
         );
 
       case 'file_upload':
-         const fileOpts = opts as FileUploadQuestionOptions | null;
          if (!userId) {
             return <p className="text-destructive">Error: User ID not available for upload.</p>;
          }
-         // TODO: Handle multiple file uploads if fileOpts.allowMultiple is true
+         // TODO: Handle multiple file uploads if fileUploadOpts.allowMultiple is true
          return (
             <Controller
                name={questionId}
                control={form.control}
                render={({ field }) => (
-                  // Pass questionId to the callback
-                  <FileUploadComponent 
-                     userId={userId} 
-                     onUploadComplete={(uploadedId) => handleFileUploadComplete(questionId, uploadedId)} 
-                  />
-                  // TODO: Display uploaded file info if field.value (uploadedFileId) exists?
+                  <>
+                    {/* File Upload Button/Input */}
+                    <FileUploadComponent 
+                       userId={userId} 
+                       onUploadComplete={(uploadedId) => handleFileUploadComplete(questionId, uploadedId)} 
+                    />
+                    {/* Display uploaded file ID if it exists */}
+                    {field.value && (
+                       <div className="mt-2 text-sm text-muted-foreground">
+                          Uploaded file ID: {field.value}
+                       </div>
+                    )}
+                  </>
                )}
             />
          );

@@ -1,7 +1,7 @@
 "use server"
 
 import { createClient } from '@/lib/supabase/server'
-import type { Database, Tables, TablesInsert, TablesUpdate } from '@/lib/database.types'
+import type { Tables } from '@/lib/database.types'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 
@@ -10,8 +10,6 @@ import { revalidatePath } from 'next/cache'
  * Represents a TreatmentRating record.
  */
 export type TreatmentRating = Tables<"treatment_ratings">;
-type TreatmentRatingInsert = TablesInsert<"treatment_ratings">;
-type TreatmentRatingUpdate = TablesUpdate<"treatment_ratings">;
 
 // Define the expected shape for inserting/upserting data via actions
 export type TreatmentRatingUpsertData = {
@@ -24,7 +22,7 @@ export type TreatmentRatingUpsertData = {
 // --- HELPER for Revalidation ---
 // Renamed supabase client type for clarity inside function
 type SupabaseClientType = Awaited<ReturnType<typeof createClient>>;
-async function revalidateTreatmentPaths(supabase: SupabaseClientType, patientTreatmentId: string, patientConditionId: string) {
+async function revalidateTreatmentPaths(supabase: SupabaseClientType, patientTreatmentId: string) {
    try {
     // Fetch patient_treatment to get related IDs for path revalidation
     const { data: pt, error: ptError } = await supabase
@@ -125,7 +123,7 @@ export async function upsertTreatmentRatingAction(
 
     // Revalidate paths - Await client creation and pass instance
     const supabaseClient = await createClient();
-    await revalidateTreatmentPaths(supabaseClient, ratingData.patient_treatment_id, ratingData.patient_condition_id);
+    await revalidateTreatmentPaths(supabaseClient, ratingData.patient_treatment_id);
 
     return { success: true, data: upsertedRating, message: "Treatment rating saved successfully." }
 
@@ -150,7 +148,6 @@ export async function deleteTreatmentRatingAction(id: string): Promise<{success:
       return { success: false, error: 'Rating not found or cannot be deleted.' };
   }
   const patientTreatmentId = rating.patient_treatment_id;
-  const patientConditionId = rating.patient_condition_id;
 
   const { error } = await supabase
     .from('treatment_ratings')
@@ -165,7 +162,7 @@ export async function deleteTreatmentRatingAction(id: string): Promise<{success:
   // Revalidate relevant paths using the fetched patientTreatmentId
   // Await client creation and pass instance
   const supabaseClient = await createClient();
-  await revalidateTreatmentPaths(supabaseClient, patientTreatmentId, patientConditionId);
+  await revalidateTreatmentPaths(supabaseClient, patientTreatmentId);
   return { success: true };
 }
 
@@ -181,7 +178,6 @@ export async function markRatingAsHelpfulAction(id: string): Promise<{success: b
       return { success: false, error: 'Rating not found.' };
   }
   const patientTreatmentId = rating.patient_treatment_id;
-  const patientConditionId = rating.patient_condition_id;
 
   // Increment helpful_count using an update rpc seems better if exists
   // Let's try calling an RPC function assuming one exists or can be created
@@ -200,7 +196,7 @@ export async function markRatingAsHelpfulAction(id: string): Promise<{success: b
   // Revalidate relevant paths
   // Await client creation and pass instance
   const supabaseClient = await createClient();
-  await revalidateTreatmentPaths(supabaseClient, patientTreatmentId, patientConditionId);
+  await revalidateTreatmentPaths(supabaseClient, patientTreatmentId);
   return { success: true };
 }
 
@@ -276,6 +272,7 @@ export async function getRatingsForConditionAction(
      const typedRow = row as any;
      const treatmentName = typedRow.pt?.treatment?.gv?.name ?? null;
      // Remove nested join objects (pt, pc) before returning
+     // eslint-disable-next-line @typescript-eslint/no-unused-vars
      const { pt, pc, ...rest } = typedRow;
      return { ...rest, treatment_name: treatmentName };
    });
@@ -308,6 +305,7 @@ export async function getRatingsByPatientAction(
   }
   
   // Remove the intermediate join object before returning
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return (response.data || []).map(({ pc, ...rest }) => rest);
 }
 
@@ -336,6 +334,7 @@ export async function getRatingsByTreatmentAction(
   }
 
   // Remove the intermediate join object before returning
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return (response.data || []).map(({ pt, ...rest }) => rest);
 }
 
@@ -366,68 +365,6 @@ export async function getRatingsByTreatmentAndConditionAction(
   }
 
   // Remove the intermediate join objects before returning
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return (response.data || []).map(({ pt, pc, ...rest }) => rest);
-}
-
-// Fetch average treatment rating for a condition
-async function getAverageTreatmentRatingAction(treatmentId: string, conditionId: string) {
-  const supabase = await createClient();
-  try {
-    const { data, error } = await supabase
-      .rpc('get_average_treatment_rating', { p_treatment_id: treatmentId, p_condition_id: conditionId })
-      .single(); // Assuming the function returns a single row object
-
-    if (error) {
-      logger.error('Error fetching average treatment rating:', { treatmentId, conditionId, error });
-      return null; // Return null or default object on error
-    }
-    return data;
-  } catch (error) {
-    logger.error("Error fetching treatment ratings with details:", { error });
-    return null;
-  }
-}
-
-// Fetch user specific treatment rating for a condition
-async function getUserTreatmentRatingAction(userId: string, treatmentId: string, conditionId: string) {
-  const supabase = await createClient();
-  try {
-    const { data, error } = await supabase
-      .from('treatment_ratings')
-      .select('*')
-      .eq('patient_treatment_id', `(${getPatientTreatmentSubquery(supabase, userId, treatmentId)})`) // Find the correct patient_treatment_id
-      .eq('patient_condition_id', `(${getPatientConditionSubquery(supabase, userId, conditionId)})`) // Find the correct patient_condition_id
-      .maybeSingle();
-
-    if (error) {
-      logger.error('Error fetching user treatment rating:', { userId, treatmentId, conditionId, error });
-      return null;
-    }
-    return data;
-  } catch (error) {
-    logger.error("Error fetching user treatment rating:", { error });
-    return null;
-  }
-}
-
-// Helper subquery to find patient_treatment_id
-function getPatientTreatmentSubquery(supabase: SupabaseClientType, userId: string, treatmentId: string) {
-  return supabase
-    .from('patient_treatments')
-    .select('id')
-    .eq('patient_id', userId)
-    .eq('treatment_id', treatmentId)
-    .limit(1)
-    .single(); // This might need adjustment if subqueries aren't directly supported like this
-}
-
-// Helper subquery to find patient_condition_id
-function getPatientConditionSubquery(supabase: SupabaseClientType, userId: string, conditionId: string) {
-  return supabase
-    .from('patient_conditions')
-    .select('id')
-    .eq('patient_id', userId)
-    .eq('condition_id', conditionId)
-    .limit(1)
-    .single(); // This might need adjustment
 }
