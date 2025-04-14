@@ -1,13 +1,12 @@
 "use server"
 
-import { logger } from "@/lib/logger"
-import { createClient } from "@/lib/supabase/server"
-// @ts-ignore - Suppress module not found error
-import { RRule, RRuleSet, rrulestr } from 'rrule' // Import rrule for potential server-side use
-import { toZonedTime, format } from 'date-fns-tz' // Correct imports
-import { parse } from 'date-fns' // Import parse from date-fns
+import { createClient } from '@/lib/supabase/server'
 import type { Database } from '@/lib/database.types'
-import { handleDatabaseResponse } from '@/lib/actions-helpers'
+import { RRule, rrulestr } from 'rrule'
+import { DateTime } from 'luxon'
+import { toZonedTime } from 'date-fns-tz'
+import { handleDatabaseCollectionResponse } from '@/lib/actions-helpers'
+import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 
 // Types
@@ -91,22 +90,36 @@ export async function upsertReminderScheduleAction(
              if (scheduleData.isActive) {
                  try {
                     // Existing logic to calculate the real next trigger based on RRULE, time, timezone
-                    const rule = rrulestr(scheduleData.rruleString) as RRule;
+                    const updateRule = rrulestr(scheduleData.rruleString) as RRule;
                     const nowUtc = new Date();
                     const [hours, minutes] = scheduleData.timeOfDay.split(':').map(Number);
-                    const dtstart = rule.options.dtstart;
-                    const baseDateTimeInTargetTz = new Date(dtstart);
-                    baseDateTimeInTargetTz.setHours(hours, minutes, 0, 0);
+                    
+                    // Ensure dtstart is a Date object before using toZonedTime
+                    let dtstartDate: Date;
+                    if (updateRule.options.dtstart instanceof Date) {
+                      dtstartDate = updateRule.options.dtstart;
+                    } else {
+                      // Attempt to parse if it's a string or number? Requires more robust handling or assumptions.
+                      // For now, let's assume it's already a Date based on rrule parsing, 
+                      // or default if not available (though rrule typically sets a default).
+                      logger.warn('Could not determine Date object for dtstart, defaulting.', { dtstart: updateRule.options.dtstart });
+                      dtstartDate = new Date(); // Fallback, might need adjustment
+                    }
+                    dtstartDate.setHours(hours, minutes, 0, 0); // Apply time of day
+
                     const options = {
-                        ...rule.options,
-                        dtstart: toZonedTime(baseDateTimeInTargetTz, scheduleData.timezone),
-                        tzid: scheduleData.timezone,
+                        ...updateRule.options,
+                        // Ensure dtstart is a Date object before passing to toZonedTime
+                        dtstart: toZonedTime(dtstartDate, scheduleData.timezone),
+                        tzid: scheduleData.timezone, // Ensure timezone is passed if needed by rrule logic
                     };
                     const calculationRule = new RRule(options);
-                    const nextOccurrenceUtc = calculationRule.after(nowUtc);
+                    const nowInTargetTz = toZonedTime(nowUtc, scheduleData.timezone); // Use toZonedTime for comparison time
+                    const nextOccurrence = calculationRule.after(nowInTargetTz, true); // Find next after current time in target TZ
 
-                    if (nextOccurrenceUtc) {
-                        nextTriggerAtIso = nextOccurrenceUtc.toISOString();
+                    if (nextOccurrence) {
+                         // Convert the result back to ISO string in UTC for storage
+                        nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(scheduleData.timezone).toISO();
                         logger.info('Calculated next trigger time for UPDATE', { nextTriggerAtIso, timezone: scheduleData.timezone });
                     } else {
                         logger.info('No future occurrences found for updated rule', { globalVariableId, scheduleIdToUpdate });
@@ -114,8 +127,6 @@ export async function upsertReminderScheduleAction(
                     }
                  } catch (ruleError) {
                       logger.error('Error calculating next trigger time during update', { scheduleIdToUpdate, rruleString: scheduleData.rruleString, error: ruleError });
-                      // Decide how to handle - maybe keep old next_trigger_at or set to null?
-                      // Setting to null might be safest if calculation fails
                       nextTriggerAtIso = null;
                  }
             } else {

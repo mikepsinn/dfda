@@ -1,11 +1,12 @@
 "use server"
 
 import { createClient } from '@/lib/supabase/server'
-import type { Database } from "@/lib/database.types"
+// Removed unused Database type
+import { logger } from '@/lib/logger'
+// Removed unused revalidatePath
+
 // Keep handleDatabaseResponse if needed, remove handleDatabaseCollectionResponse if unused after refactor
 // import { handleDatabaseResponse, handleDatabaseCollectionResponse } from "@/lib/actions-helpers" 
-import { revalidatePath } from "next/cache"
-import { logger } from "@/lib/logger"
 
 // Remove base types if they are only used by removed functions
 // export type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
