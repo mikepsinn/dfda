@@ -1,8 +1,7 @@
-import { ProviderHowItWorks } from "@/components/how-it-works/ProviderHowItWorks";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { ProviderDashboardPreview } from "@/components/hero/ProviderDashboardPreview";
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { ProviderHowItWorks } from "@/components/how-it-works/ProviderHowItWorks"
 
 export default function PublicProviderPage() {
   return (
