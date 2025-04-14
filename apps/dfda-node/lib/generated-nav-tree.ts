@@ -24,10 +24,15 @@ export interface GeneratedNavTree {
   readonly 'login': SimpleNavInfo;
   readonly 'outcome_labels': SimpleNavInfo;
   readonly 'patient': SimpleNavInfo;
+  readonly 'patient_conditions': SimpleNavInfo;
+  readonly 'patient_conditions_id': SimpleNavInfo;
   readonly 'patient_data_submission': SimpleNavInfo;
   readonly 'patient_join_trial': SimpleNavInfo;
   readonly 'patient_join_trial_treatment': SimpleNavInfo;
   readonly 'patient_join_trial_treatment_condition': SimpleNavInfo;
+  readonly 'patient_onboarding': SimpleNavInfo;
+  readonly 'patient_onboarding_treatments': SimpleNavInfo;
+  readonly 'patient_reminders': SimpleNavInfo;
   readonly 'patient_treatments': SimpleNavInfo;
   readonly 'patient_trial_details': SimpleNavInfo;
   readonly 'patient_trial_details_id': SimpleNavInfo;
@@ -122,6 +127,14 @@ export const navigationTreeObject: GeneratedNavTree = {
     "title": "Patient",
     "href": "/patient"
   },
+  "patient_conditions": {
+    "title": "Conditions",
+    "href": "/patient/conditions"
+  },
+  "patient_conditions_id": {
+    "title": "Dynamic (id)",
+    "href": "/patient/conditions/[id]"
+  },
   "patient_data_submission": {
     "title": "Data Submission",
     "href": "/patient/data-submission"
@@ -137,6 +150,18 @@ export const navigationTreeObject: GeneratedNavTree = {
   "patient_join_trial_treatment_condition": {
     "title": "Dynamic (condition)",
     "href": "/patient/join-trial/[treatment]/[condition]"
+  },
+  "patient_onboarding": {
+    "title": "Onboarding",
+    "href": "/patient/onboarding"
+  },
+  "patient_onboarding_treatments": {
+    "title": "Treatments",
+    "href": "/patient/onboarding/treatments"
+  },
+  "patient_reminders": {
+    "title": "Reminders",
+    "href": "/patient/reminders"
   },
   "patient_treatments": {
     "title": "Treatments",

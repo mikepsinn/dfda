@@ -22,15 +22,16 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
-import { TreatmentSearch } from "./treatment-search"
+import { TreatmentSearch } from "@/components/treatment-search"
+import { ConditionCombobox } from "@/components/condition-combobox"
 import type { Database } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
-import { ConditionCombobox } from "./condition-combobox"
 import { addPatientConditionAction } from "@/app/actions/patientConditions"
-import { addTreatmentRatingAction } from "@/app/actions/treatment-ratings"
+import { upsertTreatmentRatingAction } from "@/app/actions/treatment-ratings"
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"]
-type TreatmentRatingInsert = Database["public"]["Tables"]["treatment_ratings"]["Insert"]
+// Use TreatmentRatingUpsertData type if needed for future rating logic
+// import type { TreatmentRatingUpsertData } from "@/app/actions/treatment-ratings"
 
 const logger = createLogger("add-treatment-dialog")
 
@@ -71,19 +72,28 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
         conditionAdded = true
       }
 
-      // Only add rating if a valid condition is selected
-      if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE) {
-        logger.info("Adding treatment rating for user", { userId, treatmentId: selectedTreatment.id, conditionId: selectedCondition })
-        const ratingData: TreatmentRatingInsert = {
-          user_id: userId,
-          treatment_id: selectedTreatment.id,
-          condition_id: selectedCondition, // Already checked it's not empty or NOT_SPECIFIED
-          effectiveness_out_of_ten: effectiveness, // Already checked it's not null
+      // --- Add Patient Treatment Logic (Placeholder - Requires new action) ---
+      // TODO: Implement logic to add patient_treatment record using userId, selectedTreatment.id, 
+      // and patient_condition_id (if condition was added/selected).
+      // This action should return the new patient_treatment_id.
+      // const patientTreatmentResult = await addSinglePatientTreatmentAction({ ... });
+      // if (!patientTreatmentResult.success) throw new Error(...);
+      // const newPatientTreatmentId = patientTreatmentResult.data.id;
+
+      // --- Rating Logic (Commented out until Patient Treatment logic is added) ---
+      /*
+      // Only add rating if a valid condition is selected AND patient treatment was added
+      if (selectedCondition && selectedCondition !== NOT_SPECIFIED_VALUE && newPatientTreatmentId) {
+        logger.info("Upserting treatment rating for user", { userId, patientTreatmentId: newPatientTreatmentId, patientConditionId: selectedCondition })
+        const ratingData: TreatmentRatingUpsertData = {
+          patient_treatment_id: newPatientTreatmentId, 
+          patient_condition_id: selectedCondition, // Already checked it's not empty or NOT_SPECIFIED
+          effectiveness_out_of_ten: effectiveness!, // Already checked it's not null
           review: review || null,
         }
 
         logger.info("Submitting treatment rating data", { ratingData })
-        const ratingResult = await addTreatmentRatingAction(ratingData)
+        const ratingResult = await upsertTreatmentRatingAction(ratingData)
 
         if (!ratingResult.success) {
           throw new Error(ratingResult.error || "Failed to add treatment rating")
@@ -91,16 +101,22 @@ export function AddTreatmentDialog({ userId, conditions }: AddTreatmentDialogPro
 
         toast({
           title: "Treatment Rated",
-          description: `${selectedTreatment.name} rating for the selected condition has been added successfully.`
+          description: `${selectedTreatment.name} rating for the selected condition has been added/updated successfully.`
         })
       } else {
-        // If no condition was selected, just show a success message
+        // If no condition was selected, just show a success message for adding treatment
         logger.info("Treatment added without rating for user", { userId, treatmentId: selectedTreatment.id })
         toast({
-          title: "Treatment Added",
+          title: "Treatment Added", // TODO: Update message when treatment adding is implemented
           description: `${selectedTreatment.name} has been added to your list.`
         })
       }
+      */
+     // Temporary success message until treatment adding is implemented
+     toast({
+        title: "Action Needed",
+        description: `Treatment adding logic needs implementation.`,
+      });
 
       // Reset form state
       setOpen(false)

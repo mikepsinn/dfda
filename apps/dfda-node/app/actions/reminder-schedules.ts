@@ -85,58 +85,52 @@ export async function upsertReminderScheduleAction(
     try {
         let nextTriggerAtIso: string | null = null;
 
-        if (scheduleData.isActive) {
-            // Calculate next trigger time only if active
-            const now = new Date(); // Current time in system timezone (UTC on server)
+        // --- Determine next_trigger_at ---
+        if (scheduleIdToUpdate) { // === UPDATE ===
+             // For updates, calculate the actual next trigger time if active
+             if (scheduleData.isActive) {
+                 try {
+                    // Existing logic to calculate the real next trigger based on RRULE, time, timezone
+                    const rule = rrulestr(scheduleData.rruleString) as RRule;
+                    const nowUtc = new Date();
+                    const [hours, minutes] = scheduleData.timeOfDay.split(':').map(Number);
+                    const dtstart = rule.options.dtstart;
+                    const baseDateTimeInTargetTz = new Date(dtstart);
+                    baseDateTimeInTargetTz.setHours(hours, minutes, 0, 0);
+                    const options = {
+                        ...rule.options,
+                        dtstart: toZonedTime(baseDateTimeInTargetTz, scheduleData.timezone),
+                        tzid: scheduleData.timezone,
+                    };
+                    const calculationRule = new RRule(options);
+                    const nextOccurrenceUtc = calculationRule.after(nowUtc);
 
-            // Get the time parts H:mm
-            const [hours, minutes] = scheduleData.timeOfDay.split(':').map(Number);
-
-            // Important: RRULE's dtstart ALREADY includes the date. We need to combine THIS date
-            // with the SPECIFIED timeOfDay in the correct timezone.
-            // The `dtstart` within the rule options is already a Date object parsed by rrule.js
-            const dtstart = rule.options.dtstart;
-
-            // Create the "base" datetime for occurrences in the target timezone
-            // NOTE: The date part comes from dtstart, time part comes from timeOfDay input
-            const baseDateTimeInTargetTz = new Date(dtstart);
-            baseDateTimeInTargetTz.setHours(hours, minutes, 0, 0); // Set HH:mm from input, clear seconds/ms
-
-            // Reconstruct options carefully for clarity and robustness.
-
-            const options = {
-                ...rule.options,
-                // Ensure dtstart is the date part + timeOfDay in the correct timezone, then converted to UTC
-                // dtstart must be a Date object representing the UTC time.
-                dtstart: toZonedTime(baseDateTimeInTargetTz, scheduleData.timezone), // Convert base time in target zone TO UTC
-                tzid: scheduleData.timezone, // Ensure tzid is explicitly set for calculation
-            };
-
-             // Recreate the rule with potentially adjusted dtstart/tzid for calculation
-            const calculationRule = new RRule(options);
-
-            // Find the next occurrence *after* the current time.
-            // Get current time as UTC
-            const nowUtc = new Date();
-            // The RRule calculation needs the comparison time in UTC as well.
-            const nextOccurrenceUtc = calculationRule.after(nowUtc);
-
-
-            if (nextOccurrenceUtc) {
-                // The result from rrule.after is already a UTC date object if tzid was used
-                nextTriggerAtIso = nextOccurrenceUtc.toISOString();
-                logger.info('Calculated next trigger time', { nextTriggerAtIso, timezone: scheduleData.timezone });
+                    if (nextOccurrenceUtc) {
+                        nextTriggerAtIso = nextOccurrenceUtc.toISOString();
+                        logger.info('Calculated next trigger time for UPDATE', { nextTriggerAtIso, timezone: scheduleData.timezone });
+                    } else {
+                        logger.info('No future occurrences found for updated rule', { globalVariableId, scheduleIdToUpdate });
+                        nextTriggerAtIso = null; // Explicitly null if no future dates
+                    }
+                 } catch (ruleError) {
+                      logger.error('Error calculating next trigger time during update', { scheduleIdToUpdate, rruleString: scheduleData.rruleString, error: ruleError });
+                      // Decide how to handle - maybe keep old next_trigger_at or set to null?
+                      // Setting to null might be safest if calculation fails
+                      nextTriggerAtIso = null;
+                 }
             } else {
-                // No future occurrences found (rule ended or invalid)
-                logger.info('No future occurrences found for rule', { globalVariableId, scheduleIdToUpdate });
+                // If updating to inactive, clear the next trigger time
+                logger.info('Updated schedule is inactive, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
                 nextTriggerAtIso = null;
             }
-        } else {
-            // Schedule is inactive
-            logger.info('Schedule is inactive, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
-            nextTriggerAtIso = null;
-        }
 
+        } else { // === INSERT ===
+            // For NEW reminders, set trigger time to the past to show in inbox immediately.
+            // The cron job/scheduler will handle calculating the *real* next trigger upon completion.
+            nextTriggerAtIso = new Date(Date.now() - 60 * 1000).toISOString(); // 1 minute ago
+            logger.info('Setting initial trigger time to the past for NEW reminder', { nextTriggerAtIso });
+        }
+        // --- End Determine next_trigger_at ---
 
         const dbData: ReminderScheduleDbData & { user_id: string } = {
             user_id: userId,

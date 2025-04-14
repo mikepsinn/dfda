@@ -15,6 +15,7 @@ export interface NavItem {
 // Logged-in Primary Items per Role (Using generated objects directly)
 const patientNavItems: NavItem[] = [
   navigationTreeObject.patient, // Uses generated title (e.g., "Patient") and href
+  navigationTreeObject.patient_conditions,
   navigationTreeObject.patient_treatments
 ]
 

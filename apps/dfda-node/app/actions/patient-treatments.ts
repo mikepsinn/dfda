@@ -35,7 +35,7 @@ export async function addInitialPatientTreatmentsAction(
   const patientTreatmentsToInsert: Omit<PatientTreatmentInsert, 'id'>[] = selectedTreatments.map(treatment => ({
     patient_id: userId,
     treatment_id: treatment.treatmentId, // This is the global_variable_id
-    // user_variable_id: null, // Explicitly null, assuming it links to condition/etc later
+    user_variable_id: "dummy-user-variable-id", // TODO: Replace with actual logic to get or create user_variable_id
     status: 'active', // Default status
     start_date: new Date().toISOString(), // Default start date
     // patient_notes: null, // Omitting notes as dosage/schedule are deferred

@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ConditionCombobox } from './condition-combobox' // Assuming this can be reused
+import { ConditionCombobox } from "@/components/condition-combobox"
 import { createLogger } from '@/lib/logger'
 import type { Database } from '@/lib/database.types'
 // Import the updated server actions

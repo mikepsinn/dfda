@@ -8,11 +8,11 @@ import { Music, Plus, Edit, BellRing, AlertTriangle } from "lucide-react"
 import type { Database } from "@/lib/database.types"
 import { createClient } from '@/lib/supabase/client' // Import client
 import { createLogger } from '@/lib/logger' // Import logger
-
+import { ColumnDef } from "@tanstack/react-table"
 import { AddConditionDialog } from "./add-condition-dialog"
 import { AddTreatmentDialog } from "./add-treatment-dialog"
-import { ConditionsList } from "./conditions-list"
-import { TreatmentSearch } from "./treatment-search"
+import { ConditionsList } from "@/components/conditions-list"
+import { TreatmentSearch } from "@/components/treatment-search"
 import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 

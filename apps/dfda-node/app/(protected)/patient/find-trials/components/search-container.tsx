@@ -2,12 +2,11 @@
 
 import { useCallback, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ConditionSearch } from "@/components/ConditionSearch"
-import { findTrialsForConditionsAction, TrialWithRelations } from "@/app/actions/trials"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { Database } from "@/lib/database.types"
 import { logger } from "@/lib/logger"
+import { ConditionSearchInput } from "@/components/ConditionSearchInput"
 
 // Use the database view type directly
 type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
@@ -66,7 +65,7 @@ export function SearchContainer({ initialConditions = [] }: SearchContainerProps
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <ConditionSearch
+            <ConditionSearchInput
               onSelect={handleSelectCondition}
               selected={selectedCondition}
             />

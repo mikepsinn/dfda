@@ -42,8 +42,3 @@ CREATE POLICY "Sponsors can view enrollments for their trials"
 CREATE POLICY "Providers can update their trial enrollments"
   ON trial_enrollments FOR UPDATE
   USING (provider_id = auth.uid());
-
--- Add INSERT policy
-CREATE POLICY "Users can create own enrollments or enrollments they provide"
-  ON trial_enrollments FOR INSERT
-  WITH CHECK (auth.uid() = patient_id OR auth.uid() = provider_id);

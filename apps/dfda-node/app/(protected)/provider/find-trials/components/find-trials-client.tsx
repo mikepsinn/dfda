@@ -9,8 +9,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Separator } from "@/components/ui/separator"
-import { ConditionSearch } from "@/components/condition-search"
+import { ConditionSearchInput } from "@/components/ConditionSearchInput"
 import { TreatmentRankingList } from "@/components/TreatmentRankingList"
+import { findTrialsForConditionsAction, TrialWithRelations } from "@/app/actions/trials"
+import { logger } from "@/lib/logger"
 
 interface FindTrialsClientProps {
   availableConditions: string[]
@@ -73,7 +75,7 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                     <CardDescription>Find evidence-based treatments for your patients</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ConditionSearch
+                    <ConditionSearchInput
                       onConditionSelect={handleConditionSelect}
                       availableConditions={availableConditions}
                       initialSearchTerm=""
