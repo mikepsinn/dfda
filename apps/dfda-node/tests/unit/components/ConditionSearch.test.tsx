@@ -1,12 +1,10 @@
 import '@testing-library/jest-dom'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { ConditionSearch } from '@/components/ConditionSearch'
+import { ConditionSearchInput as ConditionSearch } from '@/components/ConditionSearchInput'
 import { getConditionsAction, searchConditionsAction } from '@/app/actions/conditions'
 import { act } from 'react'
 import React from "react"
-import { ConditionSearchInput } from "@/components/ConditionSearchInput"
-import { fetchGlobalVariablesByType } from "@/app/actions/globalVariables"
 // No need for Database type here if we define the action return type directly
 
 // Mock the actions

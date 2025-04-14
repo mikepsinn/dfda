@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { Database } from "@/lib/database.types"
-import { logger } from "@/lib/logger"
+import { createLogger } from "@/lib/logger"
 import { ConditionSearchInput } from "@/components/ConditionSearchInput"
+import { type TrialWithRelations, findTrialsForConditionsAction } from "@/app/actions/trials"
 
 // Use the database view type directly
 type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row"]
@@ -14,6 +15,8 @@ type ConditionView = Database["public"]["Views"]["patient_conditions_view"]["Row
 export interface SearchContainerProps {
   initialConditions?: ConditionView[]
 }
+
+const logger = createLogger("find-trials-search-container")
 
 export function SearchContainer({ initialConditions = [] }: SearchContainerProps) {
   const router = useRouter()

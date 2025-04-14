@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react'
 // @ts-ignore - Suppress module not found error
-import { RRule, RRuleSet, rrulestr, Weekday } from 'rrule'
+import { RRule, RRuleSet, rrulestr, Weekday, type Options as RRuleOptions } from 'rrule'
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
@@ -59,22 +59,37 @@ export function ReminderScheduler({ initialSchedule, onChange, userId }: Reminde
   useEffect(() => {
       if (initialSchedule?.rruleString) {
           try {
-              const rule = rrulestr(initialSchedule.rruleString) as RRule; // Assuming simple RRULE
+              // Type assertion might be needed if rrulestr returns a broader type
+              const rule = rrulestr(initialSchedule.rruleString) as RRule;
               if (rule.options.freq !== undefined) setFreq(rule.options.freq);
               if (rule.options.interval !== undefined) setInterval(rule.options.interval);
-              if (rule.options.byweekday !== undefined) {
-                   // Convert number[] | number | Weekday | Weekday[] | null to Weekday[]
-                   const weekdays = Array.isArray(rule.options.byweekday)
-                       ? rule.options.byweekday.map(d => d instanceof Weekday ? d : new Weekday(d))
-                       : rule.options.byweekday instanceof Weekday
-                           ? [rule.options.byweekday]
-                           : typeof rule.options.byweekday === 'number'
-                               ? [new Weekday(rule.options.byweekday)]
-                               : [];
+              
+              // Safely handle byweekday conversion
+              if (rule.options.byweekday !== undefined && rule.options.byweekday !== null) {
+                   const rawWeekdaysSource = rule.options.byweekday;
+                   const rawWeekdays = Array.isArray(rawWeekdaysSource) ? rawWeekdaysSource : [rawWeekdaysSource];
+                   const weekdays: Weekday[] = rawWeekdays
+                      .map(d => {
+                          // Check if it's already a Weekday object (has .weekday property)
+                          if (typeof d === 'object' && d !== null && 'weekday' in d && typeof (d as any).weekday === 'number') {
+                              // It looks like a Weekday object, create a new instance to be safe
+                              // Or just return d if you are sure about the source integrity 
+                              return new Weekday((d as any).weekday, (d as any).n);
+                          }
+                          // Otherwise, assume it's a number and create a new Weekday
+                          if (typeof d === 'number') {
+                             return new Weekday(d);
+                          }
+                          console.warn("Unexpected type in byweekday array:", d);
+                          return null; // Explicitly return null for invalid types
+                      })
+                      .filter((d): d is Weekday => d !== null); // Type guard to filter out nulls
+
                    setByWeekday(weekdays);
               } else {
                    setByWeekday([]);
               }
+              
               if (rule.options.bymonthday !== undefined && typeof rule.options.bymonthday === 'number') {
                    setByMonthDay(rule.options.bymonthday);
               } else {
@@ -100,7 +115,8 @@ export function ReminderScheduler({ initialSchedule, onChange, userId }: Reminde
 
   // --- Generate RRULE string and notify parent on changes ---
   useEffect(() => {
-      const options: Partial<RRule.Options> = {
+      // Use the imported RRuleOptions type
+      const options: Partial<RRuleOptions> = {
           freq: freq,
           interval: interval,
           dtstart: startDate, // Include start date in rule

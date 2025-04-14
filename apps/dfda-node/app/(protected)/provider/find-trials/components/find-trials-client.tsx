@@ -13,6 +13,7 @@ import { ConditionSearchInput } from "@/components/ConditionSearchInput"
 import { TreatmentRankingList } from "@/components/TreatmentRankingList"
 import { findTrialsForConditionsAction, TrialWithRelations } from "@/app/actions/trials"
 import { logger } from "@/lib/logger"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface FindTrialsClientProps {
   availableConditions: string[]
@@ -20,13 +21,15 @@ interface FindTrialsClientProps {
 
 export function FindTrialsClient({ availableConditions }: FindTrialsClientProps) {
   const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCondition, setSelectedCondition] = useState("")
+  const [selectedCondition, setSelectedCondition] = useState<{ id: string; name: string } | null>(null)
   const [showTreatments, setShowTreatments] = useState(false)
+  const [isLoadingConditions, setIsLoadingConditions] = useState(false)
 
   // Handle condition selection
-  const handleConditionSelect = (condition: string) => {
+  const handleConditionSelect = (condition: { id: string; name: string }) => {
     setSelectedCondition(condition)
     setShowTreatments(true)
+    logger.info("Condition selected:", { id: condition.id, name: condition.name });
   }
 
   // Placeholder data for now
@@ -75,12 +78,27 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                     <CardDescription>Find evidence-based treatments for your patients</CardDescription>
                   </CardHeader>
                   <CardContent>
+                    <h3 className="text-sm font-medium">
+                      Available Conditions
+                    </h3>
                     <ConditionSearchInput
-                      onConditionSelect={handleConditionSelect}
-                      availableConditions={availableConditions}
-                      initialSearchTerm=""
-                      placeholder="Search for a medical condition..."
+                      onSelect={handleConditionSelect}
+                      selected={selectedCondition}
                     />
+                    <ScrollArea className="mt-4 h-[400px] rounded-md border p-4">
+                      {isLoadingConditions ? (
+                        <div>Loading conditions...</div>
+                      ) : (
+                        <div className="space-y-4">
+                          {availableConditions.map((condition) => (
+                            <div key={condition} className="flex items-center space-x-2">
+                              <Checkbox id={`condition-${condition.replace(/\s+/g, '-').toLowerCase()}`} />
+                              <Label htmlFor={`condition-${condition.replace(/\s+/g, '-').toLowerCase()}`}>{condition}</Label>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </ScrollArea>
                   </CardContent>
                 </Card>
 
@@ -89,14 +107,14 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <div>
-                          <CardTitle>Treatments for {selectedCondition}</CardTitle>
+                          <CardTitle>Treatments for {selectedCondition.name}</CardTitle>
                           <CardDescription>Ranked by comparative effectiveness</CardDescription>
                         </div>
                         <Button
                           variant="outline"
                           size="sm"
                           onClick={() => {
-                            setSelectedCondition("")
+                            setSelectedCondition(null)
                             setShowTreatments(false)
                           }}
                         >
@@ -107,7 +125,7 @@ export function FindTrialsClient({ availableConditions }: FindTrialsClientProps)
                     <CardContent>
                       <TreatmentRankingList
                         treatments={[]}
-                        condition={selectedCondition}
+                        condition={selectedCondition.name}
                         baseUrl="/provider/trials/"
                       />
                     </CardContent>
