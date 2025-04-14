@@ -207,13 +207,14 @@ export async function deleteReminderScheduleAction(
     userId: string
 ): Promise<{ success: boolean; error?: string }> {
     const supabase = await createClient();
-    logger.warn('Deleting reminder schedule', { scheduleId, userId });
+    logger.warn('Deleting reminder schedule and related notifications', { scheduleId, userId });
 
     if (!scheduleId) {
         return { success: false, error: 'Schedule ID is required.' };
     }
 
     try {
+        // Deleting the schedule should cascade delete notifications due to FK constraint
         const { error } = await supabase
             .from('reminder_schedules')
             .delete()
@@ -227,6 +228,7 @@ export async function deleteReminderScheduleAction(
 
         logger.info('Successfully deleted reminder schedule', { scheduleId });
         revalidatePath('/patient/reminders'); // Revalidate general page
+        revalidatePath('/patient/dashboard'); // Revalidate dashboard too
         return { success: true };
 
     } catch (error) {
@@ -244,14 +246,14 @@ export async function deleteReminderScheduleAction(
  */
 export async function createDefaultReminderAction(
   userId: string,
-  globalVariableId: string,
-  variableName: string, // e.g., "Diabetes Type 2" or "Metformin"
-  reminderType: 'condition' | 'treatment' // To customize messages
+  userVariableId: string, // Changed from globalVariableId for clarity
+  variableName: string,
+  variableCategory: string | null // Pass category to determine message
 ): Promise<{ success: boolean; error?: string }> {
   const supabase = await createClient();
-  logger.info('Creating default reminder', { userId, globalVariableId, variableName, reminderType });
+  logger.info('Creating default reminder schedule', { userId, userVariableId, variableName });
 
-  if (!userId || !globalVariableId || !variableName) {
+  if (!userId || !userVariableId || !variableName) {
     return { success: false, error: 'Missing required information for default reminder.' };
   }
 
@@ -278,12 +280,12 @@ export async function createDefaultReminderAction(
     // --- Define Default Settings --- 
     const defaultTime = "20:00"; // 8 PM
     const defaultRRule = `FREQ=DAILY;DTSTART=${new Date().toISOString().split('T')[0].replace(/-/g, '')}T000000Z`; // Daily starting today (UTC date part)
-    const defaultTitle = reminderType === 'condition' 
-                         ? `Track ${variableName} Severity` 
-                         : `Track ${variableName} Adherence`;
-    const defaultMessage = reminderType === 'condition'
-                         ? `How has your ${variableName} been today?`
-                         : `Did you take your ${variableName} today? How effective was it?`;
+    const defaultTitle = variableCategory === 'medication' 
+                         ? `Track ${variableName} Adherence` 
+                         : `Track ${variableName}`; // Generic title otherwise
+    const defaultMessage = variableCategory === 'medication'
+                         ? `Did you take your ${variableName} today?`
+                         : `How was your ${variableName} today?`; // Generic message
     // --- End Default Settings --- 
   
     // Simplified data for insertion - calculation of next_trigger_at handled by upsert action logic
@@ -299,18 +301,18 @@ export async function createDefaultReminderAction(
     // Call the existing upsert action to handle RRULE parsing and next_trigger_at calculation
     // We are *inserting*, so no scheduleIdToUpdate is provided.
     const result = await upsertReminderScheduleAction(
-        globalVariableId,
+        userVariableId,
         scheduleData,
         userId
         // scheduleIdToUpdate is omitted for insertion
     );
 
     if (!result.success || !result.data) {
-      logger.error('Failed to create default reminder via upsert', { userId, globalVariableId, error: result.error });
-      return { success: false, error: result.error || 'Failed to create default reminder.' };
+      logger.error('Failed to create default reminder schedule via upsert', { userId, userVariableId, error: result.error });
+      return { success: false, error: result.error || 'Failed to create default reminder schedule.' };
     }
 
-    // Optionally, update the title/message templates if the upsert action doesn't handle them
+    // Update title/message templates
     const { error: updateError } = await supabase
         .from('reminder_schedules')
         .update({
@@ -325,19 +327,20 @@ export async function createDefaultReminderAction(
          // Don't fail the whole operation for this
     }
 
-    logger.info('Successfully created default reminder', { userId, globalVariableId, scheduleId: result.data.id });
+    logger.info('Successfully created default reminder schedule', { userId, userVariableId, scheduleId: result.data.id });
     return { success: true };
 
   } catch (error) {
-    logger.error('Error in createDefaultReminderAction', { userId, globalVariableId, error: error instanceof Error ? error.message : String(error) });
-    return { success: false, error: 'An unexpected error occurred while creating the default reminder.' };
+    logger.error('Error in createDefaultReminderAction', { userId, userVariableId, error: error instanceof Error ? error.message : String(error) });
+    return { success: false, error: 'An unexpected error occurred while creating the default reminder schedule.' };
   }
 } 
 
-// --- Tracking Inbox Action --- 
+// --- Refactored Tracking Inbox Actions --- 
 
-// Define the structure for a pending task
-export type PendingReminderTask = {
+// New type for the data needed by the TrackingInbox component
+export type PendingNotificationTask = {
+  notificationId: string; // The ID of the reminder_notifications record
   scheduleId: string;
   userVariableId: string;
   variableName: string;
@@ -345,114 +348,133 @@ export type PendingReminderTask = {
   variableCategory: string | null;
   unitId: string | null;
   unitName: string | null;
-  title: string | null;
-  message: string | null;
-  dueAt: string; // The original next_trigger_at timestamp
-  timeOfDay: string;
-  timezone: string;
-  rrule: string;
+  dueAt: string; // The original notification_trigger_at timestamp
+  title: string | null; // From schedule template
+  message: string | null; // From schedule template
 };
 
 /**
- * Fetches active reminder schedules for a user that are currently due.
+ * Fetches PENDING reminder notifications for a user.
  */
-export async function getPendingReminderTasksAction(
+export async function getPendingReminderNotificationsAction(
   userId: string
-): Promise<PendingReminderTask[]> {
+): Promise<PendingNotificationTask[]> {
   const supabase = await createClient();
-  logger.info('Fetching pending reminder tasks', { userId });
+  logger.info('Fetching pending reminder notifications', { userId });
 
-  const now = new Date().toISOString();
-
-  // Fetch active schedules due now or in the past
-  const { data: schedules, error } = await supabase
-    .from('reminder_schedules')
+  // Fetch pending notifications and join related data
+  const { data: notifications, error } = await supabase
+    .from('reminder_notifications')
     .select(`
-      id,
-      user_variable_id,
-      notification_title_template,
-      notification_message_template,
-      next_trigger_at,
-      time_of_day,
-      timezone,
-      rrule,
-      user_variables!inner(
-        global_variable_id,
-        preferred_unit_id,
-        global_variables!inner(
-             name,
-             variable_category_id,
-             default_unit_id,
-             default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name ) 
-        ),
-        preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name )
+      id, 
+      notification_trigger_at,
+      reminder_schedules!inner(
+        id,
+        user_variable_id,
+        notification_title_template,
+        notification_message_template,
+        user_variables!inner(
+            global_variable_id,
+            preferred_unit_id,
+            global_variables!inner(
+                name,
+                variable_category_id,
+                default_unit_id,
+                default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name ) 
+            ),
+            preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name )
+        )
       )
     `)
     .eq('user_id', userId)
-    .eq('is_active', true)
-    .lte('next_trigger_at', now) // Due now or earlier
-    .not('next_trigger_at', 'is', null) // Must have a trigger time
-    .order('next_trigger_at', { ascending: true });
+    .eq('status', 'pending') // Only fetch pending
+    .order('notification_trigger_at', { ascending: true }); // Show oldest first
 
   if (error) {
-    logger.error('Error fetching pending reminder schedules', { userId, error });
-    // Log the detailed error for easier debugging
-    console.error("Supabase fetch error (pending reminders):", JSON.stringify(error, null, 2));
+    logger.error('Error fetching pending reminder notifications', { userId, error });
+    console.error("Supabase fetch error (pending notifications):", JSON.stringify(error, null, 2));
     return []; 
   }
 
-  if (!schedules) {
+  if (!notifications) {
     return [];
   }
 
-  // Map to the defined task structure, adjusting for new aliases
-  const tasks: PendingReminderTask[] = schedules.map(s => {
-    const userVar = s.user_variables as any; // Use 'any' for easier access to aliased joins
+  // Map to the defined task structure
+  const tasks: PendingNotificationTask[] = notifications.map(n => {
+    const schedule = n.reminder_schedules as any;
+    const userVar = schedule?.user_variables as any;
     const globalVar = userVar?.global_variables as any;
     const preferredUnit = userVar?.preferred_unit as any;
     const defaultUnit = globalVar?.default_unit as any;
 
-    // Determine the unit ID and name to use (prefer user's choice)
     const resolvedUnitId = preferredUnit?.id || defaultUnit?.id || null;
     const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit?.abbreviated_name || null;
 
     return {
-        scheduleId: s.id,
-        userVariableId: s.user_variable_id,
+        notificationId: n.id,
+        scheduleId: schedule?.id || '',
+        userVariableId: schedule?.user_variable_id || '',
         variableName: globalVar?.name || 'Unknown Item',
         globalVariableId: userVar?.global_variable_id || '',
         variableCategory: globalVar?.variable_category_id || null,
         unitId: resolvedUnitId,
         unitName: resolvedUnitName,
-        title: s.notification_title_template,
-        message: s.notification_message_template,
-        dueAt: s.next_trigger_at as string, 
-        timeOfDay: s.time_of_day,
-        timezone: s.timezone,
-        rrule: s.rrule,
+        dueAt: n.notification_trigger_at as string,
+        title: schedule?.notification_title_template || null,
+        message: schedule?.notification_message_template || null,
     };
   });
 
-  logger.info(`Found ${tasks.length} pending reminder tasks`, { userId });
+  logger.info(`Found ${tasks.length} pending reminder notifications`, { userId });
   return tasks;
 }
 
-// TODO: Implement action to mark task as done/skipped and calculate next trigger
-export async function completeReminderTaskAction(
-   scheduleId: string, 
+/**
+ * Updates the status of a specific reminder notification.
+ */
+export async function completeReminderNotificationAction(
+   notificationId: string, 
    userId: string, 
    skipped: boolean = false,
-   logData?: any // Optional data from the log action (e.g., rating value)
-): Promise<{ success: boolean; error?: string }> {
-   logger.info('Completing reminder task (Placeholder)', { scheduleId, userId, skipped, logData });
-   // 1. Fetch the schedule using scheduleId and userId
-   // 2. If found, calculate the *next* next_trigger_at based on its rrule, time_of_day, timezone
-   //    using logic similar to upsertReminderScheduleAction
-   // 3. Update the schedule record with the new next_trigger_at
-   // 4. Optionally, log the completion/skip event (e.g., in measurements or a dedicated log table)
-   await new Promise(resolve => setTimeout(resolve, 500)); // Simulate async work
-   console.log(`---> Placeholder: Task ${scheduleId} marked as ${skipped ? 'skipped' : 'done'}. New trigger time needs calculation.`);
-   // Revalidate relevant paths
-   revalidatePath(`/patient`);
-   return { success: true }; // Placeholder return
+   logDetails?: any // Optional log details to store
+): Promise<{ success: boolean; error?: string; }> { 
+   const supabase = await createClient();
+   const newStatus = skipped ? 'skipped' : 'completed';
+   logger.info('Completing reminder notification', { notificationId, userId, newStatus, logDetails });
+
+   try {
+        const updateData: Partial<Database['public']['Tables']['reminder_notifications']['Update']> = {
+            status: newStatus,
+            completed_or_skipped_at: new Date().toISOString(),
+            log_details: logDetails || null
+        };
+
+        const { error } = await supabase
+            .from('reminder_notifications')
+            .update(updateData)
+            .eq('id', notificationId)
+            .eq('user_id', userId)
+            .eq('status', 'pending'); // Important: Only update pending notifications
+
+        if (error) {
+            logger.error("Error updating reminder notification status", { notificationId, userId, error });
+            // Check if the notification wasn't pending (already completed/skipped?)
+            if (error.code === 'PGRST116') { // PostgREST error for no rows updated (might indicate status wasn't pending)
+                 return { success: false, error: "Notification might have already been processed." };
+            }
+            return { success: false, error: "Could not update the notification status." };
+        }
+        
+        // Revalidate relevant paths. Revalidating the inbox path is key.
+        revalidatePath(`/components/patient/TrackingInbox`); 
+        revalidatePath(`/patient/dashboard`);
+
+        logger.info("Reminder notification completed successfully", { notificationId, newStatus });
+        return { success: true }; 
+
+   } catch (error) {
+       logger.error('Failed in completeReminderNotificationAction', { notificationId, error: error instanceof Error ? error.message : String(error) });
+       return { success: false, error: error instanceof Error ? error.message : "An unknown error occurred." };
+   }
 } 

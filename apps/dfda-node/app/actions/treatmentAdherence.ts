@@ -12,6 +12,7 @@ export async function logTreatmentAdherenceAction(input: {
   patientTreatmentId: string; // Need a way to get this - potentially fetch via userVariableId?
   taken: boolean;
   logTime?: string;
+  reminderNotificationId?: string; // Optional: Link to the notification
 }): Promise<{ success: boolean; error?: string }> {
   logger.info("Placeholder: Logging treatment adherence", { input });
 
@@ -24,7 +25,23 @@ export async function logTreatmentAdherenceAction(input: {
   // 3. Perform the database operation
   // --- End TODO ---
 
+  const adherenceLogDetails = { taken: input.taken }; // Example details
+
+  // Link log details back to the notification if ID provided
+  if (input.reminderNotificationId) {
+    const supabase = await createClient(); // Need client here
+    const { error: updateNotifError } = await supabase
+        .from('reminder_notifications')
+        .update({ log_details: adherenceLogDetails })
+        .eq('id', input.reminderNotificationId)
+        .eq('user_id', input.userId);
+    if (updateNotifError) {
+        logger.warn("Failed to link adherence log to notification", { notificationId: input.reminderNotificationId, error: updateNotifError });
+    }
+  }
+
   await new Promise(resolve => setTimeout(resolve, 200)); // Simulate async work
+  revalidatePath("/components/patient/TrackingInbox"); // Revalidate inbox
 
   // For now, just return success
   return { success: true };

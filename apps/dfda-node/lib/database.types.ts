@@ -1254,6 +1254,57 @@ export type Database = {
           },
         ]
       }
+      reminder_notifications: {
+        Row: {
+          completed_or_skipped_at: string | null
+          created_at: string
+          id: string
+          log_details: Json | null
+          notification_trigger_at: string
+          reminder_schedule_id: string
+          status: Database["public"]["Enums"]["reminder_notification_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          completed_or_skipped_at?: string | null
+          created_at?: string
+          id?: string
+          log_details?: Json | null
+          notification_trigger_at: string
+          reminder_schedule_id: string
+          status?: Database["public"]["Enums"]["reminder_notification_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          completed_or_skipped_at?: string | null
+          created_at?: string
+          id?: string
+          log_details?: Json | null
+          notification_trigger_at?: string
+          reminder_schedule_id?: string
+          status?: Database["public"]["Enums"]["reminder_notification_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reminder_notifications_reminder_schedule_id_fkey"
+            columns: ["reminder_schedule_id"]
+            isOneToOne: false
+            referencedRelation: "reminder_schedules"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "reminder_notifications_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reminder_schedules: {
         Row: {
           created_at: string | null
@@ -2234,6 +2285,11 @@ export type Database = {
         | "scale"
         | "date"
         | "file_upload"
+      reminder_notification_status:
+        | "pending"
+        | "completed"
+        | "skipped"
+        | "error"
       user_role_enum:
         | "patient"
         | "provider"
@@ -2789,6 +2845,12 @@ export const Constants = {
         "scale",
         "date",
         "file_upload",
+      ],
+      reminder_notification_status: [
+        "pending",
+        "completed",
+        "skipped",
+        "error",
       ],
       user_role_enum: [
         "patient",

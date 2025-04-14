@@ -5,8 +5,6 @@ import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 import { revalidatePath } from "next/cache"
 
-type MeasurementInsert = Database["public"]["Tables"]["measurements"]["Insert"]
-
 interface LogMeasurementInput {
     userId: string;
     userVariableId: string; 
@@ -15,6 +13,7 @@ interface LogMeasurementInput {
     unitId?: string; // Optional: If not provided, try to use default or fail
     notes?: string; // Optional notes
     startAt?: string; // Optional timestamp, defaults to now
+    reminderNotificationId?: string; // Optional: Link to the notification being completed
 }
 
 export async function logMeasurementAction(input: LogMeasurementInput): Promise<{ success: boolean; error?: string; data?: { id: string }}> {
@@ -61,7 +60,7 @@ export async function logMeasurementAction(input: LogMeasurementInput): Promise<
         }
 
         // 2. Prepare data for insertion
-        const measurementData: MeasurementInsert = {
+        const measurementData: Database["public"]["Tables"]["measurements"]["Insert"] = {
             user_id: input.userId,
             user_variable_id: input.userVariableId,
             global_variable_id: input.globalVariableId,
@@ -84,19 +83,33 @@ export async function logMeasurementAction(input: LogMeasurementInput): Promise<
             return { success: false, error: error.message || "Database error occurred." };
         }
 
-        if (!data?.id) {
+        const measurementId = data?.id;
+        if (!measurementId) {
             logger.error("Measurement insert succeeded but no ID returned", { input });
             return { success: false, error: "Failed to get ID of new measurement record." };
         }
 
-        logger.info("Successfully logged measurement", { measurementId: data.id, userId: input.userId });
+        logger.info("Successfully logged measurement", { measurementId, userId: input.userId });
 
-        // 5. Revalidate relevant paths
+        // 5. (Optional) Link measurement back to the notification if ID provided
+        if (input.reminderNotificationId) {
+            const { error: updateNotifError } = await supabase
+                .from('reminder_notifications')
+                .update({ log_details: { measurementId: measurementId } })
+                .eq('id', input.reminderNotificationId)
+                .eq('user_id', input.userId);
+            if (updateNotifError) {
+                // Log warning but don't fail the whole action
+                logger.warn("Failed to link measurement to notification", { measurementId, notificationId: input.reminderNotificationId, error: updateNotifError });
+            }
+        }
+
+        // 6. Revalidate relevant paths
         revalidatePath("/patient/dashboard"); // Example path, adjust as needed
         revalidatePath("/patient/measurements"); 
-        // Potentially revalidate specific variable pages if they exist
+        revalidatePath("/components/patient/TrackingInbox");
 
-        return { success: true, data: { id: data.id } };
+        return { success: true, data: { id: measurementId } };
 
     } catch (error) {
         logger.error("Error in logMeasurementAction", { error: error instanceof Error ? error.message : String(error), input });
