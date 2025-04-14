@@ -25,7 +25,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Switch } from "@/components/ui/switch"
 
 // --- Import Database Types ---
-import { Database, Tables, Enums } from "@/lib/database.types";
+import { Tables, Enums } from "@/lib/database.types";
 
 // --- Define specific option types expected within the JSONB --- 
 interface ChoiceOption {
@@ -51,9 +51,8 @@ type ScaleQuestionOptions = {
   maxLabel?: string;
 };
 
-type DateQuestionOptions = {
-  // Future options: date range limits, etc.
-};
+// Corresponds to 'date' type options
+type DateQuestionOptions = Record<string, never>; // Use Record<string, never> instead of {}
 
 type FileUploadQuestionOptions = {
   allowMultiple?: boolean;
@@ -219,7 +218,9 @@ export function CreateFormWizard() {
       if (q.id !== id) return q;
       // Ensure options is not null before spreading
       const currentOptions = q.options || {}; 
-      return { ...q, options: { ...currentOptions, ...optionUpdates } };
+      // Explicitly cast the result to the expected union type
+      const newOptions = { ...currentOptions, ...optionUpdates } as FormQuestionOptions | null;
+      return { ...q, options: newOptions };
     }))
   }
 
