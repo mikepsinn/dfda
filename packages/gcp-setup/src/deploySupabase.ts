@@ -166,6 +166,7 @@ async function deploySupabaseInstance() {
         };
 
         const [firewallOp] = await firewallsClient.insert({
+            project: GCP_PROJECT_ID,
             firewallResource: firewallRule,
         });
         await firewallOp.promise();

@@ -13,13 +13,13 @@
     "deploy:supabase": "ts-node src/deploySupabase.ts"
   },
   "dependencies": {
-    "@google-cloud/compute": "^4.4.1",
+    "@google-cloud/compute": "^5.1.0",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
     "rimraf": "^5.0.5",
-    "typescript": "^5.3.3",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
-} 
+}
