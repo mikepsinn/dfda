@@ -20,7 +20,6 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     phone: initialData?.phone || "",
   })
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -30,7 +29,6 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setError(null)
     logger.info("Updating user profile", { userId: initialData.id })
 
     try {
@@ -64,7 +62,6 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
       router.refresh()
     } catch (error: any) {
       logger.error('Error updating profile', { userId: initialData.id, error })
-      setError(error.message || "An unexpected error occurred.")
       toast({ title: "Error", description: error.message || "Failed to update profile.", variant: "destructive" })
     } finally {
       setLoading(false)

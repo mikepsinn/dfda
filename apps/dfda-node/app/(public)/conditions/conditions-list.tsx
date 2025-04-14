@@ -3,7 +3,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Search, ChevronRight } from 'lucide-react';
 import { getConditionsAction } from '@/app/actions/conditions';
