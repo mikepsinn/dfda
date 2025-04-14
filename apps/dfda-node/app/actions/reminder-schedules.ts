@@ -342,6 +342,9 @@ export type PendingReminderTask = {
   userVariableId: string;
   variableName: string;
   globalVariableId: string;
+  variableCategory: string | null;
+  unitId: string | null;
+  unitName: string | null;
   title: string | null;
   message: string | null;
   dueAt: string; // The original next_trigger_at timestamp
@@ -375,7 +378,14 @@ export async function getPendingReminderTasksAction(
       rrule,
       user_variables!inner(
         global_variable_id,
-        global_variables!inner( name )
+        preferred_unit_id,
+        global_variables!inner(
+             name,
+             variable_category_id,
+             default_unit_id,
+             default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name ) 
+        ),
+        preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name )
       )
     `)
     .eq('user_id', userId)
@@ -386,8 +396,8 @@ export async function getPendingReminderTasksAction(
 
   if (error) {
     logger.error('Error fetching pending reminder schedules', { userId, error });
+    // Log the detailed error for easier debugging
     console.error("Supabase fetch error (pending reminders):", JSON.stringify(error, null, 2));
-    // Return empty array on error instead of throwing, page can still load
     return []; 
   }
 
@@ -395,21 +405,33 @@ export async function getPendingReminderTasksAction(
     return [];
   }
 
-  // Map to the defined task structure
-  const tasks: PendingReminderTask[] = schedules.map(s => ({
-    scheduleId: s.id,
-    userVariableId: s.user_variable_id,
-    // Access the name and global ID through the nested structure
-    variableName: s.user_variables?.global_variables?.name || 'Unknown Item',
-    globalVariableId: s.user_variables?.global_variable_id || '',
-    title: s.notification_title_template,
-    message: s.notification_message_template,
-    // Ensure next_trigger_at is treated as string
-    dueAt: s.next_trigger_at as string, 
-    timeOfDay: s.time_of_day,
-    timezone: s.timezone,
-    rrule: s.rrule,
-  }));
+  // Map to the defined task structure, adjusting for new aliases
+  const tasks: PendingReminderTask[] = schedules.map(s => {
+    const userVar = s.user_variables as any; // Use 'any' for easier access to aliased joins
+    const globalVar = userVar?.global_variables as any;
+    const preferredUnit = userVar?.preferred_unit as any;
+    const defaultUnit = globalVar?.default_unit as any;
+
+    // Determine the unit ID and name to use (prefer user's choice)
+    const resolvedUnitId = preferredUnit?.id || defaultUnit?.id || null;
+    const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit?.abbreviated_name || null;
+
+    return {
+        scheduleId: s.id,
+        userVariableId: s.user_variable_id,
+        variableName: globalVar?.name || 'Unknown Item',
+        globalVariableId: userVar?.global_variable_id || '',
+        variableCategory: globalVar?.variable_category_id || null,
+        unitId: resolvedUnitId,
+        unitName: resolvedUnitName,
+        title: s.notification_title_template,
+        message: s.notification_message_template,
+        dueAt: s.next_trigger_at as string, 
+        timeOfDay: s.time_of_day,
+        timezone: s.timezone,
+        rrule: s.rrule,
+    };
+  });
 
   logger.info(`Found ${tasks.length} pending reminder tasks`, { userId });
   return tasks;
