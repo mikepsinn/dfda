@@ -1,6 +1,5 @@
 "use server"
 
-import { revalidatePath } from "next/cache"
 import { logger } from "@/lib/logger"
 import { Database } from "@/lib/database.types"
 import { createClient } from "@/lib/supabase/server"

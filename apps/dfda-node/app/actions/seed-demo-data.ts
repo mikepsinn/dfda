@@ -98,7 +98,9 @@ export async function setupDemoUserData(userId: string, userType: DemoUserType) 
                     logger.warn("Could not find enrollment ID for submission link", { trialId: sub.trial_id_for_linking });
                     return null; 
                 }
-                return { ...(({ trial_id_for_linking, ...rest }) => rest)(sub), patient_id: userId, enrollment_id };
+                // Destructure and ignore trial_id_for_linking using underscore prefix
+                const { trial_id_for_linking: _ignored_trial_id, ...rest } = sub;
+                return { ...rest, patient_id: userId, enrollment_id };
             })
             .filter((sub: any) => sub !== null); 
         

@@ -147,7 +147,8 @@ export async function searchConditionsAction(query: string) {
 
     // Map to remove join artifacts
     const results = (conditions || []).map(item => {
-      const { conditions, ...globalVarData } = item; // Destructure inside map
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { conditions: _ignored, ...globalVarData } = item; // Destructure inside map, explicitly ignore conditions
       return globalVarData;
     });
     logger.info('Found conditions:', { count: results.length });

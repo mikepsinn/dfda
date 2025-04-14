@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -17,7 +17,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { createClient } from "@/lib/supabase/client"
-import { Input } from '@/components/ui/input'
 
 interface TreatmentSearchProps {
   onSelect: (treatment: { id: string; name: string }) => void
