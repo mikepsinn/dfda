@@ -173,20 +173,38 @@ export function TreatmentRatingDialog({
                    <>
                     {/* Effectiveness Rating */} 
                     <div className="grid gap-2">
-                        <Label htmlFor="effectiveness">Effectiveness (0-10) <span className="text-red-500">*</span></Label>
-                         <p className="text-xs text-muted-foreground">0 = Not effective, 10 = Very effective</p>
-                        <Select value={rating} onValueChange={setRating} required>
-                            <SelectTrigger className="w-full mt-1">
-                                <SelectValue placeholder="Rate effectiveness..." />
-                            </SelectTrigger>
-                            <SelectContent>
-                                {Array.from({ length: 11 }, (_, i) => (
-                                    <SelectItem key={i} value={i.toString()}> 
-                                        {i} - {i === 0 ? "None" : i === 10 ? "Very" : ""}
-                                    </SelectItem>
-                                ))}
-                            </SelectContent>
-                        </Select>
+                        <Label htmlFor="effectiveness">How much imporovement?<span className="text-red-500">*</span></Label>
+                         <p className="text-xs text-muted-foreground">Click a face to indicate how much you think this treatment improved your condition</p>
+                         {/* Face Rating Component - 5 Faces */}
+                         <div className="flex justify-between items-end pt-2 space-x-1 px-2"> {/* Use justify-between and add some padding */}
+                            {[ 
+                              { emoji: '😭', value: '0', label: 'No Improvement' },
+                              { emoji: '😟', value: '2.5', label: 'Slight Improvement' },
+                              { emoji: '😐', value: '5', label: 'Moderate Improvement' },
+                              { emoji: '😊', value: '7.5', label: 'Great Improvement' },
+                              { emoji: '😁', value: '10', label: 'Complete Improvement' },
+                            ].map(({ emoji, value, label }) => {
+                                const isSelected = rating === value;
+                                return (
+                                    <div key={value} className="flex flex-col items-center space-y-1 w-1/5"> {/* Give each item a width */} 
+                                        <Button
+                                            type="button" // Prevent form submission
+                                            variant={isSelected ? "secondary" : "ghost"}
+                                            size="icon"
+                                            onClick={() => setRating(value)}
+                                            className={`text-xl rounded-full p-0 transition-all duration-150 ease-in-out ${isSelected ? 'h-11 w-11 text-2xl' : 'h-9 w-9'}`} // Conditional size and bigger text
+                                            aria-label={`Rate effectiveness as ${value}: ${label}`}
+                                        >
+                                            {emoji}
+                                        </Button>
+                                        <span className={`text-xs text-center ${isSelected ? 'font-semibold text-primary' : 'text-muted-foreground'}`}> {/* Added text-center */}
+                                            {label}
+                                        </span>
+                                    </div>
+                                );
+                            })}
+                         </div>
+                         {/* End Face Rating Component */}
                     </div>
 
                     {/* Review Text */} 
