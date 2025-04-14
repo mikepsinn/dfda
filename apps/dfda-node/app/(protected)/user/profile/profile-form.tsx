@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { createClient } from "@/lib/supabase/client"
 import { useRouter } from "next/navigation"
+import { toast } from "@/components/ui/use-toast"
+import { logger } from "@/lib/logger"
 
 interface ProfileFormProps {
   initialData: any
@@ -18,34 +20,52 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     phone: initialData?.phone || "",
   })
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
+    setError(null)
+    logger.info("Updating user profile", { userId: initialData.id })
 
     try {
       const supabase = createClient()
 
-      const { data, error } = await supabase
+      const [firstName, ...lastNameParts] = formData.name.split(' ');
+      const lastName = lastNameParts.join(' ');
+
+      // First, update the auth user's metadata if needed (optional, depends on your setup)
+      // const { error: authError } = await supabase.auth.updateUser({
+      //   data: { 
+      //     first_name: firstName, // Use split name
+      //     last_name: lastName, // Use split name
+      //   }
+      // })
+      // if (authError) throw authError
+
+      // Then, update the profiles table
+      const { error: profileError } = await supabase
         .from("profiles")
         .update({
-          name: formData.name,
-          phone: formData.phone,
-          updated_at: new Date().toISOString(),
+          first_name: firstName, // Use split name
+          last_name: lastName, // Use split name
+          phone: formData.phone || null,
         })
         .eq("id", initialData.id)
 
-      if (error) throw error
+      if (profileError) throw profileError
 
-      // Refresh the page to show updated data
+      toast({ title: "Success", description: "Profile updated successfully." })
       router.refresh()
-    } catch (error) {
-      console.error("Error updating profile:", error)
+    } catch (error: any) {
+      logger.error('Error updating profile', { userId: initialData.id, error })
+      setError(error.message || "An unexpected error occurred.")
+      toast({ title: "Error", description: error.message || "Failed to update profile.", variant: "destructive" })
     } finally {
       setLoading(false)
     }
