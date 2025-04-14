@@ -13,13 +13,12 @@ import {
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ConditionCombobox } from "@/components/condition-combobox"
 import { createLogger } from '@/lib/logger'
 import type { Database } from '@/lib/database.types'
-// Import the updated server actions
 import { getRatingForPatientTreatmentPatientConditionAction, upsertTreatmentRatingAction } from '@/app/actions/treatment-ratings'
 import type { TreatmentRating, TreatmentRatingUpsertData } from '@/app/actions/treatment-ratings'
+import { FaceRatingInput } from '@/components/face-rating-input'
 
 const logger = createLogger('treatment-rating-dialog')
 
@@ -92,12 +91,18 @@ export function TreatmentRatingDialog({
         return;
     }
      if (!rating) {
-        toast({ title: "Missing Rating", description: "Please select an effectiveness rating (0-10).", variant: "destructive" });
+        toast({ title: "Missing Rating", description: "Please select an effectiveness rating using the faces.", variant: "destructive" });
         return;
     }
     
     setIsLoading(true);
-    const ratingValue = parseInt(rating, 10);
+    const ratingValue = parseFloat(rating);
+    if (isNaN(ratingValue)) {
+        logger.error('Invalid rating value before submit', { ratingState: rating });
+        toast({ title: "Invalid Rating", description: "Selected rating is invalid.", variant: "destructive" });
+        setIsLoading(false);
+        return;
+    }
     logger.info('Submitting rating', { patientTreatmentId: patientTreatment.id, patientConditionId: selectedPatientConditionId, rating: ratingValue });
 
     try {
@@ -171,41 +176,17 @@ export function TreatmentRatingDialog({
                {isFetchingExisting && <p className="text-sm text-muted-foreground">Loading existing rating...</p>}
                {!isFetchingExisting && (
                    <>
-                    {/* Effectiveness Rating */} 
-                    <div className="grid gap-2">
-                        <Label htmlFor="effectiveness">How much imporovement?<span className="text-red-500">*</span></Label>
-                         <p className="text-xs text-muted-foreground">Click a face to indicate how much you think this treatment improved your condition</p>
-                         {/* Face Rating Component - 5 Faces */}
-                         <div className="flex justify-between items-end pt-2 space-x-1 px-2"> {/* Use justify-between and add some padding */}
-                            {[ 
-                              { emoji: '😭', value: '0', label: 'No Improvement' },
-                              { emoji: '😟', value: '2.5', label: 'Slight Improvement' },
-                              { emoji: '😐', value: '5', label: 'Moderate Improvement' },
-                              { emoji: '😊', value: '7.5', label: 'Great Improvement' },
-                              { emoji: '😁', value: '10', label: 'Complete Improvement' },
-                            ].map(({ emoji, value, label }) => {
-                                const isSelected = rating === value;
-                                return (
-                                    <div key={value} className="flex flex-col items-center space-y-1 w-1/5"> {/* Give each item a width */} 
-                                        <Button
-                                            type="button" // Prevent form submission
-                                            variant={isSelected ? "secondary" : "ghost"}
-                                            size="icon"
-                                            onClick={() => setRating(value)}
-                                            className={`text-xl rounded-full p-0 transition-all duration-150 ease-in-out ${isSelected ? 'h-11 w-11 text-2xl' : 'h-9 w-9'}`} // Conditional size and bigger text
-                                            aria-label={`Rate effectiveness as ${value}: ${label}`}
-                                        >
-                                            {emoji}
-                                        </Button>
-                                        <span className={`text-xs text-center ${isSelected ? 'font-semibold text-primary' : 'text-muted-foreground'}`}> {/* Added text-center */}
-                                            {label}
-                                        </span>
-                                    </div>
-                                );
-                            })}
-                         </div>
-                         {/* End Face Rating Component */}
+                    {/* === Use FaceRatingInput Component === */}
+                    <div className="grid gap-1"> {/* Wrap in div for consistent spacing */} 
+                      <Label id="effectiveness-label" className="text-sm font-medium">Effectiveness Rating <span className="text-red-500">*</span></Label>
+                      <p className="text-xs text-muted-foreground">Click a face to indicate how much this treatment improved your condition.</p>
+                      <FaceRatingInput 
+                          labelId="effectiveness-label" 
+                          value={rating} 
+                          onValueChange={setRating} // Directly update state
+                      />
                     </div>
+                    {/* === End FaceRatingInput Component === */} 
 
                     {/* Review Text */} 
                     <div className="grid gap-2">
