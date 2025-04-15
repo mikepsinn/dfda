@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -23,13 +23,45 @@ import { logger } from '@/lib/logger'
 import { toast } from '@/components/ui/use-toast'
 import Image from 'next/image'
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { ReviewPrimaryStep } from './wizard-steps/ReviewPrimaryStep'
+import { ReviewNutritionStep } from './wizard-steps/ReviewNutritionStep'
+import { ReviewIngredientsStep } from './wizard-steps/ReviewIngredientsStep'
+import { ReviewUpcStep } from './wizard-steps/ReviewUpcStep'
+import { CaptureImageStep } from './wizard-steps/CaptureImageStep'
 
 // Define image types based on the plan
 const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
-type ImageType = typeof IMAGE_TYPES[number];
+export type ImageType = typeof IMAGE_TYPES[number];
 
 // Helper type for image state
 type ImageState = { file: File | null; previewUrl: string | null };
+
+// Define specific steps for the image analysis wizard
+export type ImageAnalysisStep = 
+  | 'capturePrimary'
+  | 'analyzingPrimary'    // Analyze only primary
+  | 'reviewPrimary'       // Show primary preview, base fields, offer next step
+  | 'captureNutrition'    // Triggered from reviewPrimary if food
+  | 'analyzingNutrition'  // Analyze primary + nutrition
+  | 'reviewNutrition'     // Show nutrition preview, nutrition fields, offer next step
+  | 'captureIngredients'  // Triggered from previous review
+  | 'analyzingIngredients'// Analyze primary + ingredients + others
+  | 'reviewIngredients'   // Show ingredients preview, ingredients list, offer next step
+  | 'captureUpc'          // Triggered from previous review
+  | 'analyzingUpc'        // Analyze primary + UPC + others
+  | 'reviewUpc'           // Show UPC preview, UPC field, offer next step
+  | 'finalReview'         // Show all previews and the full editable form
+  | 'saving'
+  | 'error';              // Generic error state for now
+
+// Runtime constant for step validation
+const ALL_IMAGE_ANALYSIS_STEPS: ImageAnalysisStep[] = [
+    'capturePrimary', 'analyzingPrimary', 'reviewPrimary',
+    'captureNutrition', 'analyzingNutrition', 'reviewNutrition',
+    'captureIngredients', 'analyzingIngredients', 'reviewIngredients',
+    'captureUpc', 'analyzingUpc', 'reviewUpc',
+    'finalReview', 'saving', 'error'
+];
 
 interface ImageAnalysisCaptureProps {
   userId: string
@@ -85,6 +117,10 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   const [imageStates, setImageStates] = useState<Partial<Record<ImageType, ImageState>>>({})
   // State for which image type is currently being captured/uploaded
   const [activeImageType, setActiveImageType] = useState<ImageType>('primary') 
+  // State for tracking wizard step
+  const [currentStep, setCurrentStep] = useState<ImageAnalysisStep>('capturePrimary');
+  // State to track the initial capture mode
+  const [captureMode, setCaptureMode] = useState<'upload' | 'webcam' | 'undetermined'>('undetermined');
   const [analysisResult, setAnalysisResult] = useState<AnalyzedImageResult | null>(null)
   const [analysisError, setAnalysisError] = useState<string | null>(null)
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -101,10 +137,64 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   // Form state now uses the full AnalyzedImageResult structure
   const [formData, setFormData] = useState<Partial<AnalyzedImageResult>>(initialFormData)
 
+  // Effect to link webcam stream to video element
+  useEffect(() => {
+    if (videoRef.current && webcamStream) {
+      videoRef.current.srcObject = webcamStream;
+    }
+    // Cleanup function to remove srcObject when stream is stopped or component unmounts
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.srcObject = null;
+      }
+    };
+  }, [webcamStream]); // Dependency array includes webcamStream
+
+  // Effect to automatically trigger analysis when entering an analyzing step
+  useEffect(() => {
+    const analyzingSteps: ImageAnalysisStep[] = [
+      'analyzingPrimary', 
+      'analyzingNutrition', 
+      'analyzingIngredients', 
+      'analyzingUpc'
+    ];
+
+    if (analyzingSteps.includes(currentStep)) {
+      // Determine if primary-only or full analysis is needed
+      const isPrimaryOnly = currentStep === 'analyzingPrimary';
+      
+      // Check if necessary images are present
+      let canAnalyze = false;
+      if (isPrimaryOnly && imageStates.primary?.file) {
+          canAnalyze = true;
+      } else if (!isPrimaryOnly) {
+          // For optional analysis, assume primary is needed + the relevant optional one
+          // More complex logic might be needed if analyzing combos is desired
+          const optionalType = activeImageType; // Type that triggered this analysis step
+          if (imageStates.primary?.file && imageStates[optionalType]?.file) {
+              canAnalyze = true;
+          }
+      }
+
+      if (canAnalyze) {
+        logger.info(`Auto-triggering analysis for step: ${currentStep}`, { isPrimaryOnly });
+        handleAnalyzeImages(isPrimaryOnly);
+      } else {
+          logger.warn(`Skipping analysis trigger for ${currentStep}: required images not found.`);
+          // Optional: Automatically go back if images are missing?
+          // setCurrentStep('capturePrimary'); // Or previous review step?
+      }
+    }
+    // Dependencies ensure this runs when step changes or relevant images are added/removed
+  }, [currentStep, imageStates]); 
+  // NOTE: Excluding handleAnalyzeImages intentionally to prevent loops if it changes identity
+
   // Reset state needs to clear multiple images and full form data
   const resetState = useCallback(() => {
     setImageStates({});
     setActiveImageType('primary');
+    setCurrentStep('capturePrimary'); // Reset step to initial
+    setCaptureMode('undetermined'); // Reset capture mode
     setAnalysisResult(null);
     setAnalysisError(null);
     setSaveError(null);
@@ -130,14 +220,25 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   // Handle file selection, associate with the active image type
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file && activeImageType) {
+    const typeToUpdate = activeImageType; // Capture active type before async ops
+    if (file && typeToUpdate) {
         const reader = new FileReader();
-      reader.onloadend = () => {
+        reader.onloadend = () => {
             setImageStates(prev => ({
                 ...prev,
-                [activeImageType]: { file: file, previewUrl: reader.result as string }
+                [typeToUpdate]: { file: file, previewUrl: reader.result as string }
             }));
-      }
+            // If primary image was just added, move to analysis step
+            if (typeToUpdate === 'primary') {
+                setCaptureMode('upload'); // Set mode
+                setCurrentStep('analyzingPrimary');
+            } else {
+                // If an optional image was added, go to its *analyzing* step
+                const analyzingStep = `analyzing${typeToUpdate.charAt(0).toUpperCase() + typeToUpdate.slice(1)}` as ImageAnalysisStep;
+                goToStep(analyzingStep);
+            }
+            // TODO: Trigger analysis for the new image? - Handled by new step transition
+        }
         reader.readAsDataURL(file);
          // Reset file input value so onChange fires again for the same file
          if (fileInputRef.current) {
@@ -150,19 +251,38 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   };
 
   // --- Analyze Image Action ---
-  const handleAnalyzeImages = async () => {
-    const filesToAnalyze = Object.entries(imageStates)
-      .filter(([/* type */, state]) => state?.file)
-      .map(([type, state]) => ({ type: type as ImageType, file: state!.file! }));
+  const handleAnalyzeImages = async (primaryOnly: boolean = false) => {
+    let filesToAnalyze: { type: ImageType, file: File }[];
 
-    if (filesToAnalyze.length === 0 || !imageStates.primary?.file) {
-      setAnalysisError("Primary image is required to start analysis.");
-      return;
+    if (primaryOnly) {
+        if (!imageStates.primary?.file) {
+            setAnalysisError("Primary image is required for initial analysis.");
+            setCurrentStep('capturePrimary'); // Go back if primary is missing
+            return;
+        }
+        filesToAnalyze = [{ type: 'primary', file: imageStates.primary.file }];
+    } else {
+        // Analyze all available images (for manual re-analysis or future use)
+        filesToAnalyze = Object.entries(imageStates)
+            .filter(([/* type */, state]) => state?.file)
+            .map(([type, state]) => ({ type: type as ImageType, file: state!.file! }));
+        
+        if (filesToAnalyze.length === 0) {
+            setAnalysisError("No images available to analyze.");
+            // Decide where to go - maybe stay in current step or review?
+            return; 
+        }
+        if (!imageStates.primary?.file) {
+            setAnalysisError("Primary image is required to start analysis.");
+            // If triggered manually without primary, what should happen? Error message is enough.
+            return;
+        }
     }
 
     setIsAnalyzing(true);
     setAnalysisError(null);
-    setAnalysisResult(null); // Clear previous results
+    // Keep previous results during re-analysis? Or clear? Let's clear.
+    // setAnalysisResult(null); 
 
     const analysisFormData = new FormData();
     filesToAnalyze.forEach(({ type, file }) => {
@@ -177,17 +297,42 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         setFormData({ 
             ...initialFormData, // Start clean
             ...result.data,
+            // Preserve any images already uploaded, in case analysis doesn't return all types
+            // ingredients: result.data.ingredients ?? formData.ingredients, // Merge logic might be needed?
+            // active_ingredients: result.data.active_ingredients ?? formData.active_ingredients,
+            // inactive_ingredients: result.data.inactive_ingredients ?? formData.inactive_ingredients,
         });
         toast({ title: "Analysis Complete", description: `Identified as ${result.data.type}: ${result.data.name}` });
+        
+        // Decide next step based on which analysis just ran
+        if (primaryOnly) {
+            setCurrentStep('reviewPrimary');
+      } else {
+            // Assume analysis was triggered for the activeImageType after it was added
+            const reviewStep = `review${activeImageType.charAt(0).toUpperCase() + activeImageType.slice(1)}` as ImageAnalysisStep;
+            // Use runtime constant for validation
+            if (ALL_IMAGE_ANALYSIS_STEPS.includes(reviewStep)) { 
+                 setCurrentStep(reviewStep);
+            } else {
+                 logger.error("Invalid review step determined after analysis", { reviewStep, activeImageType });
+                 setCurrentStep('finalReview'); // Fallback to final review
+            }
+        }
       } else {
         setAnalysisError(result.error);
         toast({ title: "Analysis Failed", description: result.error, variant: "destructive" });
+        // Stay in the current capture step or go back to previous review?
+        // For now, let's reset fully on failure
+        setCurrentStep('capturePrimary'); // Reset to start
       }
     } catch (err) {
       logger.error("Client-side error calling analyzeImageAction", { error: err });
       const message = err instanceof Error ? err.message : "An unexpected error occurred.";
       setAnalysisError(message);
       toast({ title: "Analysis Error", description: message, variant: "destructive" });
+      // Stay in the current capture step or go back to previous review?
+      // For now, let's reset fully on failure
+      setCurrentStep('capturePrimary'); // Reset to start
     } finally {
       setIsAnalyzing(false);
     }
@@ -220,6 +365,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     if (videoRef.current && canvasRef.current && activeImageType) {
         const video = videoRef.current;
         const canvas = canvasRef.current;
+        const typeToUpdate = activeImageType; // Capture active type
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
         const context = canvas.getContext('2d');
@@ -234,14 +380,24 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
             stopWebcam(); // Stop stream after capture
 
             const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const filename = `webcam-${activeImageType}-${timestamp}.jpg`;
+            const filename = `webcam-${typeToUpdate}-${timestamp}.jpg`;
             const capturedFile = dataURLtoFile(imageDataUrl, filename);
             
             if (capturedFile) {
                 setImageStates(prev => ({
                     ...prev,
-                    [activeImageType]: { file: capturedFile, previewUrl: imageDataUrl }
+                    [typeToUpdate]: { file: capturedFile, previewUrl: imageDataUrl }
                 }));
+                 // If primary image was just added, move to analysis step
+                 if (typeToUpdate === 'primary') {
+                    setCaptureMode('webcam'); // Set mode
+                    setCurrentStep('analyzingPrimary');
+                } else {
+                    // If an optional image was added, go to its *analyzing* step
+                    const analyzingStep = `analyzing${typeToUpdate.charAt(0).toUpperCase() + typeToUpdate.slice(1)}` as ImageAnalysisStep;
+                    goToStep(analyzingStep);
+                }
+                 // TODO: Trigger analysis for the new image? - Handled by new step transition
             } else {
                 toast({ title: "Capture Error", description: "Failed to process captured image.", variant: "destructive" });
             }
@@ -363,6 +519,69 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     });
   };
 
+  // Wrapper for the manual analyze button click
+  const triggerFullAnalysis = () => {
+    handleAnalyzeImages(false); // Call with primaryOnly = false
+  };
+
+  // --- Retry Analysis ---
+  const handleRetryAnalysis = () => {
+    logger.info('Retrying analysis with current images');
+    setCurrentStep('analyzingPrimary'); // Show loading spinner
+    // Use existing handler, ensuring it analyzes ALL current images
+    handleAnalyzeImages(false); 
+  };
+
+  // --- Wizard Navigation Helpers ---
+  
+  // Determines the next logical image capture step or final review
+  const determineNextStep = (currentData: Partial<AnalyzedImageResult>): ImageType | 'finalReview' => {
+    if (!currentData.type) return 'finalReview'; // Should have type by now
+
+    const relevantOptionalTypes: ImageType[] = [];
+    if (currentData.type === 'food') {
+      relevantOptionalTypes.push('nutrition', 'ingredients', 'upc');
+    } else if (currentData.type === 'treatment') {
+      relevantOptionalTypes.push('ingredients', 'upc'); // Dosage/Inactive/Active all under ingredients image
+    } else { // 'other'
+      relevantOptionalTypes.push('upc');
+    }
+
+    // Find the first relevant optional type that hasn't been added yet
+    for (const type of relevantOptionalTypes) {
+      if (!imageStates[type]) {
+        return type; // Return the type name (e.g., 'nutrition')
+      }
+    }
+
+    return 'finalReview'; // All relevant optional images are added
+  };
+
+  // Handles transitioning between wizard steps
+  const goToStep = (step: ImageAnalysisStep, nextImageType?: ImageType) => {
+     logger.debug(`Transitioning to step: ${step}`, { nextImageType });
+     if (nextImageType) {
+        setActiveImageType(nextImageType); // Set the target image type for capture steps
+     }
+     setCurrentStep(step);
+  };
+
+  // Handles going back to recapture an image
+  const retakeImage = (type: ImageType) => {
+    // Clear the specific image state
+    setImageStates(prev => {
+      const newState = { ...prev };
+      delete newState[type];
+      return newState;
+    });
+
+    // Determine the correct capture step based on type
+    const captureStep = type === 'primary' ? 'capturePrimary' : (`capture${type.charAt(0).toUpperCase() + type.slice(1)}` as ImageAnalysisStep);
+    
+    logger.info(`Retaking image for type: ${type}, going to step: ${captureStep}`);
+    goToStep(captureStep, type); // Go to the capture step for this image type
+  };
+
   // --- Save Action ---
   const handleSave = async () => {
     // Validate required base fields from formData
@@ -390,6 +609,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     
     setIsSaving(true);
     setSaveError(null);
+    setCurrentStep('saving'); // Set step to saving
 
     const requestFormData = new FormData();
     requestFormData.append('userId', userId);
@@ -625,6 +845,65 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     );
   };
 
+  // --- Helper Function to Render Image Capture Buttons --- 
+  // Extracting button rendering logic to reuse it
+  function renderImageCaptureControls(type: ImageType) {
+     const isPrimary = type === 'primary';
+     // Only show webcam button if not active for the current type
+     const showWebcamButton = !isWebcamActive || activeImageType !== type;
+
+     return (
+        <div className="w-full max-w-xs space-y-2">
+             {imageStates[type]?.previewUrl && (
+                 <div className="relative w-full h-32 mt-1">
+                    <Image 
+                        src={imageStates[type]!.previewUrl!} 
+                        alt={`${type} preview`} 
+                        fill
+                        className="rounded-md border object-contain bg-background" 
+                        sizes="(max-width: 768px) 50vw, 250px"
+                    />
+                     <Button variant="destructive" size="icon" onClick={() => removeImage(type)} disabled={isSaving || isAnalyzing || isWebcamActive} className="absolute top-1 right-1 z-10 h-6 w-6 p-1" aria-label={`Remove ${type} image`}>
+                        <Trash2 className="h-4 w-4" />
+                     </Button>
+                </div>
+             )}
+
+             {!imageStates[type] && isWebcamActive && activeImageType === type && (
+                <div className="relative mt-1 border rounded-md overflow-hidden bg-black">
+                    <video
+                        ref={videoRef}
+                        autoPlay
+                        playsInline
+                        muted
+                        className="w-full h-auto max-h-40"
+                        style={{ transform: 'scaleX(-1)' }} 
+                    />
+                    <Button onClick={captureImage} size="sm" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 z-10" aria-label="Capture image">
+                        Capture
+                    </Button>
+                    <Button onClick={stopWebcam} variant="destructive" size="sm" className="absolute top-1 right-1 z-10 p-1 h-auto" aria-label="Stop webcam">
+                        <Trash2 className="h-3 w-3" />
+                    </Button>
+                </div>
+            )}
+
+            {!imageStates[type] && (!isWebcamActive || activeImageType !== type) && (
+                <div className="flex gap-2 mt-1">
+                    <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={isAnalyzing || isSaving || isWebcamActive} className="flex-1">
+                        <Upload className="mr-1.5 h-3.5 w-3.5" /> Upload
+                    </Button>
+                     {showWebcamButton && (
+                        <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving || isWebcamActive} className="flex-1">
+                            <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
+                        </Button>
+                    )}
+                </div>
+            )}
+            
+        </div>
+    );
+ }
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { 
@@ -647,124 +926,186 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
           </DialogDescription>
         </DialogHeader>
         
-        {/* Hidden file input */}
+        {/* Hidden file input - Keep accessible */} 
           <Input
             id="image-upload-input"
             type="file"
             accept="image/*"
-            capture="environment"
+          capture="environment"
             ref={fileInputRef}
             onChange={handleFileChange}
-            className="hidden"
-            disabled={isAnalyzing || isSaving || isWebcamActive} 
-          />
+          className="hidden"
+          disabled={isAnalyzing || isSaving || isWebcamActive} 
+        />
+        {/* Hidden Canvas - Keep accessible */}
+        <canvas ref={canvasRef} style={{ display: 'none' }} />
 
-        {/* Main Content Area */} 
+        {/* Main Content Area - Now driven by currentStep */} 
         <ScrollArea className="h-[60vh] p-1">
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Left Column: Image Management */} 
-            <div className="space-y-4">
-                 <h3 className="text-lg font-semibold">Images</h3>
-                 {IMAGE_TYPES.map((type) => {
-                    const image = imageStates[type];
-                    const isAvailable = availableImageTypes.includes(type);
-                    // Only show add button if type is available and image not already added
-                    const showAddButton = isAvailable && !image;
-                    // Don't show Add button for primary if webcam is active for it
-                    const disableAdd = isWebcamActive && activeImageType === type;
-                    return (
+          {currentStep === 'capturePrimary' && (
+            <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
+              <h3 className="text-lg font-semibold">Step 1: Add Primary Image</h3>
+              <p className="text-sm text-muted-foreground text-center">Upload or use webcam for the main item image (e.g., front of package).</p>
+              {renderImageCaptureControls('primary')}
+              {imageStates.primary?.previewUrl && (
+                 <div className="relative w-48 h-48 mt-4">
+                    <Image 
+                        src={imageStates.primary.previewUrl} 
+                        alt={`primary preview`} 
+                        fill
+                        className="rounded-md border object-contain bg-background" 
+                        sizes="200px"
+                    />
+                 </div>
+                )}
+          </div>
+          )}
+
+          {currentStep === 'analyzingPrimary' && (
+            <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
+              <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              <p className="text-lg font-semibold">Analyzing Primary Image...</p>
+              <p className="text-sm text-muted-foreground">Extracting item details.</p>
+            </div>
+          )}
+
+          {currentStep === 'reviewPrimary' && analysisResult && (
+            <ReviewPrimaryStep 
+              formData={formData}
+              primaryImagePreview={imageStates.primary?.previewUrl}
+              isSaving={isSaving}
+              isAnalyzing={isAnalyzing}
+              handleFormChange={handleFormChange}
+              handleSelectChange={handleSelectChange}
+              determineNextStep={determineNextStep}
+              goToStep={goToStep}
+              retakeImage={retakeImage}
+            />
+          )}
+
+          {currentStep === 'captureNutrition' && (
+             <CaptureImageStep 
+                stepTitle="Step 3: Add Nutrition Facts Image"
+                stepDescription="Add an image of the nutrition facts label."
+                imageType='nutrition'
+                isSaving={isSaving}
+                isAnalyzing={isAnalyzing}
+                isWebcamActive={isWebcamActive}
+                captureMode={captureMode}
+                renderImageCaptureControls={renderImageCaptureControls}
+                goToStep={goToStep}
+             />
+          )}
+
+          {currentStep === 'reviewNutrition' && analysisResult && (
+             <ReviewNutritionStep 
+                formData={formData}
+                nutritionImagePreview={imageStates.nutrition?.previewUrl}
+                isSaving={isSaving}
+                isAnalyzing={isAnalyzing}
+                handleNumericFormChange={handleNumericFormChange}
+                handleFormChange={handleFormChange}
+                determineNextStep={determineNextStep}
+                goToStep={goToStep}
+                retakeImage={retakeImage}
+             />
+          )}
+
+          {currentStep === 'captureIngredients' && (
+             <CaptureImageStep 
+                 stepTitle="Step 5: Add Ingredients Image"
+                 stepDescription="Add image of the ingredients list (and dosage if applicable)."
+                 imageType='ingredients'
+                 isSaving={isSaving}
+                 isAnalyzing={isAnalyzing}
+                 isWebcamActive={isWebcamActive}
+                 captureMode={captureMode}
+                 renderImageCaptureControls={renderImageCaptureControls}
+                 goToStep={goToStep}
+             />
+          )}
+
+          {currentStep === 'reviewIngredients' && analysisResult && (
+             <ReviewIngredientsStep 
+                formData={formData}
+                ingredientsImagePreview={imageStates.ingredients?.previewUrl}
+                isSaving={isSaving}
+                isAnalyzing={isAnalyzing}
+                handleFormChange={handleFormChange}
+                handleIngredientChange={handleIngredientChange}
+                addIngredient={addIngredient}
+                removeIngredient={removeIngredient}
+                determineNextStep={determineNextStep}
+                goToStep={goToStep}
+                retakeImage={retakeImage}
+             />
+          )}
+
+          {currentStep === 'captureUpc' && (
+             <CaptureImageStep 
+                 stepTitle="Step 7: Add UPC Image"
+                 stepDescription="Add image of the barcode (UPC)."
+                 imageType='upc'
+                 isSaving={isSaving}
+                 isAnalyzing={isAnalyzing}
+                 isWebcamActive={isWebcamActive}
+                 captureMode={captureMode}
+                 renderImageCaptureControls={renderImageCaptureControls}
+                 goToStep={goToStep}
+             />
+          )}
+
+           {currentStep === 'reviewUpc' && analysisResult && (
+             <ReviewUpcStep 
+                formData={formData}
+                upcImagePreview={imageStates.upc?.previewUrl}
+                isSaving={isSaving}
+                isAnalyzing={isAnalyzing}
+                handleFormChange={handleFormChange}
+                goToStep={goToStep}
+                retakeImage={retakeImage}
+             />
+          )}
+
+          {currentStep === 'finalReview' && (
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Left Column: Image Previews */}
+                 <div className="space-y-4">
+                    <h3 className="text-lg font-semibold">Images</h3>
+                    {IMAGE_TYPES.filter(type => imageStates[type]).map((type) => (
                         <div key={type} className="border p-3 rounded-md space-y-2 bg-muted/30">
                            <div className="flex justify-between items-center">
-                             <Label htmlFor={`image-${type}`} className="capitalize font-medium flex items-center">
-                                <ImageIcon className="mr-2 h-4 w-4 text-muted-foreground"/> 
-                                {type} {type === 'primary' ? '*' : ''}
+                             <Label htmlFor={`image-review-${type}`} className="capitalize font-medium flex items-center">
+                                <ImageIcon className="mr-2 h-4 w-4 text-muted-foreground"/> {type}
                              </Label>
-                             {image && (
-                                <Button variant="ghost" size="sm" onClick={() => removeImage(type)} aria-label={`Remove ${type} image`}>
-                                    <Trash2 className="h-4 w-4" />
-                  </Button>
-              )}
+                              <Button variant="ghost" size="sm" onClick={() => removeImage(type)} aria-label={`Remove ${type} image`}>
+                                <Trash2 className="h-4 w-4" />
+                              </Button>
                            </div>
-                           {image?.previewUrl && (
+                           {imageStates[type]?.previewUrl && (
                              <div className="relative w-full h-32 mt-1">
                                 <Image 
-                                    src={image.previewUrl} 
+                                    src={imageStates[type]!.previewUrl!} 
                                     alt={`${type} preview`} 
                                     fill
                                     className="rounded-md border object-contain bg-background" 
                                     sizes="(max-width: 768px) 50vw, 250px"
                                 />
-          </div>
+                              </div>
                            )}
-                            {!image && isWebcamActive && activeImageType === type && (
-                                <div className="relative mt-1 border rounded-md overflow-hidden bg-black">
-                  <video
-                      ref={videoRef}
-                      autoPlay
-                      playsInline
-                                        muted
-                                        className="w-full h-auto max-h-40"
-                                        style={{ transform: 'scaleX(-1)' }} 
-                  />
-                                    <Button onClick={captureImage} size="sm" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 z-10" aria-label="Capture image">
-                          Capture
-                      </Button>
-                                     <Button onClick={stopWebcam} variant="destructive" size="sm" className="absolute top-1 right-1 z-10 p-1 h-auto" aria-label="Stop webcam">
-                                        <Trash2 className="h-3 w-3" />
-                                    </Button>
-              </div>
-          )}
-                            {showAddButton && !disableAdd && (
-                                <div className="flex gap-2 mt-1">
-                                    <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={isAnalyzing || isSaving} className="flex-1">
-                                        <Upload className="mr-1.5 h-3.5 w-3.5" /> Upload
-                                    </Button>
-                                     {/* Enable webcam only for types where it makes sense? Primarily for 'primary'? */} 
-                                    {/* <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving || isWebcamActive} className="flex-1">
-                                        <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
-                                    </Button> */} 
-                                    {/* Simplified: Only show webcam button if not active */} 
-                                    {!isWebcamActive && (
-                                        <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving} className="flex-1">
-                                            <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
-                </Button>
-              )}
-            </div>
-          )}
-                            {!isAvailable && !image && (
-                                <p className="text-xs text-muted-foreground italic">(Upload primary image first)</p>
-                            )}
-            </div>
-                    );
-                 })}
-                 {/* Analyze Button */} 
-                 <Button 
-                    onClick={handleAnalyzeImages} 
-                    disabled={isAnalyzing || isSaving || !imageStates.primary?.file} 
-                    className="w-full mt-4"
-                    >
-                    {isAnalyzing ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-                    Analyze Image(s)
-                 </Button>
-          {analysisError && (
-                    <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
-              <span>Analysis Error: {analysisError}</span>
-            </div>
-          )}
-            </div>
-
-            {/* Right Column: Form Fields */} 
-            <div className="space-y-3">
-                 <h3 className="text-lg font-semibold">Extracted Details</h3>
-                 {/* Type Selection - Always show if analysis hasn't happened or allows override */} 
+                        </div>
+                    ))}
+                    {/* Optionally add buttons here to go back and add more images? */} 
+                 </div>
+                {/* Right Column: Full Form */} 
+                 <div className="space-y-3">
+                     <h3 className="text-lg font-semibold">Details</h3>
+                     {/* Type Selection - Allow final confirmation/change */}
                <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="type" className="text-right">Type*</Label>
+                        <Label htmlFor="type-review" className="text-right">Type*</Label>
                   <Select 
-                    name="type"
-                    value={formData.type || ''} 
-                    onValueChange={handleSelectChange}
-                    disabled={isSaving}
+                            name="type" value={formData.type || ''} 
+                            onValueChange={handleSelectChange} disabled={isSaving}
                   >
                     <SelectTrigger className="col-span-3">
                        <SelectValue placeholder="Select type..." />
@@ -776,14 +1117,12 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                     </SelectContent>
                   </Select>
                 </div>
-
-                {/* Render specific fields based on selected type */} 
-                {formData.type ? renderFormFields() : (
-                    <p className="text-sm text-muted-foreground italic text-center py-4">
-                        {analysisResult ? "Edit the extracted details below." : "Select a type or analyze images to see details."}
-                    </p>
-          )}
-
+                     {/* Render the actual form fields using the existing function */}
+                     {formData.type ? renderFormFields() : (
+                        <p className="text-sm text-muted-foreground italic text-center py-4">
+                            Select a type to see details.
+                        </p>
+                    )}
           {saveError && (
             <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
               <AlertCircle className="h-4 w-4 flex-shrink-0" />
@@ -791,23 +1130,39 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
             </div>
           )}
         </div>
-         </div>
-         {/* Hidden Canvas */} 
-         <canvas ref={canvasRef} style={{ display: 'none' }} />
+            </div>
+          )}
+          
+          {currentStep === 'saving' && (
+             <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
+              <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              <p className="text-lg font-semibold">Saving...</p>
+            </div>
+          )}
+
         </ScrollArea>
 
         <DialogFooter className="mt-4 pt-4 border-t">
+          {/* Close Button - Always available unless saving */} 
           <DialogClose asChild>
-            <Button type="button" variant="outline" disabled={isSaving}>Cancel</Button>
+            <Button 
+              type="button" 
+              variant="outline" 
+              disabled={isSaving || isAnalyzing}
+              onClick={resetState} // Ensure reset on explicit cancel too
+            >Cancel</Button>
           </DialogClose>
+
+          {/* finalReview step button remains */}
+          {currentStep === 'finalReview' && (
           <Button 
             type="button" 
             onClick={handleSave} 
-            disabled={isAnalyzing || isSaving || !formData.type || !formData.name || Object.keys(imageStates).length === 0}
+              disabled={isAnalyzing || isSaving || !formData.type || !formData.name || Object.keys(imageStates).length === 0}
            >
-            {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-            Save Variable
+              {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Save Variable'} 
           </Button>
+          )}
         </DialogFooter>
       </DialogContent>
     </Dialog>
