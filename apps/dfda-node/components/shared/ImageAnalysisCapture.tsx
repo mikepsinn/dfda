@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -29,6 +29,27 @@ interface ImageAnalysisCaptureProps {
   onSaveSuccess?: (data: AnalyzedImageResult) => void // Optional callback after successful save
 }
 
+// Helper function to convert Data URL to File object
+function dataURLtoFile(dataurl: string, filename: string): File | null {
+    try {
+        const arr = dataurl.split(',');
+        if (arr.length < 2) return null;
+        const mimeMatch = arr[0].match(/:(.*?);/);
+        if (!mimeMatch) return null;
+        const mime = mimeMatch[1];
+        const bstr = atob(arr[1]);
+        let n = bstr.length;
+        const u8arr = new Uint8Array(n);
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new File([u8arr], filename, { type: mime });
+    } catch (error) {
+        logger.error("Error converting data URL to File", { error });
+        return null;
+    }
+}
+
 export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCaptureProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
@@ -40,8 +61,34 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   const [isSaving, setIsSaving] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
+  // Webcam state
+  const [isWebcamActive, setIsWebcamActive] = useState(false)
+  const [webcamStream, setWebcamStream] = useState<MediaStream | null>(null)
+  // Use previewUrl for both uploaded and captured images
+  // const [capturedImageDataUrl, setCapturedImageDataUrl] = useState<string | null>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null) // For capturing the frame
+
   // Form state for editing analysis results
   const [formData, setFormData] = useState<Partial<AnalyzedImageResult & { type: 'food' | 'treatment' | 'other' | undefined }>>({ type: undefined, name: '', details: '' })
+
+  const [dataKey, setDataKey] = useState(Date.now()) // Keep client-side refresh key if needed
+
+  // Add state to track the source of the current preview image
+  const [imageSource, setImageSource] = useState<'upload' | 'webcam' | null>(null);
+
+  // Effect to handle webcam stream connection
+  useEffect(() => {
+    if (isWebcamActive && webcamStream && videoRef.current) {
+      videoRef.current.srcObject = webcamStream
+    }
+    // Cleanup: Stop stream when component unmounts or webcam is deactivated
+    return () => {
+      if (webcamStream) {
+        webcamStream.getTracks().forEach(track => track.stop())
+      }
+    }
+  }, [isWebcamActive, webcamStream])
 
   const resetState = () => {
     setSelectedFile(null)
@@ -56,13 +103,28 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
     }
+    // Stop webcam if active
+    if (webcamStream) {
+      webcamStream.getTracks().forEach(track => track.stop());
+      setWebcamStream(null);
+    }
+    setIsWebcamActive(false); // Ensure webcam is marked inactive
+    setImageSource(null); // Reset image source
   }
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Stop webcam if user chooses to upload a file instead
+    if (webcamStream) {
+      webcamStream.getTracks().forEach(track => track.stop());
+      setWebcamStream(null);
+      setIsWebcamActive(false);
+    }
+
     const file = event.target.files?.[0]
     if (file) {
       resetState() // Reset everything when a new file is chosen
       setSelectedFile(file)
+      setImageSource('upload'); // Set source to upload
       setFormData({ type: undefined, name: '', details: '' }) // Clear form too
       const reader = new FileReader()
       reader.onloadend = () => {
@@ -181,8 +243,120 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     }
   }
 
+  // Function to handle retaking a photo from webcam
+  const handleRetake = () => {
+    setPreviewUrl(null);
+    setSelectedFile(null);
+    setAnalysisResult(null); // Clear previous analysis
+    setAnalysisError(null);
+    setFormData({ type: undefined, name: '', details: '' }); // Clear form data
+    // Restart the webcam by calling requestWebcam directly
+    requestWebcam(); 
+  }
+
+  // Specific function to request webcam (extracted from toggleWebcam)
+  const requestWebcam = async () => {
+     try {
+        resetState(); // Ensure clean state before requesting
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        setWebcamStream(stream);
+        setIsWebcamActive(true);
+      } catch (err) {
+        logger.error("Error accessing webcam", { error: err });
+        let message = "Could not access webcam.";
+        if (err instanceof Error) {
+          if (err.name === "NotAllowedError") {
+            message = "Webcam permission denied. Please allow access in your browser settings.";
+          } else if (err.name === "NotFoundError") {
+            message = "No webcam found. Please ensure a webcam is connected and enabled.";
+          } else {
+            message = `Error: ${err.message}`;
+          }
+        }
+        toast({ 
+          title: "Webcam Error", 
+          description: message, 
+          variant: "destructive",
+          duration: 5000
+        });
+        setIsWebcamActive(false);
+      }
+  };
+  
+  // Updated toggleWebcam to use requestWebcam
+   const toggleWebcam = async () => {
+    if (isWebcamActive) {
+      // Stop existing stream and reset state
+      resetState(); 
+    } else {
+      // Request webcam access
+      await requestWebcam();
+    }
+  };
+
+  const captureImage = () => {
+    if (videoRef.current && canvasRef.current) {
+      const video = videoRef.current;
+      const canvas = canvasRef.current;
+      
+      // Match canvas size to video display size
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      
+      const context = canvas.getContext('2d');
+      if (context) {
+        // Flip the canvas context horizontally to match the video feed
+        context.translate(canvas.width, 0);
+        context.scale(-1, 1);
+        
+        // Draw the current video frame onto the flipped canvas
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        // Reset the transform so the data URL isn't flipped
+        context.setTransform(1, 0, 0, 1, 0, 0);
+
+        // Get the image data URL (e.g., JPEG)
+        const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9); // Quality 0.9
+        
+        // Stop the webcam stream
+        webcamStream?.getTracks().forEach(track => track.stop());
+        setWebcamStream(null);
+        setIsWebcamActive(false);
+        
+        // Set the preview
+        setPreviewUrl(imageDataUrl);
+        
+        // Convert data URL to File and set it
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const filename = `webcam-capture-${timestamp}.jpg`;
+        const capturedFile = dataURLtoFile(imageDataUrl, filename);
+        
+        if (capturedFile) {
+            setSelectedFile(capturedFile);
+            // Automatically trigger analysis
+            handleAnalyzeImage(capturedFile);
+        } else {
+            toast({ title: "Capture Error", description: "Failed to process captured image.", variant: "destructive" });
+            resetState(); // Reset if file conversion fails
+        }
+        setImageSource('webcam'); // Set source to webcam
+      } else {
+          toast({ title: "Capture Error", description: "Could not get canvas context.", variant: "destructive" });
+          resetState();
+      }
+    } else {
+        toast({ title: "Capture Error", description: "Webcam components not ready.", variant: "destructive" });
+        resetState();
+    }
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => { setIsOpen(open); if (!open) resetState(); }}>
+    <Dialog open={isOpen} onOpenChange={(open) => { 
+        setIsOpen(open); 
+        if (!open) { 
+            resetState(); // Call resetState on close
+        } 
+    }}>
       <DialogTrigger asChild>
         <Button variant="outline">
           <Camera className="mr-2 h-4 w-4" /> Add Item via Image
@@ -211,25 +385,85 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
             className="hidden" // Hide the default input
             disabled={isAnalyzing || isSaving} // Disable while busy
           />
-          <Button
-            variant="outline"
-            onClick={() => fileInputRef.current?.click()} // Trigger hidden input
-            disabled={isAnalyzing || isSaving}
-            aria-label="Upload or take picture"
-          >
-            <Upload className="mr-2 h-4 w-4" />
-            {selectedFile ? `Change Image (${selectedFile.name.substring(0, 20)}...)` : "Upload or Take Picture"}
-          </Button>
+          {/* Buttons Container */}
+          <div className="flex flex-col sm:flex-row gap-2">
+              {/* Upload Button - Only show if webcam is NOT active */}
+              {!isWebcamActive && (
+                  <Button
+                      variant="outline"
+                      onClick={() => fileInputRef.current?.click()} // Trigger hidden input
+                      disabled={isAnalyzing || isSaving}
+                      aria-label="Upload picture"
+                      className="flex-1"
+                  >
+                      <Upload className="mr-2 h-4 w-4" />
+                      {selectedFile ? `Change Image (${selectedFile.name.substring(0, 20)}...)` : "Upload Picture"}
+                  </Button>
+              )}
+              {/* Webcam Button - Toggle webcam on/off */}
+              <Button
+                  variant="outline"
+                  onClick={() => toggleWebcam()} // We will define this function next
+                  disabled={isAnalyzing || isSaving}
+                  aria-label={isWebcamActive ? "Stop Webcam" : "Use Webcam"}
+                  className="flex-1"
+              >
+                  <Camera className="mr-2 h-4 w-4" />
+                  {isWebcamActive ? "Stop Webcam" : "Use Webcam"}
+              </Button>
+          </div>
 
+          {/* Webcam Video Feed (only visible when active) */}
+          {isWebcamActive && (
+              <div className="relative mt-4 border rounded-md overflow-hidden"> {/* Container for video */}
+                  <video
+                      ref={videoRef}
+                      autoPlay
+                      playsInline
+                      muted // Mute to avoid feedback loop if mic is captured
+                      className="w-full h-auto" // Let video determine aspect ratio
+                      style={{ transform: 'scaleX(-1)' }} // Mirror image for natural feel
+                  />
+                   {/* Capture Button (overlay or below video) - Shown when webcam is active & no preview */}
+                  {!previewUrl && (
+                      <Button
+                          onClick={() => captureImage()} // We will define this function next
+                          className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10"
+                          aria-label="Capture image"
+                      >
+                          Capture
+                      </Button>
+                  )}
+              </div>
+          )}
+
+          {/* Hidden Canvas for capturing */}
+          <canvas ref={canvasRef} style={{ display: 'none' }} />
+
+          {/* Preview Area with Retake Option */}
           {previewUrl && (
-            <div className="relative flex justify-center my-2 h-40">
-                <Image 
-                  src={previewUrl} 
-                  alt="Selected preview" 
-                  fill
-                  className="rounded-md border object-contain" 
-                  sizes="(max-width: 640px) 100vw, 480px"
-                />
+            <div className="relative flex flex-col items-center my-2"> {/* Use flex-col */}
+              <div className="relative w-full h-40"> {/* Container for Image */}
+                  <Image 
+                    src={previewUrl} 
+                    alt="Selected preview" 
+                    fill
+                    className="rounded-md border object-contain" 
+                    sizes="(max-width: 640px) 100vw, 480px"
+                  />
+              </div>
+              {/* Show Retake button only if the source was the webcam */}
+              {imageSource === 'webcam' && (
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  onClick={handleRetake}
+                  className="mt-2" // Add margin top
+                  disabled={isAnalyzing || isSaving}
+                >
+                    Retake Photo
+                </Button>
+              )}
             </div>
           )}
 
