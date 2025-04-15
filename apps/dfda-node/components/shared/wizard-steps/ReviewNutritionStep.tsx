@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
 import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
 import { ReviewStepLayout } from './ReviewStepLayout';
+import { logger } from '@/lib/logger';
 
 interface ReviewNutritionStepProps {
   formData: Partial<AnalyzedImageResult>;
@@ -39,6 +40,13 @@ export function ReviewNutritionStep({
   onSkipStepAndContinue,
 }: ReviewNutritionStepProps) {
 
+  // Add defensive check: Only render content if type is food
+  if (formData.type !== 'food') {
+    // This case ideally shouldn't be reached if parent logic is correct
+    logger.warn('ReviewNutritionStep rendered with non-food type', { type: formData.type });
+    return <div className="p-4 text-red-600">Error: Nutrition review is only applicable for food items.</div>; 
+  }
+
   const handleConfirmAndNext = () => {
     const next = determineNextStep(formData);
     if (next === 'finalReview') {
@@ -52,8 +60,8 @@ export function ReviewNutritionStep({
 
   return (
     <ReviewStepLayout
-        stepTitle="Step 4: Review Nutrition Details"
-        stepDescription="Confirm the nutrition facts extracted from the image."
+        stepTitle="Review Nutrition"
+        stepDescription="Confirm nutrition facts."
         imagePreviewUrl={nutritionImagePreview}
         imageType="nutrition"
         isSaving={isSaving}

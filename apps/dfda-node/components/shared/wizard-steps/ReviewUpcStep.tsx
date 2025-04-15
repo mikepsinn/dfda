@@ -47,8 +47,8 @@ export function ReviewUpcStep({
 
   return (
     <ReviewStepLayout
-        stepTitle="Step 8: Review UPC"
-        stepDescription="Confirm the UPC extracted from the image."
+        stepTitle="Review UPC"
+        stepDescription="Confirm barcode."
         imagePreviewUrl={upcImagePreview}
         imageType="upc"
         isSaving={isSaving}

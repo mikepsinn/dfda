@@ -62,8 +62,8 @@ export function ReviewIngredientsStep({
 
   return (
     <ReviewStepLayout
-        stepTitle="Step 6: Review Ingredients"
-        stepDescription="Confirm the ingredients (and dosage/supplement facts if applicable) extracted from the image."
+        stepTitle="Review Ingredients/Dosage"
+        stepDescription="Confirm ingredients/dosage extracted."
         imagePreviewUrl={ingredientsImagePreview}
         imageType="ingredients"
         isSaving={isSaving}

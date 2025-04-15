@@ -133,11 +133,11 @@ export async function analyzeImageAction(formData: FormData): Promise<
     const classificationPrompt = "Based ONLY on the primary image, classify the item by choosing ONE type: 'food', 'treatment', 'supplement', or 'other'. Examples: Cereal box -> 'food'; Prescription bottle -> 'treatment'; Vitamin C pills -> 'supplement'; Cleaning spray -> 'other'. Respond ONLY with the chosen type string.";
     
     const classificationMessages: CoreMessage[] = [{
-        role: 'user', 
-        content: [
+          role: 'user',
+          content: [
             { type: 'text', text: classificationPrompt },
-            { 
-                type: 'image', 
+            {
+              type: 'image',
                 image: imageFiles.primary.buffer, 
                 mimeType: imageFiles.primary.file.type 
             }

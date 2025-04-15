@@ -111,6 +111,24 @@ const initialFormData: Partial<AnalyzedImageResult> = {
     inactive_ingredients: [],
 }
 
+// --- Visually Hidden Component (for Accessibility) ---
+const VisuallyHidden = ({ children }: { children: React.ReactNode }) => (
+  <span style={{
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: '1px',
+    whiteSpace: 'nowrap',
+    wordWrap: 'normal',
+  }}>
+    {children}
+  </span>
+);
+
 export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCaptureProps) {
   const [isOpen, setIsOpen] = useState(false)
   // State for multiple images
@@ -459,63 +477,55 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   }
   };
 
-  // --- Ingredient List Management ---
+  // Handler for ingredient lists - ADD 'other_ingredients' to listKey union
   const handleIngredientChange = (
-    listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients',
+    listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients',
     index: number,
     field: 'name' | 'quantity' | 'unit',
     value: string | number | null
   ) => {
     setFormData(prev => {
-      if (!prev || !prev[listKey]) return prev; // Should not happen if type is set
-
-      const updatedList = [...prev[listKey]!]; // Create a copy
-      if (!updatedList[index]) return prev; // Index out of bounds
-
-      // Create a copy of the ingredient object to update
+      if (!prev || !prev[listKey]) return prev;
+      const updatedList = [...prev[listKey]!];
+      if (!updatedList[index]) return prev;
       const updatedIngredient = { ...updatedList[index] };
 
-      // Type assertion for safety, although structure should be consistent
+      // Update logic needs to handle fields based on listKey type
       if (field === 'name') {
           updatedIngredient.name = typeof value === 'string' ? value : '';
-      } else if (field === 'quantity') {
-          // Allow null for quantity
-          updatedIngredient.quantity = typeof value === 'number' ? value : null;
-      } else if (field === 'unit') {
-          updatedIngredient.unit = typeof value === 'string' ? value : null;
+      // Quantity/Unit only relevant for food ingredients and active supplement/treatment ingredients
+      } else if ((listKey === 'ingredients' || listKey === 'active_ingredients')) {
+          if (field === 'quantity') {
+              updatedIngredient.quantity = typeof value === 'number' ? value : null;
+          } else if (field === 'unit') {
+              updatedIngredient.unit = typeof value === 'string' ? value : null;
+          }
       }
 
       updatedList[index] = updatedIngredient;
-
-      return {
-        ...prev,
-        [listKey]: updatedList,
-      };
+      return { ...prev, [listKey]: updatedList };
     });
   };
 
-  const addIngredient = (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients') => {
+  // Add ingredient - ADD 'other_ingredients' to listKey union
+  const addIngredient = (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients') => {
     setFormData(prev => {
        if (!prev) return prev;
        const currentList = prev[listKey] || [];
-       return {
-        ...prev,
-        [listKey]: [
-            ...currentList,
-            { name: '', quantity: null, unit: null } // Add new empty ingredient
-        ]
-       };
+       // Determine structure based on listKey
+       const newIngredient = (listKey === 'inactive_ingredients' || listKey === 'other_ingredients') 
+                            ? { name: '' } // Only name needed
+                            : { name: '', quantity: null, unit: null }; // Full structure needed
+       return { ...prev, [listKey]: [ ...currentList, newIngredient ] };
     });
   };
 
- const removeIngredient = (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients', index: number) => {
+ // Remove ingredient - ADD 'other_ingredients' to listKey union
+ const removeIngredient = (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients', index: number) => {
     setFormData(prev => {
       if (!prev || !prev[listKey]) return prev;
-      const updatedList = prev[listKey]!.filter((_, i) => i !== index); // Filter out the item at index
-      return {
-        ...prev,
-        [listKey]: updatedList,
-      };
+      const updatedList = prev[listKey]!.filter((_, i) => i !== index); 
+      return { ...prev, [listKey]: updatedList };
     });
   };
 
@@ -558,12 +568,12 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   };
 
   // Handles transitioning between wizard steps
-  const goToStep = (step: ImageAnalysisStep, nextImageType?: ImageType) => {
+  const goToStep = (step: ImageType | ImageAnalysisStep, nextImageType?: ImageType) => {
      logger.debug(`Transitioning to step: ${step}`, { nextImageType });
      if (nextImageType) {
         setActiveImageType(nextImageType); // Set the target image type for capture steps
      }
-     setCurrentStep(step);
+     setCurrentStep(step as ImageAnalysisStep);
   };
 
   // Handles going back to recapture an image
@@ -708,7 +718,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         
         resetState(); // Reset after successful save
         setIsOpen(false); // Close dialog on success
-      } else {
+        } else {
         logger.error('Failed to save variable measurements', { error: response.error });
         setSaveError(response.error);
         toast({ title: "Save Failed", description: response.error, variant: "destructive" });
@@ -899,11 +909,15 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   };
 
   // --- Helper Function to Render Image Capture Buttons --- 
-  // Extracting button rendering logic to reuse it
+  // Modify to accept and use captureMode
   function renderImageCaptureControls(type: ImageType) {
      const isPrimary = type === 'primary';
-     // Only show webcam button if not active for the current type
-     const showWebcamButton = !isWebcamActive || activeImageType !== type;
+     // Use captureMode state to decide which buttons to show after the first step
+     const showUpload = captureMode === 'upload' || captureMode === 'undetermined';
+     const showWebcam = captureMode === 'webcam' || captureMode === 'undetermined';
+     // Only allow switching modes on the primary step *before* an image is added?
+     // Or maybe allow switch anytime? For now, let's stick to the initial mode.
+     const disableButtons = isAnalyzing || isSaving || isWebcamActive;
 
      return (
         <div className="w-full max-w-xs space-y-2">
@@ -916,7 +930,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                         className="rounded-md border object-contain bg-background" 
                         sizes="(max-width: 768px) 50vw, 250px"
                     />
-                     <Button variant="destructive" size="icon" onClick={() => removeImage(type)} disabled={isSaving || isAnalyzing || isWebcamActive} className="absolute top-1 right-1 z-10 h-6 w-6 p-1" aria-label={`Remove ${type} image`}>
+                     <Button variant="destructive" size="icon" onClick={() => removeImage(type)} disabled={disableButtons} className="absolute top-1 right-1 z-10 h-6 w-6 p-1" aria-label={`Remove ${type} image`}>
                         <Trash2 className="h-4 w-4" />
                      </Button>
                 </div>
@@ -941,13 +955,19 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 </div>
             )}
 
+            {/* Upload/Webcam Buttons (Conditional Rendering) */} 
+            {/* Only show buttons if no image preview and webcam isn't currently active for this type */} 
             {!imageStates[type] && (!isWebcamActive || activeImageType !== type) && (
                 <div className="flex gap-2 mt-1">
-                    <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={isAnalyzing || isSaving || isWebcamActive} className="flex-1">
-                        <Upload className="mr-1.5 h-3.5 w-3.5" /> Upload
-                    </Button>
-                     {showWebcamButton && (
-                        <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving || isWebcamActive} className="flex-1">
+                    {/* Show Upload button if mode is upload or undetermined */} 
+                    {showUpload && (
+                        <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={disableButtons} className="flex-1">
+                            <Upload className="mr-1.5 h-3.5 w-3.5" /> Upload
+                        </Button>
+                    )}
+                    {/* Show Webcam button if mode is webcam or undetermined */} 
+                     {showWebcam && (
+                        <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={disableButtons} className="flex-1">
                             <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
                         </Button>
                     )}
@@ -973,10 +993,15 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
       {/* Increased max width for more complex form */} 
       <DialogContent className="sm:max-w-2xl" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
         <DialogHeader>
-          <DialogTitle>Analyze Image and Add Variable</DialogTitle>
+          {/* Re-add Title/Description but wrap with VisuallyHidden */} 
+          <VisuallyHidden>
+            <DialogTitle>Add Variable via Image</DialogTitle>
+          </VisuallyHidden>
+          <VisuallyHidden>
           <DialogDescription>
-            Add images (front, nutrition, ingredients, UPC). Analyze to extract data, then edit and save the variable.
+              Follow the steps to add images, review details, and save.
           </DialogDescription>
+          </VisuallyHidden>
         </DialogHeader>
         
         {/* Hidden file input - Keep accessible */} 
@@ -997,21 +1022,25 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         <ScrollArea className="h-[60vh] p-1">
           {currentStep === 'capturePrimary' && (
             <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
-              <h3 className="text-lg font-semibold">Step 1: Add Primary Image</h3>
-              <p className="text-sm text-muted-foreground text-center">Upload or use webcam for the main item image (e.g., front of package).</p>
+              {/* Add back inner title/description for this step */}
+              <h3 className="text-lg font-semibold">Step 1: Add Main Item Image</h3>
+              <p className="text-sm text-muted-foreground text-center">Upload or use webcam for the front of package or main view.</p>
+              
               {renderImageCaptureControls('primary')}
+              
+              {/* Image preview can stay if desired */} 
               {imageStates.primary?.previewUrl && (
                  <div className="relative w-48 h-48 mt-4">
-                    <Image 
+                  <Image 
                         src={imageStates.primary.previewUrl} 
                         alt={`primary preview`} 
-                        fill
+                    fill
                         className="rounded-md border object-contain bg-background" 
                         sizes="200px"
-                    />
-                 </div>
-                )}
-          </div>
+                  />
+              </div>
+              )}
+            </div>
           )}
 
           {currentStep === 'analyzingPrimary' && (
@@ -1031,16 +1060,16 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
               handleFormChange={handleFormChange}
               handleSelectChange={handleSelectChange}
               determineNextStep={determineNextStep}
-              onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
               goToStep={goToStep}
               retakeImage={retakeImage}
+              onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
             />
           )}
 
           {currentStep === 'captureNutrition' && (
              <CaptureImageStep 
-                stepTitle="Step 3: Add Nutrition Facts Image"
-                stepDescription="Add an image of the nutrition facts label."
+                stepTitle="Add Nutrition Image"
+                stepDescription="Scan or upload nutrition facts."
                 imageType='nutrition'
                 isSaving={isSaving}
                 isAnalyzing={isAnalyzing}
@@ -1060,17 +1089,17 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 handleNumericFormChange={handleNumericFormChange}
                 handleFormChange={handleFormChange}
                 determineNextStep={determineNextStep}
-                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
-                onSkipStepAndContinue={handleSkipStepAndContinue}
                 goToStep={goToStep}
                 retakeImage={retakeImage}
+                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+                onSkipStepAndContinue={handleSkipStepAndContinue}
              />
           )}
 
           {currentStep === 'captureIngredients' && (
              <CaptureImageStep 
-                 stepTitle="Step 5: Add Ingredients Image"
-                 stepDescription="Add image of the ingredients list (and dosage if applicable)."
+                 stepTitle="Add Ingredients Image"
+                 stepDescription="Scan or upload ingredients/dosage."
                  imageType='ingredients'
                  isSaving={isSaving}
                  isAnalyzing={isAnalyzing}
@@ -1092,17 +1121,17 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 addIngredient={addIngredient}
                 removeIngredient={removeIngredient}
                 determineNextStep={determineNextStep}
-                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
-                onSkipStepAndContinue={handleSkipStepAndContinue}
                 goToStep={goToStep}
                 retakeImage={retakeImage}
+                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+                onSkipStepAndContinue={handleSkipStepAndContinue}
              />
           )}
 
           {currentStep === 'captureUpc' && (
              <CaptureImageStep 
-                 stepTitle="Step 7: Add UPC Image"
-                 stepDescription="Add image of the barcode (UPC)."
+                 stepTitle="Add UPC Image"
+                 stepDescription="Scan or upload barcode."
                  imageType='upc'
                  isSaving={isSaving}
                  isAnalyzing={isAnalyzing}
@@ -1120,10 +1149,10 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 isSaving={isSaving}
                 isAnalyzing={isAnalyzing}
                 handleFormChange={handleFormChange}
+                goToStep={goToStep}
+                retakeImage={retakeImage}
                 onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
                 onSkipStepAndContinue={handleConfirmAndGoToFinal}
-                goToStep={goToStep} 
-                retakeImage={retakeImage}
              />
           )}
 

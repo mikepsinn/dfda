@@ -51,8 +51,8 @@ export function ReviewPrimaryStep({
 
   return (
     <ReviewStepLayout
-        stepTitle="Step 2: Review Primary Details"
-        stepDescription="Confirm the details extracted from the primary image."
+        stepTitle="Review Primary"
+        stepDescription="Confirm extracted details."
         imagePreviewUrl={primaryImagePreview}
         imageType='primary'
         isSaving={isSaving}
@@ -78,6 +78,7 @@ export function ReviewPrimaryStep({
                 <SelectContent>
                     <SelectItem value="food">Food</SelectItem>
                     <SelectItem value="treatment">Treatment</SelectItem>
+                    <SelectItem value="supplement">Supplement</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
             </Select>
