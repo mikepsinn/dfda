@@ -32,24 +32,55 @@ export type ReminderScheduleDbData = Omit<Database['public']['Tables']['reminder
 
 // --- Server Actions ---
 
-// Get all reminder schedules for a global variable concept
-export async function getReminderSchedulesForUserVariableAction(globalVariableId: string): Promise<ReminderSchedule[]> {
+// Get all reminder schedules for a specific user and global variable concept
+export async function getReminderSchedulesForUserVariableAction(
+  userId: string, 
+  globalVariableId: string
+): Promise<ReminderSchedule[]> {
     const supabase = await createClient();
-    logger.info('Fetching reminder schedules', { globalVariableId });
+    logger.info('Fetching reminder schedules for user variable', { userId, globalVariableId });
 
-    if (!globalVariableId) {
-        logger.warn('getReminderSchedulesForUserVariableAction called with no globalVariableId');
+    if (!userId || !globalVariableId) {
+        logger.warn('getReminderSchedulesForUserVariableAction called with missing IDs', { userId, globalVariableId });
         return [];
     }
 
+    // 1. Find the specific user_variable record for this user and global variable
+    const { data: userVariable, error: uvError } = await supabase
+        .from('user_variables')
+        .select('id')
+        .eq('user_id', userId)
+        .eq('global_variable_id', globalVariableId)
+        .maybeSingle();
+
+    if (uvError) {
+        // Log error but don't necessarily throw, maybe the user just doesn't track it
+        logger.error('Error fetching user_variable for reminders', { userId, globalVariableId, error: uvError });
+        // If the error indicates an invalid UUID format for globalVariableId, we might have a data issue elsewhere
+        if (uvError.code === '22P02') {
+             logger.error('Potential data issue: globalVariableId passed is not a valid UUID if expected.', { globalVariableId });
+        }
+        // Return empty rather than throwing, as the user might not have this variable setup
+        return []; 
+    }
+
+    if (!userVariable) {
+        logger.info('No user_variable found for this user/global variable combination.', { userId, globalVariableId });
+        return []; // No user variable means no reminders
+    }
+
+    const userVariableId = userVariable.id;
+    logger.info('Found user_variable_id, fetching schedules', { userVariableId });
+
+    // 2. Fetch reminder schedules using the found user_variable.id
     const { data, error } = await supabase
         .from('reminder_schedules')
         .select('*')
-        .eq('user_variable_id', globalVariableId)
+        .eq('user_variable_id', userVariableId) // Use the correct ID now
         .order('created_at', { ascending: true });
 
     if (error) {
-        logger.error('Error fetching reminder schedules', { globalVariableId, error });
+        logger.error('Error fetching reminder schedules using user_variable_id', { userVariableId, error });
         throw new Error('Could not fetch reminder schedules.');
     }
     return data || [];

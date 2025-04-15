@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Plus } from "lucide-react"
+import { AddConditionDialog } from "../treatments/components/add-condition-dialog"
 
 export default async function PatientConditionsPage() {
   const user = await getServerUser()
@@ -22,13 +23,7 @@ export default async function PatientConditionsPage() {
             <CardTitle>Your Conditions</CardTitle>
             <CardDescription>View and manage your health conditions.</CardDescription>
           </div>
-          {/* Link to a page where conditions can be added/managed */}
-          <Link href="/patient/treatments"> {/* Adjust if a different page is used */} 
-            <Button variant="outline" size="sm">
-              <Plus className="mr-2 h-4 w-4" />
-              Manage Conditions
-            </Button>
-          </Link>
+          <AddConditionDialog userId={user.id} />
         </CardHeader>
         <CardContent>
           {conditions.length > 0 ? (

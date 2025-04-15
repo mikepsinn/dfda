@@ -125,6 +125,10 @@ export async function upsertTreatmentRatingAction(
     const supabaseClient = await createClient();
     await revalidateTreatmentPaths(supabaseClient, ratingData.patient_treatment_id);
 
+    // *** ADD REVALIDATION FOR THE CONDITION PAGE ***
+    logger.info("Revalidating condition page path", { path: `/patient/conditions/${ratingData.patient_condition_id}` });
+    revalidatePath(`/patient/conditions/${ratingData.patient_condition_id}`);
+
     return { success: true, data: upsertedRating, message: "Treatment rating saved successfully." }
 
   } catch (error) {
@@ -132,6 +136,60 @@ export async function upsertTreatmentRatingAction(
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
     return { success: false, error: errorMessage }
   }
+}
+
+// --- Specific Fetch Actions ---
+
+// Get ratings linked to a specific patient_condition_id, joining treatment name
+export type PatientConditionRating = TreatmentRating & { 
+  treatment_name: string | null 
+  treatment_id: string | null // Include global treatment ID
+}
+
+export async function getRatingsForPatientConditionAction(
+  patientConditionId: string
+): Promise<PatientConditionRating[]> {
+  const supabase = await createClient();
+  logger.info('Fetching ratings for patient condition (using LEFT joins)', { patientConditionId });
+
+  const { data, error } = await supabase
+    .from('treatment_ratings')
+    .select(`
+      *,
+      pt:patient_treatments!left(
+        id,
+        treatment:treatments!left(
+           id,
+           gv:global_variables!left( name )
+        )
+      )
+    `)
+    .eq('patient_condition_id', patientConditionId)
+    .is('deleted_at', null)
+    .order('updated_at', { ascending: false });
+
+  if (error) {
+    logger.error("Error fetching ratings for patient condition:", { patientConditionId, error });
+    console.error("Supabase Error Details:", JSON.stringify(error, null, 2));
+    throw new Error("Failed to fetch ratings for patient condition");
+  }
+   if (!data) return [];
+
+   // Map the data, extracting the treatment name and ID from the nested structure
+   logger.info(`Fetched ${data.length} raw rating rows`, { patientConditionId });
+   const result = data.map(row => {
+     const typedRow = row as any;
+     const treatmentName = typedRow.pt?.treatment?.gv?.name ?? null;
+     const globalTreatmentId = typedRow.pt?.treatment?.id ?? null;
+     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     const { pt, ...rest } = typedRow;
+     // Log each mapped rating
+     // logger.debug("Mapped rating:", { id: rest.id, patient_treatment_id: rest.patient_treatment_id, treatment_name: treatmentName });
+     return { ...rest, treatment_name: treatmentName, treatment_id: globalTreatmentId };
+   });
+
+   logger.info(`Returning ${result.length} mapped ratings`, { patientConditionId });
+   return result as PatientConditionRating[];
 }
 
 // --- OTHER ACTIONS (Delete, Helpful, GetByID) ---

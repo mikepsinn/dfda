@@ -9,15 +9,50 @@ import { logger } from '@/lib/logger'
 export type PatientTreatmentInsert = Database['public']['Tables']['patient_treatments']['Insert']
 export type UserVariableInsert = Database['public']['Tables']['user_variables']['Insert']
 
-// Simplified type for the input data structure
-interface SelectedTreatment {
-  treatmentId: string; // This is the global_variable_id
-  treatmentName: string; // Keep for logging/context
+// Type for the input data when selecting treatments in the UI
+// Assuming it provides global treatment ID and maybe name
+export type SelectedTreatment = {
+  treatmentId: string; 
+  treatmentName: string;
+}
+
+// Define a type for the PatientTreatment data fetched with treatment name
+export type PatientTreatmentWithName = Database['public']['Tables']['patient_treatments']['Row'] & {
+  treatments: {
+    global_variables: { name: string | null } | null
+  } | null
 }
 
 // Removed TreatmentEntry and ConditionTreatmentState interfaces
 
 // --- Server Action --- 
+
+// Action to get all treatments for a patient
+export async function getPatientTreatmentsAction(patientId: string): Promise<PatientTreatmentWithName[]> {
+  const supabase = await createClient()
+  logger.info('Fetching treatments for patient', { patientId });
+
+  const { data, error } = await supabase
+    .from('patient_treatments')
+    .select(`
+      *,
+      treatments!inner(
+        global_variables!inner(
+          name
+        )
+      )
+    `)
+    .eq('patient_id', patientId)
+    .is('end_date', null) // Optionally filter for currently active treatments
+    .order('start_date', { ascending: false });
+
+  if (error) {
+    logger.error('Error fetching patient treatments:', { patientId, error });
+    throw new Error('Failed to fetch patient treatments');
+  }
+
+  return data || [];
+}
 
 export async function addInitialPatientTreatmentsAction(
   userId: string,

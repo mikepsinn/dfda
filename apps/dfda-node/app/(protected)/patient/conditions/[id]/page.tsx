@@ -1,14 +1,27 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
 import { getPatientConditionByIdAction } from "@/app/actions/patient-conditions" // Action to get specific PC
+import { getReminderSchedulesForUserVariableAction } from "@/app/actions/reminder-schedules" // Action to get reminders
+import { getRatingsForPatientConditionAction } from "@/app/actions/treatment-ratings" // Action to get ratings
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { notFound } from 'next/navigation'
 import { Suspense } from "react"
 import { createLogger } from "@/lib/logger"
 import { Badge } from "@/components/ui/badge"
-import { Pencil, Trash2, MessageSquarePlus } from "lucide-react"
+import { Pencil, Trash2, MessageSquarePlus, Edit, Star } from "lucide-react"
+
+// Import Dialog Components
+import { EditConditionDialog } from "./components/edit-condition-dialog"
+import { DeleteConditionDialog } from "./components/delete-condition-dialog"
+import { RateTreatmentDialog } from "./components/rate-treatment-dialog"
+import { LogSeverityDialog } from "./components/log-severity-dialog"
+import { ManageRemindersDialog } from "./components/manage-reminders-dialog"
+import { EditNotesDialog } from "./components/edit-notes-dialog"
+
+// Import List Components
+import { RatingsList } from "./components/ratings-list"
+import { RemindersList } from "./components/reminders-list"
 
 // TODO: Import actions/components for treatments, reminders, logging
 // import { getTreatmentsForPatientConditionAction } from "@/app/actions/patient-treatments"; // Needs creation
@@ -18,20 +31,25 @@ import { Pencil, Trash2, MessageSquarePlus } from "lucide-react"
 
 const logger = createLogger("patient-condition-detail-page")
 
-interface PatientConditionDetailPageProps {
-  params: { id: string }; // id here is patient_condition_id
-}
+// Remove the separate interface
+// interface PatientConditionDetailPageProps {
+//   params: { id: string }; // id here is patient_condition_id
+// }
 
-export default async function PatientConditionDetailPage({ params }: PatientConditionDetailPageProps) {
+// Destructure params directly in the signature
+export default async function PatientConditionDetailPage({ params }: { params: { id: string } }) {
+  // Await params before accessing its properties
+  const { id: patientConditionId } = await params;
+  
   const user = await getServerUser()
   if (!user) {
     redirect("/login")
   }
 
-  const patientConditionId = params.id;
+  // Use the awaited patientConditionId
   logger.info("Loading patient condition detail page", { userId: user.id, patientConditionId });
 
-  // Fetch the specific patient condition record
+  // Fetch the specific patient condition record using the awaited ID
   const condition = await getPatientConditionByIdAction(patientConditionId);
 
   // If condition not found or doesn't belong to user (assuming RLS handles user check), show 404
@@ -40,11 +58,13 @@ export default async function PatientConditionDetailPage({ params }: PatientCond
      notFound();
   }
 
-  // TODO: Fetch associated treatments for this specific patient_condition_id
-  // const associatedTreatments = await getTreatmentsForPatientConditionAction(patientConditionId);
+  // Fetch associated ratings for this patient condition
+  const conditionRatings = await getRatingsForPatientConditionAction(patientConditionId);
 
-  // TODO: Fetch reminders linked to the global condition ID
-  // const reminders = await getReminderSchedulesForUserVariableAction(condition.condition_id!); // Use global condition_id
+  // Fetch reminders linked to the global condition ID, passing user ID as well
+  const conditionReminders = condition.condition_id 
+    ? await getReminderSchedulesForUserVariableAction(user.id, condition.condition_id)
+    : [];
 
   return (
     <div className="container space-y-8 py-8">
@@ -59,21 +79,21 @@ export default async function PatientConditionDetailPage({ params }: PatientCond
                  )}
               </div>
               <div className="flex gap-2 flex-shrink-0">
-                 {/* TODO: Link to Edit Page/Dialog */}
-                 <Button variant="outline" size="sm">
-                    <Pencil className="mr-1 h-4 w-4" /> Edit
-                 </Button>
-                 {/* TODO: Implement Delete functionality */}
-                 <Button variant="destructive" size="sm">
-                   <Trash2 className="mr-1 h-4 w-4" /> Delete
-                 </Button>
+                 {/* Replace Edit Button with Dialog Trigger */}
+                 <EditConditionDialog patientCondition={condition} />
+
+                 {/* Replace Delete Button with Dialog Trigger */}
+                 <DeleteConditionDialog 
+                   patientConditionId={condition.id!} 
+                   conditionName={condition.condition_name} 
+                 />
               </div>
            </div>
         </CardHeader>
         <CardContent className="grid gap-4 md:grid-cols-3">
            <div className="space-y-1">
              <p className="text-sm font-medium text-muted-foreground">Status</p>
-             <p><Badge variant={condition.status === 'active' ? 'default' : 'secondary'} className="capitalize">{condition.status || "N/A"}</Badge></p>
+             <div><Badge variant={condition.status === 'active' ? 'default' : 'secondary'} className="capitalize">{condition.status || "N/A"}</Badge></div>
            </div>
            <div className="space-y-1">
              <p className="text-sm font-medium text-muted-foreground">Severity</p>
@@ -86,23 +106,31 @@ export default async function PatientConditionDetailPage({ params }: PatientCond
         </CardContent>
       </Card>
 
-      {/* Associated Treatments Card */}
+      {/* Condition Ratings Card - Updated */}
       <Card>
-         <CardHeader>
-            <CardTitle>Associated Treatments</CardTitle>
-            <CardDescription>Treatments you are using or have used for this condition.</CardDescription>
+         <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle>Treatment Ratings (for this Condition)</CardTitle>
+              <CardDescription>How effective have treatments been specifically for {condition.condition_name || "this condition"}?</CardDescription>
+            </div>
+             {/* MOVED: Rate Treatment Button */}
+            <RateTreatmentDialog patientCondition={condition}>
+              <Button variant="outline">
+                <Star className="mr-2 h-4 w-4"/> Rate Treatment
+              </Button>
+            </RateTreatmentDialog>
          </CardHeader>
          <CardContent>
-             <Suspense fallback={<p>Loading treatments...</p>}> 
-                {/* TODO: Implement and render PatientTreatmentsList component */}
-                <p className="text-muted-foreground">Treatment list component needed here.</p>
-                {/* <PatientTreatmentsList treatments={associatedTreatments} /> */} 
+             <Suspense fallback={<p className="text-muted-foreground">Loading ratings...</p>}> 
+                <RatingsList ratings={conditionRatings} patientCondition={condition} /> 
              </Suspense>
              <div className="mt-4">
-               {/* TODO: Link to where patient can add a treatment for this condition */}
-               <Link href={`/patient/treatments?conditionId=${condition.id}`}>
-                 <Button variant="outline">Add Treatment for this Condition</Button>
-               </Link>
+                {/* Replace AddTreatmentDialog with RateTreatmentDialog */}
+                <RateTreatmentDialog patientCondition={condition}>
+                  <Button variant="outline">
+                    <Star className="mr-2 h-4 w-4"/> Rate Treatment for this Condition
+                  </Button>
+                </RateTreatmentDialog>
              </div>
          </CardContent>
       </Card>
@@ -115,30 +143,36 @@ export default async function PatientConditionDetailPage({ params }: PatientCond
          </CardHeader>
          <CardContent>
             <div className="mb-4">
-                {/* TODO: Implement Severity Logging */}
-                <Button>
-                   <MessageSquarePlus className="mr-2 h-4 w-4" /> Log Severity / Symptom
-                </Button>
+                {/* Replace Button with LogSeverityDialog Trigger */}
+                <LogSeverityDialog patientCondition={condition} />
             </div>
-            <Suspense fallback={<p>Loading reminders...</p>}> 
-                 {/* TODO: Implement and render ConditionReminders component */}
-                 <p className="text-muted-foreground">Reminder list component needed here.</p>
-                 {/* <ConditionReminders reminders={reminders} userVariableId={condition.condition_id!} /> */} 
+            <Suspense fallback={<p className="text-muted-foreground">Loading reminders...</p>}> 
+                 {/* Render RemindersList component */}
+                 <RemindersList reminders={conditionReminders} conditionName={condition.condition_name} /> 
             </Suspense>
               <div className="mt-4">
-                {/* TODO: Link to reminder management page/dialog */}
-               <Link href={`/patient/reminders?variableId=${condition.condition_id}`}>
-                  <Button variant="outline">Manage Reminders</Button>
-               </Link>
-             </div>
+                 {/* Replace Link/Button with ManageRemindersDialog Trigger */}
+                 <ManageRemindersDialog 
+                   userVariableId={condition.condition_id!} // Pass global condition ID
+                   conditionName={condition.condition_name}
+                 >
+                    <Button variant="outline">Manage Reminders</Button>
+                 </ManageRemindersDialog>
+              </div>
          </CardContent>
       </Card>
 
        {/* Notes Card */}
        {condition.notes && (
           <Card>
-             <CardHeader>
+             <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle>Notes</CardTitle>
+                {/* Add Edit Notes Dialog Trigger */}
+                <EditNotesDialog patientCondition={condition}>
+                  <Button variant="ghost" size="icon">
+                    <Edit className="h-4 w-4" />
+                  </Button>
+                </EditNotesDialog>
              </CardHeader>
              <CardContent>
                 <p className="text-sm whitespace-pre-wrap">{condition.notes}</p>
@@ -148,4 +182,7 @@ export default async function PatientConditionDetailPage({ params }: PatientCond
 
     </div>
   )
-} 
+}
+
+// Force dynamic rendering for this page as it depends on params
+export const dynamic = 'force-dynamic' 
