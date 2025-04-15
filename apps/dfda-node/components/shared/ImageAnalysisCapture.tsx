@@ -28,6 +28,7 @@ import { ReviewNutritionStep } from './wizard-steps/ReviewNutritionStep'
 import { ReviewIngredientsStep } from './wizard-steps/ReviewIngredientsStep'
 import { ReviewUpcStep } from './wizard-steps/ReviewUpcStep'
 import { CaptureImageStep } from './wizard-steps/CaptureImageStep'
+import { useWebcam } from '@/hooks/useWebcam'
 
 // Define image types based on the plan
 const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
@@ -68,27 +69,6 @@ interface ImageAnalysisCaptureProps {
   onSaveSuccess?: (data: AnalyzedImageResult) => void
 }
 
-// Helper function to convert Data URL to File object
-function dataURLtoFile(dataurl: string, filename: string): File | null {
-    try {
-        const arr = dataurl.split(',');
-        if (arr.length < 2) return null;
-        const mimeMatch = arr[0].match(/:(.*?);/);
-        if (!mimeMatch) return null;
-        const mime = mimeMatch[1];
-        const bstr = atob(arr[1]);
-        let n = bstr.length;
-        const u8arr = new Uint8Array(n);
-        while (n--) {
-            u8arr[n] = bstr.charCodeAt(n);
-        }
-        return new File([u8arr], filename, { type: mime });
-    } catch (error) {
-        logger.error("Error converting data URL to File", { error });
-        return null;
-    }
-}
-
 // Define initial empty state for the complex form data
 const initialFormData: Partial<AnalyzedImageResult> = {
     type: undefined,
@@ -109,6 +89,8 @@ const initialFormData: Partial<AnalyzedImageResult> = {
     dosage_instructions: '',
     active_ingredients: [],
     inactive_ingredients: [],
+    // Add other_ingredients if needed by form/analysis
+    other_ingredients: [], // Example: Adding other_ingredients
 }
 
 // --- Visually Hidden Component (for Accessibility) ---
@@ -146,19 +128,25 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   const [isSaving, setIsSaving] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  // Webcam state
-  const [isWebcamActive, setIsWebcamActive] = useState(false)
-  const [webcamStream, setWebcamStream] = useState<MediaStream | null>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  // Webcam state and functions managed by the hook
+  const {
+    videoRef, // Use ref from hook
+    canvasRef, // Use ref from hook
+    isWebcamActive, // Use state from hook
+    webcamStream, // Get stream from hook
+    requestWebcam: hookRequestWebcam, // Rename hook functions to avoid conflict
+    stopWebcam: hookStopWebcam,
+    captureImage: hookCaptureImage,
+  } = useWebcam();
 
   // Form state now uses the full AnalyzedImageResult structure
   const [formData, setFormData] = useState<Partial<AnalyzedImageResult>>(initialFormData)
 
-  // Effect to link webcam stream to video element
+  // Effect to link webcam stream to video element (remains here, uses hook state/ref)
   useEffect(() => {
     if (videoRef.current && webcamStream) {
       videoRef.current.srcObject = webcamStream;
+      videoRef.current.play().catch(err => logger.error("Video play failed", { err })); // Add play and catch
     }
     // Cleanup function to remove srcObject when stream is stopped or component unmounts
     return () => {
@@ -166,7 +154,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         videoRef.current.srcObject = null;
       }
     };
-  }, [webcamStream]); // Dependency array includes webcamStream
+  }, [videoRef, webcamStream]); // Dependencies updated
 
   // Effect to automatically trigger analysis when entering an analyzing step
   useEffect(() => {
@@ -222,12 +210,9 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
     }
-    if (webcamStream) {
-      webcamStream.getTracks().forEach(track => track.stop());
-      setWebcamStream(null);
-    }
-    setIsWebcamActive(false);
-  }, [webcamStream]); // Include webcamStream in dependencies
+    // Stop webcam using the hook's function if it's active
+    hookStopWebcam();
+  }, [hookStopWebcam]); // Add hookStopWebcam dependency
 
   // Function to trigger file input for the active image type
   const triggerFileInput = (type: ImageType) => {
@@ -356,77 +341,74 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     }
   };
 
-  // --- Webcam Handling ---
+  // --- Webcam Handling (using the hook) ---
+
+  // Wrapper function to call the hook's requestWebcam
   const requestWebcam = async (type: ImageType) => {
-    setActiveImageType(type);
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      setWebcamStream(stream);
-      setIsWebcamActive(true);
-    } catch (err) {
-      logger.error("Error accessing webcam", { error: err });
-      // ... (error handling as before) ...
-      toast({ title: "Webcam Error", description: "Could not access webcam.", variant: "destructive" });
-      setIsWebcamActive(false);
+    setActiveImageType(type); // Still need to set the active type locally
+    const success = await hookRequestWebcam();
+    if (!success) {
+        // Optionally handle failure further (e.g., revert step),
+        // but the hook already shows a toast.
+        setActiveImageType('primary'); // Revert active type on failure? Or leave as is?
     }
+    // No need to setIsWebcamActive(true) here, hook handles it
   };
 
+  // Wrapper function to call the hook's stopWebcam
+  // Needed if stopping manually (e.g., from a button) outside capture flow
   const stopWebcam = () => {
-    if (webcamStream) {
-      webcamStream.getTracks().forEach(track => track.stop());
-      setWebcamStream(null);
-    }
-    setIsWebcamActive(false);
-  }
+      hookStopWebcam();
+      // No need to manage local state here
+  };
 
-  const captureImage = () => {
-    if (videoRef.current && canvasRef.current && activeImageType) {
-        const video = videoRef.current;
-        const canvas = canvasRef.current;
-        const typeToUpdate = activeImageType; // Capture active type
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        const context = canvas.getContext('2d');
-        if (context) {
-            // Flip, draw, reset transform as before
-            context.translate(canvas.width, 0);
-            context.scale(-1, 1);
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            context.setTransform(1, 0, 0, 1, 0, 0);
-            
-            const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9);
-            stopWebcam(); // Stop stream after capture
+  // Wrapper function to call the hook's captureImage and handle results
+  const captureImage = async () => {
+     const typeToUpdate = activeImageType; // Capture before async call
+     if (!typeToUpdate) {
+        logger.error("captureImage called without activeImageType set.");
+        toast({ title: "Capture Error", description: "Cannot capture image without knowing the type.", variant: "destructive" });
+        hookStopWebcam(); // Ensure webcam is stopped
+        return;
+     }
 
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const filename = `webcam-${typeToUpdate}-${timestamp}.jpg`;
-            const capturedFile = dataURLtoFile(imageDataUrl, filename);
-            
-            if (capturedFile) {
-                setImageStates(prev => ({
-                    ...prev,
-                    [typeToUpdate]: { file: capturedFile, previewUrl: imageDataUrl }
-                }));
-                 // If primary image was just added, move to analysis step
-                 if (typeToUpdate === 'primary') {
-                    setCaptureMode('webcam'); // Set mode
-                    setCurrentStep('analyzingPrimary');
-                } else {
-                    // If an optional image was added, go to its *analyzing* step
-                    const analyzingStep = `analyzing${typeToUpdate.charAt(0).toUpperCase() + typeToUpdate.slice(1)}` as ImageAnalysisStep;
-                    goToStep(analyzingStep);
-                }
-                 // TODO: Trigger analysis for the new image? - Handled by new step transition
-            } else {
-                toast({ title: "Capture Error", description: "Failed to process captured image.", variant: "destructive" });
-            }
+     const captureResult = await hookCaptureImage();
+
+     // hookCaptureImage now stops the stream internally on success/failure
+
+     if (captureResult) {
+        const { file: capturedFile, previewUrl: imageDataUrl } = captureResult;
+        
+        // Update local component state
+        setImageStates(prev => ({
+             ...prev,
+             [typeToUpdate]: { file: capturedFile, previewUrl: imageDataUrl }
+        }));
+
+        // Determine next step based on the captured type
+        if (typeToUpdate === 'primary') {
+            setCaptureMode('webcam'); // Set mode
+            setCurrentStep('analyzingPrimary');
         } else {
-             toast({ title: "Capture Error", description: "Could not get canvas context.", variant: "destructive" });
-             stopWebcam();
+            // If an optional image was added, go to its *analyzing* step
+            const analyzingStep = `analyzing${typeToUpdate.charAt(0).toUpperCase() + typeToUpdate.slice(1)}` as ImageAnalysisStep;
+            // Check if the generated step is valid before setting it
+             if (ALL_IMAGE_ANALYSIS_STEPS.includes(analyzingStep)) {
+                 goToStep(analyzingStep);
+             } else {
+                 logger.error("Invalid analyzing step determined after webcam capture", { analyzingStep, typeToUpdate });
+                 goToStep('finalReview'); // Fallback
+             }
         }
-    } else {
-        toast({ title: "Capture Error", description: "Webcam or active type not ready.", variant: "destructive" });
-        stopWebcam();
-    }
+        // TODO: Trigger analysis? - Handled by step transition effect
+     } else {
+         // Error handling is mostly done within the hook (toast shown)
+         logger.warn(`Image capture failed for type: ${typeToUpdate}`);
+         // Optionally reset something? Maybe go back to capture step?
+         // For now, the hook handles the toast, and the user can try again.
+     }
+     // No need to call stopWebcam() here explicitly, hook does it.
+     // No need to update isWebcamActive, hook does it.
   };
 
   // Function to remove an image
@@ -910,6 +892,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
 
   // --- Helper Function to Render Image Capture Buttons --- 
   // Modify to accept and use captureMode
+  // Uses isWebcamActive from the hook now
   function renderImageCaptureControls(type: ImageType) {
      const isPrimary = type === 'primary';
      // Use captureMode state to decide which buttons to show after the first step
@@ -917,7 +900,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
      const showWebcam = captureMode === 'webcam' || captureMode === 'undetermined';
      // Only allow switching modes on the primary step *before* an image is added?
      // Or maybe allow switch anytime? For now, let's stick to the initial mode.
-     const disableButtons = isAnalyzing || isSaving || isWebcamActive;
+     const disableButtons = isAnalyzing || isSaving || isWebcamActive; // Use isWebcamActive from hook
 
      return (
         <div className="w-full max-w-xs space-y-2">
@@ -936,37 +919,43 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 </div>
              )}
 
+             {/* Webcam video rendering: uses videoRef and isWebcamActive from hook */}
              {!imageStates[type] && isWebcamActive && activeImageType === type && (
                 <div className="relative mt-1 border rounded-md overflow-hidden bg-black">
                     <video
-                        ref={videoRef}
+                        ref={videoRef} // Use videoRef from hook
                         autoPlay
                         playsInline
                         muted
                         className="w-full h-auto max-h-40"
-                        style={{ transform: 'scaleX(-1)' }} 
+                        style={{ transform: 'scaleX(-1)' }}
                     />
+                    {/* Use the wrapper captureImage function */}
                     <Button onClick={captureImage} size="sm" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 z-10" aria-label="Capture image">
                         Capture
                     </Button>
+                    {/* Use the wrapper stopWebcam function */}
                     <Button onClick={stopWebcam} variant="destructive" size="sm" className="absolute top-1 right-1 z-10 p-1 h-auto" aria-label="Stop webcam">
                         <Trash2 className="h-3 w-3" />
                     </Button>
                 </div>
             )}
 
-            {/* Upload/Webcam Buttons (Conditional Rendering) */} 
-            {/* Only show buttons if no image preview and webcam isn't currently active for this type */} 
+            {/* Upload/Webcam Buttons (Conditional Rendering) */}
+            {/* Only show buttons if no image preview and webcam isn't currently active for this type */}
+             {/* Uses isWebcamActive from hook */}
             {!imageStates[type] && (!isWebcamActive || activeImageType !== type) && (
                 <div className="flex gap-2 mt-1">
-                    {/* Show Upload button if mode is upload or undetermined */} 
+                    {/* Show Upload button if mode is upload or undetermined */}
                     {showUpload && (
+                        // Use original triggerFileInput
                         <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={disableButtons} className="flex-1">
                             <Upload className="mr-1.5 h-3.5 w-3.5" /> Upload
                         </Button>
                     )}
-                    {/* Show Webcam button if mode is webcam or undetermined */} 
+                    {/* Show Webcam button if mode is webcam or undetermined */}
                      {showWebcam && (
+                         // Use the wrapper requestWebcam function
                         <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={disableButtons} className="flex-1">
                             <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
                         </Button>
@@ -1015,7 +1004,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
           className="hidden"
           disabled={isAnalyzing || isSaving || isWebcamActive} 
         />
-        {/* Hidden Canvas - Keep accessible */}
+          {/* Hidden Canvas - Now uses canvasRef from the hook */}
         <canvas ref={canvasRef} style={{ display: 'none' }} />
 
         {/* Main Content Area - Now driven by currentStep */} 
