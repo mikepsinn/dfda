@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { InternalLink } from "./internal-link"
 import { Beaker } from "lucide-react"
 
 export function Footer() {
@@ -10,18 +10,18 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">© 2025 FDA.gov v2. All rights reserved.</p>
         </div>
         <nav className="flex gap-4 sm:gap-6">
-          <Link href="/terms" className="text-sm font-medium hover:underline">
-            Terms
-          </Link>
-          <Link href="/privacy" className="text-sm font-medium hover:underline">
-            Privacy
-          </Link>
-          <Link href="/developers" className="text-sm font-medium hover:underline">
+          <InternalLink navKey="terms" className="text-sm font-medium hover:underline">
+            Terms of Service
+          </InternalLink>
+          <InternalLink navKey="privacy" className="text-sm font-medium hover:underline">
+            Privacy Policy
+          </InternalLink>
+          <InternalLink navKey="developers" className="text-sm font-medium hover:underline">
             Developers
-          </Link>
-          <Link href="/contact" className="text-sm font-medium hover:underline">
+          </InternalLink>
+          <InternalLink navKey="contact" className="text-sm font-medium hover:underline">
             Contact
-          </Link>
+          </InternalLink>
         </nav>
       </div>
     </footer>

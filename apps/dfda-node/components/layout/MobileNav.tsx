@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
-import type { NavItem } from "@/lib/navigation"
+import type { NavItem } from "@/lib/types/navigation"
 import { Button } from "@/components/ui/button"
 
 interface MobileNavProps {

@@ -79,11 +79,13 @@ export async function analyzeImageAction(formData: FormData): Promise<
     })
 
     // The 'object' variable here is already validated and typed as AnalyzedImageResult
-    logger.info('Image analyzed successfully with shared Google client', { result: object })
+    logger.info('Image analyzed successfully with shared Google client')
     return { success: true, data: object }
 
   } catch (error) {
-    logger.error('Error analyzing image with shared Google client:', { error })
+    logger.error('Error analyzing image with shared Google client:',
+       { error: error instanceof Error ? error.message : String(error) }
+      )
 
     if (NoObjectGeneratedError.isInstance(error)) {
       logger.error('NoObjectGeneratedError details:', { cause: error.cause, text: error.text });

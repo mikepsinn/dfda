@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,6 +11,7 @@ import { MailCheck, AlertCircle } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { signInWithOtp, signInWithGoogle } from "@/lib/auth"
 import { logger } from "@/lib/logger"
+import { InternalLink } from '@/components/internal-link'
 
 export function LoginForm() {
   const [emailSent, setEmailSent] = useState(false)
@@ -147,11 +147,11 @@ export function LoginForm() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-center">
-        <div className="text-center text-sm">
-          Don't have an account?{" "}
-          <Link href="/register" className="text-primary hover:underline">
-            Register here
-          </Link>
+        <div className="mt-6 text-center text-sm">
+          Don&apos;t have an account?
+          <InternalLink navKey="register" className="ml-1 text-primary hover:underline">
+            Register
+          </InternalLink>
         </div>
       </CardFooter>
     </Card>

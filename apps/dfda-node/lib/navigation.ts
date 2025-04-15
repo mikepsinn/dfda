@@ -39,7 +39,6 @@ const developerNavItems: NavItem[] = [
 
 const researchPartnerNavItems: NavItem[] = [
   navigationTreeObject.research_partner, // Uses generated title (e.g., "Research Partner") and href
-  navigationTreeObject.research_partner_trials,
   navigationTreeObject.research_partner_create_trial
 ]
 

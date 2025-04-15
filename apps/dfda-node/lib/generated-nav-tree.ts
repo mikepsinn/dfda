@@ -57,10 +57,10 @@ export const navigationTreeObject: GeneratedNavTree = {
     "emoji": "🏠"
   },
   "admin": {
-    "title": "Admin",
+    "title": "Admin Panel",
     "href": "/admin",
-    "description": "Administrative section.",
-    "emoji": "⚙️"
+    "description": "Manage site settings and user access.",
+    "emoji": "🛡️"
   },
   "conditions": {
     "title": "Conditions",

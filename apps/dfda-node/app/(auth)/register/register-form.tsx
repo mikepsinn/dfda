@@ -12,6 +12,7 @@ import { DemoLoginButton } from "@/components/demo-login-button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { signInWithOtp, signInWithGoogle } from "@/lib/auth"
 import { logger } from "@/lib/logger"
+import { InternalLink } from '@/components/internal-link'
 
 export function RegisterForm() {
   const [emailSent, setEmailSent] = useState(false)
@@ -166,11 +167,11 @@ export function RegisterForm() {
         </form>
       </CardContent>
       <CardFooter className="flex flex-col space-y-4">
-        <div className="text-center text-sm">
-          Already have an account?{" "}
-          <Link href="/login" className="text-primary hover:underline">
-            Sign in here
-          </Link>
+        <div className="mt-6 text-center text-sm">
+          Already have an account?
+          <InternalLink navKey="login" className="ml-1 text-primary hover:underline">
+            Sign in
+          </InternalLink>
         </div>
          <div className="text-center text-sm text-muted-foreground">
           Need help? Contact <Link href="mailto:help@dfda.earth" className="underline">help@dfda.earth</Link>
