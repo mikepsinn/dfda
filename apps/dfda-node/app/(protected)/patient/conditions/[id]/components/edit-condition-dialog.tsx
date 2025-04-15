@@ -35,9 +35,10 @@ const conditionSeverities = ["mild", "moderate", "severe", "unknown"]
 
 interface EditConditionDialogProps {
   patientCondition: Tables<"patient_conditions_view">
+  children: React.ReactNode
 }
 
-export function EditConditionDialog({ patientCondition }: EditConditionDialogProps) {
+export function EditConditionDialog({ patientCondition, children }: EditConditionDialogProps) {
   const [open, setOpen] = useState(false)
   const [status, setStatus] = useState(patientCondition.status || "unknown")
   const [severity, setSeverity] = useState(patientCondition.severity || "unknown")
@@ -75,11 +76,7 @@ export function EditConditionDialog({ patientCondition }: EditConditionDialogPro
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="sm">
-          <Pencil className="mr-1 h-4 w-4" /> Edit
-        </Button>
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Edit {patientCondition.condition_name}</DialogTitle>

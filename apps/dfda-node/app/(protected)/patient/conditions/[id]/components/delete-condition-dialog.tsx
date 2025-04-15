@@ -23,10 +23,10 @@ const logger = createLogger("delete-condition-dialog")
 interface DeleteConditionDialogProps {
   patientConditionId: string
   conditionName?: string | null
-  // children: React.ReactNode // Using direct trigger for now
+  children: React.ReactNode
 }
 
-export function DeleteConditionDialog({ patientConditionId, conditionName }: DeleteConditionDialogProps) {
+export function DeleteConditionDialog({ patientConditionId, conditionName, children }: DeleteConditionDialogProps) {
   const [open, setOpen] = useState(false)
   const [isPending, startTransition] = useTransition()
   const { toast } = useToast()
@@ -50,11 +50,7 @@ export function DeleteConditionDialog({ patientConditionId, conditionName }: Del
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button variant="destructive" size="sm">
-          <Trash2 className="mr-1 h-4 w-4" /> Delete
-        </Button>
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Are you sure?</DialogTitle>
