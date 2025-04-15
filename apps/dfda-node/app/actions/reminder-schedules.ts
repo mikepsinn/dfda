@@ -10,6 +10,8 @@ import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 // REMOVE the Trigger.dev client import
 // import { client } from '@/lib/trigger' 
+// Import graphile-worker helper
+// import { quickAddJob } from 'graphile-worker';
 
 // Types
 export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
@@ -191,7 +193,7 @@ export async function upsertReminderScheduleAction(
         logger.info('Successfully upserted reminder schedule', { scheduleId: response.data.id });
 
         // Revalidate paths (could be more specific if needed)
-        revalidatePath('/patient/reminders'); // Assuming a general reminders page
+        // revalidatePath('/patient/reminders'); 
         // revalidatePath(`/patient/variables/${globalVariableId}`);
 
         return { success: true, data: response.data, message: 'Reminder schedule saved.' };
@@ -248,7 +250,7 @@ export async function deleteReminderScheduleAction(
  */
 export async function createDefaultReminderAction(
   userId: string,
-  userVariableId: string, // Changed from globalVariableId for clarity
+  userVariableId: string,
   variableName: string,
   variableCategory: string | null // Pass category to determine message
 ): Promise<{ success: boolean; error?: string }> {
@@ -329,7 +331,36 @@ export async function createDefaultReminderAction(
          // Don't fail the whole operation for this
     }
 
-    logger.info('Successfully created default reminder schedule', { scheduleId: result.data.id, userId, userVariableId });
+    const newScheduleId = result.data.id;
+    logger.info('Successfully created default reminder schedule', { scheduleId: newScheduleId, userId, userVariableId });
+
+    // --- Add job by calling the database function --- 
+    try {
+        logger.info('Calling enqueue_graphile_job function', { scheduleId: newScheduleId });
+        const { error: rpcError } = await supabase.rpc('enqueue_graphile_job', {
+          // Match the function arguments
+          task_identifier: 'processSingleSchedule',
+          payload: { scheduleId: newScheduleId }
+          // Optional: can pass queue_name, run_at, max_attempts, job_key, priority if needed
+        });
+
+        if (rpcError) {
+            logger.error('Failed to call enqueue_graphile_job function', {
+                scheduleId: newScheduleId,
+                error: rpcError
+            });
+            // Handle error as needed
+        } else {
+             logger.info('Successfully called enqueue_graphile_job function', { scheduleId: newScheduleId });
+        }
+    } catch (rpcCatchError) {
+        logger.error('Error calling enqueue_graphile_job RPC', {
+            scheduleId: newScheduleId,
+            error: rpcCatchError instanceof Error ? rpcCatchError.message : String(rpcCatchError)
+        });
+        // Handle error as needed
+    }
+    // --- End Add job via RPC ---
 
     // Optionally revalidate paths if needed immediately
     // revalidatePath('/patient/reminders');

@@ -2220,6 +2220,18 @@ export type Database = {
         Args: { p_value: number; p_from_unit_id: string; p_to_unit_id: string }
         Returns: number
       }
+      enqueue_graphile_job: {
+        Args: {
+          task_identifier: string
+          payload?: Json
+          queue_name?: string
+          run_at?: string
+          max_attempts?: number
+          job_key?: string
+          priority?: number
+        }
+        Returns: unknown
+      }
       generate_protocol_actions: {
         Args: { enrollment_id: string; protocol_version_id?: string }
         Returns: {
