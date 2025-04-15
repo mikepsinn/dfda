@@ -174,7 +174,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
       if (result.success) {
         setAnalysisResult(result.data);
         // Overwrite form data with analysis results.
-        setFormData({
+        setFormData({ 
             ...initialFormData, // Start clean
             ...result.data,
         });
@@ -182,7 +182,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
       } else {
         setAnalysisError(result.error);
         toast({ title: "Analysis Failed", description: result.error, variant: "destructive" });
-      } 
+      }
     } catch (err) {
       logger.error("Client-side error calling analyzeImageAction", { error: err });
       const message = err instanceof Error ? err.message : "An unexpected error occurred.";
@@ -531,7 +531,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         </DialogHeader>
         
         {/* Hidden file input */}
-        <Input
+          <Input
             id="image-upload-input"
             type="file"
             accept="image/*"
@@ -565,8 +565,8 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                              {image && (
                                 <Button variant="ghost" size="sm" onClick={() => removeImage(type)} aria-label={`Remove ${type} image`}>
                                     <Trash2 className="h-4 w-4" />
-                                </Button>
-                             )}
+                  </Button>
+              )}
                            </div>
                            {image?.previewUrl && (
                              <div className="relative w-full h-32 mt-1">
@@ -577,26 +577,26 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                                     className="rounded-md border object-contain bg-background" 
                                     sizes="(max-width: 768px) 50vw, 250px"
                                 />
-                            </div>
+          </div>
                            )}
                             {!image && isWebcamActive && activeImageType === type && (
                                 <div className="relative mt-1 border rounded-md overflow-hidden bg-black">
-                                    <video
-                                        ref={videoRef}
-                                        autoPlay
-                                        playsInline
+                  <video
+                      ref={videoRef}
+                      autoPlay
+                      playsInline
                                         muted
                                         className="w-full h-auto max-h-40"
                                         style={{ transform: 'scaleX(-1)' }} 
                                     />
                                     <Button onClick={captureImage} size="sm" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 z-10" aria-label="Capture image">
-                                        Capture
-                                    </Button>
+                          Capture
+                      </Button>
                                      <Button onClick={stopWebcam} variant="destructive" size="sm" className="absolute top-1 right-1 z-10 p-1 h-auto" aria-label="Stop webcam">
                                         <Trash2 className="h-3 w-3" />
                                     </Button>
-                                </div>
-                            )}
+              </div>
+          )}
                             {showAddButton && !disableAdd && (
                                 <div className="flex gap-2 mt-1">
                                     <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={isAnalyzing || isSaving} className="flex-1">
@@ -610,14 +610,14 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                                     {!isWebcamActive && (
                                         <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving} className="flex-1">
                                             <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
-                                        </Button>
-                                    )}
-                                </div>
-                            )}
+                </Button>
+              )}
+            </div>
+          )}
                             {!isAvailable && !image && (
                                 <p className="text-xs text-muted-foreground italic">(Upload primary image first)</p>
                             )}
-                        </div>
+            </div>
                     );
                  })}
                  {/* Analyze Button */} 
@@ -629,19 +629,19 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                     {isAnalyzing ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
                     Analyze Image(s)
                  </Button>
-                 {analysisError && (
+          {analysisError && (
                     <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
-                        <AlertCircle className="h-4 w-4 flex-shrink-0" />
-                        <span>Analysis Error: {analysisError}</span>
-                    </div>
-                )}
+              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+              <span>Analysis Error: {analysisError}</span>
+            </div>
+          )}
             </div>
 
             {/* Right Column: Form Fields */} 
             <div className="space-y-3">
                  <h3 className="text-lg font-semibold">Extracted Details</h3>
                  {/* Type Selection - Always show if analysis hasn't happened or allows override */} 
-                 <div className="grid grid-cols-4 items-center gap-4">
+               <div className="grid grid-cols-4 items-center gap-4">
                   <Label htmlFor="type" className="text-right">Type*</Label>
                   <Select 
                     name="type"
@@ -665,15 +665,15 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                     <p className="text-sm text-muted-foreground italic text-center py-4">
                         {analysisResult ? "Edit the extracted details below." : "Select a type or analyze images to see details."}
                     </p>
-                )}
+          )}
 
-                {saveError && (
-                    <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
-                    <AlertCircle className="h-4 w-4 flex-shrink-0" />
-                    <span>Save Error: {saveError}</span>
-                    </div>
-                )}
+          {saveError && (
+            <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
+              <AlertCircle className="h-4 w-4 flex-shrink-0" />
+              <span>Save Error: {saveError}</span>
             </div>
+          )}
+        </div>
          </div>
          {/* Hidden Canvas */} 
          <canvas ref={canvasRef} style={{ display: 'none' }} />

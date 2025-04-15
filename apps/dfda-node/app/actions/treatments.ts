@@ -114,6 +114,9 @@ export async function getTreatmentsForConditionAction(conditionId: string): Prom
         manufacturer,
         treatment_type,
         updated_at,
+        active_ingredients,
+        dosage_form,
+        dosage_instructions,
         gv:global_variables!inner (
           name,
           description
@@ -158,6 +161,9 @@ export async function getTreatmentsForConditionAction(conditionId: string): Prom
         manufacturer: typedItem.treatment.manufacturer,
         treatment_type: typedItem.treatment.treatment_type,
         updated_at: typedItem.treatment.updated_at,
+        active_ingredients: typedItem.treatment.active_ingredients,
+        dosage_form: typedItem.treatment.dosage_form,
+        dosage_instructions: typedItem.treatment.dosage_instructions,
         // Add the fields from the joined global_variables
         name: typedItem.treatment.gv.name,
         description: typedItem.treatment.gv.description

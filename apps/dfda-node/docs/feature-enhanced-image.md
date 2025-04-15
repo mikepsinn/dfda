@@ -101,11 +101,11 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 -   [ ] **Frontend:** Update form fields and state (`formData`) in `ImageAnalysisCapture.tsx` to match the enhanced data structure.
 -   [ ] **Frontend:** Modify image upload/capture logic to store images with appropriate type keys.
 -   [ ] **Frontend:** Ensure all captured images are sent with distinct names in FormData during save.
--   [x] **Backend Save:** Update `saveItemFromImageAction` to accept the new complex data structure and multiple files.
+-   [x] **Backend Save:** Update `saveVariableMeasurementsFromImageAction` to accept the new complex data structure and multiple files.
 -   [x] **Backend Save:** Implement logic to find/create `global_variables` for the item.
 -   [x] **Backend Save:** Implement logic to find/create/link `products` record.
--   [ ] **Backend Save:** Implement logic to insert/update `food_details` or `treatment_details`.
--   [ ] **Backend Save:** Implement logic to populate the `item_ingredients` table for all extracted ingredients.
+-   [x] **Backend Save:** Implement logic to insert/update `food_details` or `treatment_details`.
+-   [x] **Backend Save:** Implement logic to populate the `item_ingredients` table for all extracted ingredients.
 -   [x] **Backend Save:** Update image storage logic as needed (Current logic handles single image upload/linking via `uploaded_files` and `user_variable_images`).
 -   [x] **Backend Save:** Ensure `user_variables` creation/update still works.
 -   [ ] **Testing:** Thoroughly test the end-to-end flow with various food and treatment packages.
