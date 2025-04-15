@@ -10,7 +10,7 @@ import { notFound } from 'next/navigation'
 import { Suspense } from "react"
 import { createLogger } from "@/lib/logger"
 import { Badge } from "@/components/ui/badge"
-import { Pencil, Trash2, MessageSquarePlus, Edit, Star, MoreVertical, ArrowLeft } from "lucide-react"
+import { Trash2, Edit, Star, MoreVertical, ArrowLeft } from "lucide-react"
 import { 
   DropdownMenu, 
   DropdownMenuContent, 

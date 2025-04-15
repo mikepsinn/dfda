@@ -2,7 +2,7 @@
 
 import { createClient } from "@/lib/supabase/server"
 import { logger } from "@/lib/logger"
-import type { Database, Tables, TablesInsert } from "@/lib/database.types"
+import type { /*Database, Tables,*/ TablesInsert } from "@/lib/database.types"
 import { revalidatePath } from "next/cache"
 
 // Types

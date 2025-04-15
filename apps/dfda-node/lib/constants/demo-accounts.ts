@@ -1,4 +1,6 @@
-import type { Database, Json } from "@/lib/database.types";
+// import { Json } from "@/lib/database.types";
+
+import type { Database } from "@/lib/database.types";
 
 type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"];
 

@@ -2,6 +2,9 @@ import { RRule, rrulestr } from 'rrule'
 import { ReminderSchedule } from "@/app/actions/reminder-schedules"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { createLogger } from "@/lib/logger"
+
+const logger = createLogger("reminders-list")
 
 interface RemindersListProps {
   reminders: ReminderSchedule[]
@@ -18,6 +21,7 @@ export function RemindersList({ reminders, conditionName }: RemindersListProps) 
       const rule = rrulestr(rruleString)
       return rule.toText()
     } catch (e) {
+      logger.warn("Failed to parse RRULE string in RemindersList", { rruleString, error: (e as Error)?.message });
       return "Invalid rule"
     }
   }

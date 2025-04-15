@@ -2,9 +2,7 @@ import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Plus } from "lucide-react"
 import { AddConditionDialog } from "../treatments/components/add-condition-dialog"
 
 export default async function PatientConditionsPage() {

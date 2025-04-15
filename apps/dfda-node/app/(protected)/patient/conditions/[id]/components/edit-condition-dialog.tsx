@@ -22,7 +22,6 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tables } from "@/lib/database.types"
-import { Pencil } from "lucide-react"
 import { updatePatientConditionAction } from "@/app/actions/patient-conditions"
 import { useToast } from "@/components/ui/use-toast"
 import { createLogger } from "@/lib/logger"

@@ -12,15 +12,21 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Tables } from "@/lib/database.types"
+import { createLogger } from "@/lib/logger"
+
+const logger = createLogger("manage-reminders-dialog")
 
 interface ManageRemindersDialogProps {
-  userVariableId: string // This should be the global_variable_id for the condition
+  userVariableId: string
   conditionName?: string | null
   children: React.ReactNode // To wrap the trigger button/element
 }
 
 export function ManageRemindersDialog({ userVariableId, conditionName, children }: ManageRemindersDialogProps) {
   const [open, setOpen] = useState(false)
+
+  // TODO: Use userVariableId here to fetch/manage reminders
+  logger.info("ManageRemindersDialog mounted", { userVariableId }); // Example usage
 
   // TODO: Fetch existing reminder_schedules for userVariableId
   // TODO: Implement UI to list, create, edit, delete reminders

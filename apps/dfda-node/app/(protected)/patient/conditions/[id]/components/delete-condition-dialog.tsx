@@ -12,8 +12,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Tables } from "@/lib/database.types"
-import { Trash2 } from "lucide-react"
 import { deletePatientConditionAction } from "@/app/actions/patient-conditions"
 import { useToast } from "@/components/ui/use-toast"
 import { createLogger } from "@/lib/logger"
