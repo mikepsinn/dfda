@@ -1080,7 +1080,6 @@ export type Database = {
           allow_substitutions: boolean | null
           created_at: string | null
           dosage_amount: number | null
-          dosage_form: string | null
           dosage_unit: string | null
           duration_days: number | null
           frequency: string | null
@@ -1101,7 +1100,6 @@ export type Database = {
           allow_substitutions?: boolean | null
           created_at?: string | null
           dosage_amount?: number | null
-          dosage_form?: string | null
           dosage_unit?: string | null
           duration_days?: number | null
           frequency?: string | null
@@ -1122,7 +1120,6 @@ export type Database = {
           allow_substitutions?: boolean | null
           created_at?: string | null
           dosage_amount?: number | null
-          dosage_form?: string | null
           dosage_unit?: string | null
           duration_days?: number | null
           frequency?: string | null
@@ -1706,41 +1703,6 @@ export type Database = {
           },
         ]
       }
-      treatment_details: {
-        Row: {
-          active_ingredients: Json | null
-          created_at: string
-          dosage_form: string | null
-          dosage_instructions: string | null
-          global_variable_id: string
-          updated_at: string
-        }
-        Insert: {
-          active_ingredients?: Json | null
-          created_at?: string
-          dosage_form?: string | null
-          dosage_instructions?: string | null
-          global_variable_id: string
-          updated_at?: string
-        }
-        Update: {
-          active_ingredients?: Json | null
-          created_at?: string
-          dosage_form?: string | null
-          dosage_instructions?: string | null
-          global_variable_id?: string
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "treatment_details_global_variable_id_fkey"
-            columns: ["global_variable_id"]
-            isOneToOne: true
-            referencedRelation: "global_variables"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       treatment_ratings: {
         Row: {
           created_at: string | null
@@ -1801,24 +1763,33 @@ export type Database = {
       }
       treatments: {
         Row: {
+          active_ingredients: Json | null
           created_at: string | null
           deleted_at: string | null
+          dosage_form: string | null
+          dosage_instructions: string | null
           id: string
           manufacturer: string | null
           treatment_type: string
           updated_at: string | null
         }
         Insert: {
+          active_ingredients?: Json | null
           created_at?: string | null
           deleted_at?: string | null
+          dosage_form?: string | null
+          dosage_instructions?: string | null
           id: string
           manufacturer?: string | null
           treatment_type: string
           updated_at?: string | null
         }
         Update: {
+          active_ingredients?: Json | null
           created_at?: string | null
           deleted_at?: string | null
+          dosage_form?: string | null
+          dosage_instructions?: string | null
           id?: string
           manufacturer?: string | null
           treatment_type?: string

@@ -1175,7 +1175,6 @@ export const publicPrescriptionsRowSchemaSchema = z.object({
   allow_substitutions: z.boolean().nullable(),
   created_at: z.string().nullable(),
   dosage_amount: z.number().nullable(),
-  dosage_form: z.string().nullable(),
   dosage_unit: z.string().nullable(),
   duration_days: z.number().nullable(),
   frequency: z.string().nullable(),
@@ -1197,7 +1196,6 @@ export const publicPrescriptionsInsertSchemaSchema = z.object({
   allow_substitutions: z.boolean().optional().nullable(),
   created_at: z.string().optional().nullable(),
   dosage_amount: z.number().optional().nullable(),
-  dosage_form: z.string().optional().nullable(),
   dosage_unit: z.string().optional().nullable(),
   duration_days: z.number().optional().nullable(),
   frequency: z.string().optional().nullable(),
@@ -1219,7 +1217,6 @@ export const publicPrescriptionsUpdateSchemaSchema = z.object({
   allow_substitutions: z.boolean().optional().nullable(),
   created_at: z.string().optional().nullable(),
   dosage_amount: z.number().optional().nullable(),
-  dosage_form: z.string().optional().nullable(),
   dosage_unit: z.string().optional().nullable(),
   duration_days: z.number().optional().nullable(),
   frequency: z.string().optional().nullable(),
@@ -1828,43 +1825,6 @@ export const publicResearchPartnersRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
-export const publicTreatmentDetailsRowSchemaSchema = z.object({
-  active_ingredients: jsonSchema.nullable(),
-  created_at: z.string(),
-  dosage_form: z.string().nullable(),
-  dosage_instructions: z.string().nullable(),
-  global_variable_id: z.string(),
-  updated_at: z.string(),
-});
-
-export const publicTreatmentDetailsInsertSchemaSchema = z.object({
-  active_ingredients: jsonSchema.optional().nullable(),
-  created_at: z.string().optional(),
-  dosage_form: z.string().optional().nullable(),
-  dosage_instructions: z.string().optional().nullable(),
-  global_variable_id: z.string(),
-  updated_at: z.string().optional(),
-});
-
-export const publicTreatmentDetailsUpdateSchemaSchema = z.object({
-  active_ingredients: jsonSchema.optional().nullable(),
-  created_at: z.string().optional(),
-  dosage_form: z.string().optional().nullable(),
-  dosage_instructions: z.string().optional().nullable(),
-  global_variable_id: z.string().optional(),
-  updated_at: z.string().optional(),
-});
-
-export const publicTreatmentDetailsRelationshipsSchemaSchema = z.tuple([
-  z.object({
-    foreignKeyName: z.literal("treatment_details_global_variable_id_fkey"),
-    columns: z.tuple([z.literal("global_variable_id")]),
-    isOneToOne: z.literal(true),
-    referencedRelation: z.literal("global_variables"),
-    referencedColumns: z.tuple([z.literal("id")]),
-  }),
-]);
-
 export const publicTreatmentRatingsRowSchemaSchema = z.object({
   created_at: z.string().nullable(),
   deleted_at: z.string().nullable(),
@@ -1926,8 +1886,11 @@ export const publicTreatmentRatingsRelationshipsSchemaSchema = z.tuple([
 ]);
 
 export const publicTreatmentsRowSchemaSchema = z.object({
+  active_ingredients: jsonSchema.nullable(),
   created_at: z.string().nullable(),
   deleted_at: z.string().nullable(),
+  dosage_form: z.string().nullable(),
+  dosage_instructions: z.string().nullable(),
   id: z.string(),
   manufacturer: z.string().nullable(),
   treatment_type: z.string(),
@@ -1935,8 +1898,11 @@ export const publicTreatmentsRowSchemaSchema = z.object({
 });
 
 export const publicTreatmentsInsertSchemaSchema = z.object({
+  active_ingredients: jsonSchema.optional().nullable(),
   created_at: z.string().optional().nullable(),
   deleted_at: z.string().optional().nullable(),
+  dosage_form: z.string().optional().nullable(),
+  dosage_instructions: z.string().optional().nullable(),
   id: z.string(),
   manufacturer: z.string().optional().nullable(),
   treatment_type: z.string(),
@@ -1944,8 +1910,11 @@ export const publicTreatmentsInsertSchemaSchema = z.object({
 });
 
 export const publicTreatmentsUpdateSchemaSchema = z.object({
+  active_ingredients: jsonSchema.optional().nullable(),
   created_at: z.string().optional().nullable(),
   deleted_at: z.string().optional().nullable(),
+  dosage_form: z.string().optional().nullable(),
+  dosage_instructions: z.string().optional().nullable(),
   id: z.string().optional(),
   manufacturer: z.string().optional().nullable(),
   treatment_type: z.string().optional(),
