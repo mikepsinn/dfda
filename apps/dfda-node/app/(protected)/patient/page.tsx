@@ -1,25 +1,21 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-// Remove Plus icon import if Button is removed or doesn't use it
-// import { Plus } from "lucide-react"
-import { HeartPulse, Pill, Loader2 } from "lucide-react" // Import icons for buttons
+// Remove unused Card imports
+// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+// Remove unused Button import
+// import { Button } from "@/components/ui/button"
+// Remove unused Link import
+// import Link from "next/link"
+// Remove unused Icon imports
+// import { HeartPulse, Pill, Loader2 } from "lucide-react"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-// Remove getRatingsByPatientAction import
+// Remove unused actions
 // import { getRatingsByPatientAction } from "@/app/actions/treatment-ratings"
-// Remove getTreatmentsForConditionAction import
 // import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
-// Import actions for treatments and tasks
 // import { getPatientTreatmentsAction } from "@/app/actions/patient-treatments"
 import { getPendingReminderNotificationsAction } from "@/app/actions/reminder-schedules"
-// Import the new list component (path might need adjustment)
-// import { PatientConditionsCard } from "@/components/patient/PatientConditionsCard"
-// import { PatientTreatmentsCard } from "@/components/patient/PatientTreatmentsCard" // Remove old card import
-// import { PatientTreatmentsSimpleList } from "@/components/patient/PatientTreatmentsSimpleList" // Corrected import path/name
-// Removed PatientConditionsCard and PatientTreatmentsCard imports
-import { TrackingInbox } from "@/components/patient/TrackingInbox"
+// Remove unused component imports
+// import { TrackingInbox } from "@/components/patient/TrackingInbox"
 import { logger } from "@/lib/logger"
 import PatientDashboardClient from "@/components/patient/PatientDashboardClient" // Import the new client component
 

@@ -1,23 +1,30 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import { redirect } from "next/navigation"
+import React, { useState /*, useEffect */ } from 'react'
+// Remove unused redirect
+// import { redirect } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { HeartPulse, Pill, Loader2 } from "lucide-react"
+import { HeartPulse, Pill /*, Loader2 */ } from "lucide-react"
 import { TrackingInbox } from "@/components/patient/TrackingInbox"
 import { logger } from "@/lib/logger"
 import { ImageAnalysisCapture } from '@/components/shared/ImageAnalysisCapture'
 // Import necessary types (adjust paths if needed)
 import type { User } from '@supabase/supabase-js' // Assuming User type from Supabase
-import type { PatientCondition } from '@/lib/database.types' // Assuming PatientCondition type
-import type { ReminderNotification } from '@/app/actions/reminder-schedules' // Assuming ReminderNotification type
+// Use Tables helper for view type
+import type { Tables } from '@/lib/database.types' 
+// Import the correct type for the tracking inbox data
+import type { PendingNotificationTask } from '@/app/actions/reminder-schedules'
+
+// Define types using the Tables helper
+type PatientConditionRow = Tables<'patient_conditions_view'>
+// Removed unused type alias: type ReminderNotificationRow = Tables<'reminder_notifications'>
 
 interface PatientDashboardClientProps {
   initialUser: User | null;
-  initialConditions: PatientCondition[];
-  initialNotifications: ReminderNotification[];
+  initialConditions: PatientConditionRow[];
+  initialNotifications: PendingNotificationTask[]; // Changed type here
 }
 
 export default function PatientDashboardClient({ 
@@ -25,13 +32,11 @@ export default function PatientDashboardClient({
   initialConditions, 
   initialNotifications 
 }: PatientDashboardClientProps) {
-  // Use state to manage data, initialized by props
-  // We might not need useState for props if they don't change client-side without a full refresh
-  // But let's keep the structure similar for now, especially for potentially refreshing parts later
-  const [user, setUser] = useState(initialUser)
-  const [conditions, setConditions] = useState(initialConditions)
-  const [notifications, setNotifications] = useState(initialNotifications)
-  const [dataKey, setDataKey] = useState(Date.now()) // Keep client-side refresh key if needed
+  // Remove unused state setters and dataKey
+  const [user /*, setUser*/] = useState(initialUser)
+  const [/*conditions*/] = useState(initialConditions) // Remove unused `conditions` state
+  const [notifications /*, setNotifications*/] = useState(initialNotifications)
+  // const [dataKey, setDataKey] = useState(Date.now()) // Remove unused state
 
   // This useEffect might be redundant if all initial data is fetched server-side
   // We'll keep it commented out for now, might be needed if we add client-side re-fetching later

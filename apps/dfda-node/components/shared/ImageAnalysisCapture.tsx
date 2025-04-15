@@ -72,8 +72,6 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   // Form state for editing analysis results
   const [formData, setFormData] = useState<Partial<AnalyzedImageResult & { type: 'food' | 'treatment' | 'other' | undefined }>>({ type: undefined, name: '', details: '' })
 
-  const [dataKey, setDataKey] = useState(Date.now()) // Keep client-side refresh key if needed
-
   // Add state to track the source of the current preview image
   const [imageSource, setImageSource] = useState<'upload' | 'webcam' | null>(null);
 

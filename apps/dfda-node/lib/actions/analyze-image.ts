@@ -4,6 +4,7 @@ import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { generateObject, NoObjectGeneratedError } from 'ai'
 import { z } from 'zod'
 import { logger } from '@/lib/logger'
+import { env } from '@/lib/env'
 
 // Define the expected structured output from the AI
 const AnalyzedImageSchema = z.object({
@@ -14,7 +15,7 @@ const AnalyzedImageSchema = z.object({
 
 // Ensure GOOGLE_GENERATIVE_AI_API_KEY is set in your environment variables
 const google = createGoogleGenerativeAI({
-  // apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY, // apiKey is automatically picked up from env
+  apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY, // Use the validated env variable
 })
 
 // Type for the successful result
