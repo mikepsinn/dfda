@@ -1220,29 +1220,6 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
 
         </ScrollArea>
 
-        {/* Make footer fixed at bottom */}
-        <DialogFooter className="mt-auto pt-4 border-t shrink-0">
-          {/* Close Button - Always available unless saving */} 
-          <DialogClose asChild>
-            <Button 
-              type="button" 
-              variant="outline" 
-              disabled={isSaving || isAnalyzing}
-              onClick={resetState} // Ensure reset on explicit cancel too
-            >Cancel</Button>
-          </DialogClose>
-
-          {/* finalReview step button remains */}
-          {currentStep === 'finalReview' && (
-          <Button 
-            type="button" 
-            onClick={handleSave} 
-              disabled={isAnalyzing || isSaving || !formData.type || !formData.name || Object.keys(imageStates).length === 0}
-           >
-              {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Save Variable'} 
-          </Button>
-          )}
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   )
