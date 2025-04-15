@@ -1054,6 +1054,150 @@ export type Database = {
           },
         ]
       }
+      product_listings: {
+        Row: {
+          cost: number | null
+          created_at: string
+          currency: string | null
+          id: string
+          is_active: boolean
+          last_checked_at: string | null
+          product_global_variable_id: string
+          provider_id: string | null
+          purchase_url: string | null
+          referral_fee_percentage: number | null
+          referral_link: string | null
+          seller_id: string
+          updated_at: string
+        }
+        Insert: {
+          cost?: number | null
+          created_at?: string
+          currency?: string | null
+          id?: string
+          is_active?: boolean
+          last_checked_at?: string | null
+          product_global_variable_id: string
+          provider_id?: string | null
+          purchase_url?: string | null
+          referral_fee_percentage?: number | null
+          referral_link?: string | null
+          seller_id: string
+          updated_at?: string
+        }
+        Update: {
+          cost?: number | null
+          created_at?: string
+          currency?: string | null
+          id?: string
+          is_active?: boolean
+          last_checked_at?: string | null
+          product_global_variable_id?: string
+          provider_id?: string | null
+          purchase_url?: string | null
+          referral_fee_percentage?: number | null
+          referral_link?: string | null
+          seller_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_listings_product_global_variable_id_fkey"
+            columns: ["product_global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["global_variable_id"]
+          },
+          {
+            foreignKeyName: "product_listings_provider_id_fkey"
+            columns: ["provider_id"]
+            isOneToOne: false
+            referencedRelation: "providers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "product_listings_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "product_sellers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      product_sellers: {
+        Row: {
+          created_at: string
+          default_referral_fee_percentage: number | null
+          id: string
+          name: string
+          updated_at: string
+          website_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          default_referral_fee_percentage?: number | null
+          id?: string
+          name: string
+          updated_at?: string
+          website_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          default_referral_fee_percentage?: number | null
+          id?: string
+          name?: string
+          updated_at?: string
+          website_url?: string | null
+        }
+        Relationships: []
+      }
+      products: {
+        Row: {
+          brand_name: string | null
+          created_at: string
+          description: string | null
+          global_variable_id: string | null
+          id: string
+          manufacturer: string | null
+          name: string
+          product_type: Database["public"]["Enums"]["product_type_enum"]
+          upc: string | null
+          updated_at: string
+        }
+        Insert: {
+          brand_name?: string | null
+          created_at?: string
+          description?: string | null
+          global_variable_id?: string | null
+          id?: string
+          manufacturer?: string | null
+          name: string
+          product_type: Database["public"]["Enums"]["product_type_enum"]
+          upc?: string | null
+          updated_at?: string
+        }
+        Update: {
+          brand_name?: string | null
+          created_at?: string
+          description?: string | null
+          global_variable_id?: string | null
+          id?: string
+          manufacturer?: string | null
+          name?: string
+          product_type?: Database["public"]["Enums"]["product_type_enum"]
+          upc?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "products_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -1986,6 +2130,42 @@ export type Database = {
           },
         ]
       }
+      user_variable_images: {
+        Row: {
+          created_at: string
+          is_primary: boolean
+          uploaded_file_id: string
+          user_variable_id: string
+        }
+        Insert: {
+          created_at?: string
+          is_primary?: boolean
+          uploaded_file_id: string
+          user_variable_id: string
+        }
+        Update: {
+          created_at?: string
+          is_primary?: boolean
+          uploaded_file_id?: string
+          user_variable_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_variable_images_uploaded_file_id_fkey"
+            columns: ["uploaded_file_id"]
+            isOneToOne: true
+            referencedRelation: "uploaded_files"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_variable_images_user_variable_id_fkey"
+            columns: ["user_variable_id"]
+            isOneToOne: false
+            referencedRelation: "user_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_variables: {
         Row: {
           created_at: string | null
@@ -2278,6 +2458,12 @@ export type Database = {
         | "scale"
         | "date"
         | "file_upload"
+      product_type_enum:
+        | "trackable_item"
+        | "lab_test"
+        | "wearable_device"
+        | "service"
+        | "other"
       reminder_notification_status:
         | "pending"
         | "completed"
@@ -2838,6 +3024,13 @@ export const Constants = {
         "scale",
         "date",
         "file_upload",
+      ],
+      product_type_enum: [
+        "trackable_item",
+        "lab_test",
+        "wearable_device",
+        "service",
+        "other",
       ],
       reminder_notification_status: [
         "pending",

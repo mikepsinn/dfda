@@ -13,8 +13,6 @@ export function PatientTreatmentsCard({ patientTreatment }: PatientTreatmentsCar
   const treatmentId = patientTreatment.treatment_id;
 
   const treatmentDetailUrl = `/treatments/${treatmentId}`;
-  const rateTreatmentUrl = `/patient/rate/treatment/${treatmentId}`;
-  const logSideEffectUrl = `/patient/log/side-effect?treatment=${treatmentId}`;
 
   return (
     <Link href={treatmentDetailUrl} className="block">

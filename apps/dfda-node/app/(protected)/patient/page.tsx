@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 // Remove Plus icon import if Button is removed or doesn't use it
 // import { Plus } from "lucide-react"
-import { HeartPulse, Pill } from "lucide-react" // Import icons for buttons
+import { HeartPulse, Pill, Loader2 } from "lucide-react" // Import icons for buttons
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
 // Remove getRatingsByPatientAction import
 // import { getRatingsByPatientAction } from "@/app/actions/treatment-ratings"
@@ -21,63 +21,51 @@ import { getPendingReminderNotificationsAction } from "@/app/actions/reminder-sc
 // Removed PatientConditionsCard and PatientTreatmentsCard imports
 import { TrackingInbox } from "@/components/patient/TrackingInbox"
 import { logger } from "@/lib/logger"
+import PatientDashboardClient from "@/components/patient/PatientDashboardClient" // Import the new client component
 
-export default async function PatientDashboard() {
+// Make the page component async
+export default async function PatientDashboardPage() {
+  logger.info("Rendering PatientDashboardPage (Server Component)");
+
+  // Fetch data directly on the server
   const user = await getServerUser()
   if (!user) {
+    logger.info("User not found, redirecting to login.");
     redirect("/login")
+    // Note: redirect() throws an error, so function execution stops here.
   }
 
-  // Fetch conditions first 
-  const conditions = await getPatientConditionsAction(user.id)
-
-  // If no conditions, redirect to onboarding
-  if (conditions.length === 0) {
+  // Fetch conditions and notifications in parallel for efficiency
+  let conditionsResult;
+  let notificationsResult;
+  try {
+    [conditionsResult, notificationsResult] = await Promise.all([
+        getPatientConditionsAction(user.id),
+        getPendingReminderNotificationsAction(user.id)
+    ]);
+  } catch (error) {
+      logger.error("Error fetching initial data for dashboard", { userId: user.id, error });
+      // Render an error state if fetching fails server-side
+      return (
+          <div className="container py-8 text-center text-red-600">
+              Failed to load dashboard data. Please try refreshing the page.
+          </div>
+      );
+  }
+  
+  // Redirect to onboarding if no conditions found
+  if (!conditionsResult || conditionsResult.length === 0) {
     logger.info("User has no conditions, redirecting to onboarding", { userId: user.id });
     redirect("/patient/onboarding");
   }
 
-  // Fetch other data 
-  // const patientRatings = await getRatingsByPatientAction(user.id) // Keep if needed later, unused for now
-  const initialNotifications = await getPendingReminderNotificationsAction(user.id) // Renamed variable
-  // Removed fetching allPatientTreatments as it's not displayed directly anymore
-
-  // REMOVE conditionsWithTreatments mapping logic
-  // const conditionsWithTreatments = await Promise.all(...).then(...);
-
+  // Render the Client Component and pass data as props
   return (
-    <div className="container space-y-8 py-8">
-      {/* Conditionally render Tracking Inbox */}
-      {initialNotifications && initialNotifications.length > 0 && ( // Use renamed variable
-          <TrackingInbox userId={user.id} initialNotifications={initialNotifications} /> // Pass prop with new name
-      )}
-
-      {/* Main Content Card */}
-      <Card>
-        <CardHeader className="pb-4"> {/* Simplified header, removed button */}
-          <div>
-            <CardTitle>Your Conditions & Treatments</CardTitle>
-            <CardDescription>View and manage your health data</CardDescription> {/* Simplified desc */}
-          </div>
-        </CardHeader>
-        <CardContent> {/* New content with large buttons */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2"> 
-              <Link href="/patient/conditions">
-                  <Button variant="outline" size="lg" className="w-full h-24 flex flex-col justify-center items-center gap-2"> 
-                      <HeartPulse className="h-6 w-6" />
-                      <span>Conditions</span>
-                  </Button>
-              </Link>
-              <Link href="/patient/treatments">
-                  <Button variant="outline" size="lg" className="w-full h-24 flex flex-col justify-center items-center gap-2"> 
-                      <Pill className="h-6 w-6" />
-                      <span>Treatments</span>
-                  </Button>
-              </Link>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+    <PatientDashboardClient 
+      initialUser={user} 
+      initialConditions={conditionsResult} 
+      initialNotifications={notificationsResult} 
+    />
   )
 }
 
