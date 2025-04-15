@@ -65,8 +65,8 @@ export const navigationTreeObject: GeneratedNavTree = {
   "conditions": {
     "title": "Conditions",
     "href": "/conditions",
-    "description": "View conditions.",
-    "emoji": "🦠"
+    "description": "View available conditions.",
+    "emoji": "⚕️"
   },
   "conditions_conditionid_trials": {
     "title": "Trials",
@@ -75,21 +75,21 @@ export const navigationTreeObject: GeneratedNavTree = {
     "emoji": "🧪"
   },
   "contact": {
-    "title": "Contact",
+    "title": "Contact Us",
     "href": "/contact",
-    "description": "Contact us.",
+    "description": "Get in touch with us.",
     "emoji": "✉️"
   },
   "developer": {
     "title": "Developer",
     "href": "/developer",
     "description": "Developer resources.",
-    "emoji": "🧑‍💻"
+    "emoji": "💻"
   },
   "developers": {
     "title": "Developers",
     "href": "/developers",
-    "description": "Developer resources.",
+    "description": "Information for developers.",
     "emoji": "🧑‍💻"
   },
   "developers_documentation": {
@@ -101,7 +101,7 @@ export const navigationTreeObject: GeneratedNavTree = {
   "find_trials": {
     "title": "Find Trials",
     "href": "/find-trials",
-    "description": "Find clinical trials.",
+    "description": "Search for clinical trials.",
     "emoji": "🔍"
   },
   "forgot_password": {
@@ -113,13 +113,13 @@ export const navigationTreeObject: GeneratedNavTree = {
   "impact": {
     "title": "Impact",
     "href": "/impact",
-    "description": "View our impact.",
+    "description": "See our impact.",
     "emoji": "📊"
   },
   "login": {
     "title": "Login",
     "href": "/login",
-    "description": "Login to your account.",
+    "description": "Log in to your account.",
     "emoji": "➡️"
   },
   "outcome_labels": {
@@ -132,72 +132,72 @@ export const navigationTreeObject: GeneratedNavTree = {
     "title": "Dashboard",
     "href": "/patient",
     "description": "Patient portal.",
-    "emoji": "🧑"
+    "emoji": "🧑‍⚕️"
   },
   "patient_conditions": {
     "title": "Patient Conditions",
     "href": "/patient/conditions",
-    "description": "View patient's conditions.",
-    "emoji": "🩺"
+    "description": "View your conditions.",
+    "emoji": "😷"
   },
   "patient_conditions_id": {
-    "title": "Specific Condition",
+    "title": "Condition Details",
     "href": "/patient/conditions/[id]",
-    "description": "View details of a specific condition.",
-    "emoji": "🦠"
+    "description": "View condition details.",
+    "emoji": "ℹ️"
   },
   "patient_data_submission": {
     "title": "Data Submission",
     "href": "/patient/data-submission",
-    "description": "Submit patient data.",
+    "description": "Submit your data.",
     "emoji": "⬆️"
   },
   "patient_join_trial_treatment_condition": {
     "title": "Join Trial",
     "href": "/patient/join-trial/[treatment]/[condition]",
-    "description": "Join a specific trial.",
+    "description": "Join a clinical trial.",
     "emoji": "➕"
   },
   "patient_onboarding": {
-    "title": "Patient Onboarding",
+    "title": "Onboarding",
     "href": "/patient/onboarding",
-    "description": "Onboarding process for patients.",
-    "emoji": "✅"
+    "description": "Patient onboarding process.",
+    "emoji": "🌱"
   },
   "patient_onboarding_treatments": {
-    "title": "Onboarding Treatments",
+    "title": "Treatments",
     "href": "/patient/onboarding/treatments",
-    "description": "View treatments during onboarding.",
+    "description": "View available treatments.",
     "emoji": "💊"
   },
   "patient_treatments": {
-    "title": "Patient Treatments",
+    "title": "Treatments",
     "href": "/patient/treatments",
-    "description": "View patient's treatments.",
-    "emoji": "💊"
+    "description": "View your treatments.",
+    "emoji": "💉"
   },
   "patient_treatments_patienttreatmentid": {
-    "title": "Specific Treatment",
+    "title": "Treatment Details",
     "href": "/patient/treatments/[patientTreatmentId]",
-    "description": "View details of a specific treatment.",
-    "emoji": "⚕️"
+    "description": "View treatment details.",
+    "emoji": "ℹ️"
   },
   "patient_trial_details_id": {
     "title": "Trial Details",
     "href": "/patient/trial-details/[id]",
     "description": "View trial details.",
-    "emoji": "ℹ️"
+    "emoji": "🔎"
   },
   "patient_trial_payment_id": {
     "title": "Trial Payment",
     "href": "/patient/trial-payment/[id]",
-    "description": "Manage trial payment.",
+    "description": "Manage trial payments.",
     "emoji": "💰"
   },
   "privacy": {
-    "title": "Privacy",
+    "title": "Privacy Policy",
     "href": "/privacy",
-    "description": "Privacy policy.",
+    "description": "View our privacy policy.",
     "emoji": "🔒"
   },
   "provider": {
@@ -221,32 +221,32 @@ export const navigationTreeObject: GeneratedNavTree = {
   "provider_intervention_assignment_patientid": {
     "title": "Intervention Assignment",
     "href": "/provider/intervention-assignment/[patientId]",
-    "description": "Assign intervention to patient.",
+    "description": "Assign interventions.",
     "emoji": "⚕️"
   },
   "provider_patients": {
-    "title": "Provider Patients",
+    "title": "Patients",
     "href": "/provider/patients",
-    "description": "View provider's patients.",
-    "emoji": "🧑‍⚕️"
+    "description": "View your patients.",
+    "emoji": "👥"
   },
   "provider_patients_id_enroll": {
     "title": "Enroll Patient",
     "href": "/provider/patients/[id]/enroll",
     "description": "Enroll a patient.",
-    "emoji": "➕"
+    "emoji": "✅"
   },
   "providers": {
     "title": "Providers",
     "href": "/providers",
-    "description": "View providers.",
+    "description": "Information for providers.",
     "emoji": "👨‍⚕️"
   },
   "register": {
     "title": "Register",
     "href": "/register",
-    "description": "Register an account.",
-    "emoji": "📝"
+    "description": "Register a new account.",
+    "emoji": "➕"
   },
   "research_partner": {
     "title": "Research Partner",
@@ -269,20 +269,20 @@ export const navigationTreeObject: GeneratedNavTree = {
   "select_role": {
     "title": "Select Role",
     "href": "/select-role",
-    "description": "Select your role.",
+    "description": "Choose your role.",
     "emoji": "👤"
   },
   "terms": {
-    "title": "Terms",
+    "title": "Terms of Service",
     "href": "/terms",
-    "description": "Terms of service.",
+    "description": "View our terms of service.",
     "emoji": "📜"
   },
   "treatments_id": {
-    "title": "Specific Treatment",
+    "title": "Treatment Details",
     "href": "/treatments/[id]",
-    "description": "View details of a specific treatment.",
-    "emoji": "💊"
+    "description": "View treatment details.",
+    "emoji": "ℹ️"
   },
   "user_profile": {
     "title": "User Profile",

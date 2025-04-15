@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import { pathToFileURL } from 'url'; // Import pathToFileURL
 import { z } from 'zod';
 import { generateObject, NoObjectGeneratedError } from 'ai';
 import dotenv from 'dotenv';
 import { type NavItem } from '../lib/types/navigation'; // Import only the final type
-import { googleAI, defaultGoogleModel } from '../lib/ai/google'; // Import shared client and model
+import { defaultGoogleModel } from '../lib/ai/google'; // Import shared client and model
 import { logger } from '@/lib/logger'; // Use logger
 
 // Load environment variables (.env file in the root)
@@ -23,8 +24,8 @@ interface NavNode {
 const SingleAISuggestionSchema = z.object({
   originalPath: z.string().describe("The original URL path this suggestion corresponds to (e.g., '/patient/conditions'). Crucial for mapping."),
   title: z.string().max(30, "Title too long").describe("Generate a concise, user-friendly title (max 4 words, Title Case) based on the original path."),
-  description: z.string().max(150, "Description too long").optional().describe("Generate a brief (1-2 sentence) description of the page's purpose suitable for tooltips. Infer from the path."),
-  emoji: z.string().optional().describe("Generate a single relevant emoji (can be multi-character like 🧑‍💻) based on the title/path.")
+  description: z.string().max(240, "Description too long").optional().describe("Generate a brief (1-2 sentence) description of the page's purpose suitable for tooltips. Infer from the path."),
+  emoji: z.string().describe("Generate a single relevant emoji (can be multi-character like 🧑‍💻) based on the title/path.")
 });
 
 const AIResponseSchema = z.array(SingleAISuggestionSchema);
@@ -222,25 +223,25 @@ function pathToSnakeCaseKey(navPath: string): string {
     .toLowerCase();
 }
 
-async function getAiSuggestions(nodes: { name: string, path: string }[]): Promise<Map<string, AISuggestion>> {
+async function getAiSuggestions(nodesToSuggestFor: { name: string, path: string }[]): Promise<Map<string, AISuggestion>> {
   const suggestionsMap = new Map<string, AISuggestion>();
   if (!aiModel) {
     logger.warn(`${LOG_PREFIX} AI model not configured. Skipping AI suggestions.`);
     return suggestionsMap;
   }
-  if (nodes.length === 0) {
-    logger.info('No navigable nodes found to send to AI.');
+  if (nodesToSuggestFor.length === 0) {
+    logger.info('No new or incomplete nodes found requiring AI suggestions.');
     return suggestionsMap;
   }
 
   // Prepare input for AI
-  const inputList = nodes.map(n => ({ path: n.path, name: n.name }));
+  const inputList = nodesToSuggestFor.map(n => ({ path: n.path, name: n.name }));
   const prompt = `Generate navigation properties (title, description, emoji) for the following list of URL paths and their original names. Return the result as a JSON array matching the schema, ensuring each object includes the 'originalPath'.
 
 Input List:
 ${JSON.stringify(inputList, null, 2)}`;
 
-  logger.info(`${LOG_PREFIX} Attempting single AI generation (Google) for ${nodes.length} paths...`);
+  logger.info(`${LOG_PREFIX} Attempting single AI generation (Google) for ${nodesToSuggestFor.length} paths...`);
 
   try {
     const { object: aiSuggestionsArray } = await generateObject({
@@ -253,10 +254,10 @@ ${JSON.stringify(inputList, null, 2)}`;
 
     // Populate the map for easy lookup
     for (const suggestion of aiSuggestionsArray) {
-      if (suggestion.originalPath && nodes.some(n => n.path === suggestion.originalPath)) { // Verify path exists
+      if (suggestion.originalPath && nodesToSuggestFor.some(n => n.path === suggestion.originalPath)) { // Verify path exists
         suggestionsMap.set(suggestion.originalPath, suggestion);
       } else {
-        logger.warn(`${LOG_PREFIX} AI returned suggestion for unknown path: ${suggestion.originalPath}`);
+        logger.warn(`${LOG_PREFIX} AI returned suggestion for unknown or unexpected path: ${suggestion.originalPath}`);
       }
     }
     logger.info(`${LOG_PREFIX} AI successfully generated suggestions for ${suggestionsMap.size} paths.`);
@@ -267,7 +268,7 @@ ${JSON.stringify(inputList, null, 2)}`;
     } else {
       logger.error(`${LOG_PREFIX} Single AI generation call failed:`, { error });
     }
-    logger.warn(`${LOG_PREFIX} Falling back to default values due to AI failure.`);
+    logger.warn(`${LOG_PREFIX} Falling back to default values for requested nodes due to AI failure.`);
     return new Map<string, AISuggestion>(); // Return empty map on failure
   }
 
@@ -312,30 +313,132 @@ async function generateFinalNavObject(nodes: { name: string, path: string }[], s
 
 // --- Conversion and AI Enhancement --- END
 
-// --- Execution & Output --- START
-async function main() {
-    const navigationTreeNodes = generateNavTree(); // Gets the flat list of { name, path }
-    logger.info(`${LOG_PREFIX} Discovered ${navigationTreeNodes.length} navigable paths from directory structure.`);
+// --- Load Existing Data Function --- START
+async function loadExistingNavData(): Promise<Record<string, NavItem>> {
+    const existingFilePath = path.resolve(process.cwd(), 'lib', 'generated-nav-tree.ts');
+    try {
+        if (fs.existsSync(existingFilePath)) {
+            logger.info(`${LOG_PREFIX} Loading existing navigation data from ${path.relative(process.cwd(), existingFilePath)}`);
+            // Convert path to file URL for dynamic import
+            const fileUrl = pathToFileURL(existingFilePath).href + `?t=${Date.now()}`; // Add cache buster
+            logger.debug(`Importing from file URL: ${fileUrl}`);
+            const existingModule = await import(fileUrl);
+            if (existingModule && typeof existingModule.navigationTreeObject === 'object') {
+                logger.info(`${LOG_PREFIX} Successfully loaded existing navigationTreeObject.`);
+                return existingModule.navigationTreeObject as Record<string, NavItem>;
+            } else {
+                logger.warn(`${LOG_PREFIX} Existing file found but failed to load or parse navigationTreeObject.`);
+            }
+        } else {
+             logger.info(`${LOG_PREFIX} No existing navigation file found. Generating from scratch.`);
+        }
+    } catch (error: any) {
+        logger.error(`${LOG_PREFIX} Error loading existing navigation data:`, { message: error.message, code: error.code, stack: error.stack });
+        if (error.code === 'ERR_MODULE_NOT_FOUND') {
+            logger.warn(`${LOG_PREFIX} Module not found, likely the first run or file was deleted.`);
+        } else if (error.code === 'ERR_UNSUPPORTED_ESM_URL_SCHEME') {
+            logger.error(`${LOG_PREFIX} Failed to convert path to valid import URL.`);
+        }
+    }
+    return {}; // Return empty object if file doesn't exist or fails to load
+}
+// --- Load Existing Data Function --- END
 
-    if (navigationTreeNodes.length === 0) {
-        logger.warn('No navigable paths found. Output file will be empty or may error if interface expects keys.');
-        // Decide how to handle - write empty object? Error out?
-        // For now, let it proceed, it might write an empty object/interface.
+// --- Main Execution Logic --- START
+async function main() {
+    // 1. Load existing data (if any)
+    const existingNavData = await loadExistingNavData();
+    const existingPaths = new Set(Object.values(existingNavData).map(item => item.href));
+
+    // 2. Scan current directory structure
+    const currentNavNodes = generateNavTree(); // Gets the flat list of { name, path }
+    const currentPaths = new Set(currentNavNodes.map(node => node.path));
+    logger.info(`${LOG_PREFIX} Discovered ${currentNavNodes.length} navigable paths from directory structure.`);
+
+    // 3. Identify nodes needing AI suggestions
+    const nodesForAI: { name: string, path: string }[] = [];
+    for (const node of currentNavNodes) {
+        const key = pathToSnakeCaseKey(node.path);
+        const existingEntry = existingNavData[key];
+
+        if (!existingEntry || !existingEntry.description || !existingEntry.emoji) {
+            // Needs generation if new OR missing description/emoji
+            logger.debug(`Node needs AI suggestion: ${node.path} (New: ${!existingEntry}, Missing Desc: ${!existingEntry?.description}, Missing Emoji: ${!existingEntry?.emoji})`);
+            nodesForAI.push(node);
+        } else {
+            logger.debug(`Node is complete, preserving existing data: ${node.path}`);
+        }
     }
 
-    // Get AI suggestions in a single batch
-    const suggestionsMap = await getAiSuggestions(navigationTreeNodes);
+    // 4. Get AI suggestions ONLY for the needy nodes
+    const suggestionsMap = await getAiSuggestions(nodesForAI);
 
-    // Generate the final object using the nodes and suggestions
-    const navigationTreeObject = await generateFinalNavObject(navigationTreeNodes, suggestionsMap);
-    logger.info(`${LOG_PREFIX} Final navigation object constructed with ${Object.keys(navigationTreeObject).length} keys.`);
+    // 5. Merge results and build the final object
+    const finalNavigationTreeObject: Record<string, NavItem> = {};
+    let preservedCount = 0;
+    let updatedCount = 0;
+    let newCount = 0;
+    let fallbackCount = 0;
 
-    // --- Generate Interface and Write File ---
-    const generatedKeys = Object.keys(navigationTreeObject).sort();
+    for (const node of currentNavNodes) {
+        const key = pathToSnakeCaseKey(node.path);
+        const existingEntry = existingNavData[key];
+        const suggestion = suggestionsMap.get(node.path); // Will be undefined if not requested
+
+        let finalNavItem: NavItem;
+
+        // Logic: Preserve if complete and existed, otherwise use suggestion or fallback
+        if (existingEntry && existingEntry.description && existingEntry.emoji && !suggestion) {
+            // Preserve complete existing entry (wasn't sent to AI)
+            finalNavItem = existingEntry;
+            preservedCount++;
+        } else if (suggestion) {
+            // Use AI suggestion (was new or incomplete)
+            finalNavItem = {
+                title: suggestion.title ?? node.name, // Fallback title within suggestion
+                href: node.path,
+                description: suggestion.description,
+                emoji: suggestion.emoji,
+            };
+             if (existingEntry) updatedCount++; else newCount++;
+        } else {
+            // Fallback: Use scanned name (either AI wasn't requested for this, or AI failed for it)
+             logger.warn(`${LOG_PREFIX} Using fallback for path: ${node.path}`);
+            finalNavItem = {
+                title: node.name,
+                href: node.path,
+                description: undefined, // Explicitly undefined
+                emoji: undefined,
+            };
+            fallbackCount++;
+             if (existingEntry) updatedCount++; else newCount++; // Count as new/updated even on fallback
+        }
+
+        // --- Apply Manual Overrides (Example for /patient title) ---
+        if (node.path === '/patient' && finalNavItem.title !== 'Dashboard') {
+             logger.info(`${LOG_PREFIX} Applying manual title override for path: ${node.path}`);
+             finalNavItem.title = 'Dashboard';
+        }
+        // --- End Manual Overrides ---
+
+        if (finalNavigationTreeObject[key]) {
+            logger.warn(`${LOG_PREFIX} Duplicate snake_case key generated during final build: '${key}'. Overwriting.`);
+        }
+        finalNavigationTreeObject[key] = finalNavItem;
+    }
+
+    // Log summary
+    const removedPaths = Object.keys(existingNavData).filter(key => !currentPaths.has(existingNavData[key].href));
+    logger.info(`${LOG_PREFIX} Processing complete. Preserved: ${preservedCount}, Updated/New (with AI/fallback): ${updatedCount + newCount} (Incl. ${fallbackCount} fallbacks), Removed: ${removedPaths.length}`);
+    if (removedPaths.length > 0) {
+         logger.info(`${LOG_PREFIX} Removed paths: ${removedPaths.map(key => existingNavData[key].href).join(', ')}`);
+    }
+
+    // 6. Write Output
+    const generatedKeys = Object.keys(finalNavigationTreeObject).sort();
     const interfaceProperties = generatedKeys
       .map(key => `  readonly '${key}': NavItem;`)
       .join('\n');
-    // Handle case where there are no keys - create an empty interface
     const generatedInterfaceString = `export interface GeneratedNavTree {
 ${interfaceProperties.length > 0 ? interfaceProperties : '  // No keys generated'}
 }`;
@@ -357,17 +460,14 @@ ${generatedInterfaceString}
 // --- Generated Interface --- END
 
 // Maps snake_case path keys to navigation info
-export const navigationTreeObject: GeneratedNavTree = ${JSON.stringify(navigationTreeObject, null, 2)};
+export const navigationTreeObject: GeneratedNavTree = ${JSON.stringify(finalNavigationTreeObject, null, 2)};
 `;
 
     fs.writeFileSync(outputPath, fileContent, 'utf8');
     logger.info(`${LOG_PREFIX} Navigation tree generated successfully at ${path.relative(process.cwd(), outputPath)}`);
-
-    // Note: NavNode interface is still used internally by scanning logic, so lib/nav-node.ts is NOT removed.
 }
 
 main().catch(error => {
-  // Use logger for the final error
   logger.error(`${LOG_PREFIX} Critical error during navigation tree generation:`, { error });
   process.exit(1);
 });
