@@ -5,21 +5,30 @@ import { generateObject, NoObjectGeneratedError } from 'ai'
 import { z } from 'zod'
 import { logger } from '@/lib/logger'
 import { env } from '@/lib/env'
+// Import the relevant generated schema
+import { publicGlobalVariablesInsertSchemaSchema } from '@/lib/database.schemas'
 
-// Define the expected structured output from the AI
-const AnalyzedImageSchema = z.object({
-  type: z.enum(['food', 'treatment', 'other']).describe('The type of item identified in the image.'),
-  name: z.string().describe('The specific name of the food or treatment identified.'),
-  details: z.string().optional().describe('Any additional relevant details about the item.'),
-})
+// --- Create a new schema specifically for AI output, based on the generated one --- 
+const AiOutputSchema = z.object({
+  // Keep the 'type' field as it's specific to the analysis task
+  type: z.enum(['food', 'treatment', 'other'])
+          .describe('Classify the primary item in the image as either "food", "treatment" (e.g., pill, inhaler), or "other".'),
+  // Pick 'name' from the global_variables schema and add a description
+  name: publicGlobalVariablesInsertSchemaSchema.shape.name
+          .describe('Identify the specific name of the item (e.g., "Apple", "Ibuprofen 200mg", "Laptop"). Be concise.'),
+  // Pick 'description' (mapped to 'details' here), make optional, and add a description
+  details: publicGlobalVariablesInsertSchemaSchema.shape.description.optional()
+          .describe('(Optional) Provide any relevant additional details, like brand, dosage, serving size, or distinguishing features.'),
+});
+// --- End new schema definition ---
 
 // Ensure GOOGLE_GENERATIVE_AI_API_KEY is set in your environment variables
 const google = createGoogleGenerativeAI({
   apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY, // Use the validated env variable
 })
 
-// Type for the successful result
-export type AnalyzedImageResult = z.infer<typeof AnalyzedImageSchema>
+// Type for the successful result - Now derived from our new schema
+export type AnalyzedImageResult = z.infer<typeof AiOutputSchema>
 
 export async function analyzeImageAction(formData: FormData): Promise<
   { success: true; data: AnalyzedImageResult } |
@@ -33,35 +42,36 @@ export async function analyzeImageAction(formData: FormData): Promise<
 
   // Convert image file to Buffer
   const imageBuffer = Buffer.from(await file.arrayBuffer())
-  // No need for base64 with Gemini usually, pass buffer directly
 
   try {
     const { object } = await generateObject({
-      // Use the specified Gemini model that supports image input
-      model: google('models/gemini-2.0-flash-001'), // Updated model ID
-      schema: AnalyzedImageSchema,
+      model: google('models/gemini-2.0-flash-001'), 
+      // Use the new schema with descriptions
+      schema: AiOutputSchema, 
       // System prompt might need adjustment for Gemini if behavior differs
-      // system: 'You are an expert assistant classifying images as food or medical treatments.',
-      prompt: 'Analyze this image. Is it primarily showing a type of food, a medical treatment (like pills, inhaler, injection), or something else? Provide the specific name and any relevant details.',
-      // Include the image data in the messages payload
+      // system: 'You are an expert assistant classifying images and extracting information according to the provided schema.',
+      // Simplified prompt, relying on schema descriptions
+      prompt: 'Analyze the image and extract information according to the schema.',
       messages: [
         {
           role: 'user',
           content: [
             {
               type: 'text',
-              text: 'Analyze this image. Is it primarily showing a type of food, a medical treatment (like pills, inhaler, injection), or something else? Provide the specific name and any relevant details.'
+              // Simplified text prompt
+              text: 'Analyze this image and provide the type, name, and details according to the schema fields and their descriptions.' 
             },
             {
               type: 'image',
-              image: imageBuffer, // Pass the buffer directly
-              mimeType: file.type, // Include mime type
+              image: imageBuffer, 
+              mimeType: file.type, 
             }
           ]
         }
       ]
     })
 
+    // The 'object' variable here is already validated and typed as AnalyzedImageResult
     logger.info('Image analyzed successfully with Gemini', { result: object })
     return { success: true, data: object }
 
@@ -69,9 +79,9 @@ export async function analyzeImageAction(formData: FormData): Promise<
     logger.error('Error analyzing image with Gemini:', { error })
 
     if (NoObjectGeneratedError.isInstance(error)) {
-      return { success: false, error: `The AI failed to identify the item. Details: ${error.message}` }
+      logger.error('NoObjectGeneratedError details:', { cause: error.cause, text: error.text });
+      return { success: false, error: `The AI failed to generate valid structured data matching the schema. Details: ${error.message}` }
     } else if (error instanceof Error) {
-      // Check for specific provider errors if needed
       return { success: false, error: `An unexpected error occurred: ${error.message}` }
     } else {
       return { success: false, error: 'An unknown error occurred during image analysis.' }

@@ -9,6 +9,9 @@ import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 import { v4 as uuidv4 } from 'uuid' // For generating unique filenames
 import slugify from 'slugify' // Import slugify
+// Import constants
+import { UNIT_IDS } from '@/lib/constants/units'
+import { VARIABLE_CATEGORIES } from '@/lib/constants/variable-categories'
 
 // Input schema validation using Zod
 const SaveItemInputSchema = z.object({
@@ -120,12 +123,13 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
     finalStoragePath = uploadData.path; // Use the path returned by Supabase
 
     // --- 2. Find or Create Global Variable --- 
-    const foodCategoryId = process.env.FOOD_CATEGORY_ID || 'c5a0b4-food-category-uuid-placeholder' 
-    const treatmentCategoryId = process.env.TREATMENT_CATEGORY_ID || 't8e1f9-treatment-category-uuid-placeholder'
-    const otherCategoryId = process.env.OTHER_CATEGORY_ID || 'o2t3h7-other-category-uuid-placeholder'
-    const defaultFoodUnitId = process.env.DEFAULT_FOOD_UNIT_ID || 'u1n2i3t-grams-uuid-placeholder'
-    const defaultTreatmentUnitId = process.env.DEFAULT_TREATMENT_UNIT_ID || 'u4n5i6t-dose-uuid-placeholder'
-    const defaultOtherUnitId = process.env.DEFAULT_OTHER_UNIT_ID || 'u7n8i9t-unit-uuid-placeholder'
+    // Use constants for category and unit IDs
+    const foodCategoryId = VARIABLE_CATEGORIES.INTAKE_AND_INTERVENTIONS // Assuming food fits here
+    const treatmentCategoryId = VARIABLE_CATEGORIES.INTAKE_AND_INTERVENTIONS // Assuming treatments fit here
+    const otherCategoryId = VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY // Assuming 'other' maps here, adjust if needed
+    const defaultFoodUnitId = UNIT_IDS.GRAM // Default food unit
+    const defaultTreatmentUnitId = UNIT_IDS.DIMENSIONLESS // Default treatment unit (e.g., pill, dose) - Adjust if needed
+    const defaultOtherUnitId = UNIT_IDS.DIMENSIONLESS // Default 'other' unit - Adjust if needed
 
     let variableCategoryId: string | null = null
     let defaultUnitId: string | null = null
@@ -133,9 +137,10 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
     else if (type === 'treatment') { variableCategoryId = treatmentCategoryId; defaultUnitId = defaultTreatmentUnitId; }
     else { variableCategoryId = otherCategoryId; defaultUnitId = defaultOtherUnitId; }
 
-    if (!variableCategoryId || !defaultUnitId || variableCategoryId.includes('placeholder') || defaultUnitId.includes('placeholder')) {
-      logger.error('Missing or placeholder Category/Unit IDs', { variableCategoryId, defaultUnitId })
-      throw new Error('Configuration error: Could not determine valid variable category or default unit ID. Please check environment variables or hardcoded values.')
+    // Simplified check: ensure category and unit IDs were resolved from constants
+    if (!variableCategoryId || !defaultUnitId) {
+      logger.error('Missing Category/Unit IDs from constants', { variableCategoryId, defaultUnitId })
+      throw new Error('Configuration error: Could not determine valid variable category or default unit ID from constants.')
     }
 
     let globalVariableId: string | null = null;

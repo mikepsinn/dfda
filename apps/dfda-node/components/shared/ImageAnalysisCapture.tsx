@@ -516,7 +516,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                     <Textarea 
                         id="details"
                         name="details"
-                        value={formData.details}
+                        value={formData.details ?? ''}
                         onChange={handleFormChange}
                         className="col-span-3"
                         disabled={isSaving}
