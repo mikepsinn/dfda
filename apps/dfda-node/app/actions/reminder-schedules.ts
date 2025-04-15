@@ -11,7 +11,7 @@ import { revalidatePath } from 'next/cache'
 // REMOVE the Trigger.dev client import
 // import { client } from '@/lib/trigger' 
 // Import graphile-worker helper
-// import { quickAddJob } from 'graphile-worker';
+import { quickAddJob } from 'graphile-worker';
 
 // Types
 export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
@@ -261,6 +261,13 @@ export async function createDefaultReminderAction(
     return { success: false, error: 'Missing required information for default reminder.' };
   }
 
+  // Get connection string (required for quickAddJob)
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+      logger.error("DATABASE_URL environment variable is not set for worker job enqueuing");
+      return { success: false, error: "Server configuration error (DB URL missing)." };
+  }
+
   try {
     // --- Get User Timezone --- 
     let userTimezone: string = 'UTC'; // Default fallback timezone
@@ -334,36 +341,26 @@ export async function createDefaultReminderAction(
     const newScheduleId = result.data.id;
     logger.info('Successfully created default reminder schedule', { scheduleId: newScheduleId, userId, userVariableId });
 
-    // --- Add job by calling the database function --- 
+    // --- Add job using graphile-worker library --- 
     try {
-        logger.info('Calling enqueue_graphile_job function', { scheduleId: newScheduleId });
-        const { error: rpcError } = await supabase.rpc('enqueue_graphile_job', {
-          // Match the function arguments
-          task_identifier: 'processSingleSchedule',
-          payload: { scheduleId: newScheduleId }
-          // Optional: can pass queue_name, run_at, max_attempts, job_key, priority if needed
-        });
+        logger.info('Enqueuing processSingleSchedule job via quickAddJob', { scheduleId: newScheduleId });
+        await quickAddJob(
+            { connectionString }, // Options object with connection string
+            'processSingleSchedule', // Task identifier
+            { scheduleId: newScheduleId } // Payload
+        );
+        logger.info('Successfully enqueued processSingleSchedule job', { scheduleId: newScheduleId });
 
-        if (rpcError) {
-            logger.error('Failed to call enqueue_graphile_job function', {
-                scheduleId: newScheduleId,
-                error: rpcError
-            });
-            // Handle error as needed
-        } else {
-             logger.info('Successfully called enqueue_graphile_job function', { scheduleId: newScheduleId });
-        }
-    } catch (rpcCatchError) {
-        logger.error('Error calling enqueue_graphile_job RPC', {
+    } catch (enqueueError) {
+        logger.error('Error enqueuing processSingleSchedule job via quickAddJob', {
             scheduleId: newScheduleId,
-            error: rpcCatchError instanceof Error ? rpcCatchError.message : String(rpcCatchError)
+            error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
         });
-        // Handle error as needed
+        // Decide if failure to enqueue should fail the whole action
+        // For now, let's return success but log the error
+        // return { success: false, error: "Failed to schedule background job." };
     }
-    // --- End Add job via RPC ---
-
-    // Optionally revalidate paths if needed immediately
-    // revalidatePath('/patient/reminders');
+    // --- End Add job via library ---
 
     return { success: true };
 

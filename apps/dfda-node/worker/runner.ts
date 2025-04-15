@@ -1,6 +1,11 @@
 // worker/runner.ts
 import { run } from "graphile-worker";
-import path from 'path';
+// No longer need path or url
+// import path from 'path';
+// import { pathToFileURL } from 'url';
+
+// Import tasks directly
+import * as tasks from "./tasks";
 
 // Ensure DATABASE_URL is set for graphile-worker
 // Typically this should be your Supabase connection string
@@ -15,9 +20,13 @@ if (!connectionString) {
 async function main() {
   console.log('[Worker] Starting graphile-worker...');
 
-  // Define the path to your tasks file
-  const taskDirectory = path.resolve(__dirname, 'tasks.ts');
-  console.log(`[Worker] Loading tasks from: ${taskDirectory}`);
+  // We no longer need taskDirectory logic
+  // const resolvedTaskDirPath = path.resolve(__dirname);
+  // const taskDirectoryUrl = pathToFileURL(resolvedTaskDirPath).toString();
+  // console.log(`[Worker] Resolved task directory path: ${resolvedTaskDirPath}`);
+  // console.log(`[Worker] Loading tasks from directory URL: ${taskDirectoryUrl}`);
+
+  console.log(`[Worker] Using explicitly imported task list.`);
 
   // Run the worker
   const runner = await run({
@@ -25,7 +34,9 @@ async function main() {
     concurrency: 5, // Number of jobs to run concurrently
     // noHandleSignals: false, // Recommended to let graphile-worker handle signals
     pollInterval: 1000, // How often to check for jobs (in ms)
-    taskDirectory: taskDirectory,
+    // taskDirectory: taskDirectoryUrl, // REMOVED
+    // Provide the task list directly
+    taskList: tasks
     // You might want to add a logger instance here if needed
   });
 

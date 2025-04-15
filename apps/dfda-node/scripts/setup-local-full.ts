@@ -1,5 +1,15 @@
 import { spawn } from 'node:child_process'; // Use built-in spawn
 import path from 'path';
+import { createClient } from '@supabase/supabase-js'; // Add Supabase client import
+import dotenv from 'dotenv'; // Add dotenv import
+
+// --- Load Environment Variables ---
+// Load from .env for script execution
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const bucketName = 'user_uploads'; // Define bucket name
 
 // Utility to run a command and pipe its output using spawn
 async function runCommand(command: string, args: string[], options?: any): Promise<void> {
@@ -39,32 +49,75 @@ async function runCommand(command: string, args: string[], options?: any): Promi
   });
 }
 
+// --- Utility to setup storage bucket ---
+async function setupStorageBucket() {
+  console.log(`\n--- Setting up Storage Bucket: ${bucketName} ---\n`);
+  if (!supabaseUrl || !serviceRoleKey) {
+    console.error('Error: Supabase URL or Service Role Key not found in .env for storage setup.');
+    throw new Error('Missing Supabase credentials for storage setup.');
+  }
+  const supabaseAdmin = createClient(supabaseUrl, serviceRoleKey, { auth: { persistSession: false } });
+  try {
+    const { data: existingBucket, error: getError } = await supabaseAdmin.storage.getBucket(bucketName);
+    if (existingBucket) {
+      console.log(`Bucket \"${bucketName}\" already exists.`);
+      if (existingBucket.public !== false) {
+         console.warn(`Bucket \"${bucketName}\" is public. Updating to private.`);
+         const { error: updateError } = await supabaseAdmin.storage.updateBucket(bucketName, { public: false });
+         if (updateError) console.error(`Failed to update bucket \"${bucketName}\" to private:`, updateError.message);
+         else console.log(`Bucket \"${bucketName}\" updated to private.`);
+      }
+    } else if (getError && getError.message.includes('Bucket not found')) {
+      console.log(`Bucket \"${bucketName}\" not found. Creating...`);
+      const { data: newBucket, error: createError } = await supabaseAdmin.storage.createBucket(bucketName, { public: false });
+      if (createError) throw createError;
+      else console.log(`Successfully created private bucket \"${bucketName}\" with ID: ${newBucket?.name}`);
+    } else if (getError) {
+      throw getError; // Throw other get errors
+    } else {
+        throw new Error("Unknown error checking bucket existence.");
+    }
+     console.log(`\n--- Completed: Storage Bucket Setup ---`);
+  } catch (error: any) {
+    console.error(`\n--- Error setting up storage bucket \"${bucketName}\":`, error.message);
+    throw error; // Re-throw to fail the main setup
+  }
+}
+
 // Simple sleep function
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// --- Main Setup Function ---
 async function setupLocalFull() {
-  console.log('Starting simplified local Supabase setup...');
+  console.log('🚀 Starting Full Local Development Setup...');
   
   try {
-    // 1. Start Supabase
+    // 1. Start Supabase services
     await runCommand('pnpm', ['sb:local:start']);
 
-    // 2. Wait for services (adjust time if needed)
-    console.log('Waiting 1 seconds for services to stabilize...');
-    await sleep(1000);
+    // 2. Wait briefly for services
+    console.log('Waiting 2 seconds for services to initialize...');
+    await sleep(2000); 
 
-    // 3. Reset DB & Generate Types (this applies all migrations, including the new function and cron schedule)
-    await runCommand('pnpm', ['db:local:reset-types']);
+    // 3. Reset Supabase DB (applies *only* Supabase migrations)
+    await runCommand('pnpm', ['db:local:reset']);
 
-    // 4. Setup Storage Bucket (if needed)
-    await runCommand('pnpm', ['setup:storage']);
+    // 4. Run Graphile Worker migrations (creates graphile_worker schema *after* reset)
+    await runCommand('pnpm', ['run', 'db:worker:migrate']);
 
-    console.log('\n✅✅✅ Simplified local setup completed successfully! ✅✅✅\n');
+    // 5. Setup Storage Bucket
+    await setupStorageBucket();
+
+    // 6. Generate Types
+    await runCommand('pnpm', ['db:local:types']);
+
+    console.log('\n✅✅✅ Full local setup completed successfully! ✅✅✅');
+    console.log('You can now run \'pnpm run dev\' to start the application.');
 
   } catch (error) {
-    console.error('\n❌❌❌ Local setup failed! ❌❌❌\n');
+    console.error('\n❌❌❌ Full local setup failed! ❌❌❌');
     process.exit(1); // Exit with error code
   }
 }

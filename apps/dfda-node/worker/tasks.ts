@@ -2,6 +2,7 @@ import { Task } from "graphile-worker";
 import { createClient } from "@supabase/supabase-js";
 import { Database } from "@/lib/database.types";
 import { RRule, rrulestr } from 'rrule';
+import { DateTime } from 'luxon'; // Import Luxon
 
 // --- Supabase Admin Client Setup (Similar to API route, ensure env vars are available to worker) ---
 if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
@@ -23,15 +24,15 @@ const supabaseAdmin = createClient<Database>(
 export const processSingleSchedule: Task = async (payload, helpers) => {
   const { scheduleId } = payload as { scheduleId: string };
   const logger = helpers.logger;
-  const nowUtc = new Date();
-  const runIntervalMinutes = 5; // Lookahead interval
+  const nowUtc = DateTime.utc(); // Use Luxon for easier date/time handling
 
   logger.info(`🚀 [Task] Processing single schedule: ${scheduleId}`);
 
   // 1. Fetch the specific schedule
   const { data: schedule, error: scheduleError } = await supabaseAdmin
     .from("reminder_schedules")
-    .select("id, user_id, time_of_day, timezone, rrule")
+    // Also fetch start_date to accurately calculate the first occurrence
+    .select("id, user_id, time_of_day, timezone, rrule, start_date") 
     .eq("id", scheduleId)
     .eq("is_active", true)
     .maybeSingle();
@@ -46,41 +47,53 @@ export const processSingleSchedule: Task = async (payload, helpers) => {
     return; // Job is done if schedule doesn't exist or isn't active
   }
 
-  // 2. Process the schedule and generate notifications
+  // 2. Process the schedule and generate the *first* notification
   const notificationsToInsert: Array<Database["public"]["Tables"]["reminder_notifications"]["Insert"]> = [];
-  if (!schedule.time_of_day || !schedule.timezone || !schedule.rrule || !schedule.user_id || !schedule.id) {
-    logger.warn(`⚠️ [Task] Skipping schedule ${schedule.id} due to missing data.`);
+  if (!schedule.time_of_day || !schedule.timezone || !schedule.rrule || !schedule.user_id || !schedule.id || !schedule.start_date) {
+    logger.warn(`⚠️ [Task] Skipping schedule ${schedule.id} due to missing data (time, timezone, rrule, userId, id, or start_date).`);
     return; // Cannot process without essential data
   }
 
   try {
-    const rule = rrulestr(schedule.rrule, { dtstart: new Date(nowUtc.getFullYear() - 1, 0, 1) }) as RRule;
-    const nextOccurrences = rule.between(nowUtc, new Date(nowUtc.getTime() + runIntervalMinutes * 60 * 1000), true);
+    // Parse RRULE string - Ensure dtstart is handled correctly by rrule library
+    const rule = rrulestr(schedule.rrule) as RRule; 
+    const [hour, minute] = schedule.time_of_day.split(':').map(Number);
+    
+    // Use the schedule's start_date as the basis for the first occurrence calculation
+    // Set the time according to the schedule's time_of_day in the user's timezone
+    const startDateInUserTz = DateTime.fromISO(schedule.start_date) // Assume start_date is stored as ISO date string 'YYYY-MM-DD' or similar
+        .setZone(schedule.timezone, { keepLocalTime: true }) // Interpret the date part in the user's timezone
+        .set({ hour: hour, minute: minute, second: 0, millisecond: 0 });
+    
+    // Use the rule to find the *first* occurrence at or after the constructed start time
+    const firstOccurrence = rule.after(startDateInUserTz.toJSDate(), true);
 
-    if (nextOccurrences.length > 0) {
-      const nextOccurrenceLocal = nextOccurrences[0];
-      const year = nextOccurrenceLocal.getFullYear();
-      const month = nextOccurrenceLocal.getMonth();
-      const day = nextOccurrenceLocal.getDate();
-      const [hour, minute, second] = schedule.time_of_day.split(':').map(Number);
-      const triggerTimeLocalStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}T${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}:${String(second).padStart(2, '0')}`;
-      
-      // IMPORTANT: Timezone handling is still needed here for accuracy
-      const notificationTriggerAt = new Date(triggerTimeLocalStr); 
+    if (firstOccurrence) {
+      // Convert the JS Date occurrence (which rrule treats as local) back to a Luxon DateTime 
+      // and explicitly set the timezone before converting to UTC for storage.
+      const notificationTriggerAtUtc = DateTime.fromJSDate(firstOccurrence)
+                                               .setZone(schedule.timezone) // Tell Luxon this time is IN the user's timezone
+                                               .toUTC() // Convert to UTC
+                                               .toISO(); // Get ISO string
 
-      logger.info(`   [Task] RRule Match: Schedule ${schedule.id}. Next: ${notificationTriggerAt.toISOString()}`);
+      if (!notificationTriggerAtUtc) {
+          logger.error(`🚨 [Task] Failed to convert calculated occurrence to ISO string for schedule ${schedule.id}`, { firstOccurrence });
+          throw new Error("Date conversion failed.");
+      }
+
+      logger.info(`   [Task] Calculated First Occurrence: Schedule ${schedule.id}. Trigger At (UTC): ${notificationTriggerAtUtc}`);
 
       notificationsToInsert.push({
         reminder_schedule_id: schedule.id,
         user_id: schedule.user_id,
-        notification_trigger_at: notificationTriggerAt.toISOString(),
+        notification_trigger_at: notificationTriggerAtUtc, // Store UTC ISO string
         status: 'pending',
       });
     } else {
-      logger.debug(`  [Task] No RRule occurrence within the next ${runIntervalMinutes} mins for schedule ${schedule.id}.`);
+      logger.warn(`  [Task] No occurrences found at or after the start date for schedule ${schedule.id}. RRule: ${schedule.rrule}, StartDate: ${startDateInUserTz.toISO()}`);
     }
   } catch (error) {
-    logger.error(`🚨 [Task] Error processing rrule for schedule ${schedule.id}`, { error, rrule: schedule.rrule });
+    logger.error(`🚨 [Task] Error processing rrule or calculating first occurrence for schedule ${schedule.id}`, { error, rrule: schedule.rrule });
     throw error; // Let graphile-worker handle retry/failure
   }
 
