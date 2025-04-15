@@ -15,28 +15,12 @@ const nextConfig = {
     parallelServerCompiles: true,
     typedRoutes: true,
   },
-}
-
-mergeConfig(nextConfig)
-
-function mergeConfig(nextConfig, userConfig) {
-  if (!userConfig) {
-    return
-  }
-
-  for (const key in userConfig) {
-    if (
-      typeof nextConfig[key] === 'object' &&
-      !Array.isArray(nextConfig[key])
-    ) {
-      nextConfig[key] = {
-        ...nextConfig[key],
-        ...userConfig[key],
-      }
-    } else {
-      nextConfig[key] = userConfig[key]
+  webpack: (config, { isServer, nextRuntime }) => {
+    if (isServer && nextRuntime === "nodejs") {
+      config.externals.push("graphile-worker");
     }
-  }
+    return config;
+  },
 }
 
 export default nextConfig

@@ -6,6 +6,8 @@ import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { getServerUser } from "@/lib/server-auth"
+import { getProfileByIdAction } from "./actions/profiles"
+import type { Profile } from "./actions/profiles"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,13 +23,18 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const user = await getServerUser()
+  let profile: Profile | null = null
+
+  if (user) {
+    profile = await getProfileByIdAction(user.id)
+  }
 
   return (
     <html lang="en">
       <body className={inter.className}>
         <ScrollToHashElement />
         <div className="min-h-screen flex flex-col">
-          <Header initialUser={user} />
+          <Header initialUser={user} initialProfile={profile} />
           <main className="flex-1 py-6 md:py-10 w-full bg-background">
             <div className="container px-4 md:px-6 mx-auto">
               {children}

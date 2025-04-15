@@ -3,6 +3,7 @@
 import { createServerClient } from "@/lib/supabase"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
+import { createClient } from "@/lib/supabase/server"
 
 export type Profile = Database["public"]["Tables"]["profiles"]["Row"]
 export type ProfileInsert = Database["public"]["Tables"]["profiles"]["Insert"]
@@ -96,4 +97,47 @@ export async function getCurrentUserProfileAction(): Promise<Profile | null> {
   }
 
   return data as Profile
+}
+
+export async function updateUserProfileTimezoneAction(timezone: string): Promise<{ success: boolean; error?: string }> {
+    const supabase = await createClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+        logger.error("Timezone update: User not authenticated", { error: authError });
+        // Return success: false but don't necessarily show error to user unless crucial
+        return { success: false, error: "Authentication failed." }; 
+    }
+
+    if (!timezone || typeof timezone !== 'string' || timezone.length === 0) {
+        logger.warn("Timezone update: Invalid timezone provided", { userId: user.id, timezone });
+        return { success: false, error: "Invalid timezone." };
+    }
+
+    try {
+        logger.info("Attempting to update profile timezone", { userId: user.id, timezone });
+        const { error } = await supabase
+            .from("profiles")
+            .update({ timezone: timezone })
+            .eq("id", user.id)
+            // Add a condition to only update if timezone is currently null
+            // This prevents unnecessary updates on every load if already set
+            .is("timezone", null);
+
+        if (error) {
+            logger.error("Failed to update profile timezone", { userId: user.id, timezone, error });
+            return { success: false, error: "Failed to update profile." };
+        }
+
+        // We don't know if a row was updated (it might have already had a timezone),
+        // but the operation itself didn't error.
+        logger.info("Profile timezone update executed (may or may not have changed value)", { userId: user.id, timezone });
+        // Revalidate if needed: 
+        // revalidatePath('/some-page-showing-timezone'); 
+        return { success: true };
+
+    } catch (error) {
+        logger.error("Unexpected error updating profile timezone", { userId: user.id, timezone, error });
+        return { success: false, error: "An unexpected error occurred." };
+    }
 } 
