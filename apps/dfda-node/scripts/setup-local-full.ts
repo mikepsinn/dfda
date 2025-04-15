@@ -113,6 +113,12 @@ async function setupLocalFull() {
     // 6. Generate Types
     await runCommand('pnpm', ['db:local:types']);
 
+    // 7. Generate Constants from DB
+    await runCommand('pnpm', ['run', 'generate:constants']);
+
+    // 8. Generate Zod Schemas from DB types
+    await runCommand('pnpm', ['run', 'generate:schemas']);
+
     console.log('\n✅✅✅ Full local setup completed successfully! ✅✅✅');
     console.log('You can now run \'pnpm run dev\' to start the application.');
 

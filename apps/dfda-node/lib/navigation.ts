@@ -2,20 +2,23 @@ import type { User } from '@supabase/supabase-js'
 import { navigationTreeObject } from '../lib/generated-nav-tree' // Import generated object
 import type { Database } from './database.types' // Import Database type
 import { logger } from './logger' // Import the logger
-import type { LucideIcon } from 'lucide-react' // Ensure LucideIcon is imported
+// import type { LucideIcon } from 'lucide-react' // LucideIcon is now included in NavItem type import
+import type { NavItem } from './types/navigation' // Import NavItem from the new types file
 
 // Define UserRole type alias for clarity
 type UserRole = Database["public"]["Enums"]["user_role_enum"]
 
-// Define the base navigation item type
-export type NavItem = {
-  title: string
-  href: string
-  icon?: LucideIcon // Make icon optional
-  hideInNav?: boolean // Optional: Hide from main nav bars
-  hideInDropdown?: boolean // Optional: Hide from dropdowns
-  roles?: string[] // Optional: Roles that can see this item
-}
+// Define the base navigation item type - REMOVED (Now imported)
+// export type NavItem = {
+//   title: string
+//   href: string
+//   description?: string // Optional: Description for the item
+//   emoji?: string // Optional: Emoji for the item
+//   icon?: LucideIcon // Make icon optional
+//   hideInNav?: boolean // Optional: Hide from main nav bars
+//   hideInDropdown?: boolean // Optional: Hide from dropdowns
+//   roles?: string[] // Optional: Roles that can see this item
+// }
 
 // Logged-in Primary Items per Role (Using generated objects directly)
 const patientNavItems: NavItem[] = [

@@ -3,6 +3,8 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 import type { Database } from '../lib/database.types'; // Adjust path if needed
+/// <reference path="../lib/database.types.ts" />
+// import type { Database } from '../lib/database.types'; // Adjust path if needed
 
 // Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, '../.env') }); // Adjust path to your .env file

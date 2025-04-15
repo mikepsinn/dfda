@@ -4,7 +4,6 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "../dist/scripts",
-    "rootDir": ".",
     "noEmit": false,
     "isolatedModules": false,
     "target": "ES2017",
@@ -17,7 +16,6 @@
     "node_modules",
     "app",
     "components",
-    "lib",
     "tests",
     ".next",
     "dist"

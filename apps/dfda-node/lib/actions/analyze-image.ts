@@ -1,10 +1,11 @@
 'use server'
 
-import { createGoogleGenerativeAI } from '@ai-sdk/google'
+// import { createGoogleGenerativeAI } from '@ai-sdk/google'; // Removed local import
 import { generateObject, NoObjectGeneratedError } from 'ai'
 import { z } from 'zod'
 import { logger } from '@/lib/logger'
-import { env } from '@/lib/env'
+// import { env } from '@/lib/env'; // Env is likely handled by shared client
+import { googleAI, defaultGoogleModel } from '@/lib/ai/google'; // Import shared client and model
 // Import the relevant generated schema
 import { publicGlobalVariablesInsertSchemaSchema } from '@/lib/database.schemas'
 
@@ -22,10 +23,10 @@ const AiOutputSchema = z.object({
 });
 // --- End new schema definition ---
 
-// Ensure GOOGLE_GENERATIVE_AI_API_KEY is set in your environment variables
-const google = createGoogleGenerativeAI({
-  apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY, // Use the validated env variable
-})
+// Ensure GOOGLE_GENERATIVE_AI_API_KEY is set in your environment variables - Handled by shared client
+// const google = createGoogleGenerativeAI({
+//   apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY, // Use the validated env variable
+// });
 
 // Type for the successful result - Now derived from our new schema
 export type AnalyzedImageResult = z.infer<typeof AiOutputSchema>
@@ -40,12 +41,18 @@ export async function analyzeImageAction(formData: FormData): Promise<
     return { success: false, error: 'No image file provided.' }
   }
 
+  // Check if the shared AI client is available
+  if (!googleAI || !defaultGoogleModel) {
+    logger.error('Google AI client or default model is not available. Check API key.');
+    return { success: false, error: 'AI service is not configured or unavailable.' };
+  }
+
   // Convert image file to Buffer
   const imageBuffer = Buffer.from(await file.arrayBuffer())
 
   try {
     const { object } = await generateObject({
-      model: google('models/gemini-2.0-flash-001'), 
+      model: defaultGoogleModel, // Use the shared default model
       // Use the new schema with descriptions
       schema: AiOutputSchema, 
       // System prompt might need adjustment for Gemini if behavior differs
@@ -72,11 +79,11 @@ export async function analyzeImageAction(formData: FormData): Promise<
     })
 
     // The 'object' variable here is already validated and typed as AnalyzedImageResult
-    logger.info('Image analyzed successfully with Gemini', { result: object })
+    logger.info('Image analyzed successfully with shared Google client', { result: object })
     return { success: true, data: object }
 
   } catch (error) {
-    logger.error('Error analyzing image with Gemini:', { error })
+    logger.error('Error analyzing image with shared Google client:', { error })
 
     if (NoObjectGeneratedError.isInstance(error)) {
       logger.error('NoObjectGeneratedError details:', { cause: error.cause, text: error.text });

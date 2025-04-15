@@ -14,7 +14,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "generate:nav": "ts-node ./scripts/generate-nav-tree.ts",
+    "generate:nav": "dotenv -- tsx ./scripts/generate-nav-tree.ts",
     "test:unit": "jest -c jest.unit.config.mjs",
     "test:integration": "jest -c jest.integration.config.mjs",
     "test:e2e": "playwright test",
