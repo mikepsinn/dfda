@@ -19,9 +19,8 @@ type ReportedSideEffectInsert = Database['public']['Tables']['reported_side_effe
 interface DemoPatientSeedData {
   patientDetails: Omit<PatientInsert, 'id'>;
   conditions: Omit<PatientConditionInsert, 'patient_id' | 'id'>[];
-  enrollments: Omit<TrialEnrollmentInsert, 'patient_id' | 'id'>[];
-  // Submissions need trial_id for linking during the seeding process
-  submissions: (Omit<DataSubmissionInsert, 'patient_id' | 'enrollment_id' | 'id'> & { trial_id_for_linking: string })[]; 
+  enrollments?: Omit<TrialEnrollmentInsert, 'patient_id' | 'id'>[];
+  submissions?: (Omit<DataSubmissionInsert, 'patient_id' | 'enrollment_id' | 'id'> & { trial_id_for_linking: string })[]; 
   notifications: Omit<NotificationInsert, 'user_id' | 'id'>[];
   ratings?: Omit<TreatmentRatingInsert, 'user_id' | 'id'>[];
   sideEffects?: Omit<ReportedSideEffectInsert, 'user_id' | 'id'>[];
@@ -58,18 +57,6 @@ export const DEMO_ACCOUNTS = {
       conditions: [
         { condition_id: 'type-2-diabetes', diagnosed_at: '2021-01-15', status: 'active' },
         { condition_id: 'hypertension', diagnosed_at: '2022-06-01', status: 'active' },
-      ],
-      enrollments: [
-        { trial_id: '11111111-1111-1111-1111-111111111111', provider_id: '20000000-0000-0000-0000-000000000000', status: 'approved', enrollment_date: '2025-02-10' },
-      ],
-      // Corrected submissions structure
-      submissions: [
-        { 
-          trial_id_for_linking: '11111111-1111-1111-1111-111111111111', // Used to find enrollment_id
-          submission_date: '2025-03-10', 
-          data: {"blood_glucose": 150, "weight": 76, "medication_adherence": 90, "side_effects": [], "notes": "Feeling stable."} as Json, 
-          status: 'pending' 
-        },
       ],
       notifications: [
         { title: 'Data Submission Reminder', message: 'Your weekly data submission for the Semaglutide trial is due tomorrow.', type: 'info', read_at: null, emoji: '📅' },
