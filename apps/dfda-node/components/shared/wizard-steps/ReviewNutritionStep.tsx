@@ -20,6 +20,9 @@ interface ReviewNutritionStepProps {
   determineNextStep: (currentData: Partial<AnalyzedImageResult>) => ImageType | 'finalReview';
   goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
   retakeImage: (type: ImageType) => void;
+  // Add the layout handlers
+  onConfirmAndGoToFinal: () => void;
+  onSkipStepAndContinue: () => void;
 }
 
 export function ReviewNutritionStep({
@@ -31,7 +34,9 @@ export function ReviewNutritionStep({
   handleFormChange,
   determineNextStep,
   goToStep,
-  retakeImage
+  retakeImage,
+  onConfirmAndGoToFinal,
+  onSkipStepAndContinue,
 }: ReviewNutritionStepProps) {
 
   const handleConfirmAndNext = () => {
@@ -45,10 +50,6 @@ export function ReviewNutritionStep({
     }
   };
 
-  const handleConfirmAndSkip = () => {
-    goToStep('finalReview');
-  };
-
   return (
     <ReviewStepLayout
         stepTitle="Step 4: Review Nutrition Details"
@@ -58,7 +59,8 @@ export function ReviewNutritionStep({
         isSaving={isSaving}
         isAnalyzing={isAnalyzing}
         onConfirmAndNext={handleConfirmAndNext}
-        onConfirmAndSkip={handleConfirmAndSkip}
+        onConfirmAndGoToFinal={onConfirmAndGoToFinal}
+        onSkipStepAndContinue={onSkipStepAndContinue}
         onRetake={retakeImage}
     >
         {/* Editable Fields Relevant to Nutrition Analysis */}

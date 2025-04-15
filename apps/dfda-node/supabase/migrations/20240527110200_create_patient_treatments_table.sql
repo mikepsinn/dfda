@@ -55,6 +55,9 @@ CREATE TABLE public.patient_treatments (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
 
+    -- Add the missing unique constraint for the UPSERT
+    CONSTRAINT patient_treatments_patient_id_treatment_id_key UNIQUE (patient_id, treatment_id),
+
     CONSTRAINT check_end_date_after_start_date CHECK (end_date IS NULL OR end_date >= start_date)
 );
 

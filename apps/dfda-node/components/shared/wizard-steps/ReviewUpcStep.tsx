@@ -18,6 +18,9 @@ interface ReviewUpcStepProps {
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
   retakeImage: (type: ImageType) => void;
+  // Add the layout handlers
+  onConfirmAndGoToFinal: () => void;
+  onSkipStepAndContinue: () => void; // Even though it maps to GoToFinal
 }
 
 export function ReviewUpcStep({
@@ -27,19 +30,20 @@ export function ReviewUpcStep({
   isAnalyzing,
   handleFormChange,
   goToStep,
-  retakeImage
+  retakeImage,
+  onConfirmAndGoToFinal, // Destructure
+  onSkipStepAndContinue, // Destructure (but we'll use onConfirmAndGoToFinal for its action)
 }: ReviewUpcStepProps) {
 
   const handleConfirmAndFinish = () => {
-    // After confirming UPC, always go to final review
     goToStep('finalReview');
   };
 
-  // UPC step doesn't really have a 'skip' concept like others, 
-  // as it's usually the last specific image. We pass the same handler
-  // for 'next' and 'skip' in the layout, or could disable 'skip'.
-  // Here, let's just make 'skip' do the same as 'next' (finish).
-  const handleConfirmAndSkip = handleConfirmAndFinish; 
+  // Define handler for the primary button
+  const handlePrimaryConfirm = handleConfirmAndFinish;
+  // Map both the "Go to Final" and "Skip Step" handlers to the same finish action
+  const handleGoToFinal = handleConfirmAndFinish;
+  const handleSkipThisStep = handleConfirmAndFinish; 
 
   return (
     <ReviewStepLayout
@@ -49,11 +53,15 @@ export function ReviewUpcStep({
         imageType="upc"
         isSaving={isSaving}
         isAnalyzing={isAnalyzing}
-        onConfirmAndNext={handleConfirmAndFinish} // Use the finish handler for the primary confirm button
-        onConfirmAndSkip={handleConfirmAndSkip} // Use the finish handler for the skip button too
+        // Hook up handlers
+        onConfirmAndNext={handlePrimaryConfirm}
+        onConfirmAndGoToFinal={handleGoToFinal} // Pass down renamed handler
+        onSkipStepAndContinue={handleSkipThisStep} // Pass down handler for skip button
         onRetake={retakeImage}
-        confirmNextButtonText="Confirm & Finish Review" // Custom button text
-        confirmSkipButtonText="Finish Review (Skip UPC)" // Custom skip text (optional, maybe hide this)
+        // Adjust button text for clarity
+        confirmNextButtonText="Confirm UPC & Finish Review"
+        confirmGoToFinalButtonText="Go to Final Review (Skip UPC)"
+        // skipStepAndContinueDisabled={...} // Optional disable
     >
       {/* Editable Fields Relevant to UPC Analysis */}
       <div className="w-full max-w-md space-y-3">

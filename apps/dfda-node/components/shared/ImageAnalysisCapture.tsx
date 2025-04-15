@@ -582,6 +582,59 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     goToStep(captureStep, type); // Go to the capture step for this image type
   };
 
+  // Handler for the renamed "Confirm & Go to Final Review" button
+  const handleConfirmAndGoToFinal = () => {
+      logger.info("User chose to skip remaining steps and go to final review.");
+      goToStep('finalReview');
+  };
+
+  // NEW Handler for "Skip This Image & Continue" button
+  const handleSkipStepAndContinue = () => {
+    const currentSkippedType = activeImageType; // The type of the step we are currently in/skipping
+    logger.info(`User chose to skip the current optional step: ${currentSkippedType}`);
+
+    if (!formData.type) {
+        logger.warn("Cannot determine next step without formData.type. Going to final review.");
+        goToStep('finalReview');
+        return;
+    }
+
+    const optionalStepsSequence: ImageType[] = [];
+    switch (formData.type) {
+        case 'food':       optionalStepsSequence.push('nutrition', 'ingredients', 'upc'); break;
+        case 'treatment':
+        case 'supplement': optionalStepsSequence.push('ingredients', 'upc'); break;
+        case 'other':      optionalStepsSequence.push('upc'); break;
+    }
+
+    // Find the index of the step being skipped in the sequence for this item type
+    const skippedIndex = optionalStepsSequence.findIndex(type => type === currentSkippedType);
+
+    let nextType: ImageType | 'finalReview' = 'finalReview'; // Default to final review
+    if (skippedIndex !== -1 && skippedIndex < optionalStepsSequence.length - 1) {
+        // If the skipped step is found and it's not the last one in the sequence,
+        // find the *next* step in the sequence that hasn't already been captured.
+        for (let i = skippedIndex + 1; i < optionalStepsSequence.length; i++) {
+            const potentialNextType = optionalStepsSequence[i];
+            if (!imageStates[potentialNextType]) { // Check if we don't have an image for this type yet
+                nextType = potentialNextType;
+                break; // Found the next step to go to
+            }
+        }
+    }
+    // If no subsequent optional step is found/needed, nextType remains 'finalReview'
+
+    if (nextType === 'finalReview') {
+        logger.info(`Skipped ${currentSkippedType}. No further optional steps, proceeding to final review.`);
+        goToStep('finalReview');
+    } else {
+        // Determine the capture step based on the next image type
+        const nextCaptureStep = `capture${nextType.charAt(0).toUpperCase() + nextType.slice(1)}` as ImageAnalysisStep;
+        logger.info(`Skipped ${currentSkippedType}. Proceeding to capture step for: ${nextType}`);
+        goToStep(nextCaptureStep, nextType);
+    }
+  };
+
   // --- Save Action ---
   const handleSave = async () => {
     // Validate required base fields from formData
@@ -978,6 +1031,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
               handleFormChange={handleFormChange}
               handleSelectChange={handleSelectChange}
               determineNextStep={determineNextStep}
+              onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
               goToStep={goToStep}
               retakeImage={retakeImage}
             />
@@ -1006,6 +1060,8 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 handleNumericFormChange={handleNumericFormChange}
                 handleFormChange={handleFormChange}
                 determineNextStep={determineNextStep}
+                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+                onSkipStepAndContinue={handleSkipStepAndContinue}
                 goToStep={goToStep}
                 retakeImage={retakeImage}
              />
@@ -1036,6 +1092,8 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 addIngredient={addIngredient}
                 removeIngredient={removeIngredient}
                 determineNextStep={determineNextStep}
+                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+                onSkipStepAndContinue={handleSkipStepAndContinue}
                 goToStep={goToStep}
                 retakeImage={retakeImage}
              />
@@ -1062,7 +1120,9 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 isSaving={isSaving}
                 isAnalyzing={isAnalyzing}
                 handleFormChange={handleFormChange}
-                goToStep={goToStep}
+                onConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+                onSkipStepAndContinue={handleConfirmAndGoToFinal}
+                goToStep={goToStep} 
                 retakeImage={retakeImage}
              />
           )}

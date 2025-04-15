@@ -17,14 +17,16 @@ interface ReviewStepLayoutProps {
   children: React.ReactNode; // Slot for specific form fields
   // Handlers
   onConfirmAndNext: () => void;
-  onConfirmAndSkip: () => void;
+  onConfirmAndGoToFinal: () => void;
+  onSkipStepAndContinue?: () => void;
   onRetake: (type: ImageType) => void;
   // onRetryAnalysis?: () => void; // Optional: Add later if needed
   // Optional props for button text and disabling
   confirmNextButtonText?: string;
-  confirmSkipButtonText?: string;
+  confirmGoToFinalButtonText?: string;
   confirmAndNextDisabled?: boolean;
-  confirmAndSkipDisabled?: boolean;
+  confirmGoToFinalDisabled?: boolean;
+  skipStepAndContinueDisabled?: boolean;
 }
 
 export function ReviewStepLayout({
@@ -36,13 +38,18 @@ export function ReviewStepLayout({
   isAnalyzing,
   children,
   onConfirmAndNext,
-  onConfirmAndSkip,
+  onConfirmAndGoToFinal,
+  onSkipStepAndContinue,
   onRetake,
   confirmNextButtonText = "Confirm & Add Next Image", // Default text
-  confirmSkipButtonText = "Confirm & Skip to Final Review", // Default text
+  confirmGoToFinalButtonText = "Confirm & Go to Final Review", // Default text
   confirmAndNextDisabled = false, // Default disabled state
-  confirmAndSkipDisabled = false, // Default disabled state
+  confirmGoToFinalDisabled = false, // Default disabled state
+  skipStepAndContinueDisabled = false, // Default disabled state
 }: ReviewStepLayoutProps) {
+
+  // Determine if the current image type is optional (not primary)
+  const isOptionalStep = imageType !== 'primary';
 
   return (
     <div className="flex flex-col items-center p-4 space-y-4">
@@ -77,13 +84,24 @@ export function ReviewStepLayout({
         >
             {confirmNextButtonText} {/* Use prop */}
         </Button>
+         {/* NEW: Skip Step & Continue Button (Only if optional step?) */} 
+         {isOptionalStep && onSkipStepAndContinue && (
+           <Button 
+               variant="secondary"
+               className="w-full"
+               onClick={onSkipStepAndContinue}
+               disabled={isSaving || isAnalyzing || skipStepAndContinueDisabled} 
+           >
+               Skip {imageType.charAt(0).toUpperCase() + imageType.slice(1)} Image & Continue
+           </Button>
+         )}
          <Button 
             variant="secondary"
             className="w-full"
-            onClick={onConfirmAndSkip}
-            disabled={isSaving || isAnalyzing || confirmAndSkipDisabled} // Use prop
+            onClick={onConfirmAndGoToFinal}
+            disabled={isSaving || isAnalyzing || confirmGoToFinalDisabled} // Use prop
         >
-            {confirmSkipButtonText} {/* Use prop */}
+            {confirmGoToFinalButtonText} {/* Use prop */}
         </Button>
          <Button 
             variant="outline"

@@ -19,16 +19,18 @@ interface ReviewIngredientsStepProps {
   // Handlers
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; // For dosage instructions
   handleIngredientChange: (
-    listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients',
+    listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients',
     index: number,
     field: 'name' | 'quantity' | 'unit',
     value: string | number | null
   ) => void;
-  addIngredient: (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients') => void;
-  removeIngredient: (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients', index: number) => void;
+  addIngredient: (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients') => void;
+  removeIngredient: (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients', index: number) => void;
   determineNextStep: (currentData: Partial<AnalyzedImageResult>) => ImageType | 'finalReview';
   goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
   retakeImage: (type: ImageType) => void;
+  onConfirmAndGoToFinal: () => void;
+  onSkipStepAndContinue: () => void;
 }
 
 export function ReviewIngredientsStep({
@@ -42,7 +44,9 @@ export function ReviewIngredientsStep({
   removeIngredient,
   determineNextStep,
   goToStep,
-  retakeImage
+  retakeImage,
+  onConfirmAndGoToFinal,
+  onSkipStepAndContinue,
 }: ReviewIngredientsStepProps) {
 
   const handleConfirmAndNext = () => {
@@ -56,20 +60,17 @@ export function ReviewIngredientsStep({
     }
   };
 
-  const handleConfirmAndSkip = () => {
-    goToStep('finalReview');
-  };
-
   return (
     <ReviewStepLayout
         stepTitle="Step 6: Review Ingredients"
-        stepDescription="Confirm the ingredients (and dosage if applicable) extracted from the image."
+        stepDescription="Confirm the ingredients (and dosage/supplement facts if applicable) extracted from the image."
         imagePreviewUrl={ingredientsImagePreview}
         imageType="ingredients"
         isSaving={isSaving}
         isAnalyzing={isAnalyzing}
         onConfirmAndNext={handleConfirmAndNext}
-        onConfirmAndSkip={handleConfirmAndSkip}
+        onConfirmAndGoToFinal={onConfirmAndGoToFinal}
+        onSkipStepAndContinue={onSkipStepAndContinue}
         onRetake={retakeImage}
     >
       {/* Editable Fields Relevant to Ingredients Analysis */}

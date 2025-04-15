@@ -19,6 +19,8 @@ interface ReviewPrimaryStepProps {
   determineNextStep: (currentData: Partial<AnalyzedImageResult>) => ImageType | 'finalReview';
   goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
   retakeImage: (type: ImageType) => void;
+  // Add the handlers from the layout
+  onConfirmAndGoToFinal: () => void;
 }
 
 export function ReviewPrimaryStep({
@@ -30,7 +32,8 @@ export function ReviewPrimaryStep({
   handleSelectChange,
   determineNextStep,
   goToStep,
-  retakeImage
+  retakeImage,
+  onConfirmAndGoToFinal,
 }: ReviewPrimaryStepProps) {
 
   const handleConfirmAndNext = () => {
@@ -41,10 +44,6 @@ export function ReviewPrimaryStep({
         const nextCaptureStep = `capture${next.charAt(0).toUpperCase() + next.slice(1)}` as ImageAnalysisStep;
         goToStep(nextCaptureStep, next);
     }
-  };
-
-  const handleConfirmAndSkip = () => {
-      goToStep('finalReview');
   };
 
   // Disable next/skip buttons if required fields are missing
@@ -59,11 +58,10 @@ export function ReviewPrimaryStep({
         isSaving={isSaving}
         isAnalyzing={isAnalyzing}
         onConfirmAndNext={handleConfirmAndNext}
-        onConfirmAndSkip={handleConfirmAndSkip}
+        onConfirmAndGoToFinal={onConfirmAndGoToFinal}
         onRetake={retakeImage}
-        // Disable buttons in layout based on local logic
         confirmAndNextDisabled={isConfirmDisabled}
-        confirmAndSkipDisabled={isConfirmDisabled}
+        confirmGoToFinalDisabled={isConfirmDisabled}
     >
       {/* Pass specific form fields as children */}
       <div className="grid grid-cols-4 items-center gap-4">
