@@ -16,8 +16,7 @@ export default async function ProfilePage() {
   const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).single()
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-3xl font-bold mb-8">Your Profile</h1>
+    <div className="">
 
       <Card>
         <CardHeader>

@@ -17,12 +17,15 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { createClient } from "@/lib/supabase/client"
 import type { User } from "@supabase/supabase-js"
+import type { NavItem } from "@/lib/navigation"
 
 interface UserAuthSectionProps {
   user: User | null
+  primaryNavItems?: NavItem[]
+  secondaryNavItems?: NavItem[]
 }
 
-export function UserAuthSection({ user }: UserAuthSectionProps) {
+export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems = [] }: UserAuthSectionProps) {
   const supabase = createClient()
 
   const userInitials = user?.user_metadata?.name
@@ -45,6 +48,18 @@ export function UserAuthSection({ user }: UserAuthSectionProps) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56" align="end" forceMount>
+          {primaryNavItems.map((item) => (
+            !item.hideInDropdown && (
+              <DropdownMenuItem key={item.href} asChild>
+                <Link href={item.href} className="flex items-center">
+                  {item.icon && <item.icon className="mr-2 h-4 w-4" />} 
+                  <span>{item.title}</span>
+                </Link>
+              </DropdownMenuItem>
+            )
+          ))}
+
+          {(primaryNavItems.length > 0 || secondaryNavItems.length > 0) && <DropdownMenuSeparator />} 
           <DropdownMenuItem asChild>
             <Link href="/user/profile" className="flex items-center">
               <UserIcon className="mr-2 h-4 w-4" />

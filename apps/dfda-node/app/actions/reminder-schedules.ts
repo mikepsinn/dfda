@@ -12,6 +12,7 @@ import { revalidatePath } from 'next/cache'
 // import { client } from '@/lib/trigger' 
 // Import graphile-worker helper
 import { quickAddJob } from 'graphile-worker';
+import { VARIABLE_CATEGORIES } from '@/lib/constants/variable-categories'
 
 // Types
 export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
@@ -322,10 +323,10 @@ export async function createDefaultReminderAction(
     // --- Define Default Settings --- 
     const defaultTime = "20:00"; // 8 PM
     const defaultRRule = `FREQ=DAILY;DTSTART=${new Date().toISOString().split('T')[0].replace(/-/g, '')}T000000Z`; // Daily starting today (UTC date part)
-    const defaultTitle = variableCategory === 'medication' 
+    const defaultTitle = variableCategory === VARIABLE_CATEGORIES.INTAKE_AND_INTERVENTIONS
                          ? `Track ${variableName} Adherence` 
                          : `Track ${variableName}`; // Generic title otherwise
-    const defaultMessage = variableCategory === 'medication'
+    const defaultMessage = variableCategory === VARIABLE_CATEGORIES.INTAKE_AND_INTERVENTIONS
                          ? `Did you take your ${variableName} today?`
                          : `How was your ${variableName} today?`; // Generic message
     // --- End Default Settings --- 

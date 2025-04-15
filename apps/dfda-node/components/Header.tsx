@@ -91,8 +91,12 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
           {/* Mobile Menu Button & Sheet (handled by MobileNav) */}
           <MobileNav navItems={mobileNavItems} />
 
-          {/* User Auth Section (Dropdown or Sign In/Register) */}
-          <UserAuthSection user={initialUser} />
+          {/* User Auth Section - Pass nav items */}
+          <UserAuthSection 
+            user={initialUser} 
+            primaryNavItems={primaryNavItems} 
+            secondaryNavItems={secondaryNavItems}
+          />
         </div>
       </div>
     </header>
