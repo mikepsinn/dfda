@@ -160,6 +160,13 @@ export async function analyzeImageAction(formData: FormData): Promise<
     determinedType = classificationResult.data.type;
     logger.info(`Step 1: Classification successful. Determined type: ${determinedType}`);
 
+    // --- User Requirement: Treat 'supplement' as 'treatment' ---
+    if (determinedType === 'supplement') {
+      logger.info(`Reclassifying type from 'supplement' to 'treatment' based on user requirement.`);
+      determinedType = 'treatment';
+    }
+    // --- End User Requirement ---
+
   } catch (error) {
     logger.error('Error during Step 1 (Classification) AI call:', { error });
     if (NoObjectGeneratedError.isInstance(error)) {
@@ -222,11 +229,19 @@ ${Object.keys(imageFiles).map(type => `- ${type}`).join('\n')}`;
       return { success: false, error: `AI returned invalid data for type '${determinedType}': ${extractionResult.error.errors[0]?.message}` };
     }
 
-    // Ensure the `type` field in the result matches the determined type
-    // (The schema should enforce this via `z.literal`, but double-check)
+    // Ensure the `type` field in the result matches the final determined type
+    // (The schema should enforce this via `z.literal`, but double-check and enforce user rule)
     if (extractionResult.data.type !== determinedType) {
-        logger.error("Mismatch between determined type and extracted type", { determinedType, extractedType: extractionResult.data.type });
-         return { success: false, error: "Internal error: Type mismatch after extraction." };
+        // If the AI somehow still returned 'supplement' after we forced 'treatment' flow
+        // Use 'as any' to bypass strict type checking for this specific edge case check
+        if (determinedType === 'treatment' && (extractionResult.data.type as any) === 'supplement') {
+             logger.warn("AI extracted type 'supplement' but determined type was forced to 'treatment'. Overwriting type to 'treatment'.", { determinedType, extractedType: extractionResult.data.type });
+             extractionResult.data.type = 'treatment'; // Force correct type
+        } else {
+          // Log other mismatches as errors
+          logger.error("Mismatch between determined type and extracted type", { determinedType, extractedType: extractionResult.data.type });
+          return { success: false, error: "Internal error: Type mismatch after extraction." };
+        }
     }
 
     logger.info(`Step 2: Extraction successful for type '${determinedType}'`, { validatedData: extractionResult.data });

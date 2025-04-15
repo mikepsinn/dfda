@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Loader2, Upload, AlertCircle, Camera, ImageIcon, Trash2 } from 'lucide-react'
+import { Loader2, Upload, AlertCircle, Camera, ImageIcon, Trash2, X } from 'lucide-react'
 import { analyzeImageAction, AnalyzedImageResult } from '@/lib/actions/analyze-image'
 import { saveVariableMeasurementsFromImageAction } from '@/lib/actions/save-variable-measurements-from-image'
 import { logger } from '@/lib/logger'
@@ -980,7 +980,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         </Button>
       </DialogTrigger>
       {/* Make dialog full screen */}
-      <DialogContent className="h-screen w-screen max-w-full sm:max-w-full flex flex-col" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
+      <DialogContent className="h-screen w-screen max-w-full sm:max-w-full flex flex-col dialog-content-wrapper" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
         <DialogHeader>
           {/* Re-add Title/Description but wrap with VisuallyHidden */} 
           <VisuallyHidden>
@@ -991,6 +991,11 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
               Follow the steps to add images, review details, and save.
           </DialogDescription>
           </VisuallyHidden>
+          <div className="relative">
+            <DialogClose className="absolute top-0 right-0 p-2">
+              <X className="h-6 w-6" />
+            </DialogClose>
+          </div>
         </DialogHeader>
         
         {/* Hidden file input - Keep accessible */} 
@@ -1069,6 +1074,14 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
              />
           )}
 
+          {currentStep === 'analyzingNutrition' && (
+            <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
+              <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              <p className="text-lg font-semibold">Analyzing Nutrition Image...</p>
+              <p className="text-sm text-muted-foreground">Updating item details.</p>
+            </div>
+          )}
+
           {currentStep === 'reviewNutrition' && analysisResult && (
              <ReviewNutritionStep 
                 formData={formData}
@@ -1097,6 +1110,14 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                  renderImageCaptureControls={renderImageCaptureControls}
                  goToStep={goToStep}
              />
+          )}
+
+          {currentStep === 'analyzingIngredients' && (
+            <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
+              <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              <p className="text-lg font-semibold">Analyzing Ingredients Image...</p>
+              <p className="text-sm text-muted-foreground">Updating item details.</p>
+            </div>
           )}
 
           {currentStep === 'reviewIngredients' && analysisResult && (
@@ -1129,6 +1150,14 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                  renderImageCaptureControls={renderImageCaptureControls}
                  goToStep={goToStep}
              />
+          )}
+
+          {currentStep === 'analyzingUpc' && (
+            <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
+              <Loader2 className="h-12 w-12 animate-spin text-primary" />
+              <p className="text-lg font-semibold">Analyzing UPC Image...</p>
+              <p className="text-sm text-muted-foreground">Updating item details.</p>
+            </div>
           )}
 
            {currentStep === 'reviewUpc' && analysisResult && (
@@ -1220,6 +1249,18 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
 
         </ScrollArea>
 
+        {/* Re-add Footer, but only for the Save button on final review */}
+        <DialogFooter className="mt-auto shrink-0 flex justify-end px-4 py-2 border-none">
+          {currentStep === 'finalReview' && (
+             <Button 
+                type="button" 
+                onClick={handleSave} 
+                  disabled={isAnalyzing || isSaving || !formData.type || !formData.name || Object.keys(imageStates).length === 0}
+             >
+                {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Save Variable'} 
+             </Button>
+          )}
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   )

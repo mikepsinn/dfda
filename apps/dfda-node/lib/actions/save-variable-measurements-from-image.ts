@@ -52,7 +52,8 @@ const JsonStringSchema = <T extends z.ZodTypeAny>(schema: T) =>
 // Input schema validation directly from FormData
 const SaveVariableMeasurementsInputSchema = z.object({
   userId: z.string().uuid(),
-  type: z.enum(['food', 'treatment', 'other']),
+  // Allow 'supplement' in the input type from the frontend
+  type: z.enum(['food', 'treatment', 'supplement', 'other']), 
   name: z.string().min(1, 'Name cannot be empty.'),
   details: z.string().optional(),
   brand: z.string().optional(), // Renamed from brand_name for consistency
@@ -316,7 +317,9 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
   let ingredientIds: string[] = [];
 
   try {
-    mainGlobalVariableId = await findOrCreateGlobalVariable(supabase, validatedData.name, type, validatedData.details);
+    // Map 'supplement' to 'treatment' for global variable lookup/creation
+    const typeForGVar = validatedData.type === 'supplement' ? 'treatment' : validatedData.type;
+    mainGlobalVariableId = await findOrCreateGlobalVariable(supabase, validatedData.name, typeForGVar, validatedData.details);
     const { userVariableId: uvid } = await findOrCreateUserVariable(supabase, userId, mainGlobalVariableId);
     userVariableId = uvid;
     productId = await upsertProductDetails(supabase, mainGlobalVariableId, validatedData); 
@@ -326,21 +329,18 @@ export async function saveVariableMeasurementsFromImageAction(formData: FormData
 
     // --- 5. Dispatch to Type-Specific Handlers --- 
     if (type === 'food') {
-        // Remove explicit cast
         const { foodDetailsId: fid, ingredientIds: iids } = await _handleSaveFoodVariable(
             supabase, userId, mainGlobalVariableId, validatedData
         );
         foodDetailsId = fid;
         ingredientIds = iids || [];
-    } else if (type === 'treatment') {
-        // Remove explicit cast
+    } else if (type === 'treatment' || type === 'supplement') {
         const { patientTreatmentId: ptid, ingredientIds: iids } = await _handleSaveTreatmentVariable(
             supabase, userId, mainGlobalVariableId, userVariableId, validatedData
         );
         patientTreatmentId = ptid;
         ingredientIds = iids || [];
-    } else { // Handle 'other' case
-        // Correct logger syntax
+    } else { // Handle 'other' case (type === 'other')
         logger.info("Handling 'other' type variable save", { mainGlobalVariableId }); 
         const otherData = validatedData as SaveVariableMeasurementsInput & { type: 'other' }; 
         const resolvedIngredients = await resolveIngredientGvars(supabase, otherData.ingredients || []);
