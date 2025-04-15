@@ -397,7 +397,7 @@ export type Database = {
         Row: {
           canonical_global_variable_id: string | null
           created_at: string | null
-          default_unit_id: string | null
+          default_unit_id: string
           deleted_at: string | null
           description: string | null
           emoji: string | null
@@ -410,7 +410,7 @@ export type Database = {
         Insert: {
           canonical_global_variable_id?: string | null
           created_at?: string | null
-          default_unit_id?: string | null
+          default_unit_id: string
           deleted_at?: string | null
           description?: string | null
           emoji?: string | null
@@ -423,7 +423,7 @@ export type Database = {
         Update: {
           canonical_global_variable_id?: string | null
           created_at?: string | null
-          default_unit_id?: string | null
+          default_unit_id?: string
           deleted_at?: string | null
           description?: string | null
           emoji?: string | null
