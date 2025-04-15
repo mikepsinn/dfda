@@ -1,5 +1,3 @@
-"use client"
-// import Link from "next/link"
 import { RegisterForm } from "./register-form"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
