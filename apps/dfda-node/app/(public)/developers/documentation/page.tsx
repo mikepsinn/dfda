@@ -3,6 +3,13 @@ import { ArrowLeft, Menu } from "lucide-react"
 import { DocSidebar } from "@/components/developers/DocSidebar"
 import { DocContent } from "@/components/developers/DocContent"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('developers_documentation');
+}
 
 export default function DeveloperDocumentation() {
   return (

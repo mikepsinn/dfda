@@ -7,6 +7,13 @@ import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
 import { DeveloperWhatYouCanBuild } from "@/components/developers/DeveloperWhatYouCanBuild"
 import { DeveloperTechnicalAdvantages } from "@/components/developers/DeveloperTechnicalAdvantages"
 import { DeveloperPricingPlans } from "@/components/developers/DeveloperPricingPlans"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('developers');
+}
 
 export default function DeveloperPortal() {
   const showPricingTab = false // Set to false to hide the pricing tab

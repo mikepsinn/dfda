@@ -1,5 +1,12 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('terms');
+}
 
 export default async function TermsPage() {
   return (

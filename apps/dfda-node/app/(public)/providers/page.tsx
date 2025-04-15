@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { ProviderHowItWorks } from "@/components/how-it-works/ProviderHowItWorks"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('providers');
+}
 
 export default function PublicProviderPage() {
   return (

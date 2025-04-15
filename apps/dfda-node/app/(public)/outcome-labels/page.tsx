@@ -4,6 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { OutcomeLabelsTabsWrapper } from "@/components/OutcomeLabelsTabsWrapper"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('outcome_labels');
+}
 
 export default function OutcomeLabels() {
   return (

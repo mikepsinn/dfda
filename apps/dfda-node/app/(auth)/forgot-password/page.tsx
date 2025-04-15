@@ -3,11 +3,18 @@
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, Beaker, Check } from "lucide-react"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('forgot_password');
+}
 
 export default function ForgotPassword() {
   const [submitted, setSubmitted] = useState(false)

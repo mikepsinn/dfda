@@ -1,5 +1,12 @@
 import { ConditionsList } from "./conditions-list";
 import { Suspense } from "react";
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
+
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('conditions');
+}
 
 export default function ConditionsPage() {
   return (

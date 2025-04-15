@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { createClient } from "@/lib/supabase/client"
 import type { User } from "@supabase/supabase-js"
-import type { NavItem } from "@/lib/navigation"
+import type { NavItem } from "@/lib/types/navigation"
 
 interface UserAuthSectionProps {
   user: User | null

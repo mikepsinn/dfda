@@ -7,10 +7,10 @@ import { useEffect } from 'react';
 import type { Profile } from "@/app/actions/profiles";
 import { updateUserProfileTimezoneAction } from "@/app/actions/profiles";
 import { logger } from "@/lib/logger";
+import { type NavItem } from "@/lib/types/navigation";
 
 // Import navigation logic and types
 import {
-  type NavItem,
   getLoggedInPrimaryNavItems,
   loggedOutPrimaryNavItems,
   secondaryNavItems,

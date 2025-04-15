@@ -1,16 +1,15 @@
 import type { Metadata } from "next"
-// import Link from "next/link"; // Should not be needed anymore
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { DollarSign, Clock, Users, Globe } from "lucide-react"
 import { InternalLinkButton } from "@/components/internal-link-button";
-import { InternalLink } from "@/components/internal-link";
+import { getMetadataFromNavKey } from "@/lib/metadata";
 // import { ArrowRightIcon } from "lucide-react"; // Unused
 
-export const metadata: Metadata = {
-  title: "Our Impact | Decentralized FDA",
-  description: "Discover the positive impact our decentralized clinical trial platform is making on patients, providers, and researchers.",
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('impact');
 }
 
 export default function ImpactPage() {

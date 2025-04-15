@@ -1,6 +1,13 @@
 import { FindTrialsForm } from "./components/find-trials-form"
+import type { Metadata } from 'next';
+import { getMetadataFromNavKey } from '@/lib/metadata';
 
-export default function FindTrialsPage() {
+// Generate metadata using the helper function
+export async function generateMetadata(): Promise<Metadata> {
+  return getMetadataFromNavKey('find_trials');
+}
+
+export default async function FindTrialsPage() {
   return (
     <div className="container max-w-2xl py-6 space-y-6">
       <div>
