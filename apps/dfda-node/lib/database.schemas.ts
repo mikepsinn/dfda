@@ -584,68 +584,6 @@ export const publicGlobalVariablesRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
-export const publicItemIngredientsRowSchemaSchema = z.object({
-  created_at: z.string(),
-  display_order: z.number().nullable(),
-  id: z.string(),
-  ingredient_global_variable_id: z.string(),
-  is_active_ingredient: z.boolean(),
-  item_global_variable_id: z.string(),
-  quantity_per_serving: z.number().nullable(),
-  unit_id: z.string().nullable(),
-  updated_at: z.string(),
-});
-
-export const publicItemIngredientsInsertSchemaSchema = z.object({
-  created_at: z.string().optional(),
-  display_order: z.number().optional().nullable(),
-  id: z.string().optional(),
-  ingredient_global_variable_id: z.string(),
-  is_active_ingredient: z.boolean().optional(),
-  item_global_variable_id: z.string(),
-  quantity_per_serving: z.number().optional().nullable(),
-  unit_id: z.string().optional().nullable(),
-  updated_at: z.string().optional(),
-});
-
-export const publicItemIngredientsUpdateSchemaSchema = z.object({
-  created_at: z.string().optional(),
-  display_order: z.number().optional().nullable(),
-  id: z.string().optional(),
-  ingredient_global_variable_id: z.string().optional(),
-  is_active_ingredient: z.boolean().optional(),
-  item_global_variable_id: z.string().optional(),
-  quantity_per_serving: z.number().optional().nullable(),
-  unit_id: z.string().optional().nullable(),
-  updated_at: z.string().optional(),
-});
-
-export const publicItemIngredientsRelationshipsSchemaSchema = z.tuple([
-  z.object({
-    foreignKeyName: z.literal(
-      "item_ingredients_ingredient_global_variable_id_fkey",
-    ),
-    columns: z.tuple([z.literal("ingredient_global_variable_id")]),
-    isOneToOne: z.literal(false),
-    referencedRelation: z.literal("global_variables"),
-    referencedColumns: z.tuple([z.literal("id")]),
-  }),
-  z.object({
-    foreignKeyName: z.literal("item_ingredients_item_global_variable_id_fkey"),
-    columns: z.tuple([z.literal("item_global_variable_id")]),
-    isOneToOne: z.literal(false),
-    referencedRelation: z.literal("global_variables"),
-    referencedColumns: z.tuple([z.literal("id")]),
-  }),
-  z.object({
-    foreignKeyName: z.literal("item_ingredients_unit_id_fkey"),
-    columns: z.tuple([z.literal("unit_id")]),
-    isOneToOne: z.literal(false),
-    referencedRelation: z.literal("units"),
-    referencedColumns: z.tuple([z.literal("id")]),
-  }),
-]);
-
 export const publicMeasurementsRowSchemaSchema = z.object({
   created_at: z.string().nullable(),
   deleted_at: z.string().nullable(),
@@ -2510,6 +2448,70 @@ export const publicVariableCategoriesUpdateSchemaSchema = z.object({
   short_description: z.string().optional().nullable(),
   updated_at: z.string().optional().nullable(),
 });
+
+export const publicVariableIngredientsRowSchemaSchema = z.object({
+  created_at: z.string(),
+  display_order: z.number().nullable(),
+  id: z.string(),
+  ingredient_global_variable_id: z.string(),
+  is_active_ingredient: z.boolean(),
+  parent_global_variable_id: z.string(),
+  quantity_per_serving: z.number().nullable(),
+  unit_id: z.string().nullable(),
+  updated_at: z.string(),
+});
+
+export const publicVariableIngredientsInsertSchemaSchema = z.object({
+  created_at: z.string().optional(),
+  display_order: z.number().optional().nullable(),
+  id: z.string().optional(),
+  ingredient_global_variable_id: z.string(),
+  is_active_ingredient: z.boolean().optional(),
+  parent_global_variable_id: z.string(),
+  quantity_per_serving: z.number().optional().nullable(),
+  unit_id: z.string().optional().nullable(),
+  updated_at: z.string().optional(),
+});
+
+export const publicVariableIngredientsUpdateSchemaSchema = z.object({
+  created_at: z.string().optional(),
+  display_order: z.number().optional().nullable(),
+  id: z.string().optional(),
+  ingredient_global_variable_id: z.string().optional(),
+  is_active_ingredient: z.boolean().optional(),
+  parent_global_variable_id: z.string().optional(),
+  quantity_per_serving: z.number().optional().nullable(),
+  unit_id: z.string().optional().nullable(),
+  updated_at: z.string().optional(),
+});
+
+export const publicVariableIngredientsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal(
+      "variable_ingredients_ingredient_global_variable_id_fkey",
+    ),
+    columns: z.tuple([z.literal("ingredient_global_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal(
+      "variable_ingredients_parent_global_variable_id_fkey",
+    ),
+    columns: z.tuple([z.literal("parent_global_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("variable_ingredients_unit_id_fkey"),
+    columns: z.tuple([z.literal("unit_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("units"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
 
 export const publicPatientConditionsViewRowSchemaSchema = z.object({
   condition_id: z.string().nullable(),

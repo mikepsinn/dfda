@@ -45,7 +45,7 @@ const JsonStringSchema = <T extends z.ZodTypeAny>(schema: T) =>
   });
 
 // Input schema validation directly from FormData
-const SaveItemInputSchema = z.object({
+const SaveVariableMeasurementsInputSchema = z.object({
   userId: z.string().uuid(),
   type: z.enum(['food', 'treatment', 'other']),
   name: z.string().min(1, 'Name cannot be empty.'),
@@ -87,13 +87,13 @@ const FileSchema = z.instanceof(File).refine(
 );
 
 // Type for validated input data
-export type SaveItemInput = z.infer<typeof SaveItemInputSchema>
+export type SaveVariableMeasurementsInput = z.infer<typeof SaveVariableMeasurementsInputSchema>
 
 // Type for ingredient data used in DB operations
 type IngredientInfo = z.infer<typeof IngredientInputSchema> & { global_variable_id?: string; unit_id?: string | null };
 
 // Define a more specific return type for success, including potentially multiple file IDs
-interface SaveSuccessData {
+interface SaveVariableMeasurementsSuccessData {
     globalVariableId: string;
     userVariableId: string;
     productId?: string | null;
@@ -107,25 +107,25 @@ const BUCKET_NAME = 'user_uploads'; // Define bucket name constant
 const INGREDIENT_CATEGORY_ID = VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS; // Use Intake/Interventions for ingredients
 const DEFAULT_INGREDIENT_UNIT_ID = UNIT_IDS.DIMENSIONLESS; // Default unit for ingredients if not specified
 
-export async function saveItemFromImageAction(formData: FormData): Promise<
-  { success: true; data: SaveSuccessData } |
+export async function saveVariableMeasurementsFromImageAction(formData: FormData): Promise<
+  { success: true; data: SaveVariableMeasurementsSuccessData } |
   { success: false; error: string }
 > {
   const supabase = await createClient();
 
   // 1. Extract and Validate Text/JSON Fields
   const inputData: Record<string, any> = {};
-  Object.keys(SaveItemInputSchema.shape).forEach((key) => {
+  Object.keys(SaveVariableMeasurementsInputSchema.shape).forEach((key) => {
     const value = formData.get(key as string);
     if (value !== null) {
       inputData[key as string] = value;
     }
   });
 
-  const validation = SaveItemInputSchema.safeParse(inputData);
+  const validation = SaveVariableMeasurementsInputSchema.safeParse(inputData);
 
   if (!validation.success) {
-    logger.error('Invalid input for saveItemFromImageAction', {
+    logger.error('Invalid input for saveVariableMeasurementsFromImageAction', {
       formDataKeys: Array.from(formData.keys()),
       parsedInput: inputData,
       errors: validation.error.flatten()
@@ -187,7 +187,7 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
     const allIngredients: IngredientInfo[] = [];
 
     if (validatedData.type === 'food') {
-        foodDetailsId = await upsertFoodDetails(supabase, mainGlobalVariableId, validatedData as Extract<SaveItemInput, { type: 'food' }>);
+        foodDetailsId = await upsertFoodDetails(supabase, mainGlobalVariableId, validatedData as Extract<SaveVariableMeasurementsInput, { type: 'food' }>);
         allIngredients.push(...(validatedData.ingredients || []));
     }
 
@@ -200,11 +200,11 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
 
     // --- 6. Process and Link Ingredients --- 
     const resolvedIngredients = await resolveIngredientGvars(supabase, allIngredients);
-    const itemIngredientIds = await linkIngredientsToItem(
+    const itemIngredientIds = await linkIngredientsToParentVariable(
         supabase, 
         mainGlobalVariableId, 
         resolvedIngredients,
-        validatedData.type === 'treatment' ? ((validatedData as Extract<SaveItemInput, { type: 'treatment' }>).active_ingredients || []) : []
+        validatedData.type === 'treatment' ? ((validatedData as Extract<SaveVariableMeasurementsInput, { type: 'treatment' }>).active_ingredients || []) : []
     );
 
     // --- 7. Find or Create User Variable Association --- 
@@ -231,7 +231,7 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
             userId,
             mainGlobalVariableId,
             userVariableId,
-            validatedData as Extract<SaveItemInput, { type: 'treatment' }>
+            validatedData as Extract<SaveVariableMeasurementsInput, { type: 'treatment' }>
        );
     }
 
@@ -241,7 +241,7 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
     revalidatePath('/patient/photos');
 
     // --- 11. Construct Success Response --- 
-    const successData: SaveSuccessData = {
+    const successData: SaveVariableMeasurementsSuccessData = {
         globalVariableId: mainGlobalVariableId,
         userVariableId,
         productId,
@@ -253,8 +253,8 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
     return { success: true, data: successData };
 
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred while saving the item.';
-    logger.error('Error in saveItemFromImageAction catch block', {
+    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred while saving the variable measurements.';
+    logger.error('Error in saveVariableMeasurementsFromImageAction catch block', {
         errorMessage,
         originalError: error,
         inputData: { ...validatedData, ingredients: undefined, active_ingredients: undefined, inactive_ingredients: undefined } // Avoid logging potentially large arrays
@@ -351,7 +351,7 @@ async function findOrCreateGlobalVariable(
 async function upsertProductDetails(
     supabase: ResolvedSupabaseClient,
     globalVariableId: string,
-    data: SaveItemInput
+    data: SaveVariableMeasurementsInput
 ): Promise<string | null> {
     // Access properties safely
     const { type, name } = data;
@@ -389,7 +389,7 @@ async function upsertProductDetails(
 async function upsertFoodDetails(
     supabase: ResolvedSupabaseClient,
     globalVariableId: string,
-    data: Extract<SaveItemInput, { type: 'food' }>
+    data: Extract<SaveVariableMeasurementsInput, { type: 'food' }>
 ): Promise<string> {
     const { servingSize_quantity, servingSize_unit, calories_per_serving, fat_per_serving, protein_per_serving, carbs_per_serving } = data;
     
@@ -429,9 +429,9 @@ async function resolveIngredientGvars(
     return resolvedIngredients;
 }
 
-async function linkIngredientsToItem(
+async function linkIngredientsToParentVariable(
     supabase: ResolvedSupabaseClient,
-    itemGlobalVariableId: string,
+    parentGlobalVariableId: string,
     resolvedIngredients: IngredientInfo[],
     originalActiveIngredients: Pick<IngredientInfo, 'name'>[] // Only need name to check if active
 ): Promise<string[]> {
@@ -443,7 +443,7 @@ async function linkIngredientsToItem(
         // Check if this ingredient name was in the original active list
         const isActive = originalActiveIngredients.some(activeIng => activeIng.name === ing.name);
         return {
-            item_global_variable_id: itemGlobalVariableId,
+            parent_global_variable_id: parentGlobalVariableId,
             ingredient_global_variable_id: ing.global_variable_id!,
             quantity_per_serving: ing.quantity,
             unit_id: ing.unit_id,
@@ -452,17 +452,17 @@ async function linkIngredientsToItem(
         };
     });
 
-    // Upsert ingredients based on the unique constraint (item_id, ingredient_id)
+    // Upsert ingredients based on the unique constraint (parent_id, ingredient_id)
     const { data, error } = await supabase
-        .from('item_ingredients')
-        .upsert(ingredientsToInsert, { onConflict: 'item_global_variable_id, ingredient_global_variable_id' })
+        .from('variable_ingredients')
+        .upsert(ingredientsToInsert, { onConflict: 'parent_global_variable_id, ingredient_global_variable_id' })
         .select('id');
 
     if (error || !data) {
-        logger.error('Failed to link ingredients to item', { error, itemGlobalVariableId });
+        logger.error('Failed to link ingredients to parent variable', { error, parentGlobalVariableId });
         throw new Error(`DB error (linking ingredients): ${error?.message || 'Upsert failed'}`);
     }
-    logger.info(`Linked ${data.length} ingredients to item`, { itemGlobalVariableId });
+    logger.info(`Linked ${data.length} ingredients to variable`, { parentGlobalVariableId });
     return data.map(d => d.id);
 }
 
@@ -604,7 +604,7 @@ async function ensurePatientTreatmentRecord(
     userId: string,
     treatmentGVarId: string,
     userVariableId: string,
-    data: Extract<SaveItemInput, { type: 'treatment' }> // Expects the specific type
+    data: Extract<SaveVariableMeasurementsInput, { type: 'treatment' }> // Expects the specific type
 ): Promise<string | undefined> {
     const { details, name, dosage_form, dosage_instructions, active_ingredients } = data; 
     const brand = data.brand; // Get brand for manufacturer

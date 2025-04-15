@@ -1,6 +1,5 @@
 import * as path from 'path';
 import { generateConstantsFile } from './lib/generate-constants-util';
-import type { Database } from '../lib/database.types'; // Adjust if needed
 /// <reference path="../lib/database.types.ts" />
 // import type { Database } from '../lib/database.types'; // Adjust path if needed
 

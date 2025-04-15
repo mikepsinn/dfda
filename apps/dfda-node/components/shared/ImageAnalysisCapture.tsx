@@ -18,7 +18,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Loader2, Upload, AlertCircle, Camera, ImageIcon, Trash2 } from 'lucide-react'
 import { analyzeImageAction, AnalyzedImageResult } from '@/lib/actions/analyze-image'
-import { saveItemFromImageAction } from '@/lib/actions/save-item-from-image'
+import { saveVariableMeasurementsFromImageAction } from '@/lib/actions/save-variable-measurements-from-image'
 import { logger } from '@/lib/logger'
 import { toast } from '@/components/ui/use-toast'
 import Image from 'next/image'
@@ -363,11 +363,11 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     });
 
     try {
-      const response = await saveItemFromImageAction(requestFormData);
+      const response = await saveVariableMeasurementsFromImageAction(requestFormData);
       
       if (response.success) {
-        logger.info('Item saved successfully', { data: response.data });
-        toast({ title: "Item Saved", description: `Successfully saved ${formData.name}.` });
+        logger.info('Variable measurements saved successfully', { data: response.data });
+        toast({ title: "Variable Saved", description: `Successfully saved ${formData.name}.` });
         
         // Pass the *final* saved data back if needed (response.data should contain IDs)
         // Or pass the formData which represents the user's final input
@@ -376,12 +376,12 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
         resetState(); // Reset after successful save
         setIsOpen(false); // Close dialog on success
       } else {
-        logger.error('Failed to save item', { error: response.error });
+        logger.error('Failed to save variable measurements', { error: response.error });
         setSaveError(response.error);
         toast({ title: "Save Failed", description: response.error, variant: "destructive" });
       }
     } catch (err) {
-      logger.error('Error calling saveItemFromImageAction', { error: err });
+      logger.error('Error calling saveVariableMeasurementsFromImageAction', { error: err });
       const message = err instanceof Error ? err.message : 'An unexpected error occurred.';
       setSaveError(`An unexpected error occurred: ${message}`);
       toast({ title: "Error", description: `An unexpected error occurred: ${message}`, variant: "destructive" });
@@ -518,15 +518,15 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     }}>
       <DialogTrigger asChild>
         <Button variant="outline">
-          <Camera className="mr-2 h-4 w-4" /> Add Item via Image
+          <Camera className="mr-2 h-4 w-4" /> Add Variable via Image
         </Button>
       </DialogTrigger>
       {/* Increased max width for more complex form */} 
       <DialogContent className="sm:max-w-2xl" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
         <DialogHeader>
-          <DialogTitle>Analyze and Add Item</DialogTitle>
+          <DialogTitle>Analyze Image and Add Variable</DialogTitle>
           <DialogDescription>
-            Add images (front, nutrition, ingredients, UPC). Analyze to extract data, then edit and save.
+            Add images (front, nutrition, ingredients, UPC). Analyze to extract data, then edit and save the variable.
           </DialogDescription>
         </DialogHeader>
         
@@ -689,7 +689,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
             disabled={isAnalyzing || isSaving || !formData.type || !formData.name || Object.keys(imageStates).length === 0}
            >
             {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-            Save Item
+            Save Variable
           </Button>
         </DialogFooter>
       </DialogContent>
