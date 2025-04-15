@@ -92,15 +92,14 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 
 -   [x] **Database:** Define and apply migrations for new tables (`food_details`, `treatment_details`, `item_ingredients`).
 -   [X] **Database:** Run `pnpm supabase:types` and `pnpm db:zod` to update generated files.
--   [ ] **AI Schema:** Define the enhanced `AiOutputSchema` in `lib/actions/analyze-image.ts` using `z.discriminatedUnion` or similar.
--   [ ] **Backend Analysis:** Update `analyzeImageAction` to accept multiple named images.
--   [ ] **Backend Analysis:** Update `analyzeImageAction` prompt for multi-image processing and detailed extraction.
--   [ ] **Backend Analysis:** Implement logic in `analyzeImageAction` to call the AI model and return the validated, structured data.
--   [ ] **Frontend:** Update `ImageAnalysisCapture.tsx` state to handle multiple named images (`primary`, `nutrition`, etc.).
--   [ ] **Frontend:** Implement conditional UI in `ImageAnalysisCapture.tsx` to show relevant "Add Image" buttons after initial analysis.
--   [ ] **Frontend:** Update form fields and state (`formData`) in `ImageAnalysisCapture.tsx` to match the enhanced data structure.
--   [ ] **Frontend:** Modify image upload/capture logic to store images with appropriate type keys.
--   [ ] **Frontend:** Ensure all captured images are sent with distinct names in FormData during save.
+-   [x] **AI Schema:** Define the enhanced `AiOutputSchema` in `lib/actions/analyze-image.ts` using `z.discriminatedUnion` or similar.
+-   [x] **Backend Analysis:** Update `analyzeImageAction` to accept multiple named images.
+-   [x] **Backend Analysis:** Update `analyzeImageAction` prompt for multi-image processing and detailed extraction.
+-   [x] **Backend Analysis:** Implement logic in `analyzeImageAction` to call the AI model and return the validated, structured data.
+-   [x] **Frontend:** Update `ImageAnalysisCapture.tsx` state to handle multiple named images (`primary`, `nutrition`, etc.).
+-   [x] **Frontend:** Implement conditional UI in `ImageAnalysisCapture.tsx` to show relevant "Add Image" buttons after initial analysis.
+-   [x] **Frontend:** Modify image upload/capture logic to store images with appropriate type keys.
+-   [x] **Frontend:** Ensure all captured images are sent with distinct names in FormData during save.
 -   [x] **Backend Save:** Update `saveVariableMeasurementsFromImageAction` to accept the new complex data structure and multiple files.
 -   [x] **Backend Save:** Implement logic to find/create `global_variables` for the item.
 -   [x] **Backend Save:** Implement logic to find/create/link `products` record.

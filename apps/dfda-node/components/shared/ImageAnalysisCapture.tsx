@@ -132,12 +132,12 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     const file = event.target.files?.[0];
     if (file && activeImageType) {
         const reader = new FileReader();
-        reader.onloadend = () => {
+      reader.onloadend = () => {
             setImageStates(prev => ({
                 ...prev,
                 [activeImageType]: { file: file, previewUrl: reader.result as string }
             }));
-        }
+      }
         reader.readAsDataURL(file);
          // Reset file input value so onChange fires again for the same file
          if (fileInputRef.current) {
@@ -300,7 +300,67 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
              ...prev,
              type: value as AnalyzedImageResult['type'] 
             }));
-    }
+  }
+  };
+
+  // --- Ingredient List Management ---
+  const handleIngredientChange = (
+    listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients',
+    index: number,
+    field: 'name' | 'quantity' | 'unit',
+    value: string | number | null
+  ) => {
+    setFormData(prev => {
+      if (!prev || !prev[listKey]) return prev; // Should not happen if type is set
+
+      const updatedList = [...prev[listKey]!]; // Create a copy
+      if (!updatedList[index]) return prev; // Index out of bounds
+
+      // Create a copy of the ingredient object to update
+      const updatedIngredient = { ...updatedList[index] };
+
+      // Type assertion for safety, although structure should be consistent
+      if (field === 'name') {
+          updatedIngredient.name = typeof value === 'string' ? value : '';
+      } else if (field === 'quantity') {
+          // Allow null for quantity
+          updatedIngredient.quantity = typeof value === 'number' ? value : null;
+      } else if (field === 'unit') {
+          updatedIngredient.unit = typeof value === 'string' ? value : null;
+      }
+
+      updatedList[index] = updatedIngredient;
+
+      return {
+        ...prev,
+        [listKey]: updatedList,
+      };
+    });
+  };
+
+  const addIngredient = (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients') => {
+    setFormData(prev => {
+       if (!prev) return prev;
+       const currentList = prev[listKey] || [];
+       return {
+        ...prev,
+        [listKey]: [
+            ...currentList,
+            { name: '', quantity: null, unit: null } // Add new empty ingredient
+        ]
+       };
+    });
+  };
+
+ const removeIngredient = (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients', index: number) => {
+    setFormData(prev => {
+      if (!prev || !prev[listKey]) return prev;
+      const updatedList = prev[listKey]!.filter((_, i) => i !== index); // Filter out the item at index
+      return {
+        ...prev,
+        [listKey]: updatedList,
+      };
+    });
   };
 
   // --- Save Action ---
@@ -350,7 +410,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                  // if (value.length > 0) {
                      requestFormData.append(key, value);
                  // }
-            } else {
+    } else {
                 // Log unexpected types but don't break the save
                 logger.warn("Skipping unexpected form data type during FormData creation", { key, value, type: typeof value });
             }
@@ -456,14 +516,30 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                 </div>
                 {/* TODO: Ingredient List Editing UI */} 
                  <h4 className="col-span-4 text-sm font-medium mt-3 mb-1 border-t pt-3">Ingredients</h4>
-                 <div className="col-span-4 text-xs text-muted-foreground p-2 border rounded-md">
-                    {formData.ingredients && formData.ingredients.length > 0 
-                        ? formData.ingredients.map((ing, idx) => (
-                            <span key={idx} className="inline-block mr-1">{ing.name}{idx < formData.ingredients!.length - 1 ? ", " : ""}</span>
-                          )) 
-                        : "(No ingredients extracted)"
-                    }
-                    {/* Add button to manually edit/add ingredients */} 
+                 <div className="col-span-4 space-y-2">
+                     {formData.ingredients && formData.ingredients.map((ing, idx) => (
+                         <div key={idx} className="flex items-center gap-2">
+                             <Input 
+                                 value={ing.name} 
+                                 onChange={(e) => handleIngredientChange('ingredients', idx, 'name', e.target.value)} 
+                                 placeholder="Ingredient Name" 
+                                 className="flex-grow"
+                                 disabled={isSaving}
+                             />
+                             {/* Quantity and Unit are less common for general food ingredients - keep simple or add? Let's keep it simple for now */}
+                             {/* <Input type="number" value={ing.quantity ?? ''} onChange={(e) => handleIngredientChange('ingredients', idx, 'quantity', e.target.value ? Number(e.target.value) : null)} placeholder="Qty" className="w-16" disabled={isSaving}/>
+                             <Input value={ing.unit || ''} onChange={(e) => handleIngredientChange('ingredients', idx, 'unit', e.target.value)} placeholder="Unit" className="w-16" disabled={isSaving}/> */}
+                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('ingredients', idx)} disabled={isSaving} aria-label="Remove ingredient">
+                                 <Trash2 className="h-4 w-4" />
+                             </Button>
+                         </div>
+                     ))}
+                      {(!formData.ingredients || formData.ingredients.length === 0) && (
+                        <p className="text-xs text-muted-foreground italic">No ingredients listed.</p>
+                     )}
+                     <Button variant="outline" size="sm" onClick={() => addIngredient('ingredients')} disabled={isSaving}>
+                        Add Ingredient
+                    </Button>
                  </div>
             </>
         )}
@@ -480,27 +556,68 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                     <Label htmlFor="dosage_instructions" className="text-right pt-2">Instructions</Label>
                     <Textarea id="dosage_instructions" name="dosage_instructions" value={formData.dosage_instructions || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., Take 1 tablet daily" rows={2}/>
                 </div>
-                {/* TODO: Active Ingredient List Editing UI */} 
                 <h5 className="col-span-4 text-xs font-medium mt-2">Active Ingredients</h5>
-                 <div className="col-span-4 text-xs text-muted-foreground p-2 border rounded-md">
-                    {formData.active_ingredients && formData.active_ingredients.length > 0 
-                        ? formData.active_ingredients.map((ing, idx) => (
-                            <span key={idx} className="inline-block mr-1">{ing.name} {ing.quantity}{ing.unit}{idx < formData.active_ingredients!.length - 1 ? ", " : ""}</span>
-                          )) 
-                        : "(No active ingredients extracted)"
-                    }
-                    {/* Add button */} 
+                <div className="col-span-4 space-y-2">
+                    {formData.active_ingredients && formData.active_ingredients.map((ing, idx) => (
+                         <div key={idx} className="flex items-center gap-2">
+                             <Input 
+                                 value={ing.name} 
+                                 onChange={(e) => handleIngredientChange('active_ingredients', idx, 'name', e.target.value)} 
+                                 placeholder="Ingredient Name" 
+                                 className="flex-grow"
+                                 disabled={isSaving}
+                             />
+                             <Input 
+                                type="number" 
+                                value={ing.quantity ?? ''} 
+                                onChange={(e) => handleIngredientChange('active_ingredients', idx, 'quantity', e.target.value ? Number(e.target.value) : null)} 
+                                placeholder="Strength" 
+                                className="w-20" 
+                                disabled={isSaving}
+                             />
+                             <Input 
+                                value={ing.unit || ''} 
+                                onChange={(e) => handleIngredientChange('active_ingredients', idx, 'unit', e.target.value)} 
+                                placeholder="Unit" 
+                                className="w-16" 
+                                disabled={isSaving}
+                             />
+                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('active_ingredients', idx)} disabled={isSaving} aria-label="Remove active ingredient">
+                                 <Trash2 className="h-4 w-4" />
+                             </Button>
+                         </div>
+                     ))}
+                     {(!formData.active_ingredients || formData.active_ingredients.length === 0) && (
+                        <p className="text-xs text-muted-foreground italic">No active ingredients listed.</p>
+                     )}
+                      <Button variant="outline" size="sm" onClick={() => addIngredient('active_ingredients')} disabled={isSaving}>
+                        Add Active Ingredient
+                    </Button>
                  </div>
-                {/* TODO: Inactive Ingredient List Editing UI */} 
+
                 <h5 className="col-span-4 text-xs font-medium mt-2">Inactive Ingredients</h5>
-                 <div className="col-span-4 text-xs text-muted-foreground p-2 border rounded-md">
-                   {formData.inactive_ingredients && formData.inactive_ingredients.length > 0 
-                        ? formData.inactive_ingredients.map((ing, idx) => (
-                            <span key={idx} className="inline-block mr-1">{ing.name}{idx < formData.inactive_ingredients!.length - 1 ? ", " : ""}</span>
-                          )) 
-                        : "(No inactive ingredients extracted)"
-                    }
-                    {/* Add button */} 
+                <div className="col-span-4 space-y-2">
+                   {formData.inactive_ingredients && formData.inactive_ingredients.map((ing, idx) => (
+                         <div key={idx} className="flex items-center gap-2">
+                             <Input 
+                                 value={ing.name} 
+                                 onChange={(e) => handleIngredientChange('inactive_ingredients', idx, 'name', e.target.value)} 
+                                 placeholder="Ingredient Name" 
+                                 className="flex-grow"
+                                 disabled={isSaving}
+                             />
+                             {/* Quantity and Unit less common for inactive - omit for simplicity */}
+                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('inactive_ingredients', idx)} disabled={isSaving} aria-label="Remove inactive ingredient">
+                                 <Trash2 className="h-4 w-4" />
+                             </Button>
+                         </div>
+                     ))}
+                      {(!formData.inactive_ingredients || formData.inactive_ingredients.length === 0) && (
+                        <p className="text-xs text-muted-foreground italic">No inactive ingredients listed.</p>
+                     )}
+                      <Button variant="outline" size="sm" onClick={() => addIngredient('inactive_ingredients')} disabled={isSaving}>
+                        Add Inactive Ingredient
+                    </Button>
                  </div>
             </>
         )}
@@ -588,7 +705,7 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                                         muted
                                         className="w-full h-auto max-h-40"
                                         style={{ transform: 'scaleX(-1)' }} 
-                                    />
+                  />
                                     <Button onClick={captureImage} size="sm" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 z-10" aria-label="Capture image">
                           Capture
                       </Button>
