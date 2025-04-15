@@ -263,6 +263,59 @@ export const publicDataSubmissionsRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
+export const publicFoodDetailsRowSchemaSchema = z.object({
+  calories_per_serving: z.number().nullable(),
+  carbs_per_serving: z.number().nullable(),
+  created_at: z.string(),
+  fat_per_serving: z.number().nullable(),
+  global_variable_id: z.string(),
+  protein_per_serving: z.number().nullable(),
+  serving_size_quantity: z.number().nullable(),
+  serving_size_unit_id: z.string().nullable(),
+  updated_at: z.string(),
+});
+
+export const publicFoodDetailsInsertSchemaSchema = z.object({
+  calories_per_serving: z.number().optional().nullable(),
+  carbs_per_serving: z.number().optional().nullable(),
+  created_at: z.string().optional(),
+  fat_per_serving: z.number().optional().nullable(),
+  global_variable_id: z.string(),
+  protein_per_serving: z.number().optional().nullable(),
+  serving_size_quantity: z.number().optional().nullable(),
+  serving_size_unit_id: z.string().optional().nullable(),
+  updated_at: z.string().optional(),
+});
+
+export const publicFoodDetailsUpdateSchemaSchema = z.object({
+  calories_per_serving: z.number().optional().nullable(),
+  carbs_per_serving: z.number().optional().nullable(),
+  created_at: z.string().optional(),
+  fat_per_serving: z.number().optional().nullable(),
+  global_variable_id: z.string().optional(),
+  protein_per_serving: z.number().optional().nullable(),
+  serving_size_quantity: z.number().optional().nullable(),
+  serving_size_unit_id: z.string().optional().nullable(),
+  updated_at: z.string().optional(),
+});
+
+export const publicFoodDetailsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("food_details_global_variable_id_fkey"),
+    columns: z.tuple([z.literal("global_variable_id")]),
+    isOneToOne: z.literal(true),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("food_details_serving_size_unit_id_fkey"),
+    columns: z.tuple([z.literal("serving_size_unit_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("units"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
 export const publicFormAnswersRowSchemaSchema = z.object({
   answer_value: jsonSchema,
   created_at: z.string(),
@@ -527,6 +580,68 @@ export const publicGlobalVariablesRelationshipsSchemaSchema = z.tuple([
     columns: z.tuple([z.literal("variable_category_id")]),
     isOneToOne: z.literal(false),
     referencedRelation: z.literal("variable_categories"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
+export const publicItemIngredientsRowSchemaSchema = z.object({
+  created_at: z.string(),
+  display_order: z.number().nullable(),
+  id: z.string(),
+  ingredient_global_variable_id: z.string(),
+  is_active_ingredient: z.boolean(),
+  item_global_variable_id: z.string(),
+  quantity_per_serving: z.number().nullable(),
+  unit_id: z.string().nullable(),
+  updated_at: z.string(),
+});
+
+export const publicItemIngredientsInsertSchemaSchema = z.object({
+  created_at: z.string().optional(),
+  display_order: z.number().optional().nullable(),
+  id: z.string().optional(),
+  ingredient_global_variable_id: z.string(),
+  is_active_ingredient: z.boolean().optional(),
+  item_global_variable_id: z.string(),
+  quantity_per_serving: z.number().optional().nullable(),
+  unit_id: z.string().optional().nullable(),
+  updated_at: z.string().optional(),
+});
+
+export const publicItemIngredientsUpdateSchemaSchema = z.object({
+  created_at: z.string().optional(),
+  display_order: z.number().optional().nullable(),
+  id: z.string().optional(),
+  ingredient_global_variable_id: z.string().optional(),
+  is_active_ingredient: z.boolean().optional(),
+  item_global_variable_id: z.string().optional(),
+  quantity_per_serving: z.number().optional().nullable(),
+  unit_id: z.string().optional().nullable(),
+  updated_at: z.string().optional(),
+});
+
+export const publicItemIngredientsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal(
+      "item_ingredients_ingredient_global_variable_id_fkey",
+    ),
+    columns: z.tuple([z.literal("ingredient_global_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("item_ingredients_item_global_variable_id_fkey"),
+    columns: z.tuple([z.literal("item_global_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("item_ingredients_unit_id_fkey"),
+    columns: z.tuple([z.literal("unit_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("units"),
     referencedColumns: z.tuple([z.literal("id")]),
   }),
 ]);
@@ -1709,6 +1824,43 @@ export const publicResearchPartnersRelationshipsSchemaSchema = z.tuple([
     columns: z.tuple([z.literal("id")]),
     isOneToOne: z.literal(true),
     referencedRelation: z.literal("profiles"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
+export const publicTreatmentDetailsRowSchemaSchema = z.object({
+  active_ingredients: jsonSchema.nullable(),
+  created_at: z.string(),
+  dosage_form: z.string().nullable(),
+  dosage_instructions: z.string().nullable(),
+  global_variable_id: z.string(),
+  updated_at: z.string(),
+});
+
+export const publicTreatmentDetailsInsertSchemaSchema = z.object({
+  active_ingredients: jsonSchema.optional().nullable(),
+  created_at: z.string().optional(),
+  dosage_form: z.string().optional().nullable(),
+  dosage_instructions: z.string().optional().nullable(),
+  global_variable_id: z.string(),
+  updated_at: z.string().optional(),
+});
+
+export const publicTreatmentDetailsUpdateSchemaSchema = z.object({
+  active_ingredients: jsonSchema.optional().nullable(),
+  created_at: z.string().optional(),
+  dosage_form: z.string().optional().nullable(),
+  dosage_instructions: z.string().optional().nullable(),
+  global_variable_id: z.string().optional(),
+  updated_at: z.string().optional(),
+});
+
+export const publicTreatmentDetailsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("treatment_details_global_variable_id_fkey"),
+    columns: z.tuple([z.literal("global_variable_id")]),
+    isOneToOne: z.literal(true),
+    referencedRelation: z.literal("global_variables"),
     referencedColumns: z.tuple([z.literal("id")]),
   }),
 ]);

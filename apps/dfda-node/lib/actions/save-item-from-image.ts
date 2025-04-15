@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid' // For generating unique filenames
 import slugify from 'slugify' // Import slugify
 // Import constants
 import { UNIT_IDS } from '@/lib/constants/units'
-import { VARIABLE_CATEGORIES } from '@/lib/constants/variable-categories'
+import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'
 
 // Input schema validation using Zod
 const SaveItemInputSchema = z.object({
@@ -124,9 +124,9 @@ export async function saveItemFromImageAction(formData: FormData): Promise<
 
     // --- 2. Find or Create Global Variable --- 
     // Use constants for category and unit IDs
-    const foodCategoryId = VARIABLE_CATEGORIES.INTAKE_AND_INTERVENTIONS // Assuming food fits here
-    const treatmentCategoryId = VARIABLE_CATEGORIES.INTAKE_AND_INTERVENTIONS // Assuming treatments fit here
-    const otherCategoryId = VARIABLE_CATEGORIES.HEALTH_AND_PHYSIOLOGY // Assuming 'other' maps here, adjust if needed
+    const foodCategoryId = VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS // Assuming food fits here
+    const treatmentCategoryId = VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS // Assuming treatments fit here
+    const otherCategoryId = VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY // Assuming 'other' maps here, adjust if needed
     const defaultFoodUnitId = UNIT_IDS.GRAM // Default food unit
     const defaultTreatmentUnitId = UNIT_IDS.DIMENSIONLESS // Default treatment unit (e.g., pill, dose) - Adjust if needed
     const defaultOtherUnitId = UNIT_IDS.DIMENSIONLESS // Default 'other' unit - Adjust if needed

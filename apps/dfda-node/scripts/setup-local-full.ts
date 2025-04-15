@@ -120,7 +120,7 @@ async function setupLocalFull() {
     await runCommand('pnpm', ['run', 'generate:schemas']);
 
     // 9. Generate Navigation from files
-    await runCommand('pnpm', ['run', 'generate:navigation']);
+    await runCommand('pnpm', ['run', 'generate:nav']);
 
     console.log('\n✅✅✅ Full local setup completed successfully! ✅✅✅');
     console.log('You can now run \'pnpm run dev\' to start the application.');

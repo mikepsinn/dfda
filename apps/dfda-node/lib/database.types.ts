@@ -203,6 +203,57 @@ export type Database = {
           },
         ]
       }
+      food_details: {
+        Row: {
+          calories_per_serving: number | null
+          carbs_per_serving: number | null
+          created_at: string
+          fat_per_serving: number | null
+          global_variable_id: string
+          protein_per_serving: number | null
+          serving_size_quantity: number | null
+          serving_size_unit_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          calories_per_serving?: number | null
+          carbs_per_serving?: number | null
+          created_at?: string
+          fat_per_serving?: number | null
+          global_variable_id: string
+          protein_per_serving?: number | null
+          serving_size_quantity?: number | null
+          serving_size_unit_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          calories_per_serving?: number | null
+          carbs_per_serving?: number | null
+          created_at?: string
+          fat_per_serving?: number | null
+          global_variable_id?: string
+          protein_per_serving?: number | null
+          serving_size_quantity?: number | null
+          serving_size_unit_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "food_details_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "food_details_serving_size_unit_id_fkey"
+            columns: ["serving_size_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       form_answers: {
         Row: {
           answer_value: Json
@@ -453,6 +504,64 @@ export type Database = {
             columns: ["variable_category_id"]
             isOneToOne: false
             referencedRelation: "variable_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      item_ingredients: {
+        Row: {
+          created_at: string
+          display_order: number | null
+          id: string
+          ingredient_global_variable_id: string
+          is_active_ingredient: boolean
+          item_global_variable_id: string
+          quantity_per_serving: number | null
+          unit_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          ingredient_global_variable_id: string
+          is_active_ingredient?: boolean
+          item_global_variable_id: string
+          quantity_per_serving?: number | null
+          unit_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          ingredient_global_variable_id?: string
+          is_active_ingredient?: boolean
+          item_global_variable_id?: string
+          quantity_per_serving?: number | null
+          unit_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "item_ingredients_ingredient_global_variable_id_fkey"
+            columns: ["ingredient_global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "item_ingredients_item_global_variable_id_fkey"
+            columns: ["item_global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "item_ingredients_unit_id_fkey"
+            columns: ["unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
             referencedColumns: ["id"]
           },
         ]
@@ -1593,6 +1702,41 @@ export type Database = {
             columns: ["id"]
             isOneToOne: true
             referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      treatment_details: {
+        Row: {
+          active_ingredients: Json | null
+          created_at: string
+          dosage_form: string | null
+          dosage_instructions: string | null
+          global_variable_id: string
+          updated_at: string
+        }
+        Insert: {
+          active_ingredients?: Json | null
+          created_at?: string
+          dosage_form?: string | null
+          dosage_instructions?: string | null
+          global_variable_id: string
+          updated_at?: string
+        }
+        Update: {
+          active_ingredients?: Json | null
+          created_at?: string
+          dosage_form?: string | null
+          dosage_instructions?: string | null
+          global_variable_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "treatment_details_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
             referencedColumns: ["id"]
           },
         ]

@@ -18,15 +18,10 @@ const AiOutputSchema = z.object({
   name: publicGlobalVariablesInsertSchemaSchema.shape.name
           .describe('Identify the specific name of the item (e.g., "Apple", "Ibuprofen 200mg", "Laptop"). Be concise.'),
   // Pick 'description' (mapped to 'details' here), make optional, and add a description
-  details: publicGlobalVariablesInsertSchemaSchema.shape.description.optional()
+  details: z.string().optional()
           .describe('(Optional) Provide any relevant additional details, like brand, dosage, serving size, or distinguishing features.'),
 });
-// --- End new schema definition ---
 
-// Ensure GOOGLE_GENERATIVE_AI_API_KEY is set in your environment variables - Handled by shared client
-// const google = createGoogleGenerativeAI({
-//   apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY, // Use the validated env variable
-// });
 
 // Type for the successful result - Now derived from our new schema
 export type AnalyzedImageResult = z.infer<typeof AiOutputSchema>
@@ -58,7 +53,7 @@ export async function analyzeImageAction(formData: FormData): Promise<
       // System prompt might need adjustment for Gemini if behavior differs
       // system: 'You are an expert assistant classifying images and extracting information according to the provided schema.',
       // Simplified prompt, relying on schema descriptions
-      prompt: 'Analyze the image and extract information according to the schema.',
+      // prompt: 'Analyze the image and extract information according to the schema.',
       messages: [
         {
           role: 'user',

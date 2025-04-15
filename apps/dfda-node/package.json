@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm run sb:local:start && concurrently --kill-others --names \"next,worker,cron\" --prefix-colors \"yellow,blue,magenta\" \"pnpm run dev:next\" \"pnpm run dev:worker\" \"pnpm run dev:cron\"",
-    "setup": "tsx ./scripts/setup-local-full.ts",
+    "db:setup": "tsx ./scripts/setup-local-full.ts",
     "db:worker:migrate": "dotenv -- npx graphile-worker --schema-only",
     "check": "pnpm run type-check && pnpm run lint",
     "build": "next build",
