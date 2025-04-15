@@ -979,8 +979,8 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
           <Camera className="mr-2 h-4 w-4" /> Add Variable via Image
         </Button>
       </DialogTrigger>
-      {/* Increased max width for more complex form */} 
-      <DialogContent className="sm:max-w-2xl" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
+      {/* Make dialog full screen */}
+      <DialogContent className="h-screen w-screen max-w-full sm:max-w-full flex flex-col" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
         <DialogHeader>
           {/* Re-add Title/Description but wrap with VisuallyHidden */} 
           <VisuallyHidden>
@@ -1007,8 +1007,8 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
           {/* Hidden Canvas - Now uses canvasRef from the hook */}
         <canvas ref={canvasRef} style={{ display: 'none' }} />
 
-        {/* Main Content Area - Now driven by currentStep */} 
-        <ScrollArea className="h-[60vh] p-1">
+        {/* Main Content Area - Now driven by currentStep - Make it grow */}
+        <ScrollArea className="flex-grow h-0 p-1">
           {currentStep === 'capturePrimary' && (
             <div className="flex flex-col items-center justify-center h-full p-4 space-y-4">
               {/* Add back inner title/description for this step */}
@@ -1220,7 +1220,8 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
 
         </ScrollArea>
 
-        <DialogFooter className="mt-4 pt-4 border-t">
+        {/* Make footer fixed at bottom */}
+        <DialogFooter className="mt-auto pt-4 border-t shrink-0">
           {/* Close Button - Always available unless saving */} 
           <DialogClose asChild>
             <Button 
