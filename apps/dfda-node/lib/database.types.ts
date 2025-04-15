@@ -2259,13 +2259,6 @@ export type Database = {
         Args: { p_rating_id: string }
         Returns: undefined
       }
-      list_views: {
-        Args: Record<PropertyKey, never>
-        Returns: {
-          schema_name: string
-          view_name: string
-        }[]
-      }
     }
     Enums: {
       action_category:

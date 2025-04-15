@@ -9,26 +9,9 @@ export type PatientCondition = Database['public']['Views']['patient_conditions_v
 export type PatientConditionInsert = Database['public']['Tables']['patient_conditions']['Insert']
 export type PatientConditionUpdate = Database['public']['Tables']['patient_conditions']['Update']
 
-// Debug function to list all views
-async function logAvailableViews() {
-  const supabase = await createClient()
-  
-  const { data: views, error } = await supabase
-    .rpc('list_views')
-
-  if (error) {
-    logger.error('Error fetching views:', error)
-  } else {
-    logger.info('Available views in public schema:', views)
-  }
-}
-
 // Get all conditions for a patient
 export async function getPatientConditionsAction(patientId: string): Promise<PatientCondition[]> {
   const supabase = await createClient()
-
-  // Log available views first
-  await logAvailableViews()
 
   // Log the request details
   logger.info('Fetching patient conditions:', {

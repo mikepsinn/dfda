@@ -14,10 +14,27 @@ export const createClient = async () => {
           return cookieStore.get(name)?.value
         },
         set(name: string, value: string, options: { path?: string }) {
-          cookieStore.set({ name, value, ...options })
+          try {
+            cookieStore.set({ name, value, ...options })
+          } catch (error: any) {
+            console.error(`Error setting cookie '${name}':`, error);
+            console.error('Set Cookie Stack Trace:');
+            console.trace(); // Log stack trace
+          }
         },
         remove(name: string, options: { path?: string }) {
-          cookieStore.set({ name, value: '', ...options, maxAge: 0 })
+          try {
+            // Attempt to remove cookie by setting maxAge to 0
+            cookieStore.set({ name, value: '', ...options, maxAge: 0 })
+          } catch (error: any) {
+            // Log error and stack trace if cookie removal fails
+            console.error(`Error removing cookie '${name}':`, error);
+            console.error('Remove Cookie Stack Trace:');
+            console.trace(); // Log stack trace 
+            // Re-throw the error to keep the original behavior if needed, 
+            // but logging might be sufficient for debugging.
+            // throw error;
+          }
         },
       },
     }

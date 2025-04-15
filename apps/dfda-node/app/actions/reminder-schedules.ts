@@ -8,6 +8,8 @@ import { toZonedTime } from 'date-fns-tz'
 // import { handleDatabaseCollectionResponse } from '@/lib/actions-helpers' // Unused import
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
+// REMOVE the Trigger.dev client import
+// import { client } from '@/lib/trigger' 
 
 // Types
 export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
@@ -251,7 +253,7 @@ export async function createDefaultReminderAction(
   variableCategory: string | null // Pass category to determine message
 ): Promise<{ success: boolean; error?: string }> {
   const supabase = await createClient();
-  logger.info('Creating default reminder schedule', { userId, userVariableId, variableName });
+  logger.info('Creating default reminder', { userId, userVariableId, variableName });
 
   if (!userId || !userVariableId || !variableName) {
     return { success: false, error: 'Missing required information for default reminder.' };
@@ -327,12 +329,17 @@ export async function createDefaultReminderAction(
          // Don't fail the whole operation for this
     }
 
-    logger.info('Successfully created default reminder schedule', { userId, userVariableId, scheduleId: result.data.id });
+    logger.info('Successfully created default reminder schedule', { scheduleId: result.data.id, userId, userVariableId });
+
+    // Optionally revalidate paths if needed immediately
+    // revalidatePath('/patient/reminders');
+
     return { success: true };
 
   } catch (error) {
-    logger.error('Error in createDefaultReminderAction', { userId, userVariableId, error: error instanceof Error ? error.message : String(error) });
-    return { success: false, error: 'An unexpected error occurred while creating the default reminder schedule.' };
+    logger.error('Failed in createDefaultReminderAction', { userId, userVariableId, error: error instanceof Error ? error.message : String(error) });
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+    return { success: false, error: errorMessage };
   }
 } 
 
