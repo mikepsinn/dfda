@@ -90,9 +90,8 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 
 ## TODO List
 
--   [ ] **Database:** Define and apply migrations for new tables (`food_details`, `treatment_details`, `item_ingredients`).
--   [ ] **Database:** Add 'Ingredient' category to `variable_categories` (if not already present via seeding/migration).
--   [ ] **Database:** Run `pnpm supabase:types` and `pnpm db:zod` to update generated files.
+-   [x] **Database:** Define and apply migrations for new tables (`food_details`, `treatment_details`, `item_ingredients`).
+-   [X] **Database:** Run `pnpm supabase:types` and `pnpm db:zod` to update generated files.
 -   [ ] **AI Schema:** Define the enhanced `AiOutputSchema` in `lib/actions/analyze-image.ts` using `z.discriminatedUnion` or similar.
 -   [ ] **Backend Analysis:** Update `analyzeImageAction` to accept multiple named images.
 -   [ ] **Backend Analysis:** Update `analyzeImageAction` prompt for multi-image processing and detailed extraction.
@@ -102,12 +101,12 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 -   [ ] **Frontend:** Update form fields and state (`formData`) in `ImageAnalysisCapture.tsx` to match the enhanced data structure.
 -   [ ] **Frontend:** Modify image upload/capture logic to store images with appropriate type keys.
 -   [ ] **Frontend:** Ensure all captured images are sent with distinct names in FormData during save.
--   [ ] **Backend Save:** Update `saveItemFromImageAction` to accept the new complex data structure and multiple files.
--   [ ] **Backend Save:** Implement logic to find/create `global_variables` for the item and ingredients.
--   [ ] **Backend Save:** Implement logic to find/create/link `products` record.
+-   [x] **Backend Save:** Update `saveItemFromImageAction` to accept the new complex data structure and multiple files.
+-   [x] **Backend Save:** Implement logic to find/create `global_variables` for the item.
+-   [x] **Backend Save:** Implement logic to find/create/link `products` record.
 -   [ ] **Backend Save:** Implement logic to insert/update `food_details` or `treatment_details`.
 -   [ ] **Backend Save:** Implement logic to populate the `item_ingredients` table for all extracted ingredients.
--   [ ] **Backend Save:** Update image storage logic as needed.
--   [ ] **Backend Save:** Ensure `user_variables` creation/update still works.
+-   [x] **Backend Save:** Update image storage logic as needed (Current logic handles single image upload/linking via `uploaded_files` and `user_variable_images`).
+-   [x] **Backend Save:** Ensure `user_variables` creation/update still works.
 -   [ ] **Testing:** Thoroughly test the end-to-end flow with various food and treatment packages.
 -   [ ] **Calculation:** Implement logic (likely in a separate function or component) to calculate consumed ingredients based on logged item consumption, `food_details.serving_size_*`, and `item_ingredients.quantity_per_serving`.

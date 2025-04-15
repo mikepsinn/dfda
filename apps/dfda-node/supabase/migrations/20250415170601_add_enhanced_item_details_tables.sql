@@ -30,30 +30,6 @@ CREATE POLICY "Allow authenticated insert access" ON public.food_details FOR INS
 CREATE POLICY "Allow owner update access" ON public.food_details FOR UPDATE USING (auth.uid() = (SELECT user_id FROM public.user_variables uv WHERE uv.global_variable_id = food_details.global_variable_id)) WITH CHECK (auth.uid() = (SELECT user_id FROM public.user_variables uv WHERE uv.global_variable_id = food_details.global_variable_id));
 CREATE POLICY "Allow owner delete access" ON public.food_details FOR DELETE USING (auth.uid() = (SELECT user_id FROM public.user_variables uv WHERE uv.global_variable_id = food_details.global_variable_id));
 
--- Create treatment_details table
-CREATE TABLE public.treatment_details (
-    global_variable_id TEXT PRIMARY KEY REFERENCES public.global_variables(id) ON DELETE CASCADE,
-    dosage_form TEXT NULL,
-    dosage_instructions TEXT NULL,
-    -- Format: [{ ingredient_global_variable_id: text, strength_quantity: number | null, strength_unit_id: text | null }]
-    active_ingredients JSONB NULL,
-    created_at TIMESTAMPTZ DEFAULT now() NOT NULL,
-    updated_at TIMESTAMPTZ DEFAULT now() NOT NULL
-);
-
--- Add trigger for updated_at timestamp on treatment_details
-CREATE TRIGGER handle_updated_at
-BEFORE UPDATE ON public.treatment_details
-FOR EACH ROW
-EXECUTE FUNCTION moddatetime('updated_at');
-
--- RLS Policies for treatment_details
-ALTER TABLE public.treatment_details ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Allow public read access" ON public.treatment_details FOR SELECT USING (true);
-CREATE POLICY "Allow authenticated insert access" ON public.treatment_details FOR INSERT WITH CHECK (auth.role() = 'authenticated');
-CREATE POLICY "Allow owner update access" ON public.treatment_details FOR UPDATE USING (auth.uid() = (SELECT user_id FROM public.user_variables uv WHERE uv.global_variable_id = treatment_details.global_variable_id)) WITH CHECK (auth.uid() = (SELECT user_id FROM public.user_variables uv WHERE uv.global_variable_id = treatment_details.global_variable_id));
-CREATE POLICY "Allow owner delete access" ON public.treatment_details FOR DELETE USING (auth.uid() = (SELECT user_id FROM public.user_variables uv WHERE uv.global_variable_id = treatment_details.global_variable_id));
-
 -- Create item_ingredients table
 CREATE TABLE public.item_ingredients (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

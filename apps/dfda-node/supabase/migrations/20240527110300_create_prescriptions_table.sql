@@ -20,7 +20,6 @@ CREATE TABLE public.prescriptions (
     -- Structured Dosage Info
     dosage_amount NUMERIC,       -- e.g., 50, 1, 2.5
     dosage_unit TEXT,            -- e.g., 'mg', 'tablet(s)', 'ml', 'puff(s)'
-    dosage_form TEXT,            -- e.g., 'tablet', 'capsule', 'liquid', 'inhaler', 'cream'
     route TEXT,                  -- e.g., 'oral', 'topical', 'inhaled', 'sublingual'
     frequency TEXT,              -- e.g., 'twice daily', 'every 4 hours', 'as needed'
 

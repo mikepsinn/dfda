@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
@@ -16,17 +16,24 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Loader2, Upload, AlertCircle, Camera } from 'lucide-react'
+import { Loader2, Upload, AlertCircle, Camera, ImageIcon, Trash2 } from 'lucide-react'
 import { analyzeImageAction, AnalyzedImageResult } from '@/lib/actions/analyze-image'
-// We will create this action next
 import { saveItemFromImageAction } from '@/lib/actions/save-item-from-image'
 import { logger } from '@/lib/logger'
 import { toast } from '@/components/ui/use-toast'
 import Image from 'next/image'
+import { ScrollArea } from "@/components/ui/scroll-area"
+
+// Define image types based on the plan
+const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
+type ImageType = typeof IMAGE_TYPES[number];
+
+// Helper type for image state
+type ImageState = { file: File | null; previewUrl: string | null };
 
 interface ImageAnalysisCaptureProps {
-  userId: string // Pass the user ID for saving
-  onSaveSuccess?: (data: AnalyzedImageResult) => void // Optional callback after successful save
+  userId: string
+  onSaveSuccess?: (data: AnalyzedImageResult) => void
 }
 
 // Helper function to convert Data URL to File object
@@ -50,10 +57,34 @@ function dataURLtoFile(dataurl: string, filename: string): File | null {
     }
 }
 
+// Define initial empty state for the complex form data
+const initialFormData: Partial<AnalyzedImageResult> = {
+    type: undefined,
+    name: '',
+    brand: '',
+    upc: '',
+    details: '',
+    // Food specific
+    servingSize_quantity: null,
+    servingSize_unit: '',
+    calories_per_serving: null,
+    fat_per_serving: null,
+    protein_per_serving: null,
+    carbs_per_serving: null,
+    ingredients: [],
+    // Treatment specific
+    dosage_form: '',
+    dosage_instructions: '',
+    active_ingredients: [],
+    inactive_ingredients: [],
+}
+
 export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCaptureProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedFile, setSelectedFile] = useState<File | null>(null)
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null)
+  // State for multiple images
+  const [imageStates, setImageStates] = useState<Partial<Record<ImageType, ImageState>>>({})
+  // State for which image type is currently being captured/uploaded
+  const [activeImageType, setActiveImageType] = useState<ImageType>('primary') 
   const [analysisResult, setAnalysisResult] = useState<AnalyzedImageResult | null>(null)
   const [analysisError, setAnalysisError] = useState<string | null>(null)
   const [saveError, setSaveError] = useState<string | null>(null)
@@ -64,295 +95,425 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
   // Webcam state
   const [isWebcamActive, setIsWebcamActive] = useState(false)
   const [webcamStream, setWebcamStream] = useState<MediaStream | null>(null)
-  // Use previewUrl for both uploaded and captured images
-  // const [capturedImageDataUrl, setCapturedImageDataUrl] = useState<string | null>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null) // For capturing the frame
+  const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  // Form state for editing analysis results
-  const [formData, setFormData] = useState<Partial<AnalyzedImageResult & { type: 'food' | 'treatment' | 'other' | undefined }>>({ type: undefined, name: '', details: '' })
+  // Form state now uses the full AnalyzedImageResult structure
+  const [formData, setFormData] = useState<Partial<AnalyzedImageResult>>(initialFormData)
 
-  // Add state to track the source of the current preview image
-  const [imageSource, setImageSource] = useState<'upload' | 'webcam' | null>(null);
-
-  // Effect to handle webcam stream connection
-  useEffect(() => {
-    if (isWebcamActive && webcamStream && videoRef.current) {
-      videoRef.current.srcObject = webcamStream
-    }
-    // Cleanup: Stop stream when component unmounts or webcam is deactivated
-    return () => {
-      if (webcamStream) {
-        webcamStream.getTracks().forEach(track => track.stop())
-      }
-    }
-  }, [isWebcamActive, webcamStream])
-
-  const resetState = () => {
-    setSelectedFile(null)
-    setPreviewUrl(null)
-    setAnalysisResult(null)
-    setAnalysisError(null)
-    setSaveError(null)
-    setIsAnalyzing(false)
-    setIsSaving(false)
-    setFormData({ type: undefined, name: '', details: '' })
-    // Reset file input value
+  // Reset state needs to clear multiple images and full form data
+  const resetState = useCallback(() => {
+    setImageStates({});
+    setActiveImageType('primary');
+    setAnalysisResult(null);
+    setAnalysisError(null);
+    setSaveError(null);
+    setIsAnalyzing(false);
+    setIsSaving(false);
+    setFormData(initialFormData);
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
     }
-    // Stop webcam if active
     if (webcamStream) {
       webcamStream.getTracks().forEach(track => track.stop());
       setWebcamStream(null);
     }
-    setIsWebcamActive(false); // Ensure webcam is marked inactive
-    setImageSource(null); // Reset image source
-  }
+    setIsWebcamActive(false);
+  }, [webcamStream]); // Include webcamStream in dependencies
 
+  // Function to trigger file input for the active image type
+  const triggerFileInput = (type: ImageType) => {
+    setActiveImageType(type);
+    fileInputRef.current?.click();
+  };
+
+  // Handle file selection, associate with the active image type
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Stop webcam if user chooses to upload a file instead
-    if (webcamStream) {
-      webcamStream.getTracks().forEach(track => track.stop());
-      setWebcamStream(null);
+    const file = event.target.files?.[0];
+    if (file && activeImageType) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setImageStates(prev => ({
+                ...prev,
+                [activeImageType]: { file: file, previewUrl: reader.result as string }
+            }));
+        }
+        reader.readAsDataURL(file);
+         // Reset file input value so onChange fires again for the same file
+         if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
+    } else {
+        // Clear the specific image type if no file is selected
+        // setImageStates(prev => ({ ...prev, [activeImageType]: { file: null, previewUrl: null } }));
+    }
+  };
+
+  // --- Analyze Image Action ---
+  const handleAnalyzeImages = async () => {
+    const filesToAnalyze = Object.entries(imageStates)
+      .filter(([/* type */, state]) => state?.file)
+      .map(([type, state]) => ({ type: type as ImageType, file: state!.file! }));
+
+    if (filesToAnalyze.length === 0 || !imageStates.primary?.file) {
+      setAnalysisError("Primary image is required to start analysis.");
+      return;
+    }
+
+    setIsAnalyzing(true);
+    setAnalysisError(null);
+    setAnalysisResult(null); // Clear previous results
+
+    const analysisFormData = new FormData();
+    filesToAnalyze.forEach(({ type, file }) => {
+      analysisFormData.append(`image_${type}`, file);
+    });
+
+    try {
+      const result = await analyzeImageAction(analysisFormData);
+      if (result.success) {
+        setAnalysisResult(result.data);
+        // Overwrite form data with analysis results.
+        setFormData({
+            ...initialFormData, // Start clean
+            ...result.data,
+        });
+        toast({ title: "Analysis Complete", description: `Identified as ${result.data.type}: ${result.data.name}` });
+      } else {
+        setAnalysisError(result.error);
+        toast({ title: "Analysis Failed", description: result.error, variant: "destructive" });
+      } 
+    } catch (err) {
+      logger.error("Client-side error calling analyzeImageAction", { error: err });
+      const message = err instanceof Error ? err.message : "An unexpected error occurred.";
+      setAnalysisError(message);
+      toast({ title: "Analysis Error", description: message, variant: "destructive" });
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
+
+  // --- Webcam Handling ---
+  const requestWebcam = async (type: ImageType) => {
+    setActiveImageType(type);
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      setWebcamStream(stream);
+      setIsWebcamActive(true);
+    } catch (err) {
+      logger.error("Error accessing webcam", { error: err });
+      // ... (error handling as before) ...
+      toast({ title: "Webcam Error", description: "Could not access webcam.", variant: "destructive" });
       setIsWebcamActive(false);
     }
+  };
 
-    const file = event.target.files?.[0]
-    if (file) {
-      resetState() // Reset everything when a new file is chosen
-      setSelectedFile(file)
-      setImageSource('upload'); // Set source to upload
-      setFormData({ type: undefined, name: '', details: '' }) // Clear form too
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setPreviewUrl(reader.result as string)
-      }
-      reader.readAsDataURL(file)
-      // Automatically trigger analysis after file selection
-      handleAnalyzeImage(file)
+  const stopWebcam = () => {
+    if (webcamStream) {
+      webcamStream.getTracks().forEach(track => track.stop());
+      setWebcamStream(null);
+    }
+    setIsWebcamActive(false);
+  }
+
+  const captureImage = () => {
+    if (videoRef.current && canvasRef.current && activeImageType) {
+        const video = videoRef.current;
+        const canvas = canvasRef.current;
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        const context = canvas.getContext('2d');
+        if (context) {
+            // Flip, draw, reset transform as before
+            context.translate(canvas.width, 0);
+            context.scale(-1, 1);
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            
+            const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9);
+            stopWebcam(); // Stop stream after capture
+
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+            const filename = `webcam-${activeImageType}-${timestamp}.jpg`;
+            const capturedFile = dataURLtoFile(imageDataUrl, filename);
+            
+            if (capturedFile) {
+                setImageStates(prev => ({
+                    ...prev,
+                    [activeImageType]: { file: capturedFile, previewUrl: imageDataUrl }
+                }));
+            } else {
+                toast({ title: "Capture Error", description: "Failed to process captured image.", variant: "destructive" });
+            }
+        } else {
+             toast({ title: "Capture Error", description: "Could not get canvas context.", variant: "destructive" });
+             stopWebcam();
+        }
     } else {
-      setSelectedFile(null)
-      setPreviewUrl(null)
+        toast({ title: "Capture Error", description: "Webcam or active type not ready.", variant: "destructive" });
+        stopWebcam();
     }
-  }
+  };
 
-  const handleAnalyzeImage = async (file: File) => {
-    if (!file) return
-
-    setIsAnalyzing(true)
-    setAnalysisError(null)
-    setAnalysisResult(null)
-
-    const imageFormData = new FormData()
-    imageFormData.append('image', file)
-
-    try {
-      const result = await analyzeImageAction(imageFormData)
-      if (result.success) {
-        setAnalysisResult(result.data)
-        // Update form state with analysis results
-        setFormData({ 
-          type: result.data.type,
-          name: result.data.name,
-          details: result.data.details ?? '', 
-        })
-      } else {
-        setAnalysisError(result.error)
+  // Function to remove an image
+  const removeImage = (type: ImageType) => {
+      setImageStates(prev => {
+          const newState = { ...prev };
+          delete newState[type];
+          return newState;
+      });
+      // If removing primary image, potentially clear analysis?
+      if (type === 'primary') {
+          setAnalysisResult(null);
+          setFormData(initialFormData);
       }
-    } catch (err) {
-      logger.error("Client-side error calling analyzeImageAction", { error: err })
-      setAnalysisError("An unexpected error occurred during analysis.")
-    } finally {
-      setIsAnalyzing(false)
-    }
-  }
+  };
 
+  // --- Form Data Handling ---
+  // Basic handler for simple fields
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+    setFormData(prev => ({
+         ...prev,
+         [name]: value 
+        }))
+  };
 
+  // Handler for numeric fields (e.g., nutrition)
+  const handleNumericFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    const numValue = value === '' ? null : parseFloat(value);
+    // Allow empty string or valid numbers, prevent NaN
+    if (value === '' || (numValue !== null && !isNaN(numValue))) {
+        setFormData(prev => ({
+            ...prev,
+            [name]: numValue
+        }));
+    }
+  };
+
+  // Handler for type select
   const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, type: value as 'food' | 'treatment' | 'other' }));
-  }
+    // Ensure the type is one of the valid literals
+    if (value === 'food' || value === 'treatment' || value === 'other') {
+         setFormData(prev => ({
+             ...prev,
+             type: value as AnalyzedImageResult['type'] 
+            }));
+    }
+  };
 
+  // --- Save Action ---
   const handleSave = async () => {
-    // Use the component's formData state for validation and appending
+    // Validate required base fields from formData
     if (!formData.type || !formData.name) {
-      setSaveError("Type and Name are required.")
-      return
+      setSaveError("Type and Name are required.");
+      toast({ title: "Save Error", description: "Type and Name are required.", variant: "destructive" });
+      return;
     }
     if (!userId) {
-      logger.error('handleSave called with no userId')
-      // Handle missing user ID (e.g., redirect to login)
-      return
+      logger.error('handleSave called with no userId');
+      toast({ title: "Save Error", description: "User ID is missing.", variant: "destructive" });
+      return;
     }
 
-    setIsSaving(true)
-    setSaveError(null)
+    // Get all files to save
+    const filesToSave = Object.entries(imageStates)
+        .filter(([/* type */, state]) => state?.file)
+        .map(([type, state]) => ({ type: type as ImageType, file: state!.file! }));
 
-    // Create a *new* FormData object for the request
-    const requestFormData = new FormData()
-    requestFormData.append('userId', userId)
-    // Append values from the component's formData state
-    requestFormData.append('type', formData.type)
-    requestFormData.append('name', formData.name)
-    if (formData.details) requestFormData.append('details', formData.details)
-    if (selectedFile) {
-      requestFormData.append('image', selectedFile)
-    } else {
-      // Handle case where image is missing after analysis (shouldn't normally happen)
-      logger.error('Image file missing during handleSave')
-      setSaveError('Image file is missing. Please try again.')
-      setIsSaving(false)
-      return
+    if (filesToSave.length === 0) {
+        setSaveError("At least one image is required to save.");
+        toast({ title: "Save Error", description: "At least one image is required.", variant: "destructive" });
+        return;
     }
+    
+    setIsSaving(true);
+    setSaveError(null);
+
+    const requestFormData = new FormData();
+    requestFormData.append('userId', userId);
+
+    // Append all form data fields
+    // Need to stringify complex fields like arrays of ingredients
+    Object.entries(formData).forEach(([key, value]) => {
+        if (value !== null && value !== undefined) {
+            // Handle specific types first
+            if (Array.isArray(value)) {
+                 requestFormData.append(key, JSON.stringify(value));
+            } else if (typeof value === 'number') {
+                requestFormData.append(key, value.toString());
+            } else if (typeof value === 'boolean') { // Explicitly handle boolean
+                requestFormData.append(key, value ? 'true' : 'false');
+            } else if (typeof value === 'string') {
+                 // Only append non-empty strings? Depends on backend validation
+                 // if (value.length > 0) {
+                     requestFormData.append(key, value);
+                 // }
+            } else {
+                // Log unexpected types but don't break the save
+                logger.warn("Skipping unexpected form data type during FormData creation", { key, value, type: typeof value });
+            }
+        }
+    });
+
+    // Append all image files with appropriate keys
+    filesToSave.forEach(({ type, file }) => {
+      requestFormData.append(`image_${type}`, file);
+    });
 
     try {
-      // Pass the correctly constructed FormData to the action
-      const response = await saveItemFromImageAction(requestFormData)
+      const response = await saveItemFromImageAction(requestFormData);
       
       if (response.success) {
-        logger.info('Item saved successfully', { data: response.data })
-        toast({ title: "Item Saved", description: "Your item has been added." })
+        logger.info('Item saved successfully', { data: response.data });
+        toast({ title: "Item Saved", description: `Successfully saved ${formData.name}.` });
         
-        // Call onSaveSuccess with the original item data BEFORE resetting state
-        onSaveSuccess?.({ 
-          type: formData.type, 
-          name: formData.name, 
-          details: formData.details 
-        })
+        // Pass the *final* saved data back if needed (response.data should contain IDs)
+        // Or pass the formData which represents the user's final input
+        onSaveSuccess?.(formData as AnalyzedImageResult); // Assuming formData is sufficiently complete 
         
-        // Resetting component state:
-        resetState()
+        resetState(); // Reset after successful save
+        setIsOpen(false); // Close dialog on success
       } else {
-        logger.error('Failed to save item', { error: response.error })
-        setSaveError(response.error)
-        toast({ title: "Save Failed", description: response.error, variant: "destructive" })
+        logger.error('Failed to save item', { error: response.error });
+        setSaveError(response.error);
+        toast({ title: "Save Failed", description: response.error, variant: "destructive" });
       }
     } catch (err) {
-      logger.error('Error calling saveItemFromImageAction', { error: err })
-      const message = err instanceof Error ? err.message : 'An unexpected error occurred.'
-      setSaveError(`An unexpected error occurred: ${message}`)
-      toast({ title: "Error", description: `An unexpected error occurred: ${message}`, variant: "destructive" })
+      logger.error('Error calling saveItemFromImageAction', { error: err });
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred.';
+      setSaveError(`An unexpected error occurred: ${message}`);
+      toast({ title: "Error", description: `An unexpected error occurred: ${message}`, variant: "destructive" });
     } finally {
       setIsSaving(false);
     }
-  }
-
-  // Function to handle retaking a photo from webcam
-  const handleRetake = () => {
-    setPreviewUrl(null);
-    setSelectedFile(null);
-    setAnalysisResult(null); // Clear previous analysis
-    setAnalysisError(null);
-    setFormData({ type: undefined, name: '', details: '' }); // Clear form data
-    // Restart the webcam by calling requestWebcam directly
-    requestWebcam(); 
-  }
-
-  // Specific function to request webcam (extracted from toggleWebcam)
-  const requestWebcam = async () => {
-     try {
-        resetState(); // Ensure clean state before requesting
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        setWebcamStream(stream);
-        setIsWebcamActive(true);
-      } catch (err) {
-        logger.error("Error accessing webcam", { error: err });
-        let message = "Could not access webcam.";
-        if (err instanceof Error) {
-          if (err.name === "NotAllowedError") {
-            message = "Webcam permission denied. Please allow access in your browser settings.";
-          } else if (err.name === "NotFoundError") {
-            message = "No webcam found. Please ensure a webcam is connected and enabled.";
-          } else {
-            message = `Error: ${err.message}`;
-          }
-        }
-        toast({ 
-          title: "Webcam Error", 
-          description: message, 
-          variant: "destructive",
-          duration: 5000
-        });
-        setIsWebcamActive(false);
-      }
   };
-  
-  // Updated toggleWebcam to use requestWebcam
-   const toggleWebcam = async () => {
-    if (isWebcamActive) {
-      // Stop existing stream and reset state
-      resetState(); 
-    } else {
-      // Request webcam access
-      await requestWebcam();
+
+  // --- Render Logic ---
+  // Determine which "Add Image" buttons to show based on type
+  const getAvailableImageTypes = (): ImageType[] => {
+    if (!analysisResult?.type && !formData.type) return ['primary']; // Only primary initially
+    const type = formData.type || analysisResult?.type;
+    switch (type) {
+        case 'food': return ['primary', 'nutrition', 'ingredients', 'upc'];
+        case 'treatment': return ['primary', 'ingredients', 'upc']; // Ingredients covers active/inactive/dosage
+        case 'other':
+        default: return ['primary', 'upc']; // Basic for other
     }
   };
 
-  const captureImage = () => {
-    if (videoRef.current && canvasRef.current) {
-      const video = videoRef.current;
-      const canvas = canvasRef.current;
-      
-      // Match canvas size to video display size
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      
-      const context = canvas.getContext('2d');
-      if (context) {
-        // Flip the canvas context horizontally to match the video feed
-        context.translate(canvas.width, 0);
-        context.scale(-1, 1);
-        
-        // Draw the current video frame onto the flipped canvas
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        
-        // Reset the transform so the data URL isn't flipped
-        context.setTransform(1, 0, 0, 1, 0, 0);
+  const availableImageTypes = getAvailableImageTypes();
 
-        // Get the image data URL (e.g., JPEG)
-        const imageDataUrl = canvas.toDataURL('image/jpeg', 0.9); // Quality 0.9
-        
-        // Stop the webcam stream
-        webcamStream?.getTracks().forEach(track => track.stop());
-        setWebcamStream(null);
-        setIsWebcamActive(false);
-        
-        // Set the preview
-        setPreviewUrl(imageDataUrl);
-        
-        // Convert data URL to File and set it
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const filename = `webcam-capture-${timestamp}.jpg`;
-        const capturedFile = dataURLtoFile(imageDataUrl, filename);
-        
-        if (capturedFile) {
-            setSelectedFile(capturedFile);
-            // Automatically trigger analysis
-            handleAnalyzeImage(capturedFile);
-        } else {
-            toast({ title: "Capture Error", description: "Failed to process captured image.", variant: "destructive" });
-            resetState(); // Reset if file conversion fails
-        }
-        setImageSource('webcam'); // Set source to webcam
-      } else {
-          toast({ title: "Capture Error", description: "Could not get canvas context.", variant: "destructive" });
-          resetState();
-      }
-    } else {
-        toast({ title: "Capture Error", description: "Webcam components not ready.", variant: "destructive" });
-        resetState();
-    }
+  // Conditional rendering of form fields based on selected type
+  const renderFormFields = () => {
+    if (!formData.type) return null;
+
+    return (
+      <>
+        {/* Common Fields */} 
+        <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">Name*</Label>
+            <Input id="name" name="name" value={formData.name || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., Cheerios, Advil" required />
+        </div>
+         <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="brand" className="text-right">Brand</Label>
+            <Input id="brand" name="brand" value={formData.brand || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., General Mills, Advil" />
+        </div>
+        <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="upc" className="text-right">UPC</Label>
+            <Input id="upc" name="upc" value={formData.upc || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="Barcode number" />
+        </div>
+        <div className="grid grid-cols-4 items-start gap-4">
+            <Label htmlFor="details" className="text-right pt-2">Details</Label>
+            <Textarea id="details" name="details" value={formData.details || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="Optional additional info" rows={2} />
+        </div>
+
+        {/* Food Specific Fields */} 
+        {formData.type === 'food' && (
+            <>
+                <h4 className="col-span-4 text-sm font-medium mt-3 mb-1 border-t pt-3">Nutrition (Per Serving)</h4>
+                <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="servingSize_quantity" className="text-right">Serving Size</Label>
+                    <Input id="servingSize_quantity" name="servingSize_quantity" type="number" value={formData.servingSize_quantity ?? ''} onChange={handleNumericFormChange} className="col-span-2" disabled={isSaving} placeholder="e.g., 30" />
+                    <Input id="servingSize_unit" name="servingSize_unit" value={formData.servingSize_unit || ''} onChange={handleFormChange} className="col-span-1" disabled={isSaving} placeholder="e.g., g" />
+                </div>
+                 <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="calories_per_serving" className="text-right">Calories</Label>
+                    <Input id="calories_per_serving" name="calories_per_serving" type="number" value={formData.calories_per_serving ?? ''} onChange={handleNumericFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., 110" />
+                </div>
+                 <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="fat_per_serving" className="text-right">Fat (g)</Label>
+                    <Input id="fat_per_serving" name="fat_per_serving" type="number" value={formData.fat_per_serving ?? ''} onChange={handleNumericFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., 2.5" />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="carbs_per_serving" className="text-right">Carbs (g)</Label>
+                    <Input id="carbs_per_serving" name="carbs_per_serving" type="number" value={formData.carbs_per_serving ?? ''} onChange={handleNumericFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., 22" />
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="protein_per_serving" className="text-right">Protein (g)</Label>
+                    <Input id="protein_per_serving" name="protein_per_serving" type="number" value={formData.protein_per_serving ?? ''} onChange={handleNumericFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., 4" />
+                </div>
+                {/* TODO: Ingredient List Editing UI */} 
+                 <h4 className="col-span-4 text-sm font-medium mt-3 mb-1 border-t pt-3">Ingredients</h4>
+                 <div className="col-span-4 text-xs text-muted-foreground p-2 border rounded-md">
+                    {formData.ingredients && formData.ingredients.length > 0 
+                        ? formData.ingredients.map((ing, idx) => (
+                            <span key={idx} className="inline-block mr-1">{ing.name}{idx < formData.ingredients!.length - 1 ? ", " : ""}</span>
+                          )) 
+                        : "(No ingredients extracted)"
+                    }
+                    {/* Add button to manually edit/add ingredients */} 
+                 </div>
+            </>
+        )}
+
+        {/* Treatment Specific Fields */} 
+        {formData.type === 'treatment' && (
+            <>
+                 <h4 className="col-span-4 text-sm font-medium mt-3 mb-1 border-t pt-3">Dosage & Ingredients</h4>
+                <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="dosage_form" className="text-right">Dosage Form</Label>
+                    <Input id="dosage_form" name="dosage_form" value={formData.dosage_form || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., Tablet, Capsule" />
+                </div>
+                <div className="grid grid-cols-4 items-start gap-4">
+                    <Label htmlFor="dosage_instructions" className="text-right pt-2">Instructions</Label>
+                    <Textarea id="dosage_instructions" name="dosage_instructions" value={formData.dosage_instructions || ''} onChange={handleFormChange} className="col-span-3" disabled={isSaving} placeholder="e.g., Take 1 tablet daily" rows={2}/>
+                </div>
+                {/* TODO: Active Ingredient List Editing UI */} 
+                <h5 className="col-span-4 text-xs font-medium mt-2">Active Ingredients</h5>
+                 <div className="col-span-4 text-xs text-muted-foreground p-2 border rounded-md">
+                    {formData.active_ingredients && formData.active_ingredients.length > 0 
+                        ? formData.active_ingredients.map((ing, idx) => (
+                            <span key={idx} className="inline-block mr-1">{ing.name} {ing.quantity}{ing.unit}{idx < formData.active_ingredients!.length - 1 ? ", " : ""}</span>
+                          )) 
+                        : "(No active ingredients extracted)"
+                    }
+                    {/* Add button */} 
+                 </div>
+                {/* TODO: Inactive Ingredient List Editing UI */} 
+                <h5 className="col-span-4 text-xs font-medium mt-2">Inactive Ingredients</h5>
+                 <div className="col-span-4 text-xs text-muted-foreground p-2 border rounded-md">
+                   {formData.inactive_ingredients && formData.inactive_ingredients.length > 0 
+                        ? formData.inactive_ingredients.map((ing, idx) => (
+                            <span key={idx} className="inline-block mr-1">{ing.name}{idx < formData.inactive_ingredients!.length - 1 ? ", " : ""}</span>
+                          )) 
+                        : "(No inactive ingredients extracted)"
+                    }
+                    {/* Add button */} 
+                 </div>
+            </>
+        )}
+      </>
+    );
   };
+
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => { 
         setIsOpen(open); 
         if (!open) { 
-            resetState(); // Call resetState on close
+            resetState(); // Reset state on close
         } 
     }}>
       <DialogTrigger asChild>
@@ -360,132 +521,131 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
           <Camera className="mr-2 h-4 w-4" /> Add Item via Image
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[480px]" onInteractOutside={(e) => { 
-          // Prevent closing if saving
-          if (isSaving) {
-            e.preventDefault();
-          }
-        }}>
+      {/* Increased max width for more complex form */} 
+      <DialogContent className="sm:max-w-2xl" onInteractOutside={(e) => { if (isSaving) e.preventDefault(); }}>
         <DialogHeader>
           <DialogTitle>Analyze and Add Item</DialogTitle>
           <DialogDescription>
-            Upload or take a picture to identify a food or treatment. Edit the details if needed.
+            Add images (front, nutrition, ingredients, UPC). Analyze to extract data, then edit and save.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <Input
+        
+        {/* Hidden file input */}
+        <Input
             id="image-upload-input"
             type="file"
             accept="image/*"
-            capture="environment" // Prioritize back camera on mobile
+            capture="environment"
             ref={fileInputRef}
             onChange={handleFileChange}
-            className="hidden" // Hide the default input
-            disabled={isAnalyzing || isSaving} // Disable while busy
+            className="hidden"
+            disabled={isAnalyzing || isSaving || isWebcamActive} 
           />
-          {/* Buttons Container */}
-          <div className="flex flex-col sm:flex-row gap-2">
-              {/* Upload Button - Only show if webcam is NOT active */}
-              {!isWebcamActive && (
-                  <Button
-                      variant="outline"
-                      onClick={() => fileInputRef.current?.click()} // Trigger hidden input
-                      disabled={isAnalyzing || isSaving}
-                      aria-label="Upload picture"
-                      className="flex-1"
-                  >
-                      <Upload className="mr-2 h-4 w-4" />
-                      {selectedFile ? `Change Image (${selectedFile.name.substring(0, 20)}...)` : "Upload Picture"}
-                  </Button>
-              )}
-              {/* Webcam Button - Toggle webcam on/off */}
-              <Button
-                  variant="outline"
-                  onClick={() => toggleWebcam()} // We will define this function next
-                  disabled={isAnalyzing || isSaving}
-                  aria-label={isWebcamActive ? "Stop Webcam" : "Use Webcam"}
-                  className="flex-1"
-              >
-                  <Camera className="mr-2 h-4 w-4" />
-                  {isWebcamActive ? "Stop Webcam" : "Use Webcam"}
-              </Button>
-          </div>
 
-          {/* Webcam Video Feed (only visible when active) */}
-          {isWebcamActive && (
-              <div className="relative mt-4 border rounded-md overflow-hidden"> {/* Container for video */}
-                  <video
-                      ref={videoRef}
-                      autoPlay
-                      playsInline
-                      muted // Mute to avoid feedback loop if mic is captured
-                      className="w-full h-auto" // Let video determine aspect ratio
-                      style={{ transform: 'scaleX(-1)' }} // Mirror image for natural feel
-                  />
-                   {/* Capture Button (overlay or below video) - Shown when webcam is active & no preview */}
-                  {!previewUrl && (
-                      <Button
-                          onClick={() => captureImage()} // We will define this function next
-                          className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10"
-                          aria-label="Capture image"
-                      >
-                          Capture
-                      </Button>
-                  )}
-              </div>
-          )}
-
-          {/* Hidden Canvas for capturing */}
-          <canvas ref={canvasRef} style={{ display: 'none' }} />
-
-          {/* Preview Area with Retake Option */}
-          {previewUrl && (
-            <div className="relative flex flex-col items-center my-2"> {/* Use flex-col */}
-              <div className="relative w-full h-40"> {/* Container for Image */}
-                  <Image 
-                    src={previewUrl} 
-                    alt="Selected preview" 
-                    fill
-                    className="rounded-md border object-contain" 
-                    sizes="(max-width: 640px) 100vw, 480px"
-                  />
-              </div>
-              {/* Show Retake button only if the source was the webcam */}
-              {imageSource === 'webcam' && (
-                <Button 
-                  variant="outline"
-                  size="sm"
-                  onClick={handleRetake}
-                  className="mt-2" // Add margin top
-                  disabled={isAnalyzing || isSaving}
-                >
-                    Retake Photo
-                </Button>
-              )}
+        {/* Main Content Area */} 
+        <ScrollArea className="h-[60vh] p-1">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left Column: Image Management */} 
+            <div className="space-y-4">
+                 <h3 className="text-lg font-semibold">Images</h3>
+                 {IMAGE_TYPES.map((type) => {
+                    const image = imageStates[type];
+                    const isAvailable = availableImageTypes.includes(type);
+                    // Only show add button if type is available and image not already added
+                    const showAddButton = isAvailable && !image;
+                    // Don't show Add button for primary if webcam is active for it
+                    const disableAdd = isWebcamActive && activeImageType === type;
+                    return (
+                        <div key={type} className="border p-3 rounded-md space-y-2 bg-muted/30">
+                           <div className="flex justify-between items-center">
+                             <Label htmlFor={`image-${type}`} className="capitalize font-medium flex items-center">
+                                <ImageIcon className="mr-2 h-4 w-4 text-muted-foreground"/> 
+                                {type} {type === 'primary' ? '*' : ''}
+                             </Label>
+                             {image && (
+                                <Button variant="ghost" size="sm" onClick={() => removeImage(type)} aria-label={`Remove ${type} image`}>
+                                    <Trash2 className="h-4 w-4" />
+                                </Button>
+                             )}
+                           </div>
+                           {image?.previewUrl && (
+                             <div className="relative w-full h-32 mt-1">
+                                <Image 
+                                    src={image.previewUrl} 
+                                    alt={`${type} preview`} 
+                                    fill
+                                    className="rounded-md border object-contain bg-background" 
+                                    sizes="(max-width: 768px) 50vw, 250px"
+                                />
+                            </div>
+                           )}
+                            {!image && isWebcamActive && activeImageType === type && (
+                                <div className="relative mt-1 border rounded-md overflow-hidden bg-black">
+                                    <video
+                                        ref={videoRef}
+                                        autoPlay
+                                        playsInline
+                                        muted
+                                        className="w-full h-auto max-h-40"
+                                        style={{ transform: 'scaleX(-1)' }} 
+                                    />
+                                    <Button onClick={captureImage} size="sm" className="absolute bottom-1 left-1/2 transform -translate-x-1/2 z-10" aria-label="Capture image">
+                                        Capture
+                                    </Button>
+                                     <Button onClick={stopWebcam} variant="destructive" size="sm" className="absolute top-1 right-1 z-10 p-1 h-auto" aria-label="Stop webcam">
+                                        <Trash2 className="h-3 w-3" />
+                                    </Button>
+                                </div>
+                            )}
+                            {showAddButton && !disableAdd && (
+                                <div className="flex gap-2 mt-1">
+                                    <Button variant="outline" size="sm" onClick={() => triggerFileInput(type)} disabled={isAnalyzing || isSaving} className="flex-1">
+                                        <Upload className="mr-1.5 h-3.5 w-3.5" /> Upload
+                                    </Button>
+                                     {/* Enable webcam only for types where it makes sense? Primarily for 'primary'? */} 
+                                    {/* <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving || isWebcamActive} className="flex-1">
+                                        <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
+                                    </Button> */} 
+                                    {/* Simplified: Only show webcam button if not active */} 
+                                    {!isWebcamActive && (
+                                        <Button variant="outline" size="sm" onClick={() => requestWebcam(type)} disabled={isAnalyzing || isSaving} className="flex-1">
+                                            <Camera className="mr-1.5 h-3.5 w-3.5" /> Webcam
+                                        </Button>
+                                    )}
+                                </div>
+                            )}
+                            {!isAvailable && !image && (
+                                <p className="text-xs text-muted-foreground italic">(Upload primary image first)</p>
+                            )}
+                        </div>
+                    );
+                 })}
+                 {/* Analyze Button */} 
+                 <Button 
+                    onClick={handleAnalyzeImages} 
+                    disabled={isAnalyzing || isSaving || !imageStates.primary?.file} 
+                    className="w-full mt-4"
+                    >
+                    {isAnalyzing ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+                    Analyze Image(s)
+                 </Button>
+                 {analysisError && (
+                    <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
+                        <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                        <span>Analysis Error: {analysisError}</span>
+                    </div>
+                )}
             </div>
-          )}
 
-          {isAnalyzing && (
-            <div className="flex items-center justify-center text-sm text-muted-foreground">
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Analyzing image...
-            </div>
-          )}
-
-          {analysisError && (
-            <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
-              <span>Analysis Error: {analysisError}</span>
-            </div>
-          )}
-
-          {/* Display editable fields only after analysis OR if manually entered */} 
-          {(analysisResult || selectedFile) && !isAnalyzing && (
-            <div className="grid gap-3 border-t pt-4 mt-4">
-               <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="type" className="text-right">Type</Label>
+            {/* Right Column: Form Fields */} 
+            <div className="space-y-3">
+                 <h3 className="text-lg font-semibold">Extracted Details</h3>
+                 {/* Type Selection - Always show if analysis hasn't happened or allows override */} 
+                 <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="type" className="text-right">Type*</Label>
                   <Select 
                     name="type"
-                    value={formData.type}
+                    value={formData.type || ''} 
                     onValueChange={handleSelectChange}
                     disabled={isSaving}
                   >
@@ -499,49 +659,34 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="name" className="text-right">Name</Label>
-                    <Input 
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleFormChange}
-                        className="col-span-3"
-                        disabled={isSaving}
-                        placeholder="e.g., Apple, Ibuprofen 200mg"
-                    />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="details" className="text-right">Details</Label>
-                    <Textarea 
-                        id="details"
-                        name="details"
-                        value={formData.details ?? ''}
-                        onChange={handleFormChange}
-                        className="col-span-3"
-                        disabled={isSaving}
-                        placeholder="(Optional) e.g., Brand, dosage, serving size"
-                        rows={2} // Smaller text area
-                    />
-                </div>
-             </div>
-          )}
 
-          {saveError && (
-            <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
-              <AlertCircle className="h-4 w-4 flex-shrink-0" />
-              <span>Save Error: {saveError}</span>
+                {/* Render specific fields based on selected type */} 
+                {formData.type ? renderFormFields() : (
+                    <p className="text-sm text-muted-foreground italic text-center py-4">
+                        {analysisResult ? "Edit the extracted details below." : "Select a type or analyze images to see details."}
+                    </p>
+                )}
+
+                {saveError && (
+                    <div className="text-red-600 text-sm flex items-center gap-2 p-2 bg-red-50 border border-red-200 rounded-md mt-2">
+                    <AlertCircle className="h-4 w-4 flex-shrink-0" />
+                    <span>Save Error: {saveError}</span>
+                    </div>
+                )}
             </div>
-          )}
-        </div>
-        <DialogFooter>
+         </div>
+         {/* Hidden Canvas */} 
+         <canvas ref={canvasRef} style={{ display: 'none' }} />
+        </ScrollArea>
+
+        <DialogFooter className="mt-4 pt-4 border-t">
           <DialogClose asChild>
             <Button type="button" variant="outline" disabled={isSaving}>Cancel</Button>
           </DialogClose>
           <Button 
             type="button" 
             onClick={handleSave} 
-            disabled={isAnalyzing || isSaving || !formData.type || !formData.name || !selectedFile} // Also disable if no file selected
+            disabled={isAnalyzing || isSaving || !formData.type || !formData.name || Object.keys(imageStates).length === 0}
            >
             {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
             Save Item
