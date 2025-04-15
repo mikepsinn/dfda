@@ -4,20 +4,20 @@
 -- Insert global variables for symptoms, conditions, and side effects
 INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id, emoji)
 VALUES
-('nausea', 'Nausea', 'Feeling of sickness with an inclination to vomit', 'health-and-physiology', NULL, '🤢'),
-('headache', 'Headache', 'Pain in the head or upper neck', 'health-and-physiology', NULL, '🤕'),
-('dizziness', 'Dizziness', 'Lightheadedness, feeling faint or unsteady', 'health-and-physiology', NULL, '🌀'),
-('fatigue', 'Fatigue', 'Extreme tiredness resulting from mental or physical exertion', 'health-and-physiology', NULL, '😴'),
-('stomach-upset', 'Stomach Upset', 'Discomfort or pain in the stomach', 'health-and-physiology', NULL, '🤯'),
-('dry-cough', 'Dry Cough', 'Cough that doesn''t produce phlegm or mucus', 'health-and-physiology', NULL, '🤧'),
-('rash', 'Rash', 'Area of irritated or swollen skin', 'health-and-physiology', NULL, '🤕'),
-('insomnia', 'Insomnia', 'Difficulty falling or staying asleep', 'health-and-physiology', NULL, '😳'),
-('type-2-diabetes', 'Type 2 Diabetes', 'A chronic condition that affects the way the body processes blood sugar (glucose).', 'health-and-physiology', NULL, '🍭'),
-('hypertension', 'Hypertension', 'High blood pressure is a common condition in which the long-term force of the blood against your artery walls is high enough that it may eventually cause health problems.', 'health-and-physiology', NULL, '💊'),
-('rheumatoid-arthritis', 'Rheumatoid Arthritis', 'An autoimmune and inflammatory disease, which means that your immune system attacks healthy cells in your body by mistake, causing inflammation in the affected parts of the body.', 'health-and-physiology', NULL, '🤕'),
-('major-depressive-disorder', 'Major Depressive Disorder', 'A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life.', 'mental-and-emotional-state', NULL, '😔'),
-('asthma', 'Asthma', 'A condition in which your airways narrow and swell and may produce extra mucus, making breathing difficult and triggering coughing, wheezing and shortness of breath.', 'health-and-physiology', NULL, '🤧'),
-('pain', 'Pain', 'Physical discomfort caused by illness or injury, which can be acute or chronic.', 'health-and-physiology', NULL, '😩');
+('nausea', 'Nausea', 'Feeling of sickness with an inclination to vomit', 'health-and-physiology', 'zero-to-ten-scale', '🤢'),
+('headache', 'Headache', 'Pain in the head or upper neck', 'health-and-physiology', 'zero-to-ten-scale', '🤕'),
+('dizziness', 'Dizziness', 'Lightheadedness, feeling faint or unsteady', 'health-and-physiology', 'zero-to-ten-scale', '🌀'),
+('fatigue', 'Fatigue', 'Extreme tiredness resulting from mental or physical exertion', 'health-and-physiology', 'zero-to-ten-scale', '😴'),
+('stomach-upset', 'Stomach Upset', 'Discomfort or pain in the stomach', 'health-and-physiology', 'zero-to-ten-scale', '🤯'),
+('dry-cough', 'Dry Cough', 'Cough that doesn''t produce phlegm or mucus', 'health-and-physiology', 'zero-to-ten-scale', '🤧'),
+('rash', 'Rash', 'Area of irritated or swollen skin', 'health-and-physiology', 'zero-to-ten-scale', '🤕'),
+('insomnia', 'Insomnia', 'Difficulty falling or staying asleep', 'health-and-physiology', 'zero-to-ten-scale', '😳'),
+('type-2-diabetes', 'Type 2 Diabetes', 'A chronic condition that affects the way the body processes blood sugar (glucose).', 'health-and-physiology', 'zero-to-ten-scale', '🍭'),
+('hypertension', 'Hypertension', 'High blood pressure is a common condition in which the long-term force of the blood against your artery walls is high enough that it may eventually cause health problems.', 'health-and-physiology', 'zero-to-ten-scale', '💊'),
+('rheumatoid-arthritis', 'Rheumatoid Arthritis', 'An autoimmune and inflammatory disease, which means that your immune system attacks healthy cells in your body by mistake, causing inflammation in the affected parts of the body.', 'health-and-physiology', 'zero-to-ten-scale', '🤕'),
+('major-depressive-disorder', 'Major Depressive Disorder', 'A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life.', 'mental-and-emotional-state', 'zero-to-ten-scale', '😔'),
+('asthma', 'Asthma', 'A condition in which your airways narrow and swell and may produce extra mucus, making breathing difficult and triggering coughing, wheezing and shortness of breath.', 'health-and-physiology', 'zero-to-ten-scale', '🤧'),
+('pain', 'Pain', 'Physical discomfort caused by illness or injury, which can be acute or chronic.', 'health-and-physiology', 'zero-to-ten-scale', '😩');
 
 -- Insert global variables for vital signs
 INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id, emoji)

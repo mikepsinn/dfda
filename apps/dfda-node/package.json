@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm run sb:local:start && concurrently --kill-others --names \"next,worker,cron\" --prefix-colors \"yellow,blue,magenta\" \"pnpm run dev:next\" \"pnpm run dev:worker\" \"pnpm run dev:cron\"",
-    "sb:local:start": "npx supabase start",
-    "setup:local:full": "tsx ./scripts/setup-local-full.ts",
+    "setup": "tsx ./scripts/setup-local-full.ts",
     "db:worker:migrate": "dotenv -- npx graphile-worker --schema-only",
     "check": "pnpm run type-check && pnpm run lint",
     "build": "next build",
@@ -20,6 +19,7 @@
     "test:integration": "jest -c jest.integration.config.mjs",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
+    "sb:local:start": "npx supabase start",
     "sb:local:stop": "npx supabase stop",
     "sb:local:status": "npx supabase status",
     "sb:logs:local:tail": "docker logs -f supabase_db_fda-gov-v2",
