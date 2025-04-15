@@ -1,4 +1,4 @@
-import { RRule, rrulestr } from 'rrule'
+import { rrulestr } from 'rrule'
 import { ReminderSchedule } from "@/app/actions/reminder-schedules"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"

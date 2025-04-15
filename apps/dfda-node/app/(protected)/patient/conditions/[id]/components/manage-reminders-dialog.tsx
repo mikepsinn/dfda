@@ -11,7 +11,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Tables } from "@/lib/database.types"
 import { createLogger } from "@/lib/logger"
 
 const logger = createLogger("manage-reminders-dialog")

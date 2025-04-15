@@ -14,7 +14,6 @@ import { Trash2, Edit, Star, MoreVertical, ArrowLeft } from "lucide-react"
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
-  DropdownMenuItem,
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu"
 
