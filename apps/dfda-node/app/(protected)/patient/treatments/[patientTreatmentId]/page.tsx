@@ -84,7 +84,6 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
     notFound();
   }
   
-  const patientConditions = Array.isArray(patientConditionsResult) ? patientConditionsResult : [];
   if (!Array.isArray(patientConditionsResult)) {
      logger.error("Error fetching patient conditions for dialog", { userId: user.id, error: (patientConditionsResult as any)?.error });
   }

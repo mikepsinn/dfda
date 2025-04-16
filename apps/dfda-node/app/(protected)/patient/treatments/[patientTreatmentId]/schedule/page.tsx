@@ -7,10 +7,7 @@ import { logger } from '@/lib/logger'
 import EditScheduleClient from './edit-schedule-client' // Import the client component
 import type { ReminderScheduleData } from '@/components/reminders' // Import type for casting
 import { parseISO } from 'date-fns' // To convert string dates back to Date objects
-import type { Database } from "@/lib/database.types"
 
-// Define the type for the reminder schedule row more strictly
-type ReminderScheduleRow = Database['public']['Tables']['reminder_schedules']['Row'];
 
 // Function to fetch necessary treatment data and potentially the schedule
 // Now also fetches the user profile timezone

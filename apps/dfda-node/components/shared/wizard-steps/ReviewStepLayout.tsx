@@ -1,10 +1,10 @@
 'use client'
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture'; // Import shared types
+import { ImageType } from '../ImageAnalysisCapture'; // Import shared types
 
 // Assuming ImageAnalysisStep is exported from parent or shared types - Now it is!
 

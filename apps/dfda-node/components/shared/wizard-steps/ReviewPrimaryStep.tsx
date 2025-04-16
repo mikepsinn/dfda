@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
-import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture'; 
+import { ImageType } from '../ImageAnalysisCapture'; 
 import { ReviewStepLayout } from './ReviewStepLayout'; // Import the layout
 import { logger } from '@/lib/logger'; // Import logger for potential issues
 

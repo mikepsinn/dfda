@@ -1,12 +1,9 @@
 'use client'
 
 import React, { useCallback } from 'react';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
-import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
+import { Label } from '@/components/ui/label'
+import { ImageType } from '../ImageAnalysisCapture';
 import { ReviewStepLayout } from './ReviewStepLayout';
 import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 

@@ -1,14 +1,13 @@
 'use client'
 
 import React, { useCallback } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea'; // If showing dosage instructions
 import { Trash2 } from 'lucide-react';
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
-import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
+import { ImageType } from '../ImageAnalysisCapture';
 import { ReviewStepLayout } from './ReviewStepLayout'; // Import the layout
 import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 
