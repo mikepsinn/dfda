@@ -29,9 +29,22 @@ export function useWebcam() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
+    // Effect to connect stream to video element when stream changes
+    useEffect(() => {
+        if (videoRef.current && webcamStream) {
+            videoRef.current.srcObject = webcamStream;
+        }
+    }, [webcamStream]);
+
     const requestWebcam = useCallback(async (): Promise<boolean> => {
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const stream = await navigator.mediaDevices.getUserMedia({ 
+                video: { 
+                    facingMode: 'environment',
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                } 
+            });
             setWebcamStream(stream);
             setIsWebcamActive(true);
             logger.info("Webcam requested and stream started.");

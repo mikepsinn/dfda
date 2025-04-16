@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,68 +10,96 @@ import { Trash2 } from 'lucide-react';
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
 import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
 import { ReviewStepLayout } from './ReviewStepLayout'; // Import the layout
+import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 
-interface ReviewIngredientsStepProps {
-  formData: Partial<AnalyzedImageResult>;
-  ingredientsImagePreview?: string | null;
-  isSaving: boolean;
-  isAnalyzing: boolean;
-  // Handlers
-  handleFormChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; // For dosage instructions
-  handleIngredientChange: (
+export function ReviewIngredientsStep() {
+  const { state, actions } = useImageAnalysisWizardContext();
+  const { formData, isLoading } = state;
+
+  // Handler for confirming this step and proceeding
+  const handleConfirmAndNext = useCallback(() => {
+    // Call the hook's action to handle the transition logic
+    actions.goToNextStepFromReview('ingredients');
+  }, [actions]);
+
+  // Handler for going straight to final review
+  const handleConfirmAndGoToFinal = useCallback(() => {
+    actions.goToStep('finalReview');
+  }, [actions]);
+
+  // Handler for skipping this optional step
+  const handleSkipStepAndContinue = useCallback(() => {
+    // Similar to confirm, but could have different side effects in the future
+    actions.goToNextStepFromReview('ingredients');
+  }, [actions]);
+
+  // Handler for retaking image - Use a dedicated action
+  const handleRetake = useCallback((type: ImageType) => {
+    actions.retakeImage(type); // This action should handle state reset and navigation
+  }, [actions]);
+
+  const handleFormChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    actions.updateFormField(name as keyof AnalyzedImageResult, value);
+  }, [actions]);
+
+  const handleIngredientChange = useCallback((
     listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients',
     index: number,
     field: 'name' | 'quantity' | 'unit',
     value: string | number | null
-  ) => void;
-  addIngredient: (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients') => void;
-  removeIngredient: (listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients', index: number) => void;
-  determineNextStep: (currentData: Partial<AnalyzedImageResult>) => ImageType | 'finalReview';
-  goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
-  retakeImage: (type: ImageType) => void;
-  onConfirmAndGoToFinal: () => void;
-  onSkipStepAndContinue: () => void;
-}
+  ) => {
+    const currentList = formData[listKey] || [];
+    const updatedList = [...currentList];
+    if (!updatedList[index]) return;
+    const updatedIngredient = { ...updatedList[index] };
 
-export function ReviewIngredientsStep({
-  formData,
-  ingredientsImagePreview,
-  isSaving,
-  isAnalyzing,
-  handleFormChange,
-  handleIngredientChange,
-  addIngredient,
-  removeIngredient,
-  determineNextStep,
-  goToStep,
-  retakeImage,
-  onConfirmAndGoToFinal,
-  onSkipStepAndContinue,
-}: ReviewIngredientsStepProps) {
-
-  const handleConfirmAndNext = () => {
-    const next = determineNextStep(formData);
-    if (next === 'finalReview') {
-        goToStep('finalReview');
-    } else {
-        // Determine the capture step based on the image type
-        const nextCaptureStep = `capture${next.charAt(0).toUpperCase() + next.slice(1)}` as ImageAnalysisStep;
-        goToStep(nextCaptureStep, next);
+    if (field === 'name') {
+      updatedIngredient.name = typeof value === 'string' ? value : '';
+    } else if ((listKey === 'ingredients' || listKey === 'active_ingredients')) {
+      if (field === 'quantity') {
+        updatedIngredient.quantity = typeof value === 'number' ? value : null;
+      } else if (field === 'unit') {
+        updatedIngredient.unit = typeof value === 'string' ? value : null;
+      }
     }
-  };
+    updatedList[index] = updatedIngredient;
+    actions.updateFormField(listKey as any, updatedList);
+  }, [actions, formData]);
+
+  const addIngredient = useCallback((listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients') => {
+    const currentList = formData[listKey] || [];
+    const newIngredient = (listKey === 'inactive_ingredients' || listKey === 'other_ingredients')
+      ? { name: '' }
+      : { name: '', quantity: null, unit: null };
+    actions.updateFormField(listKey as any, [...currentList, newIngredient]);
+  }, [actions, formData]);
+
+  const removeIngredient = useCallback((listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients', index: number) => {
+    const currentList = formData[listKey] || [];
+    const updatedList = currentList.filter((_, i) => i !== index);
+    actions.updateFormField(listKey as any, updatedList);
+  }, [actions, formData]);
+
+  // Determine disabled states
+  const isConfirmDisabled = false; // Can add validation if needed
+  const isSkipDisabled = false;
 
   return (
     <ReviewStepLayout
         stepTitle="Review Ingredients/Dosage"
         stepDescription="Confirm ingredients/dosage extracted."
-        imagePreviewUrl={ingredientsImagePreview}
+        // Remove incorrect props, layout uses context
         imageType="ingredients"
-        isSaving={isSaving}
-        isAnalyzing={isAnalyzing}
-        onConfirmAndNext={handleConfirmAndNext}
-        onConfirmAndGoToFinal={onConfirmAndGoToFinal}
-        onSkipStepAndContinue={onSkipStepAndContinue}
-        onRetake={retakeImage}
+        // Correct prop names and pass handlers
+        handleConfirmAndNext={handleConfirmAndNext}
+        handleConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+        handleSkipStepAndContinue={handleSkipStepAndContinue}
+        handleRetake={handleRetake}
+        // Pass disabled states
+        confirmAndNextDisabled={isConfirmDisabled}
+        skipStepAndContinueDisabled={isSkipDisabled}
+        confirmGoToFinalButtonText="Skip Remaining Images & Finish"
     >
       {/* Editable Fields Relevant to Ingredients Analysis */}
       <div className="w-full max-w-md space-y-3">
@@ -85,7 +113,7 @@ export function ReviewIngredientsStep({
                     value={formData.dosage_instructions || ''} 
                     onChange={handleFormChange} 
                     className="col-span-3" 
-                    disabled={isSaving || isAnalyzing} 
+                    disabled={isLoading} 
                     placeholder="Confirm or enter instructions" rows={2}/>
             </div>
         )}
@@ -97,15 +125,15 @@ export function ReviewIngredientsStep({
                 <div className="col-span-4 space-y-2 max-h-48 overflow-y-auto border rounded-md p-2">
                     {formData.ingredients && formData.ingredients.map((ing, idx) => (
                         <div key={`food-ing-${idx}`} className="flex items-center gap-2">
-                            <Input value={ing.name} onChange={(e) => handleIngredientChange('ingredients', idx, 'name', e.target.value)} placeholder="Ingredient Name" className="flex-grow" disabled={isSaving || isAnalyzing} />
-                            <Button variant="ghost" size="icon" onClick={() => removeIngredient('ingredients', idx)} disabled={isSaving || isAnalyzing} aria-label="Remove ingredient" className="h-8 w-8">
+                            <Input value={ing.name} onChange={(e) => handleIngredientChange('ingredients', idx, 'name', e.target.value)} placeholder="Ingredient Name" className="flex-grow" disabled={isLoading} />
+                            <Button variant="ghost" size="icon" onClick={() => removeIngredient('ingredients', idx)} disabled={isLoading} aria-label="Remove ingredient" className="h-8 w-8">
                                 <Trash2 className="h-4 w-4" />
                             </Button>
                         </div>
                     ))}
                     {(!formData.ingredients || formData.ingredients.length === 0) && (<p className="text-xs text-muted-foreground italic">No ingredients found.</p>)}
                 </div>
-                <Button variant="outline" size="sm" onClick={() => addIngredient('ingredients')} disabled={isSaving || isAnalyzing}>Add Ingredient</Button>
+                <Button variant="outline" size="sm" onClick={() => addIngredient('ingredients')} disabled={isLoading}>Add Ingredient</Button>
             </>
         )}
         
@@ -116,17 +144,17 @@ export function ReviewIngredientsStep({
                  <div className="col-span-4 space-y-2 max-h-48 overflow-y-auto border rounded-md p-2">
                     {formData.active_ingredients && formData.active_ingredients.map((ing, idx) => (
                          <div key={`active-ing-${idx}`} className="flex items-center gap-2">
-                             <Input value={ing.name} onChange={(e) => handleIngredientChange('active_ingredients', idx, 'name', e.target.value)} placeholder="Ingredient Name" className="flex-grow" disabled={isSaving || isAnalyzing} />
-                             <Input type="number" value={ing.quantity ?? ''} onChange={(e) => handleIngredientChange('active_ingredients', idx, 'quantity', e.target.value ? Number(e.target.value) : null)} placeholder="Strength" className="w-20" disabled={isSaving || isAnalyzing}/>
-                             <Input value={ing.unit || ''} onChange={(e) => handleIngredientChange('active_ingredients', idx, 'unit', e.target.value)} placeholder="Unit" className="w-16" disabled={isSaving || isAnalyzing}/>
-                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('active_ingredients', idx)} disabled={isSaving || isAnalyzing} aria-label="Remove active ingredient" className="h-8 w-8">
+                             <Input value={ing.name} onChange={(e) => handleIngredientChange('active_ingredients', idx, 'name', e.target.value)} placeholder="Ingredient Name" className="flex-grow" disabled={isLoading} />
+                             <Input type="number" value={ing.quantity ?? ''} onChange={(e) => handleIngredientChange('active_ingredients', idx, 'quantity', e.target.value ? Number(e.target.value) : null)} placeholder="Strength" className="w-20" disabled={isLoading}/>
+                             <Input value={ing.unit || ''} onChange={(e) => handleIngredientChange('active_ingredients', idx, 'unit', e.target.value)} placeholder="Unit" className="w-16" disabled={isLoading}/>
+                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('active_ingredients', idx)} disabled={isLoading} aria-label="Remove active ingredient" className="h-8 w-8">
                                  <Trash2 className="h-4 w-4" />
                              </Button>
                          </div>
                      ))}
                      {(!formData.active_ingredients || formData.active_ingredients.length === 0) && (<p className="text-xs text-muted-foreground italic">No active ingredients found.</p>)}
                  </div>
-                  <Button variant="outline" size="sm" onClick={() => addIngredient('active_ingredients')} disabled={isSaving || isAnalyzing}>Add Active Ingredient</Button>
+                  <Button variant="outline" size="sm" onClick={() => addIngredient('active_ingredients')} disabled={isLoading}>Add Active Ingredient</Button>
             </>
         )}
 
@@ -137,18 +165,18 @@ export function ReviewIngredientsStep({
                  <div className="col-span-4 space-y-2 max-h-48 overflow-y-auto border rounded-md p-2">
                     {formData.inactive_ingredients && formData.inactive_ingredients.map((ing, idx) => (
                         <div key={`inactive-ing-${idx}`} className="flex items-center gap-2">
-                            <Input value={ing.name} onChange={(e) => handleIngredientChange('inactive_ingredients', idx, 'name', e.target.value)} placeholder="Ingredient Name" className="flex-grow" disabled={isSaving || isAnalyzing} />
-                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('inactive_ingredients', idx)} disabled={isSaving || isAnalyzing} aria-label="Remove inactive ingredient" className="h-8 w-8">
+                            <Input value={ing.name} onChange={(e) => handleIngredientChange('inactive_ingredients', idx, 'name', e.target.value)} placeholder="Ingredient Name" className="flex-grow" disabled={isLoading} />
+                             <Button variant="ghost" size="icon" onClick={() => removeIngredient('inactive_ingredients', idx)} disabled={isLoading} aria-label="Remove inactive ingredient" className="h-8 w-8">
                                  <Trash2 className="h-4 w-4" />
                              </Button>
                         </div>
                      ))}
                      {(!formData.inactive_ingredients || formData.inactive_ingredients.length === 0) && (<p className="text-xs text-muted-foreground italic">No inactive ingredients found.</p>)}
                  </div>
-                 <Button variant="outline" size="sm" onClick={() => addIngredient('inactive_ingredients')} disabled={isSaving || isAnalyzing}>Add Inactive Ingredient</Button>
+                 <Button variant="outline" size="sm" onClick={() => addIngredient('inactive_ingredients')} disabled={isLoading}>Add Inactive Ingredient</Button>
              </>
         )}
       </div>
     </ReviewStepLayout>
   );
-} 
+}

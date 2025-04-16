@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,60 +8,59 @@ import { Label } from '@/components/ui/label';
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
 import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
 import { ReviewStepLayout } from './ReviewStepLayout';
+import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 
-interface ReviewUpcStepProps {
-  formData: Partial<AnalyzedImageResult>;
-  upcImagePreview?: string | null;
-  isSaving: boolean;
-  isAnalyzing: boolean;
-  // Handlers
-  handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
-  retakeImage: (type: ImageType) => void;
-  // Add the layout handlers
-  onConfirmAndGoToFinal: () => void;
-  onSkipStepAndContinue: () => void; // Even though it maps to GoToFinal
-}
+export function ReviewUpcStep() {
+  const { state, actions } = useImageAnalysisWizardContext();
+  const { formData, isLoading } = state;
 
-export function ReviewUpcStep({
-  formData,
-  upcImagePreview,
-  isSaving,
-  isAnalyzing,
-  handleFormChange,
-  goToStep,
-  retakeImage,
-  onConfirmAndGoToFinal, // Destructure
-  onSkipStepAndContinue, // Destructure (but we'll use onConfirmAndGoToFinal for its action)
-}: ReviewUpcStepProps) {
+  // Handler for confirming this step and proceeding (always goes to final review from UPC)
+  const handleConfirmAndNext = useCallback(() => {
+    actions.goToStep('finalReview');
+  }, [actions]);
 
-  const handleConfirmAndFinish = () => {
-    goToStep('finalReview');
-  };
+  // Handler for going straight to final review (same as confirming)
+  const handleConfirmAndGoToFinal = useCallback(() => {
+    actions.goToStep('finalReview');
+  }, [actions]);
 
-  // Define handler for the primary button
-  const handlePrimaryConfirm = handleConfirmAndFinish;
-  // Map both the "Go to Final" and "Skip Step" handlers to the same finish action
-  const handleGoToFinal = handleConfirmAndFinish;
-  const handleSkipThisStep = handleConfirmAndFinish; 
+  // Handler for skipping this optional step (same as confirming)
+  const handleSkipStepAndContinue = useCallback(() => {
+    actions.goToStep('finalReview');
+  }, [actions]);
+
+  // Handler for retaking image - Use a dedicated action
+  const handleRetake = useCallback((type: ImageType) => {
+    actions.retakeImage(type); // This action should handle state reset and navigation
+  }, [actions]);
+
+  // Form change handler
+  const handleFormChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    actions.updateFormField('upc', e.target.value);
+  }, [actions]);
+
+  // Determine disabled states (can add more specific logic if needed)
+  const isConfirmDisabled = false; // Example: Add validation if needed
+  const isSkipDisabled = false;
 
   return (
     <ReviewStepLayout
         stepTitle="Review UPC"
         stepDescription="Confirm barcode."
-        imagePreviewUrl={upcImagePreview}
+        // Remove incorrect props, layout uses context
         imageType="upc"
-        isSaving={isSaving}
-        isAnalyzing={isAnalyzing}
-        // Hook up handlers
-        onConfirmAndNext={handlePrimaryConfirm}
-        onConfirmAndGoToFinal={handleGoToFinal} // Pass down renamed handler
-        onSkipStepAndContinue={handleSkipThisStep} // Pass down handler for skip button
-        onRetake={retakeImage}
-        // Adjust button text for clarity
+        // Correct prop names and pass handlers
+        handleConfirmAndNext={handleConfirmAndNext}
+        handleConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+        handleSkipStepAndContinue={handleSkipStepAndContinue}
+        handleRetake={handleRetake}
+        // Pass disabled states
+        confirmAndNextDisabled={isConfirmDisabled}
+        skipStepAndContinueDisabled={isSkipDisabled}
+        // confirmGoToFinalDisabled is handled internally by layout for non-primary
+        // Customize button text for the last review step
         confirmNextButtonText="Confirm UPC & Finish Review"
-        confirmGoToFinalButtonText="Go to Final Review (Skip UPC)"
-        // skipStepAndContinueDisabled={...} // Optional disable
+        confirmGoToFinalButtonText="Go to Final Review (Skip UPC)" // Keep this text for clarity
     >
       {/* Editable Fields Relevant to UPC Analysis */}
       <div className="w-full max-w-md space-y-3">
@@ -73,11 +72,11 @@ export function ReviewUpcStep({
                     value={formData.upc || ''}
                     onChange={handleFormChange}
                     className="col-span-3"
-                    disabled={isSaving || isAnalyzing}
+                    disabled={isLoading}
                     placeholder="Confirm or enter UPC"
                 />
             </div>
       </div>
     </ReviewStepLayout>
   );
-} 
+}

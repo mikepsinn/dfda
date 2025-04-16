@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture'; // Import shared types
@@ -10,18 +11,13 @@ import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture'; // Impor
 interface ReviewStepLayoutProps {
   stepTitle: string;
   stepDescription: string;
-  imagePreviewUrl?: string | null;
   imageType: ImageType; // Needed for alt text and retake action
-  isSaving: boolean;
-  isAnalyzing: boolean;
   children: React.ReactNode; // Slot for specific form fields
   // Handlers
-  onConfirmAndNext: () => void;
-  onConfirmAndGoToFinal: () => void;
-  onSkipStepAndContinue?: () => void;
-  onRetake: (type: ImageType) => void;
-  // onRetryAnalysis?: () => void; // Optional: Add later if needed
-  // Optional props for button text and disabling
+  handleConfirmAndNext: () => void;
+  handleConfirmAndGoToFinal?: () => void;
+  handleSkipStepAndContinue?: () => void;
+  handleRetake: (type: ImageType) => void;
   confirmNextButtonText?: string;
   confirmGoToFinalButtonText?: string;
   confirmAndNextDisabled?: boolean;
@@ -32,21 +28,29 @@ interface ReviewStepLayoutProps {
 export function ReviewStepLayout({
   stepTitle,
   stepDescription,
-  imagePreviewUrl,
   imageType,
-  isSaving,
-  isAnalyzing,
   children,
-  onConfirmAndNext,
-  onConfirmAndGoToFinal,
-  onSkipStepAndContinue,
-  onRetake,
+  handleConfirmAndNext,
+  handleConfirmAndGoToFinal,
+  handleSkipStepAndContinue,
+  handleRetake,
   confirmNextButtonText = "Confirm & Add Next Image", // Default text
   confirmGoToFinalButtonText = "Confirm & Go to Final Review", // Default text
   confirmAndNextDisabled = false, // Default disabled state
   confirmGoToFinalDisabled = false, // Default disabled state
   skipStepAndContinueDisabled = false, // Default disabled state
 }: ReviewStepLayoutProps) {
+
+  const { state } = useImageAnalysisWizardContext();
+  const { isLoading, imageStates, formData } = state;
+  const imagePreviewUrl = imageStates[imageType]?.previewUrl;
+
+  // Determine disabled states based on context
+  const isGloballyDisabled = isLoading;
+  const isConfirmAndNextDisabled = isGloballyDisabled || confirmAndNextDisabled;
+  const isRequiredDataMissing = !formData.type || !formData.name;
+  const isConfirmGoToFinalDisabled = isGloballyDisabled || (imageType === 'primary' && isRequiredDataMissing);
+  const isSkipDisabled = isGloballyDisabled;
 
   // Determine if the current image type is optional (not primary)
   const isOptionalStep = imageType !== 'primary';
@@ -79,18 +83,18 @@ export function ReviewStepLayout({
        <div className="w-full max-w-md space-y-2 border-t pt-4 mt-4">
          <Button 
             className="w-full"
-            onClick={onConfirmAndNext}
-            disabled={isSaving || isAnalyzing || confirmAndNextDisabled} // Use prop
-        >
-            {confirmNextButtonText} {/* Use prop */}
+            onClick={handleConfirmAndNext}
+            disabled={isConfirmAndNextDisabled}
+         >
+            {confirmNextButtonText}
         </Button>
          {/* NEW: Skip Step & Continue Button (Only if optional step?) */} 
-         {isOptionalStep && onSkipStepAndContinue && (
+         {isOptionalStep && handleSkipStepAndContinue && (
            <Button 
                variant="secondary"
                className="w-full"
-               onClick={onSkipStepAndContinue}
-               disabled={isSaving || isAnalyzing || skipStepAndContinueDisabled} 
+               onClick={handleSkipStepAndContinue}
+               disabled={isSkipDisabled}
            >
                Skip {imageType.charAt(0).toUpperCase() + imageType.slice(1)} Image & Continue
            </Button>
@@ -98,21 +102,19 @@ export function ReviewStepLayout({
          <Button 
             variant="secondary"
             className="w-full"
-            onClick={onConfirmAndGoToFinal}
-            disabled={isSaving || isAnalyzing || confirmGoToFinalDisabled} // Use prop
-        >
-            {confirmGoToFinalButtonText} {/* Use prop */}
+            onClick={handleConfirmAndGoToFinal}
+            disabled={isConfirmGoToFinalDisabled}
+         >
+            {confirmGoToFinalButtonText}
         </Button>
          <Button 
             variant="outline"
             className="w-full"
-            onClick={() => onRetake(imageType)} // Use the passed imageType
-            disabled={isSaving || isAnalyzing}
-        >
+            onClick={() => handleRetake(imageType)}
+            disabled={isGloballyDisabled}
+         >
             Retake {imageType.charAt(0).toUpperCase() + imageType.slice(1)} Image
         </Button>
-         {/* Placeholder for potential retry button */} 
-         {/* <Button variant="outline" className="w-full" onClick={onRetryAnalysis} disabled={isSaving || isAnalyzing}>Retry Analysis</Button> */} 
       </div>
     </div>
   );

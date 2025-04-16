@@ -1,65 +1,69 @@
 'use client'
 
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
 import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture'; 
 import { ReviewStepLayout } from './ReviewStepLayout'; // Import the layout
+import { logger } from '@/lib/logger'; // Import logger for potential issues
 
-interface ReviewPrimaryStepProps {
-  formData: Partial<AnalyzedImageResult>;
-  primaryImagePreview?: string | null;
-  isSaving: boolean;
-  isAnalyzing: boolean;
-  // Handlers passed from the parent
-  handleFormChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  handleSelectChange: (value: string) => void;
-  determineNextStep: (currentData: Partial<AnalyzedImageResult>) => ImageType | 'finalReview';
-  goToStep: (step: ImageAnalysisStep, nextImageType?: ImageType) => void;
-  retakeImage: (type: ImageType) => void;
-  // Add the handlers from the layout
-  onConfirmAndGoToFinal: () => void;
-}
+export function ReviewPrimaryStep() {
+  const { state, actions } = useImageAnalysisWizardContext();
+  const { formData, isLoading } = state; // Removed imageStates as it's not directly used here
 
-export function ReviewPrimaryStep({
-  formData,
-  primaryImagePreview,
-  isSaving,
-  isAnalyzing,
-  handleFormChange,
-  handleSelectChange,
-  determineNextStep,
-  goToStep,
-  retakeImage,
-  onConfirmAndGoToFinal,
-}: ReviewPrimaryStepProps) {
-
-  const handleConfirmAndNext = () => {
-    const next = determineNextStep(formData);
-    if (next === 'finalReview') {
-        goToStep('finalReview');
-    } else {
-        const nextCaptureStep = `capture${next.charAt(0).toUpperCase() + next.slice(1)}` as ImageAnalysisStep;
-        goToStep(nextCaptureStep, next);
+  // Handler for confirming this step and proceeding
+  const handleConfirmAndNext = useCallback(() => {
+    if (!formData.type || !formData.name) {
+      logger.warn('Cannot proceed from primary review without type and name');
+      // TODO: Show inline validation error
+      return;
     }
-  };
+    // Call a dedicated action in the hook to handle the transition logic
+    actions.goToNextStepFromReview('primary'); 
+  }, [actions, formData.type, formData.name]); // Depend on specific fields needed for validation
 
-  // Disable next/skip buttons if required fields are missing
-  const isConfirmDisabled = isSaving || isAnalyzing || !formData.type || !formData.name;
+  // Handler for going straight to final review
+  const handleConfirmAndGoToFinal = useCallback(() => {
+    if (!formData.type || !formData.name) {
+      logger.warn('Cannot proceed from primary review without type and name');
+      // TODO: Show inline validation error
+      return;
+    }
+    actions.goToStep('finalReview');
+  }, [actions, formData]);
+
+  // Handler for form input changes
+  const handleFormChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    actions.updateFormField(name as keyof AnalyzedImageResult, value);
+  }, [actions]);
+
+  // Handler for select change
+  const handleSelectChange = useCallback((value: string) => {
+    if (['food', 'treatment', 'supplement', 'other'].includes(value)) {
+      actions.updateFormField('type', value as AnalyzedImageResult['type']);
+    }
+  }, [actions]);
+
+  // Handler for retaking image - Use a dedicated action
+  const handleRetake = useCallback((type: ImageType) => {
+    actions.retakeImage(type); // This action should handle state reset and navigation
+  }, [actions]);
+
+  // Determine disabled state based on required fields for this step
+  const isConfirmDisabled = !formData.type || !formData.name;
 
   return (
     <ReviewStepLayout
         stepTitle="Review Primary"
         stepDescription="Confirm extracted details."
-        imagePreviewUrl={primaryImagePreview}
         imageType='primary'
-        isSaving={isSaving}
-        isAnalyzing={isAnalyzing}
-        onConfirmAndNext={handleConfirmAndNext}
-        onConfirmAndGoToFinal={onConfirmAndGoToFinal}
-        onRetake={retakeImage}
+        handleConfirmAndNext={handleConfirmAndNext}
+        handleConfirmAndGoToFinal={handleConfirmAndGoToFinal}
+        handleRetake={handleRetake}
         confirmAndNextDisabled={isConfirmDisabled}
         confirmGoToFinalDisabled={isConfirmDisabled}
     >
@@ -70,7 +74,7 @@ export function ReviewPrimaryStep({
                 name="type" 
                 value={formData.type || ''} 
                 onValueChange={handleSelectChange} 
-                disabled={isSaving || isAnalyzing}
+                disabled={isLoading}
             >
                 <SelectTrigger className="col-span-3">
                     <SelectValue placeholder="Select type..." />
@@ -91,7 +95,7 @@ export function ReviewPrimaryStep({
                 value={formData.name || ''} 
                 onChange={handleFormChange} 
                 className="col-span-3" 
-                disabled={isSaving || isAnalyzing} 
+                disabled={isLoading} 
                 placeholder="Confirm or enter item name"
                 required 
             />
@@ -104,7 +108,7 @@ export function ReviewPrimaryStep({
                 value={formData.brand || ''} 
                 onChange={handleFormChange} 
                 className="col-span-3" 
-                disabled={isSaving || isAnalyzing} 
+                disabled={isLoading} 
                 placeholder="Confirm or enter brand name" 
             />
         </div>
