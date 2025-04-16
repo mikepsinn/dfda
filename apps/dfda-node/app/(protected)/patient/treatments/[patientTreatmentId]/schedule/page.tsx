@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { createClient } from "@/lib/supabase/server"
 import { notFound, redirect } from 'next/navigation'
 import { logger } from '@/lib/logger'
-import EditScheduleClient from '../schedule/edit-schedule-client' // Import the client component
+import EditScheduleClient from './edit-schedule-client' // Import the client component
 import type { ReminderScheduleData } from '@/components/reminder-scheduler' // Import type for casting
 import { parseISO } from 'date-fns' // To convert string dates back to Date objects
 import type { Database } from "@/lib/database.types"

@@ -3,14 +3,13 @@ import type { SupabaseClient } from "@supabase/supabase-js"
 import { redirect, notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Star, AlertCircle, Bell } from "lucide-react"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 // import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
 import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Only import type if client not used
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-import { TreatmentRatingsCard } from './treatment-ratings-card'
 import { Button } from '@/components/ui/button'
 
 // Define specific types for fetched data
@@ -92,11 +91,9 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
 
   const treatmentName = treatmentDetails.treatments?.global_variables?.name ?? "Unknown Treatment";
   
-  // Log the exact data being passed to the client component
-  console.log("[TreatmentDetailPage] Data being passed to TreatmentDetailClient:", {
-      initialTreatmentDetails: treatmentDetails, // Log the whole object
-      patientConditions: patientConditions
-  });
+  // Count for badges
+  const ratingsCount = treatmentDetails.treatment_ratings.length;
+  const sideEffectsCount = treatmentDetails.reported_side_effects.length;
 
   return (
     <div className="container py-6 space-y-6">
@@ -144,55 +141,79 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
         </CardContent>
       </Card>
 
-      {/* Ratings Section - Replaced with component */}
-      <TreatmentRatingsCard treatmentDetails={treatmentDetails} patientConditions={patientConditions} />
-
-      {/* Side Effects Section */}
+      {/* Ratings Section - Replaced with navigation button card */}
       <Card>
-          <CardHeader>
-              <CardTitle>Reported Side Effects</CardTitle>
-              <CardDescription>Side effects you experienced while taking this treatment.</CardDescription>
-          </CardHeader>
-          <CardContent>
-              {treatmentDetails.reported_side_effects.length > 0 ? (
-                  <ul className="space-y-3">
-                      {treatmentDetails.reported_side_effects.map(effect => (
-                          <li key={effect.id} className="border p-3 rounded-md bg-muted/50 flex justify-between items-start">
-                              <p className="text-sm flex-grow mr-4">{effect.description}</p>
-                              {effect.severity_out_of_ten !== null && (
-                                  <Badge variant="secondary">Severity: {effect.severity_out_of_ten}/10</Badge>
-                              )}
-                          </li>
-                      ))}
-                  </ul>
+        <CardHeader>
+          <CardTitle>Effectiveness Ratings</CardTitle>
+          <CardDescription>Rate how effective this treatment was for specific conditions.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex justify-between items-center">
+            <div>
+              {ratingsCount > 0 ? (
+                <p className="text-sm mb-4">You have provided {ratingsCount} rating{ratingsCount !== 1 ? 's' : ''} for this treatment.</p>
               ) : (
-                  <p className="text-muted-foreground text-center py-4">No side effects recorded yet.</p>
+                <p className="text-sm text-muted-foreground mb-4">No effectiveness ratings recorded yet.</p>
               )}
-          </CardContent>
+            </div>
+            <Badge variant="secondary" className="ml-auto">{ratingsCount}</Badge>
+          </div>
+          
+          <Button asChild className="w-full" variant="outline">
+            <Link href={`/patient/treatments/${patientTreatmentId}/ratings`}>
+              <Star className="mr-2 h-4 w-4" />
+              View & Manage Ratings
+            </Link>
+          </Button>
+        </CardContent>
       </Card>
 
-      {/* Reminder Schedule Section */}
+      {/* Side Effects Section - Replaced with navigation button card */}
       <Card>
-          <CardHeader>
-              <CardTitle>Reminder Schedule</CardTitle>
-              <CardDescription>Manage reminders for taking this treatment.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-              {/* TODO: Display actual schedule summary here */}
-              <p className="text-sm text-muted-foreground italic">
-                  Schedule details will be displayed here.
-              </p>
-              <div className="flex justify-start">
-                  <Button asChild variant="outline">
-                      <Link href={`./${patientTreatmentId}/edit-schedule`}>
-                          <ArrowLeft className="mr-2 h-4 w-4" />
-                          Edit Schedule
-                      </Link>
-                  </Button>
-              </div>
-          </CardContent>
+        <CardHeader>
+          <CardTitle>Reported Side Effects</CardTitle>
+          <CardDescription>Side effects you experienced while taking this treatment.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex justify-between items-center">
+            <div>
+              {sideEffectsCount > 0 ? (
+                <p className="text-sm mb-4">You have reported {sideEffectsCount} side effect{sideEffectsCount !== 1 ? 's' : ''} for this treatment.</p>
+              ) : (
+                <p className="text-sm text-muted-foreground mb-4">No side effects recorded yet.</p>
+              )}
+            </div>
+            <Badge variant="secondary" className="ml-auto">{sideEffectsCount}</Badge>
+          </div>
+          
+          <Button asChild className="w-full" variant="outline">
+            <Link href={`/patient/treatments/${patientTreatmentId}/side-effects`}>
+              <AlertCircle className="mr-2 h-4 w-4" />
+              View & Manage Side Effects
+            </Link>
+          </Button>
+        </CardContent>
       </Card>
 
+      {/* Reminder Schedule Section - Updated with consistent styling */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Reminder Schedule</CardTitle>
+          <CardDescription>Manage reminders for taking this treatment.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-4">
+            Set up and manage reminders for taking this treatment.
+          </p>
+          
+          <Button asChild className="w-full" variant="outline">
+            <Link href={`/patient/treatments/${patientTreatmentId}/schedule`}>
+              <Bell className="mr-2 h-4 w-4" />
+              View & Manage Schedule
+            </Link>
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   )
 }
