@@ -23,6 +23,7 @@ export type ReminderScheduleClientData = {
   startDate: Date; // Client sends Date object
   endDate?: Date | null;
   isActive: boolean;
+  default_value?: number | null;
 }
 // Type for inserting/updating in the database
 export type ReminderScheduleDbData = Omit<Database['public']['Tables']['reminder_schedules']['Insert'], 'id' | 'created_at' | 'updated_at' | 'next_trigger_at'> & {
@@ -198,6 +199,7 @@ export async function upsertReminderScheduleAction(
             start_date: scheduleData.startDate.toISOString(), // Store start date as sent by client
             end_date: scheduleData.endDate ? scheduleData.endDate.toISOString() : null,
             next_trigger_at: nextTriggerAtIso, // Assign calculated value here
+            default_value: scheduleData.default_value, // Include default_value
             // notification_title_template: ..., // Add if needed
             // notification_message_template: ..., // Add if needed
         };
@@ -214,12 +216,9 @@ export async function upsertReminderScheduleAction(
                 .select()
                 .single();
         } else {
-            // Insert new schedule (or update if unique constraint hit - needs constraint)
-            // Assuming a unique constraint on user_variable_id might exist if only one reminder per variable is allowed.
-            // If multiple reminders are allowed per variable, use simple insert.
-             logger.info('Inserting new schedule');
-             // For now, simple insert. Add UNIQUE constraint later if needed.
-             response = await supabase
+            // Insert new schedule
+            logger.info('Inserting new schedule');
+            response = await supabase
                 .from('reminder_schedules')
                 .insert(dbData)
                 .select()

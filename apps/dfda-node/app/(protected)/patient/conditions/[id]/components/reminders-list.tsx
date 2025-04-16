@@ -9,9 +9,10 @@ const logger = createLogger("reminders-list")
 interface RemindersListProps {
   reminders: ReminderSchedule[]
   conditionName?: string | null
+  unitName?: string | null
 }
 
-export function RemindersList({ reminders, conditionName }: RemindersListProps) {
+export function RemindersList({ reminders, conditionName, unitName }: RemindersListProps) {
   if (!reminders || reminders.length === 0) {
     return <p className="text-sm text-muted-foreground">No reminders found for {conditionName || "this condition"}.</p>
   }
@@ -44,6 +45,13 @@ export function RemindersList({ reminders, conditionName }: RemindersListProps) 
           <CardContent className="p-4 pt-0 text-sm text-muted-foreground">
             <p>Frequency: <span className="font-medium text-foreground">{formatRRule(reminder.rrule)}</span></p>
             <p>Time: <span className="font-medium text-foreground">{reminder.time_of_day}</span></p>
+            {reminder.default_value !== null && reminder.default_value !== undefined && (
+              <p>
+                Default value: <span className="font-medium text-foreground">
+                  {reminder.default_value}{unitName ? ` ${unitName}` : ''}
+                </span>
+              </p>
+            )}
             {/* TODO: Display next trigger time? Requires calculation/fetching */}
             {/* <p>Next: {reminder.next_trigger_at ? new Date(reminder.next_trigger_at).toLocaleString() : "N/A"}</p> */}
           </CardContent>

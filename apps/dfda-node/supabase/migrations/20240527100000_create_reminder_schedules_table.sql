@@ -27,6 +27,9 @@ CREATE TABLE public.reminder_schedules (
   -- --- Optional Notification Customization ---
   notification_title_template TEXT,
   notification_message_template TEXT,
+  
+  -- --- Optional Default Measurement Value ---
+  default_value NUMERIC, -- Stores the default measurement/dosage for a treatment
 
   -- --- Timestamps ---
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -57,6 +60,7 @@ COMMENT ON TABLE public.reminder_schedules IS 'Stores user-defined schedules for
 COMMENT ON COLUMN public.reminder_schedules.rrule IS 'Recurrence rule string following the iCalendar RFC 5545 standard.';
 COMMENT ON COLUMN public.reminder_schedules.next_trigger_at IS 'The next calculated UTC timestamp when the reminder should trigger. Used for efficient querying.';
 COMMENT ON COLUMN public.reminder_schedules.user_variable_id IS 'The specific user variable this reminder schedule is for.';
+COMMENT ON COLUMN public.reminder_schedules.default_value IS 'Optional default measurement or dosage value (e.g., 10mg, 2 tablets). The unit is defined at the user_variable or global_variable level.';
 
 -- Trigger function to update 'updated_at' timestamp on modification
 CREATE OR REPLACE FUNCTION public.set_current_timestamp_updated_at()

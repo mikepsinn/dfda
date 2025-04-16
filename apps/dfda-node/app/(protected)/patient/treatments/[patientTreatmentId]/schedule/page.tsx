@@ -158,6 +158,7 @@ export default async function EditSchedulePage({ params }: { params: Promise<{ p
         scheduleData={fetchedData.scheduleData}
         treatmentName={fetchedData.treatmentName}
         userTimezone={fetchedData.userTimezone}
+        userId={user.id}
       />
     </div>
   )

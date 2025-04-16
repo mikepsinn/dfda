@@ -23,6 +23,7 @@ export type ReminderDialogProps = {
     variableName: string;
     existingSchedule: ReminderSchedule | null; // Schedule to edit, or null for new
     userTimezone: string;
+    unitName?: string; // Add unit information
 };
 
 export function ReminderDialog({ 
@@ -32,7 +33,8 @@ export function ReminderDialog({
     userId, 
     variableName, 
     existingSchedule, 
-    userTimezone
+    userTimezone,
+    unitName
 }: ReminderDialogProps) {
     const [isLoading, setIsLoading] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -125,6 +127,7 @@ export function ReminderDialog({
             startDate: schedule.start_date ? new Date(schedule.start_date) : new Date(), // Handle potential null/parse
             endDate: schedule.end_date ? new Date(schedule.end_date) : null,
             isActive: schedule.is_active,
+            default_value: schedule.default_value, // Include default_value
         };
     };
     
@@ -145,6 +148,8 @@ export function ReminderDialog({
                         initialSchedule={initialSchedulerData} // Pass mapped data
                         onChange={handleScheduleChange}
                         userTimezone={userTimezone}
+                        unitName={unitName}
+                        variableName={variableName}
                     />
                 }
                 <DialogFooter className='flex justify-between w-full pt-4'>

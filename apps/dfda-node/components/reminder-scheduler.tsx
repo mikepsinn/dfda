@@ -12,6 +12,7 @@ import { Calendar } from "@/components/ui/calendar" // Assuming Shadcn calendar
 import { Switch } from "@/components/ui/switch"
 import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
+import { TimeSelector } from "@/components/time-selector" // Import our new TimeSelector component
 // import { TimeField } from "@/components/ui/time-field" // Commented out - Component not found
 // import { type RRuleOption, getRRuleOptions } from "@/lib/rrule-options" // Commented out - Module not found
 
@@ -23,25 +24,24 @@ export interface ReminderScheduleData {
   startDate: Date;
   endDate?: Date | null;
   isActive: boolean;
+  default_value?: number | null; // Optional default dosage/measurement value
 }
 
 interface ReminderSchedulerProps {
   initialSchedule?: Partial<ReminderScheduleData>; // Allow passing partial initial state
   onChange: (schedule: ReminderScheduleData) => void;
   userTimezone: string; // <-- Accept user timezone as prop
+  unitName?: string; // Optional unit for the default value
+  variableName?: string; // Name of the variable
 }
 
-// Simple TimePicker Component (Replace with a proper one if available)
-const SimpleTimePicker = ({ value, onChange }: { value: string, onChange: (value: string) => void }) => (
-  <Input
-    type="time"
-    value={value}
-    onChange={(e) => onChange(e.target.value)}
-    className="w-[120px]"
-  />
-);
-
-export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: ReminderSchedulerProps) {
+export function ReminderScheduler({ 
+  initialSchedule, 
+  onChange, 
+  userTimezone,
+  unitName,
+  variableName
+}: ReminderSchedulerProps) {
   const [freq, setFreq] = useState<number>(RRule.DAILY); // Default to Daily
   const [interval, setInterval] = useState<number>(1);
   const [byWeekday, setByWeekday] = useState<Weekday[]>([]); // For weekly
@@ -51,6 +51,7 @@ export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: R
   const [startDate, setStartDate] = useState<Date>(initialSchedule?.startDate || new Date());
   const [endDate, setEndDate] = useState<Date | null | undefined>(initialSchedule?.endDate);
   const [isActive, setIsActive] = useState<boolean>(initialSchedule?.isActive === undefined ? true : initialSchedule.isActive);
+  const [defaultValue, setDefaultValue] = useState<number | null | undefined>(initialSchedule?.default_value);
 
   // --- Update internal state from RRULE string on initial load/change ---
   useEffect(() => {
@@ -109,6 +110,7 @@ export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: R
       setStartDate(initialSchedule?.startDate || new Date());
       setEndDate(initialSchedule?.endDate);
       setIsActive(initialSchedule?.isActive === undefined ? true : initialSchedule.isActive);
+      setDefaultValue(initialSchedule?.default_value);
 
       // Removed dependency on initialSchedule.timezone
   }, [initialSchedule?.rruleString, initialSchedule?.timeOfDay, initialSchedule?.startDate, initialSchedule?.endDate, initialSchedule?.isActive]);
@@ -145,10 +147,11 @@ export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: R
           startDate,
           endDate,
           isActive,
+          default_value: defaultValue || null,
       });
 
       // Removed timezone from dependencies, added userTimezone
-  }, [freq, interval, byWeekday, byMonthDay, timeOfDay, userTimezone, startDate, endDate, isActive, onChange]);
+  }, [freq, interval, byWeekday, byMonthDay, timeOfDay, userTimezone, startDate, endDate, isActive, defaultValue, onChange]);
 
   const handleWeekdayChange = (day: Weekday, checked: boolean | string) => {
       if (checked === true) {
@@ -238,7 +241,13 @@ export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: R
         {/* Time of Day */}
         <div className="grid grid-cols-3 gap-4 items-center">
              <Label htmlFor="timeOfDay" className="col-span-1">Time of Day</Label>
-             <SimpleTimePicker value={timeOfDay} onChange={setTimeOfDay} />
+             <div className="col-span-2">
+                <TimeSelector 
+                  value={timeOfDay} 
+                  onChange={setTimeOfDay} 
+                  label="" 
+                />
+             </div>
         </div>
 
         {/* Start Date */} 
@@ -296,6 +305,31 @@ export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: R
             <Switch id="is-active" checked={isActive} onCheckedChange={setIsActive} />
             <Label htmlFor="is-active">Reminder Active</Label>
         </div>
+
+        {/* Default Value (optional) */}
+        {unitName && (
+          <div className="grid grid-cols-3 gap-4 items-center">
+              <Label htmlFor="default-value" className="col-span-1">
+                Default {variableName ? 'Dosage for ' + variableName : 'Value'}
+              </Label>
+              <div className="col-span-2 flex items-center gap-2">
+                <Input
+                  id="default-value"
+                  type="number"
+                  step="any"
+                  min="0"
+                  placeholder="Enter amount"
+                  value={defaultValue?.toString() || ''}
+                  onChange={(e) => {
+                    const value = e.target.value ? parseFloat(e.target.value) : null;
+                    setDefaultValue(value);
+                  }}
+                  className="flex-grow"
+                />
+                <span className="text-sm text-muted-foreground whitespace-nowrap">{unitName}</span>
+              </div>
+          </div>
+        )}
     </div>
   );
 } 

@@ -9,12 +9,6 @@ import { logger } from '@/lib/logger'
 import { Plus, X, Edit, Clock, Save, CheckCircle } from 'lucide-react'
 import { upsertReminderScheduleAction, deleteReminderScheduleAction } from '@/app/actions/reminder-schedules'
 import { format } from 'date-fns'
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
-} from '@/components/ui/accordion'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -33,6 +27,7 @@ interface EditScheduleClientProps {
     scheduleData: (ReminderScheduleData & { id: string })[];
     treatmentName: string;
     userTimezone: string;
+    userId: string;
 }
 
 export default function EditScheduleClient({ 
@@ -40,7 +35,8 @@ export default function EditScheduleClient({
     userVariableId,
     scheduleData,
     treatmentName, 
-    userTimezone
+    userTimezone,
+    userId
 }: EditScheduleClientProps) {
   const [schedules, setSchedules] = useState<(ReminderScheduleData & { id: string })[]>(scheduleData || []);
   const [activeSchedule, setActiveSchedule] = useState<(ReminderScheduleData & { id?: string }) | null>(null);
@@ -85,7 +81,7 @@ export default function EditScheduleClient({
   const handleDeleteSchedule = async (scheduleId: string) => {
     try {
       setIsSaving(true);
-      const result = await deleteReminderScheduleAction(scheduleId, userVariableId);
+      const result = await deleteReminderScheduleAction(scheduleId, userId);
       
       if (result.success) {
         // Remove from local state
@@ -126,7 +122,7 @@ export default function EditScheduleClient({
       const result = await upsertReminderScheduleAction(
         userVariableId,
         activeSchedule, 
-        userVariableId,
+        userId,
         editingId
       );
       
@@ -200,120 +196,181 @@ export default function EditScheduleClient({
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Edit Treatment Reminder Schedule</CardTitle>
+    <Card className="shadow-sm">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-xl">Treatment Reminder Schedule</CardTitle>
         <CardDescription>
-          Set up multiple reminders for {treatmentName}. 
-          Add different times of day to be reminded to take this treatment.
+          Set up multiple reminders for {treatmentName} throughout the day.
         </CardDescription>
       </CardHeader>
       
       <CardContent className="space-y-6">
         {/* List of existing schedules */}
         {schedules.length > 0 ? (
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Current reminder times:</h3>
-            <ul className="space-y-2">
+          <div>
+            <h3 className="text-sm font-medium mb-3">Reminder times:</h3>
+            <div className="space-y-2">
               {schedules.map(schedule => {
                 const { time, frequency } = formatSchedule(schedule);
+                const isEditing = isEditMode && editingId === schedule.id;
+                
                 return (
-                  <li key={schedule.id} className="flex justify-between items-center p-3 border rounded-md bg-muted/30">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-muted-foreground" />
-                      <span>
-                        <span className="font-medium">{time}</span>
-                        <span className="ml-2 text-sm text-muted-foreground">({frequency})</span>
-                        {schedule.isActive ? (
-                          <span className="ml-2 text-xs text-green-600 flex items-center gap-1">
-                            <CheckCircle className="h-3 w-3" /> Active
-                          </span>
-                        ) : (
-                          <span className="ml-2 text-xs text-gray-400">Inactive</span>
-                        )}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        onClick={() => handleEditSchedule(schedule)}
-                      >
-                        <Edit className="h-4 w-4" />
-                      </Button>
+                  <div key={schedule.id} className="border border-muted rounded-md">
+                    {/* Reminder card */}
+                    <div className="flex justify-between items-center p-3 rounded-md bg-muted/40">
+                      <div className="flex items-center gap-3">
+                        <div className="bg-primary/10 p-2 rounded-full">
+                          <Clock className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <div className="font-medium">{time}</div>
+                          <div className="text-xs text-muted-foreground flex items-center gap-2">
+                            <span>{frequency}</span>
+                            {schedule.isActive && (
+                              <span className="inline-flex items-center text-emerald-600">
+                                <CheckCircle className="h-3 w-3 mr-1" /> Active
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          className="h-8 w-8 p-0"
+                          onClick={() => handleEditSchedule(schedule)}
+                        >
+                          <Edit className="h-4 w-4" />
+                          <span className="sr-only">Edit</span>
+                        </Button>
 
-                      <AlertDialog>
-                        <AlertDialogTrigger asChild>
-                          <Button variant="ghost" size="sm">
-                            <X className="h-4 w-4 text-destructive" />
-                          </Button>
-                        </AlertDialogTrigger>
-                        <AlertDialogContent>
-                          <AlertDialogHeader>
-                            <AlertDialogTitle>Delete this reminder?</AlertDialogTitle>
-                            <AlertDialogDescription>
-                              Are you sure you want to delete the {time} reminder for {treatmentName}?
-                            </AlertDialogDescription>
-                          </AlertDialogHeader>
-                          <AlertDialogFooter>
-                            <AlertDialogCancel>Cancel</AlertDialogCancel>
-                            <AlertDialogAction onClick={() => handleDeleteSchedule(schedule.id)}>
-                              Delete
-                            </AlertDialogAction>
-                          </AlertDialogFooter>
-                        </AlertDialogContent>
-                      </AlertDialog>
+                        <AlertDialog>
+                          <AlertDialogTrigger asChild>
+                            <Button 
+                              variant="ghost" 
+                              size="sm"
+                              className="h-8 w-8 p-0 text-destructive hover:text-destructive hover:bg-destructive/10"
+                            >
+                              <X className="h-4 w-4" />
+                              <span className="sr-only">Delete</span>
+                            </Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>Delete this reminder?</AlertDialogTitle>
+                              <AlertDialogDescription>
+                                Are you sure you want to delete the {time} reminder for {treatmentName}?
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>Cancel</AlertDialogCancel>
+                              <AlertDialogAction 
+                                onClick={() => handleDeleteSchedule(schedule.id)}
+                                className="bg-destructive hover:bg-destructive/90"
+                              >
+                                Delete
+                              </AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
+                      </div>
                     </div>
-                  </li>
+                    
+                    {/* Inline edit form */}
+                    {isEditing && activeSchedule && (
+                      <div className="p-4 border-t bg-card/50">
+                        <div className="flex justify-between items-center mb-4">
+                          <h3 className="font-medium">Edit Reminder</h3>
+                          <Button variant="ghost" size="sm" onClick={handleCancelEdit}>
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+                        <ReminderScheduler
+                          initialSchedule={activeSchedule}
+                          onChange={handleScheduleChange}
+                          userTimezone={userTimezone}
+                        />
+                        <div className="flex justify-end mt-4">
+                          <Button 
+                            variant="default" 
+                            onClick={handleSaveSchedule} 
+                            disabled={isSaving || !activeSchedule}
+                            className="gap-2"
+                          >
+                            {isSaving ? (
+                              <>Saving...</>
+                            ) : (
+                              <>
+                                <Save className="h-4 w-4" />
+                                Save Changes
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 );
               })}
-            </ul>
+            </div>
           </div>
         ) : (
-          <div className="text-center p-6 border border-dashed rounded-md text-muted-foreground">
-            No reminders set for this treatment. 
-            Click "Add Reminder Time" to set a reminder.
+          <div className="text-center py-8 border border-dashed rounded-md text-muted-foreground">
+            <Clock className="h-10 w-10 mx-auto mb-3 text-muted-foreground/50" />
+            <p>No reminders set for this treatment.</p>
+            <p className="text-sm">Add your first reminder to get started.</p>
           </div>
         )}
 
-        {/* Edit Mode */}
-        {isEditMode && activeSchedule && (
-          <Accordion type="single" collapsible defaultValue="schedule">
-            <AccordionItem value="schedule">
-              <AccordionTrigger className="text-sm font-medium">
-                {editingId ? 'Edit Reminder' : 'Add New Reminder Time'}
-              </AccordionTrigger>
-              <AccordionContent>
-                <div className="p-4 border rounded-md mt-2 bg-card">
-                  <ReminderScheduler
-                    initialSchedule={activeSchedule}
-                    onChange={handleScheduleChange}
-                    userTimezone={userTimezone}
-                  />
-                  <div className="flex justify-end gap-2 mt-4">
-                    <Button variant="outline" onClick={handleCancelEdit}>
-                      Cancel
-                    </Button>
-                    <Button 
-                      variant="default" 
-                      onClick={handleSaveSchedule} 
-                      disabled={isSaving || !activeSchedule}
-                    >
-                      {isSaving ? "Saving..." : "Save"}
-                    </Button>
-                  </div>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+        {/* Add new reminder form (only when adding new, not editing) */}
+        {isEditMode && !editingId && activeSchedule && (
+          <div className="mt-6 border rounded-md bg-card p-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-medium">Add New Reminder</h3>
+              <Button variant="ghost" size="sm" onClick={handleCancelEdit}>
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
+            <ReminderScheduler
+              initialSchedule={activeSchedule}
+              onChange={handleScheduleChange}
+              userTimezone={userTimezone}
+            />
+            <div className="flex justify-end mt-4">
+              <Button 
+                variant="default" 
+                onClick={handleSaveSchedule} 
+                disabled={isSaving || !activeSchedule}
+                className="gap-2"
+              >
+                {isSaving ? (
+                  <>Saving...</>
+                ) : (
+                  <>
+                    <Save className="h-4 w-4" />
+                    Save Reminder
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
         )}
       </CardContent>
 
-      <CardFooter className="flex justify-end">
+      <CardFooter className="flex items-center justify-between border-t pt-6">
+        {schedules.length > 0 && !isEditMode ? (
+          <p className="text-sm text-muted-foreground">
+            {schedules.length} reminder{schedules.length !== 1 ? 's' : ''} configured
+          </p>
+        ) : (
+          <div></div> // Empty div to maintain space
+        )}
+        
         {!isEditMode && (
-          <Button onClick={handleAddSchedule} disabled={isSaving}>
-            <Plus className="mr-2 h-4 w-4" />
-            Add Reminder Time
+          <Button onClick={handleAddSchedule} className="gap-2" disabled={isSaving}>
+            <Plus className="h-4 w-4" />
+            Add Reminder
           </Button>
         )}
       </CardFooter>
