@@ -57,8 +57,8 @@ async function fetchTreatmentDetails(supabase: SupabaseClient<Database>, patient
     return data as FullPatientTreatmentDetail;
 }
 
-export default async function TreatmentDetailPage(props: { params: { patientTreatmentId: string } }) {
-  const patientTreatmentId = props.params.patientTreatmentId;
+export default async function TreatmentDetailPage({ params }: { params: Promise<{ patientTreatmentId: string }> }) {
+  const { patientTreatmentId } = await params;
   console.log(`[TreatmentDetailPage] Received patientTreatmentId: ${patientTreatmentId}`);
 
   const supabase = await createClient()
