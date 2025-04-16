@@ -7,7 +7,8 @@ import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
-import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
+// import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
+import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Only import type if client not used
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
 import { TreatmentRatingsCard } from './treatment-ratings-card'
 import { Button } from '@/components/ui/button'

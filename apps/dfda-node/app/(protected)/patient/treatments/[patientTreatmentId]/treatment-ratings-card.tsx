@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+// import { Badge } from "@/components/ui/badge" // Removed unused import
 import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Assuming type definition is here
 import { TreatmentDetailClient } from "./treatment-detail-client" 
 import type { PatientCondition } from '@/app/actions/patient-conditions'; // Assuming type location

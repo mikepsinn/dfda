@@ -23,19 +23,18 @@ const logger = createLogger("add-treatment-dialog")
 
 interface AddTreatmentDialogProps {
   userId: string;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
+  onSuccess?: () => void;
 }
 
 export function AddTreatmentDialog({ 
   userId, 
-  open, 
-  onOpenChange
+  onSuccess
 }: AddTreatmentDialogProps) {
   const [selectedTreatment, setSelectedTreatment] = useState<{ id: string; name: string } | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
   const router = useRouter()
+  const [internalOpen, setInternalOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,8 +67,16 @@ export function AddTreatmentDialog({
 
       toast({ title: "Treatment Added", description: `${selectedTreatment.name} added successfully.` });
 
-      router.refresh()
+      if (onSuccess) {
+          logger.info("Calling onSuccess callback provided to AddTreatmentDialog");
+          onSuccess(); 
+      } else {
+          logger.info("No onSuccess callback provided, attempting router.refresh()");
+          router.refresh()
+      }
       
+      setInternalOpen(false);
+
       router.push(`/patient/treatments/${newPatientTreatmentId}`);
 
     } catch (error: any) {
@@ -90,7 +97,7 @@ export function AddTreatmentDialog({
   }
 
   const handleOpenChange = (isOpen: boolean) => {
-    onOpenChange(isOpen)
+    setInternalOpen(isOpen)
     if (!isOpen) {
       logger.info("Dialog closed, resetting state");
       setSelectedTreatment(null)
@@ -99,7 +106,7 @@ export function AddTreatmentDialog({
   }
 
   return (
-    <Dialog open={open} onOpenChange={handleOpenChange}>
+    <Dialog open={internalOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
