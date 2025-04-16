@@ -26,6 +26,7 @@ export interface GeneratedNavTree {
   readonly 'patient_onboarding_treatments': NavItem;
   readonly 'patient_treatments': NavItem;
   readonly 'patient_treatments_patienttreatmentid': NavItem;
+  readonly 'patient_treatments_patienttreatmentid_edit_schedule': NavItem;
   readonly 'patient_trial_details_id': NavItem;
   readonly 'patient_trial_payment_id': NavItem;
   readonly 'privacy': NavItem;
@@ -181,6 +182,12 @@ export const navigationTreeObject: GeneratedNavTree = {
     "href": "/patient/treatments/[patientTreatmentId]",
     "description": "View treatment details.",
     "emoji": "ℹ️"
+  },
+  "patient_treatments_patienttreatmentid_edit_schedule": {
+    "title": "Edit Treatment Schedule",
+    "href": "/patient/treatments/[patientTreatmentId]/edit-schedule",
+    "description": "Modify the schedule for a specific patient's treatment plan.",
+    "emoji": "📅"
   },
   "patient_trial_details_id": {
     "title": "Trial Details",

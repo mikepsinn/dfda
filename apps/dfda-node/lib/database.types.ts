@@ -1509,7 +1509,6 @@ export type Database = {
           rrule: string
           start_date: string
           time_of_day: string
-          timezone: string
           updated_at: string | null
           user_id: string
           user_variable_id: string
@@ -1525,7 +1524,6 @@ export type Database = {
           rrule: string
           start_date?: string
           time_of_day: string
-          timezone: string
           updated_at?: string | null
           user_id: string
           user_variable_id: string
@@ -1541,7 +1539,6 @@ export type Database = {
           rrule?: string
           start_date?: string
           time_of_day?: string
-          timezone?: string
           updated_at?: string | null
           user_id?: string
           user_variable_id?: string
