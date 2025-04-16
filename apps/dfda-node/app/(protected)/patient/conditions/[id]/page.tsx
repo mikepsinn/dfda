@@ -54,10 +54,6 @@ export default async function PatientConditionDetailPage({ params }: { params: {
   // Fetch associated ratings for this patient condition
   const conditionRatings = await getRatingsForPatientConditionAction(patientConditionId);
 
-  // Fetch reminders linked to the global condition ID, passing user ID as well
-  const conditionReminders = condition.condition_id 
-    ? await getReminderSchedulesForUserVariableAction(user.id, condition.condition_id)
-    : [];
 
   return (
     // Apply grid layout to the main container - reduce top padding
