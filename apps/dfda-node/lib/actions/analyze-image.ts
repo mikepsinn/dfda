@@ -184,7 +184,6 @@ export async function analyzeImageAction(formData: FormData): Promise<
     switch (determinedType) {
       case 'food':       extractionSchema = FoodSchema; break;
       case 'treatment':  extractionSchema = TreatmentSchema; break;
-      case 'supplement': extractionSchema = SupplementSchema; break;
       case 'other':      extractionSchema = OtherSchema; break;
       default: 
         logger.error("Invalid determinedType after classification", { determinedType });

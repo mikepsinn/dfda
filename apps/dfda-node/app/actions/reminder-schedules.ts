@@ -20,7 +20,6 @@ export type ReminderSchedule = Database['public']['Tables']['reminder_schedules'
 export type ReminderScheduleClientData = {
   rruleString: string;
   timeOfDay: string; // HH:mm
-  timezone: string;
   startDate: Date; // Client sends Date object
   endDate?: Date | null;
   isActive: boolean;
@@ -104,11 +103,6 @@ export async function upsertReminderScheduleAction(
     if (!scheduleData.timeOfDay?.match(/^([01]\d|2[0-3]):([0-5]\d)$/)) { // Basic HH:mm validation
         return { success: false, error: 'Invalid time format (HH:mm required).' };
     }
-    if (!scheduleData.timezone) {
-        // Basic check - could validate against a known list if needed
-        return { success: false, error: 'Timezone is required.' };
-    }
-    // let rule: RRule; // rule assignment is never used
     try {
         // Validate RRULE string basic structure and parse it
         /* rule = */ rrulestr(scheduleData.rruleString) as RRule; // Removed unused assignment
@@ -119,11 +113,28 @@ export async function upsertReminderScheduleAction(
 
     try {
         let nextTriggerAtIso: string | null = null;
+        let userTimezone: string | undefined;
 
         // --- Determine next_trigger_at ---
+        if (scheduleData.isActive) {
+             const { data: profile, error: profileError } = await supabase
+                .from('profiles')
+                .select('timezone')
+                .eq('id', userId)
+                .single();
+
+            if (profileError || !profile?.timezone) {
+                logger.error('Could not fetch user profile timezone for next_trigger calculation', { userId, error: profileError });
+                // Decide how to handle: error out, or default to UTC?
+                // Defaulting to UTC for now, but this might lead to incorrect times if profile isn't set.
+                userTimezone = 'UTC'; 
+            } else {
+                userTimezone = profile.timezone;
+            }
+        }
+
         if (scheduleIdToUpdate) { // === UPDATE ===
-             // For updates, calculate the actual next trigger time if active
-             if (scheduleData.isActive) {
+             if (scheduleData.isActive && userTimezone) {
                  try {
                     // Existing logic to calculate the real next trigger based on RRULE, time, timezone
                     const updateRule = rrulestr(scheduleData.rruleString) as RRule;
@@ -146,17 +157,17 @@ export async function upsertReminderScheduleAction(
                     const options = {
                         ...updateRule.options,
                         // Ensure dtstart is a Date object before passing to toZonedTime
-                        dtstart: toZonedTime(dtstartDate, scheduleData.timezone),
-                        tzid: scheduleData.timezone, // Ensure timezone is passed if needed by rrule logic
+                        dtstart: toZonedTime(dtstartDate, userTimezone),
+                        tzid: userTimezone, // Ensure timezone is passed if needed by rrule logic
                     };
                     const calculationRule = new RRule(options);
-                    const nowInTargetTz = toZonedTime(nowUtc, scheduleData.timezone); // Use toZonedTime for comparison time
+                    const nowInTargetTz = toZonedTime(nowUtc, userTimezone); // Use toZonedTime for comparison time
                     const nextOccurrence = calculationRule.after(nowInTargetTz, true); // Find next after current time in target TZ
 
                     if (nextOccurrence) {
                          // Convert the result back to ISO string in UTC for storage
-                        nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(scheduleData.timezone).toISO();
-                        logger.info('Calculated next trigger time for UPDATE', { nextTriggerAtIso, timezone: scheduleData.timezone });
+                        nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(userTimezone).toISO();
+                        logger.info('Calculated next trigger time for UPDATE', { nextTriggerAtIso, timezone: userTimezone });
                     } else {
                         logger.info('No future occurrences found for updated rule', { globalVariableId, scheduleIdToUpdate });
                         nextTriggerAtIso = null; // Explicitly null if no future dates
@@ -166,26 +177,24 @@ export async function upsertReminderScheduleAction(
                       nextTriggerAtIso = null;
                  }
             } else {
-                // If updating to inactive, clear the next trigger time
-                logger.info('Updated schedule is inactive, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
+                // If updating to inactive or couldn't get timezone, clear the next trigger time
+                logger.info('Updated schedule inactive or timezone unavailable, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
                 nextTriggerAtIso = null;
             }
 
         } else { // === INSERT ===
-            // For NEW reminders, set trigger time to the past to show in inbox immediately.
-            // The cron job/scheduler will handle calculating the *real* next trigger upon completion.
+            // For NEW reminders, keep setting to past. Calculation should happen elsewhere ideally.
             nextTriggerAtIso = new Date(Date.now() - 60 * 1000).toISOString(); // 1 minute ago
             logger.info('Setting initial trigger time to the past for NEW reminder', { nextTriggerAtIso });
         }
         // --- End Determine next_trigger_at ---
 
-        const dbData: ReminderScheduleDbData & { user_id: string } = {
+        const dbData: Omit<ReminderScheduleDbData, 'next_trigger_at'> & { user_id: string; next_trigger_at?: string | null } = {
             user_id: userId,
             user_variable_id: globalVariableId,
             is_active: scheduleData.isActive,
             rrule: scheduleData.rruleString,
             time_of_day: scheduleData.timeOfDay,
-            timezone: scheduleData.timezone,
             start_date: scheduleData.startDate.toISOString(), // Store start date as sent by client
             end_date: scheduleData.endDate ? scheduleData.endDate.toISOString() : null,
             next_trigger_at: nextTriggerAtIso, // Assign calculated value here
@@ -336,7 +345,6 @@ export async function createDefaultReminderAction(
     const scheduleData: ReminderScheduleClientData = {
         rruleString: defaultRRule,
         timeOfDay: defaultTime,
-        timezone: userTimezone, // Use fetched or fallback timezone
         startDate: new Date(), // Start today
         isActive: true,
     };

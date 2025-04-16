@@ -43,7 +43,7 @@ export function RemindersList({ reminders, conditionName }: RemindersListProps) 
           </CardHeader>
           <CardContent className="p-4 pt-0 text-sm text-muted-foreground">
             <p>Frequency: <span className="font-medium text-foreground">{formatRRule(reminder.rrule)}</span></p>
-            <p>Time: <span className="font-medium text-foreground">{reminder.time_of_day} ({reminder.timezone})</span></p>
+            <p>Time: <span className="font-medium text-foreground">{reminder.time_of_day}</span></p>
             {/* TODO: Display next trigger time? Requires calculation/fetching */}
             {/* <p>Next: {reminder.next_trigger_at ? new Date(reminder.next_trigger_at).toLocaleString() : "N/A"}</p> */}
           </CardContent>

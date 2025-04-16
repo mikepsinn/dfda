@@ -22,6 +22,7 @@ export type ReminderDialogProps = {
     userId: string;
     variableName: string;
     existingSchedule: ReminderSchedule | null; // Schedule to edit, or null for new
+    userTimezone: string;
 };
 
 export function ReminderDialog({ 
@@ -30,11 +31,12 @@ export function ReminderDialog({
     userVariableId, 
     userId, 
     variableName, 
-    existingSchedule 
+    existingSchedule, 
+    userTimezone
 }: ReminderDialogProps) {
     const [isLoading, setIsLoading] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
-    const [currentScheduleData, setCurrentScheduleData] = useState<ReminderScheduleData | null>(null);
+    const [currentScheduleData, setCurrentScheduleData] = useState<Omit<ReminderScheduleData, 'timezone'> | null>(null);
     const { toast } = useToast();
 
     // Use existingSchedule prop to initialize the form when dialog opens
@@ -51,7 +53,7 @@ export function ReminderDialog({
         }
     }, [isOpen, existingSchedule]); // Depend on isOpen and existingSchedule
 
-    const handleScheduleChange = useCallback((newData: ReminderScheduleData) => {
+    const handleScheduleChange = useCallback((newData: Omit<ReminderScheduleData, 'timezone'>) => {
         logger.debug('Schedule data changed in dialog', { userVariableId });
         setCurrentScheduleData(newData);
     }, [userVariableId]);
@@ -120,7 +122,6 @@ export function ReminderDialog({
         return {
             rruleString: schedule.rrule,
             timeOfDay: schedule.time_of_day,
-            timezone: schedule.timezone,
             startDate: schedule.start_date ? new Date(schedule.start_date) : new Date(), // Handle potential null/parse
             endDate: schedule.end_date ? new Date(schedule.end_date) : null,
             isActive: schedule.is_active,
@@ -143,6 +144,7 @@ export function ReminderDialog({
                         key={existingSchedule?.id || 'new'} // Force re-render when schedule changes
                         initialSchedule={initialSchedulerData} // Pass mapped data
                         onChange={handleScheduleChange}
+                        userTimezone={userTimezone}
                     />
                 }
                 <DialogFooter className='flex justify-between w-full pt-4'>
