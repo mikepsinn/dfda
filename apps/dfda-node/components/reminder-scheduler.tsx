@@ -19,7 +19,7 @@ import { format } from 'date-fns'
 export interface ReminderScheduleData {
   rruleString: string; // The generated RRULE string
   timeOfDay: string; // HH:mm format (e.g., "09:00")
-  timezone: string; // IANA timezone name (e.g., "America/New_York")
+  // timezone: string; // Removed
   startDate: Date;
   endDate?: Date | null;
   isActive: boolean;
@@ -28,6 +28,7 @@ export interface ReminderScheduleData {
 interface ReminderSchedulerProps {
   initialSchedule?: Partial<ReminderScheduleData>; // Allow passing partial initial state
   onChange: (schedule: ReminderScheduleData) => void;
+  userTimezone: string; // <-- Accept user timezone as prop
 }
 
 // Simple TimePicker Component (Replace with a proper one if available)
@@ -40,15 +41,13 @@ const SimpleTimePicker = ({ value, onChange }: { value: string, onChange: (value
   />
 );
 
-export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedulerProps) {
+export function ReminderScheduler({ initialSchedule, onChange, userTimezone }: ReminderSchedulerProps) {
   const [freq, setFreq] = useState<number>(RRule.DAILY); // Default to Daily
   const [interval, setInterval] = useState<number>(1);
   const [byWeekday, setByWeekday] = useState<Weekday[]>([]); // For weekly
   const [byMonthDay, setByMonthDay] = useState<number | null>(null); // For monthly
   const [timeOfDay, setTimeOfDay] = useState<string>(initialSchedule?.timeOfDay || "09:00");
-  const [timezone, setTimezone] = useState<string>(
-    initialSchedule?.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'
-  );
+  // const [timezone, setTimezone] = useState<string>(...); // Removed timezone state
   const [startDate, setStartDate] = useState<Date>(initialSchedule?.startDate || new Date());
   const [endDate, setEndDate] = useState<Date | null | undefined>(initialSchedule?.endDate);
   const [isActive, setIsActive] = useState<boolean>(initialSchedule?.isActive === undefined ? true : initialSchedule.isActive);
@@ -57,6 +56,9 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
   useEffect(() => {
       if (initialSchedule?.rruleString) {
           try {
+              // RRULE string itself doesn't usually contain timezone, 
+              // it's interpreted based on DTSTART timezone.
+              // We now get timezone context from the userTimezone prop.
               const rule = rrulestr(initialSchedule.rruleString) as RRule;
               if (rule.options.freq !== undefined) setFreq(rule.options.freq);
               if (rule.options.interval !== undefined) setInterval(rule.options.interval);
@@ -103,12 +105,13 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
       }
        // Also update other fields from initialSchedule if they change
       setTimeOfDay(initialSchedule?.timeOfDay || "09:00");
-      setTimezone(initialSchedule?.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC');
+      // setTimezone(...) // Removed
       setStartDate(initialSchedule?.startDate || new Date());
       setEndDate(initialSchedule?.endDate);
       setIsActive(initialSchedule?.isActive === undefined ? true : initialSchedule.isActive);
 
-  }, [initialSchedule?.rruleString, initialSchedule?.timeOfDay, initialSchedule?.timezone, initialSchedule?.startDate, initialSchedule?.endDate, initialSchedule?.isActive]);
+      // Removed dependency on initialSchedule.timezone
+  }, [initialSchedule?.rruleString, initialSchedule?.timeOfDay, initialSchedule?.startDate, initialSchedule?.endDate, initialSchedule?.isActive]);
 
   // --- Generate RRULE string and notify parent on changes ---
   useEffect(() => {
@@ -117,7 +120,7 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
           freq: freq,
           interval: interval,
           dtstart: startDate, // Include start date in rule
-          tzid: timezone, // Include timezone
+          tzid: userTimezone, // <-- Use the userTimezone prop here
       };
 
       if (freq === RRule.WEEKLY && byWeekday.length > 0) {
@@ -138,13 +141,14 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
       onChange({
           rruleString,
           timeOfDay,
-          timezone,
+          // timezone, // Removed
           startDate,
           endDate,
           isActive,
       });
 
-  }, [freq, interval, byWeekday, byMonthDay, timeOfDay, timezone, startDate, endDate, isActive, onChange]);
+      // Removed timezone from dependencies, added userTimezone
+  }, [freq, interval, byWeekday, byMonthDay, timeOfDay, userTimezone, startDate, endDate, isActive, onChange]);
 
   const handleWeekdayChange = (day: Weekday, checked: boolean | string) => {
       if (checked === true) {
@@ -154,28 +158,6 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
           setByWeekday(byWeekday.filter(d => d.weekday !== day.weekday));
       }
   };
-
-  // Memoize timezone options for performance (optional)
-  const timezones = useMemo(() => {
-      // In a real app, fetch a list of common IANA timezones dynamically
-      // For now, use a basic list + user's current timezone
-      const commonTimezones = [
-         'UTC',
-         'America/New_York',
-         'America/Chicago',
-         'America/Denver',
-         'America/Los_Angeles',
-         'Europe/London',
-         'Europe/Paris',
-         'Asia/Tokyo',
-         'Australia/Sydney'
-      ];
-      const currentUserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      if (currentUserTimezone && !commonTimezones.includes(currentUserTimezone)) {
-          commonTimezones.unshift(currentUserTimezone); // Add user's timezone to the top
-      }
-      return [...new Set(commonTimezones)].sort(); // Ensure unique and sorted
-  }, []);
 
   return (
     <div className="space-y-4 p-4 border rounded-md">
@@ -253,21 +235,10 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
             </div>
          )}
 
-
-        {/* Time of Day & Timezone */} 
+        {/* Time of Day */}
         <div className="grid grid-cols-3 gap-4 items-center">
-            <Label htmlFor="timeOfDay" className="col-span-1">Time</Label>
-            <div className="col-span-2 flex gap-2 items-center flex-wrap">
-               <SimpleTimePicker value={timeOfDay} onChange={setTimeOfDay} />
-               <Select value={timezone} onValueChange={setTimezone}>
-                  <SelectTrigger className="flex-grow min-w-[180px]">
-                     <SelectValue placeholder="Select timezone" />
-                  </SelectTrigger>
-                  <SelectContent>
-                     {timezones.map(tz => <SelectItem key={tz} value={tz}>{tz.replace(/_/g, ' ')}</SelectItem>)} 
-                  </SelectContent>
-               </Select>
-            </div>
+             <Label htmlFor="timeOfDay" className="col-span-1">Time of Day</Label>
+             <SimpleTimePicker value={timeOfDay} onChange={setTimeOfDay} />
         </div>
 
         {/* Start Date */} 
@@ -320,14 +291,10 @@ export function ReminderScheduler({ initialSchedule, onChange }: ReminderSchedul
             </Popover>
         </div>
 
-         {/* Active Toggle */} 
-        <div className="flex items-center space-x-2 justify-between pt-2">
-            <Label htmlFor="isActive" className="cursor-pointer">Reminder Active</Label>
-            <Switch
-                id="isActive"
-                checked={isActive}
-                onCheckedChange={setIsActive}
-            />
+        {/* Is Active */}
+        <div className="flex items-center space-x-2">
+            <Switch id="is-active" checked={isActive} onCheckedChange={setIsActive} />
+            <Label htmlFor="is-active">Reminder Active</Label>
         </div>
     </div>
   );

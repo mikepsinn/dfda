@@ -35,6 +35,7 @@ interface TreatmentDetailClientProps {
     // Expect the full details now, not just summary
     initialTreatmentDetails: FullPatientTreatmentDetail; 
     patientConditions: PatientCondition[];
+    hasExistingRatings: boolean;
 }
 
 // Define state structure for editable ratings
@@ -66,7 +67,8 @@ const getEmojiForRating = (ratingValue: string | null | undefined): string => {
 
 export function TreatmentDetailClient({ 
     initialTreatmentDetails, 
-    patientConditions 
+    patientConditions, 
+    hasExistingRatings
 }: TreatmentDetailClientProps) {
     
     // Move hooks to the top level
@@ -225,7 +227,8 @@ export function TreatmentDetailClient({
             {/* Button to trigger the dialog for adding NEW ratings */}
             <div className="flex justify-center border-t pt-4 mt-4"> 
                  <Button variant="outline" onClick={() => setIsRatingDialogOpen(true)}>
-                     <Edit className="mr-2 h-4 w-4"/>Rate for Another Condition
+                     <Edit className="mr-2 h-4 w-4"/>
+                     {hasExistingRatings ? "Rate for Another Condition" : "Add First Rating"}
                  </Button>
              </div>
 

@@ -16,7 +16,6 @@ CREATE TABLE public.reminder_schedules (
 
   -- --- Time & Timing ---
   time_of_day TIME WITHOUT TIME ZONE NOT NULL, 
-  timezone TEXT NOT NULL, 
 
   -- --- Validity Period ---
   start_date TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -56,7 +55,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON public.reminder_schedules TO authenticat
 -- Add comments to table and columns
 COMMENT ON TABLE public.reminder_schedules IS 'Stores user-defined schedules for reminders, initially for user variables.';
 COMMENT ON COLUMN public.reminder_schedules.rrule IS 'Recurrence rule string following the iCalendar RFC 5545 standard.';
-COMMENT ON COLUMN public.reminder_schedules.timezone IS 'IANA timezone name (e.g., America/New_York) for calculating local trigger times.';
 COMMENT ON COLUMN public.reminder_schedules.next_trigger_at IS 'The next calculated UTC timestamp when the reminder should trigger. Used for efficient querying.';
 COMMENT ON COLUMN public.reminder_schedules.user_variable_id IS 'The specific user variable this reminder schedule is for.';
 

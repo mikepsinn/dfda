@@ -9,6 +9,8 @@ import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { TreatmentRatingsCard } from './treatment-ratings-card'
+import { Button } from '@/components/ui/button'
 
 // Define specific types for fetched data
 /* 
@@ -141,38 +143,8 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
         </CardContent>
       </Card>
 
-      {/* Ratings Section */}
-      <Card>
-         <CardHeader>
-             <CardTitle>Effectiveness Ratings</CardTitle>
-             <CardDescription>Rate how effective this treatment was for specific conditions by clicking the faces.</CardDescription>
-         </CardHeader>
-         <CardContent>
-             {treatmentDetails.treatment_ratings.length > 0 ? (
-                 <ul className="space-y-4">
-                    {treatmentDetails.treatment_ratings.map(rating => (
-                        <li key={rating.id} className="border p-4 rounded-md bg-muted/50">
-                           <p className="font-medium">
-                             For: {rating.patient_conditions?.conditions?.global_variables?.name ?? 'Unknown Condition'}
-                           </p>
-                           <p className="text-sm mt-1">
-                             Rating: <span className="font-semibold">{rating.effectiveness_out_of_ten ?? 'N/A'} / 10</span>
-                           </p>
-                           {rating.review && (
-                             <p className="text-sm text-muted-foreground mt-2 pt-2 border-t">"{rating.review}"</p>
-                           )}
-                        </li>
-                    ))}
-                 </ul>
-             ) : (
-                 <p className="text-muted-foreground text-center py-4">No effectiveness ratings recorded yet.</p>
-             )}
-             <TreatmentDetailClient 
-                initialTreatmentDetails={treatmentDetails} 
-                patientConditions={patientConditions} 
-             />
-         </CardContent>
-      </Card>
+      {/* Ratings Section - Replaced with component */}
+      <TreatmentRatingsCard treatmentDetails={treatmentDetails} patientConditions={patientConditions} />
 
       {/* Side Effects Section */}
       <Card>
@@ -195,6 +167,28 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
               ) : (
                   <p className="text-muted-foreground text-center py-4">No side effects recorded yet.</p>
               )}
+          </CardContent>
+      </Card>
+
+      {/* Reminder Schedule Section */}
+      <Card>
+          <CardHeader>
+              <CardTitle>Reminder Schedule</CardTitle>
+              <CardDescription>Manage reminders for taking this treatment.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+              {/* TODO: Display actual schedule summary here */}
+              <p className="text-sm text-muted-foreground italic">
+                  Schedule details will be displayed here.
+              </p>
+              <div className="flex justify-start">
+                  <Button asChild variant="outline">
+                      <Link href={`./${patientTreatmentId}/edit-schedule`}>
+                          <ArrowLeft className="mr-2 h-4 w-4" />
+                          Edit Schedule
+                      </Link>
+                  </Button>
+              </div>
           </CardContent>
       </Card>
 
