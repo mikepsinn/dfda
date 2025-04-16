@@ -12,7 +12,7 @@ import { Calendar } from "@/components/ui/calendar" // Assuming Shadcn calendar
 import { Switch } from "@/components/ui/switch"
 import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
-import { TimeSelector } from "@/components/time-selector" // Import our new TimeSelector component
+import { TimeSelector } from "./time-selector" // Use local import
 // import { TimeField } from "@/components/ui/time-field" // Commented out - Component not found
 // import { type RRuleOption, getRRuleOptions } from "@/lib/rrule-options" // Commented out - Module not found
 
@@ -112,8 +112,8 @@ export function ReminderScheduler({
       setIsActive(initialSchedule?.isActive === undefined ? true : initialSchedule.isActive);
       setDefaultValue(initialSchedule?.default_value);
 
-      // Removed dependency on initialSchedule.timezone
-  }, [initialSchedule?.rruleString, initialSchedule?.timeOfDay, initialSchedule?.startDate, initialSchedule?.endDate, initialSchedule?.isActive]);
+      // Include all dependencies
+  }, [initialSchedule?.rruleString, initialSchedule?.timeOfDay, initialSchedule?.startDate, initialSchedule?.endDate, initialSchedule?.isActive, initialSchedule?.default_value]);
 
   // --- Generate RRULE string and notify parent on changes ---
   useEffect(() => {

@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useToast } from "@/components/ui/use-toast"
-import { ReminderScheduler, type ReminderScheduleData } from '@/components/reminder-scheduler'
+import { ReminderScheduler, type ReminderScheduleData } from '@/components/reminders/reminder-scheduler'
 import {
     upsertReminderScheduleAction,
     deleteReminderScheduleAction,

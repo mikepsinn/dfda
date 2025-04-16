@@ -1,7 +1,7 @@
 'use client' // Need client component to handle scheduler's onChange
 
 import React, { useState, useCallback } from 'react'
-import { ReminderScheduler, type ReminderScheduleData } from '@/components/reminder-scheduler'
+import { ReminderScheduler, type ReminderScheduleData } from '@/components/reminders'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { useToast } from '@/components/ui/use-toast'

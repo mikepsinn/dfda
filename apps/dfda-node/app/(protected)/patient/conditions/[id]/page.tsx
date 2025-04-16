@@ -21,26 +21,13 @@ import {
 import { EditConditionDialog } from "./components/edit-condition-dialog"
 import { DeleteConditionDialog } from "./components/delete-condition-dialog"
 import { RateTreatmentDialog } from "./components/rate-treatment-dialog"
-import { LogSeverityDialog } from "./components/log-severity-dialog"
-import { ManageRemindersDialog } from "./components/manage-reminders-dialog"
 import { EditNotesDialog } from "./components/edit-notes-dialog"
 
 // Import List Components
 import { RatingsList } from "./components/ratings-list"
-import { RemindersList } from "./components/reminders-list"
-
-// TODO: Import actions/components for treatments, reminders, logging
-// import { getTreatmentsForPatientConditionAction } from "@/app/actions/patient-treatments"; // Needs creation
-// import { getReminderSchedulesForUserVariableAction } from "@/app/actions/reminder-schedules";
-// import { PatientTreatmentsList } from "./components/PatientTreatmentsList"; // Needs creation
-// import { ConditionReminders } from "./components/ConditionReminders"; // Needs creation
 
 const logger = createLogger("patient-condition-detail-page")
 
-// Remove the separate interface
-// interface PatientConditionDetailPageProps {
-//   params: { id: string }; // id here is patient_condition_id
-// }
 
 // Destructure params directly in the signature
 export default async function PatientConditionDetailPage({ params }: { params: { id: string } }) {
@@ -159,29 +146,6 @@ export default async function PatientConditionDetailPage({ params }: { params: {
           </CardContent>
       </Card>
 
-      {/* Condition Tracking & Reminders Card */}
-      <Card>
-         <CardHeader>
-            <CardTitle>Tracking & Reminders</CardTitle>
-            <CardDescription>Log severity and manage reminders for this condition.</CardDescription>
-         </CardHeader>
-         <CardContent>
-            <div className="mb-4">
-                 <LogSeverityDialog patientCondition={condition} />
-             </div>
-             <Suspense fallback={<p className="text-muted-foreground">Loading reminders...</p>}> 
-                   <RemindersList reminders={conditionReminders} conditionName={condition.condition_name} /> 
-             </Suspense>
-               <div className="mt-4">
-                 <ManageRemindersDialog 
-                   userVariableId={condition.condition_id!} 
-                   conditionName={condition.condition_name}
-                 >
-                    <Button variant="outline">Manage Reminders</Button>
-                 </ManageRemindersDialog>
-               </div>
-          </CardContent>
-      </Card>
 
        {/* Notes Card - Only shown if notes exist */}
        {condition.notes && (
