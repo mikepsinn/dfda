@@ -22,12 +22,16 @@ import { useRouter } from "next/navigation"
 const logger = createLogger("add-treatment-dialog")
 
 interface AddTreatmentDialogProps {
-  userId: string
-  onSuccess?: () => void;
+  userId: string;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
-export function AddTreatmentDialog({ userId, onSuccess }: AddTreatmentDialogProps) {
-  const [open, setOpen] = useState(false)
+export function AddTreatmentDialog({ 
+  userId, 
+  open, 
+  onOpenChange
+}: AddTreatmentDialogProps) {
   const [selectedTreatment, setSelectedTreatment] = useState<{ id: string; name: string } | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
@@ -45,14 +49,14 @@ export function AddTreatmentDialog({ userId, onSuccess }: AddTreatmentDialogProp
         toast({ title: "Missing Treatment", description: "Please select a treatment.", variant: "destructive" });
         return;
     }
-
+    
     setIsLoading(true);
 
     try {
-      logger.info("Calling addSinglePatientTreatmentAction...", { userId, treatmentId: selectedTreatment.id });
+      logger.info("Calling addSinglePatientTreatmentAction...", { patientId: userId, treatmentId: selectedTreatment.id });
       
       const result = await addSinglePatientTreatmentAction({ 
-         patient_id: userId, 
+         patient_id: userId,
          treatment_id: selectedTreatment.id 
       });
 
@@ -71,7 +75,7 @@ export function AddTreatmentDialog({ userId, onSuccess }: AddTreatmentDialogProp
     } catch (error: any) {
       logger.error("Error in handleSubmit", { 
         error: error?.message ?? String(error),
-        userId, 
+        userId,
         treatmentId: selectedTreatment?.id, 
       })
       
@@ -86,7 +90,7 @@ export function AddTreatmentDialog({ userId, onSuccess }: AddTreatmentDialogProp
   }
 
   const handleOpenChange = (isOpen: boolean) => {
-    setOpen(isOpen)
+    onOpenChange(isOpen)
     if (!isOpen) {
       logger.info("Dialog closed, resetting state");
       setSelectedTreatment(null)
