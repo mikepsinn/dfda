@@ -17,6 +17,7 @@ import { Plus } from "lucide-react"
 import { TreatmentSearch } from "@/components/treatment-search"
 import { createLogger } from "@/lib/logger"
 import { addSinglePatientTreatmentAction } from "@/app/actions/patientTreatments"
+import { useRouter } from "next/navigation"
 
 const logger = createLogger("add-treatment-dialog")
 
@@ -30,6 +31,7 @@ export function AddTreatmentDialog({ userId, onSuccess }: AddTreatmentDialogProp
   const [selectedTreatment, setSelectedTreatment] = useState<{ id: string; name: string } | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,11 +64,9 @@ export function AddTreatmentDialog({ userId, onSuccess }: AddTreatmentDialogProp
 
       toast({ title: "Treatment Added", description: `${selectedTreatment.name} added successfully.` });
 
-      if (onSuccess) {
-        onSuccess();
-      }
+      router.refresh()
       
-      handleOpenChange(false);
+      router.push(`/patient/treatments/${newPatientTreatmentId}`);
 
     } catch (error: any) {
       logger.error("Error in handleSubmit", { 
