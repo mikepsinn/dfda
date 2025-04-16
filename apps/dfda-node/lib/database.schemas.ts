@@ -1609,6 +1609,7 @@ export const publicReminderNotificationsRelationshipsSchemaSchema = z.tuple([
 
 export const publicReminderSchedulesRowSchemaSchema = z.object({
   created_at: z.string().nullable(),
+  default_value: z.number().nullable(),
   end_date: z.string().nullable(),
   id: z.string(),
   is_active: z.boolean(),
@@ -1625,6 +1626,7 @@ export const publicReminderSchedulesRowSchemaSchema = z.object({
 
 export const publicReminderSchedulesInsertSchemaSchema = z.object({
   created_at: z.string().optional().nullable(),
+  default_value: z.number().optional().nullable(),
   end_date: z.string().optional().nullable(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
@@ -1641,6 +1643,7 @@ export const publicReminderSchedulesInsertSchemaSchema = z.object({
 
 export const publicReminderSchedulesUpdateSchemaSchema = z.object({
   created_at: z.string().optional().nullable(),
+  default_value: z.number().optional().nullable(),
   end_date: z.string().optional().nullable(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),

@@ -27,6 +27,9 @@ export interface GeneratedNavTree {
   readonly 'patient_treatments': NavItem;
   readonly 'patient_treatments_patienttreatmentid': NavItem;
   readonly 'patient_treatments_patienttreatmentid_edit_schedule': NavItem;
+  readonly 'patient_treatments_patienttreatmentid_ratings': NavItem;
+  readonly 'patient_treatments_patienttreatmentid_schedule': NavItem;
+  readonly 'patient_treatments_patienttreatmentid_side_effects': NavItem;
   readonly 'patient_trial_details_id': NavItem;
   readonly 'patient_trial_payment_id': NavItem;
   readonly 'privacy': NavItem;
@@ -188,6 +191,24 @@ export const navigationTreeObject: GeneratedNavTree = {
     "href": "/patient/treatments/[patientTreatmentId]/edit-schedule",
     "description": "Modify the schedule for a specific patient's treatment plan.",
     "emoji": "📅"
+  },
+  "patient_treatments_patienttreatmentid_ratings": {
+    "title": "Treatment Ratings",
+    "href": "/patient/treatments/[patientTreatmentId]/ratings",
+    "description": "View and manage ratings for this treatment.",
+    "emoji": "⭐"
+  },
+  "patient_treatments_patienttreatmentid_schedule": {
+    "title": "Treatment Schedule",
+    "href": "/patient/treatments/[patientTreatmentId]/schedule",
+    "description": "View and manage the schedule for this treatment.",
+    "emoji": "📅"
+  },
+  "patient_treatments_patienttreatmentid_side_effects": {
+    "title": "Side Effects",
+    "href": "/patient/treatments/[patientTreatmentId]/side-effects",
+    "description": "View and manage reported side effects for this treatment.",
+    "emoji": "💊"
   },
   "patient_trial_details_id": {
     "title": "Trial Details",
