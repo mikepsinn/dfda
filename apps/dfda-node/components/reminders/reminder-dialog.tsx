@@ -23,7 +23,7 @@ export type ReminderDialogProps = {
     variableName: string;
     existingSchedule: ReminderSchedule | null; // Schedule to edit, or null for new
     userTimezone: string;
-    unitName?: string; // Add unit information
+    unitName: string; // Add unit information
 };
 
 export function ReminderDialog({ 

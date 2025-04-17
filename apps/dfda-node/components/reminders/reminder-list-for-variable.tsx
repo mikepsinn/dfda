@@ -12,7 +12,7 @@ interface ReminderListProps {
   userId: string
   variableId: string
   variableName: string
-  unitName?: string
+  unitName: string
   userTimezone: string
 }
 

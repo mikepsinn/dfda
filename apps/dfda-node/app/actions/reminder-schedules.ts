@@ -117,7 +117,12 @@ export async function getAllReminderSchedulesForUserAction(userId: string): Prom
                 global_variables (
                     id,
                     name,
-                    variable_category_id
+                    variable_category_id,
+                    default_unit_id,
+                    default_unit:default_unit_id(
+                        id,
+                        abbreviated_name
+                    )
                 ),
                 preferred_unit_id,
                 units:preferred_unit_id (
