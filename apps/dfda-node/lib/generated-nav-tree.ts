@@ -182,7 +182,7 @@ export const navigationTreeObject: GeneratedNavTree = {
     "emoji": "💊"
   },
   "patient_reminders": {
-    "title": "Patient Reminders",
+    "title": "Reminders",
     "href": "/patient/reminders",
     "description": "View and manage reminders for patients.",
     "emoji": "⏰"

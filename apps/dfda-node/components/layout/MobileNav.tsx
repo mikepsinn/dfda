@@ -54,14 +54,17 @@ export function MobileNav({ navItems }: MobileNavProps) {
           </SheetHeader>
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium py-2 hover:text-primary"
-                onClick={() => setIsOpen(false)} // Close sheet on item click
-              >
-                {item.title}
-              </Link>
+              !item.hideInNav && (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-medium py-2 hover:text-primary flex items-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.emoji && <span className="mr-2">{item.emoji}</span>}
+                  {item.title}
+                </Link>
+              )
             ))}
           </nav>
         </SheetContent>

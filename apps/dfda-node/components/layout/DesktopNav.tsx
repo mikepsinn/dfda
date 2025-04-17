@@ -29,13 +29,16 @@ export function DesktopNav({
     <nav className="hidden md:flex gap-6 items-center"> {/* Hide on mobile */}
       {/* Always show Primary Nav Items */}
       {primaryNavItems.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="text-sm font-medium hover:underline"
-        >
-          {item.title}
-        </Link>
+        !item.hideInNav && (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="text-sm font-medium hover:underline flex items-center"
+          >
+            {item.emoji && <span className="mr-1">{item.emoji}</span>}
+            {item.title}
+          </Link>
+        )
       ))}
 
       {/* Conditionally show "More" dropdown only when logged out */}
@@ -53,9 +56,14 @@ export function DesktopNav({
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             {secondaryNavItems.map((item) => (
-              <DropdownMenuItem key={item.href} asChild>
-                <Link href={item.href}>{item.title}</Link>
-              </DropdownMenuItem>
+              !item.hideInDropdown && (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link href={item.href} className="flex items-center">
+                    {item.emoji && <span className="mr-2">{item.emoji}</span>}
+                    {item.title}
+                  </Link>
+                </DropdownMenuItem>
+              )
             ))}
           </DropdownMenuContent>
         </DropdownMenu>

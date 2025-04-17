@@ -53,6 +53,7 @@ export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems 
               <DropdownMenuItem key={item.href} asChild>
                 <Link href={item.href} className="flex items-center">
                   {item.icon && <item.icon className="mr-2 h-4 w-4" />} 
+                  {item.emoji && <span className="mr-2">{item.emoji}</span>}
                   <span>{item.title}</span>
                 </Link>
               </DropdownMenuItem>
