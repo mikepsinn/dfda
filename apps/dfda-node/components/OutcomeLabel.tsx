@@ -1,32 +1,32 @@
 import React from 'react';
 import { cn } from "@/lib/utils"; // Import cn utility
 
-interface OutcomeValue {
+export interface OutcomeValue {
   percentage: number;
   absolute?: string; // e.g., "-69 mg/dL"
   nnh?: number;
 }
 
-interface OutcomeItem {
+export interface OutcomeItem {
   name: string;
   baseline?: string; // e.g., "(baseline: 160 mg/dL)"
   value: OutcomeValue;
   isPositive?: boolean; // Green if true, Red if false, Amber if undefined (for side effects)
 }
 
-interface OutcomeCategory {
+export interface OutcomeCategory {
   title: string;
   items: OutcomeItem[];
   isSideEffectCategory?: boolean; // To apply specific styling/logic for side effects
 }
 
-interface FooterMetadata {
+export interface FooterMetadata {
   sourceDescription: string;
   lastUpdated: string;
   nnhDescription?: string;
 }
 
-interface OutcomeLabelProps {
+export interface OutcomeLabelProps {
   title: string;
   subtitle?: string; // e.g., "Lipid-lowering agent"
   tag?: string; // Optional tag, e.g., "Drug Class"

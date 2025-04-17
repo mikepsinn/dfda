@@ -3,7 +3,7 @@ import { ArrowLeft, Beaker, FileText, BarChart, Search, Download, Share2, Code }
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { OutcomeLabelsTabsWrapper } from "@/components/OutcomeLabelsTabsWrapper"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { OutcomeLabelSearch } from "@/components/OutcomeLabelSearch"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
 
@@ -176,13 +176,8 @@ export default function OutcomeLabels() {
                 <CardDescription>Browse by category or search for specific interventions</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="mb-6">
-                  <div className="relative">
-                    <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                    <Input placeholder="Search for a medication, supplement, or food..." className="pl-8" />
-                  </div>
-                </div>
-
+                <OutcomeLabelSearch />
+                
                 <OutcomeLabelsTabsWrapper />
 
                 <div className="mt-6 flex justify-between items-center">

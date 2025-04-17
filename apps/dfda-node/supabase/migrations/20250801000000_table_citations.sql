@@ -48,11 +48,11 @@ CREATE INDEX idx_citations_url ON citations(url);
 CREATE UNIQUE INDEX idx_unique_citations_doi ON citations(doi) WHERE doi IS NOT NULL;
 CREATE UNIQUE INDEX idx_unique_citations_pmid ON citations(pmid) WHERE pmid IS NOT NULL;
 
--- 4. Add Policies (Example: Allow authenticated users to read, restrict writes)
+-- 4. Add Policies (Allow public read access)
 -- Adjust policies based on your actual application needs
-CREATE POLICY "Allow read access to authenticated users" ON citations
+CREATE POLICY "Allow public read access" ON citations
   FOR SELECT
-  USING (auth.role() = 'authenticated');
+  USING (true);
 
 -- Example: Allow admin role (or specific service role) to insert/update/delete
 -- CREATE POLICY "Allow admin management access" ON citations

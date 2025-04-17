@@ -74,11 +74,10 @@ ON global_variable_relationships (
 WHERE condition_id IS NULL;
 
 
--- 4. Add Policies (Example: Allow authenticated users to read, restrict writes)
--- Adjust policies based on your actual application needs
-CREATE POLICY "Allow read access to authenticated users" ON global_variable_relationships
+-- 4. Add Policies (Allow public read access)
+CREATE POLICY "Allow public read access" ON global_variable_relationships
   FOR SELECT
-  USING (auth.role() = 'authenticated');
+  USING (true);
 
 -- Example: Allow admin role (or specific service role) to insert/update/delete
 -- CREATE POLICY "Allow admin management access" ON global_variable_relationships
