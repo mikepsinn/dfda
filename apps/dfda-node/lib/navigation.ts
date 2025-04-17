@@ -24,7 +24,8 @@ type UserRole = Database["public"]["Enums"]["user_role_enum"]
 const patientNavItems: NavItem[] = [
   navigationTreeObject.patient, // Uses generated title (e.g., "Patient") and href
   navigationTreeObject.patient_conditions,
-  navigationTreeObject.patient_treatments
+  navigationTreeObject.patient_treatments,
+  navigationTreeObject.patient_reminders,
 ]
 
 const providerNavItems: NavItem[] = [

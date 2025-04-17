@@ -90,11 +90,10 @@ export function ReminderListForVariable({
           </Button>
         </div>
       ) : (
-        <ReminderCardList 
-            schedules={schedules}
-            unitName={unitName}
-            emoji={emoji}
-            onClick={handleEditClick}
+        <ReminderCardList
+          schedules={schedules}
+          unitName={unitName}
+          onClick={handleEditClick}
         />
       )}
 

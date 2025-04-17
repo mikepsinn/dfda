@@ -122,12 +122,10 @@ export function ReminderListForAllVariables({
               <CardContent className="p-4 pt-0">
                 <div className="grid gap-3">
                   {group.schedules.map((schedule: ReminderSchedule) => (
-                    <ReminderCard
+                    <ReminderCard 
                       key={schedule.id}
                       schedule={schedule}
                       unitName={group.unitName}
-                      emoji={group.emoji}
-                      onClick={() => handleVariableClick(group.id)}
                     />
                   ))}
                 </div>

@@ -75,8 +75,10 @@ async function getReminderSchedulesForUserVariableAction(
 
 // Ensure the component is async if you need to await inside
 export default async function VariableRemindersPage({ params }: { params: { userVariableId: string } }) {
+
+  const { userVariableId } = await params
   
-  logger.info('Rendering Variable Reminders Page', { userVariableId: params.userVariableId });
+  logger.info('Rendering Variable Reminders Page', { userVariableId });
 
   const supabase = await createClient()
   
@@ -106,12 +108,12 @@ export default async function VariableRemindersPage({ params }: { params: { user
           abbreviated_name
         )
       `)
-      .eq('id', params.userVariableId) // Use directly
+      .eq('id', userVariableId) // Use directly
       .eq('user_id', userId)
       .single();
   
   if (uvError || !userVariable) {
-    logger.error('Error fetching user variable details or not found', { userVariableId: params.userVariableId, error: uvError });
+    logger.error('Error fetching user variable details or not found', { userVariableId: userVariableId, error: uvError });
     notFound();
   }
 
@@ -119,14 +121,14 @@ export default async function VariableRemindersPage({ params }: { params: { user
   // const unitName = userVariable.units?.abbreviated_name || '' // Removed unused variable
   // const variableCategoryId = userVariable.global_variables?.variable_category_id // Not used currently
 
-  // Fetch schedules using the specific ID - Use params.userVariableId
+  // Fetch schedules using the specific ID - Use userVariableId
   const scheduleData = await getReminderSchedulesForUserVariableAction(
       userId,
       userVariable.global_variable_id // Fetch by global ID, not user variable ID
   );
 
   if (scheduleData === null) { // Check explicitly for null (indicating fetch error)
-    logger.error('Failed to fetch schedule data due to error', { userVariableId: params.userVariableId });
+    logger.error('Failed to fetch schedule data due to error', { userVariableId });
     // Decide how to handle - show error message or redirect?
     // For now, let's use notFound()
     notFound(); 

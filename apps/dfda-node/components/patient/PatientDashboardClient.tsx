@@ -3,7 +3,8 @@
 import React, { useState /*, useEffect */ } from 'react'
 // Remove unused redirect
 // import { redirect } from "next/navigation"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+// Removed unused Card component imports
+// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { HeartPulse, Pill /*, Loader2 */ } from "lucide-react"

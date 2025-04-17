@@ -19,16 +19,17 @@ export interface GeneratedNavTree {
   readonly 'outcome_labels': NavItem;
   readonly 'patient': NavItem;
   readonly 'patient_conditions': NavItem;
-  readonly 'patient_conditions_id': NavItem;
+  readonly 'patient_conditions_patientconditionid': NavItem;
+  readonly 'patient_conditions_patientconditionid_treatment_ratings': NavItem;
   readonly 'patient_data_submission': NavItem;
   readonly 'patient_join_trial_treatment_condition': NavItem;
   readonly 'patient_onboarding': NavItem;
   readonly 'patient_onboarding_treatments': NavItem;
+  readonly 'patient_reminders': NavItem;
+  readonly 'patient_reminders_uservariableid': NavItem;
   readonly 'patient_treatments': NavItem;
   readonly 'patient_treatments_patienttreatmentid': NavItem;
-  readonly 'patient_treatments_patienttreatmentid_edit_schedule': NavItem;
   readonly 'patient_treatments_patienttreatmentid_ratings': NavItem;
-  readonly 'patient_treatments_patienttreatmentid_schedule': NavItem;
   readonly 'patient_treatments_patienttreatmentid_side_effects': NavItem;
   readonly 'patient_trial_details_id': NavItem;
   readonly 'patient_trial_payment_id': NavItem;
@@ -139,16 +140,22 @@ export const navigationTreeObject: GeneratedNavTree = {
     "emoji": "🧑‍⚕️"
   },
   "patient_conditions": {
-    "title": "Patient Conditions",
+    "title": "Conditions",
     "href": "/patient/conditions",
     "description": "View your conditions.",
     "emoji": "😷"
   },
-  "patient_conditions_id": {
-    "title": "Condition Details",
-    "href": "/patient/conditions/[id]",
-    "description": "View condition details.",
-    "emoji": "ℹ️"
+  "patient_conditions_patientconditionid": {
+    "title": "Patient Condition Details",
+    "href": "/patient/conditions/[patientConditionId]",
+    "description": "View and manage details for a specific patient's condition.",
+    "emoji": "🩺"
+  },
+  "patient_conditions_patientconditionid_treatment_ratings": {
+    "title": "Treatment Ratings",
+    "href": "/patient/conditions/[patientConditionId]/treatment-ratings",
+    "description": "View and manage treatment ratings for a specific patient's condition.",
+    "emoji": "⭐"
   },
   "patient_data_submission": {
     "title": "Data Submission",
@@ -174,6 +181,18 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View available treatments.",
     "emoji": "💊"
   },
+  "patient_reminders": {
+    "title": "Patient Reminders",
+    "href": "/patient/reminders",
+    "description": "View and manage reminders for patients.",
+    "emoji": "⏰"
+  },
+  "patient_reminders_uservariableid": {
+    "title": "Reminder Details",
+    "href": "/patient/reminders/[userVariableId]",
+    "description": "View and manage details for a specific reminder.",
+    "emoji": "🗓️"
+  },
   "patient_treatments": {
     "title": "Treatments",
     "href": "/patient/treatments",
@@ -186,23 +205,11 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View treatment details.",
     "emoji": "ℹ️"
   },
-  "patient_treatments_patienttreatmentid_edit_schedule": {
-    "title": "Edit Treatment Schedule",
-    "href": "/patient/treatments/[patientTreatmentId]/edit-schedule",
-    "description": "Modify the schedule for a specific patient's treatment plan.",
-    "emoji": "📅"
-  },
   "patient_treatments_patienttreatmentid_ratings": {
     "title": "Treatment Ratings",
     "href": "/patient/treatments/[patientTreatmentId]/ratings",
     "description": "View and manage ratings for this treatment.",
     "emoji": "⭐"
-  },
-  "patient_treatments_patienttreatmentid_schedule": {
-    "title": "Treatment Schedule",
-    "href": "/patient/treatments/[patientTreatmentId]/schedule",
-    "description": "View and manage the schedule for this treatment.",
-    "emoji": "📅"
   },
   "patient_treatments_patienttreatmentid_side_effects": {
     "title": "Side Effects",

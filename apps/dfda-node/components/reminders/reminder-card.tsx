@@ -5,14 +5,12 @@ import { formatTime } from '@/lib/utils'
 import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
 import { RRule, rrulestr, Weekday } from 'rrule'
 
-export type ReminderCardProps = {
+interface ReminderCardProps {
   schedule: ReminderSchedule
   unitName: string
-  emoji: string
-  onClick?: () => void
 }
 
-export function ReminderCard({ schedule, unitName, emoji, onClick }: ReminderCardProps) {
+export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
   const formatDays = (days: Weekday[] | number[]) => {
     const dayNames = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
     
@@ -72,8 +70,7 @@ export function ReminderCard({ schedule, unitName, emoji, onClick }: ReminderCar
 
   return (
     <Card 
-      className="overflow-hidden hover:bg-muted/50 transition-colors cursor-pointer" 
-      onClick={onClick}
+      className="overflow-hidden hover:bg-muted/50 transition-colors"
     >
       <CardContent className="p-4">
         <div className="flex items-start justify-between">

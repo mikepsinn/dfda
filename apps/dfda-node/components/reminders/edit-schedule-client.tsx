@@ -27,7 +27,6 @@ interface EditScheduleClientProps {
     variableName: string;
     userTimezone: string;
     userId: string;
-    backLink?: string;
     itemId?: string; // Optional ID for reference (e.g., patientTreatmentId)
 }
 
@@ -37,7 +36,6 @@ export function EditScheduleClient({
     variableName, 
     userTimezone,
     userId,
-    backLink,
     itemId
 }: EditScheduleClientProps) {
   const [schedules, setSchedules] = useState<(ReminderScheduleData & { id: string })[]>(scheduleData || []);

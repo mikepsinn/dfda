@@ -129,7 +129,6 @@ export function ReminderInlineEditor({
         <ReminderCardList 
            schedules={schedules}
            unitName={unitName}
-           emoji={emoji}
            onClick={handleEditClick}
         />
       )}
