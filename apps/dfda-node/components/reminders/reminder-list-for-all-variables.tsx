@@ -18,7 +18,8 @@ interface ReminderListForAllVariablesProps {
 interface GroupedSchedule {
   id: string
   name: string
-  unitName?: string
+  emoji: string
+  unitName: string
   schedules: ReminderSchedule[]
 }
 
@@ -58,28 +59,21 @@ export function ReminderListForAllVariables({
     router.push(`/patient/reminders/${variableId}`)
   }
 
-  const handleEditReminder = (scheduleId: string, variableId: string) => {
-    router.push(`/patient/reminders/${variableId}`)
-  }
-
-  const handleDeleteReminder = (scheduleId: string) => {
-    // Just navigate to the variable page where they can delete it
-    const schedule = schedules.find(s => s.id === scheduleId)
-    if (schedule) {
-      router.push(`/patient/reminders/${schedule.user_variables.id}`)
-    }
-  }
-
   // Group schedules by variable
   const groupedSchedules = schedules.reduce<Record<string, GroupedSchedule>>((acc, schedule) => {
     const varId = schedule.user_variables.id
     const varName = schedule.user_variables.global_variables.name
+    const emoji = schedule.user_variables.global_variables.emoji || '⏰' // Default to clock emoji if none provided
+    const unitName = schedule.user_variables.units?.abbreviated_name || 
+                     schedule.user_variables.global_variables.default_unit?.abbreviated_name || 
+                     '' // Empty string if no unit available
     
     if (!acc[varId]) {
       acc[varId] = {
         id: varId,
         name: varName,
-        unitName: schedule.user_variables.units?.abbreviated_name || schedule.user_variables.global_variables.default_unit?.abbreviated_name,
+        emoji: emoji,
+        unitName: unitName,
         schedules: []
       }
     }
@@ -106,8 +100,14 @@ export function ReminderListForAllVariables({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {Object.values(groupedSchedules).map((group: GroupedSchedule) => (
             <Card key={group.id} className="overflow-hidden">
-              <CardHeader className="p-4 pb-2 cursor-pointer" onClick={() => handleVariableClick(group.id)}>
-                <CardTitle className="text-md font-medium">{group.name}</CardTitle>
+              <CardHeader 
+                className="p-4 pb-2 cursor-pointer hover:bg-muted/10 transition-colors" 
+                onClick={() => handleVariableClick(group.id)}
+              >
+                <CardTitle className="text-md font-medium">
+                  {group.emoji && <span className="mr-2">{group.emoji}</span>}
+                  {group.name}
+                </CardTitle>
               </CardHeader>
               
               <CardContent className="p-4 pt-0">
@@ -117,8 +117,8 @@ export function ReminderListForAllVariables({
                       key={schedule.id}
                       schedule={schedule}
                       unitName={group.unitName}
-                      onEdit={() => handleEditReminder(schedule.id, group.id)}
-                      onDelete={() => handleDeleteReminder(schedule.id)}
+                      emoji={group.emoji}
+                      onClick={() => handleVariableClick(group.id)}
                     />
                   ))}
                 </div>

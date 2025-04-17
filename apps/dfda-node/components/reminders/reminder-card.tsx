@@ -1,33 +1,19 @@
 'use client'
 
-import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Edit, Trash2, Clock } from 'lucide-react'
+import { Clock } from 'lucide-react'
 import { formatTime } from '@/lib/utils'
-import { 
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle
-} from '@/components/ui/alert-dialog'
 import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
 import { RRule, rrulestr, Weekday } from 'rrule'
 
 export type ReminderCardProps = {
   schedule: ReminderSchedule
-  unitName?: string
-  onEdit: (scheduleId: string) => void
-  onDelete: (scheduleId: string) => void
+  unitName: string
+  emoji: string
+  onClick?: () => void
 }
 
-export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
-
-
+export function ReminderCard({ schedule, unitName, emoji, onClick }: ReminderCardProps) {
   const formatDays = (days: Weekday[] | number[]) => {
     const dayNames = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
     
@@ -85,15 +71,19 @@ export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
     }
   }
 
-
-
   return (
-    <Card className="overflow-hidden">
+    <Card 
+      className="overflow-hidden hover:bg-muted/50 transition-colors cursor-pointer" 
+      onClick={onClick}
+    >
       <CardContent className="p-4">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">
-            <Clock className="h-4 w-4 text-muted-foreground" />
+            <span className="text-lg">{emoji}</span>
             <span className="text-lg font-medium">{formatTime(schedule.time_of_day)}</span>
+          </div>
+          <div className="text-xs bg-primary/10 rounded-full px-2 py-0.5">
+            {schedule.is_active ? 'Active' : 'Inactive'}
           </div>
         </div>
         
@@ -103,11 +93,10 @@ export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
         
         {schedule.default_value !== undefined && schedule.default_value !== null && (
           <div className="mt-2 text-sm">
-            Default value: {schedule.default_value}{unitName ? ` ${unitName}` : ''}
+            Default value: {schedule.default_value} {unitName}
           </div>
         )}
       </CardContent>
-
     </Card>
   )
 } 
