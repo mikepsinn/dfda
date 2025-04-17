@@ -1,5 +1,6 @@
 import { FileText } from "lucide-react"
 import { HowItWorksStep } from "../HowItWorksStep"
+import { OutcomeLabel } from "@/components/OutcomeLabel"
 
 export function Step2ViewOutcomeLabels() {
   return (
@@ -15,89 +16,20 @@ export function Step2ViewOutcomeLabels() {
         "Read about experiences from patients like you",
       ]}
       preview={
-        <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
-          <div className="space-y-4">
-            <div className="font-bold text-lg border-b pb-2">Klotho-Increasing Gene Therapy</div>
-            <div className="space-y-4">
-              <div>
-                <div className="font-medium text-sm mb-2">Change from Baseline (6 months)</div>
-                <div className="space-y-3">
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Cognitive Function (ADAS-Cog)</span>
-                      <span className="text-green-600">+28%</span>
-                    </div>
-                    <div className="h-3 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-3 bg-green-500 rounded-full" style={{ width: "28%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Memory Recall</span>
-                      <span className="text-green-600">+35%</span>
-                    </div>
-                    <div className="h-3 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-3 bg-green-500 rounded-full" style={{ width: "35%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Executive Function</span>
-                      <span className="text-green-600">+22%</span>
-                    </div>
-                    <div className="h-3 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-3 bg-green-500 rounded-full" style={{ width: "22%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Hippocampal Volume</span>
-                      <span className="text-green-600">+15%</span>
-                    </div>
-                    <div className="h-3 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-3 bg-green-500 rounded-full" style={{ width: "15%" }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="font-medium text-sm mb-2">Side Effects</div>
-                <div className="space-y-2 mt-1">
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Immune Response</span>
-                      <span>12%</span>
-                    </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-2 bg-amber-400 rounded-full" style={{ width: "12%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Headache</span>
-                      <span>9%</span>
-                    </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-2 bg-amber-400 rounded-full" style={{ width: "9%" }}></div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-xs">
-                      <span>Fatigue</span>
-                      <span>7%</span>
-                    </div>
-                    <div className="h-2 w-full bg-gray-200 rounded-full mt-1">
-                      <div className="h-2 bg-amber-400 rounded-full" style={{ width: "7%" }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="text-xs text-primary font-medium cursor-pointer hover:underline">
-                View full outcome label →
-              </div>
-            </div>
-          </div>
-        </div>
+        <OutcomeLabel
+          title="Klotho-Increasing Gene Therapy"
+          outcomeData={[
+            { name: "Cognitive Function (ADAS-Cog)", value: 28, positive: true },
+            { name: "Memory Recall", value: 35, positive: true },
+            { name: "Executive Function", value: 22, positive: true },
+            { name: "Hippocampal Volume", value: 15, positive: true },
+          ]}
+          sideEffectsData={[
+            { name: "Immune Response", value: 12 },
+            { name: "Headache", value: 9 },
+            { name: "Fatigue", value: 7 },
+          ]}
+        />
       }
       reverse={true}
     />

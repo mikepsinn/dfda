@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server"
 import { notFound } from 'next/navigation'
 import { logger } from '@/lib/logger'
 import { EditScheduleClient, type ReminderScheduleData } from '@/components/reminders'
-import { parseISO } from 'date-fns'
+// import { parseISO } from 'date-fns' // Removed unused import
 import { Database } from '@/lib/database.types'
 import { 
   Breadcrumb, 
@@ -14,100 +14,6 @@ import {
   BreadcrumbPage, 
   BreadcrumbSeparator 
 } from "@/components/ui/breadcrumb"
-
-// Function to fetch necessary variable data and potentially the schedule
-async function fetchVariableAndScheduleData(userVariableId: string, userId: string) {
-    const supabase = await createClient();
-
-    // 1. Fetch Variable data (including name) AND Profile Timezone in parallel
-    const [variableResult, profileResult] = await Promise.all([
-        supabase
-            .from('user_variables')
-            .select(`
-                id,
-                global_variables!inner(
-                    id,
-                    name
-                ),
-                preferred_unit_id,
-                units:preferred_unit_id(id, abbreviated_name)
-            `)
-            .eq('id', userVariableId)
-            .eq('user_id', userId)
-            .single(),
-        supabase
-            .from('profiles')
-            .select('timezone')
-            .eq('id', userId)
-            .single()
-    ]);
-
-    const { data: variableData, error: variableError } = variableResult;
-    const { data: profileData, error: profileError } = profileResult;
-
-    if (profileError) {
-        logger.error('Error fetching user profile for timezone', { userId, error: profileError.message });
-        return null; 
-    }
-    
-    const userTimezone = profileData?.timezone || 'UTC';
-    logger.info('Fetched user timezone', { userId, timezone: userTimezone });
-
-    if (variableError) {
-        logger.error('Error fetching user variable data for schedule', { userVariableId, userId, error: variableError.message });
-        return null;
-    }
-    
-    if (!variableData) {
-        logger.warn('User variable not found', { userVariableId, userId });
-        return null;
-    }
-
-    const variableName = variableData.global_variables?.name ?? 'Unknown Variable';
-
-    // 2. Fetch all Reminder Schedules for this variable
-    const { data: schedulesData, error: scheduleError } = await supabase
-        .from('reminder_schedules')
-        .select('*')
-        .eq('user_variable_id', userVariableId)
-        .eq('user_id', userId)
-        .order('time_of_day', { ascending: true });
-
-    if (scheduleError) {
-        logger.error('Error fetching reminder schedule data', { userVariableId, userId, error: scheduleError.message });
-        return {
-            variableName,
-            unitName: variableData.units?.abbreviated_name,
-            userTimezone,
-            scheduleData: []
-        };
-    }
-
-    // Convert each schedule to client format
-    const schedules = (schedulesData || []).map(schedule => {
-        const reminderSchedule: ReminderScheduleData & { id: string } = {
-            id: schedule.id,
-            rruleString: schedule.rrule,
-            timeOfDay: schedule.time_of_day,
-            startDate: schedule.start_date ? parseISO(schedule.start_date) : new Date(),
-            endDate: schedule.end_date ? parseISO(schedule.end_date) : null,
-            isActive: schedule.is_active,
-        };
-        return reminderSchedule;
-    });
-
-    logger.info('Found reminder schedules', { 
-        userVariableId, 
-        count: schedules.length 
-    });
-
-    return {
-        variableName,
-        unitName: variableData.units?.abbreviated_name,
-        userTimezone,
-        scheduleData: schedules
-    };
-}
 
 // Helper function to map DB schedule to client data format
 // (Keep this local or import from a shared utility if it exists)
@@ -210,7 +116,7 @@ export default async function VariableRemindersPage({ params }: { params: { user
   }
 
   const variableName = userVariable.global_variables?.name || 'Unknown Variable'
-  const unitName = userVariable.units?.abbreviated_name || ''
+  // const unitName = userVariable.units?.abbreviated_name || '' // Removed unused variable
   // const variableCategoryId = userVariable.global_variables?.variable_category_id // Not used currently
 
   // Fetch schedules using the specific ID - Use params.userVariableId
