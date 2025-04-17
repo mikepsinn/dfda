@@ -60,6 +60,8 @@ const userTypeNavItemsMap: Record<UserType, NavItem[]> = {
 export const loggedOutPrimaryNavItems: NavItem[] = [
   { title: "Patients", href: "/#how-it-works-patient" },
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
+  { title: "Providers", href: "/#how-it-works-provider" },
+  { title: "Developers", href: "/developers" },
 ]
 
 // Secondary Items (Public Info - Use generated objects where applicable)
