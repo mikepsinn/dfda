@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useState } from 'react'
 import { useToast } from '@/components/ui/use-toast'
+import { logger } from '@/lib/logger'
 
 export interface ReminderNotificationCardProps {
   notification: PendingNotificationTask
@@ -88,6 +89,7 @@ export function ReminderNotificationCard({
         setLocalInputValue('')
       }
     } catch (error) {
+      logger.error('Error logging measurement', { error, notificationId: notification.notificationId })
       if (showToasts) {
         toast({ 
           title: "Error", 
@@ -110,7 +112,8 @@ export function ReminderNotificationCard({
           description: `Skipped "${notification.title || notification.variableName}"`,
         })
       }
-    } catch (_) {
+    } catch (error) {
+      logger.warn('Error skipping notification', { error, notificationId: notification.notificationId })
       if (showToasts) {
         toast({
           title: "Error",
@@ -133,7 +136,8 @@ export function ReminderNotificationCard({
           description: "The measurement has been removed."
         })
       }
-    } catch (_) {
+    } catch (error) {
+      logger.warn('Error undoing measurement', { error, notificationId: notification.notificationId })
       if (showToasts) {
         toast({
           title: "Error",

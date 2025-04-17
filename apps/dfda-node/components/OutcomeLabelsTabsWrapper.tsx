@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import { getTreatmentVariables, getFoodVariables } from "@/app/actions/global-variables"
 
 // Define prop types using the renamed interface
 interface SimpleVariableInfo { id: string; name: string; }

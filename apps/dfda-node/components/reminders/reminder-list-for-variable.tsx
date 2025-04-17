@@ -32,7 +32,6 @@ export function ReminderListForVariable({
   const { 
     schedules, 
     isLoading, 
-    deleteSchedule 
   } = useReminderManagement(userId, variableId)
 
   const handleAddClick = () => {
@@ -83,7 +82,7 @@ export function ReminderListForVariable({
           <PlusCircle className="h-10 w-10 text-muted-foreground mb-3" />
           <h3 className="text-md font-semibold mb-1">No reminders set</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            {`Add your first reminder for ${variableName}`}
+            {`Add your first reminder for ${emoji} ${variableName}`}
           </p>
           <Button onClick={handleAddClick} size="sm">
             Add reminder

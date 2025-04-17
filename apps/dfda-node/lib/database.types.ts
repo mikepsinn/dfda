@@ -1026,6 +1026,7 @@ export type Database = {
           severity: string | null
           status: string | null
           updated_at: string | null
+          user_variable_id: string
         }
         Insert: {
           condition_id: string
@@ -1038,6 +1039,7 @@ export type Database = {
           severity?: string | null
           status?: string | null
           updated_at?: string | null
+          user_variable_id: string
         }
         Update: {
           condition_id?: string
@@ -1050,6 +1052,7 @@ export type Database = {
           severity?: string | null
           status?: string | null
           updated_at?: string | null
+          user_variable_id?: string
         }
         Relationships: [
           {
@@ -1071,6 +1074,13 @@ export type Database = {
             columns: ["patient_id"]
             isOneToOne: false
             referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_conditions_user_variable_id_fkey"
+            columns: ["user_variable_id"]
+            isOneToOne: false
+            referencedRelation: "user_variables"
             referencedColumns: ["id"]
           },
         ]
@@ -2578,6 +2588,7 @@ export type Database = {
           patient_id: string | null
           severity: string | null
           status: string | null
+          user_variable_id: string | null
         }
         Relationships: [
           {
@@ -2592,6 +2603,13 @@ export type Database = {
             columns: ["patient_id"]
             isOneToOne: false
             referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_conditions_user_variable_id_fkey"
+            columns: ["user_variable_id"]
+            isOneToOne: false
+            referencedRelation: "user_variables"
             referencedColumns: ["id"]
           },
         ]

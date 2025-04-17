@@ -3,21 +3,33 @@
 import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import { Database } from "@/lib/database.types";
-import type { OutcomeCategory, OutcomeItem, OutcomeValue, FooterMetadata, OutcomeLabelProps } from "@/components/OutcomeLabel";
+import type { OutcomeCategory, OutcomeItem, OutcomeValue, OutcomeLabelProps } from "@/components/OutcomeLabel";
 import { logger } from "@/lib/logger";
 
-// Type definitions copied from page.tsx
+// Define the full citation type for clarity
+type FullCitation = Database['public']['Tables']['citations']['Row'];
+
+// Type definitions
 type FetchedRelationship = Database['public']['Tables']['global_variable_relationships']['Row'] & {
   outcome_variable: Pick<Database['public']['Tables']['global_variables']['Row'], 'id' | 'name'>;
   absolute_change_unit: Pick<Database['public']['Tables']['units']['Row'], 'id' | 'abbreviated_name'> | null;
-  citation: Partial<Database['public']['Tables']['citations']['Row']> | null;
+  citation: FullCitation | null; // Expecting the full citation object now
 };
 type FetchedPredictor = Pick<Database['public']['Tables']['global_variables']['Row'], 'id' | 'name' | 'description'> & {
   variable_category: Pick<Database['public']['Tables']['variable_categories']['Row'], 'name'> | null;
 };
-// Define the structure returned by the action (matching OutcomeLabelProps)
-export type OutcomeLabelData = Omit<OutcomeLabelProps, 'data'> & {
+
+// Define a new Footer type that includes the full citation
+export interface OutcomeFooterData {
+    sourceCitation?: FullCitation | null; // Pass the whole object
+    lastUpdated?: string;
+    nnhDescription?: string;
+}
+
+// Update the return type to use the new footer structure
+export type OutcomeLabelData = Omit<OutcomeLabelProps, 'data' | 'footer'> & {
     data: OutcomeCategory[];
+    footer?: OutcomeFooterData; // Footer is now of the new type
 };
 
 /**
@@ -36,11 +48,11 @@ export async function getOutcomeLabelDataAction(predictorId: string): Promise<Ou
 
     if (predictorError || !predictorData) {
         logger.error('Error fetching predictor', { predictorId, error: predictorError?.message });
-        notFound(); // Trigger 404 if predictor doesn't exist
+        notFound();
     }
 
-    // 2. Fetch Relationship Data
-    const selectQuery = '*, outcome_variable:global_variables!outcome_global_variable_id(id, name), absolute_change_unit:units(id, abbreviated_name), citation:citations!left(*)';
+    // 2. Fetch Relationship Data with full citation
+    const selectQuery = '*, outcome_variable:global_variables!outcome_global_variable_id(id, name), absolute_change_unit:units(id, abbreviated_name), citation:citations!left(*)'; // Fetch all citation fields
     const { data: relationships, error: relationshipsError } = await supabase
         .from('global_variable_relationships')
         .select(selectQuery)
@@ -62,11 +74,11 @@ export async function getOutcomeLabelDataAction(predictorId: string): Promise<Ou
 
     if (!relationships || relationships.length === 0) {
         logger.warn("No outcome relationships found for predictor", { predictorId });
-        return outcomeLabelProps; // Return with empty data if no relationships
+        return outcomeLabelProps;
     }
 
     const categories: { [key: string]: OutcomeCategory } = {};
-    let firstCitationData: FetchedRelationship['citation'] | null = null;
+    let firstCitationData: FullCitation | null = null; // Use the full citation type
     let latestUpdate: string | null = null;
     let hasNNH = false;
 
@@ -110,6 +122,7 @@ export async function getOutcomeLabelDataAction(predictorId: string): Promise<Ou
         categories[categoryTitle].items.push(outcomeItem);
 
         if (!firstCitationData && rel.citation) {
+            // No assertion needed now as types should align if query is correct
             firstCitationData = rel.citation;
         }
         if (rel.data_last_updated) {
@@ -122,13 +135,14 @@ export async function getOutcomeLabelDataAction(predictorId: string): Promise<Ou
         }
     });
 
-    // Sort categories alphabetically by title now, as DB order is removed
+    // Sort categories alphabetically
     outcomeLabelProps.data = Object.values(categories).sort((a, b) => a.title.localeCompare(b.title));
 
-    if (firstCitationData) {
+    // Update footer assignment
+    if (firstCitationData || latestUpdate || hasNNH) {
         outcomeLabelProps.footer = {
-            sourceDescription: `Data based on: ${firstCitationData.title || firstCitationData.journal_or_publisher || 'Source'} (${firstCitationData.publication_year || 'N/A'})`,
-            lastUpdated: latestUpdate ? `Last updated: ${new Date(latestUpdate).toLocaleDateString()}` : 'Update info N/A',
+            sourceCitation: firstCitationData, // Pass the full object
+            lastUpdated: latestUpdate ? `Last updated: ${new Date(latestUpdate).toLocaleDateString()}` : undefined,
             nnhDescription: hasNNH ? "NNH = Number Needed to Harm" : undefined,
         };
     }

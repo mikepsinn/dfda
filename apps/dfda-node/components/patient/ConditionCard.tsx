@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import type { PatientCondition } from "@/app/actions/patient-conditions" // Assuming type export includes optional fields
 import { format } from 'date-fns'; // Import date-fns for formatting

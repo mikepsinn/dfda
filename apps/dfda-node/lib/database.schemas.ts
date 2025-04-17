@@ -1147,6 +1147,7 @@ export const publicPatientConditionsRowSchemaSchema = z.object({
   severity: z.string().nullable(),
   status: z.string().nullable(),
   updated_at: z.string().nullable(),
+  user_variable_id: z.string(),
 });
 
 export const publicPatientConditionsInsertSchemaSchema = z.object({
@@ -1160,6 +1161,7 @@ export const publicPatientConditionsInsertSchemaSchema = z.object({
   severity: z.string().optional().nullable(),
   status: z.string().optional().nullable(),
   updated_at: z.string().optional().nullable(),
+  user_variable_id: z.string(),
 });
 
 export const publicPatientConditionsUpdateSchemaSchema = z.object({
@@ -1173,6 +1175,7 @@ export const publicPatientConditionsUpdateSchemaSchema = z.object({
   severity: z.string().optional().nullable(),
   status: z.string().optional().nullable(),
   updated_at: z.string().optional().nullable(),
+  user_variable_id: z.string().optional(),
 });
 
 export const publicPatientConditionsRelationshipsSchemaSchema = z.tuple([
@@ -1195,6 +1198,13 @@ export const publicPatientConditionsRelationshipsSchemaSchema = z.tuple([
     columns: z.tuple([z.literal("patient_id")]),
     isOneToOne: z.literal(false),
     referencedRelation: z.literal("patients"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("patient_conditions_user_variable_id_fkey"),
+    columns: z.tuple([z.literal("user_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("user_variables"),
     referencedColumns: z.tuple([z.literal("id")]),
   }),
 ]);
@@ -2755,6 +2765,7 @@ export const publicPatientConditionsViewRowSchemaSchema = z.object({
   patient_id: z.string().nullable(),
   severity: z.string().nullable(),
   status: z.string().nullable(),
+  user_variable_id: z.string().nullable(),
 });
 
 export const publicPatientConditionsViewRelationshipsSchemaSchema = z.tuple([
@@ -2770,6 +2781,13 @@ export const publicPatientConditionsViewRelationshipsSchemaSchema = z.tuple([
     columns: z.tuple([z.literal("patient_id")]),
     isOneToOne: z.literal(false),
     referencedRelation: z.literal("patients"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("patient_conditions_user_variable_id_fkey"),
+    columns: z.tuple([z.literal("user_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("user_variables"),
     referencedColumns: z.tuple([z.literal("id")]),
   }),
 ]);

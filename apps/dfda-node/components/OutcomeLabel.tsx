@@ -1,5 +1,7 @@
 import React from 'react';
 import { cn } from "@/lib/utils"; // Import cn utility
+import { CitationDisplay } from './CitationDisplay'; // Import the new component
+import type { OutcomeFooterData } from '@/app/actions/global-variable-relationships'; // Import the updated footer type
 
 export interface OutcomeValue {
   percentage: number;
@@ -20,18 +22,12 @@ export interface OutcomeCategory {
   isSideEffectCategory?: boolean; // To apply specific styling/logic for side effects
 }
 
-export interface FooterMetadata {
-  sourceDescription: string;
-  lastUpdated: string;
-  nnhDescription?: string;
-}
-
 export interface OutcomeLabelProps {
   title: string;
   subtitle?: string; // e.g., "Lipid-lowering agent"
   tag?: string; // Optional tag, e.g., "Drug Class"
   data: OutcomeCategory[];
-  footer?: FooterMetadata;
+  footer?: OutcomeFooterData; // Use the updated footer type from the action
 }
 
 export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: OutcomeLabelProps) {
@@ -101,11 +97,16 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: Outcom
           </div>
         ))}
 
+        {/* Updated Footer Section */}
         {footer && (
-           <div className="mt-4 pt-3 border-t text-xs text-muted-foreground">
-             <div className="flex flex-col sm:flex-row sm:justify-between">
-               <span>{footer.sourceDescription}</span>
-               <span>{footer.lastUpdated}</span>
+           <div className="mt-4 pt-3 border-t text-xs text-muted-foreground space-y-2">
+             {/* Render the CitationDisplay component */}
+             <CitationDisplay citation={footer.sourceCitation} />
+
+             {/* Display Last Updated and NNH Description separately */}
+             <div className="flex justify-between">
+                {footer.lastUpdated && <span>{footer.lastUpdated}</span>}
+                {footer.nnhDescription && <span>{footer.nnhDescription}</span>}
              </div>
              {footer.nnhDescription && (
                <div className="mt-1">

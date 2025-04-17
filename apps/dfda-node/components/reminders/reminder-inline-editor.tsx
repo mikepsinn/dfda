@@ -16,10 +16,8 @@ interface ReminderInlineEditorProps {
   unitName: string
   onSave: (schedule: ReminderScheduleData) => Promise<ReminderSchedule | null>
   onUpdate: (id: string, schedule: ReminderScheduleData) => Promise<ReminderSchedule | null>
-  onDelete: (id: string) => Promise<boolean>
   defaultValue?: number | null
   userTimezone: string
-  emoji?: string
 }
 
 export function ReminderInlineEditor({
@@ -28,10 +26,8 @@ export function ReminderInlineEditor({
   unitName,
   onSave,
   onUpdate,
-  onDelete,
   defaultValue,
   userTimezone,
-  emoji = '📅'
 }: ReminderInlineEditorProps) {
   const [editingSchedule, setEditingSchedule] = useState<ReminderSchedule | null>(null)
   const [isAddingNew, setIsAddingNew] = useState(false)
