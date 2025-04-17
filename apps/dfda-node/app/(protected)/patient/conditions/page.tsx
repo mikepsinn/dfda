@@ -1,7 +1,6 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-import Link from "next/link"
 import { AddConditionDialog } from "../treatments/components/add-condition-dialog"
 import { ConditionCard } from "@/components/patient/ConditionCard"
 
@@ -15,12 +14,14 @@ export default async function PatientConditionsPage() {
 
   return (
     <div className="container space-y-8 py-8">
-      <div className="flex flex-row items-center justify-between pb-2">
-        <div>
+      <div className="flex flex-col items-start space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0 md:space-x-4 pb-2">
+        <div className="flex-1">
           <h1 className="text-2xl font-bold tracking-tight">Your Conditions</h1>
           <p className="text-muted-foreground">View and manage your health conditions.</p>
         </div>
-        <AddConditionDialog userId={user.id} />
+        <div className="w-full md:w-auto">
+          <AddConditionDialog userId={user.id} />
+        </div>
       </div>
 
       {conditions.length > 0 ? (
