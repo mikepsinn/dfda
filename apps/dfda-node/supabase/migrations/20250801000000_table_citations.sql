@@ -28,6 +28,10 @@ CREATE TABLE citations (
   abstract TEXT NULL,
   retrieved_at TIMESTAMPTZ NULL, -- Primarily for webpages
 
+  -- Add columns for aggregate study data (nullable)
+  aggregate_trial_count INT NULL,
+  aggregate_participant_count INT NULL,
+
   created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

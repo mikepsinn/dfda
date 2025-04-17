@@ -119,6 +119,8 @@ export const publicActionTypesUpdateSchemaSchema = z.object({
 
 export const publicCitationsRowSchemaSchema = z.object({
   abstract: z.string().nullable(),
+  aggregate_participant_count: z.number().nullable(),
+  aggregate_trial_count: z.number().nullable(),
   authors: z.array(z.string()).nullable(),
   created_at: z.string(),
   doi: z.string().nullable(),
@@ -138,6 +140,8 @@ export const publicCitationsRowSchemaSchema = z.object({
 
 export const publicCitationsInsertSchemaSchema = z.object({
   abstract: z.string().optional().nullable(),
+  aggregate_participant_count: z.number().optional().nullable(),
+  aggregate_trial_count: z.number().optional().nullable(),
   authors: z.array(z.string()).optional().nullable(),
   created_at: z.string().optional(),
   doi: z.string().optional().nullable(),
@@ -157,6 +161,8 @@ export const publicCitationsInsertSchemaSchema = z.object({
 
 export const publicCitationsUpdateSchemaSchema = z.object({
   abstract: z.string().optional().nullable(),
+  aggregate_participant_count: z.number().optional().nullable(),
+  aggregate_trial_count: z.number().optional().nullable(),
   authors: z.array(z.string()).optional().nullable(),
   created_at: z.string().optional(),
   doi: z.string().optional().nullable(),

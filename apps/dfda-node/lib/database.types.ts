@@ -57,6 +57,8 @@ export type Database = {
       citations: {
         Row: {
           abstract: string | null
+          aggregate_participant_count: number | null
+          aggregate_trial_count: number | null
           authors: string[] | null
           created_at: string
           doi: string | null
@@ -75,6 +77,8 @@ export type Database = {
         }
         Insert: {
           abstract?: string | null
+          aggregate_participant_count?: number | null
+          aggregate_trial_count?: number | null
           authors?: string[] | null
           created_at?: string
           doi?: string | null
@@ -93,6 +97,8 @@ export type Database = {
         }
         Update: {
           abstract?: string | null
+          aggregate_participant_count?: number | null
+          aggregate_trial_count?: number | null
           authors?: string[] | null
           created_at?: string
           doi?: string | null
