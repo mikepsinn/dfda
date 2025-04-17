@@ -6,6 +6,7 @@ SELECT
   c.id as condition_id,
   gv.name as condition_name, -- Get name from global_variables
   gv.description, -- Get description from global_variables
+  gv.emoji,
   c.icd_code,
   pc.diagnosed_at,
   pc.status,
@@ -25,6 +26,7 @@ GROUP BY
   c.id,
   gv.name, -- Group by name from global_variables
   gv.description, -- Group by description from global_variables
+  gv.emoji,
   c.icd_code,
   pc.diagnosed_at,
   pc.status,

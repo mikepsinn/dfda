@@ -2518,6 +2518,7 @@ export const publicPatientConditionsViewRowSchemaSchema = z.object({
   condition_name: z.string().nullable(),
   description: z.string().nullable(),
   diagnosed_at: z.string().nullable(),
+  emoji: z.string().nullable(),
   icd_code: z.string().nullable(),
   id: z.string().nullable(),
   measurement_count: z.number().nullable(),

@@ -2377,6 +2377,7 @@ export type Database = {
           condition_name: string | null
           description: string | null
           diagnosed_at: string | null
+          emoji: string | null
           icd_code: string | null
           id: string | null
           measurement_count: number | null

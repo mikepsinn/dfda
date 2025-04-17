@@ -1,9 +1,9 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { AddConditionDialog } from "../treatments/components/add-condition-dialog"
+import { ConditionCard } from "@/components/patient/ConditionCard"
 
 export default async function PatientConditionsPage() {
   const user = await getServerUser()
@@ -15,45 +15,26 @@ export default async function PatientConditionsPage() {
 
   return (
     <div className="container space-y-8 py-8">
-      <Card>
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <div>
-            <CardTitle>Your Conditions</CardTitle>
-            <CardDescription>View and manage your health conditions.</CardDescription>
-          </div>
+      <div className="flex flex-row items-center justify-between pb-2">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">Your Conditions</h1>
+          <p className="text-muted-foreground">View and manage your health conditions.</p>
+        </div>
+        <AddConditionDialog userId={user.id} />
+      </div>
+
+      {conditions.length > 0 ? (
+        <div className="space-y-4">
+          {conditions.map((condition) => (
+            <ConditionCard key={condition.id} condition={condition} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-6 text-muted-foreground space-y-2">
+          <p>You haven't added any conditions yet.</p>
           <AddConditionDialog userId={user.id} />
-        </CardHeader>
-        <CardContent>
-          {conditions.length > 0 ? (
-            <div className="space-y-4">
-              {conditions.map((condition) => (
-                <Link key={condition.id} href={`/patient/conditions/${condition.id}`} className="block">
-                  <Card className="hover:bg-muted/50 cursor-pointer">
-                    <CardHeader>
-                      <CardTitle className="text-lg">{condition.condition_name || "Unknown Condition"}</CardTitle>
-                      {condition.description && (
-                        <CardDescription>{condition.description}</CardDescription>
-                      )}
-                    </CardHeader>
-                    {/* Optional: Add more details like status, severity if needed */}
-                    {/* <CardContent>
-                        <p>Status: {condition.status}</p>
-                        <p>Severity: {condition.severity}</p>
-                    </CardContent> */}
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-6 text-muted-foreground">
-              <p>You haven't added any conditions yet.</p>
-              <Link href="/patient/treatments" className="text-primary hover:underline">
-                 Add your first condition
-              </Link>
-            </div>
-          )}
-        </CardContent>
-      </Card>
+        </div>
+      )}
     </div>
   )
 }
