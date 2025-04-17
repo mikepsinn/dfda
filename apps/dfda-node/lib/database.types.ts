@@ -54,6 +54,63 @@ export type Database = {
         }
         Relationships: []
       }
+      citations: {
+        Row: {
+          abstract: string | null
+          authors: string[] | null
+          created_at: string
+          doi: string | null
+          id: string
+          issue: string | null
+          journal_or_publisher: string | null
+          pages: string | null
+          pmid: string | null
+          publication_year: number | null
+          retrieved_at: string | null
+          title: string | null
+          type: Database["public"]["Enums"]["citation_type"]
+          updated_at: string
+          url: string | null
+          volume: string | null
+        }
+        Insert: {
+          abstract?: string | null
+          authors?: string[] | null
+          created_at?: string
+          doi?: string | null
+          id?: string
+          issue?: string | null
+          journal_or_publisher?: string | null
+          pages?: string | null
+          pmid?: string | null
+          publication_year?: number | null
+          retrieved_at?: string | null
+          title?: string | null
+          type: Database["public"]["Enums"]["citation_type"]
+          updated_at?: string
+          url?: string | null
+          volume?: string | null
+        }
+        Update: {
+          abstract?: string | null
+          authors?: string[] | null
+          created_at?: string
+          doi?: string | null
+          id?: string
+          issue?: string | null
+          journal_or_publisher?: string | null
+          pages?: string | null
+          pmid?: string | null
+          publication_year?: number | null
+          retrieved_at?: string | null
+          title?: string | null
+          type?: Database["public"]["Enums"]["citation_type"]
+          updated_at?: string
+          url?: string | null
+          volume?: string | null
+        }
+        Relationships: []
+      }
       conditions: {
         Row: {
           created_at: string | null
@@ -411,6 +468,115 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      global_variable_relationships: {
+        Row: {
+          absolute_change_unit_id: string | null
+          absolute_change_value: number | null
+          baseline_description: string | null
+          category: string
+          category_display_order: number | null
+          citation_id: string
+          condition_id: string | null
+          created_at: string
+          data_last_updated: string | null
+          finding_specific_notes: string | null
+          id: string
+          is_positive_outcome: boolean | null
+          item_display_order: number | null
+          nnh: number | null
+          nnt: number | null
+          outcome_global_variable_id: string
+          percentage_change: number | null
+          predictor_global_variable_id: string
+          updated_at: string
+        }
+        Insert: {
+          absolute_change_unit_id?: string | null
+          absolute_change_value?: number | null
+          baseline_description?: string | null
+          category: string
+          category_display_order?: number | null
+          citation_id: string
+          condition_id?: string | null
+          created_at?: string
+          data_last_updated?: string | null
+          finding_specific_notes?: string | null
+          id?: string
+          is_positive_outcome?: boolean | null
+          item_display_order?: number | null
+          nnh?: number | null
+          nnt?: number | null
+          outcome_global_variable_id: string
+          percentage_change?: number | null
+          predictor_global_variable_id: string
+          updated_at?: string
+        }
+        Update: {
+          absolute_change_unit_id?: string | null
+          absolute_change_value?: number | null
+          baseline_description?: string | null
+          category?: string
+          category_display_order?: number | null
+          citation_id?: string
+          condition_id?: string | null
+          created_at?: string
+          data_last_updated?: string | null
+          finding_specific_notes?: string | null
+          id?: string
+          is_positive_outcome?: boolean | null
+          item_display_order?: number | null
+          nnh?: number | null
+          nnt?: number | null
+          outcome_global_variable_id?: string
+          percentage_change?: number | null
+          predictor_global_variable_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_variable_relationships_absolute_change_unit_id_fkey"
+            columns: ["absolute_change_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "global_variable_relationships_citation_id_fkey"
+            columns: ["citation_id"]
+            isOneToOne: false
+            referencedRelation: "citations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "global_variable_relationships_condition_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: false
+            referencedRelation: "conditions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "global_variable_relationships_condition_id_fkey"
+            columns: ["condition_id"]
+            isOneToOne: false
+            referencedRelation: "patient_conditions_view"
+            referencedColumns: ["condition_id"]
+          },
+          {
+            foreignKeyName: "global_variable_relationships_outcome_global_variable_id_fkey"
+            columns: ["outcome_global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "global_variable_relationships_predictor_global_variable_id_fkey"
+            columns: ["predictor_global_variable_id"]
+            isOneToOne: false
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       global_variable_synonyms: {
         Row: {
@@ -2566,6 +2732,13 @@ export type Database = {
         | "consultation"
         | "medication"
         | "other"
+      citation_type:
+        | "journal_article"
+        | "book"
+        | "webpage"
+        | "fda_label"
+        | "usda_entry"
+        | "other"
       form_question_type:
         | "text"
         | "multiple-choice"
@@ -3130,6 +3303,14 @@ export const Constants = {
         "procedure",
         "consultation",
         "medication",
+        "other",
+      ],
+      citation_type: [
+        "journal_article",
+        "book",
+        "webpage",
+        "fda_label",
+        "usda_entry",
         "other",
       ],
       form_question_type: [

@@ -51,3 +51,26 @@ VALUES
 ('weight', 'Weight', 'Body weight', 'health-and-physiology', 'kilogram', '⚖️'),
 ('height', 'Height', 'Body height', 'health-and-physiology', 'meter', '📏'),
 ('bmi', 'Body Mass Index', 'Body Mass Index calculated from weight and height', 'health-and-physiology', 'kilograms-per-square-meter', '📊');
+
+-- Insert global variables for Atorvastatin Example
+INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id, emoji)
+VALUES
+('atorvastatin-20mg', 'Atorvastatin 20mg', 'Specific dosage of Atorvastatin, a lipid-lowering agent.', 'intake-and-interventions', 'milligram', '💊'),
+('ldl-cholesterol', 'LDL Cholesterol', 'Low-density lipoprotein cholesterol.', 'health-and-physiology', 'milligrams-per-deciliter', '🩸'),
+('total-cholesterol', 'Total Cholesterol', 'Total amount of cholesterol in the blood.', 'health-and-physiology', 'milligrams-per-deciliter', '🩸'),
+('cv-event-risk', 'Cardiovascular Event Risk', 'Calculated risk of cardiovascular events.', 'health-and-physiology', 'percent', '❤️'),
+('hdl-cholesterol', 'HDL Cholesterol', 'High-density lipoprotein cholesterol.', 'health-and-physiology', 'milligrams-per-deciliter', '🩸'),
+('triglycerides', 'Triglycerides', 'Type of fat found in blood.', 'health-and-physiology', 'milligrams-per-deciliter', '🩸'),
+('muscle-pain', 'Muscle Pain', 'Aches and pains in the muscles.', 'health-and-physiology', 'zero-to-ten-scale', '😩'),
+('liver-enzyme-elevation', 'Liver Enzyme Elevation', 'Increased levels of liver enzymes in the blood.', 'health-and-physiology', 'percent', '🧪');
+
+-- Insert global variables for Klotho Therapy Example
+INSERT INTO global_variables (id, name, description, variable_category_id, default_unit_id, emoji)
+VALUES
+('klotho-therapy', 'Klotho-Increasing Gene Therapy', 'Experimental gene therapy aimed at increasing Klotho protein levels.', 'intake-and-interventions', 'dimensionless-unit', '🧬'),
+('adas-cog', 'Cognitive Function (ADAS-Cog)', 'Alzheimer''s Disease Assessment Scale-Cognitive subscale score.', 'cognitive-performance', 'dimensionless-unit', '🧠'),
+('memory-recall', 'Memory Recall', 'Ability to remember information.', 'cognitive-performance', 'percent', '🧠'),
+('executive-function', 'Executive Function', 'Higher-level cognitive skills (planning, working memory, etc.).', 'cognitive-performance', 'percent', '🧠'),
+('hippocampal-volume', 'Hippocampal Volume', 'Volume of the hippocampus measured by imaging.', 'health-and-physiology', 'milliliter', ' M'), -- Assuming cubic cm or ml
+('immune-response', 'Immune Response', 'Reaction of the immune system, often measured by specific markers or events.', 'health-and-physiology', 'zero-to-ten-scale', '🛡️');
+-- Note: 'headache' and 'fatigue' already exist

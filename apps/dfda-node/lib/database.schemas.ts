@@ -18,6 +18,15 @@ export const publicActionCategorySchema = z.union([
   z.literal("other"),
 ]);
 
+export const publicCitationTypeSchema = z.union([
+  z.literal("journal_article"),
+  z.literal("book"),
+  z.literal("webpage"),
+  z.literal("fda_label"),
+  z.literal("usda_entry"),
+  z.literal("other"),
+]);
+
 export const publicFormQuestionTypeSchema = z.union([
   z.literal("text"),
   z.literal("multiple-choice"),
@@ -106,6 +115,63 @@ export const publicActionTypesUpdateSchemaSchema = z.object({
   requires_results: z.boolean().optional().nullable(),
   requires_scheduling: z.boolean().optional().nullable(),
   updated_at: z.string().optional().nullable(),
+});
+
+export const publicCitationsRowSchemaSchema = z.object({
+  abstract: z.string().nullable(),
+  authors: z.array(z.string()).nullable(),
+  created_at: z.string(),
+  doi: z.string().nullable(),
+  id: z.string(),
+  issue: z.string().nullable(),
+  journal_or_publisher: z.string().nullable(),
+  pages: z.string().nullable(),
+  pmid: z.string().nullable(),
+  publication_year: z.number().nullable(),
+  retrieved_at: z.string().nullable(),
+  title: z.string().nullable(),
+  type: publicCitationTypeSchema,
+  updated_at: z.string(),
+  url: z.string().nullable(),
+  volume: z.string().nullable(),
+});
+
+export const publicCitationsInsertSchemaSchema = z.object({
+  abstract: z.string().optional().nullable(),
+  authors: z.array(z.string()).optional().nullable(),
+  created_at: z.string().optional(),
+  doi: z.string().optional().nullable(),
+  id: z.string().optional(),
+  issue: z.string().optional().nullable(),
+  journal_or_publisher: z.string().optional().nullable(),
+  pages: z.string().optional().nullable(),
+  pmid: z.string().optional().nullable(),
+  publication_year: z.number().optional().nullable(),
+  retrieved_at: z.string().optional().nullable(),
+  title: z.string().optional().nullable(),
+  type: publicCitationTypeSchema,
+  updated_at: z.string().optional(),
+  url: z.string().optional().nullable(),
+  volume: z.string().optional().nullable(),
+});
+
+export const publicCitationsUpdateSchemaSchema = z.object({
+  abstract: z.string().optional().nullable(),
+  authors: z.array(z.string()).optional().nullable(),
+  created_at: z.string().optional(),
+  doi: z.string().optional().nullable(),
+  id: z.string().optional(),
+  issue: z.string().optional().nullable(),
+  journal_or_publisher: z.string().optional().nullable(),
+  pages: z.string().optional().nullable(),
+  pmid: z.string().optional().nullable(),
+  publication_year: z.number().optional().nullable(),
+  retrieved_at: z.string().optional().nullable(),
+  title: z.string().optional().nullable(),
+  type: publicCitationTypeSchema.optional(),
+  updated_at: z.string().optional(),
+  url: z.string().optional().nullable(),
+  volume: z.string().optional().nullable(),
 });
 
 export const publicConditionsRowSchemaSchema = z.object({
@@ -479,6 +545,130 @@ export const publicFormsUpdateSchemaSchema = z.object({
   title: z.string().optional(),
   updated_at: z.string().optional(),
 });
+
+export const publicGlobalVariableRelationshipsRowSchemaSchema = z.object({
+  absolute_change_unit_id: z.string().nullable(),
+  absolute_change_value: z.number().nullable(),
+  baseline_description: z.string().nullable(),
+  category: z.string(),
+  category_display_order: z.number().nullable(),
+  citation_id: z.string(),
+  condition_id: z.string().nullable(),
+  created_at: z.string(),
+  data_last_updated: z.string().nullable(),
+  finding_specific_notes: z.string().nullable(),
+  id: z.string(),
+  is_positive_outcome: z.boolean().nullable(),
+  item_display_order: z.number().nullable(),
+  nnh: z.number().nullable(),
+  nnt: z.number().nullable(),
+  outcome_global_variable_id: z.string(),
+  percentage_change: z.number().nullable(),
+  predictor_global_variable_id: z.string(),
+  updated_at: z.string(),
+});
+
+export const publicGlobalVariableRelationshipsInsertSchemaSchema = z.object({
+  absolute_change_unit_id: z.string().optional().nullable(),
+  absolute_change_value: z.number().optional().nullable(),
+  baseline_description: z.string().optional().nullable(),
+  category: z.string(),
+  category_display_order: z.number().optional().nullable(),
+  citation_id: z.string(),
+  condition_id: z.string().optional().nullable(),
+  created_at: z.string().optional(),
+  data_last_updated: z.string().optional().nullable(),
+  finding_specific_notes: z.string().optional().nullable(),
+  id: z.string().optional(),
+  is_positive_outcome: z.boolean().optional().nullable(),
+  item_display_order: z.number().optional().nullable(),
+  nnh: z.number().optional().nullable(),
+  nnt: z.number().optional().nullable(),
+  outcome_global_variable_id: z.string(),
+  percentage_change: z.number().optional().nullable(),
+  predictor_global_variable_id: z.string(),
+  updated_at: z.string().optional(),
+});
+
+export const publicGlobalVariableRelationshipsUpdateSchemaSchema = z.object({
+  absolute_change_unit_id: z.string().optional().nullable(),
+  absolute_change_value: z.number().optional().nullable(),
+  baseline_description: z.string().optional().nullable(),
+  category: z.string().optional(),
+  category_display_order: z.number().optional().nullable(),
+  citation_id: z.string().optional(),
+  condition_id: z.string().optional().nullable(),
+  created_at: z.string().optional(),
+  data_last_updated: z.string().optional().nullable(),
+  finding_specific_notes: z.string().optional().nullable(),
+  id: z.string().optional(),
+  is_positive_outcome: z.boolean().optional().nullable(),
+  item_display_order: z.number().optional().nullable(),
+  nnh: z.number().optional().nullable(),
+  nnt: z.number().optional().nullable(),
+  outcome_global_variable_id: z.string().optional(),
+  percentage_change: z.number().optional().nullable(),
+  predictor_global_variable_id: z.string().optional(),
+  updated_at: z.string().optional(),
+});
+
+export const publicGlobalVariableRelationshipsRelationshipsSchemaSchema =
+  z.tuple([
+    z.object({
+      foreignKeyName: z.literal(
+        "global_variable_relationships_absolute_change_unit_id_fkey",
+      ),
+      columns: z.tuple([z.literal("absolute_change_unit_id")]),
+      isOneToOne: z.literal(false),
+      referencedRelation: z.literal("units"),
+      referencedColumns: z.tuple([z.literal("id")]),
+    }),
+    z.object({
+      foreignKeyName: z.literal(
+        "global_variable_relationships_citation_id_fkey",
+      ),
+      columns: z.tuple([z.literal("citation_id")]),
+      isOneToOne: z.literal(false),
+      referencedRelation: z.literal("citations"),
+      referencedColumns: z.tuple([z.literal("id")]),
+    }),
+    z.object({
+      foreignKeyName: z.literal(
+        "global_variable_relationships_condition_id_fkey",
+      ),
+      columns: z.tuple([z.literal("condition_id")]),
+      isOneToOne: z.literal(false),
+      referencedRelation: z.literal("conditions"),
+      referencedColumns: z.tuple([z.literal("id")]),
+    }),
+    z.object({
+      foreignKeyName: z.literal(
+        "global_variable_relationships_condition_id_fkey",
+      ),
+      columns: z.tuple([z.literal("condition_id")]),
+      isOneToOne: z.literal(false),
+      referencedRelation: z.literal("patient_conditions_view"),
+      referencedColumns: z.tuple([z.literal("condition_id")]),
+    }),
+    z.object({
+      foreignKeyName: z.literal(
+        "global_variable_relationships_outcome_global_variable_id_fkey",
+      ),
+      columns: z.tuple([z.literal("outcome_global_variable_id")]),
+      isOneToOne: z.literal(false),
+      referencedRelation: z.literal("global_variables"),
+      referencedColumns: z.tuple([z.literal("id")]),
+    }),
+    z.object({
+      foreignKeyName: z.literal(
+        "global_variable_relationships_predictor_global_variable_id_fkey",
+      ),
+      columns: z.tuple([z.literal("predictor_global_variable_id")]),
+      isOneToOne: z.literal(false),
+      referencedRelation: z.literal("global_variables"),
+      referencedColumns: z.tuple([z.literal("id")]),
+    }),
+  ]);
 
 export const publicGlobalVariableSynonymsRowSchemaSchema = z.object({
   created_at: z.string(),
