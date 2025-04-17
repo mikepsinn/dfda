@@ -6,10 +6,10 @@ import { createClient } from "@/lib/supabase/server";
 
 // The Page Component
 export default async function OutcomeLabelPage({ params }: { params: { predictorVariableId: string } }) {
-    const predictorId = decodeURIComponent(params.predictorVariableId);
+    const { predictorVariableId } = await params;
     
     // Call the server action to get data
-    const outcomeLabelData = await getOutcomeLabelDataAction(predictorId);
+    const outcomeLabelData = await getOutcomeLabelDataAction(predictorVariableId);
 
     return (
         <div className="py-6 md:py-10">
@@ -30,12 +30,12 @@ export default async function OutcomeLabelPage({ params }: { params: { predictor
 
 // Optional: Add generateMetadata function if needed for dynamic titles
 export async function generateMetadata({ params }: { params: { predictorVariableId: string } }) {
-    const predictorId = decodeURIComponent(params.predictorVariableId);
+    const { predictorVariableId } = await params;
     const supabase = await createClient();
     const { data: predictorData } = await supabase
         .from('global_variables')
         .select('name')
-        .eq('id', predictorId)
+        .eq('id', predictorVariableId)
         .single<{name: string | null}>();
 
     return {

@@ -44,9 +44,7 @@ export async function getOutcomeLabelDataAction(predictorId: string): Promise<Ou
     const { data: relationships, error: relationshipsError } = await supabase
         .from('global_variable_relationships')
         .select(selectQuery)
-        .eq('predictor_global_variable_id', predictorId)
-        .order('category_display_order', { ascending: true, nullsFirst: false })
-        .order('item_display_order', { ascending: true, nullsFirst: false });
+        .eq('predictor_global_variable_id', predictorId);
 
     if (relationshipsError) {
         logger.error("Error fetching relationships", { predictorId, error: relationshipsError.message });
@@ -124,11 +122,8 @@ export async function getOutcomeLabelDataAction(predictorId: string): Promise<Ou
         }
     });
 
-    outcomeLabelProps.data = Object.values(categories).sort((a, b) => {
-        const orderA = (relationships as FetchedRelationship[]).find(r => r.category === a.title)?.category_display_order ?? 999;
-        const orderB = (relationships as FetchedRelationship[]).find(r => r.category === b.title)?.category_display_order ?? 999;
-        return orderA - orderB;
-    });
+    // Sort categories alphabetically by title now, as DB order is removed
+    outcomeLabelProps.data = Object.values(categories).sort((a, b) => a.title.localeCompare(b.title));
 
     if (firstCitationData) {
         outcomeLabelProps.footer = {
