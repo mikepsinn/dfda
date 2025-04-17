@@ -33,7 +33,7 @@ export function DesktopNav({
           <Link
             key={item.href}
             href={item.href}
-            className="text-sm font-medium hover:underline flex items-center"
+            className="text-sm font-medium flex items-center"
           >
             {item.emoji && <span className="mr-1">{item.emoji}</span>}
             {item.title}
@@ -45,7 +45,7 @@ export function DesktopNav({
       {!user && (
         <DropdownMenu open={isMoreOpen} onOpenChange={setIsMoreOpen}>
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center gap-1 text-sm font-medium hover:underline">
+            <button className="flex items-center gap-1 text-sm font-medium">
               More{" "}
               {isMoreOpen ? (
                 <ChevronUp className="h-4 w-4" />

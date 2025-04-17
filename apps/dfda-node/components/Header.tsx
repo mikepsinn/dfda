@@ -65,10 +65,19 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
+      {/* Container with adjusted flex for mobile layout */}
       <div className="container px-4 md:px-6 mx-auto flex h-16 items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
+        
+        {/* Mobile Nav Button (now first on mobile) */}
+        {/* Rendered via MobileNav, which handles the md:hidden internally */}
+        <MobileNav navItems={mobileNavItems} />
+
+        {/* Logo and Desktop Nav container */}
+        {/* On mobile, only Logo is effectively visible. On desktop, it pushes auth section right */}
+        <div className="flex flex-1 items-center gap-2 md:gap-6">
+          {/* Logo - hidden on mobile if MobileNav button is there, shown otherwise */} 
+          {/* We need the logo visible on mobile too, so remove hiding logic. Flex handles spacing. */}
+          <Link href="/" className="flex items-center gap-2 mr-auto md:mr-0"> {/* mr-auto pushes logo left on mobile */} 
             <Image
               src="/images/dfda-logo.png"
               alt="dFDA Logo"
@@ -78,26 +87,22 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
             />
             <span className="text-xl font-bold">FDA.gov v2</span>
           </Link>
-        </div>
 
-        {/* Desktop Navigation */}
-        <DesktopNav
-          user={initialUser}
-          primaryNavItems={primaryNavItems}
-          secondaryNavItems={secondaryNavItems}
-        />
-
-        <div className="flex items-center gap-4">
-          {/* Mobile Menu Button & Sheet (handled by MobileNav) */}
-          <MobileNav navItems={mobileNavItems} />
-
-          {/* User Auth Section - Pass nav items */}
-          <UserAuthSection 
-            user={initialUser} 
-            primaryNavItems={primaryNavItems} 
+          {/* Desktop Navigation (hidden on mobile) */}
+          {/* flex-1 on parent div and gap handles spacing */}
+          <DesktopNav
+            user={initialUser}
+            primaryNavItems={primaryNavItems}
             secondaryNavItems={secondaryNavItems}
           />
         </div>
+
+        {/* User Auth Section (remains on the far right) */}
+        <UserAuthSection 
+          user={initialUser} 
+          primaryNavItems={primaryNavItems} 
+          secondaryNavItems={secondaryNavItems}
+        />
       </div>
     </header>
   )
