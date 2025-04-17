@@ -17,6 +17,7 @@ export interface GeneratedNavTree {
   readonly 'impact': NavItem;
   readonly 'login': NavItem;
   readonly 'outcome_labels': NavItem;
+  readonly 'outcome_labels_predictorvariableid': NavItem;
   readonly 'patient': NavItem;
   readonly 'patient_conditions': NavItem;
   readonly 'patient_conditions_patientconditionid': NavItem;
@@ -131,6 +132,12 @@ export const navigationTreeObject: GeneratedNavTree = {
     "title": "Outcome Labels",
     "href": "/outcome-labels",
     "description": "View outcome labels.",
+    "emoji": "🏷️"
+  },
+  "outcome_labels_predictorvariableid": {
+    "title": "Outcome Labels",
+    "href": "/outcome-labels/[predictorVariableId]",
+    "description": "Manage outcome labels for a specific predictor variable.",
     "emoji": "🏷️"
   },
   "patient": {
