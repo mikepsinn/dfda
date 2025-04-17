@@ -10,13 +10,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { createPatientConditionAction } from "@/app/actions/patient-conditions"
-import { useToast } from "@/components/ui/use-toast"
+import { toast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { ConditionSearchInput } from "@/components/ConditionSearchInput"
-import { createLogger } from "@/lib/logger"
-
-const logger = createLogger("add-condition-dialog")
+import { logger } from "@/lib/logger"
+import { addPatientConditionAction } from "@/app/actions/patient-conditions"
 
 interface AddConditionDialogProps {
   userId: string
@@ -24,31 +22,36 @@ interface AddConditionDialogProps {
 
 export function AddConditionDialog({ userId }: AddConditionDialogProps) {
   const [open, setOpen] = useState(false)
-  const { toast } = useToast()
 
   const handleSelectCondition = async (condition: { id: string; name: string }) => {
     try {
-      await createPatientConditionAction({
-        patient_id: userId,
-        condition_id: condition.id,
-        diagnosed_at: new Date().toISOString(),
-        status: "active",
-        notes: null
-      })
+      logger.info("Submitting new condition", { userId, conditionId: condition.id })
+      const result = await addPatientConditionAction(userId, condition.id)
 
-      toast({
-        title: "Condition added",
-        description: `${condition.name} has been added to your conditions.`
-      })
+      if (result.success) {
+        toast({
+          title: "Condition added",
+          description: `${condition.name} has been added to your conditions.`
+        })
 
-      setOpen(false)
+        setOpen(false)
+      } else {
+        logger.error("Failed to add condition", { error: result.error, conditionId: condition.id, userId })
+        toast({
+          title: "Error",
+          description: "Failed to add condition. Please try again.",
+          variant: "destructive"
+        })
+      }
     } catch (error) {
-      logger.error("Failed to add condition", { error, conditionId: condition.id, userId });
+      logger.error("Failed to add condition", { error, conditionId: condition.id, userId })
       toast({
         title: "Error",
         description: "Failed to add condition. Please try again.",
         variant: "destructive"
       })
+    } finally {
+      logger.info("AddConditionDialog completed", { userId })
     }
   }
 

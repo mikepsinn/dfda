@@ -12,12 +12,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
-import { useToast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { TreatmentSearch } from "@/components/treatment-search"
 import { createLogger } from "@/lib/logger"
-import { addSinglePatientTreatmentAction } from "@/app/actions/patientTreatments"
+import { addSinglePatientTreatmentAction } from "@/app/actions/patient-treatments"
 import { useRouter } from "next/navigation"
+import { toast } from "@/components/ui/use-toast"
 
 const logger = createLogger("add-treatment-dialog")
 
@@ -32,7 +32,6 @@ export function AddTreatmentDialog({
 }: AddTreatmentDialogProps) {
   const [selectedTreatment, setSelectedTreatment] = useState<{ id: string; name: string } | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const { toast } = useToast()
   const router = useRouter()
   const [internalOpen, setInternalOpen] = useState(false);
 
@@ -122,11 +121,13 @@ export function AddTreatmentDialog({
         </DialogHeader>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 py-4">
-            <div className="grid gap-2">
-              <Label htmlFor="treatment">Treatment <span className="text-red-500">*</span></Label>
-              <TreatmentSearch
-                onSelect={(treatment) => setSelectedTreatment(treatment)}
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="treatment" className="text-right">
+                Treatment
+              </Label>
+              <TreatmentSearch 
                 selected={selectedTreatment}
+                onSelect={setSelectedTreatment}
               />
             </div>
           </div>

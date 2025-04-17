@@ -1,6 +1,8 @@
 // import { Json } from "@/lib/database.types";
 
 import type { Database } from "@/lib/database.types";
+// Import the custom client insert type
+// import type { PatientConditionClientInsert } from "@/lib/database.types.custom"; 
 
 type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"];
 
@@ -20,7 +22,8 @@ type ReportedSideEffectInsert = Database['public']['Tables']['reported_side_effe
 // This structure helps organize the data we want to seed for a patient
 interface DemoPatientSeedData {
   patientDetails: Omit<PatientInsert, 'id'>;
-  conditions: Omit<PatientConditionInsert, 'patient_id' | 'id'>[];
+  // Reverted: Use Omit as patient_id is added contextually during seeding
+  conditions: Omit<PatientConditionInsert, 'patient_id' | 'id' | 'user_variable_id'>[]; 
   enrollments?: Omit<TrialEnrollmentInsert, 'patient_id' | 'id'>[];
   submissions?: (Omit<DataSubmissionInsert, 'patient_id' | 'enrollment_id' | 'id'> & { trial_id_for_linking: string })[]; 
   notifications: Omit<NotificationInsert, 'user_id' | 'id'>[];
