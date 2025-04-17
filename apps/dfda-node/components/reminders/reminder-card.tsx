@@ -1,7 +1,6 @@
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card'
-import { Clock } from 'lucide-react'
 import { formatTime } from '@/lib/utils'
 import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
 import { RRule, rrulestr, Weekday } from 'rrule'
@@ -79,17 +78,20 @@ export function ReminderCard({ schedule, unitName, emoji, onClick }: ReminderCar
       <CardContent className="p-4">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-lg">{emoji}</span>
-            <span className="text-lg font-medium">{formatTime(schedule.time_of_day)}</span>
+            <span className="text-lg">⏰</span>
+            <span className="text-lg font-medium">
+              {formatTime(schedule.time_of_day)}
+              <span className="mt-2 text-sm text-muted-foreground pl-2">
+                {formatFrequency()}
+              </span>
+            </span>
           </div>
           <div className="text-xs bg-primary/10 rounded-full px-2 py-0.5">
             {schedule.is_active ? 'Active' : 'Inactive'}
           </div>
         </div>
         
-        <div className="mt-2 text-sm text-muted-foreground">
-          {formatFrequency()}
-        </div>
+
         
         {schedule.default_value !== undefined && schedule.default_value !== null && (
           <div className="mt-2 text-sm">

@@ -8,6 +8,7 @@ import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { ReminderCard } from './reminder-card'
+import { VARIABLE_CATEGORIES_DATA } from '@/lib/constants/variable-categories'
 
 interface ReminderListForAllVariablesProps {
   userId: string
@@ -63,7 +64,15 @@ export function ReminderListForAllVariables({
   const groupedSchedules = schedules.reduce<Record<string, GroupedSchedule>>((acc, schedule) => {
     const varId = schedule.user_variables.id
     const varName = schedule.user_variables.global_variables.name
-    const emoji = schedule.user_variables.global_variables.emoji || '⏰' // Default to clock emoji if none provided
+    
+    // Get emoji from global variable or its category
+    const globalVarEmoji = schedule.user_variables.global_variables.emoji
+    const categoryId = schedule.user_variables.global_variables.variable_category_id
+    const categoryEmoji = categoryId ? VARIABLE_CATEGORIES_DATA[categoryId]?.emoji : undefined
+    
+    // Use global variable emoji if available, otherwise use the category emoji
+    const emoji = globalVarEmoji || categoryEmoji || '📅'
+    
     const unitName = schedule.user_variables.units?.abbreviated_name || 
                      schedule.user_variables.global_variables.default_unit?.abbreviated_name || 
                      '' // Empty string if no unit available

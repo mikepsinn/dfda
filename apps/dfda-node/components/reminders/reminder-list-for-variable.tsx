@@ -7,6 +7,7 @@ import { ReminderDialog } from './reminder-dialog'
 import { useReminderManagement } from '@/hooks/use-reminder-management'
 import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
 import { ReminderCardList } from './reminder-card-list'
+import { VARIABLE_CATEGORIES_DATA } from '@/lib/constants/variable-categories'
 
 interface ReminderListProps {
   userId: string
@@ -14,6 +15,7 @@ interface ReminderListProps {
   variableName: string
   unitName: string
   userTimezone: string
+  variableCategoryId?: string
 }
 
 export function ReminderListForVariable({
@@ -21,7 +23,8 @@ export function ReminderListForVariable({
   variableId, 
   variableName,
   unitName, 
-  userTimezone
+  userTimezone,
+  variableCategoryId
 }: ReminderListProps) {
   const [selectedSchedule, setSelectedSchedule] = useState<ReminderSchedule | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
@@ -47,18 +50,14 @@ export function ReminderListForVariable({
     }
   }
 
-  const handleDeleteSchedule = async (scheduleId: string) => {
-    const success = await deleteSchedule(scheduleId)
-    if (success && selectedSchedule?.id === scheduleId) {
-        setIsDialogOpen(false);
-        setSelectedSchedule(null);
-    }
-  }
-
   const handleDialogClose = () => {
       setIsDialogOpen(false);
       setSelectedSchedule(null);
   }
+
+  // Determine emoji based on variable category
+  const categoryEmoji = variableCategoryId ? VARIABLE_CATEGORIES_DATA[variableCategoryId]?.emoji : undefined
+  const emoji = categoryEmoji || '📅'  // Default calendar emoji if no category 
 
   return (
     <div className="space-y-4">
@@ -94,8 +93,8 @@ export function ReminderListForVariable({
         <ReminderCardList 
             schedules={schedules}
             unitName={unitName}
-            onEdit={handleEditClick}
-            onDelete={handleDeleteSchedule}
+            emoji={emoji}
+            onClick={handleEditClick}
         />
       )}
 

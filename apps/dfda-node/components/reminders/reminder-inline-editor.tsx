@@ -13,12 +13,13 @@ import { mapDbToSchedulerData } from '@/lib/reminder-utils'
 interface ReminderInlineEditorProps {
   schedules: ReminderSchedule[]
   variableName: string
-  unitName?: string
+  unitName: string
   onSave: (schedule: ReminderScheduleData) => Promise<ReminderSchedule | null>
   onUpdate: (id: string, schedule: ReminderScheduleData) => Promise<ReminderSchedule | null>
   onDelete: (id: string) => Promise<boolean>
   defaultValue?: number | null
   userTimezone: string
+  emoji?: string
 }
 
 export function ReminderInlineEditor({
@@ -29,7 +30,8 @@ export function ReminderInlineEditor({
   onUpdate,
   onDelete,
   defaultValue,
-  userTimezone
+  userTimezone,
+  emoji = '📅'
 }: ReminderInlineEditorProps) {
   const [editingSchedule, setEditingSchedule] = useState<ReminderSchedule | null>(null)
   const [isAddingNew, setIsAddingNew] = useState(false)
@@ -127,8 +129,8 @@ export function ReminderInlineEditor({
         <ReminderCardList 
            schedules={schedules}
            unitName={unitName}
-           onEdit={handleEditClick}
-           onDelete={onDelete}
+           emoji={emoji}
+           onClick={handleEditClick}
         />
       )}
 
