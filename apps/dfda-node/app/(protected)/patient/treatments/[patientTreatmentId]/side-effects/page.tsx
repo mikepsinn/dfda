@@ -8,6 +8,15 @@ import Link from "next/link"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 import type { FullPatientTreatmentDetail } from "../treatment-detail-client"
+// Import Breadcrumb components
+import { 
+  Breadcrumb, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbList, 
+  BreadcrumbPage, 
+  BreadcrumbSeparator 
+} from "@/components/ui/breadcrumb"
 
 // Side effects client component will be created later
 import { SideEffectsClient } from "./side-effects-client"
@@ -62,8 +71,30 @@ export default async function TreatmentSideEffectsPage({ params }: { params: Pro
   const sideEffects = treatmentDetails.reported_side_effects || [];
   
   return (
-    <div className="container py-6 space-y-6">
-      {/* Back Link */}
+    <div className="container mx-auto px-4 py-6 space-y-6">
+      {/* Breadcrumbs */}
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/patient/treatments">Treatments</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href={`/patient/treatments/${patientTreatmentId}`}>{treatmentName}</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Side Effects</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
+      {/* Removed Back Link */}
+      {/* 
       <Link 
         href={`/patient/treatments/${patientTreatmentId}`}
         className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4"
@@ -71,10 +102,11 @@ export default async function TreatmentSideEffectsPage({ params }: { params: Pro
         <ArrowLeft className="mr-2 h-4 w-4" />
         Back to Treatment Details
       </Link>
+      */}
 
       {/* Page Header */}
       <div className="space-y-0.5">
-        <h2 className="text-2xl font-bold tracking-tight">{treatmentName}</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Side Effects for {treatmentName}</h2>
         <p className="text-muted-foreground">Manage side effects for this treatment</p>
       </div>
 

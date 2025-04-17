@@ -11,6 +11,15 @@ import type { Database } from "@/lib/database.types"
 import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Only import type if client not used
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
 import { Button } from '@/components/ui/button'
+// Import Breadcrumb components
+import { 
+  Breadcrumb, 
+  BreadcrumbItem, 
+  BreadcrumbLink, 
+  BreadcrumbList, 
+  BreadcrumbPage, 
+  BreadcrumbSeparator 
+} from "@/components/ui/breadcrumb"
 
 // Define specific types for fetched data
 /* 
@@ -95,11 +104,29 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
   const sideEffectsCount = treatmentDetails.reported_side_effects.length;
 
   return (
-    <div className="container py-6 space-y-6">
+    <div className="container mx-auto px-4 py-6 space-y-6">
+      {/* Breadcrumbs */}
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/patient/treatments">Treatments</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{treatmentName}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
+       {/* Removed Back Button - Breadcrumbs handle this now */}
+       {/* 
        <Link href="/patient/treatments" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4">
          <ArrowLeft className="mr-2 h-4 w-4" />
          Back to Treatments
        </Link>
+       */}
      
       <Card>
         <CardHeader>
