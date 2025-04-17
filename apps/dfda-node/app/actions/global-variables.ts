@@ -74,4 +74,95 @@ export async function searchPredictorsAction(query: string): Promise<PredictorSu
     }
 
     return data || [];
+}
+
+// --- Actions to get variables by intervention type ---
+
+// Renamed from TabVariable for better reusability
+interface SimpleVariableInfo {
+  id: string;
+  name: string;
+}
+
+// Renamed and modified to fetch ONLY treatments
+export async function getTreatmentVariables(limit: number = 9): Promise<SimpleVariableInfo[]> {
+  const supabase = await createClient();
+  let treatments: SimpleVariableInfo[] = [];
+
+  try {
+    // 1. Get IDs from treatments table
+    const { data: treatmentIdsData, error: treatmentIdsError } = await supabase
+      .from('treatments')
+      .select('id')
+      .limit(limit * 2); // Fetch more initially
+
+    if (treatmentIdsError) {
+      logger.error('Error fetching treatment IDs for tabs', { error: treatmentIdsError.message });
+      return [];
+    }
+
+    const treatmentIds = treatmentIdsData?.map(t => t.id) || [];
+
+    // 2. Fetch global_variables using the IDs
+    if (treatmentIds.length > 0) {
+      const { data: treatmentVars, error: treatmentsVarsError } = await supabase
+        .from('global_variables')
+        .select('id, name')
+        .in('id', treatmentIds)
+        .order('name')
+        .limit(limit);
+
+      if (treatmentsVarsError) {
+        logger.error('Error fetching treatment variables for tabs', { error: treatmentsVarsError.message });
+      } else {
+        treatments = (treatmentVars as SimpleVariableInfo[] || []).filter(t => t.name); // Ensure name exists
+      }
+    }
+  } catch (error) {
+    logger.error('Unexpected error fetching treatment variables for tabs', { error });
+  }
+
+  return treatments;
+}
+
+// New action to fetch ONLY foods
+export async function getFoodVariables(limit: number = 9): Promise<SimpleVariableInfo[]> {
+  const supabase = await createClient();
+  let foods: SimpleVariableInfo[] = [];
+
+  try {
+    // 1. Get IDs from food_details table
+    const { data: foodIdsData, error: foodIdsError } = await supabase
+      .from('food_details')
+      .select('global_variable_id')
+      .limit(limit * 2); // Fetch more initially
+
+    if (foodIdsError) {
+      logger.error('Error fetching food IDs for tabs', { error: foodIdsError.message });
+      return [];
+    }
+
+    const foodIds = foodIdsData?.map(f => f.global_variable_id) || [];
+
+    // 2. Fetch global_variables using the IDs
+    if (foodIds.length > 0) {
+      const { data: foodVars, error: foodsVarsError } = await supabase
+        .from('global_variables')
+        .select('id, name')
+        .in('id', foodIds)
+        .order('name')
+        .limit(limit);
+
+      if (foodsVarsError) {
+        logger.error('Error fetching food variables for tabs', { error: foodsVarsError.message });
+      } else {
+        foods = (foodVars as SimpleVariableInfo[] || []).filter(f => f.name); // Ensure name exists
+      }
+    }
+
+  } catch (error) {
+    logger.error('Unexpected error fetching food variables for tabs', { error });
+  }
+
+  return foods;
 } 

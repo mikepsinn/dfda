@@ -104,7 +104,7 @@ export function OutcomeLabelSearch() {
   };
 
   return (
-    <div className="flex justify-center w-full px-4">
+    <div className="flex justify-center w-full p-4">
       <form onSubmit={handleFormSubmit} className="w-full max-w-xl">
         <Command className="overflow-visible rounded-full border">
           <CommandInput

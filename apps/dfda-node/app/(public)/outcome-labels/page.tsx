@@ -6,13 +6,22 @@ import { Button } from "@/components/ui/button"
 import { OutcomeLabelSearch } from "@/components/OutcomeLabelSearch"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
+import { getTreatmentVariables, getFoodVariables } from "@/app/actions/global-variables"; // Import the actions
 
 // Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
   return getMetadataFromNavKey('outcome_labels');
 }
 
-export default function OutcomeLabels() {
+// Make page component async
+export default async function OutcomeLabels() {
+
+  // Fetch data here
+  const [treatmentData, foodData] = await Promise.all([
+    getTreatmentVariables(9), // Fetch 9 items
+    getFoodVariables(9)
+  ]);
+
   return (
     <div className="py-6 md:py-10">
       <div className="container">
@@ -116,9 +125,6 @@ export default function OutcomeLabels() {
                       </p>
                     </div>
                   </div>
-                  <div className="w-full mt-4">
-                    <Button className="w-full">Browse Outcome Labels</Button>
-                  </div>
                 </CardContent>
               </Card>
 
@@ -161,11 +167,6 @@ export default function OutcomeLabels() {
                       </p>
                     </div>
                   </div>
-                  <div className="w-full mt-4">
-                    <Button variant="outline" className="w-full">
-                      Provider Resources
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -178,7 +179,8 @@ export default function OutcomeLabels() {
               <CardContent>
                 <OutcomeLabelSearch />
                 
-                <OutcomeLabelsTabsWrapper />
+                {/* Pass fetched data as props */}
+                <OutcomeLabelsTabsWrapper treatmentData={treatmentData} foodData={foodData} />
 
                 <div className="mt-6 flex justify-between items-center">
                   <p className="text-sm text-muted-foreground">Data updated: June 2025</p>

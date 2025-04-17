@@ -27,6 +27,13 @@ export const publicCitationTypeSchema = z.union([
   z.literal("other"),
 ]);
 
+export const publicEvidenceCertaintyEnumSchema = z.union([
+  z.literal("High"),
+  z.literal("Moderate"),
+  z.literal("Low"),
+  z.literal("Very Low"),
+]);
+
 export const publicFormQuestionTypeSchema = z.union([
   z.literal("text"),
   z.literal("multiple-choice"),
@@ -43,6 +50,13 @@ export const publicProductTypeEnumSchema = z.union([
   z.literal("wearable_device"),
   z.literal("service"),
   z.literal("other"),
+]);
+
+export const publicRelationshipCategoryEnumSchema = z.union([
+  z.literal("Efficacy"),
+  z.literal("Safety"),
+  z.literal("Mechanism"),
+  z.literal("Correlation"),
 ]);
 
 export const publicReminderNotificationStatusSchema = z.union([
@@ -553,67 +567,86 @@ export const publicFormsUpdateSchemaSchema = z.object({
 });
 
 export const publicGlobalVariableRelationshipsRowSchemaSchema = z.object({
+  absolute_change_ci_lower: z.number().nullable(),
+  absolute_change_ci_upper: z.number().nullable(),
   absolute_change_unit_id: z.string().nullable(),
   absolute_change_value: z.number().nullable(),
   baseline_description: z.string().nullable(),
-  category: z.string(),
-  category_display_order: z.number().nullable(),
+  category: publicRelationshipCategoryEnumSchema,
+  certainty_of_evidence: publicEvidenceCertaintyEnumSchema.nullable(),
   citation_id: z.string(),
   condition_id: z.string().nullable(),
+  confidence_interval_level: z.number().nullable(),
   created_at: z.string(),
   data_last_updated: z.string().nullable(),
   finding_specific_notes: z.string().nullable(),
   id: z.string(),
   is_positive_outcome: z.boolean().nullable(),
-  item_display_order: z.number().nullable(),
   nnh: z.number().nullable(),
   nnt: z.number().nullable(),
   outcome_global_variable_id: z.string(),
+  p_value: z.number().nullable(),
   percentage_change: z.number().nullable(),
+  percentage_change_ci_lower: z.number().nullable(),
+  percentage_change_ci_upper: z.number().nullable(),
   predictor_global_variable_id: z.string(),
   updated_at: z.string(),
 });
 
 export const publicGlobalVariableRelationshipsInsertSchemaSchema = z.object({
+  absolute_change_ci_lower: z.number().optional().nullable(),
+  absolute_change_ci_upper: z.number().optional().nullable(),
   absolute_change_unit_id: z.string().optional().nullable(),
   absolute_change_value: z.number().optional().nullable(),
   baseline_description: z.string().optional().nullable(),
-  category: z.string(),
-  category_display_order: z.number().optional().nullable(),
+  category: publicRelationshipCategoryEnumSchema,
+  certainty_of_evidence: publicEvidenceCertaintyEnumSchema
+    .optional()
+    .nullable(),
   citation_id: z.string(),
   condition_id: z.string().optional().nullable(),
+  confidence_interval_level: z.number().optional().nullable(),
   created_at: z.string().optional(),
   data_last_updated: z.string().optional().nullable(),
   finding_specific_notes: z.string().optional().nullable(),
   id: z.string().optional(),
   is_positive_outcome: z.boolean().optional().nullable(),
-  item_display_order: z.number().optional().nullable(),
   nnh: z.number().optional().nullable(),
   nnt: z.number().optional().nullable(),
   outcome_global_variable_id: z.string(),
+  p_value: z.number().optional().nullable(),
   percentage_change: z.number().optional().nullable(),
+  percentage_change_ci_lower: z.number().optional().nullable(),
+  percentage_change_ci_upper: z.number().optional().nullable(),
   predictor_global_variable_id: z.string(),
   updated_at: z.string().optional(),
 });
 
 export const publicGlobalVariableRelationshipsUpdateSchemaSchema = z.object({
+  absolute_change_ci_lower: z.number().optional().nullable(),
+  absolute_change_ci_upper: z.number().optional().nullable(),
   absolute_change_unit_id: z.string().optional().nullable(),
   absolute_change_value: z.number().optional().nullable(),
   baseline_description: z.string().optional().nullable(),
-  category: z.string().optional(),
-  category_display_order: z.number().optional().nullable(),
+  category: publicRelationshipCategoryEnumSchema.optional(),
+  certainty_of_evidence: publicEvidenceCertaintyEnumSchema
+    .optional()
+    .nullable(),
   citation_id: z.string().optional(),
   condition_id: z.string().optional().nullable(),
+  confidence_interval_level: z.number().optional().nullable(),
   created_at: z.string().optional(),
   data_last_updated: z.string().optional().nullable(),
   finding_specific_notes: z.string().optional().nullable(),
   id: z.string().optional(),
   is_positive_outcome: z.boolean().optional().nullable(),
-  item_display_order: z.number().optional().nullable(),
   nnh: z.number().optional().nullable(),
   nnt: z.number().optional().nullable(),
   outcome_global_variable_id: z.string().optional(),
+  p_value: z.number().optional().nullable(),
   percentage_change: z.number().optional().nullable(),
+  percentage_change_ci_lower: z.number().optional().nullable(),
+  percentage_change_ci_upper: z.number().optional().nullable(),
   predictor_global_variable_id: z.string().optional(),
   updated_at: z.string().optional(),
 });

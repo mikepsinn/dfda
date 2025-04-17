@@ -477,65 +477,86 @@ export type Database = {
       }
       global_variable_relationships: {
         Row: {
+          absolute_change_ci_lower: number | null
+          absolute_change_ci_upper: number | null
           absolute_change_unit_id: string | null
           absolute_change_value: number | null
           baseline_description: string | null
-          category: string
-          category_display_order: number | null
+          category: Database["public"]["Enums"]["relationship_category_enum"]
+          certainty_of_evidence:
+            | Database["public"]["Enums"]["evidence_certainty_enum"]
+            | null
           citation_id: string
           condition_id: string | null
+          confidence_interval_level: number | null
           created_at: string
           data_last_updated: string | null
           finding_specific_notes: string | null
           id: string
           is_positive_outcome: boolean | null
-          item_display_order: number | null
           nnh: number | null
           nnt: number | null
           outcome_global_variable_id: string
+          p_value: number | null
           percentage_change: number | null
+          percentage_change_ci_lower: number | null
+          percentage_change_ci_upper: number | null
           predictor_global_variable_id: string
           updated_at: string
         }
         Insert: {
+          absolute_change_ci_lower?: number | null
+          absolute_change_ci_upper?: number | null
           absolute_change_unit_id?: string | null
           absolute_change_value?: number | null
           baseline_description?: string | null
-          category: string
-          category_display_order?: number | null
+          category: Database["public"]["Enums"]["relationship_category_enum"]
+          certainty_of_evidence?:
+            | Database["public"]["Enums"]["evidence_certainty_enum"]
+            | null
           citation_id: string
           condition_id?: string | null
+          confidence_interval_level?: number | null
           created_at?: string
           data_last_updated?: string | null
           finding_specific_notes?: string | null
           id?: string
           is_positive_outcome?: boolean | null
-          item_display_order?: number | null
           nnh?: number | null
           nnt?: number | null
           outcome_global_variable_id: string
+          p_value?: number | null
           percentage_change?: number | null
+          percentage_change_ci_lower?: number | null
+          percentage_change_ci_upper?: number | null
           predictor_global_variable_id: string
           updated_at?: string
         }
         Update: {
+          absolute_change_ci_lower?: number | null
+          absolute_change_ci_upper?: number | null
           absolute_change_unit_id?: string | null
           absolute_change_value?: number | null
           baseline_description?: string | null
-          category?: string
-          category_display_order?: number | null
+          category?: Database["public"]["Enums"]["relationship_category_enum"]
+          certainty_of_evidence?:
+            | Database["public"]["Enums"]["evidence_certainty_enum"]
+            | null
           citation_id?: string
           condition_id?: string | null
+          confidence_interval_level?: number | null
           created_at?: string
           data_last_updated?: string | null
           finding_specific_notes?: string | null
           id?: string
           is_positive_outcome?: boolean | null
-          item_display_order?: number | null
           nnh?: number | null
           nnt?: number | null
           outcome_global_variable_id?: string
+          p_value?: number | null
           percentage_change?: number | null
+          percentage_change_ci_lower?: number | null
+          percentage_change_ci_upper?: number | null
           predictor_global_variable_id?: string
           updated_at?: string
         }
@@ -2745,6 +2766,7 @@ export type Database = {
         | "fda_label"
         | "usda_entry"
         | "other"
+      evidence_certainty_enum: "High" | "Moderate" | "Low" | "Very Low"
       form_question_type:
         | "text"
         | "multiple-choice"
@@ -2759,6 +2781,11 @@ export type Database = {
         | "wearable_device"
         | "service"
         | "other"
+      relationship_category_enum:
+        | "Efficacy"
+        | "Safety"
+        | "Mechanism"
+        | "Correlation"
       reminder_notification_status:
         | "pending"
         | "completed"
@@ -3319,6 +3346,7 @@ export const Constants = {
         "usda_entry",
         "other",
       ],
+      evidence_certainty_enum: ["High", "Moderate", "Low", "Very Low"],
       form_question_type: [
         "text",
         "multiple-choice",
@@ -3334,6 +3362,12 @@ export const Constants = {
         "wearable_device",
         "service",
         "other",
+      ],
+      relationship_category_enum: [
+        "Efficacy",
+        "Safety",
+        "Mechanism",
+        "Correlation",
       ],
       reminder_notification_status: [
         "pending",
