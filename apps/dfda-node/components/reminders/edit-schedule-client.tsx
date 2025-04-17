@@ -118,6 +118,12 @@ export function EditScheduleClient({
       return;
     }
 
+    logger.info('[handleSaveSchedule] Saving schedule. Data being sent:', { 
+        scheduleData: activeSchedule, 
+        timeOfDayValue: activeSchedule.timeOfDay, // Log the specific value
+        editingId 
+    });
+
     setIsSaving(true);
     
     try {

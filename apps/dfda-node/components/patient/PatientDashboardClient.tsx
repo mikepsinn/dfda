@@ -85,15 +85,7 @@ export default function PatientDashboardClient({
       )}
 
       {/* Existing Conditions & Treatments Card */}
-      <Card>
-        <CardHeader className="pb-4">
-          <div>
-            <CardTitle>Your Conditions & Treatments</CardTitle>
-            <CardDescription>View and manage your health data</CardDescription>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Link href="/patient/conditions">
               <Button variant="outline" size="lg" className="w-full h-24 flex flex-col justify-center items-center gap-2">
                 <HeartPulse className="h-6 w-6" />
@@ -107,8 +99,6 @@ export default function PatientDashboardClient({
               </Button>
             </Link>
           </div>
-        </CardContent>
-      </Card>
     </div>
   )
 } 

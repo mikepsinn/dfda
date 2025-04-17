@@ -206,7 +206,7 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
           </p>
           
           <Button asChild className="w-full" variant="outline">
-            <Link href={`/patient/treatments/${patientTreatmentId}/schedule`}>
+            <Link href={`/patient/reminders/${treatmentDetails.user_variable_id}`}>
               <Bell className="mr-2 h-4 w-4" />
               View & Manage Schedule
             </Link>

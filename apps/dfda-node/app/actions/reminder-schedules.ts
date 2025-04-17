@@ -153,18 +153,43 @@ export async function upsertReminderScheduleAction(
     const supabase = await createClient();
     logger.info('Upserting reminder schedule', { globalVariableId, scheduleIdToUpdate, isActive: scheduleData.isActive });
 
+    // --- Get DB Connection String for Worker ---
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+        logger.error("DATABASE_URL environment variable is not set for worker job enqueuing in upsertReminderScheduleAction");
+        // Return error immediately if connection string is missing
+        return { success: false, error: "Server configuration error (DB URL missing)." };
+    }
+    // --- End DB Connection String ---
+
     // Validation
+    // --- Add Logging Here ---
+    logger.info('[UPSERT-ACTION] Received data', { 
+        scheduleData: scheduleData, 
+        receivedTimeOfDay: scheduleData?.timeOfDay 
+    });
+    // --- End Logging ---
+
     if (!globalVariableId) {
         return { success: false, error: 'Global Variable ID is required.' };
     }
-    if (!scheduleData.timeOfDay?.match(/^([01]\d|2[0-3]):([0-5]\d)$/)) { // Basic HH:mm validation
+    // Log the value being checked AND the result of the regex match
+    const timeCheckValue = scheduleData?.timeOfDay;
+    const isTimeFormatValid = typeof timeCheckValue === 'string' && timeCheckValue.match(/^([01]\d|2[0-3]):([0-5]\d)$/);
+    logger.info('[UPSERT-ACTION] Validating timeOfDay', { 
+        timeToCheck: timeCheckValue, 
+        isFormatValid: !!isTimeFormatValid // Coerce to boolean for clarity
+    });
+
+    if (!isTimeFormatValid) { 
+        logger.warn('[UPSERT-ACTION] Time format validation failed', { receivedTimeOfDay: timeCheckValue });
         return { success: false, error: 'Invalid time format (HH:mm required).' };
     }
     try {
         // Validate RRULE string basic structure and parse it
         /* rule = */ rrulestr(scheduleData.rruleString) as RRule; // Removed unused assignment
     } catch (e) {
-        logger.error('Invalid RRULE string provided', { rruleString: scheduleData.rruleString, error: e });
+        logger.error('[UPSERT-ACTION] Invalid RRULE string provided', { rruleString: scheduleData.rruleString, error: e });
         return { success: false, error: 'Invalid recurrence rule format.' };
     }
 
@@ -172,79 +197,73 @@ export async function upsertReminderScheduleAction(
         let nextTriggerAtIso: string | null = null;
         let userTimezone: string | undefined;
 
+        // --- Determine user timezone (needed for next_trigger_at calculation) ---
+        // Fetch timezone regardless of isActive, needed for RRULE parsing with TZID
+        const { data: profile, error: profileError } = await supabase
+            .from('profiles')
+            .select('timezone')
+            .eq('id', userId)
+            .single();
+
+        if (profileError || !profile?.timezone) {
+            logger.error('Could not fetch user profile timezone for next_trigger calculation/RRULE parsing', { userId, error: profileError });
+            userTimezone = 'UTC'; // Fallback to UTC
+        } else {
+            userTimezone = profile.timezone;
+        }
+        // --- End Determine user timezone ---
+
         // --- Determine next_trigger_at ---
         if (scheduleData.isActive) {
-             const { data: profile, error: profileError } = await supabase
-                .from('profiles')
-                .select('timezone')
-                .eq('id', userId)
-                .single();
+            try {
+                const rule = rrulestr(scheduleData.rruleString) as RRule;
+                const nowUtc = new Date();
+                const [hours, minutes] = scheduleData.timeOfDay.split(':').map(Number);
 
-            if (profileError || !profile?.timezone) {
-                logger.error('Could not fetch user profile timezone for next_trigger calculation', { userId, error: profileError });
-                // Decide how to handle: error out, or default to UTC?
-                // Defaulting to UTC for now, but this might lead to incorrect times if profile isn't set.
-                userTimezone = 'UTC'; 
-            } else {
-                userTimezone = profile.timezone;
+                // DTSTART handling: Prefer RRULE's DTSTART if available, else use scheduleData.startDate
+                let dtstartSource: Date;
+                if (rule.options.dtstart instanceof Date) {
+                    dtstartSource = rule.options.dtstart;
+                } else if (scheduleData.startDate instanceof Date) {
+                    dtstartSource = scheduleData.startDate;
+                } else {
+                    logger.warn('Could not determine valid Date object for dtstart, using current time as fallback.', { ruleDtstart: rule.options.dtstart, scheduleStartDate: scheduleData.startDate });
+                    dtstartSource = new Date(); // Less ideal fallback
+                }
+
+                // Ensure time is applied correctly to the start date for calculation
+                const dtstartWithTime = new Date(dtstartSource);
+                dtstartWithTime.setHours(hours, minutes, 0, 0);
+
+                const options = {
+                    ...rule.options,
+                    // Ensure dtstart is a Date object before passing to toZonedTime
+                    dtstart: toZonedTime(dtstartWithTime, userTimezone), // Convert start to user's timezone
+                    tzid: userTimezone, // Ensure timezone is explicit in options
+                };
+                const calculationRule = new RRule(options);
+                const nowInTargetTz = toZonedTime(nowUtc, userTimezone); // Use current time in user's timezone
+                const nextOccurrence = calculationRule.after(nowInTargetTz, true); // Find next occurrence after now
+
+                if (nextOccurrence) {
+                    // Convert the JSDate result (which is in user's TZ context) back to UTC ISO string
+                    nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(userTimezone).toUTC().toISO();
+                    logger.info('Calculated next trigger time for active schedule', { nextTriggerAtIso, timezone: userTimezone });
+                } else {
+                    logger.info('No future occurrences found for active rule', { globalVariableId, scheduleIdToUpdate });
+                    nextTriggerAtIso = null; // Explicitly null if no future dates
+                }
+            } catch (ruleError) {
+                 logger.error('Error calculating next trigger time', { scheduleIdToUpdate, rruleString: scheduleData.rruleString, error: ruleError });
+                 nextTriggerAtIso = null; // Default to null on error
             }
-        }
-
-        if (scheduleIdToUpdate) { // === UPDATE ===
-             if (scheduleData.isActive && userTimezone) {
-                 try {
-                    // Existing logic to calculate the real next trigger based on RRULE, time, timezone
-                    const updateRule = rrulestr(scheduleData.rruleString) as RRule;
-                    const nowUtc = new Date();
-                    const [hours, minutes] = scheduleData.timeOfDay.split(':').map(Number);
-                    
-                    // Ensure dtstart is a Date object before using toZonedTime
-                    let dtstartDate: Date;
-                    if (updateRule.options.dtstart instanceof Date) {
-                      dtstartDate = updateRule.options.dtstart;
-                    } else {
-                      // Attempt to parse if it's a string or number? Requires more robust handling or assumptions.
-                      // For now, let's assume it's already a Date based on rrule parsing, 
-                      // or default if not available (though rrule typically sets a default).
-                      logger.warn('Could not determine Date object for dtstart, defaulting.', { dtstart: updateRule.options.dtstart });
-                      dtstartDate = new Date(); // Fallback, might need adjustment
-                    }
-                    dtstartDate.setHours(hours, minutes, 0, 0); // Apply time of day
-
-                    const options = {
-                        ...updateRule.options,
-                        // Ensure dtstart is a Date object before passing to toZonedTime
-                        dtstart: toZonedTime(dtstartDate, userTimezone),
-                        tzid: userTimezone, // Ensure timezone is passed if needed by rrule logic
-                    };
-                    const calculationRule = new RRule(options);
-                    const nowInTargetTz = toZonedTime(nowUtc, userTimezone); // Use toZonedTime for comparison time
-                    const nextOccurrence = calculationRule.after(nowInTargetTz, true); // Find next after current time in target TZ
-
-                    if (nextOccurrence) {
-                         // Convert the result back to ISO string in UTC for storage
-                        nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(userTimezone).toISO();
-                        logger.info('Calculated next trigger time for UPDATE', { nextTriggerAtIso, timezone: userTimezone });
-                    } else {
-                        logger.info('No future occurrences found for updated rule', { globalVariableId, scheduleIdToUpdate });
-                        nextTriggerAtIso = null; // Explicitly null if no future dates
-                    }
-                 } catch (ruleError) {
-                      logger.error('Error calculating next trigger time during update', { scheduleIdToUpdate, rruleString: scheduleData.rruleString, error: ruleError });
-                      nextTriggerAtIso = null;
-                 }
-            } else {
-                // If updating to inactive or couldn't get timezone, clear the next trigger time
-                logger.info('Updated schedule inactive or timezone unavailable, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
-                nextTriggerAtIso = null;
-            }
-
-        } else { // === INSERT ===
-            // For NEW reminders, keep setting to past. Calculation should happen elsewhere ideally.
-            nextTriggerAtIso = new Date(Date.now() - 60 * 1000).toISOString(); // 1 minute ago
-            logger.info('Setting initial trigger time to the past for NEW reminder', { nextTriggerAtIso });
+        } else {
+            // If schedule is inactive, clear the next trigger time
+            logger.info('Schedule is inactive, setting next_trigger_at to null', { globalVariableId, scheduleIdToUpdate });
+            nextTriggerAtIso = null;
         }
         // --- End Determine next_trigger_at ---
+
 
         const dbData: Omit<ReminderScheduleDbData, 'next_trigger_at'> & { user_id: string; next_trigger_at?: string | null } = {
             user_id: userId,
@@ -261,41 +280,130 @@ export async function upsertReminderScheduleAction(
         };
 
         let response;
+        let savedScheduleId: string | undefined;
+
         if (scheduleIdToUpdate) {
-            // Update existing schedule
-            logger.info('Updating existing schedule', { scheduleIdToUpdate });
+            // === UPDATE ===
+            logger.info('[UPSERT-UPDATE] Starting update process', { scheduleIdToUpdate });
             response = await supabase
                 .from('reminder_schedules')
-                .update(dbData) // Pass all updatable fields
+                .update(dbData)
                 .eq('id', scheduleIdToUpdate)
-                .eq('user_id', userId) // Ensure user owns the schedule
+                .eq('user_id', userId)
                 .select()
                 .single();
+            
+            if (response.error) {
+                 logger.error('[UPSERT-UPDATE] Database update failed', { scheduleIdToUpdate, error: response.error });
+                 // Error will be thrown later
+            } else if (response.data) {
+                savedScheduleId = response.data.id;
+                logger.info('[UPSERT-UPDATE] DB update successful', { savedScheduleId });
+                // Only proceed if we have a valid ID
+                if (savedScheduleId) { 
+                    logger.info('[UPSERT-UPDATE] Proceeding with cleanup/requeue', { savedScheduleId });
+                    
+                    // --- Delete Future Pending Notifications ---
+                    logger.info('[UPSERT-UPDATE] Deleting future pending notifications', { savedScheduleId });
+                    const { error: deleteError } = await supabase
+                        .from('reminder_notifications')
+                        .delete()
+                        .eq('reminder_schedule_id', savedScheduleId)
+                        .eq('status', 'pending')
+                        .gt('notification_trigger_at', new Date().toISOString());
+
+                    if (deleteError) {
+                        logger.warn('[UPSERT-UPDATE] Failed to delete future pending notifications (continuing...)', { savedScheduleId, error: deleteError });
+                    } else {
+                        logger.info('[UPSERT-UPDATE] Successfully deleted future pending notifications', { savedScheduleId });
+                    }
+                    // --- End Deletion ---
+
+                    // --- Enqueue Worker Job to Regenerate First Notification ---
+                    // Ensure connectionString is available (checked earlier, but good practice)
+                    if (!connectionString) {
+                         logger.error('[UPSERT-UPDATE] CRITICAL: Connection string missing before enqueue attempt!');
+                         // Potentially return an error here or rely on earlier check
+                    } else {
+                        try {
+                            logger.info('[UPSERT-UPDATE] Attempting to enqueue processSingleSchedule job', { savedScheduleId, connectionString: '****' }); // Mask connection string in logs
+                            await quickAddJob(
+                                { connectionString }, 
+                                'processSingleSchedule', 
+                                { scheduleId: savedScheduleId } 
+                            );
+                            logger.info('[UPSERT-UPDATE] Successfully enqueued processSingleSchedule job', { savedScheduleId });
+                        } catch (enqueueError) {
+                            logger.error('[UPSERT-UPDATE] Error enqueuing processSingleSchedule job', {
+                                savedScheduleId,
+                                error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
+                            });
+                            // Log error but don't fail the user-facing operation
+                        }
+                    }
+                    // --- End Enqueue ---
+                } else {
+                     logger.error('[UPSERT-UPDATE] Update response missing schedule ID, cannot enqueue job', { scheduleIdToUpdate, responseData: response.data });
+                }
+            } else {
+                 // This case should ideally not happen if there's no error but also no data
+                 logger.warn('[UPSERT-UPDATE] DB update returned no error and no data', { scheduleIdToUpdate });
+            }
         } else {
-            // Insert new schedule
+            // === INSERT ===
             logger.info('Inserting new schedule');
             response = await supabase
                 .from('reminder_schedules')
                 .insert(dbData)
                 .select()
                 .single();
+            if (!response.error && response.data) {
+                savedScheduleId = response.data.id;
+                 // Only proceed if we have a valid ID
+                if (savedScheduleId) {
+                    // --- Enqueue Worker Job for NEW schedule ---
+                     try {
+                        logger.info('Enqueuing processSingleSchedule job for NEW schedule', { savedScheduleId });
+                        await quickAddJob(
+                            { connectionString }, 
+                            'processSingleSchedule', 
+                            { scheduleId: savedScheduleId } // Now guaranteed to be string
+                        );
+                        logger.info('Successfully enqueued processSingleSchedule job for new schedule', { savedScheduleId });
+                    } catch (enqueueError) {
+                        logger.error('Error enqueuing processSingleSchedule job after insert', {
+                            savedScheduleId,
+                            error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
+                        });
+                    }
+                    // --- End Enqueue ---
+                } else {
+                    logger.error('Insert response missing schedule ID', { responseData: response.data });
+                }
+            }
         }
 
         if (response.error) {
-            logger.error('Error upserting reminder schedule', { error: response.error, globalVariableId });
+            logger.error('Error upserting reminder schedule in DB', { error: response.error, globalVariableId, scheduleIdToUpdate });
             throw response.error;
         }
 
-        logger.info('Successfully upserted reminder schedule', { scheduleId: response.data.id });
+        // Check if data exists before accessing it
+        if (!response.data) {
+             logger.error('Upsert operation did not return data', { globalVariableId, scheduleIdToUpdate });
+             throw new Error('Failed to save schedule data.');
+        }
+
+        logger.info('Successfully upserted reminder schedule DB record', { scheduleId: response.data.id });
 
         // Revalidate paths (could be more specific if needed)
-        // revalidatePath('/patient/reminders'); 
-        // revalidatePath(`/patient/variables/${globalVariableId}`);
+        revalidatePath('/patient/reminders'); 
+        revalidatePath(`/patient/variables/${globalVariableId}`); // Assuming this path exists
 
         return { success: true, data: response.data, message: 'Reminder schedule saved.' };
 
     } catch (error) {
-        logger.error("Failed in upsertReminderScheduleAction", { globalVariableId, error: error instanceof Error ? error.message : String(error) });
+        logger.error("Failed in upsertReminderScheduleAction", { globalVariableId, scheduleIdToUpdate, error: error instanceof Error ? error.message : String(error) });
         const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
         return { success: false, error: errorMessage };
     }
