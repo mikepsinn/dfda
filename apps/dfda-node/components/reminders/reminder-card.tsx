@@ -25,8 +25,8 @@ export type ReminderCardProps = {
   onDelete: (scheduleId: string) => void
 }
 
-export function ReminderCard({ schedule, unitName, onEdit, onDelete }: ReminderCardProps) {
-  const [showDeleteDialog, setShowDeleteDialog] = useState(false)
+export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
+
 
   const formatDays = (days: Weekday[] | number[]) => {
     const dayNames = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
@@ -85,10 +85,7 @@ export function ReminderCard({ schedule, unitName, onEdit, onDelete }: ReminderC
     }
   }
 
-  const handleConfirmDelete = () => {
-    onDelete(schedule.id)
-    setShowDeleteDialog(false)
-  }
+
 
   return (
     <Card className="overflow-hidden">
@@ -97,26 +94,6 @@ export function ReminderCard({ schedule, unitName, onEdit, onDelete }: ReminderC
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4 text-muted-foreground" />
             <span className="text-lg font-medium">{formatTime(schedule.time_of_day)}</span>
-          </div>
-          <div className="flex gap-2">
-            <Button
-              size="icon" 
-              variant="ghost" 
-              className="h-8 w-8" 
-              onClick={() => onEdit(schedule.id)}
-            >
-              <Edit className="h-4 w-4" />
-              <span className="sr-only">Edit reminder</span>
-            </Button>
-            <Button
-              size="icon"
-              variant="ghost"
-              className="h-8 w-8 text-destructive"
-              onClick={() => setShowDeleteDialog(true)}
-            >
-              <Trash2 className="h-4 w-4" />
-              <span className="sr-only">Delete reminder</span>
-            </Button>
           </div>
         </div>
         
@@ -131,20 +108,6 @@ export function ReminderCard({ schedule, unitName, onEdit, onDelete }: ReminderC
         )}
       </CardContent>
 
-      <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Delete reminder</AlertDialogTitle>
-            <AlertDialogDescription>
-              Are you sure you want to delete this reminder? This action cannot be undone.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleConfirmDelete}>Delete</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
     </Card>
   )
 } 

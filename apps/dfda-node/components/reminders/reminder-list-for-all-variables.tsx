@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { PlusCircle } from 'lucide-react'
 import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
 import { getAllReminderSchedulesForUserAction } from '@/app/actions/reminder-schedules'
@@ -30,7 +30,7 @@ export function ReminderListForAllVariables({
   const [schedules, setSchedules] = useState<any[]>([])
 
   // Load all reminder schedules for the user
-  const loadSchedules = async () => {
+  const loadSchedules = useCallback(async () => {
     if (!userId) {
       setIsLoading(false)
       setSchedules([])
@@ -48,11 +48,11 @@ export function ReminderListForAllVariables({
     } finally {
       setIsLoading(false)
     }
-  }
+  }, [userId])
 
   useEffect(() => {
     loadSchedules()
-  }, [userId])
+  }, [loadSchedules])
 
   const handleVariableClick = (variableId: string) => {
     router.push(`/patient/reminders/${variableId}`)
