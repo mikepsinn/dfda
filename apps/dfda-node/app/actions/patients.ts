@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Database } from "@/lib/database.types";
 import { logger } from "@/lib/logger";
 import { getServerUser } from "@/lib/server-auth"; // Use the correct auth helper
+import { getUserProfile } from "@/lib/profile"; // Import profile helper
 
 // Define the specific profile fields we need for the list
 export type PatientProfileSummary = Pick<
@@ -29,19 +30,13 @@ export async function getProviderPatientsAction(): Promise<PatientProfileSummary
     return []; // Return empty array if no user session
   }
 
-  // Fetch the user's profile to get the user_type
-  const { data: profile, error: profileError } = await supabase
-    .from("profiles")
-    .select("id, user_type")
-    .eq("id", user.id)
-    .single();
+  // Fetch the user's profile using the helper
+  const profile = await getUserProfile(user);
 
-  if (profileError || !profile) {
-     logger.error("Error fetching provider profile or profile not found", {
-        userId: user.id,
-        error: profileError,
-      });
-    return []; // Return empty array if profile fetch fails
+  if (!profile) {
+     // getUserProfile logs errors internally
+     logger.error("Could not fetch provider profile.", { userId: user.id });
+     return []; 
   }
 
   // Ensure the user is a provider
@@ -100,7 +95,7 @@ export async function getProviderPatientsAction(): Promise<PatientProfileSummary
     logger.info(`Found ${patients?.length ?? 0} patients for provider`, {
       providerId,
     });
-    return patients || [];
+    return (patients as PatientProfileSummary[]) || []; // Cast to the specific type
 
   } catch (error) {
     logger.error("Error in getProviderPatientsAction", { providerId, error });

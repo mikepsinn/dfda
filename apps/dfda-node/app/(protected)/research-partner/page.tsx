@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
 import { getServerUser } from "@/lib/server-auth"
-import { createServerClient } from "@/lib/supabase"
+import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { ResearchPartnerOverview } from "./components/research-partner-overview"
 import { TrialEnrollment } from "./components/trial-enrollment"
 import { TrialManagement } from "./components/trial-management"
 import { RecentActivity } from "./components/recent-activity"
+import { getUserProfile } from "@/lib/profile"
+import { logger } from "@/lib/logger"
 
 export const metadata: Metadata = {
   title: "Research Partner Dashboard | FDA v2",
@@ -19,14 +21,14 @@ export default async function ResearchPartnerDashboard() {
     redirect("/login?callbackUrl=/research-partner/")
   }
 
-  const supabase = await createServerClient()
+  const supabase = await createClient()
 
-  // Get research partner profile
-  const { data: researchPartnerProfile } = await supabase
-    .from("profiles")
-    .select("first_name, last_name")
-    .eq("id", user.id)
-    .single()
+  const researchPartnerProfile = await getUserProfile(user)
+
+  if (!researchPartnerProfile || researchPartnerProfile.user_type !== 'research-partner') {
+    logger.warn("User accessed research partner dashboard with invalid/missing profile or wrong user_type.", { userId: user.id, userType: researchPartnerProfile?.user_type })
+    redirect("/select-role?error=access_denied")
+  }
 
   // Get active trials
   // Note: Database field is still 'research_partner_id' but represents research_partner_id
@@ -93,7 +95,7 @@ export default async function ResearchPartnerDashboard() {
 
   const researchPartnerName = researchPartnerProfile?.first_name && researchPartnerProfile?.last_name
     ? `${researchPartnerProfile.first_name} ${researchPartnerProfile.last_name}`
-    : "Innovative Therapeutics Inc."
+    : "Research Partner"
 
   const researchPartnerData = {
     name: researchPartnerName,

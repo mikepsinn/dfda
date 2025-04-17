@@ -1,8 +1,10 @@
 import { getServerUser } from "@/lib/server-auth"
-import { createClient } from "@/lib/supabase/server"
+// No longer need createClient directly here
+// import { createClient } from "@/lib/supabase/server"
 import { ProfileForm } from "./profile-form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { redirect } from "next/navigation"
+import { getCurrentUserProfileAction } from "@/app/actions/profiles" // Import the action
 
 export default async function ProfilePage() {
   const user = await getServerUser()
@@ -10,13 +12,18 @@ export default async function ProfilePage() {
     redirect("/login?callbackUrl=/user/profile")
   }
 
-  const supabase = await createClient()
+  // Fetch user profile data using the action
+  const profile = await getCurrentUserProfileAction()
 
-  // Fetch user profile data
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).single()
+  // Handle case where profile fetch failed (though action logs errors)
+  if (!profile) {
+    // Optional: Add user-facing error handling or redirect
+    console.error("ProfilePage: Failed to load profile data for user:", user.id) 
+    // Potentially render an error state or return null/empty component
+  }
 
   return (
-    <div className="">
+    <div className="space-y-6"> {/* Added spacing between cards */} 
 
       <Card>
         <CardHeader>
@@ -24,7 +31,8 @@ export default async function ProfilePage() {
           <CardDescription>Update your personal details and preferences</CardDescription>
         </CardHeader>
         <CardContent>
-          <ProfileForm initialData={profile} />
+          {/* Pass profile or an empty object if fetch failed */}
+          <ProfileForm initialData={profile || {}} /> 
         </CardContent>
       </Card>
 

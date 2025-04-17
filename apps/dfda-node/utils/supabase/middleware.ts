@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { getUserProfile } from '@/lib/profile'
 
 export async function updateSession(request: NextRequest) {
   // This `try/catch` block is only required for the App Router -> Edge Runtime.
@@ -38,10 +39,13 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Redirect to select role if user is logged in but user_type is missing
+  // Fetch the user profile if the user object exists
+  const profile = user ? await getUserProfile(user) : null;
+
+  // Redirect to select role if user is logged in but user_type is missing from profile
   if (
     user && 
-    !user.user_metadata?.user_type && 
+    !profile?.user_type &&
     !request.nextUrl.pathname.startsWith('/select-role') &&
     !request.nextUrl.pathname.startsWith('/login') && // Allow access to login
     !request.nextUrl.pathname.startsWith('/register') && // Allow access to register

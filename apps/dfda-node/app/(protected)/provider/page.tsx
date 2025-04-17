@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import { getServerUser } from "@/lib/server-auth"
-import { createServerClient } from "@/lib/supabase"
+import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import type { Database } from "@/lib/database.types"
 import { createUnifiedLogger } from "@/lib/logger"
+import { getUserProfile } from "@/lib/profile"
 
 // Import Dashboard Components
 import { DashboardHeader } from "./components/dashboard-header"
@@ -82,26 +83,29 @@ type PendingActionForUI = {
 
 export default async function ProviderDashboard() {
   const logger = createUnifiedLogger("ProviderDashboard")
-  const supabase = await createServerClient()
+  const supabase = await createClient()
   const user = await getServerUser()
   
   if (!user) {
     redirect("/login")
   }
 
-  // Fetch provider profile
-  const { data: providerProfile, error: profileError } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single<Profile>() // Specify type
+  // Fetch provider profile using helper
+  const providerProfile = await getUserProfile(user);
 
-  if (profileError) {
-    logger.error("Error fetching provider profile", { error: profileError })
-    return <div>Error loading provider profile.</div>
-  }
   if (!providerProfile) {
-    return <div>Provider profile not found.</div>
+    // getUserProfile logs errors internally
+    logger.error("Could not fetch provider profile.", { userId: user.id });
+    // You might want to redirect to select-role or show a specific error
+    // For now, showing a generic error:
+    return <div>Error loading provider profile. Ensure your role is set correctly.</div>
+  }
+  
+  // Verify user type (optional but recommended)
+  if (providerProfile.user_type !== 'provider') {
+      logger.warn("User accessed provider dashboard but has wrong user_type.", { userId: user.id, userType: providerProfile.user_type });
+      // Redirect to role selection or show an 'access denied' message
+      redirect("/select-role?error=access_denied");
   }
 
   // Fetch active trials

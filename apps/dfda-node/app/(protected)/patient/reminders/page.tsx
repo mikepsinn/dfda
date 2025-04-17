@@ -1,8 +1,8 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
-import { createClient } from "@/lib/supabase/server"
 import { ReminderListForAllVariables } from "@/components/reminders/reminder-list-for-all-variables"
 import { createLogger } from "@/lib/logger"
+import { getUserProfile } from "@/lib/profile"
 
 const logger = createLogger("patient-reminders-page")
 
@@ -14,15 +14,12 @@ export default async function PatientRemindersPage() {
 
   logger.info("Loading patient reminders page", { userId: user.id })
   
-  // Get user timezone from profile
-  const supabase = await createClient()
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('timezone')
-    .eq('id', user.id)
-    .single()
+  // Get user profile using helper
+  const profile = await getUserProfile(user);
   
+  // Determine timezone (fallback to UTC)
   const userTimezone = profile?.timezone || 'UTC'
+  logger.info("Using timezone for reminders page", { userId: user.id, timezone: userTimezone })
 
   return (
     <div className="container py-6 space-y-8">

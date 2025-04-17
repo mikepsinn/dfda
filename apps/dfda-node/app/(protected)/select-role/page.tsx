@@ -14,6 +14,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { Separator } from "@/components/ui/separator"
+import { getUserProfile } from "@/lib/profile"
 
 type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"]
 
@@ -34,24 +35,26 @@ async function setUserType(formData: FormData) {
     return redirect('/login')
   }
 
-  logger.info('Setting user role', { userId: user.id, role });
+  logger.info('Setting user role in profile', { userId: user.id, role });
 
   try {
-    const { error } = await supabase
+    // 1. Update the profiles table (as before)
+    const { error: profileUpdateError } = await supabase
       .from('profiles')
       .update({ user_type: role })
       .eq('id', user.id)
-      .select('user_type')
+      .select('user_type') // Keep select for logging/confirmation if needed
       .single()
 
-    if (error) {
-      logger.error('Error setting user_type:', error)
-      // In a real app, you'd use React's useFormState or other methods to handle errors
-      return; // Just return without redirecting if there's an error
-    } else {
-      logger.info('User role set successfully', { userId: user.id, role });
-      redirect(`/${role}`)
+    if (profileUpdateError) {
+      logger.error('Error setting user_type in profiles table:', profileUpdateError)
+      return; 
     }
+
+    // Redirect after profile update succeeds
+    logger.info('User profile role set, redirecting', { userId: user.id, role });
+    redirect(`/${role}`)
+
   } catch (err) {
     logger.error('Unexpected error setting user role:', err)
     return; // Just return without redirecting on error
@@ -65,23 +68,18 @@ export default async function SelectRolePage() {
     redirect('/login')
   }
 
-  const supabase = await createClient()
-  const { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('user_type')
-    .eq('id', user.id)
-    .single()
-
-  if (profileError) {
-    logger.error('Error fetching user profile for role check:', profileError)
-  }
+  const profile = await getUserProfile(user)
 
   if (profile?.user_type) {
-    logger.info('User already has role, redirecting', { userId: user.id, role: profile.user_type });
+    logger.info('User already has role from profile, redirecting', { userId: user.id, role: profile.user_type });
     redirect(`/${profile.user_type}`)
-  }
+  } else {
+    if (profile) {
+        logger.info('User profile exists but has no role, showing selection page', { userId: user.id });
+    }
 
-  logger.info('User has no role, showing selection page', { userId: user.id });
+    logger.info('Showing role selection page', { userId: user.id });
+  }
 
   return (
     <main className="flex items-center justify-center bg-muted/40 p-4 md:p-8">

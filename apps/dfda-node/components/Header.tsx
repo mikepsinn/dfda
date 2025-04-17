@@ -55,13 +55,13 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
     // Run only when user/profile data potentially changes
   }, [initialUser, initialProfile]); 
 
-  // Determine primary navigation based on user status
+  // Determine primary navigation based on user status and profile
   const primaryNavItems: NavItem[] = initialUser
-    ? getLoggedInPrimaryNavItems(initialUser)
+    ? getLoggedInPrimaryNavItems(initialProfile?.user_type ?? null)
     : loggedOutPrimaryNavItems
 
-  // Get all items for mobile navigation
-  const mobileNavItems: NavItem[] = getAllMobileNavItems(initialUser)
+  // Get all items for mobile navigation based on profile type
+  const mobileNavItems: NavItem[] = getAllMobileNavItems(initialProfile?.user_type ?? null)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">

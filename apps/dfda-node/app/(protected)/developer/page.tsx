@@ -4,21 +4,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { getServerUser } from "@/lib/server-auth" // Assuming this function exists
-import { createClient } from "@/lib/supabase/server" // Assuming this function exists
+import { getServerUser } from "@/lib/server-auth"
 import { redirect } from 'next/navigation'
 import { logger } from "@/lib/logger"
 import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs" // Import CodeExampleTabs
+import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
 import { KeyRound } from "lucide-react"
+import { updateUserProfile, getUserProfile } from "@/lib/profile"
 
-// Server Action to update profile
+// Server Action to update profile using helper
 async function updateDeveloperProfile(formData: FormData) {
   'use server'
 
-  const supabase = await createClient()
   const user = await getServerUser()
 
   if (!user) {
@@ -28,43 +27,36 @@ async function updateDeveloperProfile(formData: FormData) {
   const firstName = formData.get('developer-first-name') as string
   const lastName = formData.get('developer-last-name') as string
 
-  try {
-    const { error } = await supabase
-      .from('profiles')
-      .update({ first_name: firstName, last_name: lastName })
-      .eq('id', user.id)
+  const updates = {
+      first_name: firstName || null,
+      last_name: lastName || null
+  };
 
-    if (error) {
-      logger.error('Error updating developer profile:', error)
-      // TODO: Add user-facing error handling (e.g., toast notification)
-    } else {
-      logger.info('Developer profile updated successfully for user:', user.id)
-      // Optionally revalidate path or redirect if needed
-    }
-  } catch (err) {
-    logger.error('Unexpected error updating developer profile:', err)
-    // TODO: Add user-facing error handling
+  const updatedProfile = await updateUserProfile(user.id, updates);
+
+  if (!updatedProfile) {
+    logger.error('Failed to update developer profile via helper', { userId: user.id });
+    // TODO: Add user-facing error handling (e.g., revalidate with error message)
+  } else {
+    logger.info('Developer profile updated successfully via helper', { userId: user.id })
+    // Optionally revalidate path or redirect if needed
+    // revalidatePath('/developer'); // Example revalidation
   }
 }
 
-export default async function DeveloperDashboardPage() { // Renamed and made async
+export default async function DeveloperDashboardPage() {
   const user = await getServerUser()
 
   if (!user) {
     redirect('/login')
   }
 
-  // Fetch existing profile data
-  const supabase = await createClient()
-  const { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('first_name, last_name, email')
-    .eq('id', user.id)
-    .single()
+  // Fetch existing profile data using helper
+  const profile = await getUserProfile(user);
 
-  if (profileError) {
-    logger.error('Error fetching developer profile:', profileError)
-    // Handle error appropriately, maybe show a message
+  if (!profile) {
+    logger.error('Error fetching developer profile via helper', { userId: user.id })
+    // Handle error appropriately, maybe show a message or default values
   }
 
   return (
@@ -102,7 +94,7 @@ export default async function DeveloperDashboardPage() { // Renamed and made asy
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="developer-email">Email</Label>
-                      <Input id="developer-email" name="developer-email" type="email" value={profile?.email ?? ''} readOnly />
+                      <Input id="developer-email" name="developer-email" type="email" value={user.email ?? ''} readOnly />
                     </div>
                     <Button type="submit">Update Profile</Button>
                   </form>

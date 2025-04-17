@@ -14,6 +14,7 @@ import {
   BreadcrumbPage, 
   BreadcrumbSeparator 
 } from "@/components/ui/breadcrumb"
+import { getUserProfile } from "@/lib/profile"; // Import helper
 
 // Helper function to map DB schedule to client data format
 // (Keep this local or import from a shared utility if it exists)
@@ -80,15 +81,15 @@ export default async function VariableRemindersPage({ params }: { params: { user
   
   logger.info('Rendering Variable Reminders Page', { userVariableId });
 
-  const supabase = await createClient()
+  const supabase = await createClient() // Keep for other fetches
   
   const { data: userData, error: userError } = await supabase.auth.getUser()
   if (userError || !userData?.user) {
      logger.error('User not found', { error: userError })
-     // Instead of returning JSX, use notFound() for consistency or redirect()
      notFound(); 
   }
-  const userId = userData.user.id
+  const user = userData.user; // Get user object
+  const userId = user.id
 
   // Fetch user variable details - Use params.userVariableId
   const { data: userVariable, error: uvError } = await supabase
@@ -134,16 +135,13 @@ export default async function VariableRemindersPage({ params }: { params: { user
     notFound(); 
   }
 
-  // Fetch user timezone
-  const { data: profile, error: profileError } = await supabase
-    .from('profiles')
-    .select('timezone')
-    .eq('id', userId)
-    .single();
-
+  // Fetch user profile using helper
+  const profile = await getUserProfile(user);
   const userTimezone = profile?.timezone || 'UTC'; // Default if not found
-  if(profileError) {
-    logger.warn('Error fetching user timezone, defaulting to UTC', { userId, error: profileError });
+  if(!profile) {
+      logger.warn('Failed to fetch user profile for timezone, defaulting to UTC', { userId });
+  } else if (!profile.timezone) {
+      logger.warn('User profile lacks timezone, defaulting to UTC', { userId });
   }
 
   // Transform schedules to the format ReminderScheduler expects

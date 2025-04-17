@@ -1,7 +1,9 @@
 import type React from "react"
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
-import { createClient } from "@/lib/supabase/server" // Import Supabase server client
+import { getUserProfile } from "@/lib/profile" // Import getUserProfile
+// No longer need createClient directly here
+// import { createClient } from "@/lib/supabase/server" 
 import { logger } from "@/lib/logger" // Import logger
 
 export default async function AuthLayout({
@@ -13,29 +15,23 @@ export default async function AuthLayout({
 
   // If the user is already logged in, check their role and redirect
   if (user) {
-    const supabase = await createClient()
-    const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('user_type')
-      .eq('id', user.id)
-      .single()
-
-    if (profileError) {
-      logger.error('Error fetching profile in auth layout:', { userId: user.id, error: profileError });
-      // Fallback: If we can't get the profile, send them to select role just in case
-      redirect("/select-role");
-    } else if (profile?.user_type) {
+    const profile = await getUserProfile(user) // Fetch profile
+    
+    // Check the profile table for user_type
+    if (profile?.user_type) {
+      const userType = profile.user_type;
       // User has a role, redirect to their specific dashboard
-      logger.info('Auth layout: User has role, redirecting', { userId: user.id, role: profile.user_type });
+      logger.info('Auth layout: User has role from profile, redirecting', { userId: user.id, role: userType });
       const redirectPath =
-        profile.user_type === 'patient' ? '/patient/' :
-        profile.user_type === 'research-partner' ? '/research-partner/' :
-        profile.user_type === 'developer' ? '/developer/' :
-        '/select-role'; // Fallback just in case role is unexpected
+        userType === 'patient' ? '/patient/' :
+        userType === 'provider' ? '/provider/' :
+        userType === 'research-partner' ? '/research-partner/' :
+        userType === 'developer' ? '/developer/' :
+        '/select-role'; // Fallback if role is unexpected or not handled
       redirect(redirectPath);
     } else {
-      // User is logged in but has no role, redirect to select role page
-      logger.info('Auth layout: User has no role, redirecting to select-role', { userId: user.id });
+      // User is logged in but has no role according to profile table, redirect to select role page
+      logger.info('Auth layout: User has no role in profile, redirecting to select-role', { userId: user.id });
       redirect("/select-role");
     }
   }

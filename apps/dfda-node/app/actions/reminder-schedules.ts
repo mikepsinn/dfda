@@ -13,6 +13,8 @@ import { revalidatePath } from 'next/cache'
 // Import graphile-worker helper
 import { quickAddJob } from 'graphile-worker';
 import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'
+import { getUserProfile } from "@/lib/profile"; // Import profile helper
+import { getServerUser } from "@/lib/server-auth"; // Import if needed for user context
 
 // Types
 export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
@@ -196,17 +198,16 @@ export async function upsertReminderScheduleAction(
     try {
         let nextTriggerAtIso: string | null = null;
         let userTimezone: string | undefined;
+        const user = await getServerUser(); // Get user object to pass to getUserProfile
+        if (!user) {
+            logger.error('upsertReminderScheduleAction: Could not get authenticated user.', { userId });
+            return { success: false, error: 'Authentication error.' };
+        }
 
         // --- Determine user timezone (needed for next_trigger_at calculation) ---
-        // Fetch timezone regardless of isActive, needed for RRULE parsing with TZID
-        const { data: profile, error: profileError } = await supabase
-            .from('profiles')
-            .select('timezone')
-            .eq('id', userId)
-            .single();
-
-        if (profileError || !profile?.timezone) {
-            logger.error('Could not fetch user profile timezone for next_trigger calculation/RRULE parsing', { userId, error: profileError });
+        const profile = await getUserProfile(user);
+        if (!profile?.timezone) {
+            logger.error('Could not fetch user profile timezone for next_trigger calculation/RRULE parsing', { userId });
             userTimezone = 'UTC'; // Fallback to UTC
         } else {
             userTimezone = profile.timezone;
@@ -458,120 +459,124 @@ export async function createDefaultReminderAction(
   variableName: string,
   variableCategory: string | null // Pass category to determine message
 ): Promise<{ success: boolean; error?: string }> {
-  const supabase = await createClient();
-  logger.info('Creating default reminder', { userId, userVariableId, variableName });
+    const supabase = await createClient();
+    logger.info('Creating default reminder', { userId, userVariableId, variableName });
 
-  if (!userId || !userVariableId || !variableName) {
-    return { success: false, error: 'Missing required information for default reminder.' };
-  }
-
-  // Get connection string (required for quickAddJob)
-  const connectionString = process.env.DATABASE_URL;
-  if (!connectionString) {
-      logger.error("DATABASE_URL environment variable is not set for worker job enqueuing");
-      return { success: false, error: "Server configuration error (DB URL missing)." };
-  }
-
-  try {
-    // --- Get User Timezone --- 
-    let userTimezone: string = 'UTC'; // Default fallback timezone
-    const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('timezone')
-      .eq('id', userId)
-      .single();
-
-    if (profileError) {
-      logger.warn('Could not fetch user profile for timezone', { userId, error: profileError });
-      // Proceed with fallback timezone
-    } else if (profile?.timezone) {
-      userTimezone = profile.timezone;
-      logger.info('Using user timezone for default reminder', { userId, timezone: userTimezone });
-    } else {
-      logger.warn('User profile does not have a timezone set, using fallback', { userId, fallback: userTimezone });
+    const user = await getServerUser(); // Get user object for profile fetching
+    if (!user) {
+        logger.error('createDefaultReminderAction: Could not get authenticated user.', { userId });
+        return { success: false, error: 'Authentication error.' };
     }
-    // --- End Get User Timezone --- 
 
-    // --- Define Default Settings --- 
-    const defaultTime = "20:00"; // 8 PM
-    const defaultRRule = `FREQ=DAILY;DTSTART=${new Date().toISOString().split('T')[0].replace(/-/g, '')}T000000Z`; // Daily starting today (UTC date part)
-    const defaultTitle = variableCategory === VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS
-                         ? `Track ${variableName} Adherence` 
-                         : `Track ${variableName}`; // Generic title otherwise
-    const defaultMessage = variableCategory === VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS
-                         ? `Did you take your ${variableName} today?`
-                         : `How was your ${variableName} today?`; // Generic message
-    // --- End Default Settings --- 
-  
-    // Simplified data for insertion - calculation of next_trigger_at handled by upsert action logic
-    // We need to call upsert instead of direct insert to leverage that logic
-    const scheduleData: ReminderScheduleClientData = {
-        rruleString: defaultRRule,
-        timeOfDay: defaultTime,
-        startDate: new Date(), // Start today
-        isActive: true,
+    // --- Determine user timezone ---
+    const profile = await getUserProfile(user);
+    const userTimezone = profile?.timezone || 'UTC'; // Fallback to UTC if not found
+    logger.info('Using timezone for default reminder', { userId, userTimezone });
+    // --- End Determine user timezone ---
+
+    // Determine start date based on user's timezone
+    const nowInUserTz = DateTime.now().setZone(userTimezone);
+    // Start date should be today in the user's timezone, no time component needed for RRULE dtstart DATE type
+    const startDate: string | null = nowInUserTz.startOf('day').toISODate(); // Type explicitly
+
+    if (!startDate) {
+        logger.error('Could not generate start date for default reminder.', { userId });
+        return { success: false, error: 'Internal error generating start date.' }
+    }
+
+    // Default RRULE: Daily at 9 AM
+    const defaultTime = '09:00';
+    // Ensure startDate is not null before replacing
+    const defaultRruleString = `DTSTART;TZID=${userTimezone}:${startDate.replace(/-/g,'')}T090000\nRRULE:FREQ=DAILY`;
+
+    // Default message based on category - Use correct constant names
+    let message = `Time to log ${variableName}.`;
+    if (variableCategory === VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS) { // Keep treatment check
+        message = `Did you take your ${variableName} dose?`;
+    } // Add more specific messages if needed
+
+    // Construct schedule data
+    const scheduleDbData: ReminderScheduleDbData = {
+        user_id: userId,
+        user_variable_id: userVariableId,
+        rrule: defaultRruleString,
+        time_of_day: defaultTime,
+        start_date: startDate, 
+        is_active: true, 
+        notification_message_template: message, 
+        // Add other required fields from Insert type if necessary, e.g.:
+        // default_value: null, // If applicable
+        // notification_title_template: `Track ${variableName}`, // If applicable
     };
 
-    // Call the existing upsert action to handle RRULE parsing and next_trigger_at calculation
-    // We are *inserting*, so no scheduleIdToUpdate is provided.
-    const result = await upsertReminderScheduleAction(
-        userVariableId,
-        scheduleData,
-        userId
-        // scheduleIdToUpdate is omitted for insertion
-    );
-
-    if (!result.success || !result.data) {
-      logger.error('Failed to create default reminder schedule via upsert', { userId, userVariableId, error: result.error });
-      return { success: false, error: result.error || 'Failed to create default reminder schedule.' };
-    }
-
-    // Update title/message templates
-    const { error: updateError } = await supabase
-        .from('reminder_schedules')
-        .update({
-            notification_title_template: defaultTitle,
-            notification_message_template: defaultMessage,
-        })
-        .eq('id', result.data.id)
-        .eq('user_id', userId);
-    
-    if (updateError) {
-         logger.warn('Failed to update title/message for default reminder', { scheduleId: result.data.id, updateError });
-         // Don't fail the whole operation for this
-    }
-
-    const newScheduleId = result.data.id;
-    logger.info('Successfully created default reminder schedule', { scheduleId: newScheduleId, userId, userVariableId });
-
-    // --- Add job using graphile-worker library --- 
+    // Use the existing upsert logic (or a simplified insert if preferred)
+    // For simplicity, let's call the core insert directly here
+    // We need to calculate next_trigger_at similar to upsert
+    let nextTriggerAtIso: string | null = null;
     try {
-        logger.info('Enqueuing processSingleSchedule job via quickAddJob', { scheduleId: newScheduleId });
-        await quickAddJob(
-            { connectionString }, // Options object with connection string
-            'processSingleSchedule', // Task identifier
-            { scheduleId: newScheduleId } // Payload
-        );
-        logger.info('Successfully enqueued processSingleSchedule job', { scheduleId: newScheduleId });
+        const rule = rrulestr(defaultRruleString) as RRule;
+        const nowUtc = new Date();
+        // Remove unused variables
+        // const [hours, minutes] = defaultTime.split(':').map(Number);
+        const dtstartWithTime = DateTime.fromISO(startDate + 'T' + defaultTime, { zone: userTimezone }).toJSDate();
 
-    } catch (enqueueError) {
-        logger.error('Error enqueuing processSingleSchedule job via quickAddJob', {
-            scheduleId: newScheduleId,
-            error: enqueueError instanceof Error ? enqueueError.message : String(enqueueError)
-        });
-        // Decide if failure to enqueue should fail the whole action
-        // For now, let's return success but log the error
-        // return { success: false, error: "Failed to schedule background job." };
+        const options = {
+            ...rule.options,
+            dtstart: toZonedTime(dtstartWithTime, userTimezone),
+            tzid: userTimezone,
+        };
+        const calculationRule = new RRule(options);
+        const nowInTargetTz = toZonedTime(nowUtc, userTimezone);
+        const nextOccurrence = calculationRule.after(nowInTargetTz, true);
+        if (nextOccurrence) {
+            nextTriggerAtIso = DateTime.fromJSDate(nextOccurrence).setZone(userTimezone).toUTC().toISO();
+        }
+    } catch(e) {
+        logger.error('Error calculating next trigger for default reminder', { userId, userVariableId, error: e });
+        // Proceed without next_trigger_at? Or return error?
     }
-    // --- End Add job via library ---
+    
+    (scheduleDbData as any).next_trigger_at = nextTriggerAtIso; // Assign using type assertion for now
+
+    const { data, error } = await supabase
+        .from('reminder_schedules')
+        .insert(scheduleDbData as any) // Use type assertion for insert if type mismatch persists
+        .select()
+        .single();
+
+    if (error) {
+        logger.error('Error inserting default reminder schedule', { userId, userVariableId, error });
+        return { success: false, error: 'Could not create default reminder.' };
+    }
+
+    logger.info('Default reminder created successfully', { userId, userVariableId, scheduleId: data.id });
+
+    // Revalidate relevant paths
+    revalidatePath('/patient/reminders');
+    revalidatePath(`/patient/reminders/${userVariableId}`);
+
+    // --- Enqueue Worker Job --- 
+    const connectionString = process.env.DATABASE_URL;
+    if (connectionString && data.next_trigger_at) { 
+        try {
+            await quickAddJob(
+                { connectionString }, // Worker options
+                'schedule_next_notification', // Job identifier
+                { scheduleId: data.id, triggerAt: data.next_trigger_at } // Payload
+            );
+            logger.info('Enqueued schedule_next_notification job for new default schedule', { scheduleId: data.id, triggerAt: data.next_trigger_at });
+        } catch (workerError) {
+            logger.error('Failed to enqueue schedule_next_notification job for new default schedule', { scheduleId: data.id, error: workerError });
+            // Decide if this should cause the action to fail
+        }
+    } else if (!connectionString) {
+         logger.error("DATABASE_URL not set, cannot enqueue worker job for default schedule");
+    } else if (!data.next_trigger_at) {
+         logger.warn("No next_trigger_at calculated, cannot enqueue worker job for default schedule", { scheduleId: data.id });
+    }
+    // --- End Enqueue Worker Job ---
 
     return { success: true };
-
-  } catch (error) {
-    logger.error('Failed in createDefaultReminderAction', { userId, userVariableId, error: error instanceof Error ? error.message : String(error) });
-    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-    return { success: false, error: errorMessage };
-  }
 } 
 
 // --- Refactored Tracking Inbox Actions --- 
