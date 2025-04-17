@@ -38,9 +38,9 @@ const logger = createLogger("patient-condition-detail-page")
 
 
 // Destructure params directly in the signature
-export default async function PatientConditionDetailPage({ params }: { params: { id: string } }) {
+export default async function PatientConditionDetailPage({ params }: { params: Promise<{ patientConditionId: string }> }) {
   // Await params before accessing its properties
-  const patientConditionId = params.id; // Access directly after function signature in Server Components
+  const { patientConditionId } = await params;
   
   const user = await getServerUser()
   if (!user) {
@@ -153,7 +153,7 @@ export default async function PatientConditionDetailPage({ params }: { params: {
         <Card>
            <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle>Treatment Ratings (for this Condition)</CardTitle>
+                <CardTitle>Treatment Ratings</CardTitle>
                 <CardDescription>How effective have treatments been specifically for {condition.condition_name || "this condition"}?</CardDescription>
               </div>
                <RateTreatmentDialog patientCondition={condition}>
