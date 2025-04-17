@@ -6,6 +6,8 @@ import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
 import { getAllReminderSchedulesForUserAction } from '@/app/actions/reminder-schedules'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { ReminderCard } from './reminder-card'
 
 interface ReminderListForAllVariablesProps {
   userId: string
@@ -56,6 +58,18 @@ export function ReminderListForAllVariables({
     router.push(`/patient/reminders/${variableId}`)
   }
 
+  const handleEditReminder = (scheduleId: string, variableId: string) => {
+    router.push(`/patient/reminders/${variableId}`)
+  }
+
+  const handleDeleteReminder = (scheduleId: string) => {
+    // Just navigate to the variable page where they can delete it
+    const schedule = schedules.find(s => s.id === scheduleId)
+    if (schedule) {
+      router.push(`/patient/reminders/${schedule.user_variables.id}`)
+    }
+  }
+
   // Group schedules by variable
   const groupedSchedules = schedules.reduce<Record<string, GroupedSchedule>>((acc, schedule) => {
     const varId = schedule.user_variables.id
@@ -89,36 +103,27 @@ export function ReminderListForAllVariables({
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {Object.values(groupedSchedules).map((group: GroupedSchedule) => (
-            <div 
-              key={group.id} 
-              className="border rounded-md p-3 cursor-pointer hover:bg-muted/50 transition-colors"
-              onClick={() => handleVariableClick(group.id)}
-            >
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-sm font-medium">{group.name}</h3>
-              </div>
+            <Card key={group.id} className="overflow-hidden">
+              <CardHeader className="p-4 pb-2 cursor-pointer" onClick={() => handleVariableClick(group.id)}>
+                <CardTitle className="text-md font-medium">{group.name}</CardTitle>
+              </CardHeader>
               
-              <div className="grid gap-2 grid-cols-1">
-                {group.schedules.map((schedule: ReminderSchedule) => (
-                  <div 
-                    key={schedule.id} 
-                    className="flex justify-between items-center p-2 bg-muted/30 rounded-sm text-xs"
-                  >
-                    <div>
-                      <div className="font-medium">{schedule.time_of_day}</div>
-                      <div className="text-muted-foreground text-[10px]">
-                        {schedule.is_active ? 'Active' : 'Inactive'} 
-                        {schedule.default_value !== null && schedule.default_value !== undefined && 
-                          ` • Default: ${schedule.default_value}${group.unitName ? ` ${group.unitName}` : ''}`
-                        }
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+              <CardContent className="p-4 pt-0">
+                <div className="grid gap-3">
+                  {group.schedules.map((schedule: ReminderSchedule) => (
+                    <ReminderCard
+                      key={schedule.id}
+                      schedule={schedule}
+                      unitName={group.unitName}
+                      onEdit={() => handleEditReminder(schedule.id, group.id)}
+                      onDelete={() => handleDeleteReminder(schedule.id)}
+                    />
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       )}
