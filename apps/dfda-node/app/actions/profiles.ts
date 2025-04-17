@@ -105,7 +105,6 @@ export async function updateUserProfileTimezoneAction(timezone: string): Promise
 
     if (authError || !user) {
         logger.error("Timezone update: User not authenticated", { error: authError });
-        // Return success: false but don't necessarily show error to user unless crucial
         return { success: false, error: "Authentication failed." }; 
     }
 
@@ -116,24 +115,19 @@ export async function updateUserProfileTimezoneAction(timezone: string): Promise
 
     try {
         logger.info("Attempting to update profile timezone", { userId: user.id, timezone });
-        const { error } = await supabase
+        
+        // Simple direct update without any conditions or JSON operators
+        const { error: updateError } = await supabase
             .from("profiles")
             .update({ timezone: timezone })
-            .eq("id", user.id)
-            // Add a condition to only update if timezone is currently null
-            // This prevents unnecessary updates on every load if already set
-            .is("timezone", null);
-
-        if (error) {
-            logger.error("Failed to update profile timezone", { userId: user.id, timezone, error });
+            .eq("id", user.id);
+                
+        if (updateError) {
+            logger.error("Failed to update profile timezone", { userId: user.id, timezone, error: updateError });
             return { success: false, error: "Failed to update profile." };
         }
-
-        // We don't know if a row was updated (it might have already had a timezone),
-        // but the operation itself didn't error.
-        logger.info("Profile timezone update executed (may or may not have changed value)", { userId: user.id, timezone });
-        // Revalidate if needed: 
-        // revalidatePath('/some-page-showing-timezone'); 
+            
+        logger.info("Profile timezone update executed", { userId: user.id, timezone });
         return { success: true };
 
     } catch (error) {

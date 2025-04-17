@@ -2,7 +2,7 @@
 CREATE OR REPLACE FUNCTION public.handle_profile_role_update()
 RETURNS trigger
 LANGUAGE plpgsql
-SECURITY DEFINER -- Changed from INVOKER to DEFINER to ensure function has necessary permissions during auth flows
+SECURITY INVOKER -- Changed back to INVOKER
 SET search_path = public -- Use INVOKER to run as the user updating the profile
 AS $$
 BEGIN

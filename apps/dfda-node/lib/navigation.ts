@@ -91,8 +91,9 @@ export const getLoggedInPrimaryNavItems = (user: User | null): NavItem[] => {
 
   // Ensure user_type exists
   if (!rawUserType) {
-    logger.error('User object is missing user_metadata.user_type. Cannot determine navigation.', { userId: user.id })
-    throw new Error('User metadata (user_type) is missing. Check user data fetching.')
+    logger.warn('User object is missing user_metadata.user_type. Returning logged-out navigation items.', { userId: user.id })
+    // Return logged-out items instead of throwing an error
+    return loggedOutPrimaryNavItems
   }
 
   // Explicitly cast user_type to the enum type

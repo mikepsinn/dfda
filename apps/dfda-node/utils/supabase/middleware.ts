@@ -34,7 +34,23 @@ export async function updateSession(request: NextRequest) {
   // IMPORTANT: Avoid writing any logic between createServerClient and
   // supabase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
-  await supabase.auth.getUser()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  // Redirect to select role if user is logged in but user_type is missing
+  if (
+    user && 
+    !user.user_metadata?.user_type && 
+    !request.nextUrl.pathname.startsWith('/select-role') &&
+    !request.nextUrl.pathname.startsWith('/login') && // Allow access to login
+    !request.nextUrl.pathname.startsWith('/register') && // Allow access to register
+    !request.nextUrl.pathname.startsWith('/auth') // Allow access to auth callbacks
+  ) {
+    const redirectUrl = request.nextUrl.clone()
+    redirectUrl.pathname = '/select-role'
+    return NextResponse.redirect(redirectUrl)
+  }
 
   // IMPORTANT: You *must* return the updated response object here.
   // If you don't return the response object, the cookies will not be updated.
