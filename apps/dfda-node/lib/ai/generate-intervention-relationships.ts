@@ -27,6 +27,8 @@ const UnitIdEnum = unitIds.length > 0
   ? z.enum(unitIds as [string, ...string[]]) // Type assertion for non-empty array
   : z.string(); // Fallback to string if empty
 
+const RelationshipCategoryEnum = z.enum(['Efficacy', 'Safety', 'Mechanism', 'Correlation']); // Define Zod enum
+
 // --- Zod Schemas for AI ---
 
 // Updated schema for suggesting new outcome variables
@@ -39,20 +41,50 @@ const AISuggestedOutcomeVariableSchema = z.object({
 
 const AIOutcomeVariableResponseSchema = z.array(AISuggestedOutcomeVariableSchema);
 
-// Schema for suggesting relationship details (subset of the full insert schema)
-// We'll ask the AI to provide fields it can reasonably infer.
+// Schema for suggesting relationship details - REQUIRES ALL FIELDS FOR DEMO
+// Removed display orders, kept confidence fields commented out for now
 const AIRelationshipSuggestionSchema = publicGlobalVariableRelationshipsInsertSchemaSchema.pick({
-  outcome_global_variable_id: true, // AI needs to echo back the outcome ID
-  category: true, // e.g., "Primary Outcome", "Safety Outcome", "Biomarker"
-  // Make nullable fields explicitly optional in the picked schema for AI
+  // Core fields
+  outcome_global_variable_id: true,
+  category: true,
   is_positive_outcome: true,
   finding_specific_notes: true,
-  // NNT/NNH/Changes are likely too complex for generic AI without data
+  // Quantitative estimates (required)
+  percentage_change: true,
+  absolute_change_value: true,
+  absolute_change_unit_id: true,
+  // Fields from seed data (required)
+  // category_display_order: true, // Removed
+  // item_display_order: true, // Removed
+  baseline_description: true,
+  nnh: true,
+  nnt: true,
+  // Confidence fields still need DB migration + schema regeneration
+  // confidence_interval_level: true,
+  // absolute_change_ci_lower: true,
+  // absolute_change_ci_upper: true,
+  // percentage_change_ci_lower: true,
+  // percentage_change_ci_upper: true,
+  // p_value: true,
+  // certainty_of_evidence: true,
 }).extend({
-    // Ensure these are optional even after picking (pick preserves optionality)
-    is_positive_outcome: z.boolean().optional().describe("Is the typical desired effect for this outcome positive (true) or negative (false)? Consider the outcome variable itself."),
-    finding_specific_notes: z.string().optional().describe("Brief summary of the expected link or effect.")
-}).describe("Details about the relationship between the predictor and a specific outcome.");
+  // Redefine potentially nullable fields from pick as REQUIRED
+  outcome_global_variable_id: z.string().describe("The outcome variable ID this relationship applies to."),
+  category: RelationshipCategoryEnum.describe("Category for the relationship (Efficacy, Safety, Mechanism, Correlation)."),
+  is_positive_outcome: z.boolean().describe("Is the typical desired effect positive (true) or negative (false)?"),
+  finding_specific_notes: z.string().describe("Brief summary of the expected link or effect."),
+  percentage_change: z.number().describe("Estimate for the typical *percentage* change (e.g., -15 for 15% decrease)."),
+  absolute_change_value: z.number().describe("Estimate for the typical *absolute* change (e.g., -10 for a 10 unit decrease)."),
+  absolute_change_unit_id: UnitIdEnum.describe("The unit ID for the 'absolute_change_value'. Select from the provided unit list."),
+  // category_display_order: z.number().int().describe("Suggested display order for the category (e.g., 1, 2, 3)."), // Removed
+  // item_display_order: z.number().int().describe("Suggested display order for the item within its category (e.g., 1, 2, 3)."), // Removed
+  baseline_description: z.string().describe("Plausible baseline description (e.g., \"(baseline: 100 units)\", \"(vs. placebo)\")."),
+  nnh: z.number().describe("Estimated Number Needed to Harm (if applicable, otherwise provide plausible number like 9999)."),
+  nnt: z.number().describe("Estimated Number Needed to Treat (if applicable, otherwise provide plausible number like 9999)."),
+  // Confidence fields removed for now - require DB/schema updates
+  // confidence_interval_level: z.number().....
+  // certainty_of_evidence: z.enum(['High', 'Moderate', 'Low', 'Very Low'])....
+}).describe("REQUIRED details about the relationship for demo data, including estimates.");
 
 const AIRelationshipResponseSchema = z.array(AIRelationshipSuggestionSchema);
 
@@ -258,20 +290,16 @@ Focus on commonly measured outcomes. Return the list as a JSON array matching th
   if (outcomeIdsToRelate.length > 0) {
     logger.info(`${LOG_PREFIX} Generating relationship suggestions between predictor ${predictorGlobalVariableId} and ${outcomeIdsToRelate.length} outcomes...`);
 
-    // 4a. Construct prompt providing predictor and outcome IDs
+    // 4a. Construct simplified prompt, demanding all fields (minus display orders, minus confidence for now)
     const relationshipPrompt = `Based on the intervention (predictor variable) with ID "${predictorGlobalVariableId}" (named "${predictorName}") and the following potential outcome variable IDs:
 ${JSON.stringify(outcomeIdsToRelate)}
 
-For each outcome ID, suggest a potential relationship, providing:
-1. The 'outcome_global_variable_id' (echoing back the ID from the list above).
-2. A 'category' for the relationship (e.g., "Primary Efficacy", "Secondary Efficacy", "Safety/Side Effect", "Biomarker Change", "Mechanism Link").
-3. Whether the typical *desired* effect for this outcome is positive ('is_positive_outcome' = true, e.g., lower blood pressure is good) or negative ('is_positive_outcome' = false, e.g., lower mood score is bad). Consider the outcome variable itself, not necessarily the effect of the predictor.
-4. A brief summary of the *expected* link or effect in 'finding_specific_notes' (e.g., "Expected to lower systolic blood pressure", "May increase risk of nausea", "Correlated with improved mood scores").
+Suggest potential relationships between the predictor and each outcome variable. Format the response as a JSON array adhering strictly to the provided schema.
 
-Return the list as a JSON array matching the schema. Only include suggestions for the provided outcome IDs.`;
+**IMPORTANT (DEMO DATA):** You MUST provide plausible values for **ALL** fields in the schema for every relationship. This includes 'category' (choose from ['Efficacy', 'Safety', 'Mechanism', 'Correlation']), best-guess estimates for quantitative values ('percentage_change', 'absolute_change_value', 'absolute_change_unit_id'), 'baseline_description', NNT/NNH ('nnt', 'nnh' - use 9999 if not applicable).`;
 
     try {
-      // 4b. Call generateObject with AIRelationshipResponseSchema
+      // 4b. Call generateObject (schema is now stricter)
       const { object: aiRelationshipSuggestions } = await generateObject({
         model: aiModel,
         schema: AIRelationshipResponseSchema,

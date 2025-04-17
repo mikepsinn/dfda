@@ -5,6 +5,23 @@
 -- 2. extensions.moddatetime trigger function
 -- 3. tables: global_variables, citations, conditions, units
 
+-- Define ENUM for Certainty of Evidence (e.g., GRADE levels)
+CREATE TYPE evidence_certainty_enum AS ENUM (
+    'High',
+    'Moderate',
+    'Low',
+    'Very Low'
+);
+
+-- Define ENUM for Relationship Category (Simplified Mutually Exclusive Focus)
+DROP TYPE IF EXISTS relationship_category_enum; -- Add DROP TYPE IF EXISTS for idempotency
+CREATE TYPE relationship_category_enum AS ENUM (
+    'Efficacy',          -- Intended positive therapeutic effect
+    'Safety',            -- Unintended negative effect / harm
+    'Mechanism',         -- How it works / biomarker changes (not primary endpoint)
+    'Correlation'        -- Statistical association without causal claim
+);
+
 -- 1. Create global_variable_relationships table
 CREATE TABLE global_variable_relationships (
   id TEXT PRIMARY KEY DEFAULT extensions.uuid_generate_v4(),
@@ -14,10 +31,8 @@ CREATE TABLE global_variable_relationships (
   citation_id TEXT NOT NULL REFERENCES citations(id),
   condition_id TEXT NULL REFERENCES conditions(id), -- Optional context
 
-  -- Categorization for display (e.g., in OutcomeLabel)
-  category TEXT NOT NULL, -- e.g., 'Primary Outcome', 'Side Effect', 'Nutritional Info'
-  category_display_order INT NULL,
-  item_display_order INT NULL,
+  -- Categorization for display (using new enum)
+  category relationship_category_enum NOT NULL,
 
   -- Outcome metrics from the citation
   baseline_description TEXT NULL,
@@ -27,6 +42,15 @@ CREATE TABLE global_variable_relationships (
   nnh REAL NULL, -- Number Needed to Harm
   nnt REAL NULL, -- Number Needed to Treat/Benefit
   is_positive_outcome BOOLEAN NULL, -- Semantic meaning (true=good, false=bad, null=neutral/unknown)
+
+  -- Confidence metrics (often from citation)
+  confidence_interval_level NUMERIC NULL CHECK (confidence_interval_level >= 0 AND confidence_interval_level <= 1), -- e.g., 0.95
+  absolute_change_ci_lower REAL NULL,
+  absolute_change_ci_upper REAL NULL,
+  percentage_change_ci_lower REAL NULL,
+  percentage_change_ci_upper REAL NULL,
+  p_value REAL NULL CHECK (p_value >= 0 AND p_value <= 1), -- Statistical significance
+  certainty_of_evidence evidence_certainty_enum NULL, -- Changed to ENUM
 
   -- Optional data quality/notes specific to this finding
   -- Consider adding an enum for confidence_level if desired later
@@ -78,6 +102,18 @@ WHERE condition_id IS NULL;
 CREATE POLICY "Allow public read access" ON global_variable_relationships
   FOR SELECT
   USING (true);
+
+-- Add comments for new columns
+COMMENT ON COLUMN global_variable_relationships.confidence_interval_level IS 'Confidence interval level (e.g., 0.95 for 95%)';
+COMMENT ON COLUMN global_variable_relationships.absolute_change_ci_lower IS 'Lower bound of confidence interval for absolute change';
+COMMENT ON COLUMN global_variable_relationships.absolute_change_ci_upper IS 'Upper bound of confidence interval for absolute change';
+COMMENT ON COLUMN global_variable_relationships.percentage_change_ci_lower IS 'Lower bound of confidence interval for percentage change';
+COMMENT ON COLUMN global_variable_relationships.percentage_change_ci_upper IS 'Upper bound of confidence interval for percentage change';
+COMMENT ON COLUMN global_variable_relationships.p_value IS 'Reported p-value for the finding';
+COMMENT ON COLUMN global_variable_relationships.certainty_of_evidence IS 'Overall certainty or quality of the evidence (e.g., GRADE rating: High, Moderate, Low, Very Low)';
+
+-- Update COMMENT for category column
+COMMENT ON COLUMN global_variable_relationships.category IS 'Categorization of the relationship (Efficacy, Safety, Mechanism, Correlation), using relationship_category_enum.';
 
 -- Example: Allow admin role (or specific service role) to insert/update/delete
 -- CREATE POLICY "Allow admin management access" ON global_variable_relationships

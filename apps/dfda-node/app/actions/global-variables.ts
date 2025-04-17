@@ -57,9 +57,7 @@ export async function searchPredictorsAction(query: string): Promise<PredictorSu
     const supabase = await createClient();
     logger.info("Searching predictors", { query });
 
-    if (!query || query.trim().length < 2) {
-        return [];
-    }
+    //if (!query || query.trim().length < 2) {return [];}
 
     const searchTerm = `%${query.trim()}%`;
 

@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandInput,
@@ -25,34 +24,50 @@ export function OutcomeLabelSearch() {
 
   const debouncedSearchTerm = useDebounce(inputValue, 300);
 
-  const fetchSuggestions = useCallback(async (term: string) => {
-    if (term.length < 2) {
+  const fetchSuggestions = useCallback(async (term: string, isInitialFetch = false) => {
+    if (term === '' && isInitialFetch) {
+      setIsLoading(true);
+      try {
+        const results = await searchPredictorsAction('');
+        setSuggestions(results);
+        setIsOpen(results.length > 0);
+      } catch (error) {
+        console.error("Failed to fetch initial suggestions:", error);
+        setSuggestions([]);
+        setIsOpen(false);
+      } finally {
+        setIsLoading(false);
+      }
+    } else if (term.length >= 2) {
+      setIsLoading(true);
+      try {
+        const results = await searchPredictorsAction(term);
+        setSuggestions(results);
+        setIsOpen(results.length > 0);
+      } catch (error) {
+        console.error("Failed to fetch suggestions:", error);
+        setSuggestions([]);
+        setIsOpen(false);
+      } finally {
+        setIsLoading(false);
+      }
+    } else if (!isInitialFetch) {
       setSuggestions([]);
       setIsOpen(false);
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const results = await searchPredictorsAction(term);
-      setSuggestions(results);
-      setIsOpen(results.length > 0);
-    } catch (error) {
-      console.error("Failed to fetch suggestions:", error);
-      setSuggestions([]);
-      setIsOpen(false);
-    } finally {
-      setIsLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    if (debouncedSearchTerm) {
+    if (debouncedSearchTerm.length >= 2) {
       fetchSuggestions(debouncedSearchTerm);
     } else {
-      setSuggestions([]);
-      setIsOpen(false);
+      const isFocusedAndEmpty = inputRef.current === document.activeElement && inputValue === '';
+      if (!isFocusedAndEmpty) {
+        setSuggestions([]);
+        setIsOpen(false);
+      }
     }
-  }, [debouncedSearchTerm, fetchSuggestions]);
+  }, [debouncedSearchTerm, inputValue, fetchSuggestions]);
 
   const handleSelect = (suggestion: PredictorSuggestion) => {
     setInputValue(suggestion.name);
@@ -61,68 +76,74 @@ export function OutcomeLabelSearch() {
     router.push(`/outcome-labels/${encodeURIComponent(suggestion.id)}`);
   };
 
-  const handleNavigation = () => {
-    const targetId = selectedPredictorId || inputValue.trim();
-    if (targetId) {
-       router.push(`/outcome-labels/${encodeURIComponent(targetId)}`);
-    }
-  };
-
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    inputRef.current?.blur();
     setIsOpen(false);
-    handleNavigation();
+    const targetId = selectedPredictorId || inputValue.trim();
+    if (targetId) {
+      const matchingSuggestion = suggestions.find(s => s.name.toLowerCase() === targetId.toLowerCase());
+      const finalId = matchingSuggestion ? matchingSuggestion.id : targetId;
+      router.push(`/outcome-labels/${encodeURIComponent(finalId)}`);
+    } else {
+      console.log("Search submitted with empty input");
+    }
   };
 
   const handleInputChange = (value: string) => {
     setInputValue(value);
     setSelectedPredictorId(null);
-    setIsOpen(suggestions.length > 0 && !!value);
+  };
+
+  const handleFocus = () => {
+    if (!inputValue && suggestions.length === 0) {
+      fetchSuggestions('', true);
+    } else {
+      setIsOpen(suggestions.length > 0);
+    }
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="mb-6">
-      <Command className="overflow-visible flex-grow">
-        <div className="flex w-full items-center space-x-2">
-           {/* The CommandInput component renders its own icon */}
-           <CommandInput 
-             ref={inputRef} 
-             placeholder="Search interventions (e.g., atorvastatin)..." 
-             className="h-10" // Removed flex-grow from input, let Command handle growth
+    <div className="flex justify-center w-full px-4">
+      <form onSubmit={handleFormSubmit} className="w-full max-w-xl">
+        <Command className="overflow-visible rounded-full border">
+          <CommandInput
+             ref={inputRef}
+             placeholder="Search interventions (e.g., atorvastatin)..."
+             className="h-10 rounded-full focus:ring-0 border-0 bg-transparent"
              value={inputValue}
              onValueChange={handleInputChange}
-             onFocus={() => setIsOpen(suggestions.length > 0 && !!inputValue)}
-             onBlur={() => setTimeout(() => setIsOpen(false), 150)}
+             onFocus={handleFocus}
+             onBlur={() => setTimeout(() => setIsOpen(false), 200)}
            />
-           <Button type="submit">Search</Button>
-        </div>
 
-        {isOpen && (
-          <div className="relative">
-            <CommandList className="absolute top-0 mt-1 w-full z-10 border rounded-md bg-background shadow-md">
-              {isLoading ? (
-                <div className="p-2 text-sm text-muted-foreground">Loading...</div>
-              ) : (
-                <>
-                  <CommandEmpty>No results found.</CommandEmpty>
-                  <CommandGroup heading="Suggestions">
-                    {suggestions.map((suggestion) => (
-                      <CommandItem
-                        key={suggestion.id}
-                        value={suggestion.id}
-                        onSelect={() => handleSelect(suggestion)}
-                        className="cursor-pointer"
-                      >
-                        {suggestion.name}
-                      </CommandItem>
-                    ))}
-                  </CommandGroup>
-                </>
-              )}
-            </CommandList>
-          </div>
-        )}
-      </Command>
-    </form>
+          {isOpen && (
+            <div className="relative">
+              <CommandList className="absolute top-2 mt-1 w-full z-10 border rounded-md bg-background shadow-lg">
+                {isLoading ? (
+                  <div className="p-2 text-sm text-muted-foreground">Loading...</div>
+                ) : (
+                  <>
+                    <CommandEmpty>No results found.</CommandEmpty>
+                    <CommandGroup heading="Suggestions">
+                      {suggestions.map((suggestion) => (
+                        <CommandItem
+                          key={suggestion.id}
+                          value={suggestion.id}
+                          onSelect={() => handleSelect(suggestion)}
+                          className="cursor-pointer"
+                        >
+                          {suggestion.name}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </>
+                )}
+              </CommandList>
+            </div>
+          )}
+        </Command>
+      </form>
+    </div>
   );
 } 

@@ -9,28 +9,63 @@
 -- unit_ids: 'milligrams-per-deciliter', 'percent'
 -- outcome_global_variable_ids: 'ldl-cholesterol', 'total-cholesterol', 'cv-event-risk', 'hdl-cholesterol', 'triglycerides', 'muscle-pain', 'liver-enzyme-elevation', 'headache'
 
--- Primary Outcomes
-INSERT INTO global_variable_relationships
-  (predictor_global_variable_id, outcome_global_variable_id, citation_id, category, category_display_order, item_display_order, baseline_description, percentage_change, absolute_change_value, absolute_change_unit_id, is_positive_outcome)
-VALUES
-  ('atorvastatin-20mg', 'ldl-cholesterol', 'cite-atorvastatin-example', 'Primary Outcomes', 1, 1, '(baseline: 160 mg/dL)', -43, -69, 'milligrams-per-deciliter', true),
-  ('atorvastatin-20mg', 'total-cholesterol', 'cite-atorvastatin-example', 'Primary Outcomes', 1, 2, '(baseline: 240 mg/dL)', -32, -77, 'milligrams-per-deciliter', true),
-  ('atorvastatin-20mg', 'cv-event-risk', 'cite-atorvastatin-example', 'Primary Outcomes', 1, 3, '(10-year risk)', -36, -4.2, 'percent', true);
+-- Map old categories to new ENUM
+-- Primary Outcomes -> Efficacy
+-- Secondary Benefits -> Mechanism (as they are biomarker changes secondary to main goal) or Efficacy if preferred?
+-- Side Effects -> Safety
 
--- Secondary Benefits
-INSERT INTO global_variable_relationships
-  (predictor_global_variable_id, outcome_global_variable_id, citation_id, category, category_display_order, item_display_order, percentage_change, absolute_change_value, absolute_change_unit_id, is_positive_outcome)
+-- Primary Outcomes -> Efficacy
+INSERT INTO global_variable_relationships (
+  -- Core IDs
+  predictor_global_variable_id, outcome_global_variable_id, citation_id, condition_id,
+  -- Categorization
+  category, -- Removed display orders
+  -- Metrics
+  baseline_description, percentage_change, absolute_change_value, absolute_change_unit_id, nnh, nnt, is_positive_outcome,
+  -- Confidence
+  confidence_interval_level, absolute_change_ci_lower, absolute_change_ci_upper, percentage_change_ci_lower, percentage_change_ci_upper, p_value, certainty_of_evidence,
+  -- Notes & Meta
+  finding_specific_notes, data_last_updated
+)
 VALUES
-  ('atorvastatin-20mg', 'hdl-cholesterol', 'cite-atorvastatin-example', 'Secondary Benefits', 2, 1, 5, 2.3, 'milligrams-per-deciliter', true),
-  ('atorvastatin-20mg', 'triglycerides', 'cite-atorvastatin-example', 'Secondary Benefits', 2, 2, -22, -35, 'milligrams-per-deciliter', true);
+  ('atorvastatin-20mg', 'ldl-cholesterol', 'cite-atorvastatin-example', NULL, 'Efficacy', '(baseline: 160 mg/dL)', -43, -69, 'milligrams-per-deciliter', NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('atorvastatin-20mg', 'total-cholesterol', 'cite-atorvastatin-example', NULL, 'Efficacy', '(baseline: 240 mg/dL)', -32, -77, 'milligrams-per-deciliter', NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('atorvastatin-20mg', 'cv-event-risk', 'cite-atorvastatin-example', NULL, 'Efficacy', '(10-year risk)', -36, -4.2, 'percent', NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
--- Side Effects
-INSERT INTO global_variable_relationships
-  (predictor_global_variable_id, outcome_global_variable_id, citation_id, category, category_display_order, item_display_order, baseline_description, percentage_change, nnh, is_positive_outcome)
+-- Secondary Benefits -> Mechanism
+INSERT INTO global_variable_relationships (
+  -- Core IDs
+  predictor_global_variable_id, outcome_global_variable_id, citation_id, condition_id,
+  -- Categorization
+  category, -- Removed display orders
+  -- Metrics
+  baseline_description, percentage_change, absolute_change_value, absolute_change_unit_id, nnh, nnt, is_positive_outcome,
+  -- Confidence
+  confidence_interval_level, absolute_change_ci_lower, absolute_change_ci_upper, percentage_change_ci_lower, percentage_change_ci_upper, p_value, certainty_of_evidence,
+  -- Notes & Meta
+  finding_specific_notes, data_last_updated
+)
 VALUES
-  ('atorvastatin-20mg', 'muscle-pain', 'cite-atorvastatin-example', 'Side Effects', 3, 1, '(vs. placebo)', 8.2, 12, false),
-  ('atorvastatin-20mg', 'liver-enzyme-elevation', 'cite-atorvastatin-example', 'Side Effects', 3, 2, NULL, 1.2, 83, false),
-  ('atorvastatin-20mg', 'headache', 'cite-atorvastatin-example', 'Side Effects', 3, 3, NULL, 3.8, 26, false);
+  ('atorvastatin-20mg', 'hdl-cholesterol', 'cite-atorvastatin-example', NULL, 'Mechanism', NULL, 5, 2.3, 'milligrams-per-deciliter', NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('atorvastatin-20mg', 'triglycerides', 'cite-atorvastatin-example', NULL, 'Mechanism', NULL, -22, -35, 'milligrams-per-deciliter', NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- Side Effects -> Safety
+INSERT INTO global_variable_relationships (
+  -- Core IDs
+  predictor_global_variable_id, outcome_global_variable_id, citation_id, condition_id,
+  -- Categorization
+  category, -- Removed display orders
+  -- Metrics
+  baseline_description, percentage_change, absolute_change_value, absolute_change_unit_id, nnh, nnt, is_positive_outcome,
+  -- Confidence
+  confidence_interval_level, absolute_change_ci_lower, absolute_change_ci_upper, percentage_change_ci_lower, percentage_change_ci_upper, p_value, certainty_of_evidence,
+  -- Notes & Meta
+  finding_specific_notes, data_last_updated
+)
+VALUES
+  ('atorvastatin-20mg', 'muscle-pain', 'cite-atorvastatin-example', NULL, 'Safety', '(vs. placebo)', NULL, NULL, NULL, 12, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('atorvastatin-20mg', 'liver-enzyme-elevation', 'cite-atorvastatin-example', NULL, 'Safety', NULL, NULL, NULL, NULL, 83, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('atorvastatin-20mg', 'headache', 'cite-atorvastatin-example', NULL, 'Safety', NULL, NULL, NULL, NULL, 26, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 -- ==========================================================================
@@ -41,19 +76,43 @@ VALUES
 -- citation_id: 'cite-klotho-therapy-example'
 -- outcome_global_variable_ids: 'adas-cog', 'memory-recall', 'executive-function', 'hippocampal-volume', 'immune-response', 'headache', 'fatigue'
 
--- Cognitive Improvements
-INSERT INTO global_variable_relationships
-  (predictor_global_variable_id, outcome_global_variable_id, citation_id, category, category_display_order, item_display_order, percentage_change, is_positive_outcome)
-VALUES
-  ('klotho-therapy', 'adas-cog', 'cite-klotho-therapy-example', 'Cognitive Improvements (Example)', 1, 1, 28, true),
-  ('klotho-therapy', 'memory-recall', 'cite-klotho-therapy-example', 'Cognitive Improvements (Example)', 1, 2, 35, true),
-  ('klotho-therapy', 'executive-function', 'cite-klotho-therapy-example', 'Cognitive Improvements (Example)', 1, 3, 22, true),
-  ('klotho-therapy', 'hippocampal-volume', 'cite-klotho-therapy-example', 'Cognitive Improvements (Example)', 1, 4, 15, true);
+-- Map old categories to new ENUM
+-- Cognitive Improvements -> Efficacy
+-- Side Effects -> Safety
 
--- Side Effects
-INSERT INTO global_variable_relationships
-  (predictor_global_variable_id, outcome_global_variable_id, citation_id, category, category_display_order, item_display_order, percentage_change, is_positive_outcome)
+-- Cognitive Improvements -> Efficacy
+INSERT INTO global_variable_relationships (
+  -- Core IDs
+  predictor_global_variable_id, outcome_global_variable_id, citation_id, condition_id,
+  -- Categorization
+  category, -- Removed display orders
+  -- Metrics
+  baseline_description, percentage_change, absolute_change_value, absolute_change_unit_id, nnh, nnt, is_positive_outcome,
+  -- Confidence
+  confidence_interval_level, absolute_change_ci_lower, absolute_change_ci_upper, percentage_change_ci_lower, percentage_change_ci_upper, p_value, certainty_of_evidence,
+  -- Notes & Meta
+  finding_specific_notes, data_last_updated
+)
 VALUES
-  ('klotho-therapy', 'immune-response', 'cite-klotho-therapy-example', 'Side Effects (Example)', 2, 1, 12, false),
-  ('klotho-therapy', 'headache', 'cite-klotho-therapy-example', 'Side Effects (Example)', 2, 2, 9, false),
-  ('klotho-therapy', 'fatigue', 'cite-klotho-therapy-example', 'Side Effects (Example)', 2, 3, 7, false); 
+  ('klotho-therapy', 'adas-cog', 'cite-klotho-therapy-example', NULL, 'Efficacy', NULL, 28, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('klotho-therapy', 'memory-recall', 'cite-klotho-therapy-example', NULL, 'Efficacy', NULL, 35, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('klotho-therapy', 'executive-function', 'cite-klotho-therapy-example', NULL, 'Efficacy', NULL, 22, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('klotho-therapy', 'hippocampal-volume', 'cite-klotho-therapy-example', NULL, 'Efficacy', NULL, 15, NULL, NULL, NULL, NULL, true, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- Side Effects -> Safety
+INSERT INTO global_variable_relationships (
+  -- Core IDs
+  predictor_global_variable_id, outcome_global_variable_id, citation_id, condition_id,
+  -- Categorization
+  category, -- Removed display orders
+  -- Metrics
+  baseline_description, percentage_change, absolute_change_value, absolute_change_unit_id, nnh, nnt, is_positive_outcome,
+  -- Confidence
+  confidence_interval_level, absolute_change_ci_lower, absolute_change_ci_upper, percentage_change_ci_lower, percentage_change_ci_upper, p_value, certainty_of_evidence,
+  -- Notes & Meta
+  finding_specific_notes, data_last_updated
+)
+VALUES
+  ('klotho-therapy', 'immune-response', 'cite-klotho-therapy-example', NULL, 'Safety', NULL, 12, NULL, NULL, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('klotho-therapy', 'headache', 'cite-klotho-therapy-example', NULL, 'Safety', NULL, 9, NULL, NULL, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+  ('klotho-therapy', 'fatigue', 'cite-klotho-therapy-example', NULL, 'Safety', NULL, 7, NULL, NULL, NULL, NULL, false, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL); 
