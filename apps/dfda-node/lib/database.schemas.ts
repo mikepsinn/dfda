@@ -66,7 +66,7 @@ export const publicReminderNotificationStatusSchema = z.union([
   z.literal("error"),
 ]);
 
-export const publicUserRoleEnumSchema = z.union([
+export const publicUserTypeEnumSchema = z.union([
   z.literal("patient"),
   z.literal("provider"),
   z.literal("research-partner"),
@@ -1595,7 +1595,7 @@ export const publicProfilesRowSchemaSchema = z.object({
   last_name: z.string().nullable(),
   timezone: z.string().nullable(),
   updated_at: z.string().nullable(),
-  user_type: publicUserRoleEnumSchema.nullable(),
+  user_type: publicUserTypeEnumSchema.nullable(),
 });
 
 export const publicProfilesInsertSchemaSchema = z.object({
@@ -1608,7 +1608,7 @@ export const publicProfilesInsertSchemaSchema = z.object({
   last_name: z.string().optional().nullable(),
   timezone: z.string().optional().nullable(),
   updated_at: z.string().optional().nullable(),
-  user_type: publicUserRoleEnumSchema.optional().nullable(),
+  user_type: publicUserTypeEnumSchema.optional().nullable(),
 });
 
 export const publicProfilesUpdateSchemaSchema = z.object({
@@ -1621,7 +1621,7 @@ export const publicProfilesUpdateSchemaSchema = z.object({
   last_name: z.string().optional().nullable(),
   timezone: z.string().optional().nullable(),
   updated_at: z.string().optional().nullable(),
-  user_type: publicUserRoleEnumSchema.optional().nullable(),
+  user_type: publicUserTypeEnumSchema.optional().nullable(),
 });
 
 export const publicProtocolVersionsRowSchemaSchema = z.object({

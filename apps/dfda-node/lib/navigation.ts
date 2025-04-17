@@ -5,8 +5,8 @@ import { logger } from './logger' // Import the logger
 // import type { LucideIcon } from 'lucide-react' // LucideIcon is now included in NavItem type import
 import type { NavItem } from './types/navigation' // Import NavItem from the new types file
 
-// Define UserRole type alias for clarity
-type UserRole = Database["public"]["Enums"]["user_role_enum"]
+// Define UserType type alias for clarity
+type UserType = Database["public"]["Enums"]["user_type_enum"]
 
 // Define the base navigation item type - REMOVED (Now imported)
 // export type NavItem = {
@@ -48,7 +48,7 @@ const adminNavItems: NavItem[] = [
 ]
 
 // Map roles to their specific navigation items using the enum type for keys
-const roleNavItemsMap: Record<UserRole, NavItem[]> = {
+const userTypeNavItemsMap: Record<UserType, NavItem[]> = {
   'patient': patientNavItems,
   'provider': providerNavItems,
   'developer': developerNavItems,
@@ -97,11 +97,11 @@ export const getLoggedInPrimaryNavItems = (user: User | null): NavItem[] => {
   }
 
   // Explicitly cast user_type to the enum type
-  const userType = rawUserType as UserRole
+  const userType = rawUserType as UserType
   logger.debug('Cast userType:', userType)
 
   // Return the specific array for the role, or an empty array if role not found
-  const items = roleNavItemsMap[userType]
+  const items = userTypeNavItemsMap[userType]
   if (items) {
     logger.debug('Found items for role:', userType, items)
     return items

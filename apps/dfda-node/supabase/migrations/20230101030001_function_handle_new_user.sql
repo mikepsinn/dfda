@@ -6,7 +6,7 @@ LANGUAGE plpgsql
 SECURITY DEFINER SET search_path = public
 AS $$
 DECLARE
-  profile_user_type public.user_role_enum;
+  profile_user_type public.user_type_enum;
 BEGIN
   -- Insert into profiles, do nothing if profile already exists
   INSERT INTO public.profiles (id, email)
@@ -16,7 +16,7 @@ BEGIN
   -- Check the user_type from the metadata provided during sign up
   -- Note: This relies on user_type being correctly passed in raw_user_meta_data
   -- or being updated later.
-  profile_user_type := (NEW.raw_user_meta_data ->> 'user_type')::public.user_role_enum;
+  profile_user_type := (NEW.raw_user_meta_data ->> 'user_type')::public.user_type_enum;
 
   -- Create role-specific records based on user_type
   IF profile_user_type = 'patient' THEN

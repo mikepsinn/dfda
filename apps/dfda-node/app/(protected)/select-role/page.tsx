@@ -3,7 +3,7 @@ import { getServerUser } from "@/lib/server-auth"
 import { createClient } from "@/lib/supabase/server"
 import { logger } from "@/lib/logger"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { User, Briefcase, Code, HelpCircle, Stethoscope } from 'lucide-react'
 import type { Database } from "@/lib/database.types"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -15,13 +15,13 @@ import {
 } from "@/components/ui/hover-card"
 import { Separator } from "@/components/ui/separator"
 
-type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"]
+type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"]
 
 // Server Action to set user role
-async function setUserRole(formData: FormData) {
+async function setUserType(formData: FormData) {
   'use server'
 
-  const role = formData.get('user_type') as UserRoleEnum
+  const role = formData.get('user_type') as UserTypeEnum
   if (!role) {
     // Handle missing role error
     return; // Just return without redirecting if no role selected
@@ -45,7 +45,7 @@ async function setUserRole(formData: FormData) {
       .single()
 
     if (error) {
-      logger.error('Error setting user role:', error)
+      logger.error('Error setting user_type:', error)
       // In a real app, you'd use React's useFormState or other methods to handle errors
       return; // Just return without redirecting if there's an error
     } else {
@@ -91,7 +91,7 @@ export default async function SelectRolePage() {
           <CardDescription className="text-center">Choose how you will use the platform.</CardDescription>
         </CardHeader>
         <CardContent className="pt-4">
-          <form action={setUserRole}>
+          <form action={setUserType}>
             <RadioGroup defaultValue="" name="user_type" className="space-y-3">
               {/* Patient Role */}
               <div className="flex items-start space-x-2 rounded-md border p-4 shadow-sm transition-all hover:bg-accent/30">

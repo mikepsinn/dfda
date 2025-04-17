@@ -1460,7 +1460,7 @@ export type Database = {
           last_name: string | null
           timezone: string | null
           updated_at: string | null
-          user_type: Database["public"]["Enums"]["user_role_enum"] | null
+          user_type: Database["public"]["Enums"]["user_type_enum"] | null
         }
         Insert: {
           avatar_url?: string | null
@@ -1472,7 +1472,7 @@ export type Database = {
           last_name?: string | null
           timezone?: string | null
           updated_at?: string | null
-          user_type?: Database["public"]["Enums"]["user_role_enum"] | null
+          user_type?: Database["public"]["Enums"]["user_type_enum"] | null
         }
         Update: {
           avatar_url?: string | null
@@ -1484,7 +1484,7 @@ export type Database = {
           last_name?: string | null
           timezone?: string | null
           updated_at?: string | null
-          user_type?: Database["public"]["Enums"]["user_role_enum"] | null
+          user_type?: Database["public"]["Enums"]["user_type_enum"] | null
         }
         Relationships: []
       }
@@ -2809,7 +2809,7 @@ export type Database = {
         | "completed"
         | "skipped"
         | "error"
-      user_role_enum:
+      user_type_enum:
         | "patient"
         | "provider"
         | "research-partner"
@@ -3393,7 +3393,7 @@ export const Constants = {
         "skipped",
         "error",
       ],
-      user_role_enum: [
+      user_type_enum: [
         "patient",
         "provider",
         "research-partner",

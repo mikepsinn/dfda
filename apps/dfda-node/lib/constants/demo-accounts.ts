@@ -4,7 +4,7 @@ import type { Database } from "@/lib/database.types";
 // Import the custom client insert type
 // import type { PatientConditionClientInsert } from "@/lib/database.types.custom"; 
 
-type UserRoleEnum = Database["public"]["Enums"]["user_role_enum"];
+type UserTypeEnum = Database["public"]["Enums"]["user_type_enum"];
 
 // Define Insert types directly using Database types from database.types.ts
 type ProfileInsert = Database['public']['Tables']['profiles']['Insert'];
@@ -49,7 +49,7 @@ export const DEMO_ACCOUNTS = {
     profileData: {
       first_name: "Demo",
       last_name: "Patient",
-      user_type: "patient" as UserRoleEnum,
+      user_type: "patient" as UserTypeEnum,
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
     seedData: {
       patientDetails: {
@@ -78,7 +78,7 @@ export const DEMO_ACCOUNTS = {
     profileData: {
       first_name: "Demo",
       last_name: "Provider",
-      user_type: "provider" as UserRoleEnum,
+      user_type: "provider" as UserTypeEnum,
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
     seedData: { 
        notifications: [
@@ -94,7 +94,7 @@ export const DEMO_ACCOUNTS = {
     profileData: {
       first_name: "Demo",
       last_name: "Sponsor",
-      user_type: "research-partner" as UserRoleEnum,
+      user_type: "research-partner" as UserTypeEnum,
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
      seedData: {
         notifications: [
@@ -138,7 +138,7 @@ export const DEMO_ACCOUNTS = {
     profileData: {
       first_name: "Demo",
       last_name: "Developer",
-      user_type: "developer" as UserRoleEnum,
+      user_type: "developer" as UserTypeEnum,
     } satisfies Omit<ProfileInsert, 'id' | 'email'>,
     seedData: {} // No specific seed data for developer currently
   }
