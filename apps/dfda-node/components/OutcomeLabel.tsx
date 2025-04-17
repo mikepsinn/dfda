@@ -1,61 +1,126 @@
 import React from 'react';
+import { cn } from "@/lib/utils"; // Import cn utility
+
+interface OutcomeValue {
+  percentage: number;
+  absolute?: string; // e.g., "-69 mg/dL"
+  nnh?: number;
+}
 
 interface OutcomeItem {
   name: string;
-  value: number;
-  positive?: boolean; // Green if true, Amber if false/undefined
+  baseline?: string; // e.g., "(baseline: 160 mg/dL)"
+  value: OutcomeValue;
+  isPositive?: boolean; // Green if true, Red if false, Amber if undefined (for side effects)
+}
+
+interface OutcomeCategory {
+  title: string;
+  items: OutcomeItem[];
+  isSideEffectCategory?: boolean; // To apply specific styling/logic for side effects
+}
+
+interface FooterMetadata {
+  sourceDescription: string;
+  lastUpdated: string;
+  nnhDescription?: string;
 }
 
 interface OutcomeLabelProps {
   title: string;
-  outcomeData: OutcomeItem[];
-  sideEffectsData: OutcomeItem[];
+  subtitle?: string; // e.g., "Lipid-lowering agent"
+  tag?: string; // Optional tag, e.g., "Drug Class"
+  data: OutcomeCategory[];
+  footer?: FooterMetadata;
 }
 
-export function OutcomeLabel({ title, outcomeData, sideEffectsData }: OutcomeLabelProps) {
+export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: OutcomeLabelProps) {
   const renderProgressBar = (item: OutcomeItem, isSideEffect: boolean = false) => {
-    const color = isSideEffect ? 'bg-amber-400' : item.positive !== false ? 'bg-green-500' : 'bg-red-500';
-    const textColor = isSideEffect ? '' : item.positive !== false ? 'text-green-600' : 'text-red-600';
-    const sign = isSideEffect ? '' : item.positive !== false ? '+' : '';
+    // Determine color based on positivity or if it's a side effect
+    const colorClass = isSideEffect
+      ? 'bg-amber-500' // Use amber for side effects if isPositive is not explicitly set
+      : item.isPositive === true
+        ? 'bg-green-600'
+        : item.isPositive === false
+          ? 'bg-red-600'
+          : 'bg-gray-400'; // Default or neutral color if positivity is undefined and not a side effect
+
+    const textColorClass = isSideEffect
+        ? 'text-red-600' // Side effects usually shown in red/amber text
+        : item.isPositive === true
+          ? 'text-green-600'
+          : item.isPositive === false
+            ? 'text-red-600'
+            : 'text-gray-700';
+
+    const valueString = `${item.value.percentage > 0 ? '+' : ''}${item.value.percentage}%` +
+                        (item.value.absolute ? ` (${item.value.absolute})` : '') +
+                        (item.value.nnh ? ` (NNH: ${item.value.nnh})` : '');
 
     return (
-      <div key={item.name}>
-        <div className="flex justify-between text-xs">
-          <span>{item.name}</span>
-          <span className={textColor}>{sign}{item.value}%</span>
+      <div key={item.name} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
+        <div className="flex items-center">
+          <span className="text-sm">{item.name}</span>
+          {item.baseline && <span className="ml-2 text-xs text-muted-foreground">{item.baseline}</span>}
         </div>
-        <div className={`h-${isSideEffect ? '2' : '3'} w-full bg-gray-200 rounded-full mt-1`}>
-          <div className={`h-${isSideEffect ? '2' : '3'} ${color} rounded-full`} style={{ width: `${item.value}%` }}></div>
+        <div className="flex items-center">
+          <span className={cn("text-sm font-medium", textColorClass)}>{valueString}</span>
+          {/* Simple visual bar, matching the example's style */}
+          <div className="ml-2 h-2 w-16 rounded-full bg-gray-200 hidden sm:block">
+            <div
+              className={cn("h-2 rounded-full", colorClass)}
+              // Use absolute percentage for width, max 100
+              style={{ width: `${Math.min(Math.abs(item.value.percentage), 100)}%` }}
+            ></div>
+          </div>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="bg-background rounded-lg border shadow-lg p-4 w-full max-w-md">
+    // Using border and bg-background to mimic the style in OutcomeLabelsSection
+    <div className="rounded-lg border bg-background p-4 w-full max-w-xl">
+       <div className="mb-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+         <span className="font-semibold text-lg">{title}</span>
+         {tag && (
+           <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full mt-1 sm:mt-0">
+             {tag}
+           </span>
+         )}
+       </div>
+       {subtitle && <p className="text-sm text-muted-foreground mb-3">{subtitle}</p>}
+
       <div className="space-y-4">
-        <div className="font-bold text-lg border-b pb-2">{title}</div>
-        <div className="space-y-4">
-          {outcomeData.length > 0 && (
-            <div>
-              <div className="font-medium text-sm mb-2">Change from Baseline (6 months)</div>
-              <div className="space-y-3">
-                {outcomeData.map(item => renderProgressBar(item))}
-              </div>
+        {data.map((category, index) => (
+          <div key={category.title} className={index < data.length - 1 ? 'border-b pb-3 mb-3' : ''}>
+            <div className="text-sm font-medium mb-2">{category.title}</div>
+            <div className="space-y-3 sm:space-y-2">
+              {category.items.map(item => renderProgressBar(item, category.isSideEffectCategory))}
             </div>
-          )}
-          {sideEffectsData.length > 0 && (
-             <div>
-               <div className="font-medium text-sm mb-2">Side Effects</div>
-               <div className="space-y-2 mt-1">
-                 {sideEffectsData.map(item => renderProgressBar(item, true))}
-               </div>
-             </div>
-          )}
-          <div className="text-xs text-primary font-medium cursor-pointer hover:underline">
-            View full outcome label →
           </div>
+        ))}
+
+        {footer && (
+           <div className="mt-4 pt-3 border-t text-xs text-muted-foreground">
+             <div className="flex flex-col sm:flex-row sm:justify-between">
+               <span>{footer.sourceDescription}</span>
+               <span>{footer.lastUpdated}</span>
+             </div>
+             {footer.nnhDescription && (
+               <div className="mt-1">
+                 <span>{footer.nnhDescription}</span>
+               </div>
+             )}
+           </div>
+        )}
+
+        {/* Removing the old link for now, can be added back if needed via props */}
+        {/*
+        <div className="text-xs text-primary font-medium cursor-pointer hover:underline">
+           View full outcome label →
         </div>
+        */}
       </div>
     </div>
   );

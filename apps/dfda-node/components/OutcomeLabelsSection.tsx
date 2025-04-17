@@ -1,5 +1,79 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { OutcomeLabel } from "./OutcomeLabel"
+
+// Define the sample data according to the new OutcomeLabelProps interface
+const atorvastatinData = {
+  title: "Atorvastatin 20mg daily",
+  tag: "Lipid-lowering agent",
+  data: [
+    {
+      title: "Primary Outcomes",
+      items: [
+        {
+          name: "LDL Cholesterol",
+          baseline: "(baseline: 160 mg/dL)",
+          value: { percentage: -43, absolute: "-69 mg/dL" },
+          isPositive: true,
+        },
+        {
+          name: "Total Cholesterol",
+          baseline: "(baseline: 240 mg/dL)",
+          value: { percentage: -32, absolute: "-77 mg/dL" },
+          isPositive: true,
+        },
+        {
+          name: "Cardiovascular Event Risk",
+          baseline: "(10-year risk)",
+          value: { percentage: -36, absolute: "-4.2%" },
+          isPositive: true,
+        },
+      ],
+    },
+    {
+      title: "Secondary Benefits",
+      items: [
+        {
+          name: "HDL Cholesterol",
+          value: { percentage: 5, absolute: "+2.3 mg/dL" },
+          isPositive: true,
+        },
+        {
+          name: "Triglycerides",
+          value: { percentage: -22, absolute: "-35 mg/dL" },
+          isPositive: true,
+        },
+      ],
+    },
+    {
+      title: "Side Effects",
+      isSideEffectCategory: true,
+      items: [
+        {
+          name: "Muscle Pain/Weakness",
+          baseline: "(vs. placebo)",
+          value: { percentage: 8.2, nnh: 12 }, // Percentage treated as positive increase for side effects
+          isPositive: false, // Explicitly false for red text/bar
+        },
+        {
+          name: "Liver Enzyme Elevation",
+          value: { percentage: 1.2, nnh: 83 },
+          isPositive: false,
+        },
+        {
+          name: "Headache",
+          value: { percentage: 3.8, nnh: 26 },
+          isPositive: false,
+        },
+      ],
+    },
+  ],
+  footer: {
+    sourceDescription: "Based on 42 clinical trials with 48,500 participants",
+    lastUpdated: "Last updated: Feb 2025",
+    nnhDescription: "NNH = Number Needed to Harm (patients treated for one additional adverse event)",
+  },
+};
 
 export function OutcomeLabelsSection() {
   return (
@@ -68,140 +142,7 @@ export function OutcomeLabelsSection() {
               <Button variant="outline">Learn More</Button>
             </Link>
           </div>
-          <div className="rounded-lg border bg-background p-8">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold">Sample Outcome Label: Atorvastatin 20mg</h3>
-              <div className="space-y-4">
-                <div className="rounded-md border p-4">
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="font-semibold text-lg">Atorvastatin 20mg daily</span>
-                    <span className="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                      Lipid-lowering agent
-                    </span>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="border-b pb-2">
-                      <div className="text-sm font-medium mb-1">Primary Outcomes</div>
-                      <div className="space-y-3 sm:space-y-2">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <div className="flex items-center">
-                            <span className="text-sm">LDL Cholesterol</span>
-                            <span className="ml-2 text-xs text-muted-foreground">(baseline: 160 mg/dL)</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-green-600">-43% (-69 mg/dL)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-11 rounded-full bg-green-600"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <div className="flex items-center">
-                            <span className="text-sm">Total Cholesterol</span>
-                            <span className="ml-2 text-xs text-muted-foreground">(baseline: 240 mg/dL)</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-green-600">-32% (-77 mg/dL)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-8 rounded-full bg-green-600"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <div className="flex items-center">
-                            <span className="text-sm">Cardiovascular Event Risk</span>
-                            <span className="ml-2 text-xs text-muted-foreground">(10-year risk)</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-green-600">-36% (absolute: -4.2%)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-9 rounded-full bg-green-600"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="border-b pb-2">
-                      <div className="text-sm font-medium mb-1">Secondary Benefits</div>
-                      <div className="space-y-3 sm:space-y-2">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <span className="text-sm">HDL Cholesterol</span>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-green-600">+5% (+2.3 mg/dL)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-2 rounded-full bg-green-600"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <span className="text-sm">Triglycerides</span>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-green-600">-22% (-35 mg/dL)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-6 rounded-full bg-green-600"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="text-sm font-medium mb-1">Side Effects</div>
-                      <div className="space-y-3 sm:space-y-2">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <div className="flex items-center">
-                            <span className="text-sm">Muscle Pain/Weakness</span>
-                            <span className="ml-2 text-xs text-muted-foreground">(vs. placebo)</span>
-                          </div>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-red-600">+8.2% (NNH: 12)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-3 rounded-full bg-red-600"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <span className="text-sm">Liver Enzyme Elevation</span>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-red-600">+1.2% (NNH: 83)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-1 rounded-full bg-red-600"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-                          <span className="text-sm">Headache</span>
-                          <div className="flex items-center">
-                            <span className="text-sm font-medium text-red-600">+3.8% (NNH: 26)</span>
-                            <div className="ml-2 h-2 w-16 rounded-full bg-gray-200">
-                              <div className="h-2 w-2 rounded-full bg-red-600"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t text-xs text-muted-foreground">
-                    <div className="flex justify-between">
-                      <span>Based on 42 clinical trials with 48,500 participants</span>
-                      <span>Last updated: Feb 2025</span>
-                    </div>
-                    <div className="mt-1">
-                      <span>NNH = Number Needed to Harm (patients treated for one additional adverse event)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <OutcomeLabel {...atorvastatinData} />
         </div>
       </div>
     </section>
