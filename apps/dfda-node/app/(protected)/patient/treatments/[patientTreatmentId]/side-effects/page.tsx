@@ -3,12 +3,11 @@ import type { SupabaseClient } from "@supabase/supabase-js"
 import { redirect, notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Plus } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 import type { FullPatientTreatmentDetail } from "../treatment-detail-client"
-import { Button } from "@/components/ui/button"
 
 // Side effects client component will be created later
 import { SideEffectsClient } from "./side-effects-client"

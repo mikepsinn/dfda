@@ -1,12 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { PlusCircle } from 'lucide-react'
 import { ReminderDialog } from './reminder-dialog'
 import { useReminderManagement } from '@/hooks/use-reminder-management'
 import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
-import type { ReminderScheduleData } from '@/components/reminders/reminder-scheduler'
 import { ReminderCardList } from './reminder-card-list'
 
 interface ReminderListProps {
@@ -17,7 +16,7 @@ interface ReminderListProps {
   userTimezone: string
 }
 
-export function ReminderList({ 
+export function ReminderListForVariable({
   userId, 
   variableId, 
   variableName,
@@ -30,8 +29,6 @@ export function ReminderList({
   const { 
     schedules, 
     isLoading, 
-    createSchedule, 
-    updateSchedule, 
     deleteSchedule 
   } = useReminderManagement(userId, variableId)
 
@@ -50,20 +47,6 @@ export function ReminderList({
     }
   }
 
-  const handleSaveSchedule = async (schedulerData: ReminderScheduleData) => {
-    let result: ReminderSchedule | null = null;
-    if (selectedSchedule) {
-      result = await updateSchedule(selectedSchedule.id, schedulerData)
-    } else {
-      result = await createSchedule(schedulerData)
-    }
-    
-    if (result) {
-      setIsDialogOpen(false)
-      setSelectedSchedule(null)
-    }
-  }
-
   const handleDeleteSchedule = async (scheduleId: string) => {
     const success = await deleteSchedule(scheduleId)
     if (success && selectedSchedule?.id === scheduleId) {
@@ -72,7 +55,7 @@ export function ReminderList({
     }
   }
 
-  const handleDialogClose = (needsRefresh?: boolean) => {
+  const handleDialogClose = () => {
       setIsDialogOpen(false);
       setSelectedSchedule(null);
   }

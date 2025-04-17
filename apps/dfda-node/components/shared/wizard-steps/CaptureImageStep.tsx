@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
 import { Button } from '@/components/ui/button';
-import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
+import { ImageType } from '../ImageAnalysisCapture';
 import { Camera, Upload, Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import { logger } from '@/lib/logger';
@@ -28,7 +28,6 @@ export function CaptureImageStep({
   const { isLoading, captureMode, imageStates } = state;
   const { isWebcamActive } = webcam;
   const { videoRef } = refs;
-  const [activeType, setActiveType] = useState<ImageType>(imageType);
   
   // Reference to track captured file
   const capturedFileRef = useRef<File | null>(null);
@@ -44,7 +43,6 @@ export function CaptureImageStep({
   // Function to request webcam
   const handleRequestWebcam = () => {
     logger.info(`Requesting webcam for image type: ${imageType}`);
-    setActiveType(imageType);
     actions.setActiveImageType(imageType);
     actions.requestWebcam(imageType);
   };

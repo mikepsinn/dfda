@@ -34,4 +34,36 @@ export async function getUserVariableByIdAction(userVariableId: string, userId: 
     return data;
 }
 
+/**
+ * Fetches all user variables for a user with associated global variable information
+ */
+export async function getAllUserVariablesAction(userId: string): Promise<any[]> {
+    const supabase = await createClient();
+    logger.info("Fetching all user variables", { userId });
+
+    if (!userId) {
+        logger.warn("getAllUserVariablesAction called with missing user ID");
+        return [];
+    }
+
+    const { data, error } = await supabase
+        .from('user_variables')
+        .select(`
+            id,
+            global_variable_id,
+            global_variables(id, name, variable_category_id),
+            preferred_unit_id,
+            units:preferred_unit_id(id, abbreviated_name)
+        `)
+        .eq('user_id', userId)
+        .is('deleted_at', null);
+
+    if (error) {
+        logger.error("Error fetching all user variables", { userId, error });
+        return [];
+    }
+
+    return data || [];
+}
+
 // TODO: Add actions for creating/updating/deleting user_variables if needed elsewhere 

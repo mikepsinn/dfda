@@ -1,7 +1,6 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
 import { getPatientConditionByIdAction } from "@/app/actions/patient-conditions" // Action to get specific PC
-import { getReminderSchedulesForUserVariableAction } from "@/app/actions/reminder-schedules" // Action to get reminders
 import { getRatingsForPatientConditionAction } from "@/app/actions/treatment-ratings" // Action to get ratings
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"

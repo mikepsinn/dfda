@@ -21,8 +21,8 @@ interface ReviewStepLayoutProps {
   confirmNextButtonText?: string;
   confirmGoToFinalButtonText?: string;
   confirmAndNextDisabled?: boolean;
-  confirmGoToFinalDisabled?: boolean;
   skipStepAndContinueDisabled?: boolean;
+  confirmGoToFinalDisabled?: boolean;
 }
 
 export function ReviewStepLayout({
@@ -37,8 +37,8 @@ export function ReviewStepLayout({
   confirmNextButtonText = "Confirm & Add Next Image", // Default text
   confirmGoToFinalButtonText = "Confirm & Go to Final Review", // Default text
   confirmAndNextDisabled = false, // Default disabled state
-  confirmGoToFinalDisabled = false, // Default disabled state
   skipStepAndContinueDisabled = false, // Default disabled state
+  confirmGoToFinalDisabled = false, // Default disabled state
 }: ReviewStepLayoutProps) {
 
   const { state } = useImageAnalysisWizardContext();
@@ -49,8 +49,8 @@ export function ReviewStepLayout({
   const isGloballyDisabled = isLoading;
   const isConfirmAndNextDisabled = isGloballyDisabled || confirmAndNextDisabled;
   const isRequiredDataMissing = !formData.type || !formData.name;
-  const isConfirmGoToFinalDisabled = isGloballyDisabled || (imageType === 'primary' && isRequiredDataMissing);
-  const isSkipDisabled = isGloballyDisabled;
+  const isConfirmGoToFinalDisabled = isGloballyDisabled || (imageType === 'primary' && isRequiredDataMissing) || confirmGoToFinalDisabled;
+  const isSkipDisabled = isGloballyDisabled || skipStepAndContinueDisabled;
 
   // Determine if the current image type is optional (not primary)
   const isOptionalStep = imageType !== 'primary';

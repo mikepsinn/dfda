@@ -31,7 +31,7 @@ export function FinalReviewStep() {
       <div className="space-y-4">
         <h3 className="text-lg font-semibold">Images</h3>
         {/* Use state.imageStates to render previews */}
-        {Object.entries(imageStates).filter(([_, imgState]) => imgState && 'previewUrl' in imgState).map(([type, imgState]) => (
+        {Object.entries(imageStates).filter(([, imgState]) => imgState && 'previewUrl' in imgState).map(([type, imgState]) => (
           <div key={type} className="border p-3 rounded-md space-y-2 bg-muted/30">
             <div className="flex justify-between items-center">
               <Label htmlFor={`image-review-${type}`} className="capitalize font-medium flex items-center">

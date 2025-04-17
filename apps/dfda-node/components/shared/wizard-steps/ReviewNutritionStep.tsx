@@ -1,12 +1,10 @@
 'use client'
 
-import React, { useCallback, useState } from 'react';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import React from 'react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
-import { ImageType, ImageAnalysisStep } from '../ImageAnalysisCapture';
+import { ImageType } from '../ImageAnalysisCapture';
 import { ReviewStepLayout } from './ReviewStepLayout';
 import { logger } from '@/lib/logger';
 import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
@@ -23,39 +21,39 @@ export function ReviewNutritionStep() {
   }
 
   // Handler for confirming this step and proceeding
-  const handleConfirmAndNext = useCallback(() => {
+  const handleConfirmAndNext = () => {
     // Call the hook's action to handle the transition logic
     actions.goToNextStepFromReview('nutrition');
-  }, [actions]);
+  };
 
   // Handler for going straight to final review
-  const handleConfirmAndGoToFinal = useCallback(() => {
+  const handleConfirmAndGoToFinal = () => {
     actions.goToStep('finalReview');
-  }, [actions]);
+  };
 
   // Handler for skipping this optional step
-  const handleSkipStepAndContinue = useCallback(() => {
+  const handleSkipStepAndContinue = () => {
     actions.goToNextStepFromReview('nutrition');
-  }, [actions]);
+  };
 
   // Handler for retaking image
-  const handleRetake = useCallback((type: ImageType) => {
+  const handleRetake = (type: ImageType) => {
     actions.retakeImage(type);
-  }, []);
+  };
 
   // Form change handlers
-  const handleNumericFormChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNumericFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     const numValue = value === '' ? null : parseFloat(value);
     if (value === '' || (numValue !== null && !isNaN(numValue))) {
         actions.updateFormField(name as keyof AnalyzedImageResult, numValue);
     }
-  }, [actions]);
+  };
 
-  const handleFormChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     actions.updateFormField(name as keyof AnalyzedImageResult, value);
-  }, [actions]);
+  };
 
   // Determine disabled states
   const isConfirmDisabled = false; // Can add validation if needed

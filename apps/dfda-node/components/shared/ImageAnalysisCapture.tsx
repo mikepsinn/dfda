@@ -28,8 +28,7 @@ import { SavingStep } from './wizard-steps/SavingStep'
 import { logger } from '@/lib/logger'
 
 // Define image types based on the plan
-const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;
-export type ImageType = typeof IMAGE_TYPES[number];
+export type ImageType = 'primary' | 'nutrition' | 'ingredients' | 'upc';
 
 // Define specific steps for the image analysis wizard
 export type ImageAnalysisStep = 
@@ -38,12 +37,6 @@ export type ImageAnalysisStep =
   | 'captureIngredients' | 'analyzingIngredients' | 'reviewIngredients'
   | 'captureUpc' | 'analyzingUpc' | 'reviewUpc'
   | 'finalReview' | 'saving' | 'error';
-
-// Define ImageStateWithPreview here to fix type errors
-interface ImageStateWithPreview {
-  file?: File; // Make file optional as it might not always be present
-  previewUrl: string;
-}
 
 // --- Props for the main component ---
 interface ImageAnalysisCaptureProps {
@@ -103,7 +96,7 @@ function ImageAnalysisCaptureInternal({ onClose }: { onClose: () => void }) {
     
     // Reset the flag when the component unmounts to handle future dialog opens
     return () => { hasModeBeenSet.current = false; };
-  }, []);
+  }, [state.captureMode]);
 
   // Handle file selection
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -248,19 +241,19 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
     const { actions, state } = useImageAnalysisWizardContext();
     
     // Track dialog open state
-    const wasOpen = useRef(isOpen);
+    const isOpenRef = useRef(isOpen);
     
     useEffect(() => {
       logger.info(`Dialog state changed: ${isOpen ? 'opened' : 'closed'}`);
       
       // Update reference when dialog opens/closes
-      wasOpen.current = isOpen;
+      isOpenRef.current = isOpen;
       
       // Return cleanup function that only resets if dialog is closing
       return () => {
         // Only reset wizard state when the dialog is actually closing
         // This prevents resetting during internal component re-renders
-        if (wasOpen.current && !isOpen) {
+        if (isOpenRef.current && !isOpen) {
           logger.info("Dialog closed - resetting wizard state", {
             currentStep: state.currentStep,
             hasImages: Object.keys(state.imageStates).length > 0
@@ -268,12 +261,12 @@ export function ImageAnalysisCapture({ userId, onSaveSuccess }: ImageAnalysisCap
           actions.resetWizard();
         } else {
           logger.info("Component unmounting but not resetting wizard", {
-            isOpen,
-            wasOpen: wasOpen.current
+            isOpen: isOpenRef.current,
+            wasOpen: isOpenRef.current
           });
         }
       };
-    }, [actions, isOpen, state]); // Add state to dependencies
+    }, [actions, state.currentStep, state.imageStates]); // Removed isOpen from dependencies
     
     return null; // This component doesn't render anything visible
   };

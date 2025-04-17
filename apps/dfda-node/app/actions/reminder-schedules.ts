@@ -87,6 +87,56 @@ export async function getReminderSchedulesForUserVariableAction(
     return data || [];
 }
 
+/**
+ * Gets all reminder schedules for a user, joining with user_variables and global_variables
+ * to get the variable name and other details
+ */
+export async function getAllReminderSchedulesForUserAction(userId: string): Promise<any[]> {
+    const supabase = await createClient();
+    logger.info('Fetching all reminder schedules for user', { userId });
+
+    if (!userId) {
+        logger.warn('getAllReminderSchedulesForUserAction called with missing userId');
+        return [];
+    }
+
+    // Fetch schedules with joined data
+    const { data, error } = await supabase
+        .from('reminder_schedules')
+        .select(`
+            id,
+            is_active,
+            time_of_day,
+            rrule,
+            start_date,
+            end_date,
+            default_value,
+            user_variables!inner (
+                id,
+                global_variable_id,
+                global_variables (
+                    id,
+                    name,
+                    variable_category_id
+                ),
+                preferred_unit_id,
+                units:preferred_unit_id (
+                    id, 
+                    abbreviated_name
+                )
+            )
+        `)
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        logger.error('Error fetching all reminder schedules for user', { userId, error });
+        return [];
+    }
+
+    return data || [];
+}
+
 // Upsert a reminder schedule for a global variable concept
 export async function upsertReminderScheduleAction(
     globalVariableId: string,
