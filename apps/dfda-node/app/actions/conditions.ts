@@ -34,15 +34,16 @@ export async function getConditionsAction() {
   const supabase = await createClient()
 
   const response = await supabase
-    .from('global_variables')
+    .from('global_conditions')
     .select(`
       id,
-      name,
-      description,
-      emoji,
-      conditions!inner(*)
+      global_variables!inner(
+        name,
+        description,
+        emoji
+      )
     `)
-    .order('name')
+    .order('id')
     .limit(50)
 
   if (response.error) {
@@ -50,15 +51,12 @@ export async function getConditionsAction() {
     throw new Error('Failed to fetch conditions')
   }
 
-  // Filter out the join artifacts if needed, or adjust select
-  // The data structure might change slightly due to the join.
-  // Assuming the goal is to return the global_variables data for matched conditions.
+  // Map the response to flatten the structure
   return response.data.map(item => ({
     id: item.id,
-    name: item.name,
-    description: item.description,
-    emoji: item.emoji
-    // Explicitly map fields, ignore 'conditions' join artifact
+    name: item.global_variables.name,
+    description: item.global_variables.description,
+    emoji: item.global_variables.emoji
   }));
 }
 
@@ -89,15 +87,16 @@ export async function getConditionByNameAction(name: string) {
 
   try {
     const { data: condition, error } = await supabase
-      .from('global_variables')
+      .from('global_conditions')
       .select(`
         id,
-        name,
-        description,
-        emoji,
-        conditions!inner(*)
+        global_variables!inner(
+          name,
+          description,
+          emoji
+        )
       `)
-      .ilike('name', name) // Case-insensitive match for the name
+      .ilike('global_variables.name', name) // Case-insensitive match for the name
       .maybeSingle(); // Use maybeSingle() in case name isn't found
 
     if (error) {
@@ -106,16 +105,20 @@ export async function getConditionByNameAction(name: string) {
     }
 
     if (!condition) {
-       logger.warn('Condition not found by name or not in conditions table:', { name });
-       return null;
+      logger.warn('Condition not found by name:', { name });
+      return null;
     }
 
-    // Destructure to remove the join artifact
-    // const { conditions, ...globalVarData } = condition; // Commented out unused variable
-    const globalVarData = { ...condition }; // Keep data without destructuring
-    delete (globalVarData as any).conditions; // Remove the join artifact if needed
-    logger.info('Found condition by name:', { condition: globalVarData });
-    return globalVarData;
+    // Map the response to flatten the structure
+    const result = {
+      id: condition.id,
+      name: condition.global_variables.name,
+      description: condition.global_variables.description,
+      emoji: condition.global_variables.emoji
+    };
+
+    logger.info('Found condition by name:', { condition: result });
+    return result;
   } catch (error) {
     logger.error('Error in getConditionByNameAction:', { error });
     throw new Error(`Failed to fetch condition by name: ${name}`);
@@ -129,28 +132,31 @@ export async function searchConditionsAction(query: string) {
 
   try {
     const { data: conditions, error } = await supabase
-      .from('global_variables')
+      .from('global_conditions')
       .select(`
         id,
-        name,
-        description,
-        emoji,
-        conditions!inner(*)
+        global_variables!inner(
+          name,
+          description,
+          emoji
+        )
       `)
-      .ilike('name', `%${query}%`)
-      .order('name')
+      .ilike('global_variables.name', `%${query}%`)
+      .order('id')
 
     if (error) {
       logger.error('Error searching conditions:', { error })
       throw error
     }
 
-    // Map to remove join artifacts
-    const results = (conditions || []).map(item => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { conditions: _ignored, ...globalVarData } = item; // Destructure inside map, explicitly ignore conditions
-      return globalVarData;
-    });
+    // Map the response to flatten the structure
+    const results = (conditions || []).map(item => ({
+      id: item.id,
+      name: item.global_variables.name,
+      description: item.global_variables.description,
+      emoji: item.global_variables.emoji
+    }));
+
     logger.info('Found conditions:', { count: results.length });
     return results;
   } catch (error) {
