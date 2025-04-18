@@ -6,12 +6,12 @@ import { Music, Edit, AlertTriangle, Search, X } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
-import { createClient } from '@/lib/supabase/client'
 import { AddTreatmentDialog } from "./add-treatment-dialog"
 import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 import type { Database } from '@/lib/database.types'
 import Link from 'next/link'
+import { getPatientTreatmentsWithRatingsAction } from '@/app/actions/patient-treatments'
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 type PatientTreatmentWithDetails = Database["public"]["Tables"]["patient_treatments"]["Row"] & {
@@ -52,29 +52,15 @@ export function TreatmentsClient({
     setIsLoadingTreatments(true)
     setTreatmentsError(null)
     try {
-      const supabase = createClient()
-      const { data, error } = await supabase
-        .from('patient_treatments')
-        .select(`
-          *,
-          global_treatments!inner ( global_variables!inner ( name ) ),
-          treatment_ratings ( effectiveness_out_of_ten, review, id, patient_condition_id )
-        `)
-        .eq('patient_id', userId)
-        .order('start_date', { ascending: false });
+      const data = await getPatientTreatmentsWithRatingsAction(userId);
       
-      console.log(`[TreatmentsClient] Data fetched from Supabase:`, { data, error });
-
-      if (error) {
-        console.error("[TreatmentsClient] Supabase fetch error:", error);
-        throw error
-      }
+      console.log(`[TreatmentsClient] Data fetched from server action:`, { data });
 
       const formattedData: PatientTreatmentWithDetails[] = data.map(pt => {
-         const firstRating = (pt.treatment_ratings as any)?.[0];
+         const firstRating = pt.treatment_ratings?.[0];
          return {
            ...pt,
-           treatment_name: (pt.global_treatments as any)?.global_variables?.name ?? 'Unknown Treatment',
+           treatment_name: pt.global_treatments?.global_variables?.name ?? 'Unknown Treatment',
            effectiveness_out_of_ten: firstRating?.effectiveness_out_of_ten ?? null,
            review: firstRating?.review ?? null,
            rating_id: firstRating?.id ?? null,

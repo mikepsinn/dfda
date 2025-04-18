@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { TreatmentSearch } from "@/components/treatment-search";
 import { addInitialPatientTreatmentsAction } from "@/app/actions/patient-treatments";
-import { createDefaultReminderAction } from "@/app/actions/reminder-schedules";
 // TODO: Add toast import if needed e.g. import { useToast } from "@/components/ui/use-toast";
 
 const logger = createLogger("patient-onboarding-treatments-form");
@@ -50,8 +49,6 @@ export function PatientOnboardingTreatmentsForm({ userId }: PatientOnboardingTre
     logger.info("Submitting initial treatments", { userId, count: selectedTreatments.length });
     try {
        // Call the server action with the simplified list
-       // NOTE: We expect addInitialPatientTreatmentsAction to be updated 
-       // to accept this simpler format.
        const result = await addInitialPatientTreatmentsAction(userId, selectedTreatments);
        
        if (!result.success) {
@@ -59,23 +56,7 @@ export function PatientOnboardingTreatmentsForm({ userId }: PatientOnboardingTre
        }
        logger.info('Initial treatments saved', { userId });
 
-       // Attempt to create default reminders for treatments added (fire-and-forget)
-       // Assuming a default daily reminder for now
-       logger.info("Attempting to create default treatment reminders", { userId });
-       selectedTreatments.forEach(treatment => {
-          // TODO: Maybe create a more specific default rule? FREQ=DAILY?
-          createDefaultReminderAction(userId, treatment.treatmentId, treatment.treatmentName, 'treatment')
-             .then(reminderResult => {
-                 if (!reminderResult.success) {
-                    logger.warn('Failed to create default reminder for treatment', { userId, treatmentId: treatment.treatmentId, error: reminderResult.error });
-                 }
-              })
-              .catch(err => { 
-                 logger.error('Error calling createDefaultReminderAction for treatment', { userId, treatmentId: treatment.treatmentId, err });
-              });
-       });
-
-       logger.info('Navigating to dashboard after treatment submission and reminder attempts', { userId });
+       logger.info('Navigating to dashboard after treatment submission', { userId });
        // Navigate to dashboard after saving
        // TODO: Replace alert with toast notification
        alert("Treatments saved! Onboarding complete.");

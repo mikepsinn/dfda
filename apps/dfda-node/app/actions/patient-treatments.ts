@@ -37,6 +37,16 @@ export type PatientTreatmentWithName = Database['public']['Tables']['patient_tre
   } | null
 }
 
+// Type for treatment with ratings
+export type PatientTreatmentWithRatings = PatientTreatmentWithName & {
+  treatment_ratings?: {
+    effectiveness_out_of_ten: number | null;
+    review: string | null;
+    id: string;
+    patient_condition_id: string;
+  }[];
+}
+
 // Removed TreatmentEntry and ConditionTreatmentState interfaces
 
 // --- Server Action --- 
@@ -117,36 +127,66 @@ export async function addInitialPatientTreatmentsAction(
 
   try {
     // 1. Prepare Patient Treatments for Insertion (using Client type)
-    // user_variable_id will be handled by the database trigger
     const patientTreatmentsToInsert: PatientTreatmentClientInsert[] = selectedTreatments.map(treatment => {
       return {
         patient_id: userId,
-        treatment_id: treatment.treatmentId, // This remains the global_variable_id
-        // user_variable_id is intentionally omitted
-        status: 'active', // Default status
-        start_date: new Date().toISOString(), // Default start date
-        is_prescribed: false, // Default value
+        treatment_id: treatment.treatmentId,
+        status: 'active',
+        start_date: new Date().toISOString(),
+        is_prescribed: false,
       };
     });
 
-    // 2. Perform Patient Treatment Insertion (with casting)
-    logger.info('Attempting to insert patient treatments', { userId, data: patientTreatmentsToInsert });
+    // 2. Perform Patient Treatment Insertion
     const { data: insertedPatientTreatments, error: ptError } = await supabase
       .from('patient_treatments')
-      // Cast to the full Insert type array, relying on trigger for user_variable_id
       .insert(patientTreatmentsToInsert as PatientTreatmentInsert[])
-      .select('id, treatment_id');
+      .select('id, treatment_id, user_variable_id');
 
     if (ptError || !insertedPatientTreatments) {
       logger.error('Error inserting initial patient treatments:', { userId, error: ptError });
-      // Use console.error for more visibility during development if needed
-      // console.error("Supabase Insert Error (patient_treatments):", JSON.stringify(ptError, null, 2));
       throw new Error(ptError?.message || 'Failed to save patient treatments.');
     }
 
     logger.info('Successfully inserted patient treatments', { userId, count: insertedPatientTreatments.length });
 
-    // 3. Revalidation
+    // 3. Create default reminders for each treatment
+    const reminderPromises = insertedPatientTreatments.map(async (pt) => {
+      const { data: treatmentDetails } = await supabase
+        .from('global_variables')
+        .select('name')
+        .eq('id', pt.treatment_id)
+        .single();
+
+      if (treatmentDetails?.name && pt.user_variable_id) {
+        try {
+          const reminderResult = await createDefaultReminderAction(
+            userId,
+            pt.user_variable_id,
+            treatmentDetails.name,
+            'treatment'
+          );
+          if (!reminderResult.success) {
+            logger.warn('Failed to create default reminder for treatment', {
+              userId,
+              treatmentId: pt.treatment_id,
+              error: reminderResult.error
+            });
+          }
+        } catch (err) {
+          logger.error('Error creating default reminder for treatment', {
+            userId,
+            treatmentId: pt.treatment_id,
+            error: err
+          });
+        }
+      }
+    });
+
+    // Wait for all reminders to be created, but don't fail if some fail
+    await Promise.allSettled(reminderPromises);
+
+    // 4. Revalidation
     try {
       revalidatePath(`/patient`);
       revalidatePath(`/patient/treatments`);
@@ -156,10 +196,9 @@ export async function addInitialPatientTreatmentsAction(
       });
     } catch (revalError) {
       logger.error('Error during revalidation after initial treatment add', { revalError, userId });
-      // Don't fail the whole operation for revalidation error
     }
 
-    logger.info('Successfully added initial patient treatments', { userId });
+    logger.info('Successfully added initial patient treatments and created reminders', { userId });
     return { success: true };
 
   } catch (error) {
@@ -266,4 +305,36 @@ export async function addSinglePatientTreatmentAction(
     logger.error("Error in addSinglePatientTreatmentAction", { error: error instanceof Error ? error.message : String(error), input });
     return { success: false, error: error instanceof Error ? error.message : "An unexpected error occurred." };
   }
+}
+
+// Action to get all treatments with ratings for a patient
+export async function getPatientTreatmentsWithRatingsAction(patientId: string): Promise<PatientTreatmentWithRatings[]> {
+  const supabase = await createClient()
+  logger.info('Fetching treatments with ratings for patient', { patientId });
+
+  const { data, error } = await supabase
+    .from('patient_treatments')
+    .select(`
+      *,
+      global_treatments!inner (
+        global_variables!inner (
+          name
+        )
+      ),
+      treatment_ratings (
+        effectiveness_out_of_ten,
+        review,
+        id,
+        patient_condition_id
+      )
+    `)
+    .eq('patient_id', patientId)
+    .order('start_date', { ascending: false });
+
+  if (error) {
+    logger.error('Error fetching patient treatments with ratings:', { patientId, error });
+    throw new Error('Failed to fetch patient treatments');
+  }
+
+  return data || [];
 } 
