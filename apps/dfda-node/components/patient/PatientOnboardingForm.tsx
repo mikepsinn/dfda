@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ConditionSearchInput } from "@/components/ConditionSearchInput"; 
 import { addInitialPatientConditionsAction } from "@/app/actions/patient-conditions";
-import { createDefaultReminderAction } from "@/app/actions/reminder-schedules";
 // TODO: Add toast import if needed e.g. import { useToast } from "@/components/ui/use-toast";
 
 const logger = createLogger("patient-onboarding-form");
@@ -43,20 +42,6 @@ export function PatientOnboardingForm({ userId }: PatientOnboardingFormProps) {
         throw new Error(result.error || "Server action failed");
       }
       logger.info("Initial conditions saved", { userId });
-
-      // Attempt to create default reminders (fire-and-forget, log errors)
-      logger.info("Attempting to create default condition reminders", { userId });
-      selectedConditions.forEach(condition => {
-          createDefaultReminderAction(userId, condition.id, condition.name, 'condition')
-            .then(reminderResult => {
-                if (!reminderResult.success) {
-                   logger.warn('Failed to create default reminder for condition', { userId, conditionId: condition.id, error: reminderResult.error });
-                }
-             })
-             .catch(err => { 
-                logger.error('Error calling createDefaultReminderAction for condition', { userId, conditionId: condition.id, err });
-             });
-      });
 
       logger.info("Navigating to treatment step", { userId });
       router.push('/patient/onboarding/treatments');

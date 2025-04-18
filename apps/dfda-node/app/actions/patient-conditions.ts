@@ -259,18 +259,48 @@ export async function addInitialPatientConditionsAction(
     // user_variable_id is intentionally omitted, handled by trigger
   }));
 
-  const { error } = await supabase
+  const { data: insertedConditions, error } = await supabase
     .from('patient_conditions')
     // Cast to PatientConditionInsert[], assuming the trigger handles user_variable_id
-    .insert(conditionsToInsert as PatientConditionInsert[]);
+    .insert(conditionsToInsert as PatientConditionInsert[])
+    .select(); // Get back the inserted records to have access to user_variable_ids
 
-  if (error) {
+  if (error || !insertedConditions) {
     logger.error('Error inserting initial patient conditions:', { 
       patientId, 
       conditionIds: conditions.map(c => c.id),
       error 
     });
     return { success: false, error: 'Failed to save conditions.' };
+  }
+
+  // Create default reminders for each condition
+  for (const condition of conditions) {
+    const insertedCondition = insertedConditions.find(ic => ic.condition_id === condition.id);
+    if (insertedCondition?.user_variable_id) {
+      try {
+        const reminderResult = await createDefaultReminderAction(
+          patientId, 
+          insertedCondition.user_variable_id,
+          condition.name,
+          'condition'
+        );
+        if (!reminderResult.success) {
+          logger.warn('Failed to create default reminder for condition', {
+            patientId,
+            conditionId: condition.id,
+            error: reminderResult.error
+          });
+        }
+      } catch (err) {
+        logger.error('Error creating default reminder for condition', {
+          patientId,
+          conditionId: condition.id,
+          error: err
+        });
+        // Continue with other reminders even if one fails
+      }
+    }
   }
 
   // Revalidate relevant paths after successful insertion
