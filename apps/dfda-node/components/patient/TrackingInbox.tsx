@@ -8,11 +8,11 @@ import {
     getPendingReminderNotificationsAction, 
     completeReminderNotificationAction, 
     type PendingNotificationTask as PendingReminderNotification 
-} from "@/app/actions/reminder-schedules"
+} from "@/lib/actions/reminder-schedules"
 import { logger } from "@/lib/logger"
 import { useToast } from "@/components/ui/use-toast"
-import { logMeasurementAction } from "@/app/actions/measurements"
-import { undoLogAction } from "@/app/actions/undoLog"
+import { logMeasurementAction } from "@/lib/actions/measurements"
+import { undoLogAction } from "@/lib/actions/undoLog"
 import { ReminderNotificationCard } from '@/components/reminders'
 
 interface TrackingInboxProps {

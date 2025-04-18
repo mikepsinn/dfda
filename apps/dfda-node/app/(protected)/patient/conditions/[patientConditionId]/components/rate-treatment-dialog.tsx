@@ -16,8 +16,8 @@ import {
   PatientConditionRating,
   TreatmentRatingUpsertData,
   upsertTreatmentRatingAction,
-} from "@/app/actions/treatment-ratings"
-import { PatientTreatmentWithName, getPatientTreatmentsAction } from "@/app/actions/patient-treatments" 
+} from "@/lib/actions/treatment-ratings"
+import { PatientTreatmentWithName, getPatientTreatmentsAction } from "@/lib/actions/patient-treatments"
 import { Label } from "@/components/ui/label"
 import {
   Select,

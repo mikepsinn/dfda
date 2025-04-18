@@ -5,8 +5,8 @@ import { getServerUser } from "@/lib/server-auth"
 import { DataSubmissionForm } from "./components/data-submission-form"
 import { redirect } from "next/navigation"
 import { Database } from "@/lib/database.types"
-import { getPatientActiveEnrollmentAction } from "@/app/actions/trial-enrollments"
-import { getLatestDataSubmissionAction } from "@/app/actions/data-submissions"
+import { getPatientActiveEnrollmentAction } from "@/lib/actions/trial-enrollments"
+import { getLatestDataSubmissionAction } from "@/lib/actions/data-submissions"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
 type DataSubmission = Database["public"]["Tables"]["data_submissions"]["Row"]

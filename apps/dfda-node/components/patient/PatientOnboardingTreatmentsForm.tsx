@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { TreatmentSearch } from "@/components/treatment-search";
-import { addInitialPatientTreatmentsAction } from "@/app/actions/patient-treatments";
+import { addInitialPatientTreatmentsAction } from "@/lib/actions/patient-treatments";
 // TODO: Add toast import if needed e.g. import { useToast } from "@/components/ui/use-toast";
 
 const logger = createLogger("patient-onboarding-treatments-form");

@@ -9,7 +9,7 @@ import {
     upsertReminderScheduleAction,
     deleteReminderScheduleAction,
     type ReminderSchedule,
-} from '@/app/actions/reminder-schedules'
+} from '@/lib/actions/reminder-schedules'
 import { createLogger } from '@/lib/logger'
 import { Loader2 } from 'lucide-react'
 

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { PlusCircle } from 'lucide-react'
 import { ReminderDialog } from './reminder-dialog'
 import { useReminderManagement } from '@/hooks/use-reminder-management'
-import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
+import type { ReminderSchedule } from '@/lib/actions/reminder-schedules'
 import { ReminderCardList } from './reminder-card-list'
 import { VARIABLE_CATEGORIES_DATA } from '@/lib/constants/variable-categories'
 

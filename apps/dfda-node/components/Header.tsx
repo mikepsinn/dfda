@@ -4,8 +4,8 @@ import Link from "next/link"
 import Image from "next/image"
 import type { User } from '@supabase/supabase-js'
 import { useEffect } from 'react';
-import type { Profile } from "@/app/actions/profiles";
-import { updateUserProfileTimezoneAction } from "@/app/actions/profiles";
+import type { Profile } from "@/lib/actions/profiles";
+import { updateUserProfileTimezoneAction } from "@/lib/actions/profiles";
 import { logger } from "@/lib/logger";
 import { type NavItem } from "@/lib/types/navigation";
 

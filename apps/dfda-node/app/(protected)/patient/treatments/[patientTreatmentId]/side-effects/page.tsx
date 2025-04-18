@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
 // Import the new server action
-import { getPatientTreatmentDetailAction } from '@/app/actions/patient-treatments'
+import { getPatientTreatmentDetailAction } from '@/lib/actions/patient-treatments'
 // Import Breadcrumb components
 import { 
   Breadcrumb, 

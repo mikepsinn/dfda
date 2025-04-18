@@ -4,7 +4,7 @@ import { getServerUser } from "@/lib/server-auth"
 import { ProfileForm } from "./profile-form"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { redirect } from "next/navigation"
-import { getCurrentUserProfileAction } from "@/app/actions/profiles" // Import the action
+import { getCurrentUserProfileAction } from "@/lib/actions/profiles" // Import the action
 
 export default async function ProfilePage() {
   const user = await getServerUser()

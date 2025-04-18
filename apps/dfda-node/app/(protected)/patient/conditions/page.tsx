@@ -1,6 +1,6 @@
 import { getServerUser } from "@/lib/server-auth"
 import { redirect } from "next/navigation"
-import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { getPatientConditionsAction } from "@/lib/actions/patient-conditions"
 import { AddConditionDialog } from "../treatments/components/add-condition-dialog"
 import { ConditionCard } from "@/components/patient/ConditionCard"
 

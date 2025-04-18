@@ -5,7 +5,7 @@ import { StarRating as Rating } from "@/components/ui/star-rating"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { toast } from 'sonner'
-import { upsertTreatmentRatingAction, type TreatmentRatingUpsertData } from "@/app/actions/treatment-ratings"
+import { upsertTreatmentRatingAction, type TreatmentRatingUpsertData } from "@/lib/actions/treatment-ratings"
 import { logger } from "@/lib/logger"
 
 interface TreatmentReviewFormProps {

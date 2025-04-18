@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { StarRating } from "@/components/ui/star-rating"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { markRatingAsHelpfulAction } from "@/app/actions/treatment-ratings"
+import { markRatingAsHelpfulAction } from "@/lib/actions/treatment-ratings"
 import { useToast } from "@/hooks/use-toast"
 import type { Database } from "@/lib/database.types"
 

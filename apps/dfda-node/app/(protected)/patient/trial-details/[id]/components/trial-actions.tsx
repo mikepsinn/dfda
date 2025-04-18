@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
 import { useToast } from '@/components/ui/use-toast'
-import { createInitialEnrollmentAction } from "@/app/actions/trial-enrollments"
+import { createInitialEnrollmentAction } from "@/lib/actions/trial-enrollments"
 
 interface TrialActionsProps {
   trialId: string

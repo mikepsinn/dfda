@@ -6,7 +6,7 @@ import { createLogger } from "@/lib/logger";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ConditionSearchInput } from "@/components/ConditionSearchInput"; 
-import { addInitialPatientConditionsAction } from "@/app/actions/patient-conditions";
+import { addInitialPatientConditionsAction } from "@/lib/actions/patient-conditions";
 // TODO: Add toast import if needed e.g. import { useToast } from "@/components/ui/use-toast";
 
 const logger = createLogger("patient-onboarding-form");

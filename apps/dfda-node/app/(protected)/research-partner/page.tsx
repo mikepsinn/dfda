@@ -7,7 +7,7 @@ import { TrialManagement } from "./components/trial-management"
 import { RecentActivity } from "./components/recent-activity"
 import { getUserProfile } from "@/lib/profile"
 import { logger } from "@/lib/logger"
-import { getResearchPartnerTrialsAction } from "@/app/actions/trials"
+import { getResearchPartnerTrialsAction } from "@/lib/actions/trials"
 
 export const metadata: Metadata = {
   title: "Research Partner Dashboard | FDA v2",

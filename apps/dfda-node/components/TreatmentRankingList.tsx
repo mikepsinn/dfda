@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { StarRating } from "@/components/ui/star-rating"
-import { getRatingsForConditionAction } from "@/app/actions/treatment-ratings"
+import { getRatingsForConditionAction } from "@/lib/actions/treatment-ratings"
 
 interface TreatmentRankingListProps {
   condition: string

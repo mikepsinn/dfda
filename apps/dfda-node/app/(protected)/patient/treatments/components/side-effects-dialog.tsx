@@ -19,7 +19,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { createLogger } from '@/lib/logger'
 import type { Database } from '@/lib/database.types'
 // Import the updated server actions
-import { getSideEffectReportsForPatientTreatmentAction, reportSideEffectAction } from '@/app/actions/treatment-side-effects'
+import { getSideEffectReportsForPatientTreatmentAction, reportSideEffectAction } from '@/lib/actions/treatment-side-effects'
 
 const logger = createLogger('side-effects-dialog')
 

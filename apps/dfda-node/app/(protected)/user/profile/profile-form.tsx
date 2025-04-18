@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { useRouter } from "next/navigation"
 import { toast } from "@/components/ui/use-toast"
 import { logger } from "@/lib/logger"
-import { updateProfileAction } from "@/app/actions/profiles"
+import { updateProfileAction } from "@/lib/actions/profiles"
 import type { Profile, ProfileUpdate } from "@/lib/profile"
 
 interface ProfileFormProps {

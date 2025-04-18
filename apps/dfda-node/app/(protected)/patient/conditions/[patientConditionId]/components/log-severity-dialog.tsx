@@ -16,7 +16,7 @@ import { MessageSquarePlus } from "lucide-react"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Textarea } from "@/components/ui/textarea"
-import { logMeasurementAction } from "@/app/actions/measurements"
+import { logMeasurementAction } from "@/lib/actions/measurements"
 import { useToast } from "@/components/ui/use-toast"
 import { createLogger } from "@/lib/logger"
 

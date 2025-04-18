@@ -14,7 +14,7 @@ import { toast } from "@/components/ui/use-toast"
 import { Plus } from "lucide-react"
 import { ConditionSearchInput } from "@/components/ConditionSearchInput"
 import { logger } from "@/lib/logger"
-import { addPatientConditionAction } from "@/app/actions/patient-conditions"
+import { addPatientConditionAction } from "@/lib/actions/patient-conditions"
 
 interface AddConditionDialogProps {
   userId: string

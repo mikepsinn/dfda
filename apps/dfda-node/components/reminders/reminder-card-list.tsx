@@ -1,6 +1,6 @@
 'use client'
 
-import type { ReminderSchedule } from "@/app/actions/reminder-schedules";
+import type { ReminderSchedule } from "@/lib/actions/reminder-schedules";
 import { ReminderCard } from "./reminder-card";
 
 interface ReminderCardListProps {

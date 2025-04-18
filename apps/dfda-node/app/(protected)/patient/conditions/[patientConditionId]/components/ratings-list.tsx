@@ -3,7 +3,7 @@
 // import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { PatientConditionRating, deleteTreatmentRatingAction } from "@/app/actions/treatment-ratings"
+import { PatientConditionRating, deleteTreatmentRatingAction } from "@/lib/actions/treatment-ratings"
 import { 
   DropdownMenu, 
   DropdownMenuContent, 

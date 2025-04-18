@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { demoLogin } from "@/app/actions/demo-login"
+import { demoLogin } from "@/lib/actions/demo-login"
 import { AlertCircle } from "lucide-react"
 import { logger } from "@/lib/logger"
 import { DemoUserType } from "@/lib/constants/demo-accounts"

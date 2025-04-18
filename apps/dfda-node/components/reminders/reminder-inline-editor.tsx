@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { ReminderScheduler, type ReminderScheduleData } from './reminder-scheduler'
 import { Plus, Save, X } from 'lucide-react'
 import { ReminderCardList } from './reminder-card-list'
-import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
+import type { ReminderSchedule } from '@/lib/actions/reminder-schedules'
 import { logger } from '@/lib/logger'
 import { mapDbToSchedulerData } from '@/lib/reminder-utils'
 

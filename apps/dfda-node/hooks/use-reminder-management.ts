@@ -8,7 +8,7 @@ import {
   deleteReminderScheduleAction,
   type ReminderSchedule,
   type ReminderScheduleClientData
-} from '@/app/actions/reminder-schedules'
+} from '@/lib/actions/reminder-schedules'
 import { type ReminderScheduleData } from '@/components/reminders/reminder-scheduler'
 import { mapSchedulerToClientData } from '@/lib/reminder-utils'
 

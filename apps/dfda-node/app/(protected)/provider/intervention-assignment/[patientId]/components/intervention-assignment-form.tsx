@@ -22,7 +22,7 @@ import {
     assignIntervention,
     PatientAssignmentDetails, 
     InterventionOption
-} from '@/app/actions/intervention-assignment-actions'
+} from '@/lib/actions/intervention-assignment-actions'
 
 interface InterventionAssignmentFormProps {
   patientId: string;

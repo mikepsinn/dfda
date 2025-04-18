@@ -4,8 +4,8 @@ import { redirect } from "next/navigation"
 import type { Database } from "@/lib/database.types"
 import { createUnifiedLogger } from "@/lib/logger"
 import { getUserProfile } from "@/lib/profile"
-import { getProviderActiveTrialsAction, getProviderPatientsAction } from "@/app/actions/trials"
-import { getProviderEnrollmentsAction } from "@/app/actions/trial-enrollments"
+import { getProviderActiveTrialsAction, getProviderPatientsAction } from "@/lib/actions/trials"
+import { getProviderEnrollmentsAction } from "@/lib/actions/trial-enrollments"
 
 // Import Dashboard Components
 import { DashboardHeader } from "./components/dashboard-header"

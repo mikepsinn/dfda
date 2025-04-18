@@ -10,7 +10,7 @@ import {
   CommandEmpty,
   CommandGroup,
 } from "@/components/ui/command";
-import { searchPredictorsAction, PredictorSuggestion } from '@/app/actions/global-variables';
+import { searchPredictorsAction, PredictorSuggestion } from '@/lib/actions/global-variables';
 import { useDebounce } from '@/hooks/useDebounce';
 
 export function OutcomeLabelSearch() {

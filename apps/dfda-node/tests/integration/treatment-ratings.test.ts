@@ -6,7 +6,7 @@ import {
   upsertTreatmentRatingAction,
   deleteTreatmentRatingAction,
   type TreatmentRatingUpsertData,
-} from '@/app/actions/treatment-ratings'
+} from '@/lib/actions/treatment-ratings'
 
 type TreatmentRating = Database["public"]["Tables"]["treatment_ratings"]["Row"]
 type TreatmentStats = {

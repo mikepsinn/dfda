@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { PlusCircle } from "lucide-react"
-import { getDataSubmissionMetricsAction } from "@/app/actions/data-submissions"
+import { getDataSubmissionMetricsAction } from "@/lib/actions/data-submissions"
 
 interface HealthMetricsProps {
   userId?: string

@@ -16,7 +16,7 @@ import type { User } from '@supabase/supabase-js' // Assuming User type from Sup
 // Use Tables helper for view type
 import type { Tables } from '@/lib/database.types' 
 // Import the correct type for the tracking inbox data
-import type { PendingNotificationTask } from '@/app/actions/reminder-schedules'
+import type { PendingNotificationTask } from '@/lib/actions/reminder-schedules'
 
 // Define types using the Tables helper
 type PatientConditionRow = Tables<'patient_conditions_view'>

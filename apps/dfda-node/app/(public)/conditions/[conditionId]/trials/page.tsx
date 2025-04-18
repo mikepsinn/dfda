@@ -1,5 +1,5 @@
-import { getConditionByNameAction } from "@/app/actions/conditions"
-import { getTrialsByConditionAction } from "@/app/actions/trials"
+import { getConditionByNameAction } from "@/lib/actions/conditions"
+import { getTrialsByConditionAction } from "@/lib/actions/trials"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"

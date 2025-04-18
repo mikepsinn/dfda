@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react"
 import { Input } from "@/components/ui/input"
-import { searchConditionsAction, getConditionsAction } from "@/app/actions/conditions"
+import { searchConditionsAction, getConditionsAction } from "@/lib/actions/conditions"
 import { logger } from "@/lib/logger"
 
 // Define the type based on what the actions actually return

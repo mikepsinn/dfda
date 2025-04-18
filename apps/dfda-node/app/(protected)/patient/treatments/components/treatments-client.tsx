@@ -11,7 +11,7 @@ import { SideEffectsDialog } from "./side-effects-dialog"
 import { TreatmentRatingDialog } from "./treatment-rating-dialog"
 import type { Database } from '@/lib/database.types'
 import Link from 'next/link'
-import { getPatientTreatmentsWithRatingsAction } from '@/app/actions/patient-treatments'
+import { getPatientTreatmentsWithRatingsAction } from '@/lib/actions/patient-treatments'
 
 type PatientCondition = Database["public"]["Views"]["patient_conditions_view"]["Row"];
 type PatientTreatmentWithDetails = Database["public"]["Tables"]["patient_treatments"]["Row"] & {

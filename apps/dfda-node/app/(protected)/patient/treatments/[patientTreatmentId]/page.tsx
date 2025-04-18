@@ -9,8 +9,8 @@ import { logger } from "@/lib/logger"
 // import type { Database } from "@/lib/database.types" // Removed unused import
 // import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
 // import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Removed unused import
-import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-import { getPatientTreatmentDetailAction } from '@/app/actions/patient-treatments'
+import { getPatientConditionsAction } from "@/lib/actions/patient-conditions"
+import { getPatientTreatmentDetailAction } from '@/lib/actions/patient-treatments'
 import { Button } from '@/components/ui/button'
 // Import Breadcrumb components
 import { 

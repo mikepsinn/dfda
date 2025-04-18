@@ -19,7 +19,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { searchConditionsAction } from "@/app/actions/conditions" // Assuming path is correct
+import { searchConditionsAction } from "@/lib/actions/conditions" // Assuming path is correct
 import type { Database } from "@/lib/database.types"
 import { useDebounce } from "@/hooks/use-debounce" // Assuming you have a debounce hook
 

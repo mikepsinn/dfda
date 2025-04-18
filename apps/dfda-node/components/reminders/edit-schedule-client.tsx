@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { useToast } from '@/components/ui/use-toast'
 import { logger } from '@/lib/logger'
 import { Plus, X, Edit, Clock, Save, CheckCircle } from 'lucide-react'
-import { upsertReminderScheduleAction, deleteReminderScheduleAction } from '@/app/actions/reminder-schedules'
+import { upsertReminderScheduleAction, deleteReminderScheduleAction } from '@/lib/actions/reminder-schedules'
 import { format } from 'date-fns'
 import {
   AlertDialog,

@@ -15,7 +15,7 @@ import { Label } from "@/components/ui/label"
 import { Plus } from "lucide-react"
 import { TreatmentSearch } from "@/components/treatment-search"
 import { createLogger } from "@/lib/logger"
-import { addSinglePatientTreatmentAction } from "@/app/actions/patient-treatments"
+import { addSinglePatientTreatmentAction } from "@/lib/actions/patient-treatments"
 import { useRouter } from "next/navigation"
 import { toast } from "@/components/ui/use-toast"
 

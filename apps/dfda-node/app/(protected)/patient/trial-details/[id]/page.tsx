@@ -5,8 +5,8 @@ import type { Database } from "@/lib/database.types"
 import { TrialHeader } from "./components/trial-header"
 import { TrialContent } from "./components/trial-content"
 import { TrialActions } from "./components/trial-actions"
-import { getTrialForMetadataAction, getTrialDetailsAction } from "@/app/actions/trials"
-import { getTrialEnrollmentStatusAction } from "@/app/actions/trial-enrollments"
+import { getTrialForMetadataAction, getTrialDetailsAction } from "@/lib/actions/trials"
+import { getTrialEnrollmentStatusAction } from "@/lib/actions/trial-enrollments"
 
 interface TrialDetailsPageProps {
   params: {

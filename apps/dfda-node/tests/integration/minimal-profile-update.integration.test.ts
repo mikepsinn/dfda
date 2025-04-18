@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from '@/lib/database.types';
-import { updateProfileAction, getProfileByIdAction } from '@/app/actions/profiles';
+import { updateProfileAction, getProfileByIdAction } from '@/lib/actions/profiles';
 
 // Unmock Supabase client to use real server actions
 jest.unmock('@/lib/supabase');

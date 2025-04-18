@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { AddTreatmentDialog } from "./components/add-treatment-dialog"
-import { getPatientConditionsAction } from '@/app/actions/patient-conditions'
+import { getPatientConditionsAction } from '@/lib/actions/patient-conditions'
 import type { Database } from "@/lib/database.types"
 import { TreatmentsClient } from "./components/treatments-client"
 

@@ -3,7 +3,7 @@
 import { formatDistanceToNow } from 'date-fns'
 import { Button } from '@/components/ui/button'
 import { X, Undo2, Loader2 } from 'lucide-react'
-import { PendingNotificationTask } from '@/app/actions/reminder-schedules'
+import { PendingNotificationTask } from '@/lib/actions/reminder-schedules'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useState } from 'react'

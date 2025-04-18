@@ -8,12 +8,12 @@ import { redirect } from "next/navigation"
 // import Link from "next/link"
 // Remove unused Icon imports
 // import { HeartPulse, Pill, Loader2 } from "lucide-react"
-import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { getPatientConditionsAction } from "@/lib/actions/patient-conditions"
 // Remove unused actions
 // import { getRatingsByPatientAction } from "@/app/actions/treatment-ratings"
 // import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
 // import { getPatientTreatmentsAction } from "@/app/actions/patient-treatments"
-import { getPendingReminderNotificationsAction } from "@/app/actions/reminder-schedules"
+import { getPendingReminderNotificationsAction } from "@/lib/actions/reminder-schedules"
 // Remove unused component imports
 // import { TrackingInbox } from "@/components/patient/TrackingInbox"
 import { logger } from "@/lib/logger"

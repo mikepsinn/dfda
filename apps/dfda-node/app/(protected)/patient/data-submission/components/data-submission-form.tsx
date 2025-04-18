@@ -16,8 +16,8 @@ import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
 import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
-import { submitTrialDataAction } from "@/app/actions/data-submissions"
-import { updateEnrollmentAfterSubmissionAction } from "@/app/actions/trial-enrollments"
+import { submitTrialDataAction } from "@/lib/actions/data-submissions"
+import { updateEnrollmentAfterSubmissionAction } from "@/lib/actions/trial-enrollments"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
 type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]

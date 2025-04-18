@@ -2,13 +2,13 @@ import '@testing-library/jest-dom'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ConditionSearchInput as ConditionSearch } from '@/components/ConditionSearchInput'
-import { getConditionsAction, searchConditionsAction } from '@/app/actions/conditions'
+import { getConditionsAction, searchConditionsAction } from '@/lib/actions/conditions'
 import { act } from 'react'
 import React from "react"
 // No need for Database type here if we define the action return type directly
 
 // Mock the actions
-jest.mock('@/app/actions/conditions', () => ({
+jest.mock('@/lib/actions/conditions', () => ({
   getConditionsAction: jest.fn(),
   searchConditionsAction: jest.fn()
 }))

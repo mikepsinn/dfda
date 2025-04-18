@@ -5,7 +5,7 @@ import { ThumbsUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TreatmentRankingList } from "@/components/TreatmentRankingList"
-import { getTreatmentsForConditionAction } from "@/app/actions/treatments"
+import { getTreatmentsForConditionAction } from "@/lib/actions/treatments"
 
 interface TreatmentResultsProps {
   condition: string

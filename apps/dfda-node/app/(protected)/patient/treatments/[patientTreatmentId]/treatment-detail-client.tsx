@@ -9,8 +9,8 @@ import { useToast } from "@/components/ui/use-toast" // Import useToast
 // It was likely in ./../components/treatment-rating-dialog.tsx relative to the page
 import { TreatmentRatingDialog } from "../components/treatment-rating-dialog"
 import { FaceRatingInput } from '@/components/face-rating-input' // Import FaceRatingInput
-import { upsertTreatmentRatingAction } from '@/app/actions/treatment-ratings' // Import action
-import type { TreatmentRating, TreatmentRatingUpsertData } from '@/app/actions/treatment-ratings' // Import types
+import { upsertTreatmentRatingAction } from '@/lib/actions/treatment-ratings' // Import action
+import type { TreatmentRating, TreatmentRatingUpsertData } from '@/lib/actions/treatment-ratings' // Import types
 import type { Database } from "@/lib/database.types"
 
 // Export the type for the full treatment details

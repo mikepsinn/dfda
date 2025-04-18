@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { PlusCircle } from 'lucide-react'
-import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
-import { getAllReminderSchedulesForUserAction } from '@/app/actions/reminder-schedules'
+import type { ReminderSchedule } from '@/lib/actions/reminder-schedules'
+import { getAllReminderSchedulesForUserAction } from '@/lib/actions/reminder-schedules'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'

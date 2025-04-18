@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/components/ui/use-toast"
 import { logger } from "@/lib/logger"
 // import { type PendingReminderTask, completeReminderTaskAction } from "@/app/actions/reminder-schedules"
-import { logMeasurementAction } from "@/app/actions/measurements"
+import { logMeasurementAction } from "@/lib/actions/measurements"
 
 interface MeasurementLoggingDialogProps {
   task: any | null; // Allow null when not open

@@ -1,4 +1,4 @@
-import { getFeaturedTrialsAction, getStatisticsAction } from "@/app/actions/homepage";
+import { getFeaturedTrialsAction, getStatisticsAction } from "@/lib/actions/homepage";
 import { HeroSection } from "@/components/HeroSection";
 import { ComparativeEffectivenessSection } from "@/components/ComparativeEffectivenessSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";

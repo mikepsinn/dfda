@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card'
 import { formatTime } from '@/lib/utils'
-import type { ReminderSchedule } from '@/app/actions/reminder-schedules'
+import type { ReminderSchedule } from '@/lib/actions/reminder-schedules'
 import { RRule, rrulestr, Weekday } from 'rrule'
 
 interface ReminderCardProps {

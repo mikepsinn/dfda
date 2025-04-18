@@ -1,5 +1,5 @@
-import { createProfileAction, getProfileByIdAction, updateProfileAction, deleteProfileAction } from '@/app/actions/profiles';
-import type { ProfileInsert, ProfileUpdate } from "@/app/actions/profiles"; 
+import { createProfileAction, getProfileByIdAction, updateProfileAction, deleteProfileAction } from '@/lib/actions/profiles';
+import type { ProfileInsert, ProfileUpdate } from "@/lib/actions/profiles";
 import type { Database } from "@/lib/database.types";
 import { createClient as supabaseJsClient } from '@supabase/supabase-js'; // Assuming this is needed for setup
 

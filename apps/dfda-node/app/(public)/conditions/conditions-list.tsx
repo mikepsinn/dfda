@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Search, ChevronRight } from 'lucide-react';
-import { getConditionsAction } from '@/app/actions/conditions';
+import { getConditionsAction } from '@/lib/actions/conditions';
 import { logger } from '@/lib/logger';
 
 type Condition = {

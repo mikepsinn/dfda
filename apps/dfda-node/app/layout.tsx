@@ -6,8 +6,8 @@ import { ScrollToHashElement } from "@/components/ScrollToHashElement"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { getServerUser } from "@/lib/server-auth"
-import { getProfileByIdAction } from "./actions/profiles"
-import type { Profile } from "./actions/profiles"
+import { getProfileByIdAction } from "../lib/actions/profiles"
+import type { Profile } from "../lib/actions/profiles"
 
 const inter = Inter({ subsets: ["latin"] })
 

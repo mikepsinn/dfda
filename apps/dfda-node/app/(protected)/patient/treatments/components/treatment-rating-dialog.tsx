@@ -16,8 +16,8 @@ import { useToast } from "@/components/ui/use-toast"
 import { ConditionCombobox } from "@/components/condition-combobox"
 import { createLogger } from '@/lib/logger'
 import type { Database } from '@/lib/database.types'
-import { getRatingForPatientTreatmentPatientConditionAction, upsertTreatmentRatingAction } from '@/app/actions/treatment-ratings'
-import type { TreatmentRating, TreatmentRatingUpsertData } from '@/app/actions/treatment-ratings'
+import { getRatingForPatientTreatmentPatientConditionAction, upsertTreatmentRatingAction } from '@/lib/actions/treatment-ratings'
+import type { TreatmentRating, TreatmentRatingUpsertData } from '@/lib/actions/treatment-ratings'
 import { FaceRatingInput } from '@/components/face-rating-input'
 
 const logger = createLogger('treatment-rating-dialog')

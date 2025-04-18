@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { OutcomeLabelSearch } from "@/components/OutcomeLabelSearch"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
-import { getTreatmentVariables, getFoodVariables } from "@/app/actions/global-variables"; // Import the actions
+import { getTreatmentVariables, getFoodVariables } from "@/lib/actions/global-variables"; // Import the actions
 
 // Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {

@@ -1,4 +1,4 @@
-import { getTreatmentByIdAction } from "@/app/actions/treatments"
+import { getTreatmentByIdAction } from "@/lib/actions/treatments"
 // import { getTreatmentReviewsAction } from "@/app/actions/treatment-ratings"
 // import ReportSideEffectDialog from "@/components/report-side-effect/ReportSideEffectDialog"
 // import { TreatmentNotFound } from "@/components/treatment/TreatmentNotFound"

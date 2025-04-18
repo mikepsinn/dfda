@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { User, ChevronRight } from "lucide-react";
-import { getProviderPatientsAction, PatientProfileSummary } from "@/app/actions/patients";
+import { getProviderPatientsAction, PatientProfileSummary } from "@/lib/actions/patients";
 import { logger } from '@/lib/logger';
 
 async function PatientList() {

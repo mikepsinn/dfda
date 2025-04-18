@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Card, CardHeader, CardTitle } from "@/components/ui/card"
-import type { PatientTreatmentWithName } from "@/app/actions/patient-treatments"
+import type { PatientTreatmentWithName } from "@/lib/actions/patient-treatments"
 
 interface PatientTreatmentsCardProps {
   patientTreatment: PatientTreatmentWithName;

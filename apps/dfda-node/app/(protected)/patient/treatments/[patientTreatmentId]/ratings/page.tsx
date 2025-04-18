@@ -4,8 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import Link from "next/link"
 import { logger } from "@/lib/logger"
 import { TreatmentDetailClient } from "../treatment-detail-client"
-import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-import { getPatientTreatmentDetailAction } from '@/app/actions/patient-treatments'
+import { getPatientConditionsAction } from "@/lib/actions/patient-conditions"
+import { getPatientTreatmentDetailAction } from '@/lib/actions/patient-treatments'
 import { 
     Breadcrumb, 
     BreadcrumbItem, 

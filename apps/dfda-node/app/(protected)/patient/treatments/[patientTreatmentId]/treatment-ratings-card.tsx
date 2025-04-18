@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 // import { Badge } from "@/components/ui/badge" // Removed unused import
 import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Assuming type definition is here
 import { TreatmentDetailClient } from "./treatment-detail-client" 
-import type { PatientCondition } from '@/app/actions/patient-conditions'; // Assuming type location
+import type { PatientCondition } from '@/lib/actions/patient-conditions'; // Assuming type location
 
 interface TreatmentRatingsCardProps {
   treatmentDetails: FullPatientTreatmentDetail;

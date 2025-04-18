@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from "@/lib/utils"; // Import cn utility
 import { CitationDisplay } from './CitationDisplay'; // Import the new component
-import type { OutcomeFooterData } from '@/app/actions/global-variable-relationships'; // Import the updated footer type
+import type { OutcomeFooterData } from '@/lib/actions/global-variable-relationships'; // Import the updated footer type
 
 export interface OutcomeValue {
   percentage: number;

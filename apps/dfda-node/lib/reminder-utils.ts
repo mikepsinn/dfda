@@ -1,4 +1,4 @@
-import type { ReminderSchedule, ReminderScheduleClientData } from '@/app/actions/reminder-schedules';
+import type { ReminderSchedule, ReminderScheduleClientData } from '@/lib/actions/reminder-schedules';
 import type { ReminderScheduleData } from '@/components/reminders/reminder-scheduler';
 
 /**

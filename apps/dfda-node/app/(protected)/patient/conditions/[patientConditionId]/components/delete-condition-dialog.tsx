@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { deletePatientConditionAction } from "@/app/actions/patient-conditions"
+import { deletePatientConditionAction } from "@/lib/actions/patient-conditions"
 import { useToast } from "@/components/ui/use-toast"
 import { createLogger } from "@/lib/logger"
 
