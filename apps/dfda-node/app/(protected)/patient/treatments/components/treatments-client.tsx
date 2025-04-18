@@ -57,7 +57,7 @@ export function TreatmentsClient({
         .from('patient_treatments')
         .select(`
           *,
-          treatments!inner ( global_variables!inner ( name ) ),
+          global_treatments!inner ( global_variables!inner ( name ) ),
           treatment_ratings ( effectiveness_out_of_ten, review, id, patient_condition_id )
         `)
         .eq('patient_id', userId)
@@ -74,7 +74,7 @@ export function TreatmentsClient({
          const firstRating = (pt.treatment_ratings as any)?.[0];
          return {
            ...pt,
-           treatment_name: (pt.treatments as any)?.global_variables?.name ?? 'Unknown Treatment',
+           treatment_name: (pt.global_treatments as any)?.global_variables?.name ?? 'Unknown Treatment',
            effectiveness_out_of_ten: firstRating?.effectiveness_out_of_ten ?? null,
            review: firstRating?.review ?? null,
            rating_id: firstRating?.id ?? null,

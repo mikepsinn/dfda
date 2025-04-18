@@ -84,7 +84,7 @@ export async function getInterventionOptionsForTrial(trialId: string): Promise<I
     const { data, error } = await supabase
         .from('trials') 
         .select(`
-            treatments!inner (id, treatment_type, global_variables(name, description) ) 
+            global_treatments!inner (id, treatment_type, global_variables(name, description) ) 
         `)
         .eq('id', trialId)
         .single()
@@ -92,7 +92,7 @@ export async function getInterventionOptionsForTrial(trialId: string): Promise<I
     // Option 2: Fetch protocol versions and get interventions from there?
     // const { data, error } = await supabase.from('protocol_versions').select('...').eq('trial_id', trialId).eq('status', 'active')
 
-    if (error || !data || !data.treatments) {
+    if (error || !data || !data.global_treatments) {
         logger.error('Error fetching intervention options for trial', { trialId, userId: user.id, error })
         return [] // Return empty array on error
     }
@@ -101,7 +101,7 @@ export async function getInterventionOptionsForTrial(trialId: string): Promise<I
     // This will likely involve fetching more related data (side effects, contraindications, etc.)
     // For now, returning mock-like data based on treatment name.
     // Wrap data.treatments in an array if it exists and isn't already an array
-    const treatmentsArray = data.treatments ? (Array.isArray(data.treatments) ? data.treatments : [data.treatments]) : [];
+    const treatmentsArray = data.global_treatments ? (Array.isArray(data.global_treatments) ? data.global_treatments : [data.global_treatments]) : [];
     const options: InterventionOption[] = treatmentsArray.map((t: any, index: number) => ({
         id: t.id, // Use treatment ID
         treatment_type: t.treatment_type,
