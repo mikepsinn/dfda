@@ -1,3 +1,4 @@
+import { cache } from 'react'
 import { createClient } from "@/lib/supabase/server"
 import { logger } from "@/lib/logger"
 import type { User } from "@supabase/supabase-js"
@@ -13,7 +14,7 @@ export type Profile = Database['public']['Tables']['profiles']['Row'];
  * @param user The authenticated user object from Supabase Auth.
  * @returns The user's profile object or null if not found/error occurred.
  */
-export async function getUserProfile(user: User | null): Promise<Profile | null> {
+export const getUserProfile = cache(async (user: User | null): Promise<Profile | null> => {
   if (!user) {
     logger.warn('getUserProfile called without a user.');
     return null;
@@ -44,7 +45,7 @@ export async function getUserProfile(user: User | null): Promise<Profile | null>
     logger.error('Unexpected error in getUserProfile:', { userId: user.id, error: err });
     return null;
   }
-}
+}) // End of cache wrapper
 
 // Type for profile updates (allow partial updates)
 // Export if needed elsewhere, otherwise keep internal

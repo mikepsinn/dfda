@@ -30,28 +30,16 @@ interface PatientDashboardClientProps {
 
 export default function PatientDashboardClient({ 
   initialUser, 
-  initialConditions, 
+  // Remove unused initialConditions parameter
+  // initialConditions, 
   initialNotifications 
 }: PatientDashboardClientProps) {
   // Remove unused state setters and dataKey
   const [user /*, setUser*/] = useState(initialUser)
-  const [/*conditions*/] = useState(initialConditions) // Remove unused `conditions` state
   const [notifications /*, setNotifications*/] = useState(initialNotifications)
-  // const [dataKey, setDataKey] = useState(Date.now()) // Remove unused state
 
-  // This useEffect might be redundant if all initial data is fetched server-side
-  // We'll keep it commented out for now, might be needed if we add client-side re-fetching later
-  /*
-  useEffect(() => {
-    // Logic to potentially re-fetch data client-side based on dataKey or other triggers
-    // For now, rely on server-fetched initial props
-    setUser(initialUser);
-    setConditions(initialConditions);
-    setNotifications(initialNotifications);
-  }, [initialUser, initialConditions, initialNotifications, dataKey])
-  */
 
-  // Handler to refresh data after successful save - might need adjustment
+  // Handler to refrsh data after successful save - might need adjustment
   // Option 1: Trigger server refresh (e.g., router.refresh())
   // Option 2: Update client state directly (less ideal if server state changed significantly)
   const handleSaveSuccess = () => {

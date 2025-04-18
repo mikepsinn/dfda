@@ -120,7 +120,7 @@ export default async function ProviderDashboard() {
         created_at: patient.created_at,
         updated_at: patient.updated_at,
         deleted_at: patient.deleted_at,
-        condition: patient.conditions[0]?.condition?.name?.name || 'N/A',
+        condition: patient.conditions[0]?.condition?.global_variables?.name || 'N/A',
         eligibleTrials: fetchedTrials
           .filter(t => patient.conditions.some(c => c.condition?.id === t.condition_id))
           .map(t => ({ id: t.id, name: t.title })),
