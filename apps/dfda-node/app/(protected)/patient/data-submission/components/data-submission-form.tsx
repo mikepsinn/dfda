@@ -16,6 +16,8 @@ import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
 import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
+import { submitTrialDataAction } from "@/app/actions/data-submissions"
+import { updateEnrollmentAfterSubmissionAction } from "@/app/actions/trial-enrollments"
 
 type Trial = Database["public"]["Tables"]["trials"]["Row"]
 type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
@@ -85,21 +87,11 @@ export function DataSubmissionForm({ trialData }: { trialData: TrialSubmissionDa
       status: "pending"
     }
 
-    // Submit data to database
-    const { error } = await supabase.from("data_submissions").insert(submission)
-
-    if (!error) {
-      // Update the enrollment to mark data submission as complete
-      await supabase
-        .from("trial_enrollments")
-        .update({
-          updated_at: new Date().toISOString(),
-          notes: "Data submission completed"
-        })
-        .eq("id", trialData.enrollment.id)
-
+    try {
+      await submitTrialDataAction(submission)
+      await updateEnrollmentAfterSubmissionAction(trialData.enrollment.id)
       setSubmissionComplete(true)
-    } else {
+    } catch (error) {
       logger.error("Error submitting trial data:", error)
       // Handle error (could add toast notification here)
     }

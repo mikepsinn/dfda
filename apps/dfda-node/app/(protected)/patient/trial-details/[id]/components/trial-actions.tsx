@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { createClient } from '@/lib/supabase/client'
 import { logger } from "@/lib/logger"
 import { useToast } from '@/components/ui/use-toast'
+import { createInitialEnrollmentAction } from "@/app/actions/trial-enrollments"
 
 interface TrialActionsProps {
   trialId: string
@@ -41,27 +42,8 @@ export function TrialActions({ trialId, isEnrolled, userId }: TrialActionsProps)
         return
       }
 
-      // Create enrollment
-      const { error } = await supabase.from("trial_enrollments").insert({
-        trial_id: trialId,
-        patient_id: user.id,
-        provider_id: "system", // TODO: Get actual provider ID
-        status: "pending",
-        enrollment_date: new Date().toISOString(),
-        notes: "Initial enrollment request",
-        created_at: new Date().toISOString(),
-        updated_at: new Date().toISOString()
-      })
-
-      if (error) {
-        logger.error("Error enrolling in trial:", error)
-        toast({
-          title: 'Error',
-          description: 'Failed to enroll in trial. Please try again.',
-          variant: 'destructive',
-        })
-        return
-      }
+      // Create enrollment using server action
+      await createInitialEnrollmentAction(trialId, user.id)
 
       // Refresh the page to show updated enrollment status
       router.refresh()

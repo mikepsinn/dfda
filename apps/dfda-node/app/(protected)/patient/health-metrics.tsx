@@ -4,12 +4,11 @@ import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { createClient } from "@/lib/supabase/client"
 import { PlusCircle } from "lucide-react"
+import { getDataSubmissionMetricsAction } from "@/app/actions/data-submissions"
 
 interface HealthMetricsProps {
   userId?: string
-  
 }
 
 export function HealthMetrics({ userId }: HealthMetricsProps) {
@@ -24,20 +23,13 @@ export function HealthMetrics({ userId }: HealthMetricsProps) {
     async function fetchMetrics() {
       if (!userId || userId === undefined) return
 
-      const supabase = createClient()
-
-      // Fetch data submission metrics
-      const { data: submissions } = await supabase
-        .from("data_submissions")
-        .select("id, enrollment_id, submission_date")
-        .eq("enrollment_id", userId)
-
-      // In a real app, you would calculate these metrics based on actual data
-      setMetrics({
-        submissions: submissions?.length || 0,
-        completionRate: 85,
-        nextSubmission: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
-      })
+      try {
+        const metricsData = await getDataSubmissionMetricsAction(userId)
+        setMetrics(metricsData)
+      } catch (error) {
+        console.error("Failed to fetch metrics:", error)
+        // Keep default values in case of error
+      }
 
       setLoading(false)
     }

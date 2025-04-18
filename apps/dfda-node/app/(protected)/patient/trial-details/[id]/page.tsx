@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { createServerClient } from "@/lib/supabase"
 import { getServerUser } from "@/lib/server-auth"
 import type { Database } from "@/lib/database.types"
 import { TrialHeader } from "./components/trial-header"
 import { TrialContent } from "./components/trial-content"
 import { TrialActions } from "./components/trial-actions"
+import { getTrialForMetadataAction, getTrialDetailsAction } from "@/app/actions/trials"
+import { getTrialEnrollmentStatusAction } from "@/app/actions/trial-enrollments"
 
 interface TrialDetailsPageProps {
   params: {
@@ -14,8 +15,7 @@ interface TrialDetailsPageProps {
 }
 
 export async function generateMetadata({ params }: TrialDetailsPageProps): Promise<Metadata> {
-  const supabase = await createServerClient()
-  const { data: trial } = await supabase.from("trials").select("*").eq("id", params.id).single()
+  const trial = await getTrialForMetadataAction(params.id)
 
   if (!trial) {
     return {
@@ -31,35 +31,18 @@ export async function generateMetadata({ params }: TrialDetailsPageProps): Promi
 
 export default async function TrialDetailsPage({ params }: TrialDetailsPageProps) {
   const user = await getServerUser()
-  const supabase = await createServerClient()
 
   // Fetch trial data
-  const { data: trial, error } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      research_partner:research_partner_id(name),
-      condition:condition_id(name),
-      treatment:treatment_id(name),
-      protocol_versions(*)
-    `)
-    .eq("id", params.id)
-    .single()
+  const trial = await getTrialDetailsAction(params.id)
 
-  if (error || !trial) {
+  if (!trial) {
     notFound()
   }
 
   // Check if user is enrolled
   let enrollment: Database["public"]["Tables"]["trial_enrollments"]["Row"] | null = null
   if (user?.id) {
-    const { data } = await supabase
-      .from("trial_enrollments")
-      .select("*")
-      .eq("trial_id", params.id)
-      .eq("patient_id", user.id)
-      .single()
-    enrollment = data
+    enrollment = await getTrialEnrollmentStatusAction(params.id, user.id)
   }
 
   // For demo purposes, let's create some mock data for the trial details

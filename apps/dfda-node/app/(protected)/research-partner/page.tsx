@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { getServerUser } from "@/lib/server-auth"
-import { createClient } from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 import { ResearchPartnerOverview } from "./components/research-partner-overview"
 import { TrialEnrollment } from "./components/trial-enrollment"
@@ -8,6 +7,7 @@ import { TrialManagement } from "./components/trial-management"
 import { RecentActivity } from "./components/recent-activity"
 import { getUserProfile } from "@/lib/profile"
 import { logger } from "@/lib/logger"
+import { getResearchPartnerTrialsAction } from "@/app/actions/trials"
 
 export const metadata: Metadata = {
   title: "Research Partner Dashboard | FDA v2",
@@ -21,8 +21,6 @@ export default async function ResearchPartnerDashboard() {
     redirect("/login?callbackUrl=/research-partner/")
   }
 
-  const supabase = await createClient()
-
   const researchPartnerProfile = await getUserProfile(user)
 
   if (!researchPartnerProfile || researchPartnerProfile.user_type !== 'research-partner') {
@@ -30,68 +28,7 @@ export default async function ResearchPartnerDashboard() {
     redirect("/select-role?error=access_denied")
   }
 
-  // Get active trials
-  // Note: Database field is still 'research_partner_id' but represents research_partner_id
-  const { data: activeTrials } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      conditions (
-        id,
-        title,
-        icd_code
-      ),
-      treatments (
-        id,
-        title,
-        treatment_type,
-        manufacturer
-      )
-    `)
-    .eq("research_partner_id", user.id) // Using research_partner_id field for research partner ID
-    .eq("status", "active")
-
-  // Get completed trials
-  // Note: Database field is still 'research_partner_id' but represents research_partner_id
-  const { data: completedTrials } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      conditions (
-        id,
-        title,
-        icd_code
-      ),
-      treatments (
-        id,
-        title,
-        treatment_type,
-        manufacturer
-      )
-    `)
-    .eq("research_partner_id", user.id) // Using research_partner_id field for research partner ID
-    .eq("status", "completed")
-
-  // Get pending trials
-  // Note: Database field is still 'research_partner_id' but represents research_partner_id
-  const { data: pendingTrials } = await supabase
-    .from("trials")
-    .select(`
-      *,
-      conditions (
-        id,
-        title,
-        icd_code
-      ),
-      treatments (
-        id,
-        title,
-        treatment_type,
-        manufacturer
-      )
-    `)
-    .eq("research_partner_id", user.id) // Using research_partner_id field for research partner ID
-    .eq("status", "pending")
+  const { activeTrials, completedTrials, pendingTrials } = await getResearchPartnerTrialsAction(user.id)
 
   const researchPartnerName = researchPartnerProfile?.first_name && researchPartnerProfile?.last_name
     ? `${researchPartnerProfile.first_name} ${researchPartnerProfile.last_name}`

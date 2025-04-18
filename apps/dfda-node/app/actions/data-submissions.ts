@@ -122,4 +122,82 @@ export async function getDataSubmissionsAction(): Promise<DataSubmission[]> {
   }
 }
 
+// Get latest data submission for an enrollment
+export async function getLatestDataSubmissionAction(enrollmentId: string) {
+  const supabase = await createClient()
+  
+  const { data: submission, error } = await supabase
+    .from("data_submissions")
+    .select("*")
+    .eq("enrollment_id", enrollmentId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .single()
+
+  if (error && error.code !== 'PGRST116') { // Ignore not found error
+    logger.error("Error fetching data submission:", error)
+    throw new Error("Failed to fetch data submission")
+  }
+
+  return submission
+}
+
+// Submit trial data
+export async function submitTrialDataAction(submission: DataSubmissionInsert) {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from("data_submissions")
+    .insert(submission)
+
+  if (error) {
+    logger.error("Error submitting trial data:", error)
+    throw new Error("Failed to submit trial data")
+  }
+}
+
+// Get metrics for a user's data submissions
+export async function getDataSubmissionMetricsAction(enrollmentId: string) {
+  try {
+    const supabase = await createClient()
+    const { data: submissions, error } = await supabase
+      .from("data_submissions")
+      .select("id, enrollment_id, submission_date, created_at")
+      .eq("enrollment_id", enrollmentId)
+      .order("created_at", { ascending: false })
+
+    if (error) {
+      logger.error("Error getting data submission metrics:", error)
+      return {
+        submissions: 0,
+        completionRate: 0,
+        nextSubmission: null
+      }
+    }
+
+    // Calculate metrics
+    const submissionCount = submissions?.length || 0
+    
+    // In a real app, completion rate would be calculated based on expected vs actual submissions
+    // For now using a placeholder calculation
+    const completionRate = submissionCount > 0 ? 85 : 0
+    
+    // Next submission is 3 days from now (placeholder logic)
+    const nextSubmission = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
+
+    return {
+      submissions: submissionCount,
+      completionRate,
+      nextSubmission
+    }
+  } catch (error) {
+    logger.error("Error calculating data submission metrics:", error)
+    return {
+      submissions: 0,
+      completionRate: 0,
+      nextSubmission: null
+    }
+  }
+}
+
 // Add action functions here later if needed 

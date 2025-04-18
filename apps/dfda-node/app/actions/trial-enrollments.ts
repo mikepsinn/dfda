@@ -8,6 +8,18 @@ export type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"][
 export type TrialEnrollmentInsert = Database["public"]["Tables"]["trial_enrollments"]["Insert"]
 export type TrialEnrollmentUpdate = Database["public"]["Tables"]["trial_enrollments"]["Update"]
 
+// Extended type for enrollments with relations
+export type EnrollmentWithRelations = TrialEnrollment & {
+  patient: {
+    id: string;
+    profile: Database["public"]["Tables"]["profiles"]["Row"] | null;
+  } & Database["public"]["Tables"]["patients"]["Row"];
+  trial: Database["public"]["Tables"]["trials"]["Row"];
+  trial_actions: (Database["public"]["Tables"]["trial_actions"]["Row"] & {
+    action_type: Database["public"]["Tables"]["action_types"]["Row"]
+  })[];
+}
+
 export async function getTrialEnrollmentsAction(): Promise<TrialEnrollment[]> {
   const supabase = await createClient()
   const { data, error } = await supabase
@@ -164,6 +176,147 @@ export async function getTrialEnrollmentByTrialAndPatientAction(trialId: string,
   if (error) {
     logger.error(`Error fetching trial enrollment for trial ${trialId} and patient ${patientId}:`, error)
     throw error
+  }
+
+  return data
+}
+
+// Get enrollment status for a patient in a trial
+export async function getTrialEnrollmentStatusAction(trialId: string, patientId: string) {
+  const supabase = await createClient()
+  
+  const { data: enrollment, error } = await supabase
+    .from("trial_enrollments")
+    .select("*")
+    .eq("trial_id", trialId)
+    .eq("patient_id", patientId)
+    .single()
+
+  if (error && error.code !== 'PGRST116') { // Ignore not found error
+    logger.error("Error fetching trial enrollment status:", error)
+    throw new Error("Failed to fetch enrollment status")
+  }
+
+  return enrollment
+}
+
+// Get enrollments with related data for provider
+export async function getProviderEnrollmentsAction(providerId: string): Promise<EnrollmentWithRelations[]> {
+  const supabase = await createClient()
+  
+  const { data, error } = await supabase
+    .from("trial_enrollments")
+    .select(`
+      *,
+      patient:patients!inner ( *,
+        profile:profiles!patients_id_fkey (*) ),
+      trial:trials!inner (*),
+      trial_actions!inner ( *,
+        action_type:action_types!inner (*) )
+    `)
+    .eq("provider_id", providerId)
+    .is("deleted_at", null)
+
+  if (error) {
+    logger.error("Error fetching enrollments for provider:", error)
+    throw new Error("Failed to fetch enrollments")
+  }
+
+  return data as EnrollmentWithRelations[]
+}
+
+// Get active enrollment with trial data for a patient
+export async function getPatientActiveEnrollmentAction(patientId: string) {
+  const supabase = await createClient()
+  
+  const { data: enrollment, error } = await supabase
+    .from("trial_enrollments")
+    .select(`
+      id,
+      trial_id,
+      patient_id,
+      provider_id,
+      status,
+      enrollment_date,
+      completion_date,
+      notes,
+      created_at,
+      updated_at,
+      deleted_at,
+      trial:trials!inner (
+        id,
+        title,
+        description,
+        research_partner_id,
+        condition_id,
+        treatment_id,
+        status,
+        phase,
+        start_date,
+        end_date,
+        enrollment_target,
+        current_enrollment,
+        location,
+        compensation,
+        inclusion_criteria,
+        exclusion_criteria,
+        created_at,
+        updated_at,
+        deleted_at
+      )
+    `)
+    .eq("patient_id", patientId)
+    .eq("status", "approved")
+    .single()
+
+  if (error) {
+    logger.error("Error fetching patient enrollment:", error)
+    throw new Error("Failed to fetch patient enrollment")
+  }
+
+  return enrollment
+}
+
+// Update enrollment after data submission
+export async function updateEnrollmentAfterSubmissionAction(enrollmentId: string) {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from("trial_enrollments")
+    .update({
+      updated_at: new Date().toISOString(),
+      notes: "Data submission completed"
+    })
+    .eq("id", enrollmentId)
+
+  if (error) {
+    logger.error("Error updating enrollment:", error)
+    throw new Error("Failed to update enrollment")
+  }
+}
+
+// Create initial enrollment request for a patient
+export async function createInitialEnrollmentAction(trialId: string, patientId: string) {
+  const supabase = await createClient()
+  
+  const { data, error } = await supabase
+    .from("trial_enrollments")
+    .insert({
+      trial_id: trialId,
+      patient_id: patientId,
+      provider_id: "system", // TODO: Get actual provider ID
+      status: "pending",
+      enrollment_date: new Date().toISOString(),
+      notes: "Initial enrollment request",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    })
+    .select()
+    .single()
+
+  if (error) {
+    logger.error("Error creating initial enrollment:", error)
+    throw new Error("Failed to create enrollment")
   }
 
   return data
