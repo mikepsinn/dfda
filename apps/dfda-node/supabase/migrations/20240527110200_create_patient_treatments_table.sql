@@ -35,7 +35,7 @@ GRANT EXECUTE ON FUNCTION public.ensure_user_variable_for_treatment() TO authent
 CREATE TABLE public.patient_treatments (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     patient_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE, -- Link to the patient profile
-    treatment_id TEXT NOT NULL REFERENCES public.treatments(id) ON DELETE RESTRICT, -- Link to the global treatment definition
+    treatment_id TEXT NOT NULL REFERENCES public.global_treatments(id) ON DELETE RESTRICT, -- Link to the global treatment definition
 
     -- Add the REQUIRED link to the user_variables table
     user_variable_id UUID NOT NULL REFERENCES public.user_variables(id) ON DELETE RESTRICT,

@@ -6,9 +6,9 @@ import { handleDatabaseResponse } from '@/lib/actions-helpers'
 import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
 
-export type ReportedSideEffect = Database['public']['Tables']['reported_side_effects']['Row']
-export type ReportedSideEffectInsert = Database['public']['Tables']['reported_side_effects']['Insert']
-export type ReportedSideEffectUpdate = Database['public']['Tables']['reported_side_effects']['Update']
+export type ReportedSideEffect = Database['public']['Tables']['patient_side_effects']['Row']
+export type ReportedSideEffectInsert = Database['public']['Tables']['patient_side_effects']['Insert']
+export type ReportedSideEffectUpdate = Database['public']['Tables']['patient_side_effects']['Update']
 
 // Get individual side effect reports for a specific patient_treatment record
 export async function getSideEffectReportsForPatientTreatmentAction(
@@ -19,7 +19,7 @@ export async function getSideEffectReportsForPatientTreatmentAction(
   logger.info('Fetching side effect reports for patient treatment', { patientTreatmentId });
 
   const response = await supabase
-    .from('reported_side_effects')
+    .from('patient_side_effects')
     // Fetch all fields, profile info cannot be easily joined here
     .select('*' )
     .eq('patient_treatment_id', patientTreatmentId)
@@ -52,7 +52,7 @@ export async function reportSideEffectAction(
   }
 
   const response = await supabase
-    .from('reported_side_effects')
+    .from('patient_side_effects')
     .insert({
         patient_treatment_id: sideEffect.patient_treatment_id,
         description: sideEffect.description,
@@ -99,7 +99,7 @@ export async function updateSideEffectReportAction(
   logger.info('Updating side effect report', { reportId: id });
 
   const response = await supabase
-    .from('reported_side_effects')
+    .from('patient_side_effects')
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq('id', id)
     .select()
@@ -129,7 +129,7 @@ export async function deleteSideEffectReportAction(id: string): Promise<void> {
   const report = await getSideEffectReportByIdAction(id)
 
   const response = await supabase
-    .from('reported_side_effects')
+    .from('patient_side_effects')
     .delete()
     .eq('id', id)
 
@@ -151,7 +151,7 @@ export async function getSideEffectReportByIdAction(id: string): Promise<Reporte
   logger.info('Fetching side effect report by ID', { reportId: id });
 
   const response = await supabase
-    .from('reported_side_effects')
+    .from('patient_side_effects')
     .select('*') // Select all fields including patient_treatment_id
     .eq('id', id)
     .single()

@@ -23,9 +23,9 @@ import { getSideEffectReportsForPatientTreatmentAction, reportSideEffectAction }
 
 const logger = createLogger('side-effects-dialog')
 
-type ReportedSideEffect = Database["public"]["Tables"]["reported_side_effects"]["Row"]
+type ReportedSideEffect = Database["public"]["Tables"]["patient_side_effects"]["Row"]
 // Define Insert type based on the action's expected payload
-type ReportedSideEffectInsertPayload = Omit<Database["public"]["Tables"]["reported_side_effects"]["Insert"], 'id' | 'created_at' | 'updated_at' | 'deleted_at'>
+type ReportedSideEffectInsertPayload = Omit<Database["public"]["Tables"]["patient_side_effects"]["Insert"], 'id' | 'created_at' | 'updated_at' | 'deleted_at'>
 
 interface SideEffectsDialogProps {
   patientTreatmentId: string

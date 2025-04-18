@@ -123,7 +123,7 @@ export function RateTreatmentDialog({ patientCondition, existingRating, children
     })
   }
 
-  const treatmentName = patientTreatments.find(t => t.id === selectedPatientTreatmentId)?.treatments?.global_variables?.name 
+  const treatmentName = patientTreatments.find(t => t.id === selectedPatientTreatmentId)?.global_treatments?.global_variables?.name 
                        || existingRating?.treatment_name
                        || "Selected Treatment";
 
@@ -153,7 +153,7 @@ export function RateTreatmentDialog({ patientCondition, existingRating, children
                   <SelectContent>
                     {patientTreatments.map(pt => (
                       <SelectItem key={pt.id} value={pt.id}>
-                        {pt.treatments?.global_variables?.name || "Unnamed Treatment"} (Started: {pt.start_date ? new Date(pt.start_date).toLocaleDateString() : 'N/A'})
+                        {pt.global_treatments?.global_variables?.name || "Unnamed Treatment"} (Started: {pt.start_date ? new Date(pt.start_date).toLocaleDateString() : 'N/A'})
                       </SelectItem>
                     ))}
                   </SelectContent>

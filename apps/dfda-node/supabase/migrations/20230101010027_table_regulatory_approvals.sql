@@ -1,7 +1,7 @@
 -- Create regulatory_approvals table
 CREATE TABLE IF NOT EXISTS regulatory_approvals (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  treatment_id TEXT NOT NULL REFERENCES treatments(id) ON DELETE CASCADE,
+  treatment_id TEXT NOT NULL REFERENCES global_treatments(id) ON DELETE CASCADE,
   agency TEXT NOT NULL, -- e.g., FDA, EMA, PMDA
   region TEXT NOT NULL, -- e.g., US, EU, JP
   status TEXT NOT NULL CHECK (status IN ('Approved', 'Investigational', 'Denied', 'Withdrawn')),

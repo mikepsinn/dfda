@@ -117,38 +117,6 @@ export type Database = {
         }
         Relationships: []
       }
-      conditions: {
-        Row: {
-          created_at: string | null
-          deleted_at: string | null
-          icd_code: string | null
-          id: string
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          deleted_at?: string | null
-          icd_code?: string | null
-          id: string
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          deleted_at?: string | null
-          icd_code?: string | null
-          id?: string
-          updated_at?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "conditions_id_fkey"
-            columns: ["id"]
-            isOneToOne: true
-            referencedRelation: "global_variables"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       contact_messages: {
         Row: {
           assigned_to: string | null
@@ -262,57 +230,6 @@ export type Database = {
             columns: ["reviewed_by"]
             isOneToOne: false
             referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      food_details: {
-        Row: {
-          calories_per_serving: number | null
-          carbs_per_serving: number | null
-          created_at: string
-          fat_per_serving: number | null
-          global_variable_id: string
-          protein_per_serving: number | null
-          serving_size_quantity: number | null
-          serving_size_unit_id: string | null
-          updated_at: string
-        }
-        Insert: {
-          calories_per_serving?: number | null
-          carbs_per_serving?: number | null
-          created_at?: string
-          fat_per_serving?: number | null
-          global_variable_id: string
-          protein_per_serving?: number | null
-          serving_size_quantity?: number | null
-          serving_size_unit_id?: string | null
-          updated_at?: string
-        }
-        Update: {
-          calories_per_serving?: number | null
-          carbs_per_serving?: number | null
-          created_at?: string
-          fat_per_serving?: number | null
-          global_variable_id?: string
-          protein_per_serving?: number | null
-          serving_size_quantity?: number | null
-          serving_size_unit_id?: string | null
-          updated_at?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "food_details_global_variable_id_fkey"
-            columns: ["global_variable_id"]
-            isOneToOne: true
-            referencedRelation: "global_variables"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "food_details_serving_size_unit_id_fkey"
-            columns: ["serving_size_unit_id"]
-            isOneToOne: false
-            referencedRelation: "units"
             referencedColumns: ["id"]
           },
         ]
@@ -475,6 +392,133 @@ export type Database = {
         }
         Relationships: []
       }
+      global_conditions: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          icd_code: string | null
+          id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          icd_code?: string | null
+          id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          icd_code?: string | null
+          id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_conditions_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      global_foods: {
+        Row: {
+          calories_per_serving: number | null
+          carbs_per_serving: number | null
+          created_at: string
+          fat_per_serving: number | null
+          global_variable_id: string
+          protein_per_serving: number | null
+          serving_size_quantity: number | null
+          serving_size_unit_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          calories_per_serving?: number | null
+          carbs_per_serving?: number | null
+          created_at?: string
+          fat_per_serving?: number | null
+          global_variable_id: string
+          protein_per_serving?: number | null
+          serving_size_quantity?: number | null
+          serving_size_unit_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          calories_per_serving?: number | null
+          carbs_per_serving?: number | null
+          created_at?: string
+          fat_per_serving?: number | null
+          global_variable_id?: string
+          protein_per_serving?: number | null
+          serving_size_quantity?: number | null
+          serving_size_unit_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_foods_global_variable_id_fkey"
+            columns: ["global_variable_id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "global_foods_serving_size_unit_id_fkey"
+            columns: ["serving_size_unit_id"]
+            isOneToOne: false
+            referencedRelation: "units"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      global_treatments: {
+        Row: {
+          active_ingredients: Json | null
+          created_at: string | null
+          deleted_at: string | null
+          dosage_form: string | null
+          dosage_instructions: string | null
+          id: string
+          manufacturer: string | null
+          treatment_type: string
+          updated_at: string | null
+        }
+        Insert: {
+          active_ingredients?: Json | null
+          created_at?: string | null
+          deleted_at?: string | null
+          dosage_form?: string | null
+          dosage_instructions?: string | null
+          id: string
+          manufacturer?: string | null
+          treatment_type: string
+          updated_at?: string | null
+        }
+        Update: {
+          active_ingredients?: Json | null
+          created_at?: string | null
+          deleted_at?: string | null
+          dosage_form?: string | null
+          dosage_instructions?: string | null
+          id?: string
+          manufacturer?: string | null
+          treatment_type?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_treatments_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       global_variable_relationships: {
         Row: {
           absolute_change_ci_lower: number | null
@@ -579,7 +623,7 @@ export type Database = {
             foreignKeyName: "global_variable_relationships_condition_id_fkey"
             columns: ["condition_id"]
             isOneToOne: false
-            referencedRelation: "conditions"
+            referencedRelation: "global_conditions"
             referencedColumns: ["id"]
           },
           {
@@ -1059,7 +1103,7 @@ export type Database = {
             foreignKeyName: "patient_conditions_condition_id_fkey"
             columns: ["condition_id"]
             isOneToOne: false
-            referencedRelation: "conditions"
+            referencedRelation: "global_conditions"
             referencedColumns: ["id"]
           },
           {
@@ -1081,6 +1125,44 @@ export type Database = {
             columns: ["user_variable_id"]
             isOneToOne: false
             referencedRelation: "user_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_side_effects: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          description: string
+          id: string
+          patient_treatment_id: string
+          severity_out_of_ten: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          description: string
+          id?: string
+          patient_treatment_id: string
+          severity_out_of_ten?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          description?: string
+          id?: string
+          patient_treatment_id?: string
+          severity_out_of_ten?: number | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_side_effects_patient_treatment_id_fkey"
+            columns: ["patient_treatment_id"]
+            isOneToOne: false
+            referencedRelation: "patient_treatments"
             referencedColumns: ["id"]
           },
         ]
@@ -1137,7 +1219,7 @@ export type Database = {
             foreignKeyName: "patient_treatments_treatment_id_fkey"
             columns: ["treatment_id"]
             isOneToOne: false
-            referencedRelation: "treatments"
+            referencedRelation: "global_treatments"
             referencedColumns: ["id"]
           },
           {
@@ -1644,7 +1726,7 @@ export type Database = {
             foreignKeyName: "regulatory_approvals_treatment_id_fkey"
             columns: ["treatment_id"]
             isOneToOne: false
-            referencedRelation: "treatments"
+            referencedRelation: "global_treatments"
             referencedColumns: ["id"]
           },
         ]
@@ -1766,44 +1848,6 @@ export type Database = {
           },
         ]
       }
-      reported_side_effects: {
-        Row: {
-          created_at: string | null
-          deleted_at: string | null
-          description: string
-          id: string
-          patient_treatment_id: string
-          severity_out_of_ten: number | null
-          updated_at: string | null
-        }
-        Insert: {
-          created_at?: string | null
-          deleted_at?: string | null
-          description: string
-          id?: string
-          patient_treatment_id: string
-          severity_out_of_ten?: number | null
-          updated_at?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          deleted_at?: string | null
-          description?: string
-          id?: string
-          patient_treatment_id?: string
-          severity_out_of_ten?: number | null
-          updated_at?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "reported_side_effects_patient_treatment_id_fkey"
-            columns: ["patient_treatment_id"]
-            isOneToOne: false
-            referencedRelation: "patient_treatments"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       research_partners: {
         Row: {
           contact_email: string | null
@@ -1902,50 +1946,6 @@ export type Database = {
             columns: ["patient_treatment_id"]
             isOneToOne: false
             referencedRelation: "patient_treatments"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      treatments: {
-        Row: {
-          active_ingredients: Json | null
-          created_at: string | null
-          deleted_at: string | null
-          dosage_form: string | null
-          dosage_instructions: string | null
-          id: string
-          manufacturer: string | null
-          treatment_type: string
-          updated_at: string | null
-        }
-        Insert: {
-          active_ingredients?: Json | null
-          created_at?: string | null
-          deleted_at?: string | null
-          dosage_form?: string | null
-          dosage_instructions?: string | null
-          id: string
-          manufacturer?: string | null
-          treatment_type: string
-          updated_at?: string | null
-        }
-        Update: {
-          active_ingredients?: Json | null
-          created_at?: string | null
-          deleted_at?: string | null
-          dosage_form?: string | null
-          dosage_instructions?: string | null
-          id?: string
-          manufacturer?: string | null
-          treatment_type?: string
-          updated_at?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "treatments_id_fkey"
-            columns: ["id"]
-            isOneToOne: true
-            referencedRelation: "global_variables"
             referencedColumns: ["id"]
           },
         ]
@@ -2229,7 +2229,7 @@ export type Database = {
             foreignKeyName: "trials_condition_id_fkey"
             columns: ["condition_id"]
             isOneToOne: false
-            referencedRelation: "conditions"
+            referencedRelation: "global_conditions"
             referencedColumns: ["id"]
           },
           {
@@ -2250,7 +2250,7 @@ export type Database = {
             foreignKeyName: "trials_treatment_id_fkey"
             columns: ["treatment_id"]
             isOneToOne: false
-            referencedRelation: "treatments"
+            referencedRelation: "global_treatments"
             referencedColumns: ["id"]
           },
         ]
@@ -2592,7 +2592,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "conditions_id_fkey"
+            foreignKeyName: "global_conditions_id_fkey"
             columns: ["condition_id"]
             isOneToOne: true
             referencedRelation: "global_variables"
@@ -2702,7 +2702,7 @@ export type Database = {
             foreignKeyName: "patient_conditions_condition_id_fkey"
             columns: ["condition_id"]
             isOneToOne: false
-            referencedRelation: "conditions"
+            referencedRelation: "global_conditions"
             referencedColumns: ["id"]
           },
           {
@@ -2716,7 +2716,7 @@ export type Database = {
             foreignKeyName: "patient_treatments_treatment_id_fkey"
             columns: ["treatment_id"]
             isOneToOne: false
-            referencedRelation: "treatments"
+            referencedRelation: "global_treatments"
             referencedColumns: ["id"]
           },
         ]

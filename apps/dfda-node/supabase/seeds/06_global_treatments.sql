@@ -2,7 +2,7 @@
 -- Contains seed data for treatments (medications, biologics, etc.)
 
 -- Insert sample treatments
-INSERT INTO treatments (id, treatment_type, manufacturer) VALUES
+INSERT INTO global_treatments (id, treatment_type, manufacturer) VALUES
 ('metformin', 'drug', 'Various'),
 ('lisinopril', 'drug', 'Various'),
 ('adalimumab', 'biologic', 'AbbVie'),

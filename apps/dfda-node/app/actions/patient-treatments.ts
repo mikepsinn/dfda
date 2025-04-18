@@ -8,6 +8,8 @@ import { logger } from '@/lib/logger'
 import type { PatientTreatmentClientInsert } from '@/lib/database.types.custom';
 // Import reminder action for single add
 import { createDefaultReminderAction } from "./reminder-schedules"
+// Import the type needed for the detail fetch
+import type { FullPatientTreatmentDetail } from "@/app/(protected)/patient/treatments/[patientTreatmentId]/treatment-detail-client";
 
 // Import related types if needed
 export type PatientTreatmentInsert = Database['public']['Tables']['patient_treatments']['Insert']
@@ -30,7 +32,7 @@ interface AddPatientTreatmentInput {
 
 // Define a type for the PatientTreatment data fetched with treatment name
 export type PatientTreatmentWithName = Database['public']['Tables']['patient_treatments']['Row'] & {
-  treatments: {
+  global_treatments: {
     global_variables: { name: string | null } | null
   } | null
 }
@@ -48,7 +50,7 @@ export async function getPatientTreatmentsAction(patientId: string): Promise<Pat
     .from('patient_treatments')
     .select(`
       *,
-      treatments!inner(
+      global_treatments!inner(
         global_variables!inner(
           name
         )
@@ -65,6 +67,41 @@ export async function getPatientTreatmentsAction(patientId: string): Promise<Pat
 
   return data || [];
 }
+
+// --- New Action to Fetch Full Patient Treatment Details ---
+export async function getPatientTreatmentDetailAction(patientTreatmentId: string, userId: string): Promise<FullPatientTreatmentDetail | null> {
+    const supabase = await createClient();
+    logger.info('Fetching full patient treatment details', { patientTreatmentId, userId });
+
+    const { data, error } = await supabase
+        .from("patient_treatments")
+        .select(`
+            *,
+            global_treatments!inner ( global_variables!inner ( name ) ), 
+            treatment_ratings (
+                *, 
+                patient_conditions ( 
+                    id,
+                    global_conditions!inner ( global_variables!inner ( name ) ) 
+                ) 
+            ),
+            patient_side_effects ( id, description, severity_out_of_ten )
+        `)
+        .eq('id', patientTreatmentId)
+        .eq('patient_id', userId) 
+        .single();
+
+    if (error) {
+        logger.error("Error fetching patient treatment details", { patientTreatmentId, userId, error: error.message });
+        // Log the specific error for easier debugging
+        console.error("Supabase Fetch Error (getPatientTreatmentDetailAction):", error);
+        return null;
+    }
+
+    // No need for explicit casting if the alias matches the type
+    return data;
+}
+// --- End New Action ---
 
 export async function addInitialPatientTreatmentsAction(
   userId: string,

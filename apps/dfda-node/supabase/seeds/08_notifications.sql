@@ -1,2 +1,0 @@
--- Notifications seed file (Content Removed)
--- Demo user notifications are now seeded via the demoLogin server action.

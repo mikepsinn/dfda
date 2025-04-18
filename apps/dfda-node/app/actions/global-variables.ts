@@ -92,7 +92,7 @@ export async function getTreatmentVariables(limit: number = 9): Promise<SimpleVa
   try {
     // 1. Get IDs from treatments table
     const { data: treatmentIdsData, error: treatmentIdsError } = await supabase
-      .from('treatments')
+      .from('global_treatments')
       .select('id')
       .limit(limit * 2); // Fetch more initially
 
@@ -131,9 +131,9 @@ export async function getFoodVariables(limit: number = 9): Promise<SimpleVariabl
   let foods: SimpleVariableInfo[] = [];
 
   try {
-    // 1. Get IDs from food_details table
+    // 1. Get IDs from global_foods table
     const { data: foodIdsData, error: foodIdsError } = await supabase
-      .from('food_details')
+      .from('global_foods')
       .select('global_variable_id')
       .limit(limit * 2); // Fetch more initially
 

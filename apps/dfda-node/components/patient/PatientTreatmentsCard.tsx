@@ -9,7 +9,7 @@ interface PatientTreatmentsCardProps {
 }
 
 export function PatientTreatmentsCard({ patientTreatment }: PatientTreatmentsCardProps) {
-  const treatmentName = patientTreatment.treatments?.global_variables?.name || "Unnamed Treatment";
+  const treatmentName = patientTreatment.global_treatments?.global_variables?.name || "Unnamed Treatment";
   const treatmentId = patientTreatment.treatment_id;
 
   const treatmentDetailUrl = `/treatments/${treatmentId}`;

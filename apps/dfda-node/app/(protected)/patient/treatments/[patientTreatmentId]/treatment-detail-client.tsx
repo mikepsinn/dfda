@@ -16,13 +16,13 @@ import type { Database } from "@/lib/database.types"
 // Export the type for the full treatment details
 export type FullPatientTreatmentDetail = 
     Database["public"]["Tables"]["patient_treatments"]["Row"] 
-    & { treatments: { global_variables: { name: string } } | null }
+    & { global_treatments: { global_variables: { name: string } } | null }
     & { treatment_ratings: (TreatmentRating & { // Use imported TreatmentRating type
           patient_conditions: { 
-              conditions: { global_variables: { name: string } } | null 
+              global_conditions: { global_variables: { name: string } } | null 
           } | null;
       })[] }
-    & { reported_side_effects: ({ 
+    & { patient_side_effects: ({ 
           id: string; 
           description: string; 
           severity_out_of_ten: number | null; 
@@ -96,7 +96,7 @@ export function TreatmentDetailClient({
                         ratingId: rating.id, 
                         currentValue: rating.effectiveness_out_of_ten?.toString() ?? "",
                         isSaving: false,
-                        conditionName: rating.patient_conditions?.conditions?.global_variables?.name ?? 'Unknown Condition',
+                        conditionName: rating.patient_conditions?.global_conditions?.global_variables?.name ?? 'Unknown Condition',
                     };
                  } else {
                     console.warn("[TreatmentDetailClient] Rating found without patient_condition_id:", rating);
@@ -191,7 +191,7 @@ export function TreatmentDetailClient({
 
     const dialogPatientTreatmentProp = {
         ...initialTreatmentDetails, // Pass the full initial object
-        treatment_name: initialTreatmentDetails.treatments?.global_variables?.name ?? 'Unknown Treatment'
+        treatment_name: initialTreatmentDetails.global_treatments?.global_variables?.name ?? 'Unknown Treatment'
     };
 
     // Log the state right before rendering

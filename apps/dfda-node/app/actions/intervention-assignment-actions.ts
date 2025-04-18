@@ -15,7 +15,7 @@ export type PatientAssignmentDetails =
       trials: Pick<Tables<'trials'>, 'id' | 'title' | 'description'> | null;
     })[]; // Assuming a patient could potentially be in multiple trials historically, filter for active?
     patient_conditions: (Pick<Tables<'patient_conditions'>, 'id' | 'diagnosed_at' | 'severity' | 'status' | 'notes'> & {
-        conditions: Pick<Tables<'conditions'>, 'id'> | null; // Get condition name via global_variables?
+        conditions: Pick<Tables<'global_conditions'>, 'id'> | null; // Get condition name via global_variables?
     })[];
     // TODO: Add medical history, assessments, biomarkers - requires schema support or fetching from related tables
   }
@@ -55,7 +55,7 @@ export async function getPatientDetailsForAssignment(patientId: string): Promise
 // --- Fetch Intervention Options ---
 // Placeholder - depends heavily on how intervention arms are defined in your schema.
 // Assuming treatments linked to a trial represent the arms for now.
-export type InterventionOption = Pick<Tables<'treatments'>, 'id' | 'treatment_type'> & {
+export type InterventionOption = Pick<Tables<'global_treatments'>, 'id' | 'treatment_type'> & {
   // Add fields corresponding to the mock data (description, details, frequency, etc.)
   // These might come from treatments, global_variables, or a dedicated table.
   name: string; // Likely from global_variables

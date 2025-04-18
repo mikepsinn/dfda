@@ -3,7 +3,7 @@
 
 -- Insert sample conditions
 -- The id references the global_variable_id and is the primary key
-INSERT INTO conditions (id, icd_code)
+INSERT INTO global_conditions (id, icd_code)
 VALUES
 ('type-2-diabetes', 'E11'),
 ('hypertension', 'I10'),

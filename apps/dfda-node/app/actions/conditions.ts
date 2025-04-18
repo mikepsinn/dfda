@@ -11,7 +11,7 @@ import { logger } from '@/lib/logger'
 import { Tables } from '@/lib/database.types';
 
 // Combined type for Condition including name/description from global_variables
-type Condition = Pick<Tables<'conditions'>, 'id' | 'created_at' | 'deleted_at' | 'updated_at'> & 
+type Condition = Pick<Tables<'global_conditions'>, 'id' | 'created_at' | 'deleted_at' | 'updated_at'> & 
                  Pick<Tables<'global_variables'>, 'name' | 'description'>;
 
 // Specific type for the result of getConditionsByUserAction
@@ -26,8 +26,8 @@ type UserCondition = {
 
 // Use the database view type directly 
 export type ConditionView = Database['public']['Views']['patient_conditions_view']['Row']
-export type ConditionInsert = Database['public']['Tables']['conditions']['Insert']
-export type ConditionUpdate = Database['public']['Tables']['conditions']['Update']
+export type ConditionInsert = Database['public']['Tables']['global_conditions']['Insert']
+export type ConditionUpdate = Database['public']['Tables']['global_conditions']['Update']
 
 // Get all conditions present in the conditions table
 export async function getConditionsAction() {
@@ -163,7 +163,7 @@ export async function searchConditionsAction(query: string) {
 export async function createConditionAction(condition: ConditionInsert) {
   const supabase = await createClient()
 
-  const response = await supabase.from("conditions").insert(condition).select().single()
+  const response = await supabase.from("global_conditions").insert(condition).select().single()
 
   if (response.error) {
     logger.error('Error creating condition:', { error: response.error })
@@ -179,7 +179,7 @@ export async function updateConditionAction(id: string, updates: ConditionUpdate
   const supabase = await createClient()
 
   const response = await supabase
-    .from("conditions")
+    .from("global_conditions")
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq("id", id)
     .select()
@@ -199,7 +199,7 @@ export async function updateConditionAction(id: string, updates: ConditionUpdate
 export async function deleteConditionAction(id: string) {
   const supabase = await createClient()
 
-  const response = await supabase.from("conditions").delete().eq("id", id)
+  const response = await supabase.from("global_conditions").delete().eq("id", id)
 
   if (response.error) {
     logger.error('Error deleting condition:', { error: response.error })

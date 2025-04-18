@@ -6,19 +6,19 @@ import { revalidatePath } from 'next/cache'
 import { logger } from '@/lib/logger'
 
 // Use the database types directly
-export type Treatment = Database['public']['Tables']['treatments']['Row'] & {
+export type Treatment = Database['public']['Tables']['global_treatments']['Row'] & {
   name: string
   description: string | null
 }
-export type TreatmentInsert = Database['public']['Tables']['treatments']['Insert']
-export type TreatmentUpdate = Database['public']['Tables']['treatments']['Update']
+export type TreatmentInsert = Database['public']['Tables']['global_treatments']['Insert']
+export type TreatmentUpdate = Database['public']['Tables']['global_treatments']['Update']
 
 // Get all treatments
 export async function getTreatmentsAction(): Promise<Treatment[]> {
   const supabase = await createClient()
 
   const response = await supabase
-    .from('treatments')
+    .from('global_treatments')
     .select(`
       *,
       global_variables!inner (
@@ -46,7 +46,7 @@ export async function getTreatmentByIdAction(id: string): Promise<Treatment | nu
   const supabase = await createClient()
 
   const response = await supabase
-    .from('treatments')
+    .from('global_treatments')
     .select(`
       *,
       global_variables!inner (
@@ -75,7 +75,7 @@ export async function searchTreatmentsAction(query: string): Promise<Treatment[]
   const supabase = await createClient()
 
   const response = await supabase
-    .from('treatments')
+    .from('global_treatments')
     .select(`
       *,
       global_variables!inner (
@@ -182,7 +182,7 @@ export async function createTreatmentAction(treatment: TreatmentInsert): Promise
   const supabase = await createClient()
 
   const response = await supabase
-    .from('treatments')
+    .from('global_treatments')
     .insert(treatment)
     .select(`
       *,
@@ -213,7 +213,7 @@ export async function updateTreatmentAction(id: string, updates: TreatmentUpdate
   const supabase = await createClient()
 
   const response = await supabase
-    .from('treatments')
+    .from('global_treatments')
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq('id', id)
     .select(`
@@ -246,7 +246,7 @@ export async function deleteTreatmentAction(id: string): Promise<void> {
   const supabase = await createClient()
 
   const response = await supabase
-    .from('treatments')
+    .from('global_treatments')
     .delete()
     .eq('id', id)
 

@@ -15,7 +15,7 @@ type TrialEnrollmentInsert = Database['public']['Tables']['trial_enrollments']['
 type DataSubmissionInsert = Database['public']['Tables']['data_submissions']['Insert'];
 type NotificationInsert = Database['public']['Tables']['notifications']['Insert'];
 type TreatmentRatingInsert = Database['public']['Tables']['treatment_ratings']['Insert'];
-type ReportedSideEffectInsert = Database['public']['Tables']['reported_side_effects']['Insert'];
+type ReportedSideEffectInsert = Database['public']['Tables']['patient_side_effects']['Insert'];
 
 // --- Data Structures for Seeding --- 
 

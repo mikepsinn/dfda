@@ -1,15 +1,16 @@
 import { createClient } from "@/lib/supabase/server"
-import type { SupabaseClient } from "@supabase/supabase-js"
+// import type { SupabaseClient } from "@supabase/supabase-js" // Removed unused import
 import { redirect, notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Star, AlertCircle, Bell } from "lucide-react"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
-import type { Database } from "@/lib/database.types"
+// import type { Database } from "@/lib/database.types" // Removed unused import
 // import { TreatmentDetailClient, type FullPatientTreatmentDetail } from "./treatment-detail-client"
-import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Only import type if client not used
+// import type { FullPatientTreatmentDetail } from "./treatment-detail-client" // Removed unused import
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
+import { getPatientTreatmentDetailAction } from '@/app/actions/patient-treatments'
 import { Button } from '@/components/ui/button'
 // Import Breadcrumb components
 import { 
@@ -20,53 +21,8 @@ import {
   BreadcrumbPage, 
   BreadcrumbSeparator 
 } from "@/components/ui/breadcrumb"
+// import { fetchPatientTreatmentById } from "@/app/actions/patient-treatments" // Removed incorrect import
 
-// Define specific types for fetched data
-/* 
-type PatientTreatmentDetail = 
-    Database["public"]["Tables"]["patient_treatments"]["Row"] 
-    & { treatments: { global_variables: { name: string } } | null }
-    & { treatment_ratings: ({ 
-          id: string; 
-          effectiveness_out_of_ten: number | null; 
-          review: string | null;
-          patient_conditions: { 
-              conditions: { global_variables: { name: string } } | null 
-          } | null;
-      })[] }
-    & { reported_side_effects: ({ 
-          id: string; 
-          description: string; 
-          severity_out_of_ten: number | null; 
-      })[] };
-*/
-
-// Update fetch function to return the imported FullPatientTreatmentDetail type
-async function fetchTreatmentDetails(supabase: SupabaseClient<Database>, patientTreatmentId: string, userId: string): Promise<FullPatientTreatmentDetail | null> {
-    const { data, error } = await supabase
-        .from("patient_treatments")
-        .select(`
-            *,
-            treatments!inner ( global_variables!inner ( name ) ),
-            treatment_ratings (
-                *, 
-                patient_conditions ( 
-                    id,
-                    conditions!inner ( global_variables!inner ( name ) ) 
-                ) 
-            ),
-            reported_side_effects ( id, description, severity_out_of_ten )
-        `)
-        .eq('id', patientTreatmentId)
-        .eq('patient_id', userId) 
-        .single();
-
-    if (error) {
-        logger.error("Error fetching treatment details", { patientTreatmentId, userId, error: error.message });
-        return null;
-    }
-    return data as FullPatientTreatmentDetail;
-}
 
 export default async function TreatmentDetailPage({ params }: { params: Promise<{ patientTreatmentId: string }> }) {
   const { patientTreatmentId } = await params;
@@ -80,9 +36,9 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
   }
 
   console.log(`[TreatmentDetailPage] Fetching data for user: ${user.id} and treatment: ${patientTreatmentId}`);
-  // Fetch treatment details AND patient conditions in parallel
+  // Fetch treatment details AND patient conditions in parallel, using the new action
   const [treatmentDetails, patientConditionsResult] = await Promise.all([
-      fetchTreatmentDetails(supabase, patientTreatmentId, user.id),
+      getPatientTreatmentDetailAction(patientTreatmentId, user.id),
       getPatientConditionsAction(user.id)
   ]);
   console.log(`[TreatmentDetailPage] Fetched treatmentDetails:`, treatmentDetails ? `Found (ID: ${treatmentDetails.id})` : 'Not Found');
@@ -97,11 +53,12 @@ export default async function TreatmentDetailPage({ params }: { params: Promise<
      logger.error("Error fetching patient conditions for dialog", { userId: user.id, error: (patientConditionsResult as any)?.error });
   }
 
-  const treatmentName = treatmentDetails.treatments?.global_variables?.name ?? "Unknown Treatment";
+  const treatmentName =
+    treatmentDetails.global_treatments?.global_variables?.name ?? "Unknown Treatment";
   
   // Count for badges
   const ratingsCount = treatmentDetails.treatment_ratings.length;
-  const sideEffectsCount = treatmentDetails.reported_side_effects.length;
+  const sideEffectsCount = treatmentDetails.patient_side_effects.length;
 
   return (
     <div className="container mx-auto px-4 py-6 space-y-6">

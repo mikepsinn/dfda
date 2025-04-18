@@ -1,2 +1,0 @@
--- Profiles seed file (Content Removed)
--- Demo user profiles, patient details, and patient conditions are now seeded via the demoLogin server action.

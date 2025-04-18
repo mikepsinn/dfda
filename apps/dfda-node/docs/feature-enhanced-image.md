@@ -46,7 +46,7 @@ The implementation involves changes across the frontend UI, backend actions, AI 
     -   Leverage this existing table for commercial products.
     -   Link to `global_variables` via `products.global_variable_id`.
     -   Store `upc`, `brand_name`, `manufacturer` here.
--   **`food_details` (New Table):**
+-   **`global_foods` (New Table):**
     -   `global_variable_id` (PK, FK to `global_variables`)
     -   `serving_size_quantity` (numeric, nullable)
     -   `serving_size_unit_id` (FK to `units`, nullable)
@@ -79,7 +79,7 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 -   **Processing:**
     1.  Find/Create the main `global_variable` for the item.
     2.  If product info (UPC/brand) exists, Find/Create `products` record and link.
-    3.  If food data exists, Insert/Update `food_details`.
+    3.  If food data exists, Insert/Update `global_foods`.
     4.  If treatment data exists, Insert/Update `treatment_details` (including finding/creating ingredient `global_variables` for active ingredients).
     5.  For *each* ingredient extracted (active and inactive):
         *   Find/Create the ingredient `global_variable`.
@@ -90,7 +90,7 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 
 ## TODO List
 
--   [x] **Database:** Define and apply migrations for new tables (`food_details`, `treatment_details`, `item_ingredients`).
+-   [x] **Database:** Define and apply migrations for new tables (`global_foods`, `treatment_details`, `item_ingredients`).
 -   [X] **Database:** Run `pnpm supabase:types` and `pnpm db:zod` to update generated files.
 -   [x] **AI Schema:** Define the enhanced `AiOutputSchema` in `lib/actions/analyze-image.ts` using `z.discriminatedUnion` or similar.
 -   [x] **Backend Analysis:** Update `analyzeImageAction` to accept multiple named images.
@@ -103,9 +103,9 @@ The implementation involves changes across the frontend UI, backend actions, AI 
 -   [x] **Backend Save:** Update `saveVariableMeasurementsFromImageAction` to accept the new complex data structure and multiple files.
 -   [x] **Backend Save:** Implement logic to find/create `global_variables` for the item.
 -   [x] **Backend Save:** Implement logic to find/create/link `products` record.
--   [x] **Backend Save:** Implement logic to insert/update `food_details` or `treatment_details`.
+-   [x] **Backend Save:** Implement logic to insert/update `global_foods` or `treatment_details`.
 -   [x] **Backend Save:** Implement logic to populate the `item_ingredients` table for all extracted ingredients.
 -   [x] **Backend Save:** Update image storage logic as needed (Current logic handles single image upload/linking via `uploaded_files` and `user_variable_images`).
 -   [x] **Backend Save:** Ensure `user_variables` creation/update still works.
 -   [ ] **Testing:** Thoroughly test the end-to-end flow with various food and treatment packages.
--   [ ] **Calculation:** Implement logic (likely in a separate function or component) to calculate consumed ingredients based on logged item consumption, `food_details.serving_size_*`, and `item_ingredients.quantity_per_serving`.
+-   [ ] **Calculation:** Implement logic (likely in a separate function or component) to calculate consumed ingredients based on logged item consumption, `global_foods.serving_size_*`, and `item_ingredients.quantity_per_serving`.

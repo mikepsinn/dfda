@@ -46,6 +46,7 @@ const TreatmentSchema = BaseSchema.extend({
 });
 
 // --- Supplement Schema (NEW) ---
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SupplementSchema = BaseSchema.extend({
   type: z.literal('supplement').describe("Use ONLY for dietary supplements (e.g., vitamins, minerals, herbs, amino acids like Taurine, protein powders, creatine). These are distinct from food and medication."),
   dosage_form: z.string().optional().describe("Form of the supplement (e.g., 'capsule', 'tablet', 'powder', 'liquid', 'gummy')."),
@@ -64,24 +65,18 @@ const OtherSchema = BaseSchema.extend({
 
 
 // --- Enhanced Discriminated Union Schema ---
-const EnhancedAiOutputSchema = z.discriminatedUnion("type", [
-  FoodSchema,
-  TreatmentSchema,
-  SupplementSchema, // Add SupplementSchema here
-  OtherSchema,
-], {
-  errorMap: (issue, ctx) => {
-    if (issue.code === z.ZodIssueCode.invalid_union_discriminator) {
-      // Update the error message to include 'supplement'
-      return { message: `Invalid type specified. Expected 'food', 'treatment', 'supplement', or 'other'. Received: ${JSON.stringify(issue.options)}` }; 
-    }
-    return { message: ctx.defaultError };
-  },
-}).describe("Schema for structured data extracted from item images. The 'type' field determines the expected fields.");
+// Although declared, it's only used for type inference below, hence the ESLint warning.
+// const EnhancedAiOutputSchema = z.discriminatedUnion(...) 
+// Instead of declaring it as a const, we define the type directly.
+// It's better to declare it explicitly if used in multiple places, but for now, this resolves the warning.
 
-
-// Type for the successful result
-export type AnalyzedImageResult = z.infer<typeof EnhancedAiOutputSchema>
+// Type for the successful result using z.infer directly on the union definition
+export type AnalyzedImageResult = z.infer<z.ZodDiscriminatedUnion<"type", [
+    typeof FoodSchema,
+    typeof TreatmentSchema,
+    typeof SupplementSchema,
+    typeof OtherSchema
+]>>
 
 // Map for expected image keys
 const IMAGE_TYPES = ['primary', 'nutrition', 'ingredients', 'upc'] as const;

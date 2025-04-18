@@ -25,9 +25,9 @@ SELECT
   p.last_name as research_partner_last_name
 FROM patient_active_conditions pac
 JOIN trials t ON t.condition_id = pac.condition_id
-JOIN conditions c ON c.id = t.condition_id
+JOIN global_conditions c ON c.id = t.condition_id
 JOIN global_variables gvc ON gvc.id = c.id -- Join conditions to global_variables
-JOIN treatments tr ON tr.id = t.treatment_id
+JOIN global_treatments tr ON tr.id = t.treatment_id
 JOIN global_variables gvt ON gvt.id = tr.id -- Join treatments to global_variables
 JOIN profiles p ON p.id = t.research_partner_id
 WHERE t.deleted_at IS NULL

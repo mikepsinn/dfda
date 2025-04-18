@@ -1,2 +1,0 @@
--- Reported Side Effects seed file (Content Removed)
--- Demo user reported side effects are now seeded via the demoLogin server action.

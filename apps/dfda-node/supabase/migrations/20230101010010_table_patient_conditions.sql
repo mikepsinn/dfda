@@ -37,7 +37,7 @@ GRANT EXECUTE ON FUNCTION public.ensure_user_variable_for_condition() TO authent
 CREATE TABLE IF NOT EXISTS public.patient_conditions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   patient_id UUID NOT NULL REFERENCES public.patients(id) ON DELETE CASCADE,
-  condition_id TEXT NOT NULL REFERENCES public.conditions(id) ON DELETE CASCADE,
+  condition_id TEXT NOT NULL REFERENCES public.global_conditions(id) ON DELETE CASCADE,
   -- Add user_variable_id - it must exist for a patient condition to exist
   user_variable_id UUID NOT NULL REFERENCES public.user_variables(id) ON DELETE RESTRICT,
   diagnosed_at DATE,

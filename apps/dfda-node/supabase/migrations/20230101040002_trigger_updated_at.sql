@@ -22,11 +22,11 @@ CREATE TRIGGER update_patients_updated_at
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 CREATE TRIGGER update_conditions_updated_at
-    BEFORE UPDATE ON conditions
+    BEFORE UPDATE ON global_conditions
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 CREATE TRIGGER update_treatments_updated_at
-    BEFORE UPDATE ON treatments
+    BEFORE UPDATE ON global_treatments
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 CREATE TRIGGER update_measurements_updated_at

@@ -18,7 +18,7 @@ async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createC
   // await supabase.from('patients').delete().eq('id', userId); 
   // Instead, we will upsert patient details later.
   await supabase.from('treatment_ratings').delete().eq('user_id', userId);
-  await supabase.from('reported_side_effects').delete().eq('user_id', userId);
+  await supabase.from('patient_side_effects').delete().eq('user_id', userId);
   await supabase.from('notifications').delete().eq('user_id', userId);
   
   // Data linked to providers
@@ -121,7 +121,7 @@ export async function setupDemoUserData(userId: string, userType: DemoUserType) 
       if (seedData.sideEffects && seedData.sideEffects.length > 0) {
           logger.info("Seeding side effects", { userId, count: seedData.sideEffects.length });
           const sideEffectsToInsert = seedData.sideEffects.map((se: any) => ({ ...se, user_id: userId }));
-          const { error: seError } = await supabase.from('reported_side_effects').insert(sideEffectsToInsert);
+          const { error: seError } = await supabase.from('patient_side_effects').insert(sideEffectsToInsert);
           if (seError) throw new Error(`Side effects seeding failed: ${seError.message}`);
       }
     }

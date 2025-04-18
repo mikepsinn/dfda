@@ -1,5 +1,5 @@
 -- Create conditions table
-CREATE TABLE IF NOT EXISTS conditions (
+CREATE TABLE IF NOT EXISTS global_conditions (
   id TEXT PRIMARY KEY REFERENCES global_variables(id),
 
   icd_code TEXT,

@@ -38,7 +38,7 @@ export function TreatmentSearch({ onSelect, selected, conditionId }: TreatmentSe
 
       try {
         let treatmentQuery = supabase
-          .from("treatments")
+          .from("global_treatments")
           .select(
             `
             id,

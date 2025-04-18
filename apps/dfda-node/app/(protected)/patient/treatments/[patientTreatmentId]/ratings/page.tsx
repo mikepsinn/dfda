@@ -1,50 +1,19 @@
 import { createClient } from "@/lib/supabase/server"
-import type { SupabaseClient } from "@supabase/supabase-js"
 import { redirect, notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-// import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { logger } from "@/lib/logger"
-import type { Database } from "@/lib/database.types"
-import type { FullPatientTreatmentDetail } from "../treatment-detail-client"
 import { TreatmentDetailClient } from "../treatment-detail-client"
 import { getPatientConditionsAction } from "@/app/actions/patient-conditions"
-// Import Breadcrumb components
+import { getPatientTreatmentDetailAction } from '@/app/actions/patient-treatments'
 import { 
-  Breadcrumb, 
-  BreadcrumbItem, 
-  BreadcrumbLink, 
-  BreadcrumbList, 
-  BreadcrumbPage, 
-  BreadcrumbSeparator 
+    Breadcrumb, 
+    BreadcrumbItem, 
+    BreadcrumbLink, 
+    BreadcrumbList, 
+    BreadcrumbPage, 
+    BreadcrumbSeparator 
 } from "@/components/ui/breadcrumb"
-
-// Reuse the fetch function from the treatment details page
-async function fetchTreatmentDetails(supabase: SupabaseClient<Database>, patientTreatmentId: string, userId: string): Promise<FullPatientTreatmentDetail | null> {
-    const { data, error } = await supabase
-        .from("patient_treatments")
-        .select(`
-            *,
-            treatments!inner ( global_variables!inner ( name ) ),
-            treatment_ratings (
-                *, 
-                patient_conditions ( 
-                    id,
-                    conditions!inner ( global_variables!inner ( name ) ) 
-                ) 
-            ),
-            reported_side_effects ( id, description, severity_out_of_ten )
-        `)
-        .eq('id', patientTreatmentId)
-        .eq('patient_id', userId) 
-        .single();
-
-    if (error) {
-        logger.error("Error fetching treatment details", { patientTreatmentId, userId, error: error.message });
-        return null;
-    }
-    return data as FullPatientTreatmentDetail;
-}
 
 export default async function TreatmentRatingsPage({ params }: { params: Promise<{ patientTreatmentId: string }> }) {
   const { patientTreatmentId } = await params;
@@ -57,9 +26,9 @@ export default async function TreatmentRatingsPage({ params }: { params: Promise
     redirect("/login?message=Please log in to view treatment ratings.")
   }
 
-  // Fetch treatment details AND patient conditions in parallel
+  // Fetch treatment details AND patient conditions in parallel, using the new action
   const [treatmentDetails, patientConditionsResult] = await Promise.all([
-      fetchTreatmentDetails(supabase, patientTreatmentId, user.id),
+      getPatientTreatmentDetailAction(patientTreatmentId, user.id),
       getPatientConditionsAction(user.id)
   ]);
 
@@ -73,7 +42,8 @@ export default async function TreatmentRatingsPage({ params }: { params: Promise
      logger.error("Error fetching patient conditions for dialog", { userId: user.id, error: (patientConditionsResult as any)?.error });
   }
 
-  const treatmentName = treatmentDetails.treatments?.global_variables?.name ?? "Unknown Treatment";
+  const treatmentName =
+    treatmentDetails.global_treatments?.global_variables?.name ?? "Unknown Treatment";
   
   // Determine if there are any ratings initially
   const hasExistingRatings = treatmentDetails.treatment_ratings && treatmentDetails.treatment_ratings.length > 0;
@@ -100,17 +70,6 @@ export default async function TreatmentRatingsPage({ params }: { params: Promise
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-
-      {/* Removed Back Link - Breadcrumbs handle this */}
-      {/* 
-      <Link 
-        href={`/patient/treatments/${patientTreatmentId}`}
-        className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4"
-      >
-        <ArrowLeft className="mr-2 h-4 w-4" />
-        Back to Treatment Details
-      </Link>
-       */}
 
       {/* Page Header */}
       <div className="space-y-0.5">

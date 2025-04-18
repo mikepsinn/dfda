@@ -10,8 +10,8 @@ import type { Database } from "@/lib/database.types"
 // Base types from database
 type BaseTrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 type BaseTrial = Database["public"]["Tables"]["trials"]["Row"] 
-type BaseCondition = Database["public"]["Tables"]["conditions"]["Row"]
-type BaseTreatment = Database["public"]["Tables"]["treatments"]["Row"]
+type BaseCondition = Database["public"]["Tables"]["global_conditions"]["Row"]
+type BaseTreatment = Database["public"]["Tables"]["global_treatments"]["Row"]
 
 // Extended types with additional properties from joins/views
 type Condition = BaseCondition & {

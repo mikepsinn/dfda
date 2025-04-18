@@ -15,7 +15,7 @@ SELECT
   pc.user_variable_id, -- Select directly from patient_conditions table
   COUNT(m.id) as measurement_count
 FROM patient_conditions pc
-JOIN conditions c ON c.id = pc.condition_id
+JOIN global_conditions c ON c.id = pc.condition_id
 JOIN global_variables gv ON gv.id = c.id -- Join conditions with global_variables
 -- No longer need LEFT JOIN user_variables
 -- LEFT JOIN user_variables uv ON uv.user_id = pc.patient_id AND uv.global_variable_id = c.id AND uv.deleted_at IS NULL

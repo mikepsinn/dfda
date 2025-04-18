@@ -29,7 +29,7 @@ CREATE TABLE global_variable_relationships (
   predictor_global_variable_id TEXT NOT NULL REFERENCES global_variables(id),
   outcome_global_variable_id TEXT NOT NULL REFERENCES global_variables(id),
   citation_id TEXT NOT NULL REFERENCES citations(id),
-  condition_id TEXT NULL REFERENCES conditions(id), -- Optional context
+  condition_id TEXT NULL REFERENCES global_conditions(id), -- Optional context
 
   -- Categorization for display (using new enum)
   category relationship_category_enum NOT NULL,

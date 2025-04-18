@@ -128,10 +128,10 @@ async function _handleSaveFoodVariable(
     }
     logger.info('Handling food variable save', { mainGlobalVariableId });
 
-    // 1. Transform data to food_details.Insert type
+    // 1. Transform data to global_foods.Insert type
     const { servingSize_quantity, servingSize_unit, calories_per_serving, fat_per_serving, protein_per_serving, carbs_per_serving, ingredients } = data;
     const servingUnitId = await findUnitId(supabase, servingSize_unit);
-    const foodDetailsPayload: Database['public']['Tables']['food_details']['Insert'] = {
+    const foodDetailsPayload: Database['public']['Tables']['global_foods']['Insert'] = {
         global_variable_id: mainGlobalVariableId,
         serving_size_quantity: servingSize_quantity ?? null,
         serving_size_unit_id: servingUnitId, // findUnitId already returns null if not found
@@ -142,14 +142,14 @@ async function _handleSaveFoodVariable(
         // created_at, updated_at have defaults in DB
     };
 
-    // 2. Upsert food_details
+    // 2. Upsert global_foods
     const { error: foodUpsertError } = await supabase
-        .from('food_details')
+        .from('global_foods')
         .upsert(foodDetailsPayload, { onConflict: 'global_variable_id' });
 
     if (foodUpsertError) {
-        logger.error('Failed to upsert food_details', { error: foodUpsertError, globalVariableId: mainGlobalVariableId });
-        throw new Error(`DB error (upsert food_details): ${foodUpsertError.message}`);
+        logger.error('Failed to upsert global_foods', { error: foodUpsertError, globalVariableId: mainGlobalVariableId });
+        throw new Error(`DB error (upsert global_foods): ${foodUpsertError.message}`);
     }
     logger.info('Food details saved/updated', { globalVariableId: mainGlobalVariableId });
     const foodDetailsId = mainGlobalVariableId; // PK is the GVar ID
@@ -206,10 +206,10 @@ async function _handleSaveTreatmentVariable(
         dosage_form: (typeof dosage_form === 'string' && dosage_form.trim()) ? dosage_form.trim() : null,
         dosage_instructions: (typeof dosage_instructions === 'string' && dosage_instructions.trim()) ? dosage_instructions.trim() : null,
         active_ingredients: activeIngredientsJson.length > 0 ? activeIngredientsJson : null,
-    } satisfies Database['public']['Tables']['treatments']['Update'];
+    } satisfies Database['public']['Tables']['global_treatments']['Update'];
 
     const { error: upsertTreatmentError } = await supabase
-        .from('treatments')
+        .from('global_treatments')
         .upsert(treatmentPayload, { onConflict: 'id' });
 
     if(upsertTreatmentError) {

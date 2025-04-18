@@ -1,2 +1,0 @@
--- Treatment Ratings seed file (Content Removed)
--- Demo user treatment ratings are now seeded via the demoLogin server action.
