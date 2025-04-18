@@ -158,7 +158,7 @@ export async function getRatingsForPatientConditionAction(
       *,
       pt:patient_treatments!left(
         id,
-        treatment:treatments!left(
+        treatment:global_treatments!left(
            id,
            gv:global_variables!left( name )
         )
@@ -309,13 +309,13 @@ export async function getRatingsForConditionAction(
       *,
       pc:patient_conditions!inner(condition_id),
       pt:patient_treatments!inner(
-        treatment:treatments!inner(
+        treatment:global_treatments!inner(
            gv:global_variables!inner( name ) 
         )
       )
     `)
     .eq('pc.condition_id', conditionId)
-    .not('deleted_at', 'is', null)
+    .is('deleted_at', null)
     .order('effectiveness_out_of_ten', { ascending: false });
 
   if (error) {

@@ -31,8 +31,8 @@ export async function getTrialEnrollmentsAction(): Promise<TrialEnrollment[]> {
         title,
         description, 
         status,
-        treatments:treatment_id(id, title),
-        conditions:condition_id(id, title)
+        global_treatments:treatment_id(id, title),
+        global_conditions:condition_id(id, title)
       )
     `)
     .order("enrollment_date", { ascending: false })

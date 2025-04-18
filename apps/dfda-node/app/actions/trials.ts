@@ -29,7 +29,14 @@ type FetchedTrial = Database["public"]["Tables"]["trials"]["Row"] & {
 
 type FetchedPatient = Database["public"]["Tables"]["patients"]["Row"] & {
   profile: Database["public"]["Tables"]["profiles"]["Row"] | null;
-  conditions: { condition: { id: string; name: { name: string | null } | null } | null }[];
+  conditions: { 
+    condition: { 
+      id: string; 
+      global_variables: {
+        name: string;
+      }
+    } | null 
+  }[];
 }
 
 // Find trials matching the given condition IDs
@@ -46,8 +53,8 @@ export async function findTrialsForConditionsAction(
     .from("trials")
     .select(`
       *,
-      conditions:condition_id(id, name),
-      treatments:treatment_id(id, name),
+      global_conditions:condition_id(id, name),
+      global_treatments:treatment_id(id, name),
       research_partners:research_partner_id(id, name)
     `)
     .in("condition_id", conditionIds)
@@ -70,8 +77,8 @@ export async function getTrialByIdAction(id: string): Promise<TrialWithRelations
     .from("trials")
     .select(`
       *,
-      conditions:condition_id(id, name),
-      treatments:treatment_id(id, name),
+      global_conditions:condition_id(id, name),
+      global_treatments:treatment_id(id, name),
       research_partners:research_partner_id(id, name)
     `)
     .eq("id", id)
@@ -97,8 +104,8 @@ export async function getTrialsAction(): Promise<TrialWithRelations[]> {
     .from("trials")
     .select(`
       *,
-      conditions:condition_id(id, name),
-      treatments:treatment_id(id, name),
+      global_conditions:condition_id(id, name),
+      global_treatments:treatment_id(id, name),
       research_partners:research_partner_id(id, name)
     `)
     .order("created_at", { ascending: false })
@@ -152,8 +159,8 @@ export async function getTrialsByTreatmentAction(treatmentId: string): Promise<T
     .from("trials")
     .select(`
       *,
-      conditions:condition_id(id, name),
-      treatments:treatment_id(id, name),
+      global_conditions:condition_id(id, name),
+      global_treatments:treatment_id(id, name),
       research_partners:research_partner_id(id, name)
     `)
     .eq("treatment_id", treatmentId)
@@ -241,8 +248,8 @@ export async function getResearchPartnerTrialsAction(researchPartnerId: string):
   
   const selectQuery = `
     *,
-    conditions:condition_id(id, title, icd_code),
-    treatments:treatment_id(id, title, treatment_type, manufacturer)
+    global_conditions:condition_id(id, title, icd_code),
+    global_treatments:treatment_id(id, title, treatment_type, manufacturer)
   `
 
   const [activeResponse, completedResponse, pendingResponse] = await Promise.all([
@@ -360,8 +367,14 @@ export async function getProviderPatientsAction(): Promise<FetchedPatient[]> {
     .select(`
       *,
       profile:profiles!patients_id_fkey (*),
-      conditions:patient_conditions!inner ( condition:conditions!inner ( *,
-          name:global_variables!conditions_id_fkey ( name ) ) )
+      conditions:patient_conditions!inner (
+        condition:global_conditions!inner (
+          id,
+          global_variables!inner (
+            name
+          )
+        )
+      )
     `)
     .is("deleted_at", null)
 
