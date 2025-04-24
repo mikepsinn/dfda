@@ -35,7 +35,8 @@
     "db:cloud:pull": "npx supabase db pull --linked",
     "db:cloud:diff": "npx supabase db diff --linked -f migrations",
     "db:cloud:types": "npx supabase gen types typescript --linked > lib/database.types.ts",
-    "db:cloud:reset": "npx supabase db reset --linked"
+    "db:cloud:reset": "npx supabase db reset --linked",
+    "link:cloud": "tsx ./scripts/link-supabase.ts"
   },
   "dependencies": {
     "@ai-sdk/google": "^1.2.11",

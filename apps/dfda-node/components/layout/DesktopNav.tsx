@@ -26,16 +26,16 @@ export function DesktopNav({
   const [isMoreOpen, setIsMoreOpen] = useState(false)
 
   return (
-    <nav className="hidden md:flex gap-6 items-center"> {/* Hide on mobile */}
+    <nav className="hidden md:flex items-center justify-center gap-6 bg-background">
       {/* Always show Primary Nav Items */}
       {primaryNavItems.map((item) => (
         !item.hideInNav && (
           <Link
             key={item.href}
             href={item.href}
-            className="text-sm font-medium flex items-center"
+            className="text-sm font-medium flex items-center gap-2"
           >
-            {item.emoji && <span className="mr-1">{item.emoji}</span>}
+            {item.emoji && <span>{item.emoji}</span>}
             {item.title}
           </Link>
         )
@@ -45,8 +45,8 @@ export function DesktopNav({
       {!user && (
         <DropdownMenu open={isMoreOpen} onOpenChange={setIsMoreOpen}>
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center gap-1 text-sm font-medium">
-              More{" "}
+            <button className="flex items-center gap-2 text-sm font-medium">
+              More
               {isMoreOpen ? (
                 <ChevronUp className="h-4 w-4" />
               ) : (
@@ -54,12 +54,12 @@ export function DesktopNav({
               )}
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent align="end" className="w-56">
             {secondaryNavItems.map((item) => (
               !item.hideInDropdown && (
                 <DropdownMenuItem key={item.href} asChild>
-                  <Link href={item.href} className="flex items-center">
-                    {item.emoji && <span className="mr-2">{item.emoji}</span>}
+                  <Link href={item.href} className="flex items-center w-full gap-2">
+                    {item.emoji && <span>{item.emoji}</span>}
                     {item.title}
                   </Link>
                 </DropdownMenuItem>

@@ -39,58 +39,60 @@ export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems 
 
   if (user) {
     return (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-            <Avatar className="h-8 w-8">
-              <AvatarFallback>{userInitials}</AvatarFallback>
-            </Avatar>
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56" align="end" forceMount>
-          {primaryNavItems.map((item) => (
-            !item.hideInDropdown && (
-              <DropdownMenuItem key={item.href} asChild>
-                <Link href={item.href} className="flex items-center">
-                  {item.icon && <item.icon className="mr-2 h-4 w-4" />} 
-                  {item.emoji && <span className="mr-2">{item.emoji}</span>}
-                  <span>{item.title}</span>
-                </Link>
-              </DropdownMenuItem>
-            )
-          ))}
+      <div className="flex items-center gap-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="relative h-8 w-8 rounded-full bg-background">
+              <Avatar className="h-8 w-8">
+                <AvatarFallback>{userInitials}</AvatarFallback>
+              </Avatar>
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56" align="end" forceMount>
+            {primaryNavItems.map((item) => (
+              !item.hideInDropdown && (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link href={item.href} className="flex items-center w-full gap-2">
+                    {item.icon && <item.icon className="h-4 w-4" />} 
+                    {item.emoji && <span>{item.emoji}</span>}
+                    <span>{item.title}</span>
+                  </Link>
+                </DropdownMenuItem>
+              )
+            ))}
 
-          {(primaryNavItems.length > 0 || secondaryNavItems.length > 0) && <DropdownMenuSeparator />} 
-          <DropdownMenuItem asChild>
-            <Link href="/user/profile" className="flex items-center">
-              <UserIcon className="mr-2 h-4 w-4" />
-              <span>Profile</span>
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link href="/user/settings" className="flex items-center">
-              <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={handleSignOut} className="flex items-center text-red-600">
-            <LogOut className="mr-2 h-4 w-4" />
-            <span>Sign Out</span>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            {(primaryNavItems.length > 0 || secondaryNavItems.length > 0) && <DropdownMenuSeparator />} 
+            <DropdownMenuItem asChild>
+              <Link href="/user/profile" className="flex items-center w-full gap-2">
+                <UserIcon className="h-4 w-4" />
+                <span>Profile</span>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/user/settings" className="flex items-center w-full gap-2">
+                <Settings className="h-4 w-4" />
+                <span>Settings</span>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={handleSignOut} className="flex items-center w-full gap-2 text-red-600">
+              <LogOut className="h-4 w-4" />
+              <span>Sign Out</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     )
   } else {
     return (
-      <>
+      <div className="flex items-center gap-4">
         <Link href="/login" className="hidden sm:inline-flex">
           <Button variant="outline">Sign In</Button>
         </Link>
         <Link href="/register">
           <Button>Register</Button>
         </Link>
-      </>
+      </div>
     )
   }
 } 

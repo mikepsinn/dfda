@@ -73,11 +73,9 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
         <MobileNav navItems={mobileNavItems} />
 
         {/* Logo and Desktop Nav container */}
-        {/* On mobile, only Logo is effectively visible. On desktop, it pushes auth section right */}
-        <div className="flex flex-1 items-center gap-2 md:gap-6">
-          {/* Logo - hidden on mobile if MobileNav button is there, shown otherwise */} 
-          {/* We need the logo visible on mobile too, so remove hiding logic. Flex handles spacing. */}
-          <Link href="/" className="flex items-center gap-2 mr-auto md:mr-0"> {/* mr-auto pushes logo left on mobile */} 
+        <div className="flex flex-1 items-center">
+          {/* Logo - always visible */}
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/dfda-logo.png"
               alt="dFDA Logo"
@@ -88,13 +86,14 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
             <span className="text-xl font-bold">FDA.gov v2</span>
           </Link>
 
-          {/* Desktop Navigation (hidden on mobile) */}
-          {/* flex-1 on parent div and gap handles spacing */}
-          <DesktopNav
-            user={initialUser}
-            primaryNavItems={primaryNavItems}
-            secondaryNavItems={secondaryNavItems}
-          />
+          {/* Center the DesktopNav */}
+          <div className="flex-1 flex justify-center">
+            <DesktopNav
+              user={initialUser}
+              primaryNavItems={primaryNavItems}
+              secondaryNavItems={secondaryNavItems}
+            />
+          </div>
         </div>
 
         {/* User Auth Section (remains on the far right) */}
