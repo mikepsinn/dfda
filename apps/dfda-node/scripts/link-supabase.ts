@@ -1,40 +1,45 @@
 import { spawn } from 'child_process';
 import dotenv from 'dotenv';
 import path from 'path';
-// Remove ES Module specific imports and helpers
-// import { fileURLToPath } from 'url';
 
-// Helper to get __dirname in ES modules
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+// Helper: Extract project ref from SUPABASE_URL
+function getProjectIdFromUrl(url?: string): string | undefined {
+  if (!url) return undefined;
+  // e.g. https://ylshevuuilsayhxggkzl.supabase.co
+  const match = url.match(/https?:\/\/(.*?)\.supabase\.co/);
+  return match ? match[1] : undefined;
+}
+
+// Helper: Extract password from POSTGRES_URL
+function getPasswordFromPostgresUrl(pgUrl?: string): string | undefined {
+  if (!pgUrl) return undefined;
+  // e.g. postgres://postgres.ylshevuuilsayhxggkzl:LJ2KSnTAUEDR68lo@aws-0-us-east-1.pooler.supabase.com:6543/postgres
+  const match = pgUrl.match(/^postgres:\/\/.*?:(.*?)@/);
+  return match ? match[1] : undefined;
+}
 
 // Load environment variables from .env file at the project root
-// Assumes the .env file is two levels up from the scripts/ directory
 try {
-    // Use the standard CommonJS __dirname directly
     dotenv.config({ path: path.resolve(__dirname, '../.env') });
     console.log("Loaded environment variables from .env file.");
 } catch (e) {
     console.warn("Could not load .env file. Relying on system environment variables.", e);
 }
 
-
-const projectId = process.env.SUPABASE_PROJECT_ID;
-// Use SUPABASE_PASSWORD, which the CLI typically checks for the database password
-const dbPassword = process.env.SUPABASE_PASSWORD;
-
+// Try to get projectId from SUPABASE_PROJECT_ID or from SUPABASE_URL
+let projectId = process.env.SUPABASE_PROJECT_ID || getProjectIdFromUrl(process.env.SUPABASE_URL);
 if (!projectId) {
   console.error(
-    '❌ Error: SUPABASE_PROJECT_ID environment variable is not set.',
-    'Please define it in your .env file or system environment.',
+    '❌ Error: Could not determine SUPABASE_PROJECT_ID. Set SUPABASE_PROJECT_ID or SUPABASE_URL in your .env.'
   );
   process.exit(1);
 }
 
-// For this method, the password is required
+// Try to get dbPassword from SUPABASE_PASSWORD or from POSTGRES_URL
+let dbPassword = process.env.SUPABASE_PASSWORD || getPasswordFromPostgresUrl(process.env.POSTGRES_URL);
 if (!dbPassword) {
   console.error(
-    '❌ Error: SUPABASE_PASSWORD environment variable must be set in .env for non-interactive linking.'
+    '❌ Error: Could not determine SUPABASE_PASSWORD. Set SUPABASE_PASSWORD or POSTGRES_URL in your .env.'
   );
   process.exit(1);
 }
