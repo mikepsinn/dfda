@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@/utils/supabase/server'
 import { logger } from '@/lib/logger'
 import type { User } from '@supabase/supabase-js'
 import { AuthSessionMissingError } from '@supabase/supabase-js'

@@ -1,6 +1,6 @@
 'use server';
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/utils/supabase/server";
 import { notFound } from "next/navigation";
 import { Database } from "@/lib/database.types";
 import type { OutcomeCategory, OutcomeItem, OutcomeValue, OutcomeLabelProps } from "@/components/OutcomeLabel";

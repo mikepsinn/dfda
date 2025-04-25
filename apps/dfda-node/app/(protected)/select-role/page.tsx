@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { getServerUser } from "@/lib/server-auth"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { logger } from "@/lib/logger"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"

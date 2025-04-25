@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/utils/supabase/server";
 import { Database } from "@/lib/database.types";
 import { logger } from "@/lib/logger";
 import { getServerUser } from "@/lib/server-auth"; // Use the correct auth helper

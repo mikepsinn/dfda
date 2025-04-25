@@ -52,7 +52,7 @@ jest.mock('next/headers', () => ({
 }))
 
 // Mock Supabase client
-jest.mock('@/lib/supabase', () => ({
+jest.mock('@/utils/supabase', () => ({
   createClient: () => ({
     auth: {
       getUser: jest.fn(),

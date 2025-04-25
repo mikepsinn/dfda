@@ -10,7 +10,7 @@ function getProjectIdFromUrl(url?: string): string | undefined {
   return match ? match[1] : undefined;
 }
 
-// Helper: Extract password from POSTGRES_URL
+// Helper: Extract password from DATABASE_URL
 function getPasswordFromPostgresUrl(pgUrl?: string): string | undefined {
   if (!pgUrl) return undefined;
   // e.g. postgres://postgres.ylshevuuilsayhxggkzl:LJ2KSnTAUEDR68lo@aws-0-us-east-1.pooler.supabase.com:6543/postgres
@@ -35,11 +35,11 @@ if (!projectId) {
   process.exit(1);
 }
 
-// Try to get dbPassword from SUPABASE_PASSWORD or from POSTGRES_URL
-let dbPassword = process.env.SUPABASE_PASSWORD || getPasswordFromPostgresUrl(process.env.POSTGRES_URL);
+// Try to get dbPassword from SUPABASE_PASSWORD or from DATABASE_URL
+let dbPassword = process.env.SUPABASE_PASSWORD || getPasswordFromPostgresUrl(process.env.DATABASE_URL);
 if (!dbPassword) {
   console.error(
-    '❌ Error: Could not determine SUPABASE_PASSWORD. Set SUPABASE_PASSWORD or POSTGRES_URL in your .env.'
+    '❌ Error: Could not determine SUPABASE_PASSWORD. Set SUPABASE_PASSWORD or DATABASE_URL in your .env.'
   );
   process.exit(1);
 }

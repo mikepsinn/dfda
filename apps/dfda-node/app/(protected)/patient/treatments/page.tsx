@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { redirect } from "next/navigation"
 import { AddTreatmentDialog } from "./components/add-treatment-dialog"
 import { getPatientConditionsAction } from '@/lib/actions/patient-conditions'

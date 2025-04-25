@@ -3,7 +3,7 @@ import type { Database } from '@/lib/database.types';
 import { updateProfileAction, getProfileByIdAction } from '@/lib/actions/profiles';
 
 // Unmock Supabase client to use real server actions
-jest.unmock('@/lib/supabase');
+jest.unmock('@/utils/supabase');
 
 describe('Minimal Integration: Profile Update', () => {
   // Create an admin client for direct interaction
