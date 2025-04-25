@@ -8,7 +8,7 @@ import { format } from "date-fns"
 import { CalendarIcon, Loader2 } from "lucide-react"
 
 import { getFormDefinition, submitFormAnswers, FormDefinition } from '@/lib/actions/form-actions'
-import { createBrowserClient } from '@/lib/supabase/client'
+import { createBrowserClient } from '@/utils/supabase/client'
 import type { Tables } from '@/lib/database.types'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"

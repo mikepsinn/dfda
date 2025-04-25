@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import { DEMO_ACCOUNTS, DemoUserType } from '@/lib/constants/demo-accounts'
 import { createLogger } from '@/lib/logger'

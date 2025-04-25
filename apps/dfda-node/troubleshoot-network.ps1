@@ -65,8 +65,9 @@ try {
 
 # --- 2. MTU Path Discovery Test (Iterative) ---
 Write-Host "`n--- Checking MTU Path Discovery (Iterative) ---`n" -ForegroundColor Cyan
-$mtuSizes = @(1472, 1450, 1400, 1350, 1300) # Sizes to test
+$mtuSizes = @(1472, 1450, 1400, 1350, 1300, 1250) # Added 1250
 $maxSuccessfulMtu = $null
+$foundSuccess = $false # Track if any success occurred
 foreach ($size in $mtuSizes) {
     Write-Host "Pinging $TargetHost with Don't Fragment flag and payload size $size..."
     try {
@@ -74,8 +75,11 @@ foreach ($size in $mtuSizes) {
         Write-Host "  Output: $($pingResult -join ' | ')"
         if ($pingResult -match 'Reply from') {
             Write-Host "  Ping with size $size succeeded." -ForegroundColor Green
-            $maxSuccessfulMtu = $size
-            break # Stop testing if successful
+            if (-not $foundSuccess) { # Record the first (largest) successful size found
+                 $maxSuccessfulMtu = $size
+                 $foundSuccess = $true 
+            }
+            # Removed break to test all specified sizes
         } elseif ($pingResult -match 'Packet needs to be fragmented but DF set') {
             Write-Warning "  Ping with size $size failed: Packet needs fragmentation (MTU issue likely below $size bytes payload)."
         } elseif ($pingResult -match 'Request timed out') {
@@ -90,7 +94,7 @@ foreach ($size in $mtuSizes) {
 }
 
 if ($maxSuccessfulMtu) {
-    Write-Host "Largest successful MTU payload size with DF flag: $maxSuccessfulMtu bytes." -ForegroundColor Green
+    Write-Host "Largest successful MTU payload size (with DF flag) found in tested range: $maxSuccessfulMtu bytes." -ForegroundColor Green
 } else {
     Write-Warning "Could not determine successful MTU payload size with DF flag within tested range ($($mtuSizes -join ', '))."
 }

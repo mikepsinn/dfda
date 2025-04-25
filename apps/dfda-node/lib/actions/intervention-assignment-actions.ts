@@ -1,6 +1,6 @@
 'use server'
 
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@/utils/supabase/server'
 import { logger } from '@/lib/logger'
 import { revalidatePath } from 'next/cache'
 import { Tables } from "@/lib/database.types" // Import only Tables

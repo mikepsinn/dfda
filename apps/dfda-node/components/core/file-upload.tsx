@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '@/utils/supabase/client'
 import { recordUploadMetadata } from '@/lib/actions/file-upload-actions'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
