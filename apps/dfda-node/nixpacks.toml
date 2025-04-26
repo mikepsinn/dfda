@@ -1,12 +1,12 @@
 [phases.setup]
-nixPkgs = ['bun']
+nixPkgs = ['nodejs_20', 'pnpm']
 aptPkgs = ['build-essential']
 
 [phases.install]
-cmds = ["bun install"]
+cmds = ["pnpm install --frozen-lockfile"]
 
 [phases.build]
-cmds = ["bun run build"]
+cmds = ["pnpm run build"]
 
 [start]
-cmd = "bun run start"
+cmd = "pnpm run start"
