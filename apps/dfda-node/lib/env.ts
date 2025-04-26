@@ -26,7 +26,7 @@ export const env = createEnv({
     // Site metadata configuration
     NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("FDA.gov v2"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("Revolutionizing Clinical Trials Through Decentralization"),
-    NEXT_PUBLIC_SITE_URL: z.string().url().default("https://dfda.vercel.app"),
+    NEXT_PUBLIC_SITE_URL: z.string().url().default("https://prototype.dfda.earth"),
     NEXT_PUBLIC_TWITTER_HANDLE: z.string().min(1).default("@dfda"),
     NEXT_PUBLIC_GOOGLE_VERIFICATION: z.string().optional(),
   },
