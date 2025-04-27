@@ -12,6 +12,102 @@
 *   **Monetization:** Sustainable revenue through a hybrid SaaS model (subscriptions + usage + optional modules) to fund development, AI capabilities, and network growth.
 *   **Technology:** Leverage AI (agents, AI Doctor, causal inference), potentially blockchain/decentralized identity concepts where appropriate (though not strictly required for MVP).
 
+## Environment Setup
+
+This project requires several environment variables to be set up for various services (Supabase, Google AI, Google Cloud).
+
+### Local Development
+
+For local development, create a `.env` file in the root of the `apps/dfda-node` project (or the monorepo root if configured that way). It should contain at least:
+
+```env
+# Supabase (Get from your Supabase project settings)
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
+
+# Google Generative AI (For direct Gemini API calls, e.g., AI generation script)
+# Get from Google AI Studio: https://aistudio.google.com/app/apikey
+GOOGLE_GENERATIVE_AI_API_KEY=YOUR_GEMINI_API_KEY
+
+# Google Cloud (For Vertex AI Search / Grounded Search)
+GOOGLE_CLOUD_PROJECT_ID=YOUR_GCP_PROJECT_ID
+# GOOGLE_APPLICATION_CREDENTIALS= # Optional: Path to service account key if *not* using ADC
+
+# Optional: Other variables like Google OAuth Client ID/Secret if needed
+# GOOGLE_CLIENT_ID=
+# GOOGLE_CLIENT_SECRET=
+
+# Optional: Database connection string if needed directly by ORM/scripts
+# DATABASE_URL="postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-SUPABASE-ID].supabase.co:5432/postgres"
+```
+
+**Authentication for Google Cloud Locally (Recommended):**
+
+1.  Install the `gcloud` CLI: [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)
+2.  Log in with your Google account: `gcloud auth login`
+3.  Set up Application Default Credentials (ADC): `gcloud auth application-default login`
+    This allows the Google Cloud client libraries to automatically find your credentials when running locally.
+
+### Vercel Deployment
+
+1.  Go to your Vercel Project Settings > Environment Variables.
+2.  Add all required variables from your `.env` file (e.g., `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`, `GOOGLE_CLOUD_PROJECT_ID`).
+3.  **Google Cloud Service Account Key:**
+    *   Follow the steps in the "Google Cloud Setup for Vertex AI Search" section below to create a service account and download its JSON key file.
+    *   Add the `GOOGLE_APPLICATION_CREDENTIALS` variable in Vercel.
+    *   **Paste the entire content** of the downloaded JSON key file as the value for `GOOGLE_APPLICATION_CREDENTIALS`.
+    *   Ensure variables are set for the correct environments (Production, Preview, Development).
+
+### Google Cloud Setup for Vertex AI Search (Grounded Search Feature)
+
+To use the AI Generated Summary feature powered by Vertex AI Search (grounded on Google Search), you need to configure Google Cloud credentials.
+
+**Using Google Cloud Shell or Local `gcloud` CLI:**
+
+1.  **Set Project and Variables:**
+    ```bash
+    # Replace YOUR_PROJECT_ID with your actual GCP project ID
+    export PROJECT_ID="healome-dev-358414"
+    export SERVICE_ACCOUNT_NAME="dfda-node-search-user" # Choose a name
+    export SERVICE_ACCOUNT_EMAIL="${SERVICE_ACCOUNT_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
+    export KEY_FILE_PATH="./${SERVICE_ACCOUNT_NAME}-key.json"
+
+    # Set the active project for gcloud commands
+    gcloud config set project ${PROJECT_ID}
+    ```
+
+2.  **Enable APIs:**
+    ```bash
+    gcloud services enable discoveryengine.googleapis.com --project=${PROJECT_ID}
+    ```
+
+3.  **Create Service Account:**
+    ```bash
+    gcloud iam service-accounts create ${SERVICE_ACCOUNT_NAME} \
+        --display-name="DFDA Node Vertex AI Search User" \
+        --project=${PROJECT_ID}
+    ```
+
+4.  **Grant IAM Role:**
+    ```bash
+    # roles/discoveryengine.user includes discoveryengine.conversations.converse
+    gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+        --member="serviceAccount:${SERVICE_ACCOUNT_EMAIL}" \
+        --role="roles/discoveryengine.user"
+    ```
+
+5.  **Create and Download Key:**
+    ```bash
+    gcloud iam service-accounts keys create ${KEY_FILE_PATH} \
+        --iam-account=${SERVICE_ACCOUNT_EMAIL} \
+        --project=${PROJECT_ID}
+    echo "Service Account key saved to ${KEY_FILE_PATH}"
+    echo "IMPORTANT: Secure this key file and do NOT commit it!"
+    ```
+
+6.  **Configure Vercel:** Add `GOOGLE_CLOUD_PROJECT_ID` and `GOOGLE_APPLICATION_CREDENTIALS` (pasting the JSON key content) to your Vercel Environment Variables as described in the "Vercel Deployment" section above.
+
 ## 2. Overall Architecture
 
 The ecosystem consists of several key components within a monorepo (plus external marketing site if desired later):
