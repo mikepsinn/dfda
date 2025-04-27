@@ -5,13 +5,15 @@ import { logger } from "@/lib/logger";
 import { createClient } from "@/utils/supabase/server"; // Correct import
 // import { cookies } from "next/headers"; // No longer needed here
 import type { Database } from "@/lib/database.types";
+import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'; // Import category IDs
 
 // Define the structure for search results, aligning with SearchModal
 export interface SearchResult {
-  id: string;
+  id: string; // Can be global_variable_id or user_variable_id depending on context
   name: string;
   href: string;
-  category: "Global Variables" | "My Variables";
+  category: "Global Variables" | "My Variables"; // Category for display grouping
+  variableCategoryId?: string; // Store the category ID if needed later
 }
 
 type GlobalVar = Database["public"]["Tables"]["global_variables"]["Row"];
@@ -21,11 +23,29 @@ type UserVarJoin = {
   global_variable_id: string;
   user_id: string;
   global_variables: {
-    id: string;
+    id: string; // global_variable id
     name: string;
-    // Include other necessary fields from global_variables if needed for the link
+    variable_category_id: string; // Added category ID
   } | null;
 };
+
+// Helper function to determine the correct href based on variable category
+function getHrefForVariable(id: string, categoryId: string | undefined): string {
+  switch (categoryId) {
+    case VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY:
+      return `/conditions/${id}`;
+    case VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS:
+      // This category covers treatments, food, drink, supplements, etc.
+      // Mapping all to /treatments/ for now, based on existing routes.
+      return `/treatments/${id}`;
+    // Add more cases here for other specific category routes if needed
+    // e.g., case VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR: return `/activities/${id}`;
+    default:
+      logger.warn("getHrefForVariable: Unmapped category ID, using default /variables/ path", { id, categoryId });
+      // Fallback for unmapped categories or if categoryId is missing
+      return `/variables/${id}`;
+  }
+}
 
 /**
  * Searches variables based on a query string.
@@ -52,7 +72,7 @@ export async function searchVariablesAction(
     // Using ilike for case-insensitive search
     const globalVariablesQuery = supabase
       .from("global_variables")
-      .select("id, name") // Select only needed fields
+      .select("id, name, variable_category_id") // Select category ID
       .ilike("name", `%${searchTerm}%`)
       .limit(10); // Limit results
 
@@ -62,12 +82,13 @@ export async function searchVariablesAction(
       logger.error("searchVariablesAction: Error fetching global variables", { error: globalError });
       // Decide if you want to throw or return partial/empty results
     } else if (globalVars) {
-      globalResults = globalVars.map((variable: Pick<GlobalVar, 'id' | 'name'>) => ({
+      globalResults = globalVars.map((variable: Pick<GlobalVar, 'id' | 'name' | 'variable_category_id'>) => ({
         id: variable.id,
         name: variable.name,
-        // TODO: Determine the correct href structure, maybe based on a slug?
-        href: `/variables/${variable.id}`, // Placeholder href
+        // Generate href based on the category ID
+        href: getHrefForVariable(variable.id, variable.variable_category_id),
         category: "Global Variables",
+        variableCategoryId: variable.variable_category_id,
       }));
     }
 
@@ -79,10 +100,10 @@ export async function searchVariablesAction(
           id,
           global_variable_id,
           user_id,
-          global_variables ( id, name )
+          global_variables!inner( id, name, variable_category_id ) 
         `)
         .eq("user_id", userId)
-        .ilike("global_variables.name", `%${searchTerm}%`)
+        .ilike("global_variables.name", `%${searchTerm}%`) // Filter on joined table
         .limit(5);
 
       const { data: fetchedUserVars, error: userError } = await userVariablesQuery;
@@ -90,14 +111,19 @@ export async function searchVariablesAction(
       if (userError) {
         logger.error("searchVariablesAction: Error fetching user variables", { error: userError });
       } else if (fetchedUserVars) {
-        userVars = fetchedUserVars;
+        // Correct type should be inferred now if query is valid
+        userVars = fetchedUserVars; 
         userResults = userVars
-          .filter((uv) => uv.global_variables)
+          .filter((uv): uv is UserVarJoin & { global_variables: NonNullable<UserVarJoin['global_variables']> } => !!uv.global_variables) // Type guard
           .map((userVariable) => ({
-            id: userVariable.id,
-            name: userVariable.global_variables!.name,
-            href: `/patient/user-variables/${userVariable.id}`,
-            category: "My Variables",
+            // NOTE: The 'id' here is the user_variable ID, but the link should probably go
+            // to the underlying global variable's page. We use the global ID for the href.
+            id: userVariable.global_variables.id, // Using global ID for linking consistency
+            name: userVariable.global_variables.name,
+            // Use the category ID from the joined global_variables
+            href: getHrefForVariable(userVariable.global_variables.id, userVariable.global_variables.variable_category_id),
+            category: "My Variables", // Display category
+            variableCategoryId: userVariable.global_variables.variable_category_id,
           }));
       }
     }

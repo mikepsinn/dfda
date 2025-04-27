@@ -7,7 +7,7 @@ import type { NavItem } from './types/navigation';
 export interface GeneratedNavTree {
   readonly 'admin': NavItem;
   readonly 'conditions': NavItem;
-  readonly 'conditions_conditionid_trials': NavItem;
+  readonly 'conditions_globalvariableid_trials': NavItem;
   readonly 'contact': NavItem;
   readonly 'developer': NavItem;
   readonly 'developers': NavItem;
@@ -51,7 +51,8 @@ export interface GeneratedNavTree {
   readonly 'root': NavItem;
   readonly 'select_role': NavItem;
   readonly 'terms': NavItem;
-  readonly 'treatments_id': NavItem;
+  readonly 'treatments': NavItem;
+  readonly 'treatments_globalvariableid': NavItem;
   readonly 'user_profile': NavItem;
 }
 // --- Generated Interface --- END
@@ -76,10 +77,10 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View available conditions.",
     "emoji": "⚕️"
   },
-  "conditions_conditionid_trials": {
-    "title": "Trials",
-    "href": "/conditions/[conditionId]/trials",
-    "description": "View trials for a specific condition.",
+  "conditions_globalvariableid_trials": {
+    "title": "Condition Trials",
+    "href": "/conditions/[globalVariableId]/trials",
+    "description": "View and manage trials related to a specific condition.",
     "emoji": "🧪"
   },
   "contact": {
@@ -334,11 +335,17 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View our terms of service.",
     "emoji": "📜"
   },
-  "treatments_id": {
-    "title": "Treatment Details",
-    "href": "/treatments/[id]",
-    "description": "View treatment details.",
-    "emoji": "ℹ️"
+  "treatments": {
+    "title": "Treatments",
+    "href": "/treatments",
+    "description": "View and manage available treatments.",
+    "emoji": "💊"
+  },
+  "treatments_globalvariableid": {
+    "title": "Dynamic Treatment",
+    "href": "/treatments/[globalVariableId]",
+    "description": "View and manage a specific treatment identified by its ID.",
+    "emoji": "🔎"
   },
   "user_profile": {
     "title": "User Profile",
