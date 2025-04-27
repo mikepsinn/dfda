@@ -1,7 +1,7 @@
 'use server';
 
-import { ConversationalSearchServiceClient, protos } from '@google-cloud/discoveryengine';
-import { env } from '@/lib/env'; // Ensure GOOGLE_APPLICATION_CREDENTIALS or ADC is set
+import { GoogleGenAI, HarmCategory, HarmBlockThreshold, Tool } from '@google/genai';
+import { env } from '@/lib/env'; 
 import { logger } from '@/lib/logger';
 
 const LOG_PREFIX = '[google-grounded-search]';
@@ -10,127 +10,128 @@ const LOG_PREFIX = '[google-grounded-search]';
 export interface GroundedSearchResult {
   answer: string;
   citations: {
-    title: string;
+    title?: string; // Title might not always be present
     url: string;
-    startIndex?: number; // Optional: if API provides inline citation positions
-    endIndex?: number;   // Optional: if API provides inline citation positions
+    // Start/end index might not be directly available in this API response structure
   }[];
+  searchQueries?: string[]; // Add search queries used
+  renderedContent?: string; // HTML content for Search Suggestions
 }
 
-// TODO: Update with your actual Project ID and Location
-const GCP_PROJECT_ID = env.GOOGLE_CLOUD_PROJECT_ID; // Assumes you add this to your env schema
-const GCP_LOCATION = 'global'; // Or your specific location like 'us-central1'
-// For grounding on Google Search, we typically use a default datastore ID provided by Google
-const DATA_STORE_ID = 'google-search'; // This might vary, check Vertex AI Search docs/console
+// Use the GOOGLE_GENERATIVE_AI_API_KEY from environment
+const API_KEY = env.GOOGLE_GENERATIVE_AI_API_KEY;
+// Model compatible with the genai SDK and grounding tool
+const MODEL_ID = 'gemini-2.5-flash-preview-04-17'; 
 
-// Instantiate the client
-// Ensure your environment provides credentials (e.g., GOOGLE_APPLICATION_CREDENTIALS)
-const searchClient = new ConversationalSearchServiceClient();
+// Instantiate the Google AI client
+if (!API_KEY) {
+  logger.error(`${LOG_PREFIX} GOOGLE_GENERATIVE_AI_API_KEY is not configured.`);
+  // Optional: Throw an error or handle appropriately if key is essential at module load
+}
+const genAI = new GoogleGenAI({ apiKey: API_KEY || '' }); // Pass API key in options object
+
+// Define the grounding tool configuration using Google Search
+// IMPORTANT: Use 'googleSearch' not 'googleSearchRetrieval' for @google/genai
+const tools: Tool[] = [
+  { googleSearch: {} }, 
+];
+
+// Safety settings (optional, adjust as needed)
+const safetySettings = [
+  { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+  { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+  { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+  { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE },
+];
 
 /**
- * Generates a grounded answer using Vertex AI Search with Google Search as the source.
+ * Generates a grounded answer using the Google AI SDK (@google/genai) with Google Search as a tool.
  * @param query The question/topic to search for (e.g., the treatment name).
  * @returns A promise resolving to the answer and citations, or null on error.
  */
 export async function getGroundedAnswerAction(query: string): Promise<GroundedSearchResult | null> {
-  logger.info(`${LOG_PREFIX} Getting grounded answer for query:`, { query });
+  logger.info(`${LOG_PREFIX} Getting grounded answer for query via @google/genai:`, { query });
 
-  if (!GCP_PROJECT_ID) {
-    logger.error(`${LOG_PREFIX} GOOGLE_CLOUD_PROJECT_ID is not configured in environment variables.`);
+  // --- Start Debug Logging ---
+  logger.debug(`${LOG_PREFIX} Using Model ID:`, { modelId: MODEL_ID });
+  logger.debug(`${LOG_PREFIX} GOOGLE_GENERATIVE_AI_API_KEY is set:`, { isSet: !!API_KEY });
+  // --- End Debug Logging ---
+
+  if (!API_KEY) {
+    logger.error(`${LOG_PREFIX} GOOGLE_GENERATIVE_AI_API_KEY is not configured.`);
     return null;
   }
-
   if (!query) {
     logger.warn(`${LOG_PREFIX} Query is empty.`);
     return null;
   }
 
-  const request = {
-    servingConfig: searchClient.projectLocationDataStoreServingConfigPath(
-      GCP_PROJECT_ID,
-      GCP_LOCATION,
-      DATA_STORE_ID,
-      'default_config' // Default config is usually sufficient
-    ),
-    query: { query },
-    // Specify the model to use for generation (e.g., a Gemini model)
-    model: {
-        model: `projects/${GCP_PROJECT_ID}/locations/${GCP_LOCATION}/collections/default_collection/engines/gemini-1.5-pro-001`,
-    },
-    // Configure grounding to use Google Search
-    groundingSpec: {
-      groundingConfig: {
-        sources: [{ source: 'GOOGLE_SEARCH' }],
-      },
-    },
-    // Optional: Configure summary and citation settings
-    summarySpec: {
-      summaryResultCount: 5, // Number of results to base summary on
-      includeCitations: true, // Request citation markers if available
-    },
-  };
-
   try {
-    logger.debug(`${LOG_PREFIX} Sending request to Vertex AI Search:`, { request });
-    
-    // Await the result directly
-    const result = await searchClient.converseConversation({
-      name: searchClient.projectLocationDataStoreConversationPath(
-        GCP_PROJECT_ID,
-        GCP_LOCATION,
-        DATA_STORE_ID,
-        '-' // Use '-' for auto-creating a conversation ID
-      ),
-      // Structure query to match ITextInput: { input: string }
-      query: { input: request.query.query }, 
-      servingConfig: request.servingConfig,
-      summarySpec: request.summarySpec,
-      // Remove groundingSpec here if it's not part of the main request object
+    // Select the generative model
+    // @ts-ignore - Linter seems confused about this method's existence
+    const model = genAI.getGenerativeModel({
+      model: MODEL_ID,
+      safetySettings,
+      tools, // Pass the grounding tool config here
     });
-    logger.info(`${LOG_PREFIX} Received response from Vertex AI Search.`);
 
-    // Explicitly type the response object extracted from the result array
-    const response = result[0] as protos.google.cloud.discoveryengine.v1.IConverseConversationResponse;
+    const result = await model.generateContent(query);
+    const response = result.response;
 
-    if (!response || !response.reply?.summary) {
-      logger.warn(`${LOG_PREFIX} No summary found in Vertex AI response or invalid response structure.`);
+    logger.info(`${LOG_PREFIX} Received response from @google/genai API.`);
+
+    if (!response || !response.candidates?.length || !response.candidates[0].content?.parts?.length) {
+      logger.warn(`${LOG_PREFIX} No valid candidates or content found in @google/genai response.`, { response });
       return null;
     }
 
-    const summary = response.reply.summary;
-    const answer = summary.summaryText || 'No answer generated.';
+    const candidate = response.candidates[0];
+    const answer = candidate.content.parts.map(part => part.text).join('\n') || 'No answer generated.'; // Join parts if multiple
 
-    // Process citations - structure depends on API response
-    // This assumes citations are linked via reply.searchResults
-    const citations: GroundedSearchResult['citations'] = response.searchResults
-      ?.map(result => {
-        if (result.document?.derivedStructData?.fields?.link && result.document?.derivedStructData?.fields?.title) {
-          return {
-            url: result.document.derivedStructData.fields.link.stringValue || '#',
-            title: result.document.derivedStructData.fields.title.stringValue || 'Untitled',
-            // TODO: Check if summary.citationMetadata provides inline indices
-            // startIndex: ...,
-            // endIndex: ...,
-          };
-        }
-        return null;
-      })
-      .filter((c): c is GroundedSearchResult['citations'][number] => c !== null) ?? [];
+    const groundingMetadata = candidate.groundingMetadata;
+    logger.debug(`${LOG_PREFIX} Received groundingMetadata:`, { groundingMetadata }); 
+    const citations: GroundedSearchResult['citations'] = [];
 
-     // Alternative/Additional: Check summary.citationMetadata if available - REMOVED as type doesn't match
-     /* 
-     if (summary.citationMetadata?.citations) {
-         // Process citations based on this structure if it's more suitable
-         // This structure might provide startIndex/endIndex for inline markers
-         // See: https://www.googlecloudcommunity.com/gc/AI-ML/Vertex-AI-Search-with-citations/m-p/815266
-     }
-     */
+    // Citation processing based on @google/genai structure (may differ)
+    // Check groundingAttributions or groundingChunks based on observed metadata
+    const attributions = groundingMetadata?.groundingAttributions ?? [];
+    attributions.forEach(att => {
+      if (att.web?.uri) { 
+          citations.push({
+              url: att.web.uri,
+              title: att.web.title || 'Untitled'
+          });
+      } else if (att.retrievedContext?.uri) { 
+           citations.push({
+              url: att.retrievedContext.uri,
+              title: att.retrievedContext.title || 'Untitled'
+          });
+      }
+  });
 
-    logger.info(`${LOG_PREFIX} Successfully processed grounded answer and ${citations.length} citations.`);
-    return { answer, citations };
+    const searchQueries = groundingMetadata?.webSearchQueries;
+    // Get rendered content for Search Suggestions display
+    const renderedContent = groundingMetadata?.searchEntryPoint?.renderedContent;
 
-  } catch (error) {
-    logger.error(`${LOG_PREFIX} Error calling Vertex AI Search API:`, { error });
+    logger.info(`${LOG_PREFIX} Successfully processed grounded answer and ${citations.length} citations.`, { searchQueries });
+    return { answer, citations, searchQueries, renderedContent };
+
+  } catch (err: any) { 
+    const logDetails: Record<string, any> = {};
+    let errorMessage = "Error calling Google AI (@google/genai) API.";
+
+    // Error structure might be simpler with this SDK
+    logDetails.message = err.message;
+    logDetails.stack = err.stack?.split('\n').map(line => line.trim());
+    errorMessage = `${errorMessage} Message: ${err.message}`;
+
+    // Include response details if available (often attached to the error object)
+    if (err.response) {
+        logDetails.responseStatus = err.response.status;
+        logDetails.responseData = err.response.data; 
+    }
+
+    logger.error(`${LOG_PREFIX} ${errorMessage}`, logDetails);
     return null;
   }
 } 
