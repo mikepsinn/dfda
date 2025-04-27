@@ -470,11 +470,11 @@ export function ReminderScheduler({
             <Label htmlFor="is-active">Reminder Active</Label>
         </div>
 
-        {/* Default Value (optional) */}
-        {unitName && (
+        {/* Default Value (optional) - Conditionally render based on unitName */}
+        {unitName && unitName !== 'bool' && (
           <div className="grid grid-cols-3 gap-4 items-center">
               <Label htmlFor="default-value" className="col-span-1">
-                Default {variableName ? 'Dosage for ' + variableName : 'Value'}
+                Default {variableName ? 'Value for ' + variableName : 'Value'} 
               </Label>
               <div className="col-span-2 flex items-center gap-2">
                 <Input
