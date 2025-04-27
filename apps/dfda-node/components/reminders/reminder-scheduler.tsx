@@ -13,6 +13,7 @@ import { Switch } from "@/components/ui/switch"
 import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
 import { TimeSelector } from "./time-selector" // Use local import
+import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'; // Import category IDs
 // import { TimeField } from "@/components/ui/time-field" // Commented out - Component not found
 // import { type RRuleOption, getRRuleOptions } from "@/lib/rrule-options" // Commented out - Module not found
 
@@ -33,6 +34,7 @@ interface ReminderSchedulerProps {
   userTimezone: string; // <-- Accept user timezone as prop
   unitName?: string; // Optional unit for the default value
   variableName?: string; // Name of the variable
+  variableCategoryId?: string; // Add category ID prop
 }
 
 export function ReminderScheduler({ 
@@ -40,7 +42,8 @@ export function ReminderScheduler({
   onChange, 
   userTimezone,
   unitName,
-  variableName
+  variableName,
+  variableCategoryId // Receive category ID prop
 }: ReminderSchedulerProps) {
   const [freq, setFreq] = useState<number>(RRule.DAILY); // Default to Daily
   const [interval, setInterval] = useState<number>(1);
@@ -222,10 +225,11 @@ export function ReminderScheduler({
             </Select>
         </div>
 
-        {/* Interval */}
-        <div className="grid grid-cols-3 gap-4 items-center">
-            <Label htmlFor="interval" className="col-span-1">Repeat Every</Label>
-            <div className="col-span-2 flex items-center gap-2">
+        {/* Interval - Conditionally render based on category */}
+        {variableCategoryId !== VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY && (
+          <div className="grid grid-cols-3 gap-4 items-center">
+              <Label htmlFor="interval" className="col-span-1">Repeat Every</Label>
+              <div className="col-span-2 flex items-center gap-2">
                 <Input
                     id="interval"
                     type="number"
@@ -253,8 +257,9 @@ export function ReminderScheduler({
                     {freq === RRule.WEEKLY && (interval === 1 ? "week" : "weeks")}
                     {freq === RRule.MONTHLY && (interval === 1 ? "month" : "months")}
                 </span>
-            </div>
-        </div>
+              </div>
+          </div>
+        )}
 
         {/* Repeat On (Weekly) */}
         {freq === RRule.WEEKLY && (

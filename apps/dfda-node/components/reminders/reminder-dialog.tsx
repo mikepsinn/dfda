@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useToast } from "@/components/ui/use-toast"
@@ -24,6 +24,7 @@ export type ReminderDialogProps = {
     existingSchedule: ReminderSchedule | null; // Schedule to edit, or null for new
     userTimezone: string;
     unitName: string; // Add unit information
+    variableCategoryId?: string; // Add category ID prop
 };
 
 export function ReminderDialog({ 
@@ -34,7 +35,8 @@ export function ReminderDialog({
     variableName, 
     existingSchedule, 
     userTimezone,
-    unitName
+    unitName,
+    variableCategoryId // Receive category ID prop
 }: ReminderDialogProps) {
     const [isLoading, setIsLoading] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -119,19 +121,25 @@ export function ReminderDialog({
     }
 
     // Map ReminderSchedule (DB format) to ReminderScheduleData (Scheduler component format)
-    const mapToSchedulerData = (schedule: ReminderSchedule | null): Partial<ReminderScheduleData> | undefined => {
-        if (!schedule) return undefined;
-        return {
-            rruleString: schedule.rrule,
-            timeOfDay: schedule.time_of_day,
-            startDate: schedule.start_date ? new Date(schedule.start_date) : new Date(), // Handle potential null/parse
-            endDate: schedule.end_date ? new Date(schedule.end_date) : null,
-            isActive: schedule.is_active,
-            default_value: schedule.default_value, // Include default_value
+    // Memoize this calculation so the object reference is stable unless existingSchedule changes
+    const initialSchedulerData = useMemo(() => {
+        const mapToSchedulerData = (schedule: ReminderSchedule | null): Partial<ReminderScheduleData> | undefined => {
+            if (!schedule) return undefined;
+            // Ensure timeOfDay is formatted correctly here too, just in case
+            const timeOfDay = schedule.time_of_day ? schedule.time_of_day.substring(0, 5) : "09:00";
+            return {
+                rruleString: schedule.rrule,
+                timeOfDay: timeOfDay,
+                startDate: schedule.start_date ? new Date(schedule.start_date) : new Date(), // Handle potential null/parse
+                endDate: schedule.end_date ? new Date(schedule.end_date) : null,
+                isActive: schedule.is_active,
+                default_value: schedule.default_value, // Include default_value
+            };
         };
-    };
+        return mapToSchedulerData(existingSchedule);
+    }, [existingSchedule]); // Dependency array includes existingSchedule
     
-    const initialSchedulerData = mapToSchedulerData(existingSchedule);
+    // const initialSchedulerData = mapToSchedulerData(existingSchedule); // Old non-memoized version
 
     return (
         <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()} >
@@ -150,6 +158,7 @@ export function ReminderDialog({
                         userTimezone={userTimezone}
                         unitName={unitName}
                         variableName={variableName}
+                        variableCategoryId={variableCategoryId} // Pass category ID down to scheduler
                     />
                 }
                 <DialogFooter className='flex justify-between w-full pt-4'>
