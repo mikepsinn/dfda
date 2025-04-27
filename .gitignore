@@ -42,3 +42,4 @@ test-results/*
 volumes/
 test-results/
 playwright-report/
+apps/dfda-node/gcp-service-account-key.json
