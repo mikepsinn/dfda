@@ -111,6 +111,7 @@ export function ReminderListForUserVariable({
         existingSchedule={selectedSchedule}
         userTimezone={userTimezone}
         unitName={unitName}
+        variableCategoryId={variableCategoryId}
       />
     </div>
   )
