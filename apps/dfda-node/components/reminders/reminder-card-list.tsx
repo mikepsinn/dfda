@@ -12,7 +12,7 @@ interface ReminderCardListProps {
 /**
  * Renders a grid of ReminderCard components based on a list of schedules.
  */
-export function ReminderCardList({ schedules, unitName /*, onClick */ }: ReminderCardListProps) {
+export function ReminderCardList({ schedules, unitName, onClick }: ReminderCardListProps) {
     if (!schedules || schedules.length === 0) {
         // Should ideally be handled by the parent component, but added as a fallback.
         return null; 
@@ -25,6 +25,7 @@ export function ReminderCardList({ schedules, unitName /*, onClick */ }: Reminde
               key={schedule.id}
               schedule={schedule}
               unitName={unitName}
+              onClick={onClick ? () => onClick(schedule.id) : undefined}
             />
           ))}
         </div>

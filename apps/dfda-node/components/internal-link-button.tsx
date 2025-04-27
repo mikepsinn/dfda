@@ -1,5 +1,6 @@
 import type React from 'react';
-import { InternalLink } from './internal-link'; // Use the type-safe link
+// import { InternalLink } from './internal-link'; // Don't need InternalLink for this approach
+import Link from 'next/link'; // Import next/link directly
 import { Button, type ButtonProps } from '@/components/ui/button';
 import {
   Tooltip,
@@ -11,51 +12,99 @@ import { navigationTreeObject } from '@/lib/generated-nav-tree';
 import type { GeneratedNavTree } from '@/lib/generated-nav-tree';
 import { logger } from '@/lib/logger';
 
-// Props: navKey + ButtonProps (excluding children, as content is generated)
+// Function to interpolate params into href template
+function interpolateHref(template: string, params: Record<string, string | number>): string {
+  let href = template;
+  const missingParams: string[] = [];
+  const usedParams = new Set<string>();
+
+  // Find all placeholders like [paramName]
+  const placeholders = template.match(/\[(.*?)\]/g) || [];
+
+  placeholders.forEach(placeholder => {
+      const paramName = placeholder.slice(1, -1); // Remove brackets
+      if (params.hasOwnProperty(paramName)) {
+          href = href.replace(placeholder, String(params[paramName]));
+          usedParams.add(paramName);
+      } else {
+          missingParams.push(paramName);
+      }
+  });
+
+  if (missingParams.length > 0) {
+      logger.warn(`[interpolateHref] Missing params for template '${template}': ${missingParams.join(', ')}`, { params });
+      // Optionally return template or throw error? Returning partially interpolated for now.
+  }
+
+  // Check for unused params
+  const unusedParams = Object.keys(params).filter(p => !usedParams.has(p));
+  if (unusedParams.length > 0) {
+       logger.warn(`[interpolateHref] Unused params provided for template '${template}': ${unusedParams.join(', ')}`, { params });
+  }
+
+  return href;
+}
+
+
+// Props: navKey is mandatory, params optional. ButtonProps without children/asChild.
 type InternalLinkButtonProps = {
   navKey: keyof GeneratedNavTree;
-} & Omit<ButtonProps, 'children' | 'asChild'>; // Omit children and asChild
+  params?: Record<string, string | number>; // Optional params object
+} & Omit<ButtonProps, 'children' | 'asChild'>;
 
 /**
- * Renders a Button component that links to an internal route.
- * Automatically uses the title and emoji from the generated navigation tree.
- * Displays the description in a tooltip on hover if available.
+ * Renders a Button that links to an internal route defined in generated-nav-tree.
+ * Automatically uses title/emoji. Handles dynamic routes via the `params` prop.
  *
- * @param navKey The key corresponding to the desired route in GeneratedNavTree.
- * @param ...rest Other props compatible with the Button component (variant, size, etc.).
+ * @param navKey Key for the route in GeneratedNavTree.
+ * @param params Optional object with values for dynamic segments (e.g., { id: 123 }).
+ * @param ...rest Other ButtonProps (variant, size, etc.).
  */
-export function InternalLinkButton({ navKey, variant, size, className, ...rest }: InternalLinkButtonProps) {
+export function InternalLinkButton({ navKey, params, variant, size, className, ...rest }: InternalLinkButtonProps) {
   const navItem = navigationTreeObject[navKey];
 
   if (!navItem) {
     logger.error(`[InternalLinkButton] Invalid or missing navKey provided: ${String(navKey)}`);
-    // Render a disabled button or nothing
-    return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Invalid Link</Button>;
+    return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Invalid Link Key</Button>;
   }
 
+  // Determine the final href
+  let finalHref = navItem.href;
+  if (params) {
+      finalHref = interpolateHref(navItem.href, params);
+  }
+
+  // Check if the base href template looks like a dynamic route if params were NOT provided
+  if (!params && navItem.href.includes('[')) {
+       logger.warn(`[InternalLinkButton] navKey '${String(navKey)}' seems to require params but none were provided. Href: ${navItem.href}`);
+      // Optional: Disable button or return error state?
+       return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Missing Params</Button>;
+  }
+
+  // Button Content (same as before)
   const buttonContent = (
     <>
-      {/* Render emoji only if it exists and is not an empty string */} 
       {navItem.emoji && navItem.emoji.trim() && <span className="mr-2">{navItem.emoji}</span>}
       {navItem.title}
     </>
   );
 
-  // Only wrap with Tooltip if description exists and is not empty
+  // Link Component (using next/link directly)
+  const LinkComponent = (
+      <Link href={finalHref} passHref legacyBehavior={false}>
+          <Button variant={variant} size={size} className={className} {...rest}>
+              {buttonContent}
+          </Button>
+      </Link>
+  );
+
+  // Tooltip Logic (same as before, wrapping the LinkComponent)
   if (navItem.description && navItem.description.trim()) {
     return (
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            {/* Use InternalLink for the actual link element. 
-                passHref and legacyBehavior=false are often needed for compatibility 
-                with component libraries like Shadcn UI Button when using `asChild`. */}
-            <InternalLink navKey={navKey} passHref legacyBehavior={false}> 
-               {/* Apply button styles/props to the link via asChild pattern */}
-               <Button variant={variant} size={size} className={className} {...rest}>
-                   {buttonContent}
-               </Button>
-            </InternalLink>
+            {LinkComponent}
           </TooltipTrigger>
           <TooltipContent>
             <p>{navItem.description}</p>
@@ -65,12 +114,6 @@ export function InternalLinkButton({ navKey, variant, size, className, ...rest }
     );
   } else {
     // Render without Tooltip
-    return (
-      <InternalLink navKey={navKey} passHref legacyBehavior={false}>
-          <Button variant={variant} size={size} className={className} {...rest}>
-              {buttonContent}
-          </Button>
-      </InternalLink>
-    );
+    return LinkComponent;
   }
 } 

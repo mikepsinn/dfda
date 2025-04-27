@@ -58,7 +58,7 @@ export function ReminderDialog({
     const handleScheduleChange = useCallback((newData: Omit<ReminderScheduleData, 'timezone'>) => {
         logger.debug('Schedule data changed in dialog', { userVariableId });
         setCurrentScheduleData(newData);
-    }, [userVariableId]);
+    }, [userVariableId]); // Add userVariableId dependency
 
     const handleSave = async () => {
         if (!currentScheduleData) {
@@ -102,7 +102,7 @@ export function ReminderDialog({
         setIsDeleting(true);
         logger.warn('Attempting to delete schedule', { scheduleId: existingSchedule.id });
         try {
-            const result = await deleteReminderScheduleAction(existingSchedule.id, userId);
+            const result = await deleteReminderScheduleAction(existingSchedule.id, userId, userVariableId);
             if (result.success) {
                 toast({ title: "Success", description: 'Reminder schedule deleted.' });
                 onClose(true); // Close dialog and signal refresh

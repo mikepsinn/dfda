@@ -2,12 +2,19 @@
 
 import { createClient } from "@/utils/supabase/server"
 import { logger } from "@/lib/logger"
-import type { /*Database, Tables,*/ TablesInsert } from "@/lib/database.types"
+import type { /*Database, Tables,*/ TablesInsert, Database } from "@/lib/database.types"
 import { revalidatePath } from "next/cache"
+import { unstable_noStore as noStore } from 'next/cache'
 
 // Types
 export type MeasurementInsert = TablesInsert<"measurements">
 export type UserVariableInsert = TablesInsert<"user_variables">
+export type Measurement = Database["public"]["Tables"]["measurements"]["Row"]
+
+// New type including the related unit data
+export type MeasurementWithUnits = Measurement & {
+  units: { abbreviated_name: string } | null;
+}
 
 // Input type for the action - Renamed back and added reminderNotificationId
 export type LogMeasurementInput = {
@@ -173,5 +180,46 @@ export async function logMeasurementAction(
         logger.error("Failed in logMeasurementAction", { input, error: error instanceof Error ? error.message : String(error) });
         const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
         return { success: false, error: errorMessage };
+    }
+}
+
+/**
+ * Fetches all measurements for a specific user variable, ordered by start time descending.
+ */
+export async function getMeasurementsForUserVariableAction(
+    userVariableId: string, 
+    userId: string,
+    limit: number = 50 // Default limit, adjust as needed
+): Promise<{ success: boolean; data?: Measurement[]; error?: string }> {
+    noStore();
+    logger.info("getMeasurementsForUserVariableAction: Called", { userVariableId, userId, limit });
+
+    if (!userVariableId || !userId) {
+        logger.warn("getMeasurementsForUserVariableAction: Missing IDs");
+        return { success: false, error: "Invalid request parameters." };
+    }
+
+    try {
+        const supabase = await createClient();
+        const { data, error } = await supabase
+            .from("measurements")
+            .select("*, units ( abbreviated_name )") // Select all measurement fields + unit name
+            .eq("user_variable_id", userVariableId)
+            .eq("user_id", userId)
+            .is("deleted_at", null)
+            .order("start_at", { ascending: false })
+            .limit(limit);
+
+        if (error) {
+            logger.error("getMeasurementsForUserVariableAction: Error fetching measurements", { userId, userVariableId, error });
+            return { success: false, error: error.message };
+        }
+
+        logger.info("getMeasurementsForUserVariableAction: Fetched measurements successfully", { userId, userVariableId, count: data?.length ?? 0 });
+        return { success: true, data: data || [] };
+
+    } catch (error: any) {
+        logger.error("getMeasurementsForUserVariableAction: Unhandled error", { userId, userVariableId, error });
+        return { success: false, error: "An unexpected error occurred." };
     }
 } 
