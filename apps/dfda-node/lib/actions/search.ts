@@ -93,10 +93,10 @@ export async function searchVariablesAction(
         userVars = fetchedUserVars;
         userResults = userVars
           .filter((uv) => uv.global_variables)
-          .map((variable) => ({
-            id: variable.id,
-            name: variable.global_variables!.name,
-            href: `/dashboard/my-variables/${variable.id}`,
+          .map((userVariable) => ({
+            id: userVariable.id,
+            name: userVariable.global_variables!.name,
+            href: `/patient/user-variables/${userVariable.id}`,
             category: "My Variables",
           }));
       }
