@@ -9,6 +9,8 @@ import { logger } from '@/lib/logger'
 export type Treatment = Database['public']['Tables']['global_treatments']['Row'] & {
   name: string
   description: string | null
+  emoji: string | null
+  image_url: string | null
 }
 export type TreatmentInsert = Database['public']['Tables']['global_treatments']['Insert']
 export type TreatmentUpdate = Database['public']['Tables']['global_treatments']['Update']
@@ -23,10 +25,12 @@ export async function getTreatmentsAction(): Promise<Treatment[]> {
       *,
       global_variables!inner (
         name,
-        description
+        description,
+        emoji,
+        image_url
       )
     `)
-    .order('name')
+    .order('name', { foreignTable: 'global_variables' })
     .limit(50)
 
   if (response.error) {
@@ -37,7 +41,9 @@ export async function getTreatmentsAction(): Promise<Treatment[]> {
   return response.data.map(treatment => ({
     ...treatment,
     name: treatment.global_variables.name,
-    description: treatment.global_variables.description
+    description: treatment.global_variables.description,
+    emoji: treatment.global_variables.emoji,
+    image_url: treatment.global_variables.image_url
   }))
 }
 
@@ -51,7 +57,9 @@ export async function getTreatmentByIdAction(id: string): Promise<Treatment | nu
       *,
       global_variables!inner (
         name,
-        description
+        description,
+        emoji,
+        image_url
       )
     `)
     .eq('id', id)
@@ -66,7 +74,9 @@ export async function getTreatmentByIdAction(id: string): Promise<Treatment | nu
   return {
     ...treatment,
     name: treatment.global_variables.name,
-    description: treatment.global_variables.description
+    description: treatment.global_variables.description,
+    emoji: treatment.global_variables.emoji,
+    image_url: treatment.global_variables.image_url
   }
 }
 
@@ -80,7 +90,9 @@ export async function searchTreatmentsAction(query: string): Promise<Treatment[]
       *,
       global_variables!inner (
         name,
-        description
+        description,
+        emoji,
+        image_url
       )
     `)
     .textSearch('global_variables.name', query)
@@ -94,7 +106,9 @@ export async function searchTreatmentsAction(query: string): Promise<Treatment[]
   return response.data.map(treatment => ({
     ...treatment,
     name: treatment.global_variables.name,
-    description: treatment.global_variables.description
+    description: treatment.global_variables.description,
+    emoji: treatment.global_variables.emoji,
+    image_url: treatment.global_variables.image_url
   }))
 }
 
@@ -119,7 +133,9 @@ export async function getTreatmentsForConditionAction(conditionId: string): Prom
         dosage_instructions,
         gv:global_variables!inner (
           name,
-          description
+          description,
+          emoji,
+          image_url
         )
       ),
       treatment_ratings!inner(
@@ -166,7 +182,9 @@ export async function getTreatmentsForConditionAction(conditionId: string): Prom
         dosage_instructions: typedItem.treatment.dosage_instructions,
         // Add the fields from the joined global_variables
         name: typedItem.treatment.gv.name,
-        description: typedItem.treatment.gv.description
+        description: typedItem.treatment.gv.description,
+        emoji: typedItem.treatment.gv.emoji,
+        image_url: typedItem.treatment.gv.image_url
       });
     }
   });
@@ -188,7 +206,9 @@ export async function createTreatmentAction(treatment: TreatmentInsert): Promise
       *,
       global_variables!inner (
         name,
-        description
+        description,
+        emoji,
+        image_url
       )
     `)
     .single()
@@ -204,7 +224,9 @@ export async function createTreatmentAction(treatment: TreatmentInsert): Promise
   return {
     ...newTreatment,
     name: newTreatment.global_variables.name,
-    description: newTreatment.global_variables.description
+    description: newTreatment.global_variables.description,
+    emoji: newTreatment.global_variables.emoji,
+    image_url: newTreatment.global_variables.image_url
   }
 }
 
@@ -220,7 +242,9 @@ export async function updateTreatmentAction(id: string, updates: TreatmentUpdate
       *,
       global_variables!inner (
         name,
-        description
+        description,
+        emoji,
+        image_url
       )
     `)
     .single()
@@ -237,7 +261,9 @@ export async function updateTreatmentAction(id: string, updates: TreatmentUpdate
   return {
     ...updatedTreatment,
     name: updatedTreatment.global_variables.name,
-    description: updatedTreatment.global_variables.description
+    description: updatedTreatment.global_variables.description,
+    emoji: updatedTreatment.global_variables.emoji,
+    image_url: updatedTreatment.global_variables.image_url
   }
 }
 
