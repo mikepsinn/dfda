@@ -3,11 +3,14 @@
 import Link from "next/link"
 import Image from "next/image"
 import type { User } from '@supabase/supabase-js'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { Profile } from "@/lib/actions/profiles";
 import { updateUserProfileTimezoneAction } from "@/lib/actions/profiles";
 import { logger } from "@/lib/logger";
 import { type NavItem } from "@/lib/types/navigation";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
+import { Button } from "@/components/ui/button"
+import { SearchModal } from "./SearchModal"
 
 // Import navigation logic and types
 import {
@@ -28,6 +31,8 @@ interface HeaderProps {
 }
 
 export function Header({ initialUser, initialProfile }: HeaderProps) {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   // UseEffect to check and update timezone if needed
   useEffect(() => {
     if (initialUser && initialProfile && !initialProfile.timezone) {
@@ -54,6 +59,18 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
     }
     // Run only when user/profile data potentially changes
   }, [initialUser, initialProfile]); 
+
+  // Add keybinding for search (e.g., Ctrl+K)
+  useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setIsSearchOpen((open) => !open)
+      }
+    }
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
 
   // Determine primary navigation based on user status and profile
   const primaryNavItems: NavItem[] = initialUser
@@ -96,13 +113,29 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
           </div>
         </div>
 
-        {/* User Auth Section (remains on the far right) */}
-        <UserAuthSection 
-          user={initialUser} 
-          primaryNavItems={primaryNavItems} 
-          secondaryNavItems={secondaryNavItems}
-        />
+        {/* Search Button and User Auth Section */}
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsSearchOpen(true)}
+            aria-label="Open search"
+          >
+            <MagnifyingGlassIcon className="h-5 w-5" />
+          </Button>
+          <UserAuthSection 
+            user={initialUser} 
+            primaryNavItems={primaryNavItems} 
+            secondaryNavItems={secondaryNavItems}
+          />
+        </div>
       </div>
+      {/* Render Search Modal */}
+      <SearchModal 
+        isOpen={isSearchOpen} 
+        onClose={() => setIsSearchOpen(false)} 
+        user={initialUser} 
+      />
     </header>
   )
 }

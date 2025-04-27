@@ -8,9 +8,10 @@ import { RRule, rrulestr, Weekday } from 'rrule'
 interface ReminderCardProps {
   schedule: ReminderSchedule
   unitName: string
+  onClick?: () => void;
 }
 
-export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
+export function ReminderCard({ schedule, unitName, onClick }: ReminderCardProps) {
   const formatDays = (days: Weekday[] | number[]) => {
     const dayNames = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
     
@@ -70,7 +71,8 @@ export function ReminderCard({ schedule, unitName }: ReminderCardProps) {
 
   return (
     <Card 
-      className="overflow-hidden hover:bg-muted/50 transition-colors"
+      className={`overflow-hidden hover:bg-muted/50 transition-colors ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={onClick}
     >
       <CardContent className="p-4">
         <div className="flex items-start justify-between">

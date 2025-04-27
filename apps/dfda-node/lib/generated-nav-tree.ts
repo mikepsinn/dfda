@@ -34,6 +34,8 @@ export interface GeneratedNavTree {
   readonly 'patient_treatments_patienttreatmentid_side_effects': NavItem;
   readonly 'patient_trial_details_id': NavItem;
   readonly 'patient_trial_payment_id': NavItem;
+  readonly 'patient_user_variables': NavItem;
+  readonly 'patient_user_variables_uservariableid': NavItem;
   readonly 'privacy': NavItem;
   readonly 'provider': NavItem;
   readonly 'provider_ehr_authorization_patientid': NavItem;
@@ -235,6 +237,18 @@ export const navigationTreeObject: GeneratedNavTree = {
     "href": "/patient/trial-payment/[id]",
     "description": "Manage trial payments.",
     "emoji": "💰"
+  },
+  "patient_user_variables": {
+    "title": "Patient User Variables",
+    "href": "/patient/user-variables",
+    "description": "View and manage patient user variables.",
+    "emoji": "👤"
+  },
+  "patient_user_variables_uservariableid": {
+    "title": "Patient User Variable Details",
+    "href": "/patient/user-variables/[userVariableId]",
+    "description": "View details of a specific patient user variable.",
+    "emoji": "👤"
   },
   "privacy": {
     "title": "Privacy Policy",

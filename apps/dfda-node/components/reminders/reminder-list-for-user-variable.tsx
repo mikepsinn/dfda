@@ -11,16 +11,17 @@ import { VARIABLE_CATEGORIES_DATA } from '@/lib/constants/variable-categories'
 
 interface ReminderListProps {
   userId: string
-  userVariableId: string
+  userVariableId: string // Renamed from variableId
   variableName: string
   unitName: string
   userTimezone: string
   variableCategoryId?: string
 }
 
-export function ReminderListForVariable({
+// Renamed component
+export function ReminderListForUserVariable({ 
   userId, 
-  userVariableId, 
+  userVariableId, // Renamed from variableId
   variableName,
   unitName, 
   userTimezone,
@@ -32,7 +33,8 @@ export function ReminderListForVariable({
   const { 
     schedules, 
     isLoading, 
-  } = useReminderManagement(userId, userVariableId)
+    loadSchedules
+  } = useReminderManagement(userId, userVariableId) // Use userVariableId here
 
   const handleAddClick = () => {
     setSelectedSchedule(null)
@@ -45,13 +47,17 @@ export function ReminderListForVariable({
         setSelectedSchedule(scheduleToEdit)
         setIsDialogOpen(true)
     } else {
+        // Log using logger
         console.error("Could not find schedule to edit with ID:", scheduleId);
     }
   }
 
-  const handleDialogClose = () => {
+  const handleDialogClose = (refresh?: boolean) => {
       setIsDialogOpen(false);
       setSelectedSchedule(null);
+      if (refresh) {
+          loadSchedules();
+      }
   }
 
   // Determine emoji based on variable category
