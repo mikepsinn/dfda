@@ -563,9 +563,9 @@ export type PendingNotificationTask = {
   userVariableId: string;
   variableName: string;
   globalVariableId: string;
-  variableCategory: string | null;
-  unitId: string | null;
-  unitName: string | null;
+  variableCategory: string;
+  unitId: string;
+  unitName: string;
   dueAt: string; // The original notification_trigger_at timestamp
   title: string | null; // From schedule template
   message: string | null; // From schedule template

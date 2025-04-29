@@ -4,11 +4,13 @@ import path from 'path';
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 import fs from 'fs'; // Import Node.js file system module
+import crypto from 'crypto'; // For generating citation IDs from URLs
 import { createClient } from '@supabase/supabase-js'; // Keep for fetching initial predictors
 import {
   generateInterventionSqlData, // Import the renamed function
   // type GeneratedSqlData // Optional: Import type if needed elsewhere
 } from '../lib/ai/generate-intervention-relationships';
+import { getGroundedAnswerAction } from '../lib/actions/google-grounded-search'; // Import the grounding action
 import { logger } from '@/lib/logger';
 import { Database } from '@/lib/database.types';
 import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories';
@@ -62,10 +64,16 @@ VALUES
 `;
 }
 
+// --- Helper to create Citation ID from URL ---
+function createCitationIdFromUrl(url: string): string {
+    const hash = crypto.createHash('sha256').update(url).digest('hex');
+    return `webcite-${hash.substring(0, 16)}`; // Use first 16 chars of hash
+}
+
 
 async function main() {
-  logger.info(`${LOG_PREFIX} Using Citation ID: ${aiCitationId} (for AI model: ${aiModelName})`);
-  logger.info(`${LOG_PREFIX} Generating SQL seed file for ALL '${VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS}' variables.`);
+  logger.info(`${LOG_PREFIX} Using Citation ID for AI Model: ${aiCitationId} (${aiModelName})`);
+  logger.info(`${LOG_PREFIX} Generating SQL seed file for ALL '${VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS}' variables, including grounded citations.`);
 
   // --- Initialize Supabase Client (ONLY for fetching predictors) ---
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -101,6 +109,7 @@ async function main() {
   let overallSuccess = true;
   const allNewVariables: GVInsert[] = [];
   const allNewRelationships: RelInsert[] = [];
+  const webCitationsMap = new Map<string, CitationInsert>(); // Use Map for unique URLs
 
   for (const variable of interventionVariables) {
       logger.info(`${LOG_PREFIX} Processing predictor: ${variable.name} (ID: ${variable.id})...`);
@@ -114,7 +123,7 @@ async function main() {
 
           if (!result.success) {
               overallSuccess = false;
-              logger.error(`${LOG_PREFIX} Failed generation for predictor: ${variable.id}`);
+              logger.error(`${LOG_PREFIX} Failed relationship/outcome generation for predictor: ${variable.id}`);
               if(result.errors) {
                   logger.error(`${LOG_PREFIX} Errors: ${JSON.stringify(result.errors)}`);
               }
@@ -123,14 +132,43 @@ async function main() {
           if (result.data) {
               allNewVariables.push(...result.data.newVariables);
               allNewRelationships.push(...result.data.newRelationships);
-              logger.info(`${LOG_PREFIX} Collected data for predictor: ${variable.id} (Variables: ${result.data.newVariables.length}, Relations: ${result.data.newRelationships.length})`);
+              logger.info(`${LOG_PREFIX} Collected structured data for predictor: ${variable.id} (Variables: ${result.data.newVariables.length}, Relations: ${result.data.newRelationships.length})`);
           } else {
-              logger.warn(`${LOG_PREFIX} No data returned from generation for predictor: ${variable.id}`);
+              logger.warn(`${LOG_PREFIX} No structured data returned for predictor: ${variable.id}`);
           }
 
       } catch (error) {
-          logger.error(`${LOG_PREFIX} Critical script error during generation for predictor ${variable.id}:`, error);
+          logger.error(`${LOG_PREFIX} Critical script error during structured generation for predictor ${variable.id}:`, error);
           overallSuccess = false;
+      }
+
+      // 2. Get Grounded Citations
+      logger.info(`${LOG_PREFIX} Fetching grounded citations for: ${variable.name}...`);
+      try {
+          const groundedResult = await getGroundedAnswerAction(variable.name);
+          if (groundedResult && groundedResult.citations.length > 0) {
+              logger.info(`${LOG_PREFIX} Found ${groundedResult.citations.length} web citations for ${variable.name}.`);
+              groundedResult.citations.forEach(cite => {
+                  if (!webCitationsMap.has(cite.url)) { // Only add if URL is unique
+                      const webCitationId = createCitationIdFromUrl(cite.url);
+                      const webCitationData: CitationInsert = {
+                          id: webCitationId,
+                          type: 'webpage', // Use existing valid type
+                          title: cite.title || `Web Source for ${variable.name}`,
+                          url: cite.url,
+                          retrieved_at: new Date().toISOString(),
+                          // Optional: Extract domain for publisher?
+                          // journal_or_publisher: new URL(cite.url).hostname,
+                      };
+                      webCitationsMap.set(cite.url, webCitationData);
+                  }
+              });
+          } else {
+              logger.warn(`${LOG_PREFIX} No web citations returned by grounding for ${variable.name}.`);
+          }
+      } catch (error) {
+           logger.error(`${LOG_PREFIX} Error fetching grounded citations for ${variable.name}:`, error);
+           // Don't necessarily mark overall run as failed for this, but log it
       }
   }
 
@@ -144,8 +182,8 @@ async function main() {
   const uniqueNewVariables = Array.from(uniqueVariablesMap.values());
   logger.info(`${LOG_PREFIX} Total unique new/referenced outcome variables prepared for SQL: ${uniqueNewVariables.length}`);
 
-  // --- Generate AI Citation Data ---
-  const aiCitationData: CitationInsert = {
+  // --- Prepare AI Model Citation Data ---
+  const aiModelCitationData: CitationInsert = {
       id: aiCitationId,
       type: 'other',
       title: aiCitationTitle,
@@ -154,16 +192,23 @@ async function main() {
       retrieved_at: new Date().toISOString(),
   };
 
+  // --- Prepare Web Citation Data --- 
+  const uniqueWebCitations = Array.from(webCitationsMap.values());
+  logger.info(`${LOG_PREFIX} Total unique web citations prepared for SQL: ${uniqueWebCitations.length}`);
+
   // --- Generate SQL Strings ---
   logger.info(`${LOG_PREFIX} Generating SQL strings...`);
-  let sqlString = `-- AI Generated Relationships Seed File --\n`;
+  let sqlString = `-- AI Generated Relationships and Citations Seed File --\n`;
   sqlString += `-- Generated on: ${new Date().toISOString()} --\n`;
   sqlString += `-- Predictor Category: ${VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS} --\n`;
-  sqlString += `-- AI Model: ${aiModelName} --\n\n`;
+  sqlString += `-- AI Structure Model: ${aiModelName} --\n`;
+  // sqlString += `-- AI Grounding Model: ${MODEL_ID} --\n\n`; // Removed log for unavailable constant
 
-  sqlString += generateSqlInsert('citations', [aiCitationData], 'ON CONFLICT (id) DO NOTHING');
+  sqlString += generateSqlInsert('citations', [aiModelCitationData], 'ON CONFLICT (id) DO NOTHING');
+  // Add web citations
+  sqlString += generateSqlInsert('citations', uniqueWebCitations, 'ON CONFLICT (id) DO NOTHING'); 
   sqlString += generateSqlInsert('global_variables', uniqueNewVariables, 'ON CONFLICT (id) DO NOTHING');
-  sqlString += generateSqlInsert('global_variable_relationships', allNewRelationships); // Add ON CONFLICT if needed
+  sqlString += generateSqlInsert('global_variable_relationships', allNewRelationships); 
 
   // --- Write SQL File ---
   const outputPath = path.resolve(process.cwd(), 'supabase', 'seeds', '99_ai_generated_relationships.sql');
@@ -181,7 +226,8 @@ async function main() {
   logger.info(`${LOG_PREFIX} SQL Generation Summary:`);
   logger.info(`Processed ${interventionVariables.length} predictors.`);
   logger.info(`Generated SQL for ${uniqueNewVariables.length} unique variables.`);
-  logger.info(`Generated SQL for ${allNewRelationships.length} relationships.`);
+  logger.info(`Generated SQL for ${allNewRelationships.length} relationships (linked to ${aiCitationId}).`);
+  logger.info(`Generated SQL for ${uniqueWebCitations.length} unique web citations.`);
   logger.info(`SQL file saved to: ${outputPath}`);
   logger.info("-----------------------------------------------------");
 
@@ -189,8 +235,8 @@ async function main() {
       logger.info(`${LOG_PREFIX} Script completed successfully.`);
       process.exit(0);
   } else {
-      logger.error(`${LOG_PREFIX} Script completed with generation errors. SQL file may be incomplete or contain only partial data. Check logs.`);
-      process.exit(1); // Exit with error code if any generation step failed
+      logger.error(`${LOG_PREFIX} Script completed with structured generation errors. SQL file may be incomplete. Check logs.`);
+      process.exit(1); // Exit with error code if any structured generation step failed
   }
 }
 

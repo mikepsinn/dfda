@@ -51,7 +51,7 @@ export default async function TreatmentPage({ params }: { params: Promise<{ glob
       <div className="w-full max-w-4xl">
           <h1 className="text-3xl font-bold mb-2">{treatment.name}</h1>
           <p className="text-lg text-muted-foreground">{treatment.description}</p>
-          <Separator className="my-4" />
+      <Separator className="my-4" />
       </div>
 
       <div className="w-full max-w-xl">
