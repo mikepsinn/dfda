@@ -6,6 +6,9 @@
         "typescript": "^5.0.0"
     },
     "dependencies": {
-        "@pulumi/pulumi": "^3.113.0"
+        "@pulumi/gcp": "^8.29.0",
+        "@pulumi/pulumi": "^3.113.0",
+        "@pulumiverse/doppler": "^0.9.0",
+        "axios": "^1.9.0"
     }
 }
