@@ -10,6 +10,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { UploadCloud, File as FileIcon, X } from 'lucide-react'
 import { logger } from '@/lib/logger'
 import { useToast } from '@/components/ui/use-toast'
+import { BUCKET_NAME } from '@/lib/constants/storage'
 
 interface FileUploadComponentProps {
   userId: string // Must be passed from a server component or context
@@ -21,7 +22,7 @@ interface FileUploadComponentProps {
 // Basic implementation - needs refinement for multiple files, progress, error details
 export function FileUploadComponent({ 
   userId,
-  bucketName = 'user_uploads', // Default bucket name
+  bucketName = BUCKET_NAME, // Use imported constant as default
   onUploadComplete 
 }: FileUploadComponentProps) {
   const supabase = createClient()
