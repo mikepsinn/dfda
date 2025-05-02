@@ -30,6 +30,7 @@
     "db:local:types": "npx supabase gen types typescript --local > lib/database.types.ts",
     "generate:constants": "tsx ./scripts/generate-constants.ts",
     "generate:schemas": "supazod -i lib/database.types.ts -o lib/database.schemas.ts -s public",
+    "db:remote:setup": "tsx ./scripts/setup-remote-instance.ts",
     "db:cloud:link": "npx supabase link --project-ref %SUPABASE_PROJECT_ID%",
     "db:cloud:push": "npx supabase db push --linked",
     "db:cloud:pull": "npx supabase db pull --linked",
