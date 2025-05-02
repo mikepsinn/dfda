@@ -101,9 +101,11 @@ export function ReminderNotificationCard({
       // For now, we assume the existing parent handler will work.
       // We might need to update the parent if this fails.
       
-      // Create a temporary notification-like object with the correct value
-      // This is a workaround if the parent strictly reads from component state
-      const tempNotificationForLog = { ...notification, _logValue: valueToLog };
+      // const tempNotificationForLog = {
+      //   ...notification,
+      //   user: undefined, // Avoid logging potentially large user object
+      // }
+      // logger.info("Processing notification", { notification: tempNotificationForLog });
       
       // Call parent log handler. It might need to be adjusted later.
       onLogMeasurement(notification); // Pass original notification, parent reads its state

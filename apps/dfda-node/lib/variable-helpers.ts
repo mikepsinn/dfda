@@ -1,5 +1,7 @@
 import { UNIT_IDS } from '@/lib/constants/units';
-import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories';
+// import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories';
+// Corrected path, but commented out as unused:
+// import { VARIABLE_CATEGORY } from "@/lib/constants/database.constants";
 
 /**
  * Enum defining the different types of inputs we might render for a variable.
@@ -22,10 +24,10 @@ export type VariableInputType =
  */
 export function getVariableInputType({
   unitId,
-  variableCategory,
+//   variableCategory, // Remove unused parameter
 }: {
   unitId: string | null;
-  variableCategory: string | null;
+  variableCategory: string | null; // Type definition can remain for potential future use
 }): VariableInputType {
   if (!unitId) {
     return 'other'; // Cannot determine without unit

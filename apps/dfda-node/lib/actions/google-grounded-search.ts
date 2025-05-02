@@ -68,7 +68,7 @@ export async function getGroundedAnswerAction(query: string): Promise<GroundedSe
 
   try {
     // Select the generative model
-    // @ts-ignore - Linter seems confused about this method's existence
+    // @ts-expect-error TODO: GroundingResult type is internal to the ai package
     const model = genAI.getGenerativeModel({
       model: MODEL_ID,
       safetySettings,

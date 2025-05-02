@@ -85,12 +85,18 @@ async function setupRemoteInstance() {
     // Add other remote setup tasks here if needed in the future
     // (e.g., deploying functions if applicable to your setup)
 
-    console.log('
-✅✅✅ Remote instance setup tasks completed successfully! ✅✅✅');
+    // Final success message
+    console.log(`
+Remote instance setup tasks completed successfully!
+Project: ${process.env.SUPABASE_PROJECT_ID}
+`);
 
   } catch (error) {
-    console.error('
-❌❌❌ Remote instance setup failed! ❌❌❌');
+    // Log error and exit
+    console.error(`
+Remote instance setup failed!
+Error: ${error instanceof Error ? error.message : String(error)}
+`);
     process.exit(1); // Exit with error code
   }
 }
