@@ -37,28 +37,36 @@ async function setUserType(formData: FormData) {
 
   logger.info('Setting user role in profile', { userId: user.id, role });
 
+  let profileUpdateError: any = null; // Define error variable outside try
+
   try {
-    // 1. Update the profiles table (as before)
-    const { error: profileUpdateError } = await supabase
+    // 1. Update the profiles table
+    ({ error: profileUpdateError } = await supabase // Assign to the outer variable
       .from('profiles')
       .update({ user_type: role })
       .eq('id', user.id)
-      .select('user_type') // Keep select for logging/confirmation if needed
-      .single()
+      .select('user_type')
+      .single());
 
-    if (profileUpdateError) {
-      logger.error('Error setting user_type in profiles table:', profileUpdateError)
-      return; 
-    }
-
-    // Redirect after profile update succeeds
-    logger.info('User profile role set, redirecting', { userId: user.id, role });
-    redirect(`/${role}`)
+    // No redirect inside the try block anymore
 
   } catch (err) {
-    logger.error('Unexpected error setting user role:', err)
-    return; // Just return without redirecting on error
+    // Catch actual unexpected errors during the database operation
+    logger.error('Unexpected error during profile update:', err);
+    // Set the error variable or handle differently if needed
+    profileUpdateError = err;
   }
+
+  // Check for profile update error *after* the try...catch block
+  if (profileUpdateError) {
+    logger.error('Error setting user_type in profiles table:', profileUpdateError);
+    // Potentially show an error message to the user instead of just returning
+    return; // Return on error
+  }
+
+  // Redirect only if the update was successful (no error)
+  logger.info('User profile role set, redirecting', { userId: user.id, role });
+  redirect(`/${role}`); // Redirect is now outside the try...catch
 }
 
 export default async function SelectRolePage() {
