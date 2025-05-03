@@ -74,11 +74,14 @@ export function TimeSelector({
                 variant="outline"
                 onClick={() => onChange(preset.value)}
                 className={cn(
-                  "h-auto flex-col py-3 justify-start items-center",
+                  "h-auto flex-col py-3 justify-start items-center relative",
                   value === preset.value ? "border-primary" : preset.color || "",
                   preset.color || ""
                 )}
               >
+                {value === preset.value && (
+                    <Check className="h-4 w-4 absolute top-1 right-1 text-primary" />
+                )}
                 <div className="text-lg mb-1 hidden sm:block">{preset.icon}</div>
                 <div className="font-medium hidden sm:block">{preset.label}</div>
                 <div className="text-xs text-muted-foreground">{formatTime(preset.value)}</div>
