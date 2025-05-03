@@ -10,6 +10,9 @@ ARG DOPPLER_TOKEN
 # Check if DOPPLER_TOKEN is set, fail build if not
 RUN test -n "$DOPPLER_TOKEN" || (echo "Error: Build-time argument DOPPLER_TOKEN is required." >&2 && exit 1)
 
+# --- Set ENV var from ARG for Doppler --- 
+ENV DOPPLER_TOKEN=$DOPPLER_TOKEN
+
 # --- DEBUG: Log partial token (REMOVE FOR PRODUCTION) ---
 # Use cut for better shell portability
 RUN echo "DOPPLER_TOKEN (start): $(echo "$DOPPLER_TOKEN" | cut -c1-4)..."
