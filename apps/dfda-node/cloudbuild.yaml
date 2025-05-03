@@ -9,7 +9,7 @@ steps:
       - >-
         $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
       - '--build-arg'
-      - 'DOPPLER_TOKEN=$${DOPPLER_TOKEN}'
+      - DOPPLER_TOKEN
       - apps/dfda-node # Build context directory
       - '-f'
       - apps/dfda-node/Dockerfile # Dockerfile location relative to context
