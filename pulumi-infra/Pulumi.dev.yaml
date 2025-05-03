@@ -2,3 +2,5 @@ config:
   gcp:project: healome-dev-358414
   pulumi-infra:dopplerToken:
     secure: AAABAJpIoBEHdGkTbD2tUKNvcvEIeW+/x+XG5ez/vkTs9SBPPrhVm/UlMbIeBkiOiOIksn2kdMqh+BSmjyXzTlLwoV/sLUEVQZkmZXdEW1y80b14q4dTqn0=
+  pulumi-infra:dopplerProject: qm-api
+  pulumi-infra:dopplerConfig: prd_gcp
