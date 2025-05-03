@@ -1,6 +1,5 @@
 import type React from 'react';
-// import { InternalLink } from './internal-link'; // Don't need InternalLink for this approach
-import Link from 'next/link'; // Import next/link directly
+// import Link from 'next/link'; // No longer needed
 import { Button, type ButtonProps } from '@/components/ui/button';
 import {
   Tooltip,
@@ -11,8 +10,8 @@ import {
 import { navigationTreeObject } from '@/lib/generated-nav-tree';
 import type { GeneratedNavTree } from '@/lib/generated-nav-tree';
 import { logger } from '@/lib/logger';
-import { interpolateHref } from '@/lib/formatters'; // Updated path
-import { InternalLink } from '@/components/internal-link';
+// import { interpolateHref } from '@/lib/formatters'; // No longer needed, handled by InternalLink
+import { InternalLink } from '@/components/internal-link'; // Keep this import
 
 // Props: navKey is mandatory, params optional. ButtonProps without children/asChild.
 type InternalLinkButtonProps = {
@@ -36,19 +35,6 @@ export function InternalLinkButton({ navKey, params, variant, size, className, .
     return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Invalid Link Key</Button>;
   }
 
-  // Determine the final href
-  let finalHref = navItem.href;
-  if (params) {
-      finalHref = interpolateHref(navItem.href, params);
-  }
-
-  // Check if the base href template looks like a dynamic route if params were NOT provided
-  if (!params && navItem.href.includes('[')) {
-       logger.warn(`[InternalLinkButton] navKey '${String(navKey)}' seems to require params but none were provided. Href: ${navItem.href}`);
-      // Optional: Disable button or return error state?
-       return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Missing Params</Button>;
-  }
-
   // Button Content (same as before)
   const buttonContent = (
     <>
@@ -57,13 +43,14 @@ export function InternalLinkButton({ navKey, params, variant, size, className, .
     </>
   );
 
-  // Link Component (using next/link directly)
+  // Wrap the Button with InternalLink
   const LinkComponent = (
-      <Link href={finalHref} passHref legacyBehavior={false}>
+      <InternalLink navKey={navKey} params={params} passHref legacyBehavior={false}>
+          {/* Pass ButtonProps down to the actual button rendered by InternalLink's child */} 
           <Button variant={variant} size={size} className={className} {...rest}>
-              {buttonContent}
+             {buttonContent}
           </Button>
-      </Link>
+      </InternalLink>
   );
 
   // Tooltip Logic (same as before, wrapping the LinkComponent)
