@@ -43,7 +43,7 @@ steps:
 # Define the secret to be made available
 availableSecrets:
   secretManager:
-  - versionName: projects/${PROJECT_ID}/secrets/GCP_SUPABASE_DOPPLER_TOKEN/versions/latest # Use default PROJECT_ID and correct secret name
+  - versionName: projects/217887463283/secrets/GCP_SUPABASE_DOPPLER_TOKEN/versions/latest # Use specific project number and correct secret name
     env: 'DOPPLER_TOKEN' # Maps the secret value to this environment variable name
 
 images:
