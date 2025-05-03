@@ -4,7 +4,7 @@ name: Deploy dfda-node to GCP Cloud Run
 on:
   push:
     branches:
-      - main # Or your default branch
+      - develop # Trigger on pushes to the develop branch
 
 permissions:
   contents: read
