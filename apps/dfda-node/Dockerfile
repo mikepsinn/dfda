@@ -3,13 +3,20 @@ FROM node:22-alpine AS base
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
+
+# Install builder dependencies including those for Doppler
+RUN apk add --no-cache curl gnupg libc6-compat
+
+# Install Doppler CLI in builder stage
+RUN curl -Ls https://cli.doppler.com/install.sh | sh -s -- --no-package-manager --install-path /usr/local/bin
+
 # Copy package files and lockfile first
 COPY package.json pnpm-lock.yaml* ./
+# Install dependencies AFTER Doppler CLI is available (in case of private packages via Doppler)
+RUN corepack enable pnpm && pnpm i --frozen-lockfile
+
 # Copy the rest of the source code NOW
 COPY . .
-# Install dependencies directly in this stage AFTER copying source
-RUN apk add --no-cache libc6-compat # Dependencies needed for install/build
-RUN corepack enable pnpm && pnpm i --frozen-lockfile # Full install
 
 # Clear potentially stale Next.js cache
 RUN rm -rf .next
@@ -17,8 +24,11 @@ RUN rm -rf .next
 # Next.js telemetry config
 ENV NEXT_TELEMETRY_DISABLED 1
 
-# Run the build
-RUN corepack enable pnpm && pnpm run build
+# Run the build using Doppler
+# Assumes DOPPLER_TOKEN is passed as build arg or available as env var during build
+RUN corepack enable pnpm && doppler run -- pnpm run build
+
+# --- Production Stage ---
 
 # Production image, copy all the files and run next
 FROM base AS runner
@@ -28,10 +38,10 @@ ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-# Install necessary packages including curl and gnupg for Doppler CLI download/verification
+# Install only necessary runtime packages (Doppler needed for CMD)
 RUN apk add --no-cache curl libc6-compat gnupg
 
-# Install Doppler CLI for Alpine
+# Install Doppler CLI for Alpine (again, needed for CMD)
 RUN curl -Ls https://cli.doppler.com/install.sh | sh -s -- --no-package-manager --install-path /usr/local/bin
 
 RUN addgroup --system --gid 1001 nodejs
@@ -56,6 +66,6 @@ ENV PORT 3000
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-# Prepend 'doppler run --' to inject secrets.
+# Prepend 'doppler run --' to inject secrets for runtime.
 # It will automatically use the DOPPLER_TOKEN from the environment.
 CMD doppler run -- node server.js -H 0.0.0.0
