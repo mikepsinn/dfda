@@ -11,8 +11,9 @@ ARG DOPPLER_TOKEN
 RUN test -n "$DOPPLER_TOKEN" || (echo "Error: Build-time argument DOPPLER_TOKEN is required." >&2 && exit 1)
 
 # --- DEBUG: Log partial token (REMOVE FOR PRODUCTION) ---
-RUN echo "DOPPLER_TOKEN (start): ${DOPPLER_TOKEN:0:4}..."
-RUN echo "DOPPLER_TOKEN (end): ...${DOPPLER_TOKEN: -4}"
+# Use cut for better shell portability
+RUN echo "DOPPLER_TOKEN (start): $(echo "$DOPPLER_TOKEN" | cut -c1-4)..."
+RUN echo "DOPPLER_TOKEN (end): ...$(echo "$DOPPLER_TOKEN" | cut -c $((${#DOPPLER_TOKEN}-3))-${#DOPPLER_TOKEN})"
 # --- END DEBUG ---
 
 # Install builder dependencies including those for Doppler
