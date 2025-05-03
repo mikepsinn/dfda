@@ -68,7 +68,7 @@ CREATE POLICY "Allow delete for authenticated users" ON public.products
     FOR DELETE TO authenticated USING (true); -- Adjust role if needed
 
 -- Trigger to update updated_at timestamp
-CREATE TRIGGER handle_updated_at
+CREATE TRIGGER set_updated_at -- Renamed trigger for consistency
     BEFORE UPDATE ON public.products
     FOR EACH ROW
-    EXECUTE FUNCTION moddatetime (updated_at); 
+    EXECUTE FUNCTION public.update_updated_at_column(); -- Use standard function 

@@ -9,8 +9,9 @@ CREATE TABLE public.form_submissions (
 
 ALTER TABLE public.form_submissions ENABLE ROW LEVEL SECURITY;
 
-CREATE TRIGGER handle_updated_at BEFORE UPDATE ON public.form_submissions
-  FOR EACH ROW EXECUTE PROCEDURE moddatetime (updated_at);
+CREATE TRIGGER set_updated_at
+BEFORE UPDATE ON public.form_submissions
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
 CREATE INDEX idx_form_submissions_form_id ON public.form_submissions(form_id);
 CREATE INDEX idx_form_submissions_patient_id ON public.form_submissions(patient_id); 

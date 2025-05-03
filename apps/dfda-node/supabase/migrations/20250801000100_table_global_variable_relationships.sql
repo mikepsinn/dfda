@@ -66,8 +66,9 @@ CREATE TABLE global_variable_relationships (
 ALTER TABLE global_variable_relationships ENABLE ROW LEVEL SECURITY;
 
 -- Add trigger for automatic updated_at timestamp
-CREATE TRIGGER handle_updated_at BEFORE UPDATE ON global_variable_relationships
-  FOR EACH ROW EXECUTE PROCEDURE extensions.moddatetime (updated_at);
+CREATE TRIGGER set_updated_at -- Renamed trigger for consistency
+BEFORE UPDATE ON global_variable_relationships
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column(); -- Use standard function
 
 -- 2. Add Indexes for faster lookups
 CREATE INDEX idx_gvr_predictor_id ON global_variable_relationships(predictor_global_variable_id);

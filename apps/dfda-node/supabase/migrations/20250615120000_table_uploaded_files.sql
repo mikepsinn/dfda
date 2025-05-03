@@ -11,7 +11,8 @@ CREATE TABLE public.uploaded_files (
 
 ALTER TABLE public.uploaded_files ENABLE ROW LEVEL SECURITY;
 
-CREATE TRIGGER handle_updated_at BEFORE UPDATE ON public.uploaded_files
-  FOR EACH ROW EXECUTE PROCEDURE moddatetime (updated_at);
+CREATE TRIGGER set_updated_at
+BEFORE UPDATE ON public.uploaded_files
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
 CREATE INDEX idx_uploaded_files_uploader_user_id ON public.uploaded_files(uploader_user_id); 
