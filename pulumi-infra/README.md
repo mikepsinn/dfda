@@ -23,9 +23,10 @@ This Pulumi project provisions the necessary Google Cloud Platform (GCP) infrast
 
 *   [Pulumi CLI](https://www.pulumi.com/docs/install/) installed and [configured for GCP](https://www.pulumi.com/docs/clouds/gcp/get-started/).
 *   [Node.js](https://nodejs.org/en/download/) (which includes npm) and [`pnpm`](https://pnpm.io/installation) installed.
+*   [Doppler CLI](https://docs.doppler.com/docs/install-cli) installed locally (for automatic secret updates).
 *   GCP Project created ([GCP Console](https://console.cloud.google.com/)).
 *   [Doppler](https://doppler.com/) account and a project set up.
-*   A Doppler [Service Token](https://docs.doppler.com/docs/service-tokens) with access to the required secrets.
+*   A Doppler [Service Token](https://docs.doppler.com/docs/service-tokens) with write access to the target configuration.
 
 ## Configuration
 
@@ -35,18 +36,21 @@ Before running `pulumi up`, configure the following settings using the Pulumi CL
 # Required:
 pulumi config set gcp:project <your-gcp-project-id>
 pulumi config set myPublicIp <your-public-ip>/32 --secret # Your workstation's public IP for VM access
-pulumi config set dopplerToken <your-doppler-service-token> --secret
+pulumi config set dopplerToken <your-doppler-service-token> --secret # Token used by Pulumi and Cloud Run
+pulumi config set dopplerProject <your-doppler-project-name> # Doppler project to update
+pulumi config set dopplerConfig <your-doppler-config-name> # Doppler config to update (e.g., prd, stg_gcp)
 
 # Optional (defaults to us-central1 / us-central1-a):
 # pulumi config set gcp:region <your-gcp-region>
 # pulumi config set gcp:zone <your-gcp-zone>
 
 # Optional (replace if your GitHub repo is different):
-# You might need to update the `githubRepo` variable directly in index.ts if not using "your-github-org/your-repo-name"
 # pulumi config set githubRepo your-org/your-repo
 ```
 
-**Important:** Ensure your Doppler project contains the necessary secrets required by the GitHub Actions workflow (see [`.github/workflows/deploy-gcp.yml`](../.github/workflows/deploy-gcp.yml) for details) and your `dfda-node` application runtime. Manage Doppler secrets at [https://dashboard.doppler.com/](https://dashboard.doppler.com/).
+**Important:** 
+*   The `dopplerToken` needs write access to the specified `dopplerProject` and `dopplerConfig` for the automation to work.
+*   Ensure your Doppler project *also* contains the other necessary secrets required by the GitHub Actions workflow (`GCP_PROJECT_ID`, `GCP_REGION`, etc.) and your `dfda-node` application runtime. Manage Doppler secrets at [https://dashboard.doppler.com/](https://dashboard.doppler.com/).
 
 ## Usage
 

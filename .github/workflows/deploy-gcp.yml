@@ -49,6 +49,23 @@ jobs:
         doppler secrets download --no-file --format env >> $GITHUB_ENV
         echo "Loaded secrets into environment."
 
+    # Verify that critical secrets for authentication were loaded
+    - name: Verify Required Secrets
+      run: |
+        if [ -z "${{ env.GCP_WORKLOAD_IDENTITY_PROVIDER }}" ]; then
+          echo "::error::Required secret GCP_WORKLOAD_IDENTITY_PROVIDER was not found after loading from Doppler."
+          echo "::error::Please ensure GCP_WORKLOAD_IDENTITY_PROVIDER is set in the Doppler config associated with your DOPPLER_TOKEN secret."
+          echo "::error::The value should be the full Workload Identity Provider ID (e.g., projects/PROJECT_ID/locations/global/workloadIdentityPools/POOL_ID/providers/PROVIDER_ID)."
+          exit 1
+        fi
+        if [ -z "${{ env.GCP_SERVICE_ACCOUNT }}" ]; then
+          echo "::error::Required secret GCP_SERVICE_ACCOUNT was not found after loading from Doppler."
+          echo "::error::Please ensure GCP_SERVICE_ACCOUNT is set in the Doppler config associated with your DOPPLER_TOKEN secret."
+          echo "::error::The value should be the email address of the GitHub Actions service account (e.g., github-actions-sa@PROJECT_ID.iam.gserviceaccount.com)."
+          exit 1
+        fi
+        echo "Required secrets GCP_WORKLOAD_IDENTITY_PROVIDER and GCP_SERVICE_ACCOUNT verified."
+
     # Authenticate using secrets loaded from Doppler
     - name: Authenticate to Google Cloud
       id: auth

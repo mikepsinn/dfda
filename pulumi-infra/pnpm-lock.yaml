@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@pulumi/command':
+        specifier: ^1.0.3
+        version: 1.0.3(typescript@5.8.3)
       '@pulumi/gcp':
         specifier: ^8.29.0
         version: 8.29.0(typescript@5.8.3)
@@ -220,6 +223,9 @@ packages:
 
   '@protobufjs/utf8@1.1.0':
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
+
+  '@pulumi/command@1.0.3':
+    resolution: {integrity: sha512-Swhw8WNa2OPjXbD/Wrn36KxGfLEn7wf/vG80ojvLdHOD//0kiujqWFZ4avEsjrJxZAVjc9+WR/QTNrvlCJkULg==}
 
   '@pulumi/gcp@8.29.0':
     resolution: {integrity: sha512-DHFWnemJDOsuwc/lTEZwRyJFUBOUiyLG+ZixlPtNrDCbZK8+QhIBzscrCWhAGe3O1Z7htRDwwW7JvFHXdqK10g==}
@@ -1527,6 +1533,15 @@ snapshots:
   '@protobufjs/pool@1.1.0': {}
 
   '@protobufjs/utf8@1.1.0': {}
+
+  '@pulumi/command@1.0.3(typescript@5.8.3)':
+    dependencies:
+      '@pulumi/pulumi': 3.167.0(typescript@5.8.3)
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+      - ts-node
+      - typescript
 
   '@pulumi/gcp@8.29.0(typescript@5.8.3)':
     dependencies:
