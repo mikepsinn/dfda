@@ -7,7 +7,7 @@ steps:
       - '--no-cache'
       - '-t'
       - >-
-        $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA # Use default PROJECT_ID
+        $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
       - apps/dfda-node # Build context directory
       - '-f'
       - apps/dfda-node/Dockerfile # Dockerfile location relative to context
@@ -20,7 +20,7 @@ steps:
     args:
       - push
       - >-
-        $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA # Use default PROJECT_ID
+        $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
     id: Push
 
   # Deploy Step (Unchanged)
@@ -32,7 +32,7 @@ steps:
       - $_SERVICE_NAME
       - '--platform=managed'
       - >-
-        --image=$_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA # Use default PROJECT_ID
+        --image=$_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
       - >-
         --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,gcb-trigger-id=$_TRIGGER_ID
       - '--region=$_DEPLOY_REGION'
@@ -48,7 +48,7 @@ availableSecrets:
 
 images:
   - >-
-    $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA # Use default PROJECT_ID
+    $_AR_HOSTNAME/${PROJECT_ID}/$_AR_REPOSITORY/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
 options:
   substitutionOption: ALLOW_LOOSE
   logging: CLOUD_LOGGING_ONLY
