@@ -13,6 +13,12 @@ RUN test -n "$DOPPLER_TOKEN" || (echo "Error: Build-time argument DOPPLER_TOKEN 
 # --- Set ENV var from ARG for Doppler --- 
 ENV DOPPLER_TOKEN=$DOPPLER_TOKEN
 
+# --- Check if token contains the literal string 'DOPPLER_TOKEN' (should not) ---
+RUN echo "$DOPPLER_TOKEN" | grep -q 'DOPPLER_TOKEN' && \
+    (echo "Error: DOPPLER_TOKEN variable appears to contain the literal string 'DOPPLER_TOKEN'. Substitution likely failed." >&2; exit 1) || \
+    echo "DOPPLER_TOKEN check passed (does not contain 'DOPPLER_TOKEN')."
+# --- END Check ---
+
 # --- DEBUG: Log partial token (REMOVE FOR PRODUCTION) ---
 # Use cut for better shell portability
 RUN echo "DOPPLER_TOKEN (start): $(echo "$DOPPLER_TOKEN" | cut -c1-4)..."
