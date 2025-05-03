@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, CardContent } from '@/components/ui/card'
-import { formatTime } from '@/lib/utils'
+import { formatTime } from '@/lib/formatters'
 import type { ReminderSchedule } from '@/lib/actions/reminder-schedules'
 import { RRule, rrulestr, Weekday } from 'rrule'
 
