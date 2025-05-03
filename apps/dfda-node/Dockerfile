@@ -4,6 +4,12 @@ FROM node:22-alpine AS base
 FROM base AS builder
 WORKDIR /app
 
+# Declare DOPPLER_TOKEN as a build argument
+ARG DOPPLER_TOKEN
+
+# Check if DOPPLER_TOKEN is set, fail build if not
+RUN test -n "$DOPPLER_TOKEN" || (echo "Error: Build-time argument DOPPLER_TOKEN is required." >&2 && exit 1)
+
 # Install builder dependencies including those for Doppler
 RUN apk add --no-cache curl gnupg libc6-compat
 
@@ -13,6 +19,7 @@ RUN curl -Ls https://cli.doppler.com/install.sh | sh -s -- --no-package-manager 
 # Copy package files and lockfile first
 COPY package.json pnpm-lock.yaml* ./
 # Install dependencies AFTER Doppler CLI is available (in case of private packages via Doppler)
+# Doppler token is available via ARG, doppler login/setup isn't used here
 RUN corepack enable pnpm && pnpm i --frozen-lockfile
 
 # Copy the rest of the source code NOW
@@ -25,7 +32,7 @@ RUN rm -rf .next
 ENV NEXT_TELEMETRY_DISABLED 1
 
 # Run the build using Doppler
-# Assumes DOPPLER_TOKEN is passed as build arg or available as env var during build
+# DOPPLER_TOKEN is available via the ARG declared above
 RUN corepack enable pnpm && doppler run -- pnpm run build
 
 # --- Production Stage ---
