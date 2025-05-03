@@ -5,10 +5,9 @@ import { supabaseAdmin } from '@/utils/supabase/admin'
 import { DEMO_ACCOUNTS, DemoUserType } from '@/lib/constants/demo-accounts'
 import { createLogger } from '@/lib/logger'
 import { AuthApiError, type User } from '@supabase/supabase-js'
-import { setupDemoUserData } from './seed-demo-data' // Import the new seeding function
-import { getUserProfile, createUserProfile, updateUserProfile } from "@/lib/profile" // Import helpers
-import type { Profile, ProfileInsert } from "@/lib/profile"; // Import Profile types
-import { getCallbackUrl } from '@/lib/url'; // Import the helper
+import { setupDemoUserData } from './seed-demo-data' // Keep this
+import type { ProfileInsert } from "@/lib/profile"; // Keep only ProfileInsert
+import { getCallbackUrl } from '@/lib/url'; 
 
 const logger = createLogger('demo-login')
 
@@ -18,7 +17,7 @@ const logger = createLogger('demo-login')
 // Action now returns a success status and redirect URL
 export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ success: boolean; error?: string; redirectUrl?: string }> {
   logger.info('Starting login process', { userType })
-  let supabaseUserClient = await createServerClient() 
+  const supabaseUserClient = await createServerClient() 
   const account = DEMO_ACCOUNTS[userType]
   const redirectUrl = `/${userType}/`
 
@@ -26,7 +25,6 @@ export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ s
     let user: User | null = null; 
     let userId: string | undefined = undefined;
     let requiresSeeding = false; 
-    let authActionOccurred = false; 
 
     // 1. Attempt Sign In
     logger.info('Attempting sign in', { email: account.email });
@@ -40,7 +38,6 @@ export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ s
       user = signInData.user;
       userId = user.id;
       requiresSeeding = true; 
-      authActionOccurred = true;
     }
     else {
         if (signInError) {
@@ -69,7 +66,6 @@ export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ s
                 user = signUpData.user;
                 userId = user.id;
                 requiresSeeding = true; 
-                authActionOccurred = true;
             }
             else if (signUpError instanceof AuthApiError && signUpError.status === 422) {
                 logger.warn('Sign up failed: User already exists', { email: account.email });
@@ -88,7 +84,6 @@ export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ s
                 user = finalSignInData.user; 
                 userId = user.id;
                 logger.info('Final sign in successful');
-                authActionOccurred = true; // Sign in occurred
             }
             else if (signUpError) {
                  logger.error('Sign up failed with unexpected error', { email: account.email, error: signUpError });
@@ -134,8 +129,8 @@ export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ s
         // --- End Direct Profile Upsert ---
 
         // --- Seeding using ADMIN client --- 
-        logger.warn('SKIPPING data seeding for debugging purposes.'); // Add log
-        // await setupDemoUserData(supabaseAdmin, userId, userType); // Temporarily comment out seeding
+        // logger.warn('SKIPPING data seeding for debugging purposes.'); // Remove or keep commented
+        await setupDemoUserData(supabaseAdmin, userId, userType); 
         // --- End Seeding ---
 
     } else if (!userId || !user) {

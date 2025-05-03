@@ -1,6 +1,7 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
+// Remove unused import
+// import { createClient } from "@/utils/supabase/server"; 
 import { type SupabaseClient } from '@supabase/supabase-js';
 import { logger } from "@/lib/logger";
 import { DEMO_ACCOUNTS, DemoUserType } from "@/lib/constants/demo-accounts";
