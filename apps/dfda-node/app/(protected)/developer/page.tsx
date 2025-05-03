@@ -1,252 +1,43 @@
-import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm";
-import { OAuthApplicationForm } from "@/components/developers/OAuthApplicationForm";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { getServerUser } from "@/lib/server-auth"
-import { redirect } from 'next/navigation'
-import { logger } from "@/lib/logger"
-import Link from "next/link"
-import { ExternalLink } from "lucide-react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
-import { KeyRound } from "lucide-react"
-import { updateUserProfile, getUserProfile } from "@/lib/profile"
+import { getServerUser } from "@/lib/server-auth";
+import { getUserProfile } from "@/lib/profile";
+import { redirect } from 'next/navigation';
+import { logger } from "@/lib/logger"; // Assuming logger is used below
+import { DeveloperDashboardClient } from "@/components/developers/DeveloperDashboardClient"; // Import the client component
+import { type Database } from "@/lib/database.types";
 
-// Server Action to update profile using helper
-async function updateDeveloperProfile(formData: FormData) {
-  'use server'
+// Derive Profile type (can also be done in the client component and imported)
+type Profile = Database['public']['Tables']['profiles']['Row'];
 
-  const user = await getServerUser()
-
-  if (!user) {
-    return redirect('/login')
-  }
-
-  const firstName = formData.get('developer-first-name') as string
-  const lastName = formData.get('developer-last-name') as string
-
-  const updates = {
-      first_name: firstName || null,
-      last_name: lastName || null
-  };
-
-  const updatedProfile = await updateUserProfile(user.id, updates);
-
-  if (!updatedProfile) {
-    logger.error('Failed to update developer profile via helper', { userId: user.id });
-    // TODO: Add user-facing error handling (e.g., revalidate with error message)
-  } else {
-    logger.info('Developer profile updated successfully via helper', { userId: user.id })
-    // Optionally revalidate path or redirect if needed
-    // revalidatePath('/developer'); // Example revalidation
-  }
-}
+// Server Action - moved outside client component, keep definition accessible if needed
+// or preferably move to a dedicated actions file.
+// async function updateDeveloperProfileAction(userId: string, formData: FormData) {
+//   'use server'
+// ... action logic ...
+// }
 
 export default async function DeveloperDashboardPage() {
   const user = await getServerUser()
-
   if (!user) {
     redirect('/login')
   }
 
-  // Fetch existing profile data using helper
-  const profile = await getUserProfile(user);
-
+  const profile: Profile | null = await getUserProfile(user);
   if (!profile) {
     logger.error('Error fetching developer profile via helper', { userId: user.id })
-    // Handle error appropriately, maybe show a message or default values
+    // Handle error or maybe proceed with null profile
   }
 
+  // Get public Supabase details from server environment variables
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  // Render ONLY the client component, passing server data as props
   return (
-    <main className="py-6 md:py-10">
-      <div className="container">
-        <div className="mx-auto max-w-5xl space-y-8"> {/* Increased max-width */} 
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Developer Dashboard</h1>
-          <p className="text-muted-foreground">Manage your profile, API keys, OAuth applications, and access documentation.</p>
-
-          <Tabs defaultValue="dashboard">
-            <TabsList className="grid w-full grid-cols-3"> {/* Updated grid-cols */} 
-              <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-              <TabsTrigger value="documentation">Documentation</TabsTrigger>
-              <TabsTrigger value="examples">Code Examples</TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="dashboard" className="space-y-6 pt-6">
-              {/* Existing Dashboard Content START */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Profile Information</CardTitle>
-                  <CardDescription>Keep your contact information up to date.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form action={updateDeveloperProfile} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="developer-first-name">First name</Label>
-                        <Input id="developer-first-name" name="developer-first-name" defaultValue={profile?.first_name ?? ''} />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="developer-last-name">Last name</Label>
-                        <Input id="developer-last-name" name="developer-last-name" defaultValue={profile?.last_name ?? ''} />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="developer-email">Email</Label>
-                      <Input id="developer-email" name="developer-email" type="email" value={user.email ?? ''} readOnly />
-                    </div>
-                    <Button type="submit">Update Profile</Button>
-                  </form>
-                </CardContent>
-              </Card>
-
-              <TabsContent value="apiKeys">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <KeyRound className="mr-2 h-5 w-5" />
-                      API Keys
-                    </CardTitle>
-                    <CardDescription>
-                      Manage your API keys for accessing the FDA platform.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    {/* TODO: Implement API Key management component */}
-                    {/* <ApiKeyList /> */}
-                    <ApiKeyRequestForm />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="oauthApps">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      {/* Assuming an icon for OAuth apps - Using a placeholder icon */}
-                      {/* <FileText className="mr-2 h-5 w-5" /> */}
-                      <KeyRound className="mr-2 h-5 w-5" />
-                      OAuth Applications
-                    </CardTitle>
-                    <CardDescription>
-                      Manage your OAuth applications for user authentication.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    {/* TODO: Implement OAuth App management component */}
-                    {/* <OAuthApplicationList /> */}
-                    <OAuthApplicationForm />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="webhooks">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                       {/* <Mail className="mr-2 h-5 w-5" /> */}
-                       <KeyRound className="mr-2 h-5 w-5" />
-                      Webhooks
-                    </CardTitle>
-                    {/* TODO: Implement Webhook management component */}
-                  </CardHeader>
-                  <CardContent>
-                    {/* TODO: Implement Webhook management component */}
-                  </CardContent>
-                </Card>
-              </TabsContent>
-              {/* Existing Dashboard Content END */}
-            </TabsContent>
-
-            <TabsContent value="documentation" className="space-y-6 pt-6">
-              {/* Copied Documentation Content START */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>API Documentation</CardTitle>
-                  <CardDescription>Comprehensive documentation for the FDA.gov v2 API</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">
-                    Our detailed documentation covers everything you need to know about using the FDA.gov v2 API,
-                    including authentication, endpoints, error handling, and more.
-                  </p>
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="rounded-lg border p-4">
-                      <h3 className="font-medium mb-2">Getting Started</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Learn the basics of the API and how to make your first request.
-                      </p>
-                      <Link href="/developers/documentation#getting-started">
-                        <Button variant="outline" size="sm">
-                          View Section
-                        </Button>
-                      </Link>
-                    </div>
-                    <div className="rounded-lg border p-4">
-                      <h3 className="font-medium mb-2">Authentication</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Learn about API keys and OAuth 2.0 authentication.
-                      </p>
-                      <Link href="/developers/documentation#auth">
-                        <Button variant="outline" size="sm">
-                          View Section
-                        </Button>
-                      </Link>
-                    </div>
-                    <div className="rounded-lg border p-4">
-                      <h3 className="font-medium mb-2">Endpoints</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Explore all available API endpoints and their parameters.
-                      </p>
-                      <Link href="/developers/documentation#endpoints">
-                        <Button variant="outline" size="sm">
-                          View Section
-                        </Button>
-                      </Link>
-                    </div>
-                    <div className="rounded-lg border p-4">
-                      <h3 className="font-medium mb-2">Error Handling</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Learn how to handle errors and troubleshoot issues.
-                      </p>
-                      <Link href="/developers/documentation#error-handling">
-                        <Button variant="outline" size="sm">
-                          View Section
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                  <Link href="/developers/documentation">
-                    <Button variant="default" className="mt-4">
-                      <ExternalLink className="mr-2 h-4 w-4" /> View Full Documentation
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-              {/* Copied Documentation Content END */}
-            </TabsContent>
-
-            <TabsContent value="examples" className="space-y-6 pt-6">
-              {/* Copied Examples Content START */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Code Examples</CardTitle>
-                  <CardDescription>See how to integrate the API into your applications</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6">
-                    Explore code examples in various languages to quickly get started with the FDA.gov v2 API.
-                  </p>
-                  <CodeExampleTabs />
-                </CardContent>
-              </Card>
-              {/* Copied Examples Content END */}
-            </TabsContent>
-
-          </Tabs>
-        </div>
-      </div>
-    </main>
-  )
+    <DeveloperDashboardClient 
+        user={user} 
+        profile={profile} 
+        supabaseUrl={supabaseUrl}
+        supabaseAnonKey={supabaseAnonKey}
+    />
+  );
 }
