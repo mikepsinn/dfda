@@ -10,6 +10,11 @@ ARG DOPPLER_TOKEN
 # Check if DOPPLER_TOKEN is set, fail build if not
 RUN test -n "$DOPPLER_TOKEN" || (echo "Error: Build-time argument DOPPLER_TOKEN is required." >&2 && exit 1)
 
+# --- DEBUG: Log partial token (REMOVE FOR PRODUCTION) ---
+RUN echo "DOPPLER_TOKEN (start): ${DOPPLER_TOKEN:0:4}..."
+RUN echo "DOPPLER_TOKEN (end): ...${DOPPLER_TOKEN: -4}"
+# --- END DEBUG ---
+
 # Install builder dependencies including those for Doppler
 RUN apk add --no-cache curl gnupg libc6-compat
 
