@@ -1,15 +1,18 @@
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
 # Copy package files and lockfile first
 COPY package.json pnpm-lock.yaml* ./
-# Install dependencies directly in this stage
+# Copy the rest of the source code NOW
+COPY . .
+# Install dependencies directly in this stage AFTER copying source
 RUN apk add --no-cache libc6-compat # Dependencies needed for install/build
 RUN corepack enable pnpm && pnpm i --frozen-lockfile # Full install
-# Copy the rest of the source code
-COPY . .
+
+# Clear potentially stale Next.js cache
+RUN rm -rf .next
 
 # Next.js telemetry config
 ENV NEXT_TELEMETRY_DISABLED 1
@@ -55,4 +58,4 @@ ENV PORT 3000
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
 # Prepend 'doppler run --' to inject secrets.
 # It will automatically use the DOPPLER_TOKEN from the environment.
-CMD doppler run -- fallback:env -- node server.js -H 0.0.0.0
+CMD doppler run -- node server.js -H 0.0.0.0
