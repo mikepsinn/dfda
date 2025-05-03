@@ -1,2 +1,7 @@
 environment:
   - pulumi-infra/dev
+config:
+  gcp:project: healome-dev-358414
+  gcp:region: us-central1
+  gcp:zone: us-central1-a
+  pulumi-infra:myPublicIp: 24.216.168.106/32

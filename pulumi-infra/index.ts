@@ -3,18 +3,23 @@ import * as pulumi from "@pulumi/pulumi";
 import * as gcp from "@pulumi/gcp";
 import * as command from "@pulumi/command";
 
-// Config
+// GCP provider configuration
+const gcpConfig = new pulumi.Config("gcp");
+const project = gcpConfig.require("project");
+const region = gcpConfig.get("region") || "us-central1";
+const zone = gcpConfig.get("zone") || "us-central1-a";
+
+// Pulumi stack configuration for this project
 const config = new pulumi.Config();
-const project = config.require("gcp:project");
-const region = config.get("gcp:region") || "us-central1";
-const zone = config.get("gcp:zone") || "us-central1-a";
+// Fetch your public IP from stack config (set via `pulumi config set myPublicIp`)
+const myPublicIp = config.require("myPublicIp");
 
 // New config for Doppler project/config
 const dopplerProject = config.require("dopplerProject");
 const dopplerConfig = config.require("dopplerConfig");
 
-// Get your public IP from Pulumi config (set with pulumi config set myPublicIp)
-const myPublicIp = config.require("myPublicIp");
+// Define the VPC Connector CIDR statically to satisfy TypeScript
+const connectorCidr = "10.10.1.0/28";
 
 // Get default compute service account
 const defaultComputeSa = gcp.compute.getDefaultServiceAccount({});
@@ -37,14 +42,9 @@ async function main() {
     });
 
     // --- Secret Manager Secret for Doppler Token ---
-    // Using userManaged with empty replicas as a workaround for potential type issue
     const dopplerTokenSecret = new gcp.secretmanager.Secret("doppler-token-secret", {
         secretId: "DOPPLER_TOKEN",
-        replication: {
-            userManaged: {
-                replicas: [], // Empty list for userManaged
-            },
-        },
+        replication: { automatic: {} },
     });
 
     const dopplerTokenSecretVersion = new gcp.secretmanager.SecretVersion("doppler-token-secret-version", {
@@ -70,17 +70,24 @@ async function main() {
     };
     const mgmtFirewall = new gcp.compute.Firewall("coolify-mgmt-fw", mgmtFwArgs);
 
-    // Firewall: Allow Supabase DB and Studio ports from Cloud Run (TODO: refine source range)
+    // --- Serverless VPC Access Connector ---
+    const vpcConnector = new gcp.vpcaccess.Connector("cloudrun-connector", {
+        name: "cloudrun-connector",
+        region,
+        network: network.id,
+        ipCidrRange: connectorCidr,
+        machineType: "e2-micro",
+    });
+
+    // Firewall: Allow Supabase DB/Studio ports only from the VPC Connector's CIDR
     const supabaseFirewall = new gcp.compute.Firewall("supabase-db-fw", {
         network: network.id,
         allows: [
             { protocol: "tcp", ports: ["5432", "6001", "6002"] },
         ],
-        // TODO: Set to Cloud Run's egress IP range or VPC connector range
-        // sourceRanges: ["0.0.0.0/0"], // Replace with least privilege - NOW REPLACED BELOW
-        // We will set the source range after the connector is created
-        description: "Allow Supabase DB/Studio from Cloud Run VPC Connector",
-    });
+        sourceRanges: [connectorCidr],
+        description: "Allow Supabase DB/Studio ONLY from Cloud Run VPC Connector",
+    }, { dependsOn: [vpcConnector] });
 
     // Startup script for Docker + Coolify (quick install method 1)
     const startupScript = `
@@ -122,26 +129,6 @@ async function main() {
         format: "DOCKER",
         description: "Docker repository for dfda-node application",
     });
-
-    // --- Serverless VPC Access Connector ---
-    const vpcConnector = new gcp.vpcaccess.Connector("cloudrun-connector", {
-        name: "cloudrun-connector",
-        region,
-        network: network.id,
-        ipCidrRange: "10.10.1.0/28", // Dedicated range for the connector
-        machineType: "e2-micro", // Adjust based on expected traffic
-    });
-
-    // Update the Supabase firewall to only allow traffic from the VPC connector
-    // @ts-ignore TS2322: allow dynamic Output<string[]> for sourceRanges
-    const supabaseFirewallUpdate = new gcp.compute.Firewall("supabase-db-fw", {
-        network: network.id,
-        allows: [
-            { protocol: "tcp", ports: ["5432", "6001", "6002"] },
-        ],
-        sourceRanges: (vpcConnector.ipCidrRange.apply(range => [range]) as any), // Use the connector's range
-        description: "Allow Supabase DB/Studio ONLY from Cloud Run VPC Connector",
-    }, { dependsOn: [vpcConnector, supabaseFirewall] }); // Ensure connector exists and replace original rule
 
     // --- GitHub Actions CI/CD Setup ---
 
