@@ -11,7 +11,8 @@ import {
 import { navigationTreeObject } from '@/lib/generated-nav-tree';
 import type { GeneratedNavTree } from '@/lib/generated-nav-tree';
 import { logger } from '@/lib/logger';
-import { interpolateHref } from '@/lib/utils'; // Import the shared function
+import { interpolateHref } from '@/lib/formatters'; // Updated path
+import { InternalLink } from '@/components/internal-link';
 
 // Props: navKey is mandatory, params optional. ButtonProps without children/asChild.
 type InternalLinkButtonProps = {

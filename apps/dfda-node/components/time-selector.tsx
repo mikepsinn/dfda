@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Clock } from 'lucide-react'
+import { Clock, Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
+import { formatTime } from "@/lib/formatters"
 
 interface TimePreset {
   label: string
@@ -30,14 +31,6 @@ const DEFAULT_PRESETS: TimePreset[] = [
   { label: 'Night', value: '22:00', icon: '✨', color: 'bg-purple-100 border-purple-200' },
   { label: 'Bedtime', value: '23:00', icon: '🛌', color: 'bg-slate-100 border-slate-200' },
 ]
-
-// Helper to format display times
-const formatTimeDisplay = (time: string): string => {
-  const [hours, minutes] = time.split(':').map(Number);
-  const period = hours >= 12 ? 'PM' : 'AM';
-  const displayHours = hours % 12 || 12; // Convert 0 to 12 for 12 AM
-  return `${displayHours}:${minutes.toString().padStart(2, '0')} ${period}`;
-}
 
 export function TimeSelector({ 
   value, 
@@ -86,9 +79,9 @@ export function TimeSelector({
                   preset.color || ""
                 )}
               >
-                <div className="text-lg mb-1">{preset.icon}</div>
-                <div className="font-medium">{preset.label}</div>
-                <div className="text-xs text-muted-foreground">{formatTimeDisplay(preset.value)}</div>
+                <div className="text-lg mb-1 hidden sm:block">{preset.icon}</div>
+                <div className="font-medium hidden sm:block">{preset.label}</div>
+                <div className="text-xs text-muted-foreground">{formatTime(preset.value)}</div>
               </Button>
             ))}
           </div>
@@ -139,7 +132,7 @@ export function TimeSelector({
             <div className="mt-4 text-center">
               <div className="text-2xl font-semibold flex items-center justify-center gap-2">
                 <Clock className="h-5 w-5 text-muted-foreground" />
-                {formatTimeDisplay(value)}
+                {formatTime(value)}
               </div>
             </div>
           </div>

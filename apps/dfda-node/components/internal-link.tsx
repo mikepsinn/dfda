@@ -3,7 +3,7 @@ import type { ComponentProps } from 'react';
 import { navigationTreeObject } from '@/lib/generated-nav-tree';
 import type { GeneratedNavTree } from '@/lib/generated-nav-tree';
 import { logger } from '@/lib/logger';
-import { interpolateHref } from '@/lib/utils';
+import { interpolateHref } from '@/lib/formatters';
 
 // Define props: Accept a navKey and optional params, omit href
 // We use keyof GeneratedNavTree for type safety and autocomplete
