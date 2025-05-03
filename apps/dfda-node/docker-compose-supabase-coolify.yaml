@@ -1,0 +1,485 @@
+services:
+  supabase-kong:
+    image: 'kong:2.8.1'
+    entrypoint: 'bash -c ''eval "echo \"$$(cat ~/temp.yml)\"" > ~/kong.yml && /docker-entrypoint.sh kong docker-start'''
+    depends_on:
+      supabase-analytics:
+        condition: service_healthy
+    environment:
+      - SERVICE_FQDN_SUPABASEKONG_8000
+      - 'KONG_PORT_MAPS=443:8000'
+      - 'JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - KONG_DATABASE=off
+      - KONG_DECLARATIVE_CONFIG=/home/kong/kong.yml
+      - 'KONG_DNS_ORDER=LAST,A,CNAME'
+      - 'KONG_PLUGINS=request-transformer,cors,key-auth,acl,basic-auth'
+      - KONG_NGINX_PROXY_PROXY_BUFFER_SIZE=160k
+      - 'KONG_NGINX_PROXY_PROXY_BUFFERS=64 160k'
+      - 'SUPABASE_ANON_KEY=${SERVICE_SUPABASEANON_KEY}'
+      - 'SUPABASE_SERVICE_KEY=${SERVICE_SUPABASESERVICE_KEY}'
+      - 'DASHBOARD_USERNAME=${SERVICE_USER_ADMIN}'
+      - 'DASHBOARD_PASSWORD=${SERVICE_PASSWORD_ADMIN}'
+    volumes:
+      -
+        type: bind
+        source: ./volumes/api/kong.yml
+        target: /home/kong/temp.yml
+        content: "_format_version: '2.1'\n_transform: true\n\n###\n### Consumers / Users\n###\nconsumers:\n  - username: DASHBOARD\n  - username: anon\n    keyauth_credentials:\n      - key: $SUPABASE_ANON_KEY\n  - username: service_role\n    keyauth_credentials:\n      - key: $SUPABASE_SERVICE_KEY\n\n###\n### Access Control List\n###\nacls:\n  - consumer: anon\n    group: anon\n  - consumer: service_role\n    group: admin\n\n###\n### Dashboard credentials\n###\nbasicauth_credentials:\n- consumer: DASHBOARD\n  username: $DASHBOARD_USERNAME\n  password: $DASHBOARD_PASSWORD\n\n\n###\n### API Routes\n###\nservices:\n\n  ## Open Auth routes\n  - name: auth-v1-open\n    url: http://supabase-auth:9999/verify\n    routes:\n      - name: auth-v1-open\n        strip_path: true\n        paths:\n          - /auth/v1/verify\n    plugins:\n      - name: cors\n  - name: auth-v1-open-callback\n    url: http://supabase-auth:9999/callback\n    routes:\n      - name: auth-v1-open-callback\n        strip_path: true\n        paths:\n          - /auth/v1/callback\n    plugins:\n      - name: cors\n  - name: auth-v1-open-authorize\n    url: http://supabase-auth:9999/authorize\n    routes:\n      - name: auth-v1-open-authorize\n        strip_path: true\n        paths:\n          - /auth/v1/authorize\n    plugins:\n      - name: cors\n\n  ## Secure Auth routes\n  - name: auth-v1\n    _comment: 'GoTrue: /auth/v1/* -> http://supabase-auth:9999/*'\n    url: http://supabase-auth:9999/\n    routes:\n      - name: auth-v1-all\n        strip_path: true\n        paths:\n          - /auth/v1/\n    plugins:\n      - name: cors\n      - name: key-auth\n        config:\n          hide_credentials: false\n      - name: acl\n        config:\n          hide_groups_header: true\n          allow:\n            - admin\n            - anon\n\n  ## Secure REST routes\n  - name: rest-v1\n    _comment: 'PostgREST: /rest/v1/* -> http://supabase-rest:3000/*'\n    url: http://supabase-rest:3000/\n    routes:\n      - name: rest-v1-all\n        strip_path: true\n        paths:\n          - /rest/v1/\n    plugins:\n      - name: cors\n      - name: key-auth\n        config:\n          hide_credentials: true\n      - name: acl\n        config:\n          hide_groups_header: true\n          allow:\n            - admin\n            - anon\n\n  ## Secure GraphQL routes\n  - name: graphql-v1\n    _comment: 'PostgREST: /graphql/v1/* -> http://supabase-rest:3000/rpc/graphql'\n    url: http://supabase-rest:3000/rpc/graphql\n    routes:\n      - name: graphql-v1-all\n        strip_path: true\n        paths:\n          - /graphql/v1\n    plugins:\n      - name: cors\n      - name: key-auth\n        config:\n          hide_credentials: true\n      - name: request-transformer\n        config:\n          add:\n            headers:\n              - Content-Profile:graphql_public\n      - name: acl\n        config:\n          hide_groups_header: true\n          allow:\n            - admin\n            - anon\n\n  ## Secure Realtime routes\n  - name: realtime-v1-ws\n    _comment: 'Realtime: /realtime/v1/* -> ws://realtime:4000/socket/*'\n    url: http://realtime-dev:4000/socket\n    protocol: ws\n    routes:\n      - name: realtime-v1-ws\n        strip_path: true\n        paths:\n          - /realtime/v1/\n    plugins:\n      - name: cors\n      - name: key-auth\n        config:\n          hide_credentials: false\n      - name: acl\n        config:\n          hide_groups_header: true\n          allow:\n            - admin\n            - anon\n  - name: realtime-v1-rest\n    _comment: 'Realtime: /realtime/v1/* -> ws://realtime:4000/socket/*'\n    url: http://realtime-dev:4000/api\n    protocol: http\n    routes:\n      - name: realtime-v1-rest\n        strip_path: true\n        paths:\n          - /realtime/v1/api\n    plugins:\n      - name: cors\n      - name: key-auth\n        config:\n          hide_credentials: false\n      - name: acl\n        config:\n          hide_groups_header: true\n          allow:\n            - admin\n            - anon\n\n  ## Storage routes: the storage server manages its own auth\n  - name: storage-v1\n    _comment: 'Storage: /storage/v1/* -> http://supabase-storage:5000/*'\n    url: http://supabase-storage:5000/\n    routes:\n      - name: storage-v1-all\n        strip_path: true\n        paths:\n          - /storage/v1/\n    plugins:\n      - name: cors\n\n  ## Edge Functions routes\n  - name: functions-v1\n    _comment: 'Edge Functions: /functions/v1/* -> http://supabase-edge-functions:9000/*'\n    url: http://supabase-edge-functions:9000/\n    routes:\n      - name: functions-v1-all\n        strip_path: true\n        paths:\n          - /functions/v1/\n    plugins:\n      - name: cors\n\n  ## Analytics routes\n  - name: analytics-v1\n    _comment: 'Analytics: /analytics/v1/* -> http://logflare:4000/*'\n    url: http://supabase-analytics:4000/\n    routes:\n      - name: analytics-v1-all\n        strip_path: true\n        paths:\n          - /analytics/v1/\n\n  ## Secure Database routes\n  - name: meta\n    _comment: 'pg-meta: /pg/* -> http://supabase-meta:8080/*'\n    url: http://supabase-meta:8080/\n    routes:\n      - name: meta-all\n        strip_path: true\n        paths:\n          - /pg/\n    plugins:\n      - name: key-auth\n        config:\n          hide_credentials: false\n      - name: acl\n        config:\n          hide_groups_header: true\n          allow:\n            - admin\n\n  ## Protected Dashboard - catch all remaining routes\n  - name: dashboard\n    _comment: 'Studio: /* -> http://studio:3000/*'\n    url: http://supabase-studio:3000/\n    routes:\n      - name: dashboard-all\n        strip_path: true\n        paths:\n          - /\n    plugins:\n      - name: cors\n      - name: basic-auth\n        config:\n          hide_credentials: true\n"
+  supabase-studio:
+    image: 'supabase/studio:20241202-71e5240'
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - '-e'
+        - "require('http').get('http://127.0.0.1:3000/api/profile', (r) => {if (r.statusCode !== 200) process.exit(1); else process.exit(0); }).on('error', () => process.exit(1))"
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    depends_on:
+      supabase-analytics:
+        condition: service_healthy
+    environment:
+      - HOSTNAME=0.0.0.0
+      - 'STUDIO_PG_META_URL=http://supabase-meta:8080'
+      - 'POSTGRES_PASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+      - 'DEFAULT_ORGANIZATION_NAME=${STUDIO_DEFAULT_ORGANIZATION:-Default Organization}'
+      - 'DEFAULT_PROJECT_NAME=${STUDIO_DEFAULT_PROJECT:-Default Project}'
+      - 'SUPABASE_URL=http://supabase-kong:8000'
+      - 'SUPABASE_PUBLIC_URL=${SERVICE_FQDN_SUPABASEKONG}'
+      - 'SUPABASE_ANON_KEY=${SERVICE_SUPABASEANON_KEY}'
+      - 'SUPABASE_SERVICE_KEY=${SERVICE_SUPABASESERVICE_KEY}'
+      - 'AUTH_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'LOGFLARE_API_KEY=${SERVICE_PASSWORD_LOGFLARE}'
+      - 'LOGFLARE_URL=http://supabase-analytics:4000'
+      - 'SUPABASE_PUBLIC_API=${SERVICE_FQDN_SUPABASEKONG}'
+      - NEXT_PUBLIC_ENABLE_LOGS=true
+      - NEXT_ANALYTICS_BACKEND_PROVIDER=postgres
+      - 'OPENAI_API_KEY=${OPENAI_API_KEY}'
+  supabase-db:
+    image: 'supabase/postgres:15.8.1.048'
+    healthcheck:
+      test: 'pg_isready -U postgres -h 127.0.0.1'
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    depends_on:
+      supabase-vector:
+        condition: service_healthy
+    command:
+      - postgres
+      - '-c'
+      - config_file=/etc/postgresql/postgresql.conf
+      - '-c'
+      - log_min_messages=fatal
+    environment:
+      - POSTGRES_HOST=/var/run/postgresql
+      - 'PGPORT=${POSTGRES_PORT:-5432}'
+      - 'POSTGRES_PORT=${POSTGRES_PORT:-5432}'
+      - 'PGPASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+      - 'POSTGRES_PASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+      - 'PGDATABASE=${POSTGRES_DB:-postgres}'
+      - 'POSTGRES_DB=${POSTGRES_DB:-postgres}'
+      - 'JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'JWT_EXP=${JWT_EXPIRY:-3600}'
+    volumes:
+      - 'supabase-db-data:/var/lib/postgresql/data'
+      -
+        type: bind
+        source: ./volumes/db/realtime.sql
+        target: /docker-entrypoint-initdb.d/migrations/99-realtime.sql
+        content: "\\set pguser `echo \"supabase_admin\"`\n\ncreate schema if not exists _realtime;\nalter schema _realtime owner to :pguser;\n"
+      -
+        type: bind
+        source: ./volumes/db/_supabase.sql
+        target: /docker-entrypoint-initdb.d/migrations/97-_supabase.sql
+        content: "\\set pguser `echo \"$POSTGRES_USER\"`\n\nCREATE DATABASE _supabase WITH OWNER :pguser;\n"
+      -
+        type: bind
+        source: ./volumes/db/pooler.sql
+        target: /docker-entrypoint-initdb.d/migrations/99-pooler.sql
+        content: "\\set pguser `echo \"supabase_admin\"`\n\\c _supabase\ncreate schema if not exists _supavisor;\nalter schema _supavisor owner to :pguser;\n\\c postgres\n"
+      -
+        type: bind
+        source: ./volumes/db/webhooks.sql
+        target: /docker-entrypoint-initdb.d/init-scripts/98-webhooks.sql
+        content: "BEGIN;\n-- Create pg_net extension\nCREATE EXTENSION IF NOT EXISTS pg_net SCHEMA extensions;\n-- Create supabase_functions schema\nCREATE SCHEMA supabase_functions AUTHORIZATION supabase_admin;\nGRANT USAGE ON SCHEMA supabase_functions TO postgres, anon, authenticated, service_role;\nALTER DEFAULT PRIVILEGES IN SCHEMA supabase_functions GRANT ALL ON TABLES TO postgres, anon, authenticated, service_role;\nALTER DEFAULT PRIVILEGES IN SCHEMA supabase_functions GRANT ALL ON FUNCTIONS TO postgres, anon, authenticated, service_role;\nALTER DEFAULT PRIVILEGES IN SCHEMA supabase_functions GRANT ALL ON SEQUENCES TO postgres, anon, authenticated, service_role;\n-- supabase_functions.migrations definition\nCREATE TABLE supabase_functions.migrations (\n  version text PRIMARY KEY,\n  inserted_at timestamptz NOT NULL DEFAULT NOW()\n);\n-- Initial supabase_functions migration\nINSERT INTO supabase_functions.migrations (version) VALUES ('initial');\n-- supabase_functions.hooks definition\nCREATE TABLE supabase_functions.hooks (\n  id bigserial PRIMARY KEY,\n  hook_table_id integer NOT NULL,\n  hook_name text NOT NULL,\n  created_at timestamptz NOT NULL DEFAULT NOW(),\n  request_id bigint\n);\nCREATE INDEX supabase_functions_hooks_request_id_idx ON supabase_functions.hooks USING btree (request_id);\nCREATE INDEX supabase_functions_hooks_h_table_id_h_name_idx ON supabase_functions.hooks USING btree (hook_table_id, hook_name);\nCOMMENT ON TABLE supabase_functions.hooks IS 'Supabase Functions Hooks: Audit trail for triggered hooks.';\nCREATE FUNCTION supabase_functions.http_request()\n  RETURNS trigger\n  LANGUAGE plpgsql\n  AS $function$\n  DECLARE\n    request_id bigint;\n    payload jsonb;\n    url text := TG_ARGV[0]::text;\n    method text := TG_ARGV[1]::text;\n    headers jsonb DEFAULT '{}'::jsonb;\n    params jsonb DEFAULT '{}'::jsonb;\n    timeout_ms integer DEFAULT 1000;\n  BEGIN\n    IF url IS NULL OR url = 'null' THEN\n      RAISE EXCEPTION 'url argument is missing';\n    END IF;\n\n    IF method IS NULL OR method = 'null' THEN\n      RAISE EXCEPTION 'method argument is missing';\n    END IF;\n\n    IF TG_ARGV[2] IS NULL OR TG_ARGV[2] = 'null' THEN\n      headers = '{\"Content-Type\": \"application/json\"}'::jsonb;\n    ELSE\n      headers = TG_ARGV[2]::jsonb;\n    END IF;\n\n    IF TG_ARGV[3] IS NULL OR TG_ARGV[3] = 'null' THEN\n      params = '{}'::jsonb;\n    ELSE\n      params = TG_ARGV[3]::jsonb;\n    END IF;\n\n    IF TG_ARGV[4] IS NULL OR TG_ARGV[4] = 'null' THEN\n      timeout_ms = 1000;\n    ELSE\n      timeout_ms = TG_ARGV[4]::integer;\n    END IF;\n\n    CASE\n      WHEN method = 'GET' THEN\n        SELECT http_get INTO request_id FROM net.http_get(\n          url,\n          params,\n          headers,\n          timeout_ms\n        );\n      WHEN method = 'POST' THEN\n        payload = jsonb_build_object(\n          'old_record', OLD,\n          'record', NEW,\n          'type', TG_OP,\n          'table', TG_TABLE_NAME,\n          'schema', TG_TABLE_SCHEMA\n        );\n\n        SELECT http_post INTO request_id FROM net.http_post(\n          url,\n          payload,\n          params,\n          headers,\n          timeout_ms\n        );\n      ELSE\n        RAISE EXCEPTION 'method argument % is invalid', method;\n    END CASE;\n\n    INSERT INTO supabase_functions.hooks\n      (hook_table_id, hook_name, request_id)\n    VALUES\n      (TG_RELID, TG_NAME, request_id);\n\n    RETURN NEW;\n  END\n$function$;\n-- Supabase super admin\nDO\n$$\nBEGIN\n  IF NOT EXISTS (\n    SELECT 1\n    FROM pg_roles\n    WHERE rolname = 'supabase_functions_admin'\n  )\n  THEN\n    CREATE USER supabase_functions_admin NOINHERIT CREATEROLE LOGIN NOREPLICATION;\n  END IF;\nEND\n$$;\nGRANT ALL PRIVILEGES ON SCHEMA supabase_functions TO supabase_functions_admin;\nGRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA supabase_functions TO supabase_functions_admin;\nGRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA supabase_functions TO supabase_functions_admin;\nALTER USER supabase_functions_admin SET search_path = \"supabase_functions\";\nALTER table \"supabase_functions\".migrations OWNER TO supabase_functions_admin;\nALTER table \"supabase_functions\".hooks OWNER TO supabase_functions_admin;\nALTER function \"supabase_functions\".http_request() OWNER TO supabase_functions_admin;\nGRANT supabase_functions_admin TO postgres;\n-- Remove unused supabase_pg_net_admin role\nDO\n$$\nBEGIN\n  IF EXISTS (\n    SELECT 1\n    FROM pg_roles\n    WHERE rolname = 'supabase_pg_net_admin'\n  )\n  THEN\n    REASSIGN OWNED BY supabase_pg_net_admin TO supabase_admin;\n    DROP OWNED BY supabase_pg_net_admin;\n    DROP ROLE supabase_pg_net_admin;\n  END IF;\nEND\n$$;\n-- pg_net grants when extension is already enabled\nDO\n$$\nBEGIN\n  IF EXISTS (\n    SELECT 1\n    FROM pg_extension\n    WHERE extname = 'pg_net'\n  )\n  THEN\n    GRANT USAGE ON SCHEMA net TO supabase_functions_admin, postgres, anon, authenticated, service_role;\n    ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;\n    ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;\n    ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;\n    ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;\n    REVOKE ALL ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;\n    REVOKE ALL ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;\n    GRANT EXECUTE ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;\n    GRANT EXECUTE ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;\n  END IF;\nEND\n$$;\n-- Event trigger for pg_net\nCREATE OR REPLACE FUNCTION extensions.grant_pg_net_access()\nRETURNS event_trigger\nLANGUAGE plpgsql\nAS $$\nBEGIN\n  IF EXISTS (\n    SELECT 1\n    FROM pg_event_trigger_ddl_commands() AS ev\n    JOIN pg_extension AS ext\n    ON ev.objid = ext.oid\n    WHERE ext.extname = 'pg_net'\n  )\n  THEN\n    GRANT USAGE ON SCHEMA net TO supabase_functions_admin, postgres, anon, authenticated, service_role;\n    ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;\n    ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SECURITY DEFINER;\n    ALTER function net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;\n    ALTER function net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) SET search_path = net;\n    REVOKE ALL ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;\n    REVOKE ALL ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) FROM PUBLIC;\n    GRANT EXECUTE ON FUNCTION net.http_get(url text, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;\n    GRANT EXECUTE ON FUNCTION net.http_post(url text, body jsonb, params jsonb, headers jsonb, timeout_milliseconds integer) TO supabase_functions_admin, postgres, anon, authenticated, service_role;\n  END IF;\nEND;\n$$;\nCOMMENT ON FUNCTION extensions.grant_pg_net_access IS 'Grants access to pg_net';\nDO\n$$\nBEGIN\n  IF NOT EXISTS (\n    SELECT 1\n    FROM pg_event_trigger\n    WHERE evtname = 'issue_pg_net_access'\n  ) THEN\n    CREATE EVENT TRIGGER issue_pg_net_access ON ddl_command_end WHEN TAG IN ('CREATE EXTENSION')\n    EXECUTE PROCEDURE extensions.grant_pg_net_access();\n  END IF;\nEND\n$$;\nINSERT INTO supabase_functions.migrations (version) VALUES ('20210809183423_update_grants');\nALTER function supabase_functions.http_request() SECURITY DEFINER;\nALTER function supabase_functions.http_request() SET search_path = supabase_functions;\nREVOKE ALL ON FUNCTION supabase_functions.http_request() FROM PUBLIC;\nGRANT EXECUTE ON FUNCTION supabase_functions.http_request() TO postgres, anon, authenticated, service_role;\nCOMMIT;\n"
+      -
+        type: bind
+        source: ./volumes/db/roles.sql
+        target: /docker-entrypoint-initdb.d/init-scripts/99-roles.sql
+        content: "-- NOTE: change to your own passwords for production environments\n \\set pgpass `echo \"$POSTGRES_PASSWORD\"`\n\n ALTER USER authenticator WITH PASSWORD :'pgpass';\n ALTER USER pgbouncer WITH PASSWORD :'pgpass';\n ALTER USER supabase_auth_admin WITH PASSWORD :'pgpass';\n ALTER USER supabase_functions_admin WITH PASSWORD :'pgpass';\n ALTER USER supabase_storage_admin WITH PASSWORD :'pgpass';\n"
+      -
+        type: bind
+        source: ./volumes/db/jwt.sql
+        target: /docker-entrypoint-initdb.d/init-scripts/99-jwt.sql
+        content: "\\set jwt_secret `echo \"$JWT_SECRET\"`\n\\set jwt_exp `echo \"$JWT_EXP\"`\n\\set db_name `echo \"${POSTGRES_DB:-postgres}\"`\n\nALTER DATABASE :db_name SET \"app.settings.jwt_secret\" TO :'jwt_secret';\nALTER DATABASE :db_name SET \"app.settings.jwt_exp\" TO :'jwt_exp';\n"
+      -
+        type: bind
+        source: ./volumes/db/logs.sql
+        target: /docker-entrypoint-initdb.d/migrations/99-logs.sql
+        content: "\\set pguser `echo \"supabase_admin\"`\n\\c _supabase\ncreate schema if not exists _analytics;\nalter schema _analytics owner to :pguser;\n\\c postgres\n"
+      - 'supabase-db-config:/etc/postgresql-custom'
+  supabase-analytics:
+    image: 'supabase/logflare:1.4.0'
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - 'http://127.0.0.1:4000/health'
+      timeout: 5s
+      interval: 5s
+      retries: 10
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+    environment:
+      - LOGFLARE_NODE_HOST=127.0.0.1
+      - DB_USERNAME=supabase_admin
+      - DB_DATABASE=_supabase
+      - 'DB_HOSTNAME=${POSTGRES_HOSTNAME:-supabase-db}'
+      - 'DB_PORT=${POSTGRES_PORT:-5432}'
+      - 'DB_PASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+      - DB_SCHEMA=_analytics
+      - 'LOGFLARE_API_KEY=${SERVICE_PASSWORD_LOGFLARE}'
+      - LOGFLARE_SINGLE_TENANT=true
+      - LOGFLARE_SINGLE_TENANT_MODE=true
+      - LOGFLARE_SUPABASE_MODE=true
+      - LOGFLARE_MIN_CLUSTER_SIZE=1
+      - 'POSTGRES_BACKEND_URL=postgresql://supabase_admin:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/_supabase'
+      - POSTGRES_BACKEND_SCHEMA=_analytics
+      - LOGFLARE_FEATURE_FLAG_OVERRIDE=multibackend=true
+  supabase-vector:
+    image: 'timberio/vector:0.28.1-alpine'
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--tries=1'
+        - '--spider'
+        - 'http://supabase-vector:9001/health'
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    volumes:
+      -
+        type: bind
+        source: ./volumes/logs/vector.yml
+        target: /etc/vector/vector.yml
+        read_only: true
+        content: "api:\n  enabled: true\n  address: 0.0.0.0:9001\n\nsources:\n  docker_host:\n    type: docker_logs\n    exclude_containers:\n      - supabase-vector\n\ntransforms:\n  project_logs:\n    type: remap\n    inputs:\n      - docker_host\n    source: |-\n      .project = \"default\"\n      .event_message = del(.message)\n      .appname = del(.container_name)\n      del(.container_created_at)\n      del(.container_id)\n      del(.source_type)\n      del(.stream)\n      del(.label)\n      del(.image)\n      del(.host)\n      del(.stream)\n  router:\n    type: route\n    inputs:\n      - project_logs\n    route:\n      kong: 'starts_with(string!(.appname), \"supabase-kong\")'\n      auth: 'starts_with(string!(.appname), \"supabase-auth\")'\n      rest: 'starts_with(string!(.appname), \"supabase-rest\")'\n      realtime: 'starts_with(string!(.appname), \"realtime-dev\")'\n      storage: 'starts_with(string!(.appname), \"supabase-storage\")'\n      functions: 'starts_with(string!(.appname), \"supabase-functions\")'\n      db: 'starts_with(string!(.appname), \"supabase-db\")'\n  # Ignores non nginx errors since they are related with kong booting up\n  kong_logs:\n    type: remap\n    inputs:\n      - router.kong\n    source: |-\n      req, err = parse_nginx_log(.event_message, \"combined\")\n      if err == null {\n          .timestamp = req.timestamp\n          .metadata.request.headers.referer = req.referer\n          .metadata.request.headers.user_agent = req.agent\n          .metadata.request.headers.cf_connecting_ip = req.client\n          .metadata.request.method = req.method\n          .metadata.request.path = req.path\n          .metadata.request.protocol = req.protocol\n          .metadata.response.status_code = req.status\n      }\n      if err != null {\n        abort\n      }\n  # Ignores non nginx errors since they are related with kong booting up\n  kong_err:\n    type: remap\n    inputs:\n      - router.kong\n    source: |-\n      .metadata.request.method = \"GET\"\n      .metadata.response.status_code = 200\n      parsed, err = parse_nginx_log(.event_message, \"error\")\n      if err == null {\n          .timestamp = parsed.timestamp\n          .severity = parsed.severity\n          .metadata.request.host = parsed.host\n          .metadata.request.headers.cf_connecting_ip = parsed.client\n          url, err = split(parsed.request, \" \")\n          if err == null {\n              .metadata.request.method = url[0]\n              .metadata.request.path = url[1]\n              .metadata.request.protocol = url[2]\n          }\n      }\n      if err != null {\n        abort\n      }\n  # Gotrue logs are structured json strings which frontend parses directly. But we keep metadata for consistency.\n  auth_logs:\n    type: remap\n    inputs:\n      - router.auth\n    source: |-\n      parsed, err = parse_json(.event_message)\n      if err == null {\n          .metadata.timestamp = parsed.time\n          .metadata = merge!(.metadata, parsed)\n      }\n  # PostgREST logs are structured so we separate timestamp from message using regex\n  rest_logs:\n    type: remap\n    inputs:\n      - router.rest\n    source: |-\n      parsed, err = parse_regex(.event_message, r'^(?P<time>.*): (?P<msg>.*)$')\n      if err == null {\n          .event_message = parsed.msg\n          .timestamp = to_timestamp!(parsed.time)\n          .metadata.host = .project\n      }\n  # Realtime logs are structured so we parse the severity level using regex (ignore time because it has no date)\n  realtime_logs:\n    type: remap\n    inputs:\n      - router.realtime\n    source: |-\n      .metadata.project = del(.project)\n      .metadata.external_id = .metadata.project\n      parsed, err = parse_regex(.event_message, r'^(?P<time>\\d+:\\d+:\\d+\\.\\d+) \\[(?P<level>\\w+)\\] (?P<msg>.*)$')\n      if err == null {\n          .event_message = parsed.msg\n          .metadata.level = parsed.level\n      }\n  # Storage logs may contain json objects so we parse them for completeness\n  storage_logs:\n    type: remap\n    inputs:\n      - router.storage\n    source: |-\n      .metadata.project = del(.project)\n      .metadata.tenantId = .metadata.project\n      parsed, err = parse_json(.event_message)\n      if err == null {\n          .event_message = parsed.msg\n          .metadata.level = parsed.level\n          .metadata.timestamp = parsed.time\n          .metadata.context[0].host = parsed.hostname\n          .metadata.context[0].pid = parsed.pid\n      }\n  # Postgres logs some messages to stderr which we map to warning severity level\n  db_logs:\n    type: remap\n    inputs:\n      - router.db\n    source: |-\n      .metadata.host = \"db-default\"\n      .metadata.parsed.timestamp = .timestamp\n\n      parsed, err = parse_regex(.event_message, r'.*(?P<level>INFO|NOTICE|WARNING|ERROR|LOG|FATAL|PANIC?):.*', numeric_groups: true)\n\n      if err != null || parsed == null {\n        .metadata.parsed.error_severity = \"info\"\n      }\n      if parsed != null {\n      .metadata.parsed.error_severity = parsed.level\n      }\n      if .metadata.parsed.error_severity == \"info\" {\n          .metadata.parsed.error_severity = \"log\"\n      }\n      .metadata.parsed.error_severity = upcase!(.metadata.parsed.error_severity)\n\nsinks:\n  logflare_auth:\n    type: 'http'\n    inputs:\n      - auth_logs\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    uri: 'http://supabase-analytics:4000/api/logs?source_name=gotrue.logs.prod&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n  logflare_realtime:\n    type: 'http'\n    inputs:\n      - realtime_logs\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    uri: 'http://supabase-analytics:4000/api/logs?source_name=realtime.logs.prod&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n  logflare_rest:\n    type: 'http'\n    inputs:\n      - rest_logs\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    uri: 'http://supabase-analytics:4000/api/logs?source_name=postgREST.logs.prod&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n  logflare_db:\n    type: 'http'\n    inputs:\n      - db_logs\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    # We must route the sink through kong because ingesting logs before logflare is fully initialised will\n    # lead to broken queries from studio. This works by the assumption that containers are started in the\n    # following order: vector > db > logflare > kong\n    uri: 'http://supabase-kong:8000/analytics/v1/api/logs?source_name=postgres.logs&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n  logflare_functions:\n    type: 'http'\n    inputs:\n      - router.functions\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    uri: 'http://supabase-analytics:4000/api/logs?source_name=deno-relay-logs&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n  logflare_storage:\n    type: 'http'\n    inputs:\n      - storage_logs\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    uri: 'http://supabase-analytics:4000/api/logs?source_name=storage.logs.prod.2&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n  logflare_kong:\n    type: 'http'\n    inputs:\n      - kong_logs\n      - kong_err\n    encoding:\n      codec: 'json'\n    method: 'post'\n    request:\n      retry_max_duration_secs: 10\n    uri: 'http://supabase-analytics:4000/api/logs?source_name=cloudflare.logs.prod&api_key=${LOGFLARE_API_KEY?LOGFLARE_API_KEY is required}'\n"
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+    environment:
+      - 'LOGFLARE_API_KEY=${SERVICE_PASSWORD_LOGFLARE}'
+    command:
+      - '--config'
+      - etc/vector/vector.yml
+  supabase-rest:
+    image: 'postgrest/postgrest:v12.2.0'
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+      supabase-analytics:
+        condition: service_healthy
+    environment:
+      - 'PGRST_DB_URI=postgres://authenticator:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-postgres}'
+      - 'PGRST_DB_SCHEMAS=${PGRST_DB_SCHEMAS:-public,storage,graphql_public}'
+      - PGRST_DB_ANON_ROLE=anon
+      - 'PGRST_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - PGRST_DB_USE_LEGACY_GUCS=false
+      - 'PGRST_APP_SETTINGS_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'PGRST_APP_SETTINGS_JWT_EXP=${JWT_EXPIRY:-3600}'
+    command: postgrest
+    exclude_from_hc: true
+  supabase-auth:
+    image: 'supabase/gotrue:v2.164.0'
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+      supabase-analytics:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--tries=1'
+        - '--spider'
+        - 'http://127.0.0.1:9999/health'
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    environment:
+      - GOTRUE_API_HOST=0.0.0.0
+      - GOTRUE_API_PORT=9999
+      - 'API_EXTERNAL_URL=${API_EXTERNAL_URL:-http://supabase-kong:8000}'
+      - GOTRUE_DB_DRIVER=postgres
+      - 'GOTRUE_DB_DATABASE_URL=postgres://supabase_auth_admin:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-postgres}'
+      - 'GOTRUE_SITE_URL=${SITE_URL}'
+      - 'GOTRUE_URI_ALLOW_LIST=${ADDITIONAL_REDIRECT_URLS}'
+      - 'GOTRUE_DISABLE_SIGNUP=${DISABLE_SIGNUP:-false}'
+      - GOTRUE_JWT_ADMIN_ROLES=service_role
+      - GOTRUE_JWT_AUD=authenticated
+      - GOTRUE_JWT_DEFAULT_GROUP_NAME=authenticated
+      - 'GOTRUE_JWT_EXP=${JWT_EXPIRY:-3600}'
+      - 'GOTRUE_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'GOTRUE_EXTERNAL_EMAIL_ENABLED=${ENABLE_EMAIL_SIGNUP:-true}'
+      - 'GOTRUE_EXTERNAL_ANONYMOUS_USERS_ENABLED=${ENABLE_ANONYMOUS_USERS:-false}'
+      - 'GOTRUE_MAILER_AUTOCONFIRM=${ENABLE_EMAIL_AUTOCONFIRM:-false}'
+      - 'GOTRUE_SMTP_ADMIN_EMAIL=${SMTP_ADMIN_EMAIL}'
+      - 'GOTRUE_SMTP_HOST=${SMTP_HOST}'
+      - 'GOTRUE_SMTP_PORT=${SMTP_PORT:-587}'
+      - 'GOTRUE_SMTP_USER=${SMTP_USER}'
+      - 'GOTRUE_SMTP_PASS=${SMTP_PASS}'
+      - 'GOTRUE_SMTP_SENDER_NAME=${SMTP_SENDER_NAME}'
+      - 'GOTRUE_MAILER_URLPATHS_INVITE=${MAILER_URLPATHS_INVITE:-/auth/v1/verify}'
+      - 'GOTRUE_MAILER_URLPATHS_CONFIRMATION=${MAILER_URLPATHS_CONFIRMATION:-/auth/v1/verify}'
+      - 'GOTRUE_MAILER_URLPATHS_RECOVERY=${MAILER_URLPATHS_RECOVERY:-/auth/v1/verify}'
+      - 'GOTRUE_MAILER_URLPATHS_EMAIL_CHANGE=${MAILER_URLPATHS_EMAIL_CHANGE:-/auth/v1/verify}'
+      - 'GOTRUE_MAILER_TEMPLATES_INVITE=${MAILER_TEMPLATES_INVITE}'
+      - 'GOTRUE_MAILER_TEMPLATES_CONFIRMATION=${MAILER_TEMPLATES_CONFIRMATION}'
+      - 'GOTRUE_MAILER_TEMPLATES_RECOVERY=${MAILER_TEMPLATES_RECOVERY}'
+      - 'GOTRUE_MAILER_TEMPLATES_MAGIC_LINK=${MAILER_TEMPLATES_MAGIC_LINK}'
+      - 'GOTRUE_MAILER_TEMPLATES_EMAIL_CHANGE=${MAILER_TEMPLATES_EMAIL_CHANGE}'
+      - 'GOTRUE_MAILER_SUBJECTS_CONFIRMATION=${MAILER_SUBJECTS_CONFIRMATION}'
+      - 'GOTRUE_MAILER_SUBJECTS_RECOVERY=${MAILER_SUBJECTS_RECOVERY}'
+      - 'GOTRUE_MAILER_SUBJECTS_MAGIC_LINK=${MAILER_SUBJECTS_MAGIC_LINK}'
+      - 'GOTRUE_MAILER_SUBJECTS_EMAIL_CHANGE=${MAILER_SUBJECTS_EMAIL_CHANGE}'
+      - 'GOTRUE_MAILER_SUBJECTS_INVITE=${MAILER_SUBJECTS_INVITE}'
+      - 'GOTRUE_EXTERNAL_PHONE_ENABLED=${ENABLE_PHONE_SIGNUP:-true}'
+      - 'GOTRUE_SMS_AUTOCONFIRM=${ENABLE_PHONE_AUTOCONFIRM:-true}'
+  realtime-dev:
+    image: 'supabase/realtime:v2.33.70'
+    container_name: realtime-dev.supabase-realtime
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+      supabase-analytics:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - '-sSfL'
+        - '--head'
+        - '-o'
+        - /dev/null
+        - '-H'
+        - 'Authorization: Bearer ${SERVICE_SUPABASEANON_KEY}'
+        - 'http://127.0.0.1:4000/api/tenants/realtime-dev/health'
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    environment:
+      - PORT=4000
+      - 'DB_HOST=${POSTGRES_HOSTNAME:-supabase-db}'
+      - 'DB_PORT=${POSTGRES_PORT:-5432}'
+      - DB_USER=supabase_admin
+      - 'DB_PASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+      - 'DB_NAME=${POSTGRES_DB:-postgres}'
+      - 'DB_AFTER_CONNECT_QUERY=SET search_path TO _realtime'
+      - DB_ENC_KEY=supabaserealtime
+      - 'API_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - FLY_ALLOC_ID=fly123
+      - FLY_APP_NAME=realtime
+      - 'SECRET_KEY_BASE=${SECRET_PASSWORD_REALTIME}'
+      - 'ERL_AFLAGS=-proto_dist inet_tcp'
+      - ENABLE_TAILSCALE=false
+      - "DNS_NODES=''"
+      - RLIMIT_NOFILE=10000
+      - APP_NAME=realtime
+      - SEED_SELF_HOST=true
+      - LOG_LEVEL=error
+      - RUN_JANITOR=true
+      - JANITOR_INTERVAL=60000
+    command: "sh -c \"/app/bin/migrate && /app/bin/realtime eval 'Realtime.Release.seeds(Realtime.Repo)' && /app/bin/server\"\n"
+  supabase-minio:
+    image: minio/minio
+    environment:
+      - 'MINIO_ROOT_USER=${SERVICE_USER_MINIO}'
+      - 'MINIO_ROOT_PASSWORD=${SERVICE_PASSWORD_MINIO}'
+    command: 'server --console-address ":9001" /data'
+    healthcheck:
+      test: 'sleep 5 && exit 0'
+      interval: 2s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - './volumes/storage:/data'
+  minio-createbucket:
+    image: minio/mc
+    restart: 'no'
+    environment:
+      - 'MINIO_ROOT_USER=${SERVICE_USER_MINIO}'
+      - 'MINIO_ROOT_PASSWORD=${SERVICE_PASSWORD_MINIO}'
+    depends_on:
+      supabase-minio:
+        condition: service_healthy
+    entrypoint:
+      - /entrypoint.sh
+    volumes:
+      -
+        type: bind
+        source: ./entrypoint.sh
+        target: /entrypoint.sh
+        content: "#!/bin/sh\n/usr/bin/mc alias set supabase-minio http://supabase-minio:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};\n/usr/bin/mc mb --ignore-existing supabase-minio/stub;\nexit 0\n"
+  supabase-storage:
+    image: 'supabase/storage-api:v1.14.6'
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+      supabase-rest:
+        condition: service_started
+      imgproxy:
+        condition: service_started
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--tries=1'
+        - '--spider'
+        - 'http://127.0.0.1:5000/status'
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    environment:
+      - SERVER_PORT=5000
+      - SERVER_REGION=local
+      - MULTI_TENANT=false
+      - 'AUTH_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'DATABASE_URL=postgres://supabase_storage_admin:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-postgres}'
+      - DB_INSTALL_ROLES=false
+      - STORAGE_BACKEND=s3
+      - STORAGE_S3_BUCKET=stub
+      - 'STORAGE_S3_ENDPOINT=http://supabase-minio:9000'
+      - STORAGE_S3_FORCE_PATH_STYLE=true
+      - STORAGE_S3_REGION=us-east-1
+      - 'AWS_ACCESS_KEY_ID=${SERVICE_USER_MINIO}'
+      - 'AWS_SECRET_ACCESS_KEY=${SERVICE_PASSWORD_MINIO}'
+      - UPLOAD_FILE_SIZE_LIMIT=524288000
+      - UPLOAD_FILE_SIZE_LIMIT_STANDARD=524288000
+      - UPLOAD_SIGNED_URL_EXPIRATION_TIME=120
+      - TUS_URL_PATH=upload/resumable
+      - TUS_MAX_SIZE=3600000
+      - ENABLE_IMAGE_TRANSFORMATION=true
+      - 'IMGPROXY_URL=http://imgproxy:8080'
+      - IMGPROXY_REQUEST_TIMEOUT=15
+      - DATABASE_SEARCH_PATH=storage
+      - NODE_ENV=production
+      - REQUEST_ALLOW_X_FORWARDED_PATH=true
+    volumes:
+      - './volumes/storage:/var/lib/storage'
+  imgproxy:
+    image: 'darthsim/imgproxy:v3.8.0'
+    healthcheck:
+      test:
+        - CMD
+        - imgproxy
+        - health
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    environment:
+      - IMGPROXY_LOCAL_FILESYSTEM_ROOT=/
+      - IMGPROXY_USE_ETAG=true
+      - 'IMGPROXY_ENABLE_WEBP_DETECTION=${IMGPROXY_ENABLE_WEBP_DETECTION:-true}'
+    volumes:
+      - './volumes/storage:/var/lib/storage'
+  supabase-meta:
+    image: 'supabase/postgres-meta:v0.84.2'
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+      supabase-analytics:
+        condition: service_healthy
+    environment:
+      - PG_META_PORT=8080
+      - 'PG_META_DB_HOST=${POSTGRES_HOSTNAME:-supabase-db}'
+      - 'PG_META_DB_PORT=${POSTGRES_PORT:-5432}'
+      - 'PG_META_DB_NAME=${POSTGRES_DB:-postgres}'
+      - PG_META_DB_USER=supabase_admin
+      - 'PG_META_DB_PASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+  supabase-edge-functions:
+    image: 'supabase/edge-runtime:v1.65.3'
+    depends_on:
+      supabase-analytics:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - echo
+        - 'Edge Functions is healthy'
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    environment:
+      - 'JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'SUPABASE_URL=${SERVICE_FQDN_SUPABASEKONG}'
+      - 'SUPABASE_ANON_KEY=${SERVICE_SUPABASEANON_KEY}'
+      - 'SUPABASE_SERVICE_ROLE_KEY=${SERVICE_SUPABASESERVICE_KEY}'
+      - 'SUPABASE_DB_URL=postgresql://postgres:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-postgres}'
+      - 'VERIFY_JWT=${FUNCTIONS_VERIFY_JWT:-false}'
+    volumes:
+      - './volumes/functions:/home/deno/functions'
+      -
+        type: bind
+        source: ./volumes/functions/main/index.ts
+        target: /home/deno/functions/main/index.ts
+        content: "import { serve } from 'https://deno.land/std@0.131.0/http/server.ts'\nimport * as jose from 'https://deno.land/x/jose@v4.14.4/index.ts'\n\nconsole.log('main function started')\n\nconst JWT_SECRET = Deno.env.get('JWT_SECRET')\nconst VERIFY_JWT = Deno.env.get('VERIFY_JWT') === 'true'\n\nfunction getAuthToken(req: Request) {\n  const authHeader = req.headers.get('authorization')\n  if (!authHeader) {\n    throw new Error('Missing authorization header')\n  }\n  const [bearer, token] = authHeader.split(' ')\n  if (bearer !== 'Bearer') {\n    throw new Error(`Auth header is not 'Bearer {token}'`)\n  }\n  return token\n}\n\nasync function verifyJWT(jwt: string): Promise<boolean> {\n  const encoder = new TextEncoder()\n  const secretKey = encoder.encode(JWT_SECRET)\n  try {\n    await jose.jwtVerify(jwt, secretKey)\n  } catch (err) {\n    console.error(err)\n    return false\n  }\n  return true\n}\n\nserve(async (req: Request) => {\n  if (req.method !== 'OPTIONS' && VERIFY_JWT) {\n    try {\n      const token = getAuthToken(req)\n      const isValidJWT = await verifyJWT(token)\n\n      if (!isValidJWT) {\n        return new Response(JSON.stringify({ msg: 'Invalid JWT' }), {\n          status: 401,\n          headers: { 'Content-Type': 'application/json' },\n        })\n      }\n    } catch (e) {\n      console.error(e)\n      return new Response(JSON.stringify({ msg: e.toString() }), {\n        status: 401,\n        headers: { 'Content-Type': 'application/json' },\n      })\n    }\n  }\n\n  const url = new URL(req.url)\n  const { pathname } = url\n  const path_parts = pathname.split('/')\n  const service_name = path_parts[1]\n\n  if (!service_name || service_name === '') {\n    const error = { msg: 'missing function name in request' }\n    return new Response(JSON.stringify(error), {\n      status: 400,\n      headers: { 'Content-Type': 'application/json' },\n    })\n  }\n\n  const servicePath = `/home/deno/functions/${service_name}`\n  console.error(`serving the request with ${servicePath}`)\n\n  const memoryLimitMb = 150\n  const workerTimeoutMs = 1 * 60 * 1000\n  const noModuleCache = false\n  const importMapPath = null\n  const envVarsObj = Deno.env.toObject()\n  const envVars = Object.keys(envVarsObj).map((k) => [k, envVarsObj[k]])\n\n  try {\n    const worker = await EdgeRuntime.userWorkers.create({\n      servicePath,\n      memoryLimitMb,\n      workerTimeoutMs,\n      noModuleCache,\n      importMapPath,\n      envVars,\n    })\n    return await worker.fetch(req)\n  } catch (e) {\n    const error = { msg: e.toString() }\n    return new Response(JSON.stringify(error), {\n      status: 500,\n      headers: { 'Content-Type': 'application/json' },\n    })\n  }\n})\n"
+      -
+        type: bind
+        source: ./volumes/functions/hello/index.ts
+        target: /home/deno/functions/hello/index.ts
+        content: "// Follow this setup guide to integrate the Deno language server with your editor:\n// https://deno.land/manual/getting_started/setup_your_environment\n// This enables autocomplete, go to definition, etc.\n\nimport { serve } from \"https://deno.land/std@0.177.1/http/server.ts\"\n\nserve(async () => {\n  return new Response(\n    `\"Hello from Edge Functions!\"`,\n    { headers: { \"Content-Type\": \"application/json\" } },\n  )\n})\n\n// To invoke:\n// curl 'http://localhost:<KONG_HTTP_PORT>/functions/v1/hello' \\\n//   --header 'Authorization: Bearer <anon/service_role API key>'\n"
+    command:
+      - start
+      - '--main-service'
+      - /home/deno/functions/main
+  supabase-supavisor:
+    image: 'supabase/supavisor:1.1.56'
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - '-sSfL'
+        - '-o'
+        - /dev/null
+        - 'http://127.0.0.1:4000/api/health'
+      timeout: 5s
+      interval: 5s
+      retries: 10
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+      supabase-analytics:
+        condition: service_healthy
+    environment:
+      - POOLER_TENANT_ID=dev_tenant
+      - POOLER_POOL_MODE=transaction
+      - 'POOLER_DEFAULT_POOL_SIZE=${POOLER_DEFAULT_POOL_SIZE:-20}'
+      - 'POOLER_MAX_CLIENT_CONN=${POOLER_MAX_CLIENT_CONN:-100}'
+      - PORT=4000
+      - 'POSTGRES_PORT=${POSTGRES_PORT:-5432}'
+      - 'POSTGRES_HOSTNAME=${POSTGRES_HOSTNAME:-supabase-db}'
+      - 'POSTGRES_DB=${POSTGRES_DB:-postgres}'
+      - 'POSTGRES_PASSWORD=${SERVICE_PASSWORD_POSTGRES}'
+      - 'DATABASE_URL=ecto://supabase_admin:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/_supabase'
+      - CLUSTER_POSTGRES=true
+      - 'SECRET_KEY_BASE=${SERVICE_PASSWORD_SUPAVISORSECRET}'
+      - 'VAULT_ENC_KEY=${SERVICE_PASSWORD_VAULTENC}'
+      - 'API_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - 'METRICS_JWT_SECRET=${SERVICE_PASSWORD_JWT}'
+      - REGION=local
+      - 'ERL_AFLAGS=-proto_dist inet_tcp'
+    command:
+      - /bin/sh
+      - '-c'
+      - '/app/bin/migrate && /app/bin/supavisor eval "$$(cat /etc/pooler/pooler.exs)" && /app/bin/server'
+    volumes:
+      -
+        type: bind
+        source: ./volumes/pooler/pooler.exs
+        target: /etc/pooler/pooler.exs
+        content: "{:ok, _} = Application.ensure_all_started(:supavisor)\n{:ok, version} =\n    case Supavisor.Repo.query!(\"select version()\") do\n    %{rows: [[ver]]} -> Supavisor.Helpers.parse_pg_version(ver)\n    _ -> nil\n    end\nparams = %{\n    \"external_id\" => System.get_env(\"POOLER_TENANT_ID\"),\n    \"db_host\" => System.get_env(\"POSTGRES_HOSTNAME\"),\n    \"db_port\" => System.get_env(\"POSTGRES_PORT\") |> String.to_integer(),\n    \"db_database\" => System.get_env(\"POSTGRES_DB\"),\n    \"require_user\" => false,\n    \"auth_query\" => \"SELECT * FROM pgbouncer.get_auth($1)\",\n    \"default_max_clients\" => System.get_env(\"POOLER_MAX_CLIENT_CONN\"),\n    \"default_pool_size\" => System.get_env(\"POOLER_DEFAULT_POOL_SIZE\"),\n    \"default_parameter_status\" => %{\"server_version\" => version},\n    \"users\" => [%{\n    \"db_user\" => \"pgbouncer\",\n    \"db_password\" => System.get_env(\"POSTGRES_PASSWORD\"),\n    \"mode_type\" => System.get_env(\"POOLER_POOL_MODE\"),\n    \"pool_size\" => System.get_env(\"POOLER_DEFAULT_POOL_SIZE\"),\n    \"is_manager\" => true\n    }]\n}\n\ntenant = Supavisor.Tenants.get_tenant_by_external_id(params[\"external_id\"])\n\nif tenant do\n  {:ok, _} = Supavisor.Tenants.update_tenant(tenant, params)\nelse\n  {:ok, _} = Supavisor.Tenants.create_tenant(params)\nend\n"
