@@ -1,6 +1,7 @@
 "use client"
 
 import { createClient } from '@/utils/supabase/client'
+import { getCallbackUrl } from '@/lib/url'
 
 export async function getUser() {
   const supabase = createClient()
@@ -29,7 +30,7 @@ export async function signInWithOtp(email: string) {
     email,
     options: {
       shouldCreateUser: true,
-      emailRedirectTo: `${window.location.origin}/auth/callback`,
+      emailRedirectTo: getCallbackUrl(),
     }
   })
   return { data, error }
@@ -40,7 +41,7 @@ export async function signInWithGoogle() {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `${window.location.origin}/auth/callback`,
+      redirectTo: getCallbackUrl(),
     },
   })
   return { data, error }

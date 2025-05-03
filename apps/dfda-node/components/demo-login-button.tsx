@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { demoLogin } from "@/lib/actions/demo-login"
 import { AlertCircle } from "lucide-react"
@@ -14,16 +15,29 @@ interface DemoLoginButtonProps {
 
 export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonProps) {
   const [isLoading, setIsLoading] = useState<DemoUserType | null>(null)
+  const router = useRouter()
 
   const handleDemoLogin = async (userType: DemoUserType) => {
     setIsLoading(userType)
     try {
-      await demoLogin(userType)
+      const result = await demoLogin(userType)
+
+      if (result.success && result.redirectUrl) {
+        router.refresh()
+        router.push(result.redirectUrl)
+      } else {
+        logger.error("Demo login action failed:", { error: result.error, userType });
+        onError({ 
+          type: 'other',
+          message: result.error || "Demo login failed. Please try again or contact support."
+        });
+      }
+
     } catch (error: any) {
-      logger.error("Demo login failed:", { error, userType });
+      logger.error("Error calling demo login action:", { error, userType });
       onError({ 
         type: 'other', 
-        message: error?.message ?? "Demo login failed. Please try again or contact support."
+        message: error?.message ?? "An unexpected error occurred. Please try again."
       });
     } finally {
       setIsLoading(null)
