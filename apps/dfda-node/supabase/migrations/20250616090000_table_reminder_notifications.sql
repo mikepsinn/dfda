@@ -45,7 +45,7 @@ CREATE INDEX idx_reminder_notifications_schedule_id
 ALTER TABLE reminder_notifications ENABLE ROW LEVEL SECURITY;
 
 -- Trigger for updated_at
-CREATE TRIGGER handle_updated_at
+CREATE TRIGGER set_updated_at -- Renamed trigger for consistency
   BEFORE UPDATE ON reminder_notifications
   FOR EACH ROW
-  EXECUTE PROCEDURE moddatetime (updated_at); 
+  EXECUTE FUNCTION public.update_updated_at_column(); -- Use standard function 

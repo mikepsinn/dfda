@@ -20,11 +20,10 @@ CREATE INDEX idx_variable_ingredients_parent_id ON public.variable_ingredients(p
 CREATE INDEX idx_variable_ingredients_ingredient_id ON public.variable_ingredients(ingredient_global_variable_id);
 
 -- Add trigger for updated_at timestamp on variable_ingredients
--- Assumes moddatetime function exists from an earlier migration
-CREATE TRIGGER handle_updated_at
+CREATE TRIGGER set_updated_at
 BEFORE UPDATE ON public.variable_ingredients
 FOR EACH ROW
-EXECUTE FUNCTION moddatetime('updated_at');
+EXECUTE FUNCTION public.update_updated_at_column();
 
 -- RLS Policies for variable_ingredients
 ALTER TABLE public.variable_ingredients ENABLE ROW LEVEL SECURITY;

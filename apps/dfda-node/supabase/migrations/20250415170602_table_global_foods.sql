@@ -16,11 +16,10 @@ CREATE TABLE public.global_foods (
 );
 
 -- Add trigger for updated_at timestamp on global_foods
--- Assumes moddatetime function exists from an earlier migration
-CREATE TRIGGER handle_updated_at
+CREATE TRIGGER set_updated_at -- Renamed trigger for consistency
 BEFORE UPDATE ON public.global_foods
 FOR EACH ROW
-EXECUTE FUNCTION moddatetime('updated_at');
+EXECUTE FUNCTION public.update_updated_at_column(); -- Use standard function
 
 -- RLS Policies for global_foods
 ALTER TABLE public.global_foods ENABLE ROW LEVEL SECURITY;

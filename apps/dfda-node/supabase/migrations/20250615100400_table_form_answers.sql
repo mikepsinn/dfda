@@ -10,8 +10,9 @@ CREATE TABLE public.form_answers (
 
 ALTER TABLE public.form_answers ENABLE ROW LEVEL SECURITY;
 
-CREATE TRIGGER handle_updated_at BEFORE UPDATE ON public.form_answers
-  FOR EACH ROW EXECUTE PROCEDURE moddatetime (updated_at);
+CREATE TRIGGER set_updated_at
+BEFORE UPDATE ON public.form_answers
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
 CREATE INDEX idx_form_answers_submission_id ON public.form_answers(submission_id);
 CREATE INDEX idx_form_answers_question_id ON public.form_answers(question_id); 

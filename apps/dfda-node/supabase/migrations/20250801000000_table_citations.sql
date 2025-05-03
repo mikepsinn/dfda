@@ -40,8 +40,9 @@ CREATE TABLE citations (
 ALTER TABLE citations ENABLE ROW LEVEL SECURITY;
 
 -- Add trigger for automatic updated_at timestamp
-CREATE TRIGGER handle_updated_at BEFORE UPDATE ON citations
-  FOR EACH ROW EXECUTE PROCEDURE extensions.moddatetime (updated_at);
+CREATE TRIGGER set_updated_at
+BEFORE UPDATE ON citations
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column();
 
 -- 3. Add Indexes for faster lookups and uniqueness
 CREATE INDEX idx_citations_doi ON citations(doi);

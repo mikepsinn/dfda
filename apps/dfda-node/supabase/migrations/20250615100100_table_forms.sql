@@ -9,5 +9,6 @@ CREATE TABLE public.forms (
 
 ALTER TABLE public.forms ENABLE ROW LEVEL SECURITY;
 
-CREATE TRIGGER handle_updated_at BEFORE UPDATE ON public.forms
-  FOR EACH ROW EXECUTE PROCEDURE moddatetime (updated_at); 
+CREATE TRIGGER set_updated_at
+BEFORE UPDATE ON public.forms
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at_column(); 
