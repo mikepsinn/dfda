@@ -2,6 +2,7 @@
 
 import { createClient } from '@/utils/supabase/client'
 import { getCallbackUrl } from '@/lib/url'
+import { logger } from '@/lib/logger'
 
 export async function getUser() {
   const supabase = createClient()
@@ -38,10 +39,12 @@ export async function signInWithOtp(email: string) {
 
 export async function signInWithGoogle() {
   const supabase = createClient()
+  const redirectTo = getCallbackUrl()
+  logger.info('[signInWithGoogle] Attempting Google OAuth', { redirectTo })
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: getCallbackUrl(),
+      redirectTo: redirectTo,
     },
   })
   return { data, error }
