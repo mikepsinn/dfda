@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,59 +10,25 @@ import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
 import { MailCheck, AlertCircle } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { signInWithOtp, signInWithGoogle } from "@/lib/auth"
-import { logger } from "@/lib/logger"
+import { loginWithOtp, loginWithGoogle } from './actions'
 import { InternalLink } from '@/components/internal-link'
 
 export function LoginForm() {
   const [emailSent, setEmailSent] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const searchParams = useSearchParams()
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setError(null)
-    setEmailSent(false)
-    logger.info("Login attempt (OTP)")
-
-    const formData = new FormData(e.currentTarget)
-    const email = formData.get("email") as string;
-
-    if (!email) {
-      setError("Email is required.");
-      return;
+  useEffect(() => {
+    const errorMessage = searchParams.get('error');
+    const message = searchParams.get('message');
+    if (errorMessage) {
+      setError(decodeURIComponent(errorMessage));
     }
-
-    try {
-      const { error: otpError } = await signInWithOtp(email);
-
-      if (otpError) {
-        logger.error("OTP Sign in error:", otpError);
-        setError(
-          "Failed to send magic link. Please check your email or contact support."
-        );
-        return;
-      }
-
+    if (message) {
       setEmailSent(true);
-    } catch (err) {
-      logger.error("Login error", { err });
-      setError("An unexpected error occurred. Please try again.");
+      setError(null);
     }
-  };
-
-  const handleGoogleSignIn = async () => {
-    try {
-      const { error: signInError } = await signInWithGoogle()
-      
-      if (signInError) {
-        setError('An error occurred during Google sign in. Please contact help@dfda.earth for assistance.')
-        return
-      }
-    } catch (err) {
-      logger.error("Google sign-in error:", err)
-      setError('An error occurred during Google sign in. Please contact help@dfda.earth for assistance.')
-    }
-  }
+  }, [searchParams]);
 
   if (emailSent) {
     return (
@@ -101,10 +68,11 @@ export function LoginForm() {
             <AlertDescription>{error}</AlertDescription>
           </Alert>
         )}
+        <form action={loginWithGoogle}>
         <Button
+            type="submit"
           variant="outline"
           className="w-full flex items-center justify-center gap-2"
-          onClick={handleGoogleSignIn}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path
@@ -127,6 +95,7 @@ export function LoginForm() {
           </svg>
           Continue with Google
         </Button>
+        </form>
 
         <div className="flex items-center gap-2 py-2">
           <Separator className="flex-1" />
@@ -136,7 +105,7 @@ export function LoginForm() {
 
         <DemoLoginButton showAll={true} onError={(err) => setError(err.message)} />
 
-        <form onSubmit={handleSubmit} className="space-y-4 pt-4">
+        <form action={loginWithOtp} className="space-y-4 pt-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" name="email" type="email" required placeholder="Enter your email address" />

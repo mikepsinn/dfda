@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from "next/link"
 import { MailCheck, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,8 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { DemoLoginButton } from "@/components/demo-login-button"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { signInWithOtp, signInWithGoogle } from "@/lib/auth"
-import { logger } from "@/lib/logger"
+import { registerWithOtp, registerWithGoogle } from './actions'
 import { InternalLink } from '@/components/internal-link'
 
 export function RegisterForm() {
@@ -20,68 +20,22 @@ export function RegisterForm() {
     type: null,
     message: null
   })
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    const errorMessage = searchParams.get('error');
+    const message = searchParams.get('message');
+    if (errorMessage) {
+      setError({ type: 'other', message: decodeURIComponent(errorMessage) });
+    }
+    if (message) {
+      setEmailSent(true);
+      setError({ type: null, message: null });
+    }
+  }, [searchParams]);
 
   const handleError = (error: { type: 'email_not_confirmed' | 'other'; message: string }) => {
     setError({ type: 'other', message: error.message })
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setError({ type: null, message: null })
-    setEmailSent(false)
-
-    const formData = new FormData(e.currentTarget)
-    const email = formData.get('email') as string
-
-    if (!email) {
-      setError({ type: 'other', message: 'Email is required.' });
-      return;
-    }
-
-    try {
-      logger.info("Attempting passwordless sign in/up", { email });
-      const { error: otpError } = await signInWithOtp(email)
-
-      if (otpError) {
-        logger.error("OTP Sign in error:", otpError);
-        setError({
-          type: 'other',
-          message: 'An error occurred. Please check your email or contact help@dfda.earth for assistance.'
-        })
-        return
-      }
-
-      setEmailSent(true)
-
-    } catch (err) {
-      logger.error("Sign in/up error:", err)
-      setError({
-        type: 'other',
-        message: 'An unexpected error occurred. Please try again or contact support.'
-      })
-    }
-  }
-
-  const handleGoogleSignIn = async () => {
-    try {
-      const { error: signInError } = await signInWithGoogle()
-      
-      if (signInError) {
-        setError({
-          type: 'other',
-          message: 'An error occurred during Google sign in. Please contact help@dfda.earth for assistance.'
-        })
-        return
-      }
-      
-      // Google OAuth will redirect to callback URL
-    } catch (err) {
-      logger.error("Google sign-in error:", err)
-      setError({
-        type: 'other',
-        message: 'An error occurred during Google sign in. Please contact help@dfda.earth for assistance.'
-      })
-    }
   }
 
   if (emailSent) {
@@ -121,10 +75,11 @@ export function RegisterForm() {
           </Alert>
         )}
         
+        <form action={registerWithGoogle}>
         <Button
+            type="submit"
           variant="outline"
           className="w-full flex items-center justify-center gap-2"
-          onClick={handleGoogleSignIn}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path
@@ -147,6 +102,7 @@ export function RegisterForm() {
           </svg>
           Continue with Google
         </Button>
+        </form>
 
         <div className="flex items-center gap-2 py-2">
           <Separator className="flex-1" />
@@ -156,7 +112,7 @@ export function RegisterForm() {
 
         <DemoLoginButton onError={handleError} showAll={true} />
 
-        <form onSubmit={handleSubmit} className="space-y-4 pt-4">
+        <form action={registerWithOtp} className="space-y-4 pt-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input id="email" name="email" type="email" required placeholder="Enter your email address" />
