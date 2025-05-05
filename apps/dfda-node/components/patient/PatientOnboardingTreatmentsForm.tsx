@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { TreatmentSearch } from "@/components/treatment-search";
 import { addInitialPatientTreatmentsAction } from "@/lib/actions/patient-treatments";
-// TODO: Add toast import if needed e.g. import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/components/ui/use-toast";
 
 const logger = createLogger("patient-onboarding-treatments-form");
 
@@ -29,7 +29,7 @@ export function PatientOnboardingTreatmentsForm({ userId }: PatientOnboardingTre
   const [selectedTreatments, setSelectedTreatments] = useState<SelectedTreatment[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  // const { toast } = useToast(); // Uncomment if using toast
+  const { toast } = useToast();
 
   // When a treatment is selected from the search input
   const handleTreatmentSelect = (treatment: { id: string; name: string }) => {
@@ -58,13 +58,11 @@ export function PatientOnboardingTreatmentsForm({ userId }: PatientOnboardingTre
 
        logger.info('Navigating to dashboard after treatment submission', { userId });
        // Navigate to dashboard after saving
-       // TODO: Replace alert with toast notification
-       alert("Treatments saved! Onboarding complete.");
+       toast({ title: "Success", description: "Treatments saved! Onboarding complete." });
        router.push('/patient');
     } catch (error) {
       logger.error("Failed to save treatments", { userId, error });
-      // TODO: Replace alert with toast notification
-      alert("Failed to save treatments. Please try again.");
+      toast({ variant: "destructive", title: "Error", description: "Failed to save treatments. Please try again." });
     } finally {
       setIsLoading(false);
     }
