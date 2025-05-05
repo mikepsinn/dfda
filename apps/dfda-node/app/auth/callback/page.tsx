@@ -22,6 +22,9 @@ export default function AuthCallbackPage() {
   const supabase = createClient()
 
   useEffect(() => {
+    // --- Add debug log here ---
+    logger.debug('[AUTH-CALLBACK-PAGE] useEffect started.');
+
     // --- 1. Check for errors in URL fragment --- 
     const hashParams = new URLSearchParams(window.location.hash.slice(1))
     const error = hashParams.get('error')
@@ -42,9 +45,24 @@ export default function AuthCallbackPage() {
 
     // --- 2. Check for code in query parameters --- 
     const code = searchParams.get('code')
+    // --- Add debug log here ---
+    logger.debug('[AUTH-CALLBACK-PAGE] Checking for code...', { 
+        code: code ? '<present>' : '<missing>', 
+        allSearchParams: searchParams.toString() 
+    });
+
     if (code) {
       logger.info('[AUTH-CALLBACK-PAGE] Code found, exchanging for session...');
       const exchangeCode = async () => {
+        // --- Add debug logs here ---
+        logger.debug('[AUTH-CALLBACK-PAGE] Attempting to exchange code...');
+        try {
+          // Log cookies before exchange attempt
+          logger.debug('[AUTH-CALLBACK-PAGE] Current cookies before exchange', { cookies: document.cookie });
+        } catch (e) {
+            logger.warn('[AUTH-CALLBACK-PAGE] Could not read document.cookie', e);
+        }
+        
         const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
         if (exchangeError) {
           logger.error('[AUTH-CALLBACK-PAGE] Failed to exchange code for session:', { 
