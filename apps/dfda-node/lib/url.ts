@@ -1,5 +1,3 @@
-import { headers } from 'next/headers';
-
 /**
  * Gets the base URL for the current environment.
  * Prioritizes Vercel/Netlify env vars, then NEXT_PUBLIC_SITE_URL, falling back to localhost.
@@ -45,45 +43,4 @@ export function getCallbackUrl(path: string = '/auth/callback'): string {
   return `${cleanBaseUrl}${cleanPath}`;
 }
 
-/**
- * Gets the current origin (protocol + hostname + port) for the request.
- * Works on both client and server.
- * - Client-side: Uses `window.location.origin`.
- * - Server-side: Attempts to use request headers (`x-forwarded-host`, `host`, `x-forwarded-proto`).
- *   Falls back to `getBaseUrl()` if headers are unavailable or don't provide host information.
- * @returns The origin string (e.g., "https://myapp.com", "http://localhost:3000"), without a trailing slash.
- */
-export async function getCurrentOrigin(): Promise<string> {
-  if (typeof window !== 'undefined') {
-    // Client-side
-    return window.location.origin;
-  }
-
-  // Server-side
-  try {
-    const headersList = headers();
-    // Await the headers promise
-    const resolvedHeaders = await headersList; 
-    // Prefer X-Forwarded-Host if available (common behind proxies), else use Host
-    const host = resolvedHeaders.get('x-forwarded-host') ?? resolvedHeaders.get('host');
-    // Prefer X-Forwarded-Proto if available, else default to http (adjust if needed)
-    const protocol = resolvedHeaders.get('x-forwarded-proto') ?? 'http';
-
-    if (host) {
-      return `${protocol}://${host}`;
-    }
-
-    // If headers didn't provide a host, fall back to configured base URL
-    console.warn("getCurrentOrigin: Host header missing on server, falling back to getBaseUrl()");
-    const baseUrl = getBaseUrl();
-    // getBaseUrl includes a trailing slash, remove it for origin consistency
-    return baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
-
-  } catch (error) {
-    // This might happen if headers() is called in an unsupported server context (e.g., during build)
-    console.error("getCurrentOrigin: Failed to get headers on server, falling back to getBaseUrl():", error);
-    const baseUrl = getBaseUrl();
-    // getBaseUrl includes a trailing slash, remove it for origin consistency
-    return baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
-  }
-} 
+// REMOVED getCurrentOrigin function 
