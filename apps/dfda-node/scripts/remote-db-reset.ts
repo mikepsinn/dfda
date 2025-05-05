@@ -228,28 +228,94 @@ async function dropExistingPolicies() {
   }
 }
 
+// List of tables in the public schema to truncate
+// Review and adjust this list based on which tables contain application data
+// vs. lookup/reference data.
+const tablesToTruncate = [
+  'uploaded_files',
+  'form_answers',
+  'form_submissions',
+  'form_questions',
+  'forms',
+  'trial_enrollments',
+  'protocol_versions',
+  // 'action_types', // Lookup data?
+  'trial_actions',
+  'data_submissions',
+  'trials',
+  'patients',
+  'profiles',
+  'global_variable_relationships',
+  'citations',
+  'user_variable_images',
+  'product_listings',
+  'product_sellers',
+  'products',
+  'variable_ingredients',
+  // 'global_foods', // Lookup data?
+  'prescriptions',
+  'treatment_ratings',
+  'patient_side_effects',
+  'patient_treatments',
+  'research_partners',
+  'providers',
+  'reminder_schedules',
+  'global_variable_synonyms',
+  'regulatory_approvals',
+  'reminder_notifications',
+  'oauth_access_tokens',
+  'notifications',
+  'measurements',
+  'oauth_refresh_tokens',
+  'user_variables',
+  'contact_messages',
+  'oauth_clients',
+  // 'global_variables', // Lookup data?
+  // 'global_treatments', // Lookup data?
+  // 'global_conditions', // Lookup data?
+  // 'units', // Lookup data?
+  // 'unit_categories', // Lookup data?
+  // 'variable_categories', // Lookup data?
+  'patient_symptoms',
+  'patient_conditions',
+  // 'global_symptoms' // Lookup data?
+].map(table => `public.${table}`); // Ensure schema prefix
+
 // --- Utility to reset the remote database using PSQL ---
 async function resetRemoteDatabase() {
   console.log(`
 --- Resetting Remote Self-Hosted Database via PSQL ---`);
   try {
-    // 1. Drop existing custom policies before dropping schema
-    //    (Schema drop might fail if policies depend on functions/types within it)
-    await dropExistingPolicies();
+    // 1. Drop the specific auth trigger first (if it exists) before migrations run
+    //    This ensures the migration script can recreate it cleanly.
+    console.log(`  Dropping trigger on_auth_user_created from auth.users if it exists...`);
+    await runPsqlCommand('DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;');
 
-    // 2. Drop the public schema
-    await runPsqlCommand('DROP SCHEMA public CASCADE;');
-    // 3. Recreate the public schema
-    await runPsqlCommand('CREATE SCHEMA public;');
-    // 4. Grant basic privileges
-    await runPsqlCommand('GRANT ALL ON SCHEMA public TO postgres;');
-    await runPsqlCommand('GRANT ALL ON SCHEMA public TO public;');
+    // 2. Drop existing custom policies (Optional but safe before truncate/migrations)
+    //    Alternatively, ensure your migration script handles policy updates correctly (e.g., CREATE OR REPLACE POLICY)
+    // await dropExistingPolicies(); // Keep or remove based on migration strategy
+
+    // 3. Truncate all specified user-defined public tables instead of dropping schema
+    if (tablesToTruncate.length > 0) {
+        const truncateCommand = `TRUNCATE TABLE ${tablesToTruncate.join(', ')} RESTART IDENTITY CASCADE;`;
+        console.log(`  Truncating tables in public schema...`);
+        await runPsqlCommand(truncateCommand);
+        console.log(`  Successfully truncated tables.`);
+    } else {
+        console.log(`  No tables specified for truncation.`);
+    }
+
+    // --- Remove DROP SCHEMA and CREATE SCHEMA steps --- 
+    // await runPsqlCommand('DROP SCHEMA public CASCADE;');
+    // await runPsqlCommand('CREATE SCHEMA public;');
+    // await runPsqlCommand('GRANT ALL ON SCHEMA public TO postgres;');
+    // await runPsqlCommand('GRANT ALL ON SCHEMA public TO public;');
     
     console.log(`
---- Completed: Remote Database Schema Reset via PSQL ---`);
+--- Completed: Remote Database Data Reset via PSQL ---`);
   } catch (error: any) {
     console.error(`
---- Error resetting remote database via PSQL:`, error.message || error);
+--- Error resetting remote database via PSQL:', error.message || error);
     throw error; 
   }
 }

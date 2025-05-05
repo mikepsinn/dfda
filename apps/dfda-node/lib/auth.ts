@@ -1,59 +1,22 @@
-"use client"
+// Remove client client import if no longer needed
+// import { createClient } from '@/utils/supabase/client'
+// Remove unused imports
+// import { getCallbackUrl } from '@/lib/url'
+// import { logger } from '@/lib/logger'
+// import { redirect } from 'next/navigation'
+// import { createClient as createServerClient } from '@/utils/supabase/server'
+// import { cookies } from 'next/headers'
 
-import { createClient } from '@/utils/supabase/client'
-import { getCallbackUrl } from '@/lib/url'
-import { logger } from '@/lib/logger'
+// Remove functions that are now handled by Server Actions 
+// or are potentially unused client-side wrappers.
+// Review if any client-side specific helpers are still needed.
 
-export async function getUser() {
-  const supabase = createClient()
-  const { data: { user }, error } = await supabase.auth.getUser()
-  return { user, error }
-}
+// export async function getUser() { ... }
+// export async function signOut() { ... }
+// export async function signInWithEmail(email: string, password: string) { ... }
+// export async function signInWithOtp(email: string) { ... }
+// export async function signInWithGoogle() { ... }
+// export async function getCurrentUser() { ... }
 
-export async function signOut() {
-  const supabase = createClient()
-  const { error } = await supabase.auth.signOut()
-  return { error }
-}
-
-export async function signInWithEmail(email: string, password: string) {
-  const supabase = createClient()
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  })
-  return { data, error }
-}
-
-export async function signInWithOtp(email: string) {
-  const supabase = createClient()
-  const { data, error } = await supabase.auth.signInWithOtp({
-    email,
-    options: {
-      shouldCreateUser: true,
-      emailRedirectTo: getCallbackUrl(),
-    }
-  })
-  return { data, error }
-}
-
-export async function signInWithGoogle() {
-  const supabase = createClient()
-  const redirectTo = getCallbackUrl()
-  logger.info('[signInWithGoogle] Attempting Google OAuth', { redirectTo })
-  logger.debug('[signInWithGoogle] About to call signInWithOAuth', { redirectTo })
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
-    options: {
-      redirectTo: redirectTo,
-    },
-  })
-  return { data, error }
-}
-
-export async function getCurrentUser() {
-  const supabase = createClient()
-  const { data: { user }, error } = await supabase.auth.getUser()
-  return { user, error }
-}
+// Consider deleting this file if no functions remain.
 
