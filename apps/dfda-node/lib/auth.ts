@@ -41,6 +41,7 @@ export async function signInWithGoogle() {
   const supabase = createClient()
   const redirectTo = getCallbackUrl()
   logger.info('[signInWithGoogle] Attempting Google OAuth', { redirectTo })
+  logger.debug('[signInWithGoogle] About to call signInWithOAuth', { redirectTo })
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
