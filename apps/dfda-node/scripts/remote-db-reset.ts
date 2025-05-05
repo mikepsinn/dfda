@@ -311,11 +311,9 @@ async function resetRemoteDatabase() {
     // await runPsqlCommand('GRANT ALL ON SCHEMA public TO postgres;');
     // await runPsqlCommand('GRANT ALL ON SCHEMA public TO public;');
     
-    console.log(`
---- Completed: Remote Database Data Reset via PSQL ---`);
+    console.log(`\n--- Completed: Remote Database Data Reset via PSQL ---`);
   } catch (error: any) {
-    console.error(`
---- Error resetting remote database via PSQL:', error.message || error);
+    // console.error(`\n--- Error resetting remote database via PSQL:`, error.message || error);
     throw error; 
   }
 }
