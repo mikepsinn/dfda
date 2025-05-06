@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
+import { logger } from "@/lib/logger";
 
 interface MeasurementAddDialogProps {
   isOpen: boolean;
@@ -63,7 +64,14 @@ export function MeasurementAddDialog({ isOpen, onClose, userVariables, onSubmit 
       setSelectedVariableId("");
       setUnit("");
       onClose();
-    } catch (e) {
+    } catch (e: any) {
+      logger.error("Failed to submit measurement add dialog", { 
+        error: e?.message ?? e, 
+        selectedVariableId, 
+        value, 
+        unit, 
+        notes 
+      });
       setError("Failed to add measurement. Please try again.");
     } finally {
       setIsSubmitting(false);
