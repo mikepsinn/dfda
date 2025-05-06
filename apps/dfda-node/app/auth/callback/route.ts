@@ -11,24 +11,41 @@ export async function GET(request: NextRequest) {
   const xForwardedHost = headersList.get('x-forwarded-host');
   const xForwardedProto = headersList.get('x-forwarded-proto');
   const referer = headersList.get('referer');
-  logger.debug(`[AUTH-CALLBACK-ROUTE] Incoming Headers: host=${host}, x-fwd-host=${xForwardedHost}, x-fwd-proto=${xForwardedProto}, referer=${referer}, url=${request.url}`); 
+  const debugMsg = `[AUTH-CALLBACK-ROUTE] Incoming Headers: host=${host}, x-fwd-host=${xForwardedHost}, x-fwd-proto=${xForwardedProto}, referer=${referer}, url=${request.url}`;
+  logger.debug(debugMsg); 
 
-  const { searchParams, origin } = new URL(request.url)
+  // --- START FIX: Reconstruct origin from headers --- 
+  const protocol = xForwardedProto ?? 'https'; // Default to https if header is missing
+  const actualHost = xForwardedHost ?? host;
+  // Ensure we have a valid host before proceeding
+  if (!actualHost) {
+      logger.error(`[AUTH-CALLBACK-ROUTE] Could not determine host from headers. host=${host}, x-fwd-host=${xForwardedHost}`);
+      // Fallback or error response
+      const errorUrl = `${protocol}://${host || '/'}/login?error=Internal Server Error - Invalid Host Configuration`;
+      return NextResponse.redirect(errorUrl);
+  }
+  const correctOrigin = `${protocol}://${actualHost}`;
+  logger.info(`[AUTH-CALLBACK-ROUTE] Reconstructed Origin: ${correctOrigin}`);
+  // --- END FIX --- 
+
+  const { searchParams } = new URL(request.url) // Still need searchParams
   const code = searchParams.get('code')
   // if "next" is in param, use it as the redirect URL
   const next = searchParams.get('next') ?? '/'
 
-  logger.info(`[AUTH-CALLBACK-ROUTE] Received callback: code=${code ? '<present>' : '<missing>'}, next=${next}, origin=${origin}`); // Log received origin in msg
+  const receivedMsg = `[AUTH-CALLBACK-ROUTE] Received callback: code=${code ? '<present>' : '<missing>'}, next=${next}, (original incorrect origin=${new URL(request.url).origin})`;
+  logger.info(receivedMsg); // Log received origin in msg
 
   if (code) {
     const supabase = await createClient(); // Use server client
     try {
         const { error } = await supabase.auth.exchangeCodeForSession(code)
         if (!error) {
-          // Append origin if 'next' is a relative path
-          const redirectUrl = next.startsWith('/') ? `${origin}${next}` : next;
+          // Append RECONSTRUCTED origin if 'next' is a relative path
+          const redirectUrl = next.startsWith('/') ? `${correctOrigin}${next}` : next;
           // Log calculated redirect info
-          logger.info(`[AUTH-CALLBACK-ROUTE] Successfully exchanged code, redirecting. Origin=${origin}, Next=${next}, CalculatedRedirectUrl=${redirectUrl}`);
+          const successMsg = `[AUTH-CALLBACK-ROUTE] Successfully exchanged code, redirecting. CorrectOrigin=${correctOrigin}, Next=${next}, CalculatedRedirectUrl=${redirectUrl}`;
+          logger.info(successMsg);
           return NextResponse.redirect(redirectUrl);
         }
         // Log the specific exchange error
@@ -44,8 +61,11 @@ export async function GET(request: NextRequest) {
   }
 
   // Redirect to an error page if code is missing or exchange fails
-  logger.warn(`[AUTH-CALLBACK-ROUTE] Redirecting to login due to missing code or exchange error. Origin=${origin}`);
-  const redirectUrl = `${origin}/login?error=Could not sign in. Please try again.`;
-  logger.info(`[AUTH-CALLBACK-ROUTE] Calculated Error Redirect: Url=${redirectUrl}`);
-  return NextResponse.redirect(redirectUrl);
+  // Use reconstructed origin for error redirect as well
+  const warnMsg = `[AUTH-CALLBACK-ROUTE] Redirecting to login due to missing code or exchange error. CorrectOrigin=${correctOrigin}`;
+  logger.warn(warnMsg);
+  const errorRedirectUrl = `${correctOrigin}/login?error=Could not sign in. Please try again.`;
+  const errorRedirectMsg = `[AUTH-CALLBACK-ROUTE] Calculated Error Redirect: Url=${errorRedirectUrl}`;
+  logger.info(errorRedirectMsg);
+  return NextResponse.redirect(errorRedirectUrl);
 } 
