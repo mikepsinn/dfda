@@ -27,17 +27,18 @@ type PatientConditionRow = Tables<'patient_conditions_view'>;
 
 interface PatientDashboardDisplayProps {
   initialUser: User;
-  initialConditions: PatientConditionRow[];
   initialNotifications: PendingNotificationTask[];
   initialTimelineItems: TimelineItem[];
   initialUserVariables: UserVariableWithDetails[];
+  initialConditions: PatientConditionRow[]; // Or any[] for now if type is complex
 }
 
 export default function PatientDashboardDisplay({
   initialUser,
   initialNotifications,
   initialTimelineItems,
-  initialUserVariables
+  initialUserVariables,
+  initialConditions // Destructure the new prop
 }: PatientDashboardDisplayProps) {
 
   const router = useRouter();
@@ -46,6 +47,10 @@ export default function PatientDashboardDisplay({
   // State for components originally in PatientDashboardClient
   const user = initialUser; // Use prop directly
   const notifications = initialNotifications; // Use prop directly
+  // TODO: Use initialConditions to display patient conditions information
+  if (process.env.NODE_ENV === 'development') {
+    logger.info('PatientDashboardDisplay: initialConditions received', { count: initialConditions?.length });
+  }
 
   // State for Dialog (originally in PatientTimelineClient)
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
@@ -54,6 +59,9 @@ export default function PatientDashboardDisplay({
   // Data for Timeline (from props)
   const timelineItems = initialTimelineItems;
   const userVariables = initialUserVariables;
+
+  // Extract user timezone, default to UTC if not available
+  const userTimezone = initialUser.user_metadata?.profile?.timezone || 'UTC';
 
   // Filtered variables for the dialog
   const filteredVariables = dialogCategory && dialogCategory !== 'all'
@@ -142,6 +150,7 @@ export default function PatientDashboardDisplay({
           <UniversalTimeline
               items={timelineItems}
               date={new Date()} // Or pass a date prop from the page if needed
+              userTimezone={userTimezone}
               onStatusChange={handleStatusChangeCallback}
               onEditMeasurement={handleEditMeasurementCallback}
               onAddMeasurement={handleAddMeasurementCallback}

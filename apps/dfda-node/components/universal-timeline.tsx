@@ -24,7 +24,8 @@ import {
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
-import { format, isSameDay } from "date-fns"
+import { format, parseISO } from "date-fns"
+import { formatInTimeZone } from 'date-fns-tz'
 // import { FaceIcon } from "./face-icon" // Assume FaceIcon needs to be copied/created
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
@@ -49,8 +50,7 @@ export interface TimelineItem {
   userVariableId?: string
   variableCategoryId: VariableCategoryId // Using the ID from DB/constants
   name: string // From global_variables.name
-  time: string // Formatted time string (e.g., "HH:mm")
-  scheduledAt: Date // From reminder_notifications.notification_trigger_at
+  triggerAtUtc: string; // Store the raw UTC ISO string
   value: number | null // From reminder_schedules.default_value (can be null)
   unit: string // From units.abbreviated_name
   unitName?: string // From units.name
@@ -67,6 +67,7 @@ export interface UniversalTimelineProps {
   title?: string
   items?: TimelineItem[]
   date?: Date
+  userTimezone: string; // Add userTimezone prop
   // Keep callbacks, but implementation will use server actions based on DB types
   onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void // Pass the category ID
   onEditMeasurement?: (item: TimelineItem, value: number, unit: string, notes?: string) => void
@@ -81,9 +82,9 @@ export interface UniversalTimelineProps {
 }
 
 export function UniversalTimeline({
-  title = "Timeline",
   items = [],
   date: initialDate,
+  userTimezone, // Destructure userTimezone
   onAddMeasurement,
   onEditMeasurement,
   onStatusChange,
@@ -105,33 +106,49 @@ export function UniversalTimeline({
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [selectedCategory, setSelectedCategory] = useState<FilterableVariableCategoryId>(defaultCategory)
 
-  // Filter items based on selected date, category, and search query
+  // Filter items based ONLY on category and search query (date filtering done on server)
   const filteredItems = useMemo(() => {
+    // Ensure userTimezone is valid, default to UTC if not provided somehow
+    // const tz = userTimezone || 'UTC'; // Keep tz if needed for sorting below
     return items
       .filter((item) => {
-        // Filter by date
-        const itemDate = new Date(item.scheduledAt)
-        const matchesDate = isSameDay(itemDate, selectedDate)
+        try {
+          // Remove date filtering logic
+          /*
+          const itemDateInUserTz = parseISO(item.triggerAtUtc); // Parse UTC string
+          const matchesDate = isSameDay(itemDateInUserTz, selectedDate); // isSameDay handles TZ correctly?
+          */
 
-        // Filter by category ID
-        const matchesCategory = selectedCategory === "all" || item.variableCategoryId === selectedCategory
+          // Filter by category ID
+          const matchesCategory = selectedCategory === "all" || item.variableCategoryId === selectedCategory;
 
-        // Filter by search query
-        const matchesSearch =
-          searchQuery === "" ||
-          item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          (item.details && item.details.toLowerCase().includes(searchQuery.toLowerCase())) ||
-          (item.notes && item.notes.toLowerCase().includes(searchQuery.toLowerCase()))
+          // Filter by search query
+          const matchesSearch =
+            searchQuery === "" ||
+            item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (item.details && item.details.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.notes && item.notes.toLowerCase().includes(searchQuery.toLowerCase()));
 
-        return matchesDate && matchesCategory && matchesSearch
+          // Return based on category and search only
+          return matchesCategory && matchesSearch; 
+        } catch (e) {
+          console.error("Error filtering timeline item:", { item, error: e });
+          return false; // Exclude items that cause errors during filtering
+        }
       })
       .sort((a, b) => {
-        // Sort by time
-        const timeA = new Date(`1970/01/01 ${a.time}`).getTime()
-        const timeB = new Date(`1970/01/01 ${b.time}`).getTime()
-        return timeA - timeB
-      })
-  }, [items, selectedDate, selectedCategory, searchQuery])
+        try {
+          // Sort by time using the UTC timestamp
+          const timeA = parseISO(a.triggerAtUtc).getTime();
+          const timeB = parseISO(b.triggerAtUtc).getTime();
+          return timeA - timeB;
+        } catch (e) {
+           console.error("Error sorting timeline items:", { a, b, error: e });
+           return 0; // Maintain original order if parsing fails
+        }
+      });
+      // Remove selectedDate from dependencies as it's no longer used for filtering
+  }, [items, selectedCategory, searchQuery, userTimezone]);
 
   // Updated getTypeIcon to use variableCategoryId and constants
   const getTypeIcon = useCallback(
@@ -207,7 +224,12 @@ export function UniversalTimeline({
     setSelectedDate(prevDate => new Date(prevDate.setDate(prevDate.getDate() + 1)))
   }
   const isToday = () => {
-    return isSameDay(new Date(), selectedDate)
+    // Compare using start of day to avoid time differences
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+    const selectedStart = new Date(selectedDate);
+    selectedStart.setHours(0, 0, 0, 0);
+    return selectedStart.getTime() === todayStart.getTime();
   }
 
   // Status change handlers
@@ -263,6 +285,17 @@ export function UniversalTimeline({
       }
     };
 
+    // Format the time in the user's specified timezone
+    let displayTime = "--:--";
+    try {
+      // Ensure userTimezone is valid, fallback to UTC if needed
+      const tz = userTimezone && userTimezone.length > 0 ? userTimezone : 'UTC';
+      displayTime = formatInTimeZone(item.triggerAtUtc, tz, 'HH:mm');
+    } catch (e) {
+        console.error("Error formatting time for timeline item:", { item, userTimezone, error: e });
+        // displayTime remains "--:--" on error
+    }
+
     return (
       <div
         key={item.id}
@@ -296,7 +329,7 @@ export function UniversalTimeline({
                 </div>
                 <div className="flex items-center text-xs text-muted-foreground">
                   <Clock className="h-3 w-3 mr-1" />
-                  {item.time}
+                  {displayTime}
                 </div>
               </div>
               <div className="ml-3">{getStatusBadge(item.status)}</div>
@@ -538,38 +571,6 @@ export function UniversalTimeline({
           </div>
         )}
       </div>
-      {/* Add Buttons Footer */}
-      {showAddButtons && onAddMeasurement && (
-        <div className="mt-4 flex flex-wrap gap-2 pt-4 border-t"> {/* Add top border */}
-          <Button
-            variant="outline"
-            size="sm"
-            // Remove theme-specific border
-            onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS)}
-          >
-            <Pill className="h-4 w-4 mr-2" />
-            Intake/Intervention
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            // Remove theme-specific border
-            onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY)}
-          >
-            <Heart className="h-4 w-4 mr-2" />
-            Health Item
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            // Remove theme-specific border
-            onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR)}
-          >
-            <Activity className="h-4 w-4 mr-2" />
-            Activity
-          </Button>
-        </div>
-      )}
     </div>
   )
 } 
