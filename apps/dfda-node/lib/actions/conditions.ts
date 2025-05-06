@@ -14,18 +14,9 @@ import { Tables } from '@/lib/database.types';
 type Condition = Pick<Tables<'global_conditions'>, 'id' | 'created_at' | 'deleted_at' | 'updated_at'> & 
                  Pick<Tables<'global_variables'>, 'name' | 'description'>;
 
-// Specific type for the result of getConditionsByUserAction
-type UserCondition = {
-  patient_condition_id: string;
-  user_id: string;
-  condition_id: string | null;
-  condition_name: string;
-  condition_description: string | null;
-  added_at: string | null;
-};
-
 // Use the database view type directly 
 export type ConditionView = Database['public']['Views']['patient_conditions_view']['Row']
+export type PatientConditionRow = ConditionView; // Alias for clarity in component
 export type ConditionInsert = Database['public']['Tables']['global_conditions']['Insert']
 export type ConditionUpdate = Database['public']['Tables']['global_conditions']['Update']
 
@@ -215,53 +206,27 @@ export async function deleteConditionAction(id: string) {
   revalidatePath('/conditions')
 }
 
-export async function getConditionsByUserAction(userId: string): Promise<UserCondition[]> {
+// Gets conditions associated with a specific user from the view
+// Returns data matching the PatientConditionRow type (aliased from ConditionView)
+export async function getConditionsByUserAction(userId: string): Promise<PatientConditionRow[]> {
   const supabase = await createClient()
-  logger.info("Fetching conditions for user", { userId })
-  // Query patient_conditions, join conditions, then global_variables for name
+  logger.info("Fetching user conditions view for user", { userId })
+
+  // Fetch patient conditions directly from the view
   const response = await supabase
-    .from("patient_conditions")
-    .select(`
-      *,
-      condition:conditions!inner(
-        id,
-        global_variables!inner(
-          name,
-          description
-        )
-      )
-    `)
-    .eq("patient_id", userId)
-    .not("deleted_at", "is", null)
+    .from('patient_conditions_view') // Use the view directly
+    .select('*') // Select all columns from the view
+    .eq('patient_id', userId)
+    .not('deleted_at', 'is', null) // Ensure patient condition link isn't deleted
+    .order('condition_name', { ascending: true }); // Order by condition name
 
   if (response.error) {
-    logger.error("Error fetching user conditions:", { userId, error: response.error })
+    logger.error("Error fetching user conditions view", { userId, error: response.error })
     throw new Error("Failed to fetch user conditions")
   }
 
-  if (!response.data) {
-    return []
-  }
-
-  // Map the response to the expected UserCondition format
-  const userConditions = response.data.map(pc => {
-    // Type assertion for clarity, adjust based on exact generated types if needed
-    const typedPc = pc as any;
-    // Safely access nested properties
-    const conditionData = typedPc.condition;
-    const gvData = conditionData?.global_variables;
-
-    return {
-      patient_condition_id: typedPc.id, // Map from patient_conditions table
-      user_id: typedPc.patient_id,
-      condition_id: conditionData?.id ?? null, // From nested condition
-      condition_name: gvData?.name ?? 'Unknown Condition',
-      condition_description: gvData?.description ?? null,
-      added_at: typedPc.created_at // Or updated_at if preferred
-    };
-  });
-
-  return userConditions;
+  // The data from the view should directly match PatientConditionRow[]
+  return response.data || [];
 }
 
 /**

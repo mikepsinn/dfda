@@ -27,7 +27,7 @@ type PatientConditionRow = Tables<'patient_conditions_view'>;
 
 interface PatientDashboardDisplayProps {
   initialUser: User;
-  initialNotifications: PendingNotificationTask[];
+  initialPendingNotifications: PendingNotificationTask[];
   initialTimelineItems: TimelineItem[];
   initialUserVariables: UserVariableWithDetails[];
   initialConditions: PatientConditionRow[]; // Or any[] for now if type is complex
@@ -35,7 +35,7 @@ interface PatientDashboardDisplayProps {
 
 export default function PatientDashboardDisplay({
   initialUser,
-  initialNotifications,
+  initialPendingNotifications,
   initialTimelineItems,
   initialUserVariables,
   initialConditions // Destructure the new prop
@@ -46,7 +46,7 @@ export default function PatientDashboardDisplay({
 
   // State for components originally in PatientDashboardClient
   const user = initialUser; // Use prop directly
-  const notifications = initialNotifications; // Use prop directly
+  const notifications = initialPendingNotifications; // Use prop directly
   // TODO: Use initialConditions to display patient conditions information
   if (process.env.NODE_ENV === 'development') {
     logger.info('PatientDashboardDisplay: initialConditions received', { count: initialConditions?.length });

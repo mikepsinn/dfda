@@ -40,13 +40,11 @@ import { Slider } from "@/components/ui/slider"
 import {
   MeasurementNotificationItem,
   type MeasurementNotificationItemData,
-  type MeasurementStatus,
-  type VariableCategoryId as SharedVariableCategoryId
+  type VariableCategoryId as SharedVariableCategoryId,
+  type MeasurementStatus as SharedMeasurementStatus
 } from "@/components/shared/measurement-notification-item";
 
-// Re-export or align local types if necessary, for now assume compatible
-// export type MeasurementStatus = SharedMeasurementStatus;
-// export type VariableCategoryId = SharedVariableCategoryId;
+export type MeasurementStatus = SharedMeasurementStatus;
 export type FilterableVariableCategoryId = SharedVariableCategoryId | "all";
 
 // Keep the TimelineItem interface for data fetching structure, ensure it aligns

@@ -2,9 +2,12 @@
 
 import { createClient } from "@/utils/supabase/server"
 import { logger } from "@/lib/logger"
-import type { /*Database, Tables,*/ TablesInsert, Database } from "@/lib/database.types"
+import type { /*Database, Tables,*/ TablesInsert, Database, Tables } from "@/lib/database.types"
 import { revalidatePath } from "next/cache"
 import { unstable_noStore as noStore } from 'next/cache'
+import { startOfDay, endOfDay } from 'date-fns';
+import type { TimelineItem } from '@/components/universal-timeline';
+import type { MeasurementStatus } from '@/components/shared/measurement-notification-item';
 
 // Types
 export type MeasurementInsert = TablesInsert<"measurements">
@@ -33,6 +36,23 @@ export type UpdateMeasurementInput = {
   value: number;
   unitId: string;
   notes?: string | null;
+};
+
+// Helper type for the joined data structure
+// Used in getMeasurementsForDateAction
+type FetchedMeasurement = Tables<'measurements'> & {
+    units: Pick<Tables<'units'>, 'id' | 'abbreviated_name' | 'name'> | null;
+    user_variables: (
+        Pick<Tables<'user_variables'>, 'id' | 'global_variable_id' | 'preferred_unit_id'>
+        & {
+            global_variables: (
+                Pick<Tables<'global_variables'>, 'id' | 'name' | 'variable_category_id' | 'default_unit_id' | 'description' | 'emoji'>
+                & {
+                    variable_categories: Pick<Tables<'variable_categories'>, 'id' | 'name'> | null;
+                }
+            ) | null;
+        }
+    ) | null;
 };
 
 /**
@@ -258,4 +278,111 @@ export async function updateMeasurementAction(
   // Optionally revalidate relevant paths here
 
   return { success: true };
-} 
+}
+
+/**
+ * Fetches raw measurements for a specific user and date to populate the timeline.
+ */
+export async function getMeasurementsForDateAction(
+    userId: string,
+    targetDate: Date
+): Promise<{ success: boolean; data?: TimelineItem[]; error?: string }> {
+    noStore(); // Ensure this doesn't get cached inappropriately
+    const supabase = await createClient();
+    const dateStr = targetDate.toISOString().split('T')[0];
+    logger.info('Fetching measurements for date', { userId, date: dateStr });
+
+    const dayStart = startOfDay(targetDate).toISOString();
+    const dayEnd = endOfDay(targetDate).toISOString();
+
+    // Fetch measurements for the target date range and join related data
+    const { data: measurements, error } = await supabase
+        .from('measurements')
+        .select(`
+            id,
+            value,
+            unit_id,
+            notes,
+            start_at,
+            user_variable_id,
+            units!inner( id, abbreviated_name, name ),
+            user_variables!inner(
+                id,
+                global_variable_id,
+                preferred_unit_id,
+                global_variables!inner(
+                    id,
+                    name,
+                    variable_category_id,
+                    description,
+                    emoji,
+                    default_unit_id,
+                    variable_categories( id, name )
+                )
+            )
+        `)
+        .eq('user_id', userId)
+        .gte('start_at', dayStart)
+        .lt('start_at', dayEnd)
+        .order('start_at', { ascending: true });
+
+    if (error) {
+        logger.error('Error fetching measurements for date', { userId, date: dateStr, error });
+        console.error("Supabase fetch error (measurements for date):", JSON.stringify(error, null, 2));
+        return { success: false, error: `Database error: ${error.message}` };
+    }
+
+    if (!measurements) {
+        logger.warn('No measurements found for date', { userId, date: dateStr });
+        return { success: true, data: [] };
+    }
+
+    // Map to the TimelineItem structure
+    const timelineItems: TimelineItem[] = measurements.map((m): TimelineItem | null => {
+        const measurement = m as FetchedMeasurement; // Cast to the more specific type
+        const userVar = measurement.user_variables;
+        const globalVar = userVar?.global_variables;
+        const category = globalVar?.variable_categories;
+        const unit = measurement.units;
+
+        // Perform checks ensuring all required nested data is present
+        if (!userVar || !globalVar || !category || !unit) {
+            logger.warn("Missing required nested data for measurement timeline item, skipping", {
+                measurementId: measurement.id,
+                userVarMissing: !userVar,
+                globalVarMissing: !globalVar,
+                categoryMissing: !category,
+                unitMissing: !unit,
+            });
+            return null; // Skip items with missing critical data
+        }
+
+        // Ensure variableCategoryId is valid before casting
+        const variableCategoryId = category.id as TimelineItem['variableCategoryId'];
+
+        return {
+            id: measurement.id, // Use measurement ID
+            globalVariableId: globalVar.id,
+            userVariableId: userVar.id,
+            variableCategoryId: variableCategoryId,
+            name: globalVar.name,
+            triggerAtUtc: measurement.start_at, // Use the raw UTC string from measurement
+            value: measurement.value, // Use the measurement value
+            unit: unit.abbreviated_name,
+            unitId: unit.id,
+            unitName: unit.name,
+            status: 'recorded' as MeasurementStatus, // Directly logged measurements are always 'recorded'
+            notes: measurement.notes ?? undefined, // Convert null to undefined
+            emoji: globalVar.emoji,
+            isEditable: true, // Raw measurements are always editable
+            // Fields not applicable to raw measurements:
+            default_value: null,
+            reminderScheduleId: undefined,
+            details: undefined,
+            detailsUrl: undefined,
+        };
+    }).filter((item): item is TimelineItem => item !== null); // Filter out null items
+
+    logger.info(`Found and mapped ${timelineItems.length} measurement timeline items for date`, { userId, date: dateStr });
+    return { success: true, data: timelineItems };
+}
