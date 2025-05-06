@@ -13,7 +13,7 @@ import { logger } from "@/lib/logger"
 import { useToast } from "@/components/ui/use-toast"
 import { logMeasurementAction } from "@/lib/actions/measurements"
 import { undoLogAction } from "@/lib/actions/undoLog"
-import { ReminderNotificationCard } from '@/components/reminders'
+import { MeasurementNotificationItem } from '@/components/shared/measurement-notification-item'
 
 interface TrackingInboxProps {
   userId: string;
@@ -34,6 +34,7 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
   const [loggedNotifications, setLoggedNotifications] = useState<Record<string, LoggedNotificationState>>({});
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   const refreshNotifications = useCallback(async () => {
     setIsLoading(true);
@@ -238,21 +239,32 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
             {notifications.map((notification) => {
               const loggedState = loggedNotifications[notification.notificationId];
               return (
-                <ReminderNotificationCard
+                <MeasurementNotificationItem
                   key={notification.notificationId}
-                  notification={notification}
+                  item={{
+                    id: notification.notificationId,
+                    globalVariableId: notification.globalVariableId,
+                    userVariableId: notification.userVariableId,
+                    variableCategoryId: notification.variableCategory,
+                    name: notification.variableName,
+                    triggerAtUtc: notification.dueAt,
+                    value: loggedState?.value ?? null,
+                    unit: notification.unitName || notification.unitId,
+                    unitId: notification.unitId,
+                    unitName: notification.unitName,
+                    status: loggedState ? 'completed' : 'pending',
+                    default_value: null,
+                    reminderScheduleId: notification.scheduleId,
+                    emoji: null,
+                  }}
+                  userTimezone={userTimezone}
                   isLogged={!!loggedState}
                   isPending={isPending}
-                  loggedValue={loggedState?.value}
-                  inputValue={measurementValues[notification.notificationId] || ''}
-                  onSkip={handleSkipNotification}
-                  onUndo={loggedState ? 
-                    () => handleUndo(loggedState.measurementId, 'measurement') : 
-                    undefined}
-                  onInputChange={(notificationId, value) => 
-                    setMeasurementValues(prev => ({ ...prev, [notificationId]: value }))}
-                  onLogMeasurement={handleLogMeasurement}
-                  showToasts={true}
+                  onStatusChange={(item, status, value) => {
+                    if (status === 'skipped') handleSkipNotification(notification);
+                  }}
+                  onUndo={(logId, item) => handleUndo(logId, 'measurement')}
+                  onLogMeasurement={(item, value) => handleLogMeasurement(notification, value)}
                 />
               );
             })}

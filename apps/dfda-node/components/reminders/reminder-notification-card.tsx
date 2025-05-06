@@ -21,7 +21,7 @@ export interface ReminderNotificationCardProps {
   onSkip: (notification: PendingNotificationTask) => void
   onUndo?: (notificationId: string) => void
   onInputChange?: (notificationId: string, value: string) => void
-  onLogMeasurement?: (notification: PendingNotificationTask) => void
+  onLogMeasurement?: (notification: PendingNotificationTask, value: number) => void
   showToasts?: boolean
 }
 
@@ -108,7 +108,7 @@ export function ReminderNotificationCard({
       // logger.info("Processing notification", { notification: tempNotificationForLog });
       
       // Call parent log handler. It might need to be adjusted later.
-      onLogMeasurement(notification); // Pass original notification, parent reads its state
+      onLogMeasurement(notification, valueToLog); // Pass original notification and value
       
       // Reset local input if using local state
       if (!onInputChange) {
