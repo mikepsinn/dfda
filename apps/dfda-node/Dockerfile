@@ -35,19 +35,25 @@ RUN curl -Ls https://cli.doppler.com/install.sh | sh -s -- --no-package-manager 
 COPY package.json pnpm-lock.yaml* ./
 # Install dependencies AFTER Doppler CLI is available (in case of private packages via Doppler)
 # Doppler token is available via ARG, doppler login/setup isn't used here
+# Mount pnpm cache - REMOVING
+# RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store/v3 \
+#     corepack enable pnpm && pnpm i --frozen-lockfile
 RUN corepack enable pnpm && pnpm i --frozen-lockfile
 
 # Copy the rest of the source code NOW
 COPY . .
 
-# Clear potentially stale Next.js cache
-RUN rm -rf .next
+# Clear potentially stale Next.js cache - REMOVED as we use build cache mount below
+# RUN rm -rf .next
 
 # Next.js telemetry config
 ENV NEXT_TELEMETRY_DISABLED 1
 
 # Run the build using Doppler
 # DOPPLER_TOKEN is available via the ARG declared above
+# Mount Next.js build cache - REMOVING
+# RUN --mount=type=cache,id=nextjs,target=/app/.next/cache \
+#    corepack enable pnpm && doppler run -- pnpm run build
 RUN corepack enable pnpm && doppler run -- pnpm run build
 
 # --- Production Stage ---
