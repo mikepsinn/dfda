@@ -35,7 +35,6 @@ interface PatientDashboardDisplayProps {
 
 export default function PatientDashboardDisplay({
   initialUser,
-  initialConditions,
   initialNotifications,
   initialTimelineItems,
   initialUserVariables
