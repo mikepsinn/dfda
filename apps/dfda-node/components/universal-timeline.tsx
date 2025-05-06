@@ -34,57 +34,48 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
+import { Slider } from "@/components/ui/slider"
 
-// Define the status of a measurement (aligns with reminder_notification_status)
-export type MeasurementStatus = "pending" | "completed" | "skipped" | "error"
+// Import the shared component and its types
+import {
+  MeasurementNotificationItem,
+  type MeasurementNotificationItemData,
+  type MeasurementStatus,
+  type VariableCategoryId as SharedVariableCategoryId
+} from "@/components/shared/measurement-notification-item";
 
-// Define the variable type categories based on imported constants
-export type VariableCategoryKey = keyof typeof VARIABLE_CATEGORY_IDS;
-export type VariableCategoryId = (typeof VARIABLE_CATEGORY_IDS)[VariableCategoryKey];
-export type FilterableVariableCategoryId = VariableCategoryId | "all";
+// Re-export or align local types if necessary, for now assume compatible
+// export type MeasurementStatus = SharedMeasurementStatus;
+// export type VariableCategoryId = SharedVariableCategoryId;
+export type FilterableVariableCategoryId = SharedVariableCategoryId | "all";
 
-// Define the timeline item interface - aligned closer to DB structure
-export interface TimelineItem {
-  id: string // Typically reminder_notifications.id
-  globalVariableId: string
-  userVariableId?: string
-  variableCategoryId: VariableCategoryId // Using the ID from DB/constants
-  name: string // From global_variables.name
-  triggerAtUtc: string; // Store the raw UTC ISO string
-  value: number | null // From reminder_schedules.default_value (can be null)
-  unit: string // From units.abbreviated_name
-  unitName?: string // From units.name
-  status: MeasurementStatus // From reminder_notifications.status
-  notes?: string // Optional notes (maybe from reminder_notifications.log_details?)
-  details?: string // Optional details (maybe from global_variables.description?)
-  detailsUrl?: string // Optional URL
-  isEditable?: boolean // Logic based on status
-  reminderScheduleId?: string // From reminder_notifications.reminder_schedule_id
-  // priority?: "low" | "medium" | "high"; // Removed as no direct DB field yet
+// Keep the TimelineItem interface for data fetching structure, ensure it aligns
+// with MeasurementNotificationItemData
+export interface TimelineItem extends MeasurementNotificationItemData {
+  // Add any Timeline-specific fields here if they diverge in the future
 }
 
 export interface UniversalTimelineProps {
   title?: string
-  items?: TimelineItem[]
+  items?: TimelineItem[] // Use the aligned TimelineItem type
   date?: Date
-  userTimezone: string; // Add userTimezone prop
-  // Keep callbacks, but implementation will use server actions based on DB types
-  onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void // Pass the category ID
+  userTimezone: string;
+  onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void
   onEditMeasurement?: (item: TimelineItem, value: number, unit: string, notes?: string) => void
-  onStatusChange?: (item: TimelineItem, status: MeasurementStatus) => void
+  onStatusChange?: (item: TimelineItem, status: MeasurementStatus, value?: number) => void
   className?: string
   compact?: boolean
   showFilters?: boolean
   showDateNavigation?: boolean
   showAddButtons?: boolean
-  defaultCategory?: FilterableVariableCategoryId // Default category ID or 'all'
+  defaultCategory?: FilterableVariableCategoryId
   emptyState?: React.ReactNode
 }
 
 export function UniversalTimeline({
   items = [],
   date: initialDate,
-  userTimezone, // Destructure userTimezone
+  userTimezone,
   onAddMeasurement,
   onEditMeasurement,
   onStatusChange,
@@ -99,123 +90,109 @@ export function UniversalTimeline({
   const router = useRouter()
   const [selectedDate, setSelectedDate] = useState<Date>(initialDate || new Date())
   const [showCalendar, setShowCalendar] = useState(false)
-  const [editingItem, setEditingItem] = useState<string | null>(null)
+  const [editingItem, setEditingItem] = useState<string | null>(null) // ID of item being edited
   const [editValue, setEditValue] = useState<number | null>(null)
   const [editUnit, setEditUnit] = useState<string | null>(null)
   const [editNotes, setEditNotes] = useState<string>("")
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [selectedCategory, setSelectedCategory] = useState<FilterableVariableCategoryId>(defaultCategory)
+  const [sliderValues, setSliderValues] = useState<Record<string, number>>({});
 
-  // Filter items based ONLY on category and search query (date filtering done on server)
+  // Filter items - Logic remains the same
   const filteredItems = useMemo(() => {
     return items
       .filter((item) => {
         try {
-          // Filter by category ID
           const matchesCategory = selectedCategory === "all" || item.variableCategoryId === selectedCategory;
-
-          // Filter by search query
           const matchesSearch =
             searchQuery === "" ||
             item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             (item.details && item.details.toLowerCase().includes(searchQuery.toLowerCase())) ||
             (item.notes && item.notes.toLowerCase().includes(searchQuery.toLowerCase()));
-
-          // Return based on category and search only
-          return matchesCategory && matchesSearch; 
+          return matchesCategory && matchesSearch;
         } catch (e) {
           console.error("Error filtering timeline item:", { item, error: e });
-          return false; // Exclude items that cause errors during filtering
+          return false;
         }
       })
       .sort((a, b) => {
         try {
-          // Sort by time using the UTC timestamp
           const timeA = parseISO(a.triggerAtUtc).getTime();
           const timeB = parseISO(b.triggerAtUtc).getTime();
           return timeA - timeB;
         } catch (e) {
            console.error("Error sorting timeline items:", { a, b, error: e });
-           return 0; // Maintain original order if parsing fails
+           return 0;
         }
       });
   }, [items, selectedCategory, searchQuery]);
 
-  // Updated getTypeIcon to use variableCategoryId and constants
-  const getTypeIcon = useCallback(
-    (categoryId: VariableCategoryId) => {
-      const iconSizeClass = compact ? "h-3.5 w-3.5" : "h-4 w-4";
-      // Use default icon colors (or theme-based if defined in CSS)
-      switch (categoryId) {
-        case VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS:
-          return <Pill className={iconSizeClass} />;
-        case VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY:
-          return <Heart className={iconSizeClass} />;
-        case VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR:
-          return <Activity className={iconSizeClass} />;
-        default:
-          return <Clock className={iconSizeClass} />; // Generic fallback
-      }
-    },
-    [compact],
-  )
+  // --- Handlers to pass down to the shared component ---
 
-  const getStatusBadge = useCallback(
-    (status: MeasurementStatus) => {
-      // Use variants for theming
-      let variant: "default" | "secondary" | "destructive" | "outline" = "default";
-      let text = status.charAt(0).toUpperCase() + status.slice(1);
+  // Status change handler (called by shared component)
+  const handleItemStatusChange = useCallback((item: TimelineItem, status: MeasurementStatus, value?: number) => {
+    onStatusChange?.(item, status, value);
+  }, [onStatusChange]);
 
-      switch (status) {
-        case "completed":
-          variant = "default"; // Use theme's default success (often green)
-          text = compact ? "✓" : "Completed";
-          break;
-        case "skipped":
-          variant = "secondary"; // Use theme's secondary (often gray or yellow)
-          text = compact ? "⨯" : "Skipped";
-          break;
-        case "pending":
-          variant = "outline"; // Use outline style
-          text = compact ? "⏱" : "Pending";
-          break;
-        case "error":
-          variant = "destructive"; // Use theme's destructive (often red)
-          text = compact ? "!" : "Error";
-          break;
-      }
-      return <Badge variant={variant}>{text}</Badge>;
-    },
-    [compact],
-  )
+  // Edit handlers
+  const handleEdit = useCallback((item: TimelineItem) => {
+    setEditingItem(item.id)
+    setEditValue(item.value)
+    setEditUnit(item.unit)
+    setEditNotes(item.notes || "")
+  }, []);
 
-  // Helper function to render value display based on variable type
-  const renderValueDisplay = useCallback(
-    (item: TimelineItem) => {
-      // TODO: Re-implement face icon logic if needed, possibly using specific unit IDs
-      // if (["unit-id-for-severity", "unit-id-for-status"].includes(item.unitId) && item.value !== null && item.value >= 1 && item.value <= 5) {
-      //   return <FaceIcon rating={item.value} className={`${compact ? "h-4 w-4" : "h-5 w-5"} mr-2`} />
-      // }
+  const handleSaveEdit = useCallback((item: TimelineItem) => {
+    // The item passed back might not have latest editValue/Unit/Notes, use state
+    onEditMeasurement?.(item, editValue!, editUnit!, editNotes)
+    setEditingItem(null)
+    // Clear edit state after save
+    setEditValue(null);
+    setEditUnit(null);
+    setEditNotes("");
+  }, [onEditMeasurement, editValue, editUnit, editNotes]);
 
-      // For numeric display, format based on unit
-      return (
-        <span className="font-medium">
-          {item.value ?? "-"} {item.unitName || item.unit} {/* Handle null value */}
-        </span>
-      )
-    },
-    [], // Removed compact dependency as it doesn't affect this logic now
-  )
+  const handleCancelEdit = useCallback(() => {
+    setEditingItem(null)
+    // Clear edit state on cancel
+    setEditValue(null);
+    setEditUnit(null);
+    setEditNotes("");
+  }, []);
 
-  // Previous/Next day functions
+  // Slider value change handler
+  const handleSliderChange = useCallback((itemId: string, value: number) => {
+      setSliderValues(prev => ({ ...prev, [itemId]: value }));
+  }, []);
+
+  // Detail navigation
+  const handleNavigateToDetails = useCallback((url: string) => {
+    // Implement the logic to navigate to the details URL
+    // Maybe open in new tab?
+    window.open(url, '_blank', 'noopener,noreferrer');
+    // console.warn('Navigate to details not implemented', { url })
+  }, []);
+
+  // Settings navigation
+  const handleNavigateToVariableSettings = useCallback((item: TimelineItem) => {
+    if (item.userVariableId) {
+      router.push(`/patient/user-variables/${item.userVariableId}`);
+    } else {
+      console.warn('Cannot navigate to variable settings, userVariableId missing', { itemId: item.id });
+    }
+  }, [router]);
+
+  // --- Date Navigation and Empty State --- 
+
   const previousDay = () => {
     setSelectedDate(prevDate => new Date(prevDate.setDate(prevDate.getDate() - 1)))
+    // TODO: Trigger data refresh based on date change
   }
   const nextDay = () => {
     setSelectedDate(prevDate => new Date(prevDate.setDate(prevDate.getDate() + 1)))
+    // TODO: Trigger data refresh based on date change
   }
   const isToday = () => {
-    // Compare using start of day to avoid time differences
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
     const selectedStart = new Date(selectedDate);
@@ -223,285 +200,26 @@ export function UniversalTimeline({
     return selectedStart.getTime() === todayStart.getTime();
   }
 
-  // Status change handlers
-  const handleCompleted = (item: TimelineItem) => {
-    onStatusChange?.(item, "completed")
-  }
-  const handleSkipped = (item: TimelineItem) => {
-    onStatusChange?.(item, "skipped")
-  }
-  const handleReset = (item: TimelineItem) => {
-    onStatusChange?.(item, "pending")
-  }
-
-  // Edit handlers
-  const handleEdit = (item: TimelineItem) => {
-    setEditingItem(item.id)
-    setEditValue(item.value)
-    setEditUnit(item.unit)
-    setEditNotes(item.notes || "")
-  }
-  const handleSaveEdit = (item: TimelineItem) => {
-    onEditMeasurement?.(item, editValue!, editUnit!, editNotes)
-    setEditingItem(null)
-  }
-  const handleCancelEdit = () => {
-    setEditingItem(null)
-  }
-
-  // Detail navigation
-  const handleNavigateToDetails = (url: string) => {
-    // Implement the logic to navigate to the details URL
-    console.warn('Navigate to details not implemented', { url })
-  }
-
-  // renderEmptyState remains the same
   const renderEmptyState = () => {
+    const categoryName = selectedCategory === 'all' ? 'all categories' : VARIABLE_CATEGORIES_DATA[selectedCategory]?.name || 'this category';
     return (
       <p className="text-sm text-muted-foreground">
-        {emptyState || `No items found for ${VARIABLE_CATEGORIES_DATA[selectedCategory]?.name || 'this category'} on ${format(selectedDate, "MMMM d, yyyy")}`}
+        {emptyState || `No items found for ${categoryName} on ${format(selectedDate, "MMMM d, yyyy")}`}
       </p>
     )
   }
 
-  // Render a timeline item
-  const renderTimelineItem = (item: TimelineItem) => {
-    const isEditing = editingItem === item.id;
-    const handleNavigateToVariableSettings = () => {
-      if (item.userVariableId) {
-        router.push(`/patient/user-variables/${item.userVariableId}`);
-      } else {
-        // Optionally log or show a message if ID is missing
-        console.warn('Cannot navigate to variable settings, userVariableId missing', { itemId: item.id });
-      }
-    };
-
-    // Format the time in the user's specified timezone
-    let displayTime = "--:--";
-    try {
-      // Ensure userTimezone is valid, fallback to UTC if needed
-      const tz = userTimezone && userTimezone.length > 0 ? userTimezone : 'UTC';
-      displayTime = formatInTimeZone(item.triggerAtUtc, tz, 'HH:mm');
-    } catch (e) {
-        console.error("Error formatting time for timeline item:", { item, userTimezone, error: e });
-        // displayTime remains "--:--" on error
-    }
-
-    return (
-      <div
-        key={item.id}
-        className={cn(
-          "flex items-start ml-2 transition-all border-b", // Add bottom border for separation
-          compact ? "py-2" : "py-3",
-        )}
-      >
-        <div
-          className={cn(
-            "relative flex items-center justify-center rounded-full mr-3 z-10 border", // Use default border
-            compact ? "w-8 h-8" : "w-10 h-10",
-            "bg-background" // Use theme background
-          )}
-        >
-          {getTypeIcon(item.variableCategoryId)}
-        </div>
-
-        <div className="flex-1">
-          <div className="flex items-center justify-between">
-            {/* Left side: Name, Time, Status Badge */}
-            <div className="flex items-center">
-              <div>
-                <div
-                  className={cn(
-                    "font-medium",
-                    compact ? "text-xs" : "text-sm",
-                  )}
-                >
-                  {item.name}
-                </div>
-                <div className="flex items-center text-xs text-muted-foreground">
-                  <Clock className="h-3 w-3 mr-1" />
-                  {displayTime}
-                </div>
-              </div>
-              <div className="ml-3">{getStatusBadge(item.status)}</div>
-            </div>
-
-            {/* Right side: Action Buttons / Menu */}
-            {(item.isEditable ?? true) && (
-              <div className="flex space-x-1">
-                {compact ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-7 w-7">
-                        <MoreHorizontal className="h-3.5 w-3.5" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={() => handleEdit(item)} disabled={!item.isEditable}>
-                        <Edit className="mr-2 h-3.5 w-3.5" /> Edit
-                      </DropdownMenuItem>
-                      {item.detailsUrl && (
-                        <DropdownMenuItem onClick={() => handleNavigateToDetails(item.detailsUrl!)}>
-                          <ExternalLink className="mr-2 h-3.5 w-3.5" /> View details
-                        </DropdownMenuItem>
-                      )}
-                      {item.userVariableId && (
-                        <DropdownMenuItem onClick={handleNavigateToVariableSettings}>
-                          <Settings className="mr-2 h-3.5 w-3.5" /> Manage Variable
-                        </DropdownMenuItem>
-                      )}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => handleEdit(item)} disabled={!item.isEditable}>
-                            <Edit className="h-3.5 w-3.5" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>Edit</TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                    {item.userVariableId && (
-                      <TooltipProvider>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-7 w-7"
-                              onClick={handleNavigateToVariableSettings}
-                            >
-                              <Settings className="h-3.5 w-3.5" />
-                            </Button>
-                          </TooltipTrigger>
-                          <TooltipContent>Manage Variable</TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    )}
-                  </>
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* Details, Value Display (below name/time) */}
-          {!compact && (
-            <div className="flex items-center mt-1">
-              {item.details && (
-                <div className="text-xs text-muted-foreground">{item.details}</div> // Use text-muted-foreground
-              )}
-              <div
-                className={cn(
-                  "text-xs",
-                  item.details ? "ml-3" : "",
-                )}
-              >
-                {renderValueDisplay(item)}
-              </div>
-            </div>
-          )}
-
-          {/* Notes rendering */}
-          {!compact && item.notes && (
-            <div className="text-xs mt-1 italic text-muted-foreground">{item.notes}</div> // Use text-muted-foreground
-          )}
-
-          {/* Value and unit editor (when isEditing) */}
-          {isEditing ? (
-            <div className="mt-3 space-y-3 p-3 rounded-md border border-dashed"> {/* Use default border */}
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="number"
-                  value={editValue ?? ""}
-                  onChange={(e) => setEditValue(Number.parseFloat(e.target.value) || 0)}
-                  className="w-20 h-8 text-sm"
-                />
-                <Select value={editUnit || ""} onValueChange={setEditUnit}>
-                  <SelectTrigger className="w-32 h-8 text-sm">
-                    <SelectValue placeholder="Unit" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value={item.unit}>{item.unitName || item.unit}</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Input
-                  placeholder="Notes (optional)"
-                  value={editNotes}
-                  onChange={(e) => setEditNotes(e.target.value)}
-                  className="w-full h-8 text-sm"
-                />
-              </div>
-              <div className="flex justify-end space-x-2">
-                <Button
-                  size="sm"
-                  className="h-8"
-                  onClick={() => handleSaveEdit(item)}
-                  disabled={editValue === null || !editUnit}
-                >
-                  Save
-                </Button>
-                <Button variant="outline" size="sm" className="h-8" onClick={handleCancelEdit}>
-                  Cancel
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <div className={compact ? "mt-1" : "mt-2"}>
-              {item.status === "pending" ? (
-                <div className="flex flex-wrap gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className={cn(compact ? "h-6 text-xs py-0 px-2" : "h-7")}
-                    onClick={() => handleCompleted(item)}
-                  >
-                    <Check className={compact ? "h-3 w-3 mr-0.5" : "h-3 w-3 mr-1"} />
-                    <span className={compact ? "text-xs" : "text-xs"}>Record</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className={cn(compact ? "h-6 text-xs py-0 px-2" : "h-7")}
-                    onClick={() => handleSkipped(item)}
-                  >
-                    <X className={compact ? "h-3 w-3 mr-0.5" : "h-3 w-3 mr-1"} />
-                    <span className={compact ? "text-xs" : "text-xs"}>Skip</span>
-                  </Button>
-                </div>
-              ) : (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className={cn(compact ? "h-6 text-xs py-0 px-2" : "h-7")}
-                  onClick={() => handleReset(item)}
-                >
-                  <RotateCcw className={compact ? "h-3 w-3 mr-0.5" : "h-3 w-3 mr-1"} />
-                  <span className={compact ? "text-xs" : "text-xs"}>Reset</span>
-                </Button>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className={cn("p-4 border rounded-lg shadow-sm", className)}>
-      {/* Header Section */}
+      {/* Header Section - Remains the same */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b">
-        {/* Date Navigation */}
+        {/* Date Navigation */} 
         {showDateNavigation && (
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="icon" onClick={previousDay} aria-label="Previous day">
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            <Popover open={showCalendar} onOpenChange={setShowCalendar}>
+             <Button variant="outline" size="icon" onClick={previousDay} aria-label="Previous day">
+               <ChevronLeft className="h-4 w-4" />
+             </Button>
+             <Popover open={showCalendar} onOpenChange={setShowCalendar}>
               <PopoverTrigger asChild>
                 <Button
                   variant="outline"
@@ -537,7 +255,7 @@ export function UniversalTimeline({
           </div>
         )}
 
-        {/* Filters and Search */}
+        {/* Filters and Search - Remains the same */}
         <div className="flex flex-wrap items-center gap-2 flex-grow justify-end">
           {showFilters && (
             <>
@@ -564,48 +282,77 @@ export function UniversalTimeline({
               </div>
             </>
           )}
-          {/* Add Measurement Buttons */}
+          {/* Add Measurement Buttons - Remains the same */}
           {showAddButtons && onAddMeasurement && (
-            <div className="flex items-center gap-2 border-l pl-4 ml-2">
+             <div className="flex items-center gap-2 border-l pl-4 ml-2">
+               {/* Tooltip Buttons ... */} 
               <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS)} aria-label="Add Intake/Intervention">
-                      <Pill className="h-4 w-4" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent><p>Add Intake/Intervention</p></TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+                 <Tooltip>
+                   <TooltipTrigger asChild>
+                     <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS)} aria-label="Add Intake/Intervention">
+                       <Pill className="h-4 w-4" />
+                     </Button>
+                   </TooltipTrigger>
+                   <TooltipContent><p>Add Intake/Intervention</p></TooltipContent>
+                 </Tooltip>
+               </TooltipProvider>
               <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY)} aria-label="Add Health/Physiology">
-                      <Heart className="h-4 w-4" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent><p>Add Health/Physiology</p></TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR)} aria-label="Add Activity/Behavior">
-                      <Activity className="h-4 w-4" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent><p>Add Activity/Behavior</p></TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-          )}
+                 <Tooltip>
+                   <TooltipTrigger asChild>
+                     <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY)} aria-label="Add Health/Physiology">
+                       <Heart className="h-4 w-4" />
+                     </Button>
+                   </TooltipTrigger>
+                   <TooltipContent><p>Add Health/Physiology</p></TooltipContent>
+                 </Tooltip>
+               </TooltipProvider>
+               <TooltipProvider>
+                 <Tooltip>
+                   <TooltipTrigger asChild>
+                     <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR)} aria-label="Add Activity/Behavior">
+                       <Activity className="h-4 w-4" />
+                     </Button>
+                   </TooltipTrigger>
+                   <TooltipContent><p>Add Activity/Behavior</p></TooltipContent>
+                 </Tooltip>
+               </TooltipProvider>
+             </div>
+           )}
         </div>
       </div>
 
-      {/* Timeline Content */}
-      <div className="space-y-4">
+      {/* Timeline Content - Use the shared component */}
+      <div className="space-y-0"> {/* Remove space-y-4 as item has border-b */}
         {filteredItems.length > 0 ? (
-          filteredItems.map((item) => renderTimelineItem(item))
+          filteredItems.map((item) => (
+            <MeasurementNotificationItem
+              key={item.id}
+              item={item} // Pass the TimelineItem directly (assuming compatible structure)
+              userTimezone={userTimezone}
+              compact={compact}
+              isEditing={editingItem === item.id}
+              editValue={editingItem === item.id ? editValue : undefined}
+              editUnit={editingItem === item.id ? editUnit : undefined}
+              editNotes={editingItem === item.id ? editNotes : undefined}
+              
+              // Callbacks
+              onStatusChange={handleItemStatusChange}
+              onEdit={handleEdit}
+              onSaveEdit={handleSaveEdit} // Pass the stateful save handler
+              onCancelEdit={handleCancelEdit}
+              onNavigateToVariableSettings={handleNavigateToVariableSettings}
+              onNavigateToDetails={handleNavigateToDetails}
+
+              // Props not used by UniversalTimeline context (will use defaults or be ignored)
+              // isLogged={undefined}
+              // isPending={undefined}
+              // inputValue={undefined}
+              // onSkip={undefined}
+              // onUndo={undefined}
+              // onInputChange={undefined}
+              // onLogMeasurement={undefined}
+            />
+          ))
         ) : (
           renderEmptyState()
         )}
