@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useTransition, useEffect } from "react"
+import { useState, useTransition, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useRouter } from "next/navigation"
 import { toast } from "@/components/ui/use-toast"
 import { logger } from "@/lib/logger"
@@ -23,27 +23,46 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
     timezone: initialData?.timezone || "",
   })
   const [timezones, setTimezones] = useState<string[]>([])
+  const isInitialTimezoneSetRef = useRef(false);
 
   useEffect(() => {
+    if (isInitialTimezoneSetRef.current) {
+      return;
+    }
+    
     try {
       const supportedTimezones = Intl.supportedValuesOf('timeZone')
       setTimezones(supportedTimezones)
-      if (!formData.timezone && supportedTimezones.length > 0) {
+      if (!initialData?.timezone && supportedTimezones.length > 0) {
         const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
         if (supportedTimezones.includes(browserTimezone)) {
           setFormData((prev) => ({ ...prev, timezone: browserTimezone }))
+          isInitialTimezoneSetRef.current = true;
         } else {
-          setFormData((prev) => ({ ...prev, timezone: supportedTimezones[0] || "UTC" }))
+          const defaultTz = supportedTimezones[0] || "UTC";
+          setFormData((prev) => ({ ...prev, timezone: defaultTz }))
+          isInitialTimezoneSetRef.current = true;
         }
+      } else if (initialData?.timezone) {
+         isInitialTimezoneSetRef.current = true;
       }
     } catch (error) {
       logger.error("Failed to get supported timezones:", error)
-      setTimezones(["UTC"])
-      if (!formData.timezone) {
+      setTimezones(["UTC", "America/New_York", "Europe/London"])
+      if (!initialData?.timezone) {
         setFormData((prev) => ({ ...prev, timezone: "UTC" }))
+        isInitialTimezoneSetRef.current = true;
       }
     }
-  }, [])
+  }, [initialData?.timezone]);
+
+  useEffect(() => {
+    if (!isInitialTimezoneSetRef.current) return;
+    
+    if (initialData?.timezone && initialData.timezone !== formData.timezone) {
+      setFormData(prev => ({ ...prev, timezone: initialData.timezone! }));
+    }
+  }, [initialData?.timezone, formData.timezone]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -79,7 +98,7 @@ export function ProfileForm({ initialData }: ProfileFormProps) {
         const updatedProfile = await updateProfileAction(userId, profileUpdates)
 
         if (!updatedProfile) {
-          throw new Error("Server action returned null, update likely failed.")
+          throw new Error("Server action did not return updated profile.")
         }
 
         toast({ title: "Success", description: "Profile updated successfully." })
