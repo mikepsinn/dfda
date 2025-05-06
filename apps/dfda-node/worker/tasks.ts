@@ -169,60 +169,56 @@ export const generateAllReminders: Task = async (payload, helpers) => {
 
     // 2. Process each schedule
     for (const schedule of schedulesWithTimezone) {
-        // Extract timezone; default to UTC if somehow missing after inner join
         const userTimezone = schedule.profiles?.timezone || 'UTC'; 
 
-        // Removed timezone check
-        if (!schedule.time_of_day || !schedule.rrule || !schedule.user_id || !schedule.id) {
-            logger.warn(`⚠️ [Task] Skipping schedule ${schedule.id} due to missing data (time, rrule, userId, id).`);
+        if (!schedule.time_of_day || !schedule.rrule || !schedule.user_id || !schedule.id || !schedule.profiles?.timezone) {
+             logger.warn(`⚠️ [Task] Skipping schedule ${schedule.id} due to missing data or timezone.`);
             continue;
         }
-        if (!schedule.profiles?.timezone) {
-             logger.warn(`⚠️ [Task] Skipping schedule ${schedule.id} due to missing profile timezone after join.`);
+        
+        // Parse the target hour and minute ONCE per schedule
+        const [targetHour, targetMinute] = schedule.time_of_day.split(':').map(Number);
+        if (isNaN(targetHour) || isNaN(targetMinute)) {
+            logger.warn(`⚠️ [Task] Skipping schedule ${schedule.id} due to invalid time_of_day format: ${schedule.time_of_day}`);
             continue;
         }
 
         try {
-            // Use a start date far enough back to catch potentially missed occurrences,
-            // but not too far to impact performance.
-            // RRule will calculate based on `nowUtc` passed to `between`.
             const rule = rrulestr(schedule.rrule, { dtstart: nowUtc.minus({ years: 1 }).toJSDate() }) as RRule;
-
-            // Calculate the window for checking occurrences
             const windowStart = nowUtc.toJSDate();
             const windowEnd = nowUtc.plus({ minutes: runIntervalMinutes }).toJSDate();
-
-            // Find occurrences within the next interval
-            const nextOccurrencesLocal = rule.between(windowStart, windowEnd, true); // `true` includes start time
+            const nextOccurrencesLocal = rule.between(windowStart, windowEnd, true);
             
             for (const nextOccurrence of nextOccurrencesLocal) {
-                // Convert the JS Date occurrence back to Luxon DateTime
-                // Explicitly set the user's timezone, then convert to UTC for storage
-                const notificationTriggerAtUtc = DateTime.fromJSDate(nextOccurrence)
-                                                        .setZone(userTimezone) // Use fetched userTimezone
-                                                        .toUTC()
-                                                        .toISO();
-
-                if (!notificationTriggerAtUtc) {
-                     logger.error(`🚨 [Task] Failed to convert calculated occurrence to ISO string for schedule ${schedule.id}`, { nextOccurrence });
-                     continue; // Skip this occurrence if conversion fails
-                }
+                // Convert JS Date to Luxon DateTime IN THE USER'S TIMEZONE first
+                let occurrenceInUserTz = DateTime.fromJSDate(nextOccurrence).setZone(userTimezone);
                 
+                // *** FIX: Explicitly set the hour and minute from the schedule ***
+                occurrenceInUserTz = occurrenceInUserTz.set({ hour: targetHour, minute: targetMinute, second: 0, millisecond: 0 });
+
+                // Now convert the corrected local time to UTC ISO string for storage
+                const triggerAtUtc = occurrenceInUserTz.toUTC().toISO(); 
+
+                if (!triggerAtUtc) {
+                   logger.error(`🚨 [Task] Failed to convert calculated occurrence to ISO string for schedule ${schedule.id}`, { occurrenceInUserTz });
+                   continue; // Skip this occurrence if conversion fails
+                }
+
                 notificationsToInsert.push({
                     reminder_schedule_id: schedule.id,
                     user_id: schedule.user_id,
-                    notification_trigger_at: notificationTriggerAtUtc,
+                    notification_trigger_at: triggerAtUtc,
                     status: 'pending',
                 });
-                 logger.info(`  [Task] Queued notification for schedule ${schedule.id} at ${notificationTriggerAtUtc}`);
+                 logger.debug(`   [Task] Queued notification for schedule ${schedule.id}. Trigger At (UTC): ${triggerAtUtc}`);
             }
         } catch (error) {
             logger.error(`🚨 [Task] Error processing rrule for schedule ${schedule.id}`, { error, rrule: schedule.rrule });
-            // Log error but continue processing other schedules
+            // Continue processing other schedules even if one fails
         }
     }
 
-    // 3. Insert all generated notifications
+    // 3. Insert all collected notifications (Batch Insert)
     if (notificationsToInsert.length > 0) {
         logger.info(`⏳ [Task] Inserting ${notificationsToInsert.length} total notifications.`);
         const { data: insertedData, error: insertError } = await supabaseAdmin

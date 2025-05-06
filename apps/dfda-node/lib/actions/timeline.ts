@@ -338,6 +338,10 @@ export async function getTimelineNotificationsForDateAction(
     return { success: false, error: "Database error fetching timeline data." };
   }
 
+  // --- Add Logging Here --- 
+  logger.debug("Raw notifications fetched from DB", { count: notifications?.length ?? 0, notifications: notifications?.map(n => ({id: n.id, triggerAt: n.notification_trigger_at, status: n.status})) });
+  // ------------------------
+
   if (!notifications) {
     logger.info('No timeline notifications found for date', { userId, date: dateStr });
     return { success: true, data: [] };
@@ -369,7 +373,6 @@ export async function getTimelineNotificationsForDateAction(
 
     // Ensure variableCategoryId is valid before casting
     const variableCategoryId = category.id as TimelineItem['variableCategoryId'];
-    const notificationTime = new Date(notification.notification_trigger_at);
 
     return {
       id: notification.id,
@@ -377,8 +380,7 @@ export async function getTimelineNotificationsForDateAction(
       userVariableId: userVar.id,
       variableCategoryId: variableCategoryId,
       name: globalVar.name,
-      time: notificationTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }), // Format time from the trigger timestamp
-      scheduledAt: notificationTime,
+      triggerAtUtc: notification.notification_trigger_at, // Use the raw UTC string
       value: schedule.default_value, // Use default value from schedule
       unit: actualUnit.abbreviated_name,
       unitName: actualUnit.name,
@@ -387,8 +389,6 @@ export async function getTimelineNotificationsForDateAction(
       details: globalVar.description || undefined,
       isEditable: notification.status === 'pending', // Example edit logic
       reminderScheduleId: notification.reminder_schedule_id,
-      // TODO: Add logic to potentially fetch linked measurement details if status is completed
-      // TODO: Construct detailsUrl if applicable
     };
   }).filter((item): item is TimelineItem => item !== null); // Filter out null items
 
