@@ -17,7 +17,7 @@ interface ActionResult {
 
 // --- Change Password Action ---
 export async function changePasswordAction(formData: FormData): Promise<ActionResult> {
-  const supabase = createClient();
+  const supabase = await createClient();
   const user = await getServerUser();
 
   if (!user) {
