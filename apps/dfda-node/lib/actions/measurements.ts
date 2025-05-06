@@ -27,6 +27,14 @@ export type LogMeasurementInput = {
     reminderNotificationId?: string; // Optional: Link to the notification being completed
 }
 
+export type UpdateMeasurementInput = {
+  measurementId: string;
+  userId: string;
+  value: number;
+  unitId: string;
+  notes?: string | null;
+};
+
 /**
  * Creates a measurement log, finding/creating the necessary user_variable record.
  * Optionally links the measurement back to a reminder notification if ID is provided.
@@ -222,4 +230,32 @@ export async function getMeasurementsForUserVariableAction(
         logger.error("getMeasurementsForUserVariableAction: Unhandled error", { userId, userVariableId, error });
         return { success: false, error: "An unexpected error occurred." };
     }
+}
+
+export async function updateMeasurementAction(
+  input: UpdateMeasurementInput
+): Promise<{ success: boolean; error?: string }> {
+  const { measurementId, userId, value, unitId, notes } = input;
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from("measurements")
+    .update({
+      value,
+      unit_id: unitId,
+      notes: notes ?? null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", measurementId)
+    .eq("user_id", userId)
+    .is("deleted_at", null);
+
+  if (error) {
+    logger.error("Failed to update measurement", { measurementId, userId, error });
+    return { success: false, error: error.message };
+  }
+
+  // Optionally revalidate relevant paths here
+
+  return { success: true };
 } 

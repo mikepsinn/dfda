@@ -17,7 +17,11 @@ import { getPendingReminderNotificationsAction } from "@/lib/actions/reminder-sc
 // Remove unused component imports
 // import { TrackingInbox } from "@/components/patient/TrackingInbox"
 import { logger } from "@/lib/logger"
-import PatientDashboardClient from "@/components/patient/PatientDashboardClient" // Import the new client component
+// Import the new display component
+import PatientDashboardDisplay from "@/components/patient/PatientDashboardDisplay"
+// Import the timeline/variable fetch functions
+import { getTimelineItemsForDate } from "@/lib/actions/timeline"
+import { getAllUserVariablesAction } from "@/lib/actions/user-variables"
 
 // Make the page component async
 export default async function PatientDashboardPage() {
@@ -31,36 +35,60 @@ export default async function PatientDashboardPage() {
     // Note: redirect() throws an error, so function execution stops here.
   }
 
-  // Fetch conditions and notifications in parallel for efficiency
+  // Fetch all necessary data in parallel
   let conditionsResult;
   let notificationsResult;
+  let timelineItemsResult;
+  let userVariablesResult;
+  const targetDate = new Date(); // Use today's date for initial timeline load
+
   try {
-    [conditionsResult, notificationsResult] = await Promise.all([
+    // Use Promise.allSettled to handle potential errors in individual fetches
+    const results = await Promise.allSettled([
         getPatientConditionsAction(user.id),
-        getPendingReminderNotificationsAction(user.id)
+        getPendingReminderNotificationsAction(user.id),
+        getTimelineItemsForDate(user.id, targetDate),
+        getAllUserVariablesAction(user.id)
     ]);
+
+    // Process results, defaulting to empty arrays on failure
+    conditionsResult = results[0].status === 'fulfilled' ? results[0].value : [];
+    notificationsResult = results[1].status === 'fulfilled' ? results[1].value : [];
+    timelineItemsResult = results[2].status === 'fulfilled' ? results[2].value : [];
+    userVariablesResult = results[3].status === 'fulfilled' ? results[3].value : [];
+
+     // Log errors if any promise was rejected
+     results.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        const actionName = ['getPatientConditions', 'getPendingNotifications', 'getTimelineItems', 'getUserVariables'][index];
+        logger.error(`Error fetching initial data for ${actionName}`, { userId: user.id, error: result.reason });
+      }
+    });
+
   } catch (error) {
-      logger.error("Error fetching initial data for dashboard", { userId: user.id, error });
-      // Render an error state if fetching fails server-side
+      // Catch potential errors in Promise.allSettled itself (unlikely)
+      logger.error("Critical error during initial data fetch", { userId: user.id, error });
       return (
           <div className="container py-8 text-center text-red-600">
-              Failed to load dashboard data. Please try refreshing the page.
+              Failed to load critical dashboard data. Please try refreshing.
           </div>
       );
   }
   
-  // Redirect to onboarding if no conditions found
+  // Redirect to onboarding if no conditions found (check fulfilled value)
   if (!conditionsResult || conditionsResult.length === 0) {
-    logger.info("User has no conditions, redirecting to onboarding", { userId: user.id });
+    logger.info("User has no conditions (or failed fetch), redirecting to onboarding", { userId: user.id });
     redirect("/patient/onboarding");
   }
 
-  // Render the Client Component and pass data as props
+  // Render the single Client Component with all resolved data
   return (
-    <PatientDashboardClient 
+    <PatientDashboardDisplay 
       initialUser={user} 
       initialConditions={conditionsResult} 
       initialNotifications={notificationsResult} 
+      initialTimelineItems={timelineItemsResult}
+      initialUserVariables={userVariablesResult}
     />
   )
 }

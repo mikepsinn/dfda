@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { logger } from '@/lib/logger';
 import { useToast } from "@/components/ui/use-toast";
-import { createClient } from '@/utils/supabase/client';
 import { ShieldCheck, ShieldOff, Loader2 } from 'lucide-react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 // NOTE: This is a basic placeholder. Full MFA implementation is complex.
 // It requires server-side logic for enrollment, verification, challenge, etc.
