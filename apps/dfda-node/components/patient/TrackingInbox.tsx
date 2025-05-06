@@ -30,7 +30,6 @@ interface LoggedNotificationState {
 export function TrackingInbox({ userId, initialNotifications: initialNotificationsProp }: TrackingInboxProps) {
   const [notifications, setNotifications] = useState<PendingReminderNotification[]>(initialNotificationsProp || []);
   const [isLoading, setIsLoading] = useState(!initialNotificationsProp || initialNotificationsProp.length === 0); // True only if no initial notifications
-  const [measurementValues, setMeasurementValues] = useState<Record<string, string>>({});
   const [loggedNotifications, setLoggedNotifications] = useState<Record<string, LoggedNotificationState>>({});
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
@@ -41,34 +40,18 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
     try {
       const fetchedNotifications = await getPendingReminderNotificationsAction(userId);
       setNotifications(fetchedNotifications);
-      
-      const initialMeasurementValues: Record<string, string> = {};
-      fetchedNotifications.forEach(notification => {
-        if (!(notification.notificationId in loggedNotifications)) { 
-             initialMeasurementValues[notification.notificationId] = ""; 
-        }
-      });
-      setMeasurementValues(initialMeasurementValues);
     } catch (error) {
       logger.error("Failed to refresh reminder notifications", { userId, error });
       toast({ title: "Error", description: "Could not refresh tasks.", variant: "destructive" });
     } finally {
       setIsLoading(false);
     }
-  }, [userId, toast, loggedNotifications]);
+  }, [userId, toast]);
 
   useEffect(() => {
     // Only fetch notifications if they weren't provided initially
     if (!initialNotificationsProp || initialNotificationsProp.length === 0) {
         refreshNotifications();
-    } else {
-        // If initial notifications *were* provided, initialize measurementValues state.
-        // isLoading is already false from useState.
-        const initialMeasurementValues: Record<string, string> = {};
-        initialNotificationsProp.forEach(notification => {
-            initialMeasurementValues[notification.notificationId] = "";
-        });
-        setMeasurementValues(initialMeasurementValues);
     }
     // Dependencies: userId might change, initialNotificationsProp might change (though unlikely after mount),
     // and refreshNotifications is called conditionally.
@@ -137,7 +120,7 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
         });
       }
     });
-  }, [userId, toast, startTransition]); // Ensure all necessary dependencies are included
+  }, [userId, startTransition]); // Ensure all necessary dependencies are included
 
   const handleUndo = useCallback(async (logId: string | undefined, logType: 'measurement') => {
     if (!logId) return;
@@ -171,35 +154,6 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
       } // Error toast handled by card
     });
   }, [userId, loggedNotifications]); // Removed refreshNotifications dependency
-
-  const handleSkipNotification = useCallback((notification: PendingReminderNotification) => {
-    if (loggedNotifications[notification.notificationId]) {
-      setLoggedNotifications(prev => {
-          const newState = { ...prev };
-          delete newState[notification.notificationId];
-          return newState;
-      });
-    }
-    
-    startTransition(async () => {
-      try {
-        const result = await completeReminderNotificationAction(
-            notification.notificationId,
-            userId, 
-            true // Mark as skipped
-        );
-        if (result.success) {
-          // Remove the notification from the visible list immediately
-          setNotifications(prev => prev.filter(n => n.notificationId !== notification.notificationId));
-        } else {
-          logger.error("Failed to skip notification", { notificationId: notification.notificationId, error: result.error });
-          await refreshNotifications();
-        }
-      } catch (error) {
-        logger.error("Error skipping notification", { error, notificationId: notification.notificationId });
-      }
-    });
-  }, [userId, loggedNotifications, refreshNotifications]);
 
   if (isLoading) {
     return (
@@ -260,11 +214,9 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
                   userTimezone={userTimezone}
                   isLogged={!!loggedState}
                   isPending={isPending}
-                  onStatusChange={(item, status, value) => {
-                    if (status === 'skipped') handleSkipNotification(notification);
-                  }}
-                  onUndo={(logId, item) => handleUndo(logId, 'measurement')}
-                  onLogMeasurement={(item, value) => handleLogMeasurement(notification, value)}
+                  onStatusChange={undefined}
+                  onUndo={logId => handleUndo(logId, 'measurement')}
+                  onLogMeasurement={(_, value) => handleLogMeasurement(notification, value)}
                 />
               );
             })}

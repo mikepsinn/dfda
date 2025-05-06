@@ -3,8 +3,8 @@
 import { createClient } from "@/utils/supabase/server";
 import { logger } from "@/lib/logger";
 import type { Database } from "@/lib/database.types";
-import { unstable_noStore as noStore } from 'next/cache';
-import { startOfDay, endOfDay, parseISO, isValid } from 'date-fns';
+// import { unstable_noStore as noStore } from 'next/cache'; // Removed unused noStore
+import { startOfDay, endOfDay } from 'date-fns'; // Removed unused parseISO, isValid
 import type { TimelineItem } from '@/components/universal-timeline';
 import type { MeasurementStatus } from '@/components/shared/measurement-notification-item';
 
@@ -197,4 +197,4 @@ export async function getTimelineItemsForDate(userId: string, date: Date): Promi
 
     logger.info(`Action returned ${result.data.length} timeline items`);
     return result.data;
-} 
+}

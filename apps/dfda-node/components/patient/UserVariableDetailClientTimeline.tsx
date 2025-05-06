@@ -4,33 +4,36 @@ import React, { useState, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import { UniversalTimeline } from "@/components/universal-timeline"
-import type { TimelineItem, MeasurementStatus, FilterableVariableCategoryId } from "@/components/universal-timeline"
+import type { TimelineItem, MeasurementStatus } from "@/components/universal-timeline"
 import { completeReminderNotificationAction } from "@/lib/actions/reminder-schedules"
 import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
+import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
 
 export interface UserVariableDetailClientTimelineProps {
   items: TimelineItem[];
   date: Date;
   userTimezone: string;
   userId: string;
-  userVariableId: string;
+  userVariable: UserVariableWithDetails;
 }
 
-export function UserVariableDetailClientTimeline({ items, date, userTimezone, userId, userVariableId }: UserVariableDetailClientTimelineProps) {
+export function UserVariableDetailClientTimeline({ items, date, userTimezone, userId, userVariable }: UserVariableDetailClientTimelineProps) {
   const router = useRouter()
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState<boolean>(false)
-  const [dialogCategory, setDialogCategory] = useState<FilterableVariableCategoryId | null>(null)
 
-  const handleAddMeasurementCallback = useCallback((categoryId: FilterableVariableCategoryId) => {
-    setDialogCategory(categoryId)
+  const handleAddMeasurementCallback = useCallback(() => {
     setDialogOpen(true)
   }, [])
 
-  const handleDialogSubmit = useCallback(async ({ userVariableId: uvId, value, unit, notes }: { userVariableId: string; value: number; unit: string; notes?: string }) => {
+  const handleDialogSubmit = useCallback(async ({ value, unit, notes }: { userVariableId: string; value: number; unit: string; notes?: string }) => {
     try {
-      const result = await logMeasurementAction({ userId, globalVariableId: uvId, value, unitId: unit, notes })
+      if (!userVariable.global_variable_id) {
+        toast({ title: "Error", description: "No global variable ID found for this variable.", variant: "destructive" })
+        return
+      }
+      const result = await logMeasurementAction({ userId, globalVariableId: userVariable.global_variable_id, value, unitId: unit, notes })
       if (!result.success) {
         toast({ title: "Error", description: result.error || "Failed to add measurement.", variant: "destructive" })
       } else {
@@ -42,7 +45,7 @@ export function UserVariableDetailClientTimeline({ items, date, userTimezone, us
     } finally {
       setDialogOpen(false)
     }
-  }, [userId, toast, router])
+  }, [userId, toast, router, userVariable])
 
   const handleStatusChangeCallback = useCallback(async (item: TimelineItem, status: MeasurementStatus) => {
     try {
@@ -88,7 +91,7 @@ export function UserVariableDetailClientTimeline({ items, date, userTimezone, us
       <MeasurementAddDialog
         isOpen={dialogOpen}
         onClose={() => setDialogOpen(false)}
-        userVariables={[{ id: userVariableId }]}
+        userVariables={[userVariable]}
         onSubmit={handleDialogSubmit}
       />
     </>

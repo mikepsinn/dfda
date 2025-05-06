@@ -4,7 +4,6 @@ import { createClient } from '@/utils/supabase/server'
 import { getCallbackUrl } from '@/lib/url'
 import { logger } from '@/lib/logger'
 import { redirect } from 'next/navigation'
-import { headers } from 'next/headers'
 
 export async function registerWithOtp(formData: FormData) {
   const email = formData.get('email') as string;
@@ -15,10 +14,7 @@ export async function registerWithOtp(formData: FormData) {
     return redirect('/register?error=Email is required');
   }
 
-  // Include origin in redirect URL for OTP confirmation
-  const headersList = await headers() // Await the promise
-  const origin = headersList.get('origin')!
-  const emailRedirectTo = getCallbackUrl(origin) // Use getCallbackUrl to format correctly
+  const emailRedirectTo = getCallbackUrl() // getCallbackUrl now provides the full, correct URL
 
   logger.info('[Action - registerWithOtp] Attempting OTP sign up/in', { email, emailRedirectTo });
 

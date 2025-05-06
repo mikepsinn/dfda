@@ -6,7 +6,6 @@ import {
   Pill,
   Activity,
   Edit,
-  Check,
   X,
   RotateCcw,
   ExternalLink,
@@ -15,7 +14,6 @@ import {
   Settings,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -23,10 +21,8 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
 import { formatInTimeZone } from 'date-fns-tz';
-import { parseISO } from 'date-fns';
 import { useState, useEffect } from "react"
 import { UNIT_IDS } from "@/lib/constants/units"
-import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { getVariableInputType, getRatingRange } from "@/lib/variable-helpers"
 import { Smile, Frown, Meh } from "lucide-react"
 import type { Database } from "@/lib/database.types";
@@ -113,7 +109,7 @@ const renderValueDisplay = (item: MeasurementNotificationItemData) => {
     );
   }
 
-  // For completed/skipped items, show value or default value with unit
+  // For completed items, show value or default value with unit
   return (
     <span className="font-medium">
       {/* Show actual value if available (esp. for completed), else default, else '-' */}
@@ -171,13 +167,24 @@ export function MeasurementNotificationItem({
   // REMOVED: onSliderChange?: (itemId: string, value: number) => void;
 }: MeasurementNotificationItemProps) {
 
+  // Throw if not editable and no value
+  if ((item.isEditable === false || !item.isEditable) && (item.value === null || item.value === undefined)) {
+    throw new Error(`MeasurementNotificationItem: Non-editable item with no value. Item: ${JSON.stringify(item)}`);
+  }
+
   // Format the time in the user's specified timezone
   let displayTime = "--:--";
   try {
     const tz = userTimezone && userTimezone.length > 0 ? userTimezone : 'UTC';
-    displayTime = formatInTimeZone(item.triggerAtUtc, tz, 'h:mm a');
+    const date = new Date(item.triggerAtUtc);
+    if (item.triggerAtUtc && !isNaN(date.getTime())) {
+      displayTime = formatInTimeZone(date, tz, 'h:mm a');
+    } else {
+      // Optionally log or handle the invalid date
+      // logger.warn("Invalid triggerAtUtc for MeasurementNotificationItem", { triggerAtUtc: item.triggerAtUtc, item });
+    }
   } catch (e) {
-    console.error("Error formatting time for timeline item:", { item, userTimezone, error: e });
+    console.error("Error formatting time for timeline item:", item, userTimezone, e);
   }
 
   const handleEditClick = () => onEdit?.(item);
@@ -185,11 +192,6 @@ export function MeasurementNotificationItem({
   const handleCancelEditClick = () => onCancelEdit?.();
   const handleSettingsClick = () => onNavigateToVariableSettings?.(item);
   const handleDetailsClick = () => item.detailsUrl && onNavigateToDetails?.(item.detailsUrl);
-  const handleUndoClick = () => {
-    // Parent (TrackingInbox) needs to provide the correct logId
-    console.warn("Undo click needs parent to provide logId mapping");
-    // Example of how parent might call it: onUndo(logId, item);
-  }
 
   // Combine status change logic
   const handleStatusChangeClick = (status: MeasurementStatus, value?: number) => {
@@ -334,8 +336,8 @@ export function MeasurementNotificationItem({
 
            {/* Actions Area */} 
            <div className="mt-2 md:mt-0"> {/* Simple margin, adjust as needed */} 
-             {/* Value Display (Mobile only) */}
-             <div className="mt-1 text-xs md:hidden">
+             {/* Value Display (always show, not just mobile) */}
+             <div className="mt-1 text-xs">
                {renderValueDisplay(item)}
              </div>
 
@@ -351,12 +353,12 @@ export function MeasurementNotificationItem({
                    <Input
                      type="number"
                      value={editValue ?? ""}
-                     onChange={(e) => console.warn("Inline onChange not implemented for edit input")}
+                     onChange={() => console.warn("Inline onChange not implemented for edit input")}
                      className="w-20 h-8 text-sm"
                    />
                    <Select
                      value={editUnit || ""}
-                     onValueChange={(val) => console.warn("Inline onValueChange not implemented for edit select", val)}
+                     onValueChange={() => console.warn("Inline onValueChange not implemented for edit select")}
                     >
                      <SelectTrigger className="w-32 h-8 text-sm">
                        <SelectValue placeholder="Unit" />
@@ -370,7 +372,7 @@ export function MeasurementNotificationItem({
                    <Input
                      placeholder="Notes (optional)"
                      value={editNotes || ""}
-                     onChange={(e) => console.warn("Inline onChange not implemented for edit notes", e.target.value)}
+                     onChange={() => console.warn("Inline onChange not implemented for edit notes")}
                      className="w-full h-8 text-sm"
                    />
                  </div>
@@ -438,11 +440,6 @@ const renderMenuContent = (props: {
                  {item.userVariableId && (
                    <DropdownMenuItem onClick={handleSettingsClick}>
                      <Settings className="mr-2 h-3.5 w-3.5" /> Manage Variable
-                   </DropdownMenuItem>
-                 )}
-                 {item.status === 'pending' && (
-                   <DropdownMenuItem onClick={() => handleStatusChangeClick('skipped')} disabled={isPending}>
-                     <X className="mr-2 h-3.5 w-3.5" /> Skip
                    </DropdownMenuItem>
                  )}
                </DropdownMenuContent>

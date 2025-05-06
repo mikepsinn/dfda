@@ -5,36 +5,23 @@ import type React from "react"
 import { useState, useCallback, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import {
-  Clock,
   Pill,
   Activity,
   ChevronLeft,
   ChevronRight,
   Calendar,
-  Edit,
-  Check,
-  X,
-  RotateCcw,
-  ExternalLink,
   Heart,
   Search,
-  MoreHorizontal,
-  Settings,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar as CalendarComponent } from "@/components/ui/calendar"
-import { format, parseISO } from "date-fns"
-import { formatInTimeZone } from 'date-fns-tz'
-// import { FaceIcon } from "./face-icon" // Assume FaceIcon needs to be copied/created
-import { Badge } from "@/components/ui/badge"
+import { format } from "date-fns"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
-import { Slider } from "@/components/ui/slider"
 
 // Import the shared component and its types
 import {
@@ -49,9 +36,7 @@ export type FilterableVariableCategoryId = SharedVariableCategoryId | "all";
 
 // Keep the TimelineItem interface for data fetching structure, ensure it aligns
 // with MeasurementNotificationItemData
-export interface TimelineItem extends MeasurementNotificationItemData {
-  // Add any Timeline-specific fields here if they diverge in the future
-}
+export type TimelineItem = MeasurementNotificationItemData;
 
 export interface UniversalTimelineProps {
   title?: string;
@@ -69,7 +54,6 @@ export interface UniversalTimelineProps {
   onEditMeasurement?: (item: TimelineItem, value: number, unit: string, notes?: string) => void
   onStatusChange?: (item: TimelineItem, status: MeasurementStatus, value?: number) => void
   className?: string
-  compact?: boolean
   showFilters?: boolean
   showDateNavigation?: boolean
   showAddButtons?: boolean
@@ -87,7 +71,6 @@ export function UniversalTimeline({
   onEditMeasurement,
   onStatusChange,
   className = "",
-  compact = false,
   showFilters = true,
   showDateNavigation = true,
   showAddButtons = true,
@@ -103,7 +86,6 @@ export function UniversalTimeline({
   const [editNotes, setEditNotes] = useState<string>("")
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [selectedCategory, setSelectedCategory] = useState<FilterableVariableCategoryId>(defaultCategory)
-  const [sliderValues, setSliderValues] = useState<Record<string, number>>({});
 
   // Merge measurements and notifications into a single sorted list
   const mergedItems = useMemo(() => {
@@ -119,19 +101,26 @@ export function UniversalTimeline({
     return mergedItems
       .filter((item) => {
         try {
+          // Date filter: only include items whose triggerAtUtc is on the selectedDate
+          const itemDate = new Date(item.triggerAtUtc);
+          const isSameDay =
+            itemDate.getUTCFullYear() === selectedDate.getUTCFullYear() &&
+            itemDate.getUTCMonth() === selectedDate.getUTCMonth() &&
+            itemDate.getUTCDate() === selectedDate.getUTCDate();
+
           const matchesCategory = selectedCategory === "all" || item.variableCategoryId === selectedCategory;
           const matchesSearch =
             searchQuery === "" ||
             item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             (item.details && item.details.toLowerCase().includes(searchQuery.toLowerCase())) ||
             (item.notes && item.notes.toLowerCase().includes(searchQuery.toLowerCase()));
-          return matchesCategory && matchesSearch;
+          return isSameDay && matchesCategory && matchesSearch;
         } catch (e) {
           console.error("Error filtering timeline item:", { item, error: e });
           return false;
         }
       })
-  }, [mergedItems, selectedCategory, searchQuery]);
+  }, [mergedItems, selectedCategory, searchQuery, selectedDate]);
 
   // --- Handlers to pass down to the shared component ---
 
@@ -164,11 +153,6 @@ export function UniversalTimeline({
     setEditValue(null);
     setEditUnit(null);
     setEditNotes("");
-  }, []);
-
-  // Slider value change handler
-  const handleSliderChange = useCallback((itemId: string, value: number) => {
-      setSliderValues(prev => ({ ...prev, [itemId]: value }));
   }, []);
 
   // Detail navigation

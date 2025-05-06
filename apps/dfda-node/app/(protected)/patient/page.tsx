@@ -1,7 +1,6 @@
 import { getServerUser } from "@/lib/server-auth";
 import { redirect } from "next/navigation";
-import { getConditionsByUserAction, getConditionsAction } from "@/lib/actions/conditions"; // Use getConditionsByUserAction for initial check
-import { getTimelineNotificationsForDateAction } from "@/lib/actions/timeline"; // Import from timeline.ts
+import { getConditionsByUserAction } from "@/lib/actions/conditions"; // Use getConditionsByUserAction for initial check
 import { getPendingReminderNotificationsAction } from "@/lib/actions/reminder-schedules"; // Import from reminder-schedules.ts
 import { logger } from "@/lib/logger";
 // Import the new display component
@@ -11,7 +10,9 @@ import { getAllUserVariablesAction } from "@/lib/actions/user-variables";
 import { getMeasurementsForDateAction } from '@/lib/actions/measurements';
 import type { TimelineItem } from '@/components/universal-timeline';
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables"; // Import necessary type
-import type { UserCondition } from "@/lib/actions/conditions"; // Import necessary type
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { PatientConditionRow } from "@/lib/actions/conditions"; // Import necessary type
+import type { PendingNotificationTask } from '@/lib/actions/reminder-schedules'; // Import for casting
 
 // Revalidate data every 60 seconds
 export const revalidate = 60;
@@ -23,71 +24,74 @@ export default async function PatientDashboardPage() {
   // Fetch data directly on the server
   const user = await getServerUser()
   if (!user) {
-    logger.info("User not found, redirecting to login.");
-    redirect("/login")
+    logger.error('[Page - PatientDashboard] No user found, redirecting to login');
+    return redirect("/login")
     // Note: redirect() throws an error, so function execution stops here.
   }
 
-  // Fetch initial data needed for checks/inbox separately (original structure)
-  let initialConditionsResult = await getConditionsByUserAction(user.id); // Use correct action
-  let initialPendingNotifications = await getPendingReminderNotificationsAction(user.id);
+  logger.info('[Page - PatientDashboard] User found, fetching initial data', { userId: user.id });
 
-  const targetDate = new Date(); // Use today's date for initial timeline load
-
-  // Helper function to process results from Promise.allSettled
-  // Handles results that are raw data arrays OR objects like { success: boolean, data: ... }
-  const processResult = <T,>(result: PromiseSettledResult<any>, actionName: string): T[] => {
-    if (result.status === 'fulfilled') {
-      // Check if the value has the { success, data } structure
-      if (typeof result.value === 'object' && result.value !== null && 'success' in result.value) {
-        if (result.value.success && result.value.data) {
-          // Ensure data is returned as an array
-          return Array.isArray(result.value.data) ? result.value.data : [result.value.data];
-        } else if (!result.value.success) {
-          // Handle explicit failure case from the action
-          logger.error(`Error reported by action ${actionName}`, { userId: user.id, date: targetDate, error: result.value.error || 'Action reported failure' });
-          return [];
-        }
-      } else if (Array.isArray(result.value)) {
-         // Handle case where the value is the raw data array directly
-         return result.value as T[];
-      }
-      // Handle other unexpected successful shapes (e.g., single object without wrapper)
-      logger.warn(`Unexpected fulfilled result shape for ${actionName}`, { value: result.value });
-      // Attempt to return as array if possible, otherwise empty
-      return Array.isArray(result.value) ? result.value : (result.value ? [result.value] : []);
-    } else { // status === 'rejected'
-      const error = result.reason;
-      logger.error(`Error fetching ${actionName}`, { userId: user.id, date: targetDate, error });
-      return []; // Return empty array on error or unexpected success shape
-    }
-  };
-
-  // Fetch remaining data in parallel
-  const results = await Promise.allSettled([
-    getAllUserVariablesAction(user.id),
-    getConditionsAction(), // Fetch detailed conditions if needed separately from initial check?
-    getMeasurementsForDateAction(user.id, targetDate), // Fetch timeline measurements
-    getTimelineNotificationsForDateAction(user.id, targetDate) // Fetch timeline notifications from timeline.ts
+  // Fetch initial data in parallel
+  const results = await Promise.all([
+    getAllUserVariablesAction(user.id),         // results[0]
+    getConditionsByUserAction(user.id),                 // results[1]
+    getPendingReminderNotificationsAction(user.id),     // results[2]
+    getMeasurementsForDateAction(user.id, new Date()) // results[3]
   ]);
 
-  // Process results, handling potential errors
-  // Use the helper, providing the correct expected type for data
+  // Helper function to process results from Promise.all
+  // Handles results that are raw data arrays OR objects like { success: boolean, data: ... }
+  const processResult = <T,>(result: any, actionName: string): T[] => {
+    if (typeof result === 'object' && result !== null && 'success' in result) {
+      if (result.success && result.data) {
+        // Ensure data is returned as an array
+        return Array.isArray(result.data) ? result.data : [result.data];
+      } else if (!result.success) {
+        // Handle explicit failure case from the action
+        logger.error(`Error reported by action ${actionName}`, { userId: user.id, date: new Date(), error: result.error || 'Action reported failure' });
+        return [];
+      }
+    } else if (Array.isArray(result)) {
+       // Handle case where the value is the raw data array directly
+       return result as T[];
+    }
+    // Handle other unexpected successful shapes (e.g., single object without wrapper)
+    logger.warn(`Unexpected fulfilled result shape for ${actionName}`, { value: result });
+    // Attempt to return as array if possible, otherwise empty
+    return Array.isArray(result) ? result : (result ? [result] : []);
+  };
+
+  // Process results with error handling
   const initialUserVariables = processResult<UserVariableWithDetails>(
     results[0],
     'user variables'
   );
-  const detailedConditions = processResult<{id: string, name: string, description: string | null, emoji: string | null}>(
+
+  const initialConditionsResult = processResult<PatientConditionRow>(
     results[1],
-    'detailed conditions'
+    'initial conditions'
   );
-  const initialMeasurements = processResult<TimelineItem>(
+
+  // Fetch as TimelineItem[], then cast for the prop later if necessary
+  const initialPendingNotifications = processResult<TimelineItem>(
     results[2],
-    'timeline measurements'
+    'pending notifications'
   );
-  const initialTimelineNotifications = processResult<TimelineItem>(
+
+  const initialMeasurements = processResult<TimelineItem>(
     results[3],
-    'timeline notifications'
+    'initial measurements'
+  );
+  // initialTimelineNotifications will use the same data as initialPendingNotifications,
+  // as getPendingReminderNotificationsAction returns TimelineItem[] which fits both.
+  const initialTimelineNotifications: TimelineItem[] | null = initialPendingNotifications as TimelineItem[] | null;
+
+  // Combine and sort timeline items
+  const combinedTimelineItems = [
+    ...(initialMeasurements || []), 
+    ...(initialTimelineNotifications || [])
+  ].sort(
+    (a, b) => new Date(a.triggerAtUtc).getTime() - new Date(b.triggerAtUtc).getTime()
   );
 
   // Redirect to onboarding if user has no conditions (implies first login or error)
@@ -102,9 +106,8 @@ export default async function PatientDashboardPage() {
     <PatientDashboardDisplay
       initialUser={user} // Pass user fetched earlier
       initialConditions={initialConditionsResult} // Conditions from initial check
-      initialPendingNotifications={initialPendingNotifications} // Notifications for inbox?
-      initialMeasurements={initialMeasurements} // Timeline data
-      initialTimelineNotifications={initialTimelineNotifications} // Timeline data
+      initialPendingNotifications={initialPendingNotifications as unknown as PendingNotificationTask[]} // TODO: Revisit this casting
+      initialTimelineItems={combinedTimelineItems} // Combined and sorted timeline data
       initialUserVariables={initialUserVariables} // User variables
     />
   )
