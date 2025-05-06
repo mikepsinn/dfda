@@ -22,14 +22,14 @@ export function DemoLoginButton({ onError, showAll = false }: DemoLoginButtonPro
     try {
       const result = await demoLogin(userType)
 
-      if (result.success && result.redirectUrl) {
+      if (result && result.success && result.redirectUrl) {
         router.refresh()
         router.push(result.redirectUrl)
       } else {
-        logger.error("Demo login action failed:", { error: result.error, userType });
+        logger.error("Demo login action failed:", { error: result?.error, userType });
         onError({ 
           type: 'other',
-          message: result.error || "Demo login failed. Please try again or contact support."
+          message: result?.error || "Demo login failed. Please try again or contact support."
         });
       }
 

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm run sb:local:start && concurrently --kill-others --names \"next,worker,cron\" --prefix-colors \"yellow,blue,magenta\" \"pnpm run dev:next\" \"pnpm run dev:worker\" \"pnpm run dev:cron\"",
-    "dev:doppler": "doppler run -- pnpm run dev",
+    "dev:env": "pnpm run sb:local:start && concurrently --kill-others --names \"next,worker,cron\" --prefix-colors \"yellow,blue,magenta\" \"pnpm run dev:next\" \"pnpm run dev:worker\" \"pnpm run dev:cron\"",
+    "dev": "doppler run -- pnpm run dev:env",
     "db:setup": "tsx ./scripts/setup-local-full.ts",
     "db:worker:migrate": "npx graphile-worker --schema-only",
     "check": "pnpm run type-check && pnpm run lint",

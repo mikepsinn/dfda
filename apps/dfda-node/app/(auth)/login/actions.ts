@@ -4,7 +4,6 @@ import { createClient } from '@/utils/supabase/server'
 import { getCallbackUrl } from '@/lib/url'
 import { logger } from '@/lib/logger'
 import { redirect } from 'next/navigation'
-import { headers } from 'next/headers'
 
 export async function loginWithOtp(formData: FormData) {
   const email = formData.get('email') as string;
@@ -15,10 +14,8 @@ export async function loginWithOtp(formData: FormData) {
     return redirect('/login?error=Email is required');
   }
 
-  // Include origin in redirect URL for OTP confirmation
-  const headersList = await headers()
-  const origin = headersList.get('origin')!
-  const emailRedirectTo = getCallbackUrl(origin)
+  const emailRedirectTo = getCallbackUrl()
+  logger.debug('[Action - loginWithOtp] emailRedirectTo', { emailRedirectTo });
 
   logger.info('[Action - loginWithOtp] Attempting OTP sign in', { email, emailRedirectTo });
 

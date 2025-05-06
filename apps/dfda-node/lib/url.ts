@@ -34,13 +34,11 @@ export function getBaseUrl(): string {
 /**
  * Constructs the full URL for a specific authentication callback path.
  * Ensures consistency by removing trailing slash from base and adding leading slash to path.
- * @param path - The path relative to the base URL (e.g., '/auth/callback')
  */
-export function getCallbackUrl(path: string = '/auth/callback'): string {
+export function getCallbackUrl(): string {
   const baseUrl = getBaseUrl();
   const cleanBaseUrl = baseUrl.endsWith('/') ? baseUrl.slice(0, -1) : baseUrl;
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  return `${cleanBaseUrl}${cleanPath}`;
+  return `${cleanBaseUrl}/auth/callback`;
 }
 
 // REMOVED getCurrentOrigin function 
