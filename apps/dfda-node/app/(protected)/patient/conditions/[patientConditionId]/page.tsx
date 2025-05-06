@@ -168,11 +168,11 @@ export default async function PatientConditionDetailPage({ params }: { params: P
                 <CardDescription>How effective have treatments been specifically for {condition.condition_name || "this condition"}?</CardDescription>
               </div>
                <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0">
-                 <RateTreatmentDialog patientCondition={condition}>
+               <RateTreatmentDialog patientCondition={condition}>
                    <Button variant="outline" size="sm">
-                     <Star className="mr-2 h-4 w-4"/> Rate Treatment
-                   </Button>
-                 </RateTreatmentDialog>
+                   <Star className="mr-2 h-4 w-4"/> Rate Treatment
+                 </Button>
+               </RateTreatmentDialog>
                  <Link href="/patient/reminders" passHref>
                     <Button variant="secondary" size="sm">
                       Manage Reminders

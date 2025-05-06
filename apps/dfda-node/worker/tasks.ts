@@ -201,9 +201,9 @@ export const generateAllReminders: Task = async (payload, helpers) => {
 
                 if (!triggerAtUtc) {
                    logger.error(`🚨 [Task] Failed to convert calculated occurrence to ISO string for schedule ${schedule.id}`, { occurrenceInUserTz });
-                   continue; // Skip this occurrence if conversion fails
+                     continue; // Skip this occurrence if conversion fails
                 }
-
+                
                 notificationsToInsert.push({
                     reminder_schedule_id: schedule.id,
                     user_id: schedule.user_id,
