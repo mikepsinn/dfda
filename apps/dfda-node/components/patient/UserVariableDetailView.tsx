@@ -1,7 +1,7 @@
 import { getUserVariableDetailsAction } from "@/lib/actions/user-variables";
 import { getMeasurementsForDateAction } from "@/lib/actions/measurements";
 import { getTimelineNotificationsForDateAction } from "@/lib/actions/timeline";
-import { UniversalTimeline } from "@/components/universal-timeline";
+import { UserVariableDetailClientTimeline } from "@/components/patient/UserVariableDetailClientTimeline";
 import { ReminderListForUserVariable } from "@/components/reminders/reminder-list-for-user-variable";
 import { logger } from "@/lib/logger";
 import { format } from 'date-fns';
@@ -77,14 +77,12 @@ export async function UserVariableDetailView({ userId, userVariableId }: UserVar
       </h2>
        
       {/* Timeline Section */}
-      <UniversalTimeline
-        title={variableName}
+      <UserVariableDetailClientTimeline
         items={items}
         date={new Date(today)}
         userTimezone={userTimezone}
-        showAddButtons
-        showFilters
-        showDateNavigation
+        userId={userId}
+        userVariable={variableDetailsResult.data}
       />
       
       {/* Reminder Management Section */} 
