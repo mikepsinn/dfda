@@ -7,21 +7,25 @@ import { NextResponse, type NextRequest } from 'next/server'
 export async function GET(request: NextRequest) {
   // Log relevant headers
   const headersList = request.headers;
-  const host = headersList.get('host');
-  const xForwardedHost = headersList.get('x-forwarded-host');
-  const xForwardedProto = headersList.get('x-forwarded-proto');
+  const hostHeader = headersList.get('host'); // Renamed for clarity
+  const forwardedHostHeader = headersList.get('x-forwarded-host'); // Renamed for clarity
+  const protocolHeader = headersList.get('x-forwarded-proto'); // Renamed for clarity
   const referer = headersList.get('referer');
-  const debugMsg = `[AUTH-CALLBACK-ROUTE] Incoming Headers: host=${host}, x-fwd-host=${xForwardedHost}, x-fwd-proto=${xForwardedProto}, referer=${referer}, url=${request.url}`;
+  const debugMsg = `[AUTH-CALLBACK-ROUTE] Incoming Headers: host=${hostHeader}, x-fwd-host=${forwardedHostHeader}, x-fwd-proto=${protocolHeader}, referer=${referer}, url=${request.url}`;
   logger.debug(debugMsg); 
 
-  // --- START FIX: Reconstruct origin from headers --- 
-  const protocol = xForwardedProto ?? 'https'; // Default to https if header is missing
-  const actualHost = xForwardedHost ?? host;
+  // --- START FIX: Reconstruct origin from headers (with localhost refinement) --- 
+  // Determine protocol: Use header, fallback based on NODE_ENV
+  const protocol = protocolHeader ?? (process.env.NODE_ENV === 'development' ? 'http' : 'https');
+
+  // Determine host: Prioritize forwarded host, then host header
+  const actualHost = forwardedHostHeader ?? hostHeader;
+  
   // Ensure we have a valid host before proceeding
   if (!actualHost) {
-      logger.error(`[AUTH-CALLBACK-ROUTE] Could not determine host from headers. host=${host}, x-fwd-host=${xForwardedHost}`);
-      // Fallback or error response
-      const errorUrl = `${protocol}://${host || '/'}/login?error=Internal Server Error - Invalid Host Configuration`;
+      logger.error(`[AUTH-CALLBACK-ROUTE] Could not determine host from headers. host=${hostHeader}, x-fwd-host=${forwardedHostHeader}`);
+      // Best effort error redirect
+      const errorUrl = `${protocol}://${hostHeader || 'localhost'}/login?error=Internal Server Error - Invalid Host Configuration`; 
       return NextResponse.redirect(errorUrl);
   }
   const correctOrigin = `${protocol}://${actualHost}`;
