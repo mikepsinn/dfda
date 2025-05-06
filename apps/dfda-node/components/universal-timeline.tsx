@@ -124,11 +124,6 @@ export function UniversalTimeline({
 
   // --- Handlers to pass down to the shared component ---
 
-  // Status change handler (called by shared component)
-  const handleItemStatusChange = useCallback((item: TimelineItem, status: MeasurementStatus, value?: number) => {
-    onStatusChange?.(item, status, value);
-  }, [onStatusChange]);
-
   // Edit handlers
   const handleEdit = useCallback((item: TimelineItem) => {
     setEditingItem(item.id)
@@ -330,21 +325,11 @@ export function UniversalTimeline({
               editNotes={editingItem === item.id ? editNotes : undefined}
               
               // Callbacks
-              onStatusChange={handleItemStatusChange}
               onEdit={handleEdit}
               onSaveEdit={handleSaveEdit} // Pass the stateful save handler
               onCancelEdit={handleCancelEdit}
               onNavigateToVariableSettings={handleNavigateToVariableSettings}
               onNavigateToDetails={handleNavigateToDetails}
-
-              // Props not used by UniversalTimeline context (will use defaults or be ignored)
-              // isLogged={undefined}
-              // isPending={undefined}
-              // inputValue={undefined}
-              // onSkip={undefined}
-              // onUndo={undefined}
-              // onInputChange={undefined}
-              // onLogMeasurement={undefined}
             />
           ))
         ) : (
