@@ -18,6 +18,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { createClient } from "@/utils/supabase/client"
 import type { User } from "@supabase/supabase-js"
 import type { NavItem } from "@/lib/types/navigation"
+import { useRouter } from 'next/navigation'
 
 interface UserAuthSectionProps {
   user: User | null
@@ -27,6 +28,7 @@ interface UserAuthSectionProps {
 
 export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems = [] }: UserAuthSectionProps) {
   const supabase = createClient()
+  const router = useRouter()
 
   const userInitials = user?.user_metadata?.name
     ? user.user_metadata.name.split(" ").map((n) => n[0]).join("").toUpperCase()
@@ -34,7 +36,7 @@ export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems 
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
-    window.location.href = "/" // Redirect to home after sign out
+    router.push('/')
   }
 
   if (user) {
