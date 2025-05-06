@@ -27,10 +27,23 @@ import { parseISO } from 'date-fns'
 import { useState } from "react"
 import { UNIT_IDS } from "@/lib/constants/units"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
+import { getVariableInputType, getRatingRange } from "@/lib/variable-helpers"
+import { Smile, Frown, Meh } from "lucide-react"
+import type { Database } from "@/lib/database.types";
+
+// Faces for 1–5 rating scales
+const ratingFaces: Record<number, React.ReactNode> = {
+  1: <Frown className="h-5 w-5" />,
+  2: <Meh className="h-5 w-5" />,
+  3: <Smile className="h-5 w-5" />,
+  4: <Smile className="h-5 w-5 text-yellow-500" />,
+  5: <Smile className="h-5 w-5 text-green-500" />,
+};
 
 // Export MeasurementStatus from here now
-export type MeasurementStatus = "pending" | "completed" | "skipped" | "error" | "recorded";
-export type VariableCategoryId = string; // Simplified for now
+export type MeasurementStatus = Database["public"]["Enums"]["reminder_notification_status"] | "recorded";
+// Use DB type for variable category ID
+export type VariableCategoryId = Database["public"]["Tables"]["variable_categories"]["Row"]["id"];
 
 export interface MeasurementNotificationItemData {
   id: string // Unique ID (e.g., reminder_notifications.id)
@@ -188,284 +201,268 @@ export function MeasurementNotificationItem({
       }
   };
 
-  // State for the numeric input field within this component
-  const [localInputValue, setLocalInputValue] = useState<string>("");
+  // State for the numeric input field within this component (pre-populated for logged measurements)
+  const [localInputValue, setLocalInputValue] = useState<string>(() => (item.value != null ? item.value.toString() : ""));
+  const [selectedRating, setSelectedRating] = useState<number | null>(() => (item.value != null ? item.value : null));
+
+  // Determine input behavior
+  const inputType = getVariableInputType({ unitId: item.unitId, variableCategory: item.variableCategoryId });
+  const ratingRange = getRatingRange(inputType);
+
+  // Unified log handler
+  const handleLog = (value: number) => {
+    if (onLogMeasurement) onLogMeasurement(item, value);
+    else handleStatusChangeClick("completed", value);
+    setSelectedRating(value);
+  };
+
+  // Render action buttons based on input type & status
+  const renderActionButtons = () => {
+    // Show input UI both for pending tasks and already-logged items
+    if (item.status === "pending" || isLogged) {
+      if (inputType === "boolean_yes_no") {
+        return (
+          <div className="flex gap-2 pt-1">
+            <Button variant="outline" size="sm" className="h-7 flex-1" onClick={() => handleLog(1)} disabled={isPending}>Yes</Button>
+            <Button variant="outline" size="sm" className="h-7 flex-1" onClick={() => handleLog(0)} disabled={isPending}>No</Button>
+          </div>
+        );
+      }
+      if (ratingRange) {
+        return (
+          <div className="flex flex-col gap-2 pt-1">
+            <div className="flex flex-wrap gap-1.5 justify-center">
+              {Array.from({ length: ratingRange[1] - ratingRange[0] + 1 }, (_, i) => ratingRange[0] + i).map((r) => (
+                <Button
+                  key={r}
+                  variant={r === selectedRating ? "default" : "outline"}
+                  size="sm"
+                  className="h-7 w-7 p-0 text-xs font-medium"
+                  onClick={() => handleLog(r)}
+                  disabled={isPending}
+                  aria-label={`Rate ${r}`}
+                >
+                  {inputType === "rating_1_5" && ratingFaces[r] ? ratingFaces[r] : r}
+                </Button>
+              ))}
+            </div>
+          </div>
+        );
+      }
+      // Numeric input or confirm
+      if (item.default_value == null) {
+        return (
+          <div className="flex gap-2 items-center pt-1">
+            <Input
+              type="number"
+              placeholder={`${item.unitName || item.unit}`}
+              value={localInputValue}
+              onChange={(e) => setLocalInputValue(e.target.value)}
+              disabled={isPending}
+              className="h-7 text-xs flex-grow max-w-[150px]"
+            />
+            <span className="text-xs text-muted-foreground self-center ml-2">{item.unitName || item.unit}</span>
+            <Button
+              variant="outline"
+              size="sm"
+              className="h-7"
+              onClick={() => {
+                const v = parseFloat(localInputValue);
+                if (!isNaN(v)) {
+                  handleLog(v);
+                  setLocalInputValue("");
+                }
+              }}
+              disabled={!localInputValue || isNaN(parseFloat(localInputValue)) || isPending}
+            >
+              Log
+            </Button>
+          </div>
+        );
+      }
+      return (
+        <Button variant="outline" size="sm" className="h-7" onClick={() => handleLog(item.default_value!)} disabled={isPending}>
+          <Check className="h-3 w-3 mr-0.5" />
+          <span className="text-xs">Confirm</span>
+        </Button>
+      );
+    }
+    return null;
+  };
+
+  const menuProps = { item, isEditing, isLogged, isPending, handleEditClick, handleDetailsClick, handleSettingsClick, handleStatusChangeClick, onUndo };
 
   return (
-      // Root container is now Card
-      <Card>
-        {/* --- Top Row wrapped in CardHeader --- */}
-        <CardHeader className="flex flex-row items-start p-4">
+    <div className="border-b">
+      {/* Main flex container: stack on mobile, row on medium+ */}
+      <div className="flex flex-col md:flex-row p-4 gap-4 items-start">
+
+        {/* --- Left Side (Icon, Name/Time, Mobile Menu) --- */}
+        <div className="flex items-start gap-3 w-full md:w-auto flex-shrink-0">
+          {/* Icon Div */} 
           <div
             className={cn(
-              // Removed border class
-              "relative flex items-center justify-center rounded-full mr-3 z-10", 
+              "relative flex items-center justify-center rounded-full mr-0",
               "w-10 h-10",
               "bg-background"
             )}
           >
             {getTypeIcon(item.variableCategoryId, item.emoji)}
           </div>
-
-          <div className="flex-1">
-            <div className="flex items-center justify-between">
-              {/* Left side: Name, Time */}
-              <div className="flex items-center">
-                <div>
-                  <div
-                    className={
-                      "font-medium text-sm"
-                    }
-                  >
-                    {item.name}
-                  </div>
-                  <div className="flex items-center text-xs text-muted-foreground">
-                    <Clock className="h-3 w-3 mr-1" />
-                    {displayTime}
-                  </div>
-                </div>
+          {/* Name/Time Block + Mobile Menu container */}
+          <div className="flex-1 flex justify-between items-start"> 
+            {/* Name/Time */}
+            <div> 
+              <div className="font-medium text-sm">{item.name}</div>
+              <div className="flex items-center text-xs text-muted-foreground">
+                <Clock className="h-3 w-3 mr-1" />
+                {displayTime}
               </div>
-
-              {/* Right side: Action Buttons / Menu */}
-               {/* Show dropdown menu if editable */}
-              {(item.isEditable ?? true) && (
-                <div className="flex space-x-1">
-                   <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon" className="h-7 w-7">
-                          <MoreHorizontal className="h-3.5 w-3.5" />
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        {/* Edit Item - Conditionally shown/disabled */}                       
-                        <DropdownMenuItem 
-                          onClick={handleEditClick} 
-                          disabled={!item.isEditable || isEditing}
-                        >
-                          <Edit className="mr-2 h-3.5 w-3.5" /> Edit
-                        </DropdownMenuItem>
-                        {/* Details Item - Conditionally shown */}  
-                        {item.detailsUrl && (
-                          <DropdownMenuItem onClick={handleDetailsClick}>
-                            <ExternalLink className="mr-2 h-3.5 w-3.5" /> View details
-                          </DropdownMenuItem>
-                        )}
-                        {/* Manage Variable Item - Conditionally shown */}  
-                        {item.userVariableId && (
-                          <DropdownMenuItem onClick={handleSettingsClick}>
-                            <Settings className="mr-2 h-3.5 w-3.5" /> Manage Variable
-                          </DropdownMenuItem>
-                        )}
-                        {/* Skip Item - Conditionally shown for pending */}  
-                        {item.status === 'pending' && (
-                          <DropdownMenuItem onClick={() => handleStatusChangeClick('skipped')} disabled={isPending}>
-                             <X className="mr-2 h-3.5 w-3.5" /> Skip
-                          </DropdownMenuItem>
-                        )}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
-              )}
-               {/* Add Undo Button for TrackingInbox context when isLogged */}
-                {isLogged && onUndo && item.status !== 'pending' && (
-                   <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                           {/* Parent (TrackingInbox) needs to pass a callback that includes the logId */}
-                          <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => onUndo(undefined, item)} disabled={isPending}>
-                            <RotateCcw className="h-3.5 w-3.5" />
-                          </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>Undo</TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                )}
+            </div>
+            {/* Mobile Menu (Rendered Here, hidden on md+) */} 
+            <div className="md:hidden">
+                {renderMenuContent(menuProps)}
             </div>
           </div>
-        </CardHeader>
+        </div>
+        {/* --- End Left Side --- */}
 
-        {/* --- Bottom Content Section wrapped in CardContent --- */}
-        <CardContent className="p-4 pt-0">
-          {/* Details, Value Display (below name/time) */}
-          <div className="mt-1 text-xs">
-              {renderValueDisplay(item)}
-          </div>
+        {/* --- Right Side (Desktop Menu + Actions) --- */}
+        <div className="w-full md:flex-1 flex flex-col">
+           {/* Desktop Menu (Rendered Here, hidden until md+) */} 
+           <div className="hidden md:flex self-end space-x-1 mb-2">
+               {renderMenuContent(menuProps)}
+           </div>
 
-          {/* Notes rendering */}
-          {item.notes && (
-            <div className="text-xs mt-1 italic text-muted-foreground">{item.notes}</div>
+           {/* Actions Area */} 
+           <div className="mt-2 md:mt-0"> {/* Simple margin, adjust as needed */} 
+             {/* Value Display (Mobile only) */}
+             <div className="mt-1 text-xs md:hidden">
+               {renderValueDisplay(item)}
+             </div>
+
+             {/* Notes rendering (Mobile only) */}
+             {item.notes && (
+               <div className="text-xs mt-1 italic text-muted-foreground md:hidden">{item.notes}</div>
+             )}
+
+             {/* Edit Form or Action Buttons Area */} 
+             {isEditing ? (
+               <div className="mt-3 space-y-3 p-3 rounded-md border border-dashed md:mt-0"> 
+                 <div className="flex items-center space-x-2">
+                   <Input
+                     type="number"
+                     value={editValue ?? ""}
+                     onChange={(e) => console.warn("Inline onChange not implemented for edit input")}
+                     className="w-20 h-8 text-sm"
+                   />
+                   <Select
+                     value={editUnit || ""}
+                     onValueChange={(val) => console.warn("Inline onValueChange not implemented for edit select", val)}
+                    >
+                     <SelectTrigger className="w-32 h-8 text-sm">
+                       <SelectValue placeholder="Unit" />
+                     </SelectTrigger>
+                     <SelectContent>
+                       <SelectItem value={item.unit}>{item.unitName || item.unit}</SelectItem>
+                     </SelectContent>
+                   </Select>
+                 </div>
+                 <div>
+                   <Input
+                     placeholder="Notes (optional)"
+                     value={editNotes || ""}
+                     onChange={(e) => console.warn("Inline onChange not implemented for edit notes", e.target.value)}
+                     className="w-full h-8 text-sm"
+                   />
+                 </div>
+                 <div className="flex justify-end space-x-2">
+                   <Button
+                     size="sm"
+                     className="h-8"
+                     onClick={handleSaveEditClick}
+                     disabled={editValue === null || !editUnit || isPending}
+                   >
+                     Save
+                   </Button>
+                   <Button variant="outline" size="sm" className="h-8" onClick={handleCancelEditClick} disabled={isPending}>
+                     Cancel
+                   </Button>
+                 </div>
+               </div>
+             ) : (
+               // Action Buttons
+               <div className="mt-2 md:mt-0"> {/* Adjusted margin */} 
+                 {renderActionButtons()}
+               </div>
+             )}
+           </div>
+         </div>
+         {/* --- End Right Side --- */}
+      </div>
+      {/* --- End Main Flex Container --- */}
+    </div>
+  )
+}
+
+// Helper function to render Menu and Undo button
+const renderMenuContent = (props: {
+    item: MeasurementNotificationItemData;
+    isEditing: boolean;
+    isLogged: boolean;
+    isPending: boolean;
+    handleEditClick: () => void;
+    handleDetailsClick: () => void;
+    handleSettingsClick: () => void;
+    handleStatusChangeClick: (status: MeasurementStatus, value?: number) => void;
+    onUndo?: (logId: string | undefined, item: MeasurementNotificationItemData) => void;
+  }) => {
+    const { item, isEditing, isLogged, isPending, handleEditClick, handleDetailsClick, handleSettingsClick, handleStatusChangeClick, onUndo } = props;
+    return (
+        <div className="flex space-x-1">
+          {/* Dropdown Menu */} 
+          {(item.isEditable ?? true) && (
+             <DropdownMenu>
+               <DropdownMenuTrigger asChild>
+                 <Button variant="ghost" size="icon" className="h-7 w-7">
+                   <MoreHorizontal className="h-3.5 w-3.5" />
+                 </Button>
+               </DropdownMenuTrigger>
+               <DropdownMenuContent align="end">
+                 <DropdownMenuItem onClick={handleEditClick} disabled={!item.isEditable || isEditing}>
+                   <Edit className="mr-2 h-3.5 w-3.5" /> Edit
+                 </DropdownMenuItem>
+                 {item.detailsUrl && (
+                   <DropdownMenuItem onClick={handleDetailsClick}>
+                     <ExternalLink className="mr-2 h-3.5 w-3.5" /> View details
+                   </DropdownMenuItem>
+                 )}
+                 {item.userVariableId && (
+                   <DropdownMenuItem onClick={handleSettingsClick}>
+                     <Settings className="mr-2 h-3.5 w-3.5" /> Manage Variable
+                   </DropdownMenuItem>
+                 )}
+                 {item.status === 'pending' && (
+                   <DropdownMenuItem onClick={() => handleStatusChangeClick('skipped')} disabled={isPending}>
+                     <X className="mr-2 h-3.5 w-3.5" /> Skip
+                   </DropdownMenuItem>
+                 )}
+               </DropdownMenuContent>
+             </DropdownMenu>
           )}
-
-          {/* Value and unit editor (when isEditing) */}
-          {isEditing ? (
-            <div className="mt-3 space-y-3 p-3 rounded-md border border-dashed">
-              <div className="flex items-center space-x-2">
-                {/* TODO: Need to decide if edit uses Input or Slider based on unit */}
-                <Input
-                  type="number"
-                  // Use editValue from props, handle undefined/null
-                  value={editValue ?? ""}
-                  // onChange should likely be handled by parent via a prop
-                  onChange={(e) => console.warn("Inline onChange not implemented for edit input")}
-                  className="w-20 h-8 text-sm"
-                />
-                <Select
-                  // Use editUnit from props
-                  value={editUnit || ""}
-                  // onChange should likely be handled by parent via a prop
-                  onValueChange={(val) => console.warn("Inline onValueChange not implemented for edit select", val)}
-                 >
-                  <SelectTrigger className="w-32 h-8 text-sm">
-                    <SelectValue placeholder="Unit" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {/* TODO: Populate units correctly */}
-                    <SelectItem value={item.unit}>{item.unitName || item.unit}</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div>
-                <Input
-                  placeholder="Notes (optional)"
-                  // Use editNotes from props
-                  value={editNotes || ""}
-                  // onChange should likely be handled by parent via a prop
-                  onChange={(e) => console.warn("Inline onChange not implemented for edit notes", e.target.value)}
-                  className="w-full h-8 text-sm"
-                />
-              </div>
-              <div className="flex justify-end space-x-2">
-                <Button
-                  size="sm"
-                  className="h-8"
-                  onClick={handleSaveEditClick}
-                  // Disable based on props?
-                  disabled={editValue === null || !editUnit || isPending}
-                >
-                  Save
-                </Button>
-                <Button variant="outline" size="sm" className="h-8" onClick={handleCancelEditClick} disabled={isPending}>
-                  Cancel
-                </Button>
-              </div>
-            </div>
-          ) : (
-            // Action Buttons (Record/Skip/Log Rating/Reset) when NOT editing
-            <div className="mt-2">
-              {item.status === "pending" && !isLogged ? ( // Show actions only if pending and not logged (for TrackingInbox)
-                <>
-                  {/* === CORRECTED Logic for Scale vs Input vs Button === */}
-                  {
-                    /* Priority 1: Number Buttons for 0-10 Scale */
-                    (item.unitId === UNIT_IDS.ZERO_TO_TEN_SCALE) && onStatusChange ? (
-                      <div className="flex flex-col gap-2 pt-1">
-                        {/* Container for number buttons 0-10 */}
-                        <div className="flex flex-wrap gap-1.5">
-                          {Array.from({ length: 11 }, (_, i) => i).map((rating) => (
-                            <Button
-                              key={rating}
-                              variant="outline"
-                              size="sm"
-                              className={cn(
-                                  "h-7 w-7 p-0 text-xs font-medium"
-                              )}
-                              onClick={() => handleStatusChangeClick('completed', rating)}
-                              disabled={isPending}
-                              aria-label={`Rate ${rating}`}
-                            >
-                              {rating}
-                            </Button>
-                          ))}
-                        </div>
-                      </div>
-                    )
-                    /* Priority 2: Input field for numeric/text input (if default_value is null and not Boolean/Scale) */
-                    : (item.default_value === null && item.unitId !== UNIT_IDS.BOOLEAN_1_YES_TRUE_0_NO_FALSE_ && item.unitId !== UNIT_IDS.ZERO_TO_TEN_SCALE) ? (
-                      <div className="flex gap-2 items-center pt-1">
-                          <Input
-                               type="number" // Assuming number for now, might need text later
-                               placeholder={`${item.unitName || item.unit}`} // Placeholder uses unit
-                               value={localInputValue} // Use local state
-                               onChange={(e) => setLocalInputValue(e.target.value)} // Update local state
-                               className={cn("h-7 text-xs flex-grow max-w-[150px]")}
-                               disabled={isPending}
-                          />
-                         {/* Display Unit next to input */}
-                         <span className={
-                           "text-xs text-muted-foreground self-center ml-2" // Use non-compact spacing
-                           }>
-                           {item.unitName || item.unit}
-                         </span>
-                         <Button
-                             variant="outline"
-                             size="sm"
-                             className="h-7" // Use non-compact size
-                             onClick={() => {
-                                 const numericValue = parseFloat(localInputValue || '');
-                                 if (!isNaN(numericValue)) {
-                                     // Use onStatusChange for UniversalTimeline context,
-                                     // or onLogMeasurement if provided (for TrackingInbox)
-                                     if (onLogMeasurement) {
-                                         onLogMeasurement(item, numericValue);
-                                     } else if (onStatusChange) {
-                                         onStatusChange(item, 'completed', numericValue);
-                                     } else {
-                                          console.warn("No log/status handler for numeric input", item.id);
-                                     }
-                                     setLocalInputValue(""); // Clear input after log
-                                 }
-                             }}
-                             disabled={!localInputValue || isNaN(parseFloat(localInputValue || '')) || isPending}
-                         >
-                             Log
-                         </Button>
-                       </div>
-                    )
-                    /* Priority 3: Default Confirm/Complete/Skip buttons (if default_value exists or is Boolean) */
-                    : (item.default_value !== null || item.unitId === UNIT_IDS.BOOLEAN_1_YES_TRUE_0_NO_FALSE_) && onStatusChange ? (
-                      <div className="flex flex-wrap gap-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="h-7" // Use non-compact size
-                          onClick={() => handleStatusChangeClick('completed')} // Value not needed or handled by slider
-                          disabled={isPending}
-                        >
-                          <Check className="h-3 w-3 mr-0.5" />
-                          <span className="text-xs">Confirm</span>
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="h-7" // Use non-compact size
-                          onClick={() => handleStatusChangeClick('skipped')} // Skip is common
-                          disabled={isPending}
-                        >
-                          <X className="h-3 w-3 mr-0.5" />
-                          <span className="text-xs">Skip</span>
-                        </Button>
-                      </div>
-                    )
-                    /* Final fallback */
-                    : null
-                  }
-                  {/* === END CORRECTED Logic === */}
-                </>
-              ) : item.status !== 'pending' && !isLogged ? ( // Show Reset button if not pending and not logged
-                 <Button
-                  variant="outline"
-                  size="sm"
-                  className="h-7" // Use non-compact size
-                  onClick={() => handleStatusChangeClick('pending')}
-                  disabled={isPending}
-                >
-                  <RotateCcw className="h-3 w-3 mr-1" />
-                  <span className="text-xs">Reset</span>
-                </Button>
-              ) : null /* Don't show action buttons if logged in TrackingInbox or if no status matches */}
-            </div>
+          {/* Undo Button */} 
+          {isLogged && onUndo && item.status !== 'pending' && ( 
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" size="icon" className="h-7 w-7" onClick={() => onUndo(undefined, item)} disabled={isPending}>
+                    <RotateCcw className="h-3.5 w-3.5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>Undo</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
-        </CardContent>
-      </Card>
-    )
-} 
+        </div>
+    );
+}; 

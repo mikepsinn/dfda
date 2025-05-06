@@ -56,10 +56,17 @@ export interface TimelineItem extends MeasurementNotificationItemData {
 }
 
 export interface UniversalTimelineProps {
-  title?: string
-  items?: TimelineItem[] // Use the aligned TimelineItem type
-  date?: Date
-  userTimezone: string;
+  title?: string;
+  /** Pre-merged list (takes precedence) */
+  items?: TimelineItem[];
+  /** Measurement items (optional) */
+  measurements?: TimelineItem[];
+  /** Notification items (optional) */
+  notifications?: TimelineItem[];
+  /** Date to display (default: today) */
+  date?: Date;
+  /** User timezone (default: UTC) */
+  userTimezone?: string;
   onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void
   onEditMeasurement?: (item: TimelineItem, value: number, unit: string, notes?: string) => void
   onStatusChange?: (item: TimelineItem, status: MeasurementStatus, value?: number) => void
@@ -74,8 +81,10 @@ export interface UniversalTimelineProps {
 
 export function UniversalTimeline({
   items = [],
-  date: initialDate,
-  userTimezone,
+  measurements = [],
+  notifications = [],
+  date: initialDate = new Date(),
+  userTimezone = 'UTC',
   onAddMeasurement,
   onEditMeasurement,
   onStatusChange,
@@ -88,7 +97,7 @@ export function UniversalTimeline({
   emptyState,
 }: UniversalTimelineProps) {
   const router = useRouter()
-  const [selectedDate, setSelectedDate] = useState<Date>(initialDate || new Date())
+  const [selectedDate, setSelectedDate] = useState<Date>(initialDate)
   const [showCalendar, setShowCalendar] = useState(false)
   const [editingItem, setEditingItem] = useState<string | null>(null) // ID of item being edited
   const [editValue, setEditValue] = useState<number | null>(null)
@@ -98,9 +107,18 @@ export function UniversalTimeline({
   const [selectedCategory, setSelectedCategory] = useState<FilterableVariableCategoryId>(defaultCategory)
   const [sliderValues, setSliderValues] = useState<Record<string, number>>({});
 
+  // Merge measurements and notifications into a single sorted list
+  const mergedItems = useMemo(() => {
+    // Use single items array if provided, else merge measurements + notifications
+    const list = items.length ? items : [...measurements, ...notifications];
+    return list.sort(
+      (a, b) => new Date(a.triggerAtUtc).getTime() - new Date(b.triggerAtUtc).getTime()
+    );
+  }, [items, measurements, notifications]);
+
   // Filter items - Logic remains the same
   const filteredItems = useMemo(() => {
-    return items
+    return mergedItems
       .filter((item) => {
         try {
           const matchesCategory = selectedCategory === "all" || item.variableCategoryId === selectedCategory;
@@ -115,17 +133,7 @@ export function UniversalTimeline({
           return false;
         }
       })
-      .sort((a, b) => {
-        try {
-          const timeA = parseISO(a.triggerAtUtc).getTime();
-          const timeB = parseISO(b.triggerAtUtc).getTime();
-          return timeA - timeB;
-        } catch (e) {
-           console.error("Error sorting timeline items:", { a, b, error: e });
-           return 0;
-        }
-      });
-  }, [items, selectedCategory, searchQuery]);
+  }, [mergedItems, selectedCategory, searchQuery]);
 
   // --- Handlers to pass down to the shared component ---
 
@@ -266,7 +274,7 @@ export function UniversalTimeline({
                 <SelectContent>
                   <SelectItem value="all">All Categories</SelectItem>
                   {Object.entries(VARIABLE_CATEGORIES_DATA).map(([id, data]) => (
-                    <SelectItem key={id} value={id}>{data.name}</SelectItem>
+                    <SelectItem key={id} value={id}>{data.emoji} {data.name}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -327,10 +335,14 @@ export function UniversalTimeline({
           filteredItems.map((item) => (
             <MeasurementNotificationItem
               key={item.id}
-              item={item} // Pass the TimelineItem directly (assuming compatible structure)
+              item={item}
               userTimezone={userTimezone}
-              compact={compact}
+
               isEditing={editingItem === item.id}
+              // Show populated inputs for logged measurements
+              isLogged={item.value != null}
+              // Disable inputs while pending
+              isPending={item.status === 'pending'}
               editValue={editingItem === item.id ? editValue : undefined}
               editUnit={editingItem === item.id ? editUnit : undefined}
               editNotes={editingItem === item.id ? editNotes : undefined}

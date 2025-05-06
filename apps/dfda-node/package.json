@@ -9,7 +9,7 @@
     "db:worker:migrate": "npx graphile-worker --schema-only",
     "check": "pnpm run type-check && pnpm run lint",
     "build": "next build",
-    "dev:next": "next dev",
+    "dev:next": "cross-env NODE_OPTIONS='--inspect' next dev",
     "dev:worker": "dotenv -- tsx watch worker/runner.ts",
     "dev:worker:doppler": "doppler run -- tsx watch worker/runner.ts",
     "dev:cron": "tsx watch cron-enqueuer.ts",
