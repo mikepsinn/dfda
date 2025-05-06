@@ -9,11 +9,11 @@ import { HeartPulse, Pill } from "lucide-react";
 import { logger } from "@/lib/logger";
 import { ImageAnalysisCapture } from '@/components/shared/ImageAnalysisCapture';
 import { TrackingInbox } from "@/components/patient/TrackingInbox";
-import { UniversalTimeline, type TimelineItem, type MeasurementStatus, type FilterableVariableCategoryId } from '@/components/universal-timeline'; // Keep as separate component
+import { UniversalTimeline, type TimelineItem, type FilterableVariableCategoryId } from '@/components/universal-timeline';
+import type { MeasurementNotificationItemData } from '@/components/shared/measurement-notification-item';
 import { MeasurementAddDialog } from './MeasurementAddDialog';
 
 // Import Server Actions needed for callbacks
-import { completeReminderNotificationAction } from '@/lib/actions/reminder-schedules';
 import { updateMeasurementAction, logMeasurementAction } from '@/lib/actions/measurements';
 
 // Import Types
@@ -60,6 +60,21 @@ export default function PatientDashboardDisplay({
   const timelineItems = initialTimelineItems;
   const userVariables = initialUserVariables;
 
+  // Separate timelineItems into measurements and notifications
+  const measurementsForTimeline: MeasurementNotificationItemData[] = [];
+  const notificationsForTimeline: MeasurementNotificationItemData[] = [];
+
+  timelineItems.forEach(item => {
+    // Heuristic: if it has a reminderScheduleId, it's likely a notification.
+    // Otherwise, or if its status is 'recorded', treat as a measurement.
+    // This might need refinement based on actual data structure and how status is set.
+    if (item.reminderScheduleId || (item.status !== "recorded" && item.status !== "pending" /* consider other notification-like statuses if any */)) {
+      notificationsForTimeline.push(item);
+    } else {
+      measurementsForTimeline.push(item);
+    }
+  });
+
   // Extract user timezone, default to UTC if not available
   const userTimezone = initialUser.user_metadata?.profile?.timezone || 'UTC';
 
@@ -96,23 +111,6 @@ export default function PatientDashboardDisplay({
     }
   }, [user.id, userVariables, toast, router]);
 
-  const handleStatusChangeCallback = useCallback(async (item: TimelineItem, status: MeasurementStatus) => {
-      logger.info('DashboardDisplay: handleStatusChangeCallback called', { itemId: item.id, status });
-      let logDetails: any = null;
-      if (status === 'completed') { logDetails = { /* Populate if needed */ }; }
-      try {
-          const result = await completeReminderNotificationAction(item.id, user.id, status === 'skipped', logDetails);
-          if (!result.success) {
-              toast({ title: 'Error', description: result.error || 'Failed to update status.', variant: 'destructive' });
-          } else {
-              toast({ title: 'Status Updated', description: 'Item status changed.', variant: 'default' });
-              router.refresh(); // Re-enable refresh
-          }
-      } catch (e: any) {
-          toast({ title: 'Error', description: e?.message || 'Failed to update status.', variant: 'destructive' });
-      }
-  }, [user.id, toast, router]);
-
   const handleEditMeasurementCallback = useCallback(async (item: TimelineItem, value: number, unitAbbr: string, notes?: string) => {
       logger.info('DashboardDisplay: handleEditMeasurementCallback called', { itemId: item.id, value, unitAbbr });
       try {
@@ -148,13 +146,12 @@ export default function PatientDashboardDisplay({
       <section>
           <h2 className="text-xl font-semibold mb-4 border-b pb-2">Daily Timeline</h2>
           <UniversalTimeline
-              items={timelineItems}
-              date={new Date()} // Or pass a date prop from the page if needed
+              measurements={measurementsForTimeline}
+              notifications={notificationsForTimeline}
+              date={new Date()}
               userTimezone={userTimezone}
-              onStatusChange={handleStatusChangeCallback}
               onEditMeasurement={handleEditMeasurementCallback}
               onAddMeasurement={handleAddMeasurementCallback}
-              // Add other props like showFilters, showDateNavigation etc. as needed
               showFilters={true}
               showDateNavigation={true}
               showAddButtons={true}
