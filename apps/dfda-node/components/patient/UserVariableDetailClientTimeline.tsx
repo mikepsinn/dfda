@@ -4,8 +4,8 @@ import React, { useState, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import { UniversalTimeline } from "@/components/universal-timeline"
-import type { TimelineItem, MeasurementStatus } from "@/components/universal-timeline"
-import { completeReminderNotificationAction } from "@/lib/actions/reminder-schedules"
+import type { TimelineItem } from "@/components/universal-timeline"
+import type { MeasurementNotificationItemData } from '@/components/shared/measurement-notification-item';
 import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
@@ -18,10 +18,22 @@ export interface UserVariableDetailClientTimelineProps {
   userVariable: UserVariableWithDetails;
 }
 
-export function UserVariableDetailClientTimeline({ items, date, userTimezone, userId, userVariable }: UserVariableDetailClientTimelineProps) {
+export function UserVariableDetailClientTimeline({ items: allItems, date, userTimezone, userId, userVariable }: UserVariableDetailClientTimelineProps) {
   const router = useRouter()
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+
+  // Separate items into measurements and notifications
+  const measurementsForTimeline: MeasurementNotificationItemData[] = [];
+  const notificationsForTimeline: MeasurementNotificationItemData[] = [];
+
+  allItems.forEach(item => {
+    if (item.reminderScheduleId || (item.status !== "recorded" && item.status !== "pending")) {
+      notificationsForTimeline.push(item);
+    } else {
+      measurementsForTimeline.push(item);
+    }
+  });
 
   const handleAddMeasurementCallback = useCallback(() => {
     setDialogOpen(true)
@@ -47,20 +59,6 @@ export function UserVariableDetailClientTimeline({ items, date, userTimezone, us
     }
   }, [userId, toast, router, userVariable])
 
-  const handleStatusChangeCallback = useCallback(async (item: TimelineItem, status: MeasurementStatus) => {
-    try {
-      const result = await completeReminderNotificationAction(item.id, userId, status === "skipped")
-      if (!result.success) {
-        toast({ title: "Error", description: result.error || "Failed to update status.", variant: "destructive" })
-      } else {
-        toast({ title: "Status Updated", description: "Status changed.", variant: "default" })
-        router.refresh()
-      }
-    } catch (e: any) {
-      toast({ title: "Error", description: e?.message || "Failed to update status.", variant: "destructive" })
-    }
-  }, [userId, toast, router])
-
   const handleEditMeasurementCallback = useCallback(async (item: TimelineItem, value: number, unitAbbr: string, notes?: string) => {
     try {
       const result = await updateMeasurementAction({ measurementId: item.id, userId, value, unitId: unitAbbr, notes: notes ?? undefined })
@@ -78,12 +76,12 @@ export function UserVariableDetailClientTimeline({ items, date, userTimezone, us
   return (
     <>
       <UniversalTimeline
-        items={items}
+        measurements={measurementsForTimeline}
+        notifications={notificationsForTimeline}
         date={date}
         userTimezone={userTimezone}
         onAddMeasurement={handleAddMeasurementCallback}
         onEditMeasurement={handleEditMeasurementCallback}
-        onStatusChange={handleStatusChangeCallback}
         showAddButtons
         showFilters
         showDateNavigation
