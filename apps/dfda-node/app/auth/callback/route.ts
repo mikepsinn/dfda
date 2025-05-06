@@ -3,6 +3,7 @@
 import { createClient } from '@/utils/supabase/server'
 import { logger } from '@/lib/logger'
 import { NextResponse, type NextRequest } from 'next/server'
+import { Constants } from '@/lib/database.types'
 
 export async function GET(request: NextRequest) {
   // Log relevant headers
@@ -43,21 +44,71 @@ export async function GET(request: NextRequest) {
   if (code) {
     const supabase = await createClient(); // Use server client
     try {
-        const { error } = await supabase.auth.exchangeCodeForSession(code)
-        if (!error) {
-          // Append RECONSTRUCTED origin if 'next' is a relative path
-          const redirectUrl = next.startsWith('/') ? `${correctOrigin}${next}` : next;
-          // Log calculated redirect info
-          const successMsg = `[AUTH-CALLBACK-ROUTE] Successfully exchanged code, redirecting. CorrectOrigin=${correctOrigin}, Next=${next}, CalculatedRedirectUrl=${redirectUrl}`;
-          logger.info(successMsg);
-          return NextResponse.redirect(redirectUrl);
+        const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
+        // Check for exchange error first
+        if (exchangeError) {
+          logger.error('[AUTH-CALLBACK-ROUTE] Failed to exchange code for session:', { 
+              error: exchangeError.message,
+              status: (exchangeError as any).status 
+          });
+          // Redirect to error on exchange failure
+          const errorRedirectUrl = `${correctOrigin}/login?error=Authentication failed. Please try again.`;
+          return NextResponse.redirect(errorRedirectUrl);
         }
-        // Log the specific exchange error
-        // Keep structured error log
-        logger.error('[AUTH-CALLBACK-ROUTE] Failed to exchange code for session:', { 
-            error: error.message,
-            status: (error as any).status 
-        });
+
+        // --- START: Fetch user profile and determine role-based redirect ---
+        const { data: { user }, error: userError } = await supabase.auth.getUser();
+
+        if (userError || !user) {
+          logger.error('[AUTH-CALLBACK-ROUTE] Failed to get user after session exchange:', { error: userError?.message ?? 'User is null' });
+          // Redirect to error if user fetch fails
+          const errorRedirectUrl = `${correctOrigin}/login?error=Could not retrieve user details. Please try again.`;
+          return NextResponse.redirect(errorRedirectUrl);
+        }
+
+        // Fetch user profile
+        const { data: profileData, error: profileError } = await supabase
+          .from('profiles')
+          .select('user_type')
+          .eq('id', user.id)
+          .single();
+
+        let redirectPath = '/'; // Default path
+
+        if (profileError) {
+          logger.warn(`[AUTH-CALLBACK-ROUTE] Could not fetch profile for user ${user.id}. Using default redirect.`, { error: profileError.message });
+          // Proceed with default redirect even if profile fetch fails, but log it
+        } else if (profileData) {
+          logger.info(`[AUTH-CALLBACK-ROUTE] User ${user.id} has user_type: ${profileData.user_type}`);
+          switch (profileData.user_type) {
+            case Constants.public.Enums.user_type_enum[0]: // 'patient'
+              redirectPath = '/patient';
+              break;
+            case Constants.public.Enums.user_type_enum[1]: // 'provider'
+              redirectPath = '/provider'; 
+              break;
+            // Add cases for other user types using Constants.public.Enums.user_type_enum[index]
+            // case Constants.public.Enums.user_type_enum[2]: // 'research-partner'
+            //   redirectPath = '/research'; 
+            //   break;
+            // case Constants.public.Enums.user_type_enum[3]: // 'admin'
+            //   redirectPath = '/admin';
+            //   break;
+            // case Constants.public.Enums.user_type_enum[4]: // 'developer'
+            //   redirectPath = '/developer';
+            //   break;
+            default:
+              redirectPath = '/'; // Fallback to default dashboard or home
+          }
+        } else {
+           logger.warn(`[AUTH-CALLBACK-ROUTE] No profile found for user ${user.id}. Using default redirect.`);
+        }
+        
+        const finalRedirectUrl = `${correctOrigin}${redirectPath}`;
+        logger.info(`[AUTH-CALLBACK-ROUTE] Determined redirect based on role: ${finalRedirectUrl}`);
+        return NextResponse.redirect(finalRedirectUrl);
+        // --- END: Fetch user profile and determine role-based redirect ---
+        
     } catch(catchError: any) {
         // Keep structured error log
         logger.error('[AUTH-CALLBACK-ROUTE] Exception during code exchange:', { error: catchError?.message ?? catchError });
