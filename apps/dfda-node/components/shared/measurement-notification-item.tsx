@@ -6,7 +6,6 @@ import {
   Pill,
   Activity,
   Edit,
-  X,
   RotateCcw,
   ExternalLink,
   Heart,
@@ -76,7 +75,6 @@ export interface MeasurementNotificationItemProps {
   // REMOVED: inputValue?: string;
 
   // Callbacks
-  onStatusChange?: (item: MeasurementNotificationItemData, status: MeasurementStatus, value?: number) => void;
   onEdit?: (item: MeasurementNotificationItemData) => void;
   onSaveEdit?: (item: MeasurementNotificationItemData) => void;
   onCancelEdit?: () => void;
@@ -154,7 +152,6 @@ export function MeasurementNotificationItem({
   // REMOVED: inputValue?: string;
 
   // Callbacks
-  onStatusChange,
   onEdit,
   onSaveEdit,
   onCancelEdit,
@@ -193,16 +190,6 @@ export function MeasurementNotificationItem({
   const handleSettingsClick = () => onNavigateToVariableSettings?.(item);
   const handleDetailsClick = () => item.detailsUrl && onNavigateToDetails?.(item.detailsUrl);
 
-  // Combine status change logic
-  const handleStatusChangeClick = (status: MeasurementStatus, value?: number) => {
-      // REMOVED: Prioritization of onSkip logic
-      if (onStatusChange) {
-        onStatusChange(item, status, value);
-      } else {
-        console.warn("No handler provided for status change:", { status });
-      }
-  };
-
   // State for the numeric input field within this component (pre-populated for logged measurements)
   const [localInputValue, setLocalInputValue] = useState<string>(() => (item.value != null ? item.value.toString() : ""));
   const [selectedRating, setSelectedRating] = useState<number | null>(() => (item.value != null ? item.value : null));
@@ -220,7 +207,6 @@ export function MeasurementNotificationItem({
   // Unified log handler
   const handleLog = (value: number) => {
     if (onLogMeasurement) onLogMeasurement(item, value);
-    else handleStatusChangeClick("completed", value);
     setSelectedRating(value);
   };
 
@@ -290,7 +276,7 @@ export function MeasurementNotificationItem({
     return null;
   };
 
-  const menuProps = { item, isEditing, isLogged, isPending, handleEditClick, handleDetailsClick, handleSettingsClick, handleStatusChangeClick, onUndo };
+  const menuProps = { item, isEditing, isLogged, isPending, handleEditClick, handleDetailsClick, handleSettingsClick, onUndo };
 
   return (
     <div className="border-b">
@@ -414,10 +400,9 @@ const renderMenuContent = (props: {
     handleEditClick: () => void;
     handleDetailsClick: () => void;
     handleSettingsClick: () => void;
-    handleStatusChangeClick: (status: MeasurementStatus, value?: number) => void;
     onUndo?: (logId: string | undefined, item: MeasurementNotificationItemData) => void;
   }) => {
-    const { item, isEditing, isLogged, isPending, handleEditClick, handleDetailsClick, handleSettingsClick, handleStatusChangeClick, onUndo } = props;
+    const { item, isEditing, isLogged, isPending, handleEditClick, handleDetailsClick, handleSettingsClick, onUndo } = props;
     return (
         <div className="flex space-x-1">
           {/* Dropdown Menu */} 

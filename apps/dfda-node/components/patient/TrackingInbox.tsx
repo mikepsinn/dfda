@@ -214,7 +214,6 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
                   userTimezone={userTimezone}
                   isLogged={!!loggedState}
                   isPending={isPending}
-                  onStatusChange={undefined}
                   onUndo={logId => handleUndo(logId, 'measurement')}
                   onLogMeasurement={(_, value) => handleLogMeasurement(notification, value)}
                 />
