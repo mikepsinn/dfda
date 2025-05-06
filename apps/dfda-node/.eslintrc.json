@@ -6,5 +6,8 @@
   "rules": {
     "@typescript-eslint/no-explicit-any": "off",
     "react/no-unescaped-entities": "off"
-  }
+  },
+  "ignorePatterns": [
+    "dfda-patient-dashboard/**"
+  ]
 }
