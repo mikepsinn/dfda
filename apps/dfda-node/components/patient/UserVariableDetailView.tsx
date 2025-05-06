@@ -1,5 +1,7 @@
 import { getUserVariableDetailsAction } from "@/lib/actions/user-variables";
-import { ScheduleTimeline } from "./ScheduleTimeline";
+import { getMeasurementsForDateAction } from "@/lib/actions/measurements";
+import { getTimelineNotificationsForDateAction } from "@/lib/actions/timeline";
+import { UniversalTimeline } from "@/components/universal-timeline";
 import { ReminderListForUserVariable } from "@/components/reminders/reminder-list-for-user-variable";
 import { logger } from "@/lib/logger";
 import { format } from 'date-fns';
@@ -58,6 +60,14 @@ export async function UserVariableDetailView({ userId, userVariableId }: UserVar
   // Determine the target date (e.g., today)
   const today = format(new Date(), 'yyyy-MM-dd'); 
 
+  // Fetch measurements and notifications for the variable
+  const targetDate = new Date(today);
+  const measurementsRes = await getMeasurementsForDateAction(userId, targetDate);
+  const notificationsRes = await getTimelineNotificationsForDateAction(userId, targetDate);
+  const measurementsList = measurementsRes.success && measurementsRes.data ? measurementsRes.data.filter(item => item.userVariableId === userVariableId) : [];
+  const notificationsList = notificationsRes.success && notificationsRes.data ? notificationsRes.data.filter(item => item.userVariableId === userVariableId) : [];
+  const items = [...measurementsList, ...notificationsList].sort((a, b) => a.triggerAtUtc.localeCompare(b.triggerAtUtc));
+
   return (
     <div className="space-y-8"> {/* Increased spacing */}
        {/* Display Variable Header */}
@@ -66,11 +76,15 @@ export async function UserVariableDetailView({ userId, userVariableId }: UserVar
          {variableName}
       </h2>
        
-      {/* Schedule Timeline Section */} 
-      <ScheduleTimeline 
-        userId={userId}
-        userVariableIds={[userVariableId]} 
-        targetDate={today} 
+      {/* Timeline Section */}
+      <UniversalTimeline
+        title={variableName}
+        items={items}
+        date={new Date(today)}
+        userTimezone={userTimezone}
+        showAddButtons
+        showFilters
+        showDateNavigation
       />
       
       {/* Reminder Management Section */} 

@@ -217,7 +217,7 @@ export async function getConditionsByUserAction(userId: string): Promise<Patient
     .from('patient_conditions_view') // Use the view directly
     .select('*') // Select all columns from the view
     .eq('patient_id', userId)
-    .not('deleted_at', 'is', null) // Ensure patient condition link isn't deleted
+    // Removed filter on deleted_at as it does not exist in the current view definition
     .order('condition_name', { ascending: true }); // Order by condition name
 
   if (response.error) {
