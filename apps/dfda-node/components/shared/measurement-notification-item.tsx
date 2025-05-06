@@ -22,9 +22,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
-import { formatInTimeZone } from 'date-fns-tz'
-import { parseISO } from 'date-fns'
-import { useState } from "react"
+import { formatInTimeZone } from 'date-fns-tz';
+import { parseISO } from 'date-fns';
+import { useState, useEffect } from "react"
 import { UNIT_IDS } from "@/lib/constants/units"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { getVariableInputType, getRatingRange } from "@/lib/variable-helpers"
@@ -205,6 +205,12 @@ export function MeasurementNotificationItem({
   const [localInputValue, setLocalInputValue] = useState<string>(() => (item.value != null ? item.value.toString() : ""));
   const [selectedRating, setSelectedRating] = useState<number | null>(() => (item.value != null ? item.value : null));
 
+  // Sync state with prop changes
+  useEffect(() => {
+    setLocalInputValue(item.value != null ? item.value.toString() : "");
+    setSelectedRating(item.value != null ? item.value : null);
+  }, [item.value]);
+
   // Determine input behavior
   const inputType = getVariableInputType({ unitId: item.unitId, variableCategory: item.variableCategoryId });
   const ratingRange = getRatingRange(inputType);
@@ -249,42 +255,34 @@ export function MeasurementNotificationItem({
           </div>
         );
       }
-      // Numeric input or confirm
-      if (item.default_value == null) {
-        return (
-          <div className="flex gap-2 items-center pt-1">
-            <Input
-              type="number"
-              placeholder={`${item.unitName || item.unit}`}
-              value={localInputValue}
-              onChange={(e) => setLocalInputValue(e.target.value)}
-              disabled={isPending}
-              className="h-7 text-xs flex-grow max-w-[150px]"
-            />
-            <span className="text-xs text-muted-foreground self-center ml-2">{item.unitName || item.unit}</span>
-            <Button
-              variant="outline"
-              size="sm"
-              className="h-7"
-              onClick={() => {
-                const v = parseFloat(localInputValue);
-                if (!isNaN(v)) {
-                  handleLog(v);
-                  setLocalInputValue("");
-                }
-              }}
-              disabled={!localInputValue || isNaN(parseFloat(localInputValue)) || isPending}
-            >
-              Log
-            </Button>
-          </div>
-        );
-      }
+      // Numeric input: always show input field, even when a measurement exists
       return (
-        <Button variant="outline" size="sm" className="h-7" onClick={() => handleLog(item.default_value!)} disabled={isPending}>
-          <Check className="h-3 w-3 mr-0.5" />
-          <span className="text-xs">Confirm</span>
-        </Button>
+        <div className="flex gap-2 items-center pt-1">
+          <Input
+            type="number"
+            placeholder={`${item.unitName || item.unit}`}
+            value={localInputValue}
+            onChange={(e) => setLocalInputValue(e.target.value)}
+            disabled={isPending}
+            className="h-7 text-xs flex-grow max-w-[150px]"
+          />
+          <span className="text-xs text-muted-foreground self-center ml-2">{item.unitName || item.unit}</span>
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-7"
+            onClick={() => {
+              const v = parseFloat(localInputValue);
+              if (!isNaN(v)) {
+                handleLog(v);
+                setLocalInputValue("");
+              }
+            }}
+            disabled={!localInputValue || isNaN(parseFloat(localInputValue)) || isPending}
+          >
+            {item.value != null ? 'Update' : 'Log'}
+          </Button>
+        </div>
       );
     }
     return null;
