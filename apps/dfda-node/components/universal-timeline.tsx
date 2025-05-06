@@ -108,17 +108,9 @@ export function UniversalTimeline({
 
   // Filter items based ONLY on category and search query (date filtering done on server)
   const filteredItems = useMemo(() => {
-    // Ensure userTimezone is valid, default to UTC if not provided somehow
-    // const tz = userTimezone || 'UTC'; // Keep tz if needed for sorting below
     return items
       .filter((item) => {
         try {
-          // Remove date filtering logic
-          /*
-          const itemDateInUserTz = parseISO(item.triggerAtUtc); // Parse UTC string
-          const matchesDate = isSameDay(itemDateInUserTz, selectedDate); // isSameDay handles TZ correctly?
-          */
-
           // Filter by category ID
           const matchesCategory = selectedCategory === "all" || item.variableCategoryId === selectedCategory;
 
@@ -147,8 +139,7 @@ export function UniversalTimeline({
            return 0; // Maintain original order if parsing fails
         }
       });
-      // Remove selectedDate from dependencies as it's no longer used for filtering
-  }, [items, selectedCategory, searchQuery, userTimezone]);
+  }, [items, selectedCategory, searchQuery]);
 
   // Updated getTypeIcon to use variableCategoryId and constants
   const getTypeIcon = useCallback(
@@ -501,74 +492,122 @@ export function UniversalTimeline({
   }
 
   return (
-    <div className={className}>
-      {/* Date Navigation Header */}
-      {showDateNavigation && (
-        <div className="flex items-center justify-between mb-4 pb-2 border-b">
-          <Button variant="outline" size="icon" onClick={previousDay} className="h-8 w-8">
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Popover open={showCalendar} onOpenChange={setShowCalendar}>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className={cn("h-8", !isToday() && "text-accent-foreground")}>
-                <Calendar className="mr-2 h-4 w-4" />
-                {format(selectedDate, "EEE, MMM d, yyyy")}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="center">
-              <CalendarComponent
-                mode="single"
-                selected={selectedDate}
-                onSelect={(day) => {
-                  if (day) setSelectedDate(day);
-                  setShowCalendar(false);
-                }}
-                initialFocus
-              />
-            </PopoverContent>
-          </Popover>
-          <Button variant="outline" size="icon" onClick={nextDay} className="h-8 w-8">
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-      )}
-      {/* Filters */}
-      {showFilters && (
-        <div className="flex flex-col sm:flex-row gap-2 mb-4"> {/* Use mb-4 */}
-          <div className="flex-1 relative">
-            <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input
-              placeholder="Search timeline..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-8 text-sm w-full pl-8" // Use theme input style
-            />
+    <div className={cn("p-4 border rounded-lg shadow-sm", className)}>
+      {/* Header Section */}
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b">
+        {/* Date Navigation */}
+        {showDateNavigation && (
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="icon" onClick={previousDay} aria-label="Previous day">
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Popover open={showCalendar} onOpenChange={setShowCalendar}>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  className={cn(
+                    "w-[180px] justify-start text-left font-normal",
+                    !selectedDate && "text-muted-foreground"
+                  )}
+                  aria-label="Select date"
+                >
+                  <Calendar className="mr-2 h-4 w-4" />
+                  {selectedDate ? format(selectedDate, "PPP") : <span>Pick a date</span>}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-auto p-0">
+                <CalendarComponent
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={(day) => {
+                    if (day) {
+                      setSelectedDate(day)
+                      // TODO: Optionally call a prop here if date change needs to trigger data fetch
+                      // e.g., onDateChange?.(day);
+                    }
+                    setShowCalendar(false)
+                  }}
+                  initialFocus
+                />
+              </PopoverContent>
+            </Popover>
+            <Button variant="outline" size="icon" onClick={nextDay} aria-label="Next day" disabled={isToday()}>
+              <ChevronRight className="h-4 w-4" />
+            </Button>
           </div>
-          <div className="flex gap-2">
-            <Select value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as FilterableVariableCategoryId)}>
-              <SelectTrigger className="w-[180px] h-8 text-sm"> {/* Use theme select style */}
-                <SelectValue placeholder="Filter by type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All types</SelectItem>
-                {Object.values(VARIABLE_CATEGORY_IDS).map(categoryId => (
-                  <SelectItem key={categoryId} value={categoryId}>
-                    {VARIABLE_CATEGORIES_DATA[categoryId]?.name || categoryId}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+        )}
+
+        {/* Filters and Search */}
+        <div className="flex flex-wrap items-center gap-2 flex-grow justify-end">
+          {showFilters && (
+            <>
+              <Select value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as FilterableVariableCategoryId)}>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Filter by category" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Categories</SelectItem>
+                  {Object.entries(VARIABLE_CATEGORIES_DATA).map(([id, data]) => (
+                    <SelectItem key={id} value={id}>{data.name}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <div className="relative">
+                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Search timeline..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-8 w-[200px] md:w-[250px]"
+                />
+              </div>
+            </>
+          )}
+          {/* Add Measurement Buttons */}
+          {showAddButtons && onAddMeasurement && (
+            <div className="flex items-center gap-2 border-l pl-4 ml-2">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS)} aria-label="Add Intake/Intervention">
+                      <Pill className="h-4 w-4" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent><p>Add Intake/Intervention</p></TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY)} aria-label="Add Health/Physiology">
+                      <Heart className="h-4 w-4" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent><p>Add Health/Physiology</p></TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="outline" size="icon" onClick={() => onAddMeasurement(VARIABLE_CATEGORY_IDS.ACTIVITY_AND_BEHAVIOR)} aria-label="Add Activity/Behavior">
+                      <Activity className="h-4 w-4" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent><p>Add Activity/Behavior</p></TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          )}
         </div>
-      )}
-      {/* Timeline Items List */}
-      <div className="flex flex-col gap-0"> {/* Remove gap-4 */}
+      </div>
+
+      {/* Timeline Content */}
+      <div className="space-y-4">
         {filteredItems.length > 0 ? (
           filteredItems.map((item) => renderTimelineItem(item))
         ) : (
-          <div className="py-6 text-center"> {/* Add padding for empty state */}
-            {renderEmptyState()}
-          </div>
+          renderEmptyState()
         )}
       </div>
     </div>

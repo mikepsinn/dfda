@@ -74,11 +74,16 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
   }, [userId, initialNotificationsProp, refreshNotifications]);
 
   // Core functions for handling measurements
-  const handleLogMeasurement = useCallback((notification: PendingReminderNotification) => {
-    const valueStr = measurementValues[notification.notificationId] || "";
-    const numericValue = parseFloat(valueStr);
+  const handleLogMeasurement = useCallback((notification: PendingReminderNotification, value: number) => {
+    // const valueStr = measurementValues[notification.notificationId] || ""; // No longer needed
+    // const numericValue = parseFloat(valueStr); // No longer needed
 
-    // Note: Input validation is now handled by ReminderNotificationCard
+    // Basic check for valid number before proceeding
+    if (isNaN(value) || value === null || value === undefined) {
+        logger.warn("handleLogMeasurement called with invalid value", { notificationId: notification.notificationId, value });
+        // Toast handled by ReminderNotificationCard
+        return;
+    }
 
     startTransition(async () => {
       let measurementId: string | undefined = undefined;
@@ -87,7 +92,7 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
             userId: userId,
             userVariableId: notification.userVariableId,
             globalVariableId: notification.globalVariableId,
-            value: numericValue,
+            value: value, // Use the passed value directly
             reminderNotificationId: notification.notificationId
         };
         const logResult = await logMeasurementAction(measurementInput);
@@ -117,11 +122,12 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
             ...prev,
             [notification.notificationId]: {
                 type: 'measurement',
-                value: numericValue,
-                measurementId: measurementId!, // Assert non-null as we checked logResult.success
+                value: value, // Store the passed value
+                measurementId: measurementId!, 
             }
         }));
-        setMeasurementValues(prev => ({ ...prev, [notification.notificationId]: '' }));
+        // We don't need to clear measurementValues here as it wasn't used for this log
+        // setMeasurementValues(prev => ({ ...prev, [notification.notificationId]: '' })); 
 
       } catch (error) {
         logger.error("Error during measurement log/complete process", { 
@@ -130,7 +136,7 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
         });
       }
     });
-  }, [userId, measurementValues]);
+  }, [userId, toast, startTransition]); // Ensure all necessary dependencies are included
 
   const handleUndo = useCallback(async (logId: string | undefined, logType: 'measurement') => {
     if (!logId) return;
