@@ -7,9 +7,9 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./tests/setup.ts', './tests/shared/integration-setup.ts'], // Updated to new setup file path
-    include: ['**/tests/**/*.[jt]s?(x)'], // Include all tests for now
-    testTimeout: 120000, // Use the longer timeout for now
+    setupFiles: ['./tests/setup.ts'], // Only include the general setup for unit tests
+    include: ['**/tests/unit/**/*.[jt]s?(x)'], // Default to unit tests, can be overridden by CLI arg
+    testTimeout: 10000, // Default timeout for unit tests
     // reporters: ['default', 'html'], // Optional: for HTML report
     // coverage: { // Optional: configure coverage
     //   provider: 'v8',

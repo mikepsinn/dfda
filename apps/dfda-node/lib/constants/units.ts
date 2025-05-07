@@ -45,13 +45,13 @@ export const UNIT_IDS = {
   PARTS_PER_BILLION: 'parts-per-billion', // Parts Per Billion
   PARTS_PER_MILLION: 'parts-per-million', // Parts Per Million
   PASCAL: 'pascal', // Pascal
-  PERCENT: 'percent', // Percent
   PER_DAY: 'per-day', // Per Day
   PER_MICROLITER: 'per-microliter', // Per Microliter
   PER_MINUTE: 'per-minute', // Per Minute
   PER_MONTH: 'per-month', // Per Month
   PER_SECOND: 'per-second', // Per Second
   PER_WEEK: 'per-week', // Per Week
+  PERCENT: 'percent', // Percent
   POUND: 'pound', // Pound
   SECOND: 'second', // Second
   US_DOLLAR: 'us-dollar', // US Dollar
@@ -449,16 +449,6 @@ export const UNITS_DATA: Record<string, Partial<UnitRow>> = {
   "conversion_offset": 0,
   "emoji": "💨"
 },
-  [UNIT_IDS.PERCENT]: {
-  "id": "percent",
-  "unit_category_id": "percentage",
-  "name": "Percent",
-  "abbreviated_name": "%",
-  "ucum_code": "%",
-  "conversion_factor": 1,
-  "conversion_offset": 0,
-  "emoji": "%"
-},
   [UNIT_IDS.PER_DAY]: {
   "id": "per-day",
   "unit_category_id": "frequency",
@@ -518,6 +508,16 @@ export const UNITS_DATA: Record<string, Partial<UnitRow>> = {
   "conversion_factor": 0.142857,
   "conversion_offset": 0,
   "emoji": "🔄"
+},
+  [UNIT_IDS.PERCENT]: {
+  "id": "percent",
+  "unit_category_id": "percentage",
+  "name": "Percent",
+  "abbreviated_name": "%",
+  "ucum_code": "%",
+  "conversion_factor": 1,
+  "conversion_offset": 0,
+  "emoji": "%"
 },
   [UNIT_IDS.POUND]: {
   "id": "pound",

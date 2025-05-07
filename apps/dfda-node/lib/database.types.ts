@@ -475,6 +475,35 @@ export type Database = {
           },
         ]
       }
+      global_symptoms: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_symptoms_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       global_treatments: {
         Row: {
           active_ingredients: Json | null
@@ -1163,6 +1192,70 @@ export type Database = {
             columns: ["patient_treatment_id"]
             isOneToOne: false
             referencedRelation: "patient_treatments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_symptoms: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          frequency: string | null
+          id: string
+          notes: string | null
+          onset_date: string | null
+          patient_id: string
+          severity: string | null
+          symptom_id: string
+          updated_at: string | null
+          user_variable_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          frequency?: string | null
+          id?: string
+          notes?: string | null
+          onset_date?: string | null
+          patient_id: string
+          severity?: string | null
+          symptom_id: string
+          updated_at?: string | null
+          user_variable_id: string
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          frequency?: string | null
+          id?: string
+          notes?: string | null
+          onset_date?: string | null
+          patient_id?: string
+          severity?: string | null
+          symptom_id?: string
+          updated_at?: string | null
+          user_variable_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_symptoms_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_symptoms_symptom_id_fkey"
+            columns: ["symptom_id"]
+            isOneToOne: false
+            referencedRelation: "global_symptoms"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_symptoms_user_variable_id_fkey"
+            columns: ["user_variable_id"]
+            isOneToOne: false
+            referencedRelation: "user_variables"
             referencedColumns: ["id"]
           },
         ]
