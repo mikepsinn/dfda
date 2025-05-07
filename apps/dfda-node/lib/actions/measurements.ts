@@ -6,8 +6,7 @@ import type { /*Database, Tables,*/ TablesInsert, Database, Tables } from "@/lib
 import { revalidatePath } from "next/cache"
 import { unstable_noStore as noStore } from 'next/cache'
 import { startOfDay, endOfDay } from 'date-fns';
-import type { TimelineItem } from '@/components/universal-timeline';
-import type { MeasurementStatus } from '@/components/shared/measurement-notification-item';
+import type { MeasurementCardData } from '@/components/measurement-card';
 
 // Types
 export type MeasurementInsert = TablesInsert<"measurements">
@@ -286,7 +285,7 @@ export async function updateMeasurementAction(
 export async function getMeasurementsForDateAction(
     userId: string,
     targetDate: Date
-): Promise<{ success: boolean; data?: TimelineItem[]; error?: string }> {
+): Promise<{ success: boolean; data?: MeasurementCardData[]; error?: string }> {
     noStore(); // Ensure this doesn't get cached inappropriately
     const supabase = await createClient();
     const dateStr = targetDate.toISOString().split('T')[0];
@@ -337,52 +336,45 @@ export async function getMeasurementsForDateAction(
         return { success: true, data: [] };
     }
 
-    // Map to the TimelineItem structure
-    const timelineItems: TimelineItem[] = measurements.map((m): TimelineItem | null => {
+    // Map to the MeasurementCardData structure
+    const measurementCardDataItems: MeasurementCardData[] = measurements.map((m): MeasurementCardData | null => {
         const measurement = m as FetchedMeasurement; // Cast to the more specific type
         const userVar = measurement.user_variables;
         const globalVar = userVar?.global_variables;
         const category = globalVar?.variable_categories;
         const unit = measurement.units;
 
-        // Perform checks ensuring all required nested data is present
         if (!userVar || !globalVar || !category || !unit) {
-            logger.warn("Missing required nested data for measurement timeline item, skipping", {
+            logger.warn("Missing required nested data for measurement card data, skipping", {
                 measurementId: measurement.id,
                 userVarMissing: !userVar,
                 globalVarMissing: !globalVar,
                 categoryMissing: !category,
                 unitMissing: !unit,
             });
-            return null; // Skip items with missing critical data
+            return null; 
         }
 
-        // Ensure variableCategoryId is valid before casting
-        const variableCategoryId = category.id as TimelineItem['variableCategoryId'];
+        const variableCategoryId = category.id as MeasurementCardData['variableCategoryId'];
 
         return {
-            id: measurement.id, // Use measurement ID
+            id: measurement.id,
             globalVariableId: globalVar.id,
             userVariableId: userVar.id,
             variableCategoryId: variableCategoryId,
             name: globalVar.name,
-            triggerAtUtc: measurement.start_at, // Use the raw UTC string from measurement
-            value: measurement.value, // Use the measurement value
+            start_at: measurement.start_at, // Use start_at directly
+            end_at: measurement.end_at ?? undefined, // Include end_at if available from FetchedMeasurement
+            value: measurement.value,
             unit: unit.abbreviated_name,
             unitId: unit.id,
             unitName: unit.name,
-            status: 'recorded' as MeasurementStatus, // Directly logged measurements are always 'recorded'
-            notes: measurement.notes ?? undefined, // Convert null to undefined
+            notes: measurement.notes ?? undefined,
             emoji: globalVar.emoji,
-            isEditable: true, // Raw measurements are always editable
-            // Fields not applicable to raw measurements:
-            default_value: null,
-            reminderScheduleId: undefined,
-            details: undefined,
-            detailsUrl: undefined,
+            isEditable: true, 
         };
-    }).filter((item): item is TimelineItem => item !== null); // Filter out null items
+    }).filter((item): item is MeasurementCardData => item !== null);
 
-    logger.info(`Found and mapped ${timelineItems.length} measurement timeline items for date`, { userId, date: dateStr });
-    return { success: true, data: timelineItems };
+    logger.info(`Found and mapped ${measurementCardDataItems.length} measurement card data items for date`, { userId, date: dateStr });
+    return { success: true, data: measurementCardDataItems };
 }
