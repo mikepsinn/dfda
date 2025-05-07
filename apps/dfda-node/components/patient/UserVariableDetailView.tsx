@@ -66,7 +66,16 @@ export async function UserVariableDetailView({ userId, userVariableId }: UserVar
   const notificationsRes = await getTimelineNotificationsForDateAction(userId, targetDate);
   const measurementsList = measurementsRes.success && measurementsRes.data ? measurementsRes.data.filter(item => item.userVariableId === userVariableId) : [];
   const notificationsList = notificationsRes.success && notificationsRes.data ? notificationsRes.data.filter(item => item.userVariableId === userVariableId) : [];
-  const items = [...measurementsList, ...notificationsList].sort((a, b) => a.triggerAtUtc.localeCompare(b.triggerAtUtc));
+  
+  // items will be (MeasurementCardData | ReminderNotificationCardData)[]
+  // We need to sort based on a common property, 'triggerAtUtc' for notifications and 'start_at' for measurements.
+  // For consistent sorting, let's ensure both types have a comparable date field, or we handle it during sort.
+  // For now, we assume ReminderNotificationCardData has triggerAtUtc and MeasurementCardData has start_at.
+  const items = [...measurementsList, ...notificationsList].sort((a, b) => {
+    const dateA = (a as any).triggerAtUtc || (a as any).start_at;
+    const dateB = (b as any).triggerAtUtc || (b as any).start_at;
+    return new Date(dateA).getTime() - new Date(dateB).getTime();
+  });
 
   return (
     <div className="space-y-8"> {/* Increased spacing */}

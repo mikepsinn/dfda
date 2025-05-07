@@ -4,15 +4,14 @@ import React, { useState, useCallback, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import { UniversalTimeline } from "@/components/universal-timeline"
-import type { TimelineItem } from "@/components/universal-timeline"
-import type { MeasurementNotificationItemData } from '@/components/shared/measurement-notification-item';
 import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
 import type { MeasurementCardData } from "@/components/measurement-card";
+import type { ReminderNotificationCardData } from "@/components/reminder-notification-card";
 
 export interface UserVariableDetailClientTimelineProps {
-  items: TimelineItem[];
+  items: (MeasurementCardData | ReminderNotificationCardData)[];
   date: Date;
   userTimezone: string;
   userId: string;
@@ -24,51 +23,14 @@ export function UserVariableDetailClientTimeline({ items: allItems, date, userTi
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState<boolean>(false)
 
-  // Separate items into measurements and notifications (original logic)
-  // Memoize the creation of rawMeasurementsForTimeline
-  const rawMeasurementsForTimeline: MeasurementNotificationItemData[] = useMemo(() => {
-    const measurements: MeasurementNotificationItemData[] = [];
-    // const notifications: MeasurementNotificationItemData[] = []; // Not currently used for rawNotifications
-    allItems.forEach(item => {
-      if (item.reminderScheduleId) {
-        // notifications.push(item); // If we were to handle these as PendingNotificationTask
-      } else {
-        measurements.push(item);
-      }
-    });
-    return measurements;
+  // Separate items into measurements and notifications
+  const measurementsForTimeline: MeasurementCardData[] = useMemo(() => {
+    return allItems.filter((item): item is MeasurementCardData => 'start_at' in item && !('reminderScheduleId' in item));
   }, [allItems]);
-  
-  // const notificationsForTimeline: MeasurementNotificationItemData[] = []; // Not currently used for rawNotifications
 
-  // allItems.forEach(item => {
-  //   // Simplified: assume all items here are primarily for measurement display if not explicitly a notification
-  //   if (item.reminderScheduleId) {
-  //     // notificationsForTimeline.push(item); // If we were to handle these as PendingNotificationTask
-  //   } else {
-  //     rawMeasurementsForTimeline.push(item);
-  //   }
-  // });
-
-  // Map rawMeasurementsForTimeline (MeasurementNotificationItemData[]) to MeasurementCardData[]
-  const mappedMeasurementsForTimeline: MeasurementCardData[] = useMemo(() => {
-    return rawMeasurementsForTimeline.map(item => ({
-      id: item.id,
-      globalVariableId: item.globalVariableId,
-      userVariableId: item.userVariableId,
-      variableCategoryId: item.variableCategoryId,
-      name: item.name,
-      start_at: item.triggerAtUtc,
-      end_at: undefined, // MeasurementNotificationItemData does not have end_at
-      value: item.value,
-      unit: item.unit,
-      unitId: item.unitId,
-      unitName: item.unitName || item.unit,
-      notes: item.notes,
-      isEditable: item.isEditable,
-      emoji: item.emoji ?? undefined,
-    }));
-  }, [rawMeasurementsForTimeline]);
+  const notificationsForTimeline: ReminderNotificationCardData[] = useMemo(() => {
+    return allItems.filter((item): item is ReminderNotificationCardData => 'triggerAtUtc' in item && 'reminderScheduleId' in item);
+  }, [allItems]);
 
   const handleAddMeasurementCallback = useCallback(() => {
     setDialogOpen(true)
@@ -117,8 +79,8 @@ export function UserVariableDetailClientTimeline({ items: allItems, date, userTi
   return (
     <>
       <UniversalTimeline
-        rawMeasurements={mappedMeasurementsForTimeline}
-        rawNotifications={[]}
+        rawMeasurements={measurementsForTimeline}
+        rawNotifications={notificationsForTimeline}
         date={date}
         userTimezone={userTimezone}
         onAddMeasurement={handleAddMeasurementCallback}
