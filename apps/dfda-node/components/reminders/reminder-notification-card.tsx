@@ -12,7 +12,7 @@ import { logger } from '@/lib/logger'
 import { getVariableInputType, getRatingRange } from '@/lib/variable-helpers'
 import { Smile, Frown, Meh } from 'lucide-react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import type { ReminderNotificationDetails, VariableCategoryId, ReminderNotificationStatus } from "@/lib/database.types.custom"
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom"
 
 export interface ReminderNotificationCardProps {
   reminderNotification: ReminderNotificationDetails;

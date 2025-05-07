@@ -365,32 +365,30 @@ export function UniversalTimeline({
                 userTimezone={userTimezone}
                 isProcessing={false} // Placeholder
                 loggedData={loggedDataForCard} // Pass constructed loggedData
-                onLogMeasurement={async (_dataFromCard, value) => { // _dataFromCard is ReminderNotificationDetails, already have notificationDetail
+                onLogMeasurement={async (dataFromCard, value) => { 
                   if (onLogNotificationMeasurement) { 
-                    await onLogNotificationMeasurement(notificationDetail, value);
+                    await onLogNotificationMeasurement(dataFromCard, value);
                   } else {
-                    logger.warn("onLogNotificationMeasurement callback not provided", { notificationId: notificationDetail.notificationId });
+                    logger.warn("onLogNotificationMeasurement callback not provided", { notificationId: dataFromCard.notificationId });
                   }
                 }}
-                onSkip={async (_dataFromCard) => { // _dataFromCard is ReminderNotificationDetails
+                onSkip={async (dataFromCard) => { 
                   if (onSkipNotification) { 
-                    await onSkipNotification(notificationDetail);
+                    await onSkipNotification(dataFromCard);
                   } else {
-                    logger.warn("onSkipNotification callback not provided", { notificationId: notificationDetail.notificationId });
+                    logger.warn("onSkipNotification callback not provided", { notificationId: dataFromCard.notificationId });
                   }
                 }}
-                onUndoLog={async (_dataFromCard) => { // _dataFromCard is ReminderNotificationDetails
+                onUndoLog={async (dataFromCard) => { 
                   if (onUndoNotificationLog) { 
-                    await onUndoNotificationLog(notificationDetail);
+                    await onUndoNotificationLog(dataFromCard);
                   } else {
-                    logger.warn("onUndoNotificationLog callback not provided", { notificationId: notificationDetail.notificationId });
+                    logger.warn("onUndoNotificationLog callback not provided", { notificationId: dataFromCard.notificationId });
                   }
                 }}
-                // The card from components/reminders/ expects onEditReminderSettings directly
                 onEditReminderSettings={onEditReminderSettings ? (scheduleId) => onEditReminderSettings(scheduleId) : undefined}
                 onNavigateToVariableSettings={(userVarId, globalVarId) => {
                     if (onNavigateToVariableSettings) {
-                        // Ensure we handle undefined correctly if the card passes it, though its signature expects string for defined values.
                         onNavigateToVariableSettings(userVarId, globalVarId);
                     }
                 }} 
