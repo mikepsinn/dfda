@@ -10,14 +10,14 @@ import { googleAI, defaultGoogleModel } from '@/lib/ai/google'; // Import shared
 // import { publicGlobalVariablesInsertSchemaSchema } from '@/lib/database.schemas'
 
 // --- Ingredient Schema ---
-const IngredientSchema = z.object({
+export const IngredientSchema = z.object({
   name: z.string().describe("Name of the ingredient (e.g., 'Enriched Wheat Flour', 'Ascorbic Acid', 'Ibuprofen')."),
   quantity: z.number().nullable().describe("Numerical quantity of the ingredient, if specified (e.g., 200, 10.5). Null if not specified."),
   unit: z.string().nullable().describe("Unit for the quantity, if specified (e.g., 'mg', 'g', '%'). Normalize common units (mcg, μg -> ug). Null if quantity is null or unit not specified."),
 }).describe("Represents a single ingredient with optional quantity and unit.");
 
 // --- Base Schema ---
-const BaseSchema = z.object({
+export const BaseSchema = z.object({
   name: z.string().describe("Identify the specific name of the primary item (e.g., \"Cheerios\", \"Advil Liqui-Gels\", \"Banana\"). Be concise."),
   brand: z.string().optional().describe("Brand name, if identifiable (e.g., \"General Mills\", \"Advil\")."),
   upc: z.string().optional().describe("UPC barcode number, if identifiable from any image."),
@@ -25,7 +25,7 @@ const BaseSchema = z.object({
 });
 
 // --- Food Schema ---
-const FoodSchema = BaseSchema.extend({
+export const FoodSchema = BaseSchema.extend({
   type: z.literal('food').describe("ONLY use for items primarily intended for consumption as food or beverage (e.g., cereal, soda, bread). CRITICAL: DO NOT use for dietary supplements, medications, pills, capsules, powders etc."),
   servingSize_quantity: z.number().nullable().describe("Serving size quantity (e.g., 30, 1). Null if not specified."),
   servingSize_unit: z.string().nullable().describe("Serving size unit (e.g., 'g', 'cup', 'piece'). Null if quantity is null or unit not specified."),
@@ -37,7 +37,7 @@ const FoodSchema = BaseSchema.extend({
 });
 
 // --- Treatment Schema ---
-const TreatmentSchema = BaseSchema.extend({
+export const TreatmentSchema = BaseSchema.extend({
   type: z.literal('treatment').describe("Use ONLY for medications (drugs), whether prescription or over-the-counter (e.g., Ibuprofen, Aspirin, prescription medications). DO NOT use for dietary supplements."),
   dosage_form: z.string().optional().describe("Form of the medication (e.g., 'tablet', 'capsule', 'liquid', 'inhaler', 'cream')."),
   dosage_instructions: z.string().optional().describe("Instructions for use (e.g., 'Take two tablets daily', 'Apply to affected area')."),
@@ -47,7 +47,7 @@ const TreatmentSchema = BaseSchema.extend({
 
 // --- Supplement Schema (NEW) ---
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const SupplementSchema = BaseSchema.extend({
+export const SupplementSchema = BaseSchema.extend({
   type: z.literal('supplement').describe("Use ONLY for dietary supplements (e.g., vitamins, minerals, herbs, amino acids like Taurine, protein powders, creatine). These are distinct from food and medication."),
   dosage_form: z.string().optional().describe("Form of the supplement (e.g., 'capsule', 'tablet', 'powder', 'liquid', 'gummy')."),
   serving_size_description: z.string().optional().describe("Serving size as text if specified (e.g., '1 scoop', '2 capsules'). Capture numeric quantity/unit in active ingredients if possible."), // Alternative/addition to numeric serving size
@@ -58,7 +58,7 @@ const SupplementSchema = BaseSchema.extend({
 });
 
 // --- Other Schema ---
-const OtherSchema = BaseSchema.extend({
+export const OtherSchema = BaseSchema.extend({
   type: z.literal('other').describe("Use ONLY if the item CANNOT be classified as 'food', 'treatment' (medication), or 'supplement' based on the definitions above (e.g., cleaning supplies, pet food, cosmetics)."),
   // No additional fields specific to 'other' for now
 });

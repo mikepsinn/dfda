@@ -225,12 +225,179 @@ describe('ReminderNotificationCard', () => {
 
     // Check that rating buttons (or other input elements for pending) are NOT present
     expect(screen.queryByRole('button', { name: /rate 1/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /skip/i })).not.toBeInTheDocument(); // Skip button itself should not be there
+    // Ensure the original "Skip notification" button is not present
+    expect(screen.queryByRole('button', { name: /skip notification/i })).not.toBeInTheDocument(); 
 
     // Check for "Undo" button (as skipped items can be undone)
-    expect(screen.getByRole('button', { name: /undo/i })).toBeInTheDocument();
+    // The Undo button for skipped items has aria-label="Undo skip"
+    expect(screen.getByRole('button', { name: /undo skip/i })).toBeInTheDocument();
   });
 
   // Add more tests for:
   // - Different input_types (slider, quick_log, boolean_check, etc.)
+});
+
+// --- Tests for NUMERIC input type ---
+describe('ReminderNotificationCard - Numeric Input', () => {
+  const mockNumericNotification: ReminderNotificationDetails = {
+    ...mockNotification, // Base on the default mock
+    notificationId: 'notif-numeric-1',
+    scheduleId: 'sched-numeric-1',
+    userVariableId: 'uv-numeric-1',
+    globalVariableId: 'gv-numeric-1',
+    variableName: 'Blood Glucose',
+    unitId: 'unit-mg-dl', // A unit that would resolve to 'numeric' input type
+    unitName: 'mg/dL',
+    title: 'Log Blood Glucose',
+    defaultValue: 100,
+    emoji: '🩸',
+    // No specific min/max for generic numeric, component might have its own validation
+  };
+
+  const mockOnLogMeasurementNumeric = vi.fn();
+  const mockOnSkipNumeric = vi.fn();
+  const mockOnUndoNumeric = vi.fn();
+  const mockOnEditReminderSettingsNumeric = vi.fn();
+  const mockOnNavigateToVariableSettingsNumeric = vi.fn();
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should render pending numeric notification with input and Log button', () => {
+    render(
+      <ReminderNotificationCard
+        reminderNotification={mockNumericNotification}
+        userTimezone="America/New_York"
+        onLogMeasurement={mockOnLogMeasurementNumeric}
+        onSkip={mockOnSkipNumeric}
+        onUndoLog={mockOnUndoNumeric}
+        onEditReminderSettings={mockOnEditReminderSettingsNumeric}
+        onNavigateToVariableSettings={mockOnNavigateToVariableSettingsNumeric}
+      />
+    );
+
+    // Check for the numeric input field
+    const inputField = screen.getByRole('spinbutton', { name: mockNumericNotification.variableName });
+    expect(inputField).toBeInTheDocument();
+    expect(inputField).toHaveValue(mockNumericNotification.defaultValue);
+    expect(inputField).toHaveAttribute('type', 'number');
+
+    // Check for the "Log" button
+    expect(screen.getByRole('button', { name: 'Log' })).toBeInTheDocument();
+
+    // Check for "Skip" button
+    expect(screen.getByRole('button', { name: /skip notification/i })).toBeInTheDocument();
+  });
+
+  it('should call onLogMeasurement with entered value for numeric input', async () => {
+    const user = userEvent.setup();
+    const numericValueToLog = 120;
+    render(
+      <ReminderNotificationCard
+        reminderNotification={mockNumericNotification}
+        userTimezone="America/New_York"
+        onLogMeasurement={mockOnLogMeasurementNumeric}
+        onSkip={mockOnSkipNumeric}
+        onUndoLog={mockOnUndoNumeric}
+        onEditReminderSettings={mockOnEditReminderSettingsNumeric}
+        onNavigateToVariableSettings={mockOnNavigateToVariableSettingsNumeric}
+      />
+    );
+
+    const inputField = screen.getByRole('spinbutton', { name: mockNumericNotification.variableName });
+    const logButton = screen.getByRole('button', { name: 'Log' });
+
+    // Clear existing default value and type new value
+    await user.clear(inputField);
+    await user.type(inputField, numericValueToLog.toString());
+    await user.click(logButton);
+
+    expect(mockOnLogMeasurementNumeric).toHaveBeenCalledTimes(1);
+    expect(mockOnLogMeasurementNumeric).toHaveBeenCalledWith(mockNumericNotification, numericValueToLog);
+  });
+});
+
+// --- Tests for BOOLEAN input type ---
+describe('ReminderNotificationCard - Boolean Input', () => {
+  const mockBooleanNotification: ReminderNotificationDetails = {
+    ...mockNotification, // Base on the default mock from the first describe block
+    notificationId: 'notif-boolean-1',
+    scheduleId: 'sched-boolean-1',
+    userVariableId: 'uv-boolean-1',
+    globalVariableId: 'gv-boolean-1',
+    variableName: 'Took Medication?',
+    unitId: UNIT_IDS.BOOLEAN_1_YES_TRUE_0_NO_FALSE_, // Specific unit for boolean
+    unitName: 'Yes/No',
+    title: 'Confirm Medication Intake',
+    defaultValue: null, // Boolean usually doesn't have a numeric default in the same way
+    emoji: '💊',
+  };
+
+  const mockOnLogMeasurementBoolean = vi.fn();
+  // Other mocks if needed for skip/undo in boolean context, though primary focus is log
+  const mockOnSkipBoolean = vi.fn();
+  const mockOnUndoBoolean = vi.fn(); // For completeness, though boolean might not show undo if not logged
+  const mockOnEditReminderSettingsBoolean = vi.fn();
+  const mockOnNavigateToVariableSettingsBoolean = vi.fn();
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it('should render pending boolean notification with Yes and No buttons', () => {
+    render(
+      <ReminderNotificationCard
+        reminderNotification={mockBooleanNotification}
+        userTimezone="America/New_York"
+        onLogMeasurement={mockOnLogMeasurementBoolean}
+        onSkip={mockOnSkipBoolean}
+        onUndoLog={mockOnUndoBoolean}
+        onEditReminderSettings={mockOnEditReminderSettingsBoolean}
+        onNavigateToVariableSettings={mockOnNavigateToVariableSettingsBoolean}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'Yes' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'No' })).toBeInTheDocument();
+    // Ensure numeric input or rating buttons are not present
+    expect(screen.queryByRole('spinbutton')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /rate/i })).not.toBeInTheDocument();
+  });
+
+  it('should call onLogMeasurement with 1 when Yes button is clicked', async () => {
+    const user = userEvent.setup();
+    render(
+      <ReminderNotificationCard
+        reminderNotification={mockBooleanNotification}
+        userTimezone="America/New_York"
+        onLogMeasurement={mockOnLogMeasurementBoolean}
+        onSkip={mockOnSkipBoolean}
+        onUndoLog={mockOnUndoBoolean}
+        onEditReminderSettings={mockOnEditReminderSettingsBoolean}
+        onNavigateToVariableSettings={mockOnNavigateToVariableSettingsBoolean}
+      />
+    );
+    await user.click(screen.getByRole('button', { name: 'Yes' }));
+    expect(mockOnLogMeasurementBoolean).toHaveBeenCalledTimes(1);
+    expect(mockOnLogMeasurementBoolean).toHaveBeenCalledWith(mockBooleanNotification, 1);
+  });
+
+  it('should call onLogMeasurement with 0 when No button is clicked', async () => {
+    const user = userEvent.setup();
+    render(
+      <ReminderNotificationCard
+        reminderNotification={mockBooleanNotification}
+        userTimezone="America/New_York"
+        onLogMeasurement={mockOnLogMeasurementBoolean}
+        onSkip={mockOnSkipBoolean}
+        onUndoLog={mockOnUndoBoolean}
+        onEditReminderSettings={mockOnEditReminderSettingsBoolean}
+        onNavigateToVariableSettings={mockOnNavigateToVariableSettingsBoolean}
+      />
+    );
+    await user.click(screen.getByRole('button', { name: 'No' }));
+    expect(mockOnLogMeasurementBoolean).toHaveBeenCalledTimes(1);
+    expect(mockOnLogMeasurementBoolean).toHaveBeenCalledWith(mockBooleanNotification, 0);
+  });
 }); 

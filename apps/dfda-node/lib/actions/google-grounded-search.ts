@@ -1,21 +1,42 @@
 'use server';
 
-import { GoogleGenAI, HarmCategory, HarmBlockThreshold, Tool } from '@google/genai';
+import { GoogleGenAI, HarmCategory, HarmBlockThreshold, Tool, type Part } from '@google/genai';
 import { env } from '@/lib/env'; 
 import { logger } from '@/lib/logger';
+import { z } from 'zod';
+import { publicCitationsInsertSchemaSchema } from '@/lib/database.schemas';
 
 const LOG_PREFIX = '[google-grounded-search]';
+
+// Define a Zod schema for the citation structure we expect/need
+const GroundedSearchCitationSchema = publicCitationsInsertSchemaSchema.pick({
+  title: true,
+  url: true,
+}).extend({
+  url: z.string().min(1, { message: "Citation URL cannot be empty" }),
+});
+
+export type GroundedSearchCitationType = z.infer<typeof GroundedSearchCitationSchema>;
 
 // Define the structure for the response we want
 export interface GroundedSearchResult {
   answer: string;
-  citations: {
-    title?: string; // Title might not always be present
-    url: string;
-    // Start/end index might not be directly available in this API response structure
-  }[];
-  searchQueries?: string[]; // Add search queries used
-  renderedContent?: string; // HTML content for Search Suggestions
+  citations: GroundedSearchCitationType[];
+  searchQueries?: string[];
+  renderedContent?: string;
+}
+
+// Define a custom type for attribution based on observed usage
+interface CustomGroundingAttribution {
+  web?: {
+    uri: string;
+    title?: string;
+  };
+  retrievedContext?: {
+    uri: string;
+    title?: string;
+  };
+  // Other potential fields like `source_id`, `confidenceScore` could be added if needed
 }
 
 // Use the GOOGLE_GENERATIVE_AI_API_KEY from environment
@@ -86,28 +107,29 @@ export async function getGroundedAnswerAction(query: string): Promise<GroundedSe
     }
 
     const candidate = response.candidates[0];
-    const answer = candidate.content.parts.map(part => part.text).join('\n') || 'No answer generated.'; // Join parts if multiple
+    const answer = candidate.content.parts.map((part: Part) => part.text).join('\n') || 'No answer generated.'; // Join parts if multiple
 
     const groundingMetadata = candidate.groundingMetadata;
     logger.debug(`${LOG_PREFIX} Received groundingMetadata:`, { groundingMetadata }); 
-    const citations: GroundedSearchResult['citations'] = [];
+    // Ensure the citations array is typed correctly at initialization
+    const citations: GroundedSearchCitationType[] = [];
 
     // Citation processing based on @google/genai structure (may differ)
     // Check groundingAttributions or groundingChunks based on observed metadata
-    const attributions = groundingMetadata?.groundingAttributions ?? [];
-    attributions.forEach(att => {
-      if (att.web?.uri) { 
+    const attributions: CustomGroundingAttribution[] = groundingMetadata?.groundingAttributions ?? [];
+    attributions.forEach((att: CustomGroundingAttribution) => {
+      if (att.web?.uri) {
           citations.push({
               url: att.web.uri,
-              title: att.web.title || 'Untitled'
+              title: att.web.title || undefined
           });
-      } else if (att.retrievedContext?.uri) { 
+      } else if (att.retrievedContext?.uri) {
            citations.push({
               url: att.retrievedContext.uri,
-              title: att.retrievedContext.title || 'Untitled'
+              title: att.retrievedContext.title || undefined
           });
       }
-  });
+    });
 
     const searchQueries = groundingMetadata?.webSearchQueries;
     // Get rendered content for Search Suggestions display
@@ -122,7 +144,7 @@ export async function getGroundedAnswerAction(query: string): Promise<GroundedSe
 
     // Error structure might be simpler with this SDK
     logDetails.message = err.message;
-    logDetails.stack = err.stack?.split('\n').map(line => line.trim());
+    logDetails.stack = err.stack?.split('\n').map((line: string) => line.trim());
     errorMessage = `${errorMessage} Message: ${err.message}`;
 
     // Include response details if available (often attached to the error object)
