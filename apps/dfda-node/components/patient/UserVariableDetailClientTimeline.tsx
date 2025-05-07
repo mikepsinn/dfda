@@ -1,118 +1,134 @@
 "use client"
 
-import React, { useState, useCallback, useEffect, useMemo } from "react"
+import React, { useState, useCallback, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
-import { Button } from "@/components/ui/button"
 import { logger } from "@/lib/logger"
-import { UniversalTimeline, type FilterableVariableCategoryId } from "@/components/universal-timeline"
+import { UniversalTimeline } from "@/components/universal-timeline"
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
 import type { MeasurementCardData } from "@/components/measurement-card"
 import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
-import type { User } from "@supabase/supabase-js"
 import type { ReminderNotificationDetails } from "@/lib/database.types.custom"
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables"
-import { 
-    createMeasurementAndCompleteNotificationAction, 
-    completeReminderNotificationAction, 
-    undoNotificationAction 
-} from "@/lib/actions/reminder-notifications"
 
-export interface UserVariableDetailClientTimelineProps {
-  items: (MeasurementCardData | ReminderNotificationDetails)[];
-  date: Date;
-  userTimezone: string;
-  userId: string;
+interface UserVariableDetailClientTimelineProps {
+  userId: string
   userVariable: UserVariableWithDetails;
+  initialMeasurements: MeasurementCardData[];
+  initialTimelineNotifications: ReminderNotificationDetails[];
 }
 
-export function UserVariableDetailClientTimeline({ items: allItems, date, userTimezone, userId, userVariable }: UserVariableDetailClientTimelineProps) {
+export default function UserVariableDetailClientTimeline({
+  userId,
+  userVariable,
+  initialMeasurements,
+  initialTimelineNotifications,
+}: UserVariableDetailClientTimelineProps) {
   const router = useRouter()
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
 
-  // Type guard for MeasurementCardData
-  const isMeasurement = (item: any): item is MeasurementCardData => {
-    return 'start_at' in item && 'value' in item && 'unit' in item;
-  }
+  const measurementsForTimeline = useMemo(() => {
+    return initialMeasurements.map(m => ({ ...m, name: userVariable.global_variables?.name || 'Measurement' }));
+  }, [initialMeasurements, userVariable.global_variables?.name]);
 
-  // Type guard for ReminderNotificationDetails
-  const isReminderNotification = (item: any): item is ReminderNotificationDetails => {
-    return 'dueAt' in item && 'notificationId' in item && 'status' in item;
-  }
-
-  // Separate items into measurements and notifications using type guards
-  const measurementsForTimeline: MeasurementCardData[] = useMemo(() => {
-    return allItems.filter(isMeasurement);
-  }, [allItems]);
-
-  const notificationsForTimeline: ReminderNotificationDetails[] = useMemo(() => {
-    return allItems.filter(isReminderNotification);
-  }, [allItems]);
+  const notificationsForTimeline = useMemo(() => {
+    return initialTimelineNotifications;
+  }, [initialTimelineNotifications]);
 
   const handleAddMeasurementCallback = useCallback(() => {
     setDialogOpen(true)
   }, [])
 
-  const handleDialogSubmit = useCallback(async ({ value, unit, notes }: { userVariableId: string; value: number; unit: string; notes?: string }) => {
-    try {
-      if (!userVariable.global_variable_id) {
-        toast({ title: "Error", description: "No global variable ID found for this variable.", variant: "destructive" })
-        return
-      }
-      const result = await logMeasurementAction({ userId, globalVariableId: userVariable.global_variable_id, value, unitId: unit, notes })
-      if (!result.success) {
-        toast({ title: "Error", description: result.error || "Failed to add measurement.", variant: "destructive" })
-      } else {
-        toast({ title: "Measurement Added", description: "Measurement logged.", variant: "default" })
-        router.refresh()
-      }
-    } catch (e: any) {
-      toast({ title: "Error", description: e?.message || "Failed to add measurement.", variant: "destructive" })
-    } finally {
-      setDialogOpen(false)
+  const handleDialogSubmit = useCallback(async ({ value, unit, notes }: { value: number; unit: string; notes?: string }) => {
+    if (!userVariable.global_variable_id) {
+        toast({ title: 'Error', description: 'Variable configuration is missing.', variant: 'destructive' });
+        return;
     }
-  }, [userId, toast, router, userVariable])
+    try {
+        const result = await logMeasurementAction({ 
+            userId: userId,
+            globalVariableId: userVariable.global_variable_id, 
+            value, 
+            unitId: unit,
+            notes 
+        });
+        if (!result.success) {
+            toast({ title: 'Error', description: result.error || 'Failed to add measurement.', variant: 'destructive' });
+            return;
+        }
+        setDialogOpen(false);
+        router.refresh();
+        toast({ title: 'Measurement Added', description: `${userVariable.global_variables?.name || 'Variable'} measurement logged successfully.`, variant: 'default' });
+    } catch (e: any) {
+        toast({ title: 'Error', description: e?.message || 'Failed to add measurement.', variant: 'destructive' });
+        logger.error("Error submitting measurement from UserVariableDetailClientTimeline", { error: e, userVariableId: userVariable.id });
+    }
+  }, [userId, userVariable, toast, router])
 
   const handleEditMeasurementCallback = useCallback(async (measurementToUpdate: MeasurementCardData, newValue: number) => {
     try {
-      const result = await updateMeasurementAction({ 
-        measurementId: measurementToUpdate.id, 
-        userId, 
-        value: newValue, 
-        unitId: measurementToUpdate.unitId, 
-        notes: measurementToUpdate.notes ?? undefined 
-      })
-      if (!result.success) {
-        toast({ title: "Error", description: result.error || "Failed to update measurement.", variant: "destructive" })
-      } else {
-        toast({ title: "Measurement Updated", description: "Details saved.", variant: "default" })
-        router.refresh()
-      }
+        const result = await updateMeasurementAction({
+            measurementId: measurementToUpdate.id, 
+            userId: userId,
+            value: newValue, 
+            unitId: measurementToUpdate.unitId,
+            notes: measurementToUpdate.notes ?? undefined
+        });
+        if (!result.success) {
+            toast({ title: 'Error', description: result.error || 'Failed to update measurement.', variant: 'destructive' });
+        } else {
+            toast({ title: 'Measurement Updated', description: 'Measurement details saved.', variant: 'default' });
+            router.refresh();
+        }
     } catch (e: any) {
-      toast({ title: "Error", description: e?.message || "Failed to update measurement.", variant: "destructive" })
+        toast({ title: 'Error', description: e?.message || 'Failed to update measurement.', variant: 'destructive' });
+        logger.error("Error editing measurement from UserVariableDetailClientTimeline", { error: e, measurementId: measurementToUpdate.id });
     }
   }, [userId, toast, router])
 
+  const handleLogNotification = async (notification: ReminderNotificationDetails, value: number) => {
+    logger.info('Log notification from UserVariableDetailClientTimeline:', { notificationId: notification.notificationId, value });
+    toast({title: "Log Action (Not Implemented)", description: "Logging reminder notifications from this specific timeline view is not yet fully implemented.", variant: "default"});
+    // TODO: If this view should actually log notifications, call the appropriate action here, e.g.:
+    // await createMeasurementAndCompleteNotificationAction({ userId, globalVariableId: notification.globalVariableId, ... });
+  };
+
+  const handleSkipNotificationTimeline = async (notification: ReminderNotificationDetails) => {
+    logger.info('Skip notification from UserVariableDetailClientTimeline:', { notificationId: notification.notificationId });
+    toast({title: "Skip Action (Not Implemented)", description: "Skipping reminders from this view is not yet implemented.", variant: "default"});
+    // TODO: await completeReminderNotificationAction(notification.notificationId, userId, true);
+  };
+
+  const handleUndoNotificationTimeline = async (notification: ReminderNotificationDetails) => {
+    logger.info('Undo notification from UserVariableDetailClientTimeline:', { notificationId: notification.notificationId });
+    toast({title: "Undo Action (Not Implemented)", description: "Undo from this view is not yet implemented.", variant: "default"});
+    // TODO: await undoNotificationAction({ notificationId: notification.notificationId, userId });
+  };
+
   return (
-    <>
-      <UniversalTimeline
-        rawMeasurements={measurementsForTimeline}
-        rawNotifications={notificationsForTimeline}
-        date={date}
-        userTimezone={userTimezone}
-        onAddMeasurement={handleAddMeasurementCallback}
-        onUpdateMeasurement={handleEditMeasurementCallback}
-        showAddButtons
-        showFilters
-        showDateNavigation
-      />
-      <MeasurementAddDialog
-        isOpen={dialogOpen}
-        onClose={() => setDialogOpen(false)}
-        userVariables={[userVariable]}
-        onSubmit={handleDialogSubmit}
-      />
-    </>
+    <div className="space-y-6">
+        <UniversalTimeline
+            rawMeasurements={measurementsForTimeline}
+            rawNotifications={notificationsForTimeline}
+            userTimezone={userTimezone}
+            onAddMeasurement={handleAddMeasurementCallback}
+            onUpdateMeasurement={handleEditMeasurementCallback}
+            onLogNotificationMeasurement={handleLogNotification}
+            onSkipNotification={handleSkipNotificationTimeline}
+            onUndoNotificationLog={handleUndoNotificationTimeline}
+            showFilters={false}
+            showDateNavigation={true}
+            showAddButtons={true}
+            emptyState={<p>No measurements or relevant notifications found for this variable on this day.</p>}
+        />
+        <MeasurementAddDialog
+            isOpen={dialogOpen}
+            onClose={() => setDialogOpen(false)}
+            userVariables={userVariable ? [userVariable] : []}
+            onSubmit={handleDialogSubmit}
+        />
+    </div>
   )
 }
