@@ -15,6 +15,7 @@ import { quickAddJob } from 'graphile-worker';
 import { VARIABLE_CATEGORY_IDS } from '@/lib/constants/variable-categories'
 import { getUserProfile } from "@/lib/profile"; // Import profile helper
 import { getServerUser } from "@/lib/server-auth"; // Import if needed for user context
+import type { ReminderNotificationStatus } from "@/components/reminder-notification-card"; // ADD THIS IMPORT
 
 // Types
 export type ReminderSchedule = Database['public']['Tables']['reminder_schedules']['Row']
@@ -557,18 +558,22 @@ export async function createDefaultReminderAction(
 // --- Refactored Tracking Inbox Actions --- 
 
 // New type for the data needed by the TrackingInbox component
-export type PendingNotificationTask = {
-  notificationId: string; // The ID of the reminder_notifications record
+// Renamed and expanded to include status, defaultValue, emoji
+export type FetchedPendingNotification = {
+  notificationId: string; 
   scheduleId: string;
   userVariableId: string;
   variableName: string;
   globalVariableId: string;
-  variableCategory: string;
-  unitId: string;
-  unitName: string;
-  dueAt: string; // The original notification_trigger_at timestamp
-  title: string | null; // From schedule template
-  message: string | null; // From schedule template
+  variableCategory: string; // This should be VariableCategoryId from database.types ideally
+  unitId: string; // UPDATED: No longer null
+  unitName: string; // UPDATED: No longer null
+  dueAt: string; 
+  title: string | null; 
+  message: string | null; 
+  status: ReminderNotificationStatus; // ADDED - Assuming it's from reminder_notifications.status
+  defaultValue?: number | null;      // ADDED - From reminder_schedules.default_value
+  emoji?: string | null;             // ADDED - From global_variables.emoji
 };
 
 /**
@@ -576,19 +581,20 @@ export type PendingNotificationTask = {
  */
 export async function getPendingReminderNotificationsAction(
   userId: string
-): Promise<PendingNotificationTask[]> {
+): Promise<FetchedPendingNotification[]> { // UPDATED return type
   const supabase = await createClient();
   logger.info('Fetching pending reminder notifications', { userId });
 
-  // Fetch pending notifications and join related data
   const { data: notifications, error } = await supabase
     .from('reminder_notifications')
     .select(`
       id, 
       notification_trigger_at,
+      status,
       reminder_schedules!inner(
         id,
         user_variable_id,
+        default_value,
         notification_title_template,
         notification_message_template,
         user_variables!inner(
@@ -598,15 +604,17 @@ export async function getPendingReminderNotificationsAction(
                 name,
                 variable_category_id,
                 default_unit_id,
-                default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name ) 
+                emoji,
+                default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name, name ), 
+                variable_categories!inner( id, name )
             ),
-            preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name )
+            preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name, name )
         )
       )
     `)
     .eq('user_id', userId)
-    .eq('status', 'pending') // Only fetch pending
-    .order('notification_trigger_at', { ascending: true }); // Show oldest first
+    .eq('status', 'pending') 
+    .order('notification_trigger_at', { ascending: true }); 
 
   if (error) {
     logger.error('Error fetching pending reminder notifications', { userId, error });
@@ -618,16 +626,28 @@ export async function getPendingReminderNotificationsAction(
     return [];
   }
 
-  // Map to the defined task structure
-  const tasks: PendingNotificationTask[] = notifications.map(n => {
+  const tasks: FetchedPendingNotification[] = notifications.map(n => {
     const schedule = n.reminder_schedules as any;
     const userVar = schedule?.user_variables as any;
     const globalVar = userVar?.global_variables as any;
+    const category = globalVar?.variable_categories as any; 
     const preferredUnit = userVar?.preferred_unit as any;
     const defaultUnit = globalVar?.default_unit as any;
 
-    const resolvedUnitId = preferredUnit?.id || defaultUnit?.id || null;
-    const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit?.abbreviated_name || null;
+    const resolvedUnitId = preferredUnit?.id || defaultUnit?.id;
+    const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit?.abbreviated_name;
+
+    // Skip this notification if unitId or unitName could not be resolved
+    if (!resolvedUnitId || !resolvedUnitName) {
+      logger.warn('Skipping pending notification due to missing unit information', { notificationId: n.id });
+      return null;
+    }
+    
+    // Also ensure variableCategory (category.id) is present
+    if (!category?.id) {
+        logger.warn('Skipping pending notification due to missing variable category ID', { notificationId: n.id });
+        return null;
+    }
 
     return {
         notificationId: n.id,
@@ -635,14 +655,17 @@ export async function getPendingReminderNotificationsAction(
         userVariableId: schedule?.user_variable_id || '',
         variableName: globalVar?.name || 'Unknown Item',
         globalVariableId: userVar?.global_variable_id || '',
-        variableCategory: globalVar?.variable_category_id || null,
-        unitId: resolvedUnitId,
-        unitName: resolvedUnitName,
+        variableCategory: category.id as string, // category.id should be string
+        unitId: resolvedUnitId, // Now guaranteed to be string
+        unitName: resolvedUnitName, // Now guaranteed to be string
         dueAt: n.notification_trigger_at as string,
         title: schedule?.notification_title_template || null,
         message: schedule?.notification_message_template || null,
+        status: n.status as ReminderNotificationStatus, 
+        defaultValue: schedule?.default_value,       
+        emoji: globalVar?.emoji,                   
     };
-  });
+  }).filter((task): task is FetchedPendingNotification => task !== null); // Filter out null tasks
 
   logger.info(`Found ${tasks.length} pending reminder notifications`, { userId });
   return tasks;

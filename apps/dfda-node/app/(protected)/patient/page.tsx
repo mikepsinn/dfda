@@ -12,7 +12,8 @@ import type { MeasurementCardData } from "@/components/measurement-card"; // ADD
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables"; // Import necessary type
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { PatientConditionRow } from "@/lib/actions/conditions"; // Import necessary type
-import type { PendingNotificationTask } from '@/lib/actions/reminder-schedules'; // Import for casting
+import type { FetchedPendingNotification } from '@/lib/actions/reminder-schedules'; // UPDATE to FetchedPendingNotification
+import type { ReminderNotificationCardData, ReminderNotificationStatus } from "@/components/reminder-notification-card"; // ADD THIS
 
 // Revalidate data every 60 seconds
 export const revalidate = 60;
@@ -74,8 +75,8 @@ export default async function PatientDashboardPage() {
     'initial conditions'
   );
 
-  // Fetch as TimelineItem[], then cast for the prop later if necessary
-  const initialPendingNotificationsData = processResult<PendingNotificationTask>(
+  // Now FetchedPendingNotification[]
+  const initialPendingNotificationsData = processResult<FetchedPendingNotification>(
     results[2],
     'pending notifications'
   );
@@ -85,14 +86,29 @@ export default async function PatientDashboardPage() {
     'initial measurements'
   );
   
-  // No longer combine here, pass separately
-  // const initialTimelineNotifications: TimelineItem[] | null = initialPendingNotifications as TimelineItem[] | null;
-  // const combinedTimelineItems = [
-  //   ...(initialMeasurements || []),
-  //   ...(initialTimelineNotifications || [])
-  // ].sort(
-  //   (a, b) => new Date(a.triggerAtUtc).getTime() - new Date(b.triggerAtUtc).getTime()
-  // );
+  // Map FetchedPendingNotification[] to ReminderNotificationCardData[] for UniversalTimeline
+  const initialTimelineNotificationsForDisplay: ReminderNotificationCardData[] = initialPendingNotificationsData.map(task => {
+    // No need for 'as any' for status, defaultValue, emoji if FetchedPendingNotification is correctly typed
+    return {
+      id: task.notificationId,
+      reminderScheduleId: task.scheduleId,
+      triggerAtUtc: task.dueAt,
+      status: task.status, // Directly use from FetchedPendingNotification
+      variableName: task.variableName,
+      variableCategoryId: task.variableCategory,
+      unitId: task.unitId!,
+      unitName: task.unitName!,
+      globalVariableId: task.globalVariableId,
+      userVariableId: task.userVariableId,
+      details: task.message || undefined,
+      detailsUrl: undefined,
+      isEditable: task.status === 'pending',
+      defaultValue: task.defaultValue,
+      emoji: task.emoji,
+      currentValue: null, 
+      loggedValueUnit: undefined,
+    };
+  });
 
   // Redirect to onboarding if user has no conditions (implies first login or error)
   // Use the initial check result for redirect logic
@@ -106,10 +122,10 @@ export default async function PatientDashboardPage() {
     <PatientDashboardDisplay
       initialUser={user} 
       initialConditions={initialConditionsResult} 
-      initialPendingNotifications={initialPendingNotificationsData} // This is for TrackingInbox
+      initialPendingNotifications={initialPendingNotificationsData} // This is for TrackingInbox (expects PendingNotificationTask[])
       // Pass distinct data for UniversalTimeline
       initialMeasurements={initialMeasurementsData} 
-      initialTimelineNotifications={initialPendingNotificationsData} // UniversalTimeline will map PendingNotificationTask
+      initialTimelineNotifications={initialTimelineNotificationsForDisplay} // UPDATED to mapped data
       initialUserVariables={initialUserVariables} 
       initialDateForTimeline={serverToday.toISOString()} // Pass serverToday as ISO string
     />

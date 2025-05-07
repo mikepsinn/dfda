@@ -25,7 +25,7 @@ import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants
 
 // REMOVE: import type { MeasurementNotificationItemData, VariableCategoryId as SharedVariableCategoryId, MeasurementStatus as SharedMeasurementStatus } from "@/components/shared/measurement-notification-item";
 import type { Database } from "@/lib/database.types"; // ADD this for direct db type imports
-import type { PendingNotificationTask } from "@/lib/actions/reminder-schedules"; // Import PendingNotificationTask
+// REMOVE: import type { PendingNotificationTask } from "@/lib/actions/reminder-schedules"; // Import PendingNotificationTask
 
 import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
 import { ReminderNotificationCard, type ReminderNotificationCardData, type ReminderNotificationStatus } from "@/components/reminder-notification-card";
@@ -43,7 +43,7 @@ export type TimelineItem = any; // TEMPORARY: To allow compilation. Will be fixe
 export interface UniversalTimelineProps {
   title?: string;
   rawMeasurements?: MeasurementCardData[]; // Changed to expect MeasurementCardData[] directly
-  rawNotifications?: PendingNotificationTask[]; // Changed from notifications: MeasurementNotificationItemData[]
+  rawNotifications?: ReminderNotificationCardData[]; // UPDATED from PendingNotificationTask[]
   date?: Date;
   userTimezone?: string;
   onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void
@@ -118,110 +118,61 @@ export function UniversalTimeline({
 
   // Filter notifications and map to ReminderNotificationCardData
   const filteredNotifications = useMemo(() => {
-    logger.info("[UniversalTimeline] Processing rawNotifications for timeline display", {
+    logger.info("[UniversalTimeline] Processing rawNotifications (now ReminderNotificationCardData) for display", {
       count: rawNotifications.length,
-      sample: rawNotifications.slice(0, 3).map(t => ({ 
-        id: t.notificationId, 
-        dueAt: t.dueAt, 
-        scheduleId: t.scheduleId, 
-        status: (t as any).status, // Keep for logging sample if useful
-        variableName: t.variableName 
+      sample: rawNotifications.slice(0, 3).map(n => ({ 
+        id: n.id, 
+        triggerAtUtc: n.triggerAtUtc, 
+        status: n.status,
+        variableName: n.variableName 
       })),
       selectedDate: selectedDate.toISOString()
     });
 
-    return rawNotifications 
-      .filter((task) => { 
+    return rawNotifications // This is now ReminderNotificationCardData[]
+      .filter((item: ReminderNotificationCardData) => { // item is ReminderNotificationCardData
         try {
-          // Ensure task and task.dueAt are defined before trying to access properties
-          if (!task || !task.dueAt) {
-            logger.warn("[UniversalTimeline] Filtering out notification due to missing task or dueAt.", { task });
+          if (!item || !item.triggerAtUtc) {
+            logger.warn("[UniversalTimeline] Filtering out notification due to missing item or triggerAtUtc.", { item });
             return false;
           }
-          if (isNaN(new Date(task.dueAt).getTime())) {
-            // Log error for invalid date, but allow it to be filtered out
-            logger.error(`[UniversalTimeline] Invalid dueAt for notification: ${task.notificationId || 'ID_UNKNOWN'}`, { dueAt: task.dueAt });
-            return false; // Filter out items with invalid dates
+          if (isNaN(new Date(item.triggerAtUtc).getTime())) {
+            logger.error(`[UniversalTimeline] Invalid triggerAtUtc for notification: ${item.id || 'ID_UNKNOWN'}`, { triggerAtUtc: item.triggerAtUtc });
+            return false;
           }
-          const itemDate = new Date(task.dueAt); 
+          const itemDate = new Date(item.triggerAtUtc); 
           const isSameDay =
             itemDate.getUTCFullYear() === selectedDate.getUTCFullYear() &&
             itemDate.getUTCMonth() === selectedDate.getUTCMonth() &&
             itemDate.getUTCDate() === selectedDate.getUTCDate();
           
-          if (!isSameDay) {
-            return false;
-          }
+          if (!isSameDay) return false;
 
-          // Basic check for essential fields needed for the card
-          if (!task.notificationId || !task.scheduleId || !task.variableName || !task.variableCategory || !task.unitId || !task.unitName) {
-            logger.error(`[UniversalTimeline] Filtering out notification ${task.notificationId || 'ID_UNKNOWN'} due to missing essential fields.`, { task });
-            return false;
-          }
+          // Basic check for essential fields (already checked by ReminderNotificationCardData type)
+          // if (!item.id || !item.reminderScheduleId || !item.variableName || !item.variableCategoryId || !item.unitId || !item.unitName) {
+          //   logger.error(`[UniversalTimeline] Filtering out notification ${item.id || 'ID_UNKNOWN'} due to missing essential fields.`, { item });
+          //   return false;
+          // }
           
-          // Validate status - it should be one of the defined ReminderNotificationStatus types
-          const validStatuses: ReminderNotificationStatus[] = ["pending", "completed", "skipped", "error"];
-          const notificationStatus = (task as any).status as ReminderNotificationStatus; // Temporary cast
-
-          if (notificationStatus && !validStatuses.includes(notificationStatus)) {
-            logger.error(`[UniversalTimeline] Invalid status '${notificationStatus}' for notification: ${task.notificationId}. Filtering out.`, { task });
-            return false; // Filter out items with invalid status
-          }
+          // Status validation (already part of ReminderNotificationStatus type)
+          // const validStatuses: ReminderNotificationStatus[] = ["pending", "completed", "skipped", "error"];
+          // if (item.status && !validStatuses.includes(item.status)) {
+          //   logger.error(`[UniversalTimeline] Invalid status '${item.status}' for notification: ${item.id}. Filtering out.`, { item });
+          //   return false; 
+          // }
           
           return true;
         } catch (error) {
           logger.error("[UniversalTimeline] Error during notification pre-filtering phase:", { 
             message: error instanceof Error ? error.message : String(error),
-            taskId: task?.notificationId,
-            taskData: task // log the task data for easier debugging
+            itemId: item?.id,
+            itemData: item 
           });
           return false; 
         }
       })
-      .map((task): ReminderNotificationCardData | null => { 
-        try {
-            // Status determination: DB should provide this. Default to 'pending' if missing.
-            const statusFromTask = (task as any).status; 
-            const mappedStatus: ReminderNotificationStatus = 
-              statusFromTask && ['pending', 'completed', 'skipped', 'error'].includes(statusFromTask) 
-              ? statusFromTask 
-              : 'pending';
-
-            const defaultValueFromTask = (task as any).defaultValue;
-            const emojiFromTask = (task as any).emoji;
-            const currentValueFromTask = (task as any).currentValue ?? null; 
-            const loggedValueUnitFromTask = (task as any).loggedValueUnit ?? task.unitName;
-
-            return {
-                id: task.notificationId!,
-                reminderScheduleId: task.scheduleId!,
-                triggerAtUtc: task.dueAt!,
-                status: mappedStatus, 
-                variableName: task.variableName!, 
-                variableCategoryId: task.variableCategory! as VariableCategoryId, // UPDATED to use VariableCategoryId 
-                unitId: task.unitId!, 
-                unitName: task.unitName!, 
-                globalVariableId: (task as any).globalVariableId,
-                userVariableId: (task as any).userVariableId,
-                details: task.message || undefined, 
-                detailsUrl: undefined,
-                isEditable: true,
-                defaultValue: typeof defaultValueFromTask === 'number' ? defaultValueFromTask : null, 
-                emoji: typeof emojiFromTask === 'string' ? emojiFromTask : null,
-                currentValue: typeof currentValueFromTask === 'number' ? currentValueFromTask : null, 
-                loggedValueUnit: typeof loggedValueUnitFromTask === 'string' ? loggedValueUnitFromTask : task.unitName!,
-            };
-        } catch (error) { 
-            logger.error("[UniversalTimeline] Error mapping PendingNotificationTask to ReminderNotificationCardData:", { 
-              message: error instanceof Error ? error.message : String(error),
-              taskId: task?.notificationId,
-              taskData: task
-            });
-            return null; 
-        }
-      })
-      .filter((item): item is ReminderNotificationCardData => item !== null);
-
+      // REMOVE THE MAPPING LOGIC: .map((task): ReminderNotificationCardData | null => { ... }).filter(...) 
+      // Data is already ReminderNotificationCardData[]
   }, [rawNotifications, selectedDate]);
 
   // Handler for MeasurementCard's onUpdateMeasurement

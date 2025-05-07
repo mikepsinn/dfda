@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { 
     getPendingReminderNotificationsAction, 
     completeReminderNotificationAction, 
-    type PendingNotificationTask
+    type FetchedPendingNotification
 } from "@/lib/actions/reminder-schedules"
 import { logger } from "@/lib/logger"
 import { useToast } from "@/components/ui/use-toast"
@@ -17,7 +17,7 @@ import { ReminderNotificationCard, type ReminderNotificationCardData } from "@/c
 
 interface TrackingInboxProps {
   userId: string;
-  initialNotifications?: PendingNotificationTask[];
+  initialNotifications?: FetchedPendingNotification[];
 }
 
 // Type to store details of recently logged notifications (simplified for measurements only)
@@ -28,7 +28,7 @@ interface LoggedNotificationState {
 }
 
 export function TrackingInbox({ userId, initialNotifications: initialNotificationsProp }: TrackingInboxProps) {
-  const [notifications, setNotifications] = useState<PendingNotificationTask[]>(initialNotificationsProp || []);
+  const [notifications, setNotifications] = useState<FetchedPendingNotification[]>(initialNotificationsProp || []);
   const [isLoading, setIsLoading] = useState(!initialNotificationsProp || initialNotificationsProp.length === 0); // True only if no initial notifications
   const [loggedNotifications, setLoggedNotifications] = useState<Record<string, LoggedNotificationState>>({});
   const [, startTransition] = useTransition();
@@ -205,24 +205,21 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
             {notifications.map((notification) => {
               const loggedState = loggedNotifications[notification.notificationId];
               
-              // Asserting type for defaultValue and emoji due to mismatch with PendingNotificationTask type def
-              // TODO: Fix PendingNotificationTask type in lib/actions/reminder-schedules.ts
-              const currentDefaultValue = (notification as any).defaultValue;
-              const currentEmoji = (notification as any).emoji;
-
               const cardDataItem: ReminderNotificationCardData = {
                 id: notification.notificationId,
                 reminderScheduleId: notification.scheduleId,
                 triggerAtUtc: notification.dueAt,
-                status: (loggedState ? 'completed' : 'pending') as ReminderNotificationCardData['status'],
+                status: notification.status && ['pending', 'completed', 'skipped', 'error'].includes(notification.status) 
+                        ? notification.status 
+                        : (loggedState ? 'completed' : 'pending'),
                 variableName: notification.variableName,
-                variableCategoryId: notification.variableCategory, 
-                unitId: notification.unitId,
-                unitName: notification.unitName,
-                details: notification.message || undefined, // Use reminder message as details
-                isEditable: !loggedState, // Example: can edit reminder if not yet actioned
-                defaultValue: currentDefaultValue,
-                emoji: currentEmoji,
+                variableCategoryId: notification.variableCategory as ReminderNotificationCardData['variableCategoryId'],
+                unitId: notification.unitId || 'fallback_id',
+                unitName: notification.unitName || 'fallback_name',
+                details: notification.message || undefined,
+                isEditable: !loggedState,
+                defaultValue: notification.defaultValue,
+                emoji: notification.emoji,
                 currentValue: loggedState?.value,
               };
 
