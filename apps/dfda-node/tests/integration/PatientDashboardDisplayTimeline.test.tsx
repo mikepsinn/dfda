@@ -2,16 +2,16 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom'; // For extended matchers
+import userEvent from '@testing-library/user-event';
 
 import PatientDashboardDisplay from '@/components/patient/PatientDashboardDisplay';
 import type { User } from '@supabase/supabase-js';
-import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
+import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId } from "@/lib/database.types.custom";
 import { getPendingReminderNotificationsAction } from '@/lib/actions/reminder-notifications';
 import type { UserVariableWithDetails } from '@/lib/actions/user-variables';
 import type { Tables } from '@/lib/database.types';
 import { UniversalTimeline } from "@/components/universal-timeline";
 import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
-import type { ReminderNotificationCardData, ReminderNotificationStatus, VariableCategoryId } from "@/components/reminder-notification-card";
 import { VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories";
 
 // Mock dependencies using Jest
@@ -36,6 +36,13 @@ jest.mock('@/lib/logger', () => ({
     error: jest.fn(),
     debug: jest.fn(),
   },
+}));
+
+// Mock actions from reminder-notifications
+jest.mock('@/lib/actions/reminder-notifications', () => ({
+  // getPendingReminderNotificationsAction: jest.fn(), // Already mocked if needed elsewhere, or add if not
+  logMeasurementFromNotificationAction: jest.fn(),
+  setNotificationStatusAction: jest.fn(),
 }));
 
 // Mock child components to isolate testing to PatientDashboardDisplay and UniversalTimeline's rendering logic
@@ -76,41 +83,45 @@ yesterday.setDate(today.getDate() - 1);
 
 // Define a more complete interface for our mock notifications for testing purposes
 interface MockNotificationTestData extends Partial<ReminderNotificationDetails> {
-  notificationId: string;
-  dueAt: string;
-  variableName: string;
-  status?: ReminderNotificationStatus;
-  scheduleId?: string;
-  userVariableId?: string;
-  globalVariableId?: string;
-  variableCategory?: string;
-  unitId?: string;
-  unitName?: string;
-  title?: string | null;
-  message?: string | null;
-  defaultValue?: number | null;
-  emoji?: string | null;
+  notificationId: string; // Already in ReminderNotificationDetails, but good for overrides
+  dueAt: string;          // Already in ReminderNotificationDetails
+  variableName: string;   // Already in ReminderNotificationDetails
+  scheduleId: string;     // Already in ReminderNotificationDetails
+  userVariableId: string; // Now required in ReminderNotificationDetails
+  globalVariableId: string; // Now required in ReminderNotificationDetails
+  variableCategory: VariableCategoryId; // Already in ReminderNotificationDetails
+  unitId: string;         // Already in ReminderNotificationDetails
+  unitName: string;       // Already in ReminderNotificationDetails
+  status?: ReminderNotificationStatus; // Already in ReminderNotificationDetails
+  // title?: string | null; // In ReminderNotificationDetails
+  // message?: string | null; // In ReminderNotificationDetails
+  // defaultValue?: number | null; // In ReminderNotificationDetails
+  // emoji?: string | null; // In ReminderNotificationDetails
+  // value?: number | null; // In ReminderNotificationDetails (for completed items)
+  // isEditable?: boolean | null; // In ReminderNotificationDetails
 }
 
 // Helper to create a mock ReminderNotificationDetails
-const createMockNotification = (overrides: MockNotificationTestData): ReminderNotificationDetails => {
-  const base = {
-    notificationId: 'default-notif-id', // Added default for notificationId
-    scheduleId: 'default-schedule-id', 
-    dueAt: today.toISOString(), // Added default for dueAt
-    variableName: 'Default Variable', // Added default for variableName
-    variableCategory: 'cat-test',
+const createMockNotification = (overrides: Partial<ReminderNotificationDetails & {notificationId: string}>): ReminderNotificationDetails => {
+  const base: ReminderNotificationDetails = {
+    notificationId: overrides.notificationId || 'default-notif-id',
+    scheduleId: 'default-schedule-id',
+    userVariableId: 'default-uv-id',     // Provide default
+    globalVariableId: 'default-gv-id', // Provide default
+    dueAt: today.toISOString(),
+    variableName: 'Default Variable',
+    variableCategory: 'cat-test' as VariableCategoryId, // Cast for test purposes
     unitId: 'unit-test',
     unitName: 'test unit',
+    title: 'Test Title',
     message: 'Test message',
-    userVariableId: 'uv-test',
-    globalVariableId: 'gv-test',
-    status: 'pending' as ReminderNotificationStatus, // Ensure status is valid and typed
+    status: 'pending', // Default status
     defaultValue: null,
     emoji: null,
-    // REMOVE: value: null, // This field does not exist on FetchedPendingNotification
+    value: null, // For completed items
+    isEditable: true, // Default for testing
   };
-  return { ...base, ...overrides } as ReminderNotificationDetails; // Removed unknown cast, type should align now
+  return { ...base, ...overrides };
 };
 
 
@@ -119,18 +130,23 @@ const mockPendingNotifications: ReminderNotificationDetails[] = [
   createMockNotification({
     notificationId: 'notif-1-today-valid',
     scheduleId: 'sched-1-valid',
+    userVariableId: 'uv-mood-log',
+    globalVariableId: 'gv-mood-log',
     dueAt: today.toISOString(),
     variableName: 'Daily Mood Log',
-    variableCategory: 'cat-health',
-    unitId: 'unit-rating',
+    variableCategory: VARIABLE_CATEGORY_IDS.MENTAL_AND_EMOTIONAL_STATE as VariableCategoryId,
+    unitId: 'unit-rating-1-5',
+    unitName: 'rating',
     emoji: '😊',
-    defaultValue: 5,
+    defaultValue: 3,
     status: 'pending',
   }),
   // #2 Should be filtered out (wrong date - tomorrow)
   createMockNotification({
     notificationId: 'notif-2-tomorrow',
     scheduleId: 'sched-2',
+    userVariableId: 'uv-future',
+    globalVariableId: 'gv-future',
     dueAt: tomorrow.toISOString(),
     variableName: 'Future Task',
     status: 'pending',
@@ -139,35 +155,48 @@ const mockPendingNotifications: ReminderNotificationDetails[] = [
   createMockNotification({
     notificationId: 'notif-3-yesterday',
     scheduleId: 'sched-3',
+    userVariableId: 'uv-past',
+    globalVariableId: 'gv-past',
     dueAt: yesterday.toISOString(),
     variableName: 'Past Due Task',
     status: 'pending',
   }),
-  // #4 Test case for an item that *should* be a notification but has a missing/invalid scheduleId
+  // #4 Test case for an item that *should* be a notification but has a missing/invalid scheduleId (will be filtered by UniversalTimeline's mapping)
   createMockNotification({
     notificationId: 'notif-4-invalid-scheduleId',
     scheduleId: undefined as any, // Explicitly invalid for testing filter
+    userVariableId: 'uv-invalid-sched',
+    globalVariableId: 'gv-invalid-sched',
     dueAt: today.toISOString(),
     variableName: 'Task Invalid ScheduleId',
     status: 'pending',
   }),
-  // #5 Should be filtered out (invalid status that doesn't default to 'pending' correctly)
+  // #5 Should be filtered out (invalid status that doesn't default to 'pending' correctly if not a valid enum)
+  // UniversalTimeline mapping will default to 'pending' if item.status is falsy, but not if it's an invalid string.
+  // For testing this, we'll use a valid status that is not 'pending' or 'completed' for initial display, e.g. 'skipped'.
   createMockNotification({
-    notificationId: 'notif-5-invalid-status',
+    notificationId: 'notif-5-skipped-status',
     scheduleId: 'sched-5',
+    userVariableId: 'uv-skipped',
+    globalVariableId: 'gv-skipped',
     dueAt: today.toISOString(),
-    variableName: 'Task with specific status',
-    status: 'skipped', // Changed from 'way-too-late' to a valid status
+    variableName: 'Task with Skipped Status',
+    status: 'skipped',
   }),
   // #6 Should be displayed (completed status, still on today)
   createMockNotification({
     notificationId: 'notif-6-today-completed',
     scheduleId: 'sched-6-valid',
+    userVariableId: 'uv-completed-mood',
+    globalVariableId: 'gv-completed-mood',
     dueAt: today.toISOString(),
     variableName: 'Completed Mood Log',
-    variableCategory: 'cat-health',
-    unitId: 'unit-rating',
+    variableCategory: VARIABLE_CATEGORY_IDS.MENTAL_AND_EMOTIONAL_STATE as VariableCategoryId,
+    unitId: 'unit-rating-1-5',
+    unitName: 'rating',
     status: 'completed',
+    value: 4, // Logged value
+    emoji: '👍',
   }),
 ];
 
@@ -216,36 +245,9 @@ const mockInitialPendingNotifications: ReminderNotificationDetails[] = [
   // ... existing mock data ...
 ];
 
-// This mock should be ReminderNotificationCardData[]
-const mockInitialTimelineNotifications: ReminderNotificationCardData[] = [
-  {
-    id: "t-notif1",
-    reminderScheduleId: "rs1",
-    triggerAtUtc: "2023-10-26T09:00:00.000Z",
-    status: "pending",
-    variableName: "Morning Check-in",
-    variableCategoryId: VARIABLE_CATEGORY_IDS.MENTAL_AND_EMOTIONAL_STATE as VariableCategoryId,
-    unitId: "unit-rating",
-    unitName: "Rating 1-5",
-    emoji: "📝",
-    isEditable: true,
-    defaultValue: 3,
-  },
-  {
-    id: "t-notif2",
-    reminderScheduleId: "rs2",
-    triggerAtUtc: "2023-10-26T14:00:00.000Z",
-    status: "completed",
-    variableName: "Afternoon Mood",
-    variableCategoryId: VARIABLE_CATEGORY_IDS.MENTAL_AND_EMOTIONAL_STATE as VariableCategoryId,
-    unitId: "unit-rating",
-    unitName: "Rating 1-5",
-    emoji: "😊",
-    isEditable: false,
-    currentValue: 4,
-    loggedValueUnit: "Rating 1-5"
-  }
-];
+// This mock should be ReminderNotificationDetails[]
+const mockInitialTimelineNotifications: ReminderNotificationDetails[] = mockPendingNotifications; // Use the same data for simplicity in this test.
+                                                                                                // PatientDashboardDisplay expects ReminderNotificationDetails[]
 
 describe('PatientDashboardDisplay - UniversalTimeline Notification Rendering', () => {
   // Set the current date for UniversalTimeline to "today" for consistent filtering
@@ -258,9 +260,9 @@ describe('PatientDashboardDisplay - UniversalTimeline Notification Rendering', (
     render(
       <PatientDashboardDisplay
         initialUser={mockUser}
-        initialPendingNotifications={mockInitialPendingNotifications}
+        initialPendingNotifications={[]} // Assuming these are handled by TrackingInbox, keep timeline focused
         initialMeasurements={mockInitialMeasurements}
-        initialTimelineNotifications={mockInitialTimelineNotifications}
+        initialTimelineNotifications={mockInitialTimelineNotifications} // This is ReminderNotificationDetails[]
         initialUserVariables={mockInitialUserVariables}
         initialConditions={mockInitialConditions}
         initialDateForTimeline={today.toISOString()}
@@ -273,34 +275,149 @@ describe('PatientDashboardDisplay - UniversalTimeline Notification Rendering', (
 
     // --- Check for Expected Notifications ---
     // #1 (Daily Mood Log - pending, today)
-    const moodLogCard = within(timelineSection).queryByText(/Daily Mood Log/i);
+    const moodLogCardTextElement = within(timelineSection).getByText((content, element) => {
+      return element?.textContent?.includes('Daily Mood Log') === true;
+    });
+    expect(moodLogCardTextElement).toBeInTheDocument();
+    
+    // Find the closest ancestor that represents the card for scoping the button search
+    const moodLogCard = moodLogCardTextElement.closest('[class*="bg-card"]'); // Use a more flexible selector for the card background
+
     expect(moodLogCard).toBeInTheDocument();
-    if (moodLogCard) {
-        // Check for a detail specific to pending cards if any, e.g., absence of "Logged:"
+    if (moodLogCard && moodLogCard instanceof HTMLElement) {
+        // Check for a detail specific to pending cards - e.g., presence of Log button or default value display
+        // ReminderNotificationCard shows default value for pending: `${reminder.defaultValue} ${reminder.unitName || ''}`
+        // For notif-1, defaultValue is 3, unitName is 'rating'
+        expect(within(moodLogCard).getByText(/3 rating/i)).toBeInTheDocument();
+        // It should not show "Logged:" text
         expect(within(moodLogCard).queryByText(/Logged:/i)).not.toBeInTheDocument();
     }
     
     // #6 (Completed Mood Log - completed, today)
-    const completedMoodLogCard = within(timelineSection).queryByText(/Completed Mood Log/i);
+    const completedMoodLogCardTextElement = within(timelineSection).queryByText((content, element) => {
+        return element?.textContent?.includes('Completed Mood Log') === true;
+    });
+    expect(completedMoodLogCardTextElement).toBeInTheDocument();
+    const completedMoodLogCard = completedMoodLogCardTextElement?.closest('[class*="bg-card"]');
+
     expect(completedMoodLogCard).toBeInTheDocument();
-    if (completedMoodLogCard) {
-       // ReminderNotificationCard should display the logged value for 'completed' status.
-       // The text "Logged: 7" needs to match ReminderNotificationCard's output.
-       // Let's assume ReminderNotificationCard concatenates like this.
-       // We also need to consider the unit if it's displayed, e.g., "Logged: 7 rating"
-       // For now, let's be less specific until we confirm ReminderNotificationCard's exact output
-       expect(within(completedMoodLogCard).getByText(/Logged:/i)).toBeInTheDocument();
-       expect(within(completedMoodLogCard).getByText(/7/i)).toBeInTheDocument(); // Check if value "7" is present
+    if (completedMoodLogCard && completedMoodLogCard instanceof HTMLElement) {
+       // ReminderNotificationCard shows: `${reminder.currentValue} ${reminder.loggedValueUnit || reminder.unitName || ''}`
+       // For notif-6, value is 4 (maps to currentValue), unitName is 'rating' (maps to loggedValueUnit)
+       // And it prepends "Logged: " via renderStatusIconAndText
+       expect(within(completedMoodLogCard).getByText(/Logged: 4 rating/i)).toBeInTheDocument();
     }
 
     // --- Check for Filtered Out Notifications ---
     expect(within(timelineSection).queryByText(/Future Task/i)).not.toBeInTheDocument(); // #2
     expect(within(timelineSection).queryByText(/Past Due Task/i)).not.toBeInTheDocument(); // #3
-    expect(within(timelineSection).queryByText(/Task Invalid ScheduleId/i)).not.toBeInTheDocument(); // #4
-    expect(within(timelineSection).queryByText(/Task Invalid Status/i)).not.toBeInTheDocument(); // #5
+    
+    // #4 (Task Invalid ScheduleId) should be filtered out by the mapping logic in UniversalTimeline
+    // because scheduleId is required for ReminderNotificationCardData.
+    expect(within(timelineSection).queryByText(/Task Invalid ScheduleId/i)).not.toBeInTheDocument(); 
+    
+    // #5 (Task with Skipped Status) - should be displayed but with "Skipped" text
+    const skippedTaskCard = within(timelineSection).queryByText((content, element) => {
+        return element?.textContent?.includes('Task with Skipped Status') === true;
+    });
+    expect(skippedTaskCard).toBeInTheDocument();
+    if (skippedTaskCard) {
+        expect(within(skippedTaskCard).getByText(/Skipped/i)).toBeInTheDocument();
+    }
+
 
     // --- Check for Measurement ---
     expect(within(timelineSection).queryByText(/Heart Rate/i)).toBeInTheDocument();
     expect(within(timelineSection).queryByText(/Vitamin D/i)).toBeInTheDocument();
+  });
+
+  it('should allow logging a measurement for a pending notification via ReminderNotificationCard', async () => {
+    const mockLogAction = jest.requireMock('@/lib/actions/reminder-notifications').logMeasurementFromNotificationAction;
+    const mockToast = jest.fn();
+    const mockRouterRefresh = jest.fn();
+
+    jest.mocked(jest.requireMock('@/components/ui/use-toast').useToast).mockReturnValue({ toast: mockToast });
+    jest.mocked(jest.requireMock('next/navigation').useRouter).mockReturnValue({
+        refresh: mockRouterRefresh,
+        push: jest.fn(),
+        replace: jest.fn(),
+        back: jest.fn(),
+        forward: jest.fn(),
+        prefetch: jest.fn(),
+        pathname: '/',
+        query: {},
+        asPath: '/',
+        events: {
+            on: jest.fn(),
+            off: jest.fn(),
+            emit: jest.fn(),
+        }
+    });
+
+    mockLogAction.mockResolvedValue({ success: true }); // Simulate successful action
+
+    // Find the specific pending notification to interact with
+    const dailyMoodLogNotification = mockInitialTimelineNotifications.find(n => n.notificationId === 'notif-1-today-valid');
+    expect(dailyMoodLogNotification).toBeDefined();
+    if (!dailyMoodLogNotification) return;
+
+    render(
+      <PatientDashboardDisplay
+        initialUser={mockUser}
+        initialPendingNotifications={[]} 
+        initialMeasurements={mockInitialMeasurements}
+        initialTimelineNotifications={mockInitialTimelineNotifications} 
+        initialUserVariables={mockInitialUserVariables}
+        initialConditions={mockInitialConditions}
+        initialDateForTimeline={today.toISOString()}
+      />
+    );
+
+    const timelineSection = screen.getByRole('heading', { name: /Daily Timeline/i }).closest('section');
+    expect(timelineSection).toBeInTheDocument();
+    if (!timelineSection) return;
+
+    const moodLogCardTextElementForInteraction = within(timelineSection).getByText((content, element) => {
+      return element?.textContent?.includes('Daily Mood Log') === true;
+    });
+    expect(moodLogCardTextElementForInteraction).toBeInTheDocument();
+    
+    const moodLogCardForInteraction = moodLogCardTextElementForInteraction.closest('[class*="bg-card"]');
+
+    expect(moodLogCardForInteraction).toBeInTheDocument();
+    expect(moodLogCardForInteraction).toBeInstanceOf(HTMLElement);
+    if (!moodLogCardForInteraction || !(moodLogCardForInteraction instanceof HTMLElement)) return; // Guard and type check
+
+    // "Daily Mood Log" is a rating_1_5 type. Buttons are labeled "Rate X" or just "X"
+    // For notif-1 (Daily Mood Log), unitId is 'unit-rating-1-5', which results in rating_1_5 inputType
+    // ReminderNotificationCard creates buttons with aria-label="Rate X" or just X as text
+    // Let's try to click the button for rating "5"
+    // The rating buttons are rendered with text content of the rating number if no specific face is used for that number.
+    // For a 1-5 scale, the button for "5" will have text "5" or a specific Smile icon.
+    // Based on ReminderNotificationCard: for rating_1_5, it renders <Smile className="h-5 w-5 text-green-500" /> for 5.
+    // It will have an aria-label of "Rate 5".
+
+    const ratingButton5 = within(moodLogCardForInteraction).getByRole('button', { name: /rate 5/i });
+    expect(ratingButton5).toBeInTheDocument();
+
+    await userEvent.click(ratingButton5);
+
+    // Check if the action was called correctly
+    expect(mockLogAction).toHaveBeenCalledTimes(1);
+    expect(mockLogAction).toHaveBeenCalledWith({
+      notificationId: dailyMoodLogNotification.notificationId,
+      scheduleId: dailyMoodLogNotification.scheduleId,
+      userId: mockUser.id,
+      value: 5, // The value we clicked
+      unitId: dailyMoodLogNotification.unitId,
+    });
+
+    // Check for router refresh and toast
+    expect(mockRouterRefresh).toHaveBeenCalledTimes(1);
+    expect(mockToast).toHaveBeenCalledWith({
+      title: 'Logged',
+      description: `${dailyMoodLogNotification.variableName} recorded as 5.`,
+      variant: 'default',
+    });
   });
 }); 

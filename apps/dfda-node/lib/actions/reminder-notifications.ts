@@ -169,6 +169,8 @@ export async function getTimelineNotificationsForDateAction(
       status: notifStatus,
       defaultValue: schedule.default_value, 
       emoji: globalVar.emoji,
+      value: displayValue,
+      isEditable: true,
     };
   }).filter((item): item is ReminderNotificationDetails => item !== null);
 
@@ -335,3 +337,143 @@ export async function completeReminderNotificationAction(
    }
 } 
 // --- END of completeReminderNotificationAction --- 
+
+// Interface for a generic action result
+interface ActionResult {
+  success: boolean;
+  error?: string;
+  data?: any;
+}
+
+/**
+ * Creates a measurement and then completes the associated reminder notification.
+ */
+export async function createMeasurementAndCompleteNotificationAction(params: {
+  userId: string;
+  globalVariableId: string;
+  value: number;
+  unitId: string;
+  notificationId: string;
+  scheduleId: string; // Though not directly used in this action currently, kept for consistency with prior thinking
+  notes?: string;
+}): Promise<ActionResult> {
+  const supabase = await createClient();
+  logger.info('createMeasurementAndCompleteNotificationAction called', params);
+
+  try {
+    // Step 1: Create the measurement
+    const measurementToInsert = {
+      user_id: params.userId,
+      global_variable_id: params.globalVariableId,
+      value: params.value,
+      unit_id: params.unitId,
+      notes: params.notes,
+      start_at: new Date().toISOString(), // Or use notification.dueAt if preferred
+      measurement_type: 'self_reported', // Or a more specific type like 'notification_log'
+      reminder_notification_id: params.notificationId, // Optional: if you have a direct link
+    };
+
+    const { data: newMeasurement, error: measurementError } = await supabase
+      .from('measurements')
+      .insert(measurementToInsert)
+      .select('id')
+      .single();
+
+    if (measurementError) {
+      logger.error('Error creating measurement from notification', { ...params, error: measurementError });
+      return { success: false, error: measurementError.message || "Failed to create measurement." };
+    }
+    if (!newMeasurement) {
+        logger.error('No measurement data returned after insert', params);
+        return { success: false, error: "Failed to create measurement (no data returned)." };
+    }
+
+    logger.info('Measurement created from notification', { measurementId: newMeasurement.id, notificationId: params.notificationId });
+
+    // Step 2: Complete the notification, linking the measurement
+    const completeResult = await completeReminderNotificationAction(
+      params.notificationId,
+      params.userId,
+      false, // skipped = false
+      { measurementId: newMeasurement.id, loggedValue: params.value } // logDetails
+    );
+
+    if (!completeResult.success) {
+      // Note: Measurement was created. Consider compensation logic if critical (e.g., delete measurement).
+      // For now, we'll just report the error from completing the notification.
+      logger.error('Measurement created, but failed to complete notification', { ...params, measurementId: newMeasurement.id, error: completeResult.error });
+      return { success: false, error: completeResult.error || "Measurement logged, but failed to update notification status." };
+    }
+
+    // Revalidate paths after successful operation
+    revalidatePath('/patient/dashboard'); // Revalidate the main dashboard
+    // Add other relevant paths, e.g., a page listing all measurements
+    // revalidatePath('/patient/measurements'); 
+
+    return { success: true, data: { measurementId: newMeasurement.id } };
+
+  } catch (error) {
+    logger.error('Unexpected error in createMeasurementAndCompleteNotificationAction', { ...params, error: error instanceof Error ? error.message : String(error) });
+    return { success: false, error: error instanceof Error ? error.message : "An unknown server error occurred." };
+  }
+}
+
+/**
+ * Reverts a completed or skipped notification back to pending.
+ */
+export async function undoNotificationAction(params: {
+  notificationId: string;
+  userId: string;
+}): Promise<ActionResult> {
+  const supabase = await createClient();
+  logger.info('undoNotificationAction called', params);
+
+  try {
+    // Optionally, fetch the notification first if you need to inspect log_details
+    // to delete/disassociate a linked measurement. For simplicity, we'll just update status and clear details here.
+    /*
+    const { data: currentNotification, error: fetchError } = await supabase
+      .from('reminder_notifications')
+      .select('log_details')
+      .eq('id', params.notificationId)
+      .eq('user_id', params.userId)
+      .single();
+
+    if (fetchError) {
+      logger.warn('Could not fetch notification before undo', { ...params, error: fetchError });
+      // Decide if this is a hard stop or if we proceed with the update anyway
+    }
+    // if (currentNotification && currentNotification.log_details?.measurementId) {
+    //   // TODO: Optionally delete the measurement with currentNotification.log_details.measurementId
+    // }
+    */
+
+    const updateData = {
+      status: 'pending' as ReminderNotificationStatus, // Explicitly cast for safety
+      completed_or_skipped_at: null,
+      log_details: null,
+    };
+
+    const { error: updateError } = await supabase
+      .from('reminder_notifications')
+      .update(updateData)
+      .eq('id', params.notificationId)
+      .eq('user_id', params.userId);
+      // Potentially add a condition: .in('status', ['completed', 'skipped']) to only undo if not already pending
+
+    if (updateError) {
+      logger.error('Error undoing notification status', { ...params, error: updateError });
+      return { success: false, error: updateError.message || "Failed to undo notification status." };
+    }
+
+    // Revalidate paths
+    revalidatePath('/patient/dashboard');
+    // revalidatePath('/patient/measurements'); 
+
+    return { success: true };
+
+  } catch (error) {
+    logger.error('Unexpected error in undoNotificationAction', { ...params, error: error instanceof Error ? error.message : String(error) });
+    return { success: false, error: error instanceof Error ? error.message : "An unknown server error occurred." };
+  }
+}
