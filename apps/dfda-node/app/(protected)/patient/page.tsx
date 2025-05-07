@@ -31,12 +31,14 @@ export default async function PatientDashboardPage() {
 
   logger.info('[Page - PatientDashboard] User found, fetching initial data', { userId: user.id });
 
+  const serverToday = new Date(); // Define serverToday
+
   // Fetch initial data in parallel
   const results = await Promise.all([
     getAllUserVariablesAction(user.id),         // results[0]
     getConditionsByUserAction(user.id),                 // results[1]
     getPendingReminderNotificationsAction(user.id),     // results[2]
-    getMeasurementsForDateAction(user.id, new Date()) // results[3]
+    getMeasurementsForDateAction(user.id, serverToday) // results[3] - Use serverToday
   ]);
 
   // Helper function to process results from Promise.all
@@ -73,26 +75,24 @@ export default async function PatientDashboardPage() {
   );
 
   // Fetch as TimelineItem[], then cast for the prop later if necessary
-  const initialPendingNotifications = processResult<TimelineItem>(
+  const initialPendingNotificationsData = processResult<PendingNotificationTask>(
     results[2],
     'pending notifications'
   );
 
-  const initialMeasurements = processResult<TimelineItem>(
+  const initialMeasurementsData = processResult<TimelineItem>(
     results[3],
     'initial measurements'
   );
-  // initialTimelineNotifications will use the same data as initialPendingNotifications,
-  // as getPendingReminderNotificationsAction returns TimelineItem[] which fits both.
-  const initialTimelineNotifications: TimelineItem[] | null = initialPendingNotifications as TimelineItem[] | null;
-
-  // Combine and sort timeline items
-  const combinedTimelineItems = [
-    ...(initialMeasurements || []), 
-    ...(initialTimelineNotifications || [])
-  ].sort(
-    (a, b) => new Date(a.triggerAtUtc).getTime() - new Date(b.triggerAtUtc).getTime()
-  );
+  
+  // No longer combine here, pass separately
+  // const initialTimelineNotifications: TimelineItem[] | null = initialPendingNotifications as TimelineItem[] | null;
+  // const combinedTimelineItems = [
+  //   ...(initialMeasurements || []),
+  //   ...(initialTimelineNotifications || [])
+  // ].sort(
+  //   (a, b) => new Date(a.triggerAtUtc).getTime() - new Date(b.triggerAtUtc).getTime()
+  // );
 
   // Redirect to onboarding if user has no conditions (implies first login or error)
   // Use the initial check result for redirect logic
@@ -104,11 +104,14 @@ export default async function PatientDashboardPage() {
   // Render the single Client Component with all resolved data
   return (
     <PatientDashboardDisplay
-      initialUser={user} // Pass user fetched earlier
-      initialConditions={initialConditionsResult} // Conditions from initial check
-      initialPendingNotifications={initialPendingNotifications as unknown as PendingNotificationTask[]} // TODO: Revisit this casting
-      initialTimelineItems={combinedTimelineItems} // Combined and sorted timeline data
-      initialUserVariables={initialUserVariables} // User variables
+      initialUser={user} 
+      initialConditions={initialConditionsResult} 
+      initialPendingNotifications={initialPendingNotificationsData} // This is for TrackingInbox
+      // Pass distinct data for UniversalTimeline
+      initialMeasurements={initialMeasurementsData} 
+      initialTimelineNotifications={initialPendingNotificationsData} // UniversalTimeline will map PendingNotificationTask
+      initialUserVariables={initialUserVariables} 
+      initialDateForTimeline={serverToday.toISOString()} // Pass serverToday as ISO string
     />
   )
 }

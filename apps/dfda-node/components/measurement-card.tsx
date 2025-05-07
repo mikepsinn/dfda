@@ -1,10 +1,9 @@
 "use client"
 
 import type React from "react"
-import { Clock, Pill, Activity, Heart, MoreHorizontal, Settings, Edit } from "lucide-react"
+import { Clock, Pill, Activity, Heart, MoreHorizontal, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
@@ -41,13 +40,6 @@ export interface MeasurementCardData {
 export interface MeasurementCardProps {
   measurement: MeasurementCardData;
   userTimezone: string;
-  isEditing?: boolean;
-  editValue?: number | null;
-  editUnit?: string | null;
-  editNotes?: string;
-  onEdit?: (measurement: MeasurementCardData) => void;
-  onSaveEdit?: (measurement: MeasurementCardData) => void;
-  onCancelEdit?: () => void;
   onNavigateToVariableSettings?: (measurement: MeasurementCardData) => void;
   onUpdateMeasurement?: (measurement: MeasurementCardData, value: number) => void;
 }
@@ -70,13 +62,6 @@ const getTypeIcon = (categoryId: VariableCategoryId, emoji?: string | null) => {
 export function MeasurementCard({
   measurement,
   userTimezone,
-  isEditing = false,
-  editValue,
-  editUnit,
-  editNotes,
-  onEdit,
-  onSaveEdit,
-  onCancelEdit,
   onNavigateToVariableSettings,
   onUpdateMeasurement,
 }: MeasurementCardProps) {
@@ -95,9 +80,6 @@ export function MeasurementCard({
     logger.error("Error formatting time for measurement card:", { measurementId: measurement.id, userTimezone, error });
   }
 
-  const handleEditClick = () => onEdit?.(measurement);
-  const handleSaveEditClick = () => onSaveEdit?.(measurement);
-  const handleCancelEditClick = () => onCancelEdit?.();
   const handleSettingsClick = () => onNavigateToVariableSettings?.(measurement);
 
   const [localInputValue, setLocalInputValue] = useState<string>(() => (measurement.value != null ? measurement.value.toString() : ""));
@@ -121,7 +103,6 @@ export function MeasurementCard({
   };
 
   const renderActionButtons = () => {
-    if (isEditing) return null;
     const actionButtonText = 'Update';
 
     if (inputType === "boolean_yes_no") {
@@ -180,7 +161,7 @@ export function MeasurementCard({
     );
   };
 
-  const menuProps = { measurement, isEditing, handleEditClick, handleSettingsClick };
+  const menuProps = { measurement, handleSettingsClick };
 
   return (
     <div className="border-b">
@@ -203,34 +184,7 @@ export function MeasurementCard({
            <div className="mt-2 md:mt-0">
              <div className="mt-1 text-xs">{renderValueDisplay(measurement)}</div>
              {measurement.notes && (<div className="text-xs mt-1 italic text-muted-foreground md:hidden">{measurement.notes}</div>)}
-             {isEditing ? (
-               <div className="mt-3 space-y-3 p-3 rounded-md border border-dashed md:mt-0">
-                 <div className="flex items-center space-x-2">
-                   <Input type="number" value={editValue ?? localInputValue ?? ""} onChange={(e) => setLocalInputValue(e.target.value)} className="w-20 h-8 text-sm" />
-                   <Select value={editUnit || measurement.unitId} onValueChange={() => { }}>
-                     <SelectTrigger className="w-32 h-8 text-sm">
-                       <SelectValue placeholder="Unit" />
-                     </SelectTrigger>
-                     <SelectContent>
-                       <SelectItem value={measurement.unitId}>{measurement.unitName || measurement.unit}</SelectItem>
-                     </SelectContent>
-                   </Select>
-                 </div>
-                 <div>
-                   <Input placeholder="Notes (optional)" value={editNotes || measurement.notes || ""} onChange={() => { /* Call prop if notes change is part of edit */}} className="w-full h-8 text-sm" />
-                 </div>
-                 <div className="flex justify-end space-x-2">
-                   <Button size="sm" className="h-8" onClick={handleSaveEditClick} disabled={editValue === null || !editUnit}>
-                     Save Changes
-                   </Button>
-                   <Button variant="outline" size="sm" className="h-8" onClick={handleCancelEditClick}>
-                     Cancel
-                   </Button>
-                 </div>
-               </div>
-             ) : (
-               <div className="mt-2 md:mt-0">{renderActionButtons()}</div>
-             )}
+             <div className="mt-2 md:mt-0">{renderActionButtons()}</div>
            </div>
          </div>
       </div>
@@ -240,11 +194,9 @@ export function MeasurementCard({
 
 const renderMenuContent = (props: {
     measurement: MeasurementCardData;
-    isEditing: boolean;
-    handleEditClick: () => void;
     handleSettingsClick: () => void;
   }) => {
-    const { measurement, isEditing, handleEditClick, handleSettingsClick } = props;
+    const { measurement, handleSettingsClick } = props;
     return (
         <div className="flex space-x-1">
           {(measurement.isEditable ?? true) && (
@@ -255,9 +207,6 @@ const renderMenuContent = (props: {
                  </Button>
                </DropdownMenuTrigger>
                <DropdownMenuContent align="end">
-                 <DropdownMenuItem onClick={handleEditClick} disabled={!measurement.isEditable || isEditing}>
-                   <Edit className="mr-2 h-3.5 w-3.5" /> Edit
-                 </DropdownMenuItem>
                  {measurement.userVariableId && (
                    <DropdownMenuItem onClick={handleSettingsClick}>
                      <Settings className="mr-2 h-3.5 w-3.5" /> Manage Variable

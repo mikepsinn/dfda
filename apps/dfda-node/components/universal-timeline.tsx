@@ -25,9 +25,10 @@ import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants
 
 // Import the shared component and its types
 import type { MeasurementNotificationItemData, VariableCategoryId as SharedVariableCategoryId, MeasurementStatus as SharedMeasurementStatus } from "@/components/shared/measurement-notification-item";
+import type { PendingNotificationTask } from "@/lib/actions/reminder-schedules"; // Import PendingNotificationTask
 
 import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
-import { ReminderNotificationCard, type ReminderNotificationCardData } from "@/components/reminders/reminder-notification-card";
+import { ReminderNotificationCard, type ReminderNotificationCardData, type ReminderNotificationStatus } from "@/components/reminder-notification-card";
 import { logger } from "@/lib/logger"; // Import logger
 
 export type MeasurementStatus = SharedMeasurementStatus;
@@ -39,12 +40,20 @@ export type TimelineItem = MeasurementNotificationItemData;
 
 export interface UniversalTimelineProps {
   title?: string;
-  measurements?: MeasurementNotificationItemData[];
-  notifications?: MeasurementNotificationItemData[];
+  rawMeasurements?: MeasurementCardData[]; // Changed to expect MeasurementCardData[] directly
+  rawNotifications?: PendingNotificationTask[]; // Changed from notifications: MeasurementNotificationItemData[]
   date?: Date;
   userTimezone?: string;
   onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void
-  onEditMeasurement?: (item: TimelineItem, value: number, unit: string, notes?: string) => void
+  // Callback for when a measurement is updated via MeasurementCard
+  onUpdateMeasurement?: (measurement: MeasurementCardData, newValue: number) => Promise<void>; 
+  // Callbacks for reminder notifications, to be passed down to ReminderNotificationCard
+  onLogNotificationMeasurement?: (reminderNotificationId: string, value: number, reminderScheduleId: string, variableName: string, unitName: string) => Promise<void>;
+  onSkipNotification?: (reminderNotificationId: string, reminderScheduleId: string) => Promise<void>;
+  onUndoNotificationLog?: (reminderNotificationId: string, reminderScheduleId: string) => Promise<void>;
+  // For editing the reminder settings itself, not logging a value
+  onEditReminderSettings?: (reminderScheduleId: string) => void; 
+  onNavigateToVariableSettings?: (userVariableId: string | undefined, globalVariableId: string | undefined) => void;
   className?: string
   showFilters?: boolean
   showDateNavigation?: boolean
@@ -54,12 +63,17 @@ export interface UniversalTimelineProps {
 }
 
 export function UniversalTimeline({
-  measurements: rawMeasurements = [],
-  notifications: rawNotifications = [],
+  rawMeasurements = [], // This is now MeasurementCardData[]
+  rawNotifications = [], // Changed from notifications
   date: initialDate = new Date(),
   userTimezone = 'UTC',
   onAddMeasurement,
-  onEditMeasurement,
+  onUpdateMeasurement,
+  onLogNotificationMeasurement,
+  onSkipNotification,
+  onUndoNotificationLog,
+  onEditReminderSettings,
+  onNavigateToVariableSettings,
   className = "",
   showFilters = true,
   showDateNavigation = true,
@@ -70,19 +84,16 @@ export function UniversalTimeline({
   const router = useRouter()
   const [selectedDate, setSelectedDate] = useState<Date>(initialDate)
   const [showCalendar, setShowCalendar] = useState(false)
-  const [editingItem, setEditingItem] = useState<string | null>(null) // ID of item being edited
-  const [editValue, setEditValue] = useState<number | null>(null)
-  const [editUnit, setEditUnit] = useState<string | null>(null)
-  const [editNotes, setEditNotes] = useState<string>("")
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [selectedCategory, setSelectedCategory] = useState<FilterableVariableCategoryId>(defaultCategory)
 
-  // Filter measurements and map to MeasurementCardData
+  // Filter measurements. Input is already MeasurementCardData[]
   const filteredMeasurements = useMemo(() => {
-    return rawMeasurements
-      .filter((item) => {
+    return rawMeasurements // This is MeasurementCardData[]
+      .filter((item: MeasurementCardData) => { // item is MeasurementCardData
         try {
-          const itemDate = new Date(item.triggerAtUtc);
+          // Filter by date using item.start_at (which is already a string date)
+          const itemDate = new Date(item.start_at); 
           const isSameDay =
             itemDate.getUTCFullYear() === selectedDate.getUTCFullYear() &&
             itemDate.getUTCMonth() === selectedDate.getUTCMonth() &&
@@ -94,152 +105,149 @@ export function UniversalTimeline({
             (item.notes && item.notes.toLowerCase().includes(searchQuery.toLowerCase()));
           return isSameDay && matchesCategory && matchesSearch;
         } catch (error) {
-          logger.error("Error filtering measurement item in UniversalTimeline:", { itemId: item.id, error });
+          // Use item.id if available, item is MeasurementCardData
+          logger.error("Error filtering measurement item in UniversalTimeline:", { itemId: item.id, error }); 
           return false;
         }
       })
-      .map(item => ({ // Map to MeasurementCardData
-        id: item.id,
-        globalVariableId: item.globalVariableId,
-        userVariableId: item.userVariableId,
-        variableCategoryId: item.variableCategoryId,
-        name: item.name,
-        start_at: item.triggerAtUtc, // Map triggerAtUtc to start_at
-        end_at: undefined, // Or map if available from MeasurementNotificationItemData if it ever gets end_at
-        value: item.value,
-        unit: item.unit,
-        unitId: item.unitId,
-        unitName: item.unitName,
-        notes: item.notes,
-        isEditable: item.isEditable,
-        emoji: item.emoji,
-        // Retain original status for potential use in handleMeasurementSaveEdit or internal logic
-        originalStatus: item.status 
-      }));
+      // No .map() needed here anymore as rawMeasurements is already MeasurementCardData[]
+      // .map((item): MeasurementCardData => ({ ... })) // REMOVED
   }, [rawMeasurements, selectedCategory, searchQuery, selectedDate]);
 
   // Filter notifications and map to ReminderNotificationCardData
   const filteredNotifications = useMemo(() => {
-    return rawNotifications
-      .filter((item) => {
+    logger.info("[UniversalTimeline] Processing rawNotifications for timeline display", {
+      count: rawNotifications.length,
+      sample: rawNotifications.slice(0, 3).map(t => ({ 
+        id: t.notificationId, 
+        dueAt: t.dueAt, 
+        scheduleId: t.scheduleId, 
+        status: (t as any).status, // Keep for logging sample if useful
+        variableName: t.variableName 
+      })),
+      selectedDate: selectedDate.toISOString()
+    });
+
+    return rawNotifications 
+      .filter((task) => { 
         try {
-          const itemDate = new Date(item.triggerAtUtc);
+          // Ensure task and task.dueAt are defined before trying to access properties
+          if (!task || !task.dueAt) {
+            logger.warn("[UniversalTimeline] Filtering out notification due to missing task or dueAt.", { task });
+            return false;
+          }
+          if (isNaN(new Date(task.dueAt).getTime())) {
+            // Log error for invalid date, but allow it to be filtered out
+            logger.error(`[UniversalTimeline] Invalid dueAt for notification: ${task.notificationId || 'ID_UNKNOWN'}`, { dueAt: task.dueAt });
+            return false; // Filter out items with invalid dates
+          }
+          const itemDate = new Date(task.dueAt); 
           const isSameDay =
             itemDate.getUTCFullYear() === selectedDate.getUTCFullYear() &&
             itemDate.getUTCMonth() === selectedDate.getUTCMonth() &&
             itemDate.getUTCDate() === selectedDate.getUTCDate();
-          const validStatuses = ["pending", "completed", "skipped", "error"];
-          return isSameDay && typeof item.reminderScheduleId === 'string' && validStatuses.includes(item.status);
+          
+          if (!isSameDay) {
+            return false;
+          }
+
+          // Basic check for essential fields needed for the card
+          if (!task.notificationId || !task.scheduleId || !task.variableName || !task.variableCategory || !task.unitId || !task.unitName) {
+            logger.error(`[UniversalTimeline] Filtering out notification ${task.notificationId || 'ID_UNKNOWN'} due to missing essential fields.`, { task });
+            return false;
+          }
+          
+          // Validate status - it should be one of the defined ReminderNotificationStatus types
+          const validStatuses: ReminderNotificationStatus[] = ["pending", "completed", "skipped", "error"];
+          const notificationStatus = (task as any).status as ReminderNotificationStatus; // Temporary cast
+
+          if (notificationStatus && !validStatuses.includes(notificationStatus)) {
+            logger.error(`[UniversalTimeline] Invalid status '${notificationStatus}' for notification: ${task.notificationId}. Filtering out.`, { task });
+            return false; // Filter out items with invalid status
+          }
+          
+          return true;
         } catch (error) {
-          logger.error("Error filtering notification item in UniversalTimeline:", { itemId: item.id, error });
-          return false;
+          logger.error("[UniversalTimeline] Error during notification pre-filtering phase:", { 
+            message: error instanceof Error ? error.message : String(error),
+            taskId: task?.notificationId,
+            taskData: task // log the task data for easier debugging
+          });
+          return false; 
         }
       })
-      .map((item): ReminderNotificationCardData => ({
-        id: item.id,
-        reminderScheduleId: item.reminderScheduleId!, 
-        triggerAtUtc: item.triggerAtUtc,
-        status: item.status as "pending" | "completed" | "skipped" | "error",
-        variableName: item.name ?? undefined, // Handle potential null from item.name
-        variableCategoryId: item.variableCategoryId, 
-        unitId: item.unitId, 
-        unitName: (item.unitName || item.unit) ?? undefined, // Handle potential null
-        details: item.details ?? undefined, // Handle potential null
-        detailsUrl: item.detailsUrl ?? undefined, // Handle potential null
-        isEditable: item.isEditable,
-        defaultValue: item.default_value,
-        emoji: item.emoji ?? undefined, // Handle potential null
-        currentValue: item.value, 
-      }));
+      .map((task): ReminderNotificationCardData | null => { 
+        try {
+            // Status determination: DB should provide this. Default to 'pending' if missing.
+            const statusFromTask = (task as any).status; 
+            const mappedStatus: ReminderNotificationStatus = 
+              statusFromTask && ['pending', 'completed', 'skipped', 'error'].includes(statusFromTask) 
+              ? statusFromTask 
+              : 'pending';
+
+            const defaultValueFromTask = (task as any).defaultValue;
+            const emojiFromTask = (task as any).emoji;
+            const currentValueFromTask = (task as any).currentValue ?? null; 
+            const loggedValueUnitFromTask = (task as any).loggedValueUnit ?? task.unitName;
+
+            return {
+                id: task.notificationId!,
+                reminderScheduleId: task.scheduleId!,
+                triggerAtUtc: task.dueAt!,
+                status: mappedStatus, 
+                variableName: task.variableName!, 
+                variableCategoryId: task.variableCategory! as SharedVariableCategoryId, 
+                unitId: task.unitId!, 
+                unitName: task.unitName!, 
+                globalVariableId: (task as any).globalVariableId,
+                userVariableId: (task as any).userVariableId,
+                details: task.message || undefined, 
+                detailsUrl: undefined,
+                isEditable: true,
+                defaultValue: typeof defaultValueFromTask === 'number' ? defaultValueFromTask : null, 
+                emoji: typeof emojiFromTask === 'string' ? emojiFromTask : null,
+                currentValue: typeof currentValueFromTask === 'number' ? currentValueFromTask : null, 
+                loggedValueUnit: typeof loggedValueUnitFromTask === 'string' ? loggedValueUnitFromTask : task.unitName!,
+            };
+        } catch (error) { 
+            logger.error("[UniversalTimeline] Error mapping PendingNotificationTask to ReminderNotificationCardData:", { 
+              message: error instanceof Error ? error.message : String(error),
+              taskId: task?.notificationId,
+              taskData: task
+            });
+            return null; 
+        }
+      })
+      .filter((item): item is ReminderNotificationCardData => item !== null);
+
   }, [rawNotifications, selectedDate]);
 
-  // --- Handlers for ReminderNotificationCard (NOPs for UniversalTimeline context) ---
-  const handleReminderSkip = useCallback((data: ReminderNotificationCardData) => {
-    logger.warn("UniversalTimeline: Skip action triggered but not handled.", { data });
-    // In a real scenario, this might involve calling a prop or a server action.
-  }, []);
-
-  const handleReminderLogMeasurement = useCallback((data: ReminderNotificationCardData, value: number) => {
-    logger.warn("UniversalTimeline: Log measurement action triggered but not handled.", { data, value });
-  }, []);
-
-  const handleReminderUndo = useCallback((id: string) => {
-    logger.warn("UniversalTimeline: Undo action triggered but not handled.", { id });
-  }, []);
-
-  const handleReminderInputChange = useCallback((id: string, value: string) => {
-    logger.warn("UniversalTimeline: Input change action triggered but not handled.", { id, value });
-  }, []);
-
-  // --- Handlers to pass down to the shared component ---
-
-  // Edit handlers for MeasurementCardData
-  const handleMeasurementEdit = useCallback((item: MeasurementCardData) => {
-    setEditingItem(item.id);
-    setEditValue(item.value);
-    setEditUnit(item.unit);
-    setEditNotes(item.notes || "");
-  }, []);
-
-  const handleMeasurementSaveEdit = useCallback((item: MeasurementCardData) => {
-    const originalItemData = rawMeasurements.find(rm => rm.id === item.id);
-    const originalStatus = originalItemData?.status || "recorded"; // Fallback if not found, though it should be
-
-    const timelineItemToSave: TimelineItem = {
-        // Map MeasurementCardData fields back to TimelineItem (MeasurementNotificationItemData)
-        id: item.id,
-        globalVariableId: item.globalVariableId,
-        userVariableId: item.userVariableId,
-        variableCategoryId: item.variableCategoryId,
-        name: item.name,
-        triggerAtUtc: item.start_at, // Map start_at back to triggerAtUtc
-        value: editValue, // Use the stateful editValue for saving
-        unit: editUnit || item.unit, // Use stateful editUnit or fallback
-        unitId: item.unitId, // unitId should remain consistent or be part of editUnit logic
-        unitName: item.unitName,
-        status: originalStatus, // Use the original status or a sensible default
-        notes: editNotes || item.notes, // Use stateful editNotes or fallback
-        details: undefined, // Populate if applicable and part of edit
-        detailsUrl: undefined, // Populate if applicable and part of edit
-        isEditable: item.isEditable,
-        default_value: undefined, // Populate if applicable (likely not for a direct measurement update)
-        reminderScheduleId: undefined, // Populate if applicable (likely not for a direct measurement update)
-        emoji: item.emoji,
-    };
-    onEditMeasurement?.(timelineItemToSave, editValue!, editUnit!, editNotes);
-    setEditingItem(null);
-    setEditValue(null);
-    setEditUnit(null);
-    setEditNotes("");
-  }, [rawMeasurements, onEditMeasurement, editValue, editUnit, editNotes]);
-
-  const handleMeasurementNavigateToVariableSettings = useCallback((item: MeasurementCardData) => {
-    if (item.userVariableId) {
-      router.push(`/patient/user-variables/${item.userVariableId}`);
+  // Handler for MeasurementCard's onUpdateMeasurement
+  const handleDirectMeasurementUpdate = useCallback(async (measurement: MeasurementCardData, newValue: number) => {
+    if (onUpdateMeasurement) {
+      try {
+        await onUpdateMeasurement(measurement, newValue);
+      } catch (error) {
+        logger.error("Error calling onUpdateMeasurement from UniversalTimeline", { error, measurementId: measurement.id, newValue });
+      }
     } else {
-      console.warn('Cannot navigate to variable settings, userVariableId missing', { itemId: item.id });
+      logger.warn("UniversalTimeline: onUpdateMeasurement prop not provided.");
     }
-  }, [router]);
-
-  // Edit handlers for ReminderNotificationCardData (if different logic is needed)
-  // For now, we can reuse generic handlers if the structure is compatible or adapt them.
-  // const handleNotificationEdit = useCallback((item: ReminderNotificationCardData) => { ... });
-
-  const handleCancelEdit = useCallback(() => {
-    setEditingItem(null)
-    // Clear edit state on cancel
-    setEditValue(null);
-    setEditUnit(null);
-    setEditNotes("");
-  }, []);
-
-  // Detail navigation
-  // const handleNavigateToDetails = useCallback((url: string) => {
-  //   // Implement the logic to navigate to the details URL
-  //   // Maybe open in new tab?
-  //   window.open(url, '_blank', 'noopener,noreferrer');
-  //   // console.warn('Navigate to details not implemented', { url })
-  // }, []);
+  }, [onUpdateMeasurement]);
+  
+  const handleNavigateToVariableSettings = useCallback((userVariableId: string | undefined, globalVariableId: string | undefined) => {
+    if (onNavigateToVariableSettings) {
+      onNavigateToVariableSettings(userVariableId, globalVariableId);
+    } else {
+      if (userVariableId) {
+        router.push(`/user-variables/${userVariableId}/settings`);
+      } else if (globalVariableId) {
+        router.push(`/variables/${globalVariableId}/settings`);
+      } else {
+        logger.warn("UniversalTimeline: Cannot navigate to variable settings, no ID provided.");
+      }
+    }
+  }, [router, onNavigateToVariableSettings]);
 
   // --- Date Navigation and Empty State --- 
 
@@ -388,15 +396,8 @@ export function UniversalTimeline({
               key={item.id}
               measurement={item}
               userTimezone={userTimezone}
-              isEditing={editingItem === item.id}
-              editValue={editingItem === item.id ? editValue : undefined}
-              editUnit={editingItem === item.id ? editUnit : undefined}
-              editNotes={editingItem === item.id ? editNotes : undefined}
-              onEdit={handleMeasurementEdit}
-              onSaveEdit={handleMeasurementSaveEdit}
-              onCancelEdit={handleCancelEdit}
-              onNavigateToVariableSettings={handleMeasurementNavigateToVariableSettings}
-              onUpdateMeasurement={undefined}
+              onUpdateMeasurement={handleDirectMeasurementUpdate}
+              onNavigateToVariableSettings={(item) => handleNavigateToVariableSettings(item.userVariableId, item.globalVariableId)}
             />
           ))
         ) : null}
@@ -406,11 +407,11 @@ export function UniversalTimeline({
               key={item.id}
               reminderNotification={item}
               userTimezone={userTimezone}
-              onSkip={handleReminderSkip}
-              onLogMeasurement={handleReminderLogMeasurement}
-              onUndo={handleReminderUndo}
-              onInputChange={handleReminderInputChange}
-              showToasts={true}
+              onLogMeasurement={onLogNotificationMeasurement}
+              onSkip={onSkipNotification}
+              onUndoLog={onUndoNotificationLog}
+              onEditReminder={onEditReminderSettings}
+              onNavigateToVariableSettings={(userVarId, globalVarId) => handleNavigateToVariableSettings(userVarId, globalVarId)}
             />
           ))
         ) : null}
