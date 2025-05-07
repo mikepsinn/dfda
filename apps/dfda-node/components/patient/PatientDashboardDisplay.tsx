@@ -21,7 +21,6 @@ import type { User } from '@supabase/supabase-js';
 import type { Tables } from '@/lib/database.types';
 import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
-import type { ReminderNotificationCardData } from "@/components/reminder-notification-card";
 
 // Define types using the Tables helper
 type PatientConditionRow = Tables<'patient_conditions_view'>;
@@ -30,7 +29,7 @@ interface PatientDashboardDisplayProps {
   initialUser: User;
   initialPendingNotifications: ReminderNotificationDetails[];
   initialMeasurements: MeasurementCardData[];
-  initialTimelineNotifications: ReminderNotificationCardData[];
+  initialTimelineNotifications: ReminderNotificationDetails[];
   initialUserVariables: UserVariableWithDetails[];
   initialConditions: PatientConditionRow[]; // Or any[] for now if type is complex
   initialDateForTimeline: string; // Add new prop
