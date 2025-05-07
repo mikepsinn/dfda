@@ -53,7 +53,9 @@ export interface GeneratedNavTree {
   readonly 'terms': NavItem;
   readonly 'treatments': NavItem;
   readonly 'treatments_globalvariableid': NavItem;
+  readonly 'update_password': NavItem;
   readonly 'user_profile': NavItem;
+  readonly 'user_settings': NavItem;
 }
 // --- Generated Interface --- END
 
@@ -347,10 +349,22 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View and manage a specific treatment identified by its ID.",
     "emoji": "🔎"
   },
+  "update_password": {
+    "title": "Update Password",
+    "href": "/update-password",
+    "description": "Change your account password for enhanced security.",
+    "emoji": "🔑"
+  },
   "user_profile": {
     "title": "User Profile",
     "href": "/user/profile",
     "description": "Manage your profile.",
     "emoji": "👤"
+  },
+  "user_settings": {
+    "title": "User Settings",
+    "href": "/user/settings",
+    "description": "Manage your account preferences and settings.",
+    "emoji": "⚙️"
   }
 };

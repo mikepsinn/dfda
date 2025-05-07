@@ -566,6 +566,37 @@ export const publicGlobalFoodsRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
+export const publicGlobalSymptomsRowSchemaSchema = z.object({
+  created_at: z.string().nullable(),
+  deleted_at: z.string().nullable(),
+  id: z.string(),
+  updated_at: z.string().nullable(),
+});
+
+export const publicGlobalSymptomsInsertSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  id: z.string(),
+  updated_at: z.string().optional().nullable(),
+});
+
+export const publicGlobalSymptomsUpdateSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  id: z.string().optional(),
+  updated_at: z.string().optional().nullable(),
+});
+
+export const publicGlobalSymptomsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("global_symptoms_id_fkey"),
+    columns: z.tuple([z.literal("id")]),
+    isOneToOne: z.literal(true),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
 export const publicGlobalTreatmentsRowSchemaSchema = z.object({
   active_ingredients: jsonSchema.nullable(),
   created_at: z.string().nullable(),
@@ -1291,6 +1322,72 @@ export const publicPatientSideEffectsRelationshipsSchemaSchema = z.tuple([
     columns: z.tuple([z.literal("patient_treatment_id")]),
     isOneToOne: z.literal(false),
     referencedRelation: z.literal("patient_treatments"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
+export const publicPatientSymptomsRowSchemaSchema = z.object({
+  created_at: z.string().nullable(),
+  deleted_at: z.string().nullable(),
+  frequency: z.string().nullable(),
+  id: z.string(),
+  notes: z.string().nullable(),
+  onset_date: z.string().nullable(),
+  patient_id: z.string(),
+  severity: z.string().nullable(),
+  symptom_id: z.string(),
+  updated_at: z.string().nullable(),
+  user_variable_id: z.string(),
+});
+
+export const publicPatientSymptomsInsertSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  frequency: z.string().optional().nullable(),
+  id: z.string().optional(),
+  notes: z.string().optional().nullable(),
+  onset_date: z.string().optional().nullable(),
+  patient_id: z.string(),
+  severity: z.string().optional().nullable(),
+  symptom_id: z.string(),
+  updated_at: z.string().optional().nullable(),
+  user_variable_id: z.string(),
+});
+
+export const publicPatientSymptomsUpdateSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  frequency: z.string().optional().nullable(),
+  id: z.string().optional(),
+  notes: z.string().optional().nullable(),
+  onset_date: z.string().optional().nullable(),
+  patient_id: z.string().optional(),
+  severity: z.string().optional().nullable(),
+  symptom_id: z.string().optional(),
+  updated_at: z.string().optional().nullable(),
+  user_variable_id: z.string().optional(),
+});
+
+export const publicPatientSymptomsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("patient_symptoms_patient_id_fkey"),
+    columns: z.tuple([z.literal("patient_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("patients"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("patient_symptoms_symptom_id_fkey"),
+    columns: z.tuple([z.literal("symptom_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("global_symptoms"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("patient_symptoms_user_variable_id_fkey"),
+    columns: z.tuple([z.literal("user_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("user_variables"),
     referencedColumns: z.tuple([z.literal("id")]),
   }),
 ]);
