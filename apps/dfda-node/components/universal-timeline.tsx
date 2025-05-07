@@ -28,11 +28,13 @@ import type { Database } from "@/lib/database.types"; // ADD this for direct db 
 // REMOVE: import type { PendingNotificationTask } from "@/lib/actions/reminder-schedules"; // Import PendingNotificationTask
 
 import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
-import { ReminderNotificationCard, type ReminderNotificationCardData, type ReminderNotificationStatus } from "@/components/reminder-notification-card";
+import { ReminderNotificationCard } from "@/components/reminder-notification-card"; // Import only the component
+import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId as CustomVariableCategoryId } from "@/lib/database.types.custom"; // Import new types
 import { logger } from "@/lib/logger"; // Import logger
 
-export type VariableCategoryId = Database["public"]["Tables"]["variable_categories"]["Row"]["id"]; // ADDED for clarity
-export type FilterableVariableCategoryId = VariableCategoryId | "all"; // UPDATED to use new VariableCategoryId
+// Use VariableCategoryId from database.types.custom
+export type VariableCategoryId = CustomVariableCategoryId;
+export type FilterableVariableCategoryId = VariableCategoryId | "all";
 
 // Keep the TimelineItem interface for data fetching structure, ensure it aligns
 // with MeasurementNotificationItemData
@@ -43,18 +45,18 @@ export type TimelineItem = any; // TEMPORARY: To allow compilation. Will be fixe
 export interface UniversalTimelineProps {
   title?: string;
   rawMeasurements?: MeasurementCardData[]; // Changed to expect MeasurementCardData[] directly
-  rawNotifications?: ReminderNotificationCardData[]; // UPDATED from PendingNotificationTask[]
+  rawNotifications?: ReminderNotificationDetails[]; // UPDATED to ReminderNotificationDetails[]
   date?: Date;
   userTimezone?: string;
   onAddMeasurement?: (variableCategoryId: FilterableVariableCategoryId) => void
   // Callback for when a measurement is updated via MeasurementCard
   onUpdateMeasurement?: (measurement: MeasurementCardData, newValue: number) => Promise<void>; 
   // Callbacks for reminder notifications, to be passed down to ReminderNotificationCard
-  onLogNotificationMeasurement?: (reminderNotificationId: string, value: number, reminderScheduleId: string, variableName: string, unitName: string) => Promise<void>;
-  onSkipNotification?: (reminderNotificationId: string, reminderScheduleId: string) => Promise<void>;
-  onUndoNotificationLog?: (reminderNotificationId: string, reminderScheduleId: string) => Promise<void>;
+  onLogNotificationMeasurement?: (data: ReminderNotificationDetails, value: number) => Promise<void>;
+  onSkipNotification?: (data: ReminderNotificationDetails) => Promise<void>;
+  onUndoNotificationLog?: (data: ReminderNotificationDetails) => Promise<void>;
   // For editing the reminder settings itself, not logging a value
-  onEditReminderSettings?: (reminderScheduleId: string) => void; 
+  onEditReminderSettings?: (scheduleId: string) => void; 
   onNavigateToVariableSettings?: (userVariableId: string | undefined, globalVariableId: string | undefined) => void;
   className?: string
   showFilters?: boolean
@@ -66,7 +68,7 @@ export interface UniversalTimelineProps {
 
 export function UniversalTimeline({
   rawMeasurements = [], // This is now MeasurementCardData[]
-  rawNotifications = [], // Changed from notifications
+  rawNotifications = [], // This is now ReminderNotificationDetails[]
   date: initialDate = new Date(),
   userTimezone = 'UTC',
   onAddMeasurement,
@@ -118,29 +120,29 @@ export function UniversalTimeline({
 
   // Filter notifications and map to ReminderNotificationCardData
   const filteredNotifications = useMemo(() => {
-    logger.info("[UniversalTimeline] Processing rawNotifications (now ReminderNotificationCardData) for display", {
+    logger.info("[UniversalTimeline] Processing rawNotifications (now ReminderNotificationDetails) for display", {
       count: rawNotifications.length,
       sample: rawNotifications.slice(0, 3).map(n => ({ 
-        id: n.id, 
-        triggerAtUtc: n.triggerAtUtc, 
+        notificationId: n.notificationId, 
+        dueAt: n.dueAt, 
         status: n.status,
         variableName: n.variableName 
       })),
       selectedDate: selectedDate.toISOString()
     });
 
-    return rawNotifications // This is now ReminderNotificationCardData[]
-      .filter((item: ReminderNotificationCardData) => { // item is ReminderNotificationCardData
+    return rawNotifications // This is ReminderNotificationDetails[]
+      .filter((item: ReminderNotificationDetails) => { // item is ReminderNotificationDetails
         try {
-          if (!item || !item.triggerAtUtc) {
-            logger.warn("[UniversalTimeline] Filtering out notification due to missing item or triggerAtUtc.", { item });
+          if (!item || !item.dueAt) { // Use dueAt
+            logger.warn("[UniversalTimeline] Filtering out notification due to missing item or dueAt.", { item });
             return false;
           }
-          if (isNaN(new Date(item.triggerAtUtc).getTime())) {
-            logger.error(`[UniversalTimeline] Invalid triggerAtUtc for notification: ${item.id || 'ID_UNKNOWN'}`, { triggerAtUtc: item.triggerAtUtc });
+          if (isNaN(new Date(item.dueAt).getTime())) { // Use dueAt
+            logger.error(`[UniversalTimeline] Invalid dueAt for notification: ${item.notificationId || 'ID_UNKNOWN'}`, { dueAt: item.dueAt });
             return false;
           }
-          const itemDate = new Date(item.triggerAtUtc); 
+          const itemDate = new Date(item.dueAt); // Use dueAt
           const isSameDay =
             itemDate.getUTCFullYear() === selectedDate.getUTCFullYear() &&
             itemDate.getUTCMonth() === selectedDate.getUTCMonth() &&
@@ -148,7 +150,7 @@ export function UniversalTimeline({
           
           if (!isSameDay) return false;
 
-          // Basic check for essential fields (already checked by ReminderNotificationCardData type)
+          // Basic check for essential fields (already checked by ReminderNotificationDetails type)
           // if (!item.id || !item.reminderScheduleId || !item.variableName || !item.variableCategoryId || !item.unitId || !item.unitName) {
           //   logger.error(`[UniversalTimeline] Filtering out notification ${item.id || 'ID_UNKNOWN'} due to missing essential fields.`, { item });
           //   return false;
@@ -165,14 +167,13 @@ export function UniversalTimeline({
         } catch (error) {
           logger.error("[UniversalTimeline] Error during notification pre-filtering phase:", { 
             message: error instanceof Error ? error.message : String(error),
-            itemId: item?.id,
+            itemId: item?.notificationId, // Use notificationId
             itemData: item 
           });
           return false; 
         }
       })
-      // REMOVE THE MAPPING LOGIC: .map((task): ReminderNotificationCardData | null => { ... }).filter(...) 
-      // Data is already ReminderNotificationCardData[]
+      // Data is now ReminderNotificationDetails[], which is what ReminderNotificationCard expects for its main prop
   }, [rawNotifications, selectedDate]);
 
   // Handler for MeasurementCard's onUpdateMeasurement
@@ -355,16 +356,20 @@ export function UniversalTimeline({
           ))
         ) : null}
         {filteredNotifications.length > 0 ? (
-          filteredNotifications.map((item) => (
-            <ReminderNotificationCard
-              key={item.id}
-              reminderNotification={item}
-              userTimezone={userTimezone}
-              onLogMeasurement={onLogNotificationMeasurement}
-              onSkip={onSkipNotification}
-              onUndoLog={onUndoNotificationLog}
-              onEditReminder={onEditReminderSettings}
-              onNavigateToVariableSettings={(userVarId, globalVarId) => handleNavigateToVariableSettings(userVarId, globalVarId)}
+          filteredNotifications.map((notification) => (
+            <ReminderNotificationCard 
+              key={notification.notificationId} 
+              reminderNotification={notification} // Pass ReminderNotificationDetails directly
+              userTimezone={userTimezone} 
+              // Callbacks need to match new signatures
+              onLogMeasurement={onLogNotificationMeasurement} 
+              onSkip={onSkipNotification} 
+              onUndoLog={onUndoNotificationLog} 
+              onEditReminderSettings={onEditReminderSettings} 
+              onNavigateToVariableSettings={handleNavigateToVariableSettings} // Use the internal handler
+              isProcessing={false} // Placeholder, manage actual processing state if needed
+              // loggedData prop might be needed if UniversalTimeline fetches/calculates it
+              // For now, assume it's not displayed or handled by parent of UniversalTimeline
             />
           ))
         ) : null}

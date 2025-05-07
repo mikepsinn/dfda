@@ -4,7 +4,8 @@ import { createClient } from "@/utils/supabase/server";
 import { logger } from "@/lib/logger";
 import type { Database } from "@/lib/database.types";
 import { startOfDay, endOfDay } from 'date-fns'; 
-import type { ReminderNotificationCardData, ReminderNotificationStatus } from "@/components/reminder-notification-card"; 
+import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId } from "@/lib/database.types.custom";
+import { revalidatePath } from 'next/cache';
 
 // Define the type structure expected from the Supabase query with joins
 
@@ -35,12 +36,12 @@ export type FetchedNotification = Database['public']['Tables']['reminder_notific
 
 /**
  * Fetches reminder notifications for a specific user and date to populate the timeline.
- * Returns data shaped as ReminderNotificationCardData.
+ * Returns data shaped as ReminderNotificationDetails.
  */
 export async function getTimelineNotificationsForDateAction(
     userId: string,
   targetDate: Date
-): Promise<{ success: boolean; data?: ReminderNotificationCardData[]; error?: string }> {
+): Promise<{ success: boolean; data?: ReminderNotificationDetails[]; error?: string }> {
         const supabase = await createClient();
   const dateStr = targetDate.toISOString().split('T')[0];
   logger.info('Fetching timeline notifications for date', { userId, date: dateStr });
@@ -120,7 +121,7 @@ export async function getTimelineNotificationsForDateAction(
     }
   }
 
-  const reminderCardDataItems: ReminderNotificationCardData[] = notifications.map((n): ReminderNotificationCardData | null => {
+  const reminderDetailsItems: ReminderNotificationDetails[] = notifications.map((n): ReminderNotificationDetails | null => {
     const notification = n as FetchedNotification; 
     const schedule = notification.reminder_schedules;
     const userVar = schedule?.user_variables;
@@ -131,7 +132,7 @@ export async function getTimelineNotificationsForDateAction(
     const actualUnit = preferredUnit || defaultUnit;
 
     if (!schedule || !userVar || !globalVar || !category || !actualUnit) {
-      logger.warn("Missing required nested data for reminder card data, skipping notification", {
+      logger.warn("Missing required nested data for reminder details, skipping notification", {
           notificationId: notification.id,
           scheduleMissing: !schedule,
           userVarMissing: !userVar,
@@ -150,30 +151,187 @@ export async function getTimelineNotificationsForDateAction(
       }
     }
 
-    const variableCategoryId = category.id as ReminderNotificationCardData['variableCategoryId'];
-    const notificationStatus = notification.status as ReminderNotificationStatus;
+    const variableCatId = category.id as VariableCategoryId;
+    const notifStatus = notification.status as ReminderNotificationStatus;
 
     return {
-      id: notification.id,
-      reminderScheduleId: notification.reminder_schedule_id,
-      triggerAtUtc: notification.notification_trigger_at,
-      status: notificationStatus,
+      notificationId: notification.id,
+      scheduleId: notification.reminder_schedule_id,
+      userVariableId: userVar.id,
       variableName: globalVar.name, 
-      variableCategoryId: variableCategoryId,
+      globalVariableId: globalVar.id,
+      variableCategory: variableCatId,
       unitId: actualUnit.id,
       unitName: actualUnit.name,
-      globalVariableId: globalVar.id,
-      userVariableId: userVar.id,
-      details: schedule.notification_message_template?.replace("{variableName}", globalVar.name) || globalVar.description || undefined,
-      detailsUrl: undefined, 
-      isEditable: notification.status === 'pending', 
+      dueAt: notification.notification_trigger_at,
+      title: schedule.notification_title_template || globalVar.name,
+      message: schedule.notification_message_template?.replace("{variableName}", globalVar.name) || globalVar.description || null,
+      status: notifStatus,
       defaultValue: schedule.default_value, 
       emoji: globalVar.emoji,
-      currentValue: displayValue, 
-      loggedValueUnit: displayValue !== null ? actualUnit.name : undefined,
     };
-  }).filter((item): item is ReminderNotificationCardData => item !== null);
+  }).filter((item): item is ReminderNotificationDetails => item !== null);
 
-  logger.info(`Found and mapped ${reminderCardDataItems.length} reminder card data items for date`, { userId, date: dateStr });
-  return { success: true, data: reminderCardDataItems };
+  logger.info(`Found and mapped ${reminderDetailsItems.length} reminder details items for date`, { userId, date: dateStr });
+  return { success: true, data: reminderDetailsItems };
 } 
+
+// --- START of getPendingReminderNotificationsAction --- 
+/**
+ * Fetches PENDING reminder notifications for a user.
+ */
+export async function getPendingReminderNotificationsAction(
+  userId: string
+): Promise<ReminderNotificationDetails[]> { 
+  const supabase = await createClient();
+  logger.info('Fetching pending reminder notifications', { userId });
+
+  const { data: notifications, error } = await supabase
+    .from('reminder_notifications')
+    .select(`
+      id, 
+      notification_trigger_at,
+      status,
+      reminder_schedules!inner(
+        id,
+        user_variable_id,
+        default_value,
+        notification_title_template,
+        notification_message_template,
+        user_variables!inner(
+            global_variable_id,
+            preferred_unit_id,
+            global_variables!inner(
+                name,
+                variable_category_id,
+                default_unit_id,
+                emoji,
+                default_unit:units!global_variables_default_unit_id_fkey( id, abbreviated_name, name ), 
+                variable_categories!inner( id, name )
+            ),
+            preferred_unit:units!user_variables_preferred_unit_id_fkey( id, abbreviated_name, name )
+        )
+      )
+    `)
+    .eq('user_id', userId)
+    .eq('status', 'pending') 
+    .order('notification_trigger_at', { ascending: true }); 
+
+  if (error) {
+    logger.error('Error fetching pending reminder notifications', { userId, error });
+    console.error("Supabase fetch error (pending notifications):", JSON.stringify(error, null, 2));
+    return []; 
+  }
+
+  if (!notifications) {
+    return [];
+  }
+
+  const mappedNotifications: (ReminderNotificationDetails | null)[] = notifications
+    .map(n => {
+      const schedule = n.reminder_schedules as any; 
+      const userVar = schedule?.user_variables as any;
+      const globalVar = userVar?.global_variables as any;
+      const category = globalVar?.variable_categories as any; 
+      const preferredUnit = userVar?.preferred_unit as any;
+      const defaultUnit = globalVar?.default_unit as any;
+
+      const resolvedUnitId = preferredUnit?.id || defaultUnit?.id;
+      const resolvedUnitName = preferredUnit?.abbreviated_name || defaultUnit?.abbreviated_name;
+
+      if (!resolvedUnitId || !resolvedUnitName) {
+        logger.warn('Skipping pending notification due to missing unit information (id or name)', { 
+          notificationId: n.id, 
+          resolvedUnitId, 
+          resolvedUnitName 
+        });
+        return null; 
+      }
+      
+      if (!category?.id) {
+          logger.warn('Skipping pending notification due to missing variable category ID', { notificationId: n.id, category });
+          return null; 
+      }
+
+      return {
+          notificationId: n.id,
+          scheduleId: schedule?.id || '',
+          userVariableId: schedule?.user_variable_id || '',
+          variableName: globalVar?.name || 'Unknown Item',
+          globalVariableId: userVar?.global_variable_id || '',
+          // Ensure this cast is to the correct VariableCategoryId type if ReminderNotificationDetails expects it
+          variableCategory: category.id as ReminderNotificationDetails['variableCategory'], 
+          unitId: resolvedUnitId,
+          unitName: resolvedUnitName,
+          dueAt: n.notification_trigger_at as string,
+          title: schedule?.notification_title_template || null,
+          message: schedule?.notification_message_template || null,
+          // Ensure this cast is to the correct ReminderNotificationStatus type
+          status: n.status as ReminderNotificationDetails['status'], 
+          defaultValue: schedule?.default_value,       
+          emoji: globalVar?.emoji,                   
+      };
+    });
+
+  const tasks: ReminderNotificationDetails[] = mappedNotifications
+    .filter((task): task is ReminderNotificationDetails => {
+      if (task === null) return false;
+      return typeof task.notificationId === 'string' && 
+             typeof task.unitId === 'string' && 
+             typeof task.unitName === 'string' &&
+             typeof task.variableCategory === 'string';
+    });
+
+  logger.info(`Found ${tasks.length} pending reminder notifications`, { userId });
+  return tasks;
+}
+// --- END of getPendingReminderNotificationsAction --- 
+
+// --- START of completeReminderNotificationAction ---
+/**
+ * Updates the status of a specific reminder notification.
+ */
+export async function completeReminderNotificationAction(
+   notificationId: string, 
+   userId: string, 
+   skipped: boolean = false,
+   logDetails?: any 
+): Promise<{ success: boolean; error?: string; }> { 
+   const supabase = await createClient();
+   const newStatus = skipped ? 'skipped' : 'completed';
+   logger.info('Completing reminder notification', { notificationId, userId, newStatus, logDetails });
+
+   try {
+        const updateData: Partial<Database['public']['Tables']['reminder_notifications']['Update']> = {
+            status: newStatus,
+            completed_or_skipped_at: new Date().toISOString(),
+            log_details: logDetails || null
+        };
+
+        const { error } = await supabase
+            .from('reminder_notifications')
+            .update(updateData)
+            .eq('id', notificationId)
+            .eq('user_id', userId)
+            .eq('status', 'pending');
+
+        if (error) {
+            logger.error("Error updating reminder notification status", { notificationId, userId, error });
+            if (error.code === 'PGRST116') { 
+                 return { success: false, error: "Notification might have already been processed." };
+            }
+            return { success: false, error: "Could not update the notification status." };
+        }
+        
+        revalidatePath(`/components/patient/TrackingInbox`); // This path might not be ideal for revalidation
+        revalidatePath(`/patient/dashboard`);
+
+        logger.info("Reminder notification completed successfully", { notificationId, newStatus });
+        return { success: true }; 
+
+   } catch (error) {
+       logger.error('Failed in completeReminderNotificationAction', { notificationId, error: error instanceof Error ? error.message : String(error) });
+       return { success: false, error: error instanceof Error ? error.message : "An unknown error occurred." };
+   }
+} 
+// --- END of completeReminderNotificationAction --- 

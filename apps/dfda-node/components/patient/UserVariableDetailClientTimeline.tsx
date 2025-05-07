@@ -8,10 +8,11 @@ import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/mea
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
 import type { MeasurementCardData } from "@/components/measurement-card";
-import type { ReminderNotificationCardData } from "@/components/reminder-notification-card";
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
+import type { Tables } from "@/lib/database.types";
 
 export interface UserVariableDetailClientTimelineProps {
-  items: (MeasurementCardData | ReminderNotificationCardData)[];
+  items: (MeasurementCardData | ReminderNotificationDetails)[];
   date: Date;
   userTimezone: string;
   userId: string;
@@ -23,13 +24,23 @@ export function UserVariableDetailClientTimeline({ items: allItems, date, userTi
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState<boolean>(false)
 
-  // Separate items into measurements and notifications
+  // Type guard for MeasurementCardData
+  const isMeasurement = (item: any): item is MeasurementCardData => {
+    return 'start_at' in item && 'value' in item && 'unit' in item;
+  }
+
+  // Type guard for ReminderNotificationDetails
+  const isReminderNotification = (item: any): item is ReminderNotificationDetails => {
+    return 'dueAt' in item && 'notificationId' in item && 'status' in item;
+  }
+
+  // Separate items into measurements and notifications using type guards
   const measurementsForTimeline: MeasurementCardData[] = useMemo(() => {
-    return allItems.filter((item): item is MeasurementCardData => 'start_at' in item && !('reminderScheduleId' in item));
+    return allItems.filter(isMeasurement);
   }, [allItems]);
 
-  const notificationsForTimeline: ReminderNotificationCardData[] = useMemo(() => {
-    return allItems.filter((item): item is ReminderNotificationCardData => 'triggerAtUtc' in item && 'reminderScheduleId' in item);
+  const notificationsForTimeline: ReminderNotificationDetails[] = useMemo(() => {
+    return allItems.filter(isReminderNotification);
   }, [allItems]);
 
   const handleAddMeasurementCallback = useCallback(() => {

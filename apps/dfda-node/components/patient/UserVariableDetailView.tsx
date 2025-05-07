@@ -1,6 +1,6 @@
 import { getUserVariableDetailsAction } from "@/lib/actions/user-variables";
 import { getMeasurementsForDateAction } from "@/lib/actions/measurements";
-import { getTimelineNotificationsForDateAction } from "@/lib/actions/timeline";
+import { getTimelineNotificationsForDateAction } from "@/lib/actions/reminder-notifications";
 import { UserVariableDetailClientTimeline } from "@/components/patient/UserVariableDetailClientTimeline";
 import { ReminderListForUserVariable } from "@/components/reminders/reminder-list-for-user-variable";
 import { logger } from "@/lib/logger";

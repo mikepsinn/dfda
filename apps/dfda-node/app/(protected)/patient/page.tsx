@@ -1,7 +1,7 @@
 import { getServerUser } from "@/lib/server-auth";
 import { redirect } from "next/navigation";
 import { getConditionsByUserAction } from "@/lib/actions/conditions"; // Use getConditionsByUserAction for initial check
-import { getPendingReminderNotificationsAction } from "@/lib/actions/reminder-schedules"; // Import from reminder-schedules.ts
+import { getPendingReminderNotificationsAction } from "@/lib/actions/reminder-notifications"; // UPDATED import path
 import { logger } from "@/lib/logger";
 // Import the new display component
 import PatientDashboardDisplay from "@/components/patient/PatientDashboardDisplay";
@@ -12,7 +12,7 @@ import type { MeasurementCardData } from "@/components/measurement-card"; // ADD
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables"; // Import necessary type
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { PatientConditionRow } from "@/lib/actions/conditions"; // Import necessary type
-import type { FetchedPendingNotification } from '@/lib/actions/reminder-schedules'; // UPDATE to FetchedPendingNotification
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom"; // UPDATE to new name
 import type { ReminderNotificationCardData, ReminderNotificationStatus } from "@/components/reminder-notification-card"; // ADD THIS
 
 // Revalidate data every 60 seconds
@@ -75,8 +75,8 @@ export default async function PatientDashboardPage() {
     'initial conditions'
   );
 
-  // Now FetchedPendingNotification[]
-  const initialPendingNotificationsData = processResult<FetchedPendingNotification>(
+  // Now ReminderNotificationDetails[]
+  const initialPendingNotificationsData = processResult<ReminderNotificationDetails>(
     results[2],
     'pending notifications'
   );
@@ -86,14 +86,14 @@ export default async function PatientDashboardPage() {
     'initial measurements'
   );
   
-  // Map FetchedPendingNotification[] to ReminderNotificationCardData[] for UniversalTimeline
+  // Map ReminderNotificationDetails[] to ReminderNotificationCardData[] for UniversalTimeline
   const initialTimelineNotificationsForDisplay: ReminderNotificationCardData[] = initialPendingNotificationsData.map(task => {
-    // No need for 'as any' for status, defaultValue, emoji if FetchedPendingNotification is correctly typed
+    // No need for 'as any' for status, defaultValue, emoji if ReminderNotificationDetails is correctly typed
     return {
       id: task.notificationId,
       reminderScheduleId: task.scheduleId,
       triggerAtUtc: task.dueAt,
-      status: task.status, // Directly use from FetchedPendingNotification
+      status: task.status, // Directly use from ReminderNotificationDetails
       variableName: task.variableName,
       variableCategoryId: task.variableCategory,
       unitId: task.unitId!,

@@ -19,7 +19,7 @@ import { updateMeasurementAction, logMeasurementAction } from '@/lib/actions/mea
 // Import Types
 import type { User } from '@supabase/supabase-js';
 import type { Tables } from '@/lib/database.types';
-import type { FetchedPendingNotification } from '@/lib/actions/reminder-schedules';
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
 import type { ReminderNotificationCardData } from "@/components/reminder-notification-card";
 
@@ -28,7 +28,7 @@ type PatientConditionRow = Tables<'patient_conditions_view'>;
 
 interface PatientDashboardDisplayProps {
   initialUser: User;
-  initialPendingNotifications: FetchedPendingNotification[];
+  initialPendingNotifications: ReminderNotificationDetails[];
   initialMeasurements: MeasurementCardData[];
   initialTimelineNotifications: ReminderNotificationCardData[];
   initialUserVariables: UserVariableWithDetails[];
