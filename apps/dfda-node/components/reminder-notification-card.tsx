@@ -50,8 +50,8 @@ export interface ReminderNotificationCardData {
   variableCategoryId: VariableCategoryId;
   unitId: string; // units.id
   unitName: string; // units.name
-  globalVariableId?: string; // Kept for potential future use or consistency if needed for some actions
-  userVariableId?: string; // Kept for potential future use
+  globalVariableId: string; // Kept for potential future use or consistency if needed for some actions
+  userVariableId: string; // Kept for potential future use
 
   // Optional fields
   details?: string | null;
