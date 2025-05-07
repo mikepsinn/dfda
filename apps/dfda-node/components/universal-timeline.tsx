@@ -23,20 +23,22 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
 
-// Import the shared component and its types
-import type { MeasurementNotificationItemData, VariableCategoryId as SharedVariableCategoryId, MeasurementStatus as SharedMeasurementStatus } from "@/components/shared/measurement-notification-item";
+// REMOVE: import type { MeasurementNotificationItemData, VariableCategoryId as SharedVariableCategoryId, MeasurementStatus as SharedMeasurementStatus } from "@/components/shared/measurement-notification-item";
+import type { Database } from "@/lib/database.types"; // ADD this for direct db type imports
 import type { PendingNotificationTask } from "@/lib/actions/reminder-schedules"; // Import PendingNotificationTask
 
 import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
 import { ReminderNotificationCard, type ReminderNotificationCardData, type ReminderNotificationStatus } from "@/components/reminder-notification-card";
 import { logger } from "@/lib/logger"; // Import logger
 
-export type MeasurementStatus = SharedMeasurementStatus;
-export type FilterableVariableCategoryId = SharedVariableCategoryId | "all";
+export type VariableCategoryId = Database["public"]["Tables"]["variable_categories"]["Row"]["id"]; // ADDED for clarity
+export type FilterableVariableCategoryId = VariableCategoryId | "all"; // UPDATED to use new VariableCategoryId
 
 // Keep the TimelineItem interface for data fetching structure, ensure it aligns
 // with MeasurementNotificationItemData
-export type TimelineItem = MeasurementNotificationItemData;
+// TODO: This needs to be addressed. For now, we might comment it out or define a minimal version
+// if components/shared/measurement-notification-item.tsx is deleted.
+export type TimelineItem = any; // TEMPORARY: To allow compilation. Will be fixed.
 
 export interface UniversalTimelineProps {
   title?: string;
@@ -196,7 +198,7 @@ export function UniversalTimeline({
                 triggerAtUtc: task.dueAt!,
                 status: mappedStatus, 
                 variableName: task.variableName!, 
-                variableCategoryId: task.variableCategory! as SharedVariableCategoryId, 
+                variableCategoryId: task.variableCategory! as VariableCategoryId, // UPDATED to use VariableCategoryId 
                 unitId: task.unitId!, 
                 unitName: task.unitName!, 
                 globalVariableId: (task as any).globalVariableId,

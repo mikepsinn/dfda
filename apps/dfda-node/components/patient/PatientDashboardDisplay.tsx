@@ -9,7 +9,7 @@ import { HeartPulse, Pill } from "lucide-react";
 import { logger } from "@/lib/logger";
 import { ImageAnalysisCapture } from '@/components/shared/ImageAnalysisCapture';
 import { TrackingInbox } from "@/components/patient/TrackingInbox";
-import { UniversalTimeline, type TimelineItem, type FilterableVariableCategoryId } from '@/components/universal-timeline';
+import { UniversalTimeline, type FilterableVariableCategoryId } from '@/components/universal-timeline';
 import { MeasurementAddDialog } from './MeasurementAddDialog';
 import type { MeasurementCardData } from "@/components/measurement-card";
 
@@ -28,7 +28,7 @@ type PatientConditionRow = Tables<'patient_conditions_view'>;
 interface PatientDashboardDisplayProps {
   initialUser: User;
   initialPendingNotifications: PendingNotificationTask[];
-  initialMeasurements: TimelineItem[];
+  initialMeasurements: MeasurementCardData[];
   initialTimelineNotifications: PendingNotificationTask[];
   initialUserVariables: UserVariableWithDetails[];
   initialConditions: PatientConditionRow[]; // Or any[] for now if type is complex
@@ -64,25 +64,8 @@ export default function PatientDashboardDisplay({
   const userVariables = initialUserVariables;
 
   // Directly use the new props for UniversalTimeline
-  // Map initialMeasurements (MeasurementNotificationItemData[]) to MeasurementCardData[]
-  const measurementsForTimeline: MeasurementCardData[] = useMemo(() => {
-    return initialMeasurements.map(item => ({
-      id: item.id,
-      globalVariableId: item.globalVariableId,
-      userVariableId: item.userVariableId,
-      variableCategoryId: item.variableCategoryId,
-      name: item.name,
-      start_at: item.triggerAtUtc, // Map from triggerAtUtc
-      end_at: undefined, // MeasurementNotificationItemData does not have end_at
-      value: item.value,
-      unit: item.unit, // unit abbreviation
-      unitId: item.unitId,
-      unitName: item.unitName || item.unit,
-      notes: item.notes,
-      isEditable: item.isEditable,
-      emoji: item.emoji ?? undefined,
-    }));
-  }, [initialMeasurements]);
+  // The mapping is no longer needed as initialMeasurements is already MeasurementCardData[]
+  const measurementsForTimeline = initialMeasurements; // DIRECTLY use the prop
 
   // Extract user timezone, default to UTC if not available
   const userTimezone = initialUser.user_metadata?.profile?.timezone || 'UTC';

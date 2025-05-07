@@ -8,7 +8,7 @@ import PatientDashboardDisplay from "@/components/patient/PatientDashboardDispla
 // Import the timeline/variable fetch functions
 import { getAllUserVariablesAction } from "@/lib/actions/user-variables";
 import { getMeasurementsForDateAction } from '@/lib/actions/measurements';
-import type { TimelineItem } from '@/components/universal-timeline';
+import type { MeasurementCardData } from "@/components/measurement-card"; // ADD THIS
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables"; // Import necessary type
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { PatientConditionRow } from "@/lib/actions/conditions"; // Import necessary type
@@ -80,7 +80,7 @@ export default async function PatientDashboardPage() {
     'pending notifications'
   );
 
-  const initialMeasurementsData = processResult<TimelineItem>(
+  const initialMeasurementsData = processResult<MeasurementCardData>(
     results[3],
     'initial measurements'
   );
