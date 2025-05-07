@@ -1,15 +1,22 @@
 "use client"
 
-import React, { useState, useCallback, useMemo } from "react"
+import React, { useState, useCallback, useEffect, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
-import { UniversalTimeline } from "@/components/universal-timeline"
-import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
+import { Button } from "@/components/ui/button"
+import { logger } from "@/lib/logger"
+import { UniversalTimeline, type FilterableVariableCategoryId } from "@/components/universal-timeline"
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
-import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
-import type { MeasurementCardData } from "@/components/measurement-card";
-import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
-import type { Tables } from "@/lib/database.types";
+import type { MeasurementCardData } from "@/components/measurement-card"
+import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
+import type { User } from "@supabase/supabase-js"
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom"
+import type { UserVariableWithDetails } from "@/lib/actions/user-variables"
+import { 
+    createMeasurementAndCompleteNotificationAction, 
+    completeReminderNotificationAction, 
+    undoNotificationAction 
+} from "@/lib/actions/reminder-notifications"
 
 export interface UserVariableDetailClientTimelineProps {
   items: (MeasurementCardData | ReminderNotificationDetails)[];

@@ -24,13 +24,13 @@ import { cn } from "@/lib/utils"
 import { VARIABLE_CATEGORIES_DATA, VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories"
 
 // REMOVE: import type { MeasurementNotificationItemData, VariableCategoryId as SharedVariableCategoryId, MeasurementStatus as SharedMeasurementStatus } from "@/components/shared/measurement-notification-item";
-import type { Database } from "@/lib/database.types"; // ADD this for direct db type imports
+// REMOVE: import type { Database } from "@/lib/database.types"; // REMOVED
 // REMOVE: import type { PendingNotificationTask } from "@/lib/actions/reminder-schedules"; // Import PendingNotificationTask
 
 import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
-import { ReminderNotificationCard } from "@/components/reminder-notification-card"; // Import only the component
-import type { ReminderNotificationDetails, ReminderNotificationStatus, VariableCategoryId as CustomVariableCategoryId } from "@/lib/database.types.custom"; // Import new types
-import { logger } from "@/lib/logger"; // Import logger
+import { ReminderNotificationCard } from "@/components/reminders/reminder-notification-card";
+import type { ReminderNotificationDetails, VariableCategoryId as CustomVariableCategoryId } from "@/lib/database.types.custom";
+import { logger } from "@/lib/logger";
 
 // Use VariableCategoryId from database.types.custom
 export type VariableCategoryId = CustomVariableCategoryId;
@@ -118,31 +118,31 @@ export function UniversalTimeline({
       // .map((item): MeasurementCardData => ({ ... })) // REMOVED
   }, [rawMeasurements, selectedCategory, searchQuery, selectedDate]);
 
-  // Filter notifications and map to ReminderNotificationCardData
-  const filteredNotifications = useMemo(() => {
-    logger.info("[UniversalTimeline] Processing rawNotifications (now ReminderNotificationDetails) for display", {
+  // Filter notifications - no mapping needed anymore
+  const filteredNotificationsToDisplay = useMemo(() => {
+    logger.info("[UniversalTimeline] Filtering rawNotifications (ReminderNotificationDetails) for display", {
       count: rawNotifications.length,
-      sample: rawNotifications.slice(0, 3).map(n => ({ 
-        notificationId: n.notificationId, 
-        dueAt: n.dueAt, 
+      sample: rawNotifications.slice(0, 3).map(n => ({
+        notificationId: n.notificationId,
+        dueAt: n.dueAt,
         status: n.status,
-        variableName: n.variableName 
+        variableName: n.variableName
       })),
       selectedDate: selectedDate.toISOString()
     });
 
     return rawNotifications // This is ReminderNotificationDetails[]
-      .filter((item: ReminderNotificationDetails) => { // item is ReminderNotificationDetails
+      .filter((item: ReminderNotificationDetails) => {
         try {
-          if (!item || !item.dueAt) { // Use dueAt
+          if (!item || !item.dueAt) {
             logger.warn("[UniversalTimeline] Filtering out notification due to missing item or dueAt.", { item });
             return false;
           }
-          if (isNaN(new Date(item.dueAt).getTime())) { // Use dueAt
+          if (isNaN(new Date(item.dueAt).getTime())) {
             logger.error(`[UniversalTimeline] Invalid dueAt for notification: ${item.notificationId || 'ID_UNKNOWN'}`, { dueAt: item.dueAt });
             return false;
           }
-          const itemDate = new Date(item.dueAt); // Use dueAt
+          const itemDate = new Date(item.dueAt);
           const isSameDay =
             itemDate.getUTCFullYear() === selectedDate.getUTCFullYear() &&
             itemDate.getUTCMonth() === selectedDate.getUTCMonth() &&
@@ -150,30 +150,23 @@ export function UniversalTimeline({
           
           if (!isSameDay) return false;
 
-          // Basic check for essential fields (already checked by ReminderNotificationDetails type)
-          // if (!item.id || !item.reminderScheduleId || !item.variableName || !item.variableCategoryId || !item.unitId || !item.unitName) {
-          //   logger.error(`[UniversalTimeline] Filtering out notification ${item.id || 'ID_UNKNOWN'} due to missing essential fields.`, { item });
-          //   return false;
-          // }
-          
-          // Status validation (already part of ReminderNotificationStatus type)
-          // const validStatuses: ReminderNotificationStatus[] = ["pending", "completed", "skipped", "error"];
-          // if (item.status && !validStatuses.includes(item.status)) {
-          //   logger.error(`[UniversalTimeline] Invalid status '${item.status}' for notification: ${item.id}. Filtering out.`, { item });
-          //   return false; 
-          // }
+          // Basic check for essential fields (already covered by ReminderNotificationDetails type usually)
+          if (!item.notificationId || !item.scheduleId || !item.variableName || !item.variableCategory || !item.unitId || !item.unitName || !item.userVariableId || !item.globalVariableId) {
+            logger.error(`[UniversalTimeline] Filtering out notification ${item.notificationId} due to missing essential fields (should be caught by type).`, { item });
+            return false;
+          }
           
           return true;
         } catch (error) {
-          logger.error("[UniversalTimeline] Error during notification pre-filtering phase:", { 
+          logger.error("[UniversalTimeline] Error during notification pre-filtering phase:", {
             message: error instanceof Error ? error.message : String(error),
-            itemId: item?.notificationId, // Use notificationId
-            itemData: item 
+            itemId: item?.notificationId,
+            itemData: item
           });
-          return false; 
+          return false;
         }
-      })
-      // Data is now ReminderNotificationDetails[], which is what ReminderNotificationCard expects for its main prop
+      });
+      // .map() to ReminderNotificationCardData is REMOVED
   }, [rawNotifications, selectedDate]);
 
   // Handler for MeasurementCard's onUpdateMeasurement
@@ -355,25 +348,57 @@ export function UniversalTimeline({
             />
           ))
         ) : null}
-        {filteredNotifications.length > 0 ? (
-          filteredNotifications.map((notification) => (
-            <ReminderNotificationCard 
-              key={notification.notificationId} 
-              reminderNotification={notification} // Pass ReminderNotificationDetails directly
-              userTimezone={userTimezone} 
-              // Callbacks need to match new signatures
-              onLogMeasurement={onLogNotificationMeasurement} 
-              onSkip={onSkipNotification} 
-              onUndoLog={onUndoNotificationLog} 
-              onEditReminderSettings={onEditReminderSettings} 
-              onNavigateToVariableSettings={handleNavigateToVariableSettings} // Use the internal handler
-              isProcessing={false} // Placeholder, manage actual processing state if needed
-              // loggedData prop might be needed if UniversalTimeline fetches/calculates it
-              // For now, assume it's not displayed or handled by parent of UniversalTimeline
-            />
-          ))
+        {filteredNotificationsToDisplay.length > 0 ? (
+          filteredNotificationsToDisplay.map((notificationDetail) => { 
+            let loggedDataForCard: { value: number; unitName: string } | undefined = undefined;
+            if (notificationDetail.status === 'completed' && notificationDetail.value !== null && notificationDetail.value !== undefined) {
+              loggedDataForCard = {
+                value: notificationDetail.value,
+                unitName: notificationDetail.unitName || ''
+              };
+            }
+
+            return (
+              <ReminderNotificationCard
+                key={notificationDetail.notificationId} 
+                reminderNotification={notificationDetail} 
+                userTimezone={userTimezone}
+                isProcessing={false} // Placeholder
+                loggedData={loggedDataForCard} // Pass constructed loggedData
+                onLogMeasurement={async (_dataFromCard, value) => { // _dataFromCard is ReminderNotificationDetails, already have notificationDetail
+                  if (onLogNotificationMeasurement) { 
+                    await onLogNotificationMeasurement(notificationDetail, value);
+                  } else {
+                    logger.warn("onLogNotificationMeasurement callback not provided", { notificationId: notificationDetail.notificationId });
+                  }
+                }}
+                onSkip={async (_dataFromCard) => { // _dataFromCard is ReminderNotificationDetails
+                  if (onSkipNotification) { 
+                    await onSkipNotification(notificationDetail);
+                  } else {
+                    logger.warn("onSkipNotification callback not provided", { notificationId: notificationDetail.notificationId });
+                  }
+                }}
+                onUndoLog={async (_dataFromCard) => { // _dataFromCard is ReminderNotificationDetails
+                  if (onUndoNotificationLog) { 
+                    await onUndoNotificationLog(notificationDetail);
+                  } else {
+                    logger.warn("onUndoNotificationLog callback not provided", { notificationId: notificationDetail.notificationId });
+                  }
+                }}
+                // The card from components/reminders/ expects onEditReminderSettings directly
+                onEditReminderSettings={onEditReminderSettings ? (scheduleId) => onEditReminderSettings(scheduleId) : undefined}
+                onNavigateToVariableSettings={(userVarId, globalVarId) => {
+                    if (onNavigateToVariableSettings) {
+                        // Ensure we handle undefined correctly if the card passes it, though its signature expects string for defined values.
+                        onNavigateToVariableSettings(userVarId, globalVarId);
+                    }
+                }} 
+              />
+            );
+          })
         ) : null}
-        {filteredMeasurements.length === 0 && filteredNotifications.length === 0 && renderEmptyState()}
+        {filteredMeasurements.length === 0 && filteredNotificationsToDisplay.length === 0 && renderEmptyState()}
       </div>
     </div>
   )

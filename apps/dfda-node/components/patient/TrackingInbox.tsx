@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback, useTransition } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -33,7 +33,6 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
   const [notifications, setNotifications] = useState<ReminderNotificationDetails[]>(initialNotificationsProp || []);
   const [isLoading, setIsLoading] = useState(!initialNotificationsProp || initialNotificationsProp.length === 0);
   const [loggedItems, setLoggedItems] = useState<LoggedNotificationState[]>([]);
-  const [, startTransition] = useTransition();
   const { toast } = useToast();
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -117,7 +116,7 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
         });
         toast({ title: "System Error", description: "An unexpected error occurred while logging.", variant: "destructive" });
     }
-  }, [userId, notifications, toast, setLoggedItems]);
+  }, [userId, toast, setLoggedItems]);
 
   const handleSkipNotification = useCallback(async (item: ReminderNotificationDetails): Promise<void> => {
     const result = await completeReminderNotificationAction(item.notificationId, userId, true /* skipped */);

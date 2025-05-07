@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,11 @@ import type { MeasurementCardData } from "@/components/measurement-card";
 
 // Import Server Actions needed for callbacks
 import { updateMeasurementAction, logMeasurementAction } from '@/lib/actions/measurements';
+import { 
+    createMeasurementAndCompleteNotificationAction,
+    completeReminderNotificationAction,
+    undoNotificationAction
+} from '@/lib/actions/reminder-notifications';
 
 // Import Types
 import type { User } from '@supabase/supabase-js';
@@ -128,6 +133,75 @@ export default function PatientDashboardDisplay({
       }
   }, [user.id, toast, router]);
 
+  // --- Callbacks for Reminder Notifications ---
+  const handleLogNotificationMeasurement = useCallback(async (notification: ReminderNotificationDetails, value: number) => {
+    logger.info('PatientDashboardDisplay: handleLogNotificationMeasurement called', { notificationId: notification.notificationId, value });
+    try {
+      // Call the new orchestrated action
+      const result = await createMeasurementAndCompleteNotificationAction({
+        notificationId: notification.notificationId,
+        scheduleId: notification.scheduleId,
+        userId: user.id,
+        value,
+        unitId: notification.unitId,
+        globalVariableId: notification.globalVariableId, // Pass globalVariableId
+        // notes: undefined, // Add if you have a way to capture notes from the card
+      });
+
+      if (result.success) {
+        toast({ title: 'Logged', description: `${notification.variableName} recorded as ${value}.`, variant: 'default' });
+        router.refresh();
+      } else {
+        toast({ title: 'Error', description: result.error || `Failed to log ${notification.variableName}.`, variant: 'destructive' });
+      }
+    } catch (e: any) {
+      toast({ title: 'Error', description: e?.message || `An unexpected error occurred while logging ${notification.variableName}.`, variant: 'destructive' });
+      logger.error('Failed to log notification measurement', { error: e, notificationId: notification.notificationId });
+    }
+  }, [user.id, toast, router]);
+
+  const handleSkipNotification = useCallback(async (notification: ReminderNotificationDetails) => {
+    logger.info('PatientDashboardDisplay: handleSkipNotification called', { notificationId: notification.notificationId });
+    try {
+      // Call the existing completeReminderNotificationAction for skipping
+      const result = await completeReminderNotificationAction(
+        notification.notificationId,
+        user.id,
+        true // skipped = true
+        // No logDetails needed for a simple skip
+      );
+      if (result.success) {
+        toast({ title: 'Skipped', description: `${notification.variableName} marked as skipped.`, variant: 'default' });
+        router.refresh();
+      } else {
+        toast({ title: 'Error', description: result.error || `Failed to skip ${notification.variableName}.`, variant: 'destructive' });
+      }
+    } catch (e: any) {
+      toast({ title: 'Error', description: e?.message || `An unexpected error occurred while skipping ${notification.variableName}.`, variant: 'destructive' });
+      logger.error('Failed to skip notification', { error: e, notificationId: notification.notificationId });
+    }
+  }, [user.id, toast, router]);
+
+  const handleUndoNotificationLog = useCallback(async (notification: ReminderNotificationDetails) => {
+    logger.info('PatientDashboardDisplay: handleUndoNotificationLog called', { notificationId: notification.notificationId });
+    try {
+      // Call the new action for undoing
+      const result = await undoNotificationAction({
+        notificationId: notification.notificationId,
+        userId: user.id,
+        // scheduleId: notification.scheduleId, // scheduleId might not be needed by undoNotificationAction
+      });
+      if (result.success) {
+        toast({ title: 'Undo Successful', description: `${notification.variableName} status reverted.`, variant: 'default' });
+        router.refresh();
+      } else {
+        toast({ title: 'Error', description: result.error || `Failed to undo action for ${notification.variableName}.`, variant: 'destructive' });
+      }
+    } catch (e: any) {
+      toast({ title: 'Error', description: e?.message || `An unexpected error occurred while undoing action for ${notification.variableName}.`, variant: 'destructive' });
+      logger.error('Failed to undo notification log/skip', { error: e, notificationId: notification.notificationId });
+    }
+  }, [user.id, toast, router]);
   // --- End Callbacks ---
 
   // Placeholder for ImageAnalysisCapture handler
@@ -157,6 +231,9 @@ export default function PatientDashboardDisplay({
                 logger.info("UniversalTimeline onUpdateMeasurement received in PatientDashboardDisplay", { measurementId: measurement.id, newValue });
                 await handleEditMeasurementCallback(measurement, newValue); // Directly pass MeasurementCardData
               }}
+              onLogNotificationMeasurement={handleLogNotificationMeasurement}
+              onSkipNotification={handleSkipNotification}
+              onUndoNotificationLog={handleUndoNotificationLog}
               showFilters={true}
               showDateNavigation={true}
               showAddButtons={true}
