@@ -7,30 +7,32 @@ import { Button } from "@/components/ui/button"
 import { 
     getPendingReminderNotificationsAction, 
     completeReminderNotificationAction, 
-    type FetchedPendingNotification
-} from "@/lib/actions/reminder-schedules"
+} from "@/lib/actions/reminder-notifications"
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom"
 import { logger } from "@/lib/logger"
 import { useToast } from "@/components/ui/use-toast"
 import { logMeasurementAction } from "@/lib/actions/measurements"
 import { undoLogAction } from "@/lib/actions/undoLog"
-import { ReminderNotificationCard, type ReminderNotificationCardData } from "@/components/reminders/reminder-notification-card"
+import { ReminderNotificationCard } from "@/components/reminders/reminder-notification-card"
 
 interface TrackingInboxProps {
   userId: string;
-  initialNotifications?: FetchedPendingNotification[];
+  initialNotifications?: ReminderNotificationDetails[];
 }
 
-// Type to store details of recently logged notifications (simplified for measurements only)
+// Type to store details of recently logged notifications
 interface LoggedNotificationState {
-    type: 'measurement'; // Only measurement type for now
+    notificationId: string;
+    type: 'measurement';
     value: number;
-    measurementId: string; // Store measurement ID for undo
+    measurementId: string;
+    unitName?: string;
 }
 
 export function TrackingInbox({ userId, initialNotifications: initialNotificationsProp }: TrackingInboxProps) {
-  const [notifications, setNotifications] = useState<FetchedPendingNotification[]>(initialNotificationsProp || []);
-  const [isLoading, setIsLoading] = useState(!initialNotificationsProp || initialNotificationsProp.length === 0); // True only if no initial notifications
-  const [loggedNotifications, setLoggedNotifications] = useState<Record<string, LoggedNotificationState>>({});
+  const [notifications, setNotifications] = useState<ReminderNotificationDetails[]>(initialNotificationsProp || []);
+  const [isLoading, setIsLoading] = useState(!initialNotificationsProp || initialNotificationsProp.length === 0);
+  const [loggedItems, setLoggedItems] = useState<LoggedNotificationState[]>([]);
   const [, startTransition] = useTransition();
   const { toast } = useToast();
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -57,32 +59,23 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
     // and refreshNotifications is called conditionally.
   }, [userId, initialNotificationsProp, refreshNotifications]);
 
-  const handleLogMeasurementFromCard = useCallback((notificationItemData: ReminderNotificationCardData, value: number) => {
-    // Find the original PendingReminderNotification to get all necessary IDs
-    const originalNotification = notifications.find(n => n.notificationId === notificationItemData.id);
-    if (!originalNotification) {
-        logger.error("TrackingInbox: Original notification not found for logging.", { id: notificationItemData.id });
-        toast({ title: "Error", description: "Could not log measurement. Task details missing.", variant: "destructive" });
-        return;
-    }
-
+  const handleLogMeasurementFromCard = useCallback(async (notificationItemData: ReminderNotificationDetails, value: number): Promise<void> => {
     if (isNaN(value) || value === null || value === undefined) {
-        logger.warn("handleLogMeasurementFromCard called with invalid value", { notificationId: originalNotification.notificationId, value });
+        logger.warn("handleLogMeasurementFromCard called with invalid value", { notificationId: notificationItemData.notificationId, value });
         toast({ title: "Invalid Value", description: "Please enter a valid number to log.", variant: "destructive" });
         return;
     }
 
-    startTransition(async () => {
-      let measurementIdFromLog: string | undefined = undefined;
-      try {
+    let measurementIdFromLog: string | undefined = undefined;
+    try {
         const measurementInput = {
             userId: userId,
-            userVariableId: originalNotification.userVariableId,
-            globalVariableId: originalNotification.globalVariableId,
+            userVariableId: notificationItemData.userVariableId,
+            globalVariableId: notificationItemData.globalVariableId,
             value: value,
-            reminderNotificationId: originalNotification.notificationId,
-            start_at: originalNotification.dueAt, // Measurements are logged at the reminder due time
-            unit_id: originalNotification.unitId
+            reminderNotificationId: notificationItemData.notificationId,
+            start_at: notificationItemData.dueAt, 
+            unit_id: notificationItemData.unitId
         };
         const logResult = await logMeasurementAction(measurementInput);
         if (!logResult.success || !logResult.data?.id) {
@@ -93,79 +86,72 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
         measurementIdFromLog = logResult.data.id;
         
         const completeResult = await completeReminderNotificationAction(
-            originalNotification.notificationId,
+            notificationItemData.notificationId,
             userId, 
-            false, // not skipped
+            false, 
             { measurementId: measurementIdFromLog } 
         );
         if (!completeResult.success) {
             logger.error("Notification completion failed after logging measurement", { 
-                notificationId: originalNotification.notificationId, 
+                notificationId: notificationItemData.notificationId, 
                 error: completeResult.error 
             });
-            // Even if completion fails, the measurement was logged, so UI should reflect that.
         }
 
-        setLoggedNotifications(prev => ({
-            ...prev,
-            [originalNotification.notificationId]: {
+        setLoggedItems(prev => [
+            ...prev.filter(item => item.notificationId !== notificationItemData.notificationId),
+            {
+                notificationId: notificationItemData.notificationId,
                 type: 'measurement',
                 value: value,
                 measurementId: measurementIdFromLog!,
+                unitName: notificationItemData.unitName 
             }
-        }));
-        toast({ title: "Measurement Logged", description: `${originalNotification.variableName} recorded as ${value}.`});
+        ]);
+        toast({ title: "Measurement Logged", description: `${notificationItemData.variableName} recorded as ${value} ${notificationItemData.unitName || ''}.`});
 
-      } catch (error) {
+    } catch (error) {
         logger.error("Error during measurement log/complete process from inbox", { 
             error, 
-            notificationId: originalNotification.notificationId 
+            notificationId: notificationItemData.notificationId 
         });
         toast({ title: "System Error", description: "An unexpected error occurred while logging.", variant: "destructive" });
-      }
-    });
-  }, [userId, startTransition, notifications, toast]);
+    }
+  }, [userId, notifications, toast, setLoggedItems]);
 
-  const handleSkipNotification = useCallback(async (item: ReminderNotificationCardData) => {
-    startTransition(async () => {
-        const result = await completeReminderNotificationAction(item.id, userId, true /* skipped */);
-        if (!result.success) {
-            toast({ title: "Error", description: result.error || "Failed to skip task.", variant: "destructive" });
-        } else {
-            toast({ title: "Task Skipped", description: `Reminder for ${item.variableName} skipped.` });
-            // Optimistically remove the skipped item from the list
-            setNotifications(prev => prev.filter(n => n.notificationId !== item.id));
-        }
-    });
-  }, [userId, startTransition, toast]);
+  const handleSkipNotification = useCallback(async (item: ReminderNotificationDetails): Promise<void> => {
+    const result = await completeReminderNotificationAction(item.notificationId, userId, true /* skipped */);
+    if (!result.success) {
+        toast({ title: "Error", description: result.error || "Failed to skip task.", variant: "destructive" });
+    } else {
+        toast({ title: "Task Skipped", description: `Reminder for ${item.variableName} skipped.` });
+        setNotifications(prev => prev.filter(n => n.notificationId !== item.notificationId));
+    }
+  }, [userId, toast, setNotifications]);
 
-  const handleUndoLoggedNotification = useCallback(async (reminderNotificationId: string, measurementId?: string) => {
-    if (!measurementId) {
-        logger.warn("Undo called without measurementId for notification", { reminderNotificationId });
-        toast({ title: "Cannot Undo", description: "Details for undoing are missing.", variant: "default" });
+  const handleUndoLoggedNotification = useCallback(async (item: ReminderNotificationDetails): Promise<void> => { 
+    const loggedItemToUndo = loggedItems.find(li => li.notificationId === item.notificationId);
+    if (!loggedItemToUndo || loggedItemToUndo.type !== 'measurement') {
+        logger.warn("Undo called for non-measurement or missing item", { reminderNotificationId: item.notificationId });
+        toast({ title: "Cannot Undo", description: "Details for undoing are missing or invalid.", variant: "default" });
       return;
     }
     
-    startTransition(async () => {
-      const undoInput = {
-          userId: userId,
-          notificationId: reminderNotificationId,
-          logType: 'measurement' as const, // Ensure logType is correctly typed
-          details: { measurementId } 
-      };
-      const result = await undoLogAction(undoInput);
-      if (result.success) {
-        setLoggedNotifications(prev => {
-            const newState = { ...prev };
-            delete newState[reminderNotificationId];
-            return newState;
-        });
+    const undoInput = {
+        userId: userId,
+        notificationId: item.notificationId,
+        logType: 'measurement' as const,
+        details: { measurementId: loggedItemToUndo.measurementId } 
+    };
+    const result = await undoLogAction(undoInput);
+    if (result.success) {
+        setLoggedItems(prev => prev.filter(li => li.notificationId !== item.notificationId));
         toast({ title: "Log Undone", description: "The measurement has been removed." });
-      } else {
+        refreshNotifications(); 
+    } else {
         toast({ title: "Undo Failed", description: result.error || "Could not undo the log.", variant: "destructive" });
-      }
-    });
-  }, [userId, startTransition, toast]);
+    }
+  }, [userId, toast, loggedItems, setLoggedItems, refreshNotifications]);
 
   if (isLoading) {
     return (
@@ -203,34 +189,18 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
         {notifications.length > 0 && (
           <div className="space-y-4">
             {notifications.map((notification) => {
-              const loggedState = loggedNotifications[notification.notificationId];
+              const loggedItem = loggedItems.find(item => item.notificationId === notification.notificationId);
               
-              const cardDataItem: ReminderNotificationCardData = {
-                id: notification.notificationId,
-                reminderScheduleId: notification.scheduleId,
-                triggerAtUtc: notification.dueAt,
-                status: notification.status && ['pending', 'completed', 'skipped', 'error'].includes(notification.status) 
-                        ? notification.status 
-                        : (loggedState ? 'completed' : 'pending'),
-                variableName: notification.variableName,
-                variableCategoryId: notification.variableCategory as ReminderNotificationCardData['variableCategoryId'],
-                unitId: notification.unitId || 'fallback_id',
-                unitName: notification.unitName || 'fallback_name',
-                details: notification.message || undefined,
-                isEditable: !loggedState,
-                defaultValue: notification.defaultValue,
-                emoji: notification.emoji,
-                currentValue: loggedState?.value,
-              };
-
               return (
                 <ReminderNotificationCard
                   key={notification.notificationId}
-                  reminderNotification={cardDataItem}
+                  reminderNotification={notification}
                   userTimezone={userTimezone}
                   onLogMeasurement={handleLogMeasurementFromCard}
                   onSkip={handleSkipNotification}
-                  onUndo={loggedState ? () => handleUndoLoggedNotification(notification.notificationId, loggedState.measurementId) : undefined}
+                  onUndoLog={loggedItem ? handleUndoLoggedNotification : undefined}
+                  loggedData={loggedItem ? { value: loggedItem.value, unitName: loggedItem.unitName || notification.unitName } : undefined}
+                  isProcessing={isLoading}
                 />
               );
             })}

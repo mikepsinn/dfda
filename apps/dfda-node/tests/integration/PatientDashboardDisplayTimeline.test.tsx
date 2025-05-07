@@ -5,10 +5,14 @@ import '@testing-library/jest-dom'; // For extended matchers
 
 import PatientDashboardDisplay from '@/components/patient/PatientDashboardDisplay';
 import type { User } from '@supabase/supabase-js';
-import type { PendingNotificationTask } from '@/lib/actions/reminder-schedules';
-import type { MeasurementNotificationItemData } from '@/components/shared/measurement-notification-item';
+import type { ReminderNotificationDetails } from "@/lib/database.types.custom";
+import { getPendingReminderNotificationsAction } from '@/lib/actions/reminder-notifications';
 import type { UserVariableWithDetails } from '@/lib/actions/user-variables';
 import type { Tables } from '@/lib/database.types';
+import { UniversalTimeline } from "@/components/universal-timeline";
+import { MeasurementCard, type MeasurementCardData } from "@/components/measurement-card";
+import type { ReminderNotificationCardData, ReminderNotificationStatus, VariableCategoryId } from "@/components/reminder-notification-card";
+import { VARIABLE_CATEGORY_IDS } from "@/lib/constants/variable-categories";
 
 // Mock dependencies using Jest
 jest.mock('next/navigation', () => ({
@@ -71,46 +75,46 @@ const yesterday = new Date(today);
 yesterday.setDate(today.getDate() - 1);
 
 // Define a more complete interface for our mock notifications for testing purposes
-interface MockNotificationTestData extends Partial<PendingNotificationTask> {
+interface MockNotificationTestData extends Partial<ReminderNotificationDetails> {
   notificationId: string;
   dueAt: string;
   variableName: string;
-  scheduleId?: string; // Keep scheduleId flexible for the invalid test case
-  status?: 'pending' | 'completed' | 'skipped' | 'error' | string; // Allow string for invalid status test
-  emoji?: string | null;
-  defaultValue?: number | string | null;
-  value?: number | null;
-  // Add other fields from PendingNotificationTask that are not in Partial<> if needed
+  status?: ReminderNotificationStatus;
+  scheduleId?: string;
+  userVariableId?: string;
+  globalVariableId?: string;
   variableCategory?: string;
   unitId?: string;
   unitName?: string;
-  message?: string;
-  userVariableId?: string;
-  globalVariableId?: string;
+  title?: string | null;
+  message?: string | null;
+  defaultValue?: number | null;
+  emoji?: string | null;
 }
 
-// Helper to create a mock PendingNotificationTask
-const createMockNotification = (overrides: MockNotificationTestData): PendingNotificationTask => {
-  // Base structure aligns with what PendingNotificationTask might look like after being fixed
-  // or what ReminderNotificationCardData expects as input transformation target.
+// Helper to create a mock ReminderNotificationDetails
+const createMockNotification = (overrides: MockNotificationTestData): ReminderNotificationDetails => {
   const base = {
+    notificationId: 'default-notif-id', // Added default for notificationId
     scheduleId: 'default-schedule-id', 
+    dueAt: today.toISOString(), // Added default for dueAt
+    variableName: 'Default Variable', // Added default for variableName
     variableCategory: 'cat-test',
     unitId: 'unit-test',
     unitName: 'test unit',
     message: 'Test message',
     userVariableId: 'uv-test',
     globalVariableId: 'gv-test',
-    status: 'pending', 
+    status: 'pending' as ReminderNotificationStatus, // Ensure status is valid and typed
     defaultValue: null,
     emoji: null,
-    value: null, 
+    // REMOVE: value: null, // This field does not exist on FetchedPendingNotification
   };
-  return { ...base, ...overrides } as unknown as PendingNotificationTask; // Use unknown cast due to current discrepancy
+  return { ...base, ...overrides } as ReminderNotificationDetails; // Removed unknown cast, type should align now
 };
 
 
-const mockPendingNotifications: PendingNotificationTask[] = [
+const mockPendingNotifications: ReminderNotificationDetails[] = [
   // #1 Should be displayed
   createMockNotification({
     notificationId: 'notif-1-today-valid',
@@ -152,8 +156,8 @@ const mockPendingNotifications: PendingNotificationTask[] = [
     notificationId: 'notif-5-invalid-status',
     scheduleId: 'sched-5',
     dueAt: today.toISOString(),
-    variableName: 'Task Invalid Status',
-    status: 'way-too-late', 
+    variableName: 'Task with specific status',
+    status: 'skipped', // Changed from 'way-too-late' to a valid status
   }),
   // #6 Should be displayed (completed status, still on today)
   createMockNotification({
@@ -163,32 +167,39 @@ const mockPendingNotifications: PendingNotificationTask[] = [
     variableName: 'Completed Mood Log',
     variableCategory: 'cat-health',
     unitId: 'unit-rating',
-    status: 'completed', 
-    value: 7, 
+    status: 'completed',
   }),
 ];
 
-const mockInitialMeasurements: MeasurementNotificationItemData[] = [
-    {
-        id: 'meas-1',
-        globalVariableId: 'gv-weight',
-        userVariableId: 'uv-weight',
-        variableCategoryId: 'cat-phys',
-        name: 'Weight Measurement', 
-        triggerAtUtc: today.toISOString(),
-        value: 70,
-        unit: 'kg',
-        unitId: 'unit-kg',
-        unitName: 'kilograms',
-        status: 'recorded',
-        default_value: undefined, // Changed from null
-        details: undefined, // Changed from null
-        detailsUrl: undefined, // Changed from null
-        emoji: undefined, // Changed from null
-        isEditable: true,
-        reminderScheduleId: undefined, // Changed from null
-        // Added missing optional fields from MeasurementNotificationItemData with undefined
-    }
+const mockInitialMeasurements: MeasurementCardData[] = [
+  {
+    id: "meas1",
+    globalVariableId: "gvar1",
+    userVariableId: "uvar1",
+    variableCategoryId: VARIABLE_CATEGORY_IDS.HEALTH_AND_PHYSIOLOGY as VariableCategoryId,
+    name: "Heart Rate",
+    start_at: "2023-10-26T10:00:00.000Z",
+    value: 75,
+    unit: "bpm",
+    unitId: "unit-bpm",
+    unitName: "bpm",
+    emoji: "❤️",
+    isEditable: true,
+  },
+  {
+    id: "meas2",
+    globalVariableId: "gvar2",
+    userVariableId: "uvar2",
+    variableCategoryId: VARIABLE_CATEGORY_IDS.INTAKE_AND_INTERVENTIONS as VariableCategoryId,
+    name: "Vitamin D",
+    start_at: "2023-10-26T12:00:00.000Z",
+    value: 1,
+    unit: "capsule",
+    unitId: "unit-capsule",
+    unitName: "capsule",
+    emoji: "💊",
+    isEditable: false,
+  },
 ];
 const mockInitialUserVariables: UserVariableWithDetails[] = [];
 // Ensure mockInitialConditions aligns with Tables<'patient_conditions_view'>
@@ -201,6 +212,40 @@ const mockInitialConditions: Array<Tables<'patient_conditions_view'>> = [
     }
 ];
 
+const mockInitialPendingNotifications: ReminderNotificationDetails[] = [
+  // ... existing mock data ...
+];
+
+// This mock should be ReminderNotificationCardData[]
+const mockInitialTimelineNotifications: ReminderNotificationCardData[] = [
+  {
+    id: "t-notif1",
+    reminderScheduleId: "rs1",
+    triggerAtUtc: "2023-10-26T09:00:00.000Z",
+    status: "pending",
+    variableName: "Morning Check-in",
+    variableCategoryId: VARIABLE_CATEGORY_IDS.MENTAL_AND_EMOTIONAL_STATE as VariableCategoryId,
+    unitId: "unit-rating",
+    unitName: "Rating 1-5",
+    emoji: "📝",
+    isEditable: true,
+    defaultValue: 3,
+  },
+  {
+    id: "t-notif2",
+    reminderScheduleId: "rs2",
+    triggerAtUtc: "2023-10-26T14:00:00.000Z",
+    status: "completed",
+    variableName: "Afternoon Mood",
+    variableCategoryId: VARIABLE_CATEGORY_IDS.MENTAL_AND_EMOTIONAL_STATE as VariableCategoryId,
+    unitId: "unit-rating",
+    unitName: "Rating 1-5",
+    emoji: "😊",
+    isEditable: false,
+    currentValue: 4,
+    loggedValueUnit: "Rating 1-5"
+  }
+];
 
 describe('PatientDashboardDisplay - UniversalTimeline Notification Rendering', () => {
   // Set the current date for UniversalTimeline to "today" for consistent filtering
@@ -213,9 +258,9 @@ describe('PatientDashboardDisplay - UniversalTimeline Notification Rendering', (
     render(
       <PatientDashboardDisplay
         initialUser={mockUser}
-        initialPendingNotifications={mockPendingNotifications} // For TrackingInbox (mocked)
+        initialPendingNotifications={mockInitialPendingNotifications}
         initialMeasurements={mockInitialMeasurements}
-        initialTimelineNotifications={mockPendingNotifications} // For UniversalTimeline
+        initialTimelineNotifications={mockInitialTimelineNotifications}
         initialUserVariables={mockInitialUserVariables}
         initialConditions={mockInitialConditions}
         initialDateForTimeline={today.toISOString()}
@@ -255,6 +300,7 @@ describe('PatientDashboardDisplay - UniversalTimeline Notification Rendering', (
     expect(within(timelineSection).queryByText(/Task Invalid Status/i)).not.toBeInTheDocument(); // #5
 
     // --- Check for Measurement ---
-    expect(within(timelineSection).queryByText(/Weight Measurement/i)).toBeInTheDocument();
+    expect(within(timelineSection).queryByText(/Heart Rate/i)).toBeInTheDocument();
+    expect(within(timelineSection).queryByText(/Vitamin D/i)).toBeInTheDocument();
   });
 }); 
