@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 import { UniversalTimeline } from "@/components/universal-timeline"
@@ -9,6 +9,7 @@ import type { MeasurementNotificationItemData } from '@/components/shared/measur
 import { updateMeasurementAction, logMeasurementAction } from "@/lib/actions/measurements"
 import { MeasurementAddDialog } from "@/components/patient/MeasurementAddDialog"
 import type { UserVariableWithDetails } from "@/lib/actions/user-variables";
+import type { MeasurementCardData } from "@/components/measurement-card";
 
 export interface UserVariableDetailClientTimelineProps {
   items: TimelineItem[];
@@ -23,17 +24,51 @@ export function UserVariableDetailClientTimeline({ items: allItems, date, userTi
   const { toast } = useToast()
   const [dialogOpen, setDialogOpen] = useState<boolean>(false)
 
-  // Separate items into measurements and notifications
-  const measurementsForTimeline: MeasurementNotificationItemData[] = [];
-  const notificationsForTimeline: MeasurementNotificationItemData[] = [];
+  // Separate items into measurements and notifications (original logic)
+  // Memoize the creation of rawMeasurementsForTimeline
+  const rawMeasurementsForTimeline: MeasurementNotificationItemData[] = useMemo(() => {
+    const measurements: MeasurementNotificationItemData[] = [];
+    // const notifications: MeasurementNotificationItemData[] = []; // Not currently used for rawNotifications
+    allItems.forEach(item => {
+      if (item.reminderScheduleId) {
+        // notifications.push(item); // If we were to handle these as PendingNotificationTask
+      } else {
+        measurements.push(item);
+      }
+    });
+    return measurements;
+  }, [allItems]);
+  
+  // const notificationsForTimeline: MeasurementNotificationItemData[] = []; // Not currently used for rawNotifications
 
-  allItems.forEach(item => {
-    if (item.reminderScheduleId || (item.status !== "recorded" && item.status !== "pending")) {
-      notificationsForTimeline.push(item);
-    } else {
-      measurementsForTimeline.push(item);
-    }
-  });
+  // allItems.forEach(item => {
+  //   // Simplified: assume all items here are primarily for measurement display if not explicitly a notification
+  //   if (item.reminderScheduleId) {
+  //     // notificationsForTimeline.push(item); // If we were to handle these as PendingNotificationTask
+  //   } else {
+  //     rawMeasurementsForTimeline.push(item);
+  //   }
+  // });
+
+  // Map rawMeasurementsForTimeline (MeasurementNotificationItemData[]) to MeasurementCardData[]
+  const mappedMeasurementsForTimeline: MeasurementCardData[] = useMemo(() => {
+    return rawMeasurementsForTimeline.map(item => ({
+      id: item.id,
+      globalVariableId: item.globalVariableId,
+      userVariableId: item.userVariableId,
+      variableCategoryId: item.variableCategoryId,
+      name: item.name,
+      start_at: item.triggerAtUtc,
+      end_at: undefined, // MeasurementNotificationItemData does not have end_at
+      value: item.value,
+      unit: item.unit,
+      unitId: item.unitId,
+      unitName: item.unitName || item.unit,
+      notes: item.notes,
+      isEditable: item.isEditable,
+      emoji: item.emoji ?? undefined,
+    }));
+  }, [rawMeasurementsForTimeline]);
 
   const handleAddMeasurementCallback = useCallback(() => {
     setDialogOpen(true)
@@ -59,9 +94,15 @@ export function UserVariableDetailClientTimeline({ items: allItems, date, userTi
     }
   }, [userId, toast, router, userVariable])
 
-  const handleEditMeasurementCallback = useCallback(async (item: TimelineItem, value: number, unitAbbr: string, notes?: string) => {
+  const handleEditMeasurementCallback = useCallback(async (measurementToUpdate: MeasurementCardData, newValue: number) => {
     try {
-      const result = await updateMeasurementAction({ measurementId: item.id, userId, value, unitId: unitAbbr, notes: notes ?? undefined })
+      const result = await updateMeasurementAction({ 
+        measurementId: measurementToUpdate.id, 
+        userId, 
+        value: newValue, 
+        unitId: measurementToUpdate.unitId, 
+        notes: measurementToUpdate.notes ?? undefined 
+      })
       if (!result.success) {
         toast({ title: "Error", description: result.error || "Failed to update measurement.", variant: "destructive" })
       } else {
@@ -76,12 +117,12 @@ export function UserVariableDetailClientTimeline({ items: allItems, date, userTi
   return (
     <>
       <UniversalTimeline
-        measurements={measurementsForTimeline}
-        notifications={notificationsForTimeline}
+        rawMeasurements={mappedMeasurementsForTimeline}
+        rawNotifications={[]}
         date={date}
         userTimezone={userTimezone}
         onAddMeasurement={handleAddMeasurementCallback}
-        onEditMeasurement={handleEditMeasurementCallback}
+        onUpdateMeasurement={handleEditMeasurementCallback}
         showAddButtons
         showFilters
         showDateNavigation

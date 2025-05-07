@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from "@/components/ui/button";
@@ -10,8 +10,8 @@ import { logger } from "@/lib/logger";
 import { ImageAnalysisCapture } from '@/components/shared/ImageAnalysisCapture';
 import { TrackingInbox } from "@/components/patient/TrackingInbox";
 import { UniversalTimeline, type TimelineItem, type FilterableVariableCategoryId } from '@/components/universal-timeline';
-import type { MeasurementNotificationItemData } from '@/components/shared/measurement-notification-item';
 import { MeasurementAddDialog } from './MeasurementAddDialog';
+import type { MeasurementCardData } from "@/components/measurement-card";
 
 // Import Server Actions needed for callbacks
 import { updateMeasurementAction, logMeasurementAction } from '@/lib/actions/measurements';
@@ -28,17 +28,21 @@ type PatientConditionRow = Tables<'patient_conditions_view'>;
 interface PatientDashboardDisplayProps {
   initialUser: User;
   initialPendingNotifications: PendingNotificationTask[];
-  initialTimelineItems: TimelineItem[];
+  initialMeasurements: TimelineItem[];
+  initialTimelineNotifications: PendingNotificationTask[];
   initialUserVariables: UserVariableWithDetails[];
   initialConditions: PatientConditionRow[]; // Or any[] for now if type is complex
+  initialDateForTimeline: string; // Add new prop
 }
 
 export default function PatientDashboardDisplay({
   initialUser,
   initialPendingNotifications,
-  initialTimelineItems,
+  initialMeasurements,
+  initialTimelineNotifications,
   initialUserVariables,
-  initialConditions // Destructure the new prop
+  initialConditions, // Destructure the new prop
+  initialDateForTimeline, // Destructure the new prop
 }: PatientDashboardDisplayProps) {
 
   const router = useRouter();
@@ -56,24 +60,29 @@ export default function PatientDashboardDisplay({
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   const [dialogCategory, setDialogCategory] = useState<FilterableVariableCategoryId | null>(null);
 
-  // Data for Timeline (from props)
-  const timelineItems = initialTimelineItems;
+  // Data for Timeline (from new props)
   const userVariables = initialUserVariables;
 
-  // Separate timelineItems into measurements and notifications
-  const measurementsForTimeline: MeasurementNotificationItemData[] = [];
-  const notificationsForTimeline: MeasurementNotificationItemData[] = [];
-
-  timelineItems.forEach(item => {
-    // Heuristic: if it has a reminderScheduleId, it's likely a notification.
-    // Otherwise, or if its status is 'recorded', treat as a measurement.
-    // This might need refinement based on actual data structure and how status is set.
-    if (item.reminderScheduleId || (item.status !== "recorded" && item.status !== "pending" /* consider other notification-like statuses if any */)) {
-      notificationsForTimeline.push(item);
-    } else {
-      measurementsForTimeline.push(item);
-    }
-  });
+  // Directly use the new props for UniversalTimeline
+  // Map initialMeasurements (MeasurementNotificationItemData[]) to MeasurementCardData[]
+  const measurementsForTimeline: MeasurementCardData[] = useMemo(() => {
+    return initialMeasurements.map(item => ({
+      id: item.id,
+      globalVariableId: item.globalVariableId,
+      userVariableId: item.userVariableId,
+      variableCategoryId: item.variableCategoryId,
+      name: item.name,
+      start_at: item.triggerAtUtc, // Map from triggerAtUtc
+      end_at: undefined, // MeasurementNotificationItemData does not have end_at
+      value: item.value,
+      unit: item.unit, // unit abbreviation
+      unitId: item.unitId,
+      unitName: item.unitName || item.unit,
+      notes: item.notes,
+      isEditable: item.isEditable,
+      emoji: item.emoji ?? undefined,
+    }));
+  }, [initialMeasurements]);
 
   // Extract user timezone, default to UTC if not available
   const userTimezone = initialUser.user_metadata?.profile?.timezone || 'UTC';
@@ -111,15 +120,25 @@ export default function PatientDashboardDisplay({
     }
   }, [user.id, userVariables, toast, router]);
 
-  const handleEditMeasurementCallback = useCallback(async (item: TimelineItem, value: number, unitAbbr: string, notes?: string) => {
-      logger.info('DashboardDisplay: handleEditMeasurementCallback called', { itemId: item.id, value, unitAbbr });
+  const handleEditMeasurementCallback = useCallback(async (measurementToUpdate: MeasurementCardData, newValue: number) => {
+      logger.info('DashboardDisplay: handleEditMeasurementCallback called for MeasurementCardData', { 
+        measurementId: measurementToUpdate.id, 
+        newValue, 
+        unitId: measurementToUpdate.unitId 
+      });
       try {
-          const result = await updateMeasurementAction({ measurementId: item.id, userId: user.id, value, unitId: unitAbbr, notes: notes ?? undefined });
+          const result = await updateMeasurementAction({
+            measurementId: measurementToUpdate.id, 
+            userId: user.id, 
+            value: newValue, 
+            unitId: measurementToUpdate.unitId, // Use unitId from MeasurementCardData
+            notes: measurementToUpdate.notes ?? undefined // Use existing notes
+          });
           if (!result.success) {
               toast({ title: 'Error', description: result.error || 'Failed to update measurement.', variant: 'destructive' });
           } else {
               toast({ title: 'Measurement Updated', description: 'Measurement details saved.', variant: 'default' });
-              router.refresh(); // Re-enable refresh
+              router.refresh();
           }
       } catch (e: any) {
           toast({ title: 'Error', description: e?.message || 'Failed to update measurement.', variant: 'destructive' });
@@ -146,12 +165,15 @@ export default function PatientDashboardDisplay({
       <section>
           <h2 className="text-xl font-semibold mb-4 border-b pb-2">Daily Timeline</h2>
           <UniversalTimeline
-              measurements={measurementsForTimeline}
-              notifications={notificationsForTimeline}
-              date={new Date()}
+              rawMeasurements={measurementsForTimeline}
+              rawNotifications={initialTimelineNotifications}
+              date={new Date(initialDateForTimeline)}
               userTimezone={userTimezone}
-              onEditMeasurement={handleEditMeasurementCallback}
               onAddMeasurement={handleAddMeasurementCallback}
+              onUpdateMeasurement={async (measurement, newValue) => {
+                logger.info("UniversalTimeline onUpdateMeasurement received in PatientDashboardDisplay", { measurementId: measurement.id, newValue });
+                await handleEditMeasurementCallback(measurement, newValue); // Directly pass MeasurementCardData
+              }}
               showFilters={true}
               showDateNavigation={true}
               showAddButtons={true}

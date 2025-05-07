@@ -143,7 +143,7 @@ export function TrackingInbox({ userId, initialNotifications: initialNotificatio
     if (!measurementId) {
         logger.warn("Undo called without measurementId for notification", { reminderNotificationId });
         toast({ title: "Cannot Undo", description: "Details for undoing are missing.", variant: "default" });
-        return;
+      return;
     }
     
     startTransition(async () => {
