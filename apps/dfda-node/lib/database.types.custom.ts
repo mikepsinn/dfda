@@ -37,6 +37,8 @@ export type ReminderNotificationDetails = {
   status: ReminderNotificationStatus; // Uses the local definition now
   defaultValue?: number | null; // Card will handle string input separately
   emoji?: string | null;
+  isEditable?: boolean | null;
+  value?: number | null;       // Represents the logged value if status is 'completed'
 };
 
 // Add other custom types or extensions here as needed in the future.
