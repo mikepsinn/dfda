@@ -13,7 +13,6 @@ import type { UserVariableWithDetails } from "@/lib/actions/user-variables"; // 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { PatientConditionRow } from "@/lib/actions/conditions"; // Import necessary type
 import type { ReminderNotificationDetails } from "@/lib/database.types.custom"; // UPDATE to new name
-import type { ReminderNotificationCardData, ReminderNotificationStatus } from "@/components/reminder-notification-card"; // ADD THIS
 
 // Revalidate data every 60 seconds
 export const revalidate = 60;
@@ -86,30 +85,6 @@ export default async function PatientDashboardPage() {
     'initial measurements'
   );
   
-  // Map ReminderNotificationDetails[] to ReminderNotificationCardData[] for UniversalTimeline
-  const initialTimelineNotificationsForDisplay: ReminderNotificationCardData[] = initialPendingNotificationsData.map(task => {
-    // No need for 'as any' for status, defaultValue, emoji if ReminderNotificationDetails is correctly typed
-    return {
-      id: task.notificationId,
-      reminderScheduleId: task.scheduleId,
-      triggerAtUtc: task.dueAt,
-      status: task.status, // Directly use from ReminderNotificationDetails
-      variableName: task.variableName,
-      variableCategoryId: task.variableCategory,
-      unitId: task.unitId!,
-      unitName: task.unitName!,
-      globalVariableId: task.globalVariableId,
-      userVariableId: task.userVariableId,
-      details: task.message || undefined,
-      detailsUrl: undefined,
-      isEditable: task.status === 'pending',
-      defaultValue: task.defaultValue,
-      emoji: task.emoji,
-      currentValue: null, 
-      loggedValueUnit: undefined,
-    };
-  });
-
   // Redirect to onboarding if user has no conditions (implies first login or error)
   // Use the initial check result for redirect logic
   if (!initialConditionsResult || initialConditionsResult.length === 0) {
@@ -125,7 +100,7 @@ export default async function PatientDashboardPage() {
       initialPendingNotifications={initialPendingNotificationsData} // This is for TrackingInbox (expects PendingNotificationTask[])
       // Pass distinct data for UniversalTimeline
       initialMeasurements={initialMeasurementsData} 
-      initialTimelineNotifications={initialTimelineNotificationsForDisplay} // UPDATED to mapped data
+      initialTimelineNotifications={initialPendingNotificationsData} // UPDATED: Pass ReminderNotificationDetails[] directly
       initialUserVariables={initialUserVariables} 
       initialDateForTimeline={serverToday.toISOString()} // Pass serverToday as ISO string
     />
