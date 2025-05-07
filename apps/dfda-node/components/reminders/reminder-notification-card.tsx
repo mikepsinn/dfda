@@ -117,9 +117,12 @@ export function ReminderNotificationCard({
   });
   const ratingRange = getRatingRange(inputType);
 
-  const effectivelyLogged = reminderNotification.status === 'completed';
-  const displayLoggedValue = effectivelyLogged && loggedData ? loggedData.value : null;
-  const displayLoggedUnit = effectivelyLogged && loggedData ? loggedData.unitName : reminderNotification.unitName;
+  const isCompleted = reminderNotification.status === 'completed';
+  const isSkipped = reminderNotification.status === 'skipped';
+  const isPending = reminderNotification.status === 'pending';
+
+  const displayLoggedValue = isCompleted && loggedData ? loggedData.value : null;
+  const displayLoggedUnit = isCompleted && loggedData ? loggedData.unitName : reminderNotification.unitName;
 
   let dueAtTimeDisplay = "--:--";
   try {
@@ -174,7 +177,7 @@ export function ReminderNotificationCard({
                 </DropdownMenuContent>
               </DropdownMenu>
           )}
-          {!effectivelyLogged && reminderNotification.status === 'pending' && (
+          {!isCompleted && isPending && (
             <Button 
               variant="ghost" 
               size="sm" 
@@ -190,7 +193,7 @@ export function ReminderNotificationCard({
         </div>
       </div>
 
-      {effectivelyLogged && displayLoggedValue !== null && (
+      {isCompleted && displayLoggedValue !== null && (
         <div className="flex items-center justify-between gap-2 pt-3 border-t border-dashed">
           <p className="text-sm text-muted-foreground italic">
             Logged: <span className="font-medium text-foreground not-italic">
@@ -211,7 +214,27 @@ export function ReminderNotificationCard({
         </div>
       )}
 
-      {!effectivelyLogged && reminderNotification.status === 'pending' && (
+      {isSkipped && (
+        <div className="flex items-center justify-between gap-2 pt-3 border-t border-dashed">
+          <p className="text-sm text-muted-foreground italic">
+            Skipped
+          </p>
+          {onUndoLog && (
+            <Button 
+              variant="ghost"
+              size="sm"
+              onClick={handleUndo} 
+              disabled={isProcessing}
+              className="h-7 px-2 text-xs"
+              aria-label="Undo skip"
+            >
+              <Undo2 className="mr-1 h-3 w-3" /> Undo
+            </Button>
+          )}
+        </div>
+      )}
+
+      {isPending && (
         <div className="pt-3 border-t border-dashed">
           {(reminderNotification.variableName || reminderNotification.defaultValue !== undefined) && (
              <div className="mb-2">

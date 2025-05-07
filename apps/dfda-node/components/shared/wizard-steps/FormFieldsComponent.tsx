@@ -7,7 +7,27 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
 import { useImageAnalysisWizardContext } from '../ImageAnalysisWizardContext';
-import { AnalyzedImageResult } from '@/lib/actions/analyze-image';
+import {
+  AnalyzedImageResult,
+  // FoodSchema, // Removed unused import
+  // TreatmentSchema, // Removed unused import
+  // SupplementSchema, // Removed unused import
+  IngredientSchema
+} from '@/lib/actions/analyze-image';
+import { z } from 'zod';
+
+// Define types based on imported schemas
+// type FoodType = z.infer<typeof FoodSchema>; // Removed unused type
+// type TreatmentType = z.infer<typeof TreatmentSchema>; // Removed unused type
+// type SupplementType = z.infer<typeof SupplementSchema>; // Removed unused type
+type FullIngredient = z.infer<typeof IngredientSchema>;
+type NameOnlyIngredient = { name: string }; // For supplement's other_ingredients, assuming IngredientSchema.pick({ name: true })
+
+// Union type for any kind of ingredient item that can be in the lists
+type AnyIngredient = FullIngredient | NameOnlyIngredient;
+
+// Key type for ingredient lists
+type IngredientListKey = 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients';
 
 export function FormFieldsComponent() {
   const { state, actions } = useImageAnalysisWizardContext();
@@ -30,41 +50,43 @@ export function FormFieldsComponent() {
 
   // Ingredient handlers
   const handleIngredientChange = useCallback((
-    listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients',
+    listKey: IngredientListKey,
     index: number,
     field: 'name' | 'quantity' | 'unit',
     value: string | number | null
   ) => {
-    const currentList = formData[listKey] || []; 
+    const currentList: AnyIngredient[] = (formData as any)[listKey] || []; 
     const updatedList = [...currentList];
     if (!updatedList[index]) return;
-    const updatedIngredient = { ...updatedList[index] };
+    // Ensure the item being updated conforms to AnyIngredient structure
+    const updatedIngredient: Partial<AnyIngredient> = { ...updatedList[index] };
 
     if (field === 'name') {
       updatedIngredient.name = typeof value === 'string' ? value : '';
     } else if ((listKey === 'ingredients' || listKey === 'active_ingredients')) {
+      // These listKey types expect FullIngredient which has quantity and unit
       if (field === 'quantity') {
-        updatedIngredient.quantity = typeof value === 'number' ? value : null;
+        (updatedIngredient as Partial<FullIngredient>).quantity = typeof value === 'number' ? value : null;
       } else if (field === 'unit') {
-        updatedIngredient.unit = typeof value === 'string' ? value : null;
+        (updatedIngredient as Partial<FullIngredient>).unit = typeof value === 'string' ? value : null;
       }
     }
-    updatedList[index] = updatedIngredient;
-    updateFormField(listKey as any, updatedList);
+    updatedList[index] = updatedIngredient as AnyIngredient; // Cast back to AnyIngredient
+    updateFormField(listKey as keyof Partial<AnalyzedImageResult>, updatedList);
   }, [updateFormField, formData]);
 
-  const addIngredient = useCallback((listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients') => {
-    const currentList = formData[listKey] || [];
-    const newIngredient = (listKey === 'inactive_ingredients' || listKey === 'other_ingredients')
-      ? { name: '' }
-      : { name: '', quantity: null, unit: null };
-    updateFormField(listKey as any, [...currentList, newIngredient]);
+  const addIngredient = useCallback((listKey: IngredientListKey) => {
+    const currentList: AnyIngredient[] = (formData as any)[listKey] || [];
+    const newIngredient: AnyIngredient = (listKey === 'inactive_ingredients' || listKey === 'other_ingredients')
+      ? { name: '' } // NameOnlyIngredient compatible
+      : { name: '', quantity: null, unit: null }; // FullIngredient
+    updateFormField(listKey as keyof Partial<AnalyzedImageResult>, [...currentList, newIngredient]);
   }, [updateFormField, formData]);
 
-  const removeIngredient = useCallback((listKey: 'ingredients' | 'active_ingredients' | 'inactive_ingredients' | 'other_ingredients', index: number) => {
-    const currentList = formData[listKey] || [];
-    const updatedList = currentList.filter((_, i) => i !== index);
-    updateFormField(listKey as any, updatedList);
+  const removeIngredient = useCallback((listKey: IngredientListKey, index: number) => {
+    const currentList: AnyIngredient[] = (formData as any)[listKey] || [];
+    const updatedList = currentList.filter((_: AnyIngredient, i: number) => i !== index);
+    updateFormField(listKey as keyof Partial<AnalyzedImageResult>, updatedList);
   }, [updateFormField, formData]);
 
   if (!formData.type) return null;

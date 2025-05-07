@@ -128,7 +128,9 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
     return { schema: z.object(shape), defaultValues: defaults };
   }, [formDefinition]);
 
-  const form = useForm<z.infer<typeof schema>>({
+  type FormValues = z.infer<typeof schema>; // Define FormValues type
+
+  const form = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues,
     mode: "onChange", // Or "onBlur" or "onSubmit"
@@ -395,7 +397,6 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
          if (!userId) {
             return <p className="text-destructive">Error: User ID not available for upload.</p>;
          }
-         // TODO: Handle multiple file uploads if fileUploadOpts.allowMultiple is true
          return (
             <Controller
                name={questionId}
@@ -403,14 +404,14 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
                render={({ field }) => (
                   <>
                     {/* File Upload Button/Input */}
-                    <FileUploadComponent 
-                       userId={userId} 
-                       onUploadComplete={(uploadedId) => handleFileUploadComplete(questionId, uploadedId)} 
+                    <FileUploadComponent
+                       userId={userId}
+                       onUploadComplete={(uploadedFileId) => handleFileUploadComplete(questionId, uploadedFileId)}
                     />
                     {/* Display uploaded file ID if it exists */}
                     {field.value && (
                        <div className="mt-2 text-sm text-muted-foreground">
-                          Uploaded file ID: {field.value}
+                          Uploaded file ID(s): {Array.isArray(field.value) ? field.value.join(', ') : field.value}
                        </div>
                     )}
                   </>
@@ -443,11 +444,21 @@ export function FormAnsweringComponent({ formId, onSubmissionComplete }: FormAns
                 <p className="text-sm text-muted-foreground pb-1">{question.description}</p>
               )}
               {renderQuestionInput(question)}
-              {form.formState.errors[question.id] && (
-                  <p className="text-sm font-medium text-destructive pt-1">
-                      {form.formState.errors[question.id]?.message?.toString()}
-                  </p>
-              )}
+              {(() => {
+                // More robust error message access
+                const fieldErrorNode = form.formState.errors[question.id as keyof FormValues];
+                const message = fieldErrorNode && typeof (fieldErrorNode as any).message === 'string' 
+                                ? (fieldErrorNode as any).message 
+                                : null;
+                if (message) {
+                  return (
+                    <p className="text-sm text-destructive mt-1">
+                      {message}
+                    </p>
+                  );
+                }
+                return null;
+              })()}
             </div>
           ))}
         </CardContent>

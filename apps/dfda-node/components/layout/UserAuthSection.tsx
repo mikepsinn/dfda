@@ -31,7 +31,7 @@ export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems 
   const router = useRouter()
 
   const userInitials = user?.user_metadata?.name
-    ? user.user_metadata.name.split(" ").map((n) => n[0]).join("").toUpperCase()
+    ? user.user_metadata.name.split(" ").map((n: string) => n[0]).join("").toUpperCase()
     : user?.email?.[0].toUpperCase() ?? "U"
 
   const handleSignOut = async () => {

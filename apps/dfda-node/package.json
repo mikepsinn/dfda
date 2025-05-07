@@ -22,7 +22,7 @@
     "test:watch": "vitest --config vitest.config.ts",
     "test:ui": "vitest --ui --config vitest.config.ts",
     "test:unit": "vitest run --config vitest.config.ts tests/unit",
-    "test:integration": "vitest run --config vitest.config.ts tests/integration",
+    "test:integration": "vitest run --config vitest.integration.config.ts tests/integration",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "sb:local:start": "npx supabase start",
