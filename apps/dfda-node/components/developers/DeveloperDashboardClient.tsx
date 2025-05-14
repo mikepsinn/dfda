@@ -22,6 +22,8 @@ import "swagger-ui-react/swagger-ui.css";
 import { listOAuthClients } from '@/lib/actions/developer/oauth-clients.actions'; // Import the server action
 // Removed: import { type publicOauthClientsRowSchemaSchema } from '@/lib/database.schemas';
 // Removed: import { z } from 'zod';
+import { Pencil } from "lucide-react"; // For Edit icon
+import { EditOAuthApplicationForm } from "@/components/developers/EditOAuthApplicationForm"; // Import the new form
 
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
@@ -70,6 +72,7 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
   const [oauthClients, setOAuthClients] = useState<OAuthClient[]>([]);
   const [isLoadingClients, setIsLoadingClients] = useState(true);
   const [clientsError, setClientsError] = useState<string | null>(null);
+  const [editingClient, setEditingClient] = useState<OAuthClient | null>(null);
 
   const fetchOAuthClients = useCallback(async () => {
     if (!user) return;
@@ -106,6 +109,19 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
 
   const handleClientCreated = () => {
     fetchOAuthClients();
+  };
+
+  const handleEditClient = (client: OAuthClient) => {
+    setEditingClient(client);
+  };
+
+  const handleUpdateCancelled = () => {
+    setEditingClient(null);
+  };
+
+  const handleClientUpdated = () => {
+    setEditingClient(null);
+    fetchOAuthClients(); // Refresh list after update
   };
 
   // Prepare Swagger UI props
@@ -194,25 +210,42 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
                 <CardDescription>Manage your OAuth applications for user authentication.</CardDescription>
               </CardHeader>
               <CardContent>
-                <OAuthApplicationForm onClientCreated={handleClientCreated} />
-                <div className="mt-6">
-                  <h4 className="text-md font-semibold mb-2">Your OAuth Applications:</h4>
-                  {isLoadingClients && <p>Loading clients...</p>}
-                  {clientsError && <p className="text-red-500">Error: {clientsError}</p>}
-                  {!isLoadingClients && !clientsError && oauthClients.length === 0 && (
-                    <p>You haven't created any OAuth applications yet.</p>
-                  )}
-                  {!isLoadingClients && !clientsError && oauthClients.length > 0 && (
-                    <ul className="space-y-2">
-                      {oauthClients.map((client) => (
-                        <li key={client.client_id} className="p-2 border rounded-md">
-                          {client.client_name} (ID: {client.client_id})
-                          {/* TODO: Add buttons for Edit, Delete, Reset Secret */}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                {editingClient ? (
+                  <EditOAuthApplicationForm 
+                      client={editingClient} 
+                      onClientUpdated={handleClientUpdated} 
+                      onCancel={handleUpdateCancelled} 
+                  />
+                ) : (
+                  <OAuthApplicationForm onClientCreated={handleClientCreated} />
+                )}
+
+                {!editingClient && (
+                  <div className="mt-6">
+                    <h4 className="text-md font-semibold mb-2">Your OAuth Applications:</h4>
+                    {/* ... loading/error/empty states ... */}
+                    {!isLoadingClients && !clientsError && oauthClients.length > 0 && (
+                      <ul className="space-y-2">
+                        {oauthClients.map((client) => (
+                          <li key={client.client_id} className="p-3 border rounded-md flex justify-between items-center">
+                            <div>
+                              <span className="font-semibold">{client.client_name}</span>
+                              <span className="text-xs text-muted-foreground ml-2">(ID: {client.client_id})</span>
+                            </div>
+                            <Button variant="outline" size="sm" onClick={() => handleEditClient(client)}>
+                              <Pencil className="h-4 w-4 mr-2" /> Edit
+                            </Button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {(isLoadingClients || (!clientsError && oauthClients.length === 0)) && !isLoadingClients && (
+                        <p>You haven't created any OAuth applications yet.</p>
+                    )}
+                     {isLoadingClients && <p>Loading clients...</p>}
+                     {clientsError && <p className="text-red-500">Error: {clientsError}</p>}
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
