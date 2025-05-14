@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { logger } from "@/lib/logger"; // Assuming logger is used below
 import { DeveloperDashboardClient } from "@/components/developers/DeveloperDashboardClient"; // Import the client component
 import { type Database } from "@/lib/database.types";
+import FloatingChatButton from "@/components/ui/FloatingChatButton"; // Import the new chat button
 
 // Derive Profile type (can also be done in the client component and imported)
 type Profile = Database['public']['Tables']['profiles']['Row'];
@@ -27,13 +28,14 @@ export default async function DeveloperDashboardPage() {
     // Handle error or maybe proceed with null profile
   }
 
-
-
   // Render ONLY the client component, passing server data as props
   return (
-    <DeveloperDashboardClient 
-        user={user} 
-        profile={profile} 
-    />
+    <>
+      <DeveloperDashboardClient 
+          user={user} 
+          profile={profile} 
+      />
+      <FloatingChatButton />
+    </>
   );
 }
