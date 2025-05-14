@@ -118,16 +118,33 @@ export async function getGroundedAnswerAction(query: string): Promise<GroundedSe
     // Check groundingAttributions or groundingChunks based on observed metadata
     const attributions: CustomGroundingAttribution[] = groundingMetadata?.groundingAttributions ?? [];
     attributions.forEach((att: CustomGroundingAttribution) => {
+      let rawCitation: { url?: string; title?: string } = {};
+
       if (att.web?.uri) {
-          citations.push({
+        rawCitation = {
               url: att.web.uri,
               title: att.web.title || undefined
-          });
+        };
       } else if (att.retrievedContext?.uri) {
-           citations.push({
+        rawCitation = {
               url: att.retrievedContext.uri,
               title: att.retrievedContext.title || undefined
-          });
+        };
+      }
+
+      if (rawCitation.url) { // Only attempt to parse if we have a URL
+        const parsedCitation = GroundedSearchCitationSchema.safeParse(rawCitation);
+        if (parsedCitation.success) {
+          citations.push(parsedCitation.data);
+        } else {
+          logger.warn(
+            `${LOG_PREFIX} Failed to validate citation from API. Skipping.`,
+            { 
+              error: parsedCitation.error.flatten(), 
+              citationData: rawCitation 
+            }
+          );
+        }
       }
     });
 
