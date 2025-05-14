@@ -24,6 +24,7 @@ import { z } from 'zod';
 import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle, AlertTriangle } from "lucide-react";
+import { useChat } from '@ai-sdk/react';
 
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
@@ -71,6 +72,53 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
   const [firstName, setFirstName] = useState(initialProfile?.first_name ?? '');
   const [lastName, setLastName] = useState(initialProfile?.last_name ?? '');
 
+  // Prepare Swagger UI props (and for chat spec fetching)
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  // Ensure no trailing slash on siteUrl before appending, and ensure trailing slash for openApiUrl as it's a base path
+  const openApiUrl = siteUrl ? `${siteUrl.replace(/\/$/, '')}/api/sb/` : undefined;
+
+  // State for OpenAPI spec for chat
+  const [openApiSpecForChat, setOpenApiSpecForChat] = useState<string | null>(null);
+  const [isFetchingSpec, setIsFetchingSpec] = useState(true);
+
+  // useChat hook integration
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading: isChatLoading,
+    error: chatError,
+    reload,
+    stop,
+  } = useChat({
+    api: '/api/chat', // Your backend chat route
+    // Send openApiSpecForChat in the initial message or via ChatRequestOptions.data
+    // We will send it with each handleSubmit call to ensure the latest spec is used if it could change.
+  });
+
+  const fetchOpenApiSpec = useCallback(async () => {
+    if (!openApiUrl) {
+      logger.warn('[DeveloperDashboard] openApiUrl not available for fetching spec for chat.');
+      setIsFetchingSpec(false);
+      return;
+    }
+    setIsFetchingSpec(true);
+    try {
+      const response = await fetch(openApiUrl); // Fetch from your proxied endpoint
+      if (!response.ok) {
+        throw new Error(`Failed to fetch OpenAPI spec: ${response.status} ${response.statusText}`);
+      }
+      const specText = await response.text(); // Get spec as text
+      setOpenApiSpecForChat(specText);
+      logger.info('[DeveloperDashboard] OpenAPI spec fetched for chat.');
+    } catch (e: any) {
+      logger.error('[DeveloperDashboard] Error fetching OpenAPI spec for chat:', { error: e });
+      setOpenApiSpecForChat(null); // Or handle error state more visibly
+    } finally {
+      setIsFetchingSpec(false);
+    }
+  }, [openApiUrl]);
 
   const fetchOAuthClients = useCallback(async () => {
     if (!user) return;
@@ -102,10 +150,11 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
     };
     getSession();
     fetchOAuthClients();
+    fetchOpenApiSpec(); // Fetch the spec when component mounts
     // Update local state if initialProfile changes (e.g. after server-side update and re-render)
     setFirstName(initialProfile?.first_name ?? '');
     setLastName(initialProfile?.last_name ?? '');
-  }, [supabase, fetchOAuthClients, initialProfile]);
+  }, [supabase, fetchOAuthClients, initialProfile, fetchOpenApiSpec]);
 
   const handleCreateSubmit = async (formData: z.output<typeof CreateOAuthClientInputSchema>) => {
     setActionStatus(null);
@@ -257,10 +306,6 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
     setIsUpdatingProfile(false);
   };
 
-
-  // Prepare Swagger UI props
-  const openApiUrl = supabaseUrl ? `${supabaseUrl}/rest/v1/` : undefined;
-
   const requestInterceptor = (req: any) => {
     if (sessionToken) {
       req.headers['Authorization'] = `Bearer ${sessionToken}`;
@@ -269,6 +314,20 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
         req.headers['apikey'] = supabaseAnonKey;
     }
     return req;
+  };
+
+  // Custom handleSubmit for chat to include OpenAPI spec
+  const handleChatSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!openApiSpecForChat && !isFetchingSpec) {
+        // Optionally, you could append a message like "Waiting for API spec to load..."
+        // or disable the chat input until the spec is loaded.
+        alert("API specification is not yet loaded. Please wait a moment.");
+        return;
+    }
+    handleSubmit(e, {
+        data: { openApiSpec: openApiSpecForChat }
+    });
   };
 
   if (!user) {
@@ -282,11 +341,12 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
         <p className="text-muted-foreground">Manage your profile, API keys, OAuth applications, and access documentation.</p>
 
         <Tabs defaultValue="dashboard">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
             <TabsTrigger value="apiExplorer">API Explorer</TabsTrigger>
             <TabsTrigger value="documentation">Documentation Links</TabsTrigger>
             <TabsTrigger value="examples">Code Examples</TabsTrigger>
+            <TabsTrigger value="apiChat">API Chat Helper</TabsTrigger>
           </TabsList>
 
           <TabsContent value="dashboard" className="space-y-6 pt-6">
@@ -506,6 +566,60 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
               <CardContent>
                 <p className="text-muted-foreground mb-6">Explore code examples...</p>
                 <CodeExampleTabs />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="apiChat" className="space-y-6 pt-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>API Chat Helper</CardTitle>
+                <CardDescription>
+                  Ask questions about how to use the API. The assistant has access to the API's OpenAPI specification.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {isFetchingSpec && <p>Loading API specification for chat...</p>}
+                {chatError && (
+                  <Alert variant="destructive" className="mb-4">
+                    <AlertTriangle className="h-4 w-4" />
+                    <AlertTitle>Chat Error</AlertTitle>
+                    <AlertDescription>{chatError.message}</AlertDescription>
+                  </Alert>
+                )}
+                <div className="flex flex-col h-[500px] border rounded-md p-4 space-y-4">
+                  <div className="flex-grow overflow-y-auto space-y-2 pr-2">
+                    {messages.map(m => (
+                      <div key={m.id} className={`p-3 rounded-lg ${m.role === 'user' ? 'bg-primary text-primary-foreground self-end ml-auto' : 'bg-muted self-start mr-auto'} max-w-[85%]`}>
+                        <span className="text-xs text-muted-foreground">{m.role === 'user' ? 'You' : 'API Assistant'}</span>
+                        <p className="whitespace-pre-wrap">{m.content}</p>
+                        {m.createdAt && <p className="text-xs text-muted-foreground/70 pt-1">{m.createdAt.toLocaleTimeString()}</p>}
+                      </div>
+                    ))}
+                  </div>
+                  <form onSubmit={handleChatSubmit} className="flex items-center gap-2 border-t pt-4">
+                    <Input
+                      value={input}
+                      onChange={handleInputChange}
+                      placeholder={isFetchingSpec ? "Waiting for API spec..." : "Ask about the API..."}
+                      className="flex-grow"
+                      disabled={isFetchingSpec || isChatLoading}
+                    />
+                    <Button type="submit" disabled={isFetchingSpec || isChatLoading || !input.trim()}>
+                      {isChatLoading ? 'Sending...' : 'Send'}
+                    </Button>
+                  </form>
+                </div>
+                {messages.length > 1 && (
+                    <div className="mt-4 flex gap-2">
+                        <Button variant="outline" onClick={() => reload({ data: { openApiSpec: openApiSpecForChat }})} disabled={isChatLoading}>
+                            <RefreshCw className="mr-2 h-4 w-4"/> Regenerate
+                        </Button>
+                        <Button variant="outline" onClick={stop} disabled={!isChatLoading}>
+                            Stop
+                        </Button>
+                    </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
