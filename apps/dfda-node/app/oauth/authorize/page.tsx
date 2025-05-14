@@ -1,14 +1,12 @@
 import { redirect } from 'next/navigation';
-// import { cookies } from 'next/headers'; // No longer needed for admin client here
-// import { createServerClient as createServerClientSSR } from '@supabase/ssr'; // No longer needed
-import { createServerClient } from '@/utils/supabase/server'; // Our existing server client
-import { supabaseAdmin } from '@/utils/supabase/admin'; // Import the admin client
-import { type Database } from '@/lib/database.types';
+// import { cookies } from 'next/headers'; // Removed unused import
+import { createServerClient } from '@/utils/supabase/server';
+import { supabaseAdmin } from '@/utils/supabase/admin';
+// import { type Database } from '@/lib/database.types'; // Removed unused import
 import { logger } from '@/lib/logger';
-// import { env } from '@/lib/env'; // No longer needed if service key is only for admin client
 import { ConsentForm } from '@/components/oauth/ConsentForm';
 
-type OAuthClient = Database['public']['Tables']['oauth_clients']['Row'];
+// type OAuthClient = Database['public']['Tables']['oauth_clients']['Row']; // Removed unused type alias
 
 interface AuthorizePageProps {
   searchParams: {
@@ -142,25 +140,6 @@ export default async function AuthorizePage({ searchParams }: AuthorizePageProps
   // 3. If all checks pass, display consent form
   // We'll pass client details and user info to the ConsentForm component
   logger.info('User authenticated and client validated. Proceeding to consent.', { userId: user.id, clientId: client_id });
-
-  // Placeholder for ConsentForm props
-  const consentFormData = {
-    client: {
-      client_id: oauthClient.client_id,
-      client_name: oauthClient.client_name || 'Unnamed Application',
-      logo_uri: oauthClient.logo_uri,
-    },
-    user: {
-      // Pass any user details needed for display on consent screen
-      email: user.email,
-    },
-    scopes: requestedScopes, // Pass the validated/determined scopes
-    csrfToken: state, // Using 'state' as a CSRF token proxy for the form action for now
-    // Pass through PKCE params if they exist
-    code_challenge,
-    code_challenge_method,
-    redirect_uri, // Needed for form action success/cancel
-  };
 
   return (
     <ConsentForm

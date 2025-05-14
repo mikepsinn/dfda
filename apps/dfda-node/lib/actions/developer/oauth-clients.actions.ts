@@ -1,10 +1,11 @@
 'use server';
 
-import { createClient } from '@/utils/supabase/server';
+// import { supabaseAdmin } from '@/utils/supabase/admin'; // Removed unused import
+import { createServerClient } from '@/utils/supabase/server';
 import { publicOauthClientsInsertSchemaSchema } from '@/lib/database.schemas';
-import { z } from 'zod';
-import { v4 as uuidv4 } from 'uuid';
 import { Argon2id } from 'oslo/password';
+// import { randomBytes } from 'crypto'; // Removed unused import
+import { v4 as uuidv4 } from 'uuid';
 import { logger } from '@/lib/logger';
 import {
   CreateOAuthClientInputSchema,
@@ -27,7 +28,7 @@ function generateClientSecret(length = 40) {
 
 // Action to list OAuth clients for the authenticated developer
 export async function listOAuthClients() {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
   if (userError || !user) {
@@ -60,7 +61,7 @@ export async function listOAuthClients() {
 
 // Action to create a new OAuth client
 export async function createOAuthClient(input: CreateOAuthClientInput) {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
   if (userError || !user) {
@@ -136,7 +137,7 @@ export async function createOAuthClient(input: CreateOAuthClientInput) {
 
 // Action to get a specific OAuth client by ID
 export async function getOAuthClient(clientId: string) {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
   if (userError || !user) {
@@ -174,7 +175,7 @@ export async function getOAuthClient(clientId: string) {
 
 // Action to update an OAuth client
 export async function updateOAuthClient(clientId: string, input: UpdateOAuthClientInput) {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
   if (userError || !user) {
@@ -255,7 +256,7 @@ export async function updateOAuthClient(clientId: string, input: UpdateOAuthClie
 
 // Action to delete an OAuth client (soft delete)
 export async function deleteOAuthClient(clientId: string) {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
   if (userError || !user) {
@@ -292,7 +293,7 @@ export async function deleteOAuthClient(clientId: string) {
 
 // Action to reset an OAuth client's secret
 export async function resetOAuthClientSecret(clientId: string) {
-  const supabase = await createClient();
+  const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
   if (userError || !user) {

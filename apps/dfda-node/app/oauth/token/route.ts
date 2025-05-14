@@ -3,7 +3,6 @@ import { supabaseAdmin } from '@/utils/supabase/admin';
 import { logger } from '@/lib/logger';
 import { Argon2id } from 'oslo/password';
 import { SignJWT } from 'jose'; // For creating JWTs
-import { type Database } from '@/lib/database.types';
 import { TokenRequestSchema, type TokenRequestInput } from '@/lib/actions/oauth/token.schemas';
 import crypto from 'crypto';
 import { env } from '@/lib/env';
@@ -73,10 +72,16 @@ export async function POST(request: NextRequest) {
     code_verifier,
   } = requestBody;
 
+  // Validate grant_type
+  if (grant_type !== 'authorization_code') {
+    logger.warn(`${LOG_PREFIX} Unsupported grant_type:`, { grant_type });
+    return NextResponse.json({ error: 'unsupported_grant_type', error_description: 'Only authorization_code grant type is supported.' }, { status: 400 });
+  }
+
   // --- 1. Client Authentication & Validation ---
   const { data: oauthClient, error: clientDbError } = await supabaseAdmin
     .from('oauth_clients')
-    .select('client_id, client_secret, client_secret_hashed, grant_types, response_types, client_type, redirect_uris, scope') // Include client_type (public/confidential)
+    .select('client_id, client_secret, grant_types, response_types, client_type, redirect_uris, scope') // Removed client_secret_hashed
     .eq('client_id', client_id)
     .is('deleted_at', null)
     .single();
@@ -92,28 +97,15 @@ export async function POST(request: NextRequest) {
       logger.warn(`${LOG_PREFIX} Missing client_secret for confidential client:`, { client_id });
       return NextResponse.json({ error: 'invalid_client', error_description: 'Client secret is required for confidential clients.' }, { status: 401 });
     }
-    // Verify client_secret
-    let isValidSecret = false;
-    if (oauthClient.client_secret_hashed) {
-      // Ensure client_secret_hashed is not null or undefined before using it
-      if (oauthClient.client_secret_hashed) {
-        isValidSecret = await new Argon2id().verify(oauthClient.client_secret_hashed, client_secret);
-      } else {
-        // This case should ideally not be reached if client_secret_hashed is expected for confidential clients that use hashing
-        logger.error(`${LOG_PREFIX} Confidential client ${client_id} has client_secret_hashed field but it is null/undefined.`);
-        return NextResponse.json({ error: 'server_error', error_description: 'Client configuration error (hashed secret missing).' }, { status: 500 });
-      }
-    } else if (oauthClient.client_secret) {
-      // Fallback for plain text secret (not recommended, for migration or specific cases)
-      isValidSecret = oauthClient.client_secret === client_secret;
-      if (isValidSecret) {
-        logger.warn(`${LOG_PREFIX} Client ${client_id} is using a plain text secret. Consider migrating to hashed secrets.`);
-      }
-    } else {
-      // Neither client_secret_hashed nor client_secret is available
-      logger.error(`${LOG_PREFIX} Confidential client ${client_id} has no stored secret (neither plain nor hashed).`);
-      return NextResponse.json({ error: 'server_error', error_description: 'Client configuration error (secret missing).' }, { status: 500 });
+
+    // The oauthClient.client_secret field STORES THE HASHED SECRET.
+    // This was set during client creation by createOAuthClient action.
+    if (!oauthClient.client_secret) {
+        logger.error(`${LOG_PREFIX} Confidential client ${client_id} has no stored secret in the client_secret field.`);
+        return NextResponse.json({ error: 'server_error', error_description: 'Client configuration error (stored secret missing).' }, { status: 500 });
     }
+
+    const isValidSecret = await new Argon2id().verify(oauthClient.client_secret, client_secret);
 
     if (!isValidSecret) {
       logger.warn(`${LOG_PREFIX} Invalid client_secret for confidential client:`, { client_id });
