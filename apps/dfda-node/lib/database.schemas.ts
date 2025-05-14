@@ -1071,6 +1071,49 @@ export const publicOauthAccessTokensRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
+export const publicOauthAuthorizationCodesRowSchemaSchema = z.object({
+  client_id: z.string(),
+  code: z.string(),
+  created_at: z.string(),
+  expires_at: z.string(),
+  id: z.string(),
+  redirect_uri: z.string(),
+  scope: z.string().nullable(),
+  user_id: z.string(),
+});
+
+export const publicOauthAuthorizationCodesInsertSchemaSchema = z.object({
+  client_id: z.string(),
+  code: z.string(),
+  created_at: z.string().optional(),
+  expires_at: z.string(),
+  id: z.string().optional(),
+  redirect_uri: z.string(),
+  scope: z.string().optional().nullable(),
+  user_id: z.string(),
+});
+
+export const publicOauthAuthorizationCodesUpdateSchemaSchema = z.object({
+  client_id: z.string().optional(),
+  code: z.string().optional(),
+  created_at: z.string().optional(),
+  expires_at: z.string().optional(),
+  id: z.string().optional(),
+  redirect_uri: z.string().optional(),
+  scope: z.string().optional().nullable(),
+  user_id: z.string().optional(),
+});
+
+export const publicOauthAuthorizationCodesRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("fk_authorization_codes_client_id"),
+    columns: z.tuple([z.literal("client_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("oauth_clients"),
+    referencedColumns: z.tuple([z.literal("client_id")]),
+  }),
+]);
+
 export const publicOauthClientsRowSchemaSchema = z.object({
   client_id: z.string(),
   client_name: z.string(),
