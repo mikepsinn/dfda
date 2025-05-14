@@ -16,6 +16,7 @@ export interface GeneratedNavTree {
   readonly 'forgot_password': NavItem;
   readonly 'impact': NavItem;
   readonly 'login': NavItem;
+  readonly 'oauth_authorize': NavItem;
   readonly 'outcome_labels': NavItem;
   readonly 'outcome_labels_predictorvariableid': NavItem;
   readonly 'patient': NavItem;
@@ -132,6 +133,12 @@ export const navigationTreeObject: GeneratedNavTree = {
     "href": "/login",
     "description": "Log in to your account.",
     "emoji": "➡️"
+  },
+  "oauth_authorize": {
+    "title": "Authorize OAuth Application",
+    "href": "/oauth/authorize",
+    "description": "Authorize a third-party application to access your account data.",
+    "emoji": "🔑"
   },
   "outcome_labels": {
     "title": "Outcome Labels",
