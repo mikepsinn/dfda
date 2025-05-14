@@ -949,6 +949,47 @@ export type Database = {
           },
         ]
       }
+      oauth_authorization_codes: {
+        Row: {
+          client_id: string
+          code: string
+          created_at: string
+          expires_at: string
+          id: string
+          redirect_uri: string
+          scope: string | null
+          user_id: string
+        }
+        Insert: {
+          client_id: string
+          code: string
+          created_at?: string
+          expires_at: string
+          id?: string
+          redirect_uri: string
+          scope?: string | null
+          user_id: string
+        }
+        Update: {
+          client_id?: string
+          code?: string
+          created_at?: string
+          expires_at?: string
+          id?: string
+          redirect_uri?: string
+          scope?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_authorization_codes_client_id"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "oauth_clients"
+            referencedColumns: ["client_id"]
+          },
+        ]
+      }
       oauth_clients: {
         Row: {
           client_id: string
