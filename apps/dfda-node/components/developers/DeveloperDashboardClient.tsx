@@ -24,7 +24,6 @@ import { z } from 'zod';
 import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle, AlertTriangle } from "lucide-react";
-import { EditOAuthApplicationForm } from "@/components/developers/EditOAuthApplicationForm";
 
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
