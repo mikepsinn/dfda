@@ -6,31 +6,77 @@ import { logger } from '@/lib/logger';
 // Ensure Supabase URL and Anon Key are available server-side
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL; // Add this to get site URL
 
 // Define allowed HTTP methods (optional, but good practice)
 const ALLOWED_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'];
 
 async function handler(req: NextRequest, { params }: { params: { slug: string[] } }) {
     // Check if Supabase creds are configured
-    if (!supabaseUrl || !supabaseAnonKey) {
-        logger.error('[API Supabase Proxy] Missing Supabase URL or Anon Key environment variables.');
+    if (!supabaseUrl || !supabaseAnonKey || !siteUrl) { // Check siteUrl as well
+        logger.error('[API Supabase Proxy] Missing Supabase URL, Anon Key, or Site URL environment variables.');
         return new NextResponse('API configuration error', { status: 500 });
     }
 
-    // Validate HTTP method
+    // Handle potentially undefined slug for optional catch-all routes
+    const slugArray = params.slug || []; // If slug is undefined (e.g. path is /api/sb), default to empty array
+    const slugPath = slugArray.join('/');
+
+    // Handle OPTIONS preflight requests for CORS (moved before spec check for clarity)
+    if (req.method === 'OPTIONS') {
+        const corsHeaders = new Headers();
+        corsHeaders.set('Access-Control-Allow-Origin', '*'); // Or specify your frontend origin
+        corsHeaders.set('Access-Control-Allow-Methods', ALLOWED_METHODS.join(', '));
+        corsHeaders.set('Access-Control-Allow-Headers', 'authorization, apikey, content-type, prefer, x-client-info'); // Added x-client-info
+        return new NextResponse(null, { status: 204, headers: corsHeaders });
+    }
+
+    // If GET request to the root (empty slugPath), serve modified OpenAPI spec
+    if (req.method === 'GET' && slugPath === '') {
+        try {
+            logger.info('[API Supabase Proxy] Fetching OpenAPI spec from Supabase root.');
+            const specRes = await fetch(`${supabaseUrl}/rest/v1/`, {
+                headers: {
+                    'apikey': supabaseAnonKey, // Supabase requires apikey for the spec
+                }
+            });
+
+            if (!specRes.ok) {
+                logger.error(`[API Supabase Proxy] Failed to fetch OpenAPI spec from Supabase. Status: ${specRes.status}`);
+                return new NextResponse('Failed to fetch OpenAPI spec from upstream', { status: specRes.status });
+            }
+
+            const spec = await specRes.json();
+
+            // Modify the servers URL
+            const proxyApiBaseUrl = `${siteUrl.replace(/\/$/, '')}/api/sb`;
+            spec.servers = [{ url: proxyApiBaseUrl, description: 'DFDA API Proxy' }];
+            
+            // Modify paths to be relative to the new server URL if necessary (OpenAPI v3 usually handles this with server URL)
+            // For example, if paths were /rest/v1/table, they might need to become /table.
+            // However, with a single server entry, clients should combine server URL + path correctly.
+            // Let's assume for now that paths are relative enough or clients handle it.
+
+            logger.info('[API Supabase Proxy] Serving modified OpenAPI spec.');
+            const responseHeaders = new Headers();
+            responseHeaders.set('Content-Type', 'application/json');
+            responseHeaders.set('Access-Control-Allow-Origin', '*'); // Add CORS for the spec itself
+
+            return new NextResponse(JSON.stringify(spec), {
+                status: 200,
+                headers: responseHeaders
+            });
+
+        } catch (error: any) {
+            logger.error('[API Supabase Proxy] Error processing OpenAPI spec:', { error: error.message });
+            return new NextResponse('Error processing OpenAPI spec', { status: 500 });
+        }
+    }
+
+    // Validate HTTP method (moved after spec check)
     if (!req.method || !ALLOWED_METHODS.includes(req.method)) {
         logger.warn(`[API Supabase Proxy] Disallowed method: ${req.method}`);
         return new NextResponse('Method Not Allowed', { status: 405 });
-    }
-
-    // Handle OPTIONS preflight requests for CORS
-    if (req.method === 'OPTIONS') {
-        // Basic OPTIONS response - adjust headers as needed for your CORS policy
-        const headers = new Headers();
-        headers.set('Access-Control-Allow-Origin', '*'); // Or specify your frontend origin
-        headers.set('Access-Control-Allow-Methods', ALLOWED_METHODS.join(', '));
-        headers.set('Access-Control-Allow-Headers', 'authorization, apikey, content-type, prefer'); // Add any other headers your frontend might send
-        return new NextResponse(null, { status: 204, headers });
     }
 
     // Create Supabase client using the server utility and AWAIT it
@@ -53,7 +99,6 @@ async function handler(req: NextRequest, { params }: { params: { slug: string[] 
     const jwt = session.access_token;
 
     // Construct the target Supabase PostgREST URL
-    const slugPath = params.slug.join('/');
     const targetUrl = `${supabaseUrl}/rest/v1/${slugPath}${req.nextUrl.search}`; // Include query params
 
     // Prepare headers to forward
