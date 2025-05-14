@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm";
 import { OAuthApplicationForm } from "@/components/developers/OAuthApplicationForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -19,9 +19,29 @@ import { type Database } from '@/lib/database.types';
 import { createClient } from "@/utils/supabase/client";
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
+import { listOAuthClients } from '@/lib/actions/developer/oauth-clients.actions'; // Import the server action
+// Removed: import { type publicOauthClientsRowSchemaSchema } from '@/lib/database.schemas';
+// Removed: import { z } from 'zod';
 
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
+
+// Use Pick from the generated DB types for OAuthClient
+type OAuthClient = Pick<
+  Database['public']['Tables']['oauth_clients']['Row'],
+  |'client_id'
+  | 'client_name'
+  | 'client_uri'
+  | 'redirect_uris'
+  | 'logo_uri'
+  | 'scope'
+  | 'grant_types'
+  | 'response_types'
+  | 'created_at'
+  | 'owner_id'
+  | 'tos_uri'
+  | 'policy_uri'
+>;
 
 // Define props for the client component
 export interface DeveloperDashboardClientProps { // Export interface
@@ -47,6 +67,30 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
   const [sessionToken, setSessionToken] = useState<string | null>(null);
   const supabase = createClient(); // Initialize client-side Supabase
 
+  const [oauthClients, setOAuthClients] = useState<OAuthClient[]>([]);
+  const [isLoadingClients, setIsLoadingClients] = useState(true);
+  const [clientsError, setClientsError] = useState<string | null>(null);
+
+  const fetchOAuthClients = useCallback(async () => {
+    if (!user) return;
+    setIsLoadingClients(true);
+    setClientsError(null);
+    try {
+      const result = await listOAuthClients();
+      if (result.success && result.data) {
+        // The data from listOAuthClients should now directly match the picked OAuthClient type
+        setOAuthClients(result.data as OAuthClient[]); 
+      } else {
+        setClientsError(result.error || 'Failed to load OAuth clients.');
+        logger.error("Failed to fetch OAuth clients", { error: result.error, details: result.details });
+      }
+    } catch (e: any) {
+      logger.error("Error calling listOAuthClients action", { error: e });
+      setClientsError('An unexpected error occurred while fetching clients.');
+    }
+    setIsLoadingClients(false);
+  }, [user]);
+
   useEffect(() => {
     const getSession = async () => {
       const { data, error } = await supabase.auth.getSession();
@@ -57,7 +101,12 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
       }
     };
     getSession();
-  }, [supabase]);
+    fetchOAuthClients();
+  }, [supabase, fetchOAuthClients]);
+
+  const handleClientCreated = () => {
+    fetchOAuthClients();
+  };
 
   // Prepare Swagger UI props
   const openApiUrl = supabaseUrl ? `${supabaseUrl}/rest/v1/` : undefined;
@@ -145,7 +194,25 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
                 <CardDescription>Manage your OAuth applications for user authentication.</CardDescription>
               </CardHeader>
               <CardContent>
-                <OAuthApplicationForm />
+                <OAuthApplicationForm onClientCreated={handleClientCreated} />
+                <div className="mt-6">
+                  <h4 className="text-md font-semibold mb-2">Your OAuth Applications:</h4>
+                  {isLoadingClients && <p>Loading clients...</p>}
+                  {clientsError && <p className="text-red-500">Error: {clientsError}</p>}
+                  {!isLoadingClients && !clientsError && oauthClients.length === 0 && (
+                    <p>You haven't created any OAuth applications yet.</p>
+                  )}
+                  {!isLoadingClients && !clientsError && oauthClients.length > 0 && (
+                    <ul className="space-y-2">
+                      {oauthClients.map((client) => (
+                        <li key={client.client_id} className="p-2 border rounded-md">
+                          {client.client_name} (ID: {client.client_id})
+                          {/* TODO: Add buttons for Edit, Delete, Reset Secret */}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </CardContent>
             </Card>
           </TabsContent>
