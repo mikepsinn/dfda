@@ -183,11 +183,11 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
                    <div className="rounded-lg border p-4">
                      <h3 className="font-medium mb-2">Getting Started</h3>
                      <p className="text-sm text-muted-foreground mb-4">Learn the basics...</p>
-                     <Link href="/(public)/developers/documentation#getting-started" target="_blank"><Button variant="outline" size="sm">View Section</Button></Link>
+                     <Link href="/developers/documentation#getting-started" target="_blank"><Button variant="outline" size="sm">View Section</Button></Link>
                    </div>
                    {/* ... other links ... */}
                  </div>
-                 <Link href="/(public)/developers/documentation" target="_blank" rel="noopener noreferrer">
+                 <Link href="/developers/documentation" target="_blank" rel="noopener noreferrer">
                    <Button variant="default" className="mt-4">
                      <ExternalLink className="mr-2 h-4 w-4" /> View Full Documentation
                    </Button>
