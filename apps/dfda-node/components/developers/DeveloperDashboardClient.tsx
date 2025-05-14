@@ -12,18 +12,17 @@ import Link from "next/link"
 import { ExternalLink } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
-import { KeyRound } from "lucide-react"
-// import { updateUserProfile } from "@/lib/profile" // Removed unused import
+import { KeyRound, Pencil, Trash2, RefreshCw, Copy } from "lucide-react"
 import { type User } from '@supabase/supabase-js';
 import { type Database } from '@/lib/database.types';
 import { createClient } from "@/utils/supabase/client";
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
-import { listOAuthClients } from '@/lib/actions/developer/oauth-clients.actions'; // Import the server action
-// Removed: import { type publicOauthClientsRowSchemaSchema } from '@/lib/database.schemas';
-// Removed: import { z } from 'zod';
-import { Pencil } from "lucide-react"; // For Edit icon
-import { EditOAuthApplicationForm } from "@/components/developers/EditOAuthApplicationForm"; // Import the new form
+import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret } from '@/lib/actions/developer/oauth-clients.actions';
+import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { CheckCircle, AlertTriangle } from "lucide-react";
+import { EditOAuthApplicationForm } from "@/components/developers/EditOAuthApplicationForm";
 
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
@@ -45,34 +44,29 @@ type OAuthClient = Pick<
   | 'policy_uri'
 >;
 
-// Define props for the client component
-export interface DeveloperDashboardClientProps { // Export interface
+export interface DeveloperDashboardClientProps {
   user: User | null;
   profile: Profile | null;
   supabaseUrl: string | undefined;
   supabaseAnonKey: string | undefined;
 }
 
-// Server Action needs to be defined outside or imported if used here
-// For simplicity, we assume it's called from the Server Component parent
-// or defined elsewhere and imported if needed directly (less common for this pattern)
-// If the form submission *must* use a Server Action defined here, it needs
-// careful handling or preferably restructuring to use a dedicated action file.
-
-// For now, let's assume the profile update uses a dedicated server action defined elsewhere
-// or is handled differently.
-// If we keep the server action call here, it needs to be imported.
-// Example: import { updateDeveloperProfileAction } from '@/lib/actions/developer'; 
-
-// The Client Component containing the Tabs and Swagger UI
-export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseAnonKey }: DeveloperDashboardClientProps) {
+export function DeveloperDashboardClient({ user, profile: initialProfile, supabaseUrl, supabaseAnonKey }: DeveloperDashboardClientProps) {
   const [sessionToken, setSessionToken] = useState<string | null>(null);
-  const supabase = createClient(); // Initialize client-side Supabase
+  const supabase = createClient();
 
   const [oauthClients, setOAuthClients] = useState<OAuthClient[]>([]);
   const [isLoadingClients, setIsLoadingClients] = useState(true);
   const [clientsError, setClientsError] = useState<string | null>(null);
   const [editingClient, setEditingClient] = useState<OAuthClient | null>(null);
+  const [actionStatus, setActionStatus] = useState<{ type: 'success' | 'error'; message: string; clientId?: string; newSecret?: string } | null>(null);
+
+  // Profile state
+  const [isUpdatingProfile, setIsUpdatingProfile] = useState(false);
+  const [profileUpdateStatus, setProfileUpdateStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [firstName, setFirstName] = useState(initialProfile?.first_name ?? '');
+  const [lastName, setLastName] = useState(initialProfile?.last_name ?? '');
+
 
   const fetchOAuthClients = useCallback(async () => {
     if (!user) return;
@@ -81,7 +75,6 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
     try {
       const result = await listOAuthClients();
       if (result.success && result.data) {
-        // The data from listOAuthClients should now directly match the picked OAuthClient type
         setOAuthClients(result.data as OAuthClient[]); 
       } else {
         setClientsError(result.error || 'Failed to load OAuth clients.');
@@ -105,13 +98,18 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
     };
     getSession();
     fetchOAuthClients();
-  }, [supabase, fetchOAuthClients]);
+    // Update local state if initialProfile changes (e.g. after server-side update and re-render)
+    setFirstName(initialProfile?.first_name ?? '');
+    setLastName(initialProfile?.last_name ?? '');
+  }, [supabase, fetchOAuthClients, initialProfile]);
 
   const handleClientCreated = () => {
+    setActionStatus({ type: 'success', message: 'Client created successfully.' });
     fetchOAuthClients();
   };
 
   const handleEditClient = (client: OAuthClient) => {
+    setActionStatus(null); 
     setEditingClient(client);
   };
 
@@ -121,8 +119,89 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
 
   const handleClientUpdated = () => {
     setEditingClient(null);
-    fetchOAuthClients(); // Refresh list after update
+    setActionStatus({ type: 'success', message: 'Client updated successfully.' });
+    fetchOAuthClients(); 
   };
+
+  const handleDeleteClient = async (clientId: string, clientName: string) => {
+    setActionStatus(null);
+    if (window.confirm(`Are you sure you want to delete the OAuth client "${clientName}"? This action cannot be undone.`)) {
+      const result = await deleteOAuthClient(clientId);
+      if (result.success) {
+        setActionStatus({ type: 'success', message: result.message || 'Client deleted successfully.' });
+        fetchOAuthClients(); 
+      } else {
+        setActionStatus({ type: 'error', message: result.error || 'Failed to delete client.' });
+        logger.error('Failed to delete OAuth Client', { clientId, error: result.error, details: result.details });
+      }
+    }
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setActionStatus(prev => ({ 
+        type: 'success', 
+        message: prev?.message + ' (Copied to clipboard!)' || 'Copied to clipboard!',
+        clientId: prev?.clientId,
+        newSecret: prev?.newSecret
+      })); 
+      setTimeout(() => setActionStatus(prev => {
+        if (prev?.message.includes("(Copied to clipboard!)")){
+            return {...prev, message: prev.message.replace(" (Copied to clipboard!)","")}
+        }
+        return prev;
+      }), 2000);
+    }).catch(err => {
+      logger.error("Failed to copy to clipboard", { error: err });
+      setActionStatus({ type: 'error', message: 'Failed to copy new secret.'});
+    });
+  };
+
+  const handleResetClientSecret = async (clientId: string, clientName: string) => {
+    setActionStatus(null);
+    if (window.confirm(`Are you sure you want to reset the secret for "${clientName}"? The current secret will stop working immediately. This action cannot be undone.`)) {
+      const result = await resetOAuthClientSecret(clientId);
+      if (result.success && result.data?.client_secret) {
+        setActionStatus({
+          type: 'success',
+          message: `Secret for "${clientName}" has been reset. Please save the new secret. It will not be shown again.`,
+          clientId: clientId,
+          newSecret: result.data.client_secret
+        });
+        fetchOAuthClients(); 
+      } else {
+        setActionStatus({ type: 'error', message: result.error || 'Failed to reset secret.' });
+        logger.error('Failed to reset client secret', { clientId, error: result.error, details: result.details });
+      }
+    }
+  };
+
+  const handleProfileUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!user) return;
+    
+    setProfileUpdateStatus(null);
+    setIsUpdatingProfile(true);
+
+    const input: UpdateProfileInput = {
+        first_name: firstName,
+        last_name: lastName,
+    };
+
+    const result = await updateDeveloperProfile(user.id, input);
+
+    if (result.success) {
+      setProfileUpdateStatus({ type: 'success', message: 'Profile updated successfully.' });
+      // Optimistically update local profile state or rely on revalidation and prop refresh
+      // For now, we can clear message after a few seconds
+      setTimeout(() => setProfileUpdateStatus(null), 3000);
+    } else {
+      setProfileUpdateStatus({ type: 'error', message: result.error || 'Failed to update profile.' });
+      logger.error('Failed to update profile', { userId: user.id, error: result.error, details: result.details });
+    }
+    setIsUpdatingProfile(false);
+  };
+
 
   // Prepare Swagger UI props
   const openApiUrl = supabaseUrl ? `${supabaseUrl}/rest/v1/` : undefined;
@@ -137,20 +216,11 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
     return req;
   };
 
-  // Simplified handler assuming the server action is called elsewhere or imported
-  // const handleProfileUpdate = async (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   if (!user) return;
-  //   const formData = new FormData(event.currentTarget);
-  //   await updateDeveloperProfileAction(user.id, formData); 
-  // };
-
   if (!user) {
     return <div>Loading user data or authentication required...</div>;
   }
 
   return (
-    // Removed <main> tag, assuming layout provides it
     <div className="container py-6 md:py-10">
       <div className="mx-auto max-w-5xl space-y-8">
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Developer Dashboard</h1>
@@ -171,23 +241,43 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
                 <CardDescription>Keep your contact information up to date.</CardDescription>
               </CardHeader>
               <CardContent>
-                {/* TODO: Refactor form to use a Server Action from a separate file or client-side mutation */}
-                <form /* onSubmit={handleProfileUpdate} */ className="space-y-4">
+                {profileUpdateStatus && (
+                    <Alert variant={profileUpdateStatus.type === 'error' ? 'destructive' : 'default'} className="mb-4">
+                        {profileUpdateStatus.type === 'success' ? <CheckCircle className="h-4 w-4" /> : <AlertTriangle className="h-4 w-4" />}
+                        <AlertTitle>{profileUpdateStatus.type === 'success' ? 'Success' : 'Error'}</AlertTitle>
+                        <AlertDescription>{profileUpdateStatus.message}</AlertDescription>
+                    </Alert>
+                )}
+                <form onSubmit={handleProfileUpdate} className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="developer-first-name">First name</Label>
-                      <Input id="developer-first-name" name="developer-first-name" defaultValue={profile?.first_name ?? ''} />
+                      <Input 
+                        id="developer-first-name" 
+                        name="developer-first-name" 
+                        value={firstName} 
+                        onChange={(e) => setFirstName(e.target.value)} 
+                        disabled={isUpdatingProfile}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="developer-last-name">Last name</Label>
-                      <Input id="developer-last-name" name="developer-last-name" defaultValue={profile?.last_name ?? ''} />
+                      <Input 
+                        id="developer-last-name" 
+                        name="developer-last-name" 
+                        value={lastName} 
+                        onChange={(e) => setLastName(e.target.value)} 
+                        disabled={isUpdatingProfile}
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="developer-email">Email</Label>
                     <Input id="developer-email" name="developer-email" type="email" value={user.email ?? ''} readOnly />
                   </div>
-                  <Button type="submit">Update Profile (Action TBD)</Button>
+                  <Button type="submit" disabled={isUpdatingProfile}>
+                    {isUpdatingProfile ? 'Updating...' : 'Update Profile'}
+                  </Button>
                 </form>
               </CardContent>
             </Card>
@@ -210,6 +300,28 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
                 <CardDescription>Manage your OAuth applications for user authentication.</CardDescription>
               </CardHeader>
               <CardContent>
+                {actionStatus && (
+                  <Alert variant={actionStatus.type === 'error' ? 'destructive' : 'default'} className="mb-4">
+                    {actionStatus.type === 'success' ? <CheckCircle className="h-4 w-4" /> : <AlertTriangle className="h-4 w-4" />}
+                    <AlertTitle>{actionStatus.type === 'success' ? 'Success' : 'Error'}</AlertTitle>
+                    <AlertDescription>
+                      {actionStatus.message}
+                      {actionStatus.type === 'success' && actionStatus.newSecret && actionStatus.clientId && (
+                        <div className="mt-2 p-2 bg-muted rounded">
+                          <p className="text-sm font-semibold">New Client Secret for ID {actionStatus.clientId}:</p>
+                          <div className="flex items-center justify-between">
+                            <span className="font-mono text-sm break-all">{actionStatus.newSecret}</span>
+                            <Button variant="ghost" size="icon" onClick={() => copyToClipboard(actionStatus.newSecret!)}>
+                              <Copy className="h-4 w-4" />
+                            </Button>
+                          </div>
+                          <p className="text-xs text-red-600 mt-1">Save this secret. It will not be shown again.</p>
+                        </div>
+                      )}
+                    </AlertDescription>
+                  </Alert>
+                )}
+
                 {editingClient ? (
                   <EditOAuthApplicationForm 
                       client={editingClient} 
@@ -223,18 +335,27 @@ export function DeveloperDashboardClient({ user, profile, supabaseUrl, supabaseA
                 {!editingClient && (
                   <div className="mt-6">
                     <h4 className="text-md font-semibold mb-2">Your OAuth Applications:</h4>
-                    {/* ... loading/error/empty states ... */}
                     {!isLoadingClients && !clientsError && oauthClients.length > 0 && (
                       <ul className="space-y-2">
                         {oauthClients.map((client) => (
-                          <li key={client.client_id} className="p-3 border rounded-md flex justify-between items-center">
-                            <div>
-                              <span className="font-semibold">{client.client_name}</span>
-                              <span className="text-xs text-muted-foreground ml-2">(ID: {client.client_id})</span>
+                          <li key={client.client_id} className="p-3 border rounded-md">
+                            <div className="flex justify-between items-center mb-2">
+                              <div>
+                                <span className="font-semibold">{client.client_name}</span>
+                                <span className="text-xs text-muted-foreground ml-2">(ID: {client.client_id})</span>
+                              </div>
+                              <div className="flex space-x-1">
+                                <Button variant="outline" size="sm" onClick={() => handleEditClient(client)}>
+                                  <Pencil className="h-3 w-3 mr-1 lg:mr-2" /> <span className="hidden lg:inline">Edit</span>
+                                </Button>
+                                <Button variant="outline" size="sm" onClick={() => handleResetClientSecret(client.client_id, client.client_name || 'Unnamed Client') } className="text-blue-600 hover:text-blue-700 border-blue-600 hover:border-blue-700">
+                                  <RefreshCw className="h-3 w-3 mr-1 lg:mr-2" /> <span className="hidden lg:inline">Reset Secret</span>
+                                </Button>
+                                <Button variant="destructive" size="sm" onClick={() => handleDeleteClient(client.client_id, client.client_name || 'Unnamed Client')}>
+                                  <Trash2 className="h-3 w-3 mr-1 lg:mr-2" /> <span className="hidden lg:inline">Delete</span>
+                                </Button>
+                              </div>
                             </div>
-                            <Button variant="outline" size="sm" onClick={() => handleEditClient(client)}>
-                              <Pencil className="h-4 w-4 mr-2" /> Edit
-                            </Button>
                           </li>
                         ))}
                       </ul>
