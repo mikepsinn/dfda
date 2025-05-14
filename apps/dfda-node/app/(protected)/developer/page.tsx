@@ -27,17 +27,13 @@ export default async function DeveloperDashboardPage() {
     // Handle error or maybe proceed with null profile
   }
 
-  // Get public Supabase details from server environment variables
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 
   // Render ONLY the client component, passing server data as props
   return (
     <DeveloperDashboardClient 
         user={user} 
         profile={profile} 
-        supabaseUrl={supabaseUrl}
-        supabaseAnonKey={supabaseAnonKey}
     />
   );
 }

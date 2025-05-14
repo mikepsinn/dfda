@@ -1,8 +1,8 @@
-import { GoogleGenerativeAI } from '@ai-sdk/google';
-import { StreamingTextResponse, streamText, type CoreMessage } from 'ai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
+import { streamText, type CoreMessage } from 'ai';
 
 // IMPORTANT: Set the GOOGLE_GENERATIVE_AI_API_KEY environment variable
-const google = new GoogleGenerativeAI({
+const google = createGoogleGenerativeAI({
   apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
 });
 
@@ -10,9 +10,9 @@ export const dynamic = 'force-dynamic'; // Prefer dynamic handling for API route
 
 export async function POST(req: Request) {
   try {
-    const { messages, data } = await req.json();
+    const { messages, data }: { messages: CoreMessage[]; data?: { openApiSpec?: string } } = await req.json();
 
-    const openApiSpec = data?.openApiSpec as string | undefined;
+    const openApiSpec = data?.openApiSpec;
 
     let systemMessageContent = 'You are an expert API assistant. A user will ask you questions about an API described by the following OpenAPI specification. Help them understand how to use the API. Be concise and provide code examples where helpful. If the spec is not provided, inform the user that you need the API specification to help.';
 
@@ -33,12 +33,12 @@ export async function POST(req: Request) {
     ];
 
     const result = await streamText({
-      model: google.chat('gemini-pro'), // Or your preferred Google model e.g. gemini-1.5-flash-latest
+      model: google('models/gemini-pro'),
       messages: finalMessages,
-      // You can add system prompts or other configurations here
+      tools: {},
     });
 
-    return result.toAIStreamResponse();
+    return result.toDataStreamResponse();
 
   } catch (error: any) {
     console.error('[API Chat] Error:', error);

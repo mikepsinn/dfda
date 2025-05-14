@@ -1,117 +1,63 @@
-import fetch from 'node-fetch';
 import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
 import * as dotenv from 'dotenv';
+import {
+    fetchAndProcessOpenApiSpec,
+    saveOpenApiSpec
+} from '../lib/openapi-fetcher';
 
-dotenv.config({ path: path.resolve(__dirname, '../.env.local') }); // Adjust path if your .env.local is elsewhere
+dotenv.config({ path: path.resolve(__dirname, '../.env.production') });
 
-const { 
-    NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    NEXT_PUBLIC_SITE_URL 
-} = process.env;
-
-const MIGRATIONS_TABLE_NAME = 'supabase_migrations'; // Example, adjust if needed
-const TABLES_TO_EXCLUDE = [MIGRATIONS_TABLE_NAME, 'pgsodium_key', 'pgsodium_masks']; // Add other specific internal tables if necessary
-const PATHS_CONTAINING_TO_EXCLUDE = ['/rpc/show_config', '/rpc/get_status']; // Example internal RPCs if any
+const MIGRATIONS_TABLE_NAME = 'supabase_migrations';
+const TABLES_TO_EXCLUDE = [MIGRATIONS_TABLE_NAME, 'pgsodium_key', 'pgsodium_masks'];
+const PATHS_TO_EXCLUDE = ['/rpc/show_config', '/rpc/get_status']; // Renamed for clarity
+const TAGS_TO_EXCLUDE: string[] = []; // Add any specific tags to always exclude
 
 async function main() {
-    if (!NEXT_PUBLIC_SUPABASE_URL || !NEXT_PUBLIC_SUPABASE_ANON_KEY || !NEXT_PUBLIC_SITE_URL) {
-        console.error('Error: Missing one or more required environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, NEXT_PUBLIC_SITE_URL).');
-        process.exit(1);
-    }
-
-    const supabaseSpecUrl = `${NEXT_PUBLIC_SUPABASE_URL}/rest/v1/?apikey=${NEXT_PUBLIC_SUPABASE_ANON_KEY}`;
-    const proxyUrl = `${NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')}/api/sb`;
     const tempSpecPath = path.resolve(__dirname, 'temp-openapi-spec.json');
     const generatedClientPath = path.resolve(__dirname, '../lib/generated-api-client/index.ts');
     const generatedClientDir = path.dirname(generatedClientPath);
+    let errorOccurred = false;
 
     try {
-        // 1. Fetch OpenAPI Spec
-        console.log(`Fetching OpenAPI spec from ${supabaseSpecUrl}...`);
-        const response = await fetch(supabaseSpecUrl);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch OpenAPI spec: ${response.status} ${response.statusText}`);
+        console.log('[GeneratorScript] Fetching and processing OpenAPI spec...');
+        const processedSpec = await fetchAndProcessOpenApiSpec();
+
+        if (!processedSpec) {
+            throw new Error('Failed to fetch and process OpenAPI spec. Check logs from openapi-fetcher.');
         }
-        let spec = await response.json() as any; // Type as 'any' for easier manipulation
-        console.log('Successfully fetched OpenAPI spec.');
+        console.log('[GeneratorScript] Successfully fetched and processed OpenAPI spec.');
 
-        // 2. Modify Spec
-        console.log('Modifying OpenAPI spec...');
-        
-        // 2a. Update server URL to proxy
-        if (spec.servers && spec.servers.length > 0) {
-            spec.servers[0].url = proxyUrl;
-            console.log(`Updated server URL to: ${proxyUrl}`);
-        } else {
-            spec.servers = [{ url: proxyUrl, description: 'DFDA API Proxy' }];
-            console.log(`Added server URL: ${proxyUrl}`);
-        }
-        // Ensure only one server entry exists
-        if (spec.servers.length > 1) {
-            spec.servers = [spec.servers[0]];
-        }
+        // Save the processed spec locally for openapi-typescript CLI
+        console.log(`[GeneratorScript] Saving processed spec to ${tempSpecPath}...`);
+        saveOpenApiSpec(processedSpec, tempSpecPath);
+        console.log('[GeneratorScript] Processed spec saved.');
 
-        // 2b. Remove migration-related paths and definitions
-        const initialPathCount = Object.keys(spec.paths).length;
-        const initialDefCount = spec.components?.schemas ? Object.keys(spec.components.schemas).length : 0;
-
-        for (const pathKey in spec.paths) {
-            if (TABLES_TO_EXCLUDE.some(table => pathKey.includes(`/rest/v1/${table}`))) {
-                delete spec.paths[pathKey];
-            }
-            if (PATHS_CONTAINING_TO_EXCLUDE.some(excludePath => pathKey.includes(excludePath))){
-                delete spec.paths[pathKey];
-            }
-        }
-
-        if (spec.components && spec.components.schemas) {
-            for (const schemaKey in spec.components.schemas) {
-                if (TABLES_TO_EXCLUDE.some(table => schemaKey.toLowerCase() === table.toLowerCase())) {
-                    delete spec.components.schemas[schemaKey];
-                }
-            }
-        }
-        
-        // Also remove from tags if they only reference excluded tables
-        if (spec.tags && Array.isArray(spec.tags)) {
-            spec.tags = spec.tags.filter((tag: { name: string }) => 
-                !TABLES_TO_EXCLUDE.some(table => tag.name.toLowerCase() === table.toLowerCase())
-            );
-        }
-
-        const finalPathCount = Object.keys(spec.paths).length;
-        const finalDefCount = spec.components?.schemas ? Object.keys(spec.components.schemas).length : 0;
-        console.log(`Paths removed: ${initialPathCount - finalPathCount}. Definitions removed: ${initialDefCount - finalDefCount}`);
-        console.log('Finished modifying spec.');
-
-        // 3. Save Modified Spec
-        console.log(`Saving modified spec to ${tempSpecPath}...`);
-        fs.writeFileSync(tempSpecPath, JSON.stringify(spec, null, 2));
-        console.log('Modified spec saved.');
-
-        // 4. Generate API Client using abaca-cli
-        console.log(`Generating API client using abaca-cli to ${generatedClientPath}...`);
-        if (!fs.existsSync(generatedClientDir)){
+        // Generate API Client types using openapi-typescript
+        console.log(`[GeneratorScript] Generating API client types using openapi-typescript to ${generatedClientPath}...`);
+        if (!fs.existsSync(generatedClientDir)) {
             fs.mkdirSync(generatedClientDir, { recursive: true });
         }
-        // Note: npx might be needed if abaca-cli is not in PATH or globally installed correctly for execSync
-        // Using pnpm exec as abaca-cli is a dev dependency
-        const abacaCommand = `pnpm exec abaca-cli generate ${tempSpecPath} --output "${generatedClientPath}" --header "# Generated by abaca-cli from modified Supabase OpenAPI spec\n# Do not edit manually!"`;
-        console.log(`Executing: ${abacaCommand}`);
-        execSync(abacaCommand, { stdio: 'inherit', cwd: path.resolve(__dirname, '..') }); // Run from project root
-        console.log('Successfully generated API client.');
+        const openapiTsCommand = `pnpm exec openapi-typescript ${tempSpecPath} --output "${generatedClientPath}"`;
+        console.log(`[GeneratorScript] Executing: ${openapiTsCommand}`);
+        execSync(openapiTsCommand, { stdio: 'inherit', cwd: path.resolve(__dirname, '..') });
+        console.log('[GeneratorScript] Successfully generated API client types.');
 
     } catch (error) {
         console.error('Error during API client generation process:', error);
-        process.exit(1);
+        errorOccurred = true;
     } finally {
-        // 5. Cleanup Temp File
         if (fs.existsSync(tempSpecPath)) {
-            console.log(`Cleaning up temporary spec file: ${tempSpecPath}`);
-            fs.unlinkSync(tempSpecPath);
+            if (!errorOccurred) {
+                console.log(`Cleaning up temporary spec file: ${tempSpecPath}`);
+                fs.unlinkSync(tempSpecPath);
+            } else {
+                console.log(`Error occurred. Preserving temporary spec file for inspection: ${tempSpecPath}`);
+            }
+        }
+        if (errorOccurred) {
+            process.exit(1);
         }
     }
 }
