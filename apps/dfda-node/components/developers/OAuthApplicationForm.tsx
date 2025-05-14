@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { logger } from "@/lib/logger";
-import { createOAuthClient, type CreateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.actions';
+import { type CreateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.schemas';
+import { createOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle, AlertTriangle, Copy } from "lucide-react";

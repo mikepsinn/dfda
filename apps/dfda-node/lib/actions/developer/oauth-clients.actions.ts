@@ -1,11 +1,17 @@
 'use server';
 
 import { createClient } from '@/utils/supabase/server';
-import { publicOauthClientsInsertSchemaSchema, publicOauthClientsUpdateSchemaSchema } from '@/lib/database.schemas';
+import { publicOauthClientsInsertSchemaSchema } from '@/lib/database.schemas';
 import { z } from 'zod';
 import { v4 as uuidv4 } from 'uuid';
 import { Argon2id } from 'oslo/password';
 import { logger } from '@/lib/logger';
+import {
+  CreateOAuthClientInputSchema,
+  type CreateOAuthClientInput,
+  UpdateOAuthClientInputSchema,
+  type UpdateOAuthClientInput
+} from './oauth-clients.schemas';
 
 const LOG_PREFIX = '[ServerAction /developer/oauth-clients]';
 
@@ -51,28 +57,6 @@ export async function listOAuthClients() {
     return { success: false, error: 'An unexpected error occurred', details: e.message, status: 500 };
   }
 }
-
-// Zod schema for validating the input to createOAuthClient action
-// Derived from the previous CreateClientRequestBodySchema
-export const CreateOAuthClientInputSchema = publicOauthClientsInsertSchemaSchema.pick({
-  client_name: true,
-  client_uri: true,
-  redirect_uris: true,
-  logo_uri: true,
-  scope: true,
-  grant_types: true,
-  response_types: true,
-  tos_uri: true,
-  policy_uri: true,
-}).extend({
-    redirect_uris: z.array(z.string().url({ message: "Invalid redirect URI format." })).min(1, "At least one redirect URI is required."),
-    client_name: z.string().min(1, "Client name is required."),
-    scope: z.string().default('openid email profile'),
-    grant_types: z.array(z.string()).default(['authorization_code', 'refresh_token']),
-    response_types: z.array(z.string()).default(['code'])
-});
-
-export type CreateOAuthClientInput = z.infer<typeof CreateOAuthClientInputSchema>;
 
 // Action to create a new OAuth client
 export async function createOAuthClient(input: CreateOAuthClientInput) {
@@ -186,23 +170,6 @@ export async function getOAuthClient(clientId: string) {
     return { success: false, error: 'An unexpected error occurred', details: e.message, status: 500 };
   }
 }
-
-// Zod schema for updating an OAuth client
-export const UpdateOAuthClientInputSchema = publicOauthClientsUpdateSchemaSchema.pick({
-  client_name: true,
-  client_uri: true,
-  redirect_uris: true,
-  logo_uri: true,
-  scope: true,
-  grant_types: true,
-  response_types: true,
-  tos_uri: true,
-  policy_uri: true,
-}).partial().extend({
-    redirect_uris: z.array(z.string().url({ message: "Invalid redirect URI format." })).min(1, "At least one redirect URI is required.").optional(),
-    client_name: z.string().min(1, "Client name cannot be empty.").optional(),
-});
-export type UpdateOAuthClientInput = z.infer<typeof UpdateOAuthClientInputSchema>;
 
 // Action to update an OAuth client
 export async function updateOAuthClient(clientId: string, input: UpdateOAuthClientInput) {
