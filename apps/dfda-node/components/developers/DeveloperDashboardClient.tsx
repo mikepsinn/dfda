@@ -18,7 +18,7 @@ import { type Database } from '@/lib/database.types';
 import { createClient } from "@/utils/supabase/client";
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
-import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret } from '@/lib/actions/developer/oauth-clients.actions';
+import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret, createOAuthClient, updateOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
 import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle, AlertTriangle } from "lucide-react";
