@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
+// import { redirect } from 'next/navigation'; // No longer needed here
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -8,8 +9,7 @@ import { logger } from '@/lib/logger';
 import Image from 'next/image';
 import { Check, X, ShieldQuestion, Loader2 } from 'lucide-react';
 
-// We will create this server action in the next step
-// import { handleConsent } from '@/lib/actions/oauth/authorize.actions';
+import { handleConsent, type HandleConsentResult } from '@/lib/actions/oauth/authorize.actions';
 
 export interface ConsentFormProps {
   client: {
@@ -39,45 +39,51 @@ export function ConsentForm({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // This will eventually call a server action
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>, decision: 'approve' | 'deny') => {
-    event.preventDefault();
+  const handleSubmitDecision = async (decision: 'approve' | 'deny') => {
     setIsLoading(true);
     setError(null);
-    logger.info('Consent form submitted', { decision, client_id: client.client_id, user_email: user.email });
 
-    // Placeholder for server action call
-    // const formData = new FormData(event.currentTarget);
-    // formData.append('decision', decision);
-    // formData.append('client_id', client.client_id);
-    // formData.append('redirect_uri', redirect_uri);
-    // formData.append('state', csrfToken || '');
-    // if (code_challenge) formData.append('code_challenge', code_challenge);
-    // if (code_challenge_method) formData.append('code_challenge_method', code_challenge_method);
-    // formData.append('scope', scopes.join(' '));
+    const formData = new FormData();
+    formData.append('decision', decision);
+    formData.append('client_id', client.client_id);
+    formData.append('redirect_uri', redirect_uri);
+    if (scopes) {
+      formData.append('scope', scopes.join(' '));
+    }
+    if (csrfToken) { // csrfToken from props is the OAuth 'state' parameter
+      formData.append('state', csrfToken);
+    }
+    if (code_challenge) {
+      formData.append('code_challenge', code_challenge);
+    }
+    if (code_challenge_method) {
+      formData.append('code_challenge_method', code_challenge_method);
+    }
 
     try {
-      // const result = await handleConsent(formData);
-      // if (result.redirect_to) {
-      //   window.location.href = result.redirect_to; // Perform client-side redirect
-      // } else if (result.error) {
-      //   setError(result.error_description || result.error || 'An unknown error occurred.');
-      // }
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
-      if (decision === 'approve') {
-        logger.info('Simulated approval successful');
-        // In a real scenario, the server action would handle the redirect.
-        // For now, we can simulate a redirect or show a message.
-        alert(`Approved! Would redirect to ${redirect_uri} with a code.`);
+      const result: HandleConsentResult = await handleConsent(formData);
+      if (result.success) {
+        window.location.href = result.redirect_to;
       } else {
-        logger.info('Simulated denial successful');
-        alert(`Denied! Would redirect to ${redirect_uri} with an error.`);
+        logger.error('[ConsentForm] Consent handling failed:', { error: result.error, description: result.error_description });
+        setError(result.error_description || result.error || 'An unexpected error occurred.');
       }
     } catch (e: any) {
-      logger.error('Error handling consent submission', { error: e });
-      setError(e.message || 'An unexpected error occurred while processing your request.');
+      logger.error('[ConsentForm] Error submitting consent decision:', { error: e });
+      setError('An unexpected client-side error occurred. Please try again.');
     }
+
     setIsLoading(false);
+  };
+
+  const handleSubmitApprove = (event: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    handleSubmitDecision('approve');
+  };
+
+  const handleSubmitDeny = (event: FormEvent<HTMLFormElement> | FormEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    handleSubmitDecision('deny');
   };
 
   return (
@@ -123,18 +129,12 @@ export function ConsentForm({
           )}
         </CardContent>
         <CardFooter className="grid grid-cols-2 gap-4">
-          <form onSubmit={(e) => handleSubmit(e, 'deny')} className="w-full">
-            <Button type="submit" variant="outline" className="w-full" disabled={isLoading}>
-              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <X className="mr-2 h-4 w-4" />} 
-              Deny
-            </Button>
-          </form>
-          <form onSubmit={(e) => handleSubmit(e, 'approve')} className="w-full">
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Check className="mr-2 h-4 w-4" />} 
-              Approve
-            </Button>
-          </form>
+          <Button type="submit" onClick={handleSubmitApprove} disabled={isLoading} className="mr-2">
+            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</> : <><Check className="mr-2 h-4 w-4" /> Allow Access</>}
+          </Button>
+          <Button type="button" variant="outline" onClick={handleSubmitDeny} disabled={isLoading}>
+            {isLoading ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</> : <><X className="mr-2 h-4 w-4"/> Deny Access</>}
+          </Button>
         </CardFooter>
       </Card>
     </div>

@@ -6,8 +6,7 @@ import { supabaseAdmin } from '@/utils/supabase/admin'; // Import the admin clie
 import { type Database } from '@/lib/database.types';
 import { logger } from '@/lib/logger';
 // import { env } from '@/lib/env'; // No longer needed if service key is only for admin client
-// We will create this component later
-// import ConsentForm from '@/components/oauth/ConsentForm'; 
+import { ConsentForm } from '@/components/oauth/ConsentForm';
 
 type OAuthClient = Database['public']['Tables']['oauth_clients']['Row'];
 
@@ -163,25 +162,20 @@ export default async function AuthorizePage({ searchParams }: AuthorizePageProps
     redirect_uri, // Needed for form action success/cancel
   };
 
-  // return <ConsentForm {...consentFormData} />;
   return (
-    <div>
-      <h1>OAuth Authorization Required</h1>
-      <p>Client ID: {client_id}</p>
-      <p>Redirect URI: {redirect_uri}</p>
-      <p>Scope: {scope}</p>
-      <p>State: {state}</p>
-      {code_challenge && <p>Code Challenge: {code_challenge}</p>}
-      {code_challenge_method && <p>Code Challenge Method: {code_challenge_method}</p>}
-      <p>User: {user.email}</p>
-      <p>Client Name: {oauthClient.client_name}</p>
-      <p>TODO: Render ConsentForm here with props:</p>
-      <pre>{JSON.stringify(consentFormData, null, 2)}</pre>
-      <p>
-        This page will verify the request and ask the user ({user.email}) if they want to grant 
-        &quot;{oauthClient.client_name}&quot; access to the requested scopes: {requestedScopes.join(', ')}.
-      </p>
-    </div>
+    <ConsentForm
+      client={{
+        client_id: oauthClient.client_id,
+        client_name: oauthClient.client_name || 'Unknown Application',
+        logo_uri: oauthClient.logo_uri,
+      }}
+      user={{ email: user.email }}
+      scopes={requestedScopes}
+      csrfToken={state}
+      code_challenge={code_challenge}
+      code_challenge_method={code_challenge_method}
+      redirect_uri={redirect_uri}
+    />
   );
 }
 
