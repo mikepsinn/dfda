@@ -953,6 +953,8 @@ export type Database = {
         Row: {
           client_id: string
           code: string
+          code_challenge: string | null
+          code_challenge_method: string | null
           created_at: string
           expires_at: string
           id: string
@@ -963,6 +965,8 @@ export type Database = {
         Insert: {
           client_id: string
           code: string
+          code_challenge?: string | null
+          code_challenge_method?: string | null
           created_at?: string
           expires_at: string
           id?: string
@@ -973,6 +977,8 @@ export type Database = {
         Update: {
           client_id?: string
           code?: string
+          code_challenge?: string | null
+          code_challenge_method?: string | null
           created_at?: string
           expires_at?: string
           id?: string
@@ -995,6 +1001,7 @@ export type Database = {
           client_id: string
           client_name: string
           client_secret: string
+          client_type: Database["public"]["Enums"]["oauth_client_type_enum"]
           client_uri: string | null
           created_at: string | null
           deleted_at: string | null
@@ -1013,6 +1020,7 @@ export type Database = {
           client_id: string
           client_name: string
           client_secret: string
+          client_type?: Database["public"]["Enums"]["oauth_client_type_enum"]
           client_uri?: string | null
           created_at?: string | null
           deleted_at?: string | null
@@ -1031,6 +1039,7 @@ export type Database = {
           client_id?: string
           client_name?: string
           client_secret?: string
+          client_type?: Database["public"]["Enums"]["oauth_client_type_enum"]
           client_uri?: string | null
           created_at?: string | null
           deleted_at?: string | null
@@ -2927,6 +2936,7 @@ export type Database = {
         | "scale"
         | "date"
         | "file_upload"
+      oauth_client_type_enum: "public" | "confidential"
       product_type_enum:
         | "trackable_item"
         | "lab_test"
@@ -3508,6 +3518,7 @@ export const Constants = {
         "date",
         "file_upload",
       ],
+      oauth_client_type_enum: ["public", "confidential"],
       product_type_enum: [
         "trackable_item",
         "lab_test",

@@ -13,6 +13,8 @@ export const env = createEnv({
     // GOOGLE_CLIENT_ID: z.string().min(1).optional(), 
     // GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
     SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
+    SUPABASE_JWT_SECRET: z.string().min(32, 'JWT Secret must be at least 32 characters long'),
+    ACCESS_TOKEN_EXPIRES_IN_SECONDS: z.coerce.number().int().positive().default(3600),
     GOOGLE_APPLICATION_CREDENTIALS: z.string().min(1).optional(),
   },
 
@@ -44,6 +46,8 @@ export const env = createEnv({
     // GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     // GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    SUPABASE_JWT_SECRET: process.env.SUPABASE_JWT_SECRET,
+    ACCESS_TOKEN_EXPIRES_IN_SECONDS: process.env.ACCESS_TOKEN_EXPIRES_IN_SECONDS || '3600',
     GOOGLE_APPLICATION_CREDENTIALS: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,

@@ -44,6 +44,11 @@ export const publicFormQuestionTypeSchema = z.union([
   z.literal("file_upload"),
 ]);
 
+export const publicOauthClientTypeEnumSchema = z.union([
+  z.literal("public"),
+  z.literal("confidential"),
+]);
+
 export const publicProductTypeEnumSchema = z.union([
   z.literal("trackable_item"),
   z.literal("lab_test"),
@@ -1074,6 +1079,8 @@ export const publicOauthAccessTokensRelationshipsSchemaSchema = z.tuple([
 export const publicOauthAuthorizationCodesRowSchemaSchema = z.object({
   client_id: z.string(),
   code: z.string(),
+  code_challenge: z.string().nullable(),
+  code_challenge_method: z.string().nullable(),
   created_at: z.string(),
   expires_at: z.string(),
   id: z.string(),
@@ -1085,6 +1092,8 @@ export const publicOauthAuthorizationCodesRowSchemaSchema = z.object({
 export const publicOauthAuthorizationCodesInsertSchemaSchema = z.object({
   client_id: z.string(),
   code: z.string(),
+  code_challenge: z.string().optional().nullable(),
+  code_challenge_method: z.string().optional().nullable(),
   created_at: z.string().optional(),
   expires_at: z.string(),
   id: z.string().optional(),
@@ -1096,6 +1105,8 @@ export const publicOauthAuthorizationCodesInsertSchemaSchema = z.object({
 export const publicOauthAuthorizationCodesUpdateSchemaSchema = z.object({
   client_id: z.string().optional(),
   code: z.string().optional(),
+  code_challenge: z.string().optional().nullable(),
+  code_challenge_method: z.string().optional().nullable(),
   created_at: z.string().optional(),
   expires_at: z.string().optional(),
   id: z.string().optional(),
@@ -1118,6 +1129,7 @@ export const publicOauthClientsRowSchemaSchema = z.object({
   client_id: z.string(),
   client_name: z.string(),
   client_secret: z.string(),
+  client_type: publicOauthClientTypeEnumSchema,
   client_uri: z.string().nullable(),
   created_at: z.string().nullable(),
   deleted_at: z.string().nullable(),
@@ -1137,6 +1149,7 @@ export const publicOauthClientsInsertSchemaSchema = z.object({
   client_id: z.string(),
   client_name: z.string(),
   client_secret: z.string(),
+  client_type: publicOauthClientTypeEnumSchema.optional(),
   client_uri: z.string().optional().nullable(),
   created_at: z.string().optional().nullable(),
   deleted_at: z.string().optional().nullable(),
@@ -1156,6 +1169,7 @@ export const publicOauthClientsUpdateSchemaSchema = z.object({
   client_id: z.string().optional(),
   client_name: z.string().optional(),
   client_secret: z.string().optional(),
+  client_type: publicOauthClientTypeEnumSchema.optional(),
   client_uri: z.string().optional().nullable(),
   created_at: z.string().optional().nullable(),
   deleted_at: z.string().optional().nullable(),

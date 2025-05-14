@@ -74,7 +74,7 @@ export async function createOAuthClient(input: CreateOAuthClientInput) {
     return { success: false, error: 'Invalid input', details: parsedInput.error.flatten(), status: 400 };
   }
 
-  const { client_name, redirect_uris, client_uri, logo_uri, scope, grant_types, response_types, tos_uri, policy_uri } = parsedInput.data;
+  const { client_name, redirect_uris, client_uri, logo_uri, scope, grant_types, response_types, tos_uri, policy_uri, client_type } = parsedInput.data;
 
   const clientId = uuidv4();
   const plainClientSecret = generateClientSecret();
@@ -101,6 +101,7 @@ export async function createOAuthClient(input: CreateOAuthClientInput) {
       response_types: response_types || ['code'],
       tos_uri: tos_uri || null,
       policy_uri: policy_uri || null,
+      client_type: client_type,
     };
     
     const finalValidation = publicOauthClientsInsertSchemaSchema.safeParse(newClientData);
@@ -112,7 +113,7 @@ export async function createOAuthClient(input: CreateOAuthClientInput) {
     const { data: newClient, error: insertError } = await supabase
       .from('oauth_clients')
       .insert(finalValidation.data)
-      .select('client_id, client_name, client_uri, redirect_uris, logo_uri, scope, grant_types, response_types, created_at, owner_id')
+      .select('client_id, client_name, client_uri, redirect_uris, logo_uri, scope, grant_types, response_types, client_type, created_at, owner_id')
       .single();
 
     if (insertError) {
@@ -191,16 +192,42 @@ export async function updateOAuthClient(clientId: string, input: UpdateOAuthClie
     return { success: false, error: 'Invalid input', details: parsedInput.error.flatten(), status: 400 };
   }
 
-  const updateData = { ...parsedInput.data, updated_at: new Date().toISOString() };
+  const updatePayload: { [key: string]: any } = { updated_at: new Date().toISOString() };
+  const { client_type, ...otherUpdateData } = parsedInput.data;
+
+  for (const key in otherUpdateData) {
+    if (Object.prototype.hasOwnProperty.call(otherUpdateData, key) && (otherUpdateData as any)[key] !== undefined) {
+      updatePayload[key] = (otherUpdateData as any)[key];
+    }
+  }
+  if (client_type !== undefined) {
+    updatePayload.client_type = client_type;
+  }
+
+  if (Object.keys(updatePayload).length === 1 && updatePayload.updated_at) {
+    const { data: currentClient, error: currentError } = await supabase
+      .from('oauth_clients')
+      .select('client_id, client_name, client_uri, redirect_uris, logo_uri, scope, grant_types, response_types, client_type, created_at, updated_at, owner_id, tos_uri, policy_uri')
+      .eq('client_id', clientId)
+      .eq('owner_id', user.id)
+      .is('deleted_at', null)
+      .single();
+    if (currentError || !currentClient) {
+        logger.error(`${LOG_PREFIX} updateOAuthClient - Failed to fetch current client data for no-op update`, { clientId, error: currentError });
+        return { success: false, error: 'Failed to retrieve client details after no-op update', status: 500 };
+    }
+    logger.info(`${LOG_PREFIX} updateOAuthClient - No actual changes for client ${clientId}.`);
+    return { success: true, data: currentClient, status: 200 };
+  }
 
   try {
     const { data: updatedClient, error: updateError } = await supabase
       .from('oauth_clients')
-      .update(updateData)
+      .update(updatePayload)
       .eq('client_id', clientId)
       .eq('owner_id', user.id)
       .is('deleted_at', null)
-      .select('client_id, client_name, client_uri, redirect_uris, logo_uri, scope, grant_types, response_types, created_at, updated_at, owner_id, tos_uri, policy_uri')
+      .select('client_id, client_name, client_uri, redirect_uris, logo_uri, scope, grant_types, response_types, client_type, created_at, updated_at, owner_id, tos_uri, policy_uri')
       .single();
 
     if (updateError) {

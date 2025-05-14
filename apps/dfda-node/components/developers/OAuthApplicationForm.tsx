@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { logger } from "@/lib/logger";
 import { type CreateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.schemas';
 import { createOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
@@ -23,6 +24,7 @@ export function OAuthApplicationForm({ onClientCreated }: OAuthApplicationFormPr
   const [scope, setScope] = useState('openid email profile'); // Default scope
   const [tosUri, setTosUri] = useState('');
   const [policyUri, setPolicyUri] = useState('');
+  const [clientType, setClientType] = useState<'public' | 'confidential'>('confidential'); // Added state for client type
   // const [appDescription, setAppDescription] = useState(''); // If you want to keep description
 
   const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +56,7 @@ export function OAuthApplicationForm({ onClientCreated }: OAuthApplicationFormPr
       response_types: ['code'],
       tos_uri: tosUri || undefined,
       policy_uri: policyUri || undefined,
+      client_type: clientType,
     };
 
     try {
@@ -69,6 +72,7 @@ export function OAuthApplicationForm({ onClientCreated }: OAuthApplicationFormPr
         setScope('openid email profile');
         setTosUri('');
         setPolicyUri('');
+        setClientType('confidential');
         onClientCreated(); // Notify parent to refresh list
       } else {
         logger.error('Failed to create OAuth client', { error: result.error, details: result.details });
@@ -143,6 +147,27 @@ export function OAuthApplicationForm({ onClientCreated }: OAuthApplicationFormPr
           <div className="space-y-2">
             <Label htmlFor="app-policy">Privacy Policy URL</Label>
             <Input id="app-policy" placeholder="https://your-app.com/privacy" value={policyUri} onChange={(e) => setPolicyUri(e.target.value)} />
+          </div>
+
+          <div className="space-y-2">
+            <Label>Client Type *</Label>
+            <RadioGroup
+              value={clientType}
+              onValueChange={(value: string) => setClientType(value as 'public' | 'confidential')}
+              className="flex space-x-4"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="confidential" id="confidential" />
+                <Label htmlFor="confidential">Confidential</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="public" id="public" />
+                <Label htmlFor="public">Public</Label>
+              </div>
+            </RadioGroup>
+            <p className="text-xs text-muted-foreground">
+              Confidential clients can securely store a secret (e.g., server-side apps). Public clients cannot (e.g., SPAs, mobile apps - use PKCE).
+            </p>
           </div>
 
           {/* If you want to keep application description, uncomment and manage its state
