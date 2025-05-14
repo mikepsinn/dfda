@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { ApiKeyRequestForm } from "@/components/developers/ApiKeyRequestForm";
-import { OAuthApplicationForm } from "@/components/developers/OAuthApplicationForm";
+import OAuthApplicationForm from "@/components/developers/OAuthApplicationForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -19,6 +19,8 @@ import { createClient } from "@/utils/supabase/client";
 import SwaggerUI from "swagger-ui-react";
 import "swagger-ui-react/swagger-ui.css";
 import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret, createOAuthClient, updateOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
+import { CreateOAuthClientInputSchema, UpdateOAuthClientInputSchema, type CreateOAuthClientInput, type UpdateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.schemas';
+import { z } from 'zod';
 import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle, AlertTriangle } from "lucide-react";
@@ -38,6 +40,7 @@ type OAuthClient = Pick<
   | 'scope'
   | 'grant_types'
   | 'response_types'
+  | 'client_type'
   | 'created_at'
   | 'owner_id'
   | 'tos_uri'
@@ -59,6 +62,8 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
   const [isLoadingClients, setIsLoadingClients] = useState(true);
   const [clientsError, setClientsError] = useState<string | null>(null);
   const [editingClient, setEditingClient] = useState<OAuthClient | null>(null);
+  const [isCreateFormVisible, setIsCreateFormVisible] = useState(false);
+  const [isSubmittingForm, setIsSubmittingForm] = useState(false);
   const [actionStatus, setActionStatus] = useState<{ type: 'success' | 'error'; message: string; clientId?: string; newSecret?: string } | null>(null);
 
   // Profile state
@@ -103,24 +108,77 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
     setLastName(initialProfile?.last_name ?? '');
   }, [supabase, fetchOAuthClients, initialProfile]);
 
-  const handleClientCreated = () => {
-    setActionStatus({ type: 'success', message: 'Client created successfully.' });
-    fetchOAuthClients();
+  const handleCreateSubmit = async (formData: z.output<typeof CreateOAuthClientInputSchema>) => {
+    setActionStatus(null);
+    setIsSubmittingForm(true);
+    try {
+      const result = await createOAuthClient(formData);
+      if (result.success && result.data) {
+        setActionStatus({
+          type: 'success',
+          message: 'OAuth Application created successfully! Please save your client secret.',
+          clientId: result.data.client_id,
+          newSecret: result.data.client_secret
+        });
+        fetchOAuthClients();
+        setIsCreateFormVisible(false);
+      } else {
+        setActionStatus({ type: 'error', message: result.error || 'Failed to create client.' });
+        logger.error('Create OAuth Client failed', { error: result.error, details: result.details });
+      }
+    } catch (e: any) {
+      setActionStatus({ type: 'error', message: 'An unexpected error occurred during client creation.' });
+      logger.error('Error calling createOAuthClient action', { error: e });
+    }
+    setIsSubmittingForm(false);
+  };
+
+  const handleUpdateSubmit = async (formData: z.output<typeof UpdateOAuthClientInputSchema>) => {
+    if (!editingClient?.client_id) {
+      setActionStatus({ type: 'error', message: 'Cannot update client: Client ID is missing.' });
+      setIsSubmittingForm(false);
+      return;
+    }
+    setActionStatus(null);
+    setIsSubmittingForm(true);
+
+    try {
+      const { client_id: formClientId, ...updatePayload } = formData;
+
+      if (formClientId !== editingClient.client_id) {
+        logger.error('Client ID mismatch during update attempt.', { formClientId, editingClientId: editingClient.client_id });
+        setActionStatus({ type: 'error', message: 'Client ID mismatch. Please refresh and try again.' });
+        setIsSubmittingForm(false);
+        return;
+      }
+      
+      const result = await updateOAuthClient(editingClient.client_id, updatePayload);
+
+      if (result.success) {
+        setActionStatus({ type: 'success', message: 'OAuth Application updated successfully.' });
+        fetchOAuthClients();
+        setEditingClient(null);
+      } else {
+        setActionStatus({ type: 'error', message: result.error || 'Failed to update client.' });
+        logger.error('Update OAuth Client failed', { error: result.error, details: result.details });
+      }
+    } catch (e: any) {
+      setActionStatus({ type: 'error', message: 'An unexpected error occurred during client update.' });
+      logger.error('Error calling updateOAuthClient action', { error: e });
+    }
+    setIsSubmittingForm(false);
   };
 
   const handleEditClient = (client: OAuthClient) => {
     setActionStatus(null); 
+    setIsCreateFormVisible(false);
     setEditingClient(client);
   };
 
-  const handleUpdateCancelled = () => {
+  const handleCancelForm = () => {
+    setIsCreateFormVisible(false);
     setEditingClient(null);
-  };
-
-  const handleClientUpdated = () => {
-    setEditingClient(null);
-    setActionStatus({ type: 'success', message: 'Client updated successfully.' });
-    fetchOAuthClients(); 
+    setActionStatus(null);
   };
 
   const handleDeleteClient = async (clientId: string, clientName: string) => {
@@ -192,8 +250,6 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
 
     if (result.success) {
       setProfileUpdateStatus({ type: 'success', message: 'Profile updated successfully.' });
-      // Optimistically update local profile state or rely on revalidation and prop refresh
-      // For now, we can clear message after a few seconds
       setTimeout(() => setProfileUpdateStatus(null), 3000);
     } else {
       setProfileUpdateStatus({ type: 'error', message: result.error || 'Failed to update profile.' });
@@ -322,14 +378,37 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
                   </Alert>
                 )}
 
-                {editingClient ? (
-                  <EditOAuthApplicationForm 
-                      client={editingClient} 
-                      onClientUpdated={handleClientUpdated} 
-                      onCancel={handleUpdateCancelled} 
+                {isCreateFormVisible && (
+                  <OAuthApplicationForm 
+                    onSubmit={handleCreateSubmit as (data: CreateOAuthClientInput | UpdateOAuthClientInput) => Promise<void>} 
+                    isLoading={isSubmittingForm}
+                    submitButtonText="Create Application"
+                    onCancel={handleCancelForm}
+                    isEditMode={false}
                   />
-                ) : (
-                  <OAuthApplicationForm onClientCreated={handleClientCreated} />
+                )}
+
+                {editingClient && (
+                  <OAuthApplicationForm 
+                    initialData={{
+                      client_id: editingClient.client_id,
+                      client_name: editingClient.client_name ?? undefined,
+                      client_uri: editingClient.client_uri ?? undefined,
+                      logo_uri: editingClient.logo_uri ?? undefined,
+                      tos_uri: editingClient.tos_uri ?? undefined,
+                      policy_uri: editingClient.policy_uri ?? undefined,
+                      client_type: editingClient.client_type,
+                      redirect_uris: editingClient.redirect_uris ?? undefined,
+                      grant_types: editingClient.grant_types ?? undefined,
+                      response_types: editingClient.response_types ?? undefined,
+                      scope: editingClient.scope ?? undefined,
+                    }}
+                    onSubmit={handleUpdateSubmit as (data: CreateOAuthClientInput | UpdateOAuthClientInput) => Promise<void>}
+                    isLoading={isSubmittingForm}
+                    submitButtonText="Save Changes"
+                    onCancel={handleCancelForm}
+                    isEditMode={true}
+                  />
                 )}
 
                 {!editingClient && (
@@ -341,7 +420,7 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
                           <li key={client.client_id} className="p-3 border rounded-md">
                             <div className="flex justify-between items-center mb-2">
                               <div>
-                                <span className="font-semibold">{client.client_name}</span>
+                                <span className="font-semibold">{client.client_name || 'Unnamed Application'}</span>
                                 <span className="text-xs text-muted-foreground ml-2">(ID: {client.client_id})</span>
                               </div>
                               <div className="flex space-x-1">
@@ -356,6 +435,8 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
                                 </Button>
                               </div>
                             </div>
+                            {client.client_type && <p className="text-xs text-muted-foreground">Type: {client.client_type}</p>}
+                            {client.redirect_uris && client.redirect_uris.length > 0 && <p className="text-xs text-muted-foreground">Redirects: {client.redirect_uris.join(', ')}</p>}
                           </li>
                         ))}
                       </ul>

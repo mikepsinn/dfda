@@ -40,6 +40,7 @@ export const UpdateOAuthClientInputSchema = publicOauthClientsUpdateSchemaSchema
   policy_uri: true,
   // client_type will be part of publicOauthClientsUpdateSchemaSchema once db types are updated
 }).partial().extend({
+    client_id: z.string(), // Ensure client_id is part of the schema and required
     redirect_uris: z.array(z.string().url({ message: "Invalid redirect URI format." })).min(1, "At least one redirect URI is required.").optional(),
     client_name: z.string().min(1, "Client name cannot be empty.").optional(),
     client_type: clientTypeEnum.optional(), // Added for form input
@@ -47,4 +48,8 @@ export const UpdateOAuthClientInputSchema = publicOauthClientsUpdateSchemaSchema
     // If they were to be updatable, they would need to be added here.
 });
 
-export type UpdateOAuthClientInput = z.infer<typeof UpdateOAuthClientInputSchema>; 
+export type UpdateOAuthClientInput = z.infer<typeof UpdateOAuthClientInputSchema>;
+
+// Schema for the actual payload for the update action, excluding client_id
+export const UpdateOAuthClientPayloadSchema = UpdateOAuthClientInputSchema.omit({ client_id: true });
+export type UpdateOAuthClientPayload = z.infer<typeof UpdateOAuthClientPayloadSchema>; 

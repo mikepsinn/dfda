@@ -10,8 +10,10 @@ import { logger } from '@/lib/logger';
 import {
   CreateOAuthClientInputSchema,
   type CreateOAuthClientInput,
-  UpdateOAuthClientInputSchema,
-  type UpdateOAuthClientInput
+  // UpdateOAuthClientInputSchema, // UNUSED in this file
+  // type UpdateOAuthClientInput, // UNUSED in this file
+  UpdateOAuthClientPayloadSchema,
+  type UpdateOAuthClientPayload
 } from './oauth-clients.schemas';
 
 const LOG_PREFIX = '[ServerAction /developer/oauth-clients]';
@@ -174,7 +176,7 @@ export async function getOAuthClient(clientId: string) {
 }
 
 // Action to update an OAuth client
-export async function updateOAuthClient(clientId: string, input: UpdateOAuthClientInput) {
+export async function updateOAuthClient(clientId: string, input: UpdateOAuthClientPayload) {
   const supabase = await createServerClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
 
@@ -187,25 +189,24 @@ export async function updateOAuthClient(clientId: string, input: UpdateOAuthClie
     return { success: false, error: 'Request body is empty, no fields to update', status: 400 };
   }
 
-  const parsedInput = UpdateOAuthClientInputSchema.safeParse(input);
+  const parsedInput = UpdateOAuthClientPayloadSchema.safeParse(input);
   if (!parsedInput.success) {
     logger.warn(`${LOG_PREFIX} updateOAuthClient - Invalid input for client ${clientId}, user ${user.id}:`, { errors: parsedInput.error.flatten() });
     return { success: false, error: 'Invalid input', details: parsedInput.error.flatten(), status: 400 };
   }
 
-  const updatePayload: { [key: string]: any } = { updated_at: new Date().toISOString() };
-  const { client_type, ...otherUpdateData } = parsedInput.data;
-
-  for (const key in otherUpdateData) {
-    if (Object.prototype.hasOwnProperty.call(otherUpdateData, key) && (otherUpdateData as any)[key] !== undefined) {
-      updatePayload[key] = (otherUpdateData as any)[key];
+  const dataToUpdate: { [key: string]: any } = { updated_at: new Date().toISOString() };
+  
+  for (const key in parsedInput.data) {
+    if (Object.prototype.hasOwnProperty.call(parsedInput.data, key)) {
+      const value = (parsedInput.data as any)[key];
+      if (value !== undefined) {
+        dataToUpdate[key] = value;
+      }
     }
   }
-  if (client_type !== undefined) {
-    updatePayload.client_type = client_type;
-  }
 
-  if (Object.keys(updatePayload).length === 1 && updatePayload.updated_at) {
+  if (Object.keys(dataToUpdate).length === 1 && dataToUpdate.updated_at) {
     const { data: currentClient, error: currentError } = await supabase
       .from('oauth_clients')
       .select('client_id, client_name, client_uri, redirect_uris, logo_uri, scope, grant_types, response_types, client_type, created_at, updated_at, owner_id, tos_uri, policy_uri')
@@ -224,7 +225,7 @@ export async function updateOAuthClient(clientId: string, input: UpdateOAuthClie
   try {
     const { data: updatedClient, error: updateError } = await supabase
       .from('oauth_clients')
-      .update(updatePayload)
+      .update(dataToUpdate)
       .eq('client_id', clientId)
       .eq('owner_id', user.id)
       .is('deleted_at', null)
