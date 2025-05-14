@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 import * as fs from 'fs';
-import * as s2o from 'swagger2openapi';
+// import * as s2o from 'swagger2openapi'; // Removed as s2o is no longer used
+// import { logger } from './logger'; // Removed as logger is no longer used in this file
 
 // --- Configuration for cleaning ---
 const TABLES_TO_EXCLUDE = ['supabase_migrations', 'pgsodium_key', 'pgsodium_masks', 'key', 'config', 'decrypted_secrets', 'hook_delivery_attempt', 'hooks', 'refresh_tokens_expires_in', 'secrets', 'session_token', 'sso_provider_id', 'sso_sessions_id'];
@@ -30,43 +31,6 @@ async function _fetchRawSpec(url: string): Promise<any> {
     throw new Error(`Failed to fetch OpenAPI spec: ${response.status} ${response.statusText}`);
   }
   return response.json();
-}
-
-async function _convertToOpenApiV3(spec: any): Promise<any> {
-  if (spec.swagger && spec.swagger === '2.0') {
-    console.log('Converting Swagger 2.0 spec to OpenAPI 3.0...');
-    let convertedSpec: any = null;
-    try {
-      const options = { patch: true, warnOnly: true, fatalOnly: false, resolveInternal: true }; // source: spec is implicit
-      const conversionResult = await s2o.convert(spec, options);
-      
-      if (conversionResult.openapi) {
-        console.log('Successfully converted to OpenAPI 3.0.');
-        if (conversionResult.messages && conversionResult.messages.length > 0) {
-          conversionResult.messages.forEach((msg: any) => console.warn(`[s2o warning]: ${msg.message} (${msg.pointer})`));
-        }
-        convertedSpec = conversionResult.openapi;
-      } else {
-        // This case should be rare if fatalOnly is false, but handle defensively
-        console.error('Conversion to OpenAPI 3.0 did not produce an openapi object, though no fatal error was thrown.');
-        if (conversionResult.messages && conversionResult.messages.length > 0) {
-          conversionResult.messages.forEach((msg: any) => console.error(`[s2o message]: ${msg.message} (${msg.pointer})`));
-        }
-        throw new Error('Conversion to OpenAPI 3.0 failed to produce output.');
-      }
-    } catch (err: any) {
-      const errorMessage = err.message || String(err);
-      console.error('Error during Swagger 2.0 to OpenAPI 3.0 conversion process:', errorMessage);
-      throw new Error(`Conversion to OpenAPI 3.0 failed: ${errorMessage}`); // Re-throw critical errors
-    }
-    return convertedSpec;
-  }
-  if (spec.openapi && spec.openapi.startsWith('3.')) {
-    console.log('Spec is already OpenAPI 3.x.');
-    return spec;
-  }
-  console.warn('Spec is not Swagger 2.0 or OpenAPI 3.x. Attempting to use as is.');
-  return spec;
 }
 
 function _cleanSpec(spec: any, options: _InternalOpenApiCleanerOptions): any {
@@ -153,11 +117,8 @@ export async function fetchAndProcessOpenApiSpec(config?: Partial<FetcherConfig>
 
   try {
     console.log(`[Fetcher] Fetching raw OpenAPI spec from ${specUrl}...`);
-    let spec = await _fetchRawSpec(specUrl);
+    const spec = await _fetchRawSpec(specUrl);
     console.log('[Fetcher] Successfully fetched raw OpenAPI spec.');
-
-    spec = await _convertToOpenApiV3(spec);
-    // _convertToOpenApiV3 logs its own success/errors
 
     console.log('[Fetcher] Cleaning and finalizing OpenAPI spec...');
     const cleanerOptions: _InternalOpenApiCleanerOptions = {
