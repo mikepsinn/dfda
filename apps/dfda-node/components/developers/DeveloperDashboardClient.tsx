@@ -9,22 +9,21 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { logger } from "@/lib/logger"
 import Link from "next/link"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, LayoutDashboard, SearchCode, BookText, SquareCode, BotMessageSquare, KeyRound, Pencil, Trash2, RefreshCw, Copy, CheckCircle, AlertTriangle } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CodeExampleTabs } from "@/components/developers/CodeExampleTabs"
-import { KeyRound, Pencil, Trash2, RefreshCw, Copy } from "lucide-react"
 import { type User } from '@supabase/supabase-js';
 import { type Database } from '@/lib/database.types';
-import { createClient } from "@/utils/supabase/client";
-import SwaggerUI from "swagger-ui-react";
-import "swagger-ui-react/swagger-ui.css";
 import { listOAuthClients, deleteOAuthClient, resetOAuthClientSecret, createOAuthClient, updateOAuthClient } from '@/lib/actions/developer/oauth-clients.actions';
 import { CreateOAuthClientInputSchema, UpdateOAuthClientInputSchema, type CreateOAuthClientInput, type UpdateOAuthClientInput } from '@/lib/actions/developer/oauth-clients.schemas';
 import { z } from 'zod';
 import { updateDeveloperProfile, type UpdateProfileInput } from '@/lib/actions/developer/profile.actions';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { CheckCircle, AlertTriangle } from "lucide-react";
 import { useChat } from '@ai-sdk/react';
+import SwaggerUI from "swagger-ui-react";
+import "swagger-ui-react/swagger-ui.css";
+import { useMediaQuery } from 'usehooks-ts';
+import { ExpandableTabs } from '@/components/ui/expandable-tabs';
 
 // Derive the Profile type
 type Profile = Database['public']['Tables']['profiles']['Row'];
@@ -50,14 +49,9 @@ type OAuthClient = Pick<
 export interface DeveloperDashboardClientProps {
   user: User | null;
   profile: Profile | null;
-  supabaseUrl: string | undefined;
-  supabaseAnonKey: string | undefined;
 }
 
-export function DeveloperDashboardClient({ user, profile: initialProfile, supabaseUrl, supabaseAnonKey }: DeveloperDashboardClientProps) {
-  const [sessionToken, setSessionToken] = useState<string | null>(null);
-  const supabase = createClient();
-
+export function DeveloperDashboardClient({ user, profile: initialProfile }: DeveloperDashboardClientProps) {
   const [oauthClients, setOAuthClients] = useState<OAuthClient[]>([]);
   const [isLoadingClients, setIsLoadingClients] = useState(true);
   const [clientsError, setClientsError] = useState<string | null>(null);
@@ -72,11 +66,6 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
   const [firstName, setFirstName] = useState(initialProfile?.first_name ?? '');
   const [lastName, setLastName] = useState(initialProfile?.last_name ?? '');
 
-  // Prepare Swagger UI props (and for chat spec fetching)
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  // Ensure no trailing slash on siteUrl before appending, and ensure trailing slash for openApiUrl as it's a base path
-  const openApiUrl = siteUrl ? `${siteUrl.replace(/\/$/, '')}/api/sb/` : undefined;
-
   // State for OpenAPI spec for chat
   const [openApiSpecForChat, setOpenApiSpecForChat] = useState<string | null>(null);
   const [isFetchingSpec, setIsFetchingSpec] = useState(true);
@@ -86,39 +75,43 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
     messages,
     input,
     handleInputChange,
-    handleSubmit,
+    handleSubmit: originalHandleSubmit,
     isLoading: isChatLoading,
     error: chatError,
     reload,
     stop,
   } = useChat({
-    api: '/api/chat', // Your backend chat route
-    // Send openApiSpecForChat in the initial message or via ChatRequestOptions.data
-    // We will send it with each handleSubmit call to ensure the latest spec is used if it could change.
+    api: '/api/chat',
   });
 
+  const [openApiSpecObject, setOpenApiSpecObject] = useState<any>(null);
+
   const fetchOpenApiSpec = useCallback(async () => {
-    if (!openApiUrl) {
-      logger.warn('[DeveloperDashboard] openApiUrl not available for fetching spec for chat.');
-      setIsFetchingSpec(false);
-      return;
+    try {
+      const res = await fetch('/api/openapi');
+      const spec = await res.json();
+      setOpenApiSpecObject(spec);
+      logger.info('[DeveloperDashboard] OpenAPI spec fetched for SwaggerUI.');
+    } catch (err) {
+      logger.error('[DeveloperDashboard] Error fetching OpenAPI spec for SwaggerUI', err);
+      setOpenApiSpecObject(null);
     }
+  }, []);
+
+  const fetchAndSetSpecForChat = useCallback(async () => {
     setIsFetchingSpec(true);
     try {
-      const response = await fetch(openApiUrl); // Fetch from your proxied endpoint
-      if (!response.ok) {
-        throw new Error(`Failed to fetch OpenAPI spec: ${response.status} ${response.statusText}`);
-      }
-      const specText = await response.text(); // Get spec as text
-      setOpenApiSpecForChat(specText);
-      logger.info('[DeveloperDashboard] OpenAPI spec fetched for chat.');
-    } catch (e: any) {
-      logger.error('[DeveloperDashboard] Error fetching OpenAPI spec for chat:', { error: e });
-      setOpenApiSpecForChat(null); // Or handle error state more visibly
+      const res = await fetch('/api/openapi');
+      const spec = await res.json();
+      setOpenApiSpecForChat(JSON.stringify(spec, null, 2));
+      logger.info('[DeveloperDashboard] OpenAPI spec fetched and processed for chat.');
+    } catch (err) {
+      logger.error('[DeveloperDashboard] Error fetching/processing OpenAPI spec for chat', err);
+      setOpenApiSpecForChat(null);
     } finally {
       setIsFetchingSpec(false);
     }
-  }, [openApiUrl]);
+  }, []);
 
   const fetchOAuthClients = useCallback(async () => {
     if (!user) return;
@@ -140,21 +133,13 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
   }, [user]);
 
   useEffect(() => {
-    const getSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (error) {
-        logger.error('Error getting session on client', { error });
-      } else if (data.session) {
-        setSessionToken(data.session.access_token);
-      }
-    };
-    getSession();
     fetchOAuthClients();
-    fetchOpenApiSpec(); // Fetch the spec when component mounts
+    fetchAndSetSpecForChat();
+    fetchOpenApiSpec();
     // Update local state if initialProfile changes (e.g. after server-side update and re-render)
     setFirstName(initialProfile?.first_name ?? '');
     setLastName(initialProfile?.last_name ?? '');
-  }, [supabase, fetchOAuthClients, initialProfile, fetchOpenApiSpec]);
+  }, [fetchOAuthClients, initialProfile, fetchAndSetSpecForChat, fetchOpenApiSpec]);
 
   const handleCreateSubmit = async (formData: z.output<typeof CreateOAuthClientInputSchema>) => {
     setActionStatus(null);
@@ -306,29 +291,29 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
     setIsUpdatingProfile(false);
   };
 
-  const requestInterceptor = (req: any) => {
-    if (sessionToken) {
-      req.headers['Authorization'] = `Bearer ${sessionToken}`;
-    }
-    if (supabaseAnonKey) {
-        req.headers['apikey'] = supabaseAnonKey;
-    }
-    return req;
-  };
-
   // Custom handleSubmit for chat to include OpenAPI spec
   const handleChatSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!openApiSpecForChat && !isFetchingSpec) {
-        // Optionally, you could append a message like "Waiting for API spec to load..."
-        // or disable the chat input until the spec is loaded.
-        alert("API specification is not yet loaded. Please wait a moment.");
+        alert("API specification is not yet loaded or failed to load. Please wait a moment or try refreshing.");
         return;
     }
-    handleSubmit(e, {
+    originalHandleSubmit(e, {
         data: { openApiSpec: openApiSpecForChat }
     });
   };
+
+  // Tab definitions for unified tab management
+  const tabDefinitions = [
+    { value: "dashboard", title: "Dashboard", icon: LayoutDashboard },
+    { value: "apiExplorer", title: "API Explorer", icon: SearchCode },
+    { value: "documentation", title: "Documentation", icon: BookText },
+    { value: "examples", title: "Code Examples", icon: SquareCode },
+    { value: "apiChat", title: "API Chat", icon: BotMessageSquare },
+  ];
+
+  const [activeTab, setActiveTab] = useState<string>(tabDefinitions[0].value);
+  const isMobile = useMediaQuery("(max-width: 768px)"); // Tailwind's md breakpoint
 
   if (!user) {
     return <div>Loading user data or authentication required...</div>;
@@ -340,14 +325,32 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">Developer Dashboard</h1>
         <p className="text-muted-foreground">Manage your profile, API keys, OAuth applications, and access documentation.</p>
 
-        <Tabs defaultValue="dashboard">
-          <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-            <TabsTrigger value="apiExplorer">API Explorer</TabsTrigger>
-            <TabsTrigger value="documentation">Documentation Links</TabsTrigger>
-            <TabsTrigger value="examples">Code Examples</TabsTrigger>
-            <TabsTrigger value="apiChat">API Chat Helper</TabsTrigger>
-          </TabsList>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          {isMobile ? (
+            <ExpandableTabs
+              tabs={tabDefinitions.map(t => ({ title: t.title, icon: t.icon }))} // Pass only title and icon
+              onChange={(index) => {
+                if (index !== null && tabDefinitions[index]) {
+                  setActiveTab(tabDefinitions[index].value);
+                }
+              }}
+              className="mb-4 px-1" // Added px-1 to match original TabsList padding, and mb-4
+              // Ensure activeColor matches the one used in TabsTrigger or a suitable one
+              activeColor="text-foreground bg-muted"
+            />
+          ) : (
+            <TabsList className="grid w-full grid-cols-5">
+              {tabDefinitions.map(tab => {
+                const IconComponent = tab.icon; // Assign the icon component to a variable
+                return (
+                  <TabsTrigger key={tab.value} value={tab.value}>
+                    <IconComponent className="mr-2 h-4 w-4" /> {/* Use the IconComponent */}
+                    {tab.title}
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          )}
 
           <TabsContent value="dashboard" className="space-y-6 pt-6">
             <Card>
@@ -518,14 +521,10 @@ export function DeveloperDashboardClient({ user, profile: initialProfile, supaba
                 <CardDescription>Explore and test the API endpoints directly. Requests will use your current session.</CardDescription>
               </CardHeader>
               <CardContent>
-                {openApiUrl ? (
-                  <SwaggerUI
-                    url={openApiUrl}
-                    requestInterceptor={requestInterceptor}
-                    requestSnippetsEnabled={true}
-                  />
+                {openApiSpecObject ? (
+                  <SwaggerUI spec={openApiSpecObject} />
                 ) : (
-                  <p className="text-red-500">API URL not configured. Check environment variables.</p>
+                  <p>Loading API documentation...</p>
                 )}
               </CardContent>
             </Card>
