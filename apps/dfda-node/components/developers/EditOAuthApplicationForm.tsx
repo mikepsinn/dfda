@@ -65,22 +65,16 @@ export function EditOAuthApplicationForm({ client, onClientUpdated, onCancel }: 
         return;
     }
     
-    const updatedFields: UpdateOAuthClientInput = {};
-    // Only add fields to the update if they have changed from the original client data,
-    // or if they are non-empty. The UpdateOAuthClientInputSchema is partial.
-
-    if (clientName !== (client.client_name || '')) updatedFields.client_name = clientName;
-    if (clientUri !== (client.client_uri || '')) updatedFields.client_uri = clientUri;
-    if (redirectUrisArray.join(', ') !== client.redirect_uris.join(', ')) updatedFields.redirect_uris = redirectUrisArray;
-    if (logoUri !== (client.logo_uri || '')) updatedFields.logo_uri = logoUri;
-    if (scope !== (client.scope || 'openid email profile')) updatedFields.scope = scope.trim() === '' ? 'openid email profile' : scope.trim();
-    if (tosUri !== (client.tos_uri || '')) updatedFields.tos_uri = tosUri;
-    if (policyUri !== (client.policy_uri || '')) updatedFields.policy_uri = policyUri;
-
-    // Grant types and response types are not typically changed in an edit form like this
-    // If they were, they'd need to be added here as well, e.g.:
-    // updatedFields.grant_types = selectedGrantTypes;
-    // updatedFields.response_types = selectedResponseTypes;
+    const updatedFields: UpdateOAuthClientInput = {
+      client_id: client.client_id,
+      client_name: clientName,
+      client_uri: clientUri,
+      redirect_uris: redirectUrisArray,
+      logo_uri: logoUri,
+      scope: scope.trim() === '' ? 'openid email profile' : scope.trim(),
+      tos_uri: tosUri,
+      policy_uri: policyUri,
+    };
 
     if (Object.keys(updatedFields).length === 0) {
       setSuccessMessage("No changes detected.");
