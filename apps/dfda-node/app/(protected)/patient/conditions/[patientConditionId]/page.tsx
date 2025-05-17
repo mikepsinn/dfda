@@ -36,6 +36,13 @@ import { RatingsList } from "./components/ratings-list"
 
 const logger = createLogger("patient-condition-detail-page")
 
+// Helper for severity emojis (can be moved to a constants file later)
+const severityEmojis: Record<string, string> = {
+  mild: "😊",
+  moderate: "😐",
+  severe: "😟",
+  // Add "unknown" or default case if needed
+};
 
 // Destructure params directly in the signature
 export default async function PatientConditionDetailPage({ params }: { params: Promise<{ patientConditionId: string }> }) {
@@ -140,7 +147,11 @@ export default async function PatientConditionDetailPage({ params }: { params: P
               </div>
               <div className="space-y-1">
                 <p className="text-sm font-medium text-muted-foreground">Severity</p>
-                <p className="capitalize">{condition.severity || "N/A"}</p>
+                <p className="capitalize">
+                   {condition.severity && severityEmojis[condition.severity.toLowerCase()] ? 
+                     `${severityEmojis[condition.severity.toLowerCase()]} ` : ''}
+                   {condition.severity || "N/A"}
+                </p>
               </div>
               <div className="space-y-1">
                 <p className="text-sm font-medium text-muted-foreground">Diagnosed Date</p>
@@ -151,16 +162,23 @@ export default async function PatientConditionDetailPage({ params }: { params: P
 
         {/* Condition Ratings Card */}
         <Card>
-           <CardHeader className="flex flex-row items-center justify-between">
+           <CardHeader className="flex flex-row items-center justify-between gap-4">
               <div>
                 <CardTitle>Treatment Ratings</CardTitle>
                 <CardDescription>How effective have treatments been specifically for {condition.condition_name || "this condition"}?</CardDescription>
               </div>
+               <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0">
                <RateTreatmentDialog patientCondition={condition}>
-                 <Button variant="outline">
+                   <Button variant="outline" size="sm">
                    <Star className="mr-2 h-4 w-4"/> Rate Treatment
                  </Button>
                </RateTreatmentDialog>
+                 <Link href="/patient/reminders" passHref>
+                    <Button variant="secondary" size="sm">
+                      Manage Reminders
+                    </Button>
+                  </Link>
+                </div>
             </CardHeader>
             <CardContent>
                 <Suspense fallback={<p className="text-muted-foreground">Loading ratings...</p>}> 

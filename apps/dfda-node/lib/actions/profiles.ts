@@ -1,6 +1,6 @@
 "use server"
 
-import { createServerClient } from "@/lib/supabase"
+import { createServerClient } from "@/utils/supabase"
 import { logger } from "@/lib/logger"
 import type { Database } from "@/lib/database.types"
 import { getUserProfile, createUserProfile, updateUserProfile } from "@/lib/profile"

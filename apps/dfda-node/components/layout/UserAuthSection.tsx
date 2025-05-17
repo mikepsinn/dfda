@@ -15,9 +15,11 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { createClient } from "@/lib/supabase/client"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { createClient } from "@/utils/supabase/client"
 import type { User } from "@supabase/supabase-js"
 import type { NavItem } from "@/lib/types/navigation"
+import { useRouter } from 'next/navigation'
 
 interface UserAuthSectionProps {
   user: User | null
@@ -27,14 +29,15 @@ interface UserAuthSectionProps {
 
 export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems = [] }: UserAuthSectionProps) {
   const supabase = createClient()
+  const router = useRouter()
 
   const userInitials = user?.user_metadata?.name
-    ? user.user_metadata.name.split(" ").map((n) => n[0]).join("").toUpperCase()
+    ? user.user_metadata.name.split(" ").map((n: string) => n[0]).join("").toUpperCase()
     : user?.email?.[0].toUpperCase() ?? "U"
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
-    window.location.href = "/" // Redirect to home after sign out
+    router.refresh()
   }
 
   if (user) {
@@ -49,19 +52,42 @@ export function UserAuthSection({ user, primaryNavItems = [], secondaryNavItems 
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56" align="end" forceMount>
-            {primaryNavItems.map((item) => (
-              !item.hideInDropdown && (
-                <DropdownMenuItem key={item.href} asChild>
-                  <Link href={item.href} className="flex items-center w-full gap-2">
-                    {item.icon && <item.icon className="h-4 w-4" />} 
-                    {item.emoji && <span>{item.emoji}</span>}
-                    <span>{item.title}</span>
-                  </Link>
-                </DropdownMenuItem>
-              )
-            ))}
+            {primaryNavItems.map((item) => {
+              if (item.hideInDropdown) return null;
 
-            {(primaryNavItems.length > 0 || secondaryNavItems.length > 0) && <DropdownMenuSeparator />} 
+              const menuItemContent = (
+                <Link href={item.href} className="flex items-center w-full gap-2">
+                  {item.icon && <item.icon className="h-4 w-4" />}
+                  {item.emoji && <span>{item.emoji}</span>}
+                  <span>{item.title}</span>
+                </Link>
+              );
+
+              if (item.description) {
+                return (
+                  <TooltipProvider key={item.href + "-tooltip-provider"}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <DropdownMenuItem key={item.href} asChild>
+                          {menuItemContent}
+                        </DropdownMenuItem>
+                      </TooltipTrigger>
+                      <TooltipContent side="left" align="center">
+                        <p>{item.description}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                );
+              } else {
+                return (
+                  <DropdownMenuItem key={item.href} asChild>
+                    {menuItemContent}
+                  </DropdownMenuItem>
+                );
+              }
+            })}
+
+            {(primaryNavItems.length > 0 || secondaryNavItems.length > 0) && <DropdownMenuSeparator />}
             <DropdownMenuItem asChild>
               <Link href="/user/profile" className="flex items-center w-full gap-2">
                 <UserIcon className="h-4 w-4" />

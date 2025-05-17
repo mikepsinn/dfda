@@ -1,13 +1,22 @@
 "use server"
 
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { logger } from "@/lib/logger"
-import type { /*Database, Tables,*/ TablesInsert } from "@/lib/database.types"
+import type { /*Database, Tables,*/ TablesInsert, Database, Tables } from "@/lib/database.types"
 import { revalidatePath } from "next/cache"
+import { unstable_noStore as noStore } from 'next/cache'
+import { startOfDay, endOfDay } from 'date-fns';
+import type { MeasurementCardData } from '@/components/measurement-card';
 
 // Types
 export type MeasurementInsert = TablesInsert<"measurements">
 export type UserVariableInsert = TablesInsert<"user_variables">
+export type Measurement = Database["public"]["Tables"]["measurements"]["Row"]
+
+// New type including the related unit data
+export type MeasurementWithUnits = Measurement & {
+  units: { abbreviated_name: string } | null;
+}
 
 // Input type for the action - Renamed back and added reminderNotificationId
 export type LogMeasurementInput = {
@@ -19,6 +28,31 @@ export type LogMeasurementInput = {
     notes?: string | null;
     reminderNotificationId?: string; // Optional: Link to the notification being completed
 }
+
+export type UpdateMeasurementInput = {
+  measurementId: string;
+  userId: string;
+  value: number;
+  unitId: string;
+  notes?: string | null;
+};
+
+// Helper type for the joined data structure
+// Used in getMeasurementsForDateAction
+type FetchedMeasurement = Tables<'measurements'> & {
+    units: Pick<Tables<'units'>, 'id' | 'abbreviated_name' | 'name'> | null;
+    user_variables: (
+        Pick<Tables<'user_variables'>, 'id' | 'global_variable_id' | 'preferred_unit_id'>
+        & {
+            global_variables: (
+                Pick<Tables<'global_variables'>, 'id' | 'name' | 'variable_category_id' | 'default_unit_id' | 'description' | 'emoji'>
+                & {
+                    variable_categories: Pick<Tables<'variable_categories'>, 'id' | 'name'> | null;
+                }
+            ) | null;
+        }
+    ) | null;
+};
 
 /**
  * Creates a measurement log, finding/creating the necessary user_variable record.
@@ -174,4 +208,173 @@ export async function logMeasurementAction(
         const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
         return { success: false, error: errorMessage };
     }
-} 
+}
+
+/**
+ * Fetches all measurements for a specific user variable, ordered by start time descending.
+ */
+export async function getMeasurementsForUserVariableAction(
+    userVariableId: string, 
+    userId: string,
+    limit: number = 50 // Default limit, adjust as needed
+): Promise<{ success: boolean; data?: Measurement[]; error?: string }> {
+    noStore();
+    logger.info("getMeasurementsForUserVariableAction: Called", { userVariableId, userId, limit });
+
+    if (!userVariableId || !userId) {
+        logger.warn("getMeasurementsForUserVariableAction: Missing IDs");
+        return { success: false, error: "Invalid request parameters." };
+    }
+
+    try {
+        const supabase = await createClient();
+        const { data, error } = await supabase
+            .from("measurements")
+            .select("*, units ( abbreviated_name )") // Select all measurement fields + unit name
+            .eq("user_variable_id", userVariableId)
+            .eq("user_id", userId)
+            .is("deleted_at", null)
+            .order("start_at", { ascending: false })
+            .limit(limit);
+
+        if (error) {
+            logger.error("getMeasurementsForUserVariableAction: Error fetching measurements", { userId, userVariableId, error });
+            return { success: false, error: error.message };
+        }
+
+        logger.info("getMeasurementsForUserVariableAction: Fetched measurements successfully", { userId, userVariableId, count: data?.length ?? 0 });
+        return { success: true, data: data || [] };
+
+    } catch (error: any) {
+        logger.error("getMeasurementsForUserVariableAction: Unhandled error", { userId, userVariableId, error });
+        return { success: false, error: "An unexpected error occurred." };
+    }
+}
+
+export async function updateMeasurementAction(
+  input: UpdateMeasurementInput
+): Promise<{ success: boolean; error?: string }> {
+  const { measurementId, userId, value, unitId, notes } = input;
+  const supabase = await createClient();
+
+  const { error } = await supabase
+    .from("measurements")
+    .update({
+      value,
+      unit_id: unitId,
+      notes: notes ?? null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", measurementId)
+    .eq("user_id", userId)
+    .is("deleted_at", null);
+
+  if (error) {
+    logger.error("Failed to update measurement", { measurementId, userId, error });
+    return { success: false, error: error.message };
+  }
+
+  // Optionally revalidate relevant paths here
+
+  return { success: true };
+}
+
+/**
+ * Fetches raw measurements for a specific user and date to populate the timeline.
+ */
+export async function getMeasurementsForDateAction(
+    userId: string,
+    targetDate: Date
+): Promise<{ success: boolean; data?: MeasurementCardData[]; error?: string }> {
+    noStore(); // Ensure this doesn't get cached inappropriately
+    const supabase = await createClient();
+    const dateStr = targetDate.toISOString().split('T')[0];
+    logger.info('Fetching measurements for date', { userId, date: dateStr });
+
+    const dayStart = startOfDay(targetDate).toISOString();
+    const dayEnd = endOfDay(targetDate).toISOString();
+
+    // Fetch measurements for the target date range and join related data
+    const { data: measurements, error } = await supabase
+        .from('measurements')
+        .select(`
+            id,
+            value,
+            unit_id,
+            notes,
+            start_at,
+            user_variable_id,
+            units!inner( id, abbreviated_name, name ),
+            user_variables!inner(
+                id,
+                global_variable_id,
+                preferred_unit_id,
+                global_variables!inner(
+                    id,
+                    name,
+                    variable_category_id,
+                    description,
+                    emoji,
+                    default_unit_id,
+                    variable_categories( id, name )
+                )
+            )
+        `)
+        .eq('user_id', userId)
+        .gte('start_at', dayStart)
+        .lt('start_at', dayEnd)
+        .order('start_at', { ascending: true });
+
+    if (error) {
+        logger.error('Error fetching measurements for date', { userId, date: dateStr, error });
+        console.error("Supabase fetch error (measurements for date):", JSON.stringify(error, null, 2));
+        return { success: false, error: `Database error: ${error.message}` };
+    }
+
+    if (!measurements) {
+        logger.warn('No measurements found for date', { userId, date: dateStr });
+        return { success: true, data: [] };
+    }
+
+    // Map to the MeasurementCardData structure
+    const measurementCardDataItems: MeasurementCardData[] = measurements.map((m): MeasurementCardData | null => {
+        const measurement = m as FetchedMeasurement; // Cast to the more specific type
+        const userVar = measurement.user_variables;
+        const globalVar = userVar?.global_variables;
+        const category = globalVar?.variable_categories;
+        const unit = measurement.units;
+
+        if (!userVar || !globalVar || !category || !unit) {
+            logger.warn("Missing required nested data for measurement card data, skipping", {
+                measurementId: measurement.id,
+                userVarMissing: !userVar,
+                globalVarMissing: !globalVar,
+                categoryMissing: !category,
+                unitMissing: !unit,
+            });
+            return null; 
+        }
+
+        const variableCategoryId = category.id as MeasurementCardData['variableCategoryId'];
+
+        return {
+            id: measurement.id,
+            globalVariableId: globalVar.id,
+            userVariableId: userVar.id,
+            variableCategoryId: variableCategoryId,
+            name: globalVar.name,
+            start_at: measurement.start_at, // Use start_at directly
+            end_at: measurement.end_at ?? undefined, // Include end_at if available from FetchedMeasurement
+            value: measurement.value,
+            unit: unit.abbreviated_name,
+            unitId: unit.id,
+            unitName: unit.name,
+            notes: measurement.notes ?? undefined,
+            emoji: globalVar.emoji,
+            isEditable: true, 
+        };
+    }).filter((item): item is MeasurementCardData => item !== null);
+
+    logger.info(`Found and mapped ${measurementCardDataItems.length} measurement card data items for date`, { userId, date: dateStr });
+    return { success: true, data: measurementCardDataItems };
+}

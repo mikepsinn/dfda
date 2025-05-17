@@ -42,5 +42,7 @@ test-results/*
 volumes/
 test-results/
 playwright-report/
+gcp-service-account-key.json
+dfda-node-search-user-key.json
 supabase-config.md
 tsconfig.tsbuildinfo

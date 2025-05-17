@@ -15,7 +15,7 @@ export function HeroSection() {
               FDA v2: Making Clinical Trials <span className="text-primary">80X Cheaper</span> & More Accessible
             </h1>
             <p className="max-w-[600px] text-muted-foreground md:text-xl">
-              The new decentralized autonomous FDA dramatically reduces costs through automation, competition, and
+              The new decentralized autonomous FDA dramatically reduces costs through decentralization, automation, and
               economies of scale while improving patient access to innovative treatments.
             </p>
 
@@ -35,7 +35,7 @@ export function HeroSection() {
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
                 <span className="text-sm md:text-base">
-                  <span className="font-bold">$15,000+</span> savings per participant
+                  <span className="font-bold">Over $40,000</span> savings per participant
                 </span>
               </div>
             </div>
@@ -74,8 +74,8 @@ export function HeroSection() {
 
                 <div className="grid grid-cols-3 gap-2 text-sm border-t pt-2">
                   <div>Cost per Patient</div>
-                  <div className="text-muted-foreground">$36,000</div>
-                  <div className="text-primary font-bold">$450</div>
+                  <div className="text-muted-foreground">$41,000</div>
+                  <div className="text-primary font-bold">~$513</div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-sm border-t pt-2">

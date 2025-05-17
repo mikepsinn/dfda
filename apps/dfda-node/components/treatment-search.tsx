@@ -16,7 +16,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { createClient } from "@/lib/supabase/client"
+import { createClient } from "@/utils/supabase/client"
 
 interface TreatmentSearchProps {
   onSelect: (treatment: { id: string; name: string }) => void

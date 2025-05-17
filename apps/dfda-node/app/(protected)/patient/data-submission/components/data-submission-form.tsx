@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator"
 import { Textarea } from "@/components/ui/textarea"
 import { Progress } from "@/components/ui/progress"
 import { SubmissionComplete } from "./submission-complete"
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '@/utils/supabase/client'
 import { logger } from "@/lib/logger"
 import { submitTrialDataAction } from "@/lib/actions/data-submissions"
 import { updateEnrollmentAfterSubmissionAction } from "@/lib/actions/trial-enrollments"

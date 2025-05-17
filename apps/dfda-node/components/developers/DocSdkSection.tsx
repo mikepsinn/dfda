@@ -16,10 +16,10 @@ export function DocSdkSection() {
           <h3 className="text-lg font-medium mb-2">JavaScript SDK</h3>
           <p className="text-sm text-muted-foreground mb-4">For Node.js and browser applications</p>
           <CodeBlock title="Installation">
-            {`npm install @fdav2/sdk
+            {`npm install dfda-js-sdk
 
 # or with yarn
-yarn add @fdav2/sdk`}
+yarn add dfda-js-sdk`}
           </CodeBlock>
           <Button variant="outline" size="sm" className="mt-4 w-full">
             <ExternalLink className="mr-2 h-4 w-4" /> View on GitHub

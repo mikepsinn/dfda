@@ -12,6 +12,47 @@
 *   **Monetization:** Sustainable revenue through a hybrid SaaS model (subscriptions + usage + optional modules) to fund development, AI capabilities, and network growth.
 *   **Technology:** Leverage AI (agents, AI Doctor, causal inference), potentially blockchain/decentralized identity concepts where appropriate (though not strictly required for MVP).
 
+## Environment Setup
+
+This project requires several environment variables to be set up for various services (Supabase, Google AI, Google Cloud).
+
+### Local Development
+
+For local development, create a `.env` file in the root of the `apps/dfda-node` project (or the monorepo root if configured that way). It should contain at least:
+
+```env
+# Supabase (Get from your Supabase project settings)
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
+
+# Google Generative AI (For direct Gemini API calls, e.g., AI generation script)
+# Get from Google AI Studio: https://aistudio.google.com/app/apikey
+GOOGLE_GENERATIVE_AI_API_KEY=YOUR_GEMINI_API_KEY
+
+
+# Optional: Other variables like Google OAuth Client ID/Secret if needed
+# GOOGLE_CLIENT_ID=
+# GOOGLE_CLIENT_SECRET=
+
+# Optional: Database connection string if needed directly by ORM/scripts
+# DATABASE_URL="postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-SUPABASE-ID].supabase.co:5432/postgres"
+```
+
+**Authentication for Google Cloud Locally (Recommended):**
+
+1.  Install the `gcloud` CLI: [https://cloud.google.com/sdk/docs/install](https://cloud.google.com/sdk/docs/install)
+2.  Log in with your Google account: `gcloud auth login`
+3.  Set up Application Default Credentials (ADC): `gcloud auth application-default login`
+    This allows the Google Cloud client libraries to automatically find your credentials when running locally.
+
+### Vercel Deployment
+
+1.  Go to your Vercel Project Settings > Environment Variables.
+2.  Add all required variables from your `.env` file (e.g., `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`)
+
+
+
 ## 2. Overall Architecture
 
 The ecosystem consists of several key components within a monorepo (plus external marketing site if desired later):

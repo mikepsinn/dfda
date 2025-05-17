@@ -475,6 +475,35 @@ export type Database = {
           },
         ]
       }
+      global_symptoms: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          id: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "global_symptoms_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "global_variables"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       global_treatments: {
         Row: {
           active_ingredients: Json | null
@@ -920,11 +949,59 @@ export type Database = {
           },
         ]
       }
+      oauth_authorization_codes: {
+        Row: {
+          client_id: string
+          code: string
+          code_challenge: string | null
+          code_challenge_method: string | null
+          created_at: string
+          expires_at: string
+          id: string
+          redirect_uri: string
+          scope: string | null
+          user_id: string
+        }
+        Insert: {
+          client_id: string
+          code: string
+          code_challenge?: string | null
+          code_challenge_method?: string | null
+          created_at?: string
+          expires_at: string
+          id?: string
+          redirect_uri: string
+          scope?: string | null
+          user_id: string
+        }
+        Update: {
+          client_id?: string
+          code?: string
+          code_challenge?: string | null
+          code_challenge_method?: string | null
+          created_at?: string
+          expires_at?: string
+          id?: string
+          redirect_uri?: string
+          scope?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_authorization_codes_client_id"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "oauth_clients"
+            referencedColumns: ["client_id"]
+          },
+        ]
+      }
       oauth_clients: {
         Row: {
           client_id: string
           client_name: string
           client_secret: string
+          client_type: Database["public"]["Enums"]["oauth_client_type_enum"]
           client_uri: string | null
           created_at: string | null
           deleted_at: string | null
@@ -943,6 +1020,7 @@ export type Database = {
           client_id: string
           client_name: string
           client_secret: string
+          client_type?: Database["public"]["Enums"]["oauth_client_type_enum"]
           client_uri?: string | null
           created_at?: string | null
           deleted_at?: string | null
@@ -961,6 +1039,7 @@ export type Database = {
           client_id?: string
           client_name?: string
           client_secret?: string
+          client_type?: Database["public"]["Enums"]["oauth_client_type_enum"]
           client_uri?: string | null
           created_at?: string | null
           deleted_at?: string | null
@@ -1163,6 +1242,70 @@ export type Database = {
             columns: ["patient_treatment_id"]
             isOneToOne: false
             referencedRelation: "patient_treatments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      patient_symptoms: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          frequency: string | null
+          id: string
+          notes: string | null
+          onset_date: string | null
+          patient_id: string
+          severity: string | null
+          symptom_id: string
+          updated_at: string | null
+          user_variable_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          frequency?: string | null
+          id?: string
+          notes?: string | null
+          onset_date?: string | null
+          patient_id: string
+          severity?: string | null
+          symptom_id: string
+          updated_at?: string | null
+          user_variable_id: string
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          frequency?: string | null
+          id?: string
+          notes?: string | null
+          onset_date?: string | null
+          patient_id?: string
+          severity?: string | null
+          symptom_id?: string
+          updated_at?: string | null
+          user_variable_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "patient_symptoms_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_symptoms_symptom_id_fkey"
+            columns: ["symptom_id"]
+            isOneToOne: false
+            referencedRelation: "global_symptoms"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "patient_symptoms_user_variable_id_fkey"
+            columns: ["user_variable_id"]
+            isOneToOne: false
+            referencedRelation: "user_variables"
             referencedColumns: ["id"]
           },
         ]
@@ -2793,6 +2936,7 @@ export type Database = {
         | "scale"
         | "date"
         | "file_upload"
+      oauth_client_type_enum: "public" | "confidential"
       product_type_enum:
         | "trackable_item"
         | "lab_test"
@@ -3374,6 +3518,7 @@ export const Constants = {
         "date",
         "file_upload",
       ],
+      oauth_client_type_enum: ["public", "confidential"],
       product_type_enum: [
         "trackable_item",
         "lab_test",

@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process'; // Use built-in spawn
 import path from 'path';
 import { createClient } from '@supabase/supabase-js'; // Add Supabase client import
 import dotenv from 'dotenv'; // Add dotenv import
+import { BUCKET_NAME } from '../lib/constants/storage'; // Add import
 
 // --- Load Environment Variables ---
 // Load from .env for script execution
@@ -9,7 +10,7 @@ dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const bucketName = 'user_uploads'; // Define bucket name
+// const bucketName = 'user_uploads'; // Define bucket name - Replaced below
 
 // Utility to run a command and pipe its output using spawn
 async function runCommand(command: string, args: string[], options?: any): Promise<void> {
@@ -51,6 +52,7 @@ async function runCommand(command: string, args: string[], options?: any): Promi
 
 // --- Utility to setup storage bucket ---
 async function setupStorageBucket() {
+  const bucketName = BUCKET_NAME; // Use imported constant
   console.log(`\n--- Setting up Storage Bucket: ${bucketName} ---\n`);
   if (!supabaseUrl || !serviceRoleKey) {
     console.error('Error: Supabase URL or Service Role Key not found in .env for storage setup.');

@@ -11,7 +11,7 @@ import { VARIABLE_CATEGORIES_DATA } from '@/lib/constants/variable-categories'
 
 interface ReminderListProps {
   userId: string
-  variableId: string
+  userVariableId: string
   variableName: string
   unitName: string
   userTimezone: string
@@ -20,7 +20,7 @@ interface ReminderListProps {
 
 export function ReminderListForVariable({
   userId, 
-  variableId, 
+  userVariableId, 
   variableName,
   unitName, 
   userTimezone,
@@ -32,7 +32,7 @@ export function ReminderListForVariable({
   const { 
     schedules, 
     isLoading, 
-  } = useReminderManagement(userId, variableId)
+  } = useReminderManagement(userId, userVariableId)
 
   const handleAddClick = () => {
     setSelectedSchedule(null)
@@ -99,7 +99,7 @@ export function ReminderListForVariable({
       <ReminderDialog
         isOpen={isDialogOpen}
         onClose={handleDialogClose}
-        userVariableId={variableId}
+        userVariableId={userVariableId}
         userId={userId}
         variableName={variableName}
         existingSchedule={selectedSchedule}

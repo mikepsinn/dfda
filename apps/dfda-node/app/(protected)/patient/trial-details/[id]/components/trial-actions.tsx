@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '@/utils/supabase/client'
 import { logger } from "@/lib/logger"
 import { useToast } from '@/components/ui/use-toast'
 import { createInitialEnrollmentAction } from "@/lib/actions/trial-enrollments"

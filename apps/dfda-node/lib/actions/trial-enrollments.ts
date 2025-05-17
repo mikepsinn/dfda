@@ -2,7 +2,7 @@
 
 import { logger } from "@/lib/logger"
 import { Database } from "@/lib/database.types"
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 
 export type TrialEnrollment = Database["public"]["Tables"]["trial_enrollments"]["Row"]
 export type TrialEnrollmentInsert = Database["public"]["Tables"]["trial_enrollments"]["Insert"]

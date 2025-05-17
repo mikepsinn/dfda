@@ -1,6 +1,6 @@
 "use server"
 
-import { createClient } from '@/lib/supabase/server'
+import { createClient } from '@/utils/supabase/server'
 // Removed unused Database type
 import { logger } from '@/lib/logger'
 // Removed unused revalidatePath

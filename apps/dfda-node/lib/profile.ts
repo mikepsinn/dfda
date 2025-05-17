@@ -1,8 +1,8 @@
-import { cache } from 'react'
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { logger } from "@/lib/logger"
 import type { User } from "@supabase/supabase-js"
 import type { Database } from "@/lib/database.types"
+import { cache } from "react"
 
 // Export the Profile type
 export type Profile = Database['public']['Tables']['profiles']['Row'];
@@ -14,19 +14,40 @@ export type Profile = Database['public']['Tables']['profiles']['Row'];
  * @param user The authenticated user object from Supabase Auth.
  * @returns The user's profile object or null if not found/error occurred.
  */
-export const getUserProfile = cache(async (user: User | null): Promise<Profile | null> => {
+// Temporarily remove cache wrapper for debugging RLS issue
+export const getUserProfile = cache( async (user: User | null): Promise<Profile | null> => {
   if (!user) {
-    logger.warn('getUserProfile called without a user.');
+    logger.warn('getUserProfile called without a user object.');
     return null;
   }
 
   const supabase = await createClient()
   
+  // >>> ADD LOGGING TO CHECK AUTH CONTEXT <<<
+  try {
+    const { data: { user: currentUserCheck }, error: authCheckError } = await supabase.auth.getUser();
+    if (authCheckError || !currentUserCheck) {
+      logger.error('[getUserProfile] Auth check FAILED before profile query!', { userId: user.id, authCheckError });
+      // If the auth check fails here, RLS will definitely deny access
+      return null; 
+    } else {
+      logger.debug('[getUserProfile] Auth check PASSED before profile query.', { userId: user.id, checkedUserId: currentUserCheck.id });
+      // Ensure the ID we are querying for matches the ID recognized by this client instance
+      if (user.id !== currentUserCheck.id) {
+           logger.warn('[getUserProfile] Mismatch between passed user ID and client auth context ID!', { passedId: user.id, contextId: currentUserCheck.id });
+      }
+    }
+  } catch (authCheckCatchError) {
+    logger.error('[getUserProfile] Exception during auth check!', { userId: user.id, authCheckCatchError });
+    return null;
+  }
+  // >>> END LOGGING <<<
+  
   try {
     const { data: profile, error } = await supabase
       .from('profiles')
-      .select('*') // Select all profile fields for now, adjust as needed
-      .eq('id', user.id)
+      .select('*')
+      .eq('id', user.id) // Query using the user object passed to the function
       .single()
 
     if (error) {
@@ -45,7 +66,7 @@ export const getUserProfile = cache(async (user: User | null): Promise<Profile |
     logger.error('Unexpected error in getUserProfile:', { userId: user.id, error: err });
     return null;
   }
-}) // End of cache wrapper
+} ) // End of cache wrapper removal
 
 // Type for profile updates (allow partial updates)
 // Export if needed elsewhere, otherwise keep internal

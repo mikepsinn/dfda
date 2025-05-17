@@ -3,9 +3,18 @@ description: changing database schema or other database related changes
 globs: 
 alwaysApply: false
 ---
+# Database Migration Guidelines
 
-- Modify the existing initial migration files in /supabase/migrations for database changes during this prototyping phase.
-- do not create new migrations unless absolutely necessary
-- add only one table, view, policy, etc. per migration
-- name migrations like `{timestamp right after the last simimlar migration time so they're grouped}_{table|view|whatever}_{name of table, view, etc}.sql`
-- Run `pnpm run setup` after making schema changes in the migration file.
+See [README.md](mdc:supabase/README.md) for the full migration naming policy and examples.
+
+## Key Points
+
+- **One object per migration:** Add only one table, view, policy, etc. per migration file.
+- **Modify, don't add, during prototyping:** During the prototyping phase, modify the existing initial migration files in `/supabase/migrations` for database changes. Do not create new migrations unless absolutely necessary.
+- **Naming:** Name migrations like `{timestamp right after the last similar migration time so they're grouped}_{table|view|whatever}_{name of table, view, etc}.sql`.
+- **Order matters:** The timestamp prefix ensures migrations are applied in the correct order. Always use a timestamp that places the migration after its dependencies but leaves room for future insertions.
+- **Type grouping:** Migrations are grouped by type using the timestamp. For example, all `table_` migrations are in the `03` hour block, all `function_` migrations in the `04` or `02` block, etc.
+- **Descriptive names:** The `<description>` should clearly state the purpose of the migration.
+- **Atomic migrations:** Each migration should perform a single logical change (e.g., create one table, add one function, etc.).
+- **Dependencies:** If a migration depends on another (e.g., a trigger depends on a function), ensure the timestamp of the dependency is earlier.
+- **After changes:** Run `pnpm run db:setup` after making schema changes in the migration file to apply them locally.

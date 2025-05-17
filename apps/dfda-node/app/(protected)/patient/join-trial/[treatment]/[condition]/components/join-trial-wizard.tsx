@@ -25,8 +25,36 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Progress } from "@/components/ui/progress"
 import { Stepper, useStepper } from "@/components/ui/stepper"
 
+// Define types for the trial data
+type SideEffect = {
+  name: string;
+  percentage: number;
+};
+
+type TrialDetails = {
+  title: string;
+  description: string;
+  duration: string;
+  visits: string;
+  eligibility: string[];
+  interventions: string[];
+  outcomes: string[];
+  sideEffects: SideEffect[];
+  cost: number;
+  refundPolicy: string;
+  research_partners: string;
+};
+
+// Using a more flexible type for knownTrialData to handle string indexing initially
+// A stricter type would involve keyof, but treatment/condition props are generic strings
+type KnownTrialDataType = {
+  [treatmentName: string]: {
+    [conditionName: string]: TrialDetails;
+  };
+};
+
 // Mock data for the trial - specific known trials
-const knownTrialData = {
+const knownTrialData: KnownTrialDataType = {
   Metformin: {
     "Type 2 Diabetes": {
       title: "Metformin Extended Release for Type 2 Diabetes",
@@ -89,7 +117,7 @@ const knownTrialData = {
       research_partners: "FDA v2 Rheumatology Research Network",
     },
   },
-}
+};
 
 // Steps in the join trial process
 const steps = [
@@ -127,7 +155,7 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
   })
 
   // Get trial data based on treatment and condition
-  let trial = knownTrialData[treatment]?.[condition]
+  let trial: TrialDetails | undefined = knownTrialData[treatment]?.[condition]
 
   // If trial data doesn't exist, generate it dynamically
   if (!trial) {
@@ -259,8 +287,8 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
                 <Separator />
                 <div>
                   <h3 className="font-medium mb-2">Eligibility Criteria</h3>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    {trial.eligibility.map((criterion, index) => (
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                    {trial.eligibility.map((criterion: string, index: number) => (
                       <li key={index}>{criterion}</li>
                     ))}
                   </ul>
@@ -268,8 +296,8 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
                 <Separator />
                 <div>
                   <h3 className="font-medium mb-2">What You'll Do (Interventions)</h3>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    {trial.interventions.map((intervention, index) => (
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                    {trial.interventions.map((intervention: string, index: number) => (
                       <li key={index}>{intervention}</li>
                     ))}
                   </ul>
@@ -277,8 +305,8 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
                 <Separator />
                 <div>
                   <h3 className="font-medium mb-2">What We'll Measure (Outcomes)</h3>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    {trial.outcomes.map((outcome, index) => (
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                    {trial.outcomes.map((outcome: string, index: number) => (
                       <li key={index}>{outcome}</li>
                     ))}
                   </ul>
@@ -286,15 +314,17 @@ export default function JoinTrialWizard({ treatment, condition }: JoinTrialWizar
                 <Separator />
                 <div>
                   <h3 className="font-medium mb-2">Potential Side Effects</h3>
-                  <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                    {trial.sideEffects.map((effect, index) => (
+                  <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                    {trial.sideEffects.map((effect: SideEffect, index: number) => (
                       <li key={index}>
-                        {effect.name} (Reported in ~{effect.percentage}% of participants in similar trials)
+                        {effect.name} (~{effect.percentage}%)
                       </li>
                     ))}
                   </ul>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Note: This is not an exhaustive list. Full safety information will be provided.
+                  <p className="text-muted-foreground">
+                    This study involves interventions with known side effects such as{" "}
+                    {trial.sideEffects.map((e: SideEffect) => `${e.name} (~${e.percentage}%)`).join(", ")}.
+                    You will be monitored for these and other potential risks.
                   </p>
                 </div>
               </CardContent>

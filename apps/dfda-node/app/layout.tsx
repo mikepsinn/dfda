@@ -9,6 +9,7 @@ import { getServerUser } from "@/lib/server-auth"
 import { getProfileByIdAction } from "../lib/actions/profiles"
 import type { Profile } from "../lib/actions/profiles"
 import { env } from "@/lib/env"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -86,16 +87,18 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ScrollToHashElement />
-        <div className="min-h-screen flex flex-col">
-          <Header initialUser={user} initialProfile={profile} />
-          <main className="flex-1 py-6 md:py-10 w-full bg-background">
-            <div className="container px-4 md:px-6 mx-auto">
-              {children}
-            </div>
-          </main>
-          <Footer />
-        </div>
+        <TooltipProvider>
+          <ScrollToHashElement />
+          <div className="min-h-screen flex flex-col">
+            <Header initialUser={user} initialProfile={profile} />
+            <main className="flex-1 py-6 md:py-10 w-full bg-background">
+              <div className="container px-4 md:px-6 mx-auto">
+                {children}
+              </div>
+            </main>
+            <Footer />
+          </div>
+        </TooltipProvider>
       </body>
     </html>
   )
