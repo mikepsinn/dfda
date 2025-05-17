@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   eslint: {
     ignoreDuringBuilds: false,
   },
@@ -14,6 +15,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
     typedRoutes: true,
+    serverActions: {
+      allowedOrigins: ['127.0.0.1:*', 'localhost:*'],
+    },
   },
   webpack: (config, { isServer, nextRuntime }) => {
     if (isServer && nextRuntime === "nodejs") {

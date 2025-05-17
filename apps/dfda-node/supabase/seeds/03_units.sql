@@ -16,6 +16,7 @@ VALUES
 ('one-to-ten-scale', 'dimensionless', 'One to Ten Scale', '1-10', NULL, 1, 0, '🔟'),
 ('zero-to-ten-scale', 'dimensionless', 'Zero to Ten Scale', '0-10', NULL, 1, 0, '🔟'), -- Using the same emoji for now
 ('kilograms-per-square-meter', 'dimensionless', 'Kilograms per Square Meter', 'kg/m2', 'kg/m2', 1, 0, '📊'), -- BMI
+('boolean', 'dimensionless', 'Boolean (1=Yes/True, 0=No/False)', 'bool', NULL, 1, 0, '✅'),
 
 -- Weight / Mass (Base: 'kilogram')
 ('kilogram', 'weight', 'Kilogram', 'kg', 'kg', 1, 0, '⚖️'), -- Base Unit

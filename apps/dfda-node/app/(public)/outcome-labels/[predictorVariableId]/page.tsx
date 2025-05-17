@@ -2,7 +2,7 @@ import { OutcomeLabel } from "@/components/OutcomeLabel";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getOutcomeLabelDataAction } from "@/lib/actions/global-variable-relationships";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/utils/supabase/server";
 
 // The Page Component
 export default async function OutcomeLabelPage({ params }: { params: { predictorVariableId: string } }) {

@@ -81,7 +81,7 @@ export function EditScheduleClient({
   const handleDeleteSchedule = async (scheduleId: string) => {
     try {
       setIsSaving(true);
-      const result = await deleteReminderScheduleAction(scheduleId, userId);
+      const result = await deleteReminderScheduleAction(scheduleId, userId, userVariableId);
       
       if (result.success) {
         // Remove from local state

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Clock } from 'lucide-react'
+import { Clock, Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
@@ -81,13 +81,18 @@ export function TimeSelector({
                 variant="outline"
                 onClick={() => onChange(preset.value)}
                 className={cn(
-                  "h-auto flex-col py-3 justify-start items-center",
+                  "h-auto flex-col py-3 justify-start items-center relative",
+                  "sm:py-3",
+                  "py-2",
                   value === preset.value ? "border-primary" : preset.color || "",
                   preset.color || ""
                 )}
               >
-                <div className="text-lg mb-1">{preset.icon}</div>
-                <div className="font-medium">{preset.label}</div>
+                {value === preset.value && (
+                    <Check className="h-4 w-4 absolute top-1 right-1 text-primary" />
+                )}
+                <div className="text-lg mb-1 hidden sm:block">{preset.icon}</div>
+                <div className="font-medium hidden sm:block">{preset.label}</div>
                 <div className="text-xs text-muted-foreground">{formatTimeDisplay(preset.value)}</div>
               </Button>
             ))}

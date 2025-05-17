@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useCallback, useEffect } from 'react'
-import { toast } from 'sonner'
+import { toast as sonnerToast } from 'sonner'
+import { useToast } from '@/components/ui/use-toast'
+import { logger } from '@/lib/logger'
 import { 
   getReminderSchedulesForUserVariableAction,
   upsertReminderScheduleAction,
@@ -13,8 +15,10 @@ import { type ReminderScheduleData } from '@/components/reminders/reminder-sched
 import { mapSchedulerToClientData } from '@/lib/reminder-utils'
 
 export function useReminderManagement(userId: string, globalVariableId: string) {
+  const { toast } = useToast()
   const [schedules, setSchedules] = useState<ReminderSchedule[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   const loadSchedules = useCallback(async () => {
     if (!userId || !globalVariableId) {
@@ -28,7 +32,7 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
       setSchedules(fetchedSchedules)
     } catch (error) {
       console.error('Failed to load schedules:', error)
-      toast.error('Failed to load reminders')
+      sonnerToast.error('Failed to load reminders')
       setSchedules([])
     } finally {
       setIsLoading(false)
@@ -54,12 +58,12 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
       
       const newSchedule = result.data;
       setSchedules(prev => [...prev, newSchedule]);
-      toast.success('Reminder created');
+      sonnerToast.success('Reminder created');
       return newSchedule;
       
     } catch (error) {
       console.error('Failed to create schedule:', error)
-      toast.error(`Failed to create reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      sonnerToast.error(`Failed to create reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
       return null;
     }
   }, [userId, globalVariableId])
@@ -88,30 +92,37 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
         )
       )
       
-      toast.success('Reminder updated')
+      sonnerToast.success('Reminder updated')
       return updatedSchedule
     } catch (error) {
       console.error('Failed to update schedule:', error)
-      toast.error(`Failed to update reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
+      sonnerToast.error(`Failed to update reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
       return null;
     }
   }, [userId, globalVariableId])
 
-  const deleteSchedule = useCallback(async (scheduleId: string): Promise<boolean> => {
+  const handleDelete = useCallback(async (scheduleId: string) => {
+    logger.debug('Attempting to delete schedule', { scheduleId, userId, globalVariableId });
+    setIsLoading(true);
+    setError(null);
     try {
-      const result = await deleteReminderScheduleAction(scheduleId, userId)
-      if (!result.success) {
-        throw new Error(result.error || 'Failed to delete reminder schedule.');
+      const result = await deleteReminderScheduleAction(scheduleId, userId, globalVariableId); 
+      if (result.success) {
+        toast({ title: "Success", description: "Reminder deleted." });
+        setSchedules(prev => prev.filter(s => s.id !== scheduleId));
+      } else {
+        setError(result.error || 'Failed to delete schedule.');
+        toast({ title: "Error", description: result.error || 'Failed to delete schedule.', variant: "destructive" });
       }
-      setSchedules(prev => prev.filter(schedule => schedule.id !== scheduleId))
-      toast.success('Reminder deleted')
-      return true;
-    } catch (error) {
-      console.error('Failed to delete schedule:', error)
-      toast.error(`Failed to delete reminder: ${error instanceof Error ? error.message : 'Unknown error'}`)
-      return false;
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred.';
+      setError(message);
+      toast({ title: "Error", description: message, variant: "destructive" });
+      logger.error("Error deleting reminder schedule", { error: err, scheduleId });
+    } finally {
+      setIsLoading(false);
     }
-  }, [userId])
+  }, [userId, globalVariableId, toast]);
 
   return {
     schedules,
@@ -119,6 +130,6 @@ export function useReminderManagement(userId: string, globalVariableId: string) 
     loadSchedules,
     createSchedule,
     updateSchedule,
-    deleteSchedule
+    handleDelete
   }
 } 

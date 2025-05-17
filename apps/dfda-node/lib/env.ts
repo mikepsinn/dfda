@@ -9,9 +9,13 @@ export const env = createEnv({
   server: {
     DATABASE_URL: z.string().url(),
     GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1),
-    GOOGLE_CLIENT_ID: z.string().min(1).optional(),
-    GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
+    // Remove Google OAuth client creds - handled by Supabase Auth server
+    // GOOGLE_CLIENT_ID: z.string().min(1).optional(), 
+    // GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
     SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
+    SUPABASE_JWT_SECRET: z.string().min(32, 'JWT Secret must be at least 32 characters long'),
+    ACCESS_TOKEN_EXPIRES_IN_SECONDS: z.coerce.number().int().positive().default(3600),
+    GOOGLE_APPLICATION_CREDENTIALS: z.string().min(1).optional(),
   },
 
   /**
@@ -26,7 +30,7 @@ export const env = createEnv({
     // Site metadata configuration
     NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("FDA.gov v2"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("Revolutionizing Clinical Trials Through Decentralization"),
-    NEXT_PUBLIC_SITE_URL: z.string().url().default("https://dfda.vercel.app"),
+    NEXT_PUBLIC_SITE_URL: z.string().url().default("https://prototype.dfda.earth"),
     NEXT_PUBLIC_TWITTER_HANDLE: z.string().min(1).default("@dfda"),
     NEXT_PUBLIC_GOOGLE_VERIFICATION: z.string().optional(),
   },
@@ -38,9 +42,13 @@ export const env = createEnv({
   runtimeEnv: {
     DATABASE_URL: process.env.DATABASE_URL,
     GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
-    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
-    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    // Remove Google OAuth client creds - handled by Supabase Auth server
+    // GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    // GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    SUPABASE_JWT_SECRET: process.env.SUPABASE_JWT_SECRET,
+    ACCESS_TOKEN_EXPIRES_IN_SECONDS: process.env.ACCESS_TOKEN_EXPIRES_IN_SECONDS || '3600',
+    GOOGLE_APPLICATION_CREDENTIALS: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
     NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     NEXT_PUBLIC_LOG_LEVEL: process.env.NEXT_PUBLIC_LOG_LEVEL,

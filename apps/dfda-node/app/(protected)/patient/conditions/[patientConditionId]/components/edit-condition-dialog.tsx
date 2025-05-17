@@ -32,6 +32,14 @@ const logger = createLogger("edit-condition-dialog")
 const conditionStatuses = ["active", "inactive", "resolved", "unknown"]
 const conditionSeverities = ["mild", "moderate", "severe", "unknown"]
 
+// Helper for severity emojis (shared with parent page, ideally move to constants)
+const severityEmojis: Record<string, string> = {
+  mild: "😊",
+  moderate: "😐",
+  severe: "😟",
+  unknown: "❓", // Add one for unknown
+};
+
 interface EditConditionDialogProps {
   patientCondition: Tables<"patient_conditions_view">
   children: React.ReactNode
@@ -113,7 +121,9 @@ export function EditConditionDialog({ patientCondition, children }: EditConditio
               </SelectTrigger>
               <SelectContent>
                 {conditionSeverities.map(s => (
-                  <SelectItem key={s} value={s} className="capitalize">{s}</SelectItem>
+                  <SelectItem key={s} value={s} className="capitalize">
+                    {severityEmojis[s] ? `${severityEmojis[s]} ` : ''} {s}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>

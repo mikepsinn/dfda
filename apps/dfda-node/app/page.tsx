@@ -11,7 +11,7 @@ export default async function Home() {
   // Fetch data on the server
   const featuredTrials = await getFeaturedTrialsAction();
   const statistics = await getStatisticsAction();
-  
+
   return (
     <>
       <HeroSection />

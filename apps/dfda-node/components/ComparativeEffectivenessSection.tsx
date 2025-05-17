@@ -6,9 +6,29 @@ import { ChevronRight, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { Label } from "@/components/ui/label"
+
+// Define types for the data structure
+type SideEffect = {
+  name: string;
+  percentage: number;
+};
+
+type InterventionData = {
+  name: string;
+  effectiveness: number;
+  trials: number;
+  participants: number;
+  sideEffects: SideEffect[];
+};
+
+// Using a general string index for conditionName as it's used with Object.keys and dynamic filtering
+type ComparativeEffectivenessDataType = {
+  [conditionName: string]: InterventionData[];
+};
 
 // Example comparative effectiveness data for various conditions
-const comparativeEffectivenessData = {
+const comparativeEffectivenessData: ComparativeEffectivenessDataType = {
   "Type 2 Diabetes": [
     {
       name: "Metformin",
@@ -220,7 +240,7 @@ const comparativeEffectivenessData = {
 }
 
 export function ComparativeEffectivenessSection() {
-  const [selectedCondition, setSelectedCondition] = useState("Type 2 Diabetes")
+  const [selectedCondition, setSelectedCondition] = useState<string>("Type 2 Diabetes")
   const [searchQuery, setSearchQuery] = useState("")
   const conditions = Object.keys(comparativeEffectivenessData)
 
@@ -301,73 +321,118 @@ export function ComparativeEffectivenessSection() {
                   No conditions found matching "{searchQuery}"
                 </div>
               )}
+
+              <div className="mt-4">
+                <Label htmlFor="condition-select">Select Condition</Label>
+                <select
+                  id="condition-select"
+                  value={selectedCondition}
+                  onChange={(e) => setSelectedCondition(e.target.value)}
+                  className="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                >
+                  {filteredConditions.map((condition) => (
+                    <option key={condition} value={condition}>
+                      {condition}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
-                {comparativeEffectivenessData[selectedCondition].map((intervention, index) => (
-                  <div key={index} className="rounded-lg border p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-medium">{intervention.name}</h3>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-primary">{intervention.effectiveness}%</div>
-                        <p className="text-xs text-muted-foreground">Effectiveness</p>
+              {selectedCondition && comparativeEffectivenessData[selectedCondition] ? (
+                <div className="space-y-6">
+                  {comparativeEffectivenessData[selectedCondition].map((intervention: InterventionData, index: number) => (
+                    <div key={index} className="rounded-lg border bg-card text-card-foreground shadow-sm">
+                      <div className="p-6">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="font-medium">{intervention.name}</h3>
+                          <div className="text-right">
+                            <div className="text-2xl font-bold text-primary">{intervention.effectiveness}%</div>
+                            <p className="text-xs text-muted-foreground">Effectiveness</p>
+                          </div>
+                        </div>
+                        <div className="relative h-2 w-full bg-gray-200 rounded-full mb-4">
+                          <div
+                            className="absolute top-0 left-0 h-full bg-primary rounded-full"
+                            style={{ width: `${intervention.effectiveness}%` }}
+                          ></div>
+                        </div>
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-sm">
+                          <p className="text-muted-foreground">
+                            Based on {intervention.trials} trials with {intervention.participants.toLocaleString()}{" "}
+                            participants
+                          </p>
+                          <div className="flex flex-wrap gap-2 items-center">
+                            {intervention.sideEffects.map((effect: SideEffect, effectIndex: number) => (
+                              <TooltipProvider key={effectIndex}>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <div className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-800 flex items-center">
+                                      <AlertCircle className="h-3 w-3 mr-1" />
+                                      {effect.name}: {effect.percentage}%
+                                    </div>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>
+                                      {effect.percentage}% of patients experienced {effect.name}
+                                    </p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            ))}
+                            <Link
+                              href={`/patient/join-trial/${encodeURIComponent(intervention.name)}/${encodeURIComponent(selectedCondition)}`}
+                              className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800 border border-purple-300 hover:bg-purple-200 transition-colors ml-auto sm:ml-2"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="mr-1"
+                              >
+                                <path d="M12 5v14"></path>
+                                <path d="M5 12h14"></path>
+                              </svg>
+                              Join Trial
+                            </Link>
+                          </div>
+                        </div>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="text-xs text-muted-foreground underline decoration-dashed">
+                              {intervention.sideEffects.length > 0
+                                ? `${intervention.sideEffects.length} common side effects`
+                                : "No common side effects listed"}
+                            </span>
+                          </TooltipTrigger>
+                          {intervention.sideEffects.length > 0 && (
+                            <TooltipContent className="max-w-xs">
+                              <p className="font-medium mb-1">Common Side Effects:</p>
+                              <ul className="list-disc list-inside text-xs">
+                                {intervention.sideEffects.map((effect: SideEffect, effectIndex: number) => (
+                                  <li key={effectIndex}>
+                                    {effect.name} (~{effect.percentage}%)
+                                  </li>
+                                ))}
+                              </ul>
+                            </TooltipContent>
+                          )}
+                        </Tooltip>
                       </div>
                     </div>
-                    <div className="relative h-2 w-full bg-gray-200 rounded-full mb-4">
-                      <div
-                        className="absolute top-0 left-0 h-full bg-primary rounded-full"
-                        style={{ width: `${intervention.effectiveness}%` }}
-                      ></div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-sm">
-                      <p className="text-muted-foreground">
-                        Based on {intervention.trials} trials with {intervention.participants.toLocaleString()}{" "}
-                        participants
-                      </p>
-                      <div className="flex flex-wrap gap-2 items-center">
-                        {intervention.sideEffects.map((effect, effectIndex) => (
-                          <TooltipProvider key={effectIndex}>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <div className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-medium text-yellow-800 flex items-center">
-                                  <AlertCircle className="h-3 w-3 mr-1" />
-                                  {effect.name}: {effect.percentage}%
-                                </div>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>
-                                  {effect.percentage}% of patients experienced {effect.name}
-                                </p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        ))}
-                        <Link
-                          href={`/patient/join-trial/${encodeURIComponent(intervention.name)}/${encodeURIComponent(selectedCondition)}`}
-                          className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-xs font-medium text-purple-800 border border-purple-300 hover:bg-purple-200 transition-colors ml-auto sm:ml-2"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="mr-1"
-                          >
-                            <path d="M12 5v14"></path>
-                            <path d="M5 12h14"></path>
-                          </svg>
-                          Join Trial
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center text-muted-foreground py-2">
+                  No interventions found for the selected condition
+                </div>
+              )}
             </CardContent>
             <CardFooter className="flex justify-between">
               <p className="text-sm text-muted-foreground">Data updated: June 2025</p>

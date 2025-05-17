@@ -44,6 +44,11 @@ export const publicFormQuestionTypeSchema = z.union([
   z.literal("file_upload"),
 ]);
 
+export const publicOauthClientTypeEnumSchema = z.union([
+  z.literal("public"),
+  z.literal("confidential"),
+]);
+
 export const publicProductTypeEnumSchema = z.union([
   z.literal("trackable_item"),
   z.literal("lab_test"),
@@ -566,6 +571,37 @@ export const publicGlobalFoodsRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
+export const publicGlobalSymptomsRowSchemaSchema = z.object({
+  created_at: z.string().nullable(),
+  deleted_at: z.string().nullable(),
+  id: z.string(),
+  updated_at: z.string().nullable(),
+});
+
+export const publicGlobalSymptomsInsertSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  id: z.string(),
+  updated_at: z.string().optional().nullable(),
+});
+
+export const publicGlobalSymptomsUpdateSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  id: z.string().optional(),
+  updated_at: z.string().optional().nullable(),
+});
+
+export const publicGlobalSymptomsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("global_symptoms_id_fkey"),
+    columns: z.tuple([z.literal("id")]),
+    isOneToOne: z.literal(true),
+    referencedRelation: z.literal("global_variables"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
 export const publicGlobalTreatmentsRowSchemaSchema = z.object({
   active_ingredients: jsonSchema.nullable(),
   created_at: z.string().nullable(),
@@ -1040,10 +1076,60 @@ export const publicOauthAccessTokensRelationshipsSchemaSchema = z.tuple([
   }),
 ]);
 
+export const publicOauthAuthorizationCodesRowSchemaSchema = z.object({
+  client_id: z.string(),
+  code: z.string(),
+  code_challenge: z.string().nullable(),
+  code_challenge_method: z.string().nullable(),
+  created_at: z.string(),
+  expires_at: z.string(),
+  id: z.string(),
+  redirect_uri: z.string(),
+  scope: z.string().nullable(),
+  user_id: z.string(),
+});
+
+export const publicOauthAuthorizationCodesInsertSchemaSchema = z.object({
+  client_id: z.string(),
+  code: z.string(),
+  code_challenge: z.string().optional().nullable(),
+  code_challenge_method: z.string().optional().nullable(),
+  created_at: z.string().optional(),
+  expires_at: z.string(),
+  id: z.string().optional(),
+  redirect_uri: z.string(),
+  scope: z.string().optional().nullable(),
+  user_id: z.string(),
+});
+
+export const publicOauthAuthorizationCodesUpdateSchemaSchema = z.object({
+  client_id: z.string().optional(),
+  code: z.string().optional(),
+  code_challenge: z.string().optional().nullable(),
+  code_challenge_method: z.string().optional().nullable(),
+  created_at: z.string().optional(),
+  expires_at: z.string().optional(),
+  id: z.string().optional(),
+  redirect_uri: z.string().optional(),
+  scope: z.string().optional().nullable(),
+  user_id: z.string().optional(),
+});
+
+export const publicOauthAuthorizationCodesRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("fk_authorization_codes_client_id"),
+    columns: z.tuple([z.literal("client_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("oauth_clients"),
+    referencedColumns: z.tuple([z.literal("client_id")]),
+  }),
+]);
+
 export const publicOauthClientsRowSchemaSchema = z.object({
   client_id: z.string(),
   client_name: z.string(),
   client_secret: z.string(),
+  client_type: publicOauthClientTypeEnumSchema,
   client_uri: z.string().nullable(),
   created_at: z.string().nullable(),
   deleted_at: z.string().nullable(),
@@ -1063,6 +1149,7 @@ export const publicOauthClientsInsertSchemaSchema = z.object({
   client_id: z.string(),
   client_name: z.string(),
   client_secret: z.string(),
+  client_type: publicOauthClientTypeEnumSchema.optional(),
   client_uri: z.string().optional().nullable(),
   created_at: z.string().optional().nullable(),
   deleted_at: z.string().optional().nullable(),
@@ -1082,6 +1169,7 @@ export const publicOauthClientsUpdateSchemaSchema = z.object({
   client_id: z.string().optional(),
   client_name: z.string().optional(),
   client_secret: z.string().optional(),
+  client_type: publicOauthClientTypeEnumSchema.optional(),
   client_uri: z.string().optional().nullable(),
   created_at: z.string().optional().nullable(),
   deleted_at: z.string().optional().nullable(),
@@ -1291,6 +1379,72 @@ export const publicPatientSideEffectsRelationshipsSchemaSchema = z.tuple([
     columns: z.tuple([z.literal("patient_treatment_id")]),
     isOneToOne: z.literal(false),
     referencedRelation: z.literal("patient_treatments"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+]);
+
+export const publicPatientSymptomsRowSchemaSchema = z.object({
+  created_at: z.string().nullable(),
+  deleted_at: z.string().nullable(),
+  frequency: z.string().nullable(),
+  id: z.string(),
+  notes: z.string().nullable(),
+  onset_date: z.string().nullable(),
+  patient_id: z.string(),
+  severity: z.string().nullable(),
+  symptom_id: z.string(),
+  updated_at: z.string().nullable(),
+  user_variable_id: z.string(),
+});
+
+export const publicPatientSymptomsInsertSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  frequency: z.string().optional().nullable(),
+  id: z.string().optional(),
+  notes: z.string().optional().nullable(),
+  onset_date: z.string().optional().nullable(),
+  patient_id: z.string(),
+  severity: z.string().optional().nullable(),
+  symptom_id: z.string(),
+  updated_at: z.string().optional().nullable(),
+  user_variable_id: z.string(),
+});
+
+export const publicPatientSymptomsUpdateSchemaSchema = z.object({
+  created_at: z.string().optional().nullable(),
+  deleted_at: z.string().optional().nullable(),
+  frequency: z.string().optional().nullable(),
+  id: z.string().optional(),
+  notes: z.string().optional().nullable(),
+  onset_date: z.string().optional().nullable(),
+  patient_id: z.string().optional(),
+  severity: z.string().optional().nullable(),
+  symptom_id: z.string().optional(),
+  updated_at: z.string().optional().nullable(),
+  user_variable_id: z.string().optional(),
+});
+
+export const publicPatientSymptomsRelationshipsSchemaSchema = z.tuple([
+  z.object({
+    foreignKeyName: z.literal("patient_symptoms_patient_id_fkey"),
+    columns: z.tuple([z.literal("patient_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("patients"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("patient_symptoms_symptom_id_fkey"),
+    columns: z.tuple([z.literal("symptom_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("global_symptoms"),
+    referencedColumns: z.tuple([z.literal("id")]),
+  }),
+  z.object({
+    foreignKeyName: z.literal("patient_symptoms_user_variable_id_fkey"),
+    columns: z.tuple([z.literal("user_variable_id")]),
+    isOneToOne: z.literal(false),
+    referencedRelation: z.literal("user_variables"),
     referencedColumns: z.tuple([z.literal("id")]),
   }),
 ]);

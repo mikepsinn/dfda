@@ -7,7 +7,7 @@ import type { NavItem } from './types/navigation';
 export interface GeneratedNavTree {
   readonly 'admin': NavItem;
   readonly 'conditions': NavItem;
-  readonly 'conditions_conditionid_trials': NavItem;
+  readonly 'conditions_globalvariableid_trials': NavItem;
   readonly 'contact': NavItem;
   readonly 'developer': NavItem;
   readonly 'developers': NavItem;
@@ -16,6 +16,7 @@ export interface GeneratedNavTree {
   readonly 'forgot_password': NavItem;
   readonly 'impact': NavItem;
   readonly 'login': NavItem;
+  readonly 'oauth_authorize': NavItem;
   readonly 'outcome_labels': NavItem;
   readonly 'outcome_labels_predictorvariableid': NavItem;
   readonly 'patient': NavItem;
@@ -34,6 +35,8 @@ export interface GeneratedNavTree {
   readonly 'patient_treatments_patienttreatmentid_side_effects': NavItem;
   readonly 'patient_trial_details_id': NavItem;
   readonly 'patient_trial_payment_id': NavItem;
+  readonly 'patient_user_variables': NavItem;
+  readonly 'patient_user_variables_uservariableid': NavItem;
   readonly 'privacy': NavItem;
   readonly 'provider': NavItem;
   readonly 'provider_ehr_authorization_patientid': NavItem;
@@ -49,8 +52,11 @@ export interface GeneratedNavTree {
   readonly 'root': NavItem;
   readonly 'select_role': NavItem;
   readonly 'terms': NavItem;
-  readonly 'treatments_id': NavItem;
+  readonly 'treatments': NavItem;
+  readonly 'treatments_globalvariableid': NavItem;
+  readonly 'update_password': NavItem;
   readonly 'user_profile': NavItem;
+  readonly 'user_settings': NavItem;
 }
 // --- Generated Interface --- END
 
@@ -74,10 +80,10 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View available conditions.",
     "emoji": "⚕️"
   },
-  "conditions_conditionid_trials": {
-    "title": "Trials",
-    "href": "/conditions/[conditionId]/trials",
-    "description": "View trials for a specific condition.",
+  "conditions_globalvariableid_trials": {
+    "title": "Condition Trials",
+    "href": "/conditions/[globalVariableId]/trials",
+    "description": "View and manage trials related to a specific condition.",
     "emoji": "🧪"
   },
   "contact": {
@@ -127,6 +133,12 @@ export const navigationTreeObject: GeneratedNavTree = {
     "href": "/login",
     "description": "Log in to your account.",
     "emoji": "➡️"
+  },
+  "oauth_authorize": {
+    "title": "Authorize OAuth Application",
+    "href": "/oauth/authorize",
+    "description": "Authorize a third-party application to access your account data.",
+    "emoji": "🔑"
   },
   "outcome_labels": {
     "title": "Outcome Labels",
@@ -236,6 +248,18 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "Manage trial payments.",
     "emoji": "💰"
   },
+  "patient_user_variables": {
+    "title": "Patient User Variables",
+    "href": "/patient/user-variables",
+    "description": "View and manage patient user variables.",
+    "emoji": "👤"
+  },
+  "patient_user_variables_uservariableid": {
+    "title": "Patient User Variable Details",
+    "href": "/patient/user-variables/[userVariableId]",
+    "description": "View details of a specific patient user variable.",
+    "emoji": "👤"
+  },
   "privacy": {
     "title": "Privacy Policy",
     "href": "/privacy",
@@ -320,16 +344,34 @@ export const navigationTreeObject: GeneratedNavTree = {
     "description": "View our terms of service.",
     "emoji": "📜"
   },
-  "treatments_id": {
-    "title": "Treatment Details",
-    "href": "/treatments/[id]",
-    "description": "View treatment details.",
-    "emoji": "ℹ️"
+  "treatments": {
+    "title": "Treatments",
+    "href": "/treatments",
+    "description": "View and manage available treatments.",
+    "emoji": "💊"
+  },
+  "treatments_globalvariableid": {
+    "title": "Dynamic Treatment",
+    "href": "/treatments/[globalVariableId]",
+    "description": "View and manage a specific treatment identified by its ID.",
+    "emoji": "🔎"
+  },
+  "update_password": {
+    "title": "Update Password",
+    "href": "/update-password",
+    "description": "Change your account password for enhanced security.",
+    "emoji": "🔑"
   },
   "user_profile": {
     "title": "User Profile",
     "href": "/user/profile",
     "description": "Manage your profile.",
     "emoji": "👤"
+  },
+  "user_settings": {
+    "title": "User Settings",
+    "href": "/user/settings",
+    "description": "Manage your account preferences and settings.",
+    "emoji": "⚙️"
   }
 };

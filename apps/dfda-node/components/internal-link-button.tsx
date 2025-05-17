@@ -1,5 +1,5 @@
 import type React from 'react';
-import { InternalLink } from './internal-link'; // Use the type-safe link
+// import Link from 'next/link'; // No longer needed
 import { Button, type ButtonProps } from '@/components/ui/button';
 import {
   Tooltip,
@@ -10,52 +10,56 @@ import {
 import { navigationTreeObject } from '@/lib/generated-nav-tree';
 import type { GeneratedNavTree } from '@/lib/generated-nav-tree';
 import { logger } from '@/lib/logger';
+// import { interpolateHref } from '@/lib/formatters'; // No longer needed, handled by InternalLink
+import { InternalLink } from '@/components/internal-link'; // Keep this import
 
-// Props: navKey + ButtonProps (excluding children, as content is generated)
+// Props: navKey is mandatory, params optional. ButtonProps without children/asChild.
 type InternalLinkButtonProps = {
   navKey: keyof GeneratedNavTree;
-} & Omit<ButtonProps, 'children' | 'asChild'>; // Omit children and asChild
+  params?: Record<string, string | number>; // Optional params object
+} & Omit<ButtonProps, 'children' | 'asChild'>;
 
 /**
- * Renders a Button component that links to an internal route.
- * Automatically uses the title and emoji from the generated navigation tree.
- * Displays the description in a tooltip on hover if available.
+ * Renders a Button that links to an internal route defined in generated-nav-tree.
+ * Automatically uses title/emoji. Handles dynamic routes via the `params` prop.
  *
- * @param navKey The key corresponding to the desired route in GeneratedNavTree.
- * @param ...rest Other props compatible with the Button component (variant, size, etc.).
+ * @param navKey Key for the route in GeneratedNavTree.
+ * @param params Optional object with values for dynamic segments (e.g., { id: 123 }).
+ * @param ...rest Other ButtonProps (variant, size, etc.).
  */
-export function InternalLinkButton({ navKey, variant, size, className, ...rest }: InternalLinkButtonProps) {
+export function InternalLinkButton({ navKey, params, variant, size, className, ...rest }: InternalLinkButtonProps) {
   const navItem = navigationTreeObject[navKey];
 
   if (!navItem) {
     logger.error(`[InternalLinkButton] Invalid or missing navKey provided: ${String(navKey)}`);
-    // Render a disabled button or nothing
-    return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Invalid Link</Button>;
+    return <Button variant={variant ?? 'outline'} size={size} className={className} disabled {...rest}>Invalid Link Key</Button>;
   }
 
+  // Button Content (same as before)
   const buttonContent = (
     <>
-      {/* Render emoji only if it exists and is not an empty string */} 
       {navItem.emoji && navItem.emoji.trim() && <span className="mr-2">{navItem.emoji}</span>}
       {navItem.title}
     </>
   );
 
-  // Only wrap with Tooltip if description exists and is not empty
+  // Wrap the Button with InternalLink
+  const LinkComponent = (
+      <InternalLink navKey={navKey} params={params} passHref legacyBehavior={false}>
+          {/* Pass ButtonProps down to the actual button rendered by InternalLink's child */} 
+          <Button variant={variant} size={size} className={className} {...rest}>
+             {buttonContent}
+          </Button>
+      </InternalLink>
+  );
+
+  // Tooltip Logic (same as before, wrapping the LinkComponent)
   if (navItem.description && navItem.description.trim()) {
     return (
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            {/* Use InternalLink for the actual link element. 
-                passHref and legacyBehavior=false are often needed for compatibility 
-                with component libraries like Shadcn UI Button when using `asChild`. */}
-            <InternalLink navKey={navKey} passHref legacyBehavior={false}> 
-               {/* Apply button styles/props to the link via asChild pattern */}
-               <Button variant={variant} size={size} className={className} {...rest}>
-                   {buttonContent}
-               </Button>
-            </InternalLink>
+            {LinkComponent}
           </TooltipTrigger>
           <TooltipContent>
             <p>{navItem.description}</p>
@@ -65,12 +69,6 @@ export function InternalLinkButton({ navKey, variant, size, className, ...rest }
     );
   } else {
     // Render without Tooltip
-    return (
-      <InternalLink navKey={navKey} passHref legacyBehavior={false}>
-          <Button variant={variant} size={size} className={className} {...rest}>
-              {buttonContent}
-          </Button>
-      </InternalLink>
-    );
+    return LinkComponent;
   }
 } 

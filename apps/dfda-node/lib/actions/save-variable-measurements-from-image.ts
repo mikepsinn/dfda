@@ -2,7 +2,7 @@
 
 import { z } from 'zod'
 // Correct import based on project structure usage in profiles.ts
-import { createClient } from '@/lib/supabase/server' 
+import { createClient } from '@/utils/supabase/server'
 // import { cookies } from 'next/headers' // Likely not needed if createClient handles it
 import { Database } from '@/lib/database.types'
 import { logger } from '@/lib/logger'

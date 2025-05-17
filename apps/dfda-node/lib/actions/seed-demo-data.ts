@@ -1,11 +1,17 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
+// Remove unused import
+// import { createClient } from "@/utils/supabase/server"; 
+import { type SupabaseClient } from '@supabase/supabase-js';
 import { logger } from "@/lib/logger";
 import { DEMO_ACCOUNTS, DemoUserType } from "@/lib/constants/demo-accounts";
+import type { Database } from "@/lib/database.types";
+
+// Define the client type more specifically if possible, using your Database generics
+type AdminSupabaseClient = SupabaseClient<Database>;
 
 // Helper function to clear existing demo data for a user
-async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, userType: DemoUserType) {
+async function clearExistingDemoData(supabase: AdminSupabaseClient, userId: string, userType: DemoUserType) {
   logger.info("Clearing existing demo data for user", { userId, userType });
 
   // Order matters due to foreign keys
@@ -35,8 +41,11 @@ async function clearExistingDemoData(supabase: Awaited<ReturnType<typeof createC
 }
 
 // Main function to seed data for a specific demo user
-export async function setupDemoUserData(userId: string, userType: DemoUserType) {
-  const supabase = await createClient();
+export async function setupDemoUserData(
+  supabase: AdminSupabaseClient,
+  userId: string, 
+  userType: DemoUserType
+) {
   const account = DEMO_ACCOUNTS[userType];
   const seedData = account.seedData as any; 
 
@@ -65,11 +74,9 @@ export async function setupDemoUserData(userId: string, userType: DemoUserType) 
     // --- Seed Patient Specific Data ---
     if (userType === 'patient' && seedData.patientDetails) {
       logger.info("Upserting patient details", { userId });
-      // Use upsert since the trigger might have created the basic row
-      const { error: patientError } = await supabase.from('patients').upsert({ 
-          id: userId, 
-          ...seedData.patientDetails 
-      });
+      const { error: patientError } = await supabase
+          .from('patients')
+          .upsert({ ...seedData.patientDetails, id: userId });
       if (patientError) throw new Error(`Patient details seeding failed: ${patientError.message}`);
 
       if (seedData.conditions && seedData.conditions.length > 0) {

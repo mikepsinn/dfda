@@ -34,7 +34,7 @@ export default async function Image() {
           }}
         >
           <img
-            src="/images/dfda-logo.png"
+            src={`${env.NEXT_PUBLIC_SITE_URL}/images/dfda-logo.png`}
             alt="DFDA Logo"
             width={120}
             height={120}

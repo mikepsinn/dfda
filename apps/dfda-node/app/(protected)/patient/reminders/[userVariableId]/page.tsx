@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { createClient } from "@/lib/supabase/server"
+import { createClient } from "@/utils/supabase/server"
 import { notFound } from 'next/navigation'
 import { logger } from '@/lib/logger'
 import { EditScheduleClient, type ReminderScheduleData } from '@/components/reminders'

@@ -80,7 +80,7 @@ export const getLoggedInPrimaryNavItems = (userType: UserType | null): NavItem[]
   // Return the specific array for the role, or an empty array if role not found
   const items = userTypeNavItemsMap[userType]
   if (items) {
-    logger.debug('Found items for role:', userType, items)
+    //logger.debug('Found items for role:', userType, items)
     return items
   } else {
     // This case should ideally not happen if user_type is valid and in the enum/map

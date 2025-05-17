@@ -1,80 +1,44 @@
 "use server"
 
-import { createClient } from '@/lib/supabase/server'
-import { redirect } from 'next/navigation'
+import { createClient as createServerClient } from '@/utils/supabase/server'
+import { supabaseAdmin } from '@/utils/supabase/admin'
 import { DEMO_ACCOUNTS, DemoUserType } from '@/lib/constants/demo-accounts'
 import { createLogger } from '@/lib/logger'
 import { AuthApiError, type User } from '@supabase/supabase-js'
-import { setupDemoUserData } from './seed-demo-data' // Import the new seeding function
-import { getUserProfile, createUserProfile, updateUserProfile } from "@/lib/profile" // Import helpers
-import type { Profile } from "@/lib/profile"; // Import Profile type
+import { setupDemoUserData } from './seed-demo-data' // Keep this
+import type { ProfileInsert } from "@/lib/profile"; // Keep only ProfileInsert
+import { getCallbackUrl } from '@/lib/url'; 
 
 const logger = createLogger('demo-login')
 
-// Refactored helper function to upsert profile data using profile helpers
-async function upsertProfile(userId: string, userType: DemoUserType, user: User | null) {
-  if (!user) {
-      logger.error('upsertProfile called without a valid user object.', { userId });
-      return; // Cannot proceed without user object for helpers
-  }
+// Removed the upsertProfile helper function as we'll handle it directly
+// async function upsertProfile(...) { ... }
 
-  const account = DEMO_ACCOUNTS[userType];
-  logger.info('Upserting profile data using helpers', { userId, userType });
-
-  const existingProfile = await getUserProfile(user);
-
-  const profileData = {
-      id: userId,
-      email: account.email, // Ensure email is consistent
-      ...account.profileData, // Use profileData from constants
-  };
-
-  let resultProfile: Profile | null = null;
-  if (existingProfile) {
-      // Profile exists, update it
-      logger.info('Existing profile found, updating.', { userId });
-      resultProfile = await updateUserProfile(userId, profileData); // Pass full data for update
-  } else {
-      // Profile doesn't exist, create it
-      logger.info('No existing profile found, creating.', { userId });
-      resultProfile = await createUserProfile(profileData);
-  }
-
-  if (!resultProfile) {
-      // Errors are logged within the helpers
-      logger.error('Profile upsert failed using helpers', { userId });
-  } else {
-      logger.info('Profile upsert successful using helpers', { userId });
-  }
-}
-
-// Updated demoLogin: Calls setupDemoUserData after successful auth
-export async function demoLogin(userType: DemoUserType = "patient") {
+// Action now returns a success status and redirect URL
+export async function demoLogin(userType: DemoUserType = "patient"): Promise<{ success: boolean; error?: string; redirectUrl?: string }> {
   logger.info('Starting login process', { userType })
-  const supabase = await createClient()
+  const supabaseUserClient = await createServerClient() 
   const account = DEMO_ACCOUNTS[userType]
   const redirectUrl = `/${userType}/`
 
   try {
-    let user: User | null = null; // Store the user object
+    let user: User | null = null; 
     let userId: string | undefined = undefined;
-    let requiresSeeding = false; // Flag to indicate if seeding should run
+    let requiresSeeding = false; 
 
     // 1. Attempt Sign In
     logger.info('Attempting sign in', { email: account.email });
-    const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+    const { data: signInData, error: signInError } = await supabaseUserClient.auth.signInWithPassword({
       email: account.email,
       password: account.password,
     })
 
-    // 2. If Sign In OK
     if (!signInError && signInData?.user) {
       logger.info('Sign in successful', { userId: signInData.user.id })
       user = signInData.user;
       userId = user.id;
       requiresSeeding = true; 
     }
-    // 3. If Sign In Fails - Attempt Sign Up
     else {
         if (signInError) {
             logger.warn('Sign in failed, proceeding to sign up attempt', { 
@@ -88,84 +52,104 @@ export async function demoLogin(userType: DemoUserType = "patient") {
         try {
             // 3a. Attempt Sign Up 
             logger.info('Attempting sign up', { email: account.email });
-            const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+            const { data: signUpData, error: signUpError } = await supabaseUserClient.auth.signUp({
               email: account.email,
               password: account.password, 
+              options: {
+                data: { auto_confirm: true }, 
+                emailRedirectTo: getCallbackUrl() 
+              }
             })
 
-            // 3b. If Sign Up OK
             if (!signUpError && signUpData?.user) {
                 logger.info('Sign up successful', { userId: signUpData.user.id });
                 user = signUpData.user;
                 userId = user.id;
-                requiresSeeding = true; // New user, definitely requires seeding
-                // Need to sign in again to establish session
-                const { data: postSignInData, error: postSignUpError } = await supabase.auth.signInWithPassword({ email: account.email, password: account.password });
-                if (postSignUpError) throw postSignUpError;
-                if (!postSignInData?.user) throw new Error("Post-signup sign in failed to return user data.");
-                user = postSignInData.user; // Update user object after sign-in
-                logger.info('Post-signup sign in successful');
+                requiresSeeding = true; 
             }
-            // 3c. If Sign Up Fails (User Exists?)
             else if (signUpError instanceof AuthApiError && signUpError.status === 422) {
                 logger.warn('Sign up failed: User already exists', { email: account.email });
-                // userId = account.id; // Don't assume ID, fetch user after sign-in
                 requiresSeeding = true; // User exists, run seeding to ensure data consistency
-                // Attempt sign in again, as the password might now be set
-                logger.info('Attempting sign in again after user existed confirmation', { email: account.email }); // Changed log message
-                const { data: finalSignInData, error: finalSignInError } = await supabase.auth.signInWithPassword({ email: account.email, password: account.password });
+                logger.info('Attempting sign in again after user existed confirmation', { email: account.email }); 
+                const { data: finalSignInData, error: finalSignInError } = await supabaseUserClient.auth.signInWithPassword({ email: account.email, password: account.password });
                 if (finalSignInError) {
+                     if (finalSignInError.message.includes('Email not confirmed')) {
+                         logger.error('Final sign in failed: Email not confirmed for existing user.', { email: account.email });
+                         throw new Error(`Demo user ${userType} exists but email is not confirmed. Please confirm manually in Supabase or check settings.`);
+                     }
                      logger.error('Final sign in attempt failed after confirming user exists', { email: account.email, error: finalSignInError });
                      throw new Error(`Could not sign in demo user ${userType}. Check password or logs.`);
                 }
                 if (!finalSignInData?.user) throw new Error("Final sign in attempt failed to return user data.");
-                user = finalSignInData.user; // Get user object
+                user = finalSignInData.user; 
                 userId = user.id;
                 logger.info('Final sign in successful');
             }
-            // 3d. If Sign Up Fails (Other Error)
             else if (signUpError) {
                  logger.error('Sign up failed with unexpected error', { email: account.email, error: signUpError });
                  throw new Error(`Could not create or verify demo user ${userType}. Check Supabase logs.`);
             }
-            // 3e. If Sign Up returns no error but no user (should not happen)
             else if (!userId) {
                 logger.error('Sign up completed without error but no user ID obtained.', { email: account.email });
                 throw new Error(`Demo user setup failed for ${userType}.`);
             }
 
         } catch (error) {
-            throw error; // Re-throw errors from sign-up block
+            throw error; 
         }
     }
 
-    // 4. If we have a userId and need seeding, run it
-    if (userId && user && requiresSeeding) { // Ensure we have the user object too
-        logger.info('Proceeding to setup demo user data', { userId });
-        await upsertProfile(userId, userType, user); // Pass user object to helper
-        await setupDemoUserData(userId, userType); // Run the detailed seeding
+    // 4. If we have a userId and user, upsert profile and seed data using ADMIN client
+    if (userId && user && requiresSeeding) { 
+        logger.info('Proceeding to setup demo user data using ADMIN client', { userId });
+        
+        // --- Direct Profile Upsert using ADMIN client --- 
+        const profileData: ProfileInsert = {
+            id: userId,
+            email: account.email, 
+            ...account.profileData, 
+        };
+
+        try {
+            // Use supabaseAdmin here
+            const { error: profileUpsertError } = await supabaseAdmin
+                .from('profiles')
+                .upsert(profileData) 
+                .select('id') 
+                .single();
+
+            if (profileUpsertError) {
+                logger.error('Direct profile upsert failed using ADMIN client', { userId, error: profileUpsertError });
+            } else {
+                logger.info('Direct profile upsert successful using ADMIN client', { userId });
+            }
+        } catch (upsertErr) {
+             logger.error('Unexpected error during direct profile upsert with ADMIN client', { userId, error: upsertErr });
+        }
+        // --- End Direct Profile Upsert ---
+
+        // --- Seeding using ADMIN client --- 
+        // logger.warn('SKIPPING data seeding for debugging purposes.'); // Remove or keep commented
+        await setupDemoUserData(supabaseAdmin, userId, userType); 
+        // --- End Seeding ---
+
     } else if (!userId || !user) {
         // This state should not be reachable if logic above is correct
         logger.error('Demo login flow completed without obtaining a user ID or user object.');
-        throw new Error(`Could not log in or set up demo user ${userType}.`);
+        return { success: false, error: `Could not log in or set up demo user ${userType}.` };
     }
 
-    // 5. Redirect
-    logger.info('Redirecting to dashboard', { redirectUrl, userId });
-    redirect(redirectUrl);
+    // 5. Return success instead of redirecting
+    logger.info('Demo login action successful, returning success status', { userId, redirectUrl });
+    return { success: true, redirectUrl: redirectUrl };
 
-  } catch (error) {
-    // Handle potential redirect errors
-    if (error instanceof Error && error.message === 'NEXT_REDIRECT') {
-      throw error
-    }
-    
-    // Log and re-throw any other fatal errors
+  } catch (error: any) {
     logger.error('Fatal error during demo login process', { 
       error: error instanceof Error ? error.message : String(error),
       userType 
     })
-    throw error; // Re-throw the original error for the UI
+    // Return error status
+    return { success: false, error: error.message || "An unexpected error occurred during demo login." }; 
   }
 }
 
