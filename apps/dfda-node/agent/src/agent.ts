@@ -11,16 +11,31 @@ import { AIMessage, SystemMessage } from "@langchain/core/messages";
 import { MemorySaver, START, StateGraph } from "@langchain/langgraph";
 import { Annotation } from "@langchain/langgraph";
 import { ChatOpenAI } from "@langchain/openai";
+import { convertMCPToolsToActions, MCPTool } from "@copilotkit/runtime";
 
 // 1. Import necessary helpers for CopilotKit actions
-import { convertActionsToDynamicStructuredTools } from "@copilotkit/sdk-js/langgraph";
-import { CopilotKitStateAnnotation } from "@copilotkit/sdk-js/langgraph";
+// import { convertActionsToDynamicStructuredTools } from "@copilotkit/sdk-js/langgraph"; // REMOVED
+// import { CopilotKitStateAnnotation } from "@copilotkit/sdk-js/langgraph"; // REMOVED
  
+// Define a basic type for CopilotKit actions
+// This might need to be more specific based on actual action structure
+type CopilotKitAction = { 
+  name: string;
+  description?: string;
+  parameters?: any[]; // Or a more specific Zod schema
+  handler?: (...args: any[]) => any;
+  [key: string]: any; 
+};
+
 // 2. Define our agent state, which includes CopilotKit state to
 //    provide actions to the state.
 export const AgentStateAnnotation = Annotation.Root({
+    messages: Annotation<(SystemMessage | AIMessage)[]>(), // Corrected to be an array
+    language: Annotation<string | undefined>(), // Made type allow undefined for optionality
     proverbs: Annotation<string[]>,
-    ...CopilotKitStateAnnotation.spec,
+    copilotkit: Annotation<{
+        actions?: CopilotKitAction[]; 
+    } | undefined>(), // Made copilotkit itself potentially undefined
 });
 
 // 3. Define the type for our agent state
@@ -50,9 +65,38 @@ async function chat_node(state: AgentState, config: RunnableConfig) {
 
   // 6.2 Bind the tools to the model, include CopilotKit actions. This allows
   //     the model to call tools that are defined in CopilotKit by the frontend.
+  
+  // Convert CopilotKitAction[] to Record<string, MCPTool> for convertMCPToolsToActions
+  const mcpToolsFromState: Record<string, MCPTool> = (state.copilotkit?.actions || []).reduce((acc, action) => {
+    // Assert that action is a CopilotKitAction and not just any object
+    const currentAction = action as CopilotKitAction;
+    acc[currentAction.name] = {
+      description: currentAction.description,
+      // schema field is optional in MCPTool. For now, let's construct it if parameters exist.
+      // This assumes currentAction.parameters is a valid JSONSchema object if provided.
+      // If it's not, this part might need more complex conversion or to be omitted.
+      schema: currentAction.parameters ? { parameters: { jsonSchema: currentAction.parameters } } : undefined,
+      execute: async (options: { params: any; }) => {
+        if (currentAction.handler) {
+          // Assuming the handler expects an object of parameters, similar to how useCopilotAction handlers receive args.
+          return currentAction.handler(options.params);
+        }
+        // Or, if the handler expects positional arguments, and params is an array:
+        // if (currentAction.handler && Array.isArray(options.params)) {
+        //   return currentAction.handler(...options.params);
+        // }
+        throw new Error(`No handler defined for action ${currentAction.name}`);
+      }
+    };
+    return acc;
+  }, {} as Record<string, MCPTool>);
+
+  // Placeholder for the actual MCP endpoint
+  const mcpEndpoint = "http://localhost:3000/api/copilotkit"; // TODO: Use actual configured endpoint
+
   const modelWithTools = model.bindTools!(
     [
-      ...convertActionsToDynamicStructuredTools(state.copilotkit?.actions || []),
+      ...(convertMCPToolsToActions(mcpToolsFromState, mcpEndpoint)), // Added mcpEndpoint and transformed actions
       ...tools,
     ],
   );
@@ -87,7 +131,7 @@ function shouldContinue({ messages, copilotkit }: AgentState) {
     const toolCallName = lastMessage.tool_calls![0].name;
 
     // 7.3 Only route to the tool node if the tool call is not a CopilotKit action
-    if (!actions || actions.every((action) => action.name !== toolCallName)) {
+    if (!actions || actions.every((action: CopilotKitAction) => action.name !== toolCallName)) {
       return "tool_node"
     }
   }

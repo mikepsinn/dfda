@@ -6,6 +6,7 @@ import { KeyBenefitsSection } from "@/components/KeyBenefitsSection";
 import { RevolutionizingMedicalProgressSection } from "@/components/RevolutionizingMedicalProgressSection";
 import { OutcomeLabelsSection } from "@/components/OutcomeLabelsSection";
 import { FeaturedTrialsSection } from "@/components/FeaturedTrialsSection";
+import { ReferendumSection } from "@/components/ReferendumSection";
 
 export default async function Home() {
   // Fetch data on the server
@@ -20,7 +21,8 @@ export default async function Home() {
       <HowItWorksSection />
       <KeyBenefitsSection />
       <RevolutionizingMedicalProgressSection stats={statistics} />
-      <FeaturedTrialsSection trials={featuredTrials as any} />
+      <ReferendumSection />
+      {/* <FeaturedTrialsSection trials={featuredTrials as any} /> */}
     </>
   );
 }
