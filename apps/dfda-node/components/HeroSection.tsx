@@ -97,7 +97,8 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <Link href="/impact" className="text-sm text-primary hover:underline inline-flex items-center">
+              <Link href="/impact" 
+              className="text-sm text-primary hover:underline inline-flex items-center">
                 See full impact analysis <ArrowRight className="h-3 w-3 ml-1" />
               </Link>
             </div>
