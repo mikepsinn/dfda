@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - 'apps/fda-gov-v2/**'
+  pull_request:
+    paths:
+      - 'apps/fda-gov-v2/**'
+
+jobs:
+  fda-gov-v2:
+    name: FDA Gov v2
+    uses: ./apps/fda-gov-v2/.github/workflows/fda-gov-v2.yml
+    with:
+      node-version: '20.x' 

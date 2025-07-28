@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+
+- Make sure to place components in the root /components folder and not the /app folder
+- Use server components whenever possible and always for pages
+- Pages should be server components and import client components

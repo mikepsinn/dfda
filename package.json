@@ -5,6 +5,19 @@
   "engines": {
     "node": ">=18"
   },
+  "scripts": {
+    "db:start": "docker-compose up -d",
+    "db:stop": "docker-compose down",
+    "db:reset": "pnpm db:stop && docker volume rm decentralized-fda_supabase_db && pnpm db:start",
+    "db:test:start": "supabase start -p test",
+    "db:test:stop": "supabase stop -p test",
+    "db:test:reset": "supabase db reset -p test",
+    "db:branch": "supabase db branch",
+    "db:push": "supabase db push",
+    "db:status": "docker-compose ps",
+    "db:generate-migration": "node supabase/scripts/combine-schema.js # Combines schema definitions into a migration",
+    "db:reset-schema": "pnpm db:reset"
+  },
   "dependencies": {
     "@prisma/client": "5.10.2"
   },
@@ -13,5 +26,6 @@
     "prisma": "5.10.2",
     "supabase": "^2.19.7",
     "tsx": "4.19.1"
-  }
+  },
+  "packageManager": "pnpm@9.14.4+sha1.64b6e81e79630419b675c555ef3b65607cfd6315"
 }

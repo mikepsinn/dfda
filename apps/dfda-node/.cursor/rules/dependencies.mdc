@@ -1,0 +1,7 @@
+---
+description: installing or updating dependencies or libraries or running package.json scripts
+globs: 
+alwaysApply: false
+---
+
+Use pnpm

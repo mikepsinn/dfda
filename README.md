@@ -250,6 +250,7 @@ It then pairs every combination of variables and identifies likely causal relati
 - pnpm 8+
 - Docker and Docker Compose
 - Git LFS
+- Supabase CLI
 
 
 ### Installation
@@ -283,8 +284,37 @@ cp .env.example .env
 pnpm dev
 ```
 
+### Database Setup
 
+The project uses Supabase for its database and authentication needs. Here's how to work with it:
 
+1. Start the local Supabase instance:
+```bash
+pnpm db:start
+```
+
+2. Reset database and apply migrations:
+```bash
+pnpm db:reset
+```
+
+3. For testing, you can run a separate instance:
+```bash
+pnpm db:test:start
+pnpm db:test:reset
+```
+
+4. Check status of Supabase services:
+```bash
+pnpm db:status
+```
+
+5. Push schema changes to production:
+```bash
+pnpm db:push
+```
+
+The database schema is managed through migrations in the `supabase/migrations` directory. Each migration represents a specific change to the database structure.
 
 ### Development Environment
 
