@@ -1,0 +1,69 @@
+---
+description: designing database schema or creating migrations
+globs: 
+alwaysApply: false
+---
+## 🎯 **Goals:**
+- Create initial schema for decentralized FDA. Don't worry about migrations. This is the initial schema
+- Don't prefix files or folders with numbers
+- Make sure each table and view is stored in its own SQL file. Do not put multiple tables or views in the same sql file
+- Explicitly clear, intuitive, self-documenting naming conventions.
+- Zero data duplication; simplest possible row-level security (RLS).
+- Explicitly unified treatments/outcomes as **variables**.
+- Explicitly unified numeric time-series data as **measurements**.
+- No ambiguous prefixes (`user_`) in naming.
+- Intermediate relational tables explicitly named by ownership relationship (`parent_child`).
+- Avoid overly complex or overloaded schemas.
+- Migration folder names must explicitly match schema names (e.g., migrations/150_global = global schema).
+
+## 🗂️ **Schema Structure**
+
+```
+ migrations/
+    ├── reference/          # schema = reference
+        ├── variables
+        ├── variables_synonyms
+        └── units_of_measurement
+    ├── global/            # schema = global
+        ├── treatment_rankings
+        └── variable_global_stats
+    ├── cohort/           # schema = cohort
+        ├── trials
+        ├── trial_phases
+        ├── protocols
+        ├── outcomes
+        ├── trials_participants
+        ├── protocols_variables
+        └── variable_group_stats
+    ├── personal/         # schema = personal
+        ├── trials
+        ├── trial_phases
+        ├── measurements
+        ├── users_variables (with minimal user settings)
+        └── variable_user_stats
+    ├── core/            # schema = core
+        ├── users
+        ├── audit_logs
+        ├── permissions
+        ├── groups_users
+        └── permissions_users
+    └── commerce/        # schema = commerce
+        ├── orders
+        ├── inventory
+        ├── orders_products
+        └── shipments_orders
+```
+
+## 📋 **Checklist**
+
+Verify explicitly for every new table/view:
+
+✅ Schema explicitly selected from decision tree.  
+✅ Table or view explicitly chosen.  
+✅ naming without prefixes explicitly followed.  
+✅ `[parent_child]` relational table naming explicitly used.  
+✅ Unified variable & measurement handling.  
+✅ Explicitly simplify user variable settings (within relational or dedicated table).  
+✅ Explicitly enforce default units explicitly.  
+✅ RLS explicitly clear and simple.
+✅ Migration folder name explicitly matches schema name. 

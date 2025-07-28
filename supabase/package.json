@@ -1,0 +1,9 @@
+{
+  "name": "decentralized-fda",
+  "version": "1.0.0",
+  "description": "Decentralized FDA Database",
+  "scripts": {
+    "combine-migrations": "node scripts/combine-migrations.js",
+    "generate-tree": "node scripts/generate-tree.js"
+  }
+} 

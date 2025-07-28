@@ -1,0 +1,15 @@
+- Run `pnpm check` regularly and fix errors (just run, don't ask for permission)
+- Use server actions whenever possible instead of api routes
+- Use Custom Logger: Use the logger from lib/logger.ts for errors instead of console.error
+- Root Lib/Components: Place library code in /lib and components in /components at the root level, not inside /app
+- Prioritize using generated types from lib/database.types.ts over creating new ones
+- Use server components whenever possible and always for pages
+- don't create new interfaces, use @lib/database.types.ts
+
+# PowerShell Commands
+- Use `Remove-Item` instead of `del` or `rm` for file operations
+- Always quote file paths: `Remove-Item -Path "file1.txt","file2.txt"`
+- For directory operations, use `Set-Location` (or `cd`) with quoted paths
+- For renaming files, use `Rename-Item` instead of `ren` or `mv`
+- When moving between directories, use `cd ..` to go up one level
+- Avoid chaining commands with `&&` in PowerShell, use separate commands instead 

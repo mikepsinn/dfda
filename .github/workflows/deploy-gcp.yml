@@ -1,0 +1,116 @@
+# .github/workflows/deploy-gcp.yml
+name: Deploy dfda-node to GCP Cloud Run
+
+on:
+  push:
+    branches:
+      - develop # Trigger on pushes to the develop branch
+
+permissions:
+  contents: read
+  id-token: write # Required for Workload Identity Federation
+
+env:
+  # Only the Doppler token is needed directly from GitHub Secrets
+  # Ensure this secret (DOPPLER_TOKEN) is configured in your GitHub repository settings
+  DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+  # Note: Other environment variables like GCP_PROJECT_ID, GCP_REGION, etc.,
+  # will be loaded dynamically from Doppler in the 'Load Secrets' step below.
+
+jobs:
+  deploy:
+    name: Build and Deploy to Cloud Run
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    # Install Doppler CLI - it will use the DOPPLER_TOKEN from the env
+    - name: Install Doppler CLI
+      uses: dopplerhq/cli-action@v3
+      with:
+        token: ${{ env.DOPPLER_TOKEN }}
+
+    # Fetch secrets from Doppler and inject into the GitHub Actions environment
+    # for subsequent steps to use.
+    - name: Load Secrets from Doppler
+      id: doppler-secrets
+      run: |
+        # Ensure your Doppler Project/Config contains secrets for:
+        # GCP_PROJECT_ID
+        # GCP_REGION
+        # GAR_REPOSITORY_ID
+        # CLOUD_RUN_SERVICE_NAME
+        # GCP_WORKLOAD_IDENTITY_PROVIDER (Full ID: projects/.../providers/...)
+        # GCP_SERVICE_ACCOUNT (Email address)
+        # Download secrets in dotenv format and append to $GITHUB_ENV
+        # This makes them available as env vars in later steps
+        doppler secrets download --no-file --format env >> $GITHUB_ENV
+        echo "Loaded secrets into environment."
+
+    # Verify that critical secrets for authentication were loaded
+    - name: Verify Required Secrets
+      run: |
+        if [ -z "${{ env.GCP_WORKLOAD_IDENTITY_PROVIDER }}" ]; then
+          echo "::error::Required secret GCP_WORKLOAD_IDENTITY_PROVIDER was not found after loading from Doppler."
+          echo "::error::Please ensure GCP_WORKLOAD_IDENTITY_PROVIDER is set in the Doppler config associated with your DOPPLER_TOKEN secret."
+          echo "::error::The value should be the full Workload Identity Provider ID (e.g., projects/PROJECT_ID/locations/global/workloadIdentityPools/POOL_ID/providers/PROVIDER_ID)."
+          exit 1
+        fi
+        if [ -z "${{ env.GCP_SERVICE_ACCOUNT }}" ]; then
+          echo "::error::Required secret GCP_SERVICE_ACCOUNT was not found after loading from Doppler."
+          echo "::error::Please ensure GCP_SERVICE_ACCOUNT is set in the Doppler config associated with your DOPPLER_TOKEN secret."
+          echo "::error::The value should be the email address of the GitHub Actions service account (e.g., github-actions-sa@PROJECT_ID.iam.gserviceaccount.com)."
+          exit 1
+        fi
+        echo "Required secrets GCP_WORKLOAD_IDENTITY_PROVIDER and GCP_SERVICE_ACCOUNT verified."
+
+    # Authenticate using secrets loaded from Doppler
+    - name: Authenticate to Google Cloud
+      id: auth
+      uses: google-github-actions/auth@v2
+      with:
+        # These env vars are now populated by the 'Load Secrets from Doppler' step
+        workload_identity_provider: ${{ env.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+        service_account: ${{ env.GCP_SERVICE_ACCOUNT }}
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    # Configure Docker using secrets loaded from Doppler
+    - name: Configure Docker for Artifact Registry
+      # The gcloud command will run using the authenticated service account
+      # and the GCP_REGION environment variable loaded from Doppler.
+      run: gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev --quiet
+
+    # Build and Push using secrets loaded from Doppler
+    - name: Build and Push Docker Image
+      id: build-push
+      uses: docker/build-push-action@v5
+      with:
+        context: . # Assumes Dockerfile is at the root of dfda-node repo
+        push: true
+        tags: |
+          ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY_ID }}/${{ env.CLOUD_RUN_SERVICE_NAME }}:${{ github.sha }}
+          ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY_ID }}/${{ env.CLOUD_RUN_SERVICE_NAME }}:latest
+        # Docker build args can also be populated from Doppler if needed:
+        # build-args: |
+        #   SOME_BUILD_ARG=${{ env.SOME_DOPPLER_SECRET }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    # Deploy using secrets loaded from Doppler
+    - name: Deploy to Cloud Run
+      id: deploy
+      uses: google-github-actions/deploy-cloudrun@v2
+      with:
+        # These env vars are populated by the 'Load Secrets from Doppler' step
+        service: ${{ env.CLOUD_RUN_SERVICE_NAME }}
+        region: ${{ env.GCP_REGION }}
+        # Deploy the specific image tagged with the Git SHA digest for immutability
+        image: ${{ steps.build-push.outputs.digest }}
+
+    # Output the deployed service URL
+    - name: Show Deployed URL
+      run: echo "Deployed to ${{ steps.deploy.outputs.url }}" 

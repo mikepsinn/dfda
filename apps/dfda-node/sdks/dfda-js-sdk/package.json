@@ -1,0 +1,24 @@
+{
+  "name": "dfda-js-sdk",
+  "version": "0.1.0",
+  "description": "JavaScript SDK for the Decentralized FDA Platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "prepublishOnly": "pnpm run build",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "ISC"
+} 

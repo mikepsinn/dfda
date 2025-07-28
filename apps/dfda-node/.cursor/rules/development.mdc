@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+- Run `pnpm check` regularly and fix errors (just run, don't ask for permission). After each fix run pnpm check and make sure you didn't introduce any new errors and fix before moving to the next errors
+- Use server actions whenever possible instead of api routes
+- Use Custom Logger: Use the logger from lib/logger.ts for errors instead of console.error
+- Root Lib/Components: Place library code in /lib and components in /components at the root level, not inside /app
+- Prioritize using generated types from lib/database.types.ts over creating new ones
+- Use server components whenever possible and always for pages
+- don't create new interfaces, use @lib/database.types.ts
+- Await dynamic route `params`: In Next.js 15+, the `params` prop in dynamic route components (Pages, Layouts) is a Promise. Use `await params` or `React.use(params)` to access its value. [Reference: https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes]
+- **Inspect `node_modules` with PowerShell:** If unsure about library types or usage, **especially when encountering persistent errors or type mismatches**, proactively use the following commands:
+  - `Get-ChildItem -Path <path_to_package> -Recurse -Filter *.d.ts -Name` to find type definition files.
+  - `Get-Content <path_to_file>` to read type definitions (`.d.ts`) or `README.md`.
+  - `Select-String -Pattern '<interface_or_type_name>' -Path <path_to_dts_file>` to search within type files.
+- **Proactive Web Search:** If issues (like errors, unexpected behavior, or uncertainty about usage) cannot be resolved by inspecting the codebase or `node_modules`, proactively use web search to find official documentation, usage examples, or solutions to similar problems before asking the user or giving up.
+- **Proactive Command Execution:** When any terminal command is needed to achieve the current goal (e.g., dependency management, running scripts, build steps, checks, etc.) and I have the capability to run it via the available tools, I will execute it directly. I will not instruct the user to run commands manually if I can run them myself.
