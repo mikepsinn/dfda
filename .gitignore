@@ -38,6 +38,7 @@ tmp/
 .env*
 !.env.example
 management-ui/logs/
+.temp
 test-results/*
 volumes/
 test-results/
