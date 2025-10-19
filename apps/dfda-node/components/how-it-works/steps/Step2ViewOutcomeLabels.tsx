@@ -8,7 +8,7 @@ const klothoGeneTherapyData = {
   // No subtitle or tag needed for this example
   data: [
     {
-      title: "Cognitive Improvements (Example)", // Provide a category title
+      title: "Cognitive Improvements", // Provide a category title
       items: [
         { name: "Cognitive Function (ADAS-Cog)", value: { percentage: 28 }, isPositive: true },
         { name: "Memory Recall", value: { percentage: 35 }, isPositive: true },
@@ -17,7 +17,7 @@ const klothoGeneTherapyData = {
       ],
     },
     {
-      title: "Side Effects (Example)", // Provide a category title
+      title: "Side Effects", // Provide a category title
       isSideEffectCategory: true,
       items: [
         { name: "Immune Response", value: { percentage: 12 }, isPositive: false }, // Assuming side effect percentages are increases to show
