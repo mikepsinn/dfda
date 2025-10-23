@@ -19,7 +19,7 @@ export default function GoodNewsSection() {
             There are over 166 billion possible medicinal molecules, and we've only tested 0.00001% so far.
           </p>
           <Image
-            src="https://fdai.earth/wp-content/uploads/2024/03/studied-molecules-chart-no-background.png"
+            src="https://static.crowdsourcingcures.org/dfda/studied-molecules-chart-no-background.png"
             alt="Studied molecules chart"
             width={800}
             height={400}
@@ -30,7 +30,7 @@ export default function GoodNewsSection() {
         <div className="rounded-lg p-6">
           <h3 className="text-2xl font-bold mb-4">Clinical Research Cost Trends</h3>
           <Image
-            src="https://fdai.earth/wp-content/uploads/2024/03/Cost-to-Develop-A-New-Drug-no-arrows-e1710115343651-1024x742.png"
+            src="https://static.crowdsourcingcures.org/dfda/Cost-to-Develop-A-New-Drug-no-arrows-e1710115343651-1024x742.png"
             alt="Cost trends"
             width={1024}
             height={742}
@@ -43,4 +43,4 @@ export default function GoodNewsSection() {
       </motion.div>
     </section>
   )
-} 
+}
