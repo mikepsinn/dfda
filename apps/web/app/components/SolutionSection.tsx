@@ -18,7 +18,7 @@ export default function SolutionSection() {
       desc: "Import data from wearables and apps.",
       color: "bg-green-400",
       icon: Database,
-      media: "https://fdai.earth/wp-content/uploads/2024/03/import.gif",
+      media: "https://static.crowdsourcingcures.org/dfda/import.gif",
       onClick: () => {
         setIsLoading(true)
         redirect(`/safe/redirect`)
@@ -30,7 +30,7 @@ export default function SolutionSection() {
       color: "bg-teal-400",
       icon: Brain,
       media:
-        "https://fdai.earth/wp-content/uploads/2024/03/root-cause-analysis-4x-small.gif",
+        "https://static.crowdsourcingcures.org/dfda/root-cause-analysis-4x-small.gif",
       onClick: () => {
         setIsLoading(true)
         redirect(`/safe/redirect`)
@@ -42,7 +42,7 @@ export default function SolutionSection() {
       color: "bg-emerald-400",
       icon: Bell,
       media:
-        "https://fdai.earth/wp-content/uploads/2024/03/real-time-decision-support-notifications-personalized-app-image.png",
+        "https://static.crowdsourcingcures.org/dfda/real-time-decision-support-notifications-personalized-app-image.png",
       onClick: () => {
         setIsLoading(true)
         redirect(`/safe/redirect`)

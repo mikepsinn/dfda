@@ -76,7 +76,7 @@ export default function DFDAHomePage() {
       color: "bg-red-400",
       icon: Users,
       media:
-        "https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif",
+        "https://static.crowdsourcingcures.org/dfda/clinipedia-inflammatory-pain-small.gif",
       onClick: () => {
         console.log("Clinipedia clicked")
         // open studies.dfda.earth in a new tab
