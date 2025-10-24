@@ -11,7 +11,7 @@ export default function CitizenScienceSection() {
       desc: "Anyone can create a study, become a prestigious scientist, get a link, and invite all their friends to join!",
       color: "bg-purple-400",
       icon: Microscope,
-      media: "https://fdai.earth/wp-content/uploads/2024/03/create-study.gif",
+      media: "https://static.crowdsourcingcures.org/dfda/create-study.gif",
       onClick: () => window.location.href = "/safe/redirect/study-creation"
     },
     {
@@ -19,7 +19,7 @@ export default function CitizenScienceSection() {
       desc: "Studies are published in a Wikipedia for clinical research based on everyone's data, listing the likely effects of every food and drug.",
       color: "bg-indigo-400",
       icon: Globe,
-      media: "https://fdai.earth/wp-content/uploads/2024/03/clinipedia-landing.gif",
+      media: "https://static.crowdsourcingcures.org/dfda/clinipedia-landing.gif",
       onClick: () => window.location.href = "https://studies.fdai.earth/"
     },
     {
@@ -27,7 +27,7 @@ export default function CitizenScienceSection() {
       desc: "Look up your condition and see how different foods, drugs and supplements tend to improve or worsen your condition.",
       color: "bg-violet-400",
       icon: Search,
-      media: "https://fdai.earth/wp-content/uploads/2024/03/clinipedia-inflammatory-pain-small.gif",
+      media: "https://static.crowdsourcingcures.org/dfda/clinipedia-inflammatory-pain-small.gif",
       onClick: () => window.location.href = "https://studies.fdai.earth/variables/Overall_Mood"
     }
   ]
@@ -56,4 +56,4 @@ export default function CitizenScienceSection() {
       </motion.div>
     </section>
   )
-} 
+}
