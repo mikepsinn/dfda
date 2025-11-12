@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import Link from "next/link"
 import { NavItem } from "@/types"
 import { User } from "next-auth"
 
@@ -32,10 +31,6 @@ export default function DfdaTopNavbar({
   }
   if (!avatarNavItems) {
     avatarNavItems = navigation.avatarNav
-  }
-
-  const isExternalLink = (href: string) => {
-    return href.startsWith("http://") || href.startsWith("https://")
   }
 
   return (
