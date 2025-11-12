@@ -1,11 +1,10 @@
 "use client"
 
 import React, { useState } from "react"
-import { ButtonProps } from "react-day-picker"
 
 import { GlobalVariable } from "@/types/models/GlobalVariable"
 import { UserVariable } from "@/types/models/UserVariable"
-import { Button } from "@/components/ui/button"
+import { Button, type ButtonProps } from "@/components/ui/button"
 import {
   Credenza,
   CredenzaContent,
@@ -16,7 +15,7 @@ import {
 import { Icons } from "@/components/icons"
 import { MeasurementsAddForm } from "@/components/measurements/measurements-add-form"
 
-interface MeasurementButtonProps extends ButtonProps {
+interface MeasurementButtonProps extends Omit<ButtonProps, 'ref'> {
   genericVariable: Pick<
     UserVariable | GlobalVariable,
     | "id"
@@ -73,14 +72,6 @@ export function MeasurementButton({
         <Icons.add className="h-4 w-4" />
         {props.title || ""}
       </Button>
-      {isFormOpen && (
-        <Credenza>
-          <MeasurementsAddForm
-            genericVariable={genericVariable}
-            setShowMeasurementAlert={setShowMeasurementAlert}
-          />
-        </Credenza>
-      )}
       <Credenza
         open={showMeasurementAlert}
         onOpenChange={setShowMeasurementAlert}

@@ -54,7 +54,7 @@ export default function MetaAnalysisProgress({
     }, 50)
 
     const researcherInterval = setInterval(() => {
-      setActiveResearchers(prev => Math.floor(Math.random() * 100 + 400))
+      setActiveResearchers(() => Math.floor(Math.random() * 100 + 400))
     }, 2000)
 
     return () => {

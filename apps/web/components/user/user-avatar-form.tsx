@@ -13,11 +13,9 @@ interface UserAvatarFormProps extends AvatarProps {
 
 export function UserAvatarForm({
   user,
-  className,
   onUpdate,
   ...props
 }: UserAvatarFormProps) {
-  const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [selectedImage, setSelectedImage] = useState<string | null>(user.image)
 

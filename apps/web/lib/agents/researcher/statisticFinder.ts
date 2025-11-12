@@ -169,7 +169,6 @@ ${searchContent}
 `
 
   const model = getModelByName(modelName)
-  const tokens = prompt.length * 1.5
 
   console.log("generateObject: Analyzing sources for statistical findings...", {
     promptLength: prompt.length,
