@@ -1,7 +1,6 @@
 import { anthropic } from "@ai-sdk/anthropic";
 import { google } from "@ai-sdk/google";
 import {createOpenAI, openai} from "@ai-sdk/openai";
-import type { LanguageModelV1 } from "@ai-sdk/provider";
 import type { LanguageModel } from "ai";
 import { xai } from '@ai-sdk/xai';
 import {createOllama} from "ollama-ai-provider";
