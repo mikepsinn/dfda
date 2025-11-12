@@ -17,7 +17,7 @@ import DFDACostSavingsTable from "./DFDACostSavingsTable"
 import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
-import DeathTollTimer from "./DeathTollTimer"
+// import DeathTollTimer from "./DeathTollTimer"
 import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
 import HowItWorksSection from "./HowItWorksSection"
 import ProblemStatisticsGrid from "./ProblemStatisticsGrid"
@@ -166,7 +166,7 @@ export default function DFDAHomePage() {
         </motion.p>
       </header>
 
-      <DeathTollTimer />
+      {/* <DeathTollTimer /> */}
 
       <main className="space-y-12">
         <DFDADisclaimer />
