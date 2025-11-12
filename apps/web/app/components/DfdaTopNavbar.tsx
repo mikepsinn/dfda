@@ -46,13 +46,37 @@ export default function DfdaTopNavbar({
             <DfdaLogoNavMenu navItems={logoNavItems}></DfdaLogoNavMenu>
           </div>
         </div>
-        {/* <div className="hidden md:block">
+        <div className="hidden md:block">
           <div
             className="absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border p-4 md:static md:mt-0 md:border-none md:p-0"
             style={{ width: "100%", maxWidth: "20rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 opacity-60 md:flex-row md:space-x-6 md:space-y-0">
-              {topNavItems.map((item, index) => {
+              <li>
+                <a
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                  className="hover:underline"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                  className="hover:underline"
+                >
+                  Contact
+                </a>
+              </li>
+              {/* {topNavItems.map((item, index) => {
                 return (
                   item.href && (
                     <Link
@@ -70,10 +94,10 @@ export default function DfdaTopNavbar({
                     </Link>
                   )
                 )
-              })}
+              })} */}
             </ul>
           </div>
-        </div> */}
+        </div>
         <UserNavDisplay
           user={{
             name: user?.name,
