@@ -12,7 +12,7 @@ export default function FindTreatments() {
         e.preventDefault()
         console.log('Searching for:', condition)
         // Implement search functionality here
-        const results = searchClinicalTrialConditions(condition)
+        searchClinicalTrialConditions(condition)
     }
 
     return (

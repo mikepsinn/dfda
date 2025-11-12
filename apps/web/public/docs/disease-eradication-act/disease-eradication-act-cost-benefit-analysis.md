@@ -1,8 +1,8 @@
-# Quantitative Cost-Benefit Analysis of the Disease Eradication Act
+# Quantitative Cost-Benefit Analysis of the Disease Eradication Initiative
 
 ## Executive Summary
 
-The [**Disease Eradication Act**](./disease-eradication-act.md) proposes transformative changes to the healthcare system, aiming to reduce drug development costs, expedite access to treatments, and incentivize cures and preventive care. This analysis quantifies the potential economic impacts, balancing the estimated benefits against the anticipated costs.
+The [**Disease Eradication Initiative**](./disease-eradication-act.md) proposes transformative changes to the healthcare system, aiming to reduce drug development costs, expedite access to treatments, and incentivize cures and preventive care. This analysis quantifies the potential economic impacts, balancing the estimated benefits against the anticipated costs.
 
 - **Total Estimated Annual Benefits**: **Up to \$2.25 trillion**
 - **Total Estimated Annual Costs**: **Approximately \$10 billion (initial and ongoing)**
@@ -12,7 +12,7 @@ The [**Disease Eradication Act**](./disease-eradication-act.md) proposes transfo
 
 ## Table of Contents
 
-- [Quantitative Cost-Benefit Analysis of the Disease Eradication Act](#quantitative-cost-benefit-analysis-of-the-disease-eradication-act)
+- [Quantitative Cost-Benefit Analysis of the Disease Eradication Initiative](#quantitative-cost-benefit-analysis-of-the-disease-eradication-act)
   - [Executive Summary](#executive-summary)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
@@ -52,7 +52,7 @@ The [**Disease Eradication Act**](./disease-eradication-act.md) proposes transfo
 
 ## Introduction
 
-The current healthcare system faces significant challenges, including high drug development costs, lengthy approval processes, limited patient access to clinical trials, and escalating drug prices. The **Disease Eradication Act** aims to address these issues by overhauling the drug development and approval process, leveraging technology, and aligning financial incentives with health outcomes.
+The current healthcare system faces significant challenges, including high drug development costs, lengthy approval processes, limited patient access to clinical trials, and escalating drug prices. The **Disease Eradication Initiative** aims to address these issues by overhauling the drug development and approval process, leveraging technology, and aligning financial incentives with health outcomes.
 
 This analysis provides a quantitative evaluation of the Act's potential economic benefits and costs.
 
@@ -231,7 +231,7 @@ The benefits overwhelmingly outweigh the costs, even when considering potential 
 
 ## Conclusion
 
-The **Disease Eradication Act** presents a compelling economic case, with potential annual benefits exceeding \$1 trillion against relatively modest implementation and operational costs. By reducing drug development expenses, lowering drug prices through global competition, accelerating access to treatments, and incentivizing preventive care and cures, the Act could transform healthcare economics.
+The **Disease Eradication Initiative** presents a compelling economic case, with potential annual benefits exceeding \$1 trillion against relatively modest implementation and operational costs. By reducing drug development expenses, lowering drug prices through global competition, accelerating access to treatments, and incentivizing preventive care and cures, the Act could transform healthcare economics.
 
 ## Assumptions and Limitations
 

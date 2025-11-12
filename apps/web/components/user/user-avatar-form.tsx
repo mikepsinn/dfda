@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { User } from "@prisma/client"
 import { AvatarProps } from "@radix-ui/react-avatar"
 import axios from "axios" // Assuming you're using axios for HTTP requests
@@ -13,11 +12,9 @@ interface UserAvatarFormProps extends AvatarProps {
 
 export function UserAvatarForm({
   user,
-  className,
   onUpdate,
   ...props
 }: UserAvatarFormProps) {
-  const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [selectedImage, setSelectedImage] = useState<string | null>(user.image)
 

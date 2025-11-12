@@ -17,7 +17,6 @@ export function NeoBrutalistButton({
   children,
   className,
   variant = "primary",
-  asChild,
   href,
   external,
   ...props

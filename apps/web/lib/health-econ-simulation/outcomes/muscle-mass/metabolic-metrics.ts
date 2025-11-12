@@ -28,7 +28,6 @@ export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
         },
         calculateSensitivity: (muscleMassIncreasePerPerson) => {
             validateMuscleMass(muscleMassIncreasePerPerson, 'Additional Daily Calories Sensitivity');
-            const baseValue = muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue;
             return {
                 bestCase: muscleMassIncreasePerPerson * 10, // Upper range of calories burned
                 worstCase: muscleMassIncreasePerPerson * 6, // Lower range of calories burned
@@ -65,7 +64,6 @@ export const metabolicOutcomeMetrics: Record<string, OutcomeMetric> = {
         },
         calculateSensitivity: (muscleMassIncreasePerPerson) => {
             validateMuscleMass(muscleMassIncreasePerPerson, 'Annual Metabolic Impact Sensitivity');
-            const baseValue = muscleMassIncreasePerPerson * muscleMassParameters.muscle_calorie_burn.defaultValue * 365;
             return {
                 bestCase: muscleMassIncreasePerPerson * 10 * 365,
                 worstCase: muscleMassIncreasePerPerson * 6 * 365,
