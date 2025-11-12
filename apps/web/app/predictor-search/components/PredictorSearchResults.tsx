@@ -15,7 +15,6 @@ function createMarkup(html: string) {
 }
 
 export function PredictorSearchResults({
-  session,
   userId,
 }: {
   session: Session | null
@@ -28,9 +27,6 @@ export function PredictorSearchResults({
   const [error, setError] = useState("")
   const [offset, setOffset] = useState(0)
   const LIMIT = 10
-
-  // Add a key to force re-render when effectVariableName changes
-  const searchKey = effectVariableName || 'empty'
 
   useEffect(() => {
     console.log("🔄 Effect triggered with:", { effectVariableName, offset })

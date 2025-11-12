@@ -35,8 +35,6 @@ export const UserVariableCharts: FC<UserVariableChartsProps> = ({
 }) => {
   const [userVariable, setUserVariable] = useState<UserVariable>()
   const [isLoading, setIsLoading] = useState(true) // Add a loading state
-  const [showMeasurementAlert, setShowMeasurementAlert] =
-    React.useState<boolean>(false)
 
   useEffect(() => {
     const url = `/api/dfda/userVariables?variableId=${variableId}&includeCharts=1`
@@ -62,11 +60,6 @@ export const UserVariableCharts: FC<UserVariableChartsProps> = ({
         setIsLoading(false) // Ensure loading is set to false on error as well
       })
   }, [variableId])
-
-  const handleRecordMeasurement = () => {
-    // Logic to record a new measurement
-    console.log("Record a new measurement")
-  }
 
   return (
     <Card>

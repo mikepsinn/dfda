@@ -51,9 +51,8 @@ export function MeasurementButton({
   size,
   ...props
 }: MeasurementButtonProps) {
-  const { ref, ...rest } = props // Destructure out `ref` and spread the rest
+  const { ...rest } = props // Spread the props
 
-  const [isFormOpen, setIsFormOpen] = useState(false)
   const [showMeasurementAlert, setShowMeasurementAlert] =
     React.useState<boolean>(false)
 

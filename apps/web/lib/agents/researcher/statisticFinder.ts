@@ -1,4 +1,3 @@
-import type { LanguageModel } from "ai";
 import { generateObject } from "ai";
 import { z } from "zod";
 import { getSearchResults } from "@/lib/agents/researcher/getSearchResults";

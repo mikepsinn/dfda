@@ -10,7 +10,7 @@ export interface ImageUploadProps {
   label?: string
 }
 
-export function ImageUpload({ label, value, multiple, onChange, onRemove }: ImageUploadProps) {
+export function ImageUpload({ label, multiple, onChange }: ImageUploadProps) {
   const inputId = React.useId()
   
   return (
@@ -28,7 +28,7 @@ export function ImageUpload({ label, value, multiple, onChange, onRemove }: Imag
         multiple={multiple}
         aria-label={label}
         title={label}
-        onChange={(e) => {
+        onChange={() => {
           // Placeholder for actual upload logic
           if (multiple) {
             onChange([])

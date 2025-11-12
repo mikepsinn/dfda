@@ -26,7 +26,7 @@
      - Grassroots mobilization specialists
 
 ## III. Legislative Foundation
-3. **Disease Eradication Act Framework**
+3. **Disease Eradication Initiative Framework**
    - **Clinical Trial Reformation**
      - Open-source, interoperable trial platform
      - Automated regulatory compliance

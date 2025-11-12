@@ -10,7 +10,6 @@ import { toast } from "@/components/ui/use-toast"
 interface ConnectedAccountsProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function ConnectedAccounts({
-  className,
   ...props
 }: ConnectedAccountsProps) {
   const { data: session, update } = useSession()

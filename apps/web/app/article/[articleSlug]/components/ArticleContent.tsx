@@ -11,7 +11,7 @@ interface ArticleContentProps {
 }
 
 export function ArticleContent({ articleSlug }: ArticleContentProps) {
-    const { data: session, status } = useSession() 
+    const { data: session } = useSession() 
     const [article, setArticle] = useState<ArticleWithRelations | null>(null)
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true)

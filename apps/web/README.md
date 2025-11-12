@@ -31,7 +31,7 @@ Through automation and increased efficiency, this would reduce treatment develop
 
 ## 💡 The Solution
 
-The Disease Eradication Act creates:
+The Disease Eradication Initiative creates:
 
 * ✅ **Universal Trial Access** - Every person's right to try safe treatments
 * 🤖 **Decentralized Autonomous FDA** - Free, open infrastructure for real-world evidence collection
@@ -39,7 +39,7 @@ The Disease Eradication Act creates:
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
 
-[👉 Read the Full Disease Eradication Act](public/docs/disease-eradication-act/disease-eradication-act.md)
+[👉 Read the Full Disease Eradication Initiative](public/docs/disease-eradication-act/disease-eradication-act.md)
 
 # 😕 Why are we doing this?
 

@@ -1,10 +1,10 @@
-# 💖 DISEASE ERADICATION ACT
+# 💖 Disease Eradication Initiative
 
 ## 📜 SECTION 1. SHORT TITLE AND FINDINGS
 
 ### 1.1 📛 Title
 
-This Act may be cited as the **"Disease Eradication Act"**.
+This Act may be cited as the **"Disease Eradication Initiative"**.
 
 ### 1.2 🏥 Core Problems This Act Solves
 

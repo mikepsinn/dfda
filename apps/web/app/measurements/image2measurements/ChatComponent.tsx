@@ -1,6 +1,6 @@
 import React from "react"
 import { useChat, type UIMessage } from "@ai-sdk/react"
-import { tool } from "ai"
+import { DefaultChatTransport, tool } from "ai"
 import { z } from "zod"
 
 interface ChatComponentProps {
@@ -35,13 +35,16 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
     }
   } as any)
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/chat-with-functions",
-    body: {
-      tools: {
-        getCustomDescription: getCustomDescriptionTool
+  const [input, setInput] = React.useState("")
+  const { messages, sendMessage, status } = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat-with-functions",
+      body: {
+        tools: {
+          getCustomDescription: getCustomDescriptionTool
+        }
       }
-    }
+    })
   })
 
   const roleToColorMap: Record<string, string> = {
@@ -51,6 +54,14 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
     assistant: "green",
     data: "purple",
     tool: "orange",
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (input.trim()) {
+      sendMessage({ text: input })
+      setInput("")
+    }
   }
 
   return (
@@ -63,7 +74,13 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
               style={{ color: roleToColorMap[m.role] || "defaultColor" }}
             >
               <strong>{`${m.role}: `}</strong>
-              {m.content}
+              {m.parts.map((part, idx) => 
+                part.type === 'text' ? (
+                  <span key={idx}>{part.text}</span>
+                ) : (
+                  <span key={idx}>{JSON.stringify(part)}</span>
+                )
+              )}
               <br />
               <br />
             </div>
@@ -75,7 +92,8 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
           className="fixed bottom-0 mb-8 w-full max-w-md rounded border border-gray-300 p-2 shadow-xl"
           value={input}
           placeholder="Ask a question about your data..."
-          onChange={handleInputChange}
+          onChange={(e) => setInput(e.target.value)}
+          disabled={status === 'streaming' || status === 'submitted'}
         />
       </form>
     </div>
