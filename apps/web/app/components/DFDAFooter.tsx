@@ -26,15 +26,13 @@ export default function DFDAFooter() {
           ))}
         </ul>
       </div> */}
-      <p className="mb-4">
-      </p>
       <div className="mt-4 border-t-2 border-black pt-4 text-sm font-normal">
         <div id="about" className="mb-4 scroll-mt-20">
           <p className="mb-2">
-            The Foundation for the Eradication of Dementia and Mental Illness (FEDMI) is a private family foundation supporting projects that accelerate medical research, open science, and public health innovation.
+            The Foundation for the Eradication of Dementia and Mental Illness is a private foundation supporting projects that accelerate medical research, open science, and public health innovation.
           </p>
           <p className="mb-2">
-            <strong>Mission:</strong> Support projects accelerating medical research and open science to reduce the global burden of dementia and mental illness.
+            <strong>Mission:</strong> Support the most impactfulprojects accelerating medical research and open science to end the global suffering caused by dementia and mental illness.
           </p>
         </div>
         <div id="contact" className="scroll-mt-20">
