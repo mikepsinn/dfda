@@ -185,9 +185,6 @@ The App (including any of the Projects administered in it) is not designed to de
 
 To the maximum extent permitted by law, the App is provided "As Is" and "As Available", with all faults and without warranty of any kind, and The dFDA and its licensors disclaim all warranties, either implied or statutory, including, but not limited to, the implied warranties of merchantability, satisfactory quality, fitness for a particular purpose, accuracy, quiet enjoyment, and non-infringement of third party rights. To the extent not prohibited by applicable law, in no event shall The dFDA be liable for personal injury, or any incidental, special, indirect or consequential damages whatsoever arising out of or related to your use or inability to use the App.
 
-[Changes to Our Privacy and Use Policy](#changes)
-
-We may change this privacy policy from time to time. Any changes will be posted on our website and/or the respective app store and will be effective when published at [https://trust.dfda.earth/The dFDA/privacy.html](https://trust.dfda.earth/The dFDA/privacy.html).
 
 [Contact](#contact)
 
