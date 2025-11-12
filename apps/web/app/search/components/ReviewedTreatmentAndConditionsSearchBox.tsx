@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { X, Search } from "lucide-react"
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { searchReviewedTreatmentsAndConditions } from '../../dfdaActions'
 
 type SearchResult = {

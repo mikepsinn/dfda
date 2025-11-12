@@ -26,7 +26,7 @@ export type MetaAnalysisResult = {
   treatmentAnalyses: TreatmentAnalysis[];
 };
 
-async function findExistingArticle(searchQuery: string, userId: string) {
+async function findExistingArticle(searchQuery: string) {
   return prisma.article.findFirst({
     where: {
       promptedTopic: {
