@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 
 import { GlobalVariable } from "@/types/models/GlobalVariable"
 import { UserVariable } from "@/types/models/UserVariable"

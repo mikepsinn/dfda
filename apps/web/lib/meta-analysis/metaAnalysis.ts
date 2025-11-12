@@ -99,7 +99,7 @@ export async function generateMetaAnalysis({
     
     console.log(`Checking for existing analysis of ${treatment} for ${condition}...`);
     
-    const existingArticle = await findExistingArticle(searchQuery, userId);
+    const existingArticle = await findExistingArticle(searchQuery);
     
     if (existingArticle) {
       console.log(`Found existing analysis for ${treatment}`);
