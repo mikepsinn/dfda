@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const { messages } = await req.json()
 
     const result = streamText({
-      model: openai('gpt-4-vision-preview'),
+      model: openai('gpt-4-vision-preview') as any,
       messages,
       tools: {
         getCustomDescription: tool({
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
             prompt: z.string(),
             file: z.string()
           }),
-          execute: async ({ prompt, file }) => {
+          execute: async ({ prompt, file }: { prompt: string; file: string }) => {
             const response = await fetch('/api/image2measurements', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -28,11 +28,11 @@ export async function POST(req: Request) {
             const data = await response.json()
             return data.analysis
           },
-        }),
+        } as any),
       },
     })
 
-    return result.toDataStreamResponse()
+    return result.toTextStreamResponse()
   } catch (error) {
     // Handle any errors
     console.error('Error in chat function:', error)

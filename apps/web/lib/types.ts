@@ -1,4 +1,4 @@
-import { type Message } from "ai"
+import { type CoreMessage } from "ai"
 
 export interface Chat extends Record<string, any> {
   id: string
@@ -6,7 +6,7 @@ export interface Chat extends Record<string, any> {
   userId: string
   createdAt: Date
   path: string
-  messages: Message[]
+  messages: CoreMessage[]
   sharedPath?: string
   agent?: Agent | null | undefined
 }

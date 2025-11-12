@@ -2,7 +2,7 @@
  * @jest-environment node
  */
 import { prisma } from "@/lib/prisma";
-import { GET, POST } from "./route";
+import { GET, POST } from "@/app/api/call-transcripts/route";
 import { User, Person, ApiKey, CallSchedule, ScheduledCall, Agent } from "@prisma/client";
 
 // Helper to create Next.js Request objects for testing

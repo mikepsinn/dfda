@@ -44,7 +44,7 @@ ${searchResultsText}
   `;
 
     const result = await generateObject({
-        model: anthropic('claude-3-5-sonnet-20240620'),
+        model: anthropic('claude-3-5-sonnet-20240620') as any,
         schema: SideEffectsSchema,
         prompt,
     });
