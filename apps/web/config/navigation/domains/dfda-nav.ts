@@ -5,7 +5,7 @@ export const PATH_TO_DISEASE_ERADICATION_ACT = "docs/disease-eradication-act/dis
 
 export const dfdaLinks = {
   dfda: {
-    title: "dFDA",
+    title: "Home",
     href: "/",
     icon: "home",
     tooltip: "The Decentralized Food and Drug Administration",
