@@ -6,6 +6,7 @@ import { Chat as ChatIcon } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
 
 import { type Chat } from "@/lib/types"
+import { useLocalStorage } from "@/lib/hooks/use-local-storage"
 
 interface SidebarItemProps {
   index: number
@@ -16,6 +17,7 @@ interface SidebarItemProps {
 function SidebarItem({ chat, children }: SidebarItemProps) {
   const pathname = usePathname()
   const isActive = pathname === chat.path
+  const [newChatId, setNewChatId] = useLocalStorage<string | null>("newChatId", null)
 
   if (!chat?.id) return null
 
