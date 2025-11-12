@@ -1,7 +1,8 @@
 import { anthropic } from "@ai-sdk/anthropic";
 import { google } from "@ai-sdk/google";
 import {createOpenAI, openai} from "@ai-sdk/openai";
-import { LanguageModelV1 } from "@ai-sdk/provider";
+import type { LanguageModelV1 } from "@ai-sdk/provider";
+import type { LanguageModel } from "ai";
 import { xai } from '@ai-sdk/xai';
 import {createOllama} from "ollama-ai-provider";
 import {createAzure} from "@ai-sdk/azure";
@@ -70,18 +71,18 @@ export function DEFAULT_MODEL_NAME(): ModelName {
   return getDefaultModelName();
 }
 
-export function getModelByName(modelName?: ModelName): LanguageModelV1 {
+export function getModelByName(modelName?: ModelName): LanguageModel {
   const model = modelName || DEFAULT_MODEL_NAME();
   console.log(`🤖 Using AI model: ${model}`);
   
   if (model.includes("claude")) {
-    return anthropic(model)
+    return anthropic(model) as unknown as LanguageModel
   }
   if (model.includes("gpt")) {
-    return openai(model)
+    return openai(model) as unknown as LanguageModel
   }
   if (model.includes("grok")) {
-    return xai(model);
+    return xai(model) as unknown as LanguageModel;
   }
   if (model.includes("gemini")) {
     return google("models/" + model, {
@@ -98,12 +99,12 @@ export function getModelByName(modelName?: ModelName): LanguageModelV1 {
           threshold: "BLOCK_NONE",
         },
       ],
-    })
+    }) as unknown as LanguageModel
   }
-  return anthropic(DEFAULT_MODEL_NAME()) // Default model
+  return anthropic(DEFAULT_MODEL_NAME()) as unknown as LanguageModel // Default model
 }
 
-export function getModelByEnv(useSubModel = false): LanguageModelV1 {
+export function getModelByEnv(useSubModel = false): LanguageModel {
   // Check for Ollama configuration first since it's a special case
   const ollamaBaseUrl = process.env.OLLAMA_BASE_URL
   const ollamaModel = process.env.OLLAMA_MODEL
@@ -111,7 +112,7 @@ export function getModelByEnv(useSubModel = false): LanguageModelV1 {
 
   if (ollamaBaseUrl && ollamaModel) {
     const ollama = createOllama({ baseURL: ollamaBaseUrl + "/api" })
-    return ollama(useSubModel && ollamaSubModel ? ollamaSubModel : ollamaModel)
+    return ollama(useSubModel && ollamaSubModel ? ollamaSubModel : ollamaModel) as unknown as LanguageModel
   }
 
   // Get the model name from environment variable or default
@@ -136,7 +137,7 @@ export function getModelByEnv(useSubModel = false): LanguageModelV1 {
       apiKey: process.env.AZURE_API_KEY,
       resourceName: process.env.AZURE_RESOURCE_NAME,
     })
-    return azure.chat(process.env.AZURE_DEPLOYMENT_NAME || 'gpt-4o')
+    return azure.chat(process.env.AZURE_DEPLOYMENT_NAME || 'gpt-4o') as unknown as LanguageModel
   }
 
   if (process.env.GROQ_API_KEY) {
@@ -144,7 +145,7 @@ export function getModelByEnv(useSubModel = false): LanguageModelV1 {
       apiKey: process.env.GROQ_API_KEY,
       baseURL: "https://api.groq.com/openai/v1",
     })
-    return groq.chat(process.env.GROQ_API_MODEL || 'mixtral-8x7b-32768')
+    return groq.chat(process.env.GROQ_API_MODEL || 'mixtral-8x7b-32768') as unknown as LanguageModel
   }
 
   if (process.env.OPENAI_API_KEY) {
@@ -153,7 +154,7 @@ export function getModelByEnv(useSubModel = false): LanguageModelV1 {
       apiKey: process.env.OPENAI_API_KEY,
     }) : openai
 
-    return customOpenAI.chat(process.env.OPENAI_API_MODEL || 'gpt-4o')
+    return customOpenAI.chat(process.env.OPENAI_API_MODEL || 'gpt-4o') as unknown as LanguageModel
   }
 
   throw new Error(

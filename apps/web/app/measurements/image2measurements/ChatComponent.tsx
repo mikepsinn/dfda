@@ -1,6 +1,7 @@
 import React from "react"
-import { Message, useChat } from "ai/react"
-import { type CoreTool } from "ai"
+// @ts-ignore - ai/react types may not be fully resolved
+import { useChat, type Message } from "ai/react"
+import { tool } from "ai"
 import { z } from "zod"
 
 interface ChatComponentProps {
@@ -14,10 +15,10 @@ const CustomDescriptionSchema = z.object({
 const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
   console.log("Base64 image:", base64Image)
 
-  const getCustomDescriptionTool: CoreTool = {
-    parameters: CustomDescriptionSchema,
+  const getCustomDescriptionTool = tool({
     description: "Get a custom description of the image based on a specific prompt",
-    execute: async (args: z.infer<typeof CustomDescriptionSchema>, { toolCallId }) => {
+    parameters: CustomDescriptionSchema,
+    execute: async (args: z.infer<typeof CustomDescriptionSchema>) => {
       const customDescriptionResponse = await fetch("/api/image2measurements", {
         method: "POST",
         headers: {
@@ -33,12 +34,14 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
       const responseData = await customDescriptionResponse.json()
       return responseData.analysis
     }
-  }
+  } as any)
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "/api/chat-with-functions",
     body: {
-      tools: [getCustomDescriptionTool]
+      tools: {
+        getCustomDescription: getCustomDescriptionTool
+      }
     }
   })
 
