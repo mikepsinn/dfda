@@ -1,6 +1,5 @@
 import React from "react"
-// @ts-ignore - ai/react types may not be fully resolved
-import { useChat, type Message } from "ai/react"
+import { useChat, type UIMessage } from "@ai-sdk/react"
 import { tool } from "ai"
 import { z } from "zod"
 
@@ -57,7 +56,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
   return (
     <div className="stretch mx-auto flex w-full max-w-md flex-col py-24">
       {messages.length > 0
-        ? messages.map((m: Message) => (
+        ? messages.map((m: UIMessage) => (
             <div
               key={m.id}
               className="whitespace-pre-wrap"
