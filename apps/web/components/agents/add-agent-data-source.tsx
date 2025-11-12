@@ -79,10 +79,9 @@ export default function AddAgentDataSource({
     handleSubmit,
     register,
     reset,
-    control,
     watch,
     setValue,
-    formState: { errors },
+    formState,
   } = useForm<FormData>({
     resolver: zodResolver(dataSourceSchema),
     defaultValues: {

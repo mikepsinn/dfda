@@ -26,7 +26,7 @@ export default function DiseaseEradicationAct() {
           <h2 className="neobrutalist-h2">Overview & Findings 📜</h2>
           <h3 className="neobrutalist-h3">Title</h3>
           <p className="neobrutalist-p">
-            This Act may be cited as the "Disease Eradication Act"
+            This Act may be cited as the "Disease Eradication Initiative"
           </p>
           <ProblemsWithCurrentSystem />
           <DiseaseEradicationActSolutions />

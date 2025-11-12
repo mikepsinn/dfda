@@ -222,8 +222,8 @@ export const routeTree = {
           "isDynamic": false,
           "children": {},
           "emoji": "📜",
-          "description": "📜 View the Disease Eradication Act documentation",
-          "displayName": "Disease Eradication Act"
+          "description": "📜 View the Disease Eradication Initiative documentation",
+          "displayName": "Disease Eradication Initiative"
         },
         "health-savings-sharing": {
           "name": "health-savings-sharing",

@@ -1,7 +1,7 @@
 # Global Health Unifier Agent
 
 ## Core Mission
-To unite humanity in accelerating medical progress through the Disease Eradication Act by coordinating global decentralized clinical trials and automating medical research validation.
+To unite humanity in accelerating medical progress through the Disease Eradication Initiative by coordinating global decentralized clinical trials and automating medical research validation.
 
 ## Key Capabilities
 

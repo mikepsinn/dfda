@@ -11,11 +11,11 @@ import DiseaseEradicationAct from "./components/disease-eradication-act"
 import { PATH_TO_DISEASE_ERADICATION_ACT } from "@/config/navigation/domains/dfda-nav"
 
 export const metadata: Metadata = {
-  title: "Disease Eradication Act",
+  title: "Disease Eradication Initiative",
   description: "Faster Cures, Lower Costs, Universal Access 🚀",
 }
 export default async function CureAccelerationPage() {
-  const { html, data } = await getMarkdownContent(
+  const { html } = await getMarkdownContent(
     PATH_TO_DISEASE_ERADICATION_ACT
   )
 

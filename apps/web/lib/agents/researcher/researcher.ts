@@ -1,4 +1,3 @@
-import { LanguageModelV1 } from "@ai-sdk/provider";
 import { Prisma, PrismaClient, ArticleStatus } from "@prisma/client";
 import { generateObject } from "ai";
 import { RegularSearchOptions, SearchResult, TextContentsOptions } from "exa-js";
@@ -153,15 +152,6 @@ export async function writeArticle(
     languageLevel = "intermediate",
     citationStyle = "hyperlinked-text",
     status = ArticleStatus.DRAFT,
-    temperature,
-    topP,
-    maxTokens,
-    presencePenalty,
-    frequencyPenalty,
-    searchStrategy,
-    dateRangeStart,
-    dateRangeEnd,
-    minSourceRank,
   } = options
 
   console.log(`🚀 Starting Article Generation:

@@ -1,22 +1,13 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { AlertTriangle, ChevronDown, ChevronUp, X } from "lucide-react"
 
 
 export function WorkInProgressDisclaimer() {
-  const [isVisible, setIsVisible] = useState(true)
   const [isExpanded, setIsExpanded] = useState(false)
 
-  useEffect(() => {
-    const isDismissed = localStorage.getItem("health-econ-wip-dismissed")
-    if (isDismissed === "true") {
-      setIsVisible(false)
-    }
-  }, [])
-
   const handleDismiss = () => {
-    setIsVisible(false)
     //localStorage.setItem("health-econ-wip-dismissed", "true")
   }
 

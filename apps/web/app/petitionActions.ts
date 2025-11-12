@@ -100,7 +100,7 @@ export async function signPetition(
   })
 
   // Check milestones
-  const milestones = await prisma.petitionMilestone.findMany({
+  await prisma.petitionMilestone.findMany({
     where: {
       petitionId,
       reached: false,
@@ -143,7 +143,7 @@ export async function addComment(petitionId: string, content: string) {
     },
   })
 
-  const followers = await prisma.petitionFollow.findMany({
+  await prisma.petitionFollow.findMany({
     where: {
       petitionId,
       user: {

@@ -46,7 +46,7 @@ export default function DfdaTopNavbar({
             <DfdaLogoNavMenu navItems={logoNavItems}></DfdaLogoNavMenu>
           </div>
         </div>
-        <div className="hidden md:block">
+        {/* <div className="hidden md:block">
           <div
             className="absolute left-0 right-0 z-10 m-auto justify-self-center rounded-md border p-4 md:static md:mt-0 md:border-none md:p-0"
             style={{ width: "100%", maxWidth: "20rem" }}
@@ -73,7 +73,7 @@ export default function DfdaTopNavbar({
               })}
             </ul>
           </div>
-        </div>
+        </div> */}
         <UserNavDisplay
           user={{
             name: user?.name,

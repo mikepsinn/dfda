@@ -10,9 +10,9 @@ So here's the deal - our current system for developing new treatments is complet
 - 😢 60M people die each year because we don't have adequate treatments
 - 🤒 2.5B people suffer from chronic diseases we can't cure yet
 
-## 💡 The Solution: The Disease Eradication Act
+## 💡 The Solution: The Disease Eradication Initiative
 
-We've designed legislation called the Disease Eradication Act that would:
+We've designed legislation called the Disease Eradication Initiative that would:
 
 1. ✅ **Guarantee Universal Access** - Let any patient try treatments after basic safety testing
 2. 💻 **Free Open Decentralized Trials** - Eliminate billions in trial costs with decentralized infrastructure
@@ -59,4 +59,4 @@ The potential impact is massive - we could:
 - 💝 Help billions of suffering people
 - 🧬 Transform how we develop new cures
 
-P.S. Check out the details and sign our petition at [Disease Eradication Act](https://wishonia.love/dfda/disease-eradication-act) 
+P.S. Check out the details and sign our petition at [Disease Eradication Initiative](https://wishonia.love/dfda/disease-eradication-act) 

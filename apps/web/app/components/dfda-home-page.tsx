@@ -35,13 +35,13 @@ export default function DFDAHomePage() {
 
   const features = [
     {
-      title: "The Disease Eradication Act",
+      title: "The Disease Eradication Initiative",
       desc: "Help us give people suffering access to the most promising treatments",
       color: "bg-blue-400",
       icon: Scroll,
       media: "https://wiki.dfda.earth/right_to_trial_act_image.jpg",
       onClick: async () => {
-        console.log("Disease Eradication Act clicked")
+        console.log("Disease Eradication Initiative clicked")
         setIsLoading(true)
         router.push("/dfda/docs/disease-eradication-act")
       },

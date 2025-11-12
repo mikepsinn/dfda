@@ -10,7 +10,7 @@ Here’s a clearer, more intuitive framework:
 - **Global Referendum on Disease Eradication:** Put the plan to a worldwide vote. Give every citizen a voice to accept or reject the proposed changes. If the global community says “yes,” it grants both moral and political authority to move forward.
 
 **Phase 4: Enact the Legal Framework**  
-- **Disease Eradication Act:** With broad support, pass a law that formalizes the reforms, incentives, and institutions necessary to implement the roadmap. This locks in the structure needed to coordinate efforts, fund research, and reward prevention and cures.
+- **Disease Eradication Initiative:** With broad support, pass a law that formalizes the reforms, incentives, and institutions necessary to implement the roadmap. This locks in the structure needed to coordinate efforts, fund research, and reward prevention and cures.
 
 **Phase 5: Implement, Measure, and Adapt**  
 - **Building the World Without Disease:** Begin large-scale deployment of prevention strategies, cutting-edge treatments, and data-driven policies. Monitor progress, refine approaches based on real-world data, and continually improve systems until disease is effectively eliminated or minimized.

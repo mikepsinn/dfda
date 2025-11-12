@@ -8,7 +8,6 @@ import { LoginPromptButton } from "@/components/LoginPromptButton"
 
 import {
   getTrackingReminderNotifications,
-  skipAllNotifications,
   skipNotification,
   snoozeNotification,
   trackAllNotifications,
@@ -22,7 +21,6 @@ interface NotificationDivider {
 
 export function ReminderInbox({
   userId,
-  session,
 }: {
   userId: string | undefined
   session: Session | null
@@ -33,9 +31,8 @@ export function ReminderInbox({
   const [dividers, setDividers] = useState<NotificationDivider[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
-  const [showRefreshButton, setShowRefreshButton] = useState(false)
 
-  const fetchNotifications = async (noCache = false) => {
+  const fetchNotifications = async () => {
     if (!userId) {
       setError("Please log in to view notifications")
       setLoading(false)
@@ -146,18 +143,6 @@ export function ReminderInbox({
     }
   }
 
-  const handleSkipAll = async (notification: TrackingReminderNotification) => {
-    if (!userId) return
-    try {
-      await skipAllNotifications(notification, userId)
-      setNotifications((prev) =>
-        prev.filter((n) => n.variableId !== notification.variableId)
-      )
-    } catch (error) {
-      console.error("Failed to skip all notifications:", error)
-    }
-  }
-
   const handleActionClick = async (
     action: any,
     notification: TrackingReminderNotification
@@ -226,7 +211,7 @@ export function ReminderInbox({
                 History
               </button>
               <button
-                onClick={() => fetchNotifications(true)}
+                onClick={() => fetchNotifications()}
                 className="w-full rounded-full px-6 py-2 text-green-500 transition-colors hover:bg-green-50"
               >
                 <i className="mr-2">🔄</i>
@@ -246,7 +231,7 @@ export function ReminderInbox({
 
   return (
     <div className="space-y-4">
-      {dividers.map((divider, dividerIndex) => (
+      {dividers.map((divider) => (
         <div
           key={divider.name}
           className="list card rounded-lg bg-white shadow"
@@ -254,7 +239,7 @@ export function ReminderInbox({
           <div className="flex items-center justify-between border-b p-4">
             <h2 className="font-semibold">{divider.name}</h2>
             <button
-              onClick={() => fetchNotifications(true)}
+              onClick={() => fetchNotifications()}
               className="text-blue-500 hover:text-blue-600"
             >
               <i className="mr-1">🔄</i>
@@ -262,7 +247,7 @@ export function ReminderInbox({
             </button>
           </div>
 
-          {divider.trackingReminderNotifications.map((notification, index) => (
+          {divider.trackingReminderNotifications.map((notification) => (
             <div key={notification.id} className="border-b p-4 last:border-b-0">
               <div className="flex items-start gap-4">
                 <div className="h-10 w-10 flex-shrink-0">

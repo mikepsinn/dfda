@@ -32,10 +32,25 @@ export default function DFDAFooter({ navItems = [] }: DFDAFooterProps) {
           ))}
         </ul>
       </div>
-      <p>
-        &copy; 2023 dFDA - Accelerating discovery to minimize suffering in the
-        universe! 🚀
+      <p className="mb-4">
       </p>
+      <div className="mt-4 border-t-2 border-black pt-4 text-sm font-normal">
+        <p className="mb-2">
+          The Foundation for the Eradication of Dementia and Mental Illness (FEDMI) is a private family foundation supporting projects that accelerate medical research, open science, and public health innovation.
+        </p>
+        <p className="mb-2">
+          <strong>Mission:</strong> Support projects accelerating medical research and open science to reduce the global burden of dementia and mental illness.
+        </p>
+        <p>
+          <strong>Contact:</strong>{" "}
+          <a
+            href="mailto:grants@crowdsourcingcures.org"
+            className="hover:underline"
+          >
+            grants@crowdsourcingcures.org
+          </a>
+        </p>
+      </div>
     </footer>
   )
 }

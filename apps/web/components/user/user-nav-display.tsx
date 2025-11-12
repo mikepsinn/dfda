@@ -16,14 +16,17 @@ export function UserNavDisplay({
   avatarNavItems,
   buttonVariant,
 }: UserNavDisplayProps) {
+  // if (!user.email) {
+  //   return (
+  //     <LoginPromptButton
+  //       buttonText="Sign in"
+  //       buttonVariant={buttonVariant}
+  //       buttonSize="sm"
+  //     />
+  //   )
+  // }
   if (!user.email) {
-    return (
-      <LoginPromptButton
-        buttonText="Sign in"
-        buttonVariant={buttonVariant}
-        buttonSize="sm"
-      />
-    )
+    return null
   }
 
   return (
