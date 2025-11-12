@@ -52,11 +52,12 @@ export function DfdaLogoNavMenu({ navItems }: LogoNavMenuProps) {
             className="h-auto"
           /> */}
           <Image
-            src="/img/Logo-Crowdsourcing-Cures-256-70.png"
+            src="/img/Logo-Crowdsourcing-Cures-256-70.webp"
             alt="Crowdsourcing Cures Logo"
             width={256}
             height={70}
             className="h-auto"
+            priority
           />
         </span>
       </DropdownMenuTrigger>

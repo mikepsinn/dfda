@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useMemo, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { Robot } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
@@ -27,13 +27,13 @@ export default function DFDAHomePage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleDigitalTwinSafeClick = async (path: string) => {
+  const handleDigitalTwinSafeClick = useCallback(async (path: string) => {
     setIsLoading(true)
     // send to /safe/redirect/[path]
     router.push(`/safe/redirect/${path}`)
-  }
+  }, [router])
 
-  const features = [
+  const features = useMemo(() => [
     {
       title: "The Disease Eradication Initiative",
       desc: "Help us give people suffering access to the most promising treatments",
@@ -109,9 +109,9 @@ export default function DFDAHomePage() {
         console.log("Why dFDA clicked")
       },
     },
-  ]
+  ], [handleDigitalTwinSafeClick, router])
 
-  const onVariableSelect = (variable: GlobalVariable) => {
+  const onVariableSelect = useCallback((variable: GlobalVariable) => {
     const iframe = document.createElement("div")
     iframe.style.position = "fixed"
     iframe.style.top = "0"
@@ -138,7 +138,7 @@ export default function DFDAHomePage() {
       </div>
     `
     document.body.appendChild(iframe)
-  }
+  }, [])
 
   return (
     <div className="">
