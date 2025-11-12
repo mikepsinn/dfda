@@ -35,6 +35,20 @@ const nextConfig = {
         hostname: 'cdn.openai.com',
         port: '',
       },
+    ],
+    minimumCacheTTL: 31536000, // 1 year cache for optimized images
+  },
+  async headers() {
+    return [
+      {
+        source: '/img/Logo-Crowdsourcing-Cures-256-70.webp',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ]
   },
   output: 'standalone',

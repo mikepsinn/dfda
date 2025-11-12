@@ -58,6 +58,8 @@ export function DfdaLogoNavMenu({ navItems }: LogoNavMenuProps) {
             height={70}
             className="h-auto"
             priority
+            unoptimized
+            sizes="(max-width: 768px) 200px, 256px"
           />
         </span>
       </DropdownMenuTrigger>
