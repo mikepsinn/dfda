@@ -81,7 +81,6 @@ export default function AddAgentDataSource({
     reset,
     watch,
     setValue,
-    formState,
   } = useForm<FormData>({
     resolver: zodResolver(dataSourceSchema),
     defaultValues: {

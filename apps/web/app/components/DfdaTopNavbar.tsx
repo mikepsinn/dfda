@@ -100,7 +100,6 @@ export default function DfdaTopNavbar({
             email: user?.email,
           }}
           avatarNavItems={avatarNavItems}
-          buttonVariant="neobrutalist"
         />
       </nav>
     </header>

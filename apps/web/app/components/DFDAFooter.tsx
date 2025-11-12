@@ -1,16 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { NavItem } from "@/types"
-
-interface DFDAFooterProps {
-  navItems?: NavItem[]
-}
-
-export default function DFDAFooter({ navItems = [] }: DFDAFooterProps) {
+// import Link from "next/link"
+export default function DFDAFooter() {
   return (
     <footer className="mt-12 rounded-xl border-4 border-black bg-white p-4 text-center font-bold shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <ul className="flex flex-wrap justify-center gap-4">
           {navItems.map((item, index) => (
             <li key={index}>
@@ -31,7 +25,7 @@ export default function DFDAFooter({ navItems = [] }: DFDAFooterProps) {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       <p className="mb-4">
       </p>
       <div className="mt-4 border-t-2 border-black pt-4 text-sm font-normal">
