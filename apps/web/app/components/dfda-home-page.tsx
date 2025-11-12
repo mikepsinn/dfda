@@ -14,7 +14,7 @@ import AdvancedTrialSearch from "../trials/components/AdvancedTrialSearch"
 import CitizenScienceSection from "./CitizenScienceSection"
 import DFDAComparisonTable from "./DFDAComparisonTable"
 import DFDACostSavingsTable from "./DFDACostSavingsTable"
-import { DFDADisclaimer } from "./DFDADisclaimer"
+// import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
 // import DeathTollTimer from "./DeathTollTimer"
@@ -169,7 +169,7 @@ export default function DFDAHomePage() {
       {/* <DeathTollTimer /> */}
 
       <main className="space-y-12">
-        <DFDADisclaimer />
+        {/* <DFDADisclaimer /> */}
         <section className="neobrutalist-gradient-container neobrutalist-gradient-green mb-12 ">
           <h2 className="neobrutalist-title mb-6">Problems We Can Solve</h2>
           <p className="neobrutalist-description mb-6">
