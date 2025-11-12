@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
@@ -59,7 +59,6 @@ interface MeasurementFormProps {
 
 export function MeasurementForm({ variable }: MeasurementFormProps) {
   const router = useRouter()
-  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(false)
 
   const defaultValues: Partial<MeasurementFormValues> = {

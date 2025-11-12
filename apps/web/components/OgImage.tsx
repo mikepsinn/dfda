@@ -1,5 +1,5 @@
 
-export function OgImage({ title, description, url, image }: any) {
+export function OgImage({ title, description }: any) {
   return (
     <>
       <div

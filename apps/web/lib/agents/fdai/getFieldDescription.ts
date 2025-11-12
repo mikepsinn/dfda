@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-function getFieldDescription(schema: z.ZodType<any>, path: string): string | undefined {
+export function getFieldDescription(schema: z.ZodType<any>, path: string): string | undefined {
     const parts = path.split('.');
     let current: z.ZodType<any> = schema;
     for (const part of parts) {

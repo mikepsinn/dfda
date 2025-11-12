@@ -43,11 +43,19 @@ export function DfdaLogoNavMenu({ navItems }: LogoNavMenuProps) {
     <DropdownMenu open={open} onOpenChange={setOpen} modal={true}>
       <DropdownMenuTrigger>
         <span className="inline-flex items-center border-2 border-black bg-white p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          <Image
+          {/* Old DFDA logo */}
+          {/* <Image
             src="/docs/dfda-wide-text-logo-transparent-4-light-background.svg"
             alt="DFDA Logo"
             width={200}
             height={40}
+            className="h-auto"
+          /> */}
+          <Image
+            src="/img/Logo-Crowdsourcing-Cures-256-70.png"
+            alt="Crowdsourcing Cures Logo"
+            width={256}
+            height={70}
             className="h-auto"
           />
         </span>

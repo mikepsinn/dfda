@@ -5,7 +5,7 @@ import { TavilySearchResult } from '@tavily/core';
 export class SourceLinker {
   constructor(private tavilyClient: TavilyClient) {}
 
-  async findSource(searchTerm: string, suggestedText?: string): Promise<TavilySearchResult[]> {
+  async findSource(searchTerm: string): Promise<TavilySearchResult[]> {
     const searchResults = await this.tavilyClient.searchTopic(searchTerm);
       
     if (searchResults.results && searchResults.results.length > 0) {

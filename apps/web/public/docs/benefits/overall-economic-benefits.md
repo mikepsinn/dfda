@@ -1,4 +1,6 @@
 ---
+number: $1.37T
+textFollowingNumber: "in annual economic benefits"
 title: Overall Economic Benefits
 description: >-
   Quantitative analysis of global economic benefits from decentralized clinical trials and automated FDA processes
@@ -15,12 +17,6 @@ toc: true
 [6. Niche Therapies](#6-more-therapies-for-smaller-markets)  
 [7. Summary Table](#7-annual-benefits-summary)  
 [8. References](#8-references)
----
-title: Overall Economic Benefits
-description: >-
-  This model estimates the global economic benefits of a decentralized, automated FDA trial platform.
-emoji: 📈
----
 
 Below is a consolidated, quantitative analysis of global benefits from a universal shift to:
 

@@ -1,4 +1,3 @@
-import { LanguageModelV1 } from "@ai-sdk/provider";
 import { Prisma, PrismaClient, ArticleStatus } from "@prisma/client";
 import { generateObject } from "ai";
 import { RegularSearchOptions, SearchResult, TextContentsOptions } from "exa-js";
@@ -153,15 +152,6 @@ export async function writeArticle(
     languageLevel = "intermediate",
     citationStyle = "hyperlinked-text",
     status = ArticleStatus.DRAFT,
-    temperature,
-    topP,
-    maxTokens,
-    presencePenalty,
-    frequencyPenalty,
-    searchStrategy,
-    dateRangeStart,
-    dateRangeEnd,
-    minSourceRank,
   } = options
 
   console.log(`🚀 Starting Article Generation:
@@ -196,7 +186,7 @@ export async function writeArticle(
     progress: 40
   })
 
-  const model: LanguageModelV1 = getModelByName(options.modelName)
+  const model = getModelByName(options.modelName)
 
   let inputData = searchResults
     .map(
@@ -287,9 +277,9 @@ export async function writeArticle(
   const pricing = MODEL_PRICING[modelName] || { input: 0, output: 0 }
   
   const tokenUsage = {
-    completionTokens: result.usage?.completionTokens || 0,
-    promptTokens: result.usage?.promptTokens || 0,
-    totalTokens: result.usage?.totalTokens || 0
+    completionTokens: (result.usage as any)?.completionTokens || (result.usage as any)?.outputTokens || 0,
+    promptTokens: (result.usage as any)?.promptTokens || (result.usage as any)?.inputTokens || 0,
+    totalTokens: (result.usage as any)?.totalTokens || 0
   }
 
   // Calculate cost in USD

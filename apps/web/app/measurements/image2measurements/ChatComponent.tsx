@@ -1,6 +1,6 @@
 import React from "react"
-import { Message, useChat } from "ai/react"
-import { type CoreTool } from "ai"
+import { useChat, type UIMessage } from "@ai-sdk/react"
+import { DefaultChatTransport, tool } from "ai"
 import { z } from "zod"
 
 interface ChatComponentProps {
@@ -14,10 +14,10 @@ const CustomDescriptionSchema = z.object({
 const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
   console.log("Base64 image:", base64Image)
 
-  const getCustomDescriptionTool: CoreTool = {
-    parameters: CustomDescriptionSchema,
+  const getCustomDescriptionTool = tool({
     description: "Get a custom description of the image based on a specific prompt",
-    execute: async (args: z.infer<typeof CustomDescriptionSchema>, { toolCallId }) => {
+    parameters: CustomDescriptionSchema,
+    execute: async (args: z.infer<typeof CustomDescriptionSchema>) => {
       const customDescriptionResponse = await fetch("/api/image2measurements", {
         method: "POST",
         headers: {
@@ -33,13 +33,18 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
       const responseData = await customDescriptionResponse.json()
       return responseData.analysis
     }
-  }
+  } as any)
 
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/chat-with-functions",
-    body: {
-      tools: [getCustomDescriptionTool]
-    }
+  const [input, setInput] = React.useState("")
+  const { messages, sendMessage, status } = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat-with-functions",
+      body: {
+        tools: {
+          getCustomDescription: getCustomDescriptionTool
+        }
+      }
+    })
   })
 
   const roleToColorMap: Record<string, string> = {
@@ -51,17 +56,31 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
     tool: "orange",
   }
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (input.trim()) {
+      sendMessage({ text: input })
+      setInput("")
+    }
+  }
+
   return (
     <div className="stretch mx-auto flex w-full max-w-md flex-col py-24">
       {messages.length > 0
-        ? messages.map((m: Message) => (
+        ? messages.map((m: UIMessage) => (
             <div
               key={m.id}
               className="whitespace-pre-wrap"
               style={{ color: roleToColorMap[m.role] || "defaultColor" }}
             >
               <strong>{`${m.role}: `}</strong>
-              {m.content}
+              {m.parts.map((part, idx) => 
+                part.type === 'text' ? (
+                  <span key={idx}>{part.text}</span>
+                ) : (
+                  <span key={idx}>{JSON.stringify(part)}</span>
+                )
+              )}
               <br />
               <br />
             </div>
@@ -73,7 +92,8 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
           className="fixed bottom-0 mb-8 w-full max-w-md rounded border border-gray-300 p-2 shadow-xl"
           value={input}
           placeholder="Ask a question about your data..."
-          onChange={handleInputChange}
+          onChange={(e) => setInput(e.target.value)}
+          disabled={status === 'streaming' || status === 'submitted'}
         />
       </form>
     </div>

@@ -1,4 +1,4 @@
-import {LanguageModelV1} from "@ai-sdk/provider";
+import type { LanguageModel } from "ai";
 import {Organization, Prisma} from "@prisma/client";
 import {generateObject} from "ai";
 import {z} from "zod";
@@ -112,7 +112,7 @@ export async function generateOrganizationFromUrlBySearch(
 }
 
 async function generateAndSaveOrganization(
-    model: LanguageModelV1,
+    model: LanguageModel,
     prompt: string,
     url: string
 ) {

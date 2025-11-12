@@ -1,4 +1,6 @@
 ---
+number: 30-70%
+textFollowingNumber: "lower drug prices"
 title: Lower Drug Prices
 description: >-
   Below is a deeper quantitative analysis of how drastically cheaper trials and increased competition (including off-patent/unpatentable compounds) could push drug prices down.

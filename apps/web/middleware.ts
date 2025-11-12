@@ -27,13 +27,13 @@ const redirects = [
     source: "/cure-acceleration-act",
     destination: "/docs/disease-eradication-act",
     permanent: true,
-    description: "Redirect to Disease Eradication Act",
+    description: "Redirect to Disease Eradication Initiative",
   },
   {
     source: "/docs/disease-eradication-act-summary",
     destination: "/docs/disease-eradication-act",
     permanent: true,
-    description: "Redirect to Disease Eradication Act Summary",
+    description: "Redirect to Disease Eradication Initiative Summary",
   }
   // Add more redirects here
   // Make sure to add the source path to the matcher array below 👇
