@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@repo/database'
+import { prisma } from '@repo/mysql-database'
 import { slugToName } from '@/lib/slugs'
 
 export const runtime = 'nodejs'

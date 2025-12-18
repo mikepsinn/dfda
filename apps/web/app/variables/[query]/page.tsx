@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { prisma } from '@repo/database'
+import { prisma } from '@repo/mysql-database'
 import { slugToName } from '@/lib/slugs'
 
 interface VariablePageProps {

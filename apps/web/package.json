@@ -63,7 +63,7 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
-    "@repo/database": "*",
+    "@repo/mysql-database": "*",
     "@ai-sdk/anthropic": "1.0.5",
     "@ai-sdk/azure": "^0.0.41",
     "@ai-sdk/google": "1.0.10",
