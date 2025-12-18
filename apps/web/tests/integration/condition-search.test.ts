@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { prisma } from '@repo/database'
+import { prisma } from '@/lib/db'
 import { searchRatedConditions, getConditionByNameWithTreatmentRatings } from '@/lib/dfda/treatments'
 
 describe('Integration - Condition Search (Homepage)', () => {
@@ -123,8 +123,8 @@ describe('Integration - Condition Search (Homepage)', () => {
     })
   })
 
-  describe('Database Schema', () => {
-    it('should have dfdaCondition table accessible', async () => {
+  describe('Database Schema (PostgreSQL)', () => {
+    it('should have DfdaCondition table accessible', async () => {
       const conditions = await prisma.dfdaCondition.findMany({
         take: 1,
       })
@@ -133,7 +133,7 @@ describe('Integration - Condition Search (Homepage)', () => {
       expect(Array.isArray(conditions)).toBe(true)
     })
 
-    it('should have dfdaTreatment table accessible', async () => {
+    it('should have DfdaTreatment table accessible', async () => {
       const treatments = await prisma.dfdaTreatment.findMany({
         take: 1,
       })
@@ -142,7 +142,7 @@ describe('Integration - Condition Search (Homepage)', () => {
       expect(Array.isArray(treatments)).toBe(true)
     })
 
-    it('should have dfdaConditionTreatment relation working', async () => {
+    it('should have DfdaConditionTreatment relation working', async () => {
       const conditionTreatments = await prisma.dfdaConditionTreatment.findMany({
         include: {
           treatment: true,

@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { prisma } from '@repo/database'
+import { prisma } from '@repo/mysql-database'
 
 describe('Integration - Variable Search and APIs', () => {
   describe('API Endpoints', () => {

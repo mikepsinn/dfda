@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { prisma } from '@repo/database'
+import { prisma } from '@repo/mysql-database'
 import { nameToSlug } from '@/lib/slugs'
 
 export const metadata = {

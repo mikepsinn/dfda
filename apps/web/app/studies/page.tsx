@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { prisma } from '@repo/database'
+import { prisma } from '@repo/mysql-database'
 
 export const metadata = {
   title: 'Studies | DFDA',

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@repo/database'
+import { prisma } from '@repo/mysql-database'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
