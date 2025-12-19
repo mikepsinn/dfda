@@ -52,6 +52,7 @@ function formatBytes(bytes: number): string {
 
 async function getTableStats(connection: mysql.Connection): Promise<TableStats[]> {
   // Get current database name
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [dbRows] = await connection.query<any[]>('SELECT DATABASE() as db');
   const database = dbRows[0].db;
 
@@ -59,6 +60,7 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
   console.log('Fetching table statistics...\n');
 
   // Get all tables with their sizes
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [tables] = await connection.query<any[]>(
     `
     SELECT
@@ -84,11 +86,13 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
 
     // Try to get exact count, but fall back to estimate if it fails
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const [countResult] = await connection.query<any[]>(
         `SELECT COUNT(*) as count FROM ??`,
         [table.tableName]
       );
       rowCount = countResult[0].count;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       // If COUNT fails (e.g., due to GROUP BY issues in views), use the estimate
       isEstimate = true;
@@ -170,6 +174,7 @@ async function main() {
     console.log('Connecting to MySQL...');
     connection = await mysql.createConnection(MYSQL_URL);
     console.log('✓ Connected successfully');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error('✗ Failed to connect to MySQL:', error.message);
     process.exit(1);
@@ -178,6 +183,7 @@ async function main() {
   try {
     const stats = await getTableStats(connection);
     await displayStats(stats);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error('✗ Failed to get table statistics:', error.message);
     process.exit(1);
