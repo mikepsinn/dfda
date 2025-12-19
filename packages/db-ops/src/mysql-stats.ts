@@ -78,25 +78,18 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
   );
 
   const stats: TableStats[] = [];
-  const errors: string[] = [];
+  const totalTables = tables.length;
 
-  for (const table of tables) {
-    let rowCount = table.rowCount; // Use estimate from information_schema as default
-    let isEstimate = false;
+  console.log(`Processing ${totalTables} tables...\n`);
 
-    // Try to get exact count, but fall back to estimate if it fails
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const [countResult] = await connection.query<any[]>(
-        `SELECT COUNT(*) as count FROM ??`,
-        [table.tableName]
-      );
-      rowCount = countResult[0].count;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      // If COUNT fails (e.g., due to GROUP BY issues in views), use the estimate
-      isEstimate = true;
-      errors.push(`${table.tableName}: ${error.message.split('\n')[0]}`);
+  for (let i = 0; i < tables.length; i++) {
+    const table = tables[i];
+    const rowCount = table.rowCount || 0; // Use estimate from information_schema (0 if null)
+    const isEstimate = true; // Always use estimates for speed
+
+    // Show progress
+    if ((i + 1) % 10 === 0 || i === tables.length - 1) {
+      process.stdout.write(`\rProcessed ${i + 1}/${totalTables} tables...`);
     }
 
     stats.push({
@@ -110,12 +103,7 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
     });
   }
 
-  // Show warnings if any tables had errors
-  if (errors.length > 0) {
-    console.log('⚠️  Warning: Could not get exact counts for some tables (using estimates):');
-    errors.forEach((err) => console.log(`   - ${err}`));
-    console.log('');
-  }
+  console.log('\n');
 
   return stats;
 }
@@ -140,10 +128,7 @@ async function displayStats(stats: TableStats[]) {
   );
 
   // Add note about estimates
-  const hasEstimates = stats.some((s) => s.isEstimate);
-  if (hasEstimates) {
-    console.log('Note: Records prefixed with ~ are estimates from information_schema');
-  }
+  console.log('Note: All record counts are estimates from information_schema.tables');
 
   console.log('\n📈 Summary:');
   console.log(`  Total Tables: ${totalTables}`);
