@@ -39,6 +39,7 @@ interface TableStats {
   indexSize: string;
   totalSize: string;
   engine: string;
+  isEstimate: boolean;
 }
 
 function formatBytes(bytes: number): string {
@@ -79,6 +80,7 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
 
   for (const table of tables) {
     let rowCount = table.rowCount; // Use estimate from information_schema as default
+    let isEstimate = false;
 
     // Try to get exact count, but fall back to estimate if it fails
     try {
@@ -89,6 +91,7 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
       rowCount = countResult[0].count;
     } catch (error: any) {
       // If COUNT fails (e.g., due to GROUP BY issues in views), use the estimate
+      isEstimate = true;
       errors.push(`${table.tableName}: ${error.message.split('\n')[0]}`);
     }
 
@@ -99,6 +102,7 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
       indexSize: formatBytes(table.indexLength || 0),
       totalSize: formatBytes(table.totalLength || 0),
       engine: table.engine || 'Unknown',
+      isEstimate: isEstimate,
     });
   }
 
@@ -123,13 +127,19 @@ async function displayStats(stats: TableStats[]) {
   console.table(
     stats.map((s) => ({
       'Table': s.tableName,
-      'Records': s.rowCount.toLocaleString(),
+      'Records': s.isEstimate ? `~${s.rowCount.toLocaleString()}` : s.rowCount.toLocaleString(),
       'Data Size': s.dataSize,
       'Index Size': s.indexSize,
       'Total Size': s.totalSize,
       'Engine': s.engine,
     }))
   );
+
+  // Add note about estimates
+  const hasEstimates = stats.some((s) => s.isEstimate);
+  if (hasEstimates) {
+    console.log('Note: Records prefixed with ~ are estimates from information_schema');
+  }
 
   console.log('\n📈 Summary:');
   console.log(`  Total Tables: ${totalTables}`);
