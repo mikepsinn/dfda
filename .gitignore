@@ -49,3 +49,4 @@ supabase-config.md
 tsconfig.tsbuildinfo
 packages/database/.env
 test-report.html
+.claude/settings.local.json

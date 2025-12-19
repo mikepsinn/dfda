@@ -1,6 +1,7 @@
 {
-  "name": "db-sync",
+  "name": "mysql-to-postgres-sync",
   "version": "1.0.0",
+  "description": "Sync data from MySQL database to PostgreSQL database with schema migration",
   "private": true,
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
