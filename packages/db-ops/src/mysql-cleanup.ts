@@ -7,6 +7,7 @@
  * - notifications
  * - connector_requests
  * - wp_posts
+ * - wp_postmeta
  * - tracking_reminder_notifications
  * - sent_emails
  * - connector_imports
@@ -45,6 +46,7 @@ const TABLES_TO_CLEAN = [
   'notifications',
   'connector_requests',
   'wp_posts',
+  'wp_postmeta',
   'tracking_reminder_notifications',
   'sent_emails',
   'connector_imports',
