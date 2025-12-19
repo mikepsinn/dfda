@@ -6,19 +6,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 interface SyncConfig {
-  mysql: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-  };
-  postgres: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-    port: number;
-  };
+  mysqlUrl: string;
+  postgresUrl: string;
   tables: string[];
 }
 
@@ -124,8 +113,8 @@ async function syncTable(
 }
 
 async function sync(config: SyncConfig) {
-  const mysqlConn = await mysql.createConnection(config.mysql);
-  const pgPool = new Pool(config.postgres);
+  const mysqlConn = await mysql.createConnection(config.mysqlUrl);
+  const pgPool = new Pool({ connectionString: config.postgresUrl });
 
   try {
     for (const table of config.tables) {
@@ -139,27 +128,36 @@ async function sync(config: SyncConfig) {
 
 // Example usage:
 if (require.main === module) {
+  const mysqlUrl = process.env.MYSQL_DATABASE_URL;
+  const postgresUrl = process.env.POSTGRES_DATABASE_URL || process.env.DATABASE_URL;
+  const tables = (process.env.SYNC_TABLES || '').split(',').filter(Boolean);
+
+  if (!mysqlUrl) {
+    console.error('Error: MYSQL_DATABASE_URL environment variable is required');
+    process.exit(1);
+  }
+
+  if (!postgresUrl) {
+    console.error('Error: POSTGRES_DATABASE_URL or DATABASE_URL environment variable is required');
+    process.exit(1);
+  }
+
+  if (tables.length === 0) {
+    console.error('Error: SYNC_TABLES environment variable is required (comma-separated list of tables)');
+    process.exit(1);
+  }
+
   const config: SyncConfig = {
-    mysql: {
-      host: process.env.MYSQL_HOST || 'localhost',
-      user: process.env.MYSQL_USER || 'root',
-      password: process.env.MYSQL_PASSWORD || '',
-      database: process.env.MYSQL_DATABASE || '',
-    },
-    postgres: {
-      host: process.env.PG_HOST || 'localhost',
-      user: process.env.PG_USER || 'postgres',
-      password: process.env.PG_PASSWORD || '',
-      database: process.env.PG_DATABASE || '',
-      port: parseInt(process.env.PG_PORT || '5432', 10),
-    },
-    tables: (process.env.SYNC_TABLES || '').split(',').filter(Boolean),
+    mysqlUrl,
+    postgresUrl,
+    tables,
   };
 
+  console.log(`Starting sync of ${tables.length} tables from MySQL to PostgreSQL...`);
   sync(config)
-    .then(() => console.log('Sync completed successfully'))
+    .then(() => console.log('✓ Sync completed successfully'))
     .catch(err => {
-      console.error('Sync failed:', err);
+      console.error('✗ Sync failed:', err);
       process.exit(1);
     });
 }
