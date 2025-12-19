@@ -21,9 +21,10 @@
 import { Pool, QueryResult } from 'pg';
 import * as readline from 'readline';
 import dotenv from 'dotenv';
+import path from 'path';
 
-// Load environment variables
-dotenv.config();
+// Load environment variables from package directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const POSTGRES_URL = process.env.POSTGRES_DATABASE_URL || process.env.DATABASE_URL;
 

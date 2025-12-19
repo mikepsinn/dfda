@@ -1,14 +1,24 @@
-# MySQL to PostgreSQL Sync
+# Database Operations Toolkit (db-ops)
 
-A command-line tool to sync data from MySQL database to PostgreSQL database with automatic schema migration.
+A comprehensive CLI toolkit for database operations including:
+- **MySQL Query CLI** - Interactive and command-line MySQL queries
+- **PostgreSQL Query CLI** - Interactive and command-line PostgreSQL queries
+- **MySQL to PostgreSQL Sync** - Sync data from MySQL to PostgreSQL with schema migration
 
 ## Features
 
+### Query CLIs
+- Interactive REPL mode for exploring databases
+- Execute single queries from command line
+- Formatted table output with timing
+- Helper commands (.tables, .schemas, .databases, etc.)
+- Uses connection URLs from environment variables
+
+### MySQL to PostgreSQL Sync
 - Automatically reads MySQL table schemas and creates corresponding PostgreSQL tables
 - Converts MySQL data types to PostgreSQL equivalents
 - Syncs data in batches for efficient processing
 - Supports multiple tables in a single run
-- Uses connection URLs for easy configuration
 
 ## Installation
 
@@ -51,20 +61,58 @@ postgresql://username:password@hostname:port/database
 
 ## Usage
 
-Run the sync:
+### 1. MySQL Query CLI
 
 ```bash
-pnpm sync
+# Interactive mode (REPL)
+pnpm mysql
+
+# Execute a single query
+pnpm mysql "SHOW TABLES"
+pnpm mysql "SELECT * FROM users LIMIT 5"
+
+# Or use tsx directly
+tsx src/mysql-query.ts "SELECT COUNT(*) FROM users"
 ```
 
-Or use npm scripts:
+**Interactive commands:**
+- `.tables` - Show all tables
+- `.databases` - Show all databases
+- `.help` - Show help
+- `.exit` or `.quit` - Exit
+
+### 2. PostgreSQL Query CLI
 
 ```bash
-# Development mode with watch
-pnpm dev
+# Interactive mode (REPL)
+pnpm postgres
+# or
+pnpm pg
 
-# Build the package
-pnpm build
+# Execute a single query
+pnpm postgres "SELECT version()"
+pnpm pg "SELECT * FROM users LIMIT 5"
+
+# Or use tsx directly
+tsx src/postgres-query.ts "SELECT COUNT(*) FROM users"
+```
+
+**Interactive commands:**
+- `.tables` - Show all tables in current schema
+- `.schemas` - Show all schemas
+- `.databases` - Show all databases
+- `.version` - Show PostgreSQL version
+- `.help` - Show help
+- `.exit` or `.quit` - Exit
+
+### 3. MySQL to PostgreSQL Sync
+
+```bash
+# Run the sync
+pnpm sync
+
+# Or use tsx directly
+tsx src/index.ts
 ```
 
 ## How it Works
@@ -82,7 +130,7 @@ pnpm build
 ## Example
 
 ```typescript
-import { sync, type SyncConfig } from 'mysql-to-postgres-sync';
+import { sync, type SyncConfig } from 'db-ops';
 
 const config: SyncConfig = {
   mysqlUrl: 'mysql://root:password@localhost:3306/mydb',

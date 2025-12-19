@@ -2,8 +2,10 @@ import mysql from 'mysql2/promise';
 import { Pool } from 'pg';
 import format from 'pg-format';
 import dotenv from 'dotenv';
+import path from 'path';
 
-dotenv.config();
+// Load environment variables from package directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 interface SyncConfig {
   mysqlUrl: string;

@@ -21,9 +21,10 @@
 import mysql from 'mysql2/promise';
 import * as readline from 'readline';
 import dotenv from 'dotenv';
+import path from 'path';
 
-// Load environment variables
-dotenv.config();
+// Load environment variables from package directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const MYSQL_URL = process.env.MYSQL_DATABASE_URL;
 
