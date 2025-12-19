@@ -71,10 +71,13 @@ export default async function StudiesPage() {
           const correlationType = correlationValue > 0 ? 'positive' : 'negative'
           const correlationColor = correlationValue > 0 ? 'text-green-600' : 'text-red-600'
 
+          // Generate slug format: cause-{id}-effect-{id}-population-study
+          const studySlug = `cause-${study.cause_variable_id}-effect-${study.effect_variable_id}-population-study`
+
           return (
             <Link
               key={study.id}
-              href={`/study/${study.id}`}
+              href={`/study/${studySlug}`}
               className="block p-6 bg-white border rounded-lg hover:shadow-lg transition-shadow"
             >
               <div className="flex justify-between items-start">

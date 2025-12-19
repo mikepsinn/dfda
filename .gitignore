@@ -48,3 +48,4 @@ dfda-node-search-user-key.json
 supabase-config.md
 tsconfig.tsbuildinfo
 packages/database/.env
+test-report.html
