@@ -2,6 +2,7 @@
 
 A comprehensive CLI toolkit for database operations including:
 - **MySQL Query CLI** - Interactive and command-line MySQL queries
+- **MySQL Database Stats** - View all tables with record counts and sizes
 - **PostgreSQL Query CLI** - Interactive and command-line PostgreSQL queries
 - **MySQL to PostgreSQL Sync** - Sync data from MySQL to PostgreSQL with schema migration
 
@@ -81,7 +82,24 @@ tsx src/mysql-query.ts "SELECT COUNT(*) FROM users"
 - `.help` - Show help
 - `.exit` or `.quit` - Exit
 
-### 2. PostgreSQL Query CLI
+### 2. MySQL Database Statistics
+
+View all tables with record counts and sizes:
+
+```bash
+pnpm mysql:stats
+```
+
+**Output includes:**
+- Table name
+- Number of records
+- Data size
+- Index size
+- Total size
+- Storage engine
+- Summary with total tables, records, and database size
+
+### 3. PostgreSQL Query CLI
 
 ```bash
 # Interactive mode (REPL)
@@ -105,7 +123,7 @@ tsx src/postgres-query.ts "SELECT COUNT(*) FROM users"
 - `.help` - Show help
 - `.exit` or `.quit` - Exit
 
-### 3. MySQL to PostgreSQL Sync
+### 4. MySQL to PostgreSQL Sync
 
 ```bash
 # Run the sync

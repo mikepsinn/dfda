@@ -10,6 +10,7 @@
     "lint": "eslint . --max-warnings 0",
     "sync": "tsx src/index.ts",
     "mysql": "tsx src/mysql-query.ts",
+    "mysql:stats": "tsx src/mysql-stats.ts",
     "postgres": "tsx src/postgres-query.ts",
     "pg": "tsx src/postgres-query.ts",
     "type-check": "tsc --noEmit"
