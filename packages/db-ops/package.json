@@ -1,7 +1,7 @@
 {
-  "name": "mysql-to-postgres-sync",
+  "name": "db-ops",
   "version": "1.0.0",
-  "description": "Sync data from MySQL database to PostgreSQL database with schema migration",
+  "description": "Database operations toolkit: MySQL/PostgreSQL query CLI and MySQL-to-PostgreSQL sync tool",
   "private": true,
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
@@ -9,6 +9,9 @@
     "dev": "tsup src/index.ts --format cjs,esm --watch --dts",
     "lint": "eslint . --max-warnings 0",
     "sync": "tsx src/index.ts",
+    "mysql": "tsx src/mysql-query.ts",
+    "postgres": "tsx src/postgres-query.ts",
+    "pg": "tsx src/postgres-query.ts",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
