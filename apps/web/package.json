@@ -148,7 +148,7 @@
     "lucide-react": "^0.363.0",
     "mime-types": "^2.1.35",
     "nanoid": "^5.0.7",
-    "next": "14.2.15",
+    "next": "14.2.35",
     "next-auth": "^4.24.7",
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
