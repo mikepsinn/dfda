@@ -17,6 +17,16 @@ class DFDAAuthError extends Error {
   }
 }
 
+export class DFDAApiError extends Error {
+  constructor(
+    message: string,
+    public readonly status: number
+  ) {
+    super(message)
+    this.name = "DFDAApiError"
+  }
+}
+
 async function dfdaFetch(
   method: "GET" | "POST",
   path: string,
@@ -76,7 +86,10 @@ async function dfdaFetch(
     console.error("URL:", dfdaApiUrl)
     const errorText = await response.text()
     console.error("Response:", errorText)
-    throw new Error(`HTTP error! status: ${response.status}`)
+    throw new DFDAApiError(
+      `DFDA API request failed with status ${response.status}`,
+      response.status
+    )
   }
   const json = await response.json()
   if (json.error) {

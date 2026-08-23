@@ -1,4 +1,9 @@
+/**
+ * @jest-environment node
+ */
+
 import {
+  getPublicStudy,
   getPublicStudies,
   getPublicVariable,
   getPublicVariableCategories,
@@ -49,14 +54,15 @@ describe("public DFDA data client", () => {
   })
 
   it("removes private and boring categories before sorting them", async () => {
-    fetchMock.mockResolvedValueOnce(
-      jsonResponse([
-        { id: 1, name: "Private", isPublic: false, numberOfVariables: 100 },
-        { id: 2, name: "Boring", boring: true, numberOfVariables: 90 },
-        { id: 3, name: "Symptoms", isPublic: true, numberOfVariables: 10 },
-        { id: 4, name: "Treatments", isPublic: true, numberOfVariables: 20 },
-      ])
-    )
+    const categoryResponse = [
+      { id: 1, name: "Private", isPublic: false, numberOfVariables: 100 },
+      { id: 2, name: "Boring", boring: true, numberOfVariables: 90 },
+      { id: 3, name: "Symptoms", isPublic: true, numberOfVariables: 10 },
+      { id: 4, name: "Treatments", isPublic: true, numberOfVariables: 20 },
+    ]
+    fetchMock
+      .mockResolvedValueOnce(jsonResponse(categoryResponse))
+      .mockResolvedValueOnce(jsonResponse(categoryResponse))
 
     const categories = await getPublicVariableCategories()
 
@@ -64,6 +70,16 @@ describe("public DFDA data client", () => {
       "Treatments",
       "Symptoms",
     ])
+
+    const directLookupCategories = await getPublicVariableCategories({
+      includeBoring: true,
+    })
+    expect(
+      directLookupCategories.map((category) => category.name)
+    ).toContain("Boring")
+    expect(
+      directLookupCategories.map((category) => category.name)
+    ).not.toContain("Private")
   })
 
   it("returns population studies from the API response", async () => {
@@ -87,6 +103,26 @@ describe("public DFDA data client", () => {
     expect(studies[0].id).toBe("cause-1-effect-2-population-study")
     expect(requestUrl.searchParams.get("causeVariableId")).toBe("1")
     expect(requestUrl.searchParams.get("aggregated")).toBe("true")
+  })
+
+  it("validates single-study responses", async () => {
+    fetchMock.mockResolvedValueOnce(
+      jsonResponse({
+        id: "cause-1-effect-2-population-study",
+        causeVariable: { id: 1, name: "Sleep" },
+        effectVariable: { id: 2, name: "Mood" },
+      })
+    )
+
+    await expect(
+      getPublicStudy("cause-1-effect-2-population-study")
+    ).resolves.toMatchObject({ causeVariable: { name: "Sleep" } })
+
+    fetchMock.mockResolvedValueOnce(jsonResponse({ success: true }))
+
+    await expect(getPublicStudy("malformed-study")).rejects.toThrow(
+      "DFDA study response was malformed"
+    )
   })
 
   it("resolves canonical slugs when punctuation cannot be reversed", async () => {

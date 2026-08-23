@@ -138,8 +138,12 @@ export default async function VariablePage({ params }: VariablePageProps) {
           <div className="grid gap-3">
             {causeCorrelations.map((study) => {
               const effectVar = study.effectVariable
-              const correlationValue = study.statistics?.forwardPearsonCorrelationCoefficient || 0
-              const correlationColor = correlationValue > 0 ? 'bg-green-200' : 'bg-red-200'
+              const correlationValue = study.statistics?.forwardPearsonCorrelationCoefficient
+              const correlationColor = correlationValue == null || correlationValue === 0
+                ? 'bg-gray-200'
+                : correlationValue > 0
+                  ? 'bg-green-200'
+                  : 'bg-red-200'
 
               return (
                 <Link
@@ -158,12 +162,16 @@ export default async function VariablePage({ params }: VariablePageProps) {
                     <div>
                       <div className="font-bold">{effectVar.name}</div>
                       <div className="text-sm text-gray-600">
-                        {study.statistics?.numberOfUsers?.toLocaleString()} users
+                        {study.statistics?.numberOfUsers == null
+                          ? 'Unknown number of users'
+                          : `${study.statistics.numberOfUsers.toLocaleString()} users`}
                       </div>
                     </div>
                   </div>
                   <div className={`px-3 py-1 ${correlationColor} border-2 border-black font-black rounded`}>
-                    {Math.abs(correlationValue).toFixed(3)}
+                    {correlationValue == null
+                      ? '—'
+                      : Math.abs(correlationValue).toFixed(3)}
                   </div>
                 </Link>
               )
@@ -181,8 +189,12 @@ export default async function VariablePage({ params }: VariablePageProps) {
           <div className="grid gap-3">
             {effectCorrelations.map((study) => {
               const causeVar = study.causeVariable
-              const correlationValue = study.statistics?.forwardPearsonCorrelationCoefficient || 0
-              const correlationColor = correlationValue > 0 ? 'bg-green-200' : 'bg-red-200'
+              const correlationValue = study.statistics?.forwardPearsonCorrelationCoefficient
+              const correlationColor = correlationValue == null || correlationValue === 0
+                ? 'bg-gray-200'
+                : correlationValue > 0
+                  ? 'bg-green-200'
+                  : 'bg-red-200'
 
               return (
                 <Link
@@ -201,12 +213,16 @@ export default async function VariablePage({ params }: VariablePageProps) {
                     <div>
                       <div className="font-bold">{causeVar.name}</div>
                       <div className="text-sm text-gray-600">
-                        {study.statistics?.numberOfUsers?.toLocaleString()} users
+                        {study.statistics?.numberOfUsers == null
+                          ? 'Unknown number of users'
+                          : `${study.statistics.numberOfUsers.toLocaleString()} users`}
                       </div>
                     </div>
                   </div>
                   <div className={`px-3 py-1 ${correlationColor} border-2 border-black font-black rounded`}>
-                    {Math.abs(correlationValue).toFixed(3)}
+                    {correlationValue == null
+                      ? '—'
+                      : Math.abs(correlationValue).toFixed(3)}
                   </div>
                 </Link>
               )

@@ -81,10 +81,12 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
                   </h2>
                   <div className="flex gap-4 text-sm text-gray-600">
                     <span>
-                      <strong>Users:</strong> {statistics?.numberOfUsers?.toLocaleString()}
+                      <strong>Users:</strong>{' '}
+                      {statistics?.numberOfUsers?.toLocaleString() ?? 'Unknown'}
                     </span>
                     <span>
-                      <strong>Correlations:</strong> {statistics?.numberOfCorrelations?.toLocaleString()}
+                      <strong>Correlations:</strong>{' '}
+                      {statistics?.numberOfCorrelations?.toLocaleString() ?? 'Unknown'}
                     </span>
                   </div>
                 </div>

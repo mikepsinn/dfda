@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 jest.mock("@/config/navigation/shared-links", () => ({
   commonLinks: {
     contributeOnGithub: {

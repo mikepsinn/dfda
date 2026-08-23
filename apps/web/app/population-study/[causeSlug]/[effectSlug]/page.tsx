@@ -5,6 +5,7 @@ import { decodeRouteParam } from '@/lib/decode-route-param'
 import {
   getPublicStudy,
   getPublicVariable,
+  PublicDfdaApiError,
 } from '@/lib/dfda/public-data'
 
 interface StudyPageProps {
@@ -58,7 +59,10 @@ const getStudyBySlug = cache(async (causeSlug: string, effectSlug: string) => {
     )
   } catch (error) {
     console.error('Error fetching study:', error)
-    return null
+    if (error instanceof PublicDfdaApiError && error.status === 404) {
+      return null
+    }
+    throw error
   }
 })
 
@@ -102,9 +106,12 @@ export default async function StudyPage({ params }: StudyPageProps) {
               {correlationStrength == null ? 'Unavailable' : `${correlationStrength.toFixed(3)} (${correlationType})`}
             </p>
             <p className="text-lg">
-              <strong>Sample Size:</strong> {statistics.numberOfUsers?.toLocaleString()} users
+              <strong>Sample Size:</strong>{' '}
+              {statistics.numberOfUsers == null
+                ? 'Unknown'
+                : `${statistics.numberOfUsers.toLocaleString()} users`}
             </p>
-            {statistics.statisticalSignificance && (
+            {statistics.statisticalSignificance != null && (
               <p className="text-lg">
                 <strong>Statistical Significance:</strong> {statistics.statisticalSignificance.toFixed(3)}
               </p>

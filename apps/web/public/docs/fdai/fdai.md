@@ -154,4 +154,4 @@ should allow anyone to look up their condition and see how different foods, drug
 
 should be available for all foods and drugs that tell us precisely how they'll affect us instead of just how much Riboflavin is in them.
 
-![](../../img/outcome-labels-no-bg.jpg)
+![Example outcome labels](../../img/outcome-labels-no-bg.jpg)
