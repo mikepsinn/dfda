@@ -30,7 +30,7 @@ export const crawl = async (
 
     const contentType = response.headers["content-type"]
 
-    if (!contentType.includes("text/html")) {
+    if (typeof contentType !== "string" || !contentType.includes("text/html")) {
       console.log(`Skipping ${link} (content type: ${contentType})`)
       return new Set()
     }
