@@ -93,6 +93,14 @@ jobs:
         run: pnpm test:unit --reporters=default --reporters=github-actions
         env:
           CI: true
+
+      # Run TypeScript in its own process so Next's build worker does not retain
+      # the compiler graph alongside the production build.
+      - name: Run type check
+        working-directory: apps/web
+        run: pnpm type-check
+        env:
+          CI: true
             
       # Build and run integration tests
       - name: Build and run integration tests
@@ -105,7 +113,7 @@ jobs:
           pnpm test:integration --reporters=default --reporters=github-actions --verbose
         env:
           CI: true
-          NODE_OPTIONS: --max-old-space-size=6144
+          NEXT_SKIP_BUILD_TYPECHECK: true
 
       # Upload test results and coverage reports
       - name: Upload test results
@@ -133,4 +141,4 @@ jobs:
             apps/web/**/junit.xml
             apps/web/test-report.html
             apps/web/unit-test-report.html
-          retention-days: 30 
+          retention-days: 30
