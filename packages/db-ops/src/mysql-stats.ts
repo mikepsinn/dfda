@@ -31,10 +31,12 @@ if (!MYSQL_URL) {
   console.error('Format: mysql://user:password@host:port/database');
   process.exit(1);
 }
+const MYSQL_DATABASE_URL = MYSQL_URL;
 
 interface TableStats {
   tableName: string;
   rowCount: number;
+  totalLength: number;
   dataSize: string;
   indexSize: string;
   totalSize: string;
@@ -95,6 +97,7 @@ async function getTableStats(connection: mysql.Connection): Promise<TableStats[]
     stats.push({
       tableName: table.tableName,
       rowCount: rowCount,
+      totalLength: Number(table.totalLength) || 0,
       dataSize: formatBytes(table.dataLength || 0),
       indexSize: formatBytes(table.indexLength || 0),
       totalSize: formatBytes(table.totalLength || 0),
@@ -134,20 +137,8 @@ async function displayStats(stats: TableStats[]) {
   console.log(`  Total Tables: ${totalTables}`);
   console.log(`  Total Records: ${totalRows.toLocaleString()}`);
 
-  // Get database size
-  const totalDataSize = stats.reduce((sum, s) => {
-    const match = s.totalSize.match(/^([\d.]+)\s*(\w+)$/);
-    if (!match) return sum;
-    const [, value, unit] = match;
-    const multipliers: { [key: string]: number } = {
-      B: 1,
-      KB: 1024,
-      MB: 1024 * 1024,
-      GB: 1024 * 1024 * 1024,
-      TB: 1024 * 1024 * 1024 * 1024,
-    };
-    return sum + parseFloat(value) * (multipliers[unit] || 0);
-  }, 0);
+  // Sum the raw byte counts; formatted values are intentionally lossy.
+  const totalDataSize = stats.reduce((sum, s) => sum + s.totalLength, 0);
 
   console.log(`  Total Database Size: ${formatBytes(totalDataSize)}\n`);
 }
@@ -157,7 +148,7 @@ async function main() {
 
   try {
     console.log('Connecting to MySQL...');
-    connection = await mysql.createConnection(MYSQL_URL);
+    connection = await mysql.createConnection(MYSQL_DATABASE_URL);
     console.log('✓ Connected successfully');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {

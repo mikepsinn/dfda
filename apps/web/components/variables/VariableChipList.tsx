@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { nameToSlug } from '@/lib/slugs'
 
 interface Variable {
   id: number
   name: string
+  slug?: string | null
   image_url: string | null
   number_of_aggregate_correlations_as_cause?: number | null
   number_of_aggregate_correlations_as_effect?: number | null
@@ -39,7 +39,7 @@ export default function VariableChipList({ variables, loading = false }: Variabl
         return (
           <Link
             key={variable.id}
-            href={`/variables/${nameToSlug(variable.name)}`}
+            href={`/variables/${variable.slug || variable.id}`}
             className="inline-block"
             title={`${totalStudies} studies on the causes or effects of ${variable.name}`}
           >

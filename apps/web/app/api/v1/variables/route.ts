@@ -4,58 +4,53 @@ import { prisma } from '@repo/mysql-database'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
-// Helper function to convert BigInt to Number in nested objects
-function serializeBigInts(obj: any): any {
-  if (obj === null || obj === undefined) return obj
-  if (typeof obj === 'bigint') return Number(obj)
-  if (Array.isArray(obj)) return obj.map(serializeBigInts)
-  if (typeof obj === 'object') {
+// Convert BigInt values while preserving Date and other JSON-aware objects.
+function serializeBigInts(value: unknown): unknown {
+  if (value === null || value === undefined) return value
+  if (typeof value === 'bigint') return Number(value)
+  if (Array.isArray(value)) return value.map(serializeBigInts)
+  if (typeof value === 'object') {
+    const prototype = Object.getPrototypeOf(value)
+    if (prototype !== Object.prototype && prototype !== null) return value
+
     return Object.fromEntries(
-      Object.entries(obj).map(([key, value]) => [key, serializeBigInts(value)])
+      Object.entries(value).map(([key, nestedValue]) => [key, serializeBigInts(nestedValue)])
     )
   }
-  return obj
+  return value
 }
 
 export async function GET() {
   try {
-    // Get interesting (non-boring) category IDs
-    const interestingCategories = await prisma.variable_categories.findMany({
-      where: {
-        deleted_at: null,
-        boring: false,
-      },
-      select: {
-        id: true,
-      },
-    })
+    const rankedVariableIds = await prisma.$queryRaw<Array<{ id: number }>>`
+      SELECT v.id
+      FROM variables v
+      INNER JOIN variable_categories c ON c.id = v.variable_category_id
+      WHERE v.deleted_at IS NULL
+        AND v.is_public = TRUE
+        AND v.number_of_user_variables > 2
+        AND v.number_of_raw_measurements_with_tags_joins_children > 5
+        AND (
+          COALESCE(v.number_of_aggregate_correlations_as_cause, 0) > 0
+          OR COALESCE(v.number_of_aggregate_correlations_as_effect, 0) > 0
+        )
+        AND c.deleted_at IS NULL
+        AND c.boring = FALSE
+      ORDER BY (
+        COALESCE(v.number_of_aggregate_correlations_as_cause, 0)
+        + COALESCE(v.number_of_aggregate_correlations_as_effect, 0)
+      ) DESC,
+      v.number_of_user_variables DESC,
+      v.id ASC
+      LIMIT 500
+    `
 
-    const interestingCategoryIds = interestingCategories.map((cat) => cat.id)
+    const rankedIds = rankedVariableIds.map(({ id }) => id)
 
     const variables = await prisma.variables.findMany({
       where: {
-        deleted_at: null,
-        is_public: true,
-        number_of_user_variables: {
-          gt: 2,
-        },
-        number_of_raw_measurements_with_tags_joins_children: {
-          gt: 5,
-        },
-        OR: [
-          {
-            number_of_aggregate_correlations_as_cause: {
-              gt: 0,
-            },
-          },
-          {
-            number_of_aggregate_correlations_as_effect: {
-              gt: 0,
-            },
-          },
-        ],
-        variable_category_id: {
-          in: interestingCategoryIds,
+        id: {
+          in: rankedIds,
         },
       },
       include: {
@@ -66,19 +61,12 @@ export async function GET() {
           },
         },
       },
-      orderBy: [
-        {
-          number_of_user_variables: 'desc',
-        },
-      ],
-      take: 500, // Limit to 500 for performance
     })
 
-    // Sort by total correlations (cause + effect)
-    const sortedVariables = variables.sort((a, b) => {
-      const aTotal = (a.number_of_aggregate_correlations_as_cause || 0) + (a.number_of_aggregate_correlations_as_effect || 0)
-      const bTotal = (b.number_of_aggregate_correlations_as_cause || 0) + (b.number_of_aggregate_correlations_as_effect || 0)
-      return bTotal - aTotal
+    const variablesById = new Map(variables.map((variable) => [variable.id, variable]))
+    const sortedVariables = rankedIds.flatMap((id) => {
+      const variable = variablesById.get(id)
+      return variable ? [variable] : []
     })
 
     // Convert ALL BigInt fields to numbers for JSON serialization

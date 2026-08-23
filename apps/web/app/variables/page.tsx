@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { nameToSlug } from '@/lib/slugs'
 
 interface Variable {
   id: number
   name: string
+  slug: string | null
   image_url: string | null
   number_of_aggregate_correlations_as_cause: number | null
   number_of_aggregate_correlations_as_effect: number | null
@@ -20,18 +20,29 @@ export default function VariablesPage() {
   const [filteredVariables, setFilteredVariables] = useState<Variable[]>([])
   const [searchQuery, setSearchQuery] = useState('')
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     // Fetch variables on mount
     fetch('/api/v1/variables')
-      .then(res => res.json())
+      .then(async res => {
+        if (!res.ok) {
+          throw new Error(`Variables request failed with status ${res.status}`)
+        }
+        return res.json()
+      })
       .then(data => {
+        if (!Array.isArray(data?.variables)) {
+          throw new Error('Variables response did not contain a variables array')
+        }
         setVariables(data.variables)
         setFilteredVariables(data.variables)
-        setLoading(false)
       })
       .catch(err => {
         console.error('Error loading variables:', err)
+        setError('Unable to load variables. Please try again later.')
+      })
+      .finally(() => {
         setLoading(false)
       })
   }, [])
@@ -59,6 +70,14 @@ export default function VariablesPage() {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">Loading variables...</div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div role="alert" className="text-center text-red-700">{error}</div>
       </div>
     )
   }
@@ -97,7 +116,7 @@ export default function VariablesPage() {
           return (
             <Link
               key={variable.id}
-              href={`/variables/${nameToSlug(variable.name)}`}
+              href={`/variables/${variable.slug || variable.id}`}
               className="inline-block"
               title={`${totalStudies} studies on the causes or effects of ${variable.name}`}
             >

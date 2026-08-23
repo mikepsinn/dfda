@@ -1,20 +1,20 @@
 import Link from 'next/link'
 import { prisma } from '@repo/mysql-database'
-import { nameToSlug } from '@/lib/slugs'
 
 export const metadata = {
   title: 'Variable Categories | DFDA',
   description: 'Browse all variable categories and explore tracked variables.',
 }
 
-// Revalidate every 6 hours
-export const revalidate = 21600
+// MySQL is optional for deployments that do not expose this route.
+export const dynamic = 'force-dynamic'
 
 async function getVariableCategories() {
   const categories = await prisma.variable_categories.findMany({
     where: {
       deleted_at: null,
       boring: false,
+      is_public: true,
     },
     orderBy: [
       {
@@ -43,7 +43,7 @@ export default async function VariableCategoriesPage() {
           return (
             <Link
               key={category.id}
-              href={`/variable-categories/${nameToSlug(category.name)}`}
+              href={`/variable-categories/${category.slug || category.id}`}
               className="block p-6 bg-white border-4 border-black rounded-lg hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all"
             >
               <div className="flex items-start gap-4">

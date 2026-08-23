@@ -3,7 +3,9 @@
  */
 import { prisma } from '@repo/mysql-database'
 
-describe('Integration - Variable Search and APIs', () => {
+const describeWithMysql = process.env.MYSQL_DATABASE_URL ? describe : describe.skip
+
+describeWithMysql('Integration - Variable Search and APIs', () => {
   describe('API Endpoints', () => {
     it('should have /api/v1/variables endpoint accessible', async () => {
       // This test verifies the API endpoint exists and returns valid structure
@@ -100,7 +102,6 @@ describe('Integration - Variable Search and APIs', () => {
         where: {
           name: {
             contains: searchTerm,
-            mode: 'insensitive',
           },
           deleted_at: null,
           is_public: true,
@@ -133,7 +134,6 @@ describe('Integration - Variable Search and APIs', () => {
           where: {
             name: {
               contains: searchTerm,
-              mode: 'insensitive',
             },
             variable_category_id: category.id,
             deleted_at: null,

@@ -3,6 +3,7 @@
 A comprehensive CLI toolkit for database operations including:
 - **MySQL Query CLI** - Interactive and command-line MySQL queries
 - **MySQL Database Stats** - View all tables with record counts and sizes
+- **MySQL Table Cleanup** - Preview and explicitly confirm destructive table cleanup
 - **PostgreSQL Query CLI** - Interactive and command-line PostgreSQL queries
 - **MySQL to PostgreSQL Sync** - Sync data from MySQL to PostgreSQL with schema migration
 
@@ -20,6 +21,12 @@ A comprehensive CLI toolkit for database operations including:
 - Converts MySQL data types to PostgreSQL equivalents
 - Syncs data in batches for efficient processing
 - Supports multiple tables in a single run
+
+### MySQL Table Cleanup
+- Prints every table that would be emptied before doing any work
+- Requires `--yes` for every destructive run
+- Refuses remote or production-like targets unless `--allow-production` is also supplied
+- Tries `TRUNCATE` first and falls back to `DELETE` only for the MySQL foreign-key error
 
 ## Installation
 
@@ -99,7 +106,29 @@ pnpm mysql:stats
 - Storage engine
 - Summary with total tables, records, and database size
 
-### 3. PostgreSQL Query CLI
+### 3. MySQL Table Cleanup
+
+This command permanently removes every row from the tables listed in
+`src/mysql-cleanup.ts`. The list includes WordPress content tables such as
+`wp_posts` and `wp_postmeta`, so inspect both the target database and the table
+list before confirming it.
+
+```bash
+# Print the complete cleanup plan without connecting to the database
+pnpm mysql:cleanup -- --dry-run
+
+# Clean a local database after reviewing the plan
+pnpm mysql:cleanup -- --yes
+
+# A remote or production-like target needs a second explicit override
+pnpm mysql:cleanup -- --yes --allow-production
+```
+
+The script tries `TRUNCATE` for each table. It uses `DELETE` only when MySQL
+reports that a foreign-key relationship prevents the truncate. A failure in any
+table produces a nonzero exit code.
+
+### 4. PostgreSQL Query CLI
 
 ```bash
 # Interactive mode (REPL)
@@ -123,7 +152,7 @@ tsx src/postgres-query.ts "SELECT COUNT(*) FROM users"
 - `.help` - Show help
 - `.exit` or `.quit` - Exit
 
-### 4. MySQL to PostgreSQL Sync
+### 5. MySQL to PostgreSQL Sync
 
 ```bash
 # Run the sync
@@ -164,7 +193,8 @@ await sync(config);
 - The PostgreSQL tables will be **truncated** before data insertion to ensure clean sync
 - Make sure the PostgreSQL user has permissions to create tables and insert data
 - Large tables are processed in batches of 1000 rows to optimize performance
-- All syncs run in a single transaction per table
+- Sync operations are not currently wrapped in a transaction. If a batch fails,
+  the target table may contain only the rows inserted before that failure.
 
 ## Requirements
 
