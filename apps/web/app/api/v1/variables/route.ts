@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server"
 
 import {
+  getPublicVariableCategories,
   getPublicVariables,
+  isDiscoverablePublicVariable,
   toVariableListItem,
 } from "@/lib/dfda/public-data"
 
@@ -10,15 +12,18 @@ export const dynamic = "force-dynamic"
 
 export async function GET() {
   try {
-    const variables = await getPublicVariables({ concise: true, limit: 200 })
+    const [variables, categories] = await Promise.all([
+      getPublicVariables({ concise: true, limit: 200 }),
+      getPublicVariableCategories(),
+    ])
+    const discoverableCategoryNames = new Set(
+      categories.map((category) => category.name)
+    )
     const rankedVariables = variables
       .filter(
         (variable) =>
-          (variable.numberOfUserVariables ?? 0) > 2 &&
-          (variable.numberOfMeasurements ?? 0) > 5 &&
-          (variable.numberOfAggregateCorrelationsAsCause ?? 0) +
-            (variable.numberOfAggregateCorrelationsAsEffect ?? 0) >
-            0
+          isDiscoverablePublicVariable(variable) &&
+          discoverableCategoryNames.has(variable.variableCategoryName ?? "")
       )
       .sort((left, right) => {
         const leftStudies =

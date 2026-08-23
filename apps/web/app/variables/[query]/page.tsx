@@ -14,6 +14,10 @@ interface VariablePageProps {
   }
 }
 
+// Study API responses include large nested reports and charts. Keep this page
+// to the ten strongest relationships in each direction to bound cold renders.
+const RELATED_STUDY_LIMIT = 10
+
 const getVariableData = cache(async (query: string) => {
   const decodedQuery = decodeRouteParam(query)
   if (decodedQuery === null) return null
@@ -22,8 +26,14 @@ const getVariableData = cache(async (query: string) => {
   if (!variable) return null
 
   const [causeCorrelations, effectCorrelations] = await Promise.all([
-    getPublicStudies({ causeVariableId: variable.id, limit: 10 }),
-    getPublicStudies({ effectVariableId: variable.id, limit: 10 }),
+    getPublicStudies({
+      causeVariableId: variable.id,
+      limit: RELATED_STUDY_LIMIT,
+    }),
+    getPublicStudies({
+      effectVariableId: variable.id,
+      limit: RELATED_STUDY_LIMIT,
+    }),
   ])
 
   return {

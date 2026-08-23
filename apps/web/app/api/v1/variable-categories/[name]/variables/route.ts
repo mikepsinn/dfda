@@ -4,6 +4,7 @@ import { decodeRouteParam } from "@/lib/decode-route-param"
 import {
   getPublicVariableCategories,
   getPublicVariables,
+  isDiscoverablePublicVariable,
   toVariableCategoryListItem,
   toVariableListItem,
 } from "@/lib/dfda/public-data"
@@ -41,11 +42,13 @@ export async function GET(
       return NextResponse.json({ error: "Category not found" }, { status: 404 })
     }
 
-    const variables = await getPublicVariables({
-      categoryName: category.name,
-      concise: true,
-      limit: 200,
-    })
+    const variables = (
+      await getPublicVariables({
+        categoryName: category.name,
+        concise: true,
+        limit: 200,
+      })
+    ).filter(isDiscoverablePublicVariable)
 
     return NextResponse.json({
       category: toVariableCategoryListItem(category),
