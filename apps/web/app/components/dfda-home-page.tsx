@@ -46,7 +46,7 @@ export default function DFDAHomePage() {
       desc: "Help us give people suffering access to the most promising treatments",
       color: "bg-blue-400",
       icon: Scroll,
-      media: "https://wiki.dfda.earth/right_to_trial_act_image.jpg",
+      media: "/img/right-to-trial-act.webp",
       onClick: async () => {
         console.log("Disease Eradication Initiative clicked")
         setIsLoading(true)
