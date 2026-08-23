@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@repo/mysql-database'
 import { slugToName } from '@/lib/slugs'
+import { decodeRouteParam } from '@/lib/decode-route-param'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -25,6 +26,11 @@ export async function GET(
   request: Request,
   { params }: { params: { name: string } }
 ) {
+  const categoryKey = decodeRouteParam(params.name)
+  if (categoryKey === null) {
+    return NextResponse.json({ error: 'Invalid category name encoding' }, { status: 400 })
+  }
+
   if (!process.env.MYSQL_DATABASE_URL) {
     return NextResponse.json(
       { error: 'Variable discovery is not configured' },
@@ -33,7 +39,6 @@ export async function GET(
   }
 
   try {
-    const categoryKey = decodeURIComponent(params.name)
     const categoryName = slugToName(categoryKey)
     const categoryId = /^\d+$/.test(categoryKey) ? Number.parseInt(categoryKey, 10) : null
 

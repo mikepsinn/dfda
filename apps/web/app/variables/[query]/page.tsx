@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { prisma } from '@repo/mysql-database'
 import { slugToName } from '@/lib/slugs'
+import { decodeRouteParam } from '@/lib/decode-route-param'
 
 interface VariablePageProps {
   params: {
@@ -32,7 +33,9 @@ async function getVariable(query: string) {
     })
   } else {
     // Convert slug to name (Laravel uses underscores, e.g., "Overall_Mood" -> "Overall Mood")
-    const decodedQuery = decodeURIComponent(query)
+    const decodedQuery = decodeRouteParam(query)
+    if (decodedQuery === null) return null
+
     const name = slugToName(decodedQuery)
     variable = await prisma.variables.findFirst({
       where: {
