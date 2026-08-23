@@ -1,14 +1,15 @@
 "use client"
 
-import React, { useState, useMemo, useCallback } from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Robot } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
-import { Activity, Info, Pill, Scroll, Users } from "lucide-react"
+import { Activity, Info, Pill, Scroll, Users, X } from "lucide-react"
 
 import { GlobalVariable } from "@/types/models/all"
 import VariableSearchAutocomplete from "@/app/components/VariableSearchAutocomplete"
 import { NewsletterSection } from "@/components/landingPage/NewsletterSection"
+import { getEmbeddableVariableUrl } from "@/lib/dfda/variable-page-url"
 
 import AdvancedTrialSearch from "../trials/components/AdvancedTrialSearch"
 import CitizenScienceSection from "./CitizenScienceSection"
@@ -26,6 +27,9 @@ import BenefitStatisticsGrid from "./BenefitStatisticsGrid"
 export default function DFDAHomePage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
+  const [selectedVariableUrl, setSelectedVariableUrl] = useState<string | null>(
+    null
+  )
 
   const handleDigitalTwinSafeClick = useCallback(async (path: string) => {
     setIsLoading(true)
@@ -111,40 +115,64 @@ export default function DFDAHomePage() {
     },
   ], [handleDigitalTwinSafeClick, router])
 
-  const onVariableSelect = useCallback((variable: GlobalVariable) => {
-    const iframe = document.createElement("div")
-    iframe.style.position = "fixed"
-    iframe.style.top = "0"
-    iframe.style.left = "0"
-    iframe.style.width = "100vw"
-    iframe.style.height = "100vh"
-    iframe.style.backgroundColor = "rgba(0,0,0,0.75)"
-    iframe.style.zIndex = "50"
-    iframe.innerHTML = `
-      <div class="w-full h-full p-4 relative">
-        <button 
-          class="absolute top-4 right-4 bg-white rounded-full p-4 hover:bg-gray-100 text-black"
-          onclick="this.parentElement.parentElement.remove()"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <iframe 
-          src="https://studies.dfda.earth/variables/${variable.variableId}"
-          class="w-full h-full bg-white rounded-xl"
-        ></iframe>
-      </div>
-    `
-    document.body.appendChild(iframe)
+  const closeVariableStudy = useCallback(() => {
+    setSelectedVariableUrl(null)
   }, [])
+
+  const onVariableSelect = useCallback((variable: GlobalVariable) => {
+    setSelectedVariableUrl(getEmbeddableVariableUrl(variable))
+  }, [])
+
+  useEffect(() => {
+    if (!selectedVariableUrl) return
+
+    const previousOverflow = document.body.style.overflow
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeVariableStudy()
+    }
+
+    document.body.style.overflow = "hidden"
+    document.addEventListener("keydown", handleEscape)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener("keydown", handleEscape)
+    }
+  }, [closeVariableStudy, selectedVariableUrl])
 
   return (
     <div className="">
       {isLoading && (
         <div className="neobrutalist-loading">
           <div className="neobrutalist-loading-spinner"></div>
+        </div>
+      )}
+      {selectedVariableUrl && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Variable mega-study"
+          className="fixed inset-0 z-50 bg-black/75 p-4"
+          onClick={closeVariableStudy}
+        >
+          <div
+            className="relative h-full w-full"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              aria-label="Close variable mega-study"
+              className="absolute right-0 top-0 z-10 rounded-full bg-white p-4 text-black hover:bg-gray-100"
+              onClick={closeVariableStudy}
+            >
+              <X aria-hidden="true" size={32} />
+            </button>
+            <iframe
+              src={selectedVariableUrl}
+              className="h-full w-full rounded-xl bg-white"
+              title="Variable mega-study"
+            />
+          </div>
         </div>
       )}
       <header className="neobrutalist-container mb-12">
