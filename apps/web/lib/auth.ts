@@ -8,6 +8,7 @@ import type { OAuthConfig } from "next-auth/providers/oauth"
 
 import { env } from "@/env.mjs"
 import { prisma as db } from "@/lib/db"
+import { DFDA_APP_ORIGIN } from "@/lib/dfda/constants"
 
 interface DFDAProfile {
   id: number | string
@@ -24,16 +25,16 @@ const DFDAProvider = {
   type: "oauth",
   version: "2.0",
   authorization: {
-    url: "https://safe.dfda.earth/oauth/authorize",
+    url: `${DFDA_APP_ORIGIN}/oauth/authorize`,
     params: {
       scope: "readmeasurements writemeasurements",
       grant_type: "authorization_code",
     },
   },
   token: {
-    url: "https://safe.dfda.earth/oauth/token",
+    url: `${DFDA_APP_ORIGIN}/oauth/token`,
   },
-  userinfo: "https://safe.dfda.earth/api/v1/user",
+  userinfo: `${DFDA_APP_ORIGIN}/api/v1/user`,
   profile(profile: DFDAProfile) {
     return {
       id: profile.id.toString(),

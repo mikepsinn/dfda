@@ -24,7 +24,6 @@ export type NavItem = {
   tooltip?: string
   disabled?: boolean
   external?: boolean
-  requiresMySql?: boolean
   img?: string
   icon?: IconKeys
   href: string

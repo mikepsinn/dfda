@@ -1,6 +1,11 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { prisma as prismaMysql } from '@repo/mysql-database'
+import { cache } from 'react'
+import { decodeRouteParam } from '@/lib/decode-route-param'
+import {
+  getPublicStudy,
+  getPublicVariable,
+} from '@/lib/dfda/public-data'
 
 interface StudyPageProps {
   params: {
@@ -24,8 +29,8 @@ export async function generateMetadata({ params }: StudyPageProps): Promise<Meta
     }
 
     return {
-      title: `${study.cause_variable.name} → ${study.effect_variable.name} Study`,
-      description: `Analyze the relationship between ${study.cause_variable.name} and ${study.effect_variable.name}.`,
+      title: `${study.causeVariable.name} → ${study.effectVariable.name} Study`,
+      description: `Analyze the relationship between ${study.causeVariable.name} and ${study.effectVariable.name}.`,
     }
   } catch (error) {
     return {
@@ -35,61 +40,37 @@ export async function generateMetadata({ params }: StudyPageProps): Promise<Meta
   }
 }
 
-async function getStudyBySlug(causeSlug: string, effectSlug: string) {
-  if (!process.env.MYSQL_DATABASE_URL) return null
-
+const getStudyBySlug = cache(async (causeSlug: string, effectSlug: string) => {
   try {
-    // Find the cause and effect variables by slug
+    const decodedCauseSlug = decodeRouteParam(causeSlug)
+    const decodedEffectSlug = decodeRouteParam(effectSlug)
+    if (decodedCauseSlug === null || decodedEffectSlug === null) return null
+
     const [causeVariable, effectVariable] = await Promise.all([
-      prismaMysql.variables.findFirst({
-        where: { slug: causeSlug, deleted_at: null, is_public: true },
-        select: { id: true, name: true, slug: true, description: true, image_url: true },
-      }),
-      prismaMysql.variables.findFirst({
-        where: { slug: effectSlug, deleted_at: null, is_public: true },
-        select: { id: true, name: true, slug: true, description: true, image_url: true },
-      }),
+      getPublicVariable(decodedCauseSlug),
+      getPublicVariable(decodedEffectSlug),
     ])
 
-    if (!causeVariable || !effectVariable) {
-      return null
-    }
+    if (!causeVariable || !effectVariable) return null
 
-    // Find the aggregate correlation
-    const correlation = await prismaMysql.aggregate_correlations.findFirst({
-      where: {
-        cause_variable_id: causeVariable.id,
-        effect_variable_id: effectVariable.id,
-        deleted_at: null,
-        is_public: true,
-      },
-      include: {
-        variables_aggregate_correlations_cause_variable_idTovariables: true,
-        variables_aggregate_correlations_effect_variable_idTovariables: true,
-      },
-    })
-
-    if (!correlation) return null
-
-    return {
-      ...correlation,
-      cause_variable: correlation.variables_aggregate_correlations_cause_variable_idTovariables,
-      effect_variable: correlation.variables_aggregate_correlations_effect_variable_idTovariables,
-    }
+    return getPublicStudy(
+      `cause-${causeVariable.id}-effect-${effectVariable.id}-population-study`
+    )
   } catch (error) {
     console.error('Error fetching study:', error)
     return null
   }
-}
+})
 
 export default async function StudyPage({ params }: StudyPageProps) {
   const study = await getStudyBySlug(params.causeSlug, params.effectSlug)
 
-  if (!study) {
+  if (!study || !study.statistics) {
     notFound()
   }
 
-  const correlationValue = study.forward_pearson_correlation_coefficient
+  const statistics = study.statistics
+  const correlationValue = statistics.forwardPearsonCorrelationCoefficient
   const correlationStrength = correlationValue == null ? null : Math.abs(correlationValue)
   const correlationType = correlationValue == null
     ? 'unavailable'
@@ -105,7 +86,7 @@ export default async function StudyPage({ params }: StudyPageProps) {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4">
-            {study.cause_variable.name} → {study.effect_variable.name}
+            {study.causeVariable.name} → {study.effectVariable.name}
           </h1>
           <p className="text-xl text-gray-600">
             Population Study
@@ -121,11 +102,11 @@ export default async function StudyPage({ params }: StudyPageProps) {
               {correlationStrength == null ? 'Unavailable' : `${correlationStrength.toFixed(3)} (${correlationType})`}
             </p>
             <p className="text-lg">
-              <strong>Sample Size:</strong> {study.number_of_users?.toLocaleString()} users
+              <strong>Sample Size:</strong> {statistics.numberOfUsers?.toLocaleString()} users
             </p>
-            {study.statistical_significance && (
+            {statistics.statisticalSignificance && (
               <p className="text-lg">
-                <strong>Statistical Significance:</strong> {study.statistical_significance.toFixed(3)}
+                <strong>Statistical Significance:</strong> {statistics.statisticalSignificance.toFixed(3)}
               </p>
             )}
           </div>
@@ -136,19 +117,19 @@ export default async function StudyPage({ params }: StudyPageProps) {
           <div className="p-6 border rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Predictor Variable</h3>
             <p className="text-2xl font-bold text-blue-600 mb-2">
-              {study.cause_variable.name}
+              {study.causeVariable.name}
             </p>
-            {study.cause_variable.description && (
-              <p className="text-gray-600">{study.cause_variable.description}</p>
+            {study.causeVariable.description && (
+              <p className="text-gray-600">{study.causeVariable.description}</p>
             )}
           </div>
           <div className="p-6 border rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Outcome Variable</h3>
             <p className="text-2xl font-bold text-green-600 mb-2">
-              {study.effect_variable.name}
+              {study.effectVariable.name}
             </p>
-            {study.effect_variable.description && (
-              <p className="text-gray-600">{study.effect_variable.description}</p>
+            {study.effectVariable.description && (
+              <p className="text-gray-600">{study.effectVariable.description}</p>
             )}
           </div>
         </div>
@@ -157,48 +138,48 @@ export default async function StudyPage({ params }: StudyPageProps) {
         <div className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Statistical Analysis</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {study.p_value !== null && (
+            {statistics.pValue != null && (
               <div className="p-4 bg-gray-50 rounded">
                 <p className="text-sm text-gray-600">P-Value</p>
-                <p className="text-2xl font-bold">{study.p_value.toFixed(4)}</p>
+                <p className="text-2xl font-bold">{statistics.pValue.toFixed(4)}</p>
               </div>
             )}
-            {study.t_value !== null && (
+            {statistics.tValue != null && (
               <div className="p-4 bg-gray-50 rounded">
                 <p className="text-sm text-gray-600">T-Value</p>
-                <p className="text-2xl font-bold">{study.t_value.toFixed(3)}</p>
+                <p className="text-2xl font-bold">{statistics.tValue.toFixed(3)}</p>
               </div>
             )}
-            {study.confidence_interval !== null && (
+            {statistics.confidenceInterval != null && (
               <div className="p-4 bg-gray-50 rounded">
                 <p className="text-sm text-gray-600">Confidence Interval</p>
-                <p className="text-2xl font-bold">{study.confidence_interval.toFixed(3)}</p>
+                <p className="text-2xl font-bold">{statistics.confidenceInterval.toFixed(3)}</p>
               </div>
             )}
-            {study.number_of_pairs !== null && (
+            {statistics.numberOfPairs != null && (
               <div className="p-4 bg-gray-50 rounded">
                 <p className="text-sm text-gray-600">Number of Pairs</p>
-                <p className="text-2xl font-bold">{study.number_of_pairs.toLocaleString()}</p>
+                <p className="text-2xl font-bold">{statistics.numberOfPairs.toLocaleString()}</p>
               </div>
             )}
           </div>
         </div>
 
         {/* Effect Details */}
-        {(study.average_effect_following_high_cause !== null || study.average_effect_following_low_cause !== null) && (
+        {(statistics.averageEffectFollowingHighCause != null || statistics.averageEffectFollowingLowCause != null) && (
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Effect Analysis</h2>
             <div className="grid md:grid-cols-2 gap-4">
-              {study.average_effect_following_high_cause !== null && (
+              {statistics.averageEffectFollowingHighCause != null && (
                 <div className="p-4 bg-green-50 rounded">
-                  <p className="text-sm text-gray-600">Average Effect (High {study.cause_variable.name})</p>
-                  <p className="text-2xl font-bold">{study.average_effect_following_high_cause.toFixed(2)}</p>
+                  <p className="text-sm text-gray-600">Average Effect (High {study.causeVariable.name})</p>
+                  <p className="text-2xl font-bold">{statistics.averageEffectFollowingHighCause.toFixed(2)}</p>
                 </div>
               )}
-              {study.average_effect_following_low_cause !== null && (
+              {statistics.averageEffectFollowingLowCause != null && (
                 <div className="p-4 bg-red-50 rounded">
-                  <p className="text-sm text-gray-600">Average Effect (Low {study.cause_variable.name})</p>
-                  <p className="text-2xl font-bold">{study.average_effect_following_low_cause.toFixed(2)}</p>
+                  <p className="text-sm text-gray-600">Average Effect (Low {study.causeVariable.name})</p>
+                  <p className="text-2xl font-bold">{statistics.averageEffectFollowingLowCause.toFixed(2)}</p>
                 </div>
               )}
             </div>
@@ -208,7 +189,9 @@ export default async function StudyPage({ params }: StudyPageProps) {
         {/* Footer */}
         <div className="mt-8 pt-6 border-t text-sm text-gray-500">
           <p>Study ID: {study.id}</p>
-          <p>Last updated: {new Date(study.updated_at).toLocaleDateString()}</p>
+          {statistics.updatedAt && (
+            <p>Last updated: {new Date(statistics.updatedAt).toLocaleDateString()}</p>
+          )}
         </div>
       </div>
     </div>

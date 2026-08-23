@@ -12,7 +12,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/app/providers"; // Import Providers
 import { getCurrentUser } from "@/lib/session";
 import { getNavigationForDomain } from "@/config/navigation";
-import { filterAvailableNavigationItems } from "@/config/navigation/nav-availability";
 import DfdaTopNavbar from "./components/DfdaTopNavbar";
 import DFDAFooter from "./components/DFDAFooter";
 
@@ -81,23 +80,10 @@ interface RootLayoutProps {
 export default async function RootLayout({children}: RootLayoutProps) {
   const user = await getCurrentUser()
   const navigation = getNavigationForDomain("dfda.earth")
-  const availability = { mysql: Boolean(process.env.MYSQL_DATABASE_URL) }
-  const topNavItems = filterAvailableNavigationItems(
-    navigation.topNav,
-    availability
-  )
-  const exploreNavItems = filterAvailableNavigationItems(
-    navigation.exploreNav ?? [],
-    availability
-  )
-  const logoNavItems = filterAvailableNavigationItems(
-    navigation.sidebarNav,
-    availability
-  )
-  const avatarNavItems = filterAvailableNavigationItems(
-    navigation.avatarNav,
-    availability
-  )
+  const topNavItems = navigation.topNav
+  const exploreNavItems = navigation.exploreNav ?? []
+  const logoNavItems = navigation.sidebarNav
+  const avatarNavItems = navigation.avatarNav
   return (
       <html lang="en" suppressHydrationWarning>
       <body className={cn("antialiased", spaceGrotesk.className)}>

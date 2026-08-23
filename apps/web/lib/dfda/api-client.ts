@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db"
 import { getOrCreateDfdaAccessToken } from "./auth"
+import { DFDA_APP_ORIGIN } from "./constants"
 
 // Helper function to get DFDA client ID
 function getDFDAClientId(): string {
@@ -25,7 +26,7 @@ async function dfdaFetch(
   additionalHeaders?: Record<string, string>
 ) {
   const dfdaParams = new URLSearchParams(urlParams)
-  const dfdaApiUrl = `https://safe.dfda.earth/api/v3/${path}?${dfdaParams}`
+  const dfdaApiUrl = `${DFDA_APP_ORIGIN}/api/v3/${path}?${dfdaParams}`
   const headers: HeadersInit = {
     accept: "application/json",
     "Content-Type": method === "POST" ? "application/json" : "",
@@ -100,7 +101,7 @@ async function refreshAccessToken(userId: string): Promise<string | null> {
     }
 
     // Make refresh token request
-    const response = await fetch("https://safe.dfda.earth/oauth/token", {
+    const response = await fetch(`${DFDA_APP_ORIGIN}/oauth/token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -177,4 +178,4 @@ export async function dfdaPOST(
   return dfdaFetch("POST", path, urlParams, body, yourUserId, additionalHeaders)
 }
 
-export { getDFDAClientId } 
+export { getDFDAClientId }

@@ -3,6 +3,7 @@ import { GlobalVariable } from "@/types/models/GlobalVariable"
 import { UserVariable } from "@/types/models/UserVariable"
 import { TrackingReminderNotification } from "@/types/models/TrackingReminderNotification"
 import type { GetTrackingReminderNotificationsResponse } from "@/types/models/GetTrackingReminderNotificationsResponse"
+import { DFDA_APP_ORIGIN } from "./constants"
 
 export async function getUserVariable(
   variableId: number,
@@ -106,7 +107,7 @@ export async function searchDfdaVariables(
   additionalParams: Record<string, string> = {}
 ): Promise<GlobalVariable[]> {
   try {
-    const baseUrl = "https://safe.fdai.earth/api/v3/variables"
+    const baseUrl = `${DFDA_APP_ORIGIN}/api/v3/variables`
     const params = new URLSearchParams({
       appName: "The Decentralized FDA",
       clientId: getDFDAClientId(),
@@ -269,4 +270,4 @@ export async function skipAllNotifications(
     console.error("Error skipping all notifications:", error)
     throw new Error("Failed to skip all notifications")
   }
-} 
+}

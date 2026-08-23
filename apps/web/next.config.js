@@ -4,7 +4,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@repo/mysql-database'],
   // The site is just a blank page, when I enable this
   // experimental: {
   //   instrumentationHook: true,

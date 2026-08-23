@@ -1,4 +1,7 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "pnpm --filter dfda... install --frozen-lockfile",
+  "buildCommand": "pnpm run build:vercel",
   "crons": [
     {
       "path": "/api/cron/petition-summaries?type=daily",
@@ -9,4 +12,4 @@
       "schedule": "0 9 * * 1"
     }
   ]
-} 
+}
