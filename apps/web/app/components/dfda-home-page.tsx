@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Robot } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
@@ -30,6 +30,9 @@ export default function DFDAHomePage() {
   const [selectedVariableUrl, setSelectedVariableUrl] = useState<string | null>(
     null
   )
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const returnFocusRef = useRef<HTMLElement | null>(null)
 
   const handleDigitalTwinSafeClick = useCallback(async (path: string) => {
     setIsLoading(true)
@@ -120,6 +123,14 @@ export default function DFDAHomePage() {
   }, [])
 
   const onVariableSelect = useCallback((variable: GlobalVariable) => {
+    const activeElement = document.activeElement
+    if (activeElement instanceof HTMLElement) {
+      const searchInput = activeElement
+        .closest("[data-variable-search-autocomplete]")
+        ?.querySelector<HTMLInputElement>('input[type="search"]')
+      returnFocusRef.current = searchInput ?? activeElement
+    }
+
     setSelectedVariableUrl(getEmbeddableVariableUrl(variable))
   }, [])
 
@@ -130,13 +141,53 @@ export default function DFDAHomePage() {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeVariableStudy()
     }
+    const handleTab = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" || !dialogRef.current) return
+
+      const focusableElements = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), iframe, [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([data-focus-sentinel])'
+        )
+      )
+
+      if (focusableElements.length === 0) {
+        event.preventDefault()
+        dialogRef.current.focus()
+        return
+      }
+
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements[focusableElements.length - 1]
+      const activeElement = document.activeElement
+
+      if (
+        event.shiftKey &&
+        (activeElement === firstElement ||
+          !dialogRef.current.contains(activeElement))
+      ) {
+        event.preventDefault()
+        lastElement.focus()
+      } else if (
+        !event.shiftKey &&
+        (activeElement === lastElement ||
+          !dialogRef.current.contains(activeElement))
+      ) {
+        event.preventDefault()
+        firstElement.focus()
+      }
+    }
 
     document.body.style.overflow = "hidden"
     document.addEventListener("keydown", handleEscape)
+    document.addEventListener("keydown", handleTab)
+    closeButtonRef.current?.focus()
 
     return () => {
       document.body.style.overflow = previousOverflow
       document.removeEventListener("keydown", handleEscape)
+      document.removeEventListener("keydown", handleTab)
+      returnFocusRef.current?.focus()
+      returnFocusRef.current = null
     }
   }, [closeVariableStudy, selectedVariableUrl])
 
@@ -156,10 +207,13 @@ export default function DFDAHomePage() {
           onClick={closeVariableStudy}
         >
           <div
+            ref={dialogRef}
+            tabIndex={-1}
             className="relative h-full w-full"
             onClick={(event) => event.stopPropagation()}
           >
             <button
+              ref={closeButtonRef}
               type="button"
               aria-label="Close variable mega-study"
               className="absolute right-0 top-0 z-10 rounded-full bg-white p-4 text-black hover:bg-gray-100"
@@ -171,6 +225,12 @@ export default function DFDAHomePage() {
               src={selectedVariableUrl}
               className="h-full w-full rounded-xl bg-white"
               title="Variable mega-study"
+            />
+            <span
+              data-focus-sentinel
+              tabIndex={0}
+              className="sr-only"
+              onFocus={() => closeButtonRef.current?.focus()}
             />
           </div>
         </div>
