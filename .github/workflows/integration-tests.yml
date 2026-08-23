@@ -101,6 +101,7 @@ jobs:
         run: pnpm type-check
         env:
           CI: true
+          NODE_OPTIONS: --max-old-space-size=10240
             
       # Build and run integration tests
       - name: Build and run integration tests
