@@ -4,6 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@types/react-calendar-heatmap>@types/react': 18.2.55
+  '@types/react-dom@18.2.19>@types/react': 18.2.55
+  '@types/react-katex>@types/react': 18.2.55
+  '@types/react-syntax-highlighter>@types/react': 18.2.55
+
 importers:
 
   .:
@@ -12,6 +18,9 @@ importers:
         specifier: 5.10.2
         version: 5.10.2(prisma@5.10.2)
     devDependencies:
+      '@types/react':
+        specifier: 18.2.55
+        version: 18.2.55
       prettier:
         specifier: ^3.2.5
         version: 3.4.2
@@ -23264,11 +23273,11 @@ snapshots:
 
   '@types/react-calendar-heatmap@1.9.0':
     dependencies:
-      '@types/react': 19.2.7
+      '@types/react': 18.2.55
 
   '@types/react-dom@18.2.19':
     dependencies:
-      '@types/react': 19.2.7
+      '@types/react': 18.2.55
 
   '@types/react-dom@19.2.3(@types/react@19.2.7)':
     dependencies:
@@ -23276,11 +23285,11 @@ snapshots:
 
   '@types/react-katex@3.0.4':
     dependencies:
-      '@types/react': 19.2.7
+      '@types/react': 18.2.55
 
   '@types/react-syntax-highlighter@15.5.13':
     dependencies:
-      '@types/react': 19.2.7
+      '@types/react': 18.2.55
 
   '@types/react@18.2.55':
     dependencies:
