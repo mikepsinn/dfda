@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default async function PrivacyPage() {
   const privacyMdPath = path.join(process.cwd(), 'public/docs/privacy.md')
   let content = await fs.promises.readFile(privacyMdPath, 'utf8')
-  
+
   // Replace hardcoded dFDA references with siteConfig values
   // Replace "The dFDA" first, then standalone "dFDA" to avoid double replacement
   // Remove "The " prefix from siteConfig.name if it exists, to avoid "The The ..."

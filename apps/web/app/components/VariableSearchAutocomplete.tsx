@@ -160,7 +160,11 @@ export default function VariableSearchAutocomplete({
   }, [searchTerm, searchParams, cacheKey])
 
   return (
-    <div ref={componentRef} className="relative flex-grow">
+    <div
+      ref={componentRef}
+      data-variable-search-autocomplete
+      className="relative flex-grow"
+    >
       <Input
         type="search"
         value={searchTerm}

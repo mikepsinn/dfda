@@ -1,5 +1,5 @@
 {
-  "name": "@repo/database",
+  "name": "@repo/mysql-database",
   "version": "1.0.0",
   "exports": {
     ".": "./src/client.ts"
@@ -8,12 +8,12 @@
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push",
-    "db:seed": "tsx src/seed.ts",
     "dev": "tsup src/* --watch",
     "format": "prisma format",
     "generate": "prisma generate",
     "generate:schema": "tsx src/generate-schema.ts",
     "lint": "eslint . --max-warnings 0",
+    "postinstall": "prisma generate",
     "prebuild": "npm run generate",
     "predev": "npm run generate",
     "studio": "prisma studio"

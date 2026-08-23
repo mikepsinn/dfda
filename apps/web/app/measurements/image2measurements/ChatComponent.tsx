@@ -74,7 +74,7 @@ const ChatComponent: React.FC<ChatComponentProps> = ({ base64Image }) => {
               style={{ color: roleToColorMap[m.role] || "defaultColor" }}
             >
               <strong>{`${m.role}: `}</strong>
-              {m.parts.map((part, idx) => 
+              {m.parts.map((part, idx) =>
                 part.type === 'text' ? (
                   <span key={idx}>{part.text}</span>
                 ) : (

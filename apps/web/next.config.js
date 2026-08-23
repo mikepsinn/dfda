@@ -4,6 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['@repo/mysql-database'],
   // The site is just a blank page, when I enable this
   // experimental: {
   //   instrumentationHook: true,
@@ -68,11 +69,10 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: false,
+    // CI runs `pnpm type-check` immediately before the build. Skipping Next's
+    // duplicate checker there avoids retaining the compiler graph inside the
+    // memory-heavy production build worker.
+    ignoreBuildErrors: process.env.NEXT_SKIP_BUILD_TYPECHECK === 'true',
   },
 }
 
