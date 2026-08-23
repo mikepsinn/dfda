@@ -105,6 +105,7 @@ jobs:
           pnpm test:integration --reporters=default --reporters=github-actions --verbose
         env:
           CI: true
+          NODE_OPTIONS: --max-old-space-size=6144
 
       # Upload test results and coverage reports
       - name: Upload test results
