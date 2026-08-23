@@ -2,8 +2,19 @@ import { DFDA_APP_ORIGIN } from "./constants"
 import { nameToSlug, slugToName } from "@/lib/slugs"
 
 const PUBLIC_DATA_REVALIDATE_SECONDS = 3600
+const PUBLIC_DATA_TIMEOUT_MS = 30_000
 
 type QueryValue = string | number | boolean | undefined
+
+export class PublicDfdaApiError extends Error {
+  constructor(
+    message: string,
+    public readonly status: number
+  ) {
+    super(message)
+    this.name = "PublicDfdaApiError"
+  }
+}
 
 export interface PublicVariable {
   id: number
@@ -81,10 +92,14 @@ async function publicDfdaGet<T>(
   const response = await fetch(url, {
     headers: { accept: "application/json" },
     next: { revalidate: PUBLIC_DATA_REVALIDATE_SECONDS },
+    signal: AbortSignal.timeout(PUBLIC_DATA_TIMEOUT_MS),
   })
 
   if (!response.ok) {
-    throw new Error(`DFDA API request failed with status ${response.status}`)
+    throw new PublicDfdaApiError(
+      `DFDA API request failed with status ${response.status}`,
+      response.status
+    )
   }
 
   return response.json() as Promise<T>
@@ -185,7 +200,11 @@ export function isDiscoverablePublicVariable(variable: PublicVariable) {
   )
 }
 
-export async function getPublicVariableCategories() {
+export async function getPublicVariableCategories({
+  includeBoring = false,
+}: {
+  includeBoring?: boolean
+} = {}) {
   const categories = await publicDfdaGet<unknown>("variableCategories")
 
   if (!Array.isArray(categories)) {
@@ -194,7 +213,9 @@ export async function getPublicVariableCategories() {
 
   return (categories as PublicVariableCategory[])
     .filter((category) =>
-      !category.boring && category.isPublic !== false && category.public !== false
+      (includeBoring || !category.boring) &&
+      category.isPublic !== false &&
+      category.public !== false
     )
     .sort(
       (left, right) =>
@@ -230,7 +251,21 @@ export async function getPublicStudies({
 }
 
 export async function getPublicStudy(studyId: string) {
-  return publicDfdaGet<PublicStudy>("study", { studyId })
+  const study = await publicDfdaGet<unknown>("study", { studyId })
+
+  if (
+    typeof study !== "object" ||
+    study === null ||
+    typeof (study as PublicStudy).id !== "string" ||
+    typeof (study as PublicStudy).causeVariable?.id !== "number" ||
+    typeof (study as PublicStudy).causeVariable?.name !== "string" ||
+    typeof (study as PublicStudy).effectVariable?.id !== "number" ||
+    typeof (study as PublicStudy).effectVariable?.name !== "string"
+  ) {
+    throw new Error("DFDA study response was malformed")
+  }
+
+  return study as PublicStudy
 }
 
 export function getPublicVariableSlug(variable: Pick<PublicVariable, "name">) {

@@ -30,7 +30,9 @@ export async function GET(
     const categoryId = /^\d+$/.test(categoryKey)
       ? Number.parseInt(categoryKey, 10)
       : null
-    const categories = await getPublicVariableCategories()
+    const categories = await getPublicVariableCategories({
+      includeBoring: true,
+    })
     const category = categories.find((candidate) =>
       categoryId === null
         ? candidate.name === categoryName ||

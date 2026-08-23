@@ -3,6 +3,19 @@ import { findArticleByTopic, writeArticle } from "@/lib/agents/researcher/resear
 import { searchClinicalTrialConditions, searchClinicalTrialInterventions } from '@/lib/clinicaltables'
 import { Study } from '@/types/models/Study'
 
+function isStudyResponse(value: unknown): value is Study {
+  if (typeof value !== "object" || value === null) return false
+
+  const study = value as Study
+  return (
+    typeof study.type === "string" &&
+    (typeof study.causeVariableName === "string" ||
+      typeof study.causeVariable?.name === "string") &&
+    (typeof study.effectVariableName === "string" ||
+      typeof study.effectVariable?.name === "string")
+  )
+}
+
 export async function createStudy(
   causeVariableName: string,
   effectVariableName: string,
@@ -27,8 +40,10 @@ export async function getStudy(studyId: string, userId?: string) {
       studyId,
       includeCharts: "true",
     }, userId)
-    const study = response
-    return study
+    if (!isStudyResponse(response)) {
+      throw new Error("DFDA study response was malformed")
+    }
+    return response
   } catch (error) {
     console.error('❌ Error fetching study:', {
       studyId,

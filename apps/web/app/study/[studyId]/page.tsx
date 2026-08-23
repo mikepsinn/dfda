@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import StudyCard from '../../components/StudyCard'
 import { getStudy, getStudyBySlug } from '../../dfdaActions'
 import { Study } from '@/types/models/Study'
+import { DFDAApiError } from '@/lib/dfda/api-client'
 
 interface StudyPageProps {
   params: {
@@ -55,7 +56,10 @@ export default async function StudyPage({ params }: StudyPageProps) {
   try {
     study = await fetchStudy(params.studyId)
   } catch (error) {
-    notFound()
+    if (error instanceof DFDAApiError && error.status === 404) {
+      notFound()
+    }
+    throw error
   }
 
   return (
