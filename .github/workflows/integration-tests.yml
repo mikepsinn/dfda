@@ -57,8 +57,10 @@ jobs:
             
       # Install dependencies
       - name: Install dependencies
-        working-directory: apps/web
-        run: pnpm install --frozen-lockfile
+        # Limit linking to the React 18 web app and its workspace dependencies.
+        # Installing every sibling app also hoists React 19 Radix peer types into
+        # the root node_modules tree, which makes this app's JSX types conflict.
+        run: pnpm --filter dfda... install --frozen-lockfile
             
       # Setup environment variables
       - name: Setup environment variables
