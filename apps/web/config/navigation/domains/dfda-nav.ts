@@ -1,7 +1,8 @@
 import { DomainNavigation } from "../nav-types"
 import { commonLinks } from "../shared-links"
 
-export const PATH_TO_DISEASE_ERADICATION_ACT = "docs/disease-eradication-act/disease-eradication-act.md"
+export const PATH_TO_DISEASE_ERADICATION_ACT =
+  "docs/disease-eradication-act/disease-eradication-act.md"
 
 export const dfdaLinks = {
   dfda: {
@@ -22,11 +23,56 @@ export const dfdaLinks = {
     icon: "treatment",
     tooltip: "Treatments and conditions",
   },
+  variables: {
+    title: "Variables",
+    href: "/variables",
+    icon: "activity",
+    tooltip: "Browse health variables, measurements, and outcomes",
+    requiresMySql: true,
+  },
+  studies: {
+    title: "Studies",
+    href: "/studies",
+    icon: "studies",
+    tooltip: "Browse population studies",
+    requiresMySql: true,
+  },
   trials: {
     title: "Trials",
     href: "/trials",
     icon: "trials",
     tooltip: "Clinical trials",
+  },
+  predictorSearch: {
+    title: "Find Predictors",
+    href: "/predictor-search",
+    icon: "lightbulb",
+    tooltip: "Find factors associated with an outcome",
+  },
+  variableCategories: {
+    title: "Variable Categories",
+    href: "/variable-categories",
+    icon: "sort",
+    tooltip: "Explore variables by category",
+    requiresMySql: true,
+  },
+  createStudy: {
+    title: "Create a Study",
+    href: "/study/create",
+    icon: "add",
+    tooltip: "Create a personalized or population study",
+  },
+  costBenefitAnalyses: {
+    title: "Cost-Benefit Analyses",
+    href: "/cba",
+    icon: "savings",
+    tooltip: "Compare the costs and benefits of health interventions",
+  },
+  articles: {
+    title: "Articles",
+    href: "/articles",
+    icon: "book",
+    tooltip: "Read health research articles",
   },
   digitalTwinSafe: {
     title: "Digital Twin Safe",
@@ -35,22 +81,25 @@ export const dfdaLinks = {
     tooltip: "Import, record and analyze your medical data",
   },
   clinipedia: {
-    title: "Studies",
+    title: "Clinipedia",
     href: "https://studies.dfda.earth",
     icon: "studies",
     tooltip: "The Wikipedia of Clinical Research",
+    external: true,
   },
   fdai: {
     title: "FDAi",
     href: "https://fdai.earth",
     icon: "robot",
     tooltip: "An autonomous AI Food and Drug Administration",
+    external: true,
   },
   petition: {
     title: "Disease Eradication Initiative",
     href: "/docs/disease-eradication-act",
     icon: "petition",
-    tooltip: "Help us end suffering by signing the Global Disease Eradication Initiative",
+    tooltip:
+      "Help us end suffering by signing the Global Disease Eradication Initiative",
   },
   healthSavingsSharing: {
     title: "50/50 Health Savings Sharing Program",
@@ -67,7 +116,9 @@ export const dfdaLinks = {
   },
   editDiseaseEradicationAct: {
     title: "Edit Disease Eradication Initiative",
-    href: "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/" + PATH_TO_DISEASE_ERADICATION_ACT,
+    href:
+      "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/" +
+      PATH_TO_DISEASE_ERADICATION_ACT,
     icon: "edit",
     tooltip: "Edit the Disease Eradication Initiative",
   },
@@ -75,16 +126,37 @@ export const dfdaLinks = {
 
 export const dfdaNavigation: DomainNavigation = {
   topNav: [
-    dfdaLinks.clinipedia,
-    dfdaLinks.digitalTwinSafe,
+    dfdaLinks.dfda,
+    dfdaLinks.conditions,
+    dfdaLinks.treatments,
+    dfdaLinks.variables,
+    dfdaLinks.studies,
+    dfdaLinks.trials,
+  ],
+  exploreNav: [
+    dfdaLinks.predictorSearch,
+    dfdaLinks.variableCategories,
+    dfdaLinks.createStudy,
+    dfdaLinks.costBenefitAnalyses,
+    dfdaLinks.articles,
     dfdaLinks.petition,
-    commonLinks.contributeOnGithub,
+    dfdaLinks.digitalTwinSafe,
+    dfdaLinks.clinipedia,
+    dfdaLinks.fdai,
+    dfdaLinks.dfdaDocs,
   ],
   sidebarNav: [
     dfdaLinks.dfda,
     dfdaLinks.conditions,
     dfdaLinks.treatments,
+    dfdaLinks.variables,
+    dfdaLinks.studies,
     dfdaLinks.trials,
+    dfdaLinks.predictorSearch,
+    dfdaLinks.variableCategories,
+    dfdaLinks.createStudy,
+    dfdaLinks.costBenefitAnalyses,
+    dfdaLinks.articles,
     dfdaLinks.clinipedia,
     dfdaLinks.digitalTwinSafe,
     dfdaLinks.fdai,
