@@ -147,7 +147,7 @@ export const otcOutcomeMetrics: Record<string, OutcomeMetric> = {
       drugOTCModelParameters.annualPrescriptionVolume
     ],
     generateDisplayValue: (value: number) => `$${value.toLocaleString()} in accessibility savings`,
-    calculateSensitivity: (value: number, baselineMetrics: Record<string, number>) => ({
+    calculateSensitivity: (value: number) => ({
       bestCase: value * 1.2,
       worstCase: value * 0.8,
       assumptions: [
@@ -156,7 +156,7 @@ export const otcOutcomeMetrics: Record<string, OutcomeMetric> = {
         'Based on historical OTC conversion data'
       ]
     }),
-    generateCalculationExplanation: (value: number, baselineMetrics: Record<string, number>) => 
+    generateCalculationExplanation: () =>
       `Calculated by multiplying the increase in accessibility (${drugOTCModelParameters.accessibilityIncrease.defaultValue * 100}%) by the cost savings per prescription ($${drugOTCModelParameters.prescriptionCost.defaultValue}) and annual volume (${drugOTCModelParameters.annualPrescriptionVolume.defaultValue.toLocaleString()} prescriptions)`
   },
 
@@ -171,7 +171,7 @@ export const otcOutcomeMetrics: Record<string, OutcomeMetric> = {
       drugOTCModelParameters.annualPrescriptionVolume
     ],
     generateDisplayValue: (value: number) => `$${value.toLocaleString()} in safety-related costs`,
-    calculateSensitivity: (value: number, baselineMetrics: Record<string, number>) => ({
+    calculateSensitivity: (value: number) => ({
       bestCase: value * 0.7,
       worstCase: value * 1.5,
       assumptions: [
@@ -180,7 +180,7 @@ export const otcOutcomeMetrics: Record<string, OutcomeMetric> = {
         'Includes only direct medical costs'
       ]
     }),
-    generateCalculationExplanation: (value: number, baselineMetrics: Record<string, number>) =>
+    generateCalculationExplanation: () =>
       `Calculated by multiplying the adverse event rate (${drugOTCModelParameters.adverseEventRate.defaultValue * 100}%) by emergency visit cost ($${drugOTCModelParameters.emergencyVisitCost.defaultValue}) and affected population`
   },
 
@@ -194,7 +194,7 @@ export const otcOutcomeMetrics: Record<string, OutcomeMetric> = {
       drugOTCModelParameters.annualPrescriptionVolume
     ],
     generateDisplayValue: (value: number) => `$${value.toLocaleString()} in price reduction benefits`,
-    calculateSensitivity: (value: number, baselineMetrics: Record<string, number>) => ({
+    calculateSensitivity: (value: number) => ({
       bestCase: value * 1.3,
       worstCase: value * 0.6,
       assumptions: [
@@ -203,7 +203,7 @@ export const otcOutcomeMetrics: Record<string, OutcomeMetric> = {
         'Does not account for potential market consolidation'
       ]
     }),
-    generateCalculationExplanation: (value: number, baselineMetrics: Record<string, number>) =>
+    generateCalculationExplanation: () =>
       `Calculated by applying market competition effect (${drugOTCModelParameters.marketCompetitionEffect.defaultValue * 100}% price reduction) to annual prescription volume`
   }
 };

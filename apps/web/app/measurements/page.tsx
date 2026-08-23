@@ -14,7 +14,6 @@ interface MeasurementsPageProps {
 }
 
 export default async function MeasurementsPage({
-  params,
   searchParams,
 }: MeasurementsPageProps) {
   const user = await getCurrentUser()

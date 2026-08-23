@@ -1,7 +1,7 @@
 import { SearchResults, SearchResultImage } from '@/lib/types/index'
 import { generateObject } from "ai"
 import { z } from "zod"
-import { LanguageModelV1 } from "@ai-sdk/provider"
+import type { LanguageModel } from "ai"
 import { getModelByName } from "@/lib/utils/modelUtils"
 
 export interface ArticleOptions {
@@ -52,7 +52,7 @@ const GeneratedArticleContentSchema = z.object({
 })
 
 export class ArticleGenerator {
-  private model: LanguageModelV1
+  private model: LanguageModel
 
   constructor() {
     this.model = getModelByName() // Use default model or allow passing model name

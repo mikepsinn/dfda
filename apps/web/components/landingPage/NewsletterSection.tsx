@@ -19,7 +19,7 @@ export function NewsletterSection() {
         <EmailSignupForm 
           buttonText="Subscribe"
           placeholder="Enter your email for updates"
-          description="We'll keep you informed about the latest developments in decentralized clinical research."
+          description=""
           callbackUrl="/settings/newsletter"
           className="max-w-md mx-auto"
         />

@@ -59,7 +59,7 @@ This Blueprint describes what such a world looks like. It sets the target before
 2. **Patient Participation:** Let patients easily join trials, report outcomes, and improve the ranking system.
 3. **Reward Prevention and Cures:** Introduce a 50/50 savings split. When a cure saves billions, half the savings go to society, half to the cure’s creators. This makes cures profitable and encourages investment.
 4. **Global Referendum:** Once the roadmap is clear, ask everyone—citizens worldwide—to vote on its adoption.
-5. **Legislation (Disease Eradication Act):** With public support, pass a law that locks in these incentives, data systems, and patient rights.
+5. **Legislation (Disease Eradication Initiative):** With public support, pass a law that locks in these incentives, data systems, and patient rights.
 6. **Ongoing Improvement:** Continuously refine the system based on feedback and new data, keeping the process transparent and democratic.
 
 ---
@@ -79,7 +79,7 @@ If the majority supports the plan, we move to legal implementation.
 
 ---
 
-### The Disease Eradication Act
+### The Disease Eradication Initiative
 
 **Page Goal:** Outline the key provisions of the legislation that locks in the system.
 

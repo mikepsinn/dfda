@@ -103,7 +103,7 @@ export default async function RootLayout({children}: RootLayoutProps) {
               />
               <main className="flex-1">{children}</main>
               <div className="px-4 pb-4">
-                <DFDAFooter navItems={navigation.footerNav}/>
+                <DFDAFooter />
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@
     node scripts/rename-cases.js "Old Name" "New Name"
   
   Example:
-    node scripts/rename-cases.js "Disease Eradication Act" "Disease Eradication Act"
+    node scripts/rename-cases.js "Disease Eradication Initiative" "Disease Eradication Initiative"
 
   This script:
   1. Reads the old and new names from the command line.

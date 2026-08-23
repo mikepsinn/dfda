@@ -1,4 +1,4 @@
-# DISEASE ERADICATION ACT
+# Disease Eradication Initiative
 
 ## 1. PROBLEMS THIS ACT ADDRESSES
 

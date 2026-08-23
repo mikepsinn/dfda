@@ -8,7 +8,7 @@ function getCallerInfo() {
       if (stack) {
         const match = stack.match(/\((.+):(\d+):(\d+)\)/)
         if (match) {
-          const [_, file, line, col] = match
+          const [, file, line, col] = match
           // Convert to format that PhpStorm/WebStorm recognizes
           return `${file}:${line}:${col}`
         }

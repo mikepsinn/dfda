@@ -65,12 +65,11 @@ const MediaContent = ({ media }: { media: string }) => {
 
 export const FeatureBox: React.FC<FeatureBoxProps> = ({ 
   title, 
-  desc, 
-  color, 
-  icon: Icon, 
-  media, 
+  desc,
+  color,
+  icon: Icon,
+  media,
   component,
-  index, 
   onClick 
 }) => {
   return (

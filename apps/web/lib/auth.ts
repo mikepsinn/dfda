@@ -130,7 +130,7 @@ export const authOptions: NextAuthOptions = {
     },
     // I think we might need this to add additional GitHub scopes
     // for getting files from GitHub repos
-    async signIn({ user, account, profile, email, credentials }) {
+    async signIn({ user, account }) {
       if (account?.provider) {
         // 1. Check if this provider account is already linked
         const existingProviderAccount = await db.account.findFirst({

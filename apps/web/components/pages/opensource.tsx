@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 
 export default async function OpenSource() {
-  const { stargazers_count: stars } = await fetch(
+  await fetch(
     "https://api.github.com/repos/decentralized-fda/decentralized-fda",
     {
       next: { revalidate: 60 },

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useMemo, useCallback } from "react"
 import { useRouter } from "next/navigation"
 import { Robot } from "@phosphor-icons/react"
 import { motion } from "framer-motion"
@@ -14,10 +14,10 @@ import AdvancedTrialSearch from "../trials/components/AdvancedTrialSearch"
 import CitizenScienceSection from "./CitizenScienceSection"
 import DFDAComparisonTable from "./DFDAComparisonTable"
 import DFDACostSavingsTable from "./DFDACostSavingsTable"
-import { DFDADisclaimer } from "./DFDADisclaimer"
+// import { DFDADisclaimer } from "./DFDADisclaimer"
 import { FeatureBox } from "./FeatureBox"
 import SolutionSection from "./SolutionSection"
-import DeathTollTimer from "./DeathTollTimer"
+// import DeathTollTimer from "./DeathTollTimer"
 import ProblemsWithCurrentSystem from "../docs/disease-eradication-act/components/problems-with-the-current-system"
 import HowItWorksSection from "./HowItWorksSection"
 import ProblemStatisticsGrid from "./ProblemStatisticsGrid"
@@ -27,21 +27,21 @@ export default function DFDAHomePage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleDigitalTwinSafeClick = async (path: string) => {
+  const handleDigitalTwinSafeClick = useCallback(async (path: string) => {
     setIsLoading(true)
     // send to /safe/redirect/[path]
     router.push(`/safe/redirect/${path}`)
-  }
+  }, [router])
 
-  const features = [
+  const features = useMemo(() => [
     {
-      title: "The Disease Eradication Act",
+      title: "The Disease Eradication Initiative",
       desc: "Help us give people suffering access to the most promising treatments",
       color: "bg-blue-400",
       icon: Scroll,
       media: "https://wiki.dfda.earth/right_to_trial_act_image.jpg",
       onClick: async () => {
-        console.log("Disease Eradication Act clicked")
+        console.log("Disease Eradication Initiative clicked")
         setIsLoading(true)
         router.push("/dfda/docs/disease-eradication-act")
       },
@@ -109,9 +109,9 @@ export default function DFDAHomePage() {
         console.log("Why dFDA clicked")
       },
     },
-  ]
+  ], [handleDigitalTwinSafeClick, router])
 
-  const onVariableSelect = (variable: GlobalVariable) => {
+  const onVariableSelect = useCallback((variable: GlobalVariable) => {
     const iframe = document.createElement("div")
     iframe.style.position = "fixed"
     iframe.style.top = "0"
@@ -138,7 +138,7 @@ export default function DFDAHomePage() {
       </div>
     `
     document.body.appendChild(iframe)
-  }
+  }, [])
 
   return (
     <div className="">
@@ -166,10 +166,10 @@ export default function DFDAHomePage() {
         </motion.p>
       </header>
 
-      <DeathTollTimer />
+      {/* <DeathTollTimer /> */}
 
       <main className="space-y-12">
-        <DFDADisclaimer />
+        {/* <DFDADisclaimer /> */}
         <section className="neobrutalist-gradient-container neobrutalist-gradient-green mb-12 ">
           <h2 className="neobrutalist-title mb-6">Problems We Can Solve</h2>
           <p className="neobrutalist-description mb-6">

@@ -20,15 +20,6 @@ export default async function UserVariablesPage() {
     redirect(authOptions?.pages?.signIn || "/signin")
   }
 
-  // Define search parameters
-  const searchParams = {
-    includePublic: false,
-    sort: "-updatedAt",
-    limit: 10,
-    offset: 0,
-    searchPhrase: "",
-  }
-
   return (
     <Shell>
       <DashboardHeader
