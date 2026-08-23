@@ -28,23 +28,14 @@ export default function DFDAFooter() {
         </ul>
       </div> */}
       <div className="border-black pt-4 text-sm font-normal">
-        <div id="about" className="mb-4 scroll-mt-20">
-          <p className="mb-2">
-            The Foundation for the Eradication of Dementia and Mental Illness 
-          </p>
-          <p className="mb-2">
-            Our Mission: 
-            Radically accelerate medical research to end the global suffering caused by dementia and mental illness.
-          </p>
-        </div>
         <div id="contact" className="mb-4 scroll-mt-20">
           <p>
             <strong>Contact:</strong>{" "}
             <a
-              href="mailto:grants@crowdsourcingcures.org"
+              href="mailto:hello@crowdsourcingcures.org"
               className="hover:underline"
             >
-              grants@crowdsourcingcures.org
+              hello@crowdsourcingcures.org
             </a>
           </p>
         </div>
@@ -54,10 +45,6 @@ export default function DFDAFooter() {
               Privacy Policy
             </Link>
           </div>
-          <p>
-            © {new Date().getFullYear()} The Foundation for the Eradication of
-            Dementia and Mental Illness. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

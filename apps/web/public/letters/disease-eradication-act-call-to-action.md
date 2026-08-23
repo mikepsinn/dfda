@@ -59,4 +59,4 @@ The potential impact is massive - we could:
 - 💝 Help billions of suffering people
 - 🧬 Transform how we develop new cures
 
-P.S. Check out the details and sign our petition at [Disease Eradication Initiative](https://wishonia.love/dfda/disease-eradication-act) 
+P.S. Check out the details and sign our petition at [Disease Eradication Initiative](https://wishonia.love/dfda/disease-eradication-act)

@@ -6,6 +6,9 @@ on:
   # Run on all PRs
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -57,8 +60,10 @@ jobs:
             
       # Install dependencies
       - name: Install dependencies
-        working-directory: apps/web
-        run: pnpm install --frozen-lockfile
+        # Limit linking to the React 18 web app and its workspace dependencies.
+        # Installing every sibling app also hoists React 19 Radix peer types into
+        # the root node_modules tree, which makes this app's JSX types conflict.
+        run: pnpm --filter dfda... install --frozen-lockfile
             
       # Setup environment variables
       - name: Setup environment variables
@@ -93,6 +98,15 @@ jobs:
         run: pnpm test:unit --reporters=default --reporters=github-actions
         env:
           CI: true
+
+      # Run TypeScript in its own process so Next's build worker does not retain
+      # the compiler graph alongside the production build.
+      - name: Run type check
+        working-directory: apps/web
+        run: pnpm type-check
+        env:
+          CI: true
+          NODE_OPTIONS: --max-old-space-size=10240
             
       # Build and run integration tests
       - name: Build and run integration tests
@@ -105,6 +119,7 @@ jobs:
           pnpm test:integration --reporters=default --reporters=github-actions --verbose
         env:
           CI: true
+          NEXT_SKIP_BUILD_TYPECHECK: true
 
       # Upload test results and coverage reports
       - name: Upload test results
@@ -132,4 +147,4 @@ jobs:
             apps/web/**/junit.xml
             apps/web/test-report.html
             apps/web/unit-test-report.html
-          retention-days: 30 
+          retention-days: 30

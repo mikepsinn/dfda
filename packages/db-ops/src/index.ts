@@ -2,36 +2,39 @@ import mysql from 'mysql2/promise';
 import { Pool } from 'pg';
 import format from 'pg-format';
 import dotenv from 'dotenv';
+import path from 'path';
 
-dotenv.config();
+// Load environment variables from package directory
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 interface SyncConfig {
-  mysql: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-  };
-  postgres: {
-    host: string;
-    user: string;
-    password: string;
-    database: string;
-    port: number;
-  };
+  mysqlUrl: string;
+  postgresUrl: string;
   tables: string[];
 }
 
-async function getTableSchema(mysqlConn: mysql.Connection, tableName: string) {
-  const [columns] = await mysqlConn.query(
+interface MySqlColumn extends mysql.RowDataPacket {
+  Field: string;
+  Type: string;
+  Null: 'YES' | 'NO';
+}
+
+async function getTableSchema(
+  mysqlConn: mysql.Connection,
+  tableName: string
+): Promise<MySqlColumn[]> {
+  const [columns] = await mysqlConn.query<MySqlColumn[]>(
     'SHOW COLUMNS FROM ??',
     [tableName]
   );
   return columns;
 }
 
-async function getTableData(mysqlConn: mysql.Connection, tableName: string) {
-  const [rows] = await mysqlConn.query(
+async function getTableData(
+  mysqlConn: mysql.Connection,
+  tableName: string
+): Promise<mysql.RowDataPacket[]> {
+  const [rows] = await mysqlConn.query<mysql.RowDataPacket[]>(
     'SELECT * FROM ??',
     [tableName]
   );
@@ -41,7 +44,7 @@ async function getTableData(mysqlConn: mysql.Connection, tableName: string) {
 async function createPostgresTable(
   pgPool: Pool,
   tableName: string,
-  columns: any[]
+  columns: MySqlColumn[]
 ) {
   const columnDefs = columns.map(col => {
     let pgType = 'text'; // default type
@@ -124,8 +127,8 @@ async function syncTable(
 }
 
 async function sync(config: SyncConfig) {
-  const mysqlConn = await mysql.createConnection(config.mysql);
-  const pgPool = new Pool(config.postgres);
+  const mysqlConn = await mysql.createConnection(config.mysqlUrl);
+  const pgPool = new Pool({ connectionString: config.postgresUrl });
 
   try {
     for (const table of config.tables) {
@@ -139,29 +142,41 @@ async function sync(config: SyncConfig) {
 
 // Example usage:
 if (require.main === module) {
+  const mysqlUrl = process.env.MYSQL_DATABASE_URL;
+  const postgresUrl = process.env.POSTGRES_DATABASE_URL || process.env.DATABASE_URL;
+  const tables = (process.env.SYNC_TABLES || '')
+    .split(',')
+    .map((table) => table.trim())
+    .filter(Boolean);
+
+  if (!mysqlUrl) {
+    console.error('Error: MYSQL_DATABASE_URL environment variable is required');
+    process.exit(1);
+  }
+
+  if (!postgresUrl) {
+    console.error('Error: POSTGRES_DATABASE_URL or DATABASE_URL environment variable is required');
+    process.exit(1);
+  }
+
+  if (tables.length === 0) {
+    console.error('Error: SYNC_TABLES environment variable is required (comma-separated list of tables)');
+    process.exit(1);
+  }
+
   const config: SyncConfig = {
-    mysql: {
-      host: process.env.MYSQL_HOST || 'localhost',
-      user: process.env.MYSQL_USER || 'root',
-      password: process.env.MYSQL_PASSWORD || '',
-      database: process.env.MYSQL_DATABASE || '',
-    },
-    postgres: {
-      host: process.env.PG_HOST || 'localhost',
-      user: process.env.PG_USER || 'postgres',
-      password: process.env.PG_PASSWORD || '',
-      database: process.env.PG_DATABASE || '',
-      port: parseInt(process.env.PG_PORT || '5432', 10),
-    },
-    tables: (process.env.SYNC_TABLES || '').split(',').filter(Boolean),
+    mysqlUrl,
+    postgresUrl,
+    tables,
   };
 
+  console.log(`Starting sync of ${tables.length} tables from MySQL to PostgreSQL...`);
   sync(config)
-    .then(() => console.log('Sync completed successfully'))
+    .then(() => console.log('✓ Sync completed successfully'))
     .catch(err => {
-      console.error('Sync failed:', err);
+      console.error('✗ Sync failed:', err);
       process.exit(1);
     });
 }
 
-export { sync, type SyncConfig }; 
+export { sync, type SyncConfig };

@@ -1,6 +1,8 @@
 import { dfdaGET, dfdaPOST } from "./api-client"
 import { findArticleByTopic, writeArticle } from "@/lib/agents/researcher/researcher"
 import { searchClinicalTrialConditions, searchClinicalTrialInterventions } from '@/lib/clinicaltables'
+import { prisma } from '@repo/mysql-database'
+import { Study } from '@/types/models/Study'
 
 export async function createStudy(
   causeVariableName: string,
@@ -31,6 +33,53 @@ export async function getStudy(studyId: string, userId?: string) {
   } catch (error) {
     console.error('❌ Error fetching study:', {
       studyId,
+      error: error instanceof Error ? error.message : 'Unknown error',
+      fullError: error
+    })
+    throw error
+  }
+}
+
+export async function getStudyBySlug(causeVariableId: number, effectVariableId: number, userId?: string): Promise<Study> {
+  console.log('🔍 Fetching study by slug:', { causeVariableId, effectVariableId })
+
+  try {
+    // Query MySQL database for the aggregate correlation
+    const correlation = await prisma.aggregate_correlations.findFirst({
+      where: {
+        cause_variable_id: causeVariableId,
+        effect_variable_id: effectVariableId,
+        deleted_at: null,
+        is_public: true,
+      },
+      include: {
+        variables_aggregate_correlations_cause_variable_idTovariables: {
+          select: {
+            id: true,
+            name: true,
+            slug: true,
+          },
+        },
+        variables_aggregate_correlations_effect_variable_idTovariables: {
+          select: {
+            id: true,
+            name: true,
+            slug: true,
+          },
+        },
+      },
+    })
+
+    if (!correlation) {
+      throw new Error(`Study not found for cause ${causeVariableId} and effect ${effectVariableId}`)
+    }
+
+    // Now fetch the full study data from the API using the correlation ID
+    return await getStudy(correlation.id.toString(), userId)
+  } catch (error) {
+    console.error('❌ Error fetching study by slug:', {
+      causeVariableId,
+      effectVariableId,
       error: error instanceof Error ? error.message : 'Unknown error',
       fullError: error
     })

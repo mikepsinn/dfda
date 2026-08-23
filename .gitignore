@@ -34,6 +34,7 @@ yarn-error.log*
 .idea
 .history/  
 dist/
+packages/database/generated/
 tmp/
 .env*
 !.env.example
@@ -47,4 +48,7 @@ gcp-service-account-key.json
 dfda-node-search-user-key.json
 supabase-config.md
 tsconfig.tsbuildinfo
+packages/database/.env
+test-report.html
+.claude/settings.local.json
 apps/web/.claude/settings.local.json
