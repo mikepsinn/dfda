@@ -9,8 +9,7 @@ import { comparisonData } from "./dfda-comparison-data"
 export default function DFDAComparisonTable() {
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
 
-  const DetailPanel = ({ 
-    category,
+  const DetailPanel = ({
     regularContent,
     decentralizedContent,
     regularIcon,
@@ -85,7 +84,7 @@ export default function DFDAComparisonTable() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Benefits of the Global Disease Eradication Act
+          Benefits of the Global Disease Eradication Initiative
         </motion.h1>
 
         <motion.h2

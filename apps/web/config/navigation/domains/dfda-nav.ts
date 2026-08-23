@@ -5,7 +5,7 @@ export const PATH_TO_DISEASE_ERADICATION_ACT = "docs/disease-eradication-act/dis
 
 export const dfdaLinks = {
   dfda: {
-    title: "dFDA",
+    title: "Home",
     href: "/",
     icon: "home",
     tooltip: "The Decentralized Food and Drug Administration",
@@ -47,10 +47,10 @@ export const dfdaLinks = {
     tooltip: "An autonomous AI Food and Drug Administration",
   },
   petition: {
-    title: "Disease Eradication Act",
+    title: "Disease Eradication Initiative",
     href: "/docs/disease-eradication-act",
     icon: "petition",
-    tooltip: "Help us end suffering by signing the Global Disease Eradication Act",
+    tooltip: "Help us end suffering by signing the Global Disease Eradication Initiative",
   },
   healthSavingsSharing: {
     title: "50/50 Health Savings Sharing Program",
@@ -66,10 +66,10 @@ export const dfdaLinks = {
     tooltip: "Documentation for the Decentralized FDA",
   },
   editDiseaseEradicationAct: {
-    title: "Edit Disease Eradication Act",
+    title: "Edit Disease Eradication Initiative",
     href: "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/" + PATH_TO_DISEASE_ERADICATION_ACT,
     icon: "edit",
-    tooltip: "Edit the Disease Eradication Act",
+    tooltip: "Edit the Disease Eradication Initiative",
   },
 } as const
 

@@ -1,10 +1,10 @@
-# Disease Eradication Act
+# Disease Eradication Initiative
 
 ## Section 1. Short Title and Findings
 
 ### 1.1 Title
 
-Cited as the "Disease Eradication Act."
+Cited as the "Disease Eradication Initiative."
 
 ### 1.2 Core Findings
 

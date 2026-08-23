@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { X, Search } from "lucide-react"
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { searchReviewedTreatmentsAndConditions } from '../../dfdaActions'
 
 type SearchResult = {
@@ -16,7 +15,6 @@ export function ReviewedTreatmentAndConditionsSearchBox() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
 
   useEffect(() => {
     const handleSearch = async () => {
@@ -40,10 +38,6 @@ export function ReviewedTreatmentAndConditionsSearchBox() {
   const handleClear = () => {
     setQuery('')
     setResults([])
-  }
-
-  const handleClose = () => {
-    router.back()
   }
 
   return (

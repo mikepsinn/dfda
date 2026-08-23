@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { GlobalVariable } from '@/types/models/GlobalVariable'
 import { createStudy } from '../dfdaActions'
 import OutcomeSearchAutocomplete from './OutcomeSearchAutocomplete'
-import { useRouter } from 'next/navigation'
 import VariableSearchAutocomplete from './VariableSearchAutocomplete'
 import { LoginPromptButton } from '@/components/LoginPromptButton'
 import Image from 'next/image'
@@ -41,7 +40,6 @@ const STUDY_TYPES: StudyType[] = [
 ]
 
 export default function CreateStudyForm({ userId }: CreateStudyFormProps) {
-  const router = useRouter()
   const [predictor, setPredictor] = useState<GlobalVariable | null>(null)
   const [outcome, setOutcome] = useState<GlobalVariable | null>(null)
   const [isLoading, setIsLoading] = useState(false)

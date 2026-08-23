@@ -10,7 +10,7 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 
 const queryClient = new QueryClient()
 
-export function Providers({ children, ...props }: ThemeProviderProps) {
+export function Providers({ children }: ThemeProviderProps) {
   return (
   <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <SessionProvider>

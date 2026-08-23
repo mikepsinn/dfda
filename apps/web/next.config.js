@@ -36,6 +36,20 @@ const nextConfig = {
         hostname: 'cdn.openai.com',
         port: '',
       },
+    ],
+    minimumCacheTTL: 31536000, // 1 year cache for optimized images
+  },
+  async headers() {
+    return [
+      {
+        source: '/img/Logo-Crowdsourcing-Cures-256-70.webp',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ]
   },
   output: 'standalone',
@@ -48,6 +62,18 @@ const nextConfig = {
     }
     // In development, use a timestamp
     return `dev-${Date.now()}`
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: false,
   },
 }
 

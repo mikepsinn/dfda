@@ -1,4 +1,3 @@
-import { LanguageModelV1 } from "@ai-sdk/provider";
 import { generateObject } from "ai";
 import { z } from "zod";
 import { getSearchResults } from "@/lib/agents/researcher/getSearchResults";
@@ -169,8 +168,7 @@ Source Content:
 ${searchContent}
 `
 
-  const model: LanguageModelV1 = getModelByName(modelName)
-  const tokens = prompt.length * 1.5
+  const model = getModelByName(modelName)
 
   console.log("generateObject: Analyzing sources for statistical findings...", {
     promptLength: prompt.length,

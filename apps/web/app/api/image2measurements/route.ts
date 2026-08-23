@@ -33,7 +33,6 @@ export async function POST(request: NextRequest) {
   // from the request body. This is essential for processing the image using OpenAI's API.
   let {
     file: base64Image,
-    prompt: customPrompt,
     detail,
     max_tokens,
     image,

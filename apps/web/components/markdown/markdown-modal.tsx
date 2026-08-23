@@ -100,7 +100,7 @@ export default function MarkdownModal({
                     {children}
                   </blockquote>
                 ),
-                code: ({ node, inline, className, children, ...props }) => {
+                code: ({ inline, className, children, ...props }) => {
                   if (inline) {
                     return (
                       <code

@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-import Link from "next/link"
 import { NavItem } from "@/types"
 import { User } from "next-auth"
 
@@ -34,10 +33,6 @@ export default function DfdaTopNavbar({
     avatarNavItems = navigation.avatarNav
   }
 
-  const isExternalLink = (href: string) => {
-    return href.startsWith("http://") || href.startsWith("https://")
-  }
-
   return (
     <header className="select-none">
       <nav className="mx-auto flex items-center justify-between lg:max-w-7xl">
@@ -52,7 +47,31 @@ export default function DfdaTopNavbar({
             style={{ width: "100%", maxWidth: "20rem" }}
           >
             <ul className="flex flex-col items-center space-y-4 opacity-60 md:flex-row md:space-x-6 md:space-y-0">
-              {topNavItems.map((item, index) => {
+              <li>
+                <a
+                  href="#about"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                  className="hover:underline"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                  className="hover:underline"
+                >
+                  Contact
+                </a>
+              </li>
+              {/* {topNavItems.map((item, index) => {
                 return (
                   item.href && (
                     <Link
@@ -70,7 +89,7 @@ export default function DfdaTopNavbar({
                     </Link>
                   )
                 )
-              })}
+              })} */}
             </ul>
           </div>
         </div>
@@ -81,7 +100,6 @@ export default function DfdaTopNavbar({
             email: user?.email,
           }}
           avatarNavItems={avatarNavItems}
-          buttonVariant="neobrutalist"
         />
       </nav>
     </header>
