@@ -1,35 +1,20 @@
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { prisma } from '@repo/mysql-database'
+import {
+  getPublicVariableCategories,
+  toVariableCategoryListItem,
+} from '@/lib/dfda/public-data'
 
 export const metadata = {
   title: 'Variable Categories | DFDA',
   description: 'Browse all variable categories and explore tracked variables.',
 }
 
-// MySQL is optional for deployments that do not expose this route.
-export const dynamic = 'force-dynamic'
-
 async function getVariableCategories() {
-  const categories = await prisma.variable_categories.findMany({
-    where: {
-      deleted_at: null,
-      boring: false,
-      is_public: true,
-    },
-    orderBy: [
-      {
-        number_of_variables: 'desc',
-      },
-    ],
-  })
-
-  return categories
+  const categories = await getPublicVariableCategories()
+  return categories.map(toVariableCategoryListItem)
 }
 
 export default async function VariableCategoriesPage() {
-  if (!process.env.MYSQL_DATABASE_URL) notFound()
-
   const categories = await getVariableCategories()
 
   return (

@@ -12,6 +12,7 @@
     "lint": "next lint",
     "generate-routes": "ts-node --project scripts/tsconfig.json scripts/generateRouteTree.ts",
     "build": "next build",
+    "build:vercel": "cross-env NEXT_SKIP_BUILD_TYPECHECK=true next build",
     "turbo": "next dev --turbo",
     "start": "next start",
     "preview": "next build && next start",
@@ -63,7 +64,6 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
-    "@repo/mysql-database": "*",
     "@ai-sdk/anthropic": "1.0.5",
     "@ai-sdk/azure": "^0.0.41",
     "@ai-sdk/google": "1.0.10",

@@ -130,7 +130,7 @@ The FDAi should then analyze and anonymize the data and publish the results for 
 
 Anyone should be able to create a study, become a prestigious scientist, get a link, and invite all their friends to join!
 
-[Create Study](https://safe.fdai.earth/app/public/#/app/study-creation)
+[Create Study](https://app.dfda.earth/app/public/#/app/study-creation)
 
 ![](https://static.crowdsourcingcures.org/video/create-study-1024x899.gif)
 

@@ -1,26 +1,16 @@
-import { NextResponse } from 'next/server'
-import { prisma } from '@repo/mysql-database'
-import { slugToName } from '@/lib/slugs'
-import { decodeRouteParam } from '@/lib/decode-route-param'
+import { NextResponse } from "next/server"
 
-export const runtime = 'nodejs'
-export const dynamic = 'force-dynamic'
+import { decodeRouteParam } from "@/lib/decode-route-param"
+import {
+  getPublicVariableCategories,
+  getPublicVariables,
+  toVariableCategoryListItem,
+  toVariableListItem,
+} from "@/lib/dfda/public-data"
+import { nameToSlug, slugToName } from "@/lib/slugs"
 
-// Convert BigInt values while preserving Date and other JSON-aware objects.
-function serializeBigInts(value: unknown): unknown {
-  if (value === null || value === undefined) return value
-  if (typeof value === 'bigint') return Number(value)
-  if (Array.isArray(value)) return value.map(serializeBigInts)
-  if (typeof value === 'object') {
-    const prototype = Object.getPrototypeOf(value)
-    if (prototype !== Object.prototype && prototype !== null) return value
-
-    return Object.fromEntries(
-      Object.entries(value).map(([key, nestedValue]) => [key, serializeBigInts(nestedValue)])
-    )
-  }
-  return value
-}
+export const runtime = "nodejs"
+export const dynamic = "force-dynamic"
 
 export async function GET(
   request: Request,
@@ -28,90 +18,44 @@ export async function GET(
 ) {
   const categoryKey = decodeRouteParam(params.name)
   if (categoryKey === null) {
-    return NextResponse.json({ error: 'Invalid category name encoding' }, { status: 400 })
-  }
-
-  if (!process.env.MYSQL_DATABASE_URL) {
     return NextResponse.json(
-      { error: 'Variable discovery is not configured' },
-      { status: 503 }
+      { error: "Invalid category name encoding" },
+      { status: 400 }
     )
   }
 
   try {
     const categoryName = slugToName(categoryKey)
-    const categoryId = /^\d+$/.test(categoryKey) ? Number.parseInt(categoryKey, 10) : null
-
-    // Get the category
-    const category = await prisma.variable_categories.findFirst({
-      where: {
-        deleted_at: null,
-        is_public: true,
-        ...(categoryId === null
-          ? { OR: [{ slug: categoryKey }, { name: categoryName }] }
-          : { id: categoryId }),
-      },
-    })
+    const categoryId = /^\d+$/.test(categoryKey)
+      ? Number.parseInt(categoryKey, 10)
+      : null
+    const categories = await getPublicVariableCategories()
+    const category = categories.find((candidate) =>
+      categoryId === null
+        ? candidate.name === categoryName ||
+          nameToSlug(candidate.name) === categoryKey
+        : candidate.id === categoryId
+    )
 
     if (!category) {
-      return NextResponse.json({ error: 'Category not found' }, { status: 404 })
+      return NextResponse.json({ error: "Category not found" }, { status: 404 })
     }
 
-    const rankedVariableIds = await prisma.$queryRaw<Array<{ id: number }>>`
-      SELECT id
-      FROM variables
-      WHERE variable_category_id = ${category.id}
-        AND deleted_at IS NULL
-        AND is_public = TRUE
-        AND number_of_user_variables > 2
-        AND number_of_raw_measurements_with_tags_joins_children > 5
-        AND (
-          COALESCE(number_of_aggregate_correlations_as_cause, 0) > 0
-          OR COALESCE(number_of_aggregate_correlations_as_effect, 0) > 0
-        )
-      ORDER BY (
-        COALESCE(number_of_aggregate_correlations_as_cause, 0)
-        + COALESCE(number_of_aggregate_correlations_as_effect, 0)
-      ) DESC,
-      number_of_user_variables DESC,
-      id ASC
-      LIMIT 200
-    `
-
-    const rankedIds = rankedVariableIds.map(({ id }) => id)
-    const variables = await prisma.variables.findMany({
-      where: {
-        id: { in: rankedIds },
-        variable_category_id: category.id,
-        deleted_at: null,
-        is_public: true,
-        number_of_user_variables: { gt: 2 },
-        number_of_raw_measurements_with_tags_joins_children: { gt: 5 },
-        OR: [
-          { number_of_aggregate_correlations_as_cause: { gt: 0 } },
-          { number_of_aggregate_correlations_as_effect: { gt: 0 } },
-        ],
-        variable_categories: {
-          deleted_at: null,
-          is_public: true,
-        },
-      },
+    const variables = await getPublicVariables({
+      categoryName: category.name,
+      concise: true,
+      limit: 200,
     })
-    const variablesById = new Map(variables.map((variable) => [variable.id, variable]))
-    const sortedVariables = rankedIds.flatMap((id) => {
-      const variable = variablesById.get(id)
-      return variable ? [variable] : []
-    })
-
-    // Convert ALL BigInt fields to numbers for JSON serialization
-    const serializedVariables = serializeBigInts(sortedVariables)
 
     return NextResponse.json({
-      category: serializeBigInts(category),
-      variables: serializedVariables,
+      category: toVariableCategoryListItem(category),
+      variables: variables.map(toVariableListItem),
     })
   } catch (error) {
-    console.error('Error fetching category variables:', error)
-    return NextResponse.json({ error: 'Failed to fetch variables' }, { status: 500 })
+    console.error("Error fetching category variables from the DFDA API:", error)
+    return NextResponse.json(
+      { error: "Failed to fetch variables" },
+      { status: 502 }
+    )
   }
 }

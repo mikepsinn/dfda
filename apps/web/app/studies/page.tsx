@@ -1,14 +1,13 @@
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { prisma } from '@repo/mysql-database'
+import {
+  getPublicStudies,
+  getPublicVariableSlug,
+} from '@/lib/dfda/public-data'
 
 export const metadata = {
   title: 'Studies | DFDA',
   description: 'Browse all available population studies analyzing relationships between variables.',
 }
-
-// MySQL is optional for deployments that do not expose this route.
-export const dynamic = 'force-dynamic'
 
 interface StudiesPageProps {
   searchParams?: {
@@ -16,71 +15,37 @@ interface StudiesPageProps {
   }
 }
 
-async function getStudies(page: number = 1, perPage: number = 50) {
-  const skip = (page - 1) * perPage
+async function getStudies(page: number = 1, perPage: number = 5) {
+  const studies = await getPublicStudies({
+    limit: perPage,
+    offset: (page - 1) * perPage,
+  })
 
-  const [studies, total] = await Promise.all([
-    prisma.aggregate_correlations.findMany({
-      where: {
-        deleted_at: null,
-        is_public: true,
-      },
-      include: {
-        variables_aggregate_correlations_cause_variable_idTovariables: {
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-          },
-        },
-        variables_aggregate_correlations_effect_variable_idTovariables: {
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-          },
-        },
-      },
-      orderBy: [
-        { aggregate_qm_score: 'desc' },
-      ],
-      skip,
-      take: perPage,
-    }),
-    prisma.aggregate_correlations.count({
-      where: {
-        deleted_at: null,
-        is_public: true,
-      },
-    }),
-  ])
-
-  return { studies, total, page, perPage }
+  return { studies, page, perPage }
 }
 
 export default async function StudiesPage({ searchParams }: StudiesPageProps) {
-  if (!process.env.MYSQL_DATABASE_URL) notFound()
-
   const rawPage = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
   const parsedPage = Number.parseInt(rawPage || '1', 10)
   const requestedPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1
-  const { studies, total, page, perPage } = await getStudies(requestedPage)
-  const totalPages = Math.max(1, Math.ceil(total / perPage))
+  const { studies, page, perPage } = await getStudies(requestedPage)
+  const hasNextPage = studies.length === perPage
 
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4">Population Studies</h1>
         <p className="text-xl text-gray-600">
-          Browse {total.toLocaleString()} studies analyzing relationships between variables
+          Browse studies analyzing relationships between variables
         </p>
       </div>
 
       <div className="grid gap-4">
         {studies.map((study) => {
-          const causeVar = study.variables_aggregate_correlations_cause_variable_idTovariables
-          const effectVar = study.variables_aggregate_correlations_effect_variable_idTovariables
-          const correlationValue = study.forward_pearson_correlation_coefficient
+          const causeVar = study.causeVariable
+          const effectVar = study.effectVariable
+          const statistics = study.statistics
+          const correlationValue = statistics?.forwardPearsonCorrelationCoefficient
           const correlationType = correlationValue == null
             ? 'unavailable'
             : correlationValue > 0
@@ -94,11 +59,9 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
               ? 'text-green-600'
               : 'text-red-600'
 
-          // Generate slug format: cause-{id}-effect-{id}-population-study
-          const studySlug = `cause-${study.cause_variable_id}-effect-${study.effect_variable_id}-population-study`
-          const studyHref = causeVar.slug && effectVar.slug
-            ? `/population-study/${encodeURIComponent(causeVar.slug)}/${encodeURIComponent(effectVar.slug)}`
-            : `/study/${studySlug}`
+          const studyHref = `/population-study/${encodeURIComponent(
+            getPublicVariableSlug(causeVar)
+          )}/${encodeURIComponent(getPublicVariableSlug(effectVar))}`
 
           return (
             <Link
@@ -115,10 +78,10 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
                   </h2>
                   <div className="flex gap-4 text-sm text-gray-600">
                     <span>
-                      <strong>Users:</strong> {study.number_of_users?.toLocaleString()}
+                      <strong>Users:</strong> {statistics?.numberOfUsers?.toLocaleString()}
                     </span>
                     <span>
-                      <strong>Correlations:</strong> {study.number_of_correlations?.toLocaleString()}
+                      <strong>Correlations:</strong> {statistics?.numberOfCorrelations?.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -140,7 +103,7 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
         </div>
       )}
 
-      {totalPages > 1 && (
+      {(page > 1 || hasNextPage) && (
         <nav className="mt-8 flex items-center justify-center gap-4" aria-label="Studies pagination">
           {page > 1 ? (
             <Link
@@ -154,10 +117,8 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
               Previous
             </span>
           )}
-          <span>
-            Page {page.toLocaleString()} of {totalPages.toLocaleString()}
-          </span>
-          {page < totalPages ? (
+          <span>Page {page.toLocaleString()}</span>
+          {hasNextPage ? (
             <Link
               href={`/studies?page=${page + 1}`}
               className="rounded border px-4 py-2 hover:bg-gray-50"

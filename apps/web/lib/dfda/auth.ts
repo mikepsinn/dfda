@@ -1,5 +1,6 @@
 import { Account, User } from "@prisma/client"
 import { prisma } from "@/lib/db"
+import { DFDA_APP_ORIGIN } from "./constants"
 
 // Function to get or create a basic user
 async function getYourUser(yourUserId: string): Promise<User | null> {
@@ -54,7 +55,7 @@ export async function getOrCreateDfdaUser(
   }
 
   console.log("🔑 Creating DFDA user.")
-  const response = await fetch(`https://safe.dfda.earth/api/v1/user`, {
+  const response = await fetch(`${DFDA_APP_ORIGIN}/api/v1/user`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -132,7 +133,7 @@ export async function getSafeRedirectUrl(
   path?: string
 ): Promise<string | null> {
   const dfdaToken = await getDfdaAccessTokenIfExists(userId)
-  const baseUrl = "https://safe.dfda.earth/app/public/#/app"
+  const baseUrl = `${DFDA_APP_ORIGIN}/app/public/#/app`
   if (dfdaToken) {
     if (!path) {
       path = "/reminders-inbox"
@@ -145,4 +146,4 @@ export async function getSafeRedirectUrl(
     const newToken = await getOrCreateDfdaAccessToken(userId)
     return `${baseUrl}/intro?access_token=${newToken}`
   }
-} 
+}

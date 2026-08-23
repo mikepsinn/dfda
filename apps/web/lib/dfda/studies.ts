@@ -1,7 +1,6 @@
 import { dfdaGET, dfdaPOST } from "./api-client"
 import { findArticleByTopic, writeArticle } from "@/lib/agents/researcher/researcher"
 import { searchClinicalTrialConditions, searchClinicalTrialInterventions } from '@/lib/clinicaltables'
-import { prisma } from '@repo/mysql-database'
 import { Study } from '@/types/models/Study'
 
 export async function createStudy(
@@ -44,38 +43,8 @@ export async function getStudyBySlug(causeVariableId: number, effectVariableId: 
   console.log('🔍 Fetching study by slug:', { causeVariableId, effectVariableId })
 
   try {
-    // Query MySQL database for the aggregate correlation
-    const correlation = await prisma.aggregate_correlations.findFirst({
-      where: {
-        cause_variable_id: causeVariableId,
-        effect_variable_id: effectVariableId,
-        deleted_at: null,
-        is_public: true,
-      },
-      include: {
-        variables_aggregate_correlations_cause_variable_idTovariables: {
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-          },
-        },
-        variables_aggregate_correlations_effect_variable_idTovariables: {
-          select: {
-            id: true,
-            name: true,
-            slug: true,
-          },
-        },
-      },
-    })
-
-    if (!correlation) {
-      throw new Error(`Study not found for cause ${causeVariableId} and effect ${effectVariableId}`)
-    }
-
-    // Now fetch the full study data from the API using the correlation ID
-    return await getStudy(correlation.id.toString(), userId)
+    const studyId = `cause-${causeVariableId}-effect-${effectVariableId}-population-study`
+    return await getStudy(studyId, userId)
   } catch (error) {
     console.error('❌ Error fetching study by slug:', {
       causeVariableId,
@@ -214,4 +183,4 @@ async function findOrWriteArticle(topic: string) {
     console.error("Failed to generate meta-analysis:", error)
     throw new Error("Failed to generate meta-analysis. Please try again later.")
   }
-} 
+}

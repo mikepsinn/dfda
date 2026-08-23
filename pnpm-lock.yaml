@@ -743,9 +743,6 @@ importers:
       '@radix-ui/themes':
         specifier: ^3.0.5
         version: 3.2.1(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@repo/mysql-database':
-        specifier: '*'
-        version: link:../../packages/database
       '@supabase/supabase-js':
         specifier: ^2.69.1
         version: 2.89.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)

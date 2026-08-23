@@ -1,6 +1,7 @@
 import { z } from "zod"
 
 import { handleError } from "@/lib/errorHandler"
+import { DFDA_APP_ORIGIN } from "@/lib/dfda/constants"
 
 const requestBodySchema = z.object({
   email: z.string().email(),
@@ -11,8 +12,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json()
     const parsedBody = requestBodySchema.parse(body)
-    const response = await
-        fetch(`https://safe.dfda.earth/auth/passwordless-login`, {
+    const response = await fetch(`${DFDA_APP_ORIGIN}/auth/passwordless-login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
