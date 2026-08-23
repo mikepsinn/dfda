@@ -76,7 +76,7 @@ describe('Integration - Treatment Pages', () => {
     it('should include popularity scores', async () => {
       const conditionTreatment = await prisma.dfdaConditionTreatment.findFirst({
         where: {
-          popularity: { not: null },
+          popularity: { gt: 0 },
         },
       })
 
@@ -90,7 +90,7 @@ describe('Integration - Treatment Pages', () => {
     it('should include average effect ratings', async () => {
       const conditionTreatment = await prisma.dfdaConditionTreatment.findFirst({
         where: {
-          averageEffect: { not: null },
+          averageEffect: { not: 0 },
         },
       })
 
@@ -102,9 +102,6 @@ describe('Integration - Treatment Pages', () => {
 
     it('should order treatments by popularity', async () => {
       const conditionTreatments = await prisma.dfdaConditionTreatment.findMany({
-        where: {
-          popularity: { not: null },
-        },
         orderBy: [{ popularity: 'desc' }],
         take: 10,
       })

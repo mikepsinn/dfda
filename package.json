@@ -22,10 +22,19 @@
     "@prisma/client": "5.10.2"
   },
   "devDependencies": {
+    "@types/react": "18.2.55",
     "prettier": "^3.2.5",
     "prisma": "5.10.2",
     "supabase": "^2.19.7",
     "tsx": "4.19.1"
   },
-  "packageManager": "pnpm@9.14.4+sha1.64b6e81e79630419b675c555ef3b65607cfd6315"
+  "packageManager": "pnpm@9.14.4+sha1.64b6e81e79630419b675c555ef3b65607cfd6315",
+  "pnpm": {
+    "overrides": {
+      "@types/react-calendar-heatmap>@types/react": "18.2.55",
+      "@types/react-dom@18.2.19>@types/react": "18.2.55",
+      "@types/react-katex>@types/react": "18.2.55",
+      "@types/react-syntax-highlighter>@types/react": "18.2.55"
+    }
+  }
 }
