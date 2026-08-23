@@ -129,7 +129,7 @@ export default function DfdaTopNavbar({
           <DfdaLogoNavMenu navItems={logoNavItems} />
         </div>
 
-        <div className="hidden min-w-0 flex-1 items-center justify-end gap-1 lg:flex">
+        <div className="hidden min-w-0 flex-1 items-center justify-end gap-1 xl:flex">
           {primaryItems.map((item) => (
             <MenuLink
               key={item.href}
@@ -174,12 +174,12 @@ export default function DfdaTopNavbar({
           ) : null}
         </div>
 
-        <div className="ml-auto flex shrink-0 items-center gap-2 lg:ml-0">
+        <div className="ml-auto flex shrink-0 items-center gap-2 xl:ml-0">
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
               <button
                 type="button"
-                className="flex h-11 w-11 items-center justify-center rounded-md border-2 border-black bg-pink-400 shadow-[3px_3px_0_0_#000] outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 lg:hidden"
+                className="flex h-11 w-11 items-center justify-center rounded-md border-2 border-black bg-pink-400 shadow-[3px_3px_0_0_#000] outline-none transition-transform hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 xl:hidden"
                 aria-label="Open navigation menu"
               >
                 <Menu aria-hidden="true" className="h-6 w-6" />
