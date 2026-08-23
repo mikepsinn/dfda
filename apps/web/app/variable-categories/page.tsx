@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { prisma } from '@repo/mysql-database'
 
 export const metadata = {
@@ -27,6 +28,8 @@ async function getVariableCategories() {
 }
 
 export default async function VariableCategoriesPage() {
+  if (!process.env.MYSQL_DATABASE_URL) notFound()
+
   const categories = await getVariableCategories()
 
   return (

@@ -21,8 +21,7 @@
  *
  * Usage:
  *   pnpm mysql:cleanup -- --dry-run
- *   pnpm mysql:cleanup -- --yes
- *   pnpm mysql:cleanup -- --yes --allow-production
+ *   pnpm mysql:cleanup -- --yes --confirm-target
  *
  * Environment Variables:
  *   MYSQL_DATABASE_URL - MySQL connection URL (required)
@@ -37,7 +36,7 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const CONFIRMED = process.argv.includes('--yes');
-const ALLOW_PRODUCTION = process.argv.includes('--allow-production');
+const TARGET_CONFIRMED = process.argv.includes('--confirm-target');
 const MYSQL_URL = process.env.MYSQL_DATABASE_URL;
 
 if (!MYSQL_URL && !DRY_RUN) {
@@ -78,17 +77,6 @@ function getErrorDetails(error: unknown): {
     code: typeof candidate.code === 'string' ? candidate.code : undefined,
     errno: typeof candidate.errno === 'number' ? candidate.errno : undefined,
   };
-}
-
-function isProductionLike(databaseUrl: string): boolean {
-  try {
-    const url = new URL(databaseUrl);
-    const localHosts = new Set(['localhost', '127.0.0.1', '::1']);
-    const databaseName = url.pathname.replace(/^\//, '').toLowerCase();
-    return !localHosts.has(url.hostname) || /(^|[_-])(prod|production)([_-]|$)/.test(databaseName);
-  } catch {
-    return true;
-  }
 }
 
 function printCleanupPlan() {
@@ -172,9 +160,9 @@ async function main() {
     return;
   }
 
-  if (isProductionLike(MYSQL_URL) && !ALLOW_PRODUCTION) {
-    console.error('\nRefusing to clean a remote or production-like database.');
-    console.error('Add --allow-production only after verifying the target and backups.');
+  if (!TARGET_CONFIRMED) {
+    console.error('\nRefusing to infer safety from the database hostname.');
+    console.error('Add --confirm-target only after verifying the exact target and backups.');
     process.exitCode = 1;
     return;
   }

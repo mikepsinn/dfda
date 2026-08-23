@@ -45,6 +45,16 @@ function getErrorMessage(error: unknown): string {
   return String(error);
 }
 
+function maskDatabaseUrl(databaseUrl: string): string {
+  try {
+    const parsedUrl = new URL(databaseUrl);
+    if (parsedUrl.password) parsedUrl.password = '****';
+    return parsedUrl.toString();
+  } catch {
+    return '[invalid database URL]';
+  }
+}
+
 async function executeQuery(
   connection: mysql.Connection,
   query: string
@@ -72,7 +82,7 @@ async function executeQuery(
 
 async function runInteractive(connection: mysql.Connection) {
   console.log('\n🔍 MySQL Interactive Query Tool');
-  console.log('Connected to:', MYSQL_DATABASE_URL.replace(/:[^:@]+@/, ':****@'));
+  console.log('Connected to:', maskDatabaseUrl(MYSQL_DATABASE_URL));
   console.log('\nCommands:');
   console.log('  - Type SQL queries and press Enter');
   console.log('  - Type .exit or .quit to exit');

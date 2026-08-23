@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { prisma } from '@repo/mysql-database'
 
 export const metadata = {
@@ -58,6 +59,8 @@ async function getStudies(page: number = 1, perPage: number = 50) {
 }
 
 export default async function StudiesPage({ searchParams }: StudiesPageProps) {
+  if (!process.env.MYSQL_DATABASE_URL) notFound()
+
   const rawPage = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
   const parsedPage = Number.parseInt(rawPage || '1', 10)
   const requestedPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1
