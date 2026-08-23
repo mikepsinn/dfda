@@ -28,12 +28,14 @@ export const dfdaLinks = {
     href: "/variables",
     icon: "activity",
     tooltip: "Browse health variables, measurements, and outcomes",
+    requiresMySql: true,
   },
   studies: {
     title: "Studies",
     href: "/studies",
     icon: "studies",
     tooltip: "Browse population studies",
+    requiresMySql: true,
   },
   trials: {
     title: "Trials",
@@ -52,6 +54,7 @@ export const dfdaLinks = {
     href: "/variable-categories",
     icon: "sort",
     tooltip: "Explore variables by category",
+    requiresMySql: true,
   },
   createStudy: {
     title: "Create a Study",

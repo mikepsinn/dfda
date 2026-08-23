@@ -11,6 +11,7 @@ jest.mock("@/config/navigation/shared-links", () => ({
 }))
 
 import { dfdaNavigation } from "@/config/navigation/domains/dfda-nav"
+import { filterAvailableNavigationItems } from "@/config/navigation/nav-availability"
 
 describe("Decentralized FDA navigation", () => {
   it("keeps the main research destinations visible in a predictable order", () => {
@@ -43,5 +44,20 @@ describe("Decentralized FDA navigation", () => {
 
     expect(offSiteItems.length).toBeGreaterThan(0)
     expect(offSiteItems.every((item) => item.external)).toBe(true)
+  })
+
+  it("only advertises MySQL-backed destinations when MySQL is available", () => {
+    const allItems = [
+      ...dfdaNavigation.topNav,
+      ...(dfdaNavigation.exploreNav ?? []),
+    ]
+    const withoutMySql = filterAvailableNavigationItems(allItems, {
+      mysql: false,
+    })
+    const withMySql = filterAvailableNavigationItems(allItems, { mysql: true })
+
+    expect(withoutMySql.every((item) => !item.requiresMySql)).toBe(true)
+    expect(withMySql).toHaveLength(allItems.length)
+    expect(allItems.some((item) => item.requiresMySql)).toBe(true)
   })
 })
