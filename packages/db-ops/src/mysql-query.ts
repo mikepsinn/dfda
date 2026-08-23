@@ -5,13 +5,15 @@
  *
  * Usage:
  *   # Interactive mode (REPL)
- *   tsx apps/web/lib/db/mysql-query.ts
+ *   pnpm mysql
+ *   tsx src/mysql-query.ts
  *
  *   # Execute a single query
- *   tsx apps/web/lib/db/mysql-query.ts "SELECT * FROM users LIMIT 5"
+ *   pnpm mysql "SELECT * FROM users LIMIT 5"
+ *   tsx src/mysql-query.ts "SELECT * FROM users LIMIT 5"
  *
- *   # Or use npm script
- *   pnpm mysql-query "SHOW TABLES"
+ *   # Another example
+ *   pnpm mysql "SHOW TABLES"
  *
  * Environment Variables:
  *   MYSQL_DATABASE_URL - MySQL connection URL (required)
@@ -33,11 +35,23 @@ if (!MYSQL_URL) {
   console.error('Format: mysql://user:password@host:port/database');
   process.exit(1);
 }
+const MYSQL_DATABASE_URL = MYSQL_URL;
 
-async function executeQuery(connection: mysql.Connection, query: string) {
+function getErrorMessage(error: unknown): string {
+  if (typeof error === 'object' && error !== null && 'message' in error) {
+    const message = (error as { message?: unknown }).message;
+    if (typeof message === 'string') return message;
+  }
+  return String(error);
+}
+
+async function executeQuery(
+  connection: mysql.Connection,
+  query: string
+): Promise<boolean> {
   try {
     const startTime = Date.now();
-    const [rows, fields] = await connection.query(query);
+    const [rows] = await connection.query(query);
     const duration = Date.now() - startTime;
 
     if (Array.isArray(rows)) {
@@ -49,14 +63,16 @@ async function executeQuery(connection: mysql.Connection, query: string) {
       console.log(rows);
       console.log(`\n⏱️  ${duration}ms`);
     }
-  } catch (error: any) {
-    console.error('\n✗ Query failed:', error.message);
+    return true;
+  } catch (error: unknown) {
+    console.error('\n✗ Query failed:', getErrorMessage(error));
+    return false;
   }
 }
 
 async function runInteractive(connection: mysql.Connection) {
   console.log('\n🔍 MySQL Interactive Query Tool');
-  console.log('Connected to:', MYSQL_URL.replace(/:[^:@]+@/, ':****@'));
+  console.log('Connected to:', MYSQL_DATABASE_URL.replace(/:[^:@]+@/, ':****@'));
   console.log('\nCommands:');
   console.log('  - Type SQL queries and press Enter');
   console.log('  - Type .exit or .quit to exit');
@@ -73,46 +89,45 @@ async function runInteractive(connection: mysql.Connection) {
   rl.prompt();
 
   rl.on('line', async (line: string) => {
-    const input = line.trim();
+    rl.pause();
 
-    if (!input) {
+    try {
+      const input = line.trim();
+
+      if (!input) return;
+
+      // Handle special commands
+      if (input === '.exit' || input === '.quit') {
+        console.log('Goodbye!');
+        await connection.end();
+        process.exit(0);
+      }
+
+      if (input === '.help') {
+        console.log('\nCommands:');
+        console.log('  .exit, .quit     - Exit the CLI');
+        console.log('  .tables          - Show all tables');
+        console.log('  .databases       - Show all databases');
+        console.log('  .help            - Show this help message');
+        console.log('');
+        return;
+      }
+
+      if (input === '.tables') {
+        await executeQuery(connection, 'SHOW TABLES');
+        return;
+      }
+
+      if (input === '.databases') {
+        await executeQuery(connection, 'SHOW DATABASES');
+        return;
+      }
+
+      await executeQuery(connection, input);
+    } finally {
+      rl.resume();
       rl.prompt();
-      return;
     }
-
-    // Handle special commands
-    if (input === '.exit' || input === '.quit') {
-      console.log('Goodbye!');
-      await connection.end();
-      process.exit(0);
-    }
-
-    if (input === '.help') {
-      console.log('\nCommands:');
-      console.log('  .exit, .quit     - Exit the CLI');
-      console.log('  .tables          - Show all tables');
-      console.log('  .databases       - Show all databases');
-      console.log('  .help            - Show this help message');
-      console.log('');
-      rl.prompt();
-      return;
-    }
-
-    if (input === '.tables') {
-      await executeQuery(connection, 'SHOW TABLES');
-      rl.prompt();
-      return;
-    }
-
-    if (input === '.databases') {
-      await executeQuery(connection, 'SHOW DATABASES');
-      rl.prompt();
-      return;
-    }
-
-    // Execute the query
-    await executeQuery(connection, input);
-    rl.prompt();
   });
 
   rl.on('close', async () => {
@@ -127,10 +142,10 @@ async function main() {
 
   try {
     console.log('Connecting to MySQL...');
-    connection = await mysql.createConnection(MYSQL_URL);
+    connection = await mysql.createConnection(MYSQL_DATABASE_URL);
     console.log('✓ Connected successfully\n');
-  } catch (error: any) {
-    console.error('✗ Failed to connect to MySQL:', error.message);
+  } catch (error: unknown) {
+    console.error('✗ Failed to connect to MySQL:', getErrorMessage(error));
     process.exit(1);
   }
 
@@ -139,15 +154,16 @@ async function main() {
 
   if (query) {
     // Execute single query and exit
-    await executeQuery(connection, query);
+    const succeeded = await executeQuery(connection, query);
     await connection.end();
+    if (!succeeded) process.exitCode = 1;
   } else {
     // Start interactive mode
     await runInteractive(connection);
   }
 }
 
-main().catch((error) => {
-  console.error('Fatal error:', error);
+main().catch((error: unknown) => {
+  console.error('Fatal error:', getErrorMessage(error));
   process.exit(1);
 });

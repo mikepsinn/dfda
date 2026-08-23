@@ -6,8 +6,14 @@ export const metadata = {
   description: 'Browse all available population studies analyzing relationships between variables.',
 }
 
-// Revalidate every 6 hours
-export const revalidate = 21600
+// MySQL is optional for deployments that do not expose this route.
+export const dynamic = 'force-dynamic'
+
+interface StudiesPageProps {
+  searchParams?: {
+    page?: string | string[]
+  }
+}
 
 async function getStudies(page: number = 1, perPage: number = 50) {
   const skip = (page - 1) * perPage
@@ -51,8 +57,12 @@ async function getStudies(page: number = 1, perPage: number = 50) {
   return { studies, total, page, perPage }
 }
 
-export default async function StudiesPage() {
-  const { studies, total } = await getStudies()
+export default async function StudiesPage({ searchParams }: StudiesPageProps) {
+  const rawPage = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
+  const parsedPage = Number.parseInt(rawPage || '1', 10)
+  const requestedPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1
+  const { studies, total, page, perPage } = await getStudies(requestedPage)
+  const totalPages = Math.max(1, Math.ceil(total / perPage))
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -67,17 +77,30 @@ export default async function StudiesPage() {
         {studies.map((study) => {
           const causeVar = study.variables_aggregate_correlations_cause_variable_idTovariables
           const effectVar = study.variables_aggregate_correlations_effect_variable_idTovariables
-          const correlationValue = study.forward_pearson_correlation_coefficient || 0
-          const correlationType = correlationValue > 0 ? 'positive' : 'negative'
-          const correlationColor = correlationValue > 0 ? 'text-green-600' : 'text-red-600'
+          const correlationValue = study.forward_pearson_correlation_coefficient
+          const correlationType = correlationValue == null
+            ? 'unavailable'
+            : correlationValue > 0
+              ? 'positive'
+              : correlationValue < 0
+                ? 'negative'
+                : 'no correlation'
+          const correlationColor = correlationValue == null || correlationValue === 0
+            ? 'text-gray-500'
+            : correlationValue > 0
+              ? 'text-green-600'
+              : 'text-red-600'
 
           // Generate slug format: cause-{id}-effect-{id}-population-study
           const studySlug = `cause-${study.cause_variable_id}-effect-${study.effect_variable_id}-population-study`
+          const studyHref = causeVar.slug && effectVar.slug
+            ? `/population-study/${encodeURIComponent(causeVar.slug)}/${encodeURIComponent(effectVar.slug)}`
+            : `/study/${studySlug}`
 
           return (
             <Link
               key={study.id}
-              href={`/study/${studySlug}`}
+              href={studyHref}
               className="block p-6 bg-white border rounded-lg hover:shadow-lg transition-shadow"
             >
               <div className="flex justify-between items-start">
@@ -98,7 +121,7 @@ export default async function StudiesPage() {
                 </div>
                 <div className="text-right">
                   <div className={`text-3xl font-bold ${correlationColor}`}>
-                    {Math.abs(correlationValue).toFixed(3)}
+                    {correlationValue == null ? '—' : Math.abs(correlationValue).toFixed(3)}
                   </div>
                   <div className="text-sm text-gray-500 capitalize">{correlationType}</div>
                 </div>
@@ -112,6 +135,38 @@ export default async function StudiesPage() {
         <div className="text-center py-12 text-gray-500">
           <p className="text-xl">No studies found</p>
         </div>
+      )}
+
+      {totalPages > 1 && (
+        <nav className="mt-8 flex items-center justify-center gap-4" aria-label="Studies pagination">
+          {page > 1 ? (
+            <Link
+              href={`/studies?page=${page - 1}`}
+              className="rounded border px-4 py-2 hover:bg-gray-50"
+            >
+              Previous
+            </Link>
+          ) : (
+            <span className="rounded border px-4 py-2 text-gray-400" aria-disabled="true">
+              Previous
+            </span>
+          )}
+          <span>
+            Page {page.toLocaleString()} of {totalPages.toLocaleString()}
+          </span>
+          {page < totalPages ? (
+            <Link
+              href={`/studies?page=${page + 1}`}
+              className="rounded border px-4 py-2 hover:bg-gray-50"
+            >
+              Next
+            </Link>
+          ) : (
+            <span className="rounded border px-4 py-2 text-gray-400" aria-disabled="true">
+              Next
+            </span>
+          )}
+        </nav>
       )}
     </div>
   )

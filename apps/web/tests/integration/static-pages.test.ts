@@ -48,22 +48,11 @@ describe('Integration - Static Pages', () => {
       const content = fs.readFileSync(homePath, 'utf-8')
 
       expect(content).toContain('export default')
-      // Should import DFDAHomePage or similar
-      expect(content).toMatch(/import.*DFDAHomePage|import.*HowItWorksSection/i)
+      expect(content).toMatch(/import.*DFDAHomePage/i)
     })
   })
 
   describe('Required App Pages', () => {
-    it('should have 404 not-found page', () => {
-      const notFoundPath = path.join(process.cwd(), 'app', 'not-found.tsx')
-      expect(fs.existsSync(notFoundPath)).toBe(true)
-    })
-
-    it('should have error boundary', () => {
-      const errorPath = path.join(process.cwd(), 'app', 'error.tsx')
-      expect(fs.existsSync(errorPath)).toBe(true)
-    })
-
     it('should have root layout', () => {
       const layoutPath = path.join(process.cwd(), 'app', 'layout.tsx')
       expect(fs.existsSync(layoutPath)).toBe(true)

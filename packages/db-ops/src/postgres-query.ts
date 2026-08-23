@@ -5,13 +5,15 @@
  *
  * Usage:
  *   # Interactive mode (REPL)
- *   tsx apps/web/lib/db/postgres-query.ts
+ *   pnpm postgres
+ *   tsx src/postgres-query.ts
  *
  *   # Execute a single query
- *   tsx apps/web/lib/db/postgres-query.ts "SELECT * FROM users LIMIT 5"
+ *   pnpm postgres "SELECT * FROM users LIMIT 5"
+ *   tsx src/postgres-query.ts "SELECT * FROM users LIMIT 5"
  *
- *   # Or use npm script
- *   pnpm postgres-query "SELECT version()"
+ *   # Another example
+ *   pnpm pg "SELECT version()"
  *
  * Environment Variables:
  *   DATABASE_URL or POSTGRES_DATABASE_URL - PostgreSQL connection URL (required)
@@ -33,8 +35,21 @@ if (!POSTGRES_URL) {
   console.error('Format: postgresql://user:password@host:port/database');
   process.exit(1);
 }
+const POSTGRES_DATABASE_URL = POSTGRES_URL;
 
-async function executeQuery(pool: Pool, query: string) {
+function getErrorDetails(error: unknown): { message: string; position?: string } {
+  if (typeof error !== 'object' || error === null) {
+    return { message: String(error) };
+  }
+
+  const candidate = error as { message?: unknown; position?: unknown };
+  return {
+    message: typeof candidate.message === 'string' ? candidate.message : String(error),
+    position: typeof candidate.position === 'string' ? candidate.position : undefined,
+  };
+}
+
+async function executeQuery(pool: Pool, query: string): Promise<boolean> {
   try {
     const startTime = Date.now();
     const result: QueryResult = await pool.query(query);
@@ -55,17 +70,20 @@ async function executeQuery(pool: Pool, query: string) {
       }
       console.log(`⏱️  ${duration}ms`);
     }
-  } catch (error: any) {
-    console.error('\n✗ Query failed:', error.message);
-    if (error.position) {
-      console.error(`Position: ${error.position}`);
+    return true;
+  } catch (error: unknown) {
+    const details = getErrorDetails(error);
+    console.error('\n✗ Query failed:', details.message);
+    if (details.position) {
+      console.error(`Position: ${details.position}`);
     }
+    return false;
   }
 }
 
 async function runInteractive(pool: Pool) {
   console.log('\n🔍 PostgreSQL Interactive Query Tool');
-  console.log('Connected to:', POSTGRES_URL.replace(/:[^:@]+@/, ':****@'));
+  console.log('Connected to:', POSTGRES_DATABASE_URL.replace(/:[^:@]+@/, ':****@'));
   console.log('\nCommands:');
   console.log('  - Type SQL queries and press Enter');
   console.log('  - Type .exit or .quit to exit');
@@ -82,72 +100,69 @@ async function runInteractive(pool: Pool) {
   rl.prompt();
 
   rl.on('line', async (line: string) => {
-    const input = line.trim();
+    rl.pause();
 
-    if (!input) {
-      rl.prompt();
-      return;
-    }
+    try {
+      const input = line.trim();
 
-    // Handle special commands
-    if (input === '.exit' || input === '.quit') {
-      console.log('Goodbye!');
-      await pool.end();
-      process.exit(0);
-    }
+      if (!input) return;
 
-    if (input === '.help') {
-      console.log('\nCommands:');
-      console.log('  .exit, .quit     - Exit the CLI');
-      console.log('  .tables          - Show all tables in current schema');
-      console.log('  .schemas         - Show all schemas');
-      console.log('  .databases       - Show all databases');
-      console.log('  .version         - Show PostgreSQL version');
-      console.log('  .help            - Show this help message');
-      console.log('');
-      rl.prompt();
-      return;
-    }
+      // Handle special commands
+      if (input === '.exit' || input === '.quit') {
+        console.log('Goodbye!');
+        await pool.end();
+        process.exit(0);
+      }
 
-    if (input === '.tables') {
-      await executeQuery(
-        pool,
-        `SELECT table_schema, table_name
+      if (input === '.help') {
+        console.log('\nCommands:');
+        console.log('  .exit, .quit     - Exit the CLI');
+        console.log('  .tables          - Show all tables in current schema');
+        console.log('  .schemas         - Show all schemas');
+        console.log('  .databases       - Show all databases');
+        console.log('  .version         - Show PostgreSQL version');
+        console.log('  .help            - Show this help message');
+        console.log('');
+        return;
+      }
+
+      if (input === '.tables') {
+        await executeQuery(
+          pool,
+          `SELECT table_schema, table_name
          FROM information_schema.tables
          WHERE table_schema NOT IN ('pg_catalog', 'information_schema')
          ORDER BY table_schema, table_name`
-      );
-      rl.prompt();
-      return;
-    }
+        );
+        return;
+      }
 
-    if (input === '.schemas') {
-      await executeQuery(
-        pool,
-        `SELECT schema_name
+      if (input === '.schemas') {
+        await executeQuery(
+          pool,
+          `SELECT schema_name
          FROM information_schema.schemata
          WHERE schema_name NOT IN ('pg_catalog', 'information_schema')
          ORDER BY schema_name`
-      );
-      rl.prompt();
-      return;
-    }
+        );
+        return;
+      }
 
-    if (input === '.databases') {
-      await executeQuery(pool, 'SELECT datname FROM pg_database ORDER BY datname');
-      rl.prompt();
-      return;
-    }
+      if (input === '.databases') {
+        await executeQuery(pool, 'SELECT datname FROM pg_database ORDER BY datname');
+        return;
+      }
 
-    if (input === '.version') {
-      await executeQuery(pool, 'SELECT version()');
-      rl.prompt();
-      return;
-    }
+      if (input === '.version') {
+        await executeQuery(pool, 'SELECT version()');
+        return;
+      }
 
-    // Execute the query
-    await executeQuery(pool, input);
-    rl.prompt();
+      await executeQuery(pool, input);
+    } finally {
+      rl.resume();
+      rl.prompt();
+    }
   });
 
   rl.on('close', async () => {
@@ -159,7 +174,7 @@ async function runInteractive(pool: Pool) {
 
 async function main() {
   const pool = new Pool({
-    connectionString: POSTGRES_URL,
+    connectionString: POSTGRES_DATABASE_URL,
   });
 
   try {
@@ -167,8 +182,8 @@ async function main() {
     const client = await pool.connect();
     client.release();
     console.log('✓ Connected successfully\n');
-  } catch (error: any) {
-    console.error('✗ Failed to connect to PostgreSQL:', error.message);
+  } catch (error: unknown) {
+    console.error('✗ Failed to connect to PostgreSQL:', getErrorDetails(error).message);
     await pool.end();
     process.exit(1);
   }
@@ -178,15 +193,16 @@ async function main() {
 
   if (query) {
     // Execute single query and exit
-    await executeQuery(pool, query);
+    const succeeded = await executeQuery(pool, query);
     await pool.end();
+    if (!succeeded) process.exitCode = 1;
   } else {
     // Start interactive mode
     await runInteractive(pool);
   }
 }
 
-main().catch(async (error) => {
-  console.error('Fatal error:', error);
+main().catch(async (error: unknown) => {
+  console.error('Fatal error:', getErrorDetails(error).message);
   process.exit(1);
 });

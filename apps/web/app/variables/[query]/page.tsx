@@ -21,6 +21,7 @@ async function getVariable(query: string) {
       where: {
         id: parseInt(query),
         deleted_at: null,
+        is_public: true,
       },
       include: {
         variable_categories: true,
@@ -29,11 +30,13 @@ async function getVariable(query: string) {
     })
   } else {
     // Convert slug to name (Laravel uses underscores, e.g., "Overall_Mood" -> "Overall Mood")
-    const name = slugToName(decodeURIComponent(query))
+    const decodedQuery = decodeURIComponent(query)
+    const name = slugToName(decodedQuery)
     variable = await prisma.variables.findFirst({
       where: {
-        name: name,
         deleted_at: null,
+        is_public: true,
+        OR: [{ slug: decodedQuery }, { name }],
       },
       include: {
         variable_categories: true,
@@ -183,11 +186,11 @@ export default async function VariablePage({ params }: VariablePageProps) {
         </div>
       </div>
 
-      {/* Predictors (causes) */}
+      {/* Outcomes (effects) */}
       {causeCorrelations.length > 0 && (
         <div className="mb-8">
           <h2 className="text-3xl font-black mb-4">
-            What Predicts {variable.name}?
+            What Does {variable.name} Predict?
           </h2>
           <div className="grid gap-3">
             {causeCorrelations.map((corr) => {
@@ -226,11 +229,11 @@ export default async function VariablePage({ params }: VariablePageProps) {
         </div>
       )}
 
-      {/* Outcomes (effects) */}
+      {/* Predictors (causes) */}
       {effectCorrelations.length > 0 && (
         <div className="mb-8">
           <h2 className="text-3xl font-black mb-4">
-            What Does {variable.name} Predict?
+            What Predicts {variable.name}?
           </h2>
           <div className="grid gap-3">
             {effectCorrelations.map((corr) => {

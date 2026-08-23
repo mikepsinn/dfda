@@ -3,7 +3,9 @@
  */
 import { prisma } from '@repo/mysql-database'
 
-describe('Integration - Studies Pages', () => {
+const describeWithMysql = process.env.MYSQL_DATABASE_URL ? describe : describe.skip
+
+describeWithMysql('Integration - Studies Pages', () => {
   describe('Studies List Page', () => {
     it('should fetch public studies from aggregate_correlations', async () => {
       const studies = await prisma.aggregate_correlations.findMany({
@@ -237,7 +239,6 @@ describe('Integration - Studies Pages', () => {
         where: {
           deleted_at: null,
           is_public: true,
-          aggregate_qm_score: { not: null },
         },
         take: 10,
       })

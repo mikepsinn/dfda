@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { prismaMysql } from '@/lib/prisma-mysql'
+import { prisma as prismaMysql } from '@repo/mysql-database'
 
 interface StudyPageProps {
   params: {
@@ -39,12 +39,12 @@ async function getStudyBySlug(causeSlug: string, effectSlug: string) {
   try {
     // Find the cause and effect variables by slug
     const [causeVariable, effectVariable] = await Promise.all([
-      prismaMysql.variables.findUnique({
-        where: { slug: causeSlug },
+      prismaMysql.variables.findFirst({
+        where: { slug: causeSlug, deleted_at: null, is_public: true },
         select: { id: true, name: true, slug: true, description: true, image_url: true },
       }),
-      prismaMysql.variables.findUnique({
-        where: { slug: effectSlug },
+      prismaMysql.variables.findFirst({
+        where: { slug: effectSlug, deleted_at: null, is_public: true },
         select: { id: true, name: true, slug: true, description: true, image_url: true },
       }),
     ])
@@ -62,12 +62,18 @@ async function getStudyBySlug(causeSlug: string, effectSlug: string) {
         is_public: true,
       },
       include: {
-        cause_variable: true,
-        effect_variable: true,
+        variables_aggregate_correlations_cause_variable_idTovariables: true,
+        variables_aggregate_correlations_effect_variable_idTovariables: true,
       },
     })
 
-    return correlation
+    if (!correlation) return null
+
+    return {
+      ...correlation,
+      cause_variable: correlation.variables_aggregate_correlations_cause_variable_idTovariables,
+      effect_variable: correlation.variables_aggregate_correlations_effect_variable_idTovariables,
+    }
   } catch (error) {
     console.error('Error fetching study:', error)
     return null
@@ -81,13 +87,15 @@ export default async function StudyPage({ params }: StudyPageProps) {
     notFound()
   }
 
-  const correlationStrength = study.forward_pearson_correlation_coefficient
-    ? Math.abs(study.forward_pearson_correlation_coefficient)
-    : 0
-
-  const correlationType = study.forward_pearson_correlation_coefficient && study.forward_pearson_correlation_coefficient > 0
-    ? 'positive'
-    : 'negative'
+  const correlationValue = study.forward_pearson_correlation_coefficient
+  const correlationStrength = correlationValue == null ? null : Math.abs(correlationValue)
+  const correlationType = correlationValue == null
+    ? 'unavailable'
+    : correlationValue > 0
+      ? 'positive'
+      : correlationValue < 0
+        ? 'negative'
+        : 'no correlation'
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -107,7 +115,8 @@ export default async function StudyPage({ params }: StudyPageProps) {
           <h2 className="text-2xl font-semibold mb-4">Key Findings</h2>
           <div className="space-y-3">
             <p className="text-lg">
-              <strong>Correlation:</strong> {correlationStrength.toFixed(3)} ({correlationType})
+              <strong>Correlation:</strong>{' '}
+              {correlationStrength == null ? 'Unavailable' : `${correlationStrength.toFixed(3)} (${correlationType})`}
             </p>
             <p className="text-lg">
               <strong>Sample Size:</strong> {study.number_of_users?.toLocaleString()} users

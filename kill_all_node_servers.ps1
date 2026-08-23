@@ -2,15 +2,23 @@
 # This script will terminate all running node.exe processes
 
 Write-Host "Killing all Node.js server processes..."
+$hadFailures = $false
 
 # Get all node processes and stop them
 Get-Process node -ErrorAction SilentlyContinue | ForEach-Object {
+    $process = $_
     try {
-        Stop-Process -Id $_.Id -Force -ErrorAction Stop
-        Write-Host "Killed Node.js process with ID $($_.Id)"
+        Stop-Process -Id $process.Id -Force -ErrorAction Stop
+        Write-Host "Killed Node.js process with ID $($process.Id)"
     } catch {
-        Write-Host "Failed to kill process with ID $($_.Id): $_"
+        $hadFailures = $true
+        Write-Error "Failed to kill process with ID $($process.Id): $_"
     }
 }
 
-Write-Host "All Node.js server processes have been terminated."
+if ($hadFailures) {
+    Write-Error "One or more Node.js processes could not be terminated."
+    exit 1
+}
+
+Write-Host "All discovered Node.js server processes have been terminated."

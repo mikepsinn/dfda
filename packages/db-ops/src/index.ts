@@ -13,16 +13,28 @@ interface SyncConfig {
   tables: string[];
 }
 
-async function getTableSchema(mysqlConn: mysql.Connection, tableName: string) {
-  const [columns] = await mysqlConn.query(
+interface MySqlColumn extends mysql.RowDataPacket {
+  Field: string;
+  Type: string;
+  Null: 'YES' | 'NO';
+}
+
+async function getTableSchema(
+  mysqlConn: mysql.Connection,
+  tableName: string
+): Promise<MySqlColumn[]> {
+  const [columns] = await mysqlConn.query<MySqlColumn[]>(
     'SHOW COLUMNS FROM ??',
     [tableName]
   );
   return columns;
 }
 
-async function getTableData(mysqlConn: mysql.Connection, tableName: string) {
-  const [rows] = await mysqlConn.query(
+async function getTableData(
+  mysqlConn: mysql.Connection,
+  tableName: string
+): Promise<mysql.RowDataPacket[]> {
+  const [rows] = await mysqlConn.query<mysql.RowDataPacket[]>(
     'SELECT * FROM ??',
     [tableName]
   );
@@ -32,7 +44,7 @@ async function getTableData(mysqlConn: mysql.Connection, tableName: string) {
 async function createPostgresTable(
   pgPool: Pool,
   tableName: string,
-  columns: any[]
+  columns: MySqlColumn[]
 ) {
   const columnDefs = columns.map(col => {
     let pgType = 'text'; // default type
@@ -132,7 +144,10 @@ async function sync(config: SyncConfig) {
 if (require.main === module) {
   const mysqlUrl = process.env.MYSQL_DATABASE_URL;
   const postgresUrl = process.env.POSTGRES_DATABASE_URL || process.env.DATABASE_URL;
-  const tables = (process.env.SYNC_TABLES || '').split(',').filter(Boolean);
+  const tables = (process.env.SYNC_TABLES || '')
+    .split(',')
+    .map((table) => table.trim())
+    .filter(Boolean);
 
   if (!mysqlUrl) {
     console.error('Error: MYSQL_DATABASE_URL environment variable is required');
@@ -164,4 +179,4 @@ if (require.main === module) {
     });
 }
 
-export { sync, type SyncConfig }; 
+export { sync, type SyncConfig };

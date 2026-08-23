@@ -34,6 +34,7 @@ yarn-error.log*
 .idea
 .history/  
 dist/
+packages/database/generated/
 tmp/
 .env*
 !.env.example

@@ -1,9 +1,10 @@
 #!/usr/bin/env tsx
 
 /**
- * MySQL Temporary Tables Cleanup Script
+ * MySQL Table Cleanup Script
  *
- * Truncates temporary and log tables that can safely be cleared:
+ * Permanently removes all rows from the configured tables, including WordPress
+ * content tables. Review TABLES_TO_CLEAN before every confirmed run.
  * - notifications
  * - connector_requests
  * - wp_posts
@@ -19,8 +20,9 @@
  * - oa_authorization_codes
  *
  * Usage:
- *   tsx src/mysql-cleanup.ts
- *   pnpm mysql:cleanup
+ *   pnpm mysql:cleanup -- --dry-run
+ *   pnpm mysql:cleanup -- --yes
+ *   pnpm mysql:cleanup -- --yes --allow-production
  *
  * Environment Variables:
  *   MYSQL_DATABASE_URL - MySQL connection URL (required)
@@ -33,9 +35,12 @@ import path from 'path';
 // Load environment variables from package directory
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
+const DRY_RUN = process.argv.includes('--dry-run');
+const CONFIRMED = process.argv.includes('--yes');
+const ALLOW_PRODUCTION = process.argv.includes('--allow-production');
 const MYSQL_URL = process.env.MYSQL_DATABASE_URL;
 
-if (!MYSQL_URL) {
+if (!MYSQL_URL && !DRY_RUN) {
   console.error('Error: MYSQL_DATABASE_URL environment variable is required');
   console.error('Format: mysql://user:password@host:port/database');
   process.exit(1);
@@ -58,6 +63,39 @@ const TABLES_TO_CLEAN = [
   'oa_authorization_codes',
 ];
 
+function getErrorDetails(error: unknown): {
+  message: string;
+  code?: string;
+  errno?: number;
+} {
+  if (typeof error !== 'object' || error === null) {
+    return { message: String(error) };
+  }
+
+  const candidate = error as { message?: unknown; code?: unknown; errno?: unknown };
+  return {
+    message: typeof candidate.message === 'string' ? candidate.message : String(error),
+    code: typeof candidate.code === 'string' ? candidate.code : undefined,
+    errno: typeof candidate.errno === 'number' ? candidate.errno : undefined,
+  };
+}
+
+function isProductionLike(databaseUrl: string): boolean {
+  try {
+    const url = new URL(databaseUrl);
+    const localHosts = new Set(['localhost', '127.0.0.1', '::1']);
+    const databaseName = url.pathname.replace(/^\//, '').toLowerCase();
+    return !localHosts.has(url.hostname) || /(^|[_-])(prod|production)([_-]|$)/.test(databaseName);
+  } catch {
+    return true;
+  }
+}
+
+function printCleanupPlan() {
+  console.log('This command permanently removes all rows from:');
+  TABLES_TO_CLEAN.forEach((table) => console.log(`  - ${table}`));
+}
+
 interface CleanupResult {
   table: string;
   success: boolean;
@@ -78,27 +116,29 @@ async function cleanTable(
       success: true,
       method: 'TRUNCATE',
     };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    // If TRUNCATE fails (likely foreign key constraint), try DELETE
-    if (error.message.includes('foreign key')) {
+  } catch (error: unknown) {
+    const details = getErrorDetails(error);
+    const hasForeignKeyConstraint = details.code === 'ER_TRUNCATE_ILLEGAL_FK'
+      || details.errno === 1701;
+
+    if (hasForeignKeyConstraint) {
       try {
-        const [result] = await connection.query<any>(`DELETE FROM ??`, [
-          tableName,
-        ]);
+        const [result] = await connection.query<mysql.ResultSetHeader>(
+          `DELETE FROM ??`,
+          [tableName]
+        );
         return {
           table: tableName,
           success: true,
           method: 'DELETE',
           rowsDeleted: result.affectedRows,
         };
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (deleteError: any) {
+      } catch (deleteError: unknown) {
         return {
           table: tableName,
           success: false,
           method: 'DELETE',
-          error: deleteError.message,
+          error: getErrorDetails(deleteError).message,
         };
       }
     }
@@ -106,21 +146,47 @@ async function cleanTable(
       table: tableName,
       success: false,
       method: 'TRUNCATE',
-      error: error.message,
+      error: details.message,
     };
   }
 }
 
 async function main() {
+  printCleanupPlan();
+
+  if (DRY_RUN) {
+    console.log('\nDry run only; no database connection was opened and no rows were deleted.');
+    return;
+  }
+
+  if (!CONFIRMED) {
+    console.error('\nRefusing to run without explicit confirmation.');
+    console.error('Re-run with --dry-run to preview or --yes to confirm.');
+    process.exitCode = 1;
+    return;
+  }
+
+  if (!MYSQL_URL) {
+    console.error('Error: MYSQL_DATABASE_URL environment variable is required');
+    process.exitCode = 1;
+    return;
+  }
+
+  if (isProductionLike(MYSQL_URL) && !ALLOW_PRODUCTION) {
+    console.error('\nRefusing to clean a remote or production-like database.');
+    console.error('Add --allow-production only after verifying the target and backups.');
+    process.exitCode = 1;
+    return;
+  }
+
   let connection: mysql.Connection;
 
   try {
     console.log('🔗 Connecting to MySQL...');
     connection = await mysql.createConnection(MYSQL_URL);
     console.log('✓ Connected successfully\n');
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    console.error('✗ Failed to connect to MySQL:', error.message);
+  } catch (error: unknown) {
+    console.error('✗ Failed to connect to MySQL:', getErrorDetails(error).message);
     process.exit(1);
   }
 
@@ -151,16 +217,16 @@ async function main() {
 
   const duration = Date.now() - startTime;
 
-  // Update table statistics
+  // Update table statistics without allowing one missing table to stop the rest.
   console.log('\n📊 Updating table statistics...');
-  try {
-    const tableList = TABLES_TO_CLEAN.join(', ');
-    await connection.query(`ANALYZE TABLE ${tableList}`);
-    console.log('✓ Statistics updated\n');
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    console.log('⚠️  Failed to update statistics:', error.message, '\n');
+  for (const tableName of TABLES_TO_CLEAN) {
+    try {
+      await connection.query('ANALYZE TABLE ??', [tableName]);
+    } catch (error: unknown) {
+      console.log(`⚠️  Failed to analyze ${tableName}:`, getErrorDetails(error).message);
+    }
   }
+  console.log('✓ Statistics update attempts completed\n');
 
   // Summary
   const successful = results.filter((r) => r.success).length;
@@ -180,6 +246,7 @@ async function main() {
         console.log(`  - ${r.table}: ${r.error}`);
       });
     console.log('');
+    process.exitCode = 1;
   }
 
   console.log('✓ Cleanup completed!');
@@ -187,7 +254,7 @@ async function main() {
   await connection.end();
 }
 
-main().catch((error) => {
-  console.error('Fatal error:', error);
+main().catch((error: unknown) => {
+  console.error('Fatal error:', getErrorDetails(error).message);
   process.exit(1);
 });

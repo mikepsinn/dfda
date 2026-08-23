@@ -8,6 +8,7 @@ import VariableChipList from '@/components/variables/VariableChipList'
 interface Variable {
   id: number
   name: string
+  slug: string | null
   image_url: string | null
   number_of_aggregate_correlations_as_cause: number | null
   number_of_aggregate_correlations_as_effect: number | null
@@ -36,41 +37,42 @@ export default function VariableCategoryPage() {
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [notFoundError, setNotFoundError] = useState(false)
+  const [loadError, setLoadError] = useState<string | null>(null)
 
   useEffect(() => {
     const categoryName = slugToName(decodeURIComponent(categorySlug))
 
-    // Fetch category info from the API
-    fetch(`/api/v1/variable-categories/${categorySlug}/variables`)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Category not found')
+    async function loadCategory() {
+      try {
+        const response = await fetch(`/api/v1/variable-categories/${categorySlug}/variables`)
+        if (response.status === 404) {
+          setNotFoundError(true)
+          return
         }
-        return res.json()
-      })
-      .then(data => {
+        if (!response.ok) {
+          throw new Error(`Category request failed with status ${response.status}`)
+        }
+
+        const data = await response.json()
+        if (!Array.isArray(data?.variables) || !data?.category) {
+          throw new Error('Category response was incomplete')
+        }
+
         setVariables(data.variables)
         setFilteredVariables(data.variables)
-        setLoading(false)
-
-        // For now, we don't have category details in the API response
-        // Set a basic category object
         setCategory({
-          id: data.variables[0]?.variable_category_id || 0,
-          name: categoryName,
-          image_url: null,
-          number_of_variables: data.variables.length,
-          number_of_user_variables: null,
-          number_of_measurements: null,
-          number_of_outcome_population_studies: null,
-          number_of_predictor_population_studies: null,
+          ...data.category,
+          name: data.category.name || categoryName,
         })
-      })
-      .catch(err => {
-        console.error('Error loading category:', err)
-        setNotFoundError(true)
+      } catch (error) {
+        console.error('Error loading category:', error)
+        setLoadError('Unable to load this category. Please try again later.')
+      } finally {
         setLoading(false)
-      })
+      }
+    }
+
+    void loadCategory()
   }, [categorySlug])
 
   useEffect(() => {
@@ -88,6 +90,14 @@ export default function VariableCategoryPage() {
 
   if (notFoundError) {
     notFound()
+  }
+
+  if (loadError) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div role="alert" className="text-center text-red-700">{loadError}</div>
+      </div>
+    )
   }
 
   if (loading || !category) {
