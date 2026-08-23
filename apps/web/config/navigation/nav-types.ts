@@ -2,6 +2,7 @@ import { NavItem } from "@/types"
 
 export interface DomainNavigation {
   topNav: NavItem[]
+  exploreNav?: NavItem[]
   sidebarNav: NavItem[]
   avatarNav: NavItem[]
   footerNav: NavItem[]
