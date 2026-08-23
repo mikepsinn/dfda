@@ -16,20 +16,23 @@ interface StudiesPageProps {
 }
 
 async function getStudies(page: number = 1, perPage: number = 5) {
-  const studies = await getPublicStudies({
-    limit: perPage,
+  const studiesWithLookahead = await getPublicStudies({
+    limit: perPage + 1,
     offset: (page - 1) * perPage,
   })
 
-  return { studies, page, perPage }
+  return {
+    studies: studiesWithLookahead.slice(0, perPage),
+    hasNextPage: studiesWithLookahead.length > perPage,
+    page,
+  }
 }
 
 export default async function StudiesPage({ searchParams }: StudiesPageProps) {
   const rawPage = Array.isArray(searchParams?.page) ? searchParams.page[0] : searchParams?.page
   const parsedPage = Number.parseInt(rawPage || '1', 10)
   const requestedPage = Number.isFinite(parsedPage) && parsedPage > 0 ? parsedPage : 1
-  const { studies, page, perPage } = await getStudies(requestedPage)
-  const hasNextPage = studies.length === perPage
+  const { studies, hasNextPage, page } = await getStudies(requestedPage)
 
   return (
     <div className="container mx-auto px-4 py-8">

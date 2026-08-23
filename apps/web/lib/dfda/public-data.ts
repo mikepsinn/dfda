@@ -125,13 +125,64 @@ export async function getPublicVariable(query: string) {
   const name = numericId === undefined ? slugToName(query) : undefined
   const variables = await getPublicVariables({ id: numericId, limit: 5, name })
 
-  return variables.find((variable) =>
+  const directMatch = variables.find((variable) =>
     numericId === undefined
       ? variable.name.localeCompare(name ?? "", undefined, {
           sensitivity: "accent",
         }) === 0
       : variable.id === numericId
-  ) ?? null
+  )
+
+  if (directMatch || numericId !== undefined) return directMatch ?? null
+
+  const requestedSlug = query.toLocaleLowerCase()
+  const slugMatch = variables.find(
+    (variable) =>
+      getPublicVariableSlug(variable).toLocaleLowerCase() === requestedSlug
+  )
+  if (slugMatch) return slugMatch
+
+  // nameToSlug intentionally removes or replaces punctuation. Search by the
+  // strongest remaining substring, then compare the API's canonical slug so
+  // broad wildcard results cannot resolve to the wrong variable.
+  const slugParts = query.match(/[\p{L}\p{N}]+/gu) ?? []
+  const strongestPart = slugParts.sort(
+    (left, right) => right.length - left.length
+  )[0]
+  const searchLengths = [8, 4, 3, 2]
+  const searchPhrases = strongestPart
+    ? Array.from(
+        new Set(
+          searchLengths.map(
+            (length) => `%${strongestPart.slice(0, length)}%`
+          )
+        )
+      )
+    : []
+
+  for (const fallbackName of searchPhrases) {
+    const fallbackVariables = await getPublicVariables({
+      limit: 200,
+      name: fallbackName,
+    })
+    const fallbackMatch = fallbackVariables.find(
+      (variable) =>
+        getPublicVariableSlug(variable).toLocaleLowerCase() === requestedSlug
+    )
+    if (fallbackMatch) return fallbackMatch
+  }
+
+  return null
+}
+
+export function isDiscoverablePublicVariable(variable: PublicVariable) {
+  return (
+    (variable.numberOfUserVariables ?? 0) > 2 &&
+    (variable.numberOfMeasurements ?? 0) > 5 &&
+    (variable.numberOfAggregateCorrelationsAsCause ?? 0) +
+      (variable.numberOfAggregateCorrelationsAsEffect ?? 0) >
+      0
+  )
 }
 
 export async function getPublicVariableCategories() {

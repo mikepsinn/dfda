@@ -1,7 +1,9 @@
 import {
   getPublicStudies,
+  getPublicVariable,
   getPublicVariableCategories,
   getPublicVariables,
+  isDiscoverablePublicVariable,
   toVariableListItem,
 } from "@/lib/dfda/public-data"
 
@@ -85,6 +87,47 @@ describe("public DFDA data client", () => {
     expect(studies[0].id).toBe("cause-1-effect-2-population-study")
     expect(requestUrl.searchParams.get("causeVariableId")).toBe("1")
     expect(requestUrl.searchParams.get("aggregated")).toBe("true")
+  })
+
+  it("resolves canonical slugs when punctuation cannot be reversed", async () => {
+    fetchMock
+      .mockResolvedValueOnce(jsonResponse([]))
+      .mockResolvedValueOnce(
+        jsonResponse([
+          {
+            id: 5555931,
+            name: "4:0 Saturated Fatty Acids",
+            url: "https://app.dfda.earth/variables/4-0_Saturated_Fatty_Acids",
+          },
+        ])
+      )
+
+    const variable = await getPublicVariable("4-0_Saturated_Fatty_Acids")
+    const fallbackUrl = new URL(String(fetchMock.mock.calls[1][0]))
+
+    expect(variable?.id).toBe(5555931)
+    expect(fallbackUrl.searchParams.get("name")).toBe("%Saturate%")
+  })
+
+  it("preserves the legacy discovery thresholds", () => {
+    expect(
+      isDiscoverablePublicVariable({
+        id: 1,
+        name: "High signal",
+        numberOfAggregateCorrelationsAsCause: 1,
+        numberOfMeasurements: 6,
+        numberOfUserVariables: 3,
+      })
+    ).toBe(true)
+    expect(
+      isDiscoverablePublicVariable({
+        id: 2,
+        name: "Low signal",
+        numberOfAggregateCorrelationsAsCause: 0,
+        numberOfMeasurements: 6,
+        numberOfUserVariables: 3,
+      })
+    ).toBe(false)
   })
 
   it("rejects failed API responses", async () => {
