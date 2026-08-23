@@ -11,6 +11,8 @@ interface VariablePageProps {
 }
 
 async function getVariable(query: string) {
+  if (!process.env.MYSQL_DATABASE_URL) return null
+
   // Try to find by ID first
   const isNumeric = /^\d+$/.test(query)
 

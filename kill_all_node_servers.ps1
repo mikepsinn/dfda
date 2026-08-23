@@ -4,11 +4,22 @@
 Write-Host "Killing all Node.js server processes..."
 $hadFailures = $false
 
-# Get all node processes and stop them
-Get-Process node -ErrorAction SilentlyContinue | ForEach-Object {
-    $process = $_
+# Discover processes while distinguishing "none found" from real discovery failures.
+$discoveryErrors = @()
+$processes = @(Get-Process node -ErrorAction SilentlyContinue -ErrorVariable discoveryErrors)
+foreach ($discoveryError in $discoveryErrors) {
+    if ($discoveryError.FullyQualifiedErrorId -notlike "NoProcessFoundForGivenName*") {
+        $hadFailures = $true
+        Write-Error "Failed to discover Node.js processes: $discoveryError"
+    }
+}
+
+foreach ($process in $processes) {
     try {
-        Stop-Process -Id $process.Id -Force -ErrorAction Stop
+        # Opening the handle before termination avoids looking up a recycled PID.
+        $null = $process.Handle
+        $process.Kill()
+        $process.WaitForExit()
         Write-Host "Killed Node.js process with ID $($process.Id)"
     } catch {
         $hadFailures = $true

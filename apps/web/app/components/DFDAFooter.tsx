@@ -32,7 +32,7 @@ export default function DFDAFooter() {
           <p>
             <strong>Contact:</strong>{" "}
             <a
-              href="mailto:grants@crowdsourcingcures.org"
+              href="mailto:hello@crowdsourcingcures.org"
               className="hover:underline"
             >
               hello@crowdsourcingcures.org

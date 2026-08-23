@@ -25,7 +25,7 @@ A comprehensive CLI toolkit for database operations including:
 ### MySQL Table Cleanup
 - Prints every table that would be emptied before doing any work
 - Requires `--yes` for every destructive run
-- Refuses remote or production-like targets unless `--allow-production` is also supplied
+- Requires a separate `--confirm-target` acknowledgement for every destructive target
 - Tries `TRUNCATE` first and falls back to `DELETE` only for the MySQL foreign-key error
 
 ## Installation
@@ -117,16 +117,14 @@ list before confirming it.
 # Print the complete cleanup plan without connecting to the database
 pnpm mysql:cleanup -- --dry-run
 
-# Clean a local database after reviewing the plan
-pnpm mysql:cleanup -- --yes
-
-# A remote or production-like target needs a second explicit override
-pnpm mysql:cleanup -- --yes --allow-production
+# Clean only after reviewing the exact target and the plan
+pnpm mysql:cleanup -- --yes --confirm-target
 ```
 
 The script tries `TRUNCATE` for each table. It uses `DELETE` only when MySQL
 reports that a foreign-key relationship prevents the truncate. A failure in any
-table produces a nonzero exit code.
+table produces a nonzero exit code. The second acknowledgement is required even
+for a localhost URL because that URL can represent a tunnel to another database.
 
 ### 4. PostgreSQL Query CLI
 

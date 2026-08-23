@@ -25,6 +25,13 @@ export async function GET(
   request: Request,
   { params }: { params: { name: string } }
 ) {
+  if (!process.env.MYSQL_DATABASE_URL) {
+    return NextResponse.json(
+      { error: 'Variable discovery is not configured' },
+      { status: 503 }
+    )
+  }
+
   try {
     const categoryKey = decodeURIComponent(params.name)
     const categoryName = slugToName(categoryKey)
@@ -68,7 +75,22 @@ export async function GET(
 
     const rankedIds = rankedVariableIds.map(({ id }) => id)
     const variables = await prisma.variables.findMany({
-      where: { id: { in: rankedIds } },
+      where: {
+        id: { in: rankedIds },
+        variable_category_id: category.id,
+        deleted_at: null,
+        is_public: true,
+        number_of_user_variables: { gt: 2 },
+        number_of_raw_measurements_with_tags_joins_children: { gt: 5 },
+        OR: [
+          { number_of_aggregate_correlations_as_cause: { gt: 0 } },
+          { number_of_aggregate_correlations_as_effect: { gt: 0 } },
+        ],
+        variable_categories: {
+          deleted_at: null,
+          is_public: true,
+        },
+      },
     })
     const variablesById = new Map(variables.map((variable) => [variable.id, variable]))
     const sortedVariables = rankedIds.flatMap((id) => {

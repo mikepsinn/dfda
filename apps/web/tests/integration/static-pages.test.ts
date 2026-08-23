@@ -43,7 +43,7 @@ describe('Integration - Static Pages', () => {
       expect(content).toContain('export default')
     })
 
-    it('homepage should include condition search functionality', () => {
+    it('homepage should import DFDAHomePage', () => {
       const homePath = path.join(process.cwd(), 'app', '(frontpage)', 'page.tsx')
       const content = fs.readFileSync(homePath, 'utf-8')
 

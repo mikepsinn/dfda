@@ -49,6 +49,16 @@ function getErrorDetails(error: unknown): { message: string; position?: string }
   };
 }
 
+function maskDatabaseUrl(databaseUrl: string): string {
+  try {
+    const parsedUrl = new URL(databaseUrl);
+    if (parsedUrl.password) parsedUrl.password = '****';
+    return parsedUrl.toString();
+  } catch {
+    return '[invalid database URL]';
+  }
+}
+
 async function executeQuery(pool: Pool, query: string): Promise<boolean> {
   try {
     const startTime = Date.now();
@@ -83,7 +93,7 @@ async function executeQuery(pool: Pool, query: string): Promise<boolean> {
 
 async function runInteractive(pool: Pool) {
   console.log('\n🔍 PostgreSQL Interactive Query Tool');
-  console.log('Connected to:', POSTGRES_DATABASE_URL.replace(/:[^:@]+@/, ':****@'));
+  console.log('Connected to:', maskDatabaseUrl(POSTGRES_DATABASE_URL));
   console.log('\nCommands:');
   console.log('  - Type SQL queries and press Enter');
   console.log('  - Type .exit or .quit to exit');

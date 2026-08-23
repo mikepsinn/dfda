@@ -21,6 +21,13 @@ function serializeBigInts(value: unknown): unknown {
 }
 
 export async function GET() {
+  if (!process.env.MYSQL_DATABASE_URL) {
+    return NextResponse.json(
+      { error: 'Variable discovery is not configured' },
+      { status: 503 }
+    )
+  }
+
   try {
     const rankedVariableIds = await prisma.$queryRaw<Array<{ id: number }>>`
       SELECT v.id
@@ -36,6 +43,7 @@ export async function GET() {
         )
         AND c.deleted_at IS NULL
         AND c.boring = FALSE
+        AND c.is_public = TRUE
       ORDER BY (
         COALESCE(v.number_of_aggregate_correlations_as_cause, 0)
         + COALESCE(v.number_of_aggregate_correlations_as_effect, 0)
@@ -51,6 +59,19 @@ export async function GET() {
       where: {
         id: {
           in: rankedIds,
+        },
+        deleted_at: null,
+        is_public: true,
+        number_of_user_variables: { gt: 2 },
+        number_of_raw_measurements_with_tags_joins_children: { gt: 5 },
+        OR: [
+          { number_of_aggregate_correlations_as_cause: { gt: 0 } },
+          { number_of_aggregate_correlations_as_effect: { gt: 0 } },
+        ],
+        variable_categories: {
+          deleted_at: null,
+          boring: false,
+          is_public: true,
         },
       },
       include: {

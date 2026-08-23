@@ -36,6 +36,8 @@ export async function generateMetadata({ params }: StudyPageProps): Promise<Meta
 }
 
 async function getStudyBySlug(causeSlug: string, effectSlug: string) {
+  if (!process.env.MYSQL_DATABASE_URL) return null
+
   try {
     // Find the cause and effect variables by slug
     const [causeVariable, effectVariable] = await Promise.all([
