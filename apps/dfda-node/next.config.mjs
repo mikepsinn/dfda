@@ -1,12 +1,22 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const appDirectory = path.dirname(fileURLToPath(import.meta.url))
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  outputFileTracingRoot: path.join(appDirectory, '../..'),
   eslint: {
-    ignoreDuringBuilds: false,
+    // CI runs the static checks in separate processes before the production
+    // build so Vercel does not hold ESLint, TypeScript, and webpack graphs in
+    // memory simultaneously.
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
   },
+  typedRoutes: true,
   images: {
     unoptimized: true,
   },
@@ -14,7 +24,6 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
-    typedRoutes: true,
     serverActions: {
       allowedOrigins: ['127.0.0.1:*', 'localhost:*'],
     },

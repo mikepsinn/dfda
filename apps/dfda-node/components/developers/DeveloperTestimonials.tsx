@@ -14,7 +14,7 @@ export function DeveloperTestimonials() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground italic">
-            "The FDA.gov v2 API has been transformative for our patient engagement platform. We&apos;ve seen a
+            "The dFDA API has been transformative for our patient engagement platform. We&apos;ve seen a
             43% increase in clinical trial participation and significantly improved patient outcomes."
           </p>
         </div>
@@ -30,7 +30,7 @@ export function DeveloperTestimonials() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground italic">
-            "Integrating with the FDA.gov v2 API allowed us to offer our providers real-time access to
+            "Integrating with the dFDA API allowed us to offer our providers real-time access to
             comparative effectiveness data, improving clinical decision-making and patient care."
           </p>
         </div>
@@ -46,11 +46,11 @@ export function DeveloperTestimonials() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground italic">
-            "The OAuth2 integration with FDA.gov v2 has streamlined our trial enrollment process, reducing
+            "The OAuth2 integration with the dFDA API has streamlined our trial enrollment process, reducing
             patient onboarding time by 67% and dramatically improving our data collection capabilities."
           </p>
         </div>
       </div>
     </div>
   )
-} 
+}

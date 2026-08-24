@@ -1,5 +1,11 @@
 # Project Vision & Plan: Decentralized FDA (dFDA) Network & Platform
 
+> [!IMPORTANT]
+> `apps/dfda-node` is the canonical product application. `prototype.dfda.earth`
+> should deploy this folder from this repository. The app is intended to be
+> configured and deployed as an isolated, white-label node for each clinic,
+> research organization, or other customer.
+
 ## 1. Vision & Goals
 
 *   **Goal:** Create a decentralized network (dFDA) of interoperable health data nodes to accelerate medical research, improve treatment effectiveness, and empower patients.
@@ -14,7 +20,9 @@
 
 ## Environment Setup
 
-This project requires several environment variables to be set up for various services (Supabase, Google AI, Google Cloud).
+The web app requires Supabase credentials. Direct Postgres, Google AI, and
+Google Cloud credentials are optional and only enable the features that use
+those services.
 
 ### Local Development
 
@@ -25,10 +33,11 @@ For local development, create a `.env` file in the root of the `apps/dfda-node` 
 NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
 SUPABASE_SERVICE_ROLE_KEY=YOUR_SUPABASE_SERVICE_ROLE_KEY
+SUPABASE_JWT_SECRET=YOUR_SUPABASE_JWT_SECRET
 
-# Google Generative AI (For direct Gemini API calls, e.g., AI generation script)
+# Optional: Google Generative AI (for AI-assisted features)
 # Get from Google AI Studio: https://aistudio.google.com/app/apikey
-GOOGLE_GENERATIVE_AI_API_KEY=YOUR_GEMINI_API_KEY
+# GOOGLE_GENERATIVE_AI_API_KEY=YOUR_GEMINI_API_KEY
 
 
 # Optional: Other variables like Google OAuth Client ID/Secret if needed
@@ -49,7 +58,10 @@ GOOGLE_GENERATIVE_AI_API_KEY=YOUR_GEMINI_API_KEY
 ### Vercel Deployment
 
 1.  Go to your Vercel Project Settings > Environment Variables.
-2.  Add all required variables from your `.env` file (e.g., `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`)
+2.  Add the required Supabase variables from your `.env` file:
+    `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+    `SUPABASE_SERVICE_ROLE_KEY`, and `SUPABASE_JWT_SECRET`. Add
+    `GOOGLE_GENERATIVE_AI_API_KEY` only when AI-assisted features are enabled.
 
 
 

@@ -51,4 +51,5 @@ tsconfig.tsbuildinfo
 packages/database/.env
 test-report.html
 .claude/settings.local.json
-apps/web/.claude/settings.local.json
+apps/crowdsourcing-cures/.claude/settings.local.json
+.vercel

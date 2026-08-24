@@ -202,7 +202,7 @@ const Sidebar = React.forwardRef<
             style={
               {
                 "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
-              } as React.CSSProperties
+              } as Record<string, string>
             }
             side={side}
           >

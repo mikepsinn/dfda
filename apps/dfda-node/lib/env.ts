@@ -7,8 +7,11 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string().url(),
-    GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1),
+    // The web app uses Supabase's HTTP API. Direct Postgres access is only
+    // required by workers and database maintenance scripts.
+    DATABASE_URL: z.string().url().optional(),
+    // AI-assisted features degrade gracefully when no provider key is set.
+    GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
     // Remove Google OAuth client creds - handled by Supabase Auth server
     // GOOGLE_CLIENT_ID: z.string().min(1).optional(), 
     // GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
@@ -28,7 +31,7 @@ export const env = createEnv({
     NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
     NEXT_PUBLIC_LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).optional(),
     // Site metadata configuration
-    NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("FDA.gov v2"),
+    NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("dFDA Node"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("Revolutionizing Clinical Trials Through Decentralization"),
     NEXT_PUBLIC_SITE_URL: z.string().url().default("https://prototype.dfda.earth"),
     NEXT_PUBLIC_TWITTER_HANDLE: z.string().min(1).default("@dfda"),

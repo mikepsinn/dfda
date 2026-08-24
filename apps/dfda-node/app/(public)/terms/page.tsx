@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
+import { env } from '@/lib/env';
 
 // Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,13 +28,13 @@ export default async function TermsPage() {
               <p className="lead">Last Updated: March 1, 2025</p>
 
               <p>
-                Welcome to FDA.gov v2. These Terms of Service ("Terms") govern your access to and use of the FDA.gov v2
+                Welcome to {env.NEXT_PUBLIC_SITE_NAME}. These Terms of Service ("Terms") govern your access to and use of the {env.NEXT_PUBLIC_SITE_NAME}
                 platform, including any content, functionality, and services offered on or through the platform.
               </p>
 
               <h2>1. Acceptance of Terms</h2>
               <p>
-                By accessing or using the FDA.gov v2 platform, you agree to be bound by these Terms. If you do not agree
+                By accessing or using the {env.NEXT_PUBLIC_SITE_NAME} platform, you agree to be bound by these Terms. If you do not agree
                 to these Terms, you must not access or use the platform.
               </p>
 
@@ -51,7 +52,7 @@ export default async function TermsPage() {
               </p>
 
               <h2>4. User Responsibilities</h2>
-              <p>All users of the FDA.gov v2 platform must adhere to the following responsibilities:</p>
+              <p>All users of the {env.NEXT_PUBLIC_SITE_NAME} platform must adhere to the following responsibilities:</p>
 
               <h3>4.1 For Research Partners</h3>
               <p>As a research partner, you are responsible for:</p>
@@ -81,7 +82,7 @@ export default async function TermsPage() {
 
               <h2>6. Intellectual Property</h2>
               <p>
-                The FDA.gov v2 platform and its original content, features, and functionality are owned by FDA.gov v2
+                The {env.NEXT_PUBLIC_SITE_NAME} platform and its original content, features, and functionality are owned by {env.NEXT_PUBLIC_SITE_NAME}
                 and are protected by international copyright, trademark, patent, trade secret, and other intellectual
                 property laws.
               </p>
@@ -94,7 +95,7 @@ export default async function TermsPage() {
               </p>
 
               <h2>8. Prohibited Uses</h2>
-              <p>You may not use the FDA.gov v2 platform:</p>
+              <p>You may not use the {env.NEXT_PUBLIC_SITE_NAME} platform:</p>
               <ul>
                 <li>In any way that violates applicable laws or regulations</li>
                 <li>To impersonate or attempt to impersonate another person or entity</li>
@@ -105,7 +106,7 @@ export default async function TermsPage() {
 
               <h2>9. Limitation of Liability</h2>
               <p>
-                FDA.gov v2 shall not be liable for any indirect, incidental, special, consequential, or punitive damages
+                {env.NEXT_PUBLIC_SITE_NAME} shall not be liable for any indirect, incidental, special, consequential, or punitive damages
                 resulting from your access to or use of, or inability to access or use, the platform or any content
                 thereon.
               </p>
@@ -117,7 +118,7 @@ export default async function TermsPage() {
               </p>
 
               <h2>11. Contact Information</h2>
-              <p>If you have any questions about these Terms, please contact us at legal@fdav2.gov.</p>
+              <p>If you have any questions about these Terms, please contact us at legal@dfda.earth.</p>
             </div>
           </div>
         </div>
