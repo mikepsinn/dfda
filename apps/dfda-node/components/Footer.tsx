@@ -1,7 +1,11 @@
 import { InternalLink } from "./internal-link"
 import { Beaker } from "lucide-react"
 
-export function Footer() {
+interface FooterProps {
+  siteName: string
+}
+
+export function Footer({ siteName }: FooterProps) {
   return (
     <footer className="w-full border-t py-6">
       <div className="container px-4 md:px-6 mx-auto flex flex-col items-center gap-4">
@@ -21,7 +25,7 @@ export function Footer() {
         </nav>
         <div className="flex items-center gap-2">
           <Beaker className="h-6 w-6 text-primary" />
-          <p className="text-sm text-muted-foreground">© 2025 FDA.gov v2. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} {siteName}. All rights reserved.</p>
         </div>
       </div>
     </footer>

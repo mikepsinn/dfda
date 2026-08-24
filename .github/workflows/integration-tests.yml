@@ -1,10 +1,19 @@
-name: Web Tests
+name: Crowdsourcing Cures Tests
 
 on:
-  # Run on all pushes
   push:
-  # Run on all PRs
+    paths:
+      - 'apps/crowdsourcing-cures/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
   pull_request:
+    paths:
+      - 'apps/crowdsourcing-cures/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,12 +28,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: 9.15.3
           run_install: false
           
       - name: Get pnpm store directory
@@ -33,7 +41,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -43,31 +51,31 @@ jobs:
 
       # Cache Next.js build output
       - name: Cache Next.js build
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
-            apps/web/.next/cache
-            apps/web/.next-ci/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('apps/web/**.[jt]s', 'apps/web/**.[jt]sx', 'apps/web/package.json') }}
+            apps/crowdsourcing-cures/.next/cache
+            apps/crowdsourcing-cures/.next-ci/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('apps/crowdsourcing-cures/**.[jt]s', 'apps/crowdsourcing-cures/**.[jt]sx', 'apps/crowdsourcing-cures/package.json') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
             ${{ runner.os }}-nextjs-
 
       # Ensure cache directories exist
       - name: Create cache directories
-        run: mkdir -p apps/web/.next/cache apps/web/.next-ci/cache
+        run: mkdir -p apps/crowdsourcing-cures/.next/cache apps/crowdsourcing-cures/.next-ci/cache
         shell: bash
             
       # Install dependencies
       - name: Install dependencies
-        # Limit linking to the React 18 web app and its workspace dependencies.
+        # Limit linking to the React 18 legacy app and its workspace dependencies.
         # Installing every sibling app also hoists React 19 Radix peer types into
         # the root node_modules tree, which makes this app's JSX types conflict.
-        run: pnpm --filter dfda... install --frozen-lockfile
+        run: pnpm --filter crowdsourcing-cures... install --frozen-lockfile
             
       # Setup environment variables
       - name: Setup environment variables
-        working-directory: apps/web
+        working-directory: apps/crowdsourcing-cures
         run: |
           cp .env.example .env
           echo "USE_LOCAL_REDIS=true" >> .env
@@ -79,7 +87,7 @@ jobs:
 
       # Start database for tests
       - name: Start test database and Redis
-        working-directory: apps/web
+        working-directory: apps/crowdsourcing-cures
         run: |
           docker compose -f docker-compose.test.yml up -d db redis
           echo "Waiting for database to be ready..."
@@ -89,12 +97,12 @@ jobs:
             
       # Setup database schema
       - name: Setup database schema
-        working-directory: apps/web
+        working-directory: apps/crowdsourcing-cures
         run: pnpm prisma:migrate
 
       # Run unit tests
       - name: Run unit tests
-        working-directory: apps/web
+        working-directory: apps/crowdsourcing-cures
         run: pnpm test:unit --reporters=default --reporters=github-actions
         env:
           CI: true
@@ -102,7 +110,7 @@ jobs:
       # Run TypeScript in its own process so Next's build worker does not retain
       # the compiler graph alongside the production build.
       - name: Run type check
-        working-directory: apps/web
+        working-directory: apps/crowdsourcing-cures
         run: pnpm type-check
         env:
           CI: true
@@ -110,7 +118,7 @@ jobs:
             
       # Build and run integration tests
       - name: Build and run integration tests
-        working-directory: apps/web
+        working-directory: apps/crowdsourcing-cures
         run: |
           pnpm run build
           pnpm start &
@@ -125,8 +133,8 @@ jobs:
       - name: Upload test results
         if: always()
         run: |
-          mkdir -p apps/web/coverage apps/web/test-results
-          find apps/web -name "junit.xml" -o -name "test-report.html" -o -path "apps/web/coverage/*" -o -path "apps/web/test-results/*" > artifact_list.txt
+          mkdir -p apps/crowdsourcing-cures/coverage apps/crowdsourcing-cures/test-results
+          find apps/crowdsourcing-cures -name "junit.xml" -o -name "test-report.html" -o -path "apps/crowdsourcing-cures/coverage/*" -o -path "apps/crowdsourcing-cures/test-results/*" > artifact_list.txt
           if [ -s artifact_list.txt ]; then
             echo "Found test artifacts to upload"
             cat artifact_list.txt
@@ -142,9 +150,9 @@ jobs:
         with:
           name: test-results
           path: |
-            apps/web/coverage/
-            apps/web/test-results/
-            apps/web/**/junit.xml
-            apps/web/test-report.html
-            apps/web/unit-test-report.html
+            apps/crowdsourcing-cures/coverage/
+            apps/crowdsourcing-cures/test-results/
+            apps/crowdsourcing-cures/**/junit.xml
+            apps/crowdsourcing-cures/test-report.html
+            apps/crowdsourcing-cures/unit-test-report.html
           retention-days: 30
