@@ -1,14 +1,6 @@
-name: Deploy to AWS Lightsail Container Service
+name: Deploy legacy Crowdsourcing Cures to AWS Lightsail
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - 'apps/crowdsourcing-cures/**'
-      - 'package.json'
-      - 'pnpm-lock.yaml'
-      - 'pnpm-workspace.yaml'
   workflow_dispatch:
 
 env:
@@ -29,6 +21,31 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Validate deployment credentials
+        shell: bash
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          required=(
+            LIGHTSAIL_REGION
+            LIGHTSAIL_ACCESS_KEY_ID
+            LIGHTSAIL_SECRET_ACCESS_KEY
+            DOPPLER_TOKEN
+            DOCKER_IMAGE_NAME
+            DOCKERHUB_USERNAME
+            DOCKERHUB_TOKEN
+          )
+          missing=()
+          for name in "${required[@]}"; do
+            if [[ -z "${!name}" ]]; then
+              missing+=("$name")
+            fi
+          done
+          if (( ${#missing[@]} )); then
+            printf '::error::Missing required repository secret: %s\n' "${missing[@]}"
+            exit 1
+          fi
       - name: Set Docker image tag
         run: echo "DOCKER_IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Log in to Docker Hub
