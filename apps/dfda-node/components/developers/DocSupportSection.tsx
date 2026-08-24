@@ -7,7 +7,7 @@ export function DocSupportSection() {
     <section id="support" className="mb-10">
       <h2 className="text-3xl font-bold mb-4">Support & Resources</h2>
       <p className="text-muted-foreground mb-4">
-        Need help with the FDA.gov v2 API? Here are some resources to help you get started and resolve any issues you
+        Need help with the dFDA API? Here are some resources to help you get started and resolve any issues you
         may encounter.
       </p>
 
@@ -60,4 +60,4 @@ export function DocSupportSection() {
       </div>
     </section>
   )
-} 
+}

@@ -15,9 +15,10 @@ import { Button } from "@/components/ui/button"
 
 interface MobileNavProps {
   navItems: NavItem[]
+  siteName: string
 }
 
-export function MobileNav({ navItems }: MobileNavProps) {
+export function MobileNav({ navItems, siteName }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -48,7 +49,7 @@ export function MobileNav({ navItems }: MobileNavProps) {
                   height={24}
                   className="h-6 w-6"
                 />
-                <span>FDA.gov v2</span>
+                <span>{siteName}</span>
               </Link>
             </SheetTitle>
           </SheetHeader>
@@ -71,4 +72,4 @@ export function MobileNav({ navItems }: MobileNavProps) {
       </Sheet>
     </>
   )
-} 
+}

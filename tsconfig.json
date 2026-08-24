@@ -20,9 +20,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./apps/fda-gov-v2/*"]
+      "@/*": ["./apps/dfda-node/*"]
     }
   },
-  "include": ["apps/fda-gov-v2/**/*.ts", "apps/fda-gov-v2/**/*.tsx"],
+  "include": ["apps/dfda-node/**/*.ts", "apps/dfda-node/**/*.tsx"],
   "exclude": ["node_modules"]
-} 
+}
