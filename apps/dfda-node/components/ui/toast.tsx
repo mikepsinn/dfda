@@ -40,17 +40,24 @@ const toastVariants = cva(
   }
 )
 
+type ToastPrimitiveProps = React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root>
+type ToastPropsWithReact19Children = Omit<ToastPrimitiveProps, "children"> &
+  VariantProps<typeof toastVariants> & {
+    children?: React.ReactNode
+  }
+
 const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
-    VariantProps<typeof toastVariants>
->(({ className, variant, ...props }, ref) => {
+  ToastPropsWithReact19Children
+>(({ className, variant, children, ...props }, ref) => {
   return (
     <ToastPrimitives.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
       {...props}
-    />
+    >
+      {children as ToastPrimitiveProps["children"]}
+    </ToastPrimitives.Root>
   )
 })
 Toast.displayName = ToastPrimitives.Root.displayName
@@ -88,27 +95,41 @@ const ToastClose = React.forwardRef<
 ))
 ToastClose.displayName = ToastPrimitives.Close.displayName
 
+type ToastPrimitiveTitleProps = React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
+type ToastTitleProps = Omit<ToastPrimitiveTitleProps, "children"> & {
+  children?: React.ReactNode
+}
+
 const ToastTitle = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Title>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
->(({ className, ...props }, ref) => (
+  ToastTitleProps
+>(({ className, children, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
     className={cn("text-sm font-semibold", className)}
     {...props}
-  />
+  >
+    {children as ToastPrimitiveTitleProps["children"]}
+  </ToastPrimitives.Title>
 ))
 ToastTitle.displayName = ToastPrimitives.Title.displayName
 
+type ToastPrimitiveDescriptionProps = React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
+type ToastDescriptionProps = Omit<ToastPrimitiveDescriptionProps, "children"> & {
+  children?: React.ReactNode
+}
+
 const ToastDescription = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Description>,
-  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
->(({ className, ...props }, ref) => (
+  ToastDescriptionProps
+>(({ className, children, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
     className={cn("text-sm opacity-90", className)}
     {...props}
-  />
+  >
+    {children as ToastPrimitiveDescriptionProps["children"]}
+  </ToastPrimitives.Description>
 ))
 ToastDescription.displayName = ToastPrimitives.Description.displayName
 
