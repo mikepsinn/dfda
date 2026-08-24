@@ -3,7 +3,7 @@ name: Deploy to AWS Lightsail Container Service
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'apps/crowdsourcing-cures/**'
       - 'package.json'
