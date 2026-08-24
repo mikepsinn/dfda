@@ -3,6 +3,12 @@ title: "💊 OBJECTIVE: DISEASE ERADICATION 🚀"
 description: Help us create a world without disease.
 ---
 
+> [!IMPORTANT]
+> This is the legacy Crowdsourcing Cures application deployed at `crowdsourcingcures.org`.
+> New clinic, research, and white-label product development belongs in
+> [`../dfda-node`](../dfda-node). Keep changes here limited to maintenance,
+> security, migration, and continuity work.
+
 # Here's the Deal Folks
 
 **[2 billion](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)** people are suffering from chronic diseases. 

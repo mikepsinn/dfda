@@ -1,7 +1,10 @@
 {
-  "name": "fda-gov-v2",
+  "name": "dfda-node",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev:env": "pnpm run sb:local:start && concurrently --kill-others --names \"next,worker,cron\" --prefix-colors \"yellow,blue,magenta\" \"pnpm run dev:next\" \"pnpm run dev:worker\" \"pnpm run dev:cron\"",
     "dev": "doppler run -- pnpm run dev:next",
@@ -87,7 +90,7 @@
     "@radix-ui/react-toggle-group": "^1.1.1",
     "@radix-ui/react-tooltip": "^1.1.8",
     "@radix-ui/react-visually-hidden": "^1.2.0",
-    "@supabase/ssr": "^0.6.1",
+    "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.49.4",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@tanstack/react-table": "^8.21.3",

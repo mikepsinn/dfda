@@ -27,7 +27,7 @@ export default function DeveloperPortal() {
             <div className="rounded-lg bg-primary/5 p-8">
               <div className="mx-auto max-w-3xl text-center">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
-                  Supercharge Your Health App with FDA.gov v2 API
+                  Supercharge Your Health App with the dFDA API
                 </h2>
                 <p className="mt-4 text-muted-foreground md:text-xl">
                   Integrate real-world clinical data, personalized insights, and trial access directly into your health
@@ -138,7 +138,7 @@ export default function DeveloperPortal() {
               <TabsContent value="get-started" className="space-y-6 pt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Getting Started with the FDA.gov v2 API</CardTitle>
+                    <CardTitle>Getting Started with the dFDA API</CardTitle>
                     <CardDescription>Follow these steps to start using our API in your applications</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
@@ -206,11 +206,11 @@ export default function DeveloperPortal() {
                 <Card>
                   <CardHeader>
                     <CardTitle>API Documentation</CardTitle>
-                    <CardDescription>Comprehensive documentation for the FDA.gov v2 API</CardDescription>
+                    <CardDescription>Comprehensive documentation for the dFDA API</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <p className="text-muted-foreground">
-                      Our detailed documentation covers everything you need to know about using the FDA.gov v2 API,
+                      Our detailed documentation covers everything you need to know about using the dFDA API,
                       including authentication, endpoints, error handling, and more.
                     </p>
                     <div className="grid gap-6 md:grid-cols-2">
@@ -270,7 +270,7 @@ export default function DeveloperPortal() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Code Examples</CardTitle>
-                    <CardDescription>Sample code for using the FDA.gov v2 API in different languages</CardDescription>
+                    <CardDescription>Sample code for using the dFDA API in different languages</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <CodeExampleTabs />
@@ -366,7 +366,7 @@ export default function DeveloperPortal() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground italic">
-                    "The FDA.gov v2 API has been transformative for our patient engagement platform. We&apos;ve seen a
+                    "The dFDA API has been transformative for our patient engagement platform. We&apos;ve seen a
                     43% increase in clinical trial participation and significantly improved patient outcomes."
                   </p>
                 </div>
@@ -382,7 +382,7 @@ export default function DeveloperPortal() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground italic">
-                    "Integrating with the FDA.gov v2 API allowed us to offer our providers real-time access to
+                    "Integrating with the dFDA API allowed us to offer our providers real-time access to
                     comparative effectiveness data, improving clinical decision-making and patient care."
                   </p>
                 </div>
@@ -398,7 +398,7 @@ export default function DeveloperPortal() {
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground italic">
-                    "The OAuth2 integration with FDA.gov v2 has streamlined our trial enrollment process, reducing
+                    "The OAuth2 integration with the dFDA API has streamlined our trial enrollment process, reducing
                     patient onboarding time by 67% and dramatically improving our data collection capabilities."
                   </p>
                 </div>

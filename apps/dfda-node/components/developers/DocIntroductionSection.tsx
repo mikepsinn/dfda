@@ -6,7 +6,7 @@ export function DocIntroductionSection() {
     <section id="introduction" className="mb-10">
       <h2 className="text-3xl font-bold mb-4">Introduction</h2>
       <p className="text-muted-foreground mb-4">
-        The FDA.gov v2 API provides programmatic access to clinical trial data, comparative effectiveness information,
+        The dFDA API provides programmatic access to clinical trial data, comparative effectiveness information,
         and outcome labels. This documentation will help you integrate with our API and build powerful healthcare
         applications.
       </p>
@@ -26,4 +26,4 @@ export function DocIntroductionSection() {
       </p>
     </section>
   )
-} 
+}

@@ -1,16 +1,64 @@
-name: CI
+name: dFDA Node Tests
 
 on:
   push:
     paths:
-      - 'apps/fda-gov-v2/**'
+      - 'apps/dfda-node/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
   pull_request:
     paths:
-      - 'apps/fda-gov-v2/**'
+      - 'apps/dfda-node/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+  workflow_dispatch:
 
 jobs:
-  fda-gov-v2:
-    name: FDA Gov v2
-    uses: ./apps/fda-gov-v2/.github/workflows/fda-gov-v2.yml
-    with:
-      node-version: '20.x' 
+  check-and-build:
+    name: Check and Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/dfda-node
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: pnpm
+
+      - name: Install dFDA Node dependencies
+        working-directory: .
+        run: pnpm --filter dfda-node... install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm type-check
+
+      - name: Run unit tests
+        run: pnpm test:unit
+
+      - name: Build
+        run: pnpm build
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+          DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+          GOOGLE_GENERATIVE_AI_API_KEY: test-google-generative-ai-key
+          SUPABASE_SERVICE_ROLE_KEY: test-service-role-key
+          SUPABASE_JWT_SECRET: test-jwt-secret-with-at-least-32-characters
+          NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
+          NEXT_PUBLIC_SITE_NAME: dFDA Node
+          NEXT_PUBLIC_SITE_DESCRIPTION: Decentralized clinical trials and health research
+          NEXT_PUBLIC_SITE_URL: http://localhost:3000

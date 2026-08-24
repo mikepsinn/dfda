@@ -5,7 +5,7 @@ export function DocErrorHandlingSection() {
     <section id="error-handling" className="mb-10">
       <h2 className="text-3xl font-bold mb-4">Error Handling</h2>
       <p className="text-muted-foreground mb-4">
-        The FDA.gov v2 API uses conventional HTTP response codes to indicate the success or failure of an API request.
+        The dFDA API uses conventional HTTP response codes to indicate the success or failure of an API request.
         Here's how to handle errors in your applications.
       </p>
 
@@ -112,4 +112,4 @@ export function DocErrorHandlingSection() {
       </div>
     </section>
   )
-} 
+}

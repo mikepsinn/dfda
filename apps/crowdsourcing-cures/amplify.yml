@@ -18,4 +18,4 @@ applications:
         paths:
           - .pnpm-store/**/*
           - node_modules/**/*
-    appRoot: apps/web 
+    appRoot: apps/crowdsourcing-cures

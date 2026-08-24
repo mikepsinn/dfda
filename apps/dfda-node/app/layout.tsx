@@ -90,13 +90,13 @@ export default async function RootLayout({
         <TooltipProvider>
           <ScrollToHashElement />
           <div className="min-h-screen flex flex-col">
-            <Header initialUser={user} initialProfile={profile} />
+            <Header initialUser={user} initialProfile={profile} siteName={env.NEXT_PUBLIC_SITE_NAME} />
             <main className="flex-1 py-6 md:py-10 w-full bg-background">
               <div className="container px-4 md:px-6 mx-auto">
                 {children}
               </div>
             </main>
-            <Footer />
+            <Footer siteName={env.NEXT_PUBLIC_SITE_NAME} />
           </div>
         </TooltipProvider>
       </body>

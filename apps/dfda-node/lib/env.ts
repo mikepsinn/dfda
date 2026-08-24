@@ -28,7 +28,7 @@ export const env = createEnv({
     NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(1),
     NEXT_PUBLIC_LOG_LEVEL: z.enum(['debug', 'info', 'warn', 'error']).optional(),
     // Site metadata configuration
-    NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("FDA.gov v2"),
+    NEXT_PUBLIC_SITE_NAME: z.string().min(1).default("dFDA Node"),
     NEXT_PUBLIC_SITE_DESCRIPTION: z.string().min(1).default("Revolutionizing Clinical Trials Through Decentralization"),
     NEXT_PUBLIC_SITE_URL: z.string().url().default("https://prototype.dfda.earth"),
     NEXT_PUBLIC_TWITTER_HANDLE: z.string().min(1).default("@dfda"),
