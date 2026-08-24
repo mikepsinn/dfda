@@ -7,8 +7,11 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    DATABASE_URL: z.string().url(),
-    GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1),
+    // The web app uses Supabase's HTTP API. Direct Postgres access is only
+    // required by workers and database maintenance scripts.
+    DATABASE_URL: z.string().url().optional(),
+    // AI-assisted features degrade gracefully when no provider key is set.
+    GOOGLE_GENERATIVE_AI_API_KEY: z.string().min(1).optional(),
     // Remove Google OAuth client creds - handled by Supabase Auth server
     // GOOGLE_CLIENT_ID: z.string().min(1).optional(), 
     // GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
