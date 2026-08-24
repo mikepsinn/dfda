@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
+import { env } from '@/lib/env';
 
 // Generate metadata using the helper function
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,7 +28,7 @@ export default async function PrivacyPolicy() {
               <p className="lead">Last Updated: March 1, 2025</p>
 
               <p>
-                This Privacy Policy describes how FDA.gov v2 collects, uses, and shares your personal information when
+                This Privacy Policy describes how {env.NEXT_PUBLIC_SITE_NAME} collects, uses, and shares your personal information when
                 you use our platform. We take your privacy seriously and are committed to protecting your personal and
                 health information.
               </p>
@@ -113,7 +114,7 @@ export default async function PrivacyPolicy() {
                 <li>Data portability</li>
                 <li>Withdrawing consent</li>
               </ul>
-              <p>To exercise these rights, please contact us at privacy@fdav2.gov.</p>
+              <p>To exercise these rights, please contact us at privacy@dfda.earth.</p>
 
               <h2>6. Children's Privacy</h2>
               <p>
@@ -136,7 +137,7 @@ export default async function PrivacyPolicy() {
               </p>
 
               <h2>9. Contact Us</h2>
-              <p>If you have any questions about this Privacy Policy, please contact us at privacy@fdav2.gov.</p>
+              <p>If you have any questions about this Privacy Policy, please contact us at privacy@dfda.earth.</p>
             </div>
           </div>
         </div>

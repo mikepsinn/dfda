@@ -1,27 +1,43 @@
-import { NextRequest } from "next/server";
+import type { NextRequest } from "next/server";
 import {
   CopilotRuntime,
   copilotRuntimeNextJSAppRouterEndpoint,
   ExperimentalEmptyAdapter,
-  langGraphPlatformEndpoint,
 } from "@copilotkit/runtime";
+import { LangGraphAgent } from "@copilotkit/runtime/langgraph";
 
 const serviceAdapter = new ExperimentalEmptyAdapter();
 
-const runtime = new CopilotRuntime({
-  remoteEndpoints: [
-    langGraphPlatformEndpoint({
-      deploymentUrl: process.env.LANGGRAPH_DEPLOYMENT_URL || "",
-      langsmithApiKey: process.env.LANGSMITH_API_KEY || "", // only used in LangGraph Platform deployments
-      agents: [{
-          name: process.env.NEXT_PUBLIC_COPILOTKIT_AGENT_NAME || "",
-          description: process.env.NEXT_PUBLIC_COPILOTKIT_AGENT_DESCRIPTION || 'A helpful LLM agent.'
-      }]
-    }),
-  ],
-});
+function createRuntime() {
+  const deploymentUrl = process.env.LANGGRAPH_DEPLOYMENT_URL;
+  const agentName = process.env.NEXT_PUBLIC_COPILOTKIT_AGENT_NAME;
+
+  if (!deploymentUrl || !agentName) {
+    return null;
+  }
+
+  return new CopilotRuntime({
+    agents: {
+      [agentName]: new LangGraphAgent({
+        deploymentUrl,
+        graphId: agentName,
+        agentName,
+        langsmithApiKey: process.env.LANGSMITH_API_KEY,
+      }),
+    },
+  });
+}
 
 export const POST = async (req: NextRequest) => {
+  const runtime = createRuntime();
+
+  if (!runtime) {
+    return Response.json(
+      { error: "CopilotKit is not configured for this node." },
+      { status: 503 },
+    );
+  }
+
   const { handleRequest } = copilotRuntimeNextJSAppRouterEndpoint({
     runtime,
     serviceAdapter,

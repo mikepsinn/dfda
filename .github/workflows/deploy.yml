@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'apps/crowdsourcing-cures/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
   workflow_dispatch:
 
 env:
@@ -23,25 +28,28 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set Docker image tag
         run: echo "DOCKER_IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Log in to Docker Hub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Install pnpm
-        run: npm install -g pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+          run_install: false
 
       # Install dependencies
       - name: Install dependencies
-        run: cd apps/web && pnpm install
+        run: pnpm --filter crowdsourcing-cures... install --frozen-lockfile
 
       # Build and push container using custom script
       - name: Build and push container
-        run: cd apps/web && npx ts-node scripts/build-and-push-container.ts
+        run: cd apps/crowdsourcing-cures && npx ts-node scripts/build-and-push-container.ts
 
       # Deploy to Lightsail using custom script
       - name: Deploy to Lightsail
-        run: cd apps/web && npx ts-node scripts/deploy-lightsail.ts
+        run: cd apps/crowdsourcing-cures && npx ts-node scripts/deploy-lightsail.ts

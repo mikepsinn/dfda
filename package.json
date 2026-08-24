@@ -3,7 +3,7 @@
   "name": "dfda-root",
   "version": "1.0.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "scripts": {
     "db:start": "docker-compose up -d",

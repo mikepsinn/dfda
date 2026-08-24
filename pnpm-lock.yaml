@@ -163,8 +163,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.4(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@supabase/ssr':
-        specifier: ^0.6.1
-        version: 0.6.1(@supabase/supabase-js@2.89.0(bufferutil@4.0.8)(utf-8-validate@6.0.3))
+        specifier: ^0.8.0
+        version: 0.8.0(@supabase/supabase-js@2.89.0(bufferutil@4.0.8))
       '@supabase/supabase-js':
         specifier: ^2.49.4
         version: 2.89.0(bufferutil@4.0.8)(utf-8-validate@6.0.3)
@@ -615,7 +615,7 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  apps/web:
+  apps/crowdsourcing-cures:
     dependencies:
       '@ai-sdk/anthropic':
         specifier: 1.0.5

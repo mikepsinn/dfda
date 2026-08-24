@@ -1,5 +1,11 @@
 # Project Vision & Plan: Decentralized FDA (dFDA) Network & Platform
 
+> [!IMPORTANT]
+> `apps/dfda-node` is the canonical product application. `prototype.dfda.earth`
+> should deploy this folder from this repository. The app is intended to be
+> configured and deployed as an isolated, white-label node for each clinic,
+> research organization, or other customer.
+
 ## 1. Vision & Goals
 
 *   **Goal:** Create a decentralized network (dFDA) of interoperable health data nodes to accelerate medical research, improve treatment effectiveness, and empower patients.

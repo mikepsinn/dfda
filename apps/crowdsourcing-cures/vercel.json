@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "pnpm --filter dfda... install --frozen-lockfile",
+  "installCommand": "pnpm --filter crowdsourcing-cures... install --frozen-lockfile",
   "buildCommand": "pnpm run build:vercel",
   "crons": [
     {

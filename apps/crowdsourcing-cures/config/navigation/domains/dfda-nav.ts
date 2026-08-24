@@ -114,7 +114,7 @@ export const dfdaLinks = {
   editDiseaseEradicationAct: {
     title: "Edit Disease Eradication Initiative",
     href:
-      "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/web/public/" +
+      "https://github.com/decentralized-fda/decentralized-fda/edit/master/apps/crowdsourcing-cures/public/" +
       PATH_TO_DISEASE_ERADICATION_ACT,
     icon: "edit",
     tooltip: "Edit the Disease Eradication Initiative",

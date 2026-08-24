@@ -64,7 +64,7 @@ param(
     [string]$event = "workflow_dispatch"
 )
 
-# Navigate to repository root (assuming script is in apps/web/scripts)
+# Navigate to repository root (assuming script is in apps/crowdsourcing-cures/scripts)
 Set-Location (Join-Path $PSScriptRoot "../../..")
 
 # Check if workflow file exists

@@ -28,9 +28,10 @@ import { UserAuthSection } from "./layout/UserAuthSection"
 interface HeaderProps {
   initialUser: User | null;
   initialProfile: Profile | null;
+  siteName: string;
 }
 
-export function Header({ initialUser, initialProfile }: HeaderProps) {
+export function Header({ initialUser, initialProfile, siteName }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // UseEffect to check and update timezone if needed
@@ -87,7 +88,7 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
         
         {/* Mobile Nav Button (now first on mobile) */}
         {/* Rendered via MobileNav, which handles the md:hidden internally */}
-        <MobileNav navItems={mobileNavItems} />
+        <MobileNav navItems={mobileNavItems} siteName={siteName} />
 
         {/* Logo and Desktop Nav container */}
         <div className="flex flex-1 items-center">
@@ -100,7 +101,7 @@ export function Header({ initialUser, initialProfile }: HeaderProps) {
               height={28}
               className="h-7 w-7"
             />
-            <span className="text-xl font-bold">FDA.gov v2</span>
+            <span className="text-xl font-bold">{siteName}</span>
           </Link>
 
           {/* Center the DesktopNav */}
