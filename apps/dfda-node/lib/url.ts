@@ -1,32 +1,40 @@
 /**
  * Gets the base URL for the current environment.
- * Prioritizes Vercel/Netlify env vars, then NEXT_PUBLIC_SITE_URL, falling back to localhost.
+ * Prioritizes the canonical site URL, then provider-specific deployment URLs,
+ * falling back to localhost.
  * Ensures HTTPS unless localhost and includes a trailing slash.
  */
-export function getBaseUrl(): string {
-  // 1. Vercel deployment URL
-  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-    // Vercel URL includes the protocol
-    const url = process.env.NEXT_PUBLIC_VERCEL_URL.startsWith('http') 
-      ? process.env.NEXT_PUBLIC_VERCEL_URL 
-      : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-    return url.endsWith('/') ? url : `${url}/`;
-  }
-  
-  // 2. Netlify deployment URL (Using standard DEPLOY_PRIME_URL)
-  if (process.env.DEPLOY_PRIME_URL) { // Standard Netlify var for primary deploy URL
-    const url = process.env.DEPLOY_PRIME_URL;
-    // Netlify URLs might not include protocol in this var, assume https
-    return url.endsWith('/') ? url : `${url}/`; 
+function normalizeHostedUrl(value: string): string {
+  const url = new URL(/^https?:\/\//i.test(value) ? value : `https://${value}`);
+  const isLocalhost = ['localhost', '127.0.0.1', '::1'].includes(url.hostname);
+
+  if (url.protocol === 'http:' && !isLocalhost) {
+    url.protocol = 'https:';
   }
 
-  // 3. Explicit Site URL (for production or stable environments)
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    let url = process.env.NEXT_PUBLIC_SITE_URL;
-    url = url.startsWith('http') ? url : `https://${url}`; // Assume https if protocol missing
-    return url.endsWith('/') ? url : `${url}/`; // Ensure trailing slash
+  if (!url.pathname.endsWith('/')) {
+    url.pathname = `${url.pathname}/`;
   }
-  
+
+  return url.toString();
+}
+
+export function getBaseUrl(): string {
+  // 1. Explicit site URL keeps production auth callbacks on the canonical domain.
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return normalizeHostedUrl(process.env.NEXT_PUBLIC_SITE_URL);
+  }
+
+  // 2. Vercel deployment URL
+  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+    return normalizeHostedUrl(process.env.NEXT_PUBLIC_VERCEL_URL);
+  }
+
+  // 3. Netlify deployment URL (using standard DEPLOY_PRIME_URL)
+  if (process.env.DEPLOY_PRIME_URL) {
+    return normalizeHostedUrl(process.env.DEPLOY_PRIME_URL);
+  }
+
   // 4. Fallback for local development
   return 'http://localhost:3000/';
 }
