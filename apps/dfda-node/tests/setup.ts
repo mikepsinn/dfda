@@ -1,22 +1,18 @@
 import '@testing-library/jest-dom';
-import fs from 'fs';
-import path from 'path';
 import dotenv from 'dotenv';
 import { vi } from 'vitest';
 
-// Load test environment variables
+// Developers can override these defaults with an uncommitted .env.test file.
+// Unit tests mock Supabase, so they should not require local secrets or a
+// running Supabase stack just to load the test environment.
 dotenv.config({ path: '.env.test' });
 
-// Check for required test configuration
-function validateTestConfig() {
-  const envTestPath = path.join(process.cwd(), '.env.test');
-  if (!fs.existsSync(envTestPath)) {
-    throw new Error('.env.test file is missing. Please create one from .env.test.example');
-  }
-}
-
-// Run config validation
-validateTestConfig();
+process.env.NEXT_PUBLIC_SUPABASE_URL ??= 'http://127.0.0.1:54321';
+process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??= 'test-anon-key';
+process.env.SUPABASE_SERVICE_ROLE_KEY ??= 'test-service-role-key';
+process.env.SUPABASE_JWT_SECRET ??= 'test-jwt-secret-with-at-least-32-characters';
+process.env.DATABASE_URL ??= 'postgresql://postgres:postgres@127.0.0.1:54322/postgres';
+process.env.GOOGLE_GENERATIVE_AI_API_KEY ??= 'test-google-generative-ai-key';
 
 // Mock next/navigation
 vi.mock('next/navigation', () => ({
@@ -109,4 +105,4 @@ vi.mock('@/utils/supabase', async (importOriginal) => {
       })),
     })),
   };
-}); 
+});

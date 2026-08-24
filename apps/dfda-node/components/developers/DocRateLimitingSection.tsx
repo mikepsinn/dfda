@@ -3,7 +3,7 @@ export function DocRateLimitingSection() {
     <section id="rate-limiting" className="mb-10">
       <h2 className="text-3xl font-bold mb-4">Rate Limiting</h2>
       <p className="text-muted-foreground mb-4">
-        To ensure the stability and availability of the API for all users, the FDA.gov v2 API implements rate
+        To ensure the stability and availability of the API for all users, the dFDA API implements rate
         limiting. The rate limits vary based on your plan.
       </p>
 
@@ -65,4 +65,4 @@ export function DocRateLimitingSection() {
       </div>
     </section>
   )
-} 
+}

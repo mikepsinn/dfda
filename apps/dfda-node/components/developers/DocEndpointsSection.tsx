@@ -6,7 +6,7 @@ export function DocEndpointsSection() {
     <section id="endpoints" className="mb-10">
       <h2 className="text-3xl font-bold mb-4">API Endpoints</h2>
       <p className="text-muted-foreground mb-4">
-        The FDA.gov v2 API provides several endpoints for accessing different types of data. Below is a comprehensive
+        The dFDA API provides several endpoints for accessing different types of data. Below is a comprehensive
         reference for all available endpoints.
       </p>
 
@@ -351,4 +351,4 @@ export function DocEndpointsSection() {
       </div>
     </section>
   )
-} 
+}

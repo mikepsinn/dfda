@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowLeft, Beaker } from "lucide-react"
 import type { Metadata } from 'next';
 import { getMetadataFromNavKey } from '@/lib/metadata';
+import { env } from '@/lib/env';
 
 import { Button } from "@/components/ui/button"
 import ForgotPasswordForm from "@/components/auth/forgot-password-form"
@@ -19,7 +20,7 @@ export default function ForgotPassword() {
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center gap-2">
               <Beaker className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">FDA.gov v2</span>
+              <span className="text-xl font-bold">{env.NEXT_PUBLIC_SITE_NAME}</span>
             </Link>
           </div>
           <div className="flex items-center gap-4">
