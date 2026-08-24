@@ -145,6 +145,17 @@ describe("public DFDA data client", () => {
     expect(fallbackUrl.searchParams.get("name")).toBe("%Saturate%")
   })
 
+  it("matches variable names without requiring identical accents", async () => {
+    fetchMock.mockResolvedValueOnce(
+      jsonResponse([{ id: 42, name: "Café Intake" }])
+    )
+
+    await expect(getPublicVariable("Cafe_Intake")).resolves.toMatchObject({
+      id: 42,
+      name: "Café Intake",
+    })
+  })
+
   it("preserves the legacy discovery thresholds", () => {
     expect(
       isDiscoverablePublicVariable({

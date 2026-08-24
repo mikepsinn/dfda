@@ -143,7 +143,7 @@ export async function getPublicVariable(query: string) {
   const directMatch = variables.find((variable) =>
     numericId === undefined
       ? variable.name.localeCompare(name ?? "", undefined, {
-          sensitivity: "accent",
+          sensitivity: "base",
         }) === 0
       : variable.id === numericId
   )
