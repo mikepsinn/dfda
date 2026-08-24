@@ -4,28 +4,35 @@
  * falling back to localhost.
  * Ensures HTTPS unless localhost and includes a trailing slash.
  */
+function normalizeHostedUrl(value: string): string {
+  const url = new URL(/^https?:\/\//i.test(value) ? value : `https://${value}`);
+  const isLocalhost = ['localhost', '127.0.0.1', '::1'].includes(url.hostname);
+
+  if (url.protocol === 'http:' && !isLocalhost) {
+    url.protocol = 'https:';
+  }
+
+  if (!url.pathname.endsWith('/')) {
+    url.pathname = `${url.pathname}/`;
+  }
+
+  return url.toString();
+}
+
 export function getBaseUrl(): string {
   // 1. Explicit site URL keeps production auth callbacks on the canonical domain.
   if (process.env.NEXT_PUBLIC_SITE_URL) {
-    let url = process.env.NEXT_PUBLIC_SITE_URL;
-    url = url.startsWith('http') ? url : `https://${url}`;
-    return url.endsWith('/') ? url : `${url}/`;
+    return normalizeHostedUrl(process.env.NEXT_PUBLIC_SITE_URL);
   }
 
   // 2. Vercel deployment URL
   if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-    // Vercel URL includes the protocol
-    const url = process.env.NEXT_PUBLIC_VERCEL_URL.startsWith('http')
-      ? process.env.NEXT_PUBLIC_VERCEL_URL
-      : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
-    return url.endsWith('/') ? url : `${url}/`;
+    return normalizeHostedUrl(process.env.NEXT_PUBLIC_VERCEL_URL);
   }
 
   // 3. Netlify deployment URL (using standard DEPLOY_PRIME_URL)
   if (process.env.DEPLOY_PRIME_URL) {
-    const url = process.env.DEPLOY_PRIME_URL;
-    // Netlify URLs might not include protocol in this var, assume https
-    return url.endsWith('/') ? url : `${url}/`;
+    return normalizeHostedUrl(process.env.DEPLOY_PRIME_URL);
   }
 
   // 4. Fallback for local development
