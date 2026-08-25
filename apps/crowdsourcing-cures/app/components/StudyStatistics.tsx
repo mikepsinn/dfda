@@ -51,29 +51,29 @@ export function StudyStatistics({ statistics }: StudyStatisticsProps) {
       explanation: 'The outcome or symptom being analyzed for potential effects'
     },
     { 
-      label: 'Predictive Correlation Coefficient', 
+      label: 'Predictive Relationship Score',
       value: statistics.correlationCoefficient,
-      explanation: 'Indicates how strongly the cause and effect are related. Ranges from -1 to 1, where 1 means perfect positive correlation, -1 means perfect negative correlation, and 0 means no correlation'
+      explanation: 'Indicates how strongly the cause and effect are related. Ranges from -1 to 1, where 1 means they move together, -1 means they move in opposite directions, and 0 means no linear relationship'
     },
     { 
-      label: 'Average Forward Correlation Over Delays', 
+      label: 'Average Forward Relationship Over Delays',
       value: statistics.averageForwardPearsonCorrelationOverOnsetDelays,
-      explanation: 'The average correlation when looking at how the cause predicts future effects across different time delays'
+      explanation: 'The average relationship when looking at how the cause predicts future effects across different time delays'
     },
     { 
-      label: 'Average Reverse Correlation Over Delays', 
+      label: 'Average Reverse Relationship Over Delays',
       value: statistics.averageReversePearsonCorrelationOverOnsetDelays,
-      explanation: 'The average correlation when looking at how the effect predicts past causes across different time delays. Should be lower than forward correlation for causal relationships'
+      explanation: 'The average relationship when looking at how the effect predicts past causes across different time delays. It should be weaker than the forward relationship when the cause is truly predictive'
     },
     { 
-      label: 'Average Correlation Over All Onset Delays', 
+      label: 'Average Relationship Over All Onset Delays',
       value: statistics.averagePearsonCorrelationCoefficientOverOnsetDelays,
-      explanation: 'The average correlation across all analyzed time delays between cause and effect'
+      explanation: 'The average relationship across all analyzed time delays between cause and effect'
     },
     { 
-      label: 'Strongest Correlation Over All Onset Delays', 
+      label: 'Strongest Relationship Over All Onset Delays',
       value: statistics.strongestPearsonCorrelationCoefficient,
-      explanation: 'The strongest correlation found at any time delay between cause and effect'
+      explanation: 'The strongest relationship found at any time delay between cause and effect'
     },
     { 
       label: 'QuantiModo Score', 
@@ -142,7 +142,7 @@ export function StudyStatistics({ statistics }: StudyStatisticsProps) {
     { 
       label: 'Confidence Interval', 
       value: statistics.confidenceInterval,
-      explanation: 'The range within which we can be 95% confident the true correlation falls'
+      explanation: 'The range within which we can be 95% confident the true relationship falls'
     }
   ]
 
@@ -178,4 +178,4 @@ export function StudyStatistics({ statistics }: StudyStatisticsProps) {
       </div>
     </div>
   )
-} 
+}

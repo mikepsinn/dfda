@@ -55,7 +55,7 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
               ? 'positive'
               : correlationValue < 0
                 ? 'negative'
-                : 'no correlation'
+                : 'no relationship'
           const correlationColor = correlationValue == null || correlationValue === 0
             ? 'text-gray-500'
             : correlationValue > 0
@@ -85,7 +85,7 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
                       {statistics?.numberOfUsers?.toLocaleString() ?? 'Unknown'}
                     </span>
                     <span>
-                      <strong>Correlations:</strong>{' '}
+                      <strong>Participant analyses:</strong>{' '}
                       {statistics?.numberOfCorrelations?.toLocaleString() ?? 'Unknown'}
                     </span>
                   </div>
