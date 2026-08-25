@@ -55,8 +55,7 @@ export default async function ConditionPage({
             <h2 className="text-xl font-semibold">{condition.name} Studies</h2>
           </div>
           <p className="text-gray-600">
-            Browse observational studies and real-world evidence on
-            studies.dfda.earth
+            Browse observational studies and real-world evidence
           </p>
         </a>
 
@@ -72,7 +71,7 @@ export default async function ConditionPage({
             <h2 className="text-xl font-semibold">Studies &amp; Analyses</h2>
           </div>
           <p className="text-gray-600">
-            Explore available studies and analyses on studies.dfda.earth
+            Explore available studies and analyses
           </p>
         </a>
 
