@@ -82,7 +82,7 @@ export default async function StudyPage({ params }: StudyPageProps) {
       ? 'positive'
       : correlationValue < 0
         ? 'negative'
-        : 'no correlation'
+        : 'no relationship'
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -102,7 +102,7 @@ export default async function StudyPage({ params }: StudyPageProps) {
           <h2 className="text-2xl font-semibold mb-4">Key Findings</h2>
           <div className="space-y-3">
             <p className="text-lg">
-              <strong>Correlation:</strong>{' '}
+              <strong>Relationship score:</strong>{' '}
               {correlationStrength == null ? 'Unavailable' : `${correlationStrength.toFixed(3)} (${correlationType})`}
             </p>
             <p className="text-lg">

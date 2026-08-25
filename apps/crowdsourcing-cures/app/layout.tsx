@@ -95,7 +95,7 @@ export default async function RootLayout({children}: RootLayoutProps) {
               className="flex min-h-screen flex-col bg-background"
           >
             <div
-                className="flex min-h-screen flex-col bg-gradient-to-br from-cyan-300 to-purple-400 p-4 font-mono text-black md:p-8">
+                className="flex min-h-screen flex-col bg-gradient-to-br from-cyan-300 to-purple-400 px-4 pb-4 font-mono text-black md:px-8 md:pb-8">
               <DfdaTopNavbar
                   user={{
                     name: user?.name,

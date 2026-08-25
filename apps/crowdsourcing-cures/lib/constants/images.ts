@@ -59,7 +59,7 @@ export const REGULATORY_IMAGES = {
   US_SWISS_DRUG_APPROVALS: {
     url: '/img/us-swiss-life-expectancy-drug-approvals.png',
     alt: 'US vs Swiss life expectancy and drug approvals',
-    description: 'Correlation between drug approval rates and life expectancy gap'
+    description: 'Relationship between drug approval rates and life expectancy gap'
   },
   DRUG_LAG_EFFECTS: {
     url: '/img/drug-lag-swiss-us-life-expectancy-switzerland.png',
@@ -210,4 +210,4 @@ export function getImage<
   K extends keyof (typeof ALL_IMAGES)[C]
 >(category: C, key: K): (typeof ALL_IMAGES)[C][K] {
   return ALL_IMAGES[category][key]
-} 
+}
