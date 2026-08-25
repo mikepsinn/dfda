@@ -47,6 +47,31 @@ describe("Decentralized FDA navigation", () => {
     expect(offSiteItems.every((item) => item.external)).toBe(true)
   })
 
+  it("keeps the research menus focused on the current external tools", () => {
+    for (const items of [
+      dfdaNavigation.exploreNav ?? [],
+      dfdaNavigation.sidebarNav,
+    ]) {
+      expect(items.map((item) => item.title)).not.toEqual(
+        expect.arrayContaining(["Find Predictors", "Variable Categories"])
+      )
+      expect(items).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            title: "Digital Twin Safe",
+            href: "https://app.dfda.earth",
+            external: true,
+          }),
+          expect.objectContaining({
+            title: "Mega Studies",
+            href: "https://studies.dfda.earth",
+            external: true,
+          }),
+        ])
+      )
+    }
+  })
+
   it("keeps variables and studies out of the header but available in the sidebar", () => {
     const topNavHrefs = dfdaNavigation.topNav.map((item) => item.href)
     const sidebarHrefs = dfdaNavigation.sidebarNav.map((item) => item.href)
