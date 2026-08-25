@@ -24,8 +24,6 @@ describe("Decentralized FDA navigation", () => {
       { title: "Home", href: "/" },
       { title: "Conditions", href: "/conditions" },
       { title: "Treatments", href: "/treatments" },
-      { title: "Variables", href: "/variables" },
-      { title: "Studies", href: "/studies" },
       { title: "Trials", href: "/trials" },
     ])
   })
@@ -49,10 +47,14 @@ describe("Decentralized FDA navigation", () => {
     expect(offSiteItems.every((item) => item.external)).toBe(true)
   })
 
-  it("always advertises API-backed research destinations", () => {
-    const hrefs = dfdaNavigation.topNav.map((item) => item.href)
+  it("keeps variables and studies out of the header but available in the sidebar", () => {
+    const topNavHrefs = dfdaNavigation.topNav.map((item) => item.href)
+    const sidebarHrefs = dfdaNavigation.sidebarNav.map((item) => item.href)
 
-    expect(hrefs).toEqual(
+    expect(topNavHrefs).not.toEqual(
+      expect.arrayContaining(["/variables", "/studies"])
+    )
+    expect(sidebarHrefs).toEqual(
       expect.arrayContaining(["/variables", "/studies"])
     )
   })

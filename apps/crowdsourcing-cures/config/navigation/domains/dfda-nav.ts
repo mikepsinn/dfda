@@ -126,8 +126,6 @@ export const dfdaNavigation: DomainNavigation = {
     dfdaLinks.dfda,
     dfdaLinks.conditions,
     dfdaLinks.treatments,
-    dfdaLinks.variables,
-    dfdaLinks.studies,
     dfdaLinks.trials,
   ],
   exploreNav: [

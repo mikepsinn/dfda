@@ -26,7 +26,7 @@ const TreatmentAnalyzer = ({ treatmentName }: TreatmentAnalyzerProps) => {
     '📊 Data Collection',
     '📈 Statistical Analysis',
     '🔍 Pattern Recognition',
-    '🔗 Correlation Mapping',
+    '🔗 Study Synthesis',
     '✅ Outcome Validation',
     '📋 Impact Assessment',
     '⚠️ Risk Factor Analysis',
