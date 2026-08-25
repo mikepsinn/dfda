@@ -85,7 +85,7 @@ export default async function StudiesPage({ searchParams }: StudiesPageProps) {
                       {statistics?.numberOfUsers?.toLocaleString() ?? 'Unknown'}
                     </span>
                     <span>
-                      <strong>Studies:</strong>{' '}
+                      <strong>Participant analyses:</strong>{' '}
                       {statistics?.numberOfCorrelations?.toLocaleString() ?? 'Unknown'}
                     </span>
                   </div>
