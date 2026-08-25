@@ -140,7 +140,7 @@ export function PredictorSearchResults({
           <div className="rounded-b-2xl bg-[#F48120] p-4 text-center text-white">
             <p>
               Track more variables to improve predictions and discover new
-              correlations.
+              studies.
             </p>
             <div className="mb-2 mt-5">
               <button
@@ -184,7 +184,7 @@ export function PredictorSearchResults({
                     {study.causeVariable?.name} → {study.effectVariable?.name}
                   </h3>
                   <p className="mt-2 text-gray-600">
-                    Correlation:{" "}
+                    Relationship score:{" "}
                     {study.statistics?.correlationCoefficient?.toFixed(2)}
                   </p>
                 </div>

@@ -87,7 +87,7 @@ export default function VariablesPage() {
       <div className="mb-6">
         <h1 className="text-4xl font-bold mb-2 text-center">Variables</h1>
         <p className="text-xl text-gray-600 text-center mb-6">
-          Browse {variables.length.toLocaleString()} variables with statistics and correlations
+          Browse {variables.length.toLocaleString()} variables with statistics and studies
         </p>
 
         {/* Search Box */}
