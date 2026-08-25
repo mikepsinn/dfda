@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: VariablePageProps): Promise<M
 
     return {
       title: `${data.variable.name} | DFDA`,
-      description: data.variable.description || `View statistics and correlations for ${data.variable.name}`,
+      description: data.variable.description || `View statistics and studies for ${data.variable.name}`,
     }
   } catch (error) {
     return {
@@ -121,7 +121,7 @@ export default async function VariablePage({ params }: VariablePageProps) {
           </div>
         </div>
         <div className="p-4 bg-white border-4 border-black rounded-lg">
-          <div className="text-sm font-bold text-gray-600 mb-1">CORRELATIONS</div>
+          <div className="text-sm font-bold text-gray-600 mb-1">STUDIES</div>
           <div className="text-3xl font-black">
             {((variable.numberOfAggregateCorrelationsAsCause || 0) +
               (variable.numberOfAggregateCorrelationsAsEffect || 0)).toLocaleString()}
