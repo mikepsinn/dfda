@@ -1,11 +1,12 @@
 export const EMAIL_CONFIG = {
-  defaultFrom: "The Decentralized FDA <noreply@dfda.org>",
+  defaultFrom:
+    process.env.EMAIL_FROM ??
+    "Crowdsourcing Cures <hello@updates.warondisease.org>",
   domains: {
-    main: "dfda.org",
+    main: "updates.warondisease.org",
   },
   addresses: {
-    support: "support@dfda.org",
-    noreply: "noreply@dfda.org",
+    support: process.env.CONTACT_EMAIL ?? "support@dfda.earth",
   },
   retries: {
     max: 3,

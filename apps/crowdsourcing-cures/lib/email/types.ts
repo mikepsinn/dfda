@@ -3,6 +3,7 @@ export interface EmailParams {
   subject: string
   html: string
   from?: string
+  replyTo?: string
 }
 
 export interface EmailResult {
