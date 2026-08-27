@@ -46,10 +46,6 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
     })
   }
 
-  if (isLoading) {
-    return null
-  }
-
   return (
     <SidebarContext.Provider
       value={{ isSidebarOpen, toggleSidebar, isLoading }}
