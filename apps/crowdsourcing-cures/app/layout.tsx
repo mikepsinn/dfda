@@ -1,6 +1,7 @@
 import "./globals.css";
 import "@/app/styles/neobrutalist.css";
 
+import { Suspense } from "react";
 import { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import { CopilotKit } from "@copilotkit/react-core";
@@ -10,7 +11,6 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/app/providers"; // Import Providers
-import { getCurrentUser } from "@/lib/session";
 import { getNavigationForDomain } from "@/config/navigation";
 import DfdaTopNavbar from "./components/DfdaTopNavbar";
 import DFDAFooter from "./components/DFDAFooter";
@@ -77,8 +77,7 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default async function RootLayout({children}: RootLayoutProps) {
-  const user = await getCurrentUser()
+export default function RootLayout({children}: RootLayoutProps) {
   const navigation = getNavigationForDomain("dfda.earth")
   const topNavItems = navigation.topNav
   const exploreNavItems = navigation.exploreNav ?? []
@@ -96,17 +95,14 @@ export default async function RootLayout({children}: RootLayoutProps) {
           >
             <div
                 className="flex min-h-screen flex-col bg-gradient-to-br from-cyan-300 to-purple-400 px-4 pb-4 font-mono text-black md:px-8 md:pb-8">
-              <DfdaTopNavbar
-                  user={{
-                    name: user?.name,
-                    image: user?.image,
-                    email: user?.email,
-                  }}
-                  logoNavItems={logoNavItems}
-                  topNavItems={topNavItems}
-                  exploreNavItems={exploreNavItems}
-                  avatarNavItems={avatarNavItems}
-              />
+              <Suspense fallback={null}>
+                <DfdaTopNavbar
+                    logoNavItems={logoNavItems}
+                    topNavItems={topNavItems}
+                    exploreNavItems={exploreNavItems}
+                    avatarNavItems={avatarNavItems}
+                />
+              </Suspense>
               <main className="flex-1">{children}</main>
               <div className="px-4 pb-4">
                 <DFDAFooter />
