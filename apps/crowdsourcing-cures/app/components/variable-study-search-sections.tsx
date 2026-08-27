@@ -25,6 +25,13 @@ const searches = [
   },
 ] as const
 
+const focusableSelector =
+  'button:not([disabled]), iframe, [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([data-focus-sentinel])'
+
+function getFocusableElements(container: HTMLElement) {
+  return Array.from(container.querySelectorAll<HTMLElement>(focusableSelector))
+}
+
 export default function VariableStudySearchSections() {
   const [selectedVariableUrl, setSelectedVariableUrl] = useState<string | null>(
     null
@@ -59,11 +66,7 @@ export default function VariableStudySearchSections() {
     const handleTab = (event: KeyboardEvent) => {
       if (event.key !== "Tab" || !dialogRef.current) return
 
-      const focusableElements = Array.from(
-        dialogRef.current.querySelectorAll<HTMLElement>(
-          'button:not([disabled]), iframe, [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([data-focus-sentinel])'
-        )
-      )
+      const focusableElements = getFocusableElements(dialogRef.current)
 
       if (focusableElements.length === 0) {
         event.preventDefault()
@@ -122,6 +125,18 @@ export default function VariableStudySearchSections() {
             className="relative h-full w-full"
             onClick={(event) => event.stopPropagation()}
           >
+            <span
+              data-focus-sentinel
+              tabIndex={0}
+              className="sr-only"
+              onFocus={() => {
+                if (!dialogRef.current) return
+                const focusableElements = getFocusableElements(
+                  dialogRef.current
+                )
+                focusableElements[focusableElements.length - 1]?.focus()
+              }}
+            />
             <button
               ref={closeButtonRef}
               type="button"

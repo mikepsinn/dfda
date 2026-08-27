@@ -31,7 +31,8 @@ export default function DFDAFeatureGrid() {
         icon: Robot,
         media:
           "https://player.vimeo.com/video/930843979?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        onClick: () => window.open("https://fdai.earth", "_blank"),
+        onClick: () =>
+          window.open("https://fdai.earth", "_blank", "noopener,noreferrer"),
       },
       {
         title: "Your Digital Twin Safe",
@@ -52,7 +53,12 @@ export default function DFDAFeatureGrid() {
         icon: Users,
         media:
           "https://static.crowdsourcingcures.org/dfda/clinipedia-inflammatory-pain-small.gif",
-        onClick: () => window.open("https://studies.dfda.earth", "_blank"),
+        onClick: () =>
+          window.open(
+            "https://studies.dfda.earth",
+            "_blank",
+            "noopener,noreferrer"
+          ),
       },
       {
         title: "Outcome Labels",
@@ -60,7 +66,12 @@ export default function DFDAFeatureGrid() {
         color: "bg-orange-400",
         icon: Activity,
         media: "https://wiki.dfda.earth/assets/outcome-labels.PNG",
-        onClick: () => window.open("https://studies.dfda.earth", "_blank"),
+        onClick: () =>
+          window.open(
+            "https://studies.dfda.earth",
+            "_blank",
+            "noopener,noreferrer"
+          ),
       },
       {
         title: "Why Decentralize the FDA?",
@@ -69,7 +80,12 @@ export default function DFDAFeatureGrid() {
         icon: Info,
         media:
           "https://thinkbynumbers.org/wp-content/uploads/2021/03/news-story-headline-1-1024x563.png",
-        onClick: () => window.open("https://why.dfda.earth", "_blank"),
+        onClick: () =>
+          window.open(
+            "https://why.dfda.earth",
+            "_blank",
+            "noopener,noreferrer"
+          ),
       },
     ],
     [router]
