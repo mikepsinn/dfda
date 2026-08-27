@@ -1,4 +1,5 @@
 import { emailer } from "@/lib/email"
+import { EMAIL_CONFIG } from "@/lib/email/config"
 
 import { submitContactForm } from "@/app/(frontpage)/contact-us/actions"
 
@@ -50,8 +51,7 @@ describe("submitContactForm", () => {
     const result = await submitContactForm({}, validFormData())
 
     expect(result).toEqual({
-      error:
-        "We couldn't send your message. Please try again or email support@dfda.earth directly.",
+      error: `We couldn't send your message. Please try again or email ${EMAIL_CONFIG.addresses.support} directly.`,
     })
     expect(sendEmail).toHaveBeenCalledTimes(1)
   })

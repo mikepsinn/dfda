@@ -19,6 +19,8 @@ function escapeHtml(unsafe: string) {
     .replace(/'/g, "&#039;")
 }
 
+const DELIVERY_FAILURE_MESSAGE = `We couldn't send your message. Please try again or email ${EMAIL_CONFIG.addresses.support} directly.`
+
 const contactFormSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(100),
   lastName: z.string().min(1, "Last name is required").max(100),
@@ -93,8 +95,7 @@ export async function submitContactForm(
         })
       )
       return {
-        error:
-          "We couldn't send your message. Please try again or email support@dfda.earth directly.",
+        error: DELIVERY_FAILURE_MESSAGE,
       }
     }
 
@@ -145,8 +146,7 @@ export async function submitContactForm(
     )
 
     return {
-      error:
-        "We couldn't send your message. Please try again or email support@dfda.earth directly.",
+      error: DELIVERY_FAILURE_MESSAGE,
     }
   }
 }
