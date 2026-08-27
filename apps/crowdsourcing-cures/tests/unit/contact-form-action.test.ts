@@ -26,7 +26,7 @@ describe("submitContactForm", () => {
   })
 
   it("rejects invalid form data before sending email", async () => {
-    const result = await submitContactForm(new FormData())
+    const result = await submitContactForm({}, new FormData())
 
     expect(result).toEqual({
       error: "Invalid form data. Please check your inputs.",
@@ -47,7 +47,7 @@ describe("submitContactForm", () => {
       },
     })
 
-    const result = await submitContactForm(validFormData())
+    const result = await submitContactForm({}, validFormData())
 
     expect(result).toEqual({
       error:
@@ -71,7 +71,7 @@ describe("submitContactForm", () => {
         status: "sent",
       })
 
-    const result = await submitContactForm(validFormData())
+    const result = await submitContactForm({}, validFormData())
 
     expect(sendEmail).toHaveBeenNthCalledWith(
       1,
@@ -106,7 +106,7 @@ describe("submitContactForm", () => {
         },
       })
 
-    const result = await submitContactForm(validFormData())
+    const result = await submitContactForm({}, validFormData())
 
     expect(result.success).toBe(true)
     expect(sendEmail).toHaveBeenCalledTimes(2)

@@ -37,6 +37,7 @@ export type ContactFormResponse = {
 }
 
 export async function submitContactForm(
+  _prevState: ContactFormResponse,
   formData: FormData
 ): Promise<ContactFormResponse> {
   const startedAt = Date.now()

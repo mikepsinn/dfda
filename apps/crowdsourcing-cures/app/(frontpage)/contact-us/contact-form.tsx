@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState, type FormEvent } from "react"
+import { useFormState } from "react-dom"
 import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -13,25 +14,35 @@ const fieldClassName =
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null)
-  const [state, setState] = useState<ContactFormResponse>({})
+  // Server-action binding so pre-hydration/no-JS submissions POST to the
+  // action instead of the browser's default GET with fields in the URL.
+  const [serverState, formAction] = useFormState(submitContactForm, {})
+  const [clientState, setClientState] = useState<ContactFormResponse | null>(
+    null
+  )
   const [isPending, setIsPending] = useState(false)
+  const state = clientState ?? serverState
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    // Once hydrated, keep the controlled flow (field values survive errors;
+    // the form only resets on success). preventDefault also stops React from
+    // dispatching the bound form action, so the submission is not duplicated.
     event.preventDefault()
     setIsPending(true)
-    setState({})
+    setClientState({})
 
     try {
       const response = await submitContactForm(
+        {},
         new FormData(event.currentTarget)
       )
-      setState(response)
+      setClientState(response)
 
       if (response.success) {
         formRef.current?.reset()
       }
     } catch {
-      setState({
+      setClientState({
         error:
           "We couldn't send your message. Please try again or email support@dfda.earth directly.",
       })
@@ -50,7 +61,12 @@ export function ContactForm() {
         </p>
       </div>
 
-      <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+      <form
+        ref={formRef}
+        action={formAction}
+        onSubmit={handleSubmit}
+        className="space-y-6"
+      >
         <fieldset disabled={isPending} className="space-y-6">
           <div className="grid gap-6 md:grid-cols-2">
             <div className="space-y-2">
