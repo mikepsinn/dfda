@@ -12,4 +12,4 @@ export default function ProblemStatisticsGrid() {
   }, [])
 
   return <SharedStatisticsGrid statistics={statistics} />
-} 
+}
