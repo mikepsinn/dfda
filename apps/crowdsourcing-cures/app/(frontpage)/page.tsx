@@ -1,14 +1,13 @@
 import React from "react"
 
-import { PWARedirect } from "@/components/pwa-redirect";
-import DFDAHomePage from "@/app/components/dfda-home-page";
+import { PWARedirect } from "@/components/pwa-redirect"
+import DFDAHomePage from "@/app/components/dfda-home-page"
 
-
-export default async function Home() {
+export default function Home() {
   return (
-      <main>
-          <DFDAHomePage />
-          <PWARedirect/>
-      </main>
+    <main>
+      <DFDAHomePage />
+      <PWARedirect />
+    </main>
   )
 }

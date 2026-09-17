@@ -12,4 +12,4 @@ export default function BenefitStatisticsGrid() {
   }, [])
 
   return <SharedStatisticsGrid statistics={statistics} />
-} 
+}

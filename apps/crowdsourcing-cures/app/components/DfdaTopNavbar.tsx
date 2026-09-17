@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import type { User } from "next-auth"
+import { useSession } from "next-auth/react"
 import { ChevronDown, Menu } from "lucide-react"
 
 import type { NavItem } from "@/types"
@@ -31,7 +32,7 @@ import { cn } from "@/lib/utils"
 import { DfdaLogoNavMenu } from "./dfda-logo-nav"
 
 interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
-  user: Pick<User, "name" | "image" | "email">
+  user?: Pick<User, "name" | "image" | "email">
   domain?: string
   logoNavItems?: NavItem[]
   topNavItems?: NavItem[]
@@ -97,7 +98,9 @@ export default function DfdaTopNavbar({
   ...props
 }: NavbarProps) {
   const pathname = usePathname()
+  const { data: session } = useSession()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const displayedUser = user?.email ? user : session?.user
   const navigation = getNavigationForDomain(domain)
   const primaryItems = topNavItems ?? navigation.topNav
   const exploreItems =
@@ -239,9 +242,9 @@ export default function DfdaTopNavbar({
 
           <UserNavDisplay
             user={{
-              name: user?.name,
-              image: user?.image,
-              email: user?.email,
+              name: displayedUser?.name,
+              image: displayedUser?.image,
+              email: displayedUser?.email,
             }}
             avatarNavItems={accountItems}
           />
