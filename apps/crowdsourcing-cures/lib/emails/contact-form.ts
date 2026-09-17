@@ -41,7 +41,7 @@ export function generateAutoReplyEmail({
       
       <p>Dear ${firstName},</p>
       
-      <p>Thank you for reaching out to Decentralized FDA. We have received your message and will get back to you as soon as possible.</p>
+      <p>Thank you for reaching out to Crowdsourcing Cures. We have received your message and will get back to you as soon as possible.</p>
       
       <p>In the meantime, you can:</p>
       <ul>
@@ -50,7 +50,7 @@ export function generateAutoReplyEmail({
         <li>Check out our FAQ section</li>
       </ul>
       
-      <p>Best regards,<br>The DFDA Team</p>
+      <p>Best regards,<br>The Crowdsourcing Cures Team</p>
     </div>
   `
 } 
