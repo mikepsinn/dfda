@@ -188,7 +188,7 @@ tsx src/index.ts
 ## Example
 
 ```typescript
-import { sync, type SyncConfig } from 'db-ops';
+import { sync, type SyncConfig } from 'legacy-import/sync';
 
 const config: SyncConfig = {
   mysqlUrl: 'mysql://root:password@localhost:3306/mydb',

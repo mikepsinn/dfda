@@ -4,7 +4,8 @@
   "description": "Tools for moving data out of the legacy MySQL database: its Prisma schema, query CLIs, and a MySQL-to-PostgreSQL sync. Retired once the migration is done.",
   "private": true,
   "exports": {
-    ".": "./src/client.ts"
+    ".": "./src/client.ts",
+    "./sync": "./src/index.ts"
   },
   "scripts": {
     "postinstall": "prisma generate",
