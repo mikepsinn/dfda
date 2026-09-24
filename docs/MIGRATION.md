@@ -41,7 +41,7 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 | --- | --- | --- |
 | MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route that calls dfda-node's existing measurement and reminder actions | Signs in through dfda-node's own OAuth server. MCP clients also need dynamic client registration and the standard `.well-known` metadata, which that server doesn't have yet. |
 | REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | Next to the existing OpenAPI route | Same auth as the MCP server |
-| Trial search | The existing `find-trials` page | optimitron's ClinicalTrials.gov client is documented and tested; it replaces dfda-node's unused helper |
+| Trial search | The existing `find-trials` page, using `packages/trials` | optimitron's ClinicalTrials.gov client replaces dfda-node's unused helper |
 | Landing, about and FAQ content | Existing public pages | Copy only |
 | Condition and treatment pages | Not moved | They show AI estimates. dfda-node's own pages show patient ratings instead. |
 | 6 unit tests | With the features they cover | |
@@ -62,10 +62,26 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 
 **Cutover.** dfda.earth switches to dfda-node once its MCP server and REST API work. If the pages are ready first, dfda-node can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then.
 
+## ClinicalTrials.gov results
+
+About 80,000 studies on ClinicalTrials.gov have posted results, 75,000 of them interventional (September 2026). A posted result gives each study group's size and its value on each outcome measure, and often the trial's own statistical comparison (effect estimate, confidence interval, p-value). Adverse events are posted per group as participants affected out of participants at risk. That is real outcome data for Outcome Labels that doesn't depend on recruiting clinics, so it is the first new data source.
+
+How to use it:
+
+- Read results in bulk from [AACT](https://aact.ctti-clinicaltrials.org/), the public database copy of ClinicalTrials.gov, instead of one API call per study.
+- Start with side effects. Adverse events are the most uniform part of posted results, so rates against placebo are straightforward.
+- Compare study groups, not rows. An effect is the treatment group against the comparison group on the same outcome measure and time frame. Use the trial's own posted comparison where there is one. Single-group studies give no comparison and are shown as such.
+- Map each outcome measure to a `codebook` outcome, with its unit and which direction is better, before pooling across trials. This is the hard part: every trial names and measures its outcomes its own way.
+- Pool across trials with the same random-effects code the aggregator needs, so this work also builds the aggregator's core.
+- Label every number as trial-reported and link each trial by its NCT ID.
+
+The old parser in optimitron (`apps/dfda/lib/fetch-trial-results.ts`) is not reused. It treats the first two numbers in a results table as before and after, which usually compares two different rows. Only 84 of the 5,776 outcome values in optimitron's medical data came from it.
+
 ## Shared packages
 
 | Package | Contents | Built from |
 | --- | --- | --- |
+| `trials` | ClinicalTrials.gov search and the results parser | Search: optimitron's `packages/data` fetcher, which is documented and tested. The results parser is new. |
 | `analysis` | N-of-1 and population statistics | optimitron `packages/optimizer`, with two known bugs fixed first: p-values are wrong for small samples (df ≤ 30), and rankings use effect size without direction, so harms score the same as benefits |
 | `codebook` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/dfda-node` seeds, and optimitron's condition list with ICD-10 codes |
 | `summary-file` | The Summary File format and its validators, shared by Clinic Nodes and the aggregator | New |
@@ -78,6 +94,7 @@ The existing `packages/database` and `packages/db-ops` are the tools for moving 
 | Data | Where it is | Plan |
 | --- | --- | --- |
 | Patient ratings: 162 conditions and ~3,900 treatments, reported by patients | curedao-api `ct_*` tables, copied into crowdsourcing-cures | Migrate. They become the first Data Release, labeled patient-reported and kept separate from clinic data. |
+| ClinicalTrials.gov posted results: about 80,000 studies | Public (AACT or the API) | New source for Outcome Labels, labeled trial-reported (see above) |
 | Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their Safe only if they choose to (see Open decisions). |
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | ~15,800 automated N-of-1 studies | Static site generated by curedao-api | Keep as an archive. Don't republish them as evidence. |
@@ -87,9 +104,10 @@ The existing `packages/database` and `packages/db-ops` are the tools for moving 
 ## Order
 
 1. **Foundation.** Build `analysis` (with the fixes above) and `codebook`. Take the demo data and AI-generated numbers out of dfda-node's outcome labels.
-2. **dfda.earth.** dfda-node gains the patient-rating Treatment Rankings and, from optimitron, trial search, the MCP server and the REST API. dfda.earth then moves to it, and optimitron deletes `apps/dfda`. crowdsourcingcures.org drops its own health-data pages and links to dfda.earth, and `apps/crowdsourcing-cures` is removed from this repo.
-3. **Network.** Package dfda-node so a clinic can run its own copy as a Clinic Node, then build `summary-file` and the aggregator.
-4. **Legacy.** Bring over legacy data for the people who choose to, then retire the legacy app at app.dfda.earth.
+2. **Trial results.** Build `trials` and put trial-reported Outcome Labels in dfda-node, side effects first, next to the patient-rating Treatment Rankings.
+3. **dfda.earth.** dfda-node gains trial search, the MCP server and the REST API from optimitron. dfda.earth then moves to it, and optimitron deletes `apps/dfda`. crowdsourcingcures.org drops its own health-data pages and links to dfda.earth, and `apps/crowdsourcing-cures` is removed from this repo.
+4. **Network.** Package dfda-node so a clinic can run its own copy as a Clinic Node, then build `summary-file` and the aggregator, reusing the pooling code from step 2.
+5. **Legacy.** Bring over legacy data for the people who choose to, then retire the legacy app at app.dfda.earth.
 
 ## Rules for published numbers
 
@@ -99,12 +117,14 @@ These apply from step 2 on:
 - Every outcome declares which direction is better.
 - Proportions are reported with Wilson intervals.
 - A treatment is ranked only when it has at least 30 patients from at least 3 sources.
+- Every number says where it came from: trial-reported, patient-reported or clinic data. Different kinds are shown side by side, not pooled together.
 - No AI-generated numbers.
 
 ## Not in any repo yet
 
 None of the existing code does the parts that make this a network. These are new work:
 
+- A parser that turns posted trial results into comparisons between study groups
 - Anonymization at the Clinic Node, before anything leaves it
 - Consent records
 - Node identity and authenticated Summary File submission
