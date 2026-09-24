@@ -22,7 +22,7 @@ flowchart LR
 | Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
 | Summary File spec, Codebook, Global Aggregator | Designed, not built yet | — |
 
-The full vision follows.
+The plan for bringing code and data from the related projects into this repo is in [docs/MIGRATION.md](docs/MIGRATION.md). The full vision follows.
 
 # 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
 
