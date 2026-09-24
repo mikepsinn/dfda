@@ -1,0 +1,45 @@
+{
+  "name": "legacy-import",
+  "version": "1.0.0",
+  "description": "Tools for moving data out of the legacy MySQL database: its Prisma schema, query CLIs, and a MySQL-to-PostgreSQL sync. Retired once the migration is done.",
+  "private": true,
+  "exports": {
+    ".": "./src/client.ts"
+  },
+  "scripts": {
+    "postinstall": "prisma generate",
+    "generate": "prisma generate",
+    "generate:schema": "tsx src/generate-schema.ts",
+    "format": "prisma format",
+    "studio": "prisma studio",
+    "sync": "tsx src/index.ts",
+    "mysql": "tsx src/mysql-query.ts",
+    "mysql:stats": "tsx src/mysql-stats.ts",
+    "mysql:cleanup": "tsx src/mysql-cleanup.ts",
+    "postgres": "tsx src/postgres-query.ts",
+    "pg": "tsx src/postgres-query.ts",
+    "lint": "eslint . --max-warnings 0",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.2",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.9.2",
+    "pg": "^8.11.3",
+    "pg-format": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/mysql2": "github:types/mysql2",
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.2",
+    "@types/pg-format": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prisma": "^5.10.2",
+    "rimraf": "^5.0.5",
+    "tsx": "4.19.1",
+    "typescript": "5.5.4"
+  }
+}
