@@ -39,7 +39,7 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 
 | Feature in optimitron `apps/dfda` | In `apps/dfda-node` | Notes |
 | --- | --- | --- |
-| MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route that calls dfda-node's existing measurement and reminder actions | Signs in through dfda-node's own OAuth server. MCP clients also need dynamic client registration and the standard `.well-known` metadata, which that server doesn't have yet. |
+| MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route over dfda-node's existing measurement and reminder code | Signs in through dfda-node's own OAuth server, which needs three changes first: dynamic client registration, the standard `.well-known` metadata, and a token endpoint that accepts form-encoded requests (it reads only JSON today, and OAuth clients send forms). The existing actions get their database client from the Supabase session cookie, so the route builds one from the bearer token instead of calling them as they are. |
 | REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | Next to the existing OpenAPI route | Same auth as the MCP server |
 | Trial search | The existing `find-trials` page, using `packages/trials` | optimitron's ClinicalTrials.gov client replaces dfda-node's unused helper |
 | Landing, about and FAQ content | Existing public pages | Copy only |
@@ -130,6 +130,7 @@ The existing `packages/database` and `packages/db-ops` are the tools for moving 
 These apply from step 2 on:
 
 - Clinic Nodes send aggregates only. Every count in a Summary File is 0 or at least 11; counts from 1 to 10 are suppressed.
+- Suppression alone doesn't survive repeated releases: if a group grows from 11 to 12 patients, subtracting one Summary File from the next reveals the new patient. Before any clinic data is shared, Summary Files also get a defense against this, such as fixed release periods with randomly rounded counts, or added noise (differential privacy).
 - Every outcome declares which direction is better.
 - Proportions are reported with Wilson intervals.
 - A treatment is ranked only when it has at least 30 patients from at least 3 sources.
@@ -141,7 +142,7 @@ These apply from step 2 on:
 None of the existing code does the parts that make this a network. These are new work:
 
 - A parser that turns posted trial results into comparisons between study groups
-- Anonymization at the Clinic Node, before anything leaves it
+- Anonymization at the Clinic Node before anything leaves it, including protection against subtracting one release from another
 - Consent records
 - Node identity and authenticated Summary File submission
 - Pooling across sites (random-effects meta-analysis with heterogeneity estimates)
