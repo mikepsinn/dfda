@@ -62,6 +62,22 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 
 **Cutover.** dfda.earth switches to dfda-node once its MCP server and REST API work. If the pages are ready first, dfda-node can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then.
 
+## What comes from crowdsourcing-cures
+
+crowdsourcingcures.org keeps the organization pages (home, initiatives, docs) and drops its health-data pages in step 3. Before that, two of its features move into the base app.
+
+| Feature in crowdsourcing-cures | In the base app | Notes |
+| --- | --- | --- |
+| Patient-rating Treatment Rankings: the treatments ranked for each condition, and each treatment's ratings across conditions | The existing condition and treatment pages, which have a ranking component but show demo data | The ratings data moves too (see Data). Rankings follow the rules for published numbers below. |
+| Logging measurements by typing: a person writes something like "took 200 mg magnesium, slept badly" and an AI turns it into measurements | Next to the existing photo-to-measurements action | The AI only reads the person's own words and produces no evidence numbers. It saves to the old app today, so it is rewired to the base app's own tables. |
+| Trial search | Not moved | It has its own tested ClinicalTrials.gov client; `packages/trials` uses optimitron's instead. |
+
+**Not moved**
+
+- Pages that only show data from the old app at app.dfda.earth: measurement history, variable charts, predictor search, population studies, the reminder inbox, data-import connectors, the Digital Twin Safe link and the reaction-time test. The base app already has its own measurements and reminders, and predictor search and the variable charts get rebuilt on `analysis` later. These pages stop working when the old app is retired in step 5, so crowdsourcingcures.org removes them in step 3.
+- AI-written pages: the per-condition meta-analyses, the cost-benefit analyses and the research articles. They break the no-AI-numbers rule. Whether crowdsourcingcures.org keeps them, labeled, is a separate decision.
+- The drug-registration form and the muscle-mass cost-benefit page.
+
 ## ClinicalTrials.gov results
 
 About 80,000 studies on ClinicalTrials.gov have posted results, 75,000 of them interventional (September 2026). A posted result gives each study group's size and its value on each outcome measure, and often the trial's own statistical comparison (effect estimate, confidence interval, p-value). Adverse events are posted per group as participants affected out of participants at risk. That is real outcome data for Outcome Labels that doesn't depend on recruiting clinics, so it is the first new data source.
@@ -104,8 +120,8 @@ The existing `packages/database` and `packages/db-ops` are the tools for moving 
 ## Order
 
 1. **Foundation.** Build `analysis` (with the fixes above) and `codebook`. Take the demo data and AI-generated numbers out of dfda-node's outcome labels.
-2. **Trial results.** Build `trials` and put trial-reported Outcome Labels in dfda-node, side effects first, next to the patient-rating Treatment Rankings.
-3. **dfda.earth.** dfda-node gains trial search, the MCP server and the REST API from optimitron. dfda.earth then moves to it, and optimitron deletes `apps/dfda`. crowdsourcingcures.org drops its own health-data pages and links to dfda.earth, and `apps/crowdsourcing-cures` is removed from this repo.
+2. **Trial results.** Move the patient-rating Treatment Rankings from crowdsourcing-cures into dfda-node. Build `trials` and put trial-reported Outcome Labels next to them, side effects first.
+3. **dfda.earth.** dfda-node gains trial search, the MCP server and the REST API from optimitron, and text measurement logging from crowdsourcing-cures. dfda.earth then moves to it, and optimitron deletes `apps/dfda`. crowdsourcingcures.org drops its own health-data pages and links to dfda.earth, and `apps/crowdsourcing-cures` is removed from this repo.
 4. **Network.** Package dfda-node so a clinic can run its own copy as a Clinic Node, then build `summary-file` and the aggregator, reusing the pooling code from step 2.
 5. **Legacy.** Bring over legacy data for the people who choose to, then retire the legacy app at app.dfda.earth.
 
