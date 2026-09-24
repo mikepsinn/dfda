@@ -266,7 +266,7 @@ entire divergent history into this repository.
 1. Clone the repository:
 
 ```shellscript
-git clone https://github.com/mikepsinn/dfda.git
+git clone https://github.com/decentralized-fda/decentralized-fda.git dfda
 cd dfda
 ```
 
