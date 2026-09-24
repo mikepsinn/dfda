@@ -16,7 +16,7 @@ flowchart LR
 
 | Piece | Status | Where |
 | --- | --- | --- |
-| Clinic Node prototype | Prototype: patient condition and treatment tracking, 0–10 treatment ratings, outcome-label schema. No federation yet. | [`apps/dfda-node`](apps/dfda-node) |
+| Web app | Prototype: patient condition and treatment tracking, 0–10 treatment ratings, outcome-label schema. Runs as dfda.earth or as a clinic's Clinic Node. No federation yet. | [`apps/web`](apps/web) |
 | N-of-1 causal analysis engine | Working TypeScript library | [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
 | Patient ratings | Live for 162 conditions and ~3,900 treatments, reported by patients | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
 | Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
@@ -44,13 +44,13 @@ The Cure Acceleration Act creates:
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
 
-[👉 Read the Full Cure Acceleration Act](apps/crowdsourcing-cures/public/docs/cure-acceleration-act.md)
+[👉 Read the Full Cure Acceleration Act](https://www.crowdsourcingcures.org/docs/cure-acceleration-act)
 
 # 😕 Why are we doing this?
 
 The current system of clinical research, diagnosis, and treatment is failing the billions of people are suffering from chronic diseases.
 
-[👉 Problems we're trying to fix...](apps/crowdsourcing-cures/public/docs/stuff-that-sucks.md)
+[👉 Problems we're trying to fix...](https://www.crowdsourcingcures.org/docs/01-problem)
 
 # 🧪 Our Hypothesis
 
@@ -96,15 +96,15 @@ This is a very high-level overview of the architecture. The three primary primit
 ![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
 
 
-[Gateway API Nodes](apps/crowdsourcing-cures/public/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [Digital Twin Safes](#2-digital-twin-safes).
+[Gateway API Nodes](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [Digital Twin Safes](#2-digital-twin-safes).
 
-**👉 [Learn More About Gateway APIs](apps/crowdsourcing-cures/public/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
+**👉 [Learn More About Gateway APIs](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways)**
 
 ## 2. Digital Twin Safes
 
-[Digital Twin Safes](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
+[Digital Twin Safes](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
 
-Each [Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) combines [encrypted local storage](apps/crowdsourcing-cures/public/docs/components/digital-twin-safe/digital-twin-safe.md) with a [personal AI agent](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that applies causal inference algorithms to estimate how various factors affect your health.
+Each [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) combines [encrypted local storage](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe) with a [personal AI agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that applies causal inference algorithms to estimate how various factors affect your health.
 
 ### 2.1. Digital Twin Safes
 
@@ -112,17 +112,17 @@ Each [Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/persona
 
 A local application for self-sovereign import and storage of personal data.
 
-**👉[Learn More or Contribute to Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/digital-twin-safe/digital-twin-safe.md)**
+**👉[Learn More or Contribute to Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe)**
 
 ### 2.2. Personal AI Agents
 
-[Personal AI agents](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
+[Personal AI agents](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that live in your [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) and use [causal inference](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) to estimate how various factors affect your health.
 
 ![data-import-and-analysis.gif](https://static.crowdsourcingcures.org/img/data-import-and-analysis.gif)
 
 
 
-**👉[Learn More](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)**
+**👉[Learn More](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent)**
 
 
 ## 3. Clinipedia—The Wikipedia of Clinical Research
@@ -130,33 +130,33 @@ A local application for self-sovereign import and storage of personal data.
 ![clinipedia_globe_circle.jpg](https://static.crowdsourcingcures.org/dfda/components/clinipedia/clinipedia_globe_circle.png)
 
 
-The [Clinipedia wiki](apps/crowdsourcing-cures/public/docs/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
+The [Clinipedia wiki](https://www.crowdsourcingcures.org/docs/components/clinipedia/clinipedia) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-**[👉 Learn More or Contribute to the Clinipedia](apps/crowdsourcing-cures/public/docs/components/clinipedia/clinipedia.md)**
+**[👉 Learn More or Contribute to the Clinipedia](https://www.crowdsourcingcures.org/docs/components/clinipedia/clinipedia)**
 
 ### 3.1 Outcome Labels
 
-A key component of Clinipedia is [**Outcome Labels**](apps/crowdsourcing-cures/public/docs/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
+A key component of Clinipedia is [**Outcome Labels**](https://www.crowdsourcingcures.org/docs/components/outcome-labels/outcome-labels) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
 
 ![outcome-labels.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)
 
-**👉 [Learn More About Outcome Labels](apps/crowdsourcing-cures/public/docs/components/outcome-labels/outcome-labels.md)**
+**👉 [Learn More About Outcome Labels](https://www.crowdsourcingcures.org/docs/components/outcome-labels/outcome-labels)**
 
 
 ### Features
 
 
-* [Data Collection](apps/crowdsourcing-cures/public/docs/components/data-collection/data-collection.md)
-* [Data Import](apps/crowdsourcing-cures/public/docs/components/data-import/data-import.md)
+* [Data Collection](https://www.crowdsourcingcures.org/docs/components/data-collection/data-collection)
+* [Data Import](https://www.crowdsourcingcures.org/docs/components/data-import/data-import)
 * [Data Analysis](#data-analysis)
     * [🏷️Outcome Labels](#-outcome-labels)
-    * [🔮Predictor Search Engine](apps/crowdsourcing-cures/public/docs/components/predictor-search-engine/predictor-search-engine.md)
-    * [🥕 Root Cause Analysis Reports](apps/crowdsourcing-cures/public/docs/components/root-cause-analysis-reports/root-cause-analysis-reports.md)
-    * [📜Observational Mega-Studies](apps/crowdsourcing-cures/public/docs/components/observational-studies/observational-studies.md)
-* [Real-Time Decision Support Notifications](apps/crowdsourcing-cures/public/docs/components/decision-support-notifications)
-* [No Code Health App Builder](apps/crowdsourcing-cures/public/docs/components/no-code-app-builder)
-* [Personal AI Agent](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md)
-* [Browser Extension](apps/crowdsourcing-cures/public/docs/components/browser-extension)
+    * [🔮Predictor Search Engine](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
+    * [🥕 Root Cause Analysis Reports](https://www.crowdsourcingcures.org/docs/components/root-cause-analysis-reports/root-cause-analysis-reports)
+    * [📜Observational Mega-Studies](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies)
+* [Real-Time Decision Support Notifications](https://www.crowdsourcingcures.org/docs/components/decision-support-notifications/decision-support-notifications)
+* [No Code Health App Builder](https://www.crowdsourcingcures.org/docs/components/no-code-app-builder/no-code-app-builder)
+* [Personal AI Agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent)
+* [Browser Extension](https://www.crowdsourcingcures.org/docs/components/browser-extension/browser-extension)
 
 <p align="center">
 
@@ -189,26 +189,26 @@ The Analytics Engine performs temporal precedence accounting, longitudinal data 
 
 It then pairs every combination of variables and identifies likely causal relationships using correlation mining algorithms in conjunction with a pharmacokinetic model.  The algorithms first identify the onset delay and duration of action for each hypothetical factor. It then identifies the optimal daily values for each factor.
 
-[👉 More info about data analysis](apps/crowdsourcing-cures/public/docs/components/data-analysis/data-analysis.md)
+[👉 More info about data analysis](https://www.crowdsourcingcures.org/docs/components/data-analysis/data-analysis)
 
 
 ### Real-time Decision Support Notifications
 
-![](apps/crowdsourcing-cures/public/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
+![](https://www.crowdsourcingcures.org/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
 
-[More info about real time decision support](apps/crowdsourcing-cures/public/docs/components/outcome-labels/outcome-labels.md)
+[More info about real time decision support](https://www.crowdsourcingcures.org/docs/components/outcome-labels/outcome-labels)
 
 ### 📈 Predictor Search Engine
 
-[![Predictor Search Engine](apps/crowdsourcing-cures/public/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](apps/crowdsourcing-cures/public/docs/components/predictor-search-engine/predictor-search-engine.md)
+[![Predictor Search Engine](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
 
-[👉 More info about the predictor search engine...](apps/crowdsourcing-cures/public/docs/components/predictor-search-engine/predictor-search-engine.md)
+[👉 More info about the predictor search engine...](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
 
 ### Auto-Generated Observational Studies
 
-![](apps/crowdsourcing-cures/public/docs/components/observational-studies/observational-studies.png)
+![](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies.png)
 
-[👉 More info about observational studies...](apps/crowdsourcing-cures/public/docs/components/observational-studies/observational-studies.md)
+[👉 More info about observational studies...](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies)
 
 
 
@@ -218,11 +218,9 @@ It then pairs every combination of variables and identifies likely causal relati
 
 | App | Status | Description |
 |-----|--------|-------------|
-| [`dfda-node`](apps/dfda-node) | **Canonical product** | White-label clinic and research node. Each customer deployment has isolated configuration, authentication, storage, and patient data. `prototype.dfda.earth` is the reference deployment. |
-| [`crowdsourcing-cures`](apps/crowdsourcing-cures) | **Legacy** | Existing Crowdsourcing Cures application and content site. It remains deployable for continuity but is not the target architecture for new product work. |
-| [`fdai`](apps/fdai) | Experimental | FDAi interface and experiments. Does not currently build. |
+| [`web`](apps/web) | **Canonical product** | The dFDA web app: patient, provider and research-partner screens, and public condition, treatment and outcome-label pages. The same code runs as dfda.earth, hosting people's Digital Twin Safes, or at a clinic as its Clinic Node. Each deployment has its own configuration, authentication, storage, and patient data. `prototype.dfda.earth` is the reference deployment. |
 
-The retired `fda-gov-v2` repository is a feature source for `dfda-node`, not a
+The Crowdsourcing Cures site has its own repository. The retired `fda-gov-v2` repository is a feature source for `apps/web`, not a
 second product line. Port useful behavior in reviewed slices; do not merge its
 entire divergent history into this repository.
 
@@ -231,21 +229,18 @@ entire divergent history into this repository.
 
 | Package | Purpose |
 | --- | --- |
-| `database` | Prisma introspection of the legacy CureDAO MySQL schema |
-| `db-ops` | CLIs to inspect and copy data between MySQL and Postgres |
-| `mathematical-modeling` | Health-economics models |
-| `autonomous-researcher` | Web search + LLM research-report agent |
-| `link-checker` | Broken-link checks for the docs |
-| `deployer`, `gcp-setup` | Deployment helpers |
+| [`legacy-import`](packages/legacy-import) | Tools for moving data out of the legacy MySQL database: its Prisma schema, query CLIs, and a MySQL-to-PostgreSQL sync. Retired once the migration is done. |
 | `config-eslint`, `config-typescript` | Shared lint and TypeScript config |
+
+The planned shared packages are listed in [docs/MIGRATION.md](docs/MIGRATION.md).
 
 
 ## Technology Stack
 
 - **Frontend**: React, Next.js, TypeScript, Tailwind
 - **Canonical node database**: PostgreSQL through Supabase, with Row Level Security and SQL migrations
-- **Legacy database code**: Prisma is still used by `crowdsourcing-cures`; it is not the `dfda-node` data layer
-- **Authentication**: Supabase Auth in `dfda-node`; legacy apps retain their existing providers during migration
+- **Legacy data**: a Prisma schema of the old MySQL database in `packages/legacy-import`, used only for the migration
+- **Authentication**: Supabase Auth, plus the web app's own OAuth server for third-party apps
 - **Background jobs**: graphile-worker
 - **Tooling**: pnpm workspaces, Turborepo, Vitest, Playwright, GitHub Actions
 - **Planned, not implemented**: blockchain consent and payment records (see below)
@@ -281,15 +276,15 @@ pnpm install
 3. Set up environment variables:
 
 ```shellscript
-cp apps/dfda-node/.env.example apps/dfda-node/.env
-# Edit apps/dfda-node/.env with your Supabase credentials
+cp apps/web/.env.example apps/web/.env
+# Edit apps/web/.env with your Supabase credentials
 ```
 
 
-4. Start the Clinic Node prototype:
+4. Start the web app:
 
 ```shellscript
-pnpm --filter dfda-node dev:env
+pnpm --filter web dev:env
 ```
 
 This starts local Supabase (it needs Docker), then the Next.js server, the background worker (`dev:worker`) and the reminder cron (`dev:cron`). `dev:next` starts only the Next.js server, and `dev` starts it with secrets from Doppler instead of `.env`.
@@ -297,20 +292,20 @@ This starts local Supabase (it needs Docker), then the Next.js server, the backg
 5. The first time, load the database schema and seed data from a second terminal:
 
 ```shellscript
-pnpm --filter dfda-node db:local:reset
+pnpm --filter web db:local:reset
 ```
 
 ### Database Setup
 
-The Clinic Node prototype uses Supabase for its database and authentication. From the repo root:
+The web app uses Supabase for its database and authentication. From the repo root:
 
 ```bash
-pnpm --filter dfda-node sb:local:start   # start only local Supabase
-pnpm --filter dfda-node db:local:reset   # apply migrations and seeds
-pnpm --filter dfda-node db:local:types   # regenerate TypeScript types
+pnpm --filter web sb:local:start   # start only local Supabase
+pnpm --filter web db:local:reset   # apply migrations and seeds
+pnpm --filter web db:local:types   # regenerate TypeScript types
 ```
 
-The database schema is managed through migrations in the `apps/dfda-node/supabase/migrations` directory. Each migration represents a specific change to the database structure.
+The database schema is managed through migrations in the `apps/web/supabase/migrations` directory. Each migration represents a specific change to the database structure.
 
 ### Development Environment
 
@@ -329,7 +324,7 @@ The repo uses pnpm workspaces and Turborepo, with the following structure:
 
 ```plaintext
 dfda/
-├── apps/           # Deployable applications (dfda-node, crowdsourcing-cures, fdai)
+├── apps/           # Deployable applications (web)
 ├── packages/       # Shared libraries and tooling
 ├── schema/         # Earlier, unapplied database design
 ├── supabase/       # Earlier combined-migration tooling
@@ -339,10 +334,10 @@ dfda/
 
 ### Commands
 
-- `pnpm --filter dfda-node dev:env` - Start the Clinic Node prototype with local Supabase, the worker and the cron
-- `pnpm --filter dfda-node build` - Build it
-- `pnpm --filter dfda-node test` - Run its tests
-- `pnpm --filter dfda-node lint` - Lint it
+- `pnpm --filter web dev:env` - Start the web app with local Supabase, the worker and the cron
+- `pnpm --filter web build` - Build it
+- `pnpm --filter web test` - Run its tests
+- `pnpm --filter web lint` - Lint it
 
 
 ### Adding New Features
@@ -401,7 +396,7 @@ The blockchain components are designed to integrate with existing services rathe
 
 ## Deployment (planned)
 
-The Clinic Node prototype currently deploys to Vercel with Supabase Cloud. The setups below are the target.
+The web app currently deploys to Vercel with Supabase Cloud. The setups below are the target.
 
 The dFDA Network is designed for deployment in various environments:
 
