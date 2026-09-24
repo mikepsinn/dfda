@@ -2,27 +2,65 @@
 
 **Status:** draft, September 2026. Nothing below has moved yet.
 
-dFDA code and data are spread across four repositories. This plan lists the apps and packages this repo will contain, where each one comes from, what happens to each dataset, and the order of the work. Each step can ship on its own.
+dFDA code and data are spread across four repositories. The plan: [`apps/dfda-node`](../apps/dfda-node) in this repo is the base. It takes over dfda.earth, and the dfda features in optimitron's `apps/dfda` move into it. This document lists where things are, what moves, what happens to each dataset, and the order of the work. Each step can ship on its own.
 
 ## Where things are today
 
 | Repository | What it has | Runs at |
 | --- | --- | --- |
-| `mikepsinn/dfda` (this repo) | [`apps/dfda-node`](../apps/dfda-node): Clinic Node prototype on Supabase. [`apps/crowdsourcing-cures`](../apps/crowdsourcing-cures): an older copy of the crowdsourcingcures.org site that has diverged from the standalone repo. [`apps/fdai`](../apps/fdai): experimental. `packages/database` and `packages/db-ops`: tools for the legacy MySQL schema. | Prototype deploy on Vercel |
+| `mikepsinn/dfda` (this repo) | [`apps/dfda-node`](../apps/dfda-node): Next.js and Supabase app for patients, providers and research partners. [`apps/crowdsourcing-cures`](../apps/crowdsourcing-cures): an older copy of the crowdsourcingcures.org site that has diverged from the standalone repo. [`apps/fdai`](../apps/fdai): experimental. `packages/database` and `packages/db-ops`: tools for the legacy MySQL schema. | prototype.dfda.earth |
 | `mikepsinn/crowdsourcing-cures` (private) | Organization homepage, patient-rating Treatment Rankings, trial search, articles | crowdsourcingcures.org |
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | `apps/dfda`: condition and treatment pages (the numbers are AI estimates), trial search, and an MCP server and REST API for personal tracking. It shares optimitron.com's database and sign-in. `packages/optimizer`: N-of-1 analysis. `packages/tracking`: measurements and reminders. `packages/data`: wearable importers, a ClinicalTrials.gov client, a condition list. | dfda.earth |
 | `mikepsinn/curedao-api` (private) | The legacy PHP and AngularJS app: user accounts, OAuth, wearable connectors, reminders, the MySQL database, and the generator for the static studies site | app.dfda.earth, studies.crowdsourcingcures.org |
 
-## Apps
+## The base: apps/dfda-node
 
-| App | What it does | Built from |
+It already has:
+
+- Sign-in through Supabase Auth, and its own OAuth server (authorization and token endpoints with PKCE, and client registration for developers)
+- Patient screens: conditions, treatments, 0–10 treatment ratings, side effects, measurements and reminders
+- Provider and research-partner screens
+- Public condition, treatment, outcome-label and trial pages, and an OpenAPI route
+- The white and purple theme that dfda.earth will use
+
+One codebase covers the parts of the design:
+
+| Part | In `apps/dfda-node` |
+| --- | --- |
+| Digital Twin Safe | The patient side, hosted at dfda.earth |
+| Clinic Node | The provider side. A clinic runs its own copy; the app was started as a white-label node. |
+| Global Aggregator | New. Can be a separate app later. |
+
+Before it serves dfda.earth, its outcome labels need the same rules as everything else: they currently show demo seed data (including a placeholder citation) and AI-generated numbers.
+
+## What comes from optimitron
+
+Everything dfda-specific leaves optimitron, including dfda.earth's MCP server and tracking REST API. optimitron.com keeps its own MCP server. Moved features are restyled from optimitron's neobrutalist style to dfda-node's theme.
+
+| Feature in optimitron `apps/dfda` | In `apps/dfda-node` | Notes |
 | --- | --- | --- |
-| `apps/web` | dfda.earth: Treatment Rankings, Outcome Labels, condition and treatment pages, trial search | crowdsourcing-cures ranking pages and patient ratings; optimitron `apps/dfda` components (labels, rankings, trial cards) |
-| `apps/safe` | Digital Twin Safe: a person's own data. Tracking, reminders, wearable imports, and OAuth sharing with their doctor's Clinic Node | dfda.earth's MCP server and REST API (optimitron `apps/dfda` and `packages/tracking`); curedao-api's legacy app (accounts, OAuth, connectors); the optimitron `packages/data` importers; the patient screens in `apps/dfda-node` |
-| `apps/node` | Clinic Node: runs at a clinic, imports EHR exports or patients' shared Safes, computes aggregates, and writes Summary Files | The `apps/dfda-node` schemas; the `analysis` package |
-| `apps/aggregator` | Checks incoming Summary Files, pools them across clinics, and publishes Data Releases | New. No existing repo pools results across sites. |
+| MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route that calls dfda-node's existing measurement and reminder actions | Signs in through dfda-node's own OAuth server. MCP clients also need dynamic client registration and the standard `.well-known` metadata, which that server doesn't have yet. |
+| REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | Next to the existing OpenAPI route | Same auth as the MCP server |
+| Trial search | The existing `find-trials` page | optimitron's ClinicalTrials.gov client is documented and tested; it replaces dfda-node's unused helper |
+| Landing, about and FAQ content | Existing public pages | Copy only |
+| Condition and treatment pages | Not moved | They show AI estimates. dfda-node's own pages show patient ratings instead. |
+| 6 unit tests | With the features they cover | |
 
-`apps/dfda-node` is split: its clinic side becomes `apps/node`, and its patient screens move to `apps/safe`.
+**What stays in optimitron**
+
+- `packages/tracking`, `packages/db` and `packages/data`, which optimitron.com and the other sites use. dfda doesn't depend on them; they aren't published.
+- The AI-estimated medical data in `packages/data`, which optimitron's database seed also uses. dfda takes only the condition list and its ICD-10 codes (see Data).
+- The `DFDA_*` constants in the `packages/data` parameters. They are economic-model inputs used by several optimitron sites, not app code.
+- The site-kit "how it works" sections that other optimitron sites render. Their links keep pointing at dfda.earth.
+
+**What has to be untangled**
+
+1. **Accounts.** dfda.earth's current accounts are optimitron accounts, and its MCP server only accepts tokens that optimitron.com issues. After the move, people sign in with dfda-node accounts, and MCP connectors reconnect once.
+2. **Data.** dfda.earth reads and writes the same database as optimitron.com: users, measurements, reminders, notifications and variables. People who tracked through dfda.earth need a way to bring their data along (see Open decisions).
+3. **Email.** Every optimitron site sends email from `no-reply@updates.dfda.earth`. optimitron needs its own sending address before dfda.earth leaves.
+4. **Cleanup in optimitron** after the move: `apps/dfda` itself, the dfda site variants in site-kit and `apps/optimitron`, dfda.earth in optimitron.com's list of MCP hosts, the CI build entry, the `pnpm copy` and visual-test scripts, the Vercel project scripts, and the docs that mention `apps/dfda`. optimitron.com's redirects of `/conditions`, `/treatments` and `/find-trials` to dfda.earth can stay.
+
+**Cutover.** dfda.earth switches to dfda-node once its MCP server and REST API work. If the pages are ready first, dfda-node can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then.
 
 ## Shared packages
 
@@ -30,10 +68,8 @@ dFDA code and data are spread across four repositories. This plan lists the apps
 | --- | --- | --- |
 | `analysis` | N-of-1 and population statistics | optimitron `packages/optimizer`, with two known bugs fixed first: p-values are wrong for small samples (df ≤ 30), and rankings use effect size without direction, so harms score the same as benefits |
 | `codebook` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/dfda-node` seeds, and optimitron's condition list with ICD-10 codes |
-| `summary-file` | The Summary File format and its validators | New |
-| `trials` | ClinicalTrials.gov v2 client | optimitron's `packages/data` fetcher, which is documented and tested |
+| `summary-file` | The Summary File format and its validators, shared by Clinic Nodes and the aggregator | New |
 | `importers` | Parsers for wearable and app exports | optimitron `packages/data/src/importers`, which were ported from curedao-api's PHP connectors |
-| `ui` | Shared components | optimitron `apps/dfda` and crowdsourcing-cures |
 
 The existing `packages/database` and `packages/db-ops` are the tools for moving the legacy data. They are retired once the move is done.
 
@@ -42,49 +78,18 @@ The existing `packages/database` and `packages/db-ops` are the tools for moving 
 | Data | Where it is | Plan |
 | --- | --- | --- |
 | Patient ratings: 162 conditions and ~3,900 treatments, reported by patients | curedao-api `ct_*` tables, copied into crowdsourcing-cures | Migrate. They become the first Data Release, labeled patient-reported and kept separate from clinic data. |
-| Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their Safe only if they choose to. How to ask is an open decision (below). |
+| Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their Safe only if they choose to (see Open decisions). |
+| Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | ~15,800 automated N-of-1 studies | Static site generated by curedao-api | Keep as an archive. Don't republish them as evidence. |
 | AI-estimated medical data (216 conditions, 969 treatments) | optimitron `packages/data` | Don't migrate the numbers. The condition list and its ICD-10 codes seed the `codebook`. |
-| `apps/dfda-node` database | Supabase | Seed and demo data only. Keep the schemas (evidence fields such as CI, p-value and GRADE; rating tables; synonym handling), not the rows. |
+| `apps/dfda-node` demo data | Supabase seeds | Clear it before dfda.earth points at the app |
 
 ## Order
 
-1. **Foundation.** Set up the new `apps/` and `packages/` layout, then build `analysis` (with the fixes above) and `codebook`.
-2. **dfda.earth.** `apps/web` replaces optimitron's `apps/dfda` at dfda.earth, starting with the patient-rating Treatment Rankings. crowdsourcingcures.org drops its own health-data pages and links to dfda.earth, and `apps/crowdsourcing-cures` is removed from this repo.
-3. **Network.** `apps/node`, the `summary-file` package, and `apps/aggregator`.
-4. **Safe.** `apps/safe` takes over dfda.earth's MCP server and REST API from optimitron, then the legacy app at app.dfda.earth is retired.
-
-## Moving dfda out of optimitron
-
-Everything dfda-specific leaves optimitron, including dfda.earth's MCP server and tracking REST API. optimitron.com keeps its own MCP server.
-
-**What moves**
-
-| In optimitron | Moves to | Notes |
-| --- | --- | --- |
-| `apps/dfda` pages: home, about, FAQ, legal pages, conditions, treatments, trial search, MCP setup | `apps/web` | The condition and treatment pages read static files of AI estimates. They are rebuilt on patient ratings, not copied. |
-| `apps/dfda` MCP server (11 tools for measurements, reminders and notifications), REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | `apps/safe` | The tools come from `packages/tracking`, which optimitron.com also uses. optimitron's packages aren't published, so dfda ports the code instead of depending on it. |
-| The ClinicalTrials.gov fetcher in `packages/data`, which only dfda uses | `packages/trials` | |
-| site-kit components that only dfda uses (`GeneralResearchCitationCard`, `SearchableList`, condition and treatment types) | `packages/ui` | |
-| 6 unit tests and 15 page snapshots | Next to the pages and routes they cover | |
-
-**What stays in optimitron**
-
-- `packages/tracking`, `packages/db` and `packages/data`, which optimitron.com and the other sites use.
-- The AI-estimated medical data in `packages/data`, which optimitron's database seed also uses. dfda takes only the condition list and its ICD-10 codes (see Data).
-- The `DFDA_*` constants in the `packages/data` parameters. They are economic-model inputs used by several optimitron sites, not app code.
-- The site-kit "how it works" sections that other optimitron sites render. Their links keep pointing at dfda.earth.
-
-**What has to be untangled**
-
-1. **Sign-in.** dfda.earth has no sign-in of its own. It uses optimitron's shared NextAuth setup and user table, and its MCP server only accepts tokens that optimitron.com issues; the two sites share the signing secret. `apps/safe` needs its own OAuth server before the MCP server can move, and existing MCP connections to dfda.earth will have to reconnect once.
-2. **Data.** dfda.earth reads and writes the same database as optimitron.com: users, measurements, reminders, notifications and variables. The dfda repo gets its own database, so people who tracked through dfda.earth need a way to bring their data along (see Open decisions).
-3. **Email.** Every optimitron site sends email from `no-reply@updates.dfda.earth`. optimitron needs its own sending address before dfda.earth leaves.
-4. **Cleanup in optimitron** once `apps/safe` is live: the dfda site variants in site-kit and `apps/optimitron`, dfda.earth in optimitron.com's list of MCP hosts, the CI build entry, the `pnpm copy` and visual-test scripts, the Vercel project scripts, and the docs that mention `apps/dfda`. optimitron.com's redirects of `/conditions`, `/treatments` and `/find-trials` to dfda.earth can stay.
-
-**Cutover**
-
-dfda.earth's pages move in step 2, but its MCP server moves with `apps/safe` in step 4. In between, `apps/web` forwards `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment, which keeps running on a Vercel address, so connectors keep working. When `apps/safe` is ready, the forwarding stops and optimitron deletes `apps/dfda`.
+1. **Foundation.** Build `analysis` (with the fixes above) and `codebook`. Take the demo data and AI-generated numbers out of dfda-node's outcome labels.
+2. **dfda.earth.** dfda-node gains the patient-rating Treatment Rankings and, from optimitron, trial search, the MCP server and the REST API. dfda.earth then moves to it, and optimitron deletes `apps/dfda`. crowdsourcingcures.org drops its own health-data pages and links to dfda.earth, and `apps/crowdsourcing-cures` is removed from this repo.
+3. **Network.** Package dfda-node so a clinic can run its own copy as a Clinic Node, then build `summary-file` and the aggregator.
+4. **Legacy.** Bring over legacy data for the people who choose to, then retire the legacy app at app.dfda.earth.
 
 ## Rules for published numbers
 
