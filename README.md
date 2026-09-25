@@ -3,7 +3,7 @@ title: "💊 OBJECTIVE: MAXIMUM CURE ACCELERATION 🚀"
 description: We are a borg-like entity devoted to minimizing suffering by any and all means necessary.
 ---
 
-> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for ranking treatments by real-world outcomes and publishing an Outcome Label for each one, built so patient records stay with patients and clinics and only aggregate results are shared. It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
+> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for ranking treatments by real-world outcomes and publishing an Outcome Label for each one. It is designed so patient records stay with patients and clinics and only aggregate results are shared; that sharing isn't built yet (see What works today below). It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
 
 ```mermaid
 flowchart LR
@@ -266,7 +266,7 @@ entire divergent history into this repository.
 1. Clone the repository:
 
 ```shellscript
-git clone https://github.com/mikepsinn/dfda.git
+git clone https://github.com/decentralized-fda/decentralized-fda.git dfda
 cd dfda
 ```
 
@@ -289,17 +289,23 @@ cp apps/dfda-node/.env.example apps/dfda-node/.env
 4. Start the Clinic Node prototype:
 
 ```shellscript
-pnpm --filter dfda-node dev:next
+pnpm --filter dfda-node dev:env
 ```
 
-(`pnpm --filter dfda-node dev` loads secrets from Doppler instead of `.env`.)
+This starts local Supabase (it needs Docker), then the Next.js server, the background worker (`dev:worker`) and the reminder cron (`dev:cron`). `dev:next` starts only the Next.js server, and `dev` starts it with secrets from Doppler instead of `.env`.
+
+5. The first time, load the database schema and seed data from a second terminal:
+
+```shellscript
+pnpm --filter dfda-node db:local:reset
+```
 
 ### Database Setup
 
 The Clinic Node prototype uses Supabase for its database and authentication. From the repo root:
 
 ```bash
-pnpm --filter dfda-node sb:local:start   # start local Supabase
+pnpm --filter dfda-node sb:local:start   # start only local Supabase
 pnpm --filter dfda-node db:local:reset   # apply migrations and seeds
 pnpm --filter dfda-node db:local:types   # regenerate TypeScript types
 ```
@@ -312,6 +318,7 @@ The development environment includes:
 
 - A local Supabase stack (PostgreSQL, Auth, Storage) started by `sb:local:start`
 - A graphile-worker process for reminders and background jobs (`dev:worker`)
+- A cron process that queues the periodic reminder jobs (`dev:cron`)
 
 
 ## Development Workflow
@@ -332,7 +339,7 @@ dfda/
 
 ### Commands
 
-- `pnpm --filter dfda-node dev:next` - Start the Clinic Node prototype
+- `pnpm --filter dfda-node dev:env` - Start the Clinic Node prototype with local Supabase, the worker and the cron
 - `pnpm --filter dfda-node build` - Build it
 - `pnpm --filter dfda-node test` - Run its tests
 - `pnpm --filter dfda-node lint` - Lint it
