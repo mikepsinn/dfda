@@ -3,13 +3,13 @@ name: dFDA Node Tests
 on:
   push:
     paths:
-      - 'apps/dfda-node/**'
+      - 'apps/web/**'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'pnpm-workspace.yaml'
   pull_request:
     paths:
-      - 'apps/dfda-node/**'
+      - 'apps/web/**'
       - 'package.json'
       - 'pnpm-lock.yaml'
       - 'pnpm-workspace.yaml'
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: apps/dfda-node
+        working-directory: apps/web
 
     steps:
       - name: Checkout repository
@@ -40,7 +40,7 @@ jobs:
 
       - name: Install dFDA Node dependencies
         working-directory: .
-        run: pnpm --filter dfda-node... install --frozen-lockfile
+        run: pnpm --filter web... install --frozen-lockfile
 
       - name: Type check
         run: pnpm type-check

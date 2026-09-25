@@ -27,14 +27,14 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-!packages/database/.env
+!packages/legacy-import/.env
 
 # turbo
 .turbo
 .idea
 .history/  
 dist/
-packages/database/generated/
+packages/legacy-import/generated/
 tmp/
 .env*
 !.env.example
@@ -48,8 +48,7 @@ gcp-service-account-key.json
 dfda-node-search-user-key.json
 supabase-config.md
 tsconfig.tsbuildinfo
-packages/database/.env
+packages/legacy-import/.env
 test-report.html
 .claude/settings.local.json
-apps/crowdsourcing-cures/.claude/settings.local.json
 .vercel
