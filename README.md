@@ -3,6 +3,27 @@ title: "💊 OBJECTIVE: MAXIMUM CURE ACCELERATION 🚀"
 description: We are a borg-like entity devoted to minimizing suffering by any and all means necessary.
 ---
 
+> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for ranking treatments by real-world outcomes and publishing an Outcome Label for each one. It is designed so patient records stay with patients and clinics and only aggregate results are shared; that sharing isn't built yet (see What works today below). It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
+
+```mermaid
+flowchart LR
+  SAFE["Digital Twin Safe<br/>(patient's own data)"] -- "OAuth: share with my doctor" --> NODE["Clinic Node<br/>(runs at the clinic)"]
+  NODE -- "Summary File<br/>(aggregates only)" --> AGG["Global Aggregator"]
+  AGG --> SITE["dfda.earth<br/>Treatment Rankings + Outcome Labels"]
+```
+
+**What works today**
+
+| Piece | Status | Where |
+| --- | --- | --- |
+| Clinic Node prototype | Prototype: patient condition and treatment tracking, 0–10 treatment ratings, outcome-label schema. No federation yet. | [`apps/dfda-node`](apps/dfda-node) |
+| N-of-1 causal analysis engine | Working TypeScript library | [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
+| Patient ratings | Live for 162 conditions and ~3,900 treatments, reported by patients | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
+| Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
+| Summary File spec, Codebook, Global Aggregator | Designed, not built yet | — |
+
+The full vision follows.
+
 # 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
 
 Billions of people are suffering needlessly because the current system of clinical research, diagnosis, and treatment sucks because:
@@ -18,7 +39,7 @@ Billions of people are suffering needlessly because the current system of clinic
 The Cure Acceleration Act creates:
 
 * ✅ **Universal Trial Access** - Every person's right to try safe treatments
-* 🤖 **Decentralized Autonomous FDA** - Free, open infrastructure for real-world evidence collection
+* 🤖 **dFDA (Decentralized Framework for Drug Assessment)** - Free, open infrastructure for real-world evidence collection
 * 🏆 **50/50 Health Savings Sharing Rewards** - Multi-billion dollar incentives for developing actual cures instead of lifetime drug subscriptions
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
@@ -65,7 +86,7 @@ Our crazy theory is that we can accomplish the same great feat in the realm of c
 This is a very high-level overview of the architecture. The three primary primitive components of the framework are:
 
 1. [Data Silo API Gateway Nodes](#1-data-silo-api-gateway-nodes) that facilitate data export from data silos
-2. [PersonalFDA Nodes](#2-personalfda-nodes) that import, store, and analyze your data to identify how various factors affect your health
+2. [Digital Twin Safes](#2-digital-twin-safes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
 ![framework-diagram.png](https://static.crowdsourcingcures.org/img/dfda-framework-diagram.png)
@@ -75,15 +96,15 @@ This is a very high-level overview of the architecture. The three primary primit
 ![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
 
 
-[Gateway API Nodes](apps/crowdsourcing-cures/public/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [PersonalFDA Nodes](#2-personalfda-nodes).
+[Gateway API Nodes](apps/crowdsourcing-cures/public/docs/components/data-silo-gateway-api-nodes) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [Digital Twin Safes](#2-digital-twin-safes).
 
 **👉 [Learn More About Gateway APIs](apps/crowdsourcing-cures/public/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
 
-## 2. PersonalFDA Nodes
+## 2. Digital Twin Safes
 
-[PersonalFDA Nodes](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
+[Digital Twin Safes](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
 
-[PersonalFDA Nodes](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) are composed of two components, a [Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/digital-twin-safe/digital-twin-safe.md) and a [personal AI agent](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) applies causal inference algorithms to estimate how various factors affect your health.
+Each [Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) combines [encrypted local storage](apps/crowdsourcing-cures/public/docs/components/digital-twin-safe/digital-twin-safe.md) with a [personal AI agent](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that applies causal inference algorithms to estimate how various factors affect your health.
 
 ### 2.1. Digital Twin Safes
 
@@ -95,7 +116,7 @@ A local application for self-sovereign import and storage of personal data.
 
 ### 2.2. Personal AI Agents
 
-[Personal AI agents](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [PersonalFDA nodes](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
+[Personal AI agents](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [Digital Twin Safe](apps/crowdsourcing-cures/public/docs/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](apps/crowdsourcing-cures/public/docs/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
 
 ![data-import-and-analysis.gif](https://static.crowdsourcingcures.org/img/data-import-and-analysis.gif)
 
@@ -199,8 +220,7 @@ It then pairs every combination of variables and identifies likely causal relati
 |-----|--------|-------------|
 | [`dfda-node`](apps/dfda-node) | **Canonical product** | White-label clinic and research node. Each customer deployment has isolated configuration, authentication, storage, and patient data. `prototype.dfda.earth` is the reference deployment. |
 | [`crowdsourcing-cures`](apps/crowdsourcing-cures) | **Legacy** | Existing Crowdsourcing Cures application and content site. It remains deployable for continuity but is not the target architecture for new product work. |
-| [`fdai`](apps/fdai) | Supporting app | FDAi interface and experiments. |
-| [`studies`](apps/studies) | Supporting app | Study-focused interface. |
+| [`fdai`](apps/fdai) | Experimental | FDAi interface and experiments. Does not currently build. |
 
 The retired `fda-gov-v2` repository is a feature source for `dfda-node`, not a
 second product line. Port useful behavior in reviewed slices; do not merge its
@@ -209,29 +229,26 @@ entire divergent history into this repository.
 
 ### Packages (packages/)
 
-| Package Category | Packages | Purpose
-|-----|-----
-| **UI & Design** | ui, icons, charts | Shared UI components and design system
-| **Core Functionality** | auth, api-client, forms, config, utils | Common utilities and functionality
-| **Domain-Specific** | trial-engine, health-connectors, insurance-api, supply-chain, outcomes | Business logic for specific domains
-| **AI & Analytics** | ai-models, meta-analysis, ai-agent, analytics | AI and data analysis capabilities
-| **Blockchain** | blockchain-core, smart-contracts, wallet, blockchain-client | Blockchain functionality
-| **Data & Integration** | database-client, registry-connectors, data-connectors | Data access and external integrations
-| **Infrastructure** | logger, testing, tsconfig | Development and operational tools
+| Package | Purpose |
+| --- | --- |
+| `database` | Prisma introspection of the legacy CureDAO MySQL schema |
+| `db-ops` | CLIs to inspect and copy data between MySQL and Postgres |
+| `mathematical-modeling` | Health-economics models |
+| `autonomous-researcher` | Web search + LLM research-report agent |
+| `link-checker` | Broken-link checks for the docs |
+| `deployer`, `gcp-setup` | Deployment helpers |
+| `config-eslint`, `config-typescript` | Shared lint and TypeScript config |
 
 
 ## Technology Stack
 
-- **Frontend**: React, Next.js, React Native
-- **Backend**: Node.js, NestJS
+- **Frontend**: React, Next.js, TypeScript, Tailwind
 - **Canonical node database**: PostgreSQL through Supabase, with Row Level Security and SQL migrations
 - **Legacy database code**: Prisma is still used by `crowdsourcing-cures`; it is not the `dfda-node` data layer
 - **Authentication**: Supabase Auth in `dfda-node`; legacy apps retain their existing providers during migration
-- **API**: REST and GraphQL
-- **Blockchain**: Ethereum/Polygon (public) and Hyperledger Fabric (private)
-- **AI/ML**: TensorFlow, PyTorch, Hugging Face Transformers
-- **DevOps**: Docker, Kubernetes, GitHub Actions
-- **Monitoring**: Prometheus, Grafana, OpenTelemetry
+- **Background jobs**: graphile-worker
+- **Tooling**: pnpm workspaces, Turborepo, Vitest, Playwright, GitHub Actions
+- **Planned, not implemented**: blockchain consent and payment records (see below)
 
 
 ## Getting Started
@@ -239,9 +256,8 @@ entire divergent history into this repository.
 ### Prerequisites
 
 - Node.js 22+
-- pnpm 9.14.4
-- Docker and Docker Compose
-- Git LFS
+- pnpm
+- Docker (for the local Supabase stack)
 - Supabase CLI
 
 
@@ -250,8 +266,8 @@ entire divergent history into this repository.
 1. Clone the repository:
 
 ```shellscript
-git clone https://github.com/dFDA-network/dFDA-network.git
-cd dFDA-network
+git clone https://github.com/decentralized-fda/decentralized-fda.git dfda
+cd dfda
 ```
 
 
@@ -265,82 +281,68 @@ pnpm install
 3. Set up environment variables:
 
 ```shellscript
-cp .env.example .env
-# Edit .env with your configuration
+cp apps/dfda-node/.env.example apps/dfda-node/.env
+# Edit apps/dfda-node/.env with your Supabase credentials
 ```
 
 
-4. Start the development environment:
+4. Start the Clinic Node prototype:
 
 ```shellscript
-pnpm dev
+pnpm --filter dfda-node dev:env
+```
+
+This starts local Supabase (it needs Docker), then the Next.js server, the background worker (`dev:worker`) and the reminder cron (`dev:cron`). `dev:next` starts only the Next.js server, and `dev` starts it with secrets from Doppler instead of `.env`.
+
+5. The first time, load the database schema and seed data from a second terminal:
+
+```shellscript
+pnpm --filter dfda-node db:local:reset
 ```
 
 ### Database Setup
 
-The project uses Supabase for its database and authentication needs. Here's how to work with it:
+The Clinic Node prototype uses Supabase for its database and authentication. From the repo root:
 
-1. Start the local Supabase instance:
 ```bash
-pnpm db:start
+pnpm --filter dfda-node sb:local:start   # start only local Supabase
+pnpm --filter dfda-node db:local:reset   # apply migrations and seeds
+pnpm --filter dfda-node db:local:types   # regenerate TypeScript types
 ```
 
-2. Reset database and apply migrations:
-```bash
-pnpm db:reset
-```
-
-3. For testing, you can run a separate instance:
-```bash
-pnpm db:test:start
-pnpm db:test:reset
-```
-
-4. Check status of Supabase services:
-```bash
-pnpm db:status
-```
-
-5. Push schema changes to production:
-```bash
-pnpm db:push
-```
-
-The database schema is managed through migrations in the `supabase/migrations` directory. Each migration represents a specific change to the database structure.
+The database schema is managed through migrations in the `apps/dfda-node/supabase/migrations` directory. Each migration represents a specific change to the database structure.
 
 ### Development Environment
 
 The development environment includes:
 
-- Local PostgreSQL database
-- Local blockchain node
-- Mock Gateway Nodes
-- Simulated ClinicalTrials.gov API
+- A local Supabase stack (PostgreSQL, Auth, Storage) started by `sb:local:start`
+- A graphile-worker process for reminders and background jobs (`dev:worker`)
+- A cron process that queues the periodic reminder jobs (`dev:cron`)
 
 
 ## Development Workflow
 
 ### Monorepo Structure
 
-The dFDA Network uses Turborepo for monorepo management, with the following structure:
+The repo uses pnpm workspaces and Turborepo, with the following structure:
 
 ```plaintext
-dFDA-network/
-├── apps/           # Deployable applications
-├── packages/       # Shared libraries
-├── tools/          # Development tools
+dfda/
+├── apps/           # Deployable applications (dfda-node, crowdsourcing-cures, fdai)
+├── packages/       # Shared libraries and tooling
+├── schema/         # Earlier, unapplied database design
+├── supabase/       # Earlier combined-migration tooling
 ├── docs/           # Documentation
-├── scripts/        # Build and deployment scripts
-└── .github/        # GitHub workflows and templates
+└── .github/        # GitHub workflows
 ```
 
 ### Commands
 
-- `pnpm dev` - Start all applications in development mode
-- `pnpm build` - Build all applications and packages
-- `pnpm test` - Run tests across the monorepo
-- `pnpm lint` - Lint all code
-- `pnpm clean` - Clean build artifacts
+- `pnpm --filter dfda-node dev:env` - Start the Clinic Node prototype with local Supabase, the worker and the cron
+- `pnpm --filter dfda-node build` - Build it
+- `pnpm --filter dfda-node test` - Run its tests
+- `pnpm --filter dfda-node lint` - Lint it
 
 
 ### Adding New Features
@@ -352,7 +354,9 @@ dFDA-network/
 5. Submit a pull request
 
 
-## Blockchain Integration
+## Blockchain Integration (planned)
+
+None of this is implemented yet.
 
 The dFDA Network incorporates blockchain technology for:
 
@@ -395,7 +399,9 @@ The dFDA Network incorporates blockchain technology for:
 The blockchain components are designed to integrate with existing services rather than replacing them, providing a gradual adoption path that can evolve over time.
 
 
-## Deployment
+## Deployment (planned)
+
+The Clinic Node prototype currently deploys to Vercel with Supabase Cloud. The setups below are the target.
 
 The dFDA Network is designed for deployment in various environments:
 
