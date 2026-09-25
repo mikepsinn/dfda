@@ -20,9 +20,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./apps/dfda-node/*"]
+      "@/*": ["./apps/web/*"]
     }
   },
-  "include": ["apps/dfda-node/**/*.ts", "apps/dfda-node/**/*.tsx"],
+  "include": ["apps/web/**/*.ts", "apps/web/**/*.tsx"],
   "exclude": ["node_modules"]
 }

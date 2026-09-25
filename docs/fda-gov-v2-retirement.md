@@ -1,6 +1,6 @@
 # `fda-gov-v2` retirement plan
 
-`apps/dfda-node` in this repository is the canonical product. The separate
+`apps/web` (formerly `apps/dfda-node`) in this repository is the canonical product. The separate
 `mikepsinn/fda-gov-v2` repository is a feature source, not a second product
 line. Do not archive it until the items below have been accepted or ported.
 
