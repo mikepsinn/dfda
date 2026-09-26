@@ -3,48 +3,26 @@ title: "💊 OBJECTIVE: MAXIMUM CURE ACCELERATION 🚀"
 description: We are a borg-like entity devoted to minimizing suffering by any and all means necessary.
 ---
 
-> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for comparing treatment evidence and publishing Outcome Labels. The design keeps private records with the responsible patient/clinic deployment; clinic federation shares only approved aggregates, while people can separately authorize public reports or personal-data transfers. Those sharing controls are still planned. It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
+> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for ranking treatments by real-world outcomes and publishing an Outcome Label for each one. It is designed so patient records stay with patients and clinics and only aggregate results are shared; that sharing isn't built yet (see What works today below). It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
 
-**One product, not three apps.** The same maintained `apps/web` codebase serves
-patients, clinics, researchers and public evidence pages. The target distribution
-is a hosted service plus optional branded independent installations. Personal
-health workspaces and clinic workspaces are interfaces in that same app.
-The evidence pipeline starts as app-owned modules and restricted jobs, not a
-separate required website; clinic data exchange is optional. Today's patient
-screens do not establish local-first or operator-blind encryption.
-
-**Reproduce, then improve.** The functional goal is to bring the useful curedao-api
-app into this product: tracking/imports, reminders, predictor search, personal and
-population analyses, charts and generated study reports. Existing time-series studies
-are data-derived observational findings, not fictional demo data. Import eligible
-results with their provenance, reproduce calculations, and version improvements;
-see the [legacy feature baseline](docs/MIGRATION.md#what-comes-from-curedao-api).
+```mermaid
+flowchart LR
+  SAFE["Digital Twin Safe<br/>(patient's own data)"] -- "OAuth: share with my doctor" --> NODE["Clinic Node<br/>(runs at the clinic)"]
+  NODE -- "Summary File<br/>(aggregates only)" --> AGG["Global Aggregator"]
+  AGG --> SITE["dfda.earth<br/>Treatment Rankings + Outcome Labels"]
+```
 
 **What works today**
 
 | Piece | Status | Where |
 | --- | --- | --- |
-| Web app | Prototype: patient condition/treatment tracking, 0–10 ratings and outcome-label schema. dfda.earth cutover, independent clinic packaging and federation remain planned. | [`apps/web`](apps/web) |
-| Time-series analysis engines | Legacy PHP reference and TypeScript port candidate; feature/numerical parity and reviewed corrections remain planned, not an assumption of causal validity | [`curedao-api`](https://github.com/mikepsinn/curedao-api) (private); [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
-| Patient ratings | Existing patient-reported dataset; historically 162 conditions and ~3,900 treatments, to be reconciled at migration | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
-| Automated time-series studies | Historically ~15,800 published observational analyses; recount at migration. Eligible findings/reports are an integration and improvement target; importing them does not validate them. Preserve old links until replacement continuity is tested. | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
-| Health vocabulary, evidence contracts/pipeline, clinic aggregates and clinic data exchange | Planned; source/contract owners and implementation gates documented, not implemented | [Evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md) |
+| Web app | Prototype: patient condition and treatment tracking, 0–10 treatment ratings, outcome-label schema. Runs as dfda.earth or as a clinic's Clinic Node. No federation yet. | [`apps/web`](apps/web) |
+| N-of-1 causal analysis engine | Working TypeScript library | [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
+| Patient ratings | Live for 162 conditions and ~3,900 treatments, reported by patients | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
+| Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
+| Summary File spec, Codebook, Global Aggregator | Designed, not built yet | — |
 
 See [Apps and features](docs/APPS-AND-FEATURES.md) for the current application, planned packages, and features to extract from related repositories. The implementation sequence and data rules are in [docs/MIGRATION.md](docs/MIGRATION.md), the authoritative implementation roadmap. The broader vision below is background, not a second backlog or a claim that every feature exists.
-
-The [product architecture](docs/PRODUCT-ARCHITECTURE.md) defines white labeling,
-deployment and access boundaries. [Evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md)
-maps Reddit/permitted discussions, ClinicalTrials.gov results, published reviews,
-patient ratings, recorded-data time-series analyses and clinic summaries to code, storage, separate evidence types,
-study workflows and versioned exchange formats. ClinicalTrials.gov supplies
-study records/results; dFDA must build and review any derived meta-analysis.
-
-The [delivery roadmap](docs/MIGRATION.md#order) starts with a populated demo,
-versioned data packs and one validated importer, then adds scoped MCP/admin access
-alongside the legacy app's tracking/analysis/reporting loop. The
-[data-population plan](docs/EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
-defines how agents and checked-in data use the same formats and controls; the
-[next implementation slice](docs/MIGRATION.md#next-implementation-slice) is deliberately bounded.
 
 # 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
 
@@ -105,12 +83,10 @@ Our crazy theory is that we can accomplish the same great feat in the realm of c
 
 # 🖥️  Framework Components
 
-The following is the longer-term conceptual vision, not a list of implemented
-apps or security guarantees. The hosted product and deployment decisions are in
-[Product architecture](docs/PRODUCT-ARCHITECTURE.md). Its conceptual components are:
+This is a very high-level overview of the architecture. The three primary primitive components of the framework are:
 
 1. [Data Silo API Gateway Nodes](#1-data-silo-api-gateway-nodes) that facilitate data export from data silos
-2. [Personal health workspaces](#2-personal-health-workspaces) that import, store, and analyze your data to identify how various factors affect your health
+2. [Digital Twin Safes](#2-digital-twin-safes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
 ![framework-diagram.png](https://static.crowdsourcingcures.org/img/dfda-framework-diagram.png)
@@ -120,27 +96,27 @@ apps or security guarantees. The hosted product and deployment decisions are in
 ![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
 
 
-[Gateway API Nodes](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways) should make it easy for data silos, such as hospitals and digital health apps, to let people export their data into [personal health workspaces](#2-personal-health-workspaces). Local storage is a longer-term option, not an implemented guarantee of the hosted app.
+[Gateway API Nodes](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [Digital Twin Safes](#2-digital-twin-safes).
 
 **👉 [Learn More About Gateway APIs](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways)**
 
-## 2. Personal health workspaces
+## 2. Digital Twin Safes
 
-[Personal health workspaces](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) let people import, store, and analyze their data. The current plan starts with a hosted workspace in the shared app. Sharing analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) requires the tested consent and privacy controls in the implementation plan; aggregates are not automatically anonymous.
+[Digital Twin Safes](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
 
-The longer-term [personal health workspace proposal](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) combines [encrypted local storage](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe) with a [personal AI agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent). This is not a description of security or causal-analysis guarantees already implemented in the hosted app. Linked historical proposals retain their original URLs and may use older names.
+Each [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) combines [encrypted local storage](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe) with a [personal AI agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that applies causal inference algorithms to estimate how various factors affect your health.
 
-### 2.1. Personal data storage
+### 2.1. Digital Twin Safes
 
 ![digital-twin-safe-no-text.jpg](https://static.crowdsourcingcures.org/dfda/components/digital-twin-safe/digital-twin-safe-no-text.png)
 
-A future local-storage option for a person's health workspace.
+A local application for self-sovereign import and storage of personal data.
 
-**👉[Learn More About the Local-Storage Proposal](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe)**
+**👉[Learn More or Contribute to Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe)**
 
 ### 2.2. Personal AI Agents
 
-[Personal AI agents](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that live in your [personal health workspace](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) and use [causal inference](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) to estimate how various factors affect your health.
+[Personal AI agents](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that live in your [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) and use [causal inference](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) to estimate how various factors affect your health.
 
 ![data-import-and-analysis.gif](https://static.crowdsourcingcures.org/img/data-import-and-analysis.gif)
 
@@ -240,20 +216,13 @@ It then pairs every combination of variables and identifies likely causal relati
 
 ### Applications (apps/)
 
-The immediate goal is a useful demo of the intended product: keep AI-generated
-content and current best estimates clearly labeled, then improve their basis as
-better data becomes available. Illustrative examples, provisional estimates and
-source-backed results remain distinguishable. See the
-[demo-first plan](docs/MIGRATION.md#demo-first-product-goal).
-
 | App | Status | Description |
 |-----|--------|-------------|
-| [`web`](apps/web) | **Canonical product** | Personal health workspaces, clinic workspaces, researcher and public evidence interfaces in one maintained product. `prototype.dfda.earth` is the reference deployment; hosted dfda.earth cutover and branded independent installations are planned. Independent deployments retain their own configuration, auth, storage and records; shared code does not grant shared access. |
+| [`web`](apps/web) | **Canonical product** | The dFDA web app: patient, provider and research-partner screens, and public condition, treatment and outcome-label pages. The same code runs as dfda.earth, hosting people's Digital Twin Safes, or at a clinic as its Clinic Node. Each deployment has its own configuration, authentication, storage, and patient data. `prototype.dfda.earth` is the reference deployment. |
 
-The Crowdsourcing Cures site has its own repository. The archived `fda-gov-v2` repository is an optional reference, not a required dependency or
-second product line. No required feature port was identified; do not merge its
-entire divergent history into this repository. The [retirement record](docs/fda-gov-v2-retirement.md)
-documents reuse decisions, deployment checks, shared history and recovery.
+The Crowdsourcing Cures site has its own repository. The retired `fda-gov-v2` repository is a feature source for `apps/web`, not a
+second product line. Port useful behavior in reviewed slices; do not merge its
+entire divergent history into this repository.
 
 
 ### Packages (packages/)
@@ -269,7 +238,7 @@ The planned shared packages are listed in [docs/MIGRATION.md](docs/MIGRATION.md)
 ## Technology Stack
 
 - **Frontend**: React, Next.js, TypeScript, Tailwind
-- **Canonical app database**: PostgreSQL through Supabase, with Row Level Security and SQL migrations
+- **Canonical node database**: PostgreSQL through Supabase, with Row Level Security and SQL migrations
 - **Legacy data**: a Prisma schema of the old MySQL database in `packages/legacy-import`, used only for the migration
 - **Authentication**: Supabase Auth, plus the web app's own OAuth server for third-party apps
 - **Background jobs**: graphile-worker
@@ -385,15 +354,14 @@ The reference web app deploys to Vercel from `apps/web`, using Supabase Cloud
 for its database and authentication. See the [app environment setup](apps/web/README.md#environment-setup)
 for configuration.
 
-Packaging the same app for an isolated independent installation that a clinic can
-operate is planned work. Follow the [migration plan](docs/MIGRATION.md#order);
+Packaging the same app so a clinic can install and operate its own isolated
+Clinic Node is planned work. Follow the [migration plan](docs/MIGRATION.md#order);
 there is no separate infrastructure deployment roadmap here.
 
-Before installations share data, implement consent records, authenticated aggregate
+Before nodes share data, implement consent records, authenticated node
 submissions, and the [aggregate privacy controls](docs/MIGRATION.md#rules-for-published-numbers).
 Public pages remain in `apps/web`; network administration belongs to the
-planned clinic data exchange. Hosted source-linked evidence and study participation
-do not depend on clinic federation. See the [installation requirements](docs/PRODUCT-ARCHITECTURE.md#white-labeling-and-independent-hosting).
+planned aggregator.
 
 ## Contributing
 
@@ -402,21 +370,18 @@ to choose and scope a contribution.
 
 ### Key Areas for Contribution
 
-- Tested analysis methods, trial-results ingestion and reviewed evidence releases
-- Permitted community-source adapters, structured treatment reports and provenance
-- Study creation, review, consent, enrollment and withdrawal workflows
+- Tested analysis methods and trial-results ingestion
 - Patient tracking, OAuth/data imports, and shared export parsers
-- Consent, privacy-preserving clinic aggregates, and installation authentication
-- Branded independent installation packaging and optional clinic data exchange administration
+- Consent, privacy-preserving Summary Files, and node authentication
+- Clinic Node packaging and aggregator administration
 - Documentation, internationalization, and accessibility
 
 ## Roadmap
 
-Follow the single [implementation sequence and exit gates](docs/MIGRATION.md#order).
-Build the hosted evidence/reporting/study loop first; independent clinic hosting
-and optional federation follow tested data, privacy and operational boundaries.
-The [feature inventory](docs/APPS-AND-FEATURES.md) distinguishes existing code
-from extraction candidates and new work.
+Follow the [implementation sequence](docs/MIGRATION.md#order): foundation,
+ratings and trial results, the dfda.earth cutover, the clinic network, and
+consent-based legacy migration. The [feature inventory](docs/APPS-AND-FEATURES.md)
+distinguishes existing code from extraction candidates and new work.
 
 ## Key Features
 
