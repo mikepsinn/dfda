@@ -39,6 +39,13 @@ patient ratings, recorded-data time-series analyses and clinic summaries to code
 study workflows and versioned exchange formats. ClinicalTrials.gov supplies
 study records/results; dFDA must build and review any derived meta-analysis.
 
+The [delivery roadmap](docs/MIGRATION.md#order) starts with a populated demo,
+versioned data packs and one validated importer, then adds scoped MCP/admin access
+alongside the legacy app's tracking/analysis/reporting loop. The
+[data-population plan](docs/EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
+defines how agents and checked-in data use the same formats and controls; the
+[next implementation slice](docs/MIGRATION.md#next-implementation-slice) is deliberately bounded.
+
 # 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
 
 Billions of people are suffering needlessly because the current system of clinical research, diagnosis, and treatment sucks because:
