@@ -44,13 +44,13 @@ The Cure Acceleration Act creates:
 * 📈 **Real-Time Analysis** of the positive and negative effects of every food, supplement, drug, and treatment on every measurable aspect of human health and happiness
 * 🌐 **Global Access** - Decentralized trials anyone can participate in from home
 
-[👉 Read the Full Cure Acceleration Act](https://www.crowdsourcingcures.org/docs/cure-acceleration-act)
+[👉 Read the Full Cure Acceleration Act](docs/vision/cure-acceleration-act.md)
 
 # 😕 Why are we doing this?
 
 The current system of clinical research, diagnosis, and treatment is failing the billions of people are suffering from chronic diseases.
 
-[👉 Problems we're trying to fix...](https://www.crowdsourcingcures.org/docs/01-problem)
+[👉 Problems we're trying to fix...](docs/vision/01-problem.md)
 
 # 🧪 Our Hypothesis
 
@@ -89,82 +89,82 @@ This is a very high-level overview of the architecture. The three primary primit
 2. [Digital Twin Safes](#2-digital-twin-safes) that import, store, and analyze your data to identify how various factors affect your health
 3. [Clinipedia](#3-clinipediathe-wikipedia-of-clinical-research) that contains the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-![framework-diagram.png](https://static.crowdsourcingcures.org/img/dfda-framework-diagram.png)
+![framework-diagram.png](docs/vision/assets/img/dfda-framework-diagram.jpg)
 
 ## 1. Data Silo API Gateway Nodes
 
-![dfda-gateway-api-node-silo.jpg](https://static.crowdsourcingcures.org/dfda/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.png)
+![dfda-gateway-api-node-silo.jpg](docs/vision/components/data-silo-gateway-api-nodes/dfda-gateway-api-node-silo.jpg)
 
 
-[Gateway API Nodes](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [Digital Twin Safes](#2-digital-twin-safes).
+[Gateway API Nodes](docs/vision/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md) should make it easy for data silos, such as hospitals and digital health apps, to let people export and save their data locally in their [Digital Twin Safes](#2-digital-twin-safes).
 
-**👉 [Learn More About Gateway APIs](https://www.crowdsourcingcures.org/docs/components/data-silo-gateway-api-nodes/data-silo-api-gateways)**
+**👉 [Learn More About Gateway APIs](docs/vision/components/data-silo-gateway-api-nodes/data-silo-api-gateways.md)**
 
 ## 2. Digital Twin Safes
 
-[Digital Twin Safes](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
+[Digital Twin Safes](docs/vision/components/personal-fda-nodes/personal-fda-nodes.md) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
 
-Each [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) combines [encrypted local storage](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe) with a [personal AI agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that applies causal inference algorithms to estimate how various factors affect your health.
+Each [Digital Twin Safe](docs/vision/components/personal-fda-nodes/personal-fda-nodes.md) combines [encrypted local storage](docs/vision/components/digital-twin-safe/digital-twin-safe.md) with a [personal AI agent](docs/vision/components/optimiton-ai-agent/optomitron-ai-agent.md) that applies causal inference algorithms to estimate how various factors affect your health.
 
 ### 2.1. Digital Twin Safes
 
-![digital-twin-safe-no-text.jpg](https://static.crowdsourcingcures.org/dfda/components/digital-twin-safe/digital-twin-safe-no-text.png)
+![digital-twin-safe-no-text.jpg](docs/vision/components/digital-twin-safe/digital-twin-safe-no-text.jpg)
 
 A local application for self-sovereign import and storage of personal data.
 
-**👉[Learn More or Contribute to Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe)**
+**👉[Learn More or Contribute to Digital Twin Safe](docs/vision/components/digital-twin-safe/digital-twin-safe.md)**
 
 ### 2.2. Personal AI Agents
 
-[Personal AI agents](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that live in your [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) and use [causal inference](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) to estimate how various factors affect your health.
+[Personal AI agents](docs/vision/components/optimiton-ai-agent/optomitron-ai-agent.md) that live in your [Digital Twin Safe](docs/vision/components/personal-fda-nodes/personal-fda-nodes.md) and use [causal inference](docs/vision/components/optimiton-ai-agent/optomitron-ai-agent.md) to estimate how various factors affect your health.
 
-![data-import-and-analysis.gif](https://static.crowdsourcingcures.org/img/data-import-and-analysis.gif)
+![data-import-and-analysis.gif](docs/vision/assets/img/data-import-and-analysis.gif)
 
 
 
-**👉[Learn More](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent)**
+**👉[Learn More](docs/vision/components/optimiton-ai-agent/optomitron-ai-agent.md)**
 
 
 ## 3. Clinipedia—The Wikipedia of Clinical Research
 
-![clinipedia_globe_circle.jpg](https://static.crowdsourcingcures.org/dfda/components/clinipedia/clinipedia_globe_circle.png)
+![clinipedia_globe_circle.jpg](docs/vision/components/clinipedia/clinipedia_globe_circle.jpg)
 
 
-The [Clinipedia wiki](https://www.crowdsourcingcures.org/docs/components/clinipedia/clinipedia) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
+The [Clinipedia wiki](docs/vision/components/clinipedia/clinipedia.md) should be a global knowledge repository containing the aggregate of all available data on the effects of every food, drug, supplement, and medical intervention on human health.
 
-**[👉 Learn More or Contribute to the Clinipedia](https://www.crowdsourcingcures.org/docs/components/clinipedia/clinipedia)**
+**[👉 Learn More or Contribute to the Clinipedia](docs/vision/components/clinipedia/clinipedia.md)**
 
 ### 3.1 Outcome Labels
 
-A key component of Clinipedia is [**Outcome Labels**](https://www.crowdsourcingcures.org/docs/components/outcome-labels/outcome-labels) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
+A key component of Clinipedia is [**Outcome Labels**](docs/vision/components/outcome-labels/outcome-labels.md) that list the degree to which the product is likely to improve or worsen specific health outcomes or symptoms.
 
-![outcome-labels.png](https://static.crowdsourcingcures.org/dfda/components/outcome-labels/outcome-labels.png)
+![outcome-labels.png](docs/vision/components/outcome-labels/outcome-labels.png)
 
-**👉 [Learn More About Outcome Labels](https://www.crowdsourcingcures.org/docs/components/outcome-labels/outcome-labels)**
+**👉 [Learn More About Outcome Labels](docs/vision/components/outcome-labels/outcome-labels.md)**
 
 
 ### Features
 
 
-* [Data Collection](https://www.crowdsourcingcures.org/docs/components/data-collection/data-collection)
-* [Data Import](https://www.crowdsourcingcures.org/docs/components/data-import/data-import)
+* [Data Collection](docs/vision/components/data-collection/data-collection.md)
+* [Data Import](docs/vision/components/data-import/data-import.md)
 * [Data Analysis](#data-analysis)
     * [🏷️Outcome Labels](#31-outcome-labels)
-    * [🔮Predictor Search Engine](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
-    * [🥕 Root Cause Analysis Reports](https://www.crowdsourcingcures.org/docs/components/root-cause-analysis-reports/root-cause-analysis-reports)
-    * [📜Observational Mega-Studies](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies)
-* [Real-Time Decision Support Notifications](https://www.crowdsourcingcures.org/docs/components/decision-support-notifications/decision-support-notifications)
-* [No Code Health App Builder](https://www.crowdsourcingcures.org/docs/components/no-code-app-builder/no-code-app-builder)
-* [Personal AI Agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent)
-* [Browser Extension](https://www.crowdsourcingcures.org/docs/components/browser-extension/browser-extension)
+    * [🔮Predictor Search Engine](docs/vision/components/predictor-search-engine/predictor-search-engine.md)
+    * [🥕 Root Cause Analysis Reports](docs/vision/components/root-cause-analysis-reports/root-cause-analysis-reports.md)
+    * [📜Observational Mega-Studies](docs/vision/components/observational-studies/observational-studies.md)
+* [Real-Time Decision Support Notifications](docs/vision/components/decision-support-notifications/decision-support-notifications.md)
+* [No Code Health App Builder](docs/vision/components/no-code-app-builder/no-code-app-builder.md)
+* [Personal AI Agent](docs/vision/components/optimiton-ai-agent/optomitron-ai-agent.md)
+* [Browser Extension](docs/vision/components/browser-extension/browser-extension.md)
 
 <p align="center">
 
-<img src="https://static.crowdsourcingcures.org/img/screenshots/record-inbox-import-connectors-analyze-study.png" width="800" alt="screenshots">
+<img src="docs/vision/assets/img/screenshots/record-inbox-import-connectors-analyze-study.jpg" width="800" alt="screenshots">
 &nbsp
 </p>
 <p align="center">
-  <img src="https://static.crowdsourcingcures.org/img/screenshots/reminder-inbox-screenshot-no-text.png" width="300" alt="Reminder Inbox">
+  <img src="docs/vision/assets/img/screenshots/reminder-inbox-screenshot-no-text.jpg" width="300" alt="Reminder Inbox">
 </p>
 
 Collects and aggregate data on symptoms, diet, sleep, exercise, weather, medication, and anything else from dozens
@@ -175,13 +175,13 @@ chronic illness.
 
 Web and mobile push notifications with action buttons.
 
-![web notification action buttons](https://static.crowdsourcingcures.org/dfda/components/data-collection/web-notification-action-buttons.png)
+![web notification action buttons](docs/vision/components/data-collection/web-notification-action-buttons.png)
 
 ### Browser Extensions
 
 By using the Browser Extension, you can track your mood, symptoms, or any outcome you want to optimize in a fraction of a second using a unique popup interface.
 
-![Chrome Extension](https://static.crowdsourcingcures.org/dfda/components/browser-extension/browser-extension.png)
+![Chrome Extension](docs/vision/components/browser-extension/browser-extension.png)
 
 ### Data Analysis
 
@@ -189,26 +189,26 @@ The Analytics Engine performs temporal precedence accounting, longitudinal data 
 
 It then pairs every combination of variables and identifies likely causal relationships using correlation mining algorithms in conjunction with a pharmacokinetic model.  The algorithms first identify the onset delay and duration of action for each hypothetical factor. It then identifies the optimal daily values for each factor.
 
-[👉 More info about data analysis](https://www.crowdsourcingcures.org/docs/components/data-analysis/data-analysis)
+[👉 More info about data analysis](docs/vision/components/data-analysis/data-analysis.md)
 
 
 ### Real-time Decision Support Notifications
 
-![](https://www.crowdsourcingcures.org/docs/components/decision-support-notifications/notifications-screenshot-slide.png)
+![](docs/vision/components/decision-support-notifications/notifications-screenshot-slide.png)
 
-[More info about real time decision support](https://www.crowdsourcingcures.org/docs/components/outcome-labels/outcome-labels)
+[More info about real time decision support](docs/vision/components/decision-support-notifications/decision-support-notifications.md)
 
 ### 📈 Predictor Search Engine
 
-[![Predictor Search Engine](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
+[![Predictor Search Engine](docs/vision/components/predictor-search-engine/predictor-search-simple-list-zoom.png)](docs/vision/components/predictor-search-engine/predictor-search-engine.md)
 
-[👉 More info about the predictor search engine...](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
+[👉 More info about the predictor search engine...](docs/vision/components/predictor-search-engine/predictor-search-engine.md)
 
 ### Auto-Generated Observational Studies
 
-![](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies.png)
+![](docs/vision/components/observational-studies/observational-studies.png)
 
-[👉 More info about observational studies...](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies)
+[👉 More info about observational studies...](docs/vision/components/observational-studies/observational-studies.md)
 
 
 
