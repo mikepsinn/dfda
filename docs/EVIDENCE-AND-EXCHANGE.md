@@ -28,7 +28,7 @@ Keep three origins distinct, independently of a record's privacy classification:
   Unknown generation history stays unknown; an unsupported model guess is visibly
   unvalidated, not silently promoted to a source-backed result.
 - **Source-backed result:** an extracted observation or documented calculation from
-  eligible source records, with its evidence lane, input versions and review status.
+  eligible source records, with its evidence type, input versions and review status.
   Source-backed does not by itself mean causal, unbiased or clinically validated.
 
 An app-level demo notice supplements, not replaces, labels on each card, chart,
@@ -38,15 +38,18 @@ a calibrated confidence interval or evidence-certainty percentage. Avoid unsuppo
 precision. Placeholder references remain labeled examples until replaced by verified
 citations; never invent supporting studies or imply a source reports a model's number.
 
-Use planned `ModelEstimate` records in `packages/evidence` for provisional estimates
-and illustrative values, discriminated by `origin`. Generation/review/persistence
-belongs to `apps/web/lib/evidence`, with separate logical records/publication views
-from actual patient and study data. These contracts are not implemented today.
+Use planned `ModelEstimate` records for provisional model-generated estimates and
+`DemoExample` records for synthetic illustrations. Both belong to `packages/evidence`,
+but have separate schemas and fixed origins: `model_estimate` and `illustrative`.
+Generation/review/persistence belongs to `apps/web/lib/evidence`, with separate
+logical records/publication views from actual patient and study data. These contracts
+are not implemented today. Generating an example with AI does not make it a best
+estimate; its intended use determines the contract.
 Never fill missing fields in a `StudyEffect` or `PatientReport` with unlabeled model
 output; a derived estimate references its inputs without altering those source facts.
 
 Improve one bounded treatment/condition page at a time: attach/check references,
-add patient and trial results in their own lanes, evaluate the model against
+add patient and trial results under their own evidence types, evaluate the model against
 compatible source-backed results, and revise or supersede its estimates with dated
 versions and an explanation. Different outcomes/populations or rating scales are
 not interchangeable replacements. The page can retain explicit estimates where
@@ -61,16 +64,17 @@ recruitment and private-data workflows retain the separate gates below.
 
 ## Where each source goes
 
-| Input | Receiving code / normalization | Storage and user-facing destination | Evidence lane |
+| Input | Receiving code / normalization | Storage and user-facing destination | Evidence type |
 | --- | --- | --- | --- |
-| Existing AI-generated estimates/content and illustrative seeds | `apps/web/lib/evidence` generation/import/review; planned `ModelEstimate` contract | Versioned estimate/example records; existing demo condition/treatment pages and Outcome Labels | Explicit model-estimate or example origin, separate from empirical evidence lanes |
+| Existing AI/model-generated estimates and associated content | `apps/web/lib/evidence` generation/import/review; planned `ModelEstimate` contract | Versioned estimates; existing demo condition/treatment pages and Outcome Labels | Explicit model-estimate origin, separate from empirical evidence types |
+| Illustrative seeds and simulated demo values | App demo fixtures/import; planned `DemoExample` contract | Separate example records; labeled examples on demo pages and simulated workflows | Explicit illustrative origin; not best estimates, actual patients or observed results |
 | Reddit and other permitted public discussions | `apps/web/lib/evidence/sources` adapters; `packages/evidence` source and community-report contracts | Restricted source/review store; reviewed source-linked cards on existing condition/treatment pages | Community reports, not enrolled patients or controlled effects |
 | ClinicalTrials.gov registry and posted results | `packages/trials` API v2 adapter and new arm/outcome parser; AACT bulk adapter when useful | Registry/study/effect records; existing trial search and public evidence pages | Trial-reported results, separated further by study design |
-| Published papers and existing systematic reviews/meta-analyses | Evidence source adapter and reviewed extraction into `StudyEffect` or cited review records | Bibliography, underlying-study links, inclusion/exclusion decisions, and reviewed analysis releases | Published research; reviews are not additional independent participants |
+| Published papers and existing systematic reviews/meta-analyses | Evidence source adapter and reviewed extraction into `StudyEffect` or cited review records | Bibliography, underlying-study links, inclusion/exclusion decisions, and published analysis versions | Published research; reviews are not additional independent participants |
 | dFDA patient treatment ratings and longitudinal reports | Existing rating/measurement actions extended by app evidence modules; `PatientReport` contract | Private patient records; explicitly authorized public reports or privacy-reviewed aggregate views | Patient-reported observations |
 | Legacy ratings from curedao-api / Crowdsourcing Cures | `packages/legacy-import` migration mapped into the same patient-report model | Preserve original scale, provenance, permissions, collection context, and unknowns | Legacy patient-reported dataset, never relabeled trial evidence |
 | Wearables, app exports, and patient-authorized clinical records | `packages/importers` plus receiving app authorization; future provider-specific adapters | Receiving personal/clinic workspace only; analysis outputs require separate publication authorization | Private measurements; not public evidence by default |
-| Independently operated Clinic Nodes | Local analysis and privacy release gate; `packages/summary-file` validation at sender and receiver | Accepted summary submissions and public analysis releases; raw records remain at source | Clinic observational evidence, separate from trials and casual ratings |
+| Independent clinic installations | Local analysis and privacy release gate; `packages/clinic-aggregates` validation at sender and receiver | Accepted clinic aggregate submissions and published analysis versions; raw records remain at source | Clinic observational evidence, separate from trials and casual ratings |
 | Studies created in dFDA | `apps/web/lib/studies`, existing trial/enrollment actions, `StudyProtocol` contract | Public approved protocol/discovery page; private consent, enrollment, and measurements | Design-specific prospective evidence after analysis/review |
 
 ClinicalTrials.gov supplies registry entries and posted results, **not a ready-made
@@ -100,7 +104,7 @@ reviewed empirical inputs to be displayed as provisional estimates.
 4. **Compute:** run a versioned deterministic method against explicitly selected
    reviewed inputs; store exclusions, denominators, uncertainty, and limitations.
 5. **Publish:** release approved views/exports with source links, method and input
-   versions, lane labels, and review status. Unknown is visible, not converted to zero.
+   versions, evidence-type labels, and review status. Unknown is visible, not converted to zero.
 6. **Correct or withdraw:** deactivate affected inputs, invalidate caches and search
    indexes, propagate notices to permitted recipients, and recompute affected outputs.
 
@@ -113,12 +117,12 @@ stores and enforced permissions, not a database per source:
   deduplication decisions, mappings, job history. Large permitted files go in private
   object storage, referenced by database records, not in Git.
 - **Published:** approved source metadata/excerpts where allowed, aggregate statistics,
-  public protocols, analysis releases, and distinctly labeled estimate/example views.
+  public protocols, published analysis versions, and distinctly labeled estimate/example views.
   Estimate/example publication does not certify empirical validity. A publication
   view is an allowlist, not a serialization of an internal row.
 
 Logical names such as `source_records`, `evidence_reports`, `study_effects`,
-`model_estimates`, `analysis_releases`, and `exchange_submissions` describe planned
+`model_estimates`, `demo_examples`, `published_analysis_versions`, and `exchange_submissions` describe planned
 entities, not existing SQL tables. Reconcile them with the app schema before writing canonical
 migrations. Logs and queues use opaque IDs rather than health narratives.
 
@@ -175,7 +179,7 @@ counting both as independent support. Unresolved cross-source overlap stays visi
 
 Upvotes/helpfulness can help find readable reports but are not efficacy weights.
 No universal score mixes these dimensions or pools anecdotes with randomized
-trials. Default pages show the evidence lanes and user-selectable comparisons.
+trials. Default pages show the evidence types and user-selectable comparisons.
 Every source-derived calculated number has its eligible input set, exclusions, denominator,
 method version, date, and a path back to permitted original sources. Suppress an
 empirical score when its denominator or required fields are missing; any separate
@@ -265,11 +269,12 @@ schemas, compatibility tests, and consumer integration together.
 | `CommunityReport` / `community-report.schema.json` | `packages/evidence` | Source references, claim context/direction, explicitly stated exposure/timing/harms, unknowns, review/extraction versions, duplicate-cluster status; public projection only where permitted |
 | `PatientReport` / `patient-report.schema.json` | `packages/evidence` | Original rating scale, context, time points, measured/self-reported distinction, local subject/report IDs and authorization reference; private on submission, separately authorized publication |
 | `StudyEffect` / `study-effect.schema.json` | `packages/evidence` | Underlying study/cohort IDs, design, arms/comparator, population, outcome/unit/direction/time point, estimate and uncertainty or sufficient statistics, derivation/provenance, bias/review status |
-| `ModelEstimate` / `model-estimate.schema.json` | `packages/evidence` | `origin` (`model_estimate` or `illustrative`), condition/treatment/outcome context, value/scale/unit, assumptions, supporting source/input references where available, model/prompt/method version and date or explicit unknowns, uncertainty type/value or unquantified status, review/limitations and supersession; not an observed study effect or patient record |
+| `ModelEstimate` / `model-estimate.schema.json` | `packages/evidence` | Fixed `origin: model_estimate`, condition/treatment/outcome context, value/scale/unit, assumptions, supporting source/input references where available, model/prompt/method version and date or explicit unknowns, uncertainty type/value or unquantified status, review/limitations and supersession; a provisional estimate, not illustrative filler or an observed study/patient record |
+| `DemoExample` / `demo-example.schema.json` | `packages/evidence` | Fixed `origin: illustrative`, example purpose/scenario and version, synthetic value or simulated payload with declared shape/units/context, mandatory example label, and generation metadata where known; any mock participants, counts or citations are explicitly fictional, not real private data, verified sources or best estimates |
 | `StudyProtocol` / `study-protocol.schema.json` | `packages/trials` | Stable study ID, immutable protocol version, design, eligibility, outcomes/schedule, analysis plan, operator/contact, review status; public approved projection excludes participants and signed consent |
-| `PersonalDataExport` / `personal-data-export.schema.json` | `packages/importers` | Manifest, codebook/schema versions, measurements, ratings, provenance, units/time zones and permitted attachments; authorized encrypted download/transfer, never an aggregator upload |
-| `ClinicSummary` / `clinic-summary.schema.json` | `packages/summary-file` | Node/release/cohort IDs, period, design, outcome/comparator, permitted counts/statistics or effect+uncertainty, overlap declaration, privacy policy/version and release approval; no person IDs, narratives or raw rows |
-| `AnalysisRelease` / `analysis-release.schema.json` | `packages/evidence` | Input IDs/revisions, inclusion/exclusion decisions, codebook/method/code versions, parameters, results/uncertainty, lane, limitations, review and supersession status; public only after publication gate |
+| `PersonalDataExport` / `personal-data-export.schema.json` | `packages/importers` | Manifest, health vocabulary/schema versions, measurements, ratings, provenance, units/time zones and permitted attachments; authorized encrypted download/transfer, never a clinic data exchange submission |
+| `ClinicSummary` / `clinic-summary.schema.json` | `packages/clinic-aggregates` | Installation/release/cohort IDs, period, design, outcome/comparator, permitted counts/statistics or effect+uncertainty, overlap declaration, privacy policy/version and release approval; no person IDs, narratives or raw rows |
+| `PublishedAnalysisVersion` / `published-analysis-version.schema.json` | `packages/evidence` | Input IDs/revisions, inclusion/exclusion decisions, health vocabulary/method/code versions, parameters, results/uncertainty, evidence type, limitations, review and supersession status; public only after publication gate |
 | `WithdrawalNotice` / `withdrawal-notice.schema.json` | `packages/evidence` | Authorized issuer, target IDs/revisions, effective time, minimal reason category, replacement if any; receiver acknowledgment and affected-release invalidation, no sensitive explanation |
 
 Signed consent, private screening responses, identity mappings, access tokens,
@@ -287,10 +292,11 @@ sessions, clinic privileges, or consent automatically.
   payload for that key is rejected. References specify revisions, not mutable IDs alone.
 - Numeric public projections and exports preserve origin (`source_backed`,
   `model_estimate`, or `illustrative`) separately from privacy classification and
-  review status. A value-level origin is required for mixed displays; no implicit
+  review status. `ModelEstimate` and `DemoExample` validators enforce their distinct
+  fixed origins. A value-level origin is required for mixed displays; no implicit
   fallback may relabel an estimate as an observation. Demo/estimate records cannot
   validate as observed `StudyEffect`, `PatientReport`, or `ClinicSummary` inputs.
-- Canonical treatment/condition/outcome/unit IDs include a codebook version;
+- Canonical treatment/condition/outcome/unit IDs include a health vocabulary version;
   original terminology is preserved. Unmapped entities stay unmapped until reviewed.
   Specify timestamps/time zones, scales, sign conventions, numeric precision, and
   missingness states (`not_reported`, `not_applicable`, `suppressed`, `unknown`).
@@ -305,7 +311,7 @@ sessions, clinic privileges, or consent automatically.
   fail authorization, scientific-validity, or privacy checks.
 - App HTTPS APIs and worker jobs consume these contracts; document actual routes
   through the existing OpenAPI surface when implemented. No new live endpoints are
-  promised here. Authenticated node submissions require scoped credentials, key
+  promised here. Authenticated installation submissions require scoped credentials, key
   rotation/revocation, replay protection, payload integrity, size limits, acknowledgments,
   and per-record rejection reasons. Select/test the signing/auth profile before federation.
 - Native ClinicalTrials.gov JSON and AACT tables are inputs, not competing dFDA
@@ -318,7 +324,7 @@ sessions, clinic privileges, or consent automatically.
 `ClinicSummary` is only for approved aggregates. The existing proposed minimum
 cell rule (suppress counts 1–10) is a floor, not an anonymity guarantee. Complementary
 cells/totals, rare combinations, repeated releases, overlapping cohorts, other
-aggregators, and exact moments/effect estimates can still disclose information.
+exchange operators, and exact moments/effect estimates can still disclose information.
 Do not send identifying cohort definitions or unsuppressed sufficient statistics.
 
 Before federation, approve a threat model and tested release policy covering all
@@ -332,6 +338,10 @@ No clinic upload until the sender and receiver both enforce these gates.
 
 - Fixture-based schema tests: unknown versions, missing values, units/directions,
   invalid counts, unexpected private fields, corrections, and round-trip personal exports.
+- Estimate/example contracts: `ModelEstimate` rejects illustrative origin and
+  `DemoExample` rejects model-estimate origin; example generation with AI never
+  implicitly promotes it to an estimate. Public projections preserve the distinction,
+  and simulated payloads cannot be ingested as actual patient or study records.
 - Source replay tests: API/AACT duplicates, papers describing the same cohort,
   comment reposts/follow-ups, missing denominators/results, failed fetches, and deleted sources.
 - Known-answer statistics: arm matching, uncertainty, outcome direction, shared controls,
@@ -349,7 +359,7 @@ No clinic upload until the sender and receiver both enforce these gates.
 - Consent/access tests: cross-patient and cross-clinic denial, researcher access limits,
   protocol-version enrollment, withdrawal, export authorization, and no auto-enrollment.
 - Lifecycle tests: retries, failed review, changed sources, deletion through caches/indexes,
-  revoked node credentials, signed submission replay, and downstream withdrawal acknowledgment.
+  revoked installation credentials, signed submission replay, and downstream withdrawal acknowledgment.
 - Clinic privacy tests: small/complementary cells, repeated and overlapping releases,
-  multiple aggregators, and attempts to reconstruct suppressed data. Keep federation off
+  multiple exchange operators, and attempts to reconstruct suppressed data. Keep federation off
   until review demonstrates the selected release policy satisfies the threat model.
