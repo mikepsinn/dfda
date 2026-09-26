@@ -14,6 +14,13 @@ validation is not a prerequisite for showing the demo. The
 [estimate policy](EVIDENCE-AND-EXCHANGE.md#demo-estimates-and-progressive-improvement)
 separates provisional best estimates, example data and source-backed results.
 
+**Functional target:** reproduce the useful app powered by curedao-api, including
+tracking/imports, reminders, predictor search, personal/population time-series
+analyses, charts and generated study reports, then improve it. These data-derived
+studies belong in the product as observational findings, not just a separate
+archive. The [reference baseline](MIGRATION.md#what-comes-from-curedao-api) owns
+parity requirements, numerical corrections and legacy continuity gates.
+
 ## Naming guide
 
 Use names that describe a person's workspace, the data, or the operation. These
@@ -29,6 +36,7 @@ are responsibilities within one product, not a list of separate apps.
 | Clinic data exchange | Optional authenticated sharing of approved clinic aggregates between installations |
 | Clinic aggregates (`packages/clinic-aggregates`) | Group-level clinic statistics and their validation rules, represented by `ClinicSummary`; not raw patient records |
 | Evidence types | Distinct categories such as patient reports, community reports and clinical study results; separate from example/model/source-backed origin |
+| Time-series analysis (`TimeSeriesAnalysis`) | A versioned result calculated from recorded measurements, with methods, lineage and reproduction status; personal or population observational scope |
 | Published analysis version (`PublishedAnalysisVersion`) | A dated, versioned set of analysis results, methods and input references |
 
 For example, the health vocabulary can map "hours slept" and "sleep duration" to
@@ -38,6 +46,9 @@ outcomes equivalent; mappings retain context and review status.
 
 `ModelEstimate` means a provisional model-generated number; `DemoExample` means
 synthetic data used to demonstrate a feature. Neither is an observed study result.
+Automatically fitting a model to recorded data does not make the result a
+`ModelEstimate`: data-derived time-series findings use `TimeSeriesAnalysis`, with
+their assumptions and limitations. Generated report prose does not change origin.
 Trial search, treatment ratings, study protocol and Outcome Label keep their names.
 The proposed package/type names have not shipped; this cleanup does not rename
 runtime code, database fields or external URLs.
@@ -46,9 +57,9 @@ runtime code, database fields or external URLs.
 
 | Responsibility | Product surface | Implementation boundary |
 | --- | --- | --- |
-| Personal health workspace | Tracking, imports, treatment reports, study participation, sharing controls | Patient interface in `apps/web`; private records and explicit access grants |
+| Personal health workspace | Tracking/imports, history/charts, predictor search, personal analyses/reports, reminders, study participation and sharing controls | Patient interface in `apps/web`; private records and explicit access grants |
 | Clinic workspace | Provider workflows and clinic-operated study management | Provider interface in the same codebase; independent installation is an optional hosting choice, not a separate interface/app |
-| Public demo and evidence | Condition/treatment comparisons, labeled estimates/examples, source links, reviews, study discovery | Public pages in `apps/web`, reading publication views that preserve data origin, not unrestricted patient tables |
+| Public demo and evidence | Condition/treatment comparisons, authorized observational study reports/charts, labeled estimates/examples, source links, reviews and study discovery | Public pages in `apps/web`, reading publication views that preserve data origin and historical/reproduced/corrected status, not unrestricted patient tables |
 | Evidence pipeline | Import sources, track provenance, review estimates, analyze compatible inputs and publish results | App-owned server modules and restricted jobs; works without clinic data sharing |
 | Clinic data exchange | Register contributing installations, authenticate aggregate submissions and track corrections/withdrawals | Optional app-owned administration and restricted receiving jobs; accepted data enters the evidence pipeline |
 
@@ -127,16 +138,16 @@ create empty packages just to match this table.
 | Location | Owns |
 | --- | --- |
 | `apps/web/app` | Existing public, patient, provider, researcher, and admin routes; extend these instead of duplicating sites |
-| `apps/web/lib/evidence` | Source access adapters (including approved Reddit ingestion), estimate generation/import and revision, review workflow, persistence, score/publication orchestration; calls shared parsers and methods |
+| `apps/web/lib/evidence` | Source access adapters (including legacy study imports and approved Reddit ingestion), estimate generation/import and revision, analysis orchestration, review, persistence and publication; calls shared parsers/methods and renders approved result projections |
 | `apps/web/lib/studies` | Study wizard, eligibility, consent/enrollment state machine, protocol review and publication; reuse existing trial/enrollment actions and tables where appropriate |
 | `apps/web/lib/instance` | Validated branding/module configuration and operator administration |
 | `apps/web/lib/data-export` | Authorized personal export/import orchestration and transfer audit |
 | `apps/web/worker` and `apps/web/cron-enqueuer.ts` | Durable ingestion, refresh, validation, analysis, publication, deletion propagation, and reminders; supporting processes, not separate products |
 | `apps/web/supabase/migrations` | Canonical SQL schema, access policies, and publication views; no new canonical database package |
 | `packages/health-vocabulary` | Versioned IDs, terminology mappings, units, outcome direction, and mapping review status |
-| `packages/evidence` | Source/report/effect/model-estimate/demo-example/published-analysis-version contracts, validators, provenance and deduplication primitives; no credentials or database access |
+| `packages/evidence` | Source/report/time-series-analysis/effect/model-estimate/demo-example/published-analysis-version contracts, validators, provenance and deduplication primitives; no credentials or database access |
 | `packages/trials` | ClinicalTrials.gov/AACT adapters and parsing, trial discovery, public study-protocol contract |
-| `packages/analysis` | Deterministic descriptive scores, N-of-1 analysis, study-effect estimation, compatible meta-analysis and uncertainty; tested methods, not source fetching |
+| `packages/analysis` | Deterministic personal/population time-series calculations, descriptive scores, study-effect estimation, compatible meta-analysis and uncertainty; curedao-api reference methods plus reviewed TypeScript ports/improvements, tested independently of source fetching |
 | `packages/importers` | Wearable/app export parsing and personal-data export contract, not a central OAuth token store |
 | `packages/clinic-aggregates` | Clinic aggregate exchange contract and validators; never the format for public comments or personal record transfer |
 
@@ -162,9 +173,12 @@ this plan.
 
 A visitor first sees a coherent demo, including labeled current best estimates
 where source-backed coverage is incomplete and explicit examples of planned flows.
-Improve it incrementally into a hosted loop where a person can compare separate
-evidence types for a treatment/condition, open original sources, contribute a
-structured report, track their outcomes, and discover or propose a study. Mark
+Reproduce the legacy loop: import/log data, inspect history/charts, find predictors,
+open personal and permitted population studies, read/share/export reports and keep
+tracking with reminders. Import useful historical findings with explicit status
+while verifying the new calculations. Extend that loop so a person can compare
+separate evidence types, open original sources, contribute a structured report,
+and discover or propose a study. Mark
 simulated versus working interactions; live patient/study use retains its access,
 consent and review gates. Then prove a
 branded clinic install and its opt-in aggregate contribution using the same

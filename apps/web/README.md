@@ -28,6 +28,16 @@ content and numbers as provisional current best estimates, and improve them as
 better data arrives. Distinguish illustrative example data from model estimates
 and source-backed results; complete evidence coverage is not a demo launch gate.
 
+The functional target is to reproduce the useful curedao-api app: import/log
+measurements, inspect history/charts, find predictors, generate personal and
+population studies, read/share/export reports and keep tracking with reminders.
+Existing studies computed from measurements are source-backed observational
+analyses, not `ModelEstimate` or `DemoExample` records. Import eligible historical
+results with provenance and reproduction status, then reproduce and improve their
+calculations and reports. The [legacy baseline](../../docs/MIGRATION.md#what-comes-from-curedao-api)
+defines workflow/numerical acceptance and continuity; these capabilities are
+targets, not a claim that this app already matches the legacy system.
+
 - Public pages, patient tracking, provider and research-partner workflows,
   administration, and developer access belong to this app.
 - Reusable analysis, trial-data ingestion, health vocabulary, evidence contracts,

@@ -6,6 +6,12 @@ below remain planned unless the inventory marks specific code present.
 
 dFDA code and data are spread across four repositories. The plan: [`apps/web`](../apps/web) in this repo (formerly `apps/dfda-node`) is the base. It takes over dfda.earth, and the dfda features in optimitron's `apps/dfda` move into it. This document lists where things are, what moves, what happens to each dataset, and the order of the work. Each step can ship on its own.
 
+**Product goal:** reproduce the useful workflows and analyses of the app powered
+by `curedao-api` in `apps/web`, then improve them. This includes the time-series
+studies at studies.crowdsourcingcures.org, not just tracking screens or new evidence
+pages. The [legacy feature baseline](#what-comes-from-curedao-api) defines what must
+be accounted for before claiming the new app replaces the old one.
+
 Documentation ownership:
 
 - [Product architecture](PRODUCT-ARCHITECTURE.md): one product, deployment/data boundaries, white labeling, and code ownership.
@@ -43,7 +49,7 @@ for live clinical use.
 | `mikepsinn/dfda` (this repo) | [`apps/web`](../apps/web): Next.js and Supabase app for patients, providers and research partners. [`packages/legacy-import`](../packages/legacy-import): tools for moving data out of the legacy MySQL database. | prototype.dfda.earth |
 | `mikepsinn/crowdsourcing-cures` (private) | Organization homepage, patient-rating Treatment Rankings, trial search, articles | crowdsourcingcures.org |
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | `apps/dfda`: condition and treatment pages (the numbers are AI estimates), trial search, and an MCP server and REST API for personal tracking. It shares optimitron.com's database and sign-in. `packages/optimizer`: N-of-1 analysis. `packages/tracking`: measurements and reminders. `packages/data`: wearable importers, a ClinicalTrials.gov client, a condition list. | dfda.earth |
-| `mikepsinn/curedao-api` (private) | The legacy PHP and AngularJS app: user accounts, OAuth, wearable connectors, reminders, the MySQL database, and the generator for the static studies site | app.dfda.earth, studies.crowdsourcingcures.org |
+| `mikepsinn/curedao-api` (private) | Functional reference: PHP/AngularJS tracking app, accounts/OAuth, connectors, reminders, MySQL records, personal and population time-series analyses, charts and generated study reports | app.dfda.earth, studies.crowdsourcingcures.org |
 
 ## The base: apps/web
 
@@ -125,11 +131,89 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 3. **Email.** Every optimitron site sends email from `no-reply@updates.dfda.earth`. optimitron needs its own sending address before dfda.earth leaves.
 4. **Cleanup in optimitron** after the move: `apps/dfda` itself, the dfda site variants in site-kit and `apps/optimitron`, dfda.earth in optimitron.com's list of MCP hosts, the CI build entry, the `pnpm copy` and visual-test scripts, the Vercel project scripts, and the docs that mention `apps/dfda`. optimitron.com's redirects of `/conditions`, `/treatments` and `/find-trials` to dfda.earth can stay.
 
-**Cutover.** dfda.earth switches to the web app once its MCP server and REST API work. If the pages are ready first, the web app can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then.
+**Cutover.** Switch dfda.earth after the relevant [cutover gates](#order) pass, including working MCP/REST access or tested temporary forwarding. If the pages are ready first, the web app can forward `/api/mcp`, `/api/v1/*`, `/.well-known/oauth-protected-resource/mcp` and `/openapi.json` to the old optimitron deployment on a Vercel address until then. This domain change does not retire unreplaced curedao-api workflows or the studies site.
+
+## What comes from curedao-api
+
+Reproduce capabilities, not the PHP/AngularJS architecture. Existing app screens,
+Optimitron's TypeScript analysis code, and legacy import tools are starting points;
+none establishes full behavioral or numerical parity. New Reddit/trial evidence
+and create/join workflows extend this foundation rather than displacing it.
+
+This initial baseline comes from targeted inspection of local `curedao-api` commit
+`47ea2bcc91e71e49fb70eb3c2a88867487377399` on 2026-09-26. Reference paths below
+are relative to that private repository. This is not a complete route inventory,
+a live connector audit, or a run of the legacy tests. Before implementation, pin
+the deployed reference/version where available, inventory remaining workflows and
+client/API consumers, and record each as reproduce, improve, explicitly defer, or
+retire with the product owner's agreement. Unlisted features are not silently retired.
+
+| Capability to reproduce | Reference starting point | Destination and acceptance requirement |
+| --- | --- | --- |
+| Accounts, authorized access and data portability | Existing legacy accounts/OAuth; `routes/api.php` | Existing `apps/web` auth plus user-directed migration/export. Reconcile identities and permissions; do not copy active sessions, credentials or implied sharing grants. |
+| Measurement entry, import, history, editing/deletion and export | Measurement routes in `routes/api.php`; `tests/APIs/MeasurementExportApiTest.php` | Patient screens/actions and `packages/importers`; preserve variable IDs/mappings, units, timestamps/time zones, aggregation and missingness. Check record reconciliation and round-trip exports. |
+| Reminders, inbox and logging from notifications | Tracking-reminder/notification routes; `tests/APIs/TrackingReminderApiTest.php` and `TrackingReminderNotificationApiTest.php` | Existing reminder UI/worker extended and tested for scheduling, log/skip/snooze, time zones, retries and duplicate prevention. |
+| Connector catalog, connection/reconnection, imports and sync status | `app/DataSources/QMConnector.php`; connector routes and tests | App-owned authorization, secure token storage and sync jobs; parsers alone do not reproduce working connections. Inventory providers and test selected providers individually; disclose unavailable/deferred ones. |
+| Variable browsing, predictor/outcome search and charts | `app/Buttons/States/`, including predictor/history states; `app/Charts/CorrelationCharts/` | Patient/public routes as permitted, shared analysis outputs and chart data. Preserve positive/negative associations, personal versus population scope, filters and source links without presenting rankings as causal recommendations. |
+| Personal time-series studies | `app/Correlations/QMUserCorrelation.php`, `app/Studies/QMUserStudy.php`, correlation property calculators | `packages/analysis` plus app-owned jobs/private results: pairing, onset delay, duration of action, correlations and baseline/follow-up comparisons with explicit method settings. |
+| Population analyses | `app/Correlations/QMAggregateCorrelation.php`, `app/Studies/QMPopulationStudy.php`, aggregate property calculators | Reviewed aggregation of eligible personal analyses, with weights, cohort lineage and distinct-person/paired-observation counts kept separate. No automatic independence or causal claim. |
+| Generated study pages, search, sharing and exports | `app/Studies/StudyText.php`, `StudyHtml.php`, `app/Services/StaticExportService.php` | `apps/web` study reports and evidence views backed by versioned results. Reproduce useful statistics, scatter/time-series/lag charts, readable explanations and permitted sharing/export; preserve old study/variable links through verified mappings/redirects. |
+
+### Import results, then reproduce and improve them
+
+Legacy studies computed from recorded measurements are **source-backed
+observational analyses**, not fictional examples or unsupported model guesses.
+Bring eligible existing results into the demo/evidence views with source links,
+personal/population scope, available method/count/date metadata and explicit
+unknowns. A useful label is **"Legacy automated observational analysis -
+reproduction pending."** Review permissions and the display before publication,
+but do not require every historical analysis to be recalculated before showing
+clearly labeled imported findings. Publicly available does not mean raw personal
+records may be copied or republished.
+
+Keep three states distinct: imported historical result, reproduced result under
+the reference method, and corrected/new-method result. Importing a report proves
+neither numerical reproduction nor clinical validity. Preserve permitted original
+values/provenance and connect corrections through versioned supersession; unknown
+or unavailable source data/methods remain explicit. See the
+[time-series evidence rules](EVIDENCE-AND-EXCHANGE.md#time-series-studies-from-recorded-data).
+
+### Functional and numerical acceptance
+
+1. **Capture the reference.** For representative workflows, record inputs,
+   parameters, code/data versions, expected outputs and screenshots/report sections.
+   Use authorized private fixtures in restricted storage and synthetic known-answer
+   fixtures in Git; never commit health records or credentials. Reuse relevant legacy
+   tests, including `tests/UnitTests/Analytics/CorrelationCalculationTest.php`, after
+   reviewing their assertions rather than assuming a passing legacy test proves correctness.
+2. **Compare the same calculation.** Check variable/unit mapping, time zones,
+   resampling, exposure/outcome pairing, lag and duration windows, missingness,
+   baseline/follow-up definitions, person/measurement/pair counts, aggregate weights,
+   estimates and uncertainty. Define per-metric tolerances and expected differences;
+   test sparse, constant, missing, zero-baseline and overlapping data, not just a
+   correlation coefficient on a happy path.
+3. **Correct known defects explicitly.** Numerical parity is a diagnostic, not a
+   requirement to retain a bug. Document reviewed old/new differences and method
+   versions; do not silently choose one conflicting statistic as correct. One
+   canonical result supplies cards, charts, narrative and exports. The existing
+   [steps/sleep population report](https://studies.crowdsourcingcures.org/study/cause-1451-effect-1867-population-study)
+   contains conflicting p-value/significance presentations and is a reconciliation
+   case, not a validated expected answer. Its underlying data has not been recomputed
+   as part of this planning work.
+4. **Prove the complete user journey.** Import or log data -> inspect/edit history
+   and charts -> find predictors/outcomes -> open a personal study -> view an eligible
+   population analysis -> read/share/export an authorized report -> continue tracking
+   with reminders. Verify access controls, recalculation after edits/deletion,
+   failed/partial imports and reconnection, not only static screenshots.
+5. **Protect continuity.** Keep working legacy routes/services until equivalent
+   behavior or an explicit defer/retire decision is accepted. Test old deep links,
+   client compatibility or migration notices, exports, redirects and rollback before
+   removing them. A domain/demo cutover may be incremental; it is not proof of legacy
+   feature parity. Independent hosting and clinic federation are not parity prerequisites.
 
 ## What comes from crowdsourcing-cures
 
-crowdsourcingcures.org keeps the organization pages (home, initiatives, docs) and drops its redundant health-data pages at the dfda.earth cutover. Treatment rankings and text logging move into the base app; useful AI-written demonstration content can be adapted incrementally rather than excluded by origin.
+crowdsourcingcures.org keeps the organization pages (home, initiatives, docs). Treatment rankings and text logging move into the base app; redundant health-data pages redirect only after equivalent workflows are accepted. Useful AI-written demonstration content can be adapted incrementally rather than excluded by origin.
 
 | Feature in crowdsourcing-cures | In the base app | Notes |
 | --- | --- | --- |
@@ -140,7 +224,7 @@ crowdsourcingcures.org keeps the organization pages (home, initiatives, docs) an
 
 **Not moved**
 
-- Pages that only show data from the old app at app.dfda.earth: measurement history, variable charts, predictor search, population studies, the reminder inbox, data-import connectors, the personal health workspace link and the reaction-time test. The base app already has its own measurements and reminders, and predictor search and the variable charts get rebuilt on `analysis` later. Remove these proxy pages during cutover, before legacy retirement.
+- Legacy-data proxy implementations are not copied wholesale. Their measurement history, variable charts, predictor search, population studies, reminder inbox, connector and personal-workspace behavior belongs to the curedao-api parity baseline above. Keep working links/routes until replacements are accepted; inventory ancillary tools such as the reaction-time test for an explicit reproduce/defer/retire decision.
 - The drug-registration form and the muscle-mass cost-benefit page.
 
 ## ClinicalTrials.gov results
@@ -188,9 +272,9 @@ path; dFDA cannot enroll someone merely by recording their interest.
 | Package | Contents | Built from |
 | --- | --- | --- |
 | `trials` | ClinicalTrials.gov/AACT search and results adapters; study-protocol contract | Search: optimitron's `packages/data` fetcher, which is documented and tested. The results parser and protocol contract are new. |
-| `analysis` | Descriptive report scores, N-of-1 statistics, study-effect estimation and compatible meta-analysis | Selected optimitron `packages/optimizer` code; recheck and fix the previously reported small-sample p-value and outcome-direction bugs before adoption. New methods need known-answer tests. |
+| `analysis` | Personal/population time-series calculations, descriptive report scores, study-effect estimation and compatible meta-analysis | curedao-api reference behavior/calculators/tests plus selected Optimitron `packages/optimizer` TypeScript code. Verify feature/numerical parity, document corrections, and recheck reported small-sample p-value and outcome-direction bugs before adoption; known-answer tests cover new and ported methods. |
 | `health-vocabulary` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/web` seeds, and optimitron's condition list with ICD-10 codes |
-| `evidence` | Shared source/report/effect/model-estimate/demo-example/published-analysis-version/withdrawal contracts, provenance and deduplication primitives | New; adapters, estimate generation and persistence remain app-owned |
+| `evidence` | Shared source/report/time-series-analysis/effect/model-estimate/demo-example/published-analysis-version/withdrawal contracts, provenance and deduplication primitives | New; adapters, estimate generation and persistence remain app-owned |
 | `clinic-aggregates` | Aggregate-only `ClinicSummary` format and validators, shared by independent installations and clinic data exchanges | New; not the format for comments or personal-data transfer |
 | `importers` | Wearable/app export parsers and the personal-data export contract | optimitron `packages/data/src/importers`, which were ported from curedao-api's PHP connectors; export contract is new |
 
@@ -212,7 +296,7 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | New patient ratings, observations and study outcomes | App's private patient/trial tables | Structured context, consent, provenance and protocol versions; publish only authorized reports or reviewed aggregates. |
 | Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their personal health workspace only if they choose to (see Open decisions). |
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
-| ~15,800 automated N-of-1 studies | Static site generated by curedao-api | Keep as an archive. Don't republish them as evidence. |
+| Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | curedao-api analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
 | AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
 | `apps/web` demo data | Supabase seeds | Retain useful examples with persistent example-data labels and separation from actual patient/study records; distinguish illustrative seeds from provisional estimates. Improve the demo rather than clearing it before cutover. |
 
@@ -220,14 +304,14 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 
 | Step | Deliverable | Exit gate |
 | --- | --- | --- |
-| 1. Demo clarity and foundation | Preserve useful demo content; label example data, AI/current best estimates and source-backed results; establish minimal provenance contracts, health vocabulary and consent/access boundaries | Demo remains understandable and populated; labels persist on cards, charts and exports; known generation/source metadata and unknowns are explicit; private/public authorization tests pass |
-| 2. Progressive evidence improvement | Improve a bounded treatment/condition scope with patient-rating views, trial discovery, verified references and reviewed results alongside existing estimates | Source-backed numbers trace to eligible inputs and tested methods; provisional estimates retain their own basis/limitations; revisions are versioned, duplicates/permissions checked, and incomplete coverage does not block the demo |
+| 1. Demo clarity and legacy baseline | Preserve useful demo content; label examples, provisional estimates and observed-data analyses; inventory curedao-api workflows, capture reference fixtures and import eligible historical study results with their reproduction status; establish provenance, vocabulary and access boundaries | Demo stays populated; labels persist on cards/charts/exports; reference scope and unknowns are recorded; historical displays have permission/display review and private/public authorization tests pass |
+| 2. Reproduce the core loop and improve evidence | Implement the bounded tracking/import -> history/chart -> predictor search -> personal/population study -> report/export loop, reminders and selected connectors; add patient ratings, trial discovery and better references alongside existing estimates | End-to-end workflow, reconciliation and numerical tests pass for the selected scope; differences/corrections are documented, imported versus reproduced results remain distinct, and incomplete coverage does not block the demo; broader parity checklist remains open until verified |
 | 3. Participation and community pilot | Structured reports, personal tracking, observational protocol wizard and reviewed join flow; limited community-source ingestion only when approved | Consent/protocol versioning, withdrawal and deletion tests pass; users can follow evidence -> report/track -> discover/propose/join without treating interest as external enrollment |
-| 4. dfda.earth cutover | MCP, REST, trial search and text logging in the base app; migrate the domain and redundant health-data surfaces | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified before deleting old routes |
+| 4. dfda.earth cutover | MCP, REST, trial search and text logging in the base app; migrate the domain and accepted replacement surfaces incrementally | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified; unreplaced legacy workflows remain reachable and are not claimed complete |
 | 5. Living analyses | Reviewed compatible study synthesis and source-refresh/review pipeline, building on step 2 | Included/excluded study table, overlap handling, bias review, uncertainty, known-answer tests and versioned publication/retraction work; not dependent on clinic federation |
 | 6. Independent installation pilot | Same release with configurable branding and supported deployment packaging | One independent clinic can install, operate, export, back up/restore and upgrade without a fork; cross-operator isolation tested; no federation required |
 | 7. Optional clinic data exchange | `ClinicSummary`, installation identity, authenticated submissions, review and publication; reuse the evidence pipeline's compatible analysis methods | Sender/receiver privacy threat-model review and adversarial release tests pass, plus replay/revocation/overlap/withdrawal tests; no raw records sent |
-| 8. Legacy retirement | Move only authorized legacy records and retire app.dfda.earth | Users have a documented choice/export path; migration reconciliation, retention/nonresponse policy and rollback/archive plan approved |
+| 8. Legacy retirement | Complete the agreed curedao-api feature baseline, move only authorized records and retire superseded legacy services | Every inventoried workflow is accepted or explicitly deferred/retired by the product owner; study/variable links and clients have a tested continuity path; user choice/export, reconciliation, retention/nonresponse policy and rollback/archive plan approved |
 
 Steps 3 and 5 can develop in parallel with cutover when their prerequisites are
 met; they must not delay a clearly labeled, useful demo and incremental improvement
@@ -259,7 +343,8 @@ The following remain new work:
 - Reviewed clinic privacy controls before anything leaves an installation, including cross-release and overlapping-cohort protection
 - Installation registration and identity, authenticated clinic aggregate submission, and clinic data exchange administration
 - Reviewed compatible meta-analysis, provenance-linked releases and retraction/recomputation
-- A treatment-effect estimator for clinical records (before and after starting a treatment, or treated against a comparison group). The existing engines only compute within-person correlations.
+- Reproduction of curedao-api's personal/population analyses, predictor search, charts and generated reports, including lineage, parity fixtures and reviewed corrections
+- Reviewed treatment-effect estimation for clinical records. Legacy code already includes within-person correlations, descriptive baseline/follow-up comparisons and population aggregation; those capabilities do not by themselves establish causal effects or replace a design-specific estimator.
 - Packaging for an independent installation that a clinic can operate itself
 
 ## Open decisions
