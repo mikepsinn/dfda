@@ -57,7 +57,7 @@ workspace roots matched by the current `apps/*` and `packages/*` patterns.
 
 These are the documented extraction sources, not a fresh audit of every source
 repository's latest commit. The main migration plan covers the first four;
-`fda-gov-v2` has its own checklist.
+`fda-gov-v2` has a completed retirement audit and explicit reuse decisions.
 
 | Repository | Role | Features or data to bring into dFDA |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ repository's latest commit. The main migration plan covers the first four;
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | Tracking integration, analysis, and importer source | dFDA MCP tools; tracking REST API and OpenAPI; ClinicalTrials.gov search client; N-of-1 analysis from `packages/optimizer`; wearable/app parsers; condition names and ICD-10 codes; selected landing/about/FAQ copy; relevant tests. |
 | [`mikepsinn/crowdsourcing-cures`](https://github.com/mikepsinn/crowdsourcing-cures) (private) | Patient-rating UI and text logging source | Treatment rankings by condition, a treatment's ratings across conditions, and text-to-measurement logging rewired to this app's tables. Organization pages remain on crowdsourcingcures.org. |
 | [`mikepsinn/curedao-api`](https://github.com/mikepsinn/curedao-api) (private) | Legacy PHP/AngularJS system and MySQL data | Patient ratings from `ct_*` tables, variable definitions for the codebook, and consenting users' measurement history. The generated studies site remains an archive. |
-| [`mikepsinn/fda-gov-v2`](https://github.com/mikepsinn/fda-gov-v2) | Additional UI and capture candidates | Landing/evidence presentation; public search and condition details; richer trial-search UI; image/nutrition-label/webcam capture and review; configurable logo/favicon. |
+| [`mikepsinn/fda-gov-v2`](https://github.com/mikepsinn/fda-gov-v2) (private, archived 2026-09-26) | Preserved reference, not an active product | Selected trial-search and evidence UI deferred for targeted reuse; capture mostly overlaps; branding reference is in its old `apps/web`. AI-generated evidence and wholesale migration/dependency imports rejected. See the [retirement record](fda-gov-v2-retirement.md). |
 
 ClinicalTrials.gov/AACT is an additional **data source**, not another app or
 repository to merge. Build ingestion of posted results, starting with adverse
@@ -107,17 +107,18 @@ From Crowdsourcing Cures and the legacy API:
 - [ ] Map legacy variables, app seeds, and condition codes into the shared codebook.
 - [ ] Implement consent and migration for personal measurements held by curedao-api or Optimitron.
 
-From `fda-gov-v2` (candidates):
+From `fda-gov-v2` (review complete; checked means a decision, not a completed port):
 
-- [ ] Review the landing page's evidence comparison table, source list, patient/researcher explanations, and sticky navigation.
-- [ ] Review public search, condition-to-intervention evidence cards, citations, and readable condition URLs.
-- [ ] Review trial-search suggestions, filters, results display, and schemas; reconcile UI improvements with the Optimitron search client selected by the migration plan.
-- [ ] Review image-to-measurements, nutrition-label parsing, webcam capture, and the review wizard against capture code already present here.
-- [ ] Review configurable logo and favicon settings for independently branded nodes.
+- [x] Landing comparison/source list/sticky navigation: defer presentation reuse; reject wholesale campaign-copy replacement.
+- [x] Search and intervention cards: defer UI reuse; reject the AI-generated evidence/scoring pipeline.
+- [x] Trial-search controls/results: defer a targeted port with the roadmap's API v2 client; do not copy the old `/api/int` adapters unchanged.
+- [x] Capture and nutrition review: current code overlaps; reject a second flow and retain old refinements as reference.
+- [x] Logo/favicon settings: defer to clinic configuration; source is old `apps/web/config/site.ts` and `env.mjs`, not old `apps/dfda-node`.
 
-Record each candidate as ported, rejected, or deferred before archiving
-`fda-gov-v2`. Its checklist records an audit of `develop` at `cf29035c`;
-that is a historical audit, not a claim about its current head.
+The [retirement record](fda-gov-v2-retirement.md) pins the audited `develop`
+commit `cf29035c`, records shared ancestry and deployment checks, and preserves
+all branches in a verified backup. The repository is archived, not deleted;
+deferred code remains available without maintaining another product.
 
 ## Planned packages and product features
 

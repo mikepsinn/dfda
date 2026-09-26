@@ -229,9 +229,10 @@ It then pairs every combination of variables and identifies likely causal relati
 |-----|--------|-------------|
 | [`web`](apps/web) | **Canonical product** | Patient, provider, researcher and public evidence interfaces in one maintained product. `prototype.dfda.earth` is the reference deployment; hosted dfda.earth cutover and independent branded Clinic Nodes are planned. Independent deployments retain their own configuration, auth, storage and records; shared code does not grant shared access. |
 
-The Crowdsourcing Cures site has its own repository. The retired `fda-gov-v2` repository is a feature source for `apps/web`, not a
+The Crowdsourcing Cures site has its own repository. The archived `fda-gov-v2` repository is a feature source for `apps/web`, not a
 second product line. Port useful behavior in reviewed slices; do not merge its
-entire divergent history into this repository.
+entire divergent history into this repository. The [retirement record](docs/fda-gov-v2-retirement.md)
+documents reuse decisions, deployment checks, shared history and recovery.
 
 
 ### Packages (packages/)
