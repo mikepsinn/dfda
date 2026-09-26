@@ -3,26 +3,33 @@ title: "💊 OBJECTIVE: MAXIMUM CURE ACCELERATION 🚀"
 description: We are a borg-like entity devoted to minimizing suffering by any and all means necessary.
 ---
 
-> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for ranking treatments by real-world outcomes and publishing an Outcome Label for each one. It is designed so patient records stay with patients and clinics and only aggregate results are shared; that sharing isn't built yet (see What works today below). It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
+> **dFDA (Decentralized Framework for Drug Assessment)** is open-source software for comparing treatment evidence and publishing Outcome Labels. The design keeps private records with the responsible patient/clinic deployment; clinic federation shares only approved aggregates, while people can separately authorize public reports or personal-data transfers. Those sharing controls are still planned. It is an independent open-source project, not affiliated with, endorsed by, or acting on behalf of the U.S. Food and Drug Administration.
 
-```mermaid
-flowchart LR
-  SAFE["Digital Twin Safe<br/>(patient's own data)"] -- "OAuth: share with my doctor" --> NODE["Clinic Node<br/>(runs at the clinic)"]
-  NODE -- "Summary File<br/>(aggregates only)" --> AGG["Global Aggregator"]
-  AGG --> SITE["dfda.earth<br/>Treatment Rankings + Outcome Labels"]
-```
+**One product, not three apps.** The same maintained `apps/web` codebase serves
+patients, clinics, researchers and public evidence pages. The target distribution
+is a hosted service plus optional independently installed, branded Clinic Nodes.
+Evidence ingestion/aggregation starts as app-owned modules and restricted jobs,
+not a separate required website. "Digital Twin Safe" is a product role, not a
+claim that today's patient screens provide local-first or operator-blind encryption.
 
 **What works today**
 
 | Piece | Status | Where |
 | --- | --- | --- |
-| Web app | Prototype: patient condition and treatment tracking, 0–10 treatment ratings, outcome-label schema. Runs as dfda.earth or as a clinic's Clinic Node. No federation yet. | [`apps/web`](apps/web) |
-| N-of-1 causal analysis engine | Working TypeScript library | [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
-| Patient ratings | Live for 162 conditions and ~3,900 treatments, reported by patients | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
+| Web app | Prototype: patient condition/treatment tracking, 0–10 ratings and outcome-label schema. dfda.earth cutover, independent clinic packaging and federation remain planned. | [`apps/web`](apps/web) |
+| N-of-1 analysis engine | Existing TypeScript library; adoption requires correctness review and tests, not an assumption of causal validity | [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
+| Patient ratings | Existing patient-reported dataset; historically 162 conditions and ~3,900 treatments, to be reconciled at migration | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
 | Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
-| Summary File spec, Codebook, Global Aggregator | Designed, not built yet | — |
+| Evidence contracts, Codebook, clinic Summary Files and evidence exchange | Planned; source/contract owners and implementation gates documented, not implemented | [Evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md) |
 
 See [Apps and features](docs/APPS-AND-FEATURES.md) for the current application, planned packages, and features to extract from related repositories. The implementation sequence and data rules are in [docs/MIGRATION.md](docs/MIGRATION.md), the authoritative implementation roadmap. The broader vision below is background, not a second backlog or a claim that every feature exists.
+
+The [product architecture](docs/PRODUCT-ARCHITECTURE.md) defines white labeling,
+deployment and access boundaries. [Evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md)
+maps Reddit/permitted discussions, ClinicalTrials.gov results, published reviews,
+patient ratings and clinic summaries to code, storage, separate evidence lanes,
+study workflows and versioned exchange formats. ClinicalTrials.gov supplies
+study records/results; dFDA must build and review any derived meta-analysis.
 
 # 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
 
@@ -83,7 +90,9 @@ Our crazy theory is that we can accomplish the same great feat in the realm of c
 
 # 🖥️  Framework Components
 
-This is a very high-level overview of the architecture. The three primary primitive components of the framework are:
+The following is the longer-term conceptual vision, not a list of implemented
+apps or security guarantees. The hosted product and deployment decisions are in
+[Product architecture](docs/PRODUCT-ARCHITECTURE.md). Its conceptual components are:
 
 1. [Data Silo API Gateway Nodes](#1-data-silo-api-gateway-nodes) that facilitate data export from data silos
 2. [Digital Twin Safes](#2-digital-twin-safes) that import, store, and analyze your data to identify how various factors affect your health
@@ -102,9 +111,9 @@ This is a very high-level overview of the architecture. The three primary primit
 
 ## 2. Digital Twin Safes
 
-[Digital Twin Safes](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) are applications that can run on your phone or computer. They import, store, and analyze your data to identify how various factors affect your health.  They can also be used to share anonymous analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) in a secure and privacy-preserving manner.
+[Digital Twin Safes](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) are envisioned as applications on your phone or computer that import, store, and analyze your data. Sharing analytical results with the [Clinipedia FDAi Wiki](#3-clinipediathe-wikipedia-of-clinical-research) requires the tested consent and privacy controls in the implementation plan; aggregates are not automatically anonymous.
 
-Each [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) combines [encrypted local storage](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe) with a [personal AI agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent) that applies causal inference algorithms to estimate how various factors affect your health.
+The longer-term [Digital Twin Safe](https://www.crowdsourcingcures.org/docs/components/personal-fda-nodes/personal-fda-nodes) proposal combines [encrypted local storage](https://www.crowdsourcingcures.org/docs/components/digital-twin-safe/digital-twin-safe) with a [personal AI agent](https://www.crowdsourcingcures.org/docs/components/optimiton-ai-agent/optomitron-ai-agent). This is not a description of security or causal-analysis guarantees already implemented in the hosted app.
 
 ### 2.1. Digital Twin Safes
 
@@ -149,7 +158,7 @@ A key component of Clinipedia is [**Outcome Labels**](https://www.crowdsourcingc
 * [Data Collection](https://www.crowdsourcingcures.org/docs/components/data-collection/data-collection)
 * [Data Import](https://www.crowdsourcingcures.org/docs/components/data-import/data-import)
 * [Data Analysis](#data-analysis)
-    * [🏷️Outcome Labels](#-outcome-labels)
+    * [🏷️Outcome Labels](#31-outcome-labels)
     * [🔮Predictor Search Engine](https://www.crowdsourcingcures.org/docs/components/predictor-search-engine/predictor-search-engine)
     * [🥕 Root Cause Analysis Reports](https://www.crowdsourcingcures.org/docs/components/root-cause-analysis-reports/root-cause-analysis-reports)
     * [📜Observational Mega-Studies](https://www.crowdsourcingcures.org/docs/components/observational-studies/observational-studies)
@@ -218,7 +227,7 @@ It then pairs every combination of variables and identifies likely causal relati
 
 | App | Status | Description |
 |-----|--------|-------------|
-| [`web`](apps/web) | **Canonical product** | The dFDA web app: patient, provider and research-partner screens, and public condition, treatment and outcome-label pages. The same code runs as dfda.earth, hosting people's Digital Twin Safes, or at a clinic as its Clinic Node. Each deployment has its own configuration, authentication, storage, and patient data. `prototype.dfda.earth` is the reference deployment. |
+| [`web`](apps/web) | **Canonical product** | Patient, provider, researcher and public evidence interfaces in one maintained product. `prototype.dfda.earth` is the reference deployment; hosted dfda.earth cutover and independent branded Clinic Nodes are planned. Independent deployments retain their own configuration, auth, storage and records; shared code does not grant shared access. |
 
 The Crowdsourcing Cures site has its own repository. The retired `fda-gov-v2` repository is a feature source for `apps/web`, not a
 second product line. Port useful behavior in reviewed slices; do not merge its
@@ -361,7 +370,8 @@ there is no separate infrastructure deployment roadmap here.
 Before nodes share data, implement consent records, authenticated node
 submissions, and the [aggregate privacy controls](docs/MIGRATION.md#rules-for-published-numbers).
 Public pages remain in `apps/web`; network administration belongs to the
-planned aggregator.
+planned evidence exchange. Hosted source-linked evidence and study participation
+do not depend on clinic federation. See the [installation requirements](docs/PRODUCT-ARCHITECTURE.md#white-labeling-and-independent-hosting).
 
 ## Contributing
 
@@ -370,18 +380,21 @@ to choose and scope a contribution.
 
 ### Key Areas for Contribution
 
-- Tested analysis methods and trial-results ingestion
+- Tested analysis methods, trial-results ingestion and reviewed evidence releases
+- Permitted community-source adapters, structured treatment reports and provenance
+- Study creation, review, consent, enrollment and withdrawal workflows
 - Patient tracking, OAuth/data imports, and shared export parsers
 - Consent, privacy-preserving Summary Files, and node authentication
-- Clinic Node packaging and aggregator administration
+- Branded Clinic Node packaging and optional evidence-exchange administration
 - Documentation, internationalization, and accessibility
 
 ## Roadmap
 
-Follow the [implementation sequence](docs/MIGRATION.md#order): foundation,
-ratings and trial results, the dfda.earth cutover, the clinic network, and
-consent-based legacy migration. The [feature inventory](docs/APPS-AND-FEATURES.md)
-distinguishes existing code from extraction candidates and new work.
+Follow the single [implementation sequence and exit gates](docs/MIGRATION.md#order).
+Build the hosted evidence/reporting/study loop first; independent clinic hosting
+and optional federation follow tested data, privacy and operational boundaries.
+The [feature inventory](docs/APPS-AND-FEATURES.md) distinguishes existing code
+from extraction candidates and new work.
 
 ## Key Features
 
