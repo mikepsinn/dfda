@@ -13,14 +13,21 @@ The evidence pipeline starts as app-owned modules and restricted jobs, not a
 separate required website; clinic data exchange is optional. Today's patient
 screens do not establish local-first or operator-blind encryption.
 
+**Reproduce, then improve.** The functional goal is to bring the useful curedao-api
+app into this product: tracking/imports, reminders, predictor search, personal and
+population analyses, charts and generated study reports. Existing time-series studies
+are data-derived observational findings, not fictional demo data. Import eligible
+results with their provenance, reproduce calculations, and version improvements;
+see the [legacy feature baseline](docs/MIGRATION.md#what-comes-from-curedao-api).
+
 **What works today**
 
 | Piece | Status | Where |
 | --- | --- | --- |
 | Web app | Prototype: patient condition/treatment tracking, 0–10 ratings and outcome-label schema. dfda.earth cutover, independent clinic packaging and federation remain planned. | [`apps/web`](apps/web) |
-| N-of-1 analysis engine | Existing TypeScript library; adoption requires correctness review and tests, not an assumption of causal validity | [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
+| Time-series analysis engines | Legacy PHP reference and TypeScript port candidate; feature/numerical parity and reviewed corrections remain planned, not an assumption of causal validity | [`curedao-api`](https://github.com/mikepsinn/curedao-api) (private); [`optimitron/packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) |
 | Patient ratings | Existing patient-reported dataset; historically 162 conditions and ~3,900 treatments, to be reconciled at migration | [crowdsourcingcures.org/conditions](https://www.crowdsourcingcures.org/conditions) |
-| Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
+| Automated time-series studies | Historically ~15,800 published observational analyses; recount at migration. Eligible findings/reports are an integration and improvement target; importing them does not validate them. Preserve old links until replacement continuity is tested. | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
 | Health vocabulary, evidence contracts/pipeline, clinic aggregates and clinic data exchange | Planned; source/contract owners and implementation gates documented, not implemented | [Evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md) |
 
 See [Apps and features](docs/APPS-AND-FEATURES.md) for the current application, planned packages, and features to extract from related repositories. The implementation sequence and data rules are in [docs/MIGRATION.md](docs/MIGRATION.md), the authoritative implementation roadmap. The broader vision below is background, not a second backlog or a claim that every feature exists.
@@ -28,7 +35,7 @@ See [Apps and features](docs/APPS-AND-FEATURES.md) for the current application, 
 The [product architecture](docs/PRODUCT-ARCHITECTURE.md) defines white labeling,
 deployment and access boundaries. [Evidence and exchange](docs/EVIDENCE-AND-EXCHANGE.md)
 maps Reddit/permitted discussions, ClinicalTrials.gov results, published reviews,
-patient ratings and clinic summaries to code, storage, separate evidence types,
+patient ratings, recorded-data time-series analyses and clinic summaries to code, storage, separate evidence types,
 study workflows and versioned exchange formats. ClinicalTrials.gov supplies
 study records/results; dFDA must build and review any derived meta-analysis.
 

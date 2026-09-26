@@ -1,8 +1,10 @@
 # Apps, packages, and feature inventory
 
 Inventory updated: 2026-09-26. Local app/layout checked against `mikepsinn/dfda`
-master at `0b47d07f`; external extraction findings remain historical, not a new
-audit of every source repository. See the [migration plan](MIGRATION.md) and the
+master at `0b47d07f`; curedao-api's reference workflows were inspected at
+`47ea2bcc` for the [legacy feature baseline](MIGRATION.md#what-comes-from-curedao-api).
+Other external extraction findings remain historical, not a new audit of every
+source repository. See the [migration plan](MIGRATION.md) and the
 [`fda-gov-v2` extraction checklist](fda-gov-v2-retirement.md).
 
 There is one tracked top-level product app today: `apps/web`. The repository
@@ -16,6 +18,9 @@ defines source destinations, scores, study flows and versioned contracts.
 The immediate priority is a useful demo with clearly labeled current best estimates,
 then progressive improvement with better data. AI-generated content is not excluded
 by origin; example data, provisional estimates and source-backed results remain distinct.
+The functional target is to reproduce the useful curedao-api app, including its
+personal/population time-series studies, then improve it. Existing generated
+studies based on recorded measurements are observed-data analyses, not demo filler.
 
 Status meanings:
 
@@ -33,7 +38,7 @@ over `dfda.earth` is a later migration step.
 | Area | Present features and screens | Remaining work / limitation |
 | --- | --- | --- |
 | Public site | Landing page; condition, treatment, outcome-label, trial-search, provider, contact, privacy, and terms pages | Preserve and label the demo/AI estimates; improve them progressively with source-linked community, patient, research and later clinic evidence. Evaluate richer public UI only when useful. |
-| Personal health workspace | Onboarding, conditions, symptom severity, treatments, 0–10 treatment ratings, side effects, measurements, variables, reminders, profile, and trial participation screens | Data imports, personal analysis, consent, and migration of existing users' records need more work. These screens do not establish local-first or operator-blind encrypted storage. |
+| Personal health workspace | Onboarding, conditions, symptom severity, treatments, 0–10 treatment ratings, side effects, measurements, variables, reminders, profile, and trial participation screens | Reproduce legacy tracking/imports, reminder behavior, predictor search, charts and personal studies; verify consent and user-directed migration. Present screens do not establish behavioral parity, local-first or operator-blind encrypted storage. |
 | Clinic workspace | Provider dashboard, patient list and enrollment, intervention assignment, EHR authorization, and form creation screens | Packaging for an independent installation and aggregate-data sharing are still planned; this row describes the provider interface, not a separate app. |
 | Research partner | Dashboard, trial creation, enrollment actions, and trial-results screens | Build/verify protocol versions, review gates, consent, eligibility, withdrawal and study lifecycle. Existing create/enroll actions do not establish these safeguards. |
 | Admin | Admin dashboard and role-selection screens | Broader instance administration and network management remain incomplete. |
@@ -60,8 +65,9 @@ workspace roots matched by the current `apps/*` and `packages/*` patterns.
 
 ## Repositories and what comes from each
 
-These are the documented extraction sources, not a fresh audit of every source
-repository's latest commit. The main migration plan covers the first four;
+These are the documented extraction sources; the targeted curedao-api review is
+not an exhaustive audit of each repository or live feature. The main migration
+plan covers the first four;
 `fda-gov-v2` has a completed retirement audit and explicit reuse decisions.
 
 | Repository | Role | Features or data to bring into dFDA |
@@ -69,7 +75,7 @@ repository's latest commit. The main migration plan covers the first four;
 | [`mikepsinn/dfda`](https://github.com/mikepsinn/dfda) | Canonical destination; formerly `decentralized-fda/decentralized-fda` | Keep developing `apps/web` and add the shared packages below. |
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | Tracking integration, analysis, estimate/content and importer source | dFDA MCP tools; tracking REST API and OpenAPI; ClinicalTrials.gov search client; N-of-1 analysis from `packages/optimizer`; wearable/app parsers; condition names and ICD-10 codes; useful condition/treatment content and AI estimates with provenance labels; selected landing/about/FAQ copy; relevant tests. |
 | [`mikepsinn/crowdsourcing-cures`](https://github.com/mikepsinn/crowdsourcing-cures) (private) | Patient-rating UI, demo content and text logging source | Treatment rankings by condition, a treatment's ratings across conditions, text-to-measurement logging rewired to this app's tables, and selected AI-written analyses as labeled drafts/estimates to improve. Organization pages remain on crowdsourcingcures.org. |
-| [`mikepsinn/curedao-api`](https://github.com/mikepsinn/curedao-api) (private) | Legacy PHP/AngularJS system and MySQL data | Patient ratings from `ct_*` tables, variable definitions for the health vocabulary, and consenting users' measurement history. The generated studies site remains an archive. |
+| [`mikepsinn/curedao-api`](https://github.com/mikepsinn/curedao-api) (private) | Functional reference for the replacement app; PHP/AngularJS system and MySQL data | Reproduce tracking/imports, reminders/connectors, predictor/outcome search, charts, personal/population calculations and generated reports. Bring eligible study results, `ct_*` ratings, variables and user-authorized measurements with provenance; improve calculations and interpretations rather than restricting the studies site to an archive. |
 | [`mikepsinn/fda-gov-v2`](https://github.com/mikepsinn/fda-gov-v2) (private, archived 2026-09-26) | Optional reference, not a required dependency or active product | Trial-search/evidence UI and generation approaches are optional references; capture mostly overlaps; branding reference is in its old `apps/web`. No required port identified. Do not import old migrations/dependencies wholesale or present model scores as observed evidence. See the [retirement record](fda-gov-v2-retirement.md). |
 
 ClinicalTrials.gov/AACT is an additional **data source**, not another app or
@@ -88,6 +94,7 @@ All rows below describe planned ingestion/publication, not verified live pipelin
 | ClinicalTrials.gov API v2 / AACT | `packages/trials` -> normalized study/effect records -> trial search and evidence pages | Registry discovery versus posted results; deduplicate the same NCT study across transports |
 | Papers and existing reviews/meta-analyses | Evidence review/extraction -> cited research and versioned synthesis releases | Trace underlying studies; never pool a review alongside its constituent trials |
 | Patient treatment ratings and study follow-ups | Existing patient/rating/measurement storage extended with report context, permissions and protocol versions | Private by default; authorized reports/aggregates stay separate from trials and comments |
+| curedao-api time-series studies | Legacy import -> `TimeSeriesAnalysis` -> app study reports/charts and evidence views; `packages/analysis` reproduces calculations | Source-backed observational results; personal versus population scope, historical versus reproduced/corrected status and publication permissions stay explicit |
 | Independent clinic contributions | `packages/clinic-aggregates` -> validated clinic-data-exchange submissions | Approved aggregates only, with tested privacy/overlap controls |
 
 The [source/storage map and contracts](EVIDENCE-AND-EXCHANGE.md) also cover
@@ -102,7 +109,7 @@ From Optimitron:
 - [ ] Port the dFDA MCP measurement, reminder, and notification tools into `/api/mcp` over this app's data layer.
 - [ ] Port the tracking REST API for measurements, reminders, notifications, and variables, with its OpenAPI document.
 - [ ] Extract the tested ClinicalTrials.gov search client into `packages/trials` and connect the existing trial-search page.
-- [ ] Extract N-of-1 analysis into `packages/analysis`. Recheck and resolve the migration plan's reported small-sample p-value and effect-direction ranking problems before adoption.
+- [ ] Evaluate/extract TypeScript N-of-1 analysis into `packages/analysis` against the curedao-api reference baseline. Recheck and resolve reported small-sample p-value and effect-direction problems; this library alone does not prove feature or numerical parity.
 - [ ] Extract wearable/app export parsers into `packages/importers`.
 - [ ] Use condition names and ICD-10 codes in `packages/health-vocabulary`.
 - [ ] Adapt useful condition/treatment content and AI estimates, retaining available generation/source metadata and explicit current-best-estimate labels; improve them incrementally.
@@ -115,6 +122,11 @@ From Crowdsourcing Cures and the legacy API:
 - [ ] Port text-to-measurement logging alongside the existing image capture actions.
 - [ ] Map legacy variables, app seeds, and condition codes into the shared health vocabulary.
 - [ ] Implement consent and migration for personal measurements held by curedao-api or Optimitron.
+- [ ] Complete the curedao-api workflow/route/consumer inventory and capture a versioned reference baseline; record explicit reproduce/improve/defer/retire decisions rather than silently dropping features.
+- [ ] Import eligible personal/population study results with source links, counts, methods and unknowns; distinguish historical imports from reproduced or corrected analyses using `TimeSeriesAnalysis`.
+- [ ] Port/reimplement the reference pairing, lag/duration, correlation, baseline/follow-up and population aggregation behavior in `packages/analysis`; add private authorized replay fixtures and public synthetic known-answer tests, with reviewed numerical differences.
+- [ ] Reproduce variable charts, predictor/outcome search and generated study reports, including permitted sharing/export and stable legacy-link mappings. Reconcile conflicting statistics and derive cards, narrative and charts from one result version.
+- [ ] Verify measurement history/edit/delete/export, reminders/inbox/log/skip/snooze, and selected connectors/reconnection/sync end to end; disclose remaining gaps and keep working legacy routes until replacements or exceptions are accepted.
 
 From `fda-gov-v2` (review complete; checked means a decision, not a completed port):
 
@@ -135,21 +147,22 @@ These package directories do not yet exist in the inventoried master tree.
 
 | Planned package | Features | Starting point |
 | --- | --- | --- |
-| `packages/analysis` | Descriptive scores, N-of-1 analysis, study-effect estimation and compatible meta-analysis | Extract selected Optimitron optimizer code, resolve reported correctness issues, and build/test missing methods |
+| `packages/analysis` | Personal/population time-series analysis, descriptive scores, study-effect estimation and compatible meta-analysis | curedao-api reference calculators/tests plus selected Optimitron TypeScript code; reproduce behavior, resolve correctness issues with documented differences, and build/test missing methods |
 | `packages/trials` | Trial search, posted-results ingestion, group comparisons, adverse-event rates, NCT-linked evidence and study-protocol contract | Extract search client; build results parser, protocol contract and optional bulk AACT adapter |
 | `packages/health-vocabulary` | Stable names/IDs for conditions, treatments, outcomes, and units; outcome direction and mapping | Reconcile legacy variables, app seeds, and Optimitron condition codes |
-| `packages/evidence` | Shared source, community/patient report, study-effect, model-estimate, demo-example, published-analysis-version and withdrawal contracts; provenance/deduplication primitives | New; app owns fetching, estimate generation, review workflow and persistence |
+| `packages/evidence` | Shared source, community/patient report, time-series-analysis, study-effect, model-estimate, demo-example, published-analysis-version and withdrawal contracts; provenance/deduplication primitives | New; app owns fetching, estimate generation, review workflow and persistence |
 | `packages/importers` | Wearable/app parsing and personal-data export contract | Extract Optimitron parsers already ported from legacy PHP connectors; add portable export format |
 | `packages/clinic-aggregates` | Aggregate-only `ClinicSummary` format and validators | New work shared by independent installations and clinic data exchanges; not a personal-record or comment format |
 
 | Product component | Features still to build | Intended location |
 | --- | --- | --- |
+| Legacy app and study parity | Tracking-to-study journey, predictor search, charts, imported/reproduced/corrected personal/population reports, and migration reconciliation | Existing patient/public routes and restricted app analysis jobs; shared `analysis` and `evidence` packages; [acceptance baseline](MIGRATION.md#what-comes-from-curedao-api) |
 | Community evidence | Permitted source adapters, source-linked extraction/review, separate scores, corrections and deletion propagation | `apps/web/lib/evidence`, existing worker and planned evidence/analysis packages |
 | Create/join studies | Personal tracking, observational protocols and interventional proposals; versioned review/consent/enrollment flow | `apps/web/lib/studies` extending current trial/enrollment actions and UI |
 | Independent installation | Configurable branding, independent operations, tested backup/restore/upgrades and data portability; opt-in sharing later | Same `apps/web` release, `lib/instance` and deployment packaging; no fork per clinic |
 | Evidence pipeline | Source ingestion, normalization, review, compatible analysis and publication | App evidence modules and restricted workers; useful without clinic data exchange |
 | Clinic data exchange | Installation identity, authenticated aggregate submissions, monitoring, correction/withdrawal handling and validation before pipeline processing | Optional app-owned administration and restricted jobs; not a required separate product app |
-| Clinical-record analysis | Treatment-effect estimation from clinical records, beyond existing within-person correlations | New analysis work |
+| Clinical-record analysis | Design-specific treatment-effect estimation, beyond legacy descriptive correlations, baseline/follow-up comparisons and population aggregation | New/reviewed analysis methods; reproducing an observational calculation does not establish causality |
 | Demo and evidence publication | Persistent example/estimate/source-backed labels, progressive estimate improvement, provenance, outcome direction, supported uncertainty, ranking eligibility, and separation of empirical evidence types | Public pages backed by the shared packages; detailed rules remain in [MIGRATION.md](MIGRATION.md#rules-for-published-numbers) |
 
 Third-party OAuth connections and data imports remain capabilities of
@@ -167,14 +180,14 @@ boundary for source ingestion or public publication.
 - The old `mathematical-modeling`, `autonomous-researcher`, `link-checker`, `deployer`, and `gcp-setup` packages were removed. They are not prerequisites for the new package list.
 - Optimitron's old trial-results parser remains excluded because it mismatches table values; the migration plan calls for a new parser. Its AI-estimated numbers and useful condition/treatment content are now explicit labeled-demo migration candidates, not excluded by origin.
 - Optimitron keeps shared `tracking`, `db`, and `data` packages used by its other sites, its own MCP server, and economic-model constants. Extract the selected functionality rather than moving those entire packages.
-- Crowdsourcing Cures keeps its organization pages. Legacy-data proxy pages are removed during cutover; variable charts and predictor search are rebuilt later on `analysis`. Selected AI-written analyses are eligible demo content to improve; drug registration and the muscle-mass cost-benefit page remain outside the extraction scope.
+- Crowdsourcing Cures keeps its organization pages. Legacy-data proxy code is not copied wholesale, but its tracking, charts, predictor search and population-study behavior is part of the replacement baseline; redirect/remove routes only after equivalent behavior or explicit exceptions are accepted. Selected AI-written analyses are eligible demo content to improve; drug registration and the muscle-mass cost-benefit page remain outside the extraction scope.
 - Referendum voting is optional public advocacy functionality, not a required clinic module.
 
 ## Sequence and migration dependencies
 
 Follow the single [delivery sequence and exit gates](MIGRATION.md#order): the
-hosted evidence/reporting/study loop comes before independent clinic installation
-and optional federation. Community access approval is not a dependency for
+legacy tracking/analysis/reporting loop and progressive evidence improvements come
+before independent clinic installation and optional federation. Community access approval is not a dependency for
 first-party reporting or ClinicalTrials.gov discovery. Living meta-analysis does
 not have to wait for clinic recruitment.
 
