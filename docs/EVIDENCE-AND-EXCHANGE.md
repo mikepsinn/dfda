@@ -239,7 +239,127 @@ messages, model training, or unrestricted content mirror is part of this plan.
 If access is unavailable, continue with permitted source links and first-party
 reports; do not claim a user-submitted link grants processing rights over its text.
 
+## Populate data through files, MCP and the admin UI
+
+**Planned, not implemented:** use one app-owned ingestion service for checked-in
+data packs, agent submissions and the admin interface. Agents prepare structured
+records; the server validates, authorizes, stages and publishes them under the
+same rules regardless of entry point. MCP is an interface to explicit operations,
+not permission for arbitrary SQL or unrestricted database access. See the
+[MCP server concepts](https://modelcontextprotocol.io/docs/learn/server-concepts).
+
+| Entry point | Intended use | Boundary |
+| --- | --- | --- |
+| Versioned JSON/JSONL packs, initially proposed under `apps/web/data/demo/` | Quickly populate and improve the demo; review changes in Git and reproduce imports | Only synthetic examples, non-sensitive provisional estimates and public records explicitly permitted for redistribution in Git. Origin comes from the record, not the folder name. No private health data, restricted Reddit payloads or credentials. |
+| Scoped MCP tools, through the planned app MCP surface | Let authorized agents find existing records, submit batches, preview changes, inspect results and request permitted recalculation | Same ingestion service, validators and authorization as other clients; submission does not imply publication or patient-data access. Evidence scopes are distinct from personal tracking scopes. |
+| Admin upload/review interface and its authenticated API | Let a person or authorized browser agent submit the same files, inspect changes and manage review | Same server-side controls; operating the browser does not bypass source permissions or grant approval privileges. |
+
+Start with files and a command-line importer, then add thin MCP/admin adapters.
+All entry points call the planned `apps/web/lib/evidence/import` service; shared
+record schemas remain in their [existing package owners](#exchange-formats-and-their-owners).
+Long-running batches run in restricted app jobs, not page requests. The legacy
+tracking MCP tools remain a separate tool group, not another evidence database.
+MCP access is not required to launch the demo.
+
+### Data packs and repeatable imports
+
+A pack contains a versioned manifest and typed JSON/JSONL records using the same
+contracts as later API submissions. The manifest identifies the pack ID/revision,
+schema versions, intended installation/environment, files and checksums, producer,
+source/redistribution basis and generation metadata where known. Keep origin and
+review status on individual records; a mixed pack does not have one implied origin.
+The app owns this import-manifest format, not a thirteenth clinical exchange type.
+Schema test fixtures in `packages/evidence/fixtures/v1/` are distinct from display
+content. Fictional reports in a demo pack use `DemoExample` with a declared mock
+payload; they must never validate as observed `CommunityReport` records.
+
+Validate the manifest, shape, references, units, origins, access and applicable
+source policy before applying changes. Preview creates no canonical/public data
+changes; it reports proposed additions/revisions, duplicates, conflicts and errors.
+Staged payloads and audit metadata still follow retention rules. Repeating the
+same record/revision is a no-op; conflicting content for that revision is rejected.
+Updates create explicit revisions and must not overwrite newer database edits.
+Never implement a seed rerun as clearing tables or replacing all user content.
+
+Applying an accepted batch writes staged/versioned records with a batch ID,
+per-record outcomes and an audit trail. Retry only unfinished eligible work;
+define batch atomicity/partial-failure behavior before implementation. An empty
+or omitted row is not a deletion request. Corrections/withdrawals use explicit
+authorized operations, invalidate affected results and retain history only as
+permitted. A superseded Git seed must not resurrect a withdrawn source record.
+
+Public pages consume the app's approved publication views after import, not a
+second collection of hardcoded component values. A standalone fixture-backed
+demo may use the same contracts, but its selected data mode must be explicit and
+must not merge simulated patients into live data. Do not auto-seed production on
+every deployment; require an explicitly selected target and release policy.
+
+### Agent operations and publication controls
+
+These are proposed tool names, not live endpoints or available tools today:
+
+| Operation | Behavior |
+| --- | --- |
+| `search_evidence` | Read only records the caller may see, to find sources and avoid duplicate submissions. |
+| `submit_evidence_batch` | Validate and stage a bounded batch; return its ID and validation errors. No automatic empirical publication. |
+| `preview_import` | Show the exact proposed changes and conflicts for a staged batch/revision, without applying public changes. |
+| `get_import_status` | Return authorized per-batch progress and per-record outcomes without leaking other users' jobs or private payloads. |
+| `request_evidence_recalculation` | Queue a supported versioned method for an authorized input set; the server computes results, not the agent inventing aggregate numbers. |
+| `publish_evidence_batch` | A separately authorized action on the exact reviewed batch/revision, enforcing the applicable publication policy. |
+
+Default evidence-agent access can read permitted evidence and submit drafts;
+publishing needs a separate capability and server-recorded approval/policy.
+Approval is bound to content and target environment; edits invalidate it. A
+client-supplied `approved` flag cannot grant authority. Log the acting principal,
+batch, source/input revisions, operation and result without logging secrets or
+private narratives. Apply size/rate limits, retry protection and per-installation
+authorization to CLI, MCP, API, UI and workers alike. Do not give these agents
+the reminder worker's service-role credentials or private patient-table access.
+Treat external text and uploaded files as data, never instructions to run tools,
+change permissions, disclose credentials or bypass review.
+
+Validated demo examples and provisional estimates can be published automatically
+under a pre-approved demo policy while retaining their labels. That policy does
+not authorize source-backed records in a mixed batch. Real-source publication
+retains permission, provenance and review gates; ambiguous/high-impact extractions
+need human review. An agent may propose mappings or corrections but cannot certify
+its own extraction accuracy or invent a Reddit source for a generated report.
+
 ## Community reports and separate scores
+
+The planned flow and worked example below illustrate the requirements, not a
+live Reddit integration or real patient data:
+
+```mermaid
+flowchart TD
+    A["Reddit posts and comments<br/>Approved collection with original links"] --> B["Preserve source context<br/>Permalink, date and permitted supporting text"]
+    B --> C["AI extracts claims<br/>Treatment + condition + outcome"]
+    C --> D["Normalize and review<br/>Names, units, ambiguity, duplicates and follow-ups"]
+    D --> E["Structured community reports<br/>Every claim linked to its supporting passage"]
+    E --> F["Compare reports<br/>Benefits, harms, timing and completeness"]
+    E --> G["Inspect the evidence<br/>Report cards and original Reddit links"]
+    F --> H["Investigate further<br/>Track outcomes or find/create a study"]
+```
+
+**Fictional extraction example:** "I tried treatment X for low mood for three
+weeks. My mood improved slightly, but nausea made me stop. I also started therapy."
+
+| Field | Extracted value |
+| --- | --- |
+| Treatment / reason | Treatment X / low mood |
+| Reported benefit | Mood improved; "slightly" remains qualitative, not an invented percentage |
+| Duration | Three weeks |
+| Reported harm / discontinuation | Nausea; stopped because of nausea |
+| Other changes | Started therapy |
+| Dose | Not reported |
+
+The same experience can include both benefit and harm. For a real-source summary,
+the drill-down is: click a number -> inspect included/excluded reports and reasons
+-> inspect the supporting passage where permitted -> open the original comment.
+Keep the original permalink even when quoted text cannot be displayed, subject to
+retention rules. Removed/restricted inputs invalidate affected summaries rather
+than leaving stale counts. This fictional example has no original Reddit source
+and must remain an example, not be imported as observed evidence.
 
 Extract a claim about a **treatment + condition + outcome**, not generic sentiment
 toward a drug. A report may contain multiple claims but is not multiple people.
@@ -441,6 +561,17 @@ No clinic upload until the sender and receiver both enforce these gates.
   and simulated payloads cannot be ingested as actual patient or study records.
 - Source replay tests: API/AACT duplicates, papers describing the same cohort,
   comment reposts/follow-ups, missing denominators/results, failed fetches, and deleted sources.
+- Import parity across CLI, MCP and admin/API: identical accepted records and
+  rejection reasons, no canonical writes on preview, retry/no-op behavior, conflicting
+  revisions, interrupted batches, stale approvals and explicit target/environment
+  selection. Seed reruns preserve user edits and cannot resurrect withdrawn records.
+- Agent authorization: submission cannot self-approve, publish or read patient
+  tables; deny cross-installation batch access and unauthorized recomputation.
+  Test malicious source instructions, secret/private-field leakage, mixed-origin
+  batches and automated demo publication that cannot publish source-backed records.
+- Community drill-down: summary -> included/excluded reports -> permitted supporting
+  passage -> original permalink; test benefit and harm in the same experience,
+  missing passages, deleted sources, duplicates and recalculated counts.
 - Known-answer statistics: arm matching, uncertainty, outcome direction, shared controls,
   sparse events, incompatible-study rejection, and score denominators; independent methods review.
 - Legacy time-series reproduction: pinned authorized input/reference fixtures,

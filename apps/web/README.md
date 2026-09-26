@@ -38,6 +38,14 @@ calculations and reports. The [legacy baseline](../../docs/MIGRATION.md#what-com
 defines workflow/numerical acceptance and continuity; these capabilities are
 targets, not a claim that this app already matches the legacy system.
 
+For data population, start with versioned JSON/JSONL demo packs and one validated
+importer, then expose the same service through scoped MCP tools and an admin review
+screen. Proposed locations are `data/demo/` and `lib/evidence/import`; they are not
+implemented by this plan. Keep private/restricted source data out of Git and keep
+evidence submission separate from publication and personal-data access. See the
+[population workflow](../../docs/EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
+and [next implementation slice](../../docs/MIGRATION.md#next-implementation-slice).
+
 - Public pages, patient tracking, provider and research-partner workflows,
   administration, and developer access belong to this app.
 - Reusable analysis, trial-data ingestion, health vocabulary, evidence contracts,
