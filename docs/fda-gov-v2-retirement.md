@@ -6,6 +6,11 @@ remains a private, recoverable reference. [`apps/web`](../apps/web) in
 The audit below resolves the old port-candidate checklist; deferred items are
 preserved references, not blockers requiring a second active repository.
 
+**Product-policy clarification:** the [demo-first plan](MIGRATION.md#demo-first-product-goal)
+allows labeled AI/current best estimates and progressive improvement. Retirement
+does not imply removing AI-generated content from dFDA or excluding it solely by
+origin. No required port from this old repository was identified.
+
 **Completed:** GitHub confirmed `isArchived: true` and `isPrivate: true` on
 2026-09-26. The repository description points to `mikepsinn/dfda`. All 16 remote
 branch heads were rechecked against the backup immediately before archiving.
@@ -57,7 +62,7 @@ version has passed a fresh end-to-end product test.
 | Candidate | Disposition | Evidence and future destination |
 | --- | --- | --- |
 | Landing comparison, sources, and sticky navigation | **Defer presentation reuse; reject wholesale campaign-copy replacement** | Old `apps/dfda-node/components/landing/{ComparisonTable,SourcesSection,HeroSection}.tsx` and `components/layout/PublicPageStickyNav.tsx`; current app already has landing and how-it-works components. Reuse layout ideas only when implementing the public evidence pages, with reviewed claims and neutral branding. |
-| Condition/intervention cards and citations | **Defer UI reuse; reject AI-generated evidence/scoring pipeline** | Old `components/condition/{ConditionInterventionsList,InterventionDetailCard,SourcesDisplay}.tsx` can inform the planned evidence UI. `lib/actions/get-condition-interventions.ts` generates structured AI output; `scripts/generate-intervention-scores.ts` asks a model for 1–10 evidence/benefit/safety scores. Do not port those outputs as measured evidence. |
+| Condition/intervention cards and citations | **Optional UI/generation reference, not a required port** | Old `components/condition/{ConditionInterventionsList,InterventionDetailCard,SourcesDisplay}.tsx` can inform the planned demo/evidence UI. `lib/actions/get-condition-interventions.ts` generates structured AI output; `scripts/generate-intervention-scores.ts` asks a model for 1–10 evidence/benefit/safety scores. Such estimates can be retained/adapted and improved under the demo labeling policy, but must not be presented as measured evidence or calibrated certainty. |
 | Trial search suggestions, filters, result cards and pagination | **Defer a targeted UI port to the planned trial-search work** | Old `app/(public)/find-trials/components/{ConditionSuggestInput,InterventionSuggestInput,trial-results-display}.tsx` has richer controls than the current simple condition-selection form. Its actions use `/api/int/studies` and `/api/int/suggest`; do not adopt these dependencies unchanged. Rewire selected UI to the documented API v2 client selected in [MIGRATION.md](MIGRATION.md#what-comes-from-optimitron), with fresh contract/pagination tests. |
 | Image, nutrition-label and webcam capture | **Existing overlap; reject a second capture flow, defer useful refinements** | Current `components/shared/ImageAnalysisCapture.tsx`, `wizard-steps/ReviewNutritionStep.tsx`, `hooks/useImageAnalysisWizard.ts` and `hooks/useWebcam.ts` already cover upload/webcam/review. Preserve old `components/patient/SimpleImageCapture.tsx`, `lib/actions/simple-image-capture-action.ts` and wizard changes as comparison material; no runtime port is needed to archive. |
 | Configurable logo/favicon | **Defer to the independent-clinic configuration milestone** | Important path correction: the old implementation is in **old `apps/web/config/site.ts` and `apps/web/env.mjs`**, not old `apps/dfda-node`. Its `NEXT_PUBLIC_SITE_LOGO`/`NEXT_PUBLIC_FAVICON` behavior is a small reference for the [shared configuration model](PRODUCT-ARCHITECTURE.md#white-labeling-and-independent-hosting), not a reason to keep the old app active. |

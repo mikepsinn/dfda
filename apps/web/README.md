@@ -23,6 +23,11 @@ deployment and branding boundaries. [Evidence and exchange](../../docs/EVIDENCE-
 defines where external sources, treatment reports, study workflows and exchange
 schemas belong.
 
+The immediate goal is a compelling, clearly labeled demo. Keep useful AI-generated
+content and numbers as provisional current best estimates, and improve them as
+better data arrives. Distinguish illustrative example data from model estimates
+and source-backed results; complete evidence coverage is not a demo launch gate.
+
 - Public pages, patient tracking, provider and research-partner workflows,
   administration, and developer access belong to this app.
 - Reusable analysis, trial-data ingestion, codebook, evidence contracts, export
@@ -38,8 +43,9 @@ schemas belong.
   Start with app-owned modules and restricted jobs, not another product website.
   Separate processes/services when needed for isolation or operations.
 - Existing AI-assisted capture and chat code remains. Parsing a person's
-  input is distinct from generating medical evidence; published evidence
-  must follow the migration plan's provenance and no-AI-numbers rules.
+  input is distinct from generating provisional estimates. Both are supported;
+  public displays follow the migration plan's origin-labeling and progressive
+  improvement rules, without presenting model output as observed patient/trial data.
 
 ## Data and access boundaries
 

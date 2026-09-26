@@ -13,6 +13,29 @@ Documentation ownership:
 - [Apps and features](APPS-AND-FEATURES.md): present code versus extraction candidates and new work.
 - This document: migration decisions, publication policy, and the single delivery sequence. New specifications do not mean features have shipped.
 
+## Demo-first product goal
+
+The immediate goal is a useful demo that makes the intended product understandable,
+not a clinically validated evidence service at launch. Keep the existing AI-generated
+content and estimates, label their status, and progressively improve them with better
+sources and methods. Removing estimated numbers or blanking useful screens is not a
+milestone or a prerequisite for demonstrating the product.
+
+Use an adjacent label such as **"Current best estimate - AI-generated, not clinically
+validated"**, with its basis, limitations and update date. "Best" means the demo's
+current provisional estimate, not an established medical consensus. Purely illustrative
+seed values remain **"Example data"**, not best estimates or observed patient results.
+Where the generation history or uncertainty is unknown, say so instead of inventing it.
+
+Improve one treatment/condition view at a time: verify supporting references, add
+patient-reported and trial-reported results, and revise or supersede estimates when
+better information is available. Keep the distinctions visible on screen and in
+exports; an estimate is not an additional study or participant. The detailed
+[estimate policy](EVIDENCE-AND-EXCHANGE.md#demo-estimates-and-progressive-improvement)
+defines that boundary. Real patient access, consent and study recruitment retain
+their own safeguards; demonstrating a workflow does not establish that it is ready
+for live clinical use.
+
 ## Where things are today
 
 | Repository | What it has | Runs at |
@@ -66,7 +89,12 @@ Consent records and aggregate privacy controls remain prerequisites for
 sharing clinic data. Public-source ingestion/publishing jobs must not inherit
 the existing reminder worker's unrestricted patient-data credentials.
 
-Before it serves dfda.earth, its outcome labels need the same rules as everything else: they currently show demo seed data (including a placeholder citation) and AI-generated numbers.
+Before it serves dfda.earth, make its demo status and per-number origin clear. Its
+outcome labels currently show demo seed data (including a placeholder citation) and
+AI-generated numbers. Retain the useful demo, distinguish example data from current
+best estimates and source-backed results, and label placeholder references as examples
+until verified replacements are available. Complete clinical evidence coverage is not
+a cutover requirement.
 
 ## What comes from optimitron
 
@@ -78,13 +106,13 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 | REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | Next to the existing OpenAPI route | Same auth as the MCP server |
 | Trial search | The existing `find-trials` page, using `packages/trials` | optimitron's ClinicalTrials.gov client replaces the web app's unused helper |
 | Landing, about and FAQ content | Existing public pages | Copy only |
-| Condition and treatment pages | Not moved | They show AI estimates. The web app's own pages show patient ratings instead. |
+| Condition and treatment pages and AI estimates | Adapt useful content and estimates into the existing condition/treatment pages | Preserve demo coverage with explicit current-best-estimate labels and available generation/source metadata. Add patient ratings and trial results as distinct views, then improve or supersede estimates; do not exclude content simply because AI generated it. |
 | 6 unit tests | With the features they cover | |
 
 **What stays in optimitron**
 
 - `packages/tracking`, `packages/db` and `packages/data`, which optimitron.com and the other sites use. dfda doesn't depend on them; they aren't published.
-- The AI-estimated medical data in `packages/data`, which optimitron's database seed also uses. dfda takes only the condition list and its ICD-10 codes (see Data).
+- The original shared medical dataset in `packages/data`, which optimitron's database seed also uses. dFDA takes a versioned copy of useful estimates and their available metadata, plus the condition list and ICD-10 codes, without deleting the shared source or depending on Optimitron's runtime database.
 - The `DFDA_*` constants in the `packages/data` parameters. They are economic-model inputs used by several optimitron sites, not app code.
 - The site-kit "how it works" sections that other optimitron sites render. Their links keep pointing at dfda.earth.
 
@@ -99,18 +127,18 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 
 ## What comes from crowdsourcing-cures
 
-crowdsourcingcures.org keeps the organization pages (home, initiatives, docs) and drops its health-data pages at the dfda.earth cutover. Before that, two of its features move into the base app.
+crowdsourcingcures.org keeps the organization pages (home, initiatives, docs) and drops its redundant health-data pages at the dfda.earth cutover. Treatment rankings and text logging move into the base app; useful AI-written demonstration content can be adapted incrementally rather than excluded by origin.
 
 | Feature in crowdsourcing-cures | In the base app | Notes |
 | --- | --- | --- |
 | Patient-rating Treatment Rankings: the treatments ranked for each condition, and each treatment's ratings across conditions | The existing condition and treatment pages, which have a ranking component but show demo data | The ratings data moves too (see Data). Rankings follow the rules for published numbers below. |
 | Logging measurements by typing: a person writes something like "took 200 mg magnesium, slept badly" and an AI turns it into measurements | Next to the existing photo-to-measurements action | The AI only reads the person's own words and produces no evidence numbers. It saves to the old app today, so it is rewired to the base app's own tables. |
 | Trial search | Not moved | It has its own tested ClinicalTrials.gov client; `packages/trials` uses optimitron's instead. |
+| AI-written condition analyses, cost-benefit explanations and research articles | Select useful content for the existing public/demo pages | Retain and improve as labeled AI-generated drafts or modeled estimates, check citations, and distinguish illustrative synthesis from a completed systematic review/meta-analysis. Not a requirement to port every article before cutover. |
 
 **Not moved**
 
 - Pages that only show data from the old app at app.dfda.earth: measurement history, variable charts, predictor search, population studies, the reminder inbox, data-import connectors, the Digital Twin Safe link and the reaction-time test. The base app already has its own measurements and reminders, and predictor search and the variable charts get rebuilt on `analysis` later. Remove these proxy pages during cutover, before legacy retirement.
-- AI-written pages: the per-condition meta-analyses, the cost-benefit analyses and the research articles. They break the no-AI-numbers rule. Whether crowdsourcingcures.org keeps them, labeled, is a separate decision.
 - The drug-registration form and the muscle-mass cost-benefit page.
 
 ## ClinicalTrials.gov results
@@ -160,7 +188,7 @@ path; dFDA cannot enroll someone merely by recording their interest.
 | `trials` | ClinicalTrials.gov/AACT search and results adapters; study-protocol contract | Search: optimitron's `packages/data` fetcher, which is documented and tested. The results parser and protocol contract are new. |
 | `analysis` | Descriptive report scores, N-of-1 statistics, study-effect estimation and compatible meta-analysis | Selected optimitron `packages/optimizer` code; recheck and fix the previously reported small-sample p-value and outcome-direction bugs before adoption. New methods need known-answer tests. |
 | `codebook` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/web` seeds, and optimitron's condition list with ICD-10 codes |
-| `evidence` | Shared source/report/effect/release/withdrawal contracts, provenance and deduplication primitives | New; adapters and persistence remain app-owned |
+| `evidence` | Shared source/report/effect/model-estimate/release/withdrawal contracts, provenance and deduplication primitives | New; adapters, estimate generation and persistence remain app-owned |
 | `summary-file` | Aggregate-only `ClinicSummary` format and validators, shared by Clinic Nodes and evidence exchanges | New; not the format for comments or personal-data transfer |
 | `importers` | Wearable/app export parsers and the personal-data export contract | optimitron `packages/data/src/importers`, which were ported from curedao-api's PHP connectors; export contract is new |
 
@@ -183,15 +211,15 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their Safe only if they choose to (see Open decisions). |
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | ~15,800 automated N-of-1 studies | Static site generated by curedao-api | Keep as an archive. Don't republish them as evidence. |
-| AI-estimated medical data (216 conditions, 969 treatments) | optimitron `packages/data` | Don't migrate the numbers. The condition list and its ICD-10 codes seed the `codebook`. |
-| `apps/web` demo data | Supabase seeds | Clear it before dfda.earth points at the app |
+| AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the `codebook`. |
+| `apps/web` demo data | Supabase seeds | Retain useful examples with persistent example-data labels and separation from actual patient/study records; distinguish illustrative seeds from provisional estimates. Improve the demo rather than clearing it before cutover. |
 
 ## Order
 
 | Step | Deliverable | Exit gate |
 | --- | --- | --- |
-| 1. Foundation | Remove demo/AI-invented evidence; establish codebook, minimal evidence contracts, consent/access model and tested analysis primitives | Source/mapping fixtures, method tests and private/public authorization tests pass; no production label uses invented numbers |
-| 2. Evidence MVP | Real patient-rating views, trial discovery, reviewed results for a bounded treatment/condition scope, source links and separate evidence lanes | Every number traces to eligible input versions and a reproducible method; missing data is explicit; duplicates and permissions checked |
+| 1. Demo clarity and foundation | Preserve useful demo content; label example data, AI/current best estimates and source-backed results; establish minimal provenance contracts, codebook and consent/access boundaries | Demo remains understandable and populated; labels persist on cards, charts and exports; known generation/source metadata and unknowns are explicit; private/public authorization tests pass |
+| 2. Progressive evidence improvement | Improve a bounded treatment/condition scope with patient-rating views, trial discovery, verified references and reviewed results alongside existing estimates | Source-backed numbers trace to eligible inputs and tested methods; provisional estimates retain their own basis/limitations; revisions are versioned, duplicates/permissions checked, and incomplete coverage does not block the demo |
 | 3. Participation and community pilot | Structured reports, personal tracking, observational protocol wizard and reviewed join flow; limited community-source ingestion only when approved | Consent/protocol versioning, withdrawal and deletion tests pass; users can follow evidence -> report/track -> discover/propose/join without treating interest as external enrollment |
 | 4. dfda.earth cutover | MCP, REST, trial search and text logging in the base app; migrate the domain and redundant health-data surfaces | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified before deleting old routes |
 | 5. Living analyses | Reviewed compatible study synthesis and source-refresh/review pipeline, building on step 2 | Included/excluded study table, overlap handling, bias review, uncertainty, known-answer tests and versioned publication/retraction work; not dependent on clinic federation |
@@ -200,9 +228,10 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | 8. Legacy retirement | Move only authorized legacy records and retire app.dfda.earth | Users have a documented choice/export path; migration reconciliation, retention/nonresponse policy and rollback/archive plan approved |
 
 Steps 3 and 5 can develop in parallel with cutover when their prerequisites are
-met; they must not delay replacing invented public evidence. Independent hosting
-and federation are not prerequisites for the first useful hosted product. Retire
-legacy services when their migration gates pass, not merely because a later step
+met; they must not delay a clearly labeled, useful demo and incremental improvement
+of its estimates. Independent hosting and federation are not prerequisites for the
+first useful hosted product. Retire legacy services when their migration gates pass,
+not merely because a later step
 number has been reached. Detailed tests live in the [evidence specification](EVIDENCE-AND-EXCHANGE.md#acceptance-tests-required-with-implementation).
 
 ## Rules for published numbers
@@ -214,8 +243,8 @@ These apply to every publication, including the first MVP:
 - Every outcome declares which direction is better.
 - Use Wilson intervals for simple binomial proportions where assumptions apply; other estimates, clustered/repeated observations and privacy-noised counts need appropriate methods. Intervals do not correct selection bias.
 - Retain the proposed 30 distinct patients / 3 independent sources minimum only as an initial eligibility floor for a future clinic-network ranking, with the definitions/version published. It is not a validity guarantee, a community-comment threshold, or a ban on showing a single study. Unknown cross-site overlap blocks a distinct-patient claim. No universal treatment ranking combines all evidence lanes.
-- Every number identifies its source lane, denominator, time window, review status and method. Trial results, published reviews, clinic observations, personal analyses, patient ratings and community reports are distinguishable; only compatible study estimates enter a documented synthesis.
-- No AI-invented medical numbers. AI-assisted extraction preserves source values and uncertainty; deterministic calculations can derive numbers from eligible inputs with an auditable method. Demo data stays out of production evidence.
+- Every number identifies its origin: illustrative example, provisional model/AI estimate, or source-backed result, plus the source lane where applicable. Show its basis, time window, review status, method and denominator where applicable; explicitly mark unknowns. Trial results, published reviews, clinic observations, personal analyses, patient ratings and community reports remain distinguishable; only compatible study estimates enter a documented synthesis.
+- AI-generated estimates are allowed in the public demo as clearly labeled current best estimates, not established clinical facts or treatment advice. Preserve useful content and improve it as better data arrives. Illustrative values, modeled assumptions, sample sizes and citations must not masquerade as observed records or verified sources. AI-assisted extraction preserves what the source actually says; estimation is a separate, labeled output. Neither model estimates nor demo records enter empirical pooling or actual patient/study counts.
 
 ## Remaining new work
 
