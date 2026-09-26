@@ -7,13 +7,20 @@ that independent installation, tenant isolation, encryption, or federation works
 today. See the [inventory](APPS-AND-FEATURES.md) for present code and the
 [migration plan](MIGRATION.md#order) for the single implementation sequence.
 
+**Immediate purpose:** an understandable, useful demo of the intended product.
+Keep AI-generated estimates and illustrative content with clear origin labels;
+progressively improve them with better sources and methods. Complete clinical
+validation is not a prerequisite for showing the demo. The
+[estimate policy](EVIDENCE-AND-EXCHANGE.md#demo-estimates-and-progressive-improvement)
+separates provisional best estimates, example data and source-backed results.
+
 ## One product, several responsibilities
 
 | Responsibility | Product surface | Implementation boundary |
 | --- | --- | --- |
 | Personal workspace / Digital Twin Safe role | Tracking, imports, treatment reports, study participation, sharing controls | Patient interface in `apps/web`; private records and explicit access grants |
 | Clinic Node | Provider workflows and clinic-operated study management | Provider interface in the same codebase; independent installation has its own records, auth, storage, configuration, and credentials |
-| Public evidence | Condition/treatment comparisons, source links, reviews, study discovery | Public pages in `apps/web`, reading approved publication views, not unrestricted patient tables |
+| Public demo and evidence | Condition/treatment comparisons, labeled estimates/examples, source links, reviews, study discovery | Public pages in `apps/web`, reading publication views that preserve data origin, not unrestricted patient tables |
 | Evidence exchange / aggregator | Validate contributions, track provenance, pool compatible estimates, publish releases, administer contributing nodes | App-owned server modules and background jobs initially; a separately operated service only when justified |
 
 The aggregator combines evidence; it is not another required user-facing app.
@@ -69,7 +76,9 @@ Extensions begin as reviewed, versioned adapters with explicit permissions.
 An installable release must include setup, database migrations, authentication
 and redirects, storage, worker/scheduler, email, secrets handling, backups and a
 tested restore, upgrades/rollback compatibility, monitoring, and data export.
-Demo seeds must be separated from production data. Define a supported version
+Demo seeds and model estimates may populate public demo views, but remain labeled
+and separate from actual patient/study records and empirical analysis inputs.
+Define a supported version
 matrix and security-update procedure before inviting independent operators.
 
 Next.js supports self-hosted Node/container deployments, but shipping the web
@@ -88,14 +97,14 @@ create empty packages just to match this table.
 | Location | Owns |
 | --- | --- |
 | `apps/web/app` | Existing public, patient, provider, researcher, and admin routes; extend these instead of duplicating sites |
-| `apps/web/lib/evidence` | Source access adapters (including approved Reddit ingestion), review workflow, persistence, score/publication orchestration; calls shared parsers and methods |
+| `apps/web/lib/evidence` | Source access adapters (including approved Reddit ingestion), estimate generation/import and revision, review workflow, persistence, score/publication orchestration; calls shared parsers and methods |
 | `apps/web/lib/studies` | Study wizard, eligibility, consent/enrollment state machine, protocol review and publication; reuse existing trial/enrollment actions and tables where appropriate |
 | `apps/web/lib/instance` | Validated branding/module configuration and operator administration |
 | `apps/web/lib/data-export` | Authorized personal export/import orchestration and transfer audit |
 | `apps/web/worker` and `apps/web/cron-enqueuer.ts` | Durable ingestion, refresh, validation, analysis, publication, deletion propagation, and reminders; supporting processes, not separate products |
 | `apps/web/supabase/migrations` | Canonical SQL schema, access policies, and publication views; no new canonical database package |
 | `packages/codebook` | Versioned IDs, terminology mappings, units, outcome direction, and mapping review status |
-| `packages/evidence` | Source/report/effect/release contracts, validators, provenance and deduplication primitives; no credentials or database access |
+| `packages/evidence` | Source/report/effect/model-estimate/release contracts, validators, provenance and deduplication primitives; no credentials or database access |
 | `packages/trials` | ClinicalTrials.gov/AACT adapters and parsing, trial discovery, public study-protocol contract |
 | `packages/analysis` | Deterministic descriptive scores, N-of-1 analysis, study-effect estimation, compatible meta-analysis and uncertainty; tested methods, not source fetching |
 | `packages/importers` | Wearable/app export parsing and personal-data export contract, not a central OAuth token store |
@@ -121,8 +130,12 @@ by this plan.
 
 ## First useful product
 
-A person can compare the separate evidence lanes for a treatment/condition,
-open original sources, contribute a structured report, track their outcomes,
-and discover or propose a study. Complete that hosted loop first. Then prove a
+A visitor first sees a coherent demo, including labeled current best estimates
+where source-backed coverage is incomplete and explicit examples of planned flows.
+Improve it incrementally into a hosted loop where a person can compare separate
+evidence lanes for a treatment/condition, open original sources, contribute a
+structured report, track their outcomes, and discover or propose a study. Mark
+simulated versus working interactions; live patient/study use retains its access,
+consent and review gates. Then prove a
 branded clinic install and its opt-in aggregate contribution using the same
 contracts. The [roadmap gates](MIGRATION.md#order) determine when each is ready.
