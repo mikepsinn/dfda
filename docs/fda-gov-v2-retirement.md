@@ -29,12 +29,14 @@ the canonical app:
    suggestions, trial-result display, filters, and ClinicalTrials.gov schemas.
 4. Optional patient data capture: image-to-measurements, nutrition-label
    parsing, webcam capture, and the review wizard.
-5. Configurable logo and favicon environment variables for customer-branded
-   nodes.
+5. Configurable logo and favicon behavior for independently branded nodes;
+   reconcile it with the shared release/configuration model in
+   [Product architecture](PRODUCT-ARCHITECTURE.md#white-labeling-and-independent-hosting),
+   not a code fork per clinic.
 
 The referendum voting flow is useful for the public advocacy site, but it is
-not a default clinic-node feature. Port it only as an optional module or keep
-it in a separate public-facing application.
+not a default clinic-node feature. Port it only as an optional public module or
+leave it with the existing organization site; it does not require another dFDA app.
 
 ## Do not copy blindly
 
