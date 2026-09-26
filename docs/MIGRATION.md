@@ -8,7 +8,7 @@ dFDA code and data are spread across four repositories. The plan: [`apps/web`](.
 
 | Repository | What it has | Runs at |
 | --- | --- | --- |
-| `decentralized-fda/decentralized-fda` (this repo) | [`apps/web`](../apps/web): Next.js and Supabase app for patients, providers and research partners. [`packages/legacy-import`](../packages/legacy-import): tools for moving data out of the legacy MySQL database. | prototype.dfda.earth |
+| `mikepsinn/dfda` (this repo) | [`apps/web`](../apps/web): Next.js and Supabase app for patients, providers and research partners. [`packages/legacy-import`](../packages/legacy-import): tools for moving data out of the legacy MySQL database. | prototype.dfda.earth |
 | `mikepsinn/crowdsourcing-cures` (private) | Organization homepage, patient-rating Treatment Rankings, trial search, articles | crowdsourcingcures.org |
 | [`mikepsinn/optimitron`](https://github.com/mikepsinn/optimitron) | `apps/dfda`: condition and treatment pages (the numbers are AI estimates), trial search, and an MCP server and REST API for personal tracking. It shares optimitron.com's database and sign-in. `packages/optimizer`: N-of-1 analysis. `packages/tracking`: measurements and reminders. `packages/data`: wearable importers, a ClinicalTrials.gov client, a condition list. | dfda.earth |
 | `mikepsinn/curedao-api` (private) | The legacy PHP and AngularJS app: user accounts, OAuth, wearable connectors, reminders, the MySQL database, and the generator for the static studies site | app.dfda.earth, studies.crowdsourcingcures.org |
@@ -29,7 +29,25 @@ One codebase covers the parts of the design:
 | --- | --- |
 | Digital Twin Safe | The patient side, hosted at dfda.earth |
 | Clinic Node | The provider side. A clinic runs its own copy; the app was started as a white-label node. |
-| Global Aggregator | New. Can be a separate app later. |
+| Global Aggregator | New: aggregate ingestion, pooling, publication, and network administration. Can be a separate app later. |
+
+### Scope boundaries
+
+Public and marketing pages, patient and provider workflows, and developer
+access belong to `apps/web`. Shared computation and formats belong to the
+packages below. This is the implementation roadmap; the [feature inventory](APPS-AND-FEATURES.md)
+records current code and extraction candidates.
+
+Third-party OAuth connections and data imports remain capabilities of the
+receiving app. The planned `importers` package provides export parsers, not a
+complete connection service. Authorization, token handling, and any ongoing
+sync require design and implementation; no separate central token-store
+service is assumed.
+
+Node registration and identity, authenticated submissions, contribution
+policies, and network monitoring belong to the aggregator's administration.
+Consent records and aggregate privacy controls remain prerequisites for
+sharing clinic data.
 
 Before it serves dfda.earth, its outcome labels need the same rules as everything else: they currently show demo seed data (including a placeholder citation) and AI-generated numbers.
 
@@ -144,7 +162,7 @@ None of the existing code does the parts that make this a network. These are new
 - A parser that turns posted trial results into comparisons between study groups
 - Anonymization at the Clinic Node before anything leaves it, including protection against subtracting one release from another
 - Consent records
-- Node identity and authenticated Summary File submission
+- Node registration and identity, authenticated Summary File submission, and aggregator administration for contribution policies and network monitoring
 - Pooling across sites (random-effects meta-analysis with heterogeneity estimates)
 - A treatment-effect estimator for clinical records (before and after starting a treatment, or treated against a comparison group). The existing engines only compute within-person correlations.
 - A Clinic Node that a clinic can install and run itself

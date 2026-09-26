@@ -22,7 +22,7 @@ flowchart LR
 | Automated N-of-1 studies | ~15,800 legacy observational analyses, not peer reviewed | [studies.crowdsourcingcures.org](https://studies.crowdsourcingcures.org) |
 | Summary File spec, Codebook, Global Aggregator | Designed, not built yet | — |
 
-The plan for bringing code and data from the related projects into this repo is in [docs/MIGRATION.md](docs/MIGRATION.md). The full vision follows.
+See [Apps and features](docs/APPS-AND-FEATURES.md) for the current application, planned packages, and features to extract from related repositories. The implementation sequence and data rules are in [docs/MIGRATION.md](docs/MIGRATION.md), the authoritative implementation roadmap. The broader vision below is background, not a second backlog or a claim that every feature exists.
 
 # 💖 OBJECTIVE: MAXIMUM CURE ACCELERATION
 
@@ -243,7 +243,6 @@ The planned shared packages are listed in [docs/MIGRATION.md](docs/MIGRATION.md)
 - **Authentication**: Supabase Auth, plus the web app's own OAuth server for third-party apps
 - **Background jobs**: graphile-worker
 - **Tooling**: pnpm workspaces, Turborepo, Vitest, Playwright, GitHub Actions
-- **Planned, not implemented**: blockchain consent and payment records (see below)
 
 
 ## Getting Started
@@ -261,7 +260,7 @@ The planned shared packages are listed in [docs/MIGRATION.md](docs/MIGRATION.md)
 1. Clone the repository:
 
 ```shellscript
-git clone https://github.com/decentralized-fda/decentralized-fda.git dfda
+git clone https://github.com/mikepsinn/dfda.git dfda
 cd dfda
 ```
 
@@ -342,146 +341,47 @@ dfda/
 
 ### Adding New Features
 
-1. Determine if the feature belongs in an existing app, a new app, or a shared package
+1. Place the feature in `apps/web` or a shared package according to [the migration plan](docs/MIGRATION.md)
 2. Create a new branch: `feature/your-feature-name`
 3. Implement the feature following the architectural guidelines
 4. Add tests and documentation
 5. Submit a pull request
 
 
-## Blockchain Integration (planned)
+## Deployment
 
-None of this is implemented yet.
+The reference web app deploys to Vercel from `apps/web`, using Supabase Cloud
+for its database and authentication. See the [app environment setup](apps/web/README.md#environment-setup)
+for configuration.
 
-The dFDA Network incorporates blockchain technology for:
+Packaging the same app so a clinic can install and operate its own isolated
+Clinic Node is planned work. Follow the [migration plan](docs/MIGRATION.md#order);
+there is no separate infrastructure deployment roadmap here.
 
-1. **Patient Identity and Consent**
-
-1. Verifiable credentials for patient identity
-2. Immutable consent records
-3. Privacy-preserving data sharing
-
-
-
-2. **Trial Smart Contracts**
-
-1. Automated trial enrollment and participation tracking
-2. Transparent protocol definitions
-3. Auditable trial history
-
-
-
-3. **Supply Chain Tracking**
-
-1. Medication provenance verification
-2. Counterfeit detection
-3. Adverse event correlation
-
-
-
-4. **Payments and Incentives**
-
-1. Automated participant compensation
-2. Deposit management
-3. Milestone-based payments
-
-
-
-
-
-### Blockchain Architecture
-
-The blockchain components are designed to integrate with existing services rather than replacing them, providing a gradual adoption path that can evolve over time.
-
-
-## Deployment (planned)
-
-The web app currently deploys to Vercel with Supabase Cloud. The setups below are the target.
-
-The dFDA Network is designed for deployment in various environments:
-
-### Local Development
-
-- Docker Compose for local services
-- Minikube for Kubernetes testing
-
-
-### Staging Environment
-
-- Kubernetes cluster with namespaces for different components
-- CI/CD pipeline for automated deployments
-- Synthetic data for testing
-
-
-### Production Environment
-
-- Multi-region Kubernetes deployment
-- High-availability configuration
-- Disaster recovery procedures
-- HIPAA-compliant infrastructure
-
-
-### Deployment Commands
-
-- `pnpm deploy:staging` - Deploy to staging environment
-- `pnpm deploy:production` - Deploy to production environment
-- `pnpm deploy:blockchain` - Deploy blockchain nodes and contracts
-
+Before nodes share data, implement consent records, authenticated node
+submissions, and the [aggregate privacy controls](docs/MIGRATION.md#rules-for-published-numbers).
+Public pages remain in `apps/web`; network administration belongs to the
+planned aggregator.
 
 ## Contributing
 
-We welcome contributions to the dFDA Network! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
-
-- Code of conduct
-- Development process
-- Pull request workflow
-- Coding standards
-- Testing requirements
-
+Use the development workflow above and the [migration plan](docs/MIGRATION.md)
+to choose and scope a contribution.
 
 ### Key Areas for Contribution
 
-- AI models for meta-analysis
-- Blockchain smart contracts
-- Gateway Node implementations
-- Mobile app features
-- Documentation and tutorials
-- Internationalization and accessibility
-
+- Tested analysis methods and trial-results ingestion
+- Patient tracking, OAuth/data imports, and shared export parsers
+- Consent, privacy-preserving Summary Files, and node authentication
+- Clinic Node packaging and aggregator administration
+- Documentation, internationalization, and accessibility
 
 ## Roadmap
 
-### Phase 1: Core Infrastructure (Q1-Q2 2025)
-
-- Marketplace MVP
-- Digital Twin Safe basic functionality
-- Authentication and API foundation
-- Initial Gateway Node implementation
-
-
-### Phase 2: Enhanced Functionality (Q3-Q4 2025)
-
-- AI Meta-Analysis engine
-- ClinicalTrials.gov integration
-- Reminder system
-- Sponsor portal advanced features
-
-
-### Phase 3: Blockchain Integration (Q1-Q2 2026)
-
-- Blockchain node deployment
-- Smart contracts for trials
-- Identity and consent management
-- Supply chain tracking
-
-
-### Phase 4: Ecosystem Expansion (Q3-Q4 2026)
-
-- Developer platform and third-party apps
-- Advanced AI capabilities
-- International expansion
-- Regulatory approval pathways
-
+Follow the [implementation sequence](docs/MIGRATION.md#order): foundation,
+ratings and trial results, the dfda.earth cutover, the clinic network, and
+consent-based legacy migration. The [feature inventory](docs/APPS-AND-FEATURES.md)
+distinguishes existing code from extraction candidates and new work.
 
 ## Key Features
 
@@ -514,5 +414,4 @@ We welcome contributions to the dFDA Network! Please see our [Contributing Guide
 - Build on the dFDA API platform
 - Create specialized tools for clinical research
 - Integrate with Gateway Nodes
-- Leverage blockchain for trust and transparency
-
+- Preserve consent, access controls, and evidence provenance
