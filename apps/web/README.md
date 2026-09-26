@@ -2,11 +2,11 @@
 
 `apps/web` is the canonical Next.js/Supabase product application.
 `prototype.dfda.earth` is its reference deployment. The same codebase is
-intended to serve the public site and personal workspaces at `dfda.earth`, or
-run independently at a clinic as a branded Clinic Node. One maintained release,
-not a fork per clinic. The domain cutover, independently installable Clinic Node,
-and federation are still planned; patient screens alone do not implement a
-local-first or operator-blind encrypted Digital Twin Safe.
+intended to serve the public site, personal health workspaces and clinic workspaces
+at `dfda.earth`, or run as a branded independent installation. One maintained
+release, not a fork per clinic. The domain cutover, independent installation
+packaging and clinic data exchange are still planned; patient screens alone do
+not implement local-first or operator-blind encrypted storage.
 
 ## Scope and status
 
@@ -30,16 +30,18 @@ and source-backed results; complete evidence coverage is not a demo launch gate.
 
 - Public pages, patient tracking, provider and research-partner workflows,
   administration, and developer access belong to this app.
-- Reusable analysis, trial-data ingestion, codebook, evidence contracts, export
-  parsers, and aggregate Summary File validation belong to the planned shared packages.
+- Reusable analysis, trial-data ingestion, health vocabulary, evidence contracts,
+  export parsers and clinic aggregate validation belong to the planned shared packages.
 - Source access/review/publication belongs in `lib/evidence`; study lifecycle
   orchestration in `lib/studies`; branding in `lib/instance`; authorized personal
   export orchestration in `lib/data-export`. These modules are planned, not present.
 - Third-party connections and OAuth/data imports remain app capabilities.
   Export parsers are only part of that work; connection authorization and
   token handling still need design and implementation.
-- Node registration, authenticated submissions, network monitoring, and
-  contribution policies belong to the planned evidence exchange's administration.
+- The evidence pipeline imports, reviews, analyzes and publishes sources and
+  estimates. It works without sharing data between independent installations.
+- Installation registration, authenticated submissions, network monitoring, and
+  contribution policies belong to the planned clinic data exchange's administration.
   Start with app-owned modules and restricted jobs, not another product website.
   Separate processes/services when needed for isolation or operations.
 - Existing AI-assisted capture and chat code remains. Parsing a person's
@@ -56,10 +58,10 @@ app's OAuth endpoints are present;
 MCP-compatible authorization and bearer-token data access need the changes
 listed in the migration plan.
 
-Before clinic data can be shared, build consent records, node identity,
-authenticated Summary File submission, and aggregate privacy controls,
+Before clinic data can be shared, build consent records, installation identity,
+authenticated clinic aggregate submission, and aggregate privacy controls,
 including protection against identifying someone by comparing releases.
-The clinic exchange receives approved aggregates, not raw patient records.
+The clinic data exchange receives approved aggregates, not raw patient records.
 Public-source ingestion and publishing use separate permissions from personal
 records; do not inherit the current reminder worker's service-role access.
 Personal exports are a different, private transfer path. Public reports require

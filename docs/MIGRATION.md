@@ -59,16 +59,18 @@ One codebase covers the parts of the design:
 
 | Part | In `apps/web` |
 | --- | --- |
-| Personal workspace / Digital Twin Safe role | Patient interface in the hosted app. Local-first storage and operator-blind encryption are not established by these screens. |
-| Clinic Node | Provider interface in the same maintained product; an independent installation has its own auth, records, storage, configuration, and credentials. |
-| Evidence exchange / aggregator | New ingestion, provenance, compatible analysis, publication, and node administration in app-owned modules/jobs initially. Not another required website; separate restricted processes/services when justified. |
+| Personal health workspace | Patient interface in the hosted app. Local-first storage and operator-blind encryption are not established by these screens. |
+| Clinic workspace | Provider interface in the same maintained product. A separately operated copy is an independent installation, with its own auth, records, storage, configuration and credentials. |
+| Evidence pipeline | Ingestion, provenance, compatible analysis and publication in app-owned modules/restricted jobs. Works without clinic sharing; not another required website. |
+| Clinic data exchange | Optional registration of contributing installations, authenticated aggregate submissions and correction/withdrawal handling. Accepted data enters the evidence pipeline. |
 
 Offer a managed service and optional independently installed, branded copies of
 one release. Do not create a fork per clinic or a server per patient. Branding
 does not create authorization boundaries or permit changing evidence rules.
-Independent aggregators may implement the same contracts; federation is opt-in.
+Independent clinic data exchanges may implement the same contracts; federation is opt-in.
 See [product architecture](PRODUCT-ARCHITECTURE.md) for installation gates and
-the distinction between a hosted patient workspace and a local encrypted Safe.
+the distinction between a hosted personal health workspace and a future locally
+encrypted client.
 
 ### Scope boundaries
 
@@ -83,8 +85,8 @@ complete connection service. Authorization, token handling, and any ongoing
 sync require design and implementation; no separate central token-store
 service is assumed.
 
-Node registration and identity, authenticated submissions, contribution
-policies, and network monitoring belong to the evidence exchange's administration.
+Installation registration and identity, authenticated submissions, contribution
+policies, and network monitoring belong to the clinic data exchange's administration.
 Consent records and aggregate privacy controls remain prerequisites for
 sharing clinic data. Public-source ingestion/publishing jobs must not inherit
 the existing reminder worker's unrestricted patient-data credentials.
@@ -138,7 +140,7 @@ crowdsourcingcures.org keeps the organization pages (home, initiatives, docs) an
 
 **Not moved**
 
-- Pages that only show data from the old app at app.dfda.earth: measurement history, variable charts, predictor search, population studies, the reminder inbox, data-import connectors, the Digital Twin Safe link and the reaction-time test. The base app already has its own measurements and reminders, and predictor search and the variable charts get rebuilt on `analysis` later. Remove these proxy pages during cutover, before legacy retirement.
+- Pages that only show data from the old app at app.dfda.earth: measurement history, variable charts, predictor search, population studies, the reminder inbox, data-import connectors, the personal health workspace link and the reaction-time test. The base app already has its own measurements and reminders, and predictor search and the variable charts get rebuilt on `analysis` later. Remove these proxy pages during cutover, before legacy retirement.
 - The drug-registration form and the muscle-mass cost-benefit page.
 
 ## ClinicalTrials.gov results
@@ -154,8 +156,8 @@ How to use it:
 - Start with the API v2 for selected studies and search; add [AACT](https://aact.ctti-clinicaltrials.org/) snapshots/SQL for reproducible bulk ingestion. Both feed the same contracts and underlying NCT study identities.
 - Start with reviewed adverse-event tables, preserving participants affected, at-risk denominators, reporting thresholds and observation windows. Events are not people; unreported events are not zero; not every comparator is placebo.
 - Compare study groups, not rows. An effect is the treatment group against the comparison group on the same outcome measure and time frame. Use the trial's own posted comparison where there is one. Single-group studies give no comparison and are shown as such.
-- Map each outcome measure to a `codebook` outcome, with its unit and which direction is better, before pooling across trials. This is the hard part: every trial names and measures its outcomes its own way.
-- Pool only compatible estimates using reviewed methods, with explicit handling of study design, uncertainty, shared controls and overlapping cohorts. Shared analysis code can later serve clinic summaries, without mixing the evidence lanes or assuming identical statistical models.
+- Map each outcome measure to an outcome in the shared health vocabulary, with its unit and which direction is better, before pooling across trials. This is the hard part: every trial names and measures its outcomes its own way.
+- Pool only compatible estimates using reviewed methods, with explicit handling of study design, uncertainty, shared controls and overlapping cohorts. Shared analysis code can later serve clinic summaries, without mixing the evidence types or assuming identical statistical models.
 - Label source results as trial-reported; label calculated outputs as dFDA analyses of those results. Link NCT IDs, source versions, included/excluded studies, and method versions.
 
 The old parser in optimitron (`apps/dfda/lib/fetch-trial-results.ts`) is not reused. It treats the first two numbers in a results table as before and after, which usually compares two different rows. Only 84 of the 5,776 outcome values in optimitron's medical data came from it.
@@ -187,9 +189,9 @@ path; dFDA cannot enroll someone merely by recording their interest.
 | --- | --- | --- |
 | `trials` | ClinicalTrials.gov/AACT search and results adapters; study-protocol contract | Search: optimitron's `packages/data` fetcher, which is documented and tested. The results parser and protocol contract are new. |
 | `analysis` | Descriptive report scores, N-of-1 statistics, study-effect estimation and compatible meta-analysis | Selected optimitron `packages/optimizer` code; recheck and fix the previously reported small-sample p-value and outcome-direction bugs before adoption. New methods need known-answer tests. |
-| `codebook` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/web` seeds, and optimitron's condition list with ICD-10 codes |
-| `evidence` | Shared source/report/effect/model-estimate/release/withdrawal contracts, provenance and deduplication primitives | New; adapters, estimate generation and persistence remain app-owned |
-| `summary-file` | Aggregate-only `ClinicSummary` format and validators, shared by Clinic Nodes and evidence exchanges | New; not the format for comments or personal-data transfer |
+| `health-vocabulary` | Shared names and IDs for conditions, treatments, outcomes and units | The curedao-api variables table, the `apps/web` seeds, and optimitron's condition list with ICD-10 codes |
+| `evidence` | Shared source/report/effect/model-estimate/demo-example/published-analysis-version/withdrawal contracts, provenance and deduplication primitives | New; adapters, estimate generation and persistence remain app-owned |
+| `clinic-aggregates` | Aggregate-only `ClinicSummary` format and validators, shared by independent installations and clinic data exchanges | New; not the format for comments or personal-data transfer |
 | `importers` | Wearable/app export parsers and the personal-data export contract | optimitron `packages/data/src/importers`, which were ported from curedao-api's PHP connectors; export contract is new |
 
 `packages/legacy-import` holds the tools for moving the legacy data. It is retired once the move is done.
@@ -205,26 +207,26 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | --- | --- | --- |
 | Patient ratings: historically 162 conditions and ~3,900 treatments; recount at migration | curedao-api `ct_*` tables, copied into crowdsourcing-cures | Reconcile duplicates, scale and publication permissions; first eligible Data Release stays patient-reported and separate from clinic data. |
 | ClinicalTrials.gov registry and posted results | Public (AACT or API v2) | Registry supports discovery; reviewed posted results support trial-reported evidence and derived analyses. |
-| Reddit / other permitted public reports | External source, access and processing approval required | Source-linked community lane; retained only as permitted; never silently converted into patient records or enrollment. |
+| Reddit / other permitted public reports | External source, access and processing approval required | Source-linked community reports; retained only as permitted; never silently converted into patient records or enrollment. |
 | Published papers, systematic reviews and meta-analyses | Cited publications and permitted full text | Reviewed extraction; connect to underlying study/cohort IDs and avoid double-counting reviews and their studies. |
 | New patient ratings, observations and study outcomes | App's private patient/trial tables | Structured context, consent, provenance and protocol versions; publish only authorized reports or reviewed aggregates. |
-| Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their Safe only if they choose to (see Open decisions). |
+| Legacy measurements: about 13 million, with per-user and population analyses | curedao-api MySQL | Move a person's data into their personal health workspace only if they choose to (see Open decisions). |
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | ~15,800 automated N-of-1 studies | Static site generated by curedao-api | Keep as an archive. Don't republish them as evidence. |
-| AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the `codebook`. |
+| AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
 | `apps/web` demo data | Supabase seeds | Retain useful examples with persistent example-data labels and separation from actual patient/study records; distinguish illustrative seeds from provisional estimates. Improve the demo rather than clearing it before cutover. |
 
 ## Order
 
 | Step | Deliverable | Exit gate |
 | --- | --- | --- |
-| 1. Demo clarity and foundation | Preserve useful demo content; label example data, AI/current best estimates and source-backed results; establish minimal provenance contracts, codebook and consent/access boundaries | Demo remains understandable and populated; labels persist on cards, charts and exports; known generation/source metadata and unknowns are explicit; private/public authorization tests pass |
+| 1. Demo clarity and foundation | Preserve useful demo content; label example data, AI/current best estimates and source-backed results; establish minimal provenance contracts, health vocabulary and consent/access boundaries | Demo remains understandable and populated; labels persist on cards, charts and exports; known generation/source metadata and unknowns are explicit; private/public authorization tests pass |
 | 2. Progressive evidence improvement | Improve a bounded treatment/condition scope with patient-rating views, trial discovery, verified references and reviewed results alongside existing estimates | Source-backed numbers trace to eligible inputs and tested methods; provisional estimates retain their own basis/limitations; revisions are versioned, duplicates/permissions checked, and incomplete coverage does not block the demo |
 | 3. Participation and community pilot | Structured reports, personal tracking, observational protocol wizard and reviewed join flow; limited community-source ingestion only when approved | Consent/protocol versioning, withdrawal and deletion tests pass; users can follow evidence -> report/track -> discover/propose/join without treating interest as external enrollment |
 | 4. dfda.earth cutover | MCP, REST, trial search and text logging in the base app; migrate the domain and redundant health-data surfaces | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified before deleting old routes |
 | 5. Living analyses | Reviewed compatible study synthesis and source-refresh/review pipeline, building on step 2 | Included/excluded study table, overlap handling, bias review, uncertainty, known-answer tests and versioned publication/retraction work; not dependent on clinic federation |
-| 6. Independent clinic pilot | Same release with configurable branding and supported deployment packaging | One independent clinic can install, operate, export, back up/restore and upgrade without a fork; cross-operator isolation tested; no federation required |
-| 7. Optional federation | `ClinicSummary`, node identity, authenticated submissions, review and publication; reuse compatible analysis methods | Sender/receiver privacy threat-model review and adversarial release tests pass, plus replay/revocation/overlap/withdrawal tests; no raw records sent |
+| 6. Independent installation pilot | Same release with configurable branding and supported deployment packaging | One independent clinic can install, operate, export, back up/restore and upgrade without a fork; cross-operator isolation tested; no federation required |
+| 7. Optional clinic data exchange | `ClinicSummary`, installation identity, authenticated submissions, review and publication; reuse the evidence pipeline's compatible analysis methods | Sender/receiver privacy threat-model review and adversarial release tests pass, plus replay/revocation/overlap/withdrawal tests; no raw records sent |
 | 8. Legacy retirement | Move only authorized legacy records and retire app.dfda.earth | Users have a documented choice/export path; migration reconciliation, retention/nonresponse policy and rollback/archive plan approved |
 
 Steps 3 and 5 can develop in parallel with cutover when their prerequisites are
@@ -238,12 +240,12 @@ number has been reached. Detailed tests live in the [evidence specification](EVI
 
 These apply to every publication, including the first MVP:
 
-- Clinic Nodes send approved aggregates only. Suppress small counts (1–10) with null/reason, not zero; complementary cells and derived statistics also require review. This floor is not an anonymity guarantee and does not erase published trial data.
+- Independent installations send approved clinic aggregates only. Suppress small counts (1–10) with null/reason, not zero; complementary cells and derived statistics also require review. This floor is not an anonymity guarantee and does not erase published trial data.
 - Clinic release privacy must cover repeated releases, overlapping cohorts, multiple recipients and all outputs. Fixed periods or rounding alone do not establish safety; choose and test a threat model/release policy before sharing. Differential privacy, if chosen, needs contribution bounds and budget accounting. See the [privacy gate](EVIDENCE-AND-EXCHANGE.md#clinic-release-privacy).
 - Every outcome declares which direction is better.
 - Use Wilson intervals for simple binomial proportions where assumptions apply; other estimates, clustered/repeated observations and privacy-noised counts need appropriate methods. Intervals do not correct selection bias.
-- Retain the proposed 30 distinct patients / 3 independent sources minimum only as an initial eligibility floor for a future clinic-network ranking, with the definitions/version published. It is not a validity guarantee, a community-comment threshold, or a ban on showing a single study. Unknown cross-site overlap blocks a distinct-patient claim. No universal treatment ranking combines all evidence lanes.
-- Every number identifies its origin: illustrative example, provisional model/AI estimate, or source-backed result, plus the source lane where applicable. Show its basis, time window, review status, method and denominator where applicable; explicitly mark unknowns. Trial results, published reviews, clinic observations, personal analyses, patient ratings and community reports remain distinguishable; only compatible study estimates enter a documented synthesis.
+- Retain the proposed 30 distinct patients / 3 independent sources minimum only as an initial eligibility floor for a future clinic-network ranking, with the definitions/version published. It is not a validity guarantee, a community-comment threshold, or a ban on showing a single study. Unknown cross-site overlap blocks a distinct-patient claim. No universal treatment ranking combines all evidence types.
+- Every number identifies its origin: illustrative example, provisional model/AI estimate, or source-backed result, plus the evidence type where applicable. Show its basis, time window, review status, method and denominator where applicable; explicitly mark unknowns. Trial results, published reviews, clinic observations, personal analyses, patient ratings and community reports remain distinguishable; only compatible study estimates enter a documented synthesis.
 - AI-generated estimates are allowed in the public demo as clearly labeled current best estimates, not established clinical facts or treatment advice. Preserve useful content and improve it as better data arrives. Illustrative values, modeled assumptions, sample sizes and citations must not masquerade as observed records or verified sources. AI-assisted extraction preserves what the source actually says; estimation is a separate, labeled output. Neither model estimates nor demo records enter empirical pooling or actual patient/study counts.
 
 ## Remaining new work
@@ -254,16 +256,16 @@ The following remain new work:
 - A parser that turns posted trial results into comparisons between study groups
 - Source-permission tracking, community ingestion/review, normalized evidence contracts, deduplication, and deletion propagation
 - Versioned study wizard, applicable review gates, consent/enrollment state transitions and withdrawal/export workflows
-- Reviewed clinic privacy controls before anything leaves the node, including cross-release and overlapping-cohort protection
-- Node registration and identity, authenticated Summary File submission, and evidence-exchange administration
+- Reviewed clinic privacy controls before anything leaves an installation, including cross-release and overlapping-cohort protection
+- Installation registration and identity, authenticated clinic aggregate submission, and clinic data exchange administration
 - Reviewed compatible meta-analysis, provenance-linked releases and retraction/recomputation
 - A treatment-effect estimator for clinical records (before and after starting a treatment, or treated against a comparison group). The existing engines only compute within-person correlations.
-- A Clinic Node that a clinic can install and run itself
+- Packaging for an independent installation that a clinic can operate itself
 
 ## Open decisions
 
-1. **Existing tracking data.** How to ask people with data in the legacy app or in dfda.earth's tracking whether to move it into a Safe, and what happens to data from people who don't answer.
+1. **Existing tracking data.** How to ask people with data in the legacy app or in dfda.earth's tracking whether to move it into their personal health workspace, and what happens to data from people who don't answer.
 2. **Source approvals.** Which community sources permit the intended processing, retention and publication, and on what terms? No approval is assumed for Reddit.
 3. **Methods and review ownership.** Name accountable reviewers for terminology, extraction, statistical methods, study approvals and privacy releases before their respective publication gates.
-4. **Independent installation.** Select/test the supported hosting stack, update ownership and auth/identity handoff; local encrypted Safe semantics remain a separately scoped design.
+4. **Independent installation.** Select/test the supported hosting stack, update ownership and auth/identity handoff; a locally encrypted personal client remains a separately scoped design.
 5. **Federation security/privacy profile.** Approve the release policy, overlap handling, signing/auth scheme and downstream withdrawal behavior before implementing public clinic exchange.

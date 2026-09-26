@@ -2,7 +2,7 @@
 
 **Decision, 2026-09-26:** one configurable dFDA product, with patient, clinic,
 researcher, and public interfaces; optional independent installations; and an
-optional federated evidence exchange. This is a target architecture, not a claim
+optional federated clinic data exchange. This is a target architecture, not a claim
 that independent installation, tenant isolation, encryption, or federation works
 today. See the [inventory](APPS-AND-FEATURES.md) for present code and the
 [migration plan](MIGRATION.md#order) for the single implementation sequence.
@@ -14,28 +14,58 @@ validation is not a prerequisite for showing the demo. The
 [estimate policy](EVIDENCE-AND-EXCHANGE.md#demo-estimates-and-progressive-improvement)
 separates provisional best estimates, example data and source-backed results.
 
+## Naming guide
+
+Use names that describe a person's workspace, the data, or the operation. These
+are responsibilities within one product, not a list of separate apps.
+
+| Name | Meaning |
+| --- | --- |
+| Personal health workspace | A person's tracking, imports, reports and sharing controls |
+| Clinic workspace | The provider/team interface for authorized patient and study work |
+| Independent installation | A separately operated copy of the same product, with its own configuration, auth and records |
+| Health vocabulary (`packages/health-vocabulary`) | Shared IDs, names, aliases, units and cross-source mappings for conditions, treatments and outcomes |
+| Evidence pipeline | Import, normalize, review, analyze and publish sources and estimates |
+| Clinic data exchange | Optional authenticated sharing of approved clinic aggregates between installations |
+| Clinic aggregates (`packages/clinic-aggregates`) | Group-level clinic statistics and their validation rules, represented by `ClinicSummary`; not raw patient records |
+| Evidence types | Distinct categories such as patient reports, community reports and clinical study results; separate from example/model/source-backed origin |
+| Published analysis version (`PublishedAnalysisVersion`) | A dated, versioned set of analysis results, methods and input references |
+
+For example, the health vocabulary can map "hours slept" and "sleep duration" to
+one outcome while preserving source units and defining supported conversions.
+It is shared data/logic, not another application. Units alone do not make different
+outcomes equivalent; mappings retain context and review status.
+
+`ModelEstimate` means a provisional model-generated number; `DemoExample` means
+synthetic data used to demonstrate a feature. Neither is an observed study result.
+Trial search, treatment ratings, study protocol and Outcome Label keep their names.
+The proposed package/type names have not shipped; this cleanup does not rename
+runtime code, database fields or external URLs.
+
 ## One product, several responsibilities
 
 | Responsibility | Product surface | Implementation boundary |
 | --- | --- | --- |
-| Personal workspace / Digital Twin Safe role | Tracking, imports, treatment reports, study participation, sharing controls | Patient interface in `apps/web`; private records and explicit access grants |
-| Clinic Node | Provider workflows and clinic-operated study management | Provider interface in the same codebase; independent installation has its own records, auth, storage, configuration, and credentials |
+| Personal health workspace | Tracking, imports, treatment reports, study participation, sharing controls | Patient interface in `apps/web`; private records and explicit access grants |
+| Clinic workspace | Provider workflows and clinic-operated study management | Provider interface in the same codebase; independent installation is an optional hosting choice, not a separate interface/app |
 | Public demo and evidence | Condition/treatment comparisons, labeled estimates/examples, source links, reviews, study discovery | Public pages in `apps/web`, reading publication views that preserve data origin, not unrestricted patient tables |
-| Evidence exchange / aggregator | Validate contributions, track provenance, pool compatible estimates, publish releases, administer contributing nodes | App-owned server modules and background jobs initially; a separately operated service only when justified |
+| Evidence pipeline | Import sources, track provenance, review estimates, analyze compatible inputs and publish results | App-owned server modules and restricted jobs; works without clinic data sharing |
+| Clinic data exchange | Register contributing installations, authenticate aggregate submissions and track corrections/withdrawals | Optional app-owned administration and restricted receiving jobs; accepted data enters the evidence pipeline |
 
-The aggregator combines evidence; it is not another required user-facing app.
-It also does not automatically receive people's health records. Different
-evidence lanes remain distinct, as defined in [Evidence and exchange](EVIDENCE-AND-EXCHANGE.md).
+The evidence pipeline processes evidence; it is not another required user-facing
+app and does not require a clinic data exchange. The exchange does not automatically
+receive people's health records. Different
+evidence types remain distinct, as defined in [Evidence and exchange](EVIDENCE-AND-EXCHANGE.md).
 A registry record and its AACT copy are one underlying study, not two sources.
 
-An independently operated evidence exchange should be possible using the same
+An independently operated clinic data exchange should be possible using the same
 versioned contracts. A default public index at dfda.earth need not be the only
-permitted aggregator. Participation in federation is opt-in; a clinic should
+permitted exchange operator. Participation in federation is opt-in; a clinic should
 remain useful while disconnected from it.
 
 ### Same code does not mean shared custody
 
-- A hosted personal workspace and an independently operated clinic can use the
+- A hosted personal health workspace and an independently operated clinic can use the
   same maintained release without sharing a database or accepting each other's
   login tokens automatically.
 - A clinician accesses only records authorized for that clinician and purpose.
@@ -50,11 +80,11 @@ remain useful while disconnected from it.
 - Personal export and transfer are user-directed. Moving between clinics must
   not require silently transferring an entire organization's records.
 
-### What "Safe" promises
+### Personal health workspace and storage guarantees
 
 Current patient screens do not establish local-first storage or operator-blind
 end-to-end encryption. Describe the initial implementation as a hosted personal
-workspace. Retain Digital Twin Safe as the product role, not a security claim.
+health workspace, not a digital twin or an encrypted vault.
 If user-held keys/local storage become a requirement, specify the threat model,
 recovery, sharing, revocation, and computation model before claiming that the
 host cannot read data. A dedicated client could share the same domain packages;
@@ -103,15 +133,15 @@ create empty packages just to match this table.
 | `apps/web/lib/data-export` | Authorized personal export/import orchestration and transfer audit |
 | `apps/web/worker` and `apps/web/cron-enqueuer.ts` | Durable ingestion, refresh, validation, analysis, publication, deletion propagation, and reminders; supporting processes, not separate products |
 | `apps/web/supabase/migrations` | Canonical SQL schema, access policies, and publication views; no new canonical database package |
-| `packages/codebook` | Versioned IDs, terminology mappings, units, outcome direction, and mapping review status |
-| `packages/evidence` | Source/report/effect/model-estimate/release contracts, validators, provenance and deduplication primitives; no credentials or database access |
+| `packages/health-vocabulary` | Versioned IDs, terminology mappings, units, outcome direction, and mapping review status |
+| `packages/evidence` | Source/report/effect/model-estimate/demo-example/published-analysis-version contracts, validators, provenance and deduplication primitives; no credentials or database access |
 | `packages/trials` | ClinicalTrials.gov/AACT adapters and parsing, trial discovery, public study-protocol contract |
 | `packages/analysis` | Deterministic descriptive scores, N-of-1 analysis, study-effect estimation, compatible meta-analysis and uncertainty; tested methods, not source fetching |
 | `packages/importers` | Wearable/app export parsing and personal-data export contract, not a central OAuth token store |
-| `packages/summary-file` | Clinic aggregate exchange contract and validators; never the format for public comments or personal record transfer |
+| `packages/clinic-aggregates` | Clinic aggregate exchange contract and validators; never the format for public comments or personal record transfer |
 
-Dependency direction: `codebook` is foundational; `evidence` uses its identifiers;
-`trials`, `analysis`, `importers`, and `summary-file` may consume shared contracts;
+Dependency direction: `health-vocabulary` is foundational; `evidence` uses its identifiers;
+`trials`, `analysis`, `importers`, and `clinic-aggregates` may consume shared contracts;
 app modules compose them. Shared packages do not import app actions or one
 another cyclically. Wire contracts have one owner, not duplicated validators in
 each deployment.
@@ -123,17 +153,17 @@ process credentials, restricted database roles, and explicit publication views
 must prevent those jobs from reading private patient records. The same repo can
 produce multiple restricted processes without becoming multiple product apps.
 
-Split an aggregator service when independent operators, restricted credentials,
+Split evidence-pipeline or clinic-data-exchange services when independent operators, restricted credentials,
 failure isolation, or scaling require it. Do not wait for scale to enforce data
-isolation. No `apps/aggregator` directory or central patient database is required
-by this plan.
+isolation. No additional top-level app or central patient database is required by
+this plan.
 
 ## First useful product
 
 A visitor first sees a coherent demo, including labeled current best estimates
 where source-backed coverage is incomplete and explicit examples of planned flows.
 Improve it incrementally into a hosted loop where a person can compare separate
-evidence lanes for a treatment/condition, open original sources, contribute a
+evidence types for a treatment/condition, open original sources, contribute a
 structured report, track their outcomes, and discover or propose a study. Mark
 simulated versus working interactions; live patient/study use retains its access,
 consent and review gates. Then prove a
