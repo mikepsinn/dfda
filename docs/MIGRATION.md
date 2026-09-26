@@ -42,6 +42,13 @@ defines that boundary. Real patient access, consent and study recruitment retain
 their own safeguards; demonstrating a workflow does not establish that it is ready
 for live clinical use.
 
+Populate the demo with versioned JSON/JSONL data packs and one validated importer,
+then expose that importer through scoped evidence MCP tools and an admin review
+screen. Keep these separate from private tracking permissions; agents submit
+structured records, not arbitrary SQL. The [data-population specification](EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
+defines locations, previews, repeatable imports and publication controls. This is
+planned work; no importer, MCP tool or data pack is created by these docs.
+
 ## Where things are today
 
 | Repository | What it has | Runs at |
@@ -110,7 +117,7 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 
 | Feature in optimitron `apps/dfda` | In `apps/web` | Notes |
 | --- | --- | --- |
-| MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route over the web app's existing measurement and reminder code | Signs in through the web app's own OAuth server, which needs three changes first: dynamic client registration, the standard `.well-known` metadata, and a token endpoint that accepts form-encoded requests (it reads only JSON today, and OAuth clients send forms). The existing actions get their database client from the Supabase session cookie, so the route builds one from the bearer token instead of calling them as they are. |
+| MCP server: 11 tools for measurements, reminders and notifications | A new `/api/mcp` route over the web app's existing measurement and reminder code | Signs in through the web app's own OAuth server, which needs three changes first: dynamic client registration, the standard `.well-known` metadata, and a token endpoint that accepts form-encoded requests (it reads only JSON today, and OAuth clients send forms). The existing actions get their database client from the Supabase session cookie, so the route builds one from the bearer token instead of calling them as they are. This is the tracking tool group; new evidence-curation tools use separate scopes over the shared importer. |
 | REST API (`/api/v1`: measurements, reminders, notifications, variables) and its generated OpenAPI document | Next to the existing OpenAPI route | Same auth as the MCP server |
 | Trial search | The existing `find-trials` page, using `packages/trials` | optimitron's ClinicalTrials.gov client replaces the web app's unused helper |
 | Landing, about and FAQ content | Existing public pages | Copy only |
@@ -298,27 +305,50 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | curedao-api analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
 | AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
-| `apps/web` demo data | Supabase seeds | Retain useful examples with persistent example-data labels and separation from actual patient/study records; distinguish illustrative seeds from provisional estimates. Improve the demo rather than clearing it before cutover. |
+| `apps/web` demo data | Existing Supabase seeds; planned versioned packs under `apps/web/data/demo/` | Adapt useful examples/estimates into the common contracts and importer; preserve labels, source permissions and separation from live records. Preview revisions, preserve user edits and prevent duplicate/resurrected records on rerun. Do not clear the demo or patient tables. |
 
 ## Order
 
+This is the single delivery roadmap, not a list of completed milestones. Start
+with a small working slice of step 1, then grow the curedao-api replacement and
+evidence workflows incrementally. The [inventory](APPS-AND-FEATURES.md) tracks
+present code separately from these acceptance gates.
+
 | Step | Deliverable | Exit gate |
 | --- | --- | --- |
-| 1. Demo clarity and legacy baseline | Preserve useful demo content; label examples, provisional estimates and observed-data analyses; inventory curedao-api workflows, capture reference fixtures and import eligible historical study results with their reproduction status; establish provenance, vocabulary and access boundaries | Demo stays populated; labels persist on cards/charts/exports; reference scope and unknowns are recorded; historical displays have permission/display review and private/public authorization tests pass |
-| 2. Reproduce the core loop and improve evidence | Implement the bounded tracking/import -> history/chart -> predictor search -> personal/population study -> report/export loop, reminders and selected connectors; add patient ratings, trial discovery and better references alongside existing estimates | End-to-end workflow, reconciliation and numerical tests pass for the selected scope; differences/corrections are documented, imported versus reproduced results remain distinct, and incomplete coverage does not block the demo; broader parity checklist remains open until verified |
-| 3. Participation and community pilot | Structured reports, personal tracking, observational protocol wizard and reviewed join flow; limited community-source ingestion only when approved | Consent/protocol versioning, withdrawal and deletion tests pass; users can follow evidence -> report/track -> discover/propose/join without treating interest as external enrollment |
-| 4. dfda.earth cutover | MCP, REST, trial search and text logging in the base app; migrate the domain and accepted replacement surfaces incrementally | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified; unreplaced legacy workflows remain reachable and are not claimed complete |
+| 1. Populated demo, shared importer and legacy baseline | Keep useful content; add versioned labeled data packs, minimum record schemas and a CLI importer with preview/replay protection; inventory curedao-api workflows, capture reference fixtures and import eligible historical results with explicit status | One bounded public view reads validated imported records; labels/links survive charts and exports; reruns preserve edits and avoid duplicates; source/permission checks, private/public isolation and demo/source-backed separation pass; reference scope and unknowns are recorded |
+| 2. Reproduce the core loop and enable agent curation | Implement tracking/import -> history/chart -> predictor search -> personal/population study -> report/export, reminders and selected connectors; add ratings/trial discovery and scoped MCP/admin adapters over the same importer | End-to-end workflow and numerical comparisons pass for the selected scope; reviewed differences remain explicit; adapters enforce the same validation, access and publication rules; broader parity checklist remains open until verified |
+| 3. Participation and community pilot | Structured patient reports, observational protocol wizard and reviewed join flow; approved community-source ingestion, reviewed extraction, separate scores and source-linked drill-down | Consent/protocol versioning, source approval, duplicate handling, withdrawal and deletion tests pass; users can inspect summary -> report -> source and follow report/track -> discover/propose/join without treating interest as external enrollment |
+| 4. dfda.earth cutover | Tracking MCP, REST, trial search and text logging in the base app; migrate the domain and accepted replacement surfaces incrementally | Auth/account migration and user-directed data transfer tested; Optimitron email dependency removed; redirects, connector reconnection and rollback verified; unreplaced legacy workflows remain reachable and are not claimed complete |
 | 5. Living analyses | Reviewed compatible study synthesis and source-refresh/review pipeline, building on step 2 | Included/excluded study table, overlap handling, bias review, uncertainty, known-answer tests and versioned publication/retraction work; not dependent on clinic federation |
 | 6. Independent installation pilot | Same release with configurable branding and supported deployment packaging | One independent clinic can install, operate, export, back up/restore and upgrade without a fork; cross-operator isolation tested; no federation required |
 | 7. Optional clinic data exchange | `ClinicSummary`, installation identity, authenticated submissions, review and publication; reuse the evidence pipeline's compatible analysis methods | Sender/receiver privacy threat-model review and adversarial release tests pass, plus replay/revocation/overlap/withdrawal tests; no raw records sent |
 | 8. Legacy retirement | Complete the agreed curedao-api feature baseline, move only authorized records and retire superseded legacy services | Every inventoried workflow is accepted or explicitly deferred/retired by the product owner; study/variable links and clients have a tested continuity path; user choice/export, reconciliation, retention/nonresponse policy and rollback/archive plan approved |
 
-Steps 3 and 5 can develop in parallel with cutover when their prerequisites are
-met; they must not delay a clearly labeled, useful demo and incremental improvement
+MCP/admin adapters follow the importer once scoped authentication is ready; they
+do not block the first demo or numerical reproduction work. Steps 3 and 5 can
+develop in parallel with cutover when their prerequisites are met; they must not
+delay a clearly labeled, useful demo and incremental improvement
 of its estimates. Independent hosting and federation are not prerequisites for the
 first useful hosted product. Retire legacy services when their migration gates pass,
-not merely because a later step
-number has been reached. Detailed tests live in the [evidence specification](EVIDENCE-AND-EXCHANGE.md#acceptance-tests-required-with-implementation).
+not merely because a later step number has been reached; step 8 can happen before
+optional steps 6 and 7. Detailed tests live in the [evidence specification](EVIDENCE-AND-EXCHANGE.md#acceptance-tests-required-with-implementation).
+
+### Next implementation slice
+
+For one bounded condition/treatment view, adapt useful existing demo content into
+a small versioned data pack; implement only its required contracts and the shared
+importer's validate/preview/apply/status path; and render imported publication
+records with persistent origin labels and source links. Test replay, conflicting
+revisions, private-data rejection and preservation of existing user records.
+Capture one representative curedao-api study's reference inputs/settings/results
+in parallel, subject to data access, so the next slice can reproduce its calculation
+and report. Unavailable private inputs do not block the demo-pack slice.
+
+After that foundation, connect MCP/admin clients and extend the legacy tracking/
+analysis loop. This sequence does not require all twelve contracts, a full Reddit
+integration, autonomous agent infrastructure or clinic federation before any useful
+feature ships. No calendar dates are promised until implementation is scoped.
 
 ## Rules for published numbers
 
@@ -339,6 +369,7 @@ The following remain new work:
 
 - A parser that turns posted trial results into comparisons between study groups
 - Source-permission tracking, community ingestion/review, normalized evidence contracts, deduplication, and deletion propagation
+- Versioned demo packs and one validated importer, followed by scoped MCP/admin clients, batch previews/status, replay protection and separate publication permissions
 - Versioned study wizard, applicable review gates, consent/enrollment state transitions and withdrawal/export workflows
 - Reviewed clinic privacy controls before anything leaves an installation, including cross-release and overlapping-cohort protection
 - Installation registration and identity, authenticated clinic aggregate submission, and clinic data exchange administration

@@ -99,6 +99,10 @@ All rows below describe planned ingestion/publication, not verified live pipelin
 
 The [source/storage map and contracts](EVIDENCE-AND-EXCHANGE.md) also cover
 personal-data exports, corrections/withdrawals, provenance and published analysis versions.
+The [data-population plan](EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
+starts with versioned demo packs and one importer, then adds scoped MCP and admin
+clients. None of those new import/curation interfaces is established by existing
+tracking screens or by the planned tracking MCP migration.
 
 ### Extraction checklist
 
@@ -144,6 +148,8 @@ deferred code remains available without maintaining another product.
 ## Planned packages and product features
 
 These package directories do not yet exist in the inventoried master tree.
+Implement the contracts needed by the first working slice, not empty scaffolding
+for every planned package. See the [next implementation slice](MIGRATION.md#next-implementation-slice).
 
 | Planned package | Features | Starting point |
 | --- | --- | --- |
@@ -156,6 +162,7 @@ These package directories do not yet exist in the inventoried master tree.
 
 | Product component | Features still to build | Intended location |
 | --- | --- | --- |
+| Demo data and agent curation | Versioned data packs; common validate/preview/apply/status importer; scoped MCP tools and admin batch review; repeatable imports and separate publication permissions | Proposed `apps/web/data/demo/` and `apps/web/lib/evidence/import`, restricted jobs and thin CLI/MCP/admin adapters; shared record schemas remain in `packages/evidence` and their other designated owners |
 | Legacy app and study parity | Tracking-to-study journey, predictor search, charts, imported/reproduced/corrected personal/population reports, and migration reconciliation | Existing patient/public routes and restricted app analysis jobs; shared `analysis` and `evidence` packages; [acceptance baseline](MIGRATION.md#what-comes-from-curedao-api) |
 | Community evidence | Permitted source adapters, source-linked extraction/review, separate scores, corrections and deletion propagation | `apps/web/lib/evidence`, existing worker and planned evidence/analysis packages |
 | Create/join studies | Personal tracking, observational protocols and interventional proposals; versioned review/consent/enrollment flow | `apps/web/lib/studies` extending current trial/enrollment actions and UI |

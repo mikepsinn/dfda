@@ -139,6 +139,8 @@ create empty packages just to match this table.
 | --- | --- |
 | `apps/web/app` | Existing public, patient, provider, researcher, and admin routes; extend these instead of duplicating sites |
 | `apps/web/lib/evidence` | Source access adapters (including legacy study imports and approved Reddit ingestion), estimate generation/import and revision, analysis orchestration, review, persistence and publication; calls shared parsers/methods and renders approved result projections |
+| `apps/web/lib/evidence/import` | Planned shared validate/preview/apply/status service, manifest handling, batch audit/replay protection and publication-policy enforcement; CLI, MCP and admin/API clients call the same service |
+| `apps/web/data/demo` | Planned versioned JSON/JSONL demo packs with explicit per-record origins; only non-sensitive, Git-redistributable content, not private patient records or restricted source payloads |
 | `apps/web/lib/studies` | Study wizard, eligibility, consent/enrollment state machine, protocol review and publication; reuse existing trial/enrollment actions and tables where appropriate |
 | `apps/web/lib/instance` | Validated branding/module configuration and operator administration |
 | `apps/web/lib/data-export` | Authorized personal export/import orchestration and transfer audit |
@@ -156,6 +158,15 @@ Dependency direction: `health-vocabulary` is foundational; `evidence` uses its i
 app modules compose them. Shared packages do not import app actions or one
 another cyclically. Wire contracts have one owner, not duplicated validators in
 each deployment.
+
+Use the planned MCP surface for narrowly scoped evidence tools as well as the
+separate tracking tool group. CLI imports, agents and the admin/browser interface
+share the same ingestion service and authorization checks; there is no agent-only
+database shortcut. Evidence submission does not grant publication or personal-data
+access. Files/importer ship before MCP/admin adapters. The
+[data-population specification](EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
+owns operation names, origins, preview/retry semantics and publication controls;
+the [roadmap](MIGRATION.md#order) owns their delivery order.
 
 Long-running ingestion belongs in jobs, not a page request. The current worker
 uses a Supabase service-role client; this is **not** the target trust boundary
