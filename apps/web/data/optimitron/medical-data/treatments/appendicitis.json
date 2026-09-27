@@ -1,0 +1,594 @@
+{
+  "conditionName": "Appendicitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:37:24.222Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "surgeryresearchjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf7ZKDXmsSUZ2_6zjdE3SC28GYzHP3i5FPkzhGtmG9AZ36e6Heir71RP9o6U3nBpberIvu0Gi56fAxBsbkYByjCQ8idbWLhC_rAwvRqYr6PeLRKPbokJLBu5zdZTdkK0I8sLekozwduka6Ugdb9X3d6dSkgWvMKtr0kxq---RRDQOKo7pIgrAe193ZFlCDmBKrlMHKQ1grC1REI9WNPrnJVwDTdFfNasJsQ3JtabOIUJNv0-pra13m62Ci51_K38w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1lqc9HRAx0YrCfiiY6SjMCVGTw7CD0vsBeqvET8hOIrsRn4wjPWpSMKARi-UGUGVp11GtuXO9t3URQXZuqMc80v1vxEcHOLk1tdy-OtYKPpSGp5U090yvhHw269dXNlcF3wjgubjE1qAD-vQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI6JAcaFf5w-CHbH5XDZPXd-hM8CHirPy29EJf4fwA_zMA-EWqIppeJRx9aWGhyGvlLuT2CgfzivJg9zvUX5Oyfrsrc-pi_uGJdlGyy6SNGY367JvCGndkXcpqJmO6WkwMQE-NNvN3-5fW8I0FSUJpJv1AqQiBcEqfJXTPTlB2NhYczMhpa-uBUC_Ud-LW2hWcko0CzXkhO_6RnLUltENubphYr0V5AmF6-fGr9kay_wpbk2BMStYPYs4OizcI0HsUhPwoBq4bRDHeMbM9XZ6wA9Y="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX75KsQGn0_yVVklOar4WEXHe-r0WWvTKQ__ojpQDo8287r4l_ZutPfqMu1Z21_w4dIeCoHTw0l9U8VslJhI4p8Jw1tWVsqlf4urt3ArTJZICSIOueHwlZvdO64Ec8SlQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtk415s5_qQ5cR7-RZe5-ie76SJOJSHQrLAl9IlgMvNmnQiY4o7aLVqy1t1kNwOgMxpugAMvaIFstEGveoGzuDCQ-XCg9lknmLMSqs_Q-sWgHY6VtRMkVA4xZOoRTF910qEzztKceLaGY_ggxX"
+        },
+        {
+          "title": "laparoscopyhospital.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxHVUIlr4WRW5q6-hONtb7sPsJIofnJdoQ-33c28dWd2s6YBySUAU96_VfUYyrofcPkb-kA20kwdwpVXDxZYvAwjwGMdhwodzTnEKYG82BzRQzLe3G65mCCf-6jPt7dj8tS-XLd2fOTkHCJzRiXi_9Zt0bcoaXZ_Aozjio9JpOXw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEppmYvz4TIMldYtCN5fWOROgYi07Y6N2X7iIO6e3fvU_6b5PLDwFRSwFeo4Ikk7zOOf3Q3prnfmhgF5hzEeTk_3SRhl46eeNcGcNLS-9m6CFpuQxi_pldJFiwNN5wCNRyYg3kqy32vF7LN458="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMuxyGWpDEhEEhUi_0z91HDy4kHAZpnZhKlxpNhLK5T5Do5ET2PXnDPFo-LHWLypG8G7fLxHvACIqnQMD5gEe_5H9I2DGCdZ9rIo7htV5Oy4EYjcDJimvolrq4LWKr9rdqZ6KUqLBnf1tqIs696f-wKvHyh9rnfRWk1Dquf0OIPu3MEo309OCwI_jdQDgwd4cyQ4Jm2RAx3IJ89AwDdzgQ1XWwxsDJCXYNhkNGKw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUph6MKkcpQSlawMq3AVw6nL9qpeelpIKkhBLF0yo3V4dxVT1l_2VMEuhnhgAEx8pV3BARDznU-YccLdw6fK7EiEZ2-if5Bs2ZADuiYdVkXjJfTq_bkc0agUc4qN33AhMjIYBHOcIiIzBsfIbWkiDxsNS7wViWl9_8EaHJcIJq3LNA_0z5WmIANaHtfRuBRJpYr8k0XBYX-D6nxsqhFlO-gSvtW6Qwvswz78UDRgTHEbpPy28f_T2_uzuXepJwzuVYNjlmxCtE4Ui5EquoQrufkzCCsIs4"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFd9cjHcbW5ZH0YcQqlaGn0yDb6yymWjja0mq2fehM4kX-qG-t1h5be7IQSou6am6iXvoYMpqTy4guazzwe3U1QjIWs94r0MyKf9xIRQAj9kCNcTYrwVtPRnHJb1OqK_QTdjxK4Ew=="
+        },
+        {
+          "title": "redalyc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgl9-72gvYmMq6Jao5HnF25e_7KAOPQDZmQPlni9HUVmNVgjqOAcbG6Dv2Y8BipE65NzwOvbL4HKYCyULDrcPYyHo9HmB4iFHMUj1fzBB7IjykT0P7-uA7WPHqokuM8pBDB-MqOImMrKtJIEkOB4lMSvk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB5UQDn36j01t0dRa1ZW5ziYFUU42eZtzfuP2JCWXtYaa1geO8Rguu911dFzl6-AtEPDbCL9LmnS6hHjVMehQicDXu02nOksR97exvuHYibvQYIXIOhU6-y7ZPprZwDe3JMrjD"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIoFiglh7P2WBXZNjhi7CYhczsTJMRNCW0fIncp_obZr5TDaL7CiAKZr4OU8FmPqpAKMXI2ZcZr-eQymz_IeUcLtUhnvj6VToPKdhfpOrVkQUN79U-nn9iz_tdtIjn_11eEi-yP1w2STgIokTwSHF6l9jm10L82_D6cothnjGwT_CHA2KEFxy8TuJmH5Pnvx8CcIJRQZCQeRebUpfuBVDOh3vpXvBbb_zXjnkUWD9zizG5T90AsMFgIGzQuV33El8dXJlJsFyr6-oJjpgmpcJAEpH7qNEqXTUc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb6Z-MFxiNGYCmoAuet6ECTQ88f7u5V3qFlWWV-tHpz5pibytcqhOBwZUkvtkkr3eVtVez7_KpNMYH_Q39gmk8H-RV0EErtvr-FgUsntZf5DDNICzGw31jPT57eZxtn64H_3Wg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDRoA1YCf24cQOiOJhifBC-naJQIeoiHV0xAFXRB3yA1SrdhDquJo-pE1HXX_MCbBKIQTuirLY5y_p4uDkDoQFqG8g0tZA-LRBBojbeKYu56SCrWJKOaku8CW3Zqg8cw6oGCgOMrXaPO3mQEU="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7FTTfwHtIiCkXbm40iQnsoEvorkTRnCCY1bkjxAIoExQTYhmZC0Ia8xGSwfxkNLBcFdvL6NBlTNW4Zs5b8GF6tCgSkk0ReXl0zdL7oswgogb11B2wzqe-RrX2JWAg4Qr3IIzIjb6GGv_NMopC5I7MxqK5DCd_hczIruoTjVAeCRtZ7_ic9BWFwV29_sOc5g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Appendectomy trials for Appendicitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Appendicitis&intr=Laparoscopic%20Appendectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 500,
+          "totalAnnual": 20000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 20408,
+        "costPerResponder": 20408,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Open Appendectomy",
+          "costDifference": -1000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Laparoscopic Appendectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7/10",
+          "baseline": "8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (VAS)",
+          "percentageChange": -87.5
+        },
+        {
+          "absoluteChange": "-8,000 cells/µL",
+          "baseline": "15,000 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -53.3
+        },
+        {
+          "absoluteChange": "-45 mg/L",
+          "baseline": "50 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "38.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.89
+        }
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "3 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-operative Hospital Stay",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-1 week",
+          "baseline": "2 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Activities",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2/10",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-operative Pain (24h, VAS)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-4 cm",
+          "baseline": "5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incision Scar Length",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Wound infection",
+          "percentage": 3.5
+        },
+        {
+          "name": "Intra-abdominal abscess",
+          "percentage": 1
+        },
+        {
+          "name": "Bleeding requiring transfusion",
+          "percentage": 0.2
+        },
+        {
+          "name": "Bowel injury",
+          "percentage": 0.1
+        },
+        {
+          "name": "Conversion to open surgery",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single procedure, 1-4 weeks recovery",
+      "trials": 141
+    },
+    {
+      "citations": [
+        {
+          "title": "surgeryresearchjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMK_IzhH7NR1VZyaYlkqxqy2P3iU1QR-xrHbKofvebJruFQ69sNSoSrktJfASi4p-sSMhwevssh3ZcYpiMbbM66oB_XBNCvGQMdvROWcASe8KWg_lO15JBxLSpecD4wFE9OitS-tsGv21A_SGRKYQwXBkpazsOACco1mV-R8arBM5uQHc8RbuAbclNgNxDe-jq68JSSq0Bep9dJHU0YtRTh-AAdIzaoEiJAwPv0KQqfhagQBzKtI6Zvtk_9KppFYM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDc4ftN7sI0KQFG-9M3J6d6vveLK5vTMLujhxuW_6-4B5ZUh4yQ-__X202FajYHkeWt221Ri3rToub5hRYaf6H4qefBu9J8VQqi5riixf6EphXRbkR054U5eeqxumYFbI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfOqpHtMt1tm8tAnKZuNUh9cN-lHxxRwmR_snsYAWshtFybXU_tA3mt8PBbDU7VXBCoKSJk50e6jdbrz9711xXXsf4yd-aBzmjxM_IKoKJP788DT8EhxIOep8zAP3BWPMlaNCYq43_Udnat8gk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-itmwEiCB2dENo-4QwBKwBD4lmPNMrgasjlPx9CN8zh5lXn20M4R2S6Vl23WoYzpqWDjivFp4OFXsJw3n9TyqJr_byYcKX148ITmysKiPx9nx7nLjgPeciiB7ZkxUsnb_JnadjiO937CQITtLaQ18zm3GL50V8IlOHYM1lvTALE9sBHZZWFP5U4oQQ3k03uoCI9BAHXTAgQLg-6jDi_OI6bS7QpEFqrtiM_CdWEwGtPJ203Ym8YDg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwy2LM1w5ovhTH7rAS8SkC2sxiI2S97l4qeU6tz8vmKOZHaYFIOkVxIv-f8AiITda1UMsnbCELQ7LlXJiFAShD9G184I2Zwem0Zp4eOh6YVsj5TfFs8n6QDPApRAACjwkKBBQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE17NPtfJcVPFo8SW_b2EQ57gU6fzm0chcFdnuAuak2wYJvqpt6_k_h8VS5qXB-pd8B5UoVrt9MJksaMAVwfG6sWiqbUcG12w_5pHVN_MzTETwanktHIccO8j_ljidr7Z68VGAU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_67HXlTYN-zzv_S29iy1so0qQKDfdBFm_foVO7sq_kRetqGGVk_M1TGNqclxEXCkw8mQ2bQ1B2TcvK7zk0AV8a2C1wVK4pSNT4PNBCuSGxYc1GSIzbSG2xW0Fh4XpHTCk7-ZtJ7F29A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdJixsoMu9bByezdyMq2kIf5eZXni4uwizPMSj03N_Ht2ZSYQHYXAJa8COhQEBrULnz3ZQww6DpmeyUaV6rc9VvwhAwVUxGtvrcBf282RNAwL2Ln5E8YrIooSYT33IoWPSnWUCQ8_U"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqMJhXt6DNV_tgnkaeJpA4kU0qRVwk1CUS_zq8ZvLezxVFAF91yUvuBx8Sr1gd2v5-Z9GZUfmq8OSDSP_bPBsb5pbhO0SVXiF99BTv4vzshg68ffDPdfwk-0VyVEV2Ig1-lEK86uVCiOqWgR4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvfK2j4Q8NoDSd67CKJ8IN57J2dEb_E2RwTt8cSVqLhu-pdl4Gi8VbpzYtOKqmQm2kmte02zOG_N0RBN6yUhBRXM-9Prwak9P2tU5FYLvrzyj8rOTt0R63Ss9SP8vEb0OvlhBrFEoz6eHeCK0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQPZKX6wPnNx0_zOlqk8i6Jf5g_LZgbY7Tjn0Qy-FKymZV67HEcGChxpxG7iq4RLDeJ5d52VWP4ZOIK4jbTlI5fOXgc4lwmzXtg_zCDTkdcH6ob9dIxnikiRdnX25ZWjkA0swVbC12wVtghaaRUSHE3bh3QkTCR-kuKMOVeJtdBDrPsaQfdIiHZ8mzDglBhoPQkl6zZhIeQh1XwjrNXEArwDZW7YJrMIh81W5lulUCNvnzFMXWyjTboXcSJi5c3jfy1WA03ML91zqnfBKM1PjYr8VhMk2YmQyVbpdtly3BocSsFw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnq3HpM2JErPOqBPAqbG1bRj_YZON4hL1CTDrdguk1LWiMfrEqaiCgYubE_b9GtQJpAO6LN0A4B9Tbg1Xp-IMiwAMrOT-J4L7Ye6H09RYQaSqNp04XynnmOHoExMAkTkMr5gtp"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENFZ2eUC5_9ODZ-Z8aycG8CHEi7dRN7aE_RYnvsWwRYP6thipcVGyEvKXo50tFlvyvVkXeTef6Ji4VG__sChmq2Yz8tbKb4vMn5BJRxkr3Gmzp6xh9CiSV5eP-hg1aDNuwAJC-5oreqhYfc0jeQROAFqrFpFLavi6GPp8duaEvTFUz3lC6ha6mI5nC4rGvkhb2OkTMz50p5VJrIwGBRvo604MIaGmsyL8HvROiCftbpF6FpfybUgBKGTrDyP2pdlE4-r_ZmoYWodPJ9tKYhdYT8D7f4RZF9QnVTlCHodWFyMToCmw1igpuoTgnGGEd5cPsBwsJ8jHZbhpNY7AD_gmZ_A=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDIye5VK-bsJZXmO-Ep0N0fB_tmM_4tBEsuFiVpjYdCwdzyULnZANUzy1Peq3UGHHDptMgc_Gh6N8kfPeWrgg1opoaPKYaw3_i8D7cLYleKxIlchmw904Lh6BAaF5IJeanFCVmVStttrFL_XmyWEJt"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy8RlOjy3P6zqEFRNZk67-xI3I3tlQQ-Gvi_wAc9cGM1lWhBedDPT4tpxdeh6MZRdakM1Joc7oT8TnZAc12ZkhzZOUwJn5E-1aNdTtl-BnhWXDQsYPzJl7KviHcQNO-MYSQBUVz84="
+        },
+        {
+          "title": "ClinicalTrials.gov: Open Appendectomy trials for Appendicitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Appendicitis&intr=Open%20Appendectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 700,
+          "totalAnnual": 21000
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": 21429,
+        "costPerResponder": 21429,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Open Appendectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.6/10 score",
+          "baseline": "8/10 score",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Intensity (VAS)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-7.0 x 10^9/L",
+          "baseline": "15.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -47
+        },
+        {
+          "absoluteChange": "-45 mg/L",
+          "baseline": "50 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "38.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.89
+        }
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-17 days",
+          "baseline": "20 days (estimated for complicated, untreated appendicitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-30% absolute risk reduction",
+          "baseline": "30% risk within 48 hours without surgery",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Appendiceal Perforation/Peritonitis",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "30 points (during acute illness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 PCS score)",
+          "percentageChange": 66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Wound infection",
+          "percentage": 7.5
+        },
+        {
+          "name": "Intra-abdominal abscess",
+          "percentage": 1
+        },
+        {
+          "name": "Bleeding requiring transfusion",
+          "percentage": 0.2
+        },
+        {
+          "name": "Bowel injury",
+          "percentage": 0.1
+        },
+        {
+          "name": "Larger scar",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single procedure, 2-6 weeks recovery",
+      "trials": 56
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2-sq7zlBHANi05ffeS7gO7blfYSn6P_pBYtXfI03mhBXIgWJBCWcJairtqRcfpWe6C7neG89Evc-4H68wMY4vv3Y08Ege8s9kVV2vpg94j3Hu7UVp5pIGuKNmBpDL5NE2Xz18"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsEOfoUle1NfAItHbC4MR0jxxrgRmQke9NO3yXrJ-B3ajAfkgfOquPEfYJOlSHnnHqISBz8WXw1ipMDEJ4WHQ4NBg753KsKeuWsAxaeXlRX6S5a8L88U5PHC6mSwtDIMVzcNso"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPgLXbCo096V2ehmHt59f2W9m3OFPozms8S6LO3c7WvbJtwo4PUbiHFCZY37tG15Fb8cdryL4U9t7ZpxMAEBroBUNt6f_HnSLIiZuFeuWPucXm--BlLZVyiaEv-KBEZ0pj11JaRNL68DAubPeemS4EmuYCgY0PG_BzMdQR7oDW1jts67qri3peMCCFF3eTU3_po4b8KPO9fOcIiLRDCKOL-y9MqIVDj83R1ZjlzBrNyuItRNNdVZdvJO8M4jUwtJEP2kinKmSqimRQyAhT659ca1G6vo0MLZpuux8uu6rpye8_s3vO2lJpWcthg8OkV2JNf0GOWMw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa4_H9BN9TNi57cMpcXQQn__xbTO1m5a-kxEIzPAL51DbRN4euHEH8Y31N780a_yP1Z3c0dj2j0SeXGpmCKFuvqeoDpHeCDjt6rqSTnMKIyeWwpj71ZTbL666OiAb98CvOb9lzi648MPN6NUc="
+        },
+        {
+          "title": "siu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3aGJbtWUCEhMTfH5xJ8fA27VqVRXJrN1Xkb1aqpgIkVkTyzghY-1Cphnk_tLM-wDaMLxhu76u99S8Kc0KjiD8PpIpvHnkkFaT96gWoFrgQqS0Uz9LCAgZqPuif8Qa2Dxbxt2EwrLy4x8PCT11ONoB6NXyTWXC3zfsdEBP6TDJKs1cFsMVnA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAzy2d97yxPe2HQfldeCNumqblBqpLt5KQalWS-hdbRF9T-h1U00tVa5VW18jDEWcmWDVnxj22NjdUwzJfMpdo8_USz6qrK3deQneWA5i-OH9VL0-VDXFdeCg4OKhpsMQrpxzzxthMQYB5XrwV"
+        },
+        {
+          "title": "facs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHMp7GNW0ufrfq83ImeFoIE9Tw6mzdv-MZVRNgqPcm_s-98s_SAT-2dsT7gW_qnz-5dzLucJcScysKfhKXzUk1G7V6rXdm08G0WmRgFQk1Wp0dbC59-PM5HcrDHZXkn6Y2ov87d7SkhCxqL4fm1KjsweVpmWkT5bYZ0KCRW5ix6juZ-mjxnoIgeGlJoybG9u_icIADNsLnta8llb2l9Ec-VZKICSkAoVsIGHLdlHKQvTw5LoJqAuu3kbaBHJJyiuZp9yOVQtDTzvUXQkJgv3p9nV-qdByVsLTkDiNr3WY4Th-mCy23iYi3hnnhgV2EBA=="
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQAM1gT1Mqp6fzvQFnhiIwqP0TRdqDe8Orp0EbFS5A5JB6TZVWfEUVhG4HKaFO4Iu_5dqSxvSGd8vpxpHxGaDq9Oq9vZk70n0JS_s_phXqi-qonCzON7MGWTg9GniEqW-f-hBfKpCLX19OMfZTixHvIKi-dsgiy_2r7LNMlFTV9TqWHWDTT9wiCSQX5WfXCQOME6_cFp2QoZ4o4K6QOOIT-g=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPTUaq3byXLwmFQM-QU3nTki8nWfO04azgTf-YhHAt7HW2cZW1WWOxf0U8Gcy8KXo_BSRLsHZ14jKdlrtHyc4aSGdLDrX4DgFQ0DCxL_2HR_Hly9NSsnUnWBIOYHCJ2xu_q0JdXgY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Antibiotic Therapy (for uncomplicated appendicitis) trials for Appendicitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Appendicitis&intr=Antibiotic%20Therapy%20(for%20uncomplicated%20appendicitis)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Ertapenem 1g IV daily for 3-5 days, then oral equivalent for 5-7 days; or Cefotaxime 1g IV q8h + Metronidazole 500mg IV q8h for 3-5 days, then oral Amoxicillin-Clavulanate for 5-7 days.",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4667,
+        "costPerResponder": 4667,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": -0.02,
+        "vsComparator": {
+          "comparatorName": "Laparoscopic Appendectomy",
+          "costDifference": -16500,
+          "dominates": false,
+          "qalysGainedDifference": -0.02
+        }
+      },
+      "name": "Antibiotic Therapy (for uncomplicated appendicitis)",
+      "nnh": 4,
+      "nnt": 1.3,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7/10 (Numeric Rating Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Score",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-9,000 cells/µL",
+          "baseline": "15,000 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-70 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein",
+          "percentageChange": -87.5
+        },
+        {
+          "absoluteChange": "-70 percentage points",
+          "baseline": "100% (historic standard of care prior to antibiotic therapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of Surgical Intervention (within 30 days)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.5 days",
+          "baseline": "2.5 days (average for surgical appendectomy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Initial Hospital Stay",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "14 days (post-surgical appendectomy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Activities",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-$3,000",
+          "baseline": "$15,000 (average for surgical appendectomy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Healthcare Cost (initial episode)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 7
+        },
+        {
+          "name": "Allergic reaction",
+          "percentage": 3
+        },
+        {
+          "name": "C. difficile infection",
+          "percentage": 0.5
+        },
+        {
+          "name": "Treatment failure requiring appendectomy",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "24-48 hours for symptom improvement",
+      "treatmentDuration": "7-14 days (antibiotics), up to 1 year observation for recurrence",
+      "trials": 13
+    }
+  ]
+}

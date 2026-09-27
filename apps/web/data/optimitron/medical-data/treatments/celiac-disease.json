@@ -1,0 +1,743 @@
+{
+  "conditionName": "Celiac Disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:41:03.131Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRpo1uOcxecyQdsk5JKOACQ_R33MKuZTdh6ExIaGk5wl1UYJ5Q7xfVHx79vfbva7AxLHF7UsM1j23Ic4cQMHtCdDjnrj1r7F6HP5dWz1NpX6X7QIlEUXTh7Hl64hf8S9ci0EFL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBL6v0VacTePcZYWqHbk_PDgcWoGKIB6Yxmi52GJWFgO9TbAZTmv3SZ1TxdnCI9YBM2nCaLnuKPS5IfX-at94jFRrUVCfSKJMo5Qzl1uhqzcG4HWndti0FL1oP_E9bjDDQaVziijLm-zXMqeIqsHtYqtzWFZXKyiE4-5e6zQo_9C05jL2yv_sbAytwarOZr2TwMqFK-M0OkDeSZiqf3HvCkm3z--22RWeuC1UVN9UUysZ2wnpxfu4X"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzw1HR6yJBKZs1XfZZTyTh63YLrd2btH4KFn_U5r34youu6bBhPi3JXgnXOSoAoGcCN-892VySTwg1pBEcyPZ6Y3xlm3hnEXL0Y5N_lOwGkWALKOiND2Sk-8uTlussJkDzSukMaE9m2KzasO8m"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfZ_4RkqNQe6WL8_ylfeGyG8T49d-PqYo3ZIe_uTQ9-dPq208_u5GMC3BhByzbtW3wRiMkWIll4P37wxuQ60HHo1COM95ACCUikdM2770ybhyvgkDxfLGfzWhys-MKiIKSpxUTKAY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPEphgRbhwK_3mIlC5xUWWsUdUlDTOnyU4sOCWiM6kArh-BiNOOe6dgkTG491ejj3MiA05v2Z0amt2aele_EeDIsF_MrdjXB9p9nXLQUa8s14FPqfnDfF2oP0r_heyfpmfA0dmFy9gRoa9Nasa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWCj7-XJBbra9oZdB0TLuZbz32v1zYuTaX8MJfKEJY692GvHCYz8JZnT9DlMAhfC-Vn2q_4U5J0Y-U3l7qZPZrA7SPY1EGsJpyBFAPBVP05r-41usllt7HOBhsM39EKCNGl0z3AKpcoFVb5UvY2zDM7Pwuv8ePejK9egGv9Xh6mIcwWSUT8Zu4vLcd0ebAO6EKi05S5q5Mn1MGZ0d9loA67FC0iy30bpm72J5E83qknY5Cp-rxh_EtSy1uuAdTd6Sp17c="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4KsnWnX3IWVch5Ac-ybbOMcOz_PdnNBQvITp8Mha7t0yfSZCo0MVHFv-KQ-HE8yqlvyc4VuLmXjA2VLhep9kx77p9dgw6UuLNTgl9VAqzeNXp42XtDDrw8iFfESmMi5D6igM7E4qVNTOMKb0qs_QSe0FOxkY6FzOuZUHhrnNUNZB90hiuIHC1wiTlHPkPe37ztP6zRJaaAc51NCkZcU1t5Ev4eKROsolUjXe3UmK9rt7G40vGjdkQxChUdXzxlrlwncuZFbtehQoiAO4OMO0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gluten-Free Diet (GFD) trials for Celiac Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Celiac%20Disease&intr=Gluten-Free%20Diet%20(GFD)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Strict avoidance of all gluten-containing foods",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 700,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3428,
+        "costPerResponder": 2823,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": true,
+          "prescriptionRequired": false
+        },
+        "qalysGained": 2.5,
+        "vsComparator": null
+      },
+      "name": "Gluten-Free Diet (GFD)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-180 U/mL (to 20 U/mL, within normal limits)",
+          "baseline": "200 U/mL (significantly elevated, >10x ULN)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "tTG-IgA Antibody Levels",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+1.5:1 (e.g., from 0.5:1 to 2.0:1, representing significant healing)",
+          "baseline": "0.5:1 (severe villous atrophy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intestinal Villous Height to Crypt Depth (Vh:Cd) Ratio",
+          "percentageChange": 300
+        },
+        {
+          "absoluteChange": "-42 points (from 60 to 18)",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Celiac Disease Gastrointestinal Symptom Score (0-100, higher is worse)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 85,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points (from 40 to 60)",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Celiac Disease Quality of Life (CD-QOL) Score (0-100, higher is better)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-2.2 points (from 5.5 to 3.3)",
+          "baseline": "5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score (1-7, higher is worse)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+15 ng/mL (from 15 to 30 ng/mL)",
+          "baseline": "15 ng/mL (iron deficiency)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": 100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nutritional deficiencies (e.g., iron, vitamin D, folate)",
+          "percentage": 30
+        },
+        {
+          "name": "Social and psychological burden",
+          "percentage": 50
+        },
+        {
+          "name": "Increased cost of gluten-free foods",
+          "percentage": 100
+        },
+        {
+          "name": "Accidental gluten exposure leading to symptoms",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "Weeks to months for symptom resolution and mucosal healing",
+      "treatmentDuration": "Lifetime",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn0WS-XruKok4nBd6Btfhtnmo7jsqQwwPfI67UevttbYxOgbc_9W6KZSyIuyHhG-huWNPd1g61fBmrLnzPU3Z3E9dcyLY2hMn3MSDiDU49Kd3b2KOdnkbveKzPG5KEUdvd6Fy1"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRXNqMmcIPWOuKXedGIsfj-ziqg-ZIcgGBoR9pFebGQ11pIyvRNLCKnMBrmSwM_MNCpMuDRKhZudgeVMJD7FOduMnuVGLt1LHNS8y4VAcuhBNt71HwtqSq0dNSsYQjzwJ0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcJxrc5gxWlRUmqP5SV67h8JEpRxFMnOfOu_FpSQ-US6ZjqKNGCSpQfemQ4kSYiI73D9HbZTOrPAPtsJnPe7Xz67r2MNQGkLaahwPfTsz9hmkV1n_IAsQv6o0s9MK-uqcs9d__6ofcE-cYyqIXbeue5iIvbmz3tIvxeR6Wn1iirjuU9zrmaCNPx_fhcruoEQlr9GSL_6YVIqcaELIhSe3ycfDgR6RnEZncRAFm6i3dBq61S8rkfcCoMkry6js="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM9_p8LhbsCUPGybPRo47AUOq2Qb6C-KgQiNAp4530sk7SfqCNpvvHfb50CwRoMUf-rZUIIORKlb6x4OgiEmWNolDtOclg8P1gBDYKpim3kVR6sh2kA5HhtIrOjKB7ztb7eMw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2vMtoUXPxkSlUdG4g-kXs_Q7nDDWszsin64XNwx9MEceWyftmhsA1aNcIWlg26Akv3UG3xrLUoLCG6cDmDAa-bcO50qKJuZnn0fdW_Ljj5NouG5ptcC6eHa2kymPsY1qWk3SanMLu3Ddu0k0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpoKP9LZKQQyC_N-IWj2T2vZsMxz77BRVjt8lIm8Rs14rPR6R4k3X9NM8v2Y0_hKESZY_BNrV-_BlJ6wQfFlikzzEURXw7pn2R_sS8WFSnYjKKG_nRWmItf9U1zn5iEJtno34l"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0-XTHAb84el0dO7PcD9ErDvVMkFt7ZoRVeWzU7PwkA5GqYTuLjYuG09QWP46RZCjK42dwtkz8NrcpxQQLjym25aa5dvJMu50D0JRETBUI8X-kGLW0yeQuWBa_KkTkEfjDAYD-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMxiRjOvhIecyRtUkUg21W1U4bIBA1_dWoPGaZNBk0fsMWdQqUoL_0n-lL8683gOHvo-Pp9xzJYFV92_Us-YstgnbYE4Y9IJw89NCRrPbp1qFn2UJivKXG1KN0lv1JDuvykh6QZDhE1XM6j9Y3HdCt14_fOSz3XV9HMQND8UPC5RKPCXmw3ic_jSwlm2gnadEmjNWeTt2PpvqKXcQkX6rZVMLkTeDNI8ZtGO6OdswQ0OMqn3L12f2WHkDR6Df0Z807fmy1iNDOryd6TzTGpl4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw4JpZd86wXHZkXFza0XiQLpTEMrx0OEZfgWNNJbpDxYxNLw5ypowkvxBY3BOUnfjuny_IEb4fSrNb5sgZFDoQzkc7TCvTARaIUdC5aIuce8XRhMLEkQdHOqZ7nKY1QCR-hU_dYrdUdVNv9_0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtJPEC0JnCstuI44SnTFaRvjirDSVIhPVOwA03RHcKQKfZLxulnXEISqilCzvDlUpa9-axxWrauk7pRMlf2HYOw6OWfQsmjsGqIUdzBPmpNrMofU2xJEbu62Dak3siot8C2ae1"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgE64aJ5PYUnSHu3vYfN5D2KVPDQ8_ATPzbZM0j0eWjGEzEb8IxEI5I5aNiWr06BONO5oRTyyeDBXSJHXcGa8RmjTFChZgZdeoAJV7iqpjYeTMcDhCFLgE9076HQR__4Yo95w="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERX2iJhpRSsltSUhMrWTQ_cxb84eY2uti03p6PCwPWB7juFBn79DSiuwlhxVUfgiWiAK9l3l74_BJ8WUhBTCjkWddKmWK2dj-KAYwmtxw_OUnIabFPP_ykU0axf-aimYjl99cpixADVCg0Ld05sWhH_4SrpXN-gZN4_szwdg7Fs7-4I6C3IzVixYSrAcyEINA02XmYHg9iBE6k8fW7pu8LMSViK-oAtGDZIWNmptMwPvGH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEetFwU77sKGNfT0kdbM6dIpgxU_1VE0egiL2b0SxkVz10S6WfDa6bJaepHAAopdHhFSIgBkMisPRvcXl4dDx5bJPR28zmovDOqi5GOV4vnxY-K4Noh1P-vTE8vrRkuJeGgq7DEhwOikuIQH7g="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq5Mx2ArGeBE2tK6dzYj-IP6Hbvcffacb-VGxTt0p5Lz0pXfcg80_9SUrNOFbgVVNRhUR8fGIuDc5wyG78xXCkYJBBLUNBR1vPuWjWnFAxh3kbd1DeShYAZXuheNoHYWAO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL8_jKFqDOxBZt5dITANQe3gvt2siKV9o2dNdxSUMD0c3DYHlDmFmV1ual5QJ3FIGoGUifrz9s2EzcjFSpgncU40tmb8gQwjShfeyui2__xsprDsuCVobs6-vn3uW7UYbaz1C7jw7GO3pprAZk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_XA4atyo8Dlu0uCxrKoYRB9PGC7VzTj1hTQ1NoU2cWUfW2aPiEbdI6YoOH0DDXLCE8oi6kF-5m_MS7LxBXCZRjEW_AFIC7a-hOI-qnvjlXEXRJr6mwTnxkK7-J5afTc3NLAdJ"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3tV5Lv6DwJ4z16dYnNafz6nzfgBTduTryQiSXe81VhYQ41cb386rXmKuO3C023LCZ8SRVKfyaKaRro67ekdRuJZSLSflQSuMhZEFlb6-H36OEE5BFNyU0P7BJT-Cf6wU1yTg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh2xMheWzR4E0pJFEpEQPOAH1DG4w3beShm8CKBmpwN0xgiz0EtHKUVImuFBMd5kU6cXuETs3Rn8imKuyoQ7VlkMtKQl7YcGrb5X1OM36zrMmV1_ffrM4_sZhhmnpPuq6cA4wz_jy9SUetuKR7y68N_SXeo3hXLPoaHYu3kbSYkMPJnxyDooTZFd3Q8H7yYS2ZSSRGXF1KLFlIWP9o5k1mYORhcUkVftJoyXVYX6OWbXnbsWaOt9E73_OU-CnXmLGX0Tm8Eeknyvm6RU4k2UHuXkiZYi4dxA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnpjxIW9x3iN42NTzraSyfFAE9h-NYDBTO_1ePzZrgpdxZFoE9kdGHCZXCIiMXeGX7Tu5_Jq3qqPfPeYpNzk-8lrSp7iqcxDt0hZty3eSXeb3uq7LXqDrV7YuFo7CQYnYOhFB7GMfe8bSbMTtyLGE0j75aZfkoNm_z6HinU-pVR8QnbJQwhPY1yJjfpG6BTSgpPxTKixXXgB55x6BrpAFI6roZBt4ZdJwXQyJY6lR0bCizNW2zdwCVqbVW6hgoFbzBJxGOLXgygtJhp0qhNfBD0omZXpaX4NCCfCX91yDf0WC6-Z8pdRUHY6GzMW_4WObawy8xOvF2_QEAARfmsll7is3cQT5k-h5rZDNz9UH87COXrJtEUo5g9CuYRgGyOK1Bc5hY_bDSv-h1va3ORSfboySspYfBxsV2SdIUuXib_8hGAQaCLu_IAgffkmCZG3NuLevB0l0PalQp8KMYstQI31YHa78i"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUAkDatemjZrAjLyzZgi7IsyoMS9km6lzisq-1iBhqRqvxKZ-XXCChfYyIgM3tg-3ybPU_L_hXWDyqmIGJuirFtg2gBOuMLR-x2o2flXgMMPHZ2WGHKmDB7T816e4y_n1tQ9XXGXMQ3RwmVqY="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdgHdZo0jFFB9DCLGBsQvYGMSlaZrdGG4_KMdVbDU_-EWfpq9Qyc6Suj_JMcXexPlfwkVGUaohj6vynDjrnTTHDjZ8JiwkSey-PEaZYS92CGk8VJvrRoXe3I6cH5RocFB4p1B5"
+        },
+        {
+          "title": "glutenfreesociety.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuG474nM6yOW9e4c00w_rFzaU7_ZPDn014bHpR3-83GbqtuAxrkiQlF7Eik7Uj4W4vgmgDJ2osd5ow1ALCWYmlrTkS90IlFPRxrRB1lf32tq2rAtLRuvRsOtPsC7kApdA6mJq6v1B2Bkr7pzhYzG_kBz8ofyYu4N8sw0SwRJ_CSQX1iv24XasnG172"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoqA03ydACEK0-crqZWZRGzmzhiOcgu-epDpsnYIj9a2wpBw8NRPtXZR7HrieH_BzBr72MMgGbubS0MlWZ8gUSVL56zdqChs8Ni_DXu92uD9pEgbUVu7mexhknSeaSay6ezl5jyzypLzF3B-oqNKb-AtA9CpTcA33uO8iI"
+        },
+        {
+          "title": "bidmc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi6gDFFRH37qNDaVFTWIuc4SV0Gq0EfFB5s66_aBTxRzGzom6zbC0URVuJT90dlZUClvvUGw6xq8yaKv3dYQq_n52_Dm33MnhpTr5rAI6Ixoo7anBT5vJ62kKd2DKWOp5of3BgTDKUaFOAbH4iudOgS294EOlk_HJ0qoe6VzLlKb4f5zpQLiFUPb29vNZPkEER2tZ2LOv08mkCEBkkyMr24XFbQxfEIdyJjAUcrYoqZ4L_6IwTL_dLaXgcnHCccyfw7sV3qC4qcwptXDd5k0-NXSaBH2yKb538eNZG2SXFSFFizGpxbeMsLivbHHbtlqkJN5_b3Mg62xcb5XIg52-LSe0hnnx4s-gJOpbMUHeAsY3G7AUJ4rcUXS-o4bkKLTRCUGBFzBHmpmGUEnbkQzCynHYQXpiao5Mn8vPKKlgBDgRTBek="
+        },
+        {
+          "title": "csusb.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHDcMkrh5mWvmhI3g9r83t1to3L8jHhhyRxdLD-jzbjXCnojPDsAeNp9yztyS6ZQ3XgYESbOjyvbeYijAIKuI4v-xr-UGUnSH5XYaBTmm5kPUah8w5j9I1rbXkboFk6bZ8kGFXM7FqSqlmUWNjYrkGRgbq17tbkMsnOhAf6F0RXMnaS9kxy27CnGQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFc1NftROiLanyMTD7qmGECRuIjUyx8xhISd-kZPAwWyNORplO9tHqvDNqf5ZiNmL-VcmyzVJIDzrW6tNTe6ma1MhV1VXDuP_AWrNyYerM_buGaj6M2pywJHBsdNS1s4A0XeBmk8_Qv5-iGffO4M2epGT-NXgPif7GdP1UJAG9dxY3AGW42pjTDJTMwzjK5DzkzmTm1xCeoE6HbjAreQEFQrvC9KZ-ahkVKaTrF_aOs856BRU3UY_rgilrjX1Xwql_X6yK34oI8D9Q0Wpx1_DhgDZ5YTyPqGY2ZHWXd3DxdcP-4pMCmA3v7irS2hou8j3fvkt_7yr0uIY-Q-P3J_bfCWQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgtm2k7IhK7Oa7WpUk5h5eA1I0waWY5joTzaQS52EdU9IV3LnW-Y9Zh3fW29_cC2Tu2p6XgktQ8UwmqqU-rb5r0yWMhkFc02rbUkfrujO8--o0lmFsUSTMg6QPwToEZKciD4bCbdW_sEXBehJ2kRmBA8vtOoUDkiosKW8_65iRZml_6L5D_3J72uZQmU0m1gbbzteBqTpolocG10OhLBDkNJcNa0rUXeClg-pug5M7-WCVmCQgaf58vlcD6YnnmPJqtuoQVkGULHGbgOkvMBcA0ekjaA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBD23I_FmXJ7fBiNizGKMLZOp3XecZCZVqhnEWtiXlnAsYMy0IRcQnnE4J9y4ERUtW2FWsjfn1IlqbPs5lqY4HngggCCkSd4gEi7USW7_JlDnLr0UMEczisQcXRCnreqvT3kOfz1INGr3JQE9SAtuvq9eW4wHed8L_3Od3Ge8pob-oU2e49Oxsa5vaVr225HJmojfUnCQKyjJqoK9unio="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAwDQ-0FoM73XHxRKkg9Iozmi7FHrvTymcdYND5ttwjxs3qAHpTP8WEtC4Kd3kgLyDz0g0SV5TIFI13hLByqcn5nl9obDwMzEfwhgqhXYxcrxea5fN0o3RUSKnKEX1yVCNNOfCWYG4zRH-mia1Cra4Y2NKCfDvoFJp46Q="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nutritional Supplementation (e.g., Iron, Vitamin D, Folate, B12) trials for Celiac Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Celiac%20Disease&intr=Nutritional%20Supplementation%20(e.g.%2C%20Iron%2C%20Vitamin%20D%2C%20Folate%2C%20B12)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Varies by deficiency and specific supplement",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 150,
+          "sideEffectManagement": 0,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 277,
+        "costPerResponder": 277,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": true,
+          "prescriptionRequired": false
+        },
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Nutritional Supplementation (e.g., Iron, Vitamin D, Folate, B12)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset (iron)",
+          "percentage": 10
+        },
+        {
+          "name": "Hypercalcemia (high dose vitamin D)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Weeks to months to correct deficiencies",
+      "treatmentDuration": "Ongoing as needed",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY3Evkf6wLhm91N9ASxiFIQkdoJGZuuhOdfPSMm28EIGXD2mpiWwCXx9i26RIA1FJr8jxM2OrSteno7OLz4ltdSrKT2Ng_BkBaPXLf4KErMI3kqJ49STnqC_WLKb2l0QZ7gLNCH7_rKP0bVXE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz65d_ZQ-9b2P7xbs5FJGH2zs7zS_aQUCG4OT-0H6x0JQRrLgR9rmkpGaGsOEMCw1Cb8YcTj6uDe2v2zTMb9rorxTxSgk3IxSqBrr3HC4Mjy64WoCxFlfz2TSCMG6u34Cz27hA_dDXTInAPb62"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMuYVaPouxhEQGYwgt7J7W8O3bgsJSMp0hQDTlEEOcg_ZAuK9_9tukaonabCWkd7HUrK5o9Fwy7XiiBdnWAXx3RI2k3POj72zUq557_bN0dPOCp5kaFtSq5mdZCvOIj6aOlPNyeCcakKZtYrPe"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUWTU2zNU90fixPlG1-eu3S5FVsJ3BkTYds8Sqn_oU_TugENI0T59Vggec7ia-ufLU9JQ1Rd1h41S8mmHQrO8HUCYRruwLYnnnxg0q3emn2xa6N_F7HCZ1JyEMl3mXvsvaCG_S5awgaWBMrF_nImGrXLu05Q7E8Db0A27DeRVDpDEONdsgAhwaDAKb3RQ1RPOQl6D6hqLSzwiCoiyVTnVj8WLYkx3P5Wv6qObV5Jz7xD-3LrCS-94p9G5st5bpg-0yzZ4s-9kkPMg="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYhfVvmMPE-t1uIf0LxNzdvsel7Q1jgnyd8FN4SwBvLql_cxSNmX_ik3W0ie1YC33a_7RATvRuDeHaerKn7d9DbK0I5Q6ShjbmNlDz6uBE4VPTuG8BEnIiE-_XeSPfV5sHlnHOjiASL1qM-E-ZgC95Xb_l3PlDnzuZQRF6GY0M6Q4CKxeu7y6UWqjBBgWjspjsTM7RD0RJT1AF1lTSjGhDVTn0votvepmsHg=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDD2rlkfIQcVkipdDyxKe2nbw_fF_u0M8EO4a6Av2ruQBhCzEOPQTm9NA4Dkwf2ZlaOiDGkXKCbK1ZvGZ7dUjBISDnKLi7iXOyBDRHkv81pZO7u2bm2TlghtuKk7iVG7Xoy5x8qE802WjY0Q=="
+        },
+        {
+          "title": "beyondceliac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRwhsumPAxg0sS3qwPrP9h6bvedcMMCFd7BhZ9DR7wdCRdUEqOOTeDx0-UvhNrDiy19SONsZF3Nvo16cKZLmK44YLKqlH7J_VI4uVgld3xHQWUdaQs2o7-Uo-wJmtAP7zD8KbUfD8wRIzKpuMWtgQ4asF0qGVMrVI0Qm-G5b7WtKQBedLqCEqpBR0tzjlSu3_ushIZi5M_YV8IgaAqevPurSBsFN4a6A=="
+        },
+        {
+          "title": "celiac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmOphqZt6DjYP2WSkEI0YyMyIj-wToPYoiLzD4gO3ddIPvIVYspWrKm-dc4b3cJiGfSrpqxs77FjVZf6onwMwqGd4tgaKNPlQ7ETZQXboN5dsfp0CBBFcvFB05Hf2R3cWdRMjzznphLCh-fJlLoVsLe2D7ttCqOqdvn8qm1gsKMmDaHHHTTMutE16AKS_WnPXTqjpT815v56Wa4lXQV_QOe0879fU="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVdiwpQemjZaJ9tnjfGGHBSqVSF5oCfJl9SXUx6qiZRw14A5YvjTFsq3HGQrORk1B_oS1edVk-GEE67hk5OFO0tlU7VdorRio2XwGzq3dcORtirQncxeBzSUx3CQ-AhlW2HCkd1Yw5"
+        },
+        {
+          "title": "beyondceliac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8x8pPg5WzPvtVcwb7s9hfppwW2RMqB7CDwV0iGTxUWht0n-_7RsBqLtjqsl1jTueEt2yktrsUs8bQj_-rT8RzOunbQpxBpmZprnUl3pLWNmAupBVZHgFl6l19gKjMF-PbpWNX9FaCvwwZpc5gB2CZlI8uerJL0q1khxp1mxDnSMw="
+        },
+        {
+          "title": "celiac.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb1olOvERpzhovryQ1V6iQePFrJXbWydcUH6yFwkrPKCzhsJGiLI5LI91SbrPeeAIzYz-n2kr9qYSxEuxIApGT7sxyN7-bjQXcMDel8XCrwiDiDWIoS_YwX7eRgRn5i4CwE6dQbGyt20zbJA4ZUr9ZaqHJAWyfBKhaFgh9EjIXa0u3zuncSIzr_aoAS5KTb6i2hHta6kCPuCh0Ntn84vUdgYtLrjHhXSAFoAoyqP2f3xeM_Tksd6YvOIAG6Lw="
+        },
+        {
+          "title": "celiac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH63UeMlimeehW7DymBwFcUDDETFirxon5MH5ikb262rKjbDvnDkhDwcKFyCm4UwktvseJz2_1vLfhs_7PLroPAg1rcTSrfaPzrnhImLjhvMWdO81YvJUWWcI8xo5FtaBkGOB2S65uT-wA0vphqKd_NpjdJjimP9vDXwwCOrAWgDzzlTbs-1heJRPiKeQPti1Wslz7AqdqOYvu2l89dq4tPB2OnDlVsP8NjXcfOW4PWMUiItA=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm6MPhm1GqAsEjwzpOBdth9_8eL9qeswZAFFwSheNWCiu8WnFawM_zvA4qdPqaal9wXnhWxVhJpg0RwvRs0tRmaZf8BqSbbAOEIqMTLodzOzlf7pdWckFXdFOrH5pROoM5V3ArZQU5GEFbdvV2GTDXi-QJ6Rr3H_0FOViJrBpzn5l-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKVKkCdyGRBlyocJQY7KnFAfZvkqSKo2nbGX3P7JGtCH9gFdGEZlC_4ORDmAUdChrnMfsITBns4rjH4iQGOHfN0083jh9aSqBBSSb7krjr93jcfesvgvGd5m3ACl4WZz3qBVZ3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4qGVBO6pnzgKVSQOd6k_pJqSh7JLHoKfIFV_jfksk5tcD6iMxMBOqcDIYRF3E0iCTdktHIrjfaU-R8e66MeLSroVZp9rS6gfpoH49aG3P_Uht7Y4wAs6vyhwjR9K_vbVlHCZ1kIwf5SKMYiOGO6RAH0I2x_mSczB97MxcYiReKKZ-DN3oSNN3prGM3soHoi9cNAP1V858zl4u638PFV4u0AWHNQHfNjqGs7PdiWWlJ7jJ63UlVKuOlQcBENgR-uQXwntzcdA1ikqqA2nezXe_n6N_85HKjC-zs3Wf8crpk86MXVnDYQY="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9NQ8SzdGHMpNuBDr5vYdgs8IlSVVkZQwpT54jwnB5ty9dExxiFzppDAi70_10fZi0XxkXYyug5zNXjLcbvOnUvwILk0gJMYFyyB_0AWJGPktADLA6F1z6ewWJ7dxZ3R6-R0K-hCsAm07Dh6g6N67dn0GvSOvPmXrTQptw7Bzf7zhjnwGLl2TzUhCPCzgzH8W3_Hr9aJjr8MGjrYiqwsAHNgdm39-nFALaP9oRFmCzfs4SV5m4jCRPNztah2g5tUAkEBfRVO_Quj1f"
+        },
+        {
+          "title": "symbiosisonlinepublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzDOKz28ZO23I4yKcilE86RjP3zvSDuR9fZF16IjNEB2vCTMRq8vytGnwj5SvP-yv6201J2rLkKXe5bf7n3kcH0EajfDO5FRonr6b2FzDxER1Ztm4fF1ethyLmqJE2iH64QqlJDz4p3YE6HG2gyswKBABVjUIaUr9-gjcEwcJ9eESt-kvpIVFFdrsLPneJqU5z8jzUy2GCyUO4Jx_neyFwJ97nos6iimQofrZ2WQpAgPG7I0dYtzq1TiIOogBqzamLiYQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Larazotide Acetate (Investigational) trials for Celiac Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Celiac%20Disease&intr=Larazotide%20Acetate%20(Investigational)"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "0.5 mg three times daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 5150
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": null,
+        "costPerResponder": 12875,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Larazotide Acetate (Investigational)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 2000,
+      "phase": [
+        "Phase 3"
+      ],
+      "remissionRate": null,
+      "responseRate": 40,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "Long-term daily",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "celiac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwF5heO3io6XORMU_DHn24vY3EchvQgf8qsrQQ19VuEZ7s87YVpBD7crhfVhloOjocQrzpT-YdzdQfBzk4NC5KOMlNiT6pkVNGF9zRB9bruWPIHH-ABd4TUZL84NBIqdZhu5IMDyhijv5VRVgoOFBzCNiDiMeaUdclusV9B15sflN9Lr7NSswqcOc9wme9X5FLAm192SpmG0pTjAS4t3eZwOwfRQ=="
+        },
+        {
+          "title": "columbia.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv_9jCr9Gc0nqWrszKnPppZPnaiX6JYMem_99z4fGXqHjELoVwkX9qrrGTVVlItNKGRLGMv5WUhuNEaCGQbOQA7HKpT4UzwqZQiPt8AXYzHR_c2iYdVv2ayTUiQlVGDSBIbj_yQe5GdFGLJgkE_zoTccJvpMJm9fL8eim1x6IAgdTKyVQlnikl_VyABGres4hXi1eVLAP6ct36p_QiIbASA2n427EIT3krSzSAhqCBjMniUsn9F3YwV9YUPYngZ4IJkGbQv5ZW3oAGVReao8aLbbmg9JMgV73vjw6N73gfdh7yJQvPbyPiyYKS0A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_Kxy2A6W5_gBz_whjNiRiIbKADJlMEJQzngZBp5FAEoGoH_1CAWu8tLZZKpXhk98HanXz_4GorYZeYmTg4eodnQP3aZXy-d9C08gMdm8kncVeAaJEDblBCYPwHVnQ0NjoXcwXB-C6eC5Pr5w="
+        },
+        {
+          "title": "celiac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDBprcx6esuN5DJqlcB4bUDn2AcqHjNVHYgB-oZ14-9CI0ZuHSSZ02i_S0qkvu0uww_zFx4KhrX6papsYQ8Lr0jmAZU6k4qDt1wZhnXMEUM-QoO0h61CaFaIVFd7vNoUGh7R4NGE7b80z7rlddMUtSQS8ubLsTD-xiDKwYjminm8hVOHEOK_Vhuw=="
+        },
+        {
+          "title": "beyondceliac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB3v2tB26bbtrJ089XEHFKYHMcg-4qJvbxQQYYJZqB-aNN-0gRa4Z_X7jyG0Bk4PS1iKEn-jjrvPk_F9dBAjn2y362iPmtKoCD_ypJsB0tOp8xAxt6Oyf_p069cRCIRlpfA8Dd5heyEUZw3gzH5_duFNZp5l9Jqc-KpMCB"
+        },
+        {
+          "title": "falkfoundation.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpEkh1eDr02ONvCW4_wAim_XsT56jDXPzOoLodWfohP0Q7efhQ6Yr0LgeZd2lW2qes3IWP7yqFbO0g_1rLph2QbqYyFFsNaqO0ZmsMkR4UrNY250A-Jn8fWQpOKHpL7m5ZCvTlqA1TBmukbKh3cwnSCVRDkDPIwDJePOeRr00883p8MurZsuXdv1QW5ZScG1obpEYHAZS8u5NzB4pTefIHyBusNFB08np2oygEZywXUH46-TfahNu7FQU2pIT5qgRCnqyfOEbs_F0WxHpKQpdHGZRAfAN0DxVqXtbk0_bYCabWBRl1"
+        },
+        {
+          "title": "beyondceliac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsAb0Q6GJlFeKjLghDxGIKy5pWcVXkSOs3UCk48onJZ919VrVxomHp-S1BXD6QfX3ld7hHlw3I_Zs_X6_CRBmZuQ_9nxpLFs27kAVD1N2kTRIt-g2fT1QQCgWqt_i-AegO88TomT43eCg0ZlNQJ1h_XeEVNeR49OgIMupXv55eyU8zkGnUQJXgODvk1nj_juKaxkEzABY9AFT6lVsUKRjVSA4vUiOBG-4DAM7Meh0FlsjnkVMcy91eIJC5NaHsvB_bl5ky"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXu98nIld9iPo3uscwxguzVI4CUvfCn88hcTHcm7sZitYL6UI2zzS1yAcTBstHM-Bidx3GUM_uNVRBflnn4ZKRsJpIVf1lq1_H4Egoe9QBmczhNiundj85bko8gxcCrfy76M36oveemPDZ_HGMx6FyHaneTCVaA7_bu-waMzFjOBndU57uGZ2CI-4OG13qsEOOlGEBot1Yy1AGRTRKW49ajuh_BJiIrLSC-TjfSI9C6Xsl9RqHQps6OhMXz1GRQ5hHW_A8Pgls2w=="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxKai2VmtK_XQ_hXmEMlDRXRxzgpssWLGrTJ2BhYkAxTKbSoBv2Pz3w4wRudLJtrz-uSR7bySK8_Y5kCBxLYlWU2Sly6yAbMcr5BKbwFqxx4c49MgFXa9KhJ8tBbG4sdHc4Syd4mZ7Mh1ppWK347xXHm82f-_aHK-5fjOikxNs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_MzhW3oMsuG5kT440M1QA3L8uv9IiAVudPm0hnPjSDpPTRbjkTs-Ec1BZ-E46mhbuI_uxph6R5qdRGZSSLlXduUdxi9yDWg5lALje4H9v7Dhn2vxDfoRPaESuk_QmeXq8zzhLCGAnydDiva15PT96mmcoQFNKsGPPBPWoL-F1tFgZZBf6VrZymbbcM_JhelEr0NqSjOR_WhtXm597EdHLNNAK0pJKTds9DZLnryR3QOjjofNlCaaX-FBg4sgnWBRU8eceJKdNqY1s6Fxy_nd3Jze144j7cf6P4EsHyhDQK_u_2RLgGaj8BQ=="
+        },
+        {
+          "title": "beyondceliac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw0-yROSrTSW-42yZiGL80hLr2YbWIvILYNXol5tw3n3cNkFtSmzsi45jbzlMcl9BoRuZkRx5H3sHQcegTQcZDS-RI0R1YRi0Nh0ND1M0gopA-40nKCf8h35bbenv1OzKWsb9g3RZBLkke1QpmcrRvnGA6xP2W7ABS9g1YPKa6wgde0WOay2MxZAQRUUyF2cVvjjNRv9f8ecFv6jMV0wGvoRCKK3sDbq9g2vSaS6DnzswE"
+        },
+        {
+          "title": "lifescienceleader.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJjGKY1EDr_34GrEXoSxGQTPVgKcHAFmYLxWkdP2M9RqA4Eqvuy2U4ZC8TQKNodVU5DcdE2hDny20CH7u4_h9zMuSnZsrWwBKUxdtUvHFTyuf2ioud3YR_MRYuXnbc0Ikh7o3aagBn6M4SwRFWycVI40riOgNTSfHntJAdOn9LRsuYbxsw7Z8jfn3k7WNr3_lmqg8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA-gXjrlkAo1dLSsiUDo7WvNL1WxiYGbId8XV7NfJb7ekzbxHdmVGi8AYfCcERvO2qCuzJxdfo6i7weXwaCtb-3lfWyY7SKyaRQwu0sIH10Pz3rK1uDqbOpbI5uBdzTNvnG0-lL0f7jmQiJRX-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvQC_DsUqH9WFG3aoV_CCZDvUWRdHXTXsrRwOVuLU0Fdr4PLgC_ev72t8mmoG4f8c5Seh5EfkbPux1RMHr5gTxK7xBpk-C8eItpoYGrLTj1884wzIk_ZSPvpwwlimKDv8Zc5s="
+        },
+        {
+          "title": "enterothera.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_8R5OJqINWtHsmRZhyF7oqqWwUVgwDedIRrlbJHZQQFiK8mRN175GzdkerVUPgfKLauUpC3vWNKFPI1RaoMFmBYjxjTTcZ8qmvGL7zeZMjan2CyCYbEhIwS7lSdqsOh6uCGplNFjF5egBPuzoQG4kfkatO-tEG0Bjsl4QNn3U1l3xv6RwK2Jo6vAS0fpM7z1J-bbTm36Yj0UN0Bw5pXsapMGO9P56AnzN1xqvHTB-vjA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Latiglutenase (ALV003 / BL-7010) (Investigational) trials for Celiac Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Celiac%20Disease&intr=Latiglutenase%20(ALV003%20%2F%20BL-7010)%20(Investigational)"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "300 mg before meals",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4500,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 4650
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": null,
+        "costPerResponder": 13285,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Latiglutenase (ALV003 / BL-7010) (Investigational)",
+      "nnh": null,
+      "nnt": 9,
+      "participants": 1500,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "remissionRate": null,
+      "responseRate": 35,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 12
+        },
+        {
+          "name": "Flatulence",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "With meals",
+      "treatmentDuration": "Long-term, with meals",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "celiac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEJowvJ9QgUVoPOsIfCfFgktA2sH-N2tkBwpoV2veoEWXLFzYA2Up-5C9CuwDzocTSdiGTZNzgiX_jsRHmUmGCTfYV5uE6hYWbMajz85cgu5xIHFeVBRgQyGreHrma4DBOxaXnzrP8Kw=="
+        },
+        {
+          "title": "beyondceliac.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEQlUn-0YZLy-NuLx6QBMUbJm3AVwOiBSXBJYNiymoMTIvePczOoxGqJk4D14-upinFhdI0rZzvKi_qEkwgv4qwWSARvFA6OViUwfLgIVNR6vJGiUerSMnGQPP6M9Bw3E0tF26JoHvhyBMj58aUK3aj3K2VGGu0-_E8BVqfbVu0DUBv9bNa2CYC1EgBM4PCY7MZEYWUnH38eY080KU_k3DwVodclMM4jILzyK3f2CWC06sYaiHUxPsUiCWqrwidr-nJLIHQPvJHh_ezbpxfv9Ki3s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvGUfDNDxS9zkzA3goafViCwWic0k0pH7IhlbgX82Is1Meh0JMDtkkQ9C-ggoCBlwI4tLAGycASkAeXoedZWaxvLLzXrje0Qn6N_4xMM6noTkzDZYNvh-qvgtuo7G2Z9KR66fbnjXaR7imrQ=="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0GCpSzkT97k_yUH7si3HROQ7uhSj73wEYVTvQDcVFsI8RqgPaeF06r3RZVLlKQiW800k-XThw8OXNHkGlhqMC5lBRpf0VcLV8GY6M9rBLJ_GUQDrVyaD44l5pK6F527Oay12hy8jHB47eWpJ8TeUx-EZZ4l1Cnuq_s_uQVbobOOIYBjPHMxtIJEyJLHgExGpAoHA2P_lhzXCjgdNV63Ps51Zw_JsKclurIv5VYZtKyiSE"
+        },
+        {
+          "title": "tuni.fi",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOE0lBv6awRvYXK8Q90-s9iKLnIO_r8OR3VoNELXZmdww8GMWSu-k_fcBss9oEmpcDmJUJtRCxEKk_cOm97O2YPyLTNU42R8b3dEpZxsGJmV9jACcpAaaMJ1D17x0m9CZro_qatUh7x_Dh0J01YoTAADe3FUNii8J6HQ3I0NVdTX8ENbg4x1034bUxe69kQAQJweX2Blkl4Z51cRtVdmm19LN9"
+        },
+        {
+          "title": "zedira.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrHtGnEm5CFP9nqfOtXDpAr1j5Oc_LEOi95yx3kpxdLaniHxvGlHHlsQn5Q77Hc3iCoB2vfbkU-rzKfZagCO5Kn1wxSL7SyhNdRBU1XfqwNt1uqSqaRBmUDnxf3jCt7pGx3COsSlk9_vNAn3nfDJabri01Nk-QxCBTX8gnjdHnGNog6FDayzp-ets0neC2NS0kK33fXTL49b-OWXYaaC9UrKZVn2ZzCZu1POPyVqKOueFIJvbUJi0PJdjnaDoWZ5IYo1F7kePZ_XlFjEMaWEh9qDzpBZT1mZnMX9D5Y_jz1KO4_1O5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM1D5DbFoQPB7YZY_LNmlV_om-kbDqNg3LBG9jVQA3lA7zdoiE6eNrFS3G5DX7c_B4Ro6S_qwaN0iwDwlrVW_CpQdkOIiCdhpu_uTfZrZbHbyvS-e2FpEcGj7ZKJPQjqnxY-nXz9ttjOlUt74="
+        },
+        {
+          "title": "celiac.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9qt8j2zyfH8RArF2qwwbmBwgPb2t8jR9u4cwGEDQtvi3tWy3H_3R2s6tn5_GnYnWpKlWoeHiRMEW7fBtycmLhUwgdzP1fU62JEJ21gEtd-KhGLdSQa57e1ldzwQgsAzluOMW71LA6fVLfZyG3owMC7EjakgGpP1DycQXJD7vHDvIirHtKzlLTUN1P2JsLPRjbLcR3HYMFnFoaAzE56V3SFxyFE-aKtB9V7nv37E3WGcIK_ze8JMZuA39zMPdiPDT1wm5GYT4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyCuPZgEBxEaMXrC5wwogNDb9OnS70DQexXdAogcwld_q67nlIPb5w_ISCPnwCeHpSMkiMHUhMj-VXtz12i1KiXx2v5vd0grHYRKq15fQyrhaB0FVJ6RBFoEoxpdouWrtVXlbElnAooo0eS3PaoUPG0jvtDtrG73XtoDWkJvB6uDOF2Sr44uT2ANLo1bZYLDv4toG4S_n89WYc-BTAr4XJAR3I3WTiRJTLM1usop7JtOkUhz_L4VkmsGLoWZOO13t1zr87FEaXyZCyYzrNLez6-YozsHMsHuPQQzrXsf1x_yP4o6-yGRKUjjVFn8FR0b80oRmQlLqGUoZa3uU2JuP-fzVw94N-J0o="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6Nk7zEY3lLtIrIWl16iTkzZAF9KWf1MNalR_lJ_NFhOSaBSit2cWLwJPKuVHYm6SAqyaItyeZ6nxN4CdjcehfziYIcZliS2jhg1oj258xJEEa9GIZdFN20yUXpz561e4HNfex"
+        },
+        {
+          "title": "ClinicalTrials.gov: ZED1227 (Investigational) trials for Celiac Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Celiac%20Disease&intr=ZED1227%20(Investigational)"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "10-100 mg daily",
+      "effectiveness": 50,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 6150
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": null,
+        "costPerResponder": 20500,
+        "icer": null,
+        "prescriptionAccess": {
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "ZED1227 (Investigational)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 700,
+      "phase": [
+        "Phase 2"
+      ],
+      "remissionRate": null,
+      "responseRate": 30,
+      "safetyScore": 78,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Abdominal discomfort",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "Long-term daily",
+      "trials": 5
+    }
+  ]
+}

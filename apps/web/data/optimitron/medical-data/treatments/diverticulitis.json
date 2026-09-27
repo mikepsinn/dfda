@@ -1,0 +1,969 @@
+{
+  "conditionName": "Diverticulitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:39:41.648Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM8zfU4iq8rR8RdtGFHK6VANItFVbbKR7eYOiwrO5_tm6dhIRILxqRCUpDXSc_I6oUHgLoJ_y_v7_hxeoOROTzGXftadMGUjCn5mx-AkOHl8jCp4AeynJ0tflvCY2SHP_GYvbS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhVvnonkE7MDDug3MrdDy4P9lOs4eBAaYnJWf1W7wuCLIRnmGdZoo0BvwqvWZftvIQKGoF-b02RBdNL2y1AtRtBPrqGiyh3xL7DP0c8G-l8gIG0dzjiL9MQOsLRV6conbfUvC_8T3fakzpfbGb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCWEFODKohB7lWB-PMRJH-JbkmRO7u3uY7Pc5QBkObXt1GLNCZU9BzRgF84BaAaF4ucg5tBe2bNr6lMxR0ggDijw0r8lDwSAeNteBBWT3RVhmNBy5Ic6K2z9tjec6qljyI9SgqGo9gIDOiWMquqquYyXgG74m_MkLEF9tIcOMsacNjUhhKDQmYypXehW5Vp3zH6puc9VFkTGNx39E9y9TnUH24jyHjqQzRyA7JasL8GN5nb4waLVVXStXyPDrNsuUvil22WNpXfFkOcr2gOgmoSMLwIUZdqQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPFpeN_WQtnYv4kpNzzV8X2hztZFlvlEjXnYRmt347ZCDyB_LPGKFSaUnIm6xqYSAOzaHFXFhOVA4riqezO_tGeWO9Br6EYCxOPXkLYl1cQEqBSTiSbFkF9aXnTNm08RqeFr6_bRjZKKfS-I9dg9ryy-jib9AZVlNfhU_cedxYaCc0oW3wonSNG7i8toLDTWTx8UUiuzqzoBUkqA-LnEHLw7WfOUL11fF-1Y1tznfLBiHbXZm3fxF1ocS2OHoZMCx8IE86iC_5IM8VBi8br-VsROG2UogmlXohlJD0aF0tB7XRrWaZGP-VJ0l9Cgqj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjmBjLGAPbbOlspgoUVjUa_JIAkx1Cdqfiuh-erRcjnqP9H3dhoi9vmnMBgz34QBBYGhH9tFV7q_jIJiG2dIeTlE1kIJJSah0GfPSAKDqUuicvDd0PnSIpEp0KW03LQyGyfw4cFoNFYCj_c2y8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkzGxvGczTCYKnI8OuomNBOR6BYiecJLava83ukyAxYy-qIB8xYtZEa7jAJMziPn2rnzuoinF9KukPqDNfACQaoNhz9feSDyFwRLbIB89D8v-Kqzh2b77duhtjlRps3pJkJ1YmpKl5rz-OMaI="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEyDHJ4z7Ms3DC6j2CIAAKy8dxZS9pefET_LpEGiU1oGvbR5L-ypDai2IDN8jX_LUlYCtmbkL9sTouKCst6OWcDdQNzvmND8pp3UQFn_dqqHOs08rysKhzuKARTMsBRpywNshdEhqfTKj5R9kFqQCfC-5tqtvSqf9w7okhOlCsmJjascXlzhXO9xwr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-HCtHmL8BO_eQFfuZBYjnzfd1XS_yKVS5z5oQ6IzJ0Z9hVtmsomcig3Y49wSa1NSfXFMxlW_CuQ6kWuDXn5FsXWQmeeOSKJEJSF_zR3__W2v4LKAuP4eG85f3tVnSYrcqyr-zvvjGN2OB8kggNDahz1CmIjrcSFIun-yDNVokzCQQI0d4O6wLeP5F3qTBMERWDApDOienzKmAMqzpoWN86FqNfMRNeQX2b_4zwjyGDEwhZYIS2UILFiwOXMOd379g0WcSgL9GYgYB4KKp-90DzFJ5NX9hDr6vinGxoTAddBg="
+        },
+        {
+          "title": "verywellhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsPitusAi1zBGV6pjx4FVrgDUdO4gmWRz7KzcLd2kOkGI2lS4uJqQlUGtSuL986EAKOpFSAmwuA7HC3Z6BQjyC4mWIbT5gM9y-HcnTA6SnmlFxUwUD-B6_KGPW54Jk05L5a84FzYPiZOHRJTDTbBCbYHWEJ0_iKcPGi7PSkIuF0Q=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgHXHR9hcqBwp757vZYBEXYA-AsKeysnPjAV7MGdmTiACpMKVzG_qNqMpnKp8ztmG5DM6O9N2JrOIghTpNGCtmVqObsVT4Ry30TZYfe5JwVMzlD0EDvQcJCWzD5Yqpd8LRWA_U7uwe1vRFImdd4lnG_c88GDIQMg-9A31nSzBeQ2HHGUtuLC8rWqiRvPcrCFcMKVkU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbh3JsYgHqAv8Nm4eOaqcHSErhXyu6So3a9_rvWYJ4SJ0DT_WE34iXuSXbVbX_dhxJeK966F-zxZlP_5QBH_4l9aFrG9t0-YgfNd9YDOcsKqnZ1xKMmGgeYDfHqce4_jG_ws_WfiOJFVVn91c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Conservative Management (Bowel Rest/Clear Liquid Diet) trials for Diverticulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diverticulitis&intr=Conservative%20Management%20(Bowel%20Rest%2FClear%20Liquid%20Diet)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Clear liquids only, then low-fiber solids gradually",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 250,
+        "costPerResponder": 235,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "No treatment (for acute episode)",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Conservative Management (Bowel Rest/Clear Liquid Diet)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Hunger",
+          "percentage": 80
+        },
+        {
+          "name": "Mild fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Headache (from reduced caffeine/sugar intake)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "2-4 days (liquid diet) then gradual reintroduction",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXh446ltYd5L-KXf_ujva3cL9GVcPQjwdcmib7Ck9-6T8mmsHTHykP0muuXjGMrOj-3mijjP5n6F1eG5Fk7qC8FrQvHl4BkVLR4IBj5u4x1K7_1k9AiWBi8wcz2nNbUPKqQBaMXrf1jl98NFY="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKfJxUfKoPuvYiSP9uTqjL2tRoUjeX6vCgQ27xUc98tg4duDXz2AKEfJd3pFZEdDLl4126WQBdtMSM1FeTnNBBCjcfVoMNivShhCS1xT60tJ333MKzVLOo745aCxIiHveBQkz4eQ4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLmcSqDjHF8WKD7ODSx23oM0u6FDN754Yul3mhZrWaPd62AvnPX0Yci0JYFG7Yc79QmtREpjkddMv-USKBhFfj57uhNrJJZM3qq_CIPOdbnKt1vAYNe46bh-j5ukOpH4ZhEXbV164jTWNU9-o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNWmaj-tHqYk99JDgo7tQkiAf8MRhXZPCk_s1pdTQEwes0SgvwmqwY5OOdHoHwVRPV8tmham5iwa8KvI2jhFQW_YatgDEJ1vnpTb8uoAXDYW-qZm_pTZ-sYujNZ8gxUHwJ4PbhLAHWq0JvWTef"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGr5pR_3R63HF-A-sKgt6d1wpQHEXCfm9A8L2kwKplCT2QUc0PmQrqWxcyFYscXIH6bq1JQH3MLu8q0a3wUOJn0m2IgYe3YVQbDlBMlrROAFNPjalg-8v7TeFT18PxaJ3H8_0hoWyexLytwFwS6PT3kSEsFtsqqgLZzWZ95LM1K7Wb5nUEErRuZLwoRtd1Ah7SulRtSTtrGw5qVx5lp_MNs0KgVJBKWLtm14CQbJiQ41ArAyH2TUJ1xcGfP4MC3YwhpjmebZ1fr8KNPT8qGMssmcqrUUFD1H4IZYBhwQQ=="
+        },
+        {
+          "title": "immattersacp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDKo4J7XLu7uQP-8H6ZTQgXiYnt-Um5EreAF563O_2FnxXVr3gOeeQRcKnYUYephg3eVDilamXr6IcXkj542xEZ4izEL6G-0ul2_F1ntMvyRjU6tW9stfiW6XrjQT-HnxPrhYPe_bHsUgoYqIisU7NMmXdecCy8Keq_Q7RD42AAyQdeDf4T0i82w=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF2X1V9W9c7-AfCqkrwEaj6tCPzAqDSLcIagrqy-x1J24VvQQt60AK4i_KzkkNGmR1ZoUyVep35gIZBhZxYfPOG1XIeeWiTFjRhMPZlSdBLe3_7B5lPbTVrhj28-e44eTxJx7dWibOpKzD04IGSbgOuj1IHkynPXviue5m8A5kGqHn8s7kgL1QturegP55v2eMSlKFLhIkQpp1ZZYLuLmzpu_mUxhYV_zqcdkHfmMlXTmITw_AHOZiU42DDhSydpS5rhs="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkdJmkbaB6S9FZo0bLv7IP7iH7-NS5_gGGGDVENrNfIqxP_s9L5r1NlSL-RAFVCLFfys511O_tE6maPfC5V9J_MRsv_3MLvnr3IHCX5q-o2_1VLGCBlAJ310_Zt8Dxw_2plhxeJC3_EzfcznDbpBac4G3xd5BSNa6-xUo7JqxjUsF7QM4nTScto7kWkLxwBJ4VkJnzH9W9fHX8HzORI4V4hcSi3TpcBMZ3QfrDEdhK8GGxw8Z3YkzZ-ucET3aUSsuEnXrpug=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZQERGT3Zq0qh_23ZyVUaGX8O4APUZfN3w4uTni8vDkwiJGNpdKg1-Ljk9osAYxBqYqPQ2CvgmRapTvrXyzTfKEiBoTXedNFc-8J0wpaVvYEiRF5fPQMYp16CUUnAazF4J95WG8PBUtmGIJlnL18-h3Q6Mds-ODik9ehnAR5vFJwWMigknm78mgjw1mOudKwnHUAfh84XT0Q=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHACHOCylwW6p5rC2k5H2k-oXSN5ujupnLd3p6vBr25009yGlcdTYf6-K_YxN46owwYnk23nb0CRqJ1YPW_t-U0g-8KHW3g9vp-NHN3dM9gcPcCOtrUWoYDxeVZ2XZyAcJi779AHOqp3Pev7JDxzjLSagKyXUYjRiOMlbU6uCfH_W3eyPEiVti86_KXV1uU5GcW2vcmBK5H089kKAmGawSb8AxfBGYVWiU-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5aJApxK8sGS5xVz65xAo5nlc8_B5fr9p0QG2vMfa7SCU1cReU2_vA_HjbgDZAb4OIKVA4obQP4vadYTybdumV4uvv5cjW3FPwy1otvOrkjiQ_M-5lX9QkWMmY4iCFxkbHkLBu3N6veiXR46Y="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo7PJJOFAxUPJWwJ1hAsA0nRNGfSfZN43ElIOkNMTJPlsNJ1C0qR8K1P8wuSdK53qS1bCZ6_mKmhmZPLOlZdvwOhkLVKCqflzDjfxWm3ybGs_HLrBqMklBHpioVbFyUkNvv9qPJJl8koxG-m7Dzpm0iFyeynAdngmfSP-O4_14lNsC8OCjFDICLaDO8c2xxmqsDPOsRFB9GtY5xH-NTLNiNpgl36Gm3P67UCGWOzPB1EFX"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2ONxS0GDNRBGR47U-sTGnfDqOfn2HJu_Q5UK4HiBBmoNyP6deWOKmGemtwEXkxZDDRFttI6MYfPGqfjeyUv9Kh5laTcw7gNuG4XPVLRr1TFeAAnWes5M3yGKHL53FaMHluyqZmVZQ0XBpeGNB97npF0yWr8W0pzfRhTbj30aU8Xa3X8eczGN4cHwvVAt2MA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Antibiotics (e.g., Ciprofloxacin + Metronidazole) trials for Diverticulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diverticulitis&intr=Oral%20Antibiotics%20(e.g.%2C%20Ciprofloxacin%20%2B%20Metronidazole)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Ciprofloxacin 500mg BID + Metronidazole 500mg TID",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 250,
+          "sideEffectManagement": 75,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 471,
+        "costPerResponder": 444,
+        "icer": 150000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 25,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 75,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": 270,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Conservative Management (for uncomplicated cases)",
+          "costDifference": 200,
+          "dominates": false,
+          "qalysGainedDifference": -0.03
+        }
+      },
+      "name": "Oral Antibiotics (e.g., Ciprofloxacin + Metronidazole)",
+      "nnh": 15,
+      "nnt": 10,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 points on NRS",
+          "baseline": "7/10 on Numeric Rating Scale (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "38.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.9
+        },
+        {
+          "absoluteChange": "-7.0 x 10^9/L",
+          "baseline": "15.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -46.7
+        },
+        {
+          "absoluteChange": "-70 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -87.5
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "60/100 on EQ-VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D Visual Analogue Scale)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "20/30 on composite scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diverticulitis Symptom Severity Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Tolerating Normal Diet",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Metallic taste (Metronidazole)",
+          "percentage": 25
+        },
+        {
+          "name": "Tendonitis (Ciprofloxacin, rare)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Clostridioides difficile infection",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7-10 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRFLbCN2ED3Pm9hljbG2HiH22JleZ_cZAZBWoWrjXeWeG3ZFrn-dyPzE6_JJ4AcEPleqm95QOM3hg1cgHDsj6LaluBRgDIojq8qJsjAep_uw34qigrX4N11mFNNdtfM9sD2BYA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdf45qf88qAZ9LGM31trzAsAOaSSnFIuccYTNYHywUmEW81qzYJSBIuaAb7IvPLPda5HI9QNKS7gHA3P_y-s9m3ZiV45OxtJBHxr_gihuwCNf0QcsDmqLD4pomCX5ZcITgyrKkCfZXmEvnob3_J1xtd6sr9O8tUcTKCWMI1Zp3775U8WPe9DUCvrA6GmYeqrpObO9qzION6prW6QKn9DGCl8gQtcK9glcqnoZHQ8cPKqqCxtyOnIvsSNrOOjZH8cqbqRBRFufSDFcAwIuuzkH9GvcYr5mpDBhia8vPRwjemgc1Hg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmXNVvlVl-dj1lHAJxIG__rx_9j_xOcNrL0kP_ISY7Txi6l36dtqa-rbgk2RGALxmMeE8wnr2rTk6p63iZewZAaLZrmvVJXwEegpyyrpZwPleHu3VYN4wMnN_qzJuqf3km31HO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW5d6ibObNu5rTuHNRaMi3vhnByXrNOyMPXTIpqbvcg66nc6JMHpn8N82h_rPwl4JG8kJ1ZrshM1yk41qhzwxTkvnBB3Z2MEjLAMU1AVy1a7PUjEOkpQ2hnD01Pmqt_mjE3_Hd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ5uMiY9XEVPKclv3YclkkmBRVf-761fvU9dltxnXULJJzirxHFpZht-1lkGOXjaEnbtj7Y623EXNwZRJmdRuGdky5PevS-me05obmu-Sa1cGVG7H0Stp9poUHJTrtk8Kd-b5ILAI9gLVdC0s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5Y5GczkG-PEMX6IxWSkYQjW0sx1-sHsfscTRlVcgiue7eXUPFr5horcF3zipYik4Ryxiv7WfFjSEzcrtl00e7uCeJjW6S_nvNGwzAIsrj85zEWYbbkeERqHJ-E7HumsLsDlSt1x6lk8Mq1YQ="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcHd0ij1EmIztJ0dXyiwdi1bMquk1NmKKEKuthghBD2Kf6lNiO0GtOu-h8HYSsUE58eieUgrV7lWifM5V-7VEPOsbkjvzrycb5Yzov4XMDzUREaihdtetL3Jc-CNswALfZFNgH2-g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYWTDx6Ctmeec7RJyMyaFBV8Nd-16269mgfQIfPNxGprprkWXXPahUoFLLCFcMuBXvxCqVuv1Um7Jx0lWAVty6Jx9I-vaqmmBkrA5iovErGU54gyX4D7fCm5AoCx784fcjTUzQAjgCFwdOUZaC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Elective Colectomy trials for Diverticulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diverticulitis&intr=Elective%20Colectomy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "N/A",
+      "effectiveness": 95,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 3000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 3158,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Long-term conservative management for recurrent diverticulitis",
+          "costDifference": 2500,
+          "dominates": false,
+          "qalysGainedDifference": 0.6
+        }
+      },
+      "name": "Elective Colectomy",
+      "nnh": 15,
+      "nnt": 3,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.3 episodes per year",
+          "baseline": "2.5 episodes per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Diverticulitis Episodes",
+          "percentageChange": -92
+        },
+        {
+          "absoluteChange": "-3.9 points on NRS",
+          "baseline": "NRS score 6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chronic Abdominal Pain Intensity (NRS score)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.76 hospitalizations per year",
+          "baseline": "0.8 hospitalizations per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diverticulitis-related Hospitalizations",
+          "percentageChange": -95
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "SF-36 PCS score 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 PCS)",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "-3.2 doses per week",
+          "baseline": "4 doses per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Symptomatic Medication Use (doses per week)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Work/Daily Activity Impairment (scale 0-10)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Surgical site infection",
+          "percentage": 10
+        },
+        {
+          "name": "Anastomotic leak",
+          "percentage": 2
+        },
+        {
+          "name": "Post-operative ileus",
+          "percentage": 7
+        },
+        {
+          "name": "Hernia (long-term)",
+          "percentage": 8
+        },
+        {
+          "name": "Changes in bowel habits",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "Immediate prevention (recovery 4-8 weeks)",
+      "treatmentDuration": "One-time procedure",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFELbc5t2Xjc8oJ5mnmEbpQKPE3zIxno_56NoLG1gCEGSMBb8KdyYlzD4S06Wxain1jyrlLvgQ21GW6JrMkDhEMgU7g4xlanIo8aijM-pNcq2swZwy1w6B67NjAN3TfdWtCCMrnFpJYIhLiDh0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH24dMgsCQCOPNKweBjDNYOtmLHBGZk6lELX5cQYZzed2Z5MtgP1qZkQ5lnoYkgDSB8yiG-PdesIQiO4OtvCzvK6rZR-GwCnGbSk0IaeRJKRxGBVNXZ8QIZtWOXf56jPsFvQg9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPbkLEJ5n1FUGXmVcBudVXgy1vaOeHFdX-F_t83WOVYO7cjyidlEU6Dll-DiJXwtkkPqSBiiTpDY-y8y8rkelZ4faNOaKHvHly-iRBZuAquqzefalOAps0mCJJ0Jw3jez9dHQLNlECGV-4nCE="
+        },
+        {
+          "title": "virginia.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqjLnHEjUuFjx9QGVgP94et1znw_FL3P7pLdClbkR5_o6EWIzFDg_WsB3JREU50xY-SAH-D0FdijXzP2QUjI7clSIDOBgDC0i30z-70GtEkxjP6fGr3mYzygIqflshGNj4QBQiDet8LM4B7FHvUCj_STaz4sM2rPpUiq1jlDR3maddjiEvlXYt_Sj9DiUdHfupTa3LQcG_QVDoJII3"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVxVChl08gQUG2afFRrUzhAM__r4AZ_dD_Lc6A4F1ViQiQrBmrJKE1omG2oTacr5pbgiU76JHgN1MAUugQnDQ9Y7Csnlv53Ws70JwpjT1gYK6cObOIbPkuUSfkNtMnm_zl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUZeAPyIxXdlMxuQBclb-FCg3wIVgU3QGbZMoROOsyGz0x0eAd0Q2SMrIOPEz68T9WC3tsHvDUU8XP_fUQeVwCVVOJ5SFKxRPyDubUUv9xBIfrBLMqPPzH6ZwdyHfzfFCkMoOv"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGezhZlJBmnkCx1gFyVHSwzWfipIDZsweW_Ygoe_G3kSH4eeT8ZTc8k35PYx1KM6OwkV-SlqHYqmlcp9_51MXrA8N54hA-cFuGv4tiJaRdwANl5J2J6Yh_k1S138Z3t3JPGFkkW6Dc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsqjo572glMHWrjDW7n_PU9m_9EmdSEgpbdGro-CHvEGa8PPPZJ4KcCYh88-JIetNlnuQsf3oas_SjklN2HweAQXjr2wrbGI459rTYAb6xeqcsZ8b8dZuQK8fSJNqSNn2gCL9Y"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXMi2ixG-aj-TJHDIp-v6fqq7RaRnxcfhjCc_PTv3pEbnk7CFWRbFrhgwkZsCqaZNKNzEFW25rK9SurkPRMsfi4V8yMJotv0HmcZXlIO4SEFbV2tWu-LcLLExhlc5_Q6IFVFWUZs_wqEjMIthp7aHHTK_su8NDbCS10wwxG6BSSXIkPWwuxD84dwG1F_uzndfwIfg1J5DYO6_Q7d7ce2M47rr9Gj-b1s6ZB3tVpZRg8VjPyK7Z-w=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHim2vMdUXkXoWkRIg6fFvmTePlN6n4htMtR9oCcwM7tTC8eXP4SW6CymSI8X-Mx9hcHJJSOuQoKiWc0VA3N9lSv_zxYl-gbC4UjPJmD-N0mWi4yn1h4u3cEvcYbYDBc1V5Lw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX_nJ6VBtZT2Kw4Gj4NjMXemhut1EXZH6XNC0pN47vyn_IkRL3GGLNBivIV61wzSdi0Mr6c0FcgUgraBRwF8IYWyIlwBQYyloFdYuV5zXj_UZmAzRX80iEbtx3iZjIwiizjA4="
+        },
+        {
+          "title": "ClinicalTrials.gov: High-Fiber Diet trials for Diverticulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diverticulitis&intr=High-Fiber%20Diet"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "25-35 grams daily",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 50,
+          "sideEffectManagement": 0,
+          "totalAnnual": 50
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 71,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "High-Fiber Diet",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduced by 10 percentage points (e.g., from 25% to 15%)",
+          "baseline": "25% of patients experiencing recurrence within 5 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diverticulitis Recurrence Rate",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.5 points on VAS",
+          "baseline": "4.5 on a 0-10 Visual Analog Scale (VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (VAS)",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "+2 bowel movements per week",
+          "baseline": "3 bowel movements per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bowel Movement Frequency",
+          "percentageChange": 66.67
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points on SIGACT scale",
+          "baseline": "65 points on a 0-100 scale (higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GI-Specific Quality of Life (e.g., SIGACT score)",
+          "percentageChange": 15.38
+        },
+        {
+          "absoluteChange": "-2 uses per week",
+          "baseline": "3 times per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Laxative Use Frequency",
+          "percentageChange": -66.67
+        },
+        {
+          "absoluteChange": "-0.25 hospitalizations per patient per year",
+          "baseline": "0.5 hospitalizations per patient per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for Diverticulitis",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bloating",
+          "percentage": 20
+        },
+        {
+          "name": "Gas",
+          "percentage": 25
+        },
+        {
+          "name": "Abdominal discomfort (initial stages)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Lifetime",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbC0fvVAOn5bYRdkhtTzpxkkuNwNGoXe0TDw7_HlKjqS-_wgH_zbZIPTgALzRW1oFJNZ5lK2pOcNvQSSwY3sKYW4zgNTZc0nFVSIscVx47Q9ZrEt2dPEsPTID5EDdMZQ19L71U"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDYIgXrhj__FUHvXwMfTFupRbhwFqdbrURYg-gaj74Zvu7oEngxXrn5VcG88POXF36BOrStDYr7knSsOG1yhahFvE6Dg2hEBhN7G186mwrwp2eDZeUwnKcrBd-f9f5hrx519p7Otyy"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKLPzj4XPducnSN-tix7_rfMK-qfaKnORAJIChEvlHk-0B_WAwlCADc15In08F7pO6DF5n0mjXrMC1IUY9DzusTWgX4w8HVTJk2R9Kf4qJjJJmkYS2izdlrXPwazIHabNj6GoXEJgs3tzrDF1tToXJMZviwyh_eg6mt4rZjKSnTbXfYkLUYnEXbnl4I_tGLcMjoI2e_mE7fLU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNFSmf1UU6IecaNMvhr3dUsVe_Fa1llHRuRU1WmcOUsBI3mD2nmlcrJcpedrvtQS_fkyIefL7Vp1kj-NpMMr-z5jkgHt-h_uxrGQFlyHsrHP0LzfCjqnvp2u-rjZI4OrUXdp12d5Sc_pgxRw7DexRs1ujcjlIR7bvJ_L747ANipfMbXpnj5wMzPckA6G2jBT7wnsSHiHie5aHBlwDrzW0iPa7jb3QEwGv04jU-Y63BeOMM77NPY4F7vqXoVTZT5b6wKYHQDHUeHPbCIE21tR23BoYJIw=="
+        },
+        {
+          "title": "sgo-iasgo.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpESJsr7thop-P2xtkahy2qx3V-X_FT6V2tSva2lLhIU7GBg9FaD48FTA7csFpDMM1IrHxWZMTU2BeY0lAABK-dCd_AX3koYnvQmX9cECn0H-cdr0-2wDGq7OkbvIdrMZo3DNtOweqbZ0LGjWQKZAz3RVCobIM0QZNE-XBzRswhNaMsr55g4NDMtoGEMyko7_NIdLlRva-E8cmk7rJwxUHXq1rRpQac6N1_EGjgqko1efch6-WmnZkXQ791UzREtaoI9Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiPWYchs-6sEHPJ9IsxRDtnsr9mjqF8za3UPqjzCrlPxh9jRTxYYnIab2MevBEQdFpSCfjIAdLl1jvo66CetjUXuRCwM9STaQVTJqEKeDToHFbo6Ncu7fmP6deaDIH70ERLepiJ6mKS9oUuDaaJ_cggLo_yx7WZTUxwzNH_FrosI3kbcDTOxW24SYQ7XIl-O6l-v4RgcJQ1oGBMc_mS6rlBlW0lcA26t4yereq84e6VGnMyByG9Jc-Nv2SbmPzcBZwzQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmpWhGu_C6fyr-vmdZvmDdn4Ob-9MdUCUp6W6Lya355lUMfiBVS_n2BqzTO__6uPehwedO7hSkjw7ju1JmfKw0ecyS8lBNfHYwZiz3mZgRnavJAfHxM3nVavoszmWptdoSniF3CV2OTHD_yzA="
+        },
+        {
+          "title": "units.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIxTDH0qJtCTXjXoigvnkRv6PA6R1INZ7oAzJOhRLETGFGwNLHWxTrxCeaSE9LinBYyWNeZRkg9XZqA-jZTTRxRTKwsz4BiFTJwkcfti0_EbyPGBJ4Nvo_XB2kO8K2Aw6Sil0CalT3Yg8g20UR8z2H61zxIWa3Su-bnoYzhUMAXCFMPd2dVRzUpbg4J9GUXDuUpbS1Z72FF5typIyUyXo7ZpaSWUou1Z-fo82oXKfekWl_lj25y9CgZVe03p-cmD0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnNotD2flXtTm-Sj9l26FyDOx7yiGCNMsU4s09au8s925ZxUf0ZQotQbCQbWtFfNk6_nmXqOuC-__nXV10FDQHPct5oeKp1x_GJIZcrZfjB_p5HrvoeWDAYLb3C48TGV-CvHVFLXxvENiv0qKZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjxsbyY_68i9_rbhnJFXElFnR4eUg0r0M91N_UrxEgqGD337zwLgll0n1fhQpS7Q7cJF8ke1ab9qHgjGz9yptohZ1OoQpJWiX7hNHOX9pOWzoBRtsEqOWS9CU2RsGnEZH9ZhS2q7M6CsGcW6nwRO55Y6_mU9eRw8X1WREo0spojBPgbVTlW9sZszTF6OhJ2BI-tP0FUcmhy3LCjtfz8HgGfFs4IzicmE-l"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY2Ab-eRKatSXfkpFr6LEPtk8yKOldckE-YVpZRZa56vpguQbiqJL83q5usEEnR_uP8b3T0XjDW3DAcYBtiUP1IJAzdghejFHZBLPoCRsgsUrpoo4QeoaASBznLNnJwDOP__xk"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rifaximin (with fiber supplement) trials for Diverticulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diverticulitis&intr=Rifaximin%20(with%20fiber%20supplement)"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "400mg BID or TID (cyclical)",
+      "effectiveness": 40,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 8000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 8250
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 27500,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": 2000,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 8000,
+          "annualTimeCost": 100,
+          "earlyTreatmentBenefit": 0,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 6450,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "High-Fiber Diet",
+          "costDifference": 8200,
+          "dominates": false,
+          "qalysGainedDifference": -0.18
+        }
+      },
+      "name": "Rifaximin (with fiber supplement)",
+      "nnh": 50,
+      "nnt": 25,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 30,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 6
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Intermittent cycles (e.g., 7-10 days/month) or continuous",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLvWvjRzpFAxMRn7KsOWKq_taJUquv1KGJW0bFpEwE4ktpVEPM_60rU5r7BITEWGGevXO-RJeRJbYbrM-pl2LKnSvWkeRimw5dCXCILU4wJln_MPkNeb57wOGqO1Kkauo5kgP6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf_tui9cBGE7jD5sP4O0_fFaF6m_JO58ncnSW7wc6LLTFBwQubzq3wIKtc0CA9kpFeklsdxqkwQSXixKsYzIS-BDQj_Yjf_x_glV7P2ccuwJO-u3TFJzUCZ8vGv9jfxTKVEHgB-eWhyrYwzMvcXNW4M3GvhOARxB3XUqJVbdDehTStRD1wj2cjkPrMVpYJjVsxjEf6dzy_JTLItCvAO_k15c1fCbhvt8R3k-pGBKutivIdB_kKEc1hA1MOdGIxPgQCIzKWWThP0VxL6inxZthnMX0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8X1LFyfLciDt3gB7y3g8W9bfIwwCFskAVhSKpoF-Ie0cIPhATdF9mnPXWKrqvo9u3i5zuWbQTjIGjnlYGvWD-LAiN9pixKYdHoP4JyLPI0pG6SyozZhWbzqvmZiXx1nlqlfOWxU_TANbvIoYCQwWlgoMgQR2QLrkOBW0i5jL_TchGyqyiQbCMVzVaG49ublDTdafu_wOO9EoMUlvcOG8o3vzov3UcD1VugAvz7VTLDCV9fIVp1dhB8sqXD661_caenQ6EHe8c39SkAmOfwpQe0_iGrQkGK4LD5_aUE0L1iCe5wGnYVczoMMCYKL8G5_CKQHzW3MkgZEgStwKeqghMInSdTVJKwfCpDJGg3gmlV8BNpDJJ0SLnyIX1hzH9-oclMtjB1R7Pnp9QtGnc0Zw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHODBvuKiALoCs_KmrAg12Wo6s0WUfVJUkRRn-2QaN4J7F5QP2nvp_DNfXL3Ya4-OW_lREBjK_n68abjkVm4d_64RhZ0pFWgKHWTSUa-E6lIvnOvnsOkRix_ZAJltu2j4I4bETU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7Xpkm671nRFwa0iAwfV4LEIygWHi-nH2tC55q2MDKWMry53XP9xbuGJJH_8D-Gln5f7Otsy2KDYG-K8wWQpPz7I8gyZelbM_kcKfY2QhQaSti2FbaZcoGFL33D7i6tegr13Hk0b-oRVscbANO_ypcmbZgROjRB9Sn5u0Fttc80B0A6ks2SB2nDNGh38C8J5wLyZ7hgF1yn2qsyCwQ8i7lAnYTlxGvH6KBR8Mx8tfITXJ_66mIBKpzXebvUBjPNa5R5kzYHEkNPhYmfXX_-ezetr59ROIALaLJ9qr5"
+        },
+        {
+          "title": "sakura.ne.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhxjJYv3Dc-TbxzDvg2se17uEqB3umZJjxIPri6rY9mgq9Tm-UBusZoUh_WNXGyzGrAs8nuxX3JcCAEhBa5y16TUACX8TZlWR8XBs7APG2zdBVQEmDmlcEMOKhUZ7NMf-HrpAUKeHQZmgCE6ZaX5t4EL64UcWtVnhb78VI3SzCuQ=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM9Ooz0gXsiCBqd04NUZUk_qpNeceD1P7zdVhObLgZUN_e8WcEcleiBN1-a7ja_NFE00sR2-Fn-oaGELiq6YPeZEIbabPsZoMJO8Ywbn3hCwqZ0_7mJMDrUKPQjKd9DeFdWsrVkHUd1XBn3N4q41ND-iRKFv-JJYKFDaGuZkdkjx8yHgkRbTN3X_8x2QsAT-8x4Q=="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVnHiO-xeqOTdpCQEVLfo-LoGAu6T5VbvY4rCMjyc51YPcLx_W-LPc6oBQcPD7w6bFKxDrUs5iD6VNVo6OG2dOgM8AgUBp9nRdKxTK7Y20In3LteEjLKMCk3TRTV4ACadMLDSfIplZET3UZY5kp__8HI8crqySloYtntxUIwstD1QKT4TohfQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMxCuk6MgQxBT7_IvHYHPSMpmC0IGm-MUDfFeooYs5F-FhxGB6bWGDDWu_V3HfvNfjWzSsbguybU8hffac2iRzL2sX6UapXb4AOs6-_XhY8Q5IvqnR7JQdbRD2RcX9oQlbxYh2cWwHHywkFLoGu3k6AuDEvFhGhFjBFYlnJ8_KYYiruCE8A6cAFzziIcyDiDxK_CJB23TSW23_sSulbu-QdZVmSY8PY1No5jngEQ=="
+        },
+        {
+          "title": "univaq.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC_NDhhCUpJskFtW54LWKqSR2yqCafDYKfngCHjm39aM2tZ2hE9EA8MHlFde4uMJ019YOLgWwPCtg-arim9FqFrFFXlf6LtHhF19ja4vTvRLK1ErKOjdSqU7kBLUHt7OBklON7agwQeqEAPAt8zlo6Oe9TXK8S0rvvWus_d8T0uuVt79eMtiedXY-WpWjrTfS8617bYND1_lEbbb_H6v_QhwcxpB0HF2J79K8ZdHCxugIeoIccx2ILjOplw-ssU9oblvojqez4L-2eLlZPcgSGd48i_sNUKx_ubmLaA3b0BQ=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1hmE5ReC76Juat8IzU7vMlM2TcUwV-opamlhE8TCkDXb-IIUb-aEmSeBlX-erHvTBlFPmvE1zV1ibFsFGf-tfgPTlU09od34WbvjTnp8-r-i0tPRhbm9_kluoJn1UUZIM0r1l34bri1vF7mJW9mhiGIN8UqLCbxfZs6c72g03b8lP-NxMRjupfjs92zXMLltpm2hLNT12YZK92efZKcbsICcKWfY3vcPu8rBbqfCs9TaiesMpyi3ghezQ2aF7ZfslxbsAnhfb9ESav_-Mhw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mesalazine (5-ASA) trials for Diverticulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diverticulitis&intr=Mesalazine%20(5-ASA)"
+        }
+      ],
+      "confidenceScore": 50,
+      "dosageRange": "1.2-4.8g daily in divided doses",
+      "effectiveness": 30,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 150,
+          "totalAnnual": 9450
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 37800,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.01,
+        "vsComparator": {
+          "comparatorName": "High-Fiber Diet",
+          "costDifference": 9400,
+          "dominates": false,
+          "qalysGainedDifference": -0.19
+        }
+      },
+      "name": "Mesalazine (5-ASA)",
+      "nnh": 25,
+      "nnt": 30,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (NRS 0-10)",
+          "percentageChange": -27.69
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "18/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diverticulitis Severity Index (DSI 0-30)",
+          "percentageChange": -27.78
+        },
+        {
+          "absoluteChange": "-8 percentage points",
+          "baseline": "25% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Diverticulitis Recurrence Rate",
+          "percentageChange": -32
+        },
+        {
+          "absoluteChange": "-50 µg/g",
+          "baseline": "150 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -33.33
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diverticular Disease Quality of Life (DD-QoL 0-100)",
+          "percentageChange": 13.33
+        },
+        {
+          "absoluteChange": "-3 days/month",
+          "baseline": "10 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Symptomatic Days per Month",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2 days/month",
+          "baseline": "7 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Analgesic Use (days/month)",
+          "percentageChange": -28.57
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 6
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        },
+        {
+          "name": "Nephrotoxicity (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Months to years",
+      "trials": 6
+    }
+  ]
+}

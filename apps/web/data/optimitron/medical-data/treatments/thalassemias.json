@@ -1,0 +1,991 @@
+{
+  "conditionName": "Thalassemias",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:28:34.971Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiH7Plt3wGYZFfbfO5VU6AGyYuK5n39D28KSvo0f9OVYoMqGBbxVPc9VEkvWe7QFsKeQgYszXsLeWSFle1CeRMgkGowBWLOCIklL8x8AFPkPSaOQNaWY_x_eR9yM-eqWSlWJ0-u7i4gCtDlKyN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF3vhOY8_n3r3IA_E_xv9VdE-8Ul6gb9ybaplvu80hdwI_H6l5VLpsfNP1nS8ugqiT3CBCdjyHHQQqeJ3bDC7zgrbWSb1bV0zz4rje4LswxqeAhXmpv4cIZuwM985VBhYXiPSOfSUDoSo2TkgU"
+        },
+        {
+          "title": "icer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXnVLnKl7pxAVUCnOLLW4q8RZCiSrqlRrZFPgpAayDXCyCjkCWDWvBqUO6s4J0BQmEnD8iU3DKKy9C_wHAOBOdlfYCigPKIgImqK9N_tIp1evB1TPRNATfIq5UP8Nvu7j4E7aep_-Cp5YPI4LFZdl_vT-O44X9JxpEixmUws6Drr2EsPN_KGSvbmprFOv0JRVkfdZYLicN-MR6EbGwUA=="
+        },
+        {
+          "title": "medpath.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErRUKIdn-3i4ayIgr94DnQAHWd-eKGTQmtExPyMvxHk4POrVcedBe-cMvCMhHgSEBkVaEqzWjcWXymTu8Z8yX9l7BubwXufefwtOyRKrvEtKe49-ro8Kops-_UC7q0AsIj4Xat2kKI8KUHUQtgR8LSHMBDPm9cqNZqQ9586cljBAYBeyaqg1Kwk5zCK6oAVnOaRCNp3s_QrLetTFug1A99BglJJx3wlog="
+        },
+        {
+          "title": "icer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjlZQfk9Lclj1KE3aLFS1v7n1ieQUJJTMzw7h9-G7MGpD4v_3YKhQePVcTFUtxw73NKeyKxVc8sWC0k3mOfUUvZP2c4Qd4iD6qtf46bgABAM6UBzTCvEf9rSUQHDroJQz1DiPOcAR1xmGnq48qJCOSbWDoV8kmXJtv-8nUBLT_WPcNNTgUup74uMBg762XS6UzTeQI"
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtgM5rhNb6HTwXd-50aFGbPaYPk5deTdQDqbqgJUyTdO1T1YWvUwWNWTuwdwL8JIF7wvvGz-QWqVsTCaJffLL6qw-tuonUYguGhZhcvuWVzcu0M-IpmW_BrhSkUvrtg-bmIJ71JVfiuY7ZbvMQTPKzhnJF_wox0ye97gfbGKRgDzICOd4TwOJH5YDHT-YU767lLA=="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiKF-bllQAwbC4hwoQ0VlM3-nA9GXmICFwHhCQ3lrN322PDaBziJ6r85ZWJVEtEtm1Nkvwr3in3qncZ81IovSPwY8O9UDIKDS3vQtf32QP0uIk5wtTIwssyh_JH7Cqbu7ynjfmauC1Y8-UX95ghIDa5IrSo2_25TOlmI0mXloHsj9M_-Z0034oGxXHMfkS0fBPvrotEaGfh4IrjyAD-A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZgbU1vkrVHtO3qpe0b-0I-BEYaLDF6_pZ81qiKhOKNVbOxUE0KmciZWO_gm4Nv0xsGCbHV62zTJ-TcSFvzvI2ztTGzO2qejNp1MqYi_hgS7HsuDuQFOfPNO0XAma8eQMN-AYp"
+        },
+        {
+          "title": "ClinicalTrials.gov: Betibeglogene Autotemcel (Beti-cel / Zynteglo) trials for Thalassemias",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thalassemias&intr=Betibeglogene%20Autotemcel%20(Beti-cel%20%2F%20Zynteglo)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Not applicable (procedure)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2800000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 2801500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 3294118,
+        "costPerResponder": null,
+        "icer": 1500000,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": {
+          "comparatorName": "Chronic Transfusions + Chelation",
+          "costDifference": 2775000,
+          "dominates": false,
+          "qalysGainedDifference": 17
+        }
+      },
+      "name": "Betibeglogene Autotemcel (Beti-cel / Zynteglo)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 300,
+      "phase": [
+        "Phase 3"
+      ],
+      "remissionRate": 85,
+      "responseRate": null,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Neutropenia (from conditioning chemotherapy)",
+          "percentage": 100
+        },
+        {
+          "name": "Febrile neutropenia",
+          "percentage": 85
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 75
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 65
+        },
+        {
+          "name": "Headache",
+          "percentage": 45
+        },
+        {
+          "name": "Veno-occlusive disease (VOD) of the liver",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks for engraftment, 12-18 months for transfusion independence",
+      "treatmentDuration": "One-time treatment (lifelong follow-up)",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs6BG6XrJCNzixqvubi4yVIIvkNg5BUpAycr-21Ga9PEF_Sc5XG6RqLKjVbiWPwzgHte1gDnJ0PtZKwvJZT6HGBlhNzr48xAnmiXcdtZm8X914H8txJFQUnbI3ss1Js2rFaXMBCG9Qft4l_r4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGav5yVV8zsg9UajEFQIHrtk-1gJ_-58GWOQjdRBs3TiO9iyJs0VFEllmhBg03T7VBw8L2MbYoTV8hWaQdR8eAEFnlZ5HTqDGQk5teurp-RO4UQmra5hFavivRZBJhUcMuRZmE5Bq9gKWmsnIR1gyvtVLT5aFgpWSTTFr2JjtluCJtBeMO9yeQKgqs7BBfV3Y3yoHKWNpVlluZ8bjJY66iGwr7n7LE1Z9JusWU54WR5jbUJh3S-GiBirCf8uxWl6t9zeVqMN4emPSUG-x26WB4gDoDKXtOzjj0jAd5OhlgXKrg5-6jQGvsRoT-tp8sEbwhEwBIP0f2-Ynd5eRU9JlUpkdEuqKU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrAiU3OoJVJU9VeF25zTf6v-ny52BkzEX_SBIq8xiRn9mDf_V1Vf7Nc0ddy6GnTZM88fGvyAu5AqnGZz2jpKtjk6p2k1mQ9LIgSi01CZZneCXjSSSKXvWxI7WvAS9MIi24ClYZ"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFofGQyVT0ROdeaWebfrAX7vSLIrZfEctg-cY75cuWkhXQeI5KpJ0819N-5N4ugYBjOtgV8q-b6baxYHREUxbPqDnbuX31hUbV15Jc7wkl38RnTn4xQto3w7k8YemdyuZ1DoeQORKa3nwpScrebmXN-QEzTVU_t_gM1MmHDsPlzxJncUZblih0IyPUiwd7uETjCJtg7CzA_16bQVtZDRFrYUbDbCRI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxjLRpQvJ_Xh7M2V95MogVvSvs9UQq5Pb8t7H6wFR-fhDIDT7RWpJjrVXRtdFiLypaPp95aS_BwHM5AsUFQ9IcKHaN2d5jsvZtQ_QULNa86MaOxBmTdU19FGWj6egDlK9sszWiQN59UF5URd0="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ5BHgEZpqDnicbwZm254ArSu1wauhcD2etT-9HnrPGkLiOrPjCKx_kpJwqVWGsvnqRymUViU0D2Lr8mLNTZ6Dbbj9FS0iIxBmNViN7N0Qqh7VnVcyFLOglDrjxIp_liTVZpF7IATClTeGihJKTlkEtxSAELUbAHVP8On2TommJOkmHBKPPG-CVV2NpdZLmeLCyjOi5Y8PZYe2SpcWk0zB"
+        },
+        {
+          "title": "england.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELo8w2w-24LCvhg9JEHum3v6AcQ9_lBgg3Uhw75vveexBLAJew42lmkfv86fMATIQCzpX9LR3py0LLcrH1nRlsJMCnXvltYdFSABZi0jvMkFrF5ACcFxnKQcikLeaLC0XN-5VnLtrbZVStrUpR3TC7CajUTSO79LsJ0_CxdS9nasHt541nfVFhAO-VBRNnDI8RHPQ="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5MJdT69uvc9ZQY2LaEehYScZaMBAF7C290igQJLpafQfDdsm-CvzvkFc-UGSiexS0PKs26x2wNfsMTYHyAZh4vWF9dda1gfq_xMaMrw6eYdUvvVfNRk9414iiK2LkzKdBHuWqBEXhIFajJ2YivB22tiE0uS3F1W1JxUFNhWM8Tw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3ni8h7x1pojiWv4dJ7gnHzAK-bAYn2N--M_DkMibXncJpR0xn44hU3tb6mQTnbN6ci5-uZduHCzbEX0og2ie9L7mxrRUZSncd-G_Ra3BBZDWv1c2zXu8c6CCwt6iGzEJsfEflbTQUnTGb7D5I"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hematopoietic Stem Cell Transplantation (HSCT) trials for Thalassemias",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thalassemias&intr=Hematopoietic%20Stem%20Cell%20Transplantation%20(HSCT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Not applicable (procedure)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 411765,
+        "costPerResponder": null,
+        "icer": 11595,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": {
+          "comparatorName": "Chronic Transfusions + Chelation",
+          "costDifference": 325000,
+          "dominates": false,
+          "qalysGainedDifference": 12
+        }
+      },
+      "name": "Hematopoietic Stem Cell Transplantation (HSCT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-20 units/year",
+          "baseline": "20 units/year (chronic transfusions)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Transfusion Independence",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+4.5 g/dL",
+          "baseline": "6.5 g/dL (pre-transfusion average)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level (without transfusions)",
+          "percentageChange": 69.23
+        },
+        {
+          "absoluteChange": "-2500 ng/mL",
+          "baseline": "3500 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": -71.43
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": null,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (PedsQL Generic Core Scales)",
+          "percentageChange": 23.08
+        },
+        {
+          "absoluteChange": "+2 cm/year",
+          "baseline": "3 cm/year (below normal for age)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Growth Velocity",
+          "percentageChange": 66.67
+        },
+        {
+          "absoluteChange": "-7 doses/week",
+          "baseline": "7 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Iron Chelation Therapy Burden (Doses/Week)",
+          "percentageChange": -100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Mucositis",
+          "percentage": 95
+        },
+        {
+          "name": "Infection (bacterial, viral, fungal)",
+          "percentage": 90
+        },
+        {
+          "name": "Acute Graft-versus-host disease (GVHD)",
+          "percentage": 50
+        },
+        {
+          "name": "Chronic Graft-versus-host disease (GVHD)",
+          "percentage": 30
+        },
+        {
+          "name": "Veno-occlusive disease (VOD) of the liver",
+          "percentage": 10
+        },
+        {
+          "name": "Infertility",
+          "percentage": 70
+        }
+      ],
+      "timeToEffect": "2-4 weeks for engraftment, 6-12 months for full immune reconstitution",
+      "treatmentDuration": "One-time procedure (lifelong follow-up)",
+      "trials": 70
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGixCETk-6XRsx9UqeynGZb9JOwNOFwoORcDiXT8GOxZCcGATeGChQ_hERquOsly3n6eiIr0oNAFuMX-TOsLPhq8KaWyECQidZ7eiW4n__ZDJyLRu3YcJd7pCw5EBSuLUI0HO_r"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhkoMUeeNgIrc9w5dooHdvN0J99MMZiqoIpNjVtXQSdwMhZvZexGgr6Gj63Ks-S_0TiaGt4mg3VxhtMojev-ISzGj4ovUN2Wh6a8U_9R6bM-k1PP4GXS-bzOI77PC1-YeCHPV2ii9-351_e7fyUz8JjT2S5KfwJ5kf03jL0w=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN8nVTi413uOmcHQJV22bJJUTjgJObE0aPaaMIBGMVZ0Zftr2q4dUTSybja1rQUJWLrh3uK-RL5HcFDEe9hS3XATF-9wzqZXJDccA9AM1TAD0VI3gScZL7IUBRJwXV3FMgse1MdHo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp6YbTHRO1q8cEZzWKZ77wBinlCal2YFW-LYlOum-odOgCazAq9wbS4YPNuMfpAOd_c_YZNflhwvgNZFF0MXdftIWWdWeCDzsyIPY2mxCCW2waKCybQO4oktKTd_6rIiZKXgOMXq9NAx_FB84="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ6Dq-QPqLu7hXzYN_YG7IGyk0o5oJrmKMkjBt7OdQNrFNvJqSbEeoB0gqr3TodQGO7yfKUisw1YS5qRvwehNXlUOnLp6nnMSnoVTfMq2NUEdvvU6rRWBFYf5dp7NVPJ_PjKltYj8NWJXJg_yXLWqowQQp6T1-zFB4xfBeJDmH3x5yoXjBDlfoqmdYteKFVT2UBa9rGGAwfCkYhr1IdBKEjF3jZtec7KzIETJ6uJrjvloDAN2gUXFQGL080GokUtAdl_gg7F3YoQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Red Blood Cell Transfusions trials for Thalassemias",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thalassemias&intr=Red%20Blood%20Cell%20Transfusions"
+        }
+      ],
+      "confidenceScore": 100,
+      "dosageRange": "10-15 mL/kg packed red blood cells every 2-4 weeks",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 25000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 25000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Red Blood Cell Transfusions",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+3.0 g/dL",
+          "baseline": "6.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin (Hb) levels",
+          "percentageChange": 46.15
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) score",
+          "percentageChange": -45.45
+        },
+        {
+          "absoluteChange": "-4 cm below costal margin",
+          "baseline": "8 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen size below costal margin",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+3 cm/year",
+          "baseline": "2 cm/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Height Growth Velocity (children)",
+          "percentageChange": 150
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 100,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Score",
+          "percentageChange": 27.27
+        },
+        {
+          "absoluteChange": "+50 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 16.67
+        },
+        {
+          "absoluteChange": "-7%",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reticulocyte Count",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Iron overload",
+          "percentage": 100
+        },
+        {
+          "name": "Febrile non-hemolytic transfusion reaction",
+          "percentage": 2
+        },
+        {
+          "name": "Allergic reaction",
+          "percentage": 3
+        },
+        {
+          "name": "Alloimmunization",
+          "percentage": 15
+        },
+        {
+          "name": "Transfusion-transmitted infections",
+          "percentage": 0.00005
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 24
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNXMvte-cvrWU73MdOBSdyxU_JWuwvZ_gaTkBHSTl5ouZQw-O_JBP0nS-txYOpiVsUsAPfQdpviVpzI4_z0O_4AIRu1FuxWIFI5d56l1MyeZJZLNsgBOSY6KJclszEPgV4PGaudO-IBHwNDug="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCeLvp0E1h0aXcJ_MYqBwyqQcyAN_oh0aaEYDev9_ZUAreM1N5XZ9ge6pgyWxAbv9eOxKpRut4hjxXBdLb7dVKmY7KuV9WaTWuLF103XPoJ_lunnIR1lj8Dq9HzNxTObwlj0f6"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJHCapEPZZapBKHn4vqSoRq9fvUueC_vs-081XNZs-czAqoHyHq35mWBR3OQKtny1WPBdmtvi9I0u4JqFk0Q6As07tBnnyp3bSznNny7h8R9hDgknZgc2RdckXBuOUP49zrc9feHQg-0msfzxQ9U89V5hy2YaO5wXI5nSggF4z8vHe-_YW7jBR_ym3QQ8XYta-Aw8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8sHdnMr4nFdlYavtKFOzbwWArUncoA-MJL_Q9Xe1Epmw5tWV8OFBC9hZ7nkd83WebXWZ1cyFi9TTHgnasn0AOocwlgyd2oj93nfEmAR8VRl3ejP-9kpWEO0GNI32preO1Mly1dcZpqA=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUnQ7CB0EgWUe6lYnOvnzSu_KnDV8TnrPb8QbiwLFx-pOG_QEwukdxMaFNogJLIVJ4LTJ6QnZxvBkIFue8ckW4nSHod7OQj-2qYO21fUEdZPNSp6N1Rp-dUV7GSwghxbo5g_opYrUnZAHIGAoH2w0DtpmzlVOieINoiOkn7EFXi7QILgx_ybGx3VH3d-7O8Rk5WWey8qBcAfqICtQ0MLv9ifV3qqk="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU2E6kPfjN5PMqm7ebpOe5rIkWtHmGBsnu1bMX7Opt7CzNXZljQqAz39_bHu2q4FBSCCHLBYtD6t2Ai4gxnlp0R8oKoqeoIMHOqbiBb4jYW7xJDTU7IAhkrFB1TEBBYvn4kX8aCBwiiOB_0oB6cV8v2m0LJkpDGL-S82Hz0pVHiomi5lCkAV84NrCBEIkKItFMeGx1h9C9eAmX-Iw-mRuyeg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFchGWu2kWeGt__NWJATOrMvPQB-nT7Kyt64D-KMKyA7aw3JwuDYJZ8U2ra5mYq0XHF7Y1PlldGug_FD7ioi7W0YQGIbmBXTw8lamuvIXzYjkBslnIWRxeuEe4IsEOqwrGpUGmdxX1VJfsbqv0="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS4xAPMS9-FKX9dw40hCbsroCYnkdrS4C0ARXlITT6iMcjplQBsKm07iOl2WrTUXtouSgVItYgqfEJRYlrG7JMdjYDTX8rrGn1oOXtZCDf9_B7F-Rd3WXphp13qE5yUDYoAqUWKijotPUKzJuJKkfuPu_Lm6jvzXa1BIW2ROMuuUt8BdFLUUoWcsA32hjVxJoax4reYkCm19fZKjvA6HacBxiqYYs9TKbA0qnpw90EhmHz_A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Deferasirox trials for Thalassemias",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thalassemias&intr=Deferasirox"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "7-30 mg/kg once daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 15000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 17647,
+        "icer": 112000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 7,
+        "vsComparator": {
+          "comparatorName": "Deferoxamine",
+          "costDifference": 5000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Deferasirox",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 mg Fe/g dry weight",
+          "baseline": "15 mg Fe/g dry weight",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Liver Iron Concentration (LIC)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-750 ng/mL",
+          "baseline": "3000 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+2.5 ms",
+          "baseline": "10 ms (impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac T2* MRI",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 ms",
+          "baseline": "12 ms (impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pancreatic T2* MRI",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "-15 U/L",
+          "baseline": "70 U/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Alanine Aminotransferase (ALT)",
+          "percentageChange": -21.4
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "25/52 (lower indicates more fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (FACIT-Fatigue Score)",
+          "percentageChange": 12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "GI disturbances (nausea, vomiting, diarrhea, abdominal pain)",
+          "percentage": 15
+        },
+        {
+          "name": "Skin rash",
+          "percentage": 7
+        },
+        {
+          "name": "Increased serum creatinine",
+          "percentage": 3
+        },
+        {
+          "name": "Increased liver transaminases",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "months to years for clinical benefits",
+      "treatmentDuration": "lifetime",
+      "trials": 49
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm-K-CFZR4Y9_Mhh9Z2Wv7D7xTgGP2xr1HH4ckmGrFssPvApujAy-PJ9Hnl03ihwmE8dBNVhB4rjoeHpV9UYJrInGlp6WGJTgyFXiF1Eo5YGL5FDJ0JfweyQsf0gYNXHp6OEUuyNNuvZe7eew="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6SXWYuC0nJtXod3Hc43CyZYaAKrAgItxP4Yc6WnErl3LsGxYEMWe2AaA56zEZJHxKOaAQrfplDuWzAueS--O9oeAt_12eZA5-Zueb6qgGrpGNcluGTAy7L3v1IeqOMrGN86VW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcJvRHPvsUixMD3aV8llGps41cd0GKsfQZ9Afq40gRKJEBImQerIePfsGJV0R6TAhr3K1X2EYkiN_UuYk3ssaEuGXSRI8Q7Pt9D2asR589QGTxwSIQY1Ep4Wg2uG6Z2sm9w8OPuKp94FUbw1SegZ5ofIYbs6mi-tZrL1Ob3MycJLI61cj821uesY_QNwzrOCC_7TcUbQTyPT_AFEsgDFwRwr4XYOGeIlD3UwncXObSOXN96FPIanxBZPfnpcangTHYlGI7MQHnBQ=="
+        },
+        {
+          "title": "docwirenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN9-5cUATuL_H00-lTdDKKv0nFnC5S8f0-1MTbqzgRkhHMb4ehcIYrhf9yKnl66Bjmh6jNqnhJd3ooOxLmNiwwkW0EbjRfe_EVybTNF7Co-f_l281CeRddwD2VSPReovgjULIOlhdE_BfKUMT8kvuca_nl6ssRf5fV8UQqdJdsv6V8vyoPqV8="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQTGG64wp6lSnj9Hvpc7eaS63Ue3bCDD7_psNR3n1UYYU9vCcH7uWzrUxsCC7vwtRmX3TdItOlcybGcSmZ--AGxBV6GlSjrgGt48rWe-mayGwCv0xz1vJWF5WukeoyOkUN19f9LMOxdoWC-grST1mg0ae5UiLDHDVMtL0-VHx1HJpDQZnPrUqgcZawiRaRs4AKW2y46fgarq7Cek5fLeERL0lTeOH3twKOm1TohFeXE9nA3Z0="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbHjX03ZWGVH1tSwofpN2F90sAP6BAe7mj1LQJ_SWfsCKKNq288hQYQ5VKEVPrnsj52sNHAeSJVkUuY3G-98HaiO37iUzGJt9mjJa-SHofZDrP1TblxwZMxI1gUXQ7dRalHq4AmZJuM3x6Zam9YdZakVk-Z0U5_zMyo-GnwdavutmLwABIquEiaTo6OL4WnTgHRnmeuhUZ2_Zj5c0="
+        },
+        {
+          "title": "reblozylpro.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpw8vOhm_4s7u_7--U10g45Q_srEFxKBqNWZhI63bY7eO-5-i0DM6FLNS-DXmB4qB2cc08M7i_iwyc5ItkOzW8Mh67tlRn1r8Vn3rZd5H_WHLvYxBG5LSs8cLxKuDY3THHC-sph0Z7LBo="
+        },
+        {
+          "title": "clinicaltrialsarena.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8YI8PJMML_Dys5Liamj5V_L3pFF1bpnCkPsipItsrHiIm5u7kQyyOlgT8w2FhQ-V3vO-h5vrqavqaj5uVtse2q1-XAJRMyiPhx3DieqaZdiwDeYflY9T583zWUXWfqIFiGVaSYgjWFyd32WvcmoEpKJ67BvcvAB0QP6aCMDwORlYfXg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrvDULTYeJThzgD836QiAjfjCmJS9tX_8Worvid-ZzfYjm-Q1uxyZlUnvZ-Yo-l8z6wmUb19rdY5NMUX5RaevGIVOil05E1wzU1kPFuVMhkR3oaHaUytBBwWp0bKhq0_V8sMm8MC43-1DhPi-gmzFdQiMchQLW5682BuL_JK-e-iVPYl3UURnJlUZ_0inPhqfzQ1OU1_VzoTszW5DYJs_WcjokVsmqRynMFz_7salLtvgNzJfuTxOry_1MrayUmgq9Xhf5xmNEuU0AfTVlDWoCKmH7SIIgLVj-yZGP1tZCCpiwZNotCSAHBddSFPxdw0ZshMCqW7vrKBc5t72SNzfWt_076RL6ufZwbrdC53oM4o6clJ03dNJ5zPuUAzJNnS-bufItVTy82DkofCSW"
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE3Alopgl3aQTx9AEEYU1uiWWCDn0LJsSvZjmC3Xk9jf9vzojWOcI5gw9OOsWrgJ5LA4K3T6NbMt_Pm-O4ceMHv7uSmxE4TuwaH7r1aE47EC3FGvHgwtOftYcrg9ULF_HhBjwFpH4EOc2mGu2eA06YHnBMnbDkRJrAWqPFlPCftUVzn_6ekdaQloTRok2R2V9jab88U-8QtAoCV_ZdfyiTH0hr63iSL71OZno0WjSwOHvMZs5wDdr1Fw=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF30XofO3CbQDC2W8OMH8zup9EkuDjT0gPs0WnE8a8SD3XomQXZmpmPbThUYp4Ccrmjmaudi6GahhI5B3cN47IReyo59kAKqLJ6r4fXkuy4g3tgyz2UPwyo7eHMinFdLTikgMAGxmSrcYfXGNDijvN1uLentzJGCMdBbROA3IISXLq_Z8gCzctTmP3Jnz_7T6dw0_7h9gBNUUjNBvkzwcGzkXTibbM9D3TNuQ5j1Fy85REGd9c0y5pkT2XTDi_iAkliBWF6"
+        },
+        {
+          "title": "reblozyl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBzuFhFit6cFrjr26rgNxwGgZJheRivd5ZTTNmEEv2uPyAExTXMWoAfkcP-_0dnQKxCWPD8QEhJcdI5V3_RVN0DvfjLMu6Y6KZCz4pB-H7rUDAYbuPJHaNajRh0AMkMdUiEzlIynLk4EcDe5_y2UqgiE2RXcU3bRFCpRSpyhg="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY5oWQgkHx1wlfudQP6fAv43GOwOQ9Jg_xOE7rnpi21pAF9OTJ9k0Ec8dZRfi65HXvhE5rlHYgEeEms3VahpQgBD-Bw0u_Ep6OhRL3Or7zNqxQAoz965aZVDXKgQhLcKykyiasEJvmrux-oNzlg_m1cI5Qx-FBjnHVFQOLgTWC8zBpTsKKpfzlPYYi1z1NolzJvkMZPPu08VRzV-YuWClYeywQJ-tnPG06kv5Et5bIcNDzeaKs6oR9Pas="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgIe4fKsPDv3y1YPBdh-eYOHrf1bfVpggdNu9LBzG8DDUivfJthjZhpIJ6uyeZquHyjz9Sbw9z3utt1p2KV1TDorzjFM6mrGAxnSI9OK9WOmRTftDWRXew-26PUugvtvSSYOEwDu4="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLTvv-IaNVYvbSIBRO2me3JGRZZo99o5x_MHuZ7KE8MjOE-AOo3QLi7t324xYf3zFZGiriYBEQjUmZcJ7qCVWuA9VS_-jZk3VTX8nesKu494fqByJpYT8z-aIsadfg_mJiXGL2nv3MMRY5UgQBntKjdwHgiETAu743IED9PuKYpBoV-cXSTADrFshIQr1kRJI4TVkSn8UDx1YHsH2yW_3wFQlupQ=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1B8ROjLdswuZAH2r8UW843TC7E-lYlB8n8fTAEVEYRsiiq6y-i6XtB7XS2drlSm1wfC-w73pWgxKJYFckB86k46NYehlqcNp03XxpxeEEvBqHZiraDH-0FsNiUhZJZyNRnvRuI1iDfG8J3eU="
+        },
+        {
+          "title": "thalassaemia.org.cy",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdi2LdsNUsUq-5gDda0tvc414LY9zJhJnlFa_9bjKrlQ1le0meVPIrx0L-YXO7NdXtk4YE5CFWE0Pt9Qhn-brmiTw8lTtC7dSBd5QSgSkQmXoyJqnS2rJo39Z6kW1fG5HnuPBbJG2MFFhlXoWVQP74-yHSJo_vOdw_q2ge_weFnkTUHOQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Luspatercept (Reblozyl) trials for Thalassemias",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thalassemias&intr=Luspatercept%20(Reblozyl)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1.0 mg/kg subcutaneous every 3 weeks",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 154000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 719626,
+        "icer": 600000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Chronic Transfusions + Chelation",
+          "costDifference": 129000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Luspatercept (Reblozyl)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 700,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.2 units per 24 weeks",
+          "baseline": "15.0 units per 24 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Red Blood Cell Transfusion Burden (units per 24 weeks)",
+          "percentageChange": -21.3
+        },
+        {
+          "absoluteChange": "+1.0 week",
+          "baseline": "2.0 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Transfusion-Free Interval",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "8.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Hemoglobin Level Between Transfusions",
+          "percentageChange": 11.8
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 21.4,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "30/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-An Fatigue Subscale Score",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "+0.08",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Health State Index",
+          "percentageChange": 12.3
+        },
+        {
+          "absoluteChange": "-300 ng/mL",
+          "baseline": "2500 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": -12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Bone pain",
+          "percentage": 25
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 15
+        },
+        {
+          "name": "Thromboembolic events (DVT, PE, stroke)",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "weeks to months",
+      "treatmentDuration": "lifetime",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIQwMNBDGDTyTVQr5IO-TPiOnOjIHgjsxqrv9oL3knY6jkaoVZcVodJ1axyXSrW7b9MQtO3WlaIaI0aL2z2ZrLUad4e2G7zmPlZ6CQ-dwjL58kcLjhT5WMPCYe4Z4do0q7Gs6gTxTMOMlM_gVIvn1c5gWL55jG8zt4uLTwrIA1tGz6iwTlfvWBSYtQNIgx4HYeJaNY2iD33k_cgsJv2T2LtLyuZJ-S170="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOXXRslfckVAMoQfVnuugG2BYqR8N8eYtxoVsqVj7C7D5vOWE_yQ42zbRTWMadrrKz73VoCREywQqz6O7PYMuB3AceQ8nnfcTfLveRYdfno08dnRT4LnsEPyH9j2h1e-xYfoVuzI2rAuTGBubk"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgwTIU0elpVRGg7zd9puSEpTbc2lD-1KQngk4NXAamAygMIfzNmW1Hia0a_DS1SbrkhrDA8-zOLOdXtQ3zZk11IwDdTWGiiARl1EX4eYYrCjX-8fy0qOqbgq5_K3pITersROJ1vIOiidSboE3giCzZd1a5gmJFqBzuY25Aof1fvdnaGnlVvFA5iuWXSMKaxpVqOYlELVc85QJtuxzM7i-itUpqKF2e541JeY46tns6q-G3NhuFR3N556VzWb6Y9a1WI0qyDI-mnwLaULhoyWiko415YceNmg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnvdncXodwEBYGbS8QYnIKqmsntukfBXco96uN7PBLUN2Rnh088vuBLf1d8GtMEFm_FwveSSzuqDAA41UzxEX3z6L4R4vrBGu_rpN_YHwIp4K107H7VHcN0YF5ZfOQtXP3lKlCKFhuk5cj3bGBTLBQqddztHRH6qfBhoJ6YEN9eZ_bKtZ1resIiea9_tDEaC4wxIeUtIkw77McGkhlfoEqYDP7JJV2IT3FAcenfz2szOTJzzbHru7L1vVyhS93"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVv6Ha6-KpiyKsaRMsGNifHj_hjn76MJH04oyCqiVgMPlIgKXEOuBUiC9KrWOS9WxsKtnbdXDYR4SLkkGVQ2NYiNnKbpfgQnFb5vp0_sr8nhIVtG04fruKrxFUptJaLbb0ytGR9e9TCR_YD2gDmcDy_sLt7aKs2Znlkk-nH5RmQ9quXCSJ0baJuAkaxLm_0KE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ0MeHQYYQAQmbvXwLOItN1szN5UGki6j1Mexj7ewUA_ZuOokS_hMcfXMWcfwxioP1dOQj5RyUlmp0jaA0U7LCPrjGjGzijYi6wlD4UqIdgCYGCKpJ3EcvchXs-yj_EIPAGCVy"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydroxyurea trials for Thalassemias",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thalassemias&intr=Hydroxyurea"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10-20 mg/kg/day, titrated",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 3333,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Hydroxyurea",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+6% of total Hb",
+          "baseline": "3% of total Hb",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fetal Hemoglobin (HbF)",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "6.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Hemoglobin (Hb)",
+          "percentageChange": 23.1
+        },
+        {
+          "absoluteChange": "-5 units/year",
+          "baseline": "10 units/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Blood Transfusion Requirement",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-500 ng/mL",
+          "baseline": "2500 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Ferritin",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 45,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 cm",
+          "baseline": "5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Length below Costal Margin",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (Generic Score)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+0.5 SD",
+          "baseline": "-1.5 SD",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Height-for-Age Z-score",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-100 U/L",
+          "baseline": "400 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (neutropenia, thrombocytopenia)",
+          "percentage": 25
+        },
+        {
+          "name": "GI disturbances (nausea, vomiting, diarrhea)",
+          "percentage": 15
+        },
+        {
+          "name": "Skin hyperpigmentation, nail changes",
+          "percentage": 10
+        },
+        {
+          "name": "Hair thinning",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime",
+      "trials": 33
+    }
+  ]
+}

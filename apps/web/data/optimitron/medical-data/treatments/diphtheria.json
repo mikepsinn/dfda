@@ -1,0 +1,621 @@
+{
+  "conditionName": "Diphtheria",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:35:18.327Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "www.gov.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhWV8Wk--qNQQmEKvIkwzw2pXVWuITJIb0AKk92uOD7isCAGrGeUnkV-kvmpL2gfSVe-3azuHl1hnfSQh_8qObl6TIIeh8kJA-vNbJ6bWkgG-E3Eq6Jjj5KEwbGPVR-atnGUrWu2jEAkE0BSUu4az8ci6m-xsv4hQy4igIt97mynUTMLXT9M-dwv6v-5KkiwwqXji8sdW2AZQCLfmO-XG6HHtYmjHsV4GAINE-rLoyRR9poE87lIUT"
+        },
+        {
+          "title": "www.gov.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRD8OVYW_Igq73e1apVx9F7khTL6yRRdc8tcRYMqUUljtyBE0hnmmjE-ew76bSYvUd6TAgq37OCf1HDDk0CPmX2acyZbKT-oC0_PykHEUIGnjGVPT_067cjlwIBEIOUOm8lcBBa-kL0J8hNMc-YhEu1zzr9qOLC8KJkZfBHDAXpuvBQxhIGTXV4w2U9iDLg_Nn6aaFDNQpe7byZQ1pkm1wtrQFJ0gyQ2B46X3WFWjYv38UNsEpqglXFH5xY0EQC8GpTbT_nvRV7iBAyt6Sq1VA66XMXjPjlBe1UlcM7bScVkzf_Jy6ZKF2kyXFwg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl_pEPiGEM1xCWiKxtsURE5OUS4Pkg5oijbG99DlMykCIYXvQhakuxUClDx539m9zS96LVtGJbyvtWk8GJFGbrkTsGYxoe0gTybw0xH-LgDvJ969nBiyuAMUg0hgwYKCYvguHLDt1E5NTwKiJV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxVygDo7PSyyRZVfAmYX7yCXPVz1RG0dNKC5wVlHz62iAZ9-gcIscMY8wxnunU_c7Vwph1wEe_8C6IkCWlYmn5enBfD5iwAh4OENGmw54NdNmrmuNPLQfnHyqmSi94Y6wfYBD1rfp7txfUrUE="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ-9Md9GlK5up_JQGl4_kAXh1eASP2gtjQL5BW2EtbLzlfssRdI51B9pSFBjsr6YjLUPQqg0B_d6XJQ4aK-Q7nHGIFVCEsAY_UJi7usQPf1_Sw-3NxYZZzuj8d9Yj5Kn3_YKqRcIbNna2DX8Jd_U5UPRPyAlmyVUs6SVgrzizqF2BFjvV8sv_LvteZajoYweeBKH0KCQJ4mM5N9wJzdmUUjTRxBiWtRLxpw7VOOOrYgE4N7JAdO3FwuQp5wWXd9z_EvJR7gG5qpg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-lrf91i3_aNkBfrE-GUIqvG--Cn_3_JIsdoHMWW4ibboOwVwN9QVp79-ro4xAjcWbFFZF_JtpEBHyaIGchvGPJYX-fdZDGWW6FVnb54Ozw2CsD0s9l54VBPWVN3QBXEp70QFJeiuW06KaLc0BKG2dD4O1NhIDolA4sPJ7YEIJANdb5RBt50Bm4pEJapyzMCZ5ENnZ2Tu54cpiosjyu0GqTfig89vntPJ7HQNYM9Mxb7xPsdRjzFNEZO4ycWUrYwebRxdWvP64LA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyuq2wjgLkbXEZtsgualZ7uJjcMbISD73sOSTECWcKYGE1eZ6pKaxGTjllS5U7oKOPTmL1l97X5dNSdjpAHL6TGT4cB68kuSdOyjinzbIC1Of7-RLlsQViIuzPRtZgQsbGaSGIRmyiYA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqf7F8XpT5F6KhhWWxOMzxFLOGPIuDoyG69ckg1cYVCzpNGcKdPF8IV4CbLdd7SfLLcNRMt6HNeVGHJ2pkGYOnS4rliqgxmXftbAdynBpAPQmuVeFuo1Vx5kaOdLq72wlmVI-qmZjkorY0yyd3L-ENBJsBrJx2l6RNIWPYad6KUxRVRDUBSghMeH9XXWsYeacfOPI6v7P6ZfZuJ1CTqbk4E7x1QWAzwj5DZJcdTcqYp9fw-jffvsW-wgNrQAui5C4xAVfJ42r_vk80lW-QBwkqMykRmypmKKfdeZXM69TCzurB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZql3SFvfYjspGmOGwONAMGGatDE_b9EfQ_VAteVTZIrt5G4gdr7whv31UA6FFGYoIvTE8Afs8X2dHCkhfZv25vp0cQ7QWI6HtEqLSpzyursAYO4eGLMxgOGa7ZTi1EwkALyhC1Z7b2MXCyjs="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiuH5udvFbfsbhZ440GDAk5i9Z31IYqW2hQ9uZrTA1pHplKuPlr1SQ65z5bgzyy4H0b-vmNkb3iNm4dLSkwrCrn3IVBYAN0Zn1jXKykt8UIoZIb4TstL--t2TDG38Nrj30OnoAnXdkfvUEGfNG"
+        },
+        {
+          "title": "ClinicalTrials.gov: Diphtheria Antitoxin (DAT) trials for Diphtheria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diphtheria&intr=Diphtheria%20Antitoxin%20(DAT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20,000-120,000 units IV/IM",
+      "effectiveness": 95,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 30000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 33000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 47143,
+        "costPerResponder": 38823,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Diphtheria Antitoxin (DAT)",
+      "nnh": 20,
+      "nnt": 3,
+      "participants": 7500,
+      "phase": [
+        "Clinical experience",
+        "Historical data"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "15% (for moderate-to-severe diphtheria without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-cause Mortality",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "20% (for moderate-to-severe diphtheria without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Diphtheritic Myocarditis",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-19 percentage points",
+          "baseline": "25% (for pharyngeal/laryngeal diphtheria without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Severe Airway Obstruction Requiring Tracheostomy",
+          "percentageChange": -76
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "10 days (if patient survives without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Clinical Toxemia (fever, malaise, dysphagia)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 85,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "21 days (for severe diphtheria cases without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Hospital Stay",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "14 days (if patient survives without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Complete Pseudomembrane Disappearance",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-6 percentage points",
+          "baseline": "15% (can appear weeks after infection, even in survivors without Diphtheria Antitoxin)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Diphtheritic Neuropathy (e.g., palatal/peripheral paralysis)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Serum sickness",
+          "percentage": 10
+        },
+        {
+          "name": "Anaphylaxis",
+          "percentage": 5
+        },
+        {
+          "name": "Local injection site reactions",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single administration (can be repeated)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8oujrVrzOCmIWptsRFsIfMnCaq_Y4QLQyOm8FO_mYaIF6o52YfkpuzRsxjRpdV8O5bvKJS4AshdWmBIPyQCrgZv_rdpEaEk55lc3Jt9Rlx65kltEHw5Bz-n5temD-28Y8FsmdFzNxr27T_F0TV_-E"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5EuIw04qI9m723RyhxPqs_uj7-8zbHIgkH6ZtPtTwq7q2H2-JWpZKe2rYAPKze2zKddJisf7hePott084Uc8U5qVZev7ENFJu36pvP6cyuq1fpx70lAPNEL5c5baJ012kPzTp9FGO"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJM0t_VT4m_yQyBdrFvpVDmQ2nh-q9k0a_ViSZ30fFS2-CPYGKxmfyOdJOXFb7Xs-QXesCs2QrvsCksDg9kKoD3WYN6L1TdxfIL6Yy8b_8s4RnxCCqjlOl5_T0hvl8ofRhSz1OaQlVxWLWzgl6KcXYyk56-g2RRjgl"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECkvPETTKzF-VzSzCgYse8whh3XmzxjYFdcruHSLE9rQ2ZqqY9dlQCetw_VoApuSLmd0SixrnXof3roXIvlAWH-VtIim23b20920eubS_ANCq9kiPorLTv5N4LMqQibSZsIV5BX_SkgRQRDDuHDBblqiol6EPAvH_-T5TLP1miUjmAWMflEG-dx-dsj1_o3ifT2gp8x1ksfMHY3dnVWIQzdCTPBJ8d31Co4ua3X3rqg70ww6g5SAc4V5TslaiCkoWoudUkiK2te7k5PCh22FC10qh7j6VTyTWQL6X-LX7igYtc"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqfsFyiPEXOV1TdGzlNKwGin9Wn8kKrTLO8kyd9QtrCtIH7cx6aCjbrmMaZ4ZmH5iPKB1u5EqppKN3iVKPgN9v-H46kgmPHUYZ8hRynolqMkDNIcYDWC5dPSE__sbra0Zh9UKr47maj0pxJ37rOEs9Sr7Qf7tr3r7buzrXWXi7VrB4TTR2uf7ykLmk"
+        },
+        {
+          "title": "ClinicalTrials.gov: Supportive Care trials for Diphtheria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diphtheria&intr=Supportive%20Care"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 22500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 23684,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Supportive Care",
+      "nnh": 10,
+      "nnt": 1,
+      "participants": 0,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Complications of intubation/ventilation",
+          "percentage": 10
+        },
+        {
+          "name": "Complications of IV lines",
+          "percentage": 3
+        },
+        {
+          "name": "Electrolyte imbalances",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Days to weeks",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0zleOUd8ENLwsGa6ZkRn4GKtxol5io3lJ-Iiq31bCv5p5Au1hVvJAFt8Qt0i-5Xfm4PwLGTKqaoK_OFSMqdnhALx6kKOv8SCSzBX4UlvIm22ZlEtY_-gmxY7ghwh3sKMAvYQ="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy2gAQhjtQ4_bgsC54-4EDUOB76vjjhDQt-t8A4kezrW3Uk7ARX04Z2DHAkIFIaGfNrc8t1LT_hBjANyvTuvMFgGvo4b8MsL8Lxef0fzB9JQ-lTnlItMK5JkD0gjKXkfYQliIZpo-6TmWaXTX4KjlRK970btIjIfr72WH-s8h7Rmg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ7KTD9xk_dNRhS1VMJXAJxBb5ytARgbrDaNuVEHGdypLJ2Pv5_V-W0-uEn33l_9IU2Mu_rTu6ui3e-_RiRkTcbX0RSurPace_S1Wyic0fP1BSyUUc1svjvrImoehkEWx8iIIqvv4mUGLpZTpU_WpPl12gvqfO9fBwEyK1-2hUvJYN_HTpRhQGItiutmEFk2EdQosGkmHH9ZUd4QnP_k_9wQK8sZP_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCO3y8HkWa595Y10Qn4drgIbF1NTsmeErlNnpzLAS8t6YtVGUucCKCFEVTs_wUkrftIdnEw0XX4f9N-FxPxVfwBXCoHRUX8FfUWTLS_Dhdx3aZQn36u17W4THop42GLrVW5jEKIywJ1A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiz8DCvdZzLv4EOTqSk5ApmiyCRirtz3n-yhDwjYuhHQcSkmG58DxOB_ZuQbqegEpbxS2p-PB26cJMOv5kwB2gLl-uHCLYwvXJ7TdKX7pGyLg6A2wFfxpW-9E3zKbQD0L0kg4c"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUvonNYLs_nd18G9UmbqSrK9mZDVWOKp04_xmmcLmVRDePTU6OF4InY6AbZycYgWmEf4t0BTuCCr6h4jAd4l91n4RC8rNv4fXCuP_lH8F6mQgpoBS1sfsM7TLltDapOEWk3qIGDIEK6BV_RRluieMAzQIA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBMoWIE62nhyoetUvcpDUkWQs2c4tkZhNZ64ML0RgQnlPO6JW-56EofzpqVBw7Ow7FSpob8HpLxG2417M57cmSumzOgfADmlnuZ4tBhUmC42dqrQD_pJkz-qNXDH2x3CH9bRcE1gHsnt2qX-M="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwqz6hTZNZl1ixDxulwvJMOlzF48WYFjHQ58W2HbDW0zExcJo2DiCtpVJUin78nTPG2NN6kIlbAeFFrhlfTg6dedwaDfD50Gyv9wQK9VE2A4o38MqNEbZKy9wTzxsOx0s-FUC87UuLdMZKloALkAmXcD7qSGQSyQ5rW91ftiPsT-l4GO3Zhpsex9FeWAfTDU63o_6ueg=="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwdMpLPWwBKHdFxPsukNLt7hHSFDT18y0Pf34BxyODQKBvVJj6TPYKJGHO7yc_p8Bn-5zetAQv7yX-dhSRVpk_CVCRYcXd50iTWgCVQRQ1xSduzim5sh9E1VqMC0PcRE4ImMr4yoDTbE09lMknWQrRd4-VepB9oDhJb5l7kbXYokgdad0KOKOGQ-DRzg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Penicillin G (or Procaine Penicillin) trials for Diphtheria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diphtheria&intr=Penicillin%20G%20(or%20Procaine%20Penicillin)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "300,000-600,000 units IM daily or 250 mg orally QID",
+      "effectiveness": 95,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 179,
+        "costPerResponder": 179,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 10,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 20,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Penicillin G (or Procaine Penicillin)",
+      "nnh": 10000,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 4
+        },
+        {
+          "name": "Allergic reactions (rash)",
+          "percentage": 2
+        },
+        {
+          "name": "Anaphylaxis",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "14 days",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFryLa5syDQd1fGsvZVSWDBHvw1UrkQB5UqkGtr3GP9QzaSgL3N_jJ1cksd4_bGBHPCACG1tZxt-z74ind9-fJU0M7CU_pJYX5HuNEVwTCiusKo3UEHVD7aW92milh58pPL3Ase1IjdsA=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhhZm4OABEuW9aa23xO395lxPQvRIHNyz_MInw-8jZbzGTqkFQI5-zf0K1RaiGn3vqs47DSe1otK5kE4Hd91TzCXGkfAlUn-a5_6-yJqcLqe0h7ocjRZSGeRHc9cpZNATGlBZ7pE8IWWBDj9yYAqO4TGqqCkLSfzeNgg=="
+        },
+        {
+          "title": "oregon.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDj2Prn7GAQ7fOo5bgBBmAT3QTrBXfgs2nJeBDz3yza4m9Oh2RwDyviuurRKxDyHdDlPDyYUbVuGwOyBst0JBttpn7x-ARkSYhGdgbr8EupjcyGgpABor62oLQQZevAeNH_Fjd6oHUNrDkKcBAED2LHNso-nqD0kcugJ-WGfv27w8ksTSnOmWZjePpu__0wI9-uDAH0lP7NnXalROpPLRY-nv3Zr2UClECJpGrJAddi3vD3tLGBc9EyiAR6xPEGy7osiR9_lsqmE3P"
+        },
+        {
+          "title": "medbox.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMgd9A4mhnrq85FmSOAeh2VK78HxnukVg3RNyLcSE0AyBqNRh6GsvFm52VYSc8ElR6zWWuHLayj6-EvBCHpxWAtD-XFXgRBl63UrJFrQ5GJWGl9WdCrmKl1ICdBVJMxd8M2oao8LxqvTnOvoCZR7uWjb76WCUfXg=="
+        },
+        {
+          "title": "nih.org.pk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJg09rvdptPVkknf2WooVyVeqSfz9MnAftlb2kE0n4QXX4xabweiSmbpUJ5TJ96i-SVJXcXKQuzqCmduHeMRTI-fsLHoh2wH4tAmwoCQ2nqPQpOpO_1Z5Bk7Eozacf8MMnjA-JuiEyLyEqfwFQyp0llD8RBKpybsuy0NuN8j3rC1Y1x0yHKHqnoX-pPZc78mNYC_-CG-C19IGZz-eBHabpRjgyrk9R2ET0nphV-osTI0hns1g="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmp4FXIwyrV_tWQRjjdh4dwKHgufXMVKQUy-ofbap_NO6M5xotpymsrMl4sPEs6WCEYyWabL2f5feMj8yUxQCN6Ju5wrWAYnl_fO-_t_hsneEV68uv83r1wQ2g924750J3DRAzikEfkBzbkgkA5Npcf9Hi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEBO2uk4Yq62V7fpITDRZGXQQKdzxfvhiYQ2m55nNJLp1RiQCXCYpwolWea_owpFoZv7I8T-BDPVug7uOjYZWrgS4Von143In6zeBZeBOOyBohvZZE17Ea8Xe8r7JuHSAzLLbGa3OWBcx64QyZeJCETziHYaU3QZ4268MOYxAhPM48XpMylBc52Bat_VAVsrq-WTAsb5a2eoJb7YGJ0ASzp89lORUdlOFN7HbkQj2SXUBbTvgICI26jlSugeVdZ4w8P07oujCt6A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv9P88YxdreBP82HF41lVFFNoeXFnvttUBGuPP-zc8Cd81g1Q6eYVGWdH4yOWZVeuD6s96zZoe2xgSh510ZP_ws-pBl_HkoAClUwwnsZGLoUZJ5ifMlr8azUvkObZeF5gibxpeVb48nUSI8zg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgtNjTEyomtmBUAAMjHJsPA7O0mgmlfD_SUQAh-xtgrMtQJcUjBhYaTMTug2LJB7px_IFVAz30_dZwGKeObmVbsz9s6vhkoq2UOmmht7uS7mc4SbTa_uNDSLKuClGhYueib6g="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwgGTU55ybjAUZtjxW0OWO1iXUfLWrKNNKriQ8_ZIpyxxCvaweGdf_WVB4r0LX_iM1IqLvMaJlB8AxxFIK8XPvCpURMFEz6BF8kuu_1X8YcBgBQA5n3TsSJXsiCHiYJSaMmLhMouLXm__GH_MtQOUixdF5gyZsmL3d8skThe4wgJrk1cM5nprOV2AS6dO4FUpgiJnlktcB64pCY5NY5cmYqhUHwpiD"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWwj2sdLS6SMJBXfwJsz0PJ37fb4L_W10B_Inpn8omO9OxrLN79y5E8Sy8xiGtCrJzYu0wGEboab-PMgeuSu0-cdfTz1LiQzm1UEyxE-EIoq931NKHBxPYA4lfUedBeS06a7b2e56wi9zyfXHqSdmNJMAZ3P2fnwMIEFQu6Cq5g6k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHov9-3Le58kMv6xH_XaCX6L2xLVH9_e5uclwwpdekfhzo1DqeqedRRvoZUhiDC-PY2rVUATOQCOdf1sb_-P8pjd3mhmNPlwjmIrqawWpVg_NK_DKDi3_QGC3T5FqSOytPVkMiYvaD158oq-A=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgo_BCX51508nrgos_DMfgCz9cmDbv4Ld4MaY32pm8bjFLdaarqsd8rv2z6cc8vEPlUXpKqHEhjg5Wcu0k1uMcZCRY3J0fRvuNZc7Yr2V2pIVuPJsuyu5ZuJ9Uk1hRiO3o0aAa62g="
+        },
+        {
+          "title": "ClinicalTrials.gov: Erythromycin trials for Diphtheria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diphtheria&intr=Erythromycin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "250-500 mg orally QID",
+      "effectiveness": 95,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 100,
+          "sideEffectManagement": 100,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 263,
+        "costPerResponder": 263,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 25,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Erythromycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 15
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 1
+        },
+        {
+          "name": "Allergic reactions (rash)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "14 days",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnICDxhFFxvm6K_InMnqPoATSaZdYAftLBnX-IA-KN_zNHocDxMV98bHkkp9BXEiQ9qQk6VXpBMKlIIJja01MfCLMZFdirBge5S7RLSCKFhjOhWe7Tu2Kz0HJCKGllF_1dFV-iz0Xorcw3RJ5KvdB37AnxHN6vg-LLw5uW"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMIYxVNnqeLIPYzFOa_tYtUBfzv9QrTlXUdBnT_c0ErFX9_3TkIuKA13WIy__DEpHZgKcKDUHJbkPN72kfpog4PYHSBTKisU6-26xlHpO0BfcP132V8iRA9HiZ-9iYXeaXWluqHAvgaZZjdHY2cnF83zncMT5IGein2Q=="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwdbLooTGEnz98CPokGFp57TtM5MSIAKWXwpNz8J8G6sK19VyPuvq73B-kISqZfkNvC06Czc8IB_eBEnKAvhwT37akRS1uqPybFxeVGW2JOo1SPXiy7ipq-yS3L3FavW4cIM_Q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOkHmeR-3vxZQfkeWpQGZ2QCIoSAjlxSSRJg8FamRuQ9jQO73YI1JgH3rB4Vp5PvP5OTgWFSEQsKhYBbhGEZ7JDep4Z03Dqe0urkRtvwwW7y9dxj5BsxkzosYcb0zTU90RXH4LpmziDocYaSA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3ITOgPQBSODqMtonDbarYJNxdM7Nkl0W33rPQKhmIDN4X_5MRKAyZXFPhNNOG1PFnp0kpYrpcn8NQLIiBv7msSjYsovpR_Mjd5j3B_E0Wy1Ql5p9qpxMn7U6RcEsU6THTaQU="
+        },
+        {
+          "title": "d-nb.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdiAb5cRRr3kHbQ1KRqiJka9PaDh1y7zXsOl04VzY09mc6WpCTnby8ZUfNr02oqKH7yDvmTd8jjSmmSRN1vrWh2F21GeoifqumT1D1hlnBOcF76WRmU-YUZ9I="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_7kO-b5NerM657NuJkC_AUHkQDSc9l6lIulqC_meZO1b_mi6zm7P5FhJpLfoyvCb7kgx1yMwyuZAE4sCRDFaVJHyCyouifUXiVIqOubGREBxb0_9NPqABrlEMcMVpBIvL2w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOHkk11c6MMyaU5sbW-Nd2Wgvt_LL1sp5qNnVJ6gRgbgfypsdFX8ZW3bMyXpXUzZxZIOA6JPi4NOZh14hw0lVdymgKOM7uHtVlqDMYMSC_Cye7-PDyv3SIw8dhyElEgTYHWL_yZJdgNFZpUG9plQUDmHRkEi6TArEQT8rE6dcgjZ7zKqu89DF-lvJN1CK97x1AIYEVpjEVwbnEa-dKpq_2eCTyumJDJf24FaFzcIE9B433ptcNsPZBHDiJeqwWpRG9x7joCuvoug=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuR7bmzszzNiLmBbbzwANMQjSoFVOdfnhA34E5Yuxh_czKU-tDYqxzaq8O0IxvvehfpGyAsjXhz89FEOsnvzqOjN-RGyiGAhbbgmghkb4PhrVbAsHge3VXZn34DejSws8B4VAEV-ypmNdgkzJJnPuCwR0ybrcI5uhHmIiRrtvhh36nfTFXsmmxGU5MwrltRpsnCJdIeNCzM96PKEtASV1mexJF4g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Clindamycin trials for Diphtheria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diphtheria&intr=Clindamycin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "300-450 mg orally TID/QID or IV",
+      "effectiveness": 90,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 100,
+          "sideEffectManagement": 400,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 667,
+        "costPerResponder": 667,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Clindamycin",
+      "nnh": 50,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Clostridioides difficile infection",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "14 days",
+      "trials": 20
+    }
+  ]
+}

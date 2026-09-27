@@ -1,0 +1,1133 @@
+{
+  "conditionName": "Rosacea",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:43:17.451Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZbWN3iHcjFe7JODA-gXaoZXOuVxZ3HjF35D3itLA5Ad1J_-m3gwwCXVwEeXtlBCaosj_6OIo_Y_TNvX4Z2j-T8XBbSnbq4CuAxYJ386Flg7RJokz0JmwVpDfY1uoY7gBX5mht"
+        },
+        {
+          "title": "uu.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF11WJhgEoUW2nyhI3scSxUlUyAixfCe5T0EIaBfgIOIqt1La5kj-IccEPBVo1jA4qQEhMWUh_QhZvrLLzsudUnMOvEPaIF4LJkROi6lzNiRAhA3iLK12-oJeaIk1kYgAV-ijJOXA0rJPIP0d0CuQQ7WxEw5nEKXZ9WgAtg2RxlkX381y6gZzV3VktsmBvKhvJ1dr3KX9ml8cd0r4WJfiArR77BTxR0fWEupA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVPtFFu90TrfiS9fwh0_Yt_G5ektXLHaHqF79Hl1vaDSIAZ7pG2WuVncu9Toa7HM_4KVtVb-ODOCyJj9HKX9NlYkVcHSRQcLaFnakkpYeItanZmia7QHNyW0j_IBuWYfJ2qZQFQDg_ffqbSxU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDGfcdAUDVGp80N5Tf-EU4QhI1jBKHLmHlv5cJiBZyGAIhN0c6tm_-uwBbfgNKLsQiu6SBG70nLQKiR6AJI25i91vrWtxxLoMMoPFuPDG9JAd8KQX-tUVSwHtL-YjXdA1fTTfsnbjRJTeRBiI33gsKD8-wwjpXbZA3zq5CMGMhrIWM2iuo6AzpSM-MWVtL7dVRVd8u0MYoNAWViEaoYZhDg4N30CQaTegqCUd6T9qlaRhltkdRd9wEXl7TwoXHJs7S-RSUc5Q5WGyNyeA4NdJpuDOafdMvmNRyz_Q4Crg1QxeSV_Ti8XNvi5n1W1ti1sbLQh0="
+        },
+        {
+          "title": "dermatologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCCbNdY-_JiRs7cNK3moGuKBAcaoKkWSnzm1VyprKAlvDvF4HDJFSmJWHzjHZGgUSbGshxjRsq3QP8umn40U9DI37vIP6spdWoTzXzmGrG1k7ZxJm-viFBS6cmRza-CD3EhYfS2agpdFlJ72Bgp_1FtE4k_pXLbkoaHMWAKvIObj2nrxs5MBaLLIUuO5yrTxBJwMAem9umwu01tij3fPf4oQ=="
+        },
+        {
+          "title": "portico.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2J8h_PP-yqtyii8pRRUVcSgvMyXWGglilTbwLCo09iNldDYFaQOhwo9JImVisEhZ75BlOYAqFLHFnlsUw9sdEXYBrnoHtNk6SywDF71tzzodSWDWkBmgitfmQ91q1FxXCkVNooGd62RrNgvMHV7g56aCF4LpP53jVMoz7C5WyU-6iDR_D3WUOfrBLUhKe1FsuT3vKO-elYluZEqECa1f5O_Rx6c6VK_YaK1DXzqiEfkZ0nfG2cz5PjYFjekplCMCBC4zaWAl32dNviS3Yv2cKd5X730IdKg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWaVhO-_NW-gSL0KyX7ccK3XPQdMEblswL6O8Ehmw1m9AX51PWZTyEMVe38jeZVOWVknsq9MVkJEV9lfnQjC3XvYCmrFozIzHTx9NzGBdIgrDYncrRKi8CNXAiF8e_G5Xf5YaB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFA01PRYyCfOibPoI-jcFehYBApaEAmKn2Gyr9cf9ltr5nhwt70ajH73VdzVmHqsOUoSsUXAew8UlhKPLXr4Ap3l9COcZyN4MnxINjoBEI08GTq57dEEY_iX_yAXfnFyZW91CAWwG6BIBJzhdUMkjiprsjR-POEuew-8dNADcU3S11NCbJ_bxtEh0n0Ella7ZfJqQqR3OBFWp-CLwUj-zaFv675_9kMfHATQHirBWMhzWQHFkaN-TyPyv5XfsdICYDhlb_CJT_WHnmjxIcM9_Iq8vSnhpctPZ2_DP5AQ8xdZ0VIMPSZlYscwxVva5uHsCr3XeJ9HIfRTRtIVOh_kmMWjcxs6U8PcLnsTQ=="
+        },
+        {
+          "title": "uu.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGobkAaBDFIeCXQXNSayWFpviQA9QL0EiTNGSYp0tJXbA7JkStrRAKcToNj1jhOij3tyQThoV-2yTjcrBS5AeJgXfF9OrJXOePayv8l9ivcj_kK2vkHF4ItTv24agRmRykpiSCwnRd3d5uBkjUj7to1zs2k1zL7yrEP56smEYzqUR-jR0XyC9TfsLcAzA=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEteo3eZegwHS2dSufyowTa8sla-hmfsPFsrNp5fby3n6TXoSpJp5UkfxD2TdbiZcq2ViKbk0AKkoUtEh9ra-rhECZBy4YoP2LWfWE1636s01V6AoqtfHzfKSaXG9nSXLyW75JdcSZveMpXWcTf3qr6o8iqaFHgME7cNau3Mi-HGC0GdT7nOcRgy3RN1osoeXsaBmGAIJ3KjYQxYZ98_4Qr5yB04VQ-8-k0hw4FMymm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkPowTyCQSqUdbyM2B-NtjtBYajT13q1uWsHu-Op3xJGXwkQeFqQLaoVw7VxfLw-qPY8lHl7-qv4cNd-WFKZJJpiwocYbvKEW5Xm-cwr1xJgOI_PYSc-pv6EC5KnAut8grxq8owI91TbptL4g="
+        },
+        {
+          "title": "rosacea.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3UpKq9wTWq9ZFZ-uwprHQ8CsHTahdKjT4RRqLIwJhQ4uqu2-9pWgycZYBwqjOYgH0P1CjV6mUnQrp-yw4Zf7lZUsmGtL41AMDP5mOZm1jcpl2XTtNGUv3i_a-94Xq_2exrJO7daAXcnwWSMaE2zBrrqthfeW3AhuZ4zRYqv5uz8ilx84Qb0q8nVcr_KFwvYCKYuVnw-x9C3-cAPGpWs8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ivermectin (topical) trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Ivermectin%20(topical)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Apply thinly once daily to affected areas",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6333,
+        "costPerResponder": 3800,
+        "icer": 26000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 800,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 2500,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 2000,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 200,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Topical Metronidazole",
+          "costDifference": 2000,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Ivermectin (topical)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16.5 lesions",
+          "baseline": "22 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Lesion Count",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "IGA score: 3/5 (Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA) Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "Clinical Erythema Assessment (CEA) score: 3/4 (Moderate to Severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythema Severity (Clinician-assessed)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 75,
+      "safetyScore": 88,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "Visual Analog Scale (VAS) score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Assessment of Stinging/Burning",
+          "percentageChange": -58.3
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "Rosacea Quality of Life Index score: 18/30 (Impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Rosacea-specific)",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-40 mites/cm²",
+          "baseline": "45 mites/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Demodex Mite Density",
+          "percentageChange": -88.9
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin irritation/burning/itching",
+          "percentage": 5
+        },
+        {
+          "name": "Dry skin",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "12 weeks initial, then as needed or maintenance",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcCJSAleQyIVvKjuxO5uU-8vWJDIhu3zepQCA6CpA9vZh44Y5Smjf8JM34jy7ynLltTutU4hVyWDPYhKHZGQrPrDlBMCNSpP2TAX3GaQavJ_9tZLoH1x0PS5KM4Vy1D_vWckIR"
+        },
+        {
+          "title": "bmctoday.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw80-EMfHN4KF6n7jQBq15lrOLWEfaBo2-e5nHlj8A4wSuiWVdk1x8JU6_yJBVYA0PpDSxyUshFNkeC6hTSd1iInIEtPdRpwsor3eSMwDUP0T8pbhIOvFG2FKLC3ITj5cbt-0bDl7mLaXp5G_Mg5RmNJ2fUkVGerDOws9nZn5Whfk="
+        },
+        {
+          "title": "dermatologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnFi7v33QsGh2gHyK3RV8G7jH6mVRODh02fludyUV6ikytzEPK7PxT-wD6xJYN7WCDZ7I8K-2lrnq-gRo3tMyjQSpMIMJYljWSJYOLfBlET6GeBYcX4fh0fK6HZUj6wYJjYwDulZOsn5u90Eq8OhHLFCNUVesb7TU9MeaUMHVW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8Y4U9OAjMfG-L6n6g-c6Y3h6ezc_Zi9VBkZ7H0HW87zBk5tB1FLOdlFE69dCEkQXP9b18rsgz_aQdaHV7-F8E_x5u7sXJ2FAOC6gIvbp1blYWkTkSxu8KGmCZDf-MTX_EWzS4gS9zR6Q2DGNF61sGoDzd_LRI__XuciLNDvfOA_jMY4B2uleLpne-gJFik7nkK_jpmYvIawnmLVcrXIhzjBqNZHE8xrMuzy-_jBNX11wuOupWksq4RmwxXiGCoF48GRp0tk6xCwuFpVDcLtkbQXv9iwEZHJVvtZAPSr3jqfLZkbkCnMgS4gDOw_D_iqIDdw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6OvJLhaBfuhPlUsHgT2E9ZGMd9XlvwrvR_b9h1Stu_7Bi3D5IuFHQE4EL8B292lYEt00U9c4p4LbyMhoE68HWyztLAXfk2gWzA4AebNxnkd5q0xxI51YlSgTUZp9c8qor9vKjyE50RB8sVX0ryhpIdK8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNcdp0LIggD0JGHw74QjMa895WZtrR3PuCbcS_8m744xID_wdpnyEK8u57Ed5F8RcYXA-tk1rCEOcVCT0I2VsslTNAWr17OyLqjX4BIaWkJrfQ6z2mKJ6uvVlrRkpETogFoH1hNaPZ9lvoN2M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2GpFIxQI_Yhep8Z3VLYFp6duTHDkTZahdq1qCbT1sNeRHNRxFIsIiRqRf9lhtViEm3xXDjEvhVGF_yvjilVTwUmv6gUUmp0k6Ozvte7fZfihkS23AN0GR4IttS_DN75HLw8NjdQe2gGSMef8="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0FTZCJh-ApbiXqGuAkTmzKtJJem_ecFUZUTkUijMyxaUXaLa0GwKNyQXbuR75GD2p7ldvoHvdQ9uWvZqOUHRERHdXqrTloBGzB_XWwIUSjz3hj-0xmIdMZTjUbFctJDUbQ5J7BsEFizOtsALsPXIC9Ig3bAzrhD3YNchdA64PY9HuOtFHYhyI1OLzYtJSEzv1W57eFY2TCyQwlPuLLg=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfm4nCfvrhBpG8HvMmo3yWyXzuYTN7khK-ejFfsFEAkWa9yJbYYkwgvvc7qhhH_lLfpgulcYhHM3Zw8MVCFhRRgUDvBbE4MErLRi69rwnPNZFKd08-IAfNpPqSyeRAhcEymCYRXfdt5NyKTq8xGjgU568jqmhGCcNBdsk0RENzxm0uYVf74poG7unlWDe4nViDw7jtSA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6u5TyIuccJRqq5rDhklc1OyCt4g6o9Uv5kSJnK9GDam7kB9gqWYjDfHfMAXgUwuKq1taIAURqdV-UlAMojGU2TpTFUwvfSr2BZcF4losVxWVOmMxbfZJISxwGn7y--nyvYVr03_eeKrGYXOw="
+        },
+        {
+          "title": "dermatologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMSb8LM82C922BriCNIzqm1ImZjoek2YohRU1TcJe4bzXPwAGcSGhAQiL324LZ1Kgx053B4lV34ndfBshfEzHJzoCW0FloTpCmAPZ8GWmQnAXYWq3egHS0WtD6WLkYalpWBWUvqQizE2hH6i4ciUdoox3WM78i22IJ5DKixXOEg60kEEgGIJIyyRrZ0oD1H_0lLVfWokgKLhK7bqbHVO9cvlFOC6xYtqL7aSMZQgZRiMcUZVqHoe7wu-E="
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxycycline (low-dose) trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Doxycycline%20(low-dose)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20mg twice daily or 40mg once daily (modified release)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3428,
+        "costPerResponder": 1765,
+        "icer": 11353,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 800,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 800,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 200,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Topical Metronidazole",
+          "costDifference": -50,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Doxycycline (low-dose)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 35,
+      "responseRate": 68,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea/diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 10
+        },
+        {
+          "name": "Vaginal candidiasis",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "3-6 months initial, then as needed or maintenance",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKBHN7utHEBqwqG_BAa-FBj7bG9DFCgTgHvWUYAGgJfxS5HwL1vpIVC2B7Yg2d4o6PS4TAmKHcPTVhIvKklMwdJ-xKzCWeD8JyQBlsMutJBJpSOaddUfWctmyzgHIxmkuHUO8="
+        },
+        {
+          "title": "ijdvl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkkudl_ktnSBTPDF69g2gH3Y9sLa3y5c67NkyErhxtFY4GC-sSVeuguqnTQZAN7fGk878goL19a8DXNqMW59aQUvnc5Bwjib2q-SVeDWGcr4DQwsrv3HhXyVjvZZ4SEps_WAZibwP9jXj1d0XZ5DNkq9sbGhOG0qalniiTWYNzmKxL-B7lpMYY2K6llOUmuXPxG7WfAqif"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2OS06Mssh_4unw-j2NaCNTF9T-pCAD2bn-GiNZpM30SMzX03OVGFi6P8Jz04QDuCSwY1J-5XvIxaee96t7red8CSL5gSVsWDXqDVccau0unwQKZN4DaU6kFUeAIWMS7JPKQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKj1ESWUDtF5QVko_cb7E_sDrMjxqCBiquV0VGWoSAeq1no-j1tKjJPZsH9nSZlwCx6n1bcEME589usnHVyJDvuNSqgBK1E1kANQz35KyzTMv1YsPKaae3iWIZlVUPclgOq1KJEd-Y0QjlwoUtY8tfdsZnTff4Si_Cb8F0Rc6kYSQWtR9JJ8Z_iVzU1NZ-0PJDdJdwHTIO7BjZyehyPhZPkkMzLxsErBjZ6W6AyRjNvjpk1H8CQsY="
+        },
+        {
+          "title": "ijdvl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb51Kmqzx-OjYfO5EzRISRiNEWhPc8sON-1EwJfS7eUrDGvMr9BNEdVTWc_Eq3TX7AXHKNNlGLJk5uTCcUJQBVfkQW2g8PgElE_F5IOkXN3rY7ZYJBDYn5mRBPCGRfSj5uMIkovflvPkSou88cx_YO-bEWza0LoJmbMaP7A3b7zUUZsvuCSAdV_z9P5p6xj13TYWWZCnXo"
+        },
+        {
+          "title": "rosacea.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb1WoN-RPBnr4gNnioTkYs2RzA9en_OulIEbcHsijCe1o2YpoyE_rP-TJQFin9HiP4HiKUBgxtyYVLE8_i0GPxK7-H5ri4qiZqbVA2Ye0cN7yQxpyQDa-VygbKEYN1Bv0tAoXLXBkalgH7Ixh9-ZfrXiuo_mMdfyJwAW6Zs5KrcSIdUVjm4s1n3KtMB5G2_UnqK7jt5ZGQvFwTGMhH1I2s_Q=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHTYu0H_6HNZrFgRTzMUWijqtr_tahaDAIFHzbsjEAY1syI6LRFEQ9V8XaDnokC5pFlgTRqnJGt1NCl1VAVBUd2CPSI90fCANfT1yCzmEEae6YkDk893FlzQfFXwTW6W73"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkvYeTuXCE6yc-1qvDoobWVRvU3CPWmXz2ZA1hPSLi7b9VRwOjEhGmvzKJqIIIsxUJEyugN8KJhuu3CXK-DrrGEYQJJyNGJMzFF0xAPyjenQdHUCX85GSxvbyShSX3nUVu-z-KsvnaZcHWsCB0YsDddaW1CosCCcef98nH6dMmMnIc6fItsl3lY1agTdbE_Fy2g1YOE8AgNj29QeZj6gXQ1i3YmpuHa8UN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Vascular Laser / IPL Therapy trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Vascular%20Laser%20%2F%20IPL%20Therapy"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Varies by device and settings",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2600
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 3250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Topical Brimonidine",
+          "costDifference": 100,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Vascular Laser / IPL Therapy",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "CEA score: 3/4 (Moderate Rosacea Erythema)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythema Severity",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.2 grades",
+          "baseline": "Grade: 2/3 (Moderate Telangiectasia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Telangiectasia Severity",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-21 units",
+          "baseline": "Redness Index: 60 (arbitrary units)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Redness Index (Objective Measurement)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-13.5 points",
+          "baseline": "RosaQoL score: 45/100 (Moderate impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rosacea Quality of Life (RosaQoL)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "VAS for burning: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Burning/Stinging Sensation Severity",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "Flushing Severity Scale: 3/4 (Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Flushing Severity",
+          "percentageChange": -33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Erythema/swelling",
+          "percentage": 100
+        },
+        {
+          "name": "Purpura (bruising)",
+          "percentage": 80
+        },
+        {
+          "name": "Pigment changes",
+          "percentage": 5
+        },
+        {
+          "name": "Blistering/crusting",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate, full effect in 2-4 weeks per session",
+      "treatmentDuration": "3-5 sessions initially, then maintenance annually",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDMcBPnJFF2Nd5zcd4kdAdg1WTVrlozl1dyXoUPQIxy09zv3xR0aQtW0IgOFvasrt49Mi2dTFareqIZIDEIBolI0GXPsxis7hJ_4ZaD2SrmHN9Wuw1r5c8MkwDwQ5bwUvx0AgD"
+        },
+        {
+          "title": "globalrph.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhgRu_WxyTaqy95sMVmEOf44DU-SAXb2ANR25C9A4wmw73iIcvPk8hu592hDtwVTHEFhRi_ITIWOTpa0suHQy9MvuXfyLy8-K5o7VXnptrBbAVuaN4WnFFMj-0Bn7A_ItJ-P8dQOR8TRBMiGEOhmsdgVtfocJdnZQJtAdd1ClgJg=="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbyQJfFQ8r6EBqhmS488aUkD2AmHkqppzOSfoGlbFg7M8cuDQYl-refRouMvVBnK87Tq-mCMkHwGn5TybvFnw4ng3uMiG1jnm1m8jAZ3HuGc7EarMA2NdlW43fjm8vCT8Qop3BCxOgUzjCRPA4-mA5sMNU76KAgzCR84E3Cj48Z4urlR6a5jXew-gCJ0u2qyzp1h0SqE5jKLmIzlM="
+        },
+        {
+          "title": "cosneff.com.tr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWnyBPoEjPTMbjSiLhhpgx4FXmQypVxgXGGp3oyiLUvNTmeeKEEAyhtHlAuSDdH4BoT5D_QudOvqMchwSHPV11yHwixIO_3racmzxTMxYZn4JBzPqJ2CEO7FE3Lxkj6thDgF6ElehufggAGZdLBIn_6Rs1HJmvfmbu258yFQk67lCeChlSpBZT1k6Po5zlvzP_SiYbSUUPT4paRA75FTSZx7VaVavH6AqZxmrXVniBOQbTOMYlmEe_kmEKsvjTTalq3DdM3UDDtiPxH22qkBP1YCAvmZDMWQQZ4mEWosYNLu-Rryb5xfc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqmntSPt0YTNI4vEZDF9i5S4NmQGaLVHzyg5QOu5msxBEOeCOJPwNdg7G4nYj6woVe440Vq0By7FXlAdKz-dieG8MbLgKGrL6k9tkXHgxtYmWkjM-lzQysjki9v-hbB6D_oFz5pilOXWoKs1t1m-Rdb4UqX4le1hyXPhqfZqZ-n-jBQ9C1FYYkfTzfZW3s4WWTRILZaCxjyzKa2jPT3mhgGtrXSfmJWReaKAlHXdu3lHZghVtI5w5BaKEMvwZQ_UeMnUJxsMkHU8RjRt23C_iDxOv-Top1kHnCP1JBOtb53ZEbvwU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFcVOvaLC4yMSf8irOscUD17HsrzY9fIk_Pqph5i3ZOLGtql8vaUl_T0he-zGUyhchG9YdYDk3B87YEGPq-UBivzTMuWcd51zeJKzvIJsqvWgdZCrYzTO89k09PLMW3mrbD3ZN"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlp-MlP8UHgih_R48Mq6_nreWkZfD6qvg40_Rp9utJmqs5Pis3VgeHtwcEaB_IDKphf3kmHhyberNMSwqLc6nFzMP13FABPNvT2NwZEe3g1q3kuYMLfhDCo7rvAmriRGLfMPc="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOiMCE8sraFQd9RMfUAJQGuH_7LifKn91v6OBEYpzQyk5ex8IV6MxaRZArAuHB__1cotIORO_tFOXNTaeXJNDtJn3DUx1BP6SjMGNN5HbsemdU9NVnMuAiOIZSqPHDQdJwmcmhWbiumbP-uDQoxlWqlFZLKhb7i4rN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBT3uItagIgW76TZjWWWDBY7drDZ9VabHQ_fQUZVmNUMiUELaKjWpbiGkzNJKRa_6FUVZOvaH6U2SvHvPF6bORgqXQanUmWRO8k9LfMzM6RQyuZVYNZeTiYBd17LVjjrS8TgL6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYla6iCTBR889wQ2tgv7fJhtSgreXXq-vuxn6vjwAUT8OTrdf2NW_SSbesFENNNoRb8cAiO-9HHgnQZLPB-Sb_2FPE5l1KrAB8X8QVZM6iDXHII3VPpd_ea56CJCrI-Aw9sVkylu38n3jKzXB0"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azelaic Acid (topical) trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Azelaic%20Acid%20(topical)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Apply twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5428,
+        "costPerResponder": 2923,
+        "icer": 30000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 500,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 1500,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1300,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 200,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Topical Metronidazole",
+          "costDifference": -100,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Azelaic Acid (topical)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 lesions",
+          "baseline": "25 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Lesion Count (Papules and Pustules)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "3.5 points (Moderate/Severe on a 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythema Severity (Clinician's Erythema Assessment Scale)",
+          "percentageChange": -29
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "3.0 points (Moderate on a 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator Global Assessment (IGA)",
+          "percentageChange": -33
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 65,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5.0 points (on a 0-10 VAS scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-reported Burning/Stinging Severity",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "12 points (Moderate Impact on a 0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -42
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Burning/stinging/itching",
+          "percentage": 20
+        },
+        {
+          "name": "Erythema",
+          "percentage": 5
+        },
+        {
+          "name": "Dryness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "12-16 weeks initial, then as needed or maintenance",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7EzkKDmxjs2D7bczlhJ9rAkNL6tTDDa412W2KJ_dK3YB4snGBzN83iEPOSbYW_Wfc3O4dQQLJpjGZSfCgDxuE2vh2vYi03jGzvYyEIC59ESUYUGE3QOQT3ycX9DcGjtFoG1kddqvCpOpaHaFPqeQ2XHE1_4b53NvRXNzYXov0OQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYhnpKaa25nsqRrRDOxWGXeKYSeeG9h4FKxAtR9cvZMOjJiAaEIIY9ZNklKhMzqhFNK21F-g4IR49yUBDmYY-J4STltgG77J4F8tcqRwVYLOPDvuP0L79xDTpM4ty-lCZWorpcGFGPFt5E5Q=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHfaCXvnRSOCWHJuDBP1oproFgo6NvScpQIsIWhxt68b3_PHkMgowA3YybnCcVj7MGZRg8iZgSMYVo0WF_B6pPS0cJv9U1FTWi_ZzKGenej48YV9b5rkRKp4uWScCrSkTdP35-PjwXgAtIn9WdJ0qFmXSLFjSMPKsh5Oc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk-9ga-irsgRxEYOONs3YsblhsuQ753v98yqwKYvX6aoZ87tGUDX5YOej01qsQtCT5UnWCWpIPkyAd-0y_rAFj6Id2cFzy_MUXyk2OfjNtDJLlLvVRm2RFfP6iVpQFo48tJ7Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrwCzT8vPzhSREWBFBU8vq0t_viMGvf291sZoJe6rB6UUFWscTReBpA9k1GShQxE8tglWftDe7QQmrTMTScdF7M8sYpj8CUVXmnjcwc8SinVHENz2jPMPf4xvv-KbOKD-MRcU="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJGVGN4B1Wpqyx2s5_Sjvc64CNZkWooHUH_bexZtVUicf0N6kysR3vD5vQgOturKrM5rVtnCDY9TO3TqK096FFer84vpkBh5lzYEy7PmiXW7wxY2Q2k0kfWeJDz5iDwYytn-KhpvBd1spbEW83wVdENMB7_QiGQPxuKOht2AzxSpmewaK5AiHAf9_DyMB_FwiF229dQJ4UuBMNEj-hXdQbbgGhppEQD3yqZbQKxoex2Ms2XMpD7PtUPtzGZjZIgINOUqWxpP0_LRjgQ-dDL3nTfXvJ4KpOrqKltBt07LThitPrjV42YW9EoA4rrQBSx08wXyGYLcuhh5sh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFb0CEnMgi4CPgoUVwdcGQXCcrcM0HhpSKQ68rgB-cobCz5M4jaGXQ5dKjwouRN7tegZUpOAueyW6qh0f1ZB0cES_2qjXQsQt4dBy1WPciuwTwx-mY5vpoPjmRjSxyuGTf9K-kd_t1EziT6T7iohGwieaa6Oy7bhtXlUS6NpYXtoyMhoXLjfYN-VhjlyHADvgoedUoL1wCu9C3_lo_DJR03UGG8NWihedzF0VIItpQ-rBaJxf7o2JUqLjG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjB1sJR-InczE0AfkYPT08VpMOsIF32k9Zkwki0FwpF7S-tGc9tDaOwvwrS9KDWLhI55t33Od0wl4gsBqt4BQLBdc5e9m6NPy9G_WNOalPJ0i9r-tGlNiyxvWDZvA6LO76R8E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC74VYS9K4jPpKWelN4-z0gh6KiNDjkhl6tVoNZc-VcswH_Sqok3zlLEIhqP6MzU-xLSGiigWQ0Nqt7d2mHWCLT-AAO7Df2KOH1lslrqqHVix-FJoBbXZz-WtYsVUPUaCFxBE="
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoYsrNRle3Bk1VlAoxZNJr7Lq7uDhyi7hsYEXE7lVzRDyTyb1Hc7TfYZa3oH5kfMMBwM-B4uaCgVY08qvED5ncsfTvHB6RzGtnrWNxH6zjArxErcRKFV1YmBAL1UChEqpGPuyJAQqv8HpkMAfQMW0xFU0O4xMzXj7rXOppWObdsHpFaMzEkG_vOZMUtSNXw3B2LN0rkuFTIQfYp8G2YVuF9CRC2wE6_JsFHbK4Y5IxRZXh_o8inqwYf-3Jd-3Nlk6R2KpdVtGV5oGX7PQb4hVM"
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL_IjAy6F_4ClhRrDsut1-s5T1RotV91y1oPwoK-Hic43Wzqgw7oRh1itMs4vfBhm8tfkzQC5Io63jytrZOmVsYqItU4A44cgXnSWJtdkDXiyYp1KqP7WL8Ll1QYrwuafaUS5n-mMeP-fnvZ8avfNNnaznkTIXp_G0eoYMjZiK0idkVz1myoaaMjG5_vfztipWNmAGN6hNDO3Anf_90CxXCOms9H4q1xCy3pmk0K0FryKKBTly-AS0nDQCBAor_qsofrcb22_afeoxZUPIufhq"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oxymetazoline (topical) trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Oxymetazoline%20(topical)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Pea-sized amount once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 3000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 150,
+          "totalAnnual": 3450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 5948,
+        "icer": 16929,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 1000,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 3000,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 2350,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 150,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Topical Brimonidine",
+          "costDifference": 200,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Oxymetazoline (topical)",
+      "nnh": 25,
+      "nnt": 4,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "3 (Moderate on 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinician's Erythema Assessment (CEA) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "3 (Moderate on 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Subject's Global Assessment (SGA) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-35 mm",
+          "baseline": "70 mm (on 0-100 mm scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Redness Intensity (Visual Analogue Scale)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 58,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12 points (DLQI score, range 0-30)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "+1.5 points",
+          "baseline": "3 (Neutral on 1-5 satisfaction scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction with Appearance",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "4 (on 0-10 scale, 0=very poor, 10=excellent)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Self-perception of Facial Appearance Score",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Application site reactions (pain, erythema, pruritus)",
+          "percentage": 5
+        },
+        {
+          "name": "Rebound erythema",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Within 1 hour",
+      "treatmentDuration": "Daily, as needed",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIXxjILIYHIJTazkTx5Uq9eb2lQoO1TC6SsAsst1j0DVW5FyGHE-upBhpIYnHP8JITU-22EHZl1rkotvvaKvAJ_YTh-kZQOEZntSWhRqxYrdPJfh_Ezy5NqzdNGwcNoxal09I="
+        },
+        {
+          "title": "skintherapyletter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqkgZrR4iejl1E0KMq1eSJgE7Wkdqhbh_TgkVcy27cWtgwCiC_xDEGnWWGJyfata17P4mCJJr-9d4_I5jVfx3nkeXUhIgiV-plC7A-GCJGKXg4L-g0g_GNVa2NuP7J9d6OtrN1WcV4oTkdMERwYK-T0nSZTOK1DHtIVzSMTVHkSyE="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF_GZ3kVY7gcoKxjVCyP8NRX32M1EK93kqxDT0awayVOGfYzKPDWPbViKNCmRkrSq96_fi0zrzTrcTbqKp7EH85b7LZNFxuuL7nQQ_FcrFqeJ32UoE0EANeTOQkgWOt8H2kAhp_TqiOmSFDAeGmDa2ngE4ibFnnyFsySxgWWpLB5J7sv7HOZo4jlMo-BlAvWXi0nOfi5jl12aATX5Ugqj571Wy2cXCTVYVZ5CZee9d3kI6CXWBsQXmh26OnpKxcfWa3DJ4g623S04Uxg=="
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFepO1CFrUnnppmHWm_NY2IRv-pcqnlicjKqRJOTMGV_25Pz3Yc1sZsopPKK7Qi7pqtazl_Vvd89q9l4p_nL8sK8ioD4qKQI_1-ci4LnFUm-0G56je1tNXKobotus1w3lILFEONmEMCiu-ZPyx64ifQoR7IkXlrAdHmVUeVEnc9TXMST-J5-JJDptdcg5Aku523KuRF-rfdpDlG_ej8I-X55mHLlDTl7MD8YBInoWlCF3ZrvAlCiJOf6ICD-LSh2WhSyhw0iO3Hd4lSk2vllmbf"
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVqOcdLnRihg6X1ipnKdWpRQuMH7Oeb5d_VByWWxDzYp5uT7VPYGY3Ia79PhqaR-qZR3eKYlIV-4j5bwyT6B-etVjmy1qCa55iYCbG5a2hX9Y3igBaupp3hmTSLNDvpPowFz1ewR8IlIUMDWJterblvzAugakL"
+        },
+        {
+          "title": "actasdermo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXCaMJV33Iujy-TUhBNlx9SFUh6zEOdhHpZHwsx9WFZRceJ_gDS2EwHWVwcsUxxno7x-GmHFHxK38OPre56n0t2QRe7wS8v4GNkneNKLhDk8BCCGWKF8Tbpee4g2fkG0lMYuQWbYFk-mhlzY8f3rN4dmtzKWs9lm61MOPgGb9eCCwJXFzPO2dqMKs0Tsjk76rE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeaFNZsxwcQ9jOJs067PKH2r158kzIfr0qFjaGWIYq55CoJn6ilueDR_ZL8AloIvJy7aYOiIukutRfhdFJTbQbX_HIWly9havh7bNfeyqIrPFRoBF7cKcu3K23JlPixqhzpZ3MeqqSp3QXxg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGstTs0_Gk_LPyKY6UFx0Q63lsF4o_W4bDWbHbRIdsykYtMz60Kbb73A9jj6Toqce3VWtvCKnpyhsenQP_FFlCyE8tpkL75EoAETqanlfzTx7N_LyksfMOn1PMXC_kWUSvJi_U="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metronidazole (topical) trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Metronidazole%20(topical)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Apply once or twice daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3400,
+        "costPerResponder": 1465,
+        "icer": 18000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 150,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 700,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 150,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Metronidazole (topical)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-11 lesions",
+          "baseline": "18 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Lesions (Papules/Pustules) Count",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "3 (moderate to severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythema Severity (0-4 scale)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "3 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Disease Severity (IGA scale)",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 58,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "3 (moderate frequency/severity)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Burning/Stinging Sensation (0-4 scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12/30 (moderate impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction Score (0-10 scale)",
+          "percentageChange": 75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dryness/irritation/burning",
+          "percentage": 10
+        },
+        {
+          "name": "Erythema",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "3-6 weeks",
+      "treatmentDuration": "9-12 weeks initial, then as needed or maintenance",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "dermnetnz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgM5xVQ2fBicSfcC7FKR8_I5-ZPaZNWWKAujhbjH6qFGbl0l-K06XI5W5ctBSNV5wlpIgRbGPw-mT64dEARSKYCztjiqyYhK0pI6Jfs3wABOc7QrHYEjlk0hpMZBSALPwricP5sPuoHEB7nJU_WJ-evWAboBVCaXD6M9p_Epr2WX3mgA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvF5ERcXWxm0TlBBBkWhadljDp39qpLGz9mkK7fJxOfm9GfT7oh9y6csXzVFASJhYoB6SbuXHS9dpL9hT9oZ-WYzyvy3cqO83ZB2XOFA-7KdqkSn7BJynVvchS4_OpdtqVlZPhpb0fD2KYNzQ="
+        },
+        {
+          "title": "ahdbonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYIAZpRqliP7z7u7_qTDVcFD5iSl3lV6g3RDqALrxMVX6vobq5uew9zjJigLFVm-KiZtJzFpzGh0zqgyE1CmgLm-3SPg7N7Y48wMopJ7yezdnXvOTUzAIP4l1ucZINiprNlGqMGwK3roUm5s_opI9DvWxyvHEQqusg7ebGd6xT3clTcQOUWzCAr1YXUUeECq3HltsWYk4W39EC52HjiQUn9ZbsQ4fWKT6oBLlbdPy8YskNhnsCYhoLdhI2pQMyZ_6Ei0uQlX-eJENQVZtTgi3OnMUjZOOF4EYgvpkEyDCWoKmH"
+        },
+        {
+          "title": "nice.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE13JXGgeMHu1fBGcA8FbEssbobhRyedpe3Ydax2ghbX87csoNjX_0cFdagFPSMSypmWsv4BYuqYnxRpP3bcu7Ua_9oBcy_nO8LTzSzaxTEYF26y2H2Tr5XDzuZQabqkaVGOaxIICu5eXmZ7K_os12uNqlLTr9d5JyOALhzoe4="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUXNQK-YlUeAjKmZW_2NgX_910VtvxKByyVXIbjswnrKV4GAvwDBLOozfcpW0_E_hFpL1Hl2CsYYLfadFbQ_T8vvZUbGU4_-dbkHt-onu_09j2jZwfZCR5RMy7yb-mrIluMKZ4hffgMPfPkXGl9uFJRQIwlrA7l--SZ1vmLAi46fluiC4v9N9OmNzJqUf9IoyXDok2Z9IVKDBq_0HFoDoler1AhKZqs3v64tvLMNXQ-ufqpohBJWBaQxXP4IY_uw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-jNVlY3BxANc2DwaJKXgcbhD6yEzImFYvGLn2BK5uz05Ph9V8-2HvkONHjfUdz5zt1oodo1Cd7SnjVaJq1iUfBY4qA-RQTsjjSihM4na0f8rSYIWLFAW9F3b_iB6hPuvCoag2"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVU-pc6Vzf9m7AI_XgSe4gzjXfHyAtdBN2y4APXhfgSIdVfpT7KEmWixmT_-5NcTH31E0Zfu8dtAGBN-3Zvzj8dLTsLiDPC9pxW_w6MFYd7aYxNJrtsaahqSwDo4PHA5IIk0SYbyaMTwYVSIgtbG-Gp8W-svQV5LJZspX0ZI7hx8s72hjWIJV1S71SQM5ByygTHMy1EjVMzOx2FL8Itak4_gem_NdQ0iZxds9V8FctcODFVLlAxS4TtA0IO5Q_MC3nvmliFdoOM80MBHNp"
+        },
+        {
+          "title": "ClinicalTrials.gov: Brimonidine (topical) trials for Rosacea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rosacea&intr=Brimonidine%20(topical)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Pea-sized amount once daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 3000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 4615,
+        "icer": 18487,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 800,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 2500,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 2150,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 150,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Topical Oxymetazoline",
+          "costDifference": -200,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Brimonidine (topical)",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.3 points",
+          "baseline": "3 (moderate erythema) on 5-point scale (0-4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinician's Erythema Assessment (CEA) Score",
+          "percentageChange": -43.3
+        },
+        {
+          "absoluteChange": "-1.3 points",
+          "baseline": "3 (moderate erythema) on 5-point scale (0-4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient's Global Assessment (PGA) Score",
+          "percentageChange": -43.3
+        },
+        {
+          "absoluteChange": "-2.25 units",
+          "baseline": "15 units (typical for moderate erythema)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Skin Redness (a* value on L*a*b* color space)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "15 (moderate impact) on 30-point scale (0-30)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score",
+          "percentageChange": -26.7
+        },
+        {
+          "absoluteChange": "+1 point",
+          "baseline": "3 (average) on 5-point scale (1=very poor, 5=excellent)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient's Assessment of Facial Appearance (Likert Scale)",
+          "percentageChange": 33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Rebound erythema",
+          "percentage": 10
+        },
+        {
+          "name": "Flushing",
+          "percentage": 5
+        },
+        {
+          "name": "Burning/pruritus",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Within 30 minutes",
+      "treatmentDuration": "Daily, as needed",
+      "trials": 9
+    }
+  ]
+}

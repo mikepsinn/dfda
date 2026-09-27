@@ -1,0 +1,837 @@
+{
+  "conditionName": "Motor neuron disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:42:57.810Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTz_tuiiLD3thZoGGg3N7rv0XVwpMhA4FkfAQsJRax3ECZMejLlLmF-HXp9vDBIaQaT40TXtaS68ifHI9eFkrg3eRyqvccuxi3Neg_c7mMfdIQIm0rq_lNtT_utgPn_3uGSslEhZzdfJZC97Q="
+        },
+        {
+          "title": "benthamopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMok0Obo3poy8NX7dlBBEM62i3X-ClkripKLJQ5RZCXpk1kytwWbQI2S0IFgZdl-RDTPKENkj9M5izp-VkUmt-s4rYAirwis41TPTv292uZazshwB9AxJ2yieRZBSXn4OTuMi-gt9xKVdBbAHCXwpNXg=="
+        },
+        {
+          "title": "mymnd.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqLpoB790n3WSj2_Ihv78BvSEj2zVFbmS5XK6axjsMDdieh-Pzo-gK5t95-F0g3ahnTUMWHIx9rtqKB2BP7eqY4r6vEOcWUq949nGe42WkJB1sqn_WR9Pk36I7uK_aKOuq_duVzYFkJLjUIUKCByTIAA0DcyBcGYVOQ5xm8Cxjp1vIAq-JNCUwNZzGW3c0vaw2wzXfbPcQ9L0bUk9Uyz3_qLQ="
+        },
+        {
+          "title": "magonlinelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9CiVLFJe2eoZjFVGxIulzaPo2mh0jSL91ugl0JDwW8pvjHntebaZn_c1z5l-7y4GF2YMpBiEOw9Yjg3TvSHyf7f_xxL3vjES0uj_fFJXp2N1lbxoRKHuiBhLHF1RPM7AnkF8FUVo6p9QAWIinQaqzHzbaup5oHUCbYSA="
+        },
+        {
+          "title": "mndaustralia.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWwMUZ2KHOQf3KkM5xchjAtO-5T4dcyuJUzhAXceiVNE7_wtFjhuXtDyXQ3nfiEPDMENoglYG_Jy9TQIa18eddaprYlBE9KeZk_LRGj6-629OoO8YFhUNkaj8m230xEtwLPR4eJtMrR_5FMpA2vjc5YTmZfaYOdFNnuxSVBIoYgDPOAUpaRZ0w0AYHv3Dj9o5t4bNnTMDzK0YJ6IGzjuLJDJFiV8Ue2PAU_Izx7TTDm72WoTQxvcwO3DtopG06Tog="
+        },
+        {
+          "title": "whiterose.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESVD_gqI7gUhFAWvDaek9v42jv-HGVcRMHd8oJZiKqHYNi_cZcKv3FlZJKtFEASmnvUL8NrGTmIG-vrU_uV73SqhBrBjbWFzi3dI6BEv0C0xrD4e3V5kDelkKrtOCX96kYNks8MuT6Z9mO2XlXBP7NQKuITogKUAocK3zm-JXLizTxtqgaWQsLwofHfF4kLMd8pEgyUCjmRG3_IVNEIFj7aKGuQlYpopGmRQ=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB3ByP5m3JekC-dZUULExycefCkLZ81eeGDlC6BXSKVT1duGtnqGlLxZcSqgK3cJhscAq2FkFexeVE3C335ELmtqShAeje9LtWzzqfhud82MR9Ue5CffydUS_bDA3BKnFf8HUhkyGdrm7Wc9Ilzrr9dIAZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRA1_TgwMjjYVxqEowAtvTIHWHpfWMfiQ0uDROF0pin5yymlkyfc3-LT-MfOhEcAZHqrkbOhV9yhLZKYNv5KmWWJB1mSc9f7CpY6_GOLL7NFtAqhGLrKuOz1oosigAhZ7L7ZBMyOW_bNBemDTcmfYQ3FvobRbI4lt2HutbDLwqdMd7n9sS2C-3qU-fgOeq76mZPwTim_nL9K5Rr8oXzPd_GN5rNk-DMqHvULO_aYbDLUCaOPmTlT221jRiKGPNgYbCdfOw6vn1iQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY1eQnc69Ql8SIjTVxYM870bdRXZGZUJYk2wNvSCdixPCSKlPM6E93LFE46xdjizg206NUk43idmU9tsltEwYPaRMAX6d9zHw4uhaTPnrP62trhtOJiyf7wpTZZNY7YQi6Xi7ox3ayVFGitEKtVLTwQ5r1RdHmcgWRRQuvsh9BhuQPCWyQIjtlrOrGsiFmPiFaM_YzteGwLO6D9A7qApjXYdauma-ME7aRPNG0pg-pMgjOFkh1RSwgWcmdzzEZQQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Non-Invasive Ventilation (NIV) trials for Motor neuron disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Motor%20neuron%20disease&intr=Non-Invasive%20Ventilation%20(NIV)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Titrated positive airway pressure based on patient need",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2800,
+          "sideEffectManagement": 200,
+          "totalAnnual": 3000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 4286,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": {
+          "comparatorName": "No Non-Invasive Ventilation",
+          "costDifference": 3000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Non-Invasive Ventilation (NIV)",
+      "nnh": 10,
+      "nnt": 3,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+6 months",
+          "baseline": "12 months (without NIV)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Tracheostomy or Death",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+4% saturation",
+          "baseline": "88% saturation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Nocturnal Oxygen Saturation (SpO2)",
+          "percentageChange": 4.5
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "mMRC score: 2/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Severity (mMRC Scale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "50 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Arterial PCO2",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "PSQI Score: 12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (PSQI Score)",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "ALSAQ-40 score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (ALSAQ-40 Score)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-1.0 hospitalization/year",
+          "baseline": "1.5 hospitalizations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Respiratory Hospitalizations per Year",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-0.5 points/month",
+          "baseline": "1.0 point/month decline",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ALSFRS-R Score Decline Rate",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Facial skin irritation",
+          "percentage": 30
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 20
+        },
+        {
+          "name": "Bloating/gastric distension",
+          "percentage": 15
+        },
+        {
+          "name": "Mask discomfort",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate for symptom relief, months for survival benefit",
+      "treatmentDuration": "Lifetime",
+      "trials": 39
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExlaAcp8ciZcNWgI8HEZy-TbxJ_uOd59BcnF7DA9Wn7SWmaC0y_Y-N1zs4WZbT8mk7lYwpE9N60gUAR9Z2RJe3fIt6Q8FIW_AAiR0bseW2u3inBxYBDPWXqjMvd5zZ905sKohsQvvixaeq5-c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjc1d6YVHvw_Crsi3S99tibrJ7eWl6UP3f5bzXkOp6yjJGWimBPsvZtKUPiTdZVbX6fx30Yq5ttFYnW-Pyt9Hux4NXdeTOD1kGnc9Q3P4NLlz5C9PTRO7dlQyco42PuIU8J8qHQYpHLS_0ymuu"
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0o0W8neiTIDs85DpYe06X55foc9u0lt_TnhkGfxU6rSCRWfbkldQWOxTReNZZhAjm3Cs1JXTQAQoRALGN1I4hVdjX76VV1czZkCx9qe56fZq3gcAJIiu7EHdUqcWVY45esWk6yrcmHJqpY79KEJGpMQNAhkCiBjgvm-pQL882WJpbRwbxg7aDgQd7u3y4gpMSi0rbmCSShZuYjvL2aSi2tc7rn-u0ZAvC"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxSRfTwQfYbibry9TqSGQwIKJkTzpNgnHPrYgiMcZ5Z8L-GqcsSMsOMasObgSz6-jPp8XEMKUsIfrCP20iw8m_z82yA1W93VqG0v-Hgl-OCpV-2G-m6a6LiJInHlk7LS9IIg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTxcZtM9S_kc5meocV2JzegOWc-tArgyoKWX1tcYu7PttWVkpgod7V5EzxGfqvv1DTfbfOH1-azdcYhhcYueGZI9abCnNlJk4Pyn6wDMSUHFfMc1ugFK7v9cLNHdBXiaSjNgXX46dC7mnCZg1bGX5v9OZ9cflUhaBnv-6I8nskG8KcG2cxVD5tIaGatrXdj7aOoDqhq1lCppoVSp6c7LhuNlu5veUNW4GX7WM_ihOUow=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8ZJWviCWo4EKaWXevJHJHpnzEnuvGkFFX2gu-7tdzYdi6cmuMMOJaBLGXPuRTsHm8EKupWToD9ZDC4hgjoWCa8bmyBccBH3YL-PKVNmgsIC9QLXoi4Ll0bHfzTKzTcTLhvdzbZlLbHrEH7On1EMTapYkmqA8ClQN-T3A2uFSowpr32k9bHbAETRLmF_aad_Yo6oaRXne53tCTgBLG38AWI6CAZ9h3MQeKd0DoG9b2nd7XOniQHnhh8caF1HC7yyM="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXPWEKoGpphEX1gxQlSPbSlSNouq987rRTtRV07fnZoagCOVTiE3c7YCYkGbzZsJCMcrkOHAJ3wEQse7JqyKnYliPq_g1UA7IVGaqIxKZEisoRkYXbSLjNv3Os8gDhd1SgSQIdJPJn_I1P5LJ_s7-HZCiK_BYScR2ELspq3Jy-TV_uk8Z4yic="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUDJZDYeUqaozG8CCmykPZhN06oFLtAcZZLCH4JbNqQuI3GP8QWQILGLlSvQFumOzi_t6YJqXl09rND_CV5G_durEWAv1yysa_FXqodEmK59VchTRUWJqL0mLAqLu8W585uuU9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3DCQrMolR6_gqNkbb8fPm4T_DN36KI45AzAa5pEMpldIIPJS5Rlm-sxyLfu676Crt-38U1GwpLfSc-Kjh5W4Pv7mGvMeSdzYGYwSGrOdSF4pbdfo11mUjTNxi0_CF1xdAQpoSYA4xCpaVh3swOvynYP61fJNBdXlcFhAAr6sSr3oyNRYNnQ41rS0GE8GUOwNoUYo2NOp4OEPYt312r5sxtsXRfEvKF-Jm-zQV_g-hbQphR7tog0xs1JqH1bnqV8jtcE3_oudKMenvpXjaISW1jDoBpnuBwgYDdM8IjkFXTXxlSl28MOBHEMO9-o7_L3-AixxQXT81S4KA1ENnBZkoQi45sjsd5Tq1P97yYNn2GPcK31N8hphHBojFSSIzOsnOkAUv_eP2w5b8ypejSyHRTOYbgg=="
+        },
+        {
+          "title": "koreamed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtUmZp0ULU84By1CTwXNrIKhctnrWzKQmAM4JOBKFPY8ecnr6wdkrkbGn8M4SYkcUQDGroBbVCxhNPYYEMiI13FPFW_yS1mkne7-GH27TOjjseEyXkre8aYCYHarj3_YcdacOAOS7bMtQqFQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFAvSSRfWifOtLrGq91gbjW6mdmQXRSA0TYZnBozFrA5HTglFK60hxu_QH_ACMU-XWr1j-Rlppuet8NK4ft4fHOcnMZkPS5YelJGyCbXK6ra1z6sYMyK7pgiPKJ6V-pQ_zSIl-SV6ifNz3tPM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gastrostomy (PEG Tube) trials for Motor neuron disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Motor%20neuron%20disease&intr=Gastrostomy%20(PEG%20Tube)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "N/A (procedural)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2778,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "No Gastrostomy",
+          "costDifference": 2500,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Gastrostomy (PEG Tube)",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 2500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 kg",
+          "baseline": "60 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 2.5
+        },
+        {
+          "absoluteChange": "+750 kcal/day",
+          "baseline": "1500 kcal/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Caloric Intake",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+0.5 g/dL",
+          "baseline": "3.2 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 15.625
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "45 points (on a 0-88 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Caregiver Burden (Zarit Burden Interview score)",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6.0 points (on a 1-7 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (Fatigue Severity Scale score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "40 points (on a 0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Nutrition domain score)",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Local infection",
+          "percentage": 7
+        },
+        {
+          "name": "Leakage at insertion site",
+          "percentage": 7
+        },
+        {
+          "name": "Pain",
+          "percentage": 5
+        },
+        {
+          "name": "Tube displacement",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate for nutritional support, long-term for aspiration prevention and quality of life",
+      "treatmentDuration": "Lifetime",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExSzdw7pW7NBhOzvi5oOACAZrapBCOzDHjuwlkFIAdSqH9eXfxOxYq3WJZJ6BYab9O1_-kzc3RklWxi9szZS9teVJUTR7zHb1sHicjD6X55qoaqOKgL7ZWKQsY2bXtJY7lqImNfMFFK9a25XGwBk2XND7JQOTt2Cpgb1nrn01tjxzdACOo_Qp3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbDjJWAYj2hkFPE1N2o1_6U-YGEwGOkF3KigiiGlJgLx2QBmcUoC5hBeTkAsj1-erkPxY2H-_y4hN0aaN6IqBFv39WQXjZqJ5s77WdG_4vH7zd8L1NTUwHpHs1Xl9DoWIQj4vl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqNrj_o3OBs5hMGPJz5tKQjPzHxIadMSGo2ZGummDXC_aa4mJFTZ-yratzcu_RB4vtfRvuFp_wi06S8O_yp7EkSJwjfeZo_-iWml3IA8Yp70wrLel7xPerBLWqQn6nMLOqE_-fHjSVcLpGjncX"
+        },
+        {
+          "title": "ionis.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcKdvN8vXzd90TJCpGJ_J4uv2PM-aA7EFr9muVvKDyy1MdhcPXFTbaW04XzVbqcrpx_sLuvCzWvzrpmMF1wqlddL7Xy7UtdjEOi8aMni2p9j5KidDI9QL5zD-msn79MM1aCQ-94qLZFoJWFabAyVEx38WA5ebnNIQGL9RpOpq-M0Aw7JdtM_E0G9cmZTwMgTndD4lY0xD8osGrMTArAM18BolSimlrijr3isgwqNxAOQs="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv6Rzgg0WuX8gakyPZtLGdsp-xUWRjQYxnlnDK-7rxkbfdxUNwCxBYtvgh_M-7R81De4_1fT0iuqJGsoFJoAFwyFG88JZ5HLp-l1GxPb8URa6q8BloSR_vBlq29hgo-HPhutKtWjz5HJvXtl5cvba50W88Jswd8pOfYpi20Q=="
+        },
+        {
+          "title": "targetals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlDu9jsXPH1bYLUTrFJPj8ZwjHMCmpkQg2LaCWx-Var5iWUbHsTAneXmLms5W6cNX-i0C40UzPDn9xBKVhiilUcA_WcAsUCdiunBrs8Q3CDcoZgBo-lhEOIK7MlSp3aQ6N_5y-eC46L0N08HOlwg=="
+        },
+        {
+          "title": "biogen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSY3NaJQEH6FrsLrah3n-3xeSt0TVaAuTB0Dk5i9NQvrPkMz4cOsY480nhMargjdea9KHRoI5XQUsrU95IRiXR1dFSrWt6jVld0IF_63JAwACeEmrEBARXTFm9KgYJAr3DKTYgLtCa9C9aptIMt-V-pAXPE4_VTHIiPVGzRDqRzvu4g7Rt9KjF2ldwLOjLmoe7IjnIt1dwYfAzeft0BlouATDQjSavgdDaplEOkcB9tENHtQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg0F84YujcFdkbSqLDiI50KAjKnts7fynoRXSkG1vVCGWk6aez-DA1V2H30P0fgm5FNvNST5S3rpaxuFpKOkQnaWme0-nGRnhyvxTsJW2cF4UvT6HiSyyg5u3ehaTgxbFmcPvJaJxpzf_vWgQQJF4aVhIL9Q1aUiQhxj-Tpc8NT1HJ-uyyuFsqaGyIYZgqWtAHkJaA3FSDPx5TwL3L_uDhGd-aH7p58E2fQlUSHvTRNLZ3mG2BtFp1J8-c3oH93rjJ6K20"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSYqyc4S4ET9jK0VI9X5O5NhKKTCWuAgGyIkDbBUkqoOe6wXg9OKWqUomMLL3o5c5clkE9lMHR9arDLQgWE42Eva239EdPGgDzcvq2LhXAU_eMj2BzmhyPypOqdnatlfCAaxs="
+        },
+        {
+          "title": "biogen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeJ6ZBlVOJwF_YVUepBva8zeOyOAWsuZAsDaW3sP1M8XlR2AOPmAN5DL_2IZwfDTVKJ1zmLcWBv1utdqMXJEhgrzQKEfssj-VGbV0PP-6bEgRuPrsLvO0GIG9O3p_NmcWDSLUgB0yrlROOArBiEyZbm2mU-fxlnepqKn_9luc01ia3jW-msliJi1iYIITJ2e2oxCUZJpNKh8nnh5jnH3FXyYBi7iglsTEp8Io2aaZBwZTHZep-psXBXXM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tofersen (for SOD1-ALS) trials for Motor neuron disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Motor%20neuron%20disease&intr=Tofersen%20(for%20SOD1-ALS)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "100 mg intrathecal injection every 4 weeks after loading doses",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 160000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 172000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 1000000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Best Supportive Care",
+          "costDifference": 172000,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Tofersen (for SOD1-ALS)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.8 points over 28 weeks (slowing of decline)",
+          "baseline": "ALSFRS-R score: 38/48 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ALS Functional Rating Scale-Revised (ALSFRS-R)",
+          "percentageChange": -15.26
+        },
+        {
+          "absoluteChange": "-49.5 pg/mL",
+          "baseline": "110 pg/mL (plasma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plasma Neurofilament Light Chain (NfL)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-4.8 percentage points of predicted over 28 weeks (slowing of decline)",
+          "baseline": "80% of predicted",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Slow Vital Capacity (SVC)",
+          "percentageChange": -6
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": null,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-24.5 ng/mL",
+          "baseline": "70 ng/mL (CSF)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF SOD1 Protein Concentration",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2 points over 28 weeks (slowing of decline)",
+          "baseline": "65 points (sum of 16 muscles, HHD total score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Muscle Strength (HHD total score)",
+          "percentageChange": -3.08
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "CSF pleocytosis",
+          "percentage": 36
+        },
+        {
+          "name": "Myelitis",
+          "percentage": 2
+        },
+        {
+          "name": "Radiculitis",
+          "percentage": 2
+        },
+        {
+          "name": "Papilledema",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Weeks to months for biomarker changes, longer for clinical effect",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "neurores.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7jdl6hEeS-D3lGrn_gxvtbOM4qeSK8tDXqFPo7wu2XwDoxD7I_C9ey1RWsmzW5Lp8RLUwTm8MHk_07HUgXVIeGcqLOf4fe7g2Z5PYo-cE7cjpb3uJR5F0_cwLZKVkywm7tV9Q7m1aUlPelwoUSjrSKHMcg06_XOm0WK7pvVEQYybrrQOmul95pzqwU5Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2o_hJJuoCyGcYIuilZpr7wHen5XbQBalBe2UcUTx9qSi9iklQd0f-NXgiMi7917tFkbduM1qhTXqd77DM_KVg0JFglmrcPX7abF6s9CsqcbgvFSOLy8U6OMuzejkcv1RRTGAyYm9Tj3U-BI1F"
+        },
+        {
+          "title": "clinicalcasereportsint.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoXI9Db-JWWq06cpBEgjEaTOgC73J3MzfsbtkR0iVZX2wGmkBqA4L1srI5-mSLVB5_t_k6_xw7_Y8pxsqrZuG8DSFC-WnzS6xfGFjN8UuQuwjsQe4eKYEQeBekIe0lBC1kMNho6rP4335qzgbBV_rGkM-MoIqwB_VICX5bt9fVMtHlrVTGYa4ERadMD6cjYEcDnRmj6gTgolWqjKfg0LuMnVMJf4Iq6hrVP4R6JlydfmQw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtFKGqZ6TvWcGbo37C77yJvthA8cAnebwbrRuT-6wgeFYpLjs3c5jp0vtT6J8t2tLu_BjjuNasXwhyqvGQ8hYGIcdv4ejpFxt2_of73sZf_mAnCQmfCx-e_gwkuwdg2xcgXslJ"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFduRPmd7gxGhYwhDG9bpbFr6WuiONmfOLKEl5dJu-tzF6COKPurszsVHWEZAdVJgg4S9EK0VxLnfz4KsUjwI2eHMrzaVatxFOyvJpl9M8rO7znxdLzKAiiKA-EWeQjAhQZIritPKg4NTDVrDIOnKNYwz3A5sz93sLJwH4sblcoLV5yFevaxC8l_SWoGapiDYVnGDlTpDiurH5940GANyo-YA=="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEU7qXu_Hd67eQm3hZnniSrcc7LqcIrCoZEqIMNb8VunZmJyfIJtZFf6Nb2gGFLky1WuMZTmS86RtROfVSkwnTf5pK5hhSlzhTJ1ph9BgDLqeCMKtutypC8gA397-nkbCaBkQ4LqiCILyhl6tj4g_9FXFHMsqmZrpGnS0bq3Xc="
+        },
+        {
+          "title": "orpdl.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfiJKoXBw2AR49znzRvbr2k_lAciOwYxYhPLuHVSFMyvpjsHPQ31R2fqfCUEzmzm2VRaw54o9OProBJeV61dZ3DJstWcFSfCi1b2Z-nvqX5jQ6a5JbyQkmy3ggQPdq0UYDsvIz7AyQFcp-YLrEyM-YgMdWHlNz8G6NX4hLOW9_wGE6MROJQywXhXcNuU_ZragWl1DbM7e2Lyqk"
+        },
+        {
+          "title": "hrb.ie",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9YQdjbEh3z4-3SxAWz7nXKF5BbvgwCubiGOVzqA5ybc4oxUcQ9CoBMxiZiKgVdcbRS6HKANFQ7kz88Kq4zXefnMytEycKAA8_oU_Q4GDC0GGLWskQN9Umkz11BLiKCEqKUVa6pvi94rxTSoNNsQCQX4Bn02W8Hr__QBWVOVouCmu5EAc6WCz6Hr59YS-faj7Mxe3KtyQuTfKSK4UOQSz_ZcRzmkiKU6lyccuTLgNGk0EvQI3KhkGe5BezBq2lU7G8BnMxgRY69JZHSnl3TCQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY9Q27wqjpRSR2BcUI4dixg0xdPYGYpXs4nnCg3De2t2cicxyJD0BTMogF_MSrN0f-3wpvykL-JkmpUiEbM7_TA-ANLoO7YsizWqtws5AZmlXcNLyrxDc3HSUYE4-zBm__g_EaAW2PWevDwlkr"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX4pROVsbPNetnIrxDHXXxIc444ultNlxCLrX1UCNg--6vMMgHB7jjx6Ku0LzIwOcAnnvOLfwja-tAUZV2p8IL1Yp025u_jsLyBqHu9gWlD5rWqB2Jq2tvyU_0phch-KUM9tlui5fpcTrKEIL5bVTBxAC1TmqM2oQGCYmhmHDfkmNukeAhJHfnA-mUTgWEq1RfKhU1jVPNDJ_a2-oji43K5XGvIqV0Vz6YwvlEjXLLj4MwyC9LshvmhibpNiBNPPde6ncQf8Bz"
+        },
+        {
+          "title": "ClinicalTrials.gov: Edaravone trials for Motor neuron disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Motor%20neuron%20disease&intr=Edaravone"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "60 mg IV infusion daily for 14 days, followed by 14-day break; subsequent cycles 10 of 14 days, 14-day break (Oral suspension also available)",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 165000,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 173000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 500000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Riluzole + Best Supportive Care",
+          "costDifference": 170500,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "Edaravone",
+      "nnh": 10,
+      "nnt": 7,
+      "participants": 600,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.8 points over 24 weeks",
+          "baseline": "38/48 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ALS Functional Rating Scale-Revised (ALSFRS-R) score change",
+          "percentageChange": -12.6
+        },
+        {
+          "absoluteChange": "-0.4 points/month",
+          "baseline": "1.2 points/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of ALSFRS-R decline",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-1.7% predicted over 24 weeks",
+          "baseline": "85% predicted",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Vital Capacity (FVC) decline",
+          "percentageChange": -2
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": null,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 ng/mg creatinine",
+          "baseline": "15 ng/mg creatinine",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary 8-hydroxy-2'-deoxyguanosine (8-OHdG) levels",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2 lbs over 24 weeks",
+          "baseline": "50 lbs",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quadriceps Muscle Strength (Dynamometry)",
+          "percentageChange": -4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Contusion",
+          "percentage": 9.6
+        },
+        {
+          "name": "Gait disturbance",
+          "percentage": 8.4
+        },
+        {
+          "name": "Headache",
+          "percentage": 7.2
+        },
+        {
+          "name": "Infusion site reaction",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime (cycles)",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDDEc3m5k0rA8xzqEPThA4dwbKR38cOlukcRmj6N2SBmOVf0kECriJi9G-XSTyAOFy97WZ1TWKC37wCM8H4ha601fPbOKG9Ed9A9KMP-Q3XZYXn5z6W7_pKcfCTj7Md-xgnWk8rTSmghvkYLOEBi87skUEPnrkZwgejNtEFeqJZ8YMlzznzyx5wxL-jCmnUw5VOBa0C0RMCrtfgkYcsZmlh4ecQTdfOBoFj8VnAsLWHQrdqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIFoK52R_tNCUe7wnDn2W-lG7yw1saNdY7JSv5WBqnyLgkKNnJUFJ55Ynfjshs-K-OnJIZrHzTM965xEQ5qp4uFgw8srIyyCKC3_-s1Lav8jm0WkHMcuhaDCXT0BP6pfkfzaBruFbSBv0ufQ=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXzNR_3z6ZXDlHNnNzmyrlhZnoOXUP_vVN1YFLRuZosPhZNC9aQRjUXKfFTq1YL2y8Kj6Wxx5xJrLXcuZH-CAgfGE35VyKEfxJ5J5AqqWKqiU9_FUVUbJ2MvMPS7NjM6QVsLdKMpuqtDz9cJZ8fnqSjnq-_GiFpZRe0uxqoQ6uyHEwPhPxVDS81lky2IS_LiRw3Qd-xFv93eHqVioIcjursWz9KA2kNQ=="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRWGbwTI8S7HcgFjCGA284sJV24rylWRQzNfXy195WgMe2NCFmJA7syAkSW-fUrna3NYT4Fp_rtCW_LDRXqUsuQUnfGKADDVeFUKEvu9ezVEhPqSbmBzsIoK0x3XObFVPUix5ZOZIM0oLhREkGZZKN2GxwCzkOPk0hvwOaHA6CtqgmMfxm6g8z2Vc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFypeDvTRt87yntnPLuhJg5PyZj1sAgKWZJt50KFnOmdjOmkk3jJAuZGQB5oHvKqmkefl5CL2ulyEeUKNAyAesFSykb6sVxxbscOhyahmjWYQGrVZAWdfYE23_nbfRNy7golAU="
+        },
+        {
+          "title": "mndaustralia.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuA-VTEzaX-xHuZLeV8q7hmScVVJngA9kDLOeNpwI_7Zt4FytYVJrMN6VXY0HJlyIKyVBH1_th3VbrnVdXHVGbsYM_XWkgqG9Yhefek6c0rt_WQ3oF-Xk7dj5cLE1sn2kRS56tPfid1tKuHfIHqTv5BPyAs_ll0moGdQ8xRMBO_eyWtXAQEtDW"
+        },
+        {
+          "title": "als-mnd.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH64KIJ0nEwrYtk8e80Ev_SnxS01dz6uhmjhBYIfzDC8X6y_vkK6paXmCrMEGSsO2dAAvsXXUOlCpHg3cfDbJcriu1QnxQovrC7phf8cy4WpQaqwzNtUMW9agpRDaE_9vpFmKRvC_88J4ynryMmztuIVgvbLVazhP_1d1Yf59SYTfHTSCTc5c1c6w=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF91uaNa20VD-TVlBu_IfdccZvA8Aq_6qFz_g4uIuRwZegjMgPW-WI5FUqjvgqC4ZQs7R8TTDhubCi7MBkhdRXS0rTa_70-oONLI6ebJAE6WWP7AWpj4yJizK75ils09buyn26LP4mFz4-lzONt-gbQfpo1hWn5DEqqt99Z"
+        },
+        {
+          "title": "nihr.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv_PbJc2TXNdjxyvFM6umdZl2UhKAeP7E6Bu0Hore7vcTo6Hnd9BCqDH2IleZ_jxZN_ZsJd3F6s_09Nvi7fVIQOGVWrRKL_U3se-DjYRMTtrem899N6mXCikje1mE4I6NraLhdcfdpLP_FdHP6XxzK"
+        },
+        {
+          "title": "mndaustralia.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwV6smwerMduvo29p0cLfRpMSewa3zCqsPhp9zm2SZ9hNy2SPmqToQtNldJhPL-g1w8SmLFXIWCZTLA54ZFKphc5RZRQOQMB8kk6i0aoFFUj8IW27MKSvYjCoLdxnT36F0Pn3xp2v4XjImsxvEBVwGtneKLCEy2ApR8nHWE_55-pl2p-Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiDz1DTZAnazJdXHi0TyJAcg-MGS47ItlaQ1s6kbzXK6QnfLEtV_NqLV2DtBkMgBctqQ3_t15IOjfkTMkkh7pDAznM-0N9Uen1udsOMY-8GO80Ih3FpJ-uAQlsXjDrFus7Ut-An2E="
+        },
+        {
+          "title": "mndassociation.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVzEZ7P33mB672CvTTQF_yLN10iSBZifxSFmDx4oLS4ZPecm-tW3Jhsver8aPUgWOCyEHnaq_s-1dHClbfXCOxe-1A312wBADhadYADhhV-0tbq5DEiJySOZOjKwdyAfrgYCQFv87FGy5VSPDx5QmFIlNOwDnlZyl6dmz4QCEU6qK6qtU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Riluzole trials for Motor neuron disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Motor%20neuron%20disease&intr=Riluzole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "50 mg twice daily",
+      "effectiveness": 45,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2300
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Riluzole",
+      "nnh": 20,
+      "nnt": 8,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2 months",
+          "baseline": "14 months (untreated median)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Survival Time",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "-0.16 points/month",
+          "baseline": "1.1 points/month (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of ALSFRS-R Score Decline",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+3 months",
+          "baseline": "20 months (untreated median)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tracheostomy-free Survival",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": null,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.14% of predicted per month",
+          "baseline": "1.8% of predicted per month (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of Forced Vital Capacity (FVC) Decline",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-7.5 pg/mL",
+          "baseline": "50 pg/mL (elevated in ALS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plasma Neurofilament Light Chain (NfL)",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Asthenia",
+          "percentage": 14
+        },
+        {
+          "name": "Liver enzyme elevation (>3x ULN)",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 11
+        }
+      ],
+      "timeToEffect": "6-12 months for survival benefit",
+      "treatmentDuration": "Lifetime",
+      "trials": 43
+    }
+  ]
+}

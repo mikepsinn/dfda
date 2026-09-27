@@ -1,0 +1,830 @@
+{
+  "conditionName": "Cellulitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:46:18.455Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvsH2gpN759lwR5-fdVatSxJCjNyjBSThznhsBAtc4WAg7B0dXODHCbr44Af8_Rn1usdYfjxCU0a0Jw-GgmJdCrp_3CjBGwAofuPJFhE1VB_2hAySgZbQ3XYI_LR75Ko3p5xvu8ZddploNAUhkXCo1MOVpSZWLTMMYNgylcks="
+        },
+        {
+          "title": "impactfactor.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBG_mXoNoa8_LDxuJVDkTN-ksEUT1MUYh-eZDZQyGbSvWhFN3wyAm9hGRS8awjHU-XDGKUGHRUr-WwNavgH0m7ArsIogQJM_40b8K08pHEHZ5XqwmD8IpYbqG8SXRINeMpwXjrPYUsW863K5p61II_PBlBg4BDcjwGO3UkB0uozLg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfGjGW60Rd5IAwQlB6D-qb-qn4WV4pONefIvWkDRUS8s81TgvVdhsNCtgbXQUXKUA-N5FPdrV5YOOycoA7HaI17tA_fWY8QHS9YLvNgql75xyJFmroI7Lid7ra7PoiHk0dDiQXCF6W25NSekzG"
+        },
+        {
+          "title": "cuny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgbRScusrvCYzm-1c3QN67YPnrqqf2LZNoj7O_K07AsZ3PVQVxWJdZdwFPzWIcjEErtdcfAnKiM94KCE82pFGiKnO_h6Z03F4Uitn-qcEiJ6QhE-hcbBjImDW5Rq2nVoELSP2LQmWxwlCKtTZwDpdmw7zujJlyufIoAq7pW9IVMaI_HpCiVD87hqldgyl9KF9mcms="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUMVWp6WWHy8vvCfOlo7ckvmSFvqwmLMf9zMtGN6ANPGferUDesBi0y73QvGVjg8QJIljWQV-jLjnCRb3anb7jmFBd2FZtwqOQjGr3-vgiopLMJ5m_vnvqaPgwwqjKe-dgaoVbwUsrs3qJAxiGkkcJ9A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcraOBeILcfhUZGGA8EPOilPD3nAQ-pQzWj0V0JBuc2y6yS7hJv4OYmNR2L6B4itz1HBCwCPCBzHFUfT7hIj58uVpUnd2NB4V-ZYoykizPS0EYHSc36rBunTPrtsJC16EAIMWK"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhXSOr1fYrMCPkQI_V4I2kOTghHGlUpbGze82Viknnp6VViHiteLA_35rgLHZRVof02ERzTj5PKUNYQBInqM8rTcTnn2mPn_nvv-8i1cqf755VInos5_U2mff6dNrG8gpWeEABpIdm_JC_sjNEZMwKCWNAwCz8aFljRDay7axU8CdKT14BfC2wgHntKCiM_5Mk6pJTGNvQCRRCntPv5IuBtiezTITW0Uo7g3GA0e37SOafDnz0vk3SY80Tr9o4FZRilWJYK-ruLoYGX5IXYKBOVQ=="
+        },
+        {
+          "title": "emergencymed.org.il",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdYlD7MoPoUcK4WxcBuuPPO2fIk9a76WxF40FlshG9o-52gwB7rKUXu2nW7_v8EC273fnCz_IDIIBLF9LVpPO-eR7OKbVfVrT7ejUU-Qc76jltHpKvDIaXCuP2v3_fNSUsU3gj-rUnbtTHN46Mp0xrhzlOykDxPj__vm5N4z1YFeo_hpa_RCPFdvbgH9TiSH-RH2i7yxGw9VMK4oFlJL8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwgNYznl0i8mmtf1oanDuhzyzsO99Lwpfv80wyqhFmOSW6wSzjGHxG4l8i_hWY0oQxMfIzt3RHbye8636GPLXs-Tz89YJB38rRn_iyllrRqsyFCRWxKfPcgzVjhVwnfUxxCTqIwWqqPsP8Ue8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cephalexin trials for Cellulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cellulitis&intr=Cephalexin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "250-500mg orally every 6-12 hours",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 125,
+          "sideEffectManagement": 10,
+          "totalAnnual": 150
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 176.47,
+        "costPerResponder": 166.67,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": 1730,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Cephalexin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "9/12 (higher score indicates more severe signs)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cellulitis Clinical Signs Score (Erythema, Swelling, Warmth)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-5.25 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Numeric Rating Scale (NRS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1.5 \b0C",
+          "baseline": "38.5 \b0C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.89
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-68 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "60/100 (lower score indicates more difficulty)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ADL Function Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+0.2 points",
+          "baseline": "0.5 (on a 0-1 scale, lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D-5L Health State Index",
+          "percentageChange": 40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 2
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7 days",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "hopkinsguides.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6S3KJbxrDEwbS12ZZPrC3Bov6FBMteW5PC-D8j3Fh22hjoyxlbEz4uDvHulxc04u_WqtsqX7Y15Sqi_wxJzuFsN640KMYn9qZe5Wxr00rNnjtx2raMneDduqwCiip_rLIaYZqZNO0vYC_mU6GrRDiKV7zhTloDljBlw1j0cjp-JRy6ymogbYxU4UEXoY6-GRvVcw="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF5oGs78vvnjqgc6c9bFQlvspLAlGZnl5ZjBGTWt3LcpG5LabvXTVPGF0hRlQzGhAFVWUDRvGjc3lJ2BnhWxVWzT9Q-OAOkW-vHw_GoaJ4X7RlLmBCKqU7hz6BCxi4bG488Y4MQGTT4fwapPFQU0OHdth_Pl84xgbKWuqjczSNH9hoxA_62cagOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA4l1NhJGnOeKhTCcZROEgZlQcW_iJFAGvcWxcIUlCrtWhU_Du1_IoB4DWX2kgY9xi6mfjfSWFUAdx90ys03zWpSmiiW492J5SPQ3oVFFduvrLLYkX2t_f7c-OsRT41TyHqmH2qRrgs09j_Gg="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEAQ3UFT5tyyiIDm_Xi0pLz0bpHt-xBnygog3FzhInTOJKjko8ZvRq7YwgZvZceNYzb8vaukglezWNukxCrZL8SiAbnIx8qxfEr6ryShCz7ZZ6PCn6xnpJjG9EiNNux-0S-GZPEqklGixvpqA="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgFuHeDEA41Tl-oQ_qvLErBoSCTTiq8jszLA_EepsSZIjvrHOoWf_bHf2s1-fE5a_J_T6xbOozjVggMiwuUSmiQ-RD6HtuVW1HMxvyQ0qwUkzchujj-Kxldsz2gVpsV3M95CW6UiJ6qNINwpRdNfqU"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBOXezqoRkjNJHkv936UGVruHlCL2LOpRBGZQvqnz2dJKQLXoeCBgCzmumImgXjxOCnWwMGFhp5iL-1-AHFB6URI7O9jWq6f7nUB4A16_88uJ7275BVzpvO2_QIbGGSuWGqLT2JEzZELc0KMTTOFzx1Qc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1xiXZ-mwNAS1WJ5xzvX87Qw0DVKjIFaOpGKX87SAXbXFpY2GOziWUplKKz9w-FCy2iUWk3YnSxUjx82FqW4Lw-25Cme03OWbcZ7lbEdwrSoXlYdoHNmmo-kMv3uL0qIImIwEFEurZVxmJ5Fg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ_CK9DamIWKRaxexDZQw_PkFv2_XeTQn_DmfhGQd1TdWNiCTnszqKx-957Iqa3JEHJIHDxNXzpVEQiOm2hXVFE82JRu923LmMjzE2v1q0r266ezpsw3tJo8WDBLkh9Ff8vGztWEpTI8eyGI1ELIs5YvgvlUL88Kxj5jco9sPXavjCoTsOauOJUclBOzncNTsDBFskXAiG4ew7vKf-3pNota9JP9gVc6YzSlq6zJt-1tWvcw2xS00U5lpTwa1oJ7VC_eI22C37HYThK2Dj2NDcdXBZqg=="
+        },
+        {
+          "title": "cmaj.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC26yRNvAdPCZ9BGilMrrhFsfRkE9Vr6yBC-xG05qWZSgL1wL0NHgV8Nvslb8jCt-TJ0ZEbRQrm-gF7r-lsoUVzC1gSxY4EZI6btyqaijk_lv2NSeSBe-Jv0gECjtDVJ0="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1yKm1pVpqrlbaBMhzrMlCi3l0NAJKFRcDyBODOaU6c8fS-kK9Q_v2fE3WhLth-7pHQmlQjMYRAWXGOXSsZNO8D9C1XB82BDNtzptEVAEnDyf6KyRW8UCsnN2USpydbkP2tkilAeXUuGcC2jtIh40Zv23Ld2e_0a-vYT0JD_gBAd87ledzrEJqGZ9gQYwsOXEqpnt7cGOV7qG6"
+        },
+        {
+          "title": "ClinicalTrials.gov: Amoxicillin-Clavulanate trials for Cellulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cellulitis&intr=Amoxicillin-Clavulanate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500mg/125mg orally every 8 hours or 875mg/125mg orally every 12 hours",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25,
+          "monitoringCost": 125,
+          "sideEffectManagement": 20,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 200,
+        "costPerResponder": 188.89,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 10,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 25,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": 1735,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Amoxicillin-Clavulanate",
+      "nnh": null,
+      "nnt": null,
+      "participants": 45000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-120 cm^2",
+          "baseline": "150 cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Area of Erythema",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4.9 points on VAS",
+          "baseline": "VAS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (VAS)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-2.55 cm",
+          "baseline": "3 cm increase from unaffected limb",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Affected Limb Circumference",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-80 mg/L",
+          "baseline": "100 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "SF-36 PF score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Functioning)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "Severity score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Symptom Score (e.g., malaise, chills)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-6 x 10^9/L",
+          "baseline": "15 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count (WBC)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7 days",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjoFtzsYhLgg7Mu2HicW1OFU7FiLHVUwgBiurBfGI_cyjmN--tykuBdwngdM39f037A1fyUOgIkwGyG2UslKfOfIdNbdV9JOZxr7GxNvPNIAPXoidnSTis3RGKjrwqp_X-5oyXpEw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1QlpergQNHO2-gCFsYVwg8nxVZMU1VaDeq4_x-uVrYKi9SYoPI9EvdwN32MCfoigecANWW7K0I_rfmv_TWWcJnJHUguX2mXjb5luZuhYHaXHA6VfN7N6OKH88dzwsGSnZ1kMz0Z1kcIB6-vc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWjKpFz1iMsqa4VNgB0i5bnCkFUrT5MHy76bFYDMYe3uxisz_QMGkICFcpziXYiFdMYJ3r-orNNoJABgUREHx5IDN6dGH7TiZ7_hDN7eaQMTbCI65DLvw6mB1lRZvDVs7dqVb2jEkZzlHCjREOj-SbFeXImMCi5FYLBprapFAKzpyvXbbYwTgXQzFs1syo6w-iz_Mv53Oq9elsSzFJN5YbaQMwX80mTonymfA-NUXyNz6jJNEOYs4C-olod4b1FOXkGb5DkBWPL2rYWF8kGa8QRbUqkdK3LeH4zd5Xvaa4mrbcbo7hoVgxoH41vjt4A_4Khrc0hQ=="
+        },
+        {
+          "title": "clinician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDaXg7roc_pqhzfSL1uKB7vwVcx8CgI3fx4p3f1NMJUARo1fAhHGOitWOizwdVWp0qf-vOw5A4GsnDGswOJkjx5hkZVoT_4QXOmt4o5Rqo-MMQt9RCXaTtRxatfyhlBUNEJ6XmPvWGYBP2122eCC597oY5DZ-Rbte0B75KuZVpK2C3QVYKFubLRAlOlpdxdEfI8YZR_mkZudInqKxIJw6HPAmvKiIfJQrvR_VFbNy2Iwp2eFtDuDNOUP4jlZAg1Ccr"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdGD-lgz375a_8ly54ZnKyGaPlfAa0tmIGnDWlLUKWaZNmS3V4VSCiRUdW_OaIUIEj25xBDUdT4du2--GJbOBWZmSF15jyZSEQXle7uJhyeyFPeVvkPZCLJvT57TRRqhSTS04S9vs0M6fZSjb5uxUJ8W915lhkpTBr_v8LaoVreP0NWA33ummSFAE5Tul0-Va3ydErO1epXbrvFQeY5gQJIzQdKqq1EOnRR2SCGHC_6iQjZt6JWHfNsFnMgoG3aTXTd5TFoXMo1ggUpc7VWMISunEkLUUytdsGevsgoXbYLuOuZbqC5zy2Wxd1I88rZyaFY9NxxatAq4Z2eSuzQYWp10Fwv6jelmQs0PMJlxM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf5wKikJ3Jv0VOuIRjPunjFrNZk49MwvKXLdUPGrRnztMnB1yArsb9TlChkqabQ_aAM_Kj_pdimB1AbQHAF3EjvCL8zOFFrx_ygyChibXrqrN0VpjrUldQ5mpAa_v7rK1lssiYGaNJvACp2cxLt00dR4TMgUQ9-Iae12w3SBB5_jiH4QdXDHdEuVCJXZPB5ukpLCal2WKa53EIV5wi12YC2VkmeeKC-58RXgPYEFQTM1IbnhwXNye4Vw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0SNNXV8Y67oMfPH4kiVjSeVcLAxLgQ3ap3cn-OJAQ7i-YmP_SbPP-Xj0_sz0UFgORGeHoL-ZWZXrr2t2WksAt2wUuA9DkW3DAX_vWwIxgB3H9vDFhv7R56TKIPz63tzUeiuC3fjfXDQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4-HDMFRW7_aoGwbWrMy4HUH2aZmo1UojK6iU08O1HwN1LVTpUncD-L4qUKSE-dNwrjG8zeKZlefbDHxH-UX6Wd7Djk87i-QCM36nmMA0fQoJseYlnXizoE7VY05gc7WT3g_C4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlSyANN0doqZlCpP7HYGCdoxsuNBZrDQv-BbhUrX501G_Ig-eyj63JbxjKxqDOyNtlaxEANLu7J6qVhN7Mpc4wlddMcPQUSBVlmwuRxPd3fEJ7sj4wnJ5VqXuQOdrv_gbxCopPH_bYjjQZc3Xg"
+        },
+        {
+          "title": "ClinicalTrials.gov: Trimethoprim-Sulfamethoxazole trials for Cellulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cellulitis&intr=Trimethoprim-Sulfamethoxazole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "160mg TMP/800mg SMX (DS tablet) orally twice daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 125,
+          "sideEffectManagement": 30,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 200,
+        "costPerResponder": 188.89,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Trimethoprim-Sulfamethoxazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-75 cm²",
+          "baseline": "100 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cellulitis Lesion Area",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-1.3 points",
+          "baseline": "2/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythema Severity Score (0-3 scale)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-40 mg/L",
+          "baseline": "50 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Duration",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "18 points (severe impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "4/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Symptoms Score (0-5 scale)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 7
+        },
+        {
+          "name": "Rash",
+          "percentage": 4
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7 days",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR6ToKFLLSZVCD4reEUtRIPpserUFPDhCKzoovOuG3LExSsmiw1ZkgegaMK4j_DnNhJkh4PZe4MWB-XssIGxyt4Zq85a99K9ym6EPVImPe9pDoMsU_zEvq-PBNfKM-R0iAAuNHkNCobSZPFix9OC8TZtrgizXoqOInJWaqwBq8Y5NqEGc7my5JWtitf-lAVDKM8CVNcamYeHlBAw=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH66ExgCQwpw_nCyqXgxXOteIxSMbAEeMxKoLOALry8njq9oOsRW9Pg5byj7C93EtLUOApZbsT7DFB62axd8eCZbnYuURUKEi2N6cfzhqoxGyns3p-VrVZI8cGl8OoIYLF9xUXN7u4GxvLFM4r15EOW4Nm2MzQjtHkmFG0hQd-hiqmnit0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXhFnnYIC1eZ3wYeJkxdGRKWXuLqBXsCFL3Scz52GQTZ2ia5m2iePSYZg2Q68J0WBncp4jomu3cIuLuOkMrGTutoTYOrW7dYTKhIM1l4RYH039etI-LUVcMhtFGZOW1guviwl5Y3zPH7v1d6hr_Yx3_Wsuk9z0N4OjpZP_alMZ1uaT7O1vBHPQydKGpf3sxe-MBDjoz7oVknQ5PewFKbmEwY8jjvB17MYw08A758B9bU_R1xP71g5D2TRrD_Iz95DVWQQapI2--OL89sU4DhQaTugJHcyCjD94PR0j_h8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi-a-vL6LdM1JtUSLwMmPpiESQrhhWZZXbZT6bdlu80_paDIdicJ6cuzK-3OwNThyqg0OPAi6-6bOIh5tmlj2RMdnkSHoghNh1wK9EYNGXErOgotD9W0kCFJAs28JohMrOZReZnybXwQ-ncoWB8Wg1JKpvAGqaYR8ZlcrJn1NFEv0p1WeKfeoysjc7t55wAUiP5qNiMTvjUeHWhBJQOlmxgRL-2p7lNJrmrOCYx-qJBkHb_CCi1YhNBSbmG260JQhF7FWhtqTOM1N_54uWrfLXmRkss4mxPV1AioiPJLZwIqh_OPleI6ALNEKKAiuAEDu3UPh3EyD8j4PW-O7rH1ptvAo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwqtVMbovyt_vY1n-irIlpIE2GTMxYuKrKNLXRv4-bEvhzuU-lrHCCYMolkWKwTi0KUg_j4vzXSjH1FHYBezxxuT9eQJ5_3QEnWhtCBha4KYPOjmWO6_OXQboDN9O_1EQpM86v2JA7hVHUWLM="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwtSqCPumoOGaFBkY7lA2SSJzC4ZVvPP6QmpWJWApG68iRLG1gQc01debISDZ200NbFi3qTsblaxHnAzy32oWoPkmg1KM794KXJy-5oyVvh3MfpeQbf8zh65U7Bps_m2dYWAhfdu6LhE9dXd4jpov8_-qvmC7MpKxSLJT8bXI0llcV7jH_cPh07p4dNu0HengHff4tkQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgkqc3HMJnS6N9JaV4LqaP-m1zwUWe3FbB-6BS7TVbh_-bNLGJsF_F4EAyAIyqZsGnlY1HeD8pkN2hljU5EuRfx_URhResIWmeThoL_9RupPVF6mScD2us51_3T5bMRmoKRMotFyc9gXjrSQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxycycline trials for Cellulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cellulitis&intr=Doxycycline"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "100mg orally twice daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 125,
+          "sideEffectManagement": 15,
+          "totalAnnual": 155
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 193.75,
+        "costPerResponder": 182.35,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 5,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "high",
+          "netSocietalLossFromRxOnly": 1730,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Doxycycline",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.95 points",
+          "baseline": "3.0/4 (on a 0-4 scale, 4=severe erythema)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythema Severity",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "7/10 (on a VAS 0-10 scale, 10=worst pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Localized Pain Intensity",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.54 points",
+          "baseline": "2.8/4 (on a 0-4 scale, 4=severe swelling)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local Swelling/Edema Severity",
+          "percentageChange": -55
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-60 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "35 points (on a 0-100 scale, lower indicates worse physical health)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "5/10 (on a 0-10 scale, 10=complete impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Photosensitivity",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7 days",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "dreeam.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlZC8PnbQddGmn-x78tWAlzHpR95YUcUJet9Lk-Mv0PjY9nBk6VXH6npBNSRLY5OBw3JoiBe5vEVUnbaM0lVfe10vShS_etU2tDub1yHwRy_CGPNk52RmHIG_To3yFJaG-OK7TM53egYuBOs52kTyCYLvbJ2vrR40aaMLlt4eV0sNf0ob8Rm-oO-pBOYjMSJy3UblJJXIH1EHFEKRIhNr-Z0Xkm8O15zKMNMQVbQ6w9P6c"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLvN6EA6DSCymmQn4ChYbPqOX5LNvKrcNW3wEIfVLslXIpUmLAOfXnCWZFDCZNFzOdW5abZ4E-j7_gS9-odqBHLp7lFFZcl2BndeP88pc-ozhklHtso-1bXfHFD6aP5rO3_dDy"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXyVAepXG2B9xtH9Yy9vwW53nVF8a5GwKXfu8mugaJ-LBYLiwO0NEaot8gvBdlAxt36BSWo7WGx7HlPGKv8rwHIfRDJMfdevOfvadbUWq93lrPCYruthmFCOO4Rs3e0tffSFIVdpI="
+        },
+        {
+          "title": "isrctn.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjWvLCSuUIIw6IgpNOBujriHd9X-0UNmVGEa6RD9eIgJb3m7TWrycf29X-VIww3Ja5Ts2n94I8sOuk6Wp8gUwqB1mMvTbsC5TJAYGY14Unu_Pyj0YiWV3t9Kj0tS4o4jE="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgsQPosVwGhfuqCxhzhagn1gF3Jm0P6jyPwja97krTqYrZ548aEfTV-8_po52OOxewuoSjGiFcxyi9Q6p1Ue8G06pg2BghsAu5LW3jpikZWk7N-w1P864fX3w-I9uJj1zVO8218_277740l4STdNVUGFUvmZ7f9a0HFlaO0mchxEfhH3WJ5eomI_ktWxa8nyw85an-RGOg"
+        },
+        {
+          "title": "cuny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsv6yvz1LFyYuOX6fVva3tSEDiK0X3mY-xTgI-9E3HH5wv3oMkxZjlToWQuDunjCFewrRkmt0gJny2F0lGgYmo1FsJi-mI2QZX22RRuWRE9FNZgYZI9c7stS4JMgXJ3QFXgeKlUANqvEiUXb4ttMFHV96XmOuGBIOTcF1040vVFKTBc4x3Pn1KLD_Qstk0aEic3j4="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSjs0ecE8J5IXEvf1_6gcVwu3Drh9MVC5cAMmbPSmacayseHowswYeQ48gI-bD-eNgoUbYQgxSCLw-PAfxpik_pBMk2L4MnJlPD7MDxscOPhnPAXjPsflzVVag5o1Mo9qK8qMbFiUMkWbJBOrW5Gx478xp8cFIiA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Clindamycin trials for Cellulitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cellulitis&intr=Clindamycin"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "300-450mg orally every 6-8 hours",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25,
+          "monitoringCost": 125,
+          "sideEffectManagement": 50,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 250,
+        "costPerResponder": 235.29,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Clindamycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 35000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-80 cm²",
+          "baseline": "100 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Area of Cellulitis (Erythema)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-5 points on NRS",
+          "baseline": "7/10 on Numeric Rating Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-2 cm",
+          "baseline": "32 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local Edema (Affected Limb Circumference)",
+          "percentageChange": -6.25
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-70 mg/L",
+          "baseline": "80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -87.5
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "50 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Functioning Score",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-1.5 °C",
+          "baseline": "38.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -3.89
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "7 days",
+      "trials": 8
+    }
+  ]
+}

@@ -1,0 +1,1135 @@
+{
+  "conditionName": "Dry Eye Disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:52:06.956Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_qk-np6Cmr9bYLUrvj18ZOjC7LZeF5qCA1qok0N5wZWvPlHI_GgOeg6sHFERg9qPE4lKaqcuOjX1AZP0SzLPoDXF7RoYGJPXPTMzFYztvYm9-yvsE2AaeWaQIlYU386CpKiFl41zn1IcESihrAl3s5VYuvf1fUkTIXaZQRetZGezuqx6nul9IgBeAeUPTXWY3g9DX-cNpS7Cx5aRF0SY7Ay9hu1TVYHqoPBC5kbTa3jzfalmCnLjf22Wf6NiW6r4iEG80sZw57hFTlDo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiMdmKQZkhZUVSd0dDeHQQwSBQMpmn7_IwDWTi3Y25zYUOS_tF8Lwy4E2tzpZpqiGTQZ59n66_0kEZ0MdzCrQP9sJOdvREXyiqdouwa33JIPDX2-3YJz-uzZgrr7UHmCR9GcbUNF6g7bP3D18="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5Gwm3FQBPZ2iXRS2FU5i1tkgc-U0HEbZ-Pb4Y-nrYhjTDGQzbtDAaWDMHXDwPYvelCby4vRgPx4zW0TDGkvHvLhBed8_1ngwEY2bthBUyhLEBGbYhwgyWEBBYlcKfwM2XzF6K"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_hsPFaOv7BmxKSkj-_C50v-8XD4M61aHXajY8dPHGdHQ5x0zgHwpwFX3YVQJu8zA4CwA5dCbJafjvMfaiH-Gq2paH72n0xwQdAIQL83aWC6FpJj88CzY2fV3NoOvaHjLMuAZOCP66a-N0jo0_o5G9j9VKEhh8D6AyFxW3ybvxhKP21dfzTsYeGXBDzJjUvtnyExJWXCJ6AH3pMoKvorRmsnLimfZ6asXqtuLfrxlE7VEr5OqHIusg_q20KFDVivR4v6_5Z_QGc_AtcYZFj7E="
+        },
+        {
+          "title": "ophthalmoljournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYP_nfrA4Vzp4Qkdq6qGud3NKbKzY0u4ZAXSAC8YWnE3-t0sOWwVFDRI8Vx5j3p2ivny_K9h2GjO2jNpg2RIntKpTi0R6mGZ0GoB0r0JxcLGRUB0uMHRrOWToY-Aoj7Im5vUT-Xkt6Dk_mN8wHEcfnTtW82FZa9uU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpAbosot00fkC9HASyIGljCkzEKewyhK86lOzn-S0D3g3oz3Xds24ENVcRmGBgKnBzpwjsuSsIkVJG7q4vYMBQFVfu8usRE3sJ81v1pmyZvm_RQxF7MkRbD12fYc8n60U0EQsU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7FyDHy-0n4CW5cgtThTomMMm2esrYzLBx5lqQwjUerkMpxIajlsCW5Cp9Cy442_ozwctlzGQyfY369YkK7gtfCZan91AfhbB4Cn-ueHn1OuUvZmNOj76Ol-BWt998xWbDALGb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEexujUSuGmqGskINelWW14Wk89ufu0c2IE8ZgLzkdlkwD4QK93f4wuuqNRPquy6rmsZF_eyXF4WeQ7bTWloMa-0G0_NMOOCb_yPJJuozP-lh71b9rSurVJkh7QfqXr-S9zfuAZTJs1Ks2ZNflSVuCgbPiMXoye_dYdYF0ES5zwqTw5O3bLul9UOvJDSkXh0-s8gqPKM2UWMpR0ocpv4SWLODTkufysk3v7SbjqIS_eNh_u5mi8ydsd7WfNj9PEmx9w9ENounP1CVHiMlsI4yyIgT5I8MhrPKz0KmHQdGoXeKs-ezw9YcMwVTURXcVTx1LIq9g="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY-DakW8f0ONOKRzb5tigkleiuTPsvYZfjMMCEQYXgcxRlQ-eQywYzp6VnoKMzB8mIaU4rGHkabbiPRs8uoe23hWpIDCoc6SC5qS3LnbU-6A7ItMS_GIwZyJTmIOcDRde4N0Axm1XZVFjHNqTdQa9qCtAe440fau6JYuiJyeKkfA3vJbjI1bwmtYtu2WEyQAt6N917"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cyclosporine ophthalmic emulsion trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Cyclosporine%20ophthalmic%20emulsion"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "One drop twice daily in each eye",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 50,
+          "totalAnnual": 9650
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 38600,
+        "costPerResponder": 14846,
+        "icer": 95000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 800,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 9000,
+          "annualTimeCost": 90,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 6570,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Artificial Tears",
+          "costDifference": 9050,
+          "dominates": false,
+          "qalysGainedDifference": 0.06
+        }
+      },
+      "name": "Cyclosporine ophthalmic emulsion",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 18000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "52/100 (moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Surface Disease Index (OSDI)",
+          "percentageChange": -28.8
+        },
+        {
+          "absoluteChange": "+3 mm/5min",
+          "baseline": "7 mm/5min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Schirmer's Test (without anesthesia)",
+          "percentageChange": 42.8
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "7/15 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corneal Fluorescein Staining (NEI scale)",
+          "percentageChange": -28.5
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "3.0/4 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dryness Symptom Severity (0-4 scale)",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 seconds",
+          "baseline": "4 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tear Film Break-up Time (TFBUT)",
+          "percentageChange": 37.5
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2.0/4 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Conjunctival Hyperemia (0-4 scale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.7 points",
+          "baseline": "2.5/4 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Foreign Body Sensation Severity (0-4 scale)",
+          "percentageChange": -28
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ocular burning/stinging",
+          "percentage": 17
+        },
+        {
+          "name": "Eye redness",
+          "percentage": 5
+        },
+        {
+          "name": "Discharge",
+          "percentage": 3
+        },
+        {
+          "name": "Blurred vision",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 95
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdAvgU7u1Xl4sZd4kYmCCaYVwrqmROCAt4jmSjzI5WdkLtLMT2I1aPAA8aI_Fb7atxQy8Y1mlv_SMoaI_6_OFVxzcSd6WWzE9IwWWsnc9yOeu3g5KyFsbsQ6aT21-bQuovtHs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpiH9cqarSVirErCD17r2x55_fx4Jf1m9Loaribia3lpd9E6_AZ1vUABPY0flvj7jV30rhkh5auenh8gkSvaSGRfGLReAoFJZ-5Ni-WYHo4lMyKfV6VXLbfuvktkdEptHI544="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaEdbqv2-XCmfV6C6coJnqr9HLXA87J4EueyE3MzFF7Lug5VTm7IByryCqJ3fDK9kNoNWbYuL7Xe-bTjGcZCvxrYb0RZn_qk7HtYvVdCjLK6WmN2mPzGTs0hh3GYk1WdymYxpv5o4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQHoxAvFEOti5E9NrlilSHnlaP5-oy_ZKfecEWOJg5xrHepl05QIO6v7gqFBS2r_RG25bD2xPfxxk36IZsTRgFqLrdWxmJY6pXQEVZaxKbYnh9_ASS6ftTITwwVFAqjRPem_8YyFQ0qL5Zw9dvG3NODfa1Mjwc_sa_YBqCf9bwWDCQzQbXf6sN_x3EezdEwCRbGzVnTRBtiF-_mwLkmUIdTwPbuA0EKsJZve6iW55-svvDhXSLdWRCB6d9CLzDKs6wWVP1J3IFo4PUEqQI-MorMqZsDYESLGbCvlJ1znfuspc0HIjju7m5AA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvPRFLQFwvZehO_s690-Yla1A8Tf8oEKJQildd0adWYDwUrEVV63iZUV4VWYMIJ1jOfbiRQamUyYXRS_JefFeqEQ_67OWda_z2YdGcOP9hy1brLI50cS0ldqWvHHgw6i44w9U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJxUgaZ7ML1CAkU8f-fm7Zl8QqANHdT-94MyXIJG1m4oawXWD7sEVu05YV67WpLN0rQh875_7_ApBu0e2u4a6s3GOU2Xmc-ZxHYDJl5FLJDBg0O0qhjesPx5QiTA0Mg4bBYxR4aFy8DAYr_g=="
+        },
+        {
+          "title": "pharmacytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN2Z1Nkpy89bAvCEwA8jbxlNEJNWG0_PdaQ7mt4xv8JtNu0Siy6fv0WZ0GCX0Yh89qxfHWXwkJixCYZ472qo0gx0QErhEJBJYWHBJK1cKRVngjid4SNDgavYgDkSSo9L_xxv7ZJRhgJUp8HBPmy24BFHCpZSzGWdwyRNZkhsTNUC4zC7ClcvgASwfM621bTGZtzLWAwNohc3tf08tIP94uSY4Ylyj8P5w9"
+        },
+        {
+          "title": "ophthalmologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfAu67kqCsPqCKQ48xhQf1rIzwQ1iJbo-OIlFk-6NF3ubeFuj5MMJwCctOIxGeITvFEa8xFNrfJmmgfR358PPcyd4SSb2q2_RXlaZ9pTrOEJQ56vfIMg0dyOuymyHiPwrTEAWTyCnQy41Y70Khkfjod_kVDEKP70gED80S0FDTkfMihZAtOUEJdqtdqPZzVHFOF0S2uj4VjbcHrvMOtQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHHTWs68Ox7Av3z1Pk6KT1CEYzYkMMPePvmx4apuJOoFVGGoKDEpBWI08gz23Di-_lUfqvx8sGfz6X6bhUr5IkzejtNUBxNxAyJDXOvVN59pmKYOx7v-pM02RnPya1srSQD7M="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lifitegrast ophthalmic solution trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Lifitegrast%20ophthalmic%20solution"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "One drop twice daily in each eye",
+      "effectiveness": 83,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 50,
+          "totalAnnual": 9650
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 48250,
+        "costPerResponder": 16083,
+        "icer": 110000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 800,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 9000,
+          "annualTimeCost": 90,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 6570,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Artificial Tears",
+          "costDifference": 9050,
+          "dominates": false,
+          "qalysGainedDifference": 0.06
+        }
+      },
+      "name": "Lifitegrast ophthalmic solution",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-11 points",
+          "baseline": "55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Eye Dryness Score (EDS)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.55 points",
+          "baseline": "2.2/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inferior Corneal Staining Score (ICSS)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.7 points",
+          "baseline": "3.5/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Conjunctival Staining Score",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 60,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Surface Disease Index (OSDI)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+0.5 seconds",
+          "baseline": "5 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tear Break-up Time (TBUT)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+0.5 mm/5 min",
+          "baseline": "8 mm/5 min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Schirmer's Test Score (unanesthetized)",
+          "percentageChange": 6.25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Eye irritation",
+          "percentage": 18
+        },
+        {
+          "name": "Dysgeusia (unusual taste)",
+          "percentage": 15
+        },
+        {
+          "name": "Blurred vision",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 29
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn8e72p0jxpFwMqcBaet8nFbORkge7I_ZogZ1Q0stUCL9uys4xdwmjoZcl3DoVjN_j0Wu_KwzmkHgBqQB1qzMu0WzxNwHPZD7WMWOgJWn8qaSjew4w5eug74jlu0ao0vYCMzwd"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ6RKFAeoo4vQfM9oELc6cTGQPELM-4pxSJxpOtNHc1fBP5c52seyPfULR8-p5Uxc6zV4qyw2ko4EhRE8txCk2Lzm4BivG_4ks9x43HRD2gVfVTQELFgMub0qnwyJ9Mi86fOniAGoSs_MPFhhrh7-pp53I2JCwwgg1m0C-oaEhPUvlz9OGJFkRRZVM1KZN5uwV77P6SHNWlGbCgzZs9r3IYMNdaNWyEBVlQg=="
+        },
+        {
+          "title": "crstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBMz9kblWMEVZVpJ1edRUmX3xg6xO63Pn45x0QVtkTIZwkRkLsSxhm1fXLKmxdoJI8WkpCB-Qaf42_ynk2IjchpA097kkJntcRAhX1gO0scZIDsnEf-VR4NHvdDFwYdgXT16zFuvcYEypwSNiiddlBqkQ81j-wy40oO6FdS1C1U5Dsrx0kgpLqn1fVhuYEpcd4USEc95QdRYPF"
+        },
+        {
+          "title": "patsnap.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfBNwP2IoNik8QaLd_8nVJNY91l5yfkeCx76Ch4cELGXY8lOfq3rGbkvgOTJOhtw3lzrOcNnHZzGIJ2LUkTl5YdnJL0rH_RvNPNZsh9VD4OsZMOSqPiD0UXIg3x4g7vSg9-TTjBuH9XoZMmgzpi29Otmw82CUHmyP4o8CMLnY6O15hlYQFyk0Mb38UNcUlJVIzt76CFyOD5hNIWKS4ForKimkaExzP0RmCdFk1VhXiUxuz"
+        },
+        {
+          "title": "aao.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsJfWMK0_qNPaJE04D7uZVsx_qj1RzaOMOrP-CyOg0OeW3HmMEToWk3LvIDqAEg1hCrmSwMvWymCsYyeq34QWE3-zGFLL_Jy_YCArj6bwCz6JIGCbxfdbDDSWjsNFq3vWg7-sNWu6EnzTcui6MQvp2Dv7SIGMYmq_AII3bA2Lyx2C-0mxfcshbd3d8xyEg176U_uCVH0y0i34Z"
+        },
+        {
+          "title": "tsomidlothian.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI23T6MnDPCq2BtN5JxjjaP70srnwDKt8kTsq6qFVBwImmk4JMbeYQE53imecU3v-FxyYxySk7q2ZwOJcfPNKnRjmhdtlhgDckyCyg8NiE2IW_ni6aHY-iJ8tOx5yfuoWshtgE4WGIqEFEX7smxluYfjhilNAik2zRxo9znVb0TLaRU2Fnr0iGDpd5pHd_upSda-J0yTJtvacldep-aM7n"
+        },
+        {
+          "title": "clinicaltrialsarena.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdqy0XWXOulJVoQ9Wj1i88OHpRZfybAy7OKoPwjtwH9WxcsACu5AL0kv_ClW9gs1_N7PNkhwPBj9NAYh1jdNB_YqJ6sLmMCPnrjx793lSXNotYNIdMuAvv3wWlMBxs4NSor1owZ0dD84zoWmx5zV9mIg-wBZ0YWZdhVzj5I74LH55OijeU0czM64TICw=="
+        },
+        {
+          "title": "ophthalmology360.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAehKJHG-4QCQS_Z2p5jtcZNI7a8ijiRLhNgAqOB_X2TWJ9cnHRdF00QDCEfqmmHBzD1smVt98cmUG9AUhw8-vpmDdvlBpyRAelwWaLZKlNwWqmnr9w7Y2QVZOiJBodztz1W3yEvquPf22dLcZsq22t7cXbIMNtP7NhruH0povpq-v5V_QVDGFHMPUaY08Lp_SukarXlfSAQ=="
+        },
+        {
+          "title": "aao.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHkczGp067xWI4v44annzAPL2o7iw8SwEE49yXiTGnWYquHXe--cZCRIBRlljrdOKzTYM_emBrOen1erFDIlcvaeLUNgUXebLaBRnfaxp5SAvB2WwhjMCq6kI4q2xeiygCc3cWAdbXBoVDblTHey4PQguYtE2IjiDH3N-3furQV0gdb2WeZOKSCMRGV9Iy1c3AqmciFbCFj-FM"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0idvtqMX2lwasTRr-iwAQF-8UIk9RigcElIOBos7Bm2S0O6rnR2T_0wAgrQW9yZTUrt5ZvANrQTmuuyFs-eAvyrxH6G7pfJfEev5MkhZZNUeLC-T_AmYmU39ef7Kkk4M9FUrp4SSqoNuqsE4jZDZ_ZjszrMJbIkUWUYfz0gtER-965wphCoYluPMdKKsoTClpv4OqFY_5uno-cgZpxuQOCg=="
+        },
+        {
+          "title": "examine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfu6qL9SskB7mmbUOFbGYRcvcaMB_JLVUumLLb3MJcX86W9jph5EVtGd4XzRk6gSZ9eOzXb9GzQgWkG_YRQM4VlBn0CvALosybXKjl1O8EaRHTN_YLOW-3C3tp6WyWpK9CTv5C7uDLv1fi"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1vzGffMyRRvmCyt-RC2jj0zhY1YEO-IZTobdXdROQ4KX6jcGNDVSi1RPPtolA-5hEu4TNiDifjsIqYOXk3hYRZRQB1txs2I3Q0I48O4QbACXO_Q6-NMjQLF6U5bvC3efDVZZOnNh1M670KtDW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_KiEMBJQtvd4wolh1kIls6FhuryXbqpGqOebKdosXgCNl4OQbzPqxtofzQ8duRpzn5OJgJx4e4I2B6LjdyN6wW9_1MfVBn7ZzXO6YcUTyHVzDH5W-OuLc9XUkCYBdb3fUolnc"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwbKsh36Bfu54eTWLxgPIS-MN9p76GBLWSDCFgGgQpSAUSnUJl7u_Noshoqf9lntRfzKe9S380CN2uoo73sGROtakhccs82U9GHX1n79xMvuqK8ubzwu6XFiE9AK0GiYQTPnsavURFoM3vanRsfS99CvBe4I9iWB0Hw_FSVud24_6WByb_4Ubxur5l1LtI-ugAGH8jld-P1kCJMlQ6dtXZvdrjZ4RptCGWo3T-2Nnt_SF7mKUzm17OsNvd3hFf70_dgeplD8l1oAfSTwGM"
+        },
+        {
+          "title": "contactlensupdate.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRsoLHdrf9MPWqlfrKzDVRDXoPWRuU85B7gEn8TrEKAdrHhIZTbySOJM_9UAMFd6oSWEWKfJ1Nid_2gduMOMGlLJJPRuoHx3PiEBSzgKIIg5wbH-OgJF4uCQZKxLxB-BpdaHeWQzZLVmDCaOh1V_-D7JRwM-RGGCWUHHb0kZ9Aeu4ySXTNQM7UwEV9RjIKR88c6DpphWvG6nE7TyJnZrMLMTVjvITR7tvds3ELQTia9B0_V1xS1lxaetVx0bt9L4m0cbvAMCC6PfhKuF6HW4bIR1YFETmscWgqujZ8A6sPocr520bCeNElUc8fzDxDBV-T"
+        },
+        {
+          "title": "ClinicalTrials.gov: Varenicline solution (nasal spray) trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Varenicline%20solution%20(nasal%20spray)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "One spray in each nostril twice daily",
+      "effectiveness": 78,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 50,
+          "totalAnnual": 9650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 64333,
+        "costPerResponder": 17545,
+        "icer": 11000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 800,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 9000,
+          "annualTimeCost": 90,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 6570,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": {
+          "comparatorName": "Artificial Tears",
+          "costDifference": 9050,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Varenicline solution (nasal spray)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 1800,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12 mm/5 min",
+          "baseline": "5 mm/5 min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Schirmer's Test Score (Tear Production)",
+          "percentageChange": 240
+        },
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "OSDI score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Surface Disease Index (OSDI) Score",
+          "percentageChange": -21.8
+        },
+        {
+          "absoluteChange": "+1.5 seconds",
+          "baseline": "4 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tear Film Break-Up Time (TBUT)",
+          "percentageChange": 37.5
+        },
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "Dryness score: 3.0/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Dryness Score (NRS)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 55,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.4 points",
+          "baseline": "Corneal staining score: 2.0/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corneal Fluorescein Staining Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "Conjunctival staining score: 2.5/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Conjunctival Lissamine Green Staining Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-20 mm",
+          "baseline": "VAS ocular discomfort: 70/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Analog Scale (VAS) for Ocular Discomfort",
+          "percentageChange": -28.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Sneezing",
+          "percentage": 82
+        },
+        {
+          "name": "Cough",
+          "percentage": 16
+        },
+        {
+          "name": "Throat irritation",
+          "percentage": 13
+        }
+      ],
+      "timeToEffect": "Within days to 2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWET3RvlhqoudlshfVolRaylMSTDJgczW4LpMViSSg1apG86P4rML2PMh6M5aK6DoF8xaytoXJBEURiv4L8uDiqJ6ziBLjL-6ExJ7grCkeJ9epLCy2a439MPzQa2JQVSNAk9Oe3vzzX3wZO38="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEdvRKaTs-pkRxdN0uYEGnI6KvK9S2r0VEf9ZPS_ZVMJPEEewnDgBnpJdH2OTW2peguONZ6BxhbawthoVAQP5J63STBqUBJxFCeKeHUx-LiglGYXCWpkvWkhk8VSABAL775Vbk"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOMOJE4VG62-Vwm70fXqojJa5g3N7E1SX2K-d7paSRSrF4HapeWgNxlf7_N8rZTz57w4JE0mf4Vdf_NowUak8KRW7FWy-dNPJ-Zsr5cjQGDZ7QYheYq_aPaabS_nuAWFd9eNztVhJVolFbqch63xc3t53EO7NGYp9AsGzOfs5xcfQZzj8gCfznh2htH1V0u6Oh7-U1SHlAbJ9qLKUgGYc9ldQe5PJJh4lVUowLzoqpecEfeMEOUXdtO-kztmSkECs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPJlH0ElQ5R8GAibZN36b7GIkfxG1oeL8lfy9ClBvPyMOjzqU2hqOIniD4xsjdOgOuAuE8yjcL70JOq_dCHNpQjaPlQOmLJwHUNEfaYog53UzKL_mg9qiubVX3Rj1RmE2lj45MDChstz1M7jdjJB02JLIcD2qYVEPlCoBQYOzsAaw4av2Kx_73wExs3d4LQWLIGrfLtbPNmWOzZMc53Z_rgsBtL1MF-8NxsQ=="
+        },
+        {
+          "title": "ophthalmologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOGedR5yjBZrZWokKe8cQyYvRMG70q3n-qNqrrjrHfDUTcI0A8xPd2C5ZVlKJu53s08yFpHlMeo9FnW73uUpXyhSv1J0QhC94bvVCpyLf5WZ5vwKooASCy7cEpWa2gdqaZ5a83vMBwrx2aE93_rkaDweq-IVHVQHXgR41qxc6A5zbCdTzINiBykBV2ypG57WKCIivXRfC9Ji78TgJY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Loteprednol etabonate ophthalmic suspension (short-term) trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Loteprednol%20etabonate%20ophthalmic%20suspension%20(short-term)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "One drop 2-4 times daily, then taper",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 320
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 427,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Loteprednol etabonate ophthalmic suspension (short-term)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 9000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Ocular pain/stinging",
+          "percentage": 10
+        },
+        {
+          "name": "Blurred vision",
+          "percentage": 5
+        },
+        {
+          "name": "Transient increase in IOP (low risk with short-term use)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to 1 week",
+      "treatmentDuration": "2-4 weeks (pulsed therapy)",
+      "trials": 60
+    },
+    {
+      "citations": [
+        {
+          "title": "choateeye.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRtzz3rke7qsRq9z5jdRD3j0dKtNv6RfC24P-3PofsEKO00e3Uix2YfotuFy3zjqZQtegpdKxYsBCkq94-Aq0uRZDxoWMWKhvot9L0yZ25dITv5pl7RAl69jN-TyYgbDJ0AD90BJqWN_VxvoWfK1Fywqmrq7EK1TyzTtZo-AKW8IRTKuFjLg=="
+        },
+        {
+          "title": "webmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEU5wH8zGYYiHHvn682-tvVeIscqoIAH8Q9mYUw6eeFHb3QG7DLHoFM-f2Sd0oIt-kqNZvRq6-vFyGUzA6sMhvlY_Tc4So54CkkxHxxyLIBckImpKTYh0ZF3Kv7GYCZ2_CtObUFAX5D6c="
+        },
+        {
+          "title": "usqeyecare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtSoKiRitTSsjEpWKp0xuwQ-R0WLogQaWTjjK4wUliYXiAsvlG05lUmCo3IJBrU7Q_8Zm-YCJog6DccsHnxcu-yX1Mnl7MtUydGASxYIggRC_cIXX-z6U7e-zSpE0GEePM1UUN-ShlfVpU1oun6Hh9vscJPdYXydYJsKBpZ2zcGZC1MQqrnQ=="
+        },
+        {
+          "title": "verywellhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUL181EPMzrZyzKLasy1mwHfUny-gNkoJI4w6Lbt9eGk-F4jkHH5RGEKBrJ92s2vld7_8M7IwKJ4sbhrrJ43VGL2U1HWXQJjiyzvw7dgXmXurjRI76hFXIaRBTyAcRCzkxdpuzGa2pRwkA388-sZo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiojGkeiw3W3wDByEHwuYSmtlLPNEjxuThHIs61ow-kuFvY27tHY2tLFcNSNJzIJTI6FShWnVcz74XWQailMjTc6SYgRJDVG2dxFz1R4OQJ_aNB5vtVCF568IH--DlUI_7wecs"
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe55A_2hBfAkEEG-y6jA8n7NVpt4yNF2CYoERm8eQXSanySRl2S_J0mzWD2FKJnLRC2W4gZd02VbApZNqh__YTQltZ59rmmMsIEaLgcAYWNavBdyBlTsUSAPV6eF5QIGuwvQUzQnHqDSNdLTum7qGQ-gSWaBvJLM1FfzxRPG09GViKvvEvp_Ti6e7hOlaCcNrbqUXrjEPsNearUuPS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4JCM29LZMjuI3C5jGwRTKRI21HMfd1_8MyPto3pbEoaBeCL42ghOcI_HWzqWk7aeqnHvVrZUK8OQzRQw4DRy5xoBfo70W0tr2HS73TgLaLNMfQ0N84aLZgdP3gPrv_X5Ui6oa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBrZJHXaIcjNVJyG8jAilApt7O3-k4QXj308VPpv60Or9yz2frzEizywtvoWrFx8r85D7DWSqD11xVZsqmpzIyHQzQ7relSuefq7q4hN15g1jHGho1wZRJLbISlmOkvFc_NPm-qIzS4SJO_64EI2FGKbEg7b9PPRpmh21-Y3lSjYAK7m4-N_I5yfR9q63RYbBF0eyrWUaHeMtst1ESEkUomZhwTwzWvWzODdmxfdyNMKJEI7bxTXAPU2who2k="
+        },
+        {
+          "title": "reviewofoptometry.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE49zCZfLVrsfffEZMM3481EqH5KXR-m_Rt_VRcBoUxFh-tTQs2Sv8iyGrJrSNqUO0hzqu-NMzTu721vFEqLibhZ_fuQTeVYqfmEtCncAtK4YY7DnTftiQPmh7qSvdTCbkraxdCqKGH6LSlmEq3R-rLf3VPvTE-WCxf71vDuknZfrQizQaMeD45"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBjji8VwNwH93VFHQg2qiuTJt-QzaC0PA9FfMRaGVwWsQCSSot6nu3-B42k6_YPxP5L2WSABW8FfIihsIfYq9wzvgmma95S4kUB5lBuas4sjV7ZAdUDJFSkfZ7F7kgG06-Pi2rW_PAXFgLx9M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxTaiJp5s9VoQ0YiQPOG2ZW-8fbsiYouqwpsciQ8v32oi6POwOhosCLOeMtYJ647N-FQ1GGf8QqN0EJkPF0Ot4h2oqVJrBare0ZsbZHLQqfjvAEKTr5rafNUrvYVsQE3l8oXmA"
+        },
+        {
+          "title": "arvojournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxae1F3D9WUuGxaqz_oZ2qyhvT9qn5WyPm8hQDPYvZIMwpvN3BdmBOWhBiditiQPP1bugja2QSr1Svmvz_i7L6l-bg_xmyCdfpIGyhPw5KWigO7Fefs_L6UeinaxmcUUrG3PpuP-SZ6uF6NiH7SFpdXKnah-D-Mw=="
+        },
+        {
+          "title": "healthline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmsElRZcvnSQ7FHeUuYT0MOYXyQAtdUDbuZt0ClfghjhWeh0zQNcH72r8stFQ3w6Qx1wXTCNikrggHSzsjinKNT_D4KHiuSHBkubL-rVada8KPv2HzIXOtj6cT5ujZ-hF_A3UzUjjY-ziqmEcqwX0OrTN25Yu4_w=="
+        },
+        {
+          "title": "aao.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVJOq_oPctOIRChIy4LpOleJo1p5ZTM707oHOgOCAfI8ryxll5ulQhy7-qgBO9tor5gt8eL4PTtAtQwns844E3qh5BZCiMQebe8nwiOS6u7UaRTtfKMygJAFK_YS9LWfAxGC4cXc54USRi5yv7CttnVb8="
+        },
+        {
+          "title": "longdom.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFd-sWui7TlsjLMONoah26JOsGoQ16srXXmyLgY-ELoMFXgtE6Pl3iMXu7sXV8PA1tYK9M0UfcctvUam2JA0NFYmxAkF3HOC60pONF5BDcF7OFdxnA-9PO242LFR2AMIAlLvULkRsouOAluCzd_dZtQ_ViJAtcM8aJ-7t2vRfngn4_JJRx5WYWTFQsQdV6GmrdL8QIetFX9X8ZzmVUrA41zSEG_khrzw2qFebJFT0XHAg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Punctal Plugs (Silicone or dissolvable) trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Punctal%20Plugs%20(Silicone%20or%20dissolvable)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1-4 plugs per patient",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3333,
+        "costPerResponder": 833,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Artificial Tears",
+          "costDifference": -100,
+          "dominates": true,
+          "qalysGainedDifference": 0.04
+        }
+      },
+      "name": "Punctal Plugs (Silicone or dissolvable)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 3500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Foreign body sensation",
+          "percentage": 10
+        },
+        {
+          "name": "Epiphora (excessive tearing)",
+          "percentage": 5
+        },
+        {
+          "name": "Plug extrusion",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "temporary (dissolvable) or permanent (silicone)",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6f1ilkRnoxG_p4u3q1hT04i9VwFo80UsbF9BYWAuC6hS1Y6jvh2AgukNx2RmSA2q_6yII-NI3YJ0hTkbcanvJiwT-Q2sNPbouZP-5A_AmxVRNCVCu5jS0Ck9EFhTxAHK-RYj-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLrzj9GZBCdTQ5TbMTHeNp5yx_YpbdDSEpsJNWGRlasDB4Qd8356enh2A1GDXP6_QyKlbDD5Bdzd5p1U7PmFJ0x_tU6srdiPYNO7AGY-HiZLuI1MFuGPVQXU3kmjikY5xin0MADBG2Qkt29oF1BGAo8VJ6oClKNo0l2ty2PVviJ7j64_rCPY7T1NZyqZ8aFZav2AB8zmyqDCY1gisBW7llN90O-tIPCph8PlfIAugSjtY-RXS7H1FD8em9bm5xJXzpprykl_fSmtuLG_8QQ6rYRx_DEk7e9MC7XPEGqowsZwceEFiSpTmJzeoH"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl8Ao3IkJlTlXvzHktaa-C0N154i9Kk4cZEW0gosMJFpvf4t011iJqzAmoxwZpmx_ZqCJ6_b4Rq7X0V9ksIK9G9QqmjK4S-S96nyyNieDFhRdyQp2Kzlz9DF4yh6AgwXobVOo6cvmfrm5D-jW4BvFBA0gV6GpXFltMY4LGrvFOGrdYYvLX14t8agP0Ze7CdVyWF78zJBMWwi6itOVEahJVrj3Fkjz6vqwcuA7F8m8-1LTFViYwWVoBi1sMVcoYLocceAvcz7rhnvsxcYHkk1d1J1aj8nmYX-vy1s4MSks_7N-oDIHwrSPhRbLR2A=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQGMVWMNsnGBmH69W4eUrCX1MBiU7p6-iUA3aG6SJD8UbjO86-kOVk01qpat07iAYJ9GmQqaMWpsEwGLU1LymFV35Uk6QFRIjYpZVCHIKKEBPnOQ17rDfWbAkaqsPtndr4oyEE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCAwhkKJxDJs-VlK8hH8S3RWMqpNfVKOpn3AWwED4x3gOZGoWXnUEk6XoFB8VGTDiNGVYrzXy7KJO8sXmkyY3a9Jhqqexo0-lnVdiir4YxZDPHzoUNakI7uKojZgU6XFtHjzWo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7PuPaS8xgaICj36KdFHa6yDPZ5FiAbku18rZnItzdkzsJCmglgev5R-zuXJw1RW_eYaGG041WpWpJWJI0G9gqaHZwQMgyzDRQ8T_kpOOdHsNPW-phoJDHoLvmgReZnrK04hokTpFZhoxWm7DO"
+        },
+        {
+          "title": "reviewofoptometry.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4RFYqK0BK5vU0J2nXdLlyEdeoKxDoFEwcWDmYRvOInEEXiIxgnIWegaV4mYeXWc3JORbk7g6pYH1QNss0-tQcYrWhf4_4Bb8FkyHqUvWVUCGkh5Z9TbUoy8b9ZdnMCKadmmt8T1UbrRchrawCq5joKxq1wSBBaFO4dRFLGiGJ6J0p_nyxH123_zcki9bFoML7qZLkcqI="
+        },
+        {
+          "title": "examine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjky2miBhoorRI_kXJk9eZQK8-CYNzAZny3QcaRnkfw7o_1DEziB7m9-k53C4YOZCQPfg3TMkJFZ-eIFScPGcCGWaP9jkjCdWbNXQ6Ke1iq_lAtUvVTMDqzPclftLvszconq9rtqNJ5MUC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuDj1uZUsQK4fFihiG9aPyMQuY_zkAmDNLM82xjW97D0kLahMQxHPQZiuIJR1zGixRIPwrS2AX3TL1aFoBUjWUXu7okOAboOtohgQ4DQcjQ5-Va_cqI3PRHzbDtiOaZVRmuIAM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGSFqiI72OgTsPInTUmnRXk-BdUfznA1_OIzy6MOub5yc2K-llaCa7SJ0DIrNb_9Glx0k2xuNkndazr5srMzjL5xegBwM-EWo3br8X0ywOCLXt4dyx5mu5XlO0E0siVPAltxjHJSFtQz2NXRL34JLJHpqpTna2EPQXt5M6yOCucHbFAe5pGRJ8p2qIQlASaLBLYToPzqq9kYhZeM2ytd7IRiZR8Pg0tL6I2roSj9TcHeeDtjiWRwBhZdYkMBfT8_79CLRf86jonENJppvLWK0AFALhV6g_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdNWVYiFMTEKS7LdIu3IKwMaAZ9W9TwSEQ4hAgCbKPrFhqjBr691OKhprAVV-k9bUipuBtnWv7WZZvHaNAgDFHTiAoE9IYPeHaSpZO3lORyjD-p2RuH3lDlUH8-j73mrpHrANdaHoxiuvkxPM="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-XyhZvBQKYxsgapjnN2kiibc2nYpZdIoCcPW9CysYBN4otz_bXFAiswaLdskZqcltpfa-Lbkhtox5brEfDHNLmW5OzJd0VHpCkEEnVsNnoxCLvctes5PRp-vO8LBzopZaQ323Z9I="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFIJlfewCNBtbzjs_z09u_MJbYkPDYNTmAvljs_1Hjqihz2UslF4UukJe4zmC8NT-lvn49K2gF-ZWveyaRYUFdxnqdX_d-XMgyE61nLqCUAhYrl1qetXxK43bEk84eFRVEPIftRQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Omega-3 Fatty Acids (EPA/DHA) trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Omega-3%20Fatty%20Acids%20(EPA%2FDHA)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "1000-2000mg EPA+DHA daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 8000,
+        "costPerResponder": 1000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.01,
+        "vsComparator": {
+          "comparatorName": "Artificial Tears",
+          "costDifference": -200,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Omega-3 Fatty Acids (EPA/DHA)",
+      "nnh": null,
+      "nnt": 9,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.5 points",
+          "baseline": "50/100 points (moderate-severe DED)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Surface Disease Index (OSDI) Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+1.5 seconds",
+          "baseline": "5 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tear Break-up Time (TBUT)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "7/15 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corneal and Conjunctival Staining Score (Oxford Scale)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-15 mOsm/L",
+          "baseline": "325 mOsm/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tear Osmolarity",
+          "percentageChange": -4.6
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 40,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 mm",
+          "baseline": "60/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Analog Scale (VAS) for Ocular Discomfort",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.5 times/day",
+          "baseline": "4 times/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Artificial Tear Use",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2/3 (moderate dysfunction)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Meibomian Gland Expressibility Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fishy aftertaste",
+          "percentage": 10
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "lifetime",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_Q6WSGyKr5MxD955akmOtBlXjQyI1PPY4tLu0jS0PjqthilUi21lngmlr-pIsRGSbb3eSJjOEhHrEwLWWmnm55_b1gvEyamx0cjBgjlUwTrs1RtB1xh2C5dT5qEJY1-1xXNLN"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEiQ97yDGvjdbgn0jtzhW969AxVosXU52APulqYO-JcJOhSIviEmxhK-wd6tTM2C8sat7xBm_Ae269YgVGTmENVReCs-0IKeIS2Wn74l9JCGwa4nK5IlyK3uzsYRPJo7QmqOh9JNwJmuON5j9oICn9C9WnBhabLadSQN5npJ7pFd5kgUM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE7VXAX1-7v0TMEiwzs9XQkAf33TWFHokNycDfLxwGW1Td79iBydSzrdfWBPekSydXBNtCZO9CvJCENfJpOmNLvsjLNGVySFeL1MilLNq6mnMeW7BjK2pELyRzNr2CQxNbKXlTWwMil9v7yy19kxmF81-ZwXVOChkgI-wqt9yyQCvhhJm_RH9JsZ2t8g5VtRe16Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiPIP17fPvYS11EodIJPOjF9Cc2cu2XBkHg54e2omtkbfzQoOTI5Rs9vEr9RSR4PS7Eoh7OtYgXIVdImaP7Lo8v606cJVh0_O6euFPeeLhyA2YlcTXQjumGZqF6vgKtY1qtSg3h_lI_f-yv2w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkR6YkhZ53WaBa-LuhsDBlNvYo4Oq1-wJeA-D3qPCaAcg4CWzuE3MqlyTwyNbj6f3Sp4qQr7tB5wy026im9V8S6jWiz-jFPXdruX9sxeSRy5wswzK5FKsP8p5tK0Ye209kXd81tv1TNpUiHz_Z9yeSNIhGr-tIzU8T_tJBoq58WJDfbu3RNCNVDbSfChr-WEUeHVQJqWRKf1lMLJSNFo_EDT3u-793S4-FgsQ5NETC3LMkEOlsrjDUXqz2OsbDG889dcwkxLHp_w=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMH9MTfzknGYZtZsK7AsiMRWTjl4tgSiGUV3I9lUprolwadbvrGJ_m_-8FAC7YVNska5mcuFwTCfrep-_40dYG8YU34MWSHoL0CvcJzhMG3eyq09ESP1RPl1eva5qaykRBK3T331i2B-LqphfOCDB_qr-MXA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1d-1gTi6ghW2oNAq1Hg32ixztBFdlmkF0ZMwNk_mWlF8wWXDaAVGaCa-jslxbQ7Is7Q_etNGVohYSu32fVPRmuuTyb5Bd4ij1Bg93WIA7O4BkqcvWwGH5jNHnfi0EzKbI6xdkE7y82mKb7tEcgHpMhX8p7OurccBVzjpBFQ7iyov_s-hn4A5Z7O-XCVdqlEW6Z-3Ovua6J0hnxWTI8e80yADcHGIWhLOpwXdZOKifz4_tx-dcu8sE71R3aqhovxnkTV2hFI7UG3f8nnJMagzP4J2h1Sfnh9_LmKci-cMOgx_tV-aRHtL4u_RqBFh1i3zxtds_qq0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPzXOW8vuwnL-ET4Kt-2fDCWsMqcOFyRc9c3pr7OFWX1vW-qjEh0Exzs97Bc2o4h8gEEipKdr6wVThL28beUkvrQPnz5nmmF1x6eaBqlKcoXc7aZKZmycDaCOWre27DkjJqora5vDgweBipdmskrchMN5NPbue00D9cZp-yn09xRySxUQyEwRTV9cmvj-s6VNXaOe86tt5f0vqUZ53MXKeHU5Uq94ZfIVOCdnIWHBr9bvuKd3xbPLF2cJCar9Vt63tCrm4EMk="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMbISTeHJjKbhzI_6VvfvZfi7q53G7l7bEIHo_MJMBHnGPNRbST_hDkFRS_l8fIQkaOY2beEKXsmwoGYYPuu3UgJqA3WrxRHac4S6u4K_8VKPhT7d9WliG8wUSpvfd6RRSqJtwJi0="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhdDamcvuHVDdbp72vaV3XB8yWwLvvQYzWM7sW9pRWat-ojM4tJZ0WAGhunMBAwhbIVhzfiPMWQ04AW-Wrbdr-7j2Z22Cmb1jPTD9bjyVG0tdpjtkxI2TTKasjXsJmse_D-k9ubSYQOMfOoElgllCmwSLMT9XXGi2cfRMwlvmjsG1XUXiS2jLfoel6qbyxjB0Ea738d8AVjbgyRQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Artificial Tears trials for Dry Eye Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Dry%20Eye%20Disease&intr=Artificial%20Tears"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1-6+ drops daily as needed",
+      "effectiveness": 50,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 100,
+          "sideEffectManagement": 0,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 30000,
+        "costPerResponder": 706,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.01,
+        "vsComparator": null
+      },
+      "name": "Artificial Tears",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "OSDI score: 50/100 (severe dry eye)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Surface Disease Index (OSDI) Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-35 mm",
+          "baseline": "Visual Analog Scale for Dryness: 70/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dryness Symptom Score (VAS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Corneal Staining Score (NEI Scale): 3/15",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corneal Fluorescein Staining Score (NEI Scale)",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "+2 seconds",
+          "baseline": "Tear Film Break-up Time: 4 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tear Film Break-up Time (TBUT)",
+          "percentageChange": 50
+        }
+      ],
+      "remissionRate": 2,
+      "responseRate": 85,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Lissamine Green Staining Score: 4/9",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Conjunctival Lissamine Green Staining Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "Overall Comfort Score: 7/10 (higher is worse discomfort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Ocular Comfort Score",
+          "percentageChange": -57
+        },
+        {
+          "absoluteChange": "-4 times/day",
+          "baseline": "Artificial Tear Use: 8 times/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Artificial Tear Use",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Transient blurred vision",
+          "percentage": 1
+        },
+        {
+          "name": "Mild irritation",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 235
+    }
+  ]
+}

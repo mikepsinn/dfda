@@ -1,0 +1,720 @@
+{
+  "conditionName": "Idiopathic epilepsy",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:26:01.711Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeBazuafmzdNAC-HCMh4vWnsmV_DAi16CFusKt293yatDRgzFlbUZw1MJXlYyon7v7WjbwHMAawExv7iYvvpLy1crbHnr13KGHTTB0ZJS2bxcXwtxNZWdHxyEsx9oEc5fDHd0r"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg8S66JGIFkBt41izU6NMILNxhoHtIyYltFhx8YRi6G-bhHWPs0mx3cQwyF9_ScPgzmC5Ha5ZQW2cK6TKpygrsa03oYCev2R_MwyiJxHmEK9qoz-PbwLHK_nuFN5zP2O4P5FGMUs81rQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfvbK9trqadV-Dyn1Y3YHsIomTQLIA-Kb3-eXm4a-2ylRxi1eq2uttasis7eUApQOo1pJ3kYsmEJpGfAK89pvQYb2TatkCUL5pcGGcYNBWEG64ChHSpfS9oSTQVY5H_Qus_sdm7iESoKYy4lqFS9_f-OIN1ljrJco_SjF9rksHEIXRowhh2FVkUsglNeZowKKXaQwomy4kE2MwOu-l4_oesy_9yn3PS9vlhpKe6VOxM7f7u8WlXjq3-JSHoHj_sOLCWluLsDRi7WKj3t47IfwFwgA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCUzmHTBnNt-FHcxhxg_IGUvK-6scbOhLE41UekDryptN1Qlx7tDFuBoNmUpEjgL5BcsFCioMag7UAX0th7vLYKp7qyi2RJ05_6F-wyRGS8GdUyQJu-_u2BgIWg4NBS3PvbCXvhpCWQgVbGIY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU3TL7VzNAhRo-QYshPocorhoNfW7kAHYt4iE48wzVM_ItQ5BqNALu9cKJfr0jyLaDproOerbY2qlw6AJqF_paBQMAigatW2yFITMg_hnMw1UVuNOh-Ur69T8PCD4CwfhRSzM9eWnvV3BAZYO4CuVhTQhTdpd2foI4TRGloPmrzPU0dlE90fw0KQpTOfFaBK1oh3K7CX6BSXVVVfd2TIo7cg7ze_vm2XKObBRwyQUnUiQkTihU2p4UJvSLPauV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSmpXytmQLmFgtkPxiJ-PTsnKMKEBiCb4uBqBpI221mmC2YlXZd7OnPeiUwgqKPGG_YYoS36wO7DHQTgrbw-M6rQOPxVZqkkqxh4Gv0oPj8U1qa46IvS2i1BEMn-qqZBYwtxRI2F0YZEHX55U="
+        },
+        {
+          "title": "ruralneuropractice.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCCUVaYFN3rQtSaX9A-qy6WibJ5QEhEf6gIuzTTt1OvEk-SeGFoaaK9gaxqQawZpCzGeUTN0ecisY7gMC-4ILjsR7s7FgXVSAb0zWJF7zByP-7ZSivmsrZ9Be45KwwRzUezqeQNAEOaoxPyZliFfchcg5dF4QLNTemHR4ZS6Zwqf1rokIgyO5o8Prh-r8ZMgzc0p_EfT0UQe2TDTqivw978RM26OgXEYUn1HM1CpSMv00jBHOimtTPbENnd6P8Ey31ZrivZ_BgMS7YP-gWZmSc6Vo_ESpsvLoh-nYlb12CwcVN0N_bIdEuShDGGbAmZ3-L2A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1jF2a5_Ac8vhpXs5ygZLbUhHNPf6f5Kd6_vrE5nDMMZwFBNK7svqDnzJDoQBHGUz-knlQcWR-JZcEqitOQvmj8ItYfI8nPR8Cwu2UUNdfNvPmqAPRIU2xdPqQoYPXLQXkrtx_ufbwZBzIC1kjXbLyA3rOWZwwpnGApifCSmMSlX9DAVPr9NUohhHxvazZewRgKbJDjs8IxebvDz20f5LTtJdUQcaux3kbvnLH3ULHwe3YizmG8m4Xm7Y-i-xpd4iflJGpXgudi8Dz511b4uAO6Hsy7c05-tF5urNf4i13t9pfACkFwOQxvqnZzn1K_rI="
+        },
+        {
+          "title": "pedscij.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExW3ZbirV6fkyyyw7NwL_yJyS9-_UpwAbhiBXLlARg4cYmUGUttmX7TW5Lla6TZgYXVYBPh48aLE8YoeoX-4NEqCCfIu05K-P3Kg1izYI1sgIO6UENeazf0qGR0qrKUmZzQihGTuU-lJtyc0_zmdg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2Fi5DEpHojwOdN7Ah9CkJJTfn-MCbBmWQ4KXgF1xE1PAW1ftuKyH2Z7oBO5BOkZoq1pAVTHFBiNfij1OZj4iKpWbzaCXhoQ8jBR0Ml-MkCTZI_H9yD4Lv2uAee34UmwZjYrMiIdBg_tJL-GY1lmpJzOzVABvdTi_bEJVdD1uxs-NaGYp0wUW63QanDCm8kPXGX05zh9tWmh1yYdsncJ76epYIwX6bYxYuFjs7k7kIjHrHeoQE6kM61R3fE-kmpEN4s77TwE8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Valproate trials for Idiopathic epilepsy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Idiopathic%20epilepsy&intr=Valproate"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1000-2500 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 600,
+          "sideEffectManagement": 500,
+          "totalAnnual": 1900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4222,
+        "costPerResponder": 3455,
+        "icer": 12667,
+        "prescriptionAccess": null,
+        "qalysGained": 7.5,
+        "vsComparator": null
+      },
+      "name": "Valproate",
+      "nnh": 7,
+      "nnt": 6,
+      "participants": 75000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.6 seizures/month",
+          "baseline": "6 seizures/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Monthly Seizure Frequency",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-7.5 points on LSS",
+          "baseline": "25/50 on LSS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Liverpool Seizure Severity Scale (LSS) total score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-9 discharges/minute",
+          "baseline": "20 discharges/minute",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Spike-and-Wave Discharge Index (EEG)",
+          "percentageChange": -45
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 55,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 points on QOLIE-31",
+          "baseline": "50/100 on QOLIE-31",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life in Epilepsy Inventory (QOLIE-31) score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-1.8 points on HADS-D",
+          "baseline": "9/21 points on HADS-D",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) - Depression Subscale",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.8 points on HADS-A",
+          "baseline": "10/21 points on HADS-A",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) - Anxiety Subscale",
+          "percentageChange": -18
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 15
+        },
+        {
+          "name": "Hair loss",
+          "percentage": 8
+        },
+        {
+          "name": "Tremor",
+          "percentage": 7
+        },
+        {
+          "name": "Sedation",
+          "percentage": 7
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 3
+        },
+        {
+          "name": "Teratogenicity (major congenital malformations)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtk1WQzcGAaCTwrMoA9j3xHdExi2QPLJZJbI3G8ng7meRGncGdWgM4ukNoLMv5dwebkvAjtNJIIeLg3nxAm7x0e0B6c7uodUFGRU7loLGT--h7O8KJpKX2OZrHh0gqbKAcWE9B"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzIUfsha5Bs1UqhFghB6U_tjYG4nJgq1FibjcnGsiy6rTJ7LVJaX_Gkf_PH0srvVHHm36A_AfyL2MsbA8ngL54rlDunBgvmJdTvOVRR1lTbezowt43rsDJeRKTMw5_vdwHtEWHkNtI4f339n-M7kbMt-rGfBGVedcir_SmtawPaosxJ-fJMBiaUeUT9iOhk8XzLEBe9KZizZeq3ln4VthI-drNTjW0znX2i-xw1wQosMzGuXTVQvzL4UY8NmJPcQXQoQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYC9-Pm4PiKMHwnabp0UPaHLbTKZcpEICQ4NhqYgoNYjzqv5hKPn1PQOjLz3JbHQDovTq85b3cMumNNcZtm6gPpxGMmFeDf-nVW-xb4Q0RWch8QrgpZNg7mDZqSDdqLrlLjS1EY67upqwlZw4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELfWQOaBuFQjJ1wf7eNwBC0DLDPh6jMUOl8frJcWRuXQGhRin-9i38sbPLfSlkIWx8AI-LUbPJeU9USo03AUgbqP4mwQF8GBsoP794EC-a9roS0Gcf2yl0eZ2Uq9mnSzssf0F7zqRWZbBL6KE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeOLN8gZEKfemc5SEjmdjLQILiwWMhkq3-oSxfa6SXhzwJ0EFTC7erqG3KF1jt_8QERz56Knxbh5mTzR_0-tXMK_0uR6BN42tVJWaFtEDi01rZSMvT32yMFAyqgDzyhKfRFmAJi5LErjepP8Gu9OuKKyz85vbWZkTDRth_tXGYrZ1ZdnmxIwj7naQClrsY6acTeLXltJYR9ebhXd6oj_QNfXiEXpwyu8AkCCldDNvmBMKm6wgXQIXkYs0MssaOypQD6rjvU2zeaSX05n3zRPYCB0NSCMObPhpgECFRiQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEozQ517qQ4YM6GXBOv9REiPnJum1-_ASlgko5onrgTyN3QnhMlWhdYDV9g8bLTF1qVPN5_JS8GFGCQNXmE2H9LTApL0-XHCps74BCDsNYf4ZeXJJP2oyM6RE-EFPYQGC7t9xqsacqPxNzc_Lz3VmIL7xOZKgnw2So9ZOgIFsVbjFl2h4Y8yN7EUp67pPYbhvG6Y1zAXOq7HsUXijvUmARkQLNciUib"
+        },
+        {
+          "title": "ClinicalTrials.gov: Levetiracetam trials for Idiopathic epilepsy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Idiopathic%20epilepsy&intr=Levetiracetam"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500-3000 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5143,
+        "costPerResponder": 3600,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 6,
+        "vsComparator": null
+      },
+      "name": "Levetiracetam",
+      "nnh": 15,
+      "nnt": 8,
+      "participants": 60000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 seizures/28 days",
+          "baseline": "7 seizures/28 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Seizure Frequency (per 28 days)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.95 GTCS/28 days",
+          "baseline": "3 GTCS/28 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Tonic-Clonic Seizure (GTCS) Frequency (per 28 days)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "NSS-3 score: 18/28",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Severity Scale (e.g., NSS-3 score)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 50,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8.25 points",
+          "baseline": "QOLIE-31 score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life in Epilepsy Inventory (QOLIE-31) Total Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "ESES score: 120/200",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epilepsy Self-Efficacy Scale (ESES) Score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+2.5 points",
+          "baseline": "SDMT score: 50/110",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Processing Speed (e.g., Symbol Digit Modalities Test score)",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Somnolence/Fatigue",
+          "percentage": 18
+        },
+        {
+          "name": "Irritability/Agitation",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Anorexia",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb3MZ2XNwLm1oNvB8hjHH5QqATPrR16_IBLl8DKodilK3xOChEoJ3_xgEMW_pnqoTdYtP0u4QYKmRIj92F032b-y66yIKnRKCs9o5yWkTBvQXDMJGKzWueyNnIdCNFOkQt9_-t"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGbp0orPlhu5E0_sTNh8Btcdk35s6O4nrDD2fEcvDbTVitMPHexraQIPWnjhfDNjFc4dPOOIUEAvw5exc-7bR73GAJLAzUOZrD-gK62HlY2UCUWovey9P35Vj7nbRc3PTPLbKHqVuC7b1WKk8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQgg46iMUn42s1UmUGEPuU3oJsGLN2yaS5B5orasX_ed4DtHOGH_zpgZGUPheq7kPM-F98o5Bb2CjzwTbuSwqlTEjIzPRTuIJ5Q1HRE38IKeeGtOqmsNN9hAcV8CnU2DDhbqs6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq-OOBpwSSGk2xa3wZlLddn9v1tYv6HzukK_CWnSw-Y6lxlSJLk4QAg3C7F4K_aJfQBVcf6wMerc_9gbkZYqPfdHFtRzKUYLXrdTM4EIMpxYJiIq5Pd6P16vROzsnPCjwMXXAF657ILGSFJaqSHW1_jHTjlu6Q2OA3ZkkqKYZEbryMGg0EXaruVyzpBAwgQW7BMIuo9FmVaV8MRY7a2v8afynCOA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_WEsZpRZVNN0NO0ADH_T9pICbbgbVIsCgFII8qRiYaAaNhAEUVTW2g2LE3OG6wiGhlEbOJxweNZ8xwXJ6cznRdqdJrNZWl1ndL1kWoR9MDIf0Oas_1RBKXEfAu8_DMgT8ih-RlCcUL0rMwRYgG4DMOcdjC65bVq_eudL7anXIMnvWtESvS6iMKXiFHbzLp5iDkmTPb4DN4Evwxh-9zGXf0HEbdZPni1FV1pte-9nK7IoZnmbN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9MkK_3EtXd5xibqW6eqMh9_mG1Dprb-0RLDfAl2vJncGwpIhC9WSsWyLTxlbiPnJsQURfHU-66VyE-Qf81s5gr8iuLoqCXuP1OLTXmwsbYj9w8_fCEKLUJZ-dIWiNFYiwDT0ObLwV0mkO7t8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lamotrigine trials for Idiopathic epilepsy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Idiopathic%20epilepsy&intr=Lamotrigine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "100-500 mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 400,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4286,
+        "costPerResponder": 3333,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": null
+      },
+      "name": "Lamotrigine",
+      "nnh": 12,
+      "nnt": 9,
+      "participants": 55000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 35,
+      "responseRate": 45,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Ataxia",
+          "percentage": 8
+        },
+        {
+          "name": "Rash (including serious SJS/TEN)",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Headache",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Lifetime",
+      "trials": 350
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmuY3U01KECz9lHF7SbUBCjHpj5IYY-bIOfWN1f702Egnu5luTEM8WKLKznA4IsMOYx1mZaJcoTYkKWGmxR1WFJ8sx06EajtF3Bn8lHO9Z-PHvKLlqVDiGZAvF9_Uvd3NFJYa-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_587JrvmQTYG7a1v0_Oo-yPmVmSY34BNGi1Sb7PB7x1BIs3mGwoeRtQ3Hkw6XItVjvqU3BDNlv8DGvpI1zYJXyR1BWfcTxrOe1XLyAD2rCWPkeJp1xGTClCDvPCBLvSM_8mVlxS8qjN0ktQwd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUj2-bRjk7n4FWDBV9nCSLx86ljwHQak66amqSyhTA1y9I73vgsoDDnvtUvgDU8FpzMVxw1OP--ZeBhyrv0R-FBd_lsTObMoDHJ8DQcRaxZ4BASP__61_zQ9YdQzXLfmIZi_8z"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1vZWbSsoML90Tvovl6EBgZhM3Up07cax-STzgWsoUhWPJMtI8BxLxW02LUf9wa-Tf5wwtnUvTDFTcYlJPcau-K0q_vTo54s1FULaNgm9AxJNXW4wSt3P6CmK1_2c7EqoxYAmG4bq1VGG0pgghHOyCfkzDJx7luVw8hJwPPOJfIwmipNBxc1UjH6qMfmFkaVaQQDXlSkm6mHqr9Zi-uu3IW1cQvyBGpg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8pPpYR4M50nVfJ1GlzTfVXuaJioP56abA36xbORtUsCoKAvYsp5V87CUvFHPs3A5mVv9C7I0PqpdbBJlvXJW22XbHlTwFbp1C0Ml5fQlhNAux0FdIvlWoFmkxIlVmCeIm3RvlMjEHhWYqKuc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhDFS2pjIbEkzRwjiE3AWNIuesJ7KY90_4nrbpKo2zLGUlBEUD0UIZIg-OPl5aUwSueoJJH9Fv4zR3hhTw6VWmhfv30T3k-Tbbzug0Ryl7jInGE2qqbBdmrfT5YfyNLuXUGO_QEOt_YHV0As0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGslwB9ltOFchM-SmJvkmxTmhmNLisEmX7x9j3vLwpZmhrqKPUGlggWkl_kRbjnNVCtv1cbU3kdarRjyK_2kkSCH2SyH0-MB27fYWnlv_jiRD72zVmEYHsN57RLpq6byapAWfmpu411IPO2jFC189l8yWZPqS0jVtP5IQEI0hDUTngWIRzvc16Anb5f-RVonzph2PvkdmIxq9918s-6kLOU5mET8QHR91H_vwdKTrj1R4jnnbS_l2_jrazXPHn"
+        },
+        {
+          "title": "yale.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN3oYYctczpqLPhjKqU1KuFIbHyO3aiMkJe6PsZkAAbrGyHAHBYiOKjqhc7o_L_20o1T7UWaB6uQx8FPLFvYLF8dWUcOjro9owb_d6qjAdCtkH7w5FhNRCTVXROSViK5kg4fccHpUzrL2jGycUVfqABEC8fmwXTDDl4JAQUYBsBbXJ1-1i04Y9GvmbEwICiCLIvMh6Rq3eWQQDPZ5fjTO4FeYRApGb8zIhMe387kRuVFjiqw=="
+        },
+        {
+          "title": "yale.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKkm9HcbKxKOsp4hpWEi_5cy6nL0NoOJVhbQGXHf7rEDA-XKzjRCp1hrGOSycWDvtxFPzD3ue0wZMU8MGKmS0JN480NUSGcmACvGX63PuZp-IDK5yPmdFKSEv1nfnutiuWlcocmdXr-u8UqvoM0Us8GxjGxgnQZP_aTop4yCeCmt5Dx-qZGm-0REVO5M8NcGufomKjjW3-HIBc7NvzIAeUU9ngOvuFG6w0RlCXDHerABU8Iw=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-vAtbk63lMzTR8B_3EcO_1BczXBPKcAXeGf438krboL4VE4vv4HyKTVwhT4ny52IyS7CcnZ0O0dMma9AnFlBslyD3ukYmk6Q0m2KBdTmlcfOKQGplyED6Qo-6955vT8hNKN9GBtE9Eogkag=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX6od_HY9i_ZJvSI4ZqPBQ2r7nsJuZbaNWj6HSBegGWelWevGsrgDj82g8y45pFwXocbX9i4CXs9M7fgYYhV_jAKJMYxpO2RfM_T-uTgNfJgQ8ip8Mvi5_gHkozzENAdUdepkr7oYGXFTLJICZdkH9FQJiVcei5LM1_QwCs778JcG5HZWP8cjY5Jb27adCEA-3gEpadZSMpYFq9Ygs_c58XrlFbGe0Y6GV7NLh6nEvbIYbnHHzGx1S1Dqbx_EIvEvA5r-vO2KLOnOhhCQHMaiaTRqZBCynqQw6Se6vH-VDJPxXZ0_8BCLNUlGk1I8mncVthENU4F7A1kI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topiramate trials for Idiopathic epilepsy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Idiopathic%20epilepsy&intr=Topiramate"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "100-400 mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 450,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4429,
+        "costPerResponder": 3444,
+        "icer": 17222,
+        "prescriptionAccess": null,
+        "qalysGained": 4.5,
+        "vsComparator": null
+      },
+      "name": "Topiramate",
+      "nnh": 8,
+      "nnt": 8,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.07 seizures/month",
+          "baseline": "4.5 seizures/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Monthly Seizure Frequency",
+          "percentageChange": -46
+        },
+        {
+          "absoluteChange": "+27 percentage points",
+          "baseline": "Placebo rate: 18%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients with ≥50% Seizure Reduction",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "Placebo rate: 2%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure-Free Rate (for ≥6 months)",
+          "percentageChange": 500
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 45,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.2 points",
+          "baseline": "QOLIE-31 score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life in Epilepsy (QOLIE-31) score",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-5.6 kg",
+          "baseline": "80 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Paresthesia",
+          "percentage": 25
+        },
+        {
+          "name": "Cognitive impairment (word-finding difficulty)",
+          "percentage": 18
+        },
+        {
+          "name": "Anorexia/Weight loss",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue/Somnolence",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 12
+        },
+        {
+          "name": "Kidney stones",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFPskeekI4HipzVa1etonPJ5j9MMv6Z56uEgAITG9ePA0X3oxSIvgMlbcnH2TiF2RG0ucY8uYyByigtclznooSOiDL4k79jgwioqSSuByqBazQoVknIqYzsStxkCIBgxcVfrIzSe5LpeKzOis="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETvjtPP5puf-sIBJc8ZoT0EglEte9KqTlm_EI32PCFl4ydsXMYfk7fVYx1uXZt_lWai08tt76zPtxic05mzHsF3_hYSrS0Es5z8a3aU1kjhiCKUi2geXWHoR-ZNgFxODX4ozmIxj-t0RKeuB7zr8MdgQsGBrV7jpVU8bqrindt0J7pKSxG23Z2xAk3DC4IJ0L7pXgiXcEhbLpQqqLumak2R_vLv8-HM16Wyrp71AUKV-3eW96cvF1hxljKh5wciqjNQkNpYkkQHJzmmaKFRbIQBO3UFcz4phZ_jsjBFSGDGaX7kyGExgUrvdBO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI4CGOYgrxKvyA6lXTAHlFgGeCs314tJPH5YR5BusswlpvBbFcHGr-FUzRJpv8faNYtoRXMyqIw4eZ25wjUzcTX57G7dgUEoimxjv9MFz-EWN7ac90vEy5eebnriO9VKF3BcQri7XOsyS8qq8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpC99FGsBsZv6rq49Qno__AJMcAMMXkTmaQtCRDpaK9UCCEwTWbTYnZJN_FI1wOxP6rPsHn5yJL-P9w2Mpn-6JL8eTcpTuaDv6NZnma5588SkCG6g3i32BYSEfuPrS5al5aI5c6Vlhmf3NZqQ3h0W4vOvtGu1ZoDBJYL7TPOuUxsr0TcRS4RfwIDDN6RZTnJ7Nx33LywGK5u1bZ-CSAQR7_coSc6dvhgKNCzA1SQrM_K4OFkj6u37VHaQVBg0EryFsEDoprAq1pkOMCn0="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLm53Mvf-6NL97NbPESkyG8fGJkwTL836mS8mRD5AEziueRpxsVR4-NueTPwOoMHH6HrQEoNDRtPqc0sM0RcvtG6Bzd52MYTNVt9zSuVsaNK3T34x4kt5-IjIK78g2hlHU3PXTMWRAU6tc-1ecXYQbbyMbo4-FCuwpZS1MDzRmPqZJWHWGZo8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuOxZ7iDBXyn9VI5ls-IWabngvWUUH9f-jm5fV0LJmRpmb8x05Za7kLGvNBn_NB6ukzBaKhdEA33drJj7ZmuuDPKvIpuLqQhzqF7Jp7sxDYTWjc1Bw4PnU6CFbupTcLiD5m4B8"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-mpTQLx5zsz1hGnhd99sVGZ0guOgkHl8HZhhqb276GB2IrDn5XyT_7Zuc8llkomm9jCevNqE9d9LHvsQTH5DnJBOwRRSqZ68gGzFDDnGWbJ05O9qSRAZxqI3MelKBjaLciISinJS4dSVul_Nxyo8Yxz4SCBhYml3WScl6m6gKG9hM_G8Q6HFi2Qwdsl6PGPky69xStzXOzHKNke5axTI36IIzi_hXVYPpsD0eWj9FUj0gLDca2BasvqyyI_QHzQ-uS7vAwVpbgoItE8yuUQvyxJk_nhYrNj_-0rNjVYdJWJYx9ldJrgtwu1Q_VtnfbTRFgrApYle26wT5UXf8V9iPqYbiRU5TZ_Qa3XceA23_d10="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2SoAJVTcBQm9O6IFc7RMFi9jt-X2GB4JCZuav5jZIo-BNOlpy91Oc3qiKMj3UGt60M3ZYvWDdSpHBiNzHInMO6Kk0GSVs-mgQ-6OvYf87-oHKrf8akpxBGN80xi6eM9OyD6zynBFxRDCoLH3m"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr8V3c1n8ltjFrwa6j6OOMsx79JhTA5KTr_ezPBlFYqPtnpGkLe1pbq0HTntrdi3trZ_f-axzjfD1Esq6pbh0bfI1QONh5AjSsLJ7d58NIZwdZGcTx3GknMzPOhpbdTwnRaffiHgj3Xh35linC"
+        },
+        {
+          "title": "aesnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUSjnYAWYqlKwzBqlCpDW2yI4yPnhbbadkpjMiuizfPIL_GeCgPqoGxwagAzYVlaPd6xl0TGp6ZcrQc2rm8Qv9NLqqx1sou0PGTdYXdu23jGhYyoNO0xNXIorNtaYLgTG_B-Yj5sEbaQoO_noLKE026iM5NBpSiUKKFV_nzpx-oKe7zFlycEgtcVX7V6kPsocC8Ws9Dg_TU5I3-S_AE3BpwgrZYj0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDVp70SyD4nfRy81AeSGuSf80pXhq93vitc_ZyG_PFpSiCr_LRldEKc2jwLEjKq7xk6XAd_PDjB4G-GhUVfrsy5dU1TJZosrJN0uJ86-Jawt0G3U9E1ipLvvKWDTzldCz1ghn6owI1UyFrs1y7Xvs2p75Mor1MISdQDDlEN0IJDPNLQKcHlv77j46Ldanm_D0di9RGi2pQiT8sKkUmRVamVHjOArvmEP2W63moaCODy-NIzGnLbtrdxlXW7FEKmzlj0R-rqHyC5rYdCB2DMg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHErbSNgwDyMEqwwIR4dkV7HQmqoeclg15QxtgCARDXUYqsQE7Oi0NyTvfHWPJBgId3LZybmGh5gK5bhoHgwKqJ1dCQoc2oezYwwVq9cJSEzPn24zk-YYktqeS7EC0xxW7BFni3977LcMvRZrg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Carbamazepine trials for Idiopathic epilepsy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Idiopathic%20epilepsy&intr=Carbamazepine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "600-1200 mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 700,
+          "sideEffectManagement": 400,
+          "totalAnnual": 1600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5333,
+        "costPerResponder": 4000,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 4,
+        "vsComparator": null
+      },
+      "name": "Carbamazepine",
+      "nnh": 9,
+      "nnt": 7,
+      "participants": 80000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 30,
+      "responseRate": 40,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Diplopia/Blurred vision",
+          "percentage": 12
+        },
+        {
+          "name": "Ataxia",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Rash (including serious SJS/TEN)",
+          "percentage": 7
+        },
+        {
+          "name": "Hyponatremia",
+          "percentage": 3
+        },
+        {
+          "name": "Leukopenia",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 600
+    }
+  ]
+}

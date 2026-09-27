@@ -1,0 +1,1008 @@
+{
+  "conditionName": "Urogenital congenital anomalies",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:56:18.544Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_wDcWNFGj2VutFbqkjhFhj-0gU-CkE6PnP4cxfMhHSmjQXyJRwGwoBPWS9Lc6tn4hg3NrdSx-CZ5rNKyvm3titK0c61l7xPj39C7pb7oh73X5_h4w97UjLw3eH2N-_NLoPoWbDPlCxj_Cw3et"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET4y8FTfCrPmykYcsoW3b-2zxzRGIRLN8bi7Or473ZpyZD1f2JMu97SB3kbjAhdWbhHbxv7FdycwlN79bXljeSGXEejT8XFw8yIjWny0hgtvGPSvOuKDJt-KaKyLJugQ6zDtTgP3ulZ3t7zD14dBrj4wryrcmc1yc788XDo-ajyCVWli-btIPq6wIi192YOVK4Fv3DFCAsoofP2cQIOYjnPlky2fy2Adi09PnAkTYzgw4fxo7da4sgMrKIhRRk0qjRHmGGxqY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQDQtgofgOEXyvCSaEjoJ_MDqJ3yx7guZn6fCHxuNEr5_v8t10qKZ7pODcJzhvyzA6qir-8pUzauWFcod0_0NSKT5aN5al8aC-yddOC5hsU1UsU4V1ZlWjm0H6b3J0UCtHzbLRiMPruVc1keEE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0qE02pUAXOcNIZJVwrkCb-uw0gPMe3naz0xtgB04PYEwcniYiWzrD3H7z9IPbjudZ7K9KoNCe-wEd9kVy61Ef1K4E5oZrr7DfNb2qDnSUhh6SSXo4FtW0rIEgOG-HoE6uKe0LKoSmJg=="
+        },
+        {
+          "title": "byethost8.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx4k06xvK5gbO-A8iR3PbzyHb6pwjjG8B4HCYTbKoQjOnSMkbuUiu7Y9kRnpMKu3sjbuyxdHiJNAJ2pEqTA784nqEzAi06QYeW5Ndiih65_wFH0nTiHwgWXg6PodfDOqJuIwtGLMkjn2DywVYAgE3Xcl1Zg7jdUFgAuBCKZT82r7NHW9e-PcFA8qDvsusm_BvSd9x_OnnZW_1aHKwY4DTHhZOrRu05VL8HZ2SQ5J8LosIaVJdlPC6e-uETMaVpDhyc"
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC7374Yd80OacZBYn99TYDLgS3bABkirZ1m3wl13yziH7iY06btLc7xnbCrV-UinfVF80thyw--DTz2qCVBEhyN93J35DgMHwky2afAKpIDxeQBJxfjxajC_mVnnaCgK6Z2QZamPPEvdR4ysO4M1fqupU13BEO5VYxfIE2OdzC1-A62sk352-3Oje21YLBFwzM9VN8mslgWU9zwEU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi13GpAWknmw8kZWn1ojJyJCsDQSbrh9JncAnAgkenegd0_vbbgxXBazI2lfWM-oWUsfs65kLSfOc_BsZXItyY5ExUKpaW-xI3MqUqBRcDr_sY7QUQZlGV2d1p21r9RxnU-_eH0dRLb77_7Qs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMtXPkhc4AT7Wd-0PGHZIO2JAtT_IWQGyN_TIKS9aVfDkjADM2245n0bkzMwdqI55Zq_lNPz-MSDaQ33aRsuALQ66JsCxa6CYBlY0e-8SBpdmUvp5sxs5bB004g2iQ43k5gXkt"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRnT_L8XAWwK3DOdL9KlZC3Ro0v8zmUfHeVM8GQqTAKzdRdX4F8LPXL-SWVNawalDa4Khxl2-vt5QSxl5JdhsVIHRinkTGJ23TYmvxYB_kxiRd_K1Yu_YcnhbL4TBH0Awe740lVu91sPHPzhcRTw_k3q2f1lpCGnTeGcpfKzaxgO3JiK6y5MfsT5m9vHzeGb3GaU4WqbrIHZBDToiVvAc3rDK-Jdk8bpNajZmr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu1bAPGMSPSkklbWhVtcAypg8cO1utA3qqYfTbCzn16qUjHtS9KAq8m5662OD4v7BIbXRoPo4-xLiCMCJ8-dQq8mD4G-UxhgjO8kl3a8pfYHUYZ1fxnNvz0TJPZG_gT8tiGx1WUTIlV0Oq7_rJAP7TLrEPUpd77GxzDalxvVxG-n3zafknRk-pYmhTJysu7F6dHMlHRdFOTgkKEYaexMgYu4Go979el7tE20wXGUJdBpYIUUrNbT3_0jQbzQaINvAKrKB8Ssh8KbP4PxOuTioswfokOjNp3p9JiiDi8jAqZSeLH913Jkamluus087m86o4FYBRpwpT1rp7wnu-qtsu2DI="
+        },
+        {
+          "title": "cuaj.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwL7KqEvIe4wQfqlhwMIFPHCmNmZGgN5qCd7gHCM42AWJEVahL-iFJcpsKiLOtBh2F1IhKjOIs1mSJnEI4u5Y8GzidK02qvqGkyZcX7yhQtjnxXt8AacHusWr3adYP2YHHFqXZXxKLq_APt-u4Z-GHZmCt0nl2CJycim186w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK28JD-RSpNFfqzY6lopX4mbmFBBekiL1-q4yQbbKn_QCCRWCwkJcJ3t1UG_NGcUYJLxzZxQOqfC4tMmhErjsBUxz3nf6Ayr3DR_8-yHL5ZRD_dt02uFiDnK7pCh3DDF4aUlfVRAWVYyZr1Edq6Hlr90bZOzAv2i1HWWvajl_gsv7so6Y7yFAswmIqD8wojsua4HHLACPytvnGug3rHAqomPfjm4az2PXxibktQFIK_e8VK_w8SNs9Cb_ssoSEew=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpK7kCJvER2YdOZvZ4KgPm5e_Os-diJqflMQDTQFaCYOCVS3_dxsryAG2vprVm1EnG-w5qwkZn80vHKMBVVJ7rnhvO00MgBKIKjDL0pgNk2sIQzJ7V3-q-g8SUdStTa4WbHkc2Oscv2dtl_cI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_eMw8dg4MGCYhIQF0yWrg014XAvKUC_eFQCbny0R18EFqHOkuh5OpTbPwcRUABQRsTg6Dfm7inzGga62lprotCBSzD6DVhKfVZZnceST5RUcaUEi7iJB75VMB9bKpYi5waCDD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwnoqYEUTTIw7UfZjqCyZqBRkAvXHl641e_Og-7Gfy6ePPRWQnNn7DpsZIX73KPlh31bbo2gwoJxvy6cz1LAwIYUtStfb3EGfASFjmfU0Gyj6PsoKoxlc2jVUNLYa3-7gzHMajCVZXqHZsWpI="
+        },
+        {
+          "title": "auajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDal9bN2rQmClhE4pzlOYj_xZkkRcDKz743obZaLBk4509QK-iwMlWRq6gcAPl5PdMqAtyVZq4QakDNpx_3jopUh12RF2FqRE8NP2Fz8lbggCUFLN_7jUZ0yX01HtnHl_n1vHK4LSL4mnvaNQJ-pwHvv4LAtk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP309LuANtpRgPAPCrP6b9spvWhruFc-A7uAcw-eMYrrfyXyCkKdA2KZObsTZDHRN4i01AvRVNiXQEZ-uQVpuKC7I1OXbcsVyKdiJfBQCkA-kRosDLBujQT6w45UII_YtP8ko5Eyh8iftkRpo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-zwMe6Fyd6M73SlAFP5q54GdKD7UzoCpXNHZeNdxVUEFOMM-eQSkG6Ce6UUjGGDUu6mDsM-lbGaxjcUUqTpiue32H8F_wUpkg9KPzw_QVFwWNLMN3htjndd45BP8ojc4sgJ_nZ1vwuw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAoKVgI-PkuyfvuLBAlwlkAwadav_2XGus7I_39qvWSVuVSSG00Xd9fX_wPuvcMS0PstiWvLdMoWE1DbJSayiEnfl_zqMOPL5tv5kNIxfl5kg1mDXVJdizA-9_h-Hjx0PVQqSTY6scF-IkGKSY"
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkrfh0lZ6ElI3pRtQrWHizdruZzqYkdxuEBZSmi34wp9MG7dzpsVwCnDENBycgMJncxGSUGKCAr_dPX1teHNc8R6jGceClRwxbCVLJCLNGbxVZqFQG6ociSvrXxO56l-Cf6QwK4FB73cCUAh1ZaLkmdNpi7FcMg1Eatw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGflBqL4b-Da6Dbk6du32nZPt6CmPgeDr2-EIDsMGTJ6OcH2-yvPGXTlDhs1sB9A0JWvwniRrOt6MSlLG7a3OTNmiPL9VCItf2m2z9MP6WTPl4ynjOl6WwAt0rrXtt5jqZwrA6L"
+        },
+        {
+          "title": "childrenshospital.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi98ZaMzT51Qo0trvxJDRR-01dWJMzD3MzZl3UBbv60_D9C-JTViO1x7OWlZv5UXSFQ27eMPX9nH6Z86s7fJhB3ch1uWz4_yWGdhl6UD4HC4sIyXciBsqKkeGVfgVLXRLJZw0ivuNjS9pdVciS9KwxoiGXtKjlpABc"
+        },
+        {
+          "title": "chop.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqBhfJseUe8CIJAeq1KPxER07rP3-uj7oGxafQgLQtL0z_V2ch_Ezr11x8eOjWp84sVaNTToR8G0IcOwplFQg1jGfFRDYrLI54jSzWSijTw4U24saYUL9A7-bvwFL4dHvBRZwVENP1Cztj9PlXwTrs_CSNrFw="
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIpjeM6_gSMECamVwx63qngHZEvhCRjuhZjQ6x7G64sABXR4Nr_SCKM2qtSOgUJ-dd-oC--sdiwsQC7gCDsGbITWT5gd-jzG-FUU7IN-5ERcn3V5h33zZYDmoydeYG_iLCIxCschCb5beu2wr8mBXavKBD7n8ODT9KPYzmSdh51cc="
+        },
+        {
+          "title": "urologists.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhq0Fp8S3vkHD3Uzg80NSHry0L0bMksbTawskFa4zFEU0mB2NOTc6uY3D3Ry9dhYMXxITc24SvWD34rGL_1mmM8hdWN_CWhSXnraF8tKOFNGuyk-mGj3kt04y81mgWyfkrGLSVLl-POd0hRrcyzEiZAeWSSe45dvoiVEc79A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Reconstructive Surgery for Bladder Exstrophy trials for Urogenital congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urogenital%20congenital%20anomalies&intr=Reconstructive%20Surgery%20for%20Bladder%20Exstrophy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 100000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 142857,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 6,
+        "vsComparator": {
+          "comparatorName": "Palliative Care / No Definitive Reconstruction",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 6
+        }
+      },
+      "name": "Reconstructive Surgery for Bladder Exstrophy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+100 mL",
+          "baseline": "40 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Bladder Capacity (mL)",
+          "percentageChange": 250
+        },
+        {
+          "absoluteChange": "-3 episodes/year",
+          "baseline": "4 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Urinary Tract Infection Rate",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "2.0 (moderate hydronephrosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hydronephrosis Severity Score (0-4 scale)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "80/120",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Stress Index (PSI) Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "3/10 (poor appearance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient/Parent Reported Cosmetic Outcome Scale (0-10)",
+          "percentageChange": 100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bladder prolapse",
+          "percentage": 10
+        },
+        {
+          "name": "Bladder neck incontinence",
+          "percentage": 30
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 35
+        },
+        {
+          "name": "Urethral stricture/fistula",
+          "percentage": 15
+        },
+        {
+          "name": "Renal deterioration",
+          "percentage": 15
+        },
+        {
+          "name": "Reoperation for complications",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, functional continence achieved over years with multi-stage surgeries",
+      "treatmentDuration": "Multiple surgeries over childhood (birth to adolescence), lifelong follow-up",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3E5HRT_1KpLOjYDGpe7elucLU-ZyY2YsiicBl1X3tTAjYGHGQTSCn6Qm4Jmt_RHaYFlhbEB9u-vMFx0qA4fCiTCFNAFyoYNWnB0lg7wCiQnyy3LOn_pcNErq6Q3kltqmV6VfMERYivVVssFA="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyW31JE78MKG-Lp6F1Kxt-FDQVKieoqF2nqfL31HR_FJVR1thYwqIrDNOdWlN24Dhgf1K-Sr75lkpLUFeqUOj0XTcMERNOW597GZvYmmhUifmqe02P6tUTJ6AalZZPao-T5y-88ln0SeO4pTf6FGS7djHqDV8eaUbxafgg-0q4UCgmc_F7ylXfl5fObT3ffWvS"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEflpX6bU0zvZ6nD_sztUJe0ncip3HowGUtE5VL9nV1WBH9ZG56240xY_2oWC6NU_-29bTgohwaCbe3bZwKib8fkjWbcb_RT0tB_2ibV2GmK4W1HgDKtTDeswNR2Bq34AtTVCM1yO6i2XSZLiHIkpLzuxmR4Py51A2ukwXv5W1sAQeIw4DOPEAcpFeQk2zqCZvW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErxlF39NUNsWV7xwAAn7U73yfCfN2Np1d5BsUm2UtjiWUVBU9_8HnE9PxANQRspIvgjWXfJApQ51I6hhg4_vxd09OZbdEd-4_oJ3gUYL3U26yoBALnRcb_KH3otv8l7-4C7cey_NT_mpsMN1U-P0SZbRWRwk98XZ9hmOkKwVoVDkxorMy3HKXwzzP1aurXV-zdLn4QQ6za7nKf7hI4i9eWd-hDBhDt7sb6W5ZVfpg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdpsUetWtByfKYJkSNmDC4KAPmWj9V7ay2pmDErsJMs7MZxK6ozYuf_P7IAINUi8bgnvI-qPMglrjoNx2VCPPXBg_r3Oz6nS7LM_0XOKCH3WPuQxKE1S2YX64dUh1SqatX89onbpWxod-UDvEKxR0uB1TKPt8qzcPYjFgvpK6u5iTqx4S8hiOLFflxhaLhveE4xti13qKJjbfyQM7NT-KVTZbwii6Ieqnw03h8IcFmgVcLeGQgNgh9YUXC27vG65fEbMkzIJPP7hMA8GWaMqG0ebVMbIBL5ka1ywC0E58q5N3-vse77UQZsmJrSUvj36hSIxXkb6-1ANFwNbJWuh0GewzDbqYdu4pMuGPwIp7rBQA9jk5WVuUxCGgr8mxp8ZfjqwBO9PM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtUDo4fhWUmAHw4SMIViRrEsdRAAjC0_zguNica_OJikl3ROOZ3JsGIMTgp5SluFANTzl8lS5UKxR7YGwlhMXrnRL2SRzJ13gTvE3p4HqVJuUNIV03YKlJrMHD2t2pD7zJvoO0Jsk7CNGpbovZiCC04ItR9xZSa1S8F5ruGPT-d22pQtULJTvhqF9Z4f7s8yBHl9GueOkYiBhuJDeQjASTvPvo2MReznLel3HrSUY7zDqA5j_4fEr3PLMy1MM6EopTi62zKwqphwpuZqM3zvhggSs1VxfPyXSRyAHf2e2rIQGBlki-I7cyh1kj6OlDRveOpo7lddhnTGZ7sDL5k_4YLw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4HUI0MEqlKERIdiqrCTjIcvYnRmis0Mqg4IW6-PPMZN3qnlSNufIwfoH8QKFuBbaXJx8ZJzyZ80ZKU1tgsAyWsv2acjNuFTpodMpRmvtO4yfQL56jGLlYh0TsQaA20wwVXyXAJ8yralHUjhM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtvCCZmYF2DGyqgT5NAFUN49MqN9_1oTriQMjpqudpx7Obnp-44wW8MU5ojivGjGdDQg1UblQKi2WENrNJozW5Ryqp-s1KUqAFSrfkHOKBTtvjWV8IrqHHbUl3eABpFsbq4lVPJLwXlLh3NLA="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWrB6zJ1wKjEPvRaIF6eG9GHBHL4VeY-5YrPBHVKmiewwEdiccD4CVrN_TcLDXu7i7jgXipxarO42gKPNLFOmETuOtBPTofNTHchV2aFO0LjqLxZg5ZatTkScCFNEshd3oG4vDjGo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm7HGuJ3O-lIIH_R4zrQMXKFrjYuVoJFp1HfDOx41_8LJDt_kXgYry0dhmVCfxlYM1Oa17uJE4_X9OdzA7mmdk0SMyLOm9K5yqAow81AD8PQXXt8Q3yYx8WgVc_g1_jbS3Hr4-MOESkzL7DHzIYGEkFc7uCOzzkNlH1_qPp25DfjuaAtLZuFAf3CIul5FqWI3-GVV2f-S-iRd2hwaar9gAaCaXfd9MpFJ7W1WKFGfp1W9nK5ypQsLFjyK84wp1USNarFaiS2Pd_KfF54suijyZ67vISUxF9NrTZC7Mi245H6uYAeHijCWYL3dOljgIPzF2thrAl4Aq3AUUYKRd3hQH7ioy83wcJvZgorarjSqSexJ7M_qra2Odz63SP4ljvFUAtBnGlUaRDbUBS7UYmtJikXhs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEte-AjdRAvmrZurS9CqpEaaYQo-MM7gKW9vM9N4mmGQxJQ60Bs_5MwwDWeZyVKJBgf8rpGymt8bAnctiBRr5DQ_YuyffP-WcZSihTkW3_HKOCBQmPIZE60F-NOGemoUUSFfFfNJh2WDbUKHRN9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5VLNcFEDT2He7SuqQRM8dU9lODAYXrlnnJWpvKkoruC2l4s6g2XjLFI-rEjI1qdcbktSu-VvDb36jHLWFj4lv7-w61ZfEHsOzHk93abDndTX8f1ctGkWfomeFyVBK9mnyMIdnFJ_PtzuLeokB"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ureteral Reimplantation for Vesicoureteral Reflux (VUR) trials for Urogenital congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urogenital%20congenital%20anomalies&intr=Ureteral%20Reimplantation%20for%20Vesicoureteral%20Reflux%20(VUR)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": null,
+      "effectiveness": 96,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 3500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 18000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 18750,
+        "costPerResponder": 18750,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": {
+          "comparatorName": "Continuous Antibiotic Prophylaxis + Watchful Waiting",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 1.8
+        }
+      },
+      "name": "Ureteral Reimplantation for Vesicoureteral Reflux (VUR)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 96,
+      "responseRate": 96,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Bladder spasm/pain",
+          "percentage": 20
+        },
+        {
+          "name": "Urinary tract infection (post-op)",
+          "percentage": 8
+        },
+        {
+          "name": "Temporary ureteral obstruction",
+          "percentage": 3
+        },
+        {
+          "name": "Persistent VUR",
+          "percentage": 4
+        },
+        {
+          "name": "Urinary retention",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, reflux resolution confirmed post-op",
+      "treatmentDuration": "Single surgery, follow-up for several years",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG47Fi5pGNTOHoMJg3BlrDx0O6BU2YGoTwH7IT7nsAOaNW3-FBCYQ4CwJYgn4inea84F1093sRSwLfzOeuQk8OUqrqJIrhmeWYitdu-N-mZp0FxuwjCaNZusdOClB5ZEMTJWKnGBFnoP-Zg4A--84QXzjhViMRet8pZfElJdZfgW5OdCHNOMqYALITbUTU13KVMBxwJ91fQ7CG-A7EqjXJ7gCgVvqHeR3Fs-561xxKE-okoCL6zaBcXDXIbAgggbBSH89tGmcxzfJ6Mx-z5d8Rm1uUu5E3zvG22CmmPor-WNZcO"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-4HSjnQ59DNfnU-poCGwbLz6Y6VwHCxdMpBVcO3NRHsFlc6HR4AOb-dNhPYGapEzqtELRwTyf893UPSHExje3aBle3TZz0S_XU7ReBSCTJ58eUeXpkP5ZS-a4z42PZWbFvO9tk5kIxke-4NQYlCMom-HeHzto7F9CDN6sDsP29HV8BkM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW7wytzo_RHzH6p8qWEZp3ngKdfN7Tf_ZQ3xi-kEMofA3rNFRB4-mPUFC1YfZLtYnKT9g4v3_OtnIHM24_jx8ZH0oC2B6_e8czUtvIu8Gz8JcNP82Xc_WcT0nhNF-0ytaPM3k3Nb_oLyeMoZN9jVfbWCtqvWTcvC9sTtVQ1d7dd0EkBcBv9Hh-wCk-u0giJUL70w8pqvrfc7Ou2L0Fugyt01Q_AMtRC_UzytphNG3XrhJoVhnp3ir93f036PHpnriipQgnLxvD_4FRgjz8xToKpyM_ZFo1J760cqpJB0lKs73B"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYd-AGWk3DgPAbZsaIb3r0W-IV5fg5silEoGaYettOqgSMaP-kTOBKsMonv57MlYPn0hp4q3s5vW-6j6k52b6KOZB2B00BpzucjN4U2gPKgss59OKs0U4Bsf2ngMwohJpmNEQUaVWY0s6eWWVtR_Yy1YVjfOBdP2H7hWemTPy5Onlrl0-BIhRPjC8HUf47-gmz7iouebJ1fm4gtjiPIiaFNPV2g93nF-DpmOFLhbxCsOr7rcsAP64yNQR5bYcL7ulAjbrHWdi9dE9PlW3FkBig3odr1fegx3tZow=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhUqEXG-gNjhv0sFfn0Hw3hvX5fNtX24hMahMLUhZK7-Xx1vGREJ8yd3hpAOL1RGr-yf75ok1755B9PO9ZR9oJnTAp2Ndh8Z5RhIY-PamUEiGT5sFgVQuNEO41XCr2gde9ibmwf3FHfUGHbP8="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkClyTCJl9Sby4ZSAIk430Np7Zf0BC_Y6i4fiJkaokbiSL7mCi-IkiZfVLcMqBXcR9xbI2R4ClaWVmBDSR9YOoGNNq_L0iEhsxLS34f6PQz2Uj1TH_mC0Do8kGp1HZ__1-Cui1HhOdJkk8_7ZTgdEcmWJdHtmbAVNZS0zzFbLQMIJl3wxXK3rtY2yyFrtZGe3cmg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5tUv4H63wnccMJyGUd8Gl3c1_ZU0-2mMeWuBGyOwCLfud4yBrwzgpcVb0xn1nt9C--htpltsdYyfjUROmIgnm_4Ln9veIHZQxjZyoGhd8cw69IVx-4NqLkenUo4Z4J3WiIeB6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuLxMumOR5hf_Y5MLyjhWJs-GqyVjqX5qk0-8GGzHyUZJ06YIW6Y5Zmsm267P6CjGOOxTErLqwz9JEqc3vw5eTvK7HDNciZEChM_RCkhN9Sa47d9BXtf8CMHD6RoiSGdFFDZEnglt5KSnK9zU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFErvCSAg9JhdPujeiakhj6V_2vVWfHcCEadw7CPF89EuQKvrSeBr-Qxtax3NZQEnLz9Ji6jxdR9Z4SCoU0-TLcKYl4ojOAxzZ-bVr0DvL3dhc4LCAkjw23kSM4kiwF0ZxqhDUzenKDja6cq9s6m4jqoFsXWs1c1O91uqNMUZuIsijag8N3Pugfvil7SEJIbP4kRBJDM0TsgiGWuWRW9vNggtfhp4sbqnWvCnKV-oHn2ng2xx4nEVgQRkL25A9RjN6sBFu8hyVYTa-VmRpvKRn4cM0oFrBki6s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH9qbsR6cBhJIgcfIXk8pbXyJ5pccRCxfEaqNFw3syuC_SrqRCYWTHSZ37t_x62T8_JtZVmckRY0dUzTmYoQvY64L8DnzwdZgH8Z_Zg2eviJz0pw2E1fIeqrXKWPNacFDqsTOA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Endoscopic Valve Ablation for Posterior Urethral Valves (PUV) trials for Urogenital congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urogenital%20congenital%20anomalies&intr=Endoscopic%20Valve%20Ablation%20for%20Posterior%20Urethral%20Valves%20(PUV)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 10000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 11111,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Catheter Diversion / No Ablation",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 2
+        }
+      },
+      "name": "Endoscopic Valve Ablation for Posterior Urethral Valves (PUV)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Urethral stricture/scarring",
+          "percentage": 10
+        },
+        {
+          "name": "Bladder dysfunction (neurogenic-like)",
+          "percentage": 30
+        },
+        {
+          "name": "Persistent vesicoureteral reflux",
+          "percentage": 25
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 3
+        },
+        {
+          "name": "Failure to completely ablate valves (requiring repeat)",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate relief of obstruction, renal function improvement over months",
+      "treatmentDuration": "Single endoscopic procedure, lifelong follow-up for renal/bladder function",
+      "trials": 250
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSqwxo00hnq0kLWa9YxLDRLHCk40QhT9SrK-X7vESdLipLTTUL1FTO3Ruj5JYQL1GmGQGQL8gi6LNAHKNgZJsEAfIYOIXAaDMauikcjPJaveo3TiaySnvAc9hJCFJEpiy9sh3p3OL4"
+        },
+        {
+          "title": "pennmedicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEKFX3MdLnaO3uyq7whWgVnaRg9501klundVtUzufbztlcJTJNIe5XtkXzM7dIElviAUY8l2ZZBb2qcT_NeARbdPc1UEUB9hx4ZpJ_G5MKfOEwr1q0yPaXjkuqrwQuXOfGkjL0M7g--CkwJfskuPaEddHOjTfa5js7RZbixjJVH172eBE="
+        },
+        {
+          "title": "rileychildrens.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYmdDXDDp7tGj2vnagMudDyuQUoUnmLigZNwKmzYK5lbPw-kB4T6JWxQB-SVQbqqpE2XjBpLkZozfZuXk9cePg4WqqkC0NJITqYenNhmGKn_av-tq0IjU1UXl6inNgPttMFQhMC0eE6KYAj2l5kVQ8kDORlcoDcjukvDVfULB7mp7yHtE3MXI="
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw4S7bkfrTxlxJIrIGLEEwsHv4t6Mq4GAWy5Ui7kWmJE1wDppn7ZUnZ-cRWiOQOqSN9OP-kdGy4ACuJHmZDgdbtWR8xvO8p-eoBT86EqN_GqRlDY4WjATZ6YYNTw4A6sy9i4ksXLL1shcgAae3HZpEqQaz5R5169nLNDcA"
+        },
+        {
+          "title": "ufl.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVyjuob8bvHfwRUFC9trWlZFMMF9k4TZQLGk98z0ZE-XoCXwnq5btA2KRtATNaa4Sbwtx6zlV4CZfTkV3NNeU_SsW1hEuQa9-nIQiIdNXhHvLYJmNBV3bfLgHFRR_4-VyP5VzEhZ78eh6RmibO_UIKfkNHT6xTQxWd"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgiTP6iHxbEVgqQLVhinZzVUXlOTCtiQHk1jOSjVng6-vukJlJ7na7FvXMMVvpooRvXhJcQZy9aA_wQ2MgJryPNX8BAj-eC3JSwQWOIQyU3rFRojPu1dCvS8-116FZ3m580dhKxYisEfqqtMCnE-zM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQum19gNMaGRfhoidJcYjaZnOUzZCMn7sBifi2IqogNswNKw2z3UAJSt-GGahV6W5RBHW-i08QlMRFAkJO8g_vvtDVFb5QovTwZ3YFioOVKvUQaJ9micK_8UCAp72i9IlrdceBwiUjlYD7mE8="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLIAipJHr0Hkn0nuwHQz8Q32YnYGaUDf83wsrmrSwtzff7w2BKP-gXLHDjOfw6rcmnWuihPj66hJ_6EjFaj3nWKnDPo8otuOi7I2d30JUuU733kqZv2Y3WqBp0TS5v6R2AVcWoinXO_dbNoIokSi_T"
+        },
+        {
+          "title": "peerj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM_ZbaCaBdnEpH5ukLKYyTJkgRAvuaLm8CJksTN13wxFCRoj8AmX2cpgmmM2O8JriZ5G90cH_EU6awK0M_AHcYQflDoes5yeJuINv4oFTZbvqzSuMU3K38vqNJ"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPYqh4khB31FAzVMR3e5D34zghxo6LDpTUgM8bxUME_yAEKSHIrKR7D0heSLwi0WicGZvnQD_RmNyQHb_XT_gf-3YY8vPRDEsYOwB9-kqsZr4_xVQ1AXPSwIguyxmocd0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbYjFjs8DYHWH8tWcdAP2jHoYfUjs6ahiIU__2jMBD-FQjW_E08fnIpCfwznvlPSWa0LPOAJdFIB4tYFLSf1vpv57wjfCZiIRd2I3VSqNGTypBJZx2vRVVznM-bxjC-bqey9vVPL4flHAr6Phv6DcTfJXzs5BWLwmIe7C5w_DnJclFh-bUTauY6M1TPeGylEMvVHeGq3DtjXRfVwRZD5mOy1NbBITKkZZ0qIqjjZjKdQ6UTOdbYKEJjjEC-LO0H1WAu9BC8XNO61214EkIn06XmO50lwGLTsEafhJOxBkDcZKTYHBUFncGOSSxYrD9pPj5sE2a2tSvLUNUWCHgFdXXSvaOWc2pNobb7r92miyeteE62EZUXp5pFcQzjHOGxTl8w3svv5cX1BpWg_K1CwJ4AhZsCzo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBE-Sj0D4lXCmnPk4jPuHtRLhdb6WY_nL8DkaTBuw_MWk36UZ7r2HTlHTnFnW17zaXP0T51bLGZnCnXgDCe5xBDSj3hfM--tV-2HxqkOjr7AdQYtVgR69cFMQamiAII6YJiv6LgF-7PpZoKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEziU1nP0ZT6vhovcYjnIM6oRNso_BzMexsOXjKg9aQ1JlzWbPXworvaMjmJz7wbKxagFVYFPt-QiQ04y4knAAm_H6Mh-T0nBE1zq_90d9owW4jw-Z_WNizRtFcEr7Y_rkS7lxeWqw="
+        },
+        {
+          "title": "mcmaster.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlCfWanbi6FaoChRvAACN4C4Hwqx9UuRcpuvOd_6HzA0g2Rjk7HDJ4AnLBV0Goi-fvYXGgERZwUdzMMkiML_6EClbAEBcC2-moBH6oktbPKyNCcsgblsa2eCF0FdN2NrJ7RgoGvSnImxNIC4kdrWI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeLTYW0_XjjqrACiavPEYL8uAvFIpX_4KaCoNSYL0CmErqJvq7G8bFJbgBUg58LDc9H--Vb5RXycIHeKJqxccwdbvvolfu5f9KviKX6QaKNMj3by_NK5dcms8S4w3fTIBRiGesYT_i7B7rjg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyXBmmG7n_Cx27YAy7VnTgGEv3I_2Spn083CaOP6Tqjre3uFD4noBNEcg2jdE32_CGvpaa5hyhpfWt6bPW1AmLV-Vymm85ZXwKX6JzSxbkIJm6ods75VySoYYRZvTR7BxtQWI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOt6Z5GnKuzFUowAw9zOKPC_0y0ujHkcZeAa1F04tmL-zFSpz5jWXXHTgxsOmMRDO-HMu48ztKo6FFE9o9LlBXSW3rc2ycPHYKZRjttk97NLyHOUpgQc7TYcnLXS5sUvjFYkw="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAG8mk-o9iEHsea28VhIElyUT-TR5d_mNzQAPI3DNDQ790Wsn7ANGK93LkDy85Tmc6qeTDZiQ05g4P5OdKNIYCnZw_Muip27aGCfxQEwL2fZ9-ItsTmEueyMD-u1Q1YqPnbw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pyeloplasty for Ureteropelvic Junction (UPJ) Obstruction trials for Urogenital congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urogenital%20congenital%20anomalies&intr=Pyeloplasty%20for%20Ureteropelvic%20Junction%20(UPJ)%20Obstruction"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": null,
+      "effectiveness": 96,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 4500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 22000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 22917,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting (for asymptomatic, mild cases)",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 1.5
+        }
+      },
+      "name": "Pyeloplasty for Ureteropelvic Junction (UPJ) Obstruction",
+      "nnh": null,
+      "nnt": null,
+      "participants": 18000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 96,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Urinary leak (requiring drainage)",
+          "percentage": 3
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 3
+        },
+        {
+          "name": "Persistent obstruction (failure)",
+          "percentage": 4
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 1
+        },
+        {
+          "name": "Post-operative pain",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, functional improvement over months",
+      "treatmentDuration": "Single surgery, stent for 2-6 weeks, follow-up for several years",
+      "trials": 350
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5ihMNJ3rMUPYe_AHFhe7CY-rKesIL_hUeJjmjCd0LK3B9ezW6IaqoqZfp26NsEqayE3N8XrB8zRJjjw_tTChzBQdX3UkzcJqAcB1FERY5pg2nrUBF7gxBdV8CrGQ6_oGvlyA="
+        },
+        {
+          "title": "elsevier.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU7Xwzx_SiQW4O6-8_SHgVaQn8-8FJQnuc3dY8vSixGuFtRn7_A4GkSo9wgVY_LL-xrJmlmuHFG0x-AT7w9eN5ylo7CausJQbndkofXgY_lqOK_rffoJ72VK4680odDht9RTkkncS-KIkVRTZpdjNKPu0IaGodEL-75vO2NaaL7Nhx0MMqqHYkfQVxL5Ta-0u-wvW115Z3QqSRD8Ra_kE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvu8g1i4UKz4QgOI7Q3sQHOvRepyrwSrmo54OuQR60UjXBt3OgpGTzbXsse1_x_A6OfCFw5O0VrIqMGP3C5RAUohnA-LhXWUoFpOmUiRCcK-zeaCGr7krBzmTSbsOU9o16ykzAbzNd11q8qg=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9RGJFd0fmxTmkabzmAz6D3aXHUc5pOjK9ITcRKtuxlAI4iNhaaNnEAnTNR5FC_F44icYD0nbsrGTvjBCAe6AMyWz8CrlsploO_Qv30QfxVDRKHbGjteFv844J9ZTv-Lg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmsj84h1nq3jDOEHMQ-eaGfO8EPw7reJRn-cCxNUz2rpGjFDKaH80os1hTRkOkDwB0Mncrxqmf5XG2NrTClwtz9VgOymJMjr8CSezRBnikU372dLjEPjxEPiHGSpo-PLCP2a6yJ4Va"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAAG466YQYNr_Lvr-OEXLV1V1mJ_sxx9y9aWGkP45AtHs-CdNLTDH7_9YEp_ZrluvZLX4P0IVu-tMn-9xBXRWOsGjk0KF5yGITpUuWuHFhy-5dv5LXeBu8zemEu05H0hENIALL6YmgGpvNpw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlWkNz25AMN7YJO7KiTxybkjXehSZAkynh5NfcGFh5j9Hw4PGAgHz4sEzRvvJ13f3aMIPX0Lsc8k_b1-i-Pcab7gzHpx4PSp5TV1qElvqC1Fn90I7qeo4s38k-zcT50Xnj7rhbqkrlJu297LO8hyFNYwD2Ww=="
+        },
+        {
+          "title": "gavinpublishers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZGBxq6bmPDXgE0lPcSW2WOvFEbuTggyyWSGVurhfLZauKhgUczB6c73Ub0Y8hjlCexK11gLkbKDpdY5r3gCzrGESj4db7k6qjB1gwNcGWXUP9F8kmMt_wmXckTebcHt1S3pzHFx7QAIL-0yJet0SD0QOGVZowFdPVydC1DaTvxKPw8fKTqL39eKuR3z8P-SuIt249y11hosBUQDFW6zeUH_CgD_TPluJhd01wulkAWVZHVhDnz5XMFIG8huxBUwBcs9FLL0-67drpgsvqAxiMsdbaSJqGc_DIr5cZNvIDLEJp3LdvTzY-o7G83PmxxTxtWc3IKBgmOxETwK7clEU2p_9f"
+        },
+        {
+          "title": "ClinicalTrials.gov: Orchiopexy for Cryptorchidism trials for Urogenital congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urogenital%20congenital%20anomalies&intr=Orchiopexy%20for%20Cryptorchidism"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 97,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 450,
+          "sideEffectManagement": 200,
+          "totalAnnual": 6000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 6185,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting / No Treatment",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 1.2
+        }
+      },
+      "name": "Orchiopexy for Cryptorchidism",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.2 mL",
+          "baseline": "0.5 mL (pre-pubertal, average for cryptorchid testis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Testicular Volume (affected testis)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+15 million/mL",
+          "baseline": "15 million/mL (mean for untreated unilateral cryptorchidism)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sperm Concentration (unilateral cryptorchidism, adult follow-up)",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-4.5 percentage points",
+          "baseline": "5% (for cryptorchid testis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Incidence of Testicular Torsion",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+20 pg/mL",
+          "baseline": "40 pg/mL (mean for cryptorchid patients, often reduced)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inhibin B levels (indicator of Sertoli cell function)",
+          "percentageChange": 50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "Pediatric Body Image Scale score: 20/40 (lower scores indicate poorer body image)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Image Score (pediatric)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-12 percentage points",
+          "baseline": "15% (estimated risk of clinical hernia associated with cryptorchidism)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Associated Inguinal Hernia",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+50 ng/dL",
+          "baseline": "250 ng/dL (mean for untreated bilateral cryptorchidism, often low)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Testosterone Levels (bilateral cryptorchidism, adult follow-up)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Testicular atrophy",
+          "percentage": 3
+        },
+        {
+          "name": "Ascending testis (requiring redo surgery)",
+          "percentage": 2
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 0.5
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate repositioning, long-term benefits accrue over years",
+      "treatmentDuration": "Single surgery, follow-up over years for testicular health",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxAk4dRPIGMCyFOBnePDBXwu3WroiggYdAGT47VW922sLh_S2BmXwLlvDDMIcWxn4JdeP-P-G8QgGU5ZSXR-LJhrdlYu2eUIlRysxY4AHDKjqx_5Nax4paPxjGnIdZposoMPzEgkcBtv9J_rkznocW3SEmvxL-R4GveKjZ8oXqd9R6uBCsD0Zhma1PcXvxQafGFKYKo7w12NskvnDNDf8hB6WPUSU7GGIHyG7G1IdLB8-SOnN51awTd7RDlVaETr8WaQtx6rg1MUYH0Fshe9Mh1aiQa1egCQGDywak4vdfcqr3c1w0cpWqwQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc5pH7PouzomIhk7lm5Oosqttte3p_hgPBbITiYD3nI3H-EPVFW9TGZAvp-qTEZF3lV9oI03EOUtOgLbe3bDignGNSqmRKnEbX0mI4tJeHZDgOwUpu9OjH5uv6ZTTrUDgYo5okHwfXlQ=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMebgoSv_lyJuJhpzqfBT4ffNMsHqsgAvWbiG-ytwkmzSsykMmurGkKYFA4ezKDZdC183BRgikJj83czYMNcWhCdF84msFH_qMEi_WXRE6lkH7CyDsgrGAb1ZaepeahvTpjGP9ik5XPFvu7JEBkihABC13FsGCUq0y2kqc6LBLW4Y6c5K68Jg4Hl4XfQZbKe8taK87EYdbsz3s8GViOol3n1UeavKbbE2R-Ps07Gu5r86Qw4FXHaL4O4L1gjvqWA=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNfH7HxWn9H-l72fciRj2cRzJXkI2fFkuw47ytwVlSir258DMj0ju0QxjWjFS9gjsbwO9XWORODdX6rdsUfF7ryAAqddOX_0dYPKn05ge0C78mlsqmiSenVK9_hKn55mp-kHWR2Z-hOVmSJw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK2Go3_pc8zRyjpBDIVchp0tnMH8LUL_dartzC3gCSJbjtj5t9dqzVzW1GUNjVeWmHWG_TI9oej4wDjLpKzLCZs4J4k_8pZEw_ouphkGmPFR0sB4mTaDXPBwmB5QDvBRQQ9ZFUnCtNyEN43wt4"
+        },
+        {
+          "title": "jurolsurgery.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaCYLsnFcCHMIv5qNvOg5Hl2f_dbIRoENw7PLin5BJOnaKal8Yuswo8oa_uyohWD71njO7AMOGaxTnj4zOSVlBU7AR4CnwkFRmRv0i3uGyMMIGgzq64jlspqJg2z-TcBykbVCS7Z2tRe8rjtCVTcXaTP3XsItsllWVkqMei2bhMorVt4Yw0v1HYXbD7yi7nRsQdsX5lAESfqmPwhzunVb1r48-L_oqCWhkNHBk"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBqmJHOIynzNESJMCCYY5rihSGVTkrWQqITlWdG5zauqGC3n_Vch7J60nEYGGKzVe9VMDN7qDvDV1HR9kmP2RgpKSusRYBLvpYpBHcVuaQL9SInWLZY3KDDZ5oycuceKA4qXwaFccVvyx4W7pwbqD9IC32VDGes8tDrmHVEYqGNz2km1FQxgnciUclIxM8ecE="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5AxyYuFemSh1GwHNY_AGfMss4khmJ6czpFhpJFsWmG1q8ynTlhievpbNCzOpvyjIOOJijXoWQNPGgzY-GRyA3-1twaokoEsjaXk7JXJrKa6UGEYJHfSzZf6LnHr_bmfJDB7xBrlQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hypospadias Repair trials for Urogenital congenital anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urogenital%20congenital%20anomalies&intr=Hypospadias%20Repair"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 750,
+          "sideEffectManagement": 500,
+          "totalAnnual": 9325
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 10597,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting / No Treatment",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Hypospadias Repair",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "Typical rate without optimal repair: 15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urethrocutaneous Fistula Rate",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "Typical rate without optimal repair: 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urethral Stricture Rate",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-40 degrees",
+          "baseline": "Mean pre-operative curvature: 45 degrees",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Residual Penile Curvature (Chordee)",
+          "percentageChange": -88.9
+        },
+        {
+          "absoluteChange": "+12 mL/s",
+          "baseline": "Pre-operative Qmax: 8 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uroflowmetry Peak Flow Rate (Qmax)",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "Typical rate without optimal repair: 8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Meatal Stenosis Rate",
+          "percentageChange": -62.5
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 88,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+40 points",
+          "baseline": "Pre-repair distress/dissatisfaction: 30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient/Parent Satisfaction Score (e.g., HYPOSPADIAS-Q)",
+          "percentageChange": 133.3
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Mean pre-operative deviation: 4/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Stream Deviation Score (0-5 where 0 is straight)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "Pre-repair dissatisfaction: 3/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Image Satisfaction Score (0-10 scale)",
+          "percentageChange": 133.3
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "Expected dysfunction in untreated/poorly repaired: 15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sexual Function Score (e.g., IIEF in adults)",
+          "percentageChange": 66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Urethrocutaneous fistula",
+          "percentage": 10
+        },
+        {
+          "name": "Urethral stricture",
+          "percentage": 5
+        },
+        {
+          "name": "Meatal stenosis",
+          "percentage": 8
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 2
+        },
+        {
+          "name": "Cosmetic dissatisfaction",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, functional healing and full recovery 6-12 months",
+      "treatmentDuration": "Single surgery (uncomplicated), follow-up for several years",
+      "trials": 39
+    }
+  ]
+}

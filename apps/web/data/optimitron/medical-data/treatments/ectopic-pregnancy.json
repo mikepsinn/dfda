@@ -1,0 +1,679 @@
+{
+  "conditionName": "Ectopic pregnancy",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:57:05.731Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH54Olnpr7fSj0x98BpeyDAeIiO9wDMYkMLMGc4BDtHf6cz_JcKi7x-CzNm7Rr4qcCVYzTYd4ekcbyhj_VuyuHF5U7xcBwCbr83WCfxS9JKqPPbEGEJVXHOg0v8OF4WpqFUuJ5CqpRWZKlC84="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgHE04lKplBBEHBiAvOF496nV1tsGvBGW2um-SgYHd1bn6ZuQMLQ9gruRoLYgD92lwOH26P2SxLw9SHmwlrmZvj4o76_PYQSDOUvpvWXB0-ORXElocpLqqX6-iv3a-NW6dAFHMQzaQeGWgm25dkQDxrmUllQE8Att--UxIvqIJEkZ0Pg6Eu_GfaY-eOzZhhg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0KYp5OvfwqwnRdx5LEWbbhSdR1I_36tfnqD3aXSD226FuNDZZVOwOianhxf3jYyjKS7eOFzyXV4smKp1rjCYXCiREVQwm1IGrUOWjGgBV_4dCeMhuFIjzzQ-5b1K-CngbdRSHw5CQnucQMw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2jyBqIw4qxxKgRh3RypjlMbHwnPK9D0FW3Ur7HHnNoacWSE9_YUHr2UZHYOA-DfYMkO6Ww88Oizn8Fy4UdPCAa4bOdHYtBnDvQK6qw3HSmu873gA_uQXdU5u9hczB6TBhRQ_lh8-kgmv9Ew=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMphZFHRMejNX14Esn8Yt3p4_BujAVZxG79UZxAweTiwnoZP-sZX3YGnTRzFVhJTgsMKu6K8bgQ_cxgjydXhLgBY60SJdFtVT6NBYrnkGVM4PXCVh-mnyeHDtyMvrjGZ-FNsfujQT79hkOhjkUjbHdnBRgZJqXNM49Yv7tdKZKMa2XZJL9hO5J15br1wBs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKmqlG0vvlOEwJTS_qVyt30FCfDFoZBKKaUwQgrkn9o8JHbsrJQePJ7dqBL2j512ONab4qwn8ZJxHywqYL2kh-k9jKBeuYt9NxIFz6hrd54b4u6TLn3ZSCtK7ZkmIZ0WUjDIs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFzfAeRClanp2fNwgvk6F7wQVwSHF87b4qrqy78KSZCqv9zV9bKQ_lCNMU3mp2dfjSHHkBeWmUQ0HinST5X2w5n6E0zupZeCl06e1pPvd5usj8pLqWgdVAw6__uWQYHuPGIhLv-91Q1pz0F_O-dd5Ihhnn2CcR8uRDtzN2_fMZu0WfvoI3bAJUFPRZnw4aXmJLgH9WuoeMxCA4x3doQDU6jQxlYaddUlGVpTOOUeofhJayWT4ec017hVLYsNo-YEz2qXa67AFnoVKNI-Da21hlJ3P2zszvoxum5omIU30rdId2_87KrPUQIrqKPZTSC_QlzjKUnH0k"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqcdzRgkZGA_Coety_95tlvRQ0Ldi6kboepAEk99dkrwbCZxYsxtnaP-YTnAQdf7RN6GBXPwHQq31EEE7-YXD9GUWtS-AIkXHAD6yT2xXb8PmdLLeAmS7_w872o2LI1Ig3fiG92kwy4sWtgEWGAxw_0fhqfinxmqXWRjVAv5UNILYQrzTp2_ios-uN-3EDoMCyAhUOWGpZYNR8wHBrFH8z78aepRsX-9aQ4HxziwatABzA6hf6X2Hyz0BBIaW8fLSHSuBnFmBI-R7tlAtGzl_sTLHiKMn7kWjKa9kL0VyZ8MRI2VIyBDlSvXx3O05RGap8GWE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC0q0IlCt4e4okYuf21PmoAVxw9fb9vqGMFb0-AFp1Iy6ryD0h2iejQNWeP4QXjQnCQmaAvV87LhWAI9YbFPi_2Dp3u6W-5W9k9URjfXTzBOZDI2rNxPQVCr-t8tw0ELyo8so="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIjjQIvh5-Vrt8zM1O2R9i0o7gy9PKG3TXY7iPr2H2zTNsgANxZjKAo6_zAFLpUpqafcg8iRaf-ULPhdhpw4waViMBFarFIrsGwZE08wc6j6EmEXIGe5Zmu-lhcgUbJK3x8Tf8Q4WPaLh3MzqdR2paTCvu1mauUPYwv2A_SnCN8E9Bp0qMPLJd5-F0foSfEtAdOWkAOCr3sFEIWH1Rq8NzN__sdS0jtWTfeQpLXds5wBS-06W_XE8pur7f2Sfz9ragJXqDx2lI06d22qeSyyxkg8YV64QCBZPWPSWgwDuR8a-jo2Dfog=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZOWx9bp88km39lw0S99QG9lYaufLxhdIi39I2ou97dkUbO8gDWQbDmYuFKzRpEW3bisv8gugPstBuRE6s8d-KVfFBpR4edtaYBaoOG3S5djDHQdALt7wNeinLwpdovEFP16qqaHH25EowCp93fMsGwGKkKnu_HjwAStcdrbac8bMCHFkhyxPmaqJIciX8qaI9SsU0nycR4p8DQht3Nubo22B6Hv72rVyrjYg32AeX2csskUG7TK4_UY0cNCp-"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhUbtqxgVmH8vNX_SuO-wruD6GocBzpkf55IdLMJdlpW_YpTfBnOKqHvQaKH0XcYV9vUPlNZk0fOtCNB6JWHvhF-TzX8UEYucYl1bqUfjn99tFEh4sr5LhHr_UPNN84Mv2pjphWRbau74bLEly3iii8HTLjFMHMMEthGnPUVz7MELfeBQCL0MdXzFzN2BNNgPVEXZ8ZG-efO37xfw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Salpingectomy trials for Ectopic pregnancy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ectopic%20pregnancy&intr=Laparoscopic%20Salpingectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "surgical procedure",
+      "effectiveness": 100,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 450,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 8000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 8000,
+        "costPerResponder": 8000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 7000,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Laparoscopic Salpingectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2940 mIU/mL",
+          "baseline": "3000 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum beta-hCG levels",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-5.6 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Score (VAS 0-10)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-150 cm3",
+          "baseline": "150 cm3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intra-abdominal Free Fluid (ultrasound-estimated)",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": 100,
+      "responseRate": 100,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 weeks",
+          "baseline": "4 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Activities",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-8.4 points",
+          "baseline": "14/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Score (GAD-7)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "3 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Hospital Stay Duration",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea/vomiting (anesthesia-related)",
+          "percentage": 25
+        },
+        {
+          "name": "Infection (wound/pelvic)",
+          "percentage": 3
+        },
+        {
+          "name": "Bleeding/hematoma",
+          "percentage": 2
+        },
+        {
+          "name": "Injury to other organs",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "single procedure, 1-2 weeks recovery",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "medicalsciencejournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAbHc3mrd2LYOcrobIzMz0PrN93brwmNXx4q44vhGGzjihY7PrKlZeH2FRzMWhBMKCzq1-OZR77nh268QDJFLiggoZJBDzCBcJaCIZ12nzmuZO3c3wFKMJdv9SgbiXBwKQlCnNr6x6Cald3GMq0vT6Pw-A04kmy74vC73jeXWUY9n8miTDc7rrQTzJlXWoV9k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFu_mjsaIca9yOpjMkGVX3bzGrYCTXnUIFk1yOa73vLpYensTtIHqf35N3lnJZzuRSvPOykxXDuM8iC2jarZi-AcWIvAe4Gpnz9NYJ1jtxMLCFnc7eh2hIldxyrcCi6Co_UxXC3SAz6ffDWWEE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYIjyvxRKjL_W4btDD8I33dm4CmdM-VovY87Sf_a0Nkbo5i-J348e9_ssNBdjdX-1tT_Bt-Ef6GTKwd9QYpXOzT5Oi_b4hieaI6ciOV0svhE7vOQKDHtnL7h0hGuoTuGHZQCdwzDgvz4Zmbrc="
+        },
+        {
+          "title": "scientificarchives.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4ObR-pAyIJ58X55S_8PJI1sTA9K4qN4hLoEHWLU_-a7AUn0HyDjxY9KRsLzYghNEDYn1ZZP-R50Zp9wKrcIuBsNQTarcfah0yiMGwkMQI8Auk5-0CKIy5hQ-2ftVQmHfZo5uop57wRJQctSy_OoUBPNrzf8cdAwoIvvJ8V8LJ4umt9UPA2Z5Uf6QcH9aSQL9nDFzq7oUHASq1rtCvizRFhuQh3XFubQIIaz6ZANUht9dVs1Pr-QcM2063n_-9blIKlVRHJYJz-WJ417ubd0-j54THUuUR-l98a2TIIeTWNGxU1QDwC6m8C_og2L1HtncGPtFvz6mon6rbDHZIs4W1bJsTQULRHHV0wz0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT9S52_6k2o4dz8r2tpqO_k2muVSXC0KfFet_rRDxJyrjWCQ4kpiFkmPdHtLXOXeZt-yGmVa4ubTAQzXhiaMZu0VxXBGbMk8kia9v_OP-kzn86z10KF9qC0pCdHwNRlPs7_g2u6nR9MEhHcoQDRUgBt3jYf4-NkXSMAyUEISQsNqaEj5sax7pL3geKiOACtHM0vWHuBy1oXABfrVixB3z5kpnPC8j6g76ixew1iogQVMiD5IBTeT9-yDVYcjNLbNIJ98Ha0GBgbcd6hEPRBp7ryWEHn4muldLrtO5wtK8Rm7sEhzgeIhqeOdNM-t4rNO9ETXJh"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYbxLTpNdhKkYY2zONsq8M-Vqkj98KIcMHSpi1JVTB9liMh7hUliRGXFeRc1s6i8q5esgIpWzQaT9b3xoadDC5x4iwvRXHzdtQGC7y3KD4O6Du_PLp34UyMm3cQWGXwAwvej8BliV-KfG_2iY="
+        },
+        {
+          "title": "healthbook.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVYD1CY8FSkGaiG0Wq9duMPQ7DYKb_2V-QFP-fzXsBNgKS37iR0rcnQXJ_jzUz4aOdSNSZFMX7zUwm8ewae4sHLN72Sl4hhwgqWmWXMxkS1cS3R1ST40mcaWR14TNfxV3LoMd7_tb1fvFeFnWZmchMxZwqy9nbDbm0WKJGEcNk9_ZkDOr9OH8e9gETYgkotZv10Bddfh-zPfUbWBgMKMvAB1xx7rQQfPPw-HYHye2iJ_bUC0YbkmOW-MklGbtnFThQCxq8RRv-ciLw18VvSFlDGdgFZR7Ql36Da_Wp4Ai9dXMvsuGQOiRhsK8cOj4KCZfpp2S2g5zn7fiW6D4="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4EwsPvHcPBvdSoJtLOGfLrfH8oxrtABrJ7F_MXNGVK4JzZH9KH-Iuf6O3-Ncih9PrBvbQgs1XCmrayC5vJhClZEX3FLy2b66WMRWsI49HJQKv_xiwdxyMk3DMnTunELTXk0fUDqVR0JwO3zMm_wsapWZXHonTgrWAdKcBhg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methotrexate (Systemic) trials for Ectopic pregnancy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ectopic%20pregnancy&intr=Methotrexate%20(Systemic)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "50 mg/m^2 IM (single-dose) or 1 mg/kg IM alternating with folinic acid (multi-dose)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1667,
+        "costPerResponder": 1667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Laparoscopic Salpingectomy",
+          "costDifference": -7000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Methotrexate (Systemic)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1995 mIU/mL",
+          "baseline": "2000 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Beta-hCG levels",
+          "percentageChange": -99.75
+        },
+        {
+          "absoluteChange": "-2.5 cm",
+          "baseline": "2.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ectopic mass diameter",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+85% absolute increase in resolution rate",
+          "baseline": "Resolution rate at treatment initiation: 0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ectopic Pregnancy Resolution Rate (Medical Management)",
+          "percentageChange": 85
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+85% absolute increase in tube preservation",
+          "baseline": "Rate of tube preservation with salpingectomy: 0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fallopian Tube Preservation Rate",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "+5% absolute increase (e.g., from 65% to 70%)",
+          "baseline": "Expected IUP rate after surgical treatment (salpingostomy): 65%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Subsequent Intrauterine Pregnancy Rate",
+          "percentageChange": 7.7
+        },
+        {
+          "absoluteChange": "-5% absolute reduction in transfusion rate",
+          "baseline": "Risk of transfusion with surgical management for ectopic pregnancy: 5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Transfusion Rate",
+          "percentageChange": -100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Abdominal pain/cramping",
+          "percentage": 50
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Transient liver enzyme elevation",
+          "percentage": 10
+        },
+        {
+          "name": "Stomatitis",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks for hCG resolution",
+      "treatmentDuration": "single dose or multi-dose over 8 days, monitoring for 2-4 weeks",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "smh-j.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpxZemkh8bzS9ZXOiw6vLn_AghVHWHP_o2vxd_KeiA8DwTJ4mYe6sMU31AaJ6GMdzI9q5qcx-4q4RjTyCUvlfOZVluNKQcY7auAjNatTwwyLGyjYKTCH5CmxVjprE5W9ohuxFvXOmlsuzfupzr1YMI"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoMFN_aOA73rq2taWaVIogbJtaNe8vS4pPDuSFgRiYDoq72agmT3YXrZnohrw2TMUPVqoAbFgGw1BRpuc9Y7VHaBD6NqXnAucvRmVLgE3Q_GRFY6Qs4-smfPtcwRPkRvnbpMskcv_bjPN71a9Y9rQvg609eOKoMnEzUpdJE7Iuecs4fw0L3qMTf3Ouk98gAqiCli1DS0RYoJHpOntehNLM3wPsS-Xs0-_nQjL8VgSJ3LCZMzvaqBEZr4xT7Txt_nihMXQNq0TQCoHjBsrX_E3vQWeKKCamHmV1Aglmw5tgUFnmXKZHHTn6hLvyiBMIap4xGE5C4USwTXT3R7saEmXa_tw-Mz-vQQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn7IAeseecsnA0ZknkllralX1Ci272iiAGXhFikwCqHOCh1zHImmIidHVblWK8MjSfsBBVSDr6QRkmgdA5Stn0LNDBgHS1wowNLwLm0I4DxItmLVfacfpghuoQluPRH48q_MNyNUHGHJqJku0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5N4vJ0jOzTk-PyGKuFmARs2nImQnhipVnvxBXjJyn8AQHdFwHOttyoSVdG6mDtKkK6KGNGf0mckQZySLYfC7OMx1DdLJGsg6ebDJrlON62t9kPPA8Oqv2lyBNMjgMGTycJoI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGWPt1FolwKX94_D6zg-qh-yEIa_3ZkO5_wf_eS1PdxBJjxyLMaP2mWKQQJWJ833TWiRlSq0ZhjjoBYi9CpvPMDLk2Lj8_0-BAZHHuRx4OGklAJYcjQdCxcBOiTaWPA6J7Nm88i0Kd9d4ehpRRId8aRHcvzb6Qi_4iPuW1oSDhNf0a_cVcAtf_af4WtH4twXpgexZi1tkmyC0HLzR7kSMgg0DvBbC4LmIMV_CFOK12-FMCC8unBaVHei3ctvtuTw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1SedTy47CTwOOULte2brnjcy9oxRMO3ihlwwk5kLf_VZIf2ZQI3nNxwvatwhlSV3hQrWbclvoFFhnVl5fAv7_-jV6XEa0FxNnygR-W5dxhhCCKWNS6jRlwR7G4CpnAqrcGJ8_zgHBCMysic2ueNwRQvccPUCwzNKLV10r8s0JtwxyoFM9e8HOc_GPMmN2gz-jMtp7v9LkKhQq7T2gZRlbtedOA-i62l38KfoQU0SQOypjP1XfdTgGiAlF7CWoPjKekfeFVsIvu5YIIVVrg8TC0A9-_M-3nA-ijkiVVsG5WtHpQTvmln_4ng7h88R9e9pVIPT4yWKNRg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETm5M2qGL1iXs2MmqpZ1TuMClXbOtj41xEBb56R-hoO8Ja7tW1Op9E9dBVGIk8NA2rwAVvHAlpEr_PN3lT7wEKmCNNePRD6BGc6-0VKbjCFHE9KjAKnRICbfMbYWGWszvegNtf7qTlj4sVeLLM"
+        },
+        {
+          "title": "ClinicalTrials.gov: Laparoscopic Salpingostomy trials for Ectopic pregnancy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ectopic%20pregnancy&intr=Laparoscopic%20Salpingostomy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "surgical procedure",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 750,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 9000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 10588,
+        "costPerResponder": 10588,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.85,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 7500,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Laparoscopic Salpingostomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2475 mIU/mL",
+          "baseline": "2500 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Human Chorionic Gonadotropin (hCG)",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-2.5 cm",
+          "baseline": "2.5 cm (mean diameter)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ectopic Mass Size",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-6 points on VAS",
+          "baseline": "VAS Pain Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Intensity",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-92 percentage points (reduction in patients with persistent disease)",
+          "baseline": "100% of patients with ectopic pregnancy",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Persistence of Ectopic Pregnancy (requiring further intervention)",
+          "percentageChange": -92
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "40% (typical rate after salpingectomy or untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Subsequent Intrauterine Pregnancy Rate (within 2 years)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-2 days",
+          "baseline": "3 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Stay Duration",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+6 points on SF-36 PCS",
+          "baseline": "SF-36 PCS score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (Physical Component)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-100 mL",
+          "baseline": "150 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraoperative Blood Loss",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea/vomiting (anesthesia-related)",
+          "percentage": 25
+        },
+        {
+          "name": "Persistent trophoblast (requiring further treatment)",
+          "percentage": 15
+        },
+        {
+          "name": "Infection (wound/pelvic)",
+          "percentage": 3
+        },
+        {
+          "name": "Bleeding/hematoma",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "immediate removal, 2-4 weeks for hCG resolution with monitoring",
+      "treatmentDuration": "single procedure, monitoring for 2-4 weeks",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFisc5zvwP6GHrJXJr1mbTenm0FPaZl27j2nTeS67tPnDKjOnrkUDsPyV3dNVso0M9lbgs6T-c3v68uOjvBxnzngMBFnxmyl7FPGql07ZDjhVOOne6EHLR1tvQ8Lo94G3iPTUOXPpgDSY74JRk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-mSgaGPKb7QUGbLx-iYGXY2qYUSdDg4_Lww6W3cpfVpoQXNi1jj3ihXHjKJYa9HaqUD9GsmdgT5YLWym0Elq6sPsESWsQQr1kIIjjR13P1ZnOZOV3j47wGR-0Fl0ElFTbWpD0iR66HaMd3JoLsERaa_Y-65gkyPs0zV2oZ2RSH0f7Q3h_-uBX2Py8Kra81ow_foK545qSjqXohA8ah0wy_uIAwT0r4NmvdH9fASXnmYdGvzWJVYalMeAkIC9gm2l_-AiIdrgynqZCDXYK3rvlMtQeu4vphnx2zOBNehMxbQsMRNWqJXWSji4uLQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuI4IVGpzxrECtq7STTBU-_jP2pzPL_OKn4Ek_1IySOyoAaQxf48eWSrbvZeo-mEY2ddHQO1tG2QfwL2cvQKPDan1K2L_ll16k97xl19cGNUyQhrfL4NiTYr4wld9Xc_spADpl3l4hy2O6cgPyL4Lla15cb4Jy5AQC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0AatyFReCCXuFWrRtp2UKyLA5FQf0k2vodWC2dZbRLMVe7sGD1dTiCCHUhmt0yYt0qxTHNsbdG5Clclyjetu4AfCl0xImlfvifGa1bdUhiAJBDSodlVG-rTQ0U2vJsLvPC1Iz"
+        },
+        {
+          "title": "nice.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZuthloTXRrWY_tszPSkhqWfRZnwiYccHxsJ1YFOlNVJBdumHOfzvxREWsBl5dQN-9Gap7n5YxV36DLvGvtmmTZ_Pzx0blNtourr60P_xlJf5fAeEVbn0Ahax15tpZ8gQlgXFp9h7LpaCH6sYX8s95CEfhjDFKd5WTZUB28CfNp34HG9mWF0Is1spfdvK1q_0NxaS99W1z4wPQl6z-wkLeY1vWZLfUqQlGHYGbS7-KpYu3_4QQBXNbW4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFMBskb618Z7m-tIhI2XGwNwTEOJmKk3dM5hWlFwkuI4qEoMVMO_Vjwmp4cpE845vQNUXX1bFkR7uFhAIrKD3Xg5XwwDBgKvqcG0qubRaXJLv1wm8B6Ak3cIF1yDPWPIfBk8UEAQCKLhiipKQ="
+        },
+        {
+          "title": "2minutemedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLsetleN_fpkowOL1FgEZyNRU2dNNXWwW01iShIEHXUPvpHMu-WO0uSwUV6pDvziuSFvyelnOV-Mp4OP_a4rql2-veKGDmIDeymGWodErGUXWUOm_3DQ6ATps40mR1OMZG0sw9LfaRXYQzRMlE6V9wEmsiC45vIj3Q6enKyZscOdcV8oFngank-I9okxYs6cnHYTdajHdhAA=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY9eg11QhijwUT9GFMdgqeItoUhBpBmKWrj4gQ_Af8I0DNUe7cA2152QlG0jJ9rrR6-X0Tq2ztQWsqx5jgsX4BdEgt3o3IhDZYoG9xkKDYNSUC58b541fEm99vzwEFBP63nuhkGQYVc7-2INDQcBf_3EkQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8PSO8V4qz5TD2pbDjjOmYKWezrf_gl21S3wvJ3-2anBVC0AWeuig35teHpy3g-N8l5HMSLUlPlxPXQO5WmmD44CJGn-g2E69dswuXFS0S7JjFqQdiIv02EPzSJXzf3ALG7cA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Expectant Management trials for Ectopic pregnancy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ectopic%20pregnancy&intr=Expectant%20Management"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": null,
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 2550,
+          "totalAnnual": 4050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6230,
+        "costPerResponder": 6230,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 2550,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Expectant Management",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1795 mIU/mL (to <5 mIU/mL)",
+          "baseline": "1800 mIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Beta-hCG Levels",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-2.8 cm (to absence)",
+          "baseline": "2.8 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ectopic Mass Diameter (on ultrasound)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-4 points (to 0/10)",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Score (VAS 0-10)",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "10/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Score (GAD-7 0-21)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+0.078 points",
+          "baseline": "0.78",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D-5L Index Score)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+0.1 g/dL",
+          "baseline": "12.8 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Concentration",
+          "percentageChange": 0.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Anxiety/stress",
+          "percentage": 70
+        },
+        {
+          "name": "Prolonged monitoring",
+          "percentage": 100
+        },
+        {
+          "name": "Need for subsequent intervention (MTX or surgery)",
+          "percentage": 35
+        },
+        {
+          "name": "Tubal rupture (life-threatening)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "weeks to months for spontaneous resolution",
+      "treatmentDuration": "weeks to months of close monitoring",
+      "trials": 8
+    }
+  ]
+}

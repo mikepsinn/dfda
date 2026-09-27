@@ -1,0 +1,893 @@
+{
+  "conditionName": "Hemorrhoids",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:41:06.319Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_slRXsSg4SGstRKeH2RBFSGIaTt7vPUfC1NhmRgULBnp_SvNTgtDbU7YbK7sHrign20yAaRxrZKQAvy6MgGGuWC2KwTahk5MCQym085Y4XLPcxgQ-nLOCY6pjcrW6rXH2gQ6r_5FxPxzsT5S6Z5LnFFpPVkXAIecFUoGg89gyfBLcHSLxGxtVa1e7uvjR5nUozW0kA_lEt6PZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGr-axW5PKl6rS6HteDZN_voCFdvC6lw9DjP4aJQ8LTPs0xDWC4T0DOYPIaCKzpinv2T5pwCZ-yV4rPRyD-mvrJXlVqJn7o6rBPzWTZeCPG4JLpfsZi0H75l9t3B5UelWf1cfqjSLwbNg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1qkMFWd25eM6fd9lsB0Y9piarBoKzZcOUGZjQgj-kNtZ7-BPNO5jdqAIDhbMY8GurC4bWdUEA1I98udPZa3SSt_fLmiV39IRhGXIyW-yrU-OF4-4X6YCpVz3dpMGqJ-KnfYDooZXpAXfMfxy1z_-PugMmN5xkO-9warUfeU9twS_rGQvheiofx1k9mTBK0h9M_4ANcVTDvIo37CopeVo7q0WrRnR5nviKBGv0LPdfxy2bSrHLsdzrOeWmhDs0JROChCWxkhkJDef8VE8jfg0gfsHYsFFEkjrwkfRM4etGkgVW0uSgWs4qqddAOidzX08="
+        },
+        {
+          "title": "brieflands.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3yIKEdydEc2OpJ6CM98Vfhml23iem279OYISYnv5V_o72xlxcY-iWkH4gZg1UukulkGPSnIT-ZzQFgmJL2viNI6vCeVz5Bu2ep77y1i7sLhpSig5-Z_QVv3cNu0jDinSn9y-KfG4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ8GrxmTHud8vyEJpu1AOPzz5MHy7KOLhSniE1BOEzAZ7aJM763x7aB6xjoLOwYahnPhb9W0IOWv1eP0zEnIEJE_kEKUbF2Rjhuyf6dmLfs7ecxs-iYIs-4lTtJxJFkb6Vtbqlrt1kxueMltQUttkwIzlG8izZQQrAtqDgiTDM9kv_WTnnzy3kORDR5umCSqd3u00MtQztI5Z2ftmhI3qZ7st_Nykhq4-upxki-ndyYoLWtOjPmwAqlwO81-SXJd6qBpUUrUn6da7WhCT_7DFwqUtc6Y6PI8GdLVZJprsd7OjWAwn_95tJcSx9NzvjEfr2ndV0_mlsPyJ--qtnIJVeBbI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELEUkrnUvmJmkpz7Pr9kfPNnELEwkfPa4dT7IR0n9O7fNJUo3zj4kejTjOfOpm6nmqWbqy8MTmD8eSJ4CEMaLJVFDw9PZrHrfU7kokmfxgnbCgqGnq8PdaFlvVA4sCmnDmtqCVxOTUV0ssftXo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAhFCGCYGipc2gnbFvJnOBYiXWT-VR312LAlI6WkLdIsT1p0wcnmJra5jZ2eXTT88uKFmOcj39awkCFZGg60Z34D9OjFA-AltQNnlXcFKzi1ppxxWaeZPYOB0eEgToOIjtF1udMpB-6mG9Z2v0fInt_TeKH-xhfrkYjIhEWOGBmMrou7qssMS7eTqIfpzlvSH3UL-QqDBCA4IfLF19bxmEIuVgbkqHuDJcX9CZJHtm2Lmhl6XtrI3578AU1ipVvF8WtdSOyuY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBF6M9pLkgc7Y0obJp4e9JqRQ85T7-9r8L80rxr1OoufljsrQCZMuphaZRPJF1k9x1fxL4LvvkZ2JVJJ3TQnDLM57kBYK0rTzjaUSz9u_U7dHXWMxvAu6_k9faMIBkJMop5-Be"
+        },
+        {
+          "title": "ui.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjmle0e2z_3bLrA-b5igp2jf4wT4oOPJUycaMAIvhYsWYcGZI_gDU_q1kCbGNzG0ZwraCsn5zYCH1wnBk5TD9EVoBcPqzmeqa794OwOrkBxsDqf50-PolvzM419Z5eg0svV20r7wBbj-5MsWT18OmMBy03LG5mQ3HMyLOxFcS6zL32nGc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8NutBuDPqDKiSZxGk1mHEUUXMzebOS_2jfcxiBZpk6N44V64UBE_Y0TfQW70lxvn-PHJIK7F6EUFtbCMM7y4iJ5BvSQraisa43AxahC1qKb3m7JIlRXnu9WQxgmboSpFJSc0Z-B2gxnQreuw="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwu5fdEK7u7uFFg7LeasoAv-PIXAVsjT_KMy83cvS4wVZuTACRwJ0U6UaSEcfCkTbHiwf-PsE-HqZr0tcxC5XsNNTiAe3eRXTsPpg5bZ42mmoQzw2MQS2zb5djGyngJc7-nDqJI-qxF38g91aZRjNdhJ-unOXxSdvJltuIo-zn_x-JMW59k1Pu0w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3zhBkHcuc725baTibXlwjq2VbJFSALFCIi9VN0tcALiXjX62xQCJgeB4omDKAVkVKG1koWIlalWyhhILbtZbOtMEk5sfBZrj3iB4wOJ7mu5ZIqOLJ3KgapxCIvKXJ_spiHMUs"
+        },
+        {
+          "title": "ClinicalTrials.gov: Excisional Hemorrhoidectomy trials for Hemorrhoids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemorrhoids&intr=Excisional%20Hemorrhoidectomy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 400,
+          "sideEffectManagement": 750,
+          "totalAnnual": 8000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 9091,
+        "costPerResponder": 8602,
+        "icer": 13333,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Excisional Hemorrhoidectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 120000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "15/20 (higher score indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Symptom Score",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2.7 points",
+          "baseline": "3/4 (on a 0-4 scale, 4 = daily severe bleeding)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rectal Bleeding Severity",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-7.6 points",
+          "baseline": "8/10 (on a 0-10 Visual Analogue Scale, 10 = constant irreducible prolapse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Prolapse Severity",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-5.95 points",
+          "baseline": "7/10 (on a 0-10 NRS, 10 = worst pain imaginable)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain during Defecation (Numeric Rating Scale)",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 88,
+      "responseRate": 93,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "40/100 (lower score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease-Specific Quality of Life",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "6/10 (on a 0-10 VAS, 10 = worst itching imaginable)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anal Itching Severity (Visual Analogue Scale)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "5/10 (on a 0-10 VAS, 10 = severe, constant discharge)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anal Discharge/Soiling Severity",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 95
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 8
+        },
+        {
+          "name": "Anal stenosis",
+          "percentage": 3
+        },
+        {
+          "name": "Infection",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "4-6 weeks for full recovery",
+      "treatmentDuration": "Single procedure, recovery 4-6 weeks",
+      "trials": 28
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEprDMt-6Z4VMAwWsrrY0QQqRC3qIGbphV2gDxViN-McazEvnmzG83NynRWkyUfQ4Dniz5To2NQmjUyYzzdeQamKriNGcdZwZKsQRrxApJXathIZEd0UNdq0_aYa9EJJb_RkgRNQ0Xynpgry6k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtUqdM-dlychOJrGqVioSnAsk4DEqMojnpfAWiZsfAK2ahijFkKdvI0Z9u7xQQ6SMkFmKhVKLeSXdrx1sjZKMA7egFRi0AYS1LoLc_B-wcbuV9DWcbc1Vp195bCO8rJzqX_QUWdLBhQaDekVE="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj9F9a1lfK-oJgEKB__67hkluaOqLpJj68CCNRwLwDG85PL75Sc8B20CuYMSjCZYEzZv47zNrsC4z96Rl3IAaVhAiD2cg2m3WCzt-fOrCJycTkUbQfQReTmDLA8hijlytSHVQTodPrONsZ7W3_vuI1bhU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBNDM_DVDF3pYdmmMndxqwtXPzlEIjaZ-57Z0FdTNYtlqF-f1RxlVd7zD2eeEBMKD6WWWWacoQ9HScPkhx93eVmUMbhCvAs2Aqu9NSpF35k41ZKZREHxUJHiCh_fIGrFh5sTJXd7rlv9Dig5Q="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkuVfCXBDlKRmSOZKIXwATr7AY1yedJAEBceT9a915iDBqMoAyv9GaGITPtoK8Q03cD8FAxy7GktRyvi6Besj4xkqm0tkZ_Gf1V4nOadyGHcWOR9ZPg4pKVLlCVU3Ppm4hFOnjWJ4TayNT6GZHHGXD_Tre2e6v0vIuH0A8umyoOT-YewbkmPW4YeDfvBjwq3vBJV7WNqVSaokG5aW53cnnfT_-MzYMlgczZWaJogzHSgUcsYUzOnqwsW2MPyQQ3UcXGnLKsGxJ6lknj8ykfGJcLw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt1qY99SlWFVfWJLY17VVmonVTv9K-vHa2pbD6Yd6fOc3DrbKdRw2ivvMLTpDLMn3szRT-XTVrUweigQ8GxaIAr2F7ndw0ML3kHmEw4cU5gUQ2a_0l_jNH8rzjf3RiG2B0m4mevpI-paXeLeeKDujkSvK4rTc5myQkuw8vyJHek9Mk9dE9WBuTtByHHOIORib7L7ohJ5vBQOL7VpDvT-jR4w6VqsVvwV0VE-J4-TebQHT78jmA4IpTC4AvgggDtMpgdktYnrP8TVRIG-jVdhMAs57TjdnCMCzmFNJFZngQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC4O6b-KON9PR5i2qKlz_RhSoYWErSazfLj1LObjTwbUzNMRNnxrmuklXtBl4Fimxl7W9yLK_pVkqwzDtUGlMvkl1sgbnSHODv2BW579uObf_Hcc5OPI_a54xAoWB5WnxUURMg"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBkca06dvD_aFwi9T72teVV1uZFDj6Ps2zD5GfzXWKsomivF5wzWY1iqTX1SxAVpUausgUOO9oPC_ArnXh40dmMWdq_XwliiXtsat0jblzgT0hzIvjComcMh8IaEx2KZBlo-xdpesnhfDAejasvCVEdaOQir_Vlbs6PaRa0do_W5OLCXsumj9dH60uiLrc1NStQXlNJeaA4d3amA_qRiSIcYGk8hChAb9P9UqFYSzUL8CgkpzCW7A36RuC_k-efOO0_H34wtlWWYT3BRgL0i1YuanYP2mZDl378_h4wTVW02niImjQh5qiaz3zphMbnnzoZSqT15GILkE6FMj0ns2hLnsVIPdb8ZOnonP0y6RCh67Su8iwiHqCHppokA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSS34Sqgwqc6jJkpsufQ4CXRF8Skwzbq3r4jhVdb9b4WzifD6FYcN859yxxZ9i_o3UHsHYUBht-B0t3q_-dtfeOJtDWYufbvGviC7jb-M7T7kAWtln_LrreperlPG7gFjd7ug4f2F4OWBSbcQRk5IK7fbIJB0D5qnAENcAyroroWcpTYb_PLX9RF9DuqcAsO8zpEzN1qrDIM-nYigW6YZZQ8QP0nzsACnXjUxeghEtIUB40KExqQn_Y2V0i7LIj2F4XTOtp4uyqyWaBCDGO8VrhUnK9RCtaaw1Q9Qj7ab0GYnPEYi5irgPzXEa2LrdA_U73j547Aug7utA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rubber Band Ligation trials for Hemorrhoids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemorrhoids&intr=Rubber%20Band%20Ligation"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-2 bands per session",
+      "effectiveness": 83,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 450,
+          "sideEffectManagement": 150,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3077,
+        "costPerResponder": 2667,
+        "icer": 6667,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Rubber Band Ligation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 55000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.5 points",
+          "baseline": "HSS score: 15/20 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Hemorrhoid Symptom Score (HSS)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "Reduced by ~3 episodes per week",
+          "baseline": "3-4 episodes per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Bleeding Episodes",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-1.25 points",
+          "baseline": "Average Prolapse Grade: 2.5 (on a 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Prolapse Grade Improvement",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3.9 points",
+          "baseline": "VAS score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid-Related Pain (VAS)",
+          "percentageChange": -65
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+18 points",
+          "baseline": "QoL score: 45/100 (higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid-Specific Quality of Life (QoL)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "Reduced to 2-3 times per week",
+          "baseline": "Daily use",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Analgesic/Topical Medication Use",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "Severity score: 7/10 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Itching/Pruritus Severity Score",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain/Discomfort",
+          "percentage": 40
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Vasovagal syncope",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to 1 week",
+      "treatmentDuration": "Multiple sessions (1-3) over several weeks",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELDuHlh0zPFKu2TtEYz0Mpe860UY3wCIK7E8Ub3DGbW7YEqe1i0dwvaz8kvTJpSKGSbUAnc9f0SfCg0qcbKE2_gep_T41Auta8KN4HCutxGne_WIcKXcx4gxQyAyoEvA7EaA_6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsTEzB0aBh6cqUEh5Mf5dnEMDHL_rei-8ifpPQHbUSHPsY2YJa49Rj1ZcOcRYssfBcQETAI8DIUvl1cw2ysoi89gg4UBz2AWngia8DU2ZX6ricLSUDOEz0A1a4OVLIsmqq3KNPD_5fAWtHdsEb"
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBRTZbyjEJrRemSinUaGLGjQjAhy0d1Usjl4WpODXhgReikzXbsuhBzH1u3RusGRyCuR1qgBjbLOiyp2BHVhQpV0iHc6rPCXPT_8s9bs9Hg_OjhQBDjNNQz9UuAWHkwlWjwCDbfM-gY3iGRgSYDSJo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa_IIrsq1HvWW5JiWryX9JYO3T591qMvbsiGcp3jlBc1Wk13bF-fNXNKFV_Tod42v8czvFiIrv-99yJUEsja5hGGZUP5T1zhjhy3YTHJQzI9L3VnrISOHeaQzc-TanKuQRXBgDBoPISzX7dJVwmffYJ1S6rCR-U9TD0cqACA1rINs0lsXPEakIzdpQcCDfKz-D-jw09AWnhdVDD9IK0sbbOgoMFYDV0XO-RMsuOhN1ijDgx0h9Gq6Vp8p4PnunDVzVSInPZPIPJH9JnxeI2jygDw_DW8XaAuMHxOEzK-HMnQ=="
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUQOh6ThbMs-i6_beSqXfd1Eo1o9WD2yyiVI55vUfkh9KO8BcCXFwmY_CM6L2NLNX9_Zu8arVOvOqd1eeat9FHpKvNxaZXPGS6BWopVJQJ141ZJTkhCWBdwSJSSdWJIckmwB-KWL8HRfxUkY5tCcEPaCs4_F_7v9xUgTHQEsws4h8DXrLMssXWVp1C"
+        },
+        {
+          "title": "ClinicalTrials.gov: Doppler-guided Hemorrhoidal Artery Ligation (DG-HAL) trials for Hemorrhoids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemorrhoids&intr=Doppler-guided%20Hemorrhoidal%20Artery%20Ligation%20(DG-HAL)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 78,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 7273,
+        "costPerResponder": 5479,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Doppler-guided Hemorrhoidal Artery Ligation (DG-HAL)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.9 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Bleeding Severity (VAS 0-10)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3.8 points",
+          "baseline": "5.8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Pain Severity (VAS 0-10)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "2.5/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Prolapse Severity (Clinical Score 0-3)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-9.8 points",
+          "baseline": "14/20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Hemorrhoid Symptom Score (0-20 scale)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 55,
+      "responseRate": 73,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+22.5 points",
+          "baseline": "45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Disease-Specific Quality of Life (0-100 scale)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-2.2 points",
+          "baseline": "4.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pruritus Ani Severity (VAS 0-10)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-3.2 doses/week",
+          "baseline": "4 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Analgesic Use for Hemorrhoid Symptoms (doses/week)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 30
+        },
+        {
+          "name": "Tenesmus",
+          "percentage": 7
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 3
+        },
+        {
+          "name": "Recurrence",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Weeks to months for full symptom improvement",
+      "treatmentDuration": "Single procedure, recovery days to a week",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQjgWTCW1Qcksg7iTgAfrX--6nBIMdxwqzDAUPBlR0wdsYkYTr2cg1NVzDCjlTBlsWZnJSn-ahsrlFDYTJ2Tn3mk-lZA4JMtXEypxZ8iEpNOQkges2ipJ7JEaytfrJUzBd2IjP"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3p6Rbfe7lNbX7HV-8iLxi1qBFzg9qInGKWDNjikxyPAqe8Mjs508u0ih5LJGvGxMnqVUBa7i5zYRkmhzcIav5DND8mUys7ICoJPsMIFujSSZJjLBqDiWWMG3s9hNowQG2ZxRZRWFXnQFAQfu61dgpqRzKSFnSzSuUnliio-L58D8wt-ftF4365YlRv0SlwtQ2nEvorqumWjKJl9dvtvQO_YcxgalMJIFf1MQpYunwYclmV_tSBKdE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo6eVlgaUZUhZtpLsC-HCA9lMD2p8QgDzSdahX25FZ1CrvKiFCQMruOIn4b3FbMlc-bcajKXDxG7DMcHZYD3uaUFbhRkDMBHA_RTnAY3qYJ15XEMGaQR5k2IiRvKi7SdgLELmSZ8NZf27UOiRs"
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzTx2FXRQjLfPMXJP1myrYFJ5_rGtsOFLg23VslaEMJhnZQ3bVHG-eq_THXAdACOHu202MOAow05OtlUa2e4C1JcXAcMovRIj442XHmzrLHfLjMViKoWXihLgkrahLjWcDOE1rpg_cGWLOZO19GXfLhgcZo2kLiveBow8Fdkwruss5ATbNFEJmPT2xq_q4l9qh5uRG3jGrrSDW_oXNs-YF8aCk"
+        },
+        {
+          "title": "scribd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqQ6pgM-Kz05ZbiRhu0QNOQH21i0MQq0wrv09IEcb52Y9DTRenKsuZiK05PDbmxWnIIvK6G0KRt98chrps2heTyla7K-G92b4RwmtCzA8Ktj6_HyQGhJItk32PGzLGWF2h70KHR_WgtmdpvPDO0UdcwxMYiADrqg=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8cgmagXNyv8RTD72cqLrcxrdeI05bUZltUUnIlfJi42iVBMazbujLovx3ub6sRdFjugZVLGXr9e2edxh5to6eRjIg0TacyrxUlixE_2ZskQmtBdSYpHo1yGufVzChrBfU5ZECtwk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sclerotherapy trials for Hemorrhoids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemorrhoids&intr=Sclerotherapy"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "3-5ml sclerosant per hemorrhoid",
+      "effectiveness": 72,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 350,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3333,
+        "costPerResponder": 2308,
+        "icer": 7500,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Sclerotherapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "4/5 (frequent, significant bleeding)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Bleeding Severity (0-5 scale)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-1 point (e.g., from Grade II to Grade I)",
+          "baseline": "2/4 (Grade II internal hemorrhoid)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid Prolapse Severity (1-4 scale for Grade I-IV)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "12/20 (moderate-severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Hemorrhoid Symptom Score (0-20 points)",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid-Specific Quality of Life Score (0-100, higher is better)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anal Discomfort Score (VAS 0-10)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-4 times/week",
+          "baseline": "5 times/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly OTC Hemorrhoid Medication Use (frequency per week)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Mild discomfort/pain",
+          "percentage": 15
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 3
+        },
+        {
+          "name": "Rectal ulceration",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Days to 1 week",
+      "treatmentDuration": "Multiple sessions (1-4) over several weeks",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "becarispublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4CXc8A49MIAxkgDqUc5NOJEOKVWmgUIHP34_oNrdiC_OX3nrEtmldllHNGmijM9gFX4t84OWPVZFtOssvvciN96EI-9-mOe-V6rvo9whEOZYCs6-Jw-KT1xaYZBEE3NdO_mSoHjsNf0GoAGfLSI1jReg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEToTsbRN1uW7pge8xcMP6biI_OsJfUMPHzwK0Na6E9IyEWXmdKdxwlisIyOkQlSOsodmUXtANodPovoFKqKgYNiMUyauL1EMW-ZNybWpdlNl8oYwCwtPZyak2K6jCA6Em_FYRB"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV_Nsz4ibMNqdqV-6c-EZYkX59bLDN5YJSm7Q1qI2eEAjoy1hn8wNAAnMGiSALeyVdCu389jQXKixK5lsTPAtdkof6DDpZG8-YSgGv1JpHlQ7C_WvCiGwramhe8UfzfomVep3qDQcXfAf5mbvteNvhZzx-XircuGXlqMyXlgq1CzyCXKeFIR8Lm1xNdjMTD4HiXeI9Zct4JVn_QYQVkOi6baB132wRH-IkUR5m5A=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNI0uOV_ppmbHp0NcOC0-Oes_gEbO8dVIAp4Syj5rOWJVtAVi6NtEkIpQgWOWxl80hdGv45sSv2ENLutubRw0VU2HlJjLm-I-8ikpmrXy-a2tqZbB2XcKI331CybEK1HG1HbCC8v0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzSs9id2_f0bAvurA7ZfdszLHU1J_okOBWxSuEDAtRfT3Ov6i7Mev3lWRESdTK0UCJnG7Pi4OSrbJn0D9GStKHuEYXtc5yvPzK2Fkb9kXXHcgNn8bcvnHf7cOCSRgpAnIs-a4rrZi_6k1raak="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDukHLjZBAI2WExVZAkH2-JOZcnP2TPBFjroMfO1FwrZqHXXKIikxVfKx7sZdEvgSe-v1LquGmyoYGaihQmcd-dRqEOx9N-kIZt5t8NS1XMkPIR3OCJ9fe3CYOWomTvllHOh9CQqN0wLeuqQZuG5SAcUbg8vIM3knnodCyUhShzkPzybtxwxdUmGAVcH6j-CMN8alRhAnA8b9_1M80nfkU0aTIapUwxalEBTvhkcr4sH1t9YTgF-IPt3-BE06hSOYfeBzkRqnVNobtQYcBJrVkPQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgd7lk0OrA8ydg8A41LUyTDnP8IcPNoGCgiWueTG_x1caV0Du0pwC2uwSubuSx9Ztp3kPXEu027r0HE81aPbj3FAHc5-bzIAa-sCtfMCB65i2aQyrudABwe_EPuFaDO5wy77MLYFbaiyPt4zg2M0UT6zF8gFG4wH4iNDpvkeeCcQr4oWTHjMNQ5Sjz7jc2FpPHZ-ADJ5hv2JQ-B_N03G88pV-c_DS7hUsT2pq6--NKzYocrXWKIOd-GHvAPywCEMLFSQyFWTIiJ6Ea1HtLAMUgdBD6iXZM44ppjFGWvOLIqw6Y1vI7LvuUZ32vWfnK6kcq6GWvSKQ773a5o7B49Z5B2OOJaNULz8M3vqSTE2a9"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgySE5Ax9yhTRMsnUBpUB4BD5YHMsxLVMiXyxl8r8mj29NWe-MZT_LA-bxoZOmt935NtjE67SCqfKnr_munsMg7N2m6NnxTkLqYIOtgh4H2Hwe_7Sx9ExlAkobLEtqmZ5wSRfpM7KN18_Ozg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Micronized Purified Flavonoid Fraction (MPFF) trials for Hemorrhoids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemorrhoids&intr=Micronized%20Purified%20Flavonoid%20Fraction%20(MPFF)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Acute: 1000mg TID for 4 days, then 1000mg BID for 3 days. Chronic: 500-1000mg daily.",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 50,
+          "sideEffectManagement": 25,
+          "totalAnnual": 475
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 731,
+        "icer": 4750,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Micronized Purified Flavonoid Fraction (MPFF)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 7500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.1 episodes/week",
+          "baseline": "3 episodes/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Bleeding Episodes",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoidal Pain Severity (VAS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.7 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoidal Pruritus Severity (VAS)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "3/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoidal Swelling Score",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/25",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Hemorrhoid Symptom Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemorrhoid-Specific Quality of Life",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-4.9 doses/week",
+          "baseline": "7 doses/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Analgesic Doses",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal disturbances (diarrhea, nausea)",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to 1 week",
+      "treatmentDuration": "Acute episodes (7 days), chronic management (weeks to months)",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkDKgaZn7DmBh7ZelHprfrGkebSXxFVizeAHTAqiehZYkkJ2CxeVI2D-irLmV0FAollkD5AItUQcMz0Gk5Ng-8eA89RexiCK9oJegZYQ2Tu5etih9drC-PwFjuSepjOyQh-Ok="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWt8lm6137FIuYsIXKjTWXPLMrILPsc7TXWr1ktnj-jbHWd_KxeN7OGmzTgSuUJa0cck2wccxHLLua4DnO3435rwCYxrAq9HEzalg78aqwKr4qiZWu2zyrrO-rS9pIxmPIVPbZmZve4ULw-GTmBNj4Y2kSa4WIaU4fzRs-99TgZZXhA7ciHr-sG6lbssimdxUaLTYH4lojpYy7KWyRvvHxPZTOVawfl6Msm0BjSBsZiChXNVSQZl3abTwLF2c9FZ4ud-KyEPrhNt5K943XuSPqcg=="
+        },
+        {
+          "title": "rima.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELm--EvoHqMJ8GUjMmXCD2i2GBDRhuxpu-TBRLd-kYiY58RrT5AReygQOHL5HaSz0SLwCuW3Bcvfns-oLLPubNluffdl0mfQ27xcs2XoRy2JKyQ5BSxnjsQobgI0hpI9AY6Sod2FDSLM1-7tpkZhpWI_oRzMQsWoA104pUYkYfysGaw0Ex"
+        },
+        {
+          "title": "caringsunshine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdN3gXo3UnJtUtSIAjASRR71dB7aS63rOWAUwPxUPXS8_Wz5papMeAenN1m0C5PLjFVCy68NkghMYYTAgls_FTk21ftfIjSdyT8XSpTYC9H-qTgTnxWAJ0nLQfRVn90RF8WkuiqSpufwdl2vhVkvFGX4tWH1ZQ4ZyTH-QeCbxnlx5beEMaF_35dpaqUPGd_g=="
+        },
+        {
+          "title": "quora.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT0GiPBmtr0TNxnQJ4vGAivTHAe0zISTNggUPDYLxnoZoJigR_YERIGvk_bAvY78lYpg-3A9IVZ1BTTtJbF7-zjMw4_QTtBXw75FNFO1v8yVoPookkXEdRRyeqcXpNal0p1PnTNN4oPTB652xjDYgQFq9u3pqb_ofNGK7xCzmA7VtZOBXoh6LKZTk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9qoCPTbmZfovL67pqgg9QINCYyUgSHUsrngScjKMh8C7eCdNiZtD6i_px0LZX7v-oc32R68zfcCKwnh4QCjcb-5dgAvkckUlRM3DAB-ITlvfwbZar21r2K0ynU5CFPXugXUQA8AYXA-ibhA=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtbwvoGMGqBbeHdI97rPGfRiKrmfUXupKzP_fX-jpuCXWt7e8Sy4_IbjBcFi5QMgkF-_7R3Y1ClvcKKOhfDZJIsMV3Bz4br1wLMipzdE3K-oKYONRdxRNpHT8Th76uzZwCQX0qXip5GJaUQWuyYMtuF_UnJc9fwGq1dOVBzSeiGpOKJTiKiypVj2TD987s2mOotX8fbyccYz14FeGGWZSfy88x5FR1t2TWh-G-s_yU_zs="
+        },
+        {
+          "title": "sums.ac.ir",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECuVCrEQQih-j37AJ9nDnpxqtK5DgN80nm_rKyxg0wh188P32CkRANLIKHoyZh-whI7Oy0Mwm-caLxdzgruxXswSLaTcUToA9CnFudeQxS-Gn35_loOV1T9qGn-FhUz8jxQbPYa61mdbVNCbdqdCWfX44="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fiber Supplements (e.g., Psyllium) trials for Hemorrhoids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemorrhoids&intr=Fiber%20Supplements%20(e.g.%2C%20Psyllium)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5-10g 1-3 times daily with water",
+      "effectiveness": 62,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 182,
+        "icer": 1250,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Fiber Supplements (e.g., Psyllium)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Bloating",
+          "percentage": 15
+        },
+        {
+          "name": "Gas",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal cramps",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days for stool consistency, weeks for symptom reduction",
+      "treatmentDuration": "Chronic/lifetime for prevention and management",
+      "trials": 120
+    }
+  ]
+}

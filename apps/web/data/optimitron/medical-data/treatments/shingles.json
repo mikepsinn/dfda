@@ -1,0 +1,898 @@
+{
+  "conditionName": "Shingles",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:48:53.744Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlZ1xngPtqZYt3ch5cn7tDjxkONirk0_xACK2IUEUdSS1s2hI2_wCYudc33eE1Y90POc2J5WcmVwOcVR7L03rR68TT6JCM6dTl-2oSqP5zDKv8OIuESz8AqU0hUjhPFMBy0Pqk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkhdDqiFQv8TOZs9q5T2J2sM-GjZl77XeRVu8idEnmOBVY-QHYBEbOQrfgJR0tRRpV_Eftg5Tz4v50GUDOT194kh7-glo-U44C4f4Bqt96Y4TS6E1ymqzggySnJZ2_JIDG3W68WVm77cM-9DEZB5zUl316QEBgc8X6ALYjdXZvvF1_fkp4aDhESRIREwYKQCfjtfJiZ1IPImQQaxzkqeRlPJ3lCWGNo7y0k3oxBju7AtoXJzbLws7XmldCTF0LF7fEpkbuE6Bz-W2RSf126YOS00gna1jMmia1A7S5nQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhDUal2d7RCaiSvEGHneu0Eukea23I430soFE0qotd2DlaGIJTr1upjxKNJxevihXZWTqDHZOSodXJqOZ9uK0qJQzeLMJppPGOnjrzXbObDmq6lOrukjz888_3D2h8sAwCox3_"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMLNVWR8P087snrJE43cUfft1FCYuAh4nH1TEQD3rBSlMbC-STJGo_1mfNVWN-tkUvlmxEyPQKTfTuDCxw8MVoWBOfdNN_8WU5-kFKFWWdBhGIKi1gfqJUOFWZWcB3DvXlkC0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2VgOA-KhyJPTCfoskSG1rPlbEqIU5Jla705ZNaJO-pqszZH6xezz55YaNk6-2Y2sBeRAphPrO3tXErvDgVV1ZJIRp3ERxxrHQroEUnnAzhavunM30EglGU1u4iH_86tgrWfAHeH-JCpVhOLimVjbWKwWlMk_jyzYY0jr1CNbcbvWN2eXU6j1JyyVXtcHcpwLeMCAJAs7AOAqsWQ4GJkkyDOeBsoy25g7xBfifRr3VagZcOUDTyeZQLaTfXz4kt6_3IcRJioYVR9iqXpyTnPfm1BXQNxOVW1IA9m8W0UMAwYQYZ7xCtsIYe8KqrAPEJWygzIqSgAHR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbJI0x0fhzogs7T96mFMF7sVcW9YHpt_sEzL2rIgasChTJLXXhafygiTVTI4wTCV33wZXQQjtmmjk92PTnLRZlvMrv-mybrGx8t_Y5o7OyO5Qn-bj7Mtn19MfHn37mvyOuOfdreZ8H2Nohj0zS"
+        },
+        {
+          "title": "painphysicianjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHOi5GuXl4n811JWDbCTiB9HNfx2cDa9RetiUWFKWHxEN4_vPH-Zfd6vHI9tw2293TRJvr9EzimoORTjagQ3vng_h1XqiM8Zd0yOy3tQKna1j3RbxXWHBn-nOvqLb7eheei74dfggcHNvaOwTpCUOPoYMN68BQeaoS-54oJfDkon0RabrUW3tTift7Lg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhbX6LMxvOCs2NkqJNeSrElnvKPW84lResmgnBKJiOASILE5icc8kRjgkFR5lftaG594yAErAcMmsG9LdUCDmwg9nXiSA_-F0mKmMK1hOkVhZU_d6qWEe8E9ZjkWkVFUuNx-O41cvqKs3EVyqY8QDlcY5zJANc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGptJjXQ8USoFw-xcLR2xVCGAppUM_mK8LWzyLHZKtGy2LSi-Vc46nJK7QFnOmVGJa_pZs-Kk_VolM4-UT5XJDrQk9DwqTyLu-hfHbL0HoQOfPhSSutVkannWYATnJ83gr-2Z0y"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrMzfMyqQ-ZrjuGBrdOffk1l7gMW20B14yFJzZmyIix9LfY6rWZ7MvfEkJZKdx-wQv8wI_diP4kxk06FhT405LcbYlIsDtVpybHE_jyaH3S4kYHo_by84TYIwfUUM-ROxDVWvcwxQ7Gy3d9FhHMSI1bKLg"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELdllARX8yPQFg3kNZKPzHTLJObj7cODFMNIYjpc36Mtxx2lNIGDER6aUUUtiDTilC6YfOv-Sn2aqcfeUsOaOtpz6sbH4nZsnQvVgHI3A1m3IWnMtoCD3ioLL_wa2teEIViqopMh4Y4nOjLAHBQJHAl-Ul_xolAiD2BxtFMpWxgV4TJb8="
+        },
+        {
+          "title": "nyulangone.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxajI1kS_bzQ5KXUjEE68DihTNa0zP-OLMBAwr5416lLlXMHSaOVZJslfvrpcUKSNtb5sLPN-o2u2ATWdE2lA5M2b0ISiNDlh19tCawV7qmZV57yVobABQyG3QA1NjjFAKYeGr_L9uoJd3wTB6_0zDSLgXtmQCUzitrQ86c3R5alqkAu6kZ3Fuv4iZOWRWb5vEWyY4Z05xLYTgDBIw_AVWwxpBBDhkSVSk"
+        },
+        {
+          "title": "ClinicalTrials.gov: Valacyclovir trials for Shingles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Shingles&intr=Valacyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "1000 mg three times daily for 7 days",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 90
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 120,
+        "costPerResponder": 105.88,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -305,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Acyclovir",
+          "costDifference": 15,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Valacyclovir",
+      "nnh": 100,
+      "nnt": 8,
+      "participants": 35000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "24 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Full Rash Crusting",
+          "percentageChange": -20.83
+        },
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "5.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Cessation of New Lesions",
+          "percentageChange": -27.27
+        },
+        {
+          "absoluteChange": "-15 days",
+          "baseline": "48 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Resolution of Zoster-Associated Pain",
+          "percentageChange": -31.25
+        },
+        {
+          "absoluteChange": "-50 days",
+          "baseline": "150 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Postherpetic Neuralgia (in affected patients)",
+          "percentageChange": -33.33
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "70/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-100)",
+          "percentageChange": -21.43
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "25 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Activities",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "38 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 PCS score 0-100)",
+          "percentageChange": 13.16
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 18
+        },
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-3 days for symptom improvement",
+      "treatmentDuration": "7 days",
+      "trials": 23
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTo8o5RyKCAFqk942IXrIW-SSfdIWbQyffwLsqSI6PwZX0nS_H2JdmBNav3UYfHd8TR3E4vQ_Txe6k2zzB_f61OQ_dMAyKNJ57Swcq46EY_wilAnaIi_VfCIhFhf7yZnowuQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET2C2TNnOVXYGfLxOQ2a8_xT1WQZjihCMSRWPwxVcvxZonN-PBRfFZkWmTWbCrEtzk9K1s5oqvpCRkYxEGSD7GeyPONef8qa07eJJJ9tPDwMfLBZSlrxQxjvj8-wNkI3OPtmRVzSp8CwY1p1LH2jqFTOYuCD2MOb-rK3Q6HR-YOeXQs8LQOJBQqHTD7Iw7R9V1vIL2uSrXx-gTXA=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZWnhn5DdJrz8tKXyjlkKAf6HlPUpxqzZWX40_f4n94k5DkkZ6B_Y3Tj4aRTD4kd5k7bTMbRsT12v6SUgx3PoZtLrWXo_UZaIpopSlV-tyk0S1LCcGZXuoDoSfrtkGhYbSEW8LM92wU1Iy7UkfuXDRzyomAOIz55w8IOzJMNOknxo="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1o2e3uIDUiV7ntiIjWEwMQor1EMI9LzaZfcTlTTGz56s5N4kArxoQjRPyB3-a5r5t682r0p81czg3LbE6bhkPREeinjvnNPul6WRvzq3NLrj5v94WXxP62PmRa0xmME_F2XIji6UAdI8p9ZHcsDCb4A5yUFxAVZm4fw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQiyeqlLgJJfFTY9ON-8qTAgNR628OdNhGK2Hwq9qIYjx236SeBVl7dOBv3V2Ci15p0zAO8MiqxcfEC_acxFRwaEUMGXToGqtUfQGlQX2m1ulqFthdm06XG52MXTfgwrfYXg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ4k657tgj8RGOTgEZDhjKDlJ2lYlV8I0EcVVbn6xAsLsS6CMFLzsv192-Iw2kubw-iRqDgvokVeDDm57dNhIl4mI5pETTSWt-adXtfg9oSzfCP2srLzc4iDNAZT7tEOtCKQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcHW_pyPRuqXP5IPH6RJTIIrJJEb-6Q3VB6RpGQUES1EXJfQGRlY2gsN1g_I1UerP0bvuoFJ4uwOlP8sgPpjg2TDzOx-Fk-rB5bHEHETR0F6ZhjVC7DumnXpCjawSRDd7crDU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB430O4IgoRHWvNGpI2A38VIdPVKhu148aHsDOArjOMd8VHI6MVEOQWNvtivoxOB2HXkJ--Btu1sGFkNfuWSeSuJ5-pN9ld1Y2UDKNhLKmUCMBlnhc4CwOkdH0iLVVjmUfihFVeNg9EykYnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEComloFXo_2l_qrzmUquEJO1lh0YZDt6STIMOQ6G-E8z18zOcWbZlaGxKg5fhitG9gMjLia6UpKRlaZ1qx9smWwzveUoc3LD7fDi8670z8REPIVX31X1rSgOXzWofnACO08Crapx_MfTWwQA=="
+        },
+        {
+          "title": "ubc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv5yRPfBKt7V3eB9A_-ur1H0jeLBzzWYqJLs4jY4AqMgko7q360aEuS8rUcmF7_DwMsqrScwiFxFNKt7TJ66MzkYwRxYpJ4lN-Zd7PcyXSvSNOQWwf_wTw9Cgnq4l8mXre3BsftkKA6IdPskAFbhZrmgbnD6-Q0A14qA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Famciclovir trials for Shingles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Shingles&intr=Famciclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "500 mg three times daily for 7 days",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 90
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 120,
+        "costPerResponder": 105.88,
+        "icer": 27000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -305,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Acyclovir",
+          "costDifference": 15,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Famciclovir",
+      "nnh": 100,
+      "nnt": 9,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 days",
+          "baseline": "60 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Postherpetic Neuralgia (PHN) in patients >50 years",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.4 days",
+          "baseline": "9.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Full Lesion Healing (Crust Formation)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-6 days",
+          "baseline": "32 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Loss of Zoster-Associated Pain (ZAP)",
+          "percentageChange": -19
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "Peak daily pain (NRS): 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Acute Pain Severity (NRS 0-10)",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.15 days",
+          "baseline": "7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Viral Shedding",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-17.5 points",
+          "baseline": "Zoster-Impact Scale: 70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Impact on Daily Activities (Zoster-Impact Scale 0-100, higher is worse)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "25 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days Requiring Analgesic Medication",
+          "percentageChange": -28
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 days for symptom improvement",
+      "treatmentDuration": "7 days",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy8kexIDkCSPcEyNLvCUkiYm1ZIilM9BAMuMO4lohO3wMJNRr4-l0Svgq-CtWG0muZuKcHcYN0iuVQDtPqv1dIacPTi8V_O8oNeqt7xZ2-mDrlndQw7ALWGhBFBRD7xiQsCA=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGBE26pHhn2tH8b6Y4yZkNtA9GmsNgI_tHqaLcD_XwrIldTZypDnI16uMF1f2X2MA7hmxJCdPF6IQlHAGIc4k-3S2keOs2TcvAIL6GJgXKELMPh3Be-5WHN1mdVxjpcwk="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDzq-XjuHk7_snGjnqz5g8Mk0YPLYiT3ocj2GfdCsczbJXHzKF-1banw8qnXNtXnzmVEhvLrfV2HLlWCvTgMpMRj27Ypy3aw-1ba5VVIwJTMw9ZEwMOaUFEJW8EMzyamxoqLNqPcL0qVDNCJKFISHUpb3AJDT0-ltaX0yQKPAVIb-5ulC48aIDjejIIVMnB76gIKRfBTQp5jlrA3zdJQKYtEvmEXrCGQEwZ_SLIKVTXs_3Eh34aAgVQWr3i2AECQULUXDHTA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVqkpimDkAlcdpvbb0TDhAYxfg0jxWXltwnkv78xbKNoG-mlIvqvpRtfAuzH31biqP0v1o1uvGkx_VDA6KvHhlY0GlfSWtLSVjZotbF0CuiDFAg7WVdjtT7anB7XCfG9YyqiGTIt-g19JXvBmljUkJBYyVbk_Pt9BwAuoMWqo-n7UiAU-mvWr4fFOQtC_Kym-7B11_JXwT1yirMLRzO9BiapbJeKLJFIHmQzEi8x2b3gNBADwwE_hO5dT4SMa7mVOezc5Zm4aSqYCcETsKQfk1uKTkPhr5oMC8133yRwokLunYtye0U0iPgWx8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbHC7V3dIB1xF3UiHdWl9ytaAZ4HXDhTWxg-OoOhDG7Ft9q9q98vpJ8s38Zgb6ctZRs1lZBBcg34JVbbmGvWqnfF9cV7HaOYX4Zytj7YaOKc8kunzipP94DQ_q-yXHGxwL3w=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD1upVOuCP-vBlD09l_RiM-aSmmGGagfwWrbmIH3hC8qvcz2CsSltOiPnSu8CrieJEDNK2dvwgo2wxq8U84XAGIhedspT6RG-7AmSI61N4fLbdpv7aTiuOWzciVYX1-74ksw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3xHN19mTDuerugXEQW42XOmVMO4KjiM_wOscGzE0m1XLHy7Ysmyqxylvb3R7WQLjhTvPgduLEPAG7RpqkMqFV3Re0V1IJ-LQHlGub8ah7nYKHl8Kp-6XKiYGG7NbTd6xe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnhjPkrw8M4qkOGiDQ_K8NfWstOR2BUf8ahym7X2CJOcwHTbqRi1sw8UlSP7j6i5nY9uCIaSbfW6axIcLduNoZb_ZxbAnG6bV8W0z801DkIeTCeFwygXSFBQFiUYbmlf3bMzk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBdmi6aNuWsJDBqF1uRrESvAx-p_7UsOiO8fUk5JOGifYlXN-dNjkIUUHIeKyiz18N4nMQsXU3-x1fXmVZNoRyrLsVGULDGPixiWUw1cBd4DGI-AUhxTnNm7OjyIhCO3BFAwI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGao7kEogV6IphhwXioDGN4tb0r2fVQM6hs6o7v6V4G4hcuz2xWLPc5fPnwb8Nv_k4tvFYo4Y6uROrRHnQBlfgGi1X1BS7LJWAN21ZlZZ2dBot7qMicdIytlqUg8mKylVhtJmoIpDB6EHGhXIpZcOVMW83XMEnRZbJXC3z_yyhISyGEEUdJA0BBo4oi0tpYK6Auf8mEP39sEK2GSIFJ8aBeylr9BY9u8vPT6rT6vHobt1CK71cU7qbaPwJBqhNyuPogiIfF63NgbVQHcnQIFs1sB637KWADksPLXApxXbRmxUE7WfBiD9wCdRL258KHw1KxfScCfg4="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwP1CrYrE-y-XbL_2-LoOdJGPSlTzrcgH0qL6Pkiyv-P58_VbcsfF1mXtv2QJge8ORAzRRI2ARCQse1jfxkzxk-Nfb0vmo0ZCkLri0cPgc3KxKdfhvlS4ADiSUVJy2AZcF_WiE2laCcIXO"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwPfAhZ1PoHNFelXcS6QaDdoreJE7_dMYQbWuy0R7wNwMoq9Zh1IrtjseJPB6BUnTQii-0WzIEYIoe0i_3z55aIH8R8BG60V42wtWQpQVD_L9tNh8FekTyk_HSvokGBhA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTQUbIP3vnIgemmzI31H3BOK4BDm7VlFCcytRejnZABOJtLF48MxqD_8xC3JUOzaQYFBZXpSnn57djqRAqRzEaCDn2DlNFEoT8EQqV3BDIK_dAZExN1AhmtjB2Gr03GQHsYF8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acyclovir trials for Shingles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Shingles&intr=Acyclovir"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "800 mg five times daily for 7-10 days",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 75
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 107.14,
+        "costPerResponder": 93.75,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 7.5,
+          "annualPhysicianVisitCost": 120,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -312.5,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": {
+          "comparatorName": "Valacyclovir",
+          "costDifference": -15,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Acyclovir",
+      "nnh": 100,
+      "nnt": 11,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 days",
+          "baseline": "8.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to full crusting of lesions",
+          "percentageChange": -17.6
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "25 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to resolution of acute pain",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "NRS score: 7.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak acute pain intensity (NRS)",
+          "percentageChange": -13.3
+        },
+        {
+          "absoluteChange": "-3 percentage points",
+          "baseline": "15% risk",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Postherpetic Neuralgia (PHN) at 6 months",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 80,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "21 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to complete healing of all lesions",
+          "percentageChange": -14.3
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "20 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of analgesic use for acute pain",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Rash Severity Score: 10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall reduction in rash severity",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-3 days for symptom improvement",
+      "treatmentDuration": "7-10 days",
+      "trials": 31
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTfBBmmLARi-G7bJbfzY-rd41ORAGypYeOoAx_Fi0MvRifuHLAYdebh2aTsN3WFeW3C4tImvioEBFvH8r1U0ARLihQvUFbQyAcLeHSIvDLVliCVIGd35rW9ZtmanSA1sv31Z0MlSGX8mKX-5ITb3N6SiYdAPH4T6qQo99phNAkSskc4K2Rx_Ms5be5Z9hT382FKOueGXVsxgngLejXgYbWYT65dkUe1rf5GIhVAjVGbUkFV9o-ko6s0Z3gUHOM8r601Pc0u8dCiEzKT2PcTOSO5yJJKZtndEOnGrbQoHIGhKXGw67xm8yo8ofhvM0SztChLjt3qy4Ys5cr"
+        },
+        {
+          "title": "ui.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcxLYA0Odxg9jYKGOhDUYyzmimwhxlwxJfO3sx10zdhc5QCtz3Qd7NWR3MlONihWEiuwhVhrPSclT3W9GsiaRg2PJy1_0REzRTpUp0isiCKlDAIkseQhMB0vEownBHqYAbWUmoWFlTvyFTbGAUN44jJprBJSvruamFMRMWaJdSrT-ll6yuazH5DvKL_xQqvyAM3NZ330ZI1z03kQ5cjatGCCmKRG8U"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc3txgaV7uAfYPH4RiopEyBc1j2CwtinFHKrGweegg_1qwmysd3jaoig6IyxMhxwKHI5CjbF9Hl9b2MDXuLwpMyhq4dVOx6wkLbSeKJeRFY6j677dIM_5hjmj_xSiLehsbHYA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBSssdh9wnXcQW0HfDSikYCNo6FiYKT-oCnhKJiIzwgJDk_wwux0AMWT9rFtTzL47X1EEXgu6IeQE2EUzgcu3fGFAzME02oFZQCPV25jO8R-1_xCJsDUQH5dROeAqikXoehwUZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdsoiRp-B2JC8gJUqz3Dtxzy23rbrW7H7ie1Igsx0j_rZCnjGodtsN9AUYDtkwpt7DHhcclyZjRluDz3bRawsFVNKxBb-uWEAY8y8W7F11DjURQBiaAQshkhmfMzXMA0YT-BTT"
+        },
+        {
+          "title": "firstwordpharma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlELLCce0L1sfh7x_3OxMOOxdh3ppPMFqFYemVh7BI60o6zIqCOGYfhbeCVWtck1m7nOs1vRoqB9ghvU5FTNapkCLP5FXncgm_6w94WABKYVMEEGrotsE2zCRCp7HcTWTv-K8T"
+        },
+        {
+          "title": "iasp-pain.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSETPYaDqnEHL5_vALFvgxaG2u23Het7HjccrP6hGhP6aZdAzIOMrI2f_NW73l4bRf2Yov_9eQiN0Ave0Qy6kQXiKMkhETBLZ2Hv9KQJnnUL-fEjGN6T5APSlOoL84kRAq4LRTAaNhqptGKmo8cUXZgto26yWtnk40q7nurM8B_5x0IYsDT4D-6Jwk0FRsORbR-QOAuFLOMk9RSMypb2im1TeVOekTF2So3FAOMe1JtSXVhS9U740pZbkjuwp5nUSDBJ45UYnefjIUrBU-Q2B1J8fR1Vhpe9MccNX_2OjYgU1nlyOlSbIZ50A="
+        },
+        {
+          "title": "escholarship.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_QaCFXpj3bP1FaaUF8taz_puyys9w1e84Z7O9S3RHV2AesmaGtVFnyDzVjimxadXrfJv0TE_GNyFWo66kinIhroHknucL5ArGkwPwoDajQFVbtCNOVsUBxjTuZ0p3Wym4hDK-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Gabapentin trials for Shingles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Shingles&intr=Gabapentin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "300-3600 mg daily in divided doses",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 280
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 509.09,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Gabapentin",
+      "nnh": 20,
+      "nnt": 6,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points on NRS",
+          "baseline": "7/10 on Numeric Rating Scale (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Pain Intensity",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.6 points on Scale",
+          "baseline": "6.5/10 on Pain Interference Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with Sleep",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.6 points on Scale",
+          "baseline": "6.5/10 on Pain Interference Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Interference with Daily Activities",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points on VAS",
+          "baseline": "55/100 on Visual Analog Scale (VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Health-Related Quality of Life",
+          "percentageChange": 13
+        },
+        {
+          "absoluteChange": "-1.5 points on Scale",
+          "baseline": "6/10 on Neuropathic Symptom Scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Allodynia/Dysesthesia Severity",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.5 days/week",
+          "baseline": "3 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Rescue Analgesic Use",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 25
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 22
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 8
+        },
+        {
+          "name": "Ataxia",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to weeks for full effect",
+      "treatmentDuration": "Weeks to months",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWYzja8s0WRvRp96PCk_gU7QqRnW62t0P1iVac3mQSodom0g_-R8Ce2AJdv6ZnCJuLuZljOf2VY6EeFcQG4Y9sbHiq-yDQRLgmcozAYjclKIUmruXgQ2I5sy6_Mfcm6fyjKGIZp3BtDsYyb6U="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEauTpnipT1h7OWiMZiBR7DvRsIOSQzdyXDLn6lupEV_CxFC5JYm_5UfVDts7_QK7YQ2Z9OWDmnls-Wy5nRV02TG56DW6gbfqqYtXph968TPYf3WV7HgD5A3XQcyZeOdA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGGrARNovMHlmj9dUlj_CqNquaUxi5ROAVrjEkjrASD7538OCltiolnyvvF0lqOp8nQCypvndAvgRMKgBRP5ZJKBLRH3J_tE9Brg3oB35HH1u7OTxxpzrHaoksZuw6WzT-CRwD"
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3HOMdef5KC05jC4AAQAplG7o8IZm3_objMmWx7c83aCojhLfnLaPRSG23IwoddnQAa6mQ4Zk7zSc4KeyUOZ1caKUEo0P-VP78OUFCqxg3bJRvmvX_qNV784S7hYLFwEPV_sgm7LqFUvjuCzJF6Z3wjsuQIQU_0WQJZ2Iw5HKMah-cNTfxZ8znCOd61kfLd4k5pIJSs_9sMh8H8cjN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXxxb97tVG50qXOsEV2ZgFZLuLimNbn1jBf0HUTyvxaWT3Rl_4kgMgIWDMNQVLaJ2F8dQz8Zm_F_majizkRIlYgkcfVYPsQEBOGnCBaMgL_-rEkMXkDgYLA5nj9KmF0uPGdCXPC6U0UD8tT8Xl_IGaavw0gUllhxIHIgKRx3d0GLiopVJIEJRXSZ_9EepWpduy5WBusMYN9IEQ8GwLjTNCbbjqN2U-soulUopZP2kDaPNRv3EptLbO3XJ4xE1WqSCcWfiGSm7S_DOVTVrLQ80="
+        },
+        {
+          "title": "austin.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlLGoxp8UFYtTriUVZDb0-4EHkdFkHllpjp81o5RUmQ0LQ1EnuMXRFgz88PU3n_RJIdWB8iQTn1ksxGpQ3oW-pR_PPnfVZCWcqUVFPqF-whZRYViMwXeBX37ASdhdCd7MLmvfHfV8SpCeu5l7Oyw-XYvRqCHP_zroVP2CiEVJ3ipY3lJZ-3a4nW188ta6s76j2EqkX_Gwohz5ecCYs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNYdnnwsMW4gZJyyuJ5K3rnRsLMk_xJGAuCkEtqdxCDWbdAzzz02Qm2iptyMNePFoBMfxx9LGGLQz-_Zx5q0RSeVAJGLMdlRej04obxyeXw_3bEnhABpkX5iBXt9LeIHzb_3zT"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMx-v1-tCALZxkaxDbeAUmlB24HGMbXm4sDHmTEPfFN28uuGkyW5AG3DIomtlF_HlLS0fY16AWl-B0c55JYWOiW0xTyf61lewdI4Zc-HExEOoPo4Lg8IsbmEBB9q_8JyUxtMMDf8lJOEcf5MbFQJyJ-B75ba2b7yaGp5rECWN-K3Y8MiLb8ZxunvgH1qCyzoVM0R87pib5MuvkoupTVT_T-XJ6UReCd_W7JfSK6PRodi1FL63AkDiKEcrnSqVBdyo5OL9ZWLZUbk1y"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pregabalin trials for Shingles",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Shingles&intr=Pregabalin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "75-300 mg twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 636.36,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Pregabalin",
+      "nnh": 20,
+      "nnt": 6,
+      "participants": 7000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points (NRS)",
+          "baseline": "7.0/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Pain Score (NRS)",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-2.0 points (NRS)",
+          "baseline": "6.5/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Interference Score (NRS)",
+          "percentageChange": -30.8
+        },
+        {
+          "absoluteChange": "-1.8 points (NRS)",
+          "baseline": "6.0/10 (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interference with Daily Activities (NRS)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points (EQ-5D VAS)",
+          "baseline": "55/100 (EQ-5D VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D VAS)",
+          "percentageChange": 18.2
+        },
+        {
+          "absoluteChange": "-3 points (HADS-A)",
+          "baseline": "12/21 (HADS-A)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (HADS-A)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2 points (HADS-D)",
+          "baseline": "10/21 (HADS-D)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Symptoms (HADS-D)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 30
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 25
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 8
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to weeks for full effect",
+      "treatmentDuration": "Weeks to months",
+      "trials": 7
+    }
+  ]
+}

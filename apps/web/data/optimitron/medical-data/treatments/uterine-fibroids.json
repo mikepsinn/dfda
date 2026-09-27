@@ -1,0 +1,989 @@
+{
+  "conditionName": "Uterine fibroids",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:07:11.773Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtvlBHkQHxBDPjXbsKZVxfjYk71ZvNQAbV5_uKZtcbPW2vKf2NBBPBLht0Ss2IhAFQ1Slr5Nkrso4OYhwqpXrj4azYVewevhzBDlXcXnv0PTiSYO4MK1PbG16z4dopVAHCXlXtVPZVylHlSq8eT-B3gKUel80QXR_0Iiy0XlhfsHTetlXvqBK45XhIl33ZnMVkuaY8M6acm57k2ib8WpIgjDBglXr1dnJIlg5DsSRb5Xz3LcT5rKNrVRZJbSi2W77W4QKG8nYNwVbMD290bxv1_nHe5Wz5UDaJvZ5xrJiAG_VKlpU8lW4M2_wMhSV94rq04_ej"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzenHsTMQ2cwzA_T7Bk9Yi14Qcd8lYFzKJ6A_fcEUakmNW_6FkPjkYbEUNx2eK9MdfJDST3jaWkPhdnUXeZEO9hXnEqxeCaAbwZwxdt2XracACUL6cOu6ChRxaBzToOs9XF52dkGL9z81YnmBoTbIZQftE6mM9ktvaH0aI1cHbRBvhenmSp_rTqbvask1utOw6O8MDW-asm2JPD9w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfc4eSPJ6RdsqfNwkAnYAEB44fEDNekQsEM0JSpeDYTP6JdQ3t2W-wbDxs8I6yBcy44tMVUvzFxXxIbiqUb2hNiduewvuwNk-5416oJgCjEitxq3x9Ex2J8T9_M1nzbXsATHN_GhfR08Jnyro="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa46_WpUZG5qnrwePeay-ISC9nnB5mqgxq7i84EsmKbP2a09ScXGr9NWpbZ1RUijh8apsHPNWTwfGTwAccS25KMwwuPf2J_r9A-Z2jBGwVIVwEdFXWH86MyBwixjJ-p5YDRWyEKj5LqKhgRtI="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZTX_6yBTwhV9rkGsOD_p80asDrKAam7GIVNAUP5vWu8MYi7zCdVnv3mE1CRP4A_7Wii_HhayItRWdoF4ZDcrqdydTwbLb_pTaW1qQM75wjBCB0hfx2obIQkGrX0FX7xX5lIsH1RRBXRs0T7AzBZgpOlTFnYglAvc0YKVvABUVopfE_xWgmbnztEWqMBaRWUxMbddfXOkId4qSpKiY_CLkRgqYMa8b6-g="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hysterectomy trials for Uterine fibroids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Uterine%20fibroids&intr=Hysterectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 100,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 20000,
+        "costPerResponder": 20000,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": 1.5
+        }
+      },
+      "name": "Hysterectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-180 points (complete cessation)",
+          "baseline": "180 (Pictorial Blood Assessment Chart, >100 indicates menorrhagia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Blood Loss Severity (PBAC score)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-55 points",
+          "baseline": "65/100 (higher score indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Fibroid Symptom Severity (UFS-QOL Symptom Score)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-56 points",
+          "baseline": "70/100 (higher score indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pressure/Bulk Symptoms (UFS-QOL Bulk Symptoms Scale)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+2.2 g/dL",
+          "baseline": "9.8 g/dL (anemic threshold <12 g/dL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin (Hb) Levels",
+          "percentageChange": 22.4
+        }
+      ],
+      "remissionRate": 100,
+      "responseRate": 100,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+36 points",
+          "baseline": "40/100 (higher score indicates better QOL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (UFS-QOL HRQOL Score)",
+          "percentageChange": 90
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "6/10 (Numerical Rating Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspareunia Severity (NRS score)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-7 episodes/day",
+          "baseline": "12 episodes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Frequency (episodes/day)",
+          "percentageChange": -58.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 90
+        },
+        {
+          "name": "Infection",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 8
+        },
+        {
+          "name": "Organ injury",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate post-recovery (4-8 weeks)",
+      "treatmentDuration": "One-time procedure",
+      "trials": 56
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5d9OlNMFQQlumiwHoLcf5-1Vbmi8NB1mVm8zEo7syi5dmZJK9PukBlhzlpdBP-1fPtCM-EDuur5O9DgPXL3UkNemblg3c_6xI-MD1yDzY9AcyzzGyMxpxRHgGBKFtDTFV-Re_V-e9c4tPH7RkfeLWIuJdxz7aEIYzPS6r1oYWn3NS0flJlSBwK_hCR0CC7IBkH9CM6s9Kt7egLbROnXp4xeXwkF4OWDdPfQGyn0J7anuwOKjmdKwDW19tKPQlF99g4df0nYcABzaRIkOtfgCjrVpmii4uTlDX2FMTGNxtEFGAkQ6kJs7i9YwJzv-82DPOzrWQgWrOwl9MtSj2nXO4k0UYyyIzenXckghuZw=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlcbstwKdS5kLS6cvx083OU8W_r_8Qt5XJKglAFjjqmPUj4SlJe29kuKwTjWcCL8nRgbo6fGkXUq5KSnlbTGQE-wN0GGq9doqNjRCqG99b_BBR4Jq-hoJc70s5vEDmvV6AwFWyy8U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdwvaPRnMtmwFjvQlJ2iJzmOEi9-zu38q754URSxOylI2qiOe4GkuwRjJaia08Y9rS-pO04eDIuTl1b948YfrtofzI85--pnzoTC4G2qJF6foq07DuZ6ENf4Ptpy0SfuNiUHR81Y89YceOmkLs"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkPzoentuXX7nC-xw08ltm9C5pOYxxIxFu-vY1uvCP_PQSuR2tvLNsVOuETbQB9t56LjOCHIitKQG4hmTse0MwsSAo-MrgSUEK157_6vJ7guWwXs4nPbV3O99QpT7xBVAD_xdZG-Y0Z43NFWiPqWG5l3VEhxjuw_UBqUq3MQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRZybMFCtjsWgehPLdcD60xY36-KmCLQdVmuCZR7quASSTri29nuGWdGOsUoVeLjaA5Vduw4mDIRjHJFbzj5FEVoPMthuzZt3Bg_p04GVhAoxlR_yUlbG8t5OyUQeQSUOuftaO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbwnwLgETwv5osKDadpJCvHAUq_Oa3nfJZl2nqmEe-r_dG7UDHqAni6cUfuOvEU6WiObpt3iuhQurAkAp_Oj3-zLUpEzCD7EY0qoMhjfZiFvs7XfT1NLFuBc3lwnzRiufG7QYr9kzFMOPLLQ5V"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK4dQvZM4Uv_qFnkvXWYjEAFynYlss3W--YLmAbkddyWUSbw4X8DeygeRdUcd5dLGc1S1udi-JBAcuiYopq0QsO_9kB5n63BLK1lSi_oVmvrWyDvRs2xHHvLSzE4Axw5Nkv-UUJ6wpUbjgRG5INBIyb-izM2Xq2BmmrWtJV1sbjTg9pXHFaA9b4QFEY6X-D4kDjiqMrTsbkSlRn_53om9IXW5Dc9pqCPIWTIe6Nc5cvUkYF1EPjRcKlZ1Y-CFmAaG-mz0_baABRhzV"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo_M8029jgdwJJhd63yjWrsxJcmaNgJZ_ZlXjQzbllr-EZ4BibERohZmCSK1KDx58gviEzuwS87lSor18KpQW3YpnHB7qJNERZ2Gl7tv-V2oF7Kw_7zh_b1rtG5WjAw6Z9RhamKXxKhxdicVVgNpCeeqedA6gGG1mdVv8xE9Lk-R3ZB7un8QEPZQj_Y2-CDl5Fotl50nK8tKhCK1njmg9cxlvaEGiZWC9ThPruupQXTkP3kcbpsMGTzzapcGXpTFaPl-jeCuwduY_WIR104Fz0htdNdqP7NMsGxOgLf03P09MAJ-kSd258Dm1X-OKAaez7qKgFhrii3g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Myomectomy trials for Uterine fibroids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Uterine%20fibroids&intr=Myomectomy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 16667,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Hysterectomy",
+          "costDifference": -5000,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Myomectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-175 points",
+          "baseline": "Pictorial Blood Loss Assessment Chart (PBAC) score: 250",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Blood Loss",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "Numeric Rating Scale (NRS) for pain: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Severity",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-270 cm³",
+          "baseline": "450 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Volume",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+30 percentage points",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Pregnancy Rate (for subfertile patients)",
+          "percentageChange": 300
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "Uterine Fibroid Symptom and Quality of Life (UFS-QOL) HRQOL score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level (for anemia resolution)",
+          "percentageChange": 19
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "Female Sexual Function Index (FSFI) total score: 20/36",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sexual Function",
+          "percentageChange": 30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 85
+        },
+        {
+          "name": "Infection",
+          "percentage": 7
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 6
+        },
+        {
+          "name": "Adhesions",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "Immediate post-recovery (2-8 weeks)",
+      "treatmentDuration": "One-time procedure",
+      "trials": 101
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNIZ1PfcY2CxKsrX5dZfY7A7YXdoD7cW_oQL1tbTxg71RnNqU1Eg9GYjEtLGMxA8f1dqd29HnYdW5VeZXr2gMuInTz4MhCMCbeis094tOU5pPZsvAL1osXSpLsElI2NLYnMcftSxpui8mM9A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbxhYhsa9UP-O3DdrhYZWvTzqBh8q-3ryrDJlbc0TVlyXsDPnZZHbzSoQDIS-ayrF4XN9nIlALJ4BbFg6C6YA1X9VgRRxuu_zCCuUDIAGzO4qtxf8rQhYb58GbOVH8D2jMoH3Gjg0NDHFP3MosDkuWw4jxEI5uulXYhsy6hpLJxBD76Hrjv1lMylPEAxOfMlePbkvqvFdzpoyug4hhP_JO4GBOKKnG3Gx9aMUUN9LoPpF6U10XHPm34fc2y-NHO8ULBm0ZqcK45vI4DZYwT50qzmSkCG23t6vl-oHo_pPVM9tqfpAqYw=="
+        },
+        {
+          "title": "ausrad.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGSymIY7MGyRLgPOPEg_wy2BldQS0QKuT0FZma7sKFC8dQodQpes2SuqEZkPV5Jz7RvJv0A00EaElXX0ZR84RUaOvvyW_1f4lZBpNotvvwW2YgCPy7BRRU37bJnrj1Z3Iswpe5beq6n4TTlEqlE_NvL7C_BAqAaPKL4GzR_1UPU8hVs6bVPOgabsSaOwwThDmg84N9IdfbarLASIFq34j0Tt0fvLrvXlmsOQn-23oAaA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAZfpx0cJyCe29RTU8StVzaMIHPYPrixTgq3YIvFV4MgnUzJZXcflWHOpkct6Voewoizgw_M2INCn2HdYMPbR3Myt7aJnXZSB7STak96A9JUUFl9ZmhmCznt9cNOWKS77e3CTcLzm-o702Pw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbQgviBtS7YnGJA5Ve-As7IwPz_mbKBs0QkYYrpyoBSx6wvA3YG172urVFKw1WvxjyUVCmG3e2JeFTKk5sh2x3WgHlWSUDOlh20tVn0kqFyCw9nxoO5501nn273fbv1DGSdOLK_5TJ4VYr03o="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR24meJ5IhK5V4LjZqwX9297FTppiD9dvVXjOFohIntetmgOBVjN1C0yZj6fOEW_l7dmJEbiReeJl_tdi0TcsTh2UFCf1p2px__i3WXRflhyzVGdjCiPFxdO6jw_hu2bazh4qrgw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxg9ePpA4vz3v71Yk8MHkepOMji1YJQJFd3jDbiJl5m1f68wRP0pYFcAtusFxanlxvGkOPpG_v8t0gXVlvA0y06v6NnLU2wMwlbIDu7Sz7hg_iqjyTvroyrVojayZRbLEvGxo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1cSz4rsSnqUPG4yOvjuHG5j9dRzWax_lk2ses7A1o97TVuR0L87OHGO7XOY-LYHPIoeXxV8pPTAKadILAwr0LeTpDtfgFzrfElJL_Ixse3pvUotcFSG30LwhAxzhiV7-GkbM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa9mgt51dt1Vu0S-VZ34dSRBIJsJZW6BnCF7JVuYiZo_0VzzC-Lv-EKdC1kR4N6rGf6Oh4mo1xHKO3LHeHPa4b3UL4mppfGZjmITW87ZmU4maWboSpzA3r03RZMSe84hKRv56ji7nKxDlJxQeSvthVZWx-aQoMREA_oMKwtatCGzsiv8mMjq2AJJWCJAqb8ANYss6Pybmef1Or-4yZo8D_ktIxmG5tQGv3E9hYkuCT0jKF9tbxBL52r-_FiUrS0UYomX21PNAKY7F75PANAPh8tSXuQON7yuzRG4IEBUHmAl5s92-buwJQmx02HyjTxitARV8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbYipe--WFxB06occffG3URKPOjUQWQVacKhQtkmj-J2Y2ORvDA_ellHr7ZxK7gETbLg08p39w5LJtvtRH2rbsPGilewgAgfRn-ko_vkStJ9638Jd3Rv8jqNOcnYS16qJsyOdtG8tVI13hjWnF5uGDwyNfCfuTyuX333BWzQWDk0dGCAZ52YGdXdAhis90Ls1R90njSrCD8PolU9cp2QK654w1gVxiZGyFdBfcGvilpj_aJItaO-H6N64yNUE3xRxg"
+        },
+        {
+          "title": "ClinicalTrials.gov: Uterine Artery Embolization (UAE) trials for Uterine fibroids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Uterine%20fibroids&intr=Uterine%20Artery%20Embolization%20(UAE)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 13333,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Myomectomy",
+          "costDifference": -5000,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Uterine Artery Embolization (UAE)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-36 points",
+          "baseline": "60 points (0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Fibroid Symptom Severity (UFS-QOL Symptom Severity subscale)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-150 points",
+          "baseline": "250 points (e.g., for menorrhagia, >100 is heavy bleeding)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Blood Loss (PBAC Score)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-140 cm³",
+          "baseline": "350 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Volume",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-100 cm³",
+          "baseline": "200 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dominant Fibroid Volume",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "40 points (0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Fibroid Symptom Quality of Life (UFS-QOL HRQL subscale)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+1.1 g/dL",
+          "baseline": "11.0 g/dL (mild anemia due to blood loss)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-3/10",
+          "baseline": "6/10 (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain Severity (VAS Score)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-embolization syndrome (pain, fever, nausea)",
+          "percentage": 80
+        },
+        {
+          "name": "Vaginal discharge",
+          "percentage": 15
+        },
+        {
+          "name": "Amenorrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks to 3 months",
+      "treatmentDuration": "One-time procedure",
+      "trials": 13
+    },
+    {
+      "citations": [
+        {
+          "title": "oriahnn.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7GimTVn9TyjTcQuJmPZrUzb-Vmku2FDeDPL1pPMe46kleqbQQfKG9dsHM5IMCkBGz18Sah2TEuFFHqz94V8fCfTRohwgKybQWr5yPpqeKXOKdb8YBHjd4Q43Qhx-qv3IU2g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHXEAT2n3oBKNUGsBpwZl2hTU4_OxDDUkkbnjjRvErisAUHfCCS0ssCLyQtThb2VA_j_W6vLwaX2tuvjVzrHYYHuCh820th51MV5_0W4pNO5qYyNeb9wvVYTSH0rgJk9ZCTUvuroNTg-cwE7rqrv784_etCKfFYITCC1WsVjApN2zUtl3IvAM-4u7WEBy7o0Lb15xfOai37KqtDvqyeUgpa5nYzJHIZ9u4TAU2MwmFJ3PRJePSNiyx0qEtQPWY58hfID4j4igshLaMmt9-uO5aamJRXZfAAuNysyLk1qUJOCns1IuEx3Z9tWR33Eih"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMmg1mXLL_hnFYXN1LMFrTD13Bv7mgIBKmrPQJjJu3Xb3BQx2jD97HYjFOnzoYXO01Ho6FE43datf2Iv4EZcy-TySPTcbns5Opc7Fz247heprz2VA5onFJ4TjGCTKA-qD-Ix_x"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzIwGI1NTrB8N1XoIJGEDbY24xjxYl82j4b3Ixy-NuIp2QCdYQJxDPIbrsCIy1S_H4wpBl4ZDakGgI09BxaDe-kdJSKbT6RoGOVpT1aUckccbIMQUjMjCW0XBtAJftSrOJeTEKdHXyF5HEaAVgELi0H40tzwPYjQrL_DYk484VJXhU48S7NDyRopcvPrLNpWZuvky4NaOvcg6ttIIE6c_TWh1o1T_u0j5Yyqdl_kMPtOGenNH6OsidYMQA2xj5wHtmkw1qPmPPZgIZqc6EQ3FqOX0AZBKunONSqy_OfhUceKaJ8-HbJhjfzMydpXGm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9ENdILw-R8BzEYYSpTaMaDWggKv_W4B_Wv24v8lzfCHv6a19V_iLkoDei8fXr-D4scOBwUxSO_PvDl7FlqngsI9I8IJxYXp3Mn7nGgpkbZWUCvfHW63JUTY46oCmumVTjuxgar1QOViXj64OSfkiQCju-XOBptUFoKBdwMLmd3DT1K-I_nQqR_g886IHgL_gkUuDguV99kQETXq2B_dkXdC_3wR_5yEzyNmXbAJPZn-U5iicRpgZEO20HgmYokECTYc8avXOqdkiD6VQZk2E5rrX_MmVuB71veh-IxKyiPnB-hoiswc2GsJRRJC2AaKRmejBmQD8gn5nFD3SQv-Stp-sVjYzU-dQsZ2GlwYZ5PQpjFTI-GUVTygIthkHvdAiPvjBfaSozPlqAT_DyvTJ0"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwCl5W-nCinCgyHgF4Ds1-XU0C-XR0o7hsmvczLSqszkTKObluO0ZOYZYn-a3kW211BJP3kus6sYNqyf7wMT73SBT6TNSWSMbSKNQ8Ge0Bar30Z69HWKFzZ8SR-yN68VSt4a0hypT_7aniIA=="
+        },
+        {
+          "title": "abbvieclinicaltrials.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdZAoJRC5KYe3kvJSGjMC-guge9abB8jKGQ_LXmo8wXE3-psVi0gNBGL1PsX9MfRnSGjNUz6PIzGAFYiEy7abidgVzePrtyHnf4bvPaq45Skro4_Abc6sWa478pqEwQAXPfPkonyCyvdrIV1i4KT_IvA=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOgs2hqoQXEAX2tZHbCF2MrpQvs8lQWwh6o9wX0mfxx476mZX1IUR3UXkxac_FusE1ax3ffBlvsEQ0v8o-61CQrhCvz97tPRS2aiJyJ36oXPpeg5zfEerUYpO5rOG1Yt6e8t1tHp9o8phzZw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Elagolix + Estradiol/Norethindrone Acetate trials for Uterine fibroids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Uterine%20fibroids&intr=Elagolix%20%2B%20Estradiol%2FNorethindrone%20Acetate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Elagolix 300mg daily, Estradiol 1mg / Norethindrone Acetate 0.5mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 16000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 16700
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 111333,
+        "costPerResponder": 22267,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting",
+          "costDifference": 16700,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Elagolix + Estradiol/Norethindrone Acetate",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-175 mL/cycle",
+          "baseline": "250 mL/cycle",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Blood Loss Volume",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-35 points",
+          "baseline": "60 points (0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UFS-QOL Symptom Severity Score",
+          "percentageChange": -58.3
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 14.3
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "7.5 (0-10 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea Severity (NRS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+35 points",
+          "baseline": "45 points (0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UFS-QOL Health-Related Quality of Life Score",
+          "percentageChange": 77.8
+        },
+        {
+          "absoluteChange": "-33 cm³",
+          "baseline": "220 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Volume",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 60
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Joint pain",
+          "percentage": 10
+        },
+        {
+          "name": "Decreased bone mineral density (mitigated with add-back)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "Up to 24 months",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxK6bcgw8pMLi6sWGQk8_7xg6_DgA7Pj9vr13_8kC3zHZoKDb1T0Fwd4FtKBdMgy0WtlyjS3mgtvBMbTIqlCCLRqHwXFNkGIcAEme8esTVqpAj0zyVJWxI1KCr0jVQP0xiks4pEsQWqewLRg=="
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ6BHiLVsoskhbUt1U2AAoPwHU-Qj8TQRZiEv0PQdtvcfiwHOIRNAXa6PckWXCSFhFl_nT71dO0iyvcivws_R3ZQrrK69NwpMr5hVzyxjo_3ZV2Vn5dqH8W1eEgxQmqJlQ0FjMaFjAwhaKmRqdvRJmDoQPagr5RGElQm2lNxJvg7-FROPyG0jhxSASE5BeLUitlnmd1-BLJFv3snGjDHXNgZvO0Jt5WNUh"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElDrIQBrUganr9-RaeGflgMAf7_LmqBIgOG-UeA7F_PmS7erIPnC-ceCkqqIPnsTwop8rtNWPETUGuc_eCpzA12S5hRHxupiOt0SOnBxEppPWdhli8YkTitCaJjlk-JmG_GNc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7JmFjjZ6HDK63qBcPxDEBWU45Lo7fcgicjORE0I3TOJ0dla-W25TNi5p--Vy8hfpYflZIZQRjKfN-lcs-JjRyZRvUytfwWbX5n04__tEW3tz1apQsBwNiYgvRnDFy9DvJPoFsi1dwiBlXQZSNP4uDRlM9YVe0zxcldEZrKStkbsH9Dea821yOs5hou14-JLtZXVQiuR214DhJPrMHJQPJhVytNTI23hMjVBh7-SA89kQo812KNjNf6uCIdLcna9iL3AkLLjTsnlnlseyp4kwj1mYFlCvm7FuTrSXf50_waYcwkKYdry0XhuVUVr5frhw4VJ9fQQNeH_Jx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHDYNeVyKvlBXyGEa-ioIv6VgfeZqna6d88gxIoq0IgJbw3av0nSjjHZo-oOpt3dEYKBXp6H_4_T1oJujv9xiFGZpnEA2LzIcSsaDIORTQrMhS97yUpRJ5Nx_RUfXKwEV6DcI="
+        },
+        {
+          "title": "webofjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlaQduuvQIkk2gbu2No5WcXtZL4E61_G4sTFvNGX_Dn8ECJkbRnAd8z61eijWIeQHLCH0dIplw3QTzs4DEAH5m4SiFGtXTGr3YOZOQwiLN1X7o-8gIRAEBigAZM5X6HSx4yHJCBH11hrYNUqesJXjGRA4tKddnV4L8DzGmH-NszA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGtNiu_-5gk7RuQIotpGivCkip2lL8ki2PzqzNkpOq7r5xGH5FaksyBAEdC3RXDFPIE6fqb_j75ZwSr26ytkgdATJdoDxC9M942tNjKXEGhjhtgbYMEpLTsLaIS01UkoXVO6zSmOqzPLqAeQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr6bMNvF4H0w4qa4kJJBA2uK5SqCRO-ri0OgbNOISOw7lcdCUZWrTn9uArqt7TSSFNYEFOVWKaAN_clC-bB0AaDzark342mHJS8OWXxkRe3XPIbs-gj5EsjNMEfdVZbwCmAgTeJteQZ5GN3DG44puyNj-leIEvlnlw4Mna"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3ZKvPyjKS0mmvlCSGEP6GF0kPfbK_SxKwyOVRb5uSwWJlhhgqyf3KgIGbZlR77QRTFzwN_r_TkaEqkt-uNSJAlJq613RWZsIRaCg5x6jJOdzmQdVcXLyJIN3jEq4Hn9WQRH3l-E01uK_Z9_GDlIfIj1_wGGpeUSTx1GFgq-I-UlI_95LZPTMXBBma3NPqTRxAoXMdllDh0AX4ZpGmbAB13LzbmSeDtb8q-QV39RFTGsnWnR1lz53uReB6PueZ2NXlzQLVsn0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM12TQGK0vYsdPoR15mDFTWNFfAcTK0OWGMY7DMadX2Sx8XjMYNEWxKYdJyz7DmDYvcyZOmYfgV7yZoSY7Vm55rE34TYNdV029OHetR5SQ74eHl9c7SbjVQllFtDlvZZ0xZkKOrOaFKElvtio="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiofrequency Ablation (RFA) trials for Uterine fibroids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Uterine%20fibroids&intr=Radiofrequency%20Ablation%20(RFA)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 15000,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Myomectomy",
+          "costDifference": -3000,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Radiofrequency Ablation (RFA)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-175 points",
+          "baseline": "250 (score >100 indicates menorrhagia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pictorial Blood Loss Assessment Chart (PBAC) Score",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-37.5 points",
+          "baseline": "75/100 (higher score = worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Fibroid Symptom and Health-Related Quality of Life (UFS-QOL) Symptom Severity Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-36 cm³",
+          "baseline": "60 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dominant Fibroid Volume",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-87.5 cm³",
+          "baseline": "250 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Uterine Volume",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "45/100 (higher score = better QOL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Fibroid Symptom and Health-Related Quality of Life (UFS-QOL) Health-Related Quality of Life Score",
+          "percentageChange": 67
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7/10 (0=no pain, 10=worst pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysmenorrhea Visual Analog Scale (VAS) Score",
+          "percentageChange": -57
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "3/4 (higher score = more severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pressure/Bloating Severity (0-4 scale)",
+          "percentageChange": -67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-procedure pain",
+          "percentage": 60
+        },
+        {
+          "name": "Cramping",
+          "percentage": 40
+        },
+        {
+          "name": "Vaginal discharge",
+          "percentage": 8
+        },
+        {
+          "name": "Infection",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "One-time procedure",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH2oCJZVWI9aL28PJs_y0TrN7LVNmoknvkI57uoDzFgpYvch8mbYT_pW8qbcq30LV98xv8uVCf4HWrhUco6XxI7ZwKU23FO3Z2onnL1vB9iBnlso0Dw0B6Vbrhs6iONIUBZiR6EPMKSQ6wLn-WgJTG7rG3AGU_cuBVFiwfLkFPNwCmAmLJgG_1CgBvaGhSAhwR0syOi-pmztGFQw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBDVReGahfutpwD0akpn8iJlGGOeUdv0G4qkMJhqk3ueiE4CzM1cNlkQCiNuqEQ2eIMR1WusspiWXmb7dZqKe2OFhY882Y2bbzD9sru7cOF2acV6JVRlrbICtJAcX-ZT3aiDa7YBUsVyqWYWk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLGx8eqlRzCJscbRBWPYt5KjRh5TiVZ14aCaS_uZeiEPLr7Jsq1SNgAJiH1m8Grmu--QcUU-oDZzShlbJvKulILcxKt-0mQQIbXZNKsgnk-R-SazJ6LU6nM3smSSx8-YTnROJD1uA2eqvLmT-nTSduW43bczfbsnQM3sxJpswDAvqqFp8yU1Rt2dU9rjPA6_X1yH5Q9UaRZRdMqV-zkdzIS_J3PXZMEebJxV5OdBeqU4SWbZ21SZJsCZCXg97ql5MG-BAuftrqWYujuwdSwyNWZF82c56cDYPPrwVmrYAk1SsSMCpLO8PVvNdO7a-ACLJLayFM2kmsFqqj6wHrXMiKu83o4qeS_ryzsjk="
+        },
+        {
+          "title": "ucl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpNFK5uBDR5vteMgSUsd9mI6tIpjANqF07brFEWwwXKCXlu0G4cns8oNuvCWgpg_9aNavlj5KumIoHMjMQ-44-69aktgvJkHi7Pkx6ujzs8hj0iLGtyE7-jCQ5w-sfCZesB7fwYjlbemvcHBkEqxb9Wh2c8AYt3_cu"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0sdNZ0hFFCFHa0E9I4hz3W-chV_FGffwa9Mo5TUCLIK5S_tzLzRxDp2IGhsfvfK83KdKo9_JT7Be005zKvImVOR-cQUxgciVG40NRUpc1g3JjR8kcrfU7QpzNqQZA2sNZQ4Q="
+        },
+        {
+          "title": "nepjol.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGHqzaysXg2RokJdSuDOPpdOWtcGB3YxUfrKkFbR4CC0V5T4h9MUJJAwgzvpo9y3gmf-hpDQvbqUliTvFfP9WOdJQj62Z8FbMViYAabPZwjjrawyoneSiXvWErVyL537dPZ18i0HoWLD-X6Bao0VFbjMxeYXjGeOT7Pvzz"
+        },
+        {
+          "title": "ClinicalTrials.gov: Leuprolide (GnRH Agonist) trials for Uterine fibroids",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Uterine%20fibroids&intr=Leuprolide%20(GnRH%20Agonist)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "3.75 mg IM monthly",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2600
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 3059,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Watchful Waiting",
+          "costDifference": 2600,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Leuprolide (GnRH Agonist)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-100 cm³",
+          "baseline": "250 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Uterine Volume",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-90 cm³",
+          "baseline": "200 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Fibroid Volume",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-200 points",
+          "baseline": "PBAC score: 250 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Blood Loss (PBAC Score)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+1.6 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "VAS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pelvic Pain (VAS Score)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "UFS-QOL Symptom Severity Score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UFS-QOL Symptom Severity Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-8.4 mm",
+          "baseline": "12 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endometrial Thickness",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 80
+        },
+        {
+          "name": "Vaginal dryness",
+          "percentage": 50
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 30
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Decreased bone mineral density (if prolonged)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "3-6 months (pre-surgical) or up to 12 months with add-back therapy",
+      "trials": 4
+    }
+  ]
+}

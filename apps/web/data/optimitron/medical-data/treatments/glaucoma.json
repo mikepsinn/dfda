@@ -1,0 +1,846 @@
+{
+  "conditionName": "Glaucoma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:10:50.577Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIIGbdcLRkjKPR8MrTxMyKjMaCdlCzRZgBaiH_uvjjeuzgyRYynCA7rZp9DRFjq6eT-A6VURYLb3iOHMAPMSWVtztD-WTRuz-ZxEq4V-4W-B6WR5KFsUnInoUBGI2q5ohNOZs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAB8Zizwg5JRCiLzH1b3UIHXctrWlq68ghvudSEkUL5ToSvqwWK8EVvLhL1rYj2og3FkVAN8v4xZONSCja5Bxv0ZY6UJS8VZGZjTfng3bJ6ASfRV_kCMqfeLg-H222WKm44M4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB5BCXw40ElzpRidAEMDlp1D7tRzp2oP7jPhnvJXivAEVfBzR0sRc_gM_x0ZnGC8uN6HMchl2yZupAdaX553aXfcd06N6U52_CD84XiytS7iILMIndjVrUC7BRF9kyo8djGTA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtLayzAIyWSBHEMblkNPfd7pV9N0aYRSdYzRV1YfGZKg1zWiKB24vk0toxvF87BkWvF5MwHvLEFIK1ZIK17cOaudb3hd_qXnINO2Gkp_OcSZP9NintIToE5O0btysFFpBdxZI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMokmg5Vvh6NrJQKvPnCEVXB3q_TgG06h5avCzb5J703sU8F3KmYwhbzQXAdN3iA58StEd0C-O2jsi01ReEob75iCmqjzB3pon0nwbVhLhybJqP8yWNLaXD1inFD2LpT5TLBkXr53U0fnLd4FU9WT0HHQhSkiZhv0GbrzWI4TVT-iPyCtMWIMhwFQIyOa14WenOykHJQ=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBOMMfwV5qEd1-PFQqNNMp82uW8dqpbUp4ajqCJF_W5gO4Kl2e6ZaWrp0pPiPVMSJnIslEMGA_KvNLHTu55qxAQJnqu8XJnBOgsuhXGH0xCIAbrboMcBimeGs9Qm589SKnKAoKH4989eRUc5R2ipnTxwl1qFyiu3XQg8un4TNqiOOdvQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWha2f3PEfJeMIOuHUy2IT7JaueYzFIpbFIujzZnwK6-Si1yK122SSaZIpT17jS3_Qq_WSHE2MUo-uNI6t42JHm5ZOXoNFoAmOYyinwLmspPeU1iHfjTU3xgVw2KY21fSsAfKDBzDBJv_lgA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvFhubQoHnAMOsDGVJWC_akslxwudP29QsHiLTlB_xHxlzEuVC_OsH25i_mmjLvirTJFVAGPtVUuQkm4Z6_i27eVIJjzPQSjpmi8E81wCcAA7wAb4NNfSm0vHTfzA_jdLSUJRU0GsnxRrLDg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsts0jY1z0dEOoYU1Yebtdy8o6sc6Wq1xlbrCswsTCFugvQRn2i8iH5xoVU9QBbetdgAgF5ZaG0AVWR0kbOCviwbXIzOG0umzCTKtVgbgr6SG9HcTiZ-OJdXGIGpUr0THVfCejfg5o"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK8j3zRn9Arh70n0bCKZS1byk3_4rPC-MzVWv0ZcrKXUyemrLyMvP2B7EZ5GqgEEWjUF24DVh1x-u57rarL8DhgxJ5s3PV9G29sy1FA0RnMib-QV8sWmapGYQdywFfdcdMRGNvOhJs74rRnEAc411qX9S8r8eMwKGZJYQg7gtfa8c9zXFBzvrCZERSzZrBMvV_DhRGIE4HtUWCQIpUr5K84WKjsFs1SuNJ14kx6btbQW23ikPH1fCyfdnm7OyGAYAo2r0BclC07zCqGsaRa0cx_GqxEOYExkn7Mm25zYv1jpDo0kTG2_M5D9SCElAp2tVPoF0="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcRetFBa4DlVSsDav8olEvo-QNQpdP6J2xhnadhsqrM4IITnJJM8hydFawEe2XnA_FZ3bq4aT36khbxse6R80rUNP3XzdgbWGmerpDwg1topPmr_XewlTycd-xADBAQw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Latanoprost trials for Glaucoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Glaucoma&intr=Latanoprost"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "One drop in affected eye(s) once daily in the evening",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 360,
+          "monitoringCost": 600,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1010
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1188,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 180,
+          "annualPhysicianVisitCost": 360,
+          "annualPrescriptionCost": 360,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 800,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Timolol",
+          "costDifference": 100,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Latanoprost",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Diurnal Intraocular Pressure",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-9.0 mmHg",
+          "baseline": "28 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Intraocular Pressure",
+          "percentageChange": -32
+        },
+        {
+          "absoluteChange": "-0.5 mmHg",
+          "baseline": "3.5 mmHg (standard deviation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure Fluctuation (Standard Deviation)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "GQL-15 score: 35/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glaucoma-Specific Quality of Life (GQL-15)",
+          "percentageChange": -14
+        },
+        {
+          "absoluteChange": "+7.5 mmHg",
+          "baseline": "65 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Perfusion Pressure (Mean)",
+          "percentageChange": 12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Eyelash growth (hypertrichosis)",
+          "percentage": 30
+        },
+        {
+          "name": "Iris pigmentation change",
+          "percentage": 10
+        },
+        {
+          "name": "Conjunctival hyperemia",
+          "percentage": 8
+        },
+        {
+          "name": "Ocular pruritus (itching)",
+          "percentage": 4
+        },
+        {
+          "name": "Burning/stinging upon instillation",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "3-4 hours (maximal 8-12 hours)",
+      "treatmentDuration": "Lifetime",
+      "trials": 251
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_kM3LEotqAMtn1O0rYk-eiWdJvjj-dgUSf0CfI94jAwvkNDxpihrbVqHrClWBwZoFZHxXb8cFP0m83lAa9fvjLtmVkuXUp_EhIaE3BzJyUgmO0NNMrktzJ8eIZLA35b0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF054k32mtTdk-qdrXh77DZPpyEwXBakDnjB13eMAFMowQYSP8iY3CgBu4Msq9K2fkQDvFYHeEBgqAdzNfZKaPQTTTXZuJez6rbHPythu8o9KsqR5pI8nM2qTkm8m1nxMTaWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Lzjicy1uHAR3lZ5Qy60E0eLx7A5Oqp7fzgI93K8F3HGQt6GZKgrWNxUv09ssx3qC7--_pA9NugQkHUhXlKwTvsjjchigu4pCpctXil7TVgz_VRZu8jxsnZseifLbwsReW1wgumD0lfSBJr0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd57Mhith2fP852gOwYJC2zj-f4LTGH_bSPxfWgo2bwU_u5nKlVzWjMaP0hSXfi15eBVPJmjVGmgxxe3fEhz4EsmKMeH2O4w6ezhpjesPltZ3liqJM_iPco_KSA9855ZL84OXO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwXAcEjgcVCyI3pGv1EqWqCoRPxwBax9_7JhqS4AOt8a2tVg_CF6Iv5FcD2SlGFOlUr8jE0TjlZ5LHb5fpG4Leosn_AaAZSuVfEQb1SjBBP02uudYNJw3C7eQ00YfYX7zXP_VNvQHOeMQd9YwoVg0XoXd5TXE9n2y5e1-B2CyK-5cRqigeBJDuacsWQ2DX4TQJi_nNi6ojUHu5LNsjVBsnB1gN77oluRjEIbfHek3zjdnwXQKd05rb8NP3uP5B6NoxYD0rWftELvctxKbj4clzZhTd9mktAxTRbmWT-Oc2gttBrat_aknoa0R0BtTwwAo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3GA4NpSklQ2Q-D8jde-eTp07Dn7nCLfhtjlWP6DOsogH8uACfSzLFbHBy4QiXa5_o8CN93kcZKqnZj1e6RJ9PDwCzDIRnEDK-ANoXtoFFZ8QkRWUv_G4kel7rKfZnvwtvXIwu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKX-9zr7v3Ng_46nitHtRSPKyXUcBXjBh9lOk43J1xLgsp2nBdX-hbqb1F-rDhOcyDWM0wVQLtz1vR2uJ9XINoHlddPtR_MXUQTfti5P0n1rUB0NyecX8tGVpMNEPD0bramADi"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBxlCMuKeAHQMf-ZCWFm3ERKn11sDMD1wEE4948qW0-2EI1M3hn9kfo7LDb53CGUQAwvB54t4G0lMeO4sLpXuSr8Qbjnbnq0Y6XOlQYuSsvTqbIEKuNXva_1zwsNI33wXUhyTQQUnv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi-bsKLsc-iFPd9SCXRWhijrwwruyf8ca5iX3YAGDEky4FxOC_LiY2XSUimci2pnq36GbNPicdezPbGzIfmWk69uhUn5f2LtzRInjNcgnL4QuGmwJ0608AdVUUlRZ42_F9yI9PysZDYjVNtBY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Timolol trials for Glaucoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Glaucoma&intr=Timolol"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "One drop in affected eye(s) 1-2 times daily (0.25% or 0.5%)",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 240,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 940
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1253,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 120,
+          "annualPhysicianVisitCost": 360,
+          "annualPrescriptionCost": 240,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 740,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Latanoprost",
+          "costDifference": -100,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Timolol",
+      "nnh": null,
+      "nnt": null,
+      "participants": 180000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.25 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure (IOP) - Peak Effect",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4.8 mmHg",
+          "baseline": "24 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure (IOP) - Trough Effect",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.2 mmHg",
+          "baseline": "8 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diurnal IOP Fluctuation Range",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.75 µL/min",
+          "baseline": "2.5 µL/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aqueous Humor Production Rate",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+6.25 mmHg",
+          "baseline": "65 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Perfusion Pressure (Mean)",
+          "percentageChange": 9.6
+        },
+        {
+          "absoluteChange": "-0.5 medications",
+          "baseline": "1.5 medications",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Number of Concomitant IOP-Lowering Medications",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ocular stinging/burning",
+          "percentage": 7
+        },
+        {
+          "name": "Dry eyes",
+          "percentage": 3
+        },
+        {
+          "name": "Bradycardia (slow heart rate)",
+          "percentage": 2
+        },
+        {
+          "name": "Bronchospasm (in susceptible individuals)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "30 minutes (maximal 1-2 hours)",
+      "treatmentDuration": "Lifetime",
+      "trials": 266
+    },
+    {
+      "citations": [
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTU8AcMVDv9tLeBTG00AExWJjaOPY_5EsQVO2pmag561750EYFtOR-SJS14KW1XocNwfYqW-0_zP1fARLNBFKhY4wZSFBQ6k6L8A6nDBiMDR4WMm75fBSbizF5Lzx_zGraaXPl90c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsu7EP-RYCEgxLCaoJmfJvAAkSEu9NLyXWIc7uLSSDIRKCFw_8Qo1yT8vSfwhDfHYoZQmUzR63z-wHZYxiIyqbWlPpVjD12PFY2gvkTZ35MmDEDbHETXjy1JTZY7pRGzqx8IpG"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbZzSEfLZnkbvgaf3Rt1M6_hdXVieMmtyMRf0ObLogr2SHvc1zvSswBM3tICyE2c-4FheFxH1demZVlsGP1N62aRITubGaxzVR29UVjnGIalVY4BSghHp6h4gVjVvoJtzYhV8uYxjiTb4dmYEedangI6-rEgnsKRTEjd5VcN1uUJuCsNfArsBC4qaw3qddniKHGsb4sNd99pK9Y2XwY7dCvsToFvu6ZZ208nuXbawFBZsGwQoIr1938IA5FnfBA3Nx47kY1VAQPV0bUHb3iQp6lSX6Il6bQljbCjsE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyduK8B7MIsN5TJzrs6BLHvQGV5TJAOKZqB346wDMtt82FEKFhVjZC4gvIVo_OiU-0SnyCO1uPfCM4o00nBYGDaLuunARmk4NZN_SSj1hh1gAxOPnNi7U2xfbStSDxLAg5zE5m"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFL8nUGYKUyirvSjtrw68YPYwfJVM7T0--c5ieJ9ILstShB6pyLe0fhqbi9-NWfmtz5gs6HUDE4t_TjD-hPg7GXHnpQ5HGamzddOs8TN_AZFvtALtIDznv51YLNVsgEuSvWk7fLsR2E9W8c0l4="
+        },
+        {
+          "title": "oftalmoloji.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHagNLGeTYUdWVKr7vjxkZOtlROZ5MWLQHwcOlc3xCdcnOgVmrsaZMZ76NDl1wSIhxcu7N8BKiJIxIrvYSw7iHFluhHdYb8i09DFplI8pfdX6tUILG1QaN3yNqOod9YQaH9n7wOvaud8A7NKKhpJwOXPOOh_O4iaoxaIMNmKltBX_0OTKC1gJt-CWSEIX01BLLfMTnhhg9mD4FG8W0rPCZMB-aTYNjzqjv5NkZfHCpmu3U-HXqRdXuAryJVeH8UA7I4YX6ijihEQlLgvlk8Z8g-Nc9bNhtsUhpGgRys5s0od2lHRcGrnCTd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgqmsSwfr-mzUekItgn4rVedCe-jODkF3jLt-_bp0Sjv1sT5WqEBsr6jX4EGdsqpoiwdyiAdqxUqqFrhkQBRjTJ1DEjtlEih5qj1JTQJiqoCqS0TtWjK84A93hMaut_CHPo63bvP_ssNFABoM="
+        },
+        {
+          "title": "openophthalmologyjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP7ANe_1e3d9x0r2DjaPkYrVjZ42roPB8G52dRoVW4dsj96T-Om31D_0ThIo7D36omIq3i5Z2LeeQYO9VX0kxz5q17NF1_TUrs2Ohvcx2Q3TmHIExBGR3zqmVjgwnwZgzgG8HUWc01K4JiuSptkwvlMGuxjiYRMhFReYkY6ts="
+        },
+        {
+          "title": "ClinicalTrials.gov: Selective Laser Trabeculoplasty (SLT) trials for Glaucoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Glaucoma&intr=Selective%20Laser%20Trabeculoplasty%20(SLT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 600,
+          "sideEffectManagement": 20,
+          "totalAnnual": 1003
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1337,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Topical Prostaglandin Analog",
+          "costDifference": -50,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Selective Laser Trabeculoplasty (SLT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 mmHg",
+          "baseline": "24 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure (IOP)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1 medication",
+          "baseline": "2 medications",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of IOP-Lowering Medications",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1 mmHg",
+          "baseline": "5 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diurnal IOP Fluctuation",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "GQL-15 score: 8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glaucoma-Specific Quality of Life (GQL-15 score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "OSDI score: 35",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Surface Disease Index (OSDI score)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-$600",
+          "baseline": "$1200",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Glaucoma Medication Cost",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Transient intraocular pressure spike",
+          "percentage": 7
+        },
+        {
+          "name": "Mild ocular inflammation",
+          "percentage": 6
+        },
+        {
+          "name": "Pain/discomfort during procedure",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Hours to days (maximal 4-6 weeks)",
+      "treatmentDuration": "Effect typically lasts 1-5 years, repeatable",
+      "trials": 63
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyn_dNQeLA3IgHzQtAf3C-qH17gNDe4TN5S3OR-hcU0Y8WEQxrby4tTmRlyP9m0uju1gYrX_kj_v8cDPAcyJcYrf8tlNxrbFqmz0lGPTZ-nh9KcUe4CujRHtKDfpqJDO8Lln4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWYvpQlYkF7L9tcFRkc1nGyLdmS0a4cTO5FNOCCFKg5pdM2_ueGCA3OZEl7ld-rN7WLSchfvkdJUBhVAKVqIPF6hPXrHD0C0fBE8uS9mM2rxmARMwuntX_jaE7YyT1f8jMoxpA7owiarKn99w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2waMtik1F-7g9TGtAl3DZr8cZhCaXCAHDjHbmUBBokjyQ5H6IURlSZfQGcvOnKCjvWW6SBHQT8_sPcyyOZUl4JWFlRBZlst4LoP8Puwk4NhOj38Wx4l_BadqlBtNXTE_nasoxS333PLTUoVc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUuUFv6sRlKx6HgjN72Rou89yEZX0XnKzKDts4JlLk2ljdR0vmYQ2UILf6hoxbpKCiHH1by2V42XPn7Z7f2qvlV2OS1kFflS_9MvlZiEAaiGJADu6HKtCP03IiUFFXaoYIPv79oi464rYiQhw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCZC9bVjqxfIcJ0RrAo0qCRlTmJ6TWrB5jNzqJAPXQwuSB0xOh2S8H-0u_TQqy8QqU14YPobcCWUIJ-OKkO_8q6EFZI5-tMl1PX8AUeuCJ4-u_Z1CPc55ZvTOq6FfOJU3DUvKK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFEtdagSb6e51tHs8_kMEkG_gw_BFlkjnzRYVU-6GNT5BaV6ziXa1_ItJwa9J-ZjVDw5eOnaTFK7R6L8WM76kaNetRLqV047ojKGbusany6XScZ8yCW5C6ilzUtzKEvGjDCfcptsuK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-JksTDnlvATiaJ0H5xne1ZbgSQEVMmhsCanm0UIRHhQO8huIwhvkv3rLzJTr-8RxKkVNtDKC3uCHHXqBSsHy2XHsQZp2tIYZHryJ65bqsRKxCyyvWiDnmTYc7uQjXEriIMBRpVNajJrBJAx4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhT7ZIYrn3yMnFRJptpnYHGswhSLDvKeaM1uAbPA5wq4eaoyF0jE11Ra7T2obPBq7kWTPAqN-oIDa0eHv79_Q0XsNlpYDuaGmILT8QE_4wWYto3QQ1rIIZciRybuyirr8JhjqS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Brimonidine trials for Glaucoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Glaucoma&intr=Brimonidine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "One drop in affected eye(s) 2-3 times daily (0.1%, 0.15%, or 0.2%)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 480,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1180
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1815,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Brimonidine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 70000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.28 mmHg",
+          "baseline": "26 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure (IOP) (Peak Effect)",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-5.0 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure (IOP) (Trough Effect)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-5.28 mmHg",
+          "baseline": "24 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Diurnal Intraocular Pressure",
+          "percentageChange": -22
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 arbitrary units",
+          "baseline": "100 arbitrary units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Optic Nerve Head Blood Flow",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "Rate slowed by +0.2 dB/year",
+          "baseline": "Annual MD loss: -1.0 dB/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Field Mean Deviation Progression Rate",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "Rate slowed by +0.15 µm/year",
+          "baseline": "Annual RNFL thinning: -1.5 µm/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Retinal Nerve Fiber Layer (RNFL) Thinning Rate",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ocular allergy",
+          "percentage": 15
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 18
+        },
+        {
+          "name": "Fatigue/drowsiness",
+          "percentage": 10
+        },
+        {
+          "name": "Ocular burning/stinging",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1 hour (maximal 2-8 hours)",
+      "treatmentDuration": "Lifetime",
+      "trials": 105
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVveMiv7y1mXJAlPwn8sDAVyBYusWOpCRUmflyc6VySBGHufoPjmu-nEeXaoqPehULbOKousu5YoZjxZNXPP6ettiTuX-Cj1U34S3YT4Vu3XTygMcT5c_kdt9JyQvwLPNroXtiliVJ4MJ7T64="
+        },
+        {
+          "title": "colab.ws",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbVn04B1Ywdt94MaY0683F6NZyH4V-eHKRDN5SIE0QOoD9deCYReenCWWOuIRUFwe2t7dLr_M3XKrHC_7Vv_mFKlQORhga0VDi26xZiN3SrdjT2k9s1pDZTu5zCv3kXcy8Mdxf-Oy191PloVPFFFS2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTNiHmwWkHtFWTTHa4tnYjhWydTQ6MZQlx3qdfQp7xPEM8ecc4yElNyfBk4aol7w8tWGtKARMMvf5ECYpW32Y2IrM3Y43YyTV3bjx2yoNQMxG4EpmYnB3tuWfqvTTfPRm8vlxbwyStOW9Y_24="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHovFlwAYLPaFe3kuZjDXOAA0mlFU_cJ95baNxkNM82X1-CIQN-8P_7g2kYybbuMo3x0_j34zNevfCRzTGT8x4SzB7Y8Muh5ydk-I3Jhtt4VbhiWamBxk5P4oCfSWmLoh8aKXzVws86Zf14hfE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2gnz94wDofYWpquWnvM6d7F3tWmh5_jPTDVV-u1AZR9Vifo3tncPAOJKEf2z_E6WqazmFbh_SsCJIIGLDTggLhsNLUREBdEhJ99MrR2W08hsU2NfHGMS9_aEHdTQOSMBnxl6Wp0rNUkSz0g_ZloDVQlcRvBJ5wzm49IXQlc4KeCFUKr8NzO4x6qInDNbs2t0oQpN3PJL9yuiFoCnWMoUuOG_RaCfle9ZOVXLqduoytv-EERQWdDO8m0Ndi2MLTM8ig7g-6zFmYNlCuyqYzcpjVZOWvy6nE3D4p8F6UD6QBsGsB_f2GlC1Vywhjg=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6DfgBWa92lQZnRHrsMlf3oypLdMm82Cng-1fOeKXZjMU0_y5WVbaxDiZjjUEhOByEI1Pt5XF4iVDWgTbPW5Bu1LlyfdOBjZhQicMyUNrjrDLNCuz9bZ8sxyGaZEAQo2E1PNAQgQz7WUYG"
+        },
+        {
+          "title": "ophthalmology360.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVHWxpjyrHN84k7cKHJJnWKJsmdAJPEXr6lXDWFqxSpdfD71G-MgybeoYOkFkRA5vDuS-cpM0jQ3Z_dCpYLXOZ2GnXShYkvZz9a4ba8sZ6Ngq45F4g_1fcHMdtJrhjC_XHehtu1poJKbI4h0-YUdIxIfdL5b0ITh8A5CO3PiZTJ82KiuXLydmiTtbe5178jEL5FbiGLmgoywUcx5BDhEdYHjiv21OLamE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfSC2G84_Bx_efSzjj5HqbVQVLcgpwids_MD-YPOOXRfSDsRadyLLLgyRqMJAhPKeIhBKjCCDKTB7wCZOhdg24FP6yldOXRcySi4QF3WDScJcequQzLvlCLVYWG2pqKCG9HqzAH3f_NqUiZ6aD_xTcaoDW3VQrb_9kiJwChOi7alV6-BKE7edk1uqX2CwOCtEPoDrkn49gTDm9WE97lKFhwMmfZ95-79VuVxi4u6M4mYJBEfhs05mm825ezvuZYZ0CeVUX7wZzJymYe3gFN1JE606jnGWp4ikUzSJBCIlBix1xcSlx7xeUhL7pAA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAmIzR8hGuGLoxaUCd9ugKu0ziUvgNRp8m4Ck5xFrIrfxQnjRgR0KS9TT0oqrBv28ywX1sy5OUfbldFAq4admy0zaIQBCOmE_L03rBHztftAr16OnIADSsc6m_BtOTPUQdVa49bMY0ZRmN8EqBTQp0OemvI0IqAgfZOMXfbUTAnP-MwdzgIqIT1SZJfO7mPTg6ar6CVVoZ8zZ8r8AGLONJjLy2UiZI1gfHAvkgOjfpElwA6tAeCLsw40mycjS8SJQBZeyFOH4vWsBFd2LpjWfI1YRp96OelNcQozfR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1VQUVZqaGI8adhKJiSsmTp7M378maWDtlU82MDasH4XE1rB8T1hJJMZn_eK_cwwexRPSYplUEsqqoJ4simVywp9Cw4ZLAPN33XhNpJvsCB4JnrkY3YfBcI538UD79eN8DlkL3LMiuaUrt5GRv75bhKfzLMVD4IweBQN20W_qCUuBUsGYuU8FMFt78R3j2K3YTtbO6zUzqpYLAKh_c_olYwIRvS_oOI84mlkSv75yE7yoGOGQjjDStjDpi5CHglvPLXbpZuZ1-qzFzp8FJ4ipHg5OzXb-S9deGPOFOioHnXLosXqon"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZDRKl_lm0Fm8u8UUJjyeSTNYhl7JtGxQ4yJWYD7rRpwVdLj3YCpuoIybOHDuoAgr_my5CRaU4rGcS04mBpyO6KQI-_xvd-ZvI9m7PPswjevLsBoptmtcZRmDDXQ2tnqEBVX5Lr-Qln5gnbNQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dorzolamide trials for Glaucoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Glaucoma&intr=Dorzolamide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "One drop in affected eye(s) 2-3 times daily (2%)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 540,
+          "monitoringCost": 600,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1190
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1983,
+        "icer": 55000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 200,
+          "annualPhysicianVisitCost": 360,
+          "annualPrescriptionCost": 540,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 960,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Dorzolamide",
+      "nnh": null,
+      "nnt": null,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.2 mmHg",
+          "baseline": "26 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Diurnal Intraocular Pressure (IOP)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-6.6 mmHg",
+          "baseline": "30 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Intraocular Pressure (IOP)",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "-4.32 mmHg",
+          "baseline": "24 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trough Intraocular Pressure (IOP)",
+          "percentageChange": -18
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.2 mmHg",
+          "baseline": "8 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intraocular Pressure Fluctuation (Diurnal Range)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+5.2 mmHg",
+          "baseline": "67 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Perfusion Pressure (OPP)",
+          "percentageChange": 7.76
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ocular stinging/burning",
+          "percentage": 20
+        },
+        {
+          "name": "Bitter taste",
+          "percentage": 12
+        },
+        {
+          "name": "Ocular allergy",
+          "percentage": 8
+        },
+        {
+          "name": "Superficial punctate keratitis",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "30 minutes (maximal 2 hours)",
+      "treatmentDuration": "Lifetime",
+      "trials": 79
+    }
+  ]
+}

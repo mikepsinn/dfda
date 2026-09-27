@@ -1,0 +1,1041 @@
+{
+  "conditionName": "Thyroid cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:32:39.457Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGic6N_lpEroHWBBx01AFf9uji5ngpJYYMZ0t-lSn57fS_PJFUk9-U2qdfxVOJg0PxXqwSQveMxWLYFgVlw1-K5qzQdTiBY_VOUVCBFOlaHzie7Hc2faHZVF1bgJKNHd5DbZ8k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsL2JNOVxCXixbRjU_SITbjF27gXl9MLluo6_-tVNNmBdtaAYq37RGTOT99tdXIo-dJAHd5aZM73ATagjkodrUj8QdrdFvUdid4oaMvQZm5XEivvD03acB_dv4r_ehGh2vG_Q9Eeiuaqm4O1g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuz8lQGgZGv85zqLhxG_UYZjk1ojOtZINh8OewXszRpqjWPN3CB5L9EUHo7HfuyGAaIWUIbIp4l_2O4l-2BN3oIWypjMppfZJFHJ7vU9lgMiuT5Zspu3cdT0bEdCiYEYMa8Zw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe7ccFpu0aSbM17PxrMnpEhZIcLFaLYkVGAVqNciicgobE9_WYAEskFwFmr1yYilCCzGtzPCUVHgNIWNZ_VrT4I75A-gdzJUTMoglrh65wSfzsQQJwZzYn3rWlW7647QKUeQM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwbiZ0b8FjLp_fwFMwVkXAmjLwNbyspncAodJoCmX-_dtLbbupXfQuaK0FEGBTfimSAubTpv2jBe9MmDVlUv5DchLwq3eHMda5a_BIxuCm-sJLNsA-yyfr6FXBBxuc1O_HrTCaht9Lag=="
+        },
+        {
+          "title": "doi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7sY3_zLls0cMLtjmvUiC_mN3yYn6IU__ZZ2z37S2UHIGnxhBg9WR0dEQKZkfF7lRdl4_YYkTTC39WU_TePkM1YODDZIopFnKnDfKV6pmnGr0HPNDeDtOairDaFEFkpQ3wBHdt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK98m1ZLqC25Bhq7BGPLf_3EKqAAZbkHVWB3rfJfaADrZUjnUVOtniFAs8dx-TE9HMHCfuh1z804tJ5OdjrBnTz1yGfdvjhpuDyUY7ggXEaxpDqf5pLLQCFJizQeKtWpM05hE="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLS8jHh64PFWKMPJ-J97z9_gofx-cyVPf4yCM0-pNR0Y8P_cexdEhvRMxofDavUdu7Z1ErWRH1OyHnm6L1Wj0_yRK2BbQpVtsVwLfEfIjIYwySQz-Dur1nRe11xSwP3Ab-tatYTod_v_S1_2KuqzRY0YmmChX42VNHjNDRxPXBVTbqGk9UGvx3d6n7pb7n0NHKKC2AOQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBczV3vsSKPCzA7csKold7WYJchcaF0YUj8O05BFgwkC5MEYIMBxbXgnkEqW9VYqcSwynkdDSBA8mvJzbQ6QrcNBu7nmM-afJ3ZuF-J5garrdiEHgZBN_TAD_DJyv8HZGnMtZCcy0WNBxg_lsjjqDj7pnkQcMBaeoAzbb4hplZVEG_ln3rY46H_tExfOIWlhwVerxOpbM9yV8_iFnyqs_uMhkxgJq4lU4JyyqSrS19DzK5GlskzkAL6l9RjZGuM-IkXaDhQwsyUGGVd8oECdhDMItgIaFI0lM39Q9Fc7_i7SIBsA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgXwIst21ah_iJ3OukfFrvQETfoybvr7gnBCS9ITTFICrvKXDavL9dltvlLU6wk0aQAfqHysPABZbUcjLc3-aXiQiuQWew8KA_G0MgAfrrSuUV9278li1dms6S_qyPmCMSW8M="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA3gztuquEY0BK4xIVoD1Uhdx7ZdYlK1cvZMD1VuVCxzf4hJc0-n-Vskqss1A26b6gAREzveMV-mobzJYCAZD9noBp3T2EgGS_V1n5-K5NJlFWfpv8X9Zjzfb7MpCYD34EZBMu-Wgd3DsU4F4V9iPn_MX0XNlOEI_q0702QdU-YMMwQHu1TEbzhNdXecq7lp1j4itgS3qMg9dRTw7aRd_nHI24CNdFuVUqqImDHoXkkW6hdfwaHP5DbHcS4o0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Thyroidectomy trials for Thyroid cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thyroid%20cancer&intr=Thyroidectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 11921,
+        "prescriptionAccess": null,
+        "qalysGained": 4,
+        "vsComparator": {
+          "comparatorName": "Active Surveillance (for Papillary Thyroid Microcarcinoma)",
+          "costDifference": 5000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Thyroidectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to ~5% (20 percentage points decrease)",
+          "baseline": "Estimated 5-year recurrence rate for untreated or inadequately treated intermediate-risk Differentiated Thyroid Cancer (DTC): 25%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Disease Recurrence Rate (for Intermediate-Risk DTC)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "Reduction to ~1% (9 percentage points decrease)",
+          "baseline": "Estimated 5-year disease-specific mortality for untreated or inadequately treated intermediate-risk Differentiated Thyroid Cancer (DTC): 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Disease-Specific Mortality Rate (for Intermediate-Risk DTC)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "Reduction to <0.2 ng/mL (undetectable, -4.8 ng/mL)",
+          "baseline": "Pre-ablation stimulated Tg: 5.0 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Treatment Stimulated Serum Thyroglobulin (indicating residual disease)",
+          "percentageChange": -96
+        },
+        {
+          "absoluteChange": "Reduction of 5 points",
+          "baseline": "Dyspnea Severity Score (0-10 scale): 6/10 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local Compression Symptoms Severity (Dyspnea Scale)",
+          "percentageChange": -83.3
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Increase of 10 points",
+          "baseline": "EORTC QLQ-C30 Global Health Status score: 65/100 (pre-op, impacted by cancer symptoms/anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EORTC QLQ-C30 Global Health Status)",
+          "percentageChange": 15.4
+        },
+        {
+          "absoluteChange": "Reduction of 6 points",
+          "baseline": "GAD-7 score: 12/21 (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cancer-Related Anxiety (GAD-7 Score)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "Improvement of 10 points",
+          "baseline": "Vocal Fatigue Index (VFI) score: 25/60 (moderate fatigue/effort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vocal Fatigue Index (VFI) Score (if pre-existing due to tumor)",
+          "percentageChange": 40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary hypoparathyroidism/hypocalcemia",
+          "percentage": 15
+        },
+        {
+          "name": "Permanent hypoparathyroidism/hypocalcemia",
+          "percentage": 2
+        },
+        {
+          "name": "Temporary recurrent laryngeal nerve injury/hoarseness",
+          "percentage": 7
+        },
+        {
+          "name": "Permanent recurrent laryngeal nerve injury/hoarseness",
+          "percentage": 1
+        },
+        {
+          "name": "Bleeding/hematoma",
+          "percentage": 2
+        },
+        {
+          "name": "Infection",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate (tumor removal)",
+      "treatmentDuration": "Single procedure",
+      "trials": 195
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXfZMWPo_JCR_6r_uhFUBBnjHnAT7KTy4v2BszQfzGMqrMhSeXvL8TxoUfEHE5pxkDAjtywDOupXzUznbLxlBd19ClpNRuEYPB2SQ9sCIndWUonGO6p8vOUA1wMPvzhqluc7ZSVQDt5g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLuMmEZY68ljPIwaqPCwIccG7DTHw9k9FGs99kVHx7Pbi9KBS6_spMcQe2bBnbRzrrX64W2EFI5RlnuL1MRv68l_0iyv1epx225QjbpWABW3UAw-PRSvhPmm_QBKJopa8eA73Q"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2VLLp2OqE6frr8hBd4erbvF7l7_WOVGorj65il1eMbiDK3P5kgPHfZ4O712I-EC1u3Wl8pc0bErDY0D8Ea3Ao1sQLxGKEjpleCUaQrCaE5SZexiiP_maYBg9y47BmmvuNH5V4xGSVTfNuNUN8xpjSBT4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ515fdIDQlVlgNakVWFYB51yLXMJKpeDagvF29KETIuoAULRFNKt2J_y5C4Ubo1RGxyIGdqPA_4LsFIPCayq7UVqDLX5WLU2Qyprh5GLi2k0vp_W5pyKusT-3J5pOHOHW9mdB_vVP19rlaAsyTRXICmPm-5RdLFG00gC6241WiTi7PEFJDxgoIYj8DwexkXksazPu67wQm1Ctfe1QAUdx7mAkHuUAql6PQtW3GmqqgCPZCbgJ2es0qS7wTSf9w2EEcSdMOCuTaBPlcMy7gzTLifY__yUgnbTASk0m-CL225KBqztcX0xiesZjN5Id4OMAhGN23PsevrG3eTW7IbF0aPAnujhWlkQpzFtE_220cPWRqSIXugJEkPhaUUEgN3X_yitgFLeKu7tJc-xCeXehT-y9joSfKQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxwKwA1P6eRkWeN7HCf58M3uCNh7IZT_zPybX44c_fP4LRCfeOdYqziJNOoZVDmEO7b0WD0ol1ACv4Upjku1JCg9u0w8BeuwXo1k-dBYlCtHOlL6DiiekQksiftosOHcGR-zP_"
+        },
+        {
+          "title": "heraldopenaccess.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFpl1BUN32qEMzJ6FC9iHn5D-w85-DES9SkuAnpvl1O595rnegMBK6emRGUORlwbq-9EjJ7orsL1nujqnGK7UTA0HFCYJLmDt3vB8IFV89iVfIt01jFXaPSf5s2lhGHNg94Cpeu2FUFpDfxYXdOyOPTS8sqY0W2dWFXf6QBMPKdwMxi2nMnj1EKgb-0dVl-88zjUg0qY3dl-F37vI-1U6PA4Oz_MRXwf4me5S2BNTfpM6oIRridViDUXSIMQ8S33M1mLWSTJo="
+        },
+        {
+          "title": "dartmouth.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEbqzdftnjxuXODk529wQzUaFa_OXar3Uf9O-SQGsWItJ0l_7UY2iMdFW5HkDAyW5syrplhKlRMp_Zs6Y-XLh3cawJMFLkB45dOQUrBHGx3g9AuLkbHf1XtVc0GcA_5NpA9n2WVI8aV_xUpMCXZJZ5fqLRNDL91xKMIK6xrCkJpzbDHJwkpwg2xuUUsVl0X0ioXGhYMA8iIvQ2ZWxcsPR_8JEECZhtbfL3Y_pdNBLUlVDFgfp7wvpb90gzc6LD0b_HqnroS2MSpa4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF7DF7Qz3B1cynchozE0R-BLAAD8kf-pK4brY1AJR6897dHBtjwf7PYD5WFj_ocJoEfc6-kQXotDRDtmuqtQz0h3OK90srl66XpnPToWB81-pg19ToVib4LhOuuqbUZgqe-XIqo2GHv1bYWg3J"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF70d1RRcfcLgFdpIlwfqA-N2po2isn6yBFkb_NG8n0hNyQKmbkmeYzj3ofa0MURRsA_b4CX87P4nVLLtOtMW41rtrsyy54xfb708VAVONQGR6ugIaqeYNhJ9o1ZLp_iXakBbmX1P-kzyKBXE0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radioactive Iodine-131 (I-131) Therapy trials for Thyroid cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thyroid%20cancer&intr=Radioactive%20Iodine-131%20(I-131)%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "30-200 mCi",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 26012,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Observation (no RAI after surgery for intermediate-high risk)",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Radioactive Iodine-131 (I-131) Therapy",
+      "nnh": 5,
+      "nnt": 18,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.9 ng/mL (to <0.1 ng/mL)",
+          "baseline": "Pre-RAI, TSH-stimulated: 10 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stimulated Serum Thyroglobulin (Tg) Level",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-70 IU/mL (to 30 IU/mL)",
+          "baseline": "Pre-RAI: 100 IU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroglobulin Antibody (TgAb) Level",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-1.5 cm (to 1.0 cm)",
+          "baseline": "2.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Largest Diameter of I-131 Avid Metastatic Lesion",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points (to 115/160)",
+          "baseline": "Pre-RAI: 100/160",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-Thyroid (FACT-Th) Total Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-4 points (to 8/21)",
+          "baseline": "Pre-RAI: 12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) Anxiety Subscale",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-1.4 points (to 4.1/7)",
+          "baseline": "Pre-RAI: 5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Salivary gland swelling/pain",
+          "percentage": 20
+        },
+        {
+          "name": "Taste disturbance",
+          "percentage": 15
+        },
+        {
+          "name": "Neck pain/swelling",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 10
+        },
+        {
+          "name": "Increased risk of secondary malignancies (long-term)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Weeks to months for ablation, sustained effect",
+      "treatmentDuration": "Single dose or few doses",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJML4C_ndnL18AzXgpCa1JZedkBh7fOpBwGEyJvr3Tmk-7AUvAgWb38PEerNP4ccuF4e4PbSIndWr4xcFCnrNG2VXaXMShCWt3yV4l_-dr1qI33gQmUsJVleNQHulPgIUdmegsxi30FouHwg4S"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHALH09Ew6wAwlHCmZOQz2Gj_gIIMsog69TRTW9U0yJAFSVSNm63UWjrscNyCycmndIblXFe20jKId7Rb-bmp-JwThJiDLwJyrGq8uiPvbIyCxd57WH81F-yNgRk6IOhkwDLrHXImM="
+        },
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzC8G2lycJWf9TqcYJfrGwIrd9RAJkkh3RMZtrP8_G9nOjmJrf6Eadyzw3p9CB52YK5jnpVg7SplmRkiYPPGoNNtsVbtgwjROG2N43WlDqiyQxmulbMQdr1G0cMJo5096ltOu5PdbfWLM2LfCBfjVOIFRtW-6lUXoA-2VRHPNlYFFAZGC6qN0YdaKXZUgPJMKC6zj2pDYRsDnhLGxBF24m6cJz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmE6hH_Aca3Wl3i-RclsyPEJjCE8-wGVyq_PZz4DYtDMSpqCJ5PxK6OIdYTwKQDB2pABHPhd3pYYgWl53sMLXDogb9VOZ7ItH6Eu4dLYIi4mSNjCLAlSqV0jPeUR_EAjDr3nT9TmWqtw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ZyBDb9Dcq6rMsgzFbFAuXP20YP08WFdyI0WJLjmlzzghfPNxox9UpSCABmmX9eQzJWI6YwXabTyUUH80T-G6QhIQOYFUR_-xJo4G1snxQUR3La3kNGp_jxmBjW6ZZpfwzY5TPO1pIZmfWSByjEwdRQPsao48Eh-viasS_LWZB4EH_2pRag=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGklbrx2151hu5Mo2p-BUD-ig_6_C21nOERrChV3et3F-8Nw1W9jBhpkebKrXxvMZewdlIa80HYd935QO-LOC37IG-djPGVRZfcfuxDdi5xuXEsE0Uk6AU-YvjefT2ictpN0tCuGqsXGxUoKA8="
+        },
+        {
+          "title": "nice.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEksvhmLz9NeEkblAWTT04PCc7fVQdMYBS5VkQ61cfaS3KjSbzPR7wtGeKmVCfxIQjkn8TccvcNomEEsV31xpMFIJxzZfVtpn5odHBKw3ugGHneHk2su6BMV0dcSbmzktrFsIrKVoQQklFGflJmmRMVktQLe3IRuTLzYhpp_1VqJEVm2vXjoWON6UBocajP_qzw9m5FMPXur-7T92Cl4s3UbvxYGCV4cyIVX3lleVqBvk9jLjxuL4eBXf9lgNRrn56IOqcM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9v4Y1zNtanTPQexFfucm6H2JGPEc6YOo7-i-M__0tIy-JVne1SanFlGkJsKDPolh2hiSpKoaeQY6a-hP3YjENiyxcxkaXMY3vmZoqmD8roWGT4psvmrNeolrudn__yjCffTeGpjyM8Cb8qKYWwZmCy1MDC6kmgGFWuQmo3T7grIOGYR0Mhvf6-LfeA3tbq7ZDVyFOfoWzYzFWNab-v43EfyAPGAeZva7WDZk1wAT3AOtpqg4_DYRxIEsxqLIMyBtK7ejQjMzyi9TNAuEzznk6WczPuzphn1zwokVTStdrZr0rVSpxvNuHJCURg6IKd8vLqlttd4maQh9hAAwWKYNyXhrOTDI30_N9t_5puWX35hi88uxQzMY_PS3NbUV0hA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFue1XITBXE3z6p7ZN9fuZueCmKufq2OrpB3L0O5gCL3Vr94xfb9NYO9a8HgRb06P57D-0ItkZR_gmWXeVvb1e6oTNZI46ulUWtZZANgv7uRB9rg-dVHUnDZthqS5M6-Q7RFaQZ9lsvFK2yzCM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiYHfB8m8-tVR8_qa2LyNLfUvExv7JDFweEsZYnT7Ejs9f8cLziWZPg9Hxcve_fChsLi7Ezu-uTiVsm0-H-qlML8l8X-raxPTcX9fAsugc5zWwX788J9PXC3irxfkO3-JlV2v4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxcOzlcGhegqfO1oxjfIvO4q_v6ee6vKWWI0-zTb95OBzhLFoyWUTL576lQQ_lwl6I6q6_LrotwO6DUmKIo3YPkfByanw278yUMXYJWMhidh7rfrH8KShXhmWjnPBusMT3HQ5RmjZLmPA8EDILY3mlU2qXik8r-mQcRKrD_m-aqPbP0MksY164bCASOcvUnS2bh6VPM7em1wkwrp3OLQIZxQrmBoEeIciSXgyUDsFu6DggsvCF9lu6bwxgN2gBquJtWF3h5LzP7VP4pZIZ_jKOt1yviPbJGDrQsFz5rWYMjpbSKZ5te8AHrnk4aO1S-w=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpTaIUkJ1B_ppH4tQl5RbqKsHG1jlAESELPe277PNpuYAzuq12wAz21uozrGVCsDSaZMs9PvPXhfH27elVy1MGbYHlTU0xpheQ_4JxM_152EUTfGq1eOjWyMXztLPWTSha4UXLr-LANCy6Sz0q1YXL_toDSwFjPmDkH5WYlVt40wJhw2u6Jen1dVWoMgmlx7rhTM52hyo="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUQfMrVOqT8XmtbuOftgaaJ5aKJf0yk14qhI73nw-r-_xpDZ6-xH0cGDYjOfSSAN02XXi2AGfogrAJd12SKy8jO_mWgI18wogS13Y-FQvUdzCk26fRNIiRexQyI6roI4w7eAqWU42jhs0oOPXxD1bIBpINeCJTr5YH__q0iVUE60pMJ6tHlt_TqaPs_ZuXim-g7Mnwig=="
+        },
+        {
+          "title": "e-enm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVWuOdDcwsgKm1QFY98KDHw0_-_tZ_rEWkhjKyXhhTYGbbaGz57cC44knxDY7B0oqZoguYoSB5w0KrLC2ZfFQu-N8WZUqetFF4sOQu86oNgoqQdwSQvjB_Jdmz3bSfCPGUTZ5b59mE02Uvbr7c"
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIPjDDLTNzOvjIU8HFiftZm8rcdsptwN0beUhRBxF8r2ST7Hd8ObPQZu_Ug1Dyuth6njAzJrV7jTYpsfb3TT9SmvO-Yb9q6yv7m5iEbdMx8FJAf-ruYtgTdVGNSKNoA05uucXvE8HDCeB0YDmVmXfGI1T0nGsA-UH-jD3Hno1PSCzuKKtWN493XfLeMt3WIs-r0yMf_HE-AzUw0kiD6K5sDkr-4ivN0X_KZcgkkAml1BJNXfZiZBKUksAcGRT1rxpDWO4HDuachtuVe6C1u4fWNzPVx1rWaQ5d-cM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Levothyroxine (TSH Suppression Therapy) trials for Thyroid cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thyroid%20cancer&intr=Levothyroxine%20(TSH%20Suppression%20Therapy)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "75-200 mcg daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 380
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "No TSH suppression/Placebo",
+          "costDifference": 30,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Levothyroxine (TSH Suppression Therapy)",
+      "nnh": 15,
+      "nnt": 7,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 mIU/L",
+          "baseline": "2.5 mIU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "TSH Level",
+          "percentageChange": -96
+        },
+        {
+          "absoluteChange": "-1.8 ng/mL",
+          "baseline": "2.0 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Thyroglobulin (on suppression)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Thyroid Cancer Recurrence Rate",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 99,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.02 g/cm^2",
+          "baseline": "1.0 g/cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Lumbar Spine Bone Mineral Density",
+          "percentageChange": -2
+        },
+        {
+          "absoluteChange": "+5.6 bpm",
+          "baseline": "70 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Resting Heart Rate",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "-2.25 points",
+          "baseline": "75/100",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Thyroid Cancer-Specific Quality of Life (THYCA-QoL)",
+          "percentageChange": -3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Palpitations/Tachycardia (from over-suppression)",
+          "percentage": 7
+        },
+        {
+          "name": "Anxiety/Insomnia (from over-suppression)",
+          "percentage": 6
+        },
+        {
+          "name": "Weight loss (from over-suppression)",
+          "percentage": 5
+        },
+        {
+          "name": "Osteoporosis (long-term, high doses)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks to achieve stable TSH",
+      "treatmentDuration": "Lifetime",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGVzeat1w3f0VKAF3eDhFD_65pFpIjI9n-UsKh73ji4CDYvuhp-qRjskifo4txutYhZO12u0qhDH9OebIowFhdGTqYRMlExIqetkGTw53vp1q_7xDu1dZM3zwjOK533bi-ciUXpqLTjW8Q5RpzfoE9Jh2YNYZNPzcwuw9sDy-z18joaIHYhErC1jdMWJyqdv8qHVSB5luXqE3Fu1n923adyXuAJWbkc7LwyH0grA0t7M4f56uvT2bFOyYqn4LACC5rh5u7dt0QJadJme3LZRAsaboKmjbudkyVuhErRDvlfc0MOtaCR196fFO4Vq3q1X2EteSeXJ7BJq7zfdUp_1pRc-y3l1U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6t78tFeztOiUbggXs6zSVpgmBjHppUUfOvsLzjCCfxUk_elxx3zEkVyNatfMuC42M9eCHk2lbJS5z5LT5x1huLavTiX_PjNPHUB-oz6uhcYATQ4B9Kvylkvs3sNt_onNij-IvEj0jvmtj3_c="
+        },
+        {
+          "title": "mdanderson.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKsHA7zxFetvD7MEKgBY_292SGVilkPFd_oBjJ9RSzWAE6ZdMiYXL7ArmlFI9ALzagb0mhTgfJ2Enj3HaQDEU2ZDurFntxvGO8sq93pTVaJv-y7YF_Uq5p3Ffm14mB9TP57ukXdTlrhQoBvKmQTGcNECWWS9aI61T_CiL7fIMyEQC5cRD1QWYfIzbrkU45x693W7PfLtkHUMJm6Qlh_rcwOvEvoDyct6nP-fm4DpqXDWKUhL95zvWqJQmvy6xHjwXSggjQXzU="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbI-_e9pwJvcOgRr5lnvgVK0UtldUNhdWVuZmNZribM5Cvbo861GCcpQT5RUQ4G1s3NiNKM0Zdi4ip9f6drigZgiorJzMjyHb0ZvBOovdGoT8cPEjonnhj3kWRX0VXijg4yYepLyZDQ-odCMVjQjEmr42FbWnCRJ1M_4XtheHepjZTMPpJk3CI3sTPRLX1S6q5kebR3Q=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAHS84XQCA0NAUFKpgEZifzXiYHHGeK2FKCXtJPTBzmff8NmuYVCew0pWsstP4fbeXNhrEL70efgMHrVl-GBWWg0nnkrN_4URfiCUbAHgCauTGViwltliITyhBDpRAxzcQYtFZkBg="
+        },
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz0HeylV0qPlBe_mGod7cIkw5dTnDf3a9LFNS40p79mUaDMh5RLg2eggIkp5QnnCQ9TfX8qn0Y3xa9H4mV74s5gv52F0pwqcBEtWcR4kZTFhGUBCDhT2FFUNcRFj2liIR9hKHixpP3J0utjM0XcW-DHXPFbFzeA7saXTLt2aDTW23u0DdF0TyP-aSVrtftAfp1vVln8468RWQ7dZNPktLoFrIEvk7tTttNVZ4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lenvatinib trials for Thyroid cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thyroid%20cancer&intr=Lenvatinib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "24 mg orally once daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 7000,
+          "totalAnnual": 211000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 21100000,
+        "costPerResponder": 324615,
+        "icer": 130000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Sorafenib",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Lenvatinib",
+      "nnh": 3,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "e.g., -4.5 cm for a 10 cm lesion",
+          "baseline": "100% of baseline diameter",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Target Lesion Diameter Reduction (RECIST)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "+14.7 months",
+          "baseline": "3.6 months (placebo/control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival (median duration)",
+          "percentageChange": 408.3
+        },
+        {
+          "absoluteChange": "-300 ng/mL",
+          "baseline": "Elevated, e.g., 500 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Thyroglobulin Level",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 1,
+      "responseRate": 65,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points (on 0-100 scale)",
+          "baseline": "Baseline score: e.g., 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Moderate pain: 5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-0.2 points",
+          "baseline": "1 (ambulatory, restricted in physically strenuous activity)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypertension",
+          "percentage": 70
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 67
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 59
+        },
+        {
+          "name": "Nausea",
+          "percentage": 45
+        },
+        {
+          "name": "Decreased appetite",
+          "percentage": 39
+        },
+        {
+          "name": "Weight decrease",
+          "percentage": 35
+        },
+        {
+          "name": "Proteinuria",
+          "percentage": 32
+        },
+        {
+          "name": "Palmar-plantar erythrodysesthesia syndrome (PPE)",
+          "percentage": 34
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Until progression or unacceptable toxicity",
+      "trials": 36
+    },
+    {
+      "citations": [
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-1FF7GKQperpdCBXIaK02wgS8WHTS0alxLL1Ou4NRVDX3-qoldZUE28p0SNo9SZtEdd62E7adiWFFYxlsl8y_UMURZELGkhX6XqHCF-xzj2pXXYAYum3CdrXBGtpT1u9pLkFaIL8JhMLrPIxO1TQjsjMntfKOBjghsM3W3MP4zZZZ_W_GqEYHhm3JteR-5vs3YwuAUV9s4HiwoEJ-Zzc_bQlRLRBxZTkB"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJRYLUyvyHzTRI_3rSTcAleokQLb6LFJWLiw9KGbH4upEPjw9YquboBMKJ4ixTDBLq_mAYLdIiN4J53YqoNgNpvfFq2glqgjzVOXXPRs0hTbkKUUzUo58gArH7J_GFwSVCEW76jKg99f-iMhnlvlCAgkZK0Lo_kWesURqW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-cOVWrBUeebiTshMFwO9rokSHaCqSIQJvx6JyZS5gu2nCS26Zhk4uSnkC_5bSbfrZr8AMPinyxtXMPPj4VviIxZ-xfOmbZ6HZTtKcbRUWPTc-Av089RVsyQHJR8qtjMAXENbUvhaUkeVstaY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuiaXpcIGzPPf-I9SloW8x31rQgGMR_GS83oNFy-5K02baVgMAv7smb8l37VmwpbCMG8CgpEE7bXjg87yXJx87GAsKAxTsSjjKn2ApfPOzv0vsjyRH39BEfmAhCLH0egynrgqu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGECOE7y4sIfeQixI4a6tVP35J8rkn_wvapQ5L51ubODKkfo4sG6R7z_z4c8hbd-CPewXpyMYaPDtuVaaXuG0W5AYrYZWZymid7G03PLDtG8Q-OfNyIHcHLXMOgJZ6uqtq9ujKK"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF41LHfoP1jjkn5XsXjrS7RTBj3nvzIWY_bJuMI1gT35LyDdv1QmT8ks8EAP6y0R15hUL0mOnIiTRzF5oLJyEwhub0wFUrviWa-TT8gCxRTxu03jDO-8hdPKKepJ9VVCO5ReJzK4agIblZROgZef3iZxo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sorafenib trials for Thyroid cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thyroid%20cancer&intr=Sorafenib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "400 mg orally twice daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 190000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 6000,
+          "totalAnnual": 200000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 40000000,
+        "costPerResponder": 1666667,
+        "icer": 300000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Lenvatinib",
+          "costDifference": -10000,
+          "dominates": false,
+          "qalysGainedDifference": -0.15
+        }
+      },
+      "name": "Sorafenib",
+      "nnh": 3,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+5.0 months",
+          "baseline": "5.8 months (placebo in advanced DTC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": 86.2
+        },
+        {
+          "absoluteChange": "-25 mm",
+          "baseline": "100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of diameters of target lesions (RECIST)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-175 ng/mL",
+          "baseline": "High, e.g., 500 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Thyroglobulin (Tg)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 0.5,
+      "responseRate": 12,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "Moderate, e.g., 5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (BPI-SF Worst Pain)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.5 cells/7.5 mL",
+          "baseline": "Elevated, e.g., 5 cells/7.5 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Circulating Tumor Cells (CTCs)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Palmar-plantar erythrodysesthesia syndrome (PPE)",
+          "percentage": 76
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 69
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 67
+        },
+        {
+          "name": "Rash/desquamation",
+          "percentage": 55
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 51
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 41
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 37
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Until progression or unacceptable toxicity",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIGBkMH4JXGVU2MXF9hIl3t1unYrPJ8qzpRp_NYuu0pBVGzaxjvo_rzr16UQrQpUVUci6cFjLXAuwj5ydYtnjJZz3dLTH1x9xlDC5xcuDUD1igvIpxpiYkOcStFFWVAQ7eJGXP"
+        },
+        {
+          "title": "bham.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBJw7JeJR5p_t97jMgp7KxeIzQBj21pQ9pfPdiIAuWt-J4bYBMipNW9xdI-GWKbsOhJdXyLCplRg2_X_UGUvyVq8dS4s3hhaEcN6aHGswjON-pZQqOoAMt-rT5meEAEfxoN6HC3NC1040m6jLKy0ErL7yH2lDsGMhZDvO_U0TD_JGukyj5m4Ay6DSPjj9ZljM_pTBEMUXnqnAG9gCIgQ4AhHeROGt5qBcNLRxgxu_xsytFnL03VuSRXSG-5aR8Ce4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqvwhXHIBZBDC4je7TD4Fm1D-VSiOu6RqOPwT2RkNa-IvYFf_TZTyExmTo4jlzHlznO_Xe3tuaJ7T2P3HK1JTlcAsrCA_QdTgINtYXRuRsatls4nqcjZePHLvq84WRvlN16PaT"
+        },
+        {
+          "title": "nice.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUR8DtOvPhcQRLK4UPgPB6qWJpOM-B3wyr1UaGbi9eRXNlnOT5NIwDvuPogLy95lRovKm-ziQvHiBeGd_8AB1j-uUQJ5IVg8D8eYBvF0-we_gv0RA4MeLOgLZFWAa5fs623h9rHOgWJ8RbYIuPDpmy0Famzv4eZajwjJYlQ-4UyfoMJkmhRSbb5jHJm6kRlylzZBXmhE0A1gSz9_pdksiemeGdWc94aPUwCasuhIkV2uCEDrA69q3RhhDb-szD"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErwXAmmejwG70WZLiNHnEA7WqUo0Ejo0KaDVnJ82NcDJvxlJLDOAH7No4VYxE08Rt0E4SU6iZdd56rKq0cqyORjwwn-8Xi5bXuL7gsX_mdBEcp5sZAzxFCPDoP5irbnex0t_rQ50pOu4Ax-WQEbWZn3_1zkjNEu3LzVSiNzYGA-yQfPwrBG0JFVnDFrfDqS5rr7GtW5uCNiDXi97ktQJOwUPdwyYliTNCHYfkcj7PTvkeLUsX3hfmfJKV9dnW9JHxf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgAp_rKxnaC9UF-0cR7pMOhE_U3K2x6-jxYKh_cb2r4T-vNtGS6Q1Bk5ii7g7IPw7ZlOY5js2YIgY4qxCW0ugZnHck1m9B0aUynpp2x--xAoUoxcydRl_Vagiv2dlbrQHbplGo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxvVez_yvkSdZLd-6ttx1IDG78LU080qgQGP4Evv6_7JG90b6lnf78GD0lJaC6ox1cNkSqSN-NU3PQPi2vF1tyakCRcQvJJI8gKlQvHLnWZFDuHrqZ_bXlLoJUpqp7LkEZ3AwIQN9ZQLEsRWI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFu7X6chpXCtL_V0ufjX7LTV1F2GOpWiMg75b5rnY44UUh6gKG2A3tYr_TGsg6oUuB-DaAtFwT5Bb5wiLW8Q71-E7mEutvG7FiMt_d2gGmAEtEVEZX9IrCx3reNSuX2Zsb_U7uWVIJzfM4Mc48Up1-quTJ5Iz-uCSUqM7wqfNK8j5M3RKRqAU2SGbzOLbj7n5eoZiMTzSsdF-8OERWgtFGlWpLNaMoaUPKf"
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpQX6X61EY9r6bDFDRiZuGjtpjYlVRn4zhvRNrcFIToBwydwVLGs3fswPL-of3kcnCfmxHTRMzT4bwUKCQZiL9Tpq1FAfwl30ZVvKStdy3P6POJjIJ_GuzXKwxsTx3Ejs8393EYh51KCLe-p70crN8isZvRGa-xcDhY0Wc4fpEG3IsW3FvijW2vcXUqu02T9JKGl0="
+        },
+        {
+          "title": "ClinicalTrials.gov: External Beam Radiation Therapy (EBRT) trials for Thyroid cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Thyroid%20cancer&intr=External%20Beam%20Radiation%20Therapy%20(EBRT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "40-70 Gy in 1.8-2 Gy fractions",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Best Supportive Care",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "External Beam Radiation Therapy (EBRT)",
+      "nnh": 7,
+      "nnt": 4,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-15% absolute risk reduction (e.g., from 25% to 10%)",
+          "baseline": "25% (expected risk without EBRT in high-risk patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Locoregional Recurrence Rate",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+15% absolute survival improvement (e.g., from 50% to 65%)",
+          "baseline": "50% (expected rate without EBRT in advanced cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-3 points on NRS scale",
+          "baseline": "6/10 (Numerical Rating Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (NRS Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+15 points on MDADI scale",
+          "baseline": "60/100 (MD Anderson Dysphagia Inventory)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysphagia Severity (MDADI Score)",
+          "percentageChange": 25
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 65,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 points on EORTC QLQ-C30 GHS",
+          "baseline": "50/100 (EORTC Global Health Status)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-C30 GHS)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-15 points on VHI-30",
+          "baseline": "40/120 (moderate handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Voice Handicap Index (VHI-30)",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-10% absolute reduction (e.g., from 20% to 10%)",
+          "baseline": "20% (expected rate in advanced disease without EBRT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Rate (for local complications)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin redness/irritation",
+          "percentage": 70
+        },
+        {
+          "name": "Dysphagia/sore throat",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Hoarseness",
+          "percentage": 20
+        },
+        {
+          "name": "Hypothyroidism (long-term)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months for tumor control",
+      "treatmentDuration": "5-7 weeks (daily sessions)",
+      "trials": 9
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Migration plan
 
-**Status:** implementation roadmap, updated 2026-09-26. The base app exists;
+**Status:** implementation roadmap, updated 2026-09-27. The base app exists;
 the extraction, evidence pipeline, independent installation, and federation
 below remain planned unless the inventory marks specific code present.
 
@@ -27,8 +27,12 @@ content and estimates, label their status, and progressively improve them with b
 sources and methods. Removing estimated numbers or blanking useful screens is not a
 milestone or a prerequisite for demonstrating the product.
 
-Use an adjacent label such as **"Current best estimate - AI-generated, not clinically
-validated"**, with its basis, limitations and update date. "Best" means the demo's
+Use the concise label **"Current best estimates"**, followed by **"Preliminary
+estimates, updated as better evidence becomes available."** Do not repeat
+"AI-generated" throughout the public interface or expose import/debug provenance
+as a large page section. Retain origin, basis, limitations and dates in the data
+and developer documentation; show actual study citations when verified.
+"Best" means the demo's
 current provisional estimate, not an established medical consensus. Purely illustrative
 seed values remain **"Example data"**, not best estimates or observed patient results.
 Where the generation history or uncertainty is unknown, say so instead of inventing it.
@@ -47,7 +51,9 @@ then expose that importer through scoped evidence MCP tools and an admin review
 screen. Keep these separate from private tracking permissions; agents submit
 structured records, not arbitrary SQL. The [data-population specification](EVIDENCE-AND-EXCHANGE.md#populate-data-through-files-mcp-and-the-admin-ui)
 defines locations, previews, repeatable imports and publication controls. This is
-planned work; no importer, MCP tool or data pack is created by these docs.
+planned work beyond the first local Optimitron demo pack and deterministic
+exact-copy script described in [current priorities](#current-priorities-and-to-do-list).
+The general-purpose importer and MCP tools remain unimplemented.
 
 ## Where things are today
 
@@ -123,6 +129,46 @@ Everything dfda-specific leaves optimitron, including dfda.earth's MCP server an
 | Landing, about and FAQ content | Existing public pages | Copy only |
 | Condition and treatment pages and AI estimates | Adapt useful content and estimates into the existing condition/treatment pages | Preserve demo coverage with explicit current-best-estimate labels and available generation/source metadata. Add patient ratings and trial results as distinct views, then improve or supersede estimates; do not exclude content simply because AI generated it. |
 | 6 unit tests | With the features they cover | |
+
+### What to extract next from Optimitron
+
+The complete medical dataset is now copied locally (221 original files, all
+metadata preserved). Do not create another reduced dataset. The following source
+code was spot-checked on 2026-09-27; these are extraction candidates, not completed
+migrations or a new audit of every dependency:
+
+1. **Treatment and outcome presentation:** reuse useful structure/logic from
+   `components/shared/InterventionCard.tsx`, `components/condition/TreatmentRankings.tsx`,
+   `components/treatment/HealthEconomicsDisplay.tsx`, `TreatmentMetricsGrid.tsx`
+   and `components/landing/OutcomeLabel.tsx`. Use this repo's existing landing-page
+   theme and shared UI primitives. Add condition search/filtering, cross-condition
+   treatment browsing, and displays for the now-preserved metadata. Correct score
+   percentages versus 0–100 scores and do not imply copied trial counts are verified.
+   The source Outcome Label calls a grounded-generation action when data is absent;
+   adapt its display without adding paid calls during page rendering.
+   **Local progress:** condition/synonym search, comparison cards, the existing
+   landing-page Outcome Label renderer, annual cost/breakdown, expandable
+   cost-effectiveness details and snapshot regimen displays are integrated.
+   Actions use the existing shadcn buttons; posted trial results stay separate.
+   See [UI conventions](DESIGN-SYSTEM.md). Cross-condition treatment browsing,
+   reference pages and the remaining metadata still need integration.
+2. **Trial discovery:** extract `packages/data/src/fetchers/clinical-trials-gov.ts`
+   with its focused tests and relevant app search/filter components. This is registry
+   discovery, separate from the new posted-results extractor and meta-analysis work.
+3. **Tracking, reminders and MCP/REST:** adapt `apps/dfda/lib/mcp/`, `app/api/v1/`,
+   the generated OpenAPI contract and their tests. The source's tracking provider
+   injects Optimitron's Prisma database and its MCP auth uses the shared issuer.
+   Rewire to dFDA-owned auth/storage and user scopes; copying these files does not
+   migrate accounts or authorize importing private health records.
+4. **Health imports and analysis:** reuse selected `packages/data/src/importers/`
+   parsers, unit conversion/validation and their tests, followed by selected
+   `packages/optimizer` calculations under the curedao-api parity baseline below.
+   Keep shared packages in Optimitron for its other apps; extract only the dependencies
+   needed by each working dFDA flow.
+
+The existing plan's account/data/email boundaries still apply. Do not copy
+Optimitron's database, credentials, deployment configuration, political/economic
+datasets or the old trial-percentage aggregation algorithm wholesale.
 
 **What stays in optimitron**
 
@@ -245,13 +291,35 @@ Do not hard-code a count of available studies; record the source snapshot/date.
 How to use it:
 
 - Start with the API v2 for selected studies and search; add [AACT](https://aact.ctti-clinicaltrials.org/) snapshots/SQL for reproducible bulk ingestion. Both feed the same contracts and underlying NCT study identities.
-- Start with reviewed adverse-event tables, preserving participants affected, at-risk denominators, reporting thresholds and observation windows. Events are not people; unreported events are not zero; not every comparator is placebo.
+- Start with a posted between-group comparison (the first local slice below), then extend to reviewed adverse-event tables, preserving participants affected, at-risk denominators, reporting thresholds and observation windows. Events are not people; unreported events are not zero; not every comparator is placebo.
 - Compare study groups, not rows. An effect is the treatment group against the comparison group on the same outcome measure and time frame. Use the trial's own posted comparison where there is one. Single-group studies give no comparison and are shown as such.
 - Map each outcome measure to an outcome in the shared health vocabulary, with its unit and which direction is better, before pooling across trials. This is the hard part: every trial names and measures its outcomes its own way.
 - Pool only compatible estimates using reviewed methods, with explicit handling of study design, uncertainty, shared controls and overlapping cohorts. Shared analysis code can later serve clinic summaries, without mixing the evidence types or assuming identical statistical models.
 - Label source results as trial-reported; label calculated outputs as dFDA analyses of those results. Link NCT IDs, source versions, included/excluded studies, and method versions.
 
-The old parser in optimitron (`apps/dfda/lib/fetch-trial-results.ts`) is not reused. It treats the first two numbers in a results table as before and after, which usually compares two different rows. Only 84 of the 5,776 outcome values in optimitron's medical data came from it.
+The old parser in optimitron (`apps/dfda/lib/fetch-trial-results.ts`) is not reused.
+Code recheck on 2026-09-27 found that `hybrid-treatment-data.ts` calls it for up
+to three completed trials, then falls back to generated outcomes when usable
+values are absent. The parser guesses baseline/end values from category labels
+or position and takes the first measurement group. Its aggregation averages
+percentage changes by outcome name, without treatment-versus-control effect
+extraction or uncertainty weighting. This is an earlier extraction/aggregation
+attempt, not a validated meta-analysis; it was not rerun or ported in the current
+demo import. The earlier inventory's 84 of 5,776 trial-tagged outcome values is a
+historical source-label count, not proof of correct extraction or successful pooling.
+
+**Implemented locally, 2026-09-27:** a new bounded adapter reads a selected API v2
+outcome from NCT01097616, matching groups by ID and using the posted adjusted
+suvorexant LD-minus-placebo contrast at Month 3: 10.7 minutes of diary-reported
+sleep time (95% CI 1.9–19.5), with 228/339 participants analyzed. The public
+Outcome Label shows it separately from estimates and links to the posted results.
+The exact secondary endpoint, source fields, selection rationale, snapshot,
+refresh/check commands and limitations are in the
+[trial extraction notes](../apps/web/data/evidence/README.md). This is one reported
+result, not a new meta-analysis, exhaustive search or clinical validation. No
+ranking score was recalculated from it. Next, screen another compatible study
+and review endpoint compatibility, study bias, overlap/shared controls and
+variance handling before implementing tested pooling.
 
 ## Community evidence and participation
 
@@ -305,9 +373,116 @@ are authoritative; schemas, types, fixtures and consumers ship together.
 | Tracking data recorded through dfda.earth | optimitron's database | Same as legacy measurements |
 | Automated personal and population time-series studies (historically ~15,800 published analyses; recount and reconcile at migration) | curedao-api analysis records and generated static site | Integrate eligible historical results as source-backed observational findings; preserve provenance and unknowns, then reproduce/improve calculations, charts and reports. Separate imported, reproduced and corrected versions; keep old links usable until continuity is tested. |
 | AI-estimated medical data (historically 216 conditions, 969 treatments; recount at migration) | optimitron `packages/data` | Retain/adapt useful estimates with explicit AI/current-best-estimate status and available provenance; improve and supersede progressively. The condition list and ICD-10 codes seed the health vocabulary. |
-| `apps/web` demo data | Existing Supabase seeds; planned versioned packs under `apps/web/data/demo/` | Adapt useful examples/estimates into the common contracts and importer; preserve labels, source permissions and separation from live records. Preview revisions, preserve user edits and prevent duplicate/resurrected records on rerun. Do not clear the demo or patient tables. |
+| `apps/web` demo data | Existing Supabase seeds; complete source-pinned Optimitron medical directory under `apps/web/data/optimitron/` | Exact file copy and local edit protection are implemented. General-purpose database contracts/importer remain planned; preserve labels, source permissions and separation from live records. Do not clear the demo or patient tables. |
 
 ## Order
+
+### Current priorities and to-do list
+
+Focus on improving the current product, not consolidating Git history. The local
+history-import candidates are parked and unpublished; no history merge or
+private-source publication is needed for any milestone below. Keep the existing
+README and useful demo content. Work remains local for review until a push is
+explicitly approved.
+
+The following is the short execution checklist for the delivery sequence below,
+not a second roadmap. Finish one demonstrable user journey before expanding the
+platform. Unchecked items are not shipped or verified end to end.
+
+**Now: one repeatable, useful demo (step 1)**
+
+Local progress, 2026-09-27: the complete Optimitron medical dataset now supplies
+1,214 treatment comparisons across all 216 conditions at `/treatment-rankings`,
+linking to dedicated demo Outcome Labels. All 221 original files are copied intact,
+including catalogs, references and previously omitted dose/cost/citation metadata.
+The thin runtime adapter, full-inventory tests and exact-copy/check script are
+implemented; see the [snapshot notes](../apps/web/data/optimitron/README.md).
+The old three-condition projection is removed, not maintained alongside the source.
+This comes before the full importer and tracking backend. No database records
+were imported, and no clinical source validation or publication approval is claimed.
+Expand this working view before building general-purpose infrastructure.
+The comparison UI now reuses the landing-page theme and Outcome Label renderer,
+with searchable conditions, shared score cards, cost breakdowns and regimen details.
+It adds no model calls or dependencies; the original dataset remains unchanged.
+One source-backed posted comparison is also now visible on the suvorexant/insomnia
+label, separate from the provisional scores. The ClinicalTrials.gov adapter has
+an offline source fixture/checksum and preview/explicit-write commands; no pooling
+or general-purpose source importer is implied.
+Browser checks confirmed the rankings and an Outcome Label render on desktop/mobile,
+condition/sort submission works and keyboard back-navigation works; no browser
+errors or horizontal overflow were observed. A repeatable full browser regression
+suite remains to be added.
+
+- [ ] Restore and verify the local development baseline: frozen-lockfile dependency
+  install, unit tests, type checking, lint and build. Record failures separately
+  from unrun checks; use a dedicated local/test database, not production resets.
+- [x] Select one existing condition/treatment page and trace its current data and
+  navigation. Define the demo journey: open condition -> compare treatments ->
+  inspect an Outcome Label and its origin/source -> find related trials or open a
+  clearly marked preview of participation. Do not imply actual enrollment.
+- [x] Copy the complete pinned medical dataset and connect all condition files to
+  rankings/Outcome Labels. Preserve every upstream field and verify file checksums.
+- [x] Improve the comparison journey using existing UI primitives: searchable
+  conditions, clear navigation actions, shared Outcome Labels and cost/regimen
+  displays. Keep estimates and source-backed trial results separate.
+- [ ] Finish reviewing the copied Optimitron/dFDA content and estimates.
+  Check redistribution rights and available provenance; keep AI estimates,
+  illustrative examples and observed results distinct. Do not invent references,
+  participants or uncertainty to make the demo look complete.
+- [ ] Implement only the contracts needed by that pack and the shared importer's
+  validate/preview/apply/status path. Test invalid records, replay, conflicting
+  revisions, private-data rejection and preservation of existing user edits.
+- [x] Add one source-linked posted trial comparison with an exact endpoint,
+  reported between-group effect/interval and arm-specific denominators; test
+  mismatched groups, missing values and unsupported layouts. Keep estimates separate.
+- [ ] Review a second eligible comparison and synthesis question, record
+  inclusion/exclusion decisions and cohort overlap, then implement tested pooling
+  for compatible studies. Do not average treatment percentages by name.
+- [ ] Connect that bounded view to the validated records. Keep origin labels and
+  source links visible; cover loading, empty and error states, mobile layout and
+  keyboard navigation. Preserve useful estimates while improving their basis.
+- [ ] Add a deterministic end-to-end smoke test and verify the selected journey in
+  a browser. Document reproducible setup in the app's developer instructions;
+  require no paid AI call or private production credentials for the demo fixture.
+
+**Next: make the tracking and study loop real (step 2)**
+
+- [ ] Capture one authorized curedao-api reference study with inputs, method
+  settings and expected outputs; use synthetic known-answer fixtures in Git.
+- [ ] Verify measurement entry/import -> history/chart -> personal analysis ->
+  report/export -> reminder logging. Reproduce the selected reference calculation
+  and document intentional corrections; then extend to eligible population results.
+- [ ] Connect patient ratings and trial discovery with separate evidence origins.
+- [ ] Expose the importer through scoped MCP/admin tools after the importer and
+  authorization checks work; no direct agent access to unrestricted patient tables.
+
+**After that:** protocol creation and reviewed participation; permitted community
+report ingestion and source-linked summaries; compatible living meta-analyses.
+Domain cutover follows its existing migration gates. Independent installations,
+white labeling and federation remain later work, not prerequisites for this demo.
+Do not retire legacy services merely to simplify the portfolio.
+
+**Baseline checked 2026-09-27 at local `master` `49e649e13`:** public condition,
+treatment, Outcome Label and trial-search routes and patient screens are present.
+The general-purpose `apps/web/lib/evidence/import` and shared
+evidence/analysis/trials packages remain planned; the complete local `apps/web/data/optimitron`
+snapshot is now present. Existing
+unit and browser-test files do not establish that those new workflows work.
+The initial missing Vitest dependency was resolved by a frozen-lockfile install
+(lifecycle scripts disabled). All 63 unit tests, including full-dataset,
+trial-extraction, condition-search and missing/zero-value presentation tests, and
+TypeScript checking pass. The existing lint command fails loading
+`@typescript-eslint/no-unused-expressions` on an unchanged auth file; this is an
+open tooling issue, not a passing lint result. Production compilation and static-page generation completed,
+but standalone packaging failed with Windows `EPERM` creating dependency symlinks;
+the full build is not passing. Fix the local packaging environment and re-run
+before claiming a release-ready build. The source snapshot matches its
+pinned upstream commit byte for byte across all 221 files. All 216 condition files
+were validated; selected UI, trial-search and tracking/MCP dependencies were spot-checked.
+Other external repositories and live deployments were not re-audited. Local generated directories under retired app/package names are
+not additional maintained applications and must not be deleted as part of this work.
+
+### Delivery milestones
 
 This is the single delivery roadmap, not a list of completed milestones. Start
 with a small working slice of step 1, then grow the curedao-api replacement and
@@ -336,8 +511,16 @@ optional steps 6 and 7. Detailed tests live in the [evidence specification](EVID
 
 ### Next implementation slice
 
-For one bounded condition/treatment view, adapt useful existing demo content into
-a small versioned data pack; implement only its required contracts and the shared
+The full medical dataset is now copied and connected to the condition/treatment
+views. The first presentation slice is implemented: condition/synonym search,
+comparison cards, shared Outcome Labels, cost breakdowns and snapshot regimens.
+Next finish the source/redistribution review and extend the useful public journey
+with trial discovery. Cross-condition catalog/reference browsing and remaining
+metadata displays are still planned; the whole Optimitron app has not been migrated.
+One source-linked trial comparison is also
+implemented; next review another eligible study and endpoint compatibility before
+pooling, following the [trial-results plan](#clinicaltrialsgov-results).
+Implement only the required contracts and the shared
 importer's validate/preview/apply/status path; and render imported publication
 records with persistent origin labels and source links. Test replay, conflicting
 revisions, private-data rejection and preservation of existing user records.

@@ -1,0 +1,884 @@
+{
+  "conditionName": "Opioid use disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:19:52.166Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrW6T5VM7CAPs-GPNVug2OQssRaUvjr1ZlIqVsnw_2tZ9onLcvVuJcwQMExRUnq8FlqriWllist75qD_a9c-OiRYRT7J5zIZe6WG5iHGBdfMZL2EgeloqomvID-11blEBdlX4BuXu58FfuKa465ahuzzSSzVP8KTSKRinKfWXCZplPiZ9oKLHWjcOpRifqpAbcF5wQnfJsc0BqoUiXcNXRLgOFYCJ7bejiWfgsmJV2Kuy81ITjjF2NeVJNvDiaU_Gb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhKCb3E8A5zL6iCj3GdCDZVu1D9R6Gz5NSqcnT7DisVxO1EKQwCi8nDf6VnOIAdfVTa8xQL79TfwabjltF8JsYc7156-mXU0eni4-bSiw4w60lJLhEHO0MnQTB5icvlbZBsGqp"
+        },
+        {
+          "title": "bu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF--Ex-594y-FMafhjny0yuFLqHsuMkF0NsIm1es2Cp217O40TvJr-77jrzwcia8xJSFXR3jV4rQp3eAcph9mRLUrZ_xJ9KDLCrIbEXjHl55ang_6DJkuVADrIvvlNk2maVHVTx-xJ6yc7ng5UUwju2OKRmwa01h_YoUppnipSyEE0i0MuAWzPC47su-W4FIexvnyBwnym7KvkH8-gVDg98iqO-0vTv5rhHkP9HZkYgxduojuaSldE1Jd6W0TlevZLn_Bt7pc1cSmLnL7i2mPofqJ2I9Pbcfkrnm42qRO9RXZK7bSnb7TlQmWG-6cl4hqM="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjUEmTtThJoBlvRdBtV6C-AtgGt7v2pYTmJqcjTvIaNDPPmC3v5cyYsDmI9rPnxYJ8f0B53J_gXMXIGLq5z_as1roWQdqx-6FbToauCCpuP3MtN3UEcHnF1J2Fyz8QPiaZBO1kt78JH2HtVwoXHIp-DSC_d2KXSn30"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJihuh2jn8Nflk7DB3RzupzLGMVdFx9zLk_bDzlv0NGtqRKh-S8RKUtD3l6MpEugu_LdsLzri9UqI0DfdMDAcVcgJnhvrrn-qo_u68x7ohswbyJ7-wYopPcE7CIUoNcX8wHwubulx23S9ilcU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-6FlpAp98ZA66hJDV8i78LNTkUbrz2JMob3MDvpLQKFEng_J8rufci8_amPSBzKCzzW6umFdDEpCYdY1sGACaOfPoHDBo1e419oh3IiJ_UFB7UZ--xYyf--SleXlRzMcRG66T"
+        },
+        {
+          "title": "case.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy_eWTF1J-PdtGwj3jdOo_g4dGsUDFXbr4wd9Zimqd45s3GZ2shAclHeN9qMY9IknC_hQnTBCgtu7RaNgqOba5g5afMlPkKdEfK1kxFmtETHXLsDTwJGzsa3HBdilcr65pnbqN0zcTQC9VtI0PdSHNWIHs2-mQ9GnUNUtmVCzUhf8g2vLU1kTGO_u3znCri2BbZU_U3LzpI9owA1DvAvYBcJ58nWfb"
+        },
+        {
+          "title": "pinnacletreatment.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpQubPua6tT4HbtefVEsA5Ivo742TQpDGTgw-IB2j4P_Qd79qcT93sIP2HbQvpsf4RaPgTqj05zeCJuAYmDXkteVVAIHpB0NJHPD27MMmpDMOiePCGaUBG9pnaELRVIJwi5JKfVI6BogAO7n7sKL9tMzlOFng="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS34_knMdqZBu2RQcAo-gCa1n3MUlhXBp7z2av5peWNXwP2Dev9JKJyZTWyz98x1VU6IECZnPTnXsHwT6jtSDsOHhbfKuYoZEyjdCIhHLtfOg2XV5ea0EKYCMtEsXDgTi7vA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSqS26AEXZfvbItI6Z5l8b7W03EgY6r6Cz1zK5A8W9nBGP5sjxaZEP2BgIKb64_4fFbm85lFfIrbA6RpT-04mzMjPb8bBz6aR465K8HPB4ObpSHXjklVbfKGGdthfCH6uj1AqLOJPENslWAx1rus9rztwetQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlsQLwwYgnjCCIxBBpYedSzXbInoZ28v6ZinQUnH5ubv0DXsi9ctUpXN2TAtFQw1-jVZ2EdkdME2zWvV39T9B9b3-7jgYFaltx-p_Kgfv7xoIFimUIyjes3Ud69PbB1JlY83VrKZYyiPAGH8g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1Wr3Il_3CkZyYS2Oy8nKY5KaejqtVqQWMKTqf0yMtfzBhWQwr6A1aK5BW8XUeL15b3t1cgxyV5bkZdmJ-ZTYEnw2wBXD1N6sqsW-TDrNCBsny87Ffn2pBbF_AsZzcZYwJ55fc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFgXSKYFHM_AzA4md7zzfbW6KnQI6m5FmpUflXFXajlgXnA24xD8Ad14zT4hMPbZzwKgrLQN0GW2MOfhrf_VC8bsH2xleNQLMwcb_4ArpKoF3oTYD6o1KJvSYtpf5u_U0uW88iFTG1Im3M_Y2JeZfwB3ar8qivd--jv_qdlLs8TgGfYTdJFQHX2m-WZx_YAVkJRewPHWWIF9fVCkHbeEVwtRWdRHCj_65ml8bcHtp6nwS5IEU4JwSGVxBEJTAG8MNoTYOwmS3PHLQl1FJlzS8I4DMZIKKwb0mLjIh0ct8tDjphMpmyT6Nr3SqZHZ8m"
+        },
+        {
+          "title": "ClinicalTrials.gov: Methadone trials for Opioid use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Opioid%20use%20disorders&intr=Methadone"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "60-120 mg daily, orally, in a supervised clinic",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 240,
+          "monitoringCost": 6500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 6840
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 13680,
+        "costPerResponder": 9120,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.45,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": 6840,
+          "dominates": false,
+          "qalysGainedDifference": 0.45
+        }
+      },
+      "name": "Methadone",
+      "nnh": 80,
+      "nnt": 3,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction from 75% to 30% of weeks",
+          "baseline": "75% of weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid-positive Urine Drug Screens",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "Increase from 30% to 60%",
+          "baseline": "30% (without MOUD)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Retention at 12 months",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "Reduction by 3.5 points on 0-10 VAS",
+          "baseline": "7.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Craving Score (0-10 Visual Analog Scale)",
+          "percentageChange": -47
+        },
+        {
+          "absoluteChange": "Reduction by 0.5 arrests/year",
+          "baseline": "0.8 arrests/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid-related Arrests",
+          "percentageChange": -62.5
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Reduction by 4 days/week",
+          "baseline": "5 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Injecting Drug Use Frequency",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "Increase by 15 points on 0-100 scale",
+          "baseline": "45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life Score (0-100 scale, higher is better)",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "Increase from 25% to 50% of patients",
+          "baseline": "25% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Full-time Employment Rate",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "Reduction by 0.4 events/year",
+          "baseline": "0.6 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-fatal Opioid Overdose Events",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 30
+        },
+        {
+          "name": "Sweating",
+          "percentage": 30
+        },
+        {
+          "name": "Drowsiness",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "QT prolongation/cardiac effects (rare but serious)",
+          "percentage": 1
+        },
+        {
+          "name": "Respiratory depression",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate (stabilization 1-2 weeks)",
+      "treatmentDuration": "Lifetime",
+      "trials": 124
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHoLrBMoV_fKWtTVhUJk5qARnhoKC4kLanHBvGF0VQkD66eW1_bir2IwuJo8bR7qZ0Ze261GL6nm5-GSFE8rZuAipgm25DZuUUMK-1q0o5_5PY4-nL7Vm_taqdLlRO-Xg9vKhk"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3bNbCcNeg2GV7o3wZ7y9qm-Y11ilyAV8hKoaAmGpmgDaFomS-6G838QYV8NQz-ZInT8VHW81Qb_zrfLyl5zlwNXujbIztqhqxhmT6ykJNqGMlhULYjFb_NEts4ahpqGFAUYKvlGkvyXSHfA9Gf5BbtIOnvcUQoZr0ylOVINjNG6LyhftC0eR_QnvrvzrVLFtrHv--lOYP4vTFyMObvpozBd5elnYzm27HMx_21TGDXHLJWP8pTI9xgN8FmEUaDR2-sdVx_rGZTexo9oCGnxGbcq2_ahRugQe0peqSlST0S7tmmxZpi36qyoszlbSVkYfRng24I1VMQcJ9"
+        },
+        {
+          "title": "omicsonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDcftqCRM9-ou0fnwPqH9-3aM3axRvCswr_ri7aLrt1S5PnqRElkglN-RiQH_oKJBAvUVZokezglHY_QqXj5f-nlu7aSGrUeC4ipIfPFQPLPmfuGrt5cXhr-FGT6fZDPU-AI-tbasb2IIDjB-OV_dZ-TEcOzBBJxuSPbNXuWszRaQKCxaviLSxQPJSUimTtmV9REnsZaaa5ddzxGCHAoeRSql27M7xnMZXAgWTaSJQ67eb1Agk_2JYj6IJWSGKekv-iKhHpOcS3P3UMjxBhIC4cAhQGqW3G9Wmm0Hrxd5IyBrghho81HIcQakfX6xLs1TDpUnepBDhadtrlDewftHZB8by2IQy4FaK"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKJ4zysLAQi-nmivzcQixPtLpJ8__9gX8Ni-JNsxpBdiehE6DdFNLfeHRo0Yr3LKY5lOy9fiO2CPiRU9Jwigsyy5io3gupsJdrw6nRDN-ebHhK61hVtxHvVXwrB49ntJoUrhdwkHgo3FtJETdsqHXR-6BMLOiu8YVrhn0aD7leGj6i2DPJkoRuHt0Iqf_dxYy_sQzs18PlKVsYhW7e6Q-oEpRAqpj2Q7JCHz2qNHobIhMK3f4LrX2i0vvZhRHmPj9hhyLMc_DdxkuqtkIJS5F945hXJkvg0vu3QyOPjdDwtAY9Ep5Iqei_XBUipoZx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG82JruqNWhzrX_rdQIxjXGs3Ybs0eMrrkidMvhS5quubilH14krBRAR2_TAjeJgm4x7EahNYD1p7mJ23OoJ6t4GtTsEQQasBTvoTS1LZbTKlW493HTrQPcwUPyJ24acKAP-YRFtsdhQoFK-oQ="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFKzpOXIFpeXYWv5YEtR1hvmQsw-QCHJEVKDEjumFarpfnLQDHFBvyDQyiqX9Qoc70nspQzFe5vfUoCMY1Q04IKaPSu4S-6E2b-y0Ow271fhLvq-vBQ6RpWF2H7Ar2hG2oecjwwJs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGowQn8AO6kkFgZpldyKibDytE5PJNdCWUzW-2_vGsFmu_crgG6Kz9EBWOxpDkqbipcRMrsX5Sb43GJiGAOop6JVHvL0vakDqlzfC9iEf0HCTuAhY2H0U3ygqpjAEfZF5Pf8ldCyj_s1wX889LbJtt6PKUMr-YDd8isa5ZD475-kUReXKFdCHMHezSXUkemiBPJiLrpxb9R0UVE0gUhwJM_ZASxSDL6VuV-pRwINIORPvDtFTKcCItNHW7hTFEs6w3wTKT6f26egmU4b1Kd12vf6evSQVquT3lAeP0OwMbn9StGgtGD8sv1FMTLBfqKFGEtG-8cQcyLtYVK4KLKXh_ErQNBXRQfvJ4gUg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEffoLu5iSamz6xt7ptbJfHvIyilekZ7-gdnx-ytZzq6tWYKT57BPcMZpm8dHf7dVsi1iAJW9zYhehKr4Qt1veqeNr2dYwU9ZmJXAcKMP4DWHMBVuXSfaGS1w59e8GW8hSyrrwfI1vSE8OL5kdWl4Q50t1_39d0JoMfiU_e1WdIfVRXlbP4d103pFAk_aifjyfCPfHukHgmi5CKS0Z_gKd8r6VmgAw9fUnFgFCk-69R9C2pneBqZ0-b0n_YO_EJcXrcOuL3wfdNp3YPd_GJroeGwYY2D2WpLmciiXMfVmrf3H7JhWC6JE2uxg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Buprenorphine/Naloxone trials for Opioid use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Opioid%20use%20disorders&intr=Buprenorphine%2FNaloxone"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "8-24 mg/day of buprenorphine equivalent",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2400,
+          "monitoringCost": 3600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 6100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 15250,
+        "costPerResponder": 9384.62,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": 6100,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Buprenorphine/Naloxone",
+      "nnh": 75,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-60 percentage points",
+          "baseline": "75% of screens positive",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Illicit Opioid-Positive Urine Drug Screens",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "Opioid Craving Scale (0-10): 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Craving Score",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "COWS score (0-48): 25/48",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Withdrawal Severity",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 65,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "Q-LES-Q-SF score (14-70): 45/70",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life",
+          "percentageChange": 44.4
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "PHQ-9 score (0-27): 18/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms",
+          "percentageChange": -55.6
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "GAF score (0-100): 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Assessment of Functioning (GAF) Score",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Constipation",
+          "percentage": 20
+        },
+        {
+          "name": "Sweating",
+          "percentage": 10
+        },
+        {
+          "name": "Drowsiness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate (after induction)",
+      "treatmentDuration": "Lifetime",
+      "trials": 115
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8-JiM9NyvoHVEbRcxqCIqNJxfqxuTL7is1A342GlfiVOJWzqeAtYdU_TyCs6GZOAoXp15iM4wrNHo6LPKidIc3v-oxs2uagsY6xIK3nwaXos3PU6dqhLImf2R_LjgsEv-X_b_B0m8F1BqMBGkh9EC3O2mwz_0oA8XSvVB8j7EzNtAQ7MFhSMZXv8JDZZ9ElvzhqUNC5g5-7MUrHTcuJ4gI3fXmJZ4fElrTdq-giiy8ui0wbsDAcyQs0fXfod7HcZb"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyEJSVJec4sm4XLgYMXw1cHD1ROa6qhF5bA7Zj5fVqmq0CzYjSnS5hm2c5k-mLI-koE7YFwCjGUtsLP3_MDD-kXqmgDlBFFXfQHf910G6QG0PFGo5ljucFX0mgVr5HJTV6oh5Uj4Qf09ebJWN8ZR1sK5HSI8HlrFUgja4o2AQ-pTB1cqXC2tVp5cbB6AlF1c2-shUly0B7hCGmUTji-5fbM1aj5mF30PDHVA=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAqPNY4Ei8L78cot2tv0zYTb_Z2S33-2DeqS67SniM851eKF6SMoizChvKTNJKEOXNC4bQfpdyXqvWunDzLn0kRcefiGqLvne5cV_yUcP5_e2KKblBrHi8Rt-agMG8GbLxcfCR8dt8Tum22N_WuHibl8-kXgTslw9dWjT0i2WSLiNq_M3uC_c3eA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGthCPrQLcafIfAnq7DxEaCVyFXuA23LAp0cjK8NrFe1shD7fGQZek2BNM11STKfXTrszDOJtsHBG4lAqQyNrjgDqo8kxX-nEOSjy_QlFh006K2hi2Ra3_d2XdNxWohaWIpU0INv-GDCZttYNY="
+        },
+        {
+          "title": "vivitrolhcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGveCSfYEyQG5P8XjEdEZZ487cIZAqdBADhhna_ZwSIkBN1KGns-IAAAxUy41__jFQ-yDvxCkza5RgeDXbawWBmSM7p7JyhA1uhC0MexnO-VPFtWEYJfDHxdjPKkSX0qQzdAhT96UIGvRYiiu_7wy74K5yerXe_"
+        },
+        {
+          "title": "lmunet.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUwu_YJaD1biNHRsQQpsD-qSh5EX7v6aRAZhoXcxuy7ZsvhpNtE7iBTTgXRxZaIgPEHvyDUDjxZCDjmfJUL9mRSnTcsAgla0YtL8IyDjyWBRzlGJLGU6xvlyQQuNkCiSGRaPd9KEZ7qkfP9XP97C1Kd_rb72g4GvggYrTruMpufe27Ck1jE5SONCZLnwZx97W8"
+        },
+        {
+          "title": "recoveryanswers.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPMs7631hKnWLD_ejuRVx1Mcw0BpgOsS7wu9lqrlDDHpEeFrQabzZFjzBbCcJPeOAbU31sELdXONrRgnxFGtV3eX4Kgh-5cY028yRxZwLH9EA95sqWf5KGqAjcbZjxgo_9R-RmU3EIARQE0PIS5Ik85d-ptAVd0mwdriuifpJKRccGAIL-Sd8fpss7qNA2qu9v0JGGLNBSGBxB9PCcIHjkKSx2_EP6RnWrFgnVi_rwNYFzcRBnmvIOth8Nm4OXgXZUc1v7Yz8kIGfL3ARF4Wqmqx6-5rxqUA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6T9CEnO-1Z3c9UOI64YMVAZrKejmkUMC5nHLzBmNJD1efT3IJkENW7WtZGX3Lz8t2lWlB8Nlr5ZA3-5GQFdeI9okokaMqr_YNroz2cp8k2daKwzIz7pXQONo9Lr_gwLXFD4aCZJRvlAED5f5v7B7iYmu2nAwC9-UutpPUR1Gq8vI27ZwNivEN4NNYGvf9CKcEdIeLz-aqL1LLLu4vPviP14wgETcK_ktA5G3Lr-TE_Nm5h4bTsdI1T9BP1fHpiLftVm8jAfBG8bRzEGsGmiXCqjWPvR0Pu96qVzqmWoU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8J9spwRcTjpyVG3XSGur43hM9CMlZPQ1FsWSzeYxTcKGYs9Qt1-eCGDhNQujAZl_tmdl9JAKGnok8cbzGldKWO4LP8MA8_ZpXQlNGXtYc6osgrwUXqIHw6QTd5IbV4giIwlCPmWxhSc5KHoU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrd4xC2LmzYpbB2QLWfTOjESG9DaIOhDgtLWYeqA8DHD9eBpzPoq0ouTisnn696X6iUWvBjNBl93d6cB58gVQGxul-l8hxrxAieH5p9izSQfBHeNwOkNYql1OD8cqPFCTw6LZlQwpQG1BZ9cCB"
+        },
+        {
+          "title": "jmcp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkq7HJJdWs9zAGeWHafw3tmwaRuQMQvJPIZs0INHcVa6B4JD_xUs0Ir5S06UvGIR2GBb6TRyHGmtDsHrrj2xOu8s-D_S_LsRuWV6OZ8KzTFS_XfvfXRi78DzowCXvKLyhAZUdqRry4cgWWU1DSVX8="
+        },
+        {
+          "title": "evolveindy.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2LBovbpgoeNa-WwyXVtnc-5B_rDS057LEZhoDcrrchqUhyBLy9E0NRpNNo7CudTf4aRr124k4GR5ALEm1p5yhPESB9iH-7KA0aHYUnOp5MJBdbB-zZTsWKvXoXDohERggxZHtv0PjmLDHuQ3CDzZKJv9uw7QauPQEbpHieWb3mMLWIGedKFDOZBwtOCBBp3dFh0tmEEnH03m-mYkJ"
+        },
+        {
+          "title": "vivitrol.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExBo7DPntsKc2tR-14Do2dPmbezuO1a2omu8yVpCasu_CzMGKgMYaOkwao0Fh1M-8JPgxLV5t4eEeBHT97Tz3-k3-26V2zUBn6Qr41WrTDlldJp818awSIGYbDHZF522pgUpxsyQ=="
+        },
+        {
+          "title": "samhsa.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhZO5WZcmkWdTTDkgEIGZljjM9AMKcf1JIZhNOLhS9J7Xog5N5bC1bjQQIGhHCNqeoUhrwNFjINzF4WVJJ9SaW9LgYfTT6MdKVNqU6Rxs-yg8LwY76UXBMMmZcpqj1tS9M9OYuBgpl93yFb9nfoZ1mVyUozyZytrjw"
+        },
+        {
+          "title": "ClinicalTrials.gov: Naltrexone (Extended-Release Injectable) trials for Opioid use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Opioid%20use%20disorders&intr=Naltrexone%20(Extended-Release%20Injectable)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "380 mg intramuscular injection once monthly",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 16800,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 19900
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 66333.33,
+        "costPerResponder": 36181.82,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": {
+          "comparatorName": "Buprenorphine/Naloxone",
+          "costDifference": 13800,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Naltrexone (Extended-Release Injectable)",
+      "nnh": 100,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-45 percentage points",
+          "baseline": "75% positive",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid-Positive Urine Drug Screens",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-40 percentage points",
+          "baseline": "60% of participants relapse within 6 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Relapse to Opioid Dependence",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "-35 mm",
+          "baseline": "65/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Craving (VAS)",
+          "percentageChange": -54
+        },
+        {
+          "absoluteChange": "+10 weeks (median)",
+          "baseline": "8 weeks (median)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Retention",
+          "percentageChange": 125
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 55,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "40 points (population norm 50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "25/63 points (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory-II (BDI-II)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "30% employed",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Employment Rate",
+          "percentageChange": 66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Injection site pain/tenderness",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 10
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Within hours of injection (lasts 1 month)",
+      "treatmentDuration": "Monthly injections for at least 12 months",
+      "trials": 16
+    },
+    {
+      "citations": [
+        {
+          "title": "chcs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxvjmJ-Cfnj73Aij9jO-8_FQAf1ucRQC6z-JTe-O_G2h1U3j_KAswgop_L8vi-uRZ6IL12oQcF9JGRmM66TJycQpaCt3IqndHJdpMXeMhF4Yf54qm4uZ9-ZP_AxgWMugwfHYAcflxiL8Wu0iCM_FKBkgqdbnWFo_-hgvPdXYsAN6TFvgsvZMFvA7zCcq-RmOu5TNg3xZ6konFRfXp4qSHRmPEi_2KAZaKAhcY0lRMOsRiIpyN7LdpHFDPNqnYpYbtP8eZTmfid3LKmoZttl10L1zBItwvukvrgyMqp"
+        },
+        {
+          "title": "drugsandalcohol.ie",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBLMxGvamfQCLqv9FwKyzRIgJjUNmacrBxh4k4Bv0oUIw53CHzARNbjQz_sS3QDBFfIwIhpLw9HOcMmqZTa_mEwvBwPJaly7Ixm0dgfzkLUFvf8L3zi5O6sfNAnCxMDg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU5T06-NwDoSTl2e4fJTL3jEoOYgNSm2nKhtKNg9I2YVxL2MbsPugFYT-O8QXw-rv3bXEwvaX8dJSZA7ZUNazAs9uldcBY9a_Z--ZevAJnzlZcoWsAE-xGI41chK6aYgB4y98="
+        },
+        {
+          "title": "uvm.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlJD2KK6u5z5GmouqvjVGxNuuUftD_0RO_l1z28a41cGNVxvahAsEQDlKylcUfVk5pjCzg7-IdpJmWcAc5WRYoVBUnkVEzcrev_6c4PtCKdAlJOsKWBmuNllLtYzaA4yau1HaNzujB832IsvtSfQWY4Ek7i0tOAA1ZL3_8FOdsN62SlY3ZXsom8Jr8_6EH11F3nkzItC_CVOwCV4h87TyA3meC7B7XjUI02T1ghoroymVoXeW-mnD6S4AEOL9ujLEwgDWQw4G9si3N2QrmPHTvmc6q0tdSIv15xvfbHB_-6KfcE2LTKo8Z3nLjUFmPET8eHbFJa94KFxPwsMO-xRRUpP4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN_xzVo19vBYwZhw0cuXATq9yY6mckLUf0TxZXgrtSV6W8cqcPuqYakGZTg_g4gy0O-JEugnuI2mW3usdcKI8mD6NgNOXLJ3hGFuJrgha4mlxAMhwzi5x2Erf0FEmzllu1eXJRRAs4ftWPb3vFib8za4srcOdS3C85LemoRaOQThxgIsMUUrOQ8Qzw5A4d0nh0TkRXcPjCdc5pEGqkjk-jo8TCxnxVfwNXpNwvQC3khZJptbXQxg-Gt0PxP61sGdl68YBCVeHTwxFLQ9GukbczScgwavYnUBwFdqDnw39ln6uR_8paDD8pwJj-PtlpuPCQ-AD_VcpXkt4g"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEP0dnLRucgOmR0ShZnYrxOGcHkMNMjBvhsJb5yh0z5ImiOenaFDLCBbWHBKo9wN7LaAlJwnjY6Y0uIulufOiM5uGEsn9nm3q8PrO8_tmJ7UI22SexDi6xR21dblTvME1mIjm2VUjSK0xRTkmKO0yoIWNFsj-0e5mrd-Yq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWwuHLtB8GsO4eikMuBSwyLDPgOOtNYnPtv1PtdJSX9Jq-zTHkuUN6Yjqty0uY1PG6r4HLchyBk4f8taAp9Qm4915r772s-Oj5SHMundqqNws_gCuKIzsvVes68MPLahNRDPM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlfTHk8dj80mi75LXe84Su37cbRGcqfF6-8gDPL__fjEPM66z5yaddu9cjCOHvZdkPzaK1pfwkdUBAl7jnEOk3VTPoIbmRpIwH-VbYxk8zWBs9Ns0RELYkhTaIe753TDPAGQQ7WnSReNJM08A="
+        },
+        {
+          "title": "jpma.org.pk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa6LkJbJvzLHhlJa9IYVxWP5rddUGKKXYQTEKTBBqkzC8a-DBaAPxGAPwHkgort_AsYTCocOwkmZ4pdVY6y9BTZ4bjO2WKTwgh9BLVtKcjTBPlN3599Zh_4E4uyFWM_aUofNML7uL0KEusQnGCDY990wmGfic31-EEew=="
+        },
+        {
+          "title": "confex.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAWXxPim-BL8eQrxhLAPgy8gFoKh4aIy3HAxcDyf9XlBtxIl7G-7MHN9xxfRoTfAqFcpIzikD-xbt2on_NVedfgJr1KrzLPQylqQ0x-dS-hcbu97uo-8ewI5yQvd1hJA3GVRgH_u9FkoLlgAlgknMt49JkgT44EvW8fzZUAFDyDIoDJIbljZaVDI7KbAclkzEerNhh4oLCoPmsKzCEs01YBf8z5Tqmvw5sFJ4YykwDoESsj4zdn_mYTjbsWlk="
+        },
+        {
+          "title": "uchicago.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX8sTxvW5LhwzJ0YxQ7roLgU64bIslqqLKemrKlSlEuqkviqB0lB-0BdSbclRHUmN3_7zFL_jo-WaDl2izPkgGbDAc5vIhnnvDMRdDOeaR1jhO__YUlipX6Midm8fz37l-y6oJOt8P0kAWSovA46HTdz-Z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOmBVAC_Ao8iYY9eXu2AhGBSstRRKfdRbNdlR3tlSOZPGfG6k7DgTgShUhT5ar_ts2pQBJV1Zsfva87QpZ9L6kldh9ADsirMhGA9_pnTJLj-zLnTzcqp_TAMm7jP7Iqwo398W2_vWijkAAfQ=="
+        },
+        {
+          "title": "bu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErsd3uo6cvpVRGNgr2DZwMLboeqZH2I-dK1QblAjy7goUDJk-ZBd-b_fJfoJF3or1HMIi-V0RPetd5vnSdllb1Dh5mLb2ZDJsXAmeDhVhO3N4jLnV59NkKcM48TbFpg0zlMXWcheWi2KQsOaSgcS2p8sx-1lTqgqLTMSwvUFid1_vb1UW81puFLvM1COpD7BCArMUD444Yk5oUoPhu1FkhORWQAy91en-qP4DkX-I58olhGR8u5t3s6HrBowG-7K-AHqaipY-KUVdXOLPBcxF6xUIhoLBAnVfT6RS61AOy52sZk1hOOflO"
+        },
+        {
+          "title": "hhs.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAlV7nC_jckXejUQM6tehf37cPb_edW0v_jmaFzaWcpOARb6l4oy8IrC6vZxdsvOARtHAlLPgJ2dCSCaqOxBhnlxh-lSyOBC91cHd2fQTaxKw7czea5bY9k0TMIJy8dZcpdL_wWhH61zxkCjPJcFRHVZ_eAHBL4NxJUcjYDcNHDvPepjDpxNiO2Tj4cQnGSNpdw_mqP6ES38iwOttv97HiN6oxrJoWrjQfcqL2aw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOBLm3emYWxCMRV1ZygL8qK1rGPC4U_pxHuoqg9U0KCh_TusjSS67b6Qx2x5cEPycc5m3I1U_vbj5P3V138qPmREJNGSCoyz9jZgfMATr0-XL9YCNmWZMv7a82y9nWqVEY5KmIyvn5YVw_bIA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Psychosocial Support & Counseling (e.g., CBT, Contingency Management) trials for Opioid use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Opioid%20use%20disorders&intr=Psychosocial%20Support%20%26%20Counseling%20(e.g.%2C%20CBT%2C%20Contingency%20Management)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-3 sessions per week, 30-90 minutes per session",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 9360,
+          "sideEffectManagement": 0,
+          "totalAnnual": 9360
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 62400,
+        "costPerResponder": 20800,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": 9360,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Psychosocial Support & Counseling (e.g., CBT, Contingency Management)",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 45,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Emotional distress during sessions",
+          "percentage": 10
+        },
+        {
+          "name": "Time commitment",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Weeks to years, often ongoing",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpTliqXQANvaMfHufYILMfY63x2gKswN4OXzMBEMyB0lPpNz9f3BeSqqEatYc5xWsQty6hnrFaBUk9qisn0xZf-A_PxJ461O9UgBKyeOI0iYO7ZuWlvXBmgi628NITKXnVtuP_gXRDGUd2W8M="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4yIU7wJ8ExaFaPgeQ-7ssEM4CUMBkVrghZ8IJPKXyg9Ta5SOyde_MtJadP7E_Spgp3_DmWFb5oTqfp3nfgisxdO6NxFcJS7dWHmv3DcDIrvGSAOKlIObxr6wc-E1btd5TdvT5ObHiY8loMp5XpW66Inf_ggj3GwA1D2A8M7ieM7AhF4lnK_zf5NzNaRisjlvaC50OcJJO2M_Hb2ZGXRghuh6mhEkTYuynuR0acpRsiWp_pYPIHvQNvvKyxTZh"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCY8q2yNgace6cOaiPOMYpIqV0r5R2rbmSXbMDx0dQZrn8CQGBCCLIDL2PgUWJFTttYQYJZTTtszXJFLz_XbyythbUpvFjjj2tTLoSHApNc7JLk1w1HEUe8VYAoLvljP9Sz9m4mn9wIFS2QstNBVwvhTCs5B2R7_uG40XKhMsTohD6B55EFNCQV2lKL78cXIykt_g="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAJKYwoji8ZKHV8NIQgbAozxbjdrhSB2OrvsLvlDWJqKEo0jCLC5sHARtIzzw6pfRxU6UNTlIP4oi-fYQkY_E8rHhpaWECM4P-VZC4MnXYARK8nSWO3dIVvD3aYxdNvGQ="
+        },
+        {
+          "title": "birmingham.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkIsTO-naXRMvcSLDlTZUL58O7jQ7_3fqGeP2Tv9cZofE9TG2SEJ4BDyQex7TiI_1rvaHgbPSA7RKGUhsv8YJBCfPpJCCrqrt19MDZ8svDSZZHCCzKjFS7AcKYTDR3PkjX-Jbmqh4Lxzc2Gi0sbpJfJWycwD5kpTpQvJMkvskcmWscoGFxUcYcJy7bToteVBAkNMM0Y8Esxp0YK58Pqdr-AGaXIDu8F3uZP2O_B5Q="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuWB6B5Tw_6RfZQcGhoJznHGOokh-EgccCjMFVDyPV3r2Cl47g4wzPNa7UytLia3iFIrugd0EJ3VQuvA_krXl8uQWEHO2pPsF7e_7nVp0keezgGLWFxzeMXMDufdqkmXzRcIgry7CK8i4EduCfEeL0QAY9nYUTgCD6ElZi3QbDDdlt4WRkUYoMRzYcf8PBrNgLJU0jXPhcoLXINXy59S9_ZmroSM10gTqtt_CdKar1N5PdX2f9GMfIg27f-6fXCU1JKr78X7YisCEtdkpZPhbU5-bKzvoXCQM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY747Y1qJjWbsgAavfAhk8iHQ4YNvu_WoE9FH_r6Xr3CiHuZGYxtlfzEO1SU7cIZpSLzaCOuphGBiVB6A9jKBL6udEM1JkeyyS4sDVgTM84xpUYc_3IcnwCdvy6uu5uZb8TGI-qjtc0Q=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAdxlmQzdHXL6DNsou8xLDDIEahpKUgxDrk2JWcqyztzbHguHHiOSLMu7vZKa2vqSp2jWxvX5r6IjAxawaRLuL7pbQ4Q6KkhEJVDxRKWwGtxvX5QVlkzDNkM2aki5HL9MFixYvXjg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBYCf3eH-FKoJtexAt4lu_FfNWD7OX6WbSEe8AXbeSXqE94lUzW_BJ_8b8_JvORhvFY64EPjd0hvFMAxiw926YolH4RcROiGgUKtULe1I4u8kAc0WTzHRU2vwK41zSDi7wIE9AGSFIDrm9TVj1nT_HcRR6oAq9C34E-3bHbqOIhCS81uH1YAGapZYf16_b-oJIAU-c7gd3m-s-hJPrqDtUU-cuunhj9QXnmx--4Fl4nBGJdQK5Y_bHdJ4L-C4QEakUJ11rzYRkIEaEC05Mt1JAzXs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmyUJwAKC3QLu_EIhhg0WOWVOijUJ5V0OyUZ2C6fs2LgnR7egZCYmqZvAGFG9qvqasZt9vo7whZEsF76Gt38xQ9xKYWP-hpwvHSDdiXnQlGG1gHIiXzFbOV2lUOrNojNdiTLPR"
+        },
+        {
+          "title": "ClinicalTrials.gov: Naltrexone (Oral) trials for Opioid use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Opioid%20use%20disorders&intr=Naltrexone%20(Oral)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "50 mg orally once daily",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 480,
+          "monitoringCost": 2100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2630
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 17533.33,
+        "costPerResponder": 7514.29,
+        "icer": 150000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 360,
+          "annualPhysicianVisitCost": 600,
+          "annualPrescriptionCost": 480,
+          "annualTimeCost": 160,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 960,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": 2630,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Naltrexone (Oral)",
+      "nnh": 120,
+      "nnt": 12,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.5 points",
+          "baseline": "35/50",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Craving Score (OCQ)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-10.8 days/month",
+          "baseline": "18 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Use Days per Month",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-35 percentage points",
+          "baseline": "70% of tests positive",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid-Positive Urine Drug Screens",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 35,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Retention Rate (at 12 weeks)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life Score (SF-36 total)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-1.5 times/week",
+          "baseline": "3 times/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Risky Injection Practices",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 10
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Within hours (daily dosing)",
+      "treatmentDuration": "Daily for at least 12 months",
+      "trials": 16
+    }
+  ]
+}

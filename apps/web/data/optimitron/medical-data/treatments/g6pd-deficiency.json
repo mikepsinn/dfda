@@ -1,0 +1,345 @@
+{
+  "conditionName": "G6PD deficiency",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:38:56.566Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "ijms.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK-ItfRNI_u-gK5NxmarXt1tfdSUsNFIS48TCOzno3gp2R31-NRSBQkWnFCEGrUzH7PcCm0rMjJHiAjQHO-UO2-iiVVvHpLbyyA6bq6xEKurnkLEeRJprw4Hi-6v35zQcMlbrHm9Fr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjpDCXyTf8BR5aOD3nPFC0YFLhGFTx4jG64GlPK_DFNtfyEJfzHnL8iiRZkdgngv8BtbZCBeSqw5chiAsEamHOpgkGV7cMyb5Z3DMJza38p-gNN1e_QoZmHqZk3zza9Qzx37ozZCqPtpBn5Q4="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDiIvcDSbolA4QNhjS-X0aFq9jUKawGa2HUsHZSoAbqjTfEj4UPfjnIHKasklV5wdaI2zLMj80lFPyBp7zoZje7yLL_oXSad87zj2R3KQ080SplsMdpobyW36F6Tb-d73ac-pVSNii4lUXntBdLoD5a5XyIV1lM6jzQA2rP4i6zfSZS2pV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiwGqtNU_qnz4pOLV7J3EzFftd3-HClKeAvPnOAWXhnlrgi23HDVNFOFcF3iRiTisfQPiAmEY_dRbu5-brYwm80FtR3AtfBtLmoz5Rktjv64jret-loa6MW7xU7iiSTiN6fremhOM10xKa5-U="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmL6IUEkD5ikP_n4IIQfUREihOD0n_FdpUDUVOgZ-YGE-j9XWOTygc16EcI2WBc14_A_iro1ua1swF_vZCKRvRjfcJkKbwL46LhsrLCre4whui0DkgBaaWixzkhzTQu-VmKZDKIWSlkkoXzYhNIlBVrsFGmCsOr6iGKtQ9p3GKM4F2cmboG9qI4AS1gxBgG14pxQYyS9c5_gPeKlq_Cv3Ej6BHg8GeCwrqx-2R8lFxdHUY9tADRmIy1m0yOsbMXKBPOm4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3mVpHjrEf04c8NWqc4ihH7M_nk8nmrZXSUN9csc5jfVNEm7H0Hubmxr8YT7_iwFfjvOVFs6mUkOu9VlfAGQHVDqtJMiYPqoHDGxP_S1aSmStUpKJLv7hJCWlN4b9C9qW-83IIwNvr8-Ory6QrcP691JHJd00mOFhaRmlxK4YztMEzjLKU6cDWEoOdQNha02AXDaKjzRRZ2NKSprN2PIocB_iQa4Gb"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZROUt_FUpaotO40iUZGGMN6QkFJQBojBO6UanEzr0Rpec6iK7oty9Q1BlOrZW2afPIKE5jI0fOzdcUZULC4-QoPkq4CK99ywmtDH1Mth3tqkoBLqheeC52SmeNMD7M6oeN7s94VJEUeGQaFlwQWPgyppUhtPWFWXm6w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfnTlkGA6b7fpC3CDp-VMANlzNnow2Ea5rV0WStMp9F65go7yoKolP6OpRS6nvBHxkinvmnWx5-BRiwllgd71fn_lyC09UUj8yO5v-HEJgMuc3-lGzsC11phXs1rExFblBcneWM3s4vXhocGYB5YFf587qyffKzZ-34_jBnQKmz8HpSA27HHbAtCLapSsNwxEQ2UJkkslRtUZV5SF6mcwcdm_4V8g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE_dmd8l9peY2tx8HTWkju8YtTiS9b5SzBTs0FZzEbnjsq4y4GFMRTWfeC4o_kSLQCgsUbsTR3--VEY_5pPTt-T-gNkSp6x1p613jcEeiRqL8pN34PvMsIB1JCMg-HkKLnvkIYSeCZi8xnfr8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIHgiAtLugCrDtW5LPogUeZbfpeo-_CZBRivnpEhPxvTXps1fs1mt3NK9bfCUs88gYskfaoMsQWciSiUasr0BLy2NeLP-vjDJujIb43bGuY0pvnuKOtCNSLhxvC_06Lodf9W-I"
+        },
+        {
+          "title": "gpnotebook.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAWEslBcT9RP0ftK1T_1lKUOtUYpy7k1vzUG01KreRka0A5U48uSp_j8oQjFFI7ngglY-NN7M5GhTTU72SJho5s9GJsADwuR1T5PPauJmbgRVbAly5R3IthK8RiQjA7m7jmk88yYuyfOsPoFIubaoKSKPdYhXOq4-J2A7W4HCYzEGk8z_Vu0E_7kuy95o59a5D9SJf4g-xi40IAGr-X9oafxpISSK0dENWNZ4chUJJmjaKB84KYrZe"
+        },
+        {
+          "title": "cych.org.tw",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELaUsZIJlB2ngymzUt9hqmZx6O-Tlh4m2fu4NXVENKh9sVVravQRc8EyjSHEq9GaHb0p-p5rjjYT_Yo0aV0Y-L4nGEFnNNHgaCFsO8sN20Xv7tvsNiQusx1qinY0xuGKR2K5z9uhETNvcA44OSTr9pPmozWMaw8mxJu6EQ"
+        },
+        {
+          "title": "drzubinvaid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH11dK9Gus2QSslhqeOb6jrHimzMQzLm1Fgw3hsTUZmyvJFJAsPCzRw3xhnjIwEogPy5T5v6-uRXWy1s_F0CeE1jxSB-R8trFVJ5pnJz7gofC0HyobP5zVWQ_a3pzZ-bTHwTuluM8Ao5Ez-KtsELcliGjuy-lOTQl_XmKtpH8dRH_BGZv_O"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYrWvX7tiyTVn4pkPavAgbaVr2vNi4KvM1AAUHpyfKZn6ldMbc8rujk8zQERSY5dP8HWJjqdm8-aZ-AhFFGzMsv00wOU1vbn_GK6cbKvDLF7udXBgSDIl5iG6gQ6wUGU1NcdYEPd7vpA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhr6K6c_Ucy2RupXmuUXyO4di8zXWA9xP0tP9vlCJJHtIkeGCiyex4IfsyEwe5f9kW03knKDkFtXlyE3rEvtv6XP5QWkpo-44tw_xfF_MHJF3YZILpm3gckIiAOnFWzaIK4fKNJWK2yBFzr_E="
+        },
+        {
+          "title": "ClinicalTrials.gov: Avoidance of Oxidative Stressors (e.g., Fava Beans, Sulfa Drugs, Antimalarials) trials for G6PD deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=G6PD%20deficiency&intr=Avoidance%20of%20Oxidative%20Stressors%20(e.g.%2C%20Fava%20Beans%2C%20Sulfa%20Drugs%2C%20Antimalarials)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Strict adherence to known trigger avoidance lists",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 0,
+        "costPerResponder": 0,
+        "icer": 0,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "No preventative action",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Avoidance of Oxidative Stressors (e.g., Fava Beans, Sulfa Drugs, Antimalarials)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [],
+      "remissionRate": 100,
+      "responseRate": 100,
+      "safetyScore": 100,
+      "sideEffects": [],
+      "timeToEffect": "Immediate (upon avoidance)",
+      "treatmentDuration": "Lifetime",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9aRiEwst8Ph7ZfhBBj-g2JS-sePbx67osdAzKZTxzubr49Ja-Kv4wIhICKJIcndvAnlLX5RPWW1c2qKBQ3ycQ_XYeN2YRBzgSUysNwOEQ6klZeuo9jSyPg06hQO_sB-V0iKoUJEes9_A30p76brdCw2I="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2zEj2or9L7dZ131pDIiQXxKDwFRHBuwLkvOtNNN5oEUifB5pTNBHknuB4x4U2Ih8dljSChz68UnbMj_gROMMX53qcPq4hKnB02ptopiqgwQhrZ_5a8A96xH61eABF26w7qLSOcybnQaWJC_KnISpgbOZ9THULPpGj8zxlaQBgn97Nh4Q3kzPLQicVyyt26yMQf60sHg4IWn9ofTSC-UrdXYf3aXhkyjrZUByAYg=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoNXuU0Pj3m6mgY7qKd3WBP8LUXG2dI5IRuWEOOvNN-ohP9hZO8el86ioaD8KJfjzeXqaU4UnpTJAphLKuyuO0HO68iNrTP1nQTBBrOFrJ4QzAtqz5_Gqah0hN3tkts1dPkjiXGW5Ku1SLlIyoYX4xlzTOWg=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzeUlMPY5KT2gRjPe33LaJIagH7ooV8tK6Yfn4V7RvACNMo9STsP0bfjbg8nOkoeinwGNoFP_rQazsfk29eqJ_-pxxHjZwTjDc6TDujJ2h2rZnctzjwNeNcdC9BNiVUH3cnOXAQHBsW07t95oUzYtbctZNFMWqg0MOK29eixbw86kEsVEjLnlhNhAU-W7T0eTqjzUgB-6s4ymJJ2b4kIQCaX0xCQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWtEAf-OOB3Bu_6g0wZ3yYvYB8BC73OwKTbhro3Xj4SHof4pBqRedwkQGR8amU99L9c6UvbOBSqudO4rkJusLYEzh3Dd_Cg7H2Vo5W9XImKXwZ1XG-kHjjAR58MKf8r6v6AMA3Nm3Wq5WPgGk="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0t6d_FlUl49ixh078ZGEyBE7F-oUF_fmp0AE7B6hn97S-iTMzOa6S9Gvg0hIfA8vMO4gYlN7675bBSq9V3hgyz75EX5OeKFYwllus5dC0py-mPRxcLCMgOoIr4CCdd76hwS6XYRI7Wy6OS4fkqBESNi9AslSHUrN3Qf1OcttFJKkVPdt2akqXRlut7EJKoNkV-cAYkWLmuZIppfAXBt4tAX0dqMoeBSbb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7N9N-LuqCXLeDLjMv3LfFzfOx7KzUVe2nnlIQAGAxR1cumaAemRAYsbIRr8EjF-G_TCHU3qGvyz6Jd5j00cOu07qibhwugWtfG_W4tbjFGuIbtx42VD1GCBm0Nq71WpafGJI5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEysqt7zwYm_4CfC6LcR4q2SMYxCUNuGNlORyvDP1rNj-tgIRnTrsHU5ROoqCyxhr57VrvEebqxhWobZ5bLVZxte4sIbPPOCI6TFqJstdMQryZRUoGFz14KNPVjG0sKwwI7eJcNVBbZ8iOfcE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0QpMgLLgsruyEVliLIOy28eOhgGHAe2QKSiarIUFW73IPWxdiOhFlJFjbkxiFtdHmioNxIReWFrSZOBN109JzgY6eMRrOrEFSfNRca6uROQ-CJn_oEsGQiNYU2C_x1cqtv1iVBIZDMljVb6c_2CRrbPHHDf9LVw2aI8oYkoKduHrQt9zCMr5-r3WAqmk61l-PQqnwQBN8BUOh6Ufo9lbkfHDYUInV1S0wE3a8AH51oxz25D0Gjjxsh_6pSjbYoYeW0Ge0XTz2YC9UbljTK_F5E9L6EV7yRs_friNz0CbI_7MdwJor2GKOKKY1xiquTt0ZMcerS0tq_xlizL6yRE_2oIL4Al8hp2xRDEwTHnysLVOoAsBQEcpa5Xx8GwrupUaKDClDtLtMPCqogIVdPkc1VDX9alvOBg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Blood Transfusion (for acute severe hemolysis) trials for G6PD deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=G6PD%20deficiency&intr=Blood%20Transfusion%20(for%20acute%20severe%20hemolysis)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Varies by patient's hemoglobin level and clinical status",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": {
+          "comparatorName": "No blood transfusion during severe crisis",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": 5
+        }
+      },
+      "name": "Blood Transfusion (for acute severe hemolysis)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Febrile non-hemolytic transfusion reaction",
+          "percentage": 1
+        },
+        {
+          "name": "Allergic reaction",
+          "percentage": 0.5
+        },
+        {
+          "name": "Delayed hemolytic transfusion reaction",
+          "percentage": 0.05
+        },
+        {
+          "name": "Transfusion-associated circulatory overload (TACO)",
+          "percentage": 0.05
+        },
+        {
+          "name": "Transfusion-related acute lung injury (TRALI)",
+          "percentage": 0.01
+        },
+        {
+          "name": "Infection (e.g., HIV, HCV, HBV)",
+          "percentage": 0.0001
+        }
+      ],
+      "timeToEffect": "Immediate (within hours of administration)",
+      "treatmentDuration": "As needed during acute hemolytic crisis (typically 1-2 units over several hours)",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjHCj8qUPwU-BaAiy9e4FccXZIjanU7H9UOXgeyaRQBqIxfBLlMS9qHd8GiMHaPK_0J-QUfbgaQfML0UHnJL7miZHzjGkXvCM5oWtqiqixr-KOsMvoSzgRhefAoBonGzAtp48T8KPnKWUQAAjDOvfw5ldE8w=="
+        },
+        {
+          "title": "clinicalodyssey.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7r_neVmhyHkNY8KBQ5IvrHOJ846t2IBJGQkRPcovUmR6kdJ1qOWoIgBU3NxT_6eq2Gx7EOxIbVY8yzNt41gNYUVwAd_H6TsybejInGITgtt8If1MONQCWS99u_Y8StYnzxqkLIFDul31gEcU868Uu663s_vQdIvXHmBU2mMUfJ77MtHw18eLFZJExwe1hVFu1kuX0oYY="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo1w1llEhBqXnUJMRkNFnDZ_ApnD7AvY8loEl7JOrB-GWWAYDGPI06V20F_zKrPtLswToCKtNsx7GrZq0d7lCBuKMjbnifcMOLVWCW6wSXFkxiFfkd7it_3U28CCVApI0Sbqph7zKHT4hfWHktmS9LE-4="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGmEFkbRz8nCBLkZm-DSrtvWg4fiM6awd0IupjC34Xi0kZ1MQ8mHiMEAbexe8jkjVUZuBaZDsBzejIWXEYVx7Ls7JOzvmV3HjjAT5N5EHClG_TAVCLFPJf29qdVU40hqW1STHGTL3E_a6S8_b8I0PVCMjVJ6XJWvwBaTk0780-JSWSVtPp"
+        },
+        {
+          "title": "ssu.ac.ir",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCa8BSjyJvidGSc99_GhHYYFPJJY57CPAXQYKtVnaV6p6MfM3VK4vWMLMzcPfEyIRamKrgxsA2AddACEcZYSgoDu3D3sgm0dkeTRVaZ3GPDTeW-NYwRO7t_v8ipk01Cw7_XZpVaXCP"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyqRKu7rg35za--juZvuh_J7AyEx7nt4irrPBCRvq9QWUAms04HkVHC1tXakq_hjeoh06JrLZ-WPQ-O6PMJZbSnE8mdF3xLrVL2YeTpCB5Dpxf52I3Q98fzLw8j1uBRUphic1B1ONFqRmjDkMJEuZCU2_WmD_e8ER9fEEYDZ26lr8I918RklOZC_LmQH1c19cRivxkpG5z5qXOw5c7s69aKAC7ORuL5wPOnfXCQcQy5_iBHZfunamg2RSQqJNl8QGvYVhsyufAMkNwRO7xixz7"
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPDunfdTacGl5355DoyNdpXN23kcGLZohlgKFTlk4Rl0CQpyPoeqQL2DqFyiV8MUzG9xt_umMj5YHNPZfFPLZ-bo5g62fV2MDmEDBlzNJTcgjukvsvmhf9ruEKzvZKcDwUVUpQQL1Urkg4tKcZ7Sn5IjmyO46awUcpDfzJuMDcBw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Folic Acid Supplementation trials for G6PD deficiency",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=G6PD%20deficiency&intr=Folic%20Acid%20Supplementation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1510
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 100,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "No folate supplementation",
+          "costDifference": -10,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Folic Acid Supplementation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 100,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 0.1
+        },
+        {
+          "name": "Bloating",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Weeks to months (to normalize folate levels and support erythropoiesis)",
+      "treatmentDuration": "Lifetime (for patients with chronic hemolysis)",
+      "trials": 50
+    }
+  ]
+}

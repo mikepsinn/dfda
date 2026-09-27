@@ -1,0 +1,892 @@
+{
+  "conditionName": "Kidney cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:14:23.073Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "core.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1QiGG4Wncxmkfdqhvg3u83gMTjro8sCGlyI6ugXDWYHz2xL3sUgVeR9ui11uxj7DH-qTT-poKmsuaqMjIK5V_t3ez3XMyLkbqtYS-0n7855E4-9q_ABZnP7e8HFFWmfmv8JzAMC1W8Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJQccm9cOqYOjdvllESuDANLtZ1hSVxr6kmpqeirPBycTLNCs9eSL0RaiS5Xqsq29y1zky-WT0SzmsWwEPD1y1MaD2wdk3mr22DcrkQmmR--xHTAuW2no4U5jBuE8JqhyaeqegAoSu"
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6_JNlLPwLo_cN7MMYb6CDe2H4iS2WpKh2ibUtpG2V-7vo6gEi0GJyX7spZDVKGyYIvb-RMTsKea5QzQD7n0tP_wY5aX_z-jKbwCSx-6YvPlZG_W9q7MPdYHqBOktnTAuJv-qLgqM_pt62xLszGkLht8IZsTG8kxeLo5cMlDDyEWSgOqXdYp52Tmbkdmch2eeXYnpvySup0prtl7b2l674As-SWarMRXGB43sCPrFOQJ5tLMgNgkkOf6Ka98lGdgHVi4I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyzHlH-gySMaJfCEVkzzNURzJn_KqAu4pOHSaQFrBZAFmAt2ANJdJP9qeTK1HEhWmZEtw-NAfix41DKnFht1cfH_XiItmpiF5qxSml5e549V0kAl7HvgUujSYQq4b9gtPx33phGAv-KS4SX5wb"
+        },
+        {
+          "title": "urologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvXkELwZ5XhNFETAjDbC_PMzFJUWX_0cG8sWTzdC5y2XTtCuMK_qLVQKu-M7Pe5YP2-P6WUBfIxZ0Sm0FIlhh2AgOGS0QS_9DDTg8usDVKzvyWDluty8RrD7bVQfHsTOQDpr6G6zcH8aBjaaFa5SkY53C1NLiBWVcsKL4pC5cLZfXUeEFYL43_rx3NV7oOOCqwKatRmBhHLWNll0p4InlcympWp1YdxqLBQGfMuaOa-I12uP7aMA=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5VYOyCRvS4MrahCKzWCRxXyUvfFx9Lbo2ZrL0Bp0mByOjuCiIkE6BCCS5qJTTMdXLDTkAkAkGYD4FgISlfJwXgfv_WhwzG1Ky3OOtYyxB6oEJN9nedmome4c5UxWh9CPyquTSJxXoTQ=="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFRz6TnzzCsstgdKdOq8R0aRP9ro0zK-zGX9S2uh9Ly66MXAQJUhzaIf9iTA_CJpwIb3cvyCifonXp_oTlavwuWbRAaKNmAUYxHz45V-jHIrkmnjS7LtUfzp-0o1iHVIBb5HhAbGNwyjjcxw7pEKeC-xhj-xR14zJ99qXGA8rDyqK0sXlusAaY9LqHo3Sffrsz1a0cQIuD4lzj1NuU-ez6_NbOgm5BLB7kuOVzimjIkKoo8A=="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIVHEu7axYg_mvfirqolNHyLpD_bynN8HSTjhCezZ9U6aR3Zmxd6ouEMYIBavvaJo9yKQv-IcNN9EmAvQjKAxKSRyYVHTWUfxgHzgEolitWZZqdpCR6J-JsFIluY9_jFLvsbpezfTzfvOltOJy_EkMwZ8ZJFQfoSmACcaMxPIT9CUAmB5uLOtfFkTJk_aj5N_6S2M-K_kG_ecQ_8xttMqBr8bkqkeD"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIitOaqtPRXScmSFCjHMOA1zU-t72r3FP7nGMKaRmoqTXWhklhnOd4i7_Gst6p098oAoYJhrm1QWwRWyZkaUE-sV6sOygaMtnsNDSPYPxsaUMvWJxlppw8PmkxEzKf8039Nih1i3F1VABI2U-NWtbuY-7UtLNfeOPINvjnN3ddhCwZPO0f90lRYurtTDZk3VNXVy4dXx-7b5eilAfBcuRpAIlxf1OSam9oG-1vNafSKkYzCgAcfUmHMYvH9msVRBWePcMfwC-VTYfS1NUqbbfjHo-78GriqR-PL4UtUbwIJI79Uf0i1mJ1Nh2y8A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab + Lenvatinib trials for Kidney cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Kidney%20cancer&intr=Pembrolizumab%20%2B%20Lenvatinib"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Pembrolizumab 200 mg IV every 3 weeks or 400 mg IV every 6 weeks, Lenvatinib 20 mg oral once daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 285000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1781250,
+        "costPerResponder": 401408,
+        "icer": 616000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.63,
+        "vsComparator": {
+          "comparatorName": "Sunitinib",
+          "costDifference": 165000,
+          "dominates": false,
+          "qalysGainedDifference": 1.63
+        }
+      },
+      "name": "Pembrolizumab + Lenvatinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 355,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+14.7 months",
+          "baseline": "9.2 months (median for Sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival (PFS)",
+          "percentageChange": 160
+        },
+        {
+          "absoluteChange": "+18 months",
+          "baseline": "35.7 months (median for Sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival (OS)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+34.9 percentage points",
+          "baseline": "36.1% (for Sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 97
+        },
+        {
+          "absoluteChange": "+11.9 percentage points",
+          "baseline": "4.2% (for Sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response Rate (CR Rate)",
+          "percentageChange": 283
+        }
+      ],
+      "remissionRate": 16,
+      "responseRate": 71,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15.7 months",
+          "baseline": "10.9 months (median for Sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Response (DoR)",
+          "percentageChange": 144
+        },
+        {
+          "absoluteChange": "+18.2 percentage points",
+          "baseline": "77.4% (for Sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (DCR)",
+          "percentageChange": 24
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypertension",
+          "percentage": 50
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 56
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 49
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 40
+        },
+        {
+          "name": "Stomatitis",
+          "percentage": 35
+        },
+        {
+          "name": "Proteinuria",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity",
+      "trials": 26
+    },
+    {
+      "citations": [
+        {
+          "title": "oncology-central.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH4rAEhpUfRVT56_ZJE2ktB3kFwySDXASKjW6gOtSBZFz_QKsLhWQsGbRC6KIy-Y0NWoMgCUmVMFCr9zAyYjlxoYRIEMUtjGTtt-Md26MHjogbUIrV0oMSwKM1wllj8HZLTKjqlpKSO13UWbOp_FAKmP-rN6JQ9OGkaa2_DIQPVrcfXnUKra9LZ0DWHYOTz2krMh36QgDM8GNI1aiUmPdev-vJOzqkT8SO7kHRhReXoiJGfg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIjzVQQ7b177oaI-Wzv4626pLiH7gs2bXfpqwDzONkrPEkawS-RLqONfYF-3AFHMvdg_ZXEm1sI_EVifxdDbjIsfdiyJ__wOeOdLd9Mm41dbzC9a1OTlSWQL-wgpqUm-n_cZFdr7j8NJuLShTZ6YrCjBYdKw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7muWU49LB9LEwXY-fYjYAFC3bzpPIhgRwb_-skp2lTLIlOAE9_zGwJSzoQ09IGrEjTzwRdeuBrdJbnUr5OYO4LixV3HOvVLLyh3QjmGC1BfkAycJB9TVsg0I55SOdhppOscQOxhWmXlzETTI="
+        },
+        {
+          "title": "urologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW29HG8f51L0g506qic4jzN-4tAQvCzmqxodeB71bnxLI_eCFR4bRTZNN85ZiJdZ3gu8c1-gfdFFW3FNLrE2hU9_cMfuwSZNE1XeL4OXA4DslPoEetDdk5mHvWR_w3AnJn3dJiQF654kbUxPFCoOC_Jdz5NBKghhgR5LE1mwYxt5Upj7xualEIrrYNEZTHp73x4SA5AxuI53XwYu-l0bUSG-cIvEvphN9xmCuwhzGz"
+        },
+        {
+          "title": "grandroundsinurology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAV5wT2T_YslkeB76Y3PqEafBWRRT4uQtj_SGUaKQZfx4sqE0KW81ILZEWBJrt-K-lIOM2rmg5sio4CyZcfis4lY4UMilzsSRi1Lnh-lV8ddYC3AKddrA442dvAQedCj9P6IxPbxbVuRGS5L9UsPoItwuSPc3FyWiv7k9Nhno8OTLN8B_ym-ELafR5AQ3YXH5GXv1zRlosy3WrcgWmcV4Iyo7WDAuxxSGJcb-9ds9CQOm6FgZLWSy_cNmXkIBdL7QyJhIeyODW-AAUX0SWWsLSsVkhK-V-3i4eaRYuE4LqQ5_NseJDSLQ_KQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE15Bs04mHXh2vHzfDeiv--Vzwujvspn8nV2jKKad4d_skc3dvl_CXLq9uS-DAGNrqohQDgwrkGL7JaRrheWChDkpwrnxdKm24F9cZ4-9_VJ_LjuumuGrp_iXo-2g7DsOItVUFD"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzeQAThAIx6-cJYsKKVeF7vxraJoTfc2k2-ylEW-PtWszJopZmt6KzhgBDccolfvnNcV7uoGshxsTlzWsP1kQ8JEF0OMWiUrJHlHRmkafF5jUBnFy0soaFHwuFzB5HoVbpocwOcMEN_FZC2HJzb2F5B1fmhEdC4_jk7gDhOLJNLeNsJmiJ67g_8HyqMLcsjVuN0tquZTV8P4AWiMpRIuGKAoTWunAy9HzS_14K577HAgHNQb06XyTzsCR0xDwVxRFcar-ZB70Q_W3-0vv0CotWRZwPp89MNA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFL2qbj8DXWBN9kUnyTfiJy9H09tqqXazx_j3wvYzB-45QKc_xCSqDZN5Xn2tSjOOhFhLxVdL_7pRRYoidg3HSDRki1Fx9VKRRQQA2oPRtkqwgdXxXjd40hW5jX11G6BTLjsUw4"
+        },
+        {
+          "title": "ClinicalTrials.gov: Nivolumab + Ipilimumab trials for Kidney cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Kidney%20cancer&intr=Nivolumab%20%2B%20Ipilimumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Nivolumab 3 mg/kg IV + Ipilimumab 1 mg/kg IV every 3 weeks for 4 doses, then Nivolumab 240 mg IV every 2 weeks or 480 mg IV every 4 weeks",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 235000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1678571,
+        "costPerResponder": 470000,
+        "icer": 287000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.4,
+        "vsComparator": {
+          "comparatorName": "Sunitinib",
+          "costDifference": 115000,
+          "dominates": false,
+          "qalysGainedDifference": 1.4
+        }
+      },
+      "name": "Nivolumab + Ipilimumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 550,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+21.5 months",
+          "baseline": "26.6 months (for sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 80.8
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "27% (for sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 55.6
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "1% (for sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response (CR) Rate",
+          "percentageChange": 1000
+        },
+        {
+          "absoluteChange": "+4.5 months",
+          "baseline": "8.4 months (for sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival (PFS)",
+          "percentageChange": 53.6
+        }
+      ],
+      "remissionRate": 14,
+      "responseRate": 50,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "70 points (on FKSI-DRS scale, range 0-76, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (FKSI-DRS total score)",
+          "percentageChange": 5.7
+        },
+        {
+          "absoluteChange": "+13.1 months",
+          "baseline": "6.9 months (for sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Response (DoR)",
+          "percentageChange": 189.9
+        },
+        {
+          "absoluteChange": "-17 percentage points",
+          "baseline": "63% (for sunitinib control arm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Grade 3/4 Treatment-Related Adverse Events",
+          "percentageChange": -27
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 52
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 49
+        },
+        {
+          "name": "Rash",
+          "percentage": 31
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 26
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Colitis",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "Fixed Ipilimumab for 4 doses, then Nivolumab until progression or unacceptable toxicity",
+      "trials": 96
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgS63owuGQfMBSw_41ulpG8fWujWEJujiOzBQCPdMHFgn-h3fwBO6B15Vnc7PgvSI4UUw1D1jUjUuMROI1PxqqPHwsGfqodyNShz_etM8SEP4OQwpEDhPkoLJsx387nNgWl3gB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2r0a6CV38QvS3yxlMlnnRTOWOoqS0ktIoohdGla9GhYo1_8pqEp5SLmKlAt8MAJrGFotpxbfl0aGu5fg_krlXAF1j9kL41ZkxGUNa6EqGEYUxZTs1oCdvvUvIY36o7DQjLRWWbvkT7xUH-zpL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTHZW5jY6gtATl6LweETjBSzz2rvypWRlZHD_U75WsSul_a_UF8Ljvj_qAhkNhBrCVx4N25d8jLnaSYHg7xL7e2TFxivdCfAdP8wWVVZ0l9bj1gSHhfpNXa5RloTyefIHdYWNU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKl2RDMP2eKzdWleOC7P1GX67fnf6tCCsNSaYYfum0m4Rtrejkr6JThW09pBHPrwwzFuT2yuNETeiN_DWYvPv70gAXBEeiWZVhHC87OVwGCOXCsmEo9a5uDbeb8XsB8cfW6BXo3OqUpaKTiwY="
+        },
+        {
+          "title": "actionkidneycancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHklWBtcucjDwXs9-c7MsGWZAjd6Cv4fuKacJu7gLGvaHFxZWl19LXe5de1n8v7Hr_ZvjGOrkWMvv5iSsgJpWgDLw-ipf-9lTvL0Im6uyZ4Pnfb4n8zht7nf0tqP2Req8yZFep8FIrb3rbVoekGgiHDyR5rsnYTgUlaBAohn3XRciR21cvOrmPhxgGfH2Zo5nHPuBjrDqUaVb-zx8I3OYo3VT_XKWYv8eSrt6UjJaeug0KBz85nUVYwU1b6JlmUt1jlZouZjBdJvgADu7JLOxK0k84="
+        },
+        {
+          "title": "jkcvhl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFik-lhJwCY4PMYmm2gBc55bTVvq3Qk7liuLfMCQcoHlKEn47cojG8TrDvp7i6zzLcNgPKtQKKxytMNnQOZKJrLkLvHVtUfmi1AkG2rt4dPiqjcmDX9TXAfnMBNg2BC8caouT4HOHpxBjOwWlU9vw5yBZCU"
+        },
+        {
+          "title": "aacr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpwt1wUuSGcPRakm3FlTLY2oQZ3hxIkR_nJPHQ3H6vPZTi-78xDUdkCkQHl0LiDJdjbtnPLRD7iID_CKo5u16yMb5hgewncMSkZXe4QH4DVpqwe9JzNvvA-vlxxYCrbVeVWiaqOxZ5ql-hP_tv0NXmdkxij4sHkqOszuWaz0n3T62pg9GUJgFlMgC5-Vn20fcxebbxBxVWAKrVEtgS04WXl8x8YzY1Tw-OlZo9OAWyTmA00973"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMcckx4WgjSfw8QUhJ9T7-2DF3nxLY2umm941TIlHsuLbwUdxK3WXpw7U5f5-w3-Mhd2-ge10COBNO5AwRy-M9ZogmB76TginbPUXjRvM4Hoe59Feua9KDi763M_wOPPiupoGcikA_pPiy2shNoo_4qIhkAJiLsRV4MV1cXvw2XuySqqB3rqV1NYwwfRrpHmLGvFxTbb1fwGeht0Z4e4z4_2SU-A=="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgC_v8Jtc5ft8BJvnBzcG55ZAAv9wDQnuKkHh-O0_SK54q4qd-_pdnhBKnq1Vp6y2IB622X0fCl24SJ4WDQpFQL8-5ODtrfFibg6KYQYdQW4aAHfGltY4so3DQj5EDfqMh1CUPHSXgbroHZXElvHXrdZDOQ1MLz76_bPa8GWtjRcAXCY2vIqbOM4yEIjw7ceFF2SMFKoEqpvDIO25kFEPzdZi5"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoY96fQvStUvRzt_wwn8ua1A50-YpxwmN8iogkOm8DvyaeHf2OhyCjts2mJplwb7vzOLaOeiXn9kxyI0yJzTJYw0trI_8oMRqzGClQqoic502gEdxhMMhcyAJ4QkO1D72MokkC8kQxzPxdyDRiXjWvCE-pY_APwg=="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF02D9cheXP567rt7ZXQvIhfofuQoZoKVm8UZ_d4PDxrhmmvd10J67x71oTAUPPY98lyjvA7E81kUsl7cuhB3G1BGpcaPqYIhju5VKFw10xoWR2xh4Qyij7D5HWhxrWX5jSvwlj2UZcoafghFjRtXdzxzlNNsPFEc-tSCtCc6RT9eScv3F7FSx9Cm6TL45g81BBVq-6vr5babOws9yrcf2FEGqDHrdiu5DIaqxpJPSrGjB4fWnPM11HtY6b4tu3AlAnwpCogVqG"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF85lzdT_2OM1AKRn2aI-2barwP5Wj_FCq4BzWGpDNLMNscerv2TU76wq_SW-ARqr_Cw_uWDnycUGSDyxiFGnqr7GY-cAgRvVMEUx256k-b56RCVTbiW0J55rN1fbEXpflXMeX_TW8ajuYl1UFMYdpdp5B5VIxlFRXAOe-RM-d47x3dJPQCNL_It5kfdi97CUbCZbVVUXZpCenHt6F_njVXONFf_sf3EHRAk4gZT54QWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5JqfBapu1yXpSHZqP5MPck6y1oqy_sL4vA5M5o3ETPJDdj1M5ZuSsOmKKAky-rEuJ669lNoRWXSFOWyRYZRJHx2RkHLQ8nhpKu_rUhWO0o4fYRVeDxlL2TWN_dzN29JPfkHJD"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cabozantinib trials for Kidney cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Kidney%20cancer&intr=Cabozantinib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "60 mg oral once daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 230000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5750000,
+        "costPerResponder": 500000,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": {
+          "comparatorName": "Sunitinib",
+          "costDifference": 110000,
+          "dominates": false,
+          "qalysGainedDifference": 0.35
+        }
+      },
+      "name": "Cabozantinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+3.6 months",
+          "baseline": "Median PFS with comparator therapy: 3.8 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival (PFS)",
+          "percentageChange": 94.7
+        },
+        {
+          "absoluteChange": "+18 percentage points",
+          "baseline": "Response rate with comparator therapy: 3%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 600
+        },
+        {
+          "absoluteChange": "+4.9 months",
+          "baseline": "Median OS with comparator therapy: 16.5 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival (OS)",
+          "percentageChange": 29.7
+        },
+        {
+          "absoluteChange": "+28 percentage points",
+          "baseline": "DCR with comparator therapy: 52%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (DCR)",
+          "percentageChange": 53.8
+        }
+      ],
+      "remissionRate": 4,
+      "responseRate": 46,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-14 percentage points (from +2% to -12%)",
+          "baseline": "Typical tumor burden change with standard therapy: +2% (slight growth)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Tumor Burden Change (Sum of Longest Diameters)",
+          "percentageChange": -700
+        },
+        {
+          "absoluteChange": "+0.03 points",
+          "baseline": "Typical score for advanced RCC patients: 0.65 (on 0-1 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Health-Related Quality of Life (EQ-5D-5L index score)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "Moderate pain severity: 5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cancer-related Pain Severity (BPI-SF score)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 71
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 58
+        },
+        {
+          "name": "Nausea",
+          "percentage": 46
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 38
+        },
+        {
+          "name": "Decreased appetite",
+          "percentage": 38
+        },
+        {
+          "name": "Palmar-plantar erythrodysesthesia (PPE)",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity",
+      "trials": 95
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmb6CvJjEmDKHe45hZQekmdhtyOmcD5ECVRjGzU8Ly6CWS9m30aYvwEvzMs_tfqvnCADo9lzYZWf9tauiUeZ39ItoRvm0h4n8dhbsl13FcRlc2IxHoQzk_B0OrSGqnn7rzyTmM"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBP3M1K37_WUpesfJLw8e_BfCIp0kN0-xjSwXGxF7C8Kp_9XKTk0J2B_x8yHtNM--4XGEWvq6xoP-zOYNQW-_l2XLO4uCHZOEVjZiK1w51Zo14NX8JN4jbzvvy_W1LrgMhLr_b9xEY4-NDM5Flk-wcLM51"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlXB0RGSdXZZBI0DujU70nJ42VX6shvjmV3xKrKyL6jYsG4SzLeO6mjLH7ibLPvdRhqslC4O0jFny05z6B93eT_HfwCwlu27qS6XsBJ3NiUmmQsWlC3wTePNqJzLDu2iJrMR27zlTfjyihjdM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHh3H2EK7021f1SUeVHoYysXXBe7KKQKsPGlpkIQFZRHsdn1SEYo8wq-S9S6uTysoI1PzwocJx3HQdsBDWjEB_mhiR9UuV5btmnFQ_XgZZEranvE94QL1vgJP8SspnRk3kt0UwfdOqi62Zk7w4="
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7ve4fH36u_4sFUH2wwZVZWND8xVqorqx3siwhODV_hGMPCCFdwfHRfld4IoGURQukTxmwwG4UQOLJTEIHdiHZ9pN56rI5Az4miRFpPBGeikAjV0Bf6HFMulEAHnS6IVnwtR7dj7jj6vFsoEcV31Th_m2yFeGn7uV8sM8YRUqmduPgszyhTJ33tF29NNmFy5M_Gcsvti3Etjz7xaHd96gEy4eUa1N4rKjJ"
+        },
+        {
+          "title": "actionkidneycancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiGJpS8uMjZh9JvJYSUdVzSadYwyIHo4CYO5wHYI6T-XY5vIE-3RQepcLyCw5HulcuTodwNbpyForkhLifA4SA18ZDq5cRSmJEG-CknvtIDEn-iQiNDHtRvLI6FLdscu4ES6twtMaKS3ReXpbAE2b-o3A-8HbTZHU3flHx39g_Suqt6pcfDjuOKsB4TRSc16s0KS-uBjDgroM9E4g2HqZyFEca9nxiZpum4Pl_eg9DpL9dZ3W0bWCkIb_hcLYMTtajmXOeXUbgsiixR7AeSOwrLyI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTuzvuBy9_3eDyD6HQkngfkH2vMe6UWG6YP9s0Gs98EKPevaTQS5QGTU5dTECQjO6L-LoglXlIJI878rk0-skpEHwdT8q84UL6ucA-83xPQrQt5y5nN-OaGrTs2RFhGN1rADljjL9Z0TY0QR4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjPJfv33rXYw4KRpFq65yIeHWZU5K6_MXCFD7NJBERdo53U28HYlRj1i6urWf6UsDtGUyk3lV5F5zeDVvAKeBg4s-yp3vjV2sV8CaDbKkfhgZpZ11Uhg2zLQTd0c43NCV-8OyxUAkLl1vzu7E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHph1DEdci52V3NAQ8NGvFdnfoVCcjgsGCrx11Vu8lgRW6MXKYl4-I1pbEW0tFu7SVgszQ8YWhOoNY2Sj3eGEIY_HpmJlITP0Orew4B4o9-9d95AnEBTfn8qQU6dMFghySAqb5EwvR7Ay5bm90="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sunitinib trials for Kidney cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Kidney%20cancer&intr=Sunitinib"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "50 mg oral once daily (4 weeks on, 2 weeks off cycle)",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 145000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 7250000,
+        "costPerResponder": 467742,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.82,
+        "vsComparator": {
+          "comparatorName": "Interferon-alpha",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.82
+        }
+      },
+      "name": "Sunitinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-22 mm",
+          "baseline": "120 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Longest Diameters of Target Lesions (RECIST)",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-42 U/L",
+          "baseline": "280 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 9.5
+        }
+      ],
+      "remissionRate": 2,
+      "responseRate": 31,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "EORTC QLQ-C30 GHS score: 55",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "EORTC QLQ-C30 Fatigue score: 60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (EORTC QLQ-C30 Fatigue scale)",
+          "percentageChange": -17
+        },
+        {
+          "absoluteChange": "-15 mg MEDD",
+          "baseline": "60 mg MEDD",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Opioid Consumption (Morphine Equivalent Daily Dose)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 65
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 59
+        },
+        {
+          "name": "Nausea",
+          "percentage": 44
+        },
+        {
+          "name": "Mucositis/Stomatitis",
+          "percentage": 43
+        },
+        {
+          "name": "Hand-foot syndrome",
+          "percentage": 40
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 31
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity (4 weeks on, 2 weeks off cycle)",
+      "trials": 241
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ-Q-xsy_eXDCmDoA26jYERYg8G-rJbwSlztfiW06gJKgAcBCAkHkRRj9erEvQRdraVsmLpTFTMIcy36pGlH1Q_Qe8ZyplJJJuR9cOz6raSD6QmIb2zTQIUPGSk7rpL7zRLiGL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuZG5_qxTIdRLYhsoaySVr1siQeXlAA2hfG8WwG8Xiav3YD3OdzZ0b5k4geg_VEdVE5TCr2g8Q4NnYClnnk8ZauD2oGRwWj_BgN8V3yeoKeVZDECqyEOO6zDEY3Ft4l9w2HXOhEoAnWEjHioXjQFNsjjPR_dLwWJzKD5IUQnVusJ_4xDh9uYmM8T9GTXvJ8McHQziaOolm66fomAer6bJAiszpzT4T7RSjiPyopt1_F__b3a7iETZxaFlgJiFrqeYL7u0tUZ8P4LPJ8m49faL3FByXN7I="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR9KKUVDETfud-wYJFsMA1IBg1AhGEk0ROjGg1RILAGGWPjbZ7vn6vBtMKDOuzv80fvnNg7ao1lQvCVA6iERjuPAP2slMNDMdDQQ6UI5jeVIDB6w4J6UKNOftNxuR8wWkDOEOL5wMP19ozck4wD0JHG-7-cgX9LsCAX12uzvvbZEnVKC_T9lG4qKs6vze7VjHNup2gFE8cN8FbzNids3y9yxWpAk7GyJzIp1xcSHdsKJxB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqRkDo51TXpbqpvxxcUhEL-As0G2kiODZRtTROLw_kKOWRMNPu5ps831GZt7NAEPSsMOjs6xWPWd9QMRBSa3o-0ZqvFog0Xk8g4aJS9jL1PpucJMlHQY6Gsa67P0eCabRyOofQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd5OOq9o_H7MzurlFXsxN9LxIIStGDYdh4FWllfdfcjbGAKYoMr8G3fGX4HrfqA3ePw6PLEt_Sqyk5womVc3EzoJEKO8ib0odVJQ5-5FlpaEnV16o1iTB-AP4-YQlo5rsh9jwvZC9hIH81W7w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-_SCSByfp3BgeMfIRK2Bizq9wKdbE0_DU-1T1iScukxgo4xsS7ZJDzm04JtwqsOd3f4pdxCB_Fg3JuW0cwtELI68w6n8aUDLBcuzkW5nt4ybMiGIRg1MnfG4s9AKU50pgVDat1YSAOOlZlOM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKgq8y18Hd2We6vF0PswkyT84R4b7uNLC0PG7v7wAnrPAmPlk3rj7MZxrfzYG23FBgDPptu0ADePs506QNU24HNTAdzuGGDskJGPHJJp2BYl5SEZYXF7A2gM2hL6NaXIl2eX8cKCuoDmgTyF4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMNxb5USY6dzd6tRJeIRT8WN-CXn-527UrtKpYTNowgiG-256m1daWp2vJFfYhGHl6GGnMKp_O-V4JoqNL_uspYtGCic1eSNWtJibeJKJLR9j_1nVzR15pjJUYpstvvCT37M42XFkmTX8GWW0="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhiTzfz0BmuyrsEiDNpe9H-nsnAKJ6Z9XItCyiH7cNHPSsvm5rXOvnfIjBbFOxMvAZ3TI7Luo7fqMSo9DSQqoEgzNY7_13lU9XzK4G1ZtxndagWt8wFZajNAndZFbSr5eiPVDAsiPlRju90ls="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMhs1kHETYNTGsEX9pl51sBIvD7niPRpMjg2f0vcsLRNRN1Jun9p34-s4cdyk4z_BYGtpnxHwAJQRekADG-nZ9kqkfqQ8U2ZR5GyzDNsnYyxnzgUldqVh6MCmW2CM-HRPa6wXbUVgy_n75Tag="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5WW-Q37XVPS3fUUrWJdgO4HbNHPZnZsIa4wXlnYwT-swlksZWAw1n5vuRPjBL16hUPN28W4IRXugRWeqmM0e-SFSxMhLgEYrfsPnJ2UxcxmG5fAYj38rG6IAeaBCUwewE3Y_mnZQsHxyPV0Uz-PxMRA4ZZqOVxsRkgu6QM9NsIdPPUwhHnhRmdf3c-zDkaTKMYC9-Em8RIlZ0X787KNr7gxZE55favgLWbrtVp-Mp88rG"
+        },
+        {
+          "title": "airitilibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGL07Or74kG06rQyhOCpwLPGZcPPcSuKHFc6yLZ3nIw3xQihBZjELuI5K7F1fQhD0X6_QViStKImKI6wjONemA6Fk7KX_1QyUV9vfpdB_yOJvmZ2RAI-UfRiJTJYh1thk_53pbNatc3_Z9cTLfRUOY_x0TFvo8329DVyPuevu-HCACBh6jji1RRi1cpKMI8EGMJNPiO_PGhrNhAcW0"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pazopanib trials for Kidney cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Kidney%20cancer&intr=Pazopanib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "800 mg oral once daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 130000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 155000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5166667,
+        "costPerResponder": 516667,
+        "icer": 93485,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Sunitinib",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Pazopanib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+5.0 months",
+          "baseline": "4.2 months (median for placebo-treated patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival (PFS)",
+          "percentageChange": 119
+        },
+        {
+          "absoluteChange": "+27 percentage points",
+          "baseline": "3% (for placebo-treated patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 900
+        },
+        {
+          "absoluteChange": "-1.5 cm",
+          "baseline": "Average sum of longest diameters: 6.0 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Tumor Size Reduction",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 30,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "FACT-G score: 80/108 (pre-treatment median)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (FACT-G)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "+65 percentage points",
+          "baseline": "10% (for placebo-treated patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (DCR)",
+          "percentageChange": 650
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 52
+        },
+        {
+          "name": "Hair color changes",
+          "percentage": 39
+        },
+        {
+          "name": "Nausea",
+          "percentage": 26
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 26
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 25
+        },
+        {
+          "name": "Decreased appetite",
+          "percentage": 22
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity",
+      "trials": 100
+    }
+  ]
+}

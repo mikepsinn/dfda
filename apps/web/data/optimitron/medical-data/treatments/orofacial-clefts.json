@@ -1,0 +1,710 @@
+{
+  "conditionName": "Orofacial clefts",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:22:01.588Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "thieme-connect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9mqgzp4On0D0WtNHrtWLq75RBgoweCixArh3ZFKpscJHG--pzK7tWaxlMDvyVXTQvTJ4CDQpkcOfY7svpwkyadv0tvfpMWTOnaH8bFUtVo7s2K-Bh5R4j76x4jpjq9xc1WqXvfh5eRQ4phwdAj8VQAXHNQn5LB4Hu6zqNLR2ZRxNoYtfrACSvz7HyW7p9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbwLuplCy1vt53JprvZLFThiJcHXskgRW_JMdHPt9jWnspz9SQISoZOgRuH0P7uI2yjd0A7bkU7G3M0Pdr4VDrizFKjVCrAkLZvSMBG9YlfIvxtONoXmD-96Zl7XMaFr1JxKtNu26_R5WCuZdcZvJ5MhnDO72h9BwkmC5Tv-W84EZVSfWX9ThdqT_I4jj9J6uRSXUHvujw8h7kVDOVIANy8y8vXa1u1D_5oOSIAIKDZp31az1S60M="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqCUQBs_2R9IU6EPq_YirYyjoToXKmyjujfhFIfKBYM1KV3YQCOGqwEG_prbV8-jFjPjOl3pAl3OPWA3dDz1Ptkd3UM8FeBxtMxErEh3n19iGFcrhfoMqBk-M8U5K8xNBLpxMnz_-HrFv_FjDph2h1D0412Hh6FuCGz1yA_j2iS9Uk4HT5-N6So9YgjXr9EptofhDZijxIVrYLhTIxPYvwgE5WE2Zr9hhvS5Wqj-2IqT62T3XYNQpO_p8SMg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW227KXxeK3M2tXZtl51DFddx2JGzGBFP1IMy8F1sMGai6pl84cDpdImVPh5EJmEsLGhECzbhvVM6EIP2nznJMrqCFnv1hKOuJycw2phL6RZGOAhEi41p3uQtv1v0lHU1-nmdm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFipomA5xVz0tDk-D4LQMArViJ9HwzSbvCFyOyIsK6Zu8T5cv7fbsOmkcWPGb6M68l-_r9EJHWVPIB6Hknmr8-9drhXth6e7DZKEd7T5kiBlqk_SRduoXoXFQQNWjBbV9XVddJHcSYZQn24zZKjC4m455pZXPtWk_Z4fyrTFGRnmXMKRSmaAklnvOxMltsmiF2hQjvAFQcJ1ehXGoWTQgdMtmoOi6C5-wGL07LSF-S4DMnLJtWQ1Ux6Gm0Il59QrbDDZlOz1e3LDliBATg1yz959emDcPWNaIjjIDA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHy7INAgEhO3ZHD2DEJSy--gUINJp_VWhBx5G8sp0nn464mOFYM8QEplsbh8D77PqMYhR25-bMhywcDrMJFw6cgXdXtP9geixfbLyrGTiQAmlN7u4Y7h1i4p42_rMQB9EHjHEAepn61d4GnJgb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF596zp6bOUDJICkrt9uM_a6aXCuE8ZIctSPzzmeIVm8JnMsCAdjkoQdMHy8Ie-TL6VIRGfEHQRhk0RsbpRUU5NVswrhvVCpsxpwyyXcVCb3WB8tJXuXxWd6KK8jwz8qrdZ-RMWFY3A5xT2C0VE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRKSRf4t0IOrYXJKeJ58CyWDdQm9gv9kcxmFK2wBUUQHmGWmILMDPypdsC_mIqt5MAMBSkwi1Kbrsic41b4-9xU-5amIL3wNJk6IsGAxN5fMR8qTtpev1vwwnzmY-sSn_fdia-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3YPU_FRwPB14exlv8-FAC3RL0MR8PfyjUMsPZQyYYojienFmOGCIEUJhxw92dauhG6Ei18I2xzzBbtJADzlgnuqMqsFq6ihORRwFisWuaisIjofqIIsJqPrQFCwtK7BLlWbQWqsRtoGNp9w3LBMOefyOrtwwsaA3Bepv19yNF9zNsIokLHIN39We0vVszdr3RcM9EyskNI24kXVjU9Mtj4s2U1M-x7QK0-UYqMwHzb0F0rL8lM8x1Rg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHavhCEIb7F3MBi9XjacIPEYDMc_iFKbCYjebOSMiWNVKNyNGzWJ8jEyrnCq9J3sGufctZcZhQFMohh0c1g96QD_9gUEKaxl0nDrsPsAMR9ggrV0nJhTMWrd13e8gSmHxHPeWGQGe5v55Az4p6N8zdS_941cw8ICNJLN6L_Uz-1OfYmUFgxX-6Rhb5_TanGdCngxMEgApQCFqW3T3PsBo7Ex6UeJ3o-_IH_kFIG1Lyiy8ZBuqNO9G6QjoWUUF00cmWR-EhiGM75yC40z_EjOy7Kl2EquOZ-FMxtqgOWvXpjZNQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWLhAmas9l5sd_lmkMmo-aUJzCwdRR4Ij5ieRLMe1bkUMImvTyfvHMy9KfJ3L2Gqz1Q0Sue2yPWH69x3biDXn_hG8O0z_Upt2wOuRkiMQG1qV_qc4ZI_DoA5MZPfAle_viF70HPZzIH4pDPqL_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPNyZC7nbkdFJxWQ2zwGuaaKiXuWaxlHyCxyw5WtIon6VhLOYzCqRpC4gAQ_WFExMrbKaw0JaQA4mDCPDvlhFQKZcSvXj_B020C5v2xcvIlABKjhNlInOFyQ05MjKNoWLs9MU5GK-XPBI19RWWTaj_UiN1thOOd5dqplRsUu6VjDXq6LNEk0qV-qePsrJgaxXoB-fdQVCp0gDMdG4U7Xda_0ZWuwaX1vKvf6eSj5PfcHx420k7CW_M03WDOa6RpOOzej3MB8QdX0iCKQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdi58YMM8lhyX_MHCjHU5djw6ZttX54_6iWUjMfa0erHhsKF5a2qdissCHd0-5yAbUFdpLab1HLlD2zxdaI_bW7vPfv7Y3NptrM4uwt3wjL4KydjCvJUNlpQ2ODVp1Iye7-2bP864OvEYeDdFb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyU2ZDL4ttaHXz87WN0Ru5Spb_f8Of0LR0AnhKgYtlu1XFWDsFwTD-k4_G23FOemicmeT9HKtDskyl3tQS-41Gk023e7WYasvh5KyzY9bzAjOMAmGuywtTDD2g_Z7wbQiMCkY_"
+        },
+        {
+          "title": "ClinicalTrials.gov: Primary Cleft Lip Repair (Cheiloplasty) trials for Orofacial clefts",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Orofacial%20clefts&intr=Primary%20Cleft%20Lip%20Repair%20(Cheiloplasty)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 2050
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3417,
+        "costPerResponder": 2113,
+        "icer": 97500,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Primary Cleft Lip Repair (Cheiloplasty)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 97,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Scarring",
+          "percentage": 100
+        },
+        {
+          "name": "Asymmetry (requiring revision)",
+          "percentage": 15
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 3
+        },
+        {
+          "name": "Wound dehiscence",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate anatomical closure",
+      "treatmentDuration": "Single surgery (1-3 hours), 2-4 weeks recovery",
+      "trials": 5000
+    },
+    {
+      "citations": [
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf7W2baszZtKzigIttNJB6fqjz8RUbwtz22_5VaSDG87xUuLCrpU6Kx8A9-dpOxVdGN6Ihy9MEvkNMLSNTj9BTluwpyYP2N3cCxdB4Jq3ZsJOrymB-ATHT7E9LRzXjd5TLmXahIanHBUKjARhq7T52VNuMBGdhyA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYUV-orY2lAff65F0D1dRjngzwu18gqlZyUfysRClddob8tL-jXi3lQ9xtuyV3_zNX2DSMYasxK87ZPiPdj5ESwCYAh1qs-_onHJvidgLIVdX13nMddcR4MKL4uLpmdvSLWKouK_k6aNncaVMm"
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoCIwzTS1E0fQBBKlhvTBdztbNXsmwliIquaFmraxFp2QLIAR__YzQr2hG-oDL2YoBuRkkR34kGipuE106Rim4wKq0Gvsn6Lth6u7Jp0d9Jf9SBnxjdSa53gjrZnq7WxYNt7aHQv9-7UksDYfvQHM0"
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSlYuS3GWN7QEjrF11ogzJfk-7jVgaXcMAA7dTVsCRygoYSAEDcS4sTNcHf9uHK76shIaUs_tYXGqdl5VEzADvsvAl0dtqyMZrEMwq_u94goG7FrHAs2-mqtns_jwIb7Q180oOlkgDMb1-sLaSOL4aCfpjVU7u4OixcQQj1RsEeiAfawwoEMQaDyusOwpLPoA1N3JfJuPSbxc1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5ksybl-rDADb0FKUgZPSNAjNqCpdsrmhdMwqoZvgWtdyp2rvBvcVVFN0du9lHEZNzLwuGMtsFSLkX53Zqjt3Ss3I13fPBRTli9qjLA7BNNu_TMprr6E-E0yhZO4ICJ9IFGuye"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuCsnKchPTrsJSQ01SzL1nwBhKaNvp-XN_tENuZxHXqNkEu3Js7Pa3i6a22gX8p0ZOF5YJE4Stpjv4gifFOSa83e9zi2yxhvv9Ixav7UuyXN1V8yb5sF0vj3wXrUdd6kfjTET8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnuwZqjusCLaL4tDlY_pzkNCMkSOMbjGqio4bmohSDDpc5mhs4qQpt-J-cQNvm8AMMILV71VZne4eydnV2PEWBlAMVy2kUcm4oD0TaTB7qefWYXbMqG55FWdPkd3MxvvJ3Ai9IGu3e"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp10sd1F5HwcufN2QZeF1beLOSJ4xqqbwFLd5VhKItp7YITHS11EuASDIJ1w3pdjhU-SRflL8TDrfd6Be3zyV3gwEyQQFIpA1epgqAW6UdemYKKT3NmGjwAXfTw4lcuUiVRCiybqOBIvnsR9hO2hexFWr4vj6emyqxTvFEcGLyAK7g6Udc2YzETQ81P3Mq8zgIGNRlNg_k9dfnPA9dsPBMrtFk3DB9RnT-3u2WA6uP1FOfI0fv70U76Hc8l0pro2tQoK8y"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDpTWdJK8FHrNn9iMr99KLuUJzp9wjpuvsA7q_d7k9Utva3UMN6_8cvOES4WP-NYNmH6J-R3wz4Y51lx_5m-uHfMaQMnjNXwwngUsLybRT0aJxdx1gldBMxiQoipeOsmhQjg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDmi1mbqUjMZIO9dqbr_vOB4xNWRklPvwLRm9WkVJQb9cwwJOblji0Hueo2Kac_FB7NcE9EatF2lcG_xtPzuoZnTyh9pW_Mt6H2QF7VX5_wLFsEgd9IV1lyzq4SOlO02BkK_vAQV5QTkNhH7qN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt_WSNhCTNHSDCA2aP7QYeoNEkZOpoHd-hw8CAs3k5SjdhujQfkylp6AfsYQsXF1U6ngAGlafvxQKPWcs7yT86QXwY9i65zC8kvzcsGMItOl8AxfF4FvDNh7eI_qokFzJEWkBaoDw8LSXfZYSjr_-FVvPC5YIRBZ02wNCvzh2yheyNgAKdUv6UKbGaLTip32Ox8BzgJZN3eBoHXEqhvCNE-ThbKa862yq4OjQsGNuIjHNluczSaWfYEe-Zriwsph-Fx5B-1MQXNtX1lh_vf-BbPDFLB0g1ttgX-ZgR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6UskHGc4D0lO-INDmPzVo1i8coRBqYNIWdBiTR4e6n9N4Jnx0NCa-edmdMFITAbS-kBeOBOJA0EjpN_W23ILX3BWVEwhfnHFXmHzMj0cLLjccuxEkcDBE5wxyWI08PxMyVvX5M2yS_9QpsLPuWUrzXklH2kd9TxFrAtoYEU6klhFHu5MwHGLQoiPurq_XqT6jwD4SkfficlvIi-EyRqIOJPQ0HvSqkds="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp-vFgB8lNHAxl90yciNDJ30P5A5zJrhoyOZlx2XjdrTo2Nm9Q1D-M-ULrdLJB1dBvS--4DfH_DqC4xpcBS6vGT8LRACsGFbLHJ5B2RLLxV_gnC7MsVS-2fgWnZOsQAR648CfViKuhTwYZkeA-i7RgMJOMVgtkOR53IHjVXq7BuPZ3j3SNpkM2-qfYuzn10rwYEN9B9kxQ7dx2kroKXiniFpulKeCKuBoD5nEBsXLyr6K2J_XM6Iu6kW7pT8_CkP3M812lmDUE24KXi7n82ymDfLMmt5BKnG0sJcJ-oER2El3m_a1paFTrSkvtuF1GJOZ8hcNR5u4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfkfMPYH96mWE2K_KD6u6zoCIJwxEmDHuGt1hUmyJthLJd55FF7dbudvgmk01BYavibOrYpgyaWJtwBtvDgK4H0I0tfxnINln6p1qE_t_mL8Vq2JAVB7Lyh_ZNr_DoG5j-V_x9P4br7OHZQlVo5vghrPZuzQBTsDXGHuCNllStq6Y5E-5Zf3I2MhBopQFHWCt04F6qHaQPBWSWQ66QKbGt4FgVghYTQLFsWSBt_NUgmAoXuNBQP-c7m8P9kATsaU_iYzwi07-sfmBjXvqj0_U_l3w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuzmJBFhbj8rzMTXJaunJ0gVWiyHJLt1X7kCBqppGu1-abcjxJuAazf5xMujcuKC7IacIaArNx_CFc0r2t3oQrb74Hvf09K5q0V8y3q1uavW1Uk6d9YAh3BCgqTi5PxrbR8r7g"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrAzVR9v_vAsI-rVP83stdwiQj9KptYBJxkNEkX3w4LzakBrFFjWGxHL72g6ermz45ilZWfsbgTwAYwjyWj7Hr76Q6CuOA_XOQhxAa5y15lCsQen9q_rA9PLSFao3rNSVNozrv"
+        },
+        {
+          "title": "medicaljournalssweden.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF11PQGHj7ELXAf_Ypk9qpiMqH6RIHqI2ml1_AvtRXSV6zDc6X0s2cof_m663EM0q3XGzS9iK3bTXxIXVWE9VY-sitVkJ43sGLU4Qo-oK-0ZG4Yed1W9d4DB3FoB8vEScIvPGryg3JUFQOqAXXvUgIQYixFl5I_dd-M"
+        },
+        {
+          "title": "medicaljournalssweden.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQDn7Ld_B3LuHyL_G0wSudqGosDjCMuoH-ahoh8454YlHi-X_H_gh28nWIlgsrFWJzbIbbbTmMNfyzoN5x1NlVEsfPVI0K2CQnKul4y9HBIU4VpfEiO8eXYVlmFQWSuUh1MaDB9eoD5vhCaE85086GAclB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoseNB2N2eQm1Vqm7WYWxA1K2wfbd8z1IFDohDyvLoUG5wFoCkYEsKXjNAHIIYJ0tVtn9W-roW7v4DRZOWcR0cPv2N5NQX7d4YTljUntQCJjwWjSLkr6Fnow1S5DhAPHYgUpFreyJQS0R7KB8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Primary Cleft Palate Repair (Palatoplasty) trials for Orofacial clefts",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Orofacial%20clefts&intr=Primary%20Cleft%20Palate%20Repair%20(Palatoplasty)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 3075
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4731,
+        "costPerResponder": 3342,
+        "icer": 97500,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Primary Cleft Palate Repair (Palatoplasty)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 400000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 65,
+      "responseRate": 92,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Oronasal fistula",
+          "percentage": 15
+        },
+        {
+          "name": "Velopharyngeal insufficiency (VPI)",
+          "percentage": 25
+        },
+        {
+          "name": "Speech difficulties",
+          "percentage": 70
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 2
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate anatomical closure, speech benefits over months-years",
+      "treatmentDuration": "Single surgery (2-4 hours), 4-6 weeks recovery",
+      "trials": 4000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuR_POrwqN6JmS79KgvNqIwmnD_ZmvMnMqG_nrl48j5RDRjOrvIt9PnhL5RzZ6hc3Nx28AP0ysSC-Rn05dFxIYMhwPKpeSPbylFDENJV5E-a7DXIIDNzF1L538AVZcaVLy7wbm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKLNjuzSrprJPdjV4tZtt_Tv_VHnBu4K_zjv1x_n_23_chuAxNoTfjcbaddG9SzIENWzHGfF5GmV1YecB9NEUcbOk00-wwTfd9VWg3O8as5pJKPf4vCMGwfRm8cZ3Y-Ua6NsudrSJ9a8H3Q6iR8GRhMZdc3gpRRWCuDvB9KNsx0ikr8QYRcoEg-xExBvz9ipNsmVxrxiMkpsKnVAnHeyEvmIPGrcmgrEM85wAN1thnzPHvzkZ_0hJvXSuzXQVbnZH5JCFmyNeORY5ZSbDLhnY-0GQ3odH7YEFMooi4iZY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLIM6T_JXm8P3Qjqcs5FkpYAFwhgDAol9lPZGKhh-KfR4hf5bg1Xo6qQClTP6OvBPe-gv-GK6gmxri7KnsXfolFKawl1Ht11QKRWrkcVYCeulYbcwybzeRaE4gXS7CqYk0GTeaIKmNf1WY2FUapr9w-K1i2lh-llnmiBoMctmg6Z598lDhwuCVTacxChX1Hrp4Zk5r0yOHVxuUWDVDjF968QMvMiKPGY93dYq_YAql4tW8rkm542Y36RdAp5REkBxZNcLc0_nZVRgXrKMA4K7U"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjXK_-rVprjPU6wuDJ-mgIe1qAyhay0ekwTQZ9Wed0Yy7_sJNcq4y_bwM4Zy0O_bHICx8hVPkB3rejYnOL1JGSnsbgTtTnAkbEN2sfRkUWSQZFF4mgZ-twpG5I9ih7G3ADi9a_8ki1OH4a51CO8vG8t_bDkWrtoUyXC0-VAVBpPRQerPV2m3lnt7k2Ut1Iuz2L99ohY7D8F4FghH10nc3UnE7ESxl-vJFLGyjIgRshYQ9gFBZJwsoG3M_oTW5jU435MJNrS8QuLzBPFSUy2VshK1Of07ydq9jDEYHUJhh1N23kQAecHqRfnCgmqDCbRixuL1rbPkSn3sirYystNroX74ft6g=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRWkGEivPbS7NaJPCqIi90Ka5sNOk1gZqHhioxprRFdYDNjW-U1KY8BjAxIbFnHt8nfxHjgZYWTD-fLDvY_ywe-aPqyJOkol6tJN63C8N8nEx-88y9fAe8lSOy97aJuMnwV0cc"
+        },
+        {
+          "title": "cncb.ac.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGimsOF8OXg_qWZUadgAFuz4GDhIALDyydPcRpJeSxzIp4mj_e_QGx3Lua3lYx3w5hu8pW2mLaJ3XNkr0liAczQqN0A4ux55ahnTGEAe7nzA5MYirZWxVvsjpuTCI_Hc01zccydQY2AnlJTRODBf2mieIPesxQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdOYKOuDmNc9aPY6khvcl1j5znk9olDjaQH3kchRax_XaIsDYsraDholnaRE0RDIKOVEW-7CmL8_iCCZjbtxy73s5btfUrvgivuoL1Adpe3cucTqOcDFXkIUQ8MycvWA8HJnHC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Alveolar Bone Grafting (ABG) trials for Orofacial clefts",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Orofacial%20clefts&intr=Alveolar%20Bone%20Grafting%20(ABG)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 87,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1350
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1588,
+        "costPerResponder": 1500,
+        "icer": 97500,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Alveolar Bone Grafting (ABG)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 67,
+      "sideEffects": [
+        {
+          "name": "Graft resorption",
+          "percentage": 10
+        },
+        {
+          "name": "Donor site pain",
+          "percentage": 15
+        },
+        {
+          "name": "Infection at graft site",
+          "percentage": 3
+        },
+        {
+          "name": "Oro-nasal fistula",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate closure of defect, bone integration over 3-6 months",
+      "treatmentDuration": "Single surgery (2-3 hours), 2-4 weeks recovery",
+      "trials": 800
+    },
+    {
+      "citations": [
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5KzH1-jcIu8RVKUG6vGTjNA5fgnX5lEAjljsIffZqJtcgyU0pDKOprTDdpaGto5l4Q4-kPGzpIwMdGMQ1tN-YvrK2az1eP82rHDBTkMubGfy49x8JaYdCzOczXDEeWnS_NetX_Df4qNy4sTwHcXuV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3q-yYJBhTjY_qnMj9PxajoVRqKIALh_8CoDRCNyf-kCO32G7FAFJSnSbnIYMsEnga_bQCE02-G6_AuohR6TvytJMRvf-kuea4LCA8bok6pKqOapXO6SR2mluAnDSlXwXUy_Ch"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdVii1b-7j0tfvht5weQEkJKM0ybpcz53aV3C4FVzuviyfsoM-PrzwsGIIkr6jwPAVrKUq8pkfVHRVndcIKTLWZYMESery7SqJFSIHbWbm_r7VBhCyX-WPJmgbHscdzwUJdZvKBDxHUtf6chs9yFLf6E1SA50PY4a3Agn3TXrPaQUEP_MAvEioBvdNYEt_B3Hfs7nsz6NaTaCRc6UhuZHis2fak6mMhucftGXEocXlFQQt2h6cCqbawD5HHp-GST-XlgwcPOMdcD84WA=="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHEntLzx_NGPVZLu5mEIV39WowLTXcaO78qeXpUrMGErd7qC0svv3L55Ldpg0iDgIg_lkExgpwqtz1eG8idCgx5s31ko85uM1iYROPETmqObrrWdkDWDhNiYHLRHFTiHoH9wQtc8ug4Jk80gd9C0W2LrHuBB_POzWuhsjtecMM_B12hS_792tyVIRM_a_pi-5tm1rqBX8JUvRy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXP9ewQ0cJZy7qRX4EnU9Z03XhvOVCBFzTqJ71MXivkeVVm8EYSw73trSn3TrNvReJ9MFoEFniJ28xub8fh9UcoWUff_PF0MojrnmlqNhFfthEVD8_e47ZCHMgLIunJClahzK32x9qs2O0lKxBrFCP0Nvx4LVUWqjheXmaUfleGz7ef-C1Edt3FYtn1ZR9Kaiu0K5CTQ74KW1PfF50q4__MVv2eDBdM4r3IvHhA3zoZ2cjV7ImsnrAWdXuCbxURWyMLB86L-TB9UBojHDXgWTYUgjGWN3qgpyQccpT9-6dt5xmxd837NIGDKqHff1SejOMdGS_6SUis-xef6x2bogg51e4AjE="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgd1rc6ZKE4glQ7lj7ZNTc6nhRue0gkFvYRFY2glJmdKAKnly8zDgLCNJvOpqYO4vaDH75HxHVBW42uohKJ7UY9I1FdsblVMRgQijHGgqGogwL8YzCae6jralp0medimVU9HdKxTKMnXAEWKq9hA9e08yTOg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMeVJad1i8TMJZ4Iq4LzWS37o85Zk6CBe9Uc2AzONt7YGWTzVWeGPpiQpyv4IMUKtXRVkCsA6q5YeqsaU_mkrhUThKduc2MHi63Gk3EDY1w8n6Svd1P9ckF3lX-t-86bOxi9PgN_bTbS45BxJwZkjIPWDYmiH-Ftj0KKGLcyY3WJoh2ZhIbcCp9u6sdo0pUYds0-Nl2dPZVLhHyDsOvvc5TMASVWU5d2qT0IXnilI1Lh0XFBtV0YqlXbQ5JG6rDKJvHixboLUT3ZajbA=="
+        },
+        {
+          "title": "bris.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_qyt_EVCGCMxuon4xpmgEn-2NS1MDYy6bXOIs-AeUD6oW8JLnh2lHz4A2CLMQGyk-6h3uK4naZPhK00lcaM2kFC4FQHpKGm3phZn68bdbEn2R58ZnQE8S8AFgIqXU6xw_m1V2xDIAdafq4hU9K9koUHO3pmr7X06Xn2xERQhAQynh_xw94A52tG9GMRQ6bnGYnZqJNuC97vk7iEvEkv0jjs25pyf5ecEzmsVu80I1W0zYrlk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZeRGoxSF2h3ukwNcgoMbyE5j6R0VAqjv0TfVONi9EkSKhlH7yLyWY_2ffw3qQD6bpT-y9m3HWtuyNzXbNtcucDQ4zXyJb6gYpZWSzDn9EL2aBMYoFUZRTxrMJOMItJ_gOJmsz"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLvcWfzAkuB4iQNbHPRmrnEsssslDIBTxZj6yCHKDxQnDn6jLJmh7OFK48k7DioTU1VeYaYVSnmbPZPZ6oiIpxanP0YDNaOTB7RD7JKrbbnMsQ2doTq4r3p0aEXxb67RnEmMYMSk4ZlzhpMu3LPQ_SHbyD4g4X_kM2TKzAJyHdxofcUG96NUX_82z_NgY5ds_8Gq-yXkj-cLqM0_3uh0NP4Q=="
+        },
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGPStljeO-oQgb49zEDfuQP-VC8CIX0CKJt7FxgUvWI3kosqxbGQ2hdYoYfmMCv_hnR12jKfCqm0NN_ZIT-Y9ib27KO5dvzqbKmEldzl4rkZDZkpHCmKX5ffti5kJy1tAEdlsd1NEm_X5GbEjcyGeA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Speech Therapy trials for Orofacial clefts",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Orofacial%20clefts&intr=Speech%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-2 sessions per week, 30-60 minutes each",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 7500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 12500,
+        "costPerResponder": 8824,
+        "icer": 97500,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Speech Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 85,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Time commitment",
+          "percentage": 100
+        },
+        {
+          "name": "Patient/family frustration",
+          "percentage": 30
+        },
+        {
+          "name": "Limited progress (severe cases)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Gradual over months to years",
+      "treatmentDuration": "Variable, 6 months to several years (1-2 sessions/week)",
+      "trials": 1500
+    },
+    {
+      "citations": [
+        {
+          "title": "nationalelfservice.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3tzJnizrMGdaZ-4knJocR-_VtoYpCvpJlWEbqXFUvP7pCAbZCtM5Kw-6jwxREn9h63RRD8Ajjj3cEjfxbYDAluOZTN8l2TRXKd0QGA5bkNj67f1kkLCieN3-rYSvyhnZY0KDs1AD4FgNhAJ1asn-h6dZ5f_FyCfx3nLVLaGYRn66nQIJ46pbtDjhKrjKvRddCSGOdcYQxE-6ORZvawfvfEHjs94agvZ8PI-X8XvQ="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEVtn9alRMgOk8m3MppksdTsJpviqksw4nsPe_lDL4nt8-WWH1wLuIBNNwAEgKvzKq1P9h7U4iE3LVkIiCbCvy25pDzdB1vZtGQK_91xckdCMxOxiTdkFY5FgbATbuOlq0dmL3U4k="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY7fntcBOCUfiSWgJ_sQdXnNor_tB9dEULIOKEJqxWJrKMi1DR6nKtx3lzLYCxD-79A2jPMKZUiILseckBf9sf3ucy2RxnvsZQ-UoGlZQ-kOCNhw-BhWd3xbDkKUBBIa7eLucQASAmyIhQWZ9X4WHkyim2SLSi00V16tHwcsTIAfampdICcxiXHPLChmSYhYhjsMrcOg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv340gFoECpTPFxcBuCCSqKIgEfFVpUJ8akl2LgRH-IYwX0URXCVdGjhi7d6d6TBN5lYUMcFzVrpE59wL1MyUQyYjXnt80DJUXMRztb9m_Ij9Ft6_x-LxavTNDakARBHb3y4l7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVcyOZr1A3LfcMEbJzmINQNFeQjPr3CSIV2HhRmN7wTNW2EPdAgShyt5acXdJNNWcIyxTTARu6CJd0kWyudY-4JtngZVXg9vX8WaCWEQskRJl9Q-dsgGNkS4hMwMamaeeOmdgluIqXIscyIJWYpxNg0gws1adHUftO74gKp1lZINKu2mzEIoznjC8J06hlAo1XDC_KrDIPrZm4hjOegpty97Krud3J97kP23GRiaVtTt4o89RUtvah_NTg2cv9iSwVL3i4UpuwxnEj9NB7rEyAPb3bF1RiwwFwGZGmE5ywOCNPfoigkduAOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhQ_bAMElZbUgoLbLASArEygmyWu3l0-dgdgqJYLp-cDpLiCwHHXz6p0qbdWpEKHUVN9P7wKQQiOloMhTqmHDm-JFOFJa7iG5Z-KbDk2TcT8_l2wnSzuYgSKf2fphP2PBItZLo"
+        },
+        {
+          "title": "sciforschenonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX8QzUUSPzPE5ffXsDvr62nS9q7TGYmqI1jgPO8L7-bbeuI6JFfAH1dT1tysS-xmTGFTiaJVrYxGdw2zpTC8VXhOi-CFF08Y2D_un3LHHvZtfHEavBlHNTnkr4bgk52-_tkQ0SxhBs9PbljNxXUz53CzNZ3aXMFp4UOQksvZsaEmiHFgxmAsE9WFduhjgrZfyggVAm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVodz4l_LBd8bcLjZMmHjn0LPozL0G8rKDMKSPMHo6vrdON4JyuurPTtywYZ5BGNHFdLUXLhb-Oe-FaEgBFlIp5BrSr8RpTW9U1LBNTMRHEugAQcK8cjaefLmFtCB0m4bsXSnA"
+        },
+        {
+          "title": "opendentistryjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB4NPumph8Hox8cY2vT1qc1hGTwey_wm1IRzIldWhs0wXOZAS6gSJrnmGwWQq8kcxanbNgvC1GM131uBrUXmiEVHGQbARFSx2O5URJxt5KXI_-ZBdDHxDCNCbkUh0wuXmQQv8abCsp9lX9ymKYcR8R1URfQGm8"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVkr44YJzFmeSJwzAkAMFZau8p4kUGDmzkwit8qhDgy5XFz_fW8E6UQsp_hJhRiOHreBXyG6-807x20u0p75LFQ3R7C7QHX7kRKo1DpMJyFq1UncFt-winrxBGixhYJTbi_RZtKsSQ2BDkx-JVlpL9c-663cWNTDr2C00lIEAOC_o_ECXo_YfXjQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Orthodontic Treatment trials for Orofacial clefts",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Orofacial%20clefts&intr=Orthodontic%20Treatment"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 5200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6118,
+        "costPerResponder": 5591,
+        "icer": 97500,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Orthodontic Treatment",
+      "nnh": null,
+      "nnt": null,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 93,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Discomfort/Pain",
+          "percentage": 100
+        },
+        {
+          "name": "Decalcification/Caries risk",
+          "percentage": 8
+        },
+        {
+          "name": "Root resorption",
+          "percentage": 3
+        },
+        {
+          "name": "Gingivitis",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "Gradual over 1-3 years of active treatment",
+      "treatmentDuration": "1-3 years active, followed by long-term retention",
+      "trials": 2000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuoD2bygXq15yxtbOxNqJ8g9oXHy9KIHNhJlLB5wiM6oBxpJbJxUdh-jbrAAA8agujrZqYEMtUCoRcLoVwkmuFovjrO6UsGV75zVRmYfQboKNyEM05xmvLmoe_VKQ3nbIfyj0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx4zk9d6jMIn28GiN2WDgMv9NuMU8qLjmq_UAXBb_wI8nHm1DbWgTFtnTnrkzbwygpDYB35BBfRbRGVnM9j-4emczjV9Uk5dIevg6VX4U8yGkLu-x6bdmGse_amVXh7nvycGpk4NBPniH8jP1KKiiF7nZjDpXZAcSU32yiVd-3LP_rME9IySY7wc6Eg_arM0eBwV07zRgb29jFxTd2koRR3HvKXi0oJiHFv8SdjPdcBdB2jWASTq6cnfO3y3h8pC0="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHKweIWHHsYv3I54uGoQGCNw5MizQ0W7rk6AeavzoRBhEb1ggDGKxi9Fgjy5ePljc6YmeWKb04uV9ll2xBg9xoXwjF5WMuvyLZ1SpBoBQSJYinSyGihQ6TIkufXN89KZXp8VcG0g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQ__fmm0K8EY0BkjqHEY3lY-dyu2fg2OaM-VZkP8Q-oSgtcJvx2fVS1URIn-cKA5NnpjV3FRW9GzxPJiZtPnax2j3R-f8SFJogM0QCLXOcaRbxgl-m_uyqLVhvcArKPBMHMRK9XdHinA9bfN3nLcyjpVWb7emfxizBubl_Zf0_0dLcqX46ZWUwQQNcWrGNc_iH3GqWt3ZP1cjQCBQikkzwYPEbR8qe5mMTYgCUcJsHpKl4XeC1sP9FYA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEudg2J-f0MV5JjMEIIyb2Jjd-hqDdsP7Zlp1mfVSLXGcVLl3A4rqcjlnNakPJN8IKdCK2W74lEGFhB2PCXTSl1Ro_xN8B-CdTOr70HbV_VfK_5R85l62X8l80VEtSsjx6St1t4ujIuwHU2QVk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVDNN8RiOmjlSHzdhGKfUjD8-8mbq6jGxerGdSjNjhUfw-7DiDsyjrBHh5citgua3UyyAkIrma5Iw6eEi9vEY8AycoA3mxn92-bcGyQdUmHOXdQASAH-4q9UQEmqbYD2onQ7PyCabfAxac8R-pJ_sHf1Uk4trWIln7w6-t8e0u19eeI86lf6mfAVqtwBjHT2NWCg1QXMFa0JOf-0Jp2_0M1w48-aNHr0s-QwcfqADZnRaeT_3bPTugch21pjbP4uWUsUTiAvHcSNThj-RWXILf-0olH1G2lZ47aB-0ZQlR6jtgiQQ="
+        },
+        {
+          "title": "emerginginvestigators.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQWwmwOFsoDxX-w4dUJUkI8DBk7CueSqUmPykgAD4cseZ6dYeZ_JTbcrDYtwbKXPIW2FxB8AKh7-MZvuN6OqQhNeptY58M3s0oCYxhvEanoLESj1UUi21gRQ8-Asf9GSF4zYT0HeK6ZB04kg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJQbBvSbdiXKImlRgCGOh84rc--1S4h1qWM5z7Mn5hivIAr5WRVMLsC5j1lQ8PPWtLHMKMAO_ENWSls3mApCYhKSnrkTicN-Scn7dHPLh2aJPjaCVZpZQzbROEQPxAxvGUNd4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Secondary Rhinoplasty / Orthognathic Surgery trials for Orofacial clefts",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Orofacial%20clefts&intr=Secondary%20Rhinoplasty%20%2F%20Orthognathic%20Surgery"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 82,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 800,
+          "totalAnnual": 3900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5200,
+        "costPerResponder": 4432,
+        "icer": 97500,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": null
+      },
+      "name": "Secondary Rhinoplasty / Orthognathic Surgery",
+      "nnh": null,
+      "nnt": null,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 88,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Swelling/Bruising",
+          "percentage": 100
+        },
+        {
+          "name": "Asymmetry recurrence",
+          "percentage": 10
+        },
+        {
+          "name": "Need for revision surgery",
+          "percentage": 20
+        },
+        {
+          "name": "Sensory changes",
+          "percentage": 5
+        },
+        {
+          "name": "Infection",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate post-op, final results develop over 6-12 months",
+      "treatmentDuration": "Single surgery (3-6 hours), 4-8 weeks recovery",
+      "trials": 600
+    }
+  ]
+}

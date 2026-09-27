@@ -1,0 +1,625 @@
+{
+  "conditionName": "Neural tube defects",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:07:12.807Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVLBfioHtRkrvVhWOhNRa54bzLQNQFqCXHXXF_WIS4px9TOZfIk0zs-2tFS9rL-PD0Rl0SRv_U3xoRkGMp0XQAwsgQ7IndjG59fPkYjGKngm429pU4-2ayI-jGD_n9FJoFuux7jRObBFbGwSJK32PoqYOglzhFQ0YG2usKAhCUukgAE4pmpihAWmt1tIv4C_4W7xXwDD412LIU4TP1qCqNzWdhEn4XzXRUAsRUhJOmsqPQk0tKSZgfwzoz7hryuHBvwfdMS_1Otz67BGwICPJPlxUw8FVAbQZBsIgWFSGUPPdOcytvL7xI7CEtlY29zktXdg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuZgdI84p5Um_KGEgUX-lQB7VH6K2gt3yIkxfm9Vced5ItiikRN2Hit4atR3mB9xxfhV6pjnx1MPSRegbtSMZIw1R1QrqgEy5s-ZEYj5CnHElI5jqZjyzCgbH6NxhpuRYxAZE="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZrWBVnMDy3MhagwV7E7mMcxydOUOIciAiawBROG677nSI453G8zZ4KxXBZvrxUN7P0qsToHCiJptqeC0omgjHP2nEoG7WIwQRiHkUNjW-eGQdc2d1zwSNZ5NjDy75DvvKtfDs"
+        },
+        {
+          "title": "irjns.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM5w--s33_-I2-TgCuhaLsKq_ZrzGVpHNsmHONdXEzKCQeMrbyQv4cWJSFaSzGvc4RG5FYK9RcibpppiNFYm-IgcH4Ze9GQklwp94SAGxZoT06sc2p11x2UsWF3FX-rM5jQTIbYG6Vz-vyCZWxHjmouQy_8UsntFE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIE-r0eMK5IQAQW2aSOPu8_I_I6GiWagcls_Bjlq_Vnze6AKQ0NK0LoRx3J7NyTbF1Qz3GhrGSHmp4X7vFUCtdXnu6dRCR1ywn7-1zKdZvdQMkJ0zYWewutn_dY4_4tqUg0H4vvjzvrdyKsTIJ1KyOMltES2dWHlpCYjRbEQf21FfvFLjgCd0CU6XkXBRPtp_YNMYgCBEvoHVZ0YQItEm-48ZQsjJtF-LDww12_NLr9bQ1PtM6LTQ-DoWNZXfpt1FAIN29kvBDL-dFut10f092vVOav8gfqg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLBl7wYhDnw-rbpjCO2oo4R0dPvr-PgOKzJMdV78ae_s6oFs-brdaBzfu1U7g22SX3Ep4T20gFYbz0fNa1TzUbfJbf63mFCLscZKwk_TDbcncbhEwrwlC_1IpKatJX6W6E3QKo7fMaz3fbCIGOpsEzOL1v1t17Fe3V_MmFc-omcSPM6rBWM7fBPVQ7UeZwVRBZ2E2tywo07bXx7pDJkfK6CJZXq2u4If4SKku_1a3skiA3FNlkEtTSZxQoGFcgGtEvOGORTV1nGTx1kd0grr_0AkGfb9m_SvgVDRiUr-MYQL9LeSw8aVpnRu6et4C8"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG963nmdsVWEH-j0g8niz0Xj0d4lRiHejtowUooI7Vn9zC8EZYzYggfM73iJ0sMn1UzGMcNxznTDMK3TCoKDhMlUL_4p6zbPLNF2T6pD0Y_snpKyaDcIOIq_4vUQ00JGq7u9uVJSr3PUX_cTTghNiufi_1YwZrrtmJ3Kv0aQcAkFheYLxtNZVf01Dda3mEnz_zjFj5ZE8-LYLjbs3hx0w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrusjo4RmIFNU9xacN0P_uxezJK3lEm9G3EkNRdZk6tdg2CoFHwfgIX-b6bBylJO5iIi1FqFknBKyx0mvv1T2E__sUBat6vLdvdFtCTEiWr6ooxNcPsjOl8PKceNuO_DPE6gHo8ouap6llk9U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWm5tIXH5ol7b8YepTjoPm86KeiH3-wVCpIWM4pJWDSHdzeB7-OI6FOPdvVpPNV1w9gdY4_ifIFXGe5P3gVlnH_5d-ysFrUX93df5Kg9NKausZcezNe5US5ZS-bBG5Tajm-TE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ventriculoperitoneal (VP) Shunt Placement trials for Neural tube defects",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Neural%20tube%20defects&intr=Ventriculoperitoneal%20(VP)%20Shunt%20Placement"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "N/A (surgical procedure)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 46500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 48947.37,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": null
+      },
+      "name": "Ventriculoperitoneal (VP) Shunt Placement",
+      "nnh": 5,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Shunt malfunction (occlusion, disconnection)",
+          "percentage": 35
+        },
+        {
+          "name": "Shunt infection",
+          "percentage": 10
+        },
+        {
+          "name": "Overdrainage (slit ventricle syndrome)",
+          "percentage": 7
+        },
+        {
+          "name": "Seizures",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Lifetime (requires ongoing management and potential revisions)",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc-N5mlgrTiBtW4l63N7XA3cGPlfbpK_Fvdv6_9PvxWyuC2Bhfa46B5j3JeVPMx2ocXIW1ltd3-ZTiStDNey9i9qeLXF1r6hCh6_YPLBhb-RA2f_FqCN3C36-lASmwDpgLY849ugjShYWsIOygj4NPFX3Vfith9QYVDz0hKoVMqDgj-EzD9oJwmA2fbiYzQBtCvkzbp2SzcBfkhcx5mEDpLazaCTMjFuqHgp7kDDsEizjd3vZDGsZKJo9r5JmdwGf1BPw0HLOa3YwYf-OTig=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcJppEe7NpCTOIj8ycqthZ8gU8W8Y_YRPWRLyFTKX_3qE-QUM4xcBYiKrlWxfSfXOoZNMePWWbLUJyPILCyNmxRxqUTRyhrlflIu2umgz9olC3TzfQbpP2i_sV8TTf31qr4jhF7QSfXdsqPA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSmQ96KSG_KZLmdvUsKEWyXGPMfUslz68A3yecoXT5s9-f7L1gPpWPExF7b_KRwq0s65cNVP-zQ_v-6z9eg6PzRh0CnrwCpGc-o2AwTzvN2TNFyTfmtnC7kArWefYIowl1AHCSxZHX0Wpgkw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVL_cA2zBpARCAeOzlpmN7i6WUc7ymctMRhlpfR1Y_SluAAyRzRqwKRRNRDPySzuhH2SLaQkfE6zuaXr4Bsu5KSDNzH_1e4ctydWJZ1HhkQxEACl-rIYHT7W6JRZO_iBMR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw40yZutWhgmYgkSLNXBXcP3Wh-1zlccwizug2xmivdNJEKyDqG1GJd2cxTdvZ8GNjhUlv0m2splRCKVONHNmBk_WvMrodAAkV9qOSvlf3_RttOkxqT7cWXf_M0TRFQP9-VGg="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2ynKZrMguNlT0JPDBt6qf5ZUhJpbF4puWMcjSBGL3huj1YKI-I_7pJYHhfc80Q2XL6sew3dO0BcQbQmCcYG7KneoYdXIiyYFngF5StSsXhYuzZ7CvAaXX6Ksc3kYsTCFBrdr1eAJoVbs3CJkpi_DiJbnnNJTgYK-ug4JEy1908NW9EILtG33YTsVRx558mWby9xcnuOPo7qp17BMto0HiQVUWW-HgSpqMXvqCKM1R_jsECtNXO4D8v-w_Q1RCny8TNmmYfRPakyoxYkP6Y88V"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfkYqlW3sViacMDiNLAhTuTlxpUhM8B3SFaMoeCU92mlnErAC_fcoufvTBHThyhT1gHC6lKwYgKvDPYAwYpMqxS8UTTRstt9ZCEdABYHrU-I47M8JLPqz3-I7uF4cLUBffDhQEDQXe_EvBUuW1i1oL_PyddzRBFV9kvMuj_KIomy0wp5kG3kWHAPNlGWvi_CGFqpDiApiQjw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fetal Myelomeningocele Repair (Maternal-Fetal Surgery) trials for Neural tube defects",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Neural%20tube%20defects&intr=Fetal%20Myelomeningocele%20Repair%20(Maternal-Fetal%20Surgery)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "N/A (surgical procedure)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 30000,
+          "totalAnnual": 140000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 233333.33,
+        "costPerResponder": 233333.33,
+        "icer": 305055,
+        "prescriptionAccess": null,
+        "qalysGained": 0.96,
+        "vsComparator": {
+          "comparatorName": "Postnatal Myelomeningocele Repair",
+          "costDifference": 100000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Fetal Myelomeningocele Repair (Maternal-Fetal Surgery)",
+      "nnh": 21,
+      "nnt": 2.6,
+      "participants": 1000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-42 percentage points",
+          "baseline": "82% in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Ventriculoperitoneal (VP) Shunt by 12 Months",
+          "percentageChange": -51.2
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "85 points (Bayley-II scale) in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mental Development Index (MDI) at 30 Months",
+          "percentageChange": 5.88
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "75 points (Bayley-II scale) in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psychomotor Development Index (PDI) at 30 Months",
+          "percentageChange": 6.67
+        },
+        {
+          "absoluteChange": "-94 percentage points",
+          "baseline": "97% in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prevalence of Hindbrain Herniation at 6 Months",
+          "percentageChange": -96.9
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 60,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+22 percentage points",
+          "baseline": "37% (walking without or with crutches/braces) in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ambulatory Status at 30 Months",
+          "percentageChange": 59.5
+        },
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "25% in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tethered Cord Syndrome Requiring Re-operation",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "20% in postnatal repair group",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Syringomyelia at 30 Months",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Preterm birth (before 37 weeks)",
+          "percentage": 46
+        },
+        {
+          "name": "Chorioamnionitis",
+          "percentage": 5
+        },
+        {
+          "name": "Uterine dehiscence",
+          "percentage": 2
+        },
+        {
+          "name": "Increased need for shunt revision (postnatal, if initial shunt placed)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate surgical correction, long-term neurodevelopmental benefits",
+      "treatmentDuration": "Single surgical intervention (typically 19-26 weeks gestation)",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUnFG7S67lEcCKp5NX62Au-uhGSlyyJQ9kl6dneod5B5os27R_xgVD2w9WdcSnBThWKkUsQfMcBJegWpWUYM25QztVFnRO6FbNpgO9QVEqzTE5XND69SvRT3SPbBAE0Ks3Oro_ZVX8E91QEQ5BZGWEi34QNS7HrtQ5p_oZTZhVab5GUZ_ABfnovnW7saLL3ZMmYzsSy4k7a2-KScgYV1ujDpFnveWtarMBFB3TACt2k0xH9VxyMnXACT27ggHkP3yaJcL_9OXw3SO94J-d6DQASyBjFD9fbQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaCxEUtn1BQg5bPra8oSCWuLr6zpvBQ7WK8rIpr0G0HNXFbkkYTDj-WaCuocQDaEOZoxwgsasg417ykYV6C7oDvgJmQtstFiZeqoAXX1eNGRDMkS3l48B4nl4AbfdTZn8YET9I1kWrqyQXgmY="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMSZwfmLSm77I1U--XyHtTV0Hyu0Jk1rKEtnlqJaWNzG1IcAvlpMvZvtUV4CAe_kZHFcmKGF06B7WKRAMZB-pFI2EAdgtmKgCz-hkMgAbFQ2scJVAXSPxKDcQKD8MJJ-y09g=="
+        },
+        {
+          "title": "ucb.edu.bo",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEji5c4X3NgPxcEbrLQL6kmm3SrIVmrbnZQx2WY6b1gVx9W1hsrDAnd5Y1yCg079JGT_28FdVGj04jm-Tp0eEU8PKO5xL3rawKz3izgS4D4IGnj_WDJIHjC8qwG2q1T_Uie1FnfbW_joAYp4KyLwvTSaHn9iJGr5MdakwpTHGr4KzmqeOLXPalPQgeNRfJEVsPY6w=="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjtdu-Wrgh09tpebc3xS0QO-9L-py2FszVmvD66oZ9HQICRHDwlSeJMs0gW3fc-hgxCHup9_O1bbygP-qE4bKj7sIDdApke2AEbMEnpMMZEu-Ce--Yc5Lgvq-Q3rljsDViLaHO_Dv9rQmC5PCPRj5D-lePfwhqHvEC_4Dk6x3trsYsBTwUOPfqNK05zf4h6GG1gGrbvPXAwa8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2mJuWmrw_iLFd2ZR2Ng8Ceu2IJmLoP2x0vgu05gpXbH8NCfqyRJYiwk4GRqnmvEGhijqqAJHQM-Ur52NA2Knt8yzcQzqtlsUojDRLM1Ad0hQK3Ubrsk-Z4JBx6hc-_nsCieMoVtlzyY6RY4k="
+        },
+        {
+          "title": "ClinicalTrials.gov: Postnatal Myelomeningocele Repair trials for Neural tube defects",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Neural%20tube%20defects&intr=Postnatal%20Myelomeningocele%20Repair"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "N/A (surgical procedure)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 90000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 90000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": null
+      },
+      "name": "Postnatal Myelomeningocele Repair",
+      "nnh": 10,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10% absolute reduction in incidence",
+          "baseline": "75% (estimated risk without early surgical closure)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Ventriculoperitoneal (VP) Shunt for Hydrocephalus by 12 months",
+          "percentageChange": -13.33
+        },
+        {
+          "absoluteChange": "-47% absolute reduction in incidence",
+          "baseline": "50% (estimated risk with open neural defect)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Meningitis within 30 days of birth",
+          "percentageChange": -94
+        },
+        {
+          "absoluteChange": "+15% increase in rate of independent ambulation",
+          "baseline": "20% (estimated for severe lesions without optimized care)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Children Achieving Independent Ambulation (K level 3 or higher) by 5 years",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 100,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20% absolute reduction in incidence",
+          "baseline": "30% (estimated for patients with severe sensory deficits without prophylactic care/repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Pressure Ulcers at 1 year (among mobile patients)",
+          "percentageChange": -66.67
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "85/100 (score indicative of mild developmental delay often associated with MMC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bayley Scales of Infant Development (BSID-III) Cognitive Composite Score at 12 months",
+          "percentageChange": 5.88
+        },
+        {
+          "absoluteChange": "+25% increase in rate of social continence",
+          "baseline": "15% (estimated for individuals with neurogenic bowel without optimized care)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bowel Continence (Social continence with management by 7 years)",
+          "percentageChange": 166.67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Surgical site infection",
+          "percentage": 7
+        },
+        {
+          "name": "Hydrocephalus requiring ventriculoperitoneal shunt",
+          "percentage": 80
+        },
+        {
+          "name": "CSF leak",
+          "percentage": 10
+        },
+        {
+          "name": "Meningitis",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate surgical correction, long-term care",
+      "treatmentDuration": "Single surgical intervention (typically within 72 hours of birth)",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "unc.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr1vwEOr0lfIKWDcqtQePq5XM8IMUSkVI1Ixk_8l_oJy7t4oVS3O6iDXRMrbzseG7oO3PK9laOnN-603B5sGCtqi_ELJkshOQF4Icte8Gi8pXIzOQunVAiSx2_PGDyTA6DXGsg5mA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNfqz4ZG8UW7-fx6n4jSsDr3tag50elWMZ46N0xJMJjHXUCfuOgQXmCwWo7VgOswPO05Nj_ginSR1NwzYNviWK4tCb34LZyhtAMpj11fowT5gf7bHHI4zcPiVnmIM3yVx6q_HG2IWJw6QNT-LiRzZVNb4RVej4RggRk-tAtjSYIiI18j8u8nZp7bFqDDr3atX5lAngD6LJbS279dMQCrq_bhVHJhF9vGtD1hp0bfPrG729nAfoGwma6aJasT-jGOGqXaySHGm14I2jkoRd6CjhIi_a_oOxm4AfuQDGXBQhVOrhak4M97nwtySPuu-RSQNpyb00tct_MOHVfl2OqZy4"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiNrsUBYHM1_C51t0GoguOeY70UgBfM91odXRIBMWiy2FQTpruWmhBGuVN9_ZS69lqMDH7b9srvpc-K_r3yQC4cn7HANlXBfs-7XrC-QF178WY6QLm_M8YK-s5Ff0-OqOkvYAuJ7VI5NDix2Qc1W_J4nByRH_gTwv89i6e8B9IPnUcLJSWW4LUtWYd8LAFDfQR9zw="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSCQU0BlDtxHEOEFYIu1pbJw9noGOLcZ4ETecJkVRQVRtBtiV5qonSnoovSMcm_dBMRxMoVb_L0j6zf_u17vmjhDLb3AFAOlHJxTf0Wf9XvHuWbo5pk3ZbRGr36nrDpsfpIX59DIGQvlFH4M1JdeRv_tMvk7VIuj5ng2Tx2rNaWgj8cdLImgUhTs1CvAeQpbJanQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1BazbWMFctY5KS6cGtp2X4csidE_xDbISt5i8AXOgreG4oOUNX06QiA8-MLZF_hCj2syCozmH8zD4HoalqovIv4SEOaG6nIjTliTQHc3gxhyE-fGbQEk8xajOHFPvbTmL_ETY"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXsPpiG59IyCu41RIHkIAur6QALcMy6W0gRI9tMzLPM9fr1oA6pRs4Lpnx92uGM2bDJe7torduoDxkyUtngSXSy6IlxZe3EZ_aH5ogXZg7KGGJbvlFDzkQ0wIQTX44O0tDlJ-7ycB8sdtknCVoViG0k3nsMKRRwoU9xV1Ar6u08Bk7Z7r_C6nkHiTof8LvPMQviaIDcymSXgstIFy1khyaT1vGVnKAnw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLzjJakYx7Us8wzueSqrQSDk1s7_sQOLSPZNc-nkafZ0FBZBeiqpsUxi6akeIIo59Omd6qBl6c061-WVD--V8tWVVkyNC6bn3t6cShRjKPdIqijgOsvr_gishL9Ld3LxVagBuWkM8i7A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEzZJh00FZkr1Fl7uT_voi4GpERExdg_IiMXwYuy8-dAR9a8Z3qMWaa455tPWWocxwjhgWgHUiPAfNKtrVjgMv3ZprcAZwmhDAceZgUyH-lfrGBri1a-MNzmc3mO4u2o1XDB_J_PSBMplA2yI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0cEnN2lNQbNQrH7daWdVTYhIx54MmYI1oU9EsF8CIkNPfa9cRAfPE9XIuUd17Du4EXkHPgSaEoYpORDLdcLZ7dEm_D7bjFRMCaoXyqJUXOzgkuJePzxPc2UDYRfiaY6cE3dA26eMPkxlJyMqR5hdW8_d4fr9Svq2y54Vw_CyvW69YWJ_JcmdVoMdXY4bTqQ3El_2zq_nRh_mlzrGEm_NvwLWge7AicW9GXZ3vKhjGJqIGvE8T_RhAEN3gXqakUkj057y7DeeDmFhKoMtzi81KNYaPsK_AKziu7kTyL1EGMSqaGbHtU7eWpEh7rkw0Q_mdDmsSSUiwETg_inffHw8p"
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyRdOMyI7UL7szV9VDPgZRlSZJzai2jpxM9UHQyad-4416MEXAaHdqIfo3qsRB9lESiCJu6QiXCOpCkVsRLIDeGwn3Pvsq6L7ZmpYW7cImDhelJri_2QItqmNNHa736aX49T-K1aKFc9r73SiLOVAINAoeb6ci611FhQJXS_QdTUAqJLntGR9O1jjBiwZgVDuDh6e5KJOn0ehG98OE9rJsQ6fuc8fR4_FXZw3Z8__rxWUS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Folic Acid Supplementation (Prevention) trials for Neural tube defects",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Neural%20tube%20defects&intr=Folic%20Acid%20Supplementation%20(Prevention)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.4mg-4mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1015
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 21.43,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 25,
+        "vsComparator": {
+          "comparatorName": "No folic acid supplementation",
+          "costDifference": -100000,
+          "dominates": true,
+          "qalysGainedDifference": 25
+        }
+      },
+      "name": "Folic Acid Supplementation (Prevention)",
+      "nnh": null,
+      "nnt": 150,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 1
+        },
+        {
+          "name": "Bloating",
+          "percentage": 1
+        },
+        {
+          "name": "Loss of appetite",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Ongoing during periconceptional period",
+      "treatmentDuration": "Periconceptional period (at least 1 month before conception through first trimester), or for all women of childbearing age",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs5Lavn7Qw0jwT_38N27oXMpioU7a_lkMsMz-iL9IV4js9pAJJkIoQFsMnHlLN6nO-jq0EScv8u3S9NTrRa49fNAHcONqUS3sL3POjJUX95JGkikvmWMLq7Rsa5lExHt2k1rE="
+        },
+        {
+          "title": "wustl.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFr5t-ETzIPxo0POmWL3r3vqPpwthTKKvPWjkQFglInIbi6m1yF_Z5DXUuurF4vou_tDkPCTozNcCipQMp7h9eJ6W1IGZdyACwBD0hwonPenabnpRX2HnX7mVzdH6smQ3YMu11g6Db8OXdvfSa0Nq9ZpfzG3Te_1U1moRaCi25qd-0QEs0OMM5Wq5cSV1hmmp5tGnfKHcQxEG93wfj4Cw_mpqf62Dw74DI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIpGp0bfxmWNCQgp6YeSkcOmYhrdEmDlMSIdDOdeCY_gTdlio43_kE6cE6PjT6fuT-gyGmcz4QlLbyLXwrQA0dAYDyLS1W-6nhtkAoi-0yCvH790S9BeS2yphwNjw1tbD-cLuyjvHH6o0HlqpgTOjQhmtXnSZeYCEXwTVX_xg36DlxyDYOAFVYMfqaVj17fEIhsA3iHr0cKe8CV1yogVekokKmfq3P59IkEbH-kLqmZgsQEqXRm86j05HDioNHXbCCLTv1zOatdgWJElI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyzozVGE3tyDVGPz_BNdfDpoMKZFeYEd_cxqsDtQ3JXndpYx4VJ7Y8WA7VBHnxbZoJaPALhEjoFj9bb9FBga3wXUJCznEMluQc-1mrN1z-pixTDanT_d4yGpq01nep8rkQyb4WRGiX4nuNyw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHfByzjV1cZSA4jY0eaXQ8vu5X6blVeP-MPYzIr6r14kqSahbSaQmAW42vcFRmCEU1qhTq9rr082tI7EMampi6bY-4HYFSeje7Bi8D9tUGlIPcuOBtlRgag_h8lt6YjjxdT3Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5G5Cmh4lP8UVN0suNAo0WcXfmRWEh3HyHWKQ2TxAHxABRWV7PNGxza3ffI6iwDOKS4DW-hEUHK7hvoYOCycYEeZZQzuf8Mv3QFDhpsrYM045YewDMexs5SU-XkcNZpeXMPqRwFchjAa66UA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Posterior Fossa Decompression (for symptomatic Chiari II) trials for Neural tube defects",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Neural%20tube%20defects&intr=Posterior%20Fossa%20Decompression%20(for%20symptomatic%20Chiari%20II)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "N/A (surgical procedure)",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 750,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 53750
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 71666.67,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Posterior Fossa Decompression (for symptomatic Chiari II)",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "CSF leak",
+          "percentage": 7
+        },
+        {
+          "name": "Surgical site infection",
+          "percentage": 4
+        },
+        {
+          "name": "Persistent symptoms",
+          "percentage": 25
+        },
+        {
+          "name": "Meningitis",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Single surgical intervention",
+      "trials": 50
+    }
+  ]
+}

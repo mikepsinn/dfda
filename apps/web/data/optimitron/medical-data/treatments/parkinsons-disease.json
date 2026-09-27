@@ -1,0 +1,956 @@
+{
+  "conditionName": "Parkinson's disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:50:32.848Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIyuRCBuRYEcaTcSOAIqbNajPJLfshCtQ9m-ukgoiRtOkRdX68-Dy71JAdyXNZU81L396tlI4FPfovOVOgshxgsllYvS-ivyJPV5GutKHo6wlO9TmSw2xWQMJU_TH6ol1TKbSY"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiUG00uiXGofLtylLiKHpeuNxX7PhYrBUnnYK7jsTgNreUl9euuGlHP2939HFYK-uRR738YrZylxfBWpaUhfeboOCnWEpSJ2KVC0gi17AqZq-CC1MICIb90ojEPfULUgVxQtt4IK_h1MS4slCJXJPiHmEZBgLUylF3QCV8KBpcxMy839JUGk93eqrLvJqbjMM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJq4N5XHcaVgpaHLRNZf4u1fRFkbd0Fcqye4NOw7XTYKatNXmN6w_dYN27143NFFBU-vZZxlkszv-WlDtSF14tsMuLpLpTeOUeWULoqMluza2mqxvh4-EG3Kzle2h6zUGOUf1hEb5kDB18LBU="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-JAnOjOAwhSlF9oQ-sKbsTiAVlpKrBQ0iQ7kwZ-OoZDuOTpm_GSSzO83_4Q3cNTPCzSHrt8L0lM_xpzDsSwOalrJ0hEbKb5skVAsFEVWNM7L_6PKZevswpyAgKoktmm457ZUJqrY="
+        },
+        {
+          "title": "mdsabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9DA6-HcmwvQzNZWeVe5XiL7JSoKzmh2CXUH0734u__U5ylQrVS_7mJQqcgo_hIlhDvn2OJlKpFgBKY8M_krPMpE38w8Mgu2kLR6ZNqwDbgvKLpqKOqM_LiwNLuHXBzz3tUoJ9oinzzCR_l8PHMVgU-V812UCB8EZcBXQBUXDnoPTBqW7_fWUy-M11rBcmJeCud9rNBWm6JmN0O06iLZgUD6W3AV8VitPEaNKp6JO331OgX8W-VdINSm7U10T4Z5Q5URVfz2sgGe8whDAJ174yBA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMCxV38GAJsROWKswO0XnKZ9wUazN2FUqFU5syKAgLIS63qA9CFN7saZSItoOn1Q2OosJYRN1EG6Lfv2SoiJu1lTkTkgakQqpID6-I_Khf48iZZC4b616VXsVj7hvS8izeNjUU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMsgvM51otnJEbQPtPP3SQ017FY2a2kTLKXBWcFVrgv7Lj78uCEl1iGb4k56atuDfPYs6deNMuigh9K0iBh3yi6yi1x7FE6fWrdN5Dyk7D2KiRtDmuKGjpdgZI_t_1S47pYaOo"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXl-sHEg4Gqa29k9UW4MhxOtrk9YJQrYGDGBbnAcGIogFoxNfiCyvb47Hru8jwnQdHqiCarqNa1I8515z6_6qGw68MIV4d821oSHOGx2CSG21W8XcR68iIIECVWRJn5O111yW0-hMjhdplaqpIrIjy8Sa5yg=="
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmI-5BQSQALI9eYbWMfaMb38JrkFR2NBDcm_rF1ErV_LmxHGpN2-Xmi9hSslvmZpQrHX21tod56DPUt68D9-P4ikYftKbNFLKtq0N_m8qiE5HZneGPijRDndXXEu1jrf6WR_sTpCCPgNsSd0BBn445C0eEwvCN7ZFqyTuSOq3iAQ269w9GBUjTzJNELJgIaYxOj_STIQ6XaPoE_YKLH8bwQ_Pb3tR51JCgzHtYZ9wr11xRsuzjamoCJQAck1IOJS6-beSJ0VeKLu_hDR9f"
+        },
+        {
+          "title": "minervamedica.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAyMW-EbvfwFczLS_7fFUXiV2AZ6HNPAx-PlAxzKCOjEKO0BgrSc-vePZXvVd0J3nZBVO7_l0aQueaUG0JgQV0BeOkaNDbWyYpKrxvmvBootjw72xHTKfnuLPVZvSdf3HcLG-oWxvlzh1YUQOGoudLHI74WHZTu_EvpfDzQhkbtfZu2AzW0a93iwzYVHKXEp7ivCw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe5mqUHKmSxLintlIqu2wq6aeLl3226TT-08RhJtoYQn7a9mSx0HSrW5vV9Xi6TDqQ4C8S4sXJWJLhtR_P-kQyos55t99e5PCacfD4ijF8NrC0nMWnNGQgnU6tBj0LzZYBiM1cjyw-8zidVHOU-XDykAjdYbBFcZ_l_yCfVNIJ2ARdaSmnm8f38URv99esZyDUUvUMGTdYSQsa7PgivyXrEjVfN9_HVaT9Nd6DCB1PLJymytFJ-zYImQlXMuI1ntBdPqjyi-ocufpWNCe5mW7HoCgSvuoKQOzepclugjNnXw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMgbDqB9EPUM6LUNsx01o7FrGBTA17vsw9avUsinWHlmQ6jRYzytbIn_BvaNlFsZioD37YbtLE7SNgFyvgm2gDNGZUaVYtoZxM8JebJQk9AC-8wq2PkYkNHUNiJIgtc2rDQBjDFkdexk7oaWOwoe1dKmOukjRLkH-CRWVfiE_Y_zuWdUb8XdnTu-kh1bLgFhWFdYyLkGkPeWfKhBwJnoJIKikHZIXHCSiN-kyJYLJgbQhMUE92kA0H_X1JuGRhERZvhDTsuzpiz70VeMPNM2JJLia75wRIMwQJqX1KGGc5BsTF1Z6OTnlcVDhI7XKC5v7o01-RsN8E5DsDgREqJPUJisOKesLN_in3"
+        },
+        {
+          "title": "ClinicalTrials.gov: Levodopa (Carbidopa/Levodopa) trials for Parkinson's disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Parkinson's%20disease&intr=Levodopa%20(Carbidopa%2FLevodopa)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Carbidopa/Levodopa 25/100 mg, 3-5 times daily",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 450,
+          "monitoringCost": 900,
+          "sideEffectManagement": 750,
+          "totalAnnual": 2100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2470.59,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Levodopa (Carbidopa/Levodopa)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "35 points (on MDS-UPDRS Part III scale, range 0-108)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MDS-UPDRS Part III (Motor Examination) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.7 hours/day",
+          "baseline": "6 hours/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Daily 'OFF' Time",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "18 points (on MDS-UPDRS Part II scale, range 0-52)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MDS-UPDRS Part II (Activities of Daily Living) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+2.7 hours/day",
+          "baseline": "9 hours/day (out of 16 awake hours)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of 'ON' Time Without Troublesome Dyskinesia",
+          "percentageChange": 30
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-11.3 points",
+          "baseline": "45 points (on PDQ-39 summary index, range 0-100, higher score = worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PDQ-39 Summary Index (Quality of Life)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2.7 points",
+          "baseline": "18 points (on MDS-UPDRS Part I scale, range 0-52, higher score = more severe NMS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MDS-UPDRS Part I (Non-Motor Experiences of Daily Living) Score",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "12 points (on PSQI, range 0-21, higher score = worse sleep quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Dyskinesia (long-term)",
+          "percentage": 40
+        },
+        {
+          "name": "Hallucinations",
+          "percentage": 15
+        },
+        {
+          "name": "Orthostatic Hypotension",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "30-90 minutes",
+      "treatmentDuration": "Lifetime",
+      "trials": 171
+    },
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF28XFcBFsaSBqvvp673axeXfV9IF53J36ozefn5iwBHyTHtbeqk_Fuy-6gI5UCr7taWpShLCU5DlwI6va-NwMeEDPPxDPeowSax7eVVnSMp7iBphacSAHHJoiZFZvzdJHW1_-6L0k7LaQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK0zWfjLqBCCy1vy7CeFkU7e1_ZuudWyXTsr7cTH9rZD-H1zFQ_uc74Os15YrXOV-5kPSvA7UtOCJOqsmdyYRuZeKvtE2gP8LcPyol9fbH85hdl-rDO4fngsi-dDjpNrvy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdJbu6Ww3Cjiqy_RV2YcC4mOIfERPPYPIYiV9yZGAyJtjRYOUOIL8NQp1RBlIcLX0WZcirpl8J0bOKa6_Y3N2JodhdwHSmAbpE6uMMUgONUUSb8-NnAYOuBtm0yb8gofwzS1nb5nsVicjagwhxBJPPEMgFEDrdw-JRuiXCoz4-T2S1yZqKX66oIXFo2W5GwZP8AolxR8t6vgixUbZWSa9i_M3HHkKnJOF0Le2F43GihHEyxRRniBlUkNQ_tNj-N7EFZ1Kp0Qvl91w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS5Iug3OP2ZueNRlafedp59Wgko9Dphx7EfcGwZy-ZlUhz_kPneyi8s5J_XS4SRWFoqm3rES_AY7fcTXptidKUYT1h-uQl5MTiux7-YB96C-_W7dBWR2RiHA1fdxsuQM9Ns0BD88FIdHNhzsvcQ8FQMAfDv6tdnTyrrpMCnHLlfr0ZlJ34wjmif7ZRbbXENcfBs3wt3dsrkOe7ORY9zSbtHj-Fomojxo5gXubeTIMQ3gOLD7iugIYrJQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQTo_9jbrdQ7uX6JB8ijFNdhSd-a9hpVt-HwoI7dTI47UgzVrcDPK4HkF0vDbPrJGS86rmOzdHNA6pT7-4fjrS8V-LdM6-tlcbvY215sm1lSsjrJJO_uCbLWj7WKhzYjy0_SNOCFD8Rn-QKA=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9vElzPlpEfN6WOcCrr6HBkf4aDgEOr1WIIptU1_xbeDV0tZhhbRh7ceLkEyW1PjmkOLmP-GYpOsmDY_H7NQZ5HxtnwXxXiw7OtbbtgZoT3kD7WNGN_05t0jtKukWApvkrcA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVcklRuKhLh38emSC8hMW_J2Yapp-vV38GOqr-219BIcx9IK2VTYAmOt5r5CH8yQnXl7qPAIy3Xh2xYKQKnmi8oPCQnlWythD3g_MtUFvu-aKx-SSIm_VhFugI837hs7mkdpQ="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDqKKbnGZShrn9QJveDctUFmv-cH32rP6dWT7BObpjL5Kyu3SFFb-CFPWD2W26Cg1ujx8DAcmAKMuJD7wFtFkU7WqEsC07clePYfbM7Em0PiiFPYQr4bJieROzafFyrYVJFN8Z1vpH3SdNntEXUBYf7xdS9ZjO-9HBYjFPNO6n-9M1_z-i8HWaCYRdr9AVQEij5AvmIDwu5yuwwhG8itfI9EPNBVXTyY9s_LqufVRKywQC9tNYfT7S2hUj3O65Iu5SkYE69RJr3ri4NJ7Xhs-m7w=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHTQXgBaYVuX0d32dlFhkFoIU4VFM0osMBxxam2ctMZuAyqDjv5PwRl6boX7APR6iI1K71GqbQJ8UCgJc45U5RvcKBBlow4rqRxHRikWnw4AeGNjIVgovKkQscUTqTju-hIFAcbo8qkoE0yi7EacDhBF6-Sj-p-p6P"
+        },
+        {
+          "title": "ClinicalTrials.gov: Deep Brain Stimulation (DBS) trials for Parkinson's disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Parkinson's%20disease&intr=Deep%20Brain%20Stimulation%20(DBS)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Programmable stimulation parameters",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 14000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 17500,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Optimal Medical Therapy",
+          "costDifference": 18000,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Deep Brain Stimulation (DBS)",
+      "nnh": 30,
+      "nnt": 3,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18.6 points",
+          "baseline": "38 points (Medication OFF state, scale 0-108)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UPDRS Part III (Motor Score)",
+          "percentageChange": -49
+        },
+        {
+          "absoluteChange": "-535.5 mg/day",
+          "baseline": "1050 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Levodopa-Equivalent Daily Dose (LEDD)",
+          "percentageChange": -51
+        },
+        {
+          "absoluteChange": "-4.4 hours/day",
+          "baseline": "6.5 hours/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily 'OFF' Time",
+          "percentageChange": -68
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "5 points (Medication ON state, e.g., items 32 & 33)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyskinesia Severity (UPDRS Part IV)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 80,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-8.75 points",
+          "baseline": "35 points (higher score indicates worse QoL, scale 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parkinson's Disease Questionnaire (PDQ-39) Summary Index",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-12.6 points",
+          "baseline": "28 points (Medication OFF state, scale 0-52)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "UPDRS Part II (Activities of Daily Living)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-4.4 points",
+          "baseline": "22 points (moderate depression, scale 0-63)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory-II (BDI-II)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infection",
+          "percentage": 7
+        },
+        {
+          "name": "Intracranial hemorrhage",
+          "percentage": 3
+        },
+        {
+          "name": "Device-related complications",
+          "percentage": 10
+        },
+        {
+          "name": "Speech/swallowing issues",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to weeks (post-activation)",
+      "treatmentDuration": "Lifetime (with battery replacement every 3-5 years)",
+      "trials": 336
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGTlFapRDtUhT0PST17V8Cx6xX5IFPYH6WAf2ISSC2xD-nxptlhxUUGZXu_1zEZpMwzO20fpOYCDgJAyb6Vj9i48Wz2rcbCH585S57WerTqqJgW0AKKXMsC9cEQncphN2UJu2q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMWokXQChsMYwFK039UIY88_n2RMPCUljJ4fvilTLPWVRdUYQaLVuuJzYwah-O2eALSSAWlyU6NyM9yhXjhYo5QE2DYeczn6jebArscivW-_sMjoHXMGvO_j-5G1KY2EmIGVn9ORHFpbed8zs="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_4LtcJuanF5HafIWDvRuDUm2w-K-7RZAdEYkYd-BEHk1u57YaKR5bgHhJ19zKRX3WyLwSRjGjKgyDabkU9WIR_JnYp8JNnM172F4FjTeqIbcItxqdkmPTNNI2NeIdysOtG6qqcDMGxoeRd4mz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrDEOXwNYwTWkmKm1MwqopFdfmDKY-sH5e6sbc59kiB-I2KvOhJSvTeNAzMtoBQpzqWskBUrfkVUD4IutXF6Ml97FuYgo38ElIOstsq3oR5qoD23WOS5UWaefeNNdl56xYXnK7ZKbZbiWmnVo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwTNovSlDe2vzpvOXv77iwyWSDIF8zcQT5ExqAqe-GUETmgtWhOCsaeWvEJH_TKX_64hQkg7VpIKzST66nebTFmqZ9oH2UuGTPMlQxxWoHBzX9O0jf2LQ72DqvP3U0S8zxHL8zLSh0PfB-SAb0b60WTDHX6kiLftivCuAVm7p598qLeG2YVhUL6d-XjFCjh2DZlVPUN_WTnV9tYWHI21sIEcDeDV41igAeO5xfmVe5B75VvurkOTS8dci7V2C418qq0f5j5hlH7dEwtcRtpAR-GkcBqX1jGBzZnjw9g2RaUjjqPzPxe0kRXZALlVAo4UteUPR4brAtAXg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI7JTVgqab_Zld5kYXSvCT70Wl38Y_HfF-iRc55uLDzaSv1jjFNk4dPRjj9VC8BOhyeSm6rq8s6n0uzFUl19j70XpSS4aSes032TgJDk2mrIdeEJM1ziUa11P6coSSIk5viCfL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEn9yiAmc2AGaGffrVH4cvDQriy7rvFjuoQLs_O9D8EOgJseKlb4ewvqL83qojncE3HAAU-SJGbuUZ5xDlcaw2fHB4tQXM8NyA1Ldbf_9xkHn9CmI4izrsKdR2LlxoBNSquQKu_mYhxcWFq4w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuYZw7ZfuHe4zhGfl-2bndjsPktGTHI180kR42-PJxu84z86F6HXW5wEbuTxWo6cu971P_GQT-5whC8OWJBqkfA1R74vmLHdp3T8r-7Ke19w8Z3CuFtGR5MAt2NQju6mbtyxIR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGinrRbNITIo0RMvgpEHfzj5YP38KVn2oggJOm7NBHPfWoLxYVDq2HK_y9nHxoapbzhZUHGymg8r2chFdjZqYAr-txUTtrOL3wCmXDERpFcvX3KPQJB-eiGQni87dZ-ASz1doEdSpkCVN9auQy-IHUIKVeIKHO-4TwY7F941ShbIv5KwOSs-w4N69PWIoUXCcX9OSamE_MEngWOgVkidScPR63sOYTlJ-FDyoTgIRgHC5tSAWUahzI="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyKjN79behXIYe7_y8ukMB9wHhI5M4Zk9kKM1YwQiAlwj7TQXedpBoJt7ZzasaOfWKsWQ-81bdhxmg5qCJ-bu3iyRGIorJkVR0D--dw4mMWkX-ono-27iQswM7CmXQGVhRlIOmCxt90bYLRT3n_wIutVVSchf0DAnk0ZEW9ESZL_EB54SUlRyilZP0FH_j_xvtlw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpB8BGjkw4_cBFPVoAapCjCkfy2Ng9nURbZyrifTvfamCitiH8xzHE4BJXlVtBy1kgVwBXA_Mf9xAyFpTq_UGLFMMyfnbd9jmolhKNWFk2e7tjpUuN9aKVpTpdvRm_yCApzEI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSkxMyx2UVB-j3KjnrKOHhWYn4nQ1-yhwYTmnxl6RpSyMyvS4WoGfNJGaonoXqEak74XT0z5p4lD3e8l-bpGBEcaR9kLxtc77KFqOaAkveN6qdriFskxVjHGv7uUVMXqgsL34zNE5TJ_epLlYr"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBy5t7CDhUtaZYMjK6COtkliEIDpD36Y6iczHT1OB2cohkeck3NokaWJUZ5C3S5am6FkO1Wp2MbJDnpfQ36UMnNUxSAAUKWilFNsDWtKpmRbibhKJy-QdYqjS3yIboVftgRVmazHdpgpe9CQ-O8H613Qfmc7kFhYalmZBq8cR-AdVlvB6uI9hojOMdo3PdN5pM9hj-sBp9"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dopamine Agonists (e.g., Pramipexole, Ropinirole) trials for Parkinson's disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Parkinson's%20disease&intr=Dopamine%20Agonists%20(e.g.%2C%20Pramipexole%2C%20Ropinirole)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Pramipexole 0.125-1.5 mg TID; Ropinirole 0.25-24 mg TID",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 900,
+          "sideEffectManagement": 900,
+          "totalAnnual": 2300
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 3066.67,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Levodopa",
+          "costDifference": 200,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Dopamine Agonists (e.g., Pramipexole, Ropinirole)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 30
+        },
+        {
+          "name": "Somnolence/Sudden sleep attacks",
+          "percentage": 20
+        },
+        {
+          "name": "Impulse Control Disorders",
+          "percentage": 10
+        },
+        {
+          "name": "Hallucinations",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_uLngjCWq-qZKokKOCY3iVF91X8loCQta-sGZT8-AK6ewc-ay2IM_zM-jzFKsDKI2D9EU8-rNZ6Q1usUfxGqKKdhfPvRimxkq2u_Ipcgzzfme4zkw3CmYc6x6N5cv-jn7vToH0xB8uB9e8A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_-oTUrkENIJrcQ_ym5574GhJ7TezC1O0smdSp6oXXCX3QsfQRTWAo-qnO0bdUdrKeOxRkS4M-2FlWLSoS53pRAe6ypn1CWD0Fs7Y1drc4GShgFxCEhVZe9mOsNiHJbRKw1AMP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ37QWqW-DgeBUzk_LUtD6BoubpOrszheioM52P8Sc8xonKjGddMilD_7VdjNVIVbIlx1Y_6jgzf0DwYhTWcpWaIStm3h2TpjDDrBtN9prHewKvqlOic1RdUY5pheYAJbuborF"
+        },
+        {
+          "title": "explorationpub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJNjuBopMSosbhg4TyObCqmX5ek1F1A3J5RuM3Fzz4on_cmhcoKLJE7ztXV10ejEICIWGLZ93sLHPH-E7S6k8oSSAJDUI91hIa576o4qItzFM6n36bkpycgn3GGJssuSFCZC_7Fp54AkeDyfbaxiwBP3SZcAs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExm1f2jDSNBl5i79HOFHyrxUtv_Qd-V5-P3VfWyHGqu3xJtL4Bvt25orOd5igCz5TH5qE2zN0JqtOUDzWDuoXpE8PJ_w0CDn4l0gnPHZP0BATEuvw6-DGzQWMuXhL2T5n2RqAc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp8SH7ssO8uWMBWlqTVO50Mm8LGUptPGum-MUmLHl6a3WcgI8wSqTpKNhAxz_ddcwkeMSx7iGrJxs2rKqyHdsnvet6J3uQyREya5gEpf_X8093qCfHRpiiOv7fPZGiKuRzvoIUGnQH3PO01YVKr5bcQthObArALnEcEZC_JARQyDaPgYXb6fbrHUUzQsU-fDYu7LVDmMCnd7yL1xy5Dp6ynEQBLT6ca65TY7ZSgB3dcbX9kLBk7lyTlXT1WU-1chgR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgu03XA2XA67Jq3Pn78NDHMyJFNhScVjcf_nvfprp7_R_vPm_xnacccJWMH_7lXQjB5WXZBSfOS9an-wnu7YrP_c7Tn_09oYZJ7MYaMSwHBC25lCv_Fgv8dh4ThejvyPgSvLPw"
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHqeu7xiBQbHz7ZB28rsIqfzSFI2IlPrr6J7E6lVGSGJK24OPji3LVE6Y5dRzSmNNdVKQS6FZuj6gJJE6A1zDuBkeBnRfTrnqgLo--7nabXyJfdDaeMOfDfuP6N-6k7a1Hie0GcMbVuUKOrXK8bBrGoZQqwsf58gLGPJPE7kErVF11ZXQ02hp8H0f4wRJ2msmWOU5k3a5aZAGlT7cBeWdDaQCy0xDV706GdPrG0VG0sxJzkX0="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwe5Ci5p-FhKUCX4XdZslhxY_TbXUW-QC1sknU0yoKg4h_w22ugXF6phfO97m81zE7e6fGxQzCxMjGQKGzCl2x3xtagB1umr8SXgwRyyMSVxvcK_pf1dGUzfTz6EzKSuQqF9A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvuNwidIUU_t3wirQszO0EMPF9CmDczwO4va1fZeRIN3U90vOO7e0ja635RKeHTYiALb9YxQNfVpkbkrDiBB7duco5wLsVFNOjGSkOvD2seCfSkBBMrI31N82o-2Nj-O6wTgW5b63YzFnDRd4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVumEoj0GTODvEl6DFKx23_C0_LqH7AQTtgxFfxBrO01pNipJeyu7XH6U5sW1QKL4aSlPtesYfbV-3kbTTSjjlkbG0m2hVSRCKMvE8HmuCVTYW0tMi25y4aU0ETfm99zYGk3DZVzhDrQMUFzN8cxPn8s9GIey0T6o2ZQK3X5wRVZRXFvbinkAqtzehpffdesSVc8WavfDihrgQ8wjhIlFk2uDJLbUeFR1saCWRq-ULnhgjU-NEUtrj_Cs6tuFPE3IKeKNmoX2FxZmLuW7CI_Lidvdj3dLF3Yvb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg-XZ6MOkJRc-YTjD1pftzU-VOoHVbruYpP-gwyYkLXTh-1nHJuqDmM_duzSVv5CrZ8n1JErXmiqGpdapeN1GLgnKZjF_OlD6N0rtc28sYoFCtHC06q9Mc4cbEYQArflYC3yf3"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbnd-FzOthz3EmeBZz2MxdbnbFk7_bp8zYuL8E_RsjGiuxFU6eswB1P3lbeqFlC3UURk5cyEWuEYcEVpk3WkXdtTAV-YFkNufPQrQakfKqFNYZyureHGlB8OTCa-IV_hJkkvE1LxzEyhfbd3rwHuB2o-GLD9LbpeNu7k_Zu56neKB7q-1zrSNWuo13xRvbcnHJ-W5b8gW6bd9E"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2uhu6Q9ZX8A_Uu3aKO4ItHGXCbzk7IzeRFizEwjqSQRAE3bqGd4_Rmcggvrn5_kqk5kxUju1M70AtZYSp_GKEidQXfvXRp54MTAhfs-m_XgCS7QOPtxiJRFF_X-5Gbe7rLOnP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdV-SN5fVo8hp3gsQ4RVJhdV9AtImULrCE8hRMnoWFhRsqVpuHmT3PNlgUYHmXJWBtQkVbS9ebTGgjyt9KoivVVfC_yWqsCLgGalj0vEDXhiYVbN9u7aScnGj3gjSX93THywk="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsiDMyNTYknBhjPPyZx3P776A_l5y80v029BQ8kiG78-SMygNX9SMvS73RlsO3f8J8Bb4D1idArtJn342mUWJhCmjU0dUtq25PNvwNft6ve9icsSDlZ1JJQ0TTYmJnN0wML6g="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBUY58flWqoM3s4aSX7CgMycVYebaoAn23i5EA1ivyna2jL3RrDNrhRP4aAF_k4XoLvzm2mOnBpG05iCGPOeL_VdxaGSqoiUDzIyd0BObt7mr5HtWNa2ScEV_viebG6dduhSr-iqbfS6Y7gX871tSYZdpiLhj8fpv7yDknruvcFIbVooJ8L408tffnCjIs-TTZAEF9XQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERZsoWlyIy7zY-qMIzHrqSU_0Dh0qKyZmAU4m2hKIavwJPIeKJFV0tl8sO-VstazHNm4_FD4jkgv2DFI9xKkYk9d2VYwSTNN-V5TYgVHXmRAhgjRuuo2wqtUA56tk-wtnzqP9a"
+        },
+        {
+          "title": "mdsabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrZ8lexBSnEnFGafvDve2W8VBVMJDKnyv8MhVlKO-m1R1ColO7HJjjtvJa5251--z1F2Mz4DqsS96ymXsFabggdkwtrvdeBELsrHz72LkdH8nLyi4edHfJEU5ipdP57KhGAq5jRKvfzni6V2YiMCIW3lJ094VEHBdIhOVGzUMhY_fM9a_kBE9byNyctnKhTsOp5z69YjDo1j3JXER4cxh9Uff7qCsgGvPZ6jnbDFXUMQnDIeumsvgic6Xk0KIekRCU8LVtMQCDr98dcn0l7h9JWghDM-IU_soTkLeKqWQmMW1ZvZU1bnIXHFfNoDylaeK5W6j68tmsGxffRQ=="
+        },
+        {
+          "title": "michaeljfox.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsUmj02S1HOueKdspzD8064TBynz0_mHfVcWBnLHqDJW56r_veFfT7uZlrU0HaKlxGS3kxdvEYJ1h__sgh8c7XJHr4wE19uGa_0HVSUPnE5gQe5BSfn5vgvGCZVsDG_2Qj5L3X6W00J1z7RtlYOgSDBq7rRkrsJO_PWyrmVAcM7qsEPmMXIxy2KkPxG_-cPP62RGbHAlo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExeoPmo9n3gtf9l8pCTLkyoZw6faVICsux76SqxfbeKim9bURkOG2z_3sC2XBVw8FYeekH60XOEn0YVQRqPdwuqc9h9mPx0FRWTgGGxgisMj9zXPibhvAG20Pbf_s7TQFP1f4l"
+        },
+        {
+          "title": "ClinicalTrials.gov: MAO-B Inhibitors (e.g., Rasagiline, Selegiline) trials for Parkinson's disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Parkinson's%20disease&intr=MAO-B%20Inhibitors%20(e.g.%2C%20Rasagiline%2C%20Selegiline)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Rasagiline 0.5-1 mg daily; Selegiline 5 mg BID",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2750,
+        "icer": 75000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": 200,
+          "annualPhysicianVisitCost": 750,
+          "annualPrescriptionCost": 400,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1020,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "MAO-B Inhibitors (e.g., Rasagiline, Selegiline)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 40,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Orthostatic Hypotension",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 70
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpCISGmbKi5KraD8c6gxgRL9lWD0bQOZEoOZu4bgCricIMVvXOIl00cHu0C8ScUbu_gAaG3foRBb24LYE_w00p01cg_utft9rPoZxENOS2xF7ma-wKI4LDhetvhsDdBdrDWaTd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzQFoTtUA2CkZHpItzLOPWZzkCC0tS3SMMFtNxJlD8HbnesnWZ5QVY45C1jqOFBX3r2aGHgT69-eCqPfA-o5cKPFk5NFzUmI2CavNnpReDqdNhrA9aQgVLnB0mfMhBDGh1P95j"
+        },
+        {
+          "title": "mdsabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP0A3jnnIDnPcjcH0rd8I822hlhGkYi3f1Dy2T-Gy8LvT0RfZ5TJFrgyfSDbKs78VvnGlzW46VZJtVcBizupjVm0i0ec2qQ3U3LSJ1MfoUhC--VdwxsozG_M4qNa3h-B5foBcVGaxb6MUIo_PpjLmHbWhAdCmrcK9ghvLZdII3uh1S-5je9r7q99mzY0GObB5abI39mFR7QrauIoeg4RqCcTNjRz468sEk8Z4OEJ8QU1P-YXw9pRaRmgQRUa_vvYeNeqRR5JoLpNddiTKCAZ0X4zqtNC9I8vbGTg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlo14NOKNkOSosIzfhMQ_bHmf4rvbVQ2LNZE669jSis3tnuIb2khkcxCCbWUbyzvccCSEc1Ng6r9f77MrWtFl2hQ1NUohvbKopoHnyM0v_elHeqzRhxtPkFabIibX6CYUfjnHvifLALJU9IWtz1SGEvf2tNg90vKfoeN6iXjVbZLg_4iMBk8_cTBpzqgpNFumUP29hpxrqqenvYa45JZMuTsXVmBxbtpFpSnpM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWotJs1PdLrLARdyLM6p7rXsQv_hSF9Sgf-LnJbP_MKEz84pTlcIb-YjDQHcOXq2gBx0MuLSv9akAcFvYp8rBYtLNqc3nCqypt1cII4sEqNZ4FjQIwenugp-phnjj54CREoTcT4l1rfkc7Jv0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFneNP3boWdrmvx6ZWdVAiEOoT8nkg3Y8mYvKsSDC7jmGhRpLRyT2GlTmCikxeLDRRL2Kyn6iU0tJWrSCamG_iUO1qr_sISiGqZzGXAz5vMryWc22p7RENWtrjU2JzK8Rwt7ps2uCt4KXTZ000="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM-RKVruhmtN2D4SNhsSKl63I7GH0wJgmiZlK5q37JDySiG1i-eKVk_zfWbGTcrBzOy_O2FRm5frXDOduvf37-48zJRcOru196szfZNO4MRNMCaKQNwh4i9FYo6gKEEQQHRfvu7TwRr5OoaYg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo_DTJLI2PgfG1592ks4FBpff_rykuAlQC8O5k4JLUtZWvY7oOs4TbnLfa16MD6V1E3ng-zNjqWHt9ydMhUpzKTXXs0j2ioSMuuR2LY8uq3E3xXRIB5olpdZ54-5ggtJJOOyVpPWwhjhVAfIk2VKfb8jeouemrXZ-U3T6RVXcrzuRUMNmjydpIJg1OqMDW4JYcjH_ohrsLFSToF3zeUEG6-GYdfIrWb0LdHW1Q4lfuQFKWWBGSklnW9iYq0LFvtn9ecGCl9iyv6WBZUdtFZjwPY6UxUFa5PXvBFhEm8ZWkwKl1NRReGqtrVRlnEvw2CwZPc9iOZr33cSnFmclb3Rnx7x8_hY8MLRMlABJjsoKXopJ-fa6FdxuWbRX6np-CffILSjKTyRTM5md59VGdt77zxw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsjYbW3kYVH-S8O6l2omkOZN3yeCesw5UV_xdckTADdWAPPWEp8qtlADz2YvX-un3CddzbqWwGQJ4Q-x-SgrFVpGsnPvD0tWzaCmESi_LYwZFzhQVwF5sRIhqQJZvb1OkGuHBedt_fH0qIDwClIXw0wdyn2rmvXfyUqhxERh4r711kj2jFWcwofRayDGDVJdb13K0-mD4eeRZyXiS-oLIwlW03gMPJ2FLGeVUQF-eyZt7kj_5qAYjAXIGyM72uOvVDGFc71gNPfEQwD7PTEqMSqX0voOgPsGbXJyZ4P_cmrcGYLFp57TZTO8Mhf7_cEU-Y21HcXb0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4HjKVphVCdwbhOjR-mjUGfOlyopSaU5jQ9p4f2nJHkajpqZahbEq8BJcQ5wS2T0hG_vQQ87sjNCN_uLzBLBwsPI5Az7nPq1KSZ_i2nrrfBW8rBmryNvh9jUYGmEInaWE9Fy-R"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyzX9uX-4_YSwqeAk7iovXlM8Qk8ZSDG_vcBClAh_mD7_1uWvtvqkHbQxAQLF0oxdE0VV37CbUuAB4ct2KwqCynRMlot8dZuckTpPya_7YSpBLXYqr7NEhB_hRMlz7qMt1sKHMXgQPsi0uccuGlFddLDY_dw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH586q6Zm4QeeukZPLNwgElG8Zf_8DfYD1D3d2l9FKTKH5L774eRy8BbY6E7Yt3CJs_sOHXiKMjLEWgyeV-lXhqOGS-W1d2DcGZwnihooXiYyZflMHF_lg17ASCZHRptorDOnDUeWA7DCHi-rwDwwO5wTrJQuFGTp5BImRGQTgHWHNm7n6uyXXNKcdgMX1SLZ31ryB33OafhsKywzn3k-ti3ebKjN9ncId3VLnPzarSWmIQ-CljzAs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzlXWSq8O7Mk4Ra2HOcMY-eTo9AMP9H-6VfVycHDOr2oDz5aHX8LzcALqeEFCI9ekdLbVljNKz01QtHgiStTmwO8vkNNQlDSdElCxO4ev0pwkBLp_oZuK9CEyZCTTDBCcf8JjwrLs7k_mLmEg="
+        },
+        {
+          "title": "ClinicalTrials.gov: COMT Inhibitors (e.g., Entacapone) trials for Parkinson's disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Parkinson's%20disease&intr=COMT%20Inhibitors%20(e.g.%2C%20Entacapone)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Entacapone 200 mg with each levodopa dose (max 8 doses daily)",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1846.15,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "COMT Inhibitors (e.g., Entacapone)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Worsened dyskinesia",
+          "percentage": 15
+        },
+        {
+          "name": "Orange-brown urine discoloration",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Lifetime (as adjunct to levodopa)",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBe5HHtDyIFEdH0bg45ghPSzsRT5sLI7TOYiRLjjizY1tRJ41XRWsc_FTC27_d8L8Sy1RWEukWXvekhFwvxSkgdGSUJqWlqWJltp1u-jILuYjjGn2tj6j_Up35NESgRlOkPiAwLTQHeE9GTdY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSBtXzY81BKkMjCbF9I3AnEvTxfgjxUZdK403CeB29LVdBOMdanr3EI43Ch1HIRUsimDfy6N0FJN6THndUoAFawGP41j_AOKzEcoi2XvRM9FyFHIEiwy0zdKxpKkaA--_-ogUMXAQaSPCA3hnz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPwAQ1cfk02zAl6VsJxAzVbmEa4LYrAXgiEUcrI9SqyupytwdNbN0181kyopstrjP2UW4N2cc_dsTLTnoSzx83DMKV-MRP1pzTNkTGvIfVYopP7S9eyoaOEDR8fleyGk-CqIe4"
+        },
+        {
+          "title": "mdsabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBc7TTh3mnPpoIFXOBxKCEwdnKHlPSjjPJdmA-Twny-ZFav4fZpLm25Xi0F6KWEW4kXWZF8ZVW7SGKX3psnDw_36-8YgLFm3N9gUf1oRFxOgfQYO0UYhqR33Jup8sO_Re_uy6VPLh_sn1-34sL_yHio8PKcxZD-Sn-5mi3rBXdZibRvER5yyTVaiqIunAz7sDBoAvf5i8cRnq2NQ18VNCIeLTADifq3QLJhKap7sWd4tlChij_Fz5OLfVizKNf_Txn1tBORGdkEr-Y6AJmbdouuQwa226ypcJ7IX-FGJhT7GdBYVO1Gow="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEJzZ2dkI-Fsdzoq_GsDLAmHjXHGRfo2pMoPppPMzu54K9zYKnwtwor6cHIHXlL-MgEo-dmOGQg3bTrmZ-9dsjIdtcHzN-4vjFxWj8XIOdf1Fj4szXfhRgU4i_yBMvJ77nt19jvbDzWHIRukCDiX-kdLxQa1qUTqmN0SnoJEM5ITeKsJP310UfTU_xS2wp9CCWBX4_omjq_nD2k5SSSZQDgXAEHGl4aIhfB9mM-wIAmr837fFf6jqUNr_q_vMASQtWU8A0"
+        },
+        {
+          "title": "practicalneurology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJkLBh_DAcQ64DixksEL1ufNzYdbJz74wLwGwyh-CiWBfqe3V0vqaaq7vsXDcFgP8G2ZEZrwb470Osq5qj8KldDzsEBefS9jcccelFIDjdlod9Q8iq0wC6vEb3iWwnV1330PeuBx3GrMCZkvjLZGR6p3m7SpHkWQhxGTOCIVo3XFt4CVGTdXp3tHyZ1er77i4tUp3f39taqPBOiT5WutCb-7wVCSvlz0GAyzpDpfCwY5JiicVdMIGKCqhJGmlpnxYec199fNY-XTlMm1lDVALqoliBytoowkmV3CMAuNcYn0HLzAI1-C88651XUrQ="
+        },
+        {
+          "title": "magtechjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLw7vah-dZe4SlMZuIW0VdfjMfz-sdSKsN226bJ8rm7PxL4L0Pmfcddr8mUQ2gW7GEMZQGuqrbJNWML6fsPRh-GBeNC8OhX83fWNQGrd9l0gRs6Oodi4GQt0p1sDFFkBo-vS3NjEpcigp-u18jO1ZEFXXr161OAHe46tJNbsxkvQ=="
+        },
+        {
+          "title": "avensonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtU8t0QfPtK7pU13G0PhWAF5RzCnHyBSnsqktcizVsLXbo8YHrMeHxEevZyGwOlakk4TdpGMMznkP_h5UF3fbGnFrOarkeYeAZD2kVXFsUuSYvm2Qyb8eQKlqEvM2qut4Kx7D8lOoaE71QWd7F0_v_1Z0W5F_ZDLUkx9t2UGjRT1Pujw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIq7t0J_aSIYDHIW2A58d5QNuDNMTgwGaVEwkDuGIpovi9nL3OQiyC93Ndpq_XSXZ5pgREQsvkJ-diJ1AFQOa3_kKN6-BEfKwxGGADm86VufhTFZBG4DVtMI_dKv_IoOfZ_w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Amantadine trials for Parkinson's disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Parkinson's%20disease&intr=Amantadine"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "100 mg twice daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 100,
+          "sideEffectManagement": 100,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 800,
+        "icer": 40000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 30,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 500,
+          "annualPrescriptionCost": 200,
+          "annualTimeCost": 80,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 660,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 50,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Amantadine",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.6 points",
+          "baseline": "38 points (UDysRS total score, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyskinesia Severity",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-3.8 points",
+          "baseline": "32 points (UPDRS Part III score, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Motor Symptoms Severity",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-1.4 hours/day",
+          "baseline": "4.5 hours/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily \"Off\" Time",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 50,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "18 points (UPDRS Part II score, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activities of Daily Living (ADL)",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "35 points (PDQ-39 total score, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parkinson's Disease Quality of Life",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "5.5 points (FSS score, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Livedo reticularis",
+          "percentage": 15
+        },
+        {
+          "name": "Edema",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness/Lightheadedness",
+          "percentage": 7
+        },
+        {
+          "name": "Hallucinations/Confusion",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Long-term (as needed for LID)",
+      "trials": 32
+    }
+  ]
+}

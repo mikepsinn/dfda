@@ -1,0 +1,946 @@
+{
+  "conditionName": "Restless Legs Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:28:07.055Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGeY1nVVd5-aNA50YdL-mjRv_SpI9MOvfh3KvMkKNJxAxvrtGUf0QfH7yqaUyv1oT7bPkYNRx2jBzpj8W_mkvr9aWKNoXeXVspXtGzEfNygh9XbrsGFC3zI9l3cfsSOjWRoBgc"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJdjJP4dIxiYDOcetVbWcXXd03CN7yT0hHw7sbWI6VRqVntJaBKhtWPfO5YYFXjMUsx_xqNlH1iwKaOxMxMUhgcF_jG6DP9a7cI7Wi6Cj3_VcYyh-avnMi1F8eOpo0W6FTrdzOn3udaZIs3k6cT5o0zyf99m_KA2s4YLmzY_LKDEZL0i2B47A="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaumWVUmvNwvh0UbTg3hXcRTQKVLgc0k-ngmtFs7F9v35eJRaZLH5YENJyknVU5r8SzE3aA1EOUBYIATSY90KlDgBGbBI2IYymG5QZ9L4cQQRaKIrmZTvDaQnp-5o_IegQSiuatqGBzQ4ZTcO6_8oET8SHqdfrEwoZGaQJ1Ql-NQw824TPEGtfeQo-6dBYv5Wpj7brtseXcvRmqVgZQxNDk9xTTvOHnKFnTLHQw0OapFFiT7PAsPqdBbWjl-x-afBMPrQ0WYM="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwOQttX48vdyRLlP-GEpZZsHrqAhSOO5eCPb990si38KlhB6JDfcIJkGtr8f3RUPK4novxDOheugO4e6r2sAq6rVV7u3JTJBtTHk-O5MXljRzwMmKjpvbbdPDQ7nNmEvfbrVkcFOE98opIhMrLDVYVGEY_-3krAH5cStfXu5UqkCZmgsKQuYk-n3_j"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWNyKdSUVCYQVGgIczv9d4kgQ8IXOGFKEazPZ5LvKFWnJQ5Nkz26kHk5iwf_tnoFe828Mh35xd13Q6QKh1m1GaVVE7DwvYGQko_dAKbKQWPM6-QNgwtK75L-JrUZr8_8RtTbm3SfKGIB86_KVQp5ELqQK18O11zjhKviQYI-CmHVpyMtfOeM0b_dmmH0AqVywG1fpz7ylCEhEsWyYoZ_AQ-tlujpBmNXfJyI9H1w7-0UuHwZh-DuHMcuTMvBAkV1mwiJuSn3-Qlj-KEtmsHMEHePN1_wsDvgc_2Q0V1iCxQmI1kIdItOyFmTq29SwMd3Gc9EKmpoFDtv1B2imcFQocFp8lRDzaMlzEnhVVI96zopcTlU207E2R7Mle3iZRpno="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5hGKkZJxH4JaWRa1ZACy_6kibUKeuR71UI7o7xz2OTMYodgRn5_A_wdLqXaOGZvlw24DuPcGPbpwIAFQE3qln4ks1AibxSOsW3kUCOf2KhUwCeLEHX66Fq7PfFDPW6SBMGIsFrFhkzTIwUcIg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtjMDzFmdU5hW4q41B0OT2KEXHGceCEiZtkkuUjlfnna4QZ4azodNltrsPkAfAouJ-o7Ha9m7N2u24LnrSvQBeMFnLBwO3NPxGzGzhL5kP9q29wrG9O_fqQer21mqYrbjrNtCAtJ6FFSH-ob2wPCLk-rs-h55G0eF8EmZNmxvaBf2yWnkWPh1T2q-_Do6wjm-3w32sAKFWGj7Z7q0yTdf1oXuPOdSVzx7_RvU9K3VI0cjkVShvS7Y4xxSBcm3ocGTOvqcLu171RfYQLbmKSP57KgFYZGqM9CJq-xUnFMiYtP2uBTEe-1C945HD2zbLgI8J452W1Mu4LV_HAMIMESEKxqQDNRKtpyiWrFJl2rnnEb5BzId8Eakm_n0x2NO_dD4="
+        },
+        {
+          "title": "themednet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnaVp30oZvNkr5BqYVhsLDK8MtBsqkk9pJpmBTPC9p-KAOYUIt3nR7en7SWiwonxssfL_UzNixAM0CE0_yJML4rKPRJavSZGmewW1boleSJAw_1Vej8ce5AKu_DwokgTOTQMvCOnIQAnlQRbkPqfYK0Qh9Gz4KSE2VCGpKSQYe1aYnOO5f39H1JwEu0YWtMe8afuP8tpO95SXvP5McF6WWEW5KXOWgfJH_TCGkIYU4plIEtjeaYx5-nYfBizMWXx9AlYd8wAal_TWmt-8fuySaeehorHpXF7RsQawyP6t6fIWpzWz_rimkW9dQgQW5DLGFFFCxirLg6_ebNEW6gUSRPeDwQvvB8tQkiGwAQ4AZQRO8qQat"
+        },
+        {
+          "title": "uthscsa.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdUEnhmmQ_QayaR1FmsK7vD6OiYjBFETx1ZRBSSmQW4UECfEeou6-UV1M2yGYViQbSTxPdmSOgVbCjeo1YXDR8YOb96_qwr2PwXIVW50gsd2wpmql7FFXGhaw3Vvp9Q1p_MB-dAP4-o1cYpBN_1CdyXk6WdFJc312MfI-489M4bSLao0Mt6BFNlX8aMDA-eZbqCCe0Fhh_9YYG_psEM74wFgrWvRq-1R71"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbx9YYHfNES-UdNGcTiwoh_pbGSZBBMRDXkJzAiRRSPNDVNC1-bxzFkFWthZhh3fRu_SRzGgUhPorXdsrm7e8ZbM3HIAY4GG2yF_CW520CruUtr6HZb7YAOArCqJ6ugMxUKc3V"
+        },
+        {
+          "title": "rcaap.pt",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-bw7mLINHshBROBE6276jxitAqwFtALR_2GoUiJuqVoYJhZ0-gcfyCCnX3zRq8__9X7c6az1AHYAUERnf9fPbuPhGIjX23w_uwyRXJr0pAOKPGxCVKnsOGm4teENOKvgBXuNW3yr8MFY1GBA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Iron Supplementation (effective if iron deficient) trials for Restless Legs Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Restless%20Legs%20Syndrome&intr=Oral%20Iron%20Supplementation%20(effective%20if%20iron%20deficient)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Ferrous sulfate 325 mg daily or every other day (with Vitamin C)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 90,
+          "monitoringCost": 400,
+          "sideEffectManagement": 20,
+          "totalAnnual": 510
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1020,
+        "costPerResponder": 638,
+        "icer": 1000,
+        "prescriptionAccess": {
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Oral Iron Supplementation (effective if iron deficient)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 50,
+      "responseRate": 80,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "3-6 months then maintenance",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI1XsA0XicDJhqoksYLnb0GKRix8jP1JoJveMWdxDCelAwRjVOE_hNRjfJLePeRDzEI1JGFodK6wLJF2h01Q08pSy0_xjasQkuxLVtZi7an7-WjX0jwp40_gxsPb-9MYAe-0M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrxHy2m_jj3fT6vfOHYf5p21psY1nyLs_8JzMokjwiPVpzxsza4MhUd313nmMC010Z2h5vufW9Xny1KZdslW24LczBqvACQuXBpdcQtUOzJymMTLvIi7FLARR8ri3pILl2QXdrqFGLpp8tcQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1xyvqfVnHgL7QVIB1n0Oj21qrF9OmSuuSoJ8r5NqzJP1pUjglb9Z8L8tbgcpqzplS0eTVZcch9UJ3i-BRyHdB9uySfkKRxezf7BZIUO6ZETNF91bT-4BOYOJUdKzkAoUKNfyAyPUN8IyGCRCp7MLoV1nbuitTp9ud75JJ_reVh0rKEIL-TEDjyPCXfa65mif00R1Ylyvv17ZkF3_hMX4kdC2p2_SQuwHsxx9wkMaUK7eFCWWRwOdkbyZtP93kyLJAlPYUwvhprWH5CuF6loBc8jRwSpexxv7CViVTGXErtc8_5Rt30zasR2llUgfW_qepJLdg2WKG_s8x0vM="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGq6SjBsTGFbpUFW80zhEScYHgPJ3H9HBWbtpBiJo1Uvn3AuDeUMbsRcXe9Vxun41SQ_B9ubEOUxqwLsVSC1SQ6VZoStonhIivs3762VXZp7w_RUpNKGzuBfV7pDvmLTjQD81qew-bMHQ6t5T68YQ7MZBDFZdGRSEzS71kaNa9uhwRO51T5eTERCIle492Owpnkfwy0Y0ShKkqa8TWvDPPm3IFo0zO_l3vxoVgGygWj"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6lxx1VhwKvSEZtCuADuJZHr5TAI2guKgsj1Cnk6RI_CDyJy3Z7EgnpE4BhOCYe2s2ihbK_0LrC0Jo_n6NNT9zAiMcNLeA9NO0sXu3GaeCy2nOy46DBPwb9vbcpr3cVmzITByhN2LCVgImLD_yur9N4maqr9TlpCs9tw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA5DTlBpFSRtAVcS8J-uFf5vi1Dkcw9pLMFWRngAbmRIhV4pPuMJYKMcc21s6070yHo2vwx-Guvd4GBR3mpgJBIGvKPhNRj9XatjHLPSGRUfMetkeXNnyVrQ6h328Cqe68Je1R-SGDAUJl9udgKuL0iuCHeNSlMJ694uO1N3wh8X_g-21hjKNU_ObtYsPwH5WRMSs5jLitK6O1FPTjgZ6jogBhPprHQoxM_Hx3VmgRGGO2twSGUkOo60rT6RWqeJ3NO1ESf_IZQlx3ud2NycDfShpJtZjR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkzgEpCrvkA-Kj4h8lygN38fyHd1eBrBGlIrUEccv3xRHgxZPHg7iETHL5E70Tzh41_ZGpu-zJaf_XG2ayGOxOMMCmeFdSPDlqvPExRxBCyuLnwqSWtRYf0VUEcJ-mZ8d_AeQ="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlhM0d93m2C90KcGXGZ9t_XMKeXECYXMyAsi6RIIf0QRZmzIITGAqxyMfMxiRtLs9xVFI2MjsdC7JfIgusggFyOqk_SNDJoVfg7M2aloz5vydgTkku1Rqf9xMhc-CCZcSgfMs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pramipexole trials for Restless Legs Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Restless%20Legs%20Syndrome&intr=Pramipexole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "0.125-0.5 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 530
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2120,
+        "costPerResponder": 757,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Pramipexole",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13 points",
+          "baseline": "25/40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IRLSSG Rating Scale (IRLS) Score",
+          "percentageChange": -52
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "3.5/5 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "RLS Severity (Patient-rated daily symptom scale)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "18/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "RLS Sleep Disturbance Scale Score",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 70,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Restless Legs Syndrome Quality of Life (RLS-QoL) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-4.2 points",
+          "baseline": "14/24 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-8.75 events/hour",
+          "baseline": "35 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Periodic Limb Movement in Sleep (PLMS) Index",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Augmentation (long-term)",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "lifetime",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ6QVM-pXJvdZLDONltFv-AqWUZbi5aRlTr_vJ6FoeZFRPig98c4hsjS45QkPkVDvYDVwbVNlPNhPWcytAT6omejhWIW5nRweChXOuwA5HZ0VV_eUQ_wwAVhEQMzHp9v-D98GgIpRzfV3cgfHjmIdO1hK6sbIeOfUOq8RD3ktfPM1bmGcQUdRmyYwOGpyGUG-oMNZ8LdTl1eUiYwOWwRu511WbWwLxy_0yufvO7TJuGeplySNLeCA7pNXUKAAJkl027-KamQ=="
+        },
+        {
+          "title": "bvsalud.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLGYHHozZR0vtCJ3sJoAe3bCwge2YkSXxv0oh3aEQBDpsHLcb90nN2NmkUlcEXzgSqrbb7gF33UDXERinrXip9-cn3aT5SzNhNBaGPQAiw2bUcCBArwQFzqLXpJvYLVRHs7I7WDcBoyuxhZVcq33hh5J8="
+        },
+        {
+          "title": "neurology-asia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyb-u2Cbaf04dx3oElQaesbbQVvn60idXcVlZO7eb5CJYdgLUxo2FYHFPx4dEqanGDBX8mde-iE9QKA9A84OQRenej3s6vg8k_XD5K4rdVz_9VQ0XmaOks_1lcIoD1VQs3PH4zCN1_veId7sjuht5MitlqXIWSjT4gn32_Qbxy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF65yq_JOV8h9dPk0rrdP_82sSg3J8OK02OaW_cmndJEkaVxZBETItsKPvzY0u1q1ETYdMTXv1Izcb84lTY5rkkpWKGpAyb9mFPewgB-l3j17wu0677-DHzJW9Tgqg92iVXUxVfl3hORvpDJZU4xqK_UIXtWMOdk5hZb7lMMvZFvqE4mwibHloMFfjxYOGY-HHFNQWqOKh0NuN_RkXMIau-BHRC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXfjuxc_UPqo-eBEd9oU6bq6C9chVllsGi6hkLLPB-rjCxcSVVQ7fg95eMN0n4EaneZt7VQM4ZwUgWPZUtKMbqYOYqf5f5tBc4qnft53BN6bKzF01b6H7-ZuQxDSilivZhh30g"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ83gRKG52J0M4jN0kZQfXDVLVO2SyPU_ZDbbqVD1RhsxWZzQhMKTz7xa_V5VXgTXafnccaIXE2xfQpuGlgC8sTZhWVpUFZ9cNFkhPLmvgNOmt-so9JfP5mxr3WfssjgnkegsKtZqWMo0Wa0EYV8fYeFI3i_k5h-Ov_r-oRK9kHOihAVW-3fmQ8t4Dlr5wnR6mhb0T7nvfPhPe9hXafh2VUVq5wAbRoN6OJdj5"
+        },
+        {
+          "title": "caregate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6iy448empIt4ntXUgLDdiNa_qRrWvdkNBSnyxwJ2YdHTUsTqi4Q1H1YCDVk0TvfdQQxBbI3sTrDoDZI-QsnznX2MQqPd5Xpyp7vyxS1SjBG1mgylIBy_C3coMQsN-Nq7FB79gW12iT2cDg_np_9dQfs3dqq8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8z3EpGcAOtcYoI97nyaiY4QlIoiOwBHm9h8ZqM0fAxLHMSQVRTvkLfYsyMKksmjDhLvFYh9UjzAzJrpZySyInblqQ2ZZ_08DZf8RxM0VstXeaWkOwdgNTa0UGf5mOcGrSYOGEy6s_gAblHNA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pregabalin trials for Restless Legs Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Restless%20Legs%20Syndrome&intr=Pregabalin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "150-450 mg daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 360,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 710
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2367,
+        "costPerResponder": 979,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Pramipexole",
+          "costDifference": 180,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Pregabalin",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "22/40 points (higher indicates more severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IRLSSG Rating Scale Score",
+          "percentageChange": -54.5
+        },
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "55 points (higher indicates worse quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Restless Legs Syndrome Quality of Life (RLSQoL) Score",
+          "percentageChange": -32.7
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "14/21 points (higher indicates worse sleep quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 72,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-25 events/hour",
+          "baseline": "45 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Periodic Limb Movement in Sleep (PLMS) Index",
+          "percentageChange": -55.6
+        },
+        {
+          "absoluteChange": "-30 minutes",
+          "baseline": "80 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake After Sleep Onset (WASO)",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "6/10 points (where 0=no pain, 10=worst possible pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Numeric Rating Scale (NRS) Score",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 25
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 20
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5dOQpNB0DdAP2pK6HbgiAa3qCmNkuXWQHTA2FzRkCbbCuUsdc9vxvE3jZy79epHcyBCSTzIu2yiOYBhoLlOcDeQxCBAQVBSr4nQX9o1eemp0uPYEHHlGiEmlxKxPaeYwym54U"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVbA9LHU7OOESODxET_MKhR07_9swqSwT9TdftoJp1x1y9dQlkTBQiyiH0CB2jCuCw9xQnGz5DpBlk_r0vuqAqB4XG6CnRTMyoQci_KxbLISA4TcAeBcqAmI-gISmDOG4jIdp2cKvCuXYBGXJ91_uIjg13EGtsGS7Dc4s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFclBdX-BtTe1rSPUYG5OCkfz7seLMjs8xna7AZLArn7F-bDgMVMi0ay-VGTO29KP6m0xjbpG38ZRa9gVh5XdlES2W7Ag10iGkCCosvI92c_Re9kucmK87eyxAmdjVkREt1gS7s"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhnGsn6yg9gx3IIhJ5HdPhqcNrKr0sN5zRHaWUWUnJ2mfAH0ZdMqlNrjtP5MxNzNDyuZSiMq0G7BCoRF1mWGolBY8O22Nbs7aQHYYrSjOwJvuDhkWT4XghK2XI-D5bkL4fF7NhUoup5j4ZYog="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJmUYQLXWrRXoXDCEd-yzsbFpKqGrqdM0NeIIk0deFlIkhMRRuVOF9yu-pSC3XJZJBwZ2rSDxgNA6IbhpqOAiCvES6Xxwg--o9YeT5VvKA-30fA0sgJ12PBSQumI6BKZ0Bze_d"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwWvWWgyf6SegrbiJgSwBzELLBhHOSTPBJsSlAaLvC9ou4O1Ms5x7H7_grDpURQ9ShyP4ScdYO1MHTJTQFDjAlRuo0n44LFhDQIuZq_2Q-BRM2nAHGrBpuHn86wFV_yA=="
+        },
+        {
+          "title": "northwestern.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2qbKwplxr55hPxu2F_CylpsgM-1IfaJdQsOdwr3ttxpiRGavXLv02Ivsl0zIgHgJK6VABb6igt3GWtR7bHBWGVQdhRbSTRxq9dCVq2JMzgUOd-dM5jr5vh43YQiYTqp-JgJzhhHMeW4mmCgHM1olO8CPG0CvMgKsQ2q-JZfvnmaloa384hgMe-yjR1mg3ch6eKn87j1hiZqsx3ITWKYe8YDFO2qE9qGNwfouUCC9l71Oy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-Px6LkOJk50aNQ5RlRbBYUMoZJl00_1imrCakv9Dj8e92eMVBU1W6_WUYFcDPtlbYsj2vwxeIc-ii86i39XhhLZ3ZWMKnRJcVzHJSqxiNuQ1Uq8UguVaqM1rPRk85Wm_7Kcnd"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN8sfLJ24mAqZNfV_Toik3MtWT2e1p0cIuXTrRMwreHe1awZSX-szIqAWgezgozPRG5FsaCo1oMax_39TpqYKbFxzv4_DOQ72ovnHGEXcBipRxMoOaeRFYIJPIQa3Y8716HKCFuuWHu1TJIjdB5AZYTCWpkzFpk00rIRjNBS2DWvt4ivJY2ti3yrNVN-I3GIxF1CYn-jXjZnDiyOq_PK0fqNfhm3NlTBixvf1lPiiIheg7_l2o_eQA3CSqATMJ_M25ANfQ5eJmCOT7FXRv6eTrIdWEplarBz4EFA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeMN4Q7NUK77UZKW_AoSl_uODzTWT28CdkkvIL89xUXHr5q3bbOANFPMDyl08Ye9Va0y8kyZkUUC9DijuFmzphUlY2dCnLBndHOFyaTa-pQNW-ExlbQrzPoGDRjU-W61y90_U="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyZrSZPaBu7UhaNWmlabHWfQZkQYLZqpMPG4CIelu6IjbyJtdjuRKYjLfRlh8E5ctdojpUECguiSeNrCMhmJIs0Tap4WVCQQxq4VwwfS4Oxq84gXfnfoQvJLobzYPWqkQvc0OqhP6MwSgVeNn5SU-ew6LffuZXAjWoIxeKw_r4BJByJDIXezRkTopSkBML3h9oTfnS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuwBoq2fPuHixi33I5cs8bdELq5WaaD80saerUzMdZetj7Zjr1hAf95Jo8YEa_MfOG91UDaH07Jh7gHWGoScxh7sLckzJAKmvpKCuSqy3onqH19_xscZtCyaOo_fDI4xca1sZk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQQzlq6JH1yeH8ln4aLXvUXWUoHMLE7kaoS4VAOaBPmuKvi0be-02zUazKmaeBuOMsxnlhOePnMqPa88TWo3hX20ggzRXvEyGOLC1Hn2vzTgqqZmEhnTjojy_qXvcIRAIO_553OgqB"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ropinirole trials for Restless Legs Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Restless%20Legs%20Syndrome&intr=Ropinirole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "0.25-4 mg daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 530
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2120,
+        "costPerResponder": 757,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Ropinirole",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "25/40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IRLS Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.5 nights/week",
+          "baseline": "5.5 nights per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nights with RLS Symptoms per Week",
+          "percentageChange": -27.3
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "4/5 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Impression of Severity (PGIS) Score",
+          "percentageChange": -37.5
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 70,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "RLS Quality of Life Scale Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-12 minutes",
+          "baseline": "45 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Latency",
+          "percentageChange": -26.7
+        },
+        {
+          "absoluteChange": "-25 minutes",
+          "baseline": "90 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wakefulness After Sleep Onset (WASO)",
+          "percentageChange": -27.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Augmentation (long-term)",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "lifetime",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB9piHfIBLPBihOH_M1a1dgcbswDeC5PfSb9CzW9UVSenVxfwocRYJ3Vu2TlbCK-IA27gOhfFA0hw-IvqI8w6rcVhvbinwMURt96mzY2i8EfOcPESvjSMFFle10hOgnRE6bAsvUXwPt-u2WOE="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETlYFd9CJ4dhxy_QxsEYIMrQv1H7M9m2hy-fm7KAdxDeBb0gM_eIhshX6SzhtCNOBGYaNr75Y-yuagLqWpI_DIArL8i9IApOQzxCimt9AXCJOp983zPOzxco6xfrLdG3tFyg0yiTTpSAyoBFP-_DM8iVn7nzhfdmVUaIkfJjSpoMvTuFbsGVD7Cwe2zxEK5SDx5qhr87tuF1A="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH04PRu3YmEzhI4hoSLoOTQybf2cwZO_ZppdiFE-XEWTiNpz7XvpPobEMXA0OYu05vC7OwDbUVE7LGRg047cN41mFKcYO4DxpzElYJE3YYSj1jmBmWwPWMPomozirVUK9yjO28="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIeCjJdPZ56uxnzowWTiUJPHCCwXQa8uHIBIATsLaJimGGMUnGameFqmMT6FXndATPnGgy6Q2udZ41X9YXZuzJg-9FcckXwm0F-v2mcFISbqjCdxiMFc7CJOq8o6FV__Kjmk_I"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERlyguXiCXkcngbaQ4RDxpkKmr5YyoBT8suEHQK3FDjaNZ84gGEin2PB4rXTlJwoGthmimtVtcHeHMjuVvMQq9eKen5tU2J-hzaYlk_8UyiaeSwRmjZOROxftmccw0hBwzrp3LatC6mHH0GZ1AWKXdCwCN9jWMLepWIIVWIgkXrQGpwW2-oI1s94eEzP0LRvvbo0CZY472wk_PI9AC9otcuolGQsw6tR31MvLx"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4grjq3NCM1G1KTW8W1oB0twhDNW_eKEQKvFo2nCl2mb4ySO2YX0yddNPVKghYmxmGTlKAWhaqP_bcnFfdQ2qWnWYbPAAht_nkW_h5e7L9xM4HAHWM8C754Syrga7a-2UGYJ5u-wor7qF1yj0JBJIO3KLg30E6Qp8W8qYU3Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeObs5EHCWmKEQD68o2vkBMrUxbDOvy5pmdhqelDpN7P5x_OWFec25Y0RYTthRBPfTOYnOHs-5rIwg9Wry02_obXwyee7QdYMEfO8BZc163s24bLy0v2f7Akn4jx2btmRELP4-WopRZvKBnrI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCbI5NFr-92NT1UldMbw9-W5cqOqOLl5GAP_pJXornmFJDKBmsEa6NWEXvAuiH-CivxWxgrqRSbvlFklJLDbRX6YTH2dneTlz8Eh3U4GfcS6zqJAD9uwRvOZD6psKm5mrVCh7g"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMG3wrgbcs0HI1-RhQnVCAVgy2vOZVzTwfxT3nCa0Y-b5w883yAgVkOlQi0yi1A6dLem7t9jrlBwn89zc2VD_BTAdIM8GjslgRMnuv80B5Ewr7jf1WRDIX8x1MlH1nVsVt90Ky359c8_ObJv4="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc-Ruyq-OcRbxaVuk7AkR41miAWitIGZIsS8LHEpXyIixyX8D6ozooiZOCrOuersXddTxoR_r7b5V67RU6iOO-r7dPQBlZSbQmNUANbAy0-7ThIXcrJ1deybEwzse3qDetVxM-hYkB81wMdE3uSP5JsMhYlKjKvephuKINoHYpaOmxK6IKfShUbn-7rsAlxvTNrnhl"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rotigotine trials for Restless Legs Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Restless%20Legs%20Syndrome&intr=Rotigotine"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "1-3 mg/24 hours patch daily",
+      "effectiveness": 77,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 9400
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 41778,
+        "costPerResponder": 13926,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Pramipexole",
+          "costDifference": 8870,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Rotigotine",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "28 points (0-40 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IRLSSG Rating Scale Total Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-20 movements/hour",
+          "baseline": "35 movements/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Periodic Limb Movements in Sleep (PLMS) Index",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "-40 minutes",
+          "baseline": "95 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wakefulness After Sleep Onset (WASO)",
+          "percentageChange": -42.1
+        }
+      ],
+      "remissionRate": 22,
+      "responseRate": 68,
+      "safetyScore": 57,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "58 points (0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Restless Legs Syndrome Quality of Life (RLS-QoL) Total Score",
+          "percentageChange": -34.5
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "13 points (0-24 scale, higher is more sleepy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS) Score",
+          "percentageChange": -30.8
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "15 points (0-21 scale, higher is worse sleep quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Global Score",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Application site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 12
+        },
+        {
+          "name": "Augmentation (long-term)",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "lifetime",
+      "trials": 23
+    },
+    {
+      "citations": [
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERxOvbRvwjFRyjDr86gDuAcdgr7LGYyOvFSNkJvOeXIEL2ZMRCuEW3pXE2FfaB7G5QQ9PR8J8oBekCRBNO7gc7cNgWf26v5AvDfT9gwvHU6tbEPOYGbThzZY53Ux45gk_fREVNjQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKkBAiq_ZTKUf4znOo-zTSHYKZltDZafj4TNJ__osWMRn5nuYoQ3ex0ZY7maXuL0UnaGkOkDXDWMIJgZWNCDdWmwDpxX9jThEwsDYka0Wx7ByzBYCPeRLeOkKibeFYSF-kaVdqQCIut6vfQJ9XjaYPSN8Biz23uzKapKKvDS58f6SgWdWLHxuYQ48tMq7_yyMCTatVQSmQVweI3qy7V6sFzqxPZw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFKDeEHP2YC5yFn7UMPZdEOpurbU_1vT35aFxGeo69pIAduPMHxVD-cJ_GxFu0pXIzf1Lge4u78UPcDQqQIXX_Y0y2-M3DV3LUJhXWwqEmFiIOwV4kVuT-iVWzuiGtdS4hRzh3Vli2mBDxhw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9xZa4YmaycqNqMBPZ23c99bKzj3Qdh2R-kcAYNgnVYtePRjOqQ2SkHaONbCHlGg-AtKQwQdYAJ8eDNsyZ0tLuLynpqtmp8ljLTwm7KTE4xvDoUSHxfDOC0c6DC55jVZzG6Ejyh6Hpkr0NWg=="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4Ao5OAWhnllSeW0xVtJonCUv7nvXrVx2fglkTOcyudSNU2y-ZVTJkeIUA0w1__I2ysZDRcgtznhwOYnTONVKP4N5N_EC1YT9ugJ7aY6_FCeIiOu4LVpbdl6LPrud5eqMlTnPmjz8LZr2NHcQZ1gwxgrsnbGtGqu3hpJ7PqxwBvGf3YpGuS6zmMgIE9BHF2WKgrhsKwlD8Sl8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNdC2k2jf25TjlUQWwO_HQO0F20es2Y5OPq4ca5JfQs968TPkPe24E8DXGfgdWnpqN7FOXP7VHkVrXa4HsHSa6S3mBoH2sAoa1WMCM8SvKy-_OMWv1qG4ql1TqPba1PYWc_RU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTESqps6-NsNCS9auS-j4en4AwDfmChiiiaRHVGANStDnB0Nsxsoq4WuEF5WVMswGcY4gRSkJ7gnUe4PRxLAo1dFNS4JsMOf-VWybbcKcWIFQrzQOmZuNc24CNB8DHw7Ac23laNGFf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOsNdSjmeZblAIUrgcKi07g59W2rcN3pZoIn0WLQVVRVrzM7fZSR1RWbtCIOaJfbtl603gj0kl6VGZ7u4xH8MvVE4u9WLllgXUHi8KlD-WbZb15HMglTebQCj4AOrlOGvr-kE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfXUHeu7SB-BzzGITahZ6qDyINRol2qyNaX8raqh_foUSci-sZtZ7YLIKccHTX3loiq320YfuLWJzE4F62FugOLmiyB3xnoaufy7BAXVcoASb1LSDvVU1-MwD5fcv_7anD8Bmw_gdSpT6bTQ=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmd3RM05yXP3nvpnL-nuf7bZz_7_s-TwecAm7XP-SpI2zFdYXJs2q0UpAoo6z-OzqKI-J9H-zs8oEIjIsEPWvge84NQoQSnNCPy_6tbd_rvnqtXiI8ihz-tpwKkb60anPDDxjxxZwOhczsYt8iIiUUvYp2RwDv6CYdF0cu_5-l3s8SkKzc5ivvAZNHMCXsl-i7NL1Bs6aoJHTSW02WYmI2vx8Nc3VRwyJSg9DQrio2"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUtH2aA2I6iqHOtd10h9GHMMIswQpNvbH_68zKjer1n5HZv8TiZK-HjGlVRicyszYprUxjEQEdvPx2UIU1bMF757Ey76YrGYNE5fi3rmNsxCRHn6mBc4JsPEfnkzozUACxZsvjmRzjSzaSXUkvFLlAXV4gB816DNnssVQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gabapentin Enacarbil trials for Restless Legs Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Restless%20Legs%20Syndrome&intr=Gabapentin%20Enacarbil"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "600-1200 mg once daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 7200,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 7550
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 34318,
+        "costPerResponder": 11103,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Pramipexole",
+          "costDifference": 7020,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Gabapentin Enacarbil",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-11.0 points",
+          "baseline": "25.0 points (Scale: 0-40)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Restless Legs Syndrome Study Group (IRLSSG) Total Score",
+          "percentageChange": -44
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "4.5 points (Scale: 1-7)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression-Severity (CGI-S) Score",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-15.0 points",
+          "baseline": "65.0 points (Scale: 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MOS Sleep Scale - Sleep Problems Index I",
+          "percentageChange": -23.1
+        }
+      ],
+      "remissionRate": 22,
+      "responseRate": 68,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12.0 points",
+          "baseline": "55.0 points (Scale: 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Restless Legs Syndrome Quality of Life (RLSQoL) Questionnaire Score",
+          "percentageChange": -21.8
+        },
+        {
+          "absoluteChange": "-25 minutes",
+          "baseline": "100 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wake Time After Sleep Onset (WASO)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4.0 points",
+          "baseline": "14.0 points (Scale: 0-21)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Global Score",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "13.0 points (Scale: 0-24)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS) Score",
+          "percentageChange": -23.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Somnolence",
+          "percentage": 25
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 26
+    }
+  ]
+}

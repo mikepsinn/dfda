@@ -4,9 +4,10 @@ import { CitationDisplay } from './CitationDisplay'; // Import the new component
 import type { OutcomeFooterData } from '@/lib/actions/global-variable-relationships'; // Import the updated footer type
 
 export interface OutcomeValue {
-  percentage: number;
+  percentage?: number | null;
   absolute?: string; // e.g., "-69 mg/dL"
   nnh?: number;
+  kind?: 'change' | 'frequency';
 }
 
 export interface OutcomeItem {
@@ -20,6 +21,8 @@ export interface OutcomeCategory {
   title: string;
   items: OutcomeItem[];
   isSideEffectCategory?: boolean; // To apply specific styling/logic for side effects
+  description?: string;
+  emptyText?: string;
 }
 
 export interface OutcomeLabelProps {
@@ -28,9 +31,11 @@ export interface OutcomeLabelProps {
   tag?: string; // Optional tag, e.g., "Drug Class"
   data: OutcomeCategory[];
   footer?: OutcomeFooterData; // Use the updated footer type from the action
+  className?: string;
+  showBars?: boolean;
 }
 
-export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: OutcomeLabelProps) {
+export function OutcomeLabel({ title, subtitle, tag, data = [], footer, className, showBars = true }: OutcomeLabelProps) {
   const renderProgressBar = (item: OutcomeItem, isSideEffect: boolean = false) => {
     // Determine color based on positivity or if it's a side effect
     const colorClass = isSideEffect
@@ -42,33 +47,39 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: Outcom
           : 'bg-gray-400'; // Default or neutral color if positivity is undefined and not a side effect
 
     const textColorClass = isSideEffect
-        ? 'text-red-600' // Side effects usually shown in red/amber text
+        ? 'text-red-700 dark:text-red-400' // Side effects usually shown in red/amber text
         : item.isPositive === true
-          ? 'text-green-600'
+          ? 'text-green-700 dark:text-green-400'
           : item.isPositive === false
-            ? 'text-red-600'
-            : 'text-gray-700';
+            ? 'text-red-700 dark:text-red-400'
+            : 'text-foreground';
 
-    const valueString = `${item.value.percentage > 0 ? '+' : ''}${item.value.percentage}%` +
-                        (item.value.absolute ? ` (${item.value.absolute})` : '') +
-                        (item.value.nnh ? ` (NNH: ${item.value.nnh})` : '');
+    const percentage = item.value.percentage;
+    const hasPercentage = percentage != null && Number.isFinite(percentage);
+    const valueString = hasPercentage
+      ? `${percentage > 0 && item.value.kind !== 'frequency' ? '+' : ''}${percentage}%`
+      : 'Not provided';
 
     return (
-      <div key={item.name} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0">
-        <div className="flex items-center">
+      <div key={item.name} className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+        <div className="min-w-0">
           <span className="text-sm">{item.name}</span>
-          {item.baseline && <span className="ml-2 text-xs text-muted-foreground">{item.baseline}</span>}
+          {item.baseline && <span className="mt-1 block text-xs text-muted-foreground">{item.baseline}</span>}
         </div>
-        <div className="flex items-center">
-          <span className={cn("text-sm font-medium", textColorClass)}>{valueString}</span>
+        <div className="flex items-center sm:max-w-[48%] sm:text-right">
+          <div className="text-sm">
+            <span className={cn("font-medium tabular-nums", hasPercentage ? textColorClass : "text-muted-foreground")}>{valueString}</span>
+            {item.value.absolute && <span className="ml-1 text-muted-foreground">({item.value.absolute})</span>}
+            {item.value.nnh != null && <span className="ml-1 text-muted-foreground">(NNH: {item.value.nnh})</span>}
+          </div>
           {/* Simple visual bar, matching the example's style */}
-          <div className="ml-2 h-2 w-16 rounded-full bg-gray-200 hidden sm:block">
+          {showBars && hasPercentage && <div aria-hidden="true" className="ml-2 hidden h-2 w-16 shrink-0 rounded-full bg-muted sm:block">
             <div
               className={cn("h-2 rounded-full", colorClass)}
               // Use absolute percentage for width, max 100
-              style={{ width: `${Math.min(Math.abs(item.value.percentage), 100)}%` }}
+              style={{ width: `${Math.min(Math.abs(percentage), 100)}%` }}
             ></div>
-          </div>
+          </div>}
         </div>
       </div>
     );
@@ -76,7 +87,7 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: Outcom
 
   return (
     // Using border and bg-background to mimic the style in OutcomeLabelsSection
-    <div className="rounded-lg border bg-background p-4 w-full max-w-xl">
+    <div className={cn("rounded-lg border bg-background p-4 w-full max-w-xl", className)}>
        <div className="mb-3 flex flex-col sm:flex-row sm:items-center sm:justify-between">
          <span className="font-semibold text-lg">{title}</span>
          {tag && (
@@ -91,6 +102,8 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: Outcom
         {data.map((category, index) => (
           <div key={category.title} className={index < data.length - 1 ? 'border-b pb-3 mb-3' : ''}>
             <div className="text-sm font-medium mb-2">{category.title}</div>
+            {category.description && <p className="mb-3 text-xs text-muted-foreground">{category.description}</p>}
+            {!category.items.length && <p className="text-sm text-muted-foreground">{category.emptyText ?? "No estimates available."}</p>}
             <div className="space-y-3 sm:space-y-2">
               {category.items.map(item => renderProgressBar(item, category.isSideEffectCategory))}
             </div>
@@ -125,4 +138,4 @@ export function OutcomeLabel({ title, subtitle, tag, data = [], footer }: Outcom
       </div>
     </div>
   );
-} 
+}
