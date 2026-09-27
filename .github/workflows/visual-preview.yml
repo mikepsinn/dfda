@@ -1,0 +1,176 @@
+name: Visual Preview
+
+# Posts before/after screenshots of key pages as one comment on each pull request.
+# "Before" is the base branch and "after" is the pull request; both are built here and
+# run without a database. Images are committed to the visual-previews branch, which is
+# only an image store: deleting it removes the images from old comments.
+# Pull requests from forks are skipped, because their token cannot push or comment.
+
+on:
+  pull_request:
+    paths:
+      - 'apps/web/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'pnpm-workspace.yaml'
+      - '.github/workflows/visual-preview.yml'
+
+concurrency:
+  group: visual-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  visual-preview:
+    name: Before/after screenshots
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PREVIEW_BRANCH: visual-previews
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      BASE_REF: ${{ github.event.pull_request.base.ref }}
+      OUT_DIR: ${{ github.workspace }}/visual-preview
+      # Same placeholder settings as the CI build; no service is contacted.
+      NODE_OPTIONS: --max-old-space-size=4096
+      DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+      GOOGLE_GENERATIVE_AI_API_KEY: test-google-generative-ai-key
+      SUPABASE_SERVICE_ROLE_KEY: test-service-role-key
+      SUPABASE_JWT_SECRET: test-jwt-secret-with-at-least-32-characters
+      NEXT_PUBLIC_SUPABASE_URL: http://127.0.0.1:54321
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: test-anon-key
+      NEXT_PUBLIC_SITE_NAME: dFDA Node
+      NEXT_PUBLIC_SITE_DESCRIPTION: Decentralized clinical trials and health research
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      NEXT_TELEMETRY_DISABLED: 1
+
+    steps:
+      - name: Check out the pull request
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: after
+
+      - name: Check out the base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: before
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+          package_json_file: after/package.json
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: pnpm
+          cache-dependency-path: |
+            after/pnpm-lock.yaml
+            before/pnpm-lock.yaml
+
+      - name: Build the pull request
+        working-directory: after
+        run: |
+          pnpm --filter web... install --frozen-lockfile
+          pnpm --dir apps/web build
+
+      - name: Build the base branch
+        id: before
+        continue-on-error: true
+        working-directory: before
+        run: |
+          pnpm --filter web... install --frozen-lockfile
+          pnpm --dir apps/web build
+
+      - name: Start both apps
+        run: |
+          wait_for() {
+            for _ in $(seq 1 60); do
+              curl -s -o /dev/null "$1" && return 0
+              sleep 2
+            done
+            echo "Server at $1 did not start"; return 1
+          }
+          (cd after/apps/web && nohup pnpm exec next start -p 3002 > "$RUNNER_TEMP/after.log" 2>&1 &)
+          wait_for http://localhost:3002/
+          if [ "${{ steps.before.outcome }}" = success ]; then
+            (cd before/apps/web && nohup pnpm exec next start -p 3001 > "$RUNNER_TEMP/before.log" 2>&1 &)
+            wait_for http://localhost:3001/ || echo "Continuing without before screenshots"
+          fi
+
+      - name: Install Chromium
+        working-directory: after/apps/web
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Capture screenshots
+        working-directory: after/apps/web
+        run: |
+          if curl -s -o /dev/null http://localhost:3001/; then export BEFORE_URL=http://localhost:3001; fi
+          AFTER_URL=http://localhost:3002 node scripts/visual-preview.mjs capture "$OUT_DIR"
+
+      - name: Commit the images to the image branch
+        id: publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          short="${HEAD_SHA::7}"
+          git init -q "$RUNNER_TEMP/publish"
+          cd "$RUNNER_TEMP/publish"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          # Retry when another pull request pushes to the image branch at the same time.
+          for attempt in 1 2 3 4 5; do
+            if git fetch -q --depth=1 origin "$PREVIEW_BRANCH"; then
+              git checkout -q -B "$PREVIEW_BRANCH" FETCH_HEAD
+            else
+              git checkout -q --orphan "$PREVIEW_BRANCH"
+            fi
+            mkdir -p "pr-$PR_NUMBER/$short"
+            cp "$OUT_DIR"/*.jpg "pr-$PR_NUMBER/$short/"
+            git add "pr-$PR_NUMBER/$short"
+            # A re-run can produce identical images; then the branch already has them.
+            if git diff --cached --quiet; then break; fi
+            git commit -q -m "Visual preview for #$PR_NUMBER at $short"
+            if git push -q origin "HEAD:$PREVIEW_BRANCH"; then break; fi
+            [ "$attempt" = 5 ] && exit 1
+            sleep $((attempt * 3))
+          done
+          # Link to the commit, not the branch, so that the images do not change later.
+          echo "image_base=https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/$(git rev-parse HEAD)/pr-$PR_NUMBER/$short" >> "$GITHUB_OUTPUT"
+
+      - name: Post or update the pull-request comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IMAGE_BASE: ${{ steps.publish.outputs.image_base }}
+        run: |
+          set -euo pipefail
+          node after/apps/web/scripts/visual-preview.mjs comment "$OUT_DIR" "$IMAGE_BASE" \
+            "\`$BASE_REF\` at ${BASE_SHA::7}" "this pull request at ${HEAD_SHA::7}" > "$RUNNER_TEMP/comment.md"
+          ids=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" --paginate \
+            --jq '.[] | select(.body | startswith("<!-- visual-preview -->")) | .id')
+          id="${ids%%$'\n'*}"
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -F body=@"$RUNNER_TEMP/comment.md" > /dev/null
+          else
+            gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" -F body=@"$RUNNER_TEMP/comment.md" > /dev/null
+          fi
+
+      - name: Upload screenshots as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-preview-pr-${{ github.event.pull_request.number }}
+          path: visual-preview
+          if-no-files-found: ignore
+          retention-days: 14
