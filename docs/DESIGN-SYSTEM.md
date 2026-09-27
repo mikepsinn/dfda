@@ -7,7 +7,8 @@ Optimitron's theme wholesale.
 This is the shared design reference for all `apps/web` interfaces, including
 public pages, patient/provider/researcher workflows and administration. It is a
 baseline to improve, not a claim that every existing screen already meets it.
-Keep agent/editor entry points linked here; do not duplicate this guide in them.
+The shared [repository instructions](../AGENTS.md) link here; do not maintain
+separate editor-specific copies of the design rules.
 An explicit user design decision takes precedence over these defaults.
 
 ## UI change workflow

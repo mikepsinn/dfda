@@ -95,8 +95,10 @@ privacy controls work today.
 
 ## Development
 
+Read the shared [repository instructions](../../AGENTS.md) before making changes.
 Follow the [repository setup instructions](../../README.md#getting-started).
-The app's database configuration and migrations are in [supabase](supabase).
+The app's database configuration, migration policy and client guidance are in
+[supabase](supabase/README.md).
 Its worker and cron are supporting processes of this app, not separate products.
 
 For UI work, follow the [design system](../../docs/DESIGN-SYSTEM.md), including
