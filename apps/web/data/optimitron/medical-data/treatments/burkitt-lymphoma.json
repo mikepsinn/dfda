@@ -1,0 +1,724 @@
+{
+  "conditionName": "Burkitt lymphoma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:34:16.329Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOl22qGLy9tN5cjp5DLwY_OazeTLjurORkq2q3IjoI20EOMeaIx1RWQCKnbz8yafAwxMH2IM06qkbclfQrBpWUwiC-Q0Pwbzz3syKgc0BVAz-7qTXOcnH65QKg5MecOgosVvr0rIET6hqj968="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbxJujWCWCSYFkcD4fnEeGWzitAMys6C7yGRfLYq1JE0Zb1vYfzdkAPGKpMmFbXn8ZXdizviDlYsBLp3BBLzH3YrfWf-antR2VazBsMWwrBn-QZ04Xzqg8or7Drp90hOlPfZKx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwZE57nnsMNauiRLDedvBAexbat51BDbhoRXvPA9gLlxm3OF59goJFAV8cF7UYebKe3Qg9WD4HVRp9_zRPl61Z4UE2Wr3qJGgQcvJHSTCcSkPj_qfEZjt4BpSFlWumJZnYkzse"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFljtV-QKXmTJqQ1cn6tDL4x2a1_IGJKU2TMPG9Ll8Rjj3uWkJvVQWebZOmzw1iKzd5xx155RhywvJif4LVevgDuyg35fDeOIpASCrXgVfK48kRbvn4VX2EzXwcByLzfYoJS35_EMCHz6avQ24="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9i1bRTWbPKicvFJRqlA1CmYcQxuHk4Ft3L5CIAYgp6gFETrIkItHiRl_3gmYGnTLJ94VDbXoomnKNCGHWhUfWgjiQie6OGen45LjTI2Ln9ounPqEYUJmX3uu9PegxNeifXyuFAATW5xDTsZkc8FAiUET90-5DtUtljUA0hkqPrZwBYwvsWxtm7Qlj79GBqu1zx3cZYjlCyuUJ65BURxM655z61qCoKv_tJzx1k2ACGabOy1F6nRyIufL4q4QqIcIyAtDhX6wfEISOGkufDoi0q974H_M6vdpP6md6saus"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF-1rJrIBzbYCx-cGgpuDZ5R2Rmh_zNyDYtHmw_nnr64CQTihk2ExF0dPxXLYIDuQ3nDBTfvparCccOLY6-l8DIDr51cBpzrvR8yb4HBvbTNSrexKa9a9PgiL38EDDYcpoVyM7zuROb99GuVE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7HCwsyhqbjxyyp-pE5qHoGCvbRTep6KZxTAaxsZcmO4BbblznMbGPDPdjEPMNLSfkjZF0mM0vOl5tWljro9viRW1ZT2EfTVI9Wna2WJsF4KAaGjtJtCpos_kE3B5lcN0CSMcn-TRrz8XPK_ootbWx0VzJyTslypzwSDoD0bfsOm4S286FQFHNzW4xmt_AIwegIlGpPRXfofEvaLODMDZQX20ijg8R-2STtvZTiUJeSU9msOfYXhlEE_2zn_naNJte4FXwxnii-1usmJv8YGuKqhDSD5j9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBSUznAxydTE6KPWUOyfj3-Xfvm_3HHuRpm0Z4qti6QCEUVo-rIWeGitj6MrY3H_3Tw869Z1C1gyJ3D9zNgYINuaB2oGoE4rzgeas9XOFCUdrZsE_rYPN2_CtM6tdyUOmiRbrPZCX83H4v7Z0ro39eLlBCZY6uaoBFQaCZ4-PsbyIdY6dVodYDGxdKKa0dqzD8VaqAPzhmgPqNGZ9Vcjaw7cnP5HAG97_kOhmpKf7pqeEHQL5mjjrPZXqFgJ8k6bzAsLV-moY1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rituximab with GMALL-B-ALL-BFM trials for Burkitt lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Burkitt%20lymphoma&intr=Rituximab%20with%20GMALL-B-ALL-BFM"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Complex multi-drug, multi-phase inpatient regimen, intravenously",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 130000,
+          "monitoringCost": 90000,
+          "sideEffectManagement": 55000,
+          "totalAnnual": 275000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 323529.41,
+        "costPerResponder": 305555.56,
+        "icer": 45833,
+        "prescriptionAccess": null,
+        "qalysGained": 6,
+        "vsComparator": null
+      },
+      "name": "Rituximab with GMALL-B-ALL-BFM",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3500,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia, Anemia)",
+          "percentage": 95
+        },
+        {
+          "name": "Febrile Neutropenia/Infection",
+          "percentage": 60
+        },
+        {
+          "name": "Mucositis/Stomatitis",
+          "percentage": 70
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 85
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 90
+        },
+        {
+          "name": "Neurotoxicity (Vincristine-induced)",
+          "percentage": 30
+        },
+        {
+          "name": "Cardiotoxicity (Doxorubicin-induced)",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Within weeks of starting cycles",
+      "treatmentDuration": "4-6 months (multiple blocks)",
+      "trials": 35
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGYCDzkgw-umsv68x4QxYQlyynai7z9fpsg_pxAMR9gTaYZ6K1u7ML0Yf-k-Upr6G65EpqzeqtX7EUBwEJ8139CC7wQpKxECY1zDHvcDwJho9aOeCeDHnfxty9vheTovO7Xv3mSn7ZnAhlZg=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpMw7TNtgZUU9n_PtMtnqdqS-iVSiCD-0saizS42joqwwchutGquwEDXOU6Pxwy5cZLx_eDIhLn8CK14Tq4iGOaou1lBOzFQE3TrmTDqsrBFpf1ZdajRG1H8r5aoVtU9ealSvUCIUWcUbbxHvwQgb3AMS-zKoC8sxVDhQP5g34jldi-CgySrCXNLfIdIqXjuR7QgnR4f7nHEnrwuLOvOTurzZkj16NgT3k"
+        },
+        {
+          "title": "thd.org.tr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLvxybpaVFqPoV6ITjRS4LVrNkX6M-crWsHneYrdsbH6K5KSrWcf6021sZXlVIbYs0kVe5PikV_ZinsgzBVmd91ZwgjB7-91JffFCZn4_9iBSot0TtXvAKoLhYXjL-mp-IflM3crYw_51peGg6x0BYC44uwyM9oiz9d1IyhwCpbIDa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlxSKjJfANuoV8L_N7RuSXCu-gs1LmF5iN2i5KKsqtCFw4owGIjttYtycLgnvrbzjtIvWWI9tiKUNEmnmgcsD5YKJj3VPZYKeHBwHw7iPexGbEJq93gmh2HYbotam8tdwRtINQJxWU_sQDbA=="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGiZl1VB7fzBpRHwqfReF2HwEbE6m0M0fk3DYBbcvUKnj3yNpJDeDc6E9yGiioAOH5vDnUx0FIQ1Eh1sJ63Ot8VAWMB5rMMyvuh3bPlsYioOSzwXEUHF7rgq5reEal4ssVnqKgFM8yoOpQQOgbqS7u1Hw53fIw9Pd21G45PY538vWfdTv_bCr0XWg9jp-gq99vUtdeSVU8T2tQCBOPg2RDjTe6xqiOCZS-OIk8JZWJcw_AY5UQdxiB40--"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMpxzs1bqORq3Y2hfcTwC9aBoBCNaPVdSDt2ijeTl-dC70JTg-h2Op8XR_ukRRCcrHBzbSIMlZ9ifwm04fo1E3CJx_4RYcleKy0DCdxWos5-vhx-rGxNOsdqrN52RGGDf0k2ykexkiR37spA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG01QfLrxbI5lsLmpy3QxadS8XyJb-jwdK6Fg7ebrEfEdpe1lxJEHbYkTjdInIdCX7FXhZuK1vwQKW0E5dOaMDp_MkB1IlV6ICluDypVU5pn6B3T9sUCuRUxFlGNTBDLn9DY8LCqaRFc6X5p5kFJB9K76yJGvOxJige3H2daAIoIJJ3IwGHxETp-uR5i_i0DkQENmDQLYLFooYh_OjG5Yl_yCh31-fvMIfpob8D1hPRFPnu0fMcmiD_0NBa4Enjq8h6cjsBa4Ua_fYUmyf2tLDiHB1-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rituximab with CODOX-M/IVAC trials for Burkitt lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Burkitt%20lymphoma&intr=Rituximab%20with%20CODOX-M%2FIVAC"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Complex multi-drug, dose-intensive regimen, intravenously in inpatient setting",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 140000,
+          "monitoringCost": 75000,
+          "sideEffectManagement": 65000,
+          "totalAnnual": 280000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 350000,
+        "costPerResponder": 329411.76,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": null
+      },
+      "name": "Rituximab with CODOX-M/IVAC",
+      "nnh": null,
+      "nnt": null,
+      "participants": 4000,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+13 percentage points",
+          "baseline": "65% (with CODOX-M/IVAC alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Event-Free Survival Rate",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+13 percentage points",
+          "baseline": "72% (with CODOX-M/IVAC alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Overall Survival Rate",
+          "percentageChange": 18.1
+        },
+        {
+          "absoluteChange": "+5 percentage points",
+          "baseline": "85% (with CODOX-M/IVAC alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response Rate",
+          "percentageChange": 5.9
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 percentage points",
+          "baseline": "68% (with CODOX-M/IVAC alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Progression-Free Survival Rate",
+          "percentageChange": 17.6
+        },
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "30% (with CODOX-M/IVAC alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Relapse (at 3 years)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia, Anemia)",
+          "percentage": 95
+        },
+        {
+          "name": "Febrile Neutropenia/Infection",
+          "percentage": 55
+        },
+        {
+          "name": "Mucositis/Stomatitis",
+          "percentage": 65
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 90
+        },
+        {
+          "name": "Neurotoxicity (Vincristine-induced)",
+          "percentage": 35
+        },
+        {
+          "name": "Renal Toxicity (Methotrexate, Ifosfamide-induced)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Within weeks of starting cycles",
+      "treatmentDuration": "4-5 months (4-6 cycles)",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-x1DyJGBdFgmUsDBHzWjjY--QXXFDV3A0wyW83c1QN-Yul4PL-zHPqFlr08oPKiVhDZFgyHpO6AasX1B3x4b4OOh4hi0L6KLDb3JWagErFFk43r0P_66Zti1UICO9vkFE4PNZuqr5DVSXc-JpGYZaM-dExdGoNOC7CtTSF-Zba_jqqxnVSo-2pmwtXs-yTaf9k6VOCNxYTE2sw2I48ucyTXWlo71wPBI8ImwKUWHpvhJuWsbkoqMbk8OPzM80reNJBkg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8CU9o_unwTbfv9P05v7k9L6PGOysIo92rM-lYy_KDpmQ0GV_lLDGwZuxMrAFiVMpPBxtrbUAbBl36XAONUxCmFJpaBg3lDprW2VVWeRucxjJ9QZysXFOybBHeZA_1Qype0pg="
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGSkcRpW9ivcruMVpFE9bcTQF8xhIpx81gfW3gXmbD8ESQuMgVjFR39BCslgLLIrxbs6NfSrWRY4VH0lmKHLIpx-5A8mYuH7GY-zMJGIXPdCmpJ7XFy9T3YOFfViJSfGpEpvmN9wq85SkWH-UBL0Mo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC_URKUuQrIQcB7BHxrkaHo2FL9YPwwksyCW8dVnmpYW_akALE4D6RSJDBsghC14WtKJ9gkDD6VTrTR0VfgjK7a6DhvSRTAeREsSn7rE0cOhcPhijlk3XggDybPF4V6k2m5_pWiuU5-5tg7XP-Da--GWzAHvWn8Uf4htrCtKaCJDLxgEadi31I-ZbaYCU9jnE-mJJ7rQpf6JRAxLFauHdLZV5IlVZQvxTKIA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeNdp7IpW1ALJVSJFvYpl0KTQ5DYinIR3ZNuMqHp3HaXGJx4W-K2JjcHbU0MY1F9e9znVcqBFq44juzNJYIVRKh2kGjZpNFGMDyGnq8SSkyA4TNixljJwhdJgIpdweqKUqqDU="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu1IYtw4Zi8Byts0d3F-XR0AloaaD9HsaLl7VQ24oTL5pYHh_Rt738SwW5dvgM9xFdkvin13sfjMLsMNDBpI4hQ8xM_IjSmMH-8nkFjlvsJ7PjmmWz1Z0LSimn7vTpDi_fJmikoB61mgqZ-0Wsp_FeHFs="
+        },
+        {
+          "title": "streamliners.co.nz",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB0RUNZ1LNUkTKN1a0wxHxbxjNdk6eX8p-pIpt0z3oAF0AlLPucQycDpPaL86ByzENpg-Uf-6l7loI6AMuuFsGOXXi48NBkU1UcBO8Bae7aNhmDUWRbaRdury0Wt8mrnRNMzdpRi_WofzrVTPRsLRp1nERlrCxHi2FUM8mtNVKw4V5PYBcMRF9C8PxXg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjirRo_OyUt2Mt-oln5Iny1W2OkiKjK9oal6gvbUigrAfbIdit4HyDeri318Dg7BHDv5p4gcEbncHnc6aeNMVgkaINxB7Q-ARwkZghAUbKjmfYOeKCLTmjNeBQ7xBZqsuRCge_OyZ8RliBAA=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQoRR0lXLe83z4sfVTCEl09XGiat5LteGUmaScIkfBzgsH1b2bHVssQSVHXCFyIeakXRUQcqpEkkF1j2CNX7XRJsCFiHNRk5mryC9Y2j4zTSZyqCOo-Y2qS_YtsADhjCclF3X7VdMLMsqvtx4R5ioOuAA62FEo4wB4flUinrs_SeChC72zzgodWPa-l0jhhw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rituximab with Hyper-CVAD/MA trials for Burkitt lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Burkitt%20lymphoma&intr=Rituximab%20with%20Hyper-CVAD%2FMA"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Complex multi-drug, dose-intensive regimen, intravenously in inpatient setting",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 80000,
+          "sideEffectManagement": 70000,
+          "totalAnnual": 300000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 352941.18,
+        "costPerResponder": 333333.33,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": null
+      },
+      "name": "Rituximab with Hyper-CVAD/MA",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia, Anemia)",
+          "percentage": 95
+        },
+        {
+          "name": "Febrile Neutropenia/Infection",
+          "percentage": 60
+        },
+        {
+          "name": "Mucositis/Stomatitis",
+          "percentage": 60
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 85
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 90
+        },
+        {
+          "name": "Neurotoxicity (Vincristine-induced)",
+          "percentage": 40
+        },
+        {
+          "name": "Cardiotoxicity (Doxorubicin-induced)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Within weeks of starting cycles",
+      "treatmentDuration": "4-6 months (6-8 cycles)",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBcz6beKFqrdR5xKvZUMO5h9UvUSl3nLSo7xScvUWpDnEZOoEZrt8r4l-LSGmaoMI-xEl3y6eMROGXgJF1_K7AIjZdMgltbmCTQ06J6Tl5Ubu3_NZSrqsqhYiCRhshy1Ip0RL-RO10INU-gGrwyd8Jx2HNMuojBDedFfRwNYALnAKX4qtKhqEQ"
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4cnhXPn1W8GPu2f7QmDWs4lhfg1bMSW8SOEklBYcEwKH9rsFbHz4WMHDjRHTRn6_XSVEZ5vPgeKZrh9QtqEvv3dAaAYJjO8F6WVV4lhoivAbEWjn5tDu_yHTLesUg87DfQgcfEDfzhP2EYAw2qfuCnr5PpSruJeFTznR8hD-rrBc8iNAex2VH1MR-UsDm4mDSDddBl6I4HQAyAYHtOUVTyZYzt5x03P_yivLEpAKqX-denYGA_A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcwc0yHiPUcSM8ebgqkCwJsamYeAzKWA9BwTz4xVnpG1b9aajZCwDm0o7P3ucMHhRZoqN05SgnitNLl4Ee2bEKrkFnyPEKfI3T_BD-nZm6dbtqBG9kdTVz4Ievr19bzudi0i6mSW_FooDVukk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHvjGJVaDtMj_ZooHA7lreD1kuwpi6_7BLXY4WrNS7V2ibZmuiQGd63Ed0oK1anH6lUK3WA8Zdqcbk18s5Bd1y78Cd8q_wuOgQbSnQHs15i2tpPaLGahV6TlxTKOq9YNUoZwkrChUJeSZRDv8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUhEVXtx0azfX5DhngfLFexU4sDwSA2C9ZQR2yf3iDdIZHUJx4Yj8wDMq4oi8OVMXZyAdjIhh6o5epwEU68oWEhmcH5voGB_L-xy8loi2lCUk-FPTVSeO6xo5LU0orm0qDfk8IjKG0z70I2uY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dose-adjusted EPOCH with Rituximab (DA-EPOCH-R) trials for Burkitt lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Burkitt%20lymphoma&intr=Dose-adjusted%20EPOCH%20with%20Rituximab%20(DA-EPOCH-R)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Dose-adjusted based on nadir counts, intravenously",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 70000,
+          "sideEffectManagement": 70000,
+          "totalAnnual": 260000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 346666.67,
+        "costPerResponder": 305882.35,
+        "icer": 57777,
+        "prescriptionAccess": null,
+        "qalysGained": 4.5,
+        "vsComparator": null
+      },
+      "name": "Dose-adjusted EPOCH with Rituximab (DA-EPOCH-R)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7.2 cm",
+          "baseline": "8 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Largest Tumor Lesion Diameter",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-680 U/L",
+          "baseline": "800 U/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lactate Dehydrogenase (LDH)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-40% involvement (clearance)",
+          "baseline": "40% involvement",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bone Marrow Blast Percentage",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points (to 0)",
+          "baseline": "2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+18 points",
+          "baseline": "90/156",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-L (Functional Assessment of Cancer Therapy - Lymphoma) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+6 kg",
+          "baseline": "60 kg (following unintentional weight loss)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia, Anemia)",
+          "percentage": 90
+        },
+        {
+          "name": "Febrile Neutropenia/Infection",
+          "percentage": 50
+        },
+        {
+          "name": "Mucositis/Stomatitis",
+          "percentage": 55
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 75
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 90
+        },
+        {
+          "name": "Neurotoxicity (Vincristine-induced)",
+          "percentage": 30
+        },
+        {
+          "name": "Cardiotoxicity (Doxorubicin-induced)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Within weeks of starting cycles",
+      "treatmentDuration": "5-6 months (6-8 cycles)",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpgLHyJwBgGaAosNLxqyd19VrbqiUvETCXEBEc8Uf45AdAWmXsRTjDb6kM7m-txQHKplZTA2la5ozImjiWtn0_7gojJ7FYR1Yf_nQYINi5uRP4HBGLHYG_wSl2JyRRXRRZWPT4txQb3U1tIysBv6xgbo5wkSN7nUt6zhqdWmJ8JO1NgYGjxHAvmG2Spxcrqp0J35YhmXdgjAQPFxQ4-uk3jY7LtnPhLR0bs_x5YvEonKRJccIDwLpLN1hgSixW8tmMVxxHiEquyjPrbNVWAuEmyNMFD2Z70Uue"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4Gu_GnzYQXVQ24Rp3Fc-PIO1q7PIfgvInK4NJ5c1snRU0j0_waSg4nsua_jYP1IHyKbFX9BLOQvCMpCjKBdPTiBjMjF0IQgLj4mUWGi0-PZRS3V39ukxRofCe-a278nerJm8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxbHMQSGrsCux7k5-bBDYgfiWJFByqEJj5Z-Y1_z-ndyCA0lK9xGFoelsOMhC52njBdO_rodgy0TbUoEQRDxbNbMFmWNx85kNzRrNNjEmf1usJ8API3urKcA1mU2F2fdmwlTHFREoozFi6vROOksUtTPjFkB3h1i-9ORcZMdlNhhEcU0ENDktENI5ueLTQjn1lzV4nfMGuAaHpaGQhkdVq1RsM8LEz9-zQx7z97qnZGKjFk8eiyR8Nav2cFA_FWkZLxmgLnwuQ2LP4jxaa5tYbr3A-YzjqJKcGDBnFJKUAEB7Fc4C2CY54MYPbNptaXTUkFjJ8JpFOGg-LJaD708rE2bpqtFIw5DNTmqqkV6amiq_HNt8gpsGTUUp_q-SAJm13hXIZvOGO646oELqsfFeoS7ofVyHRtpaawUoubkNQU2DStquIIc5KrN9Cw_Vz3oakcXmf8p6xptCEb-r7kOCuMss_6TzKcWKQEoZwHCAWlrKbuvntk0jRfiXxSQ69EQ=="
+        },
+        {
+          "title": "exp-oncology.com.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2Dmqf5El1L9zHkmm16YygxWFuWg5_aGPPFonUSrguomwpCV1XXWBe6tKj5YZcGJEvqwNWwxGliPo8Ns63I9MhS_od1xAfUaDGisFRJKX3maNuEyjmL0DYbKVfQI3ymUGg2Ob-Q4zt8V_Uxur0DosvKeySHLxCTteXPw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk7YkFHkZZnC4r0k_7BSXE7GgvBojOADdHnmChiJ03JqJvOwhcB-xaUWmDuyQNsC-NozJByxamjUzGHDa-AaOy6f5voIOf92Eq4JPNgECxMKFt2ta2M6iDUhiJWT2gDMGxpZk="
+        },
+        {
+          "title": "ijbc.ir",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE47KLguKDzBaA7kPKbBIRTeUq-_H6SekqdtvT8tzUZR42oQ4A1hZZmN-w9_QlmUSNLHr0r3PpZ1_762d55ofpOsz_dIDk1XrkVYI8E0IwrHXTYGSInz1zzoe9HqxYv"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlLGLYy-2vK_VgSpzLK2GZscK5_uCOJnOM6bR0hCNIuQxoDxKZitNChk96gLK5YbLRxDuiEX8QVlcO-QRLRScGzWveyFPXrkWSk0F9aU-TRrcziK2FQhe473OBzvr5VdpcMB8rUy0lv26JI5SDnV2rwxCtAhyE8ps9Ao1BUtf11onFheQB-Ikq30SIpmymh5Us0fClKw7evXu4pItpXdtePJctg-PzNCf1new_Yx9tUxiD6A0M7svZqMNw608NtO4I-b7DsRijb3Rf1WgV82cg-g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Autologous Stem Cell Transplant (ASCT) trials for Burkitt lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Burkitt%20lymphoma&intr=Autologous%20Stem%20Cell%20Transplant%20(ASCT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "High-dose conditioning chemotherapy followed by stem cell reinfusion",
+      "effectiveness": 50,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75000,
+          "monitoringCost": 200000,
+          "sideEffectManagement": 125000,
+          "totalAnnual": 400000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 1000000,
+        "costPerResponder": null,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 4,
+        "vsComparator": null
+      },
+      "name": "Autologous Stem Cell Transplant (ASCT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+25 percentage points (from 20% to 45%)",
+          "baseline": "Expected 2-year PFS for relapsed/refractory Burkitt lymphoma with conventional salvage (e.g., 20%)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-Year Progression-Free Survival (PFS) Rate",
+          "percentageChange": 125
+        },
+        {
+          "absoluteChange": "+30 percentage points (from 25% to 55%)",
+          "baseline": "Expected 2-year OS for relapsed/refractory Burkitt lymphoma with conventional salvage (e.g., 25%)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-Year Overall Survival (OS) Rate",
+          "percentageChange": 120
+        },
+        {
+          "absoluteChange": "-35 percentage points (from 75% to 40%)",
+          "baseline": "Expected 2-year relapse rate for relapsed/refractory Burkitt lymphoma with conventional salvage (e.g., 75%)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-Year Relapse/Progression Rate",
+          "percentageChange": -46.67
+        },
+        {
+          "absoluteChange": "+30 percentage points (from 30% to 60%)",
+          "baseline": "CMR rate after conventional salvage for relapsed/refractory Burkitt lymphoma (e.g., 30%)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Metabolic Response (CMR) Rate on PET/CT Post-ASCT",
+          "percentageChange": 100
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": null,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points (from 55 to 70)",
+          "baseline": "Pre-ASCT score (e.g., 55/100, higher is better QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status Score (6 months post-ASCT)",
+          "percentageChange": 27.27
+        },
+        {
+          "absoluteChange": "+20 points (from 70 to 90)",
+          "baseline": "Pre-ASCT score (e.g., 70/100, higher is better function)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status (KPS) Score (6 months post-ASCT)",
+          "percentageChange": 28.57
+        },
+        {
+          "absoluteChange": "+40 percentage points (from 20% to 60%)",
+          "baseline": "Rate before ASCT due to illness/treatment (e.g., 20%)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of Return to Work or Normal Activities (12 months post-ASCT)",
+          "percentageChange": 200
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Profound Myelosuppression",
+          "percentage": 95
+        },
+        {
+          "name": "Severe Febrile Neutropenia/Infection",
+          "percentage": 80
+        },
+        {
+          "name": "Severe Mucositis/Stomatitis",
+          "percentage": 85
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 90
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 90
+        },
+        {
+          "name": "Organ Toxicity (Renal, Hepatic, Pulmonary)",
+          "percentage": 30
+        },
+        {
+          "name": "Secondary Malignancies (long term)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Weeks to months for engraftment and recovery",
+      "treatmentDuration": "3-4 weeks inpatient for transplant, months for recovery",
+      "trials": 5
+    }
+  ]
+}

@@ -1,0 +1,796 @@
+{
+  "conditionName": "Tetanus",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:25:13.085Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg0Uq9oupnN2KQu7g0_rdV9NL1gNRRqsVXDeHtZNOCOGPOPSuSKhOmA_3Xc9vh63PXgVEjv9qs72h2EzGxAUewHhuW-RJkWtbS8cmVKhX1FOewQqqJSsPtZ-Xpo5s6Hm3yYp_kmJti4eW2VkmKV1URt5k="
+        },
+        {
+          "title": "www.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP5kGHz2yzy28d1YSuEFllCZ5jK0umCzmYIjsqEHiHcrGxe6a1WYgmkE2iUPazywKDztDkRMHSVdpkKj3_LOxjoZx8HHixV9B8Cn-Mi4Te--o0UUG4CnBkP7SttDWiCMQ="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvpKguVRHq6RL84b0z8WkMnDPcFY-sygN8D0wiJynhdqu2gY66MOnUK6JobHqw34SuMBNtdzzwzASOpSlDCweEWNCv7nBYDDqcIMwR6uwVyVz5BMiUi6dajAOtfCM7glN5pE0hTL4ajcjAs8epfAnd7cAzdFrQ8PCjpLI0WT4az8HUhc-MJogwMIrb4bQMJTak"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOzlPyHiANqcIJkOY5PiNp7C4heUVAgQV0W_M1RQcQ5Pby14H5oZXuqgH2-0KcJZ30MVXnl6QGpzKOxDNCWZw-ReWYlNm8K6OQAUs2eTrj6UTn123yN_IHFmSSLAicKD_A-8_oiTlmxWU="
+        },
+        {
+          "title": "webmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTrVhJM1wyMzcNKXgjahiVmuGoI2hjZa1CXfh4PQXMcw0Zej1NxWtphsCJA1WhZP1WjArwJEpawjP6w2AnystTo4eaPTe2zdiFbV6BLtzUqvHTwetMz5nZ2-VOqK85FBKtI9PJ9gkq8g=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzbSIJpYEGwPmcu_cLu6GXlBCCiggI2vCnKul4eUJ9MpeAVkIFLkVYDuDqIwzwrIROsiOcyemu9LhBHG1xPP8bbwiKHZp8hmNg_y8TZFW-ctVn_oXorrsS_KVPMXC72jz6TkoWQbUM3KgFtfy-7yQMRQ=="
+        },
+        {
+          "title": "www.gov.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeXHun5QlW8dMJIHqah8iQS5mKVbn2DpgYba2qVkMGw1ZsA6se4y6iaOcxF8jMbZPVewCRfU5BBfF8OSMcxaPWCTCL08jCr3U7k_QAzarCMz-_mnssGWdgApaO5w0ks0AgjCsHSuSlP5X3twbJaVl0QsrB8DIU_2HTI3Sg581prDbq9Oik3OCPFCKAUtlKsZ_2tmjO9akQYmkoDcACaz1hXUUEq1Avwr6wxxvs15EvfVthNVu9QirxgZqGaves4a_dFtO6QfgMuSK_lXwWiOoucg3u6lDt6P6MJydI3aHfJWeVN-i7mtvNYPxzAmDY0nNWJpq5MaI5cE8DNdwZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKv0LQ4YZdhiL679ModR8ytcUZ_zJsBvKgzFQoPj5KxbPWczXwyOH-QLfNZklBtF1R4poTON6vKRMrL8nqGK_qTVkNmN82_dfrlEiVXC6OVZo81VG6cOD4e3g65jdruQbJrSz0Y_Kn"
+        },
+        {
+          "title": "nvic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWRnvkwApnjYEyaE-Br3prSV7UnqxF7hLlLNILRMkxa3E5TLT_ZEEqUlweiQXdk8MKahdJtsm289A_8GyWOvdWnhs5rHRKLB41WAMBkdFlRpjacJUQoiQ6q98hwbMhhViqSYgs7dHIa8NdJ43nDyF0e0bGN8fanUUTxr-Y"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC1wmdjCnwdgNFKZJLkm7PmhHNZcBA2hbeEohgWmvrw3bfYLTt2P_85iNEgDXXpcRzAq6c8ltOe8l6_qHxP9QRZLSAx-i5m2TZN90s_fQ0ITfwvDv5kifXhMUAPRfvltfiwzWeDaib"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKJkoqFRydLHyvplFhrIRZHbtRDiHkNl12Ua-26yvT8NzWg92zv8PrgHNsgfd70IhGqYDD13qgK1A23-EuAg6d9TatVoPFlK0y59PQ1-8VQyZC3X0W0mbvF2jVZAMph3CjjlNObpO6uU-UXxOCrAI5JAFBC_gxff2rwyRYdlBdBjkNQijcDqk9v9y6a3vdItY4ND4BkB0dnH1d7MizZEacgp0J9_GuObGkstzr8CZTxJDi55qTVh5w22MmEuikISpu77Cc1huStoCIgA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDRleASQ9FnQlRX436p8wXTz9l_MK4pn2fPIrHYPFisnkDGXCPF_yku6kZ5nJsW1PjqG32qgxdIr-Cq2827rvwo3-8leKHta5xLbpY597nt5PcindmwSJh45Fe-v1QgjMq5Sbf8PBCjgQDu_Surp57AEVx9o-S2AfgFNa6RiNkWfGZXLyhbH7y8gZkBOwUZeFm_ptm2plQxgIvzarJp75ED2SVoznxhA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSnGkIwDKseOCUYJSv5Z8zysH_APPijdjEwhI2Axg2qqcXqTVdahjtmfQ-oM6hFuNiE3UKTZQA4y8ruYnlntWWob9_TwGpiT1MAYhChz-_8AuIUL630uk5Y1qTuuuJCpKKrFA="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWzN5hNbqq649gyZavWrqOOESYbHTlrLRA2RDrzi9tFpXQqgb2E-BwN5btrO655-ZHXJXZN0u5xdpP2ZHzCZ_PTHFkk90_PUIWACJr6Eeov3ELtnx6-iDfJOM__5LLZbgA_bDGTh1EPmp1N3j2bu2ape5LQhYE5BGOq2Oa3VbNP4tjjPtGBYQtCmSbRFOcOZGoeA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9VRz2zscioLTK7rBfmaDa0GnGOEmJ_cwCcUWE88tGIInRKp2twAq6KAyGtDvA9xUG6kg1cwNEnp0cQbiWFrSgwSNmw2I6aYpmjUWfgCcw-l1paHoU__RsgJVbf7fXrjSNspyk1Wk="
+        },
+        {
+          "title": "radford.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyUOjn9pnJenD-fqVeaKj8sKuoRnrqPViUOgB4gACC-T2rpyFN172cyDz7-tPoa7h2IxoVO7t1fIrd8Wx75kmDuDGqBda7cF6_zVIFmwQih2MRREHQNjyORw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdA_JSRFPQS3mTSFAPblNhQcY1g1fl0Zk5BNh856VLOyuMp1eYt8FfP-jm-CQI9vbIR_FQrPfClCxiakZ-vFS-8k7zmfID870BXdXkBvoMcVlTHsU4rZ-haubPB2dAMjlSVh2-yXathldVNQ=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIMtyAyGBApqejSUfylxa9q1ilZD78MKPiiMbhgo4nsSeaOnKOF_Dh1Syc7Yqmr5Co8cIvXUjr2bqf6WCmIVPDJl9QG1TNXh71RwDXxSPeUQLSYfIWOU0MiZM_nDO4oEjfGxf4AUM1oZicUTL1RDOHfMm7HkP0MiD9tU0d"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tetanus Toxoid Vaccine (e.g., Tdap, Td) trials for Tetanus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tetanus&intr=Tetanus%20Toxoid%20Vaccine%20(e.g.%2C%20Tdap%2C%20Td)"
+        }
+      ],
+      "confidenceScore": 99,
+      "dosageRange": "0.5 mL intramuscular",
+      "effectiveness": 99,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1.5,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0.1,
+          "totalAnnual": 601.6
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 3000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 0.5,
+          "annualOtcCost": 0.5,
+          "annualPhysicianVisitCost": 20,
+          "annualPrescriptionCost": 1.5,
+          "annualTimeCost": 5,
+          "earlyTreatmentBenefit": 0.001,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 16.5,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 10,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Tetanus Toxoid Vaccine (e.g., Tdap, Td)",
+      "nnh": 1000000,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 99,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Local pain/swelling",
+          "percentage": 30
+        },
+        {
+          "name": "Fever",
+          "percentage": 5
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        },
+        {
+          "name": "Severe allergic reaction (anaphylaxis)",
+          "percentage": 0.0001
+        }
+      ],
+      "timeToEffect": "Weeks to months (after initial series), immediate (booster effect if previously vaccinated)",
+      "treatmentDuration": "Initial series, then boosters every 10 years or with injury",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHld8B2FiJSprweLxbiL-Mg3PNGFHw3FbxaZ3KPOsy1uSir8yjDZl3c-_mzzP3fXSm1zqGHrS3NXI6QI-2rS9txITHzPzVxI7O2Bud6r6481Ai7Q00t9NNqfiZncWkR6ijCspvNkA1d5XqvJTd-jD6o9HzUezcoyy9UCXi6FvYsG9pHfrggQDVbnYjNVI1erNFo757JwF6F8UJQzO7gOEvseWCUzGKJxcdOF_Mu0tIuLGCaHj8WTgp-aBd1zfxn8oLn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECVtMeowsQG91OWTn-VmomonG3NBc-QYNea9Yp9LDUagqwHFfIWB7dqOmjy5oa1AI6lErYzO8LMZIGdD7FluEWW0eeHO0W1PafaLjuFXkw1wbQ4eW6Elw9Fb7fLjOqEapPFbs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu62PkjXjMMiwixmmuv3fwc3Kr0L7ZVeY8-Gd0QhoeQvPVw404wBblTz_mL4DMFMJs0heY0V5iDycFwvpaGFVkjfqfDzHQHZgxrvObTx36Y-eb2UA77xtLnpLV5O8Ejc-PF-D6Iz6ppXojqNN0rBYxOu8uAZJ7PalbVhD1s8zEmE7vpVjJRMNk27GoMDuAGfer4xPLCjm8Abzm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECn8i7sadbehONJiAEW5IUoZfV5g_gFMHxMzN8EOuOs6vNgUePyukSpn6uUkcOuuXdbbpJQh4oZ29irXLf2yWEvl_5yWwhcH-dqpTakmYE2CPs2iDdP3_dq7t_KiHpYBa9SLy0_AOd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFty5jpCb10JtKR1hrUTRkeB_DlDiV1jwbNmwjdcEiQpBN4NbYJPDFBYnaadQC7q-tUgE10kK4rJpBlvVuejZ5q05h1bVnmDDgV7Omg61FIiKmlbLDtAW6P-h6wsj5HQkQQSIpZGDZYAcM71Q=="
+        },
+        {
+          "title": "uniba.sk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2Jx2Ajoex6qGT6LP3re6XFiFD1qpaNaFZ88oWMjWankvZcohVfNfLsgG5-Itc7jW9r8UAYXbHl5foMlvJNJ_WZJQfbq1BjicQYu8NrfreejYzZDY4JX4R5zpu1zAHmGiP9lXhWfaNkL-ySg=="
+        },
+        {
+          "title": "nursingcenter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7OGbOZ9e8QrWvcki4wGV0oX1lTBpSN9vX8HqRhX2L1g-8Rzx79OK2MaqUwIF0PhWkw79JkHpUJLpyG-IcQFJPhwPSszmmitAcc0HqqI3AUiV_jfc6t_5qXPriVCCB5mG5cxQhli2ICN70ORMucrhPUX60VVOkivfli48un4YmU2mD2F6TMXzSobv7Sz5N2aT5A0EHQFn9u45YG8mgp5WV"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Debridement trials for Tetanus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tetanus&intr=Surgical%20Debridement"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": null,
+      "effectiveness": 92,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2222,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 18,
+        "vsComparator": null
+      },
+      "name": "Surgical Debridement",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 99,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 30
+        },
+        {
+          "name": "Infection at surgical site",
+          "percentage": 5
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 2
+        },
+        {
+          "name": "Anesthesia risks",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (removal of bacterial source)",
+      "treatmentDuration": "Single procedure",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "mhmedical.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErDe7_GB2Z8zZlKQMaQ8ro98VhbsFyHEjbUwCfiizMSniSdVvrALL5AJbDzIo_0HxzqwzKoh38S2dl7pV0NoZ4bN-y3QnRuYgU_Zbi1KRq8-cB3VDc_etrZbC-wdj7KwcKPTzD7Xei2kQISC3zaRg5ppNsAERM02EyWw1ak692SriP23HIYb6F1-2xOA=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTMAiZjVtEOlpptskLjdXw_veAV3qX0ALaYJ0Ax2ZfCO_3lroQvTv_2XqagKHy-H-Rb0ZuL47u-GGDqXro0pwiNAh_O2OXCGN7iC8kAgJDYhlks7D-1ICyaGmnP9-CZPFSANJQ-6QqX8W3doHuHg4sDoY="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9I73LTTJ0MKjfWYStYlicvSoKTkCY0ZqAvVuBWz291iYmqVqt87-0Tzxr8jgG_bhQ_szH4fwe-V3JSXKtuMbKyoU4Tz8NSnIoP82VVGyuHAjp3m1kqosnyuCoMUy9wskRXslm1N-FHC9Z0cWVkiyQQw6j"
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQWvsJc3wFody2NQTx_QnDKQDvv9sOoUAMZlSyoeiVmhpejmuT5yCiEhj7_E4NSbfp8nHWFZbsPGpOBnbUZoA08jg1PQ9jwrQHXMBCcQPKt-h6KH-cO0YD3QaHVBYQI2bj6RmyCNgvGDoKQcZlhX1UMOMhegthqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8ut5uv_8TM78x4DmOdH3yrjDTn8b_-8z_22f9aNznQcFEZkx-NKWVebwaHUI_qX3IBMwoa0xwrEKADlbtL4zUVqbYiDeBrrOem0o7AxeqlzWWH-g47KSZ1jHCDwYfXRuDybYA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgjQUkVRIkQdD2Ooev1iwzjDrAJUOKcZLKULjWTGuSVf0TXe-8L-VkVJqSv3ba6XXWMnZ_tWJpCVakXrSKmA8CwqZrShs2qEyVfccw5Tm8MmVH0yPe-JZkoEIHsI9VudMKIsefAx0YUD2tEtTSRu5qKm5bai_T2p25NuS4bnSs09lKVnEysn0Vs6FsP0CKzh8F4dR9pMvvL832pSM4TPDHIzYfEXEABO0n7Tj-L1UogvHI1TVpPcqR7nO7PKoyO6nL_KFTy0Wi9-AgFeH3NaLz0hhp7ykd2Hjtd8bW3gA_oLh94zx7gCw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGptJayhODiyei73k55z1gr93u6OH5PFM7yFfw2ett1ABzxqFDRFsCA_7teVHqbux0pgxfNRcju4CusEEXXH8Dk_gnSi1xm1228KMv9-8bwXBo68ChQ62oMyZkrCaSN8ZTgNvsZ"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH12RCMr57Ea1dzajMP7-9W3_KATVPTNCJUxAgxK0Fj-m29QOkJd_xbZURHuU9fmfrDMv8D3H1rfgBs0NA1ffvrdtXn4JxW1eddyUMlN0JhYOnNS4kdACk9pCOrC9I_F10lffnnUAFJ6tat0wmvwB1JG3tSF6ftIVw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tetanus Immune Globulin (TIG) trials for Tetanus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tetanus&intr=Tetanus%20Immune%20Globulin%20(TIG)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "3000-6000 IU IM or IV, depending on severity and formulation",
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 1570
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2243,
+        "costPerResponder": 1847,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 15,
+        "vsComparator": null
+      },
+      "name": "Tetanus Immune Globulin (TIG)",
+      "nnh": 200,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.6 days",
+          "baseline": "14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Severe Muscle Spasms",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-4.8 days",
+          "baseline": "12 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Mechanical Ventilation",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-9.8 days",
+          "baseline": "28 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Length of Intensive Care Unit Stay",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "30% (in severe cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mortality Rate",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 85,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-10.5 days",
+          "baseline": "42 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Hospital Length of Stay",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "50% of severe cases",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Major Tetanus Complications",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "mRS score: 4/6 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Status at Hospital Discharge (Modified Rankin Scale)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Local pain/tenderness at injection site",
+          "percentage": 15
+        },
+        {
+          "name": "Fever",
+          "percentage": 5
+        },
+        {
+          "name": "Allergic reactions (rash, itching)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (neutralizes unbound toxin)",
+      "treatmentDuration": "Single dose (sometimes repeated)",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfzdxw-KvJ417ZXktdjqr3008IEpCgQ6thOqzS8Nt7J0UHIAq6kDI9OceCR-FnsxBchd54jIZNxzSHst330Xqol-5SMLgd6wQN_IlchRDQ5NK0HVIUzMDptk0B5hfBbpedxwGQrpHHnarh2lmq8963kVwy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTX5bxJdsChjXyCI5GuFcFcaxJY54JdZa5nCM0fwlJHC-DHtmUsq-c7sHI3_zo0eLN6DifXdjUmmx9HjfOgYen05-NnIChlYgSHSEPASCps7rb-Q8NYU8QTv8ByADVo16ildM="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnXTHXFXvVSmZRweltC_u3bLXCHjynkHUhHkRdxhI608eDAFPxxXlwjhorfsfjk3lbVmJBDzXw7t5c6nl6jKgUAXJIotpODKv4MTaiFFAUor_kWx8pEzQbGnIPtRHpb4cYDn8="
+        },
+        {
+          "title": "nursingcenter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6MBCx6p4Z1jR24QnW8e6R-S7eda6YSmkDJNgitFV5gYtktO_xGS0ZuKu91sVlTI3MMCI7u0j_Tvp5muzXu76qQQqmUtBSVNdJePuF8rTvbewjVB_mZx3OUv-XXDnRrFukjQ8OKnUdfoXt7C4nQwlxC5XdZJssmr9tSH99xahqD8ie3Hy9TFIQ3wHw236fuM848ynZzySG6YRo-5JgEyASFw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUnEdYWKNKuY1x-NGj7IevlwcVapqZHZ7vrKWK7NyS-P-CekyC_9hs5HIWhHorp9Wxr85BrbFDRAhXyr8rGO-so9IThjZe5iDo23WK39rlkO-T16pW92XDShNETXc9i5rSLCo7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Hze9LuazA8a0sSAPwr-IhYI1F5MsZEEW8GuPn3vycvXvcusS0scxBmcZBJSbw6ABzcLd6Iy7WoZIWiHoOQE5r3P7UdEuF56JF5_XJLaihFhWT5WHfR7iWBxqzd0RtRSsowg70XjyUldZysN2UP3PZnL4JvRMO0WjyE3ziJOW-WY8_M6q4L4uRCKp3XMRVJvtxHrru8V0Y9_5dyTtQDQKn66p4Nf0UdyrCa6iB89YrQrhmh3EudRa4FQKZKzvvU0T6z_n6EVZnH11YC9FFb1oSx911zWRpB5Ghm8NDJmazA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoH2HT_hOuxEl2des3hKSTd0GmvlItoof2mN0jMW8CnqQXPzC8OwKYtVWYcQTe40Gokxv_p8eJZXFpwJhuaqemFn1Md9XDEprLy3B9KZwE3S-Ai_EITxd9p1IUYMqQHay29fcmtgaCYnU_Js8="
+        },
+        {
+          "title": "isrctn.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEdEg_dEiWtMgFgK5Tu6JN6M8wtJv1JkfK8jg2zvcJa9OeKzZdV1IKwbsC81_om0qM8okweYilBeLWSA5cpPlJvqWDsOdf_l_gXhlMxebN0f2YGKWBPdvQ1hobTJ52YJk="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoS9swGx923YmIoireCCDCe9qiFk5yobEyOgpBODXZKVWCjAMSkfuxZcW2WItVk-9C5nC4QdMb3A_y7K-MCX63XOZ0wRY69FZ-5qpYBkZa59fgm5XYqI-mqaK3FTuPtXo0yO0b5wml3NeSeClBR06j2-YhxiY8yll8R_XZFdtGLpda6itM5jgT50p2-fNu-Gc1hSk4IyEpuQrR5fe1kzdtBQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metronidazole trials for Tetanus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tetanus&intr=Metronidazole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500mg IV every 6-8 hours or 500mg orally twice daily",
+      "effectiveness": 88,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 10,
+          "sideEffectManagement": 5,
+          "totalAnnual": 65
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 81,
+        "costPerResponder": 68,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 12,
+        "vsComparator": {
+          "comparatorName": "Penicillin G",
+          "costDifference": -10,
+          "dominates": true,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Metronidazole",
+      "nnh": 50,
+      "nnt": 5,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "25% (in patients receiving supportive care without optimal source control)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mortality Rate (severe tetanus)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.8 days",
+          "baseline": "18 days (in severe tetanus requiring ventilation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Mechanical Ventilation",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-2.4 days",
+          "baseline": "30 days (for moderate to severe tetanus)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "Score of 5/7 (severe tetanus at presentation, prior to full therapeutic effect)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tetanus Severity (Phillips Score)",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 percentage points",
+          "baseline": "20% (incidence in severe tetanus requiring ventilation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Tracheostomy",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-3 percentage points",
+          "baseline": "30% (in mechanically ventilated tetanus patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Ventilator-Associated Pneumonia (VAP)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-0.21 points",
+          "baseline": "mRS score of 3/6 (moderate disability in survivors of severe tetanus)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Outcome (Modified Rankin Scale at 3 months)",
+          "percentageChange": -7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Metallic taste",
+          "percentage": 5
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 days (to inhibit bacterial growth)",
+      "treatmentDuration": "7-14 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm3QwxeKjhlZvT699bZLVqJrqMW9DQRPLxKE73qvrslF5z7uu3cgj_axQT81iL2K58BDAe0-uPWRgS58kOeini_0k5sxUGUpG5pIJHPvpxb00vX4p6_AWwWqJ2W0oE7LjQei_qx5KSSjhq38PfwE0uCvz46HzfwvBlIJV_e3KD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4czfq-tZqWHEpm1o7_I6ioV3j08k_hGKm1kwLzGGB7y5DKAP10NS6FslzdTEO9eOxSr5C5_A1txZQ_XO0OWkRhi09qjSaDpWx0YF9pvnsAb6CzFirqGejLPD9ZGVlaNagzashAji9ASaS5Jc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm1FMzosiwtguDYipQEXVDNktDT8Ir_33Uxq51ry46i7EC_xK6oI4cntxqgWLiFHEItKe64HJt7oktZ-eyB8CvH6QZTOtgmLWzshT8ukNhQtY8GZp-VTz31pRmovQ_rBwEI-IN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJBt7k3bepDmfibq_n3ERvzdnUj0stD8Cju8bXXRMbkTyvy6gUI4AcRxjn-_UwSaPxcwZBRWsZgQyF411HRx8JiWMftMHSBiqfk8e-PBBAaspYElMsgzyML1cuTkeLV6cr1xU_cYnO0NaODpjavanMv7XobxrH6yLpVSc_UJyP7tJZVC8lRD-jXg=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFuofeY5uQupW0QSLUfsIn7oOxrFq_tWthkXz-qFslxZv3F_uI7Tcitutj8EWVdv7tZuz4zvvXHzwfvmPv5WiC03WDBaqZumZ7igQIZjNe3nfa9MKZqoZSGJ4RV592PhAEgAGzqurUsKFna2C-slFuXS2q2tKsphabqfydTuJjjy-XDPao3sb7ncNSDa7dKejUFOKw7Qisl5SDHLx9cqsKLqCoOADkvDBCYNnnkQJgcqTMlriGk-ttFGrOrvV5nM_R"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-ZdL7UI8VN0mOOVJGKrdKYmAf0XR2JRnqYHW9NTVK_a9a1XnizJf9CxQLe_bsx_8mJSokTCjng6nrbhBXMLg7hIb3l2lBuDDw96zee6A55HAKtowY--ltMoX5swihT1ulZ70nBmYJUqqjl_A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKIogo1mrPPomDTEYFMkq69w_C1Zf2u6c_B0bvgxSOnhXaYO5XoCMGimDH1tGTTrmg0GPqfNwCeJxBh7wEsaGMpLtYwRTu4DJkBRiZiqiNdT-Ggdy8I9i19rOfcBV8cjefzaw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq4cSJtt37bl14nKVHJUpgfFBx65FOtstrc6-WsQBNnT4AGIkOZ_EzgD-KDbrsDw5uvu0zzR3K8j7rHhxoooujIhBn9CbftvQQy6ieW6xFgQ-78hZ3YQALwQqfqlvRKdN58a0GmQuyk_DaIYg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Benzodiazepines (e.g., Diazepam, Midazolam) trials for Tetanus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tetanus&intr=Benzodiazepines%20(e.g.%2C%20Diazepam%2C%20Midazolam)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Variable, titrated to effect; e.g., Diazepam 5-20mg IV every 2-4 hours or continuous infusion",
+      "effectiveness": 85,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 5300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 5889,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Benzodiazepines (e.g., Diazepam, Midazolam)",
+      "nnh": 5,
+      "nnt": 2,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Sedation",
+          "percentage": 40
+        },
+        {
+          "name": "Respiratory depression",
+          "percentage": 20
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 10
+        },
+        {
+          "name": "Dependence (with prolonged use)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate (IV administration)",
+      "treatmentDuration": "Days to weeks (titrated to symptoms)",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_KPDmhyLjVmxd2KuocqaMnOjLzp3y-UPjcPv0zrVLzICe9i2K_PMjFfML1Fz8rK-lXxqlzqXbPwZR6sPziYA37sEslGi36RJMDEd0Er3hrTc6_A7oiW8ZitlERA7fr_vlz5_J"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxvP1-PoljbFQcoqKG0_G6hDpLrEFGizsMgsYtemca8etXtMjTXly9dklvOPmXINSMol93t4hzfkxe9sNszETDDGbTGj1imqyIkffnc4iXJnpLkKK93mi0DxG3K7164zp9IZEIzqBgyvWLo6tu1MrajzB6iY1Jhg7Vy88G86Ve23lhWPCpEOrT2avANUbdGUtYsuClYSM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgdXnNCL0_cBcn0cP6hCN-QOhzaOGmcOwKCqctFuwTRsE5v9WEmUjO1l_dRDmhlsWdQXF8_IrzpovOR5XnTo_AIkmPcl-lf4iEu9Qb9X972bB9CtEb58R3LWpxlmX9HJA8HfjzVsNVSpejZylR42VF4xQAFgA8uXKFzOpMYNkbHyeMce1b_cF7HKKpano0hCSkZjDL_evLd_VbDPUcdMQgW8v945n9QzzCx0oIHrqYQ5x0c6C0hxqCIVLGnVUWseVA8I0QZ4vCHg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIRSNc_iW8-V1gpooc1625PBlUkEMgi2RfJ78J2E6HD7DiDI_ADaNgXMPnbldYVZsQF5XjGoYibPqcRRlYaWQX6iz_HkheGTdmOaJKIeN2mESy1KpbO-tEuFKaZ1qqp0_Fl6wf"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq25mpLb1H-OcAws_vZ1QW7nri79PUCA9JldQANTVNr7qqJXiVYru5XEnGPKNN9VOyuIWeB19mfwDAh08gIHpovaDRpdbvUhbzJTFNLTy8DBnSkfDjtMx7wfJJEVR8YETtyd9IVuESxs2_7cit24naGNRTiSgnT6EGUtVZVfU41-CjGGKZ3Ipa3_nualD_enRO3JkuXIxTf26Qayw8OH2f3k6m70Is315jDjpGeIdpUVsIZZXTK8Tv9YbJsaR0qV6TmixV6TWDcXjJuw=="
+        },
+        {
+          "title": "ejournals.ph",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3TYpXM7ecB1Y_qn9p4Iw0_QC_UBBKZ5d0_zfkzgxkiGxmjSVNUx4zqNmS-N8d2HsDucMfqPY6X__nlXF-t2hpI0BKQJe6iCGmSoN5bWlHpkRWP19VHlkgbk87DWM1vwk2b78="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLs55pC-m-euEXu4vAG-o6hfiS1PWv3ue5bqOO48S5lvS974qQyWxAMAYCneYk9Vasz_3sN1eMPKoMa5oDj7XeewnCbTf4a6WxZV4Kd4-4TKlQl-wSn1ZTD8NeW-r5P3Ef2PT5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOGqlRpmYy-jYcYfzC4R69dWKpx3Y1QV15KgnDQDDHQbSl8KIFxywFyAX2uAUaXtCeVNbob64KkJFulr-LgJjRm-lr1Hj-fNgR_3gYKd6UHv-F9Z3WhTPA9x8ieXx0uHVnDi4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbhFUdUFv8mM6XgkdHSeW1HH6Xw6vqDkYnYwF1j3aigGEsuTbMtDylVoKqjnMnIPLWm99PyjGiHhTl_9pdBCuaqnpxcNarToGsYbMR8KGyaMBkA6zMis6OdFOdJPLlR0LuKJEC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJYWv8LnE8BFaqLZbD5Uxz9P2HPl1XePggO7KhLCbMHhmC-NT142jbKOFhBDiOZ1BtJSofYeaQ8Mta4NgoZ1rJbT7Ecw4ijks8LcLhdsD-JXCztbTVw7cQ0aFiILS1KbCrN8An-G-Vxt6Br1c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Magnesium Sulfate trials for Tetanus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Tetanus&intr=Magnesium%20Sulfate"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Loading dose (e.g., 4-5g IV) followed by continuous infusion (e.g., 2g/hour), titrated to effect and serum levels",
+      "effectiveness": 80,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 5330
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 7107,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": null
+      },
+      "name": "Magnesium Sulfate",
+      "nnh": 10,
+      "nnt": 8,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 25
+        },
+        {
+          "name": "Respiratory depression",
+          "percentage": 15
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 10
+        },
+        {
+          "name": "Flushing",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Minutes to hours (after initiation of infusion)",
+      "treatmentDuration": "Days to weeks (continuous infusion)",
+      "trials": 20
+    }
+  ]
+}

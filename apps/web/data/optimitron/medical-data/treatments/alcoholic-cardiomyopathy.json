@@ -1,0 +1,737 @@
+{
+  "conditionName": "Alcoholic cardiomyopathy",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:05:31.532Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "oatext.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlE4y3DKcFEmTtFpcLTidpfOQZRw7UknCI2QVjdqk54SHMSHgmNpAyn1DI0uaKfA5LDmlOOgLFK5OyrS0khZ3DCb94po_sffpGDuXxKVlUFVs3AjVcTzo8Zj6LdSscsFzAWyF7dwK58qAtBXax6vJgkrN4c2vbsW3PFrimRGi4KeniTpbxcPt3xGalSr4OSZ_ZKRHRHBfb3UexD-Lrfxw5BRg5cTI8AAEdcqykta-XsNVRtAuIANadyVg2IKjo9YCtE4Bv5BWQez0cJeMVTKTHGSVa45N7cpmM"
+        },
+        {
+          "title": "oatext.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0WHgKzsBjZcgyHZP_s2V3DK5TK6nbTgV1HNsHsrkyynM7D28Tn13u9TObr4IlfKf6N1rxu3Cd58JR6b2tuPk2vZKG_2L1MehhPd12hfTpMHuRgSa_83rLY6Ocy9jhKWq6FQk="
+        },
+        {
+          "title": "escardio.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFin2rdNso5a1Uu9K8UsU-mzUKabJpU79bomQr8DlhNa6piMMV26x2-QuzyTX_raLrDXttMvPXloDgeAIjEKNK1eBQ8qely3eytVB6nA_5XZDR7aGdou7Xh5QM2KiviOzxuiqM="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6tF-tER7r8oQo3EkymuUn9mhfdrU8vpnE45JH_Hgisi6K0ibPmEkS0IA2ZdZQHtue01vqAcIkByRkLy-KZ9XAxWasWyG-J8tz-v82DwjfeaaiBLko148TMIPi5fHBzv3ZR1p61eOtDE5p9GEy9Bhu_ub9SDLgEB2Vja_XRARRgo3lrArgdyKVoA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhNy_P7mLwkQhVYb6JYB7KAZozsKePra2ZjtG1GuLBkMDjQXCTNUuQHd0X6ygRlYgPP3BaVH19_NHLL8sWNkFBcFhmVMfX4WhJEToVWFSiqqKIj1MMgqpWM3gY4kUD_GtaEKaemKrLcU5pLgsA"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQu9gukSKWb9tVZZxdYadYKjpFxiXQVy077eEPYs0CSNmSWe_utuWshUGk3yiOhNHfZBIdhMSD-vGKT2ca8dCBbHTJH4ttVjszBOAQotdf1ucv9yl14SzausabIbuchzyh-1rj"
+        },
+        {
+          "title": "ClinicalTrials.gov: Alcohol Abstinence trials for Alcoholic cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcoholic%20cardiomyopathy&intr=Alcohol%20Abstinence"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "complete cessation",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 10000,
+        "costPerResponder": 4167,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Alcohol Abstinence",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 100,
+      "sideEffects": [
+        {
+          "name": "Alcohol withdrawal syndrome",
+          "percentage": 50
+        },
+        {
+          "name": "Delirium tremens",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhVPRRUv9IBWBjnGFShuTAX7zIAwuEBkthEh5LUIy3Kz3gYf1sdO1yf0-Mk9RXJe0DI7z7XHfUGEa9VRl_tKG1oWUPMCiZZQ9IS8Hi7i1z6YQalInXBqsE7Sm4FiX2Yxo_u-8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFalkVGsbJxfUYRfv4sYThgSXs0lfKXr1cZzh-1xtUoEnlxtTfFD8mHvQ-jJDoRKlwDpyc_Qo5iGbB9c3q7EpzteynuPJoDpl7PydpCCtaWQYySgkBK-pTml-yytK7kBrICU1c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjYII6Cc9n7WLdeo9Qq4oysyCtW1sAf-_DOWLgLkXPdwoseWWCml5wBjy7O-uIOe0aR92MBOMJnRGKv2TG3lOZgfOv14iUCBiZ4EUdq7bTX7G6-XpFc1DqjHRJJaHn_hj_sBUlj2UMuvN4eH8="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVJmEYO7FtYEblTIEcTc6BTSM7KbepW7MiOqvhV2bl1IKwjzt19WRXCT4xx-ou8vjTAWBtrme69EiP_ssfp4Wobl_DpkG7zjQ7IeUbS4_kUoSFp7FOEuP8COKreOu4biQFGrto5ROTXiuxCQxfPnoHP4sIqzy2UmR_l2oxXdc7wXKvVF2fYnx2Eqo4Wzh-H6uPaIHkBcuwcWZ-QQ2XjxIDHMa7Wyra5g=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERrsx3Wewmubu_o4oMRiXa8Xbbiaq-FMd1NT8juG2I6DMMoDFFfAquOJDMoWETOLqAAj5cOdwowQ7VU4oXgrnXdoEeqtGhOL-ELazLl26RsqpEh0Px6e1lJbEFsrKehYN_tudo1w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESkC6N7j4mgQ0gYN4PN4d8M3X18GVV6UGrs6luiyMKn9l3iDqNHx106TFBUr0DjHFdG6jhP6uwYz3QkXjE4D8VNkGkgDczNVGAcIEppCy6rTyRETOIadYz8qG7LNLj7cHmbj556zwBimkxQ2g="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMppmCB8keNsui7vTqxzPw58vpX_UUqwFK2WPgqaLD4D4YQzSOjirM3y6N_sURcffiR1OjKXJmvbCw3JxbKViPB7cnWt1UnvAiSoftbyRXAsNKtLgt-6yccc9gJgkQnQq_DmTPH5-NywoNB-shTSpj66jjZNplyQfD2pXmTMFSPP-xerisrNBXmFOcWo8zMT02YFJ6kWc8AFZcKYnx7z0XNRHqOhdOGtVQ-t9hrykuZzrBuyFJeg8PNWMafBm1sFZE7GRDNUjhV8iOraN6AKjG22mJujgA3xCEHPdPlm5KHUm6JPYZsC37"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeITTc7RoN1sTBmZBwiMq2m_B3gkbO_eDlhyAGZMl2MWbumFWzt4i3Y1y3wpZE2mpz4ChvoL7Qw44xTiKBkaJ-uNSh2Zo-_nvIi6wYNPgzMBGZJcfXRToqFFXBvlTWsfWZcxAKmNvKictrZDuqIh9XcUW0PlGsbfaY4GFTn26dmo6mDHXtSTELLYXLSCrjZdW2pM0_PD6sJeG2oZphnGCNa6IRlKpk9Uyqqw19r1ODQeATQohjIsL8HPBc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dapagliflozin trials for Alcoholic cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcoholic%20cardiomyopathy&intr=Dapagliflozin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 5900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 7867,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": {
+          "comparatorName": "Placebo + Standard Care",
+          "costDifference": 5900,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Dapagliflozin",
+      "nnh": 15,
+      "nnt": 25,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Genital mycotic infections",
+          "percentage": 8
+        },
+        {
+          "name": "Urinary tract infections",
+          "percentage": 4
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 3
+        },
+        {
+          "name": "Diabetic ketoacidosis (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3YaLK08eX8xLgNg14zqpvrEO9Nq6nMU7GDuB54-EZBBYXAVmmdcoiEUhLhVVEhMUP145fH5HPjxEDLp2_fTL6aibpzUG3uiNXaw9CUmt5yQ0qqBC9pG_qzXB3ZdHw747l0Ayy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVpJ_9ke9ksErL13A9znObXebUbA0fi-oYQ2cyR04QWcy7UxhyvGqOkP53aQlglZtC3KiqNFBHkG5aDc6Nsoq-L27Vr2AkgCcOS6AcjXLOvfqC7MDr-WI3QlIG9hHF7EOC-0O8cPdKbGufde0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVg9kI7bRcZjGBGUJywPbX3rpgY_15AjWx8LugjFsi1OTj4C31EReQ7_gTrRR2or953rIHF0miY2DDZynp3VIvIZxTUdx16Oy-Eqwq6g3eeM0ZJjt9xOi82w0fmpTpvxq_TmH6AKQbw2LDF95YlrBmrLK4U9YsM0OwnbNR7-ctkU9Uvq4ASAlFUYnvACwOJK91RDvZaAoPb96gIoRIkv8yeQtRgwSTaYF6pidvQuxGo2BOBEFpOubO4_S_gcw3p01x_A5ivYrWM-laBz9Jt0RFIhU0176-3dL9qYFyZ3zk1D3rsA=="
+        },
+        {
+          "title": "juniperpublishers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDfnzKuzxz9lBTc53IYtgVDavPJpWHmxjqNuuJHa8lFGz8Z2qgKQ8sD8fzNbKUHxiEei2VICjVI1n7OZvE-V12w7UjyzZUZ8bHaoyhBCubL2gpsf8Xko-i8KPaysJC3aXEUIoXZ70b5t5xdktA4XBZnJWPFw4yCQ=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPePmNQqJGcPtCDI8zlUiCpTJ25-NivNbqr9-6DhrOecNCxCVljxQuHnvD9DMZIwSKcIQjMvVP3KL0XYgCYxr1gyyFU20Z6m4uWbmornu1WA6zqRn3hiVv_lgGWYJbKrJQCVAHOtlDxn3rQdeG3TrvwsEPkw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Carvedilol trials for Alcoholic cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcoholic%20cardiomyopathy&intr=Carvedilol"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "3.125mg BID, titrated up to 25-50mg BID",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 430
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 662,
+        "icer": 20000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 40,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 80,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 650,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 430,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Carvedilol",
+      "nnh": 30,
+      "nnt": 10,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 5
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "8-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "oatext.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWugpWV1GAjNia875grS7b7oOlIwll_Fsrt_bjyoC8_GFWRxl3h4C8yEk3eZh-4O3QdZV5SgN27_xofNdNjbXKCcYXAdqA51IQ4jaJEo_xAm30NTvOIGkWaOwVck1PLw0xbXUToaY5amBvOr_oF72YiR6bfIFZJMhVTjGvuc5iZ6PHWchDInG6CUPVdPijS345WFDBKbDYvMQv70fxx-3LKPNJDFNe1quR7Ce8r7OMKPBGHaEZdMnOyuc0iYZJllw5NSKcnXqAJRff7p3ikbuipdGfu6bRzjg5"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCLjiXDioBsXwQ4Ta0e9zRuIE5nPaeGh3mz1s-If2bt0ij--LuViqDbCEa_oX61x3ss6ZDniDJXdgT1DaVFxCjJze2bTkyj-o1NpGQeHTXEP21HsjgP7Q2mVZ2lM90Ge7NRkIQyPpOL-92p4PYSdmLXFACgZZOYtA="
+        },
+        {
+          "title": "oatext.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLahCIrBI8R0SRDhUJfrqQj8Z2FFIDJ5BdRm4_oVA8hxQmMDniy9Xqavb-JqeRryvc4OBELZtoGDnD7dVe5SGY72nqx0P2fsypVir-YkKYxdlzEwo_zxqCNmkhVAky-YTWP3o="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMvGzqECViQFxJVeQOiZclOHwcRbgGE6B20pgdh4GSEVo-NB_anzhgi08jSDJs_Q-FcP6OIf0tTp8SxdTnc3OXCLlQCLubHbboXG0D-Y67z-OsYgadSI8OB2a5x_HsVeHFUFE1AbdBEGRbJ8FldEysqcMGbNByi38="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSYbDIx-MQOz6O3kETGiCmE6QfxeYPPoobCR7z2wXbMGfKt0g5fkvm27Ucqy308L9XLye32voMRPUyEbMrwoMvFGRgQncWGydw-ZOLFlTms2kz-POZArAxLJEIZx0jEwRADaOFiPEYQRZLDzaNSfrCZLq1dkMMB6FJ31tLsWCQjEpUp6-atzw2svJQNWY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_XrCQekLrWvmryoqF0_7-Erij_DcJHdP4YnJoBKcDFAgNOIKYCZtWVM211V_hT3JiQXHCNvHfCH1ePsUstIa17nd6By_R3XOIME-qJC4kIo-tkJxLpGhAHdmAec1KswUTWJpR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0lieivb9FtqwMs8KNSQhBu8qELmYaqm0DPfsfjfrzbptLfoWtxJTj9wnlD2OX5dFvgPLF9FRZ3wpQvidmErx8VBXqstp2uEnT75mQDfcfG8N2TqeHSEO4vLf51qvAYuVfUwRp8_rYRaYTMUard3HzfXhdvSqhQJXg6thwu1r-fZ3zp4d2YFODI8Qxrxz_w-YtN5aEAEPnl8MFpnjAq1apL8gjcN6BQg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERPwiTeFzFXQBpf0mVwDgbq3z0cCCPl5og91WbzvCSemmQtosM3IEcEFe8tFp0o076m62C0-O42DVSsdmD7nQo15YuEvUSxfI56GPXZxmvo2Lj-UfxFam_VBEsjIo-HkSDC6UJxihlIDagg7o="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsn2VyV6A1F32wojHIApY2y2zAu7Oe9uYQO_voh_3QQgWfMNeaWo4X-Xs4S8gxh5zmtQSC5RSKJsDrQdfe7dWYsfwy8RYYYMlsJjLRUDuYxsoUy5gchk2OS-xU8deCmk8aq-c1SLPkOQVVTT4BSPG4Hgk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzt9R8CQeuGfYVFu3oj9nPa5xujOpHMw__AosF71YmkF0H4d_Dc2QY6OF8XlRVG73yea8rap4Nc3xjxD4Y8Suo4t0OvJKlTlyz2NpLDK95RzHDB3iYk87AiE2y_BPh6ABlC-7C"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lisinopril trials for Alcoholic cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcoholic%20cardiomyopathy&intr=Lisinopril"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2.5-5mg daily, titrated to 20-40mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80,
+          "monitoringCost": 350,
+          "sideEffectManagement": 50,
+          "totalAnnual": 480
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 738,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 40,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 80,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 650,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 480,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Lisinopril",
+      "nnh": 50,
+      "nnt": 12,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 12
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 5
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 3
+        },
+        {
+          "name": "Angioedema",
+          "percentage": 0.3
+        }
+      ],
+      "timeToEffect": "8-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "iosrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEykjPmhG3Y-Ts0wPeIbqQTbznCA6mwjo28z7sMneII8KEB7wiUHVeAIG8x0IdUEUl8Eq6l-VXxFA3zrvGJKlCIB6GJZUTb_y8Wcd6gv8J099SVxNpVU9M-BlmQuMYIS6K4hQ92yuUvVwVcgFtyRewXnpBlETMCI8KEgZDbAh6EWPEJ5iW6Ih0-AGcxVw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRqHUjqM3UVeJ_BcwsIA4pMrhbj3GLq9KBJ2A5Tj257br76hYqPjjmzhg5ZsZvBXcn89dFQO7NNnVssx9HGhjvG4FxzxrFsUM90iVo7Iof9v1t-rSOOtnUxbTTORh4sG2I8ym_TyTrlA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiaBE2N8fE8m7IO1hxGogcfV8WVccAyYPezsBNwjaFPQ17FvyrHeJh-59Qg54N2AYPLpJzKrwr6SJx6pL1Njh_MbpBjEAeXvzuByO1j4ZBgQEvqpfaF7j_-LlU5b0gDvA201r9nxdssIrZD9k="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2m4cSyfQWEbbcWIn7_7EqAeS9BMHKkdZZdTXoo1y7xdj5HvEp8b14x1Xaq-RxfQV4K6qblPPDLsadEWzRZSafowjJAKF3qyKO9dxT-qBqS7iXLUDGp1OvfprCpJ5bHkDxDWkRweMx-Hfp8h4gJtY1GwHtZTr2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl3V5yCCJR1tjN_2ohw4a_8OgPK9n6OlMBVpjQ1TCGryK3T6fJGd7TF21ZPD1o9IdJH_EXbfRO1pn-g28XTjEc3kiTeQ8s808kn1M-BLaZR6niB58b8gwotpk04xsFbH8tf1nmQtTBZw7v2Ls="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhJdy2BRkrCxU2bKRPgKG_jjxZfbhn2gbm3HpKpDiGF4O4Fupv6TJgUlVg8Af0eS8VYSJBO8y2Y5kk-qb8VuXbY_3pfVuXH-IDJIS1nQf9cWWtv24VaDsqCzhquifknbI-J69o"
+        },
+        {
+          "title": "gpnotebook.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEtOR783n-OpdrUCyk8HZX0ayOE3_vsHfVs7jVNRw66zGymW9uVc7tExGbXEtZa6KbmxJOPd5H2WeRgKbQ1VywANY0efDxuJ7kheaiyjdt2cm5hNS7_S-iRNnKpy6vaCtmg1k19P7S8Wwhyg9acwXZSiOuq88g5GDxTNQDVG74NfPhcLqrqq9VWgHpb89SHIXcFUbq_a2A-2wXZeUakQ=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKelQyYBCWr9C8hQOr0IEdGD2RqQiUz4z3nB2CTDe8PkkP8S7CzbpCSwQYActp-gHPKAKCrekQ_f5BCB7mPTfFRfU8eyQF_kZHauphxrW9QNVlDQKoPtz23rHyJiefbYTxINSQvjCYBTIj2x07qyHzP6lOqv1dKFILPCPR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIz1cR6fxoNsGRX1Okz09zdzdO0mCO0KI20GopbEA59F-UZWntZrdpqvarzI_K1AoS2CjW5on0Ke0NKJBdss5FevPM-kTxaPlhCjYJI4WfjJYuqtV1D0exhR_i3U5rKp0To2v1"
+        },
+        {
+          "title": "telepsychhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoGonhrjfApTkzZE3A47MEWzd2i6uyQhFYFqtM_-3q8t0e616fMG9vfzbCob-b5DrEOqpdQRYO6TU8EkZyc9xicR7R1JxOyR_s1MfHg5QHaFxYG36eWnaMjLPPw7OnKi3cLOzt9Zj6jDvttqtdjEkNTPBmKyHewzfVKrjhZRmgpdCkg8q-ELx1y-53qqVJ-k94Wf_NEqX-ZvWWhtWZmd0hoYK1Dly_dxZPjF6HujshbJ0="
+        },
+        {
+          "title": "everydayhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ4pMcavitGfGIH5aq1XLnChjaPaza7o3BzJf2XOfNgPTkVm9Ubl8uuvpV5tl-S376LteJdpH68waE6T5BO_DYt520KmxDEuRq4wzZyUxqaA8lLiNslXtRz54ifDTTc6UyXVs4HFV4ggMtNznFvVDlGQMHIHge9qgd2fnaM1fVD8KIZ8sw7rgM5JbOHD9OKHs-XON1hXRfZ-Y7BwOi3MOp3A_qGQ=="
+        },
+        {
+          "title": "psypost.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFes4E9nSe7ZgLno5M2KgCbEQt7on8XSexf8BCNTH_hLL2BzVVCXgUXD1JXQogaUTEMUpiBTpLXiEwxb7vV_o_GEcwAlyj9Hr9M86SM6DzLOapNrdsNB5gG-GhYLzzoXRYRJT5kXSb41ad3O9E_bRqcKdZXZ4lgDkZYXwixlCJ_B0kzS6YdITwOWxI4OZscpDxd3C_j80nPx4Wdx3Jow2hbxBvTIHCVi0M="
+        },
+        {
+          "title": "neurosciencenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwmDXETnDcFFq35ZoGRVkPiiZ5WEFJ2eTZmEhEQUmodUL6kOcGg-B8P8sYQnSXgsDdP5D0R2pt8PFgGsSyjrR0SOBKezQmjnJ5t30m-k4I7Qn1ceMHGfoddR7ZgrdqWDCq3whHi--iRAmQNQ5h6lp0D2E2"
+        },
+        {
+          "title": "labroots.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMOTjKa8HTD71LrL-GkFkeQ0K1sedgLhdcqQTeUSNXi4k_4KpADjmZxZnIqYDpaOsIKTSstyEhdWGcV8u0EhBPcKywroPSlSRAYtZ9hXgLlsHp_tJNwFDWKacH4nfrfnJkt16i6c0b4YYk6mW8rN3NO9eA8FOhmJFqYeNtQIqBugdYOoFLBiLhfnj1mNazfO6EfiGp-qk1fDHaqXq6lPLJE8oSgA53bRs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Spironolactone trials for Alcoholic cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcoholic%20cardiomyopathy&intr=Spironolactone"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "12.5-25mg daily, titrated to 50mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 580
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1055,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 580,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Spironolactone",
+      "nnh": 15,
+      "nnt": 20,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 percentage points",
+          "baseline": "35%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 7.14
+        },
+        {
+          "absoluteChange": "-625 pg/mL",
+          "baseline": "2500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NT-proBNP",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "KCCQ-OS score: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Kansas City Cardiomyopathy Questionnaire (KCCQ) Overall Summary Score",
+          "percentageChange": 15.56
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-12.6 mL",
+          "baseline": "180 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular End-Diastolic Volume (LVEDV)",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-6.5 mmHg",
+          "baseline": "130 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperkalemia",
+          "percentage": 12
+        },
+        {
+          "name": "Gynecomastia",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOhVPTuEQ-brqxN6bs8mKRUZoP9PN5QcxxYbFuVDGmpstMSohETIbob60i8W62sdADPIVXgfnmcRbNpbq2xkUfd285j5WIay6jJB9Cy2edz5QyGJappcG7dn9NDFTABqTwMQAuZf3MikG39ZRY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgfyomWhxQUfxCpo126x1AxdS4niAfFxDXvI46oyk6U_hQTGvdvZeH4_08WRypVAd8XVrR0Qq20epPiUhXs2nE36hPFylfCfPZNDceuEAGdg3dSi8_dWSKyWC1IAp0ll0TIvYsWn58Yg=="
+        },
+        {
+          "title": "escardio.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4gGEk42wqHd4plWlzdgbte65h-3MZZsb1FELkFfYpfgWilpkqoI8GUmg2Bu9nTRvhcPymiN25u3b-B8aiA0bxtmGLmpRcNUqLI6vzI_P67akYaXqTOsXwr9fiUmmPgTsDpNuZ"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbLUZGj1NgDY7TsquvoTabgfg29LYFRpeWIzdPashmf8c6sPwQsrUx4IHRNjDZ5KWHlazKLtg03n3-skqhdsR92T1auZU9R8nC1vv_ul6_0MOH0R9gtX_YiklCH1ZZCrtaFGQwE1h7YiLqooeDQPtzbw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiYUPsHxkz4MYMfQlrjmkKSzWfkK-KaHP5JjODxpcWIDjP86psS5f_dPcnhG_xoGSZcSaXe6Tf3uHdU2T9hEc_DUJPaYNWUsCtRBSCABqOjb1_TslXXOzSXqOg4Zg3e8Lo_5zm"
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHg68x4e25D9ywcfs5jP5_m0pGPg12lsr4L0pAaM1qiqIqw-JC2ZH_2VA1MN4uWAXOUffk8grgr0Tmr66nf1l0qoArRaeOVvFq1H-AEAAjGsaubEqdZ2kYN6K2lLIxF-Qt9HWpW4NMqum2QwaDHqkzQvLzEupttxlc30r0JFIMXtsLxOULfieL4TQRBYGnT5KLHXX9xXnk="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkKeAWlsoNm7xOOTlriJO5PGJsOmkykmCg_4B9_2m2anJdVE64VjeeFXi98hYfU2UOnlVNVVkpMi-OAHeomWYjFDYAcpS6lY3tq2to_5MlDqLDEFCCLjjj3d5U4dD_kD31P3uMpyBUtFWeJrNzHrYe8MJf6tUJYF0NsqoOHyne5QwNNSfANd_Z9lyP0EjMrIr7rZ5QLXFfYHMx0G_AeYwgjvB_b-GACSybhR8ltwrkNXYhlkUpSSgMBG_kxhv6RqnR4Z-SeQ25ScU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5Cnn1oAJm33uxpBfNxkM-26RuHiwWnBs8ovMOP8uGBD8VqtsVZE6ngJ3IisOYTRdOnAHy91r3XMXGzcRwK4VlJQ6NbBiE4EaPiz_sPVsVy8Z57Si3952NjcgzTvXzdorYGmNQ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7FhEPf-4d-D0U7Pk463brav-aPbkc1J3CW1G1s8ndFi0JJtUcBln-lYbyXjTxk8TZP9vCG5F1dnJ9drenHJxrAETR9B9hMNSFu628wW3xQE5FH_ltokicFI3vlDpX2tDJLzMlee4IlxirNxGn7by_mt-AVrj1y9FtGWcp14SdFqIba84dPadMhtgwrl6UDw5u-L0koJOl_PRu34gkFmWmtiKqnXDSBw_PcA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7n-C2L0V0HYJ0mS6dTjbA8u6AWDI3UeG9tcb3atJFduNBsVrIsyFwIMn5A_uU_w0NEMxRqvE95XANBWmF1OuXBYer2GriMTmL9UPmNISjIqYGKJDLZnerH9XfxJYnM8jPnp9jqR8_DUEzj_aY8YX5B5vpTDrbKadgIy5KfbMxdaljWdgdXCAujQf21kuhQd809fsDc9xpD15ykb9-Qhzz_ORQmdNDm3F8Q7JZBR7MP7I5BcXyY_0eHjRqVxPr4vChv6ge_URzFkhFo1gTS8N8BFiFK_BA5XZHikmgHi5I6xVyQC1fAxUbB12vwq7S8xhZqdmeJ34t-iO7m9CaA0wltS1frSwPsy13Ce5ScODFP9sCcwYG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs5TBCR5nNVIHhv5gfWG3_EIi2r2tXMQewd52bAvwZEnWXxHo-jaznO9sfyQuiRptY3DAtC7_hbtpg-ifxVl-3NWssw7A7k1JZrO-wPKc5OMhjsYTnoW1YZP6M2iJnrYBmXavmwkM2grFFhho="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuLxo997fSWpxfm6OjJR5ci4ppxbECJA8Ddr9UtMAaOjfaupiG1W23WyMKzm3x-inAY-0BBauVdrP1F1TubTdrBF_SCr8qHFGZFHgVWX03JkV4pCFLoQbm4hMxlsT2-b66qzAYGMnhZ0x38seyfhBEhgrtRlQBPhLUM4OYjvWyklijiLGbovituuZm1GW31R4hWWdJ3HM10nKDIX2fT_-cpEIMC1wmB7luWs28LeIcH126GrI6CKjQDQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPJ1ieLzfoBqnz368_Im-naVsB2yGwXvGZNcGzOJWHJ4--C5vj56DSXnqt-_qGc4t-YP3iwVkKJ-AcG6mXJUdncE-033LQb1dvkMHJXv-hFcKHTmaxITRs35AxAWUwm8D26hCF_Lp0tp1_V9g1lgQ1Fqxmav9j5ivXpGectET05VcTxByoTuNl9MU-WxFXLJgLAQx7t9cQOoXF_2AAdQRSS_VxGGycUxytaUmWy_BNsSIZP88D11OI0UnM7ikbGWPiQtGRKXvWgd73B6mqDQ2Dj9nKOLg="
+        },
+        {
+          "title": "drugs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhCcCl5vhaL11fi0asaVrxc760Oq94ASVCnoirFmuhPLCefMaQ6RuobyzSrD6HAFSWnjjJLD8SLt-WABWe99s4VWFmqO6BmGIpq3C6fecTybbmcpPv1WlmJWiYjzjj4rpNDMrAjria4raNFAxouzKsyOA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Furosemide trials for Alcoholic cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Alcoholic%20cardiomyopathy&intr=Furosemide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20-80mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 529,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 450,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Furosemide",
+      "nnh": 8,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Electrolyte imbalance (hypokalemia, hyponatremia)",
+          "percentage": 25
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 10
+        },
+        {
+          "name": "Renal dysfunction",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "immediate (hours)",
+      "treatmentDuration": "as needed/lifetime",
+      "trials": 100
+    }
+  ]
+}

@@ -1,0 +1,1212 @@
+{
+  "conditionName": "Multiple sclerosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:54:51.063Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "becarispublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe8QwkLcnmProd2btO6SkOZGJPh0aH5zpuZIxnHas9xXa4AiAbmUJzmdvHfkYN1I5TNAsaMkHo3-dSK_tphHVf5FCegeT2ih7XhV0IHWMtKiFdoZCBTTwdhTQ-iOlw2anyqA6PNMGybR0nBVucyaytpCo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfRFn1iluCPOZRnnWVpSOnMmNKEbzlzy6DYtMzVD9p5OF8SRM3zuRB5GdHgt9LbmhzzDgh0qhNDlkP5pvA0Ws2hVs9yh1q7pEexn8ocIM1lePhlgfAWvOk_YJ9-197firM6_9U7FnVkhWil_8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMGAeva6ft6B2Hdtrqgj_cQGcTpx-cdHFlq5B36LIgkzSWcAMloTg5MAms_-JSMa1bzgYfyVItqr8KnggJTCcstiv6Z3X-sfYJAbwNXVf4KZByQH2_6lz07qxy24GrOv3PgDXo-5pkDOfSXQ=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENBYhEVNM3AkeV73eTuEZ_GKUtC7aR-3XzLvAQfAbpqnwFCi-c785pi4mrJaUjtcegAiJK6Yq9pnZYF2V6f99_fCYc9YRliGJMOL3X3wceF0VOqxxvPbAZcu8lNGd5YvOFzp960V78v00ASRauvYnlBxpSD74lSTgBudCX5L9JaAHIIKNBh077lBqV_kyr2Vj4t-QVBuGuizLTKqAVIlZqRBrtmHk9oYxmQrhh2pqFTsDXlDeuO1hPHn2Lgmr0WQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERdiebnRITmX5E6oyevmzLcxwQLTBBqby5IPuP2dveeLFe9i6DL9JBjqhBkGb3bljHjf21kMa4x8zbUDmLB1iPkaqzSYrfDJ5il_oU1t_ajmsYMIEGU-wawDUyW6yUAlU11hGdlU4qmp4Apw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwb7BKsSwAnqg5bztWZzbIGLYTG7_QauQU7AX3OaD2DKSbo3CtuK0EAHz9_GglfW8pOnT7JSs36QFrI6YXT-oOEevFPGHnZ2D5q62jkwwd9PSTttZVxcgoPwsqP9boXxJrVlJdP1yFRqbRJbz8HMi2zgx2lGUFIqs8ZNYjSwI9Pe-kk0tcBbftEhdzot7vAOjp3DFWDRg9RipOVgP6SWd-84Nvo9QYEDyiXOFUkB6rfY4LD0BENaXnKdPtN9cb49AqxwWfMlGM20kQekbaBdxmPVCUi4Ry0luZg9ChAO5iTqBVGkIxhOSd1mAMxbyqrPPM5bSkQAddknSsSdBPEPs2fgTN1Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh9YGkBhsSq9Dq3l5qsrKQVqnrChsHp_ZLq8J38218bojS5o-It_5YlIcRoCUA5vTwvC47f-G5rRenr5KOW--8_eTL-IVueT4IOiRRfS1TomcUn8EyEPWXonNw5dOOWHlT__UM3TFC_hNwRQ=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHPVj1MjwgHCApUR3jCbnX4p6v0rhVquiA0LQ93UV6pQzqttbY5QHHNudX1iEDoL1-YGkOX_B71l8ZlpC1LNY6VjaapU75O-z1CHMazSTQoR3QJRyDEHrq3rLr1cWv6RC_R3YHpUKqGOj42q8KW5QPS0Fhuz-4yYMXKPQUFxxQSZ1gQQEeACWE-3ALLdHLHb07"
+        },
+        {
+          "title": "ClinicalTrials.gov: Alemtuzumab trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Alemtuzumab"
+        }
+      ],
+      "confidenceScore": 93,
+      "dosageRange": "12mg IV daily for 5 days; then 12mg IV daily for 3 days 12 months later",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 7500,
+          "totalAnnual": 114500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 229000,
+        "costPerResponder": 127222.22,
+        "icer": 300000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Interferon Beta-1a",
+          "costDifference": 49500,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Alemtuzumab",
+      "nnh": 3,
+      "nnt": 3,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.28 relapses/year",
+          "baseline": "0.40 relapses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-8.4 percentage points",
+          "baseline": "20% (over 2 years)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of 6-month Confirmed Disability Progression",
+          "percentageChange": -42
+        },
+        {
+          "absoluteChange": "-0.80 lesions/year",
+          "baseline": "1.0 lesions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New or Enlarging T2 Lesions on MRI",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-0.27% per year",
+          "baseline": "0.60% per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of Annualized Brain Volume Loss",
+          "percentageChange": -45
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 90,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients with Confirmed Disability Improvement (CDI)",
+          "percentageChange": 125
+        },
+        {
+          "absoluteChange": "-6.75 points",
+          "baseline": "45 points (scale 0-100, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSIS-29 Physical Score",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "35 points (scale 0-100, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSIS-29 Psychological Score",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 90
+        },
+        {
+          "name": "Headache",
+          "percentage": 52
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 39
+        },
+        {
+          "name": "Autoimmune thyroid disorders",
+          "percentage": 35
+        },
+        {
+          "name": "Immune thrombocytopenic purpura (ITP)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "Two courses, then monitoring (long-term effect)",
+      "trials": 46
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFecPsvpT4zdLeZi4KmgQGrGNy_hDGF-9C8kCh_JcCuvrYEiTevHElcn_F76DhslohSaf6SQgLJ1xUdlS9-LwJ9X1yY4PsvUtfAh19DSZjwbggsqjrygeSUZEDpuHEjCRFoDWDoXtUe4NXot0U="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGViAEhL9ocuz8GAw4GtHJKM014ycZakDjL_bJA-iTtS1Q_0I_wWrN8PGYcUSna_p76q8wWbKuRmMXFdSAo292XfgenICEo-qm_tIQttgooZR2wT3egwzFTju-Z6kvLpiZ3YN4tBvUwX7Ra_mwZoIyyW3VavROGZZaKWTdiTBG4Natm07VesXkJKq7MfOH5WwdSe4N7v94M1KaeUDKKVSqUTmXIDdtiQ7vSh3qpjpoO-XwD3Vw6d7H30ALxjIcc0D_XALs0oeTMPzNihPj5nfBf_Dj9hQ4zMZcgVWdi7j7agffkKoy4Dt2hHrg_0T2JMjBejrPmjCFXJ_Hz_WIqiyuJqIFq1uPYcReYmsVlkOvArVATEvsupo6MMdd7Bt3LhmypruOVeBpZwgAbF__pGgi0hV68asCO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUM37wLjoZd4hlB5XBATxboTOeJTCAHpO02kZ_dQj_cZtSJV-hHzfuI3oNeJfc51K80p2jR9buj-aTFWc5kbBgqwygfwcCDFQz_8t9b3kZeOuLVMB0YgcpcQQPmHq88UznmdhR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6uomaxb0El8bW6uj9aB4fMJbvqToNKkTwKtypBGbZrO-hIZcTd5YxOaPVtDnN0jo46z2laTgsgNy5OjqdZwfN86fluvtjDRgVVVHvyOpN77Skfa3O3aG1sekAtdeEfGjBCEi7XWyxbLrl_fQ="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM2FkodhQJNXYbZjnuArgWTDM8OAbulG1q-OHTL4SndnoTZx5SHA7v_5ptRRQqP7PEYN20x1mzvQYntaAzPcszsBeICflx6djCjKVDqVncGh9qDdLuaZaJxjjovgOJuoJPElOz0iuEquapxvlvgKe7d7MT12IoqpQIvDs="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1T2NvMwOThm7rm04rLBL91_g6Lqeanlj41VwA3LwUo-KhDthJ14Etl5RFM7whTlwuOaeCbfqnJBbAqo-t_XY8q2DAuQvNdU_Y4V0Hk4UkXXe9eFVhjVJWSLEJppyyOGZjgzH2P1k="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK61UbtCyIjXske1kLiF6W8iCc2fisgMc7zMdlp1tdYs2-myBBK3Kty6xTBLeoZuvzLU12oE6W3FGh8NEnaD7huyPriVjK0ZIynhcroxN1hT70nDYzVLiSZPLNgwGdAZnUnJ2IUGk43nt7BtTmi_llbsV1WShPbSmHCe1SgLGI2MyX1XlFbDhQXDDB5rwaKSa4Q8WRZ37KDb3GkorWs6TKk9TkEErBQzfoLSDEkUpbFQaoAbRNZCkQOuyU_TwJpP6NP72XX4WfjGvskA098g=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEon1RvfVy-nmMHy5FgzRuhuZy0mKMKqiyMUGim-UWypmLglt-3nZZRhaB2YZlhCzsThzs_nFW4rcgyho4VJQjuBbqZpv1Ug-Y1rgfMA0LN5rFUMHG_luQHyAetQHUfH4V4e4YSaSM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Natalizumab trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Natalizumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "300mg IV every 4 weeks",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 85000,
+          "monitoringCost": 5500,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 92000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 191666.67,
+        "costPerResponder": 104545.45,
+        "icer": 173000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.95,
+        "vsComparator": {
+          "comparatorName": "Interferon Beta-1a",
+          "costDifference": 27000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Natalizumab",
+      "nnh": 25,
+      "nnt": 3,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.8 relapses/year",
+          "baseline": "1.2 relapses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate (ARR)",
+          "percentageChange": -68
+        },
+        {
+          "absoluteChange": "-6.6 new lesions/year",
+          "baseline": "8 new lesions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of new or enlarging T2 lesions (MRI)",
+          "percentageChange": -83
+        },
+        {
+          "absoluteChange": "-1.8 new lesions/year",
+          "baseline": "2 new lesions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Gadolinium-enhancing lesions (MRI)",
+          "percentageChange": -92
+        },
+        {
+          "absoluteChange": "-6.3 percentage points",
+          "baseline": "Annual risk: 15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Confirmed Disability Progression (EDSS)",
+          "percentageChange": -42
+        }
+      ],
+      "remissionRate": 48,
+      "responseRate": 88,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.2% annually",
+          "baseline": "0.8% annually",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Brain Volume Loss",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "FIS-29 score: 45",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Impact Scale (FIS-29)",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "MSIS-29 Physical score: 55",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Multiple Sclerosis Impact Scale (MSIS-29) Physical Score",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 38
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 27
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 26
+        },
+        {
+          "name": "Urinary tract infections",
+          "percentage": 21
+        },
+        {
+          "name": "Progressive Multifocal Leukoencephalopathy (PML)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "lifetime",
+      "trials": 126
+    },
+    {
+      "citations": [
+        {
+          "title": "mscare.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7HBIE6oQh4YzpZRFcdenwWGE-MokEi7nleY3cGX6npdJW04SuEBd2qqvTfploojZYWGX0tzs0kTwbupreUvpfkF0EIqdz93r1agpui2EnaHYg6FxzkDK_7zsTQx7VBsjGh2xa_g3xt0q0YItXko78RZThXzW5yrU_o_owuksFtnsguo7mbCRhOUePycAKQVGXhqeY_D-zX0NSAvkhIAeKEk9c"
+        },
+        {
+          "title": "bris.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlW1ZzStQ1nqIPMxXHdvIX5w_4DMKosRW6f56NiwpqsfGPzFoaYl54OQb2zOg9R-B7LivYLyBorL5T6zR8Dcxn8rouNVD4Q5pfkhVkrHobfBJjEiCTEjhPcp2oZLIpfSBGTct2XRq8JIkc6hIidRnLd--DbpWmtn2LX3Ja6JTCHXcJQW895wSX1aUcDCZgDS-Ks_ithiCvJZjIQCwhxDmIBPAMHK35_CKf0jWj6Rqd0N28Ms1q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2-BQZxP8Z1DR_wKYEBLPGrq4VON7O6DbsvIxexzDOQY0sy-quoAEjcqC1KKYlEEgjbt3-ym8iRRTrRbWAhHdGL9y1uVG1oUf4jPYx4boRIRE45g3_8Dw-AZx-9lQil712D-wO3dBDy2BOAa-3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz0Y00YDwbigZ6-zaLMf-2-3jXkWuPFkBHhpAvW-kAlNeoQNKrZNmXc5TAfotQyFTHYDqYeagXJLMfvhFzfNslz2X82je7GaZhXjJxosgvqxuVxW3mxftqbXt3oxKlcFtSGXyt"
+        },
+        {
+          "title": "ocrevus-hcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFjDftxlmf4sHYZXnotCtu1tYwijN8QuzZN7LjmA9Y3ygn06MotXPbJRFDGY6c0W4yZLRgAtvNoyZwwp4a5_W0SxK1kNZ6kNHm2Ngy3AC2eXo8aCUMO7Rq4MvhQJpjYg6hfOwjHbp30UTY3cQ="
+        },
+        {
+          "title": "pharmaceutical-journal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpazauyod_gt2nUX2iHwPnf-13jsrugeFOgku6eYs0QcZpiK3Cv9AaIFe0Cs_PivSnDh9TjvES6mZ4kD9izFIDqaih13HNYGxSB4qLVihapQguDvaMoQBGQfCGooK9mYySDB5yPtPSBQRo_0gURkRBoZH-8n5RT7IgNK14l8-3lVS7YMayBE_1YhCUVF80LMoz95FTjY2XFdfmwVCQ2-j0NClJ6hGVitogpw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwsbbELmAbO5q4D97sZEk2YoJgnDorA8eS8pB5MhN3IpEsWSaIzmSOr3EipZ6ctcxtKXgDvnHA_BstEB2QuK1DH5Oz1Rh8AwyYop_nZEy3DSvnHt2kZgvSq0QCrM_25qLJng=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe6WskocDR0p_faIDzTxlMyRBmgf6r5gz4EdFtp3dlUWwxVp8zeMD3Dx9SyhDZpdUsKYqbp5dCB2p5gzL4EKwc7rfM-sEamsKVjDWqRnIfuJMy9LZmFhSfAsY5lTsVdsByUle9ysjPeXyGsVUjHcAgkuLf3aousqUzbm3SO9XIFr5lVN-07lPN0HBYMtP8KohF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5LLjduAMi60-wpKH7Uuuj9Zu627kpcmDBEtu68OUzcRS45WKaMyn_cA-h9tR71h4vJ59bxfCjaav6J2hkdXKBZRC6bAJ7MZTnWMcFeLM81vNdBNF6y7vTmMSK7E2jxCXYoxIs8gA77wgcLp4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtfNpcLXf6o973K4kBFUvAq9OFdgeIP9R5kJ4ZTomfDdh_bqCb-Ue7RlGd4KCHK_7rk0Pd9mX5ySvJSSBuVW4tObUOT02T1aFX3xMP5LY68cXV64BGuynf4Fs_PxJhv3W_GpTZBTnF8mheQn0WQYKvUiMRb0_Vx0OnX15916xMlIBIOU2j-ITtX0f8BLFlx674GdKMsEa2WItPOQSbv2O6IbmTVp-RdixFJLoZ2lUl1uAjI2cYwRCwXyMddxE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA0mSdN7gqrdxokII9CiVAc1RAo7WoflMo54ReWsH5EHtHvTqxb9TZ-ghnik1mpbqbz27I-PYMwRXow9al3bJ5fH02F3oe0gfT6CpFS4pwARUlZ9LTrc3_HMTgaZbV_eyicNMP"
+        },
+        {
+          "title": "wjbphs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgr8hJAlh8YircB-8pVZeCn3qBZGx1uXh1Wc8KmFdYXm_WzAb1gncjWVi1FWNqb8GSC-bkPYtMn9OE-B7q2H8jF3mOrNvc4iLOw1jHu1TlUZjSp_wNWG7grVB2pF1sEx3k_zgTdQh_7e7HkFQrRSACaozNzNyVCMgNg-eetDsyVm2Fem5AnA27O9TFUw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz0wQT9WmOQMGb4uBm0Fxfp2UEGJwYZ7JsPcHcFwEiiPDR7epmyBZaNJAF7v0ZSSmPuIC_GAZUh19xFyj8YNvA4sTH1I5T-KgQefT_KWXOFJrMruXer5qvMUqbUju_6KpwBrQp7YAGqGbvCnpwOSUDDvsOInvYiijZm8jPtucckgHILiJ5oFHWO7p-eSa2nHmv5mFVDQm3KiQ0u9gNsikUUEP0glrjTAVHD4mBh61slukl1gQFshdNvo5Zkj5W9P3GYfqs1DvZ7-ZHXz_fym8sctaN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ocrelizumab trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Ocrelizumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "600mg IV every 6 months (after initial loading doses)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 65000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 71500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 158888.89,
+        "costPerResponder": 84117.65,
+        "icer": 118000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Interferon Beta-1a",
+          "costDifference": 6500,
+          "dominates": false,
+          "qalysGainedDifference": 0.25
+        }
+      },
+      "name": "Ocrelizumab",
+      "nnh": 20,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.45 relapses/year",
+          "baseline": "0.98 relapses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate (ARR)",
+          "percentageChange": -46
+        },
+        {
+          "absoluteChange": "-6% absolute risk reduction",
+          "baseline": "15% risk of progression over 3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of 3-month Confirmed Disability Progression",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.32 lesions/scan",
+          "baseline": "1.4 lesions/scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "T1 Gadolinium-enhancing Lesions (cumulative)",
+          "percentageChange": -94
+        },
+        {
+          "absoluteChange": "-3.15 lesions/scan",
+          "baseline": "3.5 lesions/scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New or Enlarging T2 Lesions (cumulative)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 85,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.08% annual loss",
+          "baseline": "0.4% annual brain volume loss",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brain Volume Loss Rate (annualized)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-5.25 points",
+          "baseline": "35 points (MSIS-29 Physical, 0-64 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSIS-29 Physical Score",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-3.36 points",
+          "baseline": "28 points (MSIS-29 Psychological, 0-64 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSIS-29 Psychological Score",
+          "percentageChange": -12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 37
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 44
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 13
+        },
+        {
+          "name": "Urinary tract infections",
+          "percentage": 10
+        },
+        {
+          "name": "Oral herpes",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime",
+      "trials": 121
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2Uh_7CrvTSIEOQKPkmIKRLvztO4yOQZiAMITl2-ABbkdaDJPF8JxsBwexRq5ne2TaVdI9dDBNKGqIO0uTp2k9PKfiZvcx8WVoC0GK0GqF0RE4_d9vKCKXlzPfUQl_xWkJIVc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAjBrkIBlgny-TOmwpCFRBuSjslXDBuhUR59Rae6LC0NTD78x0u10T-BH2Z4bF9inqTvMiLlDTza6IuqrVd3lM2PGkajLJsTfiZ0gyGgQYZvKWYC-pklLqx0t_tBbTUt_gsMygyb8pMcqXpaB9uGS_OUCtVmbCVNGcEVr9272W8bX2cLvAGXGv2iOFGOyrSpu9iQOq9BX6RyQRtditF3wxxm78vevkYC-IQiitCUboWEg5rkwBrZGGyyqh0-B0YEjI9pOWcaL_Pn1DCQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESWqhP3kM4Avun0lsH7NYHbkFq4n80sNyddVbJ5kgApH3a8QHf1zGWJdWQgmIVS1zXcWgDhgW5oysffWjcABzIyo_pmd6C--_vFnRJ40l_Ue34sVXm9KWQHPAZXCrFkL8rwXsX-VS9IfNdH0UW0atZPNpCj37QELRKdTo="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiNOGMX4kY9KdTW9YP9_qRe_FFNwXwK1dQGAPK3yNZsBjRw236I4DLQEQkYdeWbXy1kqhmR5SnxcK1x193fgAgOJ6i6-lfAvu2ubxv3WfO3pe9SUAS0OligkbNf4N5Xkx-K81En0yIpHcdDlAgyUQSbAuRhYkZXrTnaVTo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF13wGD5fmj1KK-Pi-wrWTJ1Sxl00Z4EYMLVtGbZ7BctGLH3dT_YQ9N6p1n88MvRjyAT2NxQhcQJzpNvIGM1kawvcIaHwe7nuDNO-gkRpUHHTR_r1XHs9TCHgs8dir0QYwqjLA="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFL0XuZDQjWkHlga3RAOY91BPfP-gUjFoNdTHi_QAfHDKWFi8qqQlavcxPRNVEXAsrtjDZmsxLQHlclJY4TPv_Z-j3rq-iHLbNcCTTC-Xp0CIghWPVJufMJcoSs64hE1GgqJd0tcISxOhfXzO8eZsYpLoiQF8CyUEQcruQ0HwN2S2XQqWA53KRCDlNY3YE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE88OIrgPVrGTRvsazQ_FymF26XHg-rGRf7KGdVUn62D5KM70h1JM4443MAM1VHQnvWADqV0TQx9AQXIrjlfaGBKBsLPtVFa9_61vPRgN13_cA3an_x23yne1UZvPkK4sUH8P4aqvf_iUZwcZb_zNXymGaFIUUAp7RQgPHF1enODzz0cbWsoPWKLNPqB00CmrwUwP881Vj0KbWmkzxc-3ZH1z2HZ_f48KWwU5kuaSp3i4YUObr5gWf0RI05atsMmFI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cladribine trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Cladribine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10mg/kg total cumulative dose over 2 years",
+      "effectiveness": 87,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 85000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 188888.89,
+        "costPerResponder": 103658.54,
+        "icer": 240000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Fingolimod",
+          "costDifference": -2000,
+          "dominates": false,
+          "qalysGainedDifference": 0.35
+        }
+      },
+      "name": "Cladribine",
+      "nnh": 5,
+      "nnt": 4,
+      "participants": 1900,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.19 relapses/year",
+          "baseline": "0.33 relapses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate (ARR)",
+          "percentageChange": -58
+        },
+        {
+          "absoluteChange": "-6.6 percentage points reduction in risk",
+          "baseline": "20% over 2 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of 3-month Confirmed Disability Progression (CDP)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-0.77 lesions/MRI scan",
+          "baseline": "0.9 lesions/MRI scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Gadolinium-enhancing (Gd+) T1 lesions",
+          "percentageChange": -86
+        },
+        {
+          "absoluteChange": "-6.28 lesions/MRI scan",
+          "baseline": "8.6 lesions/MRI scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of New or Enlarging T2 lesions",
+          "percentageChange": -73
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 82,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 percentage points reduction in risk",
+          "baseline": "15% over 2 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of 6-month Confirmed Disability Progression (CDP)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "+0.18 percentage points per year",
+          "baseline": "-0.6% per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Brain Volume Loss (ABVL)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+0.07 standard deviation units",
+          "baseline": "-0.3 standard deviation units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Multiple Sclerosis Functional Composite (MSFC) Score",
+          "percentageChange": 23
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Lymphopenia (Grade 3/4)",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 21
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 18
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 16
+        },
+        {
+          "name": "Herpes zoster",
+          "percentage": 2.1
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Two annual treatment courses (lifetime effect)",
+      "trials": 42
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0PgdXvp72ao726JZGXEgPiPnsM4M1yRz-qY-RZ4Z97GSdSEg47LjPlNLXyyfA1vx1CgNPEQCFIo5QrCUAsZEoDdZkTE7aQ2YhTLjg0Iv5kOdsSB4igCrBGb9frDYFrm16Mhw6qsWn-KKayGU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz2C72e5f2AS18VnyGG6vAc-i_xMZ1mUXVY6d9HWKz4t9tyAhJCz9f8y2tSpNUib2VKVKXkZdtc4OrNo9InU8x4mwynQoye7jO8tEdArZAowf19lMfQ1PonxQisGoEqtlX4s6sH4CC1Jcu2iI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl1gsKJS9TNbXGkfVINnyFEZvSRDGo17DYLsqyZMaTxOZgU5OJpxckJ3XDBnRSCQctpPvRSWqFzFCvUwf-UIvXsRu8N3F2bofQx2YPP78KbK_FEKL_QEsJdsnZo0zHQ1l1YzAf"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH19pioeoyyti6vEVvjCt5OHQAf9Jf0CuwQe6bVs4waM4PDEu1b_PMlVBsZOXwoWBuTBxY9BZaTxE2G0PLJooibdP-sJgho0aaiFwx-bx2qzNcDOALeGO2sVboHT8xDtj_zk_xOt1EXvgBSXiY7cTtUbKuRkb8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHIX9bbAdWRenkiSpEI8WyFvM3zlcebqyDmghS-3oXrCrjwVkixOMyK1tHXLGNxDcs7ntCW5pE5Pj4izFegPaDQB98FRa5SJdb99RVVAw2blzKZOu7-RIQMnKj1w3sT22OlHUn"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkX0Q57e_U6y8msFoJOH6n4MfWhEE0YbE6bbidWWPEdBHpAHt3Pc1yCN53va1-4HXbvG-LmBIi-ewRKjhdS8v1JxOwKXOURMe-6pL4dd4S-yhA-Se3PkbeHUStISTaeGEp7Sgdud0O4eqRlMWVGf8VBb2wXTvjdUHj3iHmCJ4URTCsW3M="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP9CYK-83iN4m_YgW76u6TjQJJmD8wEReK8O5z4etd6EfIZAlT9LVNZr8Z6nAlHOil19z5YaonjupTgbdt7nkJiu2PjpiZW98iPfIjtlmBivrOZ0HwXSgTyk7E06Rr8eVg-TM5bww="
+        },
+        {
+          "title": "ClinicalTrials.gov: Fingolimod trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Fingolimod"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "0.5mg oral once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 85000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 90500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 258571.43,
+        "costPerResponder": 113125,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Interferon Beta-1a",
+          "costDifference": 25500,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Fingolimod",
+      "nnh": 17,
+      "nnt": 4,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.216 relapses/year",
+          "baseline": "0.4 relapses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate",
+          "percentageChange": -54
+        },
+        {
+          "absoluteChange": "-7.5% of patients",
+          "baseline": "25% over 2 years",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of 3-month Confirmed Disability Progression (EDSS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-4.0 lesions/year",
+          "baseline": "5.0 lesions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New or Enlarging T2 Lesions (MRI)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-1.35 lesions/year",
+          "baseline": "1.5 lesions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gadolinium-Enhancing Lesions (MRI)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 80,
+      "safetyScore": 38,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.32% per year",
+          "baseline": "0.8% per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Brain Volume Loss",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-0.6 seconds",
+          "baseline": "7.5 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Timed 25-Foot Walk (T25FW)",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "60 points (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSQOL-54 Composite Score",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Influenza",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 18
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 15
+        },
+        {
+          "name": "Bradycardia/AV block (first dose)",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "lifetime",
+      "trials": 101
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLaIpeHB-zVv4A20TLHrlPT3q9SfvgDLfWd7TqaoWCQaAWsiU1o-j5ayzlttC09-uNN_CfdfeW11Ce4aFDIRA3JGF6nhO-ulpFW8-2L030__zSvWqVD3_b5SFTpZcxITQ5i__k"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFSNU8-mu-uaIt4Y8yZtJgN4CuEuOip3WfCuaGkaIEUbTgdBY0pZ4zWB863Cd818lLA0pfcmrS3yLXjgxNjqGwONNe5yL3ZEVzjAG9wvYYhGFTuk2w8lU8KhXvsPcermZ4pmfN-z8UAGpt8HL45Dkl6HDjuyFhtKkRIJclkHN9K6fjj-z6Ul2mv8YoRPzOzMqVbTySIlh2Bsgll2uhIZwrxKN3nzszBF_jZQNB7Ra_h1YdXKCv22SxOeARDm8EnVTyoze4punof-oJqY-ocIxVjfsKldqDH5ArsWLJlpyf_EerueGRidg3u0ivpK_E6QFaojG_q2BxAG-WETcY5YBK_FE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB2cmJIBI1N_5_4NaoeSyD3HEQOTf1meniYR0gXdVrJ10aMhu8ULf5vXZQNvcL5gMbj3x0Us5oARSp9uzfbC2ecImgRz5UCd9ZKOp7AEO3al8s82aLqOefO9h3Tib70GuhHMlOvdEb9eI_C8I="
+        },
+        {
+          "title": "mssociety.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp0t5KBOC2Zk8uJAneXFlLYTaJb1-M3fdBhU6S9doMQVfGDvmirg04Zml5dYWYBf6A8nQkb6m4f-sE3umkiThNMVkz76BZbf9ug_BtrCR5t4OkHDe-5XnuSjwbL40qFlgVeApuV0t1Vsay_3CY_pECiZAReQzx4yjcRD9NEryJ_-RGT4LwBRKWxVkZ780mkOAz3vk7vfb5xMokurSPtejeHqhdeoUYiOzecdCJvJoMkHJNRWSlsjd-EQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6EDlUa_p3nItuLGg4m2Vel_zUW9x5x0YRXpKDpqn_IXRe80WhglhlKRyUn50K48QOieqrdH9xwgZICPrrELlC3lan7R6YcQWbUJFYjVfFrM_JrSanPz4Vuqzmm4AMhtyyn4YG"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEjhN-QgPexWq5wJ51tx3fun3hbaBj_5euVLonPTTAGVnohzs4-6M8yzioHcUuIDJSVIrAnqUxnoW9BdLoyGVXwg1T7vo8qOYEXm1IYfl0Mg7RBqQv6Tt9U50pLjZt9rUJ3frSPWGwcQo2Dlc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsB6qdXw-Nwi_bhaC7DXSxC1a72LON1XxSE0KVu42Tdci89f68ZqnT239P5lhOMan2VOKKybW9ve3Ztk2mDmdUlyrTbpd8bTTTI4NWT2l6vLx20znOYYYmg39NbwL5A-VVN-M6deM4pyti4MlmuSx6GPgMRo5SzgHyoaEtvRi_RtuAwqSqj3FCD7I_5lK1xGIvKKGboetUj0RwtZ8qANhFmyUv9vkoR1_uTj5pzIqkwj4t_rg7A4uIPeZYJD2Q8_7KH99wPR_7jc3fCytOmDpCZto81ad0UKDKC1H3DcdI4fM0Yw7I6u7NZ2dS8xERzKCLzhySmh6LUm-HP_-8IjOU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7ZD3rEApmkVhbwPGS-eo31LOCgVyO-IZORJ4XSPMZhRjI--wHzBCA8zJ-AmJ0tDfmwelBgkMfmyT9TucgbCOrx9i88AORQ77SpATFqV1WgCokcRVW2PMQm30K38IoduJFGa75"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dimethyl Fumarate trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Dimethyl%20Fumarate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "120mg oral twice daily for 7 days, then 240mg oral twice daily",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 85000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 89500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 298333.33,
+        "costPerResponder": 114743.59,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Interferon Beta-1a",
+          "costDifference": 24500,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Dimethyl Fumarate",
+      "nnh": 3,
+      "nnt": 4,
+      "participants": 2600,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.38 relapses/year",
+          "baseline": "0.8 relapses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate (ARR)",
+          "percentageChange": -47
+        },
+        {
+          "absoluteChange": "Reduced risk by 9 percentage points over 2 years (e.g., from 27% to 18%)",
+          "baseline": "27% over 2 years (placebo rate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of 3-month Confirmed Disability Progression",
+          "percentageChange": -34
+        },
+        {
+          "absoluteChange": "-2.84 lesions/year",
+          "baseline": "4.0 lesions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "New or Enlarging T2 Lesions on MRI",
+          "percentageChange": -71
+        },
+        {
+          "absoluteChange": "-1.23 lesions/scan",
+          "baseline": "1.5 lesions/scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gadolinium-enhancing (Gd+) Lesions on MRI",
+          "percentageChange": -82
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 78,
+      "safetyScore": 42,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.18 percentage points (e.g., from 0.8% to 0.62% annual loss)",
+          "baseline": "0.8% annual loss",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Brain Volume Loss",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "MFIS score: 45/84",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Impact (Modified Fatigue Impact Scale)",
+          "percentageChange": -13.3
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "EQ-5D VAS score: 65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D VAS)",
+          "percentageChange": 7.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Flushing",
+          "percentage": 40
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 18
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 14
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Lymphopenia (Grade 3/4)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "lifetime",
+      "trials": 103
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIza3RM7c3Qss6Qx6EvSMmVvwQT75n5bUVan8pBUXRbLJViX0MTgYLssbaZIU7MpHvInGd8oqHGZaMW4oOOQc4GLw8qhja00BDI0_bht4JLjQbrGQ1-woKpfnq981CGweaAKnvIbdp-6sxsUHI2t3t-uRQ85V3piZ6qJpVA5jr52gM6dm3oqB87oGDueUdkGmM8yCsznjakxric_NBeUjv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3ex-cMUgnyHEAqnPde2n5yG-GuGGLeGNUA6YrrlsVly6A_Xfy0mvmt3sBtaf2bb5nKkNhLyyaK9D1n0lOhen9gvc6GsrFIzNgV-cShdswCyv9_sHY67CHl8cbzqcCABcH3tA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvBPmbTmHlKUHXKRBGKzquj3j-t0nS-z9j-08fIpXD8r9RchGS1Fa2yuvXdy8eXauY5UAOEWB80jQ4wmJs6J8WYBBnLO-U99tcNZEcd_Qwfnvmi5u_rbPrNLt5ykhL1wOCegj39S6OWjTHuBY7SLnBOpcegy0D2kFGQGwTzJFmGo_qVpACRcwf_fHLbg_1a7SfVHqQElo38TIp2Vb25NpkRAsDq-VqDkSpmntmsulu8ACeq7TvTVb6IqNwMYF3qn4yyrCZUWdUiRpHvnCOoEiKbj9OvEu4oTaUfSmvt4YFeuZ1jr7lspPi5Jn5E4MeSICWsqueR22pBrLJoqqT9GBCVZbRpED3ulOKly6AcjYBRXaFQpsMgArkTSGhBbNEwyxyFoNoZdBs3sN1aELuC7r6Tw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8or-SYU05_Jm-1AV809AEooMBsaYscEq5SZDTQtns_RvmonJ2sn0RwRGfosigbWX1ndTXovk9WsXTjmBlNW_iRAww-8Q82ZYOBD9323uwaR_eiJQ96FvvUX5fgo7ItZFgL-I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWvk2bHTkXSw1fQm-IQA3Glk39qMN2e-Y9keQTmclkflC5KbvlO6nvQzYvnevrE1Ef05Sc-wrG3_9Z6--whfiYFp4qQn5E1ci2apKaThtGEzh7CLB5mQzrIgjCyUehkkg8V4w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeg1_W9HHd2vouPf0TU67aurAywKI6bpbXeRhRBbnaMv7c8faku_P61_MuV9s2TLa16kRchcvT5PYUyJrUg4bG19_xG2Wf17FLDtGf4DODXYeSaJrL-qt6BUy-IKI6INjFGK9fA9ISL-EQetMCx-LaY_3zwVYLN5Y4xQLRIG_Dc5pzPlbSugb7tj3T-NzCut8LJ8v1AOzZkMNdYoZS8CD72YWihm0m4481n4u9HHPLTtZ3RK8J9oSPUC3ioJQ="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbfzs7I38tSzM7I1T_UkIzg7dIT6tt0bg1MF7kT8aBPlYiBpUwQdXNa1aPt6xqOyxQgc7ACK2JIQRRxbybw5Ya0H6XrZL2Es6GQX1xyrUR68K3uq00qso0--98HlMO-Kf93wI_BR0WVoc_bvY_I60xDcx96qVljRHfJ5bw4L5wERBJ8ajp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKTwt7WiO1h5u__eVBea9fZ4kFuTwbL5eI5Wj5ZAU_BVnw63IAw6oa8cOSxjNNZ_I03Ylv6eNlGidoCpq63CDvuuJ75deYqIb-fGvB1cErOt4CkE7BNGIXTBQEy2_oIic5MwI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkMKCMxM7kfvwCtRA2Z1m8Y6e7fvPJj_rqUJrARAvIXfw6q4bMy7pXiFqzpRjaHdGlK8yGCoen2xuiSKVItx6ihz6rtChe76cq42tY_58VDmCVOD_bI8O1fHuIui1qbFDaD-s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3w75pzbo6sqS4nw9jlIDBGRha6MXHxNOWxKGDPy_V1OIlMgaDXZZfCeZDo8O3hrG4dvdQGEWrjP6Bi0M-g0XZM4WL583JIYdnBAv_HAbpkfregdNcji1xHEdHAL2AaqTK9LamPbJf-Wcqhw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAlup-VYm46-EabNMowZ6ly7kuG08wTe9ze0Q2JypNbJBdkYfUc9zKQyaM2-dYbpPUWkkzdvSN5rn9tVabVeZmefhjzPW6tRRn1SBGd6gMj96aKxyw9Vhfbu_JN5ABZH3sB9agJNMnn5E5Tc0="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa5L16Y2zanUaoSQ6dumTxW1-RG_7mGXoFzKutr25gJFxH7RHJFrAFbr3pt06DrXzV9B9IakoAbfqmdRepmGyT2z7reo_Rt0p_q8DDtekFjNClmFMYxLggrIwEaSXin21HAiyN9w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Glatiramer Acetate trials for Multiple sclerosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Multiple%20sclerosis&intr=Glatiramer%20Acetate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20mg subcutaneous daily or 40mg subcutaneous three times a week",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 65000,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 67700
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 338500,
+        "costPerResponder": 104153.85,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Glatiramer Acetate",
+      "nnh": 3,
+      "nnt": 6,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.34 relapses per year",
+          "baseline": "1.1 relapses per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Relapse Rate (ARR)",
+          "percentageChange": -31
+        },
+        {
+          "absoluteChange": "-1.0 lesions per scan",
+          "baseline": "2.0 lesions per scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of new T1-gadolinium enhancing lesions on MRI",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "30% (over 2 years)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients with confirmed disability progression (CDP)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 lesions per scan",
+          "baseline": "4.0 lesions per scan",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of new T2 lesions on MRI",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.175 percentage points per year",
+          "baseline": "0.7% per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Brain Volume Loss rate",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "45 points (range 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSIS-29 Physical Score",
+          "percentageChange": -11.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 40
+        },
+        {
+          "name": "Vasodilation (flushing)",
+          "percentage": 20
+        },
+        {
+          "name": "Post-injection reaction (flushing, chest pain, palpitations)",
+          "percentage": 18
+        },
+        {
+          "name": "Rash",
+          "percentage": 16
+        },
+        {
+          "name": "Dyspnea",
+          "percentage": 14
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "lifetime",
+      "trials": 108
+    }
+  ]
+}

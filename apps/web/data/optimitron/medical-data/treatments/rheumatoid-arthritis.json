@@ -1,0 +1,1506 @@
+{
+  "conditionName": "Rheumatoid arthritis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:39:18.721Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOtepYeXziYnzAqXoBHMR39yYKnKq_y_uNxNQCbKtZu3-7r-uFTThcm4ve-JUbgLLGWXakaAwrepzdyvzaj33in80ito7ioiA2e8lIz2a_m6qnJctATReb8pMg8rUY_DkJqhoUC6Z4y67T2Ck="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdCP_65vx18Yid6Y3gR9p1tGuJbb0pmTmyso5RB0KXoRmGhq4PRACerTrybKD8hnDPX_f0BnGHmI3J-8LyMw3axuF-oVLQwbyFISIOZQqm4a82jC60QdeDvaQIkqU1EuVNYk7ECp6qP-PmOBZuDC8TVYZTKtvVhFqrPKMywIKApLPf4uTNQWmBHG8upV24s6MAjan0c88Xsv8vudlmDu-8-4B8aw2qWWB43sHpHWMiz-U="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEugFD1WT_Yr1N_TaEjhJE-fsbXv4BbQfXNYbvxbofL1B1QJDCs69_jFYhYGt1MHKEUIBHRw7TsFO6x3Eqq6TUWqLbDykaU2QKKqlksx2IQrNvfbxcuGJzulpef7tTUXtZrjsxLNkyHSua3XnAAEbg-ZnGQsXB4PMJIa96bx_La7NQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWizoCHazDDvs9Cl9EyzYUENqcvwc8q1XNca3bKnsuaYmmhvjCxNNFHBU-T2nrMDCqsKuMUgC-8Dt-9GXEvVDhhzVpHs_RJOuoCk7nLWWnQQPVegD9ikl5kJEJ9TFKKmK4ocpghKe1bAXnIlKylbluZ8nR20mtnv8t6Y00XY8JoPrl_L9iWXEISIBj803ahaNSFSIMtzMJtYWIKP_-SQEk8tdTd5Ax4t8lrtueIlT7sgzilhFcsGMXI8BhiX-9KMwrldiEkHexldQM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlziiiI_wehFt4jhWkTVB6UtO9w3CzhR1B-S07187IBbC4-w4oMAlsd9mDQo7bXVHp0duHQrEtjdlQex_L7xYuhPZmBml5hgUm96PzuV3cr3cnw7uN_oxNWGtObJIJMcJtsq8v"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUqSPgD4ndMaxBHju3-w8hwTGegch5OEdRiBnDRlmWiInVO7aWf4wPYIyl3rzQJdpeAqC1T5x-yuJcHwkNXyZTq8M2zz5Us544LnQN7Zv8NVmLnQJOw4OTep--HKCydzJIXCKk0w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH3XVWD-pyBpYZOoK0dBj_yH47EohUorHwO6K9yZd7iSemXEvL0MoF9W_K1MbMpPMLO_-CdtQBAzxBM3_-TD4I-op9h1N1pxcA7sDAM9KScTL3zlStd47Ib4Vm-f09EHjOvLkEzYNz6PN5Jbg7InXfg1_DyQAzX6A1vtte7x6iNWqRNLWaW7B29EwDZtXBMLZkIfsoWNsNPwT-hT2FSIjThxZZ5X6KKRwKNjTardu05hAm7CeG2JdfGweZ388sifDt9iZ9f3g="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methotrexate trials for Rheumatoid arthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rheumatoid%20arthritis&intr=Methotrexate"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "7.5-25 mg once weekly",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 8000,
+        "costPerResponder": 2461.54,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Methotrexate",
+      "nnh": 10,
+      "nnt": 3,
+      "participants": 150000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "DAS28-CRP score: 5.5/9.4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Activity Score 28 (DAS28-CRP)",
+          "percentageChange": -36
+        },
+        {
+          "absoluteChange": "-9 joints",
+          "baseline": "18/28 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tender Joint Count (TJC)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-6 joints",
+          "baseline": "14/28 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Swollen Joint Count (SJC)",
+          "percentageChange": -43
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 65,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "HAQ-DI score: 1.8/3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health Assessment Questionnaire-Disability Index (HAQ-DI)",
+          "percentageChange": -28
+        },
+        {
+          "absoluteChange": "-15 mg/L",
+          "baseline": "25 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-20 mm/hr",
+          "baseline": "45 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -44
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 20
+        },
+        {
+          "name": "Hair thinning",
+          "percentage": 10
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 15
+        },
+        {
+          "name": "Mouth sores (stomatitis)",
+          "percentage": 10
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 693
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMyc_q2fvBtktXVbWV7t5Fd4gRTP2PHryTA1vTskTC8haEqhRxfPFOzhy1AJgrQ71Uv06yuyHR3IjzcfdtLh4Hs_mz-tiNEIdAiJGCA6yoycH7htdkJTsTIUkCJyEXVOiDT2Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGPw6aJiM2nY_Q9EowQ4wbV3jqZm1hwWJUSMlA-qAVjyaNBfpW85XsB_PYcLP9-OOjC7p-h3SiwjrCzevKf39ojixEofSIzol-2gGS-cDQDL2enKIc-ZZsxbYv36V9fthh-cM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRtaYwFZkIpjv19Zf8E4ukfmtqdpY6GrDg6vmfkaGN-rI9jcCmm1Wb6yZNHB4q-cQWGY_JvhCnAxS7cdtsKZW-I0mRd2TYUZkcoGgdypFvFZrll8hBcFYFAdodGkfNiS2IxCl7iMA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1kOOeTydhhjHpKf12FLGmGP-aj9jhRPDOisi9Z_8eWMrV0WRuKZIodWGuyRzouIb6SzZRyhaCLnw1hLi1DOR1qxrvoOnsVZQUE5JfZoNGSjDzY0PEdynZq9BStQ4m_7xnFRQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyQvFlA8068z91Mftd4MbpwViwl_V-MSGQIDyO-mRacpXxjFmkY411mYN7uLoKZhhBuusbkqkbqxC32MIA5vGX2zBMqRWhnwSfI3qHmwSy0c1dZKJkZjN10SyaPFpamlIi2r6-xHp-t0-S1g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRfvS1f2pY03_wmFzpdUuuKC8mtxOvgvDtdF0eC_VE2IoY-18qnZm6j3thCKdNkT11VNGnmIaOKKLdDGIA3sNWEDjHnkkdoEM6oQLRWjZdGr3Fo6u8cisjMxE529hbCnoitTU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwXbbjC0R6quCWGb-Aur4EHF3lG3nORRRjEOjQOUiAIoRlI5agJWMFz6DHWYl4Ai5Kx-uvpzXV3gtW6irAKU8WWF-SW_u4kDziuPA5gqSnqdVpIladj90xMnd03xyx-bvVcSN5rwf9IP6cJEV_ld0IrKY0Nkq9WMLOyuvSh41NWxnd4oo9pvfc-4IMcJwCzMd8yeZ6nRng7K9Q_KyCLwcGTbT-lgV0bqBgeuBTNzd2nbLX1Hhmg9NK8KX367LW6BeFUQvJ34dtRSB3paAUQ8t-ICFqm-_1HsfeISLYdduK2HKgErIiUM34C1vfg1gFXr5i0e0OoDAdHzgLz7ytLvOQ9k_sCuCw8MHi3ooBEt_2Cj1qvAehdOs_YbqgSzbfEPMy5_n0U5FT"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXMfGW2jKpHESKd2ZOBFAsnkjuSGWjQyHHZGmDJ3r7Dzj0zssEeTqAcHXeqtpdP47zv-7VNRtc4Y9J5uxTcAzLTqvnH7lrtmihpIFDJo2ejgTNBV7JlNTtzubfuUUNlSPW"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLuX_iKVxn3ftyHwMxro1tzVwnen6P9KleiYThiFzF2fFfC1p-_lLjmuxSHyoMYxJ430iEOLh8BRe_KB5mPbY5ujIqWcP1PSb2bbcJpRBH6mEIgzOyKBHHDPIl1p5rYciOi-zly4zWpVvXJJbbhpzZ7-BpurU9jHVo"
+        },
+        {
+          "title": "ClinicalTrials.gov: Adalimumab trials for Rheumatoid arthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rheumatoid%20arthritis&intr=Adalimumab"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "40 mg every other week (subcutaneous)",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 60000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 62500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 208333.33,
+        "costPerResponder": 89285.71,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 60900,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Adalimumab",
+      "nnh": 30,
+      "nnt": 4,
+      "participants": 75000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "5.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DAS28-CRP Score",
+          "percentageChange": -54.5
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "1.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAQ-DI Score",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "-7.5 joints",
+          "baseline": "15 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tender Joint Count (TJC28)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 70,
+      "safetyScore": 42,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "35",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "-28 mm",
+          "baseline": "70 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain (Visual Analog Scale - VAS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "25",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Score",
+          "percentageChange": 16
+        },
+        {
+          "absoluteChange": "-0.8 points/year",
+          "baseline": "1.0 points/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Radiographic Progression (Modified Total Sharp Score)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 20
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Serious infections (e.g., TB, sepsis)",
+          "percentage": 3
+        },
+        {
+          "name": "Malignancy (rare)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 249
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbKL_JSQOVU-23AcLAcXQ5RLtqC519eQzCmfaQ6kRsuAz6e0Esrz37os8qCqw1kqLNClsO1YZpLTSkmuPHmsqoCrZPHujGUj2pt1fsc-MC-mTOlaj0sExIxJNIKWeZ2j5fybJE7F1mwfokiA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2RSK9wtb_S2txfXtTltAGb2EyKbvvwia6FUPfIHaVD0wVAoKLFRbxZRaRm03YuFpxJPJVG2d3Rx9KVywoYjk301oaqqN2IZ7za3wBmLNrKSmimfQrs6MYsGJQG07hr8BpkEaaCoHX_LWNhuuNmZXmeJD5qxd5fFFEnnPmilhiOcmFIHujLfurzg_29wvQ2uFBZJe7QhLkOw3jB5p9ZkuoI255FRbQhzTQmavjfAohw0gkHFTqBOWgiMFVRbGcpuP47DDclj0eBVIC1Zo5k3SkEeFB6ncyAbDhNV9FBWz5xViAOVryyhrSyrkSH1VSw0QKG-GpWaHRpEBY-tL9KsLrQo5v1buax6UWvbgu_xPi0sYsZWkMcp2mi5mfz9K1uBt8UrtFUaTorgylr14wSahpUc-H5OQqA8Shh70W1rKMVDbV1YuSqc0tQ7BB1l9ILcjMU30iS42VDn5qZ7h1b1BqASwJXvfOHW0r4Pq6hCeZXE87boOJRDatKnKm-I9Iz-Hyb4oyzQN-uVIgnbhq3FhFvpjcrNlX3ZcCcNeVLqC685PX0tpACH-HmDCYCLSJwAg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsngK1Rk2t9n-gH3BTNT1pWowgjawamoirs_XjG75ZYGMXAHvkZgfzJWqM_YZyhLzoSXh59PRFDjS3pWLtwCYuH1vGOfsZXpuT-C_0rkkS0ENphIs3OrOlYLm12sSu4pndG5g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlkhXMrJfzgi7I6iJYUEBpjlifFGnLWT1B7bo0wqW6hqXFRqlWuZvL9b3i3AiOWdiQm81JwI1S-h0WAOQI1_-EKdq_gT4C4OT2xT3DBknmU103Ze_Hb_Dm-YpEHn-AcJqKUQuixaQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEScqAtm8YFfg2qrsARcXqWOtOIdjM69IThZKLTEADIZ18T5dqPWDKc6fChGOKZR-La2dh0tqHAaV05XGUpcYBfkefJE1NSHiLc5q-cSggZufN7y8-E9iRoSnJfKn9SawJGOwTocSB7PnZ3qzAkwPiOvItECMFknw8h1M1bqbYaAorkiRjQs0caqz09S6pf-I-mAWBj42P2VC_eFYk_BypiGGRKHqD17ewEFjHTPfcu9d8YmHsHZgHhJdVYLY9WCeb4t4RKCT-b-3CKdNZP51zMVKlX7JHoyqg46FAmbg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaSp-YkWdT2Jh564szyTlylkZP22UVUT2ezx4m5BJ1nJ-Mm2tC9C8O89bHOtAyn3QQXxVDtRNXTw3EQJAzN4CarZhyz5W3nC0pvHsf2zh1CnLUQy55dTNUAFxN9iG8FzMe3lY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEePCZw0VGBZRzgkTMggHXOxIZt7GVGbLcJFvprQlL46Mhi3CGBrDHe587nZtachXvwO81RA25ws2iU0tWiUrLdPPLDY0RNKuVKLbgqxco_27kXMdHTv5XwgdCszz47P9hahU8="
+        },
+        {
+          "title": "enbrelpro.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgIn1Pq19ma2voLDkCU9pUwViwm5nU1sTcfRpmhHBVfnRDbKKkE4RiFxDUFH1x5uR4A9GAwHiDnPY2_kNa1CphW0TcZ5SrWu7_YR03EJdlan4jW8C-jrHvS20JRyGCKTotfZve0hgdjMGCWh9PQyzIYg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcdrzStRYTmUYQULjenYGzpCHIFL0H64eJlzr2YUfejYvUFK7W3l1AknClxLITNRKfmNdLLoT0QmiOEjf74_r0jo4BjQOlA6fT5VhQ2K9ZCFVivFzec6liI-soizYaka1mnM4IkpM="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM2KPS_2jmpzJufbDjQzILXYNPPIb55a7w9QnIwYTKKvFQyPPC8xazRkgrlyNbIHPvJX2f5u4L4GP-54f3eBTKZUAYvsTbVrBOPuStizii6lOM4jkB8JYZN9GZ0Pqe0Q-YMBlilAgH5RgyLf-DBahwmuMuUPYMx0DRpz4bO5Pe2e5MI7CtGqC-fCMCV7zVwDTALzdM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhguLzM7Hv-2WN1BpAJxMIpXiHGhtsOJ2SnJ1z2JacTcu3ggpVUnl7tbbHxaFrhCHS88ovR4JMlkW9083lUo4YiAqMl8JXhNHW9jnZlNaNTKtTzP25pD8N8jzXZB5-XYS30CY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Etanercept trials for Rheumatoid arthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rheumatoid%20arthritis&intr=Etanercept"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "50 mg once weekly (subcutaneous)",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 60000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 62500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 208333.33,
+        "costPerResponder": 89285.71,
+        "icer": 115000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 60900,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Etanercept",
+      "nnh": 30,
+      "nnt": 4,
+      "participants": 70000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "6.0 (scale 0-9)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DAS28-CRP score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-9 joints",
+          "baseline": "18 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tender Joint Count (TJC28)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-6 joints",
+          "baseline": "12 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Swollen Joint Count (SJC28)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-18 mg/L",
+          "baseline": "30 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 70,
+      "safetyScore": 42,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "1.8 (scale 0-3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAQ-DI (Health Assessment Questionnaire-Disability Index)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "32 (normed to 50)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-25 mm",
+          "baseline": "75 mm (scale 0-100 mm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Visual Analog Scale (VAS)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 20
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Serious infections (e.g., TB, sepsis)",
+          "percentage": 3
+        },
+        {
+          "name": "Malignancy (rare)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 196
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjAU_cui_J3gshkH8Tm1QDSh4cOKTtHzv6iwSxRPsVODtZSSIJ4t0Kt3vIQ8CnfT6pmxcplrwa-nKjPhcp-8n2pKm9WGPl-mrUZliZK-Idr7XvNUEScWJluQOL4GStlGRKSdQ="
+        },
+        {
+          "title": "reumatologiaclinica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqWSiA3ovjSRdDSBFBToMYPPnsiaqcpGfDYqPHipRJ1KtufjaFhdod4Arm9XOXG6tDbWtLo5ahwv1GDUpL7EZZai2icmqOm8OAlTeQ90wSpiE1PfGUql2CChsIxSI-Mqd0V-RjkF3X7F-K7JpwOmzr-ecIYOXsboOjt3efLgV094C9dVwV6UROR6rLvUD5kNPdrhr5suOkTcS1v4cE"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_zkuNqqs9o1iTsTmEml21D8jwQQ05fFpfJR1yvKvMyEireSSerJBwwO8xyRBVjHfi_3P32XGQ-ZWo5Yy2sYIfbvFxa9PFpQCOk-2UwdXRdh-0UUTsesojQiEPhgXln85NfQAvZg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ70PcwINq6_w6_wbeE-IBsmyGieNPwaCanYCRb_ZTvakp3LS1_MDxb1uzw54vY5sdeizb1Bo_wdVkz9mltTjsxalDTfQb0EgX5UbyxjuZCecfGekpmK32ksBGXv0q1XhmrZerUYOS8ODnSmelu6rFxNR9hPJ2wNoreFxN99uhkZyyBeWnvVn_U5rn5WADfxCMTQXkpJso3fpZlvsLhqO0iSTlf4T8Q-9h1iNJbmu7ScPloTcHxQwM0-KCelWE3DO5vilhLo0RwYhv6jr0knTL11rVQhOgcA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNbhVoJ0cYEQXcynP1QmaAi3TC42N812r13vAFp6b_L9EQ10MV8Hb2NRIsckrVocEBRhsZ37SIll5qVk4APfNgN3Gq8zR_Qp9C1n1LFwgxhsesNWJKgZD-5HBM4NA7HofTUtY="
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLg3WwqYSY4z_p6c7GX2GlokYZxb0YhSbcnZ8iHecAgWePi8trDCN1LAP4iL-YcVcSl0MFthRv909ohQAoDmA1RxQYV--EOo_hJF0cLrqbTZnIzVygtt2z77z6245e5JKZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSLJ_cYCcoyHIfbYFGcunqOz-4T_kTw0A5lLawwmYviVOBtwRNwLfeAeShK2pIVVQuGaqvhfT48lO1fwEIF8ew8Fog53f9wo-UTHGbEpTEPrqtCvuWX66YQUEvdM-HUHeMc8M="
+        },
+        {
+          "title": "reumatologiaclinica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfPxh33Msbgt4xfZT8jEzBIR0RezLdQVQRxnp-GAHR_scw9PvbpargtWRMs9hgmcP2sMetNpglLn6ina1JaEWwSqDk0X-cOcT2F5z5jjNcv8zXEG-lUc_on4cczz-KkYXiCVf_vykJDntsgBN7gPZ1bjZsHqBp_CEnEHVBuJwXdrLG2bqI-WuHswLzHR4t3ckfeR9RqexJjmeLU79aP5PR4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF74C34XDdJgf__5JWoGEIOhJ70sqe95m1JPuBuj5b0dgVej7ieM3WROmOg2v0htrRZm-GXu_1KEw1VoAa6aSw5H90Y8T1bjADesuYPLZS56mPnza5iqUmbiPUdYrsYxqzL6szGSmnnvsqwHA=="
+        },
+        {
+          "title": "hopkinsarthritis.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYTbKTBp7fCdWTGTKwhplDs98YHQj1hM7LWbL6gLbbFqO0vx2e_Iy8HvMOVcrku9tame0-qmj29DqNcZ1XXiwF6dlMvuwcORRcaE_P46JJhcz_mnn6NhnzdZZlnL4cwrkeoFECtBz76985no4AJHhePfU_gCbhLXbgu4_sGWLUSRcZkCh09usIjJc0PweE5v_EB_23wLjPoBGDiojHbQe9u_fdYsVl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVW0J_vasy2JTBue8unlVwCwa4-gmdLqV_tXB0gFYf1DG9-k_0vVOTY-f1qnrXaW9SBdwy86l2Yx0MwR2wTvZOV7-mlojkPyPtZx0xzum_uvnnkw734MlPo8hIDLLLyrGzqG0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Abatacept trials for Rheumatoid arthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rheumatoid%20arthritis&intr=Abatacept"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "125 mg once weekly (subcutaneous) or IV infusion based on weight",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 55000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 57500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 230000,
+        "costPerResponder": 95833.33,
+        "icer": 125000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.4,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 55900,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Abatacept",
+      "nnh": 40,
+      "nnt": 5,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.0 (0-9 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DAS28-CRP Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-0.4 points",
+          "baseline": "1.8 (0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAQ-DI Score",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-12 mg/L",
+          "baseline": "20 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-10 joints",
+          "baseline": "18/28 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tender Joint Count (TJC28)",
+          "percentageChange": -55.6
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 42,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Pain (NRS)",
+          "percentageChange": -30.8
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "28/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Scale Score",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "-26 minutes",
+          "baseline": "75 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Stiffness Duration",
+          "percentageChange": -34.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 18
+        },
+        {
+          "name": "Infusion-related reactions (IV)",
+          "percentage": 8
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 139
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_WPSGK6OzjcVe_i5fVPMzYt-UemAiaDnCyY6MVJmeg5qjRUyvWPBYUZykUs7HtQcyF5Qrx1CPOTkYoiSl6yFKlAxdA2f7UwYJl90Sms53GqMCNZHOe2ktv381W1bhrlko0lI="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFt-Dpud8zPih2y89YdUIqAGKbfC1eoeLz9_Qt8OFGzjVrw3FfyzOGjxrk3zmao56jYReUvRd3u-QvjvfXG90ReRnZ4EAKbzVK1Y7HlLXKHpjpOH-8JIDzbTfI_hBzsojVeiq30StHC-jpaGUjcvo0jeMySBbyMgfI6H0ydmUsWmLr2udeArxWz-igAhrj3npnjmo4"
+        },
+        {
+          "title": "d-nb.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2LJOTMgH1ZSxT22mJxgveYC6vjiL8aDf7hxIFIXQdtCwO5a1oj4W3OnfG2ZovA7Uj5LKNDg8mEforiwbKUprzCkNAXB_r0FScjkhA_GzNEg_zoO7NR2CGHQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCBpnTMHSBFDlufab33MKs4mlb4RBJYpNDrfmKDIitXdQ9HmMAGVo4xqZzWrs6wQdUsj_qG1FYM5dWHmD2ATdbx1RXHEJkbNW1MNRr_KIZzwCubXzpTY6ria3OD9BOqIiAbabP3bva8sK9p5gRos9XsBzFS5eSM1W7yT8_qMP4mgIm_XIDPGinjEJ4-o748-3VXFSrmejKsgkOG21XGuhIRw1Mv_1Cc9nIOc_-eNKnojLfa901Whcl0IwXPpLuLNvcRcqkgkxkYRhYib2j86SL_FnVkTXRr2gEY8123wNE1Gs8nDy2zc_WghVBQ-7EL1jMiAKV-Jw1mmR2kYg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJpYv6IW9kXaVrEpm8zwN23TJJ5yzIEJhTjDYw1zv3tt4LkpZcoZOlsMX5mMDBRZ7lh1j_f4iRCEVMKSM0UrzideA7pcK0L-vVyNX0rgteXAXS0h0Nv_X8jlbzxLFiQZqZVVA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3-PcCuAFUotiAbTzc2icPlBXpCbOOVBZpvUQoNliIFv4pdbpSVwVmFbJj6nfuJ9vzRPuSjc7Gj9VYNBmPZpQ5A_3iGXr7Mg0KDMck_S9ONbSkBh9S3eolfYgzJ2Bl0lHUx1E4Sbu3JOvsFKxvGoG--K0Glc_puv8xGSK8Cy83w29S8R7hVstQUTXs40d0ZeTyJkchuYb_UADP-EmNDXO_OmdgBEf44wvflI3lDP4TwHhaf2VlJutVaRlQdehJlTrpzXHiPqKnGLe_BXYTYFhCgsvTJxSGoCqpcTb-XHY5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnffJLsWzWGgioG6L0aFRdC5txrhGO-gNrKP86bNJ8R4pvEtcJ4UuGX9uP1PlTHjNyE9pqFhZgy6z8w9B_VjwCYPNVL9KlNAtz-2TOx1aoIAt3CFtgZgjtWHZ5aCQZky-t1u20WGITCrdjdQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlfDJ7xLePi_T0kKSS79k0qzROxRMUB4nLvBoeJzXJslt8IrZqoHQ6vJ0AkJA2UUSrODff18Jq0PfAlrSryvGksgNtVhlv2SzbDzIBzqR-9O7oPDNb2DlrCkFC8u6ujiTMLJw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpUHPT4ohHSRC-62dHprV4_xbiiXI_GRguFyDjde_EBMc2OmF0wa-1CelZymev07RFoByh_ctsFJUsMaRY9iZ25-kgZgtk2zTSY0E9J7gpYMFzKURecht2yFo0DYB-KMg3-nouj5xpLSsMEA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tofacitinib trials for Rheumatoid arthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rheumatoid%20arthritis&intr=Tofacitinib"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "5 mg twice daily or 11 mg extended-release once daily (oral)",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50000,
+          "monitoringCost": 1800,
+          "sideEffectManagement": 1200,
+          "totalAnnual": 53000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 212000,
+        "costPerResponder": 88333.33,
+        "icer": 135000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.3,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 51400,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Tofacitinib",
+      "nnh": 25,
+      "nnt": 5,
+      "participants": 25000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "name": "Number of Participants Who Achieved Low Disease Activity (LDA) Based on Clinical Disease Activity Index (CDAI) at Month 6: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 6: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 6: TNFi Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 6: Tofacitinib Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 6: Tofacitinib Combination Therapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 12: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 12: TNFis Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 12: Tofacitinib Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on CDAI at Month 12: Tofacitinib Combination Therapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants With Treatment Escalations"
+        },
+        {
+          "name": "Time to Treatment Escalation"
+        },
+        {
+          "absoluteChange": "+265.0 Participants",
+          "baseline": "36 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants as Per Type of Insurance Plan",
+          "percentageChange": 736
+        },
+        {
+          "absoluteChange": "-5.0 Participants",
+          "baseline": "81 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants in Each Geographic Region",
+          "percentageChange": -6
+        },
+        {
+          "name": "Number of Participants With Biologic Disease Modifying Antirheumatic Drug (bDMARD) Use During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With Biologic Disease Modifying Antirheumatic Drug (bDMARD) Use During Variable Length Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Biologic Disease Modifying Antirheumatic Drug (bDMARD) Received During Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Biologic Disease Modifying Antirheumatic Drug (bDMARD) Received During Variable Length Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With Non-biologic Disease Modifying Antirheumatic Drug (NB-DMARD) Use During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With Non-Biologic Disease Modifying Antirheumatic Drug (NB-DMARD) Use During Variable Length Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Non-Biologic Disease Modifying Antirheumatic Drug (NB-DMARD) Received During Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Non-Biologic Disease Modifying Antirheumatic Drug (NB-DMARD) Received During Variable Length Pre-Index Period"
+        },
+        {
+          "name": "Mean Quan-Charlson Comorbidity Score of Participants"
+        },
+        {
+          "name": "Number of Participants With Top 25 Comorbid Conditions as Per Agency for Healthcare Research and Quality (AHRQ) During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With Top 25 Comorbid Conditions as Per Agency for Healthcare Research and Quality (AHRQ) During Post-Index Period"
+        },
+        {
+          "name": "Mean Claims Based Index of RA Severity (CIRAS) Score During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With 25 Most Common Medications Use During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With 26 Most Common Medications Use During Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Used Opioids During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Used Non-Steroidal Anti-Inflammatory Drugs (NSAIDs) During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Used Opioids During Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Used NSAIDs During Post-Index Period"
+        },
+        {
+          "name": "Mean Number of Pharmacy Claims for Opioids During Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Pharmacy Claims for Non-Steroidal Anti Inflammatory Drugs (NSAIDs) During Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Pharmacy Claims for Opioids During Post-Index Period"
+        },
+        {
+          "name": "Mean Number of Pharmacy Claims for Non-Steroidal Anti Inflammatory Drugs (NSAIDs) During Post-Index Period"
+        },
+        {
+          "name": "Mean Number of Days From The Index Date to The First Opioid Claim During Post Index Period"
+        },
+        {
+          "name": "Mean Number of Days From The Index Date to The First NSAIDs Claim During Post Index Period"
+        },
+        {
+          "name": "Number of Participants Who Used Opioids During Tofacitinib Persistency and Post-Persistency"
+        },
+        {
+          "name": "Number of Participants Who Used NSAIDs During Tofacitinib Persistency and Post-Persistency"
+        },
+        {
+          "name": "Number of Participants Who Used Oral Corticosteroids During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Used Oral Corticosteroids During Post-Index Period"
+        },
+        {
+          "name": "Mean Total Dose of Oral Corticosteroids During Pre-Index Period"
+        },
+        {
+          "name": "Mean Total Dose of Oral Corticosteroid During Post-Index Period"
+        },
+        {
+          "name": "Mean Number of Visits to Rheumatologist During Pre-Index Period"
+        },
+        {
+          "name": "Mean Number of Visits to Rheumatologist During Variable-Length Pre-Index Period"
+        },
+        {
+          "name": "Mean Disease Duration"
+        },
+        {
+          "name": "Mean Out of Pocket Health Care Costs for Healthcare Services During Pre-Index Period"
+        },
+        {
+          "name": "Mean Out of Pocket Health Care Costs for Healthcare Services During Variable Length Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With Comorbidities of Interest During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With Non-persistence to Index Medication (Tofacitinib)"
+        },
+        {
+          "name": "Number of Participants With Post-Persistence Treatment Patterns"
+        },
+        {
+          "name": "Number of Participants Who Switched From Index Medication (Tofacitinib) at Any Time During Post-Index Period"
+        },
+        {
+          "name": "Number of Participants Who Re-started Index Medication (Tofacitinib) at Any Time During Post-Index Period"
+        },
+        {
+          "name": "Mean Medication Possession Ratio (MPR) for Methotrexate (MTX)"
+        },
+        {
+          "name": "Mean Adherence To Methotrexate (MTX)"
+        },
+        {
+          "name": "Number of Participants Who Used Additional NB-DMARD During Post Index Period"
+        },
+        {
+          "name": "Number of Participants Who Met Medication Effectiveness Criteria: Adherence to Index Medication (Tofacitinib)"
+        },
+        {
+          "name": "Number of Participants Who Met Medication Effectiveness Criteria: No Dose Escalation for Index Medication (Tofacitinib)"
+        },
+        {
+          "name": "Number of Participants Who Met Medication Effectiveness Criteria: No Switch From Index Medication (Tofacitinib)"
+        },
+        {
+          "name": "Number of Participants Who Met Medication Effectiveness Criteria: No Addition of NB-DMARD"
+        },
+        {
+          "name": "Number of Participants Who Met Medication Effectiveness Criteria: Criteria for Oral Glucocorticoids"
+        },
+        {
+          "name": "Number of Participants Who Met Medication Effectiveness Criteria: Use of Injectable Glucocorticoids"
+        },
+        {
+          "name": "Number of Participants With All Cause Ambulatory Visits During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With All Cause Emergency Department Visits During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With All Cause Inpatient Admissions During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With RA Related Ambulatory Visits During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With RA Related Emergency Department Visits During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With RA Related Inpatient Admissions During Pre-Index Period"
+        },
+        {
+          "name": "Number of Participants With All Cause Ambulatory Visits During Post-Index Period"
+        },
+        {
+          "name": "Number of Participants With All Cause Emergency Department Visits During Post-Index Period"
+        },
+        {
+          "name": "Number of Participants With All Cause Inpatient Admissions During Post-Index Period"
+        },
+        {
+          "name": "Number of Participants With RA Related Ambulatory Visits During Post Index Period"
+        },
+        {
+          "name": "Number of Participants With RA Related Emergency Department Visits During Post Index Period"
+        },
+        {
+          "name": "Number of Participants With RA Related Inpatient Admissions During Post Index Period"
+        },
+        {
+          "name": "Mean Total Health Care Cost All Cause During Pre-Index Period"
+        },
+        {
+          "name": "Mean Total Health Care Cost RA Related During Pre-Index Period"
+        },
+        {
+          "name": "Mean Total Health Care Cost Due to All Cause During Post-Index Period"
+        },
+        {
+          "name": "Mean Total Health Care Cost RA Related During Post-Index Period"
+        },
+        {
+          "name": "Mean Treatment Persistence Duration Measured for Index Medication (Tofacitinib)"
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 38,
+      "secondaryOutcomes": [
+        {
+          "name": "Number of Participants Who Achieved Remission Based on CDAI at Month 6 and 12: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "Number of Participants Who Achieved Remission Based on CDAI at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved Remission Based on CDAI at Month 6 and 12: TNFis Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved Remission Based on CDAI at Month 6 and 12: Tofacitinib Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved Remission Based on CDAI at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Change From Baseline in CDAI 0-76 at Month 6 and 12: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "Change From Baseline in CDAI 0-76 at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Change From Baseline in CDAI 0-76 at Month 6 and 12: TNFis Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Change From Baseline in CDAI 0-76 at Month 6 and 12: Tofacitinib Monotherapy vs TNFis Combination Therapy"
+        },
+        {
+          "name": "Change From Baseline in CDAI 0-76 at Month 6 and 12: Tofacitinib Combination Therapy vs TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants With Modified American College of Rheumatology (mACR) 20/50/70 at Month 6 and 12: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "Number of Participants With MACR 20/50/70 at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants With MACR 20/50/70 at Month 6 and 12: TNFis Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants With MACR 20/50/70 at Month 6 and 12: Tofacitinib Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants With MACR 20/50/70 at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on Disease Activity Score (DAS 28) Erythrocyte Sedimentation Rate (ESR) at Month 6 and 12: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on DAS 28 ESR at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on DAS 28 ESR at Month 6 and 12: TNFis Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on DAS 28 ESR at Month 6 and 12: Tofacitinib Monotherapy Versus TNFis Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved LDA Based on DAS 28 ESR at Month 6 and 12: Tofacitinib Combination Therapy vs TNFis Combination Therapy"
+        },
+        {
+          "name": "Health Assessment Questionnaire (HAQ) Score at Month 6 and 12: Tofacitinib Overall Versus TNFis Overall"
+        },
+        {
+          "name": "HAQ Score at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "HAQ Score at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "HAQ Score at Month 6 and 12: Tofacitinib Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "HAQ Score at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved Minimally Clinically Important Difference (MCID) at Month 6 and 12: Tofacitinib Overall Versus TNFi Overall"
+        },
+        {
+          "name": "Number of Participants Who Achieved MCID at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved MCID at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved MCID at Month 6 and 12: Tofacitinib Monotherapy vs TNFi Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Achieved MCID at Month 6 and 12: Tofacitinib Combination Therapy vs TNFi Combination Therapy"
+        },
+        {
+          "name": "Modified Health Assessment Questionnaire (mHAQ) Score at Month 6 and 12: Tofacitinib Overall Versus TNFi Overall"
+        },
+        {
+          "name": "mHAQ Score at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "mHAQ Score at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "mHAQ Score at Month 6 and 12: Tofacitinib Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "mHAQ Score at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Pain Visual Analog Scale (VAS) at Month 6 and 12: Tofacitinib Overall Versus TNFi Overall"
+        },
+        {
+          "name": "Pain VAS at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Pain VAS at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Pain VAS at Month 6 and 12: Tofacitinib Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Pain VAS at Month 6 and 12: Tofacitinib Combination Therapy vs TNFi Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Experienced Mild Pain at Month 6 and 12: Tofacitinib Overall Versus TNFi Overall"
+        },
+        {
+          "name": "Number of Participants Who Experienced Mild Pain at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Experienced Mild Pain at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Experienced Mild Pain at Month 6 and 12: Tofacitinib Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Number of Participants Who Experienced Mild Pain at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Fatigue VAS at Month 6 and 12: Tofacitinib Overall Versus TNFi Overall"
+        },
+        {
+          "name": "Fatigue VAS at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Fatigue VAS at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Fatigue VAS at Month 6 and 12: Tofacitinib Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Fatigue VAS at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Morning Stiffness Duration at Month 6 and 12: Tofacitinib Overall Versus TNFi Overall"
+        },
+        {
+          "name": "Morning Stiffness Duration at Month 6 and 12: Tofacitinib Monotherapy Versus Tofacitinib Combination Therapy"
+        },
+        {
+          "name": "Morning Stiffness Duration at Month 6 and 12: TNFi Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Morning Stiffness Duration at Month 6 and 12: Tofacitinib Monotherapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Morning Stiffness Duration at Month 6 and 12: Tofacitinib Combination Therapy Versus TNFi Combination Therapy"
+        },
+        {
+          "name": "Time to First Step Up Treatment Escalation"
+        },
+        {
+          "name": "Number of Participants Achieving Low Disease Activity (LDA) as Assessed by Simplified Disease Activity Index (SDAI) at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving LDA as Assessed by Clinical Disease Activity Index (CDAI) at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving LDA Based on Disease Activity Score (DAS28-4) Erythrocyte Sedimentation Rate (ESR) at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving LDA as Based on DAS28-4 C-Reactive Protein (CRP) at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving Remission as Assessed by American College of Rheumatology (ACR)-EULAR Boolean Remission Criteria at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving Remission as Assessed by SDAI at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving Remission as Assessed by CDAI at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving Remission as Assessed by DAS-28 ESR at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving Remission as Assessed by DAS28-4 CRP at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Change From Baseline in DAS28-4 ESR at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Change From Baseline in DAS28-4 CRP at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Change From Baseline in Duration of Morning Stiffness at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Change From Baseline in the Functional Ability Questionnaire Hannover (FFbH) at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Number of Participants Achieving Functional Remission in FFbH at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Change From Baseline in European Quality of Life (EuroQoL) Group EuroQoL- 5 Dimensions- 3 Levels (EQ-5D-3L) Total Scores at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Change From Baseline in Functional Assessment of Chronic Illness Therapy (FACIT)- Fatigue Scale at Months 3, 6, 9, 12, 15, 18, 21 and 24"
+        },
+        {
+          "name": "Mean Number of Days of Drug Survival at Months 12 and 24"
+        },
+        {
+          "absoluteChange": "-2.0 Participants",
+          "baseline": "43 Participants",
+          "dataSource": "trial",
+          "name": "Number of Participants Per Categories of Satisfaction With Tofacitinib Treatment at Months 3, 6, 9, 12, 15, 18, 21 and 24",
+          "percentageChange": -5
+        },
+        {
+          "name": "Mean Total All Cause Monthly Health Care Cost"
+        },
+        {
+          "name": "Mean Total RA Related Monthly Health Care Cost"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 20
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Herpes zoster",
+          "percentage": 5
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 4
+        },
+        {
+          "name": "Venous thromboembolism (VTE)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 105
+    },
+    {
+      "citations": [
+        {
+          "title": "reumatologiaclinica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3rPy_7QPRWLNQoBU6hEZf8-GYCvlS8xGyoLxEYuQzMJTD4wZ7Ix7J1AGq4FzMX0I1KfkUrf7w4hn6UgZ6YhsNVHIN-ajYae1B0028WdB_D2DTweiwIraXe1bbc715i94r7TRR64P4PFosqjlnXmehhFaDBXOkEkRsTklSfnLfz1mTorlA5Alz6FobuOe2ettFrLv-_ssHns4DhA8gEocdys39r1l67-JqBa1XnLWP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2onM2lsYWCF9H_Y64p7sN-rNXLN0F_p7_0REVAbxHaDQqH389hnRsPYiQWDn7cL02ydVZ_p_DUfXxhFp4p44nWU3qXgNR7tuQEXibJXA9H6nv8H4Q1Y6mJI9yuMvNsFKKjx_U"
+        },
+        {
+          "title": "reumatologiaclinica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNKEYuoUbqmJG3XTtJlTFDxK37WnxykSpx4xw9xmHo8iutG1lcyqAfFLTxzWV42sHoqEoFqyJJ-BjyBvHrVP80oyyEN5mO5Q8VCAlqs3ncKSV5tjVQDv6e5fGQZl4rq44kc97gJ1Y5gLamltJ7GbUsoHtzOz0EPmVM8RLMEW2uyo8tsvAtMAJf7vX6fYXVvdMCUcruoTe6wrVtFBcIhKSp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuSKkfmsWSs7s8gTG1QAXSo9E0ZHCfMlIzxJLhScNLPjf204c8WqJ5dZK803tCcCT0PlxmB3PE1AOWEME1NUMMxZTGj1Zd1mshToaw39W4TlUCeW4hKz9M37-aR2OnRhjSmXo4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNigQWmlZQUOBLYZKKPF-fSx9j4aP1sl_4B-O5_RisohPylrnMVMFD-ZlSslsw0iM3vjVUOQIL28NEC3d2Td1qKOuX1VMl_1YtedviIixntluDL7ZJs2rhxoT3vTDtNOuU3kxpVeqd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnaGlx8OtOrneyhtlFjXpLm_E9vgPFb-Qc0g16S21ZwfNhwx5kURdQrIiNMgNg0WHMTb0Rrt3nofX36jzmb3p-Lo3nNrxdVdJcqb6jOXdfx8heUXGrWOrmpQKClrF3CYxQkxJ6WV2DYZo-494="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElZz5og7Qzn0AxXyOOtFdc8UkzHegDgTLtVcwoeojZ0jsIV4RKKLNgqE0FqD4whPK3cnBImPUtj0OJT92g_6v4AHpmt9oUWewRIskXerApfB0NkZj64cVkjBsu_N8hyMbu-2QO4E8qHXQUmabqKjSbF4V8WHBcElO9WGQYFshcqNcl3IdqJm4wA6hUjPgAXx0v"
+        },
+        {
+          "title": "la-press.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0T-CW2cg-UoqWpMfjdimp-dE78GJmZ8_tA2XIDR1weEVlq-IDezPQOF4Q_MtxiCp0fswfXcEnwsI0UBG63f1TtJnOX0YQHJwibD8F0hNjau7mehA8xjzZX9J_2eOsFqfRQPD1AuJr1ZVyxTvFC1I8pU2Ejx61RtRsu3U9pLh5wPeBuZbPT1-zVWWM6HVGY3ykvJVTAnd5jf6JjmWMCy4EuG7fOA=="
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrCGs7Dv_ktT9o6abxbgTbh0ysF03bmI7BV5voqTD2LsMB0eoL0_Uk838wSJKZUvrEsFZaVl8C1-3o6oiFZaAkpkXVa9MR04WTM04Gx7HzxcZsNu8HkgmamWnL39kRuPcN9Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkivZKbwVhvp_L5B6v0jSvIWfCtlF2njATz9aB5IfZie3bcdKwGAuVmRFeSb3Haa5lpf8XiyFMmCR_WKZTJ9W6YJzfInTYtqdF6W95jEyfMLdxYeMrId2BmSrG4_52Y9aOKRtfFprebkdyZwHTcgkaedU2uRVlzjkScfAHshF-g2XQEmMpYHmWyRQaPMQi_A1Xmto4E-Z_XVLjO5ZEr25hrk7mx5yHd28jSFSxEefcSqYIXbsUOw=="
+        },
+        {
+          "title": "rituxan-hcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEHEeoG9_3cK5ThdB426AxQn13kERCUN7ELJUKJ-5Yafhr2mhKr-XuJHC96nXxezE5dvcFTmbYKc-Fre7inOimRlLMFiMsnZwjCbYbCx95b81Jx9Z7aeZo71VIQzE8xbeSDSKNtV_EaQjau9qRcxfnWUyUbBbtMVKT"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rituximab trials for Rheumatoid arthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Rheumatoid%20arthritis&intr=Rituximab"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1000 mg IV on Day 1 and Day 15, repeated as needed (typically every 6-12 months)",
+      "effectiveness": 76,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 34500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 172500,
+        "costPerResponder": 62727.27,
+        "icer": 160000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Methotrexate",
+          "costDifference": 32900,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Rituximab",
+      "nnh": 25,
+      "nnt": 6,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.8",
+          "baseline": "6.0 (scale 0-9.4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DAS28-ESR",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-9.5 joints",
+          "baseline": "19 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tender Joint Count (28 joints)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-7.5 joints",
+          "baseline": "15 joints",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Swollen Joint Count (28 joints)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "20 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 55,
+      "safetyScore": 38,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.3",
+          "baseline": "1.8 (scale 0-3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAQ-DI Score",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "32 (scale 0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 21.9
+        },
+        {
+          "absoluteChange": "-25 mm",
+          "baseline": "75 mm (scale 0-100 mm)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Disease Activity (VAS)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 30
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 4
+        },
+        {
+          "name": "PML (Progressive Multifocal Leukoencephalopathy) (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "8-12 weeks",
+      "treatmentDuration": "Repeated every 6-12 months",
+      "trials": 126
+    }
+  ]
+}

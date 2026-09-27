@@ -1,0 +1,976 @@
+{
+  "conditionName": "Atrial Fibrillation",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:56:44.470Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiAb76BBoshJY8lJrdFmoqgNhoyVI2qsVEUdCyQMlzmf7uop-9iVT4bMhbzxrfPn0GdmcWx-poXcyx5QXyJwbk4co8oO7oOEzLqSHxMxQRUpLg2P5HEBWOmVtYXHGCDtMXzqI="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZHP3cM8a9kAOWR106uNNoIYdCMUp_0_f6200f5euZOPl6Hs72Kcd2vIOTrE-izLbZ5kLyDpJdlS_1QmOto7ZVq_DWGtGsjQBRdbOWFZZzYeDJsPHCE1SVLxueXnOo0pjlpAg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPp92vGSdbLt4oNk9na3ybtiW6QzlOTNCxKOtK4FT_pQbAA2w-KX-clJq0uioefHz64_NhlqK2_BrI_jZDTxPGEaHJp3-aUbiY7lESLYuXJ7_mRLNzmYpJXCjHh1oTDPGtgWY4U5TNrCJEO4p9b0QACMRFnwYrbOwOo_vr2RS3wZ3EBS1MphP2d00MGbo9yLn6ivOVf6llM0e-6EsYAHq4uEDZ-EwPMMDWL9y14RLyLiQgT_D6cVHK1k2oGt0SIeEZc1a1GKU278bGbHYKLMwATaQtOx-f6q6ZqNne-C92kcjGjoX7Yttv7AyC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqolmj2EpMILU0OPcfx1HuUtpG6_G4yMwhr8hCUDdxFciod14QorZ6CQygCdYqgQOBI9eA3m7w0iPiwPzEruh_eKNXqnH5IXitmCJCiHeSbsfPYDWgwNIVaD2Qu1FsrasHYAI="
+        },
+        {
+          "title": "springermedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9NcTk784KaloBQ2XDeGQ2C1x8cdrjd1MJbE-OS8eoRIzoFxYmaXOPqIJAWfW_iuSv-tddKq8ULUKPYNZdNWQuI6IIGp1WEAa1aV443DQoQEfdmg-fsID4otGr9NDoxDjXoE4Z6siqaGnnX8f9qODgJtKCjDlbFhW0eQMy0QgdINoc0sqpi60Ttptlm0ALsH_EM0J6VryowM0c0_qxgv6I8Gr-SA=="
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgRqHIDcKBXvcp4Nylqg_0LAnWN-Ca4GtUOk_rTDgBe8yGRkcIN39mFI97Ek2K1xDFEqR9sAPY5dnUSmeTg4cBfI13EDJR7S1nm5IrVE2XZeLuDKTRpCxKaQRNbv9TG9QaSsVVFpH7KoqitMFg4pKnlJGrorOshzFz3g0jH5nhLs8Zmtxvg-EOTiT2SYtBzvEEpHsXHZdtwA1WOQrZiDZZCUZhSS2QtL_gRwRxV-fHZyCPQoyzNNYC4t0VDabB_VXre5jX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_Ru7hLA5FAPfCTMlQf3YrsiueR0jkPLqZozESodima4rLudmMHii_jmUTC7o3l0BEG8cx65RHHRNcIz7K7T6gnPu36QTA91ltDdccn9XsZ88r_TCXWdWTt9nCjVivAL6CEOQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI072-KUxUKD2WdVUviqAKMIVB2z8ZXGlhfUgbigcSP6nJLZkEmdEmOTYrmhxbvmuSlBpJ_x1h98VirD21OefRI5d_kJ2GsBWGxBscD5i_O3iJtoXsV5VNqOXnQUbZ-ALbisMkbFV9ugFi2A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Apixaban trials for Atrial Fibrillation",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Atrial%20Fibrillation&intr=Apixaban"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "5 mg twice daily (or 2.5 mg twice daily for specific criteria)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5500,
+          "monitoringCost": 150,
+          "sideEffectManagement": 750,
+          "totalAnnual": 6400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": {
+          "comparatorName": "Warfarin",
+          "costDifference": 2000,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Apixaban",
+      "nnh": 100,
+      "nnt": 40,
+      "participants": 70000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.62% per year",
+          "baseline": "Annualized event rate (Warfarin arm): 1.89%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ischemic Stroke or Systemic Embolism Rate",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-0.96% per year",
+          "baseline": "Annualized event rate (Warfarin arm): 3.09%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Major Bleeding Rate",
+          "percentageChange": -31
+        },
+        {
+          "absoluteChange": "-0.42% per year",
+          "baseline": "Annualized event rate (Warfarin arm): 3.94%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-Cause Mortality Rate",
+          "percentageChange": -11
+        },
+        {
+          "absoluteChange": "-0.50% per year",
+          "baseline": "Annualized event rate (Warfarin arm): 0.74%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Intracranial Hemorrhage Rate",
+          "percentageChange": -68
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.16% per year",
+          "baseline": "Annualized event rate (Warfarin arm): 7.15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Net Clinical Benefit (Composite of Stroke, Systemic Embolism, Major Bleeding, or All-Cause Death)",
+          "percentageChange": -16
+        },
+        {
+          "absoluteChange": "-2.87% per year",
+          "baseline": "Annualized event rate (Warfarin arm): 6.94%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Major or Clinically Relevant Non-Major Bleeding Rate",
+          "percentageChange": -41
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Minor bleeding (epistaxis, bruising)",
+          "percentage": 15
+        },
+        {
+          "name": "Major bleeding (gastrointestinal, intracranial)",
+          "percentage": 2
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate (within hours)",
+      "treatmentDuration": "Lifetime",
+      "trials": 177
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5HyDbyr16PZI0jzOucOfJcK0kbsIHKmEw6JV__GuZXnJo2W4FkKi8QC2DlmkAadnhlLfpv-S_GFJzyRToD-wm91OCZXTGgG-FymH_JMBi8ytnA7CSg26do63VnEbQFvmE-xb4bwdYpRpw84D3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbhveLpLfvcvApWBolF2DifguDJPk-HTRXyb0fwG_cQD7hUI-l0tdJiFmiztAvy2A9jqXwNGndtFjqCWdVbvDWBWq30xV3m0vAkIGnvvsqHwAyZsxXKOwTwlvOXxctDNV6PClM"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8iQXD_uy0kgIAuw2x960GukkgWPKaZ6axTG6eJmxb1y4Xr4bJy_YtjEUf1_pcTGHJxfc0Sz-1-fhFk4fr0vwQFHl5bnOBufiNcy65W-WRmkXkpr5Z-zv_FvVub4v-6_gaL5XN1bK6uw=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTSmso0MF6eXv6hVOau37-ceEnF5PA52fyapFdV3uPySUwv8M7NLI9i4QqmttsNsvSuXYFvJy8GnN1r126IcY5BMybjCK43nsnUsftR--wRzX0aCn2m5P3oFjUbbqhkiaGpm8yEzgZaHjQCzxuuqUZ6KIG0aLZJv99"
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVbtguiW50tUL3usPIRMDZRfOKpgso2FO4AXsW1CDbz1SH-nNRgDHeQ-FAtzHe2BOPANVv-3JWYi-CY2WtcTqqKtrOgeJo_itimbT9D_et6YMnqqrhXmzNmRYDLzDRiHnfHDH9WZTXRoe0A1mBDkGczeB7FjYzGVX9pw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF34RWVpiafhyeNgGRlD9FwfmRt7r35VFB5e5w7Qv1YQVXbHXwBaUSR-DyuIUyG-tq9qe4PyGSVJ7-Ipl5c86edjGV8luW9OBSL9OXUfLHH7qkfxD35wIJAbF3WuJq-EuTd77OGzZB7za82IdQOkVm_RRP_pt4z07u0oBdYcFmSh7TLaTwj51sBH_uMOWEGwXjukJ-EaDZb96YKhxx3qJFPiVLDs5kqD3aJMG42ecYL8VOjnY4YJtM1zQ7zQ25_HkNLp7XaFCWYjLLDkMw5DAshGyo5v4LuoUiG"
+        },
+        {
+          "title": "ClinicalTrials.gov: Metoprolol trials for Atrial Fibrillation",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Atrial%20Fibrillation&intr=Metoprolol"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Metoprolol succinate 25-200 mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 575
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 676,
+        "icer": 5000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 30,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 75,
+          "annualTimeCost": 270,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 770,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Metoprolol",
+      "nnh": 15,
+      "nnt": 3,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-35 bpm",
+          "baseline": "115 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Ventricular Rate",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-50 bpm",
+          "baseline": "160 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Exertional Ventricular Rate",
+          "percentageChange": -31
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "AFSS score: 25/42",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Symptom Scale (AFSS) Score",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "EQ-5D VAS: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D Visual Analogue Scale)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+60 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Exercise Tolerance (6-Minute Walk Test)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-1 visit/year",
+          "baseline": "1.5 visits/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "AFib-related Hospitalizations/Emergency Department Visits",
+          "percentageChange": -67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 12
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Lifetime",
+      "trials": 31
+    },
+    {
+      "citations": [
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQNXlA66UvSSk84ZaqOqUV-AtzkhruFd-1xxJV3nUyh9lvaBSnVwEwrICoQNhbyd9NG5XpgfkUW6dqu80EdLU0jsLECkZd8srNmk-4WXKIKbIFiZdq96WJ-sxsN7BF8CdX_bBZ2j-KYJua13jzKgEdW0rt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKsVxQQuskAhsdRlZaFmx24WDbosnz6AMeumJAARKsgbxBoESOpj8u8brAbQjIkUbY6eWL80iXV5_Wreb13U7d0byA5KjSuodpeheaPKxW5ODU2yKnjCMmjkt-8Xg2IF3qeYzJW00NCFqNoYs="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdRFjEiFfKwreCrlbuluQ_Y0YbGCsMe2l8fQDoLeTZLa4dhMgoFIx2u9oJMHxKiZ5rIfBwDV2AYVoKmqnfXpqAqR5IGYk7Y_OyecHrk9hRdvUn7-EUe_b-vigdOUsQOt2DivgrS-Nr4V4ughcaOs-fjAJhUQ=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJlay-YBfbtcbrrB_trqd7LgyCeB1PhA_5jHA9lHjbtHaRa7p5tCRG05p1DVVAhJ8gnsoKHHBAZ1DAWkP51LvAC9uzy-SWqfAn3fwFzeM7rP8leTzRAaJPS1aidwBJZYPpkKCHDsaq0UjgZubv9D_Inw=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuGkGqpm8gvJ_nOpJTqkGrkrz6zxJy88pfzqVsAo17jCDen6bse_cHEbniCp8ygabL9YiXG-q3IQzmqJD2c8KI2bQrnPXctIHaobjP_ikn7BTuM3PbZ0z1rvRrPcaaDdJU1PBOvi6EPyLWLQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYAIkJuBVSnjaNU1hkxaqZYCuCmGXR2oej_pUQkYYZjS83-oQZuL7Oddnl1GUzRhQMIdSkw4yzJFW57C7gObv-_iWUb1DqXxYIVXSB523q3md6-UAFHzy7jU0ephT03rN0g7w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMI0Y_WGD-Dr4NjJzBB_0V85SNBbf8Ly_biXVkgl4VpS0JNXNLBKEpczhbg1hUGOxo0S4J2WPS4MD2wsz9qzyDn63LYxegRW_XmBmJwrB2Bfph2Hs6RjL09MqOMtGjwQhiXFU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeEfVxT1dfD9pOWaCWda1MnXVqKdU50ttiV-0sUaowBmge-UIGv7T8qpHGCcC-3_rEw6_d-HRa-68HkmFTr-WaT9Lw3_7Lgs6uC4J8896_tBIWndnztVXkOf1KjHOAhVK9TIs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8HXk8s3PI6YL21IN4xO9AjbH-ID59E8iwXPAez6S5ZKv9t_Y97Gfy__H-kvdqyPA0rO7OrzPAuojzSuQGYnThhi4Bpyn3EgxvbKN2w5u6xAo9z-pIIyRGPp4FD3VSQE8OjmhkcDMnVqJPnybAuFQgXEyWXNW-kDS6Zdkfb_vrcc_2QzoIH9dCPzGLDRz8MK8AE4gCqzmtcNtwsu44fvtd1PpXRhnGdN7vr0_2-8VZbkCcqLgeWlxIyOXE6OZ8iRZL-p6xrtnXUIvz"
+        },
+        {
+          "title": "ClinicalTrials.gov: Catheter Ablation trials for Atrial Fibrillation",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Atrial%20Fibrillation&intr=Catheter%20Ablation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 9000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 13846,
+        "costPerResponder": 12000,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Amiodarone",
+          "costDifference": 5000,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Catheter Ablation",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-34 percentage points",
+          "baseline": "Mean AF burden: 40% (percentage of time in AF)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Burden",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "EHRA score: 2.5/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Symptom Severity (EHRA Scale)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-60 percentage points",
+          "baseline": "100%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients Requiring Antiarrhythmic Drugs",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "AFEQT total score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation-Specific Quality of Life (AFEQT Score)",
+          "percentageChange": 33.3
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+42 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance (6MWD)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-4.6 mL/m^2",
+          "baseline": "38 mL/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Atrial Volume Index (LAVI)",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-0.35 hospitalizations per patient-year",
+          "baseline": "0.5 hospitalizations per patient-year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for Atrial Fibrillation",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Groin hematoma/bleeding",
+          "percentage": 3
+        },
+        {
+          "name": "Cardiac tamponade",
+          "percentage": 1.5
+        },
+        {
+          "name": "Stroke/TIA",
+          "percentage": 0.5
+        },
+        {
+          "name": "Pericarditis",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months for full effect assessment",
+      "treatmentDuration": "Single procedure, possibly repeat",
+      "trials": 869
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfgEFsowmifLQwVDWtSGEBcwEtL29EhIFPI2YR1S4GgSZJpykPYGYgKMM9MquCErGVUMYmj5Zg9hz9c-w0aNM3y3rKexmuh1QVRgiwfqXlNvnenQ649khecJ8STwZ9lNSVwoY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnKJyXnLveLJ8onHXMPaawPZ72rx6kKsH87rfSRUUDQylWiIPICVrWmXmNQIiMo6dzOEXv0KZxv5l3mFrm6JZCuKSpo4mBPqbgsOsstGiInUiKRvkiDFfdDta3gNpsmhE8ZDybJGM="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcR9kjzClRW2d5QwPr3hcbIsJZg-xIO4MZRnN4KLNLHjsTauvas-68vscTQv0taCj2N9WFxSx6pggsnnK4pLcFORKpMbO4H6nYnj2z0eKDzuuMqC86Sw0H7qNGoRmV9sFZvQqVJy0kKVucOrLdtTMofD7r_A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7n9QOy-IyUqPlFOz3IyiRyc0QUMJ2imPVN3iabhw-ZCFNGT-qML3tYo1ROwTueM5Jq-1t7Zrb5EAo9YpWfeDn64sYxVLRq4UBrISqgv-aEVlkewXW7JM72BE-MjMVh9zl_dJ9KaAaQiY3hw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFTWYdcM4JewMW8ZAASAj4aNvsCV9HGFR3xZtQcy7XPs4ctBwQCott2B56KoPfdHgajoaDmzwRL7d_ZltmcrPxhB-qGLG7vh1VFnpP3g8KYksY4SnSxR1X0brdBeD79l3Slwjc55XN9Siimzwkw3azjJU0UzQZwwyP2MPIr79JhPZfB0-rISi20k9O60zO_5y53Kp9G_8BPCMqkZiRUrB_U2F5KQfR5a-CnIJEeMxvcYrt5DcXbE_L8qDgbv8rG5I0h34HDADlz6COEQzJQP3er_MM722hdqT-7_WdatTbpx7GqMbAIb5nGczMZcVTtQCAxy_E5dwSvA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEphTTMsuaLP5QmiuclWIsbSMSX9dEaV4l7ePchNhvrhi-Ubs3GcPZEJrtmh5MguuVCtLl1Pbf_vgkbm9GRTz1JR2AgEzO9OsNveuRFXGNQ5W37VtHH8a4TpmibkrsR8d3aRgUYuG9ZnDMqLw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrmprA47MSPUcMIQVWainhhqzh8KOB0kRBbgH9oK_7eXAGZULFrQf9OH8wO6scHbMNTQQ4KSB1sMeBIdbkW4bGVksAFGvA43vvQENs5o5t_VL7nPG3IWLFRp8kaBfyPa-X7nJhVBNPC2iYtQ=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm2cd7ztrNc4oA-NdKPhPUE5oEzcAIkEoGaceqdRSmsLdayxV87Jff_MPQqwElSmx4B5b6GuTIh2VoBDQDCRSM6F725c5uCzTqGj7V8sQEJUiR8RzXbgs7KZE0_mGMEzOvegaeAQ=="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJSu2bDOKDKbY8ORZEU8_cbTJ3NXyy9-NWIBq_-sJJk2dzFqw0GZAOPG9u8RsC6ubedHx9B9_vcvG9Jx0S_R70kI1D_O2Gm0smjQomY6N_H16ck50H1pvPyDWPfu-N4C5404B0_27MgcpWUAB84ZhbdKTWBuqYdMlLLppSIB2xTRN5ZeHVr1uV5mW60XKbyQV7NRpuiuZGxkf253a-a1ytRIXX88Pw_qY17lde1Zfo_IYjFw2As_04LSv9Gj8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Amiodarone trials for Atrial Fibrillation",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Atrial%20Fibrillation&intr=Amiodarone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Loading dose 600-1200 mg/day for 1-2 weeks, then 100-400 mg/day maintenance",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 2700
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5400,
+        "costPerResponder": 4500,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Metoprolol",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Amiodarone",
+      "nnh": 8,
+      "nnt": 5,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduced by 50-70% of baseline recurrence rate",
+          "baseline": "Frequent episodes (e.g., 50% recurrence at 1 year)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Recurrence Rate",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "Reduced by 1.0 points on EHRA scale",
+          "baseline": "EHRA score 2.5 (moderate symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "AF-related Symptom Burden",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-45 bpm",
+          "baseline": "130 bpm (uncontrolled AF)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ventricular Rate during Atrial Fibrillation",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 60,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points on AF-QoL scale",
+          "baseline": "AF-QoL score 60/100 (moderate impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (AF-specific scale)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+36 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Exercise Tolerance (6-Minute Walk Test)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "Reduced by 25% of baseline annual rate",
+          "baseline": "Elevated risk (e.g., 15% annual rate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heart Failure Hospitalization Rate",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Thyroid dysfunction",
+          "percentage": 17
+        },
+        {
+          "name": "Liver dysfunction",
+          "percentage": 17
+        },
+        {
+          "name": "Corneal microdeposits",
+          "percentage": 90
+        },
+        {
+          "name": "Pulmonary toxicity",
+          "percentage": 7
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "1-3 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRjNFOg_IQFsqhkQHP0FBJzPw3WjseAl6g9V0V_YFlEvxNLRYGnVPQSKjxfa1TINuCQu7IDclw0QpJ1s07zaHwcQ_05TVTXxcX9TIYdW0GOjUqAzioWbS9KDeLrN9Y35D86r1Z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsekt0sruy_SkVgcFjJ4jVK-AjQO7OJh2iNLbX9-5LiCufgZOucRJ702TI6bf-XssrE7hq-XFK5dlgGGhcxmuQuUqH_2_WvubSqzzlj6H_V_-EwF8GZ2ta4vfALep0bsaOcutlrUE2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw_dJpFodqM_8kKbb9zhubAVeRclGkWBmZ3famfXGjDcshTvNlUxwKEpCOwQenNvSHX01TlDv5aRYtl6ed7ippN6xP9xT_HFlQmfQzqUGojmg3OZXW08NJmdLXOPHkhUMoGm3I"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF67J5hz-Gk9pAoTm1Fo7kVfO3-bS4IAZmMOHCGYpQvNBHXMGbChqqLofe5g3hViOmkA-oXd8gGNDpNuPR4tk6W5ed5T_mm9Me4DjNgXdckHzIbio0wejVwmKO0I6qyUah6_PfaYLK3XpqwHLJT9SsRP9ocjeXJEYTlhk6uYSQ0YM0c-9ufgNG6vmyptt1AcTMNUBZU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiJWzzuYiQ-k0_5yFmgpgzHNCwI3oadh2Ob_ksD0xo_aFFEE4azgz_FnqVOpoVvCDj8gZFx2b6ofbktTsBhZWuK1bb8rkf5nGtxMBTK-BbiPI-o2qENFsKNScsHoSR80yGfF_E9lcL0g4oYByzDunnCOz7HHWnMhVeTKb20ALMGVx4RfaY7Y8KyRn3Fr58YANdHqPhey7iB3msRHvYgIyX0uRrVUpFU7gZrZsT68bdc433ATRVdEsOfxRm4tckgVw6cp3REvmrGpdTGTLXoxRGGjGqC-sGUx1Ns0yi5hdURZbiVFmgFqObMa6MwSX-ark="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAHghAedPZ7EuMCndsFrwGNnkPFYJCIAc751U2mnHN_-GkSziy7V_0j8m0VWW1bDGF-1rZjPObLkMzP1t21XmmN9aE1XV2O00y9vwVPN8xLHPwgYKaS-0XnNL5IsIGVZ4vPPlyl0X537rmTJ0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxgPuPiA4_uUmYZbeehHUMPWzHgBqrZkmlpC1qyN3VbfD7FsOJBgnvsLiOIHLZ_N86R2FCtYLFJQ4lxVFXjB8bnbvyySk6jtzBohcX11pA4H0W4aOycWe8TvKlqEZ4CdNhAqAVMoWRXg=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhnuLZVBT4mMLOlM9qh4PZhsl0GdIATy2xwkgJm94jxakEZWJeFH6rFWslbh4hUf7MUaA3LwMHJzwg-ulqvzLF_lW71U4Y19nYjyew_KRBPX0FUchxK3ZzjneFRz7J0aEkKhpT55o_XV-TqE2z2UXfe-KpR5GJ0v4qxeI="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNoze6Rac-P-SeU9klkksuWfEuAuCYrNdJN_YUPhhcEgREEHer29eSj-96qaCfviT5Y2CwNdjwLDxRWhdI78GCPLQnECgmzx6kQGEt40QE6Gp6p965JCMTi_8u5RA0-koiyfRVeusB7dxM9QE96SBdvdw="
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9Ab3dZluL_ftVf8YiD53zni-WwE1Oq79Tc_hocOL--Ma0HZ8oKsrVOGY_A2w3r8F0e33k8WP7afONDFM11JrOKUNLZRLC5vBshGr03lEXXz1627tabBVwiAdy70oKlIlEBofVG7MtmUMsGqSSAQmrlzmF_cuPGA8-YB8h7W5EQEHAmxrDPD-bO0S4GaibYFJti5d6d-ScZYwTO6A5Y7wjHrReUo0zDDXtPBXH3uC5PrlVfPlhZBiEJ_N-xgfDIde2A1YX5rskPASUmyI7uHtW21EKlZ12UYfPwxb_06FbvA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sotalol trials for Atrial Fibrillation",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Atrial%20Fibrillation&intr=Sotalol"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "80-160 mg twice daily",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 1700
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3542,
+        "costPerResponder": 2931,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Metoprolol",
+          "costDifference": 400,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Sotalol",
+      "nnh": 40,
+      "nnt": 6,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+54 days",
+          "baseline": "90 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First Atrial Fibrillation Recurrence",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-2.2 episodes/month",
+          "baseline": "4.0 episodes/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Episode Frequency",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "EHRA Score: 2.8 (scale 1-4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Symptom Burden (EHRA Scale)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-8 bpm",
+          "baseline": "78 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate (in Sinus Rhythm)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+34 ms",
+          "baseline": "420 ms",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "QTc Interval",
+          "percentageChange": 8
+        }
+      ],
+      "remissionRate": 48,
+      "responseRate": 58,
+      "safetyScore": 52,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "AFEQT Score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Effect on Quality of Life (AFEQT)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-0.3 events/year",
+          "baseline": "0.5 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for Atrial Fibrillation",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+35 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test Distance",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 12
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 7
+        },
+        {
+          "name": "QT prolongation / Torsades de Pointes",
+          "percentage": 2
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 days",
+      "treatmentDuration": "Lifetime",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrFrcQNbCagdQivgB_zE5zFP90XrZbBQmhKwAImllmKcsczc9WAS8k3lqPVR4E762kt5u3mO5W1KhzdPAxjfbU31DsOVLdbpffHJHVHnpFDArf_dXwhKUhnD8LWx-WuQnG9jlIjlPSIFuf9f0="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQeaAsjIE_PCLutbUNOODmf5YCfiU5OO0-2yZ3WBgdBHAQImG0U8OzNvoRh-pMmkgf1b6CwzMKs47foPn5cAYpAusf5RAZgpMwz7cONKWBhlzlK5HOKijzH5cWl0nOuj4mhlpBkB2SXhfeS-10mSDeqdl21Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXjozSnLJlzkFdUhiTEB06BVccHfxkp6Ah-n_E5-4Ao-VJg0eI8JmX8hONy40gYOZlsW5BZKrD0KQ2IHQEA5OSCeo8fdS_J0nPyGr-c99sry4kdbWrkUdfmXKl4NOCCPP0A-0_DUlO83XnrD4eEpQTuWjW9woGOAigSTEWoGk9hupfBKvV8SApFzxp6gSknJKB_vQD3vqL_GD9mDehv3mENyR9ih-5NsQ="
+        },
+        {
+          "title": "ecrjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvnD82C77kYvZsCtdRf-ufUnC634rLhIamocaqOhNdxtqgP6iQuOnwpzvFRqAh_UWMk26WFKXTJyknnubZPt_skUabXTjptGHNMgxqBZUuGjV97i2ge_WP9qBRGXMFrcp2W-EFzXcvR5ASp4KxYYZ6naowC4hk5JVatO3mefHnfWbf9XRBrqzyJnE2H2T71N4eVOuDdo_7T4DamRxelv7VSWYbtrOqArAO48ObpehYfr-43uZLNxb6AQP4Wyit4s7GfNuL4aA-ABI8YyQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdz3KiLr8exs_qwos8AAktzIADhUsb39Mqp_XUdQM7i9o6c-c2r9DlDfOBzrChMXAjI8Td5MOQ7lpMMjeiJWhXYPUWHYI-ecAzPaONGRoybmKbikWWfDb4NFmux8g_hK26rVXE-xMIJq_i3yQ="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-4wtd-xQ0HkJ-kmOsSGjkQ8DXT9CMrTLP847dnLmK4uWCvHyhiKpmKATbbe8J0_gqyAFcz1UVY97cA_oMkxgIiF76xrZ-8xhBy0dLCwQDlVndh1AzSfu69rXRgzyV9mGtAG0RA7Cq3PitsgYUYXEplA5cy9gdHips3dlTpFtQx7Tc_5Y2tecnZ-QCTC91VST_MAdz2-Os7oGqpfB_Om9tkGj-5Om856TUw56nSgzZfIyQ-7iQqUqG04WqV6gwxke8B2qCYgY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Flecainide trials for Atrial Fibrillation",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Atrial%20Fibrillation&intr=Flecainide"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "50-150 mg twice daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 750,
+          "sideEffectManagement": 500,
+          "totalAnnual": 1450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3222,
+        "costPerResponder": 2636,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Metoprolol",
+          "costDifference": 300,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Flecainide",
+      "nnh": 15,
+      "nnt": 5,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 episodes per year",
+          "baseline": "1.5 episodes per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Atrial Fibrillation Recurrence Rate",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-11.7% of total monitoring time",
+          "baseline": "18% of total monitoring time",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Time in Atrial Fibrillation (AF Burden)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-1.24 points",
+          "baseline": "EHRA score: 3.1",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Atrial Fibrillation Symptom Severity Score (e.g., EHRA scale, 1-4)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 55,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "SF-36 PCS Score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-0.53 cardioversions per year",
+          "baseline": "0.7 electrical cardioversions per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Number of Electrical Cardioversions",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-0.24 visits per year",
+          "baseline": "0.4 visits per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Number of Emergency Department Visits for AF",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Visual disturbances",
+          "percentage": 10
+        },
+        {
+          "name": "Proarrhythmia (ventricular tachycardia/fibrillation)",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "Lifetime",
+      "trials": 48
+    }
+  ]
+}

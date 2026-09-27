@@ -1,0 +1,1048 @@
+{
+  "conditionName": "Osteoarthritis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:25:22.999Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHA1t1gU3FKnIdYVDza_0IvWD6UoaX2B_vA4SjGsNke3hZdBDh1_jkpyGu8lw8oesvS20yHaB4Z9ZXRJ2kiIXj19Hu5mw6AUpJ159IZMWBvPxaX9SifkWqa-Kn1OOvXVN2U_xLByzWz4XZzUT3aX3E"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG75OvTMCmvk2YQSEvZKU4Arpy3VI860-PfaYWJ53WCxplP0-SSK_GiPjyFKv3fL6l5olmKdXxnPU-Y7q3psN4JvJ5DKrTFX1Yv-ntMy80OzKgSZJ7NSNtd3bTAOYktbn0eMMDlGKscUhYoo6-FnzwOeWCmwjDSIF9Z11VKkOzv-OO1541xLrO0Dwo06LNDyEKsfDRPAgEjfefO8pTIiKho0-uxLiPN80yCywOKZpWjZunvekJHlVE0tk7XfA3gBMuD2OMkBdLfX8hVebbLzeidoiTo73qSGEl0D9F2iq-qe1GrsC1_OahLPNWz5qczNP1SFelPuqu1TplQuA=="
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzv7LfTOynstNBxSyewJDoSkQEioBXZXe0SZhNAQCzkYR88bsVDNIMWQiHJvodHfzpBzkjwNHwaMSZNaVSZKFaiky6vGds3iUj2jVMdJfV9pFIBYUon6VyYc_VtFn2MQv1jw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFikEQ5ri8b08uKswEf2St_-nQ4I_JeuLR-JvC9xsrB3PeJa6lLfBklF1U2XHgeq0wfX6UMSbRj5FcTENbRbptLuZ_KhR6I6lbk_NuyxcrZeINeTjXwPHY_oOKNynWKJxCvsocyXwJWG9tlFlbsoaY5sJhD1Lw1_L_dRliR7miYIbxAhPXNejgDMEwYj33eDaE4Q8gnufa3oAMZ7H6MWG6rmnlfvahAULdvSyuIktMTQCBgmbqFEJ_EXtAFXuoLXeAa-om53jMcqC8xBnv1rbv3BIgrk4Wb0k0QSXPrs3OXkuA8SIpNWEllahWrrp3kDX2O65_yMK59mw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9qeOz0yot3veRjIAdDlILYrtiq-rnidwQP4xkR0WZJBDKSaSsluTDVd0HdKveg_tCWpHn2MyW9bFrTUj3znlxO4JtyWrCDk_rdZgb-2Y5iZudat_lN8G1xYAiTQ13P6V125WM"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF53_5Pg_DgvHdpmUJbu8z7yOUuuWV2xa05xID8gm-rPWxd_NeOBEe9TX3crbscUTNYdgiac0QDZJeLtQ7r4tgQfSODsFJ6pEiTs0h7GMc9_zz8cMjurMShobnjRjo0LeC-FXOQxd7TEUIN0QmBY4qhsCAjltNVNdXWxq31XvJ_OQoW3sLYTnIrLUhqX0f2xi-IUBSbN369hsekylixbguRpQmmz-dsVoqMaTdyfYhuGFB4V56E0eLchOqzKIBsOoB5SkMQwPvSgvGU392Z2lTxwD3WMjA-vzs5o6qvuMaFMro5xzE_xrfhVd-KIYANdSjXGadCh1QZP5lRb2Ykza1LL7rWuRAprEA-O3GKHLek39qvJsQEIt3rY7eh3aW-qEz-S0OdrDzN7g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbxjOrZKbBVJJ6Fy9B1SSdkngYdVw87tMUSEovdPZRyEMtO8iHgV-scQg-8AdH0HJt-EAD1LVnrlKbhFe94LeSKJx3wPxAb6g_9UKGp-1QFXEIYNQDVbeUXgtR5l2PyRnLQCf0MywNqjMR7pE="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBvGA3e__y-SL2Rfbg0xeq3w-hx-sBFe5lIRnztqROkPRqrlf9EMdK3e754KOAn8t5Cq9iIhRDJSJFCzQFGdrtQ1RdMz4--iiROySUooapv4N6pRJS9gBViy8xRGIdq5hrBuVs5s73pB5i-iK_Hx8Jx4sR"
+        },
+        {
+          "title": "arthritis.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAypoJWJBPd2YgEWo3WQjoh_aZillegORigzvwYzG_CFeBGvdo6gBdhL7zRxMWfrCXzAbWENKvqvzDTijwbCQ4VPhT7ZoneU0mJC5XQ-23Worr7Kyz6psvkXG0dx8FwEVdI5Sqv1EEQQ_f1Kc-tJ3BEghTqCYkGFORxiIjLjc0nCAwKQJQHHIusYQrOvXoQCWM"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyXDQBVyf0L_AtK6oKO5Z04eQrsfkBnmv3XwmGSrx0pIHvHspZ_4SK6F1oP8koNQx78O2XwfMTOPNwg1aAAkMLcuZGNt69we5-y75djMMlSeF_rhdR_ahawo1haiMQAvo3oSplQNzp"
+        },
+        {
+          "title": "ClinicalTrials.gov: Weight Management (Diet & Exercise) trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Weight%20Management%20(Diet%20%26%20Exercise)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Achieve 5-10% body weight loss, then maintain",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 667,
+        "icer": -5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "No treatment / Usual care",
+          "costDifference": -2000,
+          "dominates": true,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Weight Management (Diet & Exercise)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.55 kg",
+          "baseline": "95 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -9
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "WOMAC Pain subscale: 12/20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Knee Pain (WOMAC Pain Subscale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-8.1 points",
+          "baseline": "WOMAC Physical Function subscale: 45/68",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Function (WOMAC Physical Function Subscale)",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "WOMAC Stiffness subscale: 6/8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Knee Stiffness (WOMAC Stiffness Subscale)",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.2 points",
+          "baseline": "SF-36 PCS: 35",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-0.88 mg/L",
+          "baseline": "3.5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+52.5 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue/hunger (initial)",
+          "percentage": 25
+        },
+        {
+          "name": "Nutrient deficiencies (if diet not well-balanced)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 16
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4tnttC7ex9zRI-wKWLJQC47C40QtS5WoTj7EALeqPg8OoUZ1ouv35K9Qc33MKvSxuiaoSLA_eTjE9HcQtkO7MVhHZrJ1Pk8AeaNnJbqJ_hc8vM35mtuyQHcLNmlu5FtKI_p9vxE3soFIFFxYk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEldHyuthk036xJRtLSxJElfbDvfyVbULm4u12CHtwCJPpKDSg6vPRiBfnSGgw4d0GiXch6wTPGYswV20NfF--_Lb1Dw3lfRjdz3FzwiJRBMwNHA-EYu3OWWi2rpboGeQOBvPLb8m6Qmg_jgoe4YAzZKJdNA43_drCeAyhQjZZX5R37YA0td8BFTBZrny2luCwsfz0AdtyfaIjfRnjTtPVVnG_Z-g_odKCA9Y9hI1JUIqsrkY2RygVZRoOw5idwiZJszvIJlA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2qPl3C-n3tQORgJVI57ljFC_7T1o_gDXPw2wF-apxX6DM63rNPYZpbTnrHV8pBPVlZb-nIHMqPyTSzTlVe6MTEDoJWr-XYBw1UVF1IrqM8Zwjge2SA2BHf7bWeELpxPS6wY9NKpnoDLJ2Eszo-8zc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-wNlZguVcQH7QW1ZxJ7byccYEBH1B0VIFF3CbgL-VEJJZ8GoyEkUJX5HpFqnNaSE_BH0k3gEDr9e68l-xAvx0_L5OM84kkOmrs4P2gGpWBQPLLDJtmEisqBXj_uskBj_0GI5y"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYRPLxqEoF-AjvhQ4CJML3xvUF2xKZYPAVR7YGndEGrzy_2W3M2AI890j1YNNZu4R6pVH7cyU4puBYpSO3xbZOy3NpDYbKG2Rfmu-DuMZ26ZPuZdejNTlEB5EHD97pLPZ3qMyYd0UVY_1z_roM4te0aqTg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHStLFaEEeWaF3bUO9iF9QnmemeKZs5Gl6g5mmcvhpTB_YD4qpHFBtdHRWw4zELTJ3X_tkPh8KfNsTNwvVn_GtGzcNA4Nk9v8HsJHxjLgW56JGT2GTXLCuij9njKRI3uezusoXr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERjTbabxO7pZ1pZSPOj1q5zR-rM45_aJXQbuj4Ok0Bc6tCDOGA7i_60QFmts1MutGRPf8tImaX7kj0XYpmGs9VDdlkMGrrOH5pKDWi2dqhmXdRiTZjmaCtYmk2Cr_1rkL5ZIrp"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuew9J17Z-UGpc8aE2lRXQ4mscfl_w0SNSFLQzQjKEQQ_6UZcrzIWvcGGsP5M47MVHhYCJOwyOUcoblpHkWzbiP52dqSYThywdt4A9cfQAV1Moua-3HYiFasVDQzjec6LrnxrWjN65"
+        },
+        {
+          "title": "ClinicalTrials.gov: Exercise and Physical Therapy trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Exercise%20and%20Physical%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "30-60 minutes, 3-5 times per week",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1143,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": -1000,
+          "dominates": true,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Exercise and Physical Therapy",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "WOMAC Pain score: 14/20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Pain Subscale Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "WOMAC Physical Function score: 50/68",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Physical Function Subscale Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "VAS Pain score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Analog Scale (VAS) Pain Score",
+          "percentageChange": -28
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.2 points",
+          "baseline": "SF-36 PCS score: 35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "+12 Nm",
+          "baseline": "Peak isometric quadriceps torque: 80 Nm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quadriceps Muscle Strength",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+36 meters",
+          "baseline": "6MWT distance: 300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 30
+        },
+        {
+          "name": "Temporary joint pain increase",
+          "percentage": 15
+        },
+        {
+          "name": "Minor injury (sprain/strain)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "Initial 8-12 weeks, then ongoing",
+      "trials": 430
+    },
+    {
+      "citations": [
+        {
+          "title": "ryortho.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3l5DyuNYNgWeSYyz9Y1xdiWvXV3nPw77Sdu6aLvGg9dp5aVbpkln8LocxKo4qBcowBMEy4msHfqdbsQj58p4GPBk-t4Z4VIbVGN-PBhFWVLiwDmFfpMAc2ZrGXK5WIA9ReeH83s3cMNDHqoR3WO1lcpt_dfLdKPfc0OkZT2b5hu7wpPiHFw=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzBFCKOL3PtPZYhItAalDsiVPqQt2qGxf3DI1j7NeTq0vopvtxFh3LIVON87fMP7WXAPeVIH-7UtQDevsDAIhbE-w72jWtpN7_6LgV2XP9In6tAub4JUuJ92lju5i-3Kh0kUh6CJFyByw4S98EoT-3f2mKTxzO1ZcbDLjFY9URLn_jZQ=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_MPUQxZRIIQwGHMjlovdZswR7utPdFjRARQWbvx-AU8jaJs3annHaErERXNPULIfs5J7xVQidqOkgetJDnNsJbu-LiSZEXKWNtUt6qsKltARqx9HeDe8QvF40TtViiXPqqGcrJUHhZu3G0MKeV7Y_PsfFegeCR-3x2JdZn77PyHlpflMk-VTvC0-ftP3Fbbn_js4z3BaEJgNxDV4UNd1rDhraeG-tJXutyGEqNiyc3mX-UUrnKsOSSgbvsW9HG5eKTeJCsg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1zjAJmChyl64zN1sKTfSvjgqibNPEQGEicpR2wnS7koE-lj7OAfmt7hIRzmMLXNWOVjPUXN-hlbaW2jIiRzKmc-srfD6Q3QLiv-j-SX_QB_88CaNsgSfrL3NZKgLdls71jnHKnbAGmvHh_ewZ0o3mE_0zNsdse3Q99FB98FeG3tJZE9Fs_gSpU22NBLtf96EKnEjheIueZCZYmsMlCxCwhhlUGiE4MhqtJC_MyZdAIAa5rvpGqwaZUIJZ7a0L9efADEBIEH7MJY-QJuANwqpBeO0AVX-ukDxEeK-Vr3qri43FMNMuww4Iaew9sDR2F_csTj7mZcjNrgy6fvTcjFUX1KBSiF6V04VGI4XkThXxmvkUUD_RLJecjiak3PnstjEJj0EcPYV_KP09"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnmRn4gQnGum5hV-6LNqTuMzhIuzheZTXJMmXgMXDUCwkxDPuzo1126PdynM8qCo6aJ_PDxDuW6znlr98gKr7WH4wnd52FIeEkCUBJk9BG62zFewIMjarR5NGbbiWk2m9xromQ8hIG33GPmA=="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBArVgO4Uv08MOYDwG4gfRzgum3WCqu-8_syTSFETiWA4GRX55Ca_CFeP-S2Eur1QUgCw4rUqaAE8aIuYPG3GRLP4UiyGOPFR1NGIhMXF7K777AXg56Z6C8RStXvViL9ACd2denc0Xn5QpjRRvLGy5fNnLlc-MhjHgKTUApYAATDuoJ20ha7xVyzD0q244vj32J5FVDz9k3dRTh5zKji6XvaYgBbX1PBNtZBAt0mtUXCmhzzXo30nxe5kLqUNMum6Clm15BibPzn1CX1HCENRvzOX4PqXGmDdaT0NRGrfWoL-x4mzD6kBsYEsDY8-140rGcOGaMa8JYdAV5n6WU3NpfA=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGORTJjLwsY507womNoivSsFaKGLjw3bc_u7yl0RF60Ik2EExptPbl8kJ0x86Pt6-m1_POrT1hSsD1VNP951izPNBTR-DAj0Rblx9YavN6CxB-81p49Jl_40GJu75PV2ljG5o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq2YfQmD-H8n8_Ris_iZIfy_HmEzzIouds_yxZrEpeUsi0SvTjEgSFeHwSfj7-hQErShai1rnuSEopgsZAK5iTUfBSuPWkqUwTqD7gXRCnRsFo2ctXb0NLLAue47kHQE8qs193OJY7yNnSoQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnS3s3mOSf08lLB6OrpZ5cLWEngpeeTrOIFofU7Q-Xg97Rky2SbGrXaFJpqDktgU3wsY7A4rpv1angfvR7ZNlAt_i-wmqehK-M1ZlDsyg6rdDTEsZxf0G2JBAfWxfZnJESR-fQ8PbufbLvGwU="
+        },
+        {
+          "title": "rsna.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlFx7_fAsHkJK-dJpjL98ZgwczaiGyj_2WY3NEJEZm1WlUJwWGCTnV0nv3OiDYjx1rfHkXbM5xAkc-dpUpoDClHPCWNSMuj5f0jnOmKZQLeGygv4Z-3j36MBlnmr8G1FI3"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral NSAIDs (e.g., Ibuprofen, Naproxen) trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Oral%20NSAIDs%20(e.g.%2C%20Ibuprofen%2C%20Naproxen)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Ibuprofen 200-800mg 3x daily, Naproxen 250-500mg 2x daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 100,
+          "sideEffectManagement": 200,
+          "totalAnnual": 375
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 577,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Acetaminophen",
+          "costDifference": 50,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Oral NSAIDs (e.g., Ibuprofen, Naproxen)",
+      "nnh": 150,
+      "nnt": 4,
+      "participants": 300000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "GI upset (nausea, heartburn)",
+          "percentage": 15
+        },
+        {
+          "name": "GI bleed/ulcer",
+          "percentage": 3
+        },
+        {
+          "name": "Increased blood pressure",
+          "percentage": 7
+        },
+        {
+          "name": "Kidney dysfunction",
+          "percentage": 3
+        },
+        {
+          "name": "Cardiovascular events",
+          "percentage": 0.75
+        }
+      ],
+      "timeToEffect": "Immediate to 1-2 days",
+      "treatmentDuration": "As needed or daily for chronic pain",
+      "trials": 1500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPoNZvK8ctUz-1HGD08U87fZIeSeml4_PLPWthVVh-l4QU5J2W7Zx76T68lilAJAbcZGPSjBvXAayumjoMgIdx5lVd5nVnQM8JKWIe3e7vm3o1vDOqeOTBYXP7fFo4YcoeXDRK"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv98qofOz_7BQrXDS21ew0nTJC8m4M0Yv9rGuRemWvMc0CJ3qGpJ3rQdZRG8DEaM0ATx6o9jpBC7rSURsW5NwaaLDUEc3ikAMBUMx8oJORbCqIK-YfT97xqd8frUsLGMV80eiTdFjB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF34xAiVvCZokNX_qfhyKtsrCrbBCqr8Y2UZLOEo7Mb-1VmyhYHHIeCYhGBUuOQ1n269aS2Bc-AWCoORgn0UZQQQw2Y4pGIGBvbyOPfA5uuWJBNXdtaiJW-tT2rJajPxXO1R7G7"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwmGTVKF1wfb1YoShl4a9EuXRsyBrKKIhPIrQ5SR6E-fxrUJu0LXARe4b0zmRHqaLmUJQEcIWsiQVqZRed4oc669Piz9D4E5sv4XUf-ntQOb35jZb51YMRUKl3P6QuqUasrLPfjmQMoJmwckdya8pJJlGuztgHEqAe75aCeEYH6Mh6XEri93OfBUE8-xD4QvlZ1gRZtFzwNAtNBvI3FlDfF7bZHs2RMjBeKihxzx_Scpsx4gpa7rMro0XOQOXY2QupZxZmrcyE-nKZrAGQiHw5UckPnyyzOcjNuTOX5LnnjJdWC92i5v7Gtzvkw9kdgzAsZvrTV3hNxU4UTO7to5WdJD54-PcBW79Vgyi4RA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjVqPbCl5Tf5kt6HYrKD5PE1VBErTCV-WzLWtLZhkfLaz7rfEJ1DuKaiQiNA_uUfzsgNBpl1Gc-xBGb_gw8W00P65geVMVosJarEnAfL9z9g8lE5TUzWIotB0_bu_fUu7pMduzwGTyyqZ1lKz-2uYCDJdDeCJB_sEU_mEOKwtPWTY3aBwyFNvWCsUlWv7q97znPsh8Gd-rGKmlQ3m5EC2wuhtZ-1KnLqZ_f_0wwozUBd5W"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmE6KpQYOiNh-3Cny-4jqSDyV5frGdu7YRP4hNKGJQogSNGRHIq8payPQDjA_S4OIYzmQaswy-CWzm3Bw9kZGI18tJqvBLn-dsn0v2gBizRj1vc8WCe5RzRNkqVWlY4eisvYRiIS0ruelJ-VCK0KBL9weWZHPGv7dJ9FsCNhHWAEl2U_x0wj3dT75A6VXoh1-5etbl7zvuQStBn7aYySACpEALR1JUkrfbA3my5We2rzgkaOElgCb7cJHenOn-cYhqPbPbuJ41P5yBTUrwQDhLJRzlDg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkY4F8qFMukvQZig0e2VcwpagEeYKKFtshC_VZwne5g6NoXpn6UdNH4VxfKKwhh6-LbQYPzVL5GvKLVMtK-9JvOf-lujcpLMR_8YHncnlZYepjT8r00FIjWq9FkZXP8j6GNVeL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCNCB8IpToILnufo7kzNny_x7uf3yNS72430JbqPFnjS7f6oKSth9ZAAkqwxU8F-oLC-Evf9A12e8S9Bw9V_E8lLLMsf6kJm8D6yXZFKfleDcpi1sdTvy7SVKue-qa6w9DnEliYSfgQ6iQECEk5FixObD-mwujWdZY8X7VEixwAYd6UCoVKOji9-DpD_HLQAUk5ODmvmkxp3IPsVd7I20y-5CvwabswLHtmEkq7-cpZUS9p8cmOpUAXXFaQ8Dkz4GJD27gTUl_7LDsJugSvJ-vhp6mpCb4P6lXZwuZ5ZdBzb2v9-QCgEjIVW8aG92mLC55PUmuhjxpiT6vFFfIoNS1YxehmstT5cyLwGk-WEyyMe6vE0y7SpM9IY1jkNjkgTD24bTEtTUxXei-CeIlXppJguKpxTSsxA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvMFbWnYux_1OfhPYv9mT4FQEHoOPHTX11m23jTZdccHfw8-hzvRRvg3Pw41d1edvCT9Ollu3NWsobCod5X-k7xME6CkAY4JGM1BAgFpNliqj1SWXP-qYNOfuOnvld9XWnggI4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeEqdrkO9CkGrJqr7iSayMYBzkDjQ7rBZAHI39rvsnjrWdQI13AeTSvFXlwHpFun6f4FZ69Ih3N05WAMb7MB0QRFW548m_QQn0h9i-vUnAWpy0K2oJ2mxzwSbJ-TmNxKAmwBUn"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intra-articular Corticosteroid Injections (IACI) trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Intra-articular%20Corticosteroid%20Injections%20(IACI)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Triamcinolone 20-40mg or Methylprednisolone 40-80mg per joint",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 867,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Oral NSAIDs",
+          "costDifference": 275,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Intra-articular Corticosteroid Injections (IACI)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Knee Pain (NRS 0-10)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-13.5 points",
+          "baseline": "45.0/68 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Total Score (0-68 points)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-22.75 mm",
+          "baseline": "65 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment (PGA, 0-100 mm VAS)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9.9 points",
+          "baseline": "55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D VAS, 0-100)",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "30.0/68 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Physical Function Subscale (0-68 points)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-20 minutes",
+          "baseline": "60 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Stiffness Duration",
+          "percentageChange": -33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-injection flare",
+          "percentage": 15
+        },
+        {
+          "name": "Infection",
+          "percentage": 0.05
+        },
+        {
+          "name": "Skin atrophy/depigmentation",
+          "percentage": 3
+        },
+        {
+          "name": "Elevated blood glucose (in diabetics)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "Repeated every 3-4 months, limited to 3-4 per year",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1461RFuYN2xFRi7vSrvF6LgOTwzkYyZiRyUZ8ydx_g7mn8Jhtz2D0AWiCGhaB7Hz24xEo356Qe0cpBGH5e1YAR0u5o4BM6z1AuQc6nNE6BsBFVVk6wyO66ULEt8kfmqkNMG40"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoilekth-JH9snBv_7xp6X11Wj_new3OE_iZHaIX9HnVfjB-cXCiLn0Vr6z5vx_KactLr7e115gVtYcOvY0Z0aPFRll0fqVzA81F6hiaQfDQp2wD_F2ZskikxMNA3eHQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFasAIYQEgXOwRdZtQjOD6F9RQmunFNpQkpo1IUe0Qp8-hQUIrLwAT96Wp1koHo4azFvZc6POdQOq-uUJoOQ8CFdlJvebv2PO1hNhCfRd4F6-ZtpD7fHilg-g_RkXMfOkKBJpaJhseGLAKPGvA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0QJIEY0rLOq1loeejOPy9aIZ99TQnfYxt01fA_YBU3qFcx3EjPOrE13T35gqnILCBpFcyrT7P-Eh8he5VOpjl8c_A9xX_vGr9iIyhJV3AQWthbVQbJ7YJQXqEXg_tV5NFG7VK"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBOftTNX4JNFQuxsM9IZprXm-f_-2S3PIepk_84c_ZD56MoS4_xEB4Dv-yAYtItYbO6AorajLsXgtGBW094DdnnA4xHwXYtx1Mrtd0xLP730QbuHTGtqEkBpRLDFtuSfHvWyzYI1ATNxjQ3LDPpc-ISHk-tHyaHmyGwg8o"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVuhi7Y6N2KQ7eKkz--yud1aUtvvH5-8sk4LogAZSv8xa5Ovc4lo7S39vim4UxUgW6x88sjHYqL-OEMazQ_RFEdS6fpA3947e2pbFoutSULtkHWlztG3b3uyiySz_w-bdC4eXPeKx_LzsnhaMAmgEcpfQ7zZu0qgHIJ8EmTmV-1BknzC1VqvEwFjaHzGlSRW32cVoCWBdtUGJVadUwGhklXBVug_JxQ-AadjgiwvVFql0pE5bwxXihztoKOqZoWmSZqS-du3sCZJO_wK8wjbjPJIlSjUDvPvshdRMoHq0WAb8lQ8k5qlJjA30jjEM4GKT9-CoUQPYQHiMLqNgS4fckrU5PBrR09e7TjERMqfpFWpvAwsHFLfsIO6A="
+        },
+        {
+          "title": "iasp-pain.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe14oBwpZFxvs4IIPiuNXUEorn3pf5KmUxKr_wCNBb7kLQKtmnpVqh8sZ6p5leglxmZGhgOHTXJjrUYcQDLFTo3DfcSdNLKGmMR8VQErD1wNru_moVzhKsW_5DlU0xDJSEMK5kjFWMgorZOQoex4G-QpHRw3i06LdyBWG1yMickeRNcxAU3GhqqRB4frbtLpP2r1ge1m2-BKw6ewwomxvU3vS46-YF4wVet5hoFJ-WEgbZ_W87U6mZhiWA_8m3qWJBHVqBXPQ9UiuWG_6CHyId2Xo1RQAUg1khmEGT0gLStGj9cB-NxymVd2TbKMk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiEPjUtkrUMTsyS5QdUxiuASSzkXGcM4qg-r-0JrVGwBQjGFjtWpS_m09wKxdLZ7mlYg0NuDJnzSzdt22MEOrkm_UhGAqktvE5FqcNybGWSM-0hkm4tPBujB0Kztt9wXnuBtzfTEqtQQm7_fyKZorEZykg4mZNw976ykG2mGZ5jrQ81pIKWI2s9qIChMR39d2s_nig1CMlKdZQQS1TVacznU0-wfwIpur2ZJmyxQeOL48wZPX9ZQo1gGm3UClGl-8Xs6xPBACz5-dr21wyy9Tx9Ms="
+        },
+        {
+          "title": "jrheum.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxE435ElvKYbKpL0f-pdRQ259oP2Z0oStW8t15cXS-6ZgcpTU95BsXdFFmjDtovjfo7FdV4S37fel420eXJJWtkgguoC5-JPordlDG5hgDMe6mXlIRZssyPyfW2jjX-QBMGTND"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAJonv-TpF4zwfKxlZGOUNQGLebghEhqd7tfJhT0TqMRjzsIAUuqPxykSgJD1Zj7mXrwXG3oAG3rjtPJsyHQ7CjZaR2vwDsdZhZUhQh0g_omPQrVniElP5Dll5sPQhtOcEJTWN"
+        },
+        {
+          "title": "mskmedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYsIcsLwB_OmCe_0OvPw_kzLIYEZoTBtpoPDHsvhnMAdrOzfyCCptfUVu8NO1ayMy_MVp6YUqWb2zy_6AItc-ytZnoZkHK9inotrT--x8ALbmtirHcBCM6Aej8QIucqhu3up2QJDBp1pHm-7rVWo41ttGdg0gpJQwaY9ZTsljGhqaWdy9f5KwvSCouqyoDMVYsjnCd_Xy_r-0ZpYnhgPDlGXX3Kdx4TBoO8dO61vrBU0XK8GTKC2ZuOg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoCFH154xCIlXRYwp-HNJIb2WdxiGqm7TI_R6SG4Ycj-jHwh-bsc1XIqaNL8RJudHQC36U_F57SKmYktWD2x_CKjs8OuKuhFX4221NfAFxAXS8yph8eJUsVl-xiTyHdQE-qtEm"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt8exTetiPeDlf7jAlBTkWcLtPPQgWP2m_lGFRmGxXRMSgMgTMJumTus_qFPij28D2bpJjRtbA9-sJpAoanBA7A86rBdo9POa4xhvGgwZfcbLWtj_Nj_n5h7IJnCo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical NSAIDs (e.g., Diclofenac gel) trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Topical%20NSAIDs%20(e.g.%2C%20Diclofenac%20gel)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Apply 2-4g to affected joint 3-4 times daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 308,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 140,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 530,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": {
+          "comparatorName": "Oral NSAIDs",
+          "costDifference": 50,
+          "dominates": false,
+          "qalysGainedDifference": -0.02
+        }
+      },
+      "name": "Topical NSAIDs (e.g., Diclofenac gel)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Skin irritation (rash, itching)",
+          "percentage": 15
+        },
+        {
+          "name": "Dry skin",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Ongoing as needed",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP9NTdJaP9vFAYvLMI4kk7eNJKp4i4oavgfKIIvd_Wgh_IBBsYzj2EPXymHfA2FatGVqiqEeNvjxquVyBk5_z6g9bBWbcqxr-X_V1ZCL1hcJ0ChYXFPlhQ-n3NknglrIGtCxDJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGn5pK9XooTCsndlkz4R9tCbU1_dLm7GsfsYpRLyLIAB18T5xzhklb9U-t6cCMvCzkpe0QtbKcYzAKTkl8ZlOQYSlub9A1c7Wvk0hc3-cjFrb72H27uY_p_DZb30Vaqnuk53t5CgoetO2FaO7Bh91YiPDcTv6On15UUb1Ffg30Tl3OFBugzdV9P8PlX7oVb3QSGr7J1MUR5Yi4CSf7ZsGi9OGM-jqaph6wcfuUCfiVR03pLr4DFKF_sv0n7LOT4QES3u-0d27j7ww=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgzDshnxNkdrgXzA06EaY9tIlymwNfE_NxDLz0ajD8zVBOmx8m6p952lWL-JC9HxpV__4gyJwgATscocl60yy9b5kJ5eBE0vv1mn-pVrpho3ysJ6zwC93FZxOlX_DqZTsfd8CCah48VSOjjg_KPPzSuMcmgi_i40kKh2X2jM1unUr0t2rjuyoPfus76N1UQ7ZjJg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHGA5e8yPiwnSPVf4VN3C2a-cpZ4841Kov3t-sP53uUlVljyGekAc05bhah75mD95wq-4wI8pDGAb5OGzdO7r57jNVy5u4n04sYK2bbBEcPAK5hqW2iuDr6C23nb3CAXViZroS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErxBx8qeT0uiW0VsAXlIFJtKm76Gqhj-MoBHc-shrBDmZg1aRr-yWefFYlN5K1klhCi33LbFanuq7Ik-g_JfJ6lGvIgfLjH6TUZ7BdA808z5tQGP6J48c5-sJyeod5xsj42LNAOprekItaPXHDWPtJljGKG0c55TqocYHLBg__SNfawrHINfyVYinSw5EobrLqv0C5z71eiGPMRFhN9oj9FjsyjGGwDCsf61TxnY1VKLtG1ag1zv887HOZs8eCcMNA2Oa9SEtEQg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfisnhBsMHSpyHWnWHxO3pRAuqAgU3yDev4Khr41x4fJp5chzS9ZYHLZvV8yTSSvmQyuE6Oqo5lr9Y2iWzHAJhe8R-UuroHQ7VuPOYwalA6aEzce8D-5qsU4sR0qcL4prdKx5cfaQXMpRdsTE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGBqLSBYprO0edoUZzfBDkXews8YVcfsAJgOyq-KKfWLRStE9QtILodsMlcQ-nqTfv_dEwRh7LxcpeevoFW0t5h4yw3rnbsqhGSzbq0hr-i50AUoGobe4brHghV47obL5Ki4ny9J54OfYP0DmyhYBDFCxS7QMOqAur1vqeg2nDeEOQW0hi9_a_5ImKg3EHaWd7rSh51xg39BBcOZq9WAelE7N7GLpkWYr9Pk8flEalt5n9Ro7-zbxax74dIik3d82hcIFUeEee-DnfRnGeyXyopP155499YMUx3Idw"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7M9zBRfdcebaynS38u1cX4jOUqzPC9VWSgo-Lu2xv1V03795v8NeeATYWO3gliuEPnvFjwbB--Xadw-E_BUqwnbhe4JraOE1iqAJN3Quen8EHyWn5gfosVxOvOFFXyIV2pF_g4Uc="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0VPIMTUcWz4FQyOevyVi6r3zw3sc1wA7EjMixfgWpGtNN6BIpmju8nY3Vpb4mN303dNM0kXmE0SIb6QT4E0R4kG23v0egC3-5svFXlG_cXGrQkF5ngoQziLs0fM8rdJcBdEnLKWJCLYQx0ffAMnDagvNb-2olgBQwQam51vgtSfccQvjqRKb41GQXlH-h07y-DV6fC3UnXdEhJA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Duloxetine (SNRI) trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Duloxetine%20(SNRI)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "30-60mg daily",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1818,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Oral NSAIDs",
+          "costDifference": 625,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Duloxetine (SNRI)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "12.5/20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Pain Subscale Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "40/68",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Physical Function Subscale Score",
+          "percentageChange": -17.5
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BPI Average Pain Severity",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 11.4
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PHQ-9 Score (Depressive Symptoms)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BPI Pain Interference with Sleep",
+          "percentageChange": -21.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 12
+        },
+        {
+          "name": "Constipation",
+          "percentage": 12
+        },
+        {
+          "name": "Fatigue/insomnia",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Increased blood pressure",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Ongoing",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwbzukI2nDR1gP9ivriDFpcwf2CCxb-PX5Eyz1z_3rt6tHQy2vIR8g-slCJOSXgGqs0NjrmTwWbs1ChbyJzWyb9JQAuu2D3UyDhUWQQNA6kVLXP3eiFBWFnSsRe_Vhs1rGRTFU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXvg1lM_3VUGhiuzkiYr-8gXlHWl6HuBNfCrsCNJ83934LE5fXwD_mjZraGUEdw474kJ8X67FstujByk8NU3y0s4vLY9vTHxzSneYvxq7IuaR0eyPQf1-6fQ7s-EdBKgcqOVk9"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqWI2tX1rPD09aKztLX5jdjw0aQRM5Xjd3llcyhKiWCYKZk7w4bD8wwsgQt9vpZJP4gGZc3kBOxeFbGG0I9W0iQlQkbAM6r3LmzFLwn9LJYlDYKLw3RfT4iu7p_S2m5KnmmJQq"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm64ovsZ3PYdvLpVzgDcDp9rAFRug5H72Yivz0kMeEzhdDt-zGYYc1B8wLU8UdXFrPq27FmOp0ZTZ5SrMhx_g0KSksXJ49rp7cpuPLcu6T3wkqkTv88SYtwZwvvsKUhrprNJjoX0sW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQhLEBb9P0lzPdQ6GkO3IQRqBATnlIpDQNnAqSehOiUyP2bDw5UXFAjYsAdNgWdg_1oBClsJqQBnCmY8zhfZu6oSpsT-HrAY8UtB42fjE_f6kKO_JTe6ofOcxKItrBLiKfLEHX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-QhGWRcoI98dijmvPOqboJZxFPIJJREBeV_qJe4tL-rrX-M659DT_fkj0arecxkzMl04Asr5gfh0PdFage5LZJ_shGq5W0FQ5gJAv_GUo9l49WcDI-IddvJEx73YGdTOoEt7RjbW8y8C4vdE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVz-YJsPyhe6Llxc_ycp7fgLPei25ofbGMYwLPed3MntO444QWuWYeO8EBtRZ-t3wKhCJkc7jR85EL_Whw783WU4xsKnvBygjMi7uPHKrL_ZW8QHipDfNRvU5M_mNcOUOb0GSKFItkMJKpXIAprV92BrhPy3FNDXVwf1eZpa4KoKR-knoeQA-dmwf6NxJFoodsat-QUr2ZYXYN9G2OUaxDIfaDPnIj3W2vvODpMW02CXQ48XwUKc5ZMiVuG5usaLoYrzAtB8QVxC40DaPJE5O8ZcjhJegQKxr0SqqOCw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Acetaminophen (Paracetamol) trials for Osteoarthritis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Osteoarthritis&intr=Acetaminophen%20(Paracetamol)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "325-1000mg up to 4x daily, max 4000mg/day",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1230
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 55,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": 30,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Acetaminophen (Paracetamol)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.6 points",
+          "baseline": "55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Pain Subscale Score",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Physical Function Subscale Score",
+          "percentageChange": -9
+        },
+        {
+          "absoluteChange": "-6 mm",
+          "baseline": "60 mm (0-100 mm VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Disease Activity",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.15 points",
+          "baseline": "45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WOMAC Stiffness Subscale Score",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "40 points (0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 7
+        },
+        {
+          "name": "Liver damage (with overdose)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed or daily for chronic pain",
+      "trials": 72
+    }
+  ]
+}

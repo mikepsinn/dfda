@@ -1,0 +1,1079 @@
+{
+  "conditionName": "Brain and central nervous system cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:23:32.720Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaTwMIFyzh5uxO0n-pBEp5Z4SFjoC5QXvvL9RipptDT_wtloUPuZT7EsPMhvEN4CIzGEnj4O0sDJfnDPpT_jDGiD3YcQU_0iv6413hIelV7X5Itq7rNN0j9HOA5N8rbAa94RBWGjW996_e6Kq1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNm32kWLgSvUiMKHifcIl7ozjU-U46zM1NORhuiRU1tRGuS9AUOz77TKcy8rYlxVxc310RjdJZ7bfxxHleFBpCfew2yMxidCRDgdwhU-UIQyU2sjRgk8iH6k7SvS2251YZL5O6ZXCUh_GGysHt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7qBV8AhilKizY-mLrfsbVuIQz_tfv-NkXstq3fO-owpjOpRgehkru3fVsFdXdeKg9zgcZMIGcgGS8zm_MBLIzk_DhMAWKTzIU7KSDApfJeE4HwT5YOv1_IQk8UC1YHB2T0GA9oHhwLHsV5aw="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf8KXvJpXFuvABXUUOzhSoA0tjRsV7oj10tURgAODn7dUz8J5YuARQ1Jyt_bkDyvz3VLraT60XElNk5f0H6oKAKI2H3d1nWTt7YFS9g6ojQAeGTDJrhDOUiS3fgAyglxRWEA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTDfEQ36MRBHp-6VrOr_cICjeMub0saLkcgutsBUBBD_Z0R8PmIdkQ3hT4tnLklNaH-GvY-PrKAYP7xlSUdY_X5gQNLUziKPhz3st-tBkhjd4FZPaIEX8PlJ7coCkICfNqm71b1_bvzwLzcxnC3smSb_cClTcxw3AnRYYSJPuu1dpdb5a2SdvwsgwHBzSA3NFRH_xXxZYfJ9YWAzNP8UB4qDCQkz0iJr9GsnvU9vq_RhSyKrm6VHmx18ulG61vWixcHhsOcxY9z4vdpeQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFteMLjcvMSx9QuBH5lUL6luiHVrELf3CxeHImYBp97JU54zi_BCbV9EhWx-91CRJUrAUPcD0UzjorYTgZAK8fOzNwF0l8kmPoXRoqUxxnynYMbJoDCLigNJc_FjpnmBj8tZKKQm_fTVT6MN34Nu1q5sQG0uvHgB74iuK9KyTEXmh9-iJQ7dtzUosP4h83DekImALAo08WgPavt-lg9R0qxZUBDyivTkAYIOnVuSzkYHRaIgQOysAYLSrY4jbzUkqCuiYISGyBs5U7-ddw-4PYSMcIF7mwOg16P3vSnHATllGpRuV9ltEaaqsxpa74oARQwEYqHJMO4Yb2eAZZpuKk2siw1uc1tIPjwZ-hbII5vBupm-zF7rd5fKjqEId2Y3jtvWaxrSmqS_xEGql9ftiAWM9ecQSeisP6dl6iTUqs="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0tCujU0UzjzBD0tzvf4cKxFo8KHJJIdEVqWAv3GpGnBEAazpff1-4NsmwDZVhCJPRPXUf-cc424ZUzw-bCz78vJQ4ku5kT-L-tPqnsoNucexn6r7CJ7WfVgLNQnjHK8G62oc-8Q=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6MSrpHl49Y_7JvA7qy2dC1VJyH8fwHUrdK_BJ0Z13tAjeEL_NbNQM31rX3AKssoIXkgZXMUz4fqBFs-27mzPMr2_aY4OEK_CrFVJuYX1LY5WZdRiLO1nyyCWCmqY5CHC_tnMe"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmrkTIz1555on-bo-WmK0BHqKUEyFZ8qEHYzWYCJ597pGyfc0zauSUXuToI-7bsNhcErEvUoTtKLow41pTH4Tsu_mQd1XMTs5AjaPOPLW3EYIuissM0XHI9UkhG-RWiLBootjzbF0kh07w0V_9JCZ8rzqtjxdBAAe9yffoN3P9o2Nu5QT7Xk1tob_qcbOsfw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGt7xlxYI3azSJL7TsiWHv6dy7t1kF3NwMUUNhwaNUIAUiDyNLkp2hkg8IhymQedgRTrRHzAUTPBSwXEQWW0yvAXbkbeXx-nkpfeJHn0Bwk6BxK31sikQwt1iUKTFOncsNPQE-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4YePB_hH-COnsPLurC8A5a1XY3-iP_T-OtHZNwgXwLxm3Ef-MgQHFiBC9lhahTmTnisoLv9w1SuzZFzxMFPSeHSIAPNK2n5y20f7Mh73dorntuLzpL4Y_i9o3P8H-0ZXCeOqiEEmkB8Smef8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPO4SzSSg5Lwuun75Xgbg-FsAgME1VHoozJSoh3opcmWxnig5ah7tQQOB8TEtSm28ZuUMd9TlcxTaTIoomD3R9gjDJ6cyYiSRAeAY2lou1d4rnpG52pobJ1S00RzRbpKDwNFtNHkR80RwZDOk="
+        },
+        {
+          "title": "ecog-acrin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjA3JtiFasa1-0rwjMqtBUcCQRTXVU2ALQnfE8_aFZWZMFx1xdX2N32zwmNS5gK4ERJmlEBXic62tJmxehiDgHdniaMRjig1D7Bj5oUyDdFErbEvx0i2nR45U9v7YGxAqNI4it5-WEnP-QQBOQ8II-f9JQtCLqJ9-8f-FLHg2XdS3hq8HMGrWoq1m3ALdobsOIlwnx-uDarsM2rva2yZGslwb_ruFby7DNaKlAnDMQm3HgebiRaFyY_qL0eOVpBRswjq2A-lWb86f8exhhIY2DSsc6wug1UjQY73IEClZlpTh-uXUY5Umd1Fwa-y5nPVjMeBjF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtHe69DN41hxiRGE_Zp_wo2cb5Is0Bwp0lbEe0iIH39KLlZqy0sDFOipYMJpnZCrGACJT2h-azCcUozJmawptyoQinTMPMgeor6lX0URbtJBPpftWLsriTavQx0A70S-kBA2UpvynfXbsdtWo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdn4Pj1gioLO5XGCv4vPZPlPrXtBrZXitVILJ4phCdrVONNbHl0B9M9qICLcCkgKkFBL3rxH0z_J1WyI20py-SFg6agq7_Nm7imq5dyu_AfTww3mSJ_uGfO03WBOhfb5jeXmKlIzg-nunsu2Q="
+        },
+        {
+          "title": "e-crt.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDd68UfDM9Ap4iu7nh7dIQcjN7RVmr3ZRz388f_7N3MdoIu5RPSmjsZTceCCjKdtC0mxZgmd-PKdQXFaSQK7_V4V1jpppBcvLExtcuNayj4DZU4a_HsHRIsyc1EXISL4cXtKb2Pq58TdPPWrSxLH63r9G5e2dPOnkC_w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Temozolomide + Radiation Therapy trials for Brain and central nervous system cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Brain%20and%20central%20nervous%20system%20cancer&intr=Temozolomide%20%2B%20Radiation%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "RT: 60 Gy in 30 fractions; TMZ: 75 mg/m2 daily concurrently, then 150-200 mg/m2 daily for 5 days every 28 days",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 18000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 56000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 1120000,
+        "costPerResponder": 160000,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.19,
+        "vsComparator": {
+          "comparatorName": "Radiation Therapy alone",
+          "costDifference": 38000,
+          "dominates": false,
+          "qalysGainedDifference": 0.19
+        }
+      },
+      "name": "Temozolomide + Radiation Therapy",
+      "nnh": 10,
+      "nnt": 6,
+      "participants": 35000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 months",
+          "baseline": "Median of 12.1 months (with radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 20.7
+        },
+        {
+          "absoluteChange": "+1.9 months",
+          "baseline": "Median of 5.0 months (with radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival",
+          "percentageChange": 38
+        },
+        {
+          "absoluteChange": "+10.7 percentage points",
+          "baseline": "50.4% (with radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "One-year Survival Rate",
+          "percentageChange": 21.2
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 35,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "70 (0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": -7.1
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "40 (0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (EORTC QLQ-C30)",
+          "percentageChange": -0.75
+        },
+        {
+          "absoluteChange": "-2 seizures/month",
+          "baseline": "Average of 4 seizures/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Frequency",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 50
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 60
+        },
+        {
+          "name": "Myelosuppression (Thrombocytopenia, Neutropenia)",
+          "percentage": 30
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "6-12 months",
+      "trials": 141
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0d-WP6dTMPOKoiSWtb1nLeR6jcK2CzpHi4tVcyhOu7yCU5xItIsJrKMuD0-iBKGmbYIFRIFVEwaBmDeCORJw0PfXUes0RhhzWBIiQywbNaxVfKQq-M_aiSnFTobsohQLDnYRUfk8O"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ28dNz4vlkeKRTyx_iuH_gFjdxMhH9XbZgmo1brw3Otwdyrx0K5s-w7aHpUTzc2qymJsJEVCr65GyuFMJQ_UNayD2-c8g_P8e54zIp_9nGwCiSCcArPUDaBuskpFJMGGyKFr_trVkvhopWg=="
+        },
+        {
+          "title": "optunegiohcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj4JC0fsljy4ea5gSbA_ra34_mgfj6l-0YNNNOdUGGhEr0Ua9Lz0u-7aQ4LW83cIuiR6AFpqHuLVjcVuGr_v1hjrZ7njJyMKcCMjXIIrMI2duDeNBw-TEkf7fMpbZYT7IErGya_7VbpP42"
+        },
+        {
+          "title": "optunegio.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8QLbcuuS7u7-9FtXkrfpAp1m1xw7HEhNyxiSA5EK4QmiudY_7_lYgGgCD7xbfY0p8b0v9xH-g46byzH0hla652UZ9eAOOzMyNOWnqvEd-U-8wXsw-ubWLx7qO0a6Aii-ij-8GWDQhBBsjgY1acMGQihS8W16lMgYQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHghn75yTbGgbNsJqwjiZDy5yV8TwYh5wg82NrQz-4ENgr4SRo_dAijGO_1qNQ3uWI0IrWpM54_tYbDlp3T2E1b4vk2Sm-kiN-uodT_p716xCSYQnDTb6SbNOTTo4She9oi7h_GYvhGGqonRg=="
+        },
+        {
+          "title": "novocure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5U4DxQtScqVPDeHmOVxohEp4y5XFfQDu2uKu5TPdqCAaNTtZKo-Tsqkiyr_S98af2Noxa1XUGF74NdSM36UTPnlhz4_JLNfoC0ml7JOOTWay87x2uKJ_7Z5whdYmZ1TAEMymaidI7Yo-Orq5BSIJTNrTvO8FfYSgsStdCENvkAbJgFYoZTabbOYYttjIp3VwXErBA7av3E1tfXlLnsiqWXzGSosFqX1HekYxg5cLw0Ebb9HF-njblf64VLh5vpdLm2jTAzzOSFJwhaH4PRs0PFHCz0w-awlKH3fYz0kr4JgbAKbFdDgTSC_fZC7gFX0LRvGhXPyg1fRiprMw1CW8R2ROXmK2LAPZ2nHtX"
+        },
+        {
+          "title": "amegroups.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqdi0PC7AN3RXWmpuSUTLae-lJ_IhJLYBazfnjSiOI2ZyVUZhPH6PdkuaLfqg3J6TbMd7bvd6pMNGn4X6aeCvhIMHojtWRtW8KFaCu5xO6Gx_Ux1xIDbQdyC1UoImUqXTBuWfcheX2tV_B5K_ZB-aEG5PdTusryOshA8CUZmX2QIoJP_ftmRHEGzHx-MBZSRa3hFXzQAJb9S1g"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjr812epX9dcx1IVV0DHZXrPWyXZRtfSZQdPCiZWiZ91XBij1KqOirkpxfRsI-ERFlXn216qsfAq3QiIVY9_NhRUtOa5XZ59zThukiMrlnq0ko_d3-nF36LuaCjwpBqNTcumxlz-E="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_P5LeiIeFuVj3DTOnAsfV383WdgDyf5JyHgm6beddDhRWOynEvaN8FtJDGREUnvY-OUw73UHU7vRSszGtDMmch76nQcAWivsip5OTFzO-o3LEsqdLyb8cR0M2SrJD9Tm27-mYGRd3bLhS3Y8zLQCqhJEPxPohDe55HF0BFxoX1USdw8FjlyHsxw-jDIlsBTanao7rEAH_UAciD9YjgO2R2mZn"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiiuE9EvW_tG0npHtrE2PA64qYbWF0z5NllabU1J1oFARe76pEflLywkgbBRk2Of35PF-HMRpObNlWYu2sfFBOTSkdp6zyhJsT6cDdAZUKRKEOgfJbeGaDLf-Ax_qG4rGlzJ0kWQP7ytsTlj0UCOeX9ZO83S8R"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tumor Treating Fields (Optune) trials for Brain and central nervous system cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Brain%20and%20central%20nervous%20system%20cancer&intr=Tumor%20Treating%20Fields%20(Optune)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Continuous wear of transducer arrays >18 hours/day",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 256000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 500000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Temozolomide",
+          "costDifference": 220000,
+          "dominates": false,
+          "qalysGainedDifference": 0.25
+        }
+      },
+      "name": "Tumor Treating Fields (Optune)",
+      "nnh": 100,
+      "nnt": 13,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+4.9 months",
+          "baseline": "Median OS with TMZ alone: 16.0 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 30.6
+        },
+        {
+          "absoluteChange": "+2.7 months",
+          "baseline": "Median PFS with TMZ alone: 4.0 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival",
+          "percentageChange": 67.5
+        },
+        {
+          "absoluteChange": "+23 percentage points",
+          "baseline": "50% (patients alive at 1 year with TMZ alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "1-Year Survival Rate",
+          "percentageChange": 46
+        },
+        {
+          "absoluteChange": "+27 percentage points",
+          "baseline": "16% (patients alive at 2 years with TMZ alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-Year Survival Rate",
+          "percentageChange": 168.8
+        }
+      ],
+      "remissionRate": 1,
+      "responseRate": null,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2.5 months",
+          "baseline": "Median time with TMZ alone: 5.5 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to KPS deterioration (≥10-point decrease)",
+          "percentageChange": 45.5
+        },
+        {
+          "absoluteChange": "+2.5 months",
+          "baseline": "Median time with TMZ alone: 5.0 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to HRQoL deterioration (≥10-point decrease in EORTC QLQ-C30 GHS)",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin irritation/rash",
+          "percentage": 45
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime / until progression",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKntyR-OhzaxlMMp4eKLl-PnUiB9tRfbT6OpzI_JMTEpt8Q94POoK8klbWdQ5b8RG1481bcbbumP80F7_Ot3PnHmVUfwssy8LtSvPG8PQG1NXUYfipBsAO8ySA2dIUiIBNP3qUvLOd9est2A=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVHZOL6PLqJfz6hSQTS2_HmAFORCRpMZp9JE-Pxv1DHt3st6nK0q4TgkRFGbK7ZW6EPH-VNiUuF_Aezui2i3g9G0mlhX3A0_qEyvAyTi1y8YgsUUEJSHc-8UgQ09S2CTGk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyAmbjuggnC46VdZhHTHz0nb0MFShoM8kzi_AtgbFhydyxkQsXKUPEOHk0H02g8tSlij6srFTt-dRfYFhcflpAQ3QfY3wZY6VJoEck5eu_nz_QL6qWwi-ayoUqbk-gvQ_JqOk5YuY0ct5_Yg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjq6sa3N24nIOzp6X2-bc9aQLOsIYhQ4JU-bsRl9-hir1HuPurAAJARDuCY2gAl9h3DlZMZYAao3eWMSGaIHzuN2uVQxD8CwYLnTpjlf9My4Bkea54H5ULRXe9MJxCsZaggOs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfyK-q3teJfjVZ1YYsEOPwtwPdD1q8hHkErc9LRwbzpoX3nJt8ONpCyoNME_k1VcZ7GzDvlRwGHw6e6TnQELJnA45OYeLDssWtX61H4lP_8bTKFUa0439_GHEWNWA8ZzgZllI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqbwzpleVMLLHedMRCYdgqqtFLNSWBiQp8qvjenAwibpMNmrdLiU3vsjAGONCPfHD3c5vDflSgHR3p04EX_flG8UV1B6zCkvk__j0NeH3Fjtmfa1nQt4rsROb9TmRr2jT5jUEH_3U="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9dsmmgLEIjOhhCccs7NtiYAufgX_SgtRhY_lKLowo8ZE12b-2wqgmukFVONRhvhVcQZTeYqOHVycyFwyReTTTEgldf-F2wGiaweOSp7bd8CzDhXuoEztUxV9U14D8eXUihp70MdcGyHr_jx2M0NZ88hSiRn1HpE77nXx3nXBiaw=="
+        },
+        {
+          "title": "binasss.sa.cr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZGg5Ol6mgj2a8ahK22DmYr6o_jNF4o51zuFTVTvpciKuA4J4NTbHlaWPACBM5e41Kgg62zXevkgFZDHgPad04ezuuqjjmOtWsk1lBFUCFh17t2Sj1ApdHXuMHTrvOKMI="
+        },
+        {
+          "title": "cancerconnect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRYYeCUEHfH3t2VRyo7DnVq9mrNY0s3OGWeC8WPGP_nKqcKmfCOdzOdsFuqoCKfqJXkfgj-UAEB2M5DMFmEb_d6ozveH1cWvzJ6I-nCPKwugohCmA4lT737HMLMnkOqp0kcrx5z6ZA6krwPsOnYmLRPs01uA7cSZRC6NqYr3qbSPr0Tmv8SoRIGyuSSitIUGHwCCst_FuyNlnPtauYp6hs_osQcH2ycag="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPNCAg1wNnw4o-zaPymCR09OU_WgNcNSCeKLHGPzsdNK1a4dfMVPs6gYPt7wmlBfuNqItDRDC3R3KBlmi3k1BEeyBRXGbR_djiF1EAsPrNi13zVIipunOQpixYXDp5t_c1kgA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWXzrwWPf0cMmkivgcBfpCBRZppbwbH1EUzWD6i72lQksYQHBCbB2P5p_X2ej7_lhe-Ywr3CYv0c3At5UwP4T2kWivNhy0WSP0uERpHSa4c9id5FIZO00NI5Cl6O6qxMhLiXN8hThRG5_arg0vKlJ_NXXG6KK1vKkn_eQPYQnUaMZHZHcfQlSglOEsWhJV6rGIFS5Msn0pVOI1phBcCCr4AlT309uUUJN_k3JgTTMIVmYiNQ7Biq0h6lfBRy67ETSerjwvMOGo8r1KFQQZxXqi40S6pqyZIalAMAaOGLd4_mm1mPik-J5qLn9pLVDe4ykAHwpjcYe-eJUxDHpUB6ceVw7EuA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB-wLlnX1Tu2TSUQF3HhpTWRlFY10IPq4jscAW4Gqfs-l71DSHq9gzTtDxbXpGWGW_WR9guQuMMIOU9-CNNmC6hdmRrO4kL5Jik2bu3mMFlsY3YUNGcK6Tjx5LkmtFHSxDBA6bJ2GmL-XSnMc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHggLs27BopNHpLCv4XyKSRJMd32y0-bBNQ0kLtCH8_-_TyMSjHG6RN1T02EdzYYuZqevzgIlG1Ftp3hrjU8JbRCT6nD4uml_KvlwjAXz9Qhib0xv3l6kb-3GTZXAJrhLVq7s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL_YFTyI6MaQHPz70PIGYgM8QgYyDD2OHv8glQU5nuO5sh3JidkjWfiaktP3ZJjovKL9-7ZlXyn5oBwLOAmycshjowl1kqdasOt_xmKzm4eE6ePz5CiTluY6DpF5UdREYoaVAHHUou0nVVs3HShXQoFGh7JLvEKxY3gAcGhEHMsEo_SeUPZ3zhCizzLD8WvCoqbTKxoZBCY-C8Kz1XspUarrusmUFKnwdUyHBmw1AioinvIGl73RMVY1reBVt6vb5x"
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy trials for Brain and central nervous system cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Brain%20and%20central%20nervous%20system%20cancer&intr=Radiation%20Therapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "60 Gy in 30 fractions",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 48000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 960000,
+        "costPerResponder": 106667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Radiation Therapy",
+      "nnh": 15,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 cm^3",
+          "baseline": "20 cm^3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Volume",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "15/40 (higher score indicates worse symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neurological Symptom Burden (e.g., NANO scale)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "70/100 (lower values indicate greater disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status (KPS)",
+          "percentageChange": 14.3
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 45,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100 (higher score indicates better QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "75/100 (higher is better, population mean ~100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Memory Index Score (e.g., from RBANS)",
+          "percentageChange": 6.7
+        },
+        {
+          "absoluteChange": "-2 mg",
+          "baseline": "4 mg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Dexamethasone Dose",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        },
+        {
+          "name": "Hair loss",
+          "percentage": 90
+        },
+        {
+          "name": "Skin irritation",
+          "percentage": 60
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 30
+        },
+        {
+          "name": "Cognitive impairment (long-term)",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "6 weeks",
+      "trials": 658
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkPILtLc2LBjMOkZdV1pbRxx-mh9i144EKyqprYVLNxJ44tn5ZpfjhxrfzLhY22Ylkd35kAgHCmbVvRnikFDcmM3tuO-q-N6_Nxs6vQ0lAUOkrQJkCYVO4C0me6A9s92S9V88="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9Na_EkseHPmg2z0Y2vD99ehTEoBOnFp5bk6bOfHm6Yxsma2nsTd5Wp_iiMtWYHnMOcoQp5qVQRQpXVl26DgUWlXaDyoh-KqfvrQZazjiS_szqkfJbMdo30iZ1r-IYrclPXHZrBw3EsrTLT_ayZI9qoWu1b1-Dwf2yYbUmIgElbKfL_2kmM2uW5iUUZpzaoMIay6aPVFTBOCLxSMUU5H-EJoUHB9Q4Hw9mZWGh1GbraZEzPnb1kriU0-wGaHlXWGRMo2yHeUDj2FX5-TYCoxbQPYD8UhtREA4_S4L1eyvRfn4xjAmZdJJItdw0UOCrsq-DBM6nxEvO1Hh22YK4Sic3Mg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9I4yxJ1S_698KZqc-C9ZjJe0TRK1kxyVjY0LZq-frpQo63XQogN3oYev8gSzPHLyQoB_-MkLdCRE31cgt_PNcQgYqrvwTCsjJznhQ7otulubjXzmkF4Uw1geDL237qpZ8VQPk2i_6QNDHFNg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEdyYpzTxpp9AzakJc6FaASIiMdqEUFo2X1IiwcxgCeQuaV4K5SwQ6_FCGV9f-QWEpDK46QTvgZ0hkfL111pIb8iHT9Hne2yXwP7WWpSglwNhZqvm0Y0o4JMz0UBugUhd3Ec0="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAocJmElT3yIV-kkPea7DNV6uH5PJlHkhe2pRKXxvt-AVDyW_TLz4RSMPMm4XlhaD772Fu9t9vAsi5OHaEdUf0g-ozqFkkTlh72QYC_brDZcNLk-ZkQkG2YBR7lriy5npDE23Kikie"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIV2AqzrBwT89nZOgRuNyDcSyTJ4v-3S5_ZO5DXUIctXbq8DhvcysogxgQ660kX1pxpdjrHei2Omhz4fN_hxvO6URXLvr_Y59SVJoMVe1ms9N1CseAC8cRHru2HEKtMpUAK_4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bevacizumab trials for Brain and central nervous system cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Brain%20and%20central%20nervous%20system%20cancer&intr=Bevacizumab"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10 mg/kg IV every 2 weeks",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 110000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 244444,
+        "icer": 300000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Lomustine",
+          "costDifference": 90000,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Bevacizumab",
+      "nnh": 75,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.2 mg/day",
+          "baseline": "7 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dexamethasone Daily Dose",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "KPS score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status (KPS)",
+          "percentageChange": 16.67
+        },
+        {
+          "absoluteChange": "-12.5 cm³",
+          "baseline": "25 cm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MRI T1 Contrast-Enhancing Lesion Volume",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 1,
+      "responseRate": 45,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "Baseline score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "Baseline score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity (Numeric Rating Scale)",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "Baseline score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (EORTC QLQ-BN20)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypertension",
+          "percentage": 35
+        },
+        {
+          "name": "Proteinuria",
+          "percentage": 25
+        },
+        {
+          "name": "Thromboembolic events",
+          "percentage": 15
+        },
+        {
+          "name": "Hemorrhage",
+          "percentage": 7
+        },
+        {
+          "name": "GI perforation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "6-18 months",
+      "trials": 117
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3oxzheHrknAE-OMeThNRikpIr9GkqP-qtjUsh5exfJ1Jsj_fRYoJUGBj37skD8_72vfMi7IaN22bV7zHIRuUML0fzWcHYl6VAnK6Y0Jp7EQK5M3gQNsvLjO5TxKuxQz33CbbqCU560kdVgoc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0NDT-Ue6WJ9DQkXGGoUQV-NCB0bGiHY3X5S-h8VIySVBhLE8i1gZ_Nrq6MNVginbmoGDSg9ajtaViyUSnzMPC_ei_NY-gA_W-YaSUZ1rngpR_TdKS6WrBfGo5n-m_Ni8g0EY5l5R41B0c2t0JKL6AjEowKujKbAcjXevx749WcP0DJGCMT16Vfh9JY3Ha2TRAI04SBoIuVTsEoRvnAkxxF2jmNQKjTRai5vdSV96FPV_lyk3nvnIhqJjEMGHTWKNEAg8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL_SiQV_jPHVKNaPclEPFY4KapfaR9gwXXfKxM2NiIQRS_E5zKxLnq6Ki8jzvQUCwvEdebqDDozHeFC2mg9VDj1aYx3pPUBOENpaSJO6GGclon6-df0UxyIwxflcvPZqv9n1duzpjwYQPl5QESx2FUxiNUA8q5m7nAJTiqa_gMCzOTyU0pVqXCIa96azIW56tuYWjWrFzdnmwgzr_QyF7_f_kguYqg-8WmE_Ns76NHNEGtto4y1PvlriBF7WZV__xA1GaULg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbfMfMl592wL_pqhvf4vdrK0D9v5uDZWhojvEBAnYHyTcNfPIoxLWdNc4HbC34DiZNVWhg9tyi7wsAD06q5d3YAask6rDsTnfwcCHcLtvJCKy3wd3DhCrMoSfQ9AHCx3Cu8KxBwA0ZHlZPpBU="
+        },
+        {
+          "title": "braintumor.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-xrAeYRdXImZV8TS4AH3osKrO8eoLuEV9r_RggdEzTCttrT63z0jEn7SonQHM8FcQVjwoXReIE1MunOGuo8V28Yd6NCv4t8MTbpplYyJx8IXec6tKq8kl7y0f2cuLF7DIDdbbSZAWzw317A=="
+        },
+        {
+          "title": "columbia.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKGXtx76RCOR3_emeeJIJ0_nzSLz-gCsXEKohTUC194Jzo4-tf3Md-1FbmCAQCZBNmkrUQo1tAvPcVCxm70ZvVZb6MsJgk0kbE4A4sr2xVo_jegx2nnLraUPR2Rw5s0tJz98ERBgJuGK4636Lu-t280r6pSaTjIeSiuiDjIM1sR_MDWCogysJHX55JbLXbOCKZdU-zPOoqh0zMha7dyNnJXkReKdz9udYfkq-asWcc1e2-ef-6VjQL8V0q50vRwa6bLoxp3wG0VdfNrgcD6o-jWjvJHnAnd9FuZzSK4H1sKDby6f-MS5fC9JNOxF5gsWtfZ0D9PqL0BtalsdQYR2YaWcxqc0dV_4bHe-wEKaceHOXUP6M6WZLj"
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE975H4luvNihkTQOQ-QVjBKfSwBiTUNpjKllD_FIbdTc9gUE5MEqaCvpl95dNYFj0peHbKTLibTeR6u_rbI6_mEUE9Z3xDThokbAiMsChOxj_MFW3FkuS_Ee-XrPhWkfXyEQ1d1WKHBJxBQzb2WVWw8wSeJ3G33TNpLIkaF3BL4NF"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcUMZPmrnwTaHqHQDeV-y4VlSxsUkR-FMNP9VABcby7Myu7uvxidgWfZ2axM5HFYXq35EJI1xsRorN7gvIxumYTbazVSkbC02jy1cGNmSuE60lahyY66eb_kZsVQIHxc9o2ZTUrmhpU7aytLrKrNyByTbv1VeFWhMcVnJJFMOLWbRxnMYIYHHYPKPaq_zaBfvgOA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLfJXRccS-rJeUxWZMYEkvg0mM9wwXkkiH8jwRlZLzB5MWGu0aCBIWOeKAWcYZt5vASC-zSEX_xkev3WsHjjDO7P2Yum-17S1A6qS3CunX_NjeDdfzOV6ZGkvZaWgbQ18Ob3hGNCcJpA6wqQEy0n0yk8MxkI7Ezmu5PgrgU7HBg_k1DogQpGc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuwZy-sBpPIIzToDGog6o4uoTF3aYH-Mrbr3DpmMKxjVtV1wuA6a_5G9ydcMZaFVBPAf47SJf9q5OTohIK8dsfGEO614t31RB08DUq5v_sgFdJiYa_Zc5nWWOin4uH9vPzgNURRL5opAyJJLE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4YHG7XfXLZp-Y3LLhnVMb0arvBYjx3xqaXPv9oLgp3PGrH6rJdhVeHJNNuonUPQ_9bg3xyhtlEUBjFQ0gOnmHZz5LyDi45sICEKgfrVM9mrWK7HKe7RMfyLffbki9vUIZmjDkd8BBBbaareRLS67O7Xi6QbYvFVd0X4eq1np1bQAmKt6ZBQm4VsOZNZgDO_HpOA5H7As3dDYydYlMA05aVrLRunJc9BqklYbzfha3rWrO-Wf65OEd7ITBIirOCJefXPKm38APq7NCBo3Gy-FLLu8BSMwv-Yu2NLMSnvwKIvsDmCx7"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lomustine trials for Brain and central nervous system cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Brain%20and%20central%20nervous%20system%20cancer&intr=Lomustine"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "100-130 mg/m2 orally every 6 weeks",
+      "effectiveness": 45,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 23000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 153333,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": {
+          "comparatorName": "Best Supportive Care",
+          "costDifference": 23000,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Lomustine",
+      "nnh": 7,
+      "nnt": 7,
+      "participants": 5000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2 months",
+          "baseline": "7 months (recurrent high-grade glioma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 28.57
+        },
+        {
+          "absoluteChange": "+1.5 months",
+          "baseline": "2.5 months (recurrent high-grade glioma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "70 (mild symptoms, able to care for self)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status (KPS)",
+          "percentageChange": 11.43
+        }
+      ],
+      "remissionRate": 1,
+      "responseRate": 15,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "65 (Moderate QoL impairment, on a 0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status score",
+          "percentageChange": 12.31
+        },
+        {
+          "absoluteChange": "-1.5 mg/day",
+          "baseline": "4 mg/day (for patients on baseline steroids)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Dexamethasone Dose",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-0.7 seizures/month",
+          "baseline": "2 seizures/month (for patients with baseline seizures)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Seizure Frequency",
+          "percentageChange": -35
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Thrombocytopenia, Leukopenia)",
+          "percentage": 70
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 60
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Pulmonary fibrosis",
+          "percentage": 7
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "6-12 months",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfNu16F6LD45zhU0sRutjQs8Ms2CXept_6NaF2T7-p-hF8gZYneJgE4Eal7gFqaghgdGq3W-3fGN4sC6stGUyWRLIcKalp1jtS96Rc53HRV7IbwwANudH8Rh30NsDzSmC45kkECr36W1VMPSluL-HRA86xeAa2jjlHu-PhflAt2gRPCL7FDGB7DHSrhDanwVUpk6yBdxjGWufWTBCTCWqVOvrroeKRbvwzweLHpIu1kqIUNW46bS-AwQeGO6vkI_uhJBRTkjckbA3nCQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESxC2P7sUel4OWO5xRlLMsXZk8BSkJnXUXvo3q7qx58g7moeJ0ZikQdcNH3bpj6NFPRUm80uz4PZy4pUjcaWJYS0iznIn93ZIN9mw3AAADuiprf-9QjyILaJKDoFeJDbX_W5Na"
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCxxkjvhbxWBqOw2PuRIZ6kQwX7jHJCiVNey-uv-upOM66-PdOCdk06s6XE9OWwIVXS8__v4-ZD9nu7iAJOCiV14KGWTL_eIjGG5S3PNGKMe8eZF7U4xBan2P2lG9J6EqXsr8abjReX79JEm_ft1QASUQYJDoiR6-boHZA8Q94wBpj5WbOQxskuXZo1UK8h3vILodBcs3eECIjNVbqHDbw4qzbE98NaE7g22mOWPE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzIv74ra6EAHi8BJl-cahT7WSkjTzDcPYKthcspkn95vtrLTIuZKF1ktF-8dI3Qd2Oi0whrLT6lBuO8m8TtVJMhqXdmnxGJTdC6Vj7czzkuJzgPKOs526fCYUhwq1OO2-7pVSfENlb3VatqRp6WhnESz0r81rG4oZZNjMV9F0TyVhPc863o1nTa5Rx5i4g9oOllFtF1D4KsElFm0OSwokWoAi_MUQi72ob-LT68WcZN0NnDPTA0DO-pf9xi0fJNK-qscJ3IkU6Ww-vzW4jMhzjVw_BrPnEVT9TaUdJftwRjECN8BrEafkPJUcT3nUXX5kMlgMkeOjM7vg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQGifPV5uyZGOwO2xENzhovoC0-IWaobShuIDRmXecSffvpMUrtRMjaQncKUKIftlGuvJ0IFAHKyik7lXeFrm3UNbBbh235ycQcuPcRexhS1ZvbYM2xme9LsbYjvDdw9GAro2RCCWnGDfQCoK03iWdX33ZH53YciWw7GElEalb6OXtPQ6uvDVVKrmVpKR6Hovq-SxHfltIt0tTpjDmTIpCXlEZClkglTKB7uiJtYqt9TsP7zVyvRUiFYOj_2Zgy2lu6l1hSaXDohpUo-PcIwlW25UqPQrCFKdcCHS2a9bIY8HKUzwq5WRV3g7ZggnGvbVJfS3lB7pvmIf2cvLFnpEWMH_9wg=="
+        },
+        {
+          "title": "jhoponline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfAlR83TweqT4W6GClxtQp6_CsINZNiPbH1Hj1f4UVaSAzauGMskIpcxMUyqD-3kGNTP-hBamVcmTjJ3Vj9F3bxB69Vu0Lu3hahPy-4iuRkRLGeYVrm-XgkgXOpUHm58WebqX12NikkdT-nu6lSgAi0Qcf_Lj8JNKbNVwPc7R_N3NpVxFjvU_iX15l4AV2al1EmqJQpVRCLBhqEdSE28Z70EuURqTRrZF645wOce5E_--kB5L0rKl5"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWAd8J52Mhdgw8qkTBa1oL4RkM6Jv8yOPP-iXbn4r_G4NXoVszoqNtPkRNxHLSls-YayaJqAmB4ueGDEOMw7-GJYznvMS0heWVZ2q-ynTDO80Axz7F-V-eTrIOiTFquZ4uXb4543c_JduzXOVRNXSUybkTX70s4FIff4_c4dwpzdSHZDlJDKJyKA3TJW6o"
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-I3CVKafdeMxJS_VCFOtKH4zGrtOMxYhYmpScRUtWhKJJgRp2VBhdl7y5TQph_sPqm4mxHNSWeJZeVvFXImHtZkfyEGUc1aOOBTwjbrOH-OmYSdWA66LEzrgm8zpPHYU2ODqU6HkFuaVnmoh5wyHzy_BTSYN9d4FDJDO1Sh2XT0lY8GjgvFAVT4MllHBepty-1-obkPgFrN7QzFyvW-ilGauf8muy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHRmQHUpsSDhUD5X3AsD8VZTmP41FxZ3bxtlouLSSB8-nsfbKBYwvONaRrXbFt9KUF09fdFzpSba2Y668bv7WD2snpp4E6M-XiOvM1qZen6_0g8LKZjoGpvwjrtUxncO88h4J9wQw1l-cMFfk="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiicA_wyJjljB6vweTFMrE0Cc61VYg24568Aga_uHJn-jj3K8fU-bTPOG9yU4PCnyP7Bg4_rugVV9YsJGjXVclSr57h4Us4O7XIOSy78yI4ueEs7xG9Ip-2u_sRDAwTR4PV6k-JMjNwA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRhTRrRFIScaTiuvC_Qf7wLPNvQD4vIkHwaE7e9xifYlLBZ1Gm33Ugc-BVS30xVOHTZL1pesM4JyEtTKeel277f-0mnAIrhtKP4iK5DBlI9Nls8lCsM0Pvw8znEKxJWdCRjyLgYQe_F7sa88Ol"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWdp8IMyDKVP-4ByN3e694-fcsMRkd6v-iTy_BAqi0EKsvVah-vcpCA5PhKaVzVmE4JKKDF3z2nJGsMk-0YWq56NV1D81wpOrNLZ1aPhdxY-aG1X3N4NxA2FvvK-S8iMjBjxya"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAfrGCcanLbKq7bFIr4QYxNqDa8RTYlquhPPHvYu_pKRuh2k5a_w9iWIZQgxVlOM5BF1iHETBWo-_xrn0FpkjjwcxsTuZjiGVZyY9u-eJO8fGRVtc1q_LlXUiKVHAGQCPfdkb7Aw1h6FSWCbY="
+        },
+        {
+          "title": "jneurology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOKwl9-hNSXAoZuZZk8GWNVXyWE67re-Uiq_71aXeAsvkhAXN9MGKejiBnPHU-Z0WUGbIs-XEfXH8skMWQlffSeT90lnmXWFZXc0YMG69mZI7JG8hh_SDuFKFZEHLGZQKDYrrUWf4lUH1WLI2i_wznDpLA_Ya0IBvvbe03HX7HXl5rUdz9lCDE3IO_uhnOwvi4HmFxXQmxQBwFQEtSYacJWC8qay7L9zCGuqyT9UM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nivolumab trials for Brain and central nervous system cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Brain%20and%20central%20nervous%20system%20cancer&intr=Nivolumab"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "240 mg IV every 2 weeks or 480 mg IV every 4 weeks",
+      "effectiveness": 20,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 168000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 2100000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0,
+        "vsComparator": {
+          "comparatorName": "Bevacizumab",
+          "costDifference": 58000,
+          "dominates": false,
+          "qalysGainedDifference": -0.01
+        }
+      },
+      "name": "Nivolumab",
+      "nnh": 15,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.2 months",
+          "baseline": "10.0 months (recurrent Glioblastoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Median Overall Survival",
+          "percentageChange": -2
+        },
+        {
+          "absoluteChange": "-1.5 months",
+          "baseline": "3.4 months (recurrent Glioblastoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": -44.1
+        },
+        {
+          "absoluteChange": "+7.8%",
+          "baseline": "0% responders",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (ORR)",
+          "percentageChange": 7.8
+        },
+        {
+          "absoluteChange": "+21.0%",
+          "baseline": "0% controlled",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (DCR)",
+          "percentageChange": 21
+        }
+      ],
+      "remissionRate": 1,
+      "responseRate": 8,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3.5 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status (KPS)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-1 mg/day",
+          "baseline": "4 mg Dexamethasone/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Corticosteroid Dose",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neurological Symptom Burden (EORTC QLQ-BN20)",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 25
+        },
+        {
+          "name": "Rash",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Immune-related adverse events",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "6-12 months",
+      "trials": 41
+    }
+  ]
+}

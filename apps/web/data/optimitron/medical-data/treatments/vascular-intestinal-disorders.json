@@ -1,0 +1,814 @@
+{
+  "conditionName": "Vascular intestinal disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:19:16.865Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5TNiGj3kMGr-n9ATglnAnMfxf8SgiMYmHBXuaQ4gl9RGigkMheFdutwmAhzGualTaoXaybdI5UpC1yjK2O9xPnI9J8o_UOvGptKYevXd6-PElB1fJBKdPx7unJJs_u7nZd11fgMPnylhPgMveKTIx3Ymg3tMjVFZv0340xXLQDgyo415JSoT5GRts_nBfhA37aY66Wk4kgRg2uFKd7Yy_AcH-wDd5vgFM4JFwZhTvrA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPlVT5qyPgYmjzljKsfMsJ9TMEu1haReZatcc1fpqT2qH2WzH8mFFUKFqaQXPFPNvEb3MPUWLvh_fsI4yfFgxBOjWvV7YVjNA8oHzb2vJfPQaumjV6fIAEfmjtNjXwpBt2NQFZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6QW75GepEGyosHSYyRTBft-R0DMN10Ighpc5NRjHQyO0UuzCBuEERHhnxWg803O-G28qBtFJpDr3AcwCTTGw72PxhAcEvIsjDWxB0h4ZsPNBiXK0iprWL6z_Q9GFAcztkkCMMZLtqZ4qeA7IEjMyyHb5f1R5SI-KMPLm7B1WhaLTBnRnEJVEoBs58RR_MHRMm7w1I8jqnijyBUz22GOSfanIkvKy5stqeIy-LFgh74c2tzLNQjAMjbu5djB_CjstR3fXXhlKG8yXT9lMfCi-30vQXiZrcM5VH0t9zdhW_8SqiuU7B1iqDKq1F"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYcff8MacUU4sxxrKMQ_UtnnfZ9NWHBZByqxe_XjOoSyLEPksvB3IaybsoCFRvMZ2FzAL5Wgc5SxJl3kndHU504eqEClu01fmkk9jx6qfw21g5be1QGb95GYuPTsUUrpmjSKYEPT3WZm8e4v4RYHdSABsmXwhPQD4zDg_NzGtFm7wwTtIjHYFtlArTib5Gq1wacboaKtmL3Oxu1WyL1HyCHNouYQxMaFz3U5d3Kb2KTtumFUTa2yspfiexuq_Ilwg286KQiNKi8T7-_yWh1cBzIj0PM4v3lAV6L4_0kocrhQRZjPFULK9Dkm70Mw=="
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElQ0aR7HTVs2MNta12RTrTVJ6xZyZWkDfpXpnO0HAbwVL_7gm7w8NOkTTewY87yFBl4Hwx4AGmbfhHHKX4XdBESVpwBsjabvyBtnrcs5SLLSplbwIj-OpxynvNH5WcRlxWtX-tym8tYVo7bkrfLp6Et2vDhsvcWagl5IPe6Twi56kN698EKi2buAKKKkdUMUCxQGH99LEnsSOBXyXQ-ik04A9DA9YWOrrvfpCwpZtidhdSSKQNuQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBVYJamqCxAerb67yWmbWsL1SPZ-NQgm2AI5eMjSs8lG84xAUxKhWwNFJNeJ_SAIn0NPvlzn5pE-SEBorlVn9eugMilfsNblqZexdfzh3LmtDM1JOKjaTpOLyOe9-GlOUe5fiU"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEa4Ff6JnTqtn8e6GuwPot69IGKh9g-7GnCwGduBUKQsSP112F1hLtVfoss_MbwrgmtD8IfED5W6TiB5Bi8Cerqvm5mvlOWcktLHT0VOIMueD8woEQY_CrejEU-WE7oUITbothrmW4lPaZp3ATQmeNVs0="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPjuOK4gM5Hkbze2FuoPBKNBRY8eirAzuXvrT_GYb6UDrpGQRAZ5Hy8FVkFD0KxTwnd0k12vRHJdkjE4MclzNt1Dwy7KrC05p4ktvUbnRDsGpodpWonslF7tMyFIN3O-Oxa-4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Open Surgical Revascularization trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Open%20Surgical%20Revascularization"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 800,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 1900
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 2235,
+        "costPerResponder": 2111,
+        "icer": 95000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.2,
+        "vsComparator": {
+          "comparatorName": "Endovascular Revascularization",
+          "costDifference": 15000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Open Surgical Revascularization",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.9 points",
+          "baseline": "VAS score: 7/10 (average after meals)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-prandial Abdominal Pain Intensity (VAS 0-10)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+7.2 kg",
+          "baseline": "48 kg (with documented >10% weight loss)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-59.5% (reduction in reliance on PN)",
+          "baseline": "70% of daily caloric intake from PN",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Caloric Intake from Parenteral Nutrition",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+17.5 points",
+          "baseline": "GIQLI score: 70/144 (lower is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (GIQLI - Gastrointestinal Quality of Life Index)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+0.59 g/dL",
+          "baseline": "2.8 g/dL (indicating malnutrition)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 21
+        },
+        {
+          "absoluteChange": "-2 points (e.g., from 3 to 1)",
+          "baseline": "ECOG Performance Status: 3/5 (requiring assistance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Status (ECOG Performance Status)",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Surgical site infection",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Myocardial infarction",
+          "percentage": 5
+        },
+        {
+          "name": "Stroke",
+          "percentage": 2
+        },
+        {
+          "name": "Renal failure",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single procedure, long-term monitoring",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcXjmO9-vEwlxseCA0I4avPeYT8lEwKXw9tseFVvKCiMNCSyd3HojDcqq9krLWy2uidrH2XbIl_gk66kZE5iaQ7qSsKVpocBYuEfwrTFiOxBGch8bV0G49P9Ynz19jjlfo7ZY7-JTdfx3fPA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOYI8MhAPkVr9EXV9wsvJAntOG7VeZumNCE9jMe32xb-6FGtyw9ESCp-mWKpKnVGRQqK9SkrX13CFNQrngfj5nMbISQT9d4W8mnmDsBLaGJmoKVjqGS_LM_CiJJlxL3D046rJErW72cXiGSw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRsiiJJUcm3L3FQ4lSMiKYOK1hj-ARj8SYGuYBDyBC-YdbSzwvW0cb7YCoPCJSMRZUt_sP88sXFU6deoW1ZgwMT91sFlQ7f0w-SbeXDGvLkhPNhr3wGBnABGUCT1D0sPFvaYg8KbCpPeb7hADbAMKjI6nntecVExO6Ck7Y35GOTPcVzzRX80nZ7WuJ9IJkc5fPgYLLIn92MyP_Tpt_V4pzlZ_IEG4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZbpre2rT8KlJaM4-oM7Cfs02yKarkA1E_BYeKUg1659W5ztbf0avy2BlUe0h1MSILD3-dIw7lED1TzQ-Pv4Rq7578cexbv6fhhs3sM6WqfIXnMKxi1szhva9yOHYK3gBCfRgLg4AexKDHUQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqyzdZGtpJt9_AOeuwj8BbSKAgsw_XRMSxlaPs7TXvJLsat8Kjqogs_3NJsnbkQ3gvAKo918GsuKP0_WWlbGTVkmIm3pjFzi2Smrt2ugZXIobOu1aF-zBttueNLp7lGYm_pQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLGroOJNZTkVZhb-bYKnruIzy5FSCb1aGq2dSGN2KTAkoKb4WecTkwsd5cLVRKe4JjunFz8oz4n_JE74S9S3OvPU74iD5ss6UtmvxP0hL5rfDi2i71j9h-fe5CDx4tw3tZOjc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYrbV1sswGZsBVSjTf5Y8g27eqEvi9KHazh7gnxvxD9N8b326lIwBKjEu7aK10y938FSccCg0lIZEg1hMvbRGHcvAJF3vJzNAGH_VC2aUtfd40jXqC3nDpVR2HWAyza-bcF28bsTN_abWDyA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Supportive Care (IV Fluids, Bowel Rest) trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Supportive%20Care%20(IV%20Fluids%2C%20Bowel%20Rest)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 5200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6118,
+        "costPerResponder": 6118,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Supportive Care (IV Fluids, Bowel Rest)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Fluid overload (rare)",
+          "percentage": 1
+        },
+        {
+          "name": "Electrolyte imbalance (rare)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Hours-days",
+      "treatmentDuration": "3-7 days (acute episode)",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsCUSPqr6ohyU1KCcuAQqm8BwRdbRwPWez64BDjqMcrFQ_J1mTcLsdZ4StzxD729PUpBglcQ0uDC0GUpVvOCltHsGwkdrbW18wGZ0eQ9-Ttpr05QywUoS8vqzykkw40V2quiZm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPYl5pAo5WUR59WdJ4UbEj0Ym2WRkorXrbIHJFwZyK1IjMSi3Yk1-PkIgpkHl3XIVJDmnzELYdKlHPN7ISYkjQTcJr2lxdg_OuZKzuUNZAvFKTwQGxANs9cxnh5NZoiBAJtM2LiO_1yM_ZDshq"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWJJNd2oY82KnwmD5eII1rV9YIAh894NauFvS20ZVYjWRCPzI5UISmIo3kCQFOtIUmie8FpyDZi74kkj_CnnnCxxc1IZ9Bz5pZCZP03Zt9MdzB4nAp37aoJPbVpcoLlj4PrmJ2s9tFc9hJz5n_vv4XoAycE68MdlZLy1oZUyQE0GVdh6vL1JLOSFgcWGXrh_aoHU1t7RLmApgO_td6hCgMywdK8p6VpsglBf-7IjOOfA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHog97N4shS3CUA32RogKKtEMkz80RjpkZS-QB9fVeSRb2pm3JN2MMD2RVhly2w9nXiwmgr0LUjRGlp3QSl-evLBnVefOh_xplgePDACy97q2XfWyEKu0Gis9Vey3VMFmPoUKq9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv7GNSOPB82Ok1DDOQiJOCN-efmw0EPyh2XvxhG5XR6U9quPuoBvEx1slqA_nIK3IXetTKHD-WX_OVDUYM3to8vSPkznY8NL-jsmjuOBIdp_zUrnrU_j_0dEH7InRTyIXT8bxfDFC9xR-TFf-1"
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKlJAKw8qGkCJ7cXMJ0DQB-QSe88Bj0hH6QbI-W1kFVzRaAoeoby_bxanNBIbtSiFsAgbKnaySMrgMsUJBLCBLPULEQ9WSospL0Us06VVJbISogMmyypSjhCNdeD-C-4koDgEjcsWtQBa0wVnhSSggbA8cZtJ98kQKUCCBUG5YjWZctx-KlL4QxFsHz6G8M_XSqsul8TbBSf0fblaWkHBcwDfFLe-A9MWsNqPrCtSSu4Cpz24pmuvGOOh0QOQ="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBFqUtXP4P2Da8M7ISERjwXZEE-kDK0qbtKyWhmIL7V7LHpzuncmoRWuOoAR7DFpTMtIjfpoaHiszFd5zXEKcFo95zLwuFe2gwM8W0Np27w8Mql_Rlkr2k5GcO8Wjb3WE7kaciCek="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkeuChFGXs-gh8Y9q0vrc4xbSB7JHrPla5gQsNsff1Pcn1K5-OFBh-Gf2pr8qBV5OoHw69ROnkjALvNcKCmZZ2ZOGjSSi6YhNTkwrBCZ9p7mRA3MXeuRr3fFEe17DH6Iq2uL2l"
+        },
+        {
+          "title": "ClinicalTrials.gov: Endovascular Revascularization (Angioplasty & Stenting) trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Endovascular%20Revascularization%20(Angioplasty%20%26%20Stenting)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": null,
+      "effectiveness": 85,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 700,
+          "sideEffectManagement": 500,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1733,
+        "costPerResponder": 1529,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Open Surgical Revascularization",
+          "costDifference": -15000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Endovascular Revascularization (Angioplasty & Stenting)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Access site hematoma/bleeding",
+          "percentage": 7
+        },
+        {
+          "name": "Stent restenosis",
+          "percentage": 15
+        },
+        {
+          "name": "Contrast nephropathy",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single procedure, long-term monitoring",
+      "trials": 80
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER5R4El4QJ8YoH9RBY5U_y9OniOjUFTxX-_Xd3dHXz53lbY4qJ3vdGmRUVmPhEZtt03zVyNYxnPAiwD2Tjnjl5h6BzJ1hMx2xMLmnKLD6p9vizfpHKxNC_vjrVnCqDd6d0kuSf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkm88y8lXwz6wjvI0PhHOS9-4ksRXDWu5pWOlcHocW9RuVDI020GfCIWqVoCrtj7g4OWC91_iaA-axtCD9Bes_ZK2XwcGAWHYms_MXHQBKxUsWkssXQExURn3AtGk_51x1LaJALlxbXhKv6vAt"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYq63qweCAhAhFm_k1etZc1ohXhtGu-WvhIM0vC38BXfwg_harPZGjTyrVIN2clK7LfSD3JPXHnH3AJlQQ8SgajdNOEidDXWWPDXrvVh5agjUOd1yVIg_3WoUNB0XWNZsWORMOYwf3M5ZqxhRCHw-mXW48OpdChTRPesVs0gOMA2UdLXGGSilO4ooB7K0Q9aeyXgSugl8309xwW1o1Ls4itz7gKvvT3ViDtWhSambqtGQjHA4C9T2-5LxPeVZPHu8pYWdoEM1kg3LkJfmcWJUFa-qY7lPVWZFZzsov33tW-zX4uA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETI6xzMajX9b9GeTkN_Kwr8zhwwlagbxRh3baq_TBhmE7rULxWKy46TrSOkL8_uWZjxfrleNe6hggabRLcWyDe77Hhzj1DcrorqRHNDup9GdQNGcyL3yqm3DS9ovDd_jKu25hzfxdPQusUE2g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7T949CmY1U_ti9AL93uFuUfghpVh4Fnd9lyI_3rI3uxCXChi5o6V8HVxC8ElmEf2OuYJ9y5j78VKSGssocTIEg1aAJLJP1DwIOvd5sYQn-9GF_0M357H-u0DkMhzkubgIGkc5TlgPsAfPoa7f"
+        },
+        {
+          "title": "ClinicalTrials.gov: Papaverine (Intra-arterial) trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Papaverine%20(Intra-arterial)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "30-60 mg/hr intra-arterially",
+      "effectiveness": 85,
+      "evidenceQuality": "Low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 8600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 11467,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Supportive Care Only (for NOMI)",
+          "costDifference": -50000,
+          "dominates": true,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Papaverine (Intra-arterial)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 300,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        },
+        {
+          "name": "Cardiac arrhythmias",
+          "percentage": 2
+        },
+        {
+          "name": "Local arterial complications",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Minutes-hours",
+      "treatmentDuration": "24-72 hours",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYezBxzgyGOWaowfeH43lXV7ovy3lukj3V542p5iGyqT_1e3OsaM6YlIBkNtmyKi9PZzanT8fUl90wySq2krHngzoXowGDns25zOWCqoCiAJ3Iyq2ecQfDVqxY6oDQtEH6cB7f"
+        },
+        {
+          "title": "unich.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6CG5DKoT7-NzAnZi4OwcrdP5iZeeqAbUIk3dFVxifQtO9CAJuDqaBRRemtTdu7mvVYsNdOu6drR7KHsrhunOf9i80LXBBHszOobLmp4dlrjY2HfFcin7ilRhMaOSTJmAG6qzMHit31OXKSsCN8Uk00hg5k2wtjJRsZYLcvKuLuFdu8GnkgowoWw=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu93ii_cGcs50QcSAgVEXA7AiakfDBmnXE6pt2Xy5Urv3vbLJW-9_81C1wOmEmvbZD-BtGZXk2idJvyAVk3Nsz2JU0xdJ8Km7-nhMj2ZUtkW1HhC6sSjhSDu_v8Kw7upcqlyMeSqE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoH08gKa-STKDjsP29lBxyzZfOwlCcNXeZSiMazGvahxF7dTdhYaA_ED5tAIY2X6ieizO1v6V0IItvx9hyMkmBo7f1DJkt5ys8YsMQEjgqzlY3EpGEZ-F6k-GQZbqWKj8eGb4N"
+        },
+        {
+          "title": "criticalcare.news",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyYOZCwAeFx3gUOrZ_pl6e8D9Yg7FCR2EXMiVuymAZPgAQ4gvoLGtp4L3vwIlr7NIvKuFG0IaDX18lGcxJks7wBGiyb29Hq0BQo87ZnRA48rXgaQU3qRBlZb5Vpb5b3puTq4zR6ulTGG9fxQ1CgB5edFKDO5QKeJHZ1cJpn64IhwUURrlvlrsqXvzntR-jHS-2rC-h9JwT3rVmcVf7pdPBwk0yr4XuEL_1sRHqons7qIEZvalNa23jflPblyu2"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnZKfcMj680Ygew8vt0Xy_LNNYWTfctQsVDtZi0YbjN8CL5yJz_3KvdCZMlXHtfCSbW0o8OIEayinAOLdtXlHv8Yej18iJZugeS2ptj6_Hp9VbCodQNL1qOabF9OFP-uvxAGq9d0K4kwjp_31nvEVQ0ETPtNw770A5otxj73RbM0OVvewbTQ_Ayh6wxbigA8lRc6eS48EvbEdhziEhRJzYNtvr23J4nN8yCGsVFbhAAOAw9OEBwJPCx6AlvU3TidU-SsmUUPNM9VvXDex3-jvFvU6lWpD-lFSVd_QbwzdCbGJ4txWdrtc="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2_4J10D07inU05LC8iL6FtpxzehKc6Me8DeQwO2OPBTymXZpPp-dvVIs90HH0-vwUcYvBcSWpqVMJAlpwr3uTPKqDgTnZxCPwPOcIfahdmFURM0CKA5-AngZ3P24dANPMA-eXtzIT35uzuZ_Yg64eEP6ohawrkaU12g-VACJUFXLKQyQsSUmDZxzTm4BZE4EyACalhWmuPdzEAKTiLwczFEne3URWBuiqzuO3bgkPBJEVai0USyDZ"
+        },
+        {
+          "title": "binasss.sa.cr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpNt5U2aidSOeMmFbu2tsiNaWxukV6UG05m9FlQFyJSG0mQq1sTYDFfX6tE0-1yuHXahhTvbJMujFgCMhvGpKzTByp5H5bfG0mZnTeeLtPsrGdYa40eiQS2WA14vq6o84="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0mm81FTJ-ls9r3j9WWEnliVGWmTuaVwD9Q7Lly8b0B8bWJpOAdcuM5U_iCbxf9RxbScTf0SNsNEOtCwSMiGheudWPGfxAmQ-I5dlbybqAStk6grhfkQXCZhwqWYDnzydqW6IxrqPqgETn-Au4P1Z0DF59nUaVb0vaj8LaKeXj7goMkR9rFWQjOMkd66nassIgikr_oi-UI-Qrq1RC3nqgR3sYu96usM7OI47xqBfR0ZbzeTRL8zmqqkmANlvY4RBcyBpKAxXgm17p8wBau-G2rNSEd4pc41XuM5HLwVABUWy5FngY5tdsufIwSZF5fjDwgrWKI9t8bh3kEszCKO5lNr6bBdHKcJtKZw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQSPx7DtjOSOk4HipQc-u5CLAS6TwFxCIVQLiv4SoqQmJHYGJwG1NXOsQhObikIs7rA9HbOErM5ByEASz2rtfo7mnIQaP1SW95Ca94tvWc7dQMbMCXflVaZ6h6SsspuVmcbF4gj7F3YNrX-qM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfCDfWCDLkNYsSXb0gLHTtVPaw996TNj9WT8_EzZaKu6Aiy41C4HHaz6XAOQE7p62jOmVUo2iQiTGouP6gq9mfCT2cEIY4pEXJKEuQ2M5OUocEOC6WCWXWW54FmdHuNNJiHXAl2Lss9gIs7T8N8vdbD3E47_s1nAYbFXMhjrxyHX1sGXwCWh-o5TbAMPR4HDxzJCRq9AiIF-l-GMpk0rn8kcPGZgwgx3ZfpY73H3p-DSKeGLPZs17bwMrNqIorNxJ0X9w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_Hey9q7nQiVF8jNirZ5N2XmSRfKpJfLxtqaBcfzahX3yFgK0t4eFslMMa1rhipbyV8WWYtELbhrNIDSo4eGL7GvKwbXnoKgMul1IdqfEHuXyB5T0--6bP4JMlx4kWYHdnwZHFcihTei8vXbrBR9rCm6VMKYmIznq_-enKhZy1D4-mQzFelyz_2-YKC6fHjVL95J-kjkL0qEKQK6DnUqxsWgmF-Wh1-sC0KFfqMztjeFOjIcCgF-MsPhk5l9QGSrf_Kx_3rgXeNbwh-8ajUYjR39tbjFeynNsaRw1ex8E="
+        },
+        {
+          "title": "ClinicalTrials.gov: Anticoagulation (e.g., Rivaroxaban) trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Anticoagulation%20(e.g.%2C%20Rivaroxaban)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Rivaroxaban 20mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 200,
+          "sideEffectManagement": 700,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1875,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.8,
+        "vsComparator": {
+          "comparatorName": "Warfarin",
+          "costDifference": 400,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Anticoagulation (e.g., Rivaroxaban)",
+      "nnh": 200,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Bleeding (major)",
+          "percentage": 2
+        },
+        {
+          "name": "Bleeding (minor)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Hours-days",
+      "treatmentDuration": "3-6 months to lifetime",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "monash.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVpG0khbMqrVq_K56fGKqbJKkhZN-83kBONdgSm-190JuA9q-co-tAniesmwsed0Dn6hU6tE3BZn9v64PmVu_iXlDzgxkoxqbw3bQHxlcWJ5JzOK6_p1_fPKZrj3yCpS2L1p7REo3pCEhuTcbuupE5Bgr45FDk9KfZKgjARg7HSxAZL60SlszzNoLEJybt2jZT_rr-CGVB"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE47Uth6V9X7PyUYcOO9EECRibmpXeAS1Me8G5NDq8DWqRfDVtYYZ7iQYoVvbQjpC1aQhu7JEIldlY0J-Fd8DYUcd9p0PIBYJ6J7I-2znRldJVPI1Grfftm9e6ofn63XFs-K6Oe1J9HohTRcngm"
+        },
+        {
+          "title": "msdmanuals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHItJD7iQ0fwtG9ruQri9YALL-6me2yG5KckyBbm2RH4OmfkkZFT-BZSaLCZsW9HxAjLiYIOtGyrPaUhAZnnzrRCGUBATSI3E-e1kh9PlcIYmOLbsaPVX6pppJcvbGMzXwRZdoA3u0-1HpqRBFf6wKwJ2yAx7GlnYzpAovId8ynz3EG-77a2Ke1Ai3DPnnoImBmY9vm-gpAFKkCDhGjz2gxIhlIrA956fpci_5FkA1IgOubPeg3ZdJIgw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Broad-spectrum Antibiotics (e.g., Ciprofloxacin + Metronidazole) trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Broad-spectrum%20Antibiotics%20(e.g.%2C%20Ciprofloxacin%20%2B%20Metronidazole)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Ciprofloxacin 400mg IV q12h + Metronidazole 500mg IV q8h",
+      "effectiveness": 70,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1538,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Supportive Care Only",
+          "costDifference": -20000,
+          "dominates": true,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Broad-spectrum Antibiotics (e.g., Ciprofloxacin + Metronidazole)",
+      "nnh": 50,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea (incl. C. difficile)",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "7-14 days",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxoJmxcrTgY7yxweJIf1WwMie4EpLgL2HtGK6-zKnSjG0IMmQ08gN7SwAuYq2pGxM1OPZG_VPxvoGml1A_4xXvFZuOBfOz-cSB1n4x9qxHC5HcOBU2QrR-Kyt5Yl4pu7q_10Bl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl48lzF1anLd0MDR8TqJia8h0tIqbIUDBRL2-Y8vt9zC6Yx2sn5_1e_q_w2v8f43S-Es-LfeAcx3fIei5Mi9sMQ5LKy368shAIQWlddcxg4bKpveQonsW6_ibzYe9o3d_xrvkLGLVyyMFt8ptX"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoMOQecuBjsMgPvmJgY4GlBpKJD5O4xlt9howEpSY3h_kSfaYpH2Lw4Kagu-pNkhiDdUEFVhzPZ1IbCoEvGG3S6_7r-Yco7prKcQunOir-SIY38WZooif7xMISt2I4m1bVM9JTeZ0u2Nq8L6RjSxgcdU5lzwK4wUQJMVbSb9URKD_VcH2B5fNKxwIFoSQkUonLP5kw622oQVi8l1I8PdA_nhyTgLPVoQKu_Lb65hQscA1BPZ9zbXDtrZxtpdiPPi8gRIEC82cLG6cE2LiFkASm-TalQvNabRNVx-ji3SUbw8cgvz2ArDEE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZZOL-31oNtpx9LHYF-yribrT8K717sgpIgrlWOn9kZy3zmQ9HRJEynWhfMr9ESVEjHMtELX6VAFe70ALTrmDHrydYYnH536q7HW9MhLMseMAVs6RQEI5qnEwVrA5pIxYTtZ3v-9xfh3Q8sssSHC3HCOrDmovvfXGhosoaBsnrJ7qn1npmozxmdHQu8cpBhCZyG9nnFtOX8bjaPnl1NjGD9Ewd52W3IzYZhQEuRADtGAJPtnqKT78Vyo9SBzIJDGcD-a0KDWJB2XWBuHf1CkXj9NpjnjB3dt0mzH6I5PFLcu8Cesu7uw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNYYhNofQqReeE6l5JO1WFe7VoyAerqlFI0oCHlC2LQY6XM6daSPM781IuA8CAxYkZ-jiSue3qAxTiqIsO7sY2jLKu1kNHeEOex9Z_b_xo2sxlrlgMkwYAgF-W-HRK66H8Hg3dxiWkF_dPhpk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtgpjAMy3I2D0IGYbUTsZPXn7pJtXSLlzyaxy8qF8hLdS1TNDOKG2O09pB1hhOajVmEqItyFfVCGV6SxU28I2-x70NuH5WgWZSFQPpHHdkIIZislvcBIqx1iMdb4YoWpXn_6wPIasVxkhFTM8="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_SaMitk_wopPkzy1loc0G-8ShSiaVJUI0jjsE1pG3jb7dh-l6_QzFaqERMNT0IA3dKr3ReH8gxKRRZnsLSx7uyicx7fuNR_QuSI4EM1oMS5wKBBfV7N7w-T0_i3qRdtL5WA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVvE65PAkpdVxwepqEhHyXjEH7yNtkpzKppYBzHHtnDJGqF_2kFFsjgsxoFEcS95F7BYAlaGkQVs3F3xeU_I1wVnmzrEYvDTQ_QPyAhEQkQ9WRUEF23bRdjQJ4KxFl5-OubyfRymQmRyfvCsmmLjknxcSVVv7UumeazHkM49-m530wNF41hAlrk9IggJSSRN0_DaD4CBlY8O1WPJUsWU4Lyr5eVA_Z7ZDsqHEsyMttdmFhBb4UUl6-6Dp9DZP6M7L4aw=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWpJ1qO5S6ATzfsHlMN5112pQfB1oeO4uxdvbzpCAkOpadLsOsHWcg1CQ2eYWCJT_BFh2HJpzD0l_wkn-aoYmic_0LduunemvaJ_g1kQkSgpF3enTTLeUgqvy92HfNQ15lUCjFldUuybyps5mjY0tNkM8o"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEf6dHDipwkxm9ROhnTtiq3lKqGEJz2mDvUGsNekZSZRFCMG0i8sHZwGSvOcyu4BSyOoSJsHsa5S1NM09Jhc7DMkreuZCMbcA7ehqKtrhfEBtnhxtnMY5JGO4kR7nahs0OioGGDh_Zh9eWuxcbmPsvMqXS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN3DTKVj-MjlaFh62fWMU-uURpGKAQ9QAb0UFS-g48-25pO-39kyqthHshWDELRh6wJv9FWCUyQqv8UrvFCLKQpkdQ_8fkth-YVoJAZXLGcuZBAg_XhMRxUYiSkNxOgkjcNVejt0Xuja8kCpmtk0l9qYIfU0nMas9id7WZhqf9Xt_Xo98glt--hodRMvsk7xUn2lDZgG3EDjQg0CVluVbGWTCkw5LEHRgeE5HsrExh91cYyB0ab-rtYfITknfJi6e42lkN6ZHB202VlO9vCP0="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFABIdF5TB8C5fW4tNdzAePIGg3pCbbmhh-iNXhFwRsqh8JURghPwi7GkK2W0D-PNwqNV4CP2JzB6xJh7L6Z--dVYD88ZFzIOA7ob10kWRvKyE_icpMoSFMHdsd3rG9RlvI-idf"
+        },
+        {
+          "title": "turkjgastroenterol.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUqxn-V94gGUEDk1ao3RwOcOzxbZvUoWrZkZ3d02SDhC3X5UXPczdKl18ClmLeyB1L8DjpfHWdrAR2QozIxiSzYoVxZbTsg1sHSiOrWwJrOUtQjKNuLw1CPz1ZWdFZXUXcTkZfIE2qxUVEEAFkp2OYRi9d-JJGuaoa6CN-vfo0aBZBsg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6MGgETPJhmvsDWAfz0_hp26-WJ9NhXZTpetEfLgw-exXTWYOH0EcgJOkMGqb7Bx3aoo5UmNgjvMk3whUM55I1aeAtAaBB2XSg1TYlvzgBLcuIn50iEyYAMwmYTQHGz7wHvLI9"
+        },
+        {
+          "title": "uclahealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBlaLh4eAMMdlIWLLyxObFLjeJrYDefqhnf1o_K2Jyek-1H5tpAbsGsx_nZxLA4OGL--_Uta2gEe5Am6-cUpyMKldzjnVgXMjstieMKoCXrKtYZGeb3lGrT_l0zDp0tebj01FZimR7k8sgiEdBkiIHHkKK4Ege1KK56wyPTzTG9dTU7LFd2iI2jjZYso8pb3T4wb90sJVFIE1njKyybh6j5T7vyg_58vaFWGUtSYt3T6yEZymwVr5UIubrYKAJjUly6rrPFfCbZRTSa9oEzogsqqmiGSu8QiBLHFrFrN-bPgar3ZJ9XqJRQDuEMK7zfVU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHki8Fqp9akTTf36kbkgkXuy1yDtAt2df-bCxdkKu4AggseDJgFXu7c8sFIyr-BXBw0gYNrfcHq6TMmkv-b491-KdjjKgkEw8D1RHGdNn214ij3mERAAucP2SGS7-CIsj_3wFTbVGacZfYX8b203AY92HzwLd9Q8c8ykKhVCRAI2gKSdl2ONY23URvjMsE9wfxsQl4zxH7uAn-zrgy7nIHAqCoJ-oEbLYkgu7itFEiu6hZqOjC11yem3f05R3ijtwcG42uKaDb4JFZMVJAtpvQh1PWP-9iCSYt26jeyqeeuKK29zn5boVze10k-jP8j-yq9vkRG8cjRJiuOI4RQaw=="
+        },
+        {
+          "title": "biomedres.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsziHkoPEDntBFqquzAOSFoybiN87J7KhBI0AuO3TvsIYj5CZhTf3_qxZSJmPx-N_0mp2pORQDFVKyY0iKTnSdGu8UOogJ0Lb3TaZccwOdV5fYswX-pxaswz9GnQE7olOw8hvsfGUAcVMWcg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_TwqOGTFAZcw1Jjyl0DpJ3HukLK6W5DYpW-9k3r48X8-JQuNM_GPgYAwRkbQ1sr231G5eK2j6OAzp0YUzM7Mx0UF2SKV_Lrl63pbHjmKBJdNJSftg5Vv1t8OtjkdbtVszbyQt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6MAG64Gxh_epK-bRD9gx7Rd9Rf95gFRDhUVsBDeKrd5YRKN6JM7--Lv3qeq12WUB-mh4M5Rh4NrUw2K5IYWKASYutCfKK_XHmq_SoroCSUOzzo7XPl3QJmUiRywuz2oZXfMoi1ZWKCQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFECABvwQcpSlrmblxYzeoeWDCNb0NXDLDV_-MbwxR_hcQ9UYzKrPqjYasJCATaX4w-taIdETaHGW2FQom2GGGX5ERWaQZa3iVRj7sVehqAyOI67s-dSfHlGWDtR9Ix4CzXTV5Dx5P-PCzYyMlV-8OIMsnrz4pqAW-2zwjSBogPWKuk1OUI0_RuHyC5KdlbGIUrRqvgePLUyXNCepK5z4y_0mfuKAXUKcIQAPbHlBFbQ9F2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDjbm2zli33ffqzp6sPtqSHzl8ariy_Cbh1xtJCeAxX1NRtUQYZaOeFG7VNujztbSB7Z9BkTghP14uhSUC23DBr9TUQ-_XGFJscsSZoYtPvwrByB32ZPkM4wws5sPr_OrY1-1H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEJwU_GvLBFbexdlzNyvyruV0V0q5SzzbbbRsIeCp3ajwpxtlvUFwccsha13FXFAf334vFRgsxqqG0rPDoIrKc16P_v6RcfVNrLS_lhJqNhN4X-U1jQj0SrHQc8oFCx-efXiBJ8TB3Ft4fm2-5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6lHyxfcC2LD2ovOUK1-rAsyPyqYm_-kY1vxcAusrl6frLY0Lg2CeYQs9h6z1QICv__aRrJ2tw-n2dqYuxCioHep8CouBSA4uAC5tBQQJw64RwTPJxZNsEPRd_3WRVcwr6yIz2mN3-bBNtnZfb"
+        },
+        {
+          "title": "ClinicalTrials.gov: Antiplatelet Therapy (e.g., Aspirin) trials for Vascular intestinal disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vascular%20intestinal%20disorders&intr=Antiplatelet%20Therapy%20(e.g.%2C%20Aspirin)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Aspirin 81mg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 50,
+          "sideEffectManagement": 100,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": -200,
+          "dominates": true,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Antiplatelet Therapy (e.g., Aspirin)",
+      "nnh": 300,
+      "nnt": 75,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "GI upset",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding (GI)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Days",
+      "treatmentDuration": "Lifetime",
+      "trials": 1000
+    }
+  ]
+}

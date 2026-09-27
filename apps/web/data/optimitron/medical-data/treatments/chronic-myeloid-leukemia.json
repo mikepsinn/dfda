@@ -1,0 +1,890 @@
+{
+  "conditionName": "Chronic myeloid leukemia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:37:45.146Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "asco.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqowSjAPMocxGo7_ivTHyQl92ocHnWz7jxuZL671yCwybNxN5UvWpoXHwB9rqCe5qK-A3uiT2FK8CAYlks2iMtK2jvRhgKGdLV8tUr55ySVIx2iykxVcBjX1IK6mSwdX7zaaQMjfj-N0UxJBhV1Ca-nJpqL2Hc"
+        },
+        {
+          "title": "mdanderson.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHsknJp56U2kbb-NVzZi5hJmLRPnUvoIZ8HSJ9peVO0ouZjjI9KNeKK6fgJWU2Yq5aCLRnZ4BMAAbvxfvNilB2ucISexQMD-YzEMHaEDSs1kgQPq_SekyHzrJjiOtteZip8zw1vMoYF1OcJDZwO6De86JOY0rG6RpS9NTl5ffMCcfsdJl-I2DoU6UhPfd6cMvQJWI3YDNcSsqgsv9IUVvEyvWOaZ37BPInBc4CB8g="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpQcjYRmcM0yCnilaQwYIou-y-9gGRtrnUOvITaZf3LaDgUIRqx8AhynP4hCgSkzsFkHJ8S7_lJBpGrF_rmA33pp7VI-K_ZgxFLNaUlgacXQLFgnorukHreUz-7BoKJhJmnnKkG4Iwv_B_DyPjE4LrsS0boPIPBhFqnakhPw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhn9Ti3neyccgDvk7gOpgg81K9PLObES6wIQ10A6mTTkTDzmziWC1t4JcVfDgDSoY6267MbUmcArnmKamZ3jLwVZ1QuVTyBzvrQqj6Z0rJrw2RubCfWDyDKanCxAvzioDnqgHec_sWQa0GtDbD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbdwkfdxUL5CfKTMVlD3YCSOAcMmT_3rV6d4fBIuCUaaOzEC_eWTNJ4IHF3o4PQEPdJqFm9XCT3M8CyFA-N7Fj1bLUEFmg8QB3SSFHRs2hjG2q0c3aXdpV8T3vppKeQ2hu53xnO6VsGFy9Chk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRRY6LvBoKbxL7xstGwRMYcRtCUubaHQ_g89gK3OQTe13lPXkrGpKE9Pmri2aZvIVVVXv9kpVF2RX__nNyqPyiFyZqbrlWERzcqj9MS1HmMGmi6tEllTaVWE1EIVUQyD9mj6mw7p1U1sYQTjM="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF20okWOQ00yCBIp7MvQIFXadSBTeptPlRmrCNUpjZl1SWQ8ElZUHvtw0v205lBAWOUAqqbBULKixx10ni5uDBKIPMC7SU39Txutc_sd862-MGee1smGJl1pWOhxbFsqT4Kou_N2EsgL2Nb3s2vpNISiYERsoOTaQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVsmZw9FiNP2fMmrvO0Sg7WG-aY_yTwcTWQtr5-x2h2v2qEt55KgMUXva9VaP6PgAC31eGkgYFFdXKCSqt9L70Oi8My6v4LokfL0yV8vsrZwBDCK7SXU7M6wGe7_2SSflLao18"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ9KscOcy4J_IGDEdR_zhmS1qMvANkB5rVufK8c4BCgnU-rZo07rX1hlOcCuYuC6m_rH3c_66z7ZMZ8gZP9B7TPbjMhLShe9xmo_ETCpvrsRGitwPc5XETLV4C6IQw74WNNbSjnwzRIAdg6cyCiwDlQKQ8b_yOEIyp2O2cqVjrJEzKbAUtonKnI9EcjlIps56VS8naEKYy7s_1i4sfrVDCZFtP_MFzwrGiEBNVprEiyBhEpKv7Nko8_72oUIuNvgBKukZjFvqVTOGFa9Pp05a1JPfcgykfqDTykGnrmdWvpSzkP5fnPNHuUVbYYH9CZHHmO8WuILpe09pjY8P2o927E6ONk1NbJSUX4PfhyVE0jsxaLngXhfXvWat7qVmAmtOE_3ydETprXrKqkYAGK_YVPX8="
+        },
+        {
+          "title": "bloodcancerstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy_5txq5xW4G5ZuH08mPklwxtt2pq8YeAKby0-fBmQsWmIRNIjgJx64SnDpiqb2hvc9Rc1IVz9aIuAsJyu6g8dRu0Ly1TaSHdfTa24X6cCEJPCF7aQYYSC5AUkuRIbN1Xig8SGRw98drPRHqvmSwv77aQ3pJ6p_JwDDl32W0oX_oZhfTfe42flM_00GvjDehxgN5UD4wUS8bAzB822IP9ghIYfA2Wn5ZylceDSHg0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ponatinib trials for Chronic myeloid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20myeloid%20leukemia&intr=Ponatinib"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "45 mg daily, often reduced to 15-30 mg daily",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180000,
+          "monitoringCost": 3500,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 188500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 538571,
+        "costPerResponder": 342727,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": null
+      },
+      "name": "Ponatinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.9% IS (to <= 0.1% IS)",
+          "baseline": "BCR-ABL1/ABL ratio (IS): 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCR-ABL1/ABL ratio (Major Molecular Response - MMR)",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-80% (to 0% Ph+ metaphases)",
+          "baseline": "Ph+ metaphases: 80%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Philadelphia Chromosome (Ph+) Metaphases (Complete Cytogenetic Response - CCyR)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-28 x 10^9/L",
+          "baseline": "WBC count: 35 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell (WBC) Count",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-350 x 10^9/L",
+          "baseline": "Platelet count: 600 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": -58.33
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 55,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 cm (to 1 cm below costal margin)",
+          "baseline": "Spleen palpable: 6 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Palpable Distance below Costal Margin",
+          "percentageChange": -83.33
+        },
+        {
+          "absoluteChange": "-2 points (to 0/5)",
+          "baseline": "ECOG Performance Status: 2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+3 g/dL",
+          "baseline": "Hemoglobin: 10 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Arterial occlusive events (AOEs)",
+          "percentage": 25
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 65
+        },
+        {
+          "name": "Rash",
+          "percentage": 45
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 35
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 15
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 35
+        }
+      ],
+      "timeToEffect": "3-6 months for major response",
+      "treatmentDuration": "Lifetime",
+      "trials": 43
+    },
+    {
+      "citations": [
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH41sOO_H8sedGGYhCzel0IRdEiaOEgJMUde3tp2Ts_GkqlkQSfseEXG_3PWlvOckCPx4_hfdhp7kjCJIcx6pWKhO3bZaNY46Y6CP6JTeRPcwknAOE4SjC2zDtEleEKvZJjMJM-VPwu94Y1Spr2e1SkRqJOKeZ2suJL1zMiFL7CyfS0jvgicJVQCvXZxPfUwxUhhFLh-6hhpe47SgA_uQUIrg=="
+        },
+        {
+          "title": "themednet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp-3gKvGwjN6wZSuklyCLWrwbFXAh1wzushx4pCNs50y-UPQE5Md6hvqJEn_E-JeIMqWfKH1uCqgNPgE-ciBwuMsu38eYfmK_noagTtRxciKT5k5EzqgySBEPwracycPKR3TsO9yrDNtyFWRWGfZSagajYcaRFDRXlXVqrdjgp765rQVD1C7KrlSwWPseDE6bP3FSMlTDq--PKwzeRvMpwsCTXQsi69C4qOLEIjXVRSqsxUz-L"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETGe95Zxtl1cYzlwqCDwg2TM8VcY0Fv1dI5b0siWXx5SdbVUt3yN_CCnC-zNT_-UXqr0lzdAjkSEE7wb018358mtFl78ihKQtwxJ6kgAxabJ-H2XkNFiDEZJ5Qk_4CG8oFchKXJodAsHftJoHSu4Pwl6Ffg_Ku5qgFMx1pcnqpiT8NnVSoKy2H0NuK9GMbkWbBv1SAkt7XuXVXWdL9s1Y5HAk-wnl6qKnZektSxK9j0g=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaeRUzVAYVoFgzzd9w9zWEtcubNZVncH8b-2QPkYm5RQgbkMckWP61zBpQIK8DrSE2FGdVeQM7qxHkr003-65p74B2DDIOYuJXsX7x_b6OMRYqCOGqiYu3RQRih3Gxz8WE_85bGDaJkmA0gmp5IFDpUdyV7WToJ54KBl3e49WODOYD9kRynj9VnSaoy4LKgi2S4DU_o5LkSdlR9LjgLFTR85Rp03RpvdHu03tmimY6ufFwJVI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPqMNhN9OVe_Gn9ObEe3OnaO_S9M8B_sPnIqUVzeov6RgRTDcs3Xh1oFdqwZ-5R7Wkzn3-3uY8IL9PFRpFWsqUexi7PMepjLox0OcO1424UGw_G3D9vI-OCsSqwRjPSgmzm3y3UFf-tBgAjXMJSEJIvcg4gokWyueXIljvp9_iPQQvJ2hxbjdGuGIKS98ErmO8JpcXr1z0z1siI05shvh1fq028Tl9es6-LNjh28c9sm406aEI4FdHGjCvvOHTnltn7r38CZBS8PjQtfJkMKlE9LwPMGYU26SC7gIub2oE_M-8oVdfhhTiimJ9-SV6tWHgQH38aAoU4ivvOjgivMCTt-WW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFidMYyNXl32VDm0784_16za5dWev842WLET7U2ithrqZxyda8JxTztCyIbG7zpENShbmSf1Drz0QFVUDu-o7tNKtTswv-Y5hZAwFPHBeyyNtXRnM_T4KPJJiLdwe1c3pQg3jnw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1vLT7DbyLMA1ykYt3RuwriuEAqkB7M21usPSwEH9T9UQ88RPgloKEZnJC4rLRQOezNYO3-8ywS6I5Im1MScIP8qIYQpZrZf50TWulErVRE-YeRym0G5x7j3Pw2ZFj66MAxnjh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7eGEBlcIPjQPU99vG-4RPKszpYxitZwo6GE694aV7E2QMb8oq67v9hNT8BTM3WNy9OW72sldmRPhPq9X5HK792UqhIOI2uozq1rhcGht5v3jf-BwrHB4w52JkGE6h5T7DcavvbnzRgdQvARr3WSRKyxxU_QPV1pfPaH7leiEdtkmu86GDGuWrplURAoEpO4PNpgABTt6YBgKrI9AaOpZFh5HebB1KRQw="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_YI-RoQi1Tjdf44ww7OpUUUWD9rLWN1nvf_tdTWnzkb92-cVkwJ0bKp_VW-0MDpqxkz5IigFNJ28voVz5jgOJ0kVgBaTBSgdcb0Jldk9tx7YiPWc85dJx95UobkKARJor31jRktBlSgeTIoRXohWIsUiTxEnRlQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmHi45pk8ZVIfFp1nXPMJJeNg136XGUEoDGh6OLqQEvfCtpJ5Lj9ENQmovcFfuMxs5pWg6kY1w9wH1qe1bUELiwX3_UuugE-3G-PbkS5CRHvdpHD5nUBXLqmNZKWwUXL9RKQYu"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dasatinib trials for Chronic myeloid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20myeloid%20leukemia&intr=Dasatinib"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "100 mg daily",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 123500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 247000,
+        "costPerResponder": 154375,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 11,
+        "vsComparator": {
+          "comparatorName": "Imatinib (generic)",
+          "costDifference": 112750,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Dasatinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.9% IS",
+          "baseline": "10% IS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCR-ABL1 Transcript Level (International Scale)",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-100% Ph+ metaphases",
+          "baseline": "100% Ph+ metaphases",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Philadelphia Chromosome Positive Metaphases (Bone Marrow)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-42 x 10^9/L",
+          "baseline": "50 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": -84
+        },
+        {
+          "absoluteChange": "-300 x 10^9/L",
+          "baseline": "600 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 cm",
+          "baseline": "7 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size (Palpable below costal margin)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "20/52 (higher is less fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACIT-Fatigue Scale Score",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-4.5%",
+          "baseline": "5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral Blood Blast Cells",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fluid retention (pleural effusion, peripheral edema)",
+          "percentage": 45
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 35
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 35
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "1-3 months for initial molecular response",
+      "treatmentDuration": "Lifetime (or 5+ years for TFR attempts)",
+      "trials": 142
+    },
+    {
+      "citations": [
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdJURV99OU7SdnSZBETfEhZzdduS2OMhgq1pNBuhB8u0ou6xw6m_KPKBEt0wvC01_WHtgnLsxqQUKbQNr8niP0XPRMw3LSTnJ4cjeCmxI1Bz4EpcW1Wx9FkVTK-eoSrbLJvibUK9hWPMfl93e8gJ1MeqwPVfihrCdFUu6X-K99a-XhKrSxX5a08NDw8OpgxM-Vg7koE6i4ucsC0jBa1vvEnBC_0omPOztx9RFBQXL8La59BLVzibUXca7jyPnaky3CqvY="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV8hS0xrm9BqXcSh8yqwN8xPZJiIqCKIfTVHZpUj31nO47cXhUk5JIj8hIZLbCBsS6PGKA_A9KuGj-k3zGzZZJPMh-kPswhLVA5gMefVMQjEYn1T1FNw62EUteXwKveLLdq2rlHv4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuXI0b-vb45UjQhFZgRnyUqb_fMEgnllBDfsG5TGGsgemKob7ctRs9Gp0MgDHUIf__7dSJa42Bsm0YYVN9jmrYhMCRhaWt4VZY3eUIwO6kPrdeR3Tq4xdV8C5LTyvn1_XlA8O0vi_apBmFaYK0"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHXb2Duw9NcGSh8GnD59MsP2Dorc4Z2MbvvZUGC_5be2cMtm766yIysELznrXCbn2iPHc19BWJIgzoN9b7V0IHGIG95xulgQFJ8YfyMcKNg4tQh7s_T_nT0kO65ZLPIODHnKHlxjOji_WN8cc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo5wvAXE3hyCwh-nonL1WgXDBJxYUdp0nfgGbGNIjk3Z6cwnL0eL8wX9XZAQdTdUZToPRaqrQwXlsrNrzXXTeb5l2nr1M7rrcJY2xjPR2L4aGHpa75jRcB-Si7I4DW5qITXLTZF_GDUE-zUts="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWBl_r0uitRyQVEcmhMhI5v02BG-PV4jpYq4Oi3oYE87hJc_0vGH8TXkQHr1ORLTUzBu4nCQHhlDO6wSppkI5-05u8tyruYFsCAYeNgnGgnnowirllhjxW25uF6eEUQskOv9rb9cyyNlWXPyeo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETCsokhtuUe8xuVhzp8BdiIvmsQtgjNtJynODl2GSJHn5bK5iiIHPPSUtQHx9Aw3Q6gXePxtIpESViImExViqT7xbri-q6Tyh5fIHX1im5kx31INtsqVUKhqM4Hv-YFdaypwhdnf-lSbxBlXg="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSUYxKsL3YcePFrgFwJPxFCf65fwschNjhtvmpmUyRV5m4uyGb7xnAnmZ2aN765fSghMynmBL7PwdszQeCysZQVbJMTPwylfHFqeHhLYTTx6tUAa-CwscT5zScyVVS5NjHzJr8n3SmWzQ5ywHdIvT_1Faf6Nb88_W-1flgY6ntp-CMY7v3cFW53jvtTN-kDv2k2aQdQwq-q1mBR8L-A78Cw3R_8-SAAxbb0lAqArw="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7jtIlzHiAcWw7iTquxNxdEOCNxJ5rTqRjPyD427r-k4jBidyXyySn4x_gOvfZApnxda_mqXG87UyRMZnF7bcHUlvgEEMClP_hXfhFN4wQ4t0yYW_xSRkxs9F9FY-ssXhjL_TSX8rOAbJup4Qxx4HlM577eQyGC5oeGSnUMgIk4lnMoT1Ptj0gsDMlOp5_f85B0AtmMfRIgWG77zwcZLoO_LmtEHxdabxauwoseChN"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB3BhO8P-oKxn9JHLWaAeTjWjBJQLUVm80jRCy7KA-NS3rDiF9f_zTq0NMG0tHmfUVoAyF_StdupXq1it23fCe91OiOffdPQs-A52s_FUlOZ8z-XjFkNIG4ctV6PveiA1xI6Ux7PapBrRHIEaiHc1LXsifN87qffdMMOAETgTAmVKVXtF8Etd-bG_hDbQTOY7-YXSPBsGTfXqX_76RX8us0-c5fithPVZxOpg-9XQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Nilotinib trials for Chronic myeloid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20myeloid%20leukemia&intr=Nilotinib"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "300 mg twice daily",
+      "effectiveness": 91,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 130000,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 1200,
+          "totalAnnual": 133700
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 278542,
+        "costPerResponder": 171410,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10.8,
+        "vsComparator": {
+          "comparatorName": "Imatinib (generic)",
+          "costDifference": 122950,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Nilotinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to \"99.9%",
+          "baseline": "Median ~80-100% IS (pre-treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCR-ABL1 Transcript Levels (IS)",
+          "percentageChange": -99.9
+        }
+      ],
+      "remissionRate": 48,
+      "responseRate": 78,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+11 points",
+          "baseline": "Median 55/100 (lower scores indicate worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-CML24 Global Health Status/QoL score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+4.5 points",
+          "baseline": "Median 30/52 (lower scores indicate more fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Score (FACIT-Fatigue Scale)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+2.0 g/dL",
+          "baseline": "Median 10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cardiovascular events (QT prolongation, atherosclerosis)",
+          "percentage": 15
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 25
+        },
+        {
+          "name": "Rash",
+          "percentage": 25
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-3 months for initial molecular response",
+      "treatmentDuration": "Lifetime (or 5+ years for TFR attempts)",
+      "trials": 141
+    },
+    {
+      "citations": [
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQr75BdX-GY9FpMaIG3g_z7sDE3eQnQJ0vqrju30DU1lNMEdvQZJJUG1zX0DuFheRrjVcQesJ25axDh3p6COZSNc8wOWGMxHjF8qKB3gqmCAfYQRXM4r3za4yI32KETu88GSZYcJeWYmhM_wHHbpTIXDv2LkrT0f4Jw_GmsQWY4K4RYOyP91LhRVUZOMeA9ywXPStv5g1LpXWH5__bmC-A2UsWyp5HbjsylLVyKFuzsg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmeLlGn2J5OCdw6V1XFjMK2SbOw8r7UaMij8WKiSJnpGzZ4OuOz_kiaWbn2A6eEnwfbvR7b5F7CmHAEmopctzCi0STFfJ8cPBUvhfAKZk3WoWBlGmu5Y7pTwDjUafwfnlCBXI3wsIhp5ITFtUahIEwDi99cv5oM0UWFI-t9lIzns89PiwIdwbnHIBSU7whsT277bSXJiQJ4VTnNdnmQu26BP5knFQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8BJNYmwZoC7aJVRB-wwxKdIshCw-e9pHWCWHE-zFvKribpctbF5-iGxmPDSNcQr3FHp412KoGJXnWDF4JZrDU8AWtvUhLUoSOC59woBFGqXKfZ6xfu3FNNiwD34PciXrz-Pjf7JTZ"
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1ORmvMRFFfvSGEAaB4bTvfisulR583AN4gTv9pmu-wIa7ooHp1m4r1E_Ule5QqyovqaYCrRXGPkzj7APnPkdE6AVCW0SLWMhikdl5IULIK1gAEK6BgGH3W_CT-YeTeTzl218DUf7ihNYmutdiEyOilLBeNj7EAKlW8FWpccKxANOSOq2EbJDu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLbDGZV41IyHB2r7bU8Mhql1If3OUKkH54iHqa7MTu3ht640Yoc459lpbPy8c5OTT8shX9o0tWh9-Kgu4aPTOtyOZ1YsxrpPUMC-eLVmmNO_Vt3yPyMsfqTFGC6VkOB5iKbZbI"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1QSrrvhY6BlHplF23g-obObv6rYN-yViazPcN1UO_i3-Kt_D9lO3MwMdkKOhVQxp3a8rbbflOON-4gMT6QlxUjS0PP8ZqMYhnz24Xn6eLOm62wuIYVzlhnCXqztXA43oI9CPJyKUPMtvuvinoTRGrc6hoAO2dWoCMGyiKbzwwIRxLhxjOTbNNZjBj8QHVMubt5L_hvRxQGQF5SykRuw4CflU1sugCjUYrjtp_Ma9DF_NxEXtcKnW-xzArl9zyIphL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Imatinib trials for Chronic myeloid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20myeloid%20leukemia&intr=Imatinib"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "400 mg daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 8000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 750,
+          "totalAnnual": 10750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 23889,
+        "costPerResponder": 14333,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": null
+      },
+      "name": "Imatinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-95 x 10^9/L",
+          "baseline": "100 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell (WBC) Count",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-94.5 percentage points",
+          "baseline": "95% of metaphases",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Philadelphia Chromosome-positive (Ph+) Metaphases",
+          "percentageChange": -99.5
+        },
+        {
+          "absoluteChange": "-99.9 percentage points",
+          "baseline": "100% (1.0 IS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCR-ABL1 Transcript Levels (International Scale - IS)",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-8 cm",
+          "baseline": "10 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size (below costal margin)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "FACIT-Fatigue score: 25/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (FACIT-Fatigue score)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "Global Health Status/QoL score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-CML24 Global Health Status/QoL)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-390 x 10^9/L",
+          "baseline": "600 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": -65
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fluid retention (edema)",
+          "percentage": 60
+        },
+        {
+          "name": "Muscle cramps",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 40
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 35
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Rash",
+          "percentage": 25
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "3-6 months for major response",
+      "treatmentDuration": "Lifetime (or 5+ years for TFR attempts)",
+      "trials": 306
+    },
+    {
+      "citations": [
+        {
+          "title": "core.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExX0VbSFN04tWPndBW-lmg8jL5vny_FS7UYnHwqjbys3wsPbp6Rxs5_h8fiyh689PgD4gENuTMGJYzpZ7j_JkxESZepGKIv48AidfyxkZ1Le0JqliqHC_QqyRr-ZXlgUxZDeM="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEupJuRBaVeg3lvml-WVFULG9ZQi5y9oUY5KxyqixH1DKTqrqcFDsF-qU0TG4-EPBouBW7Y2kEeh1zktfLsrHNo2z7c6ZGrWf86QdX7IXMOev3W5SZJ7dCpcgvm0eJ5PCPfBwipiuND1dwpUSvNjp2cEYYoQNuB6Pd-yjo4A0FEUbL-0H6_7FyRmpAf_ZjQBQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEevjFLyC803AYOuGxJtEMqzCDaa71Y-d0mW881by9VuHpIWBsFC8mbECQH2smeubdHSkiQEQgeEVXMFzHGBGweo2hSqiJHxoa_yH2rwFRdD6-aT9Frug-7E9odHT4zBIiwPIZIlcRqYVXJRw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_s1V2pPIvb1cp5ETtWWqF5RIJHvDH9BYfG2-5T0bqVFl5OqVckxeQXLDg3ZFPoXqqcXWR4ssYv2sIE7dOflRySgu5XyXqoQXMHA3Nlmf4IHnKFyHwv28patDujea0jl0UfKBVD8Y_J7VebII="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELF6ChRIAohpSREn6kiz6EwcP9bvxfE1CyCPfKwksTANNj_RicV6Q-WktGmwf5nJcNBW4v8dNWUzlho0vdt0emTQhL-i56UG67FY_1zHqVefVSf_qsEcwFAk5jgyb9URhm5X7awj2ztE7p2Q=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzp5TXElEBveJ1fQnEsePh9XUFbzB6y4ORFI7b4q2K9MFR04nqxEceePzuyPXy3IRtaeQfWu4rRFXIuLGTjpCkUJ2a_Rlyw1qKcxrbMMMGVfN8PpbzNGutOGpsr3PIoRl1OjgcaQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzsp8_HQnbLF2fSn-tr2OZkhdJsnbvp4dJc9NuqixBYj7daVYW8cSgyXND3EEnP1-njheDkQwmfoEULIKy2i-x1V4Bioetq-_QYbT3hTaYhN_5iUp3Ub3vMwIKxHhhigcT5OQJcl6jJw1cQnw="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl8glV_Tho504gBpSLlughRXIpXAssij6LDkWYUC6blmYjyeEH2ss-oub6uPn10ptHb0DZzxuwhAPlM0CWI4bzZXh84TKp1eMOw57yZkmymCqF-hMEYVxBja0X26NjpZTpzbuak4wFHpXsNgW7A7YAsJk773RHgg2vUJjWTJtZkvGzHRbirY_Kp6R8hbK-PTxOXw7IiMTH5TaFtuL8qGHvT5IQRA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK6Le45Xl0HgHXWKGeTG40EKsfqm1-W2LHydzJCivfCkpM1rTCX-jvxFQCTWzHMM9BwGr5pP6Jg7kmvJVq_J06OWq4AllwchFg2pSUJG2EmuDW1GoI3Mb5XkTQaBbHDm4s6oGqxo8fhg9tOQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7zkcDaxeAcAgNwjffSo7ZvNbtbuPS5iawTK_TKCNxkaZSmUCCuvRBXtiOM28gkk63KuLDpOJm6BnmW-1cu7M56XqRjW1Hh2qNN0vsI1xVgfTBu3f1JpWl_SuBFlIZUb0txMpQvKAKeqOqVas="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuzGxjMgdd-kjdjmZ_OFzhckdFi9tuzKGCwyqPCJEmrQlZgsnKPLLVs1GAJUFzm5D5NB54231r6yl8iCKvqwqsnJ5aSN2Yt2mWxPFfSNZZ3nxF7mUpRQm4jv0efNbdTm2sE3iButTp7tsKgA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bosutinib trials for Chronic myeloid leukemia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20myeloid%20leukemia&intr=Bosutinib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "400 mg daily with food",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 125000,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 128500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 321250,
+        "costPerResponder": 197692,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 10,
+        "vsComparator": {
+          "comparatorName": "Imatinib (generic)",
+          "costDifference": 117750,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Bosutinib",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.9% IS",
+          "baseline": "10% IS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BCR-ABL1/ABL Ratio (IS)",
+          "percentageChange": -99
+        },
+        {
+          "absoluteChange": "-60% Ph+ cells",
+          "baseline": "60% Ph+ cells",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Ph+ cells in bone marrow",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-32 x 10^9/L",
+          "baseline": "40 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell (WBC) count",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-3 cm below costal margin",
+          "baseline": "5 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size (below costal margin)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-350 x 10^9/L",
+          "baseline": "600 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": -58.3
+        },
+        {
+          "absoluteChange": "+3.0 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "FACT-G Fatigue score: 12/28",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-G Fatigue score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "CML Symptom Burden Score: 20/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CML Symptom Burden Score",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 75
+        },
+        {
+          "name": "Nausea",
+          "percentage": 45
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 35
+        },
+        {
+          "name": "Increased transaminases (liver enzymes)",
+          "percentage": 35
+        },
+        {
+          "name": "Myelosuppression",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "3-6 months for major response",
+      "treatmentDuration": "Lifetime",
+      "trials": 43
+    }
+  ]
+}

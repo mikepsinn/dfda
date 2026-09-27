@@ -1,0 +1,1041 @@
+{
+  "conditionName": "Benign Prostatic Hyperplasia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T14:02:41.415Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRKrerTjm9n0U1-r_PnBIAkIM2up5p7_X92rjA0eQof8RBYaXZ5f0HKbCQr0w3_yaJgIhUBAjtvw0GnTLzsVucTy638CqvbxbRAMbYsOQR80R4301H2QgnYKtAcy9NiLPVFR4WPIs4cL1YIyI="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKI063wUWCVE4WkZjrFZmef9QvuBIU1OMgXb8e6654gJJNb861iw4_MH6o2kdBYZbj-ifZdiTx97KG-51xCyaKt0NZg3n5Ra1LY1SknsjU3AOvM0KZF38KFPYmqVTOYuvUcvgd3XjDK_UQ8RtH1_8jOw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB1ySa9lXmTlizElkArvXBcUU_3t7A5aQyb_rgjsbTa05qjiaIdCxwiae59m-5uSIZFycEMndIrOu4uJWzcHJRxlVGgSgclAveAzQtDMBVfrKobjtUhHq2Gc0I0MwJdvSgmYeIodXDHA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEImskOXHgFNDJCd0aVtLG9LfTs1P-i4BrpdUllsy0ypxKwgmDQsLWKDt1DscRh0ER1FwLbTLJTS2NSaM4jFQbVHEshSL18FvJC_f3Q6uXpZGiUdfkpjHysrM5mIPPV4M0aeclWxCK3kHNkvkoMxA25YvcPNMN4dB27INNXGvMvcR4GTrU8URL5HHJx0dtk1PpxjzkcLhYa9-cruLWZGHQ45DafBRCWRZpAfG6wGNK740c_knGvyUEfd2KhdHdMjD9uLaM7CtLRK9VOfsdIk3N7WF92w2uHvReUyG_uUAnyLLyez0qiMTnQP31SFzUQ9cRqPTw="
+        },
+        {
+          "title": "jneonatalsurg.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCyXLEcDfnSluWtINAXChERGIzDpF5chRHqMQBQQJmTtbyn7TlYZxxzDTZ7Bca7j8cIfCSWKLw3_ORSn7uJGBLyxNA-Kvsd-gpXISE1P74WMgSbDjbEpL4CYK5FGOz-eH5xFRPdQS9EL9fZY5Vgg8GNp0Ghog0FDI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSAITl3eAZSnuIc_1z6aghvzjBi_fR-DPPUswzlf6W54YiOo1jfDYbjrwFCXvibp3fWQEvtb66Kb8nh7CvWJ4E7Nj6QOjiXkV6jhO1jzr_QeM_4GFRc2QvEYGdfPQnyrtOnbQo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6RfgkEMF2cM38f32jyQ8X3TW39YUnx1XFF2klBsFgWVgBKVLFRjaTjxDTP4yA_JoGkow2I61cgmZUdIiERhAmYwnD1S6r_MeoFhaUr2NJQub3vr5h1QDd9u0u1IXPABRdNkepmGWt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyr7fIjHZ0uGgoLTPuxOhQovpoTh6gKN2EUTfdZ8EWyPT2kE543_mvwTMbZAyci3ZVCoXEEZ9AtNQ_bt_lgZy5KqobMITBC8-3vPHDyG8NWUJWePUq_jsC9Gay6mWS61Xid0NQ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8KTJBLo2WoAsg3sfbRqMYLLPW4JN52q0B3VC6YmQ_c1Rtj6FGmIVyNdp0GFceRWEfEhBD70L2jK1cwtGMUR26kfr42rSO4J7O2F4zkiZ_JDqbpvU-He7-iJP2A0vkffBO0lfnHmfS0Dl7aDiQoeUDxwWtIPe1Pu3IdJeAwXAMbRhIp6uC8JC18KQYrFbqwpVdtZP2P0LyLWEQ9FmZ8WML7zw7OpiqRj7d1pplTP3CotQKUbc5mP0YP6damgxTt45IB6wiAKn2Rat_YHC-LHajsD_mKDoqEGQ1_wdPK6oaJI3lf5A5voOE2laDwK1Hv7ByzZcSEBz4hhA85jaswui0Owpp16P4GqmhxzXP3s5hD6eOyA=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVMGGPniFBE7CTTevs67AXjFekhNKVlZaQnKTd8wyLfBziaeyCDtsxBx4vxMNG4AvJ-s45UhLtv_dFT6ch8MhM9UPNw5HXtAMCs4BO_5AXicaT-ezSqJ_3h_eYLvI-UBop8Yx1WR4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3hJbc4wyILgi4fynOS8i0t_WDkQDi5UoTvtsLU5sNGvuTH3hbH7N1HQ0Zt73g2VbIxehCyfQms4AAYFXK6w_gnEfBTZfRtDXSrE6x4U_RDwMyCC2wkuKquJqhKGTa1igPHlOaz58ddOJqIuc="
+        },
+        {
+          "title": "urologi.or.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhgb33tiTXZxEsQ7i08BQzRaHT4z_MiqHLh10luXXZdxAUGYmFtfYazG097lpX_1Hh3AiO-GhE2eA21BqiDhcBfWsoIHqY72ZJd8kavNdJIXA22ixQgk2JBAKF5caWyIld07FvC7IHZFACxA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Transurethral Resection of the Prostate (TURP) trials for Benign Prostatic Hyperplasia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Benign%20Prostatic%20Hyperplasia&intr=Transurethral%20Resection%20of%20the%20Prostate%20(TURP)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 250,
+          "totalAnnual": 1525
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1753,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Transurethral Resection of the Prostate (TURP)",
+      "nnh": 1.5,
+      "nnt": 2,
+      "participants": 100000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-14.3 points",
+          "baseline": "22 points (0-35 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "+12 mL/s",
+          "baseline": "10 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Urinary Flow Rate (Qmax)",
+          "percentageChange": 120
+        },
+        {
+          "absoluteChange": "-120 mL",
+          "baseline": "150 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Void Residual (PVR) Urine Volume",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "4.5 points (0-6 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (QoL) Index (IPSS-QoL)",
+          "percentageChange": -55
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 87,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.6 voids/night",
+          "baseline": "3.5 voids/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturia (frequency of nighttime urination)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-35 points",
+          "baseline": "50 points (obstructed, >40)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bladder Outlet Obstruction Index (BOOI)",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Retrograde ejaculation",
+          "percentage": 70
+        },
+        {
+          "name": "Erectile dysfunction (new onset or worsening)",
+          "percentage": 7
+        },
+        {
+          "name": "Bleeding requiring transfusion",
+          "percentage": 7
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 7
+        },
+        {
+          "name": "Urinary incontinence (persistent)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-3 months (post-recovery)",
+      "treatmentDuration": "Single procedure (long-lasting effects >10 years)",
+      "trials": 86
+    },
+    {
+      "citations": [
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl7vG8q06uaRsSKsGyvksijZ_WC32hli8p0Ra_GRUJfR5CeqcriGS4DmvO3v-VV5crLUPICpsE-ukPfNPna2vForsETDXzT7LqBSXND9aFPvoGulQrYP6IVROehN6mE2KlyEDBSB_Ikgf3anHl4nnyCyMgufZs2BzsdABsFBcbM9b5u6cFeNK2c5YBfXF66PBFxS_SbT2b3xr78W2ei49Kd24LmI90CMaxdacs1ANuWs3GwhgdL1mbv1DYz4Svv2EkmL0xTr5egKEqQ2D7-atI5T1y9Rwm34Q1cPFezGKCKAFdyAtnEnOMq3kcBcXvsEIwR7fKBxE="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDtUgvSkfJadauwIJsq1daYaztZhmh_TMMD4AXkKa7dBdUQ3k2XufG1MiUhXOtYZWhpU1ag2j4KscgmO0FPqPeyDn4rWrU0fgEsbkQnMuCrsOz42OdPRxDEs-thnYIGlp_qOOxYWJSytbEOO07NUCuL9ccgAnkHPCoI2s1qpxWuxDk891-lXoNjRbdFywZC6nt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7xFhBmKzlbBrBzyA0X1kjU033dK_yBWomx-0e_Yipce-aYFfllZXvlJ-d-mvfklk3UOfs5onh5AlgzDglhEcO3qnG9liOvDgUahpbKuGNdMnTimeAsyip_0Uh0o27lGSx0K4eSevYWShfxw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoAE-iSIFvWpEDVrf6W1J16QYZnjL_y9YVfIx_nzrzyUYry-UaGZ--kTuvhG4qfTTx3EJ7e9cOIKCXlQNguyf1ZOC88qs-Fvak614H5MeW3KFzVQhNUA0M9yEwXAGA6tEsdX0qrcH7qj_BVIT0nGbqH-3IJrKUnKn-9r4fV81I858vVlHk-hgW"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKikygusx1ExnAcPkKwgabQrFF1Gexm6RSP6HwcYWKcJLpweGux5YRMAN2YRi2FQvyUsm3cWRou1bcIRsdexHweP8klxMipyUEGx9KyRM6SlhA3FI0MzZt5AJmStLzg87oP1IsXg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0Dn9y49Q-Npc6S8ROUG-7jT0wbRehi1BD5z8kKz-HGdUGfJjKD4MBegUH_49dFH07qqcbLuIhCMQ3le3MJBJ8GV28Le-xK902LibfE3antjJUaU8Kzqj2UGJFKyamjoPzkD_M5nPFRL_6ig=="
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYE5EjZ_RfNTBPh-CozfYru5ikhgl4Jan_Y0xPt1IhCB253o8RmtFs2LD1WojGN-7fmGQC_v1tBYY2wgljhXDhFvF7bRcI_MUTvrtLr5wnE8e8MNRbrWirC0GF7vMEMegWwDLDzt1IeRj1UBa4owczGGJp"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc_rfS9f--OyT6PDikpxlElwabMFGPjaadiYxp4uGPA-OOK3TQCdQVFG94JmD2keJFa7AeeV3lVKrlymXZYiETGUuEe1cCkxxG2dWgPd0brHawwshQDIvNxyIpBC2WH54mfJw6huoSQ78GUTUQkt0Z9rmwgeyjB_S0m-tI6d9b_lzfqNxpDhxCjwoM2uYsgKvcxmkRs-bH_LUrXixjOQahvaEJ72IZgwdtWLW5SLYxXF7F3M_8CHXbgIHiffpoDDW_xz3utvFB9lYMDHG845HefRIa5ahVy-m71OjV7zGumo62rO4IHLWJU7WeqI-qVo7J7A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Combination Therapy (Tamsulosin + Finasteride) trials for Benign Prostatic Hyperplasia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Benign%20Prostatic%20Hyperplasia&intr=Combination%20Therapy%20(Tamsulosin%20%2B%20Finasteride)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Tamsulosin 0.4mg daily + Finasteride 5mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 60,
+          "monitoringCost": 250,
+          "sideEffectManagement": 175,
+          "totalAnnual": 485
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 647,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": {
+          "comparatorName": "Tamsulosin Monotherapy",
+          "costDifference": 130,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "Combination Therapy (Tamsulosin + Finasteride)",
+      "nnh": 8,
+      "nnt": 8,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.5 points",
+          "baseline": "22 points (on 0-35 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS)",
+          "percentageChange": -29.5
+        },
+        {
+          "absoluteChange": "+2.5 mL/s",
+          "baseline": "9.0 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Urinary Flow Rate (Qmax)",
+          "percentageChange": 27.8
+        },
+        {
+          "absoluteChange": "-10.0 mL",
+          "baseline": "45 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate Volume",
+          "percentageChange": -22.2
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 mL",
+          "baseline": "70 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Void Residual (PVR) Volume",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "4.0 points (on 0-6 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BPH-related Quality of Life (QoL) Index",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-2.3 percentage points",
+          "baseline": "Annual incidence of BPH progression events: 3.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of BPH Progression (composite endpoint)",
+          "percentageChange": -66
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 18
+        },
+        {
+          "name": "Abnormal ejaculation (retrograde)",
+          "percentage": 12
+        },
+        {
+          "name": "Erectile dysfunction",
+          "percentage": 12
+        },
+        {
+          "name": "Decreased libido",
+          "percentage": 6
+        },
+        {
+          "name": "Orthostatic hypotension",
+          "percentage": 4
+        },
+        {
+          "name": "Breast tenderness/enlargement",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2 weeks (initial) to 6 months (full effect)",
+      "treatmentDuration": "Lifetime",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsZEN6Teha79dq_-R9e5mlPtXTNQNOKEaP0udeBTPG9nygKFQ_H1pp-RIYIitPFDxCAW0Y2lm_1PTM1t4P8gjCixX4S4P0CCAHW6Yod8TOGObjiCgDvrj9VEWt_nMdIOv3o2t6ln8XTWMN7w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyD23U_fEzTYbtGl68ITKYhTKA45qC6QE6MOvoOjMGS7uqEVyvk2gGZA4PM_VogOxvaYuTTbVkoeI406rNaARMfl9iM-silojU49a8Ng7vCvluO9RL9_4r-K0SHFrvFQUTK6E="
+        },
+        {
+          "title": "pagepressjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfWtyxoHz-Kf093Obql_mhECsQgQP6Ihzh_jRk0zv3BhlKsx9uqW_c7bRONo9O34UctoIeciWfRQ6QKrq5mBdWQauRNe4t5rjwr-Y5HcwAdykv6drmmTn30YPrgkUV7_Tz5zjTzv96k-Xt3DHW2WD_CRCT"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQmCgegiLeilaGdF9WODCZoxLEXI7XL01WRyoAv5zfSHuvP-rdlTiYGn_g4yF_K8mbsMmoPwcBcUsQ2rWkYA1xBbgYI0a1DV6EhdRuGSnfgmqB5MaHsqgy2KF8yprXFNxmh2bomiXsc7qpQQ=="
+        },
+        {
+          "title": "urolift.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYQTVFJyqJvytpUMypGRp-HcTl5IBv0F3qw8oADDCFQYqpxHvPpbQ4D5hWzj8B-dMtowhO-DDuEx8rnO-I2iIKrMh-FDHELE229-b-B-DaiZcUMXaeDulxCG7CcnrxbMuxBnttqoaApue9tBZAv1bklJ1HX4iVHemBow=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsYIyOscEhJyth7w9QJSCl2muqmAFJ0nReYKwikUPXK1szXLAf59tMRKS8Iqlv9rqLvpZKb7d1igEw9gLZ3ckiqjxO7ES4FRkLabrwAboRwlu6u3t4M8n38Ekq9BvhjYjHMi1WneXiacq3NnMhnNylm24GmmE9dB0NFO3GVRyjNS7EhZY3qVMYnUQLqRCN"
+        },
+        {
+          "title": "bostonscientific.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_RhlpmpXgkmt9HCB9b7EqmngeulejkS9YVXm8VVcjvrrd1Zvotg9iGgi23Q9l6Ij4Pee-AGuEXAh0KUwGtVPlRZpeGM-CYMDMCt6YzO7VbK7ahEVWlnzaluMLVt_XG0rqQ0-9azejb2LOXrS3oBitwRiBoRZ0dsPjiZqKgxdjBLyy_5JnaGomLjUQ2FTND1x1kWp9QFYF3n0gIHQdWygAf2c6fGK4TBgfyz1i-sTYwOXJIIg72lKM8yuE_DO4sackyKFAjSdtOnNqB0TCLS32I4ihVMWDq49-KR3RGuP9qiuD9ia4voHhTLgfU2jpf1tJrkMjDxxFVy-Usg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-528CimGn1H7zVjgwWg6oLBhnhTmu9zL6c2AEL7UA1W69hM3n5Ae4jhr57n4nxc5krnTcj0RjjmZ5kGLQzjFbxuIO9lGa9tkHcocTiO0PSFTkH0ejjnLlDPHBIi8sfm8QmXJUc_436-rPYLln7voGl3RS7gmDwo0ZiGWjkMk3qGz9dxuQOxp69fszEozk1G7LqrvCTgEnvLUDYVST6Oibyqzb0h0GNK3pwQQ7P1PhjeNsdfQ68jBpKXT8e8s5cL4YNT1eHvxkGlI="
+        },
+        {
+          "title": "ClinicalTrials.gov: UroLift System (Prostatic Urethral Lift) trials for Benign Prostatic Hyperplasia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Benign%20Prostatic%20Hyperplasia&intr=UroLift%20System%20(Prostatic%20Urethral%20Lift)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2893,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.09,
+        "vsComparator": {
+          "comparatorName": "TURP",
+          "costDifference": -1400,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "UroLift System (Prostatic Urethral Lift)",
+      "nnh": 4,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "22 points (Scale: 0-35)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS)",
+          "percentageChange": -40.9
+        },
+        {
+          "absoluteChange": "+3.5 mL/s",
+          "baseline": "8.5 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Urinary Flow Rate (Qmax)",
+          "percentageChange": 41.2
+        },
+        {
+          "absoluteChange": "-55 mL",
+          "baseline": "120 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Void Residual (PVR) Volume",
+          "percentageChange": -45.8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "4.5 points (Scale: 0-6)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS) Quality of Life Index",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "7.5 points (Scale: 0-13)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BPH Impact Index (BII)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysuria",
+          "percentage": 25
+        },
+        {
+          "name": "Hematuria",
+          "percentage": 15
+        },
+        {
+          "name": "Pelvic pain",
+          "percentage": 7
+        },
+        {
+          "name": "Urge incontinence (transient)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2 weeks to 1 month",
+      "treatmentDuration": "Single procedure (effects >5 years)",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnFFsCbUAqyz3u-6ABYHN11vDAoi1l1AZRqKj4VKa2CZn4EUkLXWqeJNPR9RYWXR_o7Numkvn4TfEm1olXEOruBF8NM96XIzI6s58u_ze7XkdM_06cBqSB85JdZGVxo2EihBP5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAF9LieDkRbBEImLlJN5W7bLOXCvVzfni39qipG7udCAAbmLc3Anr3L5DkkK9t3GUVUzqODaXLGnhdN8LBm3ys1FT9lojxBKNoBDL0dIXF9I1xk6k4HW7Dz86MmJTsiwgRv7sXuQsrcWTnIBri"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA2Jh3WXJLyfEWi--xM6qbNyrv2c0zZ6JxHMgTtBJE2cozrh3MCsXHGn76_NFezy-Lks_wfu21DvWhtnCQCShX6QrJFEd7x6XnB2fmVV2rNUi16Vq4VsXF_NHuKZOaLSI1DNDJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEa9wUvE3_HZw7_ZdoGxQItKx8XJ-9Gpm6LU9QTAgrQLNO179X59M0LHVaRmgLKbALqfg1k3YAmDTsuLjNyFc0KD0k7GdILLNP4VskgQZOwwFY10sKVpb5aNcB-Kwheaq8cMNTNVbOylvnql-1KwR0VfuDTc8ofvjZReJ8lws6gZU_5sg38Vx2OdKsu6fo6NGqHIF2cBo1mbrPVde4vXENRg0WVA5zSsfudpSVpm1qPEjq-1_VRz59pWKNoBHlivJ6ZUV5S03wd7GEb_9JvdhVC0Gu7kwd6l_DZLvO9IW7aj_ceTyHUcnLn1aSZh6kmPM47Sg_cRYgkEd5IE8eG9bCsSM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-H4dqIfcecL-3vRPG7QrUOIevkc3OaTDtgM_xekbzKDgr5K_WhMZBKMKeRWNtf9oX0pZ4Y_1hZgIrxbikGqXMwv9FzpFkzc86BT85-eicgwBHDvOuQ51in9KsvwUR-KLQtfR5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9NoVeu43sGSSD0_YUBLgqBSrmwBFwd2n_dicfL9YtsDKGn5z6RtkmDNQNMPmfceFuUF3_VGU3VfCJtKhWUjZmisuF5v3a4pzJUwJOKNdpzUNhCF8Y9O2k7888DflGdj2O9wb5fJ6RSiQLxTKkWKFbvZD-D75RFnbI8kKjp6QJIqeg171g1x7x4BN1sM_2BDP267T4lVpw8r65Dowyn2JOBX7Fn5naRq7KKOg9gUPP7vshmJBZx6-Uj5-pHtuGsLFByNZ9QzrdNTpH-MOxUGVYepv6h9A2c_Rgjw=="
+        },
+        {
+          "title": "urotoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhEaLYsVPPzRwIeEdYi53O0azjXdztA3xR5rXRSVBHLqkox-rPNg9l3k2svkTNLp0Yks9UlkpMUvDHcxH0Q_HQJYHOBsCUyq2y40625FNA5FDoH2NqN1KWWTvnw0ivSxXrNYUgRUFGjj7UTr2pWjOk1pCAA88ClkbzBMx4cUFN14XT_dTDv5yTkLEikf9duG0qKY2m0eUZ2-8ykJqnLwix8ahrlWv67NeftFW3HOGVrdTadGy2OGxrZXTLKZksnI25s8rn8XlBXm6Vy8hsNNWOp78xBQFb2VZ0kOF7l_v9j7M_uShVyGpP5ovDlRPZrOMwxrccLQZvncGTpppg6e2nmMGwDgSYN8RirTDPUIagzCfCs4Z9p7GtPaFShTYNv-ty9G9Qk1VJj-FRxJvsEu8cb_jD_w11"
+        },
+        {
+          "title": "bostonscientific.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY15RMPJfOLKrEkmNiLmdiZPALwk7ueGyff9t24YZNj29lBSl9tb9pkOayttgDYlpvtboEiBC-UIelZojalPOl4KqxYjUfpa69MFSiaP9H9tXyiR1BLcjizWeSVPWD-M-R1--7Koo_SM8wFZUOwjqPHsJRaiyUV6YjCKw8ZInT5mSD4R4OcsRmvFSP7rMVEET6CROuIlXQ784JS5EEH6UFFCwN"
+        },
+        {
+          "title": "urotoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIN0rg4mMRaym9A01vQ5zO0AU42efPHPd4fxEgCrIUBuLAuOb1J9lb-fA7rp1uwo7msChw5d5l7xi9QIlMmosofE-qYZSqzV4s0gBVXgyIHzwNbcXWN7GYNAjwRkAHQok48ufbNYdkE6N2T9KsjHqePkvH0rHYjCRFMUA6spDj_dfByX2F4rDGc6MGMHU6SIzuUlg0vx9K20FnVK59oPOB63i13wlcoMRpq6zSFcOIKchjxgWmE58dfejugbEy4R42NYPVVkzezEUp3S6wEf23dvEu_aoZ0c6UR5HH-XQsW9byuhQ9xrz7Qfj4i5Tr8EY1foSqtY7Qkd0oG90ynW_w_Fh-eiMp2-3kkg2Ajm3Sa8A1n5agaA=="
+        },
+        {
+          "title": "urologytimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa_KeGr9PeNh5V802db71fM7grYv8nFf-1eaOZEOaVqLT2s0ncvixXTNk7PaagG-ceB7NI7HJdf7fm0SAmA-IihSq3vJbyhvvFPAlG-4XNMw617UiW2Nzyi9FkWUraW6NLP6X7fstQ3TyBiVpBrvRJOR3LmHwvn0GbfVzWsqvAfRgFUlS6sRqLcYLZEhBOYRVpx2f5rKh66kr2SgED"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo20FrfGjNiXtbdDiq9l9xBjb9aR8QxEb_LxijCrWHPR3Djs7igCzjpkrfmXOBxb-D76Pr3F4TgMPAOTe7hhQaHtyErHvvzBbmYlmhYkcUvNc50iIENxAdNGSBfGgVjupNJVde"
+        },
+        {
+          "title": "ClinicalTrials.gov: Rezum Water Vapor Thermal Therapy trials for Benign Prostatic Hyperplasia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Benign%20Prostatic%20Hyperplasia&intr=Rezum%20Water%20Vapor%20Thermal%20Therapy"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": null,
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2050
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2733,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.09,
+        "vsComparator": {
+          "comparatorName": "TURP",
+          "costDifference": -2000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Rezum Water Vapor Thermal Therapy",
+      "nnh": 4,
+      "nnt": 3,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-11.2 points",
+          "baseline": "22.6 points (0-35 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS)",
+          "percentageChange": -49.6
+        },
+        {
+          "absoluteChange": "-2.3 points",
+          "baseline": "4.5 points (0-6 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BPH-related Quality of Life (QoL) Index",
+          "percentageChange": -51.1
+        },
+        {
+          "absoluteChange": "+4.5 mL/s",
+          "baseline": "9.5 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Urinary Flow Rate (Qmax)",
+          "percentageChange": 47.4
+        },
+        {
+          "absoluteChange": "-70 mL",
+          "baseline": "120 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Void Residual (PVR) Urine Volume",
+          "percentageChange": -58.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 52,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 mL",
+          "baseline": "70 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate Volume",
+          "percentageChange": -17.1
+        },
+        {
+          "absoluteChange": "+0.5 points",
+          "baseline": "18.5 points (5-25 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erectile Function (IIEF-5 score)",
+          "percentageChange": 2.7
+        },
+        {
+          "absoluteChange": "+0.2 points",
+          "baseline": "11.0 points (0-20 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ejaculatory Function (MSHQ-EjD score)",
+          "percentageChange": 1.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysuria",
+          "percentage": 25
+        },
+        {
+          "name": "Urinary retention (temporary, catheterization)",
+          "percentage": 15
+        },
+        {
+          "name": "Hematuria",
+          "percentage": 15
+        },
+        {
+          "name": "Urgency",
+          "percentage": 7
+        },
+        {
+          "name": "Pelvic pain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2 weeks (initial) to 3 months (full effect)",
+      "treatmentDuration": "Single procedure (effects >4 years)",
+      "trials": 16
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETg6q5Z0sygocZf4myZEiFaI4V9QLxljPF4yqT7YjpaylKxOz0ld-uoEgw4Sho5DovYiztzi9Di--SIuXT9BxxmYBWAbsiS6MV7OP1LErR4_CtWIt-RcJ5P5ARL78XLMlHROycTY4I9bFDgO-FeiDFBimv5FTqpgAdE16nhnF1zGQ84H9TPiyFO8DVrCHSU9JqEwonOtCuSLuwexo-OveDsDsHcY4bikZ6DAdV6ZdOU3UyLrk1CvX2Ysl44gaXESlZGvrqSkm0OTfOGZCzcfPcitZ6aaXzGmCEEk_oRu5tzAVp5lRLnsiWxh20ZBem6EX6Yq4veqXREQp_-9qo3THEY1vrY9vsCSYTMiumLYCvSwPyfAMRaQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMAmJTiTeC59kuJeWKmYxoUTUa2WDXn7yMaoDg5SBTuVoufnXw6dQLhObWAxyULlit8OugNc_UTBNSEklH5Z7p-1xdNaIyioD2uCJnArXp-A5kKSqfixdXPaZsl9T-rSJmhOa9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnNs_et1hf2G3Idn_DM3QHjvrZqJVo5_gSgV0IK1arOzK_U3wgB6hkrwsdG9Pe9XodrHZcn_h5JDinIXr0hR4fhkdQiz7-A55ThUJ-ZHEIqrETDOiHEPkGpqUq8fwXMKf7k9be2wlFcx3uXWID6b29yZhPcNPgm1Us_pzR3hrwXWzZgZBMGJAGaHNi0-_foQE_1nsKs9piIJfNxxmw2cK7WnanBxRbqkYnfBcwXmZ0LUSsxYL4Lv5m5Pwha_GL1DvOzsPuqbAjg7GeHRvBfHBTyhdDes-b-ZOu-GCL54rL5dArCCk97JIE5jwVCmt9NnUlRO6XUAbtTDSB7huKwQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8RnALihXRE6792enKF1OwGlectrGn53BoAZrXfd6eN3zd-b1BXyeo6s5GmEMvgHfE39eh97R-sPDg9DLCYvEvv2vFYYkNdhhMgW6Hi-9opA95VCet-ig9Y1tNC0e96_8oTrCTpOyoMf_5Fas="
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhlSsYOrPZOVeV_XOdkE_Wqt9BMnqTEiOvXqpZXFz2YX6-5g1jFwPr6r2m-9tA3XTcgqdrNdbrIvMFGZGku_qeD93yYoW97-3hSJEoKgvqNnAlV_Lb6M81nr3vRjVCKi5BrEIJW3Z813BQnbo50wr205GlmTNXanm0bfnrXHf--FXUaQTGErl3tTeBAVJD3p6jcE0gQcCmMXFebA6wZ8r658XbeQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1aJuFuYFMk2eOFwh3YsP0YJLevJn_Bm0hS6LXOG-GdvHV2VycMk-bqmwFxOXsWGRU9PnGWyXcdDtn63OpgozjGm-FbR30VgfTXiPZ_EVML44d1PF7fH58Li-kfqd-63l_o0eukaTPiQi4vD0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUQRQquymnRgxqhs2zGh2ciJlSJoqLraHVp0raNHTPw8LjiVaFBCbjpKGQr-68-EHoKl5ugVClAMlvHStwobaYRVQctSYSjeXmy72s2ZVhk1qPjPY946earfrD5J4M4zbQcB4-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaRxOmSVfr7p3QqhB7C7dfTjIgkimJXinhNnhpD0CcFeuff4G8aw5X7pJFbHtc4RVArtURnpXuCldlfftFOE9DVlYTyzga27QLlm2kEDODaM6BTZYzf5jER-169nsJvj4y1y5s_6AMG82Am_8="
+        },
+        {
+          "title": "brieflands.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcQrhcusWaRVDhRtfIZNuKs0Xy4VdtdHkHcLzbCdxQJsKicrRtAtk6z0ZqOWE6yIPI3QJ4zCjAf6KBvr3riEHsq5zRSZu7js7ufJYWjvhRIZvwLpmFpjccA060v1uGDyn1IcI4WoE="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNXfzAAfj7bo4DJfdWY4OfjXLx4F5IXQLmpy4RsODzHdeorp-wgpMWVsBtLXk83_u9r_puTqHVVCCviP0ocCFM_BlYALC6u4byoC34Aa273vDixW7ACt1Qtqo5WdsJBWZWBju9hn4Kno2bwd1j6t7JF7dhsrChCgFWi7biPrlc-CiMAorCVNPHITiwi3HZ6fsr9St5MMBYuDQCB3cWlPugJ_guf_LOPxHa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt7_J1I1cw05bGmmAQYDwJGaaQpDJuTil7Rah9N1mFPYIqZteI5G_kZcFn8p7LYjBc4IMRRfKfzXo89E7X1HvIKPTJKFEZjBhVi_-fg8g2ImkOsoeZ6k9063hzq9fjtttbVghJ07U_aV8JSVA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tamsulosin (Alpha-blocker) trials for Benign Prostatic Hyperplasia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Benign%20Prostatic%20Hyperplasia&intr=Tamsulosin%20(Alpha-blocker)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "0.4-0.8mg once daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 250,
+          "sideEffectManagement": 75,
+          "totalAnnual": 355
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 546,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Tamsulosin (Alpha-blocker)",
+      "nnh": 12,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "20 points (moderate-severe, on 0-35 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+2.5 mL/s",
+          "baseline": "9.5 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Urinary Flow Rate (Qmax)",
+          "percentageChange": 26
+        },
+        {
+          "absoluteChange": "-25 mL",
+          "baseline": "110 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Void Residual (PVR) Volume",
+          "percentageChange": -23
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "4 points (on 0-6 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (QoL) due to BPH (IPSS Question 8)",
+          "percentageChange": -38
+        },
+        {
+          "absoluteChange": "-1.0 episodes/night",
+          "baseline": "3.5 episodes/night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturia Episodes",
+          "percentageChange": -29
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 18
+        },
+        {
+          "name": "Abnormal ejaculation (retrograde)",
+          "percentage": 7
+        },
+        {
+          "name": "Rhinitis",
+          "percentage": 7
+        },
+        {
+          "name": "Orthostatic hypotension",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Within days to 2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0GwGXtJDHZDCSty_TFnLwcdcOXUtBj0-XnzkBgjVphfkFHXw6j7fnYGVXSn_U896rjem4yHtMKZ3iBO9t6iTntbK8m19cFKZHmmHS5t5fFUd5L99Zz3g3CNlQbOu--t-4qKZmz6O1ehw1Bw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwAiiFfWoW_zGsMK4Z5hEfIPihSJmCzEihZo2B51ftJg-LP5SoJ2QiiSVW8bro1ffBXE7CISfZRONY8VnR2Ut0Fdkz-ZOqDGPw2Yh43cdUHnLqbFyMe7kY1nNpKVFmBPcNIz-dsagWEGFFtmjqNUEN8kACrkRp-gWJ-RgVUl7dL3Af6eTMHb-pKQLHM_p6uLLLpxjjO0Zb6MwPdVuUkuofwCNOu_rnTOrtAV5PCQyqtdBUVafYkbf9l7VhucHWI1aV5RqhlsPhxrwTGXL_9ssVZAXCSZN7OJaUHMzA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4JVONeNUREIbesw5PKsvkto1skp-5cE9VSie95M0qqj6YUTEgXtopOmQuznLly3DCoZyt5VAwwPe3UAjNoUDov-z0pC-VZFYboxKhr2jlwg94L637Z3zy92lZj8AeLzeW9rQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv1w3nxsxlccpuOGP6CEX1TAvYiguboK7cFmXpYo48bFZzwtGfBqoI3_czc0JVYKI5Tb-qR2bN8MgRUcxq5jvvzKbRLktuaAMDD8U4vRrAErwBmtYt6JvWeUTgCORBVUEBplE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQb67SGBcywwBOxxSvoBFT-uowDbSabfIomEbqiYU6jkUfuvrGCtgMoMCa-cUwhWOf4Qnz4ZCbv2By4D8k7XkkdlcNzuiCeT4dahN7HmhUT_bZpXUKrO65Ecv5XUm-NDbxDH_RReV0at32YXlqjDgnbBO5rU9dQb4zUjS0P5xf1mxazPwhR9xnp1t43_WPxiWi3Ty-wiCoGlWo47PoTw077zEL8lcxQN3JjAKFNFh1sQgEIJ7lHA2QSYP6wq8HculosAiXb97d6Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNDlcaax4t8ktHzTKpN7BYuZIxGSJIkWLRkk76whzqX-uUt2-6efns8loPtCtQEInFK3ZtJhNg89rKXwc8RSBE3Sktj4Gk9kP0n8oCDgeGK0Lg9E-nA96fOGBGKJMzg9Yv_yk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3j9eB5_4on4Gj1E_Q2IGRPliiNcIT89b2dzx_sLJbCM-R01QTGqtR1M9JaAn_J0dplYcrcWOFMTvkIkBp71SeEOgCI72Hgvbqxtg01fDqQz8iM6un2NFhVY5iJq7Z9DEuQ4B5"
+        },
+        {
+          "title": "longdom.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDf9cxuMNXP-aCM-lDmpg5W4MxB7973iJZYB2r3JFqRqbes7xbOLwc2K8rCm2fMqRD-zWVfDRRFokBSf8gzh2EtFqgqvc1aVazrQoiPk6JqabGr3FAWHGfMK8T3s5YEkQl4cY9VXu8TuDFEQk72UaWyfEQ_8eslLRD23T06jRRUr2JxRsIY362AAfrem88aL27Xdf0joqmeVHCT25swOV0kYNGzBf06Cf4UJJ0w0KnUxaS07FozeoZPZ2PnjfsYX7ebXEQamrsE3GglhfetRkf18VqjD4bfLs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1jb9BRVhhOhvhBMK4DSlJCdrBzscRYV7u38oPx2ux-XibqEs9fFYPY4av1nNhgTW-lGwH0CLlOk3mbtYmdvuD1OU7VqAR1SS0JkNqSyq17DW7dkMs_UWLAKqlgYDmkL0hiUr3SonhpPzu8f0="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi2mAwJKhNQBhc5x6JkYSaS0ohy1ZD99wNTvuoGUXDMa6vcnaC0YATfQ3a6sGsvFhcGd2FOzR0Yqym46wOQA4a78oJv5mEJJmJ6mDu9SeNI3JQI8H7uCxmhE5IoGv6ITyAClHHTSgz71x2Nn0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhgLemFqfo3Z6kFbhdrbnXyCPYn2XdozsSebLLnDY_vfPqXOEWku-_HLF0H46UCVGoJ2r61tsJLPXAREDaBIdVBA2Ni6v9nBhYQF_fFkEHqHsXvZgeuP8jQQ_gDIjCr5gh-eaEE4XkNyJgvoWl-hv64AffAGb3qCUDNUlcIZDDrk45YUCfDjfihbiawW83KgSqIpMQESgn0wP9gdNtd5m6r6VScMK71-uPJgyDaGobu3KNloY0BnjsRMBvZmz_Hfe23QqnSp_41WrBf-5epJ3pbcYiBfhRN39-bwfcMabHBx5aZrx9pS0qCWzMmwLmJtRJqKHmspwqgnU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFZ9WjRIjySrj8KIvUx0n504xv8bckJJqBGOnJP7Ftf_GHSJ2o-sracf6H2TGuqaDjT2y2IH_Vx-BimlOAYS9-HUrb5y0XkmmYBqY--onuzn0OOE1Xwpa8ZGgCUcYIL8TEqBBL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxq6Bg0Wr19HpfYl8y9xnT_fyK_-E54rwBonzTo1p1hvFXeC41aeR97XrGeQ2t-cPBs4BIOjyrqBwk4yZD0E3rAP-LWk1HO3OBNGGxYPUCJtsA3tLgCFBOtfhlcJ5DZNg5iIwczGnHMHlcblV4Kl4c-d7C4SQ5d1e01JAwaHDT9yeBkOnwa9qpEwb7_sTnmXHvoxmDyf0b4T39z-jagdEzbmoQaB57JR9PZ3B8Qj1aPVZICDv4HYNQPSwCyHjOrv4jg-llR4x0g2Wsf14GQFwiR_ZGKNReW4IEGZDg4FFR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkTkRJnLNkFZ31RMcZYZaMpciUm78BgzyX4U4yG7ObYpIemydaHEJb-p2Wgf_31ZjRSLEm9rq_opOarfjtqi6WylaDvFV6ErQlfLb0f82B6TI2AFKyiddT-cOKZDKB0I7aiZC6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhEluY0DqO6SLILmybvOgDIwLvc8O20wb1N2C07A__iTtQ1XdSlBojSigznzIV9O7BuFCu8qabKi3_96XnVGOcGYpKmr6mn8U0M4cmIrGIAd78Ejoe1VsfJBebDpOBe8Tx4Kz4Otzniv6EA0g="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRjMUojxU-HTOJo5hy2CU3XoaXEK6YqZIxF48gqVzdOLmPq88MzvKr_yF4uSacP0RZ5J25Ikm-2b3MeOJPQLMtAdA3geHCom314FA0o1gzQH7s5czsm4l9EhLjk_La3So_0XMgHUuE9XByQJWPdrJ0ixG5EilI"
+        },
+        {
+          "title": "ClinicalTrials.gov: Finasteride (5-alpha-reductase inhibitor) trials for Benign Prostatic Hyperplasia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Benign%20Prostatic%20Hyperplasia&intr=Finasteride%20(5-alpha-reductase%20inhibitor)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5mg once daily",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 250,
+          "sideEffectManagement": 125,
+          "totalAnnual": 405
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 736,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.12,
+        "vsComparator": null
+      },
+      "name": "Finasteride (5-alpha-reductase inhibitor)",
+      "nnh": 15,
+      "nnt": 15,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "19 points (range 0-35, moderate to severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "International Prostate Symptom Score (IPSS)",
+          "percentageChange": -18.4
+        },
+        {
+          "absoluteChange": "+1.7 mL/s",
+          "baseline": "9.5 mL/s",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Urinary Flow Rate (Qmax)",
+          "percentageChange": 17.9
+        },
+        {
+          "absoluteChange": "-11.25 mL",
+          "baseline": "45 mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prostate Volume",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.0 ng/mL",
+          "baseline": "2.0 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Prostate-Specific Antigen (PSA)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.0 percentage points (risk reduction)",
+          "baseline": "7% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Acute Urinary Retention (AUR) over 4 years",
+          "percentageChange": -57
+        },
+        {
+          "absoluteChange": "-5.5 percentage points (risk reduction)",
+          "baseline": "10% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of BPH-related Surgery (e.g., TURP) over 4 years",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "8 points (range 0-13, moderate impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Benign Prostatic Hyperplasia Impact Index (BII)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Erectile dysfunction",
+          "percentage": 7
+        },
+        {
+          "name": "Decreased libido",
+          "percentage": 4
+        },
+        {
+          "name": "Ejaculatory dysfunction",
+          "percentage": 3
+        },
+        {
+          "name": "Breast tenderness/enlargement",
+          "percentage": 1
+        },
+        {
+          "name": "Depression",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 13
+    }
+  ]
+}

@@ -1,0 +1,990 @@
+{
+  "conditionName": "Urolithiasis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:59:42.116Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXYGljfQ3Wv8rVCADAujnmqQL3AkR7gYqvoafrceNWTc3gSBxsIEdXt1pIdYrhKWBkgIzR9MKA9JurQshuGomilK5MXZes71-zbH6kb8uG9Q8LdV-bBIZzQfj5gpyRfJs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLnARe07tQFH6qt-1N6qpg7Q_KNDrtVK0QUdlsfihkCCAzejLAuWugYHyF62NlOBp_hb8EMp66AN1NuI7PbPMqSCR2ryXP3wb22n9yMSVQ7qR7j_abH9aJN8RFPSSLDPvL4ZQ="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdVj-f2lZdCS3i4iweDX584wPyX4i8eDG_P6L4FiowlYE_2C29SfYLmGHbtFxHgBrwDi7QJ43OXSBUJmyzRngfwkW9Sz4HSdKj0ks2CbIPoaXoPCMzPp8pqH5kYopU01OXWy8XM3cefDLCwFyrxdR6A8IbdK6vKYQ6UM_hYbAZTJWBkrp0usnD8TXnZxdthlyw077WmVsfXTt7rFwAlNjfvdsoNpcuvkLSbvw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtxXmVYcQm3Hk5auvfDa11KVnND1ybcpxyxqr1DZ_vhwDCReyZQ3KpZCbXT6lsF2_3vu7pz6OGfCpLz-L3u7wDtvRURP7MOa9rm5XjrZiwsX8Dx9Ebw23MY-fp2q_fM1VKpRrAXOrJsLzt4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLgUNmeia5M-l1ogvZD5B2SZ_2I7xumH7caZwq4uIVWbLp1BBV82rwUm5usMYSJLB00ouN0P9lDg5YKu5bsRniJ9yMLwBHYrjq0HKFfdORhjQHhLxlx7LGu_QcM1rKloO3Io7bPgBSG0Ca1w=="
+        },
+        {
+          "title": "euti.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERsYENsXlYJX8amWvJrrudXCgYtAuvJGe5pq3ctF5ZI2mP7miWhWZxBKUTDvr2bCF3VHj-p5p_kwDgNzlzuGuScenIf9EOn4kAYkhIfBHMO-HZX_P4MK4YOzQgUGz2j6xYTXPoEc0FibRps4yw_OpzBUPzIMYiSlqf8fyGiLg="
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1UikbdiLOGz4rGXDRu0-cLTLXeCGDCIpnsERSzeq2tn8jdApTy7A0dAr-GnNsLtwOc-ZlH_6BETGpCPSrdrZ3h6YEfH09rXMkKGAsFCVsHTXziLziasQtQGXVEUqc51kc24zKMD_C9TTIxu8xJ0-Gt9tRdaQH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJLX19lwuoQux38I9po_L8Oc12FuqCXPfSNx4BV1OP2SnrLo9J67KwDtPQyxRNp-1MzW1K56T9BOEBDcwSdvKIC07P5IC3E62LsLy68K3pvMh-qPC0Bj6K0VSqXYl_KppNdRv3wcIw88ly1g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6HHiJVbqbbFuUCvEY-pW0Pl7lsEmy2pqJNoh5ru628vwDHNxgjdwGvRICgrx7cJ_gkC9od_E5__H7c16JMk-XgQwdsyrh7mc4WFDN2mE07SOU5y7uO4IuaoCaNJjQ_pt5u9XlcR2aV98BdMHGFpO2v0zNnFWycOT0ssTf6hdmybH4vZjN2TUOfQ1Q6oI8OosNUz5D5E-6gTr-Hg6Y88IaG5tvC_skP1rD1j_t6R_0ydVazngI6ZdavnTCgoGosjNWK0myXHY26OcW3lt9GITg9kSHkhABtv31bZ1m64ewKMUQxHK6IEMNkKjWnP-mnwKXH0tborrxw2BEa_AfXFeS7_D5"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE21ObAMB43krt-pZBzHJkwYdsRPvSDwodqv2GA6n-IsszIXeLbhZC3ofklxGavzESF8OPMMs2cJlae2etlMZsRHW1c6yG16G_vctrsODtV_rhE0kZRqmjkswB012lO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6PMB8ScVDyVLAjaMg82clzcWJ8Res3n_b0gaWnkgWe9bl8DD9rcORcjEWzr4kny8oXQUw5oNkfW1BmPOy0DCJ81d2vADqZEmP-8UT9HH00jYlqCcCAV4TTEBi4zs7FCQhLXE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEksZtWXci50nzNdozYmQpJidofEtuEgtBK3MxyFwoHK-VCP6MWIk4lySwYOsZMl-YfnGrliZW5gI_FHlWUznAiJRL3tocbfu4y2WwVxKwd_xozANnn8g2ZRClr82P6mowaIk0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMXWOBG3Xh8GzYQQd477pD6ZR7D_Cx7_5NOwWwdVsXyNkT3ze3UDgZ6yUjBtThUy3tePbNTSIRnZp107rHtrRyOCEyQ-QAJ2ri7V9wx5NxYpVhpRHVHx4zWes7vifhFHHcKSbVmQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExKzlUS9zjecHjnCI4-5Dgrb0JDiAZTR_d7wsDhl5-tMrmn-a9evf1HFvr9GwrFblD1JZcvQYxljjfAVGo4REkOcLLX5ifDc-CbOLwf9qFsXiCLq04xI1Z6Yaf_EEGaCNtDolHauuEt1JJIK-S59hXrZvt2k97M4xCyXL_PxhBe_97zL6J-MEVfzuZOf3CCOTEeRIlFXmLjcgaoxH-PI8loh5NJlB2Jp0udUo_3VYioODf8QqQ9XHwSiGUig9szTauPYheUyjDaE75kG_gnBwfSTvCcKCqdN3c3wSZfxnNIwO5Jxno"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl41euOmOwC80Z_aZcUwv3vKiDDFSpRkgkAcNXnlUve7p6Kg8OrDYS9JNhN5FikvCzTeWv9Y8VfDxi3s__x69vu-69BymRsDdWjhBOhkXaHkK0STRL_7sJNs4tWPWQCpNDQOSv8GVP3LCOIlRQ8fcYeAP1Luzy4RGAeJVr"
+        },
+        {
+          "title": "ClinicalTrials.gov: Percutaneous Nephrolithotomy (PCNL) trials for Urolithiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urolithiasis&intr=Percutaneous%20Nephrolithotomy%20(PCNL)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 17500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 18421,
+        "costPerResponder": 18421,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Percutaneous Nephrolithotomy (PCNL)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2250 mm^3",
+          "baseline": "2500 mm^3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Residual Stone Volume",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Numeric Rating Scale (NRS) Pain Score",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-2.0 cm",
+          "baseline": "2.8 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Renal Pelvic Diameter",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+10 mL/min/1.73m^2",
+          "baseline": "58 mL/min/1.73m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Estimated Glomerular Filtration Rate (eGFR)",
+          "percentageChange": 17.2
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 52,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "38 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 26.3
+        },
+        {
+          "absoluteChange": "-2.0 episodes/year",
+          "baseline": "2.5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Number of Symptomatic UTI Episodes",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-22.5 mg OME/day",
+          "baseline": "25 mg OME/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Oral Morphine Equivalent (OME)",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hemorrhage requiring transfusion",
+          "percentage": 5
+        },
+        {
+          "name": "Infection/Sepsis",
+          "percentage": 8
+        },
+        {
+          "name": "Fever",
+          "percentage": 15
+        },
+        {
+          "name": "Organ injury (e.g., colon, pleura)",
+          "percentage": 1
+        },
+        {
+          "name": "Prolonged pain",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate stone removal, recovery weeks",
+      "treatmentDuration": "Single procedure, hospital stay 1-3 days",
+      "trials": 81
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiOOh7vAJSf6xFUqJ0Tw7uxLLoxb_Gg9vyBwB0IwtVYcTHW9i0t5xBZsDh24HN_9lhUlImX7IpZjrRF73_sXvtrM6lUPxYygZHG4gQrZVmpkGBrfJwsr1MapYNwDkkQ5jCAbkL6VcH5XxoxsE8mGGN2oNChmcya1U14XgaNGVKcP-0WXd8QGzdYtHqljb_v0MBlF8gJysbZj9so75IaLmmH08_7uDv66EARC1z5HIaioxDNogsoCV3bc9xhcCwors3cTiEaGuwPuAknky9_OVaLwiWOSSRNGxBPl0yZzjnEnl4OtgEQ4eVr15D85cdvpewqE60mPoqoYmpym9gSakbuBNqJ_NjLFT7VCHJWB8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQjtJi-gz38MXlmA_r_CZXub7va6cpo_rwD1DKGndrvGVXsABStkC9Uy5agKOAnPkYNpOSC4UqX4d5ht6MwvennfZrm5T9aF4IccLuUicU4sMaRX0tgqoEVbCpHBTNiX9O0CUM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBsj2P-YlJ72fD2HPLEk3VGoa0cZk-JK5V91ddR7MTH7jaosUALZm6VREFFvO2cGiZy27r_H6CWw6QdydJ8QECvfEjpPDeaxoPLByo9KIbAHqchygTdm_FgkbqMwaZa8-EnnAZzn4M3An-zUM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcVPN49WX9UZ-96K5zc3UERFouwLPJfe_SLkBYHmzAx__Fly5H-HQ3F2aJNURqPnbJNiymkzlmZs99iWw2Czc0XRHkZvLpOljiovy45TkCFB4nhGKPYv0Q_3_hoyAM7JmHxyWi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw1E_shayHyj9XETLHJw3z3jl06oVz7jlwnCqhr8059lno8ASZcze8UhJV35bdbG5PACB3xMt9bu_U5YHgXXm7QOsc9_WbvMjnhASjg7v4Z75Zdm0HOTjdu8e1XLSEX-bNfKtc6olAnkjQVd2217rMUqMC1iyuM6_vPl9o3fzNxjbJ1PKHz2M5jZCkhAxZU2rTGmY3MRcRJTvAPrsL5Iq_YGX1tkKzj-e_IRJe7B6dRNRfz8jyRSbnAoRPBHNaHxpwoeOaAxzHsGk_J3eHWEPM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYsmdYtGfvGmNxDKr2WOKfYITmLffga9E0_iyI1vZGscshuwJRmM5ni7v4Am3a7mRWhUkF-oiuPoxxzosHTg8cPwbeZgUseQCN6y4cZImduH9KMmUfpRQxRC06kw3IUY9CFmrq"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdEARFPovHPwQLWPwp5k2TTxv1eKGZzwQb_18P0eDIMNznOZNpH_FqJAsC9Ii6W7Cp4xfnJp5YezDJ6mD4qFW00O_6cHeOzAVaDyyCso_I5z6mtfBw9Tvn789mbdXfdH1HOHMsqYABYl1tWzTZjeR_g6U="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJuH9QpgoVsZlzjHtho9Oi2i3T9Laaw8FQ11LdtMBYLsZAN_eeKIDvnqcdFTpkgsUHZwWcr2Jry8KXLIEupqUMfcHXmblYgU2biMrEG-RpPcybYb5sCRRfoLQeOFRm5ZigzqZILCFXVkYhDmZz5TcR08qzjcxwNHI6pwgPhsYBmzvLq-7Z5s3C0Xc7j2Dioqiqg3FPQqSl4Tp3tHJfCw0iZG_jVo8rGkOm9YUp1wRmStMgMKvZ3N4OXoVwqpDM07WdF20oaHkldmbH65kPWh7drOh0vZbVPDosZzN1eWatmeyUo7liowszoi5c9JkaKLQyI2BhntXzZiiLvff8gI6sREij"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrJpRqJDdrwRT-MYNmv9MrHhf9t7gRdLq7Q-Ss1W4gmazQrzRTRZ6yQjplBJ1dhksGwigJbY-t-d62Mg7WreyDA-vNJZD4TqH3i8et9yPaYoOnmp154M4ttkT4-0muZVwU-E6H"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIVi5jbR3PjhjZ1949ZRee8TUpDAJ-Og8AMil3SARGVMKW50-PzCc8JDwQKYPsT2uC_5tl6QJHcDYfkn7ySLoTAZrSdQlPSxHbxzQPRrjiI2BjAAqW4EU4WDZ215KrGDhKFCAtue7GFVwyd9DjykFmF1gd72iBh7p5BVjXc3BsTckcSO9ZEZcouLaIZ4fzLWu49FETGqShrFyBnWndcv8kOczTr1LvOQNMKRLK1HBNg7jox0dihWoKP6zS7fItSyPZ876u_8fN42nbva9Q9AKx6Df2tIuF14J3RsLypdDVjio0tO86DxlZxQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGn0_hIPmsQE4h32q0O7Ie3MfLPlqncgpBUSnpDNjGn3BuQ2Y8sIHIOxGqRA6BdjQ_7NkApjm5FnA0M4w_Jv2tc51bLK279HgzOc6IjJtWuWxT9n5rnZTS-qLkg1_ovRyviDjcjIOZ-st4ufJqV_qhkxbWDiTFdZpoOhrUPpLy0cb3GPH5KGAElzD--aoZ-KAzWTdhP-1jMDGHSEyhUtX6njWVknV-r3J274xWKoviI5KMFleFs3GOGU2KAWzX1ziVuWmYRVBN39zk6zok="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ureteroscopy (URS) trials for Urolithiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urolithiasis&intr=Ureteroscopy%20(URS)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 800,
+          "sideEffectManagement": 300,
+          "totalAnnual": 8600
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 9555,
+        "costPerResponder": 9555,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": null
+      },
+      "name": "Ureteroscopy (URS)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 90000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+85 percentage points",
+          "baseline": "0% Stone-free (all patients presenting with stones)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stone-free status (post-procedure)",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "-6 points on VAS (0-10 scale)",
+          "baseline": "VAS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Renal Colic Pain Intensity",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "+75 percentage points",
+          "baseline": "0% Resolution (all patients presenting with hydronephrosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hydronephrosis Resolution",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points on QoL scale (0-100, higher is better)",
+          "baseline": "QoL score: 45/100 (lower score indicating poorer QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life Score",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "-8 points on IPSS (0-35 scale, lower is better)",
+          "baseline": "IPSS score: 18/35 (moderate-severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lower Urinary Tract Symptom (LUTS) Severity",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-0.4 visits per patient per year",
+          "baseline": "0.5 visits per patient per year (pre-treatment average)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Emergency Room Visits for Urolithiasis",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Stent discomfort/pain",
+          "percentage": 60
+        },
+        {
+          "name": "Hematuria",
+          "percentage": 40
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 8
+        },
+        {
+          "name": "Ureteral injury",
+          "percentage": 2
+        },
+        {
+          "name": "Fever",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate stone removal, recovery days-weeks",
+      "treatmentDuration": "Single procedure, stent 3-14 days",
+      "trials": 24
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4xL0aIHTIOUaPkqXAgUGxB1pu5gE-2EA0RqN14GV-EFp_kW3pvjLEHsJPzOqpJy_ISXZJjX9i-YGVEHzU-eiptcOHQ6Itj96Tp939-TcjqO01zlIaHgT4B_hLqxKZmXjjxo9m"
+        },
+        {
+          "title": "urotoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcx5vuyT4WCD0udPQ42C999Nu363c-g7rN8qLXkIPP521C8JSHicugT2gSy3GrteF9zieRHSzdm8HAab5qlhP_DLkq_6j1PSBUGnNBkARkje1QeGcgWxEJbZL-1dgu6bVYmqDHDR_89aHudRwvZav8tFo_B_9Y8PTaIkr2_vkgaB7nb0v4UFaQnAYZgY8Hztjr2gEoAE2YRIZAumgkwa7Su_yM64I9LgNUBRdITHV2qIiJPfNskrb3qDkYFuer4TPhBUSpCSo-gdRvB0Gv6ek1JvXrotToK6cTEUqhDua203kCYhJQX2QzzO5M0HI01aTpOfFgGcExjpACIv40TEAnTbCcA_ijjeWwQ6QND45tMChDqBMHTnVlqUlhC0OhYw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENwEzqy1-Cka19MzvylBn6D-g3NzBdlmCGHo2QXdJM4VUxL26EyisRGA9IKHZE22RDc8JjEAFy0ud2CnLv45bMoHcYlY5dU6AEyCRYmZtJ3e8LD2KAEvYntYIbXCh31yOcshJklEOxkTZEpk4="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlZezeMolfD8lA5ldQtSi6J26tkFlwBsO757NpWcJ5MhDQMK17yESaMYoE2BR5uHgvnAEYkIGCAkeYHQvAU36bOhLL5I7dIgziOy4ftvVJjTaywYoM958HwTrDPPQ2dyQY_4O-KM7L4NmUxvfxuuzM5I8hq9Vw3QCs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIE9WwYkp_H1c31SLTBL0aGN7MmSK_q7_a2jiLg-iIceAPmeyLEdUXMlBBwapmDkzpoor1nqXxJ-zaiuWxBU0cjNKLffhHZQbmM4Ko_lcR_RC9j1chHEV8sA5Lpwr7tDc3wYZE-kLh-t-tGDYzmaVJl3yTmrKYsdgM_Nzs7Vv8VvdSNa2rt_FknWaDDTYg_x8jXywvLH4SXMwqSpaCjjdmxk6Sxuvzh6A3dqe9ztW25Mr_jHzv5XMGbAq5lgKeNlsi0pNIbwkwYETT7V3CpiOqr61v8faIa2iqG0MJXGidB0-Qf6GTVzu7nohg410FYA8XmdAO1H0ixsgqhJEcW5QiVQ=="
+        },
+        {
+          "title": "urotoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzYDv_gplVDIAg-JKxQqX-vvgmcvQbbDP7nc-dSfUiDsFEe4fWfQ8IZTfCMvxHNxR-ucwU-bF1ZcAh43ThZ-5GjjbPUV5xYMbdzB4BcZicU7oiHXxLmnnJ1wNXSPpULp3QK4oncUxX9JG4X4chmgw8u-W__HYdawLBAJyr8y9Sis_K-c8XeijuubYYW-DTosj5yKsRYMt_RMCTqR2K23i8MP4O4AuMn0d7S7LcjOK56kck-2oRUdxyD6mKb4z8YScMzq87F06FRGxDB1lDt9qU6BjwreMFaPPeCyTvPgYxttpDnUxeQNx8AF4aoqx8_vgRS5qr-u8j0QD2QOsMbJceaSQ13D0Jv-iwS2_XydVCuL-4ME3a6ZVsf-6OvEvHxQY0jWDjXcIwMBf1gBc-9ud5D2q-uNcwvOYl-7KCl6dJjF0C5GI="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjGXk-9oiiHkgOY60bIo6W3FX0xPa_U6d1AcVGY0nF8WcdSG3CeH6_p3yzcZod5FiM4SwyjVxn3SE9BMwgOh97Nibb9B5kZK0FllnYViFyVsxPZFM13O8KoT9c8x_aLiYgNYvklfuu4JVSYAa8-evzDG27I4LWnYeZO3xQlew_xp7dpXnydGYq-KWzGnYGxDzbRK1ElGQejU0n9NC16v3C7ybv77lEupKNBA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMx7sx9qItpg3DcS73C-7Z4YT3QuH_-Bl102HFJ3ff7XMHNh298_YItSuZXn3zkrVX0sHGAbJhJzstOSG0t_bPXCYlq7LDdpXKHuF9unLXavle-l--z5WDNqaAHjpelzw-sYHCB1O-t0wgHOrf"
+        },
+        {
+          "title": "unar.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyIWlS5STeNiqOeNYswo5Eqly5YLMy62IYUXAsD6KQ0GyflA0t4o6GwlGXIO0N7NzITI2f5wPZdQkt6X4Iat-Ey9NmfAESQTtoOTnzDhN-sRS3nPCYqpnXF4UgcyLA3AHEC4prYf5YT-sDllSOUXWN7eqEgmnsEngpG1M85NlWtiENaoshvq4="
+        },
+        {
+          "title": "pjmhsonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCxtJ3Wk6_O5yZm95VMArZ01q0nidCMkazmgLLZxi34TlcGwNBWWo8RrcNOpexDxYu-mN4BrHTnsJaLsCWAXdoB68sqlqCKxcUeYP88lN1ArlI0ymv-weMMhUPKW74Dx7_ZxAM9kzuey0OWw0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIo_etx3c6_iWtc-SeoghyezVq53jSaS83aaC0ACHgFiHO23uRLxv4mbwef1A17HodkMx3N4lNo--PxCYqb00UKMelEvjhj1y21mm4cnENa1DHghExpR2Up2ld8JNtnQx5A0mpsgIfsgmnjtY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Extracorporeal Shockwave Lithotripsy (ESWL) trials for Urolithiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urolithiasis&intr=Extracorporeal%20Shockwave%20Lithotripsy%20(ESWL)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 700,
+          "sideEffectManagement": 200,
+          "totalAnnual": 5400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6750,
+        "costPerResponder": 6750,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Extracorporeal Shockwave Lithotripsy (ESWL)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-400 mm³",
+          "baseline": "500 mm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stone Volume",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-1 grade (e.g., from Grade 2 to Grade 1)",
+          "baseline": "Grade 2/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hydronephrosis Grade (based on ultrasound/CT)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-6 points on VAS",
+          "baseline": "8/10 on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Renal Colic Pain Score (VAS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+75% (achieved stone-free rate)",
+          "baseline": "0% (all patients have stones pre-treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stone-free Rate (at 3 months post-procedure)",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "50/100 (indicating moderate impact on QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urolithiasis-Specific Quality of Life Score",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-14 days",
+          "baseline": "21 days (if managed conservatively or before effective treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Impairment from Stone Episode",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-1.8 visits/3 months",
+          "baseline": "2 visits/3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Emergency Department Visits for Renal Colic (per 3 months)",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Renal colic",
+          "percentage": 20
+        },
+        {
+          "name": "Hematuria",
+          "percentage": 50
+        },
+        {
+          "name": "Skin bruising at treatment site",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Steinstrasse (stone street)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate stone fragmentation, passage over days-weeks",
+      "treatmentDuration": "Single session, potentially repeated",
+      "trials": 48
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH30yWJ7IFaqJ-Wfj4a0HDGkgryFYv1sHWqfk9pa-ABoDfyyElc38YF9N5XYHLjh2W_EAXqszMNpNAMHuRWXAcTO3CiSNckl2vQMkBLjUPQjiFzFGiho3tjcHypCvT9NbyfTMHZ"
+        },
+        {
+          "title": "auajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElXkiGQnrZOJ4sYaImuhRdAUF6nAu1gQMP0-enVv-ABPPOwoiz6jvnD2kFqRMFlneHzAKOvbIgCDBMf_qhOl3-5vPeblSQM0QWcI-EOs0TtF6cfqELyMRyh-Hb7-QZEDsKPu2Nu-n50Wa7zu2ZW85uteUAb79u0zuMrw=="
+        },
+        {
+          "title": "auajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY5FZbzY8VVdNdD4Xma6EfoBswJjvgBDc7uBWTwVBZw9L3f3BixBlo_QijE4L-oiQCQrE7fwtXdEQBS43LOVZP_EjkNvBTVeLyzaemACRbM0Sd7HRFNKIr89AbnTdAXHLkksHWVfWMPQzvSLZMUytagiMtU6Hx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7JEV84qXXKaLnqWLPm1rD3Z2O2z9AgOcj9TbwdhDdOZKWY30yijnS2fv9NjW6-yQ0fgP1VJoIiHUXW1GDjcqdmllSNFSVJ46QqodaLsMLixNMZagHm26n2qcvoDfWJHV93rbz"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlPeIL83kDi0gJbYSbw5G2W80qGhkmEHBKifIm3gzTkBoEB7PKKirCX5n2r0TpbVBXxIhqKI3ZBwxBId9ZRzZeDMhWQhWhkVRrAu5Yw-OM8tfNO-EwCpQSvomjGmQ-8XXPBpzF2N1GanLw1gsMsNg-_rMFfqga4cixqwBLsq5zfD6pva0f9MWEEsc03FqKJyYAUeNQzA6jumWI3Ak="
+        },
+        {
+          "title": "bu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXBvaeM_tixzACWxab0JWpCeASE74fL4jFmwjWnWbbO7Q4NHhydNQbpnBrPnXmWq8MTqkNfOtM1E2V0BRpc605Vmv3HDcJDrmw9DGsURmyn7GDjCG8nUdo582VGuZi1GqWaugfs-q7-0ncZGNDCdechgV2_B6mo_QDV841esVNM0BbPuJigUy2wFBdUSok-DlDiQ9K"
+        },
+        {
+          "title": "escholarship.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmXIAOUAYba_ATJy2VOuauOPdZSjoYxfWmn4JNI2TgkA-iLNkaN40sgSPTw5gB4nSBKRgYpEYMARj4rSK53kwX2rg0lMfcUGSzBZ7XF2h1worgXM0NYkUl_f7kYkL2jE0__Z-T"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9E2lSQURoOB9aHa5sUGmdEirxILzRHYO6DFvk6iyC2ZxaJk00nhzUFQwvcH_M9bgP345JO7MyJd9kT_pjbs59NPNfMR6LyS6p-AX46MVcRLezbLID_9g9EOWbWRjzLLNNmY5AiSOA5GyePihsu24ouXo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG83FtfPG9l8k3uKLJsCxHeCti_f1aeXvlT7NCsHdE_tcUiwZGwZCYHq8si7Q--YNwlLSo3nvxEooClf3aUAwdiacJiz5KvxFzjUc8LEfWrMAel2h6_8_M5lAQIFC4E9zo54UIO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI6li1jmb-bwwPD4OFEZUJSJ_OUUCxV6n216fC91JgqgpI5PX7iDYEVbeNUwkYoDcq_mRHEomXttdcAOPvcVYAFyxnAbsgC0jZZ-hlkhS-K1Uo_EYCcD5dkgVLrPt9NbEaLx5stQXoSAw4XHB-fRKqTEw4V0LWvyONAw-FaZfRW_JlbZ2X-kOkpQVg6YwyF1bHkPCMENOheZ1yxA5CIeF4qvC8KvnUiMoFwy-3yZXtqhgVLKzf2oLF67wWgMW1BizXm2Wv1az-TlqDEOA5OfolqE0Pek70x8jMZBA8cS_CHBVFiOE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tamsulosin (Medical Expulsive Therapy) trials for Urolithiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urolithiasis&intr=Tamsulosin%20(Medical%20Expulsive%20Therapy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.4mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 300,
+          "sideEffectManagement": 0,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 500,
+        "costPerResponder": 500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Tamsulosin (Medical Expulsive Therapy)",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 45000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points",
+          "baseline": "50% (spontaneous/placebo rate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stone Expulsion Rate (distal ureteral stones < 10mm)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "12 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Time to Stone Expulsion",
+          "percentageChange": -41.7
+        },
+        {
+          "absoluteChange": "-3 points on VAS",
+          "baseline": "7/10 on VAS (acute renal colic)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Analog Scale (VAS) Pain Score",
+          "percentageChange": -42.8
+        },
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "30% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Invasive Ureteroscopic Intervention",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "70% presence at baseline",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Hydronephrosis",
+          "percentageChange": 21.4
+        },
+        {
+          "absoluteChange": "-1 dose/day",
+          "baseline": "3 doses/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Analgesic Doses",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-10 percentage points",
+          "baseline": "15% of patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Emergency Department Visits for Stone-Related Symptoms",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Retrograde ejaculation",
+          "percentage": 8
+        },
+        {
+          "name": "Orthostatic hypotension",
+          "percentage": 4
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Days for symptom relief, 2-4 weeks for stone passage",
+      "treatmentDuration": "2-4 weeks",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkQyJiNBvCs9KUQu309_RJXgNIXFPzXpW5EwYxX4HzRg3Fj_iD-obEICPNagNa8wj_jZDEbnFz88JDX8epaXtNz7-vRlHlxwRZuo7lmTpoxnXU3wsorq_XCqWIqdfkQ2fMq4AlVMSEVP4rExLnncTJfUgYXFXqZviOMR_EI9aiBP2_1EL5WMuu9gzUZ_o7ATbyQ-jwRFX8SZ_fuRqf678vG8pLKeswoqMqr-br_2VQ"
+        },
+        {
+          "title": "jscimedcentral.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsCtTupUtNy4skv85gzc_Dt6quN99yK5sVGvJCSEFdA6V3uEju76hb0s7ivpUI8AJhdhrXNx7AQdCrpx_xHxAtffjyLF-oIebIeZB5O5LkfTFc1tL6mSdvsJrHCDzMGppcwAAiKolTauI4KGS2PGQj2ssTVmZgNwoAmQxrZESRSyKShKqm0oeT5GsUZFhVDwoeMxSJ1FS-9ER46OUoos68vcA0l8wGmhVQi86YvyJUPcKNU-rmWEptdqg1MtlJGrxR-aYJmu5JJIj57_RJciHLkUJDHoK-RpyaI5po4vNMNz4pX6IqmhHqz_CjxXfQ8JZ1tw=="
+        },
+        {
+          "title": "jscimedcentral.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7Ur-zHboEaIzOAQZ9NmnNxn8t0zZP2W9ACOQnXouHonSuSBjRKmHS9LwmUHYpsNrRa36o9fGTAGnt4tE-2IjXRsGaBzF_zkBZXV1oobfc2KwXIy6x9DD7IZyaptrlpV5P7wIUp3eyvBWSY4At7e4_3uM1hHODa9Jsj3XrOyZDP3cnOd4Z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHopGouBGtejZnKNwrp_eD26tadV7IwDFFQqdlNrm5hHxUqQwRUWCOQNclizB_uhuuCVTH-bEpAbP6hsIqchYpJbox0eJA-WOVlPRsWme9CUI9IdT2LIgXLcigSP_b1871gTwA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvnHM5JEQnAv5qfoTJ5Hci9N8pbUuwbBWYCDxPXj5xxQICHVVOpCYRRAHpahjZ5oyYw87TAVs94od6KENsmuqKHNMllJdw_HAR8AuakjXmeEUZbQfV736IINpDSO043JDioEmfBGzasgj5zfmPvZKPNji4y3REekn7auqhy5YpyP2s7P0E2XIScHlDkJb-1IZRUUEPWiSlSnAp2ymkGe1l3uDdeSDrBiRUZbSFvdxLLt9pXP8k49QUzHd47gxM9kKMICpPrEEteSkid_w4u9RRiHdJWsP3IBIKLjOIf555xJR0fZOY6CuW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCNQeIhIJo0F4w49Isb2DwxZtbOaGrYWvQ8PTWEO8nixtvgzal5L0B2eqx8Vojijox4CTwBaItU9erBU0iAjhdq4oeAi5aME8N_ZDMAv1Nk3kjfDp4VMYUb_q5MA4U8yCsE6E="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2blyJ6XbVSSC0YHYuXN7ck6ublIAl85tJKNGYdvJzbzZ7SB8kvanoA9Ou3JGwFUNH5koS65b1qI-Qr3gnr1zhDmoUfTg0Qog9M6Zic7077JZosasVqWLvxtzn9jSqKu1KrPiI-Y6kL6GNI5BJs3luHC1D0jiFOFFMnjDyAW5aLBjUBTSUjC8v6aSUW1NQ0T5MGRN4xsDIo1thlSSWYS2CpGDcItfiY4GpgBlqyhNxFrOwXL_Wiucj3m3y-zmOY66GmRsUs_cV2ZOs608o_3usj162jimyWccsldPzPupmOJKMRAG3EZfsJKuc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYcXEPi9YOYubCe3_9dRm5CxDh5I5Ycepbc5Iik3mwrQ_w-Zx-VX3NRsLA4RTxUCt-QqDAPkQhKgN1kq1eRMWFn4dRs0XIOddS6miHwauzJdFsYU64JBfRBMDyhLIFQZObo3IhI9J-OWeKiA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Potassium Citrate (Prevention) trials for Urolithiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urolithiasis&intr=Potassium%20Citrate%20(Prevention)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20-60 mEq daily in divided doses",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1167,
+        "icer": -25000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Potassium Citrate (Prevention)",
+      "nnh": 100,
+      "nnt": 3,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+375 mg/24 hours",
+          "baseline": "250 mg/24 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Urinary Citrate Excretion",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "+0.8 units",
+          "baseline": "5.7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Urinary pH",
+          "percentageChange": 14
+        },
+        {
+          "absoluteChange": "-0.56 events/year",
+          "baseline": "0.7 events/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of New Stone Events per Year",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-0.25 mm/year",
+          "baseline": "0.5 mm/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stone Growth Rate (for existing stones)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 units",
+          "baseline": "3.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Calcium Oxalate Supersaturation Index",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Kidney Stone Quality of Life (KSQOL) Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-0.35 visits/year",
+          "baseline": "0.5 visits/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Emergency Department Visits for Stone-Related Pain per Year",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset (nausea, diarrhea)",
+          "percentage": 15
+        },
+        {
+          "name": "Hyperkalemia (with renal impairment)",
+          "percentage": 1
+        },
+        {
+          "name": "Stomach discomfort",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months for optimal urinary parameters, long-term for prevention",
+      "treatmentDuration": "Lifetime",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXboD534xC5WZwp2BPGtCfm8G1SnV9tExo2MXMP2bfv8bws1IjRS6NiShVRvbn4T95RnBDa2hdVOycykw1G3Kpe64y5k1yDyT307fmTT-pGxsjzlwTdsPceMZXYRZIFznySVzN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHayz40UZ5dX6TmIq5pAmu97hhpAeRW1ezFyfgfenw_Uydpj-goIR6d607LUAvXJRlTFRyruAvNaeWwnUEPSpGgqeOBl25-P7zLukf3KOklr0jk7rshT9RtFxCevLX1NuKkjq8D8dIjGIjJoVNz-P-ObUuVaHr9zjifCPXNZ4J-SF6JJQVoAXRqbsK9V4TK0VfhcIZTMZEw_z1-JnGCtuOCzVqLqDlnVMkqt8WA8v2VBcz2tNyEmtYbHNjDzHbLcJ8mQIVke1Et4w1EVVdCo2m00Wr-82KwwhsVpM8ESZPlL26ZNw5Dmh1YE8uYbxBBrZRKv9tFdTZcgS1Z2oIrLz_BliAWaHQF_2G6zgeLV6E-ouIrASuwwzuNhETvon_zFs73"
+        },
+        {
+          "title": "minervamedica.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTMc6k-zhBCaEJ37RjOrvx2rUJvKFlbm6I0fZD_Jspz0QaJ0ev_jzNTMwo7IBUyezrvWX4_Z0C1K4FDCeehgcyQgE0P6uP6ONzVEMoNZncvb_W_bc-E3Kit4_y2gzzNW9eQIJeE8yUZo7iMy407twatU5UkplQzkh7yZu4sv8iu_ldMeii4Mxbk9BrVfljXEi7a7bDIAYSALJcS75cZaQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNtmSTHBAjHPddwP-sxUcC7bPwNgUuVM6ZDeM7tv1VQB68zRCkmSIDctZ1QLUG3sUDAK-2uyYHZ-8cS0w4vE9IRbHON7eW-y1eYuuOx9ThPjnr6tbat7hwHKdCUvnp6BJG9mc8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHYMDFSFJcosd4nx-CxqxOZTj294ioVKlsfxVGnbfBVBEMwD4hXIKokUW1u0pvNaT1i2CIYLp8_4EcwWJavziaF-GFnvhPG30OSTl85vipWYgruR2iRUl09K1DJ-JhuzrldSltsJZATYmx_86a"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoT99N0VTmltoEbOBVRYxc9BeOjhwWVDZFjrAX4jncQ7m_aHQE8yx6Jz494Alq2_f7A1y6-tuMU1zeuvFI2clj0ZDc62Hqbbe3ytasqzkE37M1Eh38DplQcr0uQ1C-UxSgWrUgRCVtFFVGgBY1"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCeT9r88aIyQm1OS1K1dpRBez5NiGZ8v0Kxvs_HFC0GH-1MwXGnWTFxOuDQSiukGkZGGwC7DMwt7tz-MVw88AfE3MuZdKsyf6G-cCNiRL_Fvg0YLenhlshynr7oeZZNOXjnfVH8rVH1-Swuij7YfcZtoxPzEqbuBkzABE6HIh957M9InMjCZK2I-cAcFCw"
+        },
+        {
+          "title": "kidneynews.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5Ei6qiK1KG_mGHpr-lnvT8WiRnsbk0P9lVlvlms8kBHgOXDRaRo23zob4RDBgsg2JzPnS-NUCuoH742tDxix0zOmGPfN5QWlIW0f4MCA1cAPiE6XXvqCI1yJDTI510hapKr8uVmhvIXt7QOXqdi2lTV0KUKHsQDriDxj4nlWjIn7ZTeov9FM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN5qGyfo5GYuv_UymH1MiWgq-ktNahN37ZwouUYHZNlS4ShVkyr2AtV_8QFrUGVGUFzGq727BUXhml2R9ZS73ST5O6KgNVQWDgbpETsj-0Ar0vZTKc7bQBVPPY5mIp2f9mCbrJPp0jb5FI5CwNOM0laRpENb-us7fsREYq4eA45qGsXPc5QZcQnkfGEpyPXQsaVa2qzj0FPhUguAFWQs_1Eiouf6iR2WG2b--UtC7lkbI8btiE2CJlODLZYtyVYo4GY7PAOA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3trkd-_ir1W_bzFRRh8htlnwgMC42E1DYuB1sm3-aW9qzfh-KSSI0DGVZri3Dfq1XDyz_C6jhfR4Xenrv7_zxLcWhbHO3JJzfkyLYVl-HMOmUCMmV85-d1FqwPj4sNUz-imcbR5Fd5mlcuY0D87cnvp9LgtHNLwLF2Rte4-wfQVBIujvsOTP5J8Jd2eogmNFZdUkpu2UtRp50g4wTOSR69AX2-ToAGT1hbZIUYX9WDmmWsf5lSZ0kR_uSUqs8eAbRl5f7a9X_V9gfzZpfe9PdQ7Lcmvbk23OvC7t1Uw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Thiazide Diuretics (e.g., Hydrochlorothiazide for Prevention) trials for Urolithiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Urolithiasis&intr=Thiazide%20Diuretics%20(e.g.%2C%20Hydrochlorothiazide%20for%20Prevention)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "12.5-50mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 300,
+          "sideEffectManagement": 70,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 667,
+        "icer": -30000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Thiazide Diuretics (e.g., Hydrochlorothiazide for Prevention)",
+      "nnh": 8,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Hypokalemia",
+          "percentage": 25
+        },
+        {
+          "name": "Hyperuricemia",
+          "percentage": 15
+        },
+        {
+          "name": "Hyperglycemia",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness/Orthostatic hypotension",
+          "percentage": 8
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Weeks to months for optimal urinary parameters, long-term for prevention",
+      "treatmentDuration": "Lifetime",
+      "trials": 60
+    }
+  ]
+}

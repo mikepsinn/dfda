@@ -1,0 +1,971 @@
+{
+  "conditionName": "Myocarditis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:58:21.433Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "bjcardio.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvz6y6fFyPzj8Rbs-eYRntTznMKwnHqbgzsJ7-9fgBLC8SL3YmxTPoleCsBr-9ChUxG7K-Cm4jBy06Ad0lmSZfQL0z32o--uLJUjp_UJlh2UwK5UAmDo1XwAjjgLkdl2ryML1GEBE5yy1mtLOvrEn5VmG9FfevkTd2j9f3bxSskjFZTUJ-YMU2CNXkqVBhl3T3FLkRXAWeFiQyAXU47YhcxdjLK-R6EgpC1VCGp9D5bGIwvJJvE_Lq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQdhSEN2ZVn8iMeIkKisUsbXUE_69iXa2nCcH89LSpSjWK9J3XG2yMgpwNdULVHmPdd6NFOAoyyC2Z-zCeg5ZLwwZ58uUlbFzqdff_GlpUecuO1K2WNfYkwkYog-9W17lya6DA"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQGjL1vsR2sgR_iIdkjtaNZLxQzTMYYL47eNfdTiX2IBrbw5_kBpc-Fl5QD66yFqXwtB8cR6jmjoFXAOIBtdio5djJ36LtL5D1BAaoOtZuSIw9fgGFS_9EDq1sYbLPBJYYbemlTvu4zo4reqL06-YVZZE1"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEuEwlQaR9t7IX1BMBQu8tm0GIJykcp8I5BVimFi-Ul6UtnjsyQTa4EUTPYIXe9E6327CCfiPLFGCT49G7gGjiYJnChDP59a3KdKkbLEbANgQ-Pmk0t7vkIF6JGfuj4DBTOPQ8"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9YodU-fMhQn5gZqEYkk6aBuyUrysFvfrCTuv2fYtg2cUCPy6n6F9spnuPFm_R8YQhLtHvGHg3cBvEUVmJNtNXU1TgZFQ0uAHZMcvJGwwTgrgGKk5mwsDnX16WWv__fZdvYJnQOV0="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGy1AGiTZj6mhhWnEr72G5KE4HuVGqQQYjNclh5mdNaOwaZ2BawYnWnXCrHFDRW9dBBOHyAUaI4uSKgBdmSrusJjsswRKcwzAsOyIPn3XNkaBO8nlK-e-AiNg8wy7SWPPkJusXeHN3vcnqYohn_4a1x8BPZfuP8qp5T4Cif19XX8iLEXwCRUcrYFuXrmRG0SFaWCbqc8t94oJ7hGXCNKDMJqTH91CmI4nZZRoDuWH5s3Gbb6lttU_OXmVP8RSphIME="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEADjbtEGfNkCyZHbh58pKrtbEkWK5Nx2sXSGZbg-2b0xmhVoMYswCGqOhUlTaGKAm3YVUUvg7fYsDGj-O8WlNuPBVFygiVxB76RxSWxC5vFQ9Txp6YKirL8qY146LvSoinmvWH"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lisinopril (ACE Inhibitor) trials for Myocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Myocarditis&intr=Lisinopril%20(ACE%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2.5-40 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 600,
+          "sideEffectManagement": 75,
+          "totalAnnual": 775
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1033,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 90,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 95,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Lisinopril (ACE Inhibitor)",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Cough",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness/Hypotension",
+          "percentage": 8
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 7
+        },
+        {
+          "name": "Renal dysfunction",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks for full cardiac remodeling benefits",
+      "treatmentDuration": "Lifetime",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpzrmwVjEdTUfwD3Ml6QUjjmU2RHu3_CcSU-Wo6DxfJ-yCH86b2DxrT18IUWmEzP720QF94WjmJ6BTzlBGUXwMrmUU32S5Vjzf3ZMnSJg8Z4PfDFcdVYwW80_QiLtUM6eqaaQhiIPvumEdK_knvNBlrdNpdtiywAyD-u-HlW1kuZafa9XBlbPqNgRNiChTVLzjgyUvFO14i1_6yCY="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE521SBMcKeTo3aSrVqW2awzcUJXfldMipXJhF_bka-iTELi9a-x7YUOnc4A_8meUJQXs0_7YRanuekRgNqew3WV8O7sE0s5j3UZMcaEVuHNJgeZhwg5h72KAsoyd_o8bpB82HHb0jkacsb3t6VjtJ00ns="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVA2iIdYGCykiMAautU9t1n_QkVWNsb53a7rZ5WClMHPW2hQKmkehjrUASvbgYh8G-Nq7x15kFWLtngZr6wk4PNxESlrlE_5VUeZIPXFVhqyNKpMNcSNHjPuPhoDGJnmm58hRX_HHBMA=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwXNEzKDVwD8bE_ceItHenDdGVQd9W3E4boa28P9_WF9-dDuyILDd4Go5p4mnjidfl5KMa4novE5NxdJcScP1K3PJY3U36sOfAo19HDEnT71KI11Pif8h9NFo3O3VrkKrULp00r8tC91Yk37tAlAvsHQNka2hP3gnOd7YyXLGBftiiqQ8Sb7Ds6omvfi9M0yZlICXODfk="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvxzjjo5up9MHJ5oQ1NJFsOO11Z10m1vcyJBy6HQsxaLa3p5n1yxJTwD8nystLXuCqw0E1sMo5019E_nmToCz_1QwN5Hby9oCqy4F9Zirm3Ju-Hoomr7XpsjSmHPPiks6P0LqvCw=="
+        },
+        {
+          "title": "escardio.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhyK2VSUYbocyuioufpseTkf_e5wX_KtulZUqLLGbpt-7c6u5_YmmfnuVmUaLn80yBTgYssMFpfLhdunFLVd_Tcd34PUT9e1hLMk7z2xyYMsuRWwuacsoZT7kkYEkXXR3toX5Yo3p9VJIJeXZ6V-7_XraYoVho4QGWx55mcI1sIzLkM5xluhsNibYg5yyLdHfEZzYRCyiU-kQpzQpsNrS9LJv2IdlrUyRE2SNp7KPGVH2rMhP_Jp5c3tvHkfzaAXn9e_xGh-M-pVq-y8Pi3Er9IyQ6GxNRr_0MyhPtvKAmCIUciHSnio68FHXQFHVc1Cu3LcIUjUdPgDSBpA=="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDohPt99Oq70KD5g8S3NtFNul8XuNxCaOx8FDxC7uRQH9ictbsNSOFMRr3EX8NLR88tbnHIewnph4QxzFXmjF1ZcdE_wkYRmbuxMj0Uw32vny4q7PNStGj9hHIH2S-R08xaBJze_iUbBAv5p8HE_XqChfqghlqnyRAjmtMRem2y_DBP7BMPXe7LhC7j6gZIz17zKTeAnU1YcHdJF8iFzy0caUQV_nJavLO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7373L2yyp-lvxTNMmRh97_vN2tIrtvFciEqzj366eotjSYhT21HrhndlbOqLURBeNLrIkszfeQ5sP-wmC3iHBjxldigu2Iin-XLn0qP9PkAuu16pU9J_VJ1kNAgyUZ2yjc6MQB_-cpYKV7Rxm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFptGNJ6_2KbjC31x6OxlK0Q5ul8hM8tVXzzYxykhTnuAsIha-ANE-kr-JjDNdZfhxjikUjqiOurdAlH1E3jdsaxNgbWmZaN__bD5uvOroXR2rpRO0C2Sk8fbnp-BsgntHv-NxqdZQwD5bww4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPpLPnkOdoCzKZSYCoVc6iJP7SCNZYljs-duFwZLGP1ekXn_mJb-8WlLn8Od209fU4sAAlIEFVfcOt6Mr7unQ2L_C1Rc7JHRge1vwztOw01-SLC9tFTKLZNbpsLrxUoDHTfk9X2m1fF0muDgXj"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRI6WMXZIBsiBwwjfKENHEnBT921QsrLIOcfFp--_WWEmdwShDHuPickiq53HBd0Gihj0D4kqPqEGyc86jmHROfuv1TvjTqKHVjOegBF5WWT2KSVt-oT4qk6ETzyP28FW8yMqVr5UrT3fHumb226wjUuSlTa8CdLS_KW-xZJeFzCAur6wuWU9pmkF_miI05zuxPJRn8jh5VQ58L57ruw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEYqAaot-o3YVEMOZXqGTUs_3uvdCBVlfzI4e5kxiSKIO-zmE-zaj8XYLkDJzdV5e4irJDe1DK1A_hYIkvCdJe_2FigVodMET_kzBdrZBVEozMdd5YuwqOb-sb17YJtSjBWUxrLNWIUHGjh0rSZI_px7OLqcTtnwUpk1WEvCrF50P0GuwBdy0wCs4wzJXlCzFt443HTpnJS4iCrFESLmn8sAY057the-sHtXQJ6I_1AU4kxfYjnZtkydTN_LHDltswPABMd_tUNkbwQ0soAAtnaz6O"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFooGc6m6NZwPj9E-Nbqf3zCt5Q57BiqeRlHMzL6YYbY-oSHqtm_PV0w4ZRhoh4_buMNLKJWMKmHXxSQ3Uxpw6-UUzgE9mOiq6ZPZYiQ__nWD-hLVBqiHyG1E23KJb4gLwfhiV76Tg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metoprolol (Beta-blocker) trials for Myocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Myocarditis&intr=Metoprolol%20(Beta-blocker)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "12.5-200 mg daily (extended-release)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 600,
+          "sideEffectManagement": 75,
+          "totalAnnual": 775
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1033,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 80,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 90,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 95,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Metoprolol (Beta-blocker)",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "35%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction",
+          "percentageChange": 28.57
+        },
+        {
+          "absoluteChange": "Improvement by 1 class",
+          "baseline": "Class III",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Class",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-25 bpm",
+          "baseline": "95 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate",
+          "percentageChange": -26.32
+        },
+        {
+          "absoluteChange": "-0.4 ng/mL",
+          "baseline": "0.5 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "High-Sensitivity Troponin T",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+50 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test Distance",
+          "percentageChange": 16.67
+        },
+        {
+          "absoluteChange": "-1000 PVCs/24h",
+          "baseline": "1500 PVCs/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ventricular Arrhythmia Burden (PVCs/24h)",
+          "percentageChange": -66.67
+        },
+        {
+          "absoluteChange": "-5 mm",
+          "baseline": "58 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular End-Diastolic Diameter",
+          "percentageChange": -8.62
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bradycardia",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 12
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "2-4 weeks for full cardiac remodeling benefits",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjMrQpHIr0CBP_lUy3TpoML0bQ4rp2mrnyUjkH-sWqsyEfxHXIjdSks3ppfgr8S6kz83ClRip9MjbD7PqXN_mt41RN39Y7V9VLnRvpR2i3slJ106mhEQJENZeze8XWTcg443FqlUSFJhkhOA=="
+        },
+        {
+          "title": "revportcardiol.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ5DYQvxYOB7KCKLkN4xRmbWW5W9n8PDOvF49myIXniKoL-M6dpOuHHuA8VtgcNcaYCuGVOd8vbddJu4CqeVpD073N5to0BFXztXFTF_asV9ckyGp3PpzoXmo_2WfnYVapu7gUMMYY8cuB9Z6ROIKnEYPgGhaCej9rCMmLDu_cWPywqrmyaEbSV0zvz1S1DexFkunrDPf513aJUrJAcYSF"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2If1YIDPiY2O25doe3RRBrd4gmGasYQ29ouzSKYs_BCfJhLNPo4H_Gc_g-FI04lGVEg7PhttT_8qVcTWHLbCK3nIJ_9lJJwdZBmNeGlrpkrnkzAW2CjMXbngDBAEZVkNV5iE4I74QeFYgaVF3Po90EdepT-aCQT6Upym2X2V__UDWmcfqsKmlDw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW3K9PFJLRPxAIzOV-SA2gDAfrnD4XMTXiG2k9K6M91YkES-4OKut6COFnBMzf98ADeWr01OFJ-GgjL37cOa9KfhX0MB7B59-xXDQY9lUZIWIrvZvGHLIV8MHPEdcHizFkuzaIyopAy3r4lg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQhIZwcAUlaNMH5uBqH3ZOUDzjL0ioA-BwV5_d8z2bbmomGAri64ae-I46AiqTKg-8RYoptm2vXH091x5f-qqLuXPrSKT07ZFIak7btDHXhO7ZMblCUN8o-ljpYJk45L6pdUc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQzh5j3fgDmol_POJO4Gx-ed3d78ZIzb4MB-Pk6XVIp3pLm1Ue0ypvZBFmqgTEYL5PuXRNbDLhFymZ9f70y-UAAP-DfdNRQ1AOuHtefx-YpXfM353Sv45hhso8vJ6FI8Q9dObnVk0UwO9EXzU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC2f4A--uldRzOi6xzy78aUY3f2WtlourwOPTnbTXlz561POu3Hk5tOyaqmV1IY_G-RzbEf-urRzVdsbIQc2LJhudsMDrZdDkju8F5Rt2r7tkDRmBcwWR95smI0Um5ZoLqDgSFU5egFaFPL4_jsQa9KFyrTN-t90Jei0l0adPAdMD9zjJ6IGwFAiV6vvQPGFVNqEpI5kI24wla_dlgsXMx129DB6XUsjr82WTY1a1vxQ9XQirLVWRApOCyxizy23Twz7bBXIHPG8TSU9min3UBI8SywRV-lJhDEmZE-VfxAQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJrNWFDocDOeEhnGS43J8idS4i2R3UP8c9CftUHFQ7hdW5lqC7V9dAMAkE4Y4CjK0Mq9rwZ7OsjhJ8ZYNDf3-odGPhHzry_eG8_iWYCRwlRLH5cFAkZQujyTdDcL92dSaV44RKVUjqgtbQjXtCvVbOvwvlseOiIySTCVQLbPrpkspJJnjDA-KAHtBZKdsH3ExzrAnIdH6hSJUpnRt5FgNNnDPeLhf7OFmumARX4gOxOMhSOQjXCXf6GNn7mSr_sWeGKBUdV3V7I61Pnv-2oFzMipQzpd-L_n9pkQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoNKaUTuHT7Y_S3S1ERV-z5trC436gFOkQqwAMmcYGW30YyvxAAgjVaKC1cj6vR0Sl61pHSbEzpKfIBboso_QPpcTfj6N14w3K6eL5j1fJW51j090z-gVFf-lIM9-UwXoi75Q="
+        },
+        {
+          "title": "fortunejournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhgVvoRiCKPHJYWDecHkCK3i3PZSvNAUa5Y0iXSTsnwnLQPFpV9BVEDYq6R5CsQUQ34KJMbmU9z8xi4smI9cM6dQVY7lgUi56yA9XEK39k4HHLJ9Rk9jPPp8cF10gZBzUEgwMrI84390ojGkG3PKRe39vTt5o-d512M6dWAN4RI-FUvr0I1oNRfiWsWdc5eq5hWjeevnLo7YBpYXCEsoSn_-5avIXrSkeVjOQ4PmH4kCcBQJr1wn2LPsqipfO4SeXwLZEGc_fp53xtBcJUWsA-YKlFibPwe9Mj1cwZgBWdYmTLrQZouaq9yw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwMCwAKQhnnLZYSX7UubUlnOhs0WwdjxlUSvfGRPHgldc3KfbFbgqKq80eMuIh6p6aQSKPKxU5A7knt7n8PNmRDIqEHctPmY0PdRQn7CPnQCSgwu_wNdv1y-G_UELV_IdIyyZW99-Z90SJNr4KXDsBNvgD5DKSl7RHGbbhGx_aFK228fKlkRwtqyjhiCJ6dEB6BA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9GHaVDt_SYzUjNGwDhNAEmRBY07R3pBjNrzi_F2-IP2M8U9dcNYnlURg8dYmgGv7wn94zLIwoDWVMjzsGS2V2XeQ-fNyRuFVCUIxKA0e00gzDsMcJtks_ABQYi9nGDmCTdFY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone (Corticosteroid) trials for Myocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Myocarditis&intr=Prednisone%20(Corticosteroid)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "0.5-1 mg/kg/day, tapered",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 700,
+          "sideEffectManagement": 400,
+          "totalAnnual": 1250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3125,
+        "costPerResponder": 2083,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Prednisone (Corticosteroid)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "40%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.2 ng/mL",
+          "baseline": "1.5 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Troponin I",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-30 mg/L",
+          "baseline": "35 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-1 Class",
+          "baseline": "NYHA Class III (Score: 3/4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Class",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1500 pg/mL",
+          "baseline": "2500 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "N-terminal pro-B-type natriuretic peptide (NT-proBNP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-35 mm/hr",
+          "baseline": "50 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "40 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Kansas City Cardiomyopathy Questionnaire (KCCQ) Overall Summary Score",
+          "percentageChange": 37.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperglycemia",
+          "percentage": 30
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 20
+        },
+        {
+          "name": "Fluid retention",
+          "percentage": 15
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 10
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Weeks to months (tapered)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsiceiKPK219EwBtEYA6ITGFtpISVBjWe_6p9lNQVeWSyWqdEjoamFNLkevtt9iVVSfI1BSt-Q-7tK577Dc1Q6B8DwBcIKzyAVmCpl1gP3vndPrm6lnKNi4C7g0GdFpHLPvwQXmxCLJZU7p9ke9KVT5DuWxrBXep_QZJthqlyGcFrCjPmzo5jiD--L7p4f4e0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv3Oa9hq15Qi8sDDHGjZ_UCj148eiIJulHmMngCqXVJYa3ji3sVxhRwdh9M_T-IgvQj3fbP7UPgLtNGzrEgbAOhxtm_zmTbOz2koj7Ih4qwediJis3r0xyyrSzBABsbHKu-gPCg5ey5TDeOCQH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGplD7lHn26DjWLtofEa5WSwcr8bAKFX9VOy9QWyrOEEgtB_Q6jVskhnsr7lwSCJf1YMetNMcQYpORD5DZuxKbjaUKjwSPgLjQszG-oWcp9R6DghrqY9qWrX5tpehqWdprEJv6tgmuhFRcULvJv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRvFy7mm_HD38K7nrfD1tW327mV2ACiiVJxvtfMCyOcP0OIrAgzNOwrcDgjPzwIUSX0OqJQ0m74fdfuFCYfSZojYtNJcqHyR1Hn_7xyslZmD-OEETnQNs0pLW5kxaYfC7JOc7tVYgn7mhb6VQ="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm28oM57oXk00i2rlJHQQeVUEwXszqfm-GZgHBtYbP5exBPhFRb-etnvQVSc8daM529Ig2ebKixqlDd7E_AZNV9fSj6lbrrdpWPpFRZnh457n1H-XTfxnznSWQ43lr9FmcuZnY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Colchicine trials for Myocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Myocarditis&intr=Colchicine"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "0.5 mg once or twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 917,
+        "costPerResponder": 733,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Colchicine",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10.8 mg/L",
+          "baseline": "18 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "hs-CRP",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+3 percentage points",
+          "baseline": "50%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 6
+        },
+        {
+          "absoluteChange": "-9.75 ms",
+          "baseline": "65 ms",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Myocardial Edema (Cardiac MRI T2 Relaxation Time)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-16.25 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Symptom Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+45.6 meters",
+          "baseline": "380 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-225 pg/mL",
+          "baseline": "750 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NT-proBNP",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea/Abdominal cramps",
+          "percentage": 8
+        },
+        {
+          "name": "Myopathy",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "3-6 months or longer",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjkSsKmeMsG5yjk9Li2XrZIYoVJVrjX6ghW1wj3LbBh6HpdmVudsqGsYE1NPt1brsN4bVIy6l9dYOY_BoiZ9caGFTU-4iUB6whcfWMMiXVjwKHUqnD9qEyEeLffmtXti0Yi-c="
+        },
+        {
+          "title": "jst.go.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjURpsMHbPtEojhujyEun9Hf_MoBxdZmvAyYl9kJQKGUdKyQLhfWcOfvyckVLouL2WJIevNNsi867tYxbQbuimDw77iMzNZB03bp3_CGRCl-Ns47nHxNKbcbCZXULJiRtKkeo6fuT3k1k3pkS1-caEq2sbFpITBbDoWg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM8--Z94JmfGFYZlG4eE33smHT4u4o2vWvRGdjpVwcO6eByYePrFTA31rIt3APnvvnJ7w2qQXy6UOMqYIKziQseglCdrFKal8gFrtrjdLg_rCPqMaSrDBR22xb9MYk8_6-1XqgM_yiBPmEKYC2snxSatOve5xDwMKjiRlaZftDhLk5G5UsZAVMIk3xHAa48x0B6pzpzr1H8tKCzjDwmBRO3AbuL3vDlWtx0ZrFuMEslh4OpHkCAPviGe4-d3vIdbVTV4XxxwxIhgfL4vDa"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwdZn12vUf5Piy1dI-qmr72gEvNdEqnREQs5ZPAZoNf8ap4KlsdnYFlD1vnDDnRajLS9-hFx2yDR1X7vp-dtYHwjE7rvlUWv9GhsG9GRNCXElQYLIgnUJ8OcaJ_5XyubR-qxJgavUqJUGOW0qACt-tMsy50AFJ_ixhJopSZjZjE8DPU3ttL02EuEbCSlHLGw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAu8AA2PSSiR2KqWzUOiGKY4MkekBI-sL8hxOicQrKLWTiUtsR_SV0eU7P8JMAEHm_ZUDXaCpwdTXd_I3L3BB7JbhaIeBCaZBtseTwo3-jFY_MuM-6C8gGC_VaH73oqdI_Ouk="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvLeqIWdPZifCKLtQbL70WmJIuEtjOQXRYLjmVdVR0aU3Yz44uokDIqFGVTrEibBlkDpDKtRTNN6Jtr6zRCBwu3J18Mwu3YtJvbNIhl0s6nHs8UfSUiVYvqxBQ_hiVX04b5m1Z9Wk5dqYCeilJsGeJJe-LUmFuzlJLJlggE8lPYrt3XLncIDGLhXplSuIpEg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrI9Zf3a3VpoevtZ-VcZNfPTmHRVGs6tePnMY61WhL4q5yHx-RvwFsDaugdwQuYX_mIfaGVJ3CJgqX9bN7JNNtaZqm1ca7QKX0KrTr77wfUNJsEDUq-_ZBK1NatW1Az66V__U="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFaAv2lbPXwoxvCNUYpMF3cQlxQx7yYiv6ioKGtZgy3ajhltEob495hxkm9RvxaZhGOBWR1nx7ibXwe_L9XICjZAvi6Iul2Iw-_SAqX2_5qMsHNT3IkvD1JJtR-ZXD2ebZeJ4UD6GOzD5uvLMSSQGTZAaefx4l2ImFcGTndvNh00AngCNR8w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC2Z2ea3PQCyuSu42qZwYA_v8InwT6Ed2zq6rozjiVwAGHaX_Y2ruRycgfTfcauo_ecZtZpIY_t6pKCi3XWHk6uIfR7GU-a8QBO2IrH2_nRxdZ_ixYW1zFlTHoWvvcFi6CVzjQDPsMgJGkdg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravenous Immunoglobulin (IVIG) trials for Myocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Myocarditis&intr=Intravenous%20Immunoglobulin%20(IVIG)"
+        }
+      ],
+      "confidenceScore": 55,
+      "dosageRange": "1-2 g/kg total dose",
+      "effectiveness": 60,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 750,
+          "sideEffectManagement": 100,
+          "totalAnnual": 25850
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 86167,
+        "costPerResponder": 51700,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Intravenous Immunoglobulin (IVIG)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "35%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 28.57
+        },
+        {
+          "absoluteChange": "-0.4 ng/mL",
+          "baseline": "0.5 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiac Troponin I",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-40 mg/L",
+          "baseline": "50 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-1200 pg/mL",
+          "baseline": "2000 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NT-proBNP",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 50,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-25 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Myocarditis Symptom Score (0-100)",
+          "percentageChange": -41.67
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life Score (SF-36 Physical Component Summary)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "-10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Longitudinal Strain (GLS)",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Fever/Chills",
+          "percentage": 15
+        },
+        {
+          "name": "Infusion reactions",
+          "percentage": 8
+        },
+        {
+          "name": "Renal dysfunction",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "2-5 day course",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW8JlkCxfytHkPfL-KfsXV9i4tDYO2NQPGlRG7w4BxDeNymw3JAwvhyG_RegQluzavNWncP5TkQ6Fz3Ka2sl8JrX24y9ypHxYpx6LvUWcgQDWnQ4XWSj8UGA59MEyKDvHrqtiS"
+        },
+        {
+          "title": "jst.go.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ1O-pSFRmGXsFzvgG7c-V6-cTXFpwFTT79jLb1ByY0xJoA3dT9J5kDHM4y9gNdJ5ZHuYdU2qhj04KUTTBxSI2P1XqrMoAmTgzFsIwjxQIG73PylQWeoDHhBYTsGhQ7tDpzEZE1Pr5llT1Jpd83FCk3qcijEgBnj3xBbsLFVti6DffjsjBbvzLkU55hrrmxA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwxIyiD_-Q7DHx-E9Op8bOPtjjeZOmX_GWafTx_2zhSGyjTQXGhHVhzkAQ6h1BAq-gIp-IwDrSlLmqGILr6HAQepkjKT-ct0u8-UGGN8ouldNe0y6Jx7ZY8P6d1jZHL7XzmtRF"
+        },
+        {
+          "title": "maastrichtuniversity.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMK2AyN7B94ckrMex7d_r5q1AanK-n_26GhP2LBs8m9atJimmhR-1t-rBzAZZtoq14zR3TIpnGhEPVVmgX7guGlsZ6yhc9liCrVyZe8IfQYzrNRSLn_9-st4QKAbgRQOhpWVkoqDRrD4nS8y7dxQoB0adUGObEQ8vZD1ytYlE5rPuJFq5tDXIR-AVH_DtGCH_FW0Y99VhlJW39tnsry1fWisMwNboAbbnXGgzt9lRLbsNx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCxE7Oq2tvV1ZJf934nXMFyBURhqsefRV3yLsgs1hA2-wPkKdZgdVAG-chNlXGyclNUytBXJ9wHdZgUmYiqU09dtJLq4k6gx9scQpIdfvNaatcYkGzxN677FaIeNbI141wrLOG"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETvh_Y4sOuMM4hLmCEaAQINgHoXVn4Z5ko8yD-GXZlbDTUfFBqz4Jz1t9mItJhktnHeMrb8vyo-9XZgi_g6cQS0vAdo4OyLLyfodLTJ2e8vZ_mmph9mSyPEPIqyxuqEN2DszKfJ3a1TOCUgmCCZk2r8HSzAXDU7Tweq3K2A8dHpDyLO9bs8iUivkkb-6eiVDx7NyJsiEHJt_eNcwknsn6Na62GDvE-boDHA18iej3PU9SFFL-m7IWgpptrIsQFHp5TY9ZMzpK20QpG5zHeTa35gE_Ep8g73UgwUpA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElhrHeDTFOoQSvDlTNz-HwjnVXUBYQbtM9H15mpdUzUkK_KElLTyUWMLs4XFmETYHOLK2j5Nqmy1_ni-3VSwLl9iIcY8zY1Tx24E-sjpEz_uVXA9feRmpDPzi2nBnCEBoMxYNOdogh-YdmSrJa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAiIRVpijBzC0pDxB2wTG5T9OiBhsyA7uZAyvWSm4CBGsT5hZvxpu5eldTS_IzZNtK2xU2wSy6HXEaYb-u1xt_MKIheae0JCOVc1pzk57b_9Rkzn_Yz37Hkb_vgY0vTCLTxYmTtRRscRZaWnB-c_E-2cPdB90-qm1OxuERIR63aIEwmYS6Vv5yBgqt2HoOYhjZPLtlK09XJh7Pn_iT3wPQ-RqYwFkirkiWo3NcSy2tgEq15yci8E3Uwm8QKX_JoqaSIsIKFfjwi5R0QjAN3fHA5DuMU8t199tgH_ZF2BD3o6wRSD4utuy0f3GpYZDDXX2NiX4JJ7i3sob2WL_y7pNokXPf8TrQLfTLs2iQh9VOkHsmjP34Tj5Gk_A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOM6t3epmqNt1eHbbfaZ6CRIktm97hOCZ_BNw7axVGoAWAqF8v3iBrdgHoY8gnS0WQTz0IufhFOpHRj1933mv6lhickNZ36xB13a4ddkja56er8TmJUkYtIkBvM2QEFCLtNoHz"
+        },
+        {
+          "title": "ucardioj.com.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqA6Hts6-gKMfhfkdoS7CrGCcaa-fsWt2rAGok6evyDH7tEYhJqehDN3NHEqkrJMN1yslPTViTstbi8eBWNkqpAdibbTYBHTZbYJsykr4oYXQ5wZ0x7pmW212s85reCDXUyTrPDr8UNJE46VaXYqSjkA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFJFFGzgOvJ--_Q0zDJJ_4_nY1C1XFXKqkoW3qw0FXRWQqo3IFN77tPLlFQhVn-wODlg6gahqkbP993UQT_52265ZQTGoAkNUjZ67wWOaYFcq-OY1Vh-o9nVWgWF6INDAIubohPWSpbj-4qLQ9"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUbXabDNl4_omS7rKWQjRLyLDH4i_A23ToiAMBNsx992cr_TjCwa1eQI445kp0KHYlI6OeUH7N3Mgy4Ce-G0xOUQUASOo3wp5WG3e97oGB-4y8MaWCJBkLQpockUz4LlU4lqYc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azathioprine (Immunosuppressant) trials for Myocarditis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Myocarditis&intr=Azathioprine%20(Immunosuppressant)"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "1-3 mg/kg/day",
+      "effectiveness": 55,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6667,
+        "costPerResponder": 4000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Azathioprine (Immunosuppressant)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+6 percentage points",
+          "baseline": "40%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Ejection Fraction (LVEF)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-0.8 NYHA class points",
+          "baseline": "Mean NYHA Class: 2.7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Classification",
+          "percentageChange": -29.6
+        },
+        {
+          "absoluteChange": "-0.05 ng/mL",
+          "baseline": "0.08 ng/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "High-Sensitivity Cardiac Troponin T (hs-cTnT)",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "-4.0 mg/L",
+          "baseline": "5.5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -72.7
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 50,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 mm",
+          "baseline": "60 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular End-Diastolic Diameter (LVEDD)",
+          "percentageChange": -6.7
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "65 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Kansas City Cardiomyopathy Questionnaire (KCCQ) Overall Summary Score",
+          "percentageChange": 12.3
+        },
+        {
+          "absoluteChange": "-0.32 hospitalizations/patient-year",
+          "baseline": "0.8 hospitalizations/patient-year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations for Heart Failure (Annualized Rate)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Bone marrow suppression",
+          "percentage": 10
+        },
+        {
+          "name": "Liver dysfunction",
+          "percentage": 7
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Months to years",
+      "trials": 2
+    }
+  ]
+}

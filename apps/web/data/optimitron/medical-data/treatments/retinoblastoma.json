@@ -1,0 +1,1074 @@
+{
+  "conditionName": "Retinoblastoma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:33:08.788Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq3Zz7BcvXS-af6wWxWMzXqbtuaw6nbU4dHfou5Nlz-uJx5mWtVUXVeWrBbPHEY30QOS0ycC5TPD8bo-uFgch_wce5Bnwmiq6GpsjjJWtTazyal3Ij4QPTY7fPr8k0BDrctkGs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2eL_igS2BpW5nfAE5a6r9G2hinc8Iibby7xpC6bhgg46pdLp7Up6QFmRQOh9SHLayGQdIHQ7jScxchzOUdi4R_9s7MN4tt2R3FiGzIT6N8AOTZ5rhrwNRjPNPF5SldhJ9cbX4D_ObwF6RumQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyBZNHcZowcITu4ufnjQLkerHABKGDkKJJtdoa1isZ1DZMpcIxnXuk3V8-YnLXRpvJid_BqnHWejjp88gNPPlIn3ynq1KyS6TcYambXN1v7VtyyHfrWW8_u4i3qAkwO43D0RqSqvR7GvLZG7NFESaRaLkG8GxxXOR8A0FbzVoOKQ0tRZ5miasx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCLaIe_OCa7oE4SebJpI53Tn8mwRZ5hH-HcWD5eDCNVt89HgPxZloGW6OOzybcFQYAtg4swWpIRAI6wcjCZZKk2F7G-hcwtVIhOdX-xS6EycWL9EvXu41WXrsAraDtLXUdwdl9LvzV0CobjU4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLwOkAIUFHyhwwenVIks7PoU4ASgFgziU_C3adIXitsyfw5u3hZ7pM2mCxeOxH-O-bNbf2AI0oUe2HdyXc3OEYUnEzD6AofimcqCTugO24XNp6Espp2rIs2Zu6CLLKfeaibUUE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_XNUOY6F1BZcr1W6FwsQDywJtUMb2CdZZrc59GuKjtHddUGt7ZKoQA-tMCEOJcrrpqTz3KbTA1q2p-XvmH1gVmJI05NSee3Kx8J2VGjdepWsrUUmbkAFncmv8Dsb0qgPM8Z3MiSgEZsCykDzfddmtY_Xgwufu2dAKttyLnL_SOyIqTgx369VHSOCJCvb-L4qumuwCMBcjkC-BnVNYAJq-jfawCKuj7IZUnIPRJgGR0PzIn-x3ZWgeodxP0emlNT4du-87ZVcgpTRwi9oSHCzEiD1hHDNqHCnc_OSU7g=="
+        },
+        {
+          "title": "reviewofoptometry.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF20unuJB9NdFz32KMpW_h7oew2GnzwkpdrUgpM8ZfgjLlFFwBOt708L_E7nVYDh7DVRmTSYdUk444tQitlw0Xv9bYz5Pso_jvpa0oiBzDhwf55dCEsgOGMDPI0bFfNJRFgC1ptiCceQSWsW7ukEVbDgJQ-KE8-K2tg0l5inaQQ1_-q8KTLzZVKLN5O1Pq8wNavv4KTuE22CQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Enucleation trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=Enucleation"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "Not applicable",
+      "effectiveness": 100,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 17500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 17500,
+        "costPerResponder": 17500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 20.5,
+        "vsComparator": {
+          "comparatorName": "Systemic Chemotherapy",
+          "costDifference": -57500,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Enucleation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+80% absolute increase (to ~90%)",
+          "baseline": "Estimated 10% for advanced untreated unilateral retinoblastoma (e.g., Group E)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 800
+        },
+        {
+          "absoluteChange": "-18% absolute risk reduction (to ~2%)",
+          "baseline": "Estimated 20% for advanced intraocular disease (Group D/E) without definitive local treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Metastatic Retinoblastoma",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-99% absolute reduction (to <1%)",
+          "baseline": "Estimated 100% probability of local tumor progression leading to orbital extension if untreated",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of Orbital Retinoblastoma Recurrence",
+          "percentageChange": -99
+        }
+      ],
+      "remissionRate": 100,
+      "responseRate": 100,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points on NPRS (to 0/10)",
+          "baseline": "5/10 on Numeric Pain Rating Scale (NPRS) in symptomatic cases",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Pain/Discomfort (due to tumor)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+4 points on subjective cosmesis scale (to 7/10)",
+          "baseline": "Poor, 3/10 on subjective cosmesis scale (due to proptosis/disfigured eye)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Facial Cosmesis (with prosthetic)",
+          "percentageChange": 133
+        },
+        {
+          "absoluteChange": "-4 points on visual analog scale (to 4/10)",
+          "baseline": "High, 8/10 on visual analog scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Anxiety (related to active cancer threat)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 90
+        },
+        {
+          "name": "Swelling/Bruising",
+          "percentage": 80
+        },
+        {
+          "name": "Phantom eye syndrome",
+          "percentage": 20
+        },
+        {
+          "name": "Implant extrusion/migration",
+          "percentage": 10
+        },
+        {
+          "name": "Infection",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "single surgery",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBk7STvbgiEHEKAImieTat2AzL_sKBeC3NSFejEAwU9QocDNGPwxN8qVM4wiGVjJSZDmJP0pOp7vYl49jQqLxFq1sEH294ihsyCNIfkBc7ReCujfora7GGaqBoMEuA0-kNqQH2"
+        },
+        {
+          "title": "rroij.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXWzVOq4msWHfHQPwKD4miDUt4rEM_fpQbVNRroJet8V5FLh7_u-iKb_7V77Pw9EVjJS91cQCRLix_P7zmr7u7arW_mj0-TF61UycNoW47yircmHa5JcqccrJ0mct3QkPFuf09zXwZhk-oz1fYzEUTZZmj8N0kLlF4BSlvGry_UbYH6lATNIbDqCe2kR1OK2wJaQPxBdaNeB2_egibcvcuBM-xcAt8jQiqLAFHE1BVTX-Vj3uv_u9JnIE26932d6A2uTN5XfPvOA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfmqztiDeIBdo3Ksc827P_TOdjT-7D1TKkNXrY6c0HPqSSIUMTGeMpBS7JMjLqevmd8IC9blG1ck36Ya9FhDY5XdKql9ENPUDZJwM8O1u6U5fLXotUJete6HdSUdiQGnT-3fkrhppRIn5VWhyBXXfGziTxQvpKR1FZZB4g0ONSJpXc_wqP2tGdWCcgC0uuEdIDNOapRlMPpyveaioOL3cbo25e6bzIOyt6m0QsMGuGaMPpUyJxu2YiBF6pfFY1_KUe0HLssWvx6bo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_zCW6UUKEzs27v8RlJPq38I4fmU7gYKyPOtBHFQ61Yc5wzHCs3Njn3fJtQsa7weo982jB3YdohXSB7LAvS8bj7XFThyM4h8_TeyLYmuFV3PFc4aBmuC4Rtuzxxbc3J1Bs5S0_a5iGpOvdKs0="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuFIMf04D50ZIKlw4D3XqIph1u6te66Ykd5Jvcx166BWNQWqXeWAdT0ELgMyk2j4cyQTXlC4rBDUZJvyNxBcz-I1IdUcJQ6zVxeSmVXZC-ZE7POZ3VWLFb_txdZ-GWfiDnu_Ag2z4feJmlDGJR7cxw9ml8KgyJrgvrrK-F3LEu-O7hPBZ-WeqEA2lvuVm0_g=="
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpn5pbheCFNHr4jAiMQ39VWhTP1xmWeoFs9AF7qYjxzIwe3iN6Vvx2yT7t_mmFQTCIa2xIhgM2cnxwTTZotT-a7H7c-PBFVgbyOkNPo8utm0NnOqcfo76UaGfgMhL4pXZ_QGhJrfGNKOm4YXzFRPV2c8qXvyvLHY_QWwrJRw1gT2o6dndPIfg-wSE7iRCeQa03yz7bE74EFGKuAaeDwoCBp5h9Ga9lvAwkVBi0QWxsC2qAYLkes4jHwEWJfrszOeVY"
+        },
+        {
+          "title": "utswmed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrjqpw52VkMsM2NZU3lKBeUKTKZNhVMvOg6qC5rrUIqCrxJqbbjxBhU4HtNNlMltatvgGAD8VnEbSDtw5v_8_O5phD5zJtigiXQ_aty8C6T8uIGneMHNrz97-8mES0DNhOSx7PVwAHULqIWj42vQlQQf1rI6PM5a2JIChuq5s-vEvBbhUxxr3uurOux4DG0O-zUnESkJuKuLjtk0AnLpcpYO_LaeFxpkhqIpWsI-VRH7v3xQIW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU4xY35Yqah3Qh5VLZ4mq7b8Y-bOj27OrMHLOdoXLsBYNqNSXo5sHqBZU77N5uhaOMqE_5uDC8tFoipcK04NBHdYDTWcogz7elabldeSMQ8JxKN9adVfj49H7_HfRdtSO_8ZRr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiEKLaiqSsU7iBM9KWceLHGE-bZJkg39X8uy_O95yHhgzM-C8PJq7DUgiX5zmLJYNai5BacJMKPG3Rtar2rJod4D0K0JqW-TLVkXcjQe18_sGe4zpoWg7OybXD_HuHmQccoEUY_ltR_W1c6n8zYQgcb2qpqoe8G9tNdyoUmeLuNTwZch29J7sEbF9Tr2AdVOASLR0uKveIqcPn05e-73n5K2UqTd4F_6odzc2LBW8d_Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZpOPbCHxoNiyBXCZ3x7V6wmsyZQttxnUYSwWaQUCyF667DkGkmYQZxVxhj8IBxL8DZ2zSNlaedOdHHJn5Ni6FwdMSRsa-foiWUk31gcdJRoqIQRpM_4PyCGf5OAUfhdwKzLvW"
+        },
+        {
+          "title": "ClinicalTrials.gov: Intra-arterial Chemotherapy (IAC) trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=Intra-arterial%20Chemotherapy%20(IAC)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "e.g., Melphalan 3-7.5 mg, Carboplatin 30-35 mg",
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 60000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 85000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 106250,
+        "costPerResponder": 97143,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 18.5,
+        "vsComparator": {
+          "comparatorName": "Systemic Chemotherapy",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": 0.75
+        }
+      },
+      "name": "Intra-arterial Chemotherapy (IAC)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-175 mm³",
+          "baseline": "250 mm³",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tumor Volume",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-60 percentage points",
+          "baseline": "75%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of Enucleation (for advanced disease)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-0.3 LogMAR units",
+          "baseline": "0.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Acuity (LogMAR score)",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-4.5 seeds",
+          "baseline": "5 seeds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Active Retinal Seeds",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 88,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 percentage points",
+          "baseline": "40%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of needing External Beam Radiation Therapy",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3 cycles",
+          "baseline": "6 cycles",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Chemotherapy Cycles",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (PedsQL General Functioning Score)",
+          "percentageChange": 16.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ocular/Orbital Complications",
+          "percentage": 30
+        },
+        {
+          "name": "Myelosuppression (mild)",
+          "percentage": 20
+        },
+        {
+          "name": "Femoral artery complications",
+          "percentage": 10
+        },
+        {
+          "name": "Localized hair loss",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1 month",
+      "treatmentDuration": "3-6 months",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXQ8WPNOc88fSFeOnmOKKU-0czsFMLy5MHDR9BgsnuY5yPbQHmz_Id0Yr8FoVKpmm_Ly0J3OwpaY2pU6H3ayAjcnE3Wf2AfqyPHmyDXN05l3Q7WLiMkQp5NTUb7NaWHe8GSNCk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5b1DCyqh6wQ6pRolYqLGsDO-frYyBUbZJd463SSSi27pxW1WqyB5jKvnwDjcMWe0jEiLGfm0CqeRTM7h-rThy9niGfGv5BFfOJTOY5yyd3K2NLY53u2C7z93X7SSk9v5xYYC8"
+        },
+        {
+          "title": "retinalphysician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdjaX6eddfVD88OgB8ALTwpy8bO2WyY4dHP0AT0hzHQ6xj_YTbMLr_rGT0QAgEs3Ucf3SGJfs50dtxJVVRR3Z0v7O7rgCrDXXglREMetw-T6ZB-iEMsT7fYRUPW-KzsMOJfvwVWS3DNMU3kBqBN3BMjGxcAmOarifrMllPT7xNz-_aAQdbiCvzDU_56RcH11WkVe-bwHOjgkr37l7A2AE="
+        },
+        {
+          "title": "aao.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtMABRO5jxZgEovjD_r3Dds_do8HwYvne8lWWCNlcuQgLOv7A3nQJTYq8_9ht-TjStUfE15oN9EL9HfAWxZ90RkFoqwbR4B_9qPFqjJbVAunyRgYrrvJU3Ue3FEJh9HJuyHDkxxI4FBmMkF-JvcdtB11R42VdvNr_bg1SoCjUvjuXaWVC60EMPrfZYLw1g88M="
+        },
+        {
+          "title": "together4cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEISok6LKSxw1EpMmUkloa4OnNBPD10zVRFDNKW3WfK1XerW0XXn9u0Z7dVubfeDTndx00BTWbkoG5cPu3pFM_4uh7D3JjLDQ-K0gKbLFv0e-yf81o_oPoa6bFDQygMvDZm40cldHRYJtMcPQt-dwVcJSBg6JNb-2_23JP2vdXtZiEb-ot7dzNpxoRROa7Je3bEFm0AWXSpXsGiUrRUCUQA4E4a-T1s_HKiW4nc1eRYsLP1Bd19vPue"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJyb_VPTA8aPgmcKpD-qZE4WY8v5MuTxgGSIC_XDEMq_gJ0lktAH_wnmn_DBs-RZMDZXowluoSlxR5EBsYWO04YTBJWpRSE70svVRuIQ952bHBuEWPoTtBhq3NDvTk7o3pSiP8GD0JCHjbUytBWu554T2At1mSGFLJ4irK5V5djPeX2xxHXalw3E9w-iWGVT_-pVdnw03K2N-hZw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUDGZY4kto_HuKVfiQzjCobv_4M0KhmqrRKrh0nic88l-e_Lsvbpv93nf-4lsF95ckw2YMLIbmkjt5noUUc9O36jkkicEnQQMMfBrnHIOANa0RPBFkxSXKZGR3u2dxyNjuYc0RU_tmzaAVF2M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9T9s_FNHIQtkWbgaMN_HZ9UZJ2upSrorFtHE9ruQ0UnArfE5eWgRBrVPQ9mXO39o-TO9MMml0lmVU6sel3cDlzXuoSwhajNqheZgRmpt8-Nw_U6w9ueksvC95i1RLOxY8_eU3hIaqFtkcMH8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intravitreal Chemotherapy (IViC) trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=Intravitreal%20Chemotherapy%20(IViC)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "e.g., Melphalan 20-40 \"g, Topotecan 10-30 \"g",
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 30000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 33000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 37714,
+        "costPerResponder": 37714,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 19,
+        "vsComparator": {
+          "comparatorName": "Enucleation (salvage for vitreous seeds)",
+          "costDifference": 15500,
+          "dominates": false,
+          "qalysGainedDifference": 0.75
+        }
+      },
+      "name": "Intravitreal Chemotherapy (IViC)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 88,
+      "responseRate": 88,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Vitreous hemorrhage",
+          "percentage": 10
+        },
+        {
+          "name": "Retinal toxicity",
+          "percentage": 10
+        },
+        {
+          "name": "Hyphema",
+          "percentage": 10
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 5
+        },
+        {
+          "name": "Endophthalmitis",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "1-3 months",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1roXWVtEScYcGELCquL7RB9xmXoEU0UdYjcwDX76p1g47cxcF87J2JXbJHz9ZkyHtU2qfBXg5b-cwdTeIwWvRO-cWFapgeuq8n2i0TR1aZ1ZWlLuFD6QfR1T0nDZn4A97-6CE"
+        },
+        {
+          "title": "pediatricretinoblastoma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET12uDPvIc4gkcDg2YIBA2pxvMgbqh93lrAviyYsysqeWbZujOUHh5UjgqXrzicxphVXp-waaV1Yr2WhiY2gDDhdhYELJ8bahR8x4zhLH-dtq1ql6TjpkBrfr8jTY7DDVB4mNSLTBqhAqPndbP5cLSM43JemIY6bIkLKnr6tS3_02CMBKAkA=="
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1cIKVR5TIn-xEmbNcFOjI5l_8PmjBwbujr6ddf_IVfYohCAokToRfrNHxfMfOhuZUB6bhx3SbjVncfL8eXIr79WkMiCIgZFmbsO1slMwUmKn6cvqeHjoXwK-VAh8YNvM7C_fQrmSgL8Ec7zpOxutWPijVzYZ8gHgNJIvnNWhg-i4b0i7NYnXR1Q=="
+        },
+        {
+          "title": "arvojournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9D0bS2z8DPo1TPMs5x2ix1vYmQoAhC5Jw9GyW0_d6qOzDSd-56lk80t5bwtP8HVLsT2qlTl4bjhrn8cUyz1rnQJw1lxb-XYWtrm5BpvIoVyQUPfKm2ju4EugJB5YtebvP8agEwCl-QARJGBlrJNd8DdKDaMsd4A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAooeZP_TOS9_i-RYsOuwRDMNtgMedhXQSm4fC6u3AWxWhp0gPstq6mm4djhxECeCJSczIpso6mqTBx4XyalmYacADz6M-seP45JqNLHCJyRyPSwnXHIbKxlbpINYRrJQ-9tIP"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbAfnfhpZMoJ9kkbc8jr2GKy81Zv6UMfAf5Jt8G420doZiy-lwCFiRLZxlSw43ld_JLNQo5caOlBdqCfpvxiZ_pi8sXtO24Vd3oiVgxEy781ougYf65OV7IGGTBQUXlYsT0458r-A1DP_iBvTF-o2LbpsgP8rFlXkwZIvb3ZVoxmg05OHm-sH7U29LOI8var2q23gliZ38apURSvI0-THzVsDTSIZHiiLz"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNetHY3BUoy36aUyohvewP8Xdb1e_0IFlDtC2ZZFP37i0zkdbw_3awP0WmvB9du8Cp0YAGxgdwc7DCgCQzFrptftPgP9jgCt3995oLTiNR1QF-xsRQDuPJqYaLAVEKtn7ypQDb4CyJTpW-42EztL4YdDCnAU6YIRImR1xat77DvRdzGJ3g1qYN2g8vP0CajOvyyjvcTmxp6httNnjvm9U2a4iq_qoIgrwoxQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt45tZBsrfl6yYipQC-TMrQVjPGS7kJPz13T7pQTArrUoAGoXBsGcl3NyfXixmJJMyS6AvJNKLn2AljylftzLlmGL2aFJ0pMGiCzDwnQWRevmXO7a4NYlamINHo9LlgY-xUaVo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyegJXtK0g9VxnU4CYv84i9YRm9VZ1h9Mas_tBSY3Tuio5XDaCkoemEP4unV4zRLCpHKQtP5KxHfFG0YkMHRzp78Yd7EMXXcde_XhixyMfP7v7DZ7MSCph4fEyxbiiim-UHMiRaowEjddwPxnVPxxTUISFplaF6yoHXKCEmsiVqdN65_i8lO6lVO3FAulhr1KYoclwNiRqMjkCIHlJ2LHmZF5psZV56n62CmiXDxSSrmXgrxzJ5aBlQRKgEzdCyw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhbn6tsP9vArxn7_iNyxwT-o-EVgQiYsUzmKH7Z2OQbDSiuNKOaWr9IZx0xC_LSKuqcFqzfC3BDXPSpjBvVB9_2sqzjvvkynGMwUVVVKWhjjRSEn911E8hzxWfNHuEU5MNibGBr-OkRhG-sgM="
+        },
+        {
+          "title": "klinikaoczna.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjjet2rUedpyn2j-PBOV3MKE4U6PsOIXlQtpnbSNJXiVEjGu8Wk_4pF9vMXHnRQZCu3n0RTcANL1HlI6kpBFWqGPMCVsiYzN4ycTJPoD7pW697eDdc3-KNSbGOj4HjSzxJGH11FmFQ97kY1aadHy5RMMkhnNMdIo68J3KZI6OP6FzFC01DOmijB9k4ZHsBbgcEyoe_Nonzg5RhwBURntd5tBiZc0o-Yw3tZAYN4l_0oHPFySraa29-PFAUiDfhXtTwEqy6iThb-wCH_IFZSj21BFc3_B7aaX2PKlNsgwpRweEOvxJ6fb47u7hji10AchTTq91X-qXHktZA1dSAtE0="
+        },
+        {
+          "title": "pediatricretinoblastoma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXaURhzbg_lvrp1va8p58yYPdiEvSbN8Ykgbkq2LlkQVU89xWw5fANbJbL4ZwyS0T3ov8fdNNSqBmUaJn9OGmpoj6r7YVp7hGV9zhSlKIU-ayFGbm0odOpmeL8drr75p1IWdPxFsmwTlM43yZc9gASz4iuqwRevyarTe-EdQu1w-iMdgY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFffDMExIoPSgyNUER4Wh-DZSuDrwlmNNNFmZ-ePAHIYNFGHHB9S0kjT5VlW6NYT3dRjPVGwRw1Ncn03TJe4-7huTUqL_XKmJKBQyEZcYbB4B-L2hVa2cON8L8ZgLRa_7SPyEU="
+        },
+        {
+          "title": "ucl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg3jk-Y6jYWFk5-1oP6zz8OYD1lmSOv-tkHKGtXuEjEkl0IkPbYCKE8Bgq-Sx2Smiej7u0f7Vg4M7vJbp5aDdrrkS_X9sErYAIvZAskF1om-kBY7GeepZ_Q5L-93qDePDU-PMdvalI1205"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHjX6_bAd5AFKb15-LJD7zaz3JylMQbIYyKFJGquqnupRgpKx188IEVexmnPE75UhDMDHPbLmlYiI2j8SWrLcqGgblJuDfSrFrRZDn4SerxunXwYljMbWbzfkJ8VwR8DAjjFIKjQon3uEI77g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHeJl0Lwt5AVZXQONYsFpVJHdVY6lHDiyIdSkvusUHh8omfq4I51T53M1R1oJoVwGLa2Txw55IAYzutxR_Dd1xLaE5wjchLMKsK0lsWDm0xMfAkMj1ZuYLi5c7TgIb5z5Ujijhl8b2mxzdUbA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtQ9XnGOOQbir3F5vmnEmHDOoQpO7m2T6fm4ktjF-Bw5ZUqXSnwRfNNW-9wRx-rWPuEa9ewpUGc1tqPVzZSHEWQhUF7AqXAI4DOxdF2TSoLfumwN5DYhzzSLxf5Q9vss5gsyfBA9AvTFb6sNRz-Y67dC4NGSb6r7X4b3C3SoqHVQIMGYRV-jayqXJu1s2sRsI="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQKongVTZrh6TKMlzm9dbaokWE_jI5QQVxK6g20K-gT5kiI9a5yLc_kDA3po0hoJy6wXFOxo3Xh_KzbiyFfuh6JOfkd-K7W68gtRK81P7h9sX2hCndrbdSIevt3BAmrfX8c0-l9X5WSUnr4JJcZvxNApHmYELqaU4fAEOb3KgeRp1jEfQwl1Mxbg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Focal Therapies (Laser Photocoagulation, Transpupillary Thermotherapy, Cryotherapy) trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=Focal%20Therapies%20(Laser%20Photocoagulation%2C%20Transpupillary%20Thermotherapy%2C%20Cryotherapy)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Not applicable",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 12000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 12500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 14205,
+        "costPerResponder": 14205,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": {
+          "comparatorName": "Systemic Chemotherapy",
+          "costDifference": -62500,
+          "dominates": true,
+          "qalysGainedDifference": 0.75
+        }
+      },
+      "name": "Focal Therapies (Laser Photocoagulation, Transpupillary Thermotherapy, Cryotherapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 88,
+      "responseRate": 88,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "Local tissue damage (scarring)",
+          "percentage": 15
+        },
+        {
+          "name": "Temporary vision changes",
+          "percentage": 10
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 1
+        },
+        {
+          "name": "Vitreous hemorrhage",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "immediate (full regression 2-4 weeks)",
+      "treatmentDuration": "1-3 sessions",
+      "trials": 0
+    },
+    {
+      "citations": [
+        {
+          "title": "nihr.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGglCM6pjjg4Ia-jU_2mXyCSrBWZb6CcTOWxlty40cflD7YnVVfnwYIfmFbfDmA7CPenY2c1OBvXgbdYPcUNaEjkrX0dA4B7Sykx7OS6DcAlZ4eakXMBSF6KF6P5E34U9fXGX24y-K94-H0CNJDGtE8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW_BGIAlNlq2b3cITue_KiNqmmnJ4iMLmYfLT4jHi-Sty1bnRBv_vuNPGUzvqoekHzA3MPAqB0dn9XUb9hqb55YN-A5uu9IvpNAMWD88HfAm1tS0HpEiYoK5ODdBQDst9Jg38="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVPYMJ4XD8pXR12C1ksSpy7Ha1kxc-AN7vPTj46eiDI3nxcofRp4_g3w9kNdrq1w8S5Hfbv-IN-sH6ErJzVFSOHJE0Wt3SsJkSwajgAPiMcUmeBEmT2iPKfzZu08wy4U12OtYgFuJiUt7x5cI2zH03u8SWFPDrwn-y9ZA="
+        },
+        {
+          "title": "uk.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWGfRU0fwbo5jzNh_Wy5BdALe9OecwD0hflPYjYs-ZdGQQyxxPFZ6zCsA2ZFaZv8S_W0ZvXFiC6AJ3PPSafGVssCw3iiz82OluS7EISyp1p7-CCfMz4jwAdEuGaRHIpn-y0lQrCMx5bvPK7BycjXZHZbZ2gNCeb3KWn7pFw1DZyrrZRZGW1w-7u2b2kTFmsjkkZ0X1tKw0C45_3f4wML8ffxEuZg=="
+        },
+        {
+          "title": "almclinmed.ru",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB_5dlChewCqbBP0agerWPyvmyMUIs-QKG6AQghisfpuYKMnYxv6ykhP-aEnysWg3MhENSTeELUzGkIRmDHoteMcDxMYO4nYUGOOLFaouDaVXv1OJ2J_eyc31Qh2Bv_XSjG33NIQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKCo3cWdhjT26X4nuVz59psN-vw62HpnKZVsrt0YJ5Or5tK3Ekyr1xZFEIbeBTV9uEAu3Suj1eSV-nGwewpITAER0asKxtiq8TECcaJtWhvKG8TpEaslDY-pjQkAs4hAEPrw=="
+        },
+        {
+          "title": "klinikaoczna.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgu91xHXzBMUdgmr9j0hAp4oZNN-rXeutm7RyGPq6PZW51dUuWwof1jkJkJ1gKKcX20FN0dO1CUQvV2NjSBAJBJ_XeGkw4Fjl8Sqb3hC56V0GwPObV8t4V6MayRGpZNMmDtCIqBHAjIlWMkIvjUDNdrswCDL4CGrPDHn46BxVh3ETTnBa8ywqGPg-iA5ELHvES4OK2Upi1yiZfm3RGJfEa30QfA1o4nMFwKiMIxh-WACcuiwASiUXuJs1OdmEIwN6Wf5GqueJYJ3mHVoqlp3VYXjOymA=="
+        },
+        {
+          "title": "termedia.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxpi22H-O4A1OTMlwNrL4GnJ-d7_Yio1owNVdCCXl-c2ITH73dvk-xtOdm0VT41FZdkUErJ-HxuDXFM8OlRXPvww4foa_7_kpsevJrnKK9zzccvRGfojiQbNPVzrbVziyn0-X9tlWfWz5AZ6EicoI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjDeIzC7mVZ-sR5cXC99TKBOWqo00PLkXXRMRKW5USDakjAVJpnMLO6X9r1XUZDUFbbDVCJql3whGNKsLQo_1ta3dH1dIjfbAib-R1pS3QxqvYteYvuB-v-dDNhdeqyFD0jJ8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_QaDRNyq9XM0Q7pme3zhJUKGyj7rAUZhiP03B5WCMCi-ufjr5KVR-D7r1kZhcIlNf2tOapiwaQMuqukEUlmF6jfMCQ9EKZN2uj5nwKr4LtoloJiBTOhMaUEthKvUD-P9V0PHgeCLfGSmMfA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Brachytherapy (Plaque Radiotherapy) trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=Brachytherapy%20(Plaque%20Radiotherapy)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "40-50 Gy to tumor apex",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 40000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 45000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 52941,
+        "costPerResponder": 50000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 18,
+        "vsComparator": {
+          "comparatorName": "Systemic Chemotherapy",
+          "costDifference": -30000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Brachytherapy (Plaque Radiotherapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "92% of treated tumors achieve local control",
+          "baseline": "Active retinoblastoma tumor (0% control)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local Tumor Control Rate",
+          "percentageChange": 92
+        },
+        {
+          "absoluteChange": "80% of treated eyes are salvaged",
+          "baseline": "Eyes eligible for brachytherapy with high risk of enucleation (0% salvage)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Salvage Rate",
+          "percentageChange": 80
+        },
+        {
+          "absoluteChange": "50% of treated eyes maintain useful vision (≥20/200)",
+          "baseline": "Highly variable, median pre-treatment VA often <20/200 due to tumor location/size",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Preservation of Useful Vision (≥20/200)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "Reduced incidence by 15 percentage points (e.g., from 20% to 5%)",
+          "baseline": "Typical post-treatment seeding incidence with less effective or no local control: 15-30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in New Retinal/Vitreous Seeding Occurrence",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Reduced incidence by 10.5 percentage points (e.g., from 15% to 4.5%)",
+          "baseline": "10-20% incidence in advanced uncontrolled retinoblastoma",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Neovascular Glaucoma Incidence",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "Avoidance of EBRT in 42 percentage points of cases (e.g., from 60% to 18%)",
+          "baseline": "Likelihood of needing EBRT in suitable cases without focal therapy: 50-70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Need for External Beam Radiotherapy (EBRT)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "Reduced risk by 6.4 percentage points (e.g., from 8% to 1.6%)",
+          "baseline": "Lifetime risk of secondary malignancy after EBRT: 5-10% (for heritable retinoblastoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Risk of Secondary Malignancies (compared to EBRT)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cataract",
+          "percentage": 50
+        },
+        {
+          "name": "Radiation retinopathy/optic neuropathy",
+          "percentage": 30
+        },
+        {
+          "name": "Vitreous hemorrhage",
+          "percentage": 15
+        },
+        {
+          "name": "Retinal detachment",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "3-7 days (plaque implantation)",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "ipindexing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNQOaWh8FOWI73cmaWdLwRfni9zfcyBTftKh5XQFqfd5m9h4U2HWWhrP9_XM1xXLmxMmuff9sN76pav2S2Pm6ulE9oB_Gw_H8Cjasq5Yb9JwrBxEmn0BirPjaujmJ2nDd_McQUHDqH4vruzsyaFFjP_KtxLs2k77VAIAtFfKKz7Uay6SAozCdVp9EC"
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLAueC2NYs--Ao9RrLar1VjTlVq8Tsqf6PjN1KxxgwCbl7c03MmoJPvjvGTpbWa6ju1VHcHTbWGiDwDGv7QVDLUH2VdmFzmrz321HJ3OdRt1JXYhAlU_uVTgaTGvzp23scZNLTr8DkaVYTInEZUWASz0kU-WP4LQZ8jyLUpA8PQR-sOLjMdac="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-zW9L_8VTbe9c3pJvJqdaHH1CL5EdLLU3Qbiyu1JhoZDl_YAoj5dhDbC6rI7d2-TIHYDDrwwKG0DTW7jsnUkmrIeoDIB-Z7YvVWipFIifasGbFV_VIfB9AVJEAmvX02JDFNqqU_e-E080oFc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU-aQG-HvzOmD_D5-7WwmTmNuc_KTtqoPkaGgTx9GM6slL5yZN7Oo1QHMZob1wJlIDgClu-iEOXrTx4qJYeTt9HvStGAA0gqhLeUVy4MIiJLz0G_LYfO2Tsh9Ao78dXuBISPM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLOYE8KjC0Gnf8qAlOj3muVh59PzVKIO1h42jJOsVFxhLC6XDyG18o0mTZogPpbINqUxO3_b61mrLq4fInnVckkcKz0jqMdcvmCZQyi9qNo5j7ZxNCSCOmJFhI-j5X2yQpqBqqlaTrt7SFLw=="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWLuLhTTSsLtVS2fXt5g8exBp028emvyes-0v5xThMaGHDsDOhkzYLaHjVNx4Opva_0QRwNCA0RIF8Z9AI-v6HrrvQF4qUK9oVRvMAx8PO_AtVHk0xcohT7XE3HFFH2X6KXXKtlINnD_A_FHDdb0pVJVyNr8CZe0r4-rzUIrAJ4yJqAcjjTLDeVzHOb4-LfHqNUvisvjELl89srb9UAyrdJMpcHHDIBOQx5zqZb3GndOsmpaV9wtKzoBHf3dPb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4Val6CoixBRB37w33WIK4Xw-mmRga0XetGpf43Kzc5VFJx365ibDfUoxFhYkFiZn-2axXjSg5Cs0_Q2CirMfHorNDPExpS1F6iCk4xjzbGJNoRVd5Uh2kBGOuE3e3wvL-5XU_fKZ9lFiv_w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvYoxwMimZgc6DTrEx6mbrc4zydgGh1HBbYRW1KTSpxIVhnqOHL0iaihMHllymtn8Jf7k2BadqBXFjnN3639IrkK-l-92jpywVYIuA33CxmF9sogzahOBfymB8daL_WLE9iV8pu5uBTalwIE1Zypwh2tl0-bD8fm-MN9161wjGdKSSvFhlkjk276IwYpSF5o0x76fyEt_pc92RzxAcjifnaAqexGWgfqLglpKmlnr0pz5rRXJMbZLWeW4-v_DQ72uDHydlnhKpUEg2YFCRc5RFA2u49n9CCbKYGIs3PIsiZ0tUdB9IYywna6j5t5P3HX5z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUI37vIi_wVjP0lCI8I1Wx3KSUbTS58Bc3chpssNFFm8YDBRbQIXibQzEH7KYSU0C2xnvT44sYcyhQ1R2STTmcFte38qMYXA11VsoTQ0-ShkYuxP4KTdbxQbDlwLpwlEYjhaeTf1COomoAPQ=="
+        },
+        {
+          "title": "retinalphysician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOcoWJ2VyMCp-newgJIGSeBExdsHGCogKZvv1D2NOemFqZvt_l2_0JcJV2F4eEgTsP2Jj_Aa6NAePJxd0R8Gky79d1pvj3CrSazenh45OX3v83BmAqD9PYLBl1-QgdkiL6dOaLEbNS9UKRjLuFKjuVAnmcrMnf0unkUuFL7KMClY47ffN8Ww0ySnXvb8dp4-cpUPJcd2yhVAvyo9iMSw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEe2bmLPnuKJdp3Gdbr39tKl3lT4zauD0vIQVq3pnQl-ZY4M26OXq9UlPmaO6n_5X0xSsWD3DUQscJpYo49kcOckzWWe2W5LyyJUee_5QwgSbJL8xvnbrtpEaI2sFEpCN9uVa5rkXw6nj7hR37Uf1chSoANk6pBw7WMapMrJglTB8EubAk4YPgZRUVyidR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi8hlAOVq2fBtu3q2OUXAG-PPpZEnppUTj1UjfI7If271BamFNe-1khGaeVzLKElBD-60b-iIHc0zVqrzQovPcJCYP9oqnTwmJlbzhZPdBzaNqZ-XPZiHCwKAG8sag96uo6ns="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvNeVZkG4GTmNn-iYIWHzRuFBqFwHM7DMtY2tfySCSP4yELgNMGU0t25iHeRkTClj3Qm-rtsp8ailOOqyVLQ6SnJ-L5qWW8DlNDQSWPNmZ-1Zo6Abv60rzrHPqIsG74SaLqS3BuK9o3BiGV62pah99CAAZ71-LwUFObDbs3ocvkKJf7AxcXcLgGA7rlEltzhn_Bfg2huA82yEeRZShV2pnt2TYWqNXLqdRco6H2NwloeqlO_1C9oZOgL19ToqmTTrkCSfSY24QvYHdt8xsSgbwFBwbVWWqxW9KPvT51gCffA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Systemic Chemotherapy (e.g., VEC regimen) trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=Systemic%20Chemotherapy%20(e.g.%2C%20VEC%20regimen)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "e.g., Vincristine 1.5 mg/m2, Etoposide 150 mg/m2, Carboplatin 560 mg/m2",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 45000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 75000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 100000,
+        "costPerResponder": 93750,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 17,
+        "vsComparator": {
+          "comparatorName": "Intra-arterial Chemotherapy (IAC)",
+          "costDifference": -10000,
+          "dominates": false,
+          "qalysGainedDifference": -0.75
+        }
+      },
+      "name": "Systemic Chemotherapy (e.g., VEC regimen)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 80,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Myelosuppression",
+          "percentage": 90
+        },
+        {
+          "name": "Hair loss (Alopecia)",
+          "percentage": 100
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Peripheral Neuropathy (Vincristine)",
+          "percentage": 50
+        },
+        {
+          "name": "Ototoxicity (Carboplatin)",
+          "percentage": 50
+        },
+        {
+          "name": "Secondary Malignancies (rare)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "6-12 months",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXhZDSiph9hPTaJHpBVcrK_W4GaWimCJuqHgtqfUU0v-LqMcyeEcJqt0P5kqtIr9DT_twz2ccgmrKetqaYW4mDMKTzaWS6weLpo-hugD235DyATHYD8peKTerB_Q0XFLwWGtOirR0JKKPAwqs="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8siAlNa4hxVLGvgFGCHCbDkNog1PjP8FnERt4ToLhiwFYE9aJxlTmjd8nKQe5HSksuJlF944aonfuToDXBFe5oNujV-DVme_gpxQVXEuQxKzCYKzhI1ncOnALLnj3f6ceRLM="
+        },
+        {
+          "title": "medcraveonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-UdhkBipMtj--cojhBbWOidR-tgm4XMUtoq2ErwPtXu8KRn805VJTn6gXAwZ7opkbwW9LUb6q7rwsWnHNP1Z8872MwTGk0bF_86gbJwqP4-WbGukXRv_ZWmHfKHIpG24SS2jYJosvd6BzlOZbMzHMK7OG1uce2ae-0MsxjJJiTPN_wieV9sS5dd8wn0i7CDBZwzrcs5UBTAxIAzWoqLcANv-TxutkXlT-1ipusjk_MiIU-m7T"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO8vEhNcQW5kKeXHajVOJsnI0WB7tXL13cEFfZ0gDx-HHlypqxAWcRzrFJze3Xij4NZJQWYsVZd0U_klkV5l5DwBpxo8AkKKpcw2qAp5pP6qSaUNADaV8VhD_-GElI3omLzNTPgSHVrT1qA6A="
+        },
+        {
+          "title": "iaea.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5OnilkPJn_lZiGxexFk861_a16fToPULLrg9T92siH8B3l4hxbkwD9TTFjjjcWN0BH6vRvSv0IPi0sdDsio7aCWHc1iYX-noy4fSQHPiOauBbFUhmd27fslnqGm5qQ179tqcDpbaHQeI41H3pSaU2VJKaLIIzL_ZnJshq6U2cpvtZHy26g0wfDuBTdihgyjrfM6Rt7KN0-3tH0jKZ5MMm5qmPc5riwGjq9tZDoQcoCiIFvUd87ZjKxaq0GGNzdMKokxLEwRqTI--5HFJArxX490fdaBNLrQU="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt_xP3XMayW6uuzzzGa4606WgMWZwJhtqEdJVXotorUdVLeQHHx892mbY2JGUV9R2O-PaXhDV0ItH9Z_9aN4-TUk2r0gwXR9-3M7JRjF_c2d8F5On48Np-niNTTFdFZBG2yhUXJm8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd9ZKZlfak0Mx4VtOikrC4owpR-3YEC6TeztrS91VrHwSDyyv7pZxO4Hd_u72Nka2rp3MONku6ofQG5YIcDFJ8VaBYMj_yLHDYmLDB748-YWzzQVNKnzU9O6Y_R_hxOgZjqmSNX-83tTDVBTUSnQ5iqVWho5AttS82Iw6seEXqEtkJZqiT-y_T-8ekoFEjywKuJYN0"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETMwzku469Jz0_Nee5wUS19z7Q-SOsKI-6OrQ0bmk1Ya-9VUG-qt7oLGxJUXA1CCIAoc99tGLumes01rujjj_5TJ0bFjTZEn31ZYS0ZldjKDx_3une96dITY5wjT_OZt_cJUwpcDmYzwA41K4kyg-TZWqwYJKLNvbUmces2ELbkrooFkK2F7Tz08vkCQcM2orC7v3vFSDi3AnJ3EnLk-DCRfjCH8yBs6iY9XAaZOs3UA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: External Beam Radiation Therapy (EBRT) trials for Retinoblastoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Retinoblastoma&intr=External%20Beam%20Radiation%20Therapy%20(EBRT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "40-45 Gy in 1.8-2.0 Gy fractions",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 30000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 45000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 64286,
+        "costPerResponder": 56250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 12.5,
+        "vsComparator": {
+          "comparatorName": "Systemic Chemotherapy",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": -3
+        }
+      },
+      "name": "External Beam Radiation Therapy (EBRT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.4 mm",
+          "baseline": "8 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Largest Intraocular Tumor Diameter",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-50 percentage points",
+          "baseline": "70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Enucleation (Eye Removal)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "25%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local Recurrence Rate (within treated eye)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 80,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+9.75 points",
+          "baseline": "65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) - Ocular Module Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-7 percentage points",
+          "baseline": "10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Metastatic Disease",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+1 point",
+          "baseline": "3/5 (Fair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ocular Cosmesis Score (Parent/Patient-reported, 1-5 scale)",
+          "percentageChange": 33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cataract",
+          "percentage": 80
+        },
+        {
+          "name": "Radiation retinopathy/optic neuropathy",
+          "percentage": 60
+        },
+        {
+          "name": "Orbital bone hypoplasia/facial asymmetry",
+          "percentage": 50
+        },
+        {
+          "name": "Dry eye/conjunctivitis",
+          "percentage": 40
+        },
+        {
+          "name": "Secondary malignancies",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "3-6 weeks",
+      "trials": 4
+    }
+  ]
+}

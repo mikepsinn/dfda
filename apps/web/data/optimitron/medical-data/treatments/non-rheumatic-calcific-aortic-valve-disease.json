@@ -1,0 +1,568 @@
+{
+  "conditionName": "Non-rheumatic calcific aortic valve disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:14:41.059Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXtPpV46p87sdnPsvWR0BX2fyI2NcQ5-BA66Uzfd8T01dZN31JpGpffToOW6wsD4Jtg4SitiOQW1cTsSTTkcCDD4KHsTW9qIHQPrLjfeILT1ICfKNPTvNf9cAP1F-yHKFfY43Sa9JLXmJfKHs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7kgdQurfa-dUWSGLo79XwKfZTnGJBJl9alvRyQ8YvoA6zTVNrPYnO1GISd7sqXy1_KKOPV0C5fAoPaez9WQ6X-oB4-t_MbpUsMDVvksT1XRLiiEf-H1SVwydcuJL_zzkNVfIVTNW1kL51l3U31qg4bq0Dpg9Oi4lP_UL72l2mknBPq58QS2O7725ygWEvNg=="
+        },
+        {
+          "title": "cardiologyinnovation.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGejKP-kJ24elUrsR2Cejg5_2V4np4aC3FqgRaqkEjbBW45VpBY2b0QavDSH4NSL2MXm2UuGf3-MFA_WxMVUw9XQ98C9lyhtUAvpULim8PgctQfmJ_TwMX8IW26rgy8b1kyJEymYxic4DKHaVSWbXhfsFZa4N0TjfaiiFg_xK6b4WX90sGbnudsydKUTbfyS3yMiCtmUVmxCCs5n1knRuVZcKgZDI-3A-LL_-ZuVOJc4hdOdylfbSlv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8V3IHVMx4JjNJuFNe1lEXOQ8YDRpl_SIVw-7wRh1Q6RF7QxAuI8T9o2oqu_Kk8ck3fadq_wLW0V40ccjfMuqZCn-U5ghOfbOaE7CwtVOUDFj_X1slBJdqTYx2r5dJa6un1pV5er-OBaZ2l6kVfE-TcnrOT1xli5Cil5TwCJ70-IO9y-PZRVDr2VdNm2yZW0h8y5D-nOoy9c6RQ-CRkqtiJEePDQ0asptfTZgs3kflgo6qFDVC3Nfo8UM8p1vLQM76BGqWJC9Y6VavSfO5UEz5_f4CTK__LzdDso9xIfRxBKopTT8g-tORh8g3EjVJrZAUT-b_5fUW0Po="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaNFzR8rQuwLpzrE6VIegaROobLjcXkyYmHIvcVpCRlMsaUW8qEiaVlskWRsrj9X2zxIWJF7PbCmUtjP6SdCia2ZiE7gO2ZOwIjDsmKCjWg8ZwdJr-a76Z7XAt5v9NUenKmPoi75g-Xw0K5HU="
+        },
+        {
+          "title": "gardner-webb.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb2Crt6UlG1AEktulqp2tdO6ru5KFWqaC93iBsnmUkb5tIYyIYDDXVfWNAO7JbVeNx-pgAASlgOijl-YjiLwlvSUE8AsWLQTRm-qzh4XNz_zMqZbQRmrj_i5mnEOyxUz2nwVR0w5Zz9azVJcvZeW02_E1a2M9O92nWv30VJ73P2b0flnqhxxA-ECIo8degV1cBXCgwMeNcWvfRB0wZUpDOXov9n6xsYV_cLwrD4UtEnu3b_Eg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUF3pO5NOLpvISE76OoirwGrFKE6UXktmGHyBDj0-NUJE3_n5Y2zWGXoceVKV0XtJ1ET0ffnhxjuqV6FsBGgRZd8SQ8RNLG9C55jJpLaoNePzzeSXZtsMkbQrrWdq-TA-s_Js4d6wpeIo6Mf4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF_Mfx6FcA_hmctrro7dqKuWZ82u4sXBbjpJ5_3V6M5mnN0MKa-HKwQpxN3lq8HDCpLUtlTkRL73mQGTwH7jtBZO858EiTj-7eOGizTSQe0yPyIURl_Yww6hgJWI3uATmapyMO"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Aortic Valve Replacement (SAVR) trials for Non-rheumatic calcific aortic valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20calcific%20aortic%20valve%20disease&intr=Surgical%20Aortic%20Valve%20Replacement%20(SAVR)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": null,
+      "effectiveness": 92,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1200,
+          "totalAnnual": 2700
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.6,
+        "vsComparator": {
+          "comparatorName": "Transcatheter Aortic Valve Replacement (TAVR)",
+          "costDifference": -5000,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Surgical Aortic Valve Replacement (SAVR)",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 99,
+      "responseRate": 92,
+      "safetyScore": 40,
+      "sideEffects": [
+        {
+          "name": "Major bleeding",
+          "percentage": 15
+        },
+        {
+          "name": "Stroke",
+          "percentage": 2
+        },
+        {
+          "name": "Acute kidney injury",
+          "percentage": 10
+        },
+        {
+          "name": "Atrial fibrillation",
+          "percentage": 20
+        },
+        {
+          "name": "Sternal wound infection",
+          "percentage": 3
+        },
+        {
+          "name": "Prolonged recovery",
+          "percentage": 30
+        }
+      ],
+      "timeToEffect": "Immediate hemodynamic improvement, symptomatic relief within weeks to months post-recovery",
+      "treatmentDuration": "One-time procedure; valve durability 10-20+ years; initial procedure cost $25,000-$50,000.",
+      "trials": 800
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOIq6M0jjcc9TO9XiAdssKolDkXV1yT9mqEmRxceq678VtJryMU09qoHIemb1_82D1s0AUNvhM9KpcYTJq4Z845VjfK5ud9ctulr9h-WwQTnFYI0mA3w97ANYjXxVmcrTP3QfRn8vDN69s1n4="
+        },
+        {
+          "title": "cfrjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEABrAleGZaMhgb-fRfd2mfA30QDGRssR5_WbQGnFIKmH7W_FK42gGQsLVzI9WSazxbNX0mXoOymX4oAkXsmlQ-a5xSZyDybbJpmzKuSLUkT7eYcPWFfQRxtfmS8Ln1O8ZRM25j7QX2HKG2e0zKU2TprAWNTIj9ztYDLXZYEdj_F0xpkYR9u8-9bMCaz3dItz_AV2MwGqpWCQ8qKZ1BAFabGPHrymrZhbwu_wNq3egPBn7Sa12wDYitPh8-slURDpapIFJjuaqExlp5Xb8eIRc="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNj-xdTdN4t0_XsjTfMAYQSJ_7ADJziInguSgg3JRB5jgmXzGVwGwFLHL6uxrr3qfAFx9umQwmsRRtFeb72S6rVfIAfLA3U10rhQBsU8pFEJsFl2Wi01xWTc6SytHQJX1eJgeNBccAH3cqwbyrl5HmABXOToCDQkklAcYV"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET16fbIr0IakLWDrTbD7i9VNcEfoHjvN70t8NFBZLIqVgxgI6LVa0PKI7RaBbcWZ9aXhXSgDGGP9VPXJP9GDni6QGww2M2HcPaNLup6S7O0xlTKD-xzfvIchffM3fsWFPvsfxh9OH4h9EqIDGnqAueDYtCdVpELTg0mKFzYsDyMVieykzPye37n1BviPRR9THH4ldGU0c_a3sEaRK0t1WLEW82JGfeqO0V5I-jgZ3NlAprtoQL_Pjsyl-pLFFEk0eLqx1BlkQRP0cJMycZrsL_JKFhabSENQez48tvi4bROiFD-1lYr0LEA5HekYRDpKHLs5w5Mn_6_TLNuNU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLHTPP8rPs8GWCcmj_innHPQiSAD9bYOEuKkw-jRK5RdoD12ro86y3iugIB3bpMFxEwmdvHnPwtqVoB6HfBl-jYzm93qA_afSLc931Q3oWsLwPpJyYXEppTJnSBd3jVqudUQA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEA_6Yinxv2W1o1zHRabJjmfUoVuK_i8Ql4Ko2lXOyQOrBXsVQwqFSUh-2XgXePyn70AVBe3fbSL6141dGrlhBu3takAwxUCuT_JoaXTpCrrbzIgMnNtE4-HB0gqgE0Clwvbw="
+        },
+        {
+          "title": "biotechdispatch.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp65ij6v1ugXpKueRjKQGxIURN1Q92C_-VWPhjyaAgPmMT6MAIcxopwi_f4x9a4CYwIbEK7kDQJcJ9Zv_E0S7Gu4x-egjqK2rfjwAp-ZIH1qI7_xBQ6OJrTm9LOuiXZHqHkyWHVSS1imUCAnANoLsT-I_eSb5fMk50CaQSyDhLHyZtnIKWYITKQFFC5CcFE2_W0h_OEFNFTmpcXS0dloXIEXcbAoavDWSaJ88="
+        },
+        {
+          "title": "ClinicalTrials.gov: Transcatheter Aortic Valve Replacement (TAVR) trials for Non-rheumatic calcific aortic valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20calcific%20aortic%20valve%20disease&intr=Transcatheter%20Aortic%20Valve%20Replacement%20(TAVR)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Surgical Aortic Valve Replacement (SAVR)",
+          "costDifference": 5000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Transcatheter Aortic Valve Replacement (TAVR)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 120000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 98,
+      "responseRate": 90,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Vascular complications",
+          "percentage": 7
+        },
+        {
+          "name": "Stroke",
+          "percentage": 3
+        },
+        {
+          "name": "New pacemaker implantation",
+          "percentage": 15
+        },
+        {
+          "name": "Paravalvular leak (moderate/severe)",
+          "percentage": 4
+        },
+        {
+          "name": "Acute kidney injury",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate hemodynamic improvement, symptomatic relief within days to weeks",
+      "treatmentDuration": "One-time procedure; valve durability 10-15+ years; initial procedure cost $30,000-$60,000.",
+      "trials": 550
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgssqDwcZ6gniG4wgvq-OVFbGE7hnDM-sWPl5uVK3iESAyYjuYspzsKZZVp6MgtzgwAxDZVSDYWcYx9510x1C-jABjUOyukpu9edrLN5B2idR1m7xwG01x2WfMoWufAdfNDFAbe1P_PHhnjEs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7BwnplHxbLiTsoDB2oj0y-BRmEoLOOeOGQ2GAOgNY6j8N0oqdonOl-6GXvC33DGfZgY7LsmMFBDMJ11K69Iprnl73Zj7_IUaWCEi-hXIzkiDQSioF_CJu6x-eFDriHQn98qJBYPJB3ADdJEg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFiI4KQO3uhViRoX5CkVBsQ2PWPg5SeB777bMjaNwteSk3dp5pTbdVo0LobeULrl7v7KMD1egRHYHmEfVN5uRg4-w3Uq_g_UsAC3Qx1ORQ94D8XRVwxmsBLxByCRMrXCIq1cloxO8mJyvwGs4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnlJ5Z8oK3LmC7O1FhyJtLgAn_g1czRN-mpoB0j1LpDC7rD_S1e33_5Ja0zkddENhv-GNX5S_v1CWnGxG4WtUxaXA3Np_w7roXJ0Wlwl8f-y9_l8rTHtFpNg0jnr0kl4eL91i2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoX_NgW0EsRRszwR0xnd43ur7fe8zxLHu7j2Jg75SOZCaYFEisHQO5KyLSAgZUTLSaHuzcHVFh1EuAbjCbsRAW85az_ltTHF8Mz2sbP23qfAhcueBUcMf9uGHgmOerbn8ZmUb-"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR5sMsGqDQtJdGbHiV2zS461iNt1Vqe0xMvKL7ThnJcBsYLDG71uvkTxUPXElrQG4P74p0Y5nrbluCDe5wlAh1H90LbRMUEogHDdcBlHhF-QAnnBehoM-sQTPXwXbV74V5hDmbJGZH_-qcBaX0x4QgZNDw0QOfzX8foR-zgum4UWI0Rpvb3gR3pydsp_nToktjuAd7l5d6wvb28IsNM31-cCW3WIIYsgATVPnn70E3COTx2xSJ-X7IIQijqMSltWxEhi7El9GA-9He_n2SwTsX6VOHser8upKTUEpLMnchCxJTbvrQO-3fKhx-BoXEip3hDxUKMJXtEnDPg1Ipw6PiKMVWOxOk82TFBNQeCkL64a86uOyf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHz_sjZbfTBCXWSAJHx5cicpcILWk33NJrpa657FghR6rZ0NFq4siRSHHZ30Hv6Xiq1RLRPodIFXPc-_2WcIOTLBwmU89rcih7YiX9nmxeLBwNePbCOBwb2WKSaX_9MUk8oAt_6MZL537Mjfrg="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLQwLeDBLTHKCj-ossGYRZSnfVFUGThZfRQ_vaJ_vA2LWBeuTJjfhqMcmIcnRRFxbOY6-SvJ4eTfXEG3nzZbKQPerQWU04ymwWmn0ZlzzJzQktfSvBZ-BZcHj26d2dF_UVmcIp5eNJvV3l5GbPquvP3bV01Q9AlkqDoxdqSnm4eDhTBOINAqNtW8rE1gHO38m4y-k_mdCSA1528QhHVti7KpTm-soJ8pY2-jHmwchE0YCgfperB-BxC1vaRjWPtiQnBtUWQhYv6Ao="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5VsOGOBBRTKXS0YHwrpSBv7mSPQTtmrC4vFqECQOCvln8UpE_bZMVsYFiQHk-W_ZI6bOAFk_LFCtwGcetRNXMIEwC-n0iVfHWoNmOR6yohN1m7L6NVK0rLYYiGlHAfaj0Pasctrts7u-B9zYxErrAtnNfMc0pptvCS-dtHnZioBBqBmegGEgerkmoe-goViL1-ypEaW8k9vJ9DZAafSdTd24xkRzaj1oh_Eon42NieWxZjwsbPEUS1vHSASmafZnDTC80P0IX-sdJ00L0FbbDKs7K5kCK9SZJVsnDGSNHDU4kJq-s3dC5Nh7q9zHPFxCOq3raeStk94dIm_07mvDNSWuQ2LaGgXZCdHAzth_GN97CMFjSv-4Loac="
+        },
+        {
+          "title": "europeanreview.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDlE6YSS9X-M5DqMKG37BIdbKle4TfQZMKGvk_w3eXdWz9nPIyCOjNjRtx6wyYTIlZNLEVA0dGTaCcHLaO1yPzljWzyHj1VDagLP0w44_GqyLVnfTK1J7xxTYOr5s3EztFjJfhsO3hqXm6gY058UIbP05kRtblCMePqblKGw=="
+        },
+        {
+          "title": "abccardiol.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_uMMdlRWUo6AJfhASy07bFjswyWNj7o78FBvC_riLmOzeIFp1O5rzY1T-HPsIuej_NS_d1s9eeFMINLUajmg5U62ewnOiApaYIbMjFqV2ytZgLNrY48nEsmgIZksR9PcVLz9wgIJhelGY8_liIX3V9pAdu0mQnJHxSXbLwOijJVe1UjkQYUGm2S_3ZMhgPye_RCgKXAQ3mhmzULAI_ow029CmxouumL3ejLxVAy7jxan2508oqLzoqbfS66_01yDSuN-FXwlTndzqQbVStZMRklZHH96-AUfLo0akmblo0IK8"
+        },
+        {
+          "title": "ClinicalTrials.gov: Diuretic Therapy (e.g., Furosemide) trials for Non-rheumatic calcific aortic valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20calcific%20aortic%20valve%20disease&intr=Diuretic%20Therapy%20(e.g.%2C%20Furosemide)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "20-80mg daily (Furosemide)",
+      "effectiveness": 30,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 571,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Diuretic Therapy (e.g., Furosemide)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 15
+        },
+        {
+          "name": "Electrolyte imbalance (hypokalemia)",
+          "percentage": 20
+        },
+        {
+          "name": "Renal dysfunction",
+          "percentage": 5
+        },
+        {
+          "name": "Dizziness/lightheadedness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Hours (for symptom relief)",
+      "treatmentDuration": "Lifetime (as needed for symptoms)",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiuSbmDB0tWuLxWajGQorsY92Ej73U5NvyNg3VgCJTmYD-jm2h1y2vc1oZNgOlbzPCZuIC1WbaEBzMJ8RyIHwTW0j6VJOg6qurdaeJTSDp57PGwrGPGY0okmOgqO2DUAJQ8mIYT2Ph9NXAeMlmpMrP7R100kI621oWcNpdr31072bX49QZDzodgRwdnydnBH6L3cu8ZjD7SNpacVdUDBbisSn-WF5eDOCvR-tS_Rnvd3rjpcuf_CIO17V5U0BgJhiN3UhoZdU3tbbaJPG4IZsj7d6ixPIDlwo1N6iclEQuVsLbxWDPO8qBsenstBzsxZXUZaf-WIHh7dmNZcqEetJbLi-hw97B2hQd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBs57JlNLNgb0blQQ9vegHl7FgyfQpaDRFkrr5-judf2jEF5LlXRyD7kzoiNseUXNw29UtjBH_PWRVICujwCHNaaXjwNBk0DtCOdFbYHQJmP5rSjpEqNf5k05qbzJlB7KjdfRpeHuaDiWD2Us="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcF9VNZXpEi9RhogQYc9smXMfpNkxqKggC2GzT4JuIaJaVHHLj5QPVWgzUQsVneVmau3_7kyyJ28DxE__7GrKVJ5ZuBCjt1raFDUbUNxqRzJ3sadow-_0DzzPvsGgAC0IuYiOK2fJtsAXTs33g0zD272g5ghTBTrq8Jo1nQYpKeSWCsznqW5pM8w4vekMAyO7TEPXy4tqQ7CHyDSYKnX-qbzin1BmaKkJP0Fu_fSHrlxENAKOY3pWNE463ZTScSOKCDGF42_EcdK7XIQil3a2CT0jaZ3fYX6EZr9xn7bEzCB14Kk72Cop6Uwyl_zg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtL4CEID7qXf8VpdJ0-yF-l3J-p4CUj2lT_74jBWfp_RRQJsiQ_s58QlPqrcCVCmeafuc7DyP0NTdJ4rjnFGUU4OnsZUTEndaY1wIRT_kdAHBX_FgieS8THZBOoanXad6HfqtF0L2MeuuVTw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBJV0ZHKc_-2zrB8jpJRIat0vC5LCtaE3NxGfYzlrKT7cDap-7kGu6UviLLKvzR6rALUjZP5uMZzv2A3ZZ0UclYD-tJAZgjBLK_BWM9dETO3kaL2sluYwM75ekpsesL7JXB3VLr8Zc2c6Z5FmXfL01jajvP45pWaaDRpVlFVscMUoBZaKXI5WKDx1Ce40Fnxso_oOAP_90w_jqw5cx_KENk-zJvF659bVXd-IufsgHxhNL0jyiYEZxhx_evMlahXkjudF-cMunJJXJolU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9cABSn80RcF_EocRLA-Fdf_hPjq1qhQXdbb4clHvjHL3jChOlU-i_UXxtb-haoqK34jU2C0K6lThzlo-_xev38pfBKmtDxxJs1MwvMMpnKcAdyfhNRmoKQCwhpRZQHhc829bChVeR2ISz6xmVuPe-SCLXOqsUt7ARCkp8cnZ6BmNG9UE7T4TJKKTll1xE_s3K4xD1gzm2S0RJpqspPV7kaeWQs-ABCv0lP6LjM4S8hwj7uMA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECi_HA1pIgYsW1nIOdcCIJYzI-ziqqxO3C_lAw9PjKHdt7Z1At08qE0Xa9jg3CIZqXp31tVoTefuuKmc7AhEvmBM6G6jPPMDjsSw0-EnFvOMSILuQfhRQVAkkn96cu2VaxaQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQnkWweuqs7zQEaMX68Ehjj8MTxWx1SyJdKOg9ETt7Z_ZKwoXO0SzPAh8ymUhgIpCJb3CcZwSnZkbMNLcr449ESLPbj2d92DucCy1vK_3XtgxtWefpiV88AErgHQelMXnambzTF3U5_bcQwA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCB2ITWw2seWHxp5TXNayk86LHdA5bza0q29CZ_HtaHEPeFx6G7xtEXzlLJ_8wvrp9gRpDds4AonVqJifkpj-0BMi9ddI1_3spEhoqyzMzZMYTvmDRnDTrDApbrlVy_0Fng_8ALd5UDNTmy5i7zRe-R-foFPHsuthJnstFhPu_27wERGdFNmAfwGJBM_QQJfWLBPY2wKix9AxTFnKfhozt_z2cNG4Okz6wlOo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLgBzR1k5xkeDaw5nH5fsgznVpmwO5qyH_uNjgp5TgcED3L4eGhItXLKdK2OnKmK-CEJyKl6LfJeaJBqcxCDZsezJgxIVYmqXS6EOYgRCJjuYJqpk_0Xt6Qy-7SwXMzzrv6Hs="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgBdsP1K0J3SHmdcgZJjjlesogrvLay9UPxQCF7YgieGYMJKQLDrEClYDzvoU7stFhxDSMLRgm4xtPQMf8gQ1bjhvWOQRmt86Ox4FQ4xQDC0oOfzhLYd6Q1lDBGyoziJnjadWEEa8OYkfbnOJuY4o9FIiKBoItlKh9MhGSSolf5pSzfOcizHaHkTWZ9dl2bO76spUEK7hJ0uhZqoCUGg=="
+        },
+        {
+          "title": "uef.fi",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnFR8oegdLvbCVURmGz1pbwy327DyfRTpvGeYYc8VeCl2eQK4rX_8cMEnpn0IR16URN3CFQl6Jmw2wlysRamS9FJMfg119Cc1dNHqVpooyZQo0eLstvu5EXppsGPg20PtCpEorJM5kQFxqSf9nwAlM0O7Ys8gYD1ISNlQfVftea1SOrWWyomw="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCHvy3axyZj_tG6OdrsGazUNB_fccWYk0QO9IukO8M8nlfUSP1irYQGyUT3vbsj7paq1OB7-owA8w2i7g5EPm01x9CuyMJodXN5u_1GNWHdnfoHNKc9e61Fc6PhD1xDY6FHr1UCGLr6GdaiPVmDeo0XLpHWRwzVHiFazfGzIBygRRkCeM_iiXxDQZ1TxWD1X-_gsbedFX9Kn9HqdyPcnFX-WTgo7qoCiN3-cCmCs0-3YsHF0pqfLrP8ZWgv950iUu3mLcAdLZo1SMWKcG8egQK4UrLpknwrt0rzr4Q7L7p1P0dGJw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzMnH_1IqG4yFbAPgc2aDxNBhIbVwXDBVgYQ1llj3BCBw2AYCI7AwJdtKniREIRthQEG-Zsuyqc2wASpR1OsC8_x3b7peolAX1JfgHhYaGyKCVh0dgW-RbdMCwc03hHwSY5CjXf7XC7DqVPUU="
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVEDIz03JVGFx2tGs6Cg7YEofjT36BGYCbbW_GGBPU1cag9o_OOIl6GFA_-4hzskcfVLUZ7io3zXKoU16lykuGeX7crxDs9Ah2Rht5jqqY4pBhnwjpvfgccBn5V49Su2zelV7iRS1wdXd9gX4ti-3Dwf54gRzZ5eMVid88VEyd6HHgMSS_86b12ApGe3pIxe0DSn4ENdg753EDzMkm49IBlnI18EXs"
+        },
+        {
+          "title": "mayo.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkQ3PmPxlsq0LQKdjKNg7k4PX4aqPPJdDR8WgztNjAjeM0BDknzq-Z4DCOK_upCu17VmiZZ9w5pzdoIYWexMzQG0XoruIQ61E_Gfqm6mreDdpzSBJ1YiTo2L0kQY8IknrFSpZ_qH_miZw_d0rR0bkNQti963r3-Pzt7MIPgDDeyfimpr6ALqce62RCU2yM_YQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Watchful Waiting / Cardiovascular Risk Factor Modification trials for Non-rheumatic calcific aortic valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20calcific%20aortic%20valve%20disease&intr=Watchful%20Waiting%20%2F%20Cardiovascular%20Risk%20Factor%20Modification"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 10,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0,
+        "vsComparator": null
+      },
+      "name": "Watchful Waiting / Cardiovascular Risk Factor Modification",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": null,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "No direct side effects, but progression of AS may occur",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "Long-term (for risk factor benefits), immediate (for watchful waiting assessment)",
+      "treatmentDuration": "Lifetime (for monitoring and lifestyle)",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOfMEiVhxQ9-NIPxbUV28vAsAL34EFa4hmOC14c3D4owGZNhgpg226vBOjrFCkh6GKRp1QNXPUpnENWB0na2UcZ7vfoYjW5KCc2-JeSilrYTY9Yr2BHgaLuKUUPqpCtsjB23UY"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqPCr1KNycCmyJE0iKiaO_79Hm616QhFmnPq_6rygTMgQzc5LRIKQVQO4z8xWvra7SBKZL5kSeQW0-dVBmlhwoo3n_v-9wPkVAgcQKlzYIwZ77UWS6R5QR9WJBfBmDkTHM3hh77JuQ-IK7lT0sBw3N8tefmSlbXOARyVA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmyx5ZsdOXUeTZjiZ1FxX0ULhs7i8AkSb8aDCYTas32uIY2DOY2VZkblMk301RiJnxQMevxfOH6g1n6sa0fM0HmsyZY03Xi42_1SYZwS6rzeoxn9kLR2uB00QPEstdEf9E70TBaVfzhv4N_4QC9-wqqhIjucaaTAQia86Fn9CDbHiLr3ThBZClYCb_1lFlNfsV7njh1snH5hg7BDW0QxK3po9Tr-WEYHuPpST1k20VgOQb2-c_yzGg0CoNS8tV1mSMq4Uwq8YezcKZeQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEgLQk1Kndy68wBnkPeZc0ZplBZ3Q0BDqhvZdY54V9oW7sbk3nnB35i6hrJzx6Vb2NgEVx72rp-670LoMi1m2GhHcOizcHTH0B3gGVk_TjSAmY5P0Ntjdfm_HRNdjZtEcwO2o4"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJUIgSo4-3XaNhmyiELwc0Oo2zBRB29mK24P6lWWwisFkvERhzuP1ENGRIHfs8zLxEGk4_FnSQscdfAhS_4Gk-Hwc-lcA9r4Yy28UVjvA7FsfXhCcfQuZmMBDOsBfs9vAG05AIQUdhuAusdND-ufzvqG7JC-Q="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExDVU9PF1MK7Cj7Wcinmkx6vp1j8Gu11m6vZ3huADsw7Pm0GWmBZYY-8h60TewQfi8jOml4GgbDTRthqrToc7r1TuX_Fwgr2q1crKo4D53ka3Kdnv4nFMU3g5lS_JNXOUhnzm5N8VoZ_IVoOOHJj26TEUT0DE4BqD6w_mdmwL2"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLOpY7Auh50TF6e_qZM5nDQiAjSHN0wvZbvCxbdhYoqen_RTMU_X4wmjrZ4RPRHA3ZcXbz_kGGrSI7ENLZieoGLwaDGbMNgmbsyc5RjyHqTlnQgDEIF-eKmAFJtH8gdQdPLQyZ9mHPhdIiGSM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe2Oxb1k-aKtJoH1ujfEmr5yNWyTbQFZqBXgrocWgcwi0ozZWtmQKecmwQpVbDbpvgVwtHGFCSAOiJXORQPhBbDwmFJBwq_oKhaIpi5zw5pN20rCTZUFVt-x7TVhpJ-PyCo0Ec"
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUlclB1snMr1SZqkmYUV74o-UmfDl7IVdBPihgZp1hOKq1APqXRqOHIDqtjh7v8La-dXoOPEXW5PpxDkOFGRH-XAjQ7nKQ7SbAmviqmD31IlbWrdYywqRIOSmhqqU6SFcB_jQ6SfdWdUFv2oODbh0cPNl6M-JIPYkx2zFeP8pu0w9fhIeIFGBPWWP5SemTRclH806L9nuhys9NvwDOw2-UH8b72Jt34Bk_cp-R"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLLhj6qp89Gjkfn8LyKHLkGb8-Mbn28gZHOu7_090441PtTvWGWXG27zxGkLQyRVvzHrOVp2yPomW26GyoNHyZifqGOevnAQEdIBswE2HDSP10qXHHuOgn9367iRK9huvN66S-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Statins (e.g., Atorvastatin) trials for Non-rheumatic calcific aortic valve disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-rheumatic%20calcific%20aortic%20valve%20disease&intr=Statins%20(e.g.%2C%20Atorvastatin)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10-80mg daily (Atorvastatin)",
+      "effectiveness": 5,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0,
+        "vsComparator": null
+      },
+      "name": "Statins (e.g., Atorvastatin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 0,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Myalgia",
+          "percentage": 10
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 3
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Not applicable (no effect on AS progression)",
+      "treatmentDuration": "Lifetime (for lipid management)",
+      "trials": 150
+    }
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "conditionName": "Cystic echinococcosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:51:25.479Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm1mS-hdy1yS29FwqyAgff51dVYVqtuo4qVQfO2wFjnO6lDIwLDyNQxucD8uGUprqBWhITYh1b2pquvZ_9gR737397NXn-OGnDjU9I3hDp4AN-Za4F-r9fMC0h1B4QG7X1yf7h0K0qsbPBdgECrrPR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDV_pRx6ZKHn4nuXgikM3bynvHNqRE2s1d6RKrsA4g46CRGEQK1cL0KXQaf2C4kb8MerrEjuLEiTY8DzTHuOexWd-8Neujs5uecwWIiArDqvt0Dsb2J8C8m_EPw9bI2_dVuxGxzesMu83XXUw9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVDXQfD1KpLKbDQhbd51yib3V3HmvOPMuG-beSjUPf6DAz5s5krIjKL-5f6yEf1OvBVEewX7tLofNUhAf71rjFF8qbnlj9M7mnG6qvUK_e272nsMFxHwyYmY-7V2NfgCDAZ2Y2yhqlPPJJ30E="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMrUJiu5wRfkF-z9L_t-SNLcwdZFNUOi6ia1SYjIzg86R6UD5pgkKD-KsR9CvN0pMpxssP6rGcbHZA1_m5OCN80fkCKXtoIrZkP1cAAaA_0nEEhNLQd6DxIqNaIqV-HbbS4tfIdBDLENQjal4ED8ljU8CKXIAZhtLe2edk42Sdh-ttqs9t"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKuizwA-Gy4wtP9sohTx03uiD5Mg4011g45eMrO7JpjYSKOmKp3WjSV7Yyob9VezmHBiS5m_bHeEuSoTX1Fqi5lp4gY9tun3NDwItooCX8yga5lAHSCfbs66Tlv1IYbiUnjz_VkFF61NMHOO4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Excision (Pericystectomy/Cystectomy) trials for Cystic echinococcosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cystic%20echinococcosis&intr=Surgical%20Excision%20(Pericystectomy%2FCystectomy)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 33250
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 34947,
+        "costPerResponder": 34278,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Surgical Excision (Pericystectomy/Cystectomy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 95,
+      "responseRate": 97,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 90
+        },
+        {
+          "name": "Bile leakage",
+          "percentage": 10
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 7
+        },
+        {
+          "name": "Hemorrhage",
+          "percentage": 3
+        },
+        {
+          "name": "Incisional hernia",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate cyst removal, clinical recovery 1-3 months",
+      "treatmentDuration": "Hospital stay 5-10 days, recovery 1-3 months (often combined with pre/post-operative albendazole for 1-3 months)",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF0ybyOhXTq0s6jqJi5cwIC8Scwj75xzLbYqBjeO2dqAiedIvOIGpEwX7n4F0edmlsuUFdaSchifz608Xym4eL2kDQkFe7lPd-oYEe5VA5nxOAwN-FIRc8Zf_YG7YR5GW7pjDj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgmFA7WH-g-VoJLAVvEyWdL7eEAwvTkp4E4ye1hJgUFQtOSUZPGg_Rq-nZf0MSD7wIkLLnhx-s35jW2JCgme8x5ELAh9iunm1NS8hJ6yyE5AwO8LQWqLv-yA14qDudXwgjgTwitPnKYUaHHpE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7Td90EHMBTfQO9FkgleoYCHxedf6nv-3NHwKvYPeLVJ8ryS116dH_Z-02BJMYGFjgpeYnGooQANd2TFdCjAuJefjM___BT5rffjKVlAYmoIzSZq1z2n4fkam_Fp5a3S-Q7ud6zW5pWUSsDS6-8uksfAZErRBjQ20-wcBUyGmW18VbcPN-KC4yn3wMNQ06S_hlF1mVTe3sGfSX-p9PQEgTuF38liN3Xy-HcN81QyjcSX5ZoPS6nKtOvcUphk8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVngaF8y2QlruHb75SNxn7NKpopHZ9WoLeOkLhI-whYo4I6KbROKyLq8ehuU1QHwaHFbrUlE1Xcp9SR19r3fbOeUlK0Zc1OdqygOkq0lf6mmQMvc9Pm9T4rLfRVX0Qv5cx-PxzXaPpQYEpjueaR7MqeE32ROteBJ8pRFkXiva638UmH6cl1_yhXw27lZ1oNp9lKIgYMbZtJo2gb9YTe_f9hshXmXCY3I9oYFUr42DNWmZu07eIP110W85AQs6Dzgru8-Ok5jQMe0J-"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmWjUwIjsYe7twe4HYU_ljKgQ3L5qXQBdwO2Jzu7i7VHqPVNsQEZ5hEEt5oTGpXUUWGszDIRk9opRV9DnU-8arpUTkD0jxvCMMvjpB1nLdVs2_tKtZAjsQ6MDBkPc94Ev6AOg-0OzMafWQ3KUenEpKdxyo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYQYOlyYyu3IKqgKMh7b6RZ3CQKIkVnBJxKeeV0j63oFsal-_Uah0wbgAPYE9uubvUxJiuAvC8XE_HYuSzjvUAwn49NktzYhV-oK16QV-f3fx-1tjhs2ii6_Lms3x2lfx_p2hx"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWh-mUoxqWZJc7oa1p6KLQQCoC2EZvEO0T1YhnQPveLKrixsBFgKN2OhuYz7SKktP6X8C-gjwHLdJawUHk8Ewt0bfY50xER08nMJsOYpOgQe08NoJ5MwHC0Y2UgegcXJrEiFoge_XyMEQmjgn5VjoNnU8j5HboEGGl13BEP8ILk-ZoUtMZPtV8dg9s02vzaCo5wks7vvxPtM6BLJCDVWmvjOtdj7RK_lcdi32VQoVvU9kVJNDeZGI0VLDFElIwSt002BVFZNjLNEBUkA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHczfhs3-8mCyuBeVAUIpaZA2WPu7M_hZ1M6WnBVvgG4I82LndZ-Jt_wuQDaaBbPgIvDzAtx9Lx_GG7X1BKRfjeNaFCvDo-f9TFpODHgilin9Z2Ngn9mN44KBJPGJznv7Flux8ha764q434QE5--1w78DEWyBj2RySheGbtzNwQ_AbUBx-wwHjXHvXkUZE1D71ui1mbrhq7TBZ6GRmh4VLe7mSC-nwuB24wpAXWDK2qsTg6Wve7-eQkbN9ZhlaNfiJdN4aCRRDA-xf2vxofdPAtEahlhCSx6Z6_y0wE6CPinJjfExqWrIBsh2ADsJEwvQ_d13NLDnQbJJoEsjqsSha6mJ1f7PQEGcEMUQAWWXYzZM22UQ9hA=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEezKhzS2xn4RBIHbdEJmV7B8-bqix3NOvHFuudI-NDW8wLuf9RBZ7gTCLAiApfMWx_5Z3TcOxG_oBhyRPzQax1vAdz414mtL7mixnQB7YAQfZRTJ5-vnKELwZV-kMSX8a_4s-3hvofGmOgd2irvr5Kts4="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXwWauTxbBeF1VvNMpq32E4lQ50rpXj355iRbNIYDyKo6hdbWkpE4_oW1-ZcO_rA4hqvPQA6XDedwBirwMPEUjPd2lkEnpTvybS1DZ4x1-JIW-5Ap5aMx1axooARelh_MgaudXZXh6G7PfeOXwtLxscxPELgPQqK6M8w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWmi97ST9SJ6QVH_nNYHWWz26RMcOHaGIy_9RovnSKHaAbH3XUvsWFk8SB08Ng3n0AOcbFrFSMJ8mfiLrYvJhJx-mP2Axoyi-IXWhl-MTXT4AOlt_hf8b8HjQX0dpPXWvatA978PGB3XsWOjNpctN7WUtfwOD-KRTnWLaNSWY1UiMbf8su3W-69pjcyFHuqic5P4C0MmVqhlcqweSdVXbnZUK1KmutxWQ6bkF2LqTeVVT9"
+        },
+        {
+          "title": "ClinicalTrials.gov: PAIR (Puncture, Aspiration, Injection, Re-aspiration) + Albendazole trials for Cystic echinococcosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cystic%20echinococcosis&intr=PAIR%20(Puncture%2C%20Aspiration%2C%20Injection%2C%20Re-aspiration)%20%2B%20Albendazole"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Albendazole 10-15 mg/kg/day in two divided doses",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 400,
+          "totalAnnual": 13400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 16750,
+        "costPerResponder": 14889,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Surgical Excision",
+          "costDifference": -19850,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "PAIR (Puncture, Aspiration, Injection, Re-aspiration) + Albendazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Local pain/discomfort",
+          "percentage": 15
+        },
+        {
+          "name": "Anaphylaxis (from spillage)",
+          "percentage": 3
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 15
+        },
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 10
+        },
+        {
+          "name": "Leukopenia",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Initial improvement within weeks, full resolution 6-12 months",
+      "treatmentDuration": "Single procedure, albendazole for 3-6 months (pre/post-PAIR)",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG47qkEEmPVIuMKlzZEEkCdXOg-rrVApRb_bR2riBJ208KXdNr3EvmR4eQvXH0hc0fh204RTbLyty97wNSSpfR3LBpuw-2AUsB5jFi6W5EgwtKkmSyCfEUQ9RpD3vXl3WQbEZI3CvCQ1t8jAwZ-CG4nj8vRv6fX89t5aSepr-_ApI4TTvulgYcyXCOBJgLZLfDjah1lZaoXcMJClGDSqoEE18xlswjA7XQ7dQpQM1kUop2-NX9X1RxE_djWf0Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw5mc7w_d5a1YEBmmxO-boYTIjBishQC2z3FoLEglcHjTVc5kQlluIGaGNq9ZtWwUIFDmrepMk_PEfwKgHGxXhSfdPEddkZPhkjpbGHCktSFZ5P2WKykFkbKH2dY1K6-JLLpel"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmPhdLcNwSf8ATP67qLGYuGdIUeXQ9EhtuNJtnXGYAwb6TK-M5EN0I6OiDCC7piaG8MlzavCfcaeeU-wszktyBFbUX4PHxb6x6Q3qiJOfRaWQ-y3Kz10uHJ3qBd7JemVmfRXWeXgeUzsCTsVk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmX-qGFeASP5rqWbK9dx2qpyqPZWDjfuhDFOYiiJJhZ-r-KwKTHG8nNITIEBpYCV-hngof2YIv8LrhhAzAQPHCfV0R3MRq126-Q3OSArf3cWr9hvTsk1ycBddT9JGytuZCEoE40aRZoVbOBMo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWn3btO1-WfaYIODeMtS7fYaWnjDJWvLliBBgyTWmhqVWpqj1oenjo5kQneDd2wcjj3lUHpMuWNLKkxOA3_ARfGsiOYHyJcKbCwWzDQnJutQP23AIxF8_amfaRmrNj9MvoA-rleTPtC2n1DXc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHZ47IChWAABfVDT8luL5Xbfb-Ca5Dl09fq2F6N0XtHapvIPI-J0ncGUu-xOl-1Bs6qOsHf6Mdrv93pnB9FLBGhed7-0hwv_coo5GoyRiUbroKZPGyvbDQVEwrVwHjiyuhyx6Q"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfk6Usy3WVMPH1CpkGtvX5VpWgUem6sxkJAWCcaLxt88uZ10gZKUaVPAscWMyC1u79AVhoOvXQHzneBEknV81b_k5Bz98ixh-MCOv3h-Gfmz5lAQinAK8LfU7w2TwfOX-RsJ8y"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHupAtfeQehniesPxdOKlhA5ie0rtuXZx6l_tVPrgkxPZUJt7aE57ug9J6JWF0WuChRnF-jeZLpMiFKq1EqdXqo3m7bXWZw5WdY1mRLxLaenhhZmGcDoKRgE0vh4Mx-e-G55pgXzyyIvvAI-s8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFkpl_qOIaS3TFYfatb-bbUAB0nEyAPAwuE_qXJyrERTvoRlFlwAphhORR0rNXZoo6mhiq3gJAOR1qLeRYB3qfeo4i-VCZVA_QuTN6ZHeP8qncEAcxdMViZsH8RI0kcWN-fXalwFH8agi8Jmo="
+        },
+        {
+          "title": "ClinicalTrials.gov: PAIR (Puncture, Aspiration, Injection, Re-aspiration) Monotherapy trials for Cystic echinococcosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cystic%20echinococcosis&intr=PAIR%20(Puncture%2C%20Aspiration%2C%20Injection%2C%20Re-aspiration)%20Monotherapy"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 12450
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 15563,
+        "costPerResponder": 14647,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Surgical Excision",
+          "costDifference": -20800,
+          "dominates": true,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "PAIR (Puncture, Aspiration, Injection, Re-aspiration) Monotherapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Local pain/discomfort",
+          "percentage": 15
+        },
+        {
+          "name": "Anaphylaxis (due to scolex spillage)",
+          "percentage": 3
+        },
+        {
+          "name": "Bile leakage",
+          "percentage": 1
+        },
+        {
+          "name": "Secondary infection",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate cyst drainage, clinical improvement within weeks, full resolution 6-12 months",
+      "treatmentDuration": "Single procedure (often followed by short course of albendazole, but not included in 'monotherapy' efficacy)",
+      "trials": 35
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFO0z-YGAj5A0VYLQUJRzr79sRGECPWYQbYQQ8RBzBH1zgiEJqhP_8JUEzzkfRPVlZTZFaNLRmYs234IeduKRhFljgSwhxQEjZmbkdDKEeCoD3cBKYwys7fRenN8CvKegosKtnQCQ5J_ZtNPJ8vtBqFODf0nRAUDN7k3qtTcrvtK1aFm7VT1W4zlBigMrPFIwmcMoRi6kdbcqSZ51WjMYMsXl-AYqVtAeAx00aPyOHChiJXqDH7fOMl3ou1Gv4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV-sVrHB_r7gMYdUFKRLAOr1bTFzrO5q2JO3J5vcFZvgcyOV-UVlEx02Y75uw-ShcuRnRGyyC50ZHxAC559iJz2xF6oQ6s3p4vx__zJB5IVNJa1kyjLb_fFx5hWbE0ypk7FfX_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFapoPiI_GO-Q0f6D23Ch9m2cm_VOmNu3MJbX1VtAW3j82U8pjOIejrzZTiwEUhgPi-jbePoHnVIvVZSZmPz6BS2qbOCdlXFyM98LlU_Fr4xPYs6R6guAj4j9qXqFChTnd_Mfkaf56rQjWWA0Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVsJ98qgGSNqYM8hS002BpqGodq96SOIKcG5ez4fR5osjV3Vz77KbYKrw91Tx5VN8N8bFSx0iFNEJTS54dslTZ4D0hjMKmUPSi1u_4q0T1Iemx-NguEUAeAse1tc5FjcRd_O9lPYFT"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNJIR044CKUixTW4S8aS4Yr92FYWJEJUWnGtZx1j_TIVxN9eStjiIhn7y_E8Q0mWCy3YJhI9m2eAPKKa0_nPP3c2zLY47otIKjpSoa0o4GNcCfeVxbyV0hsCQ6zOZJaziZ07jbmJMGoG5H2pV8hE-1J9o-zhxNAxMbQMR0RzcJHLLxe2FujFULR-6iUHFinr0-BDNpE2dLKmqG-SyOpaqNmc3fRms4NS6JFk-80uF-4ON1fYixAJOLr5U_LpTwPx6qJ8CaYM2geAgW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4DDS7iKJj8mlVQ6e_YUvSrEZKEK0vSGy4oEYl2qACVAduA2nvvCoYZ-aqUd6uHU1jhwirY-aepBkQBxfBXQ8iNB36N2oU2GlfCt4rA-7hwkWMJmtTNxvKuZaLVwAs-K5WXH6hm4nUvUNwY4vHitrGvL4jpFrHFlJgt_OXaq3krVlBIA9DkdAzLA0Vw37kPyMdzKFZqL4uHs_g1gT8P8Kj2OoApsohkBFr3oub"
+        },
+        {
+          "title": "benthamdirect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM400C7g5-UZSry_9YGK88rEwZZ-M4NHfgy4Rg_5zRLX92--GFApxddkn6bnufWJpvh5EuAFplsb0ABSbmfXcRIOvj26nq027SdCdYhRndXG5UGoD-rUWm5dcO5nnQqQcPEZISLh3QheVukNVzcWmMeaSKuTOWSWztFUE86TTQMKEofv_Qu8Gj5REvj7oFhX4="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLnJs1Xhew0oZbKUEn3yl25FpUO9403-cEGhKU5DQnrn1qb91JM07niFBhoGJe-5ANdg_zx093T8C0ZsM1Wi5efrTRb2zm1WqyDvd5IXWzNCisDXLO-WYuho77B9oO4hgITHhXBvMJTWalUY-qtsc0WVlvxxAvMvj3nQ6Grb1J-CeBViQv_pY_Nal9UKh0aPhdvQQs03472ThyzNDv-5r7tOjweMKo9Z5dbaQJbyMQifTl2DovfI-X5WwtGnwN_mA22LnTWWupoh5FTcn3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrLwlKhYdqrgQn7tSy8K4AcqORqMzf3Z_5s0t9ucW7DeJD_HKUTfGyE2qZwmB8enZSsnRmonTrKyijJmggZOEIdS7DSsfafsoP0yuFyC_uhEwdJI15oUDsUGF_sEG4lbHTvZoF"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9IzlAx5-1bFQtzthzlxBFKwwqEPXkstv9EIuFN0TfWzotT5etOmAj5NfRwy2wS4z4C_sxuye4J9rQ_WQVhobZn-fIbJNblF_cqKjNfYwgDOXfG2qbIdSPkjZ_5533bPfI8dNMGGqnDGP8bm1bLaX574RM2PQV9Tlv8w=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeSe6zytgvNWAdR4neUrLiguynAI0KW8Lg7WKbjROAX94IRxiRf3T-dHB71_4jZoIRxxufE44nwkXDblTQn95akvHu4DtDRK77l3MBjW0_iuQxM3ysbsh00kGdYCDik34Rzf_Po3COozW616aMYi8nWh7lUMv0QS5XoSLDkb469FxdTQA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHffZEkvQGvzSY0tNbFLPhfhlZX-ZpyTD7is1bqIqREUKU3AELQ5eLLqYBxIEJUu6N13Ve9vAqUbfGhx7eIgGX8cpp1KjoBKEdRvqygTV2CfGUJbV1jfBVu9lCZF7emFYBSeTLr7VYJbMgQv8c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Albendazole trials for Cystic echinococcosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cystic%20echinococcosis&intr=Albendazole"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "10-15 mg/kg/day in two divided doses (max 800 mg/day)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 3600,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 5600
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 16000,
+        "costPerResponder": 8000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Surgical Excision",
+          "costDifference": -27650,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Albendazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 35,
+      "responseRate": 70,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Elevated liver enzymes (transient)",
+          "percentage": 15
+        },
+        {
+          "name": "Gastrointestinal upset (nausea, pain)",
+          "percentage": 15
+        },
+        {
+          "name": "Leukopenia/Neutropenia",
+          "percentage": 8
+        },
+        {
+          "name": "Alopecia (reversible)",
+          "percentage": 5
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "3-6 months for initial response",
+      "treatmentDuration": "3-6 months, often in cycles (e.g., 28 days on, 14 days off), up to 2 years for complex cases",
+      "trials": 60
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoRhlFfyQRKehH_P87C6G3dkEFT0FxJCcYEtcPyo3tNng-vijTqwfUe5hNxScMIJ_jAJcdrI2xQDo2z_MBi571E8MurqQ5r3yLdoKNHqZ1UQdzSO1DyxvGyCgzRx98W1mUqxqi"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFJYySluj6aAVmAYNxR5GevpukHu1OWszmk4Ms_OSGpijlhpGFu0oVPIbTpvWGJcOWTtq_wOykPvVpxGDl71vhR7nVuZU5udjK51CidUQDezlOG0BJnrNJcABRhNZTkwNoIUI3le7XeRGx11join8lxaEDsdKV3y2rCQ=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNKnzo-bW2YdVFw9cei3kyMjMeNjzuksj_ZkyQavC110Ojh0AVb5vvBdH-vPbFWZa-GWGALpRqSzYVqvHQib8PyHSfVtbZR4-in0zu-pKEzTjIFwYGok2fZo8RmovjytzrjDh792_2xJcGlUyBh1Je5PxxgHqSz639VwGkkPAVW7xLYEY="
+        },
+        {
+          "title": "d-nb.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDHMfAukx1mi3d5g3PmG49M2zfXTDmheu5gfLhBF6pFmvPAK-o_cRb0kZNAdyPFfUw6TE738CT6LPAuG4vOJTM0Vg5iWlIMVK8sZMSHOzxkqVoWf-2-uqY4yU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5UyM_rjst49r5t7UxRjMR8OMavfY842v235fR6B9AaL-kNBE6mIZVXZ3zGZYlPBy8_3XwdPY16E9HqGLgfguMgS08wJtQ3bCkr3hgoJYjqNDexQ7FFZ-Zw_DoR0mPbiMqa6F4aJBfjvklUuGSLLdooL5UdBk4dNDivbhJYdX8m4bJzMCxnUeLemHOMgSssz8GpogHImMvdcyIiQAXLIP6wHIqCheiIpNw8mAurzfr-N295vN65UtgD_jCyYQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwGVEUvLoesORsAMf9Pid64UZ6yrWmORhJaUToGXhxPe4P2oo8Q2MEMWLxVEJMJpVXBK9Fq3_IM3oBjjXtd6hJWT-gtNItWZKtNBnFOMxtRIXxmhkSCEDQdHw1XAVz0dIe_cy3"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyanbmCj9oUr7zB86Hu8fLmjGZh8YqWFeTw6Uui2ofcUpQNJEVPD2sXb8h49yPDn_2gQZU-Gr1FKq0_OFDJAQb_foEgSQMpJoXeY9iorEgm_WeRP4CANtQ9eMYjDWoesmRTOlFiO-Msggbomy9TmwkHD-wZHjLCEGvrd1bUnAIY688pzF2dTV06M_sclWmlA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mebendazole trials for Cystic echinococcosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cystic%20echinococcosis&intr=Mebendazole"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "40-50 mg/kg/day in 3 divided doses",
+      "effectiveness": 45,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2400,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 3600
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 24000,
+        "costPerResponder": 8000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": null,
+        "vsComparator": {
+          "comparatorName": "Albendazole",
+          "costDifference": -2000,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Mebendazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 45,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "3-6 months or longer, continuous treatment",
+      "trials": 20
+    }
+  ]
+}

@@ -1,0 +1,1055 @@
+{
+  "conditionName": "Polycystic Ovary Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:04:04.241Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgi5iW9lAEA-yBOwInJum2HA2JnxCNOy5rW7WctlHQPpyj7zNGWeO_3fJVwrH6tbEgCbtakEpW4Jxa3AGRGDtudjtkuBYAH_R_r0h3U-9xyPWJllB19Um9Qp4z7AMG44cbsUuZCOAQpfjjdbFW1hGrHM1GI_lQdI-0JAwbQuoe6AP_pxLwIpRlkonsLnRtmXY="
+        },
+        {
+          "title": "monash.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnPRyVZA6k5ihNiDitdTI2CQN2IBekO-r6LxeE8lymUd_bpf_QO6_vQzESJkPWuQxgt4dtYGCRahfB7QeE_5roy16VwZqfQ5EhrXHEUKi-reOsByjkx35wX4jfGu_ndVElK7ay4H6JMMg6y7oMGG3P7kp_0QG3u8enEjeUzVXoYhXV-KFp35aNMc1UaSgyW5DK1qODlNs48dU8KMWHFEstcdgCMMJp2A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpwRmTD6KGTlkwY8a-wFaRbg-4xhbXCp_uxtKdmRNAvNK_CpliZQzhB0YjslzO2rnp6QYzNgKPeQVkpW2wJb7t2Ir20b9KnPcyTQgw3QLYIFJeNrHSuAp9MtfpPBgvjOHTYro="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4QkR0zys7RHy9EI4jQQl3BJBF1Dz9OhEZDunPYf85va9UYLVIKkfNqVEE74v_qCdiXuhY8Nw5HpYsx_bYmLZUstUC65FoF-kDnkDW3zb7-Jgi4BmJVZHl7yOSbPmHiZKtNpM="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9CS0hPHTnZli8GOeSNsMFRzPp-nHYzVkow0RCc6SyhqCexnhLhayaOxDw5CZMwboZi-_FM2S5eACo7ULJYZRzX7mT5kRHVfjwsovoPbH5E86OuQ45xcanPq5AZMm422SD1PKPEQPQXiv7Q1fYHQAjDw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-Uw55AfA4lebMWvZc6WbdKxfrg5r9-8jk8fxCn-NVbNhxkUle7Sr5bD4Tz3tiUTFgGaZpJPCwxUV8qxdf7ZhQb0C2m7554R39UQLLb_L65q72P5C0AC6-joEF8m864Ptw"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_ELSt5ekM3k2bio1Z8PiEmCWqNK3s2_7e3Db5bGq9poQICJ8fNjts27XnprvPVR1OlW01x8XUw_lCOi88oTnmw4IXO7G-UYtTsw5HI-haF9lswx5Bqg_aDgR0e1BgssZqQYUqM5yIhjSvyVY_iZcsib7yC6QtaDnj1hQ0JJuHitgr8DkxLl_YNC6Ual7V0mynDYJA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF43_R69bKZpuQCvv7CELHHzNjbHiCeXNkvrpX0eUU9NUKChInRQiyqLqD1E9QDcjSE_AzrNJ_2J6aLCnyAAhj4yL7K521U4LxOneMAaK1e4WGIZwnVhEhQrjze30qT2RoRS-Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3O3lx17fnCWQ6DfjIYp516CeUwT8lJMvDhr8TKf1a6CzxuXnVOxhb2zKYGQzOHkDlJo_BMM0eIn2fGYH9RcSnbQBUKpYgMEqAWM8OwC3ADny1Xajt8WylB5zlTEF82vxKWzQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbWsg9aHpUtJvuumoaXv4z1l8u3DrEWR141XZZmNWFe204mfpQkZ1ssc-MPYyiqNRdyS0sW5H5haxWxoPRGKi883FPceG-3TihAtyzqIc54AM1G9iPtlzqZOcEQzDAceWCo7x7YbWTHH0b2LJpvFiGqGEhaRDIGjQsBFSC6jGKqlNnISfhcuIUyzZsj_o7sOYRqL42gZJX_8lb_5nWyn8Z4QKQ5SXJ5qArrlLMYivvtrAn5Hte1nm4e-6uR8fh3OxXTomlrnETMFiov1aZErVbxboDJLQ7Etx_kR50UgFOaezS4HRXLoiiy8hiKTkQNXiCgiSwiQYXyK1J_hwbSaTOC1fp"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3NhS2QkkX0Jze9_KJxWZq7xl_8xoh6EJeFrCkgaj2dbzsigwn3IN0JBjI6KDgFUxdABeVIh81X5nMvXfJ6k_DYpDbe0QIc2ePWJ_Bk1zPX-lLKi4TlLtmi-HJqFdhsLAFRKR5gg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk3yyeBs59yJql7BJuc1qofOEgX843e12LN2nCTArT439od-OzREOCtm3aWSiuL7gcgm35z2vsf9jIzJl824GMqf6O8XfCnFBTm73IonWRUoR1Chdz0xtCZDqKaBTEL7923QE="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn6bxTY5J6P4-HkVBDvJFEkRQX7L8gYJRKt3jx5oYQRuIVBdJ0WB0IeTVwStn8cy1XEdfoTUgZfjQ88o5gQC51jFHWRst-EAr892fd6x7xS0z94RPpzhqPkkqMDA0BWGgjU8feJzf6iqhsV6xi2bLlTrsCtbl8xkPkB961Q5p5DKfAXefimMko8laBCAcMa3rlgt_iH08Hmw=="
+        },
+        {
+          "title": "ugr.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNZVKqCdvkCPwo74o0bP3XKEXcNEk-XMQxJb2nCo_ezoKfQJ4ouSZPkz2vxD23C99wnmx4EB1HYKZ2sRuubBAD2TVx-idgZQs9n2Ttnzon6Sw_FnAD9lLpohZLobykHsVZ2CikiN0i3cGI02YCb01ZGLjBByGMZiPIjZ66t85mUREfQv04ew8W_A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lifestyle Modifications (Diet & Exercise) trials for Polycystic Ovary Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Polycystic%20Ovary%20Syndrome&intr=Lifestyle%20Modifications%20(Diet%20%26%20Exercise)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "30-60 minutes moderate exercise most days; balanced diet",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2500,
+        "costPerResponder": 714,
+        "icer": 0,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": null
+      },
+      "name": "Lifestyle Modifications (Diet & Exercise)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6.3 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-1.0 ng/dL",
+          "baseline": "5 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Testosterone",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "3.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HOMA-IR",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "18/36",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ferriman-Gallwey Score",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-22.5 mg/dL",
+          "baseline": "150 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "+0.5 points",
+          "baseline": "4.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PCOS Quality of Life Scale (PCOSQ)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "15/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PHQ-9 Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7.8 mmHg",
+          "baseline": "130 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 15
+        },
+        {
+          "name": "Increased hunger",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "lifetime",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1aCk-nbooVDs9gGmp2Kp4ZooOnx-8w3-yfbALKi-uSCD3gW3Xs5gh19hAcP3BexeZC_spJeOSjfx5QVa0KBoGNRWQf-j_-kMPT2sDRAmHRlY8yZ4pfTLeoEhR87hj-9DpkX3-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx7BhyuijBiMMMe_Ej7Ubyt7oBM_6p9-tIN3MbDXCI0xSRT55ya2SuzmqfzxP6fyxHqB_UJKpNaZWOputq9ya4B6RVqQyDDC4CCaGuq6f2v6dPRixifCAqjIEoij6ZOBksPRAk3vwjuASH0Bxf"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYUavxEWCcc_4Y678POHIcq2uAaaSsiCWG_eMO11wteSg9B2i-ODaCf0E2NoAPsIZi4JvVyCsE839GO4118HELI45cDq-0-B5HSHN3_NY75pChIDBttU-3as0GPx8FN6Sm5H-bQA6eWff7xiuFPWs7O5M3OGroXgWBwW3KNgRSAgh_QPWATnekj7b29wRg0WkcY_pVsT8KiYEmNE-jcq6as5P2B8OdOTWvk_UmQYMoj39NJyI2JWfyU-o6p7iwcj-uQkBtaN9MX_ApU_VgOD55G4lznNsiEXfH_U6DIbtyrwZ7Qrgs_BZ8DKnGa3fbPLMFabZUIQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKAldgVkzfjDfyNLEPQoLf4BG2KjKANpBjJ1d8C3RxWRq10pCBejjqHVQbYX2MYaZCBtEGOZ9ML4hzcSlae4ddvDAVRG33QKMw9W9vqeeraLSp6ydY-WHZYPU-stM0xNaYPizZFZErlxY86wMHLa1BRTwH6N5txc248jSd-HyvFPT-1Krq3alp07Fj1l4UhfUtg_GAhzXbAh6jzegIx1cg6IrCPRKQ2VM8WIi_-MsTVpJ-kx6_JuHu50etO4Kq6QiHYsEOF2L7RBi5dqMi7KITsaGr4JUK67SUH8mknhvIiF0WFd2Fl38o14q9gpeMe51E1SbdDXGGisIi6XBVJpg-3VfE_M4lcCtdNsN3ikn7-df6Db91oslvXUejWkVeDJn1sGBAbFc="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFua3nn90MR7qDosu_1W8K0jHoTgvR4_hGbkHoLQ4st-8xORJgvXl2ckC_49880519ogQW1aVVPMl80VlVmOHt1maJ_Tm-tqc10_CvcGmZUy0ea0aJXKoVt-4633JoVA1FPrLb5JIQwMT1Kn81wfq8nSKeq"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvj0JbBJ7GgOvv3gSV9ilv42Znx5hmjScnHmiwNoZRf6nlvFEuiqCjZso65IcUi9hpOAlr8X3Jhhw-4hLZp5QI1gu63KxnJLgSqgrgJN7uhkqbe6I0DVR9_taL4XcEcRfFJdGtNiE3jUpU1kdbUCPoT_M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ5I8faXQooNSkjvYcsDIF5jdT1rpp2OKIwt0knpeK9DW1Ls3XilK2pqP7gM-f_iPJs7bPT9IQlYMBnS7Lnl4EWunIVX7CUYshBUdHz6UEGXfARXnW3pxP7J0KMymU7HwM58PrDLxOjX97QyF2"
+        },
+        {
+          "title": "researchprotocols.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBqPacELTgNkFRMifwHeEKznd3ALBrCmtTIT5Lc5_hdvOIBtHVmmB7_yNWpu8pZFHxqwZ0qMVC7pDtYoJTmqPj4Do2xIWJPZZxD_B_SWbfh8h45mAUa_zr7wDvQzeJJLlnLp4S_ecP8VU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJOMKCCejfM6zvmyVCPjgRWxYIVt_l9sKhUI7b-ejmiZmIs4L3HhvQ2CxxIjG9qnC6w7A11rSKt9SDe2cAsH-qCW1G5IpoGi6ZXvBfy1U7BSC2Qm0TX4Wiw8KI-Jt1CBzCtL5a"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmNfbZfShEuXbTXqaACJEdcXkVgKBFzL42kmjlykGnMj-I88qxnMPBitjAOS9Fl35-wOp7_CwjFeR-pz3XHmr-Lqt3m-zNUNBdmJ3xrJw1BUrvZPUH4EkeoMIEauXkwbRo0Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Combined Oral Contraceptives (COCs) trials for Polycystic Ovary Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Polycystic%20Ovary%20Syndrome&intr=Combined%20Oral%20Contraceptives%20(COCs)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "standard low-dose combined pill daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 75,
+          "sideEffectManagement": 50,
+          "totalAnnual": 325
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 382,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Combined Oral Contraceptives (COCs)",
+      "nnh": 10000,
+      "nnt": 2,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "18/36 points (Ferriman-Gallwey scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hirsutism Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-30 pg/mL",
+          "baseline": "50 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Testosterone",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "3.0/5.0 (Investigator's Global Assessment scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acne Severity",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+8 cycles/year",
+          "baseline": "4 cycles/year (oligomenorrhea)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Cycle Frequency",
+          "percentageChange": 200
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "50/100 points (lower score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PCOS Quality of Life Scale (PCOSQ) total score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-100 ng/dL",
+          "baseline": "250 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Androstenedione",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 7
+        },
+        {
+          "name": "Venous Thromboembolism (VTE)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "long-term",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpl5s40x4z00AS9jpCkRsIZZTxN2Ye4txFuAooJZ3V9ORMEkC12o8AJScss1jfQ47gUeKXdyFxS-6pX3EVsOnyHDD9Io0vhnP6w_9QGo7h27BDqwzr3cQqYxgybKIINlbSHe7lHylQbeeYrFHri3Ms1FJovNYXiWxJLZHGe4r-bHo4CYCHdhNeKOzH4Wz4kz2KSUiKcyfTj_1Z6DHe943p6XVImlCDim80DDrqfqwcMd1-qI7rxGI="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA7xsC6SQTEZmewPpOfYuq6Zc8lawh6jcAIPj_F7s1YXT9VXS7OOvJc9m-iC8z7UJUqcMHD0emk53bq1HTv4Udkp8EKRjdD4QGfezFYNCJqU2sERgWKwyIWIkw4p-YxdqMC86BT0tCzXujlprp3Jc8ty0SQTIL5dPaQFU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH9ZqHciJ0EkXPutyEGkf--0HY7ZA3MK7i8Wo9_1Xq_Ex_jbOTuy32MnqL0USXxZ8BAFSPIgBcxUToWtfa0xptVdPgjAvdrmKpvN1UwmTOmKYyHuI5JlAZiJruh5nWzfiDhTX0ER62F-j9Qg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaFLfGTv4LLiNmkAvjatThfxDSFONp9D8Pvr8AVj8bVO7iC8t3zElmLwlAWJNWZ3TO4C3TQVeMFlf5iVtQ9iwByTxJGWjmHWo1GjeMt5JZJQfwb6LM8V1_8YcwZJhAPpsDrkqJRfSYXH9A"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFc6tEmBwJlxOvcDo14sKfugvVUPYQpbLA9GUA4Ec21rSP8eL8XHOiJkfw2Ek0Dxwc0d59ItvL6Rdle3VwA6WbekI9gYtM0mYsQFgoQkP-Bdq61vAQtSFBiuWhjloD24vlhicO9JZ9WTpS-5f2DhUWv5vdylPCG-uj_BK8JV5u93lyYljQset5PEz1p25auNy8w_Zf7vI5ZBxEp2OwuFef0AYXIb2BW1MbPkb_Il4MKgnvtpFGS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7-YN_H1OU9_42u04fSsIoRl2WT7crRKLo76ak2g1ea2CxJ5JcFGzPZoeD-gL81KyscvvjHfI8QyfzFr8MLs7MZwYsHXO150jChCHjZ73YezIRr_dP7w-ePwwlcWSXHt0U8Pk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiNyOxLvrm9C05KZV48g43Q5dmZPtWZD8w6l9O6aO0HkUd4_DHjU5Y1p67rpnM3n9mhIucuKyqw_zcgmymVzrpKGlHltniFRDlHEZCfhE8LAVbiH_ExvyJd7-IFpU6m4Fe_g4_wh63IwJTCA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxw1A5azaIVAiw_d9FThhpT7-QijmrGaZY8BcqSbuvr_U9iEBNpA-qrlVbaYtsUTmUnVLKDsA9Y2ylErKqdE_yjljhnGz00ip9J0YYAMGZIwGiqbbJ-bMbJeMO7umnlR8n21I="
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEK628DfJ64tt7ERwgahXP0cmU9IheQAPCwjBjyghGy5nxIizhfscKXg3hnwPJurwlRvH5DIXgz2psgmq1WIWmwtZntkfk34Vv_eP00HVoVFA61MyklkaxFgn9yOVv5Eup3bZIsQCVwE84rBhR9YhaHvHsB8VLsReHYt7Z21F9zO_cAUWYKCpQgIGPEGz5LRkq3CX8="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqUNFjFH3xtwCzj1bpfCLOxpqMwkHXQSgicaLZ4AZjBxs9oTXnNtXRrDLvy2XJofNmzo5Tf0DKXhII3e4-wSR75ycgpx6EU4QkamnafwlLjAisOlmphHqHgUZktVSFUKEH2FTuT8Jq-rAtn_VBLV9SGuWGUDa2Co6EjV8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metformin trials for Polycystic Ovary Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Polycystic%20Ovary%20Syndrome&intr=Metformin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1500-2000mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 275
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2750,
+        "costPerResponder": 458,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Metformin",
+      "nnh": 10000,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-30 days",
+          "baseline": "90 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Inter-Menstrual Interval",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "18 points (scale 0-36)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hirsutism Score (Ferriman-Gallwey)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-5 µIU/mL",
+          "baseline": "20 µIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Insulin",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.9 ng/dL",
+          "baseline": "4.5 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Testosterone",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 60,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 kg/m²",
+          "baseline": "32 kg/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": -3
+        },
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "3 (on a 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acne Severity Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.0",
+          "baseline": "4.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HOMA-IR",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-18 mg/dL",
+          "baseline": "180 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Abdominal discomfort",
+          "percentage": 15
+        },
+        {
+          "name": "Vitamin B12 deficiency",
+          "percentage": 8
+        },
+        {
+          "name": "Lactic acidosis",
+          "percentage": 0.001
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "long-term",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr8vfw5Pb0gCVvfaGXhVFQNNrfbjGHktH0Z5ThF0XMJP0nT_zY44CFkVp6mks70Oc2BUEbWdW1I84ZjzDggn2vpcQgLeK4x9CjZcrzGDeYAlGWYHsdmPZi7bdD8ubM1U6-5kHZ"
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ayEZtTjbsg77XS_5db8TK2Jv6bYsbBwJ5Lw4Kko0rmV_QfhlGthskHBpH4p3Dz9jSNA9lz2V98kdscdfJxGpJn0vQN4fvN-WB4pelsRcbxgt9kUrHo6IoAAeEw_WpvCuIvYVZQiW5uYeUtlduci0DG1X5k9g2y2QqXq-2sU5CRBZDAFP6j-pYkXK-CEgBWTvHO3re0gFV2Wr9t3A"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER9jkDmPJm6ISLbEpmA91XfZTRZJD-uutOlnoA38SSagWsnDb_ZDnwwqNaVTtRLsKcd_5H9vIB_-g99Pvdi6d_GcFxIR6IBgUEkbvVh8ifAilymdRn0o4HKVL3dGwV7G9r0gtVriMrnyswOsZw"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLS_aFzBQvPL1FLusUo5Qd2qY0zq_qrhricofw7fSEsIbZpHEvJmcfS6sGL6BqRooKy9mK3Pf8qahi6fhkJFf9IrWWUmQ7gl8ubhnYmkVe7KAg1nctTECBhWcyo25_IzrrvQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtXUd1_y8MWiSUvycQxiFsp3oShaM8V6n5KLbKmyvS8FZ5JSM0vk4rzRP-EdP4e87Te-I6qXGMnok4pu1vS9hlKCJHD2Lt0jRC0HDnZRKzzdac4YRVnou0XvGUNcPlEscE7g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYqxrUCBuzRcvJEEhfGvde9w5OKT0aA8eoMlkpuv7Qug_D8gKRi25kxmgPYsp-vNm9Vum7abBiW12WIFQFA-l-j69Vc0Qa_aCiEtVtjjQBC09eHhfmQBiDxr1HzWuFKJXF93d0"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIfCNN_mR29XVoD3XMxVAvfAZF1DzKXd39Dl6qmLfmI0WxtQET2lJ_kLsxZtsAgZVWkttDpb4v-sltPuCVk98CEJ3ooS8wCkQCNKJjZOidfLQ_DgCc9L1XVybDXTleLFaLWYY-nBHM1tBn4F_oUIryu8lIQXEbS6Eg4a8VHnJGVSdYF8M7wrHAGocNCV_Vjz1mUMwMRnJOZpEtFG8g34db5UXcSFb7sg4="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh4p36Hj8o7vZPL6y1KRxeZx4lQvHG5d9OwVbUkWbdbO-pFSkOtcCAu9Twa4-qGDRdzV4hokDeKwSdz8mskmDo17HIUWNnQX-QxIcqhSBn3ypDBCGRpBsLv9bPJPQMXgS_7xsPMJd1WVPVfYXwM6i596wwQkzVftM-fq3mNps4z74m"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlTZO42QjmOSTTyEdkHT5bAjnSOSw-Mmwe4Q621gTWKfDqeHG0sYdGUFaFXTOzmq67m0pgV_Z6m_WRgUfp3_fejhY7gRMPqQXj6ZX-sfxvqjLiabHXqg0kuabsQ15ZqhNWhLLnK9hknT3GZtRAVVC4BG1qVsRIHgTxc2MvDpidRXs9QYAXgUkMCf-TjdTINqj4CQRXFp7PkenzTzn1wkLOifT3jJIMi4JRu-nFFji4Ij-yeGvUq6XR3uAZ4Gs0qkf9OXjjwq24C_0OOOGtdnEud0Qt6HYPfHmjQZr1aLqg"
+        },
+        {
+          "title": "obgproject.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmABKqMTrh7R5X-lfvvYQxKBMcV7Rsm1u-pso_tJ5MMcAMz5AdhYPg-Vs_CtUwp9OtLbxyFcrJL6mCSVWKB-wez2nW3hXSNE2GbIHjZwunGcXv8U62CPRLqbxbNnIZRtz3tvjeGyJsOYc-DXjXWa0zbMw9uQ7FNbzKpCnsz4wDzE91gxXGYV5cQ4ycBRicz6juLVVW_p2gorV6ya2315AF9-bol_CuimjDoLdfMu635dOY50imEnA="
+        },
+        {
+          "title": "ebsco.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSdKB8HlQxLaNsLr_6le3Y_WBLl1aM5BPrv_vgN6Lz9Lprz8t8wF9yoaGoIxyPsvKhyCnZJVyeOGh8AQ2ZOnyeo9-2w3gh8eLYAl6sG2TlehVB2UCYoO1ltTwwjUfTpbGxiLE9tH7heJxxjT3D9_xP83WD6hNWMJxl8r11cEQxtrWZAWgYM3rw6SapD5bh5rspUi6YPjN0NbyK7_Ky2BWJ-ikQBRuPgP-Z_ikIa114WbcRnwVY2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMz-Y2eeAjmDM-bzZSF4xOescvC_sdTk8OhI1LBwFDy0cg1IV8K2hSgts3R_dJkR0gYWO3dPbG09RDUUXP4wySJwQilUe9xZF8gtRdJbo91QiFEVN0XNL8iJwFCDoh5jySDg8JYcKsP927wbK4"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlkKsAiv8UMKV87zSDlHA8Z6L51_9wib9nSRUw1hzBOJy72D44d8ddFANSBZ_Z9xYFnD6l86i2YCTahXhEbIhn9WAG7CX4ZY5NA2YQ66hGZISDH4gsjbjaIX61KHXFuTzTyUCW1vmnEvUbn3ikAPEC_gtTRETWAbENRnCqpl9LmlWT"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzQ5ACCrq6SoHecXIrl3gqc-Kn6AffqltJBU9GWNvVb4qU9HzSNuutxNXeDm-xXR0AuTezXD_OadCbbc5w0bD9ETnilSnAYu8mmPMSawQzaJP4Rha0wsYN1MNt1GHsr5YyyUV1aA6SYty4maDAWDrAAeVThcw3IMptHDXZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG85JNaKb6g-yrOmAH3tuZ6M762gx3EhoWcFq02aPFJfSmYCHOIQ_g41_DPXIGhDpZ6dliKoh7UyiUO0hWfxj-qiygTCnFk12I01ZqfsEo3GDIlzgo8tFv0boyWNKaPqUpZcESrCJstCPe93tAMVzI4J7limVUaPO8xsXf7KI1W91LK7PPVyaS18QndhsV7oHPxEgH8h5kiDTIm2P6jYlLLmLGxh1GWsEb1Vni71TuqCJBgK96zU9ncgsutjUZerk4LCaqnfGqSo5l_mGZYVu7B4dxDm6uHwrXthpIksv4IsCmZF3KB7bRknrdb3fxOsv25A2TFsove3hLSGf1bnNoNLXV7e3LZ_NPir6hfrFiiokAlYbxdHhG2BeYw_9U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_0s6OKYvJZzVUpJJsoadS6aZoLaJ5eSRDVrJHLtRNoz4jTUzqblabNoyvD6TCN1f1geOCkRiHMLM__TXCG9__0u3rQNS_D_EN21gByczSalV6FLW9WgljWu4i0HuZx6zvbl8a"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoHWvtwyfdo-J-oIdSZL75uC9Vt0pToCEOEgmsgu8euDibKl-ZLu-EC0Lqigc2QA9C4Arb1NV_47xjLDmQHUDFL3ZbL2bsuBqAxmL1DSSifrSldhdWFFFhzqV95JT3Wa6MMq_onpod-yu5DEhcu0cOof4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Letrozole (for Ovulation Induction) trials for Polycystic Ovary Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Polycystic%20Ovary%20Syndrome&intr=Letrozole%20(for%20Ovulation%20Induction)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "2.5-7.5mg daily for 5 days per cycle",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 750,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1428,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Clomiphene Citrate",
+          "costDifference": 0,
+          "dominates": true,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Letrozole (for Ovulation Induction)",
+      "nnh": 30,
+      "nnt": 4,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+65 percentage points (e.g., from 5% to 70%)",
+          "baseline": "5% (spontaneous ovulation rate in anovulatory PCOS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ovulation Rate per Treatment Cycle",
+          "percentageChange": 1300
+        },
+        {
+          "absoluteChange": "+20 percentage points (e.g., from 10% to 30%)",
+          "baseline": "10% (untreated anovulatory PCOS over similar timeframes)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Live Birth Rate per Patient (within 6 cycles)",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+30 percentage points (e.g., from 15% to 45%)",
+          "baseline": "15% (untreated anovulatory PCOS over similar timeframes)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Pregnancy Rate per Patient (within 6 cycles)",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-9 ng/dL",
+          "baseline": "60 ng/dL (typical elevated value in PCOS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Total Testosterone",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "15/36 (moderate hirsutism)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ferriman-Gallwey Score (Hirsutism)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+3 mm (e.g., from 5 mm to 8 mm)",
+          "baseline": "5 mm (early proliferative phase)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endometrial Thickness (mid-cycle)",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "60/100 (lower QoL due to infertility/PCOS symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PCOS Health-Related Quality of Life (PCOS-QoL) Score",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 25
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Multiple gestation",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 menstrual cycles",
+      "treatmentDuration": "3-6 cycles",
+      "trials": 28
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjZ8EotdLOPFd9gXZzefAZ_UgdYi00A7JmuKOtxOxe_86cvZpzJ8UjJcC1Y2Bz1eJfsM9S1fpEv-V-7xaXSYGjVLyT-PSIrrJLqXmfdlOkQpFt8x1_hz7mjLOz-Crhg3Dp6aU6bV_8a0X2Xt6W"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-il6b4dDnWOVvrELbhfP0okS65mInxokdiFge40NhXCOAcl7G0A5Egs7eojEhtyS_sJSY0Rihq2E9qUNmWWyctP4rhYaYy8n83zcCrc46-wzD2rqoMgAWV9vkwdddBfi92C0MQU6XAbpv0RCJYGX4I1GH1rOMPeFYOPW_s91ikF8Jhk2Ma-JsBcdlisY1sbMCzOdZ85NpshLh5T88sq0iAZvGiLvWjUOaGN3-5H8SoGQkDTy0occLq1Cavobei3zucHnX8AkDdr5S8-RKsCMIF3q7Ts65Gezf2Z5FUJuSKGIU_qmCgZ4YPabaybI_CmYkVJQPZJMBgGo2SVSUoD_M27gpzQumX5W9-Wiim3hx8z0WSyr4buBnEtfojKAc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN-53CeRFkRyWkE5vKw3jQ6wGUMBZJEcB3G_eA-mOx7OOTXz3f8QQcbS_phHlTbqYhI8XyulS07ckKsujogzYPl1mosl8ZjyJDRJ6VI6UfPa6Z-YUteD1DG3qfJTl-U2DlMcs2XX5JNRuSQTk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-9et_BLpqtgulK22SSSFegN2T1Te9NV-aYe6wK9pgPCtlc1qy9UbimLMf-VDJnuhOEkh0r6dFtIgy9ZNqu2XQxltHVtCFUMtIGNWtjYbeUy06rt0ZW55ziFyVaD_g5ZO038EU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8CI8hsFc_bLzpgISxSyKnINRJVUOo5MC0XzTRPiaV7I0lI2x1DBEHeegLz1hn96BPg-Qe-cuQ51TIOeysdBR13JBFwoHjduGFeXFwWfMHHMYeHpeya9ErU9HkAdn8ZWbeKFIskHV_19-UF1T3sv-9yQrFEABDYDX4A8AMov_FL7BIa91m0RtELurEli3oFpSnvbNS8U3ocXIu1SbQnUKchTxUE11zuOPmIW4VlZRQWzV2dorY15-XRkj1KQJ3tRE6jWgBNfG3FJqqGJfMBRXHIyNf"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsR-nRm_SIyMY1cHnCEmWSuvNTAMNp_o6h6gy0c8Rp3hdcwQhAs0FudwxOiWBYzneF0fxWSknuAvpoeGVnz_mfzbbGUqHmxM3_yym5coBH8Njs5L25S-Zk7o8r-DuXflD7lNlyhmVT4n2PtnvY1dH-KP8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNZyjc4PbPE8TqJfz8ra8L2k0Z2WrFuMMYpkh9m6H2-e0n_UvAqYQYYfysBu9o_vFRKvtzK1Gf1dsx_whetLIXneeWRevGZFBDNVnfvYdzvRm1oxePx0K3IrhLzydUTkHJPXI6"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkSTaUj4AYZLfNxn_6UHHGt26dvWXqt4bP57bNU5Ia6ZzlDNHRcf4qzVKrxpsSCV3GAY8_Q13yJf0xj_t1FxGCdqsr2NbBLQfDqBlRJS9FhbMBAdEQhp3cJH3LRPgQ9bslLZOgVCI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHS1j_I-twBAwHGrVIgN6Y7UE-O3p1ablh0OQP4SsgFN3oCTjaHZNeZ06oIqpeaV6qroZRWZBlaJUMyDxnAqXAdy5ivWSqSY7f_V8RYQChsesSUAKlUMEey2TW8HoiSSq58Sj_EK61q-fyPrMb4gMopMqib6aw6JFNZCftyP1W-CaCwKwHZW-iqdBMmva49drqFxrQ-BJOtItdZD0ULqxFwc3yNsgwM5--PzydXi-qs8qiqXaJZex3yjSUl8Inndef9uRov_03ILezhY1T5A6n4ZHN5q2Pojwc_usUjiNvfqCzhppDlbiWrudqn5NFQhb4J763XI6-KcNb4GKUMRHj31CdHQovK70S6ow="
+        },
+        {
+          "title": "ClinicalTrials.gov: Clomiphene Citrate (for Ovulation Induction) trials for Polycystic Ovary Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Polycystic%20Ovary%20Syndrome&intr=Clomiphene%20Citrate%20(for%20Ovulation%20Induction)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "50-150mg daily for 5 days per cycle",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 750,
+          "sideEffectManagement": 50,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.65,
+        "vsComparator": null
+      },
+      "name": "Clomiphene Citrate (for Ovulation Induction)",
+      "nnh": 15,
+      "nnt": 6,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+65 percentage points (from 5% to 70%)",
+          "baseline": "5% (natural ovulation rate in untreated anovulatory PCOS women)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ovulation Rate per Treatment Cycle",
+          "percentageChange": 1300
+        },
+        {
+          "absoluteChange": "+23 percentage points (from 2% to 25%)",
+          "baseline": "2% (natural pregnancy rate in untreated anovulatory PCOS women)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Pregnancy Rate per Couple (cumulative over 3-6 cycles)",
+          "percentageChange": 1150
+        },
+        {
+          "absoluteChange": "+17 percentage points (from 1% to 18%)",
+          "baseline": "1% (natural live birth rate in untreated anovulatory PCOS women)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Live Birth Rate per Couple (cumulative over 3-6 cycles)",
+          "percentageChange": 1700
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 cycles/year (from 2 to 6 cycles)",
+          "baseline": "2 cycles/year (typical for oligomenorrhea/amenorrhea in PCOS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Menstrual Cycles per Year",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "50 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PCOS Health-Related Quality of Life (PCOS-QOL scale, 0-100 points)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hot flashes",
+          "percentage": 30
+        },
+        {
+          "name": "Ovarian enlargement",
+          "percentage": 8
+        },
+        {
+          "name": "Multiple gestation",
+          "percentage": 8
+        },
+        {
+          "name": "Visual disturbances",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 menstrual cycles",
+      "treatmentDuration": "3-6 cycles",
+      "trials": 45
+    },
+    {
+      "citations": [
+        {
+          "title": "healthmatch.io",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYEU6iTizqMwOBk9jeoZiRYlv2kuVz9esydSrbvWWemQPCP3vQb1t5BCRVE1C-Meqbo7PxIihASM8CXKfvsA7GrLfFJuSpeRWSrENNp4AKWSmOPW-H-d4Eo5MFOiHmK6yDZrX2FGVemnmhFzYO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGf9aPatfxC4dlKD_bpMR0i1kFrf7vZy38WB8xTs5d0oG2qFqsXFLKKSNbKbxC1AGzOmIqJ62CAjEwi78HtB_Dl2s9CPZEI8ZVgIvZ5_MWsSprdBOYNh2TxzJsp4lATS-A4ERnHq4_o--h36uyDQ3b657sak6yXfGjkqgYNDiDsAJqgQvg8hHS0hTFTrU9r52tR-V1Zi_FgPCUU4dnRBYyegC4WIw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlsQ8MDcgbGjmH6hBDaiy8352B-Ey-mwVGpA97ntaj13IOdA-Sk49ijcw5u1KqFezZHXMhFflmm-0kLobK0uKM9gmKz5hvhiy_CtXQnN8Gwg3-q89LspaU1JaqUTKzk1Ph3yN_VVLrP029RxjtAQ_yV22kluGk8XlXQSf_hVw_fVBk25Hj30r8zBDNVHynEuol5-zoAQA1-9Gd3RpctCL0dqZSbNsdLbuS_F3Xn-Z2vp7b8d-Kq7D1DhOAtWA26T0_cpENFYO5zIMMOUgibE_EWcY4AhYKkUi9Y9k_D7xq1gPLVja5D7Xtapt4IWnU3BFzJ19Ve_3MzKmZyOXYlobM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ_vxokBLhqaEK9rpEAYgClWBs8Jf5zk88Nzo94cJ7eGMUhFvdm5k-y1BFrkEBd4zfJz7V63kc0OC0iuq1yfwSMlXav_8eyF1-gFkSwTYCXtHwcrN8VqlrCGTedAAdmFLu-sA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ7CFdmcCj1az1EwcUKckNgdFAtbprQZfA33G2GEvz4Kqd5GLw_2fDTQTU9jZOhBRd9gAyOPSF6t_oQQ7qXg34Z-zWPs06Y6bY5VzwOgR8a7vMlPDzZ6UXCPuGzE_g0Yua8zws1EkQMlv3sQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUk3EoZE8HJELLI1582JFAesqvHyu30_GY5GVvtfnZmehF2DXyHYoL1DwIp4iuw3Xv02iMeNobMxzP9k0q1DjMvff5B9RZoVKs0QMQRGOjLPByU7M1qXcfOMF7kR6ooNWyU-w="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg6yMjsiF_Jy-unPOznBgX_F9mcB7Hap4drQLLSTXQAt9Op91G2bSMvJIGyfS3RE9z6_skd01vAMrIgTTMsUA-f85RqIAZ460cjSKkBUf0mIRZnseqt4BeyRcG0g4a4qJV7loznmZRhrGBUVuF2zZ5hK8HPIrHboj4yblm"
+        },
+        {
+          "title": "ClinicalTrials.gov: Spironolactone trials for Polycystic Ovary Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Polycystic%20Ovary%20Syndrome&intr=Spironolactone"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "50-100mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 75,
+          "sideEffectManagement": 20,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 212,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.12,
+        "vsComparator": null
+      },
+      "name": "Spironolactone",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.1 points",
+          "baseline": "18 (moderate-severe hirsutism on mFG scale 0-36)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hirsutism Score (modified Ferriman-Gallwey)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7 (moderate acne on a 0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acne Severity Score (Global Acne Severity Score)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-25.5 ng/dL",
+          "baseline": "85 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Total Testosterone",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-4.2 pg/mL",
+          "baseline": "12 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Free Testosterone",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-15 days",
+          "baseline": "60 days (irregular)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inter-menstrual Interval Length",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (PCOS-specific QoL scale)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-6 mmHg",
+          "baseline": "125 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Menstrual irregularities",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 8
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 7
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "long-term",
+      "trials": 9
+    }
+  ]
+}

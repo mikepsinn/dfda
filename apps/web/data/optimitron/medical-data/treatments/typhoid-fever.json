@@ -1,0 +1,900 @@
+{
+  "conditionName": "Typhoid fever",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:40:54.840Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKnJ3YxXgdhhGgbOTo_WVCuah2XvZmdt75f0CfOk51GgL2G9H0uIMXPhK4ZuHY9Aeld96xLnxZvbOXzQkKg2IO5pRe5-4y4bUPz9FWGNpgq_mT9au1En9zuqWZWHvGYHZP7dIE"
+        },
+        {
+          "title": "coalitionagainsttyphoid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-cwsLwkXA2S5bf4Yav31jMPgW92ofFOmMlTS8aLWniZlzsbyDb4kHy3dlEhh2fMIvFMLV-CpOhX7crv_sPDQ8NEvgMk76biobvpA2zrZxbu10Dbf8o4fXqyTHon_04rDlYfNq_YDLyoPNUxxgoK6jdsTBrEpDflo2Xyduy67VTinDwELLWrjQCv0Q4DnBSmcbHodmoTOvSrhgjgEHpLjRbRapqLnueIquZBO2z3eX0C5025Q1bizLhtHjKTs9hoI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmjHghsFMm5QZjWiHEEYjUtO04lv87a0sWClrxVV3h70-uU8Q8Ujf-kjWTOPe1ZNA0kSfC0RaV2_-JkPxEQ5S9fU7Hwsf-88x--r-YFRGr94-4oR9PHa2fZB3R7xPtkXnenbT3"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnFgZsQwCLEld4k0cCXXMrkKS43sqss6B9ktQ3kOXA_pKvvU-NiLTOCYy0V_9C9UEYUnRX2HPmhQ1YZiuyGJ62dMlGv5nBWVA3SdUDaKqOU6HT3KXOz3lphVKuUpKiVIcFdoxOxd7QbfGjFpq56dSMwS3xTcY9RW6gSrBpKHlikXKn"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg-vNsJeK5Gl1LjuC5k6Zd8v_ioMvr92JhMy8MjrI6gZbLgzJ03MvQSkmI2eAbPPpFAcJCZ3YsfGpsl75dU2nKkJ-d-NR7SDn91XBAlYDEsy-TWfVxoY4o5URhnwW1iN8l5y3RS3TLuc71BDuW1mR5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGavCGx_BBEPR6mqlJLwRYwMVf4lRDnMim42ClBwwCD_GufP_roSRFrU2_38iujNRaPiGCLRgshwHjhKVekt_-WaArRqKngnxdh_0UHHBrExYtQAvL7GcJo1XVBEuhyEDw4fCH-fxNgET6Gz03RE6BYy48yfSOiROPu9E8on_X4KyMUgm5DkySzSV6NqT-tfY8mIGcUncu-PPf5XDdKbvqkcLKJM_hieHyIzCkf3olSx4q0_6aTUb1-EhI6XTGvJkUNZ665cfDjHsGdQcyhgwwISSZNJQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4vk0yVoFR6VNytLqsm4wNtAGURHtdIyLV0GZk_rqMeJIGMzUuunsrMKDXhoxWzq9FJYrue4DYsFzdcuC2JDOmPsCeEhju5JDc1IeSK3F5fUegrRaSKCFkyN0IqtQuY-FKPJ6W5qHr79wA3E2UAB_i01-KQzy-TlDPqAi67XB-k_t1E07nGZp4_CmUQ8UexTmti506h7kX98pyj6mZ4-CelVLjJRRku0hCMKXvU1WfNm9S3eKR5G2gwByUOvRfuUb0B89XLitF9IvzySEQlHCgUcppWxZOXtvugwiTomJ-0cVfNCY-dOioBaEFcEBzfDYyC6t1VD_zH3e20Q=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNFPTDJsAXZXZ6q7TFzUP2I908gSBUXE9OqR7qoghDhOoz7vce4QjSc0vdHhcjT-OLNPAnxtr9jQs9ZMPl0qribbhy2o4JmnWsieu7jK5Q30DFNo6GdmTXt2nMoJTi4c9TFzSoq6IwieDdhvVm4z3GSBUGYhttisbcMr_t9DBWrTCVnuKz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGNeTJtOVO2VAVAWObQCSQ9ocx1g7UZULnYPL6i9Gnmng6FxP9pP_2BQsnSzkQ8rR8HH0csBkVMny9c4goGn2mY99yMsOPwDjBrJlkSSTTmnMiHHk4lgg6GeLRSGXXKDxjselk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwur_nLikseaXT3tL2iYMldUcUXWajYOYanH20vW0pFQJSA6ohPwuvNTWi3xk17Rpg146kNr0ArTh8goeCNL67w15CjY7eyffVLONAdPCEhPrIzRWILuk9-_rerCiPt6Grb7rVXEfDwrDSa2Fqnox_k8GWixIsvvELexgSF5nGDOTYKZko7Rrf98Yaw36lJwwv1z7kQ8wOdYEeWuWscXHzLxc2hvlod9Xz91qE2vNl9oegNhOTAP4YFDBRcO-2u2LoIePUi9jBy9wcRS_EJDnWhcLbIoLod_VjDjDDejkZX7s5RvytjNWzkYlFs6xMGpvCwS6jTNbUnNx1uCu6FJJwQigOKo1sVlRjNxCofvODtWbmWXYDImtb1bS63xuUPgwnM5gCgA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvWi11dESLQPQiG65VYUH06hvf3SAtCccZLkem-GwiLB3P0pN372Lw12bQqgTDSjrLb2lwHxDFprqwQU6kaVV_FItisZGCWMD7AqBsKqPgmGlu9eE8gKJ5vOwGOdvf0j_viM_1WfXWyzAo3jEIjXQ="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsZwtutCBy9iUkClXtz0G8eYRavgXiqGV1yH8cwJM9HcksvuC4Zwq5A1vcf2X_3ytBrzy3eYjj9xScnZhVHimCjg3bVhHu5Iir6i1Ef0GVDJZOHNDQJ_42Y6AgyQwEzHxpnfIJeQ0MRljukZSQ"
+        },
+        {
+          "title": "wellcomeopenresearch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUJe9pZHfUbRZ8lRBWnHG7gGSg9Pq1hnek7N1Lh13YDjbj63ykmb6W-95wMyqUMrtFyIxJ-YJS8My76TqN2ZWeEg7VUPxDlHLoZYIbITjNjOI9u0Ztz7u-6aBLX0rH5kPGRS4nZ2yT6N-G"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Typhoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Typhoid%20fever&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "500mg orally once daily for 7 days",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 200,
+          "sideEffectManagement": 20,
+          "totalAnnual": 235
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 276,
+        "costPerResponder": 261,
+        "icer": 2938,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Azithromycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 days",
+          "baseline": "Median 4.5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Defervescence",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-90 percentage points (reduction)",
+          "baseline": "100% of patients (at baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients with Ongoing Clinical Symptoms (at Day 7)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-85 percentage points (reduction)",
+          "baseline": "100% of patients (at baseline, confirmed bacteremia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Patients with Positive Blood Cultures (Post-Treatment)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "7% (with some alternative regimens)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Relapse Rate (within 3 months)",
+          "percentageChange": -71.4
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "6/10 (moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (0-10 scale)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-60 points",
+          "baseline": "80/100 (severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Score (0-100 VAS)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Median 7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay",
+          "percentageChange": -42.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "3-5 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz2_UB9CgA8pxsJB8JD0GfCGsxOWhI_wiReCNERyW_uO1qk0vd34mCr5212gcg5naLo2bBECPcbfYKH9wn_RVIlxEX4lYoHCHJcsDQPcsdKWgEa_yhgCx0WzY7KpQ93KVLIg8LRAyfbDiQKTLLoBla0_xgsJpKmWwtwwip_3UaVsSL9cf0h3dIDJrEjH1BGBcfIEAfZ0bovs4xm9t6RwOIQUg2yzs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRN-QjS4TvSFDJOnS106P1o6et3SGysQWBT-bN2HVqVo3lJeR-31IHwtqkOuyw3Rg70-a5-oJrMm99i2EQGI3HqMuDLLQmCddEecwHKLOEepdghsY8wfHC_fFI0v8bfn9fGlfP3e3vJb0V_8I="
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEgxDS-lOcmDNSe_2_TR1EHXS1DF0sdVQCSL4FjEoYHcIbN8QEhBddxYZMuLQ-d6TaIN3jatjFTkxLf-BhIkaWHT6op1iPOSfQmXrO13zm5y-TeAtB52t1SlRG7g6bQFVlaKBsspKVXkx5caZ3zbXyTu5lwXgAEGTMCw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcz5_wK6wGa5DP58sjX7-9Y5uUVHZq679-R7NVfzZRKUEnV7iL1Ku1CtSMH2P-9B_ULdMFndx16_ZAzYgtWZv7w1mva1eLTmIaLmfRNMz3K62kGAKxflxhUOAdxwcdDCd-4UXmm0Bu2RAv7yX1"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSHQ6EQX_kr9_1_V9Zv--AAjnUXSKpKCjXNsAYSENyM8FNhR5rWfO_rllM9vHHhl5DP9el2BKzZyXmhEMLIAc9vNk9E4oWjKAoLpuRHk8d3VAIgiJXQcWxB82_V158oGx5peBydyw_Nsc83cyAzeRhZRe1hABVkT8zcyoibr79I_dNoL6ckS7_t1baFqFgPZeqEaFxBVJE4oiMVO1OmAfYMXAOkWVFI0QZgwiD67Sfpt2L-mfiK03N2tLECIdf0SgosDU0eX91_AVw_MmIzh7baqtfxmE2LsKXyi-wIFzn-ilo2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEoce4ODqT2hz7WH-96k6Rw1f-YW4p_Y5ZzNQWXHMrRHobXowmgtuffVOMUmKbAAfxWKuGDuzSR8TJXTSe3lB9qNPnfYckhHiTsux95aVfkLmcxdYfYxIkvrjiQNwv7wGPsl10m2SswTfV9Q=="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSkYt0DCwotvHF6CWqv5MB-fwWKXOcaytKST3oHY6FihDHKN-uvN2z_THSQr7eSRHOS-2SKxP8FFHJDuuaTnuLbfCLw0SVs0eOABUU9FjL5iX6mJ-Xtolc7iUNRaspuMhSF56gU7eZHe9uNWS1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtFD5myiR2Q5xSpTQP3D9wvyBnrUWU44xnNt5QXVKPR0VoFvot6byLbRkbnIf82RYRfUAfh7RuiAksd0LTypLeMsWb6zLMBcptgv8ul7_ZRIvF16eQWt53ahiEZM7dn3ki-j9fR99VfsY2Rpo="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpYpK2Nwua862pJiLph7bXC4B1qGRYQY166ip8Xp9JWpolDRxDDgdbwRYrv-XojY5EKT4DIW21cnS013gjYxkANKXh7b2Dtzzbq4WEvs8VhDZE1nUWiT2FSlCSuKVqyxG_rUZT0OIKDgbx8fU="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzAINrmUSmYEfPSJALSsh6Bqw0D6OB2D_lgJNnV4zwZrdHqluI9EsA4-wI1i6LNWpHRD_39YkrG7ehD1JC2DNqOcCosm4ftYmv6JAvk3oneckxM-tNxL7GuWdGqrvfhRsr9ej6VQoEWJLw_UK5JKlSThsa-vpqXxLxYQBFxhkXro8rbRxGYKFikI-OQp0a9YRrraFPDGZfggyxXGr70_-gQuvFEdgEQz56s9U="
+        },
+        {
+          "title": "ijbcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv8FXRYfXeUaxzvmZDom2dPJl920r2j1Auh-8QWsKYgwDRXRlO8vGCnmx3341BYvenua2obdn0Bq9UsJKU0HRWTGxoZmGbjTByf2M3c9_ckOAmrFcXkZGIn0ua8SGww0s9mKREU6fAqxtmyDHQhoODwg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Typhoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Typhoid%20fever&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-2g IV/IM daily for 7-14 days",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1150
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1277,
+        "costPerResponder": 1223,
+        "icer": 12777,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.09,
+        "vsComparator": null
+      },
+      "name": "Ceftriaxone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 4000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 days",
+          "baseline": "Expected untreated/control group fever duration: 10 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to defervescence",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-13 points",
+          "baseline": "Initial acute score: 18/25 (higher indicates more severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Typhoid Severity Score",
+          "percentageChange": -72.2
+        },
+        {
+          "absoluteChange": "-4.5 days",
+          "baseline": "Time to spontaneous/ineffective treatment clearance: 7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to negative blood culture",
+          "percentageChange": -64.3
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "Expected hospitalization without effective treatment: 10 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of hospitalization",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 94,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-75 mg/L",
+          "baseline": "Peak acute phase level: 90 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-35 points",
+          "baseline": "Acute phase score: 55/63 (higher indicates more fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) score",
+          "percentageChange": -63.6
+        },
+        {
+          "absoluteChange": "+40 points",
+          "baseline": "Acute phase score: 30/100 (lower indicates worse health)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-VAS Health State Score",
+          "percentageChange": 133.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "3-5 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeSzoLbeepXHaQgIMpbHaT8s4txAANw3fxioluJAAU2telBcDcj8b4XwfFRm4Kukq14UX60QDdTxK4gOpsBVPnhHwDzZL_gDKve_vjVU3N_oqWHYSCDn5IQOH39BJbqnP_SgcVa_KBQjQEn2GAL9WTSgjJu4V_KX80N80A42aHAHmr-lCm5LM0vjyjWgw="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8dcNsyTEOmAkwJc8BBw5NDBWLJ-GbJdWlzHlB6Hf_xFUJeJ6pSzeTfK68vRMnXUpyUiD2YxCdCdg2Kqt7d0DWFclY1a0q6qHncERqiBjmdk89NcSXyp9ufAPSHqeSdUR5fD0DhbCxSYzZb9hzy7galOns64v5V3UZ38ku"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJgzo8iuADEOYoBCIAo5SlwMwvf-tSeyI9NXdQ_G0iRIMFvJ894HQ2IDHZoXcvW5sWUJWEE3sLNf0EGBh42VHy4_I0WpWh81DIdia46YZi5xlu5Gj8l-z37sg-xXCCamr12YvA7GwgReKABjw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKg64fbvt1iPYqyZ2FkuRIzOFYYo70zSqq74o4Oy6unCdI5SPY76HJ1aj92vBSIvLgl61vf_k-odcjdOz9qxi1emicSeAMZqekDLT9JvbkTix5C2GokM0VRI37Dtq84Z3PaRMDGeVmXjzGJpLdZq8H00lCjwSAxzKvhQhfo50cbKhwly6T6i6nb25ag__JAjnd38vvKATfBK7iS5Xqv3bU58qvJX8jaER6AF-qAezApPCOZYVz9Os_goSBT9fRA_19OCDjPgMzt7vG7a9Ip6KlwKvrgyi0Uk-k9-soPx8TQTlKutQXpfgpitJOBtSTlhh_5B8y2qLHH8bBItgV70kfmYvt4IrbrYFaT9c_VyfhPJvHoMHkusXi4-iHu-sjGqPzmvRqjZuZX_vtdROm-L1XOEso5ZiCwQ=="
+        },
+        {
+          "title": "cabidigitallibrary.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmHp-wW_8P4OT1fnVL4VOX2X_RKEzC4hDhz4Ii40FUrDmSZmiAAhPwOx5TLGVEYENgeEM8BLs0yXm6D1hokvUmsq-WwtC6j3P_LuYiW_ej1MX84xh-aJSFKQKY8y6Abpre30f3imxa2UCvNHhZdg3QzLdFALoIzfi6Jg=="
+        },
+        {
+          "title": "coalitionagainsttyphoid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ0Vu4XZ5vD1LM-_-ArDYtkCjFzXd_L4bY7XhvrW9uXNF9_YOZNZNfUYbu5iFN5r6uIG_-PU8UuO9q6f104QTxDT_9uT4ms2wu5qKVZVCSiE2Cq-wesbHsuQPVTaKZF8JOPKKTi63LgbSWbMssxYimSu8Am-icnk6J1Fo2S2sNVr1gkjygDcLLjRAjcFAJVltBYeNkg3-GI0Orm5qWiNQKPAHi6wMSesffqGE8i1j8EIzYSk7PWm4iYDZYm_DP6O_Czq0qP82mGcS4ObZXAWJoOg0zjOhae4X-VIEEsjEpTRgMER4fOtg6ypwrMNV2nZVSZiGWb9sV0gjCg9fuzqnAjb0f_O-ZDzZUEgC_xmeKWQ3YI5L-WagYm40DCAmL6L1LpMGUeWRdVJgmMbn09rAS5OgLCs1KoDA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtC7NyMN871YT09BYrVO-cBjUwehL50NULeCI3ZIV_Obx2k7LmBUbGIyz8gdT-y6CYkAm04eeZZsbBzrKQK-XX__gkjFdWkrSSjMSj6F8Aa5zMBJZV_wx0R1DKZ31vlp2zt6YirO2BvLkkK2c="
+        },
+        {
+          "title": "jptcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-GxJTgm13BbBoOfPHCpINeGMlZz8kV1eNuq3VY8uEXbOFko1EIf4sS1YfxtWEb50WtHdZgN4S2G97W24RSg-q67IRGsVzSE2YchAI09h7ZcosxgvEcypfA9nmwrKyV3DnOofaskA1LXucjvNcb5RmD90="
+        },
+        {
+          "title": "jhrlmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2moW03XzfISJNaa0Z8-rA85T3X4PMaFqKFtDmp5Zj-nfIYtIZaXlcPyCkXnY2BAaX2GDO6jvcaNqMOnqNxzG2U8RpH-i7zAcZVFZkSt4GC-QnUKsgEaAKTU5-jU1iK74Q9k5buIFrJbj8Ls3feNCOZK4bmff_Q35WxA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Meropenem trials for Typhoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Typhoid%20fever&intr=Meropenem"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1g IV every 8 hours for 7-14 days",
+      "effectiveness": 96,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 10850
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 11793,
+        "costPerResponder": 11302,
+        "icer": 108500,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Meropenem",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Median 5 days from treatment initiation without Meropenem",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to Defervescence",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "Composite score (0-15 scale): 10/15 (severe disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Typhoid Symptom Severity Score",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-90 mg/L",
+          "baseline": "Typical for severe infection: 120 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 96,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "Expected 14 days for severe/MDR typhoid without optimal treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "Numeric Rating Scale (NRS) 0-10: 7/10 (moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "Numeric Rating Scale (NRS) 0-10: 2/10 (very poor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Appetite Score",
+          "percentageChange": 300
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 7
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Seizures",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "aku.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVyTlECheXT4oUba4uDQtWz-uw47HSKTm-yctj_2wrVsNGNSv2uv4ys9nNfzrjovkEvnUgZPSwpjJz4-JaioA6TBwTti4WsU30apBzGi0_i1mDNiXrqE0AtP8uaGuAV9fFoYjf7sI7tTYqO_H5IxrfATmV_wCEnMnq4x98qX9zrOC78D8u4r3XHIvQ2RbYRSC7liT9SZdMrDrhfZn7GA0AORuuXGeCleVh7KI0mLQ5jezW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPEIvP5djY0Ld9zqHGMStpaqcz-2-MzL7ftNd3YsMBQH__iVHUKZOw24UmirSwYCZkZcWXq3IhpNu-FKLciJYO6_2YGNuOtgMH6mxwppmFvG8LsVN4Pm3J7X1CptLb8AHQafl2cAA5vvnZ_OwW1oQRCB7GKZeymAZvWlHLypcmta1VfGOBct-RN6sizqGAHe6LO2xgCfdoxQGPelV4tOrp3zztTUdCnEICxyNdiLazMkpkkw1LNWS-j5QN0_gGri2qnIdtjiS7OT1m5BJKvxdplRxB3Q=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLD-5VdzzW8pAGz0WlSY6bAoxOhVU-e7lB-a_StNbqjv2XFCJkhvk7XcD7sE9WiLh8Fw0Yz6YRukF4VL__Zazt4eHdYF0_BmE61ziGtI8abuFOB0CWOygnPnFHhVT4RMfSf3Q8nqtPTM5Vr5e9Wg0-dTXD8wcArGxgQ6efGU9AtvHixOa_l7uoiA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsD-uS6lmPq4_2f8B8RDfM9-y-rEa_0m81DllWs6C9Y39dVxmLAoUhxJje-0nxcucUeWxdq7aycMNcPYzSgGrBspwyvrt8ZXQ34QP9M2ykxNov1exCwjTy4BsSkaW10dlT83iEU6dBWQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxQqpukfsebZLO43PmRQZRUEzLoEirw53CapsBfEG6bUN1yWxLr6K3CRstN3IEJc5qqaDTd5DBM8C1SuALw8oDfeNHVBPGsXsTuedFr-t8PMOGYbE87r0LiX3Gofp5Bw4rDYku31vhcwXJ1jNfie8z5HFgKCEzJEk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHisd9zMhm2_6zXORqF-Pfyt7M22l9EZy9-_Olkomk-VTJLkxEZSWlAURDEFyFXfk3YaLxROwynaDjnp-B6vME6n5-nM6E28RYGXwpz7l7H-7W48jX59TCC9vpC5KcowF5jigQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7CFPKweIghuehC9sVw5n2rZz-WyjQD19S3LFi_VNNWdKOC-j1DlYRK49Xi5NxhTitqdSQ8vp9Sx2rJF_5UNeltCYStxu8pbh7oqPnARgUCycVQ7tMTCuaq9VBWT7orK_vwyo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiyhslnlAoZ4fpvF2zioKqPvdi1jDpM-aRxmB0h_B-rRyyNwjnNWbmgsQL7LkOdEVcSwwhREUqkEl6KMO3UPSCElJi3DF03PLVRsAp1QFWVj7kwK3ZoafemDJZWET9PgrDTFw="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvqbAbPywSpRwaKHwDEoImmYQ0Rl0ARnex8nzwsvUDcy_FPu-F_c-gcCmZnuuGUA9yRRnMf5mE-3SLnbiJeHQschGgAgfleesBVcSJ8p4nSXk0WDrLIFwnCMdV5I5T0iL4jVXaXeWeRWAYs0Ad"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ciprofloxacin trials for Typhoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Typhoid%20fever&intr=Ciprofloxacin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "500mg orally twice daily for 7 days",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 310
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 387,
+        "costPerResponder": 364,
+        "icer": 4428,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Ciprofloxacin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4 days (96 hours)",
+          "baseline": "Average 7 days (168 hours) without effective treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Fever Resolution",
+          "percentageChange": -57.1
+        },
+        {
+          "absoluteChange": "+92% of patients",
+          "baseline": "0% of patients clinically cured prior to treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Cure Rate",
+          "percentageChange": 92
+        },
+        {
+          "absoluteChange": "+85% of patients",
+          "baseline": "0% of patients with negative cultures prior to treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bacteriological Cure Rate (negative blood/stool culture)",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "-5 days",
+          "baseline": "Average 8 days of sustained pain",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Abdominal Pain",
+          "percentageChange": -62.5
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 percentage points (from 8% to 2%)",
+          "baseline": "8% risk of relapse without optimal treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Typhoid Relapse Rate (within 30 days)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Average 7 days for moderate to severe cases",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospitalization",
+          "percentageChange": -42.86
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "Estimated 14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Daily Activities",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 4
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 3
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 1
+        },
+        {
+          "name": "Tendon rupture",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 days",
+      "treatmentDuration": "7-14 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "ammspub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELQ-sVu-80urpaIX2zLxAqBOc0Qou51Zx3RKnCxNvJ-Ks7iHRN2aVeus1g-DsUftNKI7HDxfQp1CcPAatDqzgWtPRYIQdxYdscVbVlh_ApwhdhF_rpBRMJeTAYuFDbfaqZ5C8urXPegK9MPE24Ll7iAIcKIV3RIjv8paA="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP3K_fUyzuv2Zv-pifnLGUyUo7zTVzeJTI4RYlZGXOrUVEKz5mtMW4GXHuOCJDbvUnXCikBM2sqmvWBNU3B65K2C8CS9S5JmQpDTQ7pgLHt24FgeshgZcacXZiZ_YylrtswcLvS42gA42RG2Vk9RfZIgXMeTj_F_8MfGlSHY_95_gsQUazoD-eAxN31AtHGahBq0pa-GkPLnDC2dGZJVUTTm8M-lerHMfx-M1lMmsPUC1-vwLOx0wxRmiYLgMtzEsu452bsA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1EWdVGo46_OOkYu5rL7VzVm7tqBIODDWInlG61e663IDyZGmwyP1xi2cpAYjS7eSX45RPhmxZHjQH0yoElhFxbbY4UCpctS310SyzBnJmm0064-TI9DPGG876lJaMNYEYcoSO8YFkKuEXsn8a2K5Ujih9bNdXjBfT2OmwnGEeKNsX7UOmu0YExSLiVrrJiCCI8-29B6nIZ5QUchILfeMzIA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlGlxWiLUjIK7DAByYfB13xqGhMvbi4eo7e_w0y_iWsZ0ua9Na1BRQBV6EqZy5xh_xbku4I7RDacaVdZk4FZ6tiRV_fqmv5vLr5FZenk8Yxe34jzStK_Qe9xiC82eUj8NQCEC51-z0zarnUPAT-I_1X83qoZgPUnYYzaszc51eIGbMF_mjTfqNdTzKo0XD4rFUHk9grTWdURbLJ_7Zg3MKRHmC3eMz6UzPuvHvjIrul8SCDjfm"
+        },
+        {
+          "title": "wellcomeopenresearch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLdZYOyD-_N9ITFCVtx33zcDQdscbDqjaOZFBWJ5N4wYLjnRAjDFFQm4UL51MT2LmmXAhkaKGEPxCUMcK7qP9DELW-LD5BW2ZCAgifrOq0VOHKKrVjeM2MN4dHIoo4EncllSf2fzMvWGO7"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQqcH29IwCVcuBB_4BQ55GXY07O8imQk5x9xKDFsN1qy6whLPCl6FiOInkArf1Aq02JHQBz-59myHEbt3KUuDD0Zy91-Xi8jO1W8lekOTiGBABUjo84j6-ccC0RfCKUMQ_LwhsF1MTnBiEMWhjVTyk_v3RtUh5zVeSK193"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG62o9itLbo0hLIg1kLE6eBnlTve4ZXA7OAgBTHnoFVXN9G-YyZBuk2hzsMbGTivShVpBuzaCYTtlc53HzqFluR9VdwW3ApDip9G1pdDxXDlZGlGq7S446Mkzwy-bRXWiywUjmt7Q_pmpys"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cefixime trials for Typhoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Typhoid%20fever&intr=Cefixime"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "400mg orally once daily for 10-14 days",
+      "effectiveness": 83,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 200,
+          "sideEffectManagement": 20,
+          "totalAnnual": 295
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 368,
+        "costPerResponder": 347,
+        "icer": 4214,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Cefixime",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1200,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Average fever duration (untreated/slow response): 7 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Fever Resolution",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-3 days",
+          "baseline": "Average symptom duration (untreated/slow response): 8 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Overall Clinical Symptom Resolution",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-60 mg/L",
+          "baseline": "Initial CRP: 80 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-20 bpm",
+          "baseline": "Initial Pulse Rate: 100 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pulse Rate",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+35 points",
+          "baseline": "Initial HRQoL (VAS): 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-related Quality of Life (EQ-5D Visual Analogue Scale)",
+          "percentageChange": 87.5
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "Average duration of functional impairment: 14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Return to Normal Daily Activities",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "Initial Pain Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Abdominal Pain (Numeric Rating Scale 0-10)",
+          "percentageChange": -71.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 4
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "4-6 days",
+      "treatmentDuration": "10-14 days",
+      "trials": 2
+    }
+  ]
+}

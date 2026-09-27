@@ -1,0 +1,1161 @@
+{
+  "conditionName": "Nasopharynx cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:03:34.309Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHymkPRSoW6PrDsaidgM1QSyyU6MtGYPZONapp-NXFB3isit7icX4WPq-cT2dBofiTKibKL7Qpi1KZJAsWWpLtgz_28y4q1VmMEwEX3rMc1o0sD4AvRqGNfilf3fgMPBglV5VsNZSJ4AJXD9qkZfv9FHeoyIisFlm_0VLalWBY99IQ-LDMbhzljBUvyzrfhVWsFbBMl2sD_N4tl4el5sxZQi8HcUaRA_7qClbcXpCrcLfItJPLHnwF8jbVKaMbhh5AToY_PooDcQXAdzhWivqj6uAh0bW7qdyyYdUYNg-7xJm0MXDDpkSrExS8wgB2qKMMNdL2JWm847Gykfkuii-f_xd3oRjtWRkqAwFXyfTgY9_4jGt9_qmMsv4ltb1svoAEmuokRZ8933VGQtRBx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY74zyDKgI8hACM4cQ_hcwOK8Lbi2FehL5n0mpgxJpjJgml9rIz9o16F_LMJD3yW6fEqTeP0Tm_PYOswszorgyU7WAjS-jTBgf776cRR5pizemO_Ib6rKMjYIJO1nKfaapWKA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdnEhs2sFEraurJKYhvacvrivne2Yxws8c31nR6nJHZHVgQKSOvqEcQXB3mUAvMl0tcm8ZTBXQ6i2wmZ5eilS6eDA-8wnBhBn8_0erWdbOvIFWwVjoQzqr8pIKY6KKGeFJisRwp3844J2Nu2s="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGUll24UjKM_FjTtG_Eugb4VRN6lM5tQHWODVDmCKOkjTFKZBoiTlkmwP7cttgoQxk1Q1joeYO8jqohNY0YxjE8YkqNWX-PtfJMQk2uaBCBLTbm7FarcrBr_jnzjkDn_myLrjgV1eoXHZy8lPF5-CqOLduB6t6hJD26Mt_cI4LT85MzI7FD4DViAZSsQuz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHe-HJEgQulwqXsCCV3mIs56Q3-ay5Iig1oy2d25E8lOHEqL771vkv1IxVZE7YoG9iFTky0w2UD-b7Pqop8R8NTM98zyz6QnIq1t4G6P38NZRmQzRiDlmuICRvtW2SnxkndxnZJl3TVeKr4ZQ=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFE5FV5kwQc4_Hmo3-th48e6JHePfROMZJji6a2KKatir5DWUMDMAwQN1aFVtkoq_I1pQPM_z2YUnvl1PdZEBLXONsGNE4pzE1qfgGgbWmx3TzddcC2lCE1vmbw2UCRmecWQn68bkiWcYxQt_Hi2djbN-dcs4xUhZd_wIXPBg9eQi-r0SMqq9vrKP_4uA1"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1QuqGGXbB1YyPCKuCX9koIdFKyrG4s0BVcIEl1P9TN6DzsLW4TanWDo4rHjiwB0PPQUNCA6FHSN-f_5KjEGBz9Ux2h1nrOcfVQQNu0gMJKUVSJ2Hs9BgE-saBcwfUFqtkvSGAORAbd5zD83XAAmJ8PVabj4II_SoSJiygCSE74PfHABrLoEZh17dPEsVO"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9DzBcbh9LeCjxYHoBWFz8u5sw7t5mK4qLe7dJZHDRA1XdD77iE1CnAC50pncwboK1PZvdGwMlzwDKvYhMoaphnYQM5szS79ApTtouMH2WCuJ7QFtIy95zkYYf-nv98Hi1DUfP6NaNZSUHQFDw387bF3iJWFaONywaujd1ekNGfhalNQt-JCnVevz4yORD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQWR4qL5JnhMneuI73AaJh1D0wNgI5sd1K58sUdDf_LgkEAorN3zGPhCL-MJUSlvf3XmQL_nW4m6KyQzE-4knOcVsTiS36mfUOJr_3siK5URXweKHkg2cCXKBXdWpGkfMh_pU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4-LI6kPrGKNKqpr03cRwGN-sy39XiCkas-nfooALHVoITtIiwo-HJH48HrJ05Tt9gSbqMOKuV8B9RAG2GojP_QWLshhcQIEPuhWSZNzC4ZT0tlXiNtAc4Vp776pWMEyZ8yztw2HkNAI-3Dc4cAV3DBPFBJ9-QZmdQD1291Vn5YN6uJ-NhCyyGaaZc3gqFbq1ovwNZ-tXx7qG25CjjpHOZAucCzJBsVznLpliXQfK6xnP_QbyCIdv1pht519lN7L9wiWzuHDjPpxnMzQ5BLrmRrIbQQi7Le6CTCopzf3QyJva1Mg_EoiMX9XWdsRqYlD7RRCVwfdwAGWyCyLv3NrtcGB53JBC3FmgACC9rqR4btCr-LqRz1Kc9MNEhDQt5WQKKpiRkpCnUZeUM_5E="
+        },
+        {
+          "title": "ClinicalTrials.gov: Docetaxel + Cisplatin + 5-Fluorouracil (TPF Induction Chemotherapy) followed by Concurrent Chemoradiotherapy trials for Nasopharynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Nasopharynx%20cancer&intr=Docetaxel%20%2B%20Cisplatin%20%2B%205-Fluorouracil%20(TPF%20Induction%20Chemotherapy)%20followed%20by%20Concurrent%20Chemoradiotherapy"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Docetaxel 75 mg/m2, Cisplatin 75 mg/m2, 5-Fluorouracil 750 mg/m2/day continuous infusion for 5 days, every 3 weeks for 3 cycles. Followed by Cisplatin-based CCRT (66-70 Gy radiation with weekly Cisplatin 40 mg/m2).",
+      "effectiveness": 89,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20000,
+          "monitoringCost": 30000,
+          "sideEffectManagement": 25000,
+          "totalAnnual": 75000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 91463,
+        "costPerResponder": 83333,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2.7,
+        "vsComparator": {
+          "comparatorName": "Concurrent Chemoradiotherapy (Cisplatin-based)",
+          "costDifference": 35000,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Docetaxel + Cisplatin + 5-Fluorouracil (TPF Induction Chemotherapy) followed by Concurrent Chemoradiotherapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+8% (absolute increase)",
+          "baseline": "78% (with standard concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Overall Survival Rate",
+          "percentageChange": 10.26
+        },
+        {
+          "absoluteChange": "+10% (absolute increase)",
+          "baseline": "68% (with standard concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Rate",
+          "percentageChange": 14.71
+        },
+        {
+          "absoluteChange": "+12% (absolute increase)",
+          "baseline": "73% (with standard concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Distant Metastasis-Free Survival Rate",
+          "percentageChange": 16.44
+        },
+        {
+          "absoluteChange": "+5% (absolute increase)",
+          "baseline": "87% (with standard concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Locoregional Recurrence-Free Survival Rate",
+          "percentageChange": 5.75
+        }
+      ],
+      "remissionRate": 82,
+      "responseRate": 90,
+      "safetyScore": 20,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 cm³ (post-induction chemotherapy)",
+          "baseline": "50 cm³ (pre-induction chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Primary Tumor Volume",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-14 cm³ (post-induction chemotherapy)",
+          "baseline": "20 cm³ (pre-induction chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nodal Tumor Volume",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia)",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 85
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 50
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 40
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Alopecia",
+          "percentage": 60
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Within weeks for induction; full effect after CCRT (months)",
+      "treatmentDuration": "4-5 months (9 weeks induction + 6-7 weeks CCRT)",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMZszzj3JsGTCD3Zv5h-osJefGZ5Uc2a9DTyFLy0PapNtb_MQ1fbfeThB8Rl4hj8301NjAK7nvT3telo8oblSj4Xe-W2-B3pEhUfOdlaEeU2jTpKECBrZPp3eZgA-YpjJGqSURt5hdAlqSTnqwjanKzI3xJuucuRMy8HM7fsyN5ye5zh_eUBVuIlc2WUjz4Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLQ7zC_prLYyG_H3bH3xH5EVpIltIh5mXZpHVzNM44b0kKZ4j8gYSe_daIKwC-p8gDBeR07mz9-8wYz8u7wP1pH4J8395X-zJUrkCOdrXTuiMq9KL_l1CK0obV1qLDeYIvkfnMGBtwluTw7V0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq6SRVOAb6NcaFkMF-l7idmnNncZVOSSexCSDLorErL4evEa5G_29HYzu_AAyEE42SUwtnHmpQe4Op511v7xMurvVEbjQKT-bWcvhPWG7CqQIAXGW5Mz7MX6hJ3PhnM0hyUQVU_8eOabI7F0I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRxyArA091O_YASID1V5Ds2YAaaVPiKaBeKL6ekkvXTqXXgdG2lkWdajGbknl33nQlefXmkEgVJbWlNLE961ENzieGgP1p1CN6ByNvdSaw-acbGGYKCaIoV0O_HziwJeEJIqnrgFlgbH-ruGc="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp6nIGEBE-sJYgKdPvncwkAKrSXspwVHXwz-f3AEvTDkHj7i_zlGbtZXeBeT0ds96Vp6YdmueTsnr6xYRT29ovYEXYwqgTdmPHlRkqU3ci3aMeUF-kGt9_6gMSPh46NGmErSltoFsLObCcOsg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYEyLW6Q9mwVH1_iaK0m6PRWUkFzkQ20DG3s_usHwFdoGswAlOEFOJD1apVwwASFtwxG3wfMbt2kQ4jeR8_5cM_qU0oDa2ESeV_sjqK62_qVV3wYAGD4eNpv8COZ8G9oY-NePQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Induction Chemotherapy + Concurrent Chemoradiotherapy (Cisplatin-based) trials for Nasopharynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Nasopharynx%20cancer&intr=Induction%20Chemotherapy%20%2B%20Concurrent%20Chemoradiotherapy%20(Cisplatin-based)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Induction chemotherapy (e.g., Gemcitabine + Cisplatin) followed by Cisplatin-based CCRT (66-70 Gy radiation with weekly Cisplatin 40 mg/m2).",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 25000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 60000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 75000,
+        "costPerResponder": 66667,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2.5,
+        "vsComparator": {
+          "comparatorName": "Concurrent Chemoradiotherapy (Cisplatin-based)",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Induction Chemotherapy + Concurrent Chemoradiotherapy (Cisplatin-based)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "70% (with concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Overall Survival Rate",
+          "percentageChange": 11.4
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "60% (with concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Progression-Free Survival Rate",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "+5 percentage points",
+          "baseline": "85% (with concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Local-Regional Recurrence-Free Survival Rate",
+          "percentageChange": 5.9
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "75% (with concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response Rate",
+          "percentageChange": 13.3
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 20,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "65/100 (pre-treatment, score higher indicates better QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status/QoL Score",
+          "percentageChange": 10.8
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "60/100 (pre-treatment, score higher indicates better swallowing function)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MDADI (MD Anderson Dysphagia Inventory) Total Score",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "80% (with concurrent chemoradiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Distant Metastasis-Free Survival Rate",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression",
+          "percentage": 60
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 70
+        },
+        {
+          "name": "Xerostomia",
+          "percentage": 90
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 25
+        },
+        {
+          "name": "Ototoxicity",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Within weeks for induction; full effect after CCRT (months)",
+      "treatmentDuration": "4-6 months (2-4 cycles induction + 6-7 weeks CCRT)",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbGVvIcZts6XQlcdM7ljV0IhhjL5gfplqNk1NF8GhDUXJkRML3UtN_DQBAQzyZe6eKpk6YoNYfISJeUkNwVVGVN2IuKKd33cBYTwfYubmF6Pp3jtv5iBRuuiwGzSd1ojwWcPg1TRutKVipk_s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDk6hLBKNdZOh60za8eseWJYbwXplK93taXp3fsuiswpPEwZYkTpuyy9yANDun6ZLEizg1NC84ikS1Pd9Zsm_n-OGLaEl_eln-omdYyRgTZJEa350V9eUH4x9oPg5lz3oDc_9m5HG_djr93eA="
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf0sfrzC49slPWxddZe58FAl4ineYQeiusfJRT8Ips8G7qcbGgHN4cUThH6gu_uSbjp9ZBZoQSrSlUMIV7DxAY7pzMlczdmqhlc8zkvaBXptq3ieOrSQs-zam0dsL2pD2jpuFGJZ-4wlRMg2iuYkKxP_d_w_j8UTJwADyMHV_yGnEMR0ZcHWmWMJ4DVyh2-0jStFjt46pWul5ZXOdHq9PS0J5Ww66kbw=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnvKfElZSpW0Z6DGuDlY1sQIoa3mflX2hY3xvbsi1fBLm3yynBf5_cDFYKaxIztm4RQgXS0R-7Y3HouWxxwnIsA9FwMDNBiDOyEylrTVkJL9YsjRXYgT9dLMAJ3BWLSzI2oYznLE5wwoZe0Wc="
+        },
+        {
+          "title": "oncolink.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIwrNVVOskDeJx66FbIGUZ1CdYSZvolzU551ceOSC2e-WaQulzajSRf0gt18T0Yy5OxusGtNqW6XI1aoKUwncuVa3hNIzL_cij7HJHTQG_JKVcn64Qu8G-sl1U1-GL5G1ZbpKWQC6tPLKwwclv87Z-Re_-GnXSy5xLbS5c9HTOfwsM2RdSKUl_xWOH_2We6bfQkxExGZK_gZXcWaLIAfMlBSSGXpMC9dW29WPvcjnZe0IUuABHp2jR2HJN63cv6pzc71LlRAFHz5PZG2FiewTsrQbHj-yc81SuTZBDa3k67hOoqi6eEcdy0UPeDEsgQU1tzfvA6gKG_E9mQCMb804FsrqZV7C9VTUCNSiRV67Jgf0ufuqsmi1V7X7xDPlDeEkRJOvzOWkcx328dAbqlqcf_Sg="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwP7S2aE0OS1ZpIzllmryCS9yHVLvMmR0aCSeahlG_fx8WcWlFDHue8U8Oav3P57qHPHqxcgfXcEshUThOB_JAEljKVFJ46l6NhXnrcC6mUFAq0CDH6DeuzEJYauXDkbawregH_i2rxBLAsB0RGI8_J8ljfO80YcZb1gxDDTGYLkFiphWuxwxoicnZh3m9Ow=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUIGpIKFUviL0Z8dqsS6bUE8slm24Sl7Mc_699Z7v407GAilrU-IpabbFQZsMucZAOa0FYsTk2iHjBY9vTiXcNS-KoT9ByL8TqSmfHC7xUkFIjIsXe3Kll5bR7rxsDjVVKKM5Zb4nGiHfWud0="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGberx5NjWc2EMkSx_cObk0H8pJeeVqE91imNJV3bo1Tuvgl5ftu5FjIhxDti62Amu7ovLqh0J3OBahTZsveVonjb1H83jLU7m93u0WdowWoS-CwabMIcAPE085UMC_t76aYUFYOdZqoWHyGS9aYHp_yg=="
+        },
+        {
+          "title": "jcancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBxn5r8QDzb6ih0LWW0pGI_cghKnWwJ1sBhtSHxaIoQQNtoqGhHBDH5eF6aUtumUdRMBPmmvtZwRD6c6lPMV6mn8mNSr2k42JjahF5M9e5T3bUmBf9kKv3dvPH"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeDYewC8IJcdrc8UP0Hyd56YQWm2tClAj_3dW2W_CveW9jbGqoS7CoSueWIEgeMSxXtRIUgbGpXxIZXkPL35Pa2Sz1g7gKomvEv4DQUe0wBOueXGVrMxjX3Bv0o69zHQIXjiBwoLk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Concurrent Chemoradiotherapy (Cisplatin-based) trials for Nasopharynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Nasopharynx%20cancer&intr=Concurrent%20Chemoradiotherapy%20(Cisplatin-based)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "66-70 Gy radiation in 30-35 fractions with weekly Cisplatin 40 mg/m2 or 100 mg/m2 every 3 weeks for 2-3 cycles.",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 40000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 53333,
+        "costPerResponder": 47058,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Concurrent Chemoradiotherapy (Cisplatin-based)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10%",
+          "baseline": "70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-Year Overall Survival",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "+7%",
+          "baseline": "75%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-Year Locoregional Recurrence-Free Survival",
+          "percentageChange": 9.3
+        },
+        {
+          "absoluteChange": "+5%",
+          "baseline": "80%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-Year Distant Metastasis-Free Survival",
+          "percentageChange": 6.3
+        },
+        {
+          "absoluteChange": "+10%",
+          "baseline": "75%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Complete Response Rate",
+          "percentageChange": 13.3
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "1-Year Global Health Status (EORTC QLQ-C30 score)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "1-Year Speech Function (EORTC QLQ-HN35 score)",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "1-Year Head and Neck Pain (EORTC QLQ-HN35 score)",
+          "percentageChange": -42.9
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Mucositis",
+          "percentage": 80
+        },
+        {
+          "name": "Xerostomia (dry mouth)",
+          "percentage": 90
+        },
+        {
+          "name": "Dermatitis (radiation)",
+          "percentage": 85
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 70
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 80
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 40
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 25
+        },
+        {
+          "name": "Dysphagia",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "During and immediately after treatment (weeks to months)",
+      "treatmentDuration": "6-7 weeks",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGza8_bWA2YfaJSfgUu_JQED1kZ34eGufy9o2lJ0Xs3eLsIBN6nafeyfV51-y-GNrh3d3HmosyysR2Vt8oK8IXvFxRrBMNcTp9RxDHNVc42vsD6cRrX8uxkS82ey_c0R6ZSgaA="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQQZqAlamFKW0hMAjQplC22M8SWRIfGYhF5Ej3BBH4TO_G1GWtLkY7XgT_dXo77Uk3YRWR9wqEyHilDgcTafTWlXWo42bNFNuqyq7rzDpa5ujqoqBxvVXG2-lWnbiTg56yrsuDm3HV6oSqbkOco9OZeIKFZLdo6vozLrfFyUZIdu9pchSCXNJNpuiCqVljNaPOkzP2Pg=="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGadlkreGjp5-D5GhFOqJVCjH-Z_GofP4OrRmZ4odkD5ZAGclPg1FSNvUKePAJHJvM50n4Z-oDdh16f3c05ftDW7AqK14NTVI26uI-4iR-rUKKnCrMQQWG42kSLNR7h2u6tcnn9U7BIiz1LVg8f6x81hwRSoGMPHvgmRjvBMYydmxEvTNjJTpd8NXBiapqPvcBbmjE5VdQHCYOIK82tTrzcSgkqs83MpigOWZpFsG88-HHAu-8Dsxf5SmkzlvG84JnqMasf9L-x"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdWc0xhbtw_4HLNydMd2F_sS_iAfOlm0l0NdQQcMNXM_KYVguU6cYLhRw7FxhoKPZwV13XHnvY1jDHQrQY1t4_B3-CG8qCpTDUabp8O0tssE7bVn2Gc4ZpjfQ-t541GGUjSEyWAm-2UHF3Qz-MyuIcgLcMiUE_f_dM3X8TUMzkkWuR7mLpW4LtzPqv6dUUp0_NtYRdTvlbDbszdAe_O5svnVc2fS4DZlg52JYwxDDYCgSbtNojgCr6ZVS9T2hQuE5uE0SG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFpjuXgNjVyrL53R8nMNEX3cyf3veBF6z4llmG5W6NhtpgDJ14CO61giLYSMm0Q7VkmpwcG10_pj5Je9ZWIDFyjECTQwV2ymRJ2KZbP47fy6XeOGlKWd8eJ10sDD-QRQOz9dKOGUMuoSAOYw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE47a0V5hNxP7LrJwfC3x515_QNOM0K76JDHWrt2V_txyCXEsic6tCS3Dkj6P5awxwSwyjjYt9kriH0Pg03Q9jmMVY_0gXqqvBTL0v77YUahlrHl8fTvU1p5ornUTBclTrkNKl1bvojJCqH4w=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-SwVQLO6KJbsmi-e125fFkM3J5c-Kx9ZYDBHiktFQOrTX95hXjbX0IUj7wENe4JP_ccElBA-JFsZOn41XZpFvH5OZ_hT_5qdNeefRXfpKN_sQbRnKYNXZIahNMySDJl0vNtHFHuPe36JTRnBnTUgeUK8zUTtQ41Gu7HJk9hC6GCZSult1qx74fJj2QPa8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE24B7qlUDPf5uUiY5TKy_E1Mt-bW4n-FDrhvJHgbBAxM_Kq2U-LwaCgTfRBMANxHV6xX6VktxPDWsdCiH_GUTGY2BPfTGXM5ZGk_PAPNL5uk1yFJr4QQPevD0TY9MEIZe83f8R1UsM2HhPAQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intensity-Modulated Radiation Therapy (IMRT) alone (for early stage) trials for Nasopharynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Nasopharynx%20cancer&intr=Intensity-Modulated%20Radiation%20Therapy%20(IMRT)%20alone%20(for%20early%20stage)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "66-70 Gy in 30-35 fractions.",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 30000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 37500,
+        "costPerResponder": 35294,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Intensity-Modulated Radiation Therapy (IMRT) alone (for early stage)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 18000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.0 cm^3",
+          "baseline": "5.0 cm^3 (e.g., T2 lesion)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Primary Nasopharyngeal Tumor Volume",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-2.0 cm^3",
+          "baseline": "2.0 cm^3 (e.g., N1 disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Regional Lymph Node Volume",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "6/10 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Obstruction Severity (VAS 0-10)",
+          "percentageChange": -83.33
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "7/10 (frequent/severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epistaxis Severity Score (VAS 0-10)",
+          "percentageChange": -85.71
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "60/100 (affected by disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "70/100 (mild dysfunction due to tumor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Swallowing Function (MDADI Composite Score)",
+          "percentageChange": 14.29
+        },
+        {
+          "absoluteChange": "+1 point",
+          "baseline": "6/7 (limited restrictions)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ability to Tolerate Oral Diet (FOIS Score 1-7)",
+          "percentageChange": 16.67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Xerostomia",
+          "percentage": 80
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 70
+        },
+        {
+          "name": "Dermatitis",
+          "percentage": 75
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        },
+        {
+          "name": "Dysphagia",
+          "percentage": 50
+        },
+        {
+          "name": "Cranial nerve deficits",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "During and immediately after treatment (weeks to months)",
+      "treatmentDuration": "6-7 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWLoK7NFwdbGnUX_v0RoxIQxYDgu_KgbeqA_xxYAaVwv4Zow4UIq1NqPQg0BxYCn-k9Hc_ZKSz0soygFw6GK-gZ4bhvIwqtqwH4s5cOEgv5UiUGK4jrRFjJkc73wMjgnneMJPyJaDX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJlpJqmbZWrOacc8yJCdufkIvs3FqnG0cIuYuOyVWGtqGQZnbXhTtXYCBQsM6bGGFoCeGJ1Wa7hfEvtjd5AyD7KcmAw5k5dx5bzVKl_2mmgcM8LEozLBvNNPYJMba14Z4iLU-ytZwnKF7lVQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8nH-9Nkk6NuUxwzfTQo1Sllp1AQvEkwvdCXPrAs6iX5ViAgDg5Q9-O24nneiLfN5C9fuw999FRPIsDZ4FtA5AHHrIJqVX4b-z6XpmKLV9xsg4tVKeslv62G4NwMy_W0oBcEL4AafOecNF4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdecHqBkTjxeiBrNrHfnB7tBwhd8E4qOygOvNfLC1wNGG1LVQFrSy1HtTE991oMndoVIyDlZGbLqbkC1c33Y1CDJVkAA5vbj8QNiEa9AXTPvw_QU7NB2j4bPcyzWa_Evr9rvUSuJMRfhsGIw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdxbDteSqe5qDRwHiSBsRwE7Jwpig0zuu-1IVBlzh75Bu7_WFBLgCD6xtVU7-n1wfFWrYgmDbfSNoF6lMeiQ_V0TD8sUtIMmyLeJnqAoqcO6FJzmsmT2dPMCDtl28YwmniKML0RO7lJqNHzA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdu7F-gG2QLzqw-gQYV2pVcmQTp5Yf71_tnCxPaACYC5ym5_WRwLqyYMl-tJ5_417AadD4swmO77cnXehEbUEFvV2Y7rnuZcLgltxCsnKmGRpzuDdg4IKFwwGSNcT75prd6Drk-C2U_0kPPoUC27-Yna0YZtXqcjJkkJHJQNGRm5WPZT5ybqUzwmhRy88vCLBHrT08bWl1gXj1f4AIc40r0zv0HjgYMy0SjaCNMvELja_Td3eAANBdDxIc6F4Xwjtg-v8GRO2dFaL7i_WGT7OUHRk7xxzNJEwKiEA92LURBBjwEBytB8j8hA=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYqVx_powgKLdBAypungPspniUIaY8ncZyQttbXfBSydr99oCd5feR9iiaOWppJG35b5ajK28LSAzWVBDtae3owbfG3TSbnbIy-zw82qn__x5MfBj-1BAR7fCfP84PQAh_EO-QLH5DDhte5ZgOC6Pkqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY30Rrl17TxV1ZUq_UdbSlSewpKPOsNYqul-CFfvk1lEvcilyNwmxvo6aDN1dqIweJO9B96HigFzaE0dioeC36uN4fRUOk97j2V81Z95RkOOvCwCrToJQHqLRbDPzEpNAbWSQ="
+        },
+        {
+          "title": "themednet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHM9Ns-QHw6oHfX788NCyJgoWBwW3FfHgJNOFNCjnggPnpUDLghFuoHaGFpjo0aEZcGPSDfqmZQAt1Xzp2NAhILlFGiEgomhyAJMvSPx5VMiFcDpHNgceS5OVuZFq9-TFv0RYHQJvA0zSLsMvwiZYS8oeFvTPiyaPO92hKELWs2KeKj2Ykc8V8Eumssb0DuTJIgsDlkj9rrxPtZo-eC7RVGsgjWnd7BPLKcoOPnw_s3aKFPkqXLMe2T2Sl-N4nPwGxjdi5Xpy492pw3YR6_TZC8ey3tAnKrUfxhcMNwOHRE-e4-K0gp13vfx3QvcahCQsC7j5iiXP2wqtY5"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs4VHrd7CADLxHz6vWeJa9tQvkKNdCUog3CcboI5jpqlfY5O0glksLh_KCIcZLj7dqBAPVZuZRYmatpPoKT77drnmLwHp5lq7M-Jzu5z5JAPIZTym6hyz3Jv0POoTilq8Rxd4eD0K_Y1mL3A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiE-mpCx5TCshlaHSNb8pS9AOJWylFnycd_EJq7i4GrtPFvwEo1D9lUzLcWGVKSohTYATxal_8-5RzvOa2kO0gYcScfxT5T_M5nksbDJQEZvXOKYMcGs1ZNUv2QdenbEPq5O8="
+        },
+        {
+          "title": "esmo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVE5PPcegFP0lMX2b1P88WjbQyPyhFiDOSYDLFDQfZsNztfBxNefp6z4c135eY6upwbUmgofyI8dkRmflJNw35sm9ZewnAgnCSkELAZrEsutpQeOBuzjgdvn3X7G6DKogOOPGTtLhpbcc5mnEsWjxDskrwgK3UjV6_Be4mOy82W_1Z7pAnARzTKRn0N_vqSquj7ldRI41LEgAptTmNwb4UpGVpYnnrwALHuQlTa7b0O26mlz412EePSQP9TR9VE2dJsZ-9VZkf1nee59Cnlx-d1bv1YXGSpC6terjN0_RphUx2sU4VdXXpfa8fWgfA8Kyoq8HR69A-3L4="
+        },
+        {
+          "title": "eviq.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5TJxNccIUg1DnwYu5NYZqbEUEieymlNDMtZkATJMUuJcNGuGmUS55pAU0f0vhnuoxcyQevDHmkDTFTe0NzkFVUhojANSbj_kYFodFjrgCmxcgAgMkqePL9U16W6Zk2zVHhuphoh1ELVE9ooTf7IBWmqh9yrnh2P9UwKJ6-QjzpcFmNLwsJvbf2v9olrlMtQ1vPP8JvhNEHET_uWB2aTEDSIYYib11wJyzTk7e2P_i8uys"
+        },
+        {
+          "title": "nccn.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw7bzpiOkf_9pEwpdVl-dTuos21qucTXMXVHEOhnu-I-ZnDlscTvFUHlpZR0GhpopKk74R0j2WMHO1F0x6wv-rOFplSu_9Htn_wEFf7iAqPKWFe83sw2iUnNgnaWQRcq8YdtQr6rpjJ_hqeLp8Zh5ZIdtpgIhrFBIDArvgnWwYH9FW33rerHKHnA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gemcitabine + Cisplatin (for recurrent/metastatic NPC) trials for Nasopharynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Nasopharynx%20cancer&intr=Gemcitabine%20%2B%20Cisplatin%20(for%20recurrent%2Fmetastatic%20NPC)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Gemcitabine 1000 mg/m2 on day 1 and 8, Cisplatin 80 mg/m2 on day 1, every 3 weeks.",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 45000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 450000,
+        "costPerResponder": 64286,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Gemcitabine + Cisplatin (for recurrent/metastatic NPC)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 7000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+75% of patients achieving CR/PR",
+          "baseline": "0% (expected response without effective treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "+4.0 months median PFS",
+          "baseline": "4.0 months (typical historical median PFS with less effective treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "+92% of patients achieving CR/PR/SD",
+          "baseline": "0% (expected disease control without effective treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate",
+          "percentageChange": 92
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8.0 months median OS",
+          "baseline": "10.0 months (typical historical median OS with less effective treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 80
+        },
+        {
+          "absoluteChange": "+6.0 points",
+          "baseline": "55.0/100 (score at baseline for advanced NPC patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 10.9
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.0/10 (average pain score at baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myelosuppression (Neutropenia, Thrombocytopenia)",
+          "percentage": 70
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 60
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 25
+        },
+        {
+          "name": "Ototoxicity",
+          "percentage": 15
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Within weeks of starting cycles",
+      "treatmentDuration": "3-6 cycles",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "oncozine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhnMSQUjAFrjlY1zYh3zil77yEVKdrqwUw4TG-g4B6hrE8kF0IITtgU6ur7ZYasChM7NmQkxvAlA94qW0rmCUqaKn5-UkA8prvcL3ulj1zVPMPUjspmAq1P4hlwGrHvq1CS08bBADQn5Q8LURYAo9-T0feJgY1iay654IxRpwH5kC4Fb-tFZeFPweDIDO1cyi_KZvPvflf4To9y_KU6__6oeA9QpVqdzm4uL3P1i8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl9t0BsENceV-NyKX4nH93Xe2Ge5zLwdHlddHERlVLe_gvDsNkdq2Rocr10e11dIVsfX_GAL1iRb1ZVY4nFh4kQ4ScdPx7z7yO6Kpef2JgtXspGfciUQ_VFXh7-O-J48gmrdQr"
+        },
+        {
+          "title": "ncku.edu.tw",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt_OfXsmeB-C8aKkbWvj44jJf-EMS2VXrDQ7WtgtwjCqceS4OXI3F8gFgikg8fwEBmh-SgjnrPWxbxvofn9SO8bIC4EXMPsmeZsusdLfk_Z-82IgqyTC4McABfM1iufebOhLPU0S-GgcVZviLc9kpVLdZEEGiMSUcbJotstEhBuojzLyyrgAqF19dEp52sJfIppsbCagGzLm_kq4ouZjOOdqQUuo35-MAMzthjdjlN"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOhV2SLULxWLnR4ujrPf_N6f6JVcWL-zs3xyuezs6f_X66EgbrPiNlQSGJEDRLu6XF8H6cHV0NjczeORLhHAEL8S6EyBrmWGTWyK1xvMnV6A5YK22ifFNqGTd4B5tEYPpYJ_mXoXh8eegaao8p0x6482wILVD25FMQFinkzWjrBcoUXmDeM2hqSAqMI6ffUE4eVUaUesE4SYxUzEAtrB9kbKgf3llLVYhAT2HIVInnRDEW_edtaWZdaN7fK1F7gRQ2pwm-ZcJkK2IxAVp_Jx2HPmJTHcCy3bobxwmXjov17caKpC5HPMXQ2meSZd63amR1LY2ds-WRACBlMBHqP83bbKcsR-g1nEmBMBh31nB3LyiEzBirtG6KJP3HXRA6K3Yw"
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVCLLnqw_ShZII9FFpo62PIo8wQeSCZgWpyv0NT7U3Ri0f3y3IHn9gRtXU0I3qXPMsnHxgWjTJV2eFXryaCR64KxUzkxE9XbKG-Bzu_w7WmI1Ns5sxRAEHZhccDKrQuoSUbQb9DRi9zPwhhucLv7KXRT7WgcYPSApqh1TIRAT7mRPatHbA4ByhtuAIX4cj4ls2"
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlZSFwK3suQwP8jYcidKBuuSU_rZmmgZ17C7Qae561VPRiCSasw0ARkkgx2Aj_e0f3SDZfqQcQGV1V_0MBqGmYyp-IJE9DO9cwBR10ppAShd6cgMlHYP7So7_X560i2kurxiwDXJxGJpjrffNmFxsb5KprxOnNwoLDigwszH70qMMpZ_RXyxUUoYyV-i4-DrvYyUH46wPjxEK_Iz4EZxA="
+        },
+        {
+          "title": "merck.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7auE5z0jnimOMbyjhRJ866yqhUUixo36KYPOT8_g0OBoM-LxhZvaW5wNP5KEal0eK6NRsuUCHHijx2Io4k3pAewPSOtq8Wg2eNba75fZ-2jc7YnetRBIz83Br4vvpY2El9O9Ue6v-c-zNTutCUA036M2anJbLRhjekk-YPcp9VNjVZz3O2h1NrKv3SnHibXYZ3ugtE2tB0zIPPZlEft6-KrLCQPGRT2wY9SpVtt2jCcLmcXPpTPKQTn69cmCg2pggqmGmqTRUyJ-Q"
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWvyH1ByRPcZfs46vNxTqVHWFXMbTbSowM5gS3XmRfxoTxq4pNC8MUwtm4aMjY4MEqZ_liGPG0FQtyAWkxIvJGn1aUw6E56GunJA438b5S4JjlLVEB_60EpWpX0o-McEwnbqPFSpzoRWM220Vay9dvckyqGJI-LbPONXHKHzO_f5VswJ0vhrt47CKAdmAcVzR5dXxY2YQo9drwq0u_2NlIgJ_FGlqfLyjNbeO6Me4X0j3IoWhI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgbfEHfHIxNuUwyfzl9x4U7zVGTsQeV-i8-g04LfoeiBruwF8HwfftXUG1rC2Rm1F6g2xmrvwT1OEm08raJY1pQHtjQk1u1DxesI_OVg3sI_XGW8O-awyyHEFy0oaFqFWqK_J5cSEfFY6k-h2y"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb5455bXI1cu2uq0SsFuteoa2nuZ_ocIzrQ7-2jxBsbtEaKNuZjgXM5xioAZNxfSdDzpLzPfw-szxaFcNjXgRGJiMosOG_KnQHPtchyTqWlAujauk6FUfZdL2DpB0YSKnqQd-Yasw-pGJF8u-U8R63_XSKLvfmaQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvfAJKCDN_rDUcjpqF1cz2cS3WxRoSEG74LZbKA_-b9KdruUOO9Q6Og2JgZUJSiz5HJXbvPMkDJz5EyiSaZIsGS81XCinqRkKRO7eZRdF2Wsug-_0j1-ppcTCkHWDjjIYxROGdTa5ESvv69QnA"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab (for recurrent/metastatic NPC) trials for Nasopharynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Nasopharynx%20cancer&intr=Pembrolizumab%20(for%20recurrent%2Fmetastatic%20NPC)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "200 mg IV every 3 weeks or 400 mg IV every 6 weeks.",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 170000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 195000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 3900000,
+        "costPerResponder": 780000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Gemcitabine + Cisplatin",
+          "costDifference": 150000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Pembrolizumab (for recurrent/metastatic NPC)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+5.7 months",
+          "baseline": "10.8 months (median for standard second-line chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 52.8
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "10.7% (for standard second-line chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate",
+          "percentageChange": 140.2
+        },
+        {
+          "absoluteChange": "+4.5 months",
+          "baseline": "6.0 months (median for standard chemotherapy responders)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Response",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 25,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "50 points (on 0-100 scale, typical for advanced cancer)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30)",
+          "percentageChange": 16
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "65 points (on 0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue (EORTC QLQ-C30 subscale)",
+          "percentageChange": -15.4
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Rash/Pruritus",
+          "percentage": 20
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea/Colitis",
+          "percentage": 7
+        },
+        {
+          "name": "Pneumonitis",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Until disease progression or unacceptable toxicity (can be 1-2 years+)",
+      "trials": 3
+    }
+  ]
+}

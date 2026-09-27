@@ -1,0 +1,1209 @@
+{
+  "conditionName": "Inflammatory bowel disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:31:10.196Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrPljgkb3h5eMKW8sv_8gTDV85PpfQBXQ5_U7Fyep-RkS9fbDwpo5RMBxR0XWHqKh9uSWxsNRWUjS3qtow5PIP_4W5PaLuGgGYNuw4cWP_tXEnU1fzLcbhG_A37CzcivYhgpzB"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWh99aTjn8QbXQSwr9EbuFiJSCAs81XUiMD-jdJRhkdnyRp7zd8CPmkh8dnPzQoqhfkeYge3DN24WdAtD-VPNRGNTbBocPgFLpT7Djp_w9wPSN3jXQTaMdbz5z1K0MCvhcLn_tNxIeRUheBF4GN3OMYemNQgTZ0It4M_2ImVyG7KOCSw86LPPEqBehVd1SvVIgS_tw-qpcVJqNfa9Vu8kdpEr-X5O3CzxzAF7--fnfmb9OnuAivx_jDASAi7Q98QfXASe1Rm2wg64xbg=="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERTTusjd5p7Eza9eYFkhRo0DCHDqKFukGjG6tddvQ5EaraIZFDiW2nNywjhb5wTjC6LDdGd8uaQCbOqPbHZeVOUzRmhTUG9cQemdJAu01PgOpV822WIh6QRP8Erp_xD0ajmvdRKVU_2q3WGuoOQfE3dZ9zlE5Ui6pYWVAifcDwaPKHNUKX0kTPoY3e0VTuT6ILg5j4CY3n3hDWTk9aXMfdcDwwS-7hozt6pIDg7Yr2"
+        },
+        {
+          "title": "magonlinelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPzUf287IXHf7k5zqnRB1DP_6xq_vhlqPOCwcJ-JePXob7TmRcXEtpkK6Ee9j6Z8Gt2FzEWOIYf9LG0xhdqUY6HwTV08O9Tkms7iGGOA1pyLIn-GLzuHlSfbvQNTSYIUEUTWDWrBarz7kAMprmwZvl-j_g-TThHCTEOsLPjAi_240If499ZQenA7bKHg=="
+        },
+        {
+          "title": "magonlinelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMMnqe4K_PqQ0ErWKQqCtpHI_R952p9nQSW0y9Di24l-KpY6g2ZWcqW6pgHzOAmMeMlHoLZS61_8dfgZNv6O_cSIsZX_HE7DjwO-ZGL9pFCJWh849m3f23kIiYSs--RrdvDXNELoqM2885zTru7r3p7GfS7ts4vdBXVQ=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJrZ84MFLxGRbLDqqwHa3Z8YjkQvFCRtWlxqsqfMjXgdDx09S1ptGCNKFFxckAmYBhUcVFhjVgssOwKoMfNQh_b8keNsAVfFPpl__QSzHiY8Ieei4IGW0vmZ_G4BzSKH-jIt_BN61ETm0mtoL9V2Nthfo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1Zl3h_pbJJ9XC2jVzwypjapGRz6ITGcXFg5RQ6F9m5B0I6edgA6Y-qN4h4cFWpDGPGFtbxG9HxG_mzEHYkxEg4kZKp08JF0l-harEsanDNNY6ZPotJ3ujU8E9znZLwr2EHNr6v0Bv8H0Lq7w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjTlDfcWgDesMjOUZ7_NHv2C2cCwTAXPaYg0xfNOdpVD5OJBJWL8i1RkUXEmM29PIJLepmsrens4BsQmW2Dgp0An2DQdMA8wH3B1621yK28EQTgFfvODq68fbWWgA7rFAQu6lq9DeaFISYtoqxmeZ6hZpt_9WqZUC4wtYU2oXAFrnXjku36O4gmChyAwA_bSdb78P3twG5W-4eQpItVQgG1rrs3izh1kUCirr2zX70zSVQlpx9IGeDHI7oiw1W1qB-II_nmUS5fQcW3QcRlNP3Wf-hMYJ6TRU="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2TKR58PMJjVSX0XcuKZ_9Ny-k4J5D5zYu85cG3JKaMZC1Ori5kbDwJaQuN9DEtgTLHHfZwnh17eJlHIfO71zEqEL4fq4uIdFxdMMwQhushyxzjooXj2I6k-QmN1p90ZLbDLsBwKg-bxQOUmSal7sdiSC8IVeyvhevhjEWvM7DR8zYKPk-RiOjpoKExtxI4ClPCA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Prednisone trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Prednisone"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "40-60 mg daily with taper",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 400,
+          "sideEffectManagement": 250,
+          "totalAnnual": 725
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1611,
+        "costPerResponder": 967,
+        "icer": 20000,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 725,
+          "dominates": true,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Prednisone",
+      "nnh": 15,
+      "nnt": 2.5,
+      "participants": 100000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-120 points",
+          "baseline": "CDAI score: 280 (moderate-severe disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI)",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "Mayo Score: 9 (moderate-severe disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mayo Score for Ulcerative Colitis",
+          "percentageChange": -55.6
+        },
+        {
+          "absoluteChange": "-15 mg/L",
+          "baseline": "25 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-450 µg/g",
+          "baseline": "900 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 75,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "VAS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Pain Severity (VAS)",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "+35 points",
+          "baseline": "IBDQ score: 120/224",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ)",
+          "percentageChange": 29.2
+        },
+        {
+          "absoluteChange": "+4 kg",
+          "baseline": "58 kg (underweight)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 6.9
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Insomnia, mood changes",
+          "percentage": 40
+        },
+        {
+          "name": "Fluid retention, weight gain",
+          "percentage": 30
+        },
+        {
+          "name": "Hyperglycemia",
+          "percentage": 15
+        },
+        {
+          "name": "Osteoporosis (long-term)",
+          "percentage": 10
+        },
+        {
+          "name": "Infections",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "days to 1-2 weeks",
+      "treatmentDuration": "8-12 weeks with taper",
+      "trials": 26
+    },
+    {
+      "citations": [
+        {
+          "title": "umich.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhZQTy6A5yX86YMHBGnjST1aYD9t-QBSrcc8UFdTsKa0OYrtoWtlLQeKVqawQKGUdzl6OZsMomEZSSSoIQW_236pqgr-ogYylCEap7mu2gX8KgsHftxQxPzepgKZ4TDjueJtyUe--iac-ueATpKMnXa6MZ9owQJCA2kXw7sucW8JEcMgtNdO3M-nkr88vZ8iM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSe5n1BFe6BjbXql6wBpnklV3DSDr4lMymNh3wvFIt0ELZ0FUuyV3zz0IbLn55uCrJYxD-6QxsibwV5BEnDXxhaA4BbSZ6cWiKb57iYdl_ADllSplGDr9qGsU3-c4UiHbMFmc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2P42kDNMaISYHYtuuci1DqAdFhwnsNb6jT83rFpZxfeb2fPKV7V2yvVW_AO9EV5-yK2nFR4lS6qAUKCa-YI1dA74xRXPv9BCPA61Nsw-x9Q-MdLcgvvUgfG4qNcS7zBrceNQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkv9ST3tPsBCGPomyr2gDVTZmhx9ygrsKwzWwUFlcych1DPb6-4IdW8ygpB2mlNqgQTsrbn8YXtHEk2GiMnmm5-2mpTeMQhrgy9QmYNOyV0-PzEE3xbClDrIrGE_LnSX8OAM7s56ia4K9uTQ=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH58e8_wsh39USxRAI-Ghmh-XZMNvLE3Raymf6o7iDzb5L5Y-J-7FFqJk-kecPy3hf6tZ8q5rfrv2FelLgdJmt_6D8dp7IBQHUJdfzwHSuHTM29iFTfwUPq6TSVpyMaN5k7TZ6Ww=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiwWI07cDAQj9eRkBIjRhl_9cH0JQ11WDrGT_okHkHbXOO1wSlBSnFMhvNWSUq5h925CTG2nUsn75hbL34zGLD1dq_nX_1lyn8MQaXI2jxoxGXDAVt4cSQQTvG04bQtn6WltI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCN55ADa1iKaZEIEIlgS3HFRqkDyoPAzRbrNATtQVnEPiHGg_W6OcvG5yACF2IkV7KnWmG2aK5ZLAsYiUiIbqwhhKxT3gEfKqYRkOE_Q8EyBE7y7hqmaQHvtXAY6xna6Hb7kU="
+        },
+        {
+          "title": "csic.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWNeDerZWYikuS_4NT1_dF148ITIiGhTtyGXoFajN3odkMP7n2ft2m2n61vNq-npMJWRUSI_MkgBch13zy2dRTuJc4ga6cyxwxr4lMcAjqe6k7P4pE0VdRPxbEqLwRyryDKSqWg5jDCI4aMNVAXJ1-shrqDxlLEUK4sAHO4OLSSZI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJlPfmWGtwe16Gbj8fSI9HUk4fwVLan9MBAqGDlLZk7lE4_Y3qABJdVfxg2r6WR2TQCwCKn1xhQR7Gw27QR_nu98Plq5v6lHNWPpIS5RXIm7bnmTWTgvCG1IqyDSf8yj7WnOA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEUQMqF5KfVMc4wJXMV0NqDJ7hMsXpAabvlvKHiVcSF57jCfHQsZzVm_sUOS6QXiAj4ZpzMgyBqiZi0cHkZe6q1EzR6sYCtKtGsmgeshBZN4yM6hrs33e1scGifKa3qk-lbhvy3dSyiQLzlg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2D2_FS3boo-obYAGcsvSF66zo11fgVHnMBM-FCXlmVnC_DEt2cBHIT8O-pWyRhlGOsoh9YTSqswUfwSeozfEJvEztRBgET6XszNg3AllrFKc8i8fGn7WK3nkZIO3TG8Ikm3-KHNrAy15mbBg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErv-sG0RZ0k5AXk0H_D5rs30jmZqLAUFm8BjwcmzXSzgAyQd6eS0bQuC2lFOeZi8s2paEhu3wAKf8lbpYw7cA17P1pgmUkRwBpT2uZIaeWIkxZM4PBvP1MpBKbOnX-Q9ReUSHBu7n9RnT-xlzbZHXXJkCnQVqWTrIMFZNEw12JoPmDURNvYMZYSd_V6KsTMZ4LP4JFUbM_ayVUjz8GYdKVbCyf71TTmkSHhT0L1_4OQsBNbXyhYD8K_I4ucrP1V1PNR3PaynLaDVcbIiRiq9wqUkS8OhdWcg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Infliximab trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Infliximab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "5 mg/kg IV every 8 weeks",
+      "effectiveness": 83,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 29500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 84286,
+        "costPerResponder": 45385,
+        "icer": 180000,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Azathioprine",
+          "costDifference": 28000,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Infliximab",
+      "nnh": 40,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-180 points",
+          "baseline": "300 points (moderate-severe Crohn's disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CDAI Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "9 points (moderate-severe Ulcerative Colitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mayo Score",
+          "percentageChange": -77.7
+        },
+        {
+          "absoluteChange": "-11 points",
+          "baseline": "14 points (severe endoscopic inflammation in Crohn's disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SES-CD Score",
+          "percentageChange": -78.5
+        },
+        {
+          "absoluteChange": "-18 mg/L",
+          "baseline": "30 mg/L (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 65,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+28 points",
+          "baseline": "140/224 (impaired quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "IBDQ Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-650 µg/g",
+          "baseline": "1000 µg/g (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "+0.6 g/dL",
+          "baseline": "3.0 g/dL (low)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion reactions",
+          "percentage": 8
+        },
+        {
+          "name": "Infections (URI, UTI)",
+          "percentage": 25
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 259
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdtvKGQ1T50Ud5gd2tl-LndMQbDrn2Yc4c31nAJkRgI9p3rZYHGh_FtVTVkoPFe_U7DAVJfiIZh1IRTqvy6KJUJt4ae0qOFdszliPQqQtp8PG6GF6aZCgFALLZo8p-vRj1y0tQb-Av20zjB4w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF11IKDVyFs4VbgNYQ8RKUbQTYVqpB0ZFR_FDkPbPaPlCy-ib7uQooVZwdnf18sqb2HJIMJ-Z1jrNmyubr8_HtVnWv3ko8oqHgNfORX-V4UefyOPg-4ZteSYcEjxTg2IOBqwmAS09cIPqgt5Lgj1kqDxa4vwO2guzDQ6ejMVNgWoYwelU02MMtTwSdCnwu6nhZwQz6XUV72yT5F_omoMF474_TfB4sasAN_HiImNUWksH4SM9hIiwAP7LwcUVwyzrS-8JvTnTE0srTnS2JyomUc6QIa4RP9eBqVSnfxORdKrLTAS_3raEb22ZE3t7iqzlVybCVJXfE8"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_zqCriQFFFv2TNmu-_mMGaOkVovv2Fu2dp8E8gUpiGnsyCaTpx7EcCr6MiDBpF5V81Kf8BzM6FOvuhtnA0qJ-OuHsB9k8wyox5Td5EFtgdOqaqhLVAct5qeTEm2rhqfXVXf2hogyfuhN08jov9KAzUd2uMq6Nar4mNOom9PiGH-vzADnoWcQ3Z1IwCs7t7TKjUeIVo6NmPoI_vycOdGZ6lA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9x_EyJODgLRgr0wsM7DGKvUD80BtlFv9A7za7vK3gPBldBmU6aMC1iuSCexmrpYf5Ug8k-XE_m693ombXMiGd01d7nWeH-NSYIBfX_ba62IH_8MleYKCcR2dBTWtGVr2Fk_k3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzPq0al1aWtTf62qJTqDKfVf4SAVoNntVKfzXYJx-ptZGeB16-Nusg5-uSsApnWLMGIdBMlTMP0PfBJ6jn2Nuaa8svHH4jjp0T5d7e8LbnrsvyM8oZgSQIFrsj_AYc3GpHs-1kb7uT30m7S_M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLBN387FpkBVyyzctKADBChtg3o1TJND2MvjzbVILRoqF6s92OTaYAXTLw-hZofLfFoW_Kgji45ZmNmgIfqPlGny0V6MTMVvsdExFzW8sPTabw5vh5FY8eekmRcWdyf6Sc1kRJcpFDQJAyp3Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVVGzcdfQIeKD8RQqG9M8anW72_3jcMxaGUjw9yatxtsCRY9cZrZgNFry9WMtZHYj25ZXgdv1kAhmHq_eqG-NdyLEMDqXt2CaalcIEGANGiWbapneIlZj3JwP24bUOXVK1zNgE8uSQgjkXMcEnZyJkAZ7p56Q2AY0TC1OZEg1t2Us654873uuSM4ktOTU7NmG2YZMLA0wdq_3MAaPbP6brgcq1ZaUFRROiUITMqzZ3tS33zFgGShDxaKzkpT2TOoWl48CECeDEPd8hfbyP3QdRaMP6KRZ18ImYdtSJcSZe3YYvvXubElKXspwUYZ4RfVfOew=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKZZvq02SmcJEGHEyfHER5RAZd4uK4uvMfCAiDyRzRh_0FICcQsbcARYQWIZcWSvK70kpfY5Iq3MixlYKQ99eSLuwBaFerzaXJI07s3dYIPq3wMxu1oz2q45327ltawJZkGTFDhjmsF0iB230z"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7hXPAdXwrkeq_k7WU3kndRyvxs9qsS1RkhO1rKHQ54KiH8AENpynIMbXPAnpmfpOMx8dSOuBbD-5DGHg03p9AcuYsoI-HzltkFznuBuQOaxmig0eKloFWtZuSX7O3IeOMnPLS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Vedolizumab trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Vedolizumab"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "300 mg IV every 8 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 39000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 130000,
+        "costPerResponder": 70909,
+        "icer": 200000,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Infliximab",
+          "costDifference": 9500,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Vedolizumab",
+      "nnh": 60,
+      "nnt": 4,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 points (on 12-point scale)",
+          "baseline": "Moderate-to-severe UC (Mayo Clinic Score: 8/12)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mayo Clinic Score",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "-180 points",
+          "baseline": "Moderate-to-severe CD (CDAI: 320 points)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI)",
+          "percentageChange": -56.25
+        },
+        {
+          "absoluteChange": "-1 point (on 3-point scale)",
+          "baseline": "Active inflammation (Mayo Endoscopic Subscore: 2/3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mayo Endoscopic Subscore",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-8 mg/L",
+          "baseline": "Elevated CRP: 15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein",
+          "percentageChange": -53.3
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+25 points (on 224-point scale)",
+          "baseline": "Low quality of life (IBDQ: 140/224)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 17.8
+        },
+        {
+          "absoluteChange": "-500 µg/g",
+          "baseline": "Elevated Fecal Calprotectin: 800 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -62.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 10
+        },
+        {
+          "name": "Infections (URI, UTI)",
+          "percentage": 22
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 1.5
+        }
+      ],
+      "timeToEffect": "6-10 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 162
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBdQt4MbljzxCtwNu4pdEmYy4LIOPq4WisinHhvyNQ-wk-jN7nr9yi6nrwFzRVGUetrSq41st7mFcuH0SxAKKDWOCz3XyFI0FhxeBCWLCYV5DKdLHinewSdrQutCyJkFsjScsdBn4lGRPmENI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhshQndJExWHM4GUlccb-2hKN445UcyJyU-AkBIPaKW8920UITj8NfZrmNXYRx0A8xS28vaa32OH6Pnwy63aceJp-soSd1dAAVTfsmAvJXVvOWEbyU0HkV60CSMXsPKddcBZ8="
+        },
+        {
+          "title": "consensus.app",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-hyTp52kpk2ESLPIMqVb4I4RLFghRmDVxweKKHNS-IxB-7TOq20_CBVLEr3D3tLJ0w_DoDQuIfU1U8PneKIkzejGzLPYfhuQH6Qf2JYa5-3E5774BdyhSJu6BmFdVUqN_yWXZCPTUC9OqzCvKKLSZ-eK2D6VuVSYEw2jKSPe-B3NtzGG3WK-ERadypDkTNHEyLM57wZTyAOIT8WQ10eVYL6VgGWkQL-PsbpreCcWpOe7aFbFj1CXqfiRXvJg="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrGrlDJovGLhrrbVFdCUHDIyyQoJioji6KNAP5ebu1R3Ehn0Mgjohs3Jezt_SnPkxahQw2RZgh-XXt8a6-PoZxml7pOfa24CrLNWNysJedO_aj7EMadkmj3hDq7zyzspOmAioLhowBAoIShfEKBVXtEhCineZjWPd-1lL-gsZwrQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsEAwmnIMyFCaI4h4RJAbNLj2q0PfXrbDHFaTFX3vDgTdpGSZWPwGEw6YCzVH826AuYGHFOJ_7OiO0vLnmEZZT2Z_LhvqSl3gPf6TYtrzm3PrVOY5PiEqvR_Gc2bRFCKIZcY3kk9kM_-BKOQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaWWZKncYAJRxx4DnugGZb_YCSg4EqBSGvwJrcCJi3V27F2LGoyEaKGOa-QhwWxLUA9guLz7SnuNMxCZyUon0ZCwTqMzwakwLN_9LNi_C1nIFiLFclNUuWhazB-59Xqrci_nA="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVeUan_jFIFBrjp2HpvkQzmX5xoh05AcB0rNdtSWO_go7AYYcRw81XNOeGSFfJeCV_5KDfSFNDAriS31D7UhOnnSD3Sdx1YaR0eBFzntbFNutriJeX8_oYs59BdOkkBnAA4YFD2Cxs8W4uIoF_5ii1MeR0pBDfTNwGc0mF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZcavHxJ2m3UtHgeHERf6doLH-1C1OyYCO-JOc8Jn6wcftIviehZLLNKwwOOLO30feDQCK6QioNvplsoGWa0QFEZlFmYh7e8NfiPfeEyQL0hF0TxtvqspE8zxIaQuUJsKsa14="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1JbVxyPfOAcTqnqcYH-5VKaWmp7fSGnOlx24fRBFOujAdN6QX8qg2Ilo4rSQRiX_XQ7D-uOZlIJSV6NUlP5uFvk0TVanE8GptZ0lglRcuHrYZvhf0DpjSunWnf5G2IHZv6SgWYH3Om8Yp23AtNx8MlGSmbYomdlUPwYZteJvKhcnt_2JnDM_VAPcMbxnWQbM4FH10ZlI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkjczVDXx1kF2KMazKuB_z0u5OoaGcR4fqBQkqhgyInQTbmGwVqD1u8TkrYeyyNlsLY4GqJ3sT4eNfDg8s9Zgt2FomR2jCr2pxwnLDOx11NjFg0gUS7laydDOCMKso84gxdSpwLV_kghetVwI="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpRUXdRKmG7aB8FVq94ZpN03WyCGmg2nUDn77TlKGN8Pu3VnWGEM5L9Jn3C1O5z_eae5EwySO7CqBLr1jCYYaD_lgpOZNH9jVLXEabRgGdmCc23xg3PkLU-E09FH5PWiteozju4hHK7U3yEjQkK_KGjyHuGs_l"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpJ6YpKOeGmQijPFe-cT1_UznLYnZq5WU2km5rR5BMR24P0NBUyVrlQ1sCoLk9_4VaKPgTKy6KEOB78pRB5feCTol1ZI0kaW81C-gNpvuuw86PkST8bSnfhWWDEwMaDZ_Ibvk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ustekinumab trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Ustekinumab"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "IV induction followed by 90 mg SC every 8 weeks",
+      "effectiveness": 77,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 44000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 146667,
+        "costPerResponder": 80000,
+        "icer": 190000,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Azathioprine",
+          "costDifference": 42500,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Ustekinumab",
+      "nnh": 60,
+      "nnt": 5,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-120 points",
+          "baseline": "300 points (CDAI Scale: 0-600)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CDAI Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2 points (Mayo Endoscopic Subscore: 0-3)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mayo Endoscopic Subscore",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 55,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+40 points",
+          "baseline": "140 points (IBDQ Scale: 32-224)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 29
+        },
+        {
+          "absoluteChange": "-300 µg/g",
+          "baseline": "500 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3 stools/day",
+          "baseline": "6 stools/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Daily Stool Frequency (for UC)",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 11
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 5
+        },
+        {
+          "name": "Infections",
+          "percentage": 22
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 1.5
+        }
+      ],
+      "timeToEffect": "6-8 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqQijxAUJdE15-_Zxc6WrnbmX0LoLBvQhbZNQZ-E6Lx15qTAfWSGg_CpvHiMYbOkAa5t_xI1FaS0G9M1bGugs8MaFmRLugWmxkXaZFNlJMTbxeUdZzo2_2P0d2RBhGq7sTWHt-bXO279UnWsE="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWtZHN-mBdiRUK1zQOxQXkqv-5_uHggAGRWmFUPr3GIHYCo9MWNaYNdLpGt8cyhqQ2_cnxfVOJ10V1-zEuBg08zYqrS-67Df_ldYSA7TTHIgis3KoqgzYge6BQJBLEqSTc1wbu9y4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv4gWr3e_5zyDiUz7ZzkTUZ_Ah0a5-qsFuR0qzk2a_Uz7CUsPFoTGIlu_VUoT2QY2KiE7j7-vEJTf4UebHm_8sVQAaQ88fp9KPd1WtDfQ9EBOUwKVmuk56Btl1u_KVJkXUbkHV5DeS82Mktpk="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoH_1097rMPRdBgyMqA7qVJzGcTI9ROp7qP7vCGit5YuDxEBl1TCnw92bLH_ZJnrhABry7tFnDhTapd-7NcWoeugzMH5u3xglfEVMpluZ8kM-iFxG-nLCyS8Q412zc5ezfDe0yOIbV_tW7jAKe"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_hJTC7_paaMdcbvPySzcQCI51YuvVRpoDVtYs7MpgRaBbIy6PotcWbmCE9RITUkB2eiaWI6RwwGKyIArb0iR0wuIyzuxsCvkmiq_Y2ks6jwtS15Ak9xlGvK-5vRd5_Ow="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc7QcHzHUA6TanmgmcRZDw2HHxdiVKApuLYQHFUdnsQk42wIr6qntUsOA9VTz7McU_g1DbCALbO9Lg8wkCZM_yZMmn72k-OaL75B_1OtCEgpl8hnwO_eKKUQ16Zr6O38q5V6RlXB7Kbp7yVJxsASpHgY24uNHr_xMLgCQVJ7NLnqQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Tofacitinib trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Tofacitinib"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "5-10 mg twice daily",
+      "effectiveness": 72,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 2500,
+          "totalAnnual": 46500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 258333,
+        "costPerResponder": 84545,
+        "icer": 250000,
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Azathioprine",
+          "costDifference": 45000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Tofacitinib",
+      "nnh": 40,
+      "nnt": 6,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "9/12 (moderate-to-severe UC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ulcerative Colitis Mayo Score",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "3/3 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rectal Bleeding Subscore (Mayo)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 18,
+      "responseRate": 55,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "3/3 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Frequency Subscore (Mayo)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+35 points",
+          "baseline": "130/224 (impaired QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 26.9
+        },
+        {
+          "absoluteChange": "-300 µg/g",
+          "baseline": "500 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 15
+        },
+        {
+          "name": "Herpes Zoster",
+          "percentage": 7
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 10
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 2.5
+        },
+        {
+          "name": "MACE/Malignancy",
+          "percentage": 1.5
+        }
+      ],
+      "timeToEffect": "2-8 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFELM_NtEfVzlyXvVFLMvBxoPV84BQgXWedW0VrKuKuCg2Owa2alIWoKNLAijaPwD9fQBZwjJK059TAnlcFM1NTgucLZZcOEfYrbY6PIUtSeTtBrFPuNKm_wTg99dpl_hTdnz2vXX-UYgUkHo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMgbhtcFfPyGVJONKURudBIn-vyeMylhiVLR9WLs2nkbY-VSXwuFjN6ZGs_K_dkce6aOeCNvS-D2zfd1Kdr8cQ9ZQ40AZ9Vf6-SYcxhAKeHgTeNJ_Ewoa0TjVbEdcz6xxGkTls4qFfLYQoDA=="
+        },
+        {
+          "title": "ku.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAMbRTSvRfBfQudfAbbV2IMX898BeD66UdSgWOkf-tpqPEhknXI-XgeCG0b8knJUnQPMYBAuUEhYptKYfZVqUP02fw1BwPq4h4I7Tx7MI5-LSLx9-P2gmXRH96VNXhCbghO5gAv2AaIbFmkVc4rIahWHFHn9Y95eEDGeFHI9_9Yzc6rCKkNtPrlm_ltHfOeJw_OmVA6kiOtUL5hYsCokzTTZclVh-Heok0S2M="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOwENto3dBUaDrBSHkmqZfg9fdFm0qVp8u2OFZrCgCrf_uwy0ojO-vDfLNU9Xx2AZxBbtaRb05EqGzVOiIaJm8cyk6E6MHMxzD4QepItep-z3q5xZvagwrUxEYe3WSDnwil-oMeA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwk5dQbr9JwyGhsWbsCNjzWPxFOxtM2hhLRGVZSekmtPrW6Pn2-xSOTIbCaSbe3c8FYBxEGeDCNlT4PzR-WOelFRvKon86My7lYJRsCM6KC6MTES2nCAjsNts9Zdi-cbJu1sukInw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8VZTvVmixD-cYFbJkzonyM8gdWq-GxSLKlCjJFDXXe79xFLpNhbIVKV3KqP2c8axNQ34QPaAVzaau5KzA-l-x_LZCaTAC2zxFVWyjoVCETkBUX-wyF6NLRB3riuWHWMNccrZBrvE="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYf_MchFgOhpZqTPzx6nWlqhxAJErtgr3dVGuU2QaVU6ikS3Si_9GDT-ZwaLyHXTMmoMmi74VU85JGYwipzoZ9GIfQqW_if8YElXCJe608cXKz8dNuTp_KNE6-tUEXO9u6apmwuHjONdu5skiDN8z2EIoR0496GS3efYNMKo-Px1nJeQUlBEDROF28_UZN2w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHedgPPuKoBcaHY7EH06n5_7UuUmlkQ9hevzMX_J4PRhlHhY0XbJNsLzYoZexwFZc91s39eaeNC11qsxpr19FGn5TUrgNWrpRddcztgQZZtU7Eg8p6R4HIfdWtJGfgIZBEsk94auodfLEb7bgKhbLJM2ABSowqYPIrdBlAYtd0dIAFm0A7tfJyZR6yYsqkZIeXyYCfQoTnGFPFZ8oiq07st3DnqnbUSN1txapOLRFO5F8f1aamy-MEF7o_sHhaJgCdW6rTvJe41jVxZiw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpNq94Nk1c-UPBXMknxQO1LRfFVyXku5xraQ4FQImmZEEb8u3r4DXfcfkL7-kV0QFPyJbS_B-gKMKWzRpyPkNEyX3DglG12aUdhO9QGrJH96T1_6iVn6Q3LlXwh-VY3SP1hpjSxHAhztsUxuMsZZrWzDh8TH3v7XeSjByWCXyjUV0pOg5X6DVyKTkmj9wyIAJ0CVGcigG3BDNB2A9ZTNZthOIsQLs_-tmLn77LvgR6aP-KaaORs5O91X88AZ9tKB8OsAtUYchzMptkEObo0tacTVOB5wXmow=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC_0fPqt__WKXWFswPuMjrPpKgXHJJgPMZsK6eFH1Yh63fOtPy7efgyb63FSYa8yERkdnOlrRjSbTx--eyjfFxF5r5vUCMChdDzviCE2A-w6Hq0w4dnWiGfQSStop662s-qfz4KBq9AqaVvP_jurokXlaOExrfzB0rPKzC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEGLBqZ2bCr8Dmicaq55rHrR0uT7TR4TJcwbEDmkilO9evd4k6yI5V49sRSVIFHMFgbQIRSOdfqn8fSCJhWXeCQ1jzcAEfcHLU8wKTszU5nj77lwidFRcR6MPxsB0GwPPGEAE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Azathioprine trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Azathioprine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "2.0-2.5 mg/kg daily",
+      "effectiveness": 62,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1300,
+          "sideEffectManagement": 500,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 8000,
+        "costPerResponder": 4444,
+        "icer": 80000,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Azathioprine",
+      "nnh": 20,
+      "nnt": 5,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-120 points",
+          "baseline": "280 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Crohn's Disease Activity Index (CDAI) Score",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "8/12 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ulcerative Colitis Mayo Score",
+          "percentageChange": -63
+        },
+        {
+          "absoluteChange": "-20 mg/day",
+          "baseline": "20 mg/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prednisolone Equivalent Daily Dose",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-400 µg/g",
+          "baseline": "600 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -67
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 45,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "140/224 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 21
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "-4 times/day",
+          "baseline": "8 times/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Stool Frequency",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 12
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 5
+        },
+        {
+          "name": "Leukopenia/Thrombocytopenia",
+          "percentage": 3
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 2
+        },
+        {
+          "name": "Infections",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "years",
+      "trials": 81
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFvvc2DLFY6lSsazCMAhpH8iZMtIgQaYW_7KNT7XWiLF3s3ZCT8SQklMcxeQxmVaakemu4cotv0X626tLpbgoI3CWo69z8QoohxZp-LtqJ12i_UIdHIOVSsOuUnn7D_euqpUtD0ih8YQusXrYAwHEAMeq9UqMx5FKNvMA_PLl7iUAHhOP6zznRn_1bCgSQlKxlgAGwFJa-PmOu1C2H1omSYIbIfZ9ojERgQtnshB9zvdmjwcV12b92WArj5psrb5DbLw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoPumKZB3sa84LkKTLbkhg6qFt7Qw3GIx9E01toU8lAvwNvIAR8kzN-eMlenA4hKpXdfeD0X4bDipZyE_z77j5c141RsJHbYx37Q_kIe55_KZak1OOz5K8q3wCJVW6GgB6-4vrfG8TFOiX3o-p"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEemiqRE4LD2HjaVjijx7WMRbdj6nSX76NRo7UpDyDgE6MK67lwRTmDna3zQ4Nh34B0OBvjOxL-NLGYzVzXg8vu8TjZEBF9Wb2mgrYRNowwICtCa9KaLZTLbdnfDthNnHztuykSvbSmKiz_4CGz"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_Lx52SY91cLt0yh_EUC-ukyMxiN7XcPXiWgDxrMsnJZwTvsBG5Ez3vnaW9cqcdxG2T-7_C-rFrYjsMXvpWBKzKdEXMalMV8Iq9-fasiC-OkmvvDafxpLwLQOl77tbqdwuO_-mnzpmrVbeEWNbJGC3Z4l4NTBxocdpHkeerPqPPtz3EVhd4ddu7DVFFCu3AxZsXX5lVGetXj-rxcDCYJpCo6oAUz97k4x08Bdtxd0Qa__bovDEqX3QU8BGretP-cpQaUAmH5R7CmKWoJA12xo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtuDSqIC83O3AEF1Kpm37w9hS2Ubokstktxjq_-ZcZvuSrLxJ4G6uQd27ng-EawLGtQj8WjO2RBcgloEdhzXhVS6fdVuZ7hs5h_NjUlK0ylKQD5EvmC5N8JapIquMTEmbhIfMO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEean1S0wKJaX02g5LWPzWAVosoEGcCt2gnYQwtJuLrUnb14gMRR2GZ4miW-04309V9yc2DUdlZVH0BW0mSAIruMFBnngC3l7gphNHzcf3PLSxWDVmTNYsXQpL0dQ_b2BXs0-F8IXZsqg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4LQ4WWPwVc2oihqu5VAbHzRGg9YWLJtx40jW4A46X8f64nNCuB5IOxlIVzqH5ctSgXNelPVeM2xw4x01TCgEegOQp8Eit6BKbFdhHfFdcKrFuEmtsPKF_k4ths1-RfCHQFHOj1Re5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCuJAykTa6N9s0yigRR0Mb2b0nCjV1jdtedOeKU5UbBEc9qVGUd62avVKUjZrZSbYoMSlvRO0lJTgRGgtKdckzgIHidhA4qoAM0xGzDzL5XKtWEKThobjtLIFATNu0ljVUwagN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrmIfDXtlmghJttNSdQMg5QYLJOBiwU4FEvXamCr7mTHh-ENYMHWveGRJxaV7UGNMTHah4U4NaR7RYw5zD_tuM53Wpq6XwvJVYuTQ8aylT0wpQ1I1pf6quufg5z1Fs-eBRE1hPVT5TfIT1YrZ6fToVyv7tQYJtti21WUqXYGad5j5-utKEDPrc4CrEufhN0L8vkheZojCgK1qcKC8aepJY1kT3qF7mYlFGVJF9sCZWgtUjWL6HlXkbVTzCWCcn9fRyPkguD9ZlZEDwYKT5n04950EDaSqDXBqDNUk9IZ8G7_4_I5DqD6eI2XmDm5BtZeIPyDSooN0k"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoClJpshJCrIqa2FewBxtWsnczc0N_OKHDnn5C-jWSNyefm1vY0g4ayFdUlPDl6RQelEddmRTly7_prQzk75haS7A89LjlSqvmMeWTNgCrVVWOxWBiX_90lIPvaht0UrBqKiwC"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mesalamine trials for Inflammatory bowel disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Inflammatory%20bowel%20disease&intr=Mesalamine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1.2-4.8 g/day orally or 1g rectally daily",
+      "effectiveness": 45,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 6500,
+        "costPerResponder": 4333,
+        "icer": 30000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 1000,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 2000,
+          "annualTimeCost": 300,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -10085,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 2000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Mesalamine",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "6/9 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Partial Mayo Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/3 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rectal Bleeding Subscore (Mayo)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2/3 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endoscopic Subscore (Mayo)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-320 µg/g",
+          "baseline": "800 µg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fecal Calprotectin",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-4.5 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive Protein (CRP)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+16 points",
+          "baseline": "140/224 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Bowel Disease Questionnaire (IBDQ) Score",
+          "percentageChange": 11.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea/Diarrhea/Abdominal pain",
+          "percentage": 7
+        },
+        {
+          "name": "Myocarditis/Pericarditis",
+          "percentage": 0.5
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 160
+    }
+  ]
+}

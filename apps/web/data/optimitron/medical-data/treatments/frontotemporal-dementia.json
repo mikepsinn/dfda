@@ -1,0 +1,582 @@
+{
+  "conditionName": "Frontotemporal Dementia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T18:37:17.283Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH502gINZrkf5nbxf-GR3E5lkvvoAdJ5WmraTWNfEv8kW2OWw_qBwZk17Isxcw9yPJH989N2JjxujU9OBQxNSUiTL7DRO52HyCRLQj696wTpv5HNOeBRcNMEFZkKwLxEB7JGE6CqjbfkFS8M2A="
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLHWORVq8b4zLV8FUgHXH8p7pjCP2BgnBBH0tzwC4Z53VnZgfTKUsLcU_MC1OAvE0dZHrSYSW-FXl6wEk8fXERvDTYUiQiq3_O4aVdeqoxXLNFJ_HYz0vDnAIzz_vV_kfhRl3I5fFv-fD5scVkva2mP6THpPzBbkqqJhWqeAlZTVs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUyXazfDyjhFcKNft08n4S_EN9CpV3BC51C3USmITO-xZax0xg2VIwEbPmdm6DiBMK1PHmiOfaAqD6dzIpk7lQOfQfsPwe2_y7jLRGpecl7ql3qqnRtfzdQDiK2bpyT5bJAmmUk8NORnXTcSA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAjufgJ_uW5o4VRl7LhA45Jk2P8HMf890E2aS_pKzz9zkODrdfwhmPvsfKOXefJQSSz2goqrFYIBpBa8YMIGCIhLtQDpq2YoY0lUbFGJyg6e4KjWnQGN51iBL7J7-X6Mf_MMKGCyU0w-FTGeSI3MB0Xj5bz4oF6CKbjYoil-wpgVtBjCjiR1DqR4s6idQPNO64r0UrK-fdfYULGlVgAW3eWxu1o-PRV1zB7OkfiNGhwdQkVjME4yIAaPRBaQTky3nDy9Ekupd_kEZk85Y9F5HxN8u0hVCYW1pOEJ5tqwHT51EDh899"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2Cq8Zmci1_kTj6oYB9fy01nikY2SMs9VUi8o9dHgrjdIQLUsF3FVjHDKITnC59fmrkPSJGs5ggVlkt7MLsCmoi1dQQtKA78xtLgJ4C2-iqqgVDG_fXlibmiT6gVe0zjwxTssyDuVqDw6uYC8="
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOWX1lh2xuLLxDlWlwAvrWv9I3oR_UIBBMG-fN0Mdt7x6ywj9R7KfsIaaLy-EA7QkUCXK_9QM3dx1q5r_TR71MIJs7WhsR_k7O85wLf31rtuiX_9r_YQJa1fZFlg6bWnrAA8Waiul0D67tZXMkUnDKKWFhmVnKoNrKpr0U9I_wuqbh-RoWRNICOHQMR_Xd4-QjxqesUy_TIM0tMtThkfBxd9_tRNzJeAcIIPOuQvKWty3eKpwivwLBoHgKlzq5r4fy"
+        },
+        {
+          "title": "ClinicalTrials.gov: Olanzapine trials for Frontotemporal Dementia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Frontotemporal%20Dementia&intr=Olanzapine"
+        }
+      ],
+      "confidenceScore": 55,
+      "dosageRange": "2.5-10mg daily",
+      "effectiveness": 70,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 250,
+          "sideEffectManagement": 750,
+          "totalAnnual": 1075
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 1791.67,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Olanzapine",
+      "nnh": 20,
+      "nnt": 6,
+      "participants": 800,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 40,
+      "sideEffects": [
+        {
+          "name": "Sedation",
+          "percentage": 30
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 20
+        },
+        {
+          "name": "Metabolic changes",
+          "percentage": 15
+        },
+        {
+          "name": "Extrapyramidal symptoms",
+          "percentage": 10
+        },
+        {
+          "name": "Increased risk of stroke/TIA",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Short-term or lowest effective dose, long-term monitoring",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqDsaZyOB_Ivlh310nfb9kavAdGa45X408f4FfFtzKehNwwqo8KgkteT0OgKW43-gvhgrLXQ246vGsVA-f2zjmJCgVUc2VBdTd4Li7BvLViq1CzOf0j_4jYZBRRJeZoWyMnnXc4UowZXG6tOcrNPJMYyGFvQ=="
+        },
+        {
+          "title": "pameladwilson.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFQ--5IVgy6RZHNv7bWCO3Aw7zfqX0BJ4YImkTq0pekFAHRd1ejT_LM81c2xSapljS6BKF3NB3Tdq1CfffOI5xy--6_u4nkENO-uYwMbpQTIxKtP1dQ-bGvEFl4vm1o5aE9s7WlmiYVlS6pCfRw1Cj5-gaVScq5VaM1DzhJPk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBya90z7hsRdbSJJNHwg78-4rw6K0FdSTbl_UtkIreRwGQFYyJjIelEIAQaAcNuoHssFmSTcIxdvsz3TTQtEquFCUgkI4IkNM_QiBexM3xHb7UAkSfCkaV6m_yXiI5sER-HCLO_GSfQqBKrts="
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiq1gSxeNqGmytNSQ9C1fmHUvfK6eifN6cTusayVZXx0P8tdWBpNBROk7k1zaLQO6-mCXc4hyMhpETaaOd2gaV2mi6iM13XyHzuV0qX0c_2rgwJ6CyNlxHxl5BTMWeRf4Xin7HF7_JPglgATOlHrVf5nqaYK8ZkWfga2QuQf9KNkY="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTp0teK6tYqKe8lSQQlWWFt3NjRm63xeCb1NNMIW7MHUBg3uCePr2dtPNIjW3Kjzlh0Kh5NUMfycuPp-AtndqGecjAsHbjJf9tQPoLpv-9VsD4KkQ2fNoHxKeSg5jaEcegUwko6B16TDjeXFJJ8eDYedL6ZQo5mqorXpIGc4mLul2QXcp3vNtIGw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-kjgqbvv4xG7KNc433jdMX8VuMs1Fmy7-TTEpSLQJ-NaCvz-JjKH3kXsG-zdLsBbDhuBQpyFy4bfv9z34fb9EDs4xukS9tpNtBSkhjj8-IzKULPeDYfq4AE4MklPaoCwYZ4mTggiTcYWy5pF8"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGf8WYYsOPADtxug-tPlXsKm0txyT7qfyMYf-Tu3GJZPu6hOznH1uluy1aXfbkmqDIC0mQ5JgVQqu1eFDsyVjze6E0dAM5m5xek_v7NCk1hXYs1b6Dz04b-guqkOk1teaJoXg8griI="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdF3MbhBzjh5PHH2WgrwCuL4CmZs7_s2vXIgZ9VcyY8oPU32DDezV_Zr8eCyaKGPHUA8ll5Y3GF_WbEOWnUd-fxxS9VXlxU24FWrKFyUh3EUXOx9w0lsCTbVZUh-NTDsPwSWpn_MgRa5P2q0ozs5L-klEg"
+        },
+        {
+          "title": "medpath.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZqbanAERDFqWiEhkCmJbrO5a67NTHdjkyegt4fXTahyojxqYb9NXcq31S6OwjNKOsOni_mUseD73kvpVZnRm3xIGID0yviUk9vqP2clYlO3MML6tI8Mpy7g6WkQhLSlfDcREdqxSVap1CHCvQn1xvlHTFsYKhZI95wi0hQuQ_wUIW6fHOghR6hiHDN9GM_KEgs1LB3uIilxSsN7uH6uDC1K-FbRFAE3m43LYEZ8TZv9VsjTtBlZ1bSgnifaYFHCIXcCDIypbhK5u1Ng=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sertraline trials for Frontotemporal Dementia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Frontotemporal%20Dementia&intr=Sertraline"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "50-200mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 75,
+          "sideEffectManagement": 20,
+          "totalAnnual": 125
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Sertraline",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 600,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 50,
+      "safetyScore": 62,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 18
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwlKIXCw_dFcy1wirHUDUZ0kYtda5cD1ZetNtjwgjCv0xZHIaH4-ogC_8WigE5y0mw7xoWOElhEQobQhzO8eViW6kD8muziE6NryQuqRIGVA6i8KXL7c2gZ68qVbfmE-Gr93Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1kteFnSVGHjdpf6moFAzeZTMiAnsz8rXJ7M-6unVY7jGw9zqrVvknnwELND9EhFp7C4ZPco4VYQ265wa01lQPYATpEjxK7W3WAUs4-MacegcWox2YIOHUvZ5xfIbDdQpM0wuEdn_DrxE1lwql00BXk_YdFQx0-3Pq-eVrpl5alJ4r92lrbJFKn4heVUYWDZK4VRR67jYKNJW_8WyZWnskwCCPFCyteMghsVHxlAuAFikkLSw6540_NYWjMeOjyn6QLbA-V5MyoRtYXb7nFG97xoLLWobGhvXVzgWyqZTgqNIXRgZZHpVW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0gfHNdmjddAJfuRy0zyn4mGkEIOEGPskVopWPNRbwkYPv1LA8SZVUT_EmKLD4b0LVzaBC84y5M1YUCcVu9b2_TZ0XfQKd57JPAtSE3fie3nYmgWWbcwoHzBXlinyqNCSSIi3bcoFDhrnsd_BZ61U3aU4oxaxWfgNOehm6APShVO748evO9AH7-kKO9uToW9CUOTjViykJN2XxECc-BeA2zPjH42LWTAkRHErUIM6lVA13CwjOwQf8yPsvza4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIuThVQKv-OizZYsDJ7sI2KLP7WWSa2Keu1PYNaRiDYFvuJ_nA0o43ONYjiC6s_eZEdxOTvE9eQLTryYmymfVGPGCBeKTkAbUhtScgghPQcgG60RdfrhYK9EOcBlNFpsUwqXs="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd-08vGvyGJnf5nEW67pqUY0CpKP-ARvx2hzonjx5o35e4gMgR88gamfcjWu0QdTr51M2IM-9Ha0iLRqSrlLbSrjlMXCq2WcolUWf4WgvhHIAqDYqGi-10P_0s7ufEWToV1vXuFLJAXfKfCmffMWwsmIBgXgX9JoFH17Wj-V2hXlD17IR1cWmbRnoOsWjG2zG26efNK6AAXw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyXV9kL_LqRLGn9MswIjdlB65ogWg8ZYs6X4tdzZJmfWjSQTmEW2ReD9hpbP5XKZ9yUPBpqrnspB2NOfQJiE1kw2-XMEhPow1zpMS_Ld569iGsJRhyOqZ-LSQ002DurYG3zamIj-rWa02saxk5mRIwBIaELWkTVlMQEHf0-x-afFgSb-qln-lS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbbmsuljyL0Cmb1NjnV0c9IIm__9H-nBN1rTx90UoKM13plaBv12c3pZ-wWKpwoIvqSWDdWQ7BAd5fLcdLuEuWHxq5WTqD2k-1IHCl4FP12hSWV1L8jmuEO_fbHz8Z00G4pyAa7PdtAJEK3w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkHbQwZpG1ZaYM11wxDf7O6PaZfWvve0aN9Md0j-_-BXVjLuDOz2Lb1KTBU5WTjouKRTaA6mSfu3AjnkargwVs4YSvoSQhyElg0EdnZBwA1HLlkhHHYNbYq6sxn_qoewU8MAbWGwb_2VMkCA=="
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoFDO1juU27rneJtTCoYaBvj4opvd91qTQ5MRP4YvKmczu3s1qDlwU96fqLM3mVIAGFiuxcO7AWeVICXw7Kk9znnPb6URQYuF07-gBhlTQjVyKN5XkkoWcSQCbD4SPUEZQnYkjjj97xneBOuWp6tRRF78HRLY7OsqFVCBoGDCbVg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Paroxetine trials for Frontotemporal Dementia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Frontotemporal%20Dementia&intr=Paroxetine"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "20-50mg daily",
+      "effectiveness": 58,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 75,
+          "sideEffectManagement": 20,
+          "totalAnnual": 135
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 281.25,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Paroxetine",
+      "nnh": null,
+      "nnt": 11,
+      "participants": 400,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 48,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 28
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 20
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 22
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Constipation",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOtWSX1C58D1Rrm3n5yEhI0ZjxsD_YKOMMsk2BxV_q6kpL5Ey6inzW4PQ9llTFsq9XHfByyKGxzwIyb12azjn-iVPnrREEpc3J-_18zKYkMXJdhi88oaElejYtw5sHBUiuvJTdZa8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUbInwFDnRzyf4cCXv39rZOLxBpqymU1UjSQ0Z9-Qy-QZOEyr3anqVdYVM6DNK9Cq_uA23h5EhSr8jZ3C5vnmDi__5oWDLSQnr6m_Fo0PItWc9AEQkHIQEs3GDe4FNsK2q6YTKbtxemh4vdz4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVLphfNy2GUqBtuar13frx23P7WMjHEZbcgsQfd8_2AhbHxd0T70uI_HA4qDPXGRK1p3yHn9MUQZxYK-gnrWwTWLviwrsoEMmD4vgaifinEjRzd5YEgQNZseLYFM83FOER1Q7U09X6w1qMgd4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQK0Gb54kpInH359gu1lYny1l8bkHe4_2Z0I7GNtNmGhN20Zbaz6SIKUSYQxS_UYVXugMGxqbsuiLfEUPcWlwBD-1vmm9qqJA0Elxw62qhmWngOeyOEvIuMVIrrwrze10kaEmg8q65QwWsDC0="
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZgOGEivdNNEoo-1DiwA0dMfuHrXDFKFeOZwFe81lfYuehBNNXe-G2rJzmXvxGC6rN4m_V9loQwVFDtI8PXuIt5RBYR8_nlA34rbou3X8C9BXIa6B4Y7t0foD3LwUNID68BJcV8HtJZr5BBEVWLOANHhtCNhw3Cz8DnQeRdYOxdpw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlPUp1CwBiVwdOlTE5izRmxTi34UUShn_SNmveBTaKemXSoFcDvnpZiTHXf-ZwIJyi7-X-VaE592LmzQQO3IsPyb4rOjyYXg1PjHmnyV-rXOGzxnol6iJPM_HmesEb0Ex69wUNFN-4TfQY7PM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxjZg64EcOhzVatiwL9xpiZJmskTNOP_NGASo6kCGH-FALuGEYalIpRAnIAY-QLob725DKXWd7f0ivJs9PMmJaj1MAa2JQy3uMFPZrVGQ04KvowqdLvSMn0j-tlbgpJPm6k8nZ0Qmd60PTNVg1"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr39zTD5ZjYEIVDko2XaZq2szFm1IzborD55AjcFZi6_FQQ_qfhWn0AEtbQ3KoN0iNtFpyoCbqgo5BPcklBR7-qlDFR_G-mUnMZsdTnkAZ2Z-j02AZM2acb1lQ3Jd-OUkeFxoJJHG-AM2w_Sku0Lfge5F06OTiikX1vrXE4-tqGj1VM4Ll07TTE7zqmlRGWHTCpgrjLwsyKIHyiw=="
+        },
+        {
+          "title": "cctu.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjv1bLqvdAUE0hIZAkArpa2lgYC-ojpaQjuIgab4ynl0TjZWU--VtFwrgnhUgjoXO2kjAs9ll85DDDiSnxRIlwwMOeg4sahCOXtPJf12AfS-_JsamQjUx6GEXXS9amJ-oCo71Ci8zg1UZrtzqb__CC7j5R0G2mm30RU_ZW9MrjFWSG"
+        },
+        {
+          "title": "ClinicalTrials.gov: Citalopram trials for Frontotemporal Dementia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Frontotemporal%20Dementia&intr=Citalopram"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "10-40mg daily (max 20mg in elderly)",
+      "effectiveness": 55,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35,
+          "monitoringCost": 75,
+          "sideEffectManagement": 20,
+          "totalAnnual": 130
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 288.89,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Citalopram",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.25 points",
+          "baseline": "NPI-Agitation/Aggression score: 9/12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Agitation/Aggression (NPI-Agitation/Aggression subscale)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "NPI-Disinhibition score: 7/12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disinhibition (NPI-Disinhibition subscale)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+1.0 points",
+          "baseline": "NPI-Apathy score: 8/12",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Apathy (NPI-Apathy subscale)",
+          "percentageChange": 12.5
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "NPI-Caregiver Distress total: 30/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Caregiver Distress (NPI-Caregiver Distress total)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 45,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.2 points",
+          "baseline": "NPI Total Score: 40/144",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Neuropsychiatric Symptom Severity (NPI Total Score)",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "ACE-III score: 70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Cognitive Function (ACE-III Total Score)",
+          "percentageChange": -4
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "CSDD score: 12/38",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Severity (CSDD Score)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Insomnia/Somnolence",
+          "percentage": 15
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 12
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 18
+        },
+        {
+          "name": "QTc prolongation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "4-6 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrQaBlTJEbnQ0m_uPoPrARadzb682O2vZtBB0OprOpYm2mZG4ndITkyxND4oiHJ-867_J_3K6LyyAlB8gSV7rsjyJ7aDdJNMQerTr55NvYq-JbHo4nG6UKRHzrz32WciWdQo4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtgcgkKaNjg2Yfa0Wx_Z7oO7V5Vx-UTDw-B2NmhPNOpBUpZgwu_wB2geqZj7LOZIVT8bzfamC-wb2wqanDn393wZ6jWXKLRMhKzKdhg46XKgUa6agNrf8L3zlyTsWp9eiY3akz"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUKhl-HAGXrWYh-nOYdNND5gsTbZ3tymilY-ScLj3E1yCVPIr27aeiTKp-b-R2tQV95edDYJAcDdGxVM9afvFIsRvoyJCHiaZLJivo7dScd5zsef7yaSVhC8hwcnA3Ug-jBqMxXleLIKJlUFq8idjicIwFhn4NQVURZFU7JFEtsVlVw3GKNqcgcykSXFueXVJftKsnzeVbCQM="
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbLWQkmD7rGKX9vosAUQE49-5EOMk7TRSoX5GyMjmN5QRqI_P2-9451fsLQjl1s3HRbeTqXJzzSmQjxN9fxAcKCEEtJfrUf78Zssp8hup7uhlfWxTmJA_IoHpfWLMHi0Ux6bzGTMnrnirVk8COOXX_LbW1PSVZfV-GP8sX_gU_lYH9BaV9s8epGlC945TjhxRkXq__Ogn-cWV5kFAqsF5BFv-_j_O9X5T61FpQrBivEVar1t5GyUF3Cm1DDZvsXvHQalIPQnFeRbA4ifl4aQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl60auiPY1FCTJjQVSXioganLMeN5_hv6ztgIZEEJfaO-k4Ve8cAlAsexze5FlAQZhe2GIcznXZigg8XIi4saqnsBTyT5A46ODi_IbApjaIrOP53EcN2nFvBcIpswC56zPQQf1"
+        },
+        {
+          "title": "alzdiscovery.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDYKbra88qtKOdQkK_trenicsxMEEXAtKfirkvtY3fUu15cusi6dC668g9PPpL3Mw_j8skVoEZxshwjadrnO7yGKI06RgmlmeeLhXXbVUVIfygpf70MRgB_BKabXYsijCxFeEIwejm8W5l8Wc91X4T8VhkW4Q6YCM2CQ624VgdcLd2kuwxChx0gZDJcmJqSdCwIgknDIIDP_wlQf9JiFKNO1uY75NLJ-85"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFausNqcnMmIdLz345z6dweEUS31BvA6anT30XUptZETZyUkmVI5DbRbfSoNoHIgeX0wMVcB5lkLhFyCbMS9Vb-XJjusY7qCXJ0y4lveLi8MiLjOiCLM8aVm408qRoouiCWG-kaiYSsy4ozSYY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Trazodone trials for Frontotemporal Dementia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Frontotemporal%20Dementia&intr=Trazodone"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "50-300mg daily",
+      "effectiveness": 50,
+      "evidenceQuality": "Low-Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 75,
+          "sideEffectManagement": 20,
+          "totalAnnual": 125
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Trazodone",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 300,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 50,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Drowsiness",
+          "percentage": 35
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 18
+        },
+        {
+          "name": "Orthostatic hypotension",
+          "percentage": 10
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Priapism (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Hours for sedation, days to weeks for agitation",
+      "treatmentDuration": "Lifetime",
+      "trials": 10
+    }
+  ]
+}

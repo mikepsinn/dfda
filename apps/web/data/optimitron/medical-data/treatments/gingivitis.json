@@ -1,0 +1,753 @@
+{
+  "conditionName": "Gingivitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:06:21.860Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8qRUUFfIeDy2MrqKUWq-JHhetM0AwmAoX_bat_1giP7JIMpyiaMEFUWymjagXyQgQiL_t-bG1CinaAocIPnbFL6bqblzz63EeGhGT-_Tk9S5PLBoU3dH0zyC7dz6d2V-zq9Bj"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRoQ6RZ6JWcyF24UgKVpCvGqO9OER4t14LwO0aAdiARsHFrm8hNVaGI4B09pf_F8RV975hdrNLlhpAOsJ_kTSyw_AqfIazVNjynu2vxlLj737V--XfJWhVo_0YS1b7Cr3JyuMYljHsEl_Aye9r1Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtfCmSCVYJdQi-U_DCQ-OCmZ8ZhJ_WI1p-dNOiUEx0VNNryKG77UpZkM-PBJpbC3wC5byrT0k7ypEkdlcs4LkHC03lmhZjCXN_9IvORlE2n2YvaK6bao9nLnFWGhwp7K4aFDyN4PX_RhrmpPrAHQav6iXFrHFyADaLuU2ysHvlNm_dDJTsx3E0zbAzZNUTLR-rzmspec1eu1ADAD9tNydtPam3rqW5MxhWZT9aXKT4KeArrJXM1g08OAu2V5-wiHznPKmlHJnOzQ=="
+        },
+        {
+          "title": "cda-amc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6Z15yoJirGsS-D6ocDwsCEtpCzfbAwj18LRvOltOrIOx05XSsfPwD86B4LLHHWrXBVegWNWRpDOCgpN4y7U-AQ2RrtUAZs8ZBQUvQrR0K8i2Fkzn2uS-FNP-bnGfcEjSRW7TvrRbRgPIAo8GHW9ZiY-e_IqPbampFML2JRvdWc-Pt6i_eLWo-uNDfKvNDY0uLUvpdKA1pH7LFvswPcQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMuPbDu9rD1bUmb7IQJublZdzQxT0athzoFGuEnA8UC-DVlSVX49OZRmxi3JEK2qMyT4RL5-IpUHA-CwhxStLqYhLn6O1SCfddMcH2qpvkW_kj652V9IaZsRwBdjgm5tZ59UHa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU8ywtRnRTPOU7BO9y8ay3CbOliM0SVRTwzXSJtDjLJTOIFh7bsOy6WZkLrSSwvC0uW7IMHNFLyHdF-HgA0tH9BwLXULwpfN3sqdzCzQccuHVOzU9deZD2SruUPcc9bt1XZnLLEO8AiIpu6zPy2qZ0WBQSKtabhvVfNOVHAwn_KKjUDoneSD_2N2LUqeSs-trfFCe6X67OWON9m_exVbwFgeqGYFIYCaxH4owEgbz9BxWRQnim-PSOamlSTl3SR3O-KOcYQUG_gKIpoVHrulsjdOlosC4tABOnfnGD9cid0AdLWpMeKK3lJznWg1laUsixH5l78xe1_EUPq-9-Zf5WE6VTnrNN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Professional Dental Cleaning (Prophylaxis) trials for Gingivitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gingivitis&intr=Professional%20Dental%20Cleaning%20(Prophylaxis)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "1 session (30-60 minutes)",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 350,
+          "sideEffectManagement": 0,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 411.76,
+        "costPerResponder": 368.42,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "No professional dental cleaning",
+          "costDifference": 350,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Professional Dental Cleaning (Prophylaxis)",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 100000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-39 percentage points",
+          "baseline": "60% of sites",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bleeding on Probing (BOP)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "2.2 (on 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gingival Index (Löe & Silness)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-52.5 percentage points",
+          "baseline": "75% of surfaces",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plaque Index (O'Leary)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 95,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9.8 points",
+          "baseline": "OHIP-14 score: 28/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Health-Related Quality of Life (OHIP-14 score)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "Organoleptic score: 3/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Halitosis (Organoleptic Score)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.6 points",
+          "baseline": "Visual Analog Scale: 6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Gingival Discomfort (VAS)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary tooth sensitivity",
+          "percentage": 15
+        },
+        {
+          "name": "Gum soreness/bleeding",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate for plaque/calculus removal, 1-2 weeks for clinical improvement",
+      "treatmentDuration": "1-2 times per year",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjxG15R8H0vzBgaLCR0nx392V8f-ChAs3NIKJBwzCO8hTv35qQNNarppIE67TOI3dwq6ThhB-tkgzojnET56nWnePRljLU51Hdl016TuSMQ1dMFdBwIge_UTzDebLTrrjH8K2xl9-F9z7mNv_d"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqQzc7o8B9N026Mefi_pvIxVC9oypXW1uQKqwjaqcA55Dx89K-8lEG2HS5qlPhf213StBEBpc6jpOZLU0g2HtdbdsrI3kvN3lYuDsaTG2fQbytyUNkTcqGRDXuLzASR2l_l3b9aInhdso75Fk="
+        },
+        {
+          "title": "jcdr.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMXKDDC1Bk8LWbz5nO9q8suphft16Wxqc-uKMqDL_xsqzrPL2BK8WrI_vrViCshbB_HXHB9-Lr6HrrpADkMgxc3GT7-IR2seyEv4G5iOR3854gJDLYoTZhAppEsQUUeTOHUV_JUp1e4OS2DT2_GdnVaSWa5Zr32gOpVYwYsJru77ayqfu0LJyXCfFIcFJUy1c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmckQSzqnqPmVPDNtY8n6XM465lBB1GDYTBYgtoRrln0rTMBWzfz7mHHVWmYUBr5jJ56ojesFW2fvzpnXrBGKyn1rzhmveZXOpDQUPgvLEjyOTkfHBJq3w1hloP86t5qw43ngN"
+        },
+        {
+          "title": "exlibrisgroup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVqIAUFEOXZnv6YVypK7BSjV6kgAiGIA4E6MZTdnQz_ejohvDAjkAm1Gi8NR0KdxyDOfMHtGMdhWrukdwJCL3pi5XQlZDe1QC3prmZiyfiIpasL5dVI-9Vp1IxfxysGD4qAUPXltnthCP4YpxKCNylEmu1XApTudTTituPzARkhRChAjQoabt763B4NQqh4IgK4sNZyhvd7p5R7oJXhDOjA6yzwEtV4xEuwdLEy0UKpVu6JSMWsYeLwujgBUix7L0stob5ISWLsS3huEIXGH9wAF-fB1Ey1hezDS8rcbj0ZJEayoFV5z-vuMwzp_MP08LtQX6zeD_6N8uunhW12jzL3hmwXqOicToLM1mJhA8tIU4BbVUSx3KhFF4b85mWaaXDaq2d3JUYwfjIUdKvaDsc9ERk0e47SLbIeIy7EZ6b4RcbG1u0I8Lu7FAQEe-sYg-fG9BTAw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHa-jdgd7NPnt6KMiIuHHeT90VarXKYYIxz9NVRZkOK_s6VJaUhdbrmtoTJR-j0APJpL8tPmTOb8G6K_ky8Gvu2X9_3O_Ch1Ww7rxFZoAFXIiJbt1TFrEXTO9O8RF7rTtaoh-AI"
+        },
+        {
+          "title": "jmc.gov.jo",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh3mlSnKuuxHHxBtKFJsQFmoGshCrqevbFTbwuItF360diK55T3zSpvgbeE3CURWLXPHa9YYJjCL8LYvAZ76WV925zpkQ4-QQNGr2zUQqr-0D2uSO0KGz-qe99BHzV4XZEBvgYlj4MX-sSb1y6kEOE7681B6gh"
+        },
+        {
+          "title": "vu.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpzewRS4jerMSstlp8YegAKN8Lna9VenujD3GMrTZg16UVi2ySpQ7qT0mJCqvExLnkUke7B_NDkfBXEp7DX5xaAJ0BYLI4GX6CFCHlCuZJFlv9GdFwtqLmGmy_fh424v4B6wVfRnjWyCatb94NmcfZHTcS9v5f-sK_E7BDGW6xAbGXBYS6JwsuL78u2B3VWHAzYiZQuOkLi2HblQSjWTLP9Zb0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuZ0DSt2RVqNbAiKUeUVlpeIY6PqZIoLZxurLdUUVu6oKIleVWdvW_luE6dxUyyP0e25ahakxlNBaKNtInMsL3QTYx3a4v9CnZ2-82ZG0aIIaPFee29HGX4QwgK571p6rJBeqt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE11oTJJTnh3C70TJPEBYZJhSdHPCzY6j22g6DRKCek-yTfxwPdEWEJ_KTNpTsrXGB-jPp-bXlLIIAcO5PNjOznGtTqb3nFTRzkUzthP7YzHb79rpCcsIgmH6UE-mT4l-oYsczK1G9bfTdDHSdw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhGuXol5jXKrMtnqG7oyR4sMjSFOE6ZmjM6jLil7UfltzEzhaM-96Tm34sUaDNnzbXI7Fla6-z459M8C46iKnnzrplH680r8JixMMv3HNrm7Rm59w5dVJprM7n3Yd7Sc19xzfR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhfrjEKL1wcPKLYjJBxmHseTcz3olcVHHbD9Cysy96YIDYoAJY4Cta3Ee3ixgYPDNXJ_2l5NQdsMjHyOZAQ1dfD4FtUu6wKBrzkkbeFlHJ0ZratqfqgUY8beBCyo9CZ0s8xYCUR3Yk"
+        },
+        {
+          "title": "adha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxoE2JpQOi6_aLOjBjsUrYjOvnfQcTgcpekQDLbAaz0qh1osNuqQGWoFzkp3oURcvdYsCoTy3-LfBakDjsu2wbxm-Vwl5kKDTdCP-TQIshxwULEgxFD2WweMi9I-A2"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrxJPAaZWpqkMBj4s763zq9oobkLOZVOVo6hP9Xdk1dlpfhe8EsMdNs3RHRQsZ09prPxSkutftP-vKWzStNBK6SOdWZLMTH_ilQUz_9Ba4zQSGkI9hCcFIlI-ddAciYLznkHKfuL50Gz7n85aYEi1HnQ18PO9w5FVsN7nk9aC85-zilJmTuRqB5YAEqyd4Z9mtHRIPU7JndVTJUr4chLVsQqR_vievXnWPoCol_xrZ5XGBPRqwbBhf0gPNTFrvScdH0COXKzM3N38DR-R0G3SfC_c="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4llUpRU_gu8YAtcOVJiSoon9Ys4pcpS-2fAuTeW7exTnE2E9JWXHhF_rAYgn0ayZA1i2mqLoJEEPGHqwyyG9fQMilRXjnhLKxbWYu49SdPCUCsiwf218ohUkozoc-ittpSCNRMxuKAAGsPo6Lwx5oV1GriouBkT2q85KEORF9okyJGXwvejS0DV9kXobIep0s7cjncnSWtvBV9j_8MN0_WEhylVcn48sfCauKeePjtDXd9RkwIfjOGujV5DV1qJHCJdPF"
+        },
+        {
+          "title": "jcda.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLBFvyMgK3wF5tjw6yM36nIiXpMFaXh9NuFEfC4cj_7pm4gbcuiVI33n09VExbUqluKXmMr6VyUaRQrG5GuBRqVpYRAWwekrmtUZVrOH6EEFZZD6ZMBw=="
+        },
+        {
+          "title": "arikesi.or.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaFdmAAhpHJNNZTgxMla8xATACb-X7U0BqTwK5n9ZtPZbPYJcxh895K4SjLSCszFEFt7j1XHtPli82Ixv_zHtJsyPGTY4G2wuhq5eAfC1qZY9vjYYJVGeFdmFgkUmTFjmAyyzxYL6_b7YhZx85Rhhzi1GnL-jnRO51KbLTeUN6go4VNQMEQ-jPROA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Daily Mechanical Plaque Removal (Brushing & Flossing) trials for Gingivitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gingivitis&intr=Daily%20Mechanical%20Plaque%20Removal%20(Brushing%20%26%20Flossing)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "Brush twice daily for 2 minutes, floss once daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 75,
+        "costPerResponder": 66.67,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "No mechanical plaque removal",
+          "costDifference": 60,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Daily Mechanical Plaque Removal (Brushing & Flossing)",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 1000000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 units",
+          "baseline": "2.1 (0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gingival Index (GI)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-35 percentage points",
+          "baseline": "65% of sites",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bleeding on Probing (BOP)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-28 percentage points",
+          "baseline": "70% of surfaces",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plaque Index (PI)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5.4 units",
+          "baseline": "18 units (0-56 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Health Impact Profile (OHIP-14) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-33 percentage points",
+          "baseline": "55% of days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Self-reported Halitosis Incidence",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gum irritation/recession (from aggressive technique)",
+          "percentage": 5
+        },
+        {
+          "name": "Toothbrush abrasion",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Lifetime, daily",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7uMHva36VRpcbF8sMYuIkROYGPsGoSm38uZf3C5fpI5x1R9IaNmbNdPPZX_xDcgiam_T78qJIAfKRRZpOHz_5tIbFdmlEL-56m125v2BnaagWRxhdtyg5GNZ-XlOLAEK3n_GYLps="
+        },
+        {
+          "title": "todaysrdh.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi5ZlCcNqAbAkWH_rQ8LUuiT9oQt5hl3_Kb9xy6kAQ3LhAKZeDDcCqM6WdpcOchrPSxhK6GWu1s1raoVLGTG7j7wH5kEvoAxP5aBWjlHA9fqRFz5GN-MUkpfbM4tX2K9P4mPnPLpjADk-W5aPC"
+        },
+        {
+          "title": "ijpi.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKQmhye_9kSIcnnq25TGUkktYkr1Zn1v_PO6A3w5el1G0pmrXFYkJQ8CY9AHiNhVogW6tt04DjYkuuCNJzbyjR6R9ki1IhzTEHqkN98H3x34w6ZwShy2QZSDvOPQIJIUJoVVqWZuzC_dlNHBWSBjdt"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPc6vwNUhsw4-sMIY9vMN4UXkdxFJV1HzwtwHlzXYy9x0lxXWRhZxlS1Rj2xViSCn-o5bI9ZElev_gkGQZzOSN1xKkxQV5-KNDiw8gTh6PWIwRo5iGTuGeILXO06EiG_YwugG58TvvAtcFCBY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoj58NB9-vDv_JeADGNUCk0jfa5wkOGoWgacr_zfgrPKl-p9UHdZrBpupcybGk5O_nKLtzBBIs4bpsaB-zQ-pMpE2lJzBZYXsYQiKYhub9x9hmxvPisXeYzqHowdRHei7Awfhe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl0k7or36REJyOuPzdIoauaB0lpvE-5d1W9Mp82mSmMD5ArkmmsmbnYGLZD67mYnRvwmQhQJv7aFkWCCkE2sIUghLLgI5z9d84BO8pm4qrLVRMSbpQpdnAI1Tg4bl-49KvbF52"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF88baYlfOimSDcCt6Cg2no963XAo_FZfzHWletYykkIR1BTa2eFOQLkH_9dbrtCGW_n3jYpDYE94p3Bvn-XKV3gh6xBzNhCRv7O9WlayExg09LS94L06VWauPe_o9rMgeMe-6614aMmOC1sl2pUlRqav5zgpVXj6jQcN1sEr17FVeHf_TkOxiQ-DQotBbs608ks0sSiwO-dnn35gyM1bi0uEybSCCSSMbhPA0_D9udSoSmkmjMZ7xF1QBLimE-XrjUqJsKM_pSoOc9rmpqpcwLAMvjEIjzuo3C-uVdwqxwfiiXG8cfrPYKHYDTqz_vFWJW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo5LKugYankeJxE9QwdaDwoBK-gX8RxJaJgveOPsUlCmfLMe2jZDSTovkCMvB3EWDChrqcNSsWJM-F5acm3zo4KdzKZBm2W0zRZYChauCi6szHKgPN_pAlcYnV2AcLItAR-xTgxv1TUyFgY_4="
+        },
+        {
+          "title": "univaq.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY3-6wBJN3UcFZkNAP9t26KO2y556NBrLzoqoec6sunjVZJ6wK8L0aYm-rrZ-hH4X5kuhJViBuI_UWZZzLPx_d0UoLiBVSeqrJ4UcaFJ7Hqj8aqRyTYnInKYnzRAKh9VYXofY2y-QtZ4Y91RH-wyCJ3taTQzPujflBTIicu_b2bfiGrJVtWQdOaeCNeUb-yeShknnWj6Q2G8OFuOzpN9EOceVmkGKubd9ExMH6bQAq6xyjHp0fI9RT1oape8QEodQEdapcEgdeSD-O0r1Qibk7RvCBx8rzjqRHN4JBUzi_MbLRiWTkxMIpNrDtJvx3hfDXMatEjrFhgspwdK-4IsMUzs3FsigRnCRctb1mT53WO089yPG6wlhzrupk17wlLmAzhKIIr6QX7rmaJA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Chlorhexidine Gluconate Mouthrinse (0.12%) trials for Gingivitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gingivitis&intr=Chlorhexidine%20Gluconate%20Mouthrinse%20(0.12%25)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "15mL, rinse twice daily for 30-60 seconds",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 620
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 200,
+        "costPerResponder": 150,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 0,
+          "annualPrescriptionCost": 120,
+          "annualTimeCost": 0,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Daily Mechanical Plaque Removal Alone",
+          "costDifference": 120,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Chlorhexidine Gluconate Mouthrinse (0.12%)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.84 points",
+          "baseline": "2.1/3 (moderate gingivitis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gingival Index Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-24.75% of sites",
+          "baseline": "55% of sites",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Bleeding on Probing Sites",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-1.25 points",
+          "baseline": "2.5/3 (moderate plaque accumulation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Plaque Index Score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 80,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "18/56 (moderate impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Health Impact Profile (OHIP-14) Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.05 points",
+          "baseline": "3/5 (moderate halitosis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Organoleptic Halitosis Score",
+          "percentageChange": -35
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Tooth/tongue staining",
+          "percentage": 40
+        },
+        {
+          "name": "Taste alteration",
+          "percentage": 20
+        },
+        {
+          "name": "Increased calculus formation",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "2-4 weeks (short-term/intermittent)",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESRmUbmThaI3551QIxAXcg6SDWFjJHbnlsgUN-YqVXQSjMLmWLnifHfivFALLgoZqF0oQCJu-oVQJpaVdQAubZ7jJBa0lEln2gm4PeOjbUeYl2fyMzezyvtr7N74AQBuWdNTzmO-yMs6FEoZ0="
+        },
+        {
+          "title": "kenvuepro.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIQ76EIYQUdTyXTNOvCxr_fbAktjugGPgl9KA-uAgNiN40sdm72DGr7zGNWmu85f5Q4ddFTZxk5ESQZRc-xBqxZSDB52G4tAsyCJk7FHsp_gH-dVYIANBnQlOAHQBzozVJ5eq24_GfHonY7-DU0ba8Urm7ZDiZ32rq2PCbqByV"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWssi8DFhkziESOAAscDTjcOrPEqUdQ6WKIWeE2TWCBMhg5X4ff5ruDrQRmr0ujt8yIK5wxZcbHJZbn4dDV9eDDZOhcBDsqbDuYaBeUzw9tU6baFUxzJDONkf59Cv6OZpSZ6fxyWng_FyFjmHMyFMfb0Nde83DBgavY2f350P8HJ2ZenIFmIlbphuyeAIa2y6HSpOL-BNX0gGjEt59ZO0UdWviEwUYgux25IfO4i6gzHHLNEpxcRVvgZXQwgktL58NLXZ1zm1aHG-MZJM="
+        },
+        {
+          "title": "dentist.ie",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSu3AlTjSyBaatkCC4ry-9w1BBYQvexGr67tML8LJJT5hSu-Q_rfqXWdvWMofIjXngI63cae52NVUXMAPifXdb98ErFYswi-idNJIexpKwXxd2u5DUAUghXCBpvE4OBsJ6UemvJ_7MGc3GzeZ7-CdaHx_GaUGmFhKoL20hLtFElRyF2y1aM8sW9nqSrRgihuKzxUYmbHc="
+        },
+        {
+          "title": "dentistry.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbFzEJXNYocIn3B5UsptikUOW6lp1RS3IVriQc1TVey_LcOea9lCIgIOZ5mRx2PJxFD0DhtRsMFzpKn00wxSAQBJMe0agHARVeExHV7QFpnBzVroYRsZH_yvuoK3zYruzDEepE_00OnSAiAf5hdLfQRZldgi98KLz_4QO-oys9"
+        },
+        {
+          "title": "todaysrdh.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG72vmEPc8rosxtoq8T4pz1Mo4eM1jx6tFmg3y4TTfUbR_Icr1COFZTYNDe8203t5U1muhOkv2v9LViYQiVBU8tCcmgm2mS7Tyr3KKzKvuyvlhF1pos79UGRXQNWE5HG_a_OwW87gZFzmTjKWf2MczBg0X625hgZ8PV72yv1ybtmNt9y6rc0vAe36QHbVYk9ogeNR5DrJOBsenD7n74X28ALfD3V9ME"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKlqVWtSc5IL_QXzbcwMvf1MKUdtiCV6HZHbVOX7QtioconQ8o2hf_TDl63CumTBEFq8UhN233hFz27RzUTewByLIX0JC-przD5uRprQzYWRF5ifTgpfaYE5oedlW1GnCZRws="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMeap2iJKmox4-fGP9u_mCk6MTw_JKZcyKd6595hQuhUVXWUdUpH4DhVZYFrrfX1J1ysse_FVMqMZmWOvL-QimYsu0TBXfJ2KKNI76go1acECmuwdJTHFV4Xrsmv5SwZ6InYY="
+        },
+        {
+          "title": "adha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyVHTuiYr-_c7OWkEHBFrqClxmONhDtFelfAn2f8TmfAL9JVBMS3WQOAopUHWYb8WjyClGWmLC2nyc_Mmak8EMMSVDf0g3GzgDr9lY3q_QqrOighjDDSy3rw59mop8a9pEqW34ia5l6WbW_JiAX8Ra"
+        },
+        {
+          "title": "ClinicalTrials.gov: Essential Oil Mouthrinse (e.g., Listerine Antiseptic) trials for Gingivitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gingivitis&intr=Essential%20Oil%20Mouthrinse%20(e.g.%2C%20Listerine%20Antiseptic)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20mL, rinse twice daily for 30 seconds",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 120,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 620
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 300,
+        "costPerResponder": 171.43,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.04,
+        "vsComparator": {
+          "comparatorName": "Daily Mechanical Plaque Removal Alone",
+          "costDifference": 120,
+          "dominates": false,
+          "qalysGainedDifference": 0.04
+        }
+      },
+      "name": "Essential Oil Mouthrinse (e.g., Listerine Antiseptic)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 70,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Oral burning/irritation",
+          "percentage": 15
+        },
+        {
+          "name": "Bitter taste",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Continuous, daily use",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "ijcmph.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETIudqXM7UcHQfLCSbGK65BIW3E2zcORsVZzO8XCaDr98YAQAhk65aDeYNr9JVs93npdYKfWqhnX4ufVoijky82JRlmUw7oaQxdgyLggY3y7wi5djqXXVOhPJefPu17bSgSFs5Jr2mX1Mhd6AmzBOiqe8xHQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp5Po42axYQC6ECySCOh2KHRnAc_UeNVmAwHMwM3qrXSX5V95BoYovZ2pJtQ4Nw5cPdvbiquBHaAFSeh8-JTySUjJWk41G12Kmy9RAWo-Gej3BvdjNuWLPMhX8gmUwmNwSV08="
+        },
+        {
+          "title": "ijcmph.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk_cKPXrQ5_cEQwSEZOZmgQ_iBc1aUiPK41GUsRGf3HBNS0ec9MvUKsnHNXbrlQAwvOx585qA_RuUNgHNnreaNxbJuVF8hA_iGEoWZ4kvxLxBcTyIq3vXn8zOcA1zP9_f3eiCl-lL0Ztpir41tdic0cerArAVVe5lhr8OxAzhuS-L0Kg=="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm3U04bcIQpM7Djlpn_05zg8XkzojZyKIi7SfazXurSkxQTRgZjzZVQx3fnB4Jwpog6GJ5Z4zTMtHWX7FqL7frJR89n3yRkgYhXLiUc91U40SxJRDGpevlEnePOFFpE8EFMVjyYFBOt71iGCe0YHgd4MAEwvmczH_l2vIvNnHtYOp9IvuL_8037Rx47Z4Es0NOdqE2V1c20eE="
+        },
+        {
+          "title": "ctfassets.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER3JSdQ573kqkzrNrSvBr3JZibkK_3N7L7xXOkIkb-s_z0EqWD6_hrhOrEUu_2ri1uUfyR7TRUSYwKxg6jwGWPIWQK7UpdawLqNzBVrLgz9VU8Dv2InFzyq0RNgUIWoy8LkVnxe_8CQK_ipDJQlvf5RS8pDpHflAv0WUkqRbEy_XYE_mGfdlKDCd8PTTqlngafEdrH8deGrSVlm2jHyQbQXrpofD1UXNs6ZZX4vgQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPdVd-bIc-IRleYGnONoAWHjAuJZVLIIoec8Nt1OXF8ARiGIuvu5Rvv8rLZx9VE_VfcApP35BxTUBx5JrDpovaiA1c91II0rXBIRaHzF3zA1gkRbGyJKXY7WyjZkJ-VEgRbmboa0miTFoT_Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvlV--GFudjLUJNwjH4es1zfvaj47nl7xK7UFtoK9-s3nz4FlzlQmbJD6pOQ-PlLDwHG8Yv01vQIzotkcnZ87AOYnMTWbTFiUSJUvj8GGSWJEiSoVH2QcdewbnmnTAt50SWh82PtA="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUSsgDdU-evLfBbasZzKv9eTRrl5T-09mUT47vHKmLj-lcuheWoDR0LDKnHMvCytgdlYpqhidupEHogMxv7j_wZw8YAPWp8j3lfQTiD10CpiFmRhB__m6hyi-gLUUHQx4="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0nACvhJEujhOfuziqWogxFZ18Iw8I2kdRfG3-BThDUhRvgSVjvgmWN_BIEmxyqdCG52U90dq0ysFJyVsVkz_wNbHcEN7B6ycsi7wZvlBVIDANqDC3xwW-qeDk_hALvEqYN7JvBC1ENOmJowrmlh2J5lEE2kUJCzXndGOgWGjlrnkbkPHdmqW3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMpRerRSJhdrf1DvGP7n8zqFu0QRKiy_l99cFdx-q58vCvicvG56lRfxM5d8Qxtq3q8AMLo2DxDEVy8jCmuI7DCViVExsjWfgpN9vfKNplo0rGnMVZu1pj-GPiXhBNMHPaNQ2SFzmSO7Yr5Q=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnFoOZJu87PWKeBIZvNlHcUW9XIsm45RQSb7gsoNtE1bVKV6qG60SCRoduXNB7zNhW-b_S_KMOWRipRl5leFDoWABHc-QJBNYB6sWgyXzvD-HUomFLWUfKK2D6JaVnIC6Yi6c5LQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFibOoWKS-bQdipCmuz5BY4pZ9HVzGkP9D5sT0VxOsDGB3u33INUoZRuh6nFYLyvpAVn4On6dzWthSenyLx5z-8HBOIUzmxeKOEJ755EEhfdcnG4S6HmqySWT062i2SiUWACg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBAATvX7uI-stRTzA2WAq-EHSvsl8WfsZ-n4MSqPPzq5sNUnxGi3AJLLTfPMYZ11luQV_AWjHANw0t5B_rgO-7x4kYOcDPaKu4RwyaTlfkYLpejJB4ZmuiKC433WUdxqw_6w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Stannous Fluoride (SnF2) Toothpaste/Mouthrinse trials for Gingivitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gingivitis&intr=Stannous%20Fluoride%20(SnF2)%20Toothpaste%2FMouthrinse"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Brush twice daily; rinse once or twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 530
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 85.71,
+        "costPerResponder": 46.15,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Standard Fluoride Toothpaste",
+          "costDifference": 30,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Stannous Fluoride (SnF2) Toothpaste/Mouthrinse",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 35,
+      "responseRate": 65,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Tooth/tongue staining (mild)",
+          "percentage": 7
+        },
+        {
+          "name": "Temporary taste alteration",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Continuous, daily use",
+      "trials": 100
+    }
+  ]
+}

@@ -1,0 +1,919 @@
+{
+  "conditionName": "Chronic Sinusitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:42:33.246Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEujo7sZaYR5AY9MkOWiXymz5HIgKoDeTmBwkjuJd3CPN2wDofMqd_-cLbNkVoXaVzom-jxbapPpGEwSskgQAdv2QtGxNvV8V8J5bALA19mNKp_yfg-qeY9t1c25kF2t4Kt9hc5jGe0WI3BxtliIUHJ3VhAEHoD7STiotfZNQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx69NsFvdJWpAEkeQyiFJ-Jj5UQzwPKAS3hmkNclyqAV4AmoJVOc723mxDYae-JQAh-iV9j5zVghK8mMoVRyijRGD1BvgvQfFmlaE4h17SvJl5BHZF-RHXSzbCt9StuSt3kDEF"
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExll0kKo0ZeCSIhFaKYKbvjU-B6-yKfdc7C336rbCzSgbISIANeSZh2MNSTd7P0yFXvSizrAHLpmr5r-LHussUKReVQI3pneyvHjXBrw1uxFixu3q9xdBJVKY8lJXzbKRh8BGvWx6Z0JTRv24fcdPdQTrroLfAMQV1meH7MwRompvmjjp5KZC89pdIelma6r7OMwfGD_ujti3PGd2d7mmU6HJN2Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfZrisotMdoFXvHTmZXdQhNjAIC8CyfBwha7Lrt0I-m866Sg3rJFG3RydEDGtMkviQgQzSs_i6s1SG8tH4_fWz3lD-wgE4QHTSNpQcSmQTs6RSS0eLdkcQoubapI2lfw3aIbYI27DaNlG6u9iV2J8UtqBrUSF0quPeFrZrV7fEc28JamuaxM6sJt5hCpaZZnYb15JetmSrwmRDDMLPJbBDY4KLIcgg2WhJ-7LmtsNdrNvgxoqFymH_AG8WprvGoNKxax513jB01njv1MriJj8Haz8Fno24cmsyfSqHBwAAf8Xl56-uy_i49SyovSRY"
+        },
+        {
+          "title": "b-ent.be",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFZ7f3YjOLALyg8J4VGn26BaX0C8pNCYaOrzG8GvqNVvXIIH9vOU2Cq_l4aKqdq9TMl1G2C4bCvbudU8RipGIFHu3Op_uTDaumO-08Ss9O5trdL_Y0aIPZmAw4JdbcOhhefo8Da6hx8qyCazUpG1I5PzBFgdtb0qOqY0tlS8gzDbOJKto="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKXWFlyW2b3ESgmR2Csxyv6sVHRIcSd0R4bEfh2f-5rrqsneJW9nNx8pq7Bg-HQsZLElHIuKYOL1P6zep28hTFiUleP_AntxhXzXi_i2da13bz7AtEPHd5KQtu07uGYOS_9bDC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElSKgaax4A4W6FNLh9XhgIJ5og2XLIYsylGY_nUGsKoWIiDabMcSGRZelNJzFb0zDSre_nP-cKC2nDXn582eDu4RftzS3MaWOixsWUYsBqIpqXektNKfXeXegarhU2p3agStPR0i5G9cB31e8B"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dupilumab trials for Chronic Sinusitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Sinusitis&intr=Dupilumab"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "300 mg subcutaneously every other week",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 42000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 42500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 106250,
+        "costPerResponder": 50000,
+        "icer": 250000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 150,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 600,
+          "annualPrescriptionCost": 42000,
+          "annualTimeCost": 240,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 990,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.6,
+        "vsComparator": {
+          "comparatorName": "Maximal Medical Therapy",
+          "costDifference": 40000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Dupilumab",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "5.0/8 (0-8 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Polyp Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "2.5/3 (0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Congestion Severity Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-28 points",
+          "baseline": "58/110 (0-110 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sino-Nasal Outcome Test-22 (SNOT-22)",
+          "percentageChange": -48.3
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "2.8/3 (0-3 severity scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sense of Smell Score",
+          "percentageChange": -64.3
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "18/24 (0-24 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lund-Mackay CT Scan Score",
+          "percentageChange": -41.7
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 85,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 courses/year",
+          "baseline": "2.0 courses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Systemic Corticosteroid Courses",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-200 cells/uL",
+          "baseline": "500 cells/uL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Eosinophil Count",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "2.5/6 (0-6 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Control Questionnaire (ACQ-5) Score",
+          "percentageChange": -32
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Conjunctivitis",
+          "percentage": 10
+        },
+        {
+          "name": "Oral herpes",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZYIs754nv4TYm1pFoNkiE_vuIr-GpXgVkIixBC66I7ZrtinbYq3O4-yZzeY86dh6p-uh0dxO7Uc_NB0iK4ISLZ2cu9QnzXSBcAd85VTy0NKc9y5YTgdguWvYC9Y3o7ek0lSAYY5hzWLtti9mz"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi0ahzsjMXNXtKZHy48Wu-5uqbjnIMx6WDhhLdNpDU2cgPC1NQ5baP2_5IY85tOS95xT3tkpwYdEBGojCmYdkZ3JcTBkPC5wGerGTOlqsNg9xq8vRdwZuSAGAoGRCle7CU9FwufWW-WjtG5B1HlpwrQlO22DE0UoY6S0cyUsdw9GfnlPztBYhK4Nl1UyVPUTJ_xjJ8RVzrNMiUMXQIZMENywBnnujaAjuNaIlrxIFgUvgiOlXM5j_HJCUZnVyANLzftNPYpR9A4oU3dDnxdwNAA91g4MiEIXM="
+        },
+        {
+          "title": "southcarolinablues.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-thdytlvzelh4VjxNSRvWbfEmSAxOPjRf2RP6l5ONriGvPlOQUko-M4MV5OkxV8pvprwb-9sUOaV0Xb77-NHA1qu_N6SAxVXJH-ugkZbbcmlMfMKQQElw23ekdaiU0paBJJ2BRbXB6zix-DkzqMAsXCobyd4Vt3c59swYTVF5VoqUeqf0JryDAprkxbs8Mx9erU18W8a2o1PkFxRcUsJkYeROOdNFwdYXv2tk_SVFI6-JAagIfyiUewXAK2NjAOq27BXnr4Lcn-4QC5kXuB6W-9E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM73tdh83vuPCCkhcuiotf2FGiXCs3CfxwRPpC44WXbeVXJbn0AxuyDHp6jNBNTiQx1cpXeDOAyga5jhgfTUmKehkT0qqRPnl0tQGDlxqG0H61I0RsilN6FPtRwHdY6KRcWMtl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmtoAa3JNNM0MY7uRQ9gNLc1LulRKBuQWQLTI0Lh9OkB1iRiVCHmYRa6h8pxiylX1ax6QdGnzwWv2jOkWBVPe_8wq25_VMiefgDAYWceQeAFfLLMj3JB4TxkCQkM38F7G8WhIg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPK3uL1ZmUJ0z4dHjdhFzyAU-gZnxOxX-TfTG7Th8FFGVUgtCKMBiOwOWboi-Q8UpOWaSetwmCMfUsMyNjBiYoSkW8byiVHh2UEMLZY_-x4yMkpqsFTq2s0s7HoFV83R_fcELsrM7X1wGeqq5uJmRkzwzSCljafqn7O7JRbd7cmFIkx6yWj2T5-Jr6KJ6G280FBMz-fqZILDbtxe8jSO_O6JtWaQJ2t5wGOFKxEPctN5-mKsG1W6TEZVBzFrIRDYFylKW6oqmdnsUETYY-QX2IRA=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErj8IOJ6ot1GW8l6rWSV6zhO-U8RRESyQ237H6V6DM1AKSaDig_GOvBeX_ui-RQuMAeUtTpZ8nq21zTDqEPnIAVC8hK9slJyBNeORrtL9cX0evvpabjJV1KatDbfAZdX0d62BVFDrOhZwS1w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Endoscopic Sinus Surgery (ESS) trials for Chronic Sinusitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Sinusitis&intr=Endoscopic%20Sinus%20Surgery%20(ESS)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 7250,
+        "costPerResponder": 3625,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "Maximal Medical Therapy",
+          "costDifference": 2000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Endoscopic Sinus Surgery (ESS)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-27 points",
+          "baseline": "45/110 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SNOT-22 Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "10/24 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endoscopic Lund-Kennedy Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.5 episodes/year",
+          "baseline": "4.5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Acute Sinusitis Exacerbations",
+          "percentageChange": -78
+        },
+        {
+          "absoluteChange": "-50 mm",
+          "baseline": "70/100 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Obstruction Visual Analog Scale (VAS)",
+          "percentageChange": -71
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "9/16 points (hyposmic)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sniffin' Sticks Identification Test Score",
+          "percentageChange": 33
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "10/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.5 courses/year",
+          "baseline": "3 courses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Antibiotic Courses for CRS",
+          "percentageChange": -83
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 85
+        },
+        {
+          "name": "Nasal crusting",
+          "percentage": 40
+        },
+        {
+          "name": "Minor bleeding",
+          "percentage": 15
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "one-time procedure (with ongoing medical therapy)",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlnPHm_9IBJusdePSf6tTR1TfAsk_gT5pvbFHegVUzi99pTqVAWmscI8yY8T6jwhhP9vHTCIPPSHtBa5Rcr5V0Gfi6onrjKdYd4ENjYebyULiK3OXAVd-DYE1zgBHyfJaGRznzyIwZ0pEQOVk="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFX4YzC2eniHGIlbhAJE5F_uOgM58LN6Nr-tOd_IrZqDYRsMHdsmQ4Ktgegs6SwOpVmfb4yf0Gn4XhkhbGI45MtMSXKiF5Q7Ivqbct7m2V9h8zQC4_SI84dzWwxh5tGZnFbMypRVaZeXVu4AO7b5OY8t9_LU91OZCs4SqEPcp42xZWZSVJB5z7PQ7LZ_54ixOrzQTF5Ts_VqAd7v2R_zNRBPGmyIgfK4xlxTk0t4P9jjadNXE7ct02rNYuKF0kiFjKqpSr1_5-7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1F4j8UhW8N4ANcLeK5HGfLDYULAYinfHN60iBhAwAEaceCQScLUuee3WIuwoS81SHwU314PXVn9bq-b07HfzbE_eyupDyrJOZbNU-wpC9iKsyQ6gF1SK1-Z9W5cU-WNuTZKrm"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4Xq7kQ-xpyyj0lpKCDNWZqVgEZ7QH0CdIbZ08d3BFlTI8tpaq5s4Db876mknJHr7GqM_acBFB1D9Dn2sy4cPOT1_3L2L8e7YnPwYivZt6F-YGnwVT_68QJ6GkGadXRIEKygGwL_o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEnucQMomBgNIWYzvsVuscywo6Ng-7Y2dN5iu-I5qTZ8bvoxn8dYOTVndyKo_8z4-UnNz0txlQCHK9oaHxA584FZf17qLrN5xf4Mi0wmdQXGqC-WKUmpWogBRIB4iFYMxItD0u"
+        },
+        {
+          "title": "uea.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVP_FJVKNv-2HwlZrY8rcOGRdSmMk7LIq0hfqGCWowZbTv4tm-q4rL-Io3LtXnzqMmj-J9jcQAOUHprK2EfUMUf5OJLL27z0B6Li-qmMZ09xhBeXrdODTiZZ9WTgM4kZks9x6pD96BEuI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy8Zv7fPHPVgwlDbtKt8ltrs8_9lxmUDadLxBVPElG2b2mR7N7iWeCC9VgZIjyQQT15nfoad2TgmfkM7mWtRNcIEHv2nUvJwsgzNeGmvEVlpluuvTqCHaK0ZA8mNt4g83-FIhhEW2nksprePY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxHaYTug1o4a1AE8FLbIfLdFtHkTFApmXHr1FDTU6VIo52sIsWwYjwdOrCx2z21bToE3WisqKeTV7qruN10O2owCKip5RuMGGz-QPN8FnDDEv9CMvGdKgDonJhIT9qthbKJIT0KGXHwKbIZueS2WfkHD92uaCXN0pFd2zFgq0civu98gRzRr5EpGs91uXNhWq-98zK_YRMHYqSvCNNSW-pyWc0-Sn4doVskmzrfwPAE1Esk4JOuOwjTUPkn7qU6ayVGOvTSsfwaeIunL41-CxFLR_9DpmzXddCW7WNP8X686Clz8eMFopic_FPdL_W4kZVwY2dkc96rxB70yxbA5pu6g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTfoYk98QMz3z9j9_FGwwed2Vi5QwB8y65f-4tdxDTakfCeshXxwLr_pzxXEjeeewCVJN2wkuzKwGfoO3EGe0jmDKhAueFRCF0K0fDQK4fmappSoQlImJgitZEqMT8Kb7pJi_vDudL7ZbfqVmF"
+        },
+        {
+          "title": "regionh.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyWujdkOsIcrbLH6gD-EmI-3sSxJgAZNmfLDPCBRye4Dlx24O_fgfgWiqrF6DoXdD_-83fTbsh8WyQ39HVJvlEkIbSLlAKG_9keiePOs1ulrPP6NKp-Fc_ijlf7DPQqKLWAwYfE0SYyyqEtPNWxLxdp_wNvtZ4OygasEIIRFiwZcgBj4ryZ0frpn_iBh-edt4KeOY__fVoeJx45XfGvEh2HU1l9GtfLww="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGG50fB64h_SvFLjR5AtAOXYsnLbWPbKaa-TGNY4NYuCKhZ7j6N4mgm7WIub-Q6AAyVar1nfbEC9-ldYabAMBUBDl4Y_WKjgJocgVndb8v8MzGulqh_GngCbD0HT1LLUjlUgUJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHlo6D6bP9G1RSqcRPdjNtA8Q9Znb8Ybn4j3TXi_hlh-vgK2gWaoOUXU04gf7F5XC61Z19QbGhwrDuCMhcqSLJKPyyHy4ccpvqBKnJH9lS9jqJd33bn6wW44nXaoxB5U9I_nwamjpfoxZAgMLmygzPhNRdt1Kye_Ue1W8xvYe3Y7KxNGGMkUx2P5fmjR7J3f7XItkt7OU3JgWWzI8XihR7Q616u8XyJFBvULt_-7pmpH60WB9-qEEb6Hlh2GMYv8BC0A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Corticosteroids (short course) trials for Chronic Sinusitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Sinusitis&intr=Oral%20Corticosteroids%20(short%20course)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Prednisone 20-60mg daily, tapered",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 740
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 933,
+        "costPerResponder": 165,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Oral Corticosteroids (short course)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 7000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "48 points (0-110 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SNOT-22 Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-3 points (0-10 VAS)",
+          "baseline": "7/10 (0-10 VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Congestion Severity",
+          "percentageChange": -42.8
+        },
+        {
+          "absoluteChange": "-2 points (0-10 VAS)",
+          "baseline": "6/10 (0-10 VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Facial Pain/Pressure Severity",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-2 points (0-8 scale)",
+          "baseline": "5/8 (0-8 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Endoscopic Polyp Score",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 85,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 points (0-10 VAS)",
+          "baseline": "4/10 (0-10 VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sense of Smell (Perceived)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-2 points (0-10 VAS)",
+          "baseline": "7/10 (0-10 VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Severity",
+          "percentageChange": -28.5
+        },
+        {
+          "absoluteChange": "-2 times/day",
+          "baseline": "3 times/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Rescue Medication",
+          "percentageChange": -66.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 10
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "hours to days",
+      "treatmentDuration": "5-21 days (tapering)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjXXPiqAnrIn85KWvqvARf7qf_3pGOc3S9tjyuEl9fBW35i2vyxxPFn6MnR3CYHsBrE1Z5cr4JDIPUeOL1HoJ0Z2e3yJLm7zuGom1_Bg6ir3OcqGUwj2cuK6HigsztM2Q48tsiTOT-b87qnsFw_mlGAy7IAnosVSjuCcgufP7tYwuMO_YgF8azMCt2Wzg4zbWk6X6xI0TKj3xDwkKYO_iO7YCgbPASRYqqO8XXWXVxvz57onhDL3uQLnYLqjaiaMWSg2Z3E_Djum8rRR_M7nODlDkodjTWrAeBOpnx1HrSb4JQhm-RaPGM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5iW1YcFt229gqVfW96KQ-U7la_pmio7Ru96njCK6q78s4qpSe7N8KYmLjSkxvwVLtZ5KL34OdiV2FgPFOv1HV6nGSDTmhosDDsHgj-19Z9zYp1OQojUHUYgK7IvID5G3ENpaA"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKmqcfYD1TSSKg3awNtKPYep4Pa8dmNj1QkVTvWr0d7pxXPPQeNrD2ji41GhBiqOgeRBjDC26GlZnVXRyxTXD9HEs4Yu3ncn2sSP2ZX5__D37P6wTZuPFd6vO-dnnou9pNbfyH45DQ"
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIAqynIWZ6H5gkxCAB9WITy2qz0n8Ai_4zPyl0P3ZoNXK189qxT3ry-v-FQR9lSCPEKptAgE1-pbOc3PWhfF4QZQjZx0dKo4GZk6ZOB1q5puVtveQZpHq3zSBOJXIvuZuY-mSr_quVZbIeMqLrpNRRis4fsWpf-kUEE075Y0aN7mThgiHZJ55ZEO8Ru1sT91j8Sn3kamVZUYOJRcrJzNOn2oTFA_WqjXTY1okwsTrN7k6F7423C-aol1OtpnZbJqDS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwoYbDkemADzFL3eU0M3ApjbGPoQXwkPWyBMjgoqf5XdbtzneGr3T0-tjQRltVitOJE_a3drl2S-9LqoI-O3vTKtmlEoLytVbMs7tE2grnf1gAh-4a5PCAyujqLrKHheS0XLTW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeE-bN91p_4LLIFovB7bBn72Xu0LsumDTji2cP7kkfRgaVkawv84vzHL9kYfWqvKzQ9GXVnc4jJXaqMKPT9OUxNsljsJbYsKtPnIdLVIjB66PUSHw_tYqTsNL4r427bWCOxd9n"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw85ARcnUE5ZqsobBP-KUbAf1SJyq5VfCDHZvTqVUxX_zTpTkylwJV_pG6D7PO7LBOfmRrX-V3Lo6Up6ToqbrMbMMwHyElnDLgjQAFIA4th29LtLoqfm4wbE6O9L4xABOOCcF5"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWogzRb-8Mm0A0YB9RNz7gGBUd43GBdHecf_uEW2S5hzdkHdPsMzBoaKY8J6QHGm9azdfx3aVpNLsF2kSVleVNunEJ8YSH2ZRe91xFJqBgLiQVbzzO2sfheJEvovBfAvnD97Uc-uJWrOxMynq-es_LlimHRQvJ-0MwUKqDuIKr4XFSb1Lim9qIpR02jDX6w_j9TkEbScV4ce5BxxF_c61cB-TzrHKZZSDZsmJQoJjnya9kT7YDMO_bfeshAC49Ktf7bzCFE9WZaV9nqL8h1XxaxNkJNLv-UaxbiTa78ReIyLJtB9qqS4S8dE-ZzFOFryhW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvCQIwOKgG1mvXFLBWnUUDEIRxkPuSTSgbPrHEklud4tI7Eh_CemilKd5Weq535WY1DEnYZBmKz6qV-ilkrbZKMnfiD_mLs8BDqJifPdaAa9mA32rYYQE_ccSpmkTOtac8KSFg"
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Nasal Corticosteroids (e.g., Fluticasone Propionate) trials for Chronic Sinusitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Sinusitis&intr=Topical%20Nasal%20Corticosteroids%20(e.g.%2C%20Fluticasone%20Propionate)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Fluticasone propionate 50-200 mcg per nostril daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2000,
+        "costPerResponder": 714,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Topical Nasal Corticosteroids (e.g., Fluticasone Propionate)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 25,
+      "responseRate": 70,
+      "safetyScore": 83,
+      "sideEffects": [
+        {
+          "name": "Nasal dryness",
+          "percentage": 10
+        },
+        {
+          "name": "Epistaxis",
+          "percentage": 5
+        },
+        {
+          "name": "Nasal irritation",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqabedIIETmgsm3WIlVD-Rcilnh2NdrjT3shDFYf02_zKtAPGtEhWRlw48iHloYe8bDfuCmPBCfB6ab0c07kcvSL_8JhHuFr-VmNM3Gc4XsuRaTqCd0Fuw1dYila-Jvte-vvUJK0RhGZkaa6tgExhynKyyBCFHzV-mJu19pqdjmFs-D63uXa-aSZSV1PxB_foiAwVCFQjW39B-kfs6vFvCcLBmI0tj7yobp3lQj6qt7QIwZe0ub-XdLVXw37S5gZ9_ygV2Nr5wS00h_FJNd5dl7SfI9hIojUAa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuV-LqDXM6lstbJVketjAcxrrcp3zy1aRaTW78FZQaK8tk44zG4oPcMDWdmgcHzLohxAS2VQ1fN-fVC_Ma8888RH8SXYwey_cTqR3XXiNkhFjDuNkpV44y5Wy3Ohg9Ye5z0CvGHak9tpWxpSA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbnunS3eSR1KSN9rYHCStB-hJ92OGUVZwxgG5Dh5Wyp5qIFIyEk94b91cG7Qts9wixxOZKn9SmfRlJ-30dRGbLT27yplwdsM269WXcq0CuFpg5-OczzG5tVOV14lsRVixlMaZp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlHM8_5l0z5pkcjL_cTLqpzJJLRSAV-djfBvuNij1kUwCQ9VyNB1xRHuLwuBSdc9uYS7uN3gxaPD_NZib6edeKUKAcqlXYmIdim6w5-wnhQaWZVpKiRZ1otnYPCwo7ZpmkAj4pFE68NaeolSY="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm8wims-ghy3lsOD0FKvbLKhz3aZsqX05pKxfsWQJJibUxS_LUZJHUGb4RbJLhdTwspMBpIg8M9W6mehuBGEqEqK50ZP9ErDt8Yhe7zJaPbsFH0_coM81IhGC5Hg0oDFY46LrsmZOuH_60u6QdhOHgphX_UlgtG9sMCqHVuCzS6SQbrNGrLceiLXJ4Ed6KVdwBGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfPfoTLHWlEr3HjEINyu5LQqMhBIdvIJFQNx6tQbE_6tuu-d8fAEuL3t5NohkE3tWbfm7TaSdTIvV1tFnZn0uFf1VCGHHljaUMmyKfUh7K2BTepxQjArzNG2po5PbxkV28_V7mRaYm1w=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw_hyr4Hr2aePLH9Qj-Y0oVNfQXKeYYhaYX4zxTnIu96YoMtrfF77_ncRxCWJsG734WS80jKc_CoVenZJJeG0fPGtMs7to6xCyX8LkIbjys6E6BDaNONPOYoeXoNkj7U5Q4Y0P2Vtdfvc7hwE="
+        },
+        {
+          "title": "ufmg.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1M9wljK7qgdqXIvx_0B8I8JiCgYMnmJP9bj6GHHIdlCVWsCTugtt9Jo_6ssWmN3VhVjgniaWy0imcPHH6GRZWC_gQjKyoXpNWGVjnxYijsudjTyb9txm7aMrzRF1plD4XR2R8f5A8oApJUnyFwEbXIxowW6kV0dX92xU3XP5m4ALkAZ-YY_yciPe9SdgK3Fssun3mxb2NNWaO9yAPUg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6q9OERP1Rq3AIgbEpvdtITLOaGNS0OR7zMCRaZ4HfwQHq_d_gvcRZ7_zZucKEhXHBvLR0tC_emfc3ozvN6FjHhrwOWysV1G_ocXwhm-IDRV3jGYvVWPLLywWrAuUmhCGMdbczX6Zpwx8Rqq1l"
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfcw5ChyOMzNZPMx5SQ9HBD1zREZ6GRwCwv-m42FyH2wE37LRsr1qz_nQRtWxGZoSkBQxLYPjeXrwf96PakxV0v_TPnfId1G59yMWqx0b0jEZErV5lC-7eaOhI14Z8cYNfmChBTDuoW1Gnfn5pXW_ebrdGKRZGMe9IBEFrBwwNwdyHjJclJeFP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs_tFkigJT1KxHn5zrX-yImtbMiBkXckkQIdEtPSwNaaz5hrGhkaspJgbmmb9zhWfxapMQOyt_NluOzS6NQAXtpFg704yZ4NZEbZU0USaVYDJRMFQDKE0tQKSaOo7DmOmJnZxE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkYYw3GgqUhDHzi8uXW6FEQHIPo3qrs_o8Cj9EIXm-WCXPRtCmmGJLPwvNP9JpO8py-HAjcR94Pu0Q_aRoV7Ut8ksy7cMYadnXVvTEYzWAGxLrJ3OPT1P9D3o9a-6JuELsZmLZxgXe6RMNmuWQDHjRn6UFi15l8w3arYLJAfw8TUAsRGFD7bXkHdWdPjjflyj6HZExB8Wdu3nOtmZ3JmP_0Yy2___5dmYaTLOvq2MxqUTBKZdVn3jZnDpMiEgNZswR3amG5ryP8Yly-x82dJD-m6zIGi1DDY1UQAeTQ5SfhGeUTsoAjPOGw9AlDigFUw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Long-term Low-dose Macrolide Antibiotics (e.g., Azithromycin) trials for Chronic Sinusitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Sinusitis&intr=Long-term%20Low-dose%20Macrolide%20Antibiotics%20(e.g.%2C%20Azithromycin)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Azithromycin 250mg 3 times per week",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 150,
+          "sideEffectManagement": 100,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 5500,
+        "costPerResponder": 917,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Long-term Low-dose Macrolide Antibiotics (e.g., Azithromycin)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 10,
+      "responseRate": 60,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 15
+        },
+        {
+          "name": "Hearing disturbances",
+          "percentage": 3
+        },
+        {
+          "name": "QTc prolongation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "6-12 weeks",
+      "treatmentDuration": "3-6 months",
+      "trials": 35
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrg1uUMeg-e3obbCJ8Zeesd5pu3pz0_ljIZ1Un-QBEkulFrNW4najR8JHKyzDDVJNYUHb6P2TeD2DnUzz3JSK2UAdnUS6NrXOWChuP43tpnXKGkauOGQJOmebTQXB-BqNOGdz9OgJSQvOvrA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_Y3Eig8HfFKqP7O7TDysCUbgzZafqYBzrhaP7IHkjGTjb_I9O6w-vstXxLrCDYCPKLpGLbI7OOLNTQg7AN0gf6dcT3tY_KCUJU1pSVJ2NmeCrGVzexQPrz7GZopwbr_n0FY5xf7QNHjfzz5NHvyistFGrqdQ6obMQ6RhqZngqk2NLqoiWsyCAgLcQ2fUUtZHFO9nKJnTNoim5fsaaXUQkSE9nFgpmHY0mCWwsnB0SHPkqZ27W-DezANlzz9wmDR2h2vfULZVRXsgtla3XJ1hnLJDJD3PNBtht-N4ZKgmK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZanzKqBjE8ZuwX1ZPgJNh8nGxcM7bD-ACTxop1B9KnwSo_m8J7zZLhv8C8GNXOG07wHFYJcM2D0fwzLyPE3B6H6Fx4BalXgrmcZ3Lb8ySc9IcXTLJNYvWFGpmWW-LM38nHzo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMrkFqKHwPER5PhMRaychgjjeSOZBTTmrspt2ajFNNYUJAlvOUo-3puQqyDkxHcc1Cdt1uIMK44_s1QOh27YMZB_hhQu5OmerbXutFcgVYjhE_RoxqsLRP4_V3hkxo5ugyEwLvHcfSb5Qemg=="
+        },
+        {
+          "title": "scienceopen.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAqSAYhpq40hQzAkpZfx1PEpTm0vJq5qd8Q72ivAxUA9q-I50lSBcOCIC9GRKFBvhspk2aZ2GJapZFCyJcrwoWP_0Ik_XIwGO_R3dIxNgJlh3SeVCajTGmMKsYKfzDQzAZp1UjqMMtD1ZbzefTAG5ck3wZO5L-lyX7zqJNEjtTPDDjI1mYfL-BBlZOTz_i8pOnju5avUJx7TX_ldnvIVkJUtwSU_A3giRyW1iv1MJbh7V_w6uZhtJeUepn1nBiHpA="
+        },
+        {
+          "title": "wcjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY1x3wozoBv-IAluAzQblywySrm9WQhO3QR8GQ8bDy5QaguvbQQ9mLX0JNaMfJloHrrdoCVP7LH0cvM5_FaOj2i9iADOnWZEn2j22l_7QEp34uPsO0WPdnlojRsdBQKKAQiNvuSJvdZBqpOiRhch2gLSqlyaUj"
+        },
+        {
+          "title": "orli.or.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw2px2PCoi-U_byRNl_U4BuK7sqWCQa09hIqq_XEU-OfZCqWCbdRwKduMsUxlXRX9Kl1-v0rFYf3BpvLBL5zSLJMwU4IVk17IgNUASsr1vG_iHpAQ8qEiojUx2jQxcWJg8q-GwQnuEeC-xSJyM3D-JSMDDU716lJU6"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiGWlaZIoDR9IKHYZBuGiO8vxqPwqhNRl-qcEeu93C-SCTpjfjs4vEe4ST_QErQtTofJtL-2wuw7vGSmFBqlaYs9C2SK2xddncotBim_dsie6FoSsNVA8PCk7wM-arLobnPDiyBxgFkFrRgtcKUS3J_i393g-K3swAHHIotCCQgSneaNFP6Aq-HPjxBTI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhhbeu87lATYbYFX5xK5Nwfhqh0Jkoe_3vhoCDoukV3_EEcFO2tWZf1Lfo31GZfWqyK9YKI5Ox-4xVxCeIM4uFG-h6z5Fecc30p2dK9zJYINIQ53NZ5pCLKwPc8omElWZ5jGMBh7MgJ7bFZA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVfczOMiPX71iFeHQa5Kp7DlLEHamozjMRRKczqOagVK_alpnSrvhG87tcj2JCini8nzVvL9wzsJI-s2CdWJaZrRRzejbSJPqrpVr699CvCjime_eu7HvrEQOs4ba6ykIIoaQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Saline Nasal Irrigation trials for Chronic Sinusitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Chronic%20Sinusitis&intr=Saline%20Nasal%20Irrigation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-2 rinses per day",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4000,
+        "costPerResponder": 333,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Saline Nasal Irrigation",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 8000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "45/110",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sino-Nasal Outcome Test (SNOT-22) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Congestion Severity (0-10 VAS)",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-Nasal Drip Severity (0-10 VAS)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Facial Pain/Pressure Severity (0-10 VAS)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.10",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "General Health-Related Quality of Life (EQ-5D Index Score)",
+          "percentageChange": 15.4
+        },
+        {
+          "absoluteChange": "-1.5 exacerbations/year",
+          "baseline": "4 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Acute Exacerbations per Year",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-1 course/year",
+          "baseline": "2 courses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Antibiotic Courses for Sinusitis per Year",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasal dryness",
+          "percentage": 2
+        },
+        {
+          "name": "Nasal irritation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 29
+    }
+  ]
+}

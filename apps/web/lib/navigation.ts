@@ -46,6 +46,7 @@ const userTypeNavItemsMap: Record<UserType, NavItem[]> = {
 
 // Logged-out Primary Items (Keep as is - uses fragments)
 export const loggedOutPrimaryNavItems: NavItem[] = [
+  { title: "Treatments", href: "/treatment-rankings" },
   { title: "Patients", href: "/#how-it-works-patient" },
   { title: "Research Partners", href: "/#how-it-works-research-partner" },
   { title: "Providers", href: "/#how-it-works-provider" },
@@ -98,4 +99,4 @@ export const getAllMobileNavItems = (userType: UserType | null): NavItem[] => {
     // Logged-out: Show primary public links + secondary public links
     return [...loggedOutPrimaryNavItems, ...secondaryNavItems]
   }
-} 
+}

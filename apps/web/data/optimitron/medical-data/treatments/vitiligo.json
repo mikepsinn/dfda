@@ -1,0 +1,837 @@
+{
+  "conditionName": "Vitiligo",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:30:37.249Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFF-RbDFwhs8i38NeD8Vq8nhUGY8H_yUJ2PeAIzONPLB9i8zFKqNWhAbOBAD6MhKoQHw46kolTP2GRUdPa-y-lptY19efl5-OpF2OkWn8uyGbERayg7RMRVQeNZtkFJEIN3LWdSCZwy6xj_np9sg3TZaf4RbWtpK1BnYwnx-vT67_XjrLcJU9IfmzY13ZrijI9tW_vTiCV3Pd1XZRP_kbXiTbewwAJ_ChDgzrKoIu8OnqPUbHkQIGEiemcsOgh2ILaWLtzSQnChwRX8"
+        },
+        {
+          "title": "incyte.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGK_Hipe6zcgW2Tx0_Tvy8EdnlRrv8UVk-yRR_9hg0CfGK9jH0XV4jimSvG4S_iveTG5QuR8UBMCZLH8nOhvnCLtII3yenWr8Ci1OFxb7GqTOwzXufet7h_45pKNNVLwN3JqIi8Iz3G0vyDrnYmF3QkE0hKVXdc_FZJGKFclXdCeV_X0EIXgxAxn81Zo4NUcskm2NG_1EyVz6rO5viP2osomUM_ACvqqA2n-ZBpke5FZGIVTFEd6A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtHtJX3Zx6l2Cqa8uqAd4Lev9mjycxB8gk2WeAEWJ7jyeQoqUB5A_aV4LiVkbr91d4mEIjGntKCHCunofYgXINmkxGTyG6FgR2cfAff39K0Q-GlAQscVXGWt3iWcWUa3wYzVRRExhSF4QnAHjJ"
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_V1bl2nua5d77cKq4UWaViNCedKvAjoRTxw-nsDsiwT3YdBc97kWj3MKLnOGu5xYxDoRPdYNHva8dmAdngNkLBpy4DUvM7zZ4efVnvcxLiaQ463QKkZO4M_DJshXLILiBKqdoaGTaCwbhaqQTauy7o_-Igg-yC4KAR0MLx-AILKsQrbSyrntt4wbDvrTO25I9SIOwH_vz9UXADuaXwtOVE2DEACt8AoqmcLWKYQqNFSB42uyb"
+        },
+        {
+          "title": "practicaldermatology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5VrV1kbW3r4jOcmh4GHhHZwZUNPZbX_uSj_ldDaA78TvISAm3YaZHSRp-yt-M4yVDRw58-p4ZQDiwEm-q9sTGJRDt6B7udbapJMnSaZbqBT6mkVS71ybhNw6UD7SoAYhy3irsxYKZxJgcwvWQD3RiccfDijnFWTwcCL5JZu4Gh6DfFSl5K5PTvzTshg2jHMU2Mak59KXI0P9wPA_E3d1dR4g="
+        },
+        {
+          "title": "incyte.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDLyAwuvad-JTSZB17FCDaB8VlHRfMloOf5NqSPt7QelCnzwYsE7CjjUjq11mkcaua0k3P0eFgPJ1wTTo1M6bH6JhAOQwifK4cNehGWJB0_tJkhKQNXIoPQzChWiRzkmGcLiOcVyt2LNR3CD9jyhp-iHNnrF6xCCIqv0t6XPJa9fzqPPk9KBns0Ki03UXKtiYHQm-p2oTzLhmKXUxdAq9JeLdgrYRD7aqbktQHvnF-DpVAFcTuMgmx458="
+        },
+        {
+          "title": "firstwordpharma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUfCjswYqePpdU--hM0r1WYlRFCxsWkgolVqWOvI2746Ln0Ualgo2DN-UlbIxCk8E8v_b7exe2uVYoCmSWXVL-4s86cPOy-FHfYVQZYRlhriakvCINkXeRtFPLa0EJ2e3vJ6zj"
+        },
+        {
+          "title": "biospace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWAtCXhr0DZec580_rpPyxwVXn_ngfXnnw-TXK7wMj0bNGqNpgxk4ZLR0aEqwc_UQgFTVhuRYi_RXG40hD1Ts3bJMfnFRv02WMiBf69ZEtat8-S8mbP1j27HVXlmZG2PpuQhoe2IANtNhtf-YbUYsrhVgfBfGob-ewE0TkQVSo8BJSFx9JKOOaYkGy8y_UUCwfB09XRSYeoJSLCBeOTdQd5ZaA_lS5evgMhv2xe-NZSPlE-mxocoRI5miEiCmoyJb9z8rrEDRz_FG-zGZPTH6pk_g="
+        },
+        {
+          "title": "vrfoundation.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC9dBHaMbm3XQQ8omqS78z742CG4YsoMeZkUxCbCH-wNPtsSyEmXRUB4R2Z-kgf6d5jPiqZ0wYLo5eWVj6yC0O5GkdmpeC2NC1NltKzynKb2Q_gX-dmKA-TxgU7fJa679QTIKrFmt0DbtK72icBaDfHRVIAarPaN_2rcaJFSHW1Z0MxhflW4Ozkg=="
+        },
+        {
+          "title": "biospace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX8a9DsP09gjMb7iHeR7gcpKNIXWKg_JYza7Qq_PHJrQqiLohxnuxAMINLuyn9BBQKPNJzTuhnLodlhyMJbFV4zu7hCWfkjc_n02tPf4C_JF9iX8NEK5Nv1ge4Aw-ekn71ku9vxXI89aQBSjggxY7gGkG3lvE9RKNqiEra-JXDHAFOkoUXerQcPHGHsc4pwq3ZOzRi2fxzF_k8-aEMIbvj_b4bko1H-i5Tbqxe1Z45vP_uRCb0lAejPd9nsW_b8_THJlCMgzOLyuLhaGMfOTVAO9Ae_Zr39y_qb0qIbAOvfdNpEa6-qT-AMeHMHgnr5dq9opA_nF8h3koYdzq-8SCgyG8mRL3_kHYylpU="
+        },
+        {
+          "title": "opzelura.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG49A7wlb__5tHjnnfMd1-6glhRQbMW96Sj6cVbHDVgBZvY2AjNN1Va8DZoea7IwkLxrxA2EvUSuQqFbgEaurm4pOlX6IBEKe2tPS4bhYAkqzeucRfELnCdMMXHD1uiBcCFka-HKNH-kzJgwWwYKa9y0y78"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAugQ2t95wKKKAwS_uxGsLTM1KyIjroRH_W1CkhyTFplbILqSrihF9RsTRxDSnCnx3IuB6ukMa5LeUfCC33qyHN-5riZeN1_vKBQkxaV1iFEPUzR1wejSf239t4i6WKQFycC7N"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIh2owU3kaAk9JpZtepHjTjg27j6NTyOWpZxq4wOwgO6OsVXLfoGcWO-LLauLh-nDCuuq69Su7K5l_NVL5n2BdJn6bMj11YlHu5omhbKg2NqbkepAn9lZot5hYQ4TP8cEIbPJZ"
+        },
+        {
+          "title": "sdu.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmmSFjhf8KVRTl-ZN2EnhMjkG2WoDomrroGAegi7-SR2wWkbVYV__3TK0jOLcxAuA2xVN-E423pOSmv9LI6bw6wv30L1htCs9dlBeuuQ0PDYIgb95TC04VJ9LzFBkxwHAr3WEnrjD3MJLPtsXayXJwgj1sggTKE4x4ilRmWRnF7Sok2WXr9mSQqkn5rFAACjPE6a00rOsfag8AyjL_ywGL-_dfIKbja0GbquhlrP1fshnH"
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXe60zZP83ZJ_XHjIV6yGynJEEGZt1tSFqnUXmqoUz4QSlkjyP16dbwNH75mRwywy2LhlqXX3oLOrm1ksJxPTdg8FrS2b5nAbMUjiJx71IFu2YPaHuocoN0o6swPBW53zraSbu7JBxKXzWy40oVA9uBE-uugvuekuuSLXWayEiYGY4S-du8bRjRzq4l31vPI-WpHoq4k2n-iEMpeo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ruxolitinib Cream (Opzelura) trials for Vitiligo",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitiligo&intr=Ruxolitinib%20Cream%20(Opzelura)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Apply thin layer twice daily to affected areas up to 20% BSA",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 23000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 23400
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 234000,
+        "costPerResponder": 58500,
+        "icer": 119726,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Ruxolitinib Cream (Opzelura)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 1200,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 units",
+          "baseline": "5.0 units (0-18 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Facial Vitiligo Area Scoring Index (F-VASI)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-5.0 units",
+          "baseline": "10.0 units (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Vitiligo Area Scoring Index (T-VASI)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "7/10 points (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vitiligo Noticeability Scale (VNS)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 40,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "25 points (0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vitiligo Quality of Life Index (VitiQoL)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "3/5 points (0=clearance, 5=worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physician Global Assessment of Vitiligo (PGA-V)",
+          "percentageChange": -33
+        },
+        {
+          "absoluteChange": "-4.5% of BSA",
+          "baseline": "10% of BSA",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Surface Area (BSA) affected by vitiligo",
+          "percentageChange": -45
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Acne",
+          "percentage": 20
+        },
+        {
+          "name": "Application site pruritus",
+          "percentage": 10
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETf-Wi8ApZ0VYJnh1yYdM2LmFfvL1sGcS_V157AicFeTjvjivRVFO0x8rv6uV5I7XVPlhP5lG99jOznYNStOCWsyS_HuKgT2NFvEjtLQADDGvH9hXgxAoBS3zE4f1l0rrnfxH-3hLJyVawXA=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ-ChXyzJ0lEGH7D8JSweDxuPRiWCN9rAGTq3-6g7MAAFZPZoMWMGwDt3x8C4bm0H6VaVI_upg7r1VDF6C1XD6teS8T4hK0zbCSeluclyl-aOqcsGtI2lINb48cLx17vQ40CsUlkReCxZ4ViLaBEUJj1biKiiYrwe6beFyzHl72ZZUtwjpDBDOs1lF1nG1JOQu-nhvql8l10SSg8lytGytgXPTCLRji1XANLKlCYu-heWLZXHzzbRUqbOiovAN7rK43FtMfWMw"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXhy4g6GkbJECAFZVDHQ9oq1zFhob1qenfW7aQf8sji3hVxVfOdxIOd0EOhoMNb12BqYm1bqZVPmbtuZXoEOi1qr_hwfQRtAuNQilSfGR3m_CVMpr3Zke2K_UBQqdDSg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj4MVbi9r0_VoHHba9wLk8QNDUN5_j7NEY63vpLZUhIYFCffUly1reWBB0_JAn7WrtOoEYOI68fsyBnhmTraSn7Zjp1-OgjejEyKEPAx0Iq9bn45ZEWp6yHDLM9BTz_TCvxe8="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd3FYJeCPuhNP8iY-GlfArKJK03ijys2q56NR50gZwKgIjM0M-U6Y8okqBb6ECHDJAhbsEJxU0z5Tvp6FQwAMPkG1bwzFWCjzPElj7v19B2xHwOSiF9aqsrWKAn1nLRTqHSMFK9O6HeR3g9XOOfrcudBDkxUdZSoEgVUE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiezKO5oM6627cl-0hOP0PfMpE54dVePFxadWq6ShU8CGPZ-N5XfcSABeKVU3Wz8Pb-zkMc5aANfkrk6ZaUQ4fJnXFide8t4xd8iiMz66-PnQ9Td_QqdbJm6DZWHorWUAqOQ-3HCtE9Ttm56hKIebaAWIQqRy7dQv3WuwJ7ahnvtiVfT-kxjoMtdcY5CtaUi8XYxppMbRkGCCAXRLqCOxCztnjJ6UYH5UWiL000GDAqyWgqEwmjFVkdhEpB5f8e0wY0l3H4B6xUI-n0suKybyZMewYZzbqOpB668SL3G1ZzaU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB29eysLHsifqrNZ8oKYv7cX8Wzx_aadRdr0ov8Prc853oJ-Wl53qniOcUsnY9y6KZz_bOLxIN2L8I0zex7PU62xR-Yw3HGNgka_m2ie7rU171KAT1FQPrIuG0USsEszHwOMw="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgvY8u6NWVVcDmgBJG6oOtsP7-vdZlwwtzDCNfb8-F7fMtxsRTFX_CfUssuCF1whzl3Wyaci3TJVUnORrlWe0vgEPfqZk2KCmq_byVFz3aKsv3UXBpYsBHc_ngk3_v4fO6spFDFYYts2a3vgRarqr7"
+        },
+        {
+          "title": "ClinicalTrials.gov: Narrowband UVB Phototherapy trials for Vitiligo",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitiligo&intr=Narrowband%20UVB%20Phototherapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "2-3 sessions per week, gradually increasing dose from 200-300 mJ/cm²",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 8000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 32000,
+        "costPerResponder": 13333.33,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Narrowband UVB Phototherapy",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+55% repigmentation of affected areas",
+          "baseline": "0% (prior to treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Repigmentation of Vitiligo Lesions",
+          "percentageChange": 55
+        },
+        {
+          "absoluteChange": "-4.8 points",
+          "baseline": "VASI score: 12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vitiligo Area Scoring Index (VASI)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.8% BSA",
+          "baseline": "8% BSA",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Affected Body Surface Area (BSA)",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5.6 points",
+          "baseline": "DLQI score: 14",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-19.5 points",
+          "baseline": "VIS-22 score: 65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vitiligo Impact Scale (VIS-22)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "Satisfaction Scale: 3/10 (highly dissatisfied)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction with Appearance",
+          "percentageChange": 100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Erythema",
+          "percentage": 60
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 25
+        },
+        {
+          "name": "Dryness",
+          "percentage": 20
+        },
+        {
+          "name": "Increased skin cancer risk (long-term)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "6-24 months",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW39IPA-T6UZRzQhcrWGB2qBvqBdQMX3u6-c1obmVg1viWHbvfts6FRvY9UGlq77A7l8YeqPsp4jei4zV4mBUFuGFGRx0mD3ZhOBgHwSsBCvRsaQ-zpX9nxFpJAf2QIOX6a-qw"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp1L_jXXavOAjo2ajcjM0nWOklaTjgJyk1Qid5hJzgCSys6vOvsexrU32J183sSDd44_trYyu9l49Ax6FzeFHLbbnrvKeSTUmdQ7p-nAJRENphbDKSTino22bwvDIsrSzQn_dcOuqslKV9QX19jtP7ukcWS58R4FC7aq6v"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzNLkWML3drmdYm6TaQuKRnvQRX8SI2PkI9WD_zESKxu_g8KD2RHdgA2DT_DELwpfVk-vWsXDNbJT4wv_EIjca6DOT0n6sQ572y70qh_iooFYK6a_fSvMcLRzij0THUCFcgGyV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOqdPA_Rdp_qyI8Yg1k6EZuIt1vYqnBTVjG1_ofAM5fIxbqpBB4CoA4kjpkEyXeJb0WkapWXIUiN8p9Ev2Mx58347nxQDgEyeSA2Mq292ZAPBtzprZlU6k7p8BbgIm66lLxbMi"
+        },
+        {
+          "title": "unibe.ch",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzTppL8QXup3kRteJ_F0m1kNiAUFsZKG60pkyGe0MyOxTE4giczta8KdiT2z7tWW5QnoUPMnT5yvNKGfjF1bBYX9SVEqDLfaqDIvRucHDV0p0C2Bu-3XBsaQENbRjT-FNVCb45plm6UuUzjsni8T7B0bBk9pSHTNxnp4xVsEQjLyYU3kbCgEIUYQnbpQEkMo4NIYQaGQngrQVrSpLvy873"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8y7uzRHcknGPzXptAtt1Dz06qjbpJxmZI4C_Swz4r9Z_9mnzS4DlUOFejK59ZGoFYjb6z14ZCydvSW4SyMM7VgaTHWmPmgeRNpjzL3dCAiJO-QKwuCdlLGmvMSVqZCTqHrgF_sbvec3y_jmZQ3Mx5F2vuvEr8s1OaTv_lMw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfxLnqrAM_VgSBjD4V99budhnXesSLpcqxT_FO-qx_k_5tzgLg69BTGIVUE3Q4USmjnN2n68hHCG4nkfalOv5jc2xh0rRRlJ23s-85OkV9S-i3fZUP7HxtKmU354vl_Ax-5z1SnNzFE-WhqIO8B3LZppgAttA4p7-Gcehx5YF3vZClSovwQ2MsZfMS4BRiydh3nuPsUJY5ZvF8uXOLULjxDqdQ30TtS1cPnHSg0e_s4m7l52hDwpY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2q8CYjqKXiwrKFiUlzAqg1ZM-85NkHfC0aK4ludtaWmT-gmn_ksnmZP9GE8aekDSH342tCjI4nXccvK51LdOsG3fiyLHjoRuNtBl_KRBdPrfupnXFLqqK6spy_pccr4tIqrctlmvCxFIiUvj2"
+        },
+        {
+          "title": "ClinicalTrials.gov: Excimer Laser/Light (308 nm) trials for Vitiligo",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitiligo&intr=Excimer%20Laser%2FLight%20(308%20nm)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-2 sessions per week, gradually increasing dose from 100-200 mJ/cm²",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 7500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 25000,
+        "costPerResponder": 10714.29,
+        "icer": 37500,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Excimer Laser/Light (308 nm)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+50% repigmentation",
+          "baseline": "0% repigmentation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Repigmentation within treated lesions",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-3.0 VASI points",
+          "baseline": "VASI score: 8.0/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vitiligo Area Scoring Index (VASI) score",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-1 point (from moderate to mild)",
+          "baseline": "PGA score: 3/5 (moderate vitiligo)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physician Global Assessment (PGA) score",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 70,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 DLQI points",
+          "baseline": "DLQI score: 12/30 (very large effect)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI)",
+          "percentageChange": -41.7
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "VAS score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction with Appearance (VAS scale)",
+          "percentageChange": 37.5
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "HADS-D score: 10/21 (borderline clinical depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psychological Distress Score (HADS-Depression subscale)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Erythema",
+          "percentage": 50
+        },
+        {
+          "name": "Blistering",
+          "percentage": 5
+        },
+        {
+          "name": "Hyperpigmentation (transient)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "6-12 months",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "indexcopernicus.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmQs7BTOZzEM0nTSBkDAekZm0_-c7alHnKfSQNfCqIjnFq1w_hidRUjHutxKxJk_MnfAsQf37bgFQdQhJFmzkehz2OurpBi3T-uhPS5ZCjUQ5InG4ZM6L8Rx04pOcR5M3TuiDERlkGnAyUv8pxsE6tZpZN"
+        },
+        {
+          "title": "bioscmed.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ-hZiz-9BHe2QRzQrEVVDX3nu-RSJpbogYzxU_T-g_7DogBMb8Q6NhwhcNKjRxDvLnQV6FXYk5_zpZjYeoYAFeBRBP5hgI5VXcy7sonvvxl9p3awJbRSWWSfV0UHWYTsrNGiOzHWYb5Po9kBxxg=="
+        },
+        {
+          "title": "dermagames.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3lb9cj9wfAGUyTdg_sQxxl6M0m8YgHjhJmLn175i9YOXCHJrUkWoN0vP0Xdzhc6uOVbszVUDcbA5Aqp2Tyw_Wtrph6-mgXPBht1s-_D8syaq0AMAVU9apYveu7kE66zTuKI0hNMED1B5tMNNjgcHlCac9v9MJI0SHPtPCyNWSnvw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWeBjmrqoj1R3z6qS1ugNmhE4OXuwbMsFOKMeqlevQqFb_ciSNbFeOIAIQ4VpRzLHu9RgI-7YFPyV05IoXGvr0y9KA7NmcYfDFrofYIfxAGXu3zH46Byc4fQ1QDlP0D3ICxCog"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtiZT2Elcg1OIEdsSmU57NdGOcJP-pXEoPSu1OoWYJxeepTU8YBSgP_r1NwZpE4iBJRvu5iJ83mWqRmSBm3VbdNmwnAMHTZ-yx-SG1gZlV8q9O8twqaTf9SpkYmyCITTUy6exW"
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2rPBzNRw0CGWeTVVkNu2xuzAhaxNSGtvAKmDLGGnIJQuIEs0O62qUj9frEg1_ds-sgdAFyS0JN6xaYEoSnSG_QQH43emgDak7VJtGHz-bqrdbNhus5ktWchMb9vzY2VJ5nc6Z6XmrCigiCEMnjFdrnB5Bz1wBNpOHB12DY7AUB691j0wCwWXj19fn"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPSOE_fl2NIxAFwIG10ap_cvlr-UpafImULOAkyD6HlYtpRZHpXRuQmT1rfvaI_IVFR0-a4UbTX9a6CWYqod4ijhaNBl1PnNEAUcyTVNcO9nkNCSNHjqkTQsbUaF7PK9RN3pZJRM0SERZRJWn-VfJ6hGKBeVvgYlouxnYp2wY7VZLwoTrVM4UJUolb5pdVgzSPhVtcQvI-oHHclg=="
+        },
+        {
+          "title": "ijdvl.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOEux95w_-FWC5FxdIsIsRKg1ijQoEUDVTNeCbQpauhO4dV8Bkk5bol41dIB9OHVMYsQtBjhExlhH61vzeWq8ih5_HHsRX30vacNXOu4QzU18Yy9t7nCJEuNFX2gufNliPyWkIpnyhzp1KSwk17qpnbpZFQSfbXFAHHEIxPX_CxvM0ngvp0mRliwUQ8IBUCxD0uC6PhAEKqLftntV6LAsc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvLkmaURfrC2u3ya8P4EE2IgM7gsBc_Aw_vLozNuc45LLmriSBX2gDefocFxKXLAadXT7_mt1tFljJ5KvmtD1MqbHiRLUYYA1X2tf98hW72etVETO3p5GTW_som3t9xFaMLDo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF36sg1fUO3Mlq0t-0Skr4qquH3j_iXBB0JqpTqFTNiS8yhLm7sOZVrbsjYKMnVfNE0JItaDbh6ign06UfYd_FmP0feCNQa5zCsB09Nw0AxC3S09cyQ7TkkuCrJocgl1IbI_-zGVTBQ3NfBSE8="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIM1HuQxik_i4whY4hgGDDA_bBw5XF7WpRQWkKRGdwd92-skmwCK9AeF0n7xIBltYlIj_8HH2Tjorra8rIULRHt4PGPxfD0AtnEQgo8Y_nbMDaT8Wqfjw2_XutSCF_9Dp5vIWaQHxH-fv8Xp4ye46BA9l2fyVGKluAFxZY4Uge7ZWUMjDxt4GCKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKzQjcOFTW7zNQvoRRTjjPVThpTii3hvjpaD_Hzx6xEE4qxj4WWnbtdFAJ6ZTWxB59pj_2JS_TB2wD23fvxuvBJ_CIBxp3DB62YQOy9o732A54dbKFXjbyTke86PmYND1sTs1t"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7J7r2BES3SNoPKbbGCW1IP9LUeJdegExc9KEVpIunqjFJsT-aQjsr3rdjj4pf-oVgn8-srxEyXfOBjkSlS-EN-CGzTwtEexEFd_qCbBXDRMS30ucskgJC6ZzE9Rxm8ntG_gfPw1VzOiLBj0H2"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwC_27IsB2LKpfZEKdw_0HuhEwVe_bB772mLVmFuRgVajck_mdpefINyPsmWmtDFJpYADFKcP0SGlfpVi3XvFEpXz0ffU9Bk_iOEySQYoU5-o_AZeFx8L_S93t1AK06r8A5MUwrJcKZWc7_n7UCUPUCp0dY9RaNTlv32pn20qiT4DequYnFWaXGXlOHZD9N8JblHh0ZSnhXH91iIqVa3OeykW3ST4rKaFh56zUn58fBASIDLBRNdnZOzSx0kesx6zvQfo1HRQi5WQQs_sf_KnZTYMJBdltgDHq0aqLh-NjSmVeXyNFoSD9u7UwZeJKxbRBsSHYW0vq"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2q-C_pKGhpOBkiMFDjTbkPumPQeTGEPD5Utnb2zUvTEKVeC7nT06jl9WLBizHGZeQZXzBT5jGWS_A-njZdqk2nWjZFe7ywrOaGATzQPRhLjXRhS3jye4zFnXbKmeR1mHMHtXqOQ8PAB4zfR0mksNp_r1Z04ll7hgHH4K75X-ijQrsww4FsSFE2Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Systemic Corticosteroid Pulse Therapy (e.g., Dexamethasone) trials for Vitiligo",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitiligo&intr=Systemic%20Corticosteroid%20Pulse%20Therapy%20(e.g.%2C%20Dexamethasone)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Dexamethasone 2.5-5 mg on 2 consecutive days per week",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 400,
+          "sideEffectManagement": 200,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 14000,
+        "costPerResponder": 1166.67,
+        "icer": 8750,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Systemic Corticosteroid Pulse Therapy (e.g., Dexamethasone)",
+      "nnh": 8,
+      "nnt": 3,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 5,
+      "responseRate": 60,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 50
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 40
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 30
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "3-6 months",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6NLfkvydRiVtDK9m5gwa1H3xF2FA6PJFq8vnWn3uHeYei_gyQ6k-GCOHnFUjpuUdgpATHxRZbEgzpZrDRnt33ppdbRjal5ZeMgKSqvnOze330YL7amAl4GJYLqb2UDoFHCRvcRNUzb4d6y7C8sHf_"
+        },
+        {
+          "title": "jintegrativederm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvN83MBv7GESJg4oHaBawrts6Nnrqcd0Ff0uT71EZSPzZMRCUxnxteCYJCIrPU8ss4_96JtMg4eqQBdhD9BO84CygDnVJd2e5QUc-GKpCas0KJ6oM_wpaxQurhK-hBSMGSP10EcGuEZqafbRWXXoh4UA=="
+        },
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXu-Kx07tOCrimj34-zC4Xom-eVZ-j1Qrz5RpzeFGfhLUrmEAxUtne6wkJEYTwLy6zUOTdXNSXp27mA6MyR6FJpHR5a7CsPlvWxn4nmFMl_FYCgnPYwF7ZWYZ_vq7g_uICp2VsQ0QSAcpofbCwQgZmUGz8Lcm_6tgORGUuEFUBS_UIzXeH1sY-qNzNDbBVNW_pU_HHX8flkXi9-9aDDPlxO32z0Sa52H8E6tWuV52B_6q_YTVx5LODXk6ub226Gr87q6X_WbHHHkUFuYAcDPc6yt1Ltvqhs68yPJrAkdaV1dxPNz2kDW2rG3jgQ-Z4TsUUasDVM0529tPqydFW-7TUj9U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3KmiobvFwNdztwsyxSre-QpTwViYQ104mf8CaKBYRbNDuuUBZvP236DYHNFAw4ExKKrQFND-awaEkV-S9_VMWxn-f9Epm5hq-ZrxWx_jfjrdHronR09f0-1EqKHxxliJgeg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnLjgy2-QPeg1CN6FQQPwwpwd8eS0Qvw0LoC4kiyAdVJPWeOFomHPahlldxZyIkpxLzZ0F-b_Rr8A3YQX8nROJurEHF7GAgL3BxUxKdYt3mnjKrHdad5-_U8hdbvl9lfl7rUE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg7FwqObPZfQq13mJXRAgSjw45LUHPjBRrfL1ZufxHCedMmALnjorAB3kQh2bfv4UnjPB305ECeUIRzOe5-UFtEXPyJKQjWQRs8rBFrEVWcKh0cWSJtqiuqy0b-NkE68bqWYl_TrKbFGE_og=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2Iibx3dxtV3oHfxsD_CMXlqQhjX57kIy5Ro1psXPYiC6AJqUBJgD1jhkvpB4fcl1dEGQMvxBxILuul1D4lVQd97CD8a0fA5vxGbgB6DApS3SQfnESH8k_zCn6P6Y21Qcxc9i9y9ydXtGCd4Ojac6iEr0afZ2vH0EvPgZZq9tjxixq4c5OSuAzBW4fougKkubeAYG1HiTrwTyssoiTK8_QgmPiJ1IZw7kX4jHwRD-lhhFI_TA2Gu2UcoCMRHWqZJVP"
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Corticosteroids (e.g., Clobetasol Propionate) trials for Vitiligo",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitiligo&intr=Topical%20Corticosteroids%20(e.g.%2C%20Clobetasol%20Propionate)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Apply thin film once or twice daily for 2-3 months, then 2-3 times per week",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5625,
+        "costPerResponder": 1000,
+        "icer": 4500,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Topical Corticosteroids (e.g., Clobetasol Propionate)",
+      "nnh": 8,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 8,
+      "responseRate": 45,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Skin atrophy",
+          "percentage": 15
+        },
+        {
+          "name": "Telangiectasias",
+          "percentage": 8
+        },
+        {
+          "name": "Acne",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "3-6 months continuous, then intermittent",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6O_ClTvux7eoZuxmH2waoDHCEE_jEoCSRXutF9_6xfZKuojWIIx1dlAO4HOtzS7xvxFZiyeMnWL9YVkgg6RB3dEa1r6BSaMQSEFOAbtqwTSqIcfYL8J2DloOToq-fgYyEZp43-N3-fTxxwB7Ap0eDGlRBUGr93D3mnAxG7aVreLO97FPzl6a4lyJpL6NIo4xcEccEdYph102gQ4R0fC57_TDobgXCxvU="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsIfAzoo4nu2OfnCBqaU7fD3EzjxrI4ijfQAUb17FvCWP0ywWjVh3MJv3p3IvqJIkVDVkw9cY5m-MF3UOJ0IsItZwaSoosj50sU_bK_daCJAMFIk9MFSjIL0_A99_E1vylcE9jB6wOBNunYicbUCckk7ACv_ZcqlIPMxfSWuCXPhTnxU9LuIIFcUkQPqEhYyS_i0fJhkA0HWYtvKP3"
+        },
+        {
+          "title": "wcd2019milan-dl.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0R_hrnhxsrzUSGnCHJKNiu0AaE4rQr7dWWrqHjcNanyo7hgv1_eYiUc30OhPuVhWp_q67KYZjtQGXRqzsavseKIv4SRWUXeAXdNqkCyICIVvxtdcR7kf3xn4dV9QRNybEsqMDKpV5P5ahSYNexngDG3zP2Y9TeEQ9RA8bEAakQ7rGawJn7SO4NeJrgt_iKBOeajZ-CM0yHZxcHw40uz2EaXYFJE77V1quB9VSWh7p8yMW32DCZutIMHYYaCcNY9M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfuVAz-d6nXCBNGyRJQFQK1HTHNz7RcnADep-cT0f3RtgEBIG5R8S-6G3WQZBZiiQF19jXoU096CmDzP8GZiKg0joXPCKCjaopiADAlkbF3f6P31aVUpWWS2weMMXXM6bbXvg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMrEo8StRSQDHlrhzjPoUCPm4HN_wXFKZSKfhoubDhs7YaV_oHsvbDCiTvXJ2pXgGsFlPKH5myK2F8Q-MTcHHCu2BqA-QQUrkfhfXXhVLgDmiAQd4geIg_1M5ePqCKIQtEPghfOfSyWf7fiFG4gnaz8PHXYFJz8aN7gZ-tDXBTeMgFTZAgaMF4OGylHkk4K3y_h2tUaHdzLbebD9GLjWvzjsnsbgI12W4Rn3-mYDhlxi8ZAOfo-wSOLBtVAt5A8j27ItcjvS-RG7Ig0FeoWiqNp6RzJnJvH3-tyPFDbNdWXGeafNK4CoVJEuI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBj1NAm4ZpisVUYSPDper80ASvXiEkQY7pNQZ9KmiccL2Ub_MMSQgmqPuLeeZLWGQco8dHecnfOe_om0fCFSHjr4N3--on6KLJtqkij1b-s7qd2rCKKT_X2EO1NXmuBOdjTxPzQAmdVgiJ8_nM82iy_RPqHCHA4AgCDoLfFJDgXthjdmT6NeAUn42AVOEs-XG4Fuz-oMK5GILE0eZULO_yi6w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHX0ywqKu2Fmd7gKCaUFQd8wBAjIBop5AzBtZefXgGtEdLV-ygFsDRQUd_Eimr-rxSciDXBniqYPVaecBEPp7xpM3_VIRskUCfKUzWV9yjtt9odishc5ZFok_eLouNhwkIvQU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsvjzXS994jWukDUjHFo5bVgihYqswkf5QWXL3TomWp9beERAH4_z6a5bYNRhfRnPg6zg637uIBkdjCogS6Ydwr5ifgJl9tNo3St1XLYHUyn3rrdahIGc2Ao7kxIZNi-Oi89s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj2b1bh4SaDwroyTTx67yV0SXOUN4VRCbZ2ak7QeH6RGR70QPa3bCoAaFT0yZcOuE21a2dSuoi_06BjMDTOFaJDCOo6odQJdrSGWRtDH7WAjEXaJcuUVzOH_xEWlQLvIqm6lM="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlW6jo8AWTdLDGoa6X4JwHK99b9nUQt31A_kyimZ1_IvksoR51qyCCUy6j6TTiIwHL0pppRg2YIA7gIjydqNjqEQoJ-z75VI9v3jKPBry5Oeoz2UnfhyeRYEgxsh5cIE8pO9oZYyxR0oq65C6wt4vULkjjlyoIyPjczS9vRkRVDpbTvcQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHECl-x1XCKS2X5JOOqlpkSC6HK0iE5WuA9KDNsN4VhF9ck36fx_ZaEJDmUTgHoVriAN5omAysnh-vfOx9pf-FH86z8IVTesPGhXfkWCsTjHW4tvrITebzt4TFZwFZOxONkx6p1NGHqZ_phF29YYfZGwC_JA5tXfXtoK9LZJ0vxItdpIau_pdJIFXSPSJd7M7YDL8PRcx8="
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGm5RpVltEI19KnvfibzYSSW8aPm16RsXiAZ8zOSgNHfLRUjYrDPI71MVYUrDMinH-iIPXlb_SevsgKVBesB7YupMIZL8eL7am8Y4LyM3nN9JpuRpo6PhVaZk2TjZQpmPjwVmB1LiLNf1XRWAT9pBe_c3m01lEsj-MmZFLYAfvGuc2sLi5HDPt3c2YdL6i7_cAL3ep_ByysSEiawsy2i80-CLk3PSMnfWt7VhAQBWIDK0DOUbUsz8ZbS9pJgQ=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQBqbIg4bmJICduQf_IIW0oEQ6e0bNefHr5_9MBt0bto8rj1zs98b8WLVOpxbcuh7oESmxBuGryswAVWNdpZeTHZdlAIhF5qfKuFhnt6CG6M7Ygco_ayGyRu0pcqJd0EZm4kSNnJS9IKYxp2QbUU1693wSsXdG0hiDigA0A2kLtJSlV6RN7qA74nxy_R5knPmY5hOlF0ao7kqiWfLH9CCBDe9UT-1PwSm-YANjTd163W_7-Y0iUcmHmFgquHg7w1inm7k4Dl1MZKHT9rPSrLV8"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9JL_I-0hj2UVjq5mgKD04iPxmU4cQl-0VUXn_RiNAWKnonUmOlKthBOtNMDFzBKPenxw-uM7-LwwlAx3EYAMa2T4ONKrHXydTu4rshLhU-dW26xtO7B4JWG6Wz6YAoKs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Calcineurin Inhibitors (e.g., Tacrolimus Ointment) trials for Vitiligo",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Vitiligo&intr=Topical%20Calcineurin%20Inhibitors%20(e.g.%2C%20Tacrolimus%20Ointment)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Apply thin film once or twice daily",
+      "effectiveness": 50,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 12857.14,
+        "costPerResponder": 2250,
+        "icer": 11250,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Topical Calcineurin Inhibitors (e.g., Tacrolimus Ointment)",
+      "nnh": 4,
+      "nnt": 9,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 7,
+      "responseRate": 40,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Application site burning",
+          "percentage": 30
+        },
+        {
+          "name": "Application site pruritus",
+          "percentage": 15
+        },
+        {
+          "name": "Erythema",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "4-6 months",
+      "treatmentDuration": "6-12 months or longer",
+      "trials": 70
+    }
+  ]
+}

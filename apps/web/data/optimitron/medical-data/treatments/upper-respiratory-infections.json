@@ -1,0 +1,930 @@
+{
+  "conditionName": "Upper respiratory infections",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T01:47:39.391Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7IqWfnU2sUdHdR7kV3tOJV4X3KGTee2YT0i6BjXk8zff1HrWLeJq8pn8jRGBOLedSi4Eh-oHXWXYv7Fj_fZonJncs96ucSG07HoNE9v5v2JZabeOiLrDN3riS2jE2ZQylNzyK-CmcWaxokCg="
+        },
+        {
+          "title": "infectioncontroltoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1gqHJZAgU8LD-FBAjgrggTmG4FrYauOdQYJvWyWlxPyLWNYX5AdalFPV_8pD5rqrzw4u-mUuXz1pcfGP_xDAQ3mp6WkXUnY2XlTc_9Rs3QDUqpveRHhCdjHcIAAfbW2KRp9ox7L_9uPZyozYjL-I5JjuX-QO2727bsqS_qYNYo730hibBZ6IcgTI7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7IUVDTw2i9j-9Ila316mK4V92NV22_sz4KfCE33ObjJDT1GL6L3tqWMJOzkcdu9bro5gQnALoesWmB_TSc4vRRyAvt291ReG1REZNmmsj3U41Cop3zLOPM9x2NTPmQlENkP0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJtTzEOEOx5fxNwJb4dLxekRWAN9lwPvhLtdNl5XGLARVSFjP-JkRHeUpW-5HPP9EKFyFjr0OKB9d6GCM1Fc2KqS_C-DKvGf0KwaP-CiVgpsLz-3QWKGWPc00H56LIgNxrhW1AiAeZBmgnLw=="
+        },
+        {
+          "title": "calonmedical.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8ii-FHQ9Y9mwfKfbde3dckXvCosvL1U1dFvyw8QV_FN-so_FS-6IDVw3cl3DOnb8hAHcndYAl7iq6H0ZMOI1CBhNq_6nPBc-YViWJtdESE-1Q1YPh4-SA-eJCoT14gQ-zBl1uWf-uGw6NIrABMTIiFsBxuHyXyA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD8PD9roJteV27ZxyHruwxbUu6DsV4IbdFosDbxSN3LMIbRoajUmQcLuIPGowcOCIBBv8J4Bc7fNbAqDFHYVqlBCgeroBWsI27SNyuvQWB9KXybMdXbzfjQd0lmTrtwK3abFO_uDs-s-tTsA=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkuCPDVf0sJatoF-rgjqNJoBp_2VftR2SVx-K8noKTnKrh3HFDxG9-cPZWAaZNGQlC8FLlRuwVkDSOsNCt9BdAD628X4P31KjaZPXSk6nC1epQKtjFyZMmOWH94_KsGL6WimitGnaIf9XVzTz8kQlj2r650aEaXgTLw-xIu6XEmCF409FK9mX1xXosDNGb-Qyqj0GHAWhHgFTF64FR0COt9-G7J4_ZFR7rFkAfuGdsVQ_YxndfBdKsLCVG1qRAcnE8cPRXTryk1kEv98GiaiEgSw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzfdCDnmH7U8mJ2Klo5CxvbVk9hdhAKAnhv62FHULTXlPmX_dK-n9fhQB1O7PcemNX76UXAHTXACbdYtF8IdMEZ9M_vt70jBsPTLywuAFicJ4AkF5V6ByCPtWApI4xLtZNU0m_IDTCujxMmQ=="
+        },
+        {
+          "title": "kjfm.or.kr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_YkPb-VyxqaiA_6Ux6DgZqBXZDnBvL6WCracYgl1SDBiLCnBDt6xyiiHF5tBKI-UvUW2G5iKc2ddvsokO6P0F4nHz81zd7iUEjMJcjdbwtJZj-z2OwfOZNmhJkAUPB1Y-KbO6miHbipgbdhEV"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRpWoOhkP1bmmNFFxAojTlcyMXSK8wR7OcrBu3WrtU7tRI6U-FTAILVzK73BTwa91bSn5j7AF7M-ZGD13mSAIpvG0YDHnIpqzMYA8S_zuVzw_L5byho97B9OMXKLQp4iIuNPI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEH5Yua3Pprl5vKGv6LV_mNMcko1732wCgNiaFjUh3aUaP5r3wzuiw4jv9sENGw1u-iQtUfNnhN6mx3pdORFEcHx49o29pN7_bJtEAWYfw-gfff6tU0J5kFMhVgu_cQyUYbxcUSxVNdBBD5pA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtlVIejpOUS4bCyAPPA_FA1MP4PL6YMfkLJqIZHhjWOK9VeFS_2Wl_7LZCI-SP1ot-2Pvpx5A-ca7T7xBQckE-V06nLmxpCC97M8ORRSCxHlg3c1Df9Zc4YSCrvx1Qithyt0Tf3UsEGQbIJLShNEdG2f-mIrBicECF46KTUxj5KPmDyve_V8S1pT-nz6sfGH4XXwZHcNedE5x41gD1ifWk4LqgCO1gNzfpMGaOvppilAfgsijAXt6Bzpo_CafWoj295_O77Kl6eacpS3CLUpHiXmaF9-EB"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ibuprofen trials for Upper respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Upper%20respiratory%20infections&intr=Ibuprofen"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "200-400mg every 4-6 hours (max 1200mg/day OTC)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 610
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 11.11,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.008,
+        "vsComparator": null
+      },
+      "name": "Ibuprofen",
+      "nnh": 1500,
+      "nnt": 3,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 °F (-1.1 °C)",
+          "baseline": "101.5 °F (38.6 °C)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -69
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Numeric Rating Scale (NRS) score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Pain Severity",
+          "percentageChange": -42.9
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "Wisconsin Upper Respiratory Symptom Survey (WURSS-21) score: 45/105",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total URI Symptom Score",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "Pittsburgh Sleep Quality Index (PSQI) score: 12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality Index",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Activity Interference Scale: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interference with Daily Activities",
+          "percentageChange": -42.9
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "WHO-5 Well-being Index: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "General Well-being Score",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Stomach upset/nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Heartburn",
+          "percentage": 5
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed, 3-7 days for URI symptoms",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "canadacommons.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxYOMhJSdgG7rN_2LGOp5BLtPu1hlBqxkhqEPAO51fSQNAN1YRXlovhmDg_mJZypEMpq8jglBekzdPTeYCJQexQOsCTHrNkC-5E57qSRnD5JZsTE8JdLVl2Nw74ANJ4NDC2j24mlGOkCeA4d8DTaMfZINFFobC7C7hsdpRliOSUxKXWKXJhys1nC13r1AAG-lKJmuKYlosvUnRMmqjkgR7Aw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVIH4iNVGCEH04eXlN7E-0WLaSZzT_XFaFdwsAsBDqVHvl-HMDtzLpLlu4FgikYKm_fygEWJZeq8_Xuy_zm3QFJWZfj8NgEjl5J19BYXffirxMcZrgXXZfwA-LIu3LUIuiP7e4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQOHEegI3o9Qw2-sn2-5e0pEGvAxAeTLSdV_BtPaHXbyI_mfZXJV_StdLgQC72jcY0N6oiYmM9dISlGtLHgs2aKcs7KwWrKCi4WA8jRZ-FvpfWhbd7BMsNILlyH6IyH3L4g5ckrvDtv22-2fvWxx3GSNY5-sCpVJoqC17h8KW0VoLQ8h8ZeUDNxdre049rXoaGEtvE618mPIcXqyymRmB-rc8t0S7Hy7GktbaxREwwrfMbQbash2ranIFzLXmhxhbroMGWjj6_ngQhP8BqYOeTAkzwYTcoe8ME0WMz1hBkXel_FyRTfPcXfZT-RzP2xu28"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKns_vnJPpfrqATtKp4OXlnW9m28n9pWGWFuJsKVEzCmHfnTmVg-vglcMn3EsKky1-DAT6gpDlY2XcEETRUnlO79tU71KqTxcm10kUkb4F8V4kfXHHPPctJGV1Z5AdnAVUi5NdNoxRQQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo9o8FRPe3KmQgjh9qLQgzbj6pmApMXDuTARBwz4Vz-aTkHw9iWicyUO9P0fp86OEXmPg_1yvvzsjq7BLsYore8m-vOQTZutHpMb58QOy8lB4RV23O2lmFn9CRd3Ef8avXFk3Az-6FjI6iJR8="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHqZvYAQ2ygH2kS_4OKgO-xzO_W6qxw2BbeBZTsSJILiQBXnzqjJ9YT9mFZqc-C1oGh1w0S6jVkwcSekY5uwv-c_e8JJRjwm89AGvLj_cyAuwAJmJTEOBv7meq_sUgLteHhqkncjN_Cy0wnPxVUbh9bZzWUVXDAKiRqZOfe-hGeIdI6YOs9v--Yfl8ka68IinCUfAXOa2VzDuS71fmoC0o9e4QR0vs085lNm6MyBECti5jXo9Xh7z8sWxZm16v8qc4OATmQQVf-9ALI1EX5ek4jFeR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3kJ6MWcT0JciDdRehn6OQIrqPOahX0BF60OpRvSL30GSBbKPMy5dyrkrLv4Lbo5zehbykV9p8yfz8liA-uDDTBCr0qiAKPhVWlqBWAwFR0VZjXQda3yt4G1JQc8gG10g0bYcgnMXEQLxXoAM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pseudoephedrine trials for Upper respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Upper%20respiratory%20infections&intr=Pseudoephedrine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "30-60mg every 4-6 hours (max 240mg/day)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 615
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 18.75,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.005,
+        "vsComparator": null
+      },
+      "name": "Pseudoephedrine",
+      "nnh": 1200,
+      "nnt": 5,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "3.0 points (0-4 scale, 4=very severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Congestion Severity",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "+15 L/min",
+          "baseline": "70 L/min (impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Nasal Inspiratory Flow (PNIF)",
+          "percentageChange": 21.43
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "9 points (0-15 scale, 15=very severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Nasal Symptom Score (e.g., congestion, rhinorrhea, sneezing)",
+          "percentageChange": -27.78
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6 points (0-10 scale, 10=worst sleep)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (due to nasal symptoms)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "7 points (0-10 scale, 10=complete impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Activity Impairment Score",
+          "percentageChange": -25.71
+        },
+        {
+          "absoluteChange": "-1.0 day",
+          "baseline": "5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Moderate to Severe Nasal Congestion",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Nervousness/restlessness",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed, 3-7 days for URI symptoms",
+      "trials": 24
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzYWYIE6TiWCdbEIktmsuhft1FV1kU1uUcrtvmbWSbjHcTn80mvz-9xD25-ctSbGGHRg_UMaJpTOTAc9J1Ov009TAHLefAWTiYuszlYhbEhSOJGGJ8aPEiWw3m7ObYimkmcJaa"
+        },
+        {
+          "title": "pharmaceutical-journal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW1Qi98596zdqnBgPPQvnVK5g9RQidbxFb-f1sCVKP6x9rcdBf-szpx5_4SwImBKpB5eYPBKoUNlz7dFmPseNJRep1aQXK1hbhCVBx_iUEoqFNbtQMuEYnBsNrqGglasEkpP2XUgK-RI1tOu1OjGJ64nAwscwic1hO1hqT73pDQjUtVXUaaHrV1onqwE9CgeHpLjtno8sim118xrq7OvkZMfWEeNOJR-Y="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6SwIVKmepri_vtuJA3Dy_HDbgbP5Tf1vzlNp-x1xldpjIjrVQU6j5aH0xp92S9zgb1OzhhnseE2qHNbdVwsa-I2VxZVvRMgEgkome7QnzPDyW0JOkKyIApXgBD6tEi-McqwDcJEiRbLlv1OkQ_qoJt6kEv1Uhr4lu90c8-9wAGiZJLxvBrPTvny6f6UQJYowgjHISt1s9hFuL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6LibAwBIxcrzBrlhFKyRyQuvHug5OmwBphomU1J0goWHCYjzMcwQqaAY-kxSN-ythUrws5srce7OF4LGUUL4lZvtD9Or1xfsEr4m0LMkf61j8NsFe_Oj30UCEwY9wk1MhL7hJWjOinD8Xu1f10RIp4Tzrkv02FQHdss2IzDLVRQLezYk1g03RnLGLQOsc6KOF_8CPo_Kdjhu91lISEn2Azr2fLZ_M2jvIOeG3Qbw_QnBHf7Sy8ndqhNUAIQcH2_8ArJb554_qG9mkWR0-BLb6tDcWspcHiUsp9PJZNO3WilUxnI1-DebN"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX3xYEuXk8GU9klkkrm22upjc-NfOH3s6kfTyqk-oj_3OOt11Ov7n-5DeK8z7KxA1_9REFmNU7Csh67yw7N41IFEa_RTtU8lXpn5j-2YqqXtBl6w4ah72jplqy4mFx"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIVpo_AAEMxboGkTuEtoMEUv2rOsOpj5FYUFAxIojn29bCK2-Q0-jJU10TIFShKh4o50jEVvTzCpM1XPT5BxNq7uS9kX7OHsPEpmsnAMIrO3BBnWf_SbrIL16jGcwtVc4kXnhMu6HMuF37tMRWU4BHMOJkFht32fWGqQJqOrhoyKOjVMHIMFar75RQrrDBKFqb1aaO9ievpqSCWEhwDpQrIG_jZ6HnpKZJVP5Bbxqy94broCbMvFBW46w5qiWQa2NrxzjwDAot9q5daSG92ic="
+        },
+        {
+          "title": "ClinicalTrials.gov: Honey trials for Upper respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Upper%20respiratory%20infections&intr=Honey"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "2.5-10mL as needed, up to 3-4 times daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 605
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 6.67,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.004,
+        "vsComparator": {
+          "comparatorName": "Dextromethorphan",
+          "costDifference": -5,
+          "dominates": false,
+          "qalysGainedDifference": 0.001
+        }
+      },
+      "name": "Honey",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 2500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.25 cough episodes per night",
+          "baseline": "15 cough episodes per night",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nighttime Cough Frequency",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.2 points on a 7-point Likert scale",
+          "baseline": "4/7 on a 7-point Likert scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nighttime Cough Severity",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1 point on a 7-point Likert scale",
+          "baseline": "4/7 on a 7-point Likert scale of sleep disturbance",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Child Sleep Quality",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.35 days",
+          "baseline": "9 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Duration of URI Symptoms",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.7 points on a 7-point Likert scale",
+          "baseline": "3.5/7 on a 7-point Likert scale of sleep disturbance",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Sleep Quality",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-6 percentage points (e.g., from 20% to 14%)",
+          "baseline": "20% of patients receiving antibiotics",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Antibiotic Prescriptions",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-0.75 points on a 5-point Likert scale",
+          "baseline": "3/5 on a 5-point Likert scale (0=no symptoms, 4=severe symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Caregiver Global Assessment of Child's URI Symptoms",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Minor stomach upset",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "15-30 minutes",
+      "treatmentDuration": "As needed, 3-7 days for cough",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "emedinexus.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFcGBnQ37tIgdYCcC3OaYz0FhSvig-HblxR5IzQkS7G9rVPb0EnH2dGC84Qt13DfSeBo8_6PlFUQKd3hbPnOqKO2pzSQbXdKpSJpnBZ3VwhRqArZXamkrTky-1Y8P4EIOQQT8qmTuVU65h9ApQIPP84LqGWWfWoxCPfwJIOJTp2ggam77hqeI-x2NxbFefXAA6p-nFTkYA9AHoDfUPg24OYuFP2i8p_n3Y7EJZM8WHKmDTESnIkKiGP_YXMJjIDrRg"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMUHFu6rOq8M0bonInLqrujD1XoAWM0-x_wb42Odg8tbyEaLtEr3_P4Bl4ZSUogKgAFGhMM7hMiwnPgLyWRAolqw2PgHvckhIsd1oYPeuOvbOxO_ZSrliSnz0EDIWOlZrrMQ7EINnlvWcMbDuwtUOH8oWyLAJAZWC-fXs-S6hnS4lpoFIHScsKrQdGc1DVJqIOUXc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE458A8XBErKKR_Hda-UB4Sx8dHsSlvdcqbAYILNcMWFJY6wNMMnEGJIe1iW9NP6_8HJZNcRVKOVn_o9CccchY7Yl9jT6Sc5rvABD4RNu_Tgyj4TmQYyUMI1N0ZMS4dNdqef5krm7fABMN"
+        },
+        {
+          "title": "nice.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1YdUpD3owWIS2EZGmCtzb4O1QEroJnjYobQB73mXOlWrjsDvGfaFfrQL-hy5d62iWpyGqib18ZC5rPkV5-p7cr2O1JT_8rUIn7IAVSWc5reTnZ8HRGLOqFYa0LT3McNQQy83yjN6otoKL0dCmCbv20AAK1rVo0Hn6maIw9EuVkNY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwatEGQ2rOy4nnotnwSbHxmqu9Kk2Q2-M0G0JdIvu1D2vnKnpgs5WjfbxrCYkf1KF1hTriUZ-0FY1Ya7f0nfA1G77Rzqw9MDWjStbLiZtbWS2eGH5Le7MA8WH4pj8g3U_GrqTD"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuNwkLH-pKW2nyDpO2i8jnkqYQ0cqDMjJWvf2nTy4JDOjQwJgquA9UJ0kYobmv7hZCIzMjYsaMMOBpu8Z_3rlLv6vCF60ATIDmIwtC0-_mg5yKFG2x4ZZiO3GiyUKFxm34eJHndiSG-Ee3gekBtV6zOUMC8zIOVndsaDeod137JgQwjwkigjEINu07Lv2iUtmrA7LHpFtTIxnRp2nKXrZv1WC1Uj1NCvET"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENB5Q8zEK6UWL24yMq6Lvf817_fRDp_K5wVQQKeFyqv0oYwKIcpkYFAN6-k3hkAodGRPKjFMy49d77opLCvxP9W_v5xhRSgXpXmxrutOWiLh93cxtNHTrfxqHwef6MENn1KF62"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAh3EQsxRTguF0mUrr7W3SamvJqHf24yTTHG8XqGipi5HStP_H-yMsfE7kJTNd__CYUMyKDTpvBvPXgJqG6GomggDveSPKHr8D7WP6y-UtoCQ7T_Kx0ogKytdL8VzQ4d7v0EXGa36n7OIzECTn2naWkG1MEkzBmqLFpR-FOBTk-bEgp6CgvYLiSPgJDH_TUEd5nosi8qoktjcwL0Wqu1wykQonilBXYJZxKzv5x2lNTTw6sx2UYKFnDEPHAzuhFRA_SfGccRo50ihXXVTjJuhc0LjQV-y4oA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Dextromethorphan trials for Upper respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Upper%20respiratory%20infections&intr=Dextromethorphan"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "10-30mg every 4-8 hours (max 120mg/day)",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 610
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 15.38,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.003,
+        "vsComparator": null
+      },
+      "name": "Dextromethorphan",
+      "nnh": 1500,
+      "nnt": 9,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "4.5 points (0-6 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cough Severity Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-3 coughs/hour",
+          "baseline": "10 coughs/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cough Frequency",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "6 points (0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nighttime Cough Interference Score",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.2 points",
+          "baseline": "60 points (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall URI Symptom Score (WURSS-21)",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-1.05 points",
+          "baseline": "7 points (0-10 scale, 10=maximum disturbance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score (due to URI)",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Drowsiness/dizziness",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "15-30 minutes",
+      "treatmentDuration": "As needed, 3-7 days for cough",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjHpV_gE6lOzSdXtMmLFr3dVs6R6Wpkn78rDhAJoIqOcefWB-iEswx8-ML2VMaj_26qt_Shd0aRTOQm3GWWHy26R1UKTn22q9IICPFVnMJwNygkbdCCQtC8HHFzhfgB2SnZOI="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNeO7neuTc6sdkatkzG-IJ9csWOnunB0AUtEHyehU8QauayBFOhYrroFmnFWgiHuJBuF2SPhSm8ewKMyNJ0UGVNr1ly0lDUH_YynegYd64MvkQ5WER7BKJCY-l1_1u1oFstBGef5TCG1z9-Pw9Wh8dRX9BWQyDRQHNljDcnncA69IVNJuunw=="
+        },
+        {
+          "title": "uq.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbKPHmrRuDklWyZTQKF9iKaxAD3VA3fDoZ2iQlIOefLaZNhEnycmXqpNDXVem8CAyMIGPHpvN26sfXe5AC1ATDNBAUDE94nTmz25nfiKTdceURo1J1MChQDclDlLJsAl7Svmlamtaoc5A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIkfL0BkBIq3qj-enSbzF4PBxG6So0Hc8i5terkeuUZUCivD6wrHYbZiHfbKFaj42bBB6F1kcTm2LFLEzIQy_DsmA1HsiLMqiuMvlZbw9vUhQhgLuw7rZWnI6biEEsS81zYG494EWXMw2xlw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNEuFy6wbv8vn7RFToyO7BjgAXzSgqIkNnJ5SFINzSC3rOZYv7ti_WWsPJWJ9Fh1_4UcZCb6rJCqxbr9mr-vBaH0SKGtMkiv13Xupf8Rb90evAIwMNQRA7JnKdUDauhbq9_-rjIgC9WiFIqOjRdIuXB8Ke_QCjWIGO8ZCvqFOao-zhTNE53epIdLVLqpJS_IgvM0VgDVF2lNv4BioJafYqCBH7THVR1VvRfDap1Z2QAleKGlb3hWI9iGHD5GlQ7S4rA0OfBCdLTKwlEtHF2DrdJ_7GSOMaBlIFeijbTZn9ddn6IR-vLLf8nHaCOG0Z7vg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQSPbgiD9hR8ZsM4slELcrpJLlKmiIITUKEEJRNyI8AcufeMwgHyyKc9H6HA4WHWlE6rd07KcSgnPHo0Px6a-vILBxDj6EbWkLAolPkBTwRsrPXj9KQl-O5z_zKP0ftm8wvEg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL-BSdW2KmaQfVb6HA_KZMg4QjZED4Fy9q6_oMv-g2PRNvdNCo395nogJegmQKzT0GvL0xacTbnRUcHw_rmhdJ9cCFLm_2oda60tLA-a6FtPDpCJEQCy6jR3lQ5Zo1rK_o1O8="
+        },
+        {
+          "title": "uq.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ2Uib-S1edkBMPEwzDb8hN8m11zQhj2-LLgpv8TLiCAxyl9zr-82x3cJYiKoYYTFGtpvZ3RpCRyeqCIjXL7KXkJ6XA-r46E471zxhsVpeBe_EQs61hJj2-tuSZgwtJ5jPnV2C9ZExEmtSfWF7U05YzCT9L_0pznzI"
+        },
+        {
+          "title": "ClinicalTrials.gov: Saline Nasal Irrigation trials for Upper respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Upper%20respiratory%20infections&intr=Saline%20Nasal%20Irrigation"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-2 washes per nostril, 1-3 times daily",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 615
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 21.43,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.004,
+        "vsComparator": null
+      },
+      "name": "Saline Nasal Irrigation",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 5500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "Total Nasal Symptom Score (TNSS, 0-15): 10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nasal Symptom Severity",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-14 mm",
+          "baseline": "Global Illness Severity Visual Analog Scale (VAS, 0-100 mm): 70 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Illness Severity",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "Average Duration of URI Symptoms: 8 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Symptoms",
+          "percentageChange": -12.5
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ, 0-6 scale): 3.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life",
+          "percentageChange": -14.3
+        },
+        {
+          "absoluteChange": "-1 day/week",
+          "baseline": "Frequency of OTC medication use (days/week): 4 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Analgesic/Decongestant Use",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-22.5 seconds",
+          "baseline": "Saccharine Transit Time: 150 seconds",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mucociliary Clearance Time",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasal discomfort/burning",
+          "percentage": 8
+        },
+        {
+          "name": "Ear fullness",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "As needed, 3-7 days for nasal symptoms",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWBtpjcYYxIIjBEzetzgt1noyPRrnyvLl4fD6EQ5Xg568bB2huLtg7XbNjP68n9MnkB8GioF-_tIpH2PEnbvRRdEGk6hauJ-YNVS_btsv7pFyqwB-lNgEtHB4C2EDnI1Xty-WRDqaOBv1oYQ=="
+        },
+        {
+          "title": "cmaj.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmMsm4AOAbrk1jJ9khQtqG3ib12bN3G-wF6o1g9wsp2HeOv-DcAe3qGcbBw_JjaOC-o9ImcChuZHIlC2DQVcIgfxNby4KhIY3OsMEkYiNGb1W4nRC_Cjn7JH5m8mm_dm7P"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTnpnhhQXbQ4UVnZTvilw5o-P11LlaUz8OEF7XEr-nSl2sU4_ciMYDDkCNXLTOLeJw9WV8iszGl_Z_ZQ99WCkKpEwEsfxWpvxdPa5nypVEyZLkZy0w782wyNd6_8gAp4IrYWdkxr_s-PKYaA=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7wLcjAQS1gS4z8Nd8A0B9PrL0vJnGBqQ3bzIGrRiCbOENqN8IRbiKlmTfirhPcQLFtAEFaqSW1yQ-tN7hffy4W3rHEv8FDvrIf-YaEMzsZioCoRC_FUD9B7BhROeZpVVxUYZJHAu_YtEFgsiyauDNPz7xFaT76AbOydGabI4SRI_lOKkt63N2wGnnkZmNyMm8Z6pvuOu0_YCOR_D31S_AhFp_EUk="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-JarrJjNg3tlR6lLdFwN_G5z4-IRFSEcda4Yg4HGC-B7jq4hY2iPM0W-xSnVePwRFttEksi0R_fqOmNLnAoohy6-sa8xg7MoCwuN00zKmzLRojEtls_5lujfjjtO7IG3lVSfzhRBOKbJxD2iJ_y0UOcREiezrhFYbQ6pxp1EKWys9MGQhrNoLlJ_6WMgd"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEINjYowuwwSGQZ0u6lOAjOqVZNsEkQsYt8w3cZU_3eFwOeTsg2GxS6fMOnU4zZ4PE8CWlP-p3HC2LFXWYwa0Lflzcve5v7F_a5of22aBmKtzESvb0W2DcJssLJcaR1j1qTVq-Mya9-42yF4zB7SWFO1zxF_okf0SZFAO_mcEt1hULjhaN0wrElYbIkNKfIf-y9bneSkNTC6-hJYPl71SE5iMItxEbd"
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-pwwQrNRHurMPQGqyauxmoMOisLajt8a5GZqutTI-xFgNx4kZgQh7y6axN0yueAN6Wy8TXSMLX_Rr1C74RPf2D_-8cyGWO2rdOCufvD-eWVQXltgkVtRk_BQpkENt8Dlr3x9X0WftS7_YarFEIyMRJQPKlqjQY-diMJkjyXgkYf6qc-2ZlmxVv4lE4ayWP-c-wJwpiUDUCBX32N15eF3aIw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4nJsVeHAcoBavmH1YHyXyN3EADDzA-2aBN1tX8_JFcNO6PnkeLRzMzzmCM9ocpSB9cB03jcxmaLlWPaC9OWf04Xn5KAfJtRexdIghSMPHgc97mRDACEdh7m2lJpMCC_oLTRM1axg6XmFuzA=="
+        },
+        {
+          "title": "uspharmacist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtt52jViptov_xdjgnBcuB5ChEGHnTho8WUczdyV3JUQJ0UthjBvR6O8y5UjnVcjdN4DXqj0NFz2L2OgAOB-O8yvJfnoITL_GOUht3VdInozEa-p-aXDAqBUSMJ45T-NEDjB1s1qiVhY3TKwbPPIgllVdSi9ZtOMRCkO2PKnWs8bRDl5UEPruhHDLBb3nucyuORth7jyiyk_FW0IduNL9tV2PKJ562nXe5z2Jk"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTScSW3pVc9Nb6LA9NRualmyObnZTtd1iVSXLH2ke12AVEzdUPiVPu5ZbAVmkdtwso9KfTf6cUPPQdgqvcOsPD5oqPudsI1hlk_nVTua6xOdwywdPGXLJDJR7bLDglaEAEdas="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGL42XEa8kATn9VFPuVzpPCWmI_KSmzsOpjLXThX5RW0Hqe48E5Lk_cRArd8ABZv071O-jG80n9Lzuuy-T3xZQj9QyYOjvyiO1eNDUUccn6ZwBjQur149HzXB96eGWmh_YyKn5ue29WAqBd2w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Zinc (lozenges/syrup) trials for Upper respiratory infections",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Upper%20respiratory%20infections&intr=Zinc%20(lozenges%2Fsyrup)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "75-80mg elemental zinc per day",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 615
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 27.27,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.002,
+        "vsComparator": null
+      },
+      "name": "Zinc (lozenges/syrup)",
+      "nnh": 600,
+      "nnt": 8,
+      "participants": 5200,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Taste disturbance (metallic taste)",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea/stomach upset",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Days (reduction in overall duration)",
+      "treatmentDuration": "5-7 days, started within 24 hours of symptom onset",
+      "trials": 22
+    }
+  ]
+}

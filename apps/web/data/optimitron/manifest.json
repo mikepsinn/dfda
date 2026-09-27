@@ -1,0 +1,1121 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "mikepsinn/optimitron",
+  "sourceCommit": "06ffef0fa4d9e00dde304c30bf8a8213297cb45b",
+  "sourceRoot": "packages/data/src/datasets/medical-data",
+  "displayOrigin": "model-estimate",
+  "reviewStatus": "unverified-import",
+  "counts": {
+    "conditions": 216,
+    "treatmentComparisons": 1214,
+    "treatments": 969,
+    "references": 536
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1383,
+      "sha256": "f87601c1f23a8542c0f507598c5a2f727fe7e34816fb81fc3ae4773c54119771"
+    },
+    {
+      "path": "conditions.json",
+      "bytes": 134168,
+      "sha256": "520b94d27bb5c9bf0a7d395e446dead5b3a703110d00c8fc1be7a36b358dcb8d"
+    },
+    {
+      "path": "references.json",
+      "bytes": 512295,
+      "sha256": "111a9e5459391c2104312e7e0cfbdc286b59ff497c8665213c2d61e9e37bfdd0"
+    },
+    {
+      "path": "treatments.json",
+      "bytes": 497214,
+      "sha256": "365fde895738229a65d41ec2c98b10aa5c2bd99e54cecaff3581cbb11e9f47c5"
+    },
+    {
+      "path": "treatments/acne.json",
+      "bytes": 38111,
+      "sha256": "6cabb0723ec489d14997849f9d9ebb21c3b0f8c23b64009b5307ebf11fb53731"
+    },
+    {
+      "path": "treatments/acute-glomerulonephritis.json",
+      "bytes": 34875,
+      "sha256": "590d3a888b10bcd3d79767d397f08b4c15a3239e60d8daba4c306153b06f0c83"
+    },
+    {
+      "path": "treatments/acute-hepatitis-a.json",
+      "bytes": 17510,
+      "sha256": "36959f8afca252d8acc313f029fb47cba8530bfbdd46c696b9575dba306e7975"
+    },
+    {
+      "path": "treatments/acute-hepatitis-b.json",
+      "bytes": 19510,
+      "sha256": "69f12111a16ea98a37189ab252f03b181e7d437d998aa24b9e32c7b59e075bb4"
+    },
+    {
+      "path": "treatments/acute-hepatitis-c.json",
+      "bytes": 33571,
+      "sha256": "dd0014200d25c88055c590eba4c428162cb6208fd11cd17220733fdc2572e502"
+    },
+    {
+      "path": "treatments/acute-hepatitis-e.json",
+      "bytes": 25165,
+      "sha256": "c366dbc67727a7fb8807649f2d57b7fcfdd185268d33a9be33a34d7b9503d63e"
+    },
+    {
+      "path": "treatments/acute-lymphoid-leukemia.json",
+      "bytes": 53730,
+      "sha256": "a7de577b09bd5b9b5c9f538a51461f96a923fe5fc9c5650e8b0ea2c9413d35d8"
+    },
+    {
+      "path": "treatments/acute-myeloid-leukemia.json",
+      "bytes": 56005,
+      "sha256": "bdca1efd9cc524079903a4703183b792d7d512edd9b36ce8cce72a26c6957577"
+    },
+    {
+      "path": "treatments/addisons-disease.json",
+      "bytes": 21063,
+      "sha256": "4232d12ccadd95b07734b350d6de918a3defb2d52af4ff70f6f3bedb37acc126"
+    },
+    {
+      "path": "treatments/adhd.json",
+      "bytes": 39553,
+      "sha256": "9ab9816c77a4c3ca28b832191fd32f70e920efd9f1c9c78e6206d2a24675e262"
+    },
+    {
+      "path": "treatments/african-trypanosomiasis.json",
+      "bytes": 36005,
+      "sha256": "d78d3374f9ec81e569457a943f7bd97e1c1e33cf211df2403baa2165c3c1eccb"
+    },
+    {
+      "path": "treatments/alcohol-use-disorders.json",
+      "bytes": 47535,
+      "sha256": "7dc02d6ee93418c808766a5ef890ce49d564d0398782961b6d189fab6c841dbd"
+    },
+    {
+      "path": "treatments/alcoholic-cardiomyopathy.json",
+      "bytes": 33002,
+      "sha256": "bba55fc3f5942d54339646c442e68af215e6ae472b11797141e891af9eff6fa7"
+    },
+    {
+      "path": "treatments/allergic-rhinitis.json",
+      "bytes": 46218,
+      "sha256": "ac39dbf0eb1557c31c9f8aec72c37a198e147df80030ed0837541430bf2698ed"
+    },
+    {
+      "path": "treatments/alzheimers-disease.json",
+      "bytes": 43838,
+      "sha256": "1ccb6fd7cdada3844c4b8c3eeba76ffa2b033237a36d8571e65c728b2b1416c4"
+    },
+    {
+      "path": "treatments/amphetamine-use-disorders.json",
+      "bytes": 27028,
+      "sha256": "aef60d70f03ac77429dcc8f6321b5a32d5831bcc11c5b65f72f8c40dc62cb1d7"
+    },
+    {
+      "path": "treatments/ankylosing-spondylitis.json",
+      "bytes": 40850,
+      "sha256": "d5febed49fca1a516050a51dd39a6972579777e294f9ec2698093476060385c6"
+    },
+    {
+      "path": "treatments/anorexia-nervosa.json",
+      "bytes": 29653,
+      "sha256": "ebf20a96b398bb9b6af6d74d0a796aac0beb0a270cfe5c381da42c9caba3e0a6"
+    },
+    {
+      "path": "treatments/anxiety-disorder.json",
+      "bytes": 51786,
+      "sha256": "fc4ad4a1e635df8e4096f1382ceaeb6a137a3a6e130691d1c33d842bdb998dc4"
+    },
+    {
+      "path": "treatments/appendicitis.json",
+      "bytes": 26291,
+      "sha256": "264c070d6e2fb1e3780e14f6b7c7d7f83e0b51eaf75cc7058fc53a7940b23964"
+    },
+    {
+      "path": "treatments/asbestosis.json",
+      "bytes": 30151,
+      "sha256": "e6a42733e2942942504bd2755ffa33f1fa22b6534b09b7b33339d9527795ffdc"
+    },
+    {
+      "path": "treatments/ascariasis.json",
+      "bytes": 23528,
+      "sha256": "a1cde06397e760d4447b85692926e09d28379d2d3aeaab50bd45ea7e77cfb1d1"
+    },
+    {
+      "path": "treatments/asthma.json",
+      "bytes": 41986,
+      "sha256": "3ecdbba62785ce4ba97941d089d5112510723c4badf81a3fa6c4cb91ce00a4d7"
+    },
+    {
+      "path": "treatments/atrial-fibrillation.json",
+      "bytes": 39348,
+      "sha256": "3f771ba12213961a675bb5523d8757b46b845d73654ed58e7890a6113a895762"
+    },
+    {
+      "path": "treatments/benign-prostatic-hyperplasia.json",
+      "bytes": 46051,
+      "sha256": "f4e974d93b47161bc4ec7ef8f054f04df8d50a5e37a6dded4bdc1b38e2fd441b"
+    },
+    {
+      "path": "treatments/bipolar-disorder.json",
+      "bytes": 54258,
+      "sha256": "f4d6804fa8aa4e1a88d427b967317c42d41fd378e99a27a03fb7964001804dd4"
+    },
+    {
+      "path": "treatments/bladder-cancer.json",
+      "bytes": 47029,
+      "sha256": "b8eabed054b895f742d8354e30e4c5e1e842c5fe9f31d191706286d021c73a97"
+    },
+    {
+      "path": "treatments/brain-and-central-nervous-system-cancer.json",
+      "bytes": 47725,
+      "sha256": "95c1a7e426b5f0716db0d2bc4404ccae969b40e2cde42780e40392b4eb5732d9"
+    },
+    {
+      "path": "treatments/breast-cancer.json",
+      "bytes": 47894,
+      "sha256": "537318d578e5edc1a8fc1822ebf14e5eef7a1ed9db783133d68f39704d8a8991"
+    },
+    {
+      "path": "treatments/burkitt-lymphoma.json",
+      "bytes": 30053,
+      "sha256": "b673a087a5e9b50a2cd3a71ef59fee78e65e57af25ab150f120022956bced38e"
+    },
+    {
+      "path": "treatments/carpal-tunnel-syndrome.json",
+      "bytes": 37797,
+      "sha256": "a66695cbca118d64d843bb9ef9e78fc907a22734c866369ac2d98c817aab3445"
+    },
+    {
+      "path": "treatments/celiac-disease.json",
+      "bytes": 40370,
+      "sha256": "d68e8a7382181f131cc7ec6d1f7b81ba36cb4796f0ac79360ac3b2a1a77e6c07"
+    },
+    {
+      "path": "treatments/cellulitis.json",
+      "bytes": 33381,
+      "sha256": "12d8d51e17e4a955c90abafe2957353c1c20fde0fad91abe03851b0fea70d9a0"
+    },
+    {
+      "path": "treatments/cervical-cancer.json",
+      "bytes": 41928,
+      "sha256": "5864a46377c5530b8ada6dd54df1644149a8f86cec2783a61293065a30930dbc"
+    },
+    {
+      "path": "treatments/chagas-disease.json",
+      "bytes": 15540,
+      "sha256": "ec55d89b384bd09fb7675d4fd271fca6ba6ab44cd191fbdf9f8bd2ef145deb37"
+    },
+    {
+      "path": "treatments/chlamydia.json",
+      "bytes": 19593,
+      "sha256": "4d6197065a3dd1a3de959ed73e2880ae04a3c6de1e1e2553abfe2a017c82ca37"
+    },
+    {
+      "path": "treatments/chlamydial-infection.json",
+      "bytes": 29685,
+      "sha256": "3b0af59dccbb51eea3811c715c843143f7ff6cbbdddc2f13fe9bc1201401e865"
+    },
+    {
+      "path": "treatments/chronic-bronchitis.json",
+      "bytes": 36675,
+      "sha256": "4a141ea0bd100563f3eeaa03576b5492878cab3c2dd1a6a8bd9a2433e5979c34"
+    },
+    {
+      "path": "treatments/chronic-fatigue-syndrome.json",
+      "bytes": 33721,
+      "sha256": "9ef59195c8d551e86bcad3ac00949d8ea2589ba60ce8bdf36b73f7dc1bd914ee"
+    },
+    {
+      "path": "treatments/chronic-kidney-disease-due-to-diabetes-mellitus-type-1.json",
+      "bytes": 31230,
+      "sha256": "626e78a566531f4fdec07727e1fab0b73fb4210f0fcd235374e9e84cd4770da1"
+    },
+    {
+      "path": "treatments/chronic-kidney-disease-due-to-diabetes-mellitus-type-2.json",
+      "bytes": 32424,
+      "sha256": "2133c45924ad078aaddda5bcef715795c2d8ae76e1675bd7bba8630c4da86c66"
+    },
+    {
+      "path": "treatments/chronic-kidney-disease-due-to-glomerulonephritis.json",
+      "bytes": 34014,
+      "sha256": "fb6f48de33211f8f6be57982f96909d4d5699e08823b7f948b892c6165a1d253"
+    },
+    {
+      "path": "treatments/chronic-kidney-disease-due-to-hypertension.json",
+      "bytes": 32846,
+      "sha256": "e911f722a227d89a64a5a8267e76a50e128cc8b9b548cc95f1e0a7382a76e1e3"
+    },
+    {
+      "path": "treatments/chronic-lymphoid-leukemia.json",
+      "bytes": 45225,
+      "sha256": "6662a6d9a92931b5f352c62abf26958e6515242e05b59329bfb0563fb793a688"
+    },
+    {
+      "path": "treatments/chronic-myeloid-leukemia.json",
+      "bytes": 36082,
+      "sha256": "78064d15ac3cf221494355f6f0748f7e659587d413a595440e303cd0c8cc738f"
+    },
+    {
+      "path": "treatments/chronic-sinusitis.json",
+      "bytes": 39733,
+      "sha256": "97ec4628c07d62c9d9c8178b8533729a86d0e4e777cbb6827fdaaa0e59cc641b"
+    },
+    {
+      "path": "treatments/cluster-headache.json",
+      "bytes": 40608,
+      "sha256": "a132b1dd052d561e104b3c8b94d69532c728bc1cd6571f26881eeefc6a7192f4"
+    },
+    {
+      "path": "treatments/coal-workers-pneumoconiosis.json",
+      "bytes": 35648,
+      "sha256": "aa41d6deaa9e19b8b7259322fe93c82616a83ae1512f3076e9e6658dfe38fa3a"
+    },
+    {
+      "path": "treatments/cocaine-use-disorders.json",
+      "bytes": 33031,
+      "sha256": "38c21e0717d33f96eb646d190f8fb26b93ad6a48ddaf833bac176358326ba5d9"
+    },
+    {
+      "path": "treatments/colon-and-rectum-cancer.json",
+      "bytes": 50420,
+      "sha256": "cef893db1721deb43b649983276325a8268d206019f096765268c71714cabd42"
+    },
+    {
+      "path": "treatments/congenital-heart-anomalies.json",
+      "bytes": 58988,
+      "sha256": "638698edb62d6d41a3ca33500a2fb6322db772f2ea29893d85c3a738fce7aef7"
+    },
+    {
+      "path": "treatments/congenital-musculoskeletal-and-limb-anomalies.json",
+      "bytes": 43914,
+      "sha256": "0cd517ffe4e2eb628a88972f04d7b1137d67a083414750e8d4c923eb4ffd53c9"
+    },
+    {
+      "path": "treatments/copd.json",
+      "bytes": 44255,
+      "sha256": "b0acfa9cab380ed355aee21ebb9e3bd273c5e7652ed65ab1656fab49ae13df85"
+    },
+    {
+      "path": "treatments/coronary-artery-disease.json",
+      "bytes": 44290,
+      "sha256": "b0b3a01170554089d0bdeea97d7978d9ba7473a846813c59dc4914c7245f2da6"
+    },
+    {
+      "path": "treatments/covid-19.json",
+      "bytes": 53800,
+      "sha256": "7e046a0b9cb7ba28a8a288768b5e3215713a98a331765dec95a4325e184c43fc"
+    },
+    {
+      "path": "treatments/crohns-disease.json",
+      "bytes": 45189,
+      "sha256": "b8e62f3e6c5201de903d1d73e84980ebdd069f5a9c3e83cbc2c073a8d370bcde"
+    },
+    {
+      "path": "treatments/cushings-syndrome.json",
+      "bytes": 43552,
+      "sha256": "091a0189bdd7cd8d56a9c41c530c49fb28bd790e213990c8b1b845c12661aabf"
+    },
+    {
+      "path": "treatments/cystic-echinococcosis.json",
+      "bytes": 26395,
+      "sha256": "65aca65cb75a2d54aea7d3be95dabef76007b1c9f1c6f07d5cbaca95ac1cdd8d"
+    },
+    {
+      "path": "treatments/cysticercosis.json",
+      "bytes": 35996,
+      "sha256": "6a44317e8af38df13f871ff38e88d1c50e9011b075c1c98c16cb6ec6556652ad"
+    },
+    {
+      "path": "treatments/decubitus-ulcer.json",
+      "bytes": 47777,
+      "sha256": "7f9e2c359c33a6b4e1c35ec1aca8165afd462b965974ba4ee2707f0e30532e7c"
+    },
+    {
+      "path": "treatments/dengue.json",
+      "bytes": 22844,
+      "sha256": "1ac79231f1466939ab37d0f519359ceeafa697e22083d2a916d4370d9d09fc60"
+    },
+    {
+      "path": "treatments/depression.json",
+      "bytes": 49898,
+      "sha256": "db3983902341991dde661c8c01950549c5f5ebf5a8f06c34e998860f3d6b0878"
+    },
+    {
+      "path": "treatments/diabetes-mellitus-type-1.json",
+      "bytes": 40188,
+      "sha256": "ac8b8870c3972693b0c1246adce8c12ce44e6d814a5ef418f5a2ff10397d9c23"
+    },
+    {
+      "path": "treatments/diabetes-mellitus-type-2.json",
+      "bytes": 78572,
+      "sha256": "b845ddb21901a03e6b678f124ead91d2260012ec59fbba13e3d8404fe2793504"
+    },
+    {
+      "path": "treatments/diarrheal-diseases.json",
+      "bytes": 36236,
+      "sha256": "2af2c1ab7d7d3f338828891af301d5a7d8a78887aa208d5e45f5abbf7e2c76dc"
+    },
+    {
+      "path": "treatments/digestive-congenital-anomalies.json",
+      "bytes": 39841,
+      "sha256": "47b1a441ddb23a518729aa40cf46f012129d4b1a873905214039e9fa87206411"
+    },
+    {
+      "path": "treatments/dilated-cardiomyopathy.json",
+      "bytes": 34644,
+      "sha256": "513cf9eb59a64a564110825be940048e5fefa97c7bf7f030eae3220803e661c7"
+    },
+    {
+      "path": "treatments/diphtheria.json",
+      "bytes": 28086,
+      "sha256": "b7574ac2f77eeae824e9252af2c4701920d72fa6648a0d29f97412d4f49fdc27"
+    },
+    {
+      "path": "treatments/diverticulitis.json",
+      "bytes": 43329,
+      "sha256": "4878495699f18f3f74a6b6f9ec23c21452c52ad5d3dee87e28beff141ea2e0f1"
+    },
+    {
+      "path": "treatments/down-syndrome.json",
+      "bytes": 46943,
+      "sha256": "485cecb9d9095145148a0fda449f14fe9bbc37c1b4281344b5d79fc4371d6b4c"
+    },
+    {
+      "path": "treatments/drug-susceptible-tuberculosis.json",
+      "bytes": 29569,
+      "sha256": "87ca6b7774b010b8851406c51187bfc1eec45897baebac7ce7171c642c5a844a"
+    },
+    {
+      "path": "treatments/dry-eye-disease.json",
+      "bytes": 50692,
+      "sha256": "b7133fe7fea455ebffa5b6b5b9ca2cff6109404005ca6e16c4fcc9ff06c2662c"
+    },
+    {
+      "path": "treatments/ectopic-pregnancy.json",
+      "bytes": 29098,
+      "sha256": "d106ecbb0982f664a406b3965fc38ef35caa258680e724e9a842b4c48776ec03"
+    },
+    {
+      "path": "treatments/eczema.json",
+      "bytes": 43962,
+      "sha256": "d332485cdabcd36e68eab68f2bf82cee1c69b73d7935ae770b66a2ed6a29a677"
+    },
+    {
+      "path": "treatments/emphysema.json",
+      "bytes": 43253,
+      "sha256": "4b4dcc1f9f123ef656153fe083b5c4efca6515b4ffcdea80369a6af7ec57c9f8"
+    },
+    {
+      "path": "treatments/encephalitis.json",
+      "bytes": 31306,
+      "sha256": "b6ea7dac4e05f6b0f57565d5b8df117f09bb5fa2c95989181aaccf3d729f154f"
+    },
+    {
+      "path": "treatments/endocarditis.json",
+      "bytes": 40788,
+      "sha256": "62d7593dac157c378deca002f1d12c9bd9558967bfd2cbbeeab363479e7da5d2"
+    },
+    {
+      "path": "treatments/endometriosis.json",
+      "bytes": 45242,
+      "sha256": "993e797e022dbf9326aa8a5afddaad39b165f5824efd69dcd8fb777057a4ba56"
+    },
+    {
+      "path": "treatments/esophageal-cancer.json",
+      "bytes": 40451,
+      "sha256": "2080e02237c3aa6739c92bb9475dd9074977f89969c6b5d66e68d9f56033acaf"
+    },
+    {
+      "path": "treatments/extensively-drug-resistant-tuberculosis.json",
+      "bytes": 39648,
+      "sha256": "11b25a4bf65159e36649505eb70f8504dd8449262b5668f14954b813cb2e4bfc"
+    },
+    {
+      "path": "treatments/fibromyalgia.json",
+      "bytes": 43943,
+      "sha256": "723528ee6e53e4b4960eaebdfa1c6458edb8808ed9ceb56f25e895b4aaa9e135"
+    },
+    {
+      "path": "treatments/frontotemporal-dementia.json",
+      "bytes": 24478,
+      "sha256": "f3552a73464dbb661626d244d92fc80e14c34d930a72bbae146b2e5fe5e4ba8b"
+    },
+    {
+      "path": "treatments/g6pd-deficiency.json",
+      "bytes": 17306,
+      "sha256": "e2204ece465fd4a66b7da8eefddc1b86f1f1ce72a249878bd1086884ea1744ca"
+    },
+    {
+      "path": "treatments/gallbladder-and-biliary-diseases.json",
+      "bytes": 43248,
+      "sha256": "9fabd620b23aee65a83f68d0f719d9fd9df13b7bc7d5524d672838a17ac650a4"
+    },
+    {
+      "path": "treatments/gallbladder-and-biliary-tract-cancer.json",
+      "bytes": 47813,
+      "sha256": "feb16a1e97ad70eb7eb4fa8cabd134789d519f2f16ed9f53fa2d6af0cb155546"
+    },
+    {
+      "path": "treatments/gastritis-and-duodenitis.json",
+      "bytes": 36010,
+      "sha256": "fd8710568f665c63abd6c246efd984d48c6ad9511262537a8f3d62a7ced81410"
+    },
+    {
+      "path": "treatments/genital-herpes.json",
+      "bytes": 28901,
+      "sha256": "b439f361dbd5553ddbe3cc84abaffb2df03b01a52702c394ea4a02087f6b6e6e"
+    },
+    {
+      "path": "treatments/genital-prolapse.json",
+      "bytes": 36302,
+      "sha256": "d21ccc8fb61eacf2de04ea95fa0e2578a3c76f5b2a25ead9d210611a05f90def"
+    },
+    {
+      "path": "treatments/gerd.json",
+      "bytes": 37236,
+      "sha256": "23ebbf2003d32f0eb2796935bb17b4375529ab510b209eea3a334a1364222b53"
+    },
+    {
+      "path": "treatments/gingivitis.json",
+      "bytes": 34366,
+      "sha256": "a8b6dec53d138ed7ac9b9ebd487d066207218f56878f1af37197c9099e37ed8d"
+    },
+    {
+      "path": "treatments/glaucoma.json",
+      "bytes": 34441,
+      "sha256": "d0c716c3d7ff15a2bd14204a3a5125295f74897da04c3996bc974a0ca5dd895e"
+    },
+    {
+      "path": "treatments/gonococcal-infection.json",
+      "bytes": 29538,
+      "sha256": "8ef3c469f8ff0926c1ffbe69672afe46838ed56fd0e784dc390fd86e06996997"
+    },
+    {
+      "path": "treatments/gonorrhea.json",
+      "bytes": 43643,
+      "sha256": "31c66c7cea57abf8700e30223ce5bacdc9232d7ce1d2d3cd8db21119bceffd0e"
+    },
+    {
+      "path": "treatments/gout.json",
+      "bytes": 39922,
+      "sha256": "494b174af4fce2ef548aada73d2b08e05b75fa416ab6efad68e7f49fded64fea"
+    },
+    {
+      "path": "treatments/hashimotos-thyroiditis.json",
+      "bytes": 49325,
+      "sha256": "3c0d561260424260407553cc95bd6c4607e5a532078a4342e3d70c926a22c14f"
+    },
+    {
+      "path": "treatments/heart-failure.json",
+      "bytes": 48705,
+      "sha256": "70867abfaec29a30f0e7406df291949682dc4b73f43efcc481f6608993a707ec"
+    },
+    {
+      "path": "treatments/hemophilia.json",
+      "bytes": 41589,
+      "sha256": "3bb6793e0ac16b75b46f6c4606bf82a77cc6fecccb5ba68d6cc77929545f49cf"
+    },
+    {
+      "path": "treatments/hemorrhoids.json",
+      "bytes": 38229,
+      "sha256": "28f8a860b9fd291d17fc3e06adbddf683f54db4a9add954c196a1aa6c8755f7f"
+    },
+    {
+      "path": "treatments/hepatoblastoma.json",
+      "bytes": 35829,
+      "sha256": "1e8601f194dfedd50ef6ef37ad7db3bf2c6ec238775779e85247e87aa8b7df2b"
+    },
+    {
+      "path": "treatments/hiv-aids-drug-susceptible-tuberculosis.json",
+      "bytes": 13256,
+      "sha256": "7d22d2b7b031fe3c66def0c9762c49f1f9220b35aeae5843ac5b0fe743ad5a16"
+    },
+    {
+      "path": "treatments/hiv-aids-extensively-drug-resistant-tuberculosis.json",
+      "bytes": 30438,
+      "sha256": "9504b5f1a401acd3cc689f69698ef248ff8ef2b4f74b5e95a8e0240555a55b69"
+    },
+    {
+      "path": "treatments/hiv-aids-multidrug-resistant-tuberculosis-without-extensive-drug-resistance.json",
+      "bytes": 38319,
+      "sha256": "415658be96a7d1c2760e1526463e5b150c2cfd954511d2ad79ffc93eb2feb50d"
+    },
+    {
+      "path": "treatments/hodgkin-lymphoma.json",
+      "bytes": 50687,
+      "sha256": "4c4553fd3d93eaa2cddac857fd40a5c5fe7e64ea718d32ef9a0d2dc046cc8e18"
+    },
+    {
+      "path": "treatments/hpv-infection.json",
+      "bytes": 35365,
+      "sha256": "34674b25d6a1876fa2731684fe840976b783c314718f0366a8a5ab2c342471e2"
+    },
+    {
+      "path": "treatments/hypertension.json",
+      "bytes": 31677,
+      "sha256": "9d1b7effdf28e0176cf108ee3168dbb29fcf4bd72f4b75fff28bec8dd9a306db"
+    },
+    {
+      "path": "treatments/hypertensive-heart-disease.json",
+      "bytes": 42634,
+      "sha256": "e4ecd539764c561466a887ee6c42124622b551711abd5966bfcde64adbbc8fa1"
+    },
+    {
+      "path": "treatments/hyperthyroidism.json",
+      "bytes": 33946,
+      "sha256": "e793a7601834ea1de340f7256372426e805654bebe898873b7e3ce1845ba2aa2"
+    },
+    {
+      "path": "treatments/hypertrophic-cardiomyopathy.json",
+      "bytes": 49653,
+      "sha256": "d1df7cc70d7fe17ffcb8205127f549846a3002fe62a26845b1e47d57877b185d"
+    },
+    {
+      "path": "treatments/hypothyroidism.json",
+      "bytes": 33425,
+      "sha256": "419fbee7fdd427a1001be8f72b12a569ea69bf4880b1b523b6985ef4fe6e46d9"
+    },
+    {
+      "path": "treatments/idiopathic-epilepsy.json",
+      "bytes": 30739,
+      "sha256": "b2c906346ab277ff2882f67c47dc8323fda4543e1d02e1f317fe317d973bdca2"
+    },
+    {
+      "path": "treatments/index.json",
+      "bytes": 6049,
+      "sha256": "5860a954c58db19fc1fe0c5a0aa4c514b6b2e1adde46a3d23aee5ca317967856"
+    },
+    {
+      "path": "treatments/inflammatory-bowel-disease.json",
+      "bytes": 49122,
+      "sha256": "298da72321bcf6e2fc848e422d4a839a30b7793bc762c1d36a84c50d00950ce8"
+    },
+    {
+      "path": "treatments/inguinal-femoral-and-abdominal-hernia.json",
+      "bytes": 48594,
+      "sha256": "a6ed753e98e88621ecdf8e3dcb7232b334cc0c8b341e793c6d2ef2838531b322"
+    },
+    {
+      "path": "treatments/insomnia.json",
+      "bytes": 49029,
+      "sha256": "d146df4872fb65e30fb01899264ee860b3de36f0f5f5d4df5c94cfc030f66839"
+    },
+    {
+      "path": "treatments/interstitial-cystitis.json",
+      "bytes": 43229,
+      "sha256": "c82704e180247e542a1e244f9daf78009ee810d2deb9e6181a0f48aa26fc811d"
+    },
+    {
+      "path": "treatments/interstitial-lung-disease-and-pulmonary-sarcoidosis.json",
+      "bytes": 44152,
+      "sha256": "b8051f85e33b7e9b99307d8995fae2c34a0808240aeacfb87c35365a67127a2f"
+    },
+    {
+      "path": "treatments/intracerebral-hemorrhage.json",
+      "bytes": 42787,
+      "sha256": "78156eec7beafa8677da49b96fac802ce90dbcb6300064caf2b815acc3eccd04"
+    },
+    {
+      "path": "treatments/invasive-non-typhoidal-salmonella-ints.json",
+      "bytes": 24775,
+      "sha256": "322e83458c29eb2e293ef860ef9eae840a19090da14f3976eb22f4ac80389eab"
+    },
+    {
+      "path": "treatments/iron-deficiency-anemia.json",
+      "bytes": 35307,
+      "sha256": "da3939df751c4bc17d719f1428f7cff9919a0f3edf1b6252b35b9f66d2fc5b0a"
+    },
+    {
+      "path": "treatments/irritable-bowel-syndrome.json",
+      "bytes": 42371,
+      "sha256": "83d73e78af49e15e229ada60b90f41f07a5824416d134ab83bc16089ed38948d"
+    },
+    {
+      "path": "treatments/ischemic-heart-disease.json",
+      "bytes": 43518,
+      "sha256": "bc4c2123bee22d0f643f9b68aa57ba41616fd8088aee3c6110428b3fc4d6b11e"
+    },
+    {
+      "path": "treatments/ischemic-stroke.json",
+      "bytes": 44755,
+      "sha256": "637500de255b72727544f3b4e01dab34ac637ccdf17937874b63a995db1e8d95"
+    },
+    {
+      "path": "treatments/kidney-cancer.json",
+      "bytes": 37816,
+      "sha256": "d72ee74b7f649282ca482158e686292610e8ba96d808af8213a81737a41f22dd"
+    },
+    {
+      "path": "treatments/kidney-stones.json",
+      "bytes": 46620,
+      "sha256": "c5ab49fc93f01712053150a990f8f60d8b89e49eb5b648ddfa7310d924002dee"
+    },
+    {
+      "path": "treatments/larynx-cancer.json",
+      "bytes": 41521,
+      "sha256": "5a10acd2236b6bf7de1c328a8fe7973026118bb8b44c71cd91bbc03b5d3d6986"
+    },
+    {
+      "path": "treatments/lewy-body-dementia.json",
+      "bytes": 37991,
+      "sha256": "8deeddc48047f184942b772dc715d10673609220a4d173cce9183a2956d475b9"
+    },
+    {
+      "path": "treatments/lip-and-oral-cavity-cancer.json",
+      "bytes": 37566,
+      "sha256": "e855e8231b96fef99cda4dfbd827eebf5855fb82672cfd1c36dd8f72f1d4fa93"
+    },
+    {
+      "path": "treatments/liver-cancer-due-to-alcohol-use.json",
+      "bytes": 37021,
+      "sha256": "712101144de88c8b8066cf3ea495c72657be0a57db3bbba09087efd6bd3149f0"
+    },
+    {
+      "path": "treatments/liver-cancer-due-to-hepatitis-b.json",
+      "bytes": 35350,
+      "sha256": "fe04cbcc9ec948b6eb9307b259c63a419e7adbd27828a11b755e38f796f0d5cf"
+    },
+    {
+      "path": "treatments/liver-cancer-due-to-hepatitis-c.json",
+      "bytes": 26368,
+      "sha256": "51635231b9c4c62accef96e73ec045caea4cbcba28de7cf5216c82a148d39703"
+    },
+    {
+      "path": "treatments/liver-cancer-due-to-nash.json",
+      "bytes": 35685,
+      "sha256": "86a9cf40e77c705d975ec1ae841d94a62be177b1ace0dc7f900850e9fae95a1e"
+    },
+    {
+      "path": "treatments/long-covid.json",
+      "bytes": 52732,
+      "sha256": "4cd9542f1c5fbdc7800189f1c0409578dd340ed9f710b3feefe1911c33aae607"
+    },
+    {
+      "path": "treatments/lower-extremity-peripheral-arterial-disease.json",
+      "bytes": 49260,
+      "sha256": "2090d14cd5650b13301524ab39adc23e99c12e8e705483f910aae21babae91b5"
+    },
+    {
+      "path": "treatments/lower-respiratory-infections.json",
+      "bytes": 33210,
+      "sha256": "ac176fd6faa9a0b262ef8bd83d1db3da50e2bb08df173558a5629d4a61513df3"
+    },
+    {
+      "path": "treatments/lupus.json",
+      "bytes": 53467,
+      "sha256": "95f0b01db84df90ff1ade085373290693b50e59d9f3146979d8966c77edc54b3"
+    },
+    {
+      "path": "treatments/macular-degeneration.json",
+      "bytes": 41161,
+      "sha256": "73dd43261fc3ef3bde9e2129e9a91578415283a2ea3b8a0987d7e19f75414e39"
+    },
+    {
+      "path": "treatments/malaria.json",
+      "bytes": 50344,
+      "sha256": "f0fccf27b13e556092ce33bcbd5bdd0832530b9a96a4de37873339ec1291a0d5"
+    },
+    {
+      "path": "treatments/malignant-neoplasm-of-bone-and-articular-cartilage.json",
+      "bytes": 46021,
+      "sha256": "bf6c2e841b8883f45ae6ed21a5a2a9126aad250dbeefe20c4f83454e8a832978"
+    },
+    {
+      "path": "treatments/malignant-skin-melanoma.json",
+      "bytes": 44969,
+      "sha256": "7fd480e7080eb046655fb8b8c618b7c3690c7a3c3ca9f042aa4fc1817fcb9795"
+    },
+    {
+      "path": "treatments/maternal-hypertensive-disorders.json",
+      "bytes": 37728,
+      "sha256": "ff01f5093827d22a85b20d44b2ada6e4907d260344985929d24d608de56e14fc"
+    },
+    {
+      "path": "treatments/measles.json",
+      "bytes": 20220,
+      "sha256": "8655df1d0e0e3ab23f44f841607db859376960f0e66965b1ef0ec6da34ea3361"
+    },
+    {
+      "path": "treatments/menieres-disease.json",
+      "bytes": 38518,
+      "sha256": "fa6e2a48a0798b131931f830fa12671c21bc6e56a9db3758b881b2e817ac9d18"
+    },
+    {
+      "path": "treatments/meningitis.json",
+      "bytes": 30645,
+      "sha256": "be1bd989e2a07b7087b1fd639389e646d6c19098039dbaca3a01f3bc8d4d0258"
+    },
+    {
+      "path": "treatments/menopause.json",
+      "bytes": 39454,
+      "sha256": "3cf2eecc207cb802844cc57413572567cb1a5351532b0db5d9dbaf27a4217ade"
+    },
+    {
+      "path": "treatments/mesothelioma.json",
+      "bytes": 42926,
+      "sha256": "3af50521eff5eb0c91b8f93e5c86fa48f388e7fd140a9bff4c0d1ed0798b239b"
+    },
+    {
+      "path": "treatments/metabolic-syndrome.json",
+      "bytes": 43222,
+      "sha256": "0fb35f76b5fec0b3b74a5e656668cabd3fe87e3b69cb59b98d6fa4b0dab79a23"
+    },
+    {
+      "path": "treatments/migraine.json",
+      "bytes": 52655,
+      "sha256": "24461903ba9cf8a401913fc10cfc54597c50bf662bec974dc69f55f0f990a037"
+    },
+    {
+      "path": "treatments/motor-neuron-disease.json",
+      "bytes": 36685,
+      "sha256": "35b3db31b10aa8d26ccea2e1870f2386da0d164abee0eabdaf810960c31cb476"
+    },
+    {
+      "path": "treatments/multidrug-resistant-tuberculosis-without-extensive-drug-resistance.json",
+      "bytes": 34795,
+      "sha256": "d18bf2ccd796ae5fdd7c22f74f8815d5ef986d351c89396f86ba205f20912b79"
+    },
+    {
+      "path": "treatments/multiple-myeloma.json",
+      "bytes": 42388,
+      "sha256": "13f38026e0fc0c04cdc82e9de6231407de784769c902ac919fb7a2b6462e81b8"
+    },
+    {
+      "path": "treatments/multiple-sclerosis.json",
+      "bytes": 49868,
+      "sha256": "ee3ebfe984a5ec2924a9f2a6c730571843d7b9b2d4d721fda2e9e86e97348987"
+    },
+    {
+      "path": "treatments/myocarditis.json",
+      "bytes": 40592,
+      "sha256": "a04f10dfc1500f5b013128cc89257a3bd636a59f46290ac8d7580f19edc9cb43"
+    },
+    {
+      "path": "treatments/nasopharynx-cancer.json",
+      "bytes": 49866,
+      "sha256": "71e9ea99f7cf22b87fc526b1cc9d4ceef28a74a4684587fa908febce027df088"
+    },
+    {
+      "path": "treatments/neural-tube-defects.json",
+      "bytes": 28379,
+      "sha256": "2307509584ad803555f0876d118b93485cc1ca09c4b100faf815827abcfe0bea"
+    },
+    {
+      "path": "treatments/non-melanoma-skin-cancer-squamous-cell-carcinoma.json",
+      "bytes": 50750,
+      "sha256": "bfb56332d80a576d4f917b3cdeed13af95b0e3e73a5fb0f97d5dca20c9fd22fb"
+    },
+    {
+      "path": "treatments/non-rheumatic-calcific-aortic-valve-disease.json",
+      "bytes": 28999,
+      "sha256": "42f817c816421699d69763c12117b276bb09ca090b86b62682bf0192b2916e89"
+    },
+    {
+      "path": "treatments/non-rheumatic-degenerative-mitral-valve-disease.json",
+      "bytes": 27892,
+      "sha256": "8b463329be2f231e13b74b84a431113d36e8c66c16b8c3b385f06f7a9b9bff82"
+    },
+    {
+      "path": "treatments/opioid-use-disorders.json",
+      "bytes": 40397,
+      "sha256": "59bb35aad788d50ee8c460b8f4eee3c2348380ff30ec694cb2dec78b166037b0"
+    },
+    {
+      "path": "treatments/orofacial-clefts.json",
+      "bytes": 35804,
+      "sha256": "7ba0ab593fbb6dfe561cef6a4617147d8736ad92ecc636100c52d1ec812915d6"
+    },
+    {
+      "path": "treatments/osteoarthritis.json",
+      "bytes": 45861,
+      "sha256": "03e28b3b8c64687169151ea67458201cac2fd8d7f196fb5443f57d6f7b47a52d"
+    },
+    {
+      "path": "treatments/osteoporosis.json",
+      "bytes": 42926,
+      "sha256": "c3767a6da0b24aab1956895e6f47a36b50c1ffa864067dbddd0e040c9cc896c2"
+    },
+    {
+      "path": "treatments/otitis-media.json",
+      "bytes": 35345,
+      "sha256": "7b4f48c87d0b2b396e6d71a45dbfc1f67fecf4581ea15b4f6e3d5e5f3471ab0e"
+    },
+    {
+      "path": "treatments/ovarian-cancer.json",
+      "bytes": 36087,
+      "sha256": "31b6cd9b971dd96499e610774851084d2ae1e209649d3a3c430dadc9facea949"
+    },
+    {
+      "path": "treatments/pancreatic-cancer.json",
+      "bytes": 48521,
+      "sha256": "a1c3f5b50bea04223849e9cc37e735b3211c0dbc35498a05494303a672585239"
+    },
+    {
+      "path": "treatments/pancreatitis.json",
+      "bytes": 37104,
+      "sha256": "d24a305f7c5a46af13509c418f288e9a966bddd79fa911253e6c9085a0c55d06"
+    },
+    {
+      "path": "treatments/paralytic-ileus-and-intestinal-obstruction.json",
+      "bytes": 40349,
+      "sha256": "a29e513da38b7bf0d311bb3def1ea8638926f7a815e3a12539886c3d4f3459a1"
+    },
+    {
+      "path": "treatments/paratyphoid-fever.json",
+      "bytes": 25594,
+      "sha256": "0f4927cbe7ca66ca782531c6bbfbb83f18fb08ad814e71eaf467e05a6922cc20"
+    },
+    {
+      "path": "treatments/parkinsons-disease.json",
+      "bytes": 45517,
+      "sha256": "9be21bf929d5755ee13fe8b08da711ef2c88dbcec78fe0a152a44ff1fe96b352"
+    },
+    {
+      "path": "treatments/peptic-ulcer-disease.json",
+      "bytes": 30556,
+      "sha256": "783f95e922c7a7890c207af549d92ee0979e8868e863cd541e9665fa53df3fcf"
+    },
+    {
+      "path": "treatments/peripheral-neuropathy.json",
+      "bytes": 47292,
+      "sha256": "0bbddee7b4df2d4067d9a8ebe8684e576951aca76cd2777f0658406d71f10d74"
+    },
+    {
+      "path": "treatments/pertussis.json",
+      "bytes": 29769,
+      "sha256": "0baabfd241ed08227683f74feb4ee05620b7c1efe152d6e11eab74d8ec388e14"
+    },
+    {
+      "path": "treatments/polycystic-ovary-syndrome.json",
+      "bytes": 45887,
+      "sha256": "f049065038d8286a94b396dc9d2ab3848d9e92d508fe459a2f5f64630e7ebbe3"
+    },
+    {
+      "path": "treatments/premenstrual-syndrome.json",
+      "bytes": 49436,
+      "sha256": "a097c8c8e8ddb5e5e6ed96d47b15c83d75315a9c073aa3017b86197bec0acd76"
+    },
+    {
+      "path": "treatments/prostate-cancer.json",
+      "bytes": 40154,
+      "sha256": "c32a7fa381a0e5199db87af34ae3e1b8174e2ef89dcac270cd1c21b2d554fd2b"
+    },
+    {
+      "path": "treatments/protein-energy-malnutrition.json",
+      "bytes": 34800,
+      "sha256": "06423104387c66a7cfc74c1c539cab20b26cb5562b96873082fc78f8c9842950"
+    },
+    {
+      "path": "treatments/psoriasis.json",
+      "bytes": 45890,
+      "sha256": "05b5472e2452e422aabbe3bc9c1b2ce47bb4db078ba6eaed63eecbae02ab79eb"
+    },
+    {
+      "path": "treatments/pulmonary-arterial-hypertension.json",
+      "bytes": 38885,
+      "sha256": "42e93cbae8b8ba42239fbf77a288033d115fd513d9621c8f2afdea9a39eca0ff"
+    },
+    {
+      "path": "treatments/pyoderma.json",
+      "bytes": 34892,
+      "sha256": "4a1f02c2e2f74de78bb9d388c7ccf2ff9d59165b92fec9b52b5a0f63f714cac4"
+    },
+    {
+      "path": "treatments/restless-legs-syndrome.json",
+      "bytes": 40891,
+      "sha256": "66a0f7012e5264aebda98788dfee7db8435abcd3c8627f09347580f911a693a3"
+    },
+    {
+      "path": "treatments/retinoblastoma.json",
+      "bytes": 48635,
+      "sha256": "6beee6ff7b69fc1445cb8533a63ec124caf5fe7f8b540148f9550a464f42e67e"
+    },
+    {
+      "path": "treatments/rheumatic-heart-disease.json",
+      "bytes": 36231,
+      "sha256": "42fb1454f8780c2f21b8e8e3c2b6ccf33aaa323883dd84a26e87bfe6273f8e8b"
+    },
+    {
+      "path": "treatments/rheumatoid-arthritis.json",
+      "bytes": 63927,
+      "sha256": "0eabad44550b8f7a1c66aae24d5f2772be29de71c130e643a1d71b0bb70e32d6"
+    },
+    {
+      "path": "treatments/rosacea.json",
+      "bytes": 49729,
+      "sha256": "41c998c08287d562db24c938fe151d46efbdcfef245f521fc7d5f743fb62d474"
+    },
+    {
+      "path": "treatments/schistosomiasis.json",
+      "bytes": 24805,
+      "sha256": "052fd7eb2e95483c523174e71b52a6b0709c396a0221c623af0cb1ce34a2ff31"
+    },
+    {
+      "path": "treatments/shingles.json",
+      "bytes": 36954,
+      "sha256": "ad4ada35534506c2828b74617ce078311d9ee1436d4b275bddb1ca5eded3e8c6"
+    },
+    {
+      "path": "treatments/sickle-cell-disorders.json",
+      "bytes": 51396,
+      "sha256": "05e07ba55eeb7dbb481ba8730175c494fc6b54b4c6b9b52e8c0f23e294d0253a"
+    },
+    {
+      "path": "treatments/silicosis.json",
+      "bytes": 49363,
+      "sha256": "5d1e744c03d95fb42502dd72317b860e081d90304a6571117eb615c807b5770b"
+    },
+    {
+      "path": "treatments/sleep-apnea.json",
+      "bytes": 42638,
+      "sha256": "b1dc25d5ecf27f1ec432c924abd9757e15a44dce7cd4ad71f20a7036d058cc6c"
+    },
+    {
+      "path": "treatments/stomach-cancer.json",
+      "bytes": 46255,
+      "sha256": "5c9f1190f73c7441f3d126ac47d8150796457ce209abce81cc4e88a7e758f976"
+    },
+    {
+      "path": "treatments/subarachnoid-hemorrhage.json",
+      "bytes": 40907,
+      "sha256": "a07362d229506b664c48f283e3f89ac3bef66ed68bdb43e199189bb25aa1d403"
+    },
+    {
+      "path": "treatments/syphilis.json",
+      "bytes": 34925,
+      "sha256": "1a729be0cf7693d2a327c56a9ec92e54777a4f4b2e716dec70dbbed9fc8b0c37"
+    },
+    {
+      "path": "treatments/tension-headache.json",
+      "bytes": 32363,
+      "sha256": "a7210d0b3a3d546b278326acec4770ce448ef8d795988740c9e43eea333aaafa"
+    },
+    {
+      "path": "treatments/testicular-cancer.json",
+      "bytes": 47182,
+      "sha256": "e33f99fc0e6332f89ffc17168ee8e459cdc093f663ee915a39e036ab8b3016b0"
+    },
+    {
+      "path": "treatments/tetanus.json",
+      "bytes": 35655,
+      "sha256": "b01cdeb8fad0182b83eba6c02fc8228eb687756889819e152c91be5d5d4d7c7c"
+    },
+    {
+      "path": "treatments/thalassemias.json",
+      "bytes": 41129,
+      "sha256": "8842d94645482e39a01e04fef6da8e2188feebb3da1e60533b271d7ecbd47dbb"
+    },
+    {
+      "path": "treatments/thyroid-cancer.json",
+      "bytes": 44228,
+      "sha256": "503d132678051e5705ad65c754cc13b3137acba08efe8741ae15584927af8a7b"
+    },
+    {
+      "path": "treatments/tinnitus.json",
+      "bytes": 41670,
+      "sha256": "ca1be80e54ac656ceb199b669b9b001655100a23b220f67f1e56c5f53fe87784"
+    },
+    {
+      "path": "treatments/tracheal-bronchus-and-lung-cancer.json",
+      "bytes": 35249,
+      "sha256": "7eee62d6607867deb0b7476ebaa74aad6610f0b0642bda22708251d57ac0c6ea"
+    },
+    {
+      "path": "treatments/typhoid-fever.json",
+      "bytes": 38147,
+      "sha256": "53c0cbebb22325590d8d8dbede6ba9e730005de0e88bb775a43b2e0e75bee2c3"
+    },
+    {
+      "path": "treatments/ulcerative-colitis.json",
+      "bytes": 48682,
+      "sha256": "70b0993e69c1a29b8b4d3803abce294d79624deee98470aa2aa2378df6251f42"
+    },
+    {
+      "path": "treatments/upper-respiratory-infections.json",
+      "bytes": 39934,
+      "sha256": "8bd0ffff6e88464c16dc31ffe3866462ec10df6bec49dd51cea89a62610dd795"
+    },
+    {
+      "path": "treatments/urinary-tract-infection.json",
+      "bytes": 28817,
+      "sha256": "5757f7414ff569cfd486a6f79efb9213751efa4182b9b8016de6a18e36265831"
+    },
+    {
+      "path": "treatments/urinary-tract-infections-and-interstitial-nephritis.json",
+      "bytes": 34366,
+      "sha256": "b54ea226ba4c6fc5364ad8237aa75db8ea31649e08f480c9760b4f263985afd4"
+    },
+    {
+      "path": "treatments/urogenital-congenital-anomalies.json",
+      "bytes": 48681,
+      "sha256": "010287c8384f2e0cf7c299573869fa337122968e78b340d601f527698708551e"
+    },
+    {
+      "path": "treatments/urolithiasis.json",
+      "bytes": 44814,
+      "sha256": "a06bc688a6de0daf7e60e823b5856fd1b94089cf8c4d4fe8548edad465ed21be"
+    },
+    {
+      "path": "treatments/uterine-cancer.json",
+      "bytes": 50875,
+      "sha256": "6cfa00005fe9cd2152d6bc22efa62739b1e37fd0aa7e5be31435682be98424b8"
+    },
+    {
+      "path": "treatments/uterine-fibroids.json",
+      "bytes": 40549,
+      "sha256": "705955eb142dcd78bfc55e649b173fe4903ca4dabcca26880be824617c6eae67"
+    },
+    {
+      "path": "treatments/varicella-and-herpes-zoster.json",
+      "bytes": 41187,
+      "sha256": "c2e14b4298d095bfbad5cdaaf8c14cbc49989754935057354b8964663199f681"
+    },
+    {
+      "path": "treatments/varicose-veins.json",
+      "bytes": 44582,
+      "sha256": "ca67f61cb38c3db96ca2fca5dea8338abc86c619017a1f663aa84986e3a893cd"
+    },
+    {
+      "path": "treatments/vascular-dementia.json",
+      "bytes": 33545,
+      "sha256": "0a488f03f506a6f94322b19d68914b1d7e203122be198aaba0dc22dbee418317"
+    },
+    {
+      "path": "treatments/vascular-intestinal-disorders.json",
+      "bytes": 38588,
+      "sha256": "49a333ced9f6f63a6379c3694ca6a4b3ea29dd3d8b387de8db9eb1d57ab48abe"
+    },
+    {
+      "path": "treatments/vertigo.json",
+      "bytes": 34807,
+      "sha256": "a0fe7ab6da0aba891cb08c9be759ea1fdde75083d4e60e6ac3a9be3fc7f3b358"
+    },
+    {
+      "path": "treatments/visceral-leishmaniasis.json",
+      "bytes": 33040,
+      "sha256": "da116814318c1757252e421db98bb5b3346e3a44c135bd52c4ac1247fa23c7f2"
+    },
+    {
+      "path": "treatments/vitamin-b12-deficiency.json",
+      "bytes": 29419,
+      "sha256": "9cd5ba0fd946ac8f80d1dc37aec353f5496be120e7d9778d7fceb5307ef8df50"
+    },
+    {
+      "path": "treatments/vitiligo.json",
+      "bytes": 39538,
+      "sha256": "36bfca76319a2ec1bbcdcd67013552d5341504ae176a56c3657e2f23069af5d5"
+    },
+    {
+      "path": "treatments/yellow-fever.json",
+      "bytes": 13513,
+      "sha256": "b3675fcdd10c02886b58822ecbee1728262a53ee103240592f5a331c683a93fd"
+    },
+    {
+      "path": "treatments/zika-virus.json",
+      "bytes": 11583,
+      "sha256": "ac2a66eef2fdaa1d4f136c06f4278978fd0ddd8e3c3ab25119304e34be14ec75"
+    }
+  ]
+}

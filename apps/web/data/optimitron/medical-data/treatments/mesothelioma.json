@@ -1,0 +1,971 @@
+{
+  "conditionName": "Mesothelioma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:30:18.290Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTX7x0jwnAl7ErlC1Q-E2HG_-JWoQxZxutFUQSS8CQ4386Blg7H8jzzLwDy3TJkzDQRh62Ips2Ox3xb7cwBH9ckRQdsnSSH0nO0Mrn1qHJAnZmPhHo3z_3tyojoJbWGzTugj6C"
+        },
+        {
+          "title": "mq.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfgJqXFWGMm9ELZ1eqEILmoDVmDQRl6MjWazoH5XkCl87krNWStbb4NjuF9t1GgfCXAepcncln48u_FkUlO9wxkZbLZ1vSQjhNhnI-3206956fZ8ZkIYF5gXbw0oFecgPR7sXuO_q6-Ra7Xha1uDP858k9f_FF8fhUrHroyg8qe7gqVe9ByA1N9Xk1b8Pg2LLGBCfOn-6Rh75vgVObsWZMKNS13Sw7vjOb8g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcAr4u0tK3gzqgJ4EYf9M94-w7RLjkWi9BZ4mngqwpgnqIhCWWJuvm4cQ2I54hncTIjG7T9J1kNrinAY9smENdKUGaK4uq6dNjgpEPwF_EbhdO5Eh-XaNn_sZ8WjcxM1xiKRym"
+        },
+        {
+          "title": "usmesotheliomalaw.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrZhPZuyquKkkBxC21TsZvUROzL3A4dEAZk9ckkAzjcZSpZDIAoPEhrbp3azlujK7RwsgFSv_R6THymTMlZiZexsOQ-87qZsGbLRgfDr9tgktNa6gN7qPcj6mQ-t8Rr7elTkZM5m-s3fchVT1KuSWnIWSvKI4R2hwGrCPCfFldwJ2aKzeaptFq0rG-nj3Uk80="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfH-Myt8IBPRd7QahcNICxKV4p0-cvmhZ_N8r_X4rL9M8ywzvswcnaJsxYaRXCVwjzO6xTPcPSJJXvDaaBbFAf-1DXKFShi7pCjVP7HnToL3sfVRql-Sodudrxua2xIl1fWZN2"
+        },
+        {
+          "title": "mssm.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOZ_KmiYuZUGUH3v-UNatmIipFWoY2372uOOlWYcgNJAHA2f6aykkLQ7Tfu4fHHY18lUd6jYyVznQ8UQEbOHNuEetkLU6E7Q4Bmq_FBwlYtql7VFXj2JuF9vM3uee5_fu8taw_842YC8O16oLf5DnEtNj-tDaOqEK5anYVRndu9AIX6QCb5LYRIyJ30dG6ZlT7zraBdD26T7pKrI4qlp5i-sX_-SiVH-Ms"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1qsCLA5i4J_IBookfEGzFoH4NpumPemvgjkTL5SuV1WF49kfMXaiME8DRoRgO3YpbxIg-6hEbBfUZUptFas_0zClL8TGOZGrU8mkNMWkwY5RUk9TjyKbdD7uorJmZACqjKcj5"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDkSulxNU6anOCKe7G_12skjNSPPx4a7HwxLSmpIEOLT8AYbZ7ijNiRQN7AGCx5kJG-oPGtzrgqOUfMaMkX_KfsR9BXNm5OcniOiX7YiRIBTu1yaQRTxFpX1IHpG7dl9L_9B5DNpmzUoolnMkCrUzmtoUHEA7Cf_LBgQXqsumsfQZz7WhvUR13pRqlzgBCeYp0wPx6Wf082tpdKd5ya99fOWW15azSBVLghUyOj_GoNHXeLBWl75KZAChH73UXnMqdh8A3xYBKA4wKsZ9AmfxkqAs6tqOkxQPGxI1ewsBO-A7vM3H2wQFwUQa8VmlVC1qp9HaNB1-zD-uio3zvq-xT0uqUhKuRZNkJbfuokSjYhZE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEITCE5KG4ryPOoTF_xd2AY8L-7wP-3TOR9-bhWnXxYryrdnCcEvU0LqJ64RDSJat25HfQc4nBnn7pVPDKhZrVzPi-avTDUZ01ss_zJj_iQ2MOGL2qzm5iA83W12vBsmXEhR1oL0aIVQacq6Us="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlRS4uuO-kif4L5mqiifHqjmn61gNF47XzDqAFumZVLTIwxx1AJxkyIWk8IFgJ8VtdYyMfUviSQJFL-tWghWMaeuHJ8n5Fz-M_y5PuEslAELVYOO1HaCTEvzGxSbIKqYgyMNdw3A0lLKhe9J0="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPNhMpqXeQjUicuUOf481IIezpYNvOW2kThDyXqMXBGmDWuZFDJIn7ivY9gmYwsTP3ZkCc5QBVFIghI2q7JvmCJwxIXxWtss-YC1xQkpYY4pQaVXQ2niQKoJR39LdKMhX6DKJwHX_4oOAmBbAXjg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgery (Pleurectomy/Decortication or Extrapleural Pneumonectomy) + Adjuvant Therapy trials for Mesothelioma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Mesothelioma&intr=Surgery%20(Pleurectomy%2FDecortication%20or%20Extrapleural%20Pneumonectomy)%20%2B%20Adjuvant%20Therapy"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "N/A (surgical procedure)",
+      "effectiveness": 85,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 25000,
+          "sideEffectManagement": 25000,
+          "totalAnnual": 150000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1000000,
+        "costPerResponder": null,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Multimodal therapy without surgery",
+          "costDifference": 120000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Surgery (Pleurectomy/Decortication or Extrapleural Pneumonectomy) + Adjuvant Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+8 months (from 12 to 20 months median OS)",
+          "baseline": "Median expected survival 12 months (without aggressive multimodal therapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 67
+        },
+        {
+          "absoluteChange": "+4 months (from 5 to 9 months median PFS)",
+          "baseline": "Median PFS 5 months (without aggressive multimodal therapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival",
+          "percentageChange": 80
+        },
+        {
+          "absoluteChange": "-25 percentage points (from 50% to 25%)",
+          "baseline": "Expected 50% (after surgery alone without adjuvant therapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local Recurrence Rate at 1 year",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3 points on Modified Borg Scale",
+          "baseline": "Modified Borg Scale score: 5/10 (moderate-severe shortness of breath)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Severity (Modified Borg Scale)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": null,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points on EORTC QLQ-C30 Global Health Score",
+          "baseline": "EORTC QLQ-C30 Global Health Score: 50/100 (moderate impairment, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-C30 Global Health Score)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-3 points on Numeric Rating Scale",
+          "baseline": "NRS: 6/10 (moderate pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chest Pain Severity (Numeric Rating Scale)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+8 points on FACT-F Scale",
+          "baseline": "FACT-F score: 30/52 (moderate fatigue, higher score is less fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (FACT-F Scale)",
+          "percentageChange": 27
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 70
+        },
+        {
+          "name": "Respiratory complications (e.g., pneumonia)",
+          "percentage": 30
+        },
+        {
+          "name": "Cardiac complications (e.g., arrhythmia)",
+          "percentage": 15
+        },
+        {
+          "name": "Empyema/Infection",
+          "percentage": 10
+        },
+        {
+          "name": "Hemorrhage",
+          "percentage": 7
+        },
+        {
+          "name": "Mortality (EPP)",
+          "percentage": 8
+        },
+        {
+          "name": "Mortality (P/D)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Immediate tumor removal, long recovery (weeks-months)",
+      "treatmentDuration": "Single procedure, followed by long recovery and adjuvant therapy for months-years",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKz1Yx3zLrX89F9caWsJr3gAZEGBdfeNxP-0zNjVp3ldVzIWxVgIm2EsB72zKz0hOYA1CocHlZdjaZLXxdvsR9Y7CApfJQaBloWD4Wx_mHdGD3Wf70Xa_kIe8WiYHsIs9quCUc-PtkfKYGHqU6DhnF7ILz_uy4oWNMFyvlaPAButIZgJNSNEeJLm_UQUHmXH8zt1UeLPBOabhWn0XfakU2ND2sDwGtbymeL9c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKWwR3o0QHsDYvXxqpsEHMDMvqBCQOdjhmxWN7wRBYD9SprleTViYvqHlW4h-ON41rrngex3rn6wDsS5kZ6Y7C_bBp-xnfURNybC9jVHHd6gk9PaN1rP7BqPNAl_Q9S1ZEs-7O"
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeSuc9JXfgaWQ7pucfbKmaWFnQ9DB8OU9VwV24ut_USaABQ12oQnxOGWBoAPv8e7E0VK1nZZjr5xNhSW9MJiY2BC6KajEH9VJ4-f8jQZ72hNqAH9ARfWL_6JzdUlYVFebbKVIbMFOfOUwb_PTEXmHv4REn5zi1DD_kKOituYWFtL6GaAXOKbTz5cKTtZf40jyi0nOLqK7ObhpIDeig-RDFXYsJE_I="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgAUr6STrQlDvhZWMUiSFesvC_3b9CbkxJR8JHnZaQkPAokKdteIHhbAc6uf9lfIbFME1C8WdC3KmgzigE2O77DsMVR4N9c6Y4o9XvFparZUo9RGVKzHr2Y_WP1RFqKYAz4KliKEZlOyFLljdkERBxsQo-4KQ7B_yO3W24u2DORo0YZUuRA5qe-U2-se0Tio3wYIyHi9lHfhVrPnYTrhzBVGjVqNIebvc="
+        },
+        {
+          "title": "2minutemedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxfYB67RnJ2mNgNYTw5X7MKyJ8yha2IYwWRY4RFYw1m1yJmjHj3N0IUML0ts374_3EZxh7Q5Gkoxqb-5NEiFz7eW9mHj4jwExNj0Xv5LsfoCuoTI9VkwLmp-j9ZDdGNd8yUiHi2cVInv_Uf43VIhWy7sWlJnQ70xtF2HG5dAaWrNA-GkUGval3VYmNSNNYR9qH2myS_4pT5L--D5fknzCcSU5YYbX0tDLGlBBuLFeuIyZuvsUAJMh2D_oK_eup21xu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG70qZEpotPSHqw2oIfu3tJ0-dquYE5Z_qQTXXMkuh53Q96XcHl4SN-RLEij8m1ur1XuD7h0aGGarUGOzFm02E4f62ZWOEXlNyuHFaUZqbDq8bU4uSzOCNaDj_tgQbZBTk6BPGQ"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR2WN2NqubB5nNTFqC9UNqHOG9p3IvRo20tnPOoyWlBg3RYDgzcVZ7bUv8akcYiktGOiFi6AuhdWpTrHcV7lJaztRT6WQGDKkU45B_2R7fs9q4aS6vOAabCZtwDGasAMaJ_q7ACdZzOmdgAHoYxE9B8C3zaxhRCSka4Aex8vVxc8BHeo0xMYENSaLaD_zDZXlAl4vJEaqodXg3vFQYhetwZ0kiSqiGGdB7B5XVnRDLjAD3MkklHAJpX6TRPLoNy4e0qLkDXfs4OvaAJVGRfAif"
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu4dk-EJFrhzteWavTe0LfTlo0S6NEE6UhQ01NPbV2pS6CKmWEyBlePE1-MCcDYl16eF1vvVm7jIt618Awjiy-XSU20NYUm6GOmd-WEJqi26zeh0wylCeaZBCKrNrtozwrAQsM-REY5sin0dZwV-N2pYZlKoJt3x6mr18GiGHoGrDXc0GB4qTsguGf2KQauhHI0TT_X3Yk"
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKFfSnNzLO_AX3X94WaPGO9runbrLyGKAMoPmd8bz0vMmAyjcoZhPIOVrVq4PH_wG06iKMGRlvYJDj6YFSIbI8Am2R0g7S1KzxsIzaSj8cMwIGuL_BMT6QWvknZtMQACVTkEsPjajQCJfHZYw8-TKp3UnNKR1-Z1XNXmYezrkf33GlpSrkq9JIMGfjtDJh0nc98EJS0aJ5mXFYEjhi0PBqyxz96LKof4RTbnD2_GjcMeIwgh1ZYvjDPqWTdDnIC7t5yWJmmqTbA7mUr99lPgnaJWli17puWsD5OxWxl_Nw"
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExlEp7NG3L46xINYi1krlh8jWRwtT_zmie0tdGTuTo1jxBtE333W9ZK9Ir2vAmzQv0wwEv4zvsjCvPUQ0UmSCN6zkzO9xk3NwlxKSG7q6sobKPhFh5nnUI6gQHBUMRhb5X_NsGOZjqzYrlhi5Z1VKdKawpvCJ4xfrpWC2tjKqvjs4bBrNtujtwoBoM3skQ490wrGvlZ3tlS5wm3Qyr"
+        },
+        {
+          "title": "lungcancerstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY0imlZ9PnErNNWX0P7uZxE6-LvKs-2AGV3C866ttI8H75Vbjpo9Ula5FwajFlbD5kxsHLdqcFh4LDQeSej-aPoCmDedv4AGd8SooyTV0SoKZjbrffZ6qSH2h9etnR03YS_n1RTYCP03J_gSXgrGtD1Bv6NJYZY288k-GuHfC7AhmGquAjGGpli18m7kZangZLKnUtGzVxMVvmcUQk4xQe-c3D6Aqqb2ovB6gPDmw9miKO"
+        },
+        {
+          "title": "ClinicalTrials.gov: Nivolumab + Ipilimumab trials for Mesothelioma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Mesothelioma&intr=Nivolumab%20%2B%20Ipilimumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Nivolumab 360mg Q3W + Ipilimumab 1mg/kg Q6W x4, then Nivolumab monotherapy",
+      "effectiveness": 75,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 244000,
+          "monitoringCost": 12000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 271000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 5420000,
+        "costPerResponder": 677500,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Pemetrexed + Cisplatin",
+          "costDifference": 251000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Nivolumab + Ipilimumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+4.0 months",
+          "baseline": "Median OS with chemotherapy: 14.1 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival (OS)",
+          "percentageChange": 28.4
+        },
+        {
+          "absoluteChange": "+17 percentage points",
+          "baseline": "ORR with chemotherapy: 23%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (ORR)",
+          "percentageChange": 73.9
+        },
+        {
+          "absoluteChange": "+16 percentage points",
+          "baseline": "DCR with chemotherapy: 68%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (DCR)",
+          "percentageChange": 23.5
+        },
+        {
+          "absoluteChange": "+4.3 months",
+          "baseline": "Median DoR with chemotherapy: 6.7 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Response (DoR)",
+          "percentageChange": 64.2
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 40,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.8 points",
+          "baseline": "EORTC QLQ-C30 Global Health Status/QoL scale: 60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (HRQoL)",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "+2.8 points",
+          "baseline": "FACIT-F (Functional Assessment of Chronic Illness Therapy - Fatigue) score: 28/52 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "Brief Pain Inventory (BPI) worst pain score: 7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 30
+        },
+        {
+          "name": "Rash",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 12
+        },
+        {
+          "name": "Pneumonitis",
+          "percentage": 7
+        },
+        {
+          "name": "Colitis",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "Up to 2 years for Nivolumab, Ipilimumab 4 doses",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC9ZY2SMuJrBL9kBi1vR-C_gGmHlqdkjDhYjEE8z3a8FAvKjzKI4SiT9f4ySaOZpK1VUMURV5UfssOWJUdVLz8rJDWR5SxtPO-ryFrfQLbPAAPpdmGmQYIKF2pnrt4s2u4sQDnotTz_7bj_Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECcSSyhdgN9V9fA8gxhSyZXQRmAMWCXuwXmdNqlJkZQC0RZMH6uRuBcKXnLInGQVglE50GXim1VDF_u_MYxE6WZ3FvQIeMbHIURGHNUXP-e5_az5DyN5ke9ByE1K_Yb18MYBo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8vsBdXSVzGaa46VMGomhYmBNi1buPn48GiDuutjCjgpDRKnTn3F2wuGBRFX-VApICnFBwgHjO_WlZyQblK4RN7y20Z3kA4edtAG9QE032R8OjB2QO0e9p3VVB9V522MYwe1aj0CvO5OMySQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0RXyXn74HWHNofk7dRjw3zmhSjb21JGZnIFPCHH6bZUnfPgas6s9chVsuYGcffD0Vyc9dbNq58xwUSFUuaBdEvcikVPJfG3A4ysl3UILz37VUc4k5WT-rk5U_w8Q3d244eW29JIS6ajBD7w=="
+        },
+        {
+          "title": "mesotheliomaguide.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQiCaiF8VRYkQklV06ExfT0CgSgWw33m7ejWR8fVDlK68qOJMzeryzoghk7C2hsuCWLMRUb7OUdqFev8BILUNOm5tj9wTFh9PBDGg-JQQ-d2kS8aSOrZO03KD_ARMdV3jiw558hwxvMDdWqYvaL1xEYhBwQNxZV1FUgxHq1AK8AoDEIKbnnS1r4zjwpk-4lhodVctV9yyIOqmPVNgdqkrPAbUE5g=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd2Zo_borg6N0ev2yNfGjGyDhiWhfK14d5CYEyo07fDiW2Jdg3VAx_sTllUPevFQCNnu9LWtwtnl5HimmeR6b1o6hhMjn8uAPEvzhk0uqo_R2amjnlryiJgBX3_JjyEZzWBneVO5k="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNI_B4TaOoAn2YuzP_TPm35mkfPv2Rg8MYxjEEIyqDMGotf5M5-Ab7utaWFms6xtLdJL4KoqAOIhj5cGLLzIFelkDKiWDcgs3y50UFq-z-DJO3lY2xn6f4TlJ9CKR0M_IeA2fXCrisbcl8EaOuoI3nXiZtNA=="
+        },
+        {
+          "title": "cancer.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErW3vGJTWGjNMZyEuHoixWdGQyMqPRLUeXDUQxlcRlWtdQD8kzqS-hCwrlE_Xkz6zgr4husCdHuI7BNTfJNyb2GdzdxpbiTy_tuIlOdr7LZMsK-xmukDjWIr4AZt6TXl7003nDtpX6UiLvV31A-pQjZtvlmScF_Z2zhczDvmRqjClZdCgU5lYUj-UbO2ckUqk="
+        },
+        {
+          "title": "barwmedical.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqctPkKbXQrnsEyGPfDP3qM1mER0soFOkXSpCGf--2RQF5RqHZRqxdI2ld_dR9UyXpgvfjuCVRsTaiyDhpfmXbFF8iH1Zkffo5qpagQpqLqOrf2JxVsHeJ67qqUCLP5bG0T0EUQ6xZ9eHRoZpdD2Uncu9U"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsCoap242eyZ2PjI8Ve3MYoegy3PfM2m3iv4w4WCsvrKY_m0fxy_UxQMWkVvLBkNh-Ekc1vtteJ060aBEo0yHD53p7ot0iMD4OxBh32OwAHv30Im0IyIS3Jc3mmOJtZ_CzfUQ="
+        },
+        {
+          "title": "mesothelioma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5tCThGEm3AHhQkSCFtmDJF-WPpHCYcCeLMtWwjKUB9Pua2ImGiDr9iNtvSLAAEIzdglJ__-_LyANr4ntsgZ40qCiWpPOrHuxXtMk5GY8YS_ve-V6s5bKMegV0z6SBXcHkh0SWlaPi5SzHQFYNliWdmC-W37pgc9BI0eHtSOVOpOjs_I8A"
+        },
+        {
+          "title": "trialscreen.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHG2bcjvaJxEmjYo3D5O4s9E7L-xgi3c2l7KojSYcGLIY8gzYfqMTmxLUDLX4mp3YAGnjjLzSlI2lij0IktQ14uxX3qD45_f-8zhD5yjIUaxlUIj15SwF838uC6zo77QeQAeYZYt1M4CyJR4bkMzcf5iXRqwmewIKjx7DwcUKOIALk01hccJifczDPfvIt0QkgBW9Bx_STqxnyOe5LfIUz4C2ApTtC7e37ibiNX8ffx-5m42mHVhGf_SA=="
+        },
+        {
+          "title": "asbestos.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG24ueGjN57UBlg6imiRuAFUibaZY2hjhMl96Bs2QT80gPTcPnyO5xR2YNN5-6IfhkokTQDT-lAVJ7WySyT4l83gMAC8urVGfnMwwNIEqtFNCk2Nln9aLeOUkeA5qhKaL56LnnF77qnUKOKDPB3QKx3pkHVt0wzXr_J77tTH2X5mpI="
+        },
+        {
+          "title": "eurekalert.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTs7DYYvuyPuZOAXH0JgXC38Js9BdRaAzxkaj0SvweHek3A0pndTEZjLDOP3MOmrmuFbmLwk8oWpO-rIpElwDd8UQQOgokV3xTr1GNDwK0ZCeIssCX3HFnVY0CUP34BVgA1GQg7H69J1U="
+        },
+        {
+          "title": "mesothelioma.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGza0JU3GRCe1Ya1Ny78o-ByTNxK6UVSHWt-yTkavpZ1Z9t_hKzQemV_4GtBFs4uD6M3T_Te3rPaoAmzHlrCn1XnJCwaDfpXcN6YWi5YGUipm430gtLsXIbkXVEqWkcPGN3sfji7ZfkfA6orNPz223YRPmSV4JnAHi7F4wApbU7UZ65kVGl4xG5nKYKeX0DlQUVagPcOkxLdmL45NYwck2q6auOmWvXQz-yTw=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaBhG9D0JRJXyM1qCyNc-ZNKX-D-3gCdngI4aewrkariAaU3-I1WbPtvrXQEb-b11ej6oKFF3dIB8HsR_Y0Ev4_We0u5pFympBic7fk0StYQCfeqetEX3t9M2Zy5p2N_GjqG7pMi4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Durvalumab + Tremelimumab trials for Mesothelioma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Mesothelioma&intr=Durvalumab%20%2B%20Tremelimumab"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Tremelimumab 1mg/kg D1 (x4) + Durvalumab 1500mg Q3W (x4), then Durvalumab 1500mg Q4W",
+      "effectiveness": 72,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 260000,
+          "monitoringCost": 12000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 287000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 5740000,
+        "costPerResponder": 820000,
+        "icer": 130000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Pemetrexed + Cisplatin",
+          "costDifference": 267000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Durvalumab + Tremelimumab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+4.0 months",
+          "baseline": "Median OS with standard chemotherapy: 14.1 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 28.37
+        },
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "ORR with standard chemotherapy: 32%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+13 percentage points",
+          "baseline": "1-year OS rate with standard chemotherapy: 55%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "1-Year Overall Survival Rate",
+          "percentageChange": 23.64
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 35,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 months",
+          "baseline": "Median DoR with standard chemotherapy: 6 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Response",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "Baseline QoL score: 65 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 10.77
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Baseline average dyspnea score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Severity (Numeric Rating Scale)",
+          "percentageChange": -33.33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Rash",
+          "percentage": 20
+        },
+        {
+          "name": "Hepatitis",
+          "percentage": 7
+        },
+        {
+          "name": "Colitis",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "Up to 2 years for Durvalumab, Tremelimumab 4 doses",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4hL_p1KAf3qlHPzh4VNRZdk9FAD2JrkTxV5R7aA7VT_2xrV9Xd8lat1Ovu0gDfbMK-NhIATplXtoASukIjs-Od4US7i8VgpGmok4MNMXywf-Sj2cEYo9OPm_5wNNhlqWQhIgu"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoic7ji9LRE_lg35sdx8avaKFIJltBgivMC4kRtgvTSejvN5B4LADwo2tZF9z2yDiuXs_gWnxxZQumnTmEK4P6OIrIVElawZe95XVr9Yji6xRblgOVjZMvMLrTszgpt0MNW4hW-185HH29nqBi9hFtOSegsK8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCczZ_Lq3KGCDt56BwkG23i06EbCn9213qmGF9QVWLsLTnIj8mmYm8lxs7YCa3m8yGvJSWw6Ti_PPevBIQ5RpkCmpmDNdmayW9GUsSYT6qeRNwfNIDFCpPPxdtdq8ZwinRajFJIZu9uaJ2JoK5"
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8f_aCLgRBIdvxXMySfL4E0y1TogvGu-0ToQooroyNVVUZGqqXelEgP1KAHPqZjX_2w-UWtCudipoLBALN6pEHdzyk-VEn7_blZ1yE7A-XQ3jftZTqiwuxhYHuGoNvmPIf6PoSeCZCU1lYc3H-k0QewtH2ANf2xhXLEGK4KhXmxMgrEkXx18u3v-YD1QMyZTTRCTCCmUnNZCqSe1t3qlfOIYQjcjAPQOkDxW5ZKl24z_SC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdgtSnET-uGzQ-qSV2hxOrmXiNotz-W3EwUl93Eouy9lc2-JV9v94xJi-b2UAuIjGKO-nA486QpnSXMkgGEYgSCLefx4nxht_vmfbNYK08v_gN1qERM3zE2t5uDUO2qzpRli0U"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeFJhC-hcnStSJVCwv3o1KA2ANy4TfO8h6jA1KSldo5NuFgS_HgfqF1tQp4wfVd72YbELcLiCxBxjLpPPUB7kCoNKCd7ULis8sJlMS0i4YIyqaN9iBfXHf4hRaiVFGFVmXDZe2Fu7r"
+        },
+        {
+          "title": "clydesideactiononasbestos.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBuHgapKE_kGA9wy8roDXdnhq3VTBUtrLxyZypztRHTb_HubwwLpRd3bTo6taDYWDb9UaLhMVGwvz1QwLNEImjT2N7Dq5KTREE42NwrfuLuB6aDbg_ZbehfytvvRuzbVEfXO2eEr7f39vvqKs1q93OO-v5_9r0V3DjpcDWkt4PI_hKsqw-Dh76q96fZU_tvy15uBOOkzcNQFUpwX_Ad5eSO5YsTy0IDbiX4bcd0HnWiJlZjlRZelQ7jg=="
+        },
+        {
+          "title": "medicinesresources.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfUrmmueOxyibjGcau9VPwo4sCTLr1xOhniBppDbKKJBABnRaLfVxbj33CTNmKHD7O24eSk2daIt8T0AfTT1XVUyR5HUO-qVmAuPVmZbfugV4j5RueV-IysOfHg1AoNMTl-62M_lMPhq_GLgS-eFX4jkhTXicBit7pJToiMTmv_MSzRxBSCbXidLWqKverJckqvpAPei6jGZvIeMUZAGda43dItP5eINSRqb21hqB9Sg68IDaPBLMwJdr8YbsTLLKA2n3AcWzwMqOCEkzUtY2ts8g_PuHMPelem29sSljBE0VTUAYSwzr-yjbYCO27kcRd6JqAQxhCDqAJpD_GE2w3U5DKW4AEX5aaO8MtQMXOlg3eKneyiNQQyAMFFRd7UpnX4Y9dAlaH5JR1CA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKbqMm7qyC0A6qSaClqK7lfseXBuY4UhBDgSgGH2-zAfNdg4RAO6KAifpj8GkVFDL8NmORHj_lAXinLPnzM2uSTWzpUkPAyuDhNs2YlT1QQ_lcx3LCKzPABlSTnp4MdeCgTZCY"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBZrdSJxzdF5auEoY9e6O0Ngyex9B2oJH6RxXx7d_Veb0ATJsFiEZ2yMwh125b4ESfWYTgxZFWXsbHMvU-c6Gfq5WEDOFtbpWyL8OuhL70U8U_WI0mCA-_3hDMCku0Pe8trTG-JtRmdBP5WY8W5FlNHs5HfTw="
+        },
+        {
+          "title": "ilcn.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPt1osJ5me4_0oE9bt2bxEsf6xUJbc4wFDDm8VrN5S2BC96B2v8OsJvlwl_tU3DMn0rwkDEC6Iyh_6VGKyaH5_RK-E7gGRoBfW0jNW53d9Zs8wLi0x44hOcCfNqCPE4FOY5CvJ1x6k6-oMmvePcZwu-H-FcEjnAsycHvSn51CDWhwHIE_ZDyvlOjloH5wfMQf5Mkao"
+        },
+        {
+          "title": "ClinicalTrials.gov: Bevacizumab + Pemetrexed + Cisplatin trials for Mesothelioma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Mesothelioma&intr=Bevacizumab%20%2B%20Pemetrexed%20%2B%20Cisplatin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Bevacizumab 15mg/kg Q3W + Pemetrexed 500mg/m² Q3W + Cisplatin 75mg/m² Q3W",
+      "effectiveness": 65,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 12000,
+          "totalAnnual": 107000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 2140000,
+        "costPerResponder": 194545,
+        "icer": 175000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "Pemetrexed + Cisplatin",
+          "costDifference": 87000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Bevacizumab + Pemetrexed + Cisplatin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.7 months",
+          "baseline": "Median 16.1 months (Pemetrexed + Cisplatin alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 16.77
+        },
+        {
+          "absoluteChange": "+2.3 months",
+          "baseline": "Median 6.9 months (Pemetrexed + Cisplatin alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival",
+          "percentageChange": 33.33
+        },
+        {
+          "absoluteChange": "+9.1 percentage points",
+          "baseline": "30.4% (Pemetrexed + Cisplatin alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (CR+PR)",
+          "percentageChange": 29.93
+        },
+        {
+          "absoluteChange": "+8.0 percentage points",
+          "baseline": "79.1% (Pemetrexed + Cisplatin alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (CR+PR+SD)",
+          "percentageChange": 10.11
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 55,
+      "safetyScore": 20,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "50 points (Scale 0-100, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status (EORTC QLQ-C30)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "40 points (Scale 0-100, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity Score (EORTC QLQ-LC13)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "45 points (Scale 0-100, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Intensity Score (EORTC QLQ-LC13)",
+          "percentageChange": -15.56
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 35
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 45
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 30
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 25
+        },
+        {
+          "name": "Proteinuria",
+          "percentage": 15
+        },
+        {
+          "name": "Hemorrhage",
+          "percentage": 12
+        },
+        {
+          "name": "GI perforation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "6-9 weeks (initial response)",
+      "treatmentDuration": "6 cycles + maintenance Bevacizumab",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC3TRKOXxzVoYrTCgI7JSeTEsPOPptaNEP7f_s4hvO-jLpB7YqIH85P1xMWJVXW4KG7f7qgjgIsm8VV6fwiy-j8Vbo8fnGpa0DEFO7xgrGqSFlC00v_cosaCGnm50e7Ay1EpqP"
+        },
+        {
+          "title": "uchicagomedicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRIksSUh8Xgjdde9s_h83qDqcbnyEIvoMjpcMgWxLL6Y201R5sQKCfZsuG89eoG8uMwexCwk6Ip5HMs-_UPNkbXS1f-LRRd4snyBxTmjhczg2n9yeRRN5jtlJUNqmZpgZJAQDZizIJQMDef-Uafa8LzwRmqI9ENCP4_ZBw51ybns2WHCGLhciKIm5_FDL29kSEVlAXbnkDdfjX0U0eGgZLCthmW2FcvFt41n4QQfu0_mEL"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo4jIKz7wQy7PMNMQZg6C1Xbf2vq3l8lS94nQT_1MD_WDcKPXUzIF8WNUXV9yn53XIbKr-XzsKxyDZwYzmIcgg0A2aE2NNd_AflEsQ2wL0NxoK4D9jTtkmvf9ImHnS6MPaWagbvPW6XlUF9w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAK5-QDjC4Bz6RwS5W7kRX24YCdb4Dqgx_QumEPDdL2e9QNebFHZQoSxOwh2GXzp9-8psZEUqtXkHQ4pPaQyShcwny2jnY-SZGyBOcxq5orruTsqv5FRbJ9EevQLb1RW5ELfgunfbF_lJu7cg="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMnbXFZ1p6SYiCHoXOPryrh9t4g9tfHsSNR-FR1QTxNfARVUl1ahe2Dw5-BpQLb47Ebpq2bI-M_TnNOEYTI3EcZIztAqIfjyKzqow6pzc2avpX_lbKRfPA7k3o1fdeJsKfXv46092GUOHM2nWkM2qVcg8ieXZeoq-FPN5sFx8TwEbjR3DoNVMgea-iQtZ_hLWpmKOfVV-Yn3sObRcYR1SZemJaZypZ7XGUP-_iUJv_1wuvjNIzKC0S0dU75kCjedM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9huN6012v9ZfqBNZ9B_pcacvuFxsgFZkO3XgQGz3tM4GGZxRVe7LDVLhJOdQkjvMaIiVR9o5Sds9S3ik9Qncee75DEioXpxbai6gNgjsWoF67saZwYugHyXzPe8WPVPAulpDHJpaH6geJv9K2"
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5XeFv2-pxiKc9_KzTmiSROrhAmwA4iFl-gbsGrS_TZ3B7Cl454JR_rzqBzY4N6byf09sucuoTzuNJFD8wYcNSRfM_krugevAYg-fFDTkMR85I8eoC19ldBAysxbva_lpSloXqHMlOC5thiH46YXp9ptAFVPA="
+        },
+        {
+          "title": "mesothelioma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2-kDKODzJB5cyxWgOwVP0tZ72sBLDzx4m0_Wiu84-_1254KaYykHYf1hucIoJiIZfeC06X0zFBYgTsmkYPAuPcA4g0Mymm4vFXdH2z9PnlCbCAt55j6pgV1C6YCDZnMPixvd8RskV1RM6AoEjghchecM6jOiNiNXv-LU="
+        },
+        {
+          "title": "patientcareonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETBDKWMzvw9M8jw-IwBklHY4DaoLeqD3ck9nA8-gnwckIVN6_27iV1U5QoEkgTnxgINXwUDQXofoCRiULBm4khPzklcXcw3r6pxnN-Q3DaZSJAelems7jr1hjNTKTxbbKszFbMKDYM-CaKKEV1mB6vDhDyINK-0qQAWKYrNZXZXsAztCaC0aPCX54kLDexaT3wCEF7e7Jyi8HN76s1HqmVqlL1eEzdaV0o"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_BQu5pP6PMaDV7dfjWTvO3M_1ZrpWSKNeNLDsFTMavH4Px6HUD6UmPNncio0FVgbkyg8i8j4GAn3mTnvqk_UTMLN_LOafkmMZCqWtftm9VJDJ6zSLYCE-3mCsN0InDLcQMvI="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH98s6Qg7oJMKMmewzfoRDOY1rrgcmwqAUVo5Gs8aX5Du15kWAzkva98zGvAhoxRz3BsgNyZkYDXi9Ssf4fOrs-egkPrQaZ8CKarrPiHYMq6oKhP6VSbCLfsjXsuacIwfHvDha28kAf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoCoQD0JDRi5WQ0zn75PVwAy3ou9jenBZlcGTXT0RifNSjAObT0M-CvH67Q46wyElaejsP7TyYRc9mCpzrQ2jLj3OzJNu97FvPMYD5If7HCucnHO8i7pYvM_bZICQHjrqXj-Sv"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pemetrexed + Cisplatin (or Carboplatin) trials for Mesothelioma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Mesothelioma&intr=Pemetrexed%20%2B%20Cisplatin%20(or%20Carboplatin)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Pemetrexed 500mg/m² IV D1 + Cisplatin 75mg/m² IV D1, every 21 days",
+      "effectiveness": 60,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 7000,
+          "totalAnnual": 20000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 400000,
+        "costPerResponder": 44444,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Pemetrexed + Cisplatin (or Carboplatin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.8 months",
+          "baseline": "9.3 months (median for cisplatin alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival",
+          "percentageChange": 30.1
+        },
+        {
+          "absoluteChange": "+1.8 months",
+          "baseline": "3.9 months (median for cisplatin alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Progression-Free Survival",
+          "percentageChange": 46.2
+        },
+        {
+          "absoluteChange": "+41.3%",
+          "baseline": "0% (expected with best supportive care)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (CR+PR)",
+          "percentageChange": 41.3
+        },
+        {
+          "absoluteChange": "+81.1%",
+          "baseline": "0% (expected with best supportive care)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease Control Rate (CR+PR+SD)",
+          "percentageChange": 81.1
+        }
+      ],
+      "remissionRate": 5,
+      "responseRate": 45,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 points on 10-point scale",
+          "baseline": "4.5/10 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (LCSS)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.9 points on 10-point scale",
+          "baseline": "5.0/10 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Severity (LCSS)",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-0.8 points on 10-point scale",
+          "baseline": "5.5/10 (moderate to severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (LCSS)",
+          "percentageChange": -14.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neutropenia",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 30
+        },
+        {
+          "name": "Anorexia",
+          "percentage": 20
+        },
+        {
+          "name": "Anemia",
+          "percentage": 25
+        },
+        {
+          "name": "Nephrotoxicity (Cisplatin)",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "6-9 weeks (initial response)",
+      "treatmentDuration": "4-6 cycles (3-6 months)",
+      "trials": 21
+    }
+  ]
+}

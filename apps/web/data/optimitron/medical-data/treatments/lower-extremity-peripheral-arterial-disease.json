@@ -1,0 +1,1140 @@
+{
+  "conditionName": "Lower extremity peripheral arterial disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:46:42.645Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "wa.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFURTfAMhz54Pgqn4OR7Sr3uwu--QXtL6EeP_cnmitZEn0Ez7AZ0qltGOhuYs31KFIfvaoPraVJUbmBq6wpKdS5gJsvJzOWMx2Av3ccHj84Bm09oWaAEBQQwtSzeTeIOhU1fKQOdZVF8qBHxYOMr9FkoMnLIw31PZcKGNXxwa9AwwJtOV1a6w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6R5OJxSWgDgFCQpetrFyD869jtjmECKzaPYdlQYt8gP1p8PDP-QZhKVJlksu57fjqWbJa5BS0cBuLeH1wajWtJLf5gg7sctHNJnm8E1Glj6T7Q7-RwJAIYKeWzZwU38RQfxxGMck7nO_EOgY="
+        },
+        {
+          "title": "escardio.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdbxJFpbg1nAgKbUxBmEdW6oluiNn761KXOGmBv0cj4Tv4dBI2ZBsTVhMx4K8UJkvpJiQGygIVOI13MJwKuXM6NYQkSA1RTZWNUgPYvtVKnlgS5BTisf__Thi8yEy_AuXpzCp_AA8yMFVcWGGygfVXbGMRZ10C7Udl5H3fvVtL0cAtZVFQ7fdyv9L0etlnuT8vgceWFiQWb4uT9cznrEfwLt_13S3FvHfoeWI8nwC_sAWqG6TaXnClIBEXJ1ice9XYJhqh-dSfWV_k49Ztbg4J6wp-XQ=="
+        },
+        {
+          "title": "ui.ac.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEvOOnMxC1a87PI4d_loGhtTN4I6K7aZgj_AuO940uBOjUFXGhKJyVKXsLO0gSWhvHBSb2eUIZUrj22V-v81zgYdcUN1jxL6NLKtGbxZ2aVCIYJPPaietDCjp46nXefDHAS-4Sxgf126zbYhvYcdhcKnNE-K40LgA8F4h-NHjNHI5b3ug="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuMJETrkb8mcOZ6WubNMrdmINhVFYavVVSAAa3zrgnQyxklcdRGAdLTPhvCDgz3efxbPudlCWtTEsCGkzy4i6ECUiQtBLZRe3pA5vTQzylF-Jrsqh2ep0bLhEv94zREQHxS5Wuo2N4EUTpAeI="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFANprD7DKDfVNUuCbkgC4uwR8NtlvvuWNVIGNHxS_wT_a1FK2upLWZSBoOPVydgzAWtEXy3i0sJ-ByQRpACE_Hlwjy7oIPRHsIdNaNIJHbCmmltlkfdYmwn4X9tll8oB-_fd6oqvZD2m3yBi5nLnKlYEzv32xRJrgo8xzuv3XrbmPiZhmrwa4EeQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7YVVt8NfXUq0s4nvyaEYCIIxDS5rLRu6b9il0tXxbly63GJVPFSnwbBPhMh3Efo2yoR8lP2fknrQnNhnqbN0NCrkd1wt44ZphDDII_TYsoC57SPt6_yFG0zYPWRvDKAtxiv_JYjheDLmc2hB7"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFox9Mgoro3Xm6mNl3JcdkWGHa-FD_1TsEMET2AW--MmOvs1UJdsi05BjJM8AOFv9Jj3wMK1Hn7SUIeXf_m8-bdU_Cs994Cettnn5eFpl121EBaNaOE9-EdXNGIXNz4JxXPZ_acwSQRA55D3QK16H3OqkdP2u6q7Cw9s7IrAUo-5Ig="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM0fOHGLypgr6Viver6CZYRtwaQLksevVRvQiveSRoZ8yoNFaercjGSvZ4y_4R99gVfPw0WsveneHnWgGZjeAQXOXy8eGca_c9z1ReLWmiLvSiFpzvIuxwIkpbxufmGEeKJTiEzL4BhnZuQgyd-YkS13Xa4q8o4_wWxW1uLTtg9RLA"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHol_0fvJJ7oNuLPe3Jy7M2TnCYpQWZUYniYez-jvsWqNqji5rYv5gCAsu2VZboCUciP2R3Y-H5UT-mdJMsZG7uK7eJPvvD5tJSwpRY0ryO2yrPHLgI68H4D71SlKakGCuE9GSgnHW7BB3_yh_sZt4hAGDc3Odwi0QsasPUokxRFTd17c5RTGlqyMAeS3agMVLfAXdHh-LNGc1yYogiCdh1bSYKrPE18UFQT25Cu8uCakJF3bLgoPWvIs4rcgbny74="
+        },
+        {
+          "title": "ClinicalTrials.gov: Endovascular Revascularization (Angioplasty/Stenting) trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Endovascular%20Revascularization%20(Angioplasty%2FStenting)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "N/A",
+      "effectiveness": 85,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 5000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 7143,
+        "costPerResponder": 6250,
+        "icer": 85000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": null
+      },
+      "name": "Endovascular Revascularization (Angioplasty/Stenting)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 75000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.25",
+          "baseline": "0.65",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle-Brachial Index (ABI)",
+          "percentageChange": 38.5
+        },
+        {
+          "absoluteChange": "+150 meters",
+          "baseline": "100 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain-Free Walking Distance (PFWD)",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "+0.28",
+          "baseline": "0.30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Toe-Brachial Index (TBI)",
+          "percentageChange": 93.3
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "3.5 / 6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rutherford Classification Score",
+          "percentageChange": -51.4
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 80,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.2 points",
+          "baseline": "4.0 / 7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "VascuQol Score",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+85 meters",
+          "baseline": "250 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test (6MWT) Distance",
+          "percentageChange": 34
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "6 / 10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (VAS Scale)",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Access site complications (hematoma, pseudoaneurysm)",
+          "percentage": 8
+        },
+        {
+          "name": "Vessel dissection",
+          "percentage": 5
+        },
+        {
+          "name": "Restenosis/Re-occlusion (requiring re-intervention)",
+          "percentage": 25
+        },
+        {
+          "name": "Contrast-induced nephropathy",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate to days",
+      "treatmentDuration": "Single procedure, ongoing monitoring/potential re-interventions",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0FbxEh_SbBVuQ-3KMBz-Bx0mBaUypBT7hThJi2LzMzM9-ZNWZ8g8AbtIHQj2aRqh7r7wMEBaaXxI8NXBs8GCOIohikAt6njiuOHvJjFeL_5VMLaMkVK2J8p-3LmaMxWkOtpM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdwuQ_ZbS1ZD2yl9MJ77xKyniwOuzc12dCiuWXQBLvQLGzn_-Hweaaxly6f0o2UDJBuV1jzCStTcvSKNabf6ab9J8i4Zw2F436vScmto-iczqfoWpvnBqBCMFgTWAoueALOvzwGMxYTWLe-rY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBg9-Cinb4GvX09VxbIv5FBZf6mk-IeMzaI01R61MaP0GZ5vInCu37S3keXeBnBsuKL_0peV9OpFH3bmovI-wtt6rUZZNnSmI1Hpg5yPBNNxbUC_Lc5J30Oa-rq0GhLIuJxKI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqrV3NFPlLU-xiJKS4e64EXEaTMN8ytihH0CxVGykbQdC55i3VPakS6iFllfklRhtvM0az7kS0Bn-hs-Uo9Ny9kxXF-RBAVdA5w0ZjOKo9CaqdEBEqgcPi_DU2k9Wp3DaqZnOoRmrNgee4J_s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQES27jCE5Ll3sM-4Li3ICB3St3LBThMU9k0yDQfdl2Q5Sx_MN0oN7gFEFqc7FO2nil1DGGKVweiln0dTcuInGtBRV27PGZOR0ru0fCoQoNlAbx5Wp93uCFWL2St2TraLTVx8l0iNtfJk7woD3bUcZMFOs0fDXtKBQhGibXyaWy--jMjEPXUbWwSyFtiZA-vbUVuJEyNjpEZP9jzuDlaA7YuEE-HSWTaN9s7xmOhIyucEx-7PCMKqxkmoEjz1fnPPLLfr4svvI7xJ4AZBRM9BxgT4FzaqIq4YDxNuU42HoXbbxnF_BttkTV9P1ys92_3dA5I-_lpKmVAV-CMXnaZ8WeKzUdvQ3ohq2emVQAAtva0BdJJLzmt7LBBeVc9DSbo8ytgTXzZ4pjx9eoi-56vD82-P0wQFuQv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhAQh8p5_AreC_vc943lOlT1ld5qLa4vAdu3Bvi4hfPMvGNnKiL7SG2UojHpFW04gzYXGUrN_Gd1_QLFOV60s8nTz9a8jDKLhIMz8puz507uMVnN6mTuq22rHIvQgnhoxTgqYIDbmKx6AX7g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHzQiArN-KDqRm3tYNzPUHqQE2jH2adqy8D6f3vbG5GiReYwOC6atoHWW6FuOf562_wIpeb9eN_eDu2mTcbz-T6tlcBGXMgUMPTgWmz3uVVf7ZwK3lMMDUPSGgxTm-viVLH7Dxu1FQnfgaGTI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Revascularization (Bypass Surgery) trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Surgical%20Revascularization%20(Bypass%20Surgery)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "N/A",
+      "effectiveness": 88,
+      "evidenceQuality": "Moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 6000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 8000,
+        "costPerResponder": 7059,
+        "icer": 95000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.45,
+        "vsComparator": {
+          "comparatorName": "Endovascular Revascularization",
+          "costDifference": 1000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Surgical Revascularization (Bypass Surgery)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.30",
+          "baseline": "0.60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle-Brachial Index (ABI)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rest Pain Severity (NRS 0-10)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+35 mmHg",
+          "baseline": "25 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Toe Pressure",
+          "percentageChange": 140
+        },
+        {
+          "absoluteChange": "+200 meters",
+          "baseline": "100 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Claudication-Free Walking Distance",
+          "percentageChange": 200
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.15",
+          "baseline": "0.60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D-5L Utility Score)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-8 cm^2",
+          "baseline": "10 cm^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wound Surface Area",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Function (SF-36 PCS Score)",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Surgical site infection",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding/Hematoma",
+          "percentage": 8
+        },
+        {
+          "name": "Graft thrombosis/failure",
+          "percentage": 20
+        },
+        {
+          "name": "Cardiac complications (MI, arrhythmia)",
+          "percentage": 7
+        },
+        {
+          "name": "Stroke",
+          "percentage": 3
+        },
+        {
+          "name": "Mortality",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate to weeks",
+      "treatmentDuration": "Single procedure, ongoing monitoring/potential re-interventions",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "vascular-medicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl-qWZp2L0zG3G4RuJMP-4euUvdUmcJOAQB3kB0Lx2GblV0SdzryM00QiNC5l9gxEG0n9AHf5MCxIdtDS4Nmja-_1NygAT3k9lqNlRo-z_hj9Z6BSt4wHLtOAkmA7fzXyj_faZ7TscYu5ieCY7QFPyanuWwIzkWdaRt4dC2lXF4R9qvNdRx5JAxHAgNSzTWinjmTnV7hsMPMkt3TUL6uugR5omTyPDvLtWexqVLAs6IGhOtoxOnDEsEcZx6tswv9dZNM5iPWYVdmQ3x5YBM3zD-e5izmE="
+        },
+        {
+          "title": "psu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsioRv6vsRwUVJVfkMKh5jTQIQ5Ug9P1_M5A5_MiSnACfyBydFMaN02WFODQpjyE0In9YBU58ykNFFN2f4j1kold0xyibUMBg-i144vjoQDMb1B8uWI31Gnjk_X3TCti62gx6UYOXHHp9gUpWD_G4WRalkCh8lMatXc9q53U4bfrG5x-LGIquIPlB5dKQ7r4vcU55GG2NBe2ozOf73sw5S"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx_k0B6KNRtozDQt855U5NxtnUHCQcHey7yFn0jiTHoNQhWjrs_f90peOuunYaI_614TVW8qcB7wkIYDgtNtF1ihdK7u2o8iWscRFjsOY-LbB6D-l6OXx7w4KIMm7LXyTHUuo="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7npjdRRXymIzs8ZXE3TT14MHC8ExNmZHNvqbkOoeaIMD7-kYHz2bP0Snx9kx6jipbkh1Fy2U31UfTXznNcwywOUzxQ26jkvadvDQ_MHwMkQbkUWbXiIX8G2sitQih4HxNkD9DTtPV1yWXMDx3OlkNdTIhIMTK7quIYzoNCTFXYPH-ZEcDH8nN"
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWDQ_xKQ3roJbz08vQEQBHky-dKLYdWQwuv8QmIcmPZgEpf3bu5VeSHZyJenzeHZrpAdeTc-P5Xz8caHboTgSYxmBYMczT5p6SP2qP6EqFjN0jCI1lmp7L2ftEaWUV8uhyZSXaNtMf7YfO3gENGVNzT4Dafla4vxE177sGa7RfNhho4L1QQo5hLEJRN3sSOOyUout3PaGX_1zeEMKn89fwJZWj1qTHWaA4lRfB4myof9xKyYRXWA=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWpls1r_1kP4o68BUMgKD-B59DJQq7_aDAAxmAFGRd8I53a5EHaUA4Q3rRhEpov-YbPwth5EE0Eg9D2YK6N1Nj0fj1f323FRTHNFu8trunIt-2yikyRBPEwycMH3lqBQN4bSyTxHoQWxwb3CLQhCLURZJYoMPk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDYepBcFP4dvO_rsWFyCh3GYSK0qSeb8i9n8z34NsKxuJIvfjOe5RCMz3PbfogeDqqxc00JQigaTeGSMCNqwlBbPaRX4zaLovrohRBYqJfknm9XlVn0NLx30LdD0sSyFHAJ67F98vKjT8aLWJXFLyYV-h5zlhXEMSYSRwVkFNxgS7TUQcj19y6yaaqxBhaXMmNjFHxxAN3cJkbUQ=="
+        },
+        {
+          "title": "northwestern.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZj0RC_A79jsrFiSJ4pLlfr9g21hqh3OjAyR_IkQhrWy2eTzHM4TzyC_SKEdo1ahpnWi_nMpXcYC3m6ITCgzXr_4ngpHM2NhedeDxuzFIqxGxCEsEsSk6kQnWe5JQFgEnnDCEu8fPgQ8qiD6DGwM72p5g8Pw1L_4p8QE7lJZUyN9he7BazRTFxd0mD2Lx6E_UEJ9q-EKY2K7A39VHCyQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaXLf4vYTbOD9lIC3ZnllVCYqp0QN-HZYuPL7nug1RT4VjzwijJiqMK8_MGa2S2mr20xNySNflcFQBWJqZG_Cojp3g_0gvGF8q2qOJgaOOZ6102dmINNFM32UNdyMJiwEMYcfcLNmJbzA8PN2OJbgyHU2N10m_2UJYvAm-SaMifLwje91BO7eT-0shfX6k8ujj72XUNoPuVR6tx8nNhJQNtvIS1Hp2pmI-ScFI98y4n8uWYeqr2YAlZ9oNE1X7Nyuby5nrvJwP8AESns-G3yPZbtj41gBNEJQJkl79gB1lsvIvj1CHDagGODuDTyS-X_sNKrcmouUyRs5spYk1iWtnBOIl0Bs7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfljTfosS-zPAp0LDciOJeQtNgVfQF_0KvEswjG2wz_-v5QRxKky9fwCIkT0zziVyw1TsYb01fLAJGSz-4fh5Kr8tLnpmB3dAYrHhBzzsx6RIV-ZRst_if527P4_7uky6rhIg="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAnMyihtmgWESdy-rezGmzCH4m5MAwJw77fPlGlVpjmRlajd3ZXFn1x_GtKAbxRpdSciYU7Ye0JPWmgAjY8Igq3Ycz9lsxh3d4oyG1FI-25aoVV9JcMPZVGxY8I3vXgFQbdxWDrUA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_1lt106yZIwUSEUJbGvC-M6BQD4kQ6uEmi5PJNzH8unn3h3ZFL8--6q6ZXra53kIcpo31AWqf3js9i4ZuSC9qH-A5Bk9X80fAN2-sL2UZrHTTQ2JAYnBS963l1WURd2sK7w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-66S_QeS2o1Paq8TpW0sQbHguVCz-ILgLZNYSUwXJmC91bDTchNjQfsYpudmdAIj4rdhkUnbNhUQTzzMqlfajHDJwigvxHTkqVjT9HFXP6Tm4AwpUTpYDLF-NRE-WxYkmw68fee9RnQ8QtBQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Supervised Exercise Therapy (SET) trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Supervised%20Exercise%20Therapy%20(SET)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "30-60 minutes, 3 times per week",
+      "effectiveness": 75,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4000,
+        "costPerResponder": 2857,
+        "icer": 8000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Supervised Exercise Therapy (SET)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 15000,
+      "phase": [],
+      "remissionRate": 50,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 20
+        },
+        {
+          "name": "Minor musculoskeletal injury",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "Ongoing (typically 3-6 months structured program, then maintenance)",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtY_z9BvenhDekdOra5kG379fpylZCLiycbz3TqUodUm70b8LLJ3Ez_ZZ0PQjTD5P7bqqLti3fFz644CRs139fPb79MfH0I5Smj5JmN93DSqDHt_dwBSQ-PpNRS4I5JXfYndhv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOwwYkteNCRDYyKnwl9TGmDCmzLcXoCX0-mO_JzEDW4GwcTa1NilvcX0kF4HB_4-HXIxSqBvqE2Ww4WuPmWaDmJVq8BrzxfQXx1klCm-i9Sae_pmeGmNPcYATpV7-EfwebEAs3_UDP3w1gb0k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTVQZbSEoX-PTjgmXVRGO0Z8DBgWBW7Ir7CYznfy9YqcRWvKARl0F_TeL6AqhiJeDGBmUHGHRVrRQs1uf1jS3pi5huiweO3fhHTuQ2lJQoLmut3MzTj4sIWT44H448Rxi-tdEfa6HbyicscBg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGft6bRQXDDNpUp9f71eoc341xAgLUsn-JemY2cpW-yFOuX7KHNv9UM87p9Zd97HIVZYdXj_WQKuAIsu66lGNlAt_CeuohHtJeYW7uzgpRudEcKetx9GyuEEXQdgTKSS-oUJ3VgioR0hKQ5yZk="
+        },
+        {
+          "title": "ed.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8kZLFu0calUX08EKd63aVc6A1ijJBdVWF9hdelJFXVpne5aIuMiFiU8M9nslWy2kIIaTzAaaliaBn4WL8e_VgGx6EUEX5otF_t_CkYC6p4pAWuLMUN4sBh2_ZA20znIaYlMTRckMCtVGZQI-wnsZ94X68AlPUNGQBmX_LaAmMxAb8benxnK4WcmrArDAk1Z6w"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYXALJBkv0Ks--jUsr7pKLEZdxDe7AVCZHLBI23KeQcx3DYM9mhcOuU4TA196VLFxDhSG-Wke0BWCq7KBGgExB-cpOGWR-K369CTiSK7MR1AXN497rR02iL-_SyaTj-ChtNSB3vWCmfQ0IEOE6p8yNzVmjzA1UBUhHeuapUkkX2fdyKWyRZ-R0DNVpi90Wbnp4h-pykbnAeKdsJi265OYjb3dK-jzO_F5g94xJm1MkTCeL8o3y6zDd1UA0I4b7rXYtthJdZZbG_uLGo66CIpdBBXJTwRq0Dkp0zZqfKRPJLIYSPYkx7sFYRhD1bhe9Eg5w1DhrzpJ5Lj4rPzR8Ux79USnMSaGN8HJIZL0nc5x-ZsGR0-QXtP5zJOdKux8QlH6xD1OmdOBeONwp0d3uy5dLaktNZOSd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSKiKhLPSwKnBRa9bMNm2ohbQpD3GKT6PLERL0INF2YHrut4L4l1QRY0bsblGS9O7Dz6vBOyioVYouXB4uHcPus14KysnkFsnfUoIWBovHQodGmQZUiNsanTw9lqceYKB3i6EX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY-XDzlkMzkNwY2gapgYwbb-rgePxx9J8RpjAzxF6RiBhLwAaVrQlrP45HMa_SERlRcX3ZD2zfztD1DQZTCHMKwnFpS5ePL_od-l7yjqBXTaLpgtw5rYr--N0nfVr36P5F45EVWMbo2RjvsLU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE37IH_dyollAFbXhzedZ3RqAuGGhdVpG1_VdvGozsM8SjAhmqFZ5rvZhH0Mm21PjGcut3UGwKgVtz16EOHhihzfweNEZSoOM0d0k9MMJggcmJi7NOVj4qdLjusuIYr5iRUQG_2AV9spdmTI04="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3ZUGCUsIeU5uA9cV4C_DeTggobqpLiWXk9jb3MDpV_tbRrVB1W_-pPtGd8ZoMObevg6G69aJxZeTxoX8Upg0Taky_xH0GYYy2lF6Ra3s-lh2s7SN0zZx7Y2EFJIUI9ORr6KgDizNEDf8rLghGnBu8DuY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGckBNmbBHd76zfQd7FM1zC7_JGEZT2mIzePey6NUBtmRpIyvQSqw_nlAsWPuH4Vf0QbkArB-qbhM-GT82wIYc2gUIXJQFSjPYSjQKPMVpeILCP2RCIjCLn11HcCJfiei44ac6u"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCA_HWtjR8zyrNaPc46shCw5JI2ccZNjoKLYs0ihrZinm_4tzHx03fMrbeTp1DG2BJcec83MFdgSdS29EjB8arKX1M18iX_dcc69xuBro-3C70pIzWi7tUtD0ZLKpK8df8iWpyk7L__x-D6gQ_"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cilostazol trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Cilostazol"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "100mg twice daily",
+      "effectiveness": 65,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 50,
+          "sideEffectManagement": 100,
+          "totalAnnual": 650
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 1625,
+        "costPerResponder": 1083,
+        "icer": 90000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 200,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 510,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Cilostazol",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 12000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+60 meters",
+          "baseline": "150 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain-Free Walking Distance (PFWD)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+75 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Walking Distance (MWD)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "WIQ Pain Score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Walking Impairment Questionnaire (WIQ) - Pain Score",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "WIQ Distance Score: 35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Walking Impairment Questionnaire (WIQ) - Distance Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+0.05 units",
+          "baseline": "0.7 units",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle-Brachial Index (ABI)",
+          "percentageChange": 7.1
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "SF-36 Physical Functioning Score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Functioning Score",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Palpitations/Tachycardia",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term, as needed",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "samev-dz.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrcC3mRrz-_-128zTV_0SwZ9-GBCxTD_WKFGavKl3e5JXF2EQI4UY8beFnQlQxffFUv2vQ85ycaJgcOdSbCK1ZnFAPn-jCDE_oR0f3krcxIQR6ZShQ2ukKmI9_YJ3n2UkLd7nqm_Vvkz2UTxAkZ-NtwAVn3y8-ejJZEAB6xfyEyndgg5PEhvI3GjFKuZzgObsox3qey8HUjXMLVbg-nqK74JRaUnVhunCYOE7WtpJUbUSxetyJngPACW7dqc11eAIeHs9chu1Fw7EFOFSf2gGWQjv775IqNoLlAD_gCbQwCbdSJWTfm9fhTRh4GXj0Gn0OeCVipYWBKP-HDZbmiA=="
+        },
+        {
+          "title": "hogrefe.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6L_zLYOhSIh3IR1t6aao5kPrNcYptkE7XoN3MF7xbTQKYrZ_r6jhYDGtLfElxCGazV98hhhyi-xoxY66QYlsSuWawod-eCbl9DBDixSmXuq_jKS10xmzKy9-Rds2RvA3X2x6IJy_82_FxtQ5C6ad9tVbTh_A="
+        },
+        {
+          "title": "hogrefe.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd7hNSHcQmcQU0krn1rBba9su7UGxO8Qt8nEE9CWPOhwlAvu8M34RxanPZkGfDYHVqkM8dOfNwJzGsRzwi66ep7NhBKbl0V4Ahzwwks1zqgc6lz77hFg7x-5LqDcGmQjnQsGdcguKdgZ8ejRaPr-R3p6x9ICfaxmG5"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3ROtEsZZ6gv-tWEsO6SlLI7o39EsCrMTXfmQmFxbVzp6UEEqBV92O2TtYlnLE02y9otvb6PGKJm7pvaGPSq6UoCiZLmVyuCbJuIvfxLWvwV53m6p4CbL7o_Gm2HwUPeH3qQ6x"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAffZtZqY2LYO78gBLIFHxqJuKBPWjl-pVekEUcy5u3KZ-O_Z6EPIWOzoq6CoUmmuuhcM-RJpqCkGcQAMjIuuysKqRhgewsbMl2k2YUUVTdiUj4ll-mcVC3YHvEpdr8h9V2LlY"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIGBOcEotbD4udfo6WqsG0pIJPqfa8-Ylnz-wJ68PVZvT8i5Cywyf7s1oCOPMUpryrmmC3z7D4_7ZpfGnvDtHgSRBu4IMsY1i0cuQ0E4IpL7IBCyA3JlsSmPwDwZ2do_VP_kyMXA8Jgd5wq5dE9U7Ed_4-LmMdhsyc9mUzuV-zcn8chVMglH121h2inbzHsfv19d1w6Z79Dva0vZhEbfOeCsxi1yLEOzl9UcdcLayRoh7gil5URR7jLb-E94jq6Z6DnW7UYhPva3u0N2fhsg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLfMeRwGLne9g3NmwTL9-f9-01NIrZb2R7ZwtRdsYsQMLAH_sVP6bImDQkEppf4QNFmefSLYzAxUdmsMHFqKR2aXIezsgUIEdeiQC4h3mLOOpTLXRovf_RW23zSwY9U9C5wRKpSfrY6w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjzF7aYCfoPr8W81yFvTFkiD3s-OLzHwBd9hCeV_qLhd63Rb6EVwLm1cAWkhdxVoIsxAHxzkut75M0onlQU3OZ9xDRhZ2YKmn3SV9FPyoYpSHqVAifwgrbU280cY6eKkAnpUiJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd-UImwOa9YdHB0xIS9R6g8h2LRCApgfoenCHymUNTJHCd-AjETdgHs6mBof1pzSw5fsbM7J600ksSgegOqw5fkzIHp2fg3JMWBa1hi6yjyYUz5i8X_3MBnmjmSe4A-j7hHXFU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvfrCkXBve1VceCoCj5QNWjVZqCJJwvZ1EkQVC4TE0F4r9S9y9WIN5wvq6ElQC_Sies9_HWlHbgZomgmnmoEuIL-TAvjzj8DycNFPGS3wBxnS1Ayh8nqCv4XAgHIp49_tAdZTx0EjoVA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5VfaRMaDTlfRNNI1rj_UX7ZqBK1iBsSvjqtCv16VUH7s4fxJ5-2Izq_0JztdxDpTOc1w2DlegMc-wQyzrjbSuEcidXFMdj3COy7pby_8QtrBWuUW2x6K5VWhSquKYhBZ_mTjc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Atorvastatin (Statin Therapy) trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Atorvastatin%20(Statin%20Therapy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10-80mg daily",
+      "effectiveness": 60,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 250,
+        "icer": 8000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.25,
+        "vsComparator": null
+      },
+      "name": "Atorvastatin (Statin Therapy)",
+      "nnh": 1000,
+      "nnt": 15,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-58.5 mg/dL",
+          "baseline": "130 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDL Cholesterol",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "+30 meters",
+          "baseline": "150 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain-Free Walking Distance",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+0.03",
+          "baseline": "0.75",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle-Brachial Index (ABI)",
+          "percentageChange": 4
+        },
+        {
+          "absoluteChange": "+54 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Maximum Walking Distance",
+          "percentageChange": 18
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.88 mg/L",
+          "baseline": "3.5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "hs-CRP",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-63 mg/dL",
+          "baseline": "210 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Cholesterol",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3.2 mg/dL",
+          "baseline": "40 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HDL Cholesterol",
+          "percentageChange": 8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Myalgia (muscle pain)",
+          "percentage": 5
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 2
+        },
+        {
+          "name": "Rhabdomyolysis (rare)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "Months for clinical benefits (CV event reduction)",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHplRRN7QsUgVh6pxPbNkcuQeZuH-C3BBbD_NHRXzvjFw5QrnnPUlU4pwDw2rNXbNAdIBGTBjhH25E7WbfKJ7Qo6aTghMsQIcCUZadwjbHXLAAYDVhBoNjvpf4Ccnfj6xdGT8lHijJW3hUjdVA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV-Y4g_SFcIMQbFhRDlN2ZMGTkW_9cChKU4QrNXKMaU23CgwII-p42nXnviCt8Yxc9WYDrinfofxww7LDx06VUsP1S3XqNflSXYsRDhO6CZSd4cPrSOQPy3xEKY3CrjK_qHfBo"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQMyhF1M7sb5BtaciDdKqhJqybdScTlTamSeSPfIoZeqvOoqzNYBpDZwEpNa8_pxYvrs02cgNC1RwIY29YbI-kD4XVb-A1spkqB48MlHCSFAHT-6tUt3nPATUkuxRM7o3IFP0E4k00WBOQwV1m3PZPRdY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBalbpEi-C6oHFELyTp169B528FAGbHdKSGCn4_s9veEjLwO57fG4GynA11YzjRS_jcc8zeCxzK8vh2-3uwShIaRHqNLrw6jVd6kK72h3DBPyWel4FI8U5dlGVKenu3lFfAE2q1I25VkiWyPA="
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2kLxRf1lkJTrNrRuMu0ig1E16TLNzh4tXdaou2557ZZN3aAKMS-GNaDUGIef2Ukd29zVUsrqmNFmhHCOVZP5ILLTRomgZuL36w63Ut-Di3JQWggN-2I_Pjo3IwIsLj4wsxc0VdB_xB54pTJnJKqy9dZSfqYBnpHZH6iuK0_NE9Obp6FINb6edY3zh65sVC63VSNyEG2j9Zc-cLxjughVofnoUZx9JzRJEQkFhK6zXSkITbAQa2TwYMJTYMfAY87DSPJaekWyXImi9JGOPnP4CzrNn-tU="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuUVIvsbwtICTo2KpKlbMldV29dHZBqyxBP2ct1d-rZTd_xzooDgT31nvOaECQ2LbZPkHpS-woSCXMROj87Rbt_odbAaOzSbbAmCeeLvqzVkcmLtHFop-_8Y31c1Alab7WBrCTYD7_bME2t4EY96jHj-C67b4coDahek-PIqCy"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVWpSE0hMSsp1FmoPAhOHL-4KH-EVXN4r1Hr8okrggN8QMAwyfwtXkGCTLCynyYBvnOJJXO7CUIE4jaDONdP_UlPRs-gGMmwC-2mDnH1FP_NxtovKEyRSgZoGxMCWako8Srp4eA3Vwngdodj7Loo4VUjZlE7pr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD3Y50-OQCoOAoJT0QO-OzsZu7JRQiurqCkXtQQuRy8ANFVTSgNc-7Z71vwXVzIEdU4WedihPWoTLTXMDTLu9Jkp8-f8ppKXyiw6FFI3S9dcJk6y0rsNU45CSZyk_DvkHz66kRNSVJRZQP3kAT"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyY6-yWUIo1IByDoYq8ge_trj59qdFx6KJAJduk2nEVt6SOAMQc2kaC9aVCbUvTQuVXtbOALY7dSCo4sDO0v0xOVzoq2PtCG9N-FbylbiTUfHmEX_i7s4QNMYfqXQBBiwMIBM_x8saQDFvfeqcuMDaDBq-WNzJhS-9nD4NinqYqBfmYDp7pjtzJV4u_IGGERbN8UeNr9Zx7oodWzjHIrUaaG5XorxcJr_bTuXNAwVH9C7wXVBzLlgHo1O0rXwR1jXyKfRaDNKpfQG1ZHIqIQ9XjuWAyzj3OIlBeXs7vurxebuyMOw7TO4YnqLvd3D4Fmj8hScZtA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Clopidogrel trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Clopidogrel"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "75mg daily",
+      "effectiveness": 55,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 100,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 286,
+        "icer": 20000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 120,
+          "earlyTreatmentBenefit": 0.08,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 360,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Aspirin",
+          "costDifference": 130,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Clopidogrel",
+      "nnh": 100,
+      "nnt": 40,
+      "participants": 150000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.7% Absolute Risk Reduction",
+          "baseline": "Annual risk: 10.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Major Adverse Cardiovascular Events (MACE) Risk",
+          "percentageChange": -17
+        },
+        {
+          "absoluteChange": "-0.9% Absolute Risk Reduction",
+          "baseline": "Annual risk: 6.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Major Adverse Limb Events (MALE) Risk",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-0.6% Absolute Risk Reduction",
+          "baseline": "Annual incidence: 3.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-fatal Stroke Incidence",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.4% Absolute Risk Reduction",
+          "baseline": "Annual mortality: 4.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cardiovascular Mortality",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2.25 points",
+          "baseline": "45/100 (higher score indicates less pain/impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Walking Impairment Questionnaire (WIQ) Pain Score",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "+0.014",
+          "baseline": "0.68",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle-Brachial Index (ABI)",
+          "percentageChange": 2
+        },
+        {
+          "absoluteChange": "+24 meters",
+          "baseline": "300 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Walking Distance (Treadmill)",
+          "percentageChange": 8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bleeding (non-major)",
+          "percentage": 5
+        },
+        {
+          "name": "Major bleeding (e.g., GI hemorrhage)",
+          "percentage": 1
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Days for antiplatelet effect, long-term for CV event reduction",
+      "treatmentDuration": "Lifetime",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1I9Jw4pPLPj5KgxU7OLrQjxN45uLyt9g9cT-K6IoSAqK9GmQ746vUtfO3GpkC7ZMP0_xXYFZuFLbOs5kQbGkdkOUqMYtNSXXkNFbb5TkplwuojnIl2KBwJyV1hpD-JONiPMashkoS6vAGjmJANG3TqPKpPyhCz9wzkw4TpIMXptAFRw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsGFKzuXqE7cniRWhGa1q019Xq3yo7Uy9_H6mE4eMC2EcitFe5_0h_9SqS3aKsmZHAhiDlqUxKqMIIm-gJGh5SfJikKV5EIw4hVSLhl7P9nuBMELEuPTvSHZs6MGg-oPbbzQk65dhtZXYW-6MelDAhz23mxbp6ZpbkP4Jc718eCrynDEhvQyMZLCYxymcPSiCrhfkMEi8XchfIMvV4k7afSFKH23HoqXanlNum2uoec9prn71n5Qy4NiSFAhzty-3HYQytapzBnaW6zIoTiXnCZhSucHzFqv5AST-CDvp-2d0xQcf9Zbp1lR4w379qhMRVdK-u8qbyGx8rNUkc8EsoTI2-omJiRS8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe02pNSi5NBToK8BEZ5CVgeq9sU_maWefhienUtvB582UWm0Xq4nE7QIm72SgPB8YZVcAoqnYBTWfnVSyXyRjkZtaY9WRNn1y72pZ296Q7RPYR3AnEcXlhgv_hiofWa1un_Pg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdVokhDydCwGtv1HHGC-cty2qMYe0xzqiA-RwpE9dgFCyJrsBtGRWxvVNV-pDUXQ9olBRlkdTyyEnicZARYoKtOFV_KOudcugFMHxNutvnKJeobZUhb1hARzm_Ade_O4RWLTBMpCVTkSaiSg=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJ_BtACevSX4g5nDRTM3vK9HVWyoCy4rA7owX4dDIbTP_84CmRgIptECj18oLNCqfSro_HmYfaJSZ-Alh19dGEIDLtKdVjiP__gqSoFm7HQsdene5LJ6ps2GQcgDjcOL7r"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6fKsZ1t4L17A2mtJiFzPi4Y1T3DYUTS-aYDjRAFvMOmpxNncDCEq8-m_lYt2gTl1HmB0l-c-HoQm0P-sK4IlpPkcmqtFUrN2wDJNBDdkErVysHLtzMnz3LwWK3KX-PaZ-P30="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCZ9bow9vGeDSmleSA186xcNZrPaO68_5oHhyome4X3unZyphd55eAYMFzyaAP4zyhmv6lmKxSd4hLFHpXVWTMcymixoTgEbH-xkTniA7n29wuiP8jy3hgR5m2uUDiwpeR2ITcXWt1DvfinSczOWx0wOr3o_kK1F69GXMehCa_9qihFGI0MLWO8eZjXk08aBWVMj8x8bBF-txFdPfcW15co7C3YD2GnPvc9SnOii7bKX4D2KSOhMHoa9OoF2sGxEtF3HqBHOuHm1J2RYuWkz9UvEdhKLUAGN4PFVCFflCuCsfQ90MOBael9_g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG93lDEY9GEzJvBYTNkoV_-vMoJBvfB42Rv2CuaLOkc6btuAZ_J5iI0UKhuCqDlYr8i51MZbu8gtREzQ1Pr6ki1F7_H20g3RreVLcPbqqUy4gDKe6rUl9JV8s4110C7raqirJM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Aspirin trials for Lower extremity peripheral arterial disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Lower%20extremity%20peripheral%20arterial%20disease&intr=Aspirin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "75-325mg daily (typically 81mg or 100mg)",
+      "effectiveness": 50,
+      "evidenceQuality": "High",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 570
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 108,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Aspirin",
+      "nnh": 200,
+      "nnt": 50,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.1% annual event rate reduction",
+          "baseline": "5.0% annual event rate (cardiovascular death, nonfatal MI, nonfatal stroke)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Major Adverse Cardiovascular Events (MACE)",
+          "percentageChange": -22
+        },
+        {
+          "absoluteChange": "-0.6% annual event rate reduction",
+          "baseline": "3.0% annual event rate (acute limb ischemia, major amputation, revascularization for critical limb ischemia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Major Adverse Limb Events (MALE)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.36% annual event rate reduction",
+          "baseline": "2.0% annual event rate",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-fatal Myocardial Infarction",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-0.15% annual event rate reduction",
+          "baseline": "1.5% annual event rate",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-fatal Ischemic Stroke",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.2% annual mortality rate reduction",
+          "baseline": "4.0% annual mortality rate",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "All-cause Mortality",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "+0.5% annual incidence increase",
+          "baseline": "1.0% annual incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Incidence of Major Bleeding Events",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal bleeding",
+          "percentage": 3
+        },
+        {
+          "name": "Dyspepsia",
+          "percentage": 8
+        },
+        {
+          "name": "Hemorrhagic stroke (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Immediate for antiplatelet effect, long-term for CV event reduction",
+      "treatmentDuration": "Lifetime",
+      "trials": 13
+    }
+  ]
+}

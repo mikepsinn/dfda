@@ -1,0 +1,957 @@
+{
+  "conditionName": "Hemophilia",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:37:01.115Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE31h8Vq0titiK1ogm6cGEwAM6hAvMSCOJ2pm_erETOAW9UU-rfMhIcm1orscgGAn1OGUFWuO7U8ETS9kp7ccluXTXB_0nPmEwcUOrsFP-6V_oAbv6QAa1yre3QhEsWSMZdWjBMG3Q7"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv8tQwKspCtDyQB9vahnCqm-Vw-kbv9X5r8A2RIittGlS0i9kQEBfgdG3NxDpiB16jXnJ4kc-KZtkA0igdChd8tPLPWsOvX_n1rKJwMkokaZCsZcSb04F4U6Df_Ti1B0YkYHOG0JlAUUUzLlIXQceBLIRgJrWcJa8NnKvsVhAe53PUG9syIW-C4NsWw2XgZ7olOJmMr3-1kJR2EkmgRP0GXY0sm57V0OrF6icy9y-fY0OC8EebJV-6-LmJ5xva5zw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiR0etWzQR1hVR5SRLOEtDRR9LeUQfpxpKjPz2tHodqTpWZCjfsCVQhiSK5ulug7R2bOGTQ6t5OBfGw-NwDv309n9BUJv4BhgK5PE32Oma5xVyoSIIkmzqkBCpISxcE5Ut-6U="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1hkksGGdZkZIv9HnRmxdrSwVloYF5ZNbLlWLbM3Q-jbCRWddrTS1h1Q83LMQy_tFSlnxvYDDX87BP5W0Ct-xUIAkZvhZ0oHy3pezQSwHCVWkqOw6qrFfD5y5HpjnPHZpveWBkmfTBZTtbkiZfQjyocoLPaYr7SMfxxz_e7ezpJjbX00Db85FIQHEr9vzYninK4cLBy3WKM_G6yZQvm5TGZPB39aVz5ZPjpi8tux85vf0="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYkzkcTz_5ocD4yq72L4T5DmF0Gpol-rEoezAQJb679V_EOXQ64q3FQ8sxIxfomT8DxZ-he94P76VVvWjIaVj2Gl7GghO0cT2aih5iD5Wd9NSSmYLqwuXBlwKDzMe3fIG1ForxufjcOolZVG-7FWQpCg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjrULU6j6uSR9gHJ93mCn1nQviC4BansWlGVArfyb35znqzMwlg6lhtCAQXI00oOswcDsavHPNMXZhIkx4IfhjTC0ixYCIQBxcpuJ5MbLR62z40N63i2bEhUy-euaZwfqefF5sMZK2-iT8x2Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKcY2i2GDP-BhwsCWts9YZVVDOVon65ifp7ugS9rh6J1kcVyurOteYH-bpNENbKAKVy1ztC8c-RbFJ9xBMHL0Gvsd2N2fnOA3AX9nY3HJgByu2arWz848Mk5FDGYK5tSkWRnU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNcpRLghrdRKLAWM7Fvb2mCoJ20Kjzi7A_62S9Vpi6eFzFsgtGfxVkIVh217rnPmp-yI_iGMFTukRDJcigYQ7tDGgVTrpmuBC6d5E4B3iyjHmmMR2OmaPDaEtTMMhbVOoVftERnHtKInLHm1FehxXIUjyErlQXyFUWrkFmeidk0rvgnqY7vbZV-mdhvZz-N23k"
+        },
+        {
+          "title": "hemlibra.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8ffGIFCHL7F5eIVZBnNPd3WeKPK1Xqq6OQpEbtJIWBQe0AigbyjTi0XKcSnhSMm5YzT5-k29ZBM4qQbuVJKkdZJ_1If-4jgjyhzTGUjxJFESlEraJ-PLg3iITd4ug-rAl1tXzVXOrd6MQH7LkH1Dvw6ZUsQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Emicizumab trials for Hemophilia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemophilia&intr=Emicizumab"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "3 mg/kg weekly for 4 weeks, then 1.5 mg/kg weekly (or 3 mg/kg every 2 weeks, or 6 mg/kg every 4 weeks) subcutaneous",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 505000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 515306.12,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Bypass agents (e.g., aPCC or rFVIIa)",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Emicizumab",
+      "nnh": 500,
+      "nnt": 1.5,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.75 bleeds/year",
+          "baseline": "15.0 bleeds/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Bleeding Rate (ABR) - All treated bleeds",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-7.2 bleeds/year",
+          "baseline": "8.0 bleeds/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Joint Bleeding Rate (AJBR) - Treated joint bleeds",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-4.75 bleeds/year",
+          "baseline": "5.0 bleeds/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Spontaneous Bleeding Rate (ASBR) - Treated spontaneous bleeds",
+          "percentageChange": -95
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 98,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-45 doses/year",
+          "baseline": "50 doses/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bypassing Agent Consumption for breakthrough bleeds",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "Haemo-QoL-A score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (HRQoL)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "HJHS score: 20/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemophilia Joint Health Score (HJHS)",
+          "percentageChange": -10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Arthralgia",
+          "percentage": 12
+        },
+        {
+          "name": "Thrombotic microangiopathy/Thromboembolism (with aPCC)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 48
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwYZS9aCx15Jc9co1F3ezd-oIRhe9MtO4ryarm5Uw_KaifjLeLduXtfDwbjwbfRdLgwQ4P7Zn-E0Aywi35I8B8gIM5n37RCfn69bD2W6h-qK-e8xRMC4MDK5k4pXa6wCNCY3ohztvEshykH0TahVbG5My1DV6lIzsT_JHo8z4fUmcK4rjlfcMzT7Ei8OKC7A1VX43sch0HDydE2Vsw_2-zgjUhJgI="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZ0UE_twCh51n5RJ8NPp-jj0CYZ06ZM0xF0aEXBEjGYrVBoAIWY6wRiMr7UhxDh44rWgY6s4ejJKNvRcz7492a-TZlGuw19CwCptvSLjEo2jCp-VKefBhMaRA_G2bFri4HMT_2nGI0nAYMjxa2SU3s5uCy0JFsDJ7fDr2KqQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoD3k2rvRwse3E60oxt9W1Unga9vQAR8g5Yx4R2AzayPxMKi2yLjIu0dDC492SljWIXvXDE6aPQ4lvegWTHpknwXwBHXHCGB9TSEMksOYdYKbe1UPOrcfBVDKRnYQQ9LZPX5Q6PW-fCL5cQw=="
+        },
+        {
+          "title": "drugbank.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFk8XQ-SNhA_rlypc9Iwwpd6e_ka4JRyQd6r4JDG5eBQlG-gJRe6sHkdJa3WEZLUJ_LENuxJbvF9LZv2L-SzPtz2j0WN7UtcctanC4QFfmkKirfRvfcaFirlLrB4eoyQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe34qcnfM1XnFayrJaXXxl4dqbf38LYWbLL15iXC8q9eRgvkREnJa-udpwfttx71y4Gm--f9DuMaD3k0zeApeJDvZ_Ndf1yxU1-Pdobf6bdiHNxKN0Kxy8cxQYofSEx9-rxVzw9AWPDhjCgDrsWX8XBVUMRjgmyXstnam969T-GA0Hw6TUdgj8w-0tYQbTs8Dz2ejZFnP_gsDFqPgyAeGk1RBeeZufaTDQMv7-kHpGY-SQsOOJmX1n1ljndsVL5tYYLxIgOKFqjZ4IkC8NGHbW8uGRQDRCfMo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhvkUWr4Um3CljehbzU7UUxgKdMrILP1FE9dP-U4mK52qgi5lRDpNPNZ0dKiZwdWEClGtrfgho0YMVWkazqRCwqM18i2D_Secsm5jbnX9gH2hX3rmZW_TiAWpVUXlyTjjYnYU="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjhry4u-kHOCivRxy-mQ04nqGz5m6rKqZWq42eZGGK_yFL1IU1ObmgzIp0EcCnKeeELxMHPGq6ZDENPcokgYoAuK3zBtpM-staVppCgSmNosGjOv-9SNHKb9ENLKYY9bWOKvsNq9sVHKskVPzI_qfQb3LgvAIcbSQIE7nZ"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb79ZSsSO0eYM37TFB4_K-_kLVZypAZWsXpayfE21UoJZ8hUlgM0bzYlBGapboanPUc8_tayylQYeAXu4xxO0grrkRre4tVvueFFwwcd-eoL0SEbu4NPldI0pOuymBJs-M2Xu1UcEb6JShE6D2voNhyUve_S5TxRUjME8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKvmCSHrNJSkK1xHqxG5zoVmgKxbJzzuU2B0b_VpOvtcvPJ1tEpdHIE0rxcp6XOnSpKwMxhjzONdDg5MQr2ED45n63o5q1C7Q7ZcSlfFC4u-9abujKDyAxU7_WbgW2Qg_ZqbzV8SpqenFh7mfhMCIjo8w0RgvXaP9-ZNrdrIyBZfP714Xewx2st8qVxWS3p-r152W5PPUCA3ZjrdBiDsXujRNaaq32Vva4cNaGnbLWN2-W_JkAVWtkvHrz_ayG74Vwp-cNmXBT6X21tNp5uMclLlpHQJO18HG6a4kFWTca_GwqXoYM4X4y626xzBeW_cvqG7eRt9_QA7fMAwl5CYo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9jdUc4Vn0ux5Cj_46h5c6rRAP30keTZ87J_V6Qo1vavPEwYRLLRH5ZQ_YXiyDptVH8kaTUdyNdcWUegsKrgH9uU9iYkrHcnFlmsjkEqmzf7ExfqHVQ75eZRAppg9MCOpMkdY="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkx7l5X1iTE4kzBuiejjtDCzPfYVtmBh7Zq80kyBgy6MKbrxgAv1bqprofVcFBCA5XbkvlbeV22jN8DHI7CQTAwDwpHCrRbEEowyRT84fPvlgko9oExBxnWuCL6drk78zuKn17zhH2cz7Pwnh_1zpLaOL0t_qCAHYGGNlmcWw5AFlCGaEszhklkXr_yMGHK9kI_JthKR3L5ylJu6ZWSKSBYEDe"
+        },
+        {
+          "title": "ClinicalTrials.gov: Recombinant Factor IX trials for Hemophilia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemophilia&intr=Recombinant%20Factor%20IX"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Prophylaxis: 25-100 IU/kg 1-2 times per week; On-demand: 10-60 IU/kg",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 310000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 326315.79,
+        "icer": 85000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "On-demand Factor IX",
+          "costDifference": 120000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Recombinant Factor IX",
+      "nnh": 50,
+      "nnt": 2,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "name": "Annualized Bleeding Rate (ABR)"
+        },
+        {
+          "name": "Annualized Bleeding Rate (ABR) Overall"
+        },
+        {
+          "name": "Number of Participants Who Discontinued the Use of Nonacog Gamma (Genetical Recombination)"
+        },
+        {
+          "name": "Number of Participants Who Developed a Factor IX (FIX) Inhibitor"
+        },
+        {
+          "name": "Annual Bleed Rate (ABR): Number of Times of Bleeding During the Study"
+        },
+        {
+          "name": "Number of Doses to Treat A Bleed of Participants on An On-Demand Regimen"
+        },
+        {
+          "absoluteChange": "-1.0 Participants",
+          "baseline": "1 Participants",
+          "dataSource": "trial",
+          "name": "Hemostatic Effectiveness of Rixubis for Participants on An On-Demand Regimen Based on a 4-Point Ordinal Scale (Excellent, Moderate, Good, Poor)",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "name": "Concentration (Cmax)"
+        },
+        {
+          "name": "Area Under the Curve (0-inf)"
+        },
+        {
+          "name": "Mean Residence Time (MRT)"
+        },
+        {
+          "name": "Terminal Half-Life (t 1/2)"
+        },
+        {
+          "name": "Clearance (CL)"
+        },
+        {
+          "name": "Volume of Distribution at Steady-State (Vdss)"
+        },
+        {
+          "name": "Incremental Recovery (IR)"
+        },
+        {
+          "name": "Subject Rating of APVO101 Efficacy - Evaluated at the Bleeding Episode Level (Treatment Phase)"
+        },
+        {
+          "name": "Subject Rating of APVO101 Efficacy - Evaluated at the Bleeding Episode Level (Overall)"
+        },
+        {
+          "name": "Investigator Rating of APVO101 Prophylaxis Efficacy (Treatment Phase)"
+        },
+        {
+          "name": "Investigator Rating of APVO101 Prophylaxis Efficacy (Overall)"
+        },
+        {
+          "name": "Investigator Rating of APVO101 Efficacy for Control and Management of Bleeding Episodes (Treatment Phase)"
+        },
+        {
+          "name": "Investigator Rating of APVO101 Efficacy for Control and Management of Bleeding Episodes (Overall)"
+        },
+        {
+          "name": "Number of Participants Who Experienced Adverse Events of Shock or Anaphylaxis"
+        },
+        {
+          "name": "Number of Participants Who Experienced Adverse Events of Thromboembolism"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Inhibitor development",
+          "percentage": 3
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.5
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 61
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtqlF9qwT1huxe1IApxTukZdSiET_eAVPU87HqA0EnJj-c6Y6ej8zBOyY7Vds_xiOLxbFwq-B4oOaJWeNh-INuMHIJuWFj2tTRQiexvJh7Qgc3PUP9qOXW9iUe8Exq4O-pluLb1atJVtgHCESHBWNdP7P5Y-keyK9qI7P_cw=="
+        },
+        {
+          "title": "zlmsg.ch",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJlz9HtU_AwCpWYeJwZY6JdviCELdSESrp6sZHrajZNPtYASTTggNZKrUdmcohbkJvoyK-OvM4uoe7GgcnS62qqNGgwZFvMqNChcchHskTM_P5Aw93X3_7Vbqa8dNM76PvMiIktGz_Wxo67ENE15w9KY3MxjUJOljDtUYugnVQDMVYP3C4ptyPThELU6K4N9WqEj_ZzmYMmQ9OgPKJPQj6Dm8d-j0clGrq3Hn_j4j-25iRGSPxsINoCJozLKcnYUQn9EgD8t2vKIdjUUMr9pjNDdjk7YXg1QIwwacRIVdjmveBJyfni8rAmdr0rDzuXyVC-0zjYrgYIT2TlPWuhvJUk7dw9XuqQg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzcMQ2iODICB0_8wBOVUPRrmXYlswJooDlp8dSyIVAOBKdm9XegLsascv625pCIIN0CKcwoARY6nEGYkODmgVLDfGzJsE8egxF_7GeVgmGp8IAO_U5MjPNvKAebupxqHxLDXCg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8KLhaHTKD0GiLicV79HEyTN5l-Lb51vgZQhWx6LQb7USAHD9Om0ozWSXp3E89fDfogepdr6KlzFPowX1_vf-arrDvOTGj7wn7fCam0RRDIWVjdB9TQArQYlPAlt0KVBm5xGrURfLPeJSYB7yUoTFdS1IZKsb7e-FL3e8CTfzyH-ZliJf5rw9Oh50ZeQYdWAsjpZJLTdQCFAk8CZo2adt8X4208KhSiiwPXCJVYG-ld0JKqs0pM-Mgp3A3G_3fYiYK4oftefj-TPNfofwRZYm7TWaxuoUrlMYJT6FYDYAAa5V3TRDcgW3f7fKVZcWHsyfVmgEwBhkv_L_fvA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGsr2_ZzAqq-KrmvP41989l-0PYaROThpNdKrNpLYkJaqSOKohDrv_bikrspqkSLI5B5lHZGvH15sH-b9OlJIlXrmbKgtxYH-xcKcF5xt2zmtsn-i52s87D8vEReJHeqlUXkdU0aBporJqaYQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo_lAMLz4dm_mabAWbpexLVR8iWXUkYoBIe94lr3EyZP6gaZvymGnMWswFGlTRycR0MduJOvvaBfo_dpc_UflrmvVcv-vvzUqlnV-Wj4Ha0Yg_4wS9vhpYIMhuCkleMjBDKUxR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDSM0CcbjVIiJ77AQhMp8rs3_4Um0ot_2ZVGloD8chnlrvV5h_LP4o0nNB0aVxm4JHsMaaL3sglENtZBc16L6B_NqCfb0RGQgjY5QBq2mL_3wm0v_OzywpsoT88ZHCO54rogETNsUYlVGiRIBv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEOZxqiB_TyPka9BzSep1mmL-n9PhWFVy-CyBwH3LxAnM3F_J-B37cktFVU4REQO8giz5PdvZyQJdn9ic0FAjBZGVtmW8bS1Z3rT-yp86uuUcC9MRznhZZ2LgnGl4HPJ_EXyDS"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH95zzjOp7sSMkRFmVoZD2cfZPVJBzll9ZLDAnQM78mmC23gINChbYmt2GqyKuXhMBPe50RkPE5bMKFilyC-hssrZJEDPjjgGptcF87y1Gr-bGddbw0ldMNbeu8RgkFUxyhyfEXWl2Ro8tnjrevAHyk6NHO3ZenPbMUCoG7R8rbo4eEgajbt_zPPHdDjmZIeBGgw4luVi7v85BcS7139dKKAOxJ_lZBcjRiAaaY7ncU"
+        },
+        {
+          "title": "ClinicalTrials.gov: Recombinant Factor VIII trials for Hemophilia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemophilia&intr=Recombinant%20Factor%20VIII"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Prophylaxis: 20-50 IU/kg 2-3 times per week; On-demand: 10-50 IU/kg",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 365000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 384210.53,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": {
+          "comparatorName": "On-demand Factor VIII",
+          "costDifference": 150000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Recombinant Factor VIII",
+      "nnh": 4,
+      "nnt": 2,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-21.25 episodes/year",
+          "baseline": "25 episodes/year (without prophylaxis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Bleeding Rate (ABR)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-16.2 episodes/year",
+          "baseline": "18 episodes/year (without prophylaxis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Joint Bleeding Rate (AJBR)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+4.5% of normal activity (e.g., achieving 5% trough)",
+          "baseline": "0.5% of normal activity (for severe hemophilia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Factor VIII Trough Activity Level",
+          "percentageChange": 900
+        },
+        {
+          "absoluteChange": "-5.25 points",
+          "baseline": "35 (on a 0-124 scale, higher score indicates worse joint health)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemophilia Joint Health Score (HJHS)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "40 points (on a 0-100 scale, higher score indicates better quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-10.5 days/year",
+          "baseline": "15 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Days of Work/School Missed due to Bleeding",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "4/10 (on a 0-10 scale, higher score indicates more pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Pain Score (Visual Analog Scale)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Inhibitor development",
+          "percentage": 25
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.5
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 351
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExljzR0J_Bu5BYUmLaylJNB8lg-e89Q88C8eWVXrs_BgukGwJd-doqYykvTJOrhL4L8N1R891hk7PuiC6KgrkQHcyHgLpcUtzXs3mbsbcCWntOaSZp0W2r7SgjIAqcDqEKbHbwoAQ9xnAiJYfU8ukSLFTxupEAQzIIDxZQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBOW6U5FOpvuswgzic8xooizcJIsaLljiFM-WpNPF8scmYHyO4d5tTloD2gql9-1reEguJcKIGVvLp-ZVp9YqHS_N-okiNfSh2G77pA_hC8ptsB65fNC2ihxbfv-SSGHdqSQe5Yi55AnUqvQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgdW2IqHC-GDgJxhF3-Vzv-iRmSeuolP93T2CtscSdTqf7QEATfW2TDt2LQW2guklQhUT-eIDSshYWPY0WlSwin5zbrKEnbPZOoFPvnV_5dTwY40FLqAc-qez1jyViAh6Zjqcz0ovHXiG62w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHiFl717a-Y61WBOKSo2UIun1RI1nvgmUn4pY3k2_ki6NBjy8vUCl0lhSxYTmSK1ZsKPgks0yFdowqPJxlOig1YZ_arB-L3oR8lG4i8JXmAubbPmxi99qicDOAeuDykl3AnchuByWEh7uKS4UKWe9I3GWO_ZFpPN7RDUIuf85oWBoMxgteMfQ8ZSkwbgnXGTnU6HQp3JQY01oiLS6DFIJ3D6P4qTlmqJI1qj2MtEkszQmwOzEQjKdEPxV8RTtgxnSkOM8mIjir"
+        },
+        {
+          "title": "haemophilia.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5UOM73M18rAhOSe1dSapwh034jtjz7AwwNVq-XjepzGKGKsJ4FF1zho9Zy8bOxALhOf2Ri4Td4Uw7PEGhT-bhB1uoefN85DldrImZz1tsGiQLSRz_n1dQmzslZO9ijO5Le4M3I95ryRCeklhHvTOlcvb5YqaU8Y2_jeU2L9_IftYWBzpjoFpOOoxtNj8wUohAHl2iwOc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2sl3vfYR2tOcSZxyiySni7pDbz_TBeyeFTTYdKz3CZwu99L_dM4dF452QVCiZ0GZAGj2qA2CX4DfEuwhNc58GTH22YJk2_hUcWeXy_PBcoJbP7Hq6y01qWMIjstUBHpaz0opqSiH1SHrcNA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5xD6p2eH2XqtMnlaQOz_wkaQO4DxuVTLylZZ-6kJ7iWRXheaYLhkMESW31uSklk-L-7yCfI4QyXAGg68tk2BDsYHdtYs0R5p1Nvyq48tWJcpcjsSukRz-Oot91oX4AeC_4D3wLr50GnxXRX272OU8EKg5iBqbKmeBm7jLmecuXihoIR2mtQQpCMwbHxhSLcW8e9F_6lkYnjUMh3fjWqECS8Dt2rxdJ7MrJUc7sEWxeRKkXFuoPWSsCt5CPXjq5luA0iVHWtlHKDh8xiRRMXDkOqec9NVYQEhB-oUzIgzB3Wq1VOcVm9pgyMkegz6FiZk27gO1LWD79Q3xKSc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Extended Half-Life (EHL) Recombinant Factor IX trials for Hemophilia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemophilia&intr=Extended%20Half-Life%20(EHL)%20Recombinant%20Factor%20IX"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Prophylaxis: 50-100 IU/kg once weekly or every 10-14 days; On-demand: 10-60 IU/kg",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 380000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 390000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 410526.32,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": {
+          "comparatorName": "Standard Half-Life Recombinant Factor IX",
+          "costDifference": 80000,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Extended Half-Life (EHL) Recombinant Factor IX",
+      "nnh": 70,
+      "nnt": 2,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Inhibitor development",
+          "percentage": 2
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.5
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxmb6Rx2WMJeC2zpwZY8gbwa7zvTwSztEBCfa3zYlxwt8cdhg-UpcK3uvvQisqxy7MofV0wx1vBqSPxOqWEK_N6TmEzOBoMMwMrCM86UBBzN7zH1Davqzh13GsiM0WlpFnborV0ZX7nRoMhrzg"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBD3cmqeHj1RtTo5E3BdIKCur_HXdhC6APSo-vNoJpm9pZxyXI08gNeSGBxYoagRsEhNCllH2ji2g0ZWJ9c-itcxlQbMMI7pIjFmnGhdd7Cu6uou9jPuxY5zNtJ3hoqGXQGrX3"
+        },
+        {
+          "title": "htct.com.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi8d7NEEHhSHRU4AQlNnIjmwV_IduQBQ2-wh0hbOmUMQYzKhkecpi-zGpuQqRoZPjZPQteBamXN5jSvSZmKlxL-RifJJ7yPuq3B0h0C1u7xQ_dfUcYrO8fe-UQGbXKMPcQeu9UNvXzKRnqtupVOzLbIST3kVqbwTPKYGsEgpGV-Z3zkYAqkqtXULtkf5HpABsMDemXl_X-jOPs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxcfOYZ-kvE293ygzVCXhTYNTJbU2rnaHQ6bMJKpyRxFAeQizOJ-ZQQSxi4YrxTe4JyRrwerz6YmN2_n0GGF3BDHN6Nj8M6ZsxrlolKuVL5R3o6KkSB7tfNQkeFOLc0i2BKBh4k1izg2K4ysNdPQc40ID-_XWVSzVnmn9kEHXYGjyzeGwjeBrjY8GjlYSKrde1S7CVMGv265dtr61DlzjmNocPKub8JBfJrLKRZHvzFY13X0uX9kB02g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwKZW8OCLqWSJF10NW8gJJ4CleAyMEqm8ip9zgchlBvGmMQdhDE7l2fOxrnbWkhC869jfh8GOavQRltMNDUWB3rcHc0L1aPKFrcAqNoHqm5wr20cG8m2uSdHiG_DMG2nlzFIhLSoHidOsaGDI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdkm0ZzZSqUNP_yxTzWhEUKNY7y4XuRAIuZM79kluBx6h3EjS5ltbEU4eprr-9dRoj88EknAWiD1EP36_NpFJvBGYkkdsoplcqq1PuUW6vJTjZPibb3sSBhyJ4TIVq_o-ra0cE5L4-n5SpOQvS12Or3vZmuFYgfO-8fXjHi4igVMMLiLmZzyuw3Fw3bfLe6Mrh9UPuPvfeA7LSGPSpmFLLrYelPd4QQXkf7YzTY2UlljaJv8qRaDXUwUFrJr2denmwkJJnwmQBCQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-x03k4gd08xtqm4ibPB7tfcJncxXdfuO7X4m72zOGoBztU3kP2bQkTPXm5-WtxHA9IpsCNYlfnkDnWMmlRCx_Y2v0yW8uEp3ioiAGC57oiXTJbBgWBcU14VAGDVX4J9jk1RuYmhNpPAkCNPQXcRDBPgqeahScZtIdiUPa-Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyy8MzV_SN_bbRShDZoaxb7M1U8AVt-REz6lCAMjrQvF6YmvX6e3pjJQnYtgdD4fNbEBVf84HsttGSE8rEYlMnp1v9UKuEoXXVPI3iPhUyn0FWgaOTHuqLvKLlX6ZmXgN8eXuh"
+        },
+        {
+          "title": "haemosafety.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKZLUxmBAzoJ1WpQFGB8gihdKOCZaicnbgOGad1g-QhkCTzUqXyaU6k8sNFbOihp8TObNYWatpFzDlA2fkr_kq01EBj3M8nJRRnkO4IKjv-BJCF5aW32QtVuosOTr8vbzZbmDTz1xMZStF56t4LUJMipuQ4Pgl7Hk21YzctISm46rEjG_4Ln8QFck-oBSrI3hL7RlfEhAO1x_GSD4x1NnPEAo9CbDOi0avY8rK5obe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj4xV88g-ShAMAu72xySFSr3LYARuaYTWD-tMiRMb_sY2btX7zjgwK09oguw0FDC3myFCIcY2corHNkFdIznX3ZJp7gfVHPkd7gEblDounECID1ePDJbgNs4VkY5QR89293OdF"
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGM87yzTWxD9RcQx_QYW6MWT43vaw4uTXKPHCWua34Qu4DNyd7jEI3b8-SZ6_FbW-kXBcM5yoSMK8__spowSX8mS5cpuFTUiuJ8N4iX2qp0xbeRyZYExg1p1e1UbPrlL_3jG96RnKiDItQRclk2UXaIq2SrkooD8ALP-I0LGGI4SHJ9elrBQkgqdHHdX3MAGHb7ZDrMDsxNOI999EGiBlGwoXf_l2byGtN7qmFonZg1ijozyEN7Vo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Extended Half-Life (EHL) Recombinant Factor VIII trials for Hemophilia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemophilia&intr=Extended%20Half-Life%20(EHL)%20Recombinant%20Factor%20VIII"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Prophylaxis: 25-65 IU/kg 2 times per week or every 3-5 days; On-demand: 10-50 IU/kg",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 413000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 434736.84,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": {
+          "comparatorName": "Standard Half-Life Recombinant Factor VIII",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Extended Half-Life (EHL) Recombinant Factor VIII",
+      "nnh": 8,
+      "nnt": 2,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.6 bleeds/year",
+          "baseline": "2.5 bleeds/year (on standard FVIII prophylaxis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Bleeding Rate (ABR)",
+          "percentageChange": -64
+        },
+        {
+          "absoluteChange": "+4.0 IU/dL",
+          "baseline": "1.0 IU/dL (just before next standard FVIII infusion)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Factor VIII Trough Activity",
+          "percentageChange": 400
+        },
+        {
+          "absoluteChange": "-1.0 joint bleeds/year",
+          "baseline": "1.5 joint bleeds/year (on standard FVIII prophylaxis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Joint Bleeding Rate (AJBR)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-36 infusions/year",
+          "baseline": "104 infusions/year (2x weekly standard FVIII prophylaxis)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FVIII Infusion Frequency",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "50 points (Haem-A-QoL scale, higher score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (Haem-A-QoL Total Score)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+1.0 points",
+          "baseline": "4 points (on a 0-10 scale, where 10 is highest activity)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Activity Level (Self-Reported)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "3.5 (on a 0-10 Numerical Rating Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (NRS)",
+          "percentageChange": -28.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Inhibitor development",
+          "percentage": 10
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.5
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7QSnrcj7z2w3lJ4wI_APWllyz3uU4SBbDg5532Wg_ZlGsYWoQEP8WizPdkoc7SmOEyCZ8WBVw6muh5ai4KATuNtWiYa-6rk_1d3J11Y0SW772CFbS2bKACBtmJDbSDATBZdy42pE_C00v5ct5"
+        },
+        {
+          "title": "hemophilianewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZg4RJTOLOlK5Oa5BlheDsoGcDdsEdUCHU2pmcCKdKgOy5ZCshuQllBrR1-QHMK-tskzae6VkmvJ9XfNNsTbqBAhsCef1q9UeYlNHD3SxY4pOJQmJtGTV-25KQKoo4D6mCRA0GYJbRIRWCsPTJV7_t"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk7nomklXcr9nSNVsstYD02GmcwQPPVaqnaJ-EI5aVHhlWjLDc1DU36V_b-cu8Mz7m5JGvxg4C8eDdcHkgRmxjpPL8m0SSMF47rGRWD0zls5W4JmBg-6JgFvfW2RAv-1D5KQLhDL8uS4m6uzY="
+        },
+        {
+          "title": "wfh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_olrKOiMwDL05C_EZkPEOx_bKuqjBg8XjRwumDYSs4k6htn5FhNhzdH629iXRtP4GSaoAPsh8tLpjxysYhCz7CFH6tw8C9mmthN8QxJhRgt8UPi4sr8JcQXgYBEvZ1h70E7XajJI3jfwm5YL3GA=="
+        },
+        {
+          "title": "haematologica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3IQzHhonMbradYne_EESyii_g7gZ8tNFu-RZdiMnNgDSoZDqabSn7Lrjig51cGDtYeizxZrxpBnvDUKOX4f5OU6kIbxT3wsDdVVbnAn7dRw3OS1n46MUGkBjQTMRAermfKEEoX98="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy28udh9a4Gi-nYjzLKOntH61PYVZ8a10f-5pi9UpSj7AdGXrlI1ENFmWwDKnUnVaT0zvcMEx_oWz4esmVHFcNhqzq2rEHBVuOX-ymogOYI9fyS9KnCTAt1G222bF5LoLo3DEWTHlRKlJlAuO_cP31BXfTeOaSqd4p4QtAeFLBvhFPEvinNDAhGSJ3LbYYb0UdiiP2oz94oS_EfwhCRSm97OmTr_Vo3g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_xKe1Y-8K76kJkaUmomvstnVIzP3HSM4ybnEEccDSH0uK3xrkMoZSoMh0jSA14m9VC4JILsce1EMWLCXSGq5GoVDsPM_hmikSiwrmlWSt3iMAHunM1ffHaWvABWO8NiigI_7QvPtWJleHJ8M0wKwvEE2kMExu4mal486REl3rJlKW9skr-Rs2xyPYpqDitSn3m9nVSEhPwUWn_YHHdrs7EFzV7HBhvj7-Msw8cO3j22SphhYzuCjUT5yvIJX7PBAwsHGRf3MaLCIacjqFYBnTk50c0lKFBhBpGOHSBQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Desmopressin (DDAVP) trials for Hemophilia",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hemophilia&intr=Desmopressin%20(DDAVP)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "0.3 mcg/kg IV or SC, or 150-300 mcg nasally; Max 2-3 doses in 24 hours",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 200,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2666.67,
+        "icer": 10000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 500,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 1500,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 1350,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Recombinant Factor VIII (for mild HA)",
+          "costDifference": -300000,
+          "dominates": true,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Desmopressin (DDAVP)",
+      "nnh": 15,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+30% of normal (+0.30 IU/mL)",
+          "baseline": "15% of normal (0.15 IU/mL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Factor VIII (FVIII) Activity",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "-3 episodes/year",
+          "baseline": "5 episodes/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Bleeding Rate (ABR)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-50% (reduction in proportion of events, from 70% to 20%)",
+          "baseline": "70% of events requiring FVIII concentrate",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Procedures/Minor Bleeds Requiring Exogenous FVIII Concentrate",
+          "percentageChange": -71.4
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 points (from 50 to 57.5)",
+          "baseline": "50/100 (lower score indicating worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemophilia-specific Quality of Life (QoL) Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-0.4 admissions/year",
+          "baseline": "0.5 admissions/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalizations Due to Bleeding",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-3.5 days/year",
+          "baseline": "5 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Work/School Absenteeism Due to Bleeding",
+          "percentageChange": -70
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Facial flushing",
+          "percentage": 35
+        },
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Hyponatremia",
+          "percentage": 8
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "immediate to 1 hour",
+      "treatmentDuration": "acute treatment",
+      "trials": 8
+    }
+  ]
+}

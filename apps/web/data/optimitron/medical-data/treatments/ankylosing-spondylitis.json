@@ -1,0 +1,1015 @@
+{
+  "conditionName": "Ankylosing Spondylitis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:25:22.966Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9ucq_lFAHSX1MhZf9auFJwqyR4nWa8lXW3J-ofgEahSUfdnvcGE0cHMS12PcR-9c0QQHwHARJ2PQ4HF52DwGPQIvCubEA6154IksTG4C1yfALyIELAQ9LsmEIFIGeVDC3kNmt1AUeN63rQ9kPkdyO3brzNOWZO1I7WZ119Cz03dZ3FDxKeVh72GLRlvbcaFeALw-8Bw=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS7UB55wtGu0z3ea5QfGN73QN6vHf0UlL2tia3PH8y3DkZbcAhGu648-aJNNI9HP8AtwH1wpiyUPYSgHkajtcEzvuHyf8d2GMk6eglGEkIDe9msOvHJwPT9zDnqJ-54aNUktfeQwQ="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCAyrnTU7JflCrtxywB7qFdAbS9IOZJokbeGSX43DdElz8Qy3pY0k_IjVRF9KcqCU9IuN0fyGR4livypPAbfuzwaYo_cuG1lTS7FwxUxjZbIAA9Jml7Rx8HPSuwRzaoMyE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzKl49KCBNPRuYMBuvQTZcRbW4IyQorS0gk5dC9HSIbvWUnMaoFEhBK0_wcvJN4r6LI28HS3mA-Qk6jCCnB179Rx_GPJKxh-LGmNMXlfMM_3OZZsTApzlM2-39-p8WHc7InPGQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFL5Gw3GFPRdbtNtmC3k1XAnqriQdhXs40HTIcvdLfp1RZ4Gj_7Wd9aCwmSgIbdEGeiKtsAS6dWDtVYbBp9ZrAQ9mB6XCUEbtUcbqrGHBmp7LAweqiY1SHyxRoaf_mtfTmKslm4"
+        },
+        {
+          "title": "eurekaselect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8tm5BGVaKVzvEHBGRj4KCo63jwwClddgVhkQ4F_yLBVhATpRbT91gqQM4annKWy8NXnRJXJ-eb_8I7W1qsy_cV6tqXqCFx8gqPdKfnPb3mzANMC3iWpbM2BKsbHDDTjbZsEKBs8E="
+        },
+        {
+          "title": "scidb.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj20GMNsdJoc8EViYnvGitza0qoFOVHkYZvbF8zpBMv2uo8c4jfzri5waFPlvJ9_vc1j04EBPEcTXZPaqNSoq3PZQykweie-lJZSD5L68qNTUQ_zEQ1k4vNbeIENz8fL-v58piJ1BmLAwqRfRNyC8wttEcvwvuNs7I2VthB4KvOU96bRNFknc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK9OfwFR9K83SGoY7udZMN2_IUgjDq493NH60T59iJ4D5gQUofAvdoL0ef4E2E0vIgwDhhog1_39PqrtUp9I_nF--MEQcoTKDMLWv21ifxTIMK1aREyqo542t18hHgsQRLwqCbzaDP4m1OwE3x"
+        },
+        {
+          "title": "ClinicalTrials.gov: Upadacitinib trials for Ankylosing Spondylitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ankylosing%20Spondylitis&intr=Upadacitinib"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "15mg or 30mg orally once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 51000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 134210,
+        "costPerResponder": 68000,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.3,
+        "vsComparator": {
+          "comparatorName": "Adalimumab",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Upadacitinib",
+      "nnh": 100,
+      "nnt": 3,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASDAI Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "3.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ASDAS-CRP Score",
+          "percentageChange": -39.5
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "7.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Back Pain (NRS)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 38,
+      "responseRate": 75,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "5.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASFI Score",
+          "percentageChange": -45.5
+        },
+        {
+          "absoluteChange": "+8.0 points",
+          "baseline": "35 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 22.9
+        },
+        {
+          "absoluteChange": "-60 minutes",
+          "baseline": "120 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Stiffness Duration",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 20
+        },
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Increased CPK",
+          "percentage": 5
+        },
+        {
+          "name": "Acne",
+          "percentage": 5
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 3
+        },
+        {
+          "name": "Major adverse cardiovascular events (MACE)",
+          "percentage": 1
+        },
+        {
+          "name": "Venous thromboembolism (VTE)",
+          "percentage": 1
+        },
+        {
+          "name": "Malignancies",
+          "percentage": 0.5
+        },
+        {
+          "name": "Gastrointestinal perforation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQn-R8C83vK2z5qKmr8WACub74GFjTU-ZwBI5nPMQ6O73Y0QgvcBCETHaUxTE3c20C1pvEauuiGT5q18A5YE3B1e8M9FIWIkHEis27vyrDgc_0sgJDOipvYEaLNHwtG_uFh34="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9KBPgHkBzAxNU3Oluk4gUuYxI2LU3VhIh7azdc72X_WCosMD2DU0Clmeg0jWhJHqtnraRCRm1kRLKFPNEU0RcSRdK63QBdAIGU_tc_5VnuBWmLoiiEwkOxIT4aJkf0ZJCF0DM2q2kxg_v8O5hMmixBDkLeUco6MDOdreGIkQpt0x3YKNu6rAdxYNdY_ZA7J32kPdupH-yWK-APG6qAS5cqfdyeAk_KqcRBMsrrnpuObkAAy8fQArtb5hFBfN3a4EbbrpQ8VzzpDA31xiAkmG0i_2UhYKlv8JwpIV7_Mv4qH0RC12NJvWJonocU9hSmmD-kQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPMLeIXTP8YtV1wD4IUHIPbOfglN-ujeco4G4qrq8jB3gAUPAb1azYFKAdBGSGht_j0KvpWzWItmyB9ew5EhhwbZ9KcibMglj4o_S7qyNB6hgf8AiNdNalK9Gom5m52iofS5E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9Xc_seuQkJaCpscaL4AFHOZV5UV7enA8Hj0m5HrbmsqNCcUxI9IYcmLxZXmvbbQQHTGvzFBGsVBiscPhFQIVqWEK1S6QaJOKOatbS81RonZQnSn-P2EvELiLo3sx01py-u_2KXV9OirlKjg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH513jgCO__gSGm1LiDnNVbJ_SBpPHCKKu72GmMFotFyz9teX9Q59hrG3KHjPcS9vHrPuBnCU-QzALi-NUF6bFhA2XRdcTcPjpwJ1VMqPokYS6XraP6mGk0GAJcBYbXZVDMoKLDE-yHg2pw9g=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG71uuUXcO6wuWRz4v7UeIJ_xL06liX396f5SuOJ7vbAfcg5_HHIfeeGi2Gn_20DA1VpyBpE_hdW-Cn1h5mG4FIKMye1CLCODrrARZgFWw9Pd1tLMg8oyxds6gOZc5E1fY0hvzUs6UpfvysH3kRxjQ2XS9p"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWPDnl4V48DRsEW9MhUc4mTU5ACryzPraPqzysWwNNZ7qvA3xXt1L7DRx8PaE5P2JNTCLKE_HvlrQQZqM4f3U0S2Le5jgR29YU0zYMlIQImXIPUdfzQqqeefuPHwunV9v66sZI9-UieoXz1KGoT7R6jLRftg9RsaX717qcck36xjpDF_P6vAGm9y5k_djb4I0CPSv5MKaC6WrzzoqQN_VQh3TuKk-6RzzXOTiQqsEXPK9B7_BB70MKoRcW4Pgrp8EImtlYtfsR9XWENSudW4qppI_gffdMkfJ8DdZadm8U3aBX1RNezpibyHNYGLSzaya--rs3w4k5llKrvMPhsXFg"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_0v3Q25Z-OOxEbEa0NVdxfhld_mXG3i05D5pRg0i6Na-9rJnPHOowYMmedTwHbZSlsiYB8W7HHTPylotDAo0Tn8bFLkX9F_w22gj4Ku1CmRF0fKC2ugg8M6gatOGAQuSB1kOLug=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFOtGKRXi6AGuiKkFf1TeTZnEDHK8jCySZO8pzkBO6dt5e-wahCQXBrqP-9N2ETbqNKm5Xt4N0ah5YvoaOH1kWVXecWc4syW1bVEmg--JJCWCSBhzxqbAQHKFmHAoTs0HtkGp0HQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ixekizumab trials for Ankylosing Spondylitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ankylosing%20Spondylitis&intr=Ixekizumab"
+        }
+      ],
+      "confidenceScore": 91,
+      "dosageRange": "160mg subcutaneous (2x80mg) at week 0, then 80mg every 4 weeks",
+      "effectiveness": 69,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 41000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 128125,
+        "costPerResponder": 56944,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Adalimumab",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Ixekizumab",
+      "nnh": 100,
+      "nnt": 4,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.6 points",
+          "baseline": "6.2/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASDAI Score",
+          "percentageChange": -41.9
+        },
+        {
+          "absoluteChange": "-1.7 points",
+          "baseline": "3.8/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ASDAS-CRP Score",
+          "percentageChange": -44.7
+        },
+        {
+          "absoluteChange": "-13 mg/L",
+          "baseline": "22 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -59.1
+        }
+      ],
+      "remissionRate": 32,
+      "responseRate": 72,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.3 points",
+          "baseline": "5.7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASFI Score",
+          "percentageChange": -40.4
+        },
+        {
+          "absoluteChange": "+6.5 points",
+          "baseline": "37/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 PCS Score",
+          "percentageChange": 17.6
+        },
+        {
+          "absoluteChange": "-70 minutes",
+          "baseline": "140 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Stiffness Duration",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 12
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 10
+        },
+        {
+          "name": "Conjunctivitis",
+          "percentage": 3
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-pb730eL-lE7WA_358-p2mWkfT4UaenwpgPTG-OoBEUCO14gUa9ecLxyaHA5qpLpH0X3_UJhsK4uHi77q7Oar46dc-ucMm4ta9VkUk4tfoaBWB2i-frymUTxtTObyp5MeUDYhQRifua2gqhY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELFAARkwW9URj-OqP9nEkYnY-awl6Pp_c_0EQAKLefsJbWsYW_4OuT1enLZq12UMEDrMtLGq2pwkVUznq-Oi79t7pWo3Fvcgg1rGwu6ydMM_XgG7uxc8qGoGN8RQ_NJU6zCDLyY5LSbNN4QNwW6QC_WocqicT3AeiiwGQKT81sks0I1PW25Wwo8_yxNpF_pwYClIO-_bZTYL4hVf0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8r5-XwBrnCAJKVnbojFnWiE2iOvUpOMr6sJ5MSzpTB-2rfMt6_6lzP3TsrQVjXO8GpWKAIKAujzptIhzl4QoTcfHpX77lITurgksMLm8bCZEDAFt10VKYdwXh6BWZ8nEkQsKWue5RbcjhIXg="
+        },
+        {
+          "title": "sci-hub.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQyCPOTyB3cJqCexNsRLqA9eMhkezv1h3AEWCv304IGAkBheACYuHWlHM6mYJf5DhCe1UBvFj007zvFduu0HIOF5llp1HoI2llWvnfTmTp9jVnyNvMHLXfTRVVBJylZEwfdwXT8hwhzh_tCH7c1p8fGgSS33XFfNL4ixYriWywWga-_va0Eg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOsOqvidGDs1L6LcGX59fiSIDna_3LD3fYgXIpOY6Fyz9Vf_t4tOizyh5Sbtput7nlbAbViz_HScGGHHyM8XpKMS62Vjiz4XNbuHXogQr_glKpUjjX6r4vSo8Jod2NvIqDybIqR0E6awQSEt0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErQ727dV-LdwZRZbsk8f1tCl8Zpfe5AMJ4gzTWzaCxvRVzsr_LxRoOJG7dgDS5_GkOFoU0NvuOc2Yvf_vyo9XzM-ibA7b6bjoSTeVtMFmPKZ6z1fv5P45TVzVXyzolXUVoDqBB"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-CwryirjmbPDt97IdC5BzdrciCxqyFNNs8uAaVo_z3cBNmTeY9oaq1z5GsfnlOykXjvEgsuuMth_XNI1GZiJxQZS6fmjGIq2zmgpjKmynZ6OnMa6Ily7BVXUb61nsveEpzKAL5cz8dhVhNedUTRROTk8QvmerSo1u3q9C6iKlDEJrBchEM4PZEONxrBq7ocE4CG9CM9h6rxzAoPeS5LgqJEBZoU8XykHhYE9aivI7IvvcELQvKiXIga_7n-OMAvBJvE7k3TQse0_s1t5rs_us2w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY8Ik_Tw3QGz_mo51ix7aUGWMsvWuPd5TDtEj05J_-7wj5sscqujW65xFBK-6-L2lAnOjAVimpZrTGfFeQGNqKocdc-zFe5jNbanE2KyrUNj1PensXlL8v22SYnrW-JhTNOueL-5NNXpfvAVeT0vvuSGOSVhriFM7MJMb7qWUsPAMpcH2zM5G2bwf2TY2SMoUgz9FfXZSY_uQr8NMlJ_f4Yz82dZ-iBLYycLbe9TX11kDQMwebFO9HiKHc_C8qETzxuD5v"
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4WgYzDklf8_zDG2Kwp3oUmVLxWIg0ixzVsdhHfwI5lwGVMul4JzmCxk3vwTWYIjPuRwr8TqpC-VvNiViAKluQrK-tPpKm_0evvkLn7L9a1_wDMnG6AoFgGh_mQEiqWo_AYKGmhZz0-7lHJGcJ6pxMvxEjpZEH4AjbFl6tRDlzRDtC3dBGZSE3fFSiviG-tg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Secukinumab trials for Ankylosing Spondylitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ankylosing%20Spondylitis&intr=Secukinumab"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "150mg or 300mg subcutaneous at week 0, 1, 2, 3, then every 4 weeks",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 38000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 39000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 130000,
+        "costPerResponder": 55714,
+        "icer": 140000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.1,
+        "vsComparator": {
+          "comparatorName": "Adalimumab",
+          "costDifference": 8000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Secukinumab",
+      "nnh": 100,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "6.0/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASDAI (Bath Ankylosing Spondylitis Disease Activity Index)",
+          "percentageChange": -41.67
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "3.8",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ASDAS-CRP (Ankylosing Spondylitis Disease Activity Score - C-Reactive Protein)",
+          "percentageChange": -47.37
+        },
+        {
+          "absoluteChange": "-9 mg/L",
+          "baseline": "15 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-30 mm",
+          "baseline": "65 mm (0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Back Pain (VAS)",
+          "percentageChange": -46.15
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "5.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASFI (Bath Ankylosing Spondylitis Functional Index)",
+          "percentageChange": -32.73
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "11/18",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ASQoL (Ankylosing Spondylitis Quality of Life)",
+          "percentageChange": -36.36
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "38/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 15.79
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 18
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 23
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSc_KaJUJWm51UuJK_eGxmYZYCAdGUUzjgg5wpojrokogsCpcsmuK6LzEtumgVADlWgmtsgeGEgTrgqAAAKYu_9VnLy33aYa7fapbBXyuzmDXgJIcVkvVf1ljt8kMeLAriV1zP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEnWc9i1-BXjx7bSZvfSpj6QzyuEAqxMBmFzjdij1FNUHYgh8mIy-PlGznVMsuAahChm6ull8LQMOpRmgn56NbmuMHey2tkVzrPJO3PwxemO0qRI1-W1Rdp0zjrxnY8hE8aSOB"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNcn3R0e1RVIpSos0xaS7B5ztIfxD2Jsp0AfAAXkjJkKU9x0KraQeVkeWwsPxhwUXIvD3IxBFdenWn0Ow0Ne9EaCkkhMsjc5S1Eey-BSDdOYvS-Sz0uXeymBWXjZVQo21fOVqufJn0x3fEcONQl4gxdJn8I1M4uu3M2NA1CTvaU07UaN6OKGZq7fvH6Nbx2g8TgyVJX6-AMPUX1F1CLlF0QiUaOs5XKL1rB5xF84mlZ1NC7sKX2hLRq2dgqinH"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-zTr3o8UzA4Y6FlYrBfAsAMikqzb9bX42i6wp0OnHl5Ux-7KvaTSctrbmU5tDeSnoxfEkPIl1-jtZzfNa_MqYpTWnbJlSRaWn_fzh8hHyKl_-A7fz0m7dpuRh2R06hxk8pS9wgOIgBodb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcuiASk69cwIsU_TFJsSrZaZ9dfOzDKEPOKOI4WlcXxJO2TLpn48luUp_KGkdhnhyqUY_M_1EbyP6H9BR4RasFc_V8x_REChxqAVJy9tib7odcpTcVTKK1Uprnc-OC8PpAv012acB_MP0FIdI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHllB8Jr9KZnwmAvshwIQRoyUk87xBhcsoEZHtDX32kDi6lxhdds-snz4DW6cLKaHeFIO4r_a2QxppXaPa-MnZItA6TkbjC-kEWpYmANp8rvdDeqyK6i5grkqIQoCFlnxwuJQ0hIfc3lEZeUQY="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdCcQqRklIn2Dn_-k1392uIYd0k1c1iMl0mtfm2Ts3ruDdLI0UMWs_hMsD9vs-n1MePVrEkAs-Ji99r545UR2mcr9STr7rcaFBy-VQk_MfrXvF633RniEG90aHWrNsu1bGyfkMaOgjMS1atQ=="
+        },
+        {
+          "title": "hopkinsarthritis.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8NMrK8PzNzOnafSsjZ1DslSZrm8H3sC7NfTQjb-lYJVfYTAWja380uvlk8jm28xmRePhZDOqSYtAYmCXEmuszNjyHbpXaDx6wjfnNO7kARNxQMVgJ2mAqSf-jnqHptBCAxJH-Ilo3Dz_lGjGpK6SkW0ZT4joPZN0wSUjGZqdmfV6rze_gijlrwWrK0WR_lROE9kNGFVQvUrYPyBmpQ130Sf8DO-cahpB30DLTdTAhcsWjqjbSI7FFww4ZGuc="
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOPV1HrrqfVev2cK0oUAUHRBTohDdzsmQbIls3NugeZXSwpoBMPCPwh7CH2lpaJTNIQl5skGkT6aVuFhOTRmjaLAlzIS1s_juNd36JiCL-ZHCJcRFAd0wpCx0FbgOYjDegwGg_Pc5XP2cKlYLLGWBDVjhNP0MbIBTY_lSjuqrDfPBBn2hJ13GxP6qQoiD7sJD2W0IjIKW9cuZ0-e-JFc9pIvwv8B7Jzm5VWIr9C08="
+        },
+        {
+          "title": "ClinicalTrials.gov: Adalimumab trials for Ankylosing Spondylitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ankylosing%20Spondylitis&intr=Adalimumab"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "40mg every other week subcutaneous",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 31000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 124000,
+        "costPerResponder": 47692,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "NSAIDs (optimized)",
+          "costDifference": 30600,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Adalimumab",
+      "nnh": 75,
+      "nnt": 4,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "5.5 (0-10 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASDAI Score",
+          "percentageChange": -45.5
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "3.8 (active disease score, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ASDAS-CRP Score",
+          "percentageChange": -47.4
+        },
+        {
+          "absoluteChange": "-14 mg/L",
+          "baseline": "20 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7.5 points",
+          "baseline": "38.0 (0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 19.7
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "5.0 (0-10 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASFI Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-80 minutes",
+          "baseline": "150 minutes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Stiffness Duration",
+          "percentageChange": -53.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 25
+        },
+        {
+          "name": "Sinusitis",
+          "percentage": 10
+        },
+        {
+          "name": "Urinary tract infection",
+          "percentage": 5
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 3
+        },
+        {
+          "name": "Reactivation of latent TB/Hepatitis B",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 68
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkfNor8moEcQOxM59MwnHMQ0lFWiAy8zY1av31jCcJ6mST4-PiWT_m4sK2Mxeu33OGbVFnD3exZxXC2lGvfgnpWJvViQjj-lU7lW4R69fm5bAPNyccR4iqqKWOPRGYXwaprgf47SuiPg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGunStvW0kXYxiXTEwVj5SjU-iwtXoEO4_ICDauaRMoOgeGYTHwAtGIkG_FvDsCdoJRQ2qjl5e9rNQQtFW4qAkbMU5DMmZrh1Ih4S6wUPsssnyJCzstIaVPwod163O_RGBY6hnbieacCVVkvcw="
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPib1OC9qpX2drQhomiyC2DTsUBTdgaUg-XdcnFpDvNBZRhZUH7qfZSuSAMBajuxxjKQf73oxe1taYsQGQdGKSjG9_6F9jjZdZ3vK9LYGo9zoN2k9T8UKntWWaOokjAluglVqKkXGfDxwrHL77kBo3QBTQaUt5GA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5ifF9FO21HLtmeTbVuUNXdLzRKiALAFPSYSCg4ieyO6z6-IR8OqyDKh_cMbBqK5Rlr7BbnOe8kDWJqyBYvjVkkpGZpmrWiUShPVJy48ZcjVzGL44eznWxZMHwbumB5K5OQKVN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsDTxOD0YrMUS8XbnQVYOBDD_JjkUrGlVD158PIUWS1UvSh9hqFsoTjIlzKTuo0CsB9Ys_JkQSMkcmBFAmP1tUu9LqC87lX-CQbBsoMZ5FkKJbLtDnNMMStP1AwF_Ig1bCHH4o"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY7-0ViAzrwziULUkM9r4xK3s1v_f-n-i-Is2HrzJcjvOmt2Y7hLeLIKs57ru70EuTCKB_8RmZjtLnqrmAhKvrRCmAZ_rQGxB-gdnRSdGTF-OZ0aaz8yudXj2u4mRnWQhkVKsQOhILz7_LcPo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_Fet21G91cfT_F5o55a6jp5qIvWu2iWZ1WtMm8BTtG1hWRZ-Uobbxw8G7LtackodoH8YQUyts2PG0rpIjs5jwz6532x26vvqxtMWI2lb9JgepQmerxmUjpLDKEesOEDEHYOkF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC6qXpz6j9nV_H5eLYgu721ZaeM7_RRjLutjiQ3m1Di9p3v1jYKA3b67ST06ylCB_SMrIYTxvf1cdgsNibLgRcODJZVhRjb6Of00jAn0oDVcswBZhtVIgcLpKVlrFG2XxBnUcljKCb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvd3qbFEZMkKcWzj9jPSp0SUyCMpZYs2o4KsBxRmhVNiAdA2mP4SIK7-T0noVLHHetce_anRXIcnErTLb_0uyt2h368r6Sssrag4hPu7qyCJrt-2rQGt-VvaTUpLoWoibFw6km9zBX"
+        },
+        {
+          "title": "ClinicalTrials.gov: Etanercept trials for Ankylosing Spondylitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ankylosing%20Spondylitis&intr=Etanercept"
+        }
+      ],
+      "confidenceScore": 96,
+      "dosageRange": "50mg subcutaneous once weekly or 25mg twice weekly",
+      "effectiveness": 63,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 31000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 110714,
+        "costPerResponder": 45588,
+        "icer": 110000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "NSAIDs (optimized)",
+          "costDifference": 30600,
+          "dominates": false,
+          "qalysGainedDifference": 0.7
+        }
+      },
+      "name": "Etanercept",
+      "nnh": 75,
+      "nnt": 4,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.5 units",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASDAI (Bath Ankylosing Spondylitis Disease Activity Index)",
+          "percentageChange": -54
+        },
+        {
+          "absoluteChange": "-14 mg/L",
+          "baseline": "20 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-35 mm",
+          "baseline": "75 mm (0-100 mm scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Assessment of Pain (VAS)",
+          "percentageChange": -47
+        }
+      ],
+      "remissionRate": 28,
+      "responseRate": 68,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 units",
+          "baseline": "5.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASFI (Bath Ankylosing Spondylitis Functional Index)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "11/18",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ASQoL (Ankylosing Spondylitis Quality of Life)",
+          "percentageChange": -41
+        },
+        {
+          "absoluteChange": "-1.2 units",
+          "baseline": "4.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "BASMI (Bath Ankylosing Spondylitis Metrology Index)",
+          "percentageChange": -27
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 18
+        },
+        {
+          "name": "Upper respiratory tract infections",
+          "percentage": 22
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Serious infections",
+          "percentage": 2.5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 53
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnj7vjHY5WEIxecmfy8NPajLi8Q6ahK2O6m5Gyl-Qubkt4mY1tpE-p8sqiIp3HPtPwBr3-LmRPwzgWYE7vWGFUKeqjFmiSxhvZYq7A4EnfU5egDys5-B1BKK8Smjs4YvyJQfhJmZiM5RBalWc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdCUJHpt2FTzT3QYcB7AK1QhBAOHhmRigYdkTzPVtJYlifp1zTgbqRruTIjuaec9ROwSFm4rOCF7WMitK2TvURm7QR4HPYKR401L-QoT8wzE43dHwBPfsvck0TnCZVlQMs6Dr-Gt6LX5UrueI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPDpA41xzRDj-6RwxFZEK5Ccgu5QmBd6IDT6cCJL3-BPxBe5Rgq8ojudQKbVD8v4zCGDRHsJGedHJYP-6DUYsxRr1mAxJkB5p3DVqftwQdhlRbqez7YNf-8DCAO80Bm43b8lnK"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdyv74ksGD1QsaRzxm1wkTqP4qQ9AgmF9fLhxx6_5XhZSpccDJEk6I100sgK7MjgFLiyri5tnFWiPuzvlU-LFCpRcQu03foOuU0fPTOuI436tyGXGT3b3D7kjDBBAW2Kyn"
+        },
+        {
+          "title": "reumatologiaclinica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB7caTdDhhNMHuwSTRbZJdyZZl03G-oOOqmsFcSdKOD4RBQh-7rVGROmLHMYxOVxaza8vHrje1CYPmHEqv9yGsMMA1A-7wSs5nkZAnAiSmtlelevK5ZmveJDEw4OIoeOtkm-kBJ9wUQViIfVHGHgeo59VLYcccOhWkJ47L7eqCnJMCk_1UFCKjYua88MEkmDeRlR6XAqHh53Q8hRKYMIom"
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFTayt0wQkEvZTa16NL25FpHocf_KRowra-FymvsHyXMDdf50UZAF1GKnwZz1dTvESSEebzM-ZFLAHZa8ZHNgd2oNGYPkF_nq-G51yXCh8b9FV1UW8BDlH7r0eDgSd_kjgaVppsZKGV80WMOF3x5Z8-bZAok2UYg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEol6JRJDR1swT8AyQKnZUXYQPeOIjjIpuu3kZ324Z560l-jPL-ndKLaBvfnnB4EHEWSxb8-kfh7DMlGk-fEnK5rWXArRKsVXVZStF0Ca7w3toczZh2o3znMPQrJ0ObN8QEVxVh"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELXRMj48vEEwh-4JlspjAO8nDr8QOAHGLyb39MmizTXMJnRHw2uB-SizRtSUzQbHJI54k3aEnNFPSB52Tm930DFssQ52RMS59qaTysesNh6Hkx_m9qN6W61fyXvOQfLV3hqHEwWJnDhjelw4JgCWmrP8kYk7o84f8QrLOtfU4c3hCr0h3768KPeIRlnSjN7gQG7iNgq4GbEl_A0bwSz2tt3xRc8qHnSvCxB2x__5EunQdLfpJOvCb8fI1yZ-JfoZTuZAZ-qRROYjTsjRyOt55g6fRR1kZrmpVyc0mi706X1D9jz__IAEkPPmd1TkzRCS6FNgdRjQqkWHRX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQiHbYmSD3yBMTk8MSdbefdyUiIc7C4OgT8xpkF-NDdo1daurX14WWZmlKUP_vD_yrec0we26Aw47gck1HduCaF_Wgz59idb40ZpgT1P3YU3yxpwHY2-sc5iTq-R6ZEbo6wowm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyqr39dqmWqsqDcRbG2CEJdyS1XFfoZvSXq-9XUJjwgN3NfPtdtv9V7n2OquEd65GNnXqP40ptRf_TYwg8HUAX1G2aS5GMFkz3HrxN1b6Xdb110I1xgxJ9hmnZER5YpYbmfOA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbHqj5NuPyVelHcURWG9ejmi0tXlC3Lm5Q-IHoW3c-gEQocCPIGuM1BfoRVxjHUAB-ej4VL-3UOrtvTa3M7Mc_i3oUHq3NluRWwihbZ4a9FM-RDrcI3gutrQuuIImr2-3B7JvMtDRByw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg7fffGc-64IfF6q7Kpj9d9llS_d5lMd0qcehE62TfmxSqzVZ_wPLB4gblp559Fwg3RgXpBVwJPiGWlqCSnJCQUvysJZe6WNLvxFU1v4OV4uP5ZjQHmkK1RZzpMiRxB0k9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQERN5sjM12uPR9h5eguZKTKJULseS5kqfWVbT7rbl71oZ5LUZNMpXG7TFlQOPkKq1u6SBAFgz9WDVkiwWJAH7FG-1NSIEzqL2OSjL9E4jayGfAfYSJGFwCC8NvCViAGaZ04Gkm1SQCnFAPKCnqtYIuVJ5AjOq0o7kC4OsW9wgzOGpWVA2DAViZ3Ms2wEj9655cyICXRwWjvG_VOaKpo-vL-RxDsGzzRW9d2zj3wCCF1AsJH3XjlJGLVg5oDaOsYiX1f1W2uQJtlafGxxPmnFnM5zMyTHYOcV1I6llixRpVdgpl_ECQpZheHpIqv_Gw-L1fylfY2pXT202gA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWAhMKBTq33Cre3uchH5NNzsFUkxfyhdEdwyejr3BhfdIT5_oY9WVQBrvn-43bSuHozcIlrtkEXOTq63K5AToMT3k9DV93RrVNOPUGxuy0BYBpNboslUjgxaSL3OTf2EgV2WCVMkxpr0WoePGcSjzxwpZxBC0iciCC7F7n1FRj82jFudCzugSGfDedYpj2rGFlCSp5a1-iqewTrJJiNzs="
+        },
+        {
+          "title": "ClinicalTrials.gov: NSAIDs (e.g., Diclofenac, Naproxen) trials for Ankylosing Spondylitis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Ankylosing%20Spondylitis&intr=NSAIDs%20(e.g.%2C%20Diclofenac%2C%20Naproxen)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Naproxen 250-500mg BID; Diclofenac 50mg BID/TID or 75mg XR daily/BID",
+      "effectiveness": 45,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 100,
+          "sideEffectManagement": 100,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4000,
+        "costPerResponder": 533,
+        "icer": 1000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 200,
+          "annualTimeCost": 70,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 460,
+          "otcAvailable": true,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 200,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "NSAIDs (e.g., Diclofenac, Naproxen)",
+      "nnh": 150,
+      "nnt": 3,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 10,
+      "responseRate": 75,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "Gastrointestinal upset",
+          "percentage": 15
+        },
+        {
+          "name": "Fluid retention",
+          "percentage": 5
+        },
+        {
+          "name": "Increased blood pressure",
+          "percentage": 5
+        },
+        {
+          "name": "Gastric ulcers/bleeding",
+          "percentage": 3
+        },
+        {
+          "name": "Renal impairment",
+          "percentage": 1
+        },
+        {
+          "name": "Cardiovascular events",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate to 1 week",
+      "treatmentDuration": "Lifetime (intermittent or continuous)",
+      "trials": 1000
+    }
+  ]
+}

@@ -1,0 +1,566 @@
+{
+  "conditionName": "Paratyphoid fever",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:47:31.607Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgXqt1W4MjYy28IeeatIERxzfZ583phmrOkrkJFg91Y5a1aN8L2YWUi6o1IlhmwmidXYl4SNrxcDvjmclVj2ROdwoYivFRGf2R4TZyNGZFkCCEcRb8t--5e3sg7YqgSDijMuki6LIHoFABC9ZQRjoC-vCQLi-cGAzuB4Lhn7DVDZ0wYhzuOHuwaEaG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpHLL3yaMrxDikZ0to0GNf-mapM62Uo80JMMxUuzfDrojVCl7qwcJRQpzsBgzcIVQ4pP1sadTqjnUG1vWZjhw5PDwmmxWwqZyu3UNVjdSN9Y2PfQWczntI7s9lKPRjHax2AAw1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSjYYgKmhHxfva7ddrF-Mba067uLOQU3iQGmV2XGHM0YTUgY6Bd2wwPCfBfy_eeUNAvuzUNBge9aLHP-EdI6KPljpWczjizy65pXpEkQkm8lVCjgLmtO3QGTbMmaUjL-G3Z9EIQnekUEm7lg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvJ5iZgm4kWHwKEvEv1U3n-MD4uXpToE60z4Sh10Y6KqgNqLoOPaZnm75nuaoRoTLlk5dsYTnjbJof-GcP3vG-3Wak-JejUjaTYfH5dTODOicFCN-X3W0edL9v7NjBKkDPXcE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_VkZ1FCV7KU426jWvlI-idpjOe9-X6oZoHpdKEQbKqeYnI4mQOcviW-nncWGaQtDv0iSJ6udbS6XNa1uIjIGCIJ5qWR4b_D_Vg9LUDbr8qabo1n_aF9WPIJyAe3tHpyOPaC7hKrZT6iyDTvEw4FxAE6dar9fuFlNrh-F_M5nG-p_OIJNYimmi6Y67R9lkvT9Kcm9mm4IjLzLt4ql-yGgz4c5mU1q8BD-YBVNLtVA-O_1t60SItschDSErc6_419NI2qCIPpQ6Go5IO6jjyXXyJAFG5inVUecm8w=="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNz0b-87PJ9h4cdNiCs3saMI_JIMbbS0y2niwnH5n9wacVwhK-L8fLbqFY76hDhcsLBp8YWmWxYvohsdMW_gY5cW1tr3NrCW5TFMLt170VhCDhEtEkG_Kj1JElXWI9bvZMXhVJXqYxKuIgm3X0pLA9U2DPz5a7a957inZpBRJm8KecsZp0jqOfQWtQp9U2o7_MEZMbaDJISaTTzWlLhhG5vMlB"
+        },
+        {
+          "title": "lstmed.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLESmHSgMr6z44GIzKflIskr9bbnSTIgeMzeMGc-VweYSgXVRvBsxXSFd1F2_ctxFFbI6z00bdgDx5sFOzXdJN7-xCEH_w0v_1hGHRWhYB0lav6rBdcg3q29oXBxPS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Paratyphoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paratyphoid%20fever&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "1-2 g intravenously or intramuscularly once daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 400,
+          "sideEffectManagement": 10,
+          "totalAnnual": 910
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 989.13,
+        "costPerResponder": 957.89,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 25,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 200,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Ceftriaxone",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 92,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 4
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        },
+        {
+          "name": "Injection site pain",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "12-24 hours",
+      "treatmentDuration": "10-14 days",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8l0CRWnDKDOFgcAQ8zQ8jYVvt49u_UBGwkTV0VoCVAWRB38leeJg3q1Mb20FdOQ-vSv0OqOS9JrC_v42r_VqQ75mtHMG4dgBOSk5O7YvXYMczUytSrmzeNNuuy_ubu_h4NaZnXex_eA6s39-ttg=="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuKF4PMxIUHARePkgcGrvcBZi96GPq3RkHa__JxmKuBEVFrNGlME-iktQjxMZ0OdKUYmYYKbVfHIijvH2pQgwdZ143m7Mg5uoKuYjgtanVivdA22jxP_aRfhn2z94gY2NLK5ETBlXWt-4VHkZMW4Pg7DFMnpbKe0w7Kl6G1y7ZoEeLd09b0w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8JimhGCYNg6whdQEhRxILlbXYQ5lJTgr9wUxHNZHIO-bng344712nWTnqT9YKC5VlJZXyojq3KNy41bSG2lXeBdQNFDQgOvkkTFeY9N7eNA1ikPXAG7CDtmuQdMRmwCQOgEVPBO_ZQJZJg_MaPq_dESgKENNIf1xVaa0uNwL-avuJxjnUCETMT3I5sq0dUvKcfbgure4qOJQXCjzb7IVqVlN5brge9Wa6cpkdMikYdq8t1wgxQzaFaAWOHTP11Xom8p1x"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX38RrXXt6PVaJPVJ8rj61gOSRTyhDd-z6X0siaTI_QmolRiTvuwleKQoMEUX9rGVOBU6thTNXzxzxtFh7_B2uwBsgcZo_YiolaMwDyI_o-iL48NNr5qcI76EbaBAWo_awWcBUiZ7AabIe-5wWQp-YuIRuq1lidb0h-OoFjDEO4fzmTPeFjCezMPEvvXcas6M8lFtScwzB21i1ktWMhFFfV2ihSyldkp8rqjBLWsiLj5JB4218DbEe_8eU1NxmwAxVFsUk82rvmHljQ8f8d84="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpclvmhlnDM8y-kM1OHwMHRPef7Prlw0NShue8nT9adCdnV3HD0imLO-8eLlwyo8sD6Gge59WUwdSqtUwdfE2-l9BQ5eRvXDZZzNjP-Hl231kw8b3NRnOxTLnDyC7sKMcCeA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAIFBKsR7Vg5-6tNj8dnpE0c3W6jTKSYU4nQcgEk4bIrasegijPoPXNQdx8mxed2XgXKowU6QPZf4fUmyouJ1-y1z8mPJQQsUBuaxYqnsvspCo9BE7hiNOx694w5Vuo88AkLhahsB1JG876g8lVN-K6apLTA37l577MVY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTz49-JZuSJ99cyWnwlPlcZWYEzAKunOYxCaGh66snCPcXEzU6s1yuh22_ypgH4oHDDj-5ZwH1XcfWYzw51a9fuY8PMVrMJpfqeOQCB8uafAaWh736CxOZnpXSTylK3cxXvg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgiOG4EzPli6VvfzftbHU4gYsxpV7NhcJzTOdbz1NzJohtkqNa9P8Ev_RyXpQmzDZdhFqo4DQZWl-Q78Z69egtWWQ-A29w2m64uT4iutRc9iVRkO9bOSzlAlidXpE6p5bygqlgw2mzCguLrEy9r3G33LZrUK9hEu6T9bmh6YnMAdXD0yjAQnQoLqCZyVGpeI4ZndGfuqES_MAqYrvOJsmVrjhIHA7L-P2WkIg85n9uXaFgyHxUmI0wpI41bGdx4g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqCJkF75YBZMho2zt-vfsCIsjGM4YVun_Aoyu6NayR-pvyyttzFgXcVG0pIfGKZZUakOH3Fk501ShuwMgh3kvD25OE5tz15hsZocurCnnFbXT1y8kK6bYITIPTa4z8bjkJ2cXxa9a9CkhsuAa6ecx0eYNJr_Y-X1_ZsaNdEryGkY_KxuWtqJVbYpGxVX6_7aRJlqi3LOP2Cr7xvDVXPhI42YJ0ovdgyCBbo_OQLwY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Chloramphenicol trials for Paratyphoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paratyphoid%20fever&intr=Chloramphenicol"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "50 mg/kg/day in 4 divided doses",
+      "effectiveness": 90,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 500,
+          "sideEffectManagement": 10,
+          "totalAnnual": 540
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 600,
+        "costPerResponder": 586.96,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Chloramphenicol",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 92,
+      "safetyScore": 30,
+      "sideEffects": [
+        {
+          "name": "Bone marrow suppression",
+          "percentage": 0.004
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 6
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "10-14 days",
+      "trials": 20
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVDKGOBQNEluti7HvIBwmX3BP592XBh6gdf83dPqQd02VaX2qRrICoNUlySxJ9SFuXdfphZFIzJgF9pZyd5wLlLrF-1CNv1yMP36SrIk8CegqUwLDg_hfgozcG4eH0VDhxG6B_"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9hamKdZHnUrNN3JZFdeBM8lEnvRK5IaNXCv9u7ujyVh2Nkjy2cagM6tQhxexb6GH9tOlCcoV3b6SvRTG9vQZ48Kev93M0CGklYhlTlWdE_v6dxg6iwSRt3lA5p0B4CcyUpGaWY2Cia_fawcan6togrVG7gnublyeRXG5vP9hw7FdFsCoX-j23lSx-mElwzKc0KoL-VlEkGwM9Nffgt0vks2zeaL8Dt7uuWvE4hDRPL2CjmleOx5t3lBWb4yGhTqL86MdK_yA_NZrWyw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGp3h0nBUBQ37leB_eGWSqwHpWao_L3LxCfvWrA5lYazk4trEzUruYLDPdX3ByjNJNtjVUTt8R-Gdk6uHOvE2vps1PsRdyFl4AGcn966g46VF4kDJkOcbVqJhFEmvIORuCAT_Rn"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGC7h5SwP2u4esXUpc_V-l9XqfV1wsIu3gCnrGjaMT27_nYfVABQS3bVn4_4YI3QCpA8J3Fg3Jg8qJK7GAAPUcaLY3ioenrCpAkbC15D0gPC-H_T5R7Wq0rKNVNNCH86s2iSwnCc90_GdurFjQT840DIlzOEv5KlnblqpBx6L3w_Hbz55Y2FO5KoiUMLo1PCv2vojAxu-Nq9-N63izN9bNwm4QEG6Uz8Yto9GsGCBZ0pOBTTb9_oGRSZFuhWlTG7dyolhWZneJ6gOsaGhX1tgIGGlCeUKtyBfe3z77DOtrw3qiUWOa-DOks7CSVZVI4I5oatYoMss0ueJGOw=="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsOclVWTjjYrKR9BycesOS0vXszquMj2QTuateyj6voQVTnFbS_z0C8xzYBOFG9r4e65Ah994T9qvOXMx7XmCfDxLg-13_Cue5yjlkGc37bfzroyxCNLlI_iwsW0UJF5q7ORtoa2Ov1HXgq4BPWWy6UNhk3-VlbWPUNst0FxR1B2Zx"
+        },
+        {
+          "title": "coalitionagainsttyphoid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmmcwzqkMZeH49W4c9MINR9hE9E8Es5UqhA6jbo0ww3cxxfgEvkyUfR-VRTccyx-8F3xWZ-j7Kai-XxEnfswds3w6_smdr4JqtXc4D5lMHWhiCU625u8QhjNzCOfIJ6wCEzjaGyCZ9XyERiw8z4YvP_QMs5GuEnZhoTaUDglrRmI3SAQj0kdYpyTI9dDeck_qwU9T0taAJHshpCdLEZYkjp-9k-YGEeXhxGVPmmh0U1DXhWez87Xx7A-3DIP3EjgE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1f1EgTzWH6_qKqeophwglBtE5N_sXHRoiU5GYVi57e61fd8QUX4Zy0djB2g8zm1-ExRbyshc6uoVv-PocuMO7lSFK-wI_a_x81DSfvso_e4hhLCQurmtx5cQWlY8d2RPumolZPUQsDEQJgOUR4F9J_1kqjYsbMbGxp7qBTYNVcT3MBYmfsiYlaI6OD8TvyRmM7SezWcl9E4URR6xh57sx07LsXLww2a1L6j_nmOFhkrtq8OvS6tsLczGT0J4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXJGIGiJC3w5jhaql9UVOgOgRLMgQ_mzpCT1M1QM7H9T6x-wZ6QcBo1g1w4SNSUaZ7ZbcITXFnR9YZzXOdEieYGfw9kxiFeTpaLij7kt2AD76Z5vDP2l4IQWVm7PYh057JR1qQ"
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEeN2kn1SRU_n9F3tUQcB1ubSkK1t53VqNn3XLHJlUvbEUVp8RH3ZM6bAxUc_3F1ao5-Ag4qpv0FgYiWW1sJ8BsleUJacyDugJtkPP561bgg2Itlv-zD3binCNcxLp8HFtIjgMhBM329Vw_tFy8z-CCA=="
+        },
+        {
+          "title": "asm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsK22zqKigAlwK-N9czdORELxKQCwD-_tXs_6_9RySFFpCS2MpTvxzRP8MK0RKnB7W-3gHMrptGKygvk7zRj2xzMdXN41MgCHbSstT2LN19cs6mYDOA_8B5FLJlMTKApwnng2teMzAzFcIORYL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Paratyphoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paratyphoid%20fever&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "500 mg once daily for 3-7 days",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25,
+          "monitoringCost": 400,
+          "sideEffectManagement": 10,
+          "totalAnnual": 435
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 483.33,
+        "costPerResponder": 472.83,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 12,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 25,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Azithromycin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 92,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 6
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "5-7 days",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeT9K1PyF8yrHjixqci_O-eVc1NOI_cb7cXk0iMt8lXtH2JndcK-TXrBFijqyBzjEadQgEsOAy9UtrZReiiSRqnsvCisbcbaaN6L---gVaVI8YlgxPNWNtgzokzFOTt22ZyuhTSvoI4Bn_Nvo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGh2Sb0y0xLtvt0xAEXrwP0X8LqlrjvAJRhZjO7ibMlRFTkGpmx7BbLp29QO2wObuQ7jC4qS_7Db7aVB38aVOM7SeWlIGyQiTnrmo8Tn75vvGd8mvoR6rHvz06j5MhgY_0kMesHsvuByvAuilRuNzL1_Qjn2NbTpRNu69Dfmg_feH3wopKBRNNbGtSYBmOMu4ANkaK5UZAhXC--vmO0Bpz2KHvwezOE_rMtT7s8qqrBqs4DLsG8kjdXDXiiYfZE_uSfAEWwFvNvsgn3T4vyWnSU"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFffqv7ww6zgntlHPtSDCqje_X-GnODcxB011LyLGPTv5829Al6MqIQfym089i3EqM-oG9eXXi6QY0MZaf6BSbL_J46LqfKfSod-XNqfOBYQpLvGui1bLMu4MERgDUaguMzRVBhnbrZyXf_RJnclEVC7asaAHz6MpsFawDdbuT23nLpjWBbHJ6IugMl7joa7gIvUldZODqc69tZ3zKrnWwPtQD0CY70yCWV1oIYEMF4N91jBD0gAFWVmPrT8_dHj0MvnM_RgevqsHowfGpzxTn5yWSrqQ=="
+        },
+        {
+          "title": "aku.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcS1ssLcduhdpi5v9cu3VnmvM-Fbq_pQdO0h_1JYTcNf_QW1zHK3rPMUOwZrQMH6zRuLYc96FguJfqwYyPMq04A4uTKvjGyZ0fEfj6s9zaYPLPvu54O-MTOT1pbkrw0-RQBqoY3eerC9gC7ekfdcxBK0Jiokd0QhmXVkRDo96dbZ6AOkz4Eig1HMWBFd9e4WMqGbaWfuNr1B5eE2lTFnOlLWiAloYUQY5_aiJUJ0QMtqhe"
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi05TbfiVq1Gd-SJxuOw1viC1HDApCOWHqzdNuSqJ-oSMzUcgv8sV_S35ymSGfZs7H6BhtymmsO6PbYvrLWt8cBUY-DxiogSYyfYsdniYkvhsHrJSwnL9wXNEjRxAk77qgwuAR50C2V-lsUPq08MWyagYos4MMtz0qTF79ZfrQsqsz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSH6YtehOqIz-6t7el2GzXlMdYRwqemiWJoASX_a5_psdlVqs5VllsMi7LL4ZZIt01hAgexd8lIiW0ACUA1kjHttYtk41umikc6VaPCEPvKaJUV4SrIu4hmYSM7JIfTe-CHS8="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXEm6A3S9-R3Bt9Qs0vKs6fkw4Vys3JnzPZqQ__M4bYjPEPW_Ju1maKKxconrI4py4pgcREoNM40yFYHBH-kva4QPiW-SlzGJZy5hZdM09ZHvRFsebw1ZdjkT9MgYDfs8exWFzlLe_9CqTfBe2OJfJ8RX3ylCnmgSo0o5H0Bx6uy3jAJQuaMw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLkoDj40XncXK68E_wntWeqlEsSfJKdjZ0mesq3qMacHwWHMvk-xOn8zEDrDMnQK305PjGOciz-vnTonsK5XEYBdVyxds0Qifs2ZpAUu6KqnQ25vQZu9yNaIVkvDDwnaI5Aqk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGua76puJqVppOKNouK97_6Gblr_uyG1glJy6QK9i7Zpeuhq49VB2GrKe43xZqFvmNJuImYMiJ6t0_3EhDPpJ2KnLREJxpHYsRFuRQzOsrsxZn0ApI2KRNVlp9PLo6DCeS25lY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhLOyUa7DwTqF6EiMgazWw0ItByVVpocpX3Ym9DoNlRHTNjEuc3rpIGKYIWBstK3gOtZyEGJnbEpwwB4XLn0HgQ_JSY7NxYUYLeCi9Gsm60xyHzgwrOBONsr_qp5SQv2sRdko="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ciprofloxacin trials for Paratyphoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paratyphoid%20fever&intr=Ciprofloxacin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "500-750 mg orally twice daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 400,
+          "sideEffectManagement": 10,
+          "totalAnnual": 430
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 505.88,
+        "costPerResponder": 477.78,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 10,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 20,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Ciprofloxacin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "7-14 days",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFfZrWzkG0-JjYy9EccJUL0PoJVblvQwGztlV8Ka56FZobExqxuPrcA4LbtmkqEvh9v3NlQDMfq0gFEm2EGlENTHgcny3syTdLu4uuedASFkBIM9zn0-dC3eh4h3RiIFMob-2ojxYoMbz90A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOHJRzzODi7I28N0PGVN5pjNQY_dWZh-uIuIQJ2TwesRmWweyei5xezIOnV4rkpG4afnjeBgYasFdkipIfR-caA2sRmCzapGSdvQROSqvLYzxn4Snl-jrCRu2F-YDe8ffC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZi2CQ6mZgnoTAapkAUt1c0fsQ-SljfDKrIL6oCAw2MtNyfSlAbLqvTCM389_TwgqfPohZgalM5Yu8yMAVMWEj_RR1g258RWLmaAGzaZQYHeIok3dxGtn_B_3nvouZXXrucg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlkqYEgdkBmJR4iD33RjG7HVB3ZstX-eeJTUfPKfhvKQ4OZCfZHakLzjKfXaPeqPMfCqrUifkbxUZ8Xm36Dw166Hp3xPD7159wmk7iu00ZRvUw08A-mb32hmL1oKEMGgynBXZpm79VGPtQ7w=="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrXSlr-Xmzz-Gfacoma-QTtx_0QxTtiMdIfNpEAeYGFTqJUkUCxXzSwPKo7ddnw6cSdqpBlCbbHwX_Brbzf2UbtZdDO_t47JCNVGZIdo5AmiiBMM-WAtxzVz3mWus8IvQ4fk_51TRooKSj7OJyFJ8B0ajJs51cMiQYKkBBrrM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlPhNqgIzd3Mr5uUMDYwvK-_Bu1Ya9Oakl6iU30044U-cWMQECvW3mRyOdjUeTz6_nxPbpHoUzxv-Fzc2CLvpow110Q6hGX57G_gM9n6beap3XhnjVBM-iERYy8g2r7TKc2OWaULZv8H874g=="
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPATnA8iJtdrWZCr7BAoZpGpTdVlKW4uKvGS_It3lmkmkx0bAv1mQURdtCfAlYsgzY6cRhk-Zi3WDwl5yoE37ICEdU7JecsPOHxRorhR2DBx8Px5rOlrIAyXOFQ9eAhgb0-ebxr9ge-DpaSAchX5eVP7L9korfQz0h_Mk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEhd6k7sTpEerbxrxGaqPQR-EtRM5SzcYPswihOCOmz0xTyaFfUF8C7pDzR9Ipmh_rxdpZd4-tCUwVkf4EMvoDP8cuT0LUMwby2czzZZ7_V-8ZA_NtsBQC3aIIWf4oHTkFw_z7tNTr34TwcD2fGaek_oCS9Ri2yuTv9UGSVGkjNBbidLq-5kDv52SdF2inIkI8lkQBrApaWnsPtCJcwoT7iZ5HwihkPd6Mq1WFJ3uR-2HabeC7SaNzhy6BSTQVMdV7iPRAaBmcK44="
+        },
+        {
+          "title": "ClinicalTrials.gov: Co-trimoxazole (Trimethoprim-sulfamethoxazole) trials for Paratyphoid fever",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paratyphoid%20fever&intr=Co-trimoxazole%20(Trimethoprim-sulfamethoxazole)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "160 mg Trimethoprim/800 mg Sulfamethoxazole twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 400,
+          "sideEffectManagement": 10,
+          "totalAnnual": 425
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 566.67,
+        "costPerResponder": 544.87,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 8,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "high",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Co-trimoxazole (Trimethoprim-sulfamethoxazole)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 75,
+      "responseRate": 78,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 4
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-5 days",
+      "treatmentDuration": "10-14 days",
+      "trials": 25
+    }
+  ]
+}

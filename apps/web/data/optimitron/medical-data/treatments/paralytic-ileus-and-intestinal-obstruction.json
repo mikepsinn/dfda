@@ -1,0 +1,800 @@
+{
+  "conditionName": "Paralytic ileus and intestinal obstruction",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:45:28.348Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2_1S0w8X2Dm1FwSpsoa1pPBwGE7Ih1BlI4MPvBiLWTPwb09M3v9HJ1VWhORgiLHUmeDWXyMlThqm-Gqn9_kGKCsnIATnrysKI20O__hFjQ71cZa1Rym9i8N9Ku6mdl6WaO2u-HBozP700mCLP1h9oLbVdpxEUZyJp1_OjVEsl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJlY1jsyLjacawhxGbdHGghbabYJFHm0V2noiQdp4mATWiaNG9VJbDKIRLnEqaMrBKnuq0rcivEzBV9YLidOLDfzrSrSLAdnIkSHzrJ2q_X7W2UwByaxF_NJYCmefaqTQUuFS_-VAMGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElgm9WNT7MJgb_H_yqJc91_dbkWPz4ZMJviQhPl9uzKT_6EMx0V3fF2wsBG22RdR7Cz7J8Wc1MJVHJb1Y3KXoz12zzs1C6-YIY6x8Zs3MFItd6p7-V6ocZYOcDJTcVyWgF_Wgeh0CXBiPyQyQ="
+        },
+        {
+          "title": "teachmesurgery.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuXFKUrrixjdAvGgLuYEJPkjsAY9ysifU7t7s9PfNcJ4o0DWGsTOdoOYc_1nzu62D3OpEOyDUBbbEjzPv12Uepa81ieMfffBkcdrHvDiVJPIt6ElUbEeQiYrzCi6SpP05oNAVpfQDVMu0PMWEk3qOhqpZCiZLo76njBvQ="
+        },
+        {
+          "title": "neliti.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRRqtxDBZBfyZAs5DWzL5znKeQ62wYPoqdc85K_JyViDvJAnEdkdPxs4w3Zl4nmitOCtkgORWN779lP-qRtzBtMy-zCLC1K7ftiHWbFYBoOjI97KNnxt_Gw2BO3le-3zQIAYSQNuhSZmPA-je1XNsjVliB6FdtV1g4CFBjSJUP40lW-N2DvI00ctM_OjZqc5Wp"
+        },
+        {
+          "title": "exxcellence.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx4hrfx7b7VbRNHgqljUnvhRas0tJru4zVtLk0foz9ADJns-N-JLPElpGd587MfQ4lsHvdB9w_iqxPCQ0F_CnbZtlBDf6sIslqXzv6h9byCF6E3XiPyd5BxOcAKNkqWZklLiwKkAiA7BRfRVQ3mrkDxNGrmgSsXe4Ecf24CypgMyZSYS7hxexi__C2T_xtEJxc9sFBevc9icVu"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhjg5WVwgUYIHN0Xhk0tnp5xMFEchlmUOfeIYcahHWkYrbp1mD4Uvnl4C7VvoC5XMK4vV0mVEZDtfLO1Y4V_pAVEdb2-AuzBICSnMl2H7lDEaQ9IHCrBwpfF1SAsa8DGCuZS8cUGo="
+        },
+        {
+          "title": "journaljpri.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGcWtM5nKiAg4VQsI9HjZ4kYYuBD-IbnGZy1y3TNKlTp9RvPGlrnav9rgz7AnfilslZTnsSY9Qdt6n5w6fr4N9sHF9PYcvfubVIoMy-Kgls-P_PESjlEliYWC02IdgBEalwoSHAD0viZAwnmb5v4IBQRF4AiTEoHsKrOJ4sOgxWoc="
+        },
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh3vxoRsZ5sRsOg-JSyWcz3jKe47ogaRtQxApi6wvY05Ss5c1iKvWwlHjO7IfRSRZTm4geVyXS-Cxigd-H0DLuUSQxw1w93N3FosS84XFjAM57lOnKjufdSxPJg6zFG_Zugqie-ZR_LVoRq_dzCCDX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEByVSvC-kRARC0Yzk_hOeJ4eRVloh3vxT5opP3_BL5dKYNcbfv6JNferxdSQwEVcAri5bNGC2ogDzC48BnBf3ByBMiH6q5TGkKo-BULowiOlTPsjEbzbN3nUBfwxHFKuBwaGdk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfvnGOe2RcU9O9g_6DoxA3aatC1VgLTSp_zlNXY37nyu4ylmlHUdxPD-uIj5jHR_L94dvQId0PYO2vtB_X1Jl6lWTxEV_w9Vg7ydIDigX32ck0t9OhO_LeEnEj3Mp8icSYieWXtyGQc7S7SMh3dsIN6RvGv2896NRrEim1a2J5CHDqOXqearoqaTxMpa30azO81orB2pGQ9pCnVBESAPIHIzZRTPtiCbN13c_s2MVu_h80W5DBc_euz_8XFGh8PDEBRzA2QSCgXhNZri-Uk0UzrUZsHjd2EprEdKMen3EdgA4VGxl1yHMmE_njHy9KtPqMuxgeTr3MK2AA5Qnv_0Vk"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9J1J1TTKEl2NUvJmSAc8g0TrtQruaaxFno5FpQ1kvYIBIEE4fJpXDNTdsF9GolvJ2Xrw7DpUCdwRNBUSnMaIl5lipAUijGxDl9_5aLqnvjs9AiKnfzYCTcXlchLAtsxmeJ2zs5MbPFbHr6e0nVlX-SGk4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnYYUmm7OjBSgjlschgvnQg5zf7EXmi8-_kCRVvtqiDCCaoO8JcgBF3cPjYblesN04FHS1-iSKqBl_qVZt4_M2YzYbEO6WDcahYysSd5fbBguasV4L2lMovAMYZGF8mmWqoNYKr_v043gS6ubw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHopBG8GPCsUAWdCHq0P2OeNRypTTqQLq7nMONJKG1n0whyb_B8-B8F1BZONQ-opC7w0GXqcf-ePH3F5AQVO0dE5Je3H-T1MVxekwRzONcR0QAOywFWcvM0FJ3mDkem-Lw8oCOM"
+        },
+        {
+          "title": "ajronline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5h3AY3U4sfutWmjVDzEA61Czzvoq_lTf_sw3rz9g9GL1swzxrGerGdkF_9EJBQctmsoIug-od1J_Uw-iHbIujCiOKumzoRlAoco2Ro9RI7Lf5RX8qBlwJe-XMTEY69AuB5kGdbn9Y4Vre-wnqR7DXZcwOmGXHRhBZRBvGL_3TMQ=="
+        },
+        {
+          "title": "medlineplus.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOBgRsAwikXuagiMfdweEhDpV2WI_9iFYW3E5mbMltmajFxPg3F2WduezU07GL6GI8KH1CVFpzK3nBrauPhJYp1iGDuLDI-zHxSjZ2cwy5XgHNRjFokD6CZMSVcfe3zSjEN1YbkBM50Tl4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZbhB2QqR6VYNnXa8wLea_THyv2N5x94pUa_n4qgbvsJqcDuJxH-GMOv0ks4f397mujZltVtxARhvh9jodlhlSds29yoYmITN7vKCUDLsiJepD6Dd3LKboPbyOFmtOvpGg4HyC0B30pUXV2HBviis-2j2wttnvLYcMD1OMfDvuSj8GGzk7xPH2H00u"
+        },
+        {
+          "title": "uspharmacist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrUGgqlbjTF-y_0pr_NO4wlhlNPS8QX4ntEfnIP2faZOFrJP9RmLnnEI1CEYvnafCyGinbPvteGdMvTwa39KaaYx8t_mBLO5x7_iK8i9BKAh-9k5VguG_C5jg7JdUi7dVxQiiohjRBz656MC1UcgXNTJZ27hU9y6p0lIuRei6XlioJaq31YWmcdw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDJx2kG8I90NzdppgT66-GjC_jxteWHhPfLOj9fBtbudUQJo4hRls7W2k_njDeL1WmoKeugv6WcHTJiVytct4NR8kyRSiD3J9VgNfLpRCMesvpTsY81imF2OOB97OY7_pKAsVAtYGjj2XDWyw="
+        },
+        {
+          "title": "ekb.eg",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEozS2M1rOHnB9r9AXZ2KLj3FmX3P6cojOYf8iHjkUbQDLOx1LeBKMogXw6ArWdEYwmfV4TLxL8DA0SiPdawnbcch4e54qExsSy2vf49WXYIOGHzXouqY2vgc9BM_EQVzT1ZaiIT7dv4mA3d1gFEsKa5Y3sibTOaubsriVg76CKqOSlLtp8QQbvRw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Correction (e.g., Lysis of Adhesions, Resection) trials for Paralytic ileus and intestinal obstruction",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paralytic%20ileus%20and%20intestinal%20obstruction&intr=Surgical%20Correction%20(e.g.%2C%20Lysis%20of%20Adhesions%2C%20Resection)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 45000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 50500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 59412,
+        "costPerResponder": 54891,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Conservative Management",
+          "costDifference": 35000,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "Surgical Correction (e.g., Lysis of Adhesions, Resection)",
+      "nnh": 10,
+      "nnt": 1,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 92,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 85
+        },
+        {
+          "name": "Wound infection",
+          "percentage": 10
+        },
+        {
+          "name": "Anastomotic leak",
+          "percentage": 4
+        },
+        {
+          "name": "Post-operative ileus",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Acute intervention, then recovery",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_4p8GW5Uaizd6VmZNjPdjoU22PblQNwPH3g23QfKFrT_x3v5k1rFSRw5oWdzSANL50qgflMiwuFwykLjn0qSExX6OEbfVAkM9N7qJk1S0jiEM4eKX7V4hKLbDyymLqlok3vyDlxL0mGLf8zM="
+        },
+        {
+          "title": "qxmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1UM78sHPS7l7OjCNi-iOltphDrohWxfTwqraEcfnRjYGLE2NxJHXTltGzuEqFvgMnLTT5E6ebsG84Lwp5X0Pp3oI1oUoBz1I4QmtinBnVPp6h73E_h8gmgTwV06oQNWpGbA4ZVGm2brMXvK6DGIarbsiQcIBo3a04_dlV7E9lmt7DjjCcSsCZyOTICUo3BmiU9xwa9f0Atwt_AkPTlTs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGr9v-sbvcX27_agCOvFTp3eXYeatKoWufpBdguKuPI6eg21RiQploa0ZKY0sIPooEiRy5LSUhYYgeU1oBcx-RGhO6RsSzwJ6c-YZK_dK79qR9ZcDD-DiNPGiaA0mPo81Ac45j9cbW__Bo9GWI="
+        },
+        {
+          "title": "journalonsurgery.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt1JC9tQXn2MyB2P7VwFqew__3uRF0gfCc4QSmtrP8plqJMhYUs5qK3JSVcPwdF8mOLEBO8j5gj839u4jxiI0SFhrE1Jnpq2OAqxv7gO5VDtkgyy9xfFLrav348WDcjkbSQ4TQmENv3Mk4ghAkbbytj9vu"
+        },
+        {
+          "title": "drugbank.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuk_Kb8IwXqnAQ08XlbjswYlS94kkizNP7l8_5T3TDlSjLdwosy_4HYKF203k3v38Wq88zDuNDC_mEw2asYxkjgfLS46PHj5R3eYxKk0bHqgaEc_XI12qwHfcRo2uKXwgzSw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwqBWB78E826e9TzfePQOx_raOhmI4CRkVb-PeNZTFzOVw-RD9vs6ibVj9nUVGpIziHUAb1fM8yHaeBEZKDdUtzgeSHtW_oOxVluK8e3bLxj8MQP5YoGzgUh2WPhWae8vXAb2q"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk-ZHakLa5SLLC9xPL1gqr-BaSPsTiXflMiPzF04qPjbTsZVnF7OzRFf_JicJEveIS7lWshl8qKXlCbbdaLrp-Syu6ypQLWGb7c8pZBRDBPlO4NZKPcVBPgH3ZtSwzD1uyZFYG7cIk8w=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFwftCLcUgDBTyznfoYtE-LNMWxOAHfD7_SrTtEqTcaoXzteM2kPHIEvn3nanhUCxtnyMRMuGFPgxOIGwBC1H6Sw3vWsZn6OMox3U8EUZqjBEQjfKaGmd5AV0nMsFBn-DUctti"
+        },
+        {
+          "title": "jacs.or.kr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwf06KupCAZPEEm55SWiAZ5lfAe6m5cKQcF2REHTnSGC_1L5UO9DiPKoiLT7tWyePZGt8gLZ6S8nSBRNirOd5qwPx--mXzKP2dhfRyCJiRVJVlP_HkXuQ-zR_Ju6T3EW3dT387Vz0Nez_GUg8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZxDAIY1EXRRPMu43srDmr3QD9t9pYcJlrnPkMUDpqy8OalSYvXYyN3Pxy7ysIDWEF8gbKvXE5yy4aL1nvV78iqSzUfBVuGL32wX8dn9f35MA67fh2usFPjPBpOQyZgeCDIGd7"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjc3GaKbE8G-iVPFS6PyLZb6tdQYQVLGMPlik7ZiYPEx-ATArB3U-PUuHez9FD_KEsaQnedtuAh-_-Kg1RXAvQ9LZy3zSuRLfjUS6pTLeynvX8GczNPBJz5bqZk4a_JAdzxPb_eSbuAiujjos="
+        },
+        {
+          "title": "amegroups.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHu1SxiFXu5fd2vxkCJNPnxQqBKUpWGuxx36lky_Z_l6MHTSIajYmXAWboMn-Tdi9R9Hs1qwhExmD5q7JNgZX9muddo5w-xrU-WKl2fsB8bfCN59k1Nn2izZp9tencqoXbnQcTU6CVoeRg0CA54Acf4T7w54ofEBD-iFb1set8oSXgV4gcwCyH_66fxgR5YnP1hQH1SQ0xMH3lt1jhibWnABH5yHv_aby2zVs7bnLUDjVxZ1k9Y1uTR5ZKikqCX7Xzdnoyby91oFXCkw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQQPxZEXUKIigfTi-ajm6AGR20xyiR_TQ0Tt5F8UiVwgYSlqjM3ChNWr4ooq3k1WKwjRAX0oqyDv9iWT0hR8ZG-zxOT6dc_HY7tzLWKxQClasIEdiYnhvIoe2QPH4IY_0bKzaIJ7lCC2OH-vZw"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1K8qAsKKEUk95y_dHwgVB4QqcsvAdqo_1tIIxC-7LCbx5UMbKLhGKthGzoNbQVpf3evovc6Z9YiY75jR1grY_Gj39IZV3eYQw3dqPXiV654p1fQRDnh3Mo9Ps54GVVDxOn9E9zZQT7o3_C0eHV-HfCiu5qH0Kl5BkQktfO92Jrm9wsszEGsrFRysp2s5O-J9020kr8wcxXmxaGWfN4xFiSaPHYpsQZ7tvwh83BgKzdIA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZjVyi8m1gTOJxqPCByPxVChz_1NiZcpcoUv80KpVob4Yxm0YkXczeaWOJ8YITTuA9uOa78r-zMVIJt2SOmTpGR2BsQINVvAOaKk8BeS-cYW7GYvaO6U_dG6_F0XemWaO-kqA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Neostigmine (for Acute Colonic Pseudo-obstruction) trials for Paralytic ileus and intestinal obstruction",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paralytic%20ileus%20and%20intestinal%20obstruction&intr=Neostigmine%20(for%20Acute%20Colonic%20Pseudo-obstruction)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "2 mg IV over 3-5 minutes",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 750,
+          "sideEffectManagement": 50,
+          "totalAnnual": 830
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1038,
+        "costPerResponder": 976,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Colonoscopic decompression",
+          "costDifference": -5000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Neostigmine (for Acute Colonic Pseudo-obstruction)",
+      "nnh": 8,
+      "nnt": 2,
+      "participants": 800,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Bradycardia",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal Cramps",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Salivation",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "15-30 minutes for initial effect",
+      "treatmentDuration": "Single dose, repeat if needed",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "bgs.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_ja4xP5gH6Hw0vDMxtgxyvuM1zQ8P4Sr0IFYyf_q1WFH61asmZJjFL_TfdwklrDhhSGK-EYN2n-zGrRxxApIeL0xafAhgLtJe3SHOFIa2jLU9TxoxMWSGTKzJetDmjbPCM9agVDNh6f0WlJZVqJ_ZuabE6u-zmO-JIgBF1cfcH3ybyIF1QQfqqKgRKrb9CqXQtq9baXnKkuPYd6dBFiXhBMFgTx-HydpNoQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0KYo5Ku0ivv-QlRkzYhdq1lM4qDBiEer98lUktWZtRXM_4PrSvkGPkwLng8njSikPhBqLCuZXN7wRTSexcCphTIy2nhvd4EcofaT60eUecUwgvF5arhH1P_15ObDr2slav0nKPKJ-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlHWex4TV-mC-H4LfvbpnNrLqHhpvHQ7yU7FMGSpvo0M800BiuDt2kWmoh8HzIZJkpEA6G4Ri5V-rEJSH2r7XwGqiYAfQgf32J69nUIlDwM7cD792vYsR2xYzLhYt490DlOehaMQxv9v4EqzI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExFPw1LYwZ2X7KOunPV8QLqO60_r3BAUoSYicjalXM1TZIcDu0p1cx4pKo6ze5sR3s0rEEr3UcX-aeJx-hzOYenCaHkPZzwfgIndzDB3G6JGpcLD7jAkfOG04L9JkThO0xjA8n"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB8h8Cg-gwQ6YDxyzUPjef8bjlms5wn2h-3dQeGvC9fzuSHAU6hsV1yxx-C9BLO0zBkNPQrnQeWGgjebUt3cGMgUTuykhV3l8YTnVOKPjmgRURtZV_-mIAAOGEZ_AwmAZhzLwRxGbvPmjnTPs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgankKTyYIN5D3RNHYZX85aOG0HsA_maBBEohy7APHXzEFEk1FH8NKKR4RBvx1yJvPvzb67tVtKQr1l5DcV1JYu2YZE5mpvuiykLFslvL3BywkrNWiPLqzY4isrDKdQtkSXF8OWpsvD6WomPI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdgiZwLftTFPdjVVtV7pHLWLemXD_opU8eVyZ1XYVsojQ5KESp1EpzT2p0aRYBH-8FI9yYn14dOXG7czE3MMfscVqBQj66_taDcTup0Qna_lnHIEl9Mnc56NMEL3Shalm_SFhOqqwajYl70b3HihPomsg70wevMhrrPmqFsYXgILj0lR03U4txhpsgg5lBXsAGe6jV8bQPEcvxArKqsEQ90_Bh_EE7_S1LCoMn4OKBWmX5uYKkCCVCFWvn1ItetkoApxB5sCwUHH4qf_ZsU46kxZT_8ihNZ3ww_rG0Ad2DW3aZIRR-4iGeeWwfZEee1VfzFkMXzCMZGU-hszRuZZKwwHw_eI8e4_Rw0o3LT5WJbeMlYH-izarMnLYXWNd8GXELGgKSEKhRzaBSmw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Alvimopan trials for Paralytic ileus and intestinal obstruction",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paralytic%20ileus%20and%20intestinal%20obstruction&intr=Alvimopan"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "12 mg orally pre-surgery, then 12 mg twice daily for up to 7 days",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2500,
+          "monitoringCost": 800,
+          "sideEffectManagement": 50,
+          "totalAnnual": 3350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 3923,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": {
+          "comparatorName": "Standard Post-operative Care",
+          "costDifference": -1000,
+          "dominates": true,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Alvimopan",
+      "nnh": null,
+      "nnt": 12,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Dyspepsia",
+          "percentage": 5
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 3
+        },
+        {
+          "name": "Anemia",
+          "percentage": 2
+        },
+        {
+          "name": "Urinary retention",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "Up to 7 days",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcG8OWruX0dVC---uadESXufTDNy2dirWjN0Bu209FtSS5dBzVBQ3LAq0PgJgQDGFGS07qjb6ApuJ6zJbnXBZGDfUW85Wtmo26VVMEoEsGNbSfZMK5hnfsXvnl_NtK8iFEdjDB1mDaT4fOiR93"
+        },
+        {
+          "title": "medicalsciencejournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpQ-Gm0ah5Zlovoy9eyRVeZd3-Wz1eRc_JELKiW7w9u4Akz2qSpHAeGDBj41Ckx2Kw3RmtSRP1vtIAE1QYbiUH8uBfhw1P3Pi0UAKjDEd64wchIwOQv4soKQ0ShTNLCD5F58LefzqHoEqY_Uxr6qnUDle0LwQnECh8TroiBiwL1Ju1FiGQK7uUi1fbY0Cc5g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAvH09IJD5B93miGcCfcZfIAakS6BIxyJ0q-QdbKyawueKERy6xa7b9VEpKCyBslubVnPK91_EZjYX21Z_ArkyYO84Thg57GgcYD2wGWANHZCL5WpBP853BoE5_suimQGEMpD5v-aBsgQaFw0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcFYeM9wCAIil-T7cqpL5dKFnqYOjtr9P7xC6wOkn3vECVCMlWeDtbxx-t8nKJ7b7RhlO5CncpQd2Q-R_lLLl4WK_sdqUZo0fRb9UIcLExuBfxANR7yMGZrjjU0Z1lztfByiFfaZYERM4vuNxa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3takv7ammfSeOuXPdilRAXRnFxuivOl2h9fT3VFOcRHVlGavD3xclkxcgMnu3a86FhLC11t7_HPgISktqmFASn9OZVVKpj3wSI2HTn3iOlvrwLcMjCTW1g-PVJHKVFCBE9b2R2Vi-EzGIQk00CJ07yP9DIYUikW5ahdnQJc9AqI6xV9U1Fr6yMd8gMTjhJDXM0n-vXJvU5RGApuGYuIwtFIWsq4l1LxaZnPJ2izimwLQ="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXu4OW96C9VJbZJlnejK8sQdf6OITX-nywQ8IpxUKKtiUPRkFr72G9XS7cHoSxhwAHvcEJeIt0FaKdg82gxRGOr0e8T3cQvX3dK2tb-AU1l2_11yblIMxJ4yjPGK2HOYHQHqMk4qkTkeyhqwsuogZZJkC7J2b0dCdGICLOOyR6"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-HVKNhsfgkT5UvtQNjxOYeyQBewjfL-8VDaXhfwa6X4B7zYNi-8JDAi6CzzsQ2L_BRpJGcIhk9cEzpppkYOU4DUtrJcM7MQPqgwfHJDZfQ_18KB--7UI92KG6WVJXt3S83edpkkWjorAykvM6_y_SuCy8C9FoMYKeN7IsZg=="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5NBt78d-5PzRwidtWjsEBxMNgAn7x6UJn-4tw64CIU0lCuGBI3tpg7cGKKX9iH_I6A0VCIB5Tr9pKmhmlKptZCU6UUH2JsAFItdh_4lbD3v7vzFK0Z2o2twQGNvZu3Y01RfVNSZREhAB-ZeVbisNsJqlLYGK67EyE970KMkG6m8Loe-d1lsX8PCtIWk09ZgaJ_IUQesozAoUXHnRPf18KbWU0jRHF7FI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg4ZjDroN8AWTcOer6ut_qx9EiEqbnJgtSyIT9hp9fzLhe1LYHVyklrXNHrnTYFSHUVhzzWNgOYxumucwsqOClODkPd_kHXFwjd4NFI-corw6z81nWErDlsxiw_phMAR96pGyqPq6x5fM5gCI="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4qf0FYPV0UZaGwi1nAuLL5aUSiHcXpuOlFk7nbTV4ZGH386MSHKaDPerBzpEzmGaMTjVDNTG7KrmSYB7wnO-AmctWNVrpJ_2XuICPRHzcp3cACfcE0bWn9Dv5BA-J5EtWAYqrhDr6z2RUL_bGUHk7TXM3WKQjN_ApKRgBsGT0V6-9ilYNLU-STTBDiuz6xGAucWoTVzEdoJhcqBWoIUe0xHpf"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkAcd_JUkYreVEI4GNHjqYnXGsJx9hlQHgyzlt72KecK87swKoYRINTFcnOBX2IdvOhU5W_ZV_xxUtagtKceOCx0GQjqzxuqDKDcnX1G4BHZJ-R5vNH38btbD_yvN3RjCmqb0UEVoYCi4hqtVu2VOv87s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNh2QzklzVpvLZGRx6Jb4f6pAiAEEI3wy-5BE45u8MNNDHQBk9uhtJ-1vbhrfBJxC-OcFBjWLX3uLff5Qk2XBucp8dwkxwQ_ohg6uhnQUAzKcaVg0xUvPSVE9Sk5DsuG5Ygo1e"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpr89KWD3nICG9_4MfLYjnrKPAyGnN5xLh4BMC4LFXeLYESe8mx9sOcLrCYhaiL17_szX8LjvnCIPIszkK_hapSo4cTfnTmORon-cNnrUx1XSfAdmazPdO5nzok5c_gm3DTiGIrulPgakCqFeH9Nrg8NfXG-_xrQL4ENMLEQNhbdzfPP91-QH0DnJUoCP6ETxyGtXyANbjNtDDzksyARodBiZ5P-3ZwzWhf_Fn-9M1Rb1lhpmyiWpc1j37Xa-vNhkMrB75"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQETLwy6hV8NtSSIgmxCNKD4BntAPQXYsoTepOmH9iYaMURXTDZocdiil00gWXyfujdHnRI18bcUtYRxzHFsShoymUSIvx21tBjyiEe_u6C_j2-GaiU6gJ3GcXmUD6TlVMHVIXurKOtbeOGG4D9UIh-StJ4oKYWp6HTREnnoVdiuzzo8Stk_uPvWTdt7P4_hIFZU2Iodyte2fY-7OX71Lif3g9jdMeg="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2_V5QZFP3LPtFwzpyU-trAO3kRn2Fjv96otW9HIIYZmw0r-9DzUYRzIJSwMensWBxUGtPlG9JPJAO8bwUHhLykS_YAOR83Vrs9C5KKd1OJHnhNQpNjxosgHwj7GeYQkFuTWmrTfn5b7VhngleEIv8Y2BYG5iBCoV2snve34aUkdoXDIwMIonKyhYHvYFNh5s64A2EWeryGVa-mO8V6jA="
+        },
+        {
+          "title": "shmabstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN3Q17Vq7vM0QNU3Dtz_iuyhtIWj8VgUVL-sD3E5DUUdX0WakgrGm9fRmEaq1Ao5Y-oHCkcQw2Ba8RWALjuRpQ9u3EbZRphh0BktkciR3WK5NGE8Qddq6rdcN4OjI065TcUtrrIYJsAusqw999AXt3SEUZHs4f4QZ4U-N4YYOZi0TMUiDJcZDybukENi6XDPbQz_meBCqYOTaJz4akHcumEI8iIsOVqIK_2ePnjNKF2butkw3aS-56y91JYj3AVkjyESt33CI5A49eeGoxYVGSl3XeLCQCKd3_Yuhs79onGesrzV-doH_qB2L1WlucLw64d8iAjJ6nwU4M0MIjnpuzSUqkZ5YjdK7fL9JX4wJiuDHcY70nHUo="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2C8DuzVsdCIHg2kJw8LNOGw4E_l1KI7-xY1hFw8jPjOaFaoh--P6MAQaG7uKWun9nATAKAogJgEakH3w3dnpPqo4O0on1h6EYrK-1h6xww-Q5GZzFQ4BhVNQrNICuO37qqLCJryXOC0RJYgb8bVzeASnVBdJYwPx-VEd1tzOcNaCk"
+        },
+        {
+          "title": "ClinicalTrials.gov: Opioid-Sparing Analgesia (e.g., Multimodal Pain Management) trials for Paralytic ileus and intestinal obstruction",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paralytic%20ileus%20and%20intestinal%20obstruction&intr=Opioid-Sparing%20Analgesia%20(e.g.%2C%20Multimodal%20Pain%20Management)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Varies by drug (e.g., Acetaminophen 1g Q6H, Ibuprofen 400-600mg Q6H)",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 370
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 617,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Opioid Monotherapy",
+          "costDifference": -500,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Opioid-Sparing Analgesia (e.g., Multimodal Pain Management)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 75,
+      "sideEffects": [
+        {
+          "name": "GI upset (NSAIDs)",
+          "percentage": 7
+        },
+        {
+          "name": "Drowsiness/sedation",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Continuous",
+      "treatmentDuration": "Peri-operative, 3-7 days",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "journaljpri.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvU_j-FqtVwoKZyMYVhnyKz5ZWcdZz2-P4BLPPTpXYAk_CgkD9tykkjKHzs6e8riHGMyfCTSZtvFOMZUTblBbXA2P3saVsqkzLPOUyPvSIBNraJyhwyMeKYT2bES--amgjGWBnsBNBrwRcs_Jqvdg8v5G86H8qP2ms_diwINGdqg=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0kuvi--ClfWlrjKIYsU74p3ctK6eEGGU-6olht1p_6dTzuzGc5rfUkfqluWyuOkGFW1XDzX_AlHSEAoBKg0a5l9cabtRO34eZ8TUv_vUPbNwNDtS2Dyjxv9E4bC3zE7WOQMWLMESqNDXnNtQZFxy47RytX1X6Td4qCGmthIgeF3XSzPlDY3J1dCJdNrc="
+        },
+        {
+          "title": "neliti.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWH5T0bWKeUBakqoM85i2PvVkazNhLGUY6MX0LeO3ABrCJ6D9e1EYI8EmBQKx1fywt7aasdu6EemUs1ejFWlVeZ6GSwmpqHydOFfsYL2V8sm6Y-RLzM_oLOUpbLFQBha9mWe7-iVK1nvSk8Hl7nYc-_sqdtm61Er55hr-8po8D3dksZfcHL9eSnrRno81SYtY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGITmUl7rYYYdcq4RkhO8iyyD236BxlYGgP7OK86j6Dvllp8aadJNGqYssjOfOleZ-wneReyei-_RZ8aXko4bksk9fS9vhdhrOqk3vaKQVrz42iVaBCAUX-b2BAl_B-CY6stUTZSJ_f"
+        },
+        {
+          "title": "juniperpublishers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaDTMxSOD3pYBD78xKzWEisNc1m4IrLjDOo1kvSExXN-hDGXwv8XIIvS7HL56aQUocCjvtUsU0wDlzg8LuSsPTrWjNfGGQKUhYOIlM-Vf-_n_xag0SMmFGO2_yIKTXbdHTNcnWHYrEBxCRJB6okM0VlDQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdj1_P-S7w0JOkkoP8EPjLwR91yCR5f77OzhZoasoHASJpHPAd48rrHWWK2NwcYotmVeo41p-u-QJ94k7wVt2fgNLNM9I9nQkfzEJp-EE_dEC8WOBOmiQ-s4Vgxs8Oe3dF2GXruudQmnM6HMaJXW50LXh1eXy7Ad76Yzbf53IhEYGQWCMQertSKBnbWRJnCqYGu6RRkyraw0yjJFR14O6HDLlnwB65GBVjrkzC1kaDxnww4VWlzoEGyqXglAThiMBo3Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZynZ5RNNhjUi25QuHq16BgOV2AJKnE0BfhQSftjcBkaoP6jvm8nF9pp62LqPIwltljokMtBdo4btkkIekM9atzJpMpB6G204Cjsh_IErWZToGy-1C4jYad-q-8pB5Ty6z3a6uMXms0FC6Yoc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEemRb1mZIM-jBbA5Q2Uw1ABCgWhHzctjla1F2X5KL1CIM4a_SHaVxbdGVz3WftNi4iwrmAgI5fyRENbTEUTJj-7Qw4Zi2BHb-vATeKVqoCLPdY4uCncCUtjAbEZeU6El3sPT2n3HWj_N3RHrDIL0hMB_sYBNnpcKp3ylorWBPWc_I_yHOycvydr_pdfh9l4Wu3xHUO72NytXzPl_wEnb1iX_JzBtpRCh9UUUy529cMIUrWp-0lijP9RmPlAUDkrJNda8WeaKDHPZEfUKfV_vjzU4NvOPYozdF8NmshUt07Rv4VYMbOAEbfwkAstdnicOaNBqTfjTPSMWeo1ZrlJwk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTrmtLeA243vKjsFZjHRRC6A-Abo9yt1UM4J-1y6Xhs1-x8dlYuKS6Jjmqts7y-mAR20c3DM_wb9zLNCQq_33y_wg49cup0gBij9v_q1bViTVQYA_972MCc4TpiRvPHmcfxbzdK21Sj6dehjM="
+        },
+        {
+          "title": "juniperpublishers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJkVSHeqYap6ybdSow4JoBAwwvskUDkBmzu25faQ0MQUomSXT2bQFlkQYMmr__lEoZ44bsXV3X6Yx9APdVaRMnH5WsCl8TGkRpM4OnbQPeQ_qYPLNNcklOCt4pfdU5Aq6Z2JDl055Myh0mKUvhN6qK0dA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1fJSUi1XDRcfXbbspGePtQNQcxKHUdrgRDjEqBQso04s5H69t2olvntXUGZwA30GuSRfdODBLRlv4qvv7xv3mBNKHcEiZ0FN027ZsAaR_YReUcn8Tkj59zcLF_OYrmi259jBjGOzq9NXc9n7bvo_mYZMPy4nvHxAzwpUc7VEK8an1giVdc9z6Qp0mN_K-T0IsTrWdLDbnjPWHNbqCjZ3-RtmdfCfhZqbD04j5nwZrvqck8ETkl5uDn35XUS1d_dFqNez7qquD9P_UpZlYnlovwA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENpn_e-2yFQRMHdvXWRXvuvGT2S1U8hpBotcPoqArttv6qdipOAPcxt6ENHraE8h5UsrSjF876HpOtFQIVfuASfMHjLiQ7HdNPgs23CUjRZ4Kd3QeK3bse3BiLTh8bt6a_KqGfQd_Oe2o_Xf9TOZ5hTVwFtfwgG-1TDQQF8TUB3i32wzQKCbilzNGBS-z09yuJnamxnWt0rmu6-6Tr4aUA0lJozZN00ZPrIjY7Crsr0LiSV-IUGdm8OMHKW38UIMwFuyQYoFyZSGE4JJPyacUCwVQnlPw2D2SEP12Z0w=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeyRjkOJ1yWbzwQlXO5In43AelXpSy7xzrfd_bH0u2p9XzOdO0HKUvNX5xpDjiv6-1L24_rExmJA2D8qq3ZsyKUtLdb9wmrfmhWp21ZieStZ47fv8oI-7w9LmIyhasexA_M_uuE-3CDt6LokpN0Dii_rQ="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkGBGfYtKp7efyPdqKVI-ZNi2udhEpkWRs56MZvxQt5iF3-wr4JTf6h6KtrOXYEstgMLON7g3FSLR-EPH2wToyMQnL0rbvTKhlRNdWdJtMMIpqSzM_GSsN27mm0DZa6Ea56w=="
+        },
+        {
+          "title": "caresearch.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-sb01Hi9yGsOoxtGg8DF_vBZIUVUSnMY_oKH_wp34OhmE-Gqup5ad69N1mXxj_Yv5g9Idem73Yue5S2hrK_YqvFA_RrjLw0GpdKFxjiWDDZhdzT3sxe67WPQxLEGTmnnv-M3Ud-6282qMW-gtO1bcWAWNJ3o3QttFeH8eGSDRGMzsXA2mRs5vCeNIaX2QULVtgBTPoPy-8nYUBRIEEAb1iLj8MA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Conservative Management (NPO, NG decompression, IV fluids) trials for Paralytic ileus and intestinal obstruction",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paralytic%20ileus%20and%20intestinal%20obstruction&intr=Conservative%20Management%20(NPO%2C%20NG%20decompression%2C%20IV%20fluids)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 15300
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": 25500,
+        "costPerResponder": 21857,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Surgical Intervention",
+          "costDifference": -15000,
+          "dominates": true,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Conservative Management (NPO, NG decompression, IV fluids)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "NG tube discomfort",
+          "percentage": 40
+        },
+        {
+          "name": "Electrolyte imbalance",
+          "percentage": 15
+        },
+        {
+          "name": "Aspiration risk",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-7 days",
+      "treatmentDuration": "Variable, 3-7 days typically",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "esmed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiK6LEFtQ1O6imW_zI1L8VNPUZx-tmFgtTQ8Cdv8uMampxT4-C0uhGeiilyIwiRrk4KotE3sdBVUDdwYbq1DCRZdLUs2bFu-u4nvtvKSjtFMuIdLJTc48soAhsA3jcxTcF1wiSig=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw6C6oiggrOfMCKiXMoaAScUOwEZKaFuoSCVlnP7OS5DO85DoetV7HFMdtVe_HjqcZt_Mr6spec0X3Lna8IHtcvMpD80npn0Kzo-WOov7RX1MiZtdM9LEoFe8KcLPwdQcVobjXY6SBd1HBqGc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSxuTzzfGRKf17zJ029ukBjlUwMEjwZg9uWuMEPK9cY_zms8Hi0O_3ZsxmaKMw8b4xtp6RbKqxIOgA7HM8A8vCZ_gRPvCC5tcB1t-D9nC_iJHi4Jmp2VmX9CG9cngWywANONU="
+        },
+        {
+          "title": "jsurgmed.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFPh2p-_bep_eP-cJFysm7RukbwAid1a-fQ6Qy6C0GC5PdXQdDgUEfAeqO0ZB-13tGTT8MBBdXu2yqMYxlTxvE6eZY0c9d8jzqKXwwtEgA-J36XoJfNHUseznjMXRVll4y9CETww=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Early Mobilization/Ambulation trials for Paralytic ileus and intestinal obstruction",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Paralytic%20ileus%20and%20intestinal%20obstruction&intr=Early%20Mobilization%2FAmbulation"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "30 minutes walking 2-3 times daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 50,
+          "sideEffectManagement": 0,
+          "totalAnnual": 50
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 100,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.01,
+        "vsComparator": {
+          "comparatorName": "Standard Sedentary Post-op Care",
+          "costDifference": -2000,
+          "dominates": true,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Early Mobilization/Ambulation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 50,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 8
+        },
+        {
+          "name": "Fall risk",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "Daily post-op until discharge",
+      "trials": 50
+    }
+  ]
+}

@@ -1,0 +1,1052 @@
+{
+  "conditionName": "COPD",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:20:58.680Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ3inOOzeT1N1YJ7cSdvYZurv41URYwkCH_V4u_tapWLSaIhGz-xscFGahK9bHLUBig-l1N36nQvH3OSgyS826TLOlFlK5cIqusH1edjm3nxUJKDxsRz-fXWVSAlnvLO4TzSqK"
+        },
+        {
+          "title": "ipcrg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzdnRgnMiOXjZEjQyX5RBzc9_ac44mTvtN3dOAgLi5F26b7y77qovPCvy9vHU7F6BDJuJqDsV96pypbZKOX_qKk-HGhSJJB4dtC7smXKfw0qipYFKpy6S3y1WUh1x9cOZ6AsNJhRtwABGyV5TFwOG0CtWtIuQkEhCD-Tr_L4CZNk-u7TnVNpMx23FsRlBSEy-5o3k-fGRtpMYQ1PBQbd5NQCa19PpojDi-_hMVRjWCSx-b"
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVVWDnUqwgA4-1oer67j7RCkoyhKKK-iRpXcoa7ufxiiOOEMS3EuWLmo0nLoZw1JAVnUifm4CEY6VzrQ4TVhYoEUrViAgkxDZipWhdd0CTq6tL3Ad46jXsF_HW-hCgq5hNiA2chqqgzN5c6mOAjdVSPyev-nQ4"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFez6i37EvYzX76ApuYZJIzNZTDRmOxVz4jv0zEzJAymTO9mvVkhmAF-Auyo4ngFvWWQiChSmT5NlcgKomUyLv3-yE4N88P5myqh9B8MgzbXIUlVpWs5Q6T-0Wp5fYKDP_1GivnnrQaAuYx5fLSEu3hEppKdM4Yuhl592IMfw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-S2dnwwdHZn_92eIFw3BbjQl4_P8xMVQqKtD3u8nL_R2Gw31bf9t4ObX7aEc8ofpyHRYHurGeNSoQZCu2BWNCaw8QZr3xkYw6d5iVcX8sXMHsuqW--YSvwy37djJvFrKJhYId"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm39ykxrrpgN2ydzYRuOPfNKQswiW_ORe-ExogkoTW2yEWDh7e3mP9_6Nwqk3b2c8ELYP1XtRbcqajG7oHK90qTv9NlqvD-w-NJymVaMj-hDCFa_RBBq0JrkSCbVtAgtgjnMXT"
+        },
+        {
+          "title": "copdnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB82qsVRHBoNYYo10IoP_Q2APjiazgB7vcj7vYfe89ZhMsj7G27KmkHMBvkvAepXW6zuMKv8OV9Y_f3U_44fHwnFOEHUEuZ0ewUU7MR48BGsBrRkFIG1Vjfb3pa-K1f10sYudeJNRruUFY5jM0dKziLPwSjzLMR3DHXJm3r2tgDwyrT0QfSAnteijs3sQv1KfJRIWyxng5jwulYS_L"
+        },
+        {
+          "title": "iomcworld.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlyn4hUH5-WSnOPTs2r-yxpJ8FdT8_ID4u2t0dwHoT7C8P4L47mjuucfpIDTyzsYSjJQmLBFxW-SoXsXXGe_uj7o4QSrvT_MMbNZvEl0I3HhzxayKkg73AubhSAiha0LVUTMU1MfFdigBQ_x8B0el9huRFr6f-VLBuRQzbWOIBX3dpa5Nib4HXG5noQL0QduFCyDxgAGgfTk9CVQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz_kY8UHxnyxBiTE2FaUeJrJw9fZtrUQ8YP_AOyfUqardalBmC_ufQ4fe2kpCCHu0qgnvqQKHYIMtPkCK1O8xRynOqz1Fc5EAO2tlrpku1vaXZr3nZPI4_6nZ_enTyKkKm0I6fLsJhgoU1v9w="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pulmonary Rehabilitation trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=Pulmonary%20Rehabilitation"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "30-60 minutes exercise, 2-3 times/week",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 600,
+          "sideEffectManagement": 50,
+          "totalAnnual": 650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 3529,
+        "icer": 20000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 1080,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -3750,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 5000,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Usual Medical Care",
+          "costDifference": 3000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Pulmonary Rehabilitation",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+40 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance",
+          "percentageChange": 11.43
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "SGRQ score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "St. George's Respiratory Questionnaire (SGRQ) Total Score",
+          "percentageChange": -14.55
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "mMRC score: 2.5/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Medical Research Council (mMRC) Dyspnea Scale",
+          "percentageChange": -32
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "HADS-Depression score: 10/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) - Depression Subscale",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+12 Nm",
+          "baseline": "80 Nm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Isokinetic Quadriceps Strength",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "CAT score: 25/40",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COPD Assessment Test (CAT) Score",
+          "percentageChange": -16
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 10
+        },
+        {
+          "name": "Joint pain",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "6-12 weeks (requires maintenance)",
+      "trials": 533
+    },
+    {
+      "citations": [
+        {
+          "title": "researcher.life",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG61_s8t7rH-Ak2sRLTOgNvT4qUNP0jHFxsxC_UL1Lx8eeur7WH6_PZTh84rdYtGi-2EADHZL-NTrE8I8itn8aOF8QkBMpFcReMnS2e5x9GjeT2PGrKzPUGHrf5Vjvs7041sxbb5Gyavlq9cMbKF1QEwQZcnW_rt3rQuKZaJW4iTHxeMoCkgMvL92e0BgCYwX8JxqHhemxPKhxd_SaxWScVyyoV0Vz0TbZ2JTcXINHAJPuEeVKjAOEBE8haft8T8hCp4LaTig7P7TTJ0K0eIzmWVqyiK1PnkwYjGnIRjIaSZxcIczePICTlUnd1IO9OlVxjzg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH93oXgFTtE-0w0NRISAEFp6puJ-ZklU8T1twUDzmrt_Q7A6Q77_uxBTlpiOm7NJXO0U8ULkXiQmFFwjLyV7fpcWaPnq_WS90RMo6opQJ9fymu9i6jq0S1vlgbaC-2qsHmXpUJM"
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdeQZh11srsz-q1kU6iK3VTwb90ibFHK6uayw5Pgi7zBZO9AhvOOiLLe74_D95WnPxd-2ylorkljHdsZQA1vW2uksinCz6FEqjnEdOtm6aR6cCYleWLVn7ynQ3whUwu5rbMB03Xy85LHl-wtrcV6BN8R7HH03SoYs5ohDgJd1QxqiIZ_GbFyK8zp9hI33wtkttf_2pbQBYNljHNruZzOHDaKqz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSRvzRZWMaMcnlCxuONAZyI_tSFCKgGdgM-kzpdAL7KuMiBgMUm0Tfx6DjSj_i-giApUxP_iZGu_frZnVBtGmDhi0cC_L3cXni4_nkCorFKPCVc-UWurtEq570TNONX6BwFf2-j7Fq0nvB9ok="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvMyXMo_a35qZHQJbcZnv9t-LTemFor17BjSFTBt1RNERPHhCZMgf4QTuFnAjt8fhoScjK4axX18fN0tHbgMzQECHX5t_ZDmoOcFQgGq3TPmrLk6FMPmK7qLfGh-581G2Kpv_bHrTJl25VSRJe"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGH8G0zhi7RMTkrxArcine-9GuDoHkJl83g0kTYgTKEA57huxHG47hh6L1ACzB0lu8yNlv6Njv4sEvnbSaEbbzCD0k8KYoF1wtWafeAiYtKLC4fQORFnzlqdv_l0wjf48rSpqpepP1vYB7oIJse5sYM9cx54LzD_0nLUlbkdjGwaJkU6N1OfZB3kLawkDJAC4="
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj0zeI78L-cjTnMmnGOO9J8fsIcKGN5t7Al2XQVxtgjqRsP0VZO3NFqVZuU3dwrK8-6OLBxDkyAyW0c6u5KPUcziQ2mbCZ_CijbSbzfZrf3HeUhXwC68ltTGiSzzAz_bj-f7N1yF1SEGDqBeMlqKfneJBMZA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN0FScuguCQkQC_8k9WKPqtjxsq2yUSYj3vlY-fopSE7i7ugPCGH0mJyfEpo4HloGIHG124Jh2CLB3d_g9wij_phG_BpkVIJnnGrXZGErW9gc6wnXH_Qj_aLlOgkqcTNWPSyaw7z7oAaUD203v9SH7VN1e2DB-i0orY2J1-4pShoaYPo6-pI7LzoLNvR2ed7v7k7R72m0w20Orgeg_UArn-ThPSsXhCTOkkHe_CJULrrLBDcOgyKmaTM7jOsRSqbNny8okRA1tPHmF-eLLtcfSa-eNElj0Bq8-ps6qvCzbS-lf95w1QyZlvBEGULDgo-cJkCi6GoCwwSEFymHiaJ1y73Tf2kRQcXJirMLc4pf3LmJEJ-mtizXcfkdA2Y6aV7vuYgvyT5Yl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAE8owgz08SBsVGhr5jbOz3r49C408o8MUBp2M9HTopzEHCf5BQnQBVT2YN-ObWvYy6aV2w5dTQ--00SoHwPh4P0nUD17scCs_Qq1ho-cN5nGPQtfcUZ5X5R13sNjty0xtt-1IEKk1twBWkbk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Long-Term Oxygen Therapy (LTOT) trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=Long-Term%20Oxygen%20Therapy%20(LTOT)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "1-4 L/min via nasal cannula",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 4850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 6929,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 360,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 180,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -9410,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 10000,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "No Oxygen Therapy",
+          "costDifference": 4850,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Long-Term Oxygen Therapy (LTOT)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "35%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Survival Rate",
+          "percentageChange": 42.8
+        },
+        {
+          "absoluteChange": "+15 mmHg",
+          "baseline": "50 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Arterial Oxygen Partial Pressure (PaO2)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "30 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure (mPAP)",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "-7 percentage points",
+          "baseline": "55%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hematocrit",
+          "percentageChange": -12.7
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "mMRC score: 3/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Modified Medical Research Council (mMRC) Dyspnea Scale",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "+40 meters",
+          "baseline": "200 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance (6MWD)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "SGRQ Total Score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "St. George's Respiratory Questionnaire (SGRQ) Total Score",
+          "percentageChange": -13.3
+        },
+        {
+          "absoluteChange": "-0.7 hospitalizations/year",
+          "baseline": "2.5 hospitalizations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COPD Exacerbation Hospitalizations per Year",
+          "percentageChange": -28
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry nasal passages",
+          "percentage": 20
+        },
+        {
+          "name": "Skin irritation from cannula",
+          "percentage": 10
+        },
+        {
+          "name": "Fire hazard",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Immediate (physiological), 6-12 months (survival)",
+      "treatmentDuration": "Lifetime",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUxen6FdI1A9kBI9zT4_6lTzyNWkiwVVjNY4KC22L8lfLw-pW7qqdgex0efuGxNtATelzt_BJtH1BqLV6L4gfya9YfYMToaX8MD7-V8-XZIonVy3tI68Rbr9nS329AVxwHPRSJK9RgX7XxU3muEt1mr4dPldi6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFkRJbJMbY1TuJUbrk86WAMImOy-gJa5g_E1Ge3ac-rPtxb6mQmjTG02aUZEMYaXfuTZsViDnwXbnh5KH5b30qHKly_vLwt5d6DiN3nrQeKU-bJsf6ovpJzIDOW6iOOkAYygfj"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb7lrhRTu3xJfUzy-PWRCyYxc8PC4qaT9etYFpHDvCOiMkIVrONRawHgczW4A9ru6Gv87VIVJYpKbd02110udSQ2tudy7ymK6EcI1uOswYeSiZKqsU97Jg2e6WFEo3rWXg3MxSFFz15naVsLwjoGaVPEO51aKkSOTAAGu4c14pUhsvUM6ihts="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbfalYMYWB2obbpv3xweMsdexgr26b5QmO-X7rSzghMOCC7rnMxvjIbSY3pszQeKBL6zRS3GkGts3CH9tYFoMCOuIGTjuTGfvp7KXYiCFCrLQI0Mr-dC5Tx4I6R2CWn9LkP01U"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHQgCM4E7UiwZurA-Wz2lS-OLEU_t4vJME1irZyr6ddGdcUntvgMWmlse0iL502qFS0LDfE1Fv_rId3TVz9cXwlwHyl-GHDeMyrBHcio_PuvzYssR3FWM1xOfnh15cuM9Iz9Lbmd74dnErlSq_L3YJQVsypc_QeAztbcg_Vd8Z6vLZ8Zqcf7--LDibw13pEtFKQzhIXdZyNdKzd0sVsTRnDaTnEnry68bIFwdU3CLiZh_ipyYjK-FxPTkm6hgjKkqwh_6E8gaBoTyu2drVtFJHGkk90sT-eATr19UK6VOBFicAYakQrtT3FvHYtNd8pVwng6ssegGIKtOxUSJJXM0OVJYSU-ODEXTfG9aJTOwyMkWYv1twpWRvnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzFw4mjR-k26lLlLeFqT_WbqTsOWJ6W4e59ZfBJu-qMlMw85Hy0eoFogMDEtsq2ZvYM1F8JRBWL2fHOn4FkrgHwQlWSC1mgyuKOruV85OGMViU3jqsOXvYTNLXUA_bvNk988t_ddpLLAVN-hI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2GwBIqPx4GfKJx2Jg7UVGyixoQxkuWiJGfQDRCNPALSQZewm5kdAjU6GKgE5WMdNNtwGnr79Mcy4mPLlyZ67rzXYHbov-nZrl3lZFnJmfWeLCr0TVIUBW2K3Nnb_C9GgnQ_KoJLS5JvFXGDTQ88B5xz-s33HskQ7mJ9Obsf2OG_87-eP6FwWdcTPfhe0RHV16uYUYbZl1auhi80St0_wkdJp84ltl9pSojT4TJ7VOBgdcQkFpMpWeGWBl9sObSeuAoYkYOXA-ie5T8djvTH4R5VyQbOP2SeELjq-NPVfAusM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT00D8LDTiiDCThjeY5qaBT0EFb7LIomnsRogG1vVDFXl-V-icjl6chFdLxvvHUP8dyPmZi7MmfjMz5cNiHC_oyz-zIqYL0mQhNACPVhCbFG-8oAAu-ttYcaPhrTib8PB2pnnUCwUeK2JAUok="
+        },
+        {
+          "title": "firstwordpharma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGT9ItI5dA-OrP6AJAupOaoB63xYSuA4oQlXA44rMCM9MtY2Vgoq19c0ZyAy0a2rD7x-9R1UBTHILC9WXrtpfYkmq6EMxk5zKGEbOME2FZEkGaoZ4SR5KwoBfnvzcql8NXnXrq1"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3N-pU3PRpkeYWStLwhAEkj7xHch3M-2kfpsHG-06g181asuzDJrtuDH_f7rMsz8qlp59sL8Z6IBLS0jy7jQPb2-UW6HtkrckdfaX_Jm_HzkGpy95EgibiF34Br5OxItKsAbnSVWs="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrR1w1jZHn1ySysIbBcMdplvbCp4gEPNC7UlXtI2kk9OkDdlIYDTC0sZN8vpm4k-Te3zSrpPo1BduuC1gJ_nF-IqHbWTmYI0n1AwdNxYyRUySOXgCmNHAfNhsLYmqTWxme99ITRZP4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtDXfeyNa07rJXJtAuH0qPsl8MtZbx-MDUgB94vFcIQMEq_BSkVP8BTeJmE4B502s8QMA2Fw1macb5HB3b1Jo5m8Ac6ybRe-IHMIVnOMsMfb31Hd3C1kLLofeCoOuwhTveCUS0"
+        },
+        {
+          "title": "ClinicalTrials.gov: LAMA/LABA Combination (e.g., Umeclidinium/Vilanterol) trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=LAMA%2FLABA%20Combination%20(e.g.%2C%20Umeclidinium%2FVilanterol)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Umeclidinium 62.5 mcg/Vilanterol 25 mcg once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5400,
+          "monitoringCost": 800,
+          "sideEffectManagement": 100,
+          "totalAnnual": 6300
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 9000,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Tiotropium (LAMA monotherapy)",
+          "costDifference": 1200,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "LAMA/LABA Combination (e.g., Umeclidinium/Vilanterol)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 7
+        },
+        {
+          "name": "Cough",
+          "percentage": 5
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "15-30 minutes (bronchodilation), days-weeks (symptoms)",
+      "treatmentDuration": "Lifetime",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNN_09JS7seE5CwdWF_17v2dqcdwoTgcr5zKl9GEbnS1TO2qnA_1U8ZBsR9AWfrzXxZ4_fa_sVpR_iOU-JSVnXpqkdB7I8b-UDZ_5QGaBY0ZEJD-GqgzqrhT4e8sqZiXPjBU4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpPdQzk5Ilivk2DGojxCA2knbDE4w1kWbXv88UUfEVjnE82YqtU_BWFZ3m19LU0Hj7vZCe2FBDFHlEvwFFa0PDgFB7A9xxMb0jsaafVhGfG1BR8tdrM8tyGXBbOs1e-cvJ9pC0EQI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdWrPi3VWnYMHUVKJhIzNGpFokgazhB5vGqEj9AGNI1bHZJmVmINrqryT_8NXUVTkw1_FFEaPNQu_iaV1a2xiHNiMhFCB73J7Ec42V72qMQFlZzWiMnALEhCwyt9ZmHW2tacNP-Dz6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfmTEJuRmRGeczXg78zWiy28jF4yqSoeRmQr5eEe6P9jPuO8cg_eeiIwIqCjkVtN4ymMrB3dn05DZPQoswOW4Oq8vjv7zYH5SmU6fxAWDkqQq1QO7E51EynkyLVHM3qsih8-HjTLYjUIqy-g-yzlI5GoQtXebne0rqF0t9T4hZi6qzFJ7i-e_qfQsrVVcOw1VfxuPvqshd43g5vXMdKjjryB-IVQbYbEhUnw5px06-wwkyvrEW3tdf50W8Hwgf9aROeAN4pMo4pCx8JpyGnByAEJnSezJGZd6b4qGA3h-w06uEBZ5HfBcoNOr_8eMfvA=="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUwc76NipXefXnOaYNnztqutx4VJKGAa0uQJ8do-hY_ZTds8BhkzFihXslcA08WenelD3YAA5_t4Q8gDyRrGWaurGGrT2w7pEhNPEXeL06hcOIWEoUFxiyMOpb8M_Uqk-RggmfuoNXHY4Cfi_JzxCPMXmR7DpDlgA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnBAe4D-F4vcw_P8c9ZT0Mh-x6HiBVsFlrASc2QO8uGEaw4YbFVDdHpT9-pIAMKczsp2Ao9WnPzHNJ86DpfemgF27IodP2I-Tc_-3ddr0NFMgP5wYJcDnFeY_OViw2SFEFF50="
+        },
+        {
+          "title": "ClinicalTrials.gov: LAMA Monotherapy (e.g., Tiotropium) trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=LAMA%20Monotherapy%20(e.g.%2C%20Tiotropium)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Tiotropium 18 mcg or 2.5 mcg once daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4500,
+          "monitoringCost": 800,
+          "sideEffectManagement": 80,
+          "totalAnnual": 5380
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 8967,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "SABA (e.g., Albuterol)",
+          "costDifference": 3750,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "LAMA Monotherapy (e.g., Tiotropium)",
+      "nnh": 15,
+      "nnt": 10,
+      "participants": 100000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 60,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Pharyngitis",
+          "percentage": 10
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 8
+        },
+        {
+          "name": "Sinusitis",
+          "percentage": 5
+        },
+        {
+          "name": "Constipation",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "30 minutes (bronchodilation), days-weeks (symptoms)",
+      "treatmentDuration": "Lifetime",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTjGXIrditnSj89STu3dWRyKq3Xnxat4Ia8wku9BtzQ5yJSfFRXomMVe_sMIcJRzZwM4Cwut30bA03rc-WicI4OFD-sK0mSV4NKrcL-fpKE1k0Pvi4R8sLa70MHuMCdvO30-2b_DIx9zNR1GD78JxbCZNPh3EqHo1ODQy60w6tS5JZgI87sY1PcrWUHw6wR_Hhbyjbduw5wgVPQgc5BgNBy6JBpcn11Gt1k8gNdcUHb3ZogZ9joIiAcwjDMQRZfA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS2inDtxntaTw69SCTdZdQ5tgSmTIfajY4tu2XQgLkw8tYD35vSHA7Fwg6l9onmFQrPotMVjLtw5hnbI-BAY2Fal_JO45xIvGfVwJ19t0d9u3bEHIpcmkU83QB3E8xjNRz1Pjp2DKYBIjBbw=="
+        },
+        {
+          "title": "clinpgx.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0vctoqrGevX_0uFEJ3hMHeT8iaMblpgR3PIi8_4ZWHhnvfekBvsItCPDbeUxk8OuvG_N9jwt51mUxHd5LxQjY1nJwjZemTVqbnQKIWbJC9dSWTIp0nha-46PXYNVvpA=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhBMPCF9sxM3jIklKwdTY7WlgxpNxOlUp1Fbx38EYYPBID9WXkTM06n-6SuJYb3PMP9TRZ_-CxERquB5JX3tGxWh1awpTXOCd0cTjAxbABb5czdXLevOVdsIBaNPMQEPexppLjKDmk3-psiP8DRw=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzpDW6Dmk8rLMW3zzD57I-k9SiSCI1Skt06K8I4ZYNS0OZENKB2jcuBFPvbjpyb6_x8YyxVsdcUc-MXIIeqbfEjjO9-aA8XlUlb2s49FJPnlQx-Fg3SKH29H18mlZfwVnAjGCUS1CDYN3VFndoW1innbTbcpaG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs5ylthInDZzVnUvLp1wC5g5L5tziJUzYiZcOMo5cWUT1EL3BZL-rQFtnc96CID7pAmZ2dKizfmJ2UsaDWcmsTESqmzuY1kcuQanPh4vFp7AhiTqg6_Ttr0tBjn93_GxRVMVw="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7A4dkMFxOYmdjBAAx2nsPTtowQQbpW67jndTvEklrrYOSdUuxQ83u3OPuFj09NvlXZuZkCk6h8MY1Q14SnNg_IPO67KHc7cdvKj7_1-3PjznvnxLPDGF1kYkY1IW_BdP8qnUj7M-H1f1mWA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHy1sF3Z7mCAyYH0h3XwFhmhVuC_4MlEKIyrwHK506RYKw08ZfZBVqG21bO-O5FrcrTJ931QwS4GlMFQr88v4tpy-yfzS4bSN2Rjhnv0Rg6T6kIwp0xfBaVJ4_c3hzSpn-M5gc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECQIVJgp1ifkkHUQjRsnlw2xkOxgj7JvcV9DlR8LQxxMqg5y9X_AMRduVU-i_WJH5tNCWnlUPeTto509DTs8tGub89v1Z_cUF5jpRs9mxzqBa0_UJV6JouuY_AceD9UtbSWEcmTJ_TR84Ow4XOX7-GGK2jm1FyEHFggGpBErL5HRdWJB6HrZCilvyO_TA_Ae4VkBEilmvdyhbNbXXq1oacFZq7UsMxWh-2dBGKe8p6uOJDtr4_tId9G5_veX0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRjEHHN1rGndYdAfvNXnOn72X_C65HnI-I2fIdK8Cq-5fDplRzq6Xh_Rmx-i3JwTJnmx1r-qp8u4Dv9VLZHjlWMrz_GSs7KtGwfgmdHotxk5FtgYkCxjctXdduxjicC8il9_A="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM-tKnPZkp360cjU7m_wm3bfu-VC_XxyYHezk_AfHdFQ2i5MwxxJKJgnLnNA7TNSmDxvSGrZNHy8Lv7sA6xnu3ckJHX_nAlE4Lw9fu3FWGPWZPvM29ARkUWZa56gILSY_MaMWhol9AazX1BwkzVGVErB7wtPwTaAJ9Chjf"
+        },
+        {
+          "title": "ClinicalTrials.gov: LABA/ICS Combination (e.g., Fluticasone/Salmeterol) trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=LABA%2FICS%20Combination%20(e.g.%2C%20Fluticasone%2FSalmeterol)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Fluticasone 250 mcg/Salmeterol 50 mcg twice daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 3600,
+          "monitoringCost": 800,
+          "sideEffectManagement": 150,
+          "totalAnnual": 4550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 7583,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": {
+          "comparatorName": "Salmeterol (LABA monotherapy)",
+          "costDifference": 300,
+          "dominates": false,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "LABA/ICS Combination (e.g., Fluticasone/Salmeterol)",
+      "nnh": 15,
+      "nnt": 10,
+      "participants": 60000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.13 L",
+          "baseline": "1.3 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FEV1 (Forced Expiratory Volume in 1 second)",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-0.38 exacerbations/year",
+          "baseline": "1.5 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized COPD Exacerbation Rate",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SGRQ Total Score",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2.5/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "mMRC Dyspnea Scale",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 60,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+18 days",
+          "baseline": "120 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to First COPD Exacerbation",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-1.2 puffs/day",
+          "baseline": "4 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rescue Medication Use (SABA puffs/day)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+300 steps/day",
+          "baseline": "3000 steps/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Physical Activity (steps/day)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 10
+        },
+        {
+          "name": "Pneumonia",
+          "percentage": 6
+        },
+        {
+          "name": "Bronchitis",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "15-30 minutes (bronchodilation), weeks-months (exacerbation reduction)",
+      "treatmentDuration": "Lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0xyPJZ5ovPGqlkR4Or_caWWQe4EiZRxt3ZkLc-jCHB4kG4hTExAL2n9jxciZXdjz5OaJMdEi1g8bdQXtx6CL8BuqPEsHArK_EBrau-PiO1rKHw9sfeFwZiKGJoTqcxJYixwB0cpuSk7AJTQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHReIZCRr9wj4s0hgXocMGx_-aiVVsm_2mlJ0l8XzLYoboQiFOK8H2-pCKVv6IYPBY_2Z1ZOBCBromK7N7SnRQ0VK1IERin_QOEqzF7HLD3cb-NDD5SoHaWuPXTQ0K_xtjEAL4="
+        },
+        {
+          "title": "a-jhr.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFulotOz6nroKpQlXzjOh7wXXryizI-MWGBZvDsEG1AU1E1H0KiVRJis2nRYECE7OaReujgMe7XsrRBlIHsaRrRX-esg74UiDtNkhHyS9qDO7x24cZ0W-UT6r5l8x8Lv_6VrqgzEBQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhBSExQikibUABHe2pdk7GWdXdxBJCZCsCa4CVgG7Fa7M_G5qeZAuyb3Cg9HFjVr9e3ZMVnzmJD30Vnn64x5BSvfyqPZIN2Y8tYpwjr9g1g073956_qnOHMD-YZCbwg72VTdeo357KvWcL2Kj1jNuzFAhjObB0XGLwrb0Q4IP9KWG0ILgem4pZQ4bV9GLBzROAV50WkaQy-sP8O9oyCX_b2kuUOAM_WKXXvs4Gw1Mon4WYdiyz8-gF5O3rvgjNQBI9n-ue-Nd5TUUvdZyecrOqDJsz1uHX7LYgu1A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEP72rZqeEOmZsvSjS3NZ4JlXfVI4oym4HMAv1ADLp4cOir4y_ewmm3jW8xctwIPtwKftVBp4iYzT4mqnDlvkAD-Kh0DFzE2bn7zFrkFjt7g_h697Ff5-qnlopg6wO0tprJuk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvKPt5LgJEGp0SMo9ERiStV5UClnl2Fwr5HgJnFaKH8xBHYf8Qwv_qh81TBEDxokgdG-wWyaALo2UJZe_yXTIr-8l3eOoRWsXr8RbgubRaOm0YGOTfRriq1WdL6519tl4n7pw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgs4r53J_WJ3460Ru6UNjGzABPHunaHv_M6KOGrwzOWRlTpI3IE_7wYDJ9bEtnzeB0CfSnwmEWnmkLcZUSsCzqnNBcQa8_FtcbNEMV5i-TW8lzc07o1BXf57kr35NxMYnJovhRbU6PL0KIC1K5DOliIlxWo_YUvBbsaFRt3KZvKuw9bkrsGj3HYQtlC15wSmKlBBN9k6BSb__-KYd-NpjiuYwg16cwF94R-ZwjnYGzHMvDN1QzL2wtR5mMS3dyzWi0GG2Df37Yh-xJ_XpkVCkloLWKNIjQqXGNPboafX0o67PRQkN1mPJQrXJO5yXEa0-YzEXRJn2DgSQM38pKIJM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSbEHR__EAZh243VjTCRcUsxckVNHCzwVS6u_pyZ5mwIFCOkgoh4IKb3IarwmVY1INhRxp35L0XADfkdO_r6A6DqGkjY6xF18Iab0r8aPRIjyahpauJEZXvXIjucHkHZcZXQcUXYNz85w5d1Y="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRwd1N36P-IBPWwPMddU9HkO9DKtCSEbAhetySSIWJbNll4M9shW2XTqmh03DEqfhvi_qHLC9y101EhblXZnXK1nwYRSvNWvZ3Dzki901FxV6XmJKHK3L_3jVkVxkxygKtRLjjmIs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Triple Therapy (LAMA/LABA/ICS, e.g., Fluticasone furoate/Umeclidinium/Vilanterol) trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=Triple%20Therapy%20(LAMA%2FLABA%2FICS%2C%20e.g.%2C%20Fluticasone%20furoate%2FUmeclidinium%2FVilanterol)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Fluticasone furoate 100 mcg/Umeclidinium 62.5 mcg/Vilanterol 25 mcg once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6600,
+          "monitoringCost": 800,
+          "sideEffectManagement": 200,
+          "totalAnnual": 7600
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 10133,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Umeclidinium/Vilanterol (LAMA/LABA)",
+          "costDifference": 1300,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "Triple Therapy (LAMA/LABA/ICS, e.g., Fluticasone furoate/Umeclidinium/Vilanterol)",
+      "nnh": 15,
+      "nnt": 10,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 75,
+      "safetyScore": 48,
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 18
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Oral candidiasis",
+          "percentage": 12
+        },
+        {
+          "name": "Pneumonia",
+          "percentage": 8
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "15-30 minutes (bronchodilation), weeks-months (exacerbation reduction)",
+      "treatmentDuration": "Lifetime",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOu336ZD9LgZmjo_KnQvgq0lh8pjDq2KOa9TCNng-QUzpa19qpKBorKShR5Q9Fv_AQQ1-HYR_QOgcM2XHg-23ZBlIZucFh2OKpTPZyuLnPEAPIt1lgzR5yOJeXiJRuTiY9s3dm"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLuYPQWdh2TUtFSTa0okgxJbcvbjmo5NMuRSPy-R0id4oSK3pfDNdjQU4XziLkLQ2CivsblTpsNamQXRgjG9q9YWLMnSTZ5L89_fz-yY4XIY17Dnr1L5zMHMfz8ZcJ8uqQPpxwbRxM6d1GlA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFB_LzS-IHeMMjmSu_7OOHjE4WAUjjIEtR6d4N6Uw7c3TC5OWhULggSdcUO1JhTaKn7i_1RwaTD-H7dc7hMEuNqfMJ9IAODxOefy-eEZ1a5-L7j0YaXR4aKwY0nVUoJfYD4eQIjJdmrqOmWRncZMf-Qf7iLrzGrm4BG6nSB4LnCa6-XvZlGTAbEajCfWuyHLAfkwL30GrYvZlZtOdSg4Z2d9VqOBeQLmkDHm8qatKC_0gGTpNEiq2CRI4KlAgSp8CrNtLvcVmmhR9c2bSOg4dtr916qJuNeiRdG8P8vJiGoLZWhKiGIZCSPZOGFNLja"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSB4Ht_CwOLLIUFkPpTWSf-KtX-zOYn88xptb5_B-8Zt00fZXCzXQ-GQFRtA9mD5Keabq8Q8y2Gzjl26c38qWRLP_XbqJ6y6rguwlmwx8W1VHte2nXD_V0iljnlBenk8byRr9j"
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyVc2gVMlUl7Q2hMPoLGeZ4i4f8KpvoTof_mow0dnqc6CdKOAp-ziqH4IpQ3L4NBFzywLVJ3kXC5c_8XVJ16PjAcisiSiN_xBWGN2La5xyvXCN4-yrHhQ_iBAQAGq1FCJ_-wZ9TmbTwkltvhc="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHQI5DhORSUmX5mJA7mnfGf2pTOK_PjAit87zkaaEEAcaOkfz9XfrG_ErmdNJH3VBPX77lc7O_MUghYYjm_bcCyRyYY2ZuguvXIYFWMeoPZDrr02MHmCJuHSffMcd7a8Lu8a1B6TlWsGPHRxPSxoNDJGc5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrHojLRH7dugkpuQWGmyL57h-7rVAGu28B3ytZaFoc_RA2Av3GBGd5LTEu8238F4Jt8v7XsBbgbxh6G33EA_nRxtE5iyCtC97B_g_yFQpfo9ttDF1kyGiS_7Ck2fQoHXWe61BQ9Re4H-zsSOc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJIYGPU3riOhcFMUfCi1vHFC1We5jh5EMNOSZdRLYGGy6KHF4lIQZEP4epydLXHLyYY2lSId-fbtQrmj5OoGstnCoGe8Y4zTNTllIq9DmiW0PIG0jxMSp3U4NXhLUXWFlo7hBO"
+        },
+        {
+          "title": "ClinicalTrials.gov: Roflumilast (PDE4 Inhibitor) trials for COPD",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=COPD&intr=Roflumilast%20(PDE4%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Roflumilast 500 mcg once daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5400,
+          "monitoringCost": 800,
+          "sideEffectManagement": 100,
+          "totalAnnual": 6300
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 12600,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "Usual Care",
+          "costDifference": 6300,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Roflumilast (PDE4 Inhibitor)",
+      "nnh": 7,
+      "nnt": 10,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.22 exacerbations/patient-year",
+          "baseline": "1.3 exacerbations/patient-year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Moderate-to-Severe COPD Exacerbation Rate",
+          "percentageChange": -17
+        },
+        {
+          "absoluteChange": "+0.045 L",
+          "baseline": "1.05 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pre-bronchodilator FEV1",
+          "percentageChange": 4.3
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "52 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "St. George's Respiratory Questionnaire (SGRQ) Total Score",
+          "percentageChange": -7.7
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 50,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COPD Assessment Test (CAT) Score",
+          "percentageChange": -7.1
+        },
+        {
+          "absoluteChange": "-0.2 puffs/day",
+          "baseline": "2.8 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Rescue Bronchodilator Puffs",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-0.04 events/patient-year",
+          "baseline": "0.25 events/patient-year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "COPD-related Hospitalization Rate",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 5
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Weeks-months (exacerbation reduction)",
+      "treatmentDuration": "Lifetime",
+      "trials": 4
+    }
+  ]
+}

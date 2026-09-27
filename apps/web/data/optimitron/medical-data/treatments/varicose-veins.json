@@ -1,0 +1,1028 @@
+{
+  "conditionName": "Varicose Veins",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:14:06.145Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "um.edu.mt",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb1yvzLGxjXBBXR6HYhCl0YRCoNJ9oTOuJt1ZyNX1OT06bCkDcCoWicMPuLCnRyU_obmAUh6VFNsE1VuURjVkXIyUQiy6Jy5P8h5Y-6ulUC7LtPlM_KLJopfbTMwp6sA7Va-skRGVzijic0h7jP_DXYQSmKuEL11yLxHnL29dO1i9hS0Tub40N_ZraAbPyOMm7IuyEwwCOM_rYfqvo0elEVKG_fzkFoZKe728uXeuuDPfnZ9GEbh5NnbdtMNOyXuOZ81Ng5Wb40jlhs5hcavwQF0IUEYx6xvDGRspXhRRV1ImShbjlloxpUIi1YE5Ygj1oQrgVMnrWWfPlre1-KeeNyqYokDYkP2AG6SeJNkOwjRzBrd2ygsgVaWkAV7cfD01bM6OD"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVkj4MCsrOTm4iEYYSQQdG9ivbu4BbBegSjK0SO3OUZvB37V95yk-9jyNNNVyMNE-U_SOG9SJGyGCe69meFfeJ86d7mqFaLesxJMVdAGmipVwITeRKI_7Li_Nog1uW7SwVpHEA"
+        },
+        {
+          "title": "phlebolymphology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcCgfNtfmErut3NqWR8ASn3c864h1jOrRVxvPfIE1WgZdjSVDwZULBAe7zRMqpplPDpNHhNVW2FnTf5pJKgCqDunoNuvf2wVaqCeaao0j3xlElUXadEXWRcfrzvBFyLOSWfS67ig1OCv3XU7B8gTx0GQIhLdzAJcuDCMVZohbuGOFblsdI1pPoSxzpXNf_XZfFpnYECeT18kpJ2NCCWGdjK-q2HCEFx6DfcA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ6JSpwMcAdFZZ6kC7kWyytNTcavMGAU_G35AQYHcUeXQxpSybKpBlO2_Fy5n9DcSi3rf8Cg-wu39_gU-GGyT1yZsT09QjZ5P4_mN1ftgoW_9OlabmPrscT_4o4cdbo3OmM4JfXtGYEbobsq4X5PlSPCr7NytgPsvTa7p2uKCJWL_dFmcTWGmDxQ_4EX32vi4HSeqDBkak0fv0tiYke_1_KgtRXClwaqsjxqyXQSZJ4e5dxoIx6dIv9qKKRzT9oWQzW3PC2IChTBAsQjo9LgHMHGlAc1vN5VtbfYyc1i2CNg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWCdUTTS8jN81saMJCDKjK5zoUqmqrB6lcr-uksw2p5vbrvROAu46-Ug3YATYVzkWx76vNYr73I4SU7mLhXKYFLjBqJE5Feg5orWhgppy_5hoYOVHbrLbCCYOUTJhvQRIMTAhL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLCzlWojkeryMW1uwHSFjDkRQoVQbaf8gvSraWpWxqZcnSccAfyuXwh0aFmxUT4kmAw82Nd0bZgVeHNQF8af0MFnyS6QQTLqdLV34vSpjahO6pAD7r1Eg4P1hd1nZU88MNodsxqVS6XoM0vxU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpzClk-PVCJrJPYom2GAD0fYfW1iQNmgPbV3d2P5d5OwmgrpRtXOXOj8W3OqR55rfm9rRet1iqndZTwtBAQbvpa2iBX2K209Ut910v6SgZGOsIZdB4uqZSc1JT98IHbZ0DyuwP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIw6n74f1b9ZSbPV5gZ749kVd8w3capja1cg5aewGt3nFGdCTxIB5HgeVm8-H9tID9Wad2eVCzyquZrsAS0XzvL1e5Uxzmdd5bQJsJEGDLL2sxSthfXQKXCn5JamxM4Ww_4IuU8YmjiwEB3R0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cyanoacrylate Glue (Venaseal) trials for Varicose Veins",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicose%20Veins&intr=Cyanoacrylate%20Glue%20(Venaseal)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Not applicable (procedure)",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4706,
+        "costPerResponder": 4444,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.12,
+        "vsComparator": {
+          "comparatorName": "Endovenous Laser Ablation (EVLA)",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.01
+        }
+      },
+      "name": "Cyanoacrylate Glue (Venaseal)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 78,
+      "sideEffects": [
+        {
+          "name": "Localized inflammatory reaction/phlebitis",
+          "percentage": 15
+        },
+        {
+          "name": "Skin discoloration",
+          "percentage": 7
+        },
+        {
+          "name": "Bruising/pain",
+          "percentage": 15
+        },
+        {
+          "name": "Allergic reaction to glue",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single session",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHDWa3EB3FaSZKZ6IGwNWxWTTo39c6sVwVYo4iJACvxC3cuKHraq3wxwWEEaZzGSMEh68ZpRe0PNQ9h1HY0jRFN-80TSxGv3ScqWklFymvUzx31UtY9DypvuV1ABEYh1ydHHXMyBbw0JWLrSxq24dRaKuLlCrYEoN9sFg5xPaSPxcSQWGXc0ozcOe4YupNk044HDuH9CqEYc-4-laBtScY"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBeoqUXZQcnqBQ9MC405SwrpE68apXLxUad_l5MtipkCl6ZGyWI6LmHe1zd7SwN_1mIruxcEpc0OyqKeUpRNNXMsyph5cGmGEvnOL__nMXKymL0xU3PqT7h9j5Rvp4Zah-vb6UTVpcCijCTPkmNWFt_ZiXi52t3Cf5-NGcHLQ1yk_dU8r620uAwsW8m0UO9v_0Ado8_AhF_usSohJeE_anpRwG63g5Vrs4xPiqJOEdI8BN1ZGxW8kMhSdKgeinX4mjDSkWAee8t2tj9Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPwCJE6jbrQAnvndIIZaY51TqY66YDJ9umoSKRTGAOVy_89MYm3AZcfIdL8ntlSK8OOcdkmaWNfXszjqmvMPY0YWDz6019n0nRayF64sLbvjUABvqCXsetPJbVVYI8eEEHelRr-i0jitkjpNtH9aISMOLLWkTekARbbXvb9tqU3iapW_V1s05v6D3lnUqWAVivigNKKg5YBdbHPZsbWXi4npC3NaJgFD1z5T0CAXWTj_-3VZnKewrAnuSg-IP5eTC8tvI3XC16NBU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8gYKsVFRUGjkWiB4qmpQtG_YxTAopiUR7P0pVD2WlvrTeKDmhFpC6mKUhlQCK3nj--E7e7wD3tQM2gegHd3HZqvn1J2gsk3sED6PgP4YM_VDRzNsarrWfmYa-5H3HRKZYEo--7pwWt7cp3R8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEQCqn6plbdBPZjBTW39XAP08wny1MpJO0--W5LaRg8QxnKDc91BaTRh7NbUcTwrZ9tcrXy04ifVsmqqniB5raASeYDRi0ZBGVRLdGbd_ZFXTaN_ZC17Qv2txYADAd0UIYFj8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnhs6m8udE2obyPEGos-B0gXVFVJJr3g_Q7Gk7FYIe7hoWiCLSbu2Fa4EHmDQd3BFTaFiaYzJJf4Kd0RBuZBqr9X0dhePa0Maf6dpXJbALaHXxFXw93pUZkwELrR5x_joQyXJgATwS_kRm0ZE5rwIKDs8trQlC1KxqF2hUIiaR2wty5HkYAG7SAes-ktgD75q1Go_8CBmDepTKmjig1Vt2A-xH6I4yGjllHzV6KctDZWAwLZ4WNkyIfesViqK_mbUAw2gVviqa-fV-8-rLF0pJd5VYVmBvZ8tmFS-8yezHu6xMjxc_uffVQXacQjpJimJZNQdLrqZLn1-3nt236dU5G43HTuglj9HSBg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo6TRm0a2607A0MfpMyJLSXL1kIUukP6_EDHFTDDAVY3hAxaZXy3-dJin6VBlHxoX3DBR4TX3w7UORWzWiPP-LBKqgdNEr3KBhD6jkfc8TBbTzwxH4l_Z-jCLuKiHauI3cabA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEF4H9y896VoXAca0SnVobIXqJ2ZvZv8BqPHh0F6vOaaRigPp1uDaiNfL8lie8AZKmulBzfQmiLUJRPl2LZYgRjwNGb_5C9Y7XDtRkVTqgr-w8_crwffGgpyXRpmX3pqS5xtf8HLVH-BRm0bDMhHQdochBbwtbKQ5Pi2HY0vwaVB12C861dZXixumsZKXMDA-0NKaTSUyOoNspEzVRzoOGlptKE1IDM7YpzVlMe1xGNlwvJ0WPIe9xI_UR_1em0WqSjA0hfDTXm4VBGPjPdzIkc_eh_Z519Ad41bxIBZfrvNjFI96QMSAI2nMuddqAO-ZTpqxvuisP8woTcTLO7Z0Dti83p6wWF9nwNtg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6MHx9l7pWJnp5Tr1kXFeuU47H3lWqi6-sAI7WMMlavd9ooggHWTutHoDnPEyf_G_pGInKhglO3j3USZ7U4YdrCZ4n9qpZdlwqnG9uqGm0F_HIhSaFSKCqwvIYEqZPWlZ7q4c="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmB2FWjF-G7pIMkdbiTc5A-u80iorihCP-McrdW7vbXGqbJv6jTWaLJigLlDCX-KCky2oYg3pXU-gZ1tuq5Q0by6rn1TnUKy7HEc4h4THKeIM2TvbqaWCH0SwHXwdKyKeaacJyPQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Endovenous Laser Ablation (EVLA) trials for Varicose Veins",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicose%20Veins&intr=Endovenous%20Laser%20Ablation%20(EVLA)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Not applicable (procedure)",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5000,
+        "costPerResponder": 4706,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Venous Stripping and Ligation",
+          "costDifference": -4000,
+          "dominates": true,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Endovenous Laser Ablation (EVLA)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "10 points (0-30 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Venous Clinical Severity Score (VCSS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "6/10 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Pain Score (NRS 0-10)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-45.5 points",
+          "baseline": "70/100 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Heaviness/Tiredness Score (VAS 0-100)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-2 cm",
+          "baseline": "28 cm (for affected limb)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle Circumference (Edema)",
+          "percentageChange": -7
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "60 points (20-100 scale, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (CIVIQ-20)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-40 points",
+          "baseline": "80/100 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vein Appearance Score (VAS 0-100)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "5/10 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Cramp Severity Score (NRS 0-10)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain/discomfort",
+          "percentage": 60
+        },
+        {
+          "name": "Bruising",
+          "percentage": 50
+        },
+        {
+          "name": "Numbness/paresthesia (nerve injury)",
+          "percentage": 10
+        },
+        {
+          "name": "Skin discoloration/hyperpigmentation",
+          "percentage": 15
+        },
+        {
+          "name": "Phlebitis",
+          "percentage": 8
+        },
+        {
+          "name": "Deep Vein Thrombosis (DVT)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Single session",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9qToeVqdk16E1mhgeMZXPsb1tvaFsBbe3Q9kERGhOkhBv5NOUKN4X7bYxrgRFRx4sRaUW35pLhnt4xyapWXNQHgolt_cLEEO6TKKEr5_o0CluaGViM2qSYhwbsM4oGiqS9QXKo3QIgmQWwx76pbEXIzJeuiTuYS3kQEsSVuv1Brxe2Nx4SgnBgf6LZF6Kybyd5R_VwDpvqH2Kr76SsIC6NaFD5sIs1HcDW81UNT9ybLhyGzYT-1wSj8CsvuZEtF1syEzyKgJfFqAHweaonskZnVHhNbG3JEUSq42Vkg-U"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY1sO15RI3Qd6FkUIqDx0Psq2Z_arV0oTI5zCCj7mwhIGkEHROwH__KFOZWRFCrAL3EKBwwj8e3xQmZz1onKvrY62115oqyMvyud6YfN7bKi5DzaiAFtiGnZDs-Jg3Cf8dQFF-bN5S1pnBGoOTcViywgDhcxYJk0ZHq2fC3qFcDnfpuL63qHFZcY7DAW5eEyz4iRLGjGSlVVW_AYcLEQvsh_aPxmGuFZgNWfPgzGpbB6jj_fKEwbe39UeLDZn5HW94Idei3kvUacL4Rj9fyQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRIBuEMnExVMZ06WHeEkvKy_vN-YFaQSfFiXP6pp9sAFXo6nu5VkgFYJMsm94tWU3WEP-g8dNMEM-AkAh9VgKZotCcrW1YcSJTeuVocZQ7JrLFBAq4dYABNh45ThsxbqX5fCpRpqypAjIubpU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2vRzstt2C06qmQDBP0yl5nXi8wrrTruhEOPA3Aquo-9yYGU7mRqlnEI1F_53RFgkc2MMVocstuY4w-zHgyzcTsfJjbTJEZMoH70THQRrTwq91grKoYS21oOd6X_WW9XNJrB8MTlmexCyb6L5w-wAkoiC2RyeoQy5IEm7Rfwc2nZAT53zEoXY-Zv7hF-pOUNOe4fDuXrtMHHFpaFazU92890NzAi5JIXWRh-TdBIq38yT8nt1U2GJk7nz9A9kaqCXbTJmPw_Mm1irBjoERlVUnUuW4yiecdg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4V_mBiDXh5GeCF_hmp-yeLXNGjx0SIiEa7h01c9IVW3-8BWjCd25lb6tORpX9Bzt1fZVFukzILuP58JzrfiHFtqIcpaamtZBQdXkuT1s-cCqTXhimiexnfWY0mEngWROGV1yp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu1hvt2CghLcQ2hlqzzWyMjZC2A0WUQzpsU5fCv0BQTJMbzK-DbgEU8ZV0YKVnj-rJdZQgP4xu_QewxfNhnbtALBPIfameJANQX5Edvo4F57c4DPv1FUUgNGE86poSMtsSP158O5LiFQyOIFI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlI_oKCnumxkzPf102o8XlSz0f18k3gRH6-0T1gv4iKCMkMHqaXbg99Di6EgWEASzeLEkeVBLAJ7kfkwFpVAVSIfwQ_LDsrIfWu15sYeVnMrnudP4amL_BYpQ1Qu4ADLnqMu4Ih68HOeaMA_E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHOUvX1uTL8JYzfbs6z0_HGnRTEoIoinvJlk0iZ7maIAtViAtldEfGBqif2QEIGPeK5y0umn4sp2zflWGZ0y5xSZz8aJIRja5b43NeMUJOdYa7SNkOXDMcJIGZt6NUsmh5G8PH8Y_yjw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENUJs65BbxCrdDOnd750apPQaSQgTYXs1k7N90nnwoB6ldXokRKMRQz4A3KuRRTZraUy91IOQF88baPzu6bcwmPqmZTYj2_hn-_f1eMnrYWGztU3cvF2YKnF9bF_GwmelHDp0P"
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiofrequency Ablation (RFA) trials for Varicose Veins",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicose%20Veins&intr=Radiofrequency%20Ablation%20(RFA)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Not applicable (procedure)",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 5000,
+        "costPerResponder": 4706,
+        "icer": 22000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Venous Stripping and Ligation",
+          "costDifference": -4000,
+          "dominates": true,
+          "qalysGainedDifference": 0.03
+        }
+      },
+      "name": "Radiofrequency Ablation (RFA)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 28000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "10 points (0-30 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Venous Clinical Severity Score (VCSS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4.9 points",
+          "baseline": "7/10 points on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Severity (Visual Analog Scale)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-3.9 points",
+          "baseline": "6/10 points on symptom scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Heaviness/Fatigue Score",
+          "percentageChange": -65
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "55 points (0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (CIVIQ-20)",
+          "percentageChange": 36.4
+        },
+        {
+          "absoluteChange": "-1.5 cm",
+          "baseline": "30 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Circumference (at 15cm above medial malleolus)",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "3/10 points on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction with Cosmetic Appearance (VAS)",
+          "percentageChange": 100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain/discomfort",
+          "percentage": 55
+        },
+        {
+          "name": "Bruising",
+          "percentage": 45
+        },
+        {
+          "name": "Numbness/paresthesia (nerve injury)",
+          "percentage": 8
+        },
+        {
+          "name": "Skin discoloration/hyperpigmentation",
+          "percentage": 12
+        },
+        {
+          "name": "Phlebitis",
+          "percentage": 7
+        },
+        {
+          "name": "Deep Vein Thrombosis (DVT)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Single session",
+      "trials": 39
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiPmMb-fjtYyYFhCyH9IjR05EG8cwpSTSCoyD-gTe2J6JhIsUtiffsvkWAhG54eqnqYXyADWfxWQlMes1B7NOjoxiM8TxI8vzY049iekpvWYEPBjNb6DOQpfuigIGH4Pjqi6A="
+        },
+        {
+          "title": "unitedveincenters.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxB3rw4n62HuqtBzB5KF9xfC20EwfCcKD70iC47Tv3MadOlLaj4uCiRDUN5V4yYQzCT3kkCAbgwV57z6ybwQKRD1GGn1Vfc5DA3rSsW9OJOMThSgVGIWtAJrI3f2BrgEWZ5rdLZ2v35yanCfpekWjJ3gvepseZpO1VuQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGtPqnVgpsHj5fyagq-GQm2DSE1ker-nJoQSf8AkUxgnCfovmRT-qd-6W-R9B82LJrq3HUDDHeatEOlq_gw5tfp2yxLc8SaXb7VkKUtUrZNQKFdkVL8QOYLopKURZw9zBuDKBoNcJ2_94Z-KA="
+        },
+        {
+          "title": "annphlebology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-pzKqty_xhUQj4bocpDGeTJPAR5E4FtmS9Our8SXw-58-JVQbYXGnS37SM_KQzgs5YOP0qkfnFBkKmIzAqArv2VPpnAm4IzCxv3J_jH5S8qgD2gn6dVgJ2axLeKyqaEVRRNA1-2RHsN0HFrsJI2OOTnImJun38pnGrSuMo0fWciQa80ZPZkJR1Jo8qQ6I"
+        },
+        {
+          "title": "annphlebology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK7S8vlAFQOPDC6mgVBMAYZQsWcn6JxM6Tq0MQ9r0SBx5I6GO-1j5SEnKS-rh0rK-8Erm5HMGawZTxjXhxR1vNeFT0CPo49doRH5t4yd-4uEq0uqRcr0JMQa-SIbqPX69qsEGqAiMaD9VrGN05YQSgpRhYPHacr_Ioog=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTQblop7zAMv0RPBsRl_aX0FWZHEz-KAIpdiqUX6jhNduGMF_IIP96Hp1Dpa7Mh9UnPWBu3MtHhiD-6b00D3BuPXQWQ5CtulnqW5qmTC9dqDITDUVXartvwm_AWNImeQ7bJnU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE27lumORa2eQzalv0XSelcbvPWPKpwCJIlpDFH1oEp92c9tIJiDq04VFFawKpTpNWJCDCY5O_kKaT2GYSADF2L8mrWMawC8xJY4HxTxOvTU5y4C7mJImWNOhDt0IN-fa7E9F-abZDZkG3iMenxV7YA8zjwWgsqkuJ5mKnDL8Cvdwl4_irLtHiCve2Nqg=="
+        },
+        {
+          "title": "um.edu.mt",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQretD_Ip7R3ZRBqz-XfCPMRnTwHe2gLlxmKrJ_s_uoU5hSRBlI_Tu-SipFzbNATiSWNcQYoxPMsVBVDuKBHnPyXQy2YTwFiOtXNlQ0UoHJ3PryOck4lPTMTItwN4mA9rNeh8dowy51276cUKW-pybu31T"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUdFBmfXTl7Krx0xQ2Ue2kLJORNXoWZXz38YugX_wOz8nL2YDUPDIg3CEdfaowfMR7UaFR2AA5hT3gPhQfn54ksAnewq4p2QQ6d0v_F-bnGv02S3HMB_AiPmNJPobwox4odRE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvXhNUfLnjYzvcNgqnFEeGskTnESkmdwb5Zk5Sos6jpfE4Bq7tW4F5ib9PVNx0yBZT6KXIrYWOwziF37M2yEMgdBlq1EPnVEgbkFxOvRTN6SvpI4ZDnRnoUHrzMKAKmohuOXxh276X1z8To6RTkwHxeXP0w7e4hnAtBbpsB9OODPXiv-QqnHsFhzncu4HXIBKu3i2P6e8K6yUOctKUIwQWhe_g"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErfC1_RLXB4ZYFi5ZzYkV9vfYaEWxNaclcZzsDTU-btqKPD9s-s_TsNxX0OrN99X0CIY55Ue0U-VFsa0IjKFiH2IQGVNxIUMQxldOty9_rwDSo9AbNqzjLmOqy1mim2QmhQh70Aa4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf7-jOLqeYX6ByROcPQFdfBbziznzOQUkHIzXIJQk_Xt-iQXiAaS_r4Rh3FfW7ndHzqQrt3Dfexbhq61kCb4OATAGG0WYS9q6rMjeHVvT1ybuc1-OfbOwjwourjLG9uPGI1iBWx7TrbMvdgQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSPaKgc2E5OTWjvpStjvNbPJ0f3Idcm0v7lMbH9XscA0Nu9XQrfHZskJTp8xGOhFDnCOTCm3huudX15Zn912J7Y2WZVrEBYpHcgNpRjTR4hTmdkYHkGxvNTRux-2mZEzq4Fbe8hEo9AbmYWEUmSozZg-eGs33l9oECR-JlBtT-AMOcW_g9f1JsK9AlQXfw1eFiXY7nnmTT5fVUqEZ0fMlqUCZdjVRNql1jqzC6R8ESu3HuOADslwYMgzUnFG-G5Mq2FKuzqzL2ahQyU9tYzzJYcdhNwtGBrcskjS_QsmcJs0G84FCNQoVOkg743BXpk9rtVdHffHrpoG_GEWBEA09ji--0PFXFVkByxQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZJLBPtYo7rcrUchBxZc3qxsFPEAOg_Be_NBR1NzM1ivHhrEaNlRz_ezleShwAeZcH-FxHYBofogugo4Qg8w8VGzPQz-B302WsYfIip1q8TfhQYT5qHw-pkkZ2jAFEyFN9JuFpwFH8CL31GA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7DD2-O3azm4HiejSt62MvBCvUUjpbxE-qFVcPZBEUcQ9hDxMgiNMVHCeJtrPnorjktG4H1qy2GspPCGLiuRzUj1tKhYp-sxQccwM8r6DTU0a-5-eNjEAkw_qhsIu9ZwbzMrkXW4NyjlVml4HEO809VA2VYBNrTYfH9O9Muq4yccwobaTwJfeJ3XEktPQiF2BqO_MBNvQWzEsWRiTYsvcyu9-vCicnpee6cyxERtieiGSBAA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEEj_o57TTn8Xj_9qBiw9gYxeqSiZ81CydIMQaohFLHi_QJ5iTHZ8ymV4MA_skbiGo43wKgrFSDnCVe8UC6_fR8I17n6idCEwg2G_eJJSHkNMzPjoLSFkS4E6EOwsyG3Fnmz0="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbrNlMPKn9jRXm2YSxy7vfr0bsIRvsQZc3AvRGBJPKJBeQTe2vxpiTlQWmygENL2RfReqxleOYSq4eu_1hUa7XTs7KfRqNilu-tKnr-xizCMakuMCsKBvM5nr-RU_Hqat6tMTfKbB_z6nhYkj6MaOOlHbw6DMgJqRJ0qgyX-oSS2BDnBJVvAXw6B9GACLORpP_7lnk4m6vn-ZfDYpOHreLy2XcxM79pf4k_UkWvJ4k"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOBMUmnqh9pvIhoPSJaLcggG2OGIslgbRIOjWHszWu6jn89nHTe5_K-PeIR68Jjy3msdSHXqsiyV1UbiZwFcD6RKE33YTv4jSyhsFxwmIwyTqjbGhfGEZGbKpZCxnPg-eF5l92q24E-yT-1XY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sclerotherapy (Foam/Liquid) trials for Varicose Veins",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicose%20Veins&intr=Sclerotherapy%20(Foam%2FLiquid)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Polidocanol 0.5-3%, up to 10-15mL per session",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3692,
+        "costPerResponder": 3200,
+        "icer": 18000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "No treatment",
+          "costDifference": 2400,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Sclerotherapy (Foam/Liquid)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Venous Clinical Severity Score (VCSS)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4.9 points",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Pain Severity (NRS 0-10)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-2 segments",
+          "baseline": "3 segments",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Incompetent Venous Segments",
+          "percentageChange": -67
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "3/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction (0-10 scale, 10=highly satisfied)",
+          "percentageChange": 133
+        },
+        {
+          "absoluteChange": "-5.1 cm²",
+          "baseline": "6.0 cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Venous Ulcer Area",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Heaviness/Fatigue (NRS 0-10)",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperpigmentation",
+          "percentage": 25
+        },
+        {
+          "name": "Localized pain/burning",
+          "percentage": 15
+        },
+        {
+          "name": "Skin ulceration",
+          "percentage": 3
+        },
+        {
+          "name": "Transient visual disturbances/headache (with foam)",
+          "percentage": 7
+        },
+        {
+          "name": "Allergic reactions",
+          "percentage": 0.8
+        },
+        {
+          "name": "Deep Vein Thrombosis (DVT)",
+          "percentage": 0.3
+        }
+      ],
+      "timeToEffect": "2-6 weeks",
+      "treatmentDuration": "Multiple sessions (2-4)",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENfBNNmk4_SKG4b9B0oc3H2CPwJKSJgdSYB0Rvb0N3oKRVV0LCkVBwP5Lf2u5CSZbzWLvULS2hBeyii5WwqkvaP_EevwEpex-nYusfzN6WpzNdCSLIQWeNhSOiHl9RtaQ8dCoU"
+        },
+        {
+          "title": "e-cvsi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6Z3PL3HeYlyTOTeVOwyWrVvNa4lNsmIn75tqRqVhjrdkxsLLq3FDyV6UCNDtRSIlct-YEJ3X6Gbs6Qlw8tDhOSQXfXZ-dke7Lsot17Glyh3qNfk2qLmqHs28SRNc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE01O7_ByzFx6NMwlYe_UswylvZh2fx2xf1ygJorMfVsU3hCSRhf3SGtzfsI89f3aOrHSNJZHQvCAD6hn2tk_o8yC4BSVPpdhZyrx8bX-xlDTz0ViMq46ZNNdSAdpT-95zcD9flnXiHE9ho4NOeSR0Mur8sIcoF8Ws6kimNKMONFBe1x718ifzjk9gw7jQkhMxUFAzzNeoUFfZplKrj5_JOyfbO8_IerbvRW1-NCGgPiPjAo2_uGjcNDJiE2ik4fw5gEaxvrW0dKlI8xo8F5EXKURcL5mkGmCnDFfhKJfkTRUle0PmWbcR_gIfMG1dV5PIPEEsU4_JtUdeXpA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwZ87zolQAJjGFMH-mJ_Dxkv9eCI4Rw28Jh_lE_sGTLKy784vbNbKYJBmA1OS1RFfTkKSesMbUb9TK2kALBJZYMkfmhbRNDdRDoPYS1-qlHiLmP6dw6r-MRRvC4GWqE_j4QqMpBqQb_CeyVt4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGytWgvuQx7THhW-G_nqOmFUs7bgnhtre3iSFJhWKBwmUW9W96HBRCujrqWthmotjbi9pZVx4V-rNRF1Nb8hY7yevJCZUgfiTB5-Hsk3KgnjbZJKNTTc7UALsZ9Lf2G3Uld1Gdr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGA94CeS6Jvnv84ylS1n-DhgBgG5BCOLzilzB--BBNDLpjcT0E9yRoDbmtEinuAZS4coLxNuoS_kmuQ51qALVgcFnrBB2Y15ms2wgLLpvTRzOZOaJBAlz-XUqAGjq88UXI6oWF5T2vkB_JyhYn8zf6b-i6H2tBsb1trshY0oSk4uw9QTUXfOebHmWKWRYtFXFOkPB1BxZ3clM9V-9C7QowEdneNKHIIdBCtrDxiN06TK2aMf6mlim9ildJxQ-jfHIe_c0S-TUjXjdwHiBz5-0xo2J7w-4D1NA3tCrvT6qEdJCpVWlL9lxveagxL4KRFD5izxG0yGCBb8dgFv8_pVqm3V8HGUSNONLmt8s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGricA5n_UxkOA5HT94-NTSfBvfsUHXBmGVol5HKJg06HqvV3c7YMvfVKfSXa8mEsa5pwLC3QhH1zoswmwOc6A7Kx9LAh_mTu5AFp62OvQZZAYQ7DZkyI8cyl15KS73jI1hOtYp58Tg2ToLPvFHH1lAjr_LvdYjsg5H6OU4iP4gXPKNxvhUUDOdQt42Ewd7JbWTk2WSwtLf4q7BpUKlxGkvt33tHwsKywZpnkWkiNKUQTP0B-WLnUtfTQPzUKTGSB9w8foRucNdyLYonpoaEVTPI2nFjC4brwSxoKwM5GKLVtS1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3ulKgV1xnu7cyw26WIs3Qq43YW5u_9ZG9nMApHrwheZ_C91EeJmZYLhIowuGHzZM_uAC49IOEhNfafSKfg4_rSsmc9s99OaXfLQmNg97CAbOb44tX9-aHgI-8zEufV8sJ6-pX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoMe5prDTlIAvtT5_UiQv2Ba8GmgAvTHEa_bCAvaDhx9yRX5cotXcXyoU1JAH7FD9uKk_0x5S5ENJ4I9tZTjqf98qh8bl2wQ8XYNFFAHq8LVvyOTo4E_xaV474d_pe9AAXB5lD"
+        },
+        {
+          "title": "apjhs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtKmLiTy80oQSd7FFzfybyTHd_BHrUc5R2aer3J59TbAE8liNAw9BQ-vr13fBtemCRFbBMpj5bacOmynfOdy6DkAFjetXmEtQjcfnz2G-PGDEu1ID3Wev2bN0vSPgtJqITkHtPDEXj0ChG01J8yjsjIOzX6P9yt07UJuS_Lb8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Venous Stripping and Ligation trials for Varicose Veins",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicose%20Veins&intr=Venous%20Stripping%20and%20Ligation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Not applicable (surgery)",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 8000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 11429,
+        "costPerResponder": 10667,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Endovenous Laser Ablation (EVLA)",
+          "costDifference": 4000,
+          "dominates": false,
+          "qalysGainedDifference": -0.03
+        }
+      },
+      "name": "Venous Stripping and Ligation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "VCSS score: 10/30 (moderate disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Venous Clinical Severity Score (VCSS)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "Numeric Rating Scale (NRS) for pain: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Pain Severity (NRS)",
+          "percentageChange": -64
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "Visual Analog Scale (VAS) for leg heaviness: 8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Heaviness/Fatigue (VAS)",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "-2 cm",
+          "baseline": "Ankle circumference: 26 cm (affected leg)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Edema (Ankle Circumference)",
+          "percentageChange": -7.7
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "CIVIQ-20 score: 65/100 (higher score indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Disease-Specific Quality of Life (CIVIQ-20)",
+          "percentageChange": -24.6
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "Patient satisfaction with leg appearance (0-10 scale): 3/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cosmetic Satisfaction (Patient-Reported)",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "+9 points",
+          "baseline": "SF-36 Physical Functioning subscale: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning (SF-36 subscale)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 80
+        },
+        {
+          "name": "Bruising/swelling",
+          "percentage": 85
+        },
+        {
+          "name": "Nerve damage (sensory loss)",
+          "percentage": 20
+        },
+        {
+          "name": "Hematoma",
+          "percentage": 15
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Deep Vein Thrombosis (DVT)",
+          "percentage": 1.5
+        },
+        {
+          "name": "Scarring",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "2-4 weeks (recovery)",
+      "treatmentDuration": "Single surgery",
+      "trials": 13
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOajxoxccCBcmk_U6gvyFbe8hTLN4Hl0VfTbJlkHCeunXcEWVRSDsGJb2BMbKG6TuaGXwCUCnHCaWUqeyXGgnxML9nfcImWMouC4NunZ3EshuK8MLv9V1FxKcQV6L-qs8EMGrE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM9Ta2Rlz_oJTtZIdpkAm80-ccqD60tAQhY8RwxenW9jomGJJshjjT0yRAkBBft426E5-FDUTjJ6QY07QedJvpEF2RpDgLkATwGYvQprB-g_5IPaHreEAuXBPYN62eHJs_WtLF9IkVygVEFfam3DI2tXqBg-g0SLsbKgZtUCsQKjeDcCTmBFNfNr2sDL_4eTZ5fTzKjv6VUoPv1Ce6d2po5MROsURQnLl2lWyJkGCc_LdoABwd4xZV"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESu8eVeNLcerttI8fE1b34fCLgExfUG7Gx4AUQO2iaglXMU2BeA3UsJx56liy9tYKX7DGzhIcMVpQ_otl4wpYvP90qryrljN_nZN2fohzBtjwCquZsJImDLzyqxgPP7fBCNkh--57zb5GQZmKqQmYcpGzI1KtNRPufpljjzDkFtylETSelrE4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF92PCxoPx2X4i2H0V9QMtl-YhgCFXTRY35TLwW7gRMvAjElQk1kcKRNjscpy6S4KI_xJDtCJ4Y6NObHm_-PtMnS6IQ2txzTED9zdRKWiXfgYgUNppgcayrV7vPsOBU4u67_YtcGkb7CeivESo="
+        },
+        {
+          "title": "nymetrovein.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmLngoIX2o1Zff0mkf0RF3eDt60Y96lIJevg1oESoV_ToU6HskgtnEkMDNeB09R55ZnHStB0EjwItuL1roS6vcOe_zBw3XUblYX80OouIHsxZ607EsfpUOgiEUnfzbszoxRYJqAnf7usBS5NieerleCEXHgU48e1-XLV61L-qNzY6jcBaMpar3lqmajaVJqoy_3BOafsRa47e6axxjWw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiO_Y4vIDCLU4H1Hpfe0AwI_yCDdRxgZEsONSHTcHZr0Et-jxiOj2K_Ln_I_iuuO31bfCdnkGFZse7l3uNGzMonow-B1yqgIbwkYWRnr1lz7PvW2fKQ6wP5EyqakpQaZGqcU3LY1Qs8aiH4Vs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbWbnmyWBnaCV_O_Vu4yWFq68GjfovQ3iQlc7q3uI1KbgJmWz7zLCmWxDAhV0656uEZpWfxrHWFNs_SMaAM0Jc7AsTCtdWwXSLxY5RaLfQihvsp9-vXNmjbtM5UrIgQTokk5ZW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHvmEtZmsA4LTdSrU2-rr_Yf2xuZ-XkJzYdEC-J7l1sYDxRJfVH61J7I2PrOSkKsOae9p9EeCVtZA2CASVcTdyHYekxDYa6ElStzYwt_0mg9fMYvybow7kpWWAyyXeCURro5Pe"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtRioD3mZ6T1v3amjlnxlHRx0OZeTccaSeiOKnFI9QWDBsouf1G9iXlOKwQ-wIigJRqCZObLwfvAADH4poH0FRNpFrysrAv0LBtpF1bcuwBWkdgohiCrolthojcVC-ET-QVbHjnhyy4z-aDeeX8ikY2JCu1aElp__NducGbwLMsvmfvlHpc7fDG9Jh3VCcu0KeGkdROX8UCcRboA5EEWn5m3YcfzQUVwEPBrfttQE6MJ_8ayqGh3q1GyU-jWnIeQJWZ0E0s5tQ4Ic_q_x9LQhQcMm7YoS6CGGt8vuXn9qHHFF29T_Jwnm1tA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Compression Stockings trials for Varicose Veins",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Varicose%20Veins&intr=Compression%20Stockings"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "20-30 mmHg, 30-40 mmHg",
+      "effectiveness": 40,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1500,
+        "icer": 10000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Compression Stockings",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.6 points",
+          "baseline": "6.5/10 on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Heaviness/Pain",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.4 cm",
+          "baseline": "27.5 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Edema (Ankle Circumference)",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "10/30 on VCSS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Venous Clinical Severity Score (VCSS)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 40,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "45/100 on CIVIQ-20",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Chronic Venous Insufficiency Quality of Life Questionnaire (CIVIQ-20 Score)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "6.0/10 on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Leg Fatigue",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-3 days/week",
+          "baseline": "6 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Aching Legs",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Discomfort/tightness",
+          "percentage": 30
+        },
+        {
+          "name": "Skin irritation/itching",
+          "percentage": 15
+        },
+        {
+          "name": "Difficulty donning/doffing",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "Immediate (symptom relief)",
+      "treatmentDuration": "Lifetime (as needed)",
+      "trials": 46
+    }
+  ]
+}

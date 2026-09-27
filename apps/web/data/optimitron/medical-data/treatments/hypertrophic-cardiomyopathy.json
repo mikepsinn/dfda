@@ -1,0 +1,1104 @@
+{
+  "conditionName": "Hypertrophic Cardiomyopathy",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:19:47.022Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGAxnXAYQ3IsO0nXEocILWn-nyV3sWSd3WnfBzaF6_tXcV0X7iYkSkh00vXc2-IelCB7EmFMa7Rclur9tOtbs0jrlSMTt5eXO6VgvyTbA3dgBXlk6RQNl5bmgSupfew50w4Nki8ATlcm71gCGR0KiSWlJI3-ws78o3B7_I2LqIQJLbcoWtqdMUrvfGomky"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFhCzmxll2Ah5n4g_fhm9kk6r_3jJaqrCXsW37jy33Jlfxo0roAhnhvGhsQWu4dhuvmkLs2JLqS6W470VuAQjy6L3Ru6Iyi6qhMikjumm3YiSakzdm8u7-M_PJoKTCYUKLk1plcvlY0mZDnGfjDC2NLQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc_fGoGV90B1qlyKFLMB3Qi3lY_WEpFgnGMRaSWUbpAPI8l7Wna6X9CjwGE1SFqwDQLTRLM6iMo12D6q5HnOOprnYVFFjef7GZ-uZshsVhLlrGIiqPDRQ_8mPzDq1xwg7ls3k4-53X6pkBNQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1eldJAi3PvxW90Tw4Sx6f2d7AeuHRSks75Pbr8BjJ0VxVa6XmYrwueiGUGc7u3Oemaoi1Yo9y-UR3MVhZLCjvyM7-2ivNqySYMm-6wDju-gZ2gDYeYDbsNYkTlTQTjiyqsi7I0o7JffbsbQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFudl6-wkLB0mluvkr46cW854-JYvb8QYafq0pN8IDtgC1Hg32-9T_N_htWTmqpEptFfOzy8_E3xoD5sGDx_hD2-bIxFJLsj-W3T8I39YuXUno9f_ixx0XKynpPferzPqPYow=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOJGRyetEnMopPLKIp9yTtKgMfBaBnFXbPIcjfLHfbLSQh0OECFt9_lRxyB9AzkR5SYhwAWn9W6zWcQUYJ6j-_G0CWGxJEjdv27RmukSpZghlHcpWXaPol1tGbFjQJiNfsu4E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ2dwYSPvl9bXj-wb0SKumLPl5kS6o9mYEQ5au919aXoa8x4l6dg4LnEr8SU4oN-Th_w5bSlnxRsV6FrgljX6g30eLl00kiqg9mEnaO1mc01kFv5nrrmbEH4e_kOTkdwxIwEo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7wm1fVyqyI2Z9HM04LqQG56oQFOF-044Ei3XRUi63qxBLNBCI6bDc5ynwY3dYLk_d8EPUZz5ha0tIg40T1-tV0UxcCiGjgabqjbYy_FADHP1Tcx0RwUXmIOUfLyqUpHYmO4k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmFZSVxbhF4j9mopgHnuG3EUoodHH6CblLQaaxcva8VWkZIPHa9Ys05pcsIX7kC2SeLB1HH8O6oVhaHJDRMhX1DhcCNoZMveKr57U3Qn81L4bOQQgG15_T_K4x5JaPVvWxyTY="
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG88YszydakbeukwmDYuwXdkmQEo8G2ODeua-Ad49Y30SgPoLLWF5yvwrJrhh-3G7wd0H-7WE0BaxZshDhAmmJb2JpkhiS9R4JzfW1ZiqDF45LCFIZqj8YWahPWpTt7Ntl2vfhONDkbRfXoHJBp"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDvZnMOMwUlK1QNimugLa2ovoXAl2u8Rb25lZLVRMq0X5BOPFg0tPfBNTA_VnjRFes__JsyU7F0N5moMRZ25H__GELGa6fXCeorwTjPyQRx0__OeytwpB5Na1cStUavL6rrAVVORllh3XnxNT5lHsQBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXZ_h30nukOQ0Qj8NuoIltobPH8dJk938oYpQMg9HLLNnCyrmeDEszONAHcvJc4U4UrlH3_MCucUV7AQTEMa456TmJjoz6V8hLyRMwtbMEmrGG6C80175lGUEJ7-lcyDyRokvMIbMXSM7x_g=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWwwiCfUe4vuaZ63JMsWv7l56Wod29sYYBFp4fmNIPlK7IcSIb5TY4vKR0SsZQCgQTRoFWE0V3aK6uj-OwHePHO4f7876Ei7iMvVa_yDVrswbSAC904SqqprUHQD8_-RT-A0JrcHipYzlhpPfbhWPBHCWDPgy-xhQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqDAe5graeQpJat9CSuUs8GKmigjT7jN3VwVctcH7ZXkqPxPwhhRz9I05PDiMaBXeiqixkFt1CIPrTt-S71sJOBRMP15nSIUr1ARRv-3wdRudzPSP852rrY_-VsJJjLwWQeFM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfbK36xReSZEm-c6L4m3K_aDoJ3WUJEZVmDSEUATnxzLlW-2OqIam0BwwyuouNZapcplhomBYW1arjLzRIVh_fX4onuRz6Kp4xJMVyTHgbUJWtzvLX8YaIRRglkXtl4c77Zts="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Septal Myectomy trials for Hypertrophic Cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypertrophic%20Cardiomyopathy&intr=Surgical%20Septal%20Myectomy"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1158,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 8,
+        "vsComparator": {
+          "comparatorName": "Alcohol Septal Ablation",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Surgical Septal Myectomy",
+      "nnh": 12,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-60 mmHg",
+          "baseline": "70 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Left Ventricular Outflow Tract (LVOT) Gradient",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-100 mmHg",
+          "baseline": "120 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Exercise Left Ventricular Outflow Tract (LVOT) Gradient",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "Improvement by 2 classes (e.g., Class III to I)",
+          "baseline": "NYHA Class III",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Class",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+7 ml/kg/min",
+          "baseline": "18 ml/kg/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Oxygen Consumption (VO2 Max)",
+          "percentageChange": 38.9
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "KCCQ-OS score: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Kansas City Cardiomyopathy Questionnaire (KCCQ) Overall Summary Score",
+          "percentageChange": 55.6
+        },
+        {
+          "absoluteChange": "Reduction by 1-2 grades (e.g., to Mild or Trivial)",
+          "baseline": "Moderate (Grade 2/4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Mitral Regurgitation",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10 ml/m^2",
+          "baseline": "50 ml/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Atrial Volume Index",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "Improvement by 2 classes (e.g., Class III to I)",
+          "baseline": "CCS Angina Class III",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Canadian Cardiovascular Society (CCS) Angina Class",
+          "percentageChange": -66.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative atrial fibrillation",
+          "percentage": 25
+        },
+        {
+          "name": "Complete heart block requiring pacemaker",
+          "percentage": 8
+        },
+        {
+          "name": "Pericardial effusion",
+          "percentage": 7
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Stroke",
+          "percentage": 1
+        },
+        {
+          "name": "Death",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Immediate obstruction relief, symptomatic improvement over weeks to months",
+      "treatmentDuration": "One-time procedure, lifetime benefit",
+      "trials": 13
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8EkNZWEvSIzCTX7B5kOFxAQ7AO_wCt8ip2ZyK_DeqquGPqQ_oHS6ywX7ndguQfTRicMD2kl13JRCe9Uy5zxE_VqGP6OBqKxTgpQCxQHc2LB6JluICKeWs8q0IJIwr0zgQWmwV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5jXAS-rKlslRvqYjYQhiJuWCZ5VsxKzeESPI0-maNlt3iLTsHFH_DJdpaOMQfCkmqxiMjoMt7eannsfQ6XkdynnD471iQ6tF_uNHTye6txEObvReNOuPPUOudQcrztc8Seasb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_K7FmCMs1WtAA0_JTnJ-QPNJeSZYCW6cUXXqxq_hsPTcy5vLNB-uYNUB4Op6SdhX7_BcIAFzTavVirtyoUcsjtM88OikXE00NHePA5RSwOAPRuy8iLgBRIdP-KmfCiRPL7V5QG9lLWwkCuMa0"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWmH50HM9vgPzAUD44TZrSwij4m1xz6KcSTf2_nWzGZ_mBiD0uB9qmujQ9tVCkEgPexGiZHVoRtcbX-2HYlvkc0iQkpSt2sUjiQYO9fd9tT4R5ZQbEprdM2u6_dCd5LqiAj5E="
+        },
+        {
+          "title": "jumpstartyourheart.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBPUlU36UDGFjAu5ufNX57n4NHXhmOht1sP3jkhaYVNSmwwOBVSq4oCtuZzbmY-O5weC9kAvIOQZKkEPY-xtej6pjJ3obF9J5EmOcqjqo61PR2FNXjNHHHC5SfZpvYErZWzhoueeuo6aISx5I29APDFTFXII--PJH2-T9NCipehE-H1pTg1aM9o7YIkee_Y7OUspAax2kW6bWS4G36bIDY1RWyWClsw-cpwMPVBcVdEg=="
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFzZTjT6QhEOSCSm4-OBbDYsuviCZfTaiq8TnQkiHmvRknIe4ldmJt2sPbKCsBJzIdfSmv63pT4UzCfpdSKYaG_Bvcg2-1H7nmy712QLqMrcEAuqR9V5SQbMXarhnhGO7PGajNH8nn-o4g1gcoWyWVJCz3k6o="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFuBCnAdQa2plqHvHGvwI9lvh3rvm5S0yMpQMZKp1CkUMrY2Fp_iuYrCKnbLSE5dkHcRVqkyLqrVBci1cla3COmHJQRkOKro19hTC--pKBJYpgbNRpn2Dy7slZJg5YcW2i7ghG"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGljxPJFaM5yj0KJo7YoG-nJvKadDTPWVte98tiVgQmphWmNq_rFQyTeJMFIgP0pS8nUcbQHjlmwmz1fnii9fVjZBM-QIe_4PKBd_kk1oPsyFhoAshzt7764M10GNrt9d1xT5swmkeUzL3qmGV07MNj1l0="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhYO4v_0qOk7RDy3StBxTuri1VGEQ2GJaBAyGpBpGLRlzgPOiPm_a6ef8Bhrc0qJwFwEEdQkHvTP8uhPszzCUZW_rY5FcdAp5C7sPzn-M9_FtZjjt4k9ZnDmMl4kLD1D6qqnCM_Lccvts="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg8yMVkZmv7aLZTiOuW2rAYBA3ctQE8VlmRS_QsBJR-iPfquQUycsfJyIgvvA0pgeUuMC_GdEPhqvg2XCfTh2fer6smcoKYLWoIyZHEaEAx8hAtzmsQbwUPN8K1ipJNSLyWkNooOJY-K0eumuim7P1v1qh-cO54397TZpg4x0xzM4veITmWEgGo7Pp_XAzk3G1xxF47TK6DcDIKIGp-ffVJulK4fM0bfzCtRtmbpN-On-dha_S-CXHA0NvFhHELZErNz1EHU-6aSwIJNnSSng="
+        },
+        {
+          "title": "dicardiology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs4CFHCWYuSLr91GueF-kPxJpOKmCbOLZad63G0E6Wh-vEoZg0Jh08ONeDUGBAEXwfHVIP5jDlZ0J3qnP62tNQdy23HWVhBVkWJZFJkwVOuDkdV5v0HcP1Rnd9mj_l0TBxZhilW-Cgo16qWQFEuf6gNqbspnssFJ9RsdGeGq2UhME_6MadPSzu2vv6Z3eMgffnbihbt63qOVTel7xnTIgrl4uTBuM="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbcEKvHQadPuxJR0zAMugsqGe8ideHg1MhlZCXBUohEdyUszESD4X9JZBIfksdsugmYwnRtnWSGnG56hUh4xMtvUdx5lh5BDpDaTI2ABkneGC2YqA_vBOQawcXhL70arl3_4Obve6cHNDVbJDPlq0RoEgifrSuLtgEsTQnkIigc3H3fJiCl7Mhgi6NqZyGYd0Z8lTvloaOF67mgPo63DuZT20L-MI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5UEli-3Lt34PsZdKH4RliNetperXomr27ONBHn7uW3GleNcEexjoxZmwiv988oR0y2gKVVu8eRXh0J0d2-WPj7fCLKYx_5nMWPhiqcs472UXBsFQivjKZbHsb8eqevvxr8AmxBaz8uO-UxoiuCk81dU1PXbaXCKX6B6BduXWfAW3YJeClhnEN837LYVgNezoaH9X_lN3ZFIoL14Sj26U_12w-iIm4rG2w0sKQoGMl8skK9EqETS64wtJpkYJwwRsVNDlqoa0bCIZ0o4oBFlLmMPvYCs8gnQ1hwbSoWytPM7i_8HAaNU8ubOdt6HHQL5Lhq78eTRVKzxjv8tYbF6jq3A=="
+        },
+        {
+          "title": "bibliomed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGknflbhWp5Fyi3QqRiKiSrjAbESn8-MR4xPh3ue5B0smaWAe9RRD7VVh8Sv8weNdpqtv0IDUhotcr76mvRX63ZvEk0V3x4We_HM0llHIsrFhN52bF3Fz8LNHWSCt-Pz5C5HjxAPoyTfjL2Hg6ivr4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mavacamten trials for Hypertrophic Cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypertrophic%20Cardiomyopathy&intr=Mavacamten"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "5-15mg once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 102000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 104200
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 130250,
+        "icer": 350000,
+        "prescriptionAccess": null,
+        "qalysGained": 4,
+        "vsComparator": {
+          "comparatorName": "Standard of Care (Beta-blockers/CCBs + Disopyramide)",
+          "costDifference": 100000,
+          "dominates": false,
+          "qalysGainedDifference": 2
+        }
+      },
+      "name": "Mavacamten",
+      "nnh": 14,
+      "nnt": 5,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "name": "Change From Baseline to Week 30 in Valsalva Left Ventricular Outflow Tract (LVOT) Peak Gradient"
+        },
+        {
+          "name": "Composite of Decision to Proceed With Septal Reduction Therapy (SRT) and SRT Guideline Eligible at Week 16"
+        },
+        {
+          "name": "Number of Participants With Treatment Emergent Adverse Events and Treatment Emergent Serious Adverse Events"
+        },
+        {
+          "name": "Number of Participants Who Had Cardiovascular Death"
+        },
+        {
+          "name": "Number of Participants Who Experienced Sudden Death"
+        },
+        {
+          "name": "Number of Participants Who Were Hospitalized for Cardiovascular Reasons."
+        },
+        {
+          "name": "Number of Participants With Heart Failure Due to Systolic Dysfunction, Defined as Asymptomatic LVEF < 50%"
+        },
+        {
+          "name": "Number of Participants With LVEF < 50% as Measured by Echocardiography."
+        },
+        {
+          "name": "Number of Participants Who Were Experienced Myocardial Infarction"
+        },
+        {
+          "name": "Number of Participants With Ventricular Arrhythmias."
+        },
+        {
+          "name": "Number of Participants Who Experienced Syncope"
+        },
+        {
+          "name": "Number of Participants Who Experienced Seizures"
+        },
+        {
+          "name": "Number of Participants Who Were Experienced Strokes"
+        },
+        {
+          "name": "Number of Participants With a Change in QT and QTcF Intervals."
+        },
+        {
+          "name": "Post-exercise Left Ventricular Outflow Tract (LVOT) Gradient Over Time"
+        },
+        {
+          "absoluteChange": "-1.0 Participants",
+          "baseline": "3 Participants",
+          "dataSource": "trial",
+          "name": "Resting Left Ventricular Outflow Tract (LVOT) Gradient Over Time",
+          "percentageChange": -33
+        },
+        {
+          "name": "Post Valsalva Left Ventricular Outflow Tract (LVOT) Gradient Over Time"
+        },
+        {
+          "name": "Participants With >= 1 NYHA Function Class Improvement"
+        },
+        {
+          "name": "Mean Change From Baseline in the Overall KCCQ PRO Score."
+        },
+        {
+          "name": "Mean Change From Baseline in Serum NT-proBNP."
+        },
+        {
+          "name": "Number of Participants Who Received Septal Reduction Therapy"
+        },
+        {
+          "name": "Plasma Concentration of Mavacamen Overtime"
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "name": "Change From Baseline to Week 30 in Resting LVOT Peak Gradient"
+        },
+        {
+          "name": "Proportion of Participants Achieving a Valsalva LVOT Peak Gradient < 30 mmHg at Week 30"
+        },
+        {
+          "name": "Proportion of Participants Achieving a Valsalva LVOT Peak Gradient < 50 mmHg at Week 30."
+        },
+        {
+          "name": "Proportion of Participants With at Least 1 Class Improvement in New York Heart Association (NYHA) Functional Classification From Baseline to Week 30"
+        },
+        {
+          "name": "Change From Baseline to Week 30 in Kansas City Cardiomyopathy Questionnaire (KCCQ) Clinical Summary Score (CSS)"
+        },
+        {
+          "name": "Change From Baseline to Week 30 in N-terminal Pro-B-type Natriuretic Peptide (NT-proBNP)"
+        },
+        {
+          "name": "Change From Baseline to Week 30 in Cardiac Troponin"
+        },
+        {
+          "name": "Change From Baseline to Week 30 in Left Ventricular (LV) Mass Index"
+        },
+        {
+          "name": "Number of Participants With at Least One Class Improvement From Baseline in New York Heart Association (NYHA) Class at Week 16"
+        },
+        {
+          "name": "Change From Baseline to Week 16 in Kansas City Cardiomyopathy Questionnaire 23-item Version, Clinical Summary Score (KCCQ-23, CSS)"
+        },
+        {
+          "name": "Change From Baseline to Week 16 in N-Terminal Pro-b-Type Natriuretic Peptide (NT-proBNP)"
+        },
+        {
+          "name": "Change From Baseline to Week 16 in Cardiac Troponin"
+        },
+        {
+          "name": "Change From Baseline to Week 16 in Post-Exercise Left Ventricular Outflow Tract (LVOT) Gradient"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Left ventricular ejection fraction reduction",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Dyspnea",
+          "percentage": 10
+        },
+        {
+          "name": "Syncope",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Weeks to 3 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 31
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEy-rlBfAME0nfFynkB4CI6Amu2mBvK8rwXc-3JtT7EcKrLE0_WgW8PCcOsR_Mrd20T1NkmwYw5n9D61EEIFo4Uyn8Lu_HBd23PKcIWHOTmqWD6qN7EM1C8-gc1XAl_zsfwwyZ94nLl1pdllkUJatEyALMuJevwn3HJfYIlRo_RswojezAlU9oTSjdUXhv9IU3H01cOH2hFHOqkUibEHrDUlbyeQzkVQUZ2AJS8kUngAo6UqN-X2yNnvsWRt2RmTiTPJPXJH8RC3wPRabxc9vL49m2USXRVO9Y="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVujCPJL6FmndH7J2Q0cHonpmLB-nbBrVswvyK4JcJ8HnMjGiSOrcmUNoUNHObV-8CI3ZKWy86v4m3qXZeYfyyx2xSRUNzV8ssFQOJBuJAk158B4lfpnntMbnx2bRvefxhv4rnW8i9_P0dXYVtqfeWhd3EFsiTr_6J_n9ZvDha0NwTm1BaNnm-gxc8IAhErNAlBG7KC9OLUHdh7ynZIl6Kbfd4Ww2ZiCjEjrWpAo3aoBHRvQTEhrVXB7uwiQU6s6xL_crku-CQJ7ht"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjKBVBPtzIOGlE-qkvAVd2HConWtY4oAdyIQzUkn9TFcA8WI7ag1MtXYt4vQNLLNbhx09jSQoJUZxRfB4HRc3AmWvKYV2tYyrYBpkiDjg5cebfyJC26VY7Hrsa4L8WSwCBqw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMm9eDyhwhj9_6NJL1CPvgwprE-J3IDNxQFEPHAw9DAKq698P92GJ9OFhIaE0PnvFRMHBLgC0ebzMPuDFccx6kXBx8-m9_fCKnjOstRZUNkmX2iSnrMzajL4TH7kKvaG_SM1s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTbSGw0SuaE1hsWFlH8fdw336CJhcJdlU-8vKSMuSOm5tYnxjFjQ770Xt4MZtFv2Bsm04rfD1FidH3-JsxZ9xYTpYGFbglNIRXmsHSA_CfLbJpiECeXyWH3lIhetrjh5v8JwQ="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFQ8MhEyi2giJcDOTdBDjoLyt98k7D7otQo-CweRwvfLKCLmga0zlQt0B450QqNhqMbm04bVrdLnwd2__KKCoaSdnHCB5vBsoKjWp4xvqj7qC87cNFQ7QSGrK68Ydds8n6OdRHdDGp1ZauvipSF700cGxM2oxu51ncSPQ5mwjZ74hiVkJS6OeIzuxeM1KeIa4jk2DizlwNTyfPvC6P"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsQu4YntvlVpFvN2QOB-LiMEtAAAkkvB3TXcUe04z8Sr_qIxT55FMimmA06NbeXKfQZQQwsGs62UXupsrSnKfm2zLUtdUPzB6C9eRUqpz9lSBIhYjY8DZktqMXksihKpYMwy1ytUcSZM0YAOYwYRWllg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3eO5-g-O0JAzI-zRjyY4f2F82V_RF0rFCqZpR3criJfHVaylxrowqR_RkUvAKK59h2l3f2PV_qHwrartPPiT-Wfii9e4E38WIlUQNY-BgCjqDJCz9nMYzxNCMZ_W8p50YpjTxXd2KgQ8rt8hTKg94Skpa4jeKr6gxQnnkrvb1BQ=="
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvSkBHFQNG3-tGE9OnE3Rv_VMIbwR06RbQyIt9hddOkWhvEUgCdRZ_yS3Qm73Wq_bBPgXOeiF5omofKQASfuYLmzjC0DCKWFqX8x0VrWjuTe7zbIScsRJFHn-lw5uVqORRi75L5_zj55S3aclRGAtRFYlWEZnKkPs="
+        },
+        {
+          "title": "pcronline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdkkUWOnu8uwg_I1x7R8R85N7ByIJJht8iaqjFXE-vBUETDVynGMe4clfp3AdiN0T6ZwtUuuE_ErfT8KzB56g_HYCq6e3GmPrdlFfC8w98SDyepSD-CI9a1XpxVmmEj-ZyZSZCwFE5nNmvAY8MHr1vcPGTzATmixFVv3G94j02NhIc6fsFQD92DHZaoSWKwyKiW_vxlIH-XdzYTnL7v0AC4t3WIQTr8lX_E7doyZY3WDPvR9vXkifL02gbPZgnarK-qBL7LtaPhA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyrKQkSMSOk32Ynl1sk2AFnIFND8FgU-lEm5lL7dtWkPRC34klbE9OctxJ_ihdMHjGE_sDoW4hqKvcoy0pO3_9HunUVSTCOihVwSq7pXScfoO5oWpjMq7qYw1Qi2M2Mi47SMC2NiHHxWLtNjg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Alcohol Septal Ablation trials for Hypertrophic Cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypertrophic%20Cardiomyopathy&intr=Alcohol%20Septal%20Ablation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "moderate-high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 1600
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2000,
+        "icer": 90000,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": {
+          "comparatorName": "Surgical Septal Myectomy",
+          "costDifference": -20000,
+          "dominates": false,
+          "qalysGainedDifference": -1
+        }
+      },
+      "name": "Alcohol Septal Ablation",
+      "nnh": 7,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-45 mmHg",
+          "baseline": "60 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Left Ventricular Outflow Tract Gradient",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-90 mmHg",
+          "baseline": "110 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Provoked Left Ventricular Outflow Tract Gradient",
+          "percentageChange": -81.8
+        },
+        {
+          "absoluteChange": "+4 mL/kg/min",
+          "baseline": "18 mL/kg/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Oxygen Consumption (VO2 max)",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "-500 pg/mL",
+          "baseline": "950 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "N-terminal pro-B-type Natriuretic Peptide (NT-proBNP)",
+          "percentageChange": -52.6
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 48,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Improvement by 1 class (e.g., from Class III to II)",
+          "baseline": "Class III (score 3/4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Class",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "Reduction by 1 grade (e.g., from Moderate to Mild)",
+          "baseline": "Moderate (grade 2/4)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mitral Regurgitation Severity",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "45/105 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minnesota Living with Heart Failure (MLWHF) Questionnaire Score",
+          "percentageChange": -44.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Complete heart block requiring pacemaker",
+          "percentage": 15
+        },
+        {
+          "name": "Arrhythmias (AFib, VT)",
+          "percentage": 10
+        },
+        {
+          "name": "Pericardial effusion",
+          "percentage": 5
+        },
+        {
+          "name": "Transient chest pain",
+          "percentage": 30
+        },
+        {
+          "name": "Death",
+          "percentage": 0.8
+        }
+      ],
+      "timeToEffect": "Immediate obstruction reduction, full symptomatic improvement over weeks to months",
+      "treatmentDuration": "One-time procedure, lifetime benefit",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_0IMoG8eZ7f89O01dktW91gAUvo12ftoxRwfKj6XucnuzcwY0PnWxoFLQRSB7-d76CyuZ0_5kxnF44W45_AOww0ZhfLgiqk7qCtSYiquOPMO_4kyDvMmi2x6FowtAt86kvLY="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfyAcPov43WI59Zn6YTgNPDXJ11LB_sBwnkqbXz6rrEcRcXVrgyV3r0NE9T8Hf187P_DT_z9CNqbPVLxmPCNECh67MppIIpS_OQ1qwhG--0hR5qQN_f3oG3Z9nVPgE70YxT3rGGd0cmpGcEK5caG1UL2UInAhlj3ZyC7HQH6fx0eWSPngdkgnj6nnAR-G-CO8Yrx3O2XxAF3JjwGgRb_MW0CnlAkLyIRRPgYuqwwq2"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDpMbMB6Mpkg6Y8-tVSkpcvFFVDCbfFFL90dDXhmliRYx47JiN81SCzpvYVHNFhfauQYrIgdTFq5ubejM45PoMr-WSP2PR58g8ZJzDmMW8wc2El-7FXLbudeCJCCkJOGxgmUZ4CnHkf39Ghoh0Rnql0zH1Xnfcyd6gCwEK3xaZbWH4wMbHYgbS4WE_DxrDVd7EV6QYjszauGWekRhXDWA11dLrxxtn8F8UD8kvBuiCYrU1GKZ4HYcxngiFoginSo0FPIzBdaSxSMzi2Dm3hnSTGv2VWUKi1_wJcLMZ98uGTdoFyA1SJe8yQZ-QKJzSz3dqQpVGPPSLEQDcD4CqbTMWGjFo-feV3gsb4aFN93-N0TSEjSPom07u"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO8Sd2QQOrPIve4FMBkIiA5Amn_ehIhX59V70qvw-8fuD-byY03U7Iz2YnG8SnZhEEEdYUIlqp7TSHDydc0aM0rfqby464SIZDWTT3BGm6W5DWeV83ePsmmuBo3OqsSAaw-ImcoDVrUxGwtq3dUP-oP4mF-sSPHwfJm58kTRntjX5-9zxsScMmyQ9VpA=="
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1Tv08M9gqrdFIxEsJbpXEde3a1CCDXnva9KpyhnRNjLyIFP6B7wPS-uT77S1iFePrdhjv9plCLWYfoPqGHp6kTVrc0O4cxXcLWpLhCAL0ijRjeWSXGihOys-G7ZUMcl2uOTHtR_h7unyQtlvF"
+        },
+        {
+          "title": "qxmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZgfmhpJVfPNkM1HiGoZ1C2OHZzjnjoFzuV9pYuP3grzo0BrTPoIRPc5QPhHAgJU56oxu_vPrqIXumRoCHEiSL42u8c5xufo7a9JRfer3oIrZQ__VW9OYgm0kyWrhqe0HFdZBGlAaUT479cjJmIhoYT7jNmugm-hP4n9rLRdcIYf0sdX2p_cj35hhY2SjQxS7jhFxum_qUBv8vqLsBVX8GHm8AD6j4Lq6OJHA5UCzOZuU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG4H6ZDAvBjDKsWZojc0eQTwKY0N6GWOxxic63YJZILnS8kk0WvFNbVvxMqrhH_Qi2O4PqPra-8JPZrJmkPtyfLvfm8n_qqK0gi1PCiq30hT_aqa09RuPSa7di7dt6M7541b0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRAIcs8wuNTox7SOFjChXyz5KuSMXi8VY_mh-W4IorUTovvFNL6Bg2Eo_rw-EZCzvAkdiM8THKBbyiUe4yUemkPYc1StCytQ3WpFOQpE8YWXpRrt-KCCaIeK6KFjCbBa7bAkJOsSozaOcWwvqK40QNyYe_tBbCe52EWrYMKhr1u5R2O9hrRjX2WYqGYkRv4ZgY2Lx3KDExLqKiUuRaxVIx6ZXqddIigRXP2fovIgJQwvOi5vIpuLQ8OHZUgOchOYlI8HQhUw-Vzq6SlAfZXETqtAmW"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIERhLdCsnaMTC5zjCjkW8u5OxkjBSgRyLrrCMr9wEh67SM0PWAVnV_uFDBFoGij8epf1kA2GuZko-7dhHGEB679iG4ISWfb7pukxeoSWr6OGsKSlYqJslR3XvC03G9jtCif3B8VG9_gMORV7xR0tLOytAsPd5rAqQZKVOrKqN_WteJJ0cnms_Qp_X2jQvb2x6sdADIpMa_eH6A6j3IAAmvaj86tQ0bH9bI6VKuA1odZ_eKZlbQMiGPa8t_zDFhmtA9BmiWofiZAb_TUhVg1ByQf8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Disopyramide trials for Hypertrophic Cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypertrophic%20Cardiomyopathy&intr=Disopyramide"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "100-200mg three to four times daily",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate-high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 700,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1900
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 2714,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": null
+      },
+      "name": "Disopyramide",
+      "nnh": 15,
+      "nnt": 6,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-32.5 mmHg",
+          "baseline": "65 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Outflow Tract (LVOT) Gradient (Resting)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-66.0 mmHg",
+          "baseline": "110 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Ventricular Outflow Tract (LVOT) Gradient (Provoked)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-0.7 classes",
+          "baseline": "Mean 2.8 (on a scale of I-IV)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "NYHA Functional Class",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+2.7 mL/kg/min",
+          "baseline": "18 mL/kg/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Oxygen Consumption (VO2)",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "60 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life Score (e.g., KCCQ Overall Summary Score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-4.5 mL/m²",
+          "baseline": "45 mL/m²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Left Atrial Volume Index (LAVI)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-2.0 points",
+          "baseline": "6.0 (on a 0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Severity Score (e.g., Visual Analog Scale)",
+          "percentageChange": -33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 35
+        },
+        {
+          "name": "Blurred vision",
+          "percentage": 15
+        },
+        {
+          "name": "Urinary retention",
+          "percentage": 10
+        },
+        {
+          "name": "Constipation",
+          "percentage": 15
+        },
+        {
+          "name": "QT prolongation/Proarrhythmia",
+          "percentage": 8
+        },
+        {
+          "name": "Hypoglycemia",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEa6DvUMjopJadh8YjmjfurgVCMmKIEcxQWDOb6ev-0L_4Rc385m8V0WAKCqjpetE0pAC3-oBTK6apA3n-tsejnk9tPaNhHe8bvLu-e8QmO2OSH0oGA9Ma0DJRV0qUT5FMalEO-QUgcqsk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAWO7Pgj6QBfz6Pmn3hnSr6CJkmK1S83z5yg59wX0Am0FE9lPR8HGSfecvNpFMi2RgLqFds9AZ-EOWfVV1jkzyMfk0ge6q63cx0Ns7CNFnz2TzvEkCpXt9mWAiyVmjK2eytgIuyfGTpTIhnY1e_KOUI91AlqqZ8nzsxMoS8XLlD5WUPPXqIoIZmzbB4veiPbv92lVZFIYIXwwKM8ZMWaMDXFiZ_J8VXYJ3IjQRkFhU4Uzl4CpSSIgwJbPz3_gIGjoi7wc3UmKWh8t3gb_LNOPjLUmwMSjLtkMAhuQVUMJSnpK-dBnLuR0DtJubLn5QbC9ugpa9OBZumNsZEnSmbf2iHULmMDRWUQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmdFXAXtdS5-QFpddFSmMS4Gc1JNpCGtoEaeKB-XVT9MOUB3xMq70mvzC79HvDRaPMYL5G-7Q41883co3thj2QzR2CqTxBZJE4pLvMTMrrYhEihWK13iqVfXBVtbf-73jSDtaiWKGU3bSrrKRIxKmf-hWRp4oz6KJAvLdNtEfbV2stIo2P-CnXDZtSsgknkighC4uDT5A6WnKGcyXmdhImPcfZUKvkdInUhR-IzfxO5GUE6uzEebMowALIX_CDxas-mSZkxT2z1y4N39NJkA=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH16SA-QpTUhSpkLRW3CHI1y1zf9eZIN65JnzwO44CWWvpw6av8b85TqD6cE3rVp3wRJ0JJ0_uU_NgbAUUWBBj9m6OifKB7-1g7bA7XeS0coPc37S1Ud4MweDzp63lkIFea4pNfE4uSgqvkLFw8vUd19BI32ZKbHHAvX9jMY4yIUb5lijTwRnXR2UmFBCPugcfZaq7sJwxZYR5xTirPvGgMH0aJ2AZP0YCYF11_EsNPgB5vaN5ZCw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJqCDDjEaZnJ_M6Jf7kQKgXS9p2oEGSOYVAA-6NkmjDEDodu_VP4fE1fVg-imvSgzdDax-mDtdUB4TixdwcSFJ5zA6HW8LZA_EjR5cxqEs-tfELdYDEL5RIVZQHIWHAPOn07rub89tg8LbR-NS"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUpe8yYhcCeEb0HgVd8SetJFvojZnLagfmymlRdi-KUoESMQDAdlTMS4en0yjjZHDA78RtgquedBoQ0IUt34zHI02-pErFaBm_l-pynGtfl1BngFJ5Wy4XLvQNjyXHAj79PgJctehXu-Ja_pTwuQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdRdM16aqFQRk1tU0mv1nq9_W-tQrWMtOKpsCW6QMUOAnMI7j2Vs3ZlHJtQmT-zI-4LQuOrscAveInmQlKaY0byKx2CidB4wiDLtV9GtQre8Q_vGXnZcY7nXQoDZU77a83__vmKK276BDxdql0"
+        },
+        {
+          "title": "jacc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzM3A8rG0vyXjGVVF0MURulkqkrK6nAv8F9lqPL1680BOJTEh6BSlo7SbjD4CLPrLmyg-cDaKUFX2sBjlq9ESXOskktjLSncTwaxRdzXNBNDYwtW5ADaEbOzQcbwXnYRqadddWuyJfa68Uf_zEsg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLjc3oK4Bo6oxVzCYHY1kDr63NCspi6NOGAy4ndIxSUF2vlyVcOTI2r3q2rb8Aj1IeSvPu-bnZ9UiwOiqWHnXvYxNLvbohfJuh2fuShQwebg5X3duh-PA0DQrebFEC4-UAyWv-vK4ZR1Q7TXgpPEx9DdoIkiQtlYsUdaoNTjecKd0pz6MnKkUHi6Y="
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-u7bUcGYPk1K7gL-Jh2SbfzAYTGm-d_b-6XeTaCX3YxAa5RH-6n3z2NdKEOXZZk92PbuQILiTfoGQt6ET39s_GnYI7Ej0hBfJIkoy0PISoMTyhIRFDEJTzeN1ce7aNMGXpfpGurmkFTsKQ_PF4x-1pusbyf1AJSTh1PnJ7N89dF19Vu7or_vR1Cg="
+        },
+        {
+          "title": "cardiovascularbusiness.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6I3A-CcJJE2bPCgwBpc9IlQWr_Zuvc-b_oAI4zLXCYZQ_9keHaW7HgdPxTm9WzDegkjLwB6MGqSOEXtYONoEUlSfW-0nCWRUnygQjBa2LOgIz6H5JpjkWr_HyPVqrPsoKc0Hxa6xzxu-eh1UmlvQ77xIzb7mTRifi9JnIWhHm9nPokrLkcAnQUhzHTI0pB0bpNM_MYJAkXphICgFSOi7UxUT5O4eyeCJ5ESEfS3AeH4tI4EUwOgsmyf4-654="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzix-kWYiw1L113ucwbkqBJj34nTVwwKpUjkb_kigPglUSdqxu5NVayGdq1uZQelNF8iAjA8_9zRXK5IPRxnSigyjF_vn0QFyRqJHesZJlhwnQtf6bYY7O5aMa-ThYSaWOa5boR1yoE__ODtcUmZlmNy8GO3nb5Ei-jQfzINdvLvUoQoOp7cw72F0WmV9TKL9w-gBnnf_Qy1x9Ogg="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIwwGmzheGjvz8bKm-B_FTvLqdSrIxKbM2VZq1woUIEnJESuOEGYsDnUkW3JQ1GxmybtRAwzQZAgd57I25KmENW-h1Xw1_vdjNvUUn3WuoTDeeYSdyF2gWyOwTnacZcasJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_3Gu2zgRXlt2YR6NhlLCbzn5NR25QUNhRaoEkMmj72J0rZG4GqgNTl4zvCofQuxK89NvldrPOFnTzFkVID6EcQRTrpIiGMbgQut1za6G6gbPcVHdvlyDLifJd9HnHT9NO_5qxRDXCmii8sDk="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfzWNA8_LiZhRNyIYDNBAH_AtrDMRP9i0WFmbosaZhAHrv4hYrGCv1uyUrGzkaeuTRUx3NJiFmrh4UZh42sekqRR9Q-rVt4PhBfTbWXjccRyT5CKnu0GzA5mgkeL8T2hhr9VRJPSv_8jGmV6zh7gjYjpa2hB3tktZYOBuJwjaBGuPMVFTWnNTSSQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB8ncwENDKwt5v7G-onqE2T1ascaBkGiqMcgat0vcHrzqkK7rETowLvaSKKt4bumjldyFWZSorWBdAAxUHuRRdT1wCN7UiEa7STYjrQwAVhYH1hW2Yc2ok1l0w0ukfFxvvMoLcMPsoUjLm919xQ6ZIlnyNPWv674RqF9sWjG5LoDrsf-aM8i0WA3LIHkNxBx1CrdS99reeF47kSU3qMo0cAXaKa32J-wRJLa04Bo_FqDxGRvCfN3pPEqvrAng-hKvHQJs44KOc8BbzTCk5xyTTFz9frvCfTDOw"
+        },
+        {
+          "title": "ClinicalTrials.gov: Beta-blockers (e.g., Metoprolol, Propranolol) trials for Hypertrophic Cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypertrophic%20Cardiomyopathy&intr=Beta-blockers%20(e.g.%2C%20Metoprolol%2C%20Propranolol)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Metoprolol succinate 25-200mg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 400,
+          "sideEffectManagement": 75,
+          "totalAnnual": 550
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 846,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 5,
+        "vsComparator": null
+      },
+      "name": "Beta-blockers (e.g., Metoprolol, Propranolol)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 8
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 7
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Exacerbation of asthma/COPD",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "Lifetime",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjFW-AFHdXz5GHhCaNsBxyD6aNjU_aFzAqFZPIaLc4Y5JLoUtGlDgAENE8bTgsPnb5fcRFSXAXSnFNbarLf9w2H4tSiiiXJoFs8OdArCNeqYwdv9bAR195UePy1Gqk3D3n_xclkqYXQkSnxXgJ"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX9o1bf-u1YGY7VBY4euR1qv9RScLb6MFTeb9DlvKWY1UNyCpxAgpAAC7Q_VpJbOznGzNHrCQ8ODuaP9OtLnMksaW2AX0QZK_Np3_4egjPKyTNWGzmwo-StwwPO9VXO9qYXZ-DL8I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENluNo7_xQHcb2LAMvFh4u6ku0g9nJq3AGfr7jk9WaHQ4gfcGKFWRRuNgtPFVXWC8QZYbSovi12CklHYmA0V4ugSPJSK3Xt17Abv6qLapvGOuwauG95h5N2Sw8nHqspTaybLYGwO34c7lRviU7"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzfSpm0sJV6syNVp05D3BkR3eUuNK1bVlFa5vGZqzdljVktm3TW5dmB7zjf8MbBrbv0BVaXUKaYi1c1-1wk-qEQJrlCzcmt2c7Bry-RqW6sX_zrIag0hnol6MkGMJMFqfJT8EU938zih4UmFQ9kRT405rw9MRghqf6Ynrez48LqZEtY5fmvFy2L31T1LOigHX0BJFm_S3geT1IRViTzYo39GTXC-gXirxe9Gxw19hfTCfGalIO3o8grg_qqrMs-IIt9Bkp-SwcH_Y="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGTq8wTlKbqLby6IHXs1Ewy-kc6ZwGaZD6gbGZchBfc0uyHBQSKuFX_-Bz9jBzAKi7p8Vl3AiV-zvMXKP1pXc1nZnX1TMnP_JCMs9rsYUyM-QfZioWh7h47kgkkAUwIVTq0Kgc7xNE2awBMBHPezDtY8YNtqVINl_n0VN7e9_EAUv3805aHYNHQROfQqVK_Nqt0E1tq618Low3vOCD9J__u4SsWOk0exzMkrVtFQBOCbQFwfqmIpTPxgLW1t0uybKiMoQOpKFRs2wh-yFkk26axs9T2zyPlWRm"
+        },
+        {
+          "title": "jst.go.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEapBEuEfa-zD7keUWMqb_9SOyZNpnp0B02mKTUQxxE-6nNCwpLj5eltSZMx2m9cXEtwEHVBLjWSR9AHM5oOuTAZOPb1gdknBVcGCoThXpm9csP_cd5h3Oux2Wme-RsmIq7EvRTbTDG4wh772tIIPoIODMqlw1RVfab0hpW9w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLEpfKLFP0w9AkB7u00WanGHWNZlAE9QB0AvEvN_TflwvU1uEHMQq2R5m9YTd-7YbiM3-n97IyYV51wUEf_RT2IMjnrZCY5zzs_20cT4ctgNDOaZ5-QQNOmpEyR28jvrPCSVQ4TuBbnqrCQ_E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8C9QU9HMDrfAyeSQ2OPKFOzmxqJ1ZfrrUHSiJUmieK2aYeBAnCyotHANqGUeP7ukhsNvQQD4hZqp5_k-dcHBjLdb3crj8EEjYornAo_aaw3qaM-rtisbFDEIO1cSsUZgUao-Jg7hMKvBSaU8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmMAz94AnLgzEA61NjYERsM6ynT7SKhIMhuPZTf1SXHfgrmszKYQTFN4HzwtLn6TexYs5bVfVvKici0WeggkKBWLsqSXy4spe7IiCalvD5Y6Iygtzh1IiGhGiCfdD1_YthDZReFvGuvYZPzJToUF19UonaXxy-B6n4dIECMZ8v4uMC0BR9TykdxSmem7uUn11krGyqXUlWJhp3WKP9cig4Og-XKECJmxomcDrClNfyFJFcRrIoqCCnaTps87gHn96cDwZ7BU63UPm9XvueUVWnf6yRwmC2EfQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Calcium Channel Blockers (e.g., Verapamil, Diltiazem) trials for Hypertrophic Cardiomyopathy",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypertrophic%20Cardiomyopathy&intr=Calcium%20Channel%20Blockers%20(e.g.%2C%20Verapamil%2C%20Diltiazem)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Verapamil 120-480mg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 923,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 5,
+        "vsComparator": null
+      },
+      "name": "Calcium Channel Blockers (e.g., Verapamil, Diltiazem)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 65,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Constipation (Verapamil)",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 7
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 5
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "Lifetime",
+      "trials": 400
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+- Before UI changes, read and follow [the shared design system](../../docs/DESIGN-SYSTEM.md), including its UI change workflow and definition of done. Keep detailed design rules there rather than duplicating them here.
 - Run `pnpm check` regularly and fix errors (just run, don't ask for permission)
 - Use server actions whenever possible instead of api routes
 - Use Custom Logger: Use the logger from lib/logger.ts for errors instead of console.error
@@ -12,4 +13,4 @@
 - For directory operations, use `Set-Location` (or `cd`) with quoted paths
 - For renaming files, use `Rename-Item` instead of `ren` or `mv`
 - When moving between directories, use `cd ..` to go up one level
-- Avoid chaining commands with `&&` in PowerShell, use separate commands instead 
+- Avoid chaining commands with `&&` in PowerShell, use separate commands instead

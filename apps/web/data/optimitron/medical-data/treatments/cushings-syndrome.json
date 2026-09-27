@@ -1,0 +1,1052 @@
+{
+  "conditionName": "Cushing's Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:49:00.114Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxtd3z23-USeKB5qMj-aW-LK66WysDQlCGpgnwuuaNvz5yV0tdL2CXx4Pz4OTD2YYLzqAkUCkoKbgqTh83Uqj86EPqVDVqg0iPh65cGqOHTb7F8pEszQ4YNR1Ek5aWoT3XDBmRULcHUeSofCHx91mwJISb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsT6h2ZK5TXJ-XGEBu-VuNEonRIn2wQwTaJjJfAncNi1iQ3lX1pVeCB4qOBGn7XUI7Usel6wGTF3Tb3Rf6a9etPmVX-AWYmn3_US0F77VpMJ8nU45zeAmrIw9OjrHP8XH0QI1hqTRmWHVqNbQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMNW1sUSLq-MKK-Z44kLpDGZjOnFE7h7sGqTyZqFf0u4ykCfrxFtVgU3BmMDhwDTNwqhmpg1VH1ORWK6a1iJUb19mBGsRKz5qOlKDEnQ-TNCM9x7tYlYWk5307TcEYbT6oid4hrQIfpmCicRtF-NPr90G3j2BFFBkgEpKVBFlYJZ-GPzTUsU8OEGS6N3THEdaNDME-nzzSs1k6q7uamEvr9d8aA_M-NnWCdATkZTOnc9rmr97b7SNOP_4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRHIspRq_fR2k-GVa425YMq2V_6VVywCa-FDsKZMa3f6k_fB6gVHGxRcoCie0wP35F5d9YJdGFU2WsrRjEaPSPciqyjIQ7zy_URYapXjdQitAnX4y4yKalQ_3EocAkufNrNIde"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPVvXcNRjY8pkzVwn2TpGROWRK96RiJcflaUjzZlfT-99BXdtdW55FMJCAAU0ZEmdANxT2oeYhy-GThShVQAQ1FH8MlErvPFYsmLkfwugdxHI1fcL1CjZFxJRN9WibwBHIIvU6gkS4JiYL2ZNH-OvJuzqqN1RqXlJ3JvmpPrYJrws8pBa1ik0ZE_1ifxoBd-xGuWEflAssdhXkXXFWvfg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHobMD1AwZx4WEgfuGWbZdG_s7XonuWgr4tOHzJDmjA0Hypow80KiqDWxFOiKb0npmEy4aEwdKJaifIOcij4qEj6wORaHvrd8JThqH_8a6YscEF571AQNsnDJCyw1BCR7X77T0fo7eEy_y_GEU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqc01yIqZa3PWf-eKYarA5Ld-7ljgB-G0J4Hm6PjJ7MYmDy7sFJOD0WGfEnl95A2kH8FZA8Nsnelh2EBDLbKq4YW6p9hsFMw84kug0GKEWDPrKEkkSdYHWXKpSoOaWc_Iy-lQCTfmfbXHcdPuR7gGJ7NsbEDQewma0Tqa8rC61V9TI5iC3MOrrbQyTyItXLPdV7WUhPpiTulBYazTn9VjRmmuf1H2EiA=="
+        },
+        {
+          "title": "cushingsdiseasenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyXRJwS6djNF064QSYPkJy5KaNUoM02mCY69FLi7FN0yyFCP2t-cl8jL3AYxr5yZTxRRx_YXj61IQXraeC9a8ycQ58dtBtSA53rLNfM-h3E1qdAGau5BaU9K8oamX60bU4m3dgHa45KX121WN37hI8sccaX_sKaF0idVSZNrggC7JYb4j985ViXgq86zWTWpHyIs6PmYNpZ-Ygvoz8ODiOprVI"
+        },
+        {
+          "title": "cushingsdiseasenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1VfDRzPu_WpZ_YxL3231TbU8rXfnIPRk4JWj9PmgbLQi_3YE44HqkW2AHu1ZKHYVDP8R3DSVAelJJm-0FeAS1d--RnMfaWQDP4v3n3P_wPwjT-7j_mSlO4DZrfe5pQwWkY1qTgo_KKXvkeGwIt9iogekuv-blgcoWUKP5wAHmVjDEZgcLqvjUGIU_BbUVwVkwvvHSopjdY_EpyPANq2OG4pk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bilateral Adrenalectomy trials for Cushing's Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cushing's%20Syndrome&intr=Bilateral%20Adrenalectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 5000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 5102,
+        "costPerResponder": 5102,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": null
+      },
+      "name": "Bilateral Adrenalectomy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-475 mcg/24h",
+          "baseline": "500 mcg/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Free Cortisol (24-hour)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-20/10 mmHg",
+          "baseline": "150/95 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Pressure",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-1.1%",
+          "baseline": "7.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin A1c",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-15 kg",
+          "baseline": "100 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "CushingQoL score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (CushingQoL score)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "BDI-II score: 30/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Symptoms (BDI-II score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "FSS score: 50/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity (FSS score)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Surgical complications (bleeding, infection)",
+          "percentage": 8
+        },
+        {
+          "name": "Lifelong adrenal insufficiency",
+          "percentage": 100
+        },
+        {
+          "name": "Nelson's Syndrome (for pituitary disease)",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "one-time procedure, lifelong medication",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPG7q8JLosRRuM0_D__u1KkhpnxDMBCsNfRaE2_Ha-tJJ9f_77AtZPPo_PwNRMsd4UZaDj2snzHpoCr_qI8X-YVDcjGqsZi6urRB6OoWjDi_p3QM2n7Y7SoqA5UU-Eh7Ayw78JMRjlVkqjRDWHa9FcrGpGEQcxoaE9rs8Wl2Nyrxjy-cZMvlZ_n3na4Hz_RfmziIkgE8-POPb2mi7rTdd6fYOT27C59ih9VH7e24awfFR1btMXbwsKH24Zfv2It4Ozadlsq1zqVA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEzcT0xlZNbZyH8OGqCwuoIcjEvA2FC3oFIWnpAyFMkrB_kLqlNs5bpte1HeHHnPntSU88-9HvWeyy18I0scDMSwHYGiuZ2ZIfnvrN7nfcr_HB2J_L4YDKTR6Mt9MmnEZptoBY"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKvatBedhIm1vofzfyanuSGtfu1JLrilwGa5vuw1JejGUq9oZ-IkorzLPxBUa_iTkY3GHSb8gTmD2Fa4IPN48U4p72VIgO9JlPz_o1VpNdghC1v9WoydVy3M_qU-6mOW7OssrNZ0zuMXpTVLjeKJrjO2mo7jpkYTdShVj5-Exfo1eCdQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuo8KsReBY5723kPE3XgjCaL7CeztCQ_teADGph3OKUSunM6Zi7OgbkGCaCP7h39XC9bSPj59-JeSGuBVAJfQOHNCZv1jUfjqjvnOu5zIUwxnsuUPxwmDbX_gq-3z_EZvUAtabCc9UBazxD-Y="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmeTqTmD4tCytwURw2x8D_Z788ZhKWFsebEu7VNhEX6vb-FmyxRYoEb-mIfUWWZoGcshYwVMOCo0KtDBxO3ltmZElf0Fc0cNDo0ccIcQLoM1ilaGk8pcherM7tPsiBa4hFvj9j"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrJyHcE238Uz-V2khI7RihlkM94b5DGesM-2EqpmSnjTdK-60JqK4qcEBXR9L6sH2hlu_IGENLg3tqeQ5Siw21WYhn7V92FtQx7a9dpy6dhtJdVUYH8fLpZJ5kBBeAal9rDd49"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMtEoND7O6b3_J8UWje0NmjKDrRcjoNrjmstpuAIFXmwDU05AJlto2YWs1TlxPfP8L4puVzx0KIqvU11jDhbHQvt30AOuUJzvwZVj-YllJOSEiLeo3Mb9mmN2Vpb7UhtQhKNvQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Transsphenoidal Surgery trials for Cushing's Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cushing's%20Syndrome&intr=Transsphenoidal%20Surgery"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 5000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6667,
+        "costPerResponder": 6667,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Transsphenoidal Surgery",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-190 µg/24h",
+          "baseline": "250 µg/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Free Cortisol (UFC)",
+          "percentageChange": -76
+        },
+        {
+          "absoluteChange": "-300 ng/dL",
+          "baseline": "400 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Late-Night Salivary Cortisol (LNSC)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-20 mmHg",
+          "baseline": "150 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -13.3
+        },
+        {
+          "absoluteChange": "-1.0%",
+          "baseline": "7.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -13.3
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-10 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -11.1
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "SF-36 Physical Component Score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "HAM-D score: 24/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Severity (HAM-D)",
+          "percentageChange": -58.3
+        },
+        {
+          "absoluteChange": "+0.05 g/cm²",
+          "baseline": "0.8 g/cm²",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lumbar Spine Bone Mineral Density",
+          "percentageChange": 6.25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Transient diabetes insipidus",
+          "percentage": 25
+        },
+        {
+          "name": "Hypopituitarism (requiring replacement)",
+          "percentage": 15
+        },
+        {
+          "name": "CSF leak",
+          "percentage": 3
+        },
+        {
+          "name": "Hemorrhage/Infection",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "one-time procedure, lifelong follow-up",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5Dz28ziEFiAKa5WqS2kZMtpBxSTCh5ExGZADn69amy1zht4I-A3WjXWf6tlrNDOOLP5YttI3ctb97-NIirRMqJ6oDZ3tcUiz2LQlAHun1NmwZluJ9qifIRSUZahCI5pHCGGX2TO6W0kVXuDa_2h1c_NO1higqB4WP8Ap7RYlFzAdQvaruF6N5wy1-oQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLjdeOdlAl-67NupagEimnxfj8O92ViEuonMbzNPevO_2PWRFKi8nfzBPXSiICP7UmLDoza1tLc7AvZbANhy5tJE5jMn9QVhFcDviyKNNRN2sfTC5x3GwU5JDcWpnLQbWqYKlEw8Z9rCDhuQ=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0FYy7igFD2t-IYfbWkw3Ec8rZhB09Ixy03MIb1VVJSxZds771cBEZBHsk-FmWwgs5fg0iX5RblBEv0PmAeZVzQ-I8BT_n4ecnERBS9DaDAuUCMZKAPyE1j34AT-0gIPokLifXJlJYW7mVs07-Lk26NMA="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFceaGM_gx4d-8VNdb1gXqckj4jy_bFbHNMWENfrdyqsbEPdzaLhSV20tXzohEutFupIGxh9jtQHECmB_8f19g6FE8XjolK6Sjc5QwbFtku-eL_rudacwJDx3adnQMeZRV2XH-mKC7bqWvGR6bWxREZ97y1c_epuYJkAV2nEu_iEComWoY_gykXlv-VH7WQlXj06aWXGpl7_ebIqu_KUiJtiYgPwFcMPOs="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmiS2879fpQ0JQmPpGEHdICgD8cUbo65vFqLL7I-FT51fLYnaottJ6iXGv4HRsxnHJPhvhtz7IX_BBP2Iq9ORNBHxcc2AF6PlDu3QF7BW7L0BqJikCfM0G8Vi1moPw-zaFjGevFg=="
+        },
+        {
+          "title": "endocrine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHs1TW99MrRKNnKqLdHzwdrPlhpAXUw0oAw0A5Lb4EqZl38Hp6gQcsLqXRe96jUinpcT3fcMEeX82-mlXQwJ8lFAcFE7ZGwK3aEy37QvpUWCn8pTBrZPog33X9SQX-g2HPfmjfeEDzEEsIAD1dy8NdGHI6yf_7ly-Sc-2VOpfmmqsWqK5l1_MPzr5vvNa-Y_asylbifNX7tNpy0MmAgF2IRiSB-y3T3FuED_YL5oCwK4y6AJag7Agnudvecr-azpr_wx6HXLw=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMorgk-NHKCpMrJ34U0RIemArxeu78YWkU9ANLvZozOLhpH5iRnOOkPmFwCz-oLuMps9-YP-UNHdgoRB1p7JD4OcB_FLkHsCOUpX32FiTL27TB373JcU79hS-wkmdy_k3QtG6HKQO75l1TmJJGmivOqBYO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGloRjIX2i643mN-BKngl3FfqfW6uWI4Dj7VIraabazT_OSpUsYSHYKyhsPTARqIPGB-T9SjKeCUBbUhWI7Mgw6gpaQJn_A28S7mWZn5LfB0OkOmXL-e3W3_vN-iZF-31lkr7bOKOAQf9sKiQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-hwU3KUrmItIGIrqD7dAH0R9vDgkArNUZdnHIiNH4A9Y6uOnpSggEGweM0DlN_TLjWE2LpcVM3v52kCIO64Cu1RBF2E_LcXdreDmgMchzzCWnCYJsWZ-Cmmjt1rI9LOO05HA511I2BfrlCZzAjlG2fk8DgIIpeQBG-0dx26KvPVlFYhYTMQElmrAhyS1RIdtKIQyIOQ_k7Yh_5X_mAVVaOHYAtGdAIB9VhekYlbQ1fwFxfObn3aviMPd4vsjp37ymyKncVEQEfOVR769tOY7KhBrMC5od13E-vzU7zsPUrAQw7Y2iWe5RDRN-UJpmQUlOpi3uI5Mcv7HBkdoU_lU3WXQhMxcpnlb3dJO5gPB7nAY_1v7-OA98dJr1D_Lg9qEIAVwA_mBk"
+        },
+        {
+          "title": "endocrine-abstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMn92CmQXtEakS0QwoRBmd3TfDeTny20brMYZpG4RCKkIKu6-mhjQdIZ_Fh3UXt_KWG6xZRVtsT-e5szZxj-G3u3odVG2PgcntIenucT7kAhdWqf0fiMhJ5EkZMxbmBIN3N4DIxo-hmfJ0T_wptBS66A=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLnYVrDezsV3YHcs9aMvYYGex39Vs3GZP75_tE8-o3_HfwFHEPcV5W6Jd47o1RHPUN6sUS-v7H18ji5lJbtgp8mgAzqAIJiy0nrxRIo0TZAbNu4MB7BrOaVbYaQ3-8EgkmyKGjIdMfUE8EPNzzQc0Amx8jfv3IZfmZNmYqE6QmINmC5-eUKBiHrEmYhOmYXgho1jouNg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUbZh7XQzN-sS2adDCvqT7Prrh-ZEMdhIwX7OMJs3ZSYtBk65wMD3_ZENGQ6qh_kVTLrYBulKDYQ0q0iMQ0Gg9D6HAonGekIK6c2KxyeD44h_yMxgc7MGv0bX9FmGCT_5NeyA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELx70bUbrQY8vE8ZhAsZnMGUqmIjrrkdtp6zyKwV_GAsvL456FSCqCOxoAjl-8yalN3gDeY9fZoEB0Cx2PmWskdHa2nsLgRhamPQPzmno1udQBeAN_VhH_9LpztwK8Lq3zTpHRhxmge2Zkf53nwoW3KygeskYnns_Z7LZ3o6hIU0mpz6du-Lcr3SXKuNrEh6rL1LUsAy2_zbYCeoqsE8J-9XwwXa5HEJAteIPYUsccFM81mKCvzOsTI187YQ=="
+        },
+        {
+          "title": "whiterose.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyaRI1b84vbEsVltOp-sFWOt8KAqX1y6lJyQCJHWXBwWKWgMXeGyBhOyV_OVoaXBcQVVFMCoRv9kcBffOB3A-SDSg5ReQ1sC1BrCXLIAdCIcf9xHdFt1Z_oAbpKZ1p_6jhyzWl08mP9V_bqg=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsmVIKhQYXsVbhOTaj716cXxOSq-SmYpm0UXRY1wKUfZ9NF6R34UD8YzxUSaV-Jf7M1Rn5z1MzJAE6B6bqps1gh6R-wvLCeqkaNtsL_G2n9Nrr7uxVlx_dxGmMBsym-UdaPFRp7CCjTYmjJzJ1AO6qM4NAsvmeX2rX8wo8ZEQfRtOHhAq-AOdiBKEv9Q1s8P5_J98UW7nzw08MbOHleJ6Ww9kuLmVvWOEMDU41G9XeePMBrEQOx-XgI8FgUWJC1DQOTFCwPHoeDMYN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9WBMEb6mQAIeaRLT-dkAxbuu38f3pqGxtYlCayNMz7ecKSpnlvZDcw5_MGp766NW49eegEpNoHBo4-t55ImshHnBxHo2Iw01gJhfbKxU6kq-yx-wPP0i_8V1U0YtwoHftrQ=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENtW5-Exn8Dk70HKKwFo5Hda746FBDNaA57Mi_X_b1xhq9pKtO5wuYJrUGmgv8NICD6xl1W1hxOMW4RBSrwIs6iAlvkTalSvr3Gkk-90SE_VJRYwXh_HBrVgdOmYeZb5erTfWM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG24Som-JCq9PULpiKBGO9CXyf7n4BEdRwTfY0mJISfTLZWuQOCnFD2TxAlsEU4VCbTjjuhq031PPI19Ih7pKldUQDW_0dVdI8hgYya3c3H1MgEZ00lX-xToWMlHnW-EhMUsiHImyaC2_cXilo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaqvYBzz34dB_LPoZlhiK2aZoMoSD-DP9VWP_yai5f5w8lCDK0stSkYt3iiF0ca2WaIMCR-71dVW_i4cFZMlJmPQb27Ud0E518QXQPYBzdIJ8509yhAL8IX-NudtR0zDZTP5hWEjJXQSpi-T7TTEdtlh81mwWaKfDjxog3IGgSZImNSTtauE6oX3UMg8Gdk_RwvY3AlphY3i26V2fvPIU8LJEbUcpExWj8nHo4O1OLOk3G9xVlAYYmZ_-7t0AYanUgfoxV_J4rhI6F-pg2jxxHRYFW6Nyc"
+        },
+        {
+          "title": "ClinicalTrials.gov: Osilodrostat trials for Cushing's Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cushing's%20Syndrome&intr=Osilodrostat"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2-30 mg twice daily",
+      "effectiveness": 55,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 140000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 143500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 260909,
+        "costPerResponder": 260909,
+        "icer": 580000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Osilodrostat",
+      "nnh": 3.5,
+      "nnt": 2.5,
+      "participants": 400,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-195 µg/24h",
+          "baseline": "300 µg/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-hour Urinary Free Cortisol (UFC)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-14.5 mmHg",
+          "baseline": "145 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-9.5 mmHg",
+          "baseline": "95 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-2.56 kg/m^2",
+          "baseline": "32 kg/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": -8
+        }
+      ],
+      "remissionRate": 55,
+      "responseRate": 55,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.75%",
+          "baseline": "7.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c (Glycated Hemoglobin)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "CushingQoL score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CushingQoL Score (Quality of Life)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.1 points",
+          "baseline": "FSS score: 5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-21 mg/dL",
+          "baseline": "140 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDL Cholesterol",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Adrenal insufficiency",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea/Fatigue",
+          "percentage": 25
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 25
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 15
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj259hrJaXiG5ggmFPq4SNL4jmiiYThkLYtQliBAGiIflQ47nBd_e1-87YNoA90_IK6G5PDBa9paJXHzunJwcdVmcJBlMX6HlVILPIwjLQBI9SuwES88hIxntmeNJEHZ_m1sMlFHI2G1GcBYInBTBrgqnKVPoqjWs8nQ-0BwOGlWeWUjpxr4rjSliVTtwd7-UwZeB4mR4d3xEpe9aWxpbd9Khf7g=="
+        },
+        {
+          "title": "cushingsdiseasenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMkpyMORWM-WI2V2kjhchjyMaMziPRyfyTgnhMw1osrAb52z8HdRsRlmkraTlF7iedAjawNIFYjvqFcvFrQVuy2iA7e6yPOqbkVbX0MQmqHIc2VcYFvhTaSPp-wlETyJHeVphvkW8gbAf8iBLUL1QfNh_W3X0bfxHgS7qH"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH82y3qw2X2YUuOzL69cr31-DOVzXIgLJ6K3gAS6-6wr79_syUTqDFREBk1ly-s7vKxWzsSkB8yabFczaSW9X_Mr5ZTkvkzInX7y0uIAbIddeTGFosRXtOpRy_Opslq5Mbg49_QmPKfxVye5Rf4vFRmwg=="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCOlIUO6OV27wWzfslbF3uCw-logQIUuHAKKjImjAkPuR9FJcnVxnY0iI0HxFN1ruv1YkSxETbfTIxhcqiyWDqXqq8N9xDU58jlCsSJ54biB0L8sxxJvY6fDqdi7JC_4mQh8N-VyzuyRKEvzLuFVnNJgIqNAs5Oil5LEhTf-rf7lLBycD309eslY7Z1geBfGGLCnzEamI-WAP_MnGVmsbnQNu-CviGj6W0F25o0-kaR5KU3w9nv-P4Ue2MO-98BFEXPKtVgG4K6t1fuKQh1v8nIw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH455oX12k68chUulSUjskU6-XSzYIf2KJkWq0SfPezer95JCRJbC0TDLzmtxFgMr9xqDirnjjxKHK3VGabbsNOSmZjkqlrgG9u1pf6qT0PUfckUuLDwMkitBJUO1J3lvvXRw1KktCQ-YKw3Qn190GmV69QK397lAjYfz-AHEf0-g_DlkV5W9WXr9JOPDIUdkVr_PstRQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMiXYBrqqAVxrQlNFnGrGfjf6pVgz6rQiJlsZHtpIDrZnr04_LFM2rnDF_vYYuO__RmZS8kUyZgwbuA7TtEV28Sdb1PQ3q_axXGVoZLtGZYdmOutildD6oQkLuZs85h38YRORtrY_aSlhyeVgKyIg56PR-IXtnTe9xNDsTl8Yi8hK5TmX-HbG4uY9KIK48R0ZvlbkUyDhJs6Z-Eib0P-AeGjpC4xmKdqIbj-5zGcPdqmeppd0oe_VmHjkv16A4q9iaKjGIQUllwKjuXWdMvN4a0A5kTIYA3LI2qJAA-B0QXIoQWVMKv7Ew5y_e"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0nkkRcNZNqJESRmIS_agEq2a-FRZPWtNIrxcVQXfdCBnSN6fRY6KjZsRExKaulcqOpkNi-I9Eq4V2eme_d012v15bWRgou9174PabrwPoMTQmzYTW7dIxF_nLFAqtAl9dmUU="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLTzN37n5GaToHyvweI57YD_ioMAGmwHHOd0KGgD-_NAJU3IpU3tL6DnXRYG0JUxaLT6htCMA1agXMIe5ldq7YT7sJUUpOsBj_NqYvKrqzbTqszw5F9NmmIRCInzImcizDL9VoJtVeGSaLyDWUfn4wxd_67BWDtHNylhNcqKT8v1TLHVBQ7Kkwq_GGvx0Cf6-zvLSD2w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdwvzrwrZ5kHWvuYMyqvS1tdJ0lkqkv9XruBDq1XdbGMFbk48gmuECdbz6PTZ8wxN5g_9ATb3LZ_14Md5kNTbs7i1j7brVVuF-VNDnkG9gElbqHesFIgQCCB5V4734zcjQ1w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDpr4wGE-Y9oETngfmXrCS0H-wCIJgxxuHyrXRgFP6lrJApkiidfpQHTelsoMaNMKjIjlppV-mNE7wAEIzvYLy7jCT63K3N5qyFkexDX26PmNzPrRGQPKudoJE998kGTwWWQ2M9fsU9yxpRQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ketoconazole trials for Cushing's Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cushing's%20Syndrome&intr=Ketoconazole"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "200-1200 mg/day, divided doses",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 6667,
+        "costPerResponder": 6667,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Ketoconazole",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-375 mcg/24h",
+          "baseline": "500 mcg/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "24-Hour Urinary Free Cortisol (UFC)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-22.75 mcg/dL",
+          "baseline": "35 mcg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Serum Cortisol",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-18.6 mmHg",
+          "baseline": "155 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "-1.17%",
+          "baseline": "7.8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c (Glycated Hemoglobin)",
+          "percentageChange": -15
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.06 kg/m^2",
+          "baseline": "34 kg/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": -9
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "CushingQoL Score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cushing's Syndrome-specific Quality of Life (CushingQoL) Score",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-55 mg/dL",
+          "baseline": "220 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Triglycerides",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+0.8 mEq/L",
+          "baseline": "3.2 mEq/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Potassium",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hepatotoxicity (elevated LFTs)",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 12
+        },
+        {
+          "name": "Gynecomastia (men)",
+          "percentage": 12
+        },
+        {
+          "name": "Hypogonadism",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW-J3a9ZiCD-wOhWazS15BgAYrEX8yjd68yvW5_uc6tBTgrnkOWMMj2TPP7sIH159wzEiWAfbNSAdQIMTg1xNn9feXWvOWd-C4vEbFXykkz0rXPFqpnI3CtyqikBP2xxwRhucPsHW-XDwhArw="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfR3sxTbv5zLy_H5yzGe1_H-r-ZUhMci9Egtrcmfw-criZG0lq9r1uQGLGmda_-goauMAow08EA91pdvLF70OmVmv0kLnCyDzqUNPotIdyOSPOdd5qyECZEWpwO61WfI7CgGCNXkp2qpZwsDdThAwM68CFNphBvr8qWq0="
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO88dFGt1pXCW72VkfSj3fSoIRoSbo9qUEP-8sHLr0fj_Qq0Ltkak_wzuDwKzzs0xQoRhDWzTIzRnK6sjWko2w3u2W5mTu7c16jT42asCXELl2cx2Zcl6Fn7d25pBkGpYq2sKfq2m4NapNYiq8dTx0SFD-mfr1ZF9UwFE6KaNDfr7mLtJhfViAk_K__d0d5A4SLA6O3IUXi3twymdu0BjEH7nl2tazB0L_B3me"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUf6H38sDGzZm75FOoqXwO2_9DTl1V1ReftRZusPVsL9ipKydMp2ag8E8syDkflHa1O4IV2em5oxRJSmf7gWNaAEACOfioCEY1dZioA4pMP42Oh6oL-RXB8IuBlrXV88GAwT6tRkF5vm9hgvB3"
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdtleMywYjUyarplERxeeeU2HGNOAEEWHVZeHDRoCdw8EO-OdCtky9S-keerZGF4WUKRAIaWHIfot4tfq7ahTRU62GUzVE-MvWN5YSjNDBkBJxQ9tYQICxzOccdVfjHqBu1vqh9DxgtS5kPp66C1V6YJdw2Z-_pjm7VUBaIx5zKAvvQaH09emIj18JbDfuDzvIv9_s1KBZGda8"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5BYccf6gUwk2RnAupdfQL-EbmggB5CCKw3JlNcQe5VL9UGDUxGuqXMNNmKUdBzVqmO82scBY4EyJQDMobmx4VJ4ddy9SV79Dvb-69Z4mnOctcS0--EzlK1ZuFig7JxSsZ5GnIgNRQfeBk2KEf"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPFY-B68aRWDn_7YHXt8eKV8kKrvb_PFt1-fxZ5VyIdqqfwFJ-72YO6OVIWvOWFL1olwmE0Gqo9APrNipQqBHywSxeMDiuYrfEHyEw0gk-8GM6A82Xr5sUevIO6qEUZEL2E8CO6R6Mx1g_SyNSZeBqceUnJ3b_1PFZ8rtig92wahWKoK7m_ktNe0hOOnmp9ISmGC3FgLdJ7nDAvxs2NuwscSJmUhLUulcmRXxzM8my"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqBjEaTJtabIF3BrkjWCD4RTIoIsHbi-M7lexh-2--kY2ccVAqF5amxk5AKNkVTYO5M3tHJvdU5QOZ4ygrrW3M7-IC5Kon-f72tMCZAVCkelPTgwm-cJ3DSV7jl7rXaQxZVM7AgwJuWHEi1bE6pkx0O8lxTC4dEft0P6NkKjpeam_dpRpIDJocmDlJt95ibpVaLa-CrukDzR_jaA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Mifepristone trials for Cushing's Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cushing's%20Syndrome&intr=Mifepristone"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "300-1200 mg daily",
+      "effectiveness": 50,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200000,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 203500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 407000,
+        "icer": 600000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Mifepristone",
+      "nnh": 2.5,
+      "nnt": 3.5,
+      "participants": 500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.6%",
+          "baseline": "8.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c in patients with diabetes/hyperglycemia",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-7 mmHg",
+          "baseline": "95 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5/7 (markedly ill)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-5 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -5.5
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 50,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "30/100 (poor quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cushing's Disease-Specific Quality of Life (CushingQoL)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+2 repetitions",
+          "baseline": "8 repetitions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Muscle Strength (30-second chair stand test)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "BDI-II score: 25/63 (moderate to severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (Beck Depression Inventory - BDI-II)",
+          "percentageChange": -28
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypokalemia",
+          "percentage": 45
+        },
+        {
+          "name": "Nausea/Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 25
+        },
+        {
+          "name": "Peripheral edema",
+          "percentage": 25
+        },
+        {
+          "name": "Endometrial thickening/bleeding",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "6-12 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7JKffM9YiqZE5RQ3aLXh8tqiwoU5qEKoZJ18w6-5aKbFTAQHae6NxGZnFGIOSKf1X40bH84DMr4aP98Qh7PMPRjDmW8B26oC4KfKZTx8h7341vhwWbOZtWpNodTQIRzXGRDibj-oX-U5lIpQ="
+        },
+        {
+          "title": "england.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZsCkLhkgXVsGX3X5PI5HO7osKCMZsSKbmNhd--hs_5f7ZcvDOwMC66a23ellbnuJsNVZ1k2d3st7EnxkbOqVu465eWfNLVkhcRJzGEvRLUJojhG9mafvwtt8cfkcJWTktGz-_ngtE3CNS3W4r6LC2X0g_AO3KkUrs-7dDEROfGydQVw9Q-bfXun5W1I649hEN3J03wkrkW5iSJRiz1Q_tCyUXjGtSzGgsM1-7vw9h5yANUFvT3csFT7b5jlac7E5L2Q=="
+        },
+        {
+          "title": "hra.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtJ4phU8c59vGO8SIYXJCuWDpmx88hqnBJ6pCdRHcAWrWEtgRxYgOlouMjfgdNI8ZU2GU9EOXywHzcQoQPVADvKa5TC-EwSK_traMP36DcCirAnXK-I3fl7WQHtsMUyJ3ksJdmkyNJO_qnY-e5EE8-Ae9rcGTDTdtEMTnexEFhI_0-_j0opYHyeGWd2psU1RTg65-F1UDxy9iUq5-QWPyO4vs91G5JeRRcY_xTaLL_GvhjiQDN9vcbBl-TEocyywcoSdsBBUlNYMMyHM2Btg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiMHzAs1KT_8lhcqKnQBVXrQywcuNCF4aIC4IA_gOZuOdv2gISOHgxaa9qZ7kQEljWCj2iTr7Oux7WGx0Ngs4A069kfESJ7LFF-Y_YhGtL6bqvwwB6bU9tprmpvYFvQ1_9uT5Vu9XX6XNp8hk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo4K5M0FhXVkRpKA9vVc25sb7wuWdKyQhYP-sjPVQmlzqYsYqIUVIXJmjsmUMeW8MY-dMhR2ZxrOwBzKL_oW1HhTt5Npc5r0Y_WzFjk3K4C5Die_P5yz6pD2I4zenyDLQWx21c"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrtZm7TlUWDSXAsfXPEd5EwDKpNGMbEx0j1KYjdV2v0GgD_mi8XBG7_M-PKtjY12OaZl2P5ztjEQE1G_kKGZ3B5a-Fsj9m2yxTF8qG1-aYc67MGJt2G_9Vl5SnDG21TpRNQ4l9PJ84MJtljA=="
+        },
+        {
+          "title": "csrf.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCLvj_ln53YYIcq1rZNulrZh0O-d15kpicAcMBZhFZPCwhBwM-A4f0sjBQ7OxIKIqIWpPIEiHjsWaVScfNzTbzLhOkBVA0AdDm1v1j1Ijvt9NzHs7px9RmuY0RWPq75bKQUb67LyGH1mCtF08YnFWDt1nBl3Q74XT3LcjphiL2v7uU9WkKbhpztbfZY5fQNZs3dkVZB8DGMnqPdXcKVvj3HN3xn6IDxOSoPoOPS2AyBZkqVQ1EhclwwAsuasUy2YPm_EZzKPAU9tR4kAQHfQ2NcgdwSsg3EjBwPJ8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pasireotide trials for Cushing's Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cushing's%20Syndrome&intr=Pasireotide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "600-900 mcg BID (injectable) or 10-40 mg IM every 28 days (LAR)",
+      "effectiveness": 25,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 2500,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 154500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 618000,
+        "costPerResponder": 618000,
+        "icer": 550000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Pasireotide",
+      "nnh": 1.5,
+      "nnt": 4.5,
+      "participants": 500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-315 nmol/24h",
+          "baseline": "700 nmol/24h",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urinary Free Cortisol (UFC)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-10 mmHg",
+          "baseline": "145 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-7.2 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weight",
+          "percentageChange": -8
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "CushingQoL Score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CushingQoL Score",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 25,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.5% points",
+          "baseline": "6.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "HbA1c",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "+18 mg/dL",
+          "baseline": "120 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "95 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hyperglycemia (often leading to diabetes)",
+          "percentage": 75
+        },
+        {
+          "name": "Diarrhea/Nausea",
+          "percentage": 50
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 25
+        },
+        {
+          "name": "Gallstones",
+          "percentage": 15
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-3 months",
+      "treatmentDuration": "lifetime",
+      "trials": 5
+    }
+  ]
+}

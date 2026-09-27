@@ -1,0 +1,858 @@
+{
+  "conditionName": "African trypanosomiasis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:57:02.617Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHoPySdlprXbmUX3j1jpp8rFCZFLGuhLRdKth_JzePB6Kx3PuL9Ob9MTfcl2c1JgbnhvVqM3lzYy4AWgKZlLxPS9N5uoe4FlfFbIPnMuvZlaCFQe5WkcYk6T2ZaGFapv_vGXIUyHEU4xI71vvxxppotHEkUV__hFQe0uvjsPc-z6LoS84fvVXswJfCGsRgxfh__6w5eYwqM3IFH_tnnYnu1envUEEIgdXDod-Bc1V4Dgf-vOYeXjh4jYZw9pBjkwZW9CUD1og="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1DNVZsQRQQq2MbDPsOT_HgHi1b5CxdIWtpmrP-ZOabsFOp66yL8hbsvBartjjtx0BeM9ovMVzh_KgLLWu2tKguGOnAMIsyToE1wGpjnva9euyRStwRYeObWY21AuKM6iQ5ZxZ"
+        },
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHI1Au8velaQ1p7awSY5Fga5NsjLed2Jby7dzDEXWdlSnDkzQDwENRBwkTc7zAp-Xn-AmgfTz7Wv9d9L6jTLx16rUMG2A-q8oZVqwalxrJZhmurgXiBrmErOJQdklHRfJ60XYfyadGiG3F7pxDDSHak0CkpMFjVGgCTFnPDbbQ5CqaYavJUJRI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECirPnzMRxVJ6XTDuA0iT9fbnVCiuXRlH1JVm088qDxaBBSfwfs72oCsPltvd6DE1peds77TIRF2eQ7g_I577hUkpeNupxHzLZL_Xv424Y9d2GjnBogt3reUQgGPP3mZfGgJd_UpcsN7il_ksYjf3jZzigx725fJUIsJwhL0BxfP3z9taj5m-V3wiYL2aZYaB4FXLmkgkH4UWRMYG2NuBXVk3Yqior94FyxXiN4el2Fw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9nYLCA8NljWFc2Xd_-QFfojAOXK6J8OunTcjiN41Pzj_ZAtJf5bvzam-vLzFsu0As9wvyQYl7SVIAdnrNY3WvbDwNd_g1_tQX_gf5zd86ENOzlb5FUcRfhVhh1Lyxlqjevpj96IF-_M0OFLI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxSaRv5zZ0sT9sVBJfIkOftWaa3i9g9DqnBEkyZp2PHh4LO1XzqbJ2B0oHSUCC9YgaLONbLV-4mQvUuf1Abi32MsbEQcIWwdGqBd0UzymXExV71Mpkki25tJzDbC5GXgPO2QjF4VHKU6BE4Yk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmPqwRN-tr4vhkyU0KSwhzV_eA_MLuR_KUXZyiqgYsfM-z6As_rb7xwG3hvZZI_WCMFllgBImgoJicbXJ3Da8elWX0T1MakeC7Ed7OI780trftbXcke1IHc4AYFtvZimcibN1zbvnNwLFPZhR8bzfzMClje6aEcPsra01Qo8y1eqfk3pPZtpunPpXOQKRKW2FhdW0dANJSn-Y7FiKyLVjh0o8Gsb7zlSnSbQgKfQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN_Aj6C6a5q9v-ypRS2xp6prEwyGbyjrhYknUNqbc3M2xeMK5-PylLpm6P-O6br1XE392ZVx93_92ek5_q2k2Yf2GudRPf3ZUC_EFBLHhRRddTTHBOUobGjkYvDAGQNEeG4wAySHlXNU-t9NM6GdfTXJKmew=="
+        },
+        {
+          "title": "africasciencenews.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdlZB8TSK9nRXtkXCm2gP9aTz_bxjlvYCgbPOdfsbwTiXgeWWgBbpGXzTjbRM-c_xWMyExmvQ_8FeFcEPPhJIHdesXwd55pboDZa9ubVBn5HCHgCZthTpkTFyXzgP1_EWj8y2FSUrdXQpT9bidbuZXQnmcVs3ETEZNmBv_iWhNIE174pBMHv8JBgBnS29JBkQzH69Q0892LkpwxEoeqLNJArCYd9I9y8g86lq_TQTPXM7nbx936frbWOZXlFw="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDw_ssAOgcIkSulozK4YCEHdvkYdeLVBZFI7y1hD2uUAEDFHSjUcYPrY7u41TC2WeVInTN7xePbFvkK6NatFwqrYbhtMslxxEikHax8H4JRqxWXVm7cFDKEzCddajKsHlE09d5NH33NueOpZIVbGpmPqSwij_iU97HbccSMnGzF9zdJf-aHLx1pio2YUu8jbPouWMsVGcBJYg_Z8oX9xjpHIlmS_jIDz9Z4ZcWpF2rU0d5V9rTYR5zcMj5YdJ3JkDO"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAVh4I1Tmbk8fRc8fG2Z93GM8HPngqcS4zj0pSoHF3Ht1tEjytq0k9kV3mr9xLpRxVPkm89auFGih3xw3Q-k8yd8Y8pvs2uXPtAjkt3FRoJIeoyc0lyIzeYxW2o58tThfYybFDILI3Fk3Encq8sq0t"
+        },
+        {
+          "title": "ClinicalTrials.gov: Fexinidazole trials for African trypanosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=African%20trypanosomiasis&intr=Fexinidazole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1200 mg/day for 4 days, then 600 mg/day for 6 days (adults)",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 500,
+          "sideEffectManagement": 160,
+          "totalAnnual": 860
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 956,
+        "costPerResponder": 905,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": {
+          "comparatorName": "NECT",
+          "costDifference": -943,
+          "dominates": true,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Fexinidazole",
+      "nnh": null,
+      "nnt": null,
+      "participants": 700,
+      "phase": [
+        "Phase 2",
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-90 cells/µL",
+          "baseline": "100 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cerebrospinal Fluid (CSF) White Blood Cell (WBC) Count",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-100 trypanosomes/mL",
+          "baseline": "100 trypanosomes/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral Blood Trypanosome Density",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-11.25 points",
+          "baseline": "15 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neurological Impairment Score (on a 0-20 severity scale)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-9.6 points",
+          "baseline": "12 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systemic Symptom Score (on a 0-15 severity scale for fatigue, fever, headache)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin (Hb) Level",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+2.0 kg/m^2",
+          "baseline": "17.0 kg/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "40 points on a 0-100 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (QoL) Score (e.g., using WHOQOL-BREF scale)",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 50
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 30
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 20
+        },
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Skin reactions",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Within 2-4 weeks post-treatment",
+      "treatmentDuration": "10 days",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEW8eLsYbQRO7VSYxO-OHmkjJbmQfEVpDX78g7Unj2APNwUBCWcZHIpJOCte-GAkeMSnwwPB735jA__VJDWjRuRgjS_0YBWlDTMfmfesillfNeRKXU2GS014pkVawFW2zuXQEI6bq1QsYv7vhkg2AKa"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3t-VyB4PWsFuNueK6Fd18ZsOLjWL_Tj3SNKCJUUrrJ7yP1qT18hCHKYqpBNrga5WLrdJLz2ZW9fVlEPuZKNnx_YcB4RbAf3w63Y-s_OISe3pkGYV87WoRAhLPUsvxg7RoIYNDKZLah5Sh_Ig="
+        },
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8hASxEHHVygX3G02q-jcZqdnaj7t1l9YMl5dtcoAvEaKxxmG5rvfut1J4mctAvAlUm5QkH3EAvM8G_fKyOX9L1ZnMHR4hbio84YgJwsuzhvzzZhy_tMf7V6TGTFGYYLl5897d2mC5QscQ_vOxWr4B-x3iQg-Y-ESEDkw="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG75PlZ_9fS2Cn8qzC3-u1j9_Tmq3V0rMRDD-ThRPZUodJUnZv6Lb3klanA2Z4e3ofmwTztE33bXOXH-by3P6vEs58cvm2U7kPlUPVChyQrUyz6b2SKxHB-PXgF_x2NuOOE3e1aCgWMGxA6hoQNwGixBCtttLeWpPpnBkNBFavv2K3RRAccl1_P4dnVHsLP-sIVBADOn7i3AS22wA8RRkklbjAKe9jE2EIFt8i_Mtdt1RBQB-gp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0vh7r3TX7jyYFOHXDAfYVVHHBRWzcWgqBFd_cpMee5UjcSyPzv07Z-0cZ-6HPgMSe4ZtqJ5gMcdeyzJTAyGm8JsVFFgU53G8faqd4JCSes_pL-AJFHaVG5PU73j-3mAyjF8Zf"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhAswov3kua5b9NPQEWBMsIw9160kpTxJ8tS4JaJuqekOufiB3b56Ll2DtFiFNLTM_U3F118zjJZLNhZy9uD9PI_dUb-OwZ1-pZraeFVyLTsYI8FFUrvhziMAW0qlYDF9ohhXVEK8nqSf5vOa8qB9dvL9nayJ9tv6dJQQwM1tGFAvH6Dd-fs7wn5NWmFeEVKlT65Damx1jbqy5IXvR0OnUoI08TuHsW29RmDuFQXmpViYlb1Hn8DuatdeOqBK7I3KWh6vB2t0cwjY7m3Slh7JFpnrd-g=="
+        },
+        {
+          "title": "d-nb.info",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXRgxdjj0_mMaVioyCz69podG8enecVV09D25UtgFP4rjRPGsaouMoNvn-CE2sJUUy5asQsr4RT-ZQ8aIOgHxYwcY14oEKt81htn5N2l1c9iZmDCExccTF-0A="
+        },
+        {
+          "title": "ClinicalTrials.gov: NECT (Nifurtimox-Eflornithine Combination Therapy) trials for African trypanosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=African%20trypanosomiasis&intr=NECT%20(Nifurtimox-Eflornithine%20Combination%20Therapy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Eflornithine 400 mg/kg IV q6h for 7 days; Nifurtimox 15 mg/kg/day orally divided in 3 doses for 10 days",
+      "effectiveness": 96,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 303,
+          "totalAnnual": 1803
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1960,
+        "costPerResponder": 1878,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 4,
+        "vsComparator": null
+      },
+      "name": "NECT (Nifurtimox-Eflornithine Combination Therapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-77 cells/microL",
+          "baseline": "80 cells/microL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cerebrospinal Fluid (CSF) White Blood Cell Count",
+          "percentageChange": -96.25
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "10/15 (severe neurological impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Neurological Signs Score (e.g., based on sleep-wake cycle, motor, cognitive function)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-99,999 copies/mL",
+          "baseline": "100,000 copies/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Load (Blood by quantitative PCR)",
+          "percentageChange": -99.999
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 96,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+45 points",
+          "baseline": "35/100 (very poor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life Score (WHOQOL-BREF)",
+          "percentageChange": 128.57
+        },
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "18/24 (excessive sleepiness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Sleepiness (Epworth Sleepiness Scale)",
+          "percentageChange": -77.78
+        },
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "15/30 (severe impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cognitive Function Score (e.g., Mini-Mental State Examination)",
+          "percentageChange": 66.67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 60
+        },
+        {
+          "name": "Anemia",
+          "percentage": 40
+        },
+        {
+          "name": "Leukopenia",
+          "percentage": 30
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 25
+        },
+        {
+          "name": "Seizures",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Within 2-4 weeks post-treatment",
+      "treatmentDuration": "10 days (Eflornithine IV for 7 days, Nifurtimox oral for 10 days)",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECs8RSyK5CIlFzydoVsR6T5aTQKzwERFm0NEJH5512IiteqpvAiZnCSspCLPlRSDIkifn-HbNCD2h7RtDdCW-Rl0F8_TjnXwBUsrmCJJy1JtbsIA5CLLtk0ZO1d8ZTMBs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwQ2UWKyChxxa8W7gmZ7poXcHu5QzShX-C5wFRXB2aR-vNhnTIR4SVKtC8UJ1fNPEOcCoFIJ5Clj55CpAq9fsZ9J4jqynWbzoDc_fY39Xjr3GQ8gi6m94RL_FW07cshzdcXbq4RVrJ2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaMRkmifgmHl5-LS8xaLrmLyOW9YHwE3AQDvvfnG6b9Czk5zYzw24UDVRBnJ9u9UXoyLXh29ZiGUbMziQQZC7wi1Q0kXMBHd8Xc8ZUuabrbPFowoirbvkFeewn83HT4C0Ww9FC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoRVuBNxfB09ODqbL-GW-hTryR4SUAPAH5cATRU5oAofwWwqpIwqZC5Ou8SCGBkan9qRYAwrKwuBPJZ8q26Yx500jhid6MLUFOmZy-G-Vhzykp4Xd9K8QTKTUk5icLfI8jqx4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv-diPNRF51wbeMaMvpkC6wFSMzQbtAfUL9u2RijLo1Rh1nZyt5K_ELmC-b8BEDE4x1xQG9Hi7-W9_CVhaFHGL03e8Oxc8uSc9vThNBEli6rqsKxp9J-0kzzZ_g6uL2GZ-5b-GKy_fc0hs3BA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPmLbLOuXDxzSrEJ7QsJ4POynsxA1y_mlpghcWeadXxxut-dK6LICyoO7Vazv7PSHcix8WANyln90dpl5qaSde258WKJ2N38df87sv8QFkLQvY17BE59a1uWyBy7MCwDNvXbHksLvv_fpg5Wc="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMtZLKL53jZISX-8m8G3JCKmYtTlAXzWkCWm2K1ONf7GFEPXKWnTUojPniXE3rLylcnhUVXtEKoZYl9AGT8b0EZU5myNFdfxn35KkFxiRuXsRjTrXaX2WNXABTVD2y2om0eQY_"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ_P6bW32I10D1eUwALdmEw1RJSKcRiI0lpAurNS2hDuDqUla0h5Yk78abyc1Sm78t9o_Z1aWYmoCoDN9EjSxSNJ_IFa_-zdjvSvxFlelFB_NNSZU6GYcpm8JC64Q7crvshhD48w82JJx4xMW4IMbXQfICL2w3iEmkSJh61mP7q1UV1rK7h9WLs4FZ6-9wgjbc8RaWDWysOc7JQomSW1VhFXSFi8bkNnVumn_NzbE1tW7P6eWB1vxv9g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pentamidine trials for African trypanosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=African%20trypanosomiasis&intr=Pentamidine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "4 mg/kg IM or IV daily for 7-10 days",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 700,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1111,
+        "costPerResponder": 1053,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 3.5,
+        "vsComparator": null
+      },
+      "name": "Pentamidine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 trypanosomes/field (to undetectable)",
+          "baseline": "Average 5 trypanosomes/field",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trypanosome Count (Blood, thick smear)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-6 episodes/week (from 7 to 1)",
+          "baseline": "7 (daily)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fever Episodes per Week",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-2.0 points (from 2.5 to 0.5)",
+          "baseline": "2.5 (moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lymph Node Swelling Score (0-3 scale)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-6 points (from 8 to 2)",
+          "baseline": "8/10 (severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Score (0-10 scale)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.8 g/dL",
+          "baseline": "10.0 g/dL (moderate anemia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 18
+        },
+        {
+          "absoluteChange": "+3 kg",
+          "baseline": "50 kg (for an average adult)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 6
+        },
+        {
+          "absoluteChange": "+30 points (from 40 to 70)",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "WHOQOL-BREF Physical Health Domain Score (0-100)",
+          "percentageChange": 75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypotension",
+          "percentage": 40
+        },
+        {
+          "name": "Hypoglycemia",
+          "percentage": 20
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Within days, full effect after treatment completion",
+      "treatmentDuration": "7-10 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHikx5bYH7gzcj7sLLj2tHKPYSYY4f8y7671mEgFlW-FOVvD7Gnvh96Er1XRNWlL-0tKKDcORW_TTDWydmljZwBz_9GWwpC5fvEHnu7CU5aSOAPX08sL63cx17mtHldr3AeXoHAVFLQqIjiXlMvjVth1JElWDgPBq08BsRj8g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ZitlII8ZqxIJliBBw0vfNjDwaIFQVAxZzicQjeSoIjJuGbLmdks0_rDaAdOIHPx1biJmCeY8_RkCD30If2OBKnoptIbXinezr759Hn_IkrxwJYIODmbr7kRCqy2CDMX37gEQpkDH0P9usAb2tGujRhcgOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjYpYz61TcoFpVTJdSAJSsiQ64l3Pw3MP6WQjxVjlnOsu31nHTxIop_wNh8fmTXPLErzHllekXpReLwVFQGbXApkcHSCVQX7xsazMHCNQLwIoNXEZpPUHB1PaMzJcXB6P9N0fPLJgYT2dz7H8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUJSMeVUhChqzlllpEGnmepfvf6MjDzxwT_as-Vk7I9v7MSp_oKlF5Jis8lWdTYgzn7EBeoSVtP6KMyU7uYZCLPHBr6pz9P9XqJgkc0rN4K_ZecBXUmlh7IfeTQncQcKsmZ2BAZzIMpB-DrQXTouUte-vHycOIsWLXBU8I9P4rSGO_15z6sQPn0Es9OKVSX-csjig9QTTyzDVdfUTTgYSOJ6g57clJesKPQG84ZGQWzHhREcW-PoLPJnN6PLttWmw3A-4-x4mT"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5HGb440php5svFjbh0he2ZRr18TZjLpJc_J1OsLbTvWAOHvcUZDDE-iatSEoKxXXgWYnL3HcqoxEl16Ux5_2jisBidF2_mfIfjT4A-gLqVTwKek0kRC_jSrFx8sgcREo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7ngV8tFoqsx458vDN__SRmnFUQEK2XXoE10MFB86WOi_acEiXgj5ZREqFUMxVmzOdfoUmr1w9aseYPpPm-P1qAPLTSUm-Py9JDFbRdHZ0xArNKGqESL3I_uGDwi6fDEqWXMX0ouPq7SmyqWqSsxdjjTvDt3Iq4AhexzmnZCrP5xGHfA5OjGDv4tXhfV-NLqhFs120OZVx7mzOIN0T8K05Yoi1UfBE27kKzoBq8I7ljGIaPUYfgg3ttBHcn6JnGWfTm7ZOVt_-xVp4GegqEof6ZYWo6nqnq_vPoYFV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExqDQ7D_n0xiQkuransP0KZZuAz5dXTKLlpFR7s4AlTOSOJYZQPyi4vQFVTbvQaF7zFacdjYaWg72qg7Q6ihYOjyfWsOtSTEDRDbKhnyiRL8GSMfngW-dgKe-gGNpZKLuBxcjarUUVOKVDnUc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Suramin trials for African trypanosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=African%20trypanosomiasis&intr=Suramin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Test dose 100-200 mg IV, then 20 mg/kg IV on days 1, 3, 7, 14, 21",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2100
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2333,
+        "costPerResponder": 2211,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 3.5,
+        "vsComparator": null
+      },
+      "name": "Suramin",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "From detectable to undetectable",
+          "baseline": "Detectable by microscopy (e.g., Wet Smear, QBC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trypanosome Detection in Blood/Lymph",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-2.5 °C",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Daily Body Temperature",
+          "percentageChange": -6.3
+        },
+        {
+          "absoluteChange": "Reduction of 2 points on a 0-3 scale",
+          "baseline": "Score 3 (Multiple enlarged, firm, non-tender nodes)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lymph Node Palpability/Size (Winterbottom's Sign)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "-70 mm/hr",
+          "baseline": "90 mm/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -77.8
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 95,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points on a 0-10 scale",
+          "baseline": "3/10 (Poor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "General Well-being Score",
+          "percentageChange": 133.3
+        },
+        {
+          "absoluteChange": "+3 kg",
+          "baseline": "50 kg (due to disease-related wasting)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 6
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10.0 g/dL (mild anemia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Renal toxicity",
+          "percentage": 15
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 7
+        },
+        {
+          "name": "Hypersensitivity reactions",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Fever",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Within days, full effect after treatment completion",
+      "treatmentDuration": "5-7 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaUk0gBkY69vJ2lksp0ABlwU-EaN_-MmAX3_Y9VWRiJ31l9Jh_GqZVk2h4uk_SgdFzpcDtRptDkSGEqkyI97Ymrbo9RzRNV_Jguq1OtGG0X2u8iEt3qLSXI-sjRR5OaPvv3g8V"
+        },
+        {
+          "title": "britannica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE08zFgVZoZEg2ePEfWTPA4BCEm0KUXbWD_5OEfxUKT_J02-nnQ3ktSMW5nIbYXQZGFgZRoaTCidMyQ8tOYixs6qj_HZYvImXrS8VglYq9mC1B-i5kg3zddClxZQj-JViSaRK13odyViZ4="
+        },
+        {
+          "title": "patsnap.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXz-knDcieXtKNmSJv6N16dyKCVA7OIg60dst4CAXNkTosHD-XMQK55qw0QAcclpGyW922mxcMpu2Bj99-2MMt-YwKJ1-9BR5FsdqAt5Y9YBt9UmnJ4nZ1n-y7hHvDqfB2CdALNxUb3rRdYWnzQ_Xp_hE739sAtbTp95o="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjO5rFKDldslkcstO4aHBMR5FOU0Iuen5qr1tYxTrwgcvn_Eqm7QEMlhnrXRedEBQbrcWXDKNvJaHfu08GUD_12PPW1foq51Wzt4xjlJoC0l_cSE_H-So0nYk0r5Eg0uwtSu9BdDI="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpFf1qWiOgCFNYJHuHGGcVOXvbQ9JPwqjQBYWu_-ADffpGDXnngtRk7NNa_yyOiI9B71VRgi7rdtGPTMR_YbE96FDFQ03v-V4yZxU8AaqyLD-kojXQfmD6uubw8E8rre5uxzAY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_ICPXcyVtSseWUWUltiRJEZLAicDZluWYendEqcVJJNXpzgw5f5M8z7YkrVSbfb2WzeSlnqZyAF2wvwEp3HZLtLigPGQd2wOoipriud_wMr160KPLJauoYk4Ng6FrMTyHsUo4bLpcuXii0i4="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4DXD347l33B4yhxacGj0XhuPZ6leKnUDHb0PVfmrepeidMMgdy3L_IQLp1CnF4P3JmGPDZJdLj3KQxzYA76b838ZmP7gUkKWSiUNoGiXk0wLRFI0bFGJXawcZ_9RjOAcWC0kC4jOJaBCY6RuUX09f"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjzNxfgZ3oMba4RZELY-sq9LdnOfmdQbSYQavTg5U3fSC-ZiOHhZRtoRS3F_uvO4ES2cz3fueb5P_-gwYvsKB20qURZAE-z4lIYghD9Lsy5dnc-KkXusoIIT0EZ3ruScDog0Pe2j73H1I7maY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEDvwiQXmWsRmLmiZaQenUDL9i64cDnGXXb2dDeUDgVTY8BZqWdYRIcrq0lqvJEooGVUpHFEFUCBjsygiHV1XZBFQ0a9jREUjbuASW0mV8QI8k2JFbU5eEz8DBywBp3KkvydAM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVFlqUOZqt4zlKHgD2Lp4dEePGfjErH5MKXC1u6JIJqRIhWWUW4GrcSGuLvc18AVdWGGB7mUD_uVmSsm3_nb-UnPK4OwIZ2FlmVnP8Kca2_1BTnb50VwoL0-Xhb_nnRsvMw51rb53jBahNSJO7y0t4Lo0TX817i_eT3W9osICA-5k-_agbWBxzgCB19rVap0FFzALzRzCp1vr7Wr_QcMKG_uGqHffZIY4731OEnvaD_BSSiimEfKkiRDJCVUS8PIYP9OmAwKf9qcQ8zY69g8itPsCSY9taV4958ocAgnWGuDXJSqHIvntVAdrmDTpmOcN5ZnTAZaaNb1T6lHj0PAndrWjXO1KikDyVNFU32Q=="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9VALidkyfJmhVhB80yOMhuttwalGNwtuCdIghnjhyVxZAaO4bKV95_JzBJk-y9uuPj7m4IhSQS5wI5EfRrzWt9I0XKkTxna9Oz-lZpMlsjpwsg48DpZ4WaL_QzpsuV6FKmUGHxxiEcE_2FwjychZK1NVRGNJW"
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtzOCFr4qDZ-zmZmFkZ8SIS54a2o7vLDl_WlslK-PAc3CQHR_awOwRwHljurIxgs4maUm9eZGaCVhGFfY1W1fQZtM-G4WudSHEb4y8WFRxvb8aG-1lV_NNKIYeDvxjHytapHkfin5luEwvvO9krcAVeDdJ6acqQov0I82zv_xpRI_j3P4mZRsAmQ21wVpXHfp7Ra5_pIoVaxdV-pq0kGL12KIi_dJlg9h44Uws5-YFLUsmMLs1tAD0tBQoCjtD1FPPKwFyLs15MYa5bF3MPR9RXZP8escZdoBpx-jo47Sd2obfR5LuAh5Jr0k="
+        },
+        {
+          "title": "core.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcvLOSvhD1JAWVE7JEXfd-rygHqEXMpllq80IGHdFF5O1vA166SClk02QK3JbL9NqZJ2B-uBtqwfMiTLG8kui6KxixVitow2vr5IN1sR2DrmfCtiyAQ1c6n125"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4XJkwVwJ7KltdJQ3uXnCVtazPHg1QH3l4noIcNlRkHhzcLCLzqNrq4NVBW0_S9GZsJWBVayMjRkHJ7_YhiC8YDXsihcjA4W0-5CN13FhjjSyznSJDylh0Itz_5qfxt94XzWb4p974e9XvR_x8HDl7kfpR2CK4Jnr800b7Xper0FGokp8VUbqhBoJW0ujKq9CVdj-M2nf6Htms9TxjHNhG5JUtN3JoHw-Q5fyLUJ6HoxLsg3uLZToV9z6_3NnaMNt814qs_0SvS_6WUfg0hYt3w1CgmQuPATC_"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHb0qYgl8JHjkfz78XMwD-6MVTk5RzokX7GUaZmGJclysFLEOMt0M8iUc5WKkOHn3h-aftoBDzyu4rTuQY8Oqk8n33jhQ51wqy5sQGyLN_gS0EqDSQk24BGr6gn0e2tqO20YMRBJzWK0HWSnMyBKjFuvjN_Y8AGM1WcwlV152rMKlTTsWXunzXpxiktpucAMqitmx_VDu4zxp1GEkJb5bnnoKxZkOgi5QDS6c-GMuIPt2ubSl4qRXYDZTxPZTJvvu3uAH1QG38lsSeUv9igjl0AEQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Melarsoprol trials for African trypanosomiasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=African%20trypanosomiasis&intr=Melarsoprol"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1.8-3.6 mg/kg IV daily for 3-4 days, repeated after 7-10 days, total 3 series",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 9200
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 11500,
+        "costPerResponder": 10824,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Melarsoprol",
+      "nnh": 15,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-76 cells/µL (to <5 cells/µL)",
+          "baseline": "80 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CSF White Blood Cell Count",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "Eradication (from positive to negative)",
+          "baseline": "Positive (present)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trypanosomes in Cerebrospinal Fluid",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-6 points (e.g., from 7 to 1)",
+          "baseline": "7/10 (Hypothetical Trypanosomiasis Neurological Score, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Neurological Symptom Severity Score",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "Eradication (from positive to negative)",
+          "baseline": "Positive (trypanosomes observed)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral Blood Parasitemia",
+          "percentageChange": -100
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.8 kg",
+          "baseline": "48 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+30 points (e.g., from 40 to 70)",
+          "baseline": "40/100 (significantly impaired)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "+3.0 g/dL (e.g., from 9.0 to 12.0 g/dL)",
+          "baseline": "9.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Reactive encephalopathy",
+          "percentage": 7
+        },
+        {
+          "name": "Peripheral neuropathy",
+          "percentage": 10
+        },
+        {
+          "name": "Myocardial damage",
+          "percentage": 5
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 50
+        },
+        {
+          "name": "Death from side effects",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Within days, full effect after treatment completion",
+      "treatmentDuration": "3.5 weeks (3 series of 3-4 daily injections)",
+      "trials": 1
+    }
+  ]
+}

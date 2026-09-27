@@ -1,0 +1,720 @@
+{
+  "conditionName": "Coal workers pneumoconiosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:51:05.227Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "msdmanuals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFLZ_QzBme9-Lw0ms0rWHmJI_CFP07kIbhHWkJWgExFg3l-eG6kMVxSvlQAfiFO7s8k32hfFfeITIVXnjXQQRYdshcE4B0Fk-tANkWSG6IpEe3keFoMe2j1nEauzkmVtn4TP3_r2Auk25rGxVaO8lXsq6q_hRszGysTjgDPV00AnAz-nt66NZN8Dzqstbs-QGfN_vDXPPgBT4_jcAphj9XgI66TYzEKDvNIeqSKM-ymg0rNKy2HY4T89EtfrjBoXxXa-_N"
+        },
+        {
+          "title": "pulmonaryfibrosis.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQ-l9Nu5pdtGaic0F7zTMTAzhWTeZK0g62On3Hm04Lpwbxv0492iUBJ_Su6_8tAtS8p3NW-zgl9FBcsPHhUYhPTsG5o9ntfruKWVoPKwTgWZ8EvcVd7-mGR9CYx2kWFEz7_-upuzAzbYliD_ubzoQhj8Lsp88cQydlq8Wlu0eyQYJ5D-XbTLn2vPVf40rVRd6V4D2Oc7CKD68jA5D2VinLBqPiG6nq6Ab9Sz6UtVgGe-X9tGgSeJs2inSl_Nr9tvGWisM4eyPLNMlOhuwiCoJ0kcbjkQzIwQQ="
+        },
+        {
+          "title": "merckmanuals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjypUM2GPMnbim8lkNOVuOZ_47X0ZtCTM9xiQwYWu14AKEovv2E85b8IgMBdxlCLR1jyuNvjovXIVmQKqVmBE1QXHq-Aj90-krgMotBKITZJQZImzg8ILon1KwRp-JSyG-Ic8EaHnPvt_T-0p3HZlnKr1UyCEAHAWpPjyErVT3Mc4_QVAo_yVyacz2Kxb_dFMXZ0R5ymGf9Zh5-I7KkeXy00-tOO_HpNnML61orybaqKJH660QySznJuqNclVdsg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbx5Y1koScBho6wgNsRJTx1LxEyMwG0-B8QtTxCg2zpHKI368x6TYSEvDRXyW31R-eCzvf7vTwk6KTeBATXyRavfHQY3y7pfb4J57FA5uh-epHUoEBvvAc4bSzvygjBRkxCFLOKXjH_gn5NESx"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6R5d4zED1p0zJFe-OcOUJPYO2TNNaOLvUtC-ooPVb-fBusE_j4rF6qFkjOnh7jeab8QBZMAcCbw80p_XA2cuvui42eKStVMukEJHxlOZyMOUH3rD4zw_zTyvxWypVsYx3JiXScJH4pZIp3yhHVBuU2I8qs1aKMKAqGQqtjRM_ILSV0UFHAcd19ZMADwgnkC4HtQF4bx39uP3JNlNO_06xfQSzZmABZrqLbDLH27Y9T7gS7FZ1lP2tq3h2d0XnlME-NQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDQ1rE68p8XWSGQz8b8FFHyKdgAW3wgl2mxgPIgUO02Ph5KEbPfbl2VW4nV2zNsZs8fgLGuMNDfc2Q8-3WDdjjQxADtvwmmpQfFKsgg3mG9nl_gKoXBRCeJg2Lljkt0VHKCHn7GuoB0k9obrY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh8XitRvjwJlcmb_NVb-3_AXY95bF90yA5d0HHAp-IiMoFHk_VMvdCrS6qA6NYdSwMVk788kdhUw5_Y1gSOzxqiwU04p2i837-9GCpnaofL5rFSu4rHlay1lv3bMY5ozrJlCtqHhBZIenqY8DDp9nUKOw57udlA1fKyc7nWfMb39D_FfKAni78fvy7qfsj2X8dtJKiM3KHFcD_nMf9lVWyc_e1ZCQWfjwWe-JGs44YL8ijzfWDPIk7-RbkcFKWrw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHao-WJdLUspdOus3R7fazn0eXNFc7X-Ae1_9GhAoHrfyefSwX6iQ-fEFDbCb5LH9k8xuWUbW8f21LjJC_WZpflOXqoDPdaQNo-2KaGDid5i3Q6-uqawb3gA5137U6imWCtIE6b"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMPycwhUo8WnjUgXg0QNyORss2DhKLi4yTfnpo9Plgg1WLuPs6_Ea2u2A6AA3H-VkzxlfKizbdL5sZ73VYefkzL0q-fZParrz_EvfFglPISMduF6Vmz3eoWQHFgJdIlgqvGk2q"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzZGvWLUX7y3iGip3f-7EW_r2b61ppYq9I6MP8HCH3MJbAjssPMtMQZVs44s_WaHi4So95dY5-Hvuga8DTuWodb8g_Plr_YPFYUJxL3n7gag3kKXJ6xiUWoazOn2dzVVET2SMXoQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPG7OdVgYGAKh3Jgy3VOfd-4m3risovP2vyWO7AzvZT5PqO5BwZKUbN6mgRCx1rV00wSZ4UUd7teNZ-Jfen55dzI0r4x-ukPq1sNrmdMkmTAAT-2BMOrMn1Mg_YX3VgDqxQBRyGxK5xB3ngA7D"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwAEHaDICcH3XjC6JmbIwJPtbdQEWOAY3nhzPD-bmOhWmZ9mHk-rp-BNP14Q79TjjcB8UIaqJprH5NGgn7qqjb5XIKk_dfuvCR_-UD18zdBQ66vi4SQvXv-QZT6sYMVRr0Fph3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8f3E8LmHFUpOI0o9zeibv1pwu0yAXoFpPpM9pvEQUQeeJI4AGx3ASVmf46BwDfH80d0juexo-vVmy3IfsknOZtp5MBCMIeQ1zwwjLJreD30-jI6njckQ5hB29zpANCCQFzBCHJsap_D6SXfGakQnaJ8acc8YrqrhdIPegFOz9cXE0oMEbWb9R8hnXYYgR7JLJrkbUmwtjCVJijSA5OTE3KNPviem9i52JFSIrmYYJCYk="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzkU1yD-nkq1Koa-St2Fen4opjq6f1-0SvNUuEVHYTmlshPdHGgmyAl1DOyp_aKC8enAXbqfMihAoFSXHe145kqLXkjQ5Sr-NbtyZ8RGrtVtSh1bk267IBBPw3d1MQgkX085Uen_LeFR97bwv33TOY3xsSJqCoHoryo5NyBkGM0mImDRMy6xkII2ZNn-Ur4KcYCbd2JaCdeRoyKJB43v0m3l4ReYxKtAmVMJxo3CW-1PBGidn9FVPk2Owywt3_L_35HlzQjzPgAURNUNbNpO2jWr6zBlKz"
+        },
+        {
+          "title": "ClinicalTrials.gov: Smoking Cessation (Behavioral Therapy + Pharmacotherapy) trials for Coal workers pneumoconiosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Coal%20workers%20pneumoconiosis&intr=Smoking%20Cessation%20(Behavioral%20Therapy%20%2B%20Pharmacotherapy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Varenicline 1mg BID or Bupropion 150mg BID, with counseling",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 200,
+          "sideEffectManagement": 20,
+          "totalAnnual": 720
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2880,
+        "icer": 3600,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 90,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -1015,
+          "otcAvailable": true,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 2000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Smoking Cessation (Behavioral Therapy + Pharmacotherapy)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 25,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate cessation, long-term benefits over years",
+      "treatmentDuration": "3-6 months (pharmacotherapy), ongoing behavioral support",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfgkXfCnLq8v-V81UfZ_dkBUte8ZpcTcNeDGaWthIRrqpSkLdKUPdHaeLtLyjEdYsG5RHzIloasFXTUB_PfQFI4YwrsEqzsF-HT9QIhOJ902vP3wQYM7tNQ7ofeSVHAcTHzpjX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQGBBeXmzGZmIRTMkdzQXNN6UasYVkka-mtPpSll2k5ebB8V4HfkwsrVkd02QQhvXeGUM2R2iL7Ek3un7uP1AkplbEKxFTZyIocdxb3q2Azw7noGmQdX-hAvl0ZDJPRjUUSzDd"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkKimB-B6AnOCFYJxZESduq50PYa-syapQv8LloyrpX7xao6VMIRvM4swQEM58b9m6zAoVvyf7HvnoZN1BeVXLqL02LfrmjWjo-uSGq4MxEJfeyFnOD39sJEvFm1U5BZ6mqjsVLUazu6GUnZL1B-zVSLFYpcvJzKNXmlbQy1nseaJszKeqzVq7ZR9shdMKxm1Lg7Sh8pnBLAcBsSJl9FP1ACqGna6zysxxj5AB3Ti-HuXuZv-U27OmxRvY99bu4MZnr-6pOessb1PlJyILI7eQy8XVeERzHivMKUddXVAzOSU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBuLjiMW2Fg6MmPJih6MjecJGmOLIMd4APPS1Wjhalmha0IdsBkymqvMbjUnMJK9AEWlUTLdaAVmzNzmKHws4kxFpf9ZY1XuXhXedY2xhO2XIASaU2kElHxGg2NCCkAgWSK8yWql9DOQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7ZDZSNUhDn0xA_yQDXp-H8xg8xzQWbp5az5wuRcOHRTsTyY8c-BVqwL24l1IayYDB5DN0oMeChUvik-sZHu5t2w3rY9r9ed-TGy061p4PIlyTfqYXnI1cA4VCSsaUkeIh-_fw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG024ZyDbPp32b0dtPCIwxEuygKtGAfCTprTcfPg12Vs99PP09Ak80hkk3wfMz6MHRjal0BeXCmQdnA9KNECxZZGQmk3say7JMp-oInPk-a-gOlpYE7_dR1rIoXeGuCnfsEy5bu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi5_sEAYMRcODOLpKXv0J7eE5zHF0lhZFF8oZGIm8297_dFFdhbjpMdlEpC7XNMNUdgYN7fLmc715EDvkoRrM2yXFbp0yXTQIK-W-njbPJa0IKD1FYBGocmeefoo_gs5_n-2pmLzrvzHw7SZjm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhlCZWwdYV_GGVSgAmVKJBhILrqPIBY_ymmWdhHV9cMPi76XO_0qBstVRomljJmlaQUws1rFgPRCDeh7O9zzQ9oSOs4ylQc13eQCkZbU-vl7qzVzFhOeSmUVpEdDfc1Zc56kjgml-s-0VISUFvtTU-USI2Waj1tJpLRf5YqfL0Tret3TrxvjhKJz0TgYi1sDD6gcolPoGJk0z_lTqZVBSLJEHHnZyV0dZbTA=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMNYzHthesWkhOtaRrgUabO4X4akxZqBk3nXQZ24AcVLubWaiXDSMg9EGUFU8ed8H28bnxrn9N5dJKEylqJtmMtYvggi_zHt2mRJXnJeV_5XAaJ_bENpQSUcg6GN5M5WK3BxiXh_E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFerPLuoN785dOFW9UPCsktjqfp1iEXMo6hI4wpEjnlHlIIAjRLzjhFT1l8gj8aTI1WXrcgDoWy8nfiRqnXb_0ZIRc1rRRgfRuAvo7HI5bb41bfAIF74_NJMinewpo3vnazI6OVYOVr-Gn3G-em"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oxygen Therapy trials for Coal workers pneumoconiosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Coal%20workers%20pneumoconiosis&intr=Oxygen%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-5 L/min continuous or nocturnal",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 400,
+          "sideEffectManagement": 20,
+          "totalAnnual": 1420
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1578,
+        "icer": 1775,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 50,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 375,
+          "annualPrescriptionCost": 1000,
+          "annualTimeCost": 180,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Oxygen Therapy",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 90,
+      "sideEffects": [
+        {
+          "name": "Nasal irritation",
+          "percentage": 10
+        },
+        {
+          "name": "Skin breakdown",
+          "percentage": 5
+        },
+        {
+          "name": "Fire risk",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (for oxygenation), long-term (for survival)",
+      "treatmentDuration": "Lifetime (if chronic hypoxemia)",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyQmcoP6p7ht-m6nrD30ZTqG7JPtTti6YytEniL4A_CgobJaYvdb58lAc4QTgM5zt0F10dm6nPv7cfg7lPc7qexX9Y2043VoR3t4DySN40ariabl6ByJSiJ2nG4najoT2IC82yZXzxlSw1Hg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhbRXeAvHOOP0HmVnSc6QqBvohnjy6e30wwl8M7P6MLpCv93YETZPiVQTQCJ8ZdS3z0u-bJPuiNpVoycSRu33gigAECwPt2c4RNw9bawg1yNI3XGQFtnEOhzYm4Dwe9YgDLosmsqDeocDTCLs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY7N46dcmjd9YiuHx2IxlkYPataGcjalHUjvwYi2yv_A-LdYx5Rz8Kesb2vWw2cGFl8d6i81eLm8R-a39AYZ-A44Oc_QzSNqFfDve8wOm4uNHKbRXtmK46B2g6qw-RB2wKMHLavu3KOpHNQJzMNYVqWyZF1OseWy3IpJ21iRjb1r0cjL7-wc0J1FlHXkTyvpcpcmSLauCRvRNfhQaFTPoUWd5E1w8p2IDGftSK4KOrGxPe-dE6E0KSTGwkVdGDoHTmI07uUWQO058Tqad0W1X2O-5RQCYtSoh4XUebA4M9J_9TvR0OEuSPOOka4WcTp9fmOmEDKee2xksJG6bTAfuv"
+        },
+        {
+          "title": "pedro.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq8o4HaEMHC8NFaN7aIfqcdh07ZKT9qeA8bgO8aRnuZ5JSiTrhiC2b0_aA0tB-v0QFj5jj6hWQ_76lYhP1IwUUt4jVJdRLBHfYvmzV6u-0OMCCCaOlYxjXsXFB3b--_mI6uCOMgo94-ytZc6ZZqi9i777kuuixRppfM6vRq7-E-JsU7UtCTv0XjV8M3Do2K1iHTuQk7lxTEqUTnbmcN50GDhCQiMDurjXm4KUeAejAV02_Vr_qoNp5FPA7JxfzvUMP-RtzXt0pXFpULIHN022QM7g00FIhOB7oL3R7JVjiDg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pulmonary Rehabilitation trials for Coal workers pneumoconiosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Coal%20workers%20pneumoconiosis&intr=Pulmonary%20Rehabilitation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2-3 sessions/week for 8-12 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 10,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2857,
+        "icer": 5714,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 30,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.35,
+        "vsComparator": null
+      },
+      "name": "Pulmonary Rehabilitation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Musculoskeletal soreness",
+          "percentage": 5
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "8-12 weeks initial program, then maintenance",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "resphealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET5mEKhHB-wxt0hrpfeaDCnACjY46wwSMTNeuXsbwo3Nn5by3XCWRk_yQPySzcAV-Z_kiDq1JrFraqUYiGXpSsLBFBjnga8NesUZn3_8TxA6Jl5CtfVQF620WNTBnYt9q9Z0ZFoCA99iiOMmTv3EaWBdpQHyc5m9J6oSINqUErGMH_71oHbH3O6ADfddTJ4mn6VGkT_jSGFqA18Boy2SSBjQ=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHv053V4wrzRTISlQfxakaPZTGny_3psd_HjcwZaorEJkQByvS1Yv7hIEPAgMDkb9CpzuZCrf8v8VbmOrHDFceiDnIBAwwymw-GhUi5eIVbYh1xXsHl7xRgPIGdTDhC3JW9qMIZ-iu4OZv7XwX-VzE4axcaDJFo7Y="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6KIk-x8m4Q8DGdZ6pugrV9-4tSrkqGtsgPhnREpHnJVxyL00Itubbpuo7KLlGY8S7mBCrMW2hoZbIjJwV6qTSBVNAJPedIuK3RrYYymy9zzDGxp7GoC9l2sWvx6hgBQvy8g=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqY8Ub4qn2PCgeSuGwLw1aANyyq0cCRyPR5nYYLrpD6jIuewGWDllZkbgUnyUxSxclEhYXf7CXQ3Lg17slj4LDA-7dfZYTFYWrZ_aV1Z8gVIlF2H4f_QL-Dkm9m3DVapevBvA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkBmsqQPge5WfWFZOhUOjzPJAI95hSipz5Cnumkjc4MQOqKkHj0QabCibGMTlV3jJMxFFGXxeQdZt5ScZZv0IlDME40xbzWDYTH9v-5IPp11px21H0l_6j6rrLLBgmRSkKP0Wz"
+        },
+        {
+          "title": "vax-before-travel.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF92e-KI2eAW8QBIE6ILur-lemZQQetF2gOK5OFurg7ML7lLy7CzCBKOWj4AI-XDEwa2iWZtDcMSN9QDMtcSv6maBFkfCQI-td5oeM7Q5d6yOLXYZVG1_kCYEzzhhHuIRGkQY8xy3FLiH5ADUH1iyk0N5gm7uUjJDUavzEjrB8L5raYmKIi-_rwupp0wdlIgJmqxBESaz_6ydQMLm1IMcJH67TALIJ8e3xzIA=="
+        },
+        {
+          "title": "lung.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqRnxFW3V4beTyOnDG0vjnNmBHFRZ7OJJKmCIhxtWxK7JXKe1F_mKzbg1Scuq9uL1rldX1pTAKTOvv-VZaVLLhspsL2yRUJHB3VwCuQTDaRuY4MumhZNeWUcCaBYIvsSTP2AaGHd0m8KH5baou8t4c9dQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Z31EGCDQqYTYVK917YOKwOpOUoqh2yJe68GqUDhS200FtYmN0q5beiy_YJPgNmctFROUTP8W-U2G4FalGaGLwLqvJJYXg3p6LgXH5XkITKNs_ZpJav4cgYNvBh6XwK6r7amW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3OeiKx8_i2pVW785araQACA704PeO6kBjr8i4LcgxNiTic_7pbmHxIu2m7WQmalSm2sXn_AGgtMrQKeIdiJYsbvSRXmh_aW8UkaqyDsHjhuZy83fmxCb9dLwiGvZBqVjkUDH8VR-EiLNd0TE_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpeiwVgniAq06qLIgDawktBTYJR9qHnRZFg9e45mwyDgErzc3Q_qZCl-AtQYBSXsohKAdEG0aNboyQh8Q7qzqnpUYBbfw5NhJwiXnZcmtX6gyZLWzwzLB_1LiXS22S2lmn-2WY"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa2lUtlsdQ8y-BFddbuPAjCj83ETpbOPSZZrtoS4SVrr5ier24X3CY9YS15jmAagTdFresCYe9awkI6VkOb-JXusaHjcKC9VNOSarmOBXJKIrbSdipMM7kWQ1yyaL48EkhkLtkvMPbiDwoSuT9do_ZvOZwUx40ccE="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiUVez5EWXIX2bXHC-zKY91T-kZ8Ux7ZVteOmYKHVFthDbFJzfEc7KeIulXb6T99OrpnQ389GMUJeJrYzwS7MYQ8Ne-qM3CYj3kngu1NFq2lbvXAqsY8DPXmklyuIV26n7MlXcP2OYCLS016lObzThuMB21zqhacg37A-eVd8XQA=="
+        },
+        {
+          "title": "ipophealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMhTPVuZWkhJ9DkSFYzA8xGmLNcZN5vPDoUeKZ-jgUCS4-wzYyh_skdkUh4GTfVb9B_T6myNfd7jOUKQ772FUKxZiiyYn941XWhko760JUnzENjt-vWw1LhC16zaRN9J0GTysY6dAkPG1R6UjGXoMlorpmD2QvUza-S0USF_MHX6s="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vaccinations (Influenza & Pneumococcal) trials for Coal workers pneumoconiosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Coal%20workers%20pneumoconiosis&intr=Vaccinations%20(Influenza%20%26%20Pneumococcal)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Standard vaccine doses",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 600,
+          "sideEffectManagement": 5,
+          "totalAnnual": 705
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 131,
+        "icer": 1050,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 10,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 50,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 15,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -325,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Vaccinations (Influenza & Pneumococcal)",
+      "nnh": null,
+      "nnt": 30,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Injection site soreness",
+          "percentage": 20
+        },
+        {
+          "name": "Low-grade fever",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2 weeks (for immunity)",
+      "treatmentDuration": "Annual (influenza), one-time or every 5 years (pneumococcal)",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDMEv5CYbX5wXxmzgm-WBOuqIdQgxpGaixlr9vMFX-nOpcabi-qn8H8sScKwNP6tyiyPHJ5nFDabO9-x9TmkYUUGmoQ72y1ljkolGzGGTr8PrcvPN3pmpIVTFDnEAf5ibq-VBkkglbOwNDIAQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSalkEcY6tVz6S6d3Lk8Zq-Kt3cvGqT1TPg0GhuLgp4jLYbg7h0NbobbJY6FqvBCxIomdbWlryNPwV7FdMhXqc_kgCR4pCdNsqMU1MSz6DuDTxcadL7PDW-QanH_HyIPrAmyykmvCYOoYGiEg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeCN3ySZBWtWKA3te6Xv_tMl0_pRiKMC3N0VuslUSjszXWI27B1_4per7Pzn5L6168mv7y4VWr5uIBTxi20finU4LA4nnBeZVBV3fE7s4Pc0rBZcRQr46p5v4FtsqFA0V1TZ_Y"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGADHzEI-KKSdws7S-TN1ik3M8t-iNZcVB7Tcew8a4sG8S87_g6L7xXKB3M8MNa0xXE17ykyK3u7POpIAMnYOi6PKknABHupzlmA2PGPjBT2XRWazs1fXQ0JaFiFhwStg05jbY2d7_Qoz9Zlqjp4WhU91HtTqMucC41DGI8VRD6d6feOSwKzG5t4xs0DGt_skw6XzBdePAv9xyxTxQpZ7_zp-kPCbw5109UzBNqlwRK4frGYB11EDKeEjX5ZvC5ZqbKiCZGVwUtwZCviw8pMud9p0MNFJr4Na6zC9aDANBoGj72ONy6oSylwea1vXxVdq4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsyWyFPiFskQVgpRms6R9-fxReIuCw_imRYJTpTET3d3dHwUNN9UiUvSatvfJjtCmaeEvbYfSW_Tlw1e_9hm2gbCdKmFq5rFKxmClGEmtrjdkP8qUASRhNIbrALRUKJ-cagYPzOU3VaRI49Rg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN_qswb3UnZj0Fo1Sa5e-TtmZ0lOVz55G8IriqXLrIZzgsqmRXK7EThIqqH_-cl9FhBlnjQ0ELtDVcQy146lfuertq7BJ20MvKTSjPStFCqyaILwo1k2CCnGfIBABEiqiAl2YhBMVuxwevyZTq8Ey5qOqIiuIGbLarQsPwGeI7UpkigxrrobgdDLubByeON9UqdCNZey2MUNijmSNqZ2Ox6OWsh8dmgfRkpoAItM_-d84iRwLB0TvJ_jZVBUWt7TQvR7GMoX2yTl-oa8k9Yd2yAiA-kMWBj9byeNIZL_NjjHsNit4="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTU9YzdfD42GbjulXzLY15W3AmUnOON3JjycNHTFrOonZv1c9Yz7jfSDo8Z9ELd5Xs_9ckTOBQ_7nzOWs6iDGba1y5MZ04Weky-YssWKfkCVCec2J66ODribDy_14nvHmlV6pMQPIqqWNe--CUoDvrHtm_vqIVwwLu3Epw54QQww=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_wjXu-Ny2myGT2VXH1vudmI6BeZ_4zJbbuGv3ZLlbVvoNj-rQq3Sp0Ydo64YQNXIeS_aqTALyD8DRvZ7A1GM_zzVTEDzoY-MovOuLemLpnwk4COypHd2lkj5NjZYS5PIgQmCTMFoMRRUgs5w="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPhN9HlTRk_QuaTkGcBKGFxJugrvxvQ9tNs2KzF7BJxqYpyyNcThlbDH4kddOZwuS1eivM6iyy9hFKRYroPCVsfKEOoARFwTYowJCyeMawitU4Jcj-CS7tjHtCE3dEyuFZR0uowJiIYLBeEtfWPhwr9mx2E2YuEzf_Zs1Ec6KQJwa88wtSX1TTBpm_WbBAFzPYnxnZt1LuNIH8czc7w1TAi3EnLXETWFeOjHSBg0uly42TkuUrMMt44kJuSlz9lnSSyP_p"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP42x3wGuaRUbsQM1WrmlzpI0ljoK2ugq1vosSTRBNZiY3tYbuWKqMiZpC2wocSwBwI8X2W84LSjRVesQTxKQ89KIyIG3zyFjMJckO8EStBnU22HBdqavkR-R9WbzgQCcSvYW2"
+        },
+        {
+          "title": "ClinicalTrials.gov: Bronchodilators (e.g., LAMA/LABA) trials for Coal workers pneumoconiosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Coal%20workers%20pneumoconiosis&intr=Bronchodilators%20(e.g.%2C%20LAMA%2FLABA)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Varies by drug (e.g., Tiotropium 18mcg daily)",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 400,
+          "sideEffectManagement": 50,
+          "totalAnnual": 650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1083,
+        "icer": 3250,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Bronchodilators (e.g., LAMA/LABA)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Tremor",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Minutes to weeks depending on agent",
+      "treatmentDuration": "Lifetime (if symptoms persist)",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEA_mqr2jgRv2d8GZqE3d_BvKeC0H8ylJ30aFSfo6a0GwRwn2317hj9D8UImBOkOArSu1EdmjHUJMTSDYDE9f6tMIJt0FOD4ywLHF6rpVbiSzhs-VIJPAg2np6Gpusj2N3Ex0m-eXTW14j4awMzeDD8was="
+        },
+        {
+          "title": "nationaljewish.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBXxB954agWG3NpQ-GQzUjcMzcfCp4RpLjBHFUyp_75dSEOOfG_qs_6YQV1ZFdwvsQwukX5WOChlphnWxYU6ykzAWkbiBPZ0fNR-N0r3Zld8L51c2CYpQD8UogW9bn4zKNz5dV8HvzHw6xW0juQpV4B3cXDryVMT10mD09aOusjddTnTnvIrziu2Y="
+        },
+        {
+          "title": "msdmanuals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5MLJ9ipMQXFemBH0cgJHNKiZhcVE6xRbhH2j-LlFqLAT_dEBLQiWHxJ39dBeEsT7jSHq92qQuxWLJCUdJ87YaeByPeT04roiqc9yudCpjPVi2D4DoOQ9dT_yTBZrdmm9M7cmOAyxPeu8n6Ws6qJJ485JxkIpx3DjLpHFZ9OszIKE7wYcq956JZai3PezVxwdO2qsBmHt7fljMKXZjG9tVcHxOTJevAx9ghe5p7fZuP0x1-BiWeI_I2c47VlFEpHair_S8"
+        },
+        {
+          "title": "lung.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL6mrvz1rLMY8MvK94KKYXKphyY5Skn_H2trBKSKNZbb0VWvdhPsgj89G8AT8XrjNjJS0UdSgVKnbB4yLyH-Vi28qn7vR9v0BtUFWNFQ0KQyTFBBkure-DeeblTSYBBO3ffN2hemJmh67aH65uV_JI9l0T2tMM6c0Yl_LaMQNG7P_SlCYEjBtR57ZhqXTL3kAzx8CWTvJ-j-w="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHK8_4htVcuElFavOr5ttNdPikFyghNMYx7Nc73DaeiTUt8KDDMN6Jp8sa_snOZ_1m6AAKwRdTTMOrJdxLUtJLBPlI38nMdsC7sX2r9fXe2jNPADScMNKrsQFFLbKeed2bg"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6oAFxafBbYD811tcxmIP3faV-KKXKupgCY2SQvUiiEuvqI0gazwWygNjiQT6xA2JHh44bBYEbNQUuHs-xr-Ndy8XSM2zYOLXMOUxQ_320PLySM8gbMoGZAktM2l-FdFD0WRT_QOKgXlc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTMRcoRNsqawbrR3SI7bHFTpxcTZlVJiI3R6e2c0Q-O75YHwaZ4m-qtBdpOYIep3pwIv3lLCBj4EDaOsUD5TRPImzfsETRtoBzw2W0EaplYO6OBofL6HOoSma6yhoJglsl6uaH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGj3DSk35ITFPLg7Ve_iLO8eyJ7qU2HQ7DIwUKHlS6CLqTOaDd8nhNeqyZjVwoODK4PPhu7BJK2HAx_CSf5fkb1AsJwhkBLB-H_Dgxboj5alJNbwPRnuXlHuWfCpEpH_DO_VeYGSVqKAPs0TLM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuX3_5wtOMeG4MTAj1Q5Vbl6tY3LZja95uM53l91An7mVA-PgtXVXoZIXmQzg0sF0KhM3OeGhlN92QL0IpVAVMySTy6MD7HHN_16ZIbMy4kZchMjK4pyTBwUSs8HfdCYCkii9D"
+        },
+        {
+          "title": "allergyasthmanetwork.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZRzkxw7qvBzbSlAdwkxFiyJFhdlqVTWsqC85iXOH5iWygLDdKYhe8KF8x-e5XhGNzHGqmZs_XRDfSF8ggQuTXvNHT4rrDGYcIW0_zpdOEtSR5_9EHrJlJ1SrHcVTzgXRXVOjPyVvcHqfsOyTo_uiMcHwHpWBBCH4R3fCkYC7OPgo-kYFwBb4EH0BtsudSjjA1WmgN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXCfPxCVvWEHsG4-1m7cjcopSXMLcsagRKcfGxn2oyP2i7V3FfyUk38OiEWy_e8SaFLdSLg6ixfas382U2X-C2ck0HAel4UIDA48slwwxBE2ZlKZaWnOuPn2T6tldm4hCKlkRZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLbT4xzcU3YZdJvzluR2jhmO8-2LoEMojLMCmVLmWJRPhHaKQpLVrT3Z8w4EDy6RjXJ3Zgj4j9jZgRWONBdawyTXMBw-ne2r2eT0_trxzmAh03_eTEI1lc0gGGlD5lBOPD9EVf6Gih9SJncLifHmUTPCWQ_BjXi_1rPRLW1cHNwOSFRpxEmSmjBN_CU-8EEHi-1MAXHdIWGBq2Wg=="
+        },
+        {
+          "title": "consultant360.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiItZnGN5yxC5b0OCBZarcRjXnV7GLLZsSDVseS1vQnCIXsszE_GwyBPK0vhcIA7UjCwd56iCTVj_JKtLBJW5Lr-jAcs98q_apX3OtbXdxLpkl58YDkMUr3XQ7JqVWwXiVvWYeTvbWi9xVOyH0DBvcIDRZkPkpHE7Q_CmRuUH8tYcfn-uoFNzm-DdojMcT7lUvAs7aFo1neHZ7Tm7D-pfx2zDlWyIKPTUkmmHYvQo="
+        },
+        {
+          "title": "eviq.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXmllWbHgZntbc4g1CjfLI2ESee4dGwZaHtJ5lsK2Iqgx4_xMs2Si04kEUi6Vz0-nrQltL7vxFEUHibqOl-20Vj2smW0yN6yzLc0HZAMsjOiDHiRv1FyVNGHyiv4zQD9wmze4iBya1cOm9HxtQq6llW6dQGGVWDfrepq42xzoPPLBpqDPRT9z_-32ZVLUBJ3cXX22PeP93uQRPzH7tZoLYiF0zSuo9Q0GD6yrzlPtSFqOunZQesWbBXshmz-IhaGOkOIYtcKtiOqkcTbSjlnYY6l56qNI="
+        },
+        {
+          "title": "actionpf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOSGnD0crTCRShP7UDwitSBw65J_uyS3NSlTY0gxDmeZBfXf0zDmdn7Vt5g5KtVcskySrfTCu4LEiK6olvnsE2-uZVvxBv58eRqKUZtwU2PvNIaASTpVSymW_n4wvA72WXir1D9-mKQV7hVDFvrztcYNBhsP14ndOD771ddW1_upRMrQgcRW4lHA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFckzksD6yCwSty-e_VXsbyyUoMkMWN-toLujoS8FjyDiXk29rHSV8ClaLSfg7HZfnqrWjf3iB9ko1EMhse5bGhtqwR1WBVAllZSQekgzboL6J3X5Khhcw7KzwywvlkeBaq1j8M"
+        },
+        {
+          "title": "ClinicalTrials.gov: Corticosteroids (short-term oral) trials for Coal workers pneumoconiosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Coal%20workers%20pneumoconiosis&intr=Corticosteroids%20(short-term%20oral)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Prednisone 20-40mg daily for 5-14 days",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 428,
+        "icer": 3750,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Corticosteroids (short-term oral)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 25
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 15
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "5-14 days (for exacerbations)",
+      "trials": 150
+    }
+  ]
+}

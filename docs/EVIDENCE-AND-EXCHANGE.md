@@ -21,12 +21,13 @@ Keep three origins distinct, independently of a record's privacy classification:
   workflow. Label it "Example data"; simulated patients, counts and citations are
   not actual observations, participants or verified references.
 - **Provisional model estimate:** an AI/model-generated current best estimate, with
-  an adjacent label such as "Current best estimate - AI-generated, not clinically
-  validated." This is the demo's provisional estimate, not a claim of medical
-  consensus or suitability for treatment decisions. State the assumptions, supporting
-  sources if available, generation method/version/date where known, and limitations.
-  Unknown generation history stays unknown; an unsupported model guess is visibly
-  unvalidated, not silently promoted to a source-backed result.
+  adjacent "Current best estimates" and "Preliminary estimates, updated as better
+  evidence becomes available" wording. Do not repeat AI attribution or internal
+  import-status boilerplate across the public interface. Preserve assumptions,
+  supporting sources, generation method/version/date where known, and limitations
+  in the underlying records and technical documentation. Unknown generation history
+  stays unknown; simplifying the display must not promote an estimate to a
+  source-backed result or imply clinical validation.
 - **Source-backed result:** an extracted observation or documented calculation from
   eligible source records, with its evidence type, input versions and review status.
   This includes statistics fitted to recorded time-series data, even when software
@@ -241,6 +242,22 @@ reports; do not claim a user-submitted link grants processing rights over its te
 
 ## Populate data through files, MCP and the admin UI
 
+**Local file import, 2026-09-27:** the complete pinned Optimitron medical directory
+is copied under `apps/web/data/optimitron/`: 221 source files, 216 conditions and
+1,214 treatment comparisons, with the original catalogs, references and metadata.
+The old three-condition projection is removed. The adapter loads one condition's
+file at a time; validation covers all displayed fields and the complete byte inventory.
+See the [snapshot notes](../apps/web/data/optimitron/README.md). It does not write database
+records, establish source validation or implement the service below.
+
+A separate `apps/web/data/evidence/` snapshot and bounded adapter under
+`apps/web/lib/evidence/` now supply one `trial-reported`, `single-study` comparison
+for suvorexant/insomnia. Its source-linked effect, interval and arm denominators
+remain separate from the model-estimate pack and ranking scores. The
+[extraction notes](../apps/web/data/evidence/README.md) document the selected API
+fields, offline checks and preview/explicit-write commands. Shared contracts,
+general ingestion and empirical pooling are still planned.
+
 **Planned, not implemented:** use one app-owned ingestion service for checked-in
 data packs, agent submissions and the admin interface. Agents prepare structured
 records; the server validates, authorizes, stages and publishes them under the
@@ -250,7 +267,7 @@ not permission for arbitrary SQL or unrestricted database access. See the
 
 | Entry point | Intended use | Boundary |
 | --- | --- | --- |
-| Versioned JSON/JSONL packs, initially proposed under `apps/web/data/demo/` | Quickly populate and improve the demo; review changes in Git and reproduce imports | Only synthetic examples, non-sensitive provisional estimates and public records explicitly permitted for redistribution in Git. Origin comes from the record, not the folder name. No private health data, restricted Reddit payloads or credentials. |
+| Versioned files under `apps/web/data/`, currently `optimitron/` and `evidence/` | Quickly populate and improve the demo; review changes in Git and reproduce imports | Only synthetic examples, non-sensitive provisional estimates and public records explicitly permitted for redistribution in Git. Origin comes from the record, not the folder name. No private health data, restricted Reddit payloads or credentials. |
 | Scoped MCP tools, through the planned app MCP surface | Let authorized agents find existing records, submit batches, preview changes, inspect results and request permitted recalculation | Same ingestion service, validators and authorization as other clients; submission does not imply publication or patient-data access. Evidence scopes are distinct from personal tracking scopes. |
 | Admin upload/review interface and its authenticated API | Let a person or authorized browser agent submit the same files, inspect changes and manage review | Same server-side controls; operating the browser does not bypass source permissions or grant approval privileges. |
 
@@ -409,7 +426,12 @@ paper location. Prefer a valid reported comparison; any derived estimate records
 its formula and source inputs. Never treat the first two table numbers as pre/post.
 Enrollment totals are not automatically the denominator for a measured outcome.
 
-Start with reviewed adverse-event tables, but distinguish participants affected
+The first implemented slice uses a posted adjusted mean difference for a named
+secondary endpoint in NCT01097616, not derived pre/post arithmetic or pooling.
+It has a pinned source fixture, order-independent arm joins, rejection checks,
+and a compact public result card. This establishes a bounded extraction path,
+not clinical review or evidence coverage. Extend to reviewed adverse-event tables,
+but distinguish participants affected
 from event counts, at-risk denominators, collection methods, reporting thresholds,
 seriousness, and observation windows. Missing tables or unreported events are not
 zero. Neither single-arm rates nor uncontrolled before/after changes establish a

@@ -1,0 +1,938 @@
+{
+  "conditionName": "Larynx cancer",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:22:57.539Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGr8xL2VIz2UGYrRy4o4gmNNiJRp15dfwJXxevtW1ancYrYExRJS3D1MBE7jEzU1WYiD4WhskfKxfroEzXiNLyHl2nLGLw9RC4n4pdcvU8P3Rt9gk5BLzeyTQa8ciGF-Fo1PW-TJufoK3_kUoAV_Ymr5YYU-_bNTGSctMEO3PsWq8CIXgag25WMN4Mzau029xzeihoHuwZ-l9SBC7FwkC3JrTOpMeXjwWlh9T2xd7ng3Y8XOYQ1r0pRjfSe-sRwRPSFlGZG0l5ELvO_Xw43YWl_qIK_tp3Lau1A17opnE9dd2DxjIX3NQlqLpewF0f1qFnPNnrPl3m50gOhBdnMgU4s0VKXwNqYvJd2bNKEVEd_qiER3wpr78sHz0_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmbHziJsUTRTd8WDwwxmM0bRGGYzRqp77JwKWc88uFQSxxRYj8SGfHm_8qf7RU3jYNLTfiadWG3i9D0zJh55ioP-GAguG-N64OGjVn0tzPOjMzc7e5lW9_nbhgwM4I8h-VbJCg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA4X1vb--0yaTZeAvg8PpZvzTwvQhgJYdYIq8dF17DrYomJfkkzkvw0F_dq-vwGuFGUl4hGIm_x8AOlyGTIXvbfn2W4Lwfzym-OpPN5LK4ABuBXYlkZmIxwoD_OADVcgLI9mNZJC_K9p-q5Qdl8LstTJQ-IktHOMbp1QSx4KgurOap4HZMyug6MND6-NvhpPDAflVTDOLwCdDp1OFOx4Fb6C7Z4aZZ5frOcZc6X22GHMbtvukp5Y6ahlsSbRE8AWYMEIDKMFUb3joTbw=="
+        },
+        {
+          "title": "waocp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7Yfzo7F1hL8ssM-rgSICjFj_GPNUY3cnjWcT4CLXhHsDGaSPhRCByPNYEgB9YspYMWLJ2FCV9gxvYj74NYgXGn7QhN5iF7R5ctlzA7TLdvKNzpznmH0XfA7TImu-cBclLcx1nO1qFMObGOou5BcEu5vBoWA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi0mV_p1wRDKvbIC8OCVU1HHU39cRU9VKwqTwiP1pFqovcxgXy5Z031Ch0DMix7hr-ButU5V_uShDl6V6ye3g5EWE6meV3U_qT9NZqlvtlB3D_Bz9xSTi5bb5z1aa2z1BWkMF3"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGxzCeDWh996Y3chVwtkYQEovBPcnE3B8nMWrsJWipxAOQhUO3aiLkBrNCCPd9Dli54mWmXKFcsFfO7hBPWno6ykNnQccqlqZNq7_jwSXZKDbXvRnuz6PvBH_RnYbeOfMPwzb5xm-s3Itu4sA_JaO42gFIefxhOZhRQaB4Qr-i9JoK-XHewUvmqmXNCl9HRALKNTMmyaupOIOtubolhG6HyGRc8IRQR5q6Mp-n4_chUEk3v7AD6ZZzkgywPWLvds-1cq5hnr9SZvqtn8sdLzX0n4_tpjo7DNJZLg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqvqmMVVDE-PVJuV7AUtY0vByhyKND_N9Al6GWgc8S04IA28bmwt_9cM5vEOwoX5uD1xBAkJCaelkYvZX0FQjvxU_rS-_An-fm-1jD7MOj9_ztE-frbv3L8ve4Tusa6m19pBVCDtdkI7Vy3Sk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEelFro1-bC8KTYDfBMVva_IaEOYxnAo2vvAhouSBY2uhZAnRZSRFxjUudIgs62sL-OXmgcIx2J9yUex2UsWljEuDtjxeilkes18FnlQqYGwPNgLzFesxmyIzE4CZrGmYrQAZGDCt3RCDkaul4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyHp_yt2wDrXjiFUn76CR44WfeZeUmgiYJUTuGp7sgYUxbo86emb5u04ULmf2FKi4pY4mI3CJPwsvX-0-nXodtXo9gxX1_WiQK1AjRb-fRcVIevhwoy2p3P1mH8qd6gYu_kJ5u"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTo0Zzp0JTAH1DuYzanJtNpvAjz6SkUmeh8YKBj3wcydpoA2s0LAheTMo3pdpY4XYy-S2UJ1L7as1g4dAq2-qu1Xo6OzXevG3uZW1grprO1OjMR6kRymPtiZHYQyd0-d2NqBASTtWgDrS1QzkR"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRrOE66rRAHsKaEyVhC2HZXdqUck1cZQ0tB0Cm0LTO9v_c3FrrSAdHsDVUnWwlf0MhWJ73djTWtC-j-qFhaQ74ssekzvuMwg0Q6KXuQFLDVSEKgidiEX8ZBq_Y-vootM39ww=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdV4gbH0jgtSNBfWwFUTRO9ezuSz2k94C_qMVIgKhSURlbq_kar6WEb8EznNO-xli8ay48goeC4p-DUoeGhKNjEzdsgbPmuQQ3rQb2vFi_7_PsOTsJWqHCyrOxuWKHXm0sY_Ve"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENCpC_Js5nuWiPu3LRTcJMDnmAkIntFYIH1QFhrCYhyp-Wr4tP8EtBXusx5NhMjU6Lxpg9Xu73ieLBKxLpyohMGlWuh-SpKb_712hYeXlpyU_DXPy1Y__DFoF458wItqhf3VI_1UujLUpegLq7oLzfI2vESTistW0s-yRmS8VxSWgafsN5vDzsUkjlOEGaPewCVm7jnhHAA4ORjFOjOjfrtCrQACl77I_wjgC8cuYczvvK_0nJdizLa1HMl0g="
+        },
+        {
+          "title": "iiarjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhdNAKy6eRoSKbO4lB9zbHy7BA2MC58uUXN_nC7loD46H4g7PsOMDQu7sw851w_muKSjjARtpVxnfIP4SrcNG3YrfcNMhNSG-WBIkR6XMm2pq88419LSG0d-_7U6yodJ3nQP7eSAC8eA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxV5P5XAJh0cXAlSqwMqJCBWR4iAnvSs3QixQXc2R6HEBVPoJVZCaSrX0DxVUe8X0yXgK7-s1VhlltII-obT5Soc-byKUPzzakc0unUikDlYqOmbitydyMLVY8hGAU1CIizU6pbMqXT9pl0HQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy trials for Larynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Larynx%20cancer&intr=Radiation%20Therapy"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "60-70 Gy over 6-7 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 40000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 66667,
+        "costPerResponder": 57143,
+        "icer": 85000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.5,
+        "vsComparator": null
+      },
+      "name": "Radiation Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13.5 cm^3",
+          "baseline": "15 cm^3",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Laryngeal Tumor Volume",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "60/120 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Voice Handicap Index (VHI-30) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MD Anderson Dysphagia Inventory (MDADI) Composite Score",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Numeric Rating Scale (NPRS)",
+          "percentageChange": -71.4
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 70,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status Score",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-H&N35 Communication Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "25/42 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) Total Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dysphagia (difficulty swallowing)",
+          "percentage": 70
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 60
+        },
+        {
+          "name": "Skin reactions (redness, peeling)",
+          "percentage": 85
+        },
+        {
+          "name": "Voice changes (hoarseness)",
+          "percentage": 75
+        },
+        {
+          "name": "Xerostomia (dry mouth)",
+          "percentage": 80
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 70
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "5-7 weeks",
+      "trials": 265
+    },
+    {
+      "citations": [
+        {
+          "title": "oatext.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzVWRrD9_N_M41nbHgmkPd6I3wG-oqXsrbBs57TXkBwIeUxfCQ5KPIcqZanCgPWavHuL38ruZMw0u-QyuXS7IBwwwAePZbEZvMYpt4mjyNHyJQjkDQxYGcuukF3ew70cAXGXU="
+        },
+        {
+          "title": "cancerconnect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC-rbV0qmAz63hj0UsMEa73kpNbA__-lXRGm3ARa4MiwuKjn9RtZLkZoPRa2u_YRlOkCPuCDN-5ZNtxAzn8RRd07sUWred9zfdNl9DGEytdp7Qu0a-l7mHHZmoi4aAz3sSDbLIPNqw3eAAxSI8Uw2tUdqUeu16sOYQGspkqP4nV7tn5Iimz3F2wTjVWzzzW6T6bZpce6DScWWFDJJst5gSpKGWhi-BO3fjKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx9KU94rhLRWhVuHLKHtNhM-DIgeFgje9H9KNTwLXDadEpGAONFt9Uumwbx9B2LB5yb_60NdlfyUbDxfpsgssWUi6KbTII_ZUGWiGd1Z0Ur1R1XVsEhe2JSVd1mKL8fyxG7Rqpdbj8izpKfy4="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFgMiHuGfocIJxQFkcexojo7QXDtYHPmMbPG5UTY6Pr-3oiEeYulYlmhm2_fkN5loeOsxmKQ536y831WB3y_LWmh8BEjQt8OgDMKxwFL9lH01lid4pKtNsiUOLeJXEf18LauKNn5o="
+        },
+        {
+          "title": "patlynk.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdzOfCygi1ao4rp9CJIh5tFbwuW3Vey_ukWnw6s8NEM5oGMfjXB9RMOFSp5hC0IvIX_eYgNsT-JXx6sBhqXGjuDa3hWDG8ce6v1mKMSeJz355athIL2TEhmp-SwBtCtQ_U7J3N"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBZbac7ZwOkw_mJftJeFSrMlz1olSgmBjYo9dMtl4UQIesyOvaLzffyZJayecAB_-cHorOcMaHC4m0DiKM5t-VPaq6J3T7Pb65IQPwgu1SDeEB2w-5KNEVELOP70FDJzanE9bL8RiTrfDUWzg="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLvSl_wzsVqBO57LOm4b9hTYfxVQJBooL5PVAxIJqaqZSrjJsjNdLsfk9w-zx3VDtNqeWQ8htclofSznvOcORFElFEPSNauyApFad9a9F8XjzcWYJlH-zmVpVedBEInvktHDkb7IF8VpXozmhJAvU6q6tUGN5jg0z5lBFB2IXZhr1--hLRMGQ38BYS445Rz8L9_8_BiOFd69QiIwk2DuWLCxTONY8DVzmp5TwIvaZcWdTGg959UHZERS_7hUwUrKzX6nXeEl-0pPqx9CjBPl8cCElkNKM4fFfNepjn0A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9hkTV0a2u3V1blso5cmqauvPIcXqKx_jcTfyZq-uH7xgP2O5MyuyZOZf1zT0ROvLbrSbuiTZ5JOjqJKb8v_vSvmM3s59qFJvLNZE44OWI_MOIhj_1mjJDtI2w3FG8ESNUjhmZZeqMtPfsHCU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Concurrent Chemoradiation (Cisplatin-based) trials for Larynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Larynx%20cancer&intr=Concurrent%20Chemoradiation%20(Cisplatin-based)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Cisplatin 100 mg/m2 every 3 weeks for 3 cycles or 40 mg/m2 weekly concurrent with radiation",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 6000,
+          "totalAnnual": 60000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 92308,
+        "costPerResponder": 80000,
+        "icer": 95000,
+        "prescriptionAccess": null,
+        "qalysGained": 2.8,
+        "vsComparator": {
+          "comparatorName": "Radiation Therapy alone",
+          "costDifference": 20000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Concurrent Chemoradiation (Cisplatin-based)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 80000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12 percentage points",
+          "baseline": "60% (with definitive radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Laryngeal Preservation Rate",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-9 percentage points",
+          "baseline": "Estimated 5-year local-regional recurrence risk of 30% (with definitive radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Local-regional Recurrence Risk",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+6.5 percentage points",
+          "baseline": "65% (with definitive radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Overall Survival Rate",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "65% (with definitive radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response Rate (Clinical/Radiological)",
+          "percentageChange": 15
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "Estimated 5-year rate of 20% (patients undergoing radiation alone requiring salvage surgery)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of Salvage Laryngectomy",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+6 months",
+          "baseline": "24 months (with definitive radiation alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Time to Local-regional Recurrence",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-5 percentage points",
+          "baseline": "Estimated 5-year rate of 25% (with definitive radiation alone and similar stage disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Long-term Gastrostomy Tube Dependence Rate",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Severe mucositis",
+          "percentage": 75
+        },
+        {
+          "name": "Dysphagia",
+          "percentage": 80
+        },
+        {
+          "name": "Nausea and vomiting",
+          "percentage": 70
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 85
+        },
+        {
+          "name": "Myelosuppression (low blood counts)",
+          "percentage": 60
+        },
+        {
+          "name": "Nephrotoxicity (kidney damage)",
+          "percentage": 30
+        },
+        {
+          "name": "Ototoxicity (hearing loss)",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "5-7 weeks concurrent with radiation",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0R9_LZlISO_Yi2fOziDnSzTatfoYPkMFaA_TEEnD3qEozAR0lI-cx0610h7EQtg3ckILP08ww3_JX5hY7mr5l7i-8v7x4M2ayA4qryskz0ES1LaoQbPVoI0gQUu2OLlCxrQJD7n6MJxPmLu4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF49l13zBm7UnCLnlAUcihInfq6sqKdTb8JSXRiXaQbkYT3-y9RJEjMehKttJtRf2a1aTbCtwGirQfZjSbaqgtv5wsibXIZ5jRL1MiERvPHtR58cGOTMmD0QmvTX0b4t2xWqa1sJrzymYDMeo="
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHflrdwU1j3g-lQS1WyU38quESpY3oQ2tA-rNsDdN1tkJHqyxOmblH1lrK0PGg2COx9dNWEYHkTE3RkiO873SLHRi1i1-0CjA1109Ybk2eEKOUQgzPh2w0kVDFMyjNe-8XF7BXxLrmrnCXhTr8rpTEvCZfjFRluMhC7ALJxIgLZrNoRFdqKvljwR9aas414693YncBNVVsEwCtOuwvxjqdlRD_CkTQWuZQbhHSEMAOFSrUXJ70NhXZhh9XVkh1EjzQ7lerV995fPjY4-Qs9ANEFHeopdLdyHG-QH7N9lg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp0g2QGybreBxxo8B-78nkpfGH7J8GlbmEU8u9Yddlwe9sGz3UFZLaL0yN7VzHnD-tz82rtbpj1XEG6_LC0nQlGOfNkFuHYC2oqdPggA9vMsQbUEeR9My9bvX4ADKjJE5MYizt"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC41xBwavQvUIY26P81hxO0FWlLndwGvR-NGrGHA6RQ2iPmPuAbeTmCi0nt8o-mAOlAUo9LlVXzHmxjK4JD0wnijPFzYdz0mzvDKDkUaAhXAxcSO0Oi9l1D-H39Y8ErXdkU0Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7XI5_MTG9UhHN6rWKxCvjkk5a4f1M6Qx_zKJ1axN1qy3ara5q9YBzQbAqRdkYiwqFSukp9vAC1vnIY0ckhpii0bGOetgYWQzQr3WCLOBA2SbiGdP0IwoSTTFpBKS0ND4DWe7D"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa6Ea73YChvaPyK6jTLLWWngaADclM07-bULQ2N-jvB2TVRjUfPX_oUJ8-FayyzmkjuEYTJ556NkmbeK84LPgNenPQYZDNoSL_c5bZ5QuD9mWYIElNAcO7WIx3s2kO4NLgo1_W"
+        },
+        {
+          "title": "kumj.com.np",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2lNDNYZTMjYtSa3AK4gsq37nHOjwpD_Ah7u5dIdRBwCFVFR977gO-CSLVx8ovjx6tYhLFJmUHeftKTfks-N4dvsFoy3_fkiGApz-wWt8HtkLuFT4JDFKbY_WQyGaqxKLcDdPRIw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBPr2zaCUDybI-xieUdA6_jYfWJOB_BG2_GF95-fKa2vH7oMg8Tq0hDCD6SE3FcXRVZjO_UEn1j0lkGyoji6uoR5-55InQf5898hckar4mP2CXVLzdDKO8quGGOvlGoZmmp_pO8EdtoN0ZJKBMmeBO6B7jtdhmz8xpyHFhOJ7VvtBX5C1gaQ-r_WLp-f4fqmWimL5FFKYsZISCY0xX9GDuHUcmO_7FzArJHHte"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7xIVrwJ2c0XDCsJH9qY4vTBl2syizuJ9PWxpK-wyvbjyI4z8pIZRVpzbTeAXd46Ngxv-4xbuNCG-gPOUAo_SzMTNnAcYFqDTZngQF9c_EIbNBwHGBorRKAG_s3lVLGvZUrKQueFp85nD132TmTRkZM6O_lv60Rt0c1oyCSCjMIICDuLM2bObXRlWLduAfONz-6P_IpAJ8Qx4YGiqhCfPlhQYsk8L1NdRyeplv43OOrE3zhziVBlTBoWA7vNc9dKXTqiMGRyb_CA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGopSZV5t6PaEgz28TQWO8PyjLpFOL-3zFdOWsFzjtA61jlo_llQI4kKQ3qbGoCMHBvlb-aulCa6ZhM3LEfOuvrxpXJHzp3vxv9kv7YclxEgGyfm8Vlnv1EFbBVc7XQWIfA7GagwYOqudjgjXeY"
+        },
+        {
+          "title": "utmb.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmm7rvnh3JDjrFb9xl_ZT9dOMAOedboZGAXCAExGjmV_KjCxbWDPfrIPXkzecO9ELYLU9l8R_GhDyJFgXgvGw5jWIqFj9246nuYTgkGIGufctGkjnVWJLIEtntIyd7B9G3ye380HaUsURPTPIE5sgqHjG-xnTO3P1LbpmC7paje4xWU_XC21azJV-ztQlfIrI0ICkLbJdGgzdtU-_5q_bgaOrzU9Bl9vQFxeSg3g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMjw07yET1EJNp3ohHO0SngJfX2CQ_gD3zcwAdxRC5-FtKnPXuIr8RaB7HZRqkuxqP-HFCswWU8B5j3bBp3_rzSGvikwhMQSiXLQYt442OSaKwVIl5R59_tujgDIeuzA7C27nJ"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQpnvb3IsiFKqWAfQUZLmb8rQaNv86d_MOmGfJWsAeDlEhJwV0ueS9gx4H7KJ9yjQazuwH3INMS3DDnZ_ufeAFT97zlhQySXGNDccyFwsuIqRoKIjFZUFO1MufWY4KVeZjj58="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2kfQcfy2fbhqbduQ1M1s4YRK75EhG0X37BkmaByTq_9Kgrwop1GR1kjaAPi83MabNg1bgCRETULy6uP9Gqx84NE3GRKNZxNyYzCvVduQ-0Jk0jYIiJWSONr1eZCQStgRlH31jMw4ZO6iYPNzl95hsolhvo2HH0Xy4n7k0RRbM7i8SMs-TDg1yoa1EyexUWAsJpw2E1i41TmVxi6Ue1eKvD8A6khW5okE15TkuAY6VOkv2BspC-fBGt6V26q4nyPb-LP8a9Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Total Laryngectomy (Surgery) trials for Larynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Larynx%20cancer&intr=Total%20Laryngectomy%20(Surgery)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Surgical removal of the larynx",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 75000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 93750,
+        "costPerResponder": 83333,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": null
+      },
+      "name": "Total Laryngectomy (Surgery)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+50 percentage points",
+          "baseline": "30% (for advanced larynx cancer without optimal surgical management)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Loco-regional Control Rate (5-year)",
+          "percentageChange": 166.67
+        },
+        {
+          "absoluteChange": "+30 percentage points",
+          "baseline": "30% (for advanced larynx cancer without optimal surgical management)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Survival Rate (5-year)",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-65 percentage points",
+          "baseline": "80% (due to progressive advanced larynx cancer causing severe dysphagia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Permanent Gastrostomy Tube Dependence",
+          "percentageChange": -81.25
+        },
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "VHI-30 score: 80/120 (severe laryngeal voice impairment due to tumor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Voice Handicap Index (VHI-30)",
+          "percentageChange": -37.5
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "50/100 (pre-surgery, impacted by advanced cancer)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QOL (EORTC QLQ-C30)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "60/100 (pre-surgery, impacted by advanced cancer)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Functioning (EORTC QLQ-C30)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12/21 (moderate depression pre-surgery due to cancer burden)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS Depression Score",
+          "percentageChange": -33.33
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Permanent tracheostomy",
+          "percentage": 100
+        },
+        {
+          "name": "Aphonia (loss of voice)",
+          "percentage": 100
+        },
+        {
+          "name": "Dysphagia (swallowing difficulties)",
+          "percentage": 50
+        },
+        {
+          "name": "Stoma care complications",
+          "percentage": 30
+        },
+        {
+          "name": "Fistula formation",
+          "percentage": 10
+        },
+        {
+          "name": "Infection",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Single procedure, followed by lifelong rehabilitation",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "civilica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLgH7_KMUyie9-W9p6rYc-ocw1qwFChYZxDQMOXevxrEwDR0uL3sXbXUGYLCwZzkzgGeojtJQhgWKvPUieAYpOgEzJ5xcp5bdMv7Uu41mFaLkzjhOPsPSMPlYGlQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBTov-Z_0WEyB8byyW36S7zqyFoTQX52qUCbw7We6gdYWkykyOues_MqLity71-Y2RH-FlYwSC9_Fi3X6oMHycUmYhvScmn3mEh8iR82c9IDjniguS9GgUgnh1GHq3jPPTvJbuGK86bUhLuO0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfy1Vwbw7JXmcBGSmAuA9RK0mYeeeHbmUJ783e5nbYcL8goo4BNF9--wLyHruplhgbwoQPHhhbI-Xl-B7q4jbaJSlnrIsAjgSd27fwxAu6hf7sl6xCHcGntKVyjO9bJJkfQnpt"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-gxvXZsnBckPXwOFWYo4tbHxmpDc0SgZwTFeofPSIP1J4x-1uBQ3LR3NEOQCl-uaY_1OfTNc3GA8XG-9_Ru0VB4bl6Q0Qey2rRX4H0trnLRp_AP0pxFya8pGjIMymqzoyM54="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyTzp_ExQQkgTs2jdMGg5vonUVtiVGI23urQ2PrWO6Bqpky8LszswjGgyaUdvavIP6mo1xJHogFgjp8uYrKnXVnWlpg1PPhFn6YBRWWyFUiWrU76zqAiMpMhbU6WdlGl32iyev7aJM4GP771UAwCulSsOanPJWbPkxm6rAzmaV0lPYg1Q99sFLF1jeaV9pCLjQcZ0kvK9NIENWBzIsMPPsz2W4ELD0OLKrqywVRpidUR0TlhK-75GqD7gHvTwlCosuITN6TbusGG44jycJdax0exNT-ppXvm0rqBEdqsbSKNKRJjSrwS-9PzGqQMLTD1nXKMe58_iDzH6fb4idI1tGWHHVrh5ECXiKFxVRccmTgaZiI6rWENIddo55C_4sdDQfQ_loB0E3pA=="
+        },
+        {
+          "title": "oralcancernews.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiDOGKkzBGAMa1trokmg5Ncq1FLT2P66iUexP8GujbsoYgl038ol8o_cB9cwXqxQK9iqirWJKL9uvXrabDgT2UNDddaeXEfqDdXHhkh0KPv6xggzJ7qA_hMB7jBrfr4kplgGGXrWPxe2wg0JF40GYb-trlvCkjKrMUKQmpkYcYXAL1AAFF89ZJtDT_70YMFZVFCLjEzGlotutP7fEbWtzJfWDaB44w-wpzdXX0CUm-ihQbK5zT"
+        },
+        {
+          "title": "clinicsinoncology.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGvEMDW8iKyV16NhDjQ_c5XwBx_nGWf-82kf6TVWQ5v_Ik5Ze_Puo98LYdOrQse3ai_wqvAoNGZFA_NfuT4ksTDQf3sPkbF1AWx37-fn7MAYVQLZnOKYt7XbzVI232tCpwr61Ni9XqpgkmecQSHiiKU2KZo2s7shuUuNyVmr-zQhaX1B4_AVhHI0luaPnSVvx3NdG0K2tC7-eWGSfZgM5wtDiPoZP7i3JBeyoeQzWhvHD5"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cetuximab (Targeted Therapy) trials for Larynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Larynx%20cancer&intr=Cetuximab%20(Targeted%20Therapy)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "400 mg/m2 loading dose, then 250 mg/m2 weekly",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 4000,
+          "totalAnnual": 39000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 195000,
+        "costPerResponder": 97500,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Cetuximab (Targeted Therapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+19.7 months",
+          "baseline": "29.3 months (locally advanced Larynx cancer, radiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 67.24
+        },
+        {
+          "absoluteChange": "+9 percentage points",
+          "baseline": "47% (locally advanced Larynx cancer, radiotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-year Locoregional Control Rate",
+          "percentageChange": 19.15
+        },
+        {
+          "absoluteChange": "+2.3 months",
+          "baseline": "3.3 months (recurrent/metastatic Larynx cancer, chemotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival",
+          "percentageChange": 69.7
+        },
+        {
+          "absoluteChange": "+16 percentage points",
+          "baseline": "20% (recurrent/metastatic Larynx cancer, chemotherapy alone)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate",
+          "percentageChange": 80
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 40,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "60 points (on 0-100 scale, pre-treatment baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30) score",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "40 points (on 0-120 scale, post-treatment decline anticipated without intervention)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Voice Handicap Index (VHI-30) score",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "+3.25 points",
+          "baseline": "65 points (on 0-100 scale, post-treatment baseline)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MD Anderson Dysphagia Inventory (MDADI) score",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Acne-like rash",
+          "percentage": 80
+        },
+        {
+          "name": "Hypomagnesemia",
+          "percentage": 50
+        },
+        {
+          "name": "Infusion reactions",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "Weekly for 7 weeks (with radiation)",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9fkv1nTW959kXwfyTIOaLf_F1-MNgqjmay4O1_yogPHYx1rKJLjtTvkM14F7m37_PULKNSyv39lxtmTjwMukYCvMa3bI1VoVeAkXmHn3gyiAY9hMafv_0PArvCCa1r6GBK0iCtbdQZQ=="
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEGDCylkW7ZMSHqvkHf4OFh6y5X9zs2l3Gn4f6yf9EgxVRvmHlykw7cE0xFXK3QhqMnJM1oU4dIdieilIbEiQ8iEsujIR1QuW6cI40YCSS3ipUV0js_fiwfVry7q7PL6S6tQZuq-Qlz4dnvE0NP3sh7mP0NMBKNxMHLV5zBuwOc2nGnbfRJzGPXWWABa_j9Rg0zB4fc0OdEB2XVLO1c3VxvUrReiWsPSmoDJ2DsUcKJQMoGZ0A60049NILS_eZ7y6wqf35ZoHvuSksIO47SPkD"
+        },
+        {
+          "title": "merck.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGBgPptantRlM-1Is1e1ukSeZwYQf8BoY8Lh8t2Dc078pNCPbkDhj50oj3RWQXN9zMgOZEAi4xABr57i42Jd3YxDadFjbQIEZi1d0cyfHmJPuHFEFI0qm0yLj68REmJTjmbMRvSkyAkIMaCC3OpVcCrCuV2cvJ23enYBJEKh6c7Iudb3xKYXLn-3bzo9mnTpUMGDHwPmeMbWBXMrtmNjUEJxYZUe7UVM0AUEMK982-gqrS76G6cWQzA3u06e15Zl7ib1bLFEYZMn3xkOoQ630vDrke5vv-p4K8HhNjs3GRQ0cKwOwMtdw1HAW_I3z2q7Iwquj4RZLbR8kL4X37PPzE6Oda5TZwJqN3Fg41Bwge0BzYRLIaKA=="
+        },
+        {
+          "title": "explorationpub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjajyE-8l06cjX8DNiRHgxa-nGnA0ghvJiW8MuSTDsa1sb3OoK1NUtAVSISXBhFEBM7SANRM8b7DoVCL46oUV_pwEXpiviMHdCOeDOKak_gbUJS8ke_VzMd0hTog4ljyMSO6BENJJgkG6xH00HzS8dyfUsLJY2Dg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzoEw976dAJ337vgbMmNiOBNnARrc_z59-j16z-Yw4SZCBEoVP295VfgGdhiNBjuxNdw2rSM5tE55QQ_d3fK311VcWRwsHXGzUguSmBXMG1TGihRCDUM623wpY4qzuaQDprFtz-6RhrDjh2yij"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmJ3kS-w_s_nPVEy2KrlyWvYC5iiu3gsFRd3zpym6-EAcPbWO6ukbPpjZvH8K3XAxnuLK-D1x_kpapZDCJOPtG5cwsKiB36iP_B6el2SpE530ZAWSv3bWu_uoRH7N5PdFf5ip2LXprHcxUI5Q="
+        },
+        {
+          "title": "cancernetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq35ENRmX2K0ivyRLISsNzwZyQkBd-LHMyJTTJHArdlDgmR_WnV3zWhlH4nGRvwEM5hnrB-xrZQTTdEsLB7nmT6UZUPS3GACh7K89d9uTH2Lj3FRLwpUe-vCCALv-FzJYscov-G9acJhMfRjyTcqPB76LZDlrt7OC8Etc48pXH_j1xi_aHMxXRYC_OFxfaFX-lS_h7cdXv2kYjbYZVwBMMjMzQzQXzlv7Q2Q=="
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiqpxZpo45jyX0j5XHh3LXag-NOd63ovoq_Jn4RGJb4MjNqdh_c9ZtrRmy8n1oq-OQ6NJEkgK0el1b-JTRiI26AleL8nd86BMYrGysJ4RsB2Y8Rqs9JegpbftSih8ye-8eRX768DMe7LgWe5POKe3ptMhZiGtLnmIIca6-Vgxjbj729EoivFc9Xe8QQgNHnTh2rnb9KD7HpjV1_nW-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-rFxyPPprZ7aEg_zRlEPq_Xu1JSjvkPxn6oeT9WwphcfNS1DqT35hktM-5cynnGd7fLVs2zz8yKmLKD5R_kj-oHT4scu_NTD-QyhJg5u7R2eqny8HoF5eE6hbr6wsNFI7x_Z6KzcKZ1m7eCE="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpWvVp7GhMJiIYCYRWu__QiHr6W0oSYOU43laQiSkTarhTDfTINSVou9xhD4blc3JWTLFZO6CXJw_hkWLkLzQrm2pQ8OExRILR6SJAMipZOYEVwbXgUM5IyUU5twxyD4FbKC1j26CzSRXR53dJ2QyovGG1yxkHhVE="
+        },
+        {
+          "title": "healthandpharma.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-FA6C2eWWTJijpw6xhPsMHRJynqWyMKK2vy9F4wWiYPwvcKMmlkndt0BRb36WHtyVYTJ9I5tdBY9cNTz-7Lpm6qlOg2Ya_-n4WvC9BSTwqmR-v3RGsdo8iQv5LFV6nSNdtODmsY7XVzmeJibzhj3F6YtIGRL8YT-y9SE2Ere9UUz1gc2pmg0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrDg_saPG-NNjsJO8kP-pGzRyDYYaUceZOp1Fmg_1pUwXQjjvVRKmNEG3C-SP-RtpZeV1kt9_vzOIhITXsQMEk2ruFbPMVRYMh51Mn60YvigqB3CXJ8SPbOw_zSh2Vml-5sm5XO6VZDy0prSzj"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8hjaBN0rdMRwX6fmVic-Xh8phKzHQEAOzq_tOrqQHtxsUmmQlKGAHTjFNzvJRzEzJ8krdaCfUqBhJnwKuF9Bd_9fpKwSxG0dBiqy2e1sD34A0zuBz3kVr1n9i_pGktBsOWuhlMZ2WFglwt0w3h2DNaLWM-HX21VXXhPd6bOz_jkKaCP9SRuSBS3p6Yb0ThyMEuYuzeQots8GnJOnJ7zepOhXh6laHYde9pQAPjU66TYHojNYK5kz4YbvoGbZR9w6_NT3MR6vw8Jqx-VUp03JK3-m0QQIIX7xxUvUXfKkuzonRD2uVIA=="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI5CFW-Vd1TWxG9dvgT_7urGBGefFEDxCv-yoccXRii3rllDl0J9NNwnB5KqtHUJSE-L9jEJ9JaWmbPsObNTxzQccjXemLHE3b9wlG6jp0TizWSYwNzDofNmcKGo9i6aOWrESCOUahPEBSU2GtOkBHV0tqhoINeA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pembrolizumab (Immunotherapy) trials for Larynx cancer",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Larynx%20cancer&intr=Pembrolizumab%20(Immunotherapy)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "200 mg every 3 weeks or 400 mg every 6 weeks IV",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 165000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 1650000,
+        "costPerResponder": 825000,
+        "icer": 300000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Pembrolizumab (Immunotherapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+2.0 months",
+          "baseline": "10.3 months (with standard chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival",
+          "percentageChange": 19.4
+        },
+        {
+          "absoluteChange": "+12.5 months (significantly longer)",
+          "baseline": "4.2 months (with standard chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Duration of Response",
+          "percentageChange": 297.6
+        },
+        {
+          "absoluteChange": "-17.0 percentage points",
+          "baseline": "36.1% (with standard chemotherapy)",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": -47.1
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 20,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "58 points (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EORTC QLQ-C30 Global Health Score)",
+          "percentageChange": 8.6
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "35 points (0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Laryngeal Pain (EORTC QLQ-H&N35 Pain scale)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "30 points (0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysphagia (EORTC QLQ-H&N35 Swallowing scale)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Pruritus (itching)",
+          "percentage": 20
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Rash",
+          "percentage": 15
+        },
+        {
+          "name": "Hypothyroidism",
+          "percentage": 10
+        },
+        {
+          "name": "Immune-mediated adverse events",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Up to 2 years or until disease progression/unacceptable toxicity",
+      "trials": 7
+    }
+  ]
+}

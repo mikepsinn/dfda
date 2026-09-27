@@ -1,0 +1,1004 @@
+{
+  "conditionName": "Gonorrhea",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:19:00.986Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgEyK_k_crOB8Ai7pOKxotEAOlIq-Cxg48MZQ2_xFl0bEbGruFpkX8_Mv9abRVBi2w9HZLm25hDaCIPj3O9xRyl01muT_lGoJRbqg5Qzd41VALAy7C_YIRVZhpB5R_m-Y-QG0W__xTbyXO8CKAMTTOpIu1oKNbmpaSpeWQNvjnRaog7uabTyrVV6BN3RqYfff1N69Dct754GMOzvfza1D_IR3QhOhSe3Y7THGHIE6JSb2tuV-QIlLcbvcQOLtoWzfcLVUw-EqB-w-A_rc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxyQqbLJlFMGctitc5ithxfkNbB6fCutRgVDfiQt1aeQUUezKZDGr3Ye5cplWn3ypHPEKiphizbBEe8jIlfiQ7JYXapM_O0BN1oUIx2l4PWzst6t4Bio_hsVhD9ZnuX7YyRWn4TScr5wxOX6E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEzKan1qu1AlOC5uJjLvyPNAUEbbH9XWRLKDBGNKmbYK7i2tX48n9brX9b1BnjOXYAMeG2h5ndV-tBbAUoEbqIbGFXVXG3eHeosKP2mEebngfQTtKGiFh_KRn-twnRyVIztJ7E"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPkLOgjgb34NkVgzM_mVggInFXcdHmKbJ8FPuIDbfiWMVuy33vTnepWq5fROCIaPsTHUD1DzZw5_2RZEiqDABOKehsA2bSm1JkBaMpE7e8BgG4cojRM2bIPLiIBnU5iibkJ90="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoP43OITApv-0eMU2uU4vDS8uoopcdqeLLbRk0GiafTzav_qr2xydT_U6xwY-BOo1G8SdingRlD02gFyt80pCtTvNbpT5wexvUPFmkSMiXaWEWLAerT-g3U7SlGfrkJPrZUsVs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqlHOhL2M6EwALKlmGVEGAeX_jBuMgiPYfUWkKas7SM0rm_reIKvmip05PVJ8eUXcGgsHZq_9f7gFQvB4yM1EsMOKCPk6Ddm511GasYEZ3wLjcpz9-Kxm5ZZVIUeh6rL-_JMvQbZk48eSVhQV0Q-x5krQ0YXDpnGoFKtnOm9s8Jl1G7oKpEPc3_MCnpwzYwDBloyOMwNIStcqHHXTI3wSIyhfLK8oYgxeRvv8igN7cyqRdZYJJDdQFfrvCBOTV1zvczDaihOfiOTjJ5Arzje8LBA2Hb8GUwW-WBv4Y"
+        },
+        {
+          "title": "doi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaoWKynaDnIhjJKVizdFvxjuEiUGlygDgd5WsXxVpzBwEiP9roTtP0M9af-WUEFJDtLilrb3FMgj5LKeq5C35ShsRrjCqbIJvOMVuyNtBuMQKex-W6sFc5tOQWDUtXwA=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEX34SthFOQI3SYTdoXa5eCWbhDcuxWq_cMO9fZr-yvoZ4eOK3yc1SOaIJExuBE1gVQ1kExmqV8gzI5HxPeWIUkIm2OuD_H1Fy3Az06NJE2nB3VoaRGlEfZWcTzNI7pzDP8Wuz152TivyHLpGi-Vg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd61IEh7VXbEoSSGnqxyWz7s7xH9dvexaG4je8VAoVJzJWv4jEsfFPCh-kW1qPr_eBT2pdv5TgyEWY72FyVVo11Z2nBo-YF7LDytWN95tPmIiV9EI_HjGUtGnz-vFMGSACxC4vr6X44w=="
+        },
+        {
+          "title": "itg.be",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoSU9HLZyjjCDWVHAqsIeryftnW1HqPPH3YYD3Ae2Xi0KK5s9tskUn21xKIHCcAYEJE6HbVjIJ0WPoTxojePoBFuqPh33mDjb7Ou3UYto0kU476WqAatvjGExKJ910t23iY7dws00SW_XB0u7w0mVe8pVzkDgS-K3y8h9UNkc9WReooND5A2HJ7FxYl46huHKuaeCi41VKwoOphnzR3jd2bQn4Pg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone trials for Gonorrhea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonorrhea&intr=Ceftriaxone"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "500 mg IM single dose",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 300,
+          "sideEffectManagement": 10,
+          "totalAnnual": 330
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 336.73,
+        "costPerResponder": 336.73,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 20,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 350,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Ceftriaxone",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduced from 100% to 1.5% positive",
+          "baseline": "100% positive",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Presence of N. gonorrhoeae (Genital)",
+          "percentageChange": -98.5
+        },
+        {
+          "absoluteChange": "Reduced from 100% to 3.0% positive",
+          "baseline": "100% positive",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Presence of N. gonorrhoeae (Pharyngeal)",
+          "percentageChange": -97
+        },
+        {
+          "absoluteChange": "Reduced from 100% to 2.0% positive",
+          "baseline": "100% positive",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Presence of N. gonorrhoeae (Rectal)",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-6.5 points",
+          "baseline": "7/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gonorrhea Symptom Severity (0-10 scale)",
+          "percentageChange": -93
+        }
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Reduced to <1% risk",
+          "baseline": "15% risk (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Pelvic Inflammatory Disease (PID) in women",
+          "percentageChange": -96.7
+        },
+        {
+          "absoluteChange": "Reduced to <1% risk",
+          "baseline": "5% risk (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Epididymitis in men",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "Reduced to <0.1% risk",
+          "baseline": "2% risk (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Disseminated Gonococcal Infection (DGI)",
+          "percentageChange": -95
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 2
+        },
+        {
+          "name": "Rash",
+          "percentage": 1
+        },
+        {
+          "name": "Headache",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "Single IM dose",
+      "trials": 17
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEekxJQ2r5vE87HNsHl3pvapbVCMelHCNyBMDUu0l8MV-9n26w1LeXzgcsZgIzUmHbdBFO5wWPY-Bjtau4W1U47aTnKi_Ox3sFT-uEEwvY_Q1TyZssfV-6d9OV5ZJWSC7EbWls="
+        },
+        {
+          "title": "medicalforummonthly.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgcTJ26N8QDtGaA77ER807soPIJNXlyqWBnD2sM3y2rZAoCXK8JQr8bz3OuBPqxVlVwVoSGZ1HfLkjM7iinZXJqn_HHoE0Uk0ioLc1y3PmG-1bTIRnZ4zsEn38ErR6-G7VUsWuhpUKMgi3pNftO_cf15th4HHlZNFcdg=="
+        },
+        {
+          "title": "pjmhsonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH31knQCYeHivUmPrm_diQ2gDY2TMK5wBKLp_PZnM68xYzhY9DtfMmyMRciCSCNqfuDclr-RKGpfcdjx93YqkL20IDpm3O-9DH4Bz9ZnODXZ3_E_jpH9cYj172CBRIVnzbIDgRVuoBS1_zXGllbCXiNZCLxng=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7TPVAHWGTpTbRqTV_2Y2tO_8WTDD5AzjVIvH3pcwlpLcSkAZA2KrQVJg--WifemDDvwhIieIIP3c-kegWbEvDvZWaO_CjaNe5VIlLBTpS1oVewRNnFt2lIze5Xe7nBjj-G7U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq0eOXGyJ8TpEaBSm6Y0A_jKDFSgwf89Kc4Vrtt67O1RVcEs0AV9mlbsmm8lxEQjgILtAmS8BDBOAbG3VBTzKHYau5B-SpohtpWEOu0uqkCUzeXG6MbqPW3FEBG2tuoiDyxK7-GP7ZC-yvBA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpziuY8n4MV4u2OvCXt-D_XEOK9ROmUl3QgDVF8gWBVdIZVNGWWb9S_WCb0aEYsNxfhQLxik4pJ9QyogriJ38ikysjsFPgSkRUgO_pBpoN7hMdIRAXXperhXqikRgklTqj6Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlOkZ0e1rWW5e3Df4k7LtGTo3do8Q08oNhlOHjrScmJ4xv2bPTMBR8iSrwc7R_nYstFPTaOWqUAcj4sxLFDuqEiT2srMwEnFvw4fWdU1lobUWJQHOYWg6gFxCpYQ1e2DfDOrwgCsqn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5Rn8Lno2qbSPsZ4RPMcI64KZb2AWF6ZoOrPnVVzYt8iQO9UCBdOtKbI_Jc3Zp33sdzvXzKv-D9twdpZ6-P9zAB6orZNAgGtNPBnICIexDoKanbp6s-ZLto7cy0Ja8hLkZ7p70Y5RM4Az37R8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCSxVC5GLij6z9-IFuKZaXR5T75LVAjpM92tYFeFiKvVUJCHyNCNivAendbro5vyzYhK2ZsdFkIzkxXOz5Tz2PxeGY4C_U5U-ZSCrdH14Z5HMMtMmOb5h8makBxLpDA-8fmQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7ZMNv8ddo5vZD3F6Qt4jHuTmHAwM5lNxhIsKmjwFzvOtbXv0Nnszh77-yzcLcyt5CAZvJwlJ8MV7Dw1MAfSFxTmA1SaNc-NlD2RExxDzlLe4TLnmfaQ6K_zmUQC3XJDYUS_qpM9kKbHKyVDO8d_1F0KcmJYLaTnpRUQ-hfnp3bbjwox4Zdmh74n98I5H1_yZnaVAjL5t0eFE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG52yAqRLnkKMpUmcZHiZbkDUimlUyuLxcuKADE__ZEvNJMrnp4VhTxAG_e0AUrSwheuiYR-Sucx1cfxXrHCxy5oDsL3_UVIBSMi8cwnnSmQVZBBn3sNYtqfIsVfPokaRTTbec="
+        },
+        {
+          "title": "ClinicalTrials.gov: Spectinomycin trials for Gonorrhea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonorrhea&intr=Spectinomycin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2 g IM single dose",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 300,
+          "sideEffectManagement": 5,
+          "totalAnnual": 380
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 391.75,
+        "costPerResponder": 391.75,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 75,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 355,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Spectinomycin",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 97,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 1
+        },
+        {
+          "name": "Fever",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Rapid",
+      "treatmentDuration": "Single IM dose",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAgGrTc2Yr7lEW8eI51kvN0oPupwqxhylqm8_rnVWI3DrdyBE7kZeHSsZfP3ZKQ4TXO6k0Ur2HwLzMTe0rqZC6cmjRvJ6QHUZwG2V0815p7PRADcbtutfJGrjEKPt0np4dnT4OCoN97TOvhMaso3YfXv4mYJzkK9wzICsJCrrHWvwGBOemWcPJsTwDyus="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUt1zmTS6YFh2O_SDU4Nu_d_LLFxzm3qhab9xSqmhufpp80UyHZI8qB8jxDGl32Y7l9NC9EVNB4pOzJlq1veCf1a16X20Nh2ucKROSOxxiF0SjVfcNI-j2bSHrR2o0mnBDEnWDw2iaiD7nmJlsuoWgB4fMdLXiojJrbNkPLnE6Um1E3HRv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEivrt42CXei0FJWmr3hpegwPSg5pQeKLGP0ktGsQ5CIp0LhMFY-9Y5p418w1vAQGNmq46Q_nNBTQM6wgDxuycisdhNe5eiPB5rB5DK5EwJ8gHK9nlqpUM2ug0MtTBouYsrMgkl5qjzy2YGQs_JweDRQojnU-MUhORQI0dHBWrMPoMRZmxZzOnoiso7TbvWk2ZJq8Bc8UGMzAuyZtpRFDEPWpx63K3Q0KUD8XwimUh07xf4iKVPfEOpz1mkU1NA8NDHy7iZo9JA97rztZ9ooQt-iJAVGsBIpMSUoXd0auJ6RpfnD4Xt40pg8U53pczqQySsdxGX-y-gxq0un94="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvm5TtpsrKBGICMjcfYzIoXcKFzqZ6zK_fb4OWybESEZKVjjbamPpdSTzC9DmtBlk5n6VCpR4arsVH54RWEV9ztQqW9KzLt0UjdrEBSXgaO8mrVpE_6yeUTviwwDQqKnHHD3bS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZah21CK-OGyC0KxfA0UeHwcGkZRIf04b1Zy7TDwjTxiTFhYaeA7Cjyci3uJKeYcq-m4UUqK70w1ej15OLAb0r7iMh3XboWqJe0JUIHbP0RSugaptlgq2e6dw6to3YsVqAJQKxeK-yorvAh_8a4PsBlkWZOPBuVuf61EqXprLz2tgEW5CmKLdeOoMN0AijF0Ki8EaEQLJLVf8M6QPpzHsXfeTfA4WDMCatmutdgZieElamBBECGAcodRuJ6uBjDlDe_ef_GgghKyffg7gubIIHdKnHtjF-XFzJIO7YoQAWpYCn3DgyDUQ_EJMGaH6rW7C_9P6atd7bXS1coPmfkCRhd6k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRlWS-Uv1HqtbBHLymzBaGBP-Nx7u_UgEf2-4MfSdd093AJCe29TdNA9_TaJXzUyDpcCAisgUU03gbFoPHES1CfDzKBdJaUPKlvIh7u0y_-wz4O_1G_9qXRtPC9CT7f9oftklUQWMzpnMOkaOo"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFafdWZkEnsnh4AM2yPmcgqqsSdTDOIDtitChZeXKgtLtMSseoORMc6y85HJva2S-YCnFt-zIBJoX7O1wTTPTpmX7fUgRZ7huW2BJrGSK6wfUiTQGD3P2o5nie8RZGS7kdrqzimuM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6NXAB_7by5sW4ntMsih0u7r6UOhjDIZ12gGSGGejEBQKp05JfIAzFGr4gkbTZ8F5z4RtMirEzVvln_H5QB27FiO45RrJPWlWn5zna0BDFeEeka29bgVZZ2GfxGKRgnSVOH4W8vhZgA7pXHkFkx-_aP0DfxeNP7rFrLeoIMwmIqvfv5OCMblYBWZiFkGTG8qZZrT3-K2629lK5kTGkpfT19dRYRK4kSa7ha9Oz1ufy2NAeP6J4zUxD1wwAPFQkVTBg9M8i6J9JI9pJthjjoa8UOZmQrI8mMEK0lIRa8IKoXgoq4NhofPloMtQKZTdOYK4wYmkihsGYdMMY2U8TKB4ITiRre8elHS-iWRbmvWaS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFvMfr6giw_RtOcOwC5kkGPzAl9V40bG3FqPu7JiZEaWk5_sauHy2hsAdmw-woRbuYgRuN-isrXvH1U3bmk7rp5xFSRwVdPGwus8c4kyygDxygOUXahdiASQIMyT2kNd-ZJQsTcwzXOz7_QcjLrtjhGmTWU6-SVL7sTZ9WXAngnXYHggxT-04aCA0cGtZHUpev2pNeAvBSe4vGhgxjZFvi5foNJVQi56l3eavG1QWt4yNALytJQX8kK9MM1rJwC4LOLUB2zM48zeh2W9sjl88jZxRaPkwKdufZ8TNZE5IHMMkBdJl5Cp3d5VB0L5UyvqA-11wbLCelSqEE4usmXRG8cBkexqrXfsdUdR6zzttViHie3Cz83eplWz18jwmMBCJcABOFfe9VgtKljlVdx7jQdd9-ciPSvA=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb-YWJkALI2ZZ_PoQceTyJ5oAu9U2jpY5Yntz7hPIU14C-zmxIva458W7nKr5-kz_dxVXTXfks9UnD1TD6g5wpYHUjS_oeHaaowIOd9U4emvd7TFDe_HX455yiVWYQIg=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUtHJtNjAVYo0uCsqcgya-Xo7mcdFboeVIt7_7_RkzjgNLjSHuEnhxnlAiFJmvIDzBi0015Yu9iZml15gl1Yw9CV-PE29q6tS_XGxH5aileNqvoN8_acDhBl-3B7SJurRB7KQkFd1epf9r6V3AxtA-NrBpi1bIOouX7UZgKJ7IF9U5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqKSCFwYySWSjXtll4eyp0Is1lQUEfhvYw-nC1Px8hl1b2T8FmbOuV2WvDzERlAtHta8JhjwunR0sqk4Pr5f6WTaZJ5kK5WY1xt9sfN-5lKgFtL-Auwcdon9AY4ZDa1xFRz0XrrrFj3wADxa1O"
+        },
+        {
+          "title": "ClinicalTrials.gov: Doxycycline trials for Gonorrhea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonorrhea&intr=Doxycycline"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "100 mg orally twice daily for 7 days",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 300,
+          "sideEffectManagement": 5,
+          "totalAnnual": 320
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 336.84,
+        "costPerResponder": 336.84,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 40,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 15,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 355,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Doxycycline",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-85 percentage points (from 100% to 15%)",
+          "baseline": "100% positive for N. gonorrhoeae (culture or NAAT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prevalence of Neisseria gonorrhoeae Infection",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-70 percentage points (from 80% to 10%)",
+          "baseline": "80% of symptomatic males at presentation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prevalence of Urethral Discharge",
+          "percentageChange": -87.5
+        },
+        {
+          "absoluteChange": "-54 percentage points (from 60% to 6%)",
+          "baseline": "60% of symptomatic patients at presentation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prevalence of Dysuria",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-95 percentage points (from 100% to 5%)",
+          "baseline": "100% positive for C. trachomatis (culture or NAAT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Prevalence of Chlamydia trachomatis Infection (in co-infected patients)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-7 percentage points (from 10% to 3%)",
+          "baseline": "10% over 3-month follow-up (in untreated or inadequately treated females)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Pelvic Inflammatory Disease (PID)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4 percentage points (from 5% to 1%)",
+          "baseline": "5% over 3-month follow-up (in untreated or inadequately treated males)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Epididymitis",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "GI upset (nausea, vomiting, diarrhea)",
+          "percentage": 15
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 10
+        },
+        {
+          "name": "Esophageal irritation/ulceration",
+          "percentage": 1
+        },
+        {
+          "name": "Vaginal candidiasis",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Days",
+      "treatmentDuration": "7 days",
+      "trials": 9
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi5gEJ_EvVNqKFRES9GDAqNyAulJaErzEkndZSZcFt0cBQ0hPGloJT1787HHzYJXKobwd-4l3LUftJCBusv2qe5JsBYlqqxAHfPyDTlfoFaVOC8Ih5wanvJIpU6ePND6L84lI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ2PFlelFZuUggRR0R1_V8160ERQqiDj5RP4t_XpiVhbjlUZsb5_r9gSMpL1cHiPxKISGov4DhoowZQHe_188SzTnUhrb7Fq1nTwA5I9l8j7WvrorZfp66iSvCX1Xc9Xt__lX8ibE1CsG9W6zcuY5t-8ix2pM1rAcjJmE3Ym0ESt4GxXlskJM8MXC3rvsa9qil662HGOGc0fa4A-EOccBH_F2ojyQ4D-r9r6BaEAhdUDU="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtscoQ9ykugpgvbnngmlQWBF9E2TZKzza-u8WcIfFVdalBDePvySlt-yPhHvKoQ1nR-zhRCsP6hsWgNdGWd9iiYXgUKdUt7LesULQQFIFnhgm6Ec4KGyM9INx4oKFy5u9xiJwsmSxlKqzHO0OwZ9LOhP73v-a_zzezEi40aHEu3SO-YZtyh_MqfFHS299xH3SsLjqZjbq6XIxfVOnhHZMyUC2RrMmvmq1GyIY2AAIgAZCGTgUcgW_ShOHwtOvh2OdnnZQj7CT5-w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4Kq-wuScrd7-aoFUEtVOYzo-AFVeAKBDeEibMYkaO2WigU49lzom30xacr8c9dxfO6ydR5q1ro2mdibWCTch8pAXBSR9AXMx6U48LxUbIbwTxhbnT3VJajbXj-5T1d1_UbXoFgrYameJJZg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXnM1tOIibL0hjPvYdoHEkveNUYPZXt1eTKY1Gg8AsO2Qaph3aUrT-5GEoQFOQMpw1dBAgsCB_i8f3fIw-V-fJlQbeTmWrdr6vBudomtMkI3SNhg2KTFbosdkL7x94D9HssQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl0Mi_m-Y-B10xooNWNZ-Y0xnqi9AzxWoqbDX5btU8Dg4HwSV33W18NXoRhDtgRHY40gaHHp5SwcZ89nVQQi4j0Sd-nvH0CV2Z64skiN-q4-tKTDg45urPVSJNd7LS1Ps2Ju8="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz4HD5ciMmez-3dr4E0igYwEzagSoahU6nK97Cx7V0yZ6dEDY1_5_XdW9eL9wlCuxlArYyIM-zFwZM9B-Er8ZQTjrGI-0vyl1sVxPN6RH19w75pmvakhVzYgGFCMsCB55rT8oU1Bka"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp-Aln6mutXw2aXvi6k0mFmIFnHTzicFTaYqqJq0XczJ48celPPRCA8CtJctletrzw1pD85BJaczMZ35RwhEu1pYFeM3SR88P5WhUzwLUDXzyC2sd4ItZ86MgVzRgSjGr3L_UgjIoRBZIO8A=="
+        },
+        {
+          "title": "publish.csiro.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe7JsrVo8FadtYGytg3gcCYd-3HCv2jMxjsy0d8s7qffAiQfkvZ9Z4onaik2bt32C8C7QFwQPu0G3GK9mVk2Bp7x3-7kPIhzOuhsX1hIgImZuBTjNjw98XaB59gIidod_CubMoUFJDlfYV"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Gonorrhea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonorrhea&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1g or 2g orally single dose (2g with Gentamicin)",
+      "effectiveness": 93,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 300,
+          "sideEffectManagement": 5,
+          "totalAnnual": 345
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 370.97,
+        "costPerResponder": 370.97,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 70,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 40,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 350,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Azithromycin",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 70000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "93% of patients achieved negative culture",
+          "baseline": "Positive Neisseria gonorrhoeae culture at baseline",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Microbiological Eradication Rate (Urethral/Cervical Gonorrhea)",
+          "percentageChange": 93
+        },
+        {
+          "absoluteChange": "95% of patients reported symptom resolution",
+          "baseline": "Presence of symptomatic urethritis/cervicitis",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Clinical Symptoms (Urethritis/Cervicitis)",
+          "percentageChange": 95
+        },
+        {
+          "absoluteChange": "88% of patients achieved negative culture",
+          "baseline": "Positive Neisseria gonorrhoeae culture at baseline",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Microbiological Eradication Rate (Rectal Gonorrhea)",
+          "percentageChange": 88
+        }
+      ],
+      "remissionRate": 93,
+      "responseRate": 93,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "85% of patients achieved negative culture",
+          "baseline": "Positive Neisseria gonorrhoeae culture at baseline",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Microbiological Eradication Rate (Pharyngeal Gonorrhea)",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "Risk reduced by approximately 90% relative to untreated",
+          "baseline": "10-20% risk of PID if untreated",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Risk of Pelvic Inflammatory Disease (PID)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "Infectivity reduced from weeks/months to days post-treatment",
+          "baseline": "Weeks to months of infectivity if untreated",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Duration of N. gonorrhoeae Shedding",
+          "percentageChange": -95
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea, vomiting, diarrhea, abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Rapid",
+      "treatmentDuration": "Single oral dose",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1lIWCdTsAuhYDE3z5XkNMhwHAVlqIv64eBxBGcOd7fDAuW_OcNiadSHhHbnqd3TtKSLGmRq98qC9znfo6jeHYnCSNTDDSmanefU_keDFBgeOMeGWAxsfHmljrCvo2aDyeZhs1v_JbOUkCa5uQPfIfOIayigUc9yY0o3LG7Mgpk259BORVkWRa9HSdHD1cDj1VwHB4AN2YNGeSNq85_7BEArWyMSgwgbURkZn26klh631TJ5sY3iwrUs_9BYZVrODk2oWrOQTj"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhjIuCzhtVFXjoCo7MT3l1IuCovA-wWbTFyY2X7rP2Gez6NrYDOB8DqCPOKRePrS_Ltoczq-B_PhWhqWtjSeUl_XdFijlWQc5GYZAUhMjNRCXxYRRNyQ3jTPa3WqL18AG_QyBKq-9cgpz9ql-bNY6VBIkOcWpDpgvjNfS5nC8tZurzCf1DXF8Pb3pQWPLdj5bL4pezG5EIgHq0Jzb_6ufYXYfQHAckJhm0dvCIEXumirAC59DWdUcXMX_14VAwKIHibnbjsIHp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhq4ZsYtnyzEJjgNzWD3_Q8oWppsSFm2RM5qqIltvw4208uN0wrf7XasbNllO9YhOpwqY-dLww2kcost0rhW3oLamOhWrOpiYmyIf63seQVos0NkpQv14WQSDXHUt-S3l1bo5I"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtHOZpMs8bbwZfNdu0HFRo4GY7eIF2PMW5JGZzm1R8D3Xu7Dq0sIIkC0KYG6g00j7woB-DfVdlLZQEQuwcmYdquGVl0fPBmvTV3ggKh6gpzMTuzTaSlLUg0qDi164J6Z0WGUhfa6SlzujYLh5UVQsKW92cUSZ9dlWEZ_FG"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF-QqBbRlKf9FZC6A_xRjyqeQ0TPcWCdTmwz54yfRqyADhqee2Lku9_Cy0pNS9TkFErmZne-fGtuoyAQZzT17USA0kCVd5t41rJftoumg6XxnfpG3rt0PdOOzRboC43Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRzWjY-A9UJOK5ab1u7gMdlHZuNufCNCF0SJstm_FRmgJZStQPbMIajElxmRD6EbVPCxZH7RyTvbBHd6mqFcFkR5EIjchByScCWeW8fFG_wxloiErDWBwlYfKG2HnMb7KnrKL5rXJn7pupU-4="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gentamicin trials for Gonorrhea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonorrhea&intr=Gentamicin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "240 mg IM single dose (with Azithromycin 2g)",
+      "effectiveness": 93,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 300,
+          "sideEffectManagement": 10,
+          "totalAnnual": 325
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 349.46,
+        "costPerResponder": 349.46,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Gentamicin",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.95 (reduction in proportion of positive sites)",
+          "baseline": "Proportion of infected sites: 1.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Microbiological Eradication of N. gonorrhoeae (Urogenital)",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-0.90 (reduction in proportion of symptomatic patients)",
+          "baseline": "Proportion of symptomatic patients: 1.0",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Symptom Resolution",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "5/10 (moderate dysuria)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dysuria Severity Score",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "2/3 (moderate discharge)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Genital Discharge Severity",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 93,
+      "responseRate": 93,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 percentage points (from 10% to 1%)",
+          "baseline": "Estimated PID incidence in untreated N. gonorrhoeae: 10%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Pelvic Inflammatory Disease (PID) in Females",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "60/100 (moderate impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Genital Health-Related Quality of Life",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "4/10 (moderate pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (Visual Analog Scale)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Nephrotoxicity/Ototoxicity (rare with single dose)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Rapid",
+      "treatmentDuration": "Single IM dose",
+      "trials": 3
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFig9ajdnve3FiZipuCqaf6OYNweA12NU69mm1Gw3vv1vRdlaDgaQjVowvXiydBE3tphsCwuGjfMHaAcwllZf1WrVieW0eEMpSJKBug9SPcVKx4HzC1dPaGS8NdyWS5gM30R_DJ"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGVQDJdcq_MoXptjkYKa9Nr6C1R9i0JREOuWDHHUbn3l6v2nTwE9hzl3gYviVmY0Nm_qR1tCAlhGthwjzMf75O6PC7zJ5uQFut6l6CiUPeCYUyCB7gO9lHEZLeJFrLzhI8isGoe-c="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp6iXb4B2Zhu5HdZY557kWNnOC8mEhqU1P4vABij98vR5C9sLT495l2eYbovsUSCk2rM6dicOx9R0JjfdVyxrnbg0hbhKKkOqhzOFrT2M3Semzkmt05_iLbunb0O9Y6cSGVvMtx8tXE0fpVGA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpg5myHBieh0Splc_0KqLzd7lQhAKun2d2d1Ofcp3_9JXajgCtxIINihgTG32p7khjHh0Wv6j9BhlOlyI7XRFsun4aoU4Lp-R9F9SLStre3Y_4KaZ1qKNLu3tm7hFeUNb7M5xFLe2oNM-SjhCNDdMorwHkRt00g-WOXqIf9NBm4-b5rSVfeegU1g5YfShW5IZqFMBLkK_a0sPvI2YbbSWNwzPTEGl8qquRNGXI-QDt75NMjWKnoATiG_O76hjDp6e3KSjFKv3V2tE-eJaTsRW1mkSHwt7Cns7m1Ck-HDpSBk3AnSOtDu60wgsGJizamhkWB6UEASQCk7ub2w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmq91QTIkHbqNR41s2iDBQ2QfQs7BTsF0KI8Iwws1XAdxe5BhHec_4nsedG4yGgHMadV_T9vCnEOtMmbXU9KxlwGddInIAhV4llEn_gcLn4ShU8viU7gxozl8igPcKKk31vAkjv0Bd1Z4JcOk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxH04woo825V3Qxk-0hZEJNkwbF_ZbasKnEBpv7dWHIRFGARLqegIZGUm3m-GJI6vNxrLcIDEnyhFYpGckR-nFlL4JFOTBfR6WuU_NwGNqGkUZTgL4L2m4GNJF_Ab4ezF_it516sGbJZvqwsmFN7BVwqRb44YKieOwUFAF1zJzei0KxaHo0W2zfz0f9XdrkHEldypWy25216X1i9qamiL2Ob7taWew9g6hOni_hEMsPXKdH2e-m729fzAtTVscWmlNvu9wrtOvNHu8rbTK"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU4zrPqCUcjMjHtTlze91t04zL3nOxAVmGy-HztdOAaPsqNoBtUp5puZllZkJzP0vJJcCH9jDLGKqQCQha_M8L6F4rkXfAqoZRrBscjdyor5cO4rBg4MzSpxiTTcT49uAwVds1ICepuuBEnHLvEMp9twYnsTFgzmLNhopIfT0ba4PJFroJA6M3ZCvBkEy2dIkIcFgg"
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHV9xk_AhSWgsnTiPlJ7GB8R7QdVHj_7HcgdHigTzPjkZIijYipsi7kXRqEn3cw084XbNZ9CFi95dwglQSt9uQSqWnmhcjNKJKAPVSNJBkFiAd7rX27GiPFsFP0lr4hJnbI9WnSzXiuOv4QP_GarwuGgU5OlojXXA=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE83HqUJtcjo_18T9te4Q9d_0R_nsSagZfwanpT20MKPs9__wzqcck8ussJh5C0UbnMsciM3x33IAR9lmZXYnkgO26WHAMhr6pcZT_zzzz7xNKFnSas9gpOT4mDvnZXheyeipAS_i60YaG82kT0ZmhSkGZb"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1wY-slbv32reKBn08IEh_zgtc3FcH_CywzXWs9ZJnTfU6G1DAroxK6xskLVBHtitaoPlbMANLs8RUh82erOKIK1qMBQRmdp-u0vvLjY8JbIGT3gDLGkFYHcEoo0oEdbsg22LGFaUR7lpXPG_BdKjdCdeZQaJ-OwPyOw-D"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJs99GY8plK_mJfklaBUigd_uXA8wi0WkUEhxvtYrVUWyEdljkY6eCEIIp-m5-NN2zqICqbQeMFXrNUnUebzL-yndSZSozIFE1YOo6ObhxHbUX3LhcZhcJM1yZXtZhFZcWuyPX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD80rUs5JUz3yObsxmU8Wi_uCnklJwCLUD0T1owX42R9bGweC7pE9poX2trJpPt8gTqXXfj2TpaqzAkoDSVvIV7mZ9OiEQR15gqMqSqRzJUn0-KeXoi7qGeJ9rdHtkFfB9u_bjlKWwukX44VQ="
+        },
+        {
+          "title": "jcmid.id",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXht2g0SpSLi0FyTLwpwMK9LxFkxBikFfAGy1_Fo2LUIKTCAW-qbKtrb2r9K14c-WWJFyMN3DZdUsZxaFSJE_atCQYmdFlEOqxP898QZDT3MPHrNaKVTFV_uymT0z4FeBpxTdoM9v85e0KYlRj-ABgbkYX4F2X"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cefixime trials for Gonorrhea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonorrhea&intr=Cefixime"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "800 mg orally single dose",
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 45,
+          "monitoringCost": 350,
+          "sideEffectManagement": 5,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 454.55,
+        "costPerResponder": 454.55,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 70,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 45,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.04,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 355,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 400,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.04,
+        "vsComparator": null
+      },
+      "name": "Cefixime",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-95 percentage points (from 100% to 5%)",
+          "baseline": "100% (all patients positive by NAAT/culture)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urogenital Neisseria gonorrhoeae Detection Rate",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-5 points (from 6/10 to 1/10)",
+          "baseline": "6/10 (moderate symptom severity on a 0-10 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Urogenital Symptoms (e.g., discharge, dysuria)",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "-85 percentage points (from 100% to 15%)",
+          "baseline": "100% (all patients positive by NAAT/culture)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pharyngeal Neisseria gonorrhoeae Detection Rate",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 88,
+      "responseRate": 88,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-90 percentage points (from 100% to 10%)",
+          "baseline": "100% (all patients positive by NAAT/culture)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rectal Neisseria gonorrhoeae Detection Rate",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "-4 points (from 5/10 to 1/10)",
+          "baseline": "5/10 (moderate pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Score (0-10 Visual Analog Scale)",
+          "percentageChange": -80
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Rapid",
+      "treatmentDuration": "Single oral dose",
+      "trials": 10
+    }
+  ]
+}

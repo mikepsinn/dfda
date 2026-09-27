@@ -1,0 +1,1093 @@
+{
+  "conditionName": "Malaria",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:03:17.758Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEenel1JpunrMv6a2AJkF4PuAEmf181nzR3DKe8r3e51jzfh-gpuCfrDkavmECzWimrisfH1PMzaYO7bO7pFrcnniWaSYyg3FMX5N_6LMZNYVegegprzBjRaVG2Q3cLHtpZEQFJ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXWI7hovoTuKiSDmrCAy3h0c2-M9W0TTuv5nrQabRAZZNQEL5JuqobJccSxMh9r9_yiKfipqib15kkrxpJGSjkonNr331dyrAn_uCVsEgMCuqEGQl6Q6f1JI7taZlNQNDb_g9CNrSgZXiLiQdqO1rIhSBjZJ2IMZ6OJikjLFAN_h1V9V7Yrynp_ylLdJEMHrQDpfy6FPYC0__ogCSjsMEby07m_6CB0oV7oC51NgH6PVD42ciHvXighGPb3Pz9qgF2-RXOHRhPHQGHH8UYreohJ3paXidIx0ZqMfrijZjNOrwYR4Jwd0lxRcQnIBlfJLIDpCem1XEwl8yTOLhGYgD3Rv4v_iYQp0LzIrT1vA=="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlt9KienIlH0UlHCx0DPoCYxOMf6Bw-cMC7vbBbZzfX1ZBI73Gb7JxqWPum0Vfb9zEGUHurb428ahL5Mhtk3WOcR4WLXuUBGu1vKnmpFLgndu0tpPFvtBEQjc_eMftXTPEZlaF2EZYD3eg0jR-2Fe2Wdi6sYX9td4qr57AftbSK4EZK79aV4eebafT8xNiqMRkM9RR6wR5qzmqZSOybYUUnHwW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzW-b7S7-yCQmbATFzg0jWCKUTkooPzyB9y0lEhaFzxVGstGW7HRddJy8mWAoaQfcGLY5ps08Ip6JLOuRt-B-xG6LblP4jcYiMchEB9qAtxkT6_wvHO4S5tjuZS8o7ZvRUhfnr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQElJvv9bNaO96dzC09ETyio2c71yAx2JtG4b2PIxlGEmviAYU7TXSnIHJHEc-uuyiQQPaNFDKOWF-rFo5-1pqggKcsyQAaKph8vntqNhXIyk21TIQ0oT9E4v2dCet9bjBM_okFoL95rekhb7niiCWIdbnkR6lSUvTs8FriSnKoMeiLdJx9SBNqPjkxUkXsVptq0xxJRF9RpTfxsxU8oFvZ6IwJCinQcbYFPJVYE7ZadQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXKSKWjQE6eB0-dpSa8urzPp5yXymB_FsiHvn6nnjPFcT4ktk2WevfcXrZBMMkHFQsdSTstcUJFU75BSRirjvo7Ulr0MrhXlWd02ss9NGmKo5uktg4ENZro_cXVMY2kTo7nyvg"
+        },
+        {
+          "title": "cgiar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7vsbYO9bbmamMXJXZw4V7zEDsA261sNRohsUNDcvzMnf25fqoA3-xPZA8V8jSbN5j_SOoJjFXFdBRjyj2U2I0DhIULRDemPkFhjbbCbiUNrcjgS4m5yWRJkpM4uL3zLPinBewlgQTPZSUMImv0pbVyaEkF4Oa-_0VxpRPZWfKYNQ_smGg-QU4wPbx8naEVLEMtMp7fgsU4hzmo-NLGVNQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhgWm7uJ-wbLaeU3mtQje-hmT50N6Tg-03e6HJqqEsyGYG8ZtBMaDNvj8-TbT9Gf2ZrIvxR7nRcFEC9wai5A-XhnmPnXRGXAy0ARRplfsHwiz9niSk8UiFTYiy3NUrwAqjZ3CR"
+        },
+        {
+          "title": "ClinicalTrials.gov: Artemether-Lumefantrine trials for Malaria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malaria&intr=Artemether-Lumefantrine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Weight-based, typically 6 doses over 3 days (e.g., 20mg artemether/120mg lumefantrine per tablet, taken twice daily)",
+      "effectiveness": 96,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 70
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 72.9,
+        "costPerResponder": 72.9,
+        "icer": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Chloroquine (in resistant areas)",
+          "costDifference": 8,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Artemether-Lumefantrine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "- >49,950 parasites/µL (often to undetectable levels)",
+          "baseline": "Parasite density: >50,000 parasites/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Density Reduction (by 72 hours)",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-30 hours (typically within 18 hours)",
+          "baseline": "Time to afebrile: >48 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fever Clearance Time (FCT)",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "-27% (from 30% down to 3%)",
+          "baseline": "Expected failure rate for untreated or resistant malaria: 30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Failure Rate (Day 28 PCR-adjusted)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 96,
+      "responseRate": 96,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "Hemoglobin: 10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 9.5
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "QoL Score: 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (e.g., EQ-5D Visual Analogue Scale)",
+          "percentageChange": 36.4
+        },
+        {
+          "absoluteChange": "+2 points (on a 5-point scale)",
+          "baseline": "Appetite Score: 2/5 (poor)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Appetite Score (5-point Likert scale)",
+          "percentageChange": 100
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 20
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "3 days",
+      "trials": 223
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-GpXdlZ_Aw9n58slQK21mWBnMhFB-m5NAmiQUe1ro1xG4UAkI2Mx5QjHo_RYEPtui2MYTcDZO7_4xPcd05Zx6mkRHYkQeamUAnviSS7WXyXW32gK9nh07K-0x-sQSDosLfIBV0Auw6Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsX6ug1h-jHgNMspRnuXFytMG9oQdCysIgpVkAgNAxvJrh7IiRVsb8zMBijbYOeKi_qcK4fgn2krbyjtOJEjPvNI3-XHyInddrUGKiCw8ywjVfeV-ol4buO73B3BY-5eJsFxhFOvwM3cKlW17G08Lkuy9HSkbmIijGyTAE1ia0RByYv5J7dVSymJCYgtq0_ug94Xud3VZs4v7zKIUHhdwrBZK7quQYpbZwskQmw919kn0Loaap5X2fksRmTlJ49skxKUV1w8LxTjqiP_RRQx7APU7IPtwUEfG593qm2rTdkjayO6bSfgsapUmcY5Fng8ZVTXAlRv6DZkmaMBG9u6bLIBBc7JC8-pJhHfNNUsac0j5mVA3Ma-qDkjkchEBz61eklzKxMg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEALfDLkRHRRAHWs7ClqZc90C4B1o8kM1KXLfcv1k7P3B898Od1aWysTWBw9oN_8Xr2gE8-p-nm_r12ma0AAUAWDPsYAU8qiBvIWHOlCu2XkRo6eey56lZebeI2gtf43RJPIUbJ25agE751bTU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAcGMp_TaMOEwXLV0k3YoNybfmKHP08TF3piLZn1jAhmb12bk52E5saX0GEwO0Ts76hAPZi0J0hHlDuQ619VR2qUDA68c6lHQxCDKyK8CEtuBYCcNPLHO_yh6lgnuS7xcU8exZqAH2lyrj4OwAW8HwBcF4LzsDTnMfxsWqy5bQZfRsKUiQ3fTlTVsmmSEbjlV76TtBtdui1wL0LnVyrsID906fPH-UgFgdPCl3bgGaJ6Hp5HTzdBbEe4Itvl9VIg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqpZPjrSI67oPoly588SVLTMNAgdJKqYBrU5YPkWNNz-t-OhbUooQmbouXdTBcODp9LykY96tloznOXG-44ohJtKNDF6UeON0pZ3pUigT-M2HsJ9sG3Jed9Eh3UG5UvLsfknWs"
+        },
+        {
+          "title": "malariaworld.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKOgqwPdJMjhgI060g-44HEhmnryxJ_wpRj-RMhqPTTKW5fZJoa77P6gmUFzHeKfHK0ethjHFJbKxHvXwx13wk_6L3KDrC0dQAxd5t3Fgf18bN4UbhP00qJIW_EcHklIMvaOCQq_kAWGUr-FhGW2J1XFHhyke9p6Nvp2GcZFhk0hn5LK0SjVw-QyQcyW5145XMDFGDUvRdOjaLMZRsH_5TT-yUUIEG4oZrEbhR-RYzx2Uk8KphHIhX1EjFPkZe92hrAEMYTey01XQhCPLJC-ykOzis8hAV7-Bk48eiUqysHJuheHIvnEQkCKYa_6TD1y0LtTXd_A=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4YgMC3hNVhXqzXfSaV_L8wjXODXv9O4huEbY2PfhjCjgX8FZJi2BdxFOKfZZmI2avxo31zrZqPP1LDMv5Rd_Slf0LUIa2_onM-wKJ6Kewr5mV5CGBDh9x6s-jWaXV7cwEHbiW7pJGSZ9mMw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvMkTu9V3Tz-Fgp0G_jQ_87rToAp-s_ZuKui5Y7D0q8ye1axa3tlNYSflOtrJHC8BtZ_W41MQtJhuAyH3dwJYANKPUK2K3hTyxFKCIxBbNxxB0bSZTn2OQ6GZi3fR4eJ2pwuoGXavftV7ON6Q="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKMjulsEQ5zJUUVLNyfD3imwqsl4euEVJeBL2tKA6Bl0iwqBlrd7iVxEsQOYlnfaxHHfg0K8KJTSYodNace7dtFjn47SBANzEo9HUzXLwvGc2Wl5HCnW3FozsJMRQ_USL6ZOvwwh_X2A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaucA0wSHdPtNCvBRUuCCqvfMzezqkB3Ng0DlJvzaTC5O4Y5Ycxbd30gHbVc0Tp2oDInZqzZxFbk96lqwkwACzyEBzAHfz6Ly1FgRDOBcayqujFf65cYGgz3fI-yzp-3mF12cPspQd0xhnSeQ="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUSNe253V-rezgU70kGUxY655WUboN7k3aHS6rzzmC5yGbu1zWccqVe0K9Boumz_NA1aNaSSCi-fTxvz78fIwgYJzhuoyXrv70RfMwnCy-HmrvpYZGDScdJyLIS9vBVFLPCU7RZLz6TZE7HK5rEr7DmoKWLsls597GT4p0Da-WROKW5_6g31Aecw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwP1rmSID7843BgJdTC0fOIkcC9nGr1lJ8Kqn_oriZp2oIibj4TihlbFFUIPc4ttKDUxiPo77qlmR0Dqqtnu2mtKVkkWB37qpPZVjLETJeAR-19w420zJyLNsH8_SiDUJONMaq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpodXnXixV0M3lyCX2EdoikR38mv6ld-3Em-oVITQP5-D_E9C72uXonrL_2-CVCmd_0ByU02KhmaYl1n9RI_5bEZPG82UFpZNxKcPYzsaZ0Gr5K4If_lfsJ6N0cMoPbbLuA7LQBhqBDiXIaX4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4YrNzyuUyMUKVRj5ZxcSIlwI0dpKL7cD-1SKyuL7o1pBmLWXsHcs3tJkCZVEc2sr2PKumw4bhwIhmO9CoLuiLaAe6tQE1t6LdrfjfWQbV7wtdY24UpHEwIpcI-zgH4hsUZ-PrM4JUzouV9pQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuKQRAgRK6Ys8pWjnzkVf4ixJNIJsHZROdyrq1OlM2uwZzUhgGc477eHx_AADN0LMhMUO4of229KXBcIEMhvatc_JeJZM-VrTruFS3b_YqfK302fzqxMmz8jBJRmGUDRZX_2f-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkD9vInCY4JYXxnQOutKSNeHA5-n-0FJQ9cFb-UmYBkYVJFjLK5SZrbNz9JyqYPbSg8agqlGlIwdOKOQJW1a9vRVm_z54WuWr1SAwv2Q1OvmVQdWbD0YhUJprost9pk_DQtvN6"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAzu4tDx1BhwyONl_vXHEv0CzsG2SynxxE7lY3zJWHHwW9pcPvrjXK56ojmqjb0mEMQENlKi4vuxQHKHxXfh5gVhjuO9khzKKH3ii9MkSL5PkByjm-WQrqbTeNhC5ZuMsGiH_h57DGHmYn9sCiuX3jP8Zp5iEPvce8O1Fmweqn9oc-JD1pTZ6kLfYW8QZjlcBj1iBHdWwOqHC0T1ZfNfy1eIzVVv4mX_1MVMADhvDKupW0qVr40LNHqs5ufYYa9EbKCzTu7Mwt9Up4oSSeDUfaGnodQ3pcous_7lSwSBgnUPTRsbdWUN1IqMlly1JzEiW3BbqEM48xdPWmfbtvI44WBDFYisim7GLGgUipuSPVX-Y="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ9VNKPp4MVO13UEZ9bRQbV-JctHginzXpNea7RAuD9T0JLYklLjcdREoMa8UDj2Rdn_6QJEEZ8gf7F555Uu9GjheZYHJE_hrNDz-CroPmUINNh945I_sjd8BCxtxy-4GGh4C4"
+        },
+        {
+          "title": "ClinicalTrials.gov: Dihydroartemisinin-Piperaquine trials for Malaria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malaria&intr=Dihydroartemisinin-Piperaquine"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Weight-based, typically once daily for 3 days",
+      "effectiveness": 96,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 70
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 72.9,
+        "costPerResponder": 72.9,
+        "icer": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Artemether-Lumefantrine",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Dihydroartemisinin-Piperaquine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-49,950 parasites/µL",
+          "baseline": "50,000 parasites/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Density Reduction (Day 3)",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-2.5 °C",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Oral Temperature",
+          "percentageChange": -6.3
+        },
+        {
+          "absoluteChange": "-11 percentage points",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PCR-corrected Parasitological Failure Rate (Day 42)",
+          "percentageChange": -73.3
+        },
+        {
+          "absoluteChange": "-25 percentage points",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Gametocyte Carriage Rate (Day 7)",
+          "percentageChange": -83.3
+        }
+      ],
+      "remissionRate": 96,
+      "responseRate": 96,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "10.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "3/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activity Limitation Score (0-10, 10=no limitation)",
+          "percentageChange": 166.7
+        },
+        {
+          "absoluteChange": "-24 hours",
+          "baseline": "48 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Parasite Clearance Time",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "3 days",
+      "trials": 143
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXDMRWGkVYIax0G7gy7AXCyuspFZ4-94QkYgxXStQxhI-joTUJeDyzpTVqtndICHtYPnXi98V-9xzTVMkgAzoc98O1Z3u71VUvtDnxdz-a_ZnPZhE6FPECpFuOt57rF8FKTzWDHkqyXXUmLkuvZSUIb3wGwrDg4tS2eQGwIo3SCLF3KzNbfHggJPq9NZwMjY4V-aHiCJ_AnqiFGqbii8jHdolLvuDzrqku_5TgCpV9LN313_7mXZiDTsAZCCX45UjTTTp_v_nc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBwIdGmQloYYSRzK9fBKEZQXlXQWEbYNxmmjHdLfNZ3ck3cgAFkO7KuDBPKba5Y-xRj8BwlzuG3cAnCHtsbZh-HdCpFEsgPPI_gxlTSozOFLzBQW8Tg5KkmPVWYcrOEOv5SXA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFY7guxr7lZ-4SYzuC3a0uIu0V4hK2w3R09xPy2IGhGswmiLci-2MBZOV57Xccvu0xQvmlQqrm_vdia2sLRDv-apHRB-oW97HwpfEbfF3eV1vjZ190szYzjwOEJl2XBISzmJ-nzR-NLxZDsr84ovHCv66tG9G66atzTng_kHyZStNRObCGG54BDmq9Hld1bEMu4KDy-l35kpQEquPRfa6m9c_8NR_Rr_ImPBDwry-u3s9qc5i-Zwfc6oXhU"
+        },
+        {
+          "title": "ajtmh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5JdE1nj5W4zQZ65zRROxIJUudHrNOrz0AlSFQTMhEfCNu_c06al6DBTjoKGdN6Rb__clEmdLlssUf15IJxfvEzEwekMfN6ZyDQ5KfwaWYvhwHuStdSsupCRcP-wMOL_XzmaFR6LDHlkhUgQtpwrf3OpGr4SFDtyZmqU29"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmGKZXWp9gRRThAh1UYrs0AzGQ9fgqVoYyxLZ573qI3vaasD0d3aua6xJ25x3rkd3w4Gw70XUFt7CuYnnYb6WEQU1gU7Hva7KI8KByJ5HmyeCuyzL46p3nn_4KdQkF0LNYTShVWWYC_jWJYA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsK0L2GrdviKiPqRR2aAKZmZdPOmBJQ4TNRNAG51sDygUcUzHemYo1r784YDtFmO9vKG_Urwbp6HsVKcWe897hKjivCABzD2nuxI1VRj7mdb4zQAn2f6jaUdVyrEGGeciW3O4LkAURPllJlA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoCxFXfCUsyLd8FjXdux-k1Qkw5nXubUNuJtndhKbr4kiLTOBvvzhX97cVlrCsExsNCj7yZu2cO3DopmNh0SbCyQr8chZBC9K_vKAHCGGcjNwi5PkjpooZSf_jsj1aBDpK8W8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgNRyWIyAYLdHQ_bTYGcNC1hgzecJ7lUj8DehQAVzC6Bsv7utY4gcTY5IKW5xQOaziUzrQ6KdLs07AWNpKgJ5PT3aCl-lE2nogamvUCHPPdigqRbc9hdldLCO0GahrekeEytqMv74="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL1DArU1EYY949vC3K1ldRTYvlYQEDvSq7K_kwRKxeYpoXU5PvB2VRpdrl8l73YnQIojM3WufC0oToUBgyZ59uW3Tj7kUH0RyZ3YJjWBKsZBDmHDs3CPoR-nJ2vQDcBFBYUAivn8LhpXhm5ntPDmw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Atovaquone-Proguanil trials for Malaria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malaria&intr=Atovaquone-Proguanil"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Adults: 4 tablets (250mg atovaquone/100mg proguanil) once daily for 3 days",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 50,
+          "sideEffectManagement": 10,
+          "totalAnnual": 135
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 142.1,
+        "costPerResponder": 142.1,
+        "icer": null,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "Artemether-Lumefantrine",
+          "costDifference": 65,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Atovaquone-Proguanil",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-49,950 parasites/µL",
+          "baseline": "50,000 parasites/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Density (P. falciparum)",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-2.0 °C",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -5.06
+        },
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "25/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Malaria Symptom Severity Score (0-30 points)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "8/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity Score (0-10 points)",
+          "percentageChange": -75
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "11.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Levels",
+          "percentageChange": 9.1
+        },
+        {
+          "absoluteChange": "+30 x 10^3/µL",
+          "baseline": "120 x 10^3/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "9/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Score (0-10 points)",
+          "percentageChange": -77.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Abdominal pain",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "24-48 hours",
+      "treatmentDuration": "3 days",
+      "trials": 36
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDUCoZkANO61hErt4U-K4iilXy537BKvrA9r_29vX0WQ5gRn0yBQC0sHa8m51tJ5SRxjl15k-AgMjqiloMCzi8iX39SZmm5tFoZcOLUOtx6lwvNZRhTmBjczgPWaVMYro6cuU="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlCsnzz_YwMIuxhm42TGUYoKfLVs2w9tLnia87f_6gI5RJYXF90hNrsGDXFKHO7Kq9muqFT9DDRsFOkQGab_Iith3napPjQnCYPDrVjyrYwkzjLsaaSBKaAQ0YVWw3h6GPKXAjPgv3QNRsIKblvVyX2IMXfFmr6KOGd1r8snuuctSBjw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp_y7FWu6zDbOyA0S9A1lQWtciS_Qy-Uz7DcDKh-I5mSeGOfQ3JYT9h7HKRcL-PIfJZlX3BzPN78AYRsY2jVpKTFRGHQMxk1p70YHqxRd85Sbz-42S7aA2yY8P5Dhmaj8tDW4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDlATMxcPYiukQBp0DOqEPgP16gk-em7FKHszOWa0ksaGDcZXlfxj4Es7YX-KH0CDWaUkQk6JRoaQndvsRtxM4nFSACmQ6FpzBaoiZFchGMi6Q_OJh6undy4b1D-JWnZ3_sSLaB3PpOYNstA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEg4cmRriFTOiF8zLQfrdM_4aKoN0op2643jJCL92sf3ljrtEzfu3gGbXByEKWDEgzIroO-inUEHsQuVdcxGTuLTZpUMtw-zBdjqXZbFU-mJhbpHRzqv8cVppZbMiQgneaZgtKdBPEE"
+        },
+        {
+          "title": "kffhealthnews.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD3YuvAbNX787PAtYFvppGN5djjFX99rzaCd05uODxUCqJpDmfQQ7Czbz-uh4eUm7K2b28lAZbqdUe5Ma0eBPoud-Y_zo0J_dXirdSRFdeacTds0ksSWVSr05jJKmLfSpLH0-LqkuPmbJkTWoGlbYp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbhx02_FJNs0oR7Ycr81qs6ojExb--8-Ijxqg2tCZkRrhiwR7Imjtktsp9j_iGaOF3kxFaJRWvgUxt7CRio9fdrCsmN-UalRW4iuTeBl0FEOu8SGMZ6yoIEBM015vUQ9EptOs0lt3A883UYQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT5Yr3qTJMayP4_Typq3-ZFHwJycVuboBx50lbhMnwmxrdgknz657Quavm4sTAocFWW-3cqJzPDtnoeueUgxzv5872gqc0N4drqDJIX6pRuopwtQ6jGiDXVVDMkivIzMMVRUjOQItnPOeImQ=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHls6F1V-8pfT9DwLWAaLh7RykTwEMIG7dBJdKX1Rz7y257Sm5-tlQX53MsWUtQButH6s7zKRKhnvhyx7IXGs2qMmNIxEDZPE1cLOoeeW3SryMnbdrQfsnNikW-h_4ste2xBRVDKV3ryY_KU2PfPFofpKYIPWFsn_o2Dx4PFH8BftR0Qm2m9X5BCIQ4F4kZki987sQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Chloroquine Phosphate trials for Malaria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malaria&intr=Chloroquine%20Phosphate"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Adults: 1000mg salt initially, then 500mg at 6-8 hours, then 500mg daily for 2 more days",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2,
+          "monitoringCost": 20,
+          "sideEffectManagement": 5,
+          "totalAnnual": 27
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 27.8,
+        "costPerResponder": 27.8,
+        "icer": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Chloroquine Phosphate",
+      "nnh": null,
+      "nnt": null,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-49,950 parasites/µL (within 48 hours)",
+          "baseline": "50,000 parasites/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Density (P. falciparum asexual forms)",
+          "percentageChange": -99.9
+        },
+        {
+          "absoluteChange": "-2.5 °C (within 24-48 hours)",
+          "baseline": "39.5 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -6.3
+        },
+        {
+          "absoluteChange": "-6 points (within 72 hours)",
+          "baseline": "7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Malaria Symptom Severity Score (0-10 VAS for composite symptoms)",
+          "percentageChange": -85.7
+        }
+      ],
+      "remissionRate": 97,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.0 g/dL (post-treatment recovery)",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 9.5
+        },
+        {
+          "absoluteChange": "+0.3 points (over 1-2 weeks)",
+          "baseline": "0.5 (on a 0-1 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D-5L Index Score)",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-7 points (within 72 hours - 1 week)",
+          "baseline": "8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Score (0-10 VAS)",
+          "percentageChange": -87.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pruritus",
+          "percentage": 50
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 20
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-3 days",
+      "treatmentDuration": "3 days",
+      "trials": 131
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFva4oMXNy7YK9EBIdsyMlcrFgt9OotxeYpZrqrVKcv78LJj3p1uo0DW5p_bXNoytYO9OQ4PeV6SRxtIUZsWVWPdyEW5lHeaQQk4oE5f5wMMZA41R8USL3sAJdi_eZY5ZZQ3K5UpUNSdmfcU8Y="
+        },
+        {
+          "title": "iddo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsX5espBtIlD_yt8_MBK6OJBajt9IkyGD4oKQTAi1WEFFv2-u2i61bwV5M95uZZwxvknc2nojfqi7aK2VS6mh3Ss1t696VRduoDNkFX20CqqVGr28KrIKO6mNmvj3LxrcWtDNyUZc91A2TVaWAn8gDSMOR9t9At1Fqt2ycmMR2YKYTPZNGkklA6HG2rqRvxZf7-mGxYmfX4gUEBN6-xlfcNWk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv_6SdNpFRmxvb0TaudheFSsWj1nulGLeWtJg58ZXQmoG8fVGRcJpm0vKm43Y2NuE-vftOC6N9ffcDpf-27wdXcro4ROK_oXwIw-1yxIhploESDDo6hSB80pyk2G1thrSpCbWi"
+        },
+        {
+          "title": "malariaworld.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoREJt78Ic6XiQCF3Cw3e700LLJXyCX-lDYzMnnRs7UIGkei9L5NN1c29CPdOKdTSvHDGB0tORwJFNEW3MSvaajkR2KDW7dNatVMnLW6YRgOYehfFemIe7MMAHaXsrdpY8GY0MQpLft5LaGRnw03_KL0_gGJ0pCHOaYXmoNbMgGaciitdAh-ms6e4Olk_HJIE16I74Wl_fNxEXORAZsE7ctLJZ-6-YFUrgnIYn5xRzMc0eCicNJQNy-hSwM-8oRyAUSP7XjJlFb_m-iEBvu1UzuaCLWCe9d7P5mpIuS09o0XcnZ9kj4W0jrsFM3TKp7Ac7rn2JzpFT6BQ51UOk7XN2cVQWZX9O-0DYzsFb1xsvwg=="
+        },
+        {
+          "title": "scielosp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVRJAkndx6MllFF1q2rFavh_uJCcoY5YPGKbs9hAqXUdgUSIJBbEHNk6IMvX6nmVttIxZh0Y8LtKFhFbUQ-oXGRQnAKTuWYCC1fMRGMsNz9d99LL5PT8AOPozgmsGzYnkP5JGAB5j-QKTNDmRB3Daf6K3jMIWmi9vIBl5MedFgjiz5v2Don01p"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECeJXd3VzHaG_OW57N5GD8IRRWqU4KTqtNLpHNz_ZxpCqCDxX5c-__q9bQSVEnIi-ZPRaqlVvFPLpmRQFZlIo5MC6-Ap3mGgpAMqUdfjQlGE4Gm1FXshcV54KrNHhL_MVNiQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKdorN9HnglX0YP1i8k7DJrlwX2GaVYj7XmoED7L2gXZs3Cc9DmYwiu1qEZhc8DfC-mL-Zn-khASm_v0b--wLB3SvU3TFKZrwqlSzaBNTIStHfHP_sxXWxRvl-MKoTYJY1FjKV_MoXSLcSwvfyYx8QrC6RiSoJZTrkPHadynNZ55qUUVVzgDGoCpWVYUoiY4sBkgUYxMw42Iue4OHgDHvtajvPvmfOo7U7GFJsZCBY2pzhy6gVl5Kj5FgJVrpqwfOsWGx21-6MsZ3nY6iwceFWz7SmGUsr-MawUOZJwWW9MFJi77zo4fanuysl6bYDKmzhQCWPM27BEvAx6jy7fkuX-7Scy3WfR1k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH06ma11oRzcZAXHtyDwthlcQETv0Ieuy_o0ObmNFApE8BKBpvpJUhtVW9-l5DaaZ80Pif3PzXjMNXRSnQIZntCpT5_xLA4pl_3hgyvtBA2RSLGmSs59p4Gf0Zem8BcabhQ4RRh"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1EkNbDfZKvAVahTWWVVeVaxB8Tlwt0VoeB9PKxOgjrm5lyiNWfDUd7GnlkELcYxOnj7_Wh__UlxM1VXloVHTQzfIdfEEStXHgwPjLXvbFZgUrFsBzOqY7X-BSWbNXYBkpn1us"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGB-VUpCgifka-19pq1jUNHtpEylE6YC1oyCBhi6S61CEvSp-socza4hpNvxK8zcrMlzHdYS4WW8vbcGocz1uz0vG-ANXfuDKmG1yG6-lmnL4q-E_7IGW67TyXBDyXunKdljeQF8uAzQskcytysYmfOtfcirq5zTLlvTa2AL6maeU8ibdSIP4vKaRiL6SfZO4WyLtQCuR_m8_jig3ltaoOaggHWh_KaunB-L8FBP2Zx5fVA9DxgMBqPeDamZeYm5WOl81tiwS88HiHr6K63RI68r5cEKbDx831aFONrpcuFY8gl8QCu-UjHrlzbV44x-uagW6fXo9p-4LaC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOQo7qt-N1dTZ7QUTW5w8ZlPZycoGeETb4hAYfrGdnXHVKY2pNK2CxJUGsTm7ifNomYD1GIwxIFgZc-JWMnhvTa7kvhmN2N5QwSEMTJbkiocROfwhFeVDtPdmx1damCUL7O4Cy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaB-W7edOLHUD0u27NOoraCcFImF0ERe_MtetxprK--nrbKKpk8_faWfx37m9I41thIAdUu6ylgIVnjzpa02Ucgw86CNK4JwbMv_0xORfHWWc6Ymj1ak_oTyh3PP2SFvF8zZG26KC9Pom4L4eHmV8QpdTWjvnoR5mIjy7kcFvAiGGFyRueXzDtUREyPQa7nVxd_uaIGEsBJQlefyEA4suod90NopO7-M4Ka2aMcIV8K_1yy-68qh3ybfT26NXzA3V4vsvR79vsFoztTxcu8nm6vwdqfIxbS6atJfTTBqm9UpFSgLRWDud9HqLfijEcuqL-AZs7l5D8A0czaygzJs03rRyDWDTrKaLoz4PhlWAGBtMmM_UyQu1IiTsPXWwKZmfNMtH_Bfk-CGp8Aq5Sm8Ciko5Q"
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtM-3AqpnjN4ZS2u-tQKJjokg831yYfxAZ3D1vlvZJuGHAxIRbSGr1--_FGHH5g1cpO4ki_oyh8owTvcxseZIeVNvtjCxgkRReSgwaO64VsQwn81uJpraaqGOU1Y5_OikaufoM2hivRUyRSG8trTHw9wpEdv3aF7nZax5etSyQkVk0lqqN0Y4F0nfMsP6ikVZjEpVobyaun10TEJXBkty1cw-oYCJuCWR8U-QD4HdLB6_QonDyCpMDfxxzAX3BdHPkUHHeL1rBElzUHqT_Yk1Rq6rQ6tuGwsDURRZOHLova9-reFsCWBef_IfDAMWRTOCIJ2YyQBk="
+        },
+        {
+          "title": "ox.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPZkjrF3AmcOVYgcm1nvJhzxcZu9TNWFMKLf3llO2kIB-0CVlIeyelfEFTXG5NYkem23ZecXB7FdfpmEVJMvv7eNlmd8W5SImm5vfgPlY8nGcW6KsxzO88bzq9ONW5BRhAdzzYWKZr7boK6mhqFKOXmgk8THE="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHth5RZYJ1sjBAgWaNPFBGLVUcbpYu_m8uz8V4YdFqo6yiRCRKX1LEk5liP58Zu5zNk6Lp9gW_hQ9LfXcZoMtYbMRcRB7B8D_eaGdmLEsU-GSLQ6s2ZbPWdVQFrxrWheyVmYXm__EAicLzhJmxYBEZ8KyxzTx6W-va1dz7wt2wtLVKUXrj8Au0D_Hy2Z1qzEtdqYx9PfVpf2MPjf_Su206ZSPddDJswSFJd3HMVd45uDrjUHjxcN20Zm62N-JmJJCnpV5o2c00RqzEEvUKJUSA="
+        },
+        {
+          "title": "malariaworld.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBFABrnXbncI6SvljP1ovsQFKyuI1Nk2Pn-QVaLG-dDTUFB9aCYoY7fNexcuFcDqxAxuY2u_QC9XfF1gA-ufD0ffyM_mp4m93mQe3k3Xi6AjsSILCHKolr6QaA-eGydUEqUkPaPXFMXfF0hK9aMZco5UIFoJEQOW5jfuokYl0GJqTl1PassQUjdOXEoAfdt7gMw7ODzP7-xV1BlBqQiN0436F9v1a7sC36yLNFpk-OtsRiVSnjQzbjTrBnhPtJhdWLICJeGZKLpJcMtBg4q9AXkMRnLEHIf0XjMY8XDxYMQMPNxIUZTWFRelx71cmwGbExF5X2"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfL-8gXvSP4lncjd4V78zD7zMKfpUNKErYNKyNMM1OGi3PDFcme_Gx_iiAJR_cjsJS1fgUzxYV9KGsmzJQv2W4bf8fEKy-ilXue5-nMcDYAjtlKKdwkpV1cYJJG445al1J8XeMrw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY_7OSVxGjL5_NoSVwchifur54YvRsVeexJq5pAp5OleV3y3VD7fp9ko36i68t9_ozpITq0a3oINlhC9cBfBr2P71yCIl4f7BKXtrtkGg05vxQCN5wNe-n8J-P5jb2S3STzUiP8MyvMVyfmJvWm7Dq5LbcwgJDynGpKmguIMZf6NqHBQgeDYSnDy9yb4gX7ANEOJz_ATprUo06R-JFqzzH_GpCDUII0wGZTItt4w_G4Oz6lVapW6aEC-yd4t6T11Xbx97VbKFC5c5m3iuPCz3VSrrMSPClnIVbjlijvhUcmUqWzWr6J5FuyjVNoo27iqS9cLPEab_lPa5GhMHuu7ZT-h32Lz2mZ-o4kRhp"
+        },
+        {
+          "title": "ClinicalTrials.gov: Primaquine trials for Malaria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malaria&intr=Primaquine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Adults: 0.25mg/kg daily for 14 days (P. vivax/ovale radical cure)",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5,
+          "monitoringCost": 75,
+          "sideEffectManagement": 20,
+          "totalAnnual": 100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 108.7,
+        "costPerResponder": 108.7,
+        "icer": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "No radical cure (for P. vivax/ovale)",
+          "costDifference": 100,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Primaquine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-75 percentage points (from 80% to 5%)",
+          "baseline": "Expected relapse rate: 80% over 6 months (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of P. vivax / P. ovale relapse",
+          "percentageChange": -93.75
+        },
+        {
+          "absoluteChange": "-57 percentage points (from 60% to 3%)",
+          "baseline": "Prevalence of gametocytemia: 60% of infected individuals post-treatment with schizonticides",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "P. falciparum gametocyte carriage",
+          "percentageChange": -95
+        },
+        {
+          "absoluteChange": "-72 percentage points (from 80% to 8%)",
+          "baseline": "Expected clinical recurrence rate without primaquine: 80% within 6 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical recurrence-free survival (P. vivax / P. ovale)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 92,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 percentage points (from 40% to 10%)",
+          "baseline": "Anemia incidence post-treatment without primaquine: 40% (Hb < 11 g/dL) over 6 months due to relapses",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of post-malaria anemia",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+20 points (from 60 to 80)",
+          "baseline": "QoL score (e.g., EQ-5D Visual Analog Scale): 60/100 (post-acute episode, pre-radical cure)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Malaria-specific Quality of Life (QoL) score",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-60 percentage points (from 70% to 10%)",
+          "baseline": "Proportion of patients with repeat visits: 70% over 6 months (untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of patients requiring repeat healthcare visits due to relapse",
+          "percentageChange": -85.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hemolytic anemia (in G6PD deficient individuals)",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Weeks to months for relapse prevention; days for gametocyte clearance",
+      "treatmentDuration": "14 days (daily) for radical cure; single dose for gametocyte clearance",
+      "trials": 120
+    },
+    {
+      "citations": [
+        {
+          "title": "hiv.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeXm8pDVHN0vVYbw5whrC0w8vWbzKxnBIJenI8gtSUp-_9kR773W_rac1y67ML7Q7Y1cpGD4_zq2sK9EeEPRlqIfE7h0dQ6ld4xi0OXGQ-YkkJQgsqw0WvZFhTv3iM9BfYFBUHnCbCwNq9qBuy0y8LR1o6QrE8PJm9gxDLMC2iVRHQ1WT-3vnpt_CWSgGjbiJHUPCB3DJWqQ=="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTpwX_vi5TRlBc_Q4Hxxslq9U0avUiSrx4pX6Gpx-B2rdQZOQ6WTtCmByxjU-AICmYFZzkzV4TfAnwnjYdSoc8lz1vhY2vo2VhViNdTRLfEer_9JbG2cx4by-f3_QnZc7XZIKKMRqS_5DAPUFRzBzuO8vt06eMXIixtMEsht12mZ3lr31RpqdKQxpOfkI8r8cFVZHoO_aJiNeD05jBHm9qfzuZ7qaewV1Z5IkY3EpPOC01WD00PC_EUI_JbmahpjEP9Yb7YtXGNUETPUrQuDYkzA=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMQ8SwpJ8kB5BjTUdYc9oJ3UGGeddKD2y-mheL1n55FeZE_k7I2GurVBrjG9L_h1zfQCMJ6k6FVRN8pjeUFgg8896xDfwgYdfs0BCQRnPZzUEaKAarsVCuyLlJ0ry5wYiuPRegGIf8_dz8jhpfdoKrMAoh-xUIsmdol04vR2eKz4uW-ZeXXb88Cg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjBFhfgNmujt5RUj4SGdIIx8kil-mbwWOgvKUvAvrd8krR6lxX3vpD9YZyNLTSlHfiLA5UfHn60XGJcutT5yVxivMZz5E-WH-otrkhUzo6kvBI5nlZx-6r2FEGS9iqkAnmm14VOZPddg=="
+        },
+        {
+          "title": "goodrx.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkIFNZPWwptNuxoLjORlDUFzzKXE_fU2WiS0MH1Opvg1K7fJFeFK8T6S_fLazTUP4Woa7-YSbKN7eDYoYrFiig_jMGZrsQ0Ag0-49lsgku858py7BK0q-T47PoA7Eom42jz0_dv0orJWnX7seLxNhF0i0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8y1SGlzOf6I1aDgat7mDyinFSMICekuLMX1oHZmPTEaEqucYPPgj6zG_dItAbTkpj7padyj0Ld89iN0EaCnWz7uWc25QpKcsbpjcnelEtft-03CuBrTNQ_5lBhWJQ26IvBtY4qnpkFxNoi3U="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPnOt5vDnMBNsZIhFfOf_ymCVWTdTe-CHLgqxlm8erLwAtAHTQogz6Gr9Ofjtdyw1V0S1DC7wC5vWebn9RqWqfZ8s9B6bq-dL7pXkZI681ekYW2pdyjaw1jwh3efwdfA=="
+        },
+        {
+          "title": "la.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrxweV38bb4G4_HHqpEjl9WQAlHsRy-ER_63t0-11luqO3OD6tKPVeALGyHTPL2sluVcR75_n6WopgvfplcRqwt2bdOf42wvwbHpXyhJICkE92ksFqowQWEs40_rzStJUvn7EIS8jEOD6j3K1PbpG4fQfB75Wx1Ua-XgjyQ0hcUST30KyzY9Unlc78rCRKZMf_8UCdvwwJhdIwI5OXk-Bjs5s="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8f3IwKH_M5cYh0VnkjlTyS4XRboVWTOr6Qv0BNStS85WJ97Tw8JSlI_9lVg24uZFOh4HqPBKoAiJyLiWChMNbd5FlOiS1hw9erFHAqSFAW46V61MCF0Bi_aQWYJHOA-3FkLSuqMoI_6oJ5ImJsRPzzJfbFBuIn9vdwQZVzB-6jyEodha2Z972AW29Sgf3IghSS4caDyP2yPDLRs1Ip-S5RWBQJrvtS5QNMCUnBg_OMDfPDfoACW0UifpIUPyRPF_2NaeZxf8SOtOSo4KBQIzce6k="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF88WVMqIoYMrUQeT-xGdkt12yXmIIlUIXTjGxnVFW1g6kdwBcQX3u-H4CLKs3fUhWTv7Avj0j0FcffPf_tmlgbHYMJkbQ2msuF_VZQLx4EjbYeiuRuy8CLEPegk9onLv_vK13MRCXb9CY-GvXt5HZchXAiMvUt-ZPt6IgratzFXhyPG5WZIavoEvhiduGzsF6L-nYyEO3HtbGnCN-ilH123CJQkkT782BfghsAjJksdBCqZiB48FDROml-WVCVNMZjwZo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ2P-Yo8O4hPWMxPBHoeDhkghJ01lDNQ6cRpbjYgOKacnKfiZ_WJgFbx9OHZGTq0j6ZlFgWIuFD8tJsfGkBei2LmMUcXjZw-ALK8Q7qGoJ0wEhIW5U3x-DuEBHiPmJ8qs5GTD7"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFgFid58Q2GvyrqZdLyKAdvzgXs-COaEbiDegpDOy5RvojLJzdrsKmgzcrrpNH2QB1zVOTmWD6VK6WashH9S0P_H5B0RPuGBoHbgvdVa8FvDUw1VxaWqOJVMf0UFhjFNh9ttwy-6XSXCeqPsc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrDw789CP82FWSlD69ROb2kDnR7r1imFiwl1AnhVxvSTWiTw8V9IkhO921snq3IbAAazj5zfzOZjQufdw0G7UiHLdLWrGNWdaZo6913zymYojYBm2lmP6Iuo7FJt4xeivGkkePHd3kFsui5nf_BSewIEhNq7qsxOBtzRTnBAJ6xPj7vtyqd4q1vE5U0A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE83ezEEgxexGu3vXHQUWtbsXKNuBjqpskGj2HPDHg_v37yb6xDBRfUSAQz6Db_pX1N4Km0O1KHj7TyzTTn4yev0ULLAMnuWUhcFFZksBYXMI59eJgr7pHoC7JD-uYTEfLWfQLm_vWnDNpflv0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHATPpZFC-Rid96HDkDZgLox5drqEYHpxnK1oLOR_wPNqCYqGazmhVRTxJU5ilbOrWdKnNmbbXPRnS8f_q0tYaDVFseQW-AcXAyT6osmPJc_6igcQniCL8uQ-vupUqUaO2Hdkz4p_-T1qgq63jt6nLp3tbuY3q3Ju2niNCpeJ9S8WClemT9FjYAkAanQ5OR9XDDtHogYAIXv6rZS1RB6Vdm1md-w6Ygh-PZmlEKEhA3bG8_KOiMxKc7KhJNEkpjVyYNiY_0vrQR0ilR1NEwjF1VZHutwIP24ciS5he_bpGuiI8OXQTMlw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Quinine Sulfate + Doxycycline trials for Malaria",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Malaria&intr=Quinine%20Sulfate%20%2B%20Doxycycline"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Quinine: 600mg salt 3 times daily for 7 days. Doxycycline: 100mg daily for 7 days",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35,
+          "monitoringCost": 100,
+          "sideEffectManagement": 30,
+          "totalAnnual": 165
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 183.3,
+        "costPerResponder": 183.3,
+        "icer": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Artemether-Lumefantrine (if ACT fails)",
+          "costDifference": 95,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Quinine Sulfate + Doxycycline",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-50,000 parasites/uL (to undetectable)",
+          "baseline": "50,000 parasites/uL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asexual Parasite Density",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-2.0 °C (to afebrile)",
+          "baseline": "39.0 °C",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Temperature",
+          "percentageChange": -5.13
+        },
+        {
+          "absoluteChange": "-7 points (to 1/10)",
+          "baseline": "8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Malaria Symptom Severity Score (0-10 scale)",
+          "percentageChange": -87.5
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.0 g/dL",
+          "baseline": "10.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 9.52
+        },
+        {
+          "absoluteChange": "+100 x 10^9/L (to normal range)",
+          "baseline": "100 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-5.0 points (to 1.5/7)",
+          "baseline": "6.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score (1-7 scale)",
+          "percentageChange": -76.9
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cinchonism (tinnitus, headache, nausea, visual disturbances)",
+          "percentage": 50
+        },
+        {
+          "name": "Hypoglycemia",
+          "percentage": 10
+        },
+        {
+          "name": "QTc prolongation",
+          "percentage": 30
+        },
+        {
+          "name": "Photosensitivity (doxycycline)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 days",
+      "treatmentDuration": "7 days (quinine) + 7 days (doxycycline)",
+      "trials": 1
+    }
+  ]
+}

@@ -1,0 +1,889 @@
+{
+  "conditionName": "Meniere's Disease",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:19:45.472Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG32oOEVcNgFNzZXWJpPcOG8-P_nbu7AKN-lw3STsJSeWCjGH52h-1pPYA6wmTFY4kGgLB61JKQS1XzSfMqKHY7DmScU1hAxC1Hn-nWgbfkyK42ZMbIdviBZj7R90ockYF2oAyo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6L2wzMUR6Ov4U3bcOQ8LiUKkmExVgKgGxqVwH1i7CZHzXEO2OYnS52vCRO01xhJ3srndDVpiNmgFlfy1jpdcuDkP2Ye4YmA76GIYzmPgUyDqoIPBpAKtuxvprKktK-1wB6hAR"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGue2GVVmH15jLAveC4ESIrwAvuwB7rSrlWvwz7pymzApN0UJeJiMMrCX2TOpV7KNwErdX4PkPKMx---yGk4zv7oeoZ6xhAj_RYqbmCutZhnOw5LWqw3zwAnk1c_MebD39UeG-Iw8sWqi4fjK6Cr1JoiVCSgaKGtMwrOzl4"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG26laD4oxt2mg6lTFveUr9QG9UohYRECmRz6N7o1HdzSJVajo0RV5-qROL2JdPBvJOncqNX9ouwHOGyad1GHCTxe3Mt_gvaYdpEm7CBcfpAJT_Ie1wCwQMLck0W02S6Nuw7hYX7AaL6ZfuU6J2aVdiB_h3UlUkUDIxlBGgQQ=="
+        },
+        {
+          "title": "sdu.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9jZpvVqAU5cLQnnxOsG34nEHSiZANBuEj8U81ED_ZAHmrq25S9vmwbflRmDwRjvPv-xIjqy3baCNZwVqHe_RP3ISALQtxeoiduhdubg_HCYlkAlet4hT2Hh5nyiPCpWp0WqQIZpxW2kRxEnoVBZdxmnxfMeyL9UY8JN0yBIwHmi0Kk4YvffDHJAKw4uy2dt7dohpbZVNLRynqLhpra7iGAk_3nJj16NybzQcgHSeWnDfzG6-FWMcl6uzac37mu2GCg2V6R6skcXu76TreIFZ90Cex7OHdRYvN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtxli6o5bWq-bQTDUSalqPDzh25vxpAdu9UsA5BJAZgJWFUhB6eXLyIcCvMBHWBkmKXMvFND9FVlKNS6pTVZwmdtZt93HL-qbNyRxZe6Fj1rmpBL3BjUYOiUZCfwseXhcyqhDZ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_DaSg-mT6tn9kwVGQPVtbx6gEDj3w0-FajOi8FE2Q86SsSy48EDC_HwlOw9FFhoBZGPupaQBq860wBK0JYoNKPJRci8xliOquZaYvc7k1MMpofSun21t62RkPDwx9QjwVJdpUD91Comn3QW25xnbHw_quGFhcQBo_uYr8CEG8uI3o8WIJuCoD5-R-fQZrUa5gq3fyF7yTizUjNMmlCdZlhiMyE35CZLZKacwyIykk72gl"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc0PmS_ME_UxLsLeKw3Zn5Uhu3WI-t6tYSs0EnaUSe_rMvyAyx7vpZ6kYXfSCTvpqqjdibpPDNMUKJiJWuABgHt8KSjc78jQhfMJYbIfLOxvHx_Y8Vdcm1NxLLGc19Q2sHkh90TgPHPIUjOVAaqCkRix0JuBH7G39hQrYfUuNoD9O7EONeLMVyF6lji4ur62bdVg=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx7QPAxEnm1yRRZB9YWXFWR7sXCf5rQlTVMddOA_YJkj_Mbc0ekv4QviFWgPRBlVo19axucaKmXL4VlEA54lKsgYAWKPA34-sMN9TApcLCPkHS2e0XO7he2gecJVk5syKcVlCSh87cB4cZERwMQNxgCRo-5usRq133UK63Jyys9ZXFxSI6T8h3xOay1KvzFy_b"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcfggNitUeaUb0WB5irxnV9cTuKuv07i1smtX9cjk1Jl8olYpu72rR5FxtpEwXlStiWURsQnaivZqe9EYd_3mnMvUvPhuUQKAVfRiD_IgDP0DMB7uACxWn3p52x8KEhsUyMvbyJA3xWSbNrRU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS2DRu3sJkncKOEEriVckh3NqFDJTgcipcyjzKpzqIvdZPSR8VD31L-EnJk_Dv4h7vAIb3dRNnPdlCVzlHn-ixQ9ea5S-5VK9k9aml2wGNtw8CnGwVE3AayAWbTmN3bfEC92z3bjlOZtgV-X8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intratympanic Gentamicin trials for Meniere's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meniere's%20Disease&intr=Intratympanic%20Gentamicin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "20-40 mg/mL, 0.3-0.5 mL per injection",
+      "effectiveness": 83,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 600,
+          "sideEffectManagement": 300,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 3571,
+        "costPerResponder": 2941,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.55,
+        "vsComparator": {
+          "comparatorName": "Intratympanic Dexamethasone",
+          "costDifference": 500,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Intratympanic Gentamicin",
+      "nnh": 5,
+      "nnt": 3,
+      "participants": 4500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.8 attacks/month",
+          "baseline": "Average 4.5 attacks/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vertigo Attack Frequency",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-33 points",
+          "baseline": "DHI score: 55/100 (severe handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dizziness Handicap Inventory (DHI) Score",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "VAS score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aural Fullness Visual Analog Scale (VAS) Score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 88,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "THI score: 40/100 (moderate handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI) Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+2.25 dB HL",
+          "baseline": "PTA: 45 dB HL",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Pure Tone Average (PTA) in Affected Ear",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "-1.6 points",
+          "baseline": "FLS score: 4 (moderate disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Level Scale (FLS) Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Permanent hearing loss",
+          "percentage": 20
+        },
+        {
+          "name": "Transient vertigo",
+          "percentage": 15
+        },
+        {
+          "name": "Ear discomfort",
+          "percentage": 8
+        },
+        {
+          "name": "Tinnitus",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Days to weeks",
+      "treatmentDuration": "1-4 injections per series",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "entandaudiologynews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1uXFrgTrzUxrg2bdvVGIq4h6QgZeeRHx89QcznJv9qJfayaWkT2hEzzlRbQwxY1kkhhOAtqltkXDTZ4lnEp7cA4sMVN5Or-mE2r7nzbHdp-hvlm0362ciMad2KAR2cTD9h1zsJNDQ8Y9xeqjxSNQsDl8IB2tdfl3w5fRMq1Tu8lAEsUKTujPOcZi2PKSoNVgY8OGryRN4oeX3h9_c_04YBWC-LKZe-1dH7ioAIWBL3so9Mg1vjkGIpONFzIDpTGm_"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs7p6DUC6akhIaZ1yq_YhOu2Kae7mpubX_ncBkkUHkdV16CsJqlU136r7R-Mg9YmfffHUwNiIe6GommIPAEDblf4lzRv7kAkRJxVs7x0DYjcG3AfxC7aNCaJ4KyqzOn-R9lnj5q_IFlHs_rfeYq3DbhSwPNCc-mW5W35s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKuN1kEoq3pD1iqlin4Sw4hC9N4jBTIWclAMwUZNtxe7t40L_7l4exqr_awA27GOBf5SV-1ZTuM6wTfNXi8tofPy3_1R8tsGEoYWMGkw4FKq_8gXSea8sWHXBU4VAAo0i_Dy1HGeiT_Mxg"
+        },
+        {
+          "title": "uthscsa.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDFws12mZIIP3wVt23B6LGt2j4E7MlLrW9oB_i948kGuaxjxLNQqh44GcBuNGNziD6hbBgXgZDgd0Y_XVdvwVoOhqsFM_vnpmDN0B69JORS_os3mSEPlEvJOV-r99aZ4GnOoO8bVqN-p5tQ4onoxDrG_69qNeFfSycZRefabkY25pnWCicI29YoBQmaHza7VIEvNPzfqUKIKjhYzSUUf1xvNdjpzP8RXhkKhBdHOJwaV0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2eSrmVvGEKgsSNymqImBbCATBYWW0cYQ8zIgo3bSXG12gqzGcASrLhkaKer966uOF9hieVsKVrs6aLhPVCdWrP25VrQJ-CIpGGUyWTMSvqwjOY_WOXjq2d-rIf77PYUgiSFY8COdFvdGQ"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ3FiVb2YExWW4II0eKjtLvfzacsAq9Uj2vSRPQV-aBjbrE2otR07cCg2Ja0WW6G3xROJ-fiwgSnncyJMlpdWyiZ2AVTKy7xYKADIo-fp81s80hKbkdufoDNti_jLs7qCStGdwN6v23hW8jvwzilrjsul4pk9QP3EOohagAn8ql_gzQq1F8OU5Lj1OOKGDRc8="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6HdTaegw190PUdE3X2Tc8p3tCSIh986T8we5DMKK4T-jblPwgFX8Bgwzi5QiOJIY-uYFBU3lIMp6aLfq69XwSOBIDOCg95xZhz2rEauiu7efNlNQiDXSn0lsj1qfMUYEFADrUBwFo7KNnW_SO-BsVGN8CiHsGwF5_Th8IVTR-GHfsFjgR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWAzO6l6Ezwswf7L6dtt5oGNV-ZeQ6HbhACd7VKy1bPO2iTXL0NRTIT_A-hvl2n-cZSoXSqX-kScY70Naf1Zaq6vWCixf9SojuBSrX9O5QRnUsxWkv24MSez-m_-zgqohP6TQtpLkux6jihA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh1zISo3oXSFy_1V2_IDtJhAIBUnVQDUdXET0NxFJTRTZJi86vmYWnwSPyiAb2mSXrRaXzbWdcQANgVa2-OzXgAbPvNko6hJnnlI27RKwI-m9_Jo0s8-kx4R78jBUOvVXj7M-iFNKWQ7Mt1oVizF5e3SZ7gst3T4EL77hhYfk8dXX1s5pbFFJS78VXnSqSCb2YJ4xP1nCyXTS_JoZuQXWnZMLFVdSdlYF-LcnHaymVHBPyCpxWdMF5czLzZDwJw-trlyIWJm8K53cxFZu7nJcDhrm5HLEFWb8B8f6PuGc1kwtL9o-HOo58lbv6ZZnKkJXfG63q2z3im9dHwZpMPaMtMp7C-VcgIfbLkOI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQewTnR9YCj9YZhyDqAle6Pft6jQRbqGh49vrDAVRMTFoCSVee5ZIa3Q6h9a1OBDxmyqBEZ8abW-tllNMI61kTTqu4quZ-W_HE05Be2c8rmcqY4Lw84x3DE3gW5Z2wH3zv1ipstDzdQoTsKw_dJ_VGEsKNIeY6XT5YNS6Hdk9lln81QIhOfkvvnk_XVMeKl2DhnB6uvbwvM3Maq0xTi2PPSJnwTvThayND2LFo0gC-ubzpg82cTFTe9ljXoa8-q6VkM_bwmZGxxAdH1KzfwpJCO27B5x7ZNKl50H1foNMR0rkeZgtQO3RxSq5Na1sag7DYyQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Intratympanic Dexamethasone trials for Meniere's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meniere's%20Disease&intr=Intratympanic%20Dexamethasone"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "10-24 mg/mL, 0.3-0.5 mL per injection",
+      "effectiveness": 78,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 450,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4000,
+        "costPerResponder": 2667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.45,
+        "vsComparator": null
+      },
+      "name": "Intratympanic Dexamethasone",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 3500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 attacks/month",
+          "baseline": "10 attacks/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vertigo Frequency",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "Tinnitus Handicap Inventory (THI) score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Severity",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "Aural Fullness Visual Analog Scale (VAS): 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aural Fullness",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-5 dB HL",
+          "baseline": "PTA (0.5, 1, 2, 3 kHz) in affected ear: 50 dB HL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pure Tone Average (PTA) Hearing Loss",
+          "percentageChange": -10
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 75,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "DHI score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dizziness Handicap Inventory (DHI)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "Functional Impairment Score (0-10): 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+3.5%",
+          "baseline": "SDS (affected ear): 70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Speech Discrimination Score (SDS)",
+          "percentageChange": 5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ear discomfort/pain",
+          "percentage": 15
+        },
+        {
+          "name": "Transient vertigo",
+          "percentage": 7
+        },
+        {
+          "name": "Ear infection",
+          "percentage": 3
+        },
+        {
+          "name": "Tympanic membrane perforation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days to 2 weeks",
+      "treatmentDuration": "As needed, usually 1-3 injections per flare-up or series",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8hLPBtP3RY31tyXfMMQfFb_0uUtISGMBYB65m9M59UgH94pgZ0AXx8HNaihjEK2On60pZ8zAt-i6_111Z84vzZ2qrbdbnYSOKPywvm9J0teMZv9Fniy-vWADvBFB-jnshnUnc"
+        },
+        {
+          "title": "matilda.science",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlqthejvG6duQw6wAfRrA6y9dctrFjrUyNa1L1X6qErQ1fDfSZEMNyyYLTC4yU7MzRroezb1dZGztsg_HK_u5Doh-jwTEq2vlCpR6ZqR3IEPcIlCrUYHpaqbpas5dt8Q3Y-UbN1QaDPL6FXv-irUQKaskfvIQFqOwZOWqo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVaLtZ_OBllHJdyFhP3lNW1XNusMKpJbqjsxeC8PUP8e1J_JcAUPI54NpXmnQGdDnNf6afHd0DW11fAq7a_uE914GlR8vb-nvSYQP1ZCtjEi1bfSlZaT47y3f-uwxD-6GCddEed07WU77XFy4ryne7AA4Q58yualcLZrPEAxkCtm9506N6ZzfflXLdCNH5UOIaLM-9QzXZfT8dWmJW_jDpmdiNIxWrwIq-kZc2ynYqCJ0irxvS7z5ypdwagX9XSFptlus-"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGg7XTXw3rJNzYpiwUcIk7URiMG3sQ-P6Zhwzb3LnI7Ydlf3J_4xDHmGdEbtum9CQz1omEqQvT4yoYetZJHeePrqbRxtPbke-CSqhAeJGOkOo1e9a1g7HTTOHp-a3AWtjr9KUAf5o6MvQlX5Jd-jfJCGLuy1Dw5"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEn3z8ttaprHIwtvn1DyubyM26tcsBdMrClsjujLQDtwMaA1KV48VFlKTLTCpXay2PsYBOGCaNDeWkBGLbQZz6DsMKPsFqgfpLBFKe33xmYFkUI5Nfe1pqjIuM5ZVit5t2d0eHA5tuU7SGvdpXA3iA8Dg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuIS5_ZAKehO5S3EDhXH1QGTeMCuW7XdGfF4NafWW6pYb1qcwxJ60DSk62ep8QVblG1bVPCUc5qn8KaBigAFP3Ta1tZJ_S2hvRVUg92aCEPWBTA73Q9wXpSfTd64HP8mBaz44k"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4LCJECHUaql0RJKJBrDAUeVqVXT6GL_dcw5d4S04M3B4FPL25rn4nFiDmOMxSX14T5HbldPTbwoJw4a2A75wJCLuFiXHIElIh6qy5Xbjzric7AOiCvR4R78dclCCG_1KM5u9NB6lwKyDTrLM="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERLbslcMIvs5vjG75Yi1H3rRpj4HFfT9KlkQ2XEkQyqg6G9vCg8EX1UAhg_iiQLDo3cQlac0Ffxcu2KF0TV5ksSUoOQRzDwSILpFY3YndZnc3ggnYgbEM9xpebBVGWT9OKdLFzWTDEzeU-oTtpV9fPI9qjiSAgBJGQyBOW09mU7G0UfkGCK7ja9M0D_h1Ock-9_g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVXipyuOlbc1E7jJCTAsFxdN_CgF4Yo7OuDW8_phP1bSp0b8Wn5xeREkn9PkVBS3qwr_REjTEbj0trIrQQwIhXHUrxBUcSGlbuQSBFt9mA8GCRp9gMi10IuC16GKt3upKUCuOemIzoJ-0F2Xs="
+        },
+        {
+          "title": "entandaudiologynews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaV5Vel2pSkpo9X408ZguXoJQmx4RshFc8cMo-OkiO5gDMMXMp9W-JN_7nmres3usM2uMbvq5zNDuJA-C8WcFbUInrOa3Rho07ZZdle50JsDcIAf39iAkMdmoiYlvG6nwFk7mk1fqgwsapGGcRKl-9PJYVT_jsFFc2iDXbechVUWdElgr8l6oFl6zb2lwo6sTAV9c5PtlylS8F_w2wiUbO6bNrcfj0LPD26yvM6nzOdSeyjdV9K41EYfcyF5wjFHVP8BXiCkA_AnZbkGT0-pvBJBkAutcJYFz7xdpwrg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Endolymphatic Sac Decompression trials for Meniere's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meniere's%20Disease&intr=Endolymphatic%20Sac%20Decompression"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Single surgical procedure",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 3333,
+        "costPerResponder": 2667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.65,
+        "vsComparator": null
+      },
+      "name": "Endolymphatic Sac Decompression",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 60,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Hearing loss",
+          "percentage": 7
+        },
+        {
+          "name": "Tinnitus changes",
+          "percentage": 5
+        },
+        {
+          "name": "CSF leak",
+          "percentage": 1
+        },
+        {
+          "name": "Infection",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Single surgery",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "hearinghealthmatters.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9gu7jNPR3-HaylvjipzDY5poZMvGe609Ez2zGB_zmpfVVrqFDaPk5eZ85KMnlqhYJk6zC7SsrMtUzDiW3KHa2BTTNk2vmiMtb2vdq7eOpWQ49J1fccQ1PqC_TRRT8N7K2ttpbVgj0lRqoDvYMzma1MZCOKz5xZfXVDzMOcH0N4zCFnX7YIy-ABcVaF6sg5DbCp_Gs0j5pfNgk554rlZ5S6wS3dV5V1kqsSEBJ6dBuJhfK0T7h9rK_RVpxX2ee4kvF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR_212AGT6elI2s5tEt0Er3XHR66REJEKTVoMT8LPGXLKJ9L9rELYVJQTfU1N5WQB6WMiFSe_zKRpKr1Se9JYmCbBohxqLUuCDw5VyimM1BARo-mpA2fhHBqGr29N5vHz9Zbi3nLF2nw4UW2U="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7kisQzP-GWIjXf0Tle4lk3JT5W3ih4iAlxRfJYJOoCe_7X4BMJSUOdNy9Abhq68Voc1oBFLH0y_zOvDMDTcwlIKeOgecmNYniOtBJgFhHuhJMKiQl49HKchj-zIRzlr5BnNdtnBp-JmlulbgPURfIUFP_Xtzr7ur5qm-v6gtHzrBprZ-ZFARVtwI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7Nj94QVgEbf6lFQcc3fhBNl6jmhLAoWvmkqUf2K7TrCnaGzJ9Nw3HPO9bjvsULa5-9TRXR40dia-i49xX7MMbnlyrsBuKOdcAFnRZYM-6_DU-QjDA7coPdCH3iJOnlHFfzcI3oukwJGhHaMo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8M8GuMSAXMPOjsspKpis3pwB5cEMetfHA-q-xxYYeBv6vsEeJNzAfeyRExYAPuKjjtjUjPm8gPSUSviyVlBSMCAFJeWs9rGDzLGKijobzaZikfwEvkgjqhZuMlCfzlHFC1s8H"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0swP-_5T0Anw8CFckj4LRAEMFY3frEC7qmCmXg8Y-XdDvTbYg9fNKkw7NV8Ay43gUPDj2AxymBRr1J2D7pLHOUC2HTyySOnTBlPTQF_KErGkgV0D5o1QJiBy7UJwnU-MHTNV_6P9OpDHleF340lSWa12tuuSkWrwQnMqy8woy1lI5lJ43o4t9Rtvisw49sNoCsIjyrSJGvMQm5iV3k1UmPhnE2wFfexr2Qim5CbWoCj0Et_rApJt15jObgVI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Hydrochlorothiazide + Low Sodium Diet trials for Meniere's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meniere's%20Disease&intr=Hydrochlorothiazide%20%2B%20Low%20Sodium%20Diet"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "HCTZ 12.5-25mg daily, low-sodium diet (<1500mg/day)",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 450,
+          "sideEffectManagement": 50,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2000,
+        "costPerResponder": 833,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Hydrochlorothiazide + Low Sodium Diet",
+      "nnh": null,
+      "nnt": null,
+      "participants": 7500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Dizziness",
+          "percentage": 8
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 7
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 12
+        },
+        {
+          "name": "Increased urination",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg7nGGPCzbzYpEa8lJUXs-I1EGT6CQe4ivIn60QjTow0rFcZvtr-F9W4avCOWU9Ch_pGq0OJRA3WhBsl0xbYqBmvOmk141uZtwamkLma2JbT6ufSuN55OeRisLTeHlXAu702AVBwydW-wPTGA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGaakEE0tUDUqUYKGnXqU2Ro3i5CtfNmmqnDESBoSRl0UnTR_ROseMvQVbo3CrKRa4FWsEHo1tGxvE6PfP14znlK-fpvnnpz6lTLHs8QW4yiZcwu0smBXfhAxEsDRdrb-23YI1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtsAqXgagWqbSHZTqnDqsBTFm9G8LRE_SWSbVJZYTwzXctFLLBuahzjoLvEox3mZ3fxNeGmXY9ISuszz4n6bgx365B7ZGx3d_hV9zf6dpJCHtHB9ih2-mjA4d9RFTJHl74z7YeW8_5k3_esMA="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEldA_GoH_-Xi3C7CLN7MBOnL66isymmiJc6DTi-ghANpmqMzx5Xkrpa7aYgYSpUcc4AbVLUU8n-ld124STqA3FZt5a1qOU-OPm3FJoPY5vMPMCd6OYOEeQ8YkDeVHk-8KMkBn2"
+        },
+        {
+          "title": "enttoday.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE00bawqR7nrjPr4vXm4AACd0wOphZQErs0rc9phTlE9OuNtGG0dISGmj99iUjo9EDFdHTp-FwvvHYfQwiSEOnqLTrlVtqNF55BDmtSwXe6nfEPNTJ0jiRtdquO5PXpiFmQeIC0v92pZ3vs3xz_m0A7bwczS0wLOtMuGr6IJ0K8hmTsclm6ucYQKqa5OSV58OJSAooLum8tU8j4"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp5a6wDR5SYuQJYaNi87oWNWiAESiN1PGXoO2FP_Emc3s-va0YR5AbCR_pn5bOB7LVRi1anXSs_wHLAfNBXFVNIY8YGtQlvbVE2RGLIZmcFIOCP8lY45NnwAZDERL-IPhMjV73NzvWipWDBY3Qyjpygn6pTZy9_rX5nESrXg9O_80RnupKr0E6Mqvvw7de"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENgEm7-1FTCLWVgPVXgLxc7oPwkHcrcaizWVmz6FCUBQjx3H0qj0NyzreiVLDsgfeS5cyfldqgmvZp2zat6Xm3GHqn3meJqaQeCd_zQKBLNTe43uEx8D6XXAnGS0fJd0fpL1Y5"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHggnZf1yT8IITisLvvHo1uIBlFzd-h5BN_9n-yBdmgQtUOR4HLb0BOwj4mnFGIJdxYt0JmIr6tiYb7sVVFPzaHSCpi0npInfcqhO5njPU8iXm23X43X99uKIF-oVC43oUQG9rGhrd7GFL99j5Urm4B0twKDKFKdGGI1J09CzKOm0DrO47CGG4cn70flvCT9hw2KPPoWRrr08kc-a_KQx6QqBrqxVXl7M8="
+        },
+        {
+          "title": "rug.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzqyVwvjsihHVXCsStYKH7ZoUQe4KRk7qjmgiL4r8uvh4WXtZPYdZv6MeueCu1J_3nAZVDIOeNXWDksW9OpalUvbez_zLg61gwBIG3V1Uc3e5o7SdVtOwntKmVpsjhnxhUxEosJdTarB4383eVGoY4Eemit1OzNZ6nyV5shcrm0PQ2FwGqTko="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1yYapana0uIigYXS6aijk4TpHCzlwDM6HIFdoN-H08gJ8w5Eqstj_dH2C2USVqFYExYBW9NfiEAtYDuKoFA6sOPx9lpbEDcOVUJDlkAO66Ipntugl04ZyWyOiacRmBx8Nhs7b"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESckMfwqBJw0BDXi_a3k03wN-2JTM3CYZYzcgmk288eRXDlrHumdm7FqSM6QPmn9Le2YRw5EPvQPrcin40HMcAR4xDYDCriiEC4bs4wC_tLQY1a0UNOfVviGdaNZ2kiiwhN95bpfhM4MrMU3w0mM9c2NxzyqBqSxbJQmyQthw9h-izbsZG2l7cRTeja2kpVeWGNJ8l2J1Lxjzj5HgIGPZoZ5p6ate4YkFKarSJkW4s6HTDexW3RuwHgXMRqyLwe97NKDWFkjBCyqXaGh_O1IEhTy39CAIC3riPEowXBq5fwc5ITK4Abpvh1e2Nze6Rct_LPO_1"
+        },
+        {
+          "title": "ClinicalTrials.gov: Betahistine trials for Meniere's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meniere's%20Disease&intr=Betahistine"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "8-16mg three times daily (24-48mg/day)",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 600,
+          "monitoringCost": 400,
+          "sideEffectManagement": 20,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3600,
+        "costPerResponder": 1500,
+        "icer": 18000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 250,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 600,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 900,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.25,
+        "vsComparator": {
+          "comparatorName": "Hydrochlorothiazide + Low Sodium Diet",
+          "costDifference": 400,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Betahistine",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 attacks per month",
+          "baseline": "6 attacks per month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vertigo Attack Frequency",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "Vertigo Severity Visual Analog Scale (0-10): 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vertigo Attack Severity (VAS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "Tinnitus Handicap Inventory (0-100): 55/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tinnitus Handicap Inventory (THI) Score",
+          "percentageChange": -27
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Aural Fullness Visual Analog Scale (0-10): 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Aural Fullness/Pressure (VAS)",
+          "percentageChange": -33
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 60,
+      "safetyScore": 78,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "Dizziness Handicap Inventory (0-100): 65/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dizziness Handicap Inventory (DHI) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Functional Level Scale (1-10, 1=normal, 10=severe limitation): 5/10 (moderate limitation)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Level Scale (FLS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+0.07 points",
+          "baseline": "EQ-5D Utility Score (0-1, 1=perfect health): 0.68",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life (EQ-5D Utility Score)",
+          "percentageChange": 10
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Indigestion",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "2 weeks to 3 months",
+      "treatmentDuration": "Long-term",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "asha.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMSfAuzbqSPYkeIEtGj2FY68sDdYL8Uw4u43qPTyXilC3dTc_r5W2rTxVvyQVGc31IGuVsKPChhrjxYRagMVT9TBjn0CqHEyWpcK8rnU13XNHnffH_c02t-a-a_EQ4VPlLJFClFmzxTnVkwpyND-QlKzL7mYlzPmVzLY6Rml522TOW1FSJMaxRx97OE-rLt1YVO8-kDETFRGQW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhrbQ6o9HVuCepcVHIJp-Ote3MT3AKNriiR161JIdk43vJZNsGgVETJDq70IcrtbIeSlJMSdtmGMfOzOW3p0fcpsOL9Se43uHGa7fzfM8NvFALzbrYLR23h2pNNfFTBLKmYCjX"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH17_EnesXWzrX1PEK6aN2TrRPjYRfUT3RTL2CqZCpjyipcoVOg0QJm982VuwGux-wi4NdiYI2YPX76ZO-yAR-61s4WKv0okIOtMrssoSeUJCfkdHZoqlKdAKE6oFfLS_TR4r6NduohQuZ5NdafUFVudOqSuvSSYDvjdZmSwEALNKln_jck4ZkeYYIOxBOkUTOaP0HrjRZkiVjocGcaMBtnoWNECTiJH5v-Is7FNb5kWOmathxq4el09sXWBHf7mwMcpaXa97UNZOZCu1IH8nrvi8O_zJGx-PW688QBXdYcBieqYRo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrp4yLwh_KDIrQPiUZ2NXuDQzcnIorLocORZsrkCoo1W7t8D-hbGjvmdsj8E25fu5s6_2h9PHQj5YUFfX7J_ITx92u_EOn6oD6Te06w0GTW0914G34foKMK872mUe-pikR5-1p"
+        },
+        {
+          "title": "rehabilitationjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAEiOgNg4jqBZwMFY2TNTWNgtPLZy3L2dWg-ScXlsFlx8b6SuXOWcI6bh1iEfreqcMu3xcIO1W4XRqrL5Xo2IH2sD02TuupM4d0qnt8C60mzGDBA7OnwoyROPMt8ZgN8Nip5GkY0tul6s-vJ7xC6-Tg34n-7SDU0_BK19joSX5J_eCqxFxi_OU11OeIwbcDxU2Q9JWeCJJ"
+        },
+        {
+          "title": "e-rvs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHogoavTsG3Bd1IJrDHQJ1TqH9Cs4agcLT8YVLtkzNWGldx8ebj33IbdKy1cqmA0Iyi5NLRFLQcix7T_hdLejZNYcvsdVhis-BuM9TlbRYPJVKNhfw8VZq9EtuR9KjgV-4aKT8kRkP5eHZHwcB9IS2HYTKYdG_NbPWUvaE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vestibular Rehabilitation Therapy (VRT) trials for Meniere's Disease",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Meniere's%20Disease&intr=Vestibular%20Rehabilitation%20Therapy%20(VRT)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "30-60 min sessions, 1-3 times/week",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 150,
+          "sideEffectManagement": 0,
+          "totalAnnual": 750
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 1000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 100,
+          "annualOtcCost": 400,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 750,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 140,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Vestibular Rehabilitation Therapy (VRT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-23 points",
+          "baseline": "65/100 points (moderate-severe handicap)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dizziness Handicap Inventory (DHI) Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-2 attacks/month",
+          "baseline": "4 attacks/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Vertigo Attack Frequency",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "42/56 points (impaired balance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Berg Balance Scale (BBS) Score",
+          "percentageChange": 14
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "18/24 points (impaired dynamic balance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dynamic Gait Index (DGI) Score",
+          "percentageChange": 17
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "7/10 (severe dizziness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Visual Analog Scale (VAS) for Dizziness Severity",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+13 points",
+          "baseline": "50/100 (low confidence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activities-specific Balance Confidence (ABC) Scale Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "12/21 points (mild anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospital Anxiety and Depression Scale (HADS) - Anxiety Subscale Score",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary increase in dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "6-12 weeks initial course, then home exercises",
+      "trials": 1
+    }
+  ]
+}
