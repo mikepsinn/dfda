@@ -47,6 +47,9 @@ and this guide in the same change instead of creating a one-off competing patter
   `Popover` and `Command` before creating feature-specific alternatives.
 - Public comparison pages use a `max-w-5xl` reading width, rounded cards, restrained
   purple accents, clear headings and a single-column mobile layout.
+- For a full-width section background inside the page container, use the `band-*`
+  classes in `apps/web/app/globals.css`. They paint to the window edges without
+  widening the page; do not use `100vw` widths or negative side margins.
 - Preserve the app's existing typography and consistent spacing/radius scale.
   Use tabular numerals for comparable measurements. Reserve semantic colors for
   meaningful states and pair them with text, never color alone.
@@ -86,6 +89,11 @@ and this guide in the same change instead of creating a one-off competing patter
   alone does not establish dominance or good value. Upstream ratings, prescription
   access models and missing comparator assumptions are not silently promoted to
   conclusions. All original fields remain in the source copy.
+- `components/demo/rankings-preview.tsx`: landing-page preview of the top snapshot
+  estimates for a few example conditions. `lib/demo/landing-preview.ts` passes only
+  summary rows to the client; the full rankings stay on `/treatment-rankings`.
+- `components/how-it-works/ExampleDataTag.tsx`: “Example data” tag on each
+  illustrative mock-up screen, so previews of planned features are not read as real data.
 - `components/demo/estimate-notice.tsx`: one compact “Current best estimates”
   notice per page. Source metadata stays in the data/manifest and technical notes,
   not a repetitive provenance wall.
