@@ -1,0 +1,593 @@
+{
+  "conditionName": "Amphetamine use disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:20:26.593Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLftatpyDgWReI6OdybQn1FARd_UwkKEUlAj6ZLaySwxNbjDBvSRhLuh-bNtLIfNwJyMAjor7qx5ExGn2ERPdy_YuwuchM-YnpFBRFY0dNzvgRHdy5fD1sIq-RpsQkLGbMmcHu"
+        },
+        {
+          "title": "jhsph.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxU-lMv-Japg6qOxYkR2YHbPuArso_NVLtxm0Ws6CYCeOpQxsAdG5e0P77HcbDgurwz7NyPTJ-zb4YOIil9Mn7XyYaRLgMLH_FO9NwJM4gKmdmkvTL9DGnTJrXWUhkqEr-uDJ0dnoh8MAwsZkvIJ_2ZtxSeTastX-ClGaIfZoOk2HOQBialaYOguGDeIGLI41WwpeOirEWWgDfOZnidq7_X1GS2XgKVQCYJC7SP7f2lI7yKhspJkGPgwksB79p5xDs-75El4AYe4Jf"
+        },
+        {
+          "title": "societyforpsychotherapy.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2Z79fkw-AkJBwu7lFPi0Jx6H3kIBo0BybihYY91Wf0FH5slDtlEM7XZKSiQLrSFPgRAjPHHqz7Js3bG6DFuCUtP2V0CJlvhHdemfP_kPD7qSUrKiPEDk0WhLyoat5Lq3_5CaWqVst-HDGfg8vR0yfMNcDQGEV83mJUP-YMCNj7Lk43dXJGxIVcYmnE0jj7qu_D5mJoVnuZyyXUw1ROg9b9knOMZL-KC3jK5Y4XHkEJUblgYHeVh97CY6ZYm_NU7wc95gXr1wfkZsUGUI="
+        },
+        {
+          "title": "hhs.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1B9I7LcZVyWTe73ybQvrZ_5E-_0LULfUbyyAyB-eG_EQe_1GQX6UpvbBHrHvOFlA1rmCOIXCXP5XjG44qAGVN3A2OfWbvL-ZnWmaLT9A844UFMvkkpRkhWtjhUmiMl6uIvCpAdXsNrcXIENnehqzrUi72EpbFwoFl82Hlihi7R7G9wr4xy9u7gCSUOihv5YWpcPHaBFQN7d1q0epU0mUdVmfcdYFYUC22vhFrxC9WqEGo2uDwH2g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaU4BEEqsdObrKfvzq1oipe9VjsC3Tp63J1ZNr1y9nJhoZYyyUQU6uyCjUNaDgbpG41OskE5JFu6sQI_ve5tsSzusD7FYiAqRrpaMxb5f60BiaCbp0C6D_CMYU9otyqpO2IV1dzufdqXFYnCg="
+        },
+        {
+          "title": "anteloperecovery.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXUg3qhAlRz--5AteuV-pJc9qlYmdiXIs8wJUDMRKcSpBzRz6ja_fzG_WzwfDURedPuBtUYbwtxfYaDh52Hm5_wOYiFJGJbYr1-AGT7ed9f7RBnBKBbbUHVMQa40SoOsf4cCNudn8dlGFRPfXsIksawRHkSK_RY8aT6OHOKVhcQ2UySvt9RJO3f8lMeMxYcQP9fYP-yTVCJF3JxOS8_TbGr2pkc1EV9xVYcKZHvaIOMXD-2Bn1fQ48HhqcJHg8Q-dLbP33G_hbCwMc9w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWc4nwlJSEzrDaqMnWR3i2pbW31GXPVkArCv2tVELyMNu6OSEyklE1J68OWVvg2XQPQdd9qgR_Z7yPs9eqwbquQoSakr2Rab3KLr1p464O4nTi_IRtVJKwFa6phBg9MxLacNo_PjX29ZRYwp0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjUNxsv4nBJ0WRhGLJsTvgrmRhIPUCc2XZ77W24kVi1KKZ0UFG2nOf68XwabVj2_75Lz3XFPboqIHXicx7ATZ6kfnd_NdCXFE2fsumKQtfIWngo0vxkMIOkelAgpKZxTL8n2QP9JTGJL-m3lnvoCrjkNs4iECLUSUPgbjd92UA-YQHsfOLsmUkmqiry6KVDqFpIhblLpC_WTLWJBxLsNWyBtyR1TpLIf5l2GZHnhlq3GJZ8lSPEh43Vabq10aoiUWNjo4d9Gos3e0gCA=="
+        },
+        {
+          "title": "addictionpolicy.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6-PBWx9qS8vC4i2JAUPPDsSgucwkzCmawLRjRdyyrYZDDHTf1S0TtQhvJOvVggSl17MAC3PR79ySoLXZ-Unz45nfYwcmHn0HhhSeeCSenzgjN1BGBK0KVpwi9EXqFRDwptlEj5DHKQIgK9s8ntbi74sO3hCXIU3QKILsIZui6dRA4yfI36G75h0-QefdkmCupAqGHBBbUrygHWpoStGj_LKfPcLgPksF7BRy7_Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Contingency Management trials for Amphetamine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Amphetamine%20use%20disorders&intr=Contingency%20Management"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2-3 urine drug screens per week, escalating rewards",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 750,
+          "sideEffectManagement": 0,
+          "totalAnnual": 4750
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 13571,
+        "costPerResponder": 7308,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Contingency Management",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 5200,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+35 percentage points",
+          "baseline": "30% negative urine samples",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Amphetamine-Negative Urine Samples",
+          "percentageChange": 116.7
+        },
+        {
+          "absoluteChange": "+15 days/month",
+          "baseline": "10 amphetamine-free days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Amphetamine-Free Days per Month",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "+6 weeks",
+          "baseline": "Average 6 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Retention (weeks)",
+          "percentageChange": 100
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "Score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Health Domain Score (WHOQOL-BREF)",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "-25 points",
+          "baseline": "Visual Analog Scale (VAS) score: 70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Amphetamine Craving Intensity (VAS score)",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "+5 days/month",
+          "baseline": "10 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days of Employment per Month",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Ethical concerns regarding external rewards",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELyFlm3A1HQtPTfYH94ryMpdDqbR1kXPTYxClPAYesJTv56QfvwLeYgxFSeCD63Ut78ETLtW68OFi7cr_a2bmueC5UEPNrQUiUjXHRsKutocLJX98xpw0rRxDHZjzwxpwUQlQ="
+        },
+        {
+          "title": "campbellcollaboration.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzeudUvHsQ4NNXHPn5n5aofRsdpHjUQwh2dOdRHHVksAdRlvh2l7vwVA1-pHy8rq7NHjmhjojnG_bXtCGTvaGQ1E3_Aa12vUW86Fxc_ncQU-PliuJOMlspO1lunU5o09KmdHK0hN7blym4iqT9Cv9h56Eo49YW9uNWTqKRpOn6pqLBHBtNjA-5FvO7i5ZgPFEXkMtuQNyO5TdCNeJHwz_dandpBj8frZYVnDIlew=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfDHwJs4XADCi1TF-sR8iSoRdN3mrXYCIDZ-r_4YjNX_AtO-yoA0GKmU8UvwkrBnnObgcNZEyL5rEXf3ryfwpxWfjaXf_Qkmi9u-4Q7at4jZHpdf63XwdNPK6B0bfgZyx_S3m59avgfHHKZNqhFXtB44VromxAVgH_Lo1JmxUZlMnGekRzFxIS04r9s00iJ18GvTn--ekUZxUpFkua0j-fZrelaXkpTIpmhQpodRjz0M1kAW0TAFtpXXordTgA4A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4XDeYfPDe3CldW5WmRI77cMZbRacHGkOmvKmgEQ-9lInvsNzGPXOEReEGAEowtc8cUfl2SgKPcNNPirvHF5NTmcU29SLXjoByUc3ArQEKzcFagY8sslCEKg1SlNum9HYS1tP5npmJdddAOw=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGryIzvPIQw9JtRdxybr1ojINHzUPyMzhjJCNbo6IU2aPI42a3awDybfT1tr6SZQlY3NAG3xGjz_8WFHhSB-_Gg5TJ37b8dhWrlhAVEonY4rZe6_kVjzof24_ezKcK87QKTy0USzJUoLjCHYTKPnWl6alP1GFRBiVF86vUMQ3cgV8qPjX8GBM1MEV0BJo04Fs8NoQ3-CdVHkVFJyqFSXl3u7-8bQc0cEj7C7FzBxm0="
+        },
+        {
+          "title": "health.mil",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8uLIenvnyrLKkAJCzgfwB6WBNBoUJUBnUeesfHncPzqRFwQOb3HY58MN5W_En-pcnNGqmcc5IwXGlSySYI8qTnFTaX884OND37hi-IckOMnVrKnozpM0Vb8VfrCaQTXoPvCrKTf1rNA8cx-IXCbcb-fNkXSPjQvy2iOakMAmQ0pnRKJ9lG3mVHgLdHh5wXO9EtjpXkF6mNU-ib_Twua6T_hGN-6JzlbFvnJ9F86YYexZGvBNbh2OfUsdsoctwbO7KjvUHFQM2"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHafgIxBqH9gHUSHb2jjFI2MismLn7R_ivNbI0lq_LrQa26hAA8ood6HU1OInODgszGvjrCbF1QbZap_5LzkZPihlnGhafdJ69IdSI9h283aW5lrc6NG6DrgXdgoKb_eMcIXyycA1Wll5RgwKA2mUROwA_Te0tsSu9ZA-LpItURpTdWpvL_Gipb5-2c_fG7i7hvUwlQkOo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLNQdCJ1pQ7yj9qjcMzQR4fQsHztQfpsYCvOrmZwYErXKiayrb-clTGw2m01E5aBjmiycZXX2plWN7K2C6fAH4r006oaqc-WmuZnEZ2hnh0OgwkRcWuvpSX3aqLrQpKhISyV6GuAs2MUdOFBrZ5QrCpBLCzKezGbR9jF3E2eKV8gzvXRcvaQu2F8_0eVezbE2NEn1gDcJGKZOEemyTZlFJyEmwsVES4Q7jBC4HssPeR94Q8KldPw5fJTlMqDtTTb8Kw4WMLX4GKsP0Ifj8iNVW1T4f4THTBD1jFeiKqyvfnIHp55-8nRWpulWYC7lN8VZLaJZVm7RGC6GGWMYAwkjcdbeQsgesDUWD42mCbD-uIgcngd7w2BuwVCZ5hKXn__6frzFr8XnY_CVEt4FbA1oUml829xw0CnuQpUoOIISoOg7Rmdrq9XNFYID_GYKarm9TpXCzra3e5TbUn2xcaSVx-OlQoNmMwEJ0TzwMI3TG_fobiL-xVk28JXZJzg61ygENfTnVKe16I_DqbmMgIiWT-kRUwVsrJejdclHnJUixdQbBWqgA9Tp_elDrUXaFe5-3QxmvcZosihJYMBUZhBi05pJZtSpxfo5rboy2OQIZ32hzteE5jIY74Lk="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvPwuBJQlyKGd3SHtTtJVvjxMY_yJSpgO-GozbVqXi5TlSJ9kgUgnyP-XXlmpz84sOJWeVW-hAC46K9uhKpPIuyvXOBrc44ZyTbpbB2i64dj5z0COnnkcjr8xe7lbnv8hiMxxBJ2__ojBD1ZAc1dJp8w5V6lMmqy2ed_NGX1trwxHxqtU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Amphetamine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Amphetamine%20use%20disorders&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "1-2 sessions per week (60-90 minutes)",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 12000,
+        "costPerResponder": 6000,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 3200,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+20 percentage points (from 30% to 50%)",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Amphetamine-Negative Urine Screens",
+          "percentageChange": 67
+        },
+        {
+          "absoluteChange": "+25 percentage points (from 25% to 50%)",
+          "baseline": "25%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Days Abstinent from Amphetamines",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-2.45 points",
+          "baseline": "7.0 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Amphetamine Craving Severity (VAS 0-10)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+3 weeks",
+          "baseline": "4 weeks",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Amphetamine-Free Weeks (over 12-week period)",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 50,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "17/27 (moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Severity (PHQ-9 score)",
+          "percentageChange": -29
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "14/21 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Severity (GAD-7 score)",
+          "percentageChange": -28.5
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "50/100 (serious impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Assessment of Functioning (GAF score)",
+          "percentageChange": 16
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Emotional discomfort during sessions",
+          "percentage": 10
+        },
+        {
+          "name": "Temporary increase in anxiety or depression",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "12-20 weeks",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "substanceusehealth.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAVtiu4QI0Vyq745abgOSr9hVF8xv5-7dOkZ6KlZjgUr4u3bsnw7DgPfaJRJESfj4_hLH1ufwTQ1t7zt56FaIEPa1RGe03d_tA4Kz70BnTfRWFadr-NaObb3RdBZ5jCVUL5Kftdlq0N2JqlPs1Wu9tpCwS4VaLgPGZv0p7ck65hmbmrVrCC0KRhljgznPvY5L5zp1HanH33hTEkyy2mPj0u71WIFIgM2g-r-ks3XljQIOIdurSg2VKaDF3JZ0="
+        },
+        {
+          "title": "bu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFD0dTpHi-2GcjeW8YgCLtY9_q6jWme9JDmkyNh21c21CBRp2QaHxQ2JMAor05AbfzK1Wxerfnwvv85KjCcYg75B5QMRIrJNcS9cfpJqiZl8l5qLRzDPMR3FOTlE2E42AtNhK12SoQqz7sJQzYNLpJfj54PK69DM8AKJuhwxpplXycyQpCfiQK1K0SyYIH4KNndMB3H42J6_mlPnIPgfF7ww6WJ5zeRGrlEOCwF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqftOPOTFa1F89lWFd9wYGFyJvTZ1mrhFdwHSuGoiec9o9SdezCP_YhFcy1O6KbkioM6sp4iHRHa1mstwNgtvOAe9UiBtZB23QOXYMybSH2PISZVGdpcMxt7cbUeZHQUbnZGJR"
+        },
+        {
+          "title": "binasss.sa.cr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGArlBIxWlZZHKLVcWRkT198E0L1KNGfO7Y5idVoUOxqKKePFbjV_zL4_xrSAOhMe_ULRifxHc1vWawR37m5D_2f0u8yCcs4U4HY0wtcMkhVDjb8SsL08VvweOAOevuDh_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPJXYMIxfVkUMyT09esHzQYebLQdxSeT65KPf5fMFhrl27vCZ6NdanDsYLei1YyTB2UHY0dG3DRA3in67KqMqVakyUcUt1MOqEFpg_TEbpcawZFo4RSckPDGXM6VAoQUHh-PUMJYrB_HGTXdg="
+        },
+        {
+          "title": "news-medical.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpkNoUtetYgCw-RLAN3aW7r6VPlKQo_B66-vagRMFy_TXwK64VEugu2zZpYep3b4MR2q0kripS_Gb77POGMc8OVB5_iOnuL6mM8Jznrqm7L4egjhFeKzSzNyagF420moUgp8w5hSnMxWGMflaGAlNKdXMXKlpqyRyVbSc-7tj611A99O02xVMRr0_HTgceBo0_vD6jLPYMOToYMaUfKhClJzqo5M1I6ov2Or89EeFaRZfFzWEDn4poA2QxclqdfJOKeg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHALR4awIPYoBk1DbVIFz311eb4XlDi-GogvynWUSBiFuYxs7jnJ9DTp2S8MUud29P20ba01PSdq8JYPLZCznw0bA6nncTCVzC_k2dwgDNrjV-CJOc4IlvFGU3EcWMWxInILzEtodRRJUFwxXUceuCLDDAixavU-0TRmq0TmGNA_SOJCvVtUJKLnWZlHY0b2jf5An-f1LQfgSQFZoxQUHYAaUU2HahCF57cgONseI_Q58ST9NOpeuKw0F6JxYN-AOEsjS_1zZeI4ickwrpDnRl0bs7nStfJmfsTKHnEDsvIpXruOsjidUGWkcHUH3oHkr6oSSKn9NqBnvBw5i4MhvGa7jtKnkQyaok="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bupropion Sustained Release trials for Amphetamine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Amphetamine%20use%20disorders&intr=Bupropion%20Sustained%20Release"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "150mg SR twice daily to 200mg SR twice daily",
+      "effectiveness": 45,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 200,
+          "sideEffectManagement": 75,
+          "totalAnnual": 525
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2625,
+        "costPerResponder": 1500,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Bupropion Sustained Release",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 2600,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 20,
+      "responseRate": 35,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 30
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        },
+        {
+          "name": "Seizures",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 22
+    },
+    {
+      "citations": [
+        {
+          "title": "bu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNeFwuKmDustsCGW-2AbycMzsETV7HxmUQvLR9fniipcPfwfFzZWq2DE34NilDQoWrkyp-IuM57ZK6AtTLCGEfO9kRtXlzWz2K0ULYxAoI9fSQ0o1PIuGi1gDjjtxHnew0r-m-gbr0sKSVYWBNh9E_cvgYbU30Y0G5YMrX57cI2dHjaULdSWjiF4gdZLmT6YdeHiWbqL_5rzPWapQjVDNwLeUdtbEZHeBljAtSI5FJcnTG7qEiUQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZ8foxFq5XB8urSPX-7Kez0Dx3bpgk7EoxiPR9cRrv0nXmic4rnLr6FdgUmEGui6q3elbY0sVICiaIuv6SRdBGiev7nYYpJl9nDJPlebolFX_Z4OK4q3v7mnHrzL33ZOm7ZHUHUjCTtojILbhofnTLKmnkkI-7Wpvn3z6ljShXw5_vrr8oAH38ixFzbWBfto6vFCfUnmXW8awpXHzBkX1hIVNvTYXN2slXhDoHT1fbIrCTxBwabAJf-WN2cRXvyhDcWonCuO2z87yJGxYobinwZb7tGxWTrOdpx5Rf9IAzgM4N"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuhAbcuQsYH2-WnrsSnvgdGljHTSG1Qeuudq0UWB1houlEL6LV0vFlnzBISUQyq1wE4QctzlHRpiiJH4y-r-anEriy267R75asRmHQEy9y4GRxgLXOD90B9LZqodup8LxYkxK5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXdhCIl3-MQo5YMku-xtlQ-tKQsHIE7wZHXf6FVxSO2iUegrN9E6NIEg39nfscJPCnjvvsdLyz4euNn0gikFP93ZAEfb3vnW6n-Ma6VwiRMK3VHZFTt4CNQEsNyGXKNHxyOcBl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcf5XntQiaATz3K41w9nRj_Qnbo5j-ZOQ3BlNnAMoW8gkd99-XTPxZOPC_dDD49Ld7OTmex2DEn1BhmRatKZV9vPiJNhHeskd82vV8xefI3EK-VxUhmHZIAP5BGIYmKVmZgpzPtAgJ-IBhBX_9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqDZkSzUuJBN9zFCK7NRImZC9IHh1plbGhqB_eDOhMIj2OfleUj7DCDB8PZJCWSVTFTLvcAw4HP-nvRkAsHLB7un3sPvw7VTrqZoSZnwQRY_Xv7SJCC1P9F0_5mF47Lnl9QQ9WURUSz1fBiFo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl8vlppcgTxhGlYBVAr6rrA-tkFHcIbB2whDR3tjy3rFp4xUM3lbmrewOP2HDiWxIFveDjlaDFbvvz5LxKfEn9906AcIUu5NU6ih_FC74JSqZsIiSr-eCf7VxEIbETU6V2HO0u31ZvwsoQp7LDlDING1-jFhWxjCccspqms_8TiQJAdVBBbshgz3KQWO-KatueCc5YxTJXSabfSoMJkctiRS7PzKrLiLB7TmqrrzEpuJM7BeI="
+        },
+        {
+          "title": "thecarlatreport.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6zZOT33m0oNX3Uud_yQyKp0LImJ3_Eq-rDfmOYdY7YJTPOZRVIqiyCaHUakGJJEv5LcrWZNxy6AFP6xEl1QvP9rMmCxUYHJunwMB6k2-Nr1tQ6fuycx_V0osXF6ztCiaBe2wMm8mv7Qw2Hj5MWXZUarA8vjAeNm0HrubdEuTHMYQ2for26p9IJ-HPuT7kYqXPL88l"
+        },
+        {
+          "title": "uw.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXlU5cIUnhEiPo2VY6sBANElE155ykR_f7r5s4ZZ1l7aTexppeJqs9_j7HpwU4BKi-XjSYMF5jff1IUXEve30hndyKu-wEhY2uUrr76Hzd3sw0ZXYCjXcUl8uV8Jo38hJbVpYxzVhrPvZkvmFQ"
+        },
+        {
+          "title": "unsw.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRNAp9rkfMtqXFSH_1N7fkGE7nkkEW7FEXYvVNSBv3fr4Lyo-TGZqEiGgd-YUr1YacO2dw0fElZXfIGyAYxNn8YRYI3xe0wNpzyDQwvQVI9xvPmNjRYIyc3NjDGtN7Ke_Veo2f-OwLTgi487bziKKXEhQPa1jC6AtWUODAcB9583q1EZnLWPO6meuUnRhkwxX1466H3aSCKDIjM8-chVsjQYNqJG2XG24T"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mirtazapine trials for Amphetamine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Amphetamine%20use%20disorders&intr=Mirtazapine"
+        }
+      ],
+      "confidenceScore": 50,
+      "dosageRange": "30-45mg daily",
+      "effectiveness": 35,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 200,
+          "sideEffectManagement": 75,
+          "totalAnnual": 475
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 4750,
+        "costPerResponder": 1583,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Mirtazapine",
+      "nnh": null,
+      "nnt": null,
+      "participants": 700,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 10,
+      "responseRate": 30,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Sedation/Drowsiness",
+          "percentage": 30
+        },
+        {
+          "name": "Increased appetite/Weight gain",
+          "percentage": 18
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgrEN4SM59Txx9DnLyCCPoSQFRFpghqIYZJChgtESkNK3pXFCK4npvnIcG3bLq5752H0zOgoB0t3YRJwn2Kj1JpfPdc7s978KtHWbIjNN2duS6ERBEAAz6ZwL-tJW_thfl9ZnBEjnomWrnWQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjP5_5w5phDz_jpj90-ZBBHpYcvorisvCxkcZ3FL24sVmZwPhJrxRV_V7MmwmclA3ilvxNJH5JkPtWjzEsmfpkMq3bUK7wDVMN5MpNTIImtK2J1LkI5ZV88x_lujT4LyJp3-pIhNTBfsxQYQOX7ZQHtEEN5lfhJGbKLQ5GFXFhOP5F5uX6rpQRrGLuI6tJeCBJJtxynGxFmK-gfG2iUYeHJx3SlxyX4Sxnog3BQBBPlzZTPZviOZbiMuqB_O89wnrrmm-Moc8HEi-mYKTnc4bao-RBXEe5gT9AHm0Rm3N_K4BUW0oAWBKVTc0xybeUcgds3WpXcae3Sw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ_Fa6_5mnFx4mFIHKCnKXzjV8JumFfFtebzcbGwATDgZ1GVJNIspUDw1tsnS8kjBNulJwjgs2MdRqw8ybxBAsERB0FQFhIiKQMNBTe06JxzkQhuuM_Qz1oRM5Q9sn0luP0xYXlHHYejIQ1n3CSEUcxDwcvwXll-eLn7hgaqCFZ_SiPlNisLYZNdtYj25JAjuSGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8mhFfqxZtn7OdMV38AZ25mOZwM0XFmP8hGrn35bQXHxpsDNEHGgIiuY4GDNA8lnZSZICL0cGIZnzsxGuMtTramiI_eQoklNTuTbRpA3kYi-GPTNbMX7WEdCSbHNlONX2nsr-trOK91cxiUw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methylphenidate Extended-Release trials for Amphetamine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Amphetamine%20use%20disorders&intr=Methylphenidate%20Extended-Release"
+        }
+      ],
+      "confidenceScore": 45,
+      "dosageRange": "36-72mg ER daily",
+      "effectiveness": 30,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 900
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 9000,
+        "costPerResponder": 3600,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Methylphenidate Extended-Release",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1600,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 10,
+      "responseRate": 25,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Insomnia",
+          "percentage": 25
+        },
+        {
+          "name": "Anxiety",
+          "percentage": 20
+        },
+        {
+          "name": "Decreased appetite",
+          "percentage": 15
+        },
+        {
+          "name": "Increased heart rate/blood pressure",
+          "percentage": 8
+        },
+        {
+          "name": "Nervousness",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "Weeks",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 18
+    }
+  ]
+}

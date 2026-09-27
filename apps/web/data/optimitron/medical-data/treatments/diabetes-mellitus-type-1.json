@@ -1,0 +1,902 @@
+{
+  "conditionName": "Diabetes mellitus type 1",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:12:49.011Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9s9jUBJpqDED3Umlj8_eCb2hpCfwqwB3EFkz2YW63L-NuFfRoQIvmtWbC06jsFEBaLQFfyd93fUnupYdiOEkm-RGsWfPjDJeq6Rke-8WyRiCCApNA7m5hw9geCZrXy8o4VqCtHujSf2-E9LU="
+        },
+        {
+          "title": "medicalnewstoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCXbw0P2Fle7_VBMAjesSIqu6hGpfDxog6mO4d7KNeEfn9hS-yKL29ZndkDgUowDw0SLaHoMiCJhajljMUk2d8PCGD9zvRzggGajaCHzftrzgksUJXA_USUpYpSDZ50FVq1Eo7IKNeJ6mCig=="
+        },
+        {
+          "title": "bpac.org.nz",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTyhWRm1IgJVrriUXtiAMb4hl81-RmIh7GspGeYhd-UEeFx7SxunHy_p-DrbZc3PT5PZc3N-_-it0K5UjLGCUvBK1Ide0EHgVyQIOZdIt_KP2Gh6q0l9pd2VmdkW1QiXAAMwYsNWDxIK0="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKj3gptHxIr8qeQOzhR0Aqat6n0haTnsw1aL-6LHQtFwmdArAncQRAN0g-QDSW2x4tO6F8caYIfdM90t05PTQb1pelG7Vhj586YgtBK8EWfd6kQBLtBzxWg3ZhaASHaYoAHNZDquE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGufZo7_Qx18LOhp4wGBOgaEVdkD4jHt4v96XJY8Lg1w8LF3exoFWxpUlrnI2qWhS3WCFbZK3AH9WDDFcudRrivLZpzqdcWM2Ew8NSLOlvoxGHPXK_YFmaqK9MnmUm311UKM5oPllZn9m_1IB8="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSVqSHxI0-9AkKUkj5H_KBi4wAnf_2Kufpp_DY_xwIs3zYStgTmtWY-AkxkOq6fiKl5nk1dogVQ0UOVPKUItDcxOTTFyfnGvffwx1nNSLL7-Qfj0gnqbgHFa-jbcjc9oMaaQtFWRh0rJ3D-K4DDG_x6F161OhRlY3aQxksaquilzv0LGYH2EjYWuWalr734xZ-nwgpMZfaotRixDRrAYAZwM_Nn-InJzMlB03wDTlsdUo="
+        },
+        {
+          "title": "pharmacymagazine.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5xSkZ59yx813uthPIEHOgk7Qku87qbx_R5sPX4Ywe0QkslFr9caPX2gVPpjOSqFxw38hek_Vlzhw8vciGhv5rXeim1yZfup20StjR7Euw8pQhWGwNCxIqbFOwKf6rM0dtAp1jbuwVUwR9slzlvIUSLsEeq9rgF06b9pj9R9lM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmtQdkiXO6i1bY_JHgIld0MmbvDgKa9Mij5WqApTyfoDdbapPTKK2iozFqdqOGzfSuk27s5D9Y2JnxxpBse3NpBA4QEv7luhMHb1zA1v37QNlW2SvzSKjjvai_X1o0g_BUQqYpIwvj01NnaoNm4dW_JP85rYgPd2hrLJ3SBmKK5HiFZhBZOA5RSoIXZLdZFzjQlehVA3NQpRK5usDU0JRtJTObVqiyJznaBC3ddC-buWu7C5sn6TLJnjtoAgwQjkazyiz0bO2Wds30ehf9M1Gu_KCGRBgEjyHKoD5eM5qj_eCck_oEq5X2VjLPrw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeXCDajK16PiIHQ0wDibLR8ker27Q7l3dCvj6sDRg-A_6d8JNOMhA3tNn16KFeoXy21A4C-h0qEGVA3Nw5lsHp3qbY4OPVKfNaw5yPqBtFQJtBIJcAGsZDS5MLdUmLULJbhVwn9guBwBTcyw5s3oF7zYn10G4x6YZ9y0-lyI9sRJP536FzmH0t63Q0s4rJS5FuuV8vQWbESC2vz_4echtNH9rnbuHMHRpCzzJM2zDHti3tkc72Ph_O2GBKKe3AoRLfxIFRv3Khr11fQBQW"
+        },
+        {
+          "title": "ClinicalTrials.gov: Insulin Therapy (Basal-Bolus Regimen) trials for Diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%201&intr=Insulin%20Therapy%20(Basal-Bolus%20Regimen)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "Highly individualized, typically 0.4-1.0 units/kg/day",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 7000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 7778,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 20,
+        "vsComparator": null
+      },
+      "name": "Insulin Therapy (Basal-Bolus Regimen)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5%",
+          "baseline": "9.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glycated Hemoglobin (HbA1c)",
+          "percentageChange": -16.7
+        },
+        {
+          "absoluteChange": "-70 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-100 mg/dL",
+          "baseline": "280 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-hour Postprandial Glucose",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "+35%",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time in Range (70-180 mg/dL)",
+          "percentageChange": 116.7
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 90,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.3 events/patient/year",
+          "baseline": "0.5 events/patient/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severe Hypoglycemic Events",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "3.5/6 (average item score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diabetes Distress Scale (DDS) score",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-0.1 events/patient/year",
+          "baseline": "0.2 events/patient/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diabetic Ketoacidosis (DKA) Events",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypoglycemia",
+          "percentage": 60
+        },
+        {
+          "name": "Weight Gain",
+          "percentage": 30
+        },
+        {
+          "name": "Lipohypertrophy",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "Immediate for acute effects, weeks-months for stable control",
+      "treatmentDuration": "Lifetime",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUpb4eUlF1PgvCJF3rXqnV2aRiujhzouymdh_S2rNXsFXBDeYs_Ar7g-ebR2NkGzt63TfV966CMCZPmaNiJod8RGTSN3CKetBVWXC9xBTCKCAtRnOfU8YK75Py5UGAhjR_6ZXzz1mYaNwYCXmHB-Qpm_ZB-yH3TPII4np0S0R7V6A3a3MoPmUrlCU90b3iZRz_zduNBFEzONoxYO_TRjrQ6n8gCxK4coq9"
+        },
+        {
+          "title": "e-dmj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZEaQbV1ZVyr3yJWZt1DH-2Y1F4ALD-b-BxOdm7RMp1kXbVSp0fMYzgCgZ0KWEcGPY0iGYfYWPL-QwFwjU2F0D9FD3uawPQiBuPt1D_CWqyVDjEaBqv0qmHp_DmKRYrFvnnnYw7liDO2ZXfuBK"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLSX_6XYXfJQFj_Rir1O4Kp0VdYaiRHGqkzkDOAMWYf2664uLNnIEHXz6kPXT2vYHzTtxt5pwT5k1C9e8CePYPlwhkpS-OpArIxpIXzVD8bYo-nlE6R7n1k2urkkrtDWrnMoLIsyQ84eT8B8znTEUGzFNrQRxWWbP3GAnxNIYyiuXVxFnp3knn_uvu4hqvv0h8wFvP--O72wZsk2mXT0nfojH5_7o="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERfHswKQSelWZV_bUi5cs8iMopEmS1Dp0h2h1apswzUHIqVqFVZEZjYljOLsoy0Zo0BgM-9K_ushbVKWKQo2SxsZGh1YFJJKZWWNs-fq8C0CZbcKtmwW4Z0ZFN1-ruEAbry3i6tTyoQg=="
+        },
+        {
+          "title": "medicaldialogues.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsNxaRST5r8sezFgu5lf3hE2McN0oaxSeRNHP1az98whhCTxKjmLhJx12Sk2zJUbq5ohts7INe2xLSRn-QmnE1NvG3r7xrruPUoxD6Ng85CDMFvG1rNZ1RFLNqgbXtiGBBPVBtLxi8lDwjF-Oo_Zs1rpRul7UU1eMzGIS1gmGk7OdraiCRdUxfr8y6vBHdysEHVlq6-U-VkAmvR-T9cUGO8VIRHiip7tO70oC42D6CIVw3GDVKcJ8N1B_yb2RHV2OUGO6YIm4iHKse5qWfPloGc5EX_w4kIr0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7mi-vOBvf3sSqyUSNjjfv7NVIIWnKaDAMyOe6uqUAAS9fiKgep5UonqiO9faKx-n53DyeherSrDNynx4ePU7p05LBJvcnJwjqpL8v3qKL4n3-5dBt4siz0SDgb4UIk2-FDj9e"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEciPXbTa3t1Bug1IHn22tqPntAdyNxj6nekar8TAPuTIMdCH5qwUaRz26dfoxsJSkF0RYQatd36tVRJozMYC6oPh5vBjkOUiNhpbCD-27OW4yLy_Y2BziPprDGNrDAEuybEnY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFj4WIYn7-h59EHrzmPHbGMUhSkgNErORFB0ahWzcOoh5clVMr-QVc3SjpUS7Q1erAZkpNBdZcsTxGUXWiNOv_-7EG_Kd6kFt1Yr8hAdtsFtuPCg0b4qDF7ZiCci501FpRH5KX9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE7wP_nUVnbww72G37Dgj9b4tEPqUK8X-iDH7c4ymeZMz2SJ-Zu5x7UhzKCr9qnoe7pWAI7QLZSqKqZgWVy-WgiFPWn-AH842UZBF-ZmWChc7oa7TckRx3gopduGZVpB16lzet"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo7z7rHNXJh1Wcb1txbVbNdO7K9Cpd_oy0RnPO1yvB2MDffm5rr0PU2fdf47OO580EEiV-WZ1wDZ1B_vT00YSgSjlN6SKvQxPshHykAbddMllKPUXD19Oi0qDU1yPyEe_URaXb"
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbmNf5Lq3vgOIvzAz2PLUvv1vSjdttcBAIhh78u_DQWrVdBFv0hAxTtZlBI06P1uXNMVEMLRDYIM3zZFwPtXM4sGk0dj2CzY7clx3Tq8aLa5YJCI54hfEQFp5Vv06RdAsi4Qcdd1rCE1IFUDJSNxTNoCKKDRW_US9_JVEjg3_mnlRsoIE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9jw6ph6cH13Qko03adUkAgRNvUFCEQDSYcy1eQtVAqN9pDPH4YZqv86lzJLM2fAOM1QQ8ZqM9zRAY2XKWT_Fq5K0M2-3yuzH2xN9bh44pEQ0oqfBu5wnoZa8fR6JE6cws7ZZJ7HxTF74a-2zwSNkp4u5EDqZL8B5CwqsIrJQaz8rcuwaHdmggPeIBRUG3UKEPVKnH1cgIaoMRwALuhDaqJoc6U36y0SpCV9bOw3BwYXzQGfAk41_AFszgittILLbnGeaxoWU="
+        },
+        {
+          "title": "ClinicalTrials.gov: Automated Insulin Delivery (AID) Systems trials for Diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%201&intr=Automated%20Insulin%20Delivery%20(AID)%20Systems"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Automated algorithm-driven insulin delivery",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 9000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 14500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 16111,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": {
+          "comparatorName": "Multiple Daily Injections (MDI) + SMBG",
+          "costDifference": 7500,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Automated Insulin Delivery (AID) Systems",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+12 percentage points",
+          "baseline": "58%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time in Range (TIR) 70-180 mg/dL",
+          "percentageChange": 20.7
+        },
+        {
+          "absoluteChange": "-0.7 percentage points",
+          "baseline": "7.8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -9
+        },
+        {
+          "absoluteChange": "-1.5 percentage points",
+          "baseline": "2.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time in Hypoglycemia (<70 mg/dL)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-14 percentage points",
+          "baseline": "38%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time above 180 mg/dL",
+          "percentageChange": -36.8
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 90,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2.7/6.0 (higher scores indicate more distress)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diabetes Distress Scale (DDS) total score",
+          "percentageChange": -18.5
+        },
+        {
+          "absoluteChange": "-0.4 points",
+          "baseline": "2.5/5.0 (higher scores indicate more fear)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fear of Hypoglycemia (HFS-R) score",
+          "percentageChange": -16
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "8.5/21.0 (higher scores indicate poorer sleep)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) global score",
+          "percentageChange": -17.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypoglycemia",
+          "percentage": 40
+        },
+        {
+          "name": "Infusion site irritation/occlusion",
+          "percentage": 15
+        },
+        {
+          "name": "Diabetic Ketoacidosis (DKA)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Days-weeks for optimized control",
+      "treatmentDuration": "Lifetime",
+      "trials": 45
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYS-VHU2eJ8-hqRfvNgyfcPDILs-naSiiLtw53N2G9qVm1Um79DJWYG0fGYtU_Dck-UroSxB5zXF46W4ClZho5M45qZ82Lnv40g2irKyavNy7tzxDuanh25IpjJCOle3R9L8g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEANCepx8A1jmn4AMDtw_tOgM3F1CbuIKpv7yAu3kx0iTROWwZWv8jWjQshu0IDwzw6QeHuR84rCSg4H9hwkJNj7pbSbEFPx6EyhO7tEJH0rx1C4UaXD39sA3ARiDuaL_oJy0="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4gorZsTSHnxHw7AK0GxrqwQ-vmZjNXaCtI0H0e5OwIvu-3RNos78NgAuQF4rF89cjpP1vMZt9jmvKV3fIj9HRcHTjwDnFXhw-YZDrvS6-M1WqKJXpGNQ2QbyZfPOkl9CUQmWHpsgDcSgph7VqAJelJTVw-8aNUnUef11PV8mx-d9gPSny-5KkmuUMfNk8BzZxleWaWsEUif8gtktXaM8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUKzhuEy9TXetgJgkwXRczNf9VOX0H5bn0mguq5viEQphifbVaUKmecJlwgadgJja9O4vGpAAD3JXe_4iOREPbmpvZX06o-VjmJsYClmWB7-ixe7TC12YFbe7sGUTT2XEwF0y4ue9G9sAj0t9RlTi0S-9jpii01aqMyGcvTwUMn3y7Psxrxldp3FYsoorkpHj6T11JZFNnJgbhKuuAlGFjrkYmnRMsUX90VSPQAM-8ljEgoyfGjfyniUNYPyb8yDV_V3H1IvvJezSpVP6-LY3RL7ztC4i8kj3d2pIFTBQ7IfQw9jvmW6cDU45VaZW4Pvh_OR8FWdTvhyJ90htTEurlBg9hpkw04jlSX7ql1DgRpo3d4A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOcI3AcgYNmXz_IIKWTFjVxVDv4ioo8br1Jwp_z5z4rGmhy16yP2TgUZZ7b8qkopD2T8vfNAKvOlOPrLMfFffoUwDLLZFWZ-KWv_6GWFE4cytFTZJxVBDJYO_v5zGEiA1cvAo="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfds-JVwKq2W4MYN08Cwe9vBj-rsp1I-5pZtNx1hdpSUX6mnZqwVxy-LXuEl8wH9tZv8LZDgDMoQPKpuZfxIAyXnMKtZJk8apACfpd9qbUNnMCbUJP9bPf7fGmLeQs0hp1PFds4KiVdOlZCVaRAMDDgAs02gOniDM2SwA="
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8XBDsAKbNcz77Iy_Yc0ZN0qpJKcmZPtOyOwjJka0OTwWxgzNxJkSYKs1CrbYhvuTUcc3n35Q_yVBKqHCa12mBpgnXQu2O9w8m4PHHmsM0zy86MbPp0Kx55deFXPPB-WwWZEpaiGT3Ea8qOj7wT6pp3Z1ftCEUY_XF51FHk0NRiKkZDtRJW4Pd4vFj4LBOX_zHoKAM6S_uuGiB4nI4PgnN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHjZ0iKSo0zEZIxFEWBUyZAMbK2KNFQNYv5zT8tTNe6M10yunKZQ0McpmOmjp39maZ5OoA5l9HHp9NjVxrtKl6djL7klP8Jbz0FmlNgCByfxYA7P9ZSYGhz8xj6y2V8VtKfPUu89tEl2fUxxBxpiY6kW2Z_8QjYUAqSP122vUr02L2Ql-MQzZ071jOjwpfYHMHWbeOPBRYtzGNffjqc9v1Ni-FP4s-ErBN1OTJ5YepwwrCatQLCkhVFw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTBwvv4t3VWTgrIDHIo7JzqnsdZnqtvvwohrSRGkaY79edCcT8BeVMQBmKRrYAsGc-yUPecn4Cem26IXvhqSGtnig7fyeTNdSZSDfXizjFPS3KZKtOj6vj_7etNdskh0N4EDSH6_-p8XN1_ssH4zBe-4qD_IcGgKQ2qV-dccm_iEdWVaMmJXWLOirNKFxJ3DaFk0YPbg2Jmx2flbz4VL-FbNTk65964Wb2OfFL1NL44W8tvPLdKRReVsvwfKVPb-7x9ZVT5S5LeX9m3RqQ_tEABvhhK0hIyrtVswH8uA9cvQGdkRXzI3Me2_0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM8a_1JLrSofYpvFnAGvEUaPci30Dt9pOymgP5pr2mlKCgspso3XdHeSpAMATM2AVVn3p1Vr2Cr4k696o0XVEtkj7sCJrSa9un2ZLgro7ag2CZAABi5trrOP-BZp_ej5E9W4M="
+        },
+        {
+          "title": "ClinicalTrials.gov: Continuous Glucose Monitoring (CGM) trials for Diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%201&intr=Continuous%20Glucose%20Monitoring%20(CGM)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Continuous wear of sensor",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 3500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 3550
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 4176,
+        "icer": 50000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 60,
+          "annualOtcCost": 2000,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 3500,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 1760,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Self-Monitoring of Blood Glucose (SMBG)",
+          "costDifference": 2550,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Continuous Glucose Monitoring (CGM)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.8%",
+          "baseline": "8.2%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -9.8
+        },
+        {
+          "absoluteChange": "+18 percentage points",
+          "baseline": "50%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time in Range (70-180 mg/dL)",
+          "percentageChange": 36
+        },
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "40%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time Above Range (>180 mg/dL)",
+          "percentageChange": -37.5
+        },
+        {
+          "absoluteChange": "-2.5 percentage points",
+          "baseline": "6.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time Below Range (<70 mg/dL)",
+          "percentageChange": -41.7
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "HFS-II score: 45/69",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hypoglycemia Fear Survey (HFS-II) Score",
+          "percentageChange": -17.8
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "PAID score: 35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Problem Areas in Diabetes (PAID) Scale Score",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-10 mg/dL",
+          "baseline": "65 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glycemic Variability (Standard Deviation of Glucose)",
+          "percentageChange": -15.4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin irritation at sensor site",
+          "percentage": 10
+        },
+        {
+          "name": "Sensor malfunction",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate (data display), weeks-months for improved control",
+      "treatmentDuration": "Lifetime (continuous use)",
+      "trials": 417
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4hGh5gOkUdheci1yiPVx2CSY6xblradBBNLHc0rHE-UFOp9lMNvrW7DT9yyFsXtH8VC0ZP_ATwKnWobRNi2A7bTAozgYDJ226de2zvCmucedpHgXGS13iA1ghgxwR8h78etiwXjNJWF70Ig=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5k0KqnhWM_fqs7dxta6W6mUmsWLhslDMm2Z5_DEr99TKp7mn1VnSV6EudiEstubVcSZnH26fv6YhzXbJ522eWzwFQAQT9WZMUZLGrC49PjBX6tQbWjrvQdilMKk09ECchkWQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSuYvuC-6Bz-C7M0cw5_7wynfJqsOyHFzTjNhqXOqMNtI2rMDYkRQBuptju6d8-hYKpOJ2UX5WokXja077E3tc1l3feDuRdcKjF-D1W3l-t7Wyd2YEFBoGek7xu6ztFtrv0p2Z2uxh-XuTPWFUKU1wb92w4PCgNhML6POwlbRr7zVpgP8zhxf57oi4iVdYbQMcT0mOXGRwxeg2nQdkMcqXD5uHt8Op7j-MoowxJKNv7MM9vrjt82Qs5qaEUPYbWRHOm3Sfobi8OZnQ4JkgZ-INNfCWwq968tI13ARH-gMucsssBxI7YxIWPg3r1g=="
+        },
+        {
+          "title": "spandidos-publications.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDxnhYJy4Qpoj08jAPsPkZ1luU5YkzmLFmnNaqsEDpz7qPTn4fJ_P3x29LBS_5NG4mZWlSWY31VgnnV0jZw22iUJSQSorsOS-aUuDU7MwW2tcmd-DeyfU3M15jsSx9bHC_k2mytbxznXR0dmeg-XQ9nTu_SCvT"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuS-i8yf-adSG6RYoPCnm7IqDyT9B_8NOHXbxsq-dgGzz49UBDgPlSm_cYHVerbN05c-8-s1m9V0Q9PDMRnJMdSjaRt180DcNxvQ2dob73WmDmkRbABqCTkOoCXVkirEyUxXEvFxf5KAdzsIaKqJML-VEb64jnvdx0GAPPt6tvf0XTlnAOE_5YZiOFUWnLnFWXm6cHkDHkrv-MqpMf0CXWx87eH68X5GfXb-z6_lefLzeiHCbDFZGyu_CGOp3KKITdv3sunFK1Ubswg4nLlQ9cIFdy1JzwTQ4dXT2F0y1sLSVfvDKxVX1thg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJmrFe6pwhnCq7Hc0rspooucsfH5BKzl0JmrUT4CeZhIASTCMT2-SkfjP2D5r5_rytc-wqKLV5-Te2Z0UyrWO5n7LRHHHu_V7-PmDKmbZ_YasIk6evQDfmi1RKECW8FAWPMJaKstSKCdN5Pw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3dSAo68mTaot6ad13d3sRxRzuIF9eH0MJqio0IIp2931Ug0m2_p-4mpEw-08SX6p2yvembb-DOvpkf0j1Gjk_f7mTAlOnw_YFToJ_KA4vdhWt8p-jRYYZPU90BI-kcMOZ0WeS9QEsZCM_kk5LanjZadG4DThvZ-hBatnLzjjbb0gXNkeGZrV-JSvK4GnpSm3aY7UfxSM="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ7QDOByDoUmS3L7lrJUgHaLHtNygmn84D5hgu2bxuyWbhy1IJG4JZ838BoxNZsd0_8mffL0g5BQUuNiGxrThbZXeUQoDnzV8hiOwnxrdI7Ud9Aq_KBrQJ0j5aKs071na-9C1JunMTuLbE_0a8nh_tzze_Zdh0ArxzvGPQ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWSyO0ojqUQSSbTLnCnNqBkn4TafgdW7LNMJ7iUNefV7npCWnZU8xAknHZUo9z38Ab4Xh49SPmMWjhsLyPHLeckDHVyn3o0n6GrpHIF1pQ7RTV-RhGJ0UG2omH9zGp78Tsyz8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpFJbHTHpg02MNpfnqOwuWj78Swc6o2B8dNudn8bBuPLndy6MFW0Z9camRZxr0Nyengt9PS5aNnCN-QWAtrAgv9FjnX2AzKYJI1DP1kLDtvUv7q523nTRswEi0qEWbNW79R6I2GOUFSjCWvA=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0-xtf6JVo_lpF7B8s3GH4dkpgt7nDqlZbafCV-HWWlmZxgz6w4SJ4nIbAqaTaZ3jYm9D8Z8w3GaOTn7Iq-CTaTKzsZ87UyiEhra4ON7aPVNEGSIOKMjz9Dfs7TFxWkWwE"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbhUxEd66LQb2aTbkEkRyKzr44Cd7E_CCqa8vtvM6Ehg6UjgccUWIh9N2pzYkdo9wd4-pooo-DmYzOclVDE1gh6Dmm7F2NHZNLkNlYFCQhXDFJqYgc7qsVCgDwKVbsmSWQKF8RdmFrYvn2Nh3J1Se-0hMqsrgKLO6I3L-RRzVx7rGpPTmSAlWEf7DY1DJNYf6AP6cVVgKuoTBRME43XTAz2OdY4vILD1tKEFm9v_NjLjQX4DwxAQ_lsUCSuPlM12BfkbL9"
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVggI_R2QYmxP-KLBEksshiKPyZDV_bkGaQv_BatAkG2w4dAM4pQj37gHVbFWI6nAEHT3jm069cvSYeOr5XGvRUjTW-tpOoS6gJYfH9yJAvAZ7nsCBZREW2uqeRRrIY79hHUBCI4T_rwueLPnreAbvvhBybXdZqYo1qntUn6BAAUHgBcQ7mHBY0q_lgdFxp2p-P5yh1DLWjQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSfHg7M4T5EwZHQpocLM-zL_l_jpBXkhWdk3FEeJT0px2MPlLrXyUcMtfIncI1aC3E84J0iJHnK11VPpKHNlhAaNk1ZjSWQCFvtjYDtmBuN7l5Y6UgfidegUEcDoV1fnuUJpq9kCCGfF2u5w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9fptX4INmm-X89CXjwMpVS_bHCbjld-hes1Km5sz4VbtTXbggIrnf2MCMadTR9UhPgcvMPgXGKO3O3K53uQka0FS2XBx5dxreD4WY2A8cLOutIzX3OG3gqpYcVuXan2pAh1s="
+        },
+        {
+          "title": "ClinicalTrials.gov: SGLT2 Inhibitor (Dapagliflozin) trials for Diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%201&intr=SGLT2%20Inhibitor%20(Dapagliflozin)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Dapagliflozin 5-10 mg orally once daily",
+      "effectiveness": 70,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 500,
+          "totalAnnual": 6700
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 9571,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "SGLT2 Inhibitor (Dapagliflozin)",
+      "nnh": 100,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4 (for T2D)",
+        "Phase 3/4 (for T1D where approved)"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.4% points",
+          "baseline": "8.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "-6 units/day",
+          "baseline": "60 units/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Daily Insulin Dose",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-2.55 kg",
+          "baseline": "85 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -3
+        },
+        {
+          "absoluteChange": "+12 percentage points",
+          "baseline": "55%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time in Range (CGM)",
+          "percentageChange": 21.8
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 mmHg",
+          "baseline": "130 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -3.08
+        },
+        {
+          "absoluteChange": "-18 mg/g",
+          "baseline": "60 mg/g",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urine Albumin-to-Creatinine Ratio (UACR)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+0.03 points",
+          "baseline": "0.75 (scale 0-1)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (EQ-5D-5L Index)",
+          "percentageChange": 4
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Genital Mycotic Infections",
+          "percentage": 12
+        },
+        {
+          "name": "Urinary Tract Infections",
+          "percentage": 7
+        },
+        {
+          "name": "Euglycemic Diabetic Ketoacidosis (DKA)",
+          "percentage": 1.5
+        },
+        {
+          "name": "Dehydration",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "Days-weeks for glycemic, months-years for CV/renal benefits",
+      "treatmentDuration": "Lifetime (as needed)",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVzbzbCRXh9d5rWx2KLbm4MfwyBFiw4pHmCjX5Vi-KpICXE7e9fHhLLMCLvxuo0QDqoY2EPdbakTq6JbGUb0NIfWuT_mj656wFUrdimmPKWsGofIKeghcHEYHN6rfqtspzA8Y1u-jFy6ovTi8="
+        },
+        {
+          "title": "oncotarget.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx-dnCuANsMaRnJlKq93cCZHRm8w7yfm0di9DusSsj4sjk-h-j_Wiqpevd5HF67PnL7Xs8dhcaSBt7921UJCdmFqmtFANo2bxy4iBe3RzCHHu7ARIeHwqejzX5kvgzgxNrW3wWSwMXO90="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF40wnB-3pduVTyj2dEiL_wktZ3v_GnH4zn8dSjPMEHuwYmls_WrDaf45xukIQnnZWnh0mpNFk-62swOmhrnvPiTi11MLJbvmqvXT2UZEIuL6H94sXZZkEzrkHwwsPJ67TtjJRr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqexEuhkUvYCLu7AcZJceeW09OSVQEkpM_w7bmycz89suDmldfkmZ84Ukk6T1q1_kdOc-G7VWPPz0pepX_7fBzPb9m_2Cx5lAyieVmS9Y-33V8WHd3NJot5fICvq2iuuJ3dJAV4FgtE964PKK3KBZcraDsTJWyNb3Z833tRPsmBY1a8Z4BMxqzhJ4D34J65ANyYxa4Qt7a3UPtQ0qcNYhAM73CeTZenadO4YGdvK3ss08wZVx7JbS-9GcpjLucrLeoXNCIU2bF0NJDekVQdizi2FGTZ6tvfXyE1I9_pauk0EFOkMtlAzpuIDybJqAaDxn3MiEWQD1h4xty8s97gUytZQy1ofCS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnrkH5pSINvnE6j3riBoLAZ9KKSj0NUcPsvRUmyWlbCKxslpGU7PXcJEWaLrGYwtHB1iwtdZTEq9BDp_2ARSKaS2UCZtDFB2Bi1p7YKpbW7l6jZpyH6ZvPNJkXISQyg_LkJTS_j32TICEVXUsnmxM7ufH2Pu3ixdQg_iIM7aoo-Zx81A4HkWYFiQYFQrWlvVKZODdVVjD8v4kUqudfLiINvNido3vyGNMetJr6tFfIx3GLGtD-qJhEDR4RsZg9iQ1Yq7u4"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBUXdA_RJjXMQA5PkWw5A3FNBU6QDYLuJiNfNwYce7agPIE7sq3FwkuzkdyFXQuq51CsFzwkdVvtxkRcH41J3wXpTiCG4gw3pebNU5uWksZtYgNKnByp3vXa9SZsqNYTFRui4jTGBADoEc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGKUNOG5xfl4lB73Z2I9LDTcyyaLzd8JbifC8pdxBULB-0sYLrPP5YkvUm73-e5oHYagKniB5-Ds1wGNg1qV7n-4-Zt32kmhFTCgZT3t6SPi_BIJGqB5KRiPgh-PLePpwy8SJ-F5rGrbmmUBTFYD4y7_Q3HEgNtPRlDUR71Mhl3dt8I7y-ZPvq4PLqe-OvezbjMeHvPkCSXxqFGNfA1rG8A5c6IWi_sDsYHb_bHB87"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1vpSJRycHXbrnPwSxSOHyRHhGMyruDc-oKJSAMXgs367UVO8zgNfdrd7KK75DG3vp-udF0cD5lyBp0I0KxVHVA-K8FKK0XwRyvWAjx-ZVTWcqZTS_qIfTLVI70DeY2NaeX-VfW4GnRE-gSMw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj2euFrKvNuXAV2dqz-2Y0vhcMX__cIob7QEqv9V0VUSINKu5yzBYNnGtVXOqYRFUwOCmSa3HlYQeHqI53k0EgJ7dfNf8ZntA6plt1FneBBNmQbBU1K8ifVjN7SC0lK26n3zYV"
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFi78Eb5h6w499jSktVozXeyv_D52_9IuwrDRDb86zfIbRTFok4f8fr-pbcbo4ptC2tujfI4LDjOluLfJJA4hHrPT67Gtl0us7So72apJtFudRn44qutE5YVA0ZjjPdKUTjbjdE9R3kFdSMkXe_KbRlrGN-WuxdgEaa9UiHrONtE49P2RKv6gp9LoO6CICEM-pawhK_y53TiP0FgM-6hmOK5G_U"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsdAZZT1VfxaRRRQqlNXED691fgvFTo9mKXTkA8FJYRgB6TvIxozXsFCH0v6N6oLmDj9D9wUYSmH8kPU_DO9E6chAZqKPb1DxBLStf-l9MJ6yhDT5dls45hLJ-R375Hrq5vfYn0A5GFoSKhyI="
+        },
+        {
+          "title": "profil.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJtb6AiE7y2kUQhmgpLNqaehII2JYS1RWxfkj6TkvFlcSSBlaPHmcE2QeG4XwuuC7uLourqityN9ARoIzgm6NcIg5jqFl-5loqmjfJeP2zpXz5iytcv2OITlQK1o_xUKGddEZnYrPV4Nv-L9H5tfF0SkqQaVtCiQJIWYg1rDj9rrxLK3i-SyVr7yeCIY0L5FV6-u458Kao4yl4oA=="
+        },
+        {
+          "title": "breakthrought1d.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfntv_noz_zELzYBL6PvTVyWR2PW-dslfUJKglw5C5IuygIK_RPs-BtmqH29meHV7S7wwSMBHCK4fCMa_XOBpeutwAaPa587XfMB6X6H1wLNelWPFXD9_D1lMv4ZeaE0HjxL9XbVhd-FelI-QjsRwglcqWWZ_cqIEtk9vcqkNh73mxldHGirXDDqUqFULhO8n5kywtX7dAEvEul_QICSc9qmOQxyOdZHaFmrMrcXE_"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pramlintide trials for Diabetes mellitus type 1",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%201&intr=Pramlintide"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "60-120 mcg subcutaneously before each major meal",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 7000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 300,
+          "totalAnnual": 7400
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 12333,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Pramlintide",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.4% points",
+          "baseline": "8.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin A1c (HbA1c)",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "-80 mg/dL",
+          "baseline": "270 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-hour Postprandial Glucose",
+          "percentageChange": -29.6
+        },
+        {
+          "absoluteChange": "-7.5 units/day",
+          "baseline": "50 units/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Daily Insulin Dose",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.5 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -1.7
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.2 mg/dL",
+          "baseline": "60 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glycemic Variability (Standard Deviation of Glucose)",
+          "percentageChange": -12
+        },
+        {
+          "absoluteChange": "+10% points",
+          "baseline": "50% (of time)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time in Range (70-180 mg/dL)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+3.8 points",
+          "baseline": "25/36 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diabetes Treatment Satisfaction Questionnaire (DTSQ) Score",
+          "percentageChange": 15.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 30
+        },
+        {
+          "name": "Anorexia",
+          "percentage": 15
+        },
+        {
+          "name": "Severe Hypoglycemia (with insulin)",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate (postprandial glucose), months for weight effects",
+      "treatmentDuration": "Lifetime (as needed)",
+      "trials": 38
+    }
+  ]
+}

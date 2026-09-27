@@ -1,0 +1,805 @@
+{
+  "conditionName": "Liver cancer due to NASH",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T21:42:28.065Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF794J92w9AeJcV-oL83ivNrAKTvmpAcwXY9jRRB0O_fodwf3Xgo_XLApT6NVSpCqDbI2U8ypUmgwUGFkfTOlW5_H7cNcb64qqzUIEDeG5R_jw7v6RgAgN-cK886MQtRB3gmIH6xyB11RL0wCc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwA09DrPoV400P5gFyyWO_s-n-wUNG_UO1gOaluQ5Sb_hIbJmnqokkSLJYrH0VGFJOVlOSAg1qEvIxyp2CplkjmME53KGbWE2Tj6iS_44RgIDkEihsz3ADHEbdGjIpSGv-0eQiPowCC9ECuMvvjJN_M9FKxz_QjLFbAc3V9NbD7KgFooKASOuYSAtji-Evnz9vXfWOdXGpFQSRgAGZ8cDMDZGp-0FFeHdBhJTaktzweIQZWjHU-cs6iTKON11lfXjmjH91APPu-vBE9UahLFvUPHbykTVhbWFZhtAHiAnblG4Xgxz3cwWdtB_R4bN5AcO895zFOVAouaeL5eJFr-tYTwjRg7uaO13Q1Q=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMGS3bWr1sLmdwAKuvtW-02PM1KCg2FB7H7LKo9RrdYRqgbsTmmTGV4KjQP7VPcGM5zzG1v0pTf9bu0nOyaC8idudAkBEdzn5JmKN9siXMpxWF55y1sEj_UUjmpkOf7g6W2GFScn7iJYloDMe8Dza2TjB8LK2qnVX8MYvY3g6K6PS-GBqsRo89S-NBBpEvJVuTPSn8nHcyoVIsQSXQ6RBzXmIsDXTY2rPyOOV5loKXl4QD9sQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeZOLwnFDDVfQJYu-N6UTq-R3-yQxuAKqPE19YlRVXzN4PJ4sFRbxl434xhXB2ewSEhK7SSixCEJL9JK_u6s2SNEm6wP-SiSWdRD1prJv4gD6HOWDyHGAHsDosjByC9Roo4-U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_5PLSsWJWEANlYowufV4WQBoKZ3T-rY-jvHtqJDDijVXLyDmZ0gW0N7qyn_6ZN-f4xW9mfKJbmsCcGFLF1LbPMzXvvVYS05MGJv0oRo-pr-XUU90YyVprU0rtVmUq7xn34IGFuOw9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExk39uG6OV6iKQcvWaVuZGGk5ehmFWkKeISzes8lEe4nmUMn-q-F9-OFGB3eWvCgt2_rbN8h4VX1gCQx9sQoN2kD2JLeNGfPlGn_eEdA3_xVtyGKjZSqBb4xkIHrtd0VqXNmtTmiarLiZecc8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Liver Transplantation trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Liver%20Transplantation"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": null,
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 40000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 53333,
+        "costPerResponder": 40000,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 7,
+        "vsComparator": {
+          "comparatorName": "Hepatic Resection",
+          "costDifference": 500000,
+          "dominates": false,
+          "qalysGainedDifference": 2
+        }
+      },
+      "name": "Liver Transplantation",
+      "nnh": 8,
+      "nnt": 3,
+      "participants": 200000,
+      "phase": [],
+      "remissionRate": 75,
+      "responseRate": 100,
+      "safetyScore": 25,
+      "sideEffects": [
+        {
+          "name": "Surgical complications (bleeding, infection)",
+          "percentage": 15
+        },
+        {
+          "name": "Acute rejection",
+          "percentage": 18
+        },
+        {
+          "name": "Chronic kidney disease (due to immunosuppressants)",
+          "percentage": 20
+        },
+        {
+          "name": "Infections (opportunistic)",
+          "percentage": 40
+        },
+        {
+          "name": "Recurrence of HCC",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 5000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF95BQlcZdo-9XKm9IKc_v4p0XmicRcG6D30Arl83BkEcHyv-r8xWtSXIKUK00A6gSgDWW_n3B9Ja7BEgNwu8wqUhXvGyPMWgaNWpikC2fG_AvCyf7oMMLxnbiWQnSGaLUh4hmnzt5sOPbfNQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_gyLSglh6g8POGECzaftHXQ7hpgyo4JfYk6Ebgje3EJLVqBdTVyI7Fwh6T3XFzEchUyeOr8XceJVAZ5nHnJHzSBOUL_gArdc4Exfl-aynJ4ICW4ucE4I1fbX2Axvhlr4baFg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYEvO4izewSog9z75OLGSzrNpj62pJniVzdza6pBCfWWKipozkdj8FwX76dw_SqJSFmSqdy1hbZV4P8tcOcgCbnuCaztIXQgNsunwF8TKh4a8wgzbhVcgTJ8QZ6eDYNgt4SJVBbrFcojupfq89R4iB9cxvYCDkT1dQcpNAMBEhUakF0DSDM_rTw7smj1Bbve_Glg11WSJY8mbXf0h9fCtWawbosJHy0xmSoti5hNivad7Uh9-NXGtBELeUUmjX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDHHTNhMLx4HHKwuhYK502j0s0LfKxvo9nJp-hSBHGEkJWfp4Tc0JmaP9qKKIlFYgNsZ2i4VxUcEeLj1agYQN5_u6J5R_FuiKZkwm_rqUU9qw9DoZyY1yXmJb9HaSmBViTTYI="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDxGCZx5--IvY9GMANkL9JqCDzlUgaZeq56ACIR3A3zGiY6-61ffE_34DFQmdsuEDqCl6BfbZO3OLQRXdciQSJNL-AaBpuJ3PSswZulbjYdTMdgJZ_-2eDd375RgpqdUaFDNM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6-4HhQvFJ_3iIU0wGbIXIVgZJRxhpi6b2zXBje51gyudQsrpyJqgr7UiUyEphag13ongMyyWbq2IQw4_LO3sx1PLNv1GDlrRvV3-NM6dOABPqdRpHVzYp5lsImaX9i3_wd73Tyod9YHRSmMo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFNLvt1sPY2hVSU6pEq6JorSYxQCbC0F-yNypr2VUGg2a06YQu8_MUDluGd2DJswowTtBjVq71ELZU5qpNJLI4SnzzJ72xsMiRRsfRxIm5u2K7hpeffiCa-UG3V14byg-yu4E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPovYogBpRcnT4sExmut68OnoDPTayHtyPzHg3k12tWYgFkD2yLkZ5tv0UUgrwtfZclGm7e4hzGpKzJXptdmDfWVjbS56iS_8vBIySUtR5zs6-kntChkG7XE7DQ0u8YxWaXgsq1a4Fnb1ak_o="
+        },
+        {
+          "title": "preprints.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHmh_ZPuIw3Cj-7Ow5oQm8reBPkV_S7ZrNbHs7CUh8jLmKcU5hGihIooRlu-sGgjJtiJp4b3ftWqN-VULMhxTVpbZLesGiLPsMS0tbGuyOQcFb3-id8NOJgJfeHN80O9FGSw1Uj8_P8fGwaXJM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaKu4DcRHkTT1ecWAIZuAakEl_oSeFJo5J-Tq9qQM-xERIUCPlgcH2fCdPO6bBS9Zea8tAyTF8o5SclXbdZ9Ot0q25b4bIphqrJRJosz9vXJBBbP0Cdd4nJtX658pYbiE8iFLF8Ew404pMHIQI7Bgl1jNIj3Ef540cu-PfQoKoZqtw_s6AKdca1SpDY7C-DQ61m07ZshES8JMvxBvG4QRFSmogI9tvCEtTSiTNaXE_mqgWwcRlaGZrsCJogi36Tq2u7PhGtsU6cKvE6BK4zQKah_wiCnMA5yAQPfUe9yTE3ZatOXjewt8SklmgIS1UfAafthe8S8XSz2Kk7gH2M6HV1n9eZktUYGEjChL8MivOUyJ9dURfDNQxPB8NGT6laVc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2XdIwkQDGsWjdUyDXn5wT5-2sFljF6fOj4Hbjn40k8HPq5DJLO9ajevN25nI1cDjrXMTD2QQmbf4xmv3xooybIrgJI_OnTsFEjlKwl9EeXNAe9razrziCMn-hzhybf3bHv8w="
+        },
+        {
+          "title": "ClinicalTrials.gov: Atezolizumab + Bevacizumab trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Atezolizumab%20%2B%20Bevacizumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Atezolizumab 1200mg IV every 3 weeks + Bevacizumab 15mg/kg IV every 3 weeks",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 15000,
+          "totalAnnual": 323000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 5383333,
+        "costPerResponder": 1196296,
+        "icer": 400000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "Sorafenib",
+          "costDifference": 250000,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Atezolizumab + Bevacizumab",
+      "nnh": 5,
+      "nnt": 8,
+      "participants": 3000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 6,
+      "responseRate": 27,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Hypertension (grade 3-4)",
+          "percentage": 23
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 42
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 24
+        },
+        {
+          "name": "Proteinuria (grade 3-4)",
+          "percentage": 8
+        },
+        {
+          "name": "Hemorrhage/Bleeding (grade 3-4)",
+          "percentage": 15
+        },
+        {
+          "name": "Immune-related hepatitis",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "until progression or unacceptable toxicity",
+      "trials": 10
+    },
+    {
+      "citations": [
+        {
+          "title": "rti.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-aeMiXyZL1F9mrKpYGD9gH6SSpaw3jljqVJC8k59JPSqtdicYWo9DvnC77vLfALOGM34st_A2RrFWXkPVD_dD1OWP7NlTiF3ClVuDWC2V8goGm0UHnJI0GHjmVBPOHAD-h1qs_l1vJjoCabZpwKVO3f1Zz_BpgPqA1OfwWsGH2p5V3jvSLw1W_uRC482wWDlOjNACMkVbmfKfF3kL3hAdFbqw5UIoDixIBcluyw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6RxP781wt849Y-Uv9KWek8-TmXwNuCkX19o7JOfhPQT2uzEOLmxnVnQFSv-AlFdqE0BPPDY-m-l1NvWch8heqmklQdx7OslKROjkRkRFB1pmKiY5rbhsad6VjaaWA6FjG1737XyjqaNTJ94k-rGqNrS4tdLMgVPGESLLyULkg8i0m0PllI0F-jX6DQtB0XuL0uZkvaMUhRMqFzlLmz1NATv6ek0ma-WSWfH13w_F53OCfMAua_CuVEBy6rf4blDjPFPvtFwYnBq-AxfC-FWbukSbNZDE7KNMzv_oi"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCt9wsXw870AL9sHLDlYVSkCa4JLNwURPjVP0aTyMrrYVAQYQvSz1UVQnSpw2isSKItupEguUinUJ15fjvew6Xf14YFjjQBoXHSU1yRgvtOluKwWDqe4a2yqKV2m36PxKo7rBXB1lcp-SMnvuwqDBw3TVMRU4Vs4b3e27QYqJFGm0hbBeZTdLDYuTjUKlz_TCqHF_InMqYDE8yM0C5iWoSUGJm7Mid56vPQg5ZCF75gBWRzk1nSR7JZL95JK9xlCchXQpHt8e_8BDPiTyn8g56VInIT5WVAOMoQDMkAxniamUJujAZ4O41jjpdeU7PbWeHIGLbxMAj2SXChQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSnB8xTJ_RVKN2OdbwSYHPlNZEMo5_kb-SufCbrQmCms_pYqSCv15dNPxLTYOtsW0DeEfXajpJwdSHwqjHWzL08n_6bc4PDJAceXyBxXubJXekpA6Wd7bcxalVvT2YPy5sTm6ML7hB-k7-qTUF"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5x4vyDwSLBMHsAltW188aktIyQjiyfy9xoaJ1sQ2-82eHmfwBHib0lW8DZtwe3w7bjpJd6zfmXY-2MJR7fdLuArBvENnSDMm9OOVdbCCcPsQ7406aX1G3VRVvb9bcwdSQPBAp"
+        },
+        {
+          "title": "sciprofiles.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGt5JcDiaG8hB7vJPLxoNisYBc-Cn2m7QWEZbeOHfoRPAJtPhLlfUEK2eyuLTcEiuspdH_yyiVpeadlz9mgM8eJrYFG-i0L3mHCB9O-ObdQ5yz86aNt-mdPli85Gqx1-bVkP60tOm6aO0qC0JXKjzyKkN6XeDp8lRDP-i8LJ8JHS_-KNG8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG46pbXfxwr_uOWKpcRDej0tM5S-xl6UjlVFrhDKpvAzP5lOYsDgO63CtT9zlhrw8uFsDPbXGpL9Tr7QIazmZkM4IjbBo9wvYdr2Fy5tNPt-_mm04hm0Ko5GbMaKu9sB9c88s1d306Q8efDku8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2_VlybGdo4JWtxQfHQWlK7n83Yafvrqcm091aXgd3a-Af-Zz9HrVSVT4oAiTqch_gxt77Gf6ipHG_tJuEgrHY9N08ZTC-wq8if0MeshK85AjtO940wItcfhYu7yRF77w7Nh7F"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1_uScHSJOhZwg6ZmsiScm84-HOIvbOY6HMXLIDdMo5T3l7ci8U5k8Ydjd5F8ekw9cd3Ko5QBz8fJznEFhHqbU5Um6AaAf3juk2vWy5Vl_BMP97ThSCM3EnqwMM0fA0-QL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lenvatinib trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Lenvatinib"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "8mg or 12mg orally once daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 240000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 258000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 12900000,
+        "costPerResponder": 1075000,
+        "icer": 350000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": {
+          "comparatorName": "Sorafenib",
+          "costDifference": 200000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Lenvatinib",
+      "nnh": 4,
+      "nnt": 6,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 2,
+      "responseRate": 24,
+      "safetyScore": 40,
+      "sideEffects": [
+        {
+          "name": "Hypertension (grade 3-4)",
+          "percentage": 24
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 44
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 39
+        },
+        {
+          "name": "Decreased appetite",
+          "percentage": 34
+        },
+        {
+          "name": "Proteinuria",
+          "percentage": 26
+        },
+        {
+          "name": "Palmar-plantar erythrodysesthesia",
+          "percentage": 26
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "until progression or unacceptable toxicity",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl0hk7mFZ6esvYI2z3yDGnsw7M6ZAW9wePcd4LQTCRMZTbCfDPQ4XlkFmJV5C45ds20zVsbSxknU3QVEdjWRgquxSbe8HjFOEEaUdg4rJA8pmZnWUY2oEGnhC9SHeRIqLZak8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsutZylpDNaST_cLjfAaIb5Hc9qWMw6GVR41VvCA9s2Obf6sZwB2qjZ6SJhrZiZ_cxW-9LYeZAburKf4_0qk1nZIqz9gers7U2bMxP_xxZ5mDqUWNEhMsEeg1J-rCWK_TRd0gPBU9JZ_XK-FEVq6hWdwZ3gJyeO-5cBdXxp7V3SdvYxAd2G7bkyZplQKwXX47JWTo24N6uYHetEkkAkrjQj0O5TODZQpBI1iVehOdShfao04JSirRFdDSbWQ2K6sn0Yv7V1LToYznvO6XQ_bO2M0TlNlHoaMfeN_Q2PRg0UBvu-LbQYro3imTWHxta5QSojA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrz0BUl2lWHnkPRVm-NaS6aEQfO103P9tURTPX46RUKbG-zNrXHX-mj0paDQsSPpdlcK2FulTr6tr4SQXaNJuR_tJULHxqwthNHC-GaZiiJWFjrVnN95-c1BHSzQ0KiqqubAs="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuvP5fgfyQbyRQXrBQeFN4VC89SDXh-FUNmB1WoDh5Zawu9azwV53VcW9T1NNJ1kv0HkNWumm6MbXSBnJsW2QvbjHvHuWxlyHEI4IaQaN4kBJ_sY3JK36Q7l8fgrtaC836oztvDTkjH8GIVBfQGjpXEzJAcsx8xfW58rmVrDSv2tqhiohPmK9O"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV13EdppXRgw7rH8wdKkpB5yC1yYINNwYXGY9mpWjlNnhzwHfOobDVLl18wr1rMX7Txk1GfLPAqp3zyaQqSQ8xSCr9X0G5nkd3HQao2CqNrTuhE7mqs2TYmMvf3Xegy3s2xlHsejYwxthsemQ="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBTFH0V3Gv6zguIQ_qSTlfLO7vmakfgGZmm2uhmQvQGfzRs4S_sAfjfqnXf4qFkaPhZpJ5X4YJ3vpnCus8B03QvD5UNH_4EouL_GfyaTObUDrhI6xRYe5jA1YED6uVN36w_Msj6llPM9riuDwX3mFCkkT8QSI0w2fZNUU="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEknx_IJlfxlXkntFY09nm4LnytEOSMfMQetu_dx27x-OzegUwfyKJIVnim81jq8UwzU-3F5nHZkbKyGuGDBA5t7IFaeqvjtS67xetkf42jmYEqBeE3jiDoe6rV3_16csQ-CZpYqpFilKnqjvkljSW1RfJfyIPutTkrsN4fJ5nhk8v8vw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUl-ewhthPlj_vjgYpNOv5jshvBGy3WCgylCHSnPLtbMBJuug4Un3ef7DaThPra537j1FrkFVMSkXwhYzXF2LO5g0AL2cjBCw5R--I3eVFoQE3XsIf4-2QwreSxxw9DiS35PnXVEIm2BE3eiw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiofrequency Ablation (RFA) / Microwave Ablation (MWA) trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Radiofrequency%20Ablation%20(RFA)%20%2F%20Microwave%20Ablation%20(MWA)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": null,
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 22500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 25000,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": {
+          "comparatorName": "Surgical Resection",
+          "costDifference": -10000,
+          "dominates": true,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Radiofrequency Ablation (RFA) / Microwave Ablation (MWA)",
+      "nnh": 30,
+      "nnt": 2,
+      "participants": 20000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 35
+        },
+        {
+          "name": "Fever",
+          "percentage": 20
+        },
+        {
+          "name": "Liver abscess/infection",
+          "percentage": 3
+        },
+        {
+          "name": "Bleeding/hemorrhage",
+          "percentage": 3
+        },
+        {
+          "name": "Adjacent organ injury",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "single session, may be repeated",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmTZ-3scaS_3lw72Dw1KeXO1eXcQFuBUsQiZNbs1790anzIiahBDiDf1aZxcox1YvTTQm9_Oqy0NTzHrL1142V72mFfU32qNcNTa815JMijvjp0YlsrGXSsP0x-nwBEWBo82Aj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcokj8OOgzRo1ZFucbbI25d5FB70OqeS4YXkHr7hsqv2_4mupRt4hRdUx6YErNXkKQYZZxb2dyWDfdNRbLKE1A8jOoxUusbd8AK0u7ZnNhTycwUP114Z814HcxZwRmHRFD54gpxFMAECWZLQo="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuxS-OVpEVFuYLt-e7ai9BLghTLTXpToIjCvHEi1Z5yXV5gaI957KvVjK0XLQQPVcgfyVdSnzix1zieAejW1UPv5W55jGn4LZGPhMJUrTxrw9wEisk5sZ9sSimhU1TrM2KIydDkFB6g71zvGA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqShKyLYSKqzPpBj6iazMdlCTl08ys-twkVAu4JXYx1EQi-q5C6i_wAEPgoahkjPD2lNwzmoeJLeUcKdUcsorLkZy4B3K8Qkj7jow9dLxxRZSPqvhTOmF10Cf5ErAoS026J5hcEB50U_mjaH1v"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcZ6n2h_O10CsgVHDmAbmKvge_fKmnNvYCD5HekRjWo5EqtTwl43z-CSWadoWK_PEIhP_zC6qxMh4NXNj-8i9DIigW35kEacq8FdtkyNnriIhpotjmR_7Lyr-Xt4n9stij1bCw2PGcJi7-b6MZHgBB3uHL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEapx26Dfv5EDn-MxXEmydytNh0W6I8N8XPR8-Aw0JlGRRuIyyjyxSP9pg4wYtO3c8fRaW7oeVqdHQh2AzdURvrviU0XDysc_ZaDRyCoB3UdAjFDX5NJ3oZxO-vV1TZN1e6bk3_Kz6gELA3ndPv"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0M8q3aJl3mGEU0MSN37uDkv9hmS0ogVuN7ZVK7PtkSIH3NjZPkUej1yjMYywcpEaPO228yC27GQgmdulzq8Ce0xKCDx4yrTLssRm8jCb4PN_Jxys2J8MktwW3K567W5nSmArPCGR4PwXolt8S"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHf7SqxLt9yUuKw5Yi65Ixk9bECNnmVb79laUNwzoQ0JYJ1UTOamJboi21Dc8yR3UYA_dYTsNJHJFp40AEbUN7Wba4siokdUk7rj0GdhUuqeP-cN9lDlwXlXoMw2--W1sowgQcWySgEHnZc4VJstT-CUImWemHKEJWPJMa4bCYs4AALCTgOeANOZQF1KZg3Oq8Kc5EissWXnAf9GaUaFD1DfnGREw_g1YB60OJo3ykP9s18Z7cYIbmnA78Gmiv4KOS52iBj1XEyOJrhpeS-Oot9555G_bVgFod9wLqv-b1zvqjQ4nqr5ALW7CyXZJFp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFpiZgCIE_znGb7RYvuguDzx_lrNsjZABbduXq0R8RWR6p86uhrOG43kSXrjLftf98dLAv6Qnx8RKnrrmoU7gb62GiG-6rMzaSIeVV8M2M27CUd_xWFnIbRq_sKY01eeUVq1x7SLE1lyiL2NE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Stereotactic Body Radiation Therapy (SBRT) trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Stereotactic%20Body%20Radiation%20Therapy%20(SBRT)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "30-60 Gy in 3-5 fractions",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 38000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 47500,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "TACE",
+          "costDifference": 10000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Stereotactic Body Radiation Therapy (SBRT)",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 5000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Pain",
+          "percentage": 10
+        },
+        {
+          "name": "Radiation-induced liver disease (RILD)",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "weeks to months",
+      "treatmentDuration": "1-5 fractions, typically 1 week",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXjCPyETC5p6GCEvRK_FsHTOBeHfoHiaEpNQftP5UFAZEsFiEQCcZPAqJOfbEqpBcyKzuKIylp8O4BK3oRaxz3tev7BfF9XcJE1FoW1nuFGqBU1UpCzReo9If5s9_6InEHPd7B"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWpSQG2h39p8sf1QUXNrFB5jY4zgWCl9TK0rQDSFEEWq6ID9pxK3qY-qLHbfS5ur6MiDeyUfHq1vWy2Mlwg9ttJS4_YTXJldHp4kYha2C1zRpk7IdinlLXetoTcxRnNiKbd9Q3lv-uqzQN5g-C"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRbOudyusBOQsMml9E9d9Um8faZAAB0b6tXXfGC8Xw7EDzpibnRTSE5VBi74B-QrBqchKLdmKyqWKpgCyNLP1OSZpvhb7y9aBwdKG_t1_Yj_yhQVE-7v7vVuzBgB1l1Qd0ipKtWWMMm_2LteI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE9uUzJ4rccHBvTIJ4iLBk7ze82tNU1a8bEAyc_UJnfEOzIL-QC07NBCAkVC4BLi2rKmZyqQqfDEupvtdecM70U3OO10TMe6XdivYQxrdLJWMMF3_xOl9oAhVPKrLhgPDeAo2yW58YVGwQkAzZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLNDD-rkK4tLgg_DcsRCO2o5RwyYXl1cAf57WxuLfBbYYg0N7PnICmvfwCvfLLbp8DY0at42jf0oypSYWZV2KjXt-R6lBiUCpaCe7ngUEcVKEtxnzu5ky-r5VzX4fkhsp5AGD0NxKIPtkqP6s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1soOrggFEcPRw3Gcokh3cNA9uvg6zT_rKD7P5A5GmuOTKjbKDm8TTvwzhCSuanFwzR-cuoXByMaOBhXy_30Ht7LdP-pavkg5ijyHFUP1SDxhOEFBFnGYeYVrE7HQCrZNcoEYgswhkUdO3klI="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrQfl3eo9FUQUFry1Qd4buSabWj9BgdE57K1diUDnd_seqimGBAlnx5j5zh49lMB_fWVdaHDPmTt23vMB7Z7_R8D1TpalO-hxh4b5ZzZbAaYztUlKTl4MVvkEwO3YJ0_houVHb"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAV5m8O9LdqeG6ZVOrbT-ZQnQNMHOFHN0Zb73rFXQAdkccJdax-f6Sue8ElzA2wceHiSUQpGg6Z0FKnQyLJ8LZAjCCwRs0k5yMwBKWzHq2tpUPpW_D7zT1iVBnac1ksvi6mA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTVyNrG9ZrV5aDD-WnkQpm7M2tLYMF9_IfLY0YPcqayFHzLS5Wj1KgLAwg3DZtEhnlZ6AQxJYmOTcmJJ0dD6xM5EI-PkKjcRGGjoZeID-cAmOw44LCj2vdgwNT0_PbPpdIGLRCtzQCsUNwHNs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Transarterial Chemoembolization (TACE) trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Transarterial%20Chemoembolization%20(TACE)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 3000,
+          "totalAnnual": 61000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 101667,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Best Supportive Care",
+          "costDifference": 40000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Transarterial Chemoembolization (TACE)",
+      "nnh": 15,
+      "nnt": 5,
+      "participants": 15000,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Post-embolization syndrome (fever, pain, nausea)",
+          "percentage": 80
+        },
+        {
+          "name": "Liver dysfunction/failure (severe)",
+          "percentage": 7
+        },
+        {
+          "name": "Bile duct injury/abscess",
+          "percentage": 3
+        },
+        {
+          "name": "Vascular injury",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "days to weeks",
+      "treatmentDuration": "1-3 sessions, often repeated every 3-6 months",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-KyCrNrXPJ6J_heU0PRr9B2ix8T73nRwtrQv2F9-cFmrkz-yHutIfvqmVpRD9UC17SwPRtWO_uVzWSZT4q_HbM_XGcN4ikrZEhxqv0ExMxQe3dn7HmkwaJMYQTbewG1JS3nqu9S0Hy8d5HS0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjaK97Wn2N6aPu9mDjYppuqzOllyYndJVPpQzLgcFmnbmeRcqIRYHNH7hoFDG55HjhPyTLfZyrgh2ftZTbZJTKN2Ye1i4dkubpVg348j5-EAm_Jl1dLcCsAbaBukeLPB_4z3pRRPpKjISEIMx7KFme2OnhUUxg3bXCXrzVeEw7h0Dmm4IQHwWpLCzjxE76hNHme7zGfOWT1kPcuTt31820lW4v28nYFwzoLppTiClSvh6qY5fWVRB1Z1T4KJwURNI5Qj2Os4Yt1kDHIero25tjDzvGZZl7gsoYxjYYOD1reA8bbDA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBrifAIlk_iQXsK-W9t3iR3-lEF92JOTlzl3vtAzEi6lgQsaSN-gWkPB3H6VQopenwiPEu2DddR3ky9yPO_L6yqHYtXuYDwD_CVCR_hMwVckWGyeGpfZezHyxjU-jK4qfba3D7bU14ssprQO4="
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkrYDq3cX0fBdjah4dmPn-qWn6utn9bbM-Dqp7hzirubzRC5ktkJKULuD4JutHJhY24uOdQRpgcElv6lsCJPJKgdrH8fAU_kepZX3NERlIiIDFeqcLQ8nqLhYHhEhGQwV-H021qrV6hY7Yw4XpE_LEMpuPJCT7EFGpwH_tOdNWkI4WTM-Ozf28QAtUWNC9jvs0SYbuaSzs5VyzeqNWunW-ffu3Uu4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3gmDJYZ3WXgQ2meEPHOhDSd13SktQLWuw-LcAITfVR0P6pygdSj2YsDHjgiKemjBHPOEEs1kiOlkSSKoM69BSPb0LXJEeHyQ8DVlcNSEaAYAXvLROg95R8kMS2eReP6P5Xf9Z"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3fr1Ra-5aZMO_T8OUfGRMUblg4HqAQFL6kmS37dC4LiNVST9oa9ZSoFBjJWAl2-MSe3arTF5Ay3bMNYdfEdYvpBy5n5t0EpVVGOEZqNDk1tjjjVqfsK4kItK9bqHcTmTgfrEe5GhtHBsQUnrYwpH40YZdutnRMvvw3MzwbnPL76M3aT3ifrl7tqFBLVNyil3QadK9Vhdz8NSuBbn3-mNp6z6moVKMq-cThzRdD8P83OkMrpSelHRpPC7bqjttIc-7kxmvNrAh"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyUwR1_KRtfhr_yxnYbr9MpDa7X9EdKUmowPzrCEz4xZhFvj-fLVkLtsat3nhgWejd0WsIg6zd4TadWCoAq3UsnYD23hi6r2pNUikuroKuho8AesAPsuhnbN59UhTaYJnAhBFuO7ciPZ_Fjic="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUtwMpSJw26Yo6eFbeVFc-OMOu8HOD40jzEX847-m96O74vV_0TreBXqcZM6Jvi2oYcYeeOwoNxFomDm2QKr3A_OGDDAujrw1XrYnEAsXDSOA6tzBX0K41cuE-LrHYt4WIhR5j"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjrZsvtFdRaaBdOaoVNA498DnkS00RQxk9gJr_Um534Pnd2t6ecwtLOHIi7G0c1b7RcWImZffCbtQp9AM1ehKSZ9NcRmi9B4k9Kup12SfectVBXADItk1Oqj7z3DRXe-tXvWhdm_SJgrbR4XlM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEOgUud7aqFO7m6TVCUeRKESKvW_2zi958sYU_kA4KhBuuplHL5nDGKbIuOG-Yi5BpMMwUpRq4HxqitHPaEOgfPw4xJaDitmRbGLVz2AjaHpJKgl6NCmzqig9Wz2vB0gCkdeKLBhSr_mgwSmOq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRNhlvZ0Tcu4AT2CMyKT79zR0dI358-NjbcKkmFZ2jd1pomfbLQZKxq0HwZpCGL7qcn_UvRjFy5anWxqT93xVcQLiSU4fzejwhxGUn0w-adieyp1lF7-llHTaQppmSbQIxYoT_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE37aUwIAymp-J_sQ7QwZGrLgXc0oUzeUftR_89xs7ffc5RLbZgnzyUIqnOeuoHCnKiokLgop8uEAuEGDJop2t3WBX5rPBLPQnIT6ZSwxnNPEaXW4Y6AxJ1htyExFIUTrs4IwaqsStYl2N2Ae0y"
+        },
+        {
+          "title": "ClinicalTrials.gov: Sorafenib trials for Liver cancer due to NASH",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Liver%20cancer%20due%20to%20NASH&intr=Sorafenib"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "400mg orally twice daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50000,
+          "monitoringCost": 7000,
+          "sideEffectManagement": 8000,
+          "totalAnnual": 65000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 13000000,
+        "costPerResponder": 2166667,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 50000,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Sorafenib",
+      "nnh": 5,
+      "nnt": 10,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 0.5,
+      "responseRate": 3,
+      "safetyScore": 45,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 55
+        },
+        {
+          "name": "Palmar-plantar erythrodysesthesia",
+          "percentage": 50
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Rash",
+          "percentage": 40
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 30
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "until disease progression or unacceptable toxicity",
+      "trials": 10
+    }
+  ]
+}

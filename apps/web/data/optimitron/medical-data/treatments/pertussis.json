@@ -1,0 +1,671 @@
+{
+  "conditionName": "Pertussis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:59:39.727Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG9pZIYVHLoGHdYuaL9TrX9XiJ3ivpZLiywmqZUT-v38DWeAaRVXcn3dX8oYP402aZk_v67nN1msSGmJMVeCkBZa_lBDamMVvhzDDOengrnDBEY00wcnIjkpLHD3K8cvkLvzAoET0RQXVvJ57TTD_kfIlB4in8HJG7ltrPNxXVqjmxesbiXMqhLkACxOZs_XbOcuUTgg9hb"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH2wYpr6DdmhW0hAJC1zVAJBx4-rj0svzWsALAvZsnM-EkQVadbjyQ7tmt09L60AczoEAZka3gJxhSfHZtd5SrMUJeA87PwoVvn__6v9gj_yesHynC885jORsXSoS1VA=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBE68tHnH01k8T-mEwOp0z1IF9OwJEVQtMZLLQcZUrFAO_JkIO6na0Z5fjijqUw-xU_O7jxl-3wz37abICpOZTGXkVhL2OzHrfFE7cJpZprMggMXqoYoTG-wR6ZGszc7zKef7n0u7Dg8j6mFvpGReR9kEN7XYhRgEQWSFkdjg8GtiQwpg5XRUYZW2Dj11nx53swWuanm1dWuuV"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx-Zsz8vk5KAP8DptEmI3Pk7Lt-va0dGrTaL5qV-1jEZp4QCjXOkFacGv1ISw33aSlB-Nr33I7qlyrWBHtZF1hDWfpiI2HhRzb0b-n-ddFI3kZoPbNCeBFXcc5zWDNHXL9Fflmht20cjkboiU232wIXBMqVENGUAY-_yXh4FH8i40FQbQOPELyyS6LEHlP3F4oHIP6DXzxMOWyrsuArOisFkydypdM8NqCFlTvyPnd65IKiclKYMk83MV6fclOWPKms3ne-XK0yDbqjbGZWx8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLZcabS0zQhepx3lVeh_SwEVQiGFWn29hiDBTWLOJvFrP7X3W1Wr1Nk8D-Phdl9wHf3IIKqCkrKQH-bFj-wJEUAo7zM6hDEnWlV8L7doF-Ul4kWReSXSNTxVmV3J_JdfhXj6R7"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvMa4KXxPJ4z8UZWu4FoSrFd4jBUrmX_uVTmfUKKLjsorLnu2STMPaGFTT-rdSmtEVrxRMtCmweWi3mROzbAPdaBDPozVzp7jyTbb6ltK6NKAWVW-Bwj-4pgx7YOAHD3S6eeuuSeFEpl8x-xIPyOlDvw=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQUFUGXvW8xEe605B_IzZo6aWn8mXPbxfKfAMo3IwkPgqYtQIsnLKqibKdSXSlayIOLPBAZlGej1gdZh6TiqukuiSWJW2r1Vx8TJ7MBuZl1XtO0S9AKUjF2rHq48Wa_Bw_iSK-LvYuzsyVpOzp3PS55ssKiN8qS2MlhRFS1GYxRknQex0J-xgS64Q="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJB-LWp-lp8AZZz36NyejslOCFgoEbyTzGrPfCozRoXMIw46zNW0iNuKoIjWEbKHv4B9siJdqvmpuL8m9Oc-nurp3zef1gElV85KAuDTenZfW2kNFHeVtb1SNzxmUT7roQIVR3T5mnqEO-fcsIsGAOVokweSSstSlKbO4="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUiBNbLM_WjCpkDYYdCov6S4Ndyq7ScMjr55y7A6aAztICWsKU9a50yEYOPoWNEjJEja3EKmo2DUeO-wvAV186TQa1rM-4GbfsV14RSpM2d6lMUGkyrDibXoEVT-ko58qGL5i74vYniI3btj4uaaBTeUEOCGqLaz7t--5zq3kR4MHbmKejYN5m88l_oS7bjMaGpfutiJZGJIDrKkDcIhlZLi87NivCcIlvAhP8WE_vKVCxJfgP"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkAl7fpK14kutuRZgjuUv6OrTROrqa1YfzsCjvtySlBEI7nC5A4QkqyBSSg2l4_Uv3ozrW5ZSBFt-tPjxDvuRa15_G-pTPibDbvEbBViVD8E6WqUKPsbc2vmeghtqbfh1GRs1Rjyk3gL9xS3bqsKGSMOmuOkBGq3AzB3fTJ7UdVXFdNeo7zeIZH7NtY_nwzIukAx7bbhZTOj6UWeIbTnDQrLBhxDT_mV7CO0cEd6QhMx3ogFOFVNcxFNdqHTc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin trials for Pertussis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pertussis&intr=Azithromycin"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Infants <6 months: 10 mg/kg/day; Older: 500 mg Day 1, then 250 mg daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 600,
+          "sideEffectManagement": 5,
+          "totalAnnual": 625
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 33.33,
+        "costPerResponder": 31.25,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 10,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 20,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -2795,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Azithromycin",
+      "nnh": 15,
+      "nnt": 4,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-28 days",
+          "baseline": "Median 56 days (8 weeks)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Paroxysmal Cough Episodes",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-23 days",
+          "baseline": "Median 28 days (4 weeks)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Bacterial Shedding/Infectivity",
+          "percentageChange": -82.1
+        },
+        {
+          "absoluteChange": "-7 episodes/day",
+          "baseline": "Mean 18 episodes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Paroxysmal Cough Episodes per 24h",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 80,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-4 episodes/day",
+          "baseline": "Mean 8 episodes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Whooping Episodes per 24h",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 episodes/day",
+          "baseline": "Mean 3 episodes/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Frequency of Post-Tussive Vomiting Episodes per 24h",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "QoL Score (0-100, higher is better): 50 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Quality of Life Score (e.g., pediatric QoL scale)",
+          "percentageChange": 15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 6
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 4
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 days (bacterial eradication)",
+      "treatmentDuration": "5 days",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGG63JBGnGc0COLZWFcMt7KaSlF3inUiNR5sm755qOfRK2vDF7p9QVUXBVYe4g0V8wTkb_zoPhVbWdBIJIXPnOLDxWrPs3_HHKyJ_qXEgpYPAJ6d3K7-T8oVDyAURPUMFOTAiIJ3D9YzxTeONTsHK4HIuPl-L3Q3xxSYEJTQ7-ym-Z-OwB9NkshwFl70DqmKyHfrzTFp-tC_Eq0QA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkslP7GVlctjiOLhK3ky4dYiqEpHnYIW6n3D_R14LmNnPim-jUBHyoTjnmnJshCqmwwsiYM4Pld1YbHsTwS3x_MeKsVxMinZqm-JOVJq-CZoSbvXSOlCZ5SVC5k7qjglHVdiAQB0zsu8wm-wbV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJM5aQZv78uCBiQF4wDkWA4ds_Nu84CLP_RUOgQO8krv2n6964X9qh-s7bHYjoa_e9dEId1__M2neO09LQxsfXh4uM98Aqq-8GWfW2L9ID4Ad85tJW25abolElXAGnao9Wb-Nb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJiLFJYTpRyksC0P0paDx4nNeW1gvLtGwKFzZBFINR3Fme2vQAZnuy41S18LOmIukqZ79E-hMdr_XpaTpnDA33D_KRg_hHLKz7pCZHJnvTAFC8jjAPtvLGONBifxGj39rmPiiSsRmBSfpI1GMQGICH3TrcO4nanm2_3s6zIdn200tc6Hiarer8sGBPISvNUo-CIvvAnTbw-qZ6BkFhyNxuzWMIO2HP5ROW6MxGFpKdmll3AGnt31C4YS0Dtk9AcRKvcvHzhzY2vJ--HwVaxnSiiBkqT0tzJftmR5invywtGiaXQdcxrW6_b4W5A0_q6YD4VA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo_uOjODrTKZjNNOib9SHcnvYNiKdOiPYMLvPQTklhzizdvPYeuH6wtDOluvxA37VNmoCjIHyAwBVFZS-cXNRAMYu6Q5wDdNdrk9Rqz2kzr9AV-jUm4pzUyxqRRQvtnSuIARo="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH--O4YsX5CzuAYspVlA9lxDc3HC_B4ope0_WejuDtL-f5TCWijZ3dWCDbbsw-VqVjC0B9cwO6zaMphxkg-VVFLL_CrZnCdkBjNxQ7wf7KOUbcg5gN1zvmxbMTQx2N11a1EKA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNAvHxrSsjxGw251RjOkSpiqH1WUNbqqjovItjGp6FxTXVF25OthY-stYtLfDw-5EHab9oqgRSUXWvh4k_z08jB7vbrhUNVTecAlJNZfTa5q18B453i2IFQb4mGxmJeTloxyogAsOWfrosyCb0"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1-B6gx0g5X4kpxYUHT-RAEwTAhH7mVnX-8YvYSBfYXmFJ5-EvNhsEkT62Gc9BPxdR4bqYFJfdWDLGMi7DwM--6bnGS7QSIYRYNpFjpJtf-IUjLMbXhsbfFnfQ8uw7M1xwhr_NpTsnmOFl-a-HadTc2w=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1o8Qs6jK3cVvaHCJvnSVpNngHTtlJjbMxKi5XuOjTDm2resqDr9LeA3zqzsEsOA8kHRrG4k7_KmbqW6nC4srnOOGiMmLJrHcWBUHup0wDjLOH_iwYl0JmJrQHdrJNqzJ6G7U4e8OIbN-VM-a4LwfzlaP2DtONw4aujrgJoCuHY4O98Z18U6xEEsg="
+        },
+        {
+          "title": "ClinicalTrials.gov: Clarithromycin trials for Pertussis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pertussis&intr=Clarithromycin"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "Infants >1 month: 15 mg/kg/day; Adults/Children >6 months: 500 mg daily or 250 mg twice daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 600,
+          "sideEffectManagement": 8,
+          "totalAnnual": 638
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 54.29,
+        "costPerResponder": 54.29,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -2790,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Clarithromycin",
+      "nnh": 10,
+      "nnt": 5,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 70,
+      "responseRate": 70,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea",
+          "percentage": 9
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 6
+        },
+        {
+          "name": "Taste disturbance",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-2 days (bacterial eradication)",
+      "treatmentDuration": "7 days",
+      "trials": 60
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYQ6-0m0bjOp3BSPU1JdbDEe9RaufLoMGJC7RLHC3sfgd03HLaKfP4F0XbOHYrRRywuTcZ51X0bDqOWNlLHpLUItZbTYPzCYd7IpQaGIPZthlWAu153LzAC2GzQ8MWi_mGO13W"
+        },
+        {
+          "title": "elsevierpure.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdvILFajJKjzjvx_snUAMdO8F3j-8VIXToGeJUxQAsMfmZQH7d1ODSgD8Umigc-tUp20pOmfy4WPravND5UUyzCQpcctxdv7_ZiqkUCjOYbL_tzEZHiF8MmI1bWRDQww7jMILpZ-F3-Gk2oS9M-e4h0_yJZNysRb4XiQlsM1GW5xQsM-b6Zxa_Q1Kd1uoR-ic9voP9yVM8ya5F2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmqC6TydHxlJ6xTd9Cf6WzHPL_Y6XpTLwZV2RLAa5troc4SEk3Q-XQ4RAFHEU452EQkcM4KoQ-DQq3bXcLYVcJ9RQBTtdQ1d8-S2deVPnoJfazPyfpCIhQgt6pTuidYAYwjWQ8"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJzAdlgsXKVmCjYyK9-uh6c0K1o8kJhAF6VSMW7o7pmuOX2ehuHEEWzARazqgAiyl6aMoPrnrjBRfI60tiVysJfhX8-EvSUmMycgNtHwbwnA3EgsYeIV9X8bx5Pg0YuAtYaLlMKhVlJiZ4zQcwn2KFjvhmzYRodi1OFk0A_9zVFK1hek_GA1gf2RNfOOvYe8c4bedj"
+        },
+        {
+          "title": "umk.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeDlgH4M1ShrtdmZBYNb9K42-rnVe6eIjBUu2g3Chns-HClgQeTImDc4vjbK1OFqjJnPeqSECu6wRgdnO1AdvXrSHt2GDsDVme9M84xCaCuhI29-lgnsgjidsNOs2C_Fs-eqeWMP8Lrpig1VS5MxJwFSHoSJQgng=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEoCjNiv2SZ8QaWySNEo-PJDEHgSNuoKhWDY-6N4c7qrgOOds_NAPnB-yFtJDzF4o7FVAvOpfi3JgqVNURA2r5Z0mhHdkF-7jOYKtHxepg-zTPwFC8elURkY_elHeHeZSsZF0YxBG53yfOlBzDFjquT86z"
+        },
+        {
+          "title": "aap.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsWVJs_mL6IHmtRm_X99oRyEhqvBOUdkF0t7bctyR5aDPz87Hfn0eVFMHCawFzQRnpQOEy9PI9VObRkm4gYNYWqYP8odtgnufEtEFAQkJmNZSJO-DEJgTj2yYXw6KUD4zzna7cIbl_IW4qAOZVtMJ3OhZrwhCWLNN8dvvQv8Zuw_fBkhZun1VOyw3VPmHkqhKEH1Yr-XDnIa875w01mk8O"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7l7n7_eOUb78oRVer6zra5qJRdujHd-zqvJj93wgFdZq59Rvj5SXBhUYVvRdNaIxjsQjTCwzsAcUpfonZGh1LR_2gyI2UZyWBc2-tmQJCh1sMsj5YJMbOvCWzN0IuislNL5bKrW7n6CuTZpBbznu8TQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmx3MPC_HkjxKMDGn2HC1bVKgym5NgGwFLwM0nmxsq2R4sMctTK9YBH3wA5sywG_Az7_dSRbCflyzfBFOQodgRgTznQ4uKm-ojlklI7fKi1n7es_J_9g6v9tVcNlfKFRha6d-Ib9iRvOjT10zU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExtIzxzHJw4B-NZtKnnZxMwS96-8h4jJ9febv8pGk4N2oVuopwcrBHhjVDzyNYbkPuCojJvYsWIsC5qHizZGUYacBU8T6WDtQu2odZET2kA_spZt-AwRk9EPiecoP1EekRFn_AZjzj2g=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Trimethoprim-sulfamethoxazole trials for Pertussis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pertussis&intr=Trimethoprim-sulfamethoxazole"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Infants >2 months: 8 mg TMP/40 mg SMX/kg/day; Adults/Children: 160 mg TMP/800 mg SMX twice daily",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25,
+          "monitoringCost": 600,
+          "sideEffectManagement": 10,
+          "totalAnnual": 635
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 53.85,
+        "costPerResponder": 58.33,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 12,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 25,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -2792,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Trimethoprim-sulfamethoxazole",
+      "nnh": 12,
+      "nnt": 6,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-85 percentage points",
+          "baseline": "90% positive cultures",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bordetella pertussis Pharyngeal Culture Positivity",
+          "percentageChange": -94.4
+        },
+        {
+          "absoluteChange": "-10 days",
+          "baseline": "45 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Paroxysmal Cough",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Severity Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pertussis Cough Severity Scale",
+          "percentageChange": -42.9
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 60,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-16 days",
+          "baseline": "21 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of B. pertussis Shedding",
+          "percentageChange": -76.2
+        },
+        {
+          "absoluteChange": "-4 percentage points",
+          "baseline": "5% incidence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Pertussis-related Pneumonia",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-15 percentage points",
+          "baseline": "20% hospitalization rate",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pertussis-related Hospitalization Rate",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 7
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "1-2 days (bacterial eradication)",
+      "treatmentDuration": "14 days",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZobDYcGZcXYKYQ4bocKcidR7U6QeuUulmNnCWz0sC_1eeAmUKnx7LSUWcPNx_QAR34cNJMUX87fEcWVLcr8rpQ6AE80KO3lKAszcP7fC_do8JQPlX7H5nk6SAHrTtK4RYJaqKbdgWRoKvmq95A0jIUVw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEYN0Rt29OXLHVy0GK0uPHNes50bPWEK-JrpzayJ-l7xrd01rONCcZ91zWozA7nvN4SQq7GKHpmMyR3aJ2DrSUaaiGpX_3SvQ8KUHOdUVP8NyTZLwCS3_XjTGpLkVLG2DvuQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLRJFmZaxLrWZpARtOKkVqq9T2fyQQ6-FDH1wyut6HEV1Lzz-FL-xtSQelamTPpI6qaIHv2dQoN5b-CO6opfkUZyUAjFQ6E3qQ5qlhzg2GIvKF7nncDi4f1QdILFcp"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPaVFkEO0j2xR61My8lEe_U9NxGv-UIicmdie5quMOLNgbGIJKzB1CkgrGpe3caJlnCWx_T7Dvo-XmEmvYM1ujEbr9dBlebFg-weOZgsWgyHtPgCRspBHukRKw0fixnlaYKpX6RLwmdsPc3XePZLEl1sY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbi5-YszJ8tpLoUFRIWjUp-3ZPTcrOn6MRNmjigg_v0g4IX1N53cjlJ249wUdnmTByDAe0k6-rzU3DdS6_WPuLSdLASClf-ioIBAGVjvFPROBOz5dEdOmrFmqXU_P8VbexE5GR6Nb0CzZzw1c="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpmFtPE4bj1DRLV4xD2mRztkCTVb24IKWYhMpf2VcU4zVgOGMebnxHukXV3_70Q-6VPwQs9oe1_3RHzXv32Hn2NfDXDrUlxrUDhmnLu6bjByQNL-9TBvMSD7dA1ZDac4CjuDQl1bqV2Fbst6s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPOnd8X5oPVwnlUdXk9mN3RSdddqDRs_I8-qvdPof4HFYeGqpFRdoEdCqnBwasL3vD7UaPQGL-0bhcya-EaZaXc3ErXzjq1fFpUlxUV_4ePsreAxWwNY91JoYSlkcSpjFDCg=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElRiOfR9aK2HDI6pfg5bzAomB3sXJUUwqiKjr6x_li-Om4msW_-kWaaG5VRFnHfQe-wEhV_fxO9i_JZ7ex9sdO7j9H_M6OixA4GyCe2oapbCOEk725o_J2sFG_M9toYln4VS4P6W67aHR7d0U4qig8"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOPnLOKfTRoKheesemfx_zbk92AlWwxDL_F-EFM6vxaFlhqgT7axxY9wJCdVL09u4Re2xJrDzaWaua9hfVFPoUOi4oIBdFTIi1loLGRZjAcPK6PK2ovafFYLpJ6hKuyMsv2zbi7hM="
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKLCremL3MxouZY9ZO3IvruZOYbCVsnC38DRU2a7Zz8vtr4ycfahyMHXOl9yOEdCFgoowH6gFox5vvvjX07RPaqroJ9b_NxddSMxBJyjeklRvS82x8pqYbsMV0OjfqKoS4SIbDT_Am2Snwy8qRofxQ4WehtsVOGBcqifbjtuvCiInOv-xVYfX4oA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwZSyBEu3ntSQ1jrakBleNlsOd1jEJ8qnwDyWBJjmrpE9rQ8enZ7l_ZtPJ8ZzzTWokAepAqONEMvgT8TAZoAQsY-YvaXk9EDdE4YZWIzgPZqWZ8GvsriDkHaUUk-V18S_Cfg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjx8xwBaJrDWWlhwivs3aHeP2LEEhMufYhQRwuN98ssNt-RI3L626heGbKXoFfXS2ReCHrJrXEtWdvs8bpzb3TZUS9ycbCEwHXNxVi4-okwv3082B8mvR1pC1Bm21Dmtyymzo="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfEP2qFFOCNEUu1_I9ZtrCd3JgqsS_MRYMi5hPRg-2EIbAKp_oWfPNw8o7kHd56D0A5qR_qsq-L4HTQCcISIxYwI1w8VZWfHyo6_4fRl428RFdMW-QdICHYlYZtiLVhQcHCb9Dceu0urS3X5vOSTX6VPia_PLnZjZ_x5hLeeWEy54K45yJEQsizuCrkZS-Z3MOJEzvbr2NOH3UcpN1byq0CbbTEepxq6y9P8innJ-p9LAP7kqOehv3ckd01L7jgwMOcWyd5bnIjjMN9LQIKqAx-A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJR0cscMrk1eBDDSOBkevOK6e8x0unnQqfHKFAhuQcDfTScFoCq8y0SKRjXmSfZ00nSod3HGIFDHU1uDE0Sa-DTzf3hJYcAz8qln4CkIn7rw6o3hMecwP3HWLT0DEMDw6b4CB4oi3RptXcWFkZugrfwAEaxYma7q_-Z3VP1VVVoGX25EnSOQ_cWw5RjtOtKKlpdhAVD-2oGDaMkwJCfr1EqQ_7N9UbLFfey6snlKaM4oZSgGimjR4u662_9g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFEK-zbG62fHM4udfRDDky0lNv4gUPStfn4PIklJXbkVtW66s18X7X9ZrYfH8yoa2GDfRW8qN4izZb6gzxsPTOLa3P7Bd3i_HLYouzOl2CMDjcrL7GcKujY3pPO2wO-MXCoBoJWqQckEYEVIFqGtPhYwgwWv8EAeL5OIBNM9O427nwh4c6qV_74npw4uaK0ZZNMHHjt8VAjwOj9orlzv--KdRWKLhZOOfjMAtd3F7w-z0-rikQx_cHZOxROw1cTc4v1eXWYOqT27FxQ3hLoHnqE4R5iblH3Ikvr5JYuw8q6-vnIsc0N6rA4fGMt9QRgUnb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZoPezCaL0mn6V4baZQSiKq024Ocg7_LG3GUy5EXE8LEFFOXmCsGYnjWLUYbQ44O2a3KwXb2d7lD30EQIBOTFIPaNyko_8EE83LmTm-5NYg_pTYEdEbvdk3R80Y5Bpy3-Ps03MM6enm0WJDw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoOvvsb4AKmers7fwXJG37wodLLE9LAgqK95E23eeUvE1yp1TKs2D6nlBiaTnsivaPWWT8cYQq1q_dfm4OhtGcI3Z8WnkqPserIVO-WPmdqgBVttvKBGLoPV9djCnZmJECoZ6EsldztRFBA7cm40ZVoiDwXI7OQtcdUZfnMnpK3YE78w_4JN5dX75R6nHflj6X571rLHymWrpn23xioAM-R4fXASGT4C93o8mktvcvDEvA7Wn1ZwRraJrR_lCkgrUpMQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Erythromycin trials for Pertussis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Pertussis&intr=Erythromycin"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "40-50 mg/kg/day in 4 divided doses",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 600,
+          "sideEffectManagement": 15,
+          "totalAnnual": 630
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 50,
+        "costPerResponder": 50,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Erythromycin",
+      "nnh": 4,
+      "nnt": 8,
+      "participants": 12000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "From 0% to 90% negative cultures (within 5-7 days of treatment)",
+          "baseline": "0% negative cultures at treatment initiation",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Bordetella pertussis Culture Negativity Rate",
+          "percentageChange": 90
+        },
+        {
+          "absoluteChange": "Reduced from 21 days to 4-5 days post-treatment initiation",
+          "baseline": "21 days (untreated symptomatic individual)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Infectious Period",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-3 points (reduction in severity score)",
+          "baseline": "Pertussis Clinical Severity Score: 15/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Paroxysmal Cough (when initiated in catarrhal stage)",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 60,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "Reduced from 50% to 10% secondary attack rate",
+          "baseline": "50% secondary attack rate (untreated index case)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Secondary Cases (among close contacts)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "Reduced from 10% to 5% incidence",
+          "baseline": "10% incidence (untreated, especially in infants)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Incidence of Pertussis-related Pneumonia (in infants)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 points (e.g., from 8 to 6)",
+          "baseline": "Sleep Disturbance Score: 8/10 (significant disturbance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Disturbance Score (due to cough)",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 25
+        },
+        {
+          "name": "Nausea",
+          "percentage": 18
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 12
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 days (bacterial eradication)",
+      "treatmentDuration": "14 days",
+      "trials": 4
+    }
+  ]
+}

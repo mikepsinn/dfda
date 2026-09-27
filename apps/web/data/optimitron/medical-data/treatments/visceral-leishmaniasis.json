@@ -1,0 +1,797 @@
+{
+  "conditionName": "Visceral leishmaniasis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:25:12.541Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "ajtmh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0f2Cu9xP9sDjGEt9jMCXhHEhJoFRkMWvmtdFukVHB8WUn4II_qUvVF2UgfDI4aFSMz62arrTXe6TWt2pc90xERPwxVxtj_DheWtQ3Xq7aCzON9e1sCS9O2G3rdQYgEZLAUyhfMloxFaoGI3WMIdLY1IGhULywqlGZ7g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0EtwWasK45yKuwp05KVrdZRsQZ8pJl9hOarA86ITAbpYrzUxXjfA1pcTaiYje56Prmg4xfCRXuePr0jBqlwVHKnT_vXK2trdT71hSjO_FUQaPEX1jtUU6GwhyUfbtD8Blup4K"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1MAKEFEggFoHhFrma93mEqmLALQwf2kXnXNL30BQpZWurElHa-fs0TSo4YqvV99BhtWX68M7B-n4TUWUU5Xbdi06245GOj1ebRu-hvIl_3eNWJh4O-2LSNWF9HpALoN7JNcLOmjUoPLPBfto="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_JwWHM3BuT2fElFj5EPmca6_43qqstSH4fpuQ_kVkdN49RqJUGQJ4n2FCAEVYDhLlCWamWGQQo3fNnjHYys2FioTjMg7KTuaU4f0hI25Dos6K3Fp3q2MVeJHuSzMZe0H77VGKL-cJT07blGunQ91ABfiLlhcUFKAkEZAoUqKw-XtsiTWeTHTjxwzhd6vIUvb5xAxz"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeqJ_1_5UQ_jZFdOe1RHyMqbLbg1UngPHeGOsb6xDzsAD0o0MNXioJbbp358lLlQJP-c-9NhgWW92QOrvZRCe9AunU1KlNztdo5fGG8SqShv0rgfkizuaT6j7JLUsRzknfTpmq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE9foTjkxhorK-pgdwFAky7Mx9SR1xiv72fiV2tTnw5GPBM-7sXy5KPwt0SM2Wes2q--Vu0VeuxzaWERsYWKbANCJz9vtzDeSUgVhkBS4ArGMBsqhnUC3JkTkY8TD1EDnmaQBBVn9Wrf2WQ6NXnOS1wDicNPePDoU7YkfaP6km37Crfo5yYOkxvgwHRLkH6qFWn82HYI7ktJO_kfWnaeqCWx6mPjjWYPD3sTAIyGAMAonAKd0JNYSRl9__rBCx0zG7GW1cuwt2kVJNA4jPKVuvVNIh4YB2wSfVAvF1xfPRA2IbnK0PToWZyIY4RKoEsBuMwPnAtZLT522AJJLvVH920Tntpz1NVHU56VEI2Lt_e9z_N0GeNc1U"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFg3XPNPQjAIGJELoC1kGVErHSJ7jt8EF3fytVXDdU8EYpIuEjWJzKXCriRRiJ27tCEvZ-y72JB2KFmeNS_ufaTfYMIy6Zm_gbJnGRCq3wl47f6xeerCQmo_U3uyV5WBbUN9-sdbezE9dj452DTdbCSDvnusV8="
+        },
+        {
+          "title": "ajtmh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqTu7WFT0J0TURI6vX0d57szLVQJKdrHVZwhrWEeCVT-rHJRyBl4nGYr5dVGjlcZJsDZlF6x9gTJu3Y5eNzFW8kSxWMq3U9inJT0yKY7w7BVoBASsUOUdLWu1szwmj8MWc15FE8aLu29qrta9sVx2GBpxJ6amVNJ17Xw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Combination Therapies (e.g., Liposomal Amphotericin B + Miltefosine) trials for Visceral leishmaniasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Visceral%20leishmaniasis&intr=Combination%20Therapies%20(e.g.%2C%20Liposomal%20Amphotericin%20B%20%2B%20Miltefosine)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Variable, e.g., L-AmB total 10-15 mg/kg + Miltefosine 7-14 days",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 8000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 14000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 14286,
+        "costPerResponder": 14286,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Liposomal Amphotericin B (monotherapy)",
+          "costDifference": -500,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Combination Therapies (e.g., Liposomal Amphotericin B + Miltefosine)",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 2500,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Infusion-related reactions (fever, chills)",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea/Vomiting/Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Nephrotoxicity (creatinine elevation)",
+          "percentage": 8
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Days to 1 week",
+      "treatmentDuration": "7-14 days",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEvwDBSKHQSdOPT87QkQ8oeUnxERwBZD4xh9r_HzI08LdxNcFPN3if7zAWiqitBpMV180LrGx9l6ROywMAgO-ir_BQqJxfZQG7Bw8HTb8VoLaDjVxNRHhMyIcWKPq4cH2nllmOOp_MwhvJYWHqLn8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC_C3i4EqWD1Ph4kkLk3tCdRWZu6GNxVasFUysTNyGMRJWX8RIlDRM0ZuMvByUkv6l1q-UQV2h1N2aER2MuMpgJnI94hOF9JUeJD4MoNA6rcmgQ5y6YcBkPbMv8te9PLI0O3eB"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_5Ibd4szythoyiKdc1B0OWtYTu9NfFC584QftGfkJrxj5uHBfM8zKXMPgYvmKKv9Juy1CxXXxqHkWqFsLQdBfJdC3WdTCLj4J2_RHfgpdMUzz9OlMZTZDkdGLSptwMR5hKtNNHqZ16kJiJZXIBrk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-hcj8DG74fmbZgloWwNRmAcX7al-rxtCT1B5NIFxpifg__rDwp7pjF3vWhv-f6KxrYpWohThFLjqbSQwb5nqq5awcKEMo6g963BqNh_T43yDmYdJxr4Awo7U3Y8tkTNvG2Vv-nm3sJUC2dcc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOC9TKiZ4hn31ZbYY2FfjNngvVX7239p8398pup189WyiT7UwLqV4l0TNizx39R6-2yW38I_AfR-wVU-Fxb71wAV_K2hVCR3bSVx7mm5DLQzVfvTHAuvXll07XYkuHuTpUUYCVije5hZlJnu67R-Ian9sSnUU9r5BY-gKuGJ3L3uu7yerHqQSyOt022qaPf6yBMQhL3cEuqAHvctBL331vXmIEJgzmUFKdp6oq6rFHLIRsemtRPcN_jHZHBd6zZUgTYwqjj169"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGezc67D-h8JMLMiyAM70AYMSCeOFIxs2V9bQS6uUY3HTlSzNkrDzvOjbSJyHcxO5BuTQhIgxEmnzAGWa2sEnW8-zPyto7Qewjm8Ha1RIfJ2BQYjNFQab_lt4H64heUQvHqllldrcj67f-pslw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUSh_1QdVS2TcdGwDQtmYs6ab-rrNhfMB_B_2k6Hiypa2zVsflTuuM-emR43Yy-OJcMqhJueQ1FqrXrE7qgkLvi9ha2t-zoekczH2DzfMyicJDfI6ItBYuGIdPdo7-LBf8UnkK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5JYzdtWcIRZUs12-Hb0OtWweSLA3vcpNE17JbkY0BxIeopdroFVgEpqxN42x6vgk7Ib5QrIeoFssZj5_9jb3otb0Tfh2n7zj4UDOiX8sFdCWhW9FCqk2JmN8nTIzYCMhfc5k="
+        },
+        {
+          "title": "msf.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7AfLO5Y7p_l3AX9KU7hlcyj1a-uvzqvvmpbYFjZ9EE2ejtQVTYRXX0knZAcTdC_QX-XNcn83ns4aec0WjaOkMjX7M-AEf1YI4aUUzkLfcYvONTAVmNNk8bG5kBqOr-Fl7uUNpD3MRSsQGUpKHRRNUkLjWNuPryWW9rYwe5K7FRxAor85Bjb-JVIPf07jRAEX97VxC"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHql5Nf2d8tzoSMgHpmMbm52YGw4KGGSnCznmL0MiKwbdpEeSkp8x7688kP4os37OJ9JAbDvYfbBH90cTqElnYihBpdGlRxYgd8eA8e0FqIqyMAvUA2C2BSn7QPbQZUqLY8IrCvM8WQapkidRZVP2aDrv3SZwY="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHX9GsSoJ9btRuu0p453lrSaZdIxbBUEYAhgr9BLl5qNHk-Ai3lDXlZcpOi8TOR76rD_KwbS1VIJ1hFDy2iNOSZSuoy-e4sLxCycPg3dGFneCZZ8Tb4jtMpPfZ-s7wC-A1vTCMqjf_pJNYYrHqPC0Ay-xirwGY_WwA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Liposomal Amphotericin B trials for Visceral leishmaniasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Visceral%20leishmaniasis&intr=Liposomal%20Amphotericin%20B"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "3-5 mg/kg daily or every other day for total 15-25 mg/kg",
+      "effectiveness": 96,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 18000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 18750,
+        "costPerResponder": 18750,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Sodium Stibogluconate",
+          "costDifference": 9000,
+          "dominates": false,
+          "qalysGainedDifference": 0.4
+        }
+      },
+      "name": "Liposomal Amphotericin B",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 5500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3+ (to 0+)",
+          "baseline": "3+ on a 0-4+ scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Load (spleen/bone marrow aspirate)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-6 cm",
+          "baseline": "7 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size below costal margin",
+          "percentageChange": -86
+        },
+        {
+          "absoluteChange": "+4.0 g/dL",
+          "baseline": "7.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 57
+        },
+        {
+          "absoluteChange": "+130 x 10^9/L",
+          "baseline": "70 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 186
+        }
+      ],
+      "remissionRate": 96,
+      "responseRate": 96,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 kg",
+          "baseline": "45 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 11
+        },
+        {
+          "absoluteChange": "+3.0 x 10^9/L",
+          "baseline": "2.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "-70 mg/L",
+          "baseline": "75 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-Reactive Protein (CRP)",
+          "percentageChange": -93
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infusion-related reactions (fever, chills, rigors)",
+          "percentage": 30
+        },
+        {
+          "name": "Nephrotoxicity (creatinine elevation)",
+          "percentage": 15
+        },
+        {
+          "name": "Hypokalemia",
+          "percentage": 12
+        },
+        {
+          "name": "Anemia",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "2-10 days (typically 5-7 days)",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPtAScHvFrsh2ckh358iathhRrY6TL7v7hf1P-ejOq7oC4WQs3RpcjNoo0N9MqQma5czz38H0lFvG2ltZrZ2h4Dpnskz_8ZUSXrWdPNKTLqTKlGvq5_KfXMKUqMT7rPrwJC3E="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7f6Nc3RdPwGGbhgA39mPWOsQR-3KwKCkllvlh8lUjYePB7nLI3VWzj45hp6rXUMldou8414ijrbsez_xm0vu64ShG2_KHMVzq5PTlls6539jLs17ml3opIBv2H26_6_gSQuEjE8Y1vbf1hM5V3qhY_9sQNaRkGO0ZhrCC9gcmRsJH5hs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcI2s7Am2n3zA7J8NcLMqRHX3L1cxSEW9EuVBFVHupLVHKh2bf10DGMwgKpcN6QsvEAXvKTx4wQzwtIB7o3tJSIJqB1e_peaXNY0zwMpdUzOLtzHuHc59PP6mq_40Gl4bZONqyDsDpTY01oQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMBodDPV7QuVcQN4DeJts7Ja5Ay4wF92RPIrU-8x72Oy1A1ZzdxG3pgCFxT-z78xz_GBwPvn7MnXKl7LIh3l8aie7zNUEYPgtM1Fvf6Zk7yDJTdAkMUtavIoD8hKFpYn9j2W2v0ipWoeIkS_5yhlAu2uLwqDOROtyryk4cu-ec2jWumIXo78l18EdicMebtUCgw8oC6RxkojN15mC5nIciVpLKs1TqYKx2-nGn2V0oVWcuJEAt01GE77WG_ca8QaFmAIKcfr5UnjQB2wupFAxATSVgB26O5ad9--IBHLo4_Jz34UFf4F0DP1XaDvc5NCfQuhg_Hz0RycxQmnJU1BgZOQ=="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSo4vJ10vNX5PtXbVvAhqSjmf5Op8tIMtBc1DJu9yjsrRgi66_kCrGXyaw7J5h_lIh1GmpyVcItkma7ByR1kle64wUZmUTO11WFSklTbrItT9mKGq0MWm9i8p_NsfyH9mx9ISove5z_r7dopilOP40MON-D31xJ7Y1uOVpXnts1xEaNAtnPheGOi0cS0MGUK8sh03_1nla40hKTQ=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-U0wTkWgSK0SNd7DOZj4XR7yAy1G8tnki0Ua-_xVKRGujewq8weH0nDNbutAxGeEFvdRo6VViXwF4SbmTlLGsiTiGQo4aH6DQO3ZloWD3XP6mtpxU-qd9qfa2jVqDg1rX9IP9Lg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl-Xt8GwoeFOTk03PJtjfVyHKnjVDpcCDcjhqs08avU7N7BeQr7Ho-rOA969WOc2I8Lfr0GIVQICaxB85yan9wSYbEaGdtiMSt8H0GfAWDSWYABXwagHpO4XkIKaZMkuVzN5-nFzuKu1a-fLDkL9XFCy5T2jzM-SVN5A3YJG7OhHTH4fnclZlUiKcfuZ1sTA0Abtnhi9ntacYRGBkR0--WDWmce5NbPtETz4ZRfAMU5FKLbmH8W9LVP6mRo8H_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5JMrMF6q9z6nTXfEZ6jt9zELwkCPMmFtlN0U2hnxJhPcNXTNOVp-ADXUtj3GOsaZS_eDchk0HdW93QonJmCmauJJQXEIEcds8DMAj0ZUddATo3BxI-x80ro0thWPgC-N8od4USE861YGjOQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Miltefosine trials for Visceral leishmaniasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Visceral%20leishmaniasis&intr=Miltefosine"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Adults: 50 mg twice daily; Children: 2.5 mg/kg daily",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1500,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4348,
+        "costPerResponder": 4348,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Liposomal Amphotericin B",
+          "costDifference": -14000,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Miltefosine",
+      "nnh": null,
+      "nnt": 1,
+      "participants": 3500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3 units (from 3 to 0) on a 0-4 semi-quantitative scale",
+          "baseline": "3/4 (positive for Leishmania amastigotes on 0-4 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Load (Semi-Quantitative Grade)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-6 cm below costal margin",
+          "baseline": "7 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Splenic Size (Palpable below Costal Margin)",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-6 days per week",
+          "baseline": "6 days per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days with Fever (per week)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+3.0 g/dL",
+          "baseline": "8.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin",
+          "percentageChange": 37.5
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 92,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 kg",
+          "baseline": "35 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 14.3
+        },
+        {
+          "absoluteChange": "+60,000 /uL",
+          "baseline": "90,000 /uL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 66.7
+        },
+        {
+          "absoluteChange": "+30 points on a 0-100 scale",
+          "baseline": "40/100 (requires considerable assistance)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Karnofsky Performance Status Score",
+          "percentageChange": 75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 50
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 40
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 10
+        },
+        {
+          "name": "Teratogenicity",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "28 days",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE09PO5WcHzG1sJvts0MR5sfGv5-kqPZSHRJajLbe2QiuVtzrM3KZI2hdE47Op-H90ZlyP5e0c57-_z_jXHQXeWBPejSnX6bixFM-8Vfr4Dh8QMORS9K0BWfE121pfZnReu4O4sIHovqsnPjSyIcXzSMojpnE-dt90pgxoN_kRgVbS7Ew2Mbs6hJt_ucmewI0T7KNInUEtB96Q-D4UeYDtB5qseTupYkaFRHGLpoKNHls57GHmHhmA7rSkrNqR7jQA="
+        },
+        {
+          "title": "doaj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmE1YW4PvNY32K3VJMCSBogAMsVr1rRcclN87AbWvAGg5FvvgNPv3bwXYFSY5oqQzSIp-NvzvyS8vkAbmIhC_CuohN--TTbp1LTVaM1w-a149jveW6vO-uimKEmMKNRnYv4yOw6LQLiOhhS2ko-o3EB2adyA=="
+        },
+        {
+          "title": "openpolar.no",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2zKblQkF8ijaj11YBFLV-lM0uLG0Tc4YCvxHmwPP33Z1RNfMWAcD_wTQKMqUOkbIGgJ6cXTqbzrQflfY09bYKAyUZWZxfKMoUIXDepRNIf0_ZpDs-1yL9JjXw3mG5i34qI38r-MDLW-l0B2xNzPzPYgPVKpcnazwOr_ru4w-RVz5TjjhDZjS3sEqPZcbISnq5zH8XKHFIyY3_1lNX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYRHORfHxvjmYNoAz3Wey1IHSjqTX9a7sMgGoRfH0ttzqlmpJmBe1K79wgVx_M31K1vclfdMNSHfvm8dfPlHujusGu4ezth8NMV2WAjepNsRnifTzi0y8a8VjYjxtIDQF1eqgnZCm928oh36o="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTjp8PTwMN3_qCR5BLOger5AAcu3eEgUOF8bc-08cmE5c6zLHd9Jentmeiapm8FbveLiNNiUAykyKNRCUGwHSU23sHlbmJLD1HYp4wu2jyxyBjIksh9wJrZ0DxitKNN7qd6bTwR0_Nd6AMzBC96Hadc__a"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKGNfh6TXu3nbsHrlzeQ0WRKIIHN1CrqXwduqH2lSeWrrRAJxRCjrS-x816_jScFJ2UopfKGO2wuKorGDHxXNXeXvypVbrmygt65V6xtgHVeMRX63_HdE_pbwBsLIcagPVkRNl"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq3y4-XyJEfmn7Splr12UyrvmlrfyXIMRCK-HPbMItTmhEzoa2DsmFeWcz-2l_yPoW0SmCYA7A7wtvEAUadIaEN6to_MLd99Kr1jPx7UoOpif_H-u3ZMCkEH9KUOjCQDtY3J148uESTnP7sA9jPmRE-cwKzcWhs3DIkFZl7adOSxdday7i"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQtazFFIFT51biKoMFn5EIyMXq05RE6IT4SkdyH8ac54A9Z-blE3mlNEgpgrPNmtLanTdxSHOgOnGOoezOda9vyu-x73t50rsHGawxjSwteVdZzLK0HZAuEf1VwoJHSPT-3Hnp"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTSCSxAtf8mRfTsf_0d1ps_7baaPwx662P29kC1wOLLbNbCGIBYwaQHDgZaSp39NXBZlQq-MNTQQy0oxqQO6lfZ_jTQHpDXriqtsRwLfDSFXVEMoTlCaeD0QWI9A7wLmft-zES"
+        },
+        {
+          "title": "ClinicalTrials.gov: Paromomycin trials for Visceral leishmaniasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Visceral%20leishmaniasis&intr=Paromomycin"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "15 mg/kg/day intramuscularly for 21 days",
+      "effectiveness": 85,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 4000,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 5800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 7250,
+        "costPerResponder": 6824,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Sodium Stibogluconate",
+          "costDifference": -3200,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Paromomycin",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5 cm",
+          "baseline": "7 cm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Palpability Below Costal Margin",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+1.5 g/dL",
+          "baseline": "8.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 17.6
+        },
+        {
+          "absoluteChange": "+2.0 x 10^9/L",
+          "baseline": "3.0 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "White Blood Cell Count",
+          "percentageChange": 66.7
+        },
+        {
+          "absoluteChange": "-9 days",
+          "baseline": "Average 10 days with fever in last 14 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fever Resolution (days with fever)",
+          "percentageChange": -90
+        }
+      ],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 kg",
+          "baseline": "45 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 8.9
+        },
+        {
+          "absoluteChange": "+40 x 10^9/L",
+          "baseline": "100 x 10^9/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Platelet Count",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "40 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life",
+          "percentageChange": 50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site pain",
+          "percentage": 30
+        },
+        {
+          "name": "Nephrotoxicity (creatinine elevation)",
+          "percentage": 10
+        },
+        {
+          "name": "Ototoxicity (hearing loss, tinnitus)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-3 weeks",
+      "treatmentDuration": "21 days",
+      "trials": 11
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERsmF9BpQ7zlfKvcvLzUesrIqpkD4iaJC-LiBSC8s8G8EirxJfR8IG3uG0tIjLu8Ieo2WdKQMO0SqA2h31-JJ9C98oLklbJjT4xyO288qaYTqm5QsmrgXihNaGLfMHufVwrQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCLQR44eh3uNnFIBYzTf2X0LIfvfUPpNlFwjpA4MjNNdM7qnwL5GbmfD0hcsbaix6dlHjdAggZ_9mX41ZnzfqdguKQzHZnHzuJ8LM-svODIE4FJJqizRh6aykWVT3031ZNPxL8G65MP9VFdWa2pdEXZDlFSZDsmDJfDRyj31nx0yVXou3MNpwhJc88NE6QMfmz9nlHEomrTj6Cp9UwdvqikmJk56Jlcr9lTsXR3t7I89vAi0fx8VrwsemmQ9SXryfxCB3ZTD8KezpNOO2akw_rQ8svTOqTzcXYt0bXsjv34p4oa2rs"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6YWosgAS6BIbVDW7kB6I0LlMXY4jBdTF1OO6izGbeumhbRv1FOBWt8FY9Ij5eHh2oQCeswS5NEPQkHa3Da4mSmeY5wpQbRR--z4lxHwLrFukOHZLJR45NwCUMIUI0AAJ_MYElhnqeMjUHSA=="
+        },
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJYd_dzLxX7MabsgNIWDz-IXaxONgimA9wFsGdcEo7h6Ub6F3WFJ--8pFpXFSZRK5l_IGI9myi8ttCkBocE8UgQGdsTbBvoiE73lKq7VmyldfQD7JvVm_E2mGBa2SgATsQS6I805cemuJ8hQjF7TjEsdX_-l5UvJlqD1oPf4lSMg=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFziqph9UhuytZat_INX6sF5OLNIJLxxvindISh-iaPA3AfWr7ueTPb46fT7mtCiVQacH7mCFBfKDNIGZVTCLoAkUA-QucNKHVUl30eCLRkxyfbZw8VhLGQMZgERNFzOww4GyUwzBb1Xb_qrJNsSM5Ek4EopThCvDGbf_vBPHebS4rs80="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhLVhUh6iXxGLjYi4-mFkiqrfkEuO5TpTSSVhCZ1TZIUpDCtO2reeCX-983Cg7SOUgXAvj3MqiE3WJUancuSf6l94rlGYd31BSzzlWo3Cabo7QIjtHJeO_YCRe1CERyZ6OYnWo1610w2ZjLA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTTCK80fEORRnzE3ip6GHG2YsEhjiGhBGQF6_W3peyIzy_ex4fbgZ1qDRIzc28nai7s7un5DB1rR6rXFZezPnkfwm1wQF6uDWNLsAM_gNrqd1ykRT9jLwKZud3WFlN_G7MNLzRyJkv1SyA7z07FXBHXC5MrIMs7W6cUyCCw2urWKG7FWllY7Ot4sF_DXBgA6OrC8y8H4KhPuf0wXhXDb0ih22H8x9yD7Qt1TCfALZqKFnR5fIsbAFHS19amTDkmS8do7xzAvcFret62Q8O1E9xgpFAtgYWOstravHP3YwI9hrIGeYsnT9OUdPSvc6Q0iKPDu_H22TojbmMAX72tRsBTHEUuDCek3Hy0togdOL4iHIqH4wl5kTlEQ5iKf6TkCy3OZy4sZYrjzAQ21igdP6bbdaF4p6z"
+        },
+        {
+          "title": "dndi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRI0RA861G1D35tD9-D4EeX1GSmcYWzVKD-B133lE2ooTK4urlxZ-1rqbIcDrVY-z0g3J-lv3GTuUFUKy9oirBzQrpyjqhwHez7AEAhbOlTdIJXQSqWP6F4yX_OruWM-u3TNmOof4o0E6EGCMOQj_JRg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXx77LtPmrjX6psv1WWYG1zRNNmUIFhjXZeCNYG10Qu1NKMyu_UBaeTCySPCOfs9wuTAxiVLUGp5B0rV1qCFd4wpgLBL3vFj4r-4T1nySMvrNGDBchSIPmDfSFKYml9jU9DRkUVF4TaM6avg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sodium Stibogluconate (SSG) trials for Visceral leishmaniasis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Visceral%20leishmaniasis&intr=Sodium%20Stibogluconate%20(SSG)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "20 mg/kg/day intravenously or intramuscularly for 28 days",
+      "effectiveness": 88,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 6000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 9000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 10588,
+        "costPerResponder": 10227,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Liposomal Amphotericin B",
+          "costDifference": -9000,
+          "dominates": false,
+          "qalysGainedDifference": -0.4
+        }
+      },
+      "name": "Sodium Stibogluconate (SSG)",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 6000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Cleared (to Grade 0)",
+          "baseline": "Parasites present (e.g., Grade 3+)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parasite Clearance (Splenic Aspirate)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "-8 cm (from 10 cm to 2 cm)",
+          "baseline": "10 cm below costal margin",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Spleen Size Reduction (below costal margin)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-7 days/week (to 0)",
+          "baseline": "7 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Fever (Days with Fever per week)",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "+4.0 g/dL (from 8.0 to 12.0 g/dL)",
+          "baseline": "8.0 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin Level",
+          "percentageChange": 50
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 88,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4.5 kg (from 45 kg to 49.5 kg)",
+          "baseline": "45 kg (for average adult)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+1.0 g/dL (from 2.5 to 3.5 g/dL)",
+          "baseline": "2.5 g/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Serum Albumin",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "+30 points (from 50 to 80)",
+          "baseline": "KPS: 50/100 (considerable assistance needed)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Activity Level (Karnofsky Performance Status)",
+          "percentageChange": 60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Cardiotoxicity (ECG changes, QT prolongation)",
+          "percentage": 30
+        },
+        {
+          "name": "Pancreatitis (elevated amylase/lipase)",
+          "percentage": 20
+        },
+        {
+          "name": "Arthralgia/Myalgia",
+          "percentage": 25
+        },
+        {
+          "name": "Hepatotoxicity (elevated liver enzymes)",
+          "percentage": 10
+        },
+        {
+          "name": "Nephrotoxicity",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-4 weeks",
+      "treatmentDuration": "28 days",
+      "trials": 5
+    }
+  ]
+}

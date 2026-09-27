@@ -1,0 +1,1038 @@
+{
+  "conditionName": "Silicosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:56:23.920Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "lung.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvZGhGnjQCO37BmicVb3_I_90LnBAO6NXTW17ADyMJ2-F7diw_0oEKxj49WWHC8VfxqDf3EG7cQRoPJoByOyFy-GzORtH1PPxXKIOhLhUpIgXAPNEM5eRlEAvOcUOrx-ibWAfKFOGRaf3GQ0BZzbhtGJng4ZfQvB2DIdyMlhpJY_9CEUfluaT-S75VwBo3MkroRJSS0nsfpw=="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzTohlXLPSD59Jltw7ZJSTPU9Kq7CzJzbgQ5zlRzma3uaTX-wNP3q5ez8jHmgniCkzXi5S8AWw-oe2t7UtRsg7q1RThumMe1MJkpx-FvQ1ziylplIAPfpWgJl231ygJE7pgwkvS1ye1CulXB-csryEeGMPjlJF"
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz0o14-6nb-1ZOOA5ErY4kl0n9QbbFEDII7ZyGTe2HSDAvPRSP1QSxGKK_2Tglq1cDjI-CgdKz34Y-4VqEZR_Wmw6RM2IKXoXHmCJO_ie6oqPpteFzKAThokPISIeu124gC4MBRANSpvaeUsfqKCV62IDhv-UGcghbtrFvUog="
+        },
+        {
+          "title": "eurekaselect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwOKYBNa5tyw9TC_w9AcNYTC3OK2qg2xy3xhKxIJ56CA2vXfp3zTEuOZBwz4UNOWSoiRDnqw99bXxPyZhX2ol-SgQD7Jdc7n-M1UD2Bodi-UKAUmf8gJ_iMbkxnAJUAWvW8B4fLg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCbL_CbYcGziISWXlPN6_iKK-fWReY3IkZKjbMD00ygbOumEITL167JBoLUi6a3Keb-mv1H9c7ZDOxC6CDdw1OIdittVystNzAm2gKUJowgWQR3j4vysvJZFoIiinj9Cq7Dp6IzW_vkg=="
+        },
+        {
+          "title": "silicosis.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXA0cI85Jvqhon3GfCc_kFnLFioIupjGh1iR9YsAjK0dfJE_1l-XDxBlEPAX-P-v980hwNb4V6lYJv42cgaWDNikZhvUkZh1TB_-GLBSIHqtkFvi-zq5_HXOFy-dssCfaDCRlTYRVVbI85laJuW0wk2sPC3goU57ofj6Emcd2OwOYhjAmIBQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErkqsx3M8-WKsIHg53qvbsC8j4W4EYAztttZ5EXFq61PPlg3t9TI72WqaECkrqfl_t6WpToimYIzk4xOCymNLnF-6X-CeDzx4z8OhAtePHIOMXcWrGSsJ81kkDOSBor7n2EfLF7wAwB-wBSy4aEkb3A0ed69t-CtQpWZQ-tcZkXGxsVb5Ser0TRG3Qmc3uJFcHro7i-hG1joXGvjJJwrptCYVyFCbsLEoPkgnZp2Q="
+        },
+        {
+          "title": "journalpulmonology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNI3oGNl2gHWJxZBSy61hgXHNtIO950lp_SC795sp0YV8xMOD8Cv3yEBZjnj83HRR-ZmTIQMKdfZPqAb_dzW7H3m6pZ8HJApd-yIpTMhDhrJPpu0ybnwDPowLKC5eYROJwalBu7JrUwqaFAvIq8KQx8P37WlB9JkvdFyTrC3942aeH5F4etF_dkZl5f2N_gyWzB1r9T3r0pR-Y0d-PSAq7wLThkA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw3TH5MDH0fjP112_YhpJ51spzLOXkwlMxES0J1kiRzFlykVmRenOaSv_NRkVEUnmMHzBqPQHk2nEQzonsISh0DGBtWGoXTFYgmAsnLai4rSYInmBGS5v6HOiOkj-ucUWN5cXCw-PEylTAVX-8onBruaSYcMZZ0IlRE_238UaTNfvi11ye9_uLcpdGZZi87O0RVb4pO6EuMmFan1kPacNQ_OnYcNoCioQ_mXIcX0QFXCpzTc7g9VaBTrLCJToZDs13rEv0jKjKVWexxlBXKMOwJ9dLGWLBNwY0-UnzDFQSAyNKXBOzP-C6yA_xR8kT4azG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQ_gu4oLbUi6xJSGqbyWBe4vKo8YYCu_9wCC8JRAEhFzkJitLrfDlArsQrxd_nd4HUmIBcAiFv9MRIKBceQnESrG7t-rE15_anFGgCwBb4Mp6zqCrWECqM3hL6eX7DlbhLWzo="
+        },
+        {
+          "title": "iums.ac.ir",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2gwPtzohJEN0cRGNXgK2X9BZaVM8NVtwwtCzX1qbZ1uhJq120aD-a2LzFlQck_30Rcoes1Rs-SCGZcw73xR5-R1pT1sXH6oDRpXfwaAiEgTp9vItgwigxT-wrs-jfiWmzAsbxbIs-yk8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUb6rOyofSoUi9Jx-XPicX_VdNTOFJXoLF-__FGPBkP1agI7t7QG2aFnDX9s0BfcfAsX7ry7rnH05Sqa0-F-6R5_UZuFhCbb3w4JyhFYUl9DJvoTnECtpKl1Cyy0KnyD581vNQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oxygen Therapy trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Oxygen%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-5 L/min to maintain SpO2 >90%",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 2000,
+          "monitoringCost": 300,
+          "sideEffectManagement": 50,
+          "totalAnnual": 2350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2474,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Oxygen Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 mmHg",
+          "baseline": "55 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Arterial Oxygen Partial Pressure (PaO2)",
+          "percentageChange": 18.18
+        },
+        {
+          "absoluteChange": "+4%",
+          "baseline": "88%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Saturation (SpO2)",
+          "percentageChange": 4.55
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "mMRC score: 3/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea (mMRC Dyspnea Scale)",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "35 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Pulmonary Artery Pressure (PAP)",
+          "percentageChange": -14.29
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 95,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+50 meters",
+          "baseline": "250 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Distance (6MWD)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "SGRQ total score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SGRQ total score)",
+          "percentageChange": -13.33
+        },
+        {
+          "absoluteChange": "+7%",
+          "baseline": "Average nocturnal SpO2: 85%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nocturnal Oxygen Saturation (Average SpO2)",
+          "percentageChange": 8.24
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasal dryness/irritation",
+          "percentage": 15
+        },
+        {
+          "name": "Fire hazard (with misuse)",
+          "percentage": 0.001
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQrLnQlvDNXEoPZ2qEYM7t0ViJEy3J97QpY_mbxIAwr6ADzbUc5idKp-xZ-gd1FeYbQpyklr-TH4dVJa3lJntdi8WfePIjfnoEF9TU5fSZVtpPGre8c69G5LC5xHrHD2JV6S2pvB65"
+        },
+        {
+          "title": "nationaljewish.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzONl4-sgUBxfQVoyNhJ0sci66k98debDHUWZw5r5CtxSmNHmw_rfGOXCeJnHAweMLuQuRRpOnWs_bpqjupRZkRZq0F-PxADqzjw5QlBJ59hecMk3BUYjuBtwAY8hV-Fz0VbE9gOsiyFRSjqv48dN--e14mLDV2w=="
+        },
+        {
+          "title": "wordpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj4mif10jDC7zYFIl4xhSwnqxqcQgvfUj7gDPw8lr84ri8S_57Ec0phAzV2D9EHairA_CBIrpU5NkTC_skNW9UyFO88LnbFgtiZ2ofFWJ-osRJKN2gfbkFVNG1w3w2XRcosKZcxKagUIBHNfrcttODvBPzB17MAPa5vKcc8wMyohhy0e_b1OewHpQ6aZnWpUkrk10TnWnWw3tr1Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ZYo1zdB75r4ZJNUvIuBg1Bt_qmpdYlJHPNeQ7f6fEg4-djdRxovoXKxXQvUMfRhxPeZAtwIFCKNp7DQrzIQGEqu80wraMIIJuk5JC2U0ornr9-0g06PpjJ6YZH4e1SNkMHY9345-86TAt0c="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoHo28WbT5Kyr-uzbPdt06t0jyN455bHyQgze-xTRLUCnErUL1UfNJ_flCtydWPBJxMcS5709sK8hHwLXZcim6YU2Gu0lqicsiMguvYZFI2uEsyJqKB2gmSZyiZAnuXaoU2Q=="
+        },
+        {
+          "title": "lung.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6mfVZcaCe_DPjpIZQ1syWX2PuOL4lvO_xHYFmKfNBxnhaOTOajai3pvZWhBlB4V4QShj48i257kTaeYB7eM9zEuo2SZxanZl1aS5Q8r3gJu1Dmnp2GKI7l1N3pzhCWHcvXfjtCYS4v6qfiN2JRqqQ-Vp-WgLX2kjmgExkJKdnYJpjqH3DWLFVxF7YfrkaEPQGDpo3GNSY"
+        },
+        {
+          "title": "consumernotice.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDUhazkrSI6N7GN62d6faAa_FEe8asw-ML435HYJPyGphHzYt86D0cn_TNp1yrxfePEZ2qAAaQgH_oQwH4LLUeoQ4YLA76Zrhj-gLlZq3Uhn6caCKQmE7Nva3gs0SfGGlVNS296SRym2EO6dEZGwukpi7WXsm5bdCkLtqI1dMhQQhbBd9aosQ="
+        },
+        {
+          "title": "maxhealthcare.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK_ozCqoA9exRj36YD-KYaMBwg_kFQYdYQRzxVq7t9JK-l7xWxHW_ekinOIwtfr2darWAnYjmajjB4bUw0-cpNZdiWqhpXmYvqaQyGInCT51exh2zXnKKF7qfUW0xsUo_z4p_hJIqqeCTjtUvUG6nwhrAxyxII7F-xFsXanDKe6b48IYqjMRvFGyEr9LGT3DGMny8="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuXWmf87oZI8uF9vzH0yefJGVnuIkgEkg8Vj3yOReZJViDm5BQ_Imz7Tl5ZV2FXP80dHB4h99gpVco_XvKCfsu1yHb43_Uk_NInwXc4w-_Sgn1w6To0Cp202BT1n47c_bJ6fxCuqfeRcIDlfIdjloTb3DfUD1W0LvfuRk="
+        },
+        {
+          "title": "journalpulmonology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4qk5waen-a-dj5AvBxAlmDtABOr0qdoas-uWHMDBZ8FOD8pNZCGPfxX_7P6c-_m8JcggQZuHoaSSkqrby3ZNMBObM_XeyfRMF3NPjJLYAs71YusFeztFebSY9bCnCIvXqbXSHmlKJbwCWzoaQ0Kt37JknAU2HkaMQ5GzrlkMmV4I7m4y2SpD2kjkWtb-A_keVWrcLqHnUD_dwBiO9_OpU7e_i"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHal3Ovb7QCqsSRSiiZSqQGjmy9JJVXj3oQ-i2f5Woa7fQn03o_2s2lkmgBqZat2Msg1fJiO-6rA_dk3i5yvuedVzSiQ26aikRXx2EO_cCnUIBXr769NrYAtI6h5JcuZz2uDShycSCqTE6HvVjCVCBUbPGFxVGfvGxMSmvdvbxKV-FSoanxjJfRZsBKGFSV3L6kahMo8vI9E4ATILj0iA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiBeAPcqqEx1h3gTba31nWWYuMfKD7YOdQAMqYBh1dfAuRMA1bsRXAIiKTkek42urFqMbJ1TqPrKtF5Wnz-t0XZZouKoZfizISMGMVHhYTGZ9gZr2oa4s1vOdvJAyCryXcUtaKkJ8z1smKgnuW5reX9lorIxKJQdC_C08XMO9XqbQXoPH5GpI3t5H7VWhcKFHEOd2Z3kzTb6mqSP68ILy7UykOAoBKiko2hvmhPA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKMDeP2nTn3cWDsGPOkITzH5y_8l-k127UistVopxKirIiO2PgcmSqpSIF2FtkNeZ65saBqzOIf7RhnBgh-IvkP9kokSkk3oA1dCTICGV87-sRzyVou8-PNHScbN-72zjz"
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEP7O94dOHN_hhG-Z_QdAl1ASL_yxdZq55Agm5zBHw2y_Wqb5IZXIiny5nAVBFm5DoI8OQ8i596Ahr-yG8smoF2hasWUg4Y0HSaH1aH9ARdAS_q8AX_TKWHgdd-cf29SaDqYzbSDtHAkIFFzIqHCn1n4W17avtwbeQvB6KnQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm2rxP72_tdK9qAcAb_b1hL0nkEUNR9T_-TqiCn3DYW1Fzn2zvpU54ozDtuLWuZ3SrFwQ9kVNjX7UiN6E4EVJpXd9eCObACl37UPqdvPmj0CMWRJo0CGVgEjWfSQJVKOb5_1lA0D_Y4X36fQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHxtOuYAtw8BhTct-8WhfhlQBIxy1d_vKbtexb2Z-t8Nq9cD30QzMhXwtpfVLrUQa8NzRkAokjB-lU2MR7KF0yvcWMDlanPSdpCt3UaagHUAHmUC-igxf7nLfRmM2RVW7vgMwzZvceN06UlTY4YKjBpY4I4WmkuZWuG8_Fh_AUkSQ8qBGmabnhg7c5jPV0t8Gts8Ywwu3g4pgd3C4EHpKyt9HTOrq0LiJO9qU76nmjNZJpq7AiSLE0E95q4IJzjHAx-A=="
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvAJta5Sh0IkhG7kHt8REETjvWvWXBwaHFBRp-teqqv1qKU3eJ24yLJxkQxzpboHZlVcalp8xgeZPb6_SLwnMhMxPSS2qC7KexDIfvQRRSOHdlLqDXg8obj8MgkqtGLPf4LUUeCu0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Antibiotics (e.g., Amoxicillin, Azithromycin) trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Antibiotics%20(e.g.%2C%20Amoxicillin%2C%20Azithromycin)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Amoxicillin 500mg TID, Azithromycin 500mg x1 then 250mg daily for 4 days",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 200,
+          "sideEffectManagement": 10,
+          "totalAnnual": 260
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 289,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 20,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 35,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 110,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Antibiotics (e.g., Amoxicillin, Azithromycin)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [],
+      "remissionRate": 0,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 8
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Rash",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-5 days",
+      "treatmentDuration": "7-14 days per course",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYfS822KGyWbMSq9IQci7vnJ_bUSFKSj2ZubuC7DaseS7a3B4QaUaInBNKbnls4dddMPCCaLvhlP_ecTPN9YfwKpHm97Bkh-t2sh0QlJj6Z-2XLTLNVzIr0mXKA7Xy12pNbjf7rzrUEfA7DiT4"
+        },
+        {
+          "title": "lung.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEr9_o2kuk-32PiCAchu768RtUPGFL6XnzuD_5hJ7yFT9MUsbjsxm7XMoQKoHfTF3xV_NiC3CvG-zO3xD2wAHDgf8pZd2Ef6PHGZxR-07_D9pvhO-W49SCpZQuV3nTs1qFik9Tp5UVqNacxrh7IpSzzhx7FGzcmxtU58PR-eNfF-1TmFVd-SiZJgrtQCpsemIF14GN1gl3liQ=="
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhQbPpF3MP2a7LmRyBbUFF3yu-yDqTbN9iA6x5_hjs3GmaBCTfj1aj_8Dy0eICXolHSFuQxGrdZzpf6ZQwhnRUpI38I__dB89cghTl6CcjvlXxUj-uQYbMPimeHnTIIJi_129XMj3zjcAECgHJpml3soiN_l3qFuWBSoVww-w="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3yICcEpSTYLvqegQjBURroCLgYWEmYGHGLcfInj1oPr64n7B_Z2ZqjvxPNwoq3_50cBVjnsdT5137plLOCJzljpTvL4lJ4Bx2Z4xW7W2uyfUDkYSeTMZWdHJSqzN_N4SJBnw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5iTX3wrAeJr3j8GXzE06MFAkKDyRV5u7kgBSEq7reBkrgal6g7yXIccIDTo4ncKIbGSRD1oYAPjrfYSbP1H7ehDg7jwWisBQpfKDDfDkve_bXAWuFDWKHFVSzKk5JWaTjprpzgRqUTHuK1glsX4q2vDkqVahjckuXJy4N_TsxV3fZFqHDYRQxUsS5iYrMxeGyJE8O6S-yA47MyvwZVs-9Gg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQmxuGzGKVX0jTk3ckIABvtoQuLkN80NFoMC96p9TEgBFvjrsVLoptzcBzD1vChJSgcfMOMW6QDfIGEPleZk_vVr6lJytJfcTzcg0Biev5l9UDZrMSBl5QEvFpq6JLt160UdgpNeVc7SjuAE8="
+        },
+        {
+          "title": "iscrr.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfp6Vr3nQGEe6HVct2d_n9FNdG3fepK7EMabk8g7tZEhRvMjf84AmVdrzV_AFZtPuuisnWcAi3mC6HGXwPr_U6w_1tl96kuze1CDgGHSU-9c214qpoctrTnk8aqbkLvAC2h0baLoD8AEg26Q19CVDBwJ0L3JyeOYvipxXhoI_oOyb9-ZOuzn9Y1CfDxUJKVUPkCIVBEy5zXy9jB56i7V95KYmNq_rty-4zZtdsWgcOchL_sC70S-36Muoj9CKg3A=="
+        },
+        {
+          "title": "clinconnect.io",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSz07-X3w0-AlPNJ9CiIDxntYp759EDpW_BPa7Thgnj3S8IadoPKRMSkLvbYdl4UQqTfwAMkCbCascApiKoVwgz3HefrOfWDv4vNcAi5_x9Ln9GBvjZbmdlWs_-7b_WXZWLlFV"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo-jgXjMf510RppB_2Kc_28LDv4Hdx0Ty-eFoM4m2P-KIxMdbq3ZpauGqyqHtH6LEl7POOBzlDsWQqkolkt4QbSYY_-dHDhs2KWF5JU2aTofMQzwu0tIkEeJnF6MDjhb9iLtdlJmYK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh-jIyDkBXuSOqfBuRPGB4QTC2QbpZZ80nQtYZ8Ril6kqgbqRP3Es3tlSNDZinEHlpSlCU3PcFXWnvjfteOhSiteHLBaaHCdDqBzglEnDonBPlGNT7FL7IbpiyHRu0aUlMJxuuVhgpfSzWROsP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRUW_G-iOdqrKXp2UhbjXWVZKkkW4BSu_q2wyiL48aU7FhAzYalGv_8e-oR3jdkiRlZjM9d62LH6XJn7vHasukvng8zkknCUI-ITN7SjxgCROlIZPGFU2ChJ96COAQbK7QkTO57tpUAQ=="
+        },
+        {
+          "title": "fda.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo_O-FZRFzPa2vii53QDg-vHKuIQlj8e420Cn9gXjInkV1_t_c5Gj4W5eqRyOjuD48Jcrqi57FL-P0IS0m4pZu6nYuLHE82RMBHjVdKlrzQNz5npuVf0YvsaH7ZyBlAOfb9Bg74qjeoMnslk2kKLnIU85EN6GQ8smcbkHAwb3B3SRhObj1kdfv8K8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEThSYg8CN22a-VhDFnobYjPcc78DG5u-skDPo6CfY1vI8Rp262zG-V9KLe8Jtn7nzmjX6cwjcuiHIW093liAPLOXP1nzzPo_7sgnjUrX6miWGkIK3pIxhHV7IWNBruaS_bherUtgJbhoTwg31jCdlICbLFS8VVYpF0nphsZD3dWsIylqgj-4Lc5oDiQk2-sLZsuxOKhQU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLTnHbB4ugn5svtlenQIJDQsffQ8LX8YHyfPS9Cnn9XxiEQd5mtznzTN9cBT0cMs5aor8aRPjtZqygjvprn_M9ZOxPhdP1htwoVtctnXSJpsmeahZuKnRWcC614xw3Ki094ZyihBuKjjcp7oo="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOTDDm8mNYo1SC0Ohx_IYY8NPh1aSwy6eR6qOUwTmC81AF-qsq06hjaGOBACHFvhxSyvLP77Eqh2bxC7c1kx4U1iA_cPBD-YHJTAiTj6o6YclafJkJrTzaoThU2_L7rZa7ZuuHqA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bronchodilators (e.g., Salbutamol, Tiotropium) trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Bronchodilators%20(e.g.%2C%20Salbutamol%2C%20Tiotropium)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Salbutamol 1-2 puffs q4-6h PRN, Tiotropium 1 inhalation daily",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 150,
+          "sideEffectManagement": 75,
+          "totalAnnual": 525
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 750,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": 100,
+          "annualPhysicianVisitCost": 250,
+          "annualPrescriptionCost": 300,
+          "annualTimeCost": 70,
+          "earlyTreatmentBenefit": 0.02,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 510,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 50,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Bronchodilators (e.g., Salbutamol, Tiotropium)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Tremor",
+          "percentage": 15
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 10
+        },
+        {
+          "name": "Palpitations",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "immediate to 2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyDR3QaD3A2NcG9Ge0uSF5J4W8iR01SbptfiDBIGCFPqUMq0WdKLz2eTyf1MUSnOB353VC6xIdv4YtDFK4teIadDkSLDZQh2A9AfRQwgKpsZqqAabtB0JmVCLQnO9kB7Io63l8Atbpg_EzS3cHm-BJbK1byABMpjWmdGmVVaPd8wLMA5eG_wVA-wUE7O1hmx70Bo9kI2eiGJDk9khqb1EE4G2SrpqGUVjPjE9OG_mPe5Q8qc-cuN5e474KHL_g1lM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwpNOh7yktKELSC-c60gI6LDcp7PbDQrXmNsyeZjs-tZSk3Lq16ryrbM_5CL0Rg4gAPkJ9mm0_LNGU2bXZ-G4UWcvStzYkgeowb3XUyBKcd3-yFIKCt-oUWVtqiytl2JHE8OdlBdxEop4ByX6yb8S-ExnUDEcAFo4qx22GfSZ9U7JVHiPX-fuf39bNKOMfKWRtXxXXvKhIPluoxEe2Myjk2Dxq8V6m2OMFztlP6gXuVOe_j-btzoH_F4lhl5jNZUMXJP4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZ7pkR2uNWoeRb_jSaiBz1Fz2VFRMnHkP6mrZdArSilHu2o_soZwm8vsO476Jg1vNaThO-HE_5o-FdfXviGRbiVSBYiYdtfvQn6DhpdKXy2JnOyUrtG1mz4KR6KYca1YAg5-XB2H-DKjG8j7tv"
+        },
+        {
+          "title": "amegroups.cn",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFym_Scb7eSwfyiJpyTqlw4XmplT3nvUu9FDHeY47CU_N4awn42Y5KGEVlUyMD9S7NKXaj0dbxueTW8MSDZh6TXA8F6vBcjACmf6KGyeGfW0PLHOB6Uxjo3Ost_ZmH4NIdANRoKVG9gG2UhzSgLyvuAU6NXEYcokHgjNPj95t_mcskzPAzFpgNxvYzaqUKwNIEh0P4axCm5EHBbGNCF1f3ijmQS6O3Xsk7BzBMOQMzKwohk5BUj7nhc2vhNrqhZiGzamYNYjg4K3w=="
+        },
+        {
+          "title": "amegroups.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp5fy7ifayuM8ibF9VprkCv_dWMBnWm-7BCMKRFgTWzecEEOe6wuASCSy4w1sv_JafPZ8UQdSzBgvuOw0wgqt2JFNN8i_S9SqTT6y5EwuVZ4n-4sI8-b531M3hLm3bzyl38dO2c8pBNSgr48w="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR9_Q3xJyA6EL3lC82FpUzg1ERDDAN4kzR92v9KKx_gbdq9vjf4I-C133yI-rKJj4qt3D3RHsEUbed_AN5Zlv8McVP2fF1aiURoH-XaI0OYCJHqBp7rV1VAk9f9w6poPV3"
+        },
+        {
+          "title": "unimelb.edu.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFq17joOHvQrdnuUoBVx6Anj9SKHNOJ8LNHLDtehIqioDLdOB8Ed1nkTp8gpFx6YYWAoXC7HhbfMHehSJcNumZj9Otu80p0c6Ye1DKQ5TGjxGPvZA2_TiK4ekY9CXc-XOGB1lrW7v9oYBYS0Q0tLqlyFt_KdmpfjtQtFsn2-Q_1uwxv_39N3sMzIKIVyixoXbSQDmNdPIYbaUYEFEuJ_EU1Kz3qdekYdSNnFK7kmJ4xd7l8gcZoUfhfyd2IYLn9qBbtmNG-thB6MtRTX1vK9SxQmE8CUftei3g1ccGA1V3_-w=="
+        },
+        {
+          "title": "silicosis.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL5RtPy-bTESmsg17Fugv4suPc_nW7a-fyB3Nb80SE629NP23BxVGz6_s1q5Sbbr0ZC5EpxZSa3dESF9tCbAWpabl9S8t-Tlf3X188lvMYjhIZ8p-Sf5b79FowV00C8rruSgBawzMbYIW12KU-KRaEcmGf2R40L1vtL60VJq6kMUuk_wUtRA=="
+        },
+        {
+          "title": "thelimbic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT_dUjNSu-4fF_M8WiakHE1LAz4DUyQBgzhqIbfrYEpTZUH7lF9NaCk7vM8owkQ02X3Iv81uTt-PJoHXyo8KJeQIJ3I6shCbjKbiDS900lwZ5jHbAEwePKihiBMBlPsdjh4LFQqSQol5AJbGAZj8JB-8EsNlp6nQ-HWxGDpb_jNYMcDpi4EZdlTNbovPrMQEeUG5M9Ev-fuKK2w6HzmjmQQM1NmgUxt4aJOGLvn1c4"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9WXOOiv4PTxzkZp3BEntX4pvwIeGORYa92R1w-rfxebPF85blOdcrzhgtSay5Ofv6NO5w045DluUv8WiNIvnL0ZP_X_xf7Seisutmp0DmgPP3ZQQwr3jUu30EqsRj8VYeD5HaMXks6tkKM9WBa7gEhG4="
+        },
+        {
+          "title": "iscrr.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaUgcsTAM71zXFU2fnVooWZKEL8uaPwDbEfSQByL2dp27XgxATvP0sq3HVHjd_rKAkNpAjuKW0F1asRfbDTe02IurQT2k_jpf0gBFmqriGbQMyrQarrYCRN1VOuV4ZK8o05mfur0J8fT2CUWupWWFeTCv9SfmQ34Xf1ffBEGAK2FhSyV_RWK9cYvADroZ04uIRgzzF2t6u0U8tP7Afo_h2IPie0jPGNTaVwDpa42_2Y9fmhuDcPedvSeKWDEMhtA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Whole Lung Lavage trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Whole%20Lung%20Lavage"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": null,
+      "effectiveness": 55,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 600,
+          "sideEffectManagement": 1000,
+          "totalAnnual": 1600
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 35000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Whole Lung Lavage",
+      "nnh": null,
+      "nnt": null,
+      "participants": 90,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.14 L",
+          "baseline": "70% predicted (2.8 L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Vital Capacity (FVC)",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "+0.08 L",
+          "baseline": "65% predicted (2.1 L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Expiratory Volume in 1 second (FEV1)",
+          "percentageChange": 4
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2/4",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea Score (mMRC)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+4.8% predicted",
+          "baseline": "60% predicted",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diffusion Capacity for Carbon Monoxide (DLCO)",
+          "percentageChange": 8
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 60,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+35 meters",
+          "baseline": "350 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "6-Minute Walk Test Distance",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-6.75 points",
+          "baseline": "45 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SGRQ Total Score)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.5 mg/L",
+          "baseline": "5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "C-reactive protein (CRP)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypoxemia",
+          "percentage": 15
+        },
+        {
+          "name": "Fever",
+          "percentage": 10
+        },
+        {
+          "name": "Pneumonia",
+          "percentage": 5
+        },
+        {
+          "name": "Pneumothorax",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "days to weeks",
+      "treatmentDuration": "single procedure (may be repeated)",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxTHWtjOXEaw-eZ618MEfVl31cDKFiWVEjnpCp3xJxiS3SHw0RQy2exeS3_2E8Pc9vQDYkmFrxhuy4EpoJv9lK6FvkM9wLT6vOgVVAMaZIx15G9Frz6MBY92xhh5srxkwu4G-XxOrVJinODDPPa6bT09EnL0k="
+        },
+        {
+          "title": "journalpulmonology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEu6AcuoEHRVGVdMnWqDvtIZgtxx_X3OnUlDNsXwR-5bOOsNzrmfv35h8V7_mOCFbiDap4yrF0ZfbqXMa7EaxbZ4CeO5yjEjkbkBTXW8FYbpSbcJJClgaG7n-ujRdzk-P1ZDTYyJ4bnEddabWjo3EPwvxCQCWhHzYI3WBGyLp3uBEf4ArdoiBZY0gQU0X1Z8y0-eBSGPolkl0hgU6yDIYQJQSC9k3I="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYFxNjUDA8_9jVZqAyYz8GZyGaATeEzrsUzYAEG9KYE4kt5_Adn8FNOOlgsVbNblVbrzLSpnplW3c7HkQas2J9m9RjJxYSnD8d4Jq3IHxDs6q0u6Xybgi_e-r9o4HiGAYjrXbi0BxwKSkkhEJLv9rFSLqKwCGmj6zKk07FTsq3g3xhi7UCoy3nC7N0Wjpcz4QTJBZNjdzVPP2WdhEweQjA7x0hEZ98IuuSjJLNbPiXrgPP1qlXwH2gaue5F-OmqWch6KVroTzCEjH81axQ6ISwT5jvnjJx6l3dRLYa7x0="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG6-1_GrHaWsMhMUEDz8lHGbXgXUT8zbQDQJ6NTN-Cj7hVa_LIiBiWICFuTaq0WzUb5ge3j8RuUlIn-67VDQbC1UV6GL1riNQ3QcR0beB8dXMPMeHMQA52hqM-rW5KMZxO2RQmRe-2Ik4q05FajNVMHI5mK2RHxqNoppudOzzFaxByymkS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzIDZrDGAyeDzMh22nuBJs9XOfIlUPBdnM7DNTKMhagekYw0hF52GEevfHxBh2V-8oizu6XJxNQnHyX9I56d3DJ9LJhsmhtD76CoyBkvkCzQ1gFtU8eWlyoVNfoqzEC6EsYrAAaDGr-YMUSg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvxtjxFboyASQFRlEnEA_aDuMhcwIiqgnWKfPqsJSdHRK3mFFA6Lez5uus7ZodheXJUYZg0VOFvtyvTg9Wgc2c8kAji5am8RMEuVf6vNl6G7DhBHwBEvyqvLVq4AAAzTx5epw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHD5hjWq8Z6IT-0zEcK3AgndQUVy0XRuVkp5kp5DeJ0XuRz_7WyHrJGYLyG1nVdUYQ86PwNojYMZzbWvM5ZwzmVy61_Su_OTL1VKMutNQ70Nw6A9f6comVg2strhWaIguZHWvctraiI3jgA8T0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIR_yDeLAfrwQBMSsH04rK522sP78-3txTfuH5S6Cxd9Euk1ljpYJIFjHgffB9MJlT-YpKZhO01AkalSbhTGc7ucrvn3de3VOAO5ePcpASy2-mAuC-AveuJEkMheheezgyNOMRdsUPRGLtdTy60thPFYEX-Q3kr6wnjfkFI4C-ftlj1DA55NwZbrXxoNo3jVZmnnDrwVJ8KpSTizx93ois7ux8xnFqDGk0u4p5Mrz9SRLO9COmvruyQggZfq44Cg1WRYDVOnyZSpeWVt91xi4C-_UJTzhNYeZSZtMjUrB_6g_xwXQWdJKZBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhtsf0VZVgVxs1brdv7QqP6puAGbARKGUrthgP5I4vKU_XwkvHngzx_J-qd6e7QSRlLFaO3C4TIaUbsZ8FcAyOzXo6GazZlv30XmqyEFOTacJH6f92HWAhgVP9h6PXZCh7iA=="
+        },
+        {
+          "title": "journalpulmonology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVjZDjijdcJziHslSYytp5bKIk0K0nbPaPEEdo7k8mc3Vwg6CTOxR__4zDcH2dlElvZH3HyPZ1RFeo4jY53zjZaEuoo9q1fqCVCEvK3I3zDbK5VgjAr6mJpwwjXr-kibth5PtTRXcFSLInaWL2F1VyBbWvwxQ6N7d3wO91eYZiy7PGlyQe2f_B1UrRmX1NTqLzJwpY695AIam8NaWyKBG8f1Wt"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lung Transplantation trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Lung%20Transplantation"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": null,
+      "effectiveness": 50,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 55000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 91667,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 3,
+        "vsComparator": null
+      },
+      "name": "Lung Transplantation",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+1.2 L",
+          "baseline": "0.8 L (25% predicted)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Expiratory Volume in 1 second (FEV1)",
+          "percentageChange": 150
+        },
+        {
+          "absoluteChange": "+200 meters",
+          "baseline": "150 meters",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Six-Minute Walk Distance (6MWD)",
+          "percentageChange": 133.3
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "mMRC score: 4/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea (mMRC Scale)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+20 mmHg",
+          "baseline": "55 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Arterial Partial Pressure of Oxygen (PaO2)",
+          "percentageChange": 36.4
+        }
+      ],
+      "remissionRate": 0,
+      "responseRate": 60,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "SF-36 PCS score: 25",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 80
+        },
+        {
+          "absoluteChange": "+4 kg/m^2",
+          "baseline": "18 kg/m^2",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": 22.2
+        },
+        {
+          "absoluteChange": "-27 days/year",
+          "baseline": "30 days/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annual Hospitalization Days (Respiratory)",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Rejection",
+          "percentage": 25
+        },
+        {
+          "name": "Infection",
+          "percentage": 40
+        },
+        {
+          "name": "Kidney dysfunction",
+          "percentage": 25
+        },
+        {
+          "name": "Cancer",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months post-surgery",
+      "treatmentDuration": "lifetime",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtxVI1usBLQVI_DuVqHIgblv2_BUYdW8NfA2o-r-9yBgNA4FJO7R-pbdXiANDodKVFgOY3Bj5HQmTH0hM9_p6K33i5eHsgT5VuAzP4m08SsHIKNHfjKo1d0GIohevlMTyjRQ=="
+        },
+        {
+          "title": "qxmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVQWp-GfCqJPyzwbwcaPis82B6HXlarpvp8Y8Dt__24_y2BKCpRBL5-y0Et6xwIuLxCD_Glq2LEblNR_HJH1TM92Uts1IEwtkLDFvurN_UxTDcX_O6_Rf4mFB3KvCeuVpRJ5Ual9yZ68LNJxwmCZZ71RZ3BMC_nV8o1kPALupG3-Gahti9Wzb1-0RygovVXf4GnA=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECV0iMIl5Tfwnb5_c-psCyUAx4zZrFQlGdEW9k8USTMurTBEmVwrFXA3t9zhjI_nIG9c--1XYR-Rz3RKonUtFUw7N3S5Tn-MBx7XLnhsqkswloPMdLQH-W7qA6cIZgO4MSNOpgtCcaSmQSxl52G17XSJhyCp1qP8af23e1edL-ufVGSEKrEXmpdq8oW28JxWhycxCV0jdr0SYH4eC-kFk4aNesUbWbIqSC4tjf9sU2pjU0i3ctsIhMASY2J2QH6Q=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPiAlVwVHK4sg4Lx06qqI46jaRkarf3gQ5uQShxNreqDB71VO9vYbvkpcDfXpicdBHXPFrJuYs1bed89ENbM_2-iI90cZ2FPxGDKYsLgtwUOd-Squv7W86YnRhzb6oRvw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvJHbmmNreyHaRBwzBTA5pKWsH_dBHspVGYAW7WzZhi4H-TA_rN91N013hj75xsY75s83w_oZqy252BYZTpxKcaHoQY35GMB8eyS8Ai2s7hc7CYq1lg0icBXRvxwPqd9cAaQ=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqhkxrKvypCK7KSF7KcSk7XjoFvJ9Rp_Zk8dkDLdQCk-qgGuhbdjmbTHqA0OO1LDSHO5jazp92NRyX5I8YF-OPQ2P5nvr0N7X1yf_h6wOG-Az8lsQLnykyLKeDyQszG7khIpO-naeKH3FWkouomCoWw4lS"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7pK04E9MjkzJv6teL9cw-jHXSgWB-nJj5_gqrbIuztnGG15twWYaWtvi6JnQBfJxDa9UB8yzE0YdkZRR9gJwgMpZf7wWoVQdSw_vasFqpyns-eyDTiT7spO3lg8fFGESLHg0mWroiZhOEMA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJnP-fei4UOAcYSYGXQfZ6x035fXMmJ087ezt_-xuEgUxpPqaoJ4lFL3ahDd5lfepFAaDHqnYA_nCZMaIN33z8uxgJ-QoeOTRYEOYyicAB-W42BagzzE-1M0eVAEBSxVG8ZvXQhKTlNbQ4srM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFys50pM-Ngn3LeGkvm6WREBXYz2NlvQjwkl-GXSINd3kmwvBCba78tpeqk1Kchuz3rb_jv9pD42gtRIzFqx1VL5j_cPCLnBDC32xCCauv-wRFRKmDR2LYi6MOc2Uzy11f2kwR4z7017f4fHmU-kHmyT5pDp8A0GyRwihH-F5yg4fgpnTrNFqUOM3VXPjwJUq4l5XQ7LRaAxGQ5DkDI1FGMzt01JNXAyWXp-gpvmuHHG4Jtf2_61FMu9RGf1qgwrEDtLVcaw=="
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzoK_GHCa3MjwIfJTe8TGQ_JTo8ORUiSNXpp7Tk3UyrWU9kWjXF2TaalGGmVBhqneJLva0nv-0eTLY8t2UXeP6RkmRcXoBaZ_S8jdWq2hFLCllQzOJhd3MCNywVkJUXzUquNO3nzN0RwNKFJYgfXWVl9AUYOYn_0gis44IpA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElWp7PhxxolkamWUFP6_hpg7ycpC0iuwnEqo163wQCWnnwUkLymCK2ml3Ur6tCaGCKFEeYZVaSmaFEeRzmzemCZXsEESZ7cwbAfjwvFp7EwwjVU2I6GUF2NPyV3h7wByQdVXrI0mPZp88V7E5PIP34TG-VNLLr9FErgdcZ4uvi72i5sEBd2ZR9__0ZWSRckbhbY6iSZnDyM8ti6EPr-Vw2XkzHzY95Hygs85KY056xkJUXdGFB-NTGzK47y4z1nhr-qm2279o="
+        },
+        {
+          "title": "ClinicalTrials.gov: Corticosteroids (e.g., Prednisone) trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Corticosteroids%20(e.g.%2C%20Prednisone)"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "0.5-1 mg/kg/day, tapered",
+      "effectiveness": 45,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 400,
+          "sideEffectManagement": 1250,
+          "totalAnnual": 1700
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 4250,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Corticosteroids (e.g., Prednisone)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 400,
+      "phase": [],
+      "remissionRate": 0,
+      "responseRate": 40,
+      "safetyScore": 50,
+      "sideEffects": [
+        {
+          "name": "Weight gain",
+          "percentage": 30
+        },
+        {
+          "name": "Increased infection risk",
+          "percentage": 20
+        },
+        {
+          "name": "Osteoporosis",
+          "percentage": 15
+        },
+        {
+          "name": "Diabetes",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "weeks to months (tapered)",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlL1gQ2xMwKv1NpZIAi-RIESBkOASc7_HskPM3UcIrPFb58zmP_HCZh8GftGQ_ilYyKh45rzjr73x8ejqtKLWgHcQ30AdaXM5JNziIT5F3DeQ4BJmCjn8ZmtP-1LoastVR8D3R6aWX7hViOqE="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW2bnyxgRVsq14m8wl5B7stw0vDvvAiVivqVglr77cQiWdp9z6turWtveml-z8RUXC7GRJAnxu9EjO_uJ8bE1eJHzTCyXQ2NJIBTNRdzQhgome5PWN6okz77HSVgoedax3V3arzukNcW5Kik0twvbqy2pbgtURi36VyHX3fmZU6yinRsg373qYFvvoSsXGtQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn5owZr2w3hC7G15GnV68VlpPtZca23tzebmXfYeOSb4TSUXjDJpgBREcY3xEqKfESjR8uFWoyHFECd70NTuNp6NegsAesmW1n0eQ3hpmKI0ebXMv_OpASkEanIjrFm_lw1iOihUInCFDF6-MDTYMBnOHuouffCEr1VZer052T4PSaC08JRmXf7Aiz52d91J47lYouV1Opgs9BRXo3HiKlbuLfcRsn_2-qCxiueS5abuUQ2aqoB0kfmGVqIy3ulHAf4wWLo2CrY827zlngamaDKy4n5B_4"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3bBKVIfA9fBOKZhpKMXXVsuXUBL1YP79LOeQ3DCQek-GVBh-pJ7EaM0ctB4_-cHfBwBzB6UzsC2zLX3FS2UdUHQAwCGNCdspKtGdGfFo0ijmK8mdejBK5XvEwD_xZsLupXYj2_bcCYvfY0S7OmXVi_o_NIwEKrydkuekw-x-sUdR0cokJ8YJMSmlHdITA7zw3ugCSfIEOSsbn_M4tWOYlVH4cw3NCRdFd8aakP0MeE6IOooCWgmElLAqV2JuFFU22Ha2aeA=="
+        },
+        {
+          "title": "trialscreen.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwRfRIazy8gyjuDntbJwV7dboUf8j4YLs06D9bX9NbfQcxfYGAo_sHcZam58ginAFNQQ0uIDMNZYszugnTBzX0dyzmqYORd02FZWYlLhpaYJUVV_q1PWa_IfCWXRstY2mUjzTNlihUCnmk0YdfqFnDAXTqfn7mFKoB3AcNSx19xdtDKDpZqgJULctjNBPNowlbm1lty0zIBaFBdeVvW-VsgwGsjrbdsnuowJ0eGmT-fwcOnKxNf_s3"
+        },
+        {
+          "title": "clinicaltrials.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmI8pk1IUxQnsBdWr7X4f8lmnsDZ78aQHYAPwBF9yX9KG2JPtgWXzFPz2PPH67yrKngBrzNuefLeXq09mC3dl_SSl7sccsqZqClmXxR6Boz4wv3xKQhM5XzgARO5Crw8fjiqiaVGM="
+        },
+        {
+          "title": "sciepublish.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8MMrJ98NPWxHnpUY72HsduQSiGCBv5eKPfWjLHLnWb71bC-atIFU0Ty_LgCVPJ_4jzBD_YlgzMvDu2NJx0mJ9H8ozS_VZUM0Rq-WuO5HuB_WDse4CuKVq4D5oYjRYl5kdgIo-Lg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2RNnHgFtUmadtZ0QNY0mmxqjwHAEEPew0diGa19ZFzfQrM6UgRrIHsxZEUIORJfDh8Eagx8sQfI22tUAQh6NIZPmmfIM6BqdItJuQo7_X6AcbxsxY23FRwxgCTjuX6u0dCaw9uM843YquwwU="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU7cslb44AwzCKFaEQ0mduTjAjWWdYKJNFoF127zWFrelszHXHdQy3CWBFRkqWUWb4DyQ31r-JtnxkGgLiTj1NtByR0VPwewkiTgF_ao4g6Hh3JbaX1-WRSnnUExGDBQhdSgqEUNwR0GB44wGeoT8MUXA6PthLKfed-JF8Nr7Jqn6E0Q=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7q885tRrnb8VWjepCoqD9e2vSqu0fWyM8y-8VfgTXDx--CZ6EnIeGz3-VatQiljBPSZDvpvE-K-w2GlhB4J-WZwYqYbwN0VAX3lIozN1Z6TZgYeJIRmq3rPPvhlUIpAStHQ=="
+        },
+        {
+          "title": "imrpress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyGufDFZdQITp6RA0YNPnxd5A2gegWTHV-Hg-NuvLpYt7TgftzhcQ9R1niFzv-t2DO761s6aPlY7C9woX2xMwbnwHR_5B6uk_1Ro6EGdmeWRMdgTcfsaHTUOhrhvMQZRlHXZ2v1tSJ93G_ZUXN-fX-dNv7EfWdiZV9VPq7gQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUqn--UWr1R4m2jbR29DTjsvKk4uuFBugsJYVn_5K_RFr36DkMEZQvWP1ePe1GexNi-hfbyGz7EN_bReRK2-e51q3ThPFzWkejt1OJDZ8mwlX47GuR6k6K5ZdB17NzKBCVcqpMODwp9eCcwXh2ZCFqBxoW3QBQSypWpnfjBTWSoIyBs4vB23FN14zCE53AaYUfPZPUZnXyh8a8wvF5OySznYbGlL981pVqPxQGzutbtS11t-J4KaOVsbcBukoEWM_AWf_3hA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Anti-fibrotic agents (e.g., Pirfenidone, Nintedanib) trials for Silicosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Silicosis&intr=Anti-fibrotic%20agents%20(e.g.%2C%20Pirfenidone%2C%20Nintedanib)"
+        }
+      ],
+      "confidenceScore": 30,
+      "dosageRange": "Pirfenidone 2403mg/day, Nintedanib 150mg BID",
+      "effectiveness": 25,
+      "evidenceQuality": "very-low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100000,
+          "monitoringCost": 750,
+          "sideEffectManagement": 1500,
+          "totalAnnual": 102250
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 681667,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Anti-fibrotic agents (e.g., Pirfenidone, Nintedanib)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 80,
+      "phase": [],
+      "remissionRate": 0,
+      "responseRate": 15,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 65
+        },
+        {
+          "name": "Nausea",
+          "percentage": 35
+        },
+        {
+          "name": "Rash/Photosensitivity",
+          "percentage": 15
+        },
+        {
+          "name": "Liver enzyme elevation",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "6-12 months (to slow decline)",
+      "treatmentDuration": "lifetime",
+      "trials": 4
+    }
+  ]
+}

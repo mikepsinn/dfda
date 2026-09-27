@@ -1,0 +1,1028 @@
+{
+  "conditionName": "Sleep Apnea",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:59:36.468Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEm3-HgKGU_5NckH8JU2DM-rI9VqznFVdl8SRU42y4eqZy8oSPWuJ_Zd4Wpo0mN0LWytDFNAanNmGZ9va9F5DYcjAHhqAt0naB0bEcdw5eVnGDONomeLgqAz-IcN0C25hG6W4rgXI4pxBqBQw="
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHsYibnng-T1xbKirR5Wc4iocDszdLMGQM2nK9h9DanDQbl3k_-IREIYVgodcizOjVFgHyVJtCD8Eh02MoZ4Ksp81tx8_fNiclka0peeeu-J6ZTELNGlRZqFhbzHSjgV60kBDKlIU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEb0Ldoa-4CzX6vSQtV_joC9Et1iRTz-jDy4vfpKrDQpmYV5rTYxEfJWgaTkQXL-V0x-LCBgwSYP-Zk42vBO5HQRgy6ODqJ8zGqIX8to-VgBLr-7KJHTxHnANSoq7l_I1jdGpvGpCVabA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAYO4v_Xua8vmG_-M36CNuIqx7zwX6dxPZGhuM1-iwz6K5LOaat27U2Da4q9pt7tz-bWf-SQ10nnzJfUNKlMwKhin56hpxV8W3XVt0_4x8JR1JnhW4JejU0XpzQ8dxrV_rnhBppG1LyjRvxzo="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQ9MOMSCEtd6EflbGLiamZJWsrRw1mjTia2MaTKPzNckvBT-v4Nl8is72FN0dyBCb6TyiRxABWjIbaRY0UWZJEIbOnI6ShUZZekhKLUKVZj0HKUgdBtJN-RzjMkE7MQBhFQ0quslYhdMlL5ntLDlOU-2SRra8F7t9TQZduSezkEKoOh9rImsPxFUFK_zKxaSzpb4xSlXOwMpB00LdK"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW92a0qzwiezwCj-11doIaLwPbVWGe6Dr82bHrJ24TxOzpogubkmrTMRniZKHtdhNawQmj70pQst3PQbLpMEmkYRQZCfgpdY7HioYlzBhsz9FiB6gsTijEul7vCFqcVT-ofuKb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdP5RRGjs7-v3K0yaO-6oSgZ4M1F8JAX7W4jeZ_RljGqLXyY3tqHUh-qLd0yI1ftMuEv09Y-C18FnbmNzyoyZ72x1kOr5gGWRUazOQkbCFNfYGI0CIQCaTYABIY9gpbElFAZcq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9TpVhp-VLFc-HSq04jbJED4yTquC10k68uSPrRwJkxVl3yf4-1HZqtbU-i1H-EBzCR_jZYePpXJnctehnrrFFvvh7GAXXn_JJyC5PAy8YPDJFUJNjIxuduaVR4SSNTqQBK941WX4Uz66sLR4GtmhXKJvpGsjDUxPUoO5mQ-_NhSJRSAV6tn9T4baSW0zeZC6Bny7YCerlXOE05ohGePz-3IImq5VwfwJLW5F4rLeeTEn5ZewyYULoPoehc_3aJDKZLhgtu6n-U6E384000rdAcCkkibFkCLo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC50Cd8f6Bvv8BpBPjxEMFNeYOcnl7XZEMwIIsSwKnrHzGONmugsftTwCflKCeOF0FOZi6sGt_1hbAz932cKSf9hQF6O1Cl6YiatxpKityHUeSkaDySAJu0kFDgpUDCFVi2j68"
+        },
+        {
+          "title": "ccjm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyAaTVwjk4x2N0PD9VbkS2mDZVTwuxFmaFqRd841CyvrTgVfXFF49AQg7WLk-CinmUwpgksEvRq1nd6yuIzmf9cLH4VGBkrO9R0pBTlRNRItV6y38nOm6MuFwTIc_EqNji"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe8d7DRltKteigmgOc8sAlm_T21OqgyMTCyMqh6K1Ubj9KQIjm8z8sWmlrv0EDx9SjKfn-LvX__w--zbHF2sl_SL3KQRHZuTFsS_-UBz9eJViPiCoh6D1vRP6EBgPIUg7cmwyamD-qS4-_Qpc="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjiljZ3pRKLfoFTGibgb5C4XX5bCH-cTvItNj0nzROfnYDk8M7791OJoVrzO9uEqgHxQQeeUbZw7oXZuqTfIg4Iwrv9t2KiYlKxQA0P7f4k9ew53dwepqqWdmfC1V0X5R5g5RxYFt2JPGOHCuug9to8quXgbmqhAQlfvnzKFpdFG1IP2VDureVMEACE7bUytg="
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBIfkgdcl8_11W4b5tNKq-PkRCbcuMT1AF0CcEwupqiyMvW_IMJKVECzbfqcDYCencMBQqUM0wfgkn0uGQDWjbzUb5Yc3tJac0ho9DichT_enm_IFSIrTvlTOXbCzJg194XAjwwR_JlUUjdys1wQCAJ2HDdToH0XM="
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQRzUTwY0Q4bV4rTgSO0dzM8JG7uZROFTt3Zz0GI6qnysMudoxEmi_mul2_Tqos_5bW6OrHwiNHCUSFBJMMGNbW8aNNZXdgD_ysrHjUJJG_yRWMrrtBLImSISgJBHezVR5QY_e11DO"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzX1jTRYa_CVtAVU7puBVL0YueW3seqGx04OSLUUysqT7mMejP4g4HtSASvxlMgMCT7OcSEveEJlmHEjyt0C9OnSbIiu4q1ppmTfFgC--eapU08dK2awWtwmkG8MLnNEBCFp1FBkTpVf5lq0GX"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF31tzKlMxplQBbldrkzSZ3lrs1aXjLoK3qACO9rW-DcYcZc2nXr6U5XKfC-EbHlVnvOVCnMLA2kzzn2bfHiy5-9A9b-Ks7jiae5wY92UC1fTU1X19olmbP0K-AO-x1Y2O9fcirtWjLQoqmgWRo"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIedDbLtnQ5y47cYsOGiT84ILgCQEKnu6daZvDypTZ94HuiIzzoOWRZSIvi9odw3Mub4VPmuTdRd5B2ETQhfpV5Je1D8zhtMefOeUqYdvnvcydb8nQB9hOHNUFpc2yLVEUoWOWftSSqA2dxIAMFPds3e3eHRLQRMgLrGaQBDzCak-IaKnjbSz2PWXj-7ylUshsMxedJ2V8gOV6sweHl_g6qNT-Kl1KE18pBIvZU3LWoNYZOq8thtZg3WELvaJgkNx_I_L1gpbaN4I772jtCVBvmq_xv3dybwhffG1sMzqMSeiMpCCgQYY9C3ni7soeXIlC1xqBU8nozlUHa9LNhPDlycGkzieFjOaLEcZTjvDl4mSM00iCeqSfwgIY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH16JTH3E3dE4B4ASV_ipPgzv7CuaMFQD5hAc8J5yGbLiR-SyKTUFruwUCeg91e6diA0sV3CBp59KpiaeFO0QX4r1oGx9J-CQSjj1lNUu5m22prmTiB5PsEeltyhV1dgINV0D5h"
+        },
+        {
+          "title": "creighton.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKBOiVTx53zpmY08NbLEvC-3Pb_uGvYsW31Gi6uBlhTxr90mLrpkx-vKAPoKSeMTzHWqMt4RifqExxHHYP3hTE4ljvlBfyVW2w8GsaZN5gSPDB-z6wXU_RmT0Ai3SP-A8RZeF55ec9OwMupRJAGIHcPKqQk35s2f5KjCu42dvHSz2N74qYbo_tI4aTI8ZoOM7OuHfRA8OBS6SGL1lz5wYqkqwBqwWfb7KcSIRuOyhZSsYGuy9w3K7cj_Cmuw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Continuous Positive Airway Pressure (CPAP) trials for Sleep Apnea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sleep%20Apnea&intr=Continuous%20Positive%20Airway%20Pressure%20(CPAP)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "4-20 cm H2O (titrated pressure)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 800
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1067,
+        "costPerResponder": 1067,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.75,
+        "vsComparator": null
+      },
+      "name": "Continuous Positive Airway Pressure (CPAP)",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-30 events/hour",
+          "baseline": "35 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -85.7
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "ESS score: 14/24",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS)",
+          "percentageChange": -28.57
+        },
+        {
+          "absoluteChange": "+12 percentage points",
+          "baseline": "78%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimum Oxygen Saturation (SpO2 nadir)",
+          "percentageChange": 15.38
+        },
+        {
+          "absoluteChange": "-20% of Total Sleep Time",
+          "baseline": "25% of Total Sleep Time",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time Spent with SpO2 < 90%",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 mmHg",
+          "baseline": "142 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -2.11
+        },
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "40 points (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) score",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "5.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -18.18
+        },
+        {
+          "absoluteChange": "-3 lapses/10 min",
+          "baseline": "8 lapses/10 min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Psychomotor Vigilance Task (PVT) Lapses",
+          "percentageChange": -37.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Mask discomfort/poor fit",
+          "percentage": 40
+        },
+        {
+          "name": "Dry mouth/nose",
+          "percentage": 30
+        },
+        {
+          "name": "Skin irritation/pressure sores",
+          "percentage": 15
+        },
+        {
+          "name": "Aerophagia (swallowing air)",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Lifetime",
+      "trials": 647
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgD-BFSlkAPsxFAyiOXfUE7URLopvu_4mOjcwurifXc2hRhQwRF8Sly4E9PiyevsbJyb58bwztExIYwHAk4ay1VhyC2zFoNFH3WP072VvEfnMkbE2cs0PercFrahtZ7Ccg7LO1er6Mh34YPNg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_ceDX42o8tjlHXzvqWSQNPA1U7htnI01XwhgnRaVtExnh-2C_ehCICLCNGE5t9aEEDz48ExkqvCH0v-leoZhI_GlfKj-afKgHWB24YM_eK4ddnziwXH02RFuIDmrYvw1CYNOS"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOgdnBeKGatx04ODGvgB1MZLRSAL8SBHzZJerxzTNeiq22WeMu4YVKsb9shdk77eFyIssl1u6yzbOWb_fshQQY8qlWsxiNdY-JG1oyo7LwevnJ594b1GZoWOMN_3TVNfPYXuZ_oWUaysjcsG0ZP3GzaHZk54DVGrBe9K4UDc2FltXvnmvIyQU6TttLmU3gal4OGyCTgdsyhFtXQkTJYT9mUGjBin8vlhJ58A0BdcD9RxOpv0B0IqoSvJDllWdGg-XItp3jcKpCzrNoifnt0Bm96r6I3G3NdHhtScArfxBw0KA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXIikLPiCUeBUPdDJd2lS0sBgFt5vrYUb22Z3wZMZ_LUZ-86j6z_rWunYjVXQU9ACJnJ80Av0zPhQcVaFvYrLChVlsA_Y1m4-I3bdqSFf6SpojQXQLlcrhyWamv93nQb0byJhoS1JlBYnNMd6DCn8TF8QziNtxOGXsEytf1wh_AH_8RT4sQzOhipRymoxmw67f_kkvd5gEhr5rB9kU7fMY3A0tmcpo62TM6ILPwDGNcPcgl3kcKSOp12xXyelwn26H_jxprWQXDFAZDrFZWzd2fmZBcCewjdcOWU-VaLLHMwW-xhTMC2U2GkPoecljdSMfYfYjpVUHtnLj4R1CrmilcpZkVRuRfNv3OQX57_Laehvp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGahwiEDLlaaA-1I7WhUITUuX5R2i8nbwdEHrrWjxuC2M3E2-JkbpFUv2UFpb4gh9w8HbieNXLRyKOyuZ6MfuHCH2ANzw2EJpjAL55cyqG_UQTdAlEwbSiuE679L8rLacDeyi1UFxoX1mgZ1ns="
+        },
+        {
+          "title": "ClinicalTrials.gov: Weight Loss (Lifestyle Modification) trials for Sleep Apnea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sleep%20Apnea&intr=Weight%20Loss%20(Lifestyle%20Modification)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Sustained caloric deficit, regular exercise",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 0,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 625,
+        "costPerResponder": 357,
+        "icer": 10000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Weight Loss (Lifestyle Modification)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.8 events/hr",
+          "baseline": "28 events/hr (moderate-severe OSA)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15/24 points (significant sleepiness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-6.6 events/hr",
+          "baseline": "22 events/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Desaturation Index (ODI)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+4%",
+          "baseline": "83%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimum Oxygen Saturation (SpO2 nadir)",
+          "percentageChange": 4.8
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 70,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.4 kg/m2",
+          "baseline": "34 kg/m2 (Obese Class I)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Mass Index (BMI)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-9 mmHg",
+          "baseline": "138 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -6.5
+        },
+        {
+          "absoluteChange": "-6 mmHg",
+          "baseline": "88 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -6.8
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "42 points (out of 100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS)",
+          "percentageChange": 14.3
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "6-12 months",
+      "treatmentDuration": "Lifetime",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOGVBwfv-8Lyk-Esr5HSWtT6z_MBQxhGQObNTl-KulH_ntylM1RBcIxXpt0K0PTFOmIA94letYzG-kvnskqJhA0dN8eP0ctPXHPeXEoGdWtsbTrrT3QZUQKEknq8_nFn8YQFeL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_7k2VvD8evuqGsDP4gb_9UPPegkXPZKJwfD_dAbnFSyjvcGVs3UW7FLFqOm16tONvxliIcPAYh-qVTRGVn7RuZrMiES2bVW7YB768RCMUwEBuzYa14tLhbEl1rbwZ4l0Hx0yJvoGsPJN4YnU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFC880yjv7u_w20coNFGuJfGCZl6mI-dQeT1jVWQ97BJH1Ph7PZSE2KkhmKVdMgUJnN3GKNEb26hDIpk2vmy4FCRHRzqKfKMy5qUmw6XYqsE3CLyepN041SKkrwegMSXOUoRYP3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEkvOnq6ZTuHxX2NBL0_BmziyI2gP92TW4QJEZWul5oAQWoseBsjZUWf2cKEPo1JaMuUPb0nXRYaKC3_h85B2TVBp9jiPWsq7SyLtrDaa8ifQH0cFQ9HxMgCzMFpA3yrDJ8yNIr"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElLVnbaZygXKGBya4G36u53SrcfdLTK1KMF3XGB9YjoaO_hv3T5-HbhD1ojHWAOYewoZjGSBv2Ks_gbEsnZYXisz7N0o7K9xai1F-5Ij6Y_RUMoOZDs7mef6mRIVw0B_vy3L6n8zYMuSIlhdwoQHOWEgKUi23udXskDFco3sQylcs4m1-owXEYNPx8FowsEXWc4nKXiE3ALbCUDInjRUd16rq20bqfP1CHwoBpKSnmDIPoyCkorptIXKbvK3Ad_EaF-S25PqPl5RtlBTYrl8QdUGKgnM6cKZB8w10="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlODxq-zpsIHd_Y-cTTAfDcuvDsd2RtGaHtrsdxDQxmo85da1N1A1DVzV-qkVjGzAjMqXUitJQTMYzlD2tjG8gyZADUd1DYJcqQw6866tmhtcSzzzkxGonT7BUwQ2rB0CLjdJD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgBGVa1iUbDsmCj620QmfJIkiRF473Fs_Q7VUt_NqzKXvCO3pDST1QR4EtxAQBDU8zbxGjZ5Chbjwa109tfsXqLFZ6VUG1rM99icckTpscZjicStib8XbWv_AjluWS1QLGlHaEr4CXWZD4K3LC"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyFTm88xXgyfJ3Z5yTeuhXO67i2H7DQkPxomJVcSnflLcWyrSjzVTLhmcJHUVZ5wyQQE2e1XzGuAxl_ODZ6-D9C3Gd54tH9YETyja_bTzZ4dd0J48lZ-DrJO3NKUumjZm-RR1HT1E="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKjvP3y7ywxroXdg5gVUh93rwR2VyJI2B97bN_bBOBPeW8FXIT6WEAVyArl9hErhQHoo3vzb5TtfcDuyAOje_4hOKHBvdeDifyaLQRFW0pVFS45MVqpoa2Tars-uWTOR1Eclo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfRzZ2pVoWimEmZr64FlPdEhAm2lRqwiux7U_WirG099l3smg1OGeU6bE4mpMC4qXu6ANTyyt__eXnH4qbAK1L3KFD0UjfkKaPiYCOB2qmENKzB8Or5sMXq81DH7tjMAah7k39"
+        },
+        {
+          "title": "ClinicalTrials.gov: Hypoglossal Nerve Stimulation (HGNS) trials for Sleep Apnea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sleep%20Apnea&intr=Hypoglossal%20Nerve%20Stimulation%20(HGNS)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Device programmed settings",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 300,
+          "sideEffectManagement": 100,
+          "totalAnnual": 4500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 10000,
+        "costPerResponder": 6923,
+        "icer": 75000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Hypoglossal Nerve Stimulation (HGNS)",
+      "nnh": 25,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18.6 events/hour",
+          "baseline": "30 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -62.1
+        },
+        {
+          "absoluteChange": "-15 events/hour",
+          "baseline": "25 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Desaturation Index (ODI)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "12/24 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS)",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+8%",
+          "baseline": "78%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimum Oxygen Saturation (SpO2 nadir)",
+          "percentageChange": 10.2
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "10/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "14/40 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Outcomes of Sleep Questionnaire (FOSQ-10)",
+          "percentageChange": 42.9
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "8/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Snoring Severity (Patient-reported VAS)",
+          "percentageChange": -62.5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Tongue weakness/discomfort",
+          "percentage": 15
+        },
+        {
+          "name": "Lead infection/migration",
+          "percentage": 3
+        },
+        {
+          "name": "Speech disturbance",
+          "percentage": 5
+        },
+        {
+          "name": "Battery replacement surgery",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "Lifetime (with battery replacements)",
+      "trials": 14
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEIID-8A7Mt0sK0t_0fIdnsG3AZhR8vXysKZGDDQ5n3S3KjwYLsEA_7Tris3wOpfV8Z2bILJkT9B93IKDCDae9vJ8nnnQ-PxFXRx9mefbmkIrNgndzTUZ3r0-AVV4z-CzCMzVNL"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjaQCWVLRQG_ykQw6pJWSIWJItI1z9pmiptXFHEwpPU96TgJnTQl69xNV39TbI9rPle_pgENSvfETAz8SphAnOOG0yBslHpapHvBuWUniFQ9y0P9haFjSg9pCjmspukvEQESF3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAVBVEU98cDXQ5R18kg_NS3YXgSKtrNZha3SLK7FYj6eA5Tap8Z3OOPRnPlJsfn-JmwJ2OdPivRuhW3rTRA84siBBX3A5A6XhZK27KosOIcamrH0eFeR_l32yQqPG0nLva6n16GcY7A3K5JvyX"
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFhir_JW-_TVHY90UVbomLgIfcHJw-ZEkFQZ6wEq23cfZwjMW4UpihbXLyHvp1rQ1_qWLXhI38E7tGmTzE-G-4_DnYU4EGjrEA2G0NwsuV63Wdqv9LvJuq7AwLewkXGdOsyUocraY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSMBKyc1w_vmCCkMATJUa8OztDVHjm-F-uejW9r18KFjY6hiRXKrnwyPUk0utdSZixDr-6gtaKPPpJ1RnBTJpQeCm69P0KtyFfrhpKIJUMtPp4px6UCqbbjv9vprZtbwRNPt4biqVimFMj1R4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHipJOWW_NLY9czqKRovYFYN24jKq5lwwtsMiPvNmck1Isvx7VvaawbN6iMgHH3vhDcmsosL5pyqYphIimeCvx1m1-Qtcj5ltfKN7BwmIykj36nP56xImrUZNQ94naYTYQ_TPPuHSIdlNOsiMpNYpnsq_VknjdVfO1NV_QXYf6-CMpb2uVbhYVZ5o51ThsnSRcbK1FbGhEOnox8CYW8wMIKrEzzDOSeQmAFHjLyak-PPwMnr8LWy6mDPwu449IgSeRn5cvXz7hhUvN11GuoBuntCwcfJX2A"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8aTLycbb81wutnLsiV4wpen5WodALeE2Jmg4OCQgdyaJ5ynoSZggkqi5MG_X1wAWgtW6tAorFaMBowIJmE2A3I1MV5s9JIK7AyAc4so3jAQ68F37LTESw2ycUY-U3a6Awr4ol"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Appliance Therapy (OAT) trials for Sleep Apnea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sleep%20Apnea&intr=Oral%20Appliance%20Therapy%20(OAT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Custom-fitted, adjustable appliance",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 750
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1500,
+        "costPerResponder": 1250,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": {
+          "comparatorName": "CPAP",
+          "costDifference": 0,
+          "dominates": false,
+          "qalysGainedDifference": -0.25
+        }
+      },
+      "name": "Oral Appliance Therapy (OAT)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12 events/hour",
+          "baseline": "25 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -48
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "14/24 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-9 events/hour",
+          "baseline": "20 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Desaturation Index (ODI)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "+4%",
+          "baseline": "86%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimum Oxygen Saturation (SpO2 nadir)",
+          "percentageChange": 4.65
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5.2 points",
+          "baseline": "8/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Snoring Severity (Visual Analog Scale)",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "138 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -3.6
+        },
+        {
+          "absoluteChange": "-3 mmHg",
+          "baseline": "86 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -3.5
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "11/21 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI)",
+          "percentageChange": -27.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Jaw discomfort",
+          "percentage": 40
+        },
+        {
+          "name": "Dry mouth/excessive salivation",
+          "percentage": 25
+        },
+        {
+          "name": "Dental/occlusal changes (long-term)",
+          "percentage": 15
+        },
+        {
+          "name": "TMJ pain",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExmRzhlxvyI3yiZL_u_WD_EQhPO4UV8ky9LQcXbkC-WX2j2ckvKTGawvPcKTvsYcmWzx4c330bckuRicjF_sH4ZAkU0fmfyJv6TiXF7nDuQCq2hN0wwSVsXUkGCfIpSMxHi4FLVNs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiCxvGvhPBf02vMCV_rVymbafqiF5tuYU-mrZm0IyrcPZhEwZDK7zRuHg9nAevvVouQha68IGkvL5oXbLKhBE491BNlwUQjM_CvW3XbGiuWz20lu-3srZ8YvA-H7KyWZhNyYNR"
+        },
+        {
+          "title": "sleepmedres.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7H2g1teb4N9bxz-VJWjxmRtPO-lGDQRRUUVua3tZ0zH9mUA5_CmyoD6GxPqIfYOI7x3wU1RdS_WiFAjPDAaPGi5w-3NMFF6VKjiMVYIJ3TMyXRSaj-sDJ2ZVgzB_cUGhw16UK73q_vifgpkjqD60mhfyojstdq-fYq6r-MUNU"
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMasRywF1k64KBAOajpFhBVjRDI_Khq9UeUOeKJOBYDkNko8s9WXZmC_N5cb_Tbaoi-siKkbVvQqBZK5FTGJ5ZOimSZPXmNSt7PxtolAX3zcWIeqqJ7kSG6-Aooix49So6L1yQQl2HD5p5h4Vz2XrufkE="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUJVDxhKPnzcA5Xye4m0G1Nf1cx-bQr-8D8NvaDs2Kqh-woHoDtcNLCoTXTKceD-ttYPMEWWW0WKe40EnTCog80TPfRlrFIbPHdiQhhKqzykUTVFnYBu9rFDX6sPzTPEj5gro="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMJsiHuPMQ51MzSee-HhgUP25ZfMX-aRmKMK1hSy76E7NgTC3bTs-nJbAPg8kRPL966c8qpTENqL66ZEz1IDEEpU3tM1LGLdkBmz5yFSVCptNkvyd2IMsy36HzjlIwa1X6775VYlw6-tVPHGPw"
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFOJiXH-9W2SIpNPq0Y5XLBw9NGD4DXZDEit4BqmIit0puHKoCDTU0cFSMQ8e6m-JK3Oer_pG8SKkgSsNdggepCKhazehkAwHM-G2L-rdEH2zwlrjVl36qpT2ZW20R5AQ2YWRQd-_apqGc"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpojdTy4iiAgnIVMIzPAuiph9d4JoFMm6zJALCueFmRtshBDVYc95havamruclRSI5FwFqR5jgy6IYckIwbhFArmFe1JfZrRon_NT45TWBtu98OoEvvISHPPvypcO9qYAKMz1HJ5p53AXik1I="
+        },
+        {
+          "title": "ClinicalTrials.gov: Positional Therapy trials for Sleep Apnea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sleep%20Apnea&intr=Positional%20Therapy"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Avoid supine sleep (e.g., side-sleeping devices)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 50,
+          "sideEffectManagement": 0,
+          "totalAnnual": 100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 154,
+        "costPerResponder": 133,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Positional Therapy",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 5000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.5 events/hour",
+          "baseline": "25 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9 events/hour",
+          "baseline": "20 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Desaturation Index (ODI)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "+5 percentage points",
+          "baseline": "80%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimum Oxygen Saturation (Min SaO2)",
+          "percentageChange": 6.25
+        }
+      ],
+      "remissionRate": 65,
+      "responseRate": 75,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3.6 points",
+          "baseline": "12/24 (moderate sleepiness)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "10/21 (poor sleep quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-2.8 points",
+          "baseline": "7/10 (VAS score)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Snoring Severity (VAS)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Minor sleep disturbance",
+          "percentage": 7
+        },
+        {
+          "name": "Skin irritation from device",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Immediate",
+      "treatmentDuration": "Lifetime",
+      "trials": 28
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh-IPTaF2VRt44QysW25glrzPaG7McSofTOBlS1UBzBAY0eTi7aPoxaGM9hR_Z6G540J3_9H2D6FIXTvEzFOZ8LdcXgGlsspKSRvu0Rh8COtkmPw8DhHrIqnz_tIcNc5WINfBq"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbqxqYd-HLAWC9qFeQWDL2FWsfsOwlJPrbwM8Xi1Fosi_Mhy3uQdI83WNdF3objv8LtLTH9aGx_8tCeUEoHUvq2c9zbQLHP-d2JRsDaHZ_xg2xS88DScg7WHqGIsko8DPZrFWEdMYdgxmnaC_A_awJD-yzo3bSb5bUiBsveMOPzRtq6QygJ1I2Wo1fYr97DofjGXOQS6WlgkkKPcHEdUL0JIB_s9cDn0770lB_91ksqiNO83uuchpEtrOUlW9vUDpxdFeNf3gary-eNoyN0tD376iIwXwTkOjh9GEfMKROoPcd9i6LENYXnx7wwfpFoREL6rFbTps="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZa3FK5U28gTgMbJDmnNrVaC1yUldYuv5xc_KjiEyB-Vdx6ggXgH7qyWg0ku8dOUiy2cB_hPZ_-US8FYwWR8GrWo47-yrsKKo64sjNTguFUD-0sLdBGQL3KG6gjPnGBU5nN-Qk"
+        },
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-kP0Fkfac5mDGA3ADtpircxtmFVmqaLOWdKDp651reclMnQsHbh_NkIrXO80VyWMd0lJEwAR31ceH1-8IwFQfVtAQojTZiGfOtmASEpNvOPdehKSs-zQJUYAjbkjG5p015x6cKBj64U7Vu1efQA8f_Peapn_ISFNErFYErdcqc05oTgrIJZPm7qW4HQiCVTPaVuYhSiaEyp-L6oi8wczUKuBuIN0YB-onjHXcFmey0AaqUc17rMs10P84Bv5xRm5VZ_JgjtQvVMqpLIcAUPha2L6TwwhBaLwuUbrioyRGeQd_bw=="
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECzEVXRzxZrjCOkraMBvYX-3SMl96hfP-Y5KNvlejGBDrs62mHzniyh3wXmxaP3bZRaxzgWwk8btrt4mBOdvQn3kcDh4x1i79gtP55kJt7rtLz6xMg-ADeDcZfiUMDdNP3GtU7eFE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXiSFpir8KP3fwgDMq4I9i_8ZE_iYfIf9IBsclAH0nqSSHU1qbfBqw7X3zftNNDAIWrifZIALzXzZzPnZw__f63nFYs2MVw6D7pv3NLYnrebOITJAwzbwlOuvcmZp2DvMUjj43RHL9MjWROpdgk7pZ9kXLcrTOt1aJ_oEcNlyKlYSNsvtnEmrDYm6Si7eoj7Ha2gQe37FhmbzhY20Aj2813aewkJ08RmIX4VGDFyu40a2hYLDEjog3dykDNmbNu0xIeTCNOwFFkbyKzcIJM0LnJJQIGbTmGI6YWG33srCrpl6MmXw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBnmsHjHhbclqWIkS-O61-XjPuG5ki8DxabuQ90i5mWqbwxKOzTRThhoXHGdl-HuxGuQmgJbJRtdVHWT1ao-ri-gagrGEwj5vJwVhzJPdfVxPytLWCF0ktfYa3N4OiDtZv0Ybt6ay2SJq5D0A="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPLbCUvJd2H3p_ZlcsCaSr-bJ-ZeJNy4yN4rRD-nkGNthyvJeYtiv6kG611Efjh-ojsx4vXoAHYOq1Ihe3MwpUJrPhXhRryCJxRlO2ui5G3IRzPJHVZgW4H-67xNmMpI3Bv-4="
+        },
+        {
+          "title": "entnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgf9eIjMnl8y-ze6w2GwF4tu821ykkQGY8V0rJzsAhAvYBm4TnDyauQxj7KsOoPm_HAmboPVsBPSrPszVwl_dVs2T5GLsDC5hLB90CeTCvvPMX2VU0pWCXX8WUGNYKrbyronrYxVWJVq6_TM4BZkptAF6J-csk9nof4HZxPItT9PVn6gy7QkPF"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAlSYhe7r35seZf9D7nJG2qBnR07OQf4fSM40uJqCkz9iXlwkVbrtfawbVcNjVpmbZSm_cvqBS2gWTctvZfT56m_ylA16a2lpyoZdnex1Q1MX699lROwioT1jh0ja6v_DbCa6V"
+        },
+        {
+          "title": "aasm.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOtx47GJ0v8AVVcoA5iFU0ktWzbGQLNy6LpuDcJr938fIgxolWnGZuhDq_c1a777vxL7BcFlz0MUZNnnD7efiYRKRu_0vwDMSR4xMlPsZbVS7vaozVX8PjWwDlnnS4ufFnfD6cUbQN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPZiHKvwzijwl6_dLdsqP9NJWeJHGQRMqVZxNvXI0JDM4kGbKBysLtUToAozgE5k0vS1QATd_6Sdl3fXjOguRaK6p74hgniYZN7gnDy6AFRrzZPcZ_NGIK8YzTgdllchPQ0sECjLB5M3sVpuM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Uvulopalatopharyngoplasty (UPPP) trials for Sleep Apnea",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Sleep%20Apnea&intr=Uvulopalatopharyngoplasty%20(UPPP)"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "Surgical procedure",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 100,
+          "sideEffectManagement": 200,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 10000,
+        "costPerResponder": 5000,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": {
+          "comparatorName": "CPAP",
+          "costDifference": 1700,
+          "dominates": false,
+          "qalysGainedDifference": -0.35
+        }
+      },
+      "name": "Uvulopalatopharyngoplasty (UPPP)",
+      "nnh": 30,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-20 events/hour",
+          "baseline": "45 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Apnea-Hypopnea Index (AHI)",
+          "percentageChange": -44.4
+        },
+        {
+          "absoluteChange": "-16 events/hour",
+          "baseline": "40 events/hour",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Desaturation Index (ODI)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+6 percentage points",
+          "baseline": "80%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Minimum Oxygen Saturation (SpO2 nadir)",
+          "percentageChange": 7.5
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "15/24 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Epworth Sleepiness Scale (ESS)",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 50,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "8/10 on VAS",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Snoring Severity (VAS)",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "12/20 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Outcomes of Sleep Questionnaire (FOSQ)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-10 mmHg",
+          "baseline": "140 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -7.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Post-operative pain",
+          "percentage": 85
+        },
+        {
+          "name": "Swallowing difficulties/nasal regurgitation",
+          "percentage": 20
+        },
+        {
+          "name": "Voice change",
+          "percentage": 10
+        },
+        {
+          "name": "Bleeding/infection",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-6 weeks (post-recovery)",
+      "treatmentDuration": "One-time procedure",
+      "trials": 8
+    }
+  ]
+}

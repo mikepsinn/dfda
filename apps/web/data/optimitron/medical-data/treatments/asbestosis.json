@@ -1,0 +1,638 @@
+{
+  "conditionName": "Asbestosis",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:41:02.725Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "lung.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTPxjSZ_HMOyB44Uxf4zf7bLXtzqw_HM_lSlTpqC0UZHRcIHzUYnTy6UEM_4mn-aJN6rCImyEtVlU6KzA54xy2dlrlia8z7vjYE7lVs1g97Yp44lIEai8bbKLShcxvwZUuUVLDe0BE1RkmH_T8GxPjbgOML6_nDL1D28UgGn3DHC4dCiicmp_bj92FjGo7XYa0TXYJv59Bww=="
+        },
+        {
+          "title": "asbestos.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMX6YKCQ_Bu9b7YL6j6TnQO1jB2bfFmg4zl0t_AcgjKyzj_M9JZ3LDTjRgTkjKf6ZtkQMBF2S1Sug7hVfMDdYms2ahgR1HVta0c4teCtisT7jvHkGNNo7MROw1-5bwtC3FqyCOnxot2w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpGgXsCTOllk6KF54jgpdSX_Ok9YswbET5KjQihFyaryN4jK_jps-kkjCm1GZzZ9pBfprTMQvio2cjXw5IwvtNw81qKNWFW3-CJHbTQ9xupsvaXaw3ew5igpK2Z0iSI1jlj7PwZupz"
+        },
+        {
+          "title": "msdmanuals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW0Lu-K3BUyBhK1n4muyUshoPMvUBD5H0Lt9F1xim9rdZFdBJx3IRqHDQnw1nuIVI8SdX52s6W1yfK-IyNrmMqqlWVmdV-bXH7Fg_BAsK80I2KlzrjN3Mx5suIMx8i9VIIZ87_rYb3fKxzNcJPFb46BJR2dP9sQLvtrp7e3CknCFc1TGbg3wYnXGrikDZkHrllegFDuCj7ppSpww0QNGdeyC-SjydBPAo1WDh0cwfHAF0A"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv4_Ftvg1wnnvlNw8pomCLQZLSo-CVS0wZA8Yesh-F14A8O61BS9BBiN84y5PxLE07JCD8FGHDtxW94WFjai1iBIEoE-EHridfISOmurbF0Ub0EpCNY3yxKe89BahdPFQRRFkSNWxzfnlCTxTWR52HBn7rsdxqqoPc1fmpCziHJJqfDC0wdU-KUZF-4A=="
+        },
+        {
+          "title": "ed.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcNUe9XKlK4fcxMSyMonqLFjknee52JMEFa4iQPSHnWN-J1H1LGRpcKJqIZy7mw063WAciKmrcVzTMp8U64tmo1mXcaaV6CJzAikt75c1zwpbIVrJWJwTCxcAUG-sy-0K4EhxIwA92qadmm-Rm7UT9l3JJsJTpgg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEz1uj5J8kf_IThU0gPv8cYAnXuBAVslVGt-HVid-Y0TPuuJraRXOM84Rx1ExRbgzhVwLHZapIaDMafib5RbD9lBGd3jkN7mw0PZBtgtiZnFrFkEa1IlQUPb6FPPRqpWpO8xUry10bdTBvgng0ryl14wk7XqrBUevisiUAVJHV-7UlyGe37MyjjF8zOhJ2ob05Zhj0192FrMYupu-fZiRGul2ly_k_dmSuKUjSmOen6EEnxTf5FvZZg8YVcdvpxEdJbhk0CWY="
+        },
+        {
+          "title": "ipcrg.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuxxPPwQ5rZZBvafjVcdeDYriWlTVUmKxtaruOVMj9VnMDBdvxHuUQK9-9FkrAd2upB-m7RMBe2-47mx50yxOc36olJ3mY2-t0-xKwOVjIXVFNYA2c4ht44IhAFi1GsxAL108CKPvHtDce98aUieGiNJGUXtRSpthsHZN1iuZvLzPCJKu_hqW8123H_ktONLpKFwa_v10hN_2BWWhOCCpwut9VXzxo1mHhhx-nga3xEuE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiBxBtcsYisxCykHLGaEe65-iTAhrrV9Kg3EbOjL0MfaIyuixuTa0Ph5dX_1eCcWsrwhMDViTuKRHh2WNK7TrpeFFWXJccQMBrT3SF4X5cS8xVmXjE_EWlbBmDiSQb3NUjJXc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnc9ZuKc4AGmx9DraAMTpDpX54Fv8aDHhkjhDGGStA3ELdwOJNutE6MB7mLn1VY0Q9vKYVXH8D4hrwVpHkSB-YvKfcIR8mWqx2_sj706KZKpjeZGGD59INuUj8m_BE-BXe6Qk6o26eE0ZgeiLAd80vbvWuAAJvEBp-gICqOiSVUYghS6zvvBz_gFV2s5lU2A31g-nvYAuNq3kgCjFDE6i-554fkFr8uQL9cCPenaKhsgqB7Qw3Yvv6oPqGr86rbpGa2Erp57Nhh2-bCJoAjP3Ce5raHbw50Y_idN_iqA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Pulmonary Rehabilitation trials for Asbestosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asbestosis&intr=Pulmonary%20Rehabilitation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "3-5 sessions per week, 30-60 minutes per session",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 0,
+          "totalAnnual": 3000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 4000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 0,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 220,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Pulmonary Rehabilitation",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 75,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Muscle soreness",
+          "percentage": 30
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "6-12 weeks",
+      "treatmentDuration": "8-12 weeks initial, then ongoing home program",
+      "trials": 500
+    },
+    {
+      "citations": [
+        {
+          "title": "easyoxygen.com.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGs_gng8TlZKSM-liK0f08ZMnBpVyoCqSh373qgVFm_-9PsqFngDBQCCeZsIInlEhg7TLPqVIMs67mh6MhF8s3kB4xg8lx8QJ4FKTKdRDMp4LHiKa2ynXBkpgo5cPKY2O_44yT4d0A6UJv2SAcjHpI1T5lxVabHHU5bqmNWis8B5cNMrV4m_qbElPFoxJjDH7r-Hbx0"
+        },
+        {
+          "title": "asbestos-surveys.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPi0dqojynvf83qYGD5nsYxMDtzaTDtU0uOwAAD75Vho2EBJ5wOef58DsKDd3C6n1Ke9TN4leMEQMtL-ww_cZ6oyowJfK03-S9nQN7gZDlahBgyj98ujt1vzozDdZQyEKhiLlklOcBYfq0f3Z8c0T-Rif2t2Qgv90euR0GLaCCVnZ2AmECrqT8SvmE-5l_kgSPxnN2wTdSYLUCgI7Yks_PSrAWY5fe7DxJ2cRwcJAYu1kkuRzcuxkAFomxwJG6Vztvj6dVo67uWskmci-kwZxFPqoXyA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZlrv3O1KGdGXQxMjsESXFHLZ_soV_muOL24iMTdgQJ3y1BnuXaa16AWNJ0Wwu6uPJuvtEmV_e1MQc1404XSaIxAZHzIktPQtA6oCWn5R8gcSA7Q468aZJY3GvDUGNFSlcrnyesFzCNw=="
+        },
+        {
+          "title": "asbestos.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFazll6E41qPBu5e3yTDSH7B9zE8TqL1pWsZ7eICRJFXe0Ms4h083lsckUi-yCQbgnO_j0KQ_nxxd6aeL4kR2Bqa_l7xvp_6s4xh53wTsvf0qTrKHY6vOrZAnPlFISEUmVFKc2wR_bww-U="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUgNPNZDY2yxG5cZ-_ZFzwjqO4MCI-ChribmpRZHX4xDqUpqJLWqM3Q2-kkm9QQ1ooQktI7CHGkRt2S4iKLmSF5ckvqd0IU6iZQQyzc7O8YDxNAkuZwyc3m23potDtKAMkNxI2wPRQuH_IPYs3sa-yajk1EDUHnJxsT--GRvmKWgCecw4Q82iUmLGTvf5jfuZayQaravgYSRySEMLsVC-WDoRgVXBPXJhPS1j54zE="
+        },
+        {
+          "title": "lipsitzponterio.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5moOZvcGlw8LvqZE3-WCJ8AlARtLQFrTTJ_a8n-mG2cullO6sY7bvHWqNOI78CsMnyRia21FH_YIdPIrUISDUG4fSeafexCrb9oNpLdycchqMt3Z79IfD1C9Oa1h8MSvIYnyHw7rGB3qfcnX0wdXcIeuuHc2paLQFef-_CjmSO3zZmA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oxygen Therapy trials for Asbestosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asbestosis&intr=Oxygen%20Therapy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.5-15 L/min, titrated to SpO2 > 90%",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 750,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 1764.71,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 40,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 0,
+          "annualTimeCost": 100,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 440,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Oxygen Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 85,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Nasal dryness/irritation",
+          "percentage": 5
+        },
+        {
+          "name": "Skin irritation",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "lifetime",
+      "trials": 1500
+    },
+    {
+      "citations": [
+        {
+          "title": "asbestos-surveys.org.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxKsMf0KmZSUwaWffkabas_gNRlinE7ZhO_UkHNixi0YC5RhqPM2Llu-d9YXcVrNYnJJkfGbQwERi9IjgEl0vGCBUb4ln3JBJ-dNY89wNk54X2UmY4CWFr-C_YWNcnpkJCJZmUz8amA4RjmfwgcWB32GxiB4A7SpRda0rrallIm3dMnO82FL5pSwopy5nsBvDqTQT4kLV_8k-2RmTvnB8cw1-UUucCF3_57L16giNjEKIOlgvDyslwjqeHWUzBjPx2UVNXsp0cBwuYdkTs0u4wdP5pfQ=="
+        },
+        {
+          "title": "mesothelioma.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjC_KIpuRNbZo-6hMQf8m7a9WqRY2WnNI89iRWoNXSqbxXjeY9t5vZnmfQOe4xRleya-3n7ygnDpnSYcwFuvuouNq-G9HwayBNDUyWyemM3GT9MyqVMOdofeKEbJ9YKFTpvYt7BPJ3DMRNBQ0wxQFDwdeq"
+        },
+        {
+          "title": "prolabtestkits.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF68OmJNsAtvqFakBf6XXo-_-tlSm8irYUWwzgoYi0ooqbhsyA_kMyLHt16l4J6biuozaRIRjGcX-QC64nOatq2Y2b2CEhb14dyezAVkFPC0LL581W6qWzeVWMsjhhAlvLwXSu-h3rZL03v_HOBTgxcmZQFjcl1WHriVoA="
+        },
+        {
+          "title": "respiratory-therapy.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU94j3gd8owH0ccNqZhgqYMKEuTe1W4aIx46kc_IRGcHIF_bVpkqeX6mLszrDuMdrMAuxdXAX-Sb32usvRUtVf1DgYgNx5P4kt4pp4GDize9SOcQceeC-p_iORfn7p4rMh4EVwjRY0eL-YCNGxeD6QyTUqZP8vaSUpeF50-dNUiX5eM6opU-lz9m7CGByTm3XEQM-yVBXUTkk_2LmYJrMOJwAJurdCAmJpY0ksrzOB4V0v4slapFu6-Ulb9W5ezv_RZ6Na0nE="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGi8Pai_-l1NDLXRq5-Eovz6CaY9ybDe2TFy2iIQI10-CZwew2TYmYI699gF4q-vqeREz9vxKplNKAlauHLlhu2ygxJKyyIbcdNZeplgc3BG6GGVJDs-vXUB-hqE5qoa5F-rqv_WZTYo8lf-QORLK831zpo2g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG58vq2PaxVqg377-6iCC0kQLr9l8MnU7ACdRJIaWl7Scgb_AVqZmMlP1dkSPKo9o8ATyJRzCtgyGeAfho08vxtxwfbNlxFhq5YCDeQrGzomklCoLpwFk0cH6wAFgwxEFZIbjwZ5QRYXogymK-93wZC3X1F0CCQlKF4ySRJubHCEkj67nbirVe_Mokn8ytzMOL4oXhpzLQaqTFowvILo2f2eQvnB48CCrCvqihHTHULkLiR3JZv80EAvByUryJ9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV-hEZ2Su4rpxVlWO1Hgt2Gf7lPRk4HK0Wj4WVHA_fcTYplNbHh99DqhU6A7tUNF8ZJ0lOCzGo6sd_22XmsNp3ZZ2DxsZIeKXIc4rlSE5QfcEeKWz_WBulnWPlsl9Wos2_mhvP9xrSQv2Baw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtwCYRG2wViwmkpt-xPTMrjXFdsqo7dWw_EM8lpp79_f9w2XVEiQMnRHDygY-4njnOOcrxRM-HOk_BJyJP58caPAosrkOTmkhMNyudAdHatYC0M5UV6VJS5PZ2ldWVEaDO77D_HSyT8qaQuWA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Smoking Cessation trials for Asbestosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asbestosis&intr=Smoking%20Cessation"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "behavioral counseling, NRT, varenicline/bupropion as per guidelines",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 2000,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 300,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 500,
+          "annualTimeCost": 50,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 420,
+          "otcAvailable": true,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Smoking Cessation",
+      "nnh": null,
+      "nnt": 15,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 25,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Nicotine withdrawal symptoms (irritability, anxiety)",
+          "percentage": 80
+        }
+      ],
+      "timeToEffect": "immediate cessation of harm, benefits accrue over years",
+      "treatmentDuration": "ongoing",
+      "trials": 2000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5Nypcmer_TFTn7XIILQs2tA0y-Tg_EIUnphrf3OpHAdpySbsJoOjpLtaDkJ7nHpBScIiv_G_hWSZaTKBQ5NyE-fmEwyJdaIik9lGLVq-OJEmEv-WXrlVFMiTqtV1IiG0niF9u_yzVPw=="
+        },
+        {
+          "title": "aafp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGewi479J3ng5JQ82zB7VUi4kJxWRtWNR3IWcBBy29xs867zEP6eB58WxJQq589ECef_55Zj79287UUBi59bXdtxdaFALJG0d04dKqL4lxMLUxR4pXxXKu_1qrj5Zxz9FnakznyXS-xBBlY0nzAMddjQoUa"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH07hfsbIqxFKNINqFiLO9ElCtenEDw84b-nsmGEjcsRYrPp9T0BRkdnnDdNCxoXvpPseYUxdG_sLPGNzzIQ94cSTgTMJPb0UCNcsWob3X3tujg9n0AlsF9OAvu7M-2gswTl_-_1HNh3FNU1BejuPilVBYYImlz71rQ7S1vYjiVh78yQ1TG4qbkLA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBHDDjR_wNrhLe6scUtanANNKjjFvyzWACmfafCmfgfFdu0uQfZsqP1Pob21HKTlBm0nb6qX0nqeh9BjlEGlwQ6t6O0h3rN-gJmzwh6k89SxWVVN5dc4vQQkPVAv-USyWSUkEI"
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1Ds0KZQSuLnbULNTgA-8sVzJ66n5fe8iip_54s-oFj9uwjY_OaHjSpQlnlkF-tTMLZHxQRwOON1lsoFqdpRc6mWMTZteFwmYK-H5zUD8v_zlJkpVWqAYibbF42_1fPlHN5g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3h3FlPbe1g0UJZ2ueV__0lOrw4Ui_CIa1X-RExeZWjr6uoFeFq-WY9yI33p0CsFiVeOsYAYpwVvHZ29wEnsLldIfHhCNKal933e0Tmt4nhJnX9kdhtWn4X1NeobtgJuhl-G66WDieygOb7BC63Yx1i0DCNVn63_BDsVXVZDiSczS5cK4bMEbd_LJ7zjfrpjNK7wwFMZyJM1G0CMigjEWX4-l_SKKxs32T42viveNDp769iJZccLrpH1QJyPgVpIP2JsW8aeWO0mVDoGRUIE-sRES6SQupHg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFK7OxB4JJIm1X1sLObWKzoITMhkP3pyopcg3eOwDKIUikWFfyUl0jtmIh7nW6m1GoJTzlHWSlQ_Bt4248gAbr3LXBP9ffPt9ATKRRepImBhdaX2-NaB8M5TY6jHo5pku6o2_ZSarACFA2SNa4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWw7PkKCCRWWBF0AjPFYlakVova5gKYTngZGYmTb229rzSOeYOM6RO5ouX7mLqQyYFrYEIqRKb8Z9OhqcfvKm7aNk8N-F23XJBwyAz7hmvievi3mtgpwpFuuOeSdzrQmxADpzNEWKjlX4PxF71SuUhrDACTcvHFJbZPMKrp3bE6ic2JtX4IzHTSXtnITet0cAkHtq7ub4kuDzrx6n8gv-tWK8Vy8PbfWPu1HHsO1TRH8Z7_dtWCkw0SH_pkd2P_pW2dYxIAVegVYowVVm2kg4THfbgobee45NFYAkDv7MfLb0Dzmcr0A-LyaPJIBpw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN0kJdeMUltYyPu7PNZ531nM6rgUjCGL7M34Q0ys0SrXJ2nA-AcaxtIeYNodkGgmBwBxahUQCAsF1SybdaPY2mosWHYcEHhhPF11d2r3dZQRVWMepzicqUDRn1u7J5EQith9w5YzLyRkXJtkw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPxA4pfns1LlOsChQ5AkF3paP5MRvohuc8dlCnOTR9iujVssMNIjL45phfCnuQG7BUVCvmkCn-9yiyNcda51aF6WnRRltQfNY5UyKWbTGsTNt6bkF9EkIJsLsLWeAlvekLabLtW66JgyG-VGMOoVKZF4Sqc4wWELUUCaJ6atOyGKLVqIw_t-u2ugWIg-GtjfQXZ0kUktzZxw23AoUj3rF-FhzhxlqgvhOIOATlccMq9EODjnZnUpPgSHgZ5_-mQOoqkg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFl3EIj5ZykQHniLzGV8WlD2rD9DA37YiITBT-TlBnEUuK4r73CxdRtHGYCesWIal22_wV2qG4sF3109mqIBv0cgaiscHs4uN1W-Jr3fzc0QskTI0ZCbPmdu3ZzBAZPzXmaRHdsj3DRve2rr0yh0jBOfSyL9Vinp1w3s1-026Yix7uhbLL9QtTpONUC-4RffVrMtFW-VVm_xyC3k-pABOV376e1aT_jWtBWoeS32O4bFH1nhHnYZ-HWm7GEp01Fs8M7T3eWQc7D_cvNGc64uyev5yt0_bM41AZC27WFIiJOLaNU5YZvF_Ut4UeYSeXY7BMp_lbGiUtDxi8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4foZlV5s63RMGvHMejdmHHXq5whpZQWjuFl_qitIbRRr7mB69skJvf_nfGcG8xPQfKMYpeX0Cnxv0PwNI93ytWN39rX9iAFKZ2hD3iDI2KLRo3-s_BLs_QQdlYWfqoMYIrFKkQz8fS2_KEe7y"
+        },
+        {
+          "title": "ClinicalTrials.gov: Vaccinations (Influenza & Pneumococcal) trials for Asbestosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asbestosis&intr=Vaccinations%20(Influenza%20%26%20Pneumococcal)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "standard vaccine doses",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 166.67,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Vaccinations (Influenza & Pneumococcal)",
+      "nnh": null,
+      "nnt": 30,
+      "participants": 10000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Injection site soreness",
+          "percentage": 40
+        },
+        {
+          "name": "Low-grade fever",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "annual (influenza), few doses (pneumococcal)",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "asbestos.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOM98c2EQw7jSnT7Y-zQhwp0HvNG1mAtQZn_hjeCQJwyZVvRp51sPMctyDnYKrMwMn_irWMovwS573MtqGLtx8KUf6SvzNgvBs4t4K3w3YguMsUH7mGcp-Ede-FeGeO-yUBFj3P2luaww="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGC7DvAMiIw8W2Sf-Ckdo0QbdlI5-mK2u5K1LSs1WfJh7ozyLUQePOGGUb1OPtNIuc5J5gMXMmt9FBRCs3dIdpwEA0aUnHt7Mvun07srXQIThPvVVv8qWJGqczKwRngDFBMwhchr6QARQ=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5o4eHiSJU0X2981nnz5ORaCuSnG4PRTDbYGY7BWvcHRvj2neCXCQRhl0AJBYyaKnTNfRSL8yowgAUTrv76cANnxC8TDv7BmNOE1Am0ptR9YIfOZBhedvE1sgOL_jG0AixwLW5mfOXSXWOkheTFxiBK8tYxcw7Cac9dw8ip6527HbXOI7XFk8tNVcnF6FXvRTDrWkk-vTIogH4ucJFyVNQgGpx_DnZJw=="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgdVnbjmLDf-7bvHs_T2aMGeRG10sNq7rzxacZJ7oSqNTrBdfDnA4yyBIssdzgcpNYkk1uHC4X_W6cyVQQVmDwyUsXx4ynN8ogw2wqDyry95kI1EBJHNW0qUNyiso2m4c1mL-uW5iVpH7eSx4e0VF6YBbMeaH1IvQF1VYEc4l8YNNZWgGzMIaA8AKzAbC7v8Nhb8eMds8gahArIN3RY1376zdb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFh4wZXtQ6-gSRrUxcUNVF-X6sDgpynejpo0nBF6NjKwGDaFH-66zpg44uyPEAqNiSCq2E3SEOsOn511mauixbBRSE2FU7K2qkuZOmag51tPixUVGZ8e_uMtSf-Xs-XVxqvA3-ZBrGn_A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNxy0n7vYH-4Wis82JFViUcVmFVA29Q7PPfDilE7FV7G2A83LutR-i8xSKnZnS5Nrr1PQnPXz3awj6Tutu3MwABZXzbS7bZLPKKLuHp0sMCgVNyJ2yhSn40V1SbyPHSCUFjDBY70xekQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXtSengL6DgAjY6AQ82NeFH79_i2f648qbHeWmnuNI001W9oWbyxK3AIjwtfYh13ho6Wl-4mZqBzXaYxB34Dju9nrc8DuBhSNd_zm56xj1AKtlremi7pNUehMIyVhU-eS6b3Q_f2Uk3Fm9L3gU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP1J-TQ3Fb2fvU3vzXMV6maTEV1yukc9hFpQkaPDXwt_Nwo9Sq1agPNd6t9T2KhNCMGYtTq8JVuEzSWItTDHbAs6adTqP1qfPJTbB9vzE1ljXQ92epSOj2nxDrG76d0yLmm3owdDRvggx_gpQ="
+        },
+        {
+          "title": "aes.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaRiFfuJl6VeNnrcyi7pX17llxbQz5m99jvSCuhymfW5RSAyYgI8_rsnCJVjpO8im24pB9HMRhAufPD1dB8qDuebivckJbvyILuggirkEd9k3w9Ov823FHfNjX_aNkFllT-cFP3z5q520Cd6qGXrVKAIWbqYyhBE6MIU0NMZhLrAaN7ewk2B-8j8hpTw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiHeFGj33iQGiY_UJIOJcj3WT3wUciNrRxCzw6NP9B5CKjWcNKsWGEbsi5eiP-fjdsYmHBrg6ikt_r6ig5fXpg--2T3q8KGyYU6hL2E3OqAudPDYWasmMnSPoUDadj-KvMQFbYpSOBAf2DQiw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Bronchodilators (e.g., Salbutamol, Tiotropium) trials for Asbestosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asbestosis&intr=Bronchodilators%20(e.g.%2C%20Salbutamol%2C%20Tiotropium)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Varies by drug (e.g., Tiotropium 18mcg daily)",
+      "effectiveness": 60,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 500,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 769.23,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Bronchodilators (e.g., Salbutamol, Tiotropium)",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Tremor",
+          "percentage": 15
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 7
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "immediate (SABA), 1-2 weeks (LABA/LAMA)",
+      "treatmentDuration": "ongoing",
+      "trials": 1000
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtFkbituof6E1H23ytVZvg53l-QlA8iQY-sg2YvSsyt6hWyN5iwgpurXMVY02dZl5wZEG056kZB7wnmuxYGjlydpq_nhT4EkbLWxCuH84NJASRakmb5Dq-FEZCC_kkrlC5ZkTBjZNz"
+        },
+        {
+          "title": "mesothelioma.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGS5BrD-Hsinku3vOxJ4xOkMmAPKDL4M2BUMs-c9CJMDWhTdW_hs3rZeTsp6I6fXE9olAH-EPFrfaDUDANJM2Jqk5ClRy6N_7GrIHMVw_b76whPmQn8LGphhMLbAbidtpwfuSGKE8Hk4VReS-woLEIiGj7key2_izX0OCynlM3M87_V6TfwiEZVuphrUeiSIAS_DfNISAUq8GMi1w=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4fv3a-HSciFh1Oc0ANYo3ZkyjvUq7L0f4f0eUYzTMV2zGZY8SI-ub7f0VKZeU3mXNMuGQLks4CxboMlQqWLFO_nlzdWvT1V-tfkwgy3yyIkY3WBlHslYEP3R-EO2p46TlCltc9vetBI3K9AjJz7qvGs8jGso5yzR_ar8Rh2q-EDKGxxNqrDHjfkruPhiSZphAV0rn"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6bYpwTTOCMcrEi3Beyr4NFD_RJIrjd5uaS0JmXufxIFkIPIIUTmReCw6lCnSrhxM6rVgBqnwr4FoQYsxj9vmO7qzporIvGn_zwXm7czT47PXU0Xqv8UKDqcRUsiEkuSFtKY9-sg=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4ZB14FkuhQ7yd5R4z2OkU2x4kjhd0S9DuVi-mD-fvtEBvy5CijcNYBto5pUfvZGROm13OFG02tJ9t7BZcLxGQ9OfTntaAIRchJNxNso-G8zSiS_k73ueIFBxmb5e7jYDnz4RHFw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa0pgopqAf_KH_oe-TS2RTz6YQsSa2QeE98xtXKDOxsDvI4kI-ygpLGa5iC9B6BxDlZD63hIMK1EACt9-Tje50IwEUo6kS_a_vhKcpF--FUw58L-OwKb4qFKCU77olAGGCpKRraGXHyYG0n-g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_VJiwd2Cou6qYYstqlWvTrrv0R7l0RdklxnVdTfOUdysgQUQVoeslYjfX1YQbixq6aUX53FG0YfbEOn73_rbsxSCJeXkOAdr3lcFnYMddJQBnwGYwFhFtW9GXHQZklSwitKrZe4_FAq1Eug=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Lung Transplantation trials for Asbestosis",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asbestosis&intr=Lung%20Transplantation"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": null,
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15000,
+          "monitoringCost": 20000,
+          "sideEffectManagement": 10000,
+          "totalAnnual": 45000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 64285.71,
+        "icer": 125000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Lung Transplantation",
+      "nnh": 1,
+      "nnt": 2,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 35,
+      "sideEffects": [
+        {
+          "name": "Graft rejection",
+          "percentage": 25
+        },
+        {
+          "name": "Infections",
+          "percentage": 60
+        },
+        {
+          "name": "Cancer",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "6-12 months post-op for functional recovery",
+      "treatmentDuration": "lifetime (with immunosuppression)",
+      "trials": 300
+    }
+  ]
+}

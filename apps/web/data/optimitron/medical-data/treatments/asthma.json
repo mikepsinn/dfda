@@ -1,0 +1,1026 @@
+{
+  "conditionName": "Asthma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T13:50:20.003Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVL_3JsEe8ob1iTZwRrVP7KHq54k33ldchfiKYQxMh4aMB1eoTbow2g7NlKCIuB2dfGsjYgxxQUBa-RPXNFMVnNvGr_wN4-FaxD6D_7lpmMKW8gZH5TsJRyJ4ELDLKruirKigrt6DtmT6X2cNq"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFey78uJ1uuHo0DT-B2hDMLF3wiAG-gGqyM_CH8CQMyNYFJgNawh0hYx_nNtXWGHlv4Bfu7i_NdGKKB8I0n0sFG8gbFcSdNSyflQwyB08-jAUcBfZiQGTXejSGDB5Z5ySDqvP3a"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoiQjvzfhEqv3XUVUQzo1NQrSOtxyaCspbN8s2s6ZuVzrl6q2XfIVZLC_iLHkbfMlrX3e78SwZyTIpaFPWyMF5l7Xxiny_ZmTIudXaVw-S5c2STdlyBDANOnIMz3yMdoYo48PgRSTDHpsiNnc2UyiiZf74o54yntz1Cdw2pYr2nQxe_nCE74jTqYrmgNravq98Qz6vzbZbL9JqaO7_tvkllIZ1fzWETPyxLkFIfTOIwFYvmDEyDX9gwcsd8B_53Rbzw8E="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA3opBHGWw5gUnkaIHaMS_NbZSSAcueX1JFuAvXQlXmoMPO2-lZq0DMw82rZx67Q5FJwDd7Uw6EU6if4x006LHLs37NdZTr2PSP0JXE8CAej6dXj7cRzW4Gr6kMhL02pNlqs-caXQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUrXdUECAxfFUPXkFf6TMjApMukQie4yzD5C8xsslUIx_LL0paAEboyIKXiY3cQat6eSYIKX8NuLpqA-gJ7-fNAvzyF4bj49A_Z4n5qGpOV-mjpcCJB9kWC8SmwumIHZJ-h8nUnkQrPBAYXQ-0e_DXQrTJC_woIhLZ6htdR9uPjI3SgtvqOD3hwI80ce-D1wPEb5WX2GLDqg3Sf-BPv1yiDiWvDYIi9WNRQ4Dy_iesNIWnbBpLpka4xzJAulpJUvrUmEohjAMGmHOAVggBqwXY-ggkTpe6VqmurojBiiG1UFzjK0BQBPbfNIiYc76psqXRn5OJycbv3ZYpaFgSIkvXO4miLVXaFOZnLl6d9NNydLClLw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMBcvnR_qexYUaYUKdOfQ9_ppdf_ev57hIivt9RDB_FoOL3998-G_URYahCFfmE4g5NCbpw-OneOUUqhC8_FSKjCxF2MI5UuxHfiTjHEs88ZNJzGpQXR-NfKT0jheq1BxAhrENA8sS7SKesnthozW643SwqoZoMw0uIwcQV8BofD3tpEJVaZzYciEK8qpaDhtxNVc465tGhwk7GjUBW8STj9HbMVdvioeZnqughlZXy-77Z6O1oDdEd07S26oChzveIjbM01RJolRXmQMpDFUrcIMaNKNUwLDR_bghNmj7OYeXqLzIgwfISyfgYpDk8txOPHmt4x7GLj5HhA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMA0LsALAU5AbHII5P0-nCacg2YyzLoGEYKKoFeoUjw1ZPdEpywWzPWdsW5-p6Si3_jqTng4ifLFnt7oHMwMRmH18iv5CFJQhPZTGokfxz87vnieTHEYJrM60naNrKLSvS0RJdUjGTsfd6UlY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Albuterol trials for Asthma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asthma&intr=Albuterol"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "2 puffs every 4-6 hours as needed",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 50,
+          "sideEffectManagement": 20,
+          "totalAnnual": 220
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 239,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0,
+        "vsComparator": null
+      },
+      "name": "Albuterol",
+      "nnh": 1000,
+      "nnt": 2,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.45 L",
+          "baseline": "1.8 L (60% of predicted)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Expiratory Volume in 1 second (FEV1)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "+70 L/min",
+          "baseline": "350 L/min (70% of personal best)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peak Expiratory Flow (PEF)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Modified Borg Scale score: 6/10 (moderate-severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dyspnea (Shortness of Breath) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-28 mm",
+          "baseline": "Visual Analog Scale for Wheezing: 70/100 mm (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wheezing Severity Score",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 92,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 percentage points",
+          "baseline": "92%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oxygen Saturation (SpO2)",
+          "percentageChange": 2.17
+        },
+        {
+          "absoluteChange": "-4 breaths/min",
+          "baseline": "24 breaths/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Respiratory Rate",
+          "percentageChange": -16.67
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "Accessory Muscle Use Score: 2/3 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Accessory Muscle Use Score",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Tremor",
+          "percentage": 15
+        },
+        {
+          "name": "Tachycardia/Palpitations",
+          "percentage": 10
+        },
+        {
+          "name": "Headache",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "as needed",
+      "trials": 475
+    },
+    {
+      "citations": [
+        {
+          "title": "2minutemedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER5K8oMpZoqcl1qNSvQMg-py376iB0-l5JQT-Tfa3-Yinr1s9PNWJZIzrPpRyl6X4WplfdkzU1wGzczGeLE25A4pt99mR4mAEobVheieHbkAC4AAHppohGqUAlRmUbc6zqP_P0qOClGu3XDEPfCQzpXquZD3mi6_kjg96PxvPERPxtHU5XgEADfAJIoQFb1QqJPTKlC5pyPuq-cMPv48mb8STL9FZGPdnCAVAxAeD0vxi1tBwxZw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXeibuuZgaOw6GIQIrIdpjQaRgGW3oLZ7RpqIe0bR7ZdlKPm5BHZtk3mR5i2bfgj8RHf40Jhq2jIEOfqD9lBS00tjbcEJotJEstlLunQhoIiDGNHF_pdUefefzjcfX_GZ4VU8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2D9ARpSJk8Q2BYJh0WPD4GjRxl2E9C57SUXWJuHJm6l6uLUvYn0gw35wS-HMMYrkoLCm54g7Dz4Qo-n6A-BYOEkjIE5u1nzJJMk-TNxIU_7mkzuQTUNmr4y3GS7PoWk5w9ZU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPkIhypNR7XcPXvgpfCDnSoCbiTEMcx8xWIw8RI8uxehNAZEcRcdex4wDRMcuQCQH6Cl2qutZwLXA_y_nt_GdIPzr5y-iXUhfisEmDeYdZI2p9Kyz1ZXGR6cg1cdn0g2PbBYaFFGF8f-kePg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhmU_KUVmnNCD-hJzxdIUSMwIocW7yqcdv2N6H-Ilv3xkfak5WIdqzXzuUcdZdjJdYt3f-TRM1b6uVBo8e6PGIkG7Qg-xuIGHikm1diu_a-qSsp0RUDYuSTjAN684_ys2jIRRVvPkkoCBsU6pjUwMxrSN02XjdKtZ5HnOZkVHEohm9jgCsAX3bWjKWFY_wXRsXwogzR7ocIWWQVJNhbhL7eYdMfkWfcIQev2xBa7vMYKTIgIKDTgtB3aIb58UAXd53Ikt9U2zzcDI6rYFrNTPCCYoqNYwAyzfWK5XkawwCHQnvYMlW240tXYyjet094oVncCD90w6Nrt5aFRHbPJP0fIk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEACkdo98ITZbo53lqbX3LK-wrbp_tUsh5RkXburPRjgQ7banJXhRNfBmwKmPamPA0wlFVvNXvZqrxsYOraV_Ot_Rf1ukeLXGGnyvi_iGzU_yfYlwdld0eXDonNKGpSdIWmQHxqE1oGoXwAcw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsr5NW4W9nfpBdcqB712BB_cA2DdLVyHYQGiQewISaBobqmzo_d6TQM6mo80v-oSwPBNd5hyLuYWEBpaKhF7_C4-Zg4AqiltOOKUMq1egibAWXagXsJ4WjTERs4g8dIYhXg_U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiEJgas0QqMGX8ixXO8SKqjEM624E8AJb_Ut4MA7ll07JIhVm90pr7OnJfuxgY2MoA-8shdAlpCccXAZcqRO5pc3EPEXinEiH38vQSJ9NU03OuhwxzQxz1Q3Ts04976unfjbQ="
+        },
+        {
+          "title": "respiratory-therapy.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvsrx_ilg008lENtw9i9RXSHdQYJLUqY8ai5YzUBt2qu7i0JaSx5NwV3yGb6mSMNCzbzz0EDrwowB1i8CZL6KCKWH4WSTpv8M_MkWTWLJBCNvEUg5lng0oW10EQd61zQ4G87Wgr2rlt25a1t1Oy9Hc-09zGKJZ7tShLKB1qu9NfpYYdvvrxq3ik2IPvgFleeYZTz3KwYBlalalNfs3HF1HiO0_dmavvlqFxU-Jerbc7efA4utHqSN0jgVXl9LDwXNbvJrp2AbIGBKrZUvfliOh"
+        },
+        {
+          "title": "ClinicalTrials.gov: Fluticasone/Salmeterol trials for Asthma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asthma&intr=Fluticasone%2FSalmeterol"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "100/50 mcg - 500/50 mcg twice daily",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 900,
+          "monitoringCost": 550,
+          "sideEffectManagement": 75,
+          "totalAnnual": 1525
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3389,
+        "costPerResponder": 1794,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Fluticasone propionate (ICS alone)",
+          "costDifference": 525,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Fluticasone/Salmeterol",
+      "nnh": 1000,
+      "nnt": 10,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.38 L",
+          "baseline": "2.5 L (65% predicted)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Expiratory Volume in 1 second (FEV1)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-0.63 exacerbations/year",
+          "baseline": "1.8 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Asthma Exacerbation Rate",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+3 points",
+          "baseline": "15/25",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Control Test (ACT) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-1.4 puffs/day",
+          "baseline": "3.5 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Rescue Medication Use",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 85,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.5 points",
+          "baseline": "4.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Quality of Life Questionnaire (AQLQ) Score",
+          "percentageChange": 11
+        },
+        {
+          "absoluteChange": "+25 L/min",
+          "baseline": "350 L/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Peak Expiratory Flow (PEF)",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "-1.5 nights/week",
+          "baseline": "3 nights/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nights with Waking Due to Asthma",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 12
+        },
+        {
+          "name": "Pharyngitis",
+          "percentage": 8
+        },
+        {
+          "name": "Oropharyngeal candidiasis (thrush)",
+          "percentage": 7
+        },
+        {
+          "name": "Tremor",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 189
+    },
+    {
+      "citations": [
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDknRPrfhTUWmSc0pzr7uZ9m1qUTKquRbdAEx2uubOXjYF06jJTPKZaT9-aO6nF_GVWTWouifO_wNB4ZrbkTR1GD-SVwbMEEi8Tu77vl5XJQTrukB4v2Sr7dJwf961cx9ixews1rZdD5Oq66O4KeRPXsmvz45hPL1_gMzm"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb1zi-TQpTimYWcKHAn5xBepQLGIKC2VfUdCvv-XbOGp_GKQlncaBK9OoI3dJ5nLT-1h0uYf34NWOmbyZFjRHoefr2-UzXkJ-44ddkWY8swxJ2i15HtWWE4jbskhKh13WuORg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNG3T84rC42WotriYGqZT69gCttEAXIz4MGNOD5zHqIoXUGPKewZuhZtxsY6pcKzsPn1u_f5skRVLVZiCc8qAc888Ok_go2dUcv3qmLXRi2xIKFTTqDg4qin4y58-UgTUKPQcFU1rkTepD6XXPKbV9eY-AAjsAJeB6BZ1i-eyH6djXMpS04pfQLrl3DKo17Ve1v3J0FVkxIG75-iCS-CT7_uzxKSlt0kH1s3qT5W98wtVyy2RhSDnoWxPaDSwzfwzBOKpAQ-6dNcWo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEchbBHzl-QTZLvUu8sIP7gsvc2IB_f-ni1wduOdmy1E9eSZhIDQw_hH7gb-eGuNv2pOpUbFKG2b-KXzvZGb8bd2sZqFGLTxMvmBztSzso_FlbP_nEeLQn7hkGY8TpKiuSe0ZpI"
+        },
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3MZa3EJyHYHpm2FDNo3O76covo6s-ykopCzmtWRdj6jGwI8ceOljQxTXDjaLJOzB3XpLeRgYwLIc5nWtHfjNssZU0XlSgexy0xQ4qOV0eloAbRs07Hh5mMUQp0eVhpmrLjkpeQ6CjN1V9I2qkbT0="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2Sp9j4k4aEDRBMekwL8nzPTWyZl6k8VWoynyluCF7VPlg9_q9wkpZ0Y_nbW15KE_JP3kBVdZBNvPgbOAeNJWf5gDvpeE8tx5-Vpu1we2CVZHQFnQBzj3RpkKJTu3Z5bBMmhWtZj4G3tfP9g-_VaiB38ui3_IkEnaCvxSDRg=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5saBIHswybnA5WSKlB9OI8L-u6h_NJ8INMFre1ZjZrj8_MXo4ZH9xGm8oji-k7RPJmCJmDynPEtj-GdP66-86ekdrs4VI1gW9sQEso7wKHs9edgOCV3l32BKWQZGzQ6AriYskTl8Sfgw200Nwvd9OzTjW"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWGLISIHQOZvAZVFd5ViYSREDXGrUIXSYF8W-FicQhcbAVsevQPJaiJgJVZJQREU6adPdHAw3RCyFjZCtmq1z42WLnH9_t5o7djp10v-OOpyZ6v1pFfu8L2GxodPtVVa5SzLn7"
+        },
+        {
+          "title": "ClinicalTrials.gov: Fluticasone propionate trials for Asthma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asthma&intr=Fluticasone%20propionate"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "88-440 mcg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 450,
+          "monitoringCost": 500,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2857,
+        "costPerResponder": 1333,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Fluticasone propionate",
+      "nnh": 100,
+      "nnt": 6,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.3 L",
+          "baseline": "2.5 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Forced Expiratory Volume in 1 second (FEV1)",
+          "percentageChange": 12
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "2.8/6",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Control Questionnaire (ACQ-5) Score",
+          "percentageChange": -35.7
+        },
+        {
+          "absoluteChange": "-0.48 per year",
+          "baseline": "1.2 per year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Asthma Exacerbation Rate",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.4 puffs/week",
+          "baseline": "6 puffs/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Rescue Bronchodilator Use",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 75,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.8 points",
+          "baseline": "4.8/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Quality of Life Questionnaire (AQLQ-SF) Score",
+          "percentageChange": 16.7
+        },
+        {
+          "absoluteChange": "+33.6 L/min",
+          "baseline": "420 L/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Peak Expiratory Flow (PEF)",
+          "percentageChange": 8
+        },
+        {
+          "absoluteChange": "-1.25 per week",
+          "baseline": "2.5 per week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Weekly Nocturnal Awakenings due to Asthma",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Oropharyngeal candidiasis (thrush)",
+          "percentage": 7
+        },
+        {
+          "name": "Hoarseness/Dysphonia",
+          "percentage": 7
+        },
+        {
+          "name": "Cough",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 394
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-PBSxpzJ3O6IoTd8yiSXFhh_UdWEznuDSvNy59MGLPBcJiN5uWGonRG8apsEDsRTaYsKLH23TENbolL_4oKls74HmoqMsAt9MhGNkAqa3chUVfEkG9RsQ54zgpZrNfNd7T7DKrLOhhiPKRlgw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0vWV4yirbXytgSQej456zLTtM-QkA8B7YPXm3D_eFS9l3X1XNAyDxnrQTawRqmcYW0W8ogeLCdS2LR46pJtoK14wBJSiwj1MxAgkAaHifX41pV43JOR8zgKs9Vv5XIO2az15F"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfE4ERrWD_DDwJ6hOWo4xJFj_-8uV_rG9Feqe--SGyLvAYM0iREECjI6gGjV2NnFSYXj935W5MMz_MgPnQMY4c7SdrK_yXSC9uP_iAXXeey2n2HvpmJQHrB0_CybYCofVnv0wvMstTNbEuPUI="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH9OnFZOOcoUb4J99Ehn6XdzHgFDWzQ4Gzrtac6jA-2S-WDGj_CMesN2kdkdBh_ePJYbSQBzb4QiVW6jSi-eUKCRU40Ifo4DIJXFCGEiNv9-yAMHdNheSOB1pvPgRuHxLiH6b5dE6AgANSo0YgXXfXB4BhXlMYQ7odJhD6tdvprb_d5NQB8qBsJfHgSNpP8dUmKpxF-OtGATJXC_vsjIVNj2BzgvGH2WSc40vfQptlLAzNf9NzsBd1xAlEpWYOfzOwW7E9gw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmJ-BWedS68PaIUSClCmrBKNFXGfedIOd4Hdg4P17bqTNwNI7e7LUBMOP27xZzIHuAzGLWMM9XJoo3uT0Kk7v4CPxicF-a6KcDqABWcuclM__WPvEKjlEpX5xPymY5aw0TsGFNp1KU3-ViVuyvkBJHtYMSjIiR9qjo74ygg6bLTYj-Eai4vNYwNoW-YZL8y0V5_P6_2aCoQHOC25bgBgO6OwqzzuNRjcIjPOgjJHs4nsppIngueeptetycephEDuDhsu_4PBwWMuUT9NIf6JDa6g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDShCz0Klj3Se8xMfn6KQpMHufBSoDlvLskBoCOLoPyp6WA7q5vhy0WPoOmF1fiiCsHHHOcdIK4CzHYMTNumJupFXcgHd-LfzUDihGvsD5HKO1LDw49laQ4H892VRiwdxWtw10"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlg7OCWBB4bT2y8uiiEdZEnG3ElhBls6xFUq014cJkb_x6VF6cuQVs3PN7vRLfqeSZq_9Eyt-M4zRUqFmOFK4-3DnuabhUUsBWJYHo0pDBo3kvKC1u9PoO2AwL-UWYbH64MktP1VlG-YHLilGIp_cZOZ15wkO5Rny9q-1Vw2RA21prFlpFkdyPgpv6C6A5OW4q"
+        },
+        {
+          "title": "xolair.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfXcVDF4apljLcBYyPm_9I5-UfUF4Ln7S1DqlxegVp3zNwAngQ1j9RF56t23EHfMCAAfTYuf2fFzAdXxMHVeOHhQNykJX68gUhgO44rEm16tpTQXLqwWF9QnJ05xAuIvs83eE5MTjHKivMci8xAKCkCr69Z2zGxn9Fluek8WpfRBT6EhLT"
+        },
+        {
+          "title": "hcplive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7kz5RFQo1beXusQIW50GKU8ofg7q_XzusGs5apxiJ1sGHKaBjfPOREa8bP4CSfqldWSwLX9lqsMlUjHwlD4_OENulu1fip5_AOcwZslFekeR9wTB77BITZLgRnbDVOzHaSMpMED_jMuMZDAk0oapdXuOg74RV6RMSrQ2NnLY7QAb2b2nZFLAhXcKMfZq8BQ=="
+        },
+        {
+          "title": "xolairhcp.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLqGuh_quoAMfVM5-1wDEUEiErdudUoC0Ylfy6qc8_mgctbeDrUB56HxOFh8u4aPEP_OJmx2jujC-DINmy8hEyoY7VcydLKUHVs9YpBvZZs5Alil827BK-ds5K0sQgtzJ7RJusXctf14ODustEh8YI-EglmU21Ahj-YTOi2llAEGKtmtGj7M5c9Dce-QQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Omalizumab trials for Asthma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asthma&intr=Omalizumab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "75-375 mg every 2 or 4 weeks",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 26200
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 174667,
+        "costPerResponder": 40308,
+        "icer": 150000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "High-dose ICS/LABA + LTRA",
+          "costDifference": 24200,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Omalizumab",
+      "nnh": 750,
+      "nnt": 5,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.48 exacerbations/year",
+          "baseline": "1.2 exacerbations/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Exacerbation Rate",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "ACQ-5 score: 3.0 (scale 0-6)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Control Questionnaire (ACQ-5) Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-7 mg Prednisone equivalent",
+          "baseline": "Average daily OCS dose: 10 mg Prednisone equivalent",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Oral Corticosteroid (OCS) Dose Reduction",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "+0.15 L",
+          "baseline": "FEV1: 65% of predicted (approx. 1.5 L)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FEV1 (Forced Expiratory Volume in 1 second)",
+          "percentageChange": 10
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.8 points",
+          "baseline": "AQLQ score: 4.5 (scale 1-7)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Quality of Life Questionnaire (AQLQ) Score",
+          "percentageChange": 17.8
+        },
+        {
+          "absoluteChange": "-0.25 visits/year",
+          "baseline": "0.5 visits/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma-Related Emergency Room Visits",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.5 puffs/day",
+          "baseline": "3 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rescue Inhaler Use",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Injection site reactions",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Anaphylaxis",
+          "percentage": 0.2
+        },
+        {
+          "name": "Malignancy",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "long-term",
+      "trials": 112
+    },
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOBvuXfvqjYze1K-X7sMOruUH05qXg9eKag0bW3ZO8yDXZN4vZXIwQBYnw0Sj1Imrr_BpATaKldeywiKUoJ2KkgUdsHeDdyHAG8UKhojbJAnjaAoW57oVf1wYCXbuRJQ=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBSBwsjoqFPittqTbOfeUJvFIcxX81NPtkzZ4Gv8mGUMx3o9WQQ41qkCtZ-mZ3gzdsl_2TdIym6UAB2r3hhdRol1p10e9l_Hxr0Z7cR4Xtjn5SGf6TcLup32GIXaevCslJVAHqRoifXfJIGw1WLeK-eUyVUho2LM8YHTCFOQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdkgK5-jxs3_Wer5xvxa_frFzeyW-JOEPVg_q7xpvHxUiJLDY3tAylO696JSiMil9jl40k-3bVt3Sc7uXFEl4ei181J7PVAcYl4_Ugpp7tYPDSwMgjuy20upKV3B8S15zJOh_4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIuIxhPhag5yGBBmwkNuLHkZ7nykmSrq2zGQ9-v_uk1Q_4z6dIUmD4GFGQERsDNrVKbzhj8hKvFsTFmFu3z2rh35yZ9Vp9wCYJHv_SQBqLEIF61L_uSicpo88HJ0KEpAgkREsLYKUu-fq5CSA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEheqUyAlE5cWGctUJ3JpVBbNvi122SgxIzKrDU50NWIDrpdgiYtd5PN92GPUpB5Cn7qy2S8-0h-cJ1wDrWVgrB2HU_WA7-yc1YXAQdUxn-VERDyEKKNmV-cUP4oqWaCC8NS2JY-l-oJ0Gps5Fw6qy1dYVg3jyAvLjbYvc4haQh_MTzf9sNcelHgk0g6beUyg4BacTuIrUF9TdWuVnMwacSznG02Fxr0c1PyP4_cXK1JTs_prX2mKrwzrcpPoPI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEuSxKdAMubd418mM4cqHESwnz2kfqek4mbE9mGsupZOxcJxUYlH-IJKEcxOl7ZU7vmQoNAHfRu3wquuj78Fi7osE7Aau7wcUNb-9xufdjETSdEUDZ8PYwq4ziekq7aM6erctqgiCYbMSyvFg="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdbIJ4cVsu23VdeRX1FkIyYzv6_X7gZ-UhitvFIKrpS_977Ju3cf9tEd_Shs7xAiD5jZQe7DGol_qX4kNWGtcrKL25NwV_ahG0z0Suzrbf8R1GiB9xIX2ZhZ4Rga1ksUSUDIOEdQeRyBWgcoLM_ddqNsQDD88_GFyg1oyFBBMfWXv5gDFUcpx6vFCZCU5LPEaFdMPzaB6zTAvNTb2XyHvc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt6baVKmTuFzTT2avx4-YKoY6LMTknZaUGVEJSj2zG00lftJIVYiacBsR0_53I4FiDsQrfjHJ2EKOy9MBRNGWMD-OZMLgsfPTJ9sjaddrH1c51aYqOUzbvviq14uBI_Gq5bfc9nFfgBA8IYUL_eXdVN68RNbKUVeS2ccVfhKs-pbK9xtTJmhEIFPCcKZ6QX596E_nkLCw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuut3pWp-gTKh56er7eMIdC6DZ43ljmuVgthomRbV7GhIFDziE74zno1vAoGj0q5FFJHCV_1zzbQyHlbMPscIyrUg-26KQ-l6jTqVkNP_7pbjsUKb7ua_8xqxcRdU8uGzFD-6GUQCtDn1XPCo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGI1-KOEr8U-LwWR7lw0XvmazwKHYCO-mOTmvoFDhmWdzZZr34MAxTt82bEWMn-xWu3f_hf5aU933NjayWOAh8Dj5rYqSk6lKWN21B_3Pe1G-IIbGxKN2nd0-PcixXkcVWujgtFevYZ1hySy7E="
+        },
+        {
+          "title": "atsjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGySnEl129Xw_9nJ8TNC3DN2Z05jBBlyDSHVOR4HmhsePHgnKW6X8yHkMIc0rZRBscNvvISCEMxdjC96j7ffDYlt2iiGaNKyE6ZhmPrnpIPz16ufOQiUSjhCE0aKHhW79x_ib-Utpm8SUac04n9zZTNsNR0CuXvXzeF"
+        },
+        {
+          "title": "ClinicalTrials.gov: Tiotropium trials for Asthma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asthma&intr=Tiotropium"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "2.5 mcg (2 puffs) once daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5400,
+          "monitoringCost": 550,
+          "sideEffectManagement": 50,
+          "totalAnnual": 6000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 24000,
+        "costPerResponder": 9231,
+        "icer": 60000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "ICS/LABA combination",
+          "costDifference": 4475,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Tiotropium",
+      "nnh": 500,
+      "nnt": 12,
+      "participants": 20000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.15 L",
+          "baseline": "1.8 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Trough FEV1 (Forced Expiratory Volume in 1 second)",
+          "percentageChange": 8.3
+        },
+        {
+          "absoluteChange": "-0.5 units",
+          "baseline": "2.1 (Scale 0-6, higher means worse control)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Control Questionnaire (ACQ-7) Score",
+          "percentageChange": -23.8
+        },
+        {
+          "absoluteChange": "-0.2 exacerbations/patient/year",
+          "baseline": "0.8 exacerbations/patient/year",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Annualized Rate of Severe Asthma Exacerbations",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+20 L/min",
+          "baseline": "320 L/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Morning Peak Expiratory Flow (PEF)",
+          "percentageChange": 6.3
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.5 units",
+          "baseline": "4.5 (Scale 1-7, higher means better quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma-related Quality of Life Questionnaire (AQLQ) Score",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "40%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Asthma Symptom-Free Days",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.0 puff/day",
+          "baseline": "3.5 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Use of Rescue Medication (Puffs of SABA)",
+          "percentageChange": -28.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        },
+        {
+          "name": "Upper respiratory tract infection",
+          "percentage": 8
+        },
+        {
+          "name": "Cough",
+          "percentage": 5
+        },
+        {
+          "name": "Urinary retention",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 53
+    },
+    {
+      "citations": [
+        {
+          "title": "ersnet.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcn7_sVRrYNu-5-fhgHo9nvATCBluVf5piH2perX1RHnH1nKzh4-MkV1rhU9UVzUI7mV-PN4zu3ITh_nORD6QuUEJSj8qrB5iW4kJ9CPPusxAnhAImWw21L1mwHK9SpzA9e1KxdGIDJTQDL7fd6BjFaVv0rhdJ"
+        },
+        {
+          "title": "cuny.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdTJIEd4n2fb3PJHx35XstxlBcrRO7AoHHwMzrTDCARRddE2z0MukLQqZ1_vU4Bu5ZClLsiSaNC_cTsWWLy9wSD7PRZaJO4qPqDbKNgTtXJlvn_ob7Q9WhdP8Sc8g8mBZZxc1yaZu9qX8MhM6mZiyc2pq9Wo9sBW-YAAggODmvp6PlikQEZjnGwny7hlc2QzMD"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEO8z1FH2B5qquyIyCwIWN13QsdyEOSzelzwqv7cxHXJwESz2ipYue8Bjnz7zSt1rkf7NVoYBT-IfvU1Zl3LlHDIs6_E8UmAHbOhKeS_zXb1LUscEZJEFo4lV2R3Z43ovNlkXV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKLNychtgdWvm9YWTMx2mNVTWBvvyHRfkDqBIvhWgFj_-vG81A1tawgKsLfbfT6cTl8sjMhz1CzcrF3UXpQMuz4weRkquYBHOc6qeAphidilzpZBpcHUXhA6OWGftRTlm7Frg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC0oHO1Kj3lcH4O6ElvIpiNqN50ZtFSUZu7Ir_QETr4j4QljQ-ZO06ousJ3rpDaxwMrTKWVGsHB84ZbHii1iGBId31pieVmTWESA1TcL-RaoVkKUg9gNzt65aHX3aTVaPTKuTj5Pon6ZZyN9CIsqg4upkKeTDuCaBMhgGPb6Roz2Y1N8pIO8ijWsM-YBaXbPQ7JY9xgnScmpEa61_FomYKrZE7n6h8Pnb9k0eiIHE="
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyHEByY3r9wZmwvfhGnMIKVOcdydN789DBJBPl69vRI_-6EZQjNp_KThioecAWljXxlsLnRZaUKGWEN-47dUawPigodC1c0OoMVP4WSmlr7J5mhjr8Efv88BJvNWrEruDvsA9pEbzLqDY62KMF7JIBQnwNT17qvbk8ZLJ-5_NSQrl6baVpuYExlz6bD7zpkLMvOK6zWURdzWd4jspji-ckG-auhG8tS4v8RmF32ITW3MTC_wUDGiPAw6OD44Y8tdc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErEys7iRLynfwGU6XVvCn6jPWs-CRpAn9oRl76DP1GeRQbWx5T7uxF87wU8mrdqMoU0SPn2LuzF5n8fP6iaSfrfR2Ne2fi81w9IAVP8jsmZQFbcOTDL9DtkwLUKP9lbPdf7Kb6x92B0iDlZ6g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESnAJl7fcHoMeBFIF8Zbli_EEw4SaxYXjOGRq81nXlXZ0wmcw4gw3AuE88KTTE_kUM8ivr21HMFhFGMuqKSf6S8EYcBffSySYanNZ4zGeW0FbqlsZlxuBRbeesbEaWZOetixd8"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUe_9ZAR4vyjH9O3EoAh65F1pirwEuKo6p-X4eJAS4f9bGzgXNHmBSW4yW6qynCNO_fnlf5WfBvxGh7nbw3lydCsi0_D5Muqa1cH2jpAhq6NI1AuIuSV3wfqvhZNECpAwFfhrWS1MGrETVby6CkDg6Zie1hUYGbE-mQNkUzXAz4ilKvGynL-l6x51q0ft58ToRuSPKfmO-bf76Eg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE63YhFTSY2J7KeTtVLCYrHeeFFCiMZFPb9cHStplbtRADGHA9aiRE-3x2G4_ug50ReERAjk2qyZFoSAiUAZhBRrKNiLM6OIXSQHlZPxPEkPArzWWf3P5ebYKYFR40_C3Ov8MAG5plBJ6etK7c="
+        },
+        {
+          "title": "ClinicalTrials.gov: Montelukast trials for Asthma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Asthma&intr=Montelukast"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10 mg daily",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 500,
+          "sideEffectManagement": 25,
+          "totalAnnual": 705
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 4700,
+        "costPerResponder": 1282,
+        "icer": 25000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 60,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 180,
+          "annualTimeCost": 80,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": 240,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.02,
+        "vsComparator": {
+          "comparatorName": "Fluticasone propionate (ICS)",
+          "costDifference": -295,
+          "dominates": false,
+          "qalysGainedDifference": -0.08
+        }
+      },
+      "name": "Montelukast",
+      "nnh": 1000,
+      "nnt": 12,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+0.175 L",
+          "baseline": "2.5 L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FEV1 (Forced Expiratory Volume in 1 second)",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "-0.4 points",
+          "baseline": "1.8 (on a 0-3 scale, 0=no symptoms)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daytime Asthma Symptom Score",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-1.0 nights/week",
+          "baseline": "2.5 nights/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nighttime Awakenings due to Asthma",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.0 puffs/day",
+          "baseline": "3.5 puffs/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Use of Rescue Inhaler (SABA)",
+          "percentageChange": -28.6
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 55,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 points",
+          "baseline": "17 (on a 5-25 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma Control Test (ACT) Score",
+          "percentageChange": 11.8
+        },
+        {
+          "absoluteChange": "+0.6 points",
+          "baseline": "4.5 (on a 1-7 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Asthma-Related Quality of Life (AQLQ)",
+          "percentageChange": 13.3
+        },
+        {
+          "absoluteChange": "-52.5 cells/µL",
+          "baseline": "350 cells/µL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Peripheral Blood Eosinophil Count",
+          "percentageChange": -15
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 12
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 5
+        },
+        {
+          "name": "Neuropsychiatric events",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 178
+    }
+  ]
+}

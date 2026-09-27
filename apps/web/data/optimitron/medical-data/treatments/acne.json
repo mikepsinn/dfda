@@ -1,0 +1,892 @@
+{
+  "conditionName": "Acne",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T12:13:14.811Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYxsO60UBtwv2ChKF4eYKUVkuL4RKTuV1ahSErlvHdqEW6TQdu-yLjxmY1eGMUkwiwKx9rYPjpyPsG1CkIfxIqDzgYjF94iP5D_TY5OD7qpnz7bY-DQR0jRQVyMM-fxi3lfw1T"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBmkMznK2FteDO9sK_nSXJUSuuvz7gS77XY2RvkCPbvyxnsTxcLt517Db0hA-w-F7SKPhzzP3Mjdrx_InYXMC4wb5Cvub7bIunpcIm8ZBDe-xUWT-1fseCb54gdsmksdhJV7oo"
+        },
+        {
+          "title": "kcl.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkI3gU30h7IaAPKYK5KtKSSl14OTHvusJ3MLoWCd38eeDz1KX1ZA7auHRFVJiPMlbnuWM3PZUEJ3CrUXyGKcQ8fhp2giDLt9gOywo8u6lwv26QUTWLxEwp-3WGespufYKqZo2RcHgBZPBCaSE8a_A-ojDulskiG3NftQhFC06SEo1ATnf7MIt3v4GpajBuTQbV3yWKOn08D2a_qr19HT7XRrE1gi8RNg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExEY1szta_uc0Cg_krp2SkyOma-Ed1QS9IJGN3UUh7SgLSGiUzumIvdTwabA3hzGXnD5aUyNLfgOOAb4iXxANxaKEjfTv1omHkR3fKj5j3-ecGtBm_RJ5TE5fITWF0VGT0PzBsDFf-8Tw7LrQWoaEgESbFQwcYrDSOI0WorYadgyfaumUv3ce9T61u8J1qR2Y4I32GNztiUKDDySU9FH0ymHFLfScljQD-VuX67XhO-Jpg268GY8vTJNCQhQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-Iv0u4vw2XrOHVEe4dL3t5wCNmLZi9Y8VtGOogZEN_PoqHAJ-dCVyzLO5rxkFcHbd2JaQOcgCT8QCqirKSG9VFMtMftUt8ZFyuh2zd5pYB-43kErYTDVx9GYos6_U0F0Tly57"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy4rO7B39MTWgOvnU1tRqT8bjbNSNymWzaMyNZcvVbB4ccu8AsIEM1gp8KynUGRmuo2WprIEPuNS7rvSodzuwev_W89b06OC7xVvS9OoYDeGVgy5AnOlxehj9TwoR-6m9hKO8szu9yIpIwt2QhSNfslCSTKnm4bzwteTOaxfsrpCWqpR64oivVtoz9xDhLoGYYltOP8FS3xvh4XTsd61oPrBRh6QfR7b-N"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZkQfZaulPMA7F922VB-IA9Ba8n7Plh91YyRFpL1O7EdWdA4h8W13__SjMSGdyegrH2SUoVvIe2EwutTsp357MfKg0gegLoCWyuD0xFD0-gtY4vpvR8gWjlO1_QTIq1YmG4tqMUt8="
+        },
+        {
+          "title": "ClinicalTrials.gov: Isotretinoin trials for Acne",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acne&intr=Isotretinoin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.5-1 mg/kg/day",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 1350,
+          "sideEffectManagement": 150,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 3571.43,
+        "costPerResponder": 2840.91,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.2,
+        "vsComparator": null
+      },
+      "name": "Isotretinoin",
+      "nnh": 1,
+      "nnt": 3,
+      "participants": 75000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-60 lesions",
+          "baseline": "70 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Lesion Count",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-28 lesions",
+          "baseline": "30 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Lesion Count",
+          "percentageChange": -92
+        },
+        {
+          "absoluteChange": "-3 points on IGA scale",
+          "baseline": "IGA score: 4/5 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acne Global Severity (IGA)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-2.1 µg/cm²/min",
+          "baseline": "2.5 µg/cm²/min",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sebum Production Rate",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 88,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+24 points on Acnes-QOL",
+          "baseline": "Acnes-QOL score: 40/100 (lower score = poorer QOL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acne-Specific Quality of Life",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-3.5 points on HADS Anxiety scale",
+          "baseline": "HADS Anxiety score: 10/21 (mild anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HADS Anxiety Score",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+45 points on satisfaction VAS",
+          "baseline": "Patient satisfaction: 30/100 (VAS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Global Satisfaction",
+          "percentageChange": 150
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dry lips",
+          "percentage": 95
+        },
+        {
+          "name": "Dry skin",
+          "percentage": 85
+        },
+        {
+          "name": "Dry eyes",
+          "percentage": 60
+        },
+        {
+          "name": "Nosebleeds",
+          "percentage": 40
+        },
+        {
+          "name": "Muscle/joint aches",
+          "percentage": 30
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 25
+        },
+        {
+          "name": "Elevated triglycerides",
+          "percentage": 20
+        },
+        {
+          "name": "Elevated liver enzymes",
+          "percentage": 5
+        },
+        {
+          "name": "Mood changes/depression",
+          "percentage": 2
+        },
+        {
+          "name": "Teratogenicity",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "4-6 months",
+      "trials": 45
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZA1Ozdc65YQLknahN9WTFQHzYvmNi8Y_f_JYNaidiV-T1AoDvE6_-rlg6Cdod1_nQT8xB48BNPb2HJECpZTJUHE7lKg6Gh7JDWXkys5nngvXBxd4H_7zNWlxL_QrTaWD29j0C"
+        },
+        {
+          "title": "caldic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyPQnmSSgdLOndmtOIzKyvbqXt3xmkD-FUh2lJWBnpKxqKMCOLWlvmb9DsWnOj8_KNy_SVrd0R3ibpf8Kf1M1YzSR_i1-n4lH8QNaUo6ltcEFtGV0CKLP0ZmpwGTw541LNZpGUiHFEKJai4HUAgYdAJWK1ScmJb2n9C3i5Jb0="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBdb2nSfVpuUFSawA4zc5NaymP-2tgWKSvvM1pp-aLXs8kktqOMjMOLMYoRzTdI1QZ1mK_vJAyGVNXkvH15NqtRQOFjzlgd0uHVIxz1AshsZhQcjwQr_NwJj9dX5EyY9y9fZoA6J_6STZaq9YWBVeuK1rbXyIy2M3BKTGlkhsVt0U-2h-M3CmTLXSWXlUvcAZMAxm0QfjqX9f4NqGada4QrPR9g_w3Nmy3v2W8NRVkpxBMD8c8KmWai5dzV-SSW3U0luBr08SqQ_Cj"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEWAaC4hRSG8VrJS8S4Y8V2naUtfM_72z_EY6rlFZN04P4C-2Sy-QZ9KqTq80cqU4M46H-nkqtvY5NRISegVEQGwa-7oxSaBwnr-ygBMaTrUUTxMxvc79Tc1R3MYb54uvvBqaRnJN9mK34a0hskpTrGXDju4L0t6bIsQxRLW4hr9BqOTR-Tw5ULEBt-6oOV1ouF_ffOICqbJm2as5H02y28wl-Hg=="
+        },
+        {
+          "title": "highstreetpharma.su",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8AbBVMD_zNb_l_uructvGJ6GWqWvbTlW9s2ywOnaxqe60GR7t4KBa5gcw2XC3oZSu2nUha1IcbqiM39pOReZThfUwbyWglPohlRe1TeJKD2Z6U02rusKf6GIfQYH4WkDIJUDpiUBLDMUfG6kry2rjmU113obQET27tgJJ6WJgNqgMblLjKo7Ko3AsLw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwjqkh6DcBxiQDda_-NPxXTeYzoLgTzJTt-c39TX-AMvyOm9mHXYxT614T2aXVNYnXHg2DG_0QIZQVctvpqyxmRv0OdGqhDv5BUQUzxUS8kSN-XD7j5929m6qYR5e1xrHWbOz8"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVtPsqnvyHIAyCbVqAU5ZO84kyjoLrV_giSL3tW24DiIi3PvZWJX3VTgeWZafx1suSH9hhgAV6pZxywEVZD-4jHLoCxv3Fp1Ai2vr42FtffIo081snq0xuF02IgC7wovaUH5r1STniV-LRAFlO"
+        },
+        {
+          "title": "psu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsJEYPPwcUllQV0838aj60C5Z4cww3atE06Wk0KP5mwdWcqJoma9r-AU9epoo1G7TqA0jg5GB8TJbN7MEUbKzag216mY2YP76hgaCMsmQolTi5aUXeX-r4fUyZiiZwZFmS8EdxwWF0W7YQCe3__UzGtvijPjtxoykzHG79OCdAsO7Eoe1hOZiL7nlGeTMtAgO_s-2rjXfA8r_G5k862HEelA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_2d5uPszSG0xH_ARwmhDLQq8Fk5zv73HUgnsxiU1gcnMsKheQuT0mrnaBnoTc5as0H6fXg9ksieCDITnwZRjn8FcW-LanDU_3bMwzb9RS7YZDF5MV_jt7Kd4K6qv4GrTZBr4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSWE0TRikB8CeG8weE_9hghLZFfP8CumUaNRp34VaMrEqhlaSRq6j6h7hg8Mmb18lo0enKa9CUwEVddAgdB9PCWCG9gNofNWdPIE3MEy5PMlu1nU4dYQ_4v3xNggKVrR_CodWaqnOxVMKfoeo="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHbbnRpKrxP929jJmIJJZnMVYJ6lk0EhxPW4t9lFSUBuVEc9w37JBy-87uKq7B843FjI0TbA_UtRbCU7Bp42SN-wLgvDqngtL3Ur8imkW3c3hs6astEvt_EciRC7BhfHnzngAJTGWp2cL0OMA6Ca-LfuS5OpJ58-GqEerTvaPeRNWD0qOXgEvOgg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topical Retinoids (e.g., Adapalene, Tretinoin) trials for Acne",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acne&intr=Topical%20Retinoids%20(e.g.%2C%20Adapalene%2C%20Tretinoin)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Applied once daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 545.45,
+        "costPerResponder": 400,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 30,
+          "annualOtcCost": 60,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 150,
+          "annualTimeCost": 60,
+          "earlyTreatmentBenefit": 0.1,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 280,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 200,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Topical Retinoids (e.g., Adapalene, Tretinoin)",
+      "nnh": 3,
+      "nnt": 4,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 55,
+      "responseRate": 75,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Dryness",
+          "percentage": 30
+        },
+        {
+          "name": "Redness",
+          "percentage": 30
+        },
+        {
+          "name": "Peeling",
+          "percentage": 20
+        },
+        {
+          "name": "Burning/Stinging",
+          "percentage": 15
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 20
+        }
+      ],
+      "timeToEffect": "4-12 weeks",
+      "treatmentDuration": "Long-term (years)",
+      "trials": 2000
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4W-t-zAFDpPSpy4HQH0r0nE8HwyvE51HUbvec1zBr86sxAdFxpdzuFU1HUKofi2FjEu5INgP3Wfc0Gsn6zbUwo-Q7DXHQwALUcTDaHf_DVLGZUR0Wfev0WxyRWDJnwPee34X5-tLA219cgsBiw1PKPHwqJW4rmV3FkUIlFi-3ND6Ipw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVVBZLhiXtjrbHGfkZyAQrGg1P1ZxFlGYASDbtQrApqAHTXeUC36xh10bSrO_wtD9sHhsSUhjNMF3RxPb1t-bGdtXdPTjVq721trGyfMtyb6ZTMvzxOwhYwH4C8tt7_wGxhlBO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF16mMEs0fiSD7F4ch0bI8hf2G-Cnu-ieQ_x5HQhINMMRC4hR8NxcsfRTLE-aIvtzXUxMWVwhc8aKyC2ziDSzcNt2AYuWPvOxr77QjzWKd2VOzWpfVlBBsUHVs0ShTTa1vnx-WyIz3dYfzvrm5aH66g7rpgh5K8eaxV1pAbzOZppBQgRUC0V40DgyR840PEyqW-PRhflECiJTNe4q2IHbk-NjzQde4g22lPSgSjL_flvztnvNMcplBLtlsc1fI2xdi9gPBvH9_ec36lTDtPnTRLLjh6GRuORAuf7WStRyutoZetlDu3Kdgs53w="
+        },
+        {
+          "title": "scilit.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEexMvFsFTW1Qgzw8R-BB0BW-XnmPUbykR8fx-md3quzGeGoqC9j5hr1SvZ-CovKdFuBn8bVmgPXAl6BOG1zysA1JzyfyrC_47fWGEoyPRlYkmFx6Xo2XmgLdS_NmiQauRexSwvq3qBXYMaL2PxKbLOQtBH-JBWQvUk7JWWpIPA"
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuxwTWdUU4-_FXr6dy_rxYCumJraL6qUwX6xErMEJU_UJUOR5W-wjhptZv7txDhw63JkCUhyzX2qoEllw1nFt98zl6D6Q_U4M2hGDkxxjqzohT6j7dUQA0L_m1vnL2grxHWN_KI1jHiX33Fm5rqur2_IPvdJ_3tIvz"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQmf9numRU0vcr5bejWIsFckzYmR21zhSg7rkj-4w2Itgg6M7dkNWif9SZHtfhSycSO9V7noQeClbSirH9aMR6Kvmvn3wyBpyXWesTSjTTzeadIEkb9S2TucXts7T_o5_8iKJawf8S3GXGptXiVqYjGK3-hkgclriCRvEtLhavAQjLhx5JhqcwF8okuDDdWtYkvfNzdg9f82iNCkX3IqHVpnM4y61accba-hbHYDoYFvhM2_wfxTGDrYMHTw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJno0J3uHzLp4PUQyUzUgD9jCS8cPx7Sqg15Pz5l6T_YTeYdVDM5BwTAu_tVaVHuvsU8FOjg1hP1EaQ5Uxubklkun24D99xdfFFBoN5Jq9PNCZIbAWTx6x6v712K0gpi7f1RJChzaeYrIRngY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUXsg_wjUJChrJcIvsmv6U6uHo-Tbsb7cDKrXW-tc2urqqHGloMaxTA3e1xCJPMPHs5focOLA4ozZyicw2L3r7NN1dob4LiJQQgMdAQYcxiRvG0B_iIj1s6-l9pPMKDqV0piQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRVpx3SEFLAmtaWJnogePAJylAa8mki9ylKSF1isRFR9711BSZoJLz-PwUpaGRdDr9rwVl34DaqEC_AqNlJj-awYkcd2v8ocYu8UqnoXVw6XlvB3T8P7zVRmTCjWTqZdIFJyeZ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Benzoyl Peroxide trials for Acne",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acne&intr=Benzoyl%20Peroxide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Applied once or twice daily (2.5-10%)",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 300,
+          "sideEffectManagement": 20,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 111.11,
+        "costPerResponder": 76.92,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Benzoyl Peroxide",
+      "nnh": 7,
+      "nnt": 7,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13 lesions",
+          "baseline": "28 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Lesion Count",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-12 lesions",
+          "baseline": "35 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Non-inflammatory Lesion Count",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.2 points",
+          "baseline": "IGA score: 3/5 (Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator's Global Assessment (IGA) Score",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 65,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-25 lesions",
+          "baseline": "63 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Lesion Count",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "Acne-QoL score: 12/30 (higher indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acne-Specific Quality of Life (Acne-QoL) Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dryness",
+          "percentage": 20
+        },
+        {
+          "name": "Redness",
+          "percentage": 20
+        },
+        {
+          "name": "Peeling",
+          "percentage": 15
+        },
+        {
+          "name": "Irritation",
+          "percentage": 10
+        },
+        {
+          "name": "Bleaching fabric",
+          "percentage": 50
+        }
+      ],
+      "timeToEffect": "2-5 weeks",
+      "treatmentDuration": "Long-term (years)",
+      "trials": 179
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXTgMGbn2KYLHKlORrk0-GFGtVaypGOXcfwkZwH8npPOklK_U1VLAkdXkMdaljG4EYOVljolt5Qbt_M8DOBQ-IqDQUWqnfwUWigWLmwqdRuhPOm0iHHJAIaMP8PEZiDAiHHio="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH2QS-P0sGUbn1gBcX870Hk-68a1LYTxcTbb53tZ2K3xLcBki6uB33iT5-jRchlxJM12APdMtR7-lu9dj1M9gpUc4NL50WNnnrIoo6QAZt5ZdiBP-hDeHCLZuRZFALJytec7fRbah13LOD9JXXCdodSOIuKh2SMSUuitsklUOB3mOy6_gN9tXUF21nMItLK2IyF3dFHFUHBuClVeHyvCEqsg1EYiBWfXhE0zASMb7izTWH"
+        },
+        {
+          "title": "cfpclearn.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERuJZJ9z9jFYSoH2H8BWYeDjneypWgTSHQPCJPMy9CuCc8RRmCKHGGx7PX8lAL17ZThbDrNbMLyNtghuT79yG3lJQ90ekpl4sfRa3hXvhNryM_HWmq5w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeEio4n7uS0AsmrI-PZkJmLfBkyhfPw6nKLY3Bp4CruZB7Ap9dwDN8CMEaOmhioSUB8gTF-sQa1J_dYU7vKIYbIBjLMwNOcU0nPtUSVMzt3WFtptj9gItH2i1rdrVUY2pBDIO8SmsYB_3Xdg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECn1yfqEqJnrZCzdDM1doAAvx2Ynigz4RLTVUf7AsVYdwT66V_DW07hqUXuH36mOJDmJsqWISslzgtzGQzDjUbVzl8SeZuFaQWP6zL5aKfsNKXabOjI5tBTY9-apc-HwOzSEmfoM69NTfdTOSzseFaXUjfQnk0_BwG4duIxi6m9TqtVXZWdzXBUTO0scTPE2gsZkWPJghgnlIDdLQpXGNDUoRA3lEnwFi-hfhlahgYxxWHyivlnb2POnBA0FF0f7pHJMHSzh9cSMNcesRxmNPAvr_yTq1AiW_OiMJsqY7ndeWmZ39EmLiYVVyky7uGe9bslufQ5-m1CODffM55p9V1Ui0LunuUAt_PI-Ce8lbtOmwj066qfg=="
+        },
+        {
+          "title": "the-hospitalist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFz5vzUssACXvlxfG_uzk2oN9hx_3irvQ2CMFZ1kVMSII71H6gr6vI1MnhQaViOfh0XBBKUxRipIr_9pImwzGNSxzgcSejjQr2LGpdWGKiRzG9Mfl2ViN0ieTS7J-qcSsOEXRQv36xaDCbSZNddtf7qv7MWqb04ZS3iASfC7veE6gJ9RoRb1Lsja9nrOrzeO2yPA=="
+        },
+        {
+          "title": "jddonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjvRNl8m5oEl--OdoFpFlMaGPtmQP96MfvzoBzAZni6J-0pcrIbA2hp8U4bxPf-Y2ZyYFEd7f3hZXX75PY9q5TfAF4lmdGUTkEyA7rAACMtK5zKRc_J-30DL__TF2FKd9zlHNo-_8LIR6Zpi2QcuixbuZDH_IqIrwBInbD3ck2RcN7Ctdh62I60fOiKEJLQUwM2ApFlA4HFhTDqJd7V6EjWs2Ely4suPTOGSBULlISR3X9zmo6FHa5FfHG6wwXbwiKDriJQ6NjobJigvxHW0W9ew=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNcxultdY89N7nJV0zNKXIvQvCkDkupUWyv9VbSbq7xFB9M7NsGWHraObh654JefkCI0I8UkRr0yEKttQYpwqK79ZyV7QUruJSFGsZN4m_avaobGT2tiknDwsxJSXZzcuxGjk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFIjFN3nShArAjrK5PJcyA9RyN8jNeaYHCYp2cx8kRjv148zN021-gIzNjf4Z000b2nBSNsCry9hjxnDZ_vxWCQwF2J9_t8C3mOy-TMQhpNoBf6DUUYFUEEm_u7rREFafRu2hR_VsEk-P0fgg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrmT5pe8F0slMn0PKMErDzgekmdkh39o_3yBUj3UfAYo0RM7zoh7ZpxCFv9R4JYjWr9ZSUv__ITcHqIOZvc0it2S6As_7Qna8n-zjiDQOV_lQGERFDks6TiUlQJ9jrH2jI_IeBK-LLxRhR0h9w-hU1T29v70yKMB-2rAFE28psvmo1PsDjrpQ8bzNVrZ-v4gtBR90KMg_XQFtoUgZ5-Q=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBeotByzS_1fS2twpTQSzASxLTuL8MVfggqhR-LmXjMa6bQTgyKjGiJ4KVw15bR7il69wn89bxCl397Jcd0zRRQNmP2DSrSScwpOgyguGWQRs117YlGMkKTblnkDUtg5zm"
+        },
+        {
+          "title": "medcomhk.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDOPwx8B7JhIa5CdTIs4zYQvLcaKW7rGxin18QVcCGg7zY7_5lDn32BtgBpXNUZ59Sah5ZAmLnbgHv-uHbaabMkkalrpP0pHmaAgc3DSsntA2R3bfX8GLCTt7zdqZQtaH0983hKFE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOQyPTkypF3uPShgShpGD99xpZehE1_jc74RiN-ftD00xiClat5wO3wQmZpB0llGBCXF4mRuENQryUGGcmKJnizW3N85qIxQwYVkrysAp9HPtjGdqItiWyPhqT0PrUYkCzg7A="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHn01ure6FmvOAi9ciZqQjgg-gRXIXlMdBxP3mMIArS1zLDEht-9KQRwNa6bpnKfIEuciOUiQLkOGSsa59VlHVenASEWKiZrmxypFDEybJsVRV1daf1y8sE-fpNBoHgvwoHDEpdQ5iJioPmHAhGVCU5QPvy_wxNaKMbbjrOG2noSKR31GzjIo2JNkFduGzcGXhDv7LQp1s-V62l_pu40HCZOZC6aUgzGOiie6Om2kpjNBdjyPl7pe_NneWy9DESzRNTt6uDcaqoyYwcfIEXQQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXq6Vjf0rsQRTR-BsA-ZjJSZ_MAjPOwNFCe7nD3_UnLabvC4wf5jLWcFTgPKtfTy4ubgfG_DwikIvW3H6g2-1IY-9EpdMEthwvbpCbTHpGfzOAVL6AGIpNFotvt7YRtm93RGOcGlgOU842V34seNCnLbatSdyTNiLk0WilSQyiMV0YC9X_hdIAq1w8Qv0tvkBcyJuJ8Z7Gi7r011Lpgn9hEQrknkIFGEtNJyhUuSJ1lSwnfL0ddWMYRDzpz7jQYDO1iYdE9V4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUkjyNI4xo9-eZfD72wHh3NJSL_T8BiA4GQlIlIErjupmVjNhrwZykHUFYC5m92cNraWbVy2VYkvFmFBv5QXWRiolToS3v3PkTFn7hqj5lUsOlsE5aUsuRchgnIvFENhRuSL4="
+        },
+        {
+          "title": "gu.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIOVQzFvyMUWC39ELxd4pI6GtrgeDesWtGlFysvBp9L6vpp3IAkPfNJJIxTvWmtVbjWPrcCNYtNIDnvyT5WmzcytntfnCUtzZtRzTFozQryOnVdFWDxSBgzRVpzNPdGxuUIJo6BXbN1_UeO10XQlOOc7Ki5ql53TGJLBZw98GvwgoMokAopQxmmn-4Uc331D0QJILni3zLkzwq"
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Antibiotics (e.g., Doxycycline) trials for Acne",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acne&intr=Oral%20Antibiotics%20(e.g.%2C%20Doxycycline)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Doxycycline 20mg BID or 50-100mg daily/BID",
+      "effectiveness": 68,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 500
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 3333.33,
+        "costPerResponder": 769.23,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Topical therapy alone",
+          "costDifference": 200,
+          "dominates": false,
+          "qalysGainedDifference": 0.02
+        }
+      },
+      "name": "Oral Antibiotics (e.g., Doxycycline)",
+      "nnh": 7,
+      "nnt": 5,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 15,
+      "responseRate": 65,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "GI upset/nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 15
+        },
+        {
+          "name": "Vaginal candidiasis",
+          "percentage": 10
+        },
+        {
+          "name": "Antibiotic resistance",
+          "percentage": 5
+        },
+        {
+          "name": "Esophageal irritation",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "3-6 weeks",
+      "treatmentDuration": "3-6 months (limited)",
+      "trials": 400
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmqe_kBu7i335IWxf-rEckAmGPijDsSKB1zLAS0lQC9698kVX-YEYuXCK5G45oH8fCt-GTSwwiIY59KOlIbN467Q1JPMhR-i9NoHPeuKEvBbF1R8eK0rjHoPNwP3qHtx6o1Vw9G39wJfH3MMI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq73mwN9oFMMPZxcm7F6vZ9qwrt7rV5fgg6doRK0BuL28UkdJHsxP8LOF8O-8uuc6veWjeLjLM3LNkMVza-LXsMPiRBsOv6-WtYa6Yz6GZyjKgiPMgvW95OjKBBmsFZV4YJiNbTdv_i8gNSJTc3XuPI7gcs1HqKLhge5-XnAPghJQieqFBQCfpzy-WU3c9Z0hpNpASP2AJA37KGRjpg_-iCh3PjclJIAm1D49f96o_ivzP4I_TZnxWcrgPgdJpwBU8sA6C4xvdsEe9FoZF1-TWmMiO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkT6DuPe9xwc11q2fxMH-pZacrREK0N1HRQUOphelX3L1NUO0RuTP9XP6cNv62UmllsjHcsgfuINx6pvsH6ZejY3Ynwwv76hQ51jFa2jIPoZfMYkyu6xleQg9PZSV3COZrhfHB1SOmrPaFxomnhCMCIIMoMcAme_IgrGSPkM0_zt1adK6mxuKEMhPjJN0t2mw_pjLgf8JvVW0QmsZZ1dKSFbejnEA2Y4OihWHsxPtHMYF_whpcalmGyBBit3fqPXmEE4OlGqPiKOO_wErp4FwH2KDjZDWuwOdbpadkSIaKy4fmcni6CswUoSH_CSFpjgN4OQ7dZoFrUErrpuy453N29PUOnXA7dV23J079F5pw644Ab3-vAJs_qhadhPARiH-shm1lN9rsjFRNIFlwbZeNV7fWs18="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgibCoGIQu6y2dgC-dUYyCOx9OSZzlN8Ej71Yu4w7KvI0UQncziwqEXXWj_aM885m-NfHFHSFzSS6BxsWLQk6WrkIZZkZBFwuAFoEiOpcHkSTa2GMKKToeTmD6_1FDrhrPWP0c8nVTVXPoidlmIe-IVZ1Dx8d-JTCHvAUizj6NfH2pZcLXzvedczfhuZ7ylw0da4O7Zy89ZJRcD2QU5FxRLTe7LlXqhKGs-1aN22Q="
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWZliQ_2fvhlQl2KZpnXzBcLgCdIzMplXnmepv45vsn3LDaD6oeo29SJ6hxQI0sTbqLyhmYa3XTjWtXGxo9Q9h7mwARL5uuylhYfVt3L-KQBnVr4BkGjzr8W2VZ7RMOel-IBDvTA6Aivs9A2ie_Sro1vAfQZJtItE0L1t97GW_VnOaLrCurtqe1spxrmgrRjrXmDvJjQsJ4MnGH7Eqtcam34w1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDaZ1ohu74h20q9eSIuR_8vjx1vET_bxbM_94u4jt4cJkHd3I-R9D9SKbbayJS42L-gCDJ7pwnWzN240Bi0_63KV0Yr5eG0Sk2dXKCDXiKORpHlrAsCHF6x5aLKkkzne-6sk4="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHyiYSxxoPaTZ5qkWCMXmntfdpRMeJGvLohhs2iiJTQSyAjTfE2SnGX3-UZQX53uKF2tsjwhew8RbdAyjy6sXwe1EZJT715QETTCYBnXvrJ-KkzJC0LFNXZCSKV5gynmfdcXZMfnw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Contraceptives (combined estrogen-progestin) trials for Acne",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acne&intr=Oral%20Contraceptives%20(combined%20estrogen-progestin)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Once daily",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 350,
+          "monitoringCost": 200,
+          "sideEffectManagement": 20,
+          "totalAnnual": 570
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1266.67,
+        "costPerResponder": 876.92,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Oral Contraceptives (combined estrogen-progestin)",
+      "nnh": 8,
+      "nnt": 6,
+      "participants": 60000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 45,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Mood changes",
+          "percentage": 8
+        },
+        {
+          "name": "Weight changes",
+          "percentage": 7
+        },
+        {
+          "name": "Blood clots (VTE)",
+          "percentage": 0.1
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "Long-term (years)",
+      "trials": 350
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA-PxgbqKTLyIK0dxF-pvizIyy1lctoOWAyNV248BUI3J7yTya6Ug-OS3nGq7cxs3SoojsoVzY6yIumv2RKN5pyPZdmY3r7stJ2Bfkkgl1n_coqaS-sw8XwEUREOaPDhWQIceY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFG0eZRm7BdFxL1H5UR-uB8NK2JtyiI9O__bzoh6oO8PVLqFtnic_isvuSfkfIo7gE820veQONO27k6pnH67uxF9WwVdhZFEMgt5S00BUog_cIJf__kQOiMTItSlG3Xyiq1z7q"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLOWs6zoHKL8jUHBZeh8aQwFxwkVe3jyGXoJkxKjaHybG5s35lFFz006jzFTX15oUwCg6kaExEZSMs90hHDXdtBmS2nAe1b2g2tNDKp-cnq8PoLHjKpLO6gBrIYrTesukjWUUzLI44pxtqPl6fEQ9xFKmQMrF3tIv_9-VkLIaYL7d_fTURfH3odtBqWhF5y7lc8cOno0T67TNE-q11rkGg9cRI3dVm6hjh6rJrVhH05iGTkkjJ7GG4K5tuEPIIJEw="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSHK9xyz0zKmoWsKEsTDZAwMNw8q0jbFYKD3OHPuEyxKRU62HhUyFKJ3oxfjEc4hWSH8bM4N_cBG4Hns4rTUhU7PoELRU0YlevVkC_671JzRLGLXEC82rDD8VoOtTodexutFm8YJVoSEiC55rh0z4wGl2Yd2GtsyjFHXXnUtLNkIFQ8jpOoGmH9Srp8Z-iNV2mrFoc1XEPFyXhjSF7E2QmfrtkBVHjS42a-hfffo4cOHDN-W9RfiZZmytnO7fBA9e5T-nyHRgxB_HmT3E="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb0qEoCJtH3Y4O3EgcBGiAyfbVr0jEi36Nu7W0ALJXxIbZX6LFC9Mx02Flw_5mt0MyzF20zC3rZ2-lT_5dmWHNs_eFMhD6fJM_zETQtCsbWtQU38fHaZGpfD_BqPcrl0BPmOeWKB2APKR-etiUIaA4FetiSSGH4lFvZewmi-0goRigZFkThOpUMy-Kv3pjZ370F-jdeESKTZHhPpOoMpwoAuAAM8wpu7CBQuDQvbt4yXvYZt-tMU5-kUcYvgMG7Nk4XQg_ma7YO-cCl-iNstaqsV9ynDlgNGwKlrWnDLkT3E-JxPdFrdYVsckVCZBY1kjHVKw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOrONyEh5h88SSmwsOIdNjlQyvS7M3mgZCbzBGBZ6MJFCkPr1aSw9xfMepsKF-E7gZKBPYw6iPs_sJkFymQl8oVeRBSP7FKzD3A3loJlzG71u58dSwSsj02tN0awEOVen-3GwE"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhuJy6w1UiT68nqRg2QS6yhCrpDblnuFTWqC4vTJB4gUrK8WS70yI3R8BsyQmy0HhkeZWKRSekk6IFZN02Uwyxspn6msyZjHxbGirO0u_ij0dQAntoDAO8PYvQIQpNb5RzgAW9"
+        },
+        {
+          "title": "ClinicalTrials.gov: Spironolactone trials for Acne",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Acne&intr=Spironolactone"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "25mg to 100mg daily",
+      "effectiveness": 62,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 300,
+          "sideEffectManagement": 20,
+          "totalAnnual": 520
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 1155.56,
+        "costPerResponder": 800,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Spironolactone",
+      "nnh": 7,
+      "nnt": 7,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 lesions",
+          "baseline": "30 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Inflammatory Lesion Count",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-35 lesions",
+          "baseline": "70 lesions",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Lesion Count",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-2 grades improvement",
+          "baseline": "3 (Moderate) on a 0-4 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Investigator Global Assessment (IGA) Score",
+          "percentageChange": -66.67
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 65,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15 (Moderate impact) on a 0-30 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-60 µg/cm²/hr",
+          "baseline": "200 µg/cm²/hr",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sebum Excretion Rate (Forehead)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "7 (Moderate) on a 0-10 scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Acne Severity Scale",
+          "percentageChange": -57.14
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Menstrual irregularities",
+          "percentage": 20
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness/lightheadedness",
+          "percentage": 10
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 7
+        },
+        {
+          "name": "Hyperkalemia",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "Long-term (years)",
+      "trials": 3
+    }
+  ]
+}

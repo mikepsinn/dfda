@@ -1,0 +1,236 @@
+{
+  "conditionName": "Zika virus",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T02:36:20.444Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAu4gfPFlkmZxQL4Y91Y0vqC5VcNbKdbLvdromBk-YfhWOn4m2tsTEeJXckWXA2PHVbLLeGBNEgPAwYpKspQrUr1m0g9rwUj5SvcGXXbB6nZU1Ym9owZjYxfekChIg9wpTAbR_hNtSAsCV_RXhH5S7fRU02g=="
+        },
+        {
+          "title": "hopkinsmedicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDOXGRuivNE4RoRK-Y66sKN-Gg6sQab9RswAnrVNEOFl5HgqyHynqddn_xRcw9C_Zei2qTyaZUI3z8PE97WXgTr2fpsF9nraECIdx0T3h4Cb5OwgKA5eGxQ1XzExmSDAU9ymChQn3L48A5r-e71sDkDs6xNpS7ffNxIOHEAqA="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6bJONNyO_ZOe1mVD_cO43XF4RCPgtSW2qR_iKYVH0ksrncAFZRxw3cJUDoqkUhZofo21Bt7ffN-Y4y_r70TPVOH339Ik0YTX7MXljjPA2vmTCjvmyadrCw66LYUSyk-2dPqX9CqOv8g=="
+        },
+        {
+          "title": "ne.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMU2XHgVijysLymez6SeYMXsaw031gs9rWMN3V9e2sPPqKsAZiptV5S7Ps85GBxPgGtNIaE1DtqJ9OgzFV8f15m2u29Cvter0e6zdzpe-o4bvEEW27SSRiGp6RW9eo178ha_WR3Hq09UTjr79ayLAdVExYHJhSOgEbuis6jxN0rJXlgxoV78_QogUd2SiSme9Jy9rXfVmDwX8="
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHk9f2sGWtbzR9j40Kp4rXbZ3U51XlMJrP7YbRQCNKbDpt1jwx-HC_QxZGhI_eDSdB9QM-C2K3wnST-7wAiyt0US9v3bDTrCm94jBsXkmMw9lmjLBjwTLyJ6xEPF59vujy0akHTKf7H0Y-EEhfM1K1XnO0r7xJaSN6vzQ=="
+        },
+        {
+          "title": "santacruzcountyaz.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6ju3SvV_2aTk1Qs9re1gdKZ3eaDIX1qMcRSZBVyVWwEz3HagL3kRikCIckWGAqt90owV2-ifcq9Ieke0Rk9IBc1oI3lNJRTlbaCWPicdXrtwTBuOrMihlTHWhtzaCTdcT36zPNJtDs2o="
+        },
+        {
+          "title": "ny.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgeMyC87u6Rsdu40RtqQnVjbxugXwf-PwHd-zMhPqyA4vnKdH93cW4ttQ5m8Wwu4iRUPzch4FcDyYNeVYdvYKhcSKcxrmOUWk3-Fr93rPycgamqBjxbXMh8iA798r6J7kNJ3G7RmQ0dRH_L1DpjQsY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8YswaGzoeB15y72gbbgNp3bfo49nuQGCfUaBgLxAzdBYEWL8qsiLw9ngekE0vbVTMaYJ3HmaHqhE5T_1k7bc9Bel8aDvulEVBzljGuHl0hHgwW0U92Yz3E3LbLVgNpuPjUySLo9-R2dBJVrk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPRi1w6ibiiE8egP4mHli25yq3DXST31C-wnDnkeFXZDvAwhyOGgBmELiN-yUmVyHDWLWnZaQciO8Gq94iDY369NagkAYew1xyuR3pUkEWZ2AwlzIRhZOH9cq1uvzAr7bSc9EO"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMfkJOpebVlrDcCrWWrnbRzkKke26Y8l8Z6_FMV4UKqUlmwWxZJNCXXz4P8atk0wXfPA5oV7nVUR24tYsVXhTfFC4uRLx4jMsBzeX9Qfyn8L2ujlC18PyjtlPwvhTPqAgUg0Z64wO46DQSPISNrmSMcCImxVMpzeYDqqVgBBCqp_QKmPS15Ll1AphLki29EYtSUmzGKeI2t6EBMPT6kG1hBx4N-5YEUOeLFo9VJ7bE_thcGvfsj4VZ_ae3BrM6wlmlEZpfJFv1LaQXbG1w1ofQhwQzwlm5Cqs1YkboCUc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcANHdo7GYw5B0Pyhip-oTMHDgnNY0Kf3jK_yvO1_Bfc_v7mnAyDLKFAPcAP2ZYo75nXs44B1ud8e3LYhxdIN5yTSYsc8pK4GWDtUXeY9FS7QAHeuP_LL9uwn3usHFI6FzfbIS"
+        },
+        {
+          "title": "ClinicalTrials.gov: Acetaminophen (for fever and pain) trials for Zika virus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Zika%20virus&intr=Acetaminophen%20(for%20fever%20and%20pain)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "325-1000 mg every 4-6 hours, max 4000 mg/day",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 15,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 615
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": null,
+        "costPerResponder": 16.67,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Acetaminophen (for fever and pain)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 5000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 80,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Headache",
+          "percentage": 3
+        },
+        {
+          "name": "Hepatic damage (with overdose)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed, typically 3-7 days during acute illness",
+      "trials": 1500
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU5V7dTpBx89I8CslJJmNt-F9PPxdejaSRuoTRqjMFcp7OG7ZGM7Xes6H7dqzWjJKR7VvF4JSDJ0B5FE89GYrB20bnl3B1Db3dx4x_VbFrk7ss2HgJq_cXsHQLIxVLACw3zIxvU46nFLxOpA0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUnK2fmVnE-LX-5HkPHAF3OMEXo8fYRtbZndmErtk99EUuGQA9iKDGiBhAvgzdlAw7-1PJd9y473HMEw1yXU25T3bKaMYtdNBvMMrg1UQ43HfmV04aQkWSvYwfyvA2gd4_n5fa-AHNVZ_Qcs0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOPbRA6PIzas_QJfkqcCymYLg0qrmHHkH9m2NGcoZLLk-vo-XegiIY5Up3vccpDIp90ZDTgLZdbx_nGQM7tiUpxi1h10yCqdNdMaNPzKjfR-0Wwh3LBOwkAuFDVpiXnDYq9vvLkEXkKtWnSfg="
+        },
+        {
+          "title": "who.int",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPJA7g66VFyLZmK89Y-MZ4BsahREExrYxmwg7_ZdXHHSkmP3Mm9RecKkTzf1UqBRbDl5-q2rrmxTSdZLH3eSU3YiK12TnClUnesguQYcoYpHD1XGQKJx5t5lWmo-afetBmNp5RiCfTdTkA6zItWKTcOdAI1nkb"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5zZ3lphZ_udn00VFptC48e8QPjJQVJDjX6iJ-C65Z-6T146SH25QT9wCdFLM7h5pMZDoiIqpg9vzPuXlJddy2_xn0zst34y_CzEFhnbfCWAKYxab1Kmssk4JzuGLgu0SWZ4ZZq0hPUBz3ZoY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJneNEEU9z7DyaDqfGi7mwdHTGs-4p2bjYcPeXnXj-VuhN59c6ErQPH8gJpSlcSwjM8USpICmBxfXxeB7jT0xFkVIIgunPEer1vgGRkhHZpe99xRL6t4XHaFsvx3i4ieBlxVC_yX06bp4rYag="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsVs6jztTmujTQLm33Q1cT1PRw5wRImsRhLj21se4eqA8MSBSEbohQPZ6l6GgNupKd1ND77BTTqSfsOnlGxEg8HA0jyNk7G49x_Z3TvZJ0XvLR6tqUmc9S4LHpSCvhCAxCu0kIjK7HjA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXMYfrwJ0XPlvSL4s_93RQ0EprL0oRH-JdTje8XCu_r78OaoohN80M4SEeaDwyI1AOUAlgRl86QcH0X_FriwNJhe7PAQ6hTTORYnlOSwPlN9NjajuO4HFAZbzA63ltE8TlfZ_fC3MPGUi0rXw="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH36cPZ2AHlGaQC1t4O_kdzZMLi7_r3EDK7daWG7zVWqjFLiXbtshgC3lHYadkV61aXaw2qT4A6F92fF9Fhgp5cNEm7QxalaNJBrmjnSNUfX_7NCsDrFl8x5TMHl7fTpZEFYZ3gPPK0Ny5FJQ8U4SH5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIq1_VOGlVuhciYCbeRLcf5BBE4jj4S6B0o1JaHwta97YKVIhpnKfd-QCg00lebj_Hcqe7queFzd2VjwIgpmrh7nIUo3D5LARvn5kXLbN6uk3vThuRmHgZmE0AJdjg80FSW59h3mRd1zijI-c="
+        },
+        {
+          "title": "ca.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvMJOLjC-bXz809zzAvwGw1SVlBC1aR0Q2GBBbDuZy1sB97RzQa6JqMOeEZmpoMc-33Bt63kFOMWQXdKPikI2Y-bgS0-tCJwWjTg7U2jndr1WfcMDMiFFYDss91MJUoHmxo3QcvMv7EII7l6eVjs3Zv6wwYuMmElbaf3KTkbaWhAjtbVXIUOep8AZzJKunreGecXlo22xSclOxm_K7yVzYZRXH"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR3MRRpOpy761hX35mQRJ02Yb_gualYH3b6BAFgoIP4npH_EnYYJfi4ld5JjHDTQtwZu3oHsp6k4stUTuMPhMiaU_NUnZ3U4bhFWKCjCeeGkLU_726cWRTgDhv-pFVv_s5MrqNYxk8nPFqMxMxAtkogphvsKBG0GKxwFvAJ9NBk6hz85GSS1q9QE0nIl4y7xvHW2fFwsQ="
+        },
+        {
+          "title": "mskcc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhiqmJ3nxnyOVIiQKB0px0aD5uuC7y9OOg7SFd1a9bBOBH0NJQVKUA06WtsC6Fc-M7BrLcJUUkdksq7boIvuASStqpHVlKanPo8nc_sr0C37LMpWDe_0snURWXH8m2_DqWA4EsD-6h-XHItiTSxMNXVvuNPagcoOztoSCv9zD6H9bG-FEHaRQxKtdghk0g75fj2ofrAwDwUZ9zHw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rest and Hydration trials for Zika virus",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Zika%20virus&intr=Rest%20and%20Hydration"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Adequate sleep (8+ hours/day), drink plenty of fluids",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": null,
+        "costPerRemission": null,
+        "costPerResponder": null,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": null,
+        "vsComparator": null
+      },
+      "name": "Rest and Hydration",
+      "nnh": null,
+      "nnt": null,
+      "participants": 0,
+      "phase": [],
+      "remissionRate": null,
+      "responseRate": null,
+      "safetyScore": 100,
+      "sideEffects": [],
+      "timeToEffect": "Continuous throughout illness",
+      "treatmentDuration": "Until full recovery, typically 3-7 days",
+      "trials": 0
+    }
+  ]
+}

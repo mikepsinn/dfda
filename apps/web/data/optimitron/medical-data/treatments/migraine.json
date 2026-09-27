@@ -1,0 +1,1217 @@
+{
+  "conditionName": "Migraine",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T22:38:27.510Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpEttJqUkzm_BejIRot6GhJheg0NyiT_tq72klCPg6RamN9H2OYgTZsvd3Kxui1qZYCi91K8FG-4xMqmLaeA9o_2sF3oCkWm1jiZrO3s3dQJ2jHA4DWrwqUiplW1mPGIoU4AZe-0kp7sTOEGQ2VjxhP8efKQ_T4M_f8mWUfa5PvQkK4q2a0SvMWAXEhLXEA-F-TMQwSzwVpRx6MpOlDKb5ned4nVs4qdjweZAK9fMTabEm2Q=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFcTK-34t0HSUhWm1ubk2IsU4HHeO1SBgNxzLr9heTD8yQ9lOf02tr4sax4Okxn_I1DR57_6ilYT7ycMm-kkzRU-c52ReCJUoBo2kIvPBLnxNOkAkb8v988T5DZxzwbhI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM8oBgPesjduUWw224bbm1o8DSMBEWG3eWaAYRz24cBB-RCeB2iu8arbtGnhEdpDZAWX-tgx92T4EZ3bsHQAYlltipVyWTHEZjiaASnqhiEt79qGcmZODnmWyoM-uSVH-RRLM="
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcnRpn78QuWdS3xRsoRjfQCu8ijmgHgxy5WHABeUoLABORfPJqsYq-n3Lbr7iTSwo1oVsb7ARp24bL-NXYWrxrnoxPczghh_WwYyGWFvxBIseer5O2EV2XRtUx0IQWzWR8Jws6UnUz879rXB9R3beabJ6EQA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvS0j8r5YlQqabygrdQRCRS1g7aUJiRI1o6WLpiUakcTChx0aP2_5AkogCOUZ7AKQpM9pOd-TmAlVDcGIIqdlvBhGwXFfAISlsSOTFfS1qwHQ-3IYY6NXJFy7ejOyel4jzrKw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlz530Syw0azDu6adDCEmuNurHmiIZ1tx4rH-XX3XR3HjGFbq6MCvBLw1pVbiaJ_ushMWh2sl_k976FEvfrbiHx-gXNzDD4NQhANPo9d45Y0VF1_TTjzKAf4ZcxHvWHqr60MEyojqsu5tcHAUQU2AHEYK6yYq2XCmDddU_Kpr05Y3r9vYRZXjtgnlMf2-SXIdG_kQBmG56HTliETPOXSEwMYy2fCHSP32dGPQUaa2B0VQny4x7e2-o8SaiPZCluKn4juVgOuEwjywgNXzLZdI-dB27Vk1fPZe8Ig=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGuNY_f1t_qYrZF9unzjEeOv0kp9IgSovTXsP-GtvzEbgtZO7MnYV1gaSZDjCJT7LWAr9eueL2DVMYbZyZQMVxSbJu863JET8mboXmBQXbCHo3cX7VJVjvX0WMx3E6mrVqV_dgmDZXecYHPX0CHMYGaeab8BdH-RHmU5IsZP3M0tlI9NpGkxMJpM0O7QHT_3wNKxO0XazsHKUEDZuVsx9yAPUGH9jAgJxA_pSXNWvzFvGCukrOdHACE79thngS_BjDF6TIdeoklY0TnTTGa044cstNCuOP8XxgHiw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Erenumab trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=Erenumab"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "70mg or 140mg subcutaneous monthly",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 200,
+          "sideEffectManagement": 150,
+          "totalAnnual": 9350
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 62333,
+        "costPerResponder": 20778,
+        "icer": 250000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Standard Oral Prophylactics",
+          "costDifference": 8500,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Erenumab",
+      "nnh": null,
+      "nnt": 4,
+      "participants": 20000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 days/month",
+          "baseline": "8.4 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Monthly Migraine Days",
+          "percentageChange": -23.8
+        },
+        {
+          "absoluteChange": "-2.5 days/month",
+          "baseline": "12.0 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Monthly Headache Days",
+          "percentageChange": -20.8
+        },
+        {
+          "absoluteChange": "-1.5 days/month",
+          "baseline": "4.8 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Migraine-Specific Medication Days",
+          "percentageChange": -31.3
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 45,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "MIDAS Score: 38 (severe disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Disability Assessment (MIDAS) Score",
+          "percentageChange": -36.8
+        },
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "HIT-6 Score: 60 (severe impact)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -9.2
+        },
+        {
+          "absoluteChange": "+2.5 points",
+          "baseline": "SF-36 Physical Function: 70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Functioning (SF-36 Subscale)",
+          "percentageChange": 3.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 15
+        },
+        {
+          "name": "Muscle cramps/spasms",
+          "percentage": 8
+        },
+        {
+          "name": "Injection site reaction",
+          "percentage": 6
+        },
+        {
+          "name": "Hypertension (rare)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 64
+    },
+    {
+      "citations": [
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzcy4o07ZSRcPVENMzpJJdFq8njY5t1rrmIsYFeYXsMrJSoe2m9dvTj91b4VMhUv20yp2mfevnZNa6e76058diGsOmlxVgTRHPCWiG4djP2TLoEJ1XBTyo4IAT10nPbCBPSrdtkooJ6sBD7TNZfU0wtILEE3nNgjhTZ9xsvA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyCtN_cb_liY_vpf2d2htamIYcgjKDv42GW68NJ55HxnSiYzCSWGKyZGnLuuOy_v5Vp_FF8pYtSmCIkeSU8eLwhZ-KwIJ-EYJfjbPpFnTeET1xzdleq4gftlotBwpSQXjcD2HIrMuo-yglnk2xTRUmGBaqNSn03ZcHPkk8RcmJmHhN1e6rRO80f6TPCitwmsMmHfcaCDz3eJaL0EBVBjVOR2ms1F6YM9FFoH5F8aWvdC5FsEpRoA-ZGFoJA_Wb26ji4ShMM5K2ZesGq7_pxOA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHadB9JkdLbht2U1q1lhUrlEbrfDU6a5E2kapnC4nsuJ0SJRuEZvClBqAaSWUhX8Y5XJ9UGS_ZHfH50GDx0384-u-oh7EfXZxxW92RauUCHCWBcivyvt_WXrBSIaFNbBPkA8XLJ"
+        },
+        {
+          "title": "lu.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7QzSayFXe7UrAwXvgw63Fa71v2tEYHtL9eCGzgd34coqiibeEim2tAigWIHQF_m7ChOdwzL7W93eaahlMIeIFDSci8t4afP3oO0HMhHjbpkez70ehdohnoQUnzHRHSA9q1id8GTF4Yfm8ACgRTwZa6ECerVTLgLHCUdzGOpUeRHWmybE-jupDeaEDRy6PjN4J3tdFVf7DItS_ZrD6X7tWptavXQvCkwLEpw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSvXvzbxNQRAK2t3S8fmTYldCP_o7Udpsje28cc76-cxuehpdXzXWk2GgNXiCi29CVYLdE4hiUg0RfBlR3A4kb2-iNHJUC1h6BEWZ9bAAfRLUArTBOI6Wo3Am18U9E_Nyw2jFR95w6q8Fx2AYz0gGrecgXkPErSE9Nr3Js5uOFAr8HRicKXfexlvruIBKzCSl2Z6M="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEogaOfBsB6wS-b4wEgvfydLD5PmgaKyrOUBmnxM6GOpJtg6rClHPoEs-V3poYJCEUliM8gUaqRsAPGBFMKmwTK_GxdRKAR2yaA1TmtP_o94TKeJu7nJdzKVXyys-9OcnbCj8XwImi_6beT7dcxBdFr8iTEQHpuCSWZz__WIMUSK0pMo2HdeqwCvw7lDbMnhH262UX5rpN-e7K4GKHPKKVvOv98F4bOltJiu5dWlALZfpV11gP1wPxiuLFmMYIYlOE4xSTvuVKIQPRTNj8G9nbTNc0T-yCxFf1Jb_X9ky3VljZ1eKKrTRnc9nqKTt5JzaoGCyLXjA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7yCCWRvz72tsZSl1q95c7XWdSKWKvoLaDXsT-bY70pqy-muSLP-Iw0mVZf9mIykA93FKwvSwz3lR4Utsv7e7Es5jxoyCLg2z1BUvycFxkLbYqleaZpJqXIgyjq2NTSu3jJv4-ZuhqkMk2tmao"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsAKr7Zhk-RMhkRBJzqKibFOOMknFCVABFnBMd3ETiSP7BBOBu6EP-COFTup1tCz8mLMXGObiJOZfr7QIZPyt3MYnT85OH9RGxo6r3uZJ7OwL3O_kVEB6Q3UVE7IIMtfUty6nk9lvVA8CW9q82HZcszVySrZw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEq7RdGBWOH6UFU-zQXjkk-xUxVNsylOal3YfqltMeWiphH7-vm8bSiYfNnLRe5CpHJ4Ap4xGWbxvQ2FY37LoJSnTY4dcMfcYF7-2e8Wrsvht1yS604InA5yppyxMyiciIa_JOf"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEk5ABpDRUB2igwaGiFAweZow_Yn9CtJ9zaZos3BYLtngdjCL-Yl-kQ5lXAZUEIb1HFiJN3M6gwr1yqjX3wPRt7taSSJN6VoDLcsck5HTFWd6bDbcqEEO-fUpmOq_PuwojhkFYC"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC-7QWRCPjd9gh8WT05kcB9yge1GBCxEgNdve9KcXVR_VZFNjclb_kxiH6UF5munaVGNj_GAI4WQ64eN3S0t4XFS8T9W_7LSzgiA5wy-PztDYoIi1UFnQkDXlolIoSux-KYKojH59bRlfNdFVB-CU2G1DDh68XUBCoumEDag=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Rimegepant trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=Rimegepant"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "75mg oral (acute or every other day for prophylaxis)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 12150
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 20250,
+        "icer": 300000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 3000,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 12000,
+          "annualTimeCost": 200,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 6240,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Rimegepant",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "11% of patients (placebo effect)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain freedom at 2 hours post-dose",
+          "percentageChange": 90.9
+        },
+        {
+          "absoluteChange": "+11 percentage points",
+          "baseline": "25% of patients (placebo effect)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Freedom from most bothersome symptom (MBS) at 2 hours",
+          "percentageChange": 44
+        },
+        {
+          "absoluteChange": "-4.3 migraine days/month",
+          "baseline": "8.5 migraine days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Monthly Migraine Days (MMD)",
+          "percentageChange": -50.6
+        },
+        {
+          "absoluteChange": "+8 percentage points",
+          "baseline": "6% of patients (placebo effect)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sustained pain freedom (2-24 hours)",
+          "percentageChange": 133.3
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5.5 points",
+          "baseline": "60 points on HIT-6 scale (0-78)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -9.2
+        },
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "60 points on MSQOL-PF scale (0-100)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine-Specific Quality of Life Questionnaire (MSQOL-PF) Score",
+          "percentageChange": 11.7
+        },
+        {
+          "absoluteChange": "-2.5 days/month",
+          "baseline": "4.5 acute medication days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Migraine-Specific Medication Days",
+          "percentageChange": -55.6
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 2
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-2 hours (acute), 1-2 weeks (prophylaxis)",
+      "treatmentDuration": "As needed (acute), long-term (prophylaxis)",
+      "trials": 45
+    },
+    {
+      "citations": [
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiWB_JD6EpmWg-9kavqZeV9f1h4Nko3qPxYKkp3wUhJBVGSiBHFbyflHyHpOD98O3c62Ofy1itDyqa7OCo6BrOttBMdkKGjOiWLD5YH5ZfDd6q2W0_W_ZLV4809B5IN_0UzEqAZGpjABmrnDCOEUalVj06nQKvjVmreA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAb4tO7df9vN-yHGRJGA9g6mLAeq4QX_2ovDF0a6aKKSZnu674YzjwUbqI2ix07dz654MGmvowQ0WeRENgKhg2f2pGTH-4NPLA_8YsCgioW1HmpBZFK5C85d58CYRYc9rLbALJRnfw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdhMnFmyvJQQZYIM7j8cc2AqhIqQQZgGzPv3AmlvpTI1Y1Kh4hIVpxjzE64-ouUvEk4xanorC1BCZFzV5GiNR9EncBgCxwRvmNT-7rUprNbzS6PL67mLzUXLaguxDlfq_kGEbJsbjRuukYyFI="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbUQg-MutjIOOMdysioMuUcdsmY7jciR3sHQwLdyh0Ir0-UmBXX3ozSN9fkeS2_Ybhrl1f8xg5bGEysh04EwHJylnVMPHQf5efZFjW4K9PbRJLgZt4MTcAQPZmY4x7H0XLPom_tou14X1LvVJRJR6QvOjm9TM6lg-CTjA5x4G2gP2l2XVa3TvySK_EKcokyQmeR4h16o0FbRxkYNvZCb7VUA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcfpOeSRfpI5x431IrmXoUPAT6s9WJOnjqLYyL-jNLlRPbxZtRm64Ujlg8yaIgpnXVpVzX8au_Hhf65ck42tPo7A_4VgqliwMKpM45D-U43m1j-9yWRh_oDutGBI1zJ3x4lZXAd3mdK-bJMo7dtYauy92ds24ReIujHVs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaQJcZSBSVO__DmoQEBLQBzi4vyYwk3Voh7n1Cr9KYqUDsen13DtXh3gBgkgYe4TGdL7FC4GBdAnU18-DX3UpQ616vL8rL4toEzInt9NnTwIvT0JBQ-DYvT-KC4K6zq1PhuzUZIyNnkgCGAF66H_Hed6U3yGGJqdLt-6vPVHwnzTY9OwPZPeMQSY9ZQme6D6gix_Gr2t09gepWl_5ZoOF1wp6eH8o9Ht8P_3FAq_QJBAsfX6RvTU_yDxxpj6NxgMRciYrEDI0ciPTty2ygLtWpLbTUYumaVWTSeMlM"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHue0fcChV_wAWdKrxTDecGO9PlgtzpQfrMjGwUGUkQgePIdocQRULJOM2sAwTSQ8OtTDC4S-AIYx9DsAlfAnAzWL0hvy-zQanR73lsMiHALgdU8r28wvP4ziVDvXLMtuqzuU_TLtC0xW6oLZxRr0hg7llqxRKnHOhBjTiH1vIX0StquV8ihC2IGuFw_xFSYuOJkOVlSXWpR7JUQnf0ZneD02KXxZojYhw_D1-Y6slmSrgN0SwSZ-TqUEr4UflrPUCBHRTs2-yFR9z54nXCJEyl2UGNpwANHic2WyvlCjrVL9Yuna_CcCIyCeq1"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGH3j9O5_-kTfgK19BBrCnTSYtyrHPJoZ8UZUWFtkNOe4hWvWik_RUkWyV_OHYM49B4rVGBF2k87YRIikPsEsE0TJyIRD1BDkNXLDJZpTufm7mmKfbhbrJhH2ev8WP8kwAY62o2Xo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0IvTXpb1K6Wj2oqi__WiYBjkpbO1V12_H7N334cyE4XJcoLaerWt5jKMyh4ZYYx1wSa4zi0CCHA2B2EHogEALOBXpVmBQ2H3sPmNZ3Bw1v8mC28JnAMiNxcUmRZsuH2JqkXvr"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDB20c6KrLpXbX0EAW1sW91fQd0Kmirm96zbTMHVSux6I1-QSMHa6Rmf1xM54KzFaWsIXKXAC4c8EK08RKWj1iY7nv8T56LYdMwFN--L4mH_SxmIgYjIr74G0yR0PJGNwze-8Q6NI-zWj4"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuIXLJKuKaEO2PjX8pCSzmPztK9Cp0EvhoQWHAyq5_NUBfpTAM4khev4ofZTBaAFVHNkxMfZ3qhRusTcQSdPlVjQRs9HOi1CyDONlG5s_fgVAWPjkmYCqF1v5toiCVS6vBTujUS0i0sQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sumatriptan trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=Sumatriptan"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "25-100mg oral, 6mg subcutaneous",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 50,
+          "sideEffectManagement": 50,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 357,
+        "icer": 8000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Sumatriptan",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 200000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "7/10 (Moderate-Severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Pain Score",
+          "percentageChange": -64.3
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "2/3 (Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Nausea Severity",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "2/3 (Moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Photophobia Severity",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "8/10 (Severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment",
+          "percentageChange": -62.5
+        },
+        {
+          "absoluteChange": "-30 percentage points",
+          "baseline": "50% (of patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Rescue Medication",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-25 percentage points",
+          "baseline": "60% (of patients experiencing recurrence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Recurrence Rate (0-24 hours)",
+          "percentageChange": -41.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Chest tightness/pressure",
+          "percentage": 5
+        },
+        {
+          "name": "Tingling/numbness",
+          "percentage": 4
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        },
+        {
+          "name": "Flushing",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "30 minutes - 2 hours",
+      "treatmentDuration": "As needed",
+      "trials": 103
+    },
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElcAfcIoE4xhvmSuWbDne8VMG-hxkSQR2xq5FAKwQgV-6FLLOWwAxrK2PBMIGu07-pf6p8GLjVsT_BBZwrtROa-jxhIbyrzCV16FqQ5dR_zKDNFVhBOKvky2gzjvS2ztnbulc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOOjYY944QeHJm7J7n164LdczmBNEHuzaHevUI_REn-HU-dLslPZMf2PGlRlCYpZUPe5o6dwUYlDUM2aY-iisS2mLelJZGz3GsbnJ6NgIRNAtDstBJrxmf6ewD9f7_IJGUAJJV"
+        },
+        {
+          "title": "neurology.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_ApxbKBq4N5iyzvBMLKxbQGLySJf7VQEd44vXEYHQrsn2Jewqai_uKAu0ONNSOL03pHtSMGO8OHJOTo-ramW6iP98N6S09SDyhe-Cxid7HmTbzu2nrHB6WM-GZzqkM06Hp0fVallohM-vorvsX4xNoQDV2uE="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwodjgtGcIrDLkslijwZqdEg_HPmPfReiVh5eUzQBz5w589FQZ7n0KqTTPa1Avg0RJHt41UMKlhIwuYf3DUqQm4KFYHTeoucrqkmyVVAmpSNF5rpVb-2GTXe3mmyc8Cpidu81xtpDJiV8YWe3l4ou6ZK6iO5pi39E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuzmIKhYKaZk6zgajauRYgfxuJzje--fVzeUVGOp7FCLL7J0C1CcquPmRg8jJroOiHt5u0_mdn01SLGT1G5aMqRfC8Af3wc_K43NfstLCRvZqkvXqniPAru42CA3yqqn9V8mfd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED-X0kXmy5055wO5Op4SFTU39XVv_MfyFYzStoNd9xrXpukn9BWNkGpcveCe6lzzffI6MbwmeZnoMCBaW0WDyn9KxpAgvke0hPV1hMxtmjnoOsb-fNpNPkew0A6ehjATnkOS9p5g2Wi2B0i-8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm1dkDKJh7uuPhlPfGh4og2uzKXNGTGEA0cZi9KXXAemJrveY2fA_1CUrzpu5dQoNeeQQbW8T-sVrKXjvcE1SdYeqA12W3zT2z72NFM6CSBcQU-ZM0bCQKLsGzZLOAwn0r6poJ8xXu0u22tMM="
+        },
+        {
+          "title": "ingentaconnect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhL3CGmzOllfvNbgw-HDLK7yTe0JNeBq0zAY_wKW-kS1F6Pv_6RjkDOHbC49asGdoQaL6tcjuCjMy1GMoOdgvbi6xNZeKtY6hrZ98_7WY1a7ENtV08jZAaa0B8u9px_SLe8eXg5IVpUe6njWU243ykl0zDt8AH1QqqeqjpgfnnomDqzzSDG-5n"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4RBTRv63z_u5HaE1jXgbpTLCE5h3yzZpVP24ujFJNeYmsBRm6pdR_MlDJdN8jwZHXp-BMOQtb5OnmPUhfw6QJhKZKoDhSGwEDfJWiDFw2OolGWj5LWd5yENP6pfvdbD1LyiTQ"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFps72Qm4BGHgdzwaDLCsuYo-O2753_VIyS1hweCsiQ9-XZ8n29zPdD6eF_GSyVwaCtHQKVysTEFzHQe084FVwhiTr_APfpy_okgTkL9xnUnXrwZWbZVFBkD6Reu-R29TPR9zEGDGdQZNn-5f88T5OpfV30q_QROrH4D4wIbQ=="
+        },
+        {
+          "title": "iasp-pain.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVXwaIRvKtt-y692FUnm9qLbz1vSnZ2jDJgF6T6ZMheELlvfqHyuv2vr_lTmmVcKKEQfUkxtvwbn1YcaUbCqMP3nYF4XkvLMDlffU489_XsEKllfyl7h_3SA0t-1VCxLedo3apMEHEAfoCMUG2VEpDXeQKKUUZ_qa5EBLj3fOWWl8oEVHe3_QjMmnOqQP2iiNq5oa3YPxah2gpCP2pjtzxcq10LDxiL_Lm59CVcELtzWhDauMhZXioACceHo-af68pXIqR34EWc0UY9RTq0uCDtdjwcEJz_LPSz77rebUh0lvxQSMri4RN9m16"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFYL8y7NVQm1UMv81ScnTRbWyxJ2iA2WzZ71r_CIhQ4DVWByM9HahIBVBYuBX99E10otRBHrzxHMmAi-24-K4P7GwHCERtOAbhqtjvGwO4q22er0K7t2eo47wRrO9msYW-6qYU40ZrN-mP1-8SdmUVGTzF9PtrE66q4rJ8zDQ=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGRNFK6cEf4wo-iMV4D_ZQ0w6_TDU1GmH2arVsMBPsot8evOIS-u4aeuffujHig-mFSvlIwiNyaMmuDA40vW-7MX38ASKOGCQueltzxVasz7JxbJxxTvb5IYg_AcXn06qLbvfrSnIreurcBTLx_-Dll_WnF7ju9eFDVWsRLOImTbp6oPKtPnR6nzIKodPYcrDl-BRFXSHkVyKDiDiIKW3TWlV7BOO68tIgifNC"
+        },
+        {
+          "title": "neurologylive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVRlT4Tjfi_ANRrf-SHUAVzjbC8girbcq3EqjSqgJx30tI0aGU_0JbdG1ZSshFrdKCNdE7c3ZxsWDpDAMSeQanNk3fBHIBZ7s4koK83yRkOLG-IablXpU8gdsXSsR8Tr3G-nmqQ_7JI9XljnHpNJamThXaowSz_42fpRMLTVGVvS-0SvXpmcwBV_A5JCfXs3T4KC-wDr2sjyfM_xG6pEEm1k2flTnMZQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ubrogepant trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=Ubrogepant"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "50mg or 100mg oral",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 10150
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 18455,
+        "icer": 280000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 240,
+          "annualOtcCost": 2500,
+          "annualPhysicianVisitCost": 300,
+          "annualPrescriptionCost": 10000,
+          "annualTimeCost": 200,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 6240,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 1000,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.06,
+        "vsComparator": null
+      },
+      "name": "Ubrogepant",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.9 points",
+          "baseline": "2.6 (Average of moderate to severe pain on 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity Score Reduction at 2 hours",
+          "percentageChange": -34.6
+        },
+        {
+          "absoluteChange": "-0.7 points",
+          "baseline": "2.1 (Average severity of MBS on 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Most Bothersome Symptom (MBS) Severity Reduction at 2 hours",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "-0.8 points",
+          "baseline": "2.5 (Average of moderate to severe impairment on 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment Score Reduction at 2 hours",
+          "percentageChange": -32
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 55,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-20 percentage points",
+          "baseline": "50% impairment from migraine",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Work Productivity Impairment Reduction (WPAI-Migraine)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "2.0 (Average severity on 0-3 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Allodynia Severity Score Reduction at 2 hours",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 5
+        },
+        {
+          "name": "Somnolence",
+          "percentage": 3
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 hours",
+      "treatmentDuration": "As needed",
+      "trials": 21
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjbOI9UXyK8dn2VPOAGf9Nv2TZfBzo2ljaf4Q2vWQ4hjOlB8Kfiakqedg9GYySTHaWcK6CM5fr93X5TnyQb0_ppjQOG0O0yl_nljcYp75QTrYGM2ekVLFv4ZNi8wg3u5zufz9B8q0MfLpBVg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElYf2bzX2OcOiNMuCXCfNWboh6N-EmKPzCU30YYx3gN9nyKPcG8dp7lSclcgRCt9vKzlXxB--0RPsQxj6j_6bB0z8HjCvrrauMX7bcfqYty1u1yhX714dNHdtuernKqzutb8mCNlfwSFmopg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFf3XNAa5_ouFsScDKiJT0IKvI8Oq6T_VwiQmOpTjvJw7r54QfMSo6Lj9-T4UYka3PUKXQ-X6FFSwLwvPhZla6tmafdWQDES66249am2duD_pR4D3YPyE5NWhNBpzCRDda-cg4="
+        },
+        {
+          "title": "plasticsurgery.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjLOu-MBXwGooyjWk2zW9QKmsZKTwRkvSmTATTVYJjvAmYxWWb7PwuzhP_6w_tr9iTDcsRmgWjcNNn2-TbW5YoAr6AZ5dfXZ6JVbM5xWS5EaXOxmhJlHOVTo7dpIPiOupvN6Kd0i0p_P1goK2aIE6tQIbZ2ksdbTfxL20je2PRokDEJVgyFDmDIJK8wqklrALxRivY_uCIU338bdOPGTeXxEdRcle9cOW2ePxO9z2YyqE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDNRJ7Rz0wy5KHrLJY4Ak53LnhN4k4rFLMYdcHJQzg_g2VSbwf0rbzCMkSewPpqjOL8_b5tk2HH5FoO8eV9wLzS9skkGY72JKUWhFVQWeFOtcVZvfvvnwvdVrP2652j_ZDmyU="
+        },
+        {
+          "title": "inovpain.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzXojdNdTDnIPAMj_kLjRR6zJoFlXYKfffwx2QnKXTuh-qaJZNevAPnKIIfyd5F-jB9ayZN-Fp9dgzi4lTehoWTOgdQSAmvBCGCdjawPKZwDY-ARhEEN18jQY4OrkDZ27KiK3ylzEkVboo5TTHrnm_eZ0cvqD3DhRC_d-4dX4W3qqXQByOZMpEnXecLvegxhL6-tX34DbUnbs7M2JGw_AL0InvLbWpzCTKpKxFweNC8SVkyOYes36pko9XMxesYssjOFQMhLxVMIHaSF8OvYp2YeW25HFsuEt6ZS5eK58="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2SRNqCj_WhFKuW3Jd5BuZlrh84xHUnQZ4kvENUL6Lt5A7JOM3izKfQCLlwGF4KLyAWe4Kr9yhhzje3LXlDyBXu7MJsf68CnlKaxrFX7L7YgEHX5eyljbb9l9sKfqrniya7x_msW6iOEmZZRWUrrYvQIXYDcsDl9o9FCFZuXFyyxAXD9A6-t7CWZMj-SK8ntHgdHTXfg=="
+        },
+        {
+          "title": "interspinecenter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExLlT22WLaRvJhV9eIjQqvxx5g9FeOAAmXpRFTYHKKhfVfcS9OMACQVoi1Vg-XcIq09jcBgyFazH5vf63c5z8e6DcvNqhA8PESLypDCNa0OUDy-KYA2ojDgci6RFJALfKDv5-hYS7t7wJ-jBHAES00LktifbC05g=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-PQEMT8sBK0GvqHds25122GtKwZNE7gFNkfAkcEaZG0e263aCneE3CJF2d91lxw-NDzHHD44u-Z8UANf9KJ_no45cGAMw2zbr2x3hPlzedI_9brDHxtUZ90kTFysrqEAUpEs="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIzW0r0K0TL087_osN989HdzOOXSkYaLSiBrYFqaFejnw5drJE1e-2lLdwIC0PEM24glcIthJkuSWNDVj6CHDyfId4PUZCwevjyDR8f5YMajDVTyxbCz9lx8OVI9EvWxLQ1hrTYZmWG9ONzm7pPygX5-ZD44gt4Um35wMdxjYs7be8EbXL0bDjbMOGh5QMgaBeZbXV6RIZNEM__l5U5Q9WKlsUs3-0Yv5QdYzw2eaifkABZu-f-1q3-_LEhCmWIRDBI3gYHv1LyVOdy9jv6_VHmnlmQQgLqPAeFaRhddk3ijYGuCzLdh1VtXtotKGvvjtoz6Z4xZdu3Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1YGt7guLqxO4YQ-5Ln3DQE6A5Dii7m74qpvQ50vzo79qT2Dp7LO3BYql0fsYHZFabZxylbssX5KbdTcxlRGxB8dkGxgfJRZcdh1XYb53Q9WOxUU97Izg0lqjBnXsOnk2vrtasfcCUiMpkOdxQj5G7dREsq4G7qSgrHX024Z09EySxz2quI2oYJPwzOrN6uUHWVNCqI6J-LglnZynHUG9LiRctfIYQ-xv486qrsnuDxZhbKhEZSCHwk5_mmbqY8DDtZGq_VFpY4KVgh975VEBXHfpB-59cX3wEWgD9xs9A34D3qaxyaQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHr1QKnbyX5_oH-R8uKhquPNSv0kAVIN2NQ1l-FAcWdIQakQNDSNeSnj6MP332xqmT27mGNSyZKERe0ca7US9Jdg0jiPlt29FUsMotwLliYXuXtdk4l5FX-sKg0gNXAGUOxSBV1Lw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: OnabotulinumtoxinA (Botox) trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=OnabotulinumtoxinA%20(Botox)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "155 units injected across 31 sites",
+      "effectiveness": 72,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 4000,
+          "monitoringCost": 600,
+          "sideEffectManagement": 200,
+          "totalAnnual": 4800
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 40000,
+        "costPerResponder": 10000,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "OnabotulinumtoxinA (Botox)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 9000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.4 days/month",
+          "baseline": "20.7 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Days per Month",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-7.6 days/month",
+          "baseline": "16.2 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Days per Month",
+          "percentageChange": -47
+        },
+        {
+          "absoluteChange": "-7 days/month",
+          "baseline": "15 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Moderate/Severe Headache Days per Month",
+          "percentageChange": -47
+        },
+        {
+          "absoluteChange": "-6.4 days/month",
+          "baseline": "12.5 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Headache Medication Use Days per Month",
+          "percentageChange": -51
+        }
+      ],
+      "remissionRate": 12,
+      "responseRate": 48,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "HIT-6 score: 68/78",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -9
+        },
+        {
+          "absoluteChange": "-35 points",
+          "baseline": "MIDAS score: 110/270+",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Disability Assessment (MIDAS) Score",
+          "percentageChange": -32
+        },
+        {
+          "absoluteChange": "+18 points",
+          "baseline": "SF-36 score: 35/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Role Limitations Due to Physical Health",
+          "percentageChange": 51
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Neck pain",
+          "percentage": 9
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Eyelid ptosis",
+          "percentage": 3
+        },
+        {
+          "name": "Muscle weakness",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term (every 12 weeks)",
+      "trials": 63
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHAJkM7eao2vJ-Pa__6LQEOedxFIQPCsID_izfwn69GX-auYDFIeCgjlfZqXHUgQDBFChpI4ilPmnEM8QA1ceuNp4iIfOrCUV3lM9XJeufOnSNr2An5xrW7yfJFQXpk_GCvEyBTnB_Knx2Og=="
+        },
+        {
+          "title": "medscape.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6k1pjzuYpGGIBJv8J4-bf_Sze3qfXirKmC-2Kt-BHTCdiVPs5bFkwA9JbaKkuVpH2FtsSdB5LH5OA3YGcsV8HovOgouOeXPMorC6KHQmoyr2i1rZoV6ndDp9sEfTFzhn4148UqQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2WHenIjLrIAfLmNtOv5uHWuSbXhkK2NDjGzJvMPNH9ZXbGXHkMjL2yH0ZFLxOZtRdaAYYz6KKEdDHstnR9UUfQHN0DIC-V_825AkAT1j-j93LHt4bPVdjaKpk4XQ2txafqJzbvhlvEiVtvA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgwCyCfDO2IP-fYNkEKencbk5Jwv0dTZ81OjqnEaLFuNVUKGO25esib8adrhkHbBoAQeHcXS6ne1mGQoId6HPv1ehzqnDOEA1wpLWAGh22nA7jA5XSvEXeM1JgUSMjnhiSX5nXGYMvxCSHnLMq-l4GCnJNQSTTr-GB3ZRDMiRbCMLtp56nEsBHaY-hEk8WVCJS3chLJsD8cpWU-lLQwc7Jzas9ciyZ1w9d7p4HJRgtToE6gqPHDMnqrIPHqQAj6UMWW5OgM96TAuzpW7FYFvClEj-eld6aRao4goxtBnpyG2bsEOEfyB27H9hncFRJBtxV_Wrp2WTU8qhivuipqS9Om2HIyl6zuHx4_Yf-lfcvQpNdEGi-iL3MHzbqfSKuxnHAJzQmM3xhqmo4ECiZk-xm_WY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXGOGe1cwSyiHDu5DNeMdXSVSIJIHPWeLTbzCG-KZUVlwf_dzRIMLCkMJsCE4wtpxqu5XgJhO0Fa0RmBAiXCmC7yQDSFuZMp1rpcqdDTHfyJYOBCqA-6cDgOJ4TXWMEy8wg7IqzYt3tPtmQFgecscYDbS2vUlpwdI_4gns_mITJCwALz-haDScllXEesakmZkJfLshjmcRDlA4PSoB3cAuOthMHUfsJxfRJhHDHEUcGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS3_RRiYiOsOtr9EJykfxPmEZ_BqWFdNPiEUKHmTEScqvv9a2hBkNaMfXxzloJu5QiYAsP8m4WGMJzyQvTgedPFCkJ3lCBS_lSSqAu80N09HtEkCO00xIgMA3IRz3sRM0jmqq0t4IEf9pKNw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFs6HOJx7zww9slT9Qakp4Q7GnaChxfbJpn7F4SJQ1PNrEAEL_VLyvy3H57iTC-aoEtjWtu_MEVwMJVcHTNpiWiir-42PZJ8Y4cqwaCQwNFZ95DytdKXAMJGu6BksNqUUoZMQFYBS_Cn6WP3hXZmdADhKNDsiMsS5RtnHYTMwAATlmpLh9ZvtU9BVH_U5PBH8XZAAI9YFeBI4uymX9Hs0A3a8naSip8QScQdgEQTaKPgNLZQATZR_lPx_zzrQg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMwku_MybVq5S2yuI1ELv_MPU6rfwQx0Lba6QV_ajkH3gl6nFjOxCgvfZMFnYbpdnxyaCn_KidwRBGFqZAy8eaTn7QYb9vveGF_22AYvuNWghFeXwUhixs2kjH59IIbssqrKF9CuiHxm5x0A=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEL9be3csyHwBv0zOIoF7Aaqad_p2xxO5tAPbRsXHlNXVW-WSrMiLRwOxlhRoP_aV5fGsUVgKeeUfifHW3Hh4Dmuz_VqABKVHkcHnfWnryW1i0FetQrci1XBJIEuPMc-GHl1mjwX7-yJg2EN9G1oSAOqMS8DoBfOrX8lNqJj-zSe1hV-pmPmOH5wtgcHbD1wQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfKt0exRIp7QBnXsq_74_LsRN-c37XVGhIM4BRypt58vPuq7DtU6UQk3SWI34sHXGYoyeQQKHI2lreFH5L4guLI43SVLQw9Yd9UPPnDSUd2Woku1fPwRqvzAAWop7xgDjuODnjnJ44mVF6DFo="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-NQtsMZfvZGYNOdvr7Ps2BhIRMor-Knqbg5133cEHPW5IeXjkoMA-8Z9fnby_68HjW9stm77OQVg3lCpA6zdnK1n7vhFxAZXXuEfbiHdPNYENa6ODKORiLmtDVIgCLH-_e03gNBH1jWTX-f5j41wd6KBpOkLNbwYWhyhNjkabhaVJ5ul_S6mjaIcy_GT_5apzLIMvA6BmTSoydRpz2PSMBw_WoQTh-6JvMnyvX3-dJuuUtQahBuREswdSP2M53vZR-c09YD0CRzFjYIb2z1o7n0AcQrWeTDku0XtZ6B9MbuzIiUaqceCGCisfiCPkSvPtlKxWDxUhnq95yAnrnqw9PYZmnygv6C0-b03MLFv3KMxe6GVgDV38cg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topiramate trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=Topiramate"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "50-100mg daily, titrated",
+      "effectiveness": 68,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 7000,
+        "costPerResponder": 1556,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Topiramate",
+      "nnh": 12,
+      "nnt": 7,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.7 days/month",
+          "baseline": "6 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Days per Month",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-1.4 points on NRS",
+          "baseline": "7/10 on Numeric Rating Scale (NRS)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Average Migraine Attack Severity",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.6 days/month",
+          "baseline": "4 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Migraine Medication Days per Month",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 45,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-10 points on MIDAS",
+          "baseline": "40/270",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Disability Assessment Scale (MIDAS) Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+7.5 points on MSQOL-29 RFR",
+          "baseline": "50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MSQOL-29 Role Function-Restrictive Score",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "-5.6 kg",
+          "baseline": "80 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Paresthesia",
+          "percentage": 40
+        },
+        {
+          "name": "Cognitive slowing",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 10
+        },
+        {
+          "name": "Kidney stones",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 67
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAaCxWfBIzw49AXi-DNDLjEcaIdoE5xTR1UxqXqAfQlLgEpfm-Q_vQHnVIWcpjKRxPsrzTEdSJfLdSp4LrEE__5rptvOagRJPU9HQ8qEFuOUyFFbJu-WZRK7Lp_dSqNESr7sSjG9SrC8MS7GA="
+        },
+        {
+          "title": "medicaldialogues.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHx_kHYed-Ldfqwrsg3SMOk52oCJWAtP2XFm6lztQanYVhXStwj9ntuDsYhDjPxsQhShhxyzoMeQykLP4U1czj0TXyNJ38KUY0J0W_TzChQxGq8bh-thr9acTgc4MwFyvRMGZyhRVfpQwnZdEyEZibg1vgf_1b4V99pUb5sfKYtn7xB1NwBLdyXolys6dWb62prUVCph_AwJHLM8u6CyaJomK-KUcQWf0vGgBea_u1Frg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN_aNO3JV4yi5CCc6Ot07iVoupFxDvLwpGVV5HHBWeqpgsNUYEaj-Ixl2mG73Uoh4pMvUDMGwHRRS8L-y3TT7Ek-lsRTDM2rftrdyAO4TnQ1jTveCyJ2i_9tx71BsYjwT3vmjIkS309g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_SMirAHDagZ3jYqiHZAb9l9vLwZ-NDquik6hCR9NZJ0S_GfaZVBNjJ8o8YJrWAUjO-15xGsAFEhS3vj1ROQV21gGh0S5mYBKWj_LK5b-dW4iWlkIUFFDN2amkxkXE37PHF_JA-H_MWEj3YZQ="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj-4j2UlrNaRlLCxvNwaLoT03x47iU-kkVk7lATyMn-7JVSCHygYeJMABWkDzjcY6Rk7RrUNdiV4F9PPp11eZkpQov73sEKOO_efxFiW32ouq-B3MNqKCa4cSoAKyjHrCQFK48jojAzUWO6rvo051ub1STlF9UVCmPbNE25It14yuPMuljZEAHC8Q="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJoW0J0LoNupn-do3ccZKZERlm5Q3pcBuugDSbGbBHM8zswS7_YyR40AFtl-8WoX3_Ke4INJtWUtvF5-HB8WQoL8hf_KNSHn539_2A25fxtriS4x9SlilqFUWgaSPWj-miFEB4prECHgVoeYAcUtzZ6oR9rl11qKbarPRZJhUs-P4sGvq0_X6uu6K9nowYXgZkS-tCjMyVRosGKyfj4fvCUHpWwrjaxc7IkT87o_ztjAvdtSu6bWH_Sk8t7G1C04bAKy7I1O3Tn52Jb_rx"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBi3nHH-okghgiwhu5j2rDz1cA6yqRlnNxMBq6PPxG9XztRQCG3hb9el3FzrUF6oDgtmbyE0GLNz_26mmbrobJzr2k9VLlbcNGasXGQVrdW6dF_Vz9EpfdU21Bx3Fbdh0l2cYKvQoMroUnyEPlXfbP195hVhVdI2g9La2Qd9Gk5C8OBLk="
+        },
+        {
+          "title": "verywellhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrDIiYMNUZDqqQTBhCE1UfgtnsaHzMuMnodYLiRzKWBkRhmx-rS5tiCT34Ko9C2m3912anXjst52rAAGeuNhU--SVGx5BM28z06AuAq5i9JgwAWCPad-4DlnUzJERc-C9ZAwHfGs9ZZmRgw41om0I3eIpvBO8uIisHTod39HGFPU4JSrU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjDApUwXpEp0LBHWZlb_Mlx9xgVAp9AIvLWtK6it6CohyIMzD9usuT9kdo6feD-hyeYKyLqYh_wkUHSSw_uoG_swntGIZPB3wMhKP45WfO8EfRsI1jPbjdbDCzvTuhcywhG55f3DdGrE94mA8j7xSi2WNn13xZSmJcR5T-iG70Dv8MDTXHYYVz3Z02Xc7QPoQ="
+        },
+        {
+          "title": "gpclinics.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEj5oI54LmCyqUsl6NJqufVyQ42NG4BR6fb2SjLXUVKRUhzbeyBc_IeFbK4Fc90fhJBsJ2A_8ytF-x2GStVdIpUJh-Km-Xw9rV0Jy6KQWsqtgPVXnEqQY5gYF53fs390hHFwLWHLfVTi056-xeg7i5mSC0TpdCxQyPHAytq7jDoU1y-fREQZEbzlLLZXwBeBBuqilURTmIzcJNlNwhZ4kxg7jK_RqRhxA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Propranolol trials for Migraine",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Migraine&intr=Propranolol"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "80-240mg daily, titrated",
+      "effectiveness": 65,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 300,
+          "sideEffectManagement": 200,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 7500,
+        "costPerResponder": 1500,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": null
+      },
+      "name": "Propranolol",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.9 attacks/month",
+          "baseline": "6.5 attacks/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Attack Frequency",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-4.0 days/month",
+          "baseline": "10 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Days per Month",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.75 hours/attack",
+          "baseline": "11 hours/attack",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Attack Duration",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.4 NRS points",
+          "baseline": "7/10 NRS score",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Migraine Attack Severity (NRS 0-10)",
+          "percentageChange": -20
+        }
+      ],
+      "remissionRate": 8,
+      "responseRate": 40,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 HIT-6 points",
+          "baseline": "60/78 HIT-6 score",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Impact Test (HIT-6) Score",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-2.4 days/month",
+          "baseline": "8 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Acute Migraine Medication Use",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3.0 GAD-7 points",
+          "baseline": "15/21 GAD-7 score",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder (GAD-7) Score",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Bradycardia",
+          "percentage": 8
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Long-term",
+      "trials": 26
+    }
+  ]
+}

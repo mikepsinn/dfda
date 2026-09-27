@@ -1,0 +1,828 @@
+{
+  "conditionName": "Hyperthyroidism",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:15:28.517Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFv1iTUTRCX-Jii_f75aFyLdMqwOgcHHBp7KoQF796u-hGXIoUFqKOvZGwJM1BMKAlKR58s02B0ePzCDKQLIIEz_1REkweQhbnQQ0bWLoMN7DFx7DvSQAJLmN6SQozrdlAWE3I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGfQQcGO3ThPE2Bdcw64Yl9tu4NYeTUEwYG4NihRsDemKdVwTfCWP_8TOmIjVgYLcO2v1aj0UepWCJzY5BiRJLv2u86sUY7iwQGXakUmIKtet5VU5ZskxDYa3QJ3DNx4EaM_ztr7zM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZQ1qgaOj_xWoJhoInTMRKPeeI4wAhh9WaH4O3c2URDnHVGIkUzftx1nxgKFzVVBjGcaeiAOGnD8WOGUZGZw48_Live-avNyt9FfofLbSpdz6bj5bGCMJYLP0z4uhv8W8wAevdGO0TcSZfIg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE05Sq-3gRGzQgFqkGbAualmoVVjKnmSs3VR8AhK5_gBZ-JdW0uiQPyxvENFUmo_AulZnsBjpOAAXjTu-euMBlryG-_YglZHZFirIoJFsR6gq3J6icPftDrXU44DtB9ShU7oednhXTV0o07xh8="
+        },
+        {
+          "title": "bioscientifica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZ0xZW_wZTlhfzfk1fiWxmInbMGPtTCt2TrKBiQBd0omxUN86ODm1-ao75EjkvuXpWhQESN2Isa0pA6pRv-Gkjw2pXHC3MNo_imshpcl6f80PD2TPAP-0s-nIWUTQ24fT4_b462Udo3kQTOTy-SdfHAqIB8MaRQWQ2spgv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCipE7PcUB7jNoFFmw4yKSPe7MI3vREwtwXpaXMEyHIzUNvKpgPi_ZlqG_gKRQQFDdLgOx48UaVr4Hk3o3Gcyz9ege9vYM0ejbDwNCPeR-Oc9QpWKHU0TyaL9Yu9buDBdhSvQEI4Cz4RjmmLH8uDByw8VxskVsoZUauab9oV56f1Y0p09aqlveXBfQ7LSJhAvkk0L42RTX9Occn5kSBp6EaZO0ylO2OJtHeH73TMQtHWJdU7nThjBE-5bwuyKWF9OnEEMtdyyVVx9lBMJec7edHKi_Yeuu9_RSggVBMg-603Tb4DimnQpBj2FzAbHo41XpgSjGDdPftd6jzUs5ypkUFpcNH0H8uNqPA1uu174voE9gSu-Ci6EifNslF_F2-HOVNaIa6IaY9DWPoqKnEyC7a0VEfmXA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEc2qVMaNsEcw7CZ_TQyQ41Cb8q8X65rdwQhrehLXEvZ2ACQzdUIorVW1dCZbgrlivbEpnWHF4NNMDRW01W96QKdjtRrzKY1PsNTElKb7-85Q3Pn-cq1YszhiIbl0sTd2vq8KguX1lrOR6Aj8UXbysDbXVmJg-wXKlmEKP-FeBVzV4QKyOGeR5pe89Yh502S6GUYgSH3hvRM0HTVe9umN_htD5e3ZnuYOlyFZNHw8HXqdvj4_aRiNPfe75PsVbLOrJxt1V9HpBosW4sQr4IPaGvHrKlAYvjCRnq4zj4yQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-2MCvLP_e8EMgNuKM8dDd36hjXXPqP5_Or87h2Df6XNmLHMLf_edmUH6pjKmub4nI7hRlGRxyO2g0WDG5hqS9M4zgyDXgA1WZuW98o5SGKExfQ9H1E8RfnC0kao2n8qVu_onZKYpHBqICyQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGigmXj-euvbQaShtBpeLis7eMZ4Ag85LOu5_EiQeCPwEdUEG1T3FJ12FxY7b7D4ieKv0gjskQf_8QmU0oOqmFsw8YRYF4eo6NIRc5cKjA4hr0FpK1cSzYLv-1NpSRW-BABusOiHl-1bBJbKQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Total Thyroidectomy trials for Hyperthyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hyperthyroidism&intr=Total%20Thyroidectomy"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 600,
+          "sideEffectManagement": 500,
+          "totalAnnual": 4250
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4337,
+        "costPerResponder": 4337,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Total Thyroidectomy",
+      "nnh": 50,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.0 ng/dL",
+          "baseline": "2.5 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Thyroxine (FT4)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+9.99 mIU/L",
+          "baseline": "0.01 mIU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Stimulating Hormone (TSH)",
+          "percentageChange": 99900
+        },
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "25/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hyperthyroid Symptom Severity (Likert Scale)",
+          "percentageChange": -80
+        }
+      ],
+      "remissionRate": 99,
+      "responseRate": 99,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-25 bpm",
+          "baseline": "95 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate",
+          "percentageChange": -26.3
+        },
+        {
+          "absoluteChange": "+3 kg",
+          "baseline": "60 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 5
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "35 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Health-Related Quality of Life (SF-36 Physical Component Summary)",
+          "percentageChange": 42.86
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypothyroidism (requires lifelong levothyroxine)",
+          "percentage": 100
+        },
+        {
+          "name": "Hypoparathyroidism (transient or permanent)",
+          "percentage": 5
+        },
+        {
+          "name": "Recurrent laryngeal nerve injury (hoarseness)",
+          "percentage": 3
+        },
+        {
+          "name": "Hematoma/bleeding",
+          "percentage": 1
+        },
+        {
+          "name": "Infection",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Immediate (days-weeks for hormone normalization)",
+      "treatmentDuration": "One-time surgery, lifelong levothyroxine",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQJcrfRezWECYSb_fmOXkX-r-PGbUxM59FQRJ8j40CRE3KnW6lymyKRhTRmPB_MJ8EeaVnGXSOQ35wqnFSDYxwSCntho2oGwVsXrTl4C5IFhFjT_9Jzi600b9mdXsEWGtOQINIAWo2WuB1NTk="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQyjUvPGw0CHRJXaDzX2FSoSMKaKzaIYLJvWeYecqiP47r8BhpM-DGq4kUk4FTuHh3spbm9NrkZoh77BPsMebVTwIFx6uTq4510wUjd71xqfbnOhAll8lh-is4zW5ZJoXKwKma94OuJBrFXlZZZbPwQ0dgLCRtN_0qyqA="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESL377CDSlq9txWbGIRsAvpfJQg2O1BJkdyb_uQQyJGCITBAalDmprxu5aoYe5YMmy0gT7VQcYCcTNGHe935soZ3OOfUq0EALjwS4XYsJLG8ZxNuiHad_C9CiHrtTYx1jbatxa2OYR8tNP1_8amYM9UWOUARk1zr0v9EFEA3b49NXLZPFtJUOUiz-z7_uqlRewzndmHBztTdfDDPF7oYlZU2NTa2FT8mVFS0DnUgADKuVRM_CVTV4Ny6MnqB7M1MSNTjks5t1mrufQ8eL1poyxMCdMRZSP6vPrBLqggpno"
+        },
+        {
+          "title": "jofem.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTYcG37wGqAOMrtq3ci4xdq9fcrbwv8lQgId-jhka7n5u9-S3FCMwRwVKqsbc-PjcCGWJsmBVM_ZtVDpGN432YYU0--Szx86D0ilHoSWmyOgj4sTgSTwcBTh71fVRZuJTZpeiVj-KrCJHsD1yBzQ8Xa0Tp_l0uTZfDbOM="
+        },
+        {
+          "title": "tci-thaijo.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUc0mresJenFB2aEwhEbKCqquPKuDiT33K-GZ3jbjTWGkboVgadHHZ7qIxDvpbARjORO5hYLP467uBJRx59sYICTDDLUvYxuzg1hLsi81Kp1hxwZV3H-mnTg2EeepBHAiq_hhRd_Z0zHNfHyfd_SSRWHJ5yGiZHa9TFUA3"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwMK4jF2bm95RUleCuI7vP2CQzDLyaFLi0MbqjNA3x1Z05eZoWkk50O6TUS2x11JZIOQDf8tbcjy9KdvyH_KxXfiRNZaum65GsZp5bPMPgzwPxQqjnGrJ1XeLTFa20s-pbZEgKUA9pzofieOs="
+        },
+        {
+          "title": "snmjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjrvakYgwNgAIP7ymiGykLxn3gF6btJ5LI0A0RvoCHg90ddkVC2lWg_ND3kbPkKNibcXth5EDYLCRc5PgiS_yL-OBpn-P-bnmzW5AJ4g4vLlXnXeC2vMw6ZF_WaOa8kyBiZmWCbaUl6PhCzF6QCpJiiA=="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF8eUlH9BzhwfTj8ll4cMMH3ywEjrIr-cGmewP6rERu_OgckXpfCJDxXnizLcG6q3IsQudVYuiAxr23w994uOsn6DEYfEGiHWSHQDCQMORiqny8evtuNE4y0OW67P6omVCF_rEl7g="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPS6jP_mg-7PMzSsT9bvCQ1hch62U-j5Va9Vscbi3JIzKB1gBMZZFK28Wkr-kvFrLSiSTKxD6a3KF0M3oZyMbk64ZVZ8ToQTUKagZo1JVSeAVI7y6JkuV2-GNPnvpjlZbuBKAFtfFJ7p_DLap3Gt1jIqNDc3EP1_DkD4DOIip3O5RfJvb4mwA6qvfK--r8R2-_a2h9XT9RtJlP9CQH0yjxRiRPttPZ5w_SFl3YI97u1QRjfPYLmiK2zgxyEtl_ZvoDj7ka0uUxkN_J9Bb2WdKwIzjYhoWLc8UUonQQmN2Z1pXFdHLPeTLkbe0kEsUC3bGxqU2duvo3iyLrgwO7YuDN2po="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFedVwSefUDJMTrw6ej04lm2lLRC0BZenovZpIelQ-LhS1yiFWh6m5i_M_TvhNyqmM_55p8l-x6wdZujlyq1IeTZSwUwwPDu04h58UWkBTbtSMNvfl1HS3IjuTiuE6H5TXH3fyuXnKMp5jXRWDI"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeNdB6ssPZCMPsIk-VHlJPAxeaazdTYSwdNQi8jCFuSkZjuckl7XzeKWwgHh6ScZbnXMLPN9ioMBhw1JsIOB3VW4Hiiu5dSnTb099QE9eSuPyJA-zSeUFe5h4Ku7wj8tgUftFSiJlMv9td8BQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Radioactive Iodine (I-131) Therapy trials for Hyperthyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hyperthyroidism&intr=Radioactive%20Iodine%20(I-131)%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "3-30 mCi (millicuries)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 750,
+          "monitoringCost": 600,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1450
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1611,
+        "costPerResponder": 1611,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Radioactive Iodine (I-131) Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 ng/dL",
+          "baseline": "3.5 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Thyroxine (FT4)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+2.0-15.0 mIU/L",
+          "baseline": "<0.01 mIU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Stimulating Hormone (TSH)",
+          "percentageChange": 30000
+        },
+        {
+          "absoluteChange": "-20 points",
+          "baseline": "Billewicz Index: 25/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hyperthyroidism Symptom Score",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-20 bpm",
+          "baseline": "95 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate",
+          "percentageChange": -21
+        }
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 35,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 kg",
+          "baseline": "60 kg (for 1.7m height, indicating unintentional weight loss)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Component Score)",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-20 mL",
+          "baseline": "50 mL (moderate goiter)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Gland Volume",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypothyroidism (expected outcome, requires lifelong levothyroxine)",
+          "percentage": 85
+        },
+        {
+          "name": "Transient worsening of hyperthyroidism",
+          "percentage": 5
+        },
+        {
+          "name": "Thyroiditis/neck pain",
+          "percentage": 5
+        },
+        {
+          "name": "Dry mouth/eyes",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "6 weeks to 6 months",
+      "treatmentDuration": "Single dose, lifelong monitoring and levothyroxine if hypothyroidism develops",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsUd0mGl5pV6HPEoxfE3ETS8i31jGfwvTVMT1do_5Knk2GT7pGWhEMSiTBV4_0gdEdA_lapTXvEr5zBi8PgqvreWr2CNdjlMR8HyIE5jKS-uQsUiEcNogLsXANaQsKImhG6Po-b94YfQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhiRVpcy_KnbOdXv1ENgNh-xIZcaCPuscFFrmcwsqzsESwpuVuV22BTUfdQ7YIhaWYGsPO05syO6ZNwdNCeLVfsYlxorJvvbRd2-agHiXAbkKyywOtriAvAMEI7krcoMK9Hq3MrDZ8nWZWskI_X0AKb4coHIMNP3ZZCEC32MPXWJs6tzX5s8IiskUtYm_zdVaAXDodju1llwxQJSXyNWK60I_Iq5q-mbwfRC7A37Ns67H-9v1ammHWZFsohLjq3HfO79G0xGHHLkUXK34y5unfABlqtGNXViaknX5Jx2Ht1fUpq6VbOj2MzgY="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY5iiw57aIj3vonb8uR73Y497iSVGAurf9ANBdsn5VpucawI1Qct3Y83TjA4TQtyCqh-hQuBCZOQ9gSLJHE5dQvwVpm08bOPfu8EIwCPM1B4P80AoKwR-WhKZ4JIJ3E3U2M_NAXKLjpHQ_6ov2PUoUsaMl0blBA_3Ygn4dUg8yIMfP4HeenZR1xN6BOfuwgVc1ZnuuPDRfMiylSsQfIWRqAgwFiaN2dCXPmH57i-yKMyx7MGq0S9Tv38gCM1o3cgXCFsz1XWt5SsI1qVOmHwz573Zw5w4sFuuj4FY8YLheaf6Vnrls_4A2SRzgFkVGlg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMK1xFu75YP4RIRRGAe7DkXptsu8H9IjIa5IA0sp2SNEwfOWEwzRLY8Sg-1KrJRnIZe8e8nhz8PZqY8NpywMEyvpOSPuGqrPCZIJpwAMna91V4Tk1LU22FjPxttIUm5Qqm16rYXZ-jGyUx5ss="
+        },
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPYPKm_AqQedcaRLxQpln4mXUKRBr3ftB83rLTtxdqUUJj0sGsvYp9Iu8NeC4sbdpIWyZx_qfdk34zgYYAmfQBWqK-v8qBIMS1vFJ6QxgAOAXBDRCIrzAV3PO6NOn_Z3_l_JtEuKd2ueE88odFqr0rM2QC5kQNkI1CdM5YiuCFKb5deSFuh08kNAr2g2G1iQcDb2-KsBTZckk9uGzrFcg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1ZUsVSHwqTvxgP9oLJeLIUXyceJ8quDsWwT7zpnknbtylTCAumjn_Q-SyJYjLjzQyZK-bX4yS0I2IlNlunsNk-ZK8qokUMmhvUB5cpTwznsI6dCW651R7Lpgkly76mMvHscwe0-E8pLNR5p0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGhnUq8nvyuUAG-cXEavxS1yxARQ3x4_TvkUzftJOqXIlh3uYC_RlY0cuF5WSjofWtJ21nQw4wEqBgHNSsb2v6dLNpbgN7dhrqVLUFpsosjnBMEwla-Y1boGZ00CDsehKrqrO1s"
+        },
+        {
+          "title": "scielo.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfifduoovI0jffrqkoQT-5f2fak-VeP44JbAsRYL4fgsfqyZjw4NrpRQDHLTnKUJXz_nQ2rjTOkuQF7IAtB7EuCFcCsY9lFwb000JA6zwy3gDHo9Ffi7IHyUdaKmgrJl5l6CCa0Pq7FWI8Yv_ar69p5Cc="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYdJRXDeNmuIO_UX58_PiQSV136DQTizmygW58KI1QzlcmuN0BZuvdS59SqgaRW47QIvyE7cYmA33C7kJBpRzU50uvjU5kXxcJatS_KEvVmvf0Oij77wpElYcS0az17QxdF21wWeoaxDZtk-OadYqweU0-KprbjlQERQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Methimazole trials for Hyperthyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hyperthyroidism&intr=Methimazole"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Initial: 10-30 mg daily; Maintenance: 5-15 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 900,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1200
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2400,
+        "costPerResponder": 1333,
+        "icer": 45000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": null
+      },
+      "name": "Methimazole",
+      "nnh": 2500,
+      "nnt": null,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-2.3 ng/dL",
+          "baseline": "3.5 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Thyroxine (FT4)",
+          "percentageChange": -65.7
+        },
+        {
+          "absoluteChange": "+0.99 uIU/mL",
+          "baseline": "0.01 uIU/mL (suppressed)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Stimulating Hormone (TSH)",
+          "percentageChange": 9900
+        },
+        {
+          "absoluteChange": "-30 bpm",
+          "baseline": "105 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "22 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Wayne's Clinical Index Score",
+          "percentageChange": -72.7
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 90,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+5 kg",
+          "baseline": "58 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 8.6
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "45 points (0-100 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Functioning Score",
+          "percentageChange": 33.3
+        },
+        {
+          "absoluteChange": "-2.5",
+          "baseline": "6.0 (1-7 scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS)",
+          "percentageChange": -41.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Rash/itching",
+          "percentage": 15
+        },
+        {
+          "name": "Arthralgia/myalgia",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Agranulocytosis",
+          "percentage": 0.5
+        },
+        {
+          "name": "Hepatotoxicity",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 weeks for symptom improvement, 4-8 weeks for hormone normalization",
+      "treatmentDuration": "12-18 months typically, can be lifelong",
+      "trials": 31
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfmel6EWfZGTRFOn0Kadye_oNWSdUGZACdRaQcQv9yZTlHtO-Kie7sVAxIlJCnTjF5qkDMQDew8zmc2UcsCFsHOMr_ZvAW2Xkzd9oBftl3SBHgujfO5E8THDIxL_NHTFK_piGvhZZXVKje6d4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWZTO1dZGrhVj3D__9UnYnfH4pduvTcBIo-RIQj2HODrtlvUcM1wzRZO7KeLOCudhwNo5BNV8w49hjkZXeoh2S3v_-y6PDWY4P7gvcJ-x-AvvylzleuJSXA8A-wA6GQPUURFJ4X1LI1r-qzeBVs3tdZzvhfmvwGBpV3yMp1lnL4qFeGmt0KKz-QG8CYSeRlGMqSYaXJjY_jgtqCaHLuMRPSyz7po_tMhgODHilZecobRTwHhn6GOJoPuzu-uktmf442_9FaDbm-IghSO_n_3DIo9iIiPHQdKRODnHj3Fkd5Au_r7U4ew4Q9SqHf-zMmw=="
+        },
+        {
+          "title": "repec.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVMictX3au5h-YtQe_-btWZKX5DBAUZXUFZWY3qaXjwCzjW2r5YYe9SmVyDLEEyQ-xwvvPDBBwMHEQh5j1XFL2KeJJa9r8suW-M3PhWdWCgJFRX1Xd2mGmD2O0nXbw_Lyy2Ab7QSEf8nwOImM="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsqMTS7Ao7oWn4WzWNr8TD-rBsXQ8IJ1x-doy3uKKzouFOTwuDKXWKPos9mLW1z5lvxlBKYpeYC5RX-_oaseMfuMFhpUo3HL9R9JM6_VFGF58lRtGll9adya_UeuctHUIJAT91nMApee4GTkBFpsCxLIVcijEEbqw0UYTkV_0bOY_zExM4BQ3H52Lh9mblQZmYXsTnSf_yTA=="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvUO6y0NofgMjtlrkkqejn-Ijgqf7SxMbcpVu-70luX3P6cAtvVwn31IVsWYU9BCVDhEZMQ511Aeorl-gG3OCwCEO5KkiSqYZAh-buquXsMPAvZw5I2j480fTfZ2BxQGzUmG5i3hqb7siOTEGt1NUdZ1Sv7MIRLGHCBwGvaLR4otC2DGk="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhOOdanY04sReLXNETvEiwwaXeH-C5fbfS4i3-IpGuULOwg2D2v9atvw4j-2XulEErE3755HqSECpdD0b1jn1XRuQN40HgQubqVDuU6XY2HZSnW_eOCFoiaD9HsICzEB5LFDJ1Pw4Ym-J5U4vUg8CmGEg="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF7cw6InpKsgNfxw-dwff2XbrTdLqb7Xspxhm4SPnrCZpghP7-WB4BfS-6BOilke08rc5BVsTEoQzTiQqum0PuI_zFIZfMPbneSVLSp69XP_iem-OZDmSiS9NcKj62oNL7pOivep_mY43h6CxzUJkkOJjbEL6ONvR5L1H7W0EexOkWHjI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Propylthiouracil (PTU) trials for Hyperthyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hyperthyroidism&intr=Propylthiouracil%20(PTU)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Initial: 100-150 mg 3 times daily; Maintenance: 50 mg 2-3 times daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 1200,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4500,
+        "costPerResponder": 2118,
+        "icer": 55000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": null
+      },
+      "name": "Propylthiouracil (PTU)",
+      "nnh": 750,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 ng/dL",
+          "baseline": "3.0 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Thyroxine (FT4)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-30 bpm",
+          "baseline": "105 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Heart Rate",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "24/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyrotoxicosis Symptom Score",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 85,
+      "safetyScore": 50,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.49 uIU/mL",
+          "baseline": "0.01 uIU/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Stimulating Hormone (TSH)",
+          "percentageChange": 14900
+        },
+        {
+          "absoluteChange": "-12 points",
+          "baseline": "GAD-7 score: 18/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety (GAD-7 Scale)",
+          "percentageChange": -66.7
+        },
+        {
+          "absoluteChange": "+7 kg",
+          "baseline": "55 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": 12.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Rash/itching",
+          "percentage": 15
+        },
+        {
+          "name": "Arthralgia/myalgia",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "Agranulocytosis",
+          "percentage": 0.5
+        },
+        {
+          "name": "Severe Hepatotoxicity (can be fatal)",
+          "percentage": 0.2
+        }
+      ],
+      "timeToEffect": "1-2 weeks for symptom improvement, 4-8 weeks for hormone normalization",
+      "treatmentDuration": "12-18 months typically, can be lifelong",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdKGu4eb3xO3kl0Z5PvI_tGu7rL-5AC4zM_QNVeTlJgwvOmwSPe5187fFjYlnTUm691S6-arW0OEMFaCxNmZc1IvTbLQR8z6cdjszmn8Ye3SC34V12yCYa0TaHPYS1AiOwPSw="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECcfjMWY3YteJij3Oik9zUZNUtjF6Eh1MhqQnq3q1nvI2-6CQUukvOkMCnRyhmKCwrEJmfc8oddjFSjWNAsXxg1LAyqGwkJe7Rv4Vnl4SK1kOWg9_yi6OzGrsfZ8knCfuzXMoS"
+        },
+        {
+          "title": "ebmconsult.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1f2CFWzt6jmbWmkLpZB9KO7Tuse3-Doso3K-cHfugXl6aYvLwu_0FLwcMGQibKY17-1mNy8B7JEXdqbe7_17r-kn3cW1UvIBsvPsHi7B13YKLZaXH1-eGJPvfOijhLzEuPqjEu76ivETeGAXIPn0aqLPex_n6mxc5NnPNqlTzbODsPhtvx37adNpnLUUnbBIG"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAKES2la57hmkHbqyx1QYUdRRnaQ_xT_SaWFo5Bm-4sRwvNcge6Cj1xd63RcH8WcDpfTvnKrWXMB89YqR3r6v75yGDO56dZIpbIpkXsH32foVOlP7vFz-taIHwbK4KJLDmeFGNstb61RD8T2FfOBCefRPjTNmfwr5021vJbJVfIW2TnSzuBTjI3LjUTz5EKZcznAQ2nVluS_NAVBo5GJZU38nFkZydmuRTr-SRbba7L4t51evJ6qeAg1BvKpbk8GlyNA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDHw_Fj1LlGTQi-9KzBZlK8fQnAX2LRgEA3-N9AUZN78sEB1070tDmxN5G6KZd2AtiLA4kN2BQTpv1m1xT9IdzgdnDo_zOKnKhAdn8Qg3VAA-nQlzUbiRxpJ9q9mCQc-HqBEtn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPee_VD9oznUMbmd04jVZMeUWZ4L1LI2J9gDPUBSLIowvIJBKNH4RnOQHkaNBltoaG4y0RzLn3TsShkg7Q0jWHO_LgPqYfjliGd39Up7CiwvsHTvvXINL5tN3YCJ4Gj3379jGyQ6foNVTUOBQt"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhp0XBoh8iy17nl5qIoSgUH32FklGWtOlskI6Y5qkCCTgMs88QTKHz84AhMPW2an9k2fbueseOUtFI6JMIknHQoFW69g0hb4PaWOJWTrOb5BrYOhSobYe_-Kgffjp4G8ZhtaNjrpICLC7TCZEkuXnkaeYzrvtb6DSneAOQpBtwDZdlj2p7wCZ_UXBV7dnLTSMk-W4USF5I6OkPv95c1JjwPLa5TAmJiIDhhAuFTXEU-Gy3a9pOdAvlIMdxcNGc-fTUITfYEd8BTAyK_akl4DKxyDDP89hTsQCjAdgIBc7M_L4V0JacYGJnxGOX_3Ip1fDifOGN4rIXyGjL4YlgfnaTOwHYNDMTkHgQywpyCCPPVMTmQwagOAYU75yRBod6X0ByQ6LoBc11js8Q3G_kFZ9rSLsayoQrQA=="
+        },
+        {
+          "title": "regionh.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoH-qmn_FeSRaj3DRedPJiHQhd-X3HqUj2CLw1Fxql3C1O_tDPbc5VLGoSO7v8uB9iQ3e-nP0ZfaRwOcbEm9VlLRHVprpmmoGGkvOa4WTGgIS-q8ZFTDcogAblc4N8GRv0Rf8_d2Y8TMy7l8tDGXAPuMak0jZVnc1ILDSltRduL1w-5M5yXsGDGPEvS9qmR3noEtdJTaXCBq4kGpWwRBNGalqeViUNafY="
+        },
+        {
+          "title": "ClinicalTrials.gov: Propranolol trials for Hyperthyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hyperthyroidism&intr=Propranolol"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10-40 mg 3-4 times daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 250
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 294,
+        "icer": 10000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 20,
+          "annualOtcCost": 50,
+          "annualPhysicianVisitCost": 150,
+          "annualPrescriptionCost": 100,
+          "annualTimeCost": 40,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": 160,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 100,
+          "requiresMonitoring": true
+        },
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Propranolol",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-30 bpm",
+          "baseline": "105 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-3.25 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Tremor Severity (VAS 0-10)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "24/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Anxiety Rating Scale (HARS)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-20 mmHg",
+          "baseline": "145 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -13.8
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 70,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.4 points",
+          "baseline": "4/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Palpitations Frequency (Self-reported, 0-5 scale)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-28 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Thyrotoxicosis Symptom Score (0-100)",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Bradycardia",
+          "percentage": 20
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 15
+        },
+        {
+          "name": "Hypotension",
+          "percentage": 10
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 10
+        },
+        {
+          "name": "Bronchospasm (in asthmatics)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "Hours to days for symptom control",
+      "treatmentDuration": "Variable, often weeks-months adjunctively",
+      "trials": 6
+    }
+  ]
+}

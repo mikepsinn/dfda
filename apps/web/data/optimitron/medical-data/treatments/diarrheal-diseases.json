@@ -1,0 +1,853 @@
+{
+  "conditionName": "Diarrheal diseases",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:22:30.018Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpDHf9KdUw9PrETbPgwjEH2iYpo-kfhhjrrtM-i19cZEY_JiSATsidIS5GiIHMYVbrIe2kIkw7T8Ag2qT6iOwg4o8bj3Qwgm2rnF2jO73RE9BQIc5QR8AbOcczbVUhGx_C9LkzeUC6FGSJynI="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElSSSkj1uO2AdQk6ZxDgbaz3qHVNHpslqZlNOykD1tflyGi_B3sESEx8lD_Lx6YvB5l3ijeJ5hTWndDSthlHI5iKzu5qTr72J4A4RMIwDXZT5Sb6hb0ZezNJQUvGgStXX4wJqAqzAMB55mTUo2D8Zx3W3OVdzMOfTfJSOWGy-PiHtstbuExla8ely9c5YOB2YnMDnSuMV6HuMZO0letonpiwY9BfqQXflhHVDNs9W7beXTMH8Ij0pu8hgqhS9Ts0JUdcYIxEkQwnH7Ig=="
+        },
+        {
+          "title": "johnshopkins.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlmGX5_lWZSms1O6eOLrEk9MsqWRI1N0Xzsaj_0bv1vQ0cylNYkwonzOekNa4zoBsyh1aLjo4TaiTnjmOHfvjjtHojZNYr4-H1yX5f0Zo3_xey1Nj8qQJTV05958zxZXJv4xSkPobdKpbxXqS8YOX_G3MXm6eXOS6oZzd2BX2m28-QO5WMvoL4oTOW1o-4Y_cHKv7z3ZnJgOAjzqKjPbizQ8-cdKmcHxXE8_ft"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq3UATJGfcQSC-r3DsMrWiKvZoB7nBoUOUmVb024iEzXxkvzFkfebuQTMFKJ2D0l0BZdFtC5Q6sgtsfBXFRzZ4-WdbobXILuogL7cZ3q0qKsd5u3wgpETTSzd6bdnG3XnTvOuLnhW0nt8oUYU="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOselP8PBDfGpLejDEsW_ra6lrc5RvmEOYAx3B7rhT_65R13y8I9gb7J-X2OR0RyA5fD_hkaohO0mAorp0QtY1Lvj2z-6uKM0rjWhEh228-OhUlo3ShgAhLXr43sMgi1vpsN-g450Psux8s3MawVHwrf4-u_W29Wo9w7m2yV5qgsK9tGzaIVDYFUCmm6f1hzJMmOxXppWa8OGD1h5Y3gX1nW4wsMKpCa4OOnybVVhGnXV-raEMPYmkM_O4HwH-tqhmjzdWN-SQJtM7ogaV_RShJyjXEYYIMSYVEzUKhVqI7Q=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaS6o4-TSC2Z_qCwDry-oNnAexDKyLVXaS6Tg9C8E5sbwUHs2xP3e4bhC5uMw3t4s5CUA9JqZs558aeVx07_nPV3faoljsTyWTxQLKBymOfYX7IUJU6bM4iOY4hdDaMyuLebIH52kuDb9yEB-AIpDMJnqT-5REEc-wlUYvgT3vwAM4X01j3reuK1uxkqIszKyAvfbt50SJ84ihO327c1dYKyw8RSm2Rlt7iw1yuFNXLHaBNBGUgYRS2HCZQd9-gJeDyoxVcMw0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtr0WdEyBbiyy3_uv0TE-rFDZ1l0ha6Oi3vwCmxXbU_mn4YYkFe4tzRtbg7wkmb_z6joJtOdgwKslH0vcjZgUbrWpDEBWc4wMoKki8aw0JIEXPCb3AI6Pi9oNzMSjIp5svIPTiXfP_ZHOS1NA="
+        },
+        {
+          "title": "ClinicalTrials.gov: Oral Rehydration Solution (ORS) trials for Diarrheal diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diarrheal%20diseases&intr=Oral%20Rehydration%20Solution%20(ORS)"
+        }
+      ],
+      "confidenceScore": 98,
+      "dosageRange": "Varies by age/dehydration severity, e.g., 50-100 mL/kg over 4 hours",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 810
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 10.53,
+        "icer": 500,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Oral Rehydration Solution (ORS)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "Severe dehydration (Score 10/15)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Dehydration Severity Score",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-1 day",
+          "baseline": "5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Diarrhea",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-45 mL/kg",
+          "baseline": "180 mL/kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Total Stool Output (first 24 hours of treatment)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 95,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "10% (patients requiring hospitalization)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hospitalization Rate",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-40 percentage points",
+          "baseline": "50% (of moderate-severe cases)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Intravenous (IV) Fluids",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-1.8 percentage points",
+          "baseline": "2.0% (in untreated populations with severe dehydration)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diarrhea-related Mortality Rate",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Vomiting (if drunk too quickly)",
+          "percentage": 5
+        },
+        {
+          "name": "Hypernatremia (if mixed incorrectly)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "1-7 days",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw29Bhd9BGjXvxjQ6ZDM8OiFrCsBcKYuCT5c831jIpBPU5uDJwa_AA1hUQFEXMdzslGafRHQQMY4dHrunL46KxayKg_xCaMYJP7rDeXv_wkQ4B5eRj_8JKvXsPqf76u6Vp0hVP9t83TeKW81Mv"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVMNZHGCw7sGol_uw18KZZyF9JFvEi6AHkfXFrOJRDg_uYghVq7-ZPZiUytzaz8lc5RY5EiCQod-ZmXib68aPYVBjxp7jvYGKQ1DUfYB6Xw9vKMGWumtqsyyzqRdtmbi4X_sBRuBi1J4d4xPUCOWK3zC9bx4nk_DwejkGdHu3yMA2aoVw9btQAGkKi2nQGnmEZxmV2KjlqqnVfoavqMRbCuSIbydaZVkrxjTHwW2wdyDPEr3FJcdpIFubqV1oGLyE2e9qVBPoEAnPe6Fhw9JUq6NoHGv-wm5BhwIpSCeVDijoDyogmZvvEba_mEl-cR63Xjk_EHlNopSB1CKRg-mvIMgNOVdCy0EbYbg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNCMa3vsTwi_nPh42QLI9SOKJ4R6emFKDHf0UIovBkzjLHSfNt5DP_us6ZpvXU0cj_jrk3-RIxY_4nrcNb0irJOlJbzt9Vt-1vwFfuPyamXtQ3INatqZ66vGlIT_pUypUmALYGXGTyqwv-tptN"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElCtnOKyMU5_pfYkOzlOgEW-LY3x1CAL3nKAqgg0EqgiXh7K1F4M30VOtEuybFgvAhGqci612oSGi4phK9QT7oZZ-82lvmEDigQv7F4V3uu_EN-CXv6cpvrkGMdxEyaDT0l04AEf2nqtDKy-u0TvqM486FaLUKRZtIgi0Iy5gwLjVbkXSqeY0VXCRubGyF2gUyKQ_feA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmBtR8lDoOAkj7wCBjTwEAAXE4VfF6srlxxb6oUj0naR7ZBa59I5Ijfi916uCrubS3iTArR-pXmGXxUP8h7WwAXprg77Z4a_PYCAGU9jFWZKWzgrLMZ6PXNHXk7Xi-RWx706f0vPlkUVoxslI="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXtlbgOz9YXI1ztwSxHVQ910iSrFjvuLmMKBs7BBs3LvXEboDB9xnUydB41Xh4zqvH90Y9G_rPzmVAxInMsA5zV0adXsSadSnl3DiRkXKCCSnTHoW7fcNfTJgxESb3xyd8AG_WOV2zcEfOln1mOKblaaJpnOehFn9nLmVthftFsUjXg8RlTXnY5VJIdT7XTduVdrEFPe29qhDSEQwWuF3QbzO_eIvDZw8nFwxDX7i-EkzSmyAAKXa6"
+        },
+        {
+          "title": "ClinicalTrials.gov: Azithromycin (for bacterial diarrhea) trials for Diarrheal diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diarrheal%20diseases&intr=Azithromycin%20(for%20bacterial%20diarrhea)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "500 mg once daily for 1-3 days",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 800,
+          "sideEffectManagement": 5,
+          "totalAnnual": 835
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 38.89,
+        "icer": 10000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 15,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 30,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.05,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "moderate",
+          "netSocietalLossFromRxOnly": -2815,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 500,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.1,
+        "vsComparator": null
+      },
+      "name": "Azithromycin (for bacterial diarrhea)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 40000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 90,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 8
+        },
+        {
+          "name": "Diarrhea (including C. difficile)",
+          "percentage": 5
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 5
+        },
+        {
+          "name": "QT prolongation",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "1-5 days",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEkbYwEn9IKCSGT5vatpODXeGnsleo44m_ftkNfykh4BISuu3QGwtxpLm8JdloxHgFB4ZIvDktfyXijPoD-CWQmAUC5q3Gx7vuNVPhFT_SBZjsD5R5v8it1wkaEkd3psKq7BA="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk7C_ilmvwZyz5RZ2mzcZqA4PFvNgQX_lSxlqoDQ6hjdIggo4x3OJRT2ANjxYwi7MIOwdgUHFfbNh2yIBUUUx0cqaQGIVC-wOikYcbKhYDIo2FCS8TPVM5J1JM4oaGujrjYJikoxLk-pP-syPiZy4Ps0ycP6BNjqtE7LOlwLg4xVmsJ2M="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3ZbS7hcFwWW-WpwqoQUJ008Pim789fJ9sBibDByLVNh2d29HOp9sVxhQ12O03UNplk-JcXIYybz7bdL3DhDpYPb5weSCGN0E9nU7JGApfpvxCX2Bm8_0TUVCdrzhbm-OW6Svt"
+        },
+        {
+          "title": "jogh.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF02NXuvm3HlSl-rZg0HK02cpuIFSx0Jhs306nQsqyKv2oiVAeSQt2YSmPo9T44si6V2nEMM2EBMXcm_OZK_WhJnTVWhGP-HkiPLbbfiZtEmH5XMcvHCPfxpYLMaA3ekA=="
+        },
+        {
+          "title": "examine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6-XHTO5TR3H5hweoEVGS7XhSFuNdcijpu8p1sFqp6ykSKohIxUfeuRMrDeT1dCbKvrJRCFSlmRN8rsAiQpIJ3BfLxTAMKT7E206XL2sNF0Y2VxhlJ634ZHy29oNju8s50gaYLiEWQccyu"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdym-u5KnAdxf1lLHXiWlA7lY3mknmxFuLzEQ5BrhUeV-i3NhwGWbGBeCtfE4_-4LoZiZFYJcBfYy0aPCmgibSnRS332VP4H-wBur7Fxr9CwHMW4V69-nWS8gR8SP32MGSBNGGlOgEdefXo220gyO0fTakcXzRYpiIhL9TkKvEtOLeSvMxlPbBB30DYiTV-QwlXLoJk64s4Dcjh-9Jezz6X1vWrwmeQbnQ2DQbfIq-eozi8_xXTzjv9gGHNHP7EekAai8M5SSfcJHa"
+        },
+        {
+          "title": "scielosp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwcx2thtIAJyFZzHC8q1eZtxEYQWtjWd11nUK46MMYH7gpLkNtrqA7_46-mZLAkI7fm2oqLaMqKLYiYCgmqcMjfoTQyYbehMmJWfLM6vibaDsfPNIMm24cbq6m-oyRNfUh3cmHngQRybGZ6z3xgCU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFuxS0pSscCEs0M6eEzrZ9ua76eOM11eo61t_2bS19P8RaqS1BTNIeB5797X9IECKX0piKKIPC8VJF05iWQo-NmwGGNiEKm37BfhY2-jxa2cr3uo-Hp9iHne9ii2FMFS1Fgul5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEB15JHa_SVIzTIQ9J6WEHFXxosoWZKRQpTrszOQDuwc248v8MyG0cLlaqhq6z20EwRNRbCq-wtbsdqqoHtNPDNMFZglCpnKTgaoQzLtV1tCJlH-JFUZlRDUt_CHrjdw_uaksRAwVxWDVxoB68e"
+        },
+        {
+          "title": "ClinicalTrials.gov: Zinc Supplementation trials for Diarrheal diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diarrheal%20diseases&intr=Zinc%20Supplementation"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "10-20 mg elemental zinc daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 805
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 6.25,
+        "icer": 1000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.6,
+        "vsComparator": null
+      },
+      "name": "Zinc Supplementation",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.04 days",
+          "baseline": "5.2 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Diarrhea",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-1.28 stools/day",
+          "baseline": "8.5 stools/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Frequency (during acute episode)",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-7.5 percentage points",
+          "baseline": "25% of cases",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Treatment Failure (e.g., continued diarrhea, need for IV rehydration)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.50 episodes",
+          "baseline": "2.8 episodes",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Subsequent Diarrhea Episodes (within 3 months)",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "-0.3 percentage points",
+          "baseline": "1.2% mortality rate",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diarrhea-Associated Mortality (in high-risk populations)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-0.48 days",
+          "baseline": "4.0 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Hospital Stay (for hospitalized cases)",
+          "percentageChange": -12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Vomiting (on empty stomach)",
+          "percentage": 7.5
+        },
+        {
+          "name": "Metallic taste",
+          "percentage": 3
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 days",
+      "treatmentDuration": "10-14 days for acute, or ongoing for prevention",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "qxmd.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu3X2mRBOYzC-YhDiiWqugaQ_zf6NOudToYi4zXVsNMogx9_KKMYQTrm8EWdDQ-UwNBfoy7O-JJHkRurmXlRkHYXxTNPGqm9jCOVQkPM9W-lS7DsbCFSBUIwDAvVHQ8bZjcQwKonz_TxpwoTF886xPtBIow5Gs4RE9dVvpjnOj2h_hssq3ToTcjP7XLbetk68B9zy1GDCyDlhokkFEN7uloCF5_d9BaEI7tQAtejI6"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENeeXT2ktjaOvaBugJGFgAlHabRox5P4iChgghxxLLIuJ_eHmyTcMotwBJjOnkJX2vPnqQ2ffHsvxFR2Qi9fYyFoUTR89vVPOz3jpw70fvWiT89mnQC9q66AfZWb9wlqo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP6Iw8q9wmNX5jamHNHhcek_d7CKnih5BFpIGr4hwfB7ntgxMDs_DG2OPQejWUg5x5WH7yOFWZVuLz0Tc29q5LO2dBSm1hA4LO2vVEctuA4spy5ie_MLbGnqW57PVcdvr1cBaj"
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHuJ1N6mEuA_ZHn0d0iutfROCMv_e4ZFT79tyK1NA0aGSxdpNY39XVG4KEYiEO-zdsXTAtv73UENMAMnzuZZZBw42gbdpZVKjnP1ZztOW5MEdFPLyWezOWUgSUNneKabA4TQbd65vGLlKz5uFCkuQo5QdMjkPwi9f4oWPNP50zbyeQLFE26aJ8j24unwPlBP8XRkuOPqIjAdwmHV0AQ_NDg_z50"
+        },
+        {
+          "title": "scirp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1A9J_RqXR5kNRN3tufDL-tGBxitqBVHuxYkUlNvX-QIWhtVBIsA8G741T9ZHMAZm1f2ApApVg64xpQbU-5JysIl7Aht2On7MZJDCoXFFZTvTZ4biGv3V01pe_6ZMumTR2_PbNvIE7Z9ku7rF_oI81-7cbt_Atqg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWfRbH8Y8O-UGp4CKARngaNSfAugZXQEbO50PwCTmBOrVM33E3LJnR_DhzzdJ1JeqWeECxnuA30fI3k3GtJWhRjoD5FmqpvqIabc7brGp2uFdgRNUggtAbpaHTvd1hIHNInZ5M6eTjQS6N5jOe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhGcJ_BZTt3n0uBLaN3RX0KkDD_dFnJI3SiURybACH86Pjm1bH-5xQmj7wp5rldfLHVbY-CM7-fXruHFtroqBKZeCd35C39iCkRVoZEZhQXly4N6jOQ6UY_vhiq04XN8EwXzlYwHDDxUCn5jPE"
+        },
+        {
+          "title": "ClinicalTrials.gov: Racecadotril trials for Diarrheal diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diarrheal%20diseases&intr=Racecadotril"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Adults: 100 mg TID; Children: 1.5 mg/kg TID",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 50,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 62.5,
+        "icer": 15000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": 15,
+          "annualOtcCost": 20,
+          "annualPhysicianVisitCost": 125,
+          "annualPrescriptionCost": 50,
+          "annualTimeCost": 30,
+          "earlyTreatmentBenefit": 0.01,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": -300,
+          "otcAvailable": false,
+          "prescriptionRequired": true,
+          "preventedComplicationCost": 0,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Racecadotril",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 30000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 80,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 5
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        },
+        {
+          "name": "Abdominal pain",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 hours",
+      "treatmentDuration": "up to 7 days",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkozH7NyldHGW0vPKqoHrYE6Djwtg92loF_h32OcYkquJ5EcWlFjaEtiTrzq9aF3BsXNRCRIgxGonr4r5WNUP_i2FSes9tI0ZQeB9nPmQOB_qAnBdUveHSiEh5mwO0FbvlMDoidmgBxkMtAPNDj9rHC0d5EKdqOov4R8U7kzG_jZh_jVoFQ-haY4Jo94RIsO0x0TbA0A=="
+        },
+        {
+          "title": "escholarship.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLSOmpH26VRFkW5UYpppEx007yj78ItrekM65qlaWWvP0_jiW31xXVGqaGylB_BRCvulRYpaHT2YzH65PrCkhlfVEvCtcMnlIPqHu3rW-43jD3aaylIV4D1YKfhHwhHwZzGH1y"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGEkGE54nho4YZhY93fqDtiNUEfjTggHUioqZ6k60N0u1f5fTaaF1tcdeIWwgunCQ8s2RBWPJr4kjCas_D02V5SAD__iPdbtTlcXtlH8EeX-couNpi8GmyW9nek9v2vBzjQR-RSWgc"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-1vY1KOUMLXDHBYHt--2jeLyPUgjUNVX4aP-iHxvQXJtaEcPguzLbGIDlctvsvSzplnKe6wAEN8zlhdcNKAVW7w3hwL0AUmN0rhSJRNkDPcz1V2sVaTd8kIOeQdGMBouywTVikeY9X0zoI2kr0t3tITsNwW46ozRxFoKpviRA4tw7lKlpyhiAUbmE8erDjmqG-S_D-_n5bXHKnSJo6oF63Y_blV2FZYTFDOnRX5LHYrUQvSdTxLap55MsfhQcyXCGjCgcxUr0haEkEw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXC6XTIvyZXLpvKoYNGa7J-7h95_YvdbrhXnT007Fr3xkhhi76Ty-0HzeR5-GBy83kcnVga_IRilCrBhJ-VQNpRLYPYdNhqPe-V1QD3Uu0f5SgeWp5LWk3KK--1Zh5vwm0uSyDuce3sn6tFTK2_8K2s9b2CTE3CGbB1tDZx3A9i3PSPDOSO7iycUJ8kZ-3wOPdi91WCRUxMwStAp-chqQcJOHrYkRxa9hIWANGQaL3cTwG"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-A5cu-ji79wYlcPHgDhlOtHUT6U47h6VSLHi4K255RdpJi8PBc6CwKHgdA5kubY3_Xqa_8WyXMONPgEmONISnqBd3O6Cw9_crH5cHVtLEkvlPvwvPQfLT-6VLQiDTt0C55PRPC1_0PBDbQySE1ZgB1Reh-KrL7dAA"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHAtYyG4ZagKYEqwyCELkGG5BU_1EH8McDsCrF7L6qW9AE40Ad6JoRv3c5KXwJsNPubYUGLBti16dXBg2ZDBei2Abkyvi6bjEzECy-b-Q9lcjBiloFS8c0Bio4qMUrvBKqd7TF-5Wa-GANnAtBPUINt7h-tCWBhGTwQETjvbcADuk7Gg6lL-a8OOWRlOBiVXSTgTh8VtUc9ovEIvGe3hju2alSZ6YvfyXcPFKhjsARNNDs-QiJfTxmv6VubWjb54auumdh5uALZtZI52SE="
+        },
+        {
+          "title": "ClinicalTrials.gov: Loperamide trials for Diarrheal diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diarrheal%20diseases&intr=Loperamide"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "4 mg initially, then 2 mg after each loose stool, max 8 mg/day",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 810
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": null,
+        "costPerResponder": 11.76,
+        "icer": 200,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Loperamide",
+      "nnh": null,
+      "nnt": 2,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.8 stools/day",
+          "baseline": "8 stools/day",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Frequency",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-21.6 hours",
+          "baseline": "72 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Duration of Diarrhea",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-14.4 hours",
+          "baseline": "36 hours",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Last Unformed Stool",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.0 units on Bristol Stool Scale",
+          "baseline": "Bristol Stool Scale Type 6.5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Stool Consistency",
+          "percentageChange": -30.7
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 85,
+      "safetyScore": 80,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.1 points on VAS Pain Scale",
+          "baseline": "VAS Pain Score: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Abdominal Cramping Severity",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3.2 points on Urgency Scale",
+          "baseline": "Urgency Scale: 8/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Urgency of Defecation",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+10 points on QoL-Diarrhea Scale",
+          "baseline": "QoL-Diarrhea Scale score: 50/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diarrhea-Related Quality of Life",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 10
+        },
+        {
+          "name": "Abdominal cramps",
+          "percentage": 5
+        },
+        {
+          "name": "Nausea",
+          "percentage": 3
+        },
+        {
+          "name": "Dizziness",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1 hour",
+      "treatmentDuration": "1-2 days",
+      "trials": 6
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvjJw2qzkrb5eCW0USWrsva0hm-JrxeO73I89WpAF2GBJ3d6R0V9Aj-2-yQaCoQZsSztAKThgZ6TLHsnF7K2GYx6ptY71a2xJLDChogEmlV9cOEdKHXnDGoQDu9UylL06fMF1D"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEi8nRvSihH0PhYPSKf-YFFKJqpmH7CLADrwBAe7UNmOM0TpHieFdO6aLJlTPXSvJd8EffBt6TELDxMz1bPTGtoKpgMu6fIDvBBlwmmazj7uJaZR2Xd_zGqV9n59zBphY2D8gYEO1iwmWTpUA7x"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH57GXaZfKqcZwHK8CgvdJ73I1jjdalcbvOleLWTl0ZIrAEOyX_OVHPl_QdL3wc3UAw5XlSX403S8iTWZoL0A-sYipVUKGfxCp2wcwfUZ5wpbQK9sV3gRUxhJ2qHXw6h4SQH4bZ"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHF7SJnUkOmL8ejtwcAXECVJZL0LNFDoBw_OLqr7j12vxvRrILoOHRLJq2-VB16LiXO9wtNWETihiP2Ahyqs6Y87gA_Epa3M7t5wdgpNJ15hwRiP-v_un3q6_bkjxREHyKJFpo06daIVoCXf-xQS_WdTFaqd1xx36aLPCOL94vMPZFlFlciU_uPNv6hkhHqEpHu823MEbYFy1y-VLeUrrGecIWmDv4me4LM4PsGkjeqbGWoSqGbifBnEjLozW39pUOV2duF"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT1riAal1NzreEc4D6V0aAyPYgbibjJpaXbdHGyhuBg0ihsZkZt2-X-9Kzs-agncASE4e_78cpEUmbbabVQNobh5xoh9bfxbvlbkqptYf0SGG3Ja2eQz1YsUGxh74VydIUXqeL"
+        },
+        {
+          "title": "rsc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQyWuH3ASkZSCBivhofiK5bfCryn4caxX7UZzho-14U5q8XlFY4mYZv3_VLHA9_KjJH6yTfFRzPAK2wkkgbZX34PKbkAtL2RDGK2M2Xii4pY148kJ5A5G0A4xzAvfrBfWjtjJc1klUq42DPowlbdn_UXMFwDMSWg35"
+        },
+        {
+          "title": "ijclinicaltrials.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaJBdKrR4llQ2NVUQGoekxg9QTdCiWn0zfIOIiXE1R-fNtmUrMA05aMMe5g1X78pXlj5OgflT04FHswI9Ro3pVADRUtZk_kC0D1-LvHKOnOiS3rf9unlJc5yVPijrLHIdP063gjjYtFpGevR7Xs_kDOTw2Hjrnd2PgleM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECDDUhs08tUPH-F6yS_5xTwAxQ6BmjFVEXUcOgllG5_AyEZ64sCGsx15v34qljUEACpUfObAUKMsW7vflnwNX6MwWOf2wRTskzM1jADy1bjUWw4CpQzDjDdX_qjI1ACV_npjJ1"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHVi0dlwlx2kBVoMwCqU9mXI_TnFbTdl68DvXuQBc2yo95jcq9KGL34vNjiVNhWapVurKQQfrF8cByiMDStg48mXriFyOcFBPK6xMCjIa01QuauBfXI621sltE8ZfCPhlHNN4yhm2_FHZUMHKGSfta7tyxn8FN0YPi6vn8BGbx0jd4nljLKS3SnVYYduoHcbldll0z49PG3AyhExg0dfoyVdFy88axiHL9Yh-esHcfl3yeS-8SkFaUVI87DevyH8mMDqaBnOwEsA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE7EY3lz8K6XV80rlPoN8ceRi4OZFq5YBgRaM-rsaXDK7SkQa24X77HubWmLQT0ZzxnDDqF5HxNZr9W8IjwrD-hWX_JfglRWTm10ruxCG25HDW76hcsdQ-ZSUfc8kitDlMW-w7TTxsLgtS_YE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4rPEmKIbXzCabn6hwt8Iwffr1sTTgEYe8dBBO1dWySr-8viU7uutk7jjRo8-1TNGsw5AK7GIFuwMkWURHJXdT5Cv7H8EIBvAoVLU5inXo64Hs7lnc8RZ4nzZqWN3Oxr4_VRVhlVNbn0X2snGU6ZjmjAkh4lkcbbJTQUzPtiFcmHNDGr8dfUOEQYzL5DTjOhUUTGDR0FGbXvSUs731vz57wLThxtKrGM17PUvbcrvDsgY5REIc3rEd_RBhGb1l"
+        },
+        {
+          "title": "florastor.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTY26kgRrIU0HXFj03egX9IIEi_eCR0OsZvfwxFrxWxaW1xHdl8fUwHp4NrRUO2mhhzg2p-laSKG96_siIzVxCaLGGPr81dVcy7ip3m1PtbK_2Jk_xtFY3JhRt0biWpuY0IhcXfBbKwz_LBQREH6B9G0YWIDehczRYQM8jFT4sYQN5V0lQdejRfMo909Rm7hQZd8mp58r2bhk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7xmwAm_rDPVA5TlW0FpEsPa-AcVoto_iYiIXhvDyEHXLOPUBfJ1I1QFlxZUYZwY1zz0rcD0xaqlj1TRLbf4bI8ZtTMeG7FGLdHZ2Bmv0P2oo5RpyszBtZ-gy7Pc1tqB_vTfsP"
+        },
+        {
+          "title": "examine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH2P4MILcr5DCVpF4mbiuDnQkudKndrEGIDRkgpPFrw7Qq63TgrsiCpiI4t4gFMRphoMFdFseBapxmogfMTUiF-iGwpH2OhKEM1NhTTldTzpbOz6SIESYcuzhz-vjmbAW9dkeSzlBMNvz3Z"
+        },
+        {
+          "title": "ClinicalTrials.gov: Probiotics (Lactobacillus rhamnosus GG / Saccharomyces boulardii) trials for Diarrheal diseases",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diarrheal%20diseases&intr=Probiotics%20(Lactobacillus%20rhamnosus%20GG%20%2F%20Saccharomyces%20boulardii)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "5-20 billion CFU daily",
+      "effectiveness": 75,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": null,
+        "costPerResponder": 333.33,
+        "icer": 30000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Probiotics (Lactobacillus rhamnosus GG / Saccharomyces boulardii)",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 80000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": null,
+      "responseRate": 60,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Bloating",
+          "percentage": 5
+        },
+        {
+          "name": "Gas",
+          "percentage": 5
+        },
+        {
+          "name": "Mild abdominal discomfort",
+          "percentage": 3
+        },
+        {
+          "name": "Fungemia/Bacteremia (in immunocompromised)",
+          "percentage": 0.01
+        }
+      ],
+      "timeToEffect": "days to weeks",
+      "treatmentDuration": "days to weeks for acute, ongoing for prevention",
+      "trials": 500
+    }
+  ]
+}

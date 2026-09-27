@@ -1,0 +1,707 @@
+{
+  "conditionName": "Hypothyroidism",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:22:30.814Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxJByyn7EtmX0a_-eZhqxcEw2CRfTTNJagb6Nh6WcnmLTMJ3TDu-JMZbPw-UqOzh0TM1v8nIS8mvdpNInDRXlAidK2J-gu-hiMJmZQHHqvf2y6EwWv3ae_FIeET1rkpJwNCaeq"
+        },
+        {
+          "title": "jst.go.jp",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCFUSyNwgGbTZmMNw8qoCI-Dv8HzFmuiU__Jyp3W4WIL_YgGBgdX_bD3kMRORlgEg68Pk9s5kRmElOxLyYwkhxYgQUxXUZbPDQSUTe5j1EKLSZfbIZVttBkVMDT1FZwejk931TOnclWc7cDtzrKjbcB7BywxlggRy-PxQ1Sc2Ff8EXNs5Mmum7"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2pcKZoOKG7lMS7MEKbZ7q9SBZpSyLMTe8b7qgJ9c7nHDxkQvEnbQRv3_tTMLlkmckwxkUSNanZlkze-y9zGcW1gVCcCXlcosv-Tawr6kx1uZMvaUi1yOXKlcIBuho-p0WEcrXFZ1qS2CjnsxOGWMdYip2Mw=="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEanDEpeB9vXPjUkOA9vA5S42pfwH2o4LZolhYL7x8sL_Kypvlbj9UpswlUuNHje0-_nsiTD33YV3bF-giAe_4OnR-97oizZp_HEBA2WB82JABFu0_cCCiBDQcoIMzbotg2ysGeSC-fMx5p_Dlh9TbXiozbUY9YE8tfUPXOsneLz1yDd6DZDPM_5vg4xG3A2qVhIM7z"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGKxAEAu8enTMYlrSJ_GRdYrtBCazrZ8dFU_IwNENd9hZOBV-w5o-QRIn7oMaGNv4dfI2ufCDdCQHRjyF7wCsq0rXdqRQWVvl9UNWmRUIfRK7OLb-Kgl_VIuhH77tCEWQM93UUh5utpizxDtejYjArzccbTz3A21fhwO-go9Ea_rZzveo_RCnE15vOrKINJc9aXh7aG9jk="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmnpfOAp-pUq2QUtDwZVfhtOmYbAFUZ0B122V4ULzRTlKq-nAO0ffmCVTd1LDbv2AJIlSxvOGbnK8jn1dag5BmNriVlOATtm1prAaD0JRrvCoaE6kBTSDd9gyEPtXFIqJSNlCmKHH9WR-aHUUqB6D6K5iZuj-kbniwhtkLm5ylYR-lCSoadb4dypf43lO3xuEm262lk3BwMj_OPneT5q6IctO8Gh7zA8N-8oqwnHdhiTzapRmeKTHzMq2RPMpaDii2slaA_7Min4JgNZe_JeIsGFi6vGYRh1J9wvmKLpV0Do3qBBVqB3L2D9GpZmmDsQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Levothyroxine trials for Hypothyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypothyroidism&intr=Levothyroxine"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "25-200 mcg daily, titrated based on TSH",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 300,
+          "sideEffectManagement": 10,
+          "totalAnnual": 340
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 358,
+        "costPerResponder": 358,
+        "icer": 8000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": null
+      },
+      "name": "Levothyroxine",
+      "nnh": 500,
+      "nnt": 3,
+      "participants": 1000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-13.5 mIU/L",
+          "baseline": "15.0 mIU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "TSH (Thyroid Stimulating Hormone)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+0.5 ng/dL",
+          "baseline": "0.7 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Thyroxine (FT4)",
+          "percentageChange": 71.4
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "50/63",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-10 lbs",
+          "baseline": "180 lbs",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -5.6
+        }
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6 points",
+          "baseline": "30/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "+5 bpm",
+          "baseline": "55 bpm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resting Heart Rate",
+          "percentageChange": 9.1
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "18/27",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PHQ-9 Depression Score",
+          "percentageChange": -27.8
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Palpitations/Tachycardia (if overdosed)",
+          "percentage": 8
+        },
+        {
+          "name": "Tremor/Nervousness (if overdosed)",
+          "percentage": 7
+        },
+        {
+          "name": "Insomnia (if overdosed)",
+          "percentage": 6
+        }
+      ],
+      "timeToEffect": "1-2 weeks for initial symptom improvement, 4-6 weeks for full thyroid hormone stabilization",
+      "treatmentDuration": "lifetime",
+      "trials": 132
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHB0j-v2TNeTO1BBJcWVgj-pRyKGZ1wIWQ1z8wk3Oi_-FavKTrt8vc4LmL0H1EJeZUi69h5cKnQ6ICt5VKvilQcHnlDNpz3OMxGiC2KHkc4I8BMw4P52kQ7wsRiHgcGIfxvuFr7p1FTVPs7FfmAOfoC4QC__8vWjVBLaoS0RB59"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfYr7c9Ajc5a5_joo3gycNAKRaxypNdXQDZ5p47tvK1neSA4l6CXX-UFEXz0O5s1tYyEV_QTcJHgur2O-94go3bpmUHiGPv0rDuBW84sw1hlPFwgBf4KdffIIF16Fz00v6hFIiq4b2aJB9"
+        },
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHY9nbc1coUJd1-e7FcvAL90w7xP5yONSm7uVz_KPCXP2sfY485YUtivo11B_IMZc_7m7Yuu_-ae_Mp1Dy0ZtU-be039KiUXxYTXaYo7CazxZy7GWkCkEwGvv7JZYPlTVqh3uBz6DHuqPxfmlawK7TwTsqK-slD6vGIct8_QBQgSCZQsrNbTdFliKzkCLQSQpDhtfOZWFj6Hsw8JYHnQSQ="
+        },
+        {
+          "title": "clevelandclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEibbzA9ut3H8pSknd2-4EcE6co2kuW3x3pSJ_wrlfQLV6z4IM10St1_D-6zotz0YXluKLMWR0Vy1nw5pWyPAZ7sqIf44yB_GfVk57M75YrUL5dWmXLM_UBFqLduzSO8BHgqyf8qGZT-U4O1l4N599LaUgYg_z97GUjFHfLzPSy39E="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeYUfYWrhc-YeiE1j0rjAv54HJ-bitY5p3PyKO5zN1YNeI--6bmbe_KcAYJKoiwlblhNVxE4E0V6StnRhv8Xt7MRe7nA9fw-GLPvrjveMo_2sTHPBdHSKm0tnZi-rlWe05B1b-kGDLmH526aE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGX__cePOu8F5pG7NQz9X3IRmhkjf_lv5xh2JRKdp6I7grk8XX3CIvZe3YGFUiIRGJhjT15_A0q3e-3Hx0CPkCdy_FdlDsL8xd97Q2QKsYr4B6KOb_AqLQtPCoh6zx4PePRpHbF"
+        },
+        {
+          "title": "surrey.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5rJpi7oAI1Rtz4sYtnsYucf48ZqRDwS1lGXEgONgAxD4pW5Q_-eJmdWNRsNsLB8EXKc22gvNSW_TiRekaR_8_juEM_6dkG-MKJRgE-SNBgpUODF_S9c9zyZQfIalNF3oGicB5dmKC2KSrCPQYizgohXp1cgK3IhR9GJhUwVHKOMrF9TnrAFirB50aAIkI5GgK7DICiTb0JlSthoQ9vVvhzwAxi5cf67t77ynqKp1dnz9OYGO9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxE1DBeHxXQshS4BxuX9Js68eaUR28mhOIeyn2Wy226DSrexf5ZE45RVVUeUeXxfWyDbG4kgyOlr7g7pnjHzcO3s4nkrfw473TY9Q_wyPNXSZP_KS0pwvcoa9TQKiD3j19BPokHe49fXbCp3FtsfDfFI3Kbt-QSev2STDGUwU3n2P3VnxZU-O_-nyaqK0Ook6Q-IGFoBzQ5FiknaLTBlBH_JjUziyMXPQfJCjESzHqrl5bnze-6LlDM4TJaKOeWoc37hWdE7eMAvkoRW1g7XbvzOSr5-L4lSEXrwYGg7lMvJo4RvBXRqc63HckTMSecJyL777FgX8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtStU0FYH8lKCMW2LP3B0mtVKL2al67zeG9AemAF64wMpkgh0fAMSUue4KNYNVJL5D6ALM5yDwlFzIuqTT3VnMXmCoW40G7n1VlchDckFsDLjT7sUM78uaOcbNZjp_1sXDMG8j"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGu3sfExJSsFi1lKTWutcr3y2N3f38oMyVFKVGeGXygGSKIRQ3m0-xfz5Tl0J0XEmWmAk6p3lsE-W6wDb6Mm4WPNMB8k32KhKTkU0TzxI72iQO16uHBnguw9Q5SSeyQ3PbjDh7XvpdAgttrpSIVYAv3LZCeamWdmStpdrs5CejtBoEjQBirCFPPZd_FKN4jHsa5vUJRFlV3uq8HOhz2oYjxHk1psPvilwVct0xoH8kkMY_DOD7wGfFziBovP3C5g-i9yX46USbGGNglGeEP-HX2iYwhPUFcUPy3o0MLMI4="
+        },
+        {
+          "title": "foodandnutritionresearch.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJH06abHLcLqbDjvA1a0cOWS9KNAf-I51lJve2bixqLsIMAVvz7gygJGR7lvAA9_dZljJ0a5ZyhyLiGVBp7MC57zABPSYvlCxUmTGQuskpNzGCgnTAA1JEDSm76IPFShpY2smueluvJVsbCpHA3j71bCUf6mCt4RHpESlH98VcaZ8SJF1V2_vaqdLdCtbr1A=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9OwMDM5gTXRvHlY5CaLXS3OG3EoHQoOjPqfuxI-9Hq4DfJTX9vwks5dCIZkJYQ8_v8e1SpYl4J-lmN8w67LCQj7J4YKslc_TdMCU8esjF5faRLZiv-KtrJQgBm1Dnw1M8PQUJtdskRa23TJjYhWKXBiwSQOxddC6ka_2rb0LBwsMu33MdyMMJtLkmMfmaVCkdIKqTIBE5cRgsBACjLcUa2ZaP7sXgLdBgjQ=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOMv2m-3jBRrF2mFS8lzME-aNp4zFmK5ukyt8OBuO6hX5I0kMPYfSWj8sVe6_ZKkx32jGmDhsgI4qyj8E_CYgW0i9qthFIUZlWidWZydHV1NtQZSD3g-ApJKfIaHiDsbrHdiuHm8YHzJXwijR8ED8ONg0="
+        },
+        {
+          "title": "ClinicalTrials.gov: Iodine Supplementation (for iodine deficiency) trials for Hypothyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypothyroidism&intr=Iodine%20Supplementation%20(for%20iodine%20deficiency)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "150-300 mcg daily (dietary)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 150,
+          "sideEffectManagement": 0,
+          "totalAnnual": 170
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 189,
+        "costPerResponder": 189,
+        "icer": 1000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": 20,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "moderate",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.9,
+        "vsComparator": null
+      },
+      "name": "Iodine Supplementation (for iodine deficiency)",
+      "nnh": 5000,
+      "nnt": 50,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 90,
+      "responseRate": 90,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Iodism (with excessive doses)",
+          "percentage": 3
+        },
+        {
+          "name": "Hyperthyroidism (in susceptible individuals)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "Weeks to months for full correction of deficiency",
+      "treatmentDuration": "Long-term for prevention, months to years for correction",
+      "trials": 300
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLnTLjDe-et7LwqZXocYnph4Idyw7dLRDfuZwjbk8XETgs75EmP_kVJPAtl9NOTIaIkLkI3QLWYjgyUmpzQpHzr_nriKVZq8aLWiRZxq3GGeZR-ubInnblsqP-AJxNabllXck5"
+        },
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG85hdrcL1eg6JyR-kvazMJRTm0DsEJ10O1b522VIy1ZUcNUvi6tpLMf9AVOiGtvNvRP6YXKV56OQm7ndO7tD1lhPMCORuwymeIh6ElcHqYavtK2sMjXtcvp8Fes0HjmTc0A5JPVw3VHfNR9UkNKMgiLUxsEOapGpeLSXzOsbpirf04LVMdbJ4R7AJR1EbI80Z6demRsknNio160wE62pZA7Q=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL0buA2KeMG2HhtAI0PCN2E2uLFj8BgO1FC4bLqiaN6v-HU9dHE_EywoSFhIDfTbRLOeq_E6urIe5A_aYEtZ0uXqYKukpZFZvx9A_6Jviksn0nFYXLopBjk00S225qLhGUIDlCHnxvlma4mjLdPCUHVNSznzYH7fJHGAEBly4Jodn9bx1nEs5ypZh4LxGU1aPwfFe8b8dHCoJfM9oz0g=="
+        },
+        {
+          "title": "endocrine-abstracts.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGa5ZlELwDOPQjvPRzdFz1c8So67X2uzZ7dh5a0WCaZ9JrjR8DuWoLd7hYcj2oPjIJHH4L9m65a5_aoE7hZuKu3ty1yESQly8ks7mVCTrUyUCzEmzVg0oc_F0qT9tt_spEgW8lTlm3jw179XH9xN8VpUkz13-b"
+        },
+        {
+          "title": "sps.nhs.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP2g1RpPYW4iLnCTVqGzraviUfFo9PGQ6i27PPoHoSeGndkCt95K2PnrCB8k-s8nlNr37LeXLbsvlubjPAF3YhzjCXzjx-F09L0zMscYPHwvuxh6GUiDHiXb1tl_qvOhCyZeCPBEm4hK1NuT7XMLrp4KbxGj5JzXWkAC86NnAKJtXUcQRhkh0PFO4CILtu1saHx4nR5hR_94i6HC29oKDFYg7dAlE="
+        },
+        {
+          "title": "sdu.dk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgWUd0VW2ovznIqAYYWz8mcIiBlHkMn5Kzi3gZf7ONM41_LTxcwUxk8qfeKaCUk-R_LIv8jQoJdly1Rca7ug1rznXBqnviGXddK5j3wUUrWGgIZdWwloyOBv8ykHFDfStj7Yn-QuZusdZYZ9W7KsCsE0hlIXYkbfDad9kkpAx756z9Lx0oVSmmEqLuDwxCaRbTct9x3NxKogmEdmHxeX8i9aL0yngA7IJn-12dkyXuIQE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP2KjPlvdPSb73QwyVxJMBrJeX3qECZmTxFFJX_4a1j7S4FMGmY-rcrLNJOdxbhJiyzua7R5Z41bMsdZtpVO-dSUJACSiYXUecahtYpi5mLcCuo2lNQuPa1gAXc9gdmzJrpWRRv09tweLhnYZn"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWuT6TjZVzI01SDOhC0eWWI6xuG7iesvN3EGBI_RT29XLum6lmNsdbDC5Sy1ZZlEP5IRV7Pjzwcdq4S6k3bKYHVx_mYEercy_Xe4Z6YM4dAOCK6T3XmTLQGsdeKfydlzGGRUBHwadLElEQtsNZ-I2z2OrztL--7FoakyA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-eQHc5vQ8HQXRjlL8YPq9DHsDqLvti-umnzEdqn_oBOXhH1bOJ9nnON0Zc7pqcpOBbFNOo0stBbWPs0zac-Hw-v1wI6D92rKGMm4TH3UymeLEffyf0cDNUbuyPaKS-UlU3c2y"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrMG2O_2tvcWHo6knIh2OWn4uYFc6hYbHc3nD_ixjnBj8KbITrDXkX8P-Ac5sQfaOkjQT6FXur-mt8ySOE7T2KcstMhoBhrNY7plf1B1ShGbsFCfhqhC5Uris7nAdG31DNQGbnmiZNTbnJ1dGe_hkJiDuO6N8cgWpo35LpwCI6eiaRVkG7NReqK9WBv4RxCeIiVh5pN_E="
+        },
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtf9okyUyZKJVfTnOd8fhpr9FBs881GdlRGLczV--iEPB3S4nY9N4nvUj4WGT0Q28_Ht2vN3DSOvbt2QSG7os0S9VG-Z07bGuLUPkqIBVleFBQm1c7aqUeKC9HxPg6O_553M2QcCF7v9ZWc9qeKLtLi3hnNbUemNQeMzuoQn1McQ14iaqC1s-5Y9yj4xztCMJbUXkl7RSYb4hexSyrMquRKw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Desiccated Thyroid Extract (DTE) trials for Hypothyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypothyroidism&intr=Desiccated%20Thyroid%20Extract%20(DTE)"
+        }
+      ],
+      "confidenceScore": 55,
+      "dosageRange": "30-180 mg daily",
+      "effectiveness": 85,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 250,
+          "monitoringCost": 350,
+          "sideEffectManagement": 75,
+          "totalAnnual": 675
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 844,
+        "costPerResponder": 844,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.75,
+        "vsComparator": {
+          "comparatorName": "Levothyroxine monotherapy",
+          "costDifference": 335,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Desiccated Thyroid Extract (DTE)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 80,
+      "responseRate": 80,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Palpitations/Tachycardia",
+          "percentage": 15
+        },
+        {
+          "name": "Anxiety/Insomnia",
+          "percentage": 12
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 80
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXA8D--URMCIo28rMk2JXOYJvK8GmxUcAKnrAB0M7j1RcFg0XnTAhUMqkNVBhzLnbZlVYBy4I6Lg-N7PzeWGh36DMJ7P1TvhSe5k0gYdCrpbzoq9UvfRYGaXfTFb7vQgmNZ3Q8tO44KCILdnCrg8Ac9XLi0wnyBOyRHrzLk5eUfqiAgOeaDA86u01vIfpFQBVk3FtQSrdWT62TMwHgYMXp3r5odxNWjxrkefMpXO3sV3e60tlox9IDA98Nbzi2l5ggSD3El6CYbnJw6qty-fe0q3EJOGXwn4-Sq47UhZPN1xue2mQSb2BgffepFNyt9V9slnW4IZu6-CzPqm0RxBBtHxa0_46P-de0cWsN9g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmnwqrXpF_VDYJtrdlLdlmf5DGzZRWcvsx-ddjo-O7IosEC-5Eo-xkbEgMIWVB9heGTDD-OGhJOUmWBYGRoxV9G-6Jvnsl5jZ2jC9E66ITqlC4S7vhLsJlxeMwAvhL_Z-KN5rZ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElWXObRi9OtJd-EwGIWC0VZI8e8576YAyt6cU8WMm99PyPQ87-lduPewYLTKVzU87eEN4IKn1wc9DkoqqMXRI5r_0rfbe491PONLfPUdBST-gqmY6lo-dUz7vVBhF-IenigmViSwvQGMWoqrNg"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGXrmk9b8GRiD5AYbE2qFBsfhnabTiFS0_qRehJ7TAHHRlfzxgB3TpIaekm-qP4VmXxn7FfoSE28lQ2wPN892TGPUu7uaTNt5m5Y7hgLASqYTM0X9WgdnPxFusLJTIsOAHJZxp1v8Jprc5Esx9UbYWHnZTLIPu3R5IMRotzC1ClOI7YkD7GRf9Dkb3IY3eX4zMSUN3ou1uIMNsihVGUjaRXbC3Lzyn4bpEteCLoYuRaJDXP08QDxhSVyjpMmXW08wOC1b85LnXbLWZmOW62-iZthjLxmAMJ1f2L9Dw0F2VIKcMd18ynbOYlu2TF3gQeaNoAKlF0SRo3qfo3Oux7ljL7sLHSt5R"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFo5l-gXkKvXVkCtpXz92QKYJ3mCwCXPhm5PLL5olE7hxLo1ZRaLnKSFgPFvKD0rOOPlYHZy12h9wHNUpk65L97AHyP6txWGKV71DCA7gLp-2qCbk-m3ZpQj0xF9e6lNFnbgsAKBHlDweGxqDryWlOKewY="
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWbdxv_YVzutpD9c-zA0PvZTspd4yXCnc_iYnhg9q7y4k-blXjyLfxEW9NRpoMOFHm2QejeQGqjVoujdcWRTZkI1ZPrCKwMbs-3041YMR2sQ2q4JTIhsqkUPd_Id97r5JPWv7gYV9TLZl1Jd9JJR8zxLwAdu5DgCZOw0o8SrPqDu8iWENVjC9fhNYUwP-_gEPzDSnt4HqGVdmQIkj0TLIEJw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIuxSiGE46wwpOl8ggcD3Yu1e7PsilU-Y9Fjjhw5h5obwg8qO5lHtrxNFBqhOpeG_-o3WaSkqh6mKyqPAOSQLGnYv9_eMNGip6k5dt4HBuJhMWC6bYUu1J2NWOTsf3fAj6ycVP8DdZZ-1lWg_kHyOLSW7wO9ZKDaXnSv6RRDtVvsvhmiQKllDQxgS0CQdD1bL3mBD6eY9ooDN6Irlhx99arN_32blpUcEjlSA2mj01XHQIulLB-HWA8pwaAt-u8lNYsJST2lh2DsXi2iBHlIf7fWtok4JUU_sY6MLlDi7B"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfFJVI1HmTGJ9fI6OIb8j0OWe5ChNG6dtnLMiD-yMdDkSALNRHqMcGpm55jWekMYEb3fime-C6EcwSITdqDp9EwtsMtVnCMtG5F-08htOeXvCo5EiWbPUY4DZnNDushrs879MHBsrmDW4_oT4iGKtlo03gfg3dQJfVWiBzV-QFMgFPEMfnOd8QK93XkU6SCOX4RZVy"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-V-DZcA2KrNHjU1fr_AiB1xiHBYT-hxcP6LarS8klgi3h9ExkEku0-buIg2qtjkwGvWw35rWQH29fTn7Y8dfxlu56-RrWuwg_V8D5vFpHm6NR9EGVjhxD9lHq_UvrTGvYrZXpIvtrXaFo4hg="
+        },
+        {
+          "title": "bioscientifica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwOo7uFX6C2LqqZ-e8RVm9wnyx-1wRdMoQoACNMNSQjOKopE65yNMhvM9gDVpyWZWmbGs26at75_K1tj_TRsL08qKlIFN2XMGINfBJSFZNpMJQGQ6-t8Fx5d77PNpVt7zyQR9P9qSry4TgXFX9Oxee3Jcp3EsA9nTqSCWewQk="
+        },
+        {
+          "title": "utppublishing.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwTJ_eyTufW-rn5klctIINUN9WO_tDTIHz9tBZ7rBfG-TtOE4mfBw9JwhdzJvxXYejVj_6i-pMVscJJL2R_DNKc4VzD04afYmqCMckPRHDwp99I84CqDfrV4Ow02dXP2Az_XVYplmWJfLyX7WU3U5k6w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9i1PNbdakjLHNauOISKmOqyghrULzP7EP0OtfVaekC1y34gAvV0q6BeWXOqLAC_dVs2VpeQt2wykgrBBeIMMf9dzTRSDih-M9XSUicp0nKRBwDZ1YnxfP-3N1Y_HgGqnKj53H"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdVwGOj9zmos3toykrYEU0MSsdxYeCUo8lD_tstYcTh9ZVbE1GmpKxpZxg4JWA93hIKCRAMrN6hxjmFSgDBzeaGRQ9VUyJsDXbZHZjhFkv974zkjGSVjXahIPDxzCYCKspumpLag1aYuz1mRqkJE-X6-1K6pIuTPgLSqqWT3n3wckGXPYbigKe8IOab1FERhXfumOOKXrzqvsKgVdX8Ph0BSD9atIcxlc9pEaFgHsCLQJaaZepddWdWyl01kwTtsQfxotrCBNzHisLJbuy1tCnGnatc6wRM0pTSkI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Levothyroxine + Liothyronine (Combination Therapy) trials for Hypothyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypothyroidism&intr=Levothyroxine%20%2B%20Liothyronine%20(Combination%20Therapy)"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "Levothyroxine 50-150mcg daily + Liothyronine 5-20mcg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 180,
+          "monitoringCost": 350,
+          "sideEffectManagement": 50,
+          "totalAnnual": 580
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 773,
+        "costPerResponder": 773,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Levothyroxine monotherapy",
+          "costDifference": 240,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Levothyroxine + Liothyronine (Combination Therapy)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.0 mIU/L",
+          "baseline": "15.0 mIU/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Stimulating Hormone (TSH)",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "+0.5 ng/dL",
+          "baseline": "0.7 ng/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Thyroxine (Free T4)",
+          "percentageChange": 71
+        },
+        {
+          "absoluteChange": "+1.0 pg/mL",
+          "baseline": "2.5 pg/mL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Free Triiodothyronine (Free T3)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "28/50 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Thyroid Symptom Questionnaire score",
+          "percentageChange": -64
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 75,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2.5 points",
+          "baseline": "5.5/7 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fatigue Severity Scale (FSS) score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "+12 points",
+          "baseline": "38/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Physical Component Summary (PCS) score",
+          "percentageChange": 32
+        },
+        {
+          "absoluteChange": "-4 kg",
+          "baseline": "82 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Palpitations/Tachycardia",
+          "percentage": 12
+        },
+        {
+          "name": "Anxiety/Insomnia",
+          "percentage": 10
+        },
+        {
+          "name": "Tremor",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "lifetime",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "thyroid.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwU3bRvTilEVA1mx32gzJT5GqtQdW3zI2N76j1YHCblPn7MQtipLdiht8xgRkdWQbCSwPkByrIrRC8CK5PXaO_CegKOib-kGwZ2dq1ZfPnb_O8oB7Za6z42TDzVkJNn1zVJ23PfmEgGH6V-K7vDMbPEHrOxzbolEZpb5rQ8BBUiBLPSBzygWG1nYmcah_iksNaC1Jial-ACmtEyTuc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeSxd0_zWWpJGnFwPPm_Fj7SCS25xuWjvxNgZ4YIhEtvW1CngQoz_ShPvEiHDHZIZWlSKbsq6ftukPkVSL4EJJkCMyUQa9FGYt8dKZ4iRJrz8zAnx8s2ztwlUNR_BGmSGCcmnxiACcBuMp0rrtWZcsMJuHOwWbCwOqMU-7udMGTvVtNf9CDa3GzRcyqHTxzCL3qrsIT_be_ihs0GyrspXAEXfqsZoaFYdeohtsaqk9fHhy5R4bfU0zMODArbpgz3t4_FaYscHagysFXn5dgaAOwzyuhO5v0NviskU4XmtSKdS28uT4WMCxrkaTIfxN2eyp8S4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8R70CbLEtECTOTr4u3R76dqXj47AKGoue2uFxCUFJXEVLN1wcx2ZiA8UfFW5-aDcOLywRb4YeouStu3XZ95lwtCOxlnm52CbolM6KYBgvKUMctipRQ6dg56FbXuYDM5va6fs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVrVuX10ypBvEhrnkZ_hJMetLAOj9kpf1ySO3vTZFV0ES3FodvnU4-jssAeHYnsmVaYXe_xfTIdaRhTWl61j6iaXss-aX4-LU4O8djWBXm-tZuctGwADP2IZ3XZ0V1bOt-L-N4KMMJURuqdJ4="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQ9j1tXyAYWifkeFyV-K_2Lv6L8giFDwkGQdrqcTBautnSzvhthjC-hniGQ8FxL8Fn11YmWZ65LHif8tJOPtSeHV9H7Bc-Vbz8g-9Wypu_mnKyn_q9_gC6dLsG95PjC3056HlqSxyL5Kk5NsLKMM3MC1CT0jmmuL2XUQGAaWzk0liiyig3qpX1Rw1AZKf1iGIGaY68Ix4nCxqBOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5C-KHDQwzJVXKa9-1lGiPINmHk8FUq8FrCSrPca05qPIvSbsUtsfcasuEhxKjSt7d_CIsl_EiLq9TdrkQqdD0OW2jzCMkHrQuTNMR0Zy4Rpl1M_-fIOc3KYa5nYfhd3wzy4k="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbd_HWBrW3F_KUEmejD77O--pntQ54opYJq8GSlUQ7iQsik6G-dAGTBgbCyBg0UGQXoOqK7GKncWI3blgBMnoAe0nl-UoD0uKco2zhTwF9whLlzBQv0XSEX7P3KHeevqMOOiI="
+        },
+        {
+          "title": "karger.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZTboyCW_1KQ_qDqhKB6d4h_jKUXu2tBHHb-F_WeL6YlIsV_JtlHZZOYAoso0ox_FW7zXgaKlVvFR7f99jaoBZn790js8qhafiDhVe48SLiBqjx0NT5gBBh_5A_qdstIGq0mqJAS37WAm5Cekun3W9weHbvrhvPKQfN21EBV_VAuww8d4MFQ6uy2D5PamgQA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGl_d2FRbEZoUKgJtDoiniM3O1aVY-KUWs_CLWuAwN0Gud9XDqSv5dQNbaM2HhJs0uwqLCcn5618GPEKLMNQMUcl2XAYkLi0ac8luwdAcwP-YSsjOxiDaYbYl1awL4VXxjLFJs="
+        },
+        {
+          "title": "termedia.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErWDYzjib8wOubttXZp5qu0tEXR3O3x26FdAPTm3ZMz4q7EnfSXDdglAGs5aWbYLxIsz4snx0wl6ejodUVJ500Zx3n7maAD_9h65wYRrOk7MH3-kDHYqwwdYoqCbSFtjTvwlnlhFktSqleBzgZbKSoWWCpsedW4RJnZ8cK06one6dpjrOPXsduiTy2GJWqZ4GlVTgM8AmXV6PHUcxJDHf5oMHiCGtUFytk5-NLwMwt4DKAd5_R3iWahJy5rEYSE8o1GTGgonYWPTYPJbMLO4TiLJg="
+        },
+        {
+          "title": "examine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYRF4N6T34QuVT1T1lTIphXo0ppR7yxVNPMJUerVI6nLzmiOyCZFvylsd7no45IFgn5iXgfi_PsZH3rXDoKbSxCljU8tnqTU6R2jmL_8vUm2jCudRNYQt7t2XTx_HjF-zz18OVxv95-w8="
+        },
+        {
+          "title": "bioscientifica.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGCFNjkmwroOS2BVJxvLtCnz_lE__xligU4NN4Pp7iELLUAXI77Xgub9pHIlgh4hqIWd0qLLmY7BctHyME-pIwK7Aw30Rb0Z22B23XZLfxQ7CqoDu6aRK_f3m5LQGtNTUnQnRONqlPXpIKAarWeb3Xs3GLnYAP09VJZocKB"
+        },
+        {
+          "title": "ClinicalTrials.gov: Selenium Supplementation (adjunctive for Hashimoto's) trials for Hypothyroidism",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hypothyroidism&intr=Selenium%20Supplementation%20(adjunctive%20for%20Hashimoto's)"
+        }
+      ],
+      "confidenceScore": 45,
+      "dosageRange": "80-200 mcg daily",
+      "effectiveness": 40,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 800,
+          "sideEffectManagement": 0,
+          "totalAnnual": 830
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 75,
+        "icer": null,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": 30,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": "low",
+          "misuseRisk": "low",
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": false
+        },
+        "qalysGained": 0.05,
+        "vsComparator": null
+      },
+      "name": "Selenium Supplementation (adjunctive for Hashimoto's)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 40,
+      "safetyScore": 85,
+      "sideEffects": [
+        {
+          "name": "Selenosis (with excessive doses)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Diarrhea/Abdominal pain",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "3-6 months for antibody reduction",
+      "treatmentDuration": "6-12 months, then re-evaluate",
+      "trials": 50
+    }
+  ]
+}

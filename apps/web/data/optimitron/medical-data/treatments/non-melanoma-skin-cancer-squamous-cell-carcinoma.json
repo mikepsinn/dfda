@@ -1,0 +1,1106 @@
+{
+  "conditionName": "Non-melanoma skin cancer (squamous-cell carcinoma)",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T23:12:30.409Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM9JK6NFXeBNsU62POVfXhE0lndfRaW1zNgzcfjCM0Ms0LpBFBEdehKFqR2DB2E6Gf85X7ir2fQoAO4wuZ8lm7-CWb0vlHaM-igAHJ21VpWit9bBsihifAVAPKxDC_PXHWLitW_wPSK7bbic51"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAkIL9CPMYJ_KYv6PVXWkDbu3t29KdcyURvZ0InrZtWZXK-8C2u1B3iwv8tJtGPeLR2ZXH7IGKVsyOiTzA8cRPS-QRGnCcJ1Rd2PpRCKTvXM4u5wgUz52W1hZZzOSXXMc3MvQm"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEwDgWPqaLN0VdM7X3ow-r6IyNhyQaYaYpgXyrlDW7rGLmUVsN1vHlQdIyMXnR1D_P24SFC_WDyGtDORyteWtMD-UbCN_2i1Bgu2rjiJm-MyxkKisWBcusQK4NDsC1NLL83GNSJrsQ="
+        },
+        {
+          "title": "miamidermcenter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnRuG9jXlW0n6TbqNyiPJ3y0RWTBCPqhrNNWgRY2y4UgLvS6ECgLi454CPzPB7odW0f2ytStZ3ViAJN3FfZYd7j0DMxyArwbMvpY1oyQPwRx3AhrTz-N3omoLC81qpfSmzZLTIvEEGwANNhuK178OOvwYI4Sx7h-uQ_vAy8jasuA-WmNFK6YXlZIOK_jbQxb4ncnDh_BuSyVICl9kG8g=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPZgpRaE3ekNIv6o1PJoEK0HfDGUj9fIobT705OcKPBE0kKHAOSqVw360bU2N4o9TGnoZUiDiQmSPt5Xd_GHnJI_tMFRM2bsHByxWJ4IYLXFJFxNFjBydgKbc_hjAVw9Og7ubYKYZZPpiW2sY="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZPgx8lKj8rpMBcaRwe1cEF-5KdzDClACMgX11pMrohkRxuiYL0Cnmg0cEBPm0iaP6OkfYDpECjvzPFO7juBe_0pxu3cLHfwobQA1RC9OhDh4Gv9MSemojXYdpEMGI9IbYGOzNDGqUgDkoy56WO89rHewfrDyQ-YXuU-np94hgg0gaJKsAAh0ECZbBMUpJYfNbmf0on58hrpmYdg=="
+        },
+        {
+          "title": "physiciansweekly.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv8H3QVglNXiAlzXZfyTan3vmwq7rJ1Lh9xbfqENZFcpc061_1bM26xwlxeG1D2LBiAt6JwAd3hu8wpV9h9B3aRdJTmLuzKYFlMzap3i6PsDU-rbFTL6QehpWVT5tlFphj6ki8AoGCvcgzpNphNqKMNasreFgxV_X6mzsge_M2tufLtsqrTsX4dPCbV3YHks3cRHM="
+        },
+        {
+          "title": "ajmc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGoKE3OXJ3vRZY2a5LO-NzueE0n5QBaDVRHsdpaSdWNw-Zr7PNof-nRp5kvdnGDkMjS1KWwrlvIG7O5uh9DIY18NwCRYF4QW4kEW0jf7shJpsoKp4Pn86Vh5Mm7dpeMAHtFqheAxTxZfzXKNtXr0AzGYbXFzGKyVJ1iQVdzvpHz1J93m1I4yANkA-M7qG0hpV0LoAKgV6WS6CrPRTbil87vUWAmf24="
+        },
+        {
+          "title": "dermskinhealth.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMavDDSXcqZ9FZGZVGNfMEJcuV7xhUU9F8hdQqUewqeNvh8t8gW1tCaUBX_StRwZS6PahFgw5WExpkpUvLg1o6ET7ZHya-AJ9usOvz1C0y18eQ6k63gSSW4o5sn0ZyFhWCCcTP9h1rGmBRZ3V4m1Qi8J2S_Dv_8QnlvbG2XqAnxf7k9fU="
+        },
+        {
+          "title": "medicaljournalssweden.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4BUTtkq5Y93_VslHNG5jf1SGcHlNrJONXoDISMHB5zrjjrX8cbHsYTM9R3j3HqxGUvRRxaFOU1mQDJR58vyqfssvhjQwAQyVXWYZ38maxBnqrFvCg3Aeqe_uJPq-ajZREMLtvVZH431RVpp6_yG-Lr5GO"
+        },
+        {
+          "title": "ovid.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_LU0VqV8fI6tz72KfjlKVlYCybZpgHLg5RBwTKQjZsoqj5xJ_Uay1AIWtBn38yhsEHkt91FsNPjvEDo6X7jYIsHXl-ntv2zb4QIqmhkGdFPRvK5w11o4qXEiKGF8LTlOPmAzBHDf-rs6bBc9ram37cXs39IzOPZIMpW-bD3q1rLSLvGAvSmT-Fanf11sOEmZOnUZRDE_ibVk-UYSzahIQa0tjCf1h5iozwFYmjwna9BIU"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mohs Micrographic Surgery trials for Non-melanoma skin cancer (squamous-cell carcinoma)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-melanoma%20skin%20cancer%20(squamous-cell%20carcinoma)&intr=Mohs%20Micrographic%20Surgery"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 3500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3571,
+        "costPerResponder": 3571,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Surgical Excision",
+          "costDifference": 1000,
+          "dominates": true,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Mohs Micrographic Surgery",
+      "nnh": null,
+      "nnt": null,
+      "participants": 150000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-6 percentage points",
+          "baseline": "8% (for high-risk SCC treated with conventional excision)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Local Recurrence Rate",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "90% (for single conventional excision of SCC)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Immediate Histologic Clearance Rate (after final Mohs stage)",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "70/100 (for conventional wide local excision)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Cosmetic Outcome (VAS scale 0-100)",
+          "percentageChange": 28.6
+        }
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "6/10 (for larger conventional excisions)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Post-operative Pain (VAS scale 0-10)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "25/100 (for conventional excision in sensitive areas)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment (e.g., related to eye, nose, mouth; scale 0-100, 0=no impairment)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-7 days",
+          "baseline": "28 days (for conventional excision requiring secondary intention or complex repair)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Time to Complete Wound Healing",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 30
+        },
+        {
+          "name": "Swelling/Bruising",
+          "percentage": 40
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Scarring",
+          "percentage": 100
+        },
+        {
+          "name": "Nerve damage (temporary/permanent)",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "Single procedure",
+      "trials": 4
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvk1AWyYN5t4oskuvOJsgyY_j5kSUT3cKnQsRx3gqgJbtKqCosjwAr-o7-0QGYlaIitfd-rU6-KTuZJw7oUSHRB4-wi1TjTLEuVxq-URt9RID62z4Np1ps9_SxFBR3XnJSaPeVlip13LWSDbU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVs20W4k0pUxSESGfqpmXbMvPXMFefdTD9JwW8oKz75jchMGROPAC-uSmcoVw8IjHldDg7DFHJPrmkpW7HdL80U7bF_9WFP7Botl3rc_9u3LJyguELotGpLVegyJjbhDvMgFey-sq739ZdVu4d"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJxf4rAh5OoezuiF4E755QOpLiasO4kQN4p-7TxComBgq0QfD6bYOGU6tYvvRDIKDQnuLciSYelSJFrWWmtNrKT19HFBf0yU1J-Wd7LJMm-7TthtBW80aKYJljZjSNd1NvMbovPDuzRzxFc4uJxo-SR1TQ"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9t6MCcmhOf8MKnYxlCge8Iz5tZM5VdjOCKzE1UPSbPTJayBQa2R7JFUk9GOoo5R7QU6-AjByY5t8sB2Kv3nGX9tLhnnKUIU1U1EIsqJ-F_29mx5zw_MdVtu97gHqW0TaPoff0O3HmOt0g9ItkbLXUF48Ekaifr3ldGAPUvSrMN-UYbuFDby0NHMPbgZ5hddWzccILDgW94Dfqsc1bUugQxAo3QFsy_x8JXMKUsftzpNRfdoDbvw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHbcHjGyQLh5Sov7__y1DdSYRbM7WzF5h2lVTd5NOQemsoX5Mjwy-hcLEn2a5y42I_PKzllSoTlI19XkDi0TPr9ccZgYHYY9ZvdJcEkwUimL3A-w2dT35g3fzSASHhr9m5ZQuGK"
+        },
+        {
+          "title": "matilda.science",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS28F6vqfPXtDeaGTcrNSpbaskSg1iFbE8NC1AJEpnpuH0nrN93Ue11BxSjhwzspfUlTzk60Wo-ODQ3w9JAD-Dz3OJOOrHi_t7gfx7fbGJO0y3DADg5WH9JHWLoDdcYthFbgkoCmja_uu-dbtDdKIGQxPznkO3xpUDaaPg"
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrs6635zla6WkMuUn77QCE2ur08EzR1_BPkfbxcs8rc52RiMD-Sg-OJEc6wWE4YvF4Qg-EdWVTk_2DcJBOd8JLJZSJGNhg6ZIWfvDioewRSEiosh86rL22fU7H2pJT0WbnLaacL3eOiBvPpg8kVxWkNT1JDo4LrBUVqSdrPJTKIOU8zA6sh-xy-YsqcpIg8couT6gL-6DmUpNO8APZcePEIFukdcdrVrbbmp36EZoThj8K8Q9pzAeVaQ_mee_Wd5NXWalux8iAmzcaTOaNZdqrJx4PGiVVTAeWOtvVqIgqPr8fpeMfNPhDQdkKQva3NUQ4z6bcBpg_t6CLdUB0wahcFCmgNnrTn-U-UrFccIoFWl7SWdDUQZJr2w1ZPHq7YVhy7zPa7OAt5mM="
+        },
+        {
+          "title": "core.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWZzmH0MEAqRPaGUa9NZ3RPCzHgEMt__pX9KTMkvzVe9gnDoQn8S-HTskVbmnmYTdNvzaaUeQ20dt878_Q7xW2VZWKWum9_PdkOkLNeuQNszpsc9iOqYi5Q07B0t-x5yt2nihf"
+        },
+        {
+          "title": "ajops.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb4ZIX0RHyoHqcASC7Lft3EJ3PzpzgCUihZLUN-5KcvX_5KpZAp94CXOklNKK06haoIoTKqjy8lk64-4r38cSqf_uOFXl4ktq46pAYw5h9dkYKOHIFCbE4xV9o0TmrMRxSD9FiqcHb_gl3oarspZztPB5Nrgz4jSZhF9uwu2-XhZzQGQBxr5JgpxJv4O2MvcISstDfNWTnucgedyI5n8RdAXOL1QnTXKlHYEJAnLcYX9KR_38HW9OQVpNjqFqItLb2S3Ma9PHhDpU2xYPugnIE"
+        },
+        {
+          "title": "medicaljournalssweden.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF91-2c3-J_cAOWflTKBLMzLHYQLApNBJErQihfF1FXj4L-aX-5db9MdDDVD3ueXRwf3NhyIhp1-rb0Y_Qi6AJdOzsPfhFwWa1fci-McB5Vvz9rl1agJOaDMYUef6CsWxk_l2-66CMC-xRJNEGqdhLWpwaKK47Z6cKzARVpf3w5bbO-JNKT-Q=="
+        },
+        {
+          "title": "medicaljournalssweden.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDjnKbypIeHZUUXWU596w0LodiLhp_UzL1geqvTmxHESpnmUEmF5HIeJ3cU3wYYaqSz51IaixEramanMeADr9OUrMZEFix1e8eCi2pZEz2D-NzlqRFuDg7bQdCw-8mkbTuHbwIdIYvbt4k32gv9x6M97WMH3Gy12-5"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Excision trials for Non-melanoma skin cancer (squamous-cell carcinoma)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-melanoma%20skin%20cancer%20(squamous-cell%20carcinoma)&intr=Surgical%20Excision"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": null,
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 100,
+          "totalAnnual": 2500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 2717,
+        "costPerResponder": 2717,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Mohs Micrographic Surgery",
+          "costDifference": -1000,
+          "dominates": false,
+          "qalysGainedDifference": -0.15
+        }
+      },
+      "name": "Surgical Excision",
+      "nnh": null,
+      "nnt": null,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12%",
+          "baseline": "15%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Local Recurrence Rate",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-15%",
+          "baseline": "20%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Risk of Positive Surgical Margins",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-7%",
+          "baseline": "8%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Regional/Distant Metastasis Rate",
+          "percentageChange": -87.5
+        },
+        {
+          "absoluteChange": "+22%",
+          "baseline": "70%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Overall Survival Rate",
+          "percentageChange": 31.4
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 92,
+      "safetyScore": 72,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "Skindex-29 (Symptoms): 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Skin Cancer-Specific Quality of Life (Symptoms subscale)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "Functional Impairment Scale: 7/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment (due to lesion location)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "NRS Pain Scale: 5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain/Discomfort Level (NRS)",
+          "percentageChange": -90
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 30
+        },
+        {
+          "name": "Swelling/Bruising",
+          "percentage": 40
+        },
+        {
+          "name": "Infection",
+          "percentage": 4
+        },
+        {
+          "name": "Scarring",
+          "percentage": 100
+        },
+        {
+          "name": "Nerve damage",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "immediate",
+      "treatmentDuration": "Single procedure",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7kula3r7F_52im5Y2jooQ9wvwON3KPlKJBXQdQHxL-ZXFm6hSKYdYb1ob132jITYsHLyY2MRR_cQOmnxrpVsf0mH4NyYWar7q8_VrM2NYKAd_3xwGMdrcN7s5qRp-CSoNZ9IpJrQIHMoxpB8h2VVXwOD3dzKUCoe_RYJz3kjalWQ9TSeY_dWcgnsDf5RPgelpq1Gm4z81NBPlvEul5PrhcutOaVVt4zCKBTnbTd11ylNuVaGAiu6evp3k9Uct2qp-KFNQad54_QN4D3Ye2hZ2M24071e2IWatfA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNggjF9z5-OPFkCo0xyH1Sjp3hOFcFvr1M90ywKirc1mHnPaYfVPlcvSKQpwboaF5WMdaK141Qo9eHHbXzuVDCCov-7NBySMwEGbDqz6m2fk8j7ggLXtviKrEnNh9H3G7ULyEY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwBzxwjt33Kff9hFRm2RGf66lgtds8Ulnu4UBf1XFDPJi-8FhEskoHeij8hC_2W1oXYMmKcX_MWc9vH18hE1ENM9mx_EVdqbWY2PN2GMss2qbYzvK1uYhiN784y3vkJ9nVvShsmZTmlLEedFKG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0OnY7xVVT2M3iw23hSbv0cYPfVfNXVjg_ePoFpAnvzOzZO_3CZ8-z8gzxWIXiCoXhI-8GnWrIGfKcsVDuy_wbo3FnOUbSj-wLylpvkqCKdTJ0JcAohcKsJthek_dXhvwsNc3r"
+        },
+        {
+          "title": "habcommunity.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBswmsLUNmJg7R-YpUyi1u-f7d3r56iFB4E29zA9BSKYHXgXu_H9a9cA74j2KouhwZ9_Usy-ZGWhvMrHR1ml8QbpAY3Atc5YNIzrRK_E-AuBt2ybeC3PQO1ZrUkLe6mxgcifd1-McTxIryuZUrX7wi8app3fACjU532ttQPvWQmKDEVpjbrziXMNjblz4Rd30O_vRfSWCe8MgZ2BUBS2ak6gg9OwJWsKXb0j6S_BG-0dGLa4y0JvXWTFjNRxByyvaOwbiLyjqbqf894sqaanGR_1PgmdYeOXsh3JSY4M2woqUXusVc5_0ab6L9tuFyckhE3hlw9YVE5i5ojL0b0csjjHDDuae--FzukTwk2K1S1No318yLkcyBuc5wQL3lYijPIGEhF0CLdVPW5fRAwFMTdtWzzROOSHZwtNMJ9c0L1yov0qExuHstFTBdMrCkInwojrsIXQTu4lo9vVKqDbv1xL8WUD0277k3RGQMYVbGG_1KUF2PkMWe31rw1WXnKd-Zv6b1XbeUuAfhlWk67b8YrAUQ6yPwLdhZr87sbfOskvn2bSvpw0WzbwTiIxRTed5swwejFXxEw-vIwaGSoPLO1hhZLMaquoOwVROGqRXBer3pzx0_F_QWZeftTAdx4ElMAJjQ5xYVfD9KZL5UFhyL1XPzg8vJesMY1PwX3-pwda1PwF8N4RbqKFvk81HUq8vWMKC0vGf1JR0Dy-A1cI55Trk6vjiUc6GMPUtjMRrZNF9xA1kHLAgKKrc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeEaERko2TvvT4zHRCS-lS1sXmWPEMnLQBau_pkzC6X34bwGOSNQaqrAyGkeIImPYsFK3Q0jum_zGHf2wDBlNNkT7tni9f4UPWH581kRSljlFl_3kLmZsIWrh6Lzun3yU-HmyEgjxvdNJo43VoxoeIM0Pae75w3U96qMva3SQ9I8JnhYa490nY15m69JBifoui0-ysY3bOdFQbzADLzg_VQSLVzwOROEmmXNwQoePA-D1seQZ_oMoQnRAxQ19vRBjYetJSzqh_4uDZmINbE88VBwwrMgGJA0hizcagsvC1BTngFqOFFxC4cSzzDKKsaNbJDcc7GDIza9kCZaLVGcezy50mb-M5yvqU1U66SWa_yG4P2XxfHDcygDOZuw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-YG0T5bGGVyE7lYjMjCIo0XDmPU4CVm5sHZjyENkxfWnN-TNdA4bHOAiyxd-7wbOmiLhquoL_FO89EGu7rozcu20ITW8_8RFAffuFllrKkXBtix2QxlEh82dhT2TOPSgY4rxs60zGWfk9NBE="
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzon2nq8ci4nuR3zvkBjixdk2JZuqtHsTar_MzVt-EdVVvHOr_mc96OvGM_J56J19TQzFq3X-Eru_6SUr14hkcEYyJ0pXxf4ir0so_2aVbUJRV3D6d4En9AOqd0KfTNw4BbixKYQNRPtOSmW-3KjNynCLtcsqvXxlgvKtEMfT1giva5z43iXJvCWFQuPekr_YnqnqdbcF6u2rAVXWFd_mdomA="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhQ9TC7q6rhNuos6QT39Du4_4fkMYAOF3jV5oVHCYY2VktYPli3scGfpnZefYGEM4r21c6UIx950LpT9nESe9LdUWSBqaw88uYWMlOWexJ5IR97fr5rg9_yn_Y-4VQ0vey72bjuqjrrCxbxcLeuqCTXCpw_0j8ma75n7UXdVOJLknWaguB8HVHzET9azm9WQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFATaWWlsvPOycYHKELePpl3n6T38Or86ez_HD9v-gbo7z2C296Rh5G3Djrz_W0xuyjHsSUCskB_TAosJFmQkoivUv4PxB-3fHfY8Lcyk6ImMPWcDaLEKxXfj-h2HM7-1pM_87qgPPgKxZSIHkvzrK8zRLpctuzP3SzOKz1Kle4asWX0DDhX-sYrvwUOlZ23nemxDtzmm0Ji7y1H5Dh2eLglYXCn6F-kUaooTP9_DP5XfRQn_XdzV-u3wu16zAkeWI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8vVEgZOsbI0wQgw0DDX4urcQbfVhFGgNgiXWWUL-eN7FLK97R-Z5rnlxhu05EAvCpAKksi4Qk4bBmgRM-GYknJUvd64yhGR0WduW_j9jxomwjGDBITlT5v1q1cuHezyuwlbjIIyPEW0Il5TM="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBYvnnzAHJMjIJ0OuiH9NviaTPtDfpOy1_416GYL7OnB-qFUw8OyKbqr4yjitsa2YXxS3RB8yHFohfYVJlVu2ML9OqEYrkZHTKi4lQDQb2c1aWCQqXX76-L0t4yv63ixIo0g=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeU_DQmO59MX7mibGlzgL4apoUQYmRyKP_cDo59lNGHYlV2fzLCCjx_F1xDCtp8sRP_CNYc5EpxRPu2BbSwiV91rRk5sgzX6lz6lbMsQx8g5tTXjqBs4-I3VZXc2xXQ_QaSalM0bkRn5zeMZGVmUHdhjtgp_uTZqvbNbGIiDgHhJcOIMLJIA2kwl6PtDpVpWOrbQ7POpvErtS08e1cRDGvrqO3IYjAaUMMQLz9SKao6YQ97zGBaQghDkevCcjOjHtmWG1B1TgSzfQ="
+        },
+        {
+          "title": "psu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1wWvRN8DyaUXLrmqMuFPh_ooVqrs1BJNG-9o08PDC4twUJYLdMVTI0vRFbVYDo1MoYIiEix1xz8QIm-M9JNgZvmjLyKYUux6he_-gxvIhPE5hCCsXF9hnnf0ObAlZ9nHuMgSRP0NNMOuxigin274OzFdhaw4FkeJUkOc0uSosg9VEAqY3J_NuXcKFn879IJ4NcTNnWjN0Ojx3JrUhN10M4w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExpdUE4phBZUXTj3lP6rWxcjZpEeKJ55HTBCrmC4NJqIcUEvxDZ8z1NIbeDaXc_VvsCNVpUSt8v5SPF6AN4JrJkjOGJb6XnVmmE22ZmFn9FhEwEonat_UsTDFhE99oJ8JD4p5UzYHdLheoWso="
+        },
+        {
+          "title": "hcahealthcare.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-ce5yw-Ui6Cvkyg7R7MuQ9RNgUcnUJarHHrta6BhKCdI_oZsSlrDXJ1HwpNV0pPNbvyGOFk1zI7RIRjs_IsLr5D1V9LYZ3nIS8IOacOIvNWv59MNdyGvuzz6SNO6KYrnEMKJ5tLd6ULis0I09kQksullHY8_TmSw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeUfwxAbRzcGXZMMTBPKk2Oglbelq8SWKVKzydInqEgVF-dVssXYlOu7DSpQW0q8gMge7fFC142sJIKBm2drkEVdKUx7lFUoGztSEttDjlbQVzF7sbTh3u8nBbTyfNnOlFqqLN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Radiation Therapy trials for Non-melanoma skin cancer (squamous-cell carcinoma)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-melanoma%20skin%20cancer%20(squamous-cell%20carcinoma)&intr=Radiation%20Therapy"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "60-70 Gy in 30-35 fractions",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 15800
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 17174,
+        "costPerResponder": 17174,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Surgical Excision",
+          "costDifference": 13000,
+          "dominates": false,
+          "qalysGainedDifference": -0.1
+        }
+      },
+      "name": "Radiation Therapy",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "Reduction to 2% or less residual tumor (near-complete to complete resolution)",
+          "baseline": "100% tumor presence",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Clinical Clearance of Lesion",
+          "percentageChange": -98
+        },
+        {
+          "absoluteChange": "-25 percentage points (reducing from 30% to 5%)",
+          "baseline": "30% (for comparable high-risk lesions if suboptimally treated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Local Recurrence Rate",
+          "percentageChange": -83.3
+        },
+        {
+          "absoluteChange": "+3 points (on a 0-10 scale, improving from poor to good)",
+          "baseline": "3/10 (due to tumor disfigurement prior to treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Aesthetic Outcome Score (0-10, higher is better)",
+          "percentageChange": 100
+        }
+      ],
+      "remissionRate": 92,
+      "responseRate": 92,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1 point (on a 0-4 impairment scale)",
+          "baseline": "2/4 (moderate impairment due to tumor location)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment Score (0-4, higher score means more impairment)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-5 points (on a 0-10 NRS scale)",
+          "baseline": "7/10 (moderate to severe pain)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity Score (NRS, 0-10)",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "+2 points (on a 0-10 scale)",
+          "baseline": "5/10 (due to anxiety about cancer/treatment options)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Satisfaction Score (0-10, higher is better)",
+          "percentageChange": 40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin redness/irritation (radiation dermatitis)",
+          "percentage": 90
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 60
+        },
+        {
+          "name": "Pain/soreness",
+          "percentage": 40
+        },
+        {
+          "name": "Hair loss (in treated area)",
+          "percentage": 100
+        },
+        {
+          "name": "Ulceration",
+          "percentage": 7
+        },
+        {
+          "name": "Long-term scarring/pigment changes",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "3-7 weeks",
+      "trials": 30
+    },
+    {
+      "citations": [
+        {
+          "title": "conexiant.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkp-dMb2sNN4Azb8STZQZ5FnygUKQMGU3zUZa6qkxTA5tNmRkiibzBJCkN9M7nbLIeUhtDOsJ-fDFJWQ9Aj7mWtoLPxUSU-xSWH-brzymrkEz-UANlbwL-MVxKKFp-M-L3PBwZ00C4d_VeLNP3__Ew3moltYWk2rEtDVvlS-mUIGWqnclBUDMRdqKDmQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHENtV72actzXc850TQPICEuU6jQAMr2YX5jYp1rnlBqU-1rmW7ZrLMXe9cvNygwy8iWfdYDt6CWE0o28yYIg59wiyQd2X6FInMwQjiNnS2qEcNS5fL_59p_UCIf2lWwkHUsGk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5_0xf8tRLcyMxmHKRVR0LXrVQrvGBvP4pmZhhdK9tdrWIrqCbOtAc79Zg6EFWAeXm-bjPmhOrWfjHMSiUOcrGZheeFqhL4KzHmIh9bWkcZrUDrz6KY7NRjCvpdZPM_OKexcaZvtjOXOyhi2w="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgOsKrIZ6Rtv8sFn38xYhlPy6mdZGlrvyYvStybQ_V5LWZCDfO4HIF7U5kGCZvzOyI7nF39Drl32VdBl2LTssSdjHAry7-IwL9ftchYoQ0dJeiv2FRkhhdGf2lMNpqD7adntx39qcnPTL0GutfWU0Pxp3ypcxfbL_wnEtm"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpcVDXIBp3vVl12WMiQCzD3iwlL3u5-56c-v3oOQISAsjq1OZuBmOui3J_3aPhRTJieWTkqqfhO6XHboUh0HOLHFvSMHyNJvkQGKODAg-i6JecaLxFXDS-zOUptqNFaIVsbCoHZAw2Q_6Sja2PXSqzo47XuYeR6TZri5UlWnDNUJeFf3_mSyz54CETvaXzrUN3oorxmDkWf2gxl-rY10l0K3nDCP0KHP-JSmZeD94NwE1v5hTanIAY7qCEqlN9pdCIJC9HgG-UVOTjAHYYRQ8M2ViEVwXloC75iAWvE_8wyQ=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5eubWori3StCkyuVT1-XJBAAnlB5ZbYFmt_mmn6MKRx1S9WvHCCgmFhDLs7U5lpZeEH4YD9BrK8Qqfb7zzrvRBZtWhPZoPoGWDGIr9olTuj6pFQJXtiTrLwdGQL1lp50SktQ="
+        },
+        {
+          "title": "ascopost.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6gJUI0ZJ8xB4d7jr0_7m-vFzaR0u-mBWHwt3uKndxzqe8kNtxPASPyi2GKCG8Mq0JWr5wtgg3yXVPn8FnuFJ1_53OrmcNegcpYeTSw_qbxHNG9xUE4IsyusVRDymVDCciGNHL4-_U3SiOGO6oOefABeiGUvLmpTW-sRox4HBaIjH5aVTUcoN-W7OVtseMbQ0LuNcyo3wLseADtCSjHgvUUpJ9mrTzRwBJFREG_et4__cJ3qpZeNmhbOix8TI="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECPA-BlrRifoaD256J585JyZqksoNd0dgeLulZO897_GGdKb3CvKplce0F-Lox1YJUYa9k4Zcppxk2AkNJf1sR5BwU9jIfChFGYWi-Drt9N3jjHogCvyvOBWjuyoGLZB5ijo3W0Nw8XjlE1ksng1cqKSKOLQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cemiplimab trials for Non-melanoma skin cancer (squamous-cell carcinoma)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-melanoma%20skin%20cancer%20(squamous-cell%20carcinoma)&intr=Cemiplimab"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "350 mg IV every 3 weeks",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 153000,
+          "monitoringCost": 3000,
+          "sideEffectManagement": 7000,
+          "totalAnnual": 163000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 905556,
+        "costPerResponder": 362222,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": {
+          "comparatorName": "Systemic Chemotherapy",
+          "costDifference": 100000,
+          "dominates": false,
+          "qalysGainedDifference": 0.5
+        }
+      },
+      "name": "Cemiplimab",
+      "nnh": null,
+      "nnt": null,
+      "participants": 2000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+44 percentage points",
+          "baseline": "ORR for advanced CSCC with conventional chemotherapy: 5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Objective Response Rate (ORR)",
+          "percentageChange": 880
+        },
+        {
+          "absoluteChange": "+16.5 percentage points",
+          "baseline": "CR rate for advanced CSCC with conventional chemotherapy: 0.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Response (CR) Rate",
+          "percentageChange": 3300
+        },
+        {
+          "absoluteChange": "+15 months",
+          "baseline": "Median PFS for advanced CSCC with conventional chemotherapy: 3 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Progression-Free Survival (PFS)",
+          "percentageChange": 500
+        },
+        {
+          "absoluteChange": "+23 months",
+          "baseline": "Median OS for advanced CSCC with conventional chemotherapy: 7 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Median Overall Survival (OS)",
+          "percentageChange": 328.57
+        }
+      ],
+      "remissionRate": 18,
+      "responseRate": 45,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "Average baseline score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Global Health Status/QoL (EORTC QLQ-C30)",
+          "percentageChange": 16.67
+        },
+        {
+          "absoluteChange": "-2 points",
+          "baseline": "Average baseline pain score: 6/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS Scale 0-10)",
+          "percentageChange": -33.33
+        },
+        {
+          "absoluteChange": "-0.5 points",
+          "baseline": "Average baseline score: 2/5",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status Score",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 40
+        },
+        {
+          "name": "Musculoskeletal pain",
+          "percentage": 30
+        },
+        {
+          "name": "Rash",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Immune-related adverse events",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 months",
+      "treatmentDuration": "Months to years",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxIf8KUabO3SOpeXvtCQiZW6rZIKwbXpYZ7ByOztDGBA36mHjaatJzInKiFeTWb8W1jTZy3LEylAa0Z6M7vmcE3Vv4ae5hUn-EUIanE9aG3uX9CRYnkMYKv4hiMdz82tF6vQ3W8Ksn"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKTl0GMsqycIqUjASIcBrrwvr6OjSLcTJ6n1J8SY5Uru_IyR5gVmIweKJtKg3Nelxrv04QVO6WVPrfDghPrKzO3lljNGUAZZtT1dabk-zZJ5Hdi2RaXpnrZKuunG3dkLcVBmbX"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2WWpJjS-mPydsC1YtnuEUOt8aEuDXLkHTpXk3Y_WGwZwvEUq3mUYIzsjhhjBjf4jmHjnRSM2VTFOBoDaYQ2VKMUzqw30BluBLM8mQPBz_NvXh6UWLsbfukjEHKFfrX8aap1BWtThbxdYp3ItQWH0hdloyINFRlBKsSfeIQ2143mHSa7_1eOdvC98uv9-d5KzVTx4DYq2xjRsX6oFNX-2zQA4NfJGH93M4Zg8q9wm-Zq2lhDLVHc72REhuIJYdXEdCP0zEn39BTND7Log="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVFu0nXFwGyebzuvj5iIDGtHlvCkxN0RLsT2ocGowRaKo2LTIJUxYInAwm4QAjVx4a5A94szaTU45eKqXpYozeVKHWcOWkbR7tdoJGPTzIbRgccO6cw3ejzpJ0OBhyARek6lVlbWuBm6c-jpsZJ-gTD0yf_UWM8HLNf9qngWJ4pqm11Z-tSxfQWdzOkhoFXP5OMMYn0C9c4g213R8NylAJPZ9U93E5mXmKOIwjyOXtkJvNJidvtlaSF809IbGDfkpg_z9WGFD7EzAnvnONmk02emXLgE85azrVU_lBgh8OJAMrBGUKy3J6oH_Wps8BeeIpap48rQRznc-CL0rC6OMsxuClgG61VnzotOFoIA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEt6Vsg0BGz9g2UOak_nxbF99iTgIhpfnmQKcUeVmUZt7jtL1dWOqDTNaqnrSIWpfLGyok06u8Y5yHCYmZsBeAFsbqZZs4iNVxG9IuVdkVsDBVlHJK9ldDvkPfVg3X1goX4NMkv0E_o30DWNf2UoGJ7N4CA1jijxd2K8gB4NuFAUBYqF5aDa-3Ppzi9I0MnQhwLbi2XD7vqtTLuGw3MNHZ9szQqXd55x_cqkiE-Id6enHHRMfNA8AAGedGm91Vqg5fCVGKScgOVEKQXjYNUF5_f3y943inQph3nL8kRkYIY"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9-F0X-Wc4DO8giYkV2YD09k0Q5P2s8uatG96Ca29qQOHmv3kXkABTDWpQMbPlUmIvLmzbGJsk3BD1UbjYolspELOzWnxdth9FApydSWQ-QMTw4RVTZtSP2hQJHpUBINx_jC2p"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsWjSkaPc3jL6QnUkO602pcXHfPV23X4Iee6D1rNIFsJrKYlNUL7ASngPcGRQAWKns6a1yUjwyQum8MUde0z7uEnkx7qTV2gDG7CfWoPrlvn1cY3_qfUUX46FoYF3c9ybhSm28"
+        },
+        {
+          "title": "brown.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELYvBEHQsonEsCideHTUKQl37ZKWvjUhBZixBugsTXF_eQPHeeOAPjcWaGoDrFRfFrD1B8Z9ekXdEL3_tosiqCAkmeglVW0njauRA4CDkdNjkFQLaNpr9DVMa6Op2zl09JRnhRqQekgAQ="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEP25iUOIOX0D4meeqft2nWc7AoAIt3EySL-xrSf1Go_bkkLgmVlkmuWM0BX8IVKsCJy68vfqxk6OKG_NnAloyVwG1mLSTdnTLiCQlYgQvtBrA6_JWlItMsED0zVRo2FtyUSU_b0VsScJtpmv288Y9Yuh1dQzX-eN1k46Ls2QM-GqtmFrHowHIXFF35ZyF4yG49dVtSzDlh6mglDz2z8gJNmr7EbOGFppcEmXE-m5oYAablmRXs4w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: 5-Fluorouracil (topical) trials for Non-melanoma skin cancer (squamous-cell carcinoma)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-melanoma%20skin%20cancer%20(squamous-cell%20carcinoma)&intr=5-Fluorouracil%20(topical)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "5% cream, twice daily",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 100,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 412,
+        "costPerResponder": 412,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Surgical Excision",
+          "costDifference": -1500,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "5-Fluorouracil (topical)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "85% of treated lesions achieved complete clinical clearance",
+          "baseline": "0% of lesions cleared",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Clinical Clearance Rate of Superficial Squamous Cell Carcinoma (sSCC) Lesions",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "75% of treated lesions achieved complete histological clearance",
+          "baseline": "0% of lesions cleared histologically",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Histological Clearance Rate of Superficial Squamous Cell Carcinoma (sSCC) Lesions",
+          "percentageChange": 75
+        },
+        {
+          "absoluteChange": "-7 new lesions/year",
+          "baseline": "Average of 10 new AK lesions/year (in high-risk patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in New Actinic Keratosis (AK) Lesions",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-15 percentage points reduction (e.g., from 25% to 10%)",
+          "baseline": "Expected recurrence rate without treatment: 25% within 12 months",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Lesion Recurrence Rate (12-month period)",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 points (e.g., from 5 to 7)",
+          "baseline": "5/10 (indicating moderate damage/lesions)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Skin Appearance Score (VAS 0-10)",
+          "percentageChange": 40
+        },
+        {
+          "absoluteChange": "-2 points (e.g., from 3 to 1)",
+          "baseline": "3/10 (mild to moderate discomfort)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Localized Pain/Discomfort from Lesions (VAS 0-10)",
+          "percentageChange": -67
+        },
+        {
+          "absoluteChange": "-0.3 excisions/year",
+          "baseline": "Average of 0.5 surgical excisions/year (for high-risk patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Reduction in Future Surgical Interventions for Skin Cancer",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Erythema (redness)",
+          "percentage": 95
+        },
+        {
+          "name": "Crusting/erosion",
+          "percentage": 80
+        },
+        {
+          "name": "Pain/burning/soreness",
+          "percentage": 80
+        },
+        {
+          "name": "Edema (swelling)",
+          "percentage": 60
+        },
+        {
+          "name": "Pruritus (itching)",
+          "percentage": 60
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "2-4 weeks",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEnlHjncVAKNndMP1u8Adb0nccUW7rFEO4pejEriSL9wOvmUDWFda_h3nv2qdzgEobAdgB-qU3xM6iWeJUwfXaLmTDcIS42r8bt-kxlzYpEry3na5VzBwTH6bhVYWR0UfOTMRkIGKRtm44uF4="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEfyL4SQGjLmgLmLLulcwGWNUIPMSSxJq4srcJi2veqPNuBmFHQisSU9etM_GHLkOFi_5VseVQNSOI-PHRMOz6oFIAV1R281Y--yJGtBq6A_k5mq1SkB0Nj11P7a3BJe87g"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZx7VIGsZhwsrywwU6IJ-X-f0YPwEK06rriDrnvTlZSNan9LpHR1M4Wg325RGQVzP2Xuh9f-2ca34xk5hoeavW1lbk3tJAc5wLYtkubUuVLWR_a4RI3D-7kVW-LY-Ulgf9dS2Om_JeduAxeiMGMOqmc1PePdWRFEsrh_f6M6WQMfHkdFHcOpbDDBkV4jpASSs8sfHHgowhdIM2EAzwJ9ETZPNGkpZMA51VSzYrP3-o-DrMalA_TntOOEYm9P0="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl6dWhGxz6Xn2glqng3873pcZsYRmHWninfMUOAgHrsSiDlcpGBKRvrbaRjYpwA_F1eJAoFNJSCXtRtCkRG_FCHUiIy3CMIUdq4mk81epcgqeJJSIcp7jdbF_RwkXkabYWwKaS"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnlF7BuV0RqM1mMz4RIkHyvp-IajXkm1ee0NoDbgu87w_IWmjVeHZRUQb2oYvpffScJjq_yK77C1W515ZavJfGchNbpL7Zn9mN6b5Z2mqe6md31j01x9bdeUhE8cJTKVQwjXPwltXZgLLhFl0O2pbIm2qC0dmLxPDULowmx8bWT6czLaV13C9fNVbCQh3vCZItfUUG36riP0haxRqPXloKl00="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmFl9eltcI2satsr7HC247wJ07i08Ysp9qMCcPpeDl45IBwB8pIuAcogkgSc8P5DHAfn6IlXY881A5PpgJCrcDPf8ag-l10Zl_cFfoIeEQgBOVpw8oJK_qT_JAODvjEd2eZwyOmaocviv8nvLhXDsRqzhBkE-09iWuT5-0-QKyzmsOdAAI8vYsbezwOmVsLhi6JR35JJoUdP_DvvTwhi2kCco8OosTwnV0z3pogEkEJr2B0BpIqFbZ_1oLkn_GyPb_LW8D0Nl11uu0"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF73rn6UUKkzc6rkIBXNGa-V285IQmGmBdPD_G9Q5A0V7j9024Rp5671xmgC4KHaOFaFohSnTmHwelrLArZIWFeqk5YSMtKn-i5zrCggK-B3yeFsN_GSQHoMj5rT6CwS2tZf4f7hIp5-WCNnaI8RB42dlQbrS_8r_oFC15GxlaVZbfssAEZW3c0t4M0hG_Hnn8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUfskLL0b7COJoBIGsh3Sz3RJL1nzsai4e8NvCFKofFsTuqurmB9Md7HD-ixB4Umd7ctzkZ7B5tXQu2AQdSd5m9qN3nrcnStOmzc0Xv_4JIz2vKy1m2mISx_Kq1bB8dlCqeaPFnsqf-zg1jDo="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDJnO-6QrEkp7KMF7k3cepen_eEuGqNvHhZp6E-2YnLaDakr3SMMyz7UHqQ4hqJ0QyYiA_qpRRbLt60pAo1E41Czxtc59pesVFXAPa9KuKcIk3hkLm1Nv17nAZwn4vzc4J"
+        },
+        {
+          "title": "usmedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXjTuaQ0w2v3kT8ZAXWQX0OjsdpQeQJs_-cHIv3sClIKwQ2nl618ix7y5aNuDL5Eg1lyPOeozc35ztHqTvynNUKDn7Q4Ey2hRiYlPcLgQWXD1adDBcWJC7pSz-QX2MBkf3FM1f6f_q8tZMowBGugMa8iRlKVlgoyITP-xyHTDwtE9j6_TY4nx04zF57HMTabzkU3B2LppEHwoYsgEjCF0Xo30DNg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF64L3OaO1tXJ3eBohAv_cq1ndqucNzmnqXYR6Y3WJLGz_jxUfniXQBY9fayusVdTiVEmymsaZttDQmzPVeIN3H3aMst9gVg0aJ2BoBZbpx0Ko7ZAXTlZyTMYuyrmsKAkE8-zABnzjkCMmiH5duIfyvHdF9VpA_4Xn1q5TU9CCymJ9S3-eSdd4pBeeEO5EM4Uu295Xgr9nhWoqcYJeEPm_FFQp9Mkt1jfKgc9Fr3Aotd8EwR9UDVm93"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqzY3mvFyn23nukW54FAT6HH3IAO81auC0Z5M74jPEepSIn-qHcauj_PdWmzsZXql9vhxfh7Or4K-9sFr8l1H5QQmSoqvJYXigUakRx98tRAfG_w9bJ2qxyfxpOJW_SdGlvdecK6Y5emX582_z"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEgLSm7WibWhs5Bk6_M9-Y8Mr70r75D9gqjXYtWU-m7PB7EEssLa7bK45UJkF0c7_v5sr437Y5Wh0-Y-WSrgjSI5wpkM3TPz4zpvGBfzem4MVfAJjQamNEBS6hVeW9WuLE8QCHz_5w="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFt8c-Zi8ZhaiuFVblMcbYdGTurrjBBagcyrsqJ7llhnKt3QnJW3vrwj8n64VmODe9URaq7CRLRxEAcNwEAZojKZ3mrYV_ax2YUGhZQJyPyhaqJVSq1syH2onQNxzlxMzRkvRTp-Q="
+        },
+        {
+          "title": "ClinicalTrials.gov: Photodynamic Therapy (PDT) trials for Non-melanoma skin cancer (squamous-cell carcinoma)",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Non-melanoma%20skin%20cancer%20(squamous-cell%20carcinoma)&intr=Photodynamic%20Therapy%20(PDT)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "ALA/MAL cream 1-3h + light exposure",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 200,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1750
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 2059,
+        "costPerResponder": 2059,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Topical 5-Fluorouracil",
+          "costDifference": 1400,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Photodynamic Therapy (PDT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 25000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-90% (from 100% to 10%)",
+          "baseline": "100% (prior to treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Probability of Lesion Persistence (at 3 months post-PDT)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+85% (from 0% to 85%)",
+          "baseline": "0% (before successful treatment or for untreated lesions)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "12-Month Disease-Free Survival (DFS) Rate",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "6/10 (moderate, reflecting pre-treatment lesion appearance or expected scar from alternative treatments)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cosmetic Outcome Score (on a 0-10 scale, 0=excellent, 10=poor)",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 85,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "15/30 (moderate impact on quality of life due to skin condition)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Dermatology Life Quality Index (DLQI) Score (0-30, 0=no impact, 30=maximum impact)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "4/10 (moderate discomfort from lesion, e.g., itching, tenderness, bleeding)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lesion-Related Discomfort Score (0-10, 0=no discomfort, 10=worst)",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+5 points (e.g., from 2 to 7)",
+          "baseline": "2/10 (low satisfaction, reflecting initial apprehension or dissatisfaction with previous treatments)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient Treatment Satisfaction Score (0-10, 0=least satisfied, 10=most satisfied)",
+          "percentageChange": 250
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Pain/burning (during treatment)",
+          "percentage": 95
+        },
+        {
+          "name": "Erythema/swelling",
+          "percentage": 85
+        },
+        {
+          "name": "Crusting/scabbing",
+          "percentage": 60
+        },
+        {
+          "name": "Photosensitivity",
+          "percentage": 100
+        },
+        {
+          "name": "Hyperpigmentation/hypopigmentation",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "1-2 sessions, 1-3 hours each",
+      "trials": 6
+    }
+  ]
+}

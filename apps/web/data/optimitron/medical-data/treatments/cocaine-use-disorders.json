@@ -1,0 +1,755 @@
+{
+  "conditionName": "Cocaine use disorders",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T15:55:02.709Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "2minutemedicine.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHA4-wEtgS1lcYk57WPX_yMKQIOpswAAdu0ALP0h_o-g6ndxPmXFPHDOonabsCWRsmNPpF3HHNexh5IHBKhQKXKJBUDRCnjL8Mxx75hZmD8pNawFMavDNM03LPS9IaYSrxdP86Rk8qcVElICObC59R7FJL0UVmwEVqLOWQtsWQfy82x9BggsV4e0_RCPztkOB83urC3oHGD-ughHkBlKydTfQ6-nVR-Jg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaLgzqjxxhBD5kXFG5M_Q5p8BNdATBV99RenXKMK7Nwlris04jd7Hq0bpDdKVeT9o6KIyOa6qMh6VneZvweJ_iXsHqwVkgmvEvEs-HeXDNpEajlYLzQ2bsP2Lv8OEijVTGubnakXBBxYG8MRM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzcQhlLzRMHlGfw0GbOoi93s2wGkmPqNIgYu_X1oayMI1fkgTavR-DbMdHNe1ZOCzEYtS5CXVu_qMI0dN_q1Vz17o5geIOJAQhYwF1VGEC5b_5x3-jUjBy_1iQTvFeCoFgpLweccLnKOKAyg3558PXkSL8EtMoGtuIUGkk81Qsjr2dqm0QV0Aj8rNMpjWkN5qV5Vu-Y5coJ4BNNCunq3sDLzyFLpNnW6UQwHVPLDDWaPQUrZkPFqp-9QFGcMdUKj-_8rbJ7Z52TbONJA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_SNzB6uiaVw7zJppTpomwDX5oqRT7XUEdNmn4fpAZDmIc8q62arTtNigBgh2r7xfN-poI-PStuQf6UPgmQVKeq9pnR9O2D0GwPFeYF2Skd7l8v2cx-smvQ56rjgEQJA0DCWxzZJpCmB_S8SNdLeNALpV9zizo_UAH9pe-ql_hZ5COpzdj7Dte9h-aSq9v4EMzWFlnDWS7sPIYfC8LgJeworlSv9AY51b4wkoiXtlWYcxug9ZxhBALBJ_R7ZLQXT1aEXfqqG6wy_y-W80T7ORRyCRR9kLfRoap_Zc2LoCPBMhOyao-nORxR7MuldF-oTnZFFqMBrLtvS0IaY3a5A--GHoon2XckUXPeltJcPPLf8mC1ugojT8GAz2_hmGVodFk4VhYCeKnyd-P4yrkdU9PdAqshv-dE7DwjPRy1m6Kp1lGA9zcgTaUAJgWUdcvxz5t-WKaDuIbDjMOP8S2dgCTn4b4AGE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkM8vEbeqtJ8tLvJhWZZNNoYh-9DoJ9gV-3bwvit54dQd0M4F4r1ta9YYxGviKx7bOoEDtmunhXbULEPT2v7rMaJCf01Q4O8Jln718lAkhHNVRQ0qWDb_ZiWI88tJfj3Cll4CN"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEI5spwx25ziR1OvrchfKvHHEpek-BfL4j37mnL2DDPSUugjAWmUEXrFey2MTpDgxK0kHwOZL5hq_nNm4SkS3VgI6H0ZodS_3X5qD9-v-xAVa7wtYSpt7e31f4yX7DblYRW7qnGV3MRm5_Ga76Yzi6Zky-VsyB3-pK7_Vu9127jX53Wf2lrbpKlHFVbp666OFt8gUBLyNv6KUAqsCQKssg8Ml4GrWOiKVRiStsWxbJ9bA2vlZAZ0CosZs6Tfg=="
+        },
+        {
+          "title": "psychiatrictimes.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMuKvtoLFr1b-QmigHSQZTqNj6hW_tDW4K2LaXf8xjqcaw81Qml1tybf8nVWl_y3hf7bxUbBIQmqJ__fuuv4xeLISZqSjFvZVNRrJxrscVKKjE99om0xve0nHELJ3BoEvK0lMAodSmAeUIkQRWobAtbM-aaUrFAC7lctD75_b_MV7gd8XwEBYrezjHsh83vQwj6kPjr5x4FP-ldebrpR6dTXn3NpfNuiGJsLR7HuA39UBjrGP8zwhNAbuPawq60DWOHKQonH-dPkJjOvRRERm0Op-NHOYK2XBZ-M5UtxHK89WO5YaU"
+        },
+        {
+          "title": "ClinicalTrials.gov: Contingency Management trials for Cocaine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cocaine%20use%20disorders&intr=Contingency%20Management"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Daily/weekly urine drug screens with contingent rewards",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 0,
+          "totalAnnual": 4000
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 8889,
+        "costPerResponder": 6154,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": {
+          "comparatorName": "Standard Outpatient Therapy",
+          "costDifference": 700,
+          "dominates": false,
+          "qalysGainedDifference": 0.15
+        }
+      },
+      "name": "Contingency Management",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 15000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+35 percentage points",
+          "baseline": "25% (at treatment entry)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Proportion of Cocaine-Negative Urine Samples",
+          "percentageChange": 140
+        },
+        {
+          "absoluteChange": "+4 weeks",
+          "baseline": "1 week (median prior to treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Longest Duration of Continuous Cocaine Abstinence",
+          "percentageChange": 400
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "35% (typical for standard treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Retention (e.g., 12-week program completion rate)",
+          "percentageChange": 43
+        },
+        {
+          "absoluteChange": "-15 points on CCQ-Now",
+          "baseline": "CCQ-Now score: 55/70",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cocaine Craving (CCQ-Now score)",
+          "percentageChange": -27
+        }
+      ],
+      "remissionRate": 45,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.08 points on ASI Drug Composite",
+          "baseline": "0.38 (range 0-1, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Addiction Severity Index (ASI) Drug Composite Score",
+          "percentageChange": -21
+        },
+        {
+          "absoluteChange": "-7 points on BDI-II",
+          "baseline": "BDI-II score: 28/63 (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (BDI-II score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+6 percentage points",
+          "baseline": "30% (at treatment entry)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Employment Rate",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Anxiety related to performance",
+          "percentage": 5
+        },
+        {
+          "name": "Mild stress",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-4 weeks",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 17
+    },
+    {
+      "citations": [
+        {
+          "title": "addictiontherjournal.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEvs5TUbJi-6pbb-l4VpdoOqJIOBTo7ECRSa_8iE9b034YVuU1n4IQrdqNQ0NrgyFoG8aoO4_RItGSqWG2rQkop63O0PB3P2eovOv8wUMHDyISjjNzcwQIlE1lvyLrZczfhLaHXnVAKUtM7VScDO7jGgy6IIhPb1v8="
+        },
+        {
+          "title": "robinrecovery.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJsWHLioVY9rRNvb64TFOP54Q1mBjgalQbWue8W7WiBpSHNlVq0VuBoh7v2ogPBASIFkg3aEWsF6kx5MtfcNgCz7_t6S6DQmNklOSRY1Sng1wIXKSJEy3v6nREA0DQ-BLkUc0GLLfrEMSxnxLhQkygrGZxilB7lzvb8gFcen0UqXx4Ub7F9kO-_olUGOd0BCJDQmucvYCdOcuad1gt07G9IkJHj_Q9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG47BJ7jkOuNdqkRQIK_Zu5ldJl_AeduwF7c-US8SB3pU2hPpOcIbVhe2-n_giKHK9RftnCaN9BMBxkhqV7AZ4zFUr4ce9N96ayuTmRuLx3gkr0pWotbJFoP3ihYXxkO7YtsUiDvnRqXyXRYw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGeY27OZ7OrrcB-_7IwvwpyHsluI5-yGXjaWq53gUfhU2HOWCBx7vj5LIrISWTwz7pQrrwaubnuYNQYsUwa6ks-VIr5pGsdtWBe3BLDRoD4PxR-DNZzDsuq-rCO6gEgBrXbOo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHunE6ZuBc6WN1kBtcx3iUr04vIXeo31B8cNAX2DHAOQ2iClqfMvizM_y_E7Os6o5BXvnc_Pujey-zeCLNcxa1bccysWj6-2tgWPaSqxuRULWPndnKl508X02ODGZ69HPgM4T13ttuh"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxkD3wSgxW98Piih_5Yb1_7IN1YGbQciAWWs668A9nkDmwhL7sc_jZ3WPX1nBikjA6ClYE4RNq-7XNsjZgC-Ui0dpNUwVPHIYx-bCU_1RCf9t4CgjvBRW5_CLjHYiFJsH4SqxFcUI0DcH3CcaHsltXoku_QetfRlw0r4c="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0Gj5Ki_zw5vD1TSrY0Kave6Sn0fL6T890_XJnDwMHwh2dAaVDG5qu_I5PpIfYkzJI6nonE3h1_QLxMLGueNFzcQaxvWK1VJJN-QaNea87SwPDjPdhzcuLiCGD7a26nVIT2e0EaJi0HoPVABVNx_ZC-zq4DQQ-IvjKxmqMOPRrT8bVcJePILC4KaOoFV4wpvsa8zfxgQHNVlpMvU3ixnbZX7-CD8pviNKx3eW6bOGutiK-apSJcWH9VVkeay-QLcZItSys5L7GFNR_0S-vjP8soCJWaoDLvgn8vw=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVQJJleyaH4m_5zIFdszul8HfWrIjVK0tC-nsNL-ojI4AU945Ck-jKNYwGkH6ZI5UE3MjsOHZ5ZOwe3X6F8x74JPbNU8QyYFJdVsKCi2E9YvRDY5VRAp_UvmF7oYut-3T0drnfDtxFL_Qk1cb-nmcaWPuayA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGO7hEPWGMRQALs0mNithMUAxUIvjReVQISMHGHe-L6BwXm505nagnFWC_-iWGfkCboO2CADKxXaRKh5Df0hf4Vo-7wDkqtnRz1Fu2ErOsCMnZK8MD4J2BD7PqUHhKYQUZRJm9aBx86i5elaw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Cocaine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cocaine%20use%20disorders&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "60-90 minute sessions, 1-2 times per week",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 10286,
+        "costPerResponder": 6545,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": null,
+      "nnt": 7,
+      "participants": 12000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-7 days/month",
+          "baseline": "18 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Days of Cocaine Use per Month",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "45/70 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cocaine Craving (CCQ-NOW Score)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "+30 percentage points",
+          "baseline": "30%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Percentage of Cocaine-Negative Urine Screens",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "20/30 points (severe risk/dependence)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CUDIT-R Score (Cocaine Use Disorder Identification Test - Revised)",
+          "percentageChange": -30
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 55,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-5 points",
+          "baseline": "15/27 points (moderate depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (PHQ-9 Score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "12/21 points (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (GAD-7 Score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+8 points",
+          "baseline": "50/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (WHOQOL-BREF Score)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "50%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Treatment Retention Rate (completion of 12-week program)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary discomfort during sessions",
+          "percentage": 5
+        },
+        {
+          "name": "Emotional fatigue",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "12-24 weeks",
+      "trials": 15
+    },
+    {
+      "citations": [
+        {
+          "title": "case.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtqJm6AJ5xibR0xO9fqNNVQDObN5xQ6cgPJbq7HQnvG-KzWHE5mN-L5tH0jVw0stzsVqrz03Z6H5GavQfPDC1-XVfjRWHLzFWall5-Lx1iZD4EhFMgXbSOKaE2U_yudCgSXX8C6WAP1XgtfyyQIsge-iFX7lWi85KqI2nex-7ggSjKnKSf8ZXuMMWNpmRpFm8llT9BEfCrbPW5DbVEFN2xinkl7K8BJp1n1PHX18-V_4Oy7sYf5MHGrfJC7JoX"
+        },
+        {
+          "title": "rehabs.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqIsrYzA60-v9X2HSLsUWJ7KP2UBcRmKkz1iW2bvWY8JK8X1YDtmX-KPt-IvWB84lizQuk0eols_9hSTHMaZbqLs-vYtSc3Z6XGujaLCtf0YzdUjnpnblt2k9If_9juhCbtzeJA9_UB8iksd6GtLs="
+        },
+        {
+          "title": "scispace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSga1kvvcMd-BAYZbCsPLd-Z6htz9u8L8YRcCvCP5yEe9HsAteRAcOUpiK2zQzecyRSCqvOXhKOe5P6Y7upJMZa7zYihOuRw6R20rwxjA9rB-GXJSbkh8JkeV4LrhnPUYsejawSIAxMZwPnKEdm3kENRf8Q6_jfjgrMvGxSKl_EVlL8mWoWC4AqNJOv65HRwN8sYzzfjyQb7E="
+        },
+        {
+          "title": "americanaddictioncenters.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3ou6CWj4Cx-pAojla4AHWElNgtTQ4GL5YXP3l5wX5qQFI8U8eYrZpHfLmPHHQu0iWp7lGJicO9fD9iu3BjrZu-Li2ovENEC-CzPwkxVR9zPKhtCGQ2sv-UB1Bz60j15kUf7Q-9hEo_rrwQIt4oA6i2P8wxbHzGujJv92LGg=="
+        },
+        {
+          "title": "healingmagazine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-xLaX2DlbCGmklD2pHoklIUBKuTd8_Pq1u66NH-TdfKoPozlqi7KSkg9k014aGuSnxiUrtVZYDgahfiJt7S7D9KgvORN2hQInBsKccFRtrB_Gh7VcnilFr-IHvqKJysSU7wlIM9osB8rB4UmKnO5b1YvmJuKNhrUumTGY3d8ESS5hdWTPQJs303bRFWbCqY7M_WdweA9T26wrfwBOKnAZqozkrQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvUkWVHM_VlU-sV4KFYEmel_-yYHndm7NTF5hRLP5UgM3PqCaMVnVNO0v0Fww3M90Gl6T6eueMXTUZ4ExLvNy9AoUS3rvux4I3RA1cQORhAE0Uxr2t4I0OrjK3lQEhxnQGPg=="
+        },
+        {
+          "title": "case.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERMcEeTpgrajjUaYzkG0Fie4S4rldya6zmLO4IIdzNoLdihPpcCnoyO16XN8btUPB1NxLomJQYiE6yXoxwh21dx9yO9Sygz4ydh_WRNU0-14osznvEqgO5lFL71-wWZZraPhGWL3VAo2n3zZOvfrC79iJPfZTePFk3MupaTTR3dm_fu2b1S5bs7R2WFbyEby7iNlo16O1Fuca-BHETyd_sst5XrT5gbXP_tbUkOOMLLJDATpIvwfkv-jdnm8iifpziH-C9EYs7zzMYy_hqInTv0T1QyLLo4YyxTT5-XfWG9wG8dxvsGpsOR9yIbgInTKsv"
+        },
+        {
+          "title": "psu.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMcwbZGWK9NuUXe0z3LrF-IQL9rvSYJ5vD2YNoOBPjJ-WjoX7qxSJ5HyibjoqNeye16QC9_1se4oB8Zty14XbBhE4qECjJzqHVpF9FgcllNCsCX6JCjPsqOpLeXnLOmZPqpt3KKJMuSLwxbBEzPhRt7GQo0j2uqlf_FfZRMRM_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNy1HZWLsszU33ahEi3XaZ2NG6VNImVE_UmpC-SUZ34AKAtU7gUVPj5zRSf7YaKZ6DVaa2bkxGuttCXzp-uZtmIB2lPkHG46D9pEc56qP6P32VlLT3FRoHOoQghF8D-5VfKM9IN7dPwyw19Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Matrix Model trials for Cocaine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cocaine%20use%20disorders&intr=Matrix%20Model"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Multiple group and individual sessions per week",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 400,
+          "sideEffectManagement": 0,
+          "totalAnnual": 400
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 15000,
+        "costPerResponder": 10000,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.45,
+        "vsComparator": null
+      },
+      "name": "Matrix Model",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 5000,
+      "phase": [],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "sideEffects": [
+        {
+          "name": "Temporary discomfort",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "3-6 months",
+      "treatmentDuration": "16-24 weeks intensive, 6-12 months extended care",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnkkbIq4PMaxqQpVYI1VtrR-jL6uk3T1p-58W8MIwPZvsfLRUivjNAUjosf2bmLocu-okAYLwNqPOIqVLO7aR6z7J3HkdjgEhTnxJClFTfXeuGF93t6obugUHI90hoGB6RQAQ="
+        },
+        {
+          "title": "lenus.ie",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3RonURMv9AgkM8jaqjy_YmNRZVNhptCsvtO-UtGpZC2uBKru67LaJ2JhfsuLu1ntAKtb3NJmtrv2Ne7dRxA0tGAmRZaaLpza6E6mznB2iaj609wleLn9N8LDInsrGZb64qTZ6LdgRFIE6_8Fk1JaOR94ipB6bGXSi7pL9QVoCqX4rfuAzzm3F"
+        },
+        {
+          "title": "trends.org.br",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5Da8hJCqaKLSX7U027nZMsZScd8v3ZjzmJWiOfPQvDmIsQD8gOU0J6QUAiAu2MwbzP8tTigsdUoA_Zx1OSpf01-ROAr_uVOSCNOpNVTxBL662JROCHNW5SUIhSjT_R2pZJIsxF59ulGcqSjJWgBzTZ_-E79DX1Ac="
+        },
+        {
+          "title": "substanceusehealth.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj7oxaB7tPapIQ0XvlghXiisWfryFfQSRtY2vN7S1O8Gf07MIJxxOG4NoPQu6RV-u1rS4af6JE8F_BVYcojObhAmEGDv00dBruPRk_A7hZTPmWPKuJa4Twyx06zLAuyIRgulke1s7wYAtrzUL9DRIMWWiotrvVMVdPVkZdh6qaneK84MRcqLshGP4lXfWOUOaQdCcfEQNWjRXZZS4aVoKRkq91NN4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeknydhliToNry5611G66OT6424iQCstuf4CsSfQMpbuA04AxF59siS0_ROKtARLdOYK6ebU7s9US34NIx9Eg7iHyVvMYISCVgH8GYFujDwSkD2V_uu3hqmQam-4l4kU4L9Ho="
+        },
+        {
+          "title": "hmpgloballearningnetwork.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMHlS7Wqavfc6KxdrQlOuo83NHQH9Bqcmwf9b-XAmM5lQeUuCRTeON8eTbk8dm32qFXbQuwjIW7qZlTv8wRBCkrUEVR29b7VOPNrmKjFOFAlgIs2tPnZIgSWI3NG6bJvDSsWOKA2V1Ug9yDDJ77L9nNanO1UJZdWaUyiDzTOYWpHg4dArMomm0z0pbamWmeMwhv1WsIpKFSNH15GhW-FdiWkedRZY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHguIIE3ZuDf-dN2BZYhPngInMtyNUjgx8aPr3c-lfDSyTz0CKHHdXPFjl_hPD5hEQzBhDwQN8RaqnTJ9nnvSzjcHu-4vfIiqZHhU7wsiTBHJH35Sa4jC6T7nodz2vAkaTyy4FzVTCRwpharQ=="
+        },
+        {
+          "title": "neurosciencenews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4Q80gJN4UqD99i17zsbf8din90-_1UyWNVsegmIZ8ekLCdzri1qGNaJgnG0goh6ZQQClnhG6Ye5DO9Sr_D0UmGXMOJfF17omykR8MkfKn9LVb1Bk7M3JA-5YAFCy24unu4ag86-G6BOj68HD9X9xaP1J9i3NY3y-Hciv_cZJvUvpr21giwcEt8UE="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNcxR30FcV5g42rvVVvZ4ibeJJ3xKPpy7MONJ7IF3NqjB73dj5B1KS0mlwliaKGGvcN-xHosG-kQIla4Qs7g_7AFNYuJuRyqk9M2pcXGPTH-Qn6tSdmmAXRRoDYJM3lMjEasYAKItf0xfd1rogoIjclvttBJvhUJlLok4R_Ej_daGbvVJwgfPx8rA0OwAIyyxbyWmCy9RyT5kufmYzPd6q7cjcYRu3NJ9_SGLeoBno5f8oKTrBjU_zfB2JSzvazFzvLnz9Wn3WEpHzB1d6jAo0I2A="
+        },
+        {
+          "title": "lenus.ie",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmSlp8nO8GrXC6hKbbTJhOZ5ZrCsx4eQlk4mXzmolgmeF91POmllHJsUDMfawPVrVfwQwFNHi5K3ihI-rQOSAaDNHWPo1BYyCVNR6XtEWE54MPDUa1HlxG-OA27AcwQfQWAXt11vjrR8fBiz2b69P48hxu32aZB5VFBdaUNn1eVexUlLGqHNk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4ok1xNC_yPXoQuc-3PQoZO0Q5lkQ2FLAwb9mpaLYU3_f5rO2bIQk8QjLnCF9g28wfSowvrB39zNpg4vXJFALPvFMlTivSsGwW7WrTF4PdQDeJ93SPnoxoYg9KKVpMVQVygZiM6WyzbEpfNw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Topiramate trials for Cocaine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cocaine%20use%20disorders&intr=Topiramate"
+        }
+      ],
+      "confidenceScore": 70,
+      "dosageRange": "50-300mg daily, titrated",
+      "effectiveness": 60,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 400,
+          "monitoringCost": 400,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 4000,
+        "costPerResponder": 2000,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.18,
+        "vsComparator": null
+      },
+      "name": "Topiramate",
+      "nnh": 100,
+      "nnt": 9,
+      "participants": 2500,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 days/week",
+          "baseline": "4.5 days/week",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cocaine Use Frequency (days/week)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "7.0 (on VAS 0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cocaine Craving (Visual Analog Scale 0-10)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "+15 percentage points (e.g., from 25% to 40%)",
+          "baseline": "25% of samples",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Cocaine-Negative Urine Samples (proportion)",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "+7.5 days",
+          "baseline": "Median 5 days",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Longest Period of Continuous Cocaine Abstinence",
+          "percentageChange": 150
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 50,
+      "safetyScore": 58,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6.3 points",
+          "baseline": "25 (on BDI-II, range 0-63)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressive Symptoms (BDI-II score)",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.0 point",
+          "baseline": "5 (on CGI-S, range 1-7)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S)",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-4.25 kg",
+          "baseline": "85 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -5
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Paresthesia (tingling)",
+          "percentage": 25
+        },
+        {
+          "name": "Cognitive slowing/difficulty with concentration",
+          "percentage": 15
+        },
+        {
+          "name": "Nausea",
+          "percentage": 12
+        },
+        {
+          "name": "Weight loss",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "3-6 months",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJVlKuYYuBjIA1nxpWi5EGbcgGhPX45E8_7QCSYgvPTrzcny6wvarQ_ejthL--DH9hqWpnYrFrJ-akWWYz5sH_PXneiWoMqcGZOSmLOPjk3GyeIvAKBkDvgagL2Zb_1okfutWXOntXMBaQnr3IbdzW2T0NzNjADZm_czyg9gVi_nN7xkJaXNs3JWthSu21XN1WQ0AqGtxC"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlTc_IvxVUx7O60BM-o4OUMJpka23gPUfImsDItBcbxKurMlyCc8SlkxxlTsHH1GXbvwicwMsQ1tcr-FtSMa6nrQv-eJvDe9VVMorx5yUBNS5CfoRGQwR5T1scZaI2-QQvtSI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECC7BzRGBMNJ4f8niAV52W8GrP7A_uojt3BpkyMkLCa3eNt8y110eX7FYYXASw0vTQ-IVEGnRZOD7wKleFa-_54pKqjWN5O4FifWGEhiAbqiS_iytdaeBd2-37nWFmIJndOB6tG8Ev70iGlkI="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEoozZbL1DcGlKGTxj0C5NL1OLqVUEmRFyjIQsEysmhKt4HDy0EQDW2QnRAznc0Nqh0lYevANjKx3VVPNgCrTGHba9mzQYzeaOeqjq4HViBuroY7j6fR4VKA_xsMni5tSUNpIzc84OuN9Q_4R61UzSWAtw="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDgkisNvAiBm2w3cLdhTR7bFWehogZ1cso6aGEp7eyvW8Y87gCEMkYay-NeCq1FyP7CbQWP-LYwiWHmCr9JJceRd54bNsBT0a7ZzG0udoLGkbwzuYavLrCpMcg75mq9_am-J4lEPWhawtxzXslCAOQTClfbSRiRR9feH3m9AdnMbN_UA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Disulfiram trials for Cocaine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cocaine%20use%20disorders&intr=Disulfiram"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "125-500mg daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 800,
+          "monitoringCost": 800,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1700
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 6800,
+        "costPerResponder": 3778,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.15,
+        "vsComparator": null
+      },
+      "name": "Disulfiram",
+      "nnh": 100,
+      "nnt": 8,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 25,
+      "responseRate": 45,
+      "safetyScore": 55,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 15
+        },
+        {
+          "name": "Fatigue/drowsiness",
+          "percentage": 10
+        },
+        {
+          "name": "Metallic or garlic taste",
+          "percentage": 10
+        },
+        {
+          "name": "Hepatotoxicity (elevated liver enzymes)",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "6-12 months",
+      "trials": 40
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGW-7XNHCPFUAi3AGcUBX8NjhpWeCpt0WVL-3ka_79DhAxthPqVGmULTWzhdHrVLhSyRl8aL99gO6jYX94ErHpaISsU3hs9CVN9hCwbDBz1zz-ZZBZac_W25RFCKOns7RIxfJAv"
+        },
+        {
+          "title": "uconn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDCA3mExjIaPByZKWQhf8jFYYcVD6yUZVBLbaST8ZGCSsQkbuIDxDojZAt5NEJiY130g4_w3VLxFHT2dsuWXgE40N7SNoMls5uKIpdaFzZIRDf9r8jKdn4tbcMl85NKqihGRsKJ8VBT4_BTGnd0Cgn0xKnLyC2cPRIuz3Tvo66Amp09v7hKi_v6cYAYjJyKsGxAWi0YlS0xA=="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt1osDrGKOg4xE6NfRd47lT07fgw_1jOzRrKBpooXo3TOXyfZKc70U7tUyvDC1Pn1Bi6J7y8OTnuMKgjV-vBcsaUh3KO1-OFB6MvJYwpN9O1xRGaLqrWXBMsNOnHNSRLktr8MBFRQrjkMW_4A34KCJnbXVDathiLS2uEG99Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeHBsD6MzrWgVyIOqsb3-4RnoRv6QunUFqWta1tc_0Drgxc-eONBaBFXKe86u4aIFcfd0bqrLX-8rvjc3Bqoro7d8f3CtK7vCoKO1sIVxux3UUKWpZmYhpD8XC6rao_VjYcVzXoxqopI3UEeVxqGjsBTK79rb7agfO_70wbDzCkYMarBmZNvyDtcXYbjK3w_OZphi8FOQRm0QdtpAZXU1stQ7Sbue1pmNniwI9KSq5rqnHpC1mcIvnI0hE6xAV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGvrYGdm6m5laSlwsGa3S_G3kC8XzqZNqMO75SlHJvlPI1eP4U_c8cDiZaQpPmt8NhKIE1hRouv0zePgBFshy5aQcbfCMDUn1Ax9LfKpSoYls5UCheSUzxdX2fCXeQb9xeF-dsJ8qR7QSmZbhw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQO1EDYgBalPu-hWzhpIR01pm8ykY6-mNhuVev5oE3-fcK1lfP_ZC3pe9RLzSM1Q_9ROrtQuj4gEUQTixqYsFVgL_IZfnV1urcOea0OU-rptxasmppkJcjUkRcFloNpXY0LblGEL3K1smczUpMcyA_RjkjLbLplFPy2jCvWBQV37GwQaNYKTqb3WD6TeghaOgI0toB2F6ECE5Whdx8XJobKPYNtIUGSXMUfHs_EmPWwWHBRlGdbOTPpwXfjqLLDXDHwz2ChmLZsvuJewqJxntlNqqeZJLeNvWW_AhJvdUyq7_mB4C0LFfDgO0rMK4JQTEnNXs-"
+        },
+        {
+          "title": "ClinicalTrials.gov: Modafinil trials for Cocaine use disorders",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Cocaine%20use%20disorders&intr=Modafinil"
+        }
+      ],
+      "confidenceScore": 60,
+      "dosageRange": "100-400mg daily",
+      "effectiveness": 50,
+      "evidenceQuality": "low",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 1000,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 1150
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 5750,
+        "costPerResponder": 2875,
+        "icer": 200000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.08,
+        "vsComparator": null
+      },
+      "name": "Modafinil",
+      "nnh": 1000,
+      "nnt": 12,
+      "participants": 1500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 20,
+      "responseRate": 40,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Headache",
+          "percentage": 18
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 12
+        },
+        {
+          "name": "Nausea",
+          "percentage": 8
+        },
+        {
+          "name": "Anxiety",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "3-6 months",
+      "trials": 25
+    }
+  ]
+}

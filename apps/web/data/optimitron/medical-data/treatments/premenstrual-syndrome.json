@@ -1,0 +1,1096 @@
+{
+  "conditionName": "Premenstrual Syndrome",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-05T00:07:19.027Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "menopausespecialists.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNj4ZDHJTGOVMEqKfGbOiUj84QUxhGtBTH9dbmsOgLu93zXN9f8JSyroRZcwqF_q7WykNyxLyfgEhUEzslFCGx7HDJv8GfTtke0uwW1OCvoy0onKM408I-cE9r5AFPVS6gpV-Rr-Q591dlfE0IwIY-B0XzQ18oi4GRy3va_gkafI2KNI8Nt4fjd0PFL0mU-wR5jrIyJBr_jE1mRDgH7vvDDnM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESVzHkGSEGhoYupgLjUfEYYhig6xUEo8qs40QzWNH50ZQ2QMfe4nRDhLMyKKGZUBe-DnT0eRGNfhBweY69ZywSR-9a7SRukt4Mf1VGERtlZXaoHo1vc8AUO2a0WN1m7G24vapr"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF37fQfj5gxxX25Z9jKNzUCeDmIOcfnqmKT0nAfqFkrMv3HUnRumjYgu9X0B69PM6wMGFe1iK9_VFF7piYEAgH1B7RDT3SYhdc4TclCMjGwgt6TwHfQJzrCrIpXYOFlDSWf71szj3M="
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKYJxgE8f3ieWb2GGipl5e9APgr8yddAcyVfTpy7UVHKNo3_CK_audckHCnMpWsMez_Yuq7o9ABQacE6Yjsr6BYltwUu1yU1sTRlLJR-ckMxaJRCdAejvf4d3mmMhkV52O6cN82KP5a57tn1u24iWaP3ghZ7od3A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQENoaGrqWFkf_1IgpnPdWxf78AFOTsbX7p9R86UJ_oszkQDk_pLnpLvuDpKjE6PozrAdBbJcoz1ZaUaOS4kLv9uq_rysvgBhoszRNCIxuWgrtWUd3BPmyiiuz-Xr8mtn5qstwGR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDaqOu0A7XHzWXBQWo_ysUarqBkpkaIwfBo32WgrB89PXK1OxLoLn0BPvW_gYTpqZ6050PDORt9WhPLhR69BW0dQrODg_BrUIHZONeA4QEEToMwn7powTMRKLh9SXAdTLoS0gFxJk09HnhJwH8dvjS-RTy8E1PX17tvvd5oBEOfrkMdbz3ZnJqzYIp338aNPuRRx6m8ta--iMyjT9QpEy5DglofuPGxfkEaMc8ZOSlsDEg59wetpNhFhCN0e_vX4MAqt2KDI2mzRBTPNKlB3ukjFA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGnXvsB6dPUpnNUDilj9AfR0Mcrm7Y99G90bHPZGzP7VsTCUb49wM74nYtKEL77CkzHFUmLLYUszDAW9tYKmH_0LtEbxNNYFzP2af1qh0-Y0ehUs4FsHKPzHKfoJUcb2_sgNN9Ly9syO4ziQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGJ3Sp-dVRcbRpyy4AzSZXkWAc0l-xCWDsyy3ygigi8TtaI23CKbfuSSezr0XRE_RP_8KnckGaw3wMk3cNMEF4-DZDejHk6KPgOzyuOJ2ipKccqVwSjScu-sLvfBc9YKcKP9olL"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGF4QPRKRMOHePK4OPivzs82LEzagln4GXh3i-HeZGkkFAMe1C2U6EqRzMm-Eb2d-O53Oc8KZ3jZ_Uf1MpnlC6xKfuC_WKvAbLdNDHEg0EcgpjS4hFUPCqnN7R59y5d8zU8AAg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeda2vJhCS2bY4GsPsvSIx1KjySK-aLd4vGSLk1I1B5EP545YbzvNit7yhuEyYv7nysvQTkn1uGg6UNlnPCdUJ0150-jOCDzF5eFXPU5HdAjpEJ-Rhc5Rpcevq3419yTwhcOTJoBL7mvLrwwyzsz0zRN6dcQL_4ahkS6WW0b7jqNpeJdjiyHjP5zY_x-oJ9F1Y0LLQqBArqEPIsFPBq44ixDJhkuuGi6m0qnE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnQIBt9_IDi3fsaoQKzUKYri2RgM3grjUAhGz763YtipX79WXpCcfGjnv3YtNxZR8C2QNYUVO9I2YMdq4_foXHxoBRmlirb1c--ZWilaNnD3xDZynm3hz3Oe465Vy29jiu2bHQ"
+        },
+        {
+          "title": "ClinicalTrials.gov: Fluoxetine (SSRI) trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=Fluoxetine%20(SSRI)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10-20mg daily",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 100,
+          "sideEffectManagement": 50,
+          "totalAnnual": 225
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 563,
+        "costPerResponder": 321,
+        "icer": 45000,
+        "qalysGained": 0.1,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 225,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Fluoxetine (SSRI)",
+      "nnh": 10,
+      "nnt": 4,
+      "participants": 10000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 40,
+      "responseRate": 70,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 15
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 30
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Continuous or luteal phase",
+      "trials": 50
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvQt_sLdLZn_B9KhBBNvvmtO8cnmslwey3DG6JBoARiRDSW2BJ6vjMxPCowxP1RJN57zNs7uNn8NWH00Icqvbn0_0BQEZFaJHjZtxsCIF9nmIdLB5LAro6ZN69_gRg2t-miGrG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfJWI9hoEfCJ8x_vzGx8evM06xYptDVQXD9nLTlYgoq-tsNyLxzhnQjAiNld7VEo92jX1z-8MKLAKSv0xhD_M5F8KnOKJd70tzDpOYcGbrY3TsOM7kj9fXOHl_pmYh4TlrDbQYiE69u1MkHwA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQpLb7EvjA1zDYwV0zoCnvbXbn-859ToE6K2zJ4aPdGfb5RoBwDiV3tvOlJik9QV5h4DHEH8Vfqk5TvozHDo2xEzopeui1kIMaA7sDoaex4j7_XzuWcaIsxtg2RTQEyYXEXGN9tEe_XYSVzsRj"
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDQjfWxWdYOvU7kC7QhnuN-l9NG7H5uMuzRL1fqXd7jRWoYY-TQGsCGXSu5V8-Bo9_OOG4dh9hdzYczFuQ7O3cA5mxnNjMNEVq2AfzJegONqpwLDlJsqvm-bQJ5lZKYbx7Jns="
+        },
+        {
+          "title": "womensmentalhealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcznLQe0P1kyt5KaCjmMo1xx6rJF5-PU52MwiTzoIzq9S4Q93ol-nWyZ-tYy79XkACGzt12SBFaAX2OcId7KB67xn7hGbWtzdNC1_KsvUVFHqCYtw-kvPN0bVmNHVo4m50C7JKeqBJfbt1vF35Wjnw3YmSGZ--mW2OyIKMa5DSpyiPfZdUtC4he5C0mTjyAvm-eT7Py6qaPZx1rf0lF88gEcgyanWR"
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXlDEtoT540Tse3qM2yAhE6LK8rEpwOTn_cGaFponAhlSbP_k5WFpFioQluBbJTGV3BpJrhRl696Z2kIIEAsHqNSjjdToUxbVo_Rp5Ghza38S2FSvEiZGDgOhxXUGIkNtzVdmIYoM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl9WZ4hq1yUbQN2aFXVYOMjg-yacJS4Ib0LVnY43CW03SFDsLcQ5GnozfM_GtYNZke2Y58kN_wX6AFDmKAB0_GiEaadZAm_l5gAbjLSuwVSQKhk8qGLax0Aae-ijAVgWXXlvi5bMT2bm-xcW0="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU86zj0fzDfQ21h9oBAJg08pEhY1UR3zMVouPCEv5AVzFfEgIsgVo1vaUoaWvhQnU96mwsECwichrBMrkWXdyDSWGB4d4BYGeIa-ZIBaIoo4o4TAW6wJIZHEfcN0U0RDPf7JjscwAat6H4qipm_qhv4JLbCVd8mkLhfvECdsVXYiEVMqFeB1ZQ6yl7ZiuU9qKhuInXV6_g0kAehEPGj9ak9IqfaoXB4Or6lJH8e41ljhjJDzyTxJPAPFp_WWUD"
+        },
+        {
+          "title": "ClinicalTrials.gov: Sertraline (SSRI) trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=Sertraline%20(SSRI)"
+        }
+      ],
+      "confidenceScore": 88,
+      "dosageRange": "25-50mg daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 80,
+          "monitoringCost": 100,
+          "sideEffectManagement": 55,
+          "totalAnnual": 235
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 618,
+        "costPerResponder": 346,
+        "icer": 48000,
+        "qalysGained": 0.09,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 235,
+          "dominates": false,
+          "qalysGainedDifference": 0.09
+        }
+      },
+      "name": "Sertraline (SSRI)",
+      "nnh": 9,
+      "nnt": 4,
+      "participants": 9000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-34 points",
+          "baseline": "DRSP Total Score: 85/126 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DRSP Total Score (Emotional and Physical Symptoms)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-22.5 points",
+          "baseline": "DRSP Emotional/Behavioral Subscale Score: 50/66 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DRSP Emotional/Behavioral Subscale Score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-8.75 points",
+          "baseline": "DRSP Physical Subscale Score: 35/60 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DRSP Physical Subscale Score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "CGI-S Score: 4.5/7 points (moderately ill)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S) Score",
+          "percentageChange": -33.3
+        }
+      ],
+      "remissionRate": 38,
+      "responseRate": 68,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+7 points",
+          "baseline": "SF-36 MCS Score: 35/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SF-36 Mental Component Summary (MCS) Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "SDS Total Score: 18/30 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sheehan Disability Scale (SDS) Total Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.25 points",
+          "baseline": "DRSP Irritability/Anger Item Score: 4.5/6 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "DRSP Irritability/Anger Item Score",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 18
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 35
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 12
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Continuous or luteal phase",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0uwSAQ9_Y4Gge-_Q3rwSl_qiiYeJk0XWMCYd8ZjXlVSlyK5M1d4G5N9UedhtkVWrSZ1uQgzIIYIk21UdtNengCnF2zjGP_n1cnXJyJwz-pCIjnl1PgU3RWaJHQcqk3xzm8Ea4htWfziyH9Aob"
+        },
+        {
+          "title": "cochranelibrary.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKKmxLhbQ0rdspglvfYfl-kgqnua00DpElWrtj4hvVCfFmTKtAgiwENAdcYbH9CE7zV9vzOcg8WXWOVNuz1_-GxIz5wOzfAVF-wtuqwqkcjzklOW5aUSOh6g97z0RGsRjWO8ta_GujX6uReXy-l_Bcwgpw8X6X1ZVe28IsJR5-GSFPVzrsf2U="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzBe_G6gsj35-Q6EaVjDi3DTsCzSdOWoilDpKH02_E6xr1hPUfmOlz0-YeRceOGqjf_gnfekHwEw5ZbsMMCofLXIFtJ4g3U1_v8dzWPpaJqxK8lioKvwYrnif96LB6Vpq90HjF05rXu5z8E9KGaQ0CcarQRC-30F5XVWg0rMB_d5vz9Qs9-jzfyvV0VhyHJkn6cw_VykUzGYv8XZ75Pxs0ty6Bv1U="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjzfNQavbxjHwzS69eqWeyefdaD24h254MnhMzj3HJhAAoCjL-9wWMYpL0VZu-0ocawxyhJyI3-ZXbd_oSt_DNwImiC79lJBnVzWsde0YduVQqWpMVmcZU1Dqsc_AvWiSDcsG9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3oNrjXa5zL0xYZ0znl5Lk028HUXFzaXoPJigxMCs3hlNuMz43W0UDyde8NPTV_QMJ2A6hbUCe8tr2CWLrOIx1mIATs9wl1fckQtjyaxW6-O9N6U6ko1rwWLT6ZivaHPkxdQYN"
+        },
+        {
+          "title": "adkaptein.nl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF28SFyp5nVO8ZQCapuBJLYZlk8fnz1gGvc9GcP17LTy-gEfO_m5pPc4UZeIit_VyD91T1J-ra4A5W9CGplX-QsOISVsA4zUqi2e-LwnWTzGo6P3S6uLvKElvXzhcxtJxpE7vw7JYbNkb6Zx36kqBvdBzKiKl-lel5Db9M_o8Uk_0B0yBjWpB9pfTReHzgwwbHcPoS6J60D"
+        },
+        {
+          "title": "biospace.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl2Y9eE8DkI75h9w4Yuqg0O4c8MKlzYJN5uScCj2lMHs25UwNII2x09xFhI2fPXz4tsBoRb7V6J0_N2-_WdWZ38FJCmLxB5bLjbiHhsS6vcI6Twxe5_DMAwYtPgwxC0c9ScKvCbo-xYDK6diN0e-cH9U0YCGNFI2FmZ1-lDxrL6G46fh-ydWP33ICXjQHvaKxCP4TrTkFyenVRZP6DTTz9XMoSYey29BYzD4M4dRfouVHbh2k00xp_w-r3w_XaOuUaAd99jIvosVhOjJvbf8hc96E5sZRmGmA="
+        },
+        {
+          "title": "womensmentalhealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtDdubxHp56LsZE-fQx-WX4bPYBsshzov2dDSXtZvFcyMvqWBDvJL_ey1UT7dJotpK5aMkWxFHaV7QOJdu7JHBRta34YoKOIh_8o731oYlVWr3Mou7g_-36UiN7QKECl1LqEdqALttFvMrJmn-oS1oHlPvncdu8Y1adOa4pDnrPoqL77IuJCHEQvxPf5GyjaWmle0iUcMIrkQhp4VUzW4O3kO5Hw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGagUBZ7QsOX12dKOF_S39CmAMREn2_85jD9ztOPwe55c2mw--qBe09vPtzDBOvH75ic9Yb1t5BPSL3bX3B0JxN_Jvc5kS-R0uEiqksCYDs13e58TPiHvU_Uq7yEN_N2d8LFUETLLV4NECOJrM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhzWOlrdJaV_6aC8SmnbldoMs1ewlUOwcQcpG7hFNmastVNTmluP1C9RU9fh_mE4O8CHprjuRrweNQVuYrEOoSecbBcHLxR98t1qHCplKHBDxzddE8q7SGWxjhDWu8Jd-m3Q990b5sLi4LyjJexDc-NNJOLoc6KK76SShZqmt26uW9df8iftmro-iYlzMjK2AW_qibCUhyk2nj2_8UGUR4dmgGaw=="
+        },
+        {
+          "title": "phillyintegrative.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOHUt0fj6vxBnP-HBMBGccWrY219E_pNsJ0br3mS0ln6l13WUzwPap8ybSl0k5rRdfL86vF_7L_gVfgrt5NGdRFOh-UdPgVl5t_gT93iCo3WQw4OP05T-x5exFo0Or9owCKo2t4K35VLBM"
+        },
+        {
+          "title": "alpine-psych.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQfUvEpjG3Vyyy5UDQaCaVkICnZ9SVS6EQEf7su8nYzKMQLraG22iCaeMf7RMwTLMpbrM3IwZUuTuaRVI4SQJPdiaJUmLCoYpR5RVvRgGpWUVJcm2L-ZCD7zH_k8tHDNi-OB_osWbHM1cCUAb9E8uMecB_4rjctJHCDuoz67aLThsJhEBjfB5SexYfxiK_pg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9DjSch7VYuA2vPmDnPospwienSdkg8Nyq5KOvRoZvPv1miv3BbLPoIKhDZvlwpaDvSaB5cOs9XhNHjKFN6sLWb-cJYiyXC7H_KOjht4tCCSwFbEJ26LuI6LYLEjIL1QqZxcMCmdrAMLaOdGmk2P6_ZecStEZlniwYxi-v6GiGJoSfEXwjDptd5mFl5HH4sZBmhuXKBbS2mVHyNM7kSOjqm7ZqxRP1zTy8JJnEQ6l-YiK5oTAvAoXYFppenNZLsDBc1XPq2uksuVptmB1ApFAlrTWu"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESigI-plT6cN6KMJDJNDY2CTBfKTVxlIR_J5towPUrQFT8dmqRYx3_mymond9V3MLtu--SkcSfqA40mEhtWRGoQTPfXsIIQzq0ulxoEkZaveWkf7TdFiRd-fcc7FOYqD5atIC1cX0MOGl0yooZbSaZFibb3ZhB"
+        },
+        {
+          "title": "ClinicalTrials.gov: Combined Oral Contraceptives (Drospirenone/Ethinyl Estradiol) trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=Combined%20Oral%20Contraceptives%20(Drospirenone%2FEthinyl%20Estradiol)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "One pill daily",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 450,
+          "monitoringCost": 150,
+          "sideEffectManagement": 100,
+          "totalAnnual": 700
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 2333,
+        "costPerResponder": 1167,
+        "icer": 95000,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Placebo",
+          "costDifference": 700,
+          "dominates": false,
+          "qalysGainedDifference": 0.07
+        }
+      },
+      "name": "Combined Oral Contraceptives (Drospirenone/Ethinyl Estradiol)",
+      "nnh": 1000,
+      "nnt": 6,
+      "participants": 8000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-16 points",
+          "baseline": "DRSP Total Score: 32/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Daily Record of Severity of Problems (DRSP) Total Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "3/4 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Irritability/Anger Severity Score (Daily Rating)",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-1.7 points",
+          "baseline": "3/4 (severe)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depressed Mood Severity Score (Daily Rating)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-3.2 points",
+          "baseline": "8/12",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Symptoms Cluster Score (e.g., Bloating, Breast Tenderness) (Daily Rating)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 30,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+12.5 points",
+          "baseline": "PMQoL Score: 50/100 (lower score = worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Premenstrual Syndrome Quality of Life (PMQoL) Score",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.7 points",
+          "baseline": "3/4 (severe interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Activity Impairment Score (Daily Rating)",
+          "percentageChange": -55
+        },
+        {
+          "absoluteChange": "-0.6 points",
+          "baseline": "2/4 (moderate)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity/Frequency Score (Daily Rating)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 15
+        },
+        {
+          "name": "Breast tenderness",
+          "percentage": 20
+        },
+        {
+          "name": "Headache",
+          "percentage": 10
+        },
+        {
+          "name": "Venous Thromboembolism (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-3 cycles",
+      "treatmentDuration": "Continuous",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKygGvLS2JLJM6nAYOyYA9xuY3HsEtjVPU6YhsT4sY_b9iQMiEP5a8iYsiHHEmcYvPp6OKoVYORrMZ53GGLJYoz9d4vvVzA2Bx-4IM-A6-eK9zlqM_PrBAEeEvNKK-K0-Tv5lr"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4KmnU1f6rPDz7HZ0CotYFSrdOzHrVJPpP7F_1ojkAa_ACkTzHV5WAcCqJWd2WR9hCofXuv1-6bTPUJFo6i9Oql7eHF97XFyFnpPSH5NxuEHHxaDD5HJ4PRVBfUR6aX3XaLDxZ8vxFZScuECafebnikS4EG3nmVdvx9tHcaFpsE8L_a8vA3hQzVOvMqZ3BBX39n4lu8zQSgTGgpO9ViYjaL4G-TssTa7nSRHWtMQsusui7w4VvlBQ_J_qms3vlQRCDLZPolxtJzsJNb9rC"
+        },
+        {
+          "title": "womensmentalhealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEd7POFLyEk8aMk96OR_6bD52dc9wOO8gs-dLtqLe4qQYa55MsaCEUR7zb6xcprY_LBvKi3KSMoRrRUGhn8xxuLEDvADkaVHJ9IU9vkruRty1CHJgfPfskthL2MvEpj9bSKf-X4kXS9FroxwcetwLVrPXC24GMnTOdmnL0DRZ33meu3uo2RTqbcNdRoon02DvFp2kYTdoopU3D6P_YSigCc3sfC_ZJBo1DG_yWhJi9fZppgPw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1s93SCXAYxA3csGOSPTcLmV53veppF2pKxNwc8Zx1ABdJTOvNWehFuYfpZ6qreoa60t45J3vMfvQ3a-Z8gYjHOHxacZfplOjVk5xW8mc3Tp01zDKmZjQDRA0XPAOy9JXPsXwS"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-iq7trdYZGizld4vchA5H-YlJCCHf1ml_zp8k7lRcxEM48_LcQX7xL9brFqzl1jRxr-XUdjdvWoKWoO7qtR6Dn3AkDoN6-hm6Vzm8XQ-b7R0JuGmoj2ZYi2r1G7_rhTnHKdibKm62IZSPxiXjCVgPLUahLY-c8zZHxEYA"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgT52Pot0Eeh0r3yhH59IV8UKVH0F_YLq_04As-QNNQGoHBj-qwkR-xp62rxqoaEWeoghAEM_yXHB6ELBHsuzXdRuqd4XoS8CWOVMhpYCDTrV0asx4oL6rlXl1yNIF0Ml5GQpuNKxWfEbglLjKVNO3gbmRGFMFtD8ZS54XQfq4-acRSSI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFTKbIof95qUIta-RY6toFdQ1-qXeoE2XrhOYTl9Y4bRhS_QX-9FFqZB3SspaAZx88TQwMjjViwfE10iuq3o6mVQzafiqseSM_bWQ7Gh4qPzIXsoH4e20VBNoV071sVLfyczOtAQEEAEDTHHA="
+        },
+        {
+          "title": "brieflands.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2w73QlbtTnmLKaxv6V4YUbkCcyBe7tQtZFMEVHyO9uJeph6JI_xrnepiBpYFupTnut38cbcmg299z3-g0Hl_Dk5Bz0z3GpFKNvW56sTuubz-6TsDrHQRRKKbhF-9VByies0s_XHUkfsqILw=="
+        },
+        {
+          "title": "bellehealth.co",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrE11brztxweNzODY9ILE3lYIGK116U3us2Nov1up1Gn3iQQ4uCDv0QydqSNb4PhurhFQ9uqSTQdA2Ozi6gb0SrkP98JoAOD-cIadR6ebIjysiaa6ECkuxcDfPctjVkl1-GBRrVDVGcgl9BPY8yBw="
+        },
+        {
+          "title": "womensmentalhealth.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbZchXT-Ov9Nw8expDOdcxhTULkNRyPvWCHuk8yrgvu74Uj14W6MSvbPxvGeDWieE1SImDVK4PGKFUPqCaeCIL9Neu7GBzzNBUdEQ4bfXTOKmmNsvgwgHHLfFCK6ByfL-R_0cFonYIWosH3YHDJgOYRPU707XBGvyt791DPFM6m97BeLbcSrc="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "1-2 hour sessions weekly",
+      "effectiveness": 65,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 600,
+          "sideEffectManagement": 0,
+          "totalAnnual": 600
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4286,
+        "costPerResponder": 2500,
+        "icer": 60000,
+        "qalysGained": 0.08,
+        "vsComparator": {
+          "comparatorName": "No Treatment",
+          "costDifference": 1500,
+          "dominates": false,
+          "qalysGainedDifference": 0.08
+        }
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 3000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-24.5 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Premenstrual Symptom Severity (DRSP total score)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-5.4 points",
+          "baseline": "18/30",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment (Sheehan Disability Scale, SDS total score)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-3.0 points",
+          "baseline": "7.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Luteal Phase Mood Disturbance (Visual Analog Scale, 0-10)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 60,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+6.0 points",
+          "baseline": "40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Mental Health Component Summary Score)",
+          "percentageChange": 15
+        },
+        {
+          "absoluteChange": "+11.25 points",
+          "baseline": "45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Self-Efficacy for Managing PMS Symptoms (Self-Efficacy Scale, 0-100)",
+          "percentageChange": 25
+        },
+        {
+          "absoluteChange": "-1.3 points",
+          "baseline": "6.5/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interpersonal Relationship Strain (VAS 0-10)",
+          "percentageChange": -20
+        }
+      ],
+      "sideEffects": [],
+      "timeToEffect": "4-8 weeks",
+      "treatmentDuration": "8-12 sessions, skills for lifetime",
+      "trials": 5
+    },
+    {
+      "citations": [
+        {
+          "title": "clinmedkaz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtHx31Ko-saoCXsO7j2yORKe8XdDshmufeLsT24NlyG_3UH45blwDgrWbeMU1AOVr6nbxqVEnzFG-FUWCLNOTAvZRFyvdXNwWdHeKXju-jzsQ1FYF1Z7NN9hzyoO2EvtugyAxtRVIMBf_-4Zv4w4fLceVgQgxLA1nu48FdGr1CVmofpUG3HSzjB8-wWhQKM5GOOVtyncZPEN5CCfmOfd-sce_cptfIyu8="
+        },
+        {
+          "title": "clinmedkaz.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNs5PhRlvG_B_xpwo38cmQmLhe3_YMdlEVsmolEuMk2KZ_olm-tsYARdkSYaFBDkiSxwud3wl5gLvrhBDbvZ1Z8qEesuGtuETc5rLy4KIZhNXRoppyLczUq5D6bOZHfCWayHtOzhBqeygG1eVrFEHwsQoJN0F0_kt_8Ux8lq1o7MVBs6AAae1Acc_7FrnVaot2a61iFU5JoosLLnYXquRFaJYzKngU4G_B_DqnaA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAYq7YEqKngDbjNST2qoXA3LG92m4YHqPUbXjmXZz0TDuH-4hFt-pGgrAzvFxHGYXtGNM3MjD5IERgL3zNNVTzq9BSOz2hSJcyYc9Ui13lkUGHgjDUwnOUlBlxw3jdq9clddas8jpjl5BAckE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGv_ezyCi4wiCkzCrHdP8DEtdu7y-HwdjQP2MdRzmyPjR8Fs3IW55ha756E1EgiaNfpmqfWmwn0W_AN7Xu-c0EYQmw6QshOSvA0IUBisa6n8Jz6-uFY3oGZ1GXKaIGHNntn_wHfxEP9oxXBF4A="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsgRwOuFucQr-rJrzl58mjzrXb-YZetRTMHcca9dLVuxBKRaUFGRMV9hidXuiBMn_5LQ7ImP9G9Ds4Hh3EurUWKcyG2yKOSBgac-fi8huorLTzPcrudw6IzCNiaesA7i3HyGPJrqmZxUuwNLaO2nZcwnBhwcF3rKAE3Xgx0noTRWL5eiuPz_fBiLmpr0I-x8dlXsPeoYa6Eq2LCE2nOH-GOHoUPqb9M0MZJ2UMwE98CmFEhAv87IgZhwH0ZnRFh9UhhfNikn8eDRHs"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGavRpsNCng3XzMOOm9NLJ7FJCoFVn9r5Wx7h32QxGX92Beu2tmfu8ckqgP0jHW7qPnBUXCALlLOJmGG9qBtXaDPiXl4YMWd2-8pVombjWdgHSXMBwxD4VzQz4NsAby_pYvLMC6MPWZT9QjG3Dcb0mfb0cSLHOcF5UCD7BB89A5mHNR4_OGQVeeatupeV40ZWjPUDH5UIqw2yu8Zw1nmsRjnQwbjThkqJWutFyNMOUk3cD4M35GJZfDWhgnNKfZ4H-_YQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Calcium Supplementation trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=Calcium%20Supplementation"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "1000-1200mg daily",
+      "effectiveness": 55,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 600,
+          "sideEffectManagement": 10,
+          "totalAnnual": 650
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 250,
+        "costPerResponder": 111,
+        "icer": 1000,
+        "qalysGained": 0.03,
+        "vsComparator": null
+      },
+      "name": "Calcium Supplementation",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 4000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.4 points",
+          "baseline": "28/50 points (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Composite PMS Symptom Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.45 points",
+          "baseline": "7/10 points (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Emotional Symptom Severity (VAS)",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "6/10 points (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical Symptom Severity (VAS)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 20,
+      "responseRate": 45,
+      "safetyScore": 85,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-0.68 points",
+          "baseline": "3.8/5 points (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PMS-Related Quality of Life Score",
+          "percentageChange": -18
+        },
+        {
+          "absoluteChange": "+2 days/month",
+          "baseline": "3 days/month",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Number of Symptom-Free Days (Luteal Phase)",
+          "percentageChange": 66.67
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Constipation",
+          "percentage": 5
+        },
+        {
+          "name": "Bloating",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "2-3 months",
+      "treatmentDuration": "Continuous",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE07UiLXQroi6ihIm5mHUirkKpLmybILQNo1Ftk5uk7Z-eFvz3h_a4ozAes3WHO9ExRNErZDm47dSFk3WfKLhGG__m1MYL7ppJlt7GAhrb4gEVHtwJBXKRGztSe9Ywc7O_aWsSgJjIEQ8pH2ZZ51dJbVPgVzbKVHicEy1wTy-XM034Zm5dVP0Hs-VEQC2duDYVJsLsNWBwz0PWsVHJphnAc2xgQ92LHtxpHlz-rkevnP1TZ"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8lu9ZUpO7uIKg8DkBVEj0BpbqGwmF0sjDibwBvKSnmEbqlSAUu0sEgZpde9p7MO1gkOllB-5kLPUGAw4brJH12rilOCZSp6LV7PK6vdbIPZ0rJhKFW1y9VJItSEyjypar98_pE2hBfKeIC5qU8NHdRAttTZ8PGzkI2RdfEIjAM15B38xmm7tDX7p6bwWQEXoUD0xrTbYPPw=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFw_80jqt9zpX7jLjsW_a3b0ByqudhY9qwS5N0FuoCxHeDSoRrDw4PXsYj4yyBPg6LLcNAjsGVVHgmQ4JLY5mICO8ufwfhAJxavUcKKjv0bThZX9flNk5kWJ2duKVpiX5J9JJrsBeZIM5GHzV1F_YfB1nYCbiXdddWmJwp33JF0QUgAVYyx8Ejf7xJ5BfW79ex-"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgqrYD7M7eAP8lrlZepbUIe1hzKMQQxN8bzK554Q_LYXlGOu0TcfApUBqIL2LTVClhhVJH24wNie7k2kvkOvQu_5uxzzOGg2ZGxphtYF-TpsExRrTpxgFL4jWU_gsYv2PXC8Ifi9GalgcK304L_UwxUGGkgd1KM7KpBcEEWAi0X_8iZwc-EkZt05THFre5qJTpp5Qilk4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpRHq0ErmeQHX4bwKeEZl5GhYeITDajOcvQFyx5f4hB61mTY4H82RBvIrVmH6JCLVnW9bGPectYaC4s_TMm0t3s46wKlBoJmTFSGOfAUiKts4a2OT9pX4cggYXrMbMghHU6xMq-HADcGl7Ju4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFFxfezXNCTFUAYYnNI2aUnA5Q5WKfYju15Mxwv8kY7_aEJN_nFf0C-ovgReTrxPMZD2j45b1aLDYNHA4OJ602W-BMSCR9mGkY6vsQgtdhHCIV8ojPVDkV_sBWub2QpYiKGqviwi8_fyADx_RE="
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNyDkYqo9r3-kcHUZD5-l4rSdP7SxrpZOEO0XZyiETKGLxgweLRB_XCgk7F5VPrzXjXkqRTPNis4OT3ShB9OTc-gidHh3QakxLaMHFayOYnDdDKzBocVU2xvkkt1s6zpkPW8ZORUw="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnLpC6L8CpM1hLxtcmb2c-yT4eWjP1tisW3s4oyG-1FLWSZf8tW42ooS3NrROfgxQHbffTH_fcnsVHPYqVeM4ZKqNlFPMahnUnEzlOjrIqamEBaNWHwBUUuH1t9f0-U_9GTj6DYHHZFZyXjKCwwe9puMzdERnsszPuKe1CjllfrS92Pkz1GlOPC3Lsd40yeZMJMoRjr7hcgm3DTgZ9vqy7o6WQdwXk7c6gTO2nREw4mFmp6LOK_V_Hl-HKDGM5MKfIjzSiuOT5mA6YWVBqyLpmUnPXjDqERannsNpHGuCyZrsspChSDifUuhkqWPlTaqeDYERYOFj94CBbt_boDDmWSBDzQg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGWvhvfcYlcwqUwk5EzztWJ9lgPQ9EByvlFQ4z47Cvwvoe4E14Rul6xFRuSmWLFZLoz20sYbZ86NDDIAfKpPoE6sPqXzvkaJBsODabNUQ-6LFCAFuzFxw1Lui7ld3X_HK2sEimKAlXKm9p79Do="
+        },
+        {
+          "title": "hjog.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTpTP0_bAD5aQ9ghp9t-ByZu9pCCV0eLOR4Pd4beFdRhjI7BYCcIka582eh9vpgbEYWU8eXLnGW6Kf9cAvVRTDtt4Z5QrsCLtMYmmIzCT2z_pO_g=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnK9w0IPb_Zw8DrHIgZwX_j0VCbHAlJAAG9UUxDDhZmZH8VE7fF2R1f_spHqZqwkS8I0rs6SX5wMkHAIolLpDRT8ESIcefPeEHl9nJtwq27_ORZzaRemU9rZkrLBRJyQ=="
+        },
+        {
+          "title": "bezmialemscience.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQjFTVRGL83Rd2Tes50CBORUQToigbGuAqHKuk1LgalTjzB5bD6l_xC9zwsRrRxL3aczZMSYLfTjqkaeqUgfSOahw-p62zgP2wZzEaO4EsvA7fKvnhX0RQiKR3yQ6zYzD6dYRp_iOK5dVDGuS6suYzwRarjX9uAu_-7YEEWsHoH8UvftHfYgxmcbWcNl7fScqIUwy254wAGQm2eTGK3BRgPsWelUKIyw=="
+        },
+        {
+          "title": "preprints.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMXRpaVtKoUgP3NBsHDKx2YnE3s8QjtFqujzZDBxVZ0-0D_N9TNDqvC_89Vih7Emk16KSNxEN_hGkey1WrfLtsVyXn5Wsde63SNDapkVfJiczCbWMs5o1PncgMr_uLwtZUZXNzALeoluPd74LbOA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESKVXRyFOBdsZJ1bPDzac8gCStOC-ghFfzVLgF7JMbdrPafSW8a4fcnD3FYrz5pSpeg9-yRlInnxZ8r2EiePAhLcwcEna53lY4I_-maXA_JYYoDHQVazghiOo2wPSQH-fSUUQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMBudDX5k0lBZDnXO4J2Z5X__45k8pIlFITMg28HFBQ7S2W83oFWzKIpixbtInn1zyaQNuoRlX5dnRK7uQYATJ_0XMK_dJPdHw8lkLhEMcaoXIA6tmyAd-pThGHQoCjbOPzyRiPpAroslEcQFkww9ccJeR_ETiIj1NmZrV3jIfj42vw_Exqncq1QNxvgNeT7hAZ8srMwnOFJBkxOQHnEr2JGc6aJZTm8QQ26wL2VnPZmFOnU1Ozi29Qv9cFp00ftwgYzdj2LKcVAgpvh71PbLCHtRtMeD9HwrULweUQigZAn_nwG629TiSI6V0TSpgEhCtwPBd0JD_MsF3JWOmpJzqawINdzDU3BMKL0R4pFwAOWlwDgAopCe5Mk5Qvs3kTzk2FuOEveDjYMA6zs8IvDWRpktFUq_Rsw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGzHimWg-om3PJ48CoZfrsKqk8c83Lxyd2n5HV4u5nt72LTrBhnmUw7y3G462gRsmxsAzk7At5Jo1G1f4699IRbrA9EOg71Wzk8ey19LvV73Tn6aylPZY-YZZC3h_fcQVaoJZHNscKP6doPlso="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF23sIQtBkcexZ4G19TqMPm4scV6CB8fxiplSo2Pkgx3WnCB-3VUmNmRJ7bm6tFi3Kq6QOhxseQdf-K0gfTmbVYYeEqCzXbB2R1XwQtVvqrmjn4gmD0ZNNtu6_RFX_xf0Ja_anhzHhzA3fYWqDMm4neNYWJChR5etK7OkwQ2Xbl0RJAxt-1vSQJBchtPPaKLU-hzsykSP9D7YhnMruLdxvAgOk5tO_Am4LcRAOenfAFFH-Yhp37uWe-asp6v41Q7PCsoPkkW2atQwgv7t9q7X8IX1Ky-5oOdOb08yywP3YYRA=="
+        },
+        {
+          "title": "ClinicalTrials.gov: NSAIDs (Ibuprofen/Naproxen) trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=NSAIDs%20(Ibuprofen%2FNaproxen)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Ibuprofen 200-400mg every 4-6h / Naproxen 220-440mg every 8-12h",
+      "effectiveness": 50,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 20,
+          "monitoringCost": 600,
+          "sideEffectManagement": 10,
+          "totalAnnual": 630
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 300,
+        "costPerResponder": 43,
+        "icer": 500,
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "NSAIDs (Ibuprofen/Naproxen)",
+      "nnh": 50,
+      "nnt": 3,
+      "participants": 15000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-3.15 points",
+          "baseline": "7/10 on NRS (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Menstrual Cramp Severity",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "30/50 on a composite scale",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall PMS Symptoms Score",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-2.1 points",
+          "baseline": "6/10 on NRS (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Headache Severity",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 70,
+      "safetyScore": 75,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "5/10 on impairment scale (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Interference with Daily Activities",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.5 doses/cycle",
+          "baseline": "3 doses/cycle",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rescue Analgesic Doses per Cycle",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-0.72 points",
+          "baseline": "6/10 on NRS (0-10)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Irritability Score",
+          "percentageChange": -12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Stomach upset",
+          "percentage": 10
+        },
+        {
+          "name": "Heartburn",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "30-60 minutes",
+      "treatmentDuration": "As needed (luteal phase)",
+      "trials": 2
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEri09QUKHI5o6AEE4QXlhqmiPPxkNJcXsLJNB71fvUh2qzQkRxlR7MnUAQZwwDhU3cZYxi3t-UEUiNK6S3J_94k0jEDO2jNODqDLrMtMfVxZSz4swGkxsxITptM41pTDuC49fr59JG_TM="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKD6_N3_abb9hNekzhHSJ7IbDwffK39iF0n5cOkYhaiLCusYP0PQFLN0wjuju-fP1omli2QigJ69U8qzHwlW0o_tszJL9ldSO_NlDRC1MaEl4mczzLEuodFs0X3oYEVg8U7Yc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkp7ISwTJgNaOncytRWdGt7K4RZeGQCmeFhf6AV2FIOACK2P_iVi47tsiutukja7cOcXFEjDLu880k5GKFqK_3tu_K5kVcitV4DjXIu9Imct4Ig40-8ALwOZQ1WIG8ZRHnMkUU0GCPmQ24mQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkrcCmh_3HY5zeAwxVt47uHj0QXBXtRJCOvXmxA0s2QDyuRQ1BZlS3LxDGKiBsAEu0zUFEj3GyfHkS6VglPKzToxbeCYiZP6MmHwt1vCKBQQ4_U3zEK5JuPCjOcAk="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEh4FssY5rqVvcBR72rBd_Azhl6Oy-Q2UxvrzqX7X3SLj5GbBo9gqqYkcuWR5oUadWW5FrEW_XgUtMfniY9yFbmpG_qptVOiWsFBrDl7kndVyUKBrMhATdH6akJDIyiEeHfKgU0oyiXvk92wl7Fi9RnA5R4Qssx"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsxRMi-ouQB2eMZmnHw1CzjtamtyGVuHWQDetEY-sKu91iyAk_-faKb3fRQZAoP-IqaUPemlR8sqiJZsvFbinxrQZpedHwhe3RbHYEprKr-VYaq1nAzi3qKKTmcNW593p2_-zgD-MqoVMXN35fFFWGKAWpna0A-Hfao_s1uCLEOHGpnaVpDMayc92S7Q3gDlzbZkcpk3owKh2mI8bOJ4e0NKY4mM9zJ-wud8g1UjFIh-komMmAOzYDfyA8tbeI9xItYw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHL5IKaFb714mC8phLYxZVWZrrJ0pnTTQfHLKFJg9P_PzesQIIc67BU_LA_vsVjQmkI3IzUZH8qlEJPeAZZ7HnZ6a3yINOiONj3pyddKDcnXZFyQVrKmxDPP8ZZEwQwB-s6hZc="
+        },
+        {
+          "title": "jchps.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpCr5I650EHCdnja9dMeZd8Ko3-zcsBoCzMmF_gZ0c02JBQ8my5nsfQrFg8rR1XbMV3vbeuiuwlY3PlkxETuGdrLUBdoKmIlfhGHqkmhKFI5lgwpqKD24l_wCtb8jLdgbZP1tHJxY7YwdqXgC4Tif3Es6X96oiW9v10I32OktUCBKCP-8GLKlPyIsoxxMn7hEQyofEClRWEm4dRly7NmP-cwln5A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpurZkYd91q5H51QS20nhNky_fBZasen6B7wyGbDqG_pRw_mXGTNScGfwrtj2MUmEKXYkhLnYSqah8DUM5BIiGpXhjP1Dj9Ljx-uuOJYm9SfDPlp2d1MahTfu7qyCaT2jpSEREn-IildbAuv1u1APQK08uodcvGI0jEs3mjwQb97jf2pBRMRSovsYS9waUzEnrH51BaaRQUefRlmukt3HWJnfqekiMJPreKgsFV6hNH2gzxSbttkN-tN_QzUjtyZg="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESS4tImMXYeA-9CiliROrdiakyshFmEXuqtnXW0AO4etUaHoGMifqD_naX1Mb-2XBypZkrj2kykIOpyg7RQKvQSYRwAhprx4k6JJNli0qza8eTljf6Aua5Z6o0ROhBFYl6mTLyPh7rhif269tauxLoQUGae4TF5t6BZ1Bi6fUJlKxoBWlvhiHNANrY2OTSs61qYU4v7gmOvhEq8w49Rqjn9B83P4n-VDN-MB7tcJUdF0nagfSAtvSHY8G0fpcScT_WmN8WtuVUJ_9yRd4D0Q=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Vitamin B6 trials for Premenstrual Syndrome",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Premenstrual%20Syndrome&intr=Vitamin%20B6"
+        }
+      ],
+      "confidenceScore": 65,
+      "dosageRange": "50-100mg daily",
+      "effectiveness": 40,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 30,
+          "monitoringCost": 600,
+          "sideEffectManagement": 5,
+          "totalAnnual": 635
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 233,
+        "costPerResponder": 117,
+        "icer": 1200,
+        "qalysGained": 0.02,
+        "vsComparator": null
+      },
+      "name": "Vitamin B6",
+      "nnh": null,
+      "nnt": 10,
+      "participants": 2000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.8 points",
+          "baseline": "Total symptom score: 28/50 (based on a validated PMS symptom scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Premenstrual Syndrome (PMS) Symptom Severity",
+          "percentageChange": -35
+        },
+        {
+          "absoluteChange": "-6.4 points",
+          "baseline": "Mood symptom subscore: 16/30 (based on a validated PMS symptom scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mood-related PMS Symptoms (Irritability, Anxiety, Depression)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-3.5 points",
+          "baseline": "Physical symptom subscore: 14/25 (based on a validated PMS symptom scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Physical PMS Symptoms (Bloating, Breast Tenderness, Headache)",
+          "percentageChange": -25
+        }
+      ],
+      "remissionRate": 15,
+      "responseRate": 30,
+      "safetyScore": 90,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "Impact score: 6/10 (representing moderate interference)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Impact on Daily Activities",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-1.4 points",
+          "baseline": "Pain rating: 7/10 (on a Visual Analogue Scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Breast Tenderness",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "-0.75 points",
+          "baseline": "Severity rating: 3/5 (on a 5-point Likert scale)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Severity of Bloating",
+          "percentageChange": -25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Peripheral neuropathy (high doses)",
+          "percentage": 1
+        },
+        {
+          "name": "Nausea",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-2 months",
+      "treatmentDuration": "Continuous or luteal phase",
+      "trials": 4
+    }
+  ]
+}

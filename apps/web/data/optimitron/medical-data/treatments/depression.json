@@ -1,0 +1,1073 @@
+{
+  "conditionName": "Depression",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:07:44.046Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTBgndtVdC9ygTL66HZwD9kVhZ9uWGNDSZ2y_Ii3VxSl6bE8bO7dW9wfwMFgdyXe_FvKXNBel4dzuPfI3kTYL092AIvNaSllG7Yl0PvPDGjJsapbzqdJOA0q9YGn0z-Q0Vpx6rAH_V4N82FMMQmcriVdU="
+        },
+        {
+          "title": "york.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEiRSu_yJycZMk_cFr1p7_bALINJEO82JppOSO-pYdLx3MT181ajVhq459GObLFQh70DHcLT60uI9i8ph6Tmsg0EOoFlCFOM9S_v4iJIcA6zHCpQUBaloUdV0YYAO6Pn7upVbleAJiWrUHFTVhl7aWCCehrzEXXeDX9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYnJf-w3jU-25-nGBP6XXEKRMI_MVmAQ9-HDKODtX0z1uzhRrMlIa14068-q4owDNYXj-76lcYJjX2KU0JqD74MActK8aSkNPXNRZ7S0o4iHRGvBGss7UZVflo-hfp_2b2pZf9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFRcFjUHp077fMyrM47EUgkaAIg9jk6_I28uH4pX7eWhyjT18AsA--Lzl2NfRxRO3aCO_DC3XPg85kFMwF6C6MzR8wKIsU6AgmH668Elig3X6ddA9T_zmsWIf8FRU3JYFbi0VvslVNJoxfuc4mmHYfO3jlNI4hD-9zgQimeEmqFRTeuCXydThGvcPCGi-rNNJwUF6PUFFwspEP_oTAbq2h_2BS7hgJGSmW3GfEOFkta2w=="
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG09zZrWGwX1UtoSJFLoNs81dqnze8vCdwxkLM6192fZiLfjTt5e-RmI0tzLfEXw4GchasNuQOBvCrGA85dg1BPBVcsP9_VqncZ_V_AMD_xe5ORnwLSUHJdy-_H9DRDKRDuun9EOThvDx8-5jweyKG1Pme5BIgUHQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGA_qI2xy213TkqK-dbouEFfUfzG0R6nn-_-yuyfLglAhcHymyn9GtsR1TBcuCGTljvHzczT-vD-xucp_YW-Le8GrrfmvbFdk5NDtLUJ3_iBDB3FAAwTHFOgCSBZv2-adSzLhSvQ1JEhh4mJ43pi6L7L9-6tPvUtw27ifeEXRsbh09_0WC0mmA5DhWgP2Pb0IMIEaVvE--x6oS55uc7wvFdk3JEWTCcVM9rkjYyi26rtwFu0bKA0VB16qADGQ6eSKVViqKgFFBJdLc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM69Puo--DP68pKMsRDldxf8zqzaAkyJg-FQx88LDv5fy-7XRXxElwUX7yfYuut4fwjGgsu7kguAngXRS30vOCEnBH-P7swRDLA0KhGKRPw_L9fkjau5kKdrgbhWnElj68Qvt9Z74GNpiquP8="
+        },
+        {
+          "title": "wustl.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqQPT7bzyLgAwDPO26G-fg6eq4nY4F3G__j0h36yXVfZmNIoU5XUJ7OJXR9G3G47PzYrccvb_fC02WqCe0hIJ9Xca-dEVbj_yv5oisMZUDmcBhcbuDLR8psGdhs2Nkp6zzYeT9JnVNnS34EzfsnsvrSc53Bq03xoquhKboot6PLI3YhXttLO2q9gcViM3xHe8RhxnRDVzp73coaZHmdvECiQ=="
+        },
+        {
+          "title": "wisnerbaum.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUr5rGEXZeXwYZB9U9rO4M3f_Gwi1D00CGtV4eahPco3yYdzfce4eAaIcCi-GZ9DKUD57zGIJ35QC5oMS4fhK5dS7Mut6uQiDMtPXVmBWGb92rQ9Jm5Rn3QpyKDDOJbGfKHEQ89Y_oa7XussMYvrrWUK_dlKWuWTTGd4rL_DmBJy6Qk_BlCROZ7tDWB8J9GOGWHRiWv1ujHweCU5S-9sBQKhJC9VW2GmtBRZ7SWwV0KJRhTA1cIdJmt9y_R5YuZSVo9SqsNckG7w=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLSBDUl1ATIQS6asffh-Sn-8aCmR1e6n1yHftgguB6-PQ-5E6oivR4T_IXdXaqCrP3V9niSzy5buYTANLp46leclEmx63Ktdp8gGtHEtv0vts0cSxQ49cokJGuhl3kG4Kz-n1_fH0Ei468gvc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoYgTf5srbjyx3HIqRLEChogrmMaSjeCf7-rfV_suUVghrS9_-nDu-dDGwNriC9h1akcewjAgE11sEyw7ztNs0G9V1yzxjrLTYtqq8m4DBfPkgDAVmvhnsBFDIqfFN79ms8tx5"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG65rL6paOqf6-cJAMYQnDRt32kw75il-3LmZZ3yVBSzhIwTt1OQa4E74GTbQHIIq2KzwQgdPV9r5pcGoTkdQgnxP9pL9GMU_5a2VUVrvrmjXsQv_GkPu5ukKXxtdl0Kr9kEEcd"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZM4hGS8IvMl0MOyqcUe2ILTlhNnXOTh3vwti2QeckQ4CUZiUTCRNvAtDbTFlkQpSvEJAz1A_2WLwR7Itw5zh4N2o3rMuBU1rj8Fdc5adyErGhlcVAyro511nc8lZXeYrN3lTY"
+        },
+        {
+          "title": "ClinicalTrials.gov: Electroconvulsive Therapy (ECT) trials for Depression",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Depression&intr=Electroconvulsive%20Therapy%20(ECT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Individualized, based on seizure threshold",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 25000,
+          "sideEffectManagement": 500,
+          "totalAnnual": 25500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 42500,
+        "costPerResponder": 31875,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": null
+      },
+      "name": "Electroconvulsive Therapy (ECT)",
+      "nnh": null,
+      "nnt": 3,
+      "participants": 35000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-17 points",
+          "baseline": "HAM-D score: 25/52 (Severe Depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Depression Rating Scale (HAM-D) Score",
+          "percentageChange": -68
+        },
+        {
+          "absoluteChange": "-25 points",
+          "baseline": "MADRS score: 35/60 (Severe Depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Montgomery-Åsberg Depression Rating Scale (MADRS) Score",
+          "percentageChange": -71.4
+        },
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "CGI-S score: 5/7 (Markedly Ill)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S) Score",
+          "percentageChange": -60
+        }
+      ],
+      "remissionRate": 60,
+      "responseRate": 80,
+      "safetyScore": 40,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+25 points",
+          "baseline": "SF-36 MHCS score: 30/100 (Poor Quality of Life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Mental Health Component Summary)",
+          "percentageChange": 83.3
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "SDS score: 20/30 (Significant Disability)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sheehan Disability Scale (SDS) Score",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "-17 points",
+          "baseline": "HAM-A score: 25/56 (Moderate-Severe Anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Anxiety Rating Scale (HAM-A) Score",
+          "percentageChange": -68
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "PSQI score: 15/21 (Poor Sleep Quality)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) Score",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Memory loss (retrograde & anterograde)",
+          "percentage": 50
+        },
+        {
+          "name": "Headache",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea",
+          "percentage": 20
+        },
+        {
+          "name": "Muscle aches",
+          "percentage": 15
+        },
+        {
+          "name": "Confusion post-treatment",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Acute course: 6-12 sessions over 3-6 weeks; Maintenance: variable",
+      "trials": 170
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHeWNud26_Q4und-UGW5a66yOqXY1NuIA7FJXhZuNF865LZ4LC567TSpBx6ydsf__M_m4rMBUvAoRH6UZJN0RAe8_gRJj4Ai4g0VMas2eZVjIUzUOjj_s-ktbZV4w2dvSH9v5sb"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDFt5mrDzWC1uND7GCjMXuIsdIoJP6D2jFTjlUKGzZNQcUuOdGw5-yJQp2QFeqhbMDNlymi2XRzxlCcBn-5caoRHsI2FjF2UJ_jX9CAca8zr43Ur231WleNjauIqcto17kt84-jNXUOrpDM2x2BmYkgsH9NgKYLHK52tdRfZjcUsPTNl-iT0lIe4l1oUNHQ1KWopmdO0Ff4Yq1Oas7T4ImoHn_ut5_7CuINUA2J2BOoAwBUzMN2hcXmTZoGliF1u84aig0y9tDSSxWnMeG5CQ7fFgeS_cysAK595SBKOTqwTMkqnk5fbUULsTr2Q=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFGcqtb_HGjyofs_Y-EvXriVobwiRav8BtjNulLKTdjxFcQKum2JAV9dG0aSoes_zIqMUp_mAYmAfEjfjr7MTQJEOLHinZQWUHVQSP4xQ7ZZTKwbjmYKeO78FMAtkAqAjxAARewJMp"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH46kHO4JMUUXUOpHUDwc9IBnj-J_Q2eqLX2emuFpPKGt9nhVI1K8QemRMQmqh3cuY2MJ3567TUlQHYRhgRQ-dkOwOkCyQhBNItfK_6Xsj_m91EKfmpeBNGuKqt9O-YEkwqUvAXWeAP1hQQsGmqsESavO_kBUND9XNJIf-p2tcxm2DnDGqUZ0CbtHz6mdbW0ZyKebT7UIOVbBFcPaACuxEtETyh4Lo4EGk26yrHY5iftHX7A19UwiGm9buOh5Djdo1c2HeNIJ4WoGswaFdyLlBDOf1TqZbYeg=="
+        },
+        {
+          "title": "biomedres.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8-sPro3sDScVaQYwJrjUI0Br1gPEcN4Ngpa9SDb85tzrWwQszYdXiiWLQnqfU91-NG4IBNYu4rI3w3CnaKabsWDbfkjXdGENel2-fd_6be9z1mzdVOcR4nYuC2jJxAaPSVPyfXZ_XVuo4cQ=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcTrLxXWDZ-5_m1A-oZrS4M4yNRxiYhy7P7z_rhvx77K7GFxpS-oFxFqeLCHmxmaIhe4Mkm27Mx2S1S21-wGrvgk-OXVOIPnIcaZOcSrmb_fXR9-sUsyu_Nyt8O67O7a5C-6aI9ZrV1QulD0R4yZ-0Zc0Jw6Lcd2D2xNOXV7w7aEJFoMJrPeHUwEG-64ZtSk9rQFlnaLMG3WFEHeirVW6cAR9wJz8FXe1YqVb5y_O3JMwXyfvGg5TbwvUE48jNQxkrMDNz53D42ghfkTNp13mNZzaWIVYyBCCG2fzdIkLUlB5GKTp2O_tOnHp84ykwICrCpchqP6bmeDvgBwld5OCzw2iUPHlCFd0S4RN6j2uzyjGQsw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqeTIhie36pCfhldDlNhtwk3sxUYTWC_i7ylQljSBuFVAweJIW_7Ab2XO4vX_PXS9BCumPp3vQkwA-8bGBotgDpDbBnUVVzAuX3MXIosJ__NXSXUD4Yefc8lc5Zf9qDrg-qb3ehJDYlA=="
+        },
+        {
+          "title": "biomedres.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjVMay-OjdIQXhfASyDDHVHVoGsTnu2pOxG490gh9RqKshRqDWCbZZ2OMe1r6CBnKiByAWGuAmL6Si72BCIrSE4uuar0cEfd5TWO0QByT7cPQNjDN0ohiNh6m3XSHrwXgNbkVQB1-ytkEUCL3F6z-j"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEp7_DT6Pd1gQxVOYSoM14Onfsd4PSSUjvkmngvZxWVMrT-AdusL1iKAD3zuno0ZR8q-4YlzBzc_qJ9Z4xeFKX_kBvGEmzPlS1vcbCj6Kro4G0IFZN6jen06gu_php25PTYzCODIdmiAC5gp5B"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFwgEb-Js-OqKTc9n0alxHAOBbzryr6rC7UB8DkxG87hx39jjk7Zb4YU1abt881pyF66rltObL3_9jqaGAQDB7ZVTPGGbZC6ztCanqkGMZrhuimwRkI4I1b-zGp0fBz2u_PrwmBZnHp5qNsQNiNtQTG3QDXmT9F1dIFfM44yNagNfAkWRD9uHKBIYpMU18r7LzmzjQd4dGiVUOhWrLMfjXtGhOgqy6H1rZhf2guzM5p3FfL5Gs6lL7Hfol5k71w76N5M1bqmT3ys38gSXX2UZSRPs2LuWusG4gQrLeSJM5iOaXygSqPiRgBNKFXB5ZEtHPpeTRU-IEXqZ_J-oL4YqZLFwB3EgRg4otTslfa3a1jtNxhOSlkN8dQNUpeF1dJkAKRk7VPnPg4HYzee0OBjPsWQs1DEdRcbdcP_TGRaqZoGJ8PPYQzeOVCZ4QzJSPIgaHNgyG2xVQIyFP0cQAETlvfR3S6ElzCuw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdMtIwlIpWVynOJOtOriCUOH0ur0RsrjYeQhG-yzL4DKNZ-ruhy4bCituZQFUGftSyX0n--5LVkYQbKLgjmYLQ0THKqLRCZ9usAOnJU8Ui7v1CXFTof9g9rDEWrvJkBAj5iotc"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGtWQ1DWSmf97H3mtFCOUD4AsKfLvXX5tSFjjeEUDBsFyOpg8Z1ZEcky_S5xSeCBQX0Y-D3s_D7oU2U9TzBl_ZLIDL6J8aE2Dok5cLNHOzgFhCOUILOUieXIRokPoQ03EjSo09cNbRcrKwgMNrYTabBghAX5G98Zbx4nmSzVry7QSXC9DKU7a_oWJejCF8JRLuotO4w6ZWviP6x3CcYbN8wXQhaSVjrHK8hKfn-w3xOxkcamSbxCsA-GZlV7ZPakPXbpKfbX-47iN49oD2NpkDlPv_Z77WdvF3JhN2B8VzZyOWWoSrec_WtnAW8m-YE2UPs3rLI2sSoNN_3KjzICrYqOMAwLx--iVrx5mNC9xcXR0-EAhAsMd2OnbCb5-NniJBPESdfUdw9A=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Venlafaxine (SNRI) trials for Depression",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Depression&intr=Venlafaxine%20(SNRI)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "75-225mg daily (extended-release)",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 300,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 1500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3750,
+        "costPerResponder": 2419,
+        "icer": 40000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.35,
+        "vsComparator": null
+      },
+      "name": "Venlafaxine (SNRI)",
+      "nnh": 18,
+      "nnt": 8,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-12.6 points",
+          "baseline": "MADRS score: 28/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MADRS Score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-8.8 points",
+          "baseline": "HAM-D17 score: 22/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAM-D17 Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "CGI-S score: 4.5/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "CGI-S Score",
+          "percentageChange": -33.3
+        },
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "GAF score: 45/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "GAF Score",
+          "percentageChange": 33.3
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 62,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "Q-LES-Q-SF score: 40/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (Q-LES-Q-SF Score)",
+          "percentageChange": 37.5
+        },
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "HAM-A score: 25/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HAM-A Score",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "PSQI score: 14/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sleep Quality (PSQI Score)",
+          "percentageChange": -28
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 35
+        },
+        {
+          "name": "Insomnia",
+          "percentage": 25
+        },
+        {
+          "name": "Sweating",
+          "percentage": 20
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 50
+        },
+        {
+          "name": "Blood pressure increase",
+          "percentage": 10
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Acute: 6-12 weeks; Continuation: 4-9 months; Maintenance: 1-2+ years",
+      "trials": 18
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtzdXwe3Xyoo4MW8k6PwIBFGa_S213fRkf00r20_yTsK2ol4-VfP3Tb5v703WhaqbbIfcKNTxJyF8WUBolFTyM2kPHRSbyKK7F0e3gdznvz3Uila6tAzBWUSk-xaKcbX0HVaoXaP1ouyQpkZM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM-M4n1OMq_eQa0CVdDOxuUbL2aZpRrnd_F1HMyOWwpMZ4ma0VDXg6YnUp6Aw-_0TbE6raH-aM3QWdNs5UyVxyi0LrTo3L8m6YfznfEo3r_W5GtaIDN1MTPW3LwwCgqQkCDxznTWygWzY3W1E="
+        },
+        {
+          "title": "theamericanjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFH36MkZMrWlvsiobguRnJX1xbkk39Ckvo2klLeSphBISRypHeRgZ45fdyGfrbjEl3lMvMJjoTiwr93D4UauN8RbalnmAj_U5FxazKwn9VQ7Ihb0zSELt9C3DISnKzDHHgbZIPeNG-KDEEZP6IgwaOuE1EIG6Nbh5FvhccjyIerCh_C"
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHH7dE6AyurOAP78y2sFGMekdxc4WCW3QsnZUlwbe22XL1I76tsg5w-RQSJ5MKDNrVCYMLG9x-ESlqUlSNqcsRX-xKU_BOCiEuwC-1wVQ_bnD40RhGyfJ6t4zDmwoTFMPWdKOUQJ3AP4v_lhDf4jmc8mlok8tTMtXU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiqOAPWdf_z1wz7OAwUcrGUU3samlea6AHT15xTDSg-er08CoeFrrefFQjcQCJDdqr0flAXQH_QJNYNpUSOvl1027iQrVSi2_mmYuzK5tOGkO0obu-2xR7ZQ1pLQEBbnPGPbOeV4CPtRZcR28="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy4f_z6htGtFxksdCBnzGXKMp7iMU9ycBxFEnD36WGu20lOkWiegNp-J6ULiPs6f_B7OyKIidElJbeIelJO5zfbaSpbuxO1fQiW5xkLAK2NWmpgbaTnpnQ9rc0DDOPCrSNpf-qCcWuphxAmRBAK3xXdYHw0Lo="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0xejcPI-53cr0wpTacVsbycvDMIZ6oynpwlputLs4MI8JwbNA-xakcOf6vdVeWC5K-VgkPZ2qoh6Sp94q3abTkCRUmRBXj2AQJF8y8DP9uaHdTVtoWiupiq9YZl1STTAnb5UyPiU0ybF7HMvXG_12v5vPRfxkK2sW_ZuxKHDYxf9YZ66EOqsY6tGeVXp_LS0ibhxBNWAqaUjrYRCBi9tXs_TqpRU7qlHy-_kXN5TmLM8XLUroz7AAU_H7qhuTSvDXS8EbEbhUsj8fno1uRHlSIR_atBiTY40GFZrt9jrdz6JUhJRcEDIBipjaB3V2oPg89GdijQLMM3eu8IrWQqVg888LPBO5ixMhDdl_TmExgG5rO7MD0yaAiWQcBZkiz-XMhog9VCMDD8inKuMff0HuWIsHxmi9F4e7wUk1JmlFTg=="
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFp61TeaaCO1B2BMVsf2tjdR7SwHZu8ZYd1K83uU5Vf0say-TYpzmbg9hhC_aVh5NjJgyhsOMjkwM3X6Wd89r9rc8TLvU3kpU_eH8bva6y0qJYYWn0COsB6VAGGlr-JPGMpZGVApnhqyX_4hPVkHaIvQHuvJ-yJTlJhrlflKsJruGz8erHhlIQhhTCT8x_HY8aAQ6y_1gon1jpaTBZB_eRIg9UHTlug9A5Qhxq16IT9-AebvJ5SzntsLF55JmJEHBGQp_fBQ-DYLSdJnBnj-MM37NHnz-wazRZXq6eoCjsWaIqrcSYDpuzWPmHTeFm_DcY-pLWqJflMbAjwg87PqciW_YiAO6ygADmKMEwSv-mVAKE2"
+        },
+        {
+          "title": "cambridge.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXXcrLmVzkzovECzHPEwxvY4AsfLDl4pCGhhLTNiMP7SDZq4JYitQ-G_97uJciWhS2MC3h1P8FlGo4zS76gNW6buzlDGE824d4Lp-1FNzwPjhzCumkNKR1z_HtfVSbyG31vcSgqiAy2_Mapj8qzpMQbCHDUciOfVtHHf_O7tsG8r9eWiFhwXak9h_-4CKtmyvcdkhihNluu4XB_0i13mrmQJ59mIH-0b8BA-YdFdNxeuuy0krjgW4CtsgUWInDxfPgxO4ZlCfI6Olr2_vqraPkvAZxVJVgMnEDAhu794z1hqnCDjDaI6mzTQQtbWNm3SSQ3t0VEYs9ivtJoiBldhb25NTbPG_w9L0U6jwv1KGlTSL-OSAxQVUzZ9LCXl580BGORjbSJVl6bLvDyF8pveocTD6xocRcNJIi9n5V9Y8Z0NCu"
+        },
+        {
+          "title": "ClinicalTrials.gov: Cognitive Behavioral Therapy (CBT) trials for Depression",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Depression&intr=Cognitive%20Behavioral%20Therapy%20(CBT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "12-20 sessions, 45-60 minutes each, weekly",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2250,
+          "sideEffectManagement": 0,
+          "totalAnnual": 2250
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 4500,
+        "costPerResponder": 3461,
+        "icer": 50000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.5,
+        "vsComparator": null
+      },
+      "name": "Cognitive Behavioral Therapy (CBT)",
+      "nnh": null,
+      "nnt": 5,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-9.5 points",
+          "baseline": "HAM-D score: 22/52 (moderate-severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Depression Rating Scale (HAM-D) Score",
+          "percentageChange": -43
+        },
+        {
+          "absoluteChange": "-15 points",
+          "baseline": "BDI-II score: 30/63 (moderate-severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Beck Depression Inventory-II (BDI-II) Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "SDS score: 18/30 (moderate functional impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sheehan Disability Scale (SDS) Score",
+          "percentageChange": -50
+        }
+      ],
+      "remissionRate": 50,
+      "responseRate": 65,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "Q-LES-Q score: 40/100 (low quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life Enjoyment and Satisfaction Questionnaire (Q-LES-Q) Score",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "GAD-7 score: 14/21 (moderate anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Generalized Anxiety Disorder 7-item (GAD-7) Scale Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-1.0 points",
+          "baseline": "SAS-SR score: 2.5/5 (moderate social impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Social Adjustment Scale - Self-Report (SAS-SR) Total Score",
+          "percentageChange": -40
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Temporary emotional distress",
+          "percentage": 8
+        },
+        {
+          "name": "Increased anxiety during initial sessions",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "6-12 weeks (full course)",
+      "treatmentDuration": "12-20 sessions over 3-6 months",
+      "trials": 1408
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMXZWw5XOQZUnA7P3YD_ZrXIl6jeGZlLqWdoGTjxATCbB_vGevFEvhZRuluo_piEQwjUmGm0Kdculkh3a32_ZH19kXUQiIDzgtcIt2kUiINDg3zOt00TVW9bBrwvrJbZmVvrTlYuxor6P-_5iXq3Z5FE8q1O-7uS5rHw1wWd7McG6hTxG2FiiNhp3tMAzEq_56pKi7nR65eT3UBBcStzmT9yM0wPOJ4cDu"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERVhIEa_vgHM3xh4IxQ_E6Et1dwPqr-pVzdCKBDTRgsGBHsJ8nPcGQgG_QOLTq1qVT5mW8WOoZfTlmq0ED5TEHvQj0EcVu5MGJpudANn4g4EM6Yc_0flwFrnOuw5Xshr30Iwd1XgPOYUqR3FU="
+        },
+        {
+          "title": "nihr.ac.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQF5aiAjJjVVo7qaV3AtVMVxEnRjBM5bvjNuEpyda7_AG3nJS27rtYUU2T8qvqcwzYgR8zjX2wu_79-Iv3XTdbqnoX06bOpTGtb6BK1LLIVzixN-91ZIigqFdJ9LH6BUKGhcF5hAb2GZDr4CQ_F2psLgxLGLiuQ_IQgLZQDIRfSs9F84YyOTslGi_dl_pXnnpL-sdup84jlxm572uYntrw68gyoA=="
+        },
+        {
+          "title": "mayoclinic.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbw2RhgS81HPWC1dOMxTI_v4dwuinbLb04lf72JkYOb5lN9P8HvYHpbcsHlq95zM2zDRXavbD8eNCrkSsmWRLJjcTHxFvdpmd_cNmq4XIlQhDJJCFSgyGzSTP84-R5I8GawdC18678cr8N0vCLxLk9hikd_Yi2HzTvbooCrckezA4QaFUl1yhic8wXrme9oD8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDvJgixI-WeBjAwf0MZ3pVnfSna-vcy00LV0QAGfGXB0WUu-7oz9M8fPfNfbLMUiMZyoyR_E-t_SCOjFIemRukND8bzqHUOgILaBc7sp3jnV9x9oI_KkiayxbseR5Lv3E1X8MR"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjkxf1cQkK8Pf7SeYvFIU61zYANbV_bm4rGTwX40B0JZACVNMXzJfdsJyc-jFXyigCTdSGLTDmvyqxBsQWChcnd9f6Is37NdSivaUqIjKdm2MVrAjlsYBPHd0EoUyJfH2H9pxFfIoDemUoRTTiJyWJMMDOyTDXsp1nTEFak4_cNf9gXnf1SP0bmnCNG9QbJGOHBd0d3Py613DFW8A5ZI6hucute8uqup91oc0UGz21Rn1FeQT5pjGzpLYgb6Nj0FOexvvl01I2quNXgWGGFLeQ8Au_fQOCmFyFVZoWFKflRuSOi_D4Cf4="
+        },
+        {
+          "title": "sci-hub.se",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrB3Ofu5KH1PYG2TwCaKmo_gCjz5B6z2VqBzTMYnWoyT3an_SIxRKawnJh0rWq0N0ItawjThmHhsmA501jEKN2lpf_y3kSNC0Uhto2ZsDIPO-5YIBkTWj0RtLgIuEI2LteMA0RjTHRrynWggz0PoH9WsM4gYFs4gEwo2cIm1_UI_qbOjR6HQ=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVTa19qe3t0XNQkjAbVeYila3TY0DX9rxwlEYktSuw2cOfm8xycxyui1qTfOLt6ohV43FBQhMggknW_yzzUvzx3HTX8xeh26A1ZzaAGw5wvLiea8mJpx4FX8vVqAaas6YzD0Y="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnGCC_--wE3AOg42vu6WCV43Av1xFcsnXSrpx6OdQ04UTNGqPlLHt57lzTU8uW5Mmifn-oUos-M_P_zDFipSqNUsdN3q54hx5HvleFvRpKZPWFA_uN8D2NKzNs8b7BWHhE_9bQZ-ksS5PfHQ=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzVNytnSyuyHStVtNNE3_hzUzw0tzJVxBR8T3PSm5JdNPOTp1emtAPb4tyyazq-ANQ_FEuQI2A-1JRfYB409WiKoQsfHwH2d5WMz2d9CALp2phgXd4cb7TeIaiAkNjJC8eWH6m"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYi4g454kAmwMIA5b0u9FntHnQbWtwWMza95hgtFwfjGa5EJ5-oKgioGfeFUwVnw5BzMUr8q-soEckmE3JwpAFQrjxN9oG2m2L2jmNWI3EVOKxAA4vv65o7usTtSGsn1K6vYLyrPhfSuYStPc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFb6wujhutE_WGmKqAFLq0gYXdLukTy0cuy7NhBQK-YlXzQzcB94SpyKIr6srhfewO9dH2iEEKQr7EqiBvWnK5JxswxeNwJknm1DhVvce7w7IGgyhvb72dXypBl-bkTmoDyjHn3eaEHTIdeip-DNggbkapTo0FKwpMv5lDSP_GW4coas8DhVKNxyoGXZc-DdEXcBPjWfqAjjvW4Tu58rV4ZiRPHzSXxA_OkePAzXwzx--a9ss85VF6YxFAh6cuGOaH9KDEUIpBNiNR9iY0="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFU0M2JSS0LsiP4-amJQ1SAdWP_EeAitWLkikpU1m3CKiyBLCqrsn-Ip-P73VpLTT5fYmLkjuHaRtIcS6nxuSmfhCLFKpW8uTpiPbYOnX51pYM8w23r0b2Po5wUutoWM4fcAQPl6Il0QFeYx_57UbZJOuP3pLHgPNGh_QCvEWMg9TJj4Nw7TOm2wFtgXZlFjwj8hNm8pCUDF3lDQD8vXPORLkc5w1VJbaiQ1z-kgzbLkwOKGGJor-9j2ndZEkU1eYnHllBkPyPFKCr51wi81w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sertraline (SSRI) trials for Depression",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Depression&intr=Sertraline%20(SSRI)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "50-200mg daily",
+      "effectiveness": 76,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 200,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1350
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3857,
+        "costPerResponder": 2250,
+        "icer": 35000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.3,
+        "vsComparator": null
+      },
+      "name": "Sertraline (SSRI)",
+      "nnh": 18,
+      "nnt": 8,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-11 points",
+          "baseline": "22 points (HAM-D-17 scale, range 0-52, indicating moderate-severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Depression Severity (HAM-D-17 Score)",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-8 points",
+          "baseline": "18 points (PHQ-9 scale, range 0-27, indicating moderately severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Patient-Reported Depression Severity (PHQ-9 Score)",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-2 points (e.g., from 'Markedly Ill' to 'Moderately Ill' or 'Mildly Ill')",
+          "baseline": "5 (CGI-S scale, range 1-7, 'Markedly Ill')",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S Score)",
+          "percentageChange": -40
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-6 points",
+          "baseline": "15 points (GAD-7 scale, range 0-21, indicating severe anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Anxiety Symptoms (GAD-7 Score)",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "+7.6 points",
+          "baseline": "38 points (SF-36 Mental Component Summary, scale 0-100, lower indicates worse QoL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mental Health-Related Quality of Life (SF-36 MCS Score)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-7.5 points",
+          "baseline": "25 points (WSAS scale, range 0-40, higher indicates greater impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Functional Impairment (Work and Social Adjustment Scale - WSAS Score)",
+          "percentageChange": -30
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Sexual dysfunction",
+          "percentage": 50
+        },
+        {
+          "name": "Insomnia/Somnolence",
+          "percentage": 15
+        },
+        {
+          "name": "Headache",
+          "percentage": 18
+        }
+      ],
+      "timeToEffect": "2-4 weeks",
+      "treatmentDuration": "Acute: 6-12 weeks; Continuation: 4-9 months; Maintenance: 1-2+ years",
+      "trials": 81
+    },
+    {
+      "citations": [
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTVWjr_sVyxUeVXwzyCPGrDUMApSFV-59cjDpsqTDJKtkQ9LZQg1e0XJtHA7TaICvx83c7bR04pX8KRo6a-QtTLCdISNPJYDDayY6QjPkI-JexxwszZZH-eRjEehpfqzGuJfyMYqVwAcoPvJCUyTpnE8nIXCJ8bhde0FrUkBPWiw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7OYYI_DTG4SmbDeAHqnYlWSIAzFNbWdllhijAF3GYQf84h4bpTsVOQ-rcxwIXkpt5UbKA34rSwgw8bfzD54mCuKJSXVJZE_TqphwJTYYJ9hmlDd2bEZ5HyXveOE3YUbrp9zClHerQE_JgyL7yvlc6zbAqVnKlUtoKQ3_Dyr--lX4CIJG8_cEcZBknD7VJr1kV_aBNOCLJssBC4HP4ekWCmmMto_RoRtEdT9MfMve78TTUCfxboXVAUI0xJ_igVVYP"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGnPr_KnguF11mnYfja4GqsVQmUOLlsVCTnlf0_W_Z1d2WvOkkLq_RAHfgwGFhQMZhMDaLpbdRk3k2PUqtHhU6vBLiA7rW3oi3nUCJXFy1U0nQ-00sEVlWfIjb3bQqLPy78MME0xx9"
+        },
+        {
+          "title": "medigraphic.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHEd2-vbXbScgAwuArbAm9c-KQEhquhJh6ILcTJpKdWoFxAlfVKUmFqhhhkM-EWyIcLvhi8iUW9QOBtoWqWbZbDS-1HPIdh6-bCJSZmiMfd8EUYgomdmI8c9djfOBFgB8Yc9TkjYjkXSSiaQQnc5j6Fv9MyYiWCajXkaNxItOTM9Q=="
+        },
+        {
+          "title": "ubc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwXlDaD69PVRQY02RTv1bqpTPQQWJV5YBc9hCYUwI8XUZnbIJCoUN6_z9rnijQFvXoPzqHlt_gG338sE-NQb4S9eiDH5Os7eYNgeoRRytHf22ACiKhmc2OChYsuTaRwM8sY5XSj6rM36_YSTBKsEWcmziv8eD9mKjTfxpMUrjP9ye5W5TNWx_8l8IOfys02b30DXdN"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyDFlRNBCXMNG9R0AJo5kYyx6uuvWavYqvEpkBH5V4kP44jkyLmIu1DY9XTr2Le5c0nf63mfr55lY7nZ-35W6eUUIE8P_CyDgyyL_sFeJZrym6DQS-lueET5I3X7qbYB4VsIU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGw3eVb1C6vOg2MrWK16PUWd8vEO97IGXYhoiWQ2IoeJQPLV0Fsl6E3opQafMRf7Uct7s0dJwmwq-rUxgG9Pb97KZ0qSqza4nImqRcFt3-uIAMH0PSeCI90_YPAc1YFpLpeP_Je"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEp5DH2mcGrMOAiIcO0g8FXBuQHFsND12CE5er4HMNbO8B6indypFfaYe9tFBanWWrtzLhPkYTwhMk8h-6MvPt45tFov8NJmlcVjLWwnQ0w7Oqgz2WLFqCOdfp-QDLyHprdHbfd"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUKXb9VXtwDhybv7-f1XR3qyRP7DCqGe1ZjzLZ8LZ6Hv3vOnyAjWKhENMVVpk5ER_cWCqLCsXB6Q7TuHbzZwNtT4PUB-YcdrFiohFUW_c3g8XItu-XYO355ik-35DU4IEU8q53cBBHg6ATnjUa8zJTigrtmcHtIstTqVmX2v4FkTt2jU5zdkpAPY7lXnTTkDWhEHYTAZqXPh1KufQ7i6-50gJ1LE1ZOnG3kdr6ndkqHMO4eIShm3HPApkFZJrOaofKEF5cIifaO3TCss4VSNK3jyS27jFnSXqPsPQhuKTmGoTCafkxQtzC7LdY0CrvF4i4ae3pCcFURg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt4kw0E4uKIKyEtREZ6JZqCY_-pMelCY2IYVS9W9kthsUHWu61k_mP3wpFjvIpot2vcKxqD7s0dUHw1BRZ7mYg5PzMnC2-IeXXKJyZ-VZmgO45d24GeSpmAyywohX7fRc7xlNV"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGd1y7JzvlzLfoimNtSCCsrZP6im7lGRWnxo33nDGDBFI9lXBQMI1X_-WDXKJ9gejQ76uIly-pOecEe6E0xNkURNyLb67sY2xmDAKDqxsK6GlyTEocxI0Qi_5JshDgGKwERoEFL"
+        },
+        {
+          "title": "ClinicalTrials.gov: Mirtazapine trials for Depression",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Depression&intr=Mirtazapine"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "15-45mg daily",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 150,
+          "totalAnnual": 1300
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 3421,
+        "costPerResponder": 2167,
+        "icer": 30000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.28,
+        "vsComparator": null
+      },
+      "name": "Mirtazapine",
+      "nnh": 18,
+      "nnt": 8,
+      "participants": 50000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-10 points",
+          "baseline": "HAM-D score: 22/52",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Depression Rating Scale (HAM-D) score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-14 points",
+          "baseline": "MADRS score: 30/60",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Montgomery-Asberg Depression Rating Scale (MADRS) score",
+          "percentageChange": -45
+        },
+        {
+          "absoluteChange": "-1.5 points",
+          "baseline": "CGI-S score: 4/7",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S) score",
+          "percentageChange": -38
+        }
+      ],
+      "remissionRate": 38,
+      "responseRate": 60,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-3 points",
+          "baseline": "PSQI score: 12/21",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pittsburgh Sleep Quality Index (PSQI) score",
+          "percentageChange": -25
+        },
+        {
+          "absoluteChange": "+5 kg",
+          "baseline": "70 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Body Weight",
+          "percentageChange": 7
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "HAM-A score: 20/56",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Anxiety Rating Scale (HAM-A) score",
+          "percentageChange": -35
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Sedation/Drowsiness",
+          "percentage": 40
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 25
+        },
+        {
+          "name": "Increased appetite",
+          "percentage": 25
+        },
+        {
+          "name": "Dry mouth",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "1-2 weeks (for sleep/appetite), 2-4 weeks (for mood)",
+      "treatmentDuration": "Acute: 6-12 weeks; Continuation: 4-9 months; Maintenance: 1-2+ years",
+      "trials": 67
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgC987N4HgSRtohLDIlT8NJup4vdpuhNxuOpYgdPO1p4CxRXlsUEuBw28lI1zzmGusuNxUcbEHClLFe3odx9hOwNlDP5gOhwQvSgd-0LhmDozsgL_cDDA5hpok7Y84FWGCxZln"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFmpU3sXA-j-h132FJIPH5B2--6zz49-h4IJYmkONc3uEDFjDFS2qEHFg0SOR0Uxf8SaL-Bo5CiwgTn0NOk3ea0A6eBTU9D_PJvygXNDr1Ov2aBsMu9JytYAD8TPyJFnmUNYgto"
+        },
+        {
+          "title": "midcitytms.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW2mccKBLuAoNPOATnwd4zgzd91q252lYj4PFiTVfQq3P1KOuwQWj7Cx40v8nD2ZuDzIQW-PT6Skm11AP641ExU4BDlelVwRZoR344iq4sO0pLEMr5VzZIaRik9w8JUVQju6oN5NVD7SuqdMvSiEoXRdn9LuE7kN0zBhdrTiaOIDPPvQ=="
+        },
+        {
+          "title": "medrxiv.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZcYMbQ8dO4ciJLwlT4HOBImZTc1xVNOuwo0rR5ZxJmgbW7knhJ6jNE6wAZfbZCXpY4xEmXzOA4zA5oDmf5JC0iuVGXaoFTPHC6UzeDP5AdEzqptNTdJzLD6bR4XOiEvKQshMjl5I6POZoMM-g89ez0WS06QTmq6xGEBoRQBmSmab1"
+        },
+        {
+          "title": "dovepress.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcdW4jfKPnNQfi0kOs3B6gkgUVaF3BlTf2tkGzfrWu2JfUfWw5wtugzINWW1GJl7yV0mo9COYjXkPBhcxyccqNnPsQsbUgSuZd0anRLkI9PZVuIa6K4CgZB9HLh7zj_tGmGH2SRcV-TBgXBr0RCYYDs_5ZjYCUR1l-fsv4JgYTjbd4vgtCFIII-W9B60cpWrRRALBNSr324iNP8pNw4gl8YMzkfYjzeM1QAngWK6eURWXF6O6AGapFneN476q-kg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHVbBHE39FyDmCFmHTpnsnxUGPTEO6QlsBz4l4on-9uQO8B48dFz-FDH6_aLVEbSuTsdCSWpv0b_jgykmzgdq1ap-VzbGIv9OKBkmpdWwJhHg9F6qcg5e5njrh_V4sNiYiEecxJdp1P9N2Zx7aRb8shGxQ5ZvOL7ZmTrR_W4OFjfDH0H_IcX5CdNk7emRAVfVPvgxR9YRDFtyOMYIjK4a1GUki5rdkGxbIMS56ClRfP0skqMy8NCfazYct26zprRWySUQ=="
+        },
+        {
+          "title": "conexiant.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQtxJwPu4tWfRwshIJHs8BGz0v28VVO8u67kWTvVMyzVZBzF1-PSUWSUrxZkr9spQ9e0bAtFqtosAE-xYQMtHiLOtxM0zqJdKTwoNfWjpyWj9ODaWtGgRlqRT3_sjALeCJ-8Sz7KWGad1XGgFmyUaYI36nFfjW5vOKcrRxvao-4FQBQuPBzYxKkh0lFnIXV-zz0zTORJs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKKcEWr5XDjmgY9-uT7i3VkXsWDs35ap0ExJzdl7rU2y_Ad3VysIzW6WbaBR75Jx_3fzpbmC5zuH0fmV3ytLq0ke91oEHDFVm5_Eu5b_YB0o26Xd7roCoAafUCLSvlRuMagLhRVJIT0Sb0xkGM"
+        },
+        {
+          "title": "jnj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTPXB9dZS11ZY02S_NFW_52OCMDr_1fMAfIqwohDCLhuKzpTFl0OT2t6MPeD8vaSq-DosI42B4T78xlKrLrgrSLngECgK_BL_iKQxopscXVXvy6VFXPnN9evh27gwHpF9oCe-x2Y-2vYV8jWSALWf3RzCPJ6sou-DQfhip4hwgIh41nSbAC2HZKQo_6KwGGKP2tfNgbTMQHCLo9soU4rrqaRbSVnvKvEOn5dAg14WyaPnblZt1hA0NJWYMpy3cTIkWQgKp61A_hz104clB5qkDGNBvt6r8yh3CGSCIKFHbXrGapis="
+        },
+        {
+          "title": "uspharmacist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2utZ-xEp5q0gFG29Oo1aVfYRXORhdsYaiQDJKULuwpLs2b77SUS5kf3L_ue4G3QwENmrfsdWmI5AHeWfYW55mL30sfuSHqNRPpipxU7Do5QOXJ-Z5qYhGr1vmhMG6BJNepW0JunnWRvMwVPOw8kjTS71fOLdJ7V4jrZzmqqKaWXARmhDFCqqJX0aRX3AimT-Z8QXi8az153eQjPA28ttAziI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzcz6DDjxRjOzKhyz_NA-g6RUfxAS00pnMvSPxB0_8aa4EWGZiirEsHb7GQJ1vmRWn_9oFqLGsXUQfvjMYwe-ODbGNr0R3rYsNPf227w4pFXlzkh8AgUDlL28HYMn_zE7fcv6bNrpVdJlmMns="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1_PYJ-8ssuKgM-zO87O4qsu2Z6qGvnwuC5s3jQT7lmYeqiV2arLLDBJO19XcPDakf00kKSj1EMR5YUxCZ_LVaJO7P1hDLQJ_MaM2WeIdUUG2_GQw5byM4x5SaMlM1r-AqoG4="
+        },
+        {
+          "title": "hopkinsmedicine.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF75DAfYpjP2VZvW_SHyDMId6nd1lL1Dpkt6bHOVKB2axTHizsRs8CbaFiojWRY61AOPGbzMy7gQbyQc0YlCjA-SHhoMhPwwCTswOE8ADlUySt0zDw7uhYHkrMPwBYpf_p25nteiBc3E1woaEsIxRkJ0PO3Z_S3iFPkvkAhSqDKdP6Ofu3_RMiQpXl7ifS577-Mlf0enf2DPKBebwNAdjx0NsxKYiTZkDkjnk9aow=="
+        },
+        {
+          "title": "psychiatryonline.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT_S3f-8gwBrVyjJeQ1V02IAaNFOBBDMY4_KIy1nwvpfUkLEW6x_ski4JFxHyMTORyN4cxArcFumwLmMjoGC6-AKwBox3MVcVmmTj6qIkknhlGDYfrzm90OVYxH9brVUi7CFpbzLlbc9ExnAHTXYwPmDHVzXs="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhBvQcpLegRUeSrK0gGCY7baIMValdc1rRnaAq6RzSN6MMKbXp48G1MOeLJo7ZyuyBVvw6pf6tjmg4dKVvOmGHwR6aFjF2jwhErDQDmxj6EHEYFjRELA-kupOUifRGMa-z52G2"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER7rCsPrffFRBh5XiIq7hNDxmyqYGDBmAYerwFLXWgZSu1JzZXmq-u0gKsKeZZoyrsL8jMz3bgvUuTvUOx9EtvOoaI6Dj9fm3RVpOOj34u5cX2wy_JMwE1g97y6zybtUyjrY42vFK9PVBosibcWyGX0krLyJv0goPZFMztKA3xF9-FqwjIEN5-0GFd6lkTTh3Tqr1ZH-AVzDLWzvr5IZY1bPJF6N0zzK8qAkf9G49yn5vgWSjz7p26t6J1Bi0UEv9RZ8QvwtNySCR-ZJ7QyulSm19bikXm7Xtcrlg="
+        },
+        {
+          "title": "psychnews.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1L07nbSxuzu0Hy9RDl8mJdjr5N8j5NX2BVq-BbdxajMSsoS7B6AyHfbRSG2g1USAszS1V8IYLREzFZkuvwSHBA87FvV1Fqw_GOfzQ6jGH19M_AGgMGdKkRJf-1BLB3-I6nbb2-o8s64h2nZig3-nA1qsqS9-uF4sgRrctIKl5sYo_AfpEXGk="
+        },
+        {
+          "title": "ClinicalTrials.gov: Esketamine (Nasal Spray) trials for Depression",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Depression&intr=Esketamine%20(Nasal%20Spray)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "56mg or 84mg (induction), then weekly/bi-weekly",
+      "effectiveness": 72,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40000,
+          "monitoringCost": 500,
+          "sideEffectManagement": 300,
+          "totalAnnual": 40800
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 116571,
+        "costPerResponder": 81600,
+        "icer": 350000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Esketamine (Nasal Spray)",
+      "nnh": null,
+      "nnt": 6,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-18 points",
+          "baseline": "MADRS score: 32/60 (severe depression)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "MADRS Total Score",
+          "percentageChange": -56.3
+        },
+        {
+          "absoluteChange": "-1.8 points",
+          "baseline": "CGI-S score: 5.5/7 (markedly ill)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Clinical Global Impression - Severity (CGI-S)",
+          "percentageChange": -32.7
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "SDS score: 20/30 (significant impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sheehan Disability Scale (SDS) Total Score",
+          "percentageChange": -35
+        }
+      ],
+      "remissionRate": 35,
+      "responseRate": 50,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-9 points",
+          "baseline": "HAM-A score: 25/56 (severe anxiety)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hamilton Anxiety Rating Scale (HAM-A) Total Score",
+          "percentageChange": -36
+        },
+        {
+          "absoluteChange": "+18 points",
+          "baseline": "Q-LES-Q-SF score: 30/100 (poor quality of life)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Q-LES-Q-SF Total Score",
+          "percentageChange": 60
+        },
+        {
+          "absoluteChange": "-7 points",
+          "baseline": "ISI score: 18/28 (moderate-severe insomnia)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Insomnia Severity Index (ISI) Total Score",
+          "percentageChange": -38.9
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Dissociation",
+          "percentage": 40
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 25
+        },
+        {
+          "name": "Vertigo",
+          "percentage": 25
+        },
+        {
+          "name": "Sedation",
+          "percentage": 30
+        },
+        {
+          "name": "Hypertension",
+          "percentage": 15
+        }
+      ],
+      "timeToEffect": "Hours to days",
+      "treatmentDuration": "Induction: 4 weeks (2x/week); Maintenance: weekly/bi-weekly, long-term",
+      "trials": 20
+    }
+  ]
+}

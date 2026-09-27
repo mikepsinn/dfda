@@ -1,0 +1,881 @@
+{
+  "conditionName": "Congenital musculoskeletal and limb anomalies",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T16:15:16.133Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1-vma8g0oZDR0tnIY6vxRVbZGncEOJZjRP-CBra7gMpZmgH4J91lRQAVzY5DcJWXYfma21FJP4la6CdWDRpG-Bd7GV3eqdfVyy8kyBbQKR3hFpCJLnwo1LeKunaEg1iRVYUlIHmqtdFlz4U__wMXt6OHm1_EfWWgEwjHo0UivynASl-I14EsMN_kq_IujxoWBu5FpSHkSovMcL9r2e6o4jfWAVhG5sIfhMR527l0jYg8dB3dwyEh4XTe4bNEg9ZAppeS7MHZmmDy9QqGljM2MHi98x7QAZxB0Jxyr3dUmv6LVgXRa332VU8fJP8QA7wY6ukfo_bFwzEh4hi5DTSST9f9H"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHt4lSF43juIoYzbwNqJi1JpZGyJRYnEaqNKUxrHny_k2STvdR6Ta4cTFsK7-4wLoikmk-tgY1WbxjR5V6sqLNlN2AnrQ35HYuvColwr3MsMyLpXXC5uKU4BuKXMTWP_O5nQh2jqfuMOixA0lc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgMnyr3ksWrvHalwy-CSFM59-ISXVGd26alWq7SlTakzf3_YLFrc1M4_TATP8j6oLdvtBcA6xIO76t2MeScfAE7SkcS7CeJWDKKEAYgELy9Cju3k65cE_sbsTQo6lx1phIpmIQakuBndh85XBZX9LizL2TVDuvQaUW8qPoUrpuBH7_1eOhPks-4kFl-Vh9ViqKm9NduZqEOXT2_OAXygYUq_2wrGRbfZht2ulcQ9zPcX7yI8uTwvzxT4_jfgKVoP1MXu1rt0UF8TGxdzQrt7Y-BH0bOZvV8O7viQXl9b53PA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFosEa8NTxaqWq2GKfv7UFRXlQkJftoTZ1DDMOMSMVg-4RII9Gg5p4R1PcZHK7VFplu2nl6l_vI-Y5Q9m3RwlI1-LpyFXKUAcqGU4IMLokTb_c6yJH2K9lBbH8om07j9AiIOmuMtbT92nQQFSRk7lm_iTMUvJRGc9mtGqzbb_N2UrCDPkliO-fl1Zl13OPbKVQjF_kOookfs-Ela7BC9UBYvDFr4FrmGQFVTFuqsKKw9D__WOy5KmjfGBLPuNJNeydwS-L0uF3-oWQXPbUMAv7r6IekMwQrDg=="
+        },
+        {
+          "title": "hipdysplasia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFeokV4ST6jFl1MG9FX0w_uqTv8CLq-R3uCluGHgCeEz4aoS5HjP2VMJZNZGzr5kmrPYOJ_3ugIvP-IO_1A6dx0PI0MGeIBhS2Wfosd7SnZ-d3_BE9u1EACPBxOptokZ17v8r3nK2yYNuBNnt0="
+        },
+        {
+          "title": "hipdysplasia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGIXn41pYPYYcqdppLZqU-Ou3mUMNgGlNtWldULsHrP6eZxwpu7xUmSDn1DNdLDyvxOpCFyu70QoX0XS_wfF2qqmi2gdEsvaT8pNuhobxxZ7_kSOWmhZiiErdQrEdKVCZ-0iw1sI0O8m5_RM26zqYSvlSeJ6fOMJ89_"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3Y0zDrMqJ_O8PcxMEHVqfaXviVPCvrnImorO8pjenDnxp0Kjj3G8m_XaintHxUHFLs0qeYaXplCfx4tODuFgAIuxs45l5-jglyXsU9BS1Aiy01AAooGnd38nLo-IzHgJdSgt9"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf6dmUwBk_47PpVYtreBlGOO4KOyfiXs3uLJHu54VGrcWdAopBkk-csPD25SY0LVZXKwxAYsmJSaNrv3-1kRanEPEUa1NJBPGplEmiTutzcycXDPv1VCe3x2tEhf8Feo12Xbjf6cp_-HGS9KU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHATTPXkQXREQb816IjCLFPwsdNaKQoMqNNg4xuPHoyXlPnTHBz8DLGRv5PmvHd3Tlh5JL_a17eWLDKpxuOrM_6LO5-xNUVCt4ODdEGAxX3RHCUP6F19dkXAyGoZkOB1YF-3xLDqNPKngr_u3w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPBTHY6P_08n5woHoXydM6ZB_H1re8vQmRpoCqwcIn3h-OAoA8c2bIiHKLZBFWQchy9_9RReAyjzmK3gUHLdiW11pa9oF5EeZbePuds1br70xaXDH5YN7YDQUhhdVJtWXILx9vs2UBzDYyS6BG"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5NrmC8gPy2wAVJOKiVJbmxEFTLblfLpmrhlF8QI94Q8nKWhAD1YAnL5s__RoFNlg7cfZFp-D2HtZKRc4ztONNXvags5aDydUt4jLKVYdCihjYOa4gQgtXP1h1o1BsqZot6vgc1kzti175XFaT"
+        },
+        {
+          "title": "ClinicalTrials.gov: Pavlik Harness for Developmental Dysplasia of the Hip (DDH) trials for Congenital musculoskeletal and limb anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20musculoskeletal%20and%20limb%20anomalies&intr=Pavlik%20Harness%20for%20Developmental%20Dysplasia%20of%20the%20Hip%20(DDH)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Continuous wear of harness, adjusted weekly",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 800,
+          "sideEffectManagement": 50,
+          "totalAnnual": 850
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 894.74,
+        "costPerResponder": 867.35,
+        "icer": 15000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.9,
+        "vsComparator": {
+          "comparatorName": "Surgical Reduction for DDH",
+          "costDifference": -19150,
+          "dominates": true,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Pavlik Harness for Developmental Dysplasia of the Hip (DDH)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 30000,
+      "phase": [],
+      "remissionRate": 95,
+      "responseRate": 98,
+      "safetyScore": 88,
+      "sideEffects": [
+        {
+          "name": "Skin irritation",
+          "percentage": 10
+        },
+        {
+          "name": "Femoral nerve palsy (temporary)",
+          "percentage": 1
+        },
+        {
+          "name": "Avascular necrosis of femoral head (rare)",
+          "percentage": 0.5
+        }
+      ],
+      "timeToEffect": "6-12 weeks for hip stabilization",
+      "treatmentDuration": "6-12 weeks full-time, then potentially part-time for another 4-6 weeks",
+      "trials": 200
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGx00w63tPXXZz_RYR_wx6td7w0CdGWSJegWjZjXdu0pi2k6svEAftehCXmioMF2_aBxX6Ag-f4c3tqsez29I8aRjMQ1wMjU8on3g9011wTUSMMtAiW0ZlewjVM6f5Y9OXmYKQMlSQYcp-EWP8="
+        },
+        {
+          "title": "ejmanager.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPR8t4gxmoJmRnOPpR-HdRn32ZoNs3pUkmriLVbUxzRjkjQzSlsLdoxUIvDS8wi98aIqz4iTd224QOT4AmEgdz_wZuwcX3Wt20EJKbPw9FxcK8GyRG3nPJv8cdwoaPqrY7V0mB5G_eOq9ecikL8w=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG-50ntC1rtYYcJayAMV8J8nVLkE_QRdT2uhOaHan462D6Zmiv7XneH2yIQjTwD4L269k2lr3TEOeW7rOY10H-u0YmyYbRgu1XHUFSG-TRU_8XBskt0GldzkDjmPCWX2Jyw-XsNxP__3EwqRTYwer_vrEJS5z7Z4XbMmMbmZdErEL9bOAj9FB4rqriz9_Vqarj4j2iobwkjsZTKWRYTC38SKokiHyKlNmEo5p3oYztk7BJ8YhI6iWlNFcZfNxQQA930Rw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyjQ4wd_cQn5qzafa7JsDnO2OGrD9DHJcI18bjyPdS0P5uQvWHn1EDBTqBndaF-_OmjeOgHA0OwzZoEzxH-HpU-ds6E9GBz_FdMHyAH91DRuThYEBXsy3fotigMYReIKzHYrib7uQlMz3pnFg3bZd8Bry9Is33L_UrxI0-8WS68Y0nXAeYof5vlrd0H9fR5grBITZi1qidLYBalUddKTF-VwKpHe7TotnRExEjeKBREFIzVU-L2Mjj16ayo3FW63EUOw=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM2t84-yZ4DKzVNus3cMXR-w6lo61HucJLkdUIjmZk3OSb7Q4lCocgRSzXXYhWPQ3fiiKWAio-zoHweaZ5Lu8lbKnyCvcwfFVL8tmhIvo6LuryQs6Hf21oAf2LXfKMXoJHcw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyq-IMuBNtbLRjChQrS_UKhZChk-0PpPdSV9CyTntsA-pdcwEBEIIjluoRrecqn9g6QtHuY7FC2aF6DqgbK9pU3ppRmFtk0jOa2BJ5lR8KO9hMb4r1im5AZHqlH-lOyIvs8Iw="
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnwIVrgcpY8pLPdnQqfu1Z66S4oIz0MNc8jmACyRKEzKqcbnONQRor6s1LfJjtL2xyoOyDDEay_Oz9bpSsekBwIwkUJvfC0u25y7--KdCpSzc6hvQH9fmNdkwm53ttSGKiA9p5454HfIPGOvsMAkoiRtveyhiCy-5C4qtgM1hiPTJKdA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGV2kORqzB4MiD8g_jPYT2Uf93fVYQq0JRNS-XvPgV5qIvo25e9R7dIDyXgBcN1p5G6mgh9GyN9fQmCpIxRxc58U4IFVTapFEaYVsXLtk3zuCNFnE4Hpn-v813lVZ0d4Xrbz2r3_DyIEqr7t7AJmUmY6pMoqwU2tvNcEKrxBakfMZH6NmojWLz1bBAKmNvQT4qtVZAOnaSnPP5euVWWYmZNzRfrP_6WbAg-MPzKHNl-T1NqDPVcJMJHsQZMhi9tMn3oTYxY6966RmM4QiZ0Pg27RuHtpQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjktoj2qa01EQHUlg1FpQ5IcLUYs5leVe1BaHCmMuK-g6wgfiuroNcS27avp8qa4aJIEYZp-p0WCrQt8OO1s6QK6U_39cqzgdkChlI1z-5-I9LkMIYl1UJLZ8f76MP-CF9poClOpUdiqQwFzA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtGiA-CHEfzq4bY0dne4WZlgTTAYJf5j-YfK5ATWMAM-EVwaRBtVdwV0CsN_zfAkXGCy4HtPMVEAu2J2eSvZMHOD5-8tU9UY12wa03yURFtymBab0bqMpjYANXOlRZqS92TOw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8oMtxHZfXRrbAbCLNTl6KcRl6C6wxCP-Xy0dmr8snFs18Ut1xry6XmFxK-VFelbazLHdaUbi-fFW1zSzWfGGC2KjJafuambldUBDve0AVVyhEz94Fb4QBfxWoKfozIksH21o="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXVbCl_CZKAe74FSqWVRvdJAZcNuurNgJS3FSzHZoumAAAZHM2IwFFkkSdCg1UIYQG341uyV9g9uYN0QoO0fPRMLuE9_ASdqKpF-1VE6u0J5WxNBu2pf6H7T64PM3YSyUqro0wdvSfPzNaAiT7EHGOzwaGNsi-jBzMxnpaG2BqOYRE0864S4TntJuy5P1ILTrodJ1ddjWIbZOpHoKSr7sS18kim29vmO0Yk4D9bFFXmb_poX3tCMPmwv5aCC0IRg1jRiDrm7gyIhq4ebbBrIQ="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ponseti Method for Clubfoot trials for Congenital musculoskeletal and limb anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20musculoskeletal%20and%20limb%20anomalies&intr=Ponseti%20Method%20for%20Clubfoot"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Weekly cast changes for 4-7 weeks, followed by full-time foot abduction brace for 3 months, then nighttime brace for 2-4 years",
+      "effectiveness": 95,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 100,
+          "totalAnnual": 1100
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1294.12,
+        "costPerResponder": 1157.89,
+        "icer": 20000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Extensive surgical correction for Clubfoot",
+          "costDifference": -16900,
+          "dominates": true,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Ponseti Method for Clubfoot",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-5.0 points",
+          "baseline": "5.5 points (max 6 points)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pirani Score (Total)",
+          "percentageChange": -90.9
+        },
+        {
+          "absoluteChange": "+40 degrees",
+          "baseline": "-25 degrees (fixed equinus)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle Dorsiflexion Range",
+          "percentageChange": 160
+        },
+        {
+          "absoluteChange": "+75 degrees",
+          "baseline": "-25 degrees (adduction)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Foot Abduction Angle",
+          "percentageChange": 300
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 95,
+      "safetyScore": 88,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-80% of cases",
+          "baseline": "85% of cases (historical rate without Ponseti)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Need for Major Reconstructive Surgery",
+          "percentageChange": -94.1
+        },
+        {
+          "absoluteChange": "+30 points",
+          "baseline": "60/100 (functional impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Outcomes Data Collection Instrument (PODCI) Score",
+          "percentageChange": 50
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "4/10",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Satisfaction Scale (1-10)",
+          "percentageChange": 125
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Skin irritation from cast/brace",
+          "percentage": 10
+        },
+        {
+          "name": "Minor discomfort/pain",
+          "percentage": 5
+        },
+        {
+          "name": "Relapse (requires re-treatment)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "4-7 weeks for initial correction",
+      "treatmentDuration": "4-7 weeks casting, then brace for 2-4 years",
+      "trials": 8
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpub.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFV5bLc_V30MLzSuxn8pZKYnowbUVn15TscEhgN904VFsfAzbV6SzwTJzT0RPRvCd-wxsUmyMPegbQ2I9QUXRENUzpt8aneupdWBPvm1dhabEvs61xU1E4zSZx1"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESY5-r1xM8IsEyfzQTMrXktsWNHaP2I-2fHx7h1Q4PuRloHEVg2CwwcpZUbhVllh2zRiYuO0DkD9w2TXi4AwhsTCRWuh8SR41HcHQzq7m_mO-wjOh9Szw6myAM4mhEoPkNURaPtkFu2hT4Tiw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZyx_Xg0XozDKzYdOlOGDmDYSga2kfYA2xs-TWoasmVC0B2KT1-jnJsI7ew0KzSaTSJJN4oEu3z_fO9u8WFqAEdt1DnCcNtzshfJRxjMGB2q0x06stNYOxblZkhibp3-zIaalo"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhOwq012mvaqp4E0CfKEQjkJ3J8Wa0hvBWx9DCE_k1OZcJOz3ilXTTbBVnKrtvbg9LKCLGonalxBImp2ghmQDJpspG6rY0QtM9CXTteeuOEgxffzkH6tmjHZ8Oi1lRqinms2tT"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHjXhQZOtl9QOOUnGhzzIxC-I6INfHv57mrXw2OK1ST8nFvl7k5vg24ckA2wMB0y4uHXSHoZDPMOdNz-N0htFiuEjlBCGYppQrSKTvu6p5a-vK7dcaohDvXlD8pVzJ2JzhRADLFXJ7yjtUsE0JOPDONyDbSWo6-OXGmSVKQWDVvp34G4EzJAfmTRSLrkwSZAJMlTpsY3dJB7rpfdNoB8Z1EnpJ3xIanB-RpSUhEY5Ax33rz2QZWOoZzw3cfku7kRwQeORZPA4GRIox7k8WghzEccD70P4sqcQRiwQvDvG4FYS_UqNBVNjz1fLD-oHpF3u0Ono="
+        },
+        {
+          "title": "bohrium.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmHTOMGJ0910VnV7tajq-lW-WFkUTFJuJuBosFReCm05TP568nl8IjSOoqAEqpF2SpsrAfhgtTlUF4uMzCwp1tH91OKbTrYfpNdXwUEWwKngkSJtf02qKJFkaIh7So567Gqb30M_UZA91co5rXJzbAJkphPyvgYVBC8ZuLmtEFu4Xzls0vcPwOsp58ZsoUir5CypY8tPFq068zVJ0jekZAfdkzh3VK4su6HfENTYBh3cM-gO_0JLgC0H171whE7eDaVs8xu5UY0bRbTt5EnfR24r-lK99ZX0Pgpu7WNYh3Ivjk4o7dfHe8XJooT8P8PlIJl6hi52mf0JsFIkPqb4nLl-UK8qQsDNGOrxLdBEVUxi2UXljxgKMBL11Q"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExoxa-UE3ADpRdQsUTyIw2dFjJuQ2Ghjt5hxzfI7Fsz_-gHgD8CTp_puQq2gdbwTFdHWKTkuo2Ovnv6KMQioBmZwnOlv1GyM_1Yt4xvbuQW63EiKa9FWX8nELtbErt_kU4q3B_cgbc9jSAFjXiOFiryGxljz51bQ38Rb1DyHJHK5XoQoUo4z9ALdyHYOnTSjMMzC7Xm2w0sJr270oy4mBBj7aeAQI5FdPRZ6B1euiIP6TIb_vvsKrN5cZ3PqtiuYfP8hZfcps="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1L38YxOsPMC7KOEV-us7eh70BrJWwB0cbdSxIIhdgF_TRLCHxEwbnmF4KHgDszxxQOI0b_N5dY7SONIkklBsa5ZcDXR1FXpnrwWUEf0C_zfuHD4IlRQvqgMoHkh7lEBAoNm_3xSdzJa0QT1P-"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGAHhfrMsLogaRdEDwHn_bqAempMtiYp0KJH6e6Q7HeQvF12iOchD7yqHmqHJsLAESQN4YhymYSWdW5rLYJK0GEKzJRVn1HRyWE4dWssECKDuOj2gJCWMZb6ToBlBJQRg64ekno1oFHJM9UobkZoZkqu6Vn93wnS9bd2UN7_tyMAawxJLUlGeL9Y1JDQU1VBOIsng=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEJ46MIu2d2apA6Sbtfpr5IWJnDNjfK1X4gkgs-pEp_2EckVUUAs7-TnJUVLcEPDb_QxId0NVseGqgFrzPSNStxiF9JwYqmFbPJpauAxURb0zZovnP0TRCINiBzBSWjP2uK1_i4WKgI-qiyGqc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5UcEI-pAvMGjDdeD6QaL1MsqHtjrwYG2LmPDq3hwscaaPQOckfxxjHjTJLitZj1wcx0aU9rJz_vjMWUiAVVMom1WF8UzyYsg8TodVokekzLzmcf4M-AQNLfwsByNmwxPeVPQ9kkUZzeM0HTwmSCGQsi6X2chCNYON-7nTp0ByET0KUf2rjpMscPZ4rsh0HOYmWQolf5wmy47RXqU3CV8Y6QHgy3lgScCI0bP-5shbBOrZ6fMxpanRpOFlKt8Ge1BnTFWTtm44Hr2qe4rkJzTF2sQEzWqnDGL9hU9v4fGDCbjgITAMpIVZGf6UDj18HicypCsNGzBeBA5jEKca2w=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Reduction and Osteotomy for DDH trials for Congenital musculoskeletal and limb anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20musculoskeletal%20and%20limb%20anomalies&intr=Surgical%20Reduction%20and%20Osteotomy%20for%20DDH"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Single surgical procedure",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 2000,
+          "sideEffectManagement": 800,
+          "totalAnnual": 20000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 25000,
+        "costPerResponder": 22222.22,
+        "icer": 100000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Pavlik Harness",
+          "costDifference": 19150,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Surgical Reduction and Osteotomy for DDH",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "remissionRate": 80,
+      "responseRate": 90,
+      "safetyScore": 58,
+      "sideEffects": [
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Blood loss",
+          "percentage": 5
+        },
+        {
+          "name": "Nerve injury (rare)",
+          "percentage": 1
+        },
+        {
+          "name": "Avascular necrosis of femoral head",
+          "percentage": 5
+        },
+        {
+          "name": "Residual dysplasia/re-dislocation",
+          "percentage": 8
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, recovery 3-6 months",
+      "treatmentDuration": "One-time surgery, followed by casting for 6-12 weeks, then bracing",
+      "trials": 150
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrr5ptBOgrNv5L1T6INSwZVxGtFjasYQJoiP5ORGx_FXCaF0pEAq07MttKQjiR3icCD2iywzufk-1DMJDJK0_HGAqiE5WT5E9GU7q40suLxo22qB34-jFKs9SumuyxF2_LUkNJ"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN5p7vIJ_X7Lb9Mcsyl8XsMVZ4nNZ-Rw-O5DzdaZruhb27dVNp2vNv7Nw3asgM8PUsmMhggpRHitfB9B6ZjI5hI585UGVcYCMy5ejk0djeunnFId9zTVTTlk1vcbtV1ezuMaLnNZAF8KIdD7g="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLFdmrVa8Bxxe_tYQF5QspOVzKpW69jBZVnUjLQRqp6SoqlrtdbsJIq2N3KNGAwFdbKWNj_40Lv4r8tHatK7LFK8UsThvge4jy0JRIqfJ89-d9_uuu7bLqfIxQgojYuHNjQFb-XToUfWWVTV85X2MzxYyIAD_uYuTGJv0Q_A-NfI8X_id8UGblAo7Fz7eIs6eQ6Ak6qT5GSn6llRGb6pQrExc97w7XPoKAZAWVO7Rl5_TukBcGAvARagmt_g=="
+        },
+        {
+          "title": "nams-annals.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH745lL_MdSdcOUU8yoYhFwXWtegq0deAWVUgRdLoDKwde5y1_w_b-6lz0vZWg7UUvNVrGWrRjtF6Ap52vQ6ekaAosJY3_d4KD3DdoOWz_fr_GPyPLpWgNNV5vh794pPYqUXU9ikZYlyn38LbGxihTyQcPq02LgK3zDSXw1xPVaYf-E1_h30iOM9Q=="
+        },
+        {
+          "title": "pediatricorthopedicdoctor.in",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHv4ZIDnBcrdF1F4MHO9ZAyfjdHHOkjW2AUeMdz6-8ZpuszHNh-Y4Apm60R2zxlQ_ZX4T9RhbmEPVYm4sxwAMbKbXsdJCP37jT_637YqMOoaX-w6YpIqxbsdjLap0MSHskxZUrbz_cBW08l7gk9Is8pHsVdn6RasIYYTl3wLdc9mxjqgiDCblG4vQOSKnCC5oXAl-sUaABV_amQTtDsvZp8wacCqiT0eHO8sXKkCYImGUStTyZGXOc7xl4nsdh_Mz5yTlMW5EfBdOtO-3WJ7Jc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG27cdh2w4tasfeF-b97u7lmifwGUqxgFztUJwpsvesF7aMXRjdmeYn3jw6NxLJQ2X07wl9itJbGCRCBVo131o5P4aluX3Mewb6xlmGDufvmQx8aNtnLIW395bmu1OEt6f2sRwh"
+        },
+        {
+          "title": "proquest.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0Bv7jeMHB8lumYcYDJQb3L7fXRuTYnQrAOEwA5eP1-iMUdtbREL1BdzouVVnsKgJUMqaI8AcNYZMUSqBByriIO2GeKPkYiwJeAvxzsdaWvymPKIOfkibcyK9Ha2wczxi6qp0AhFv7EZKpwWNC8ppSufi3JaG3Cf3tafpUg8uK2x9cO9BK_Wtl29BVptM5nu7-9P9vD6vLyCskm-Jvrb9BYA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGFFZnxEZR2ZWbTSlueNW8HY8xa1zD1OIG0ytF9U9j2p1yTwxBFOAMY6jIuBrSRz2DUqi9E-Q4FrFscZiAhT8zVMZZ7oENxP3znmBZSyBrJqEaC8jAmVFlVkzkGJaJnJ1SYsApB1YLED82gGZwfX0MwCAP_RaDvS5yJXFLuE5Q6rSdp8WPaXCWzAMLrPdobnUs2MB3S5qEON4jy8VS3wzibOiY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHo00_StPjs3pFX1t4-2I-OQffGBXbzuYVgb_0Equ_EEvtdM4Kv8KNL_Ge9v3IZxJ2nR-v9kPRfRZ5-2KlZF1aJhfrt0FRs1DC3_UuXnJqHxY3brsLS_ah6joqAMdjL70pJgx47"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEw9nTzpQTGwXPC3vK9Ankdh7UrUqtj_GrdZ3HTPh24uZsfLmCZkAUIVqL4eH10WhnYC5pEG2GxMc7utr2lSximWpt0IjrmZia-xWXrVS0ciidcKkv18g9FF2oKe4n9D33w1FgY4ECef40SH8E9Mp7dEiv0nw71TS2Cmt5KGw2Rxw-ZY8KcnV3qL-lipHmwOvEkyY_1aHgXEd2QPjtTK5JA5OOWrLbW_U5EofPKscFVJul6J2ZkgYMnom76N1uTm5FgjTR34uJlXhsJdlyUOktGix2S"
+        },
+        {
+          "title": "bns.institute",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRCRjbVFd7skxd1toEdEBZF7VtR1kvrpprdVKIedelp30Zmc_bX3Mwewjrdl2gKJcwbfSkKFVjsGht7SW0PYubu_645TALLqFxcE9FvubopGVP51fosdxLeoZZXjcvIRAdj24e7d1KhkvPOu7iKIHuEoHIZ8Or_YizPNgTqo8CxG2ritlkG0IRoxyMOzhAXFhTIZ3kvQJDNunp-CXPtYQRBgA="
+        },
+        {
+          "title": "childrenshospital.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFDXW6UH_l7Lbrv_bkqzLmYWa5pGQg_bqA_l4m5g8-qFSx6EcS9QakM9Zw4DXpfiT1Hk-i4JijH8ewXXj_OVwj77slvWd-k6WcOx5xkdBPoYCw_2FlLbnTNu0xwynJ6C-zBy4afIYS8xfulqEFHphCLQV6bx0xtRpNNxVkDK6mvIyCEjw=="
+        },
+        {
+          "title": "msdmanuals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEGd6Xn5LIOgVXpmK6avq2h-bsQgq-3zZy0pzXA-cHCWM4ImcFDLTgTdo8adorqU5nGsusG4Kr29wnwrnxZKYC0Q-UJSelbcHZpyx8VOsiDSzB4KUs5D3TKNJBRj87ADeFtnIUvg-fwukxjIjdgU4pfoEIdSsZxl6VfbbOnyuAyAsaCAM7YxB_RYbOtNcRllsgi3Qh1Lxwbl-CZrY6MCjRe9dQSM4fMl0BMgsyI"
+        },
+        {
+          "title": "chop.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE0vKgSshzBFoOZ9tELGWJixZb3XQEEN3JE7YARfcTcv3N9IqfLdolXtrch9ptL7D-D-9gzJaJ7LHrQ_6enLyCdhGRA5dyRcYA6XeIYCX4qs8KGn3b3VlpoUm0CjTsEP9cMJmxwZTaFgG3GBELZ7j49tm_-nEb1JdjqBjbTTXADbuVertaq-Fouy50dtg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Spinal Fusion for Congenital Scoliosis trials for Congenital musculoskeletal and limb anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20musculoskeletal%20and%20limb%20anomalies&intr=Spinal%20Fusion%20for%20Congenital%20Scoliosis"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Single surgical procedure",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 2000,
+          "totalAnnual": 80000
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 100000,
+        "costPerResponder": 94117.65,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "Spinal Fusion for Congenital Scoliosis",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [],
+      "remissionRate": 80,
+      "responseRate": 85,
+      "safetyScore": 52,
+      "sideEffects": [
+        {
+          "name": "Pain",
+          "percentage": 40
+        },
+        {
+          "name": "Infection",
+          "percentage": 3
+        },
+        {
+          "name": "Blood loss requiring transfusion",
+          "percentage": 10
+        },
+        {
+          "name": "Neurological deficit (rare)",
+          "percentage": 1
+        },
+        {
+          "name": "Pseudarthrosis (failure of fusion)",
+          "percentage": 5
+        },
+        {
+          "name": "Hardware complications",
+          "percentage": 5
+        },
+        {
+          "name": "Restricted spinal mobility",
+          "percentage": 100
+        }
+      ],
+      "timeToEffect": "Immediate correction, functional recovery 6-12 months, full fusion 1-2 years",
+      "treatmentDuration": "One-time surgery, long recovery",
+      "trials": 100
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF2KWPybIllotGPpJ7-EPxIETNXMwYD5fIK7BNIeuLHWeAYWySBOm4S_nSsgLWUCr0xWr97XJBEi5FrTFL1Qne0fc_HWdfrYzFTOi8oNSkgZ50J_jraTQaanTPsABQtHsWlEoY0hisGlUraf0bXR5B88RQxNrZebrUD9YLB1yOFYOQxmOCUgb8RSTR69_0ePgsLGow-Wz_uoIuvXBIem5rQA4c7C-O59RgdlkYMT2vwuWIySUH8AcHxs_v_hNqxccWG7h3aNJza-oGj448="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyG4TLNslkf7b5GLEZOHz8C-PBbWFTjg67peVCMgXi2pzZDMQsdxLz18dmHGZMzqVkA6yhFxxlZfo7Cyu_s570neZAOLsI1LbWn32VZMmEPkmSCQ5WFsXsszMnO5povasEEVzsrghgqeArwbw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUjTKWj89qTyC6x1yfPpnaMe9eVYYwcA2RaJO7WWbPwQzeMKM3l0XENz_X39LmeqZt3GzE1rx1qFrCv_sRdjIA5D_bld1t0coHqonfMbsO_E-5du5HZ1TUHqsrX3ZHgen8d_p0pjhPOFUejjc="
+        },
+        {
+          "title": "juniperpublishers.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3O6Jg1Hu8nt7HpbqmzMg-g6fToM1613E-ycqpg47wCf9bYxxO4tknF05j2pF9zEIqZLfeyXsyLN8xIq7dHFGDSOGXCN5ldvGDgMRvHDlpYGOxRTtL3vihyMAwg5CWoVXLzrYorWaF_QsvLAxbRMKAXghI3po="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHzk6YvBBlsVMRaMbYdVQTOdLDaoOAdpVfHl9VUUjCjnlrkwQ0f5r4wqpvhu3sfyWNGvP2iyfxf3QGxy9pRRgQtQ33g5dUEwVzlbwiTd8wer9zTRL8JRn9xICke9OAdEtlnILyMQZ5awJ0yT5w="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtMtAu-FcaTtwSPavTMhKbSjLyJnSl8-MexwTXP1FyLv81f6TZi2Ozx2zPc6v58V-MzO5IQpetCh-0p0wJ0hsgXPeV_ptBafGn5E-tmRHPRJTbtRlwTqNvADZ89GixnhopfhfI"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG72-vmBy2zoKVVDAWzIP1hHsE7NlA0jQeIGrB85YtOZq58YjdUQsa0oIVooRvMBapm9fPJ7GHGdxiqzLuOJ48T2lBMx6sR0Zyi7ilGn-aNHo8ysAT89XonwKAQ9nSGPbo7fY7ibaaOClWq48JVAYmApV8VdedH4uEa76yL-6ly_eMkEQJaKGMEfQfE2eaKOjsSf8YdwQLoJzwlTB1y96tjiww6XorRNwq-jgS9dI5H2WEeXENPoYMKliP3Mlw5TsmalyqKfVBmmHRkDgsoDD4O0Q=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN7OVh9Nb66dLOrQ1g0JaqTeAI9IN9LuDDRV6cxcyYi_lHO9swDhfK41eWTYfPD-cyJhFugFyFozY84RGXVVENLd5_hfFcAnULXVKOuQMRHZm2fmcEocO9ZykXzc_bcHcqF4I="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMMARMi4-sTvbuui1keXN-IcgHmcq0Kq_A9KvcQ5E04GLctBYle65UhU3g2g7ufM4lrnKJ-ks2Qf49gzflThlgaS1zbFRkknpkKf3a57FiM9oAY0_YnsRmtHzJ8OfP1g-Vl-ow"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjZ5va_wtzAzWrZS-_wt0QGfW4u0JNXfCoJDaH7KJv67FMPR4Ui-Z9P93pTi4p6p6VGzHP1rETSJwfMcoMrpY5Get--ai4ZmGw8ppGGap81uqU1l96MwdN6lgWj45vmDzeX0rVy-IRadQLtBVd"
+        },
+        {
+          "title": "plos.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgBJrxTrBt03KZE33TXMW9iwWwfLR18t-YUKScQ3PFqihc6qnx_HqZP-KU82i24f55Z2kDQqLtw9eQk5-CNlbEgLdZG5c5nwkGtS2bFWTKsTFKcnxxc2oPKFnf6FrXCbllmmCJX491rVdWIxEPWLu5aVTSGGhyUQH6eS-bfMMCbK2BfKU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGphBhERoel83zV6-h4Ra8JQhCN_wg30VzfzzPQebE5AprHcML2-zlTn9_BnQro2ZkkWkSQdyMgt2W5GgoAgMh3cWCmohcHnr5i_HzJyNkoHNa6krRb7R_7aw6Jd99A9WGeu61sRlsiw5Bl-AO"
+        },
+        {
+          "title": "ClinicalTrials.gov: Surgical Correction for Clubfoot trials for Congenital musculoskeletal and limb anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20musculoskeletal%20and%20limb%20anomalies&intr=Surgical%20Correction%20for%20Clubfoot"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Single surgical procedure",
+      "effectiveness": 80,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 1500,
+          "sideEffectManagement": 500,
+          "totalAnnual": 18000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 25714.29,
+        "costPerResponder": 22500,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": {
+          "comparatorName": "Ponseti Method",
+          "costDifference": 16900,
+          "dominates": false,
+          "qalysGainedDifference": -0.2
+        }
+      },
+      "name": "Surgical Correction for Clubfoot",
+      "nnh": null,
+      "nnt": null,
+      "participants": 20000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-4.5 points",
+          "baseline": "5.5 (out of 6)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pirani Score",
+          "percentageChange": -81.8
+        },
+        {
+          "absoluteChange": "-35 degrees",
+          "baseline": "45 degrees",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Talonavicular Coverage Angle (TNC)",
+          "percentageChange": -77.8
+        },
+        {
+          "absoluteChange": "-15 degrees",
+          "baseline": "20 degrees",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Ankle Dorsiflexion Deficit",
+          "percentageChange": -75
+        },
+        {
+          "absoluteChange": "+45 points",
+          "baseline": "40/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Laaveg and Ponseti Score (0-100)",
+          "percentageChange": 112.5
+        }
+      ],
+      "remissionRate": 70,
+      "responseRate": 80,
+      "safetyScore": 62,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+4 points",
+          "baseline": "4/10 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Parental Satisfaction with Foot Appearance and Function (0-10)",
+          "percentageChange": 100
+        },
+        {
+          "absoluteChange": "+20 points",
+          "baseline": "60/100 points",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pediatric Quality of Life Inventory (PedsQL) Physical Functioning Subscale (0-100)",
+          "percentageChange": 33.3
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Infection",
+          "percentage": 5
+        },
+        {
+          "name": "Scarring",
+          "percentage": 15
+        },
+        {
+          "name": "Stiffness/Pain",
+          "percentage": 10
+        },
+        {
+          "name": "Overcorrection/Undercorrection",
+          "percentage": 8
+        },
+        {
+          "name": "Anesthesia complications",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "Immediate anatomical correction, recovery 6-12 weeks",
+      "treatmentDuration": "One-time surgery, followed by casting/bracing for several months",
+      "trials": 1
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3hpVKscwX4S9O-PQl8q-ejMhWZz8rrRhXRl8al0Omt4lKk8UMt33QhTJ_be2GofdF969DQlojZvBabJwLCzNTlFrCTboU08J01Gl6bGUDX0nAhCjZHGd6PIqOWOHAbzaQrG-B"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUxtmMU6T9Ss3GrtpXFpTVTlzlnWR6DPkdn2Aro8N-jal2JWIP7D8P4mUr7V7ZrBPdB7_Y1uf65iR3DjrGkdQsqwcsySLio8YOQXuhLC22uGtEBMwQ2k5uptJ0uICDbP322SwMGWj4H17uGhVknyspwIcUXcDsQSasp7V48u-WKes-LG3_dt0VgZdC0A7BAtSULNVQr_r6onDsedVwgNkenMhCacuoMVQTK70MOroWzIyBz6s5W4moiEYWzfIhyLWDPKl-MVeC-N26ZmNvM8I1JAzMiytg2c4xO8zYu9He_EZ_rvj4oa6jMwaC9C-lzA3LhauNqgHRrQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0KyNPaovKO0OWlOsMbSwJGAdixhvwu9xDLvyjItZ32TgFmqfdbTdifajrwGmUsELf3ieTY2V_DzNH6tQrqNo6L7pN2qY7X3bYDsrL89YiZHpIYpGLTa4lpbycn8D-XmLXb3Ry"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFnjSzb-_KUTJxg80bTqlwmIO1FDrs8sDgyuLLz2FyZ4pB4MxAZzunsVTLt7obXjzKxG1mfaHNFXqDCZMt8hSbT9vU0AupPIJQElxCXqoZf0x6yu9dVnv7UHYKALK-6UUklZcaO6WK9n0U5nUAh"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWbaRoljAl_xJXNzAV9TqsTpr8Yry1QAcgugMEQDDvvNiMAYlZ2419wyGH4OTJWTGq9ngVYqRiGjopKqlsKvT5QHLOECiDRyr0sMns0nJTqUcQ77rKh9x2-lbmy4uBxd4_kUwBw9qRwHRbyXGj_mLzjrd3x_NncUWehf9ieIKqLM8Ast_AgBDvsg=="
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHu5M-Vn9zFJj7H_jaMHRGZ-u0TeKayaSpdpbHM9EPrHlHfWpc3PnyKXXtmv2weoMZRcfEefskw5bHKKaEdOUDgUy0liPrv9S-RMTCVImYcuwPMbtcxkZI4M_7asTjVgpN8kBfsiuq6e9qYJ1bEo8KnIpaL_DU2SOeZeNPkpcjLsBtA1AyqqpYwvQqH-96NZQs7AlOy"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKFVuTV_rcXrjlfg8XVEKpxfZg9iov4w5W51jmlztTjZcR4HekSUDP8K5giggxPlEq7CaKdUgCh3WxSeATmG4dDIXQtp0zsYmBBx4AVpwS6CxMxrG2KmlMeDPoQL898KXsTqfGNPSwtvxjzjaKU8vilKZKxjDxpptY8RL92VwFRaURgB7N_29Kx9jWMCNBP20PxcKQ0UC39rWhM0YLc5WHdnQ7eJ6jmyo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1xEzm4-3To-CC7G2fwQ15mPDUEvGn5en_n7ZCtl2DFnEVcQ0Vma83L9VL0DcVY1j6LHpqKLLzrx577b2ZLxa8Ylh1uCT9kzvYxc_it_yKwci5BIcW3WLnoz0LSjMJdhfpdLVz6EorLuNX6bo="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHRyNnb9_KArQ6e6V-CypMEEaURmsbeWKrIplP4H4K1RwlDuubOMEXjitR6sAgufFXZ5uVIk5eBjs7xL1CAOXAAiK4DQ7sMqQQiz8gE8rPuISHZIm6qdQYAlN9rk9zyV73X2myCeOUfhnmAC0bPr9T1lUw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxxjEfDjLpzkz6QyLCemIGiOJ_98WRqdwasoPgsn8_9pSM6Q43nPfdVJCcyy7xyugkyooodidLwqDiwuUIcNMDjnxR47vFESj7bU5JDg4bQnbZ8UuurXE5PmsR3z9-oyrMsTVt"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7ZUdryCukP9kXJDG61tKbnlRn3oTidyzLj9tv2UYmbOvLIP4s3TABEm_M_K7qxutEAyK3cZ9_fXkh7j68ZfnKyeelnbTWMs_R5HbsFRgx9pear0SJyw1Yl8FUR64lb9dICB1KakMTbx-gSQ1leT-rv6Kj6Tli9MV291Fq6IiHKvlkqAVTaHKJeK5CrAWRAW6nMr5vQQlsoQvyqfymg4QM9FRtKS4-fokY1iVs4NxS68fSMB8UagGcssQhVpr1FMeXMaexeqrYfX-LAoY9ZohZMMg1EI200UpIGQadkbotjpQWFJ4BRAH-uknF8C4_jA2S_nGwdQ=="
+        },
+        {
+          "title": "eurospe.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXg-dMjbe1zA8QfwCfEJG6-qp-P37AkV6GWvJ1WlTu1_4DKKfN1G4G6qOzntbSpRghjZwx1zZh_s58zKygNFdjFm8vbUAhZTotQ-dveML2238vdPUiepVrJsJMCYHDH0RuF7mU-qKrSOnaRkKvfw=="
+        },
+        {
+          "title": "jcpsp.pk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGCYvoPPee-3ZEAxcD-UsGadr7_W1b1tumG8LqQVzLBJTFXr_rkc_zuIJQhyDMyljphItZzDdVae6X6pFwKgxCC-oyhEhI4GC8t2528i9AVHjUVf9pZSCP-NkcP1O2__j_jTMOgfY-J0_eWg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqUQ_YLzI0ECpTM-JEXHR_7VUUqbBc9cTphGtIq3qXxYQFVjz8my_whKxeNXKvWdE7__p5wgbOBTFQv11SOh0bSrKCqjwjJa7TOw4rWKANVVBBWdbe1lMUl16mLe0bmoP93ZUEGstOEmsSTGM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-X7WCFqymJRVCeF-Vc6u7n8px9bwAi9t-Y6MdEwWmlTh1AZO0iUcpjrzB7uWp9K7UonUF45e-4MTSpop4S6Gw3jIkfe9mXHntekwRqoylXzLggkzkiA9m2tqhacoFndDlC4JwyUvS4tIAuwI="
+        },
+        {
+          "title": "brittlebone.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF63qoOBlSsRYqxi7jFSctz0tegc_SceNvSBLxlwbQGW9ZsxIkMI7kuaLyJmAAJqnuyZDyKMWCe53ZdT6-53Bn6dBkAYNzgI6veWqCSzNQ1fZEgoX_1Y5GUs0PVoUWjlnA2FyW42pdwEHpMMciK_TAoB1EVGN0i8HNunPGSSHqgn_O4h0wSolw8Tvh1IhFAnrentUE36rByJ5pAuAE="
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHc50fYsFAYWh1wTsK3tmDzOvSCJNDQGJwgHLg2-KwTibitVySM5JFsDwl4x2pmVMoaSqmK2Dyq88N3F_KTS18G5VmtkYpK61t4E3qVpoXUDaSOPkBt4HsFhF2k6Cifz8Hjg46vQPpibiRkm6uFYJM50V7gD-rXD97eHQVDsNDnl78nqCu109-4T7kbkJUY_QjBQl8D"
+        },
+        {
+          "title": "ClinicalTrials.gov: Bisphosphonate Therapy (e.g., Pamidronate) for Osteogenesis Imperfecta trials for Congenital musculoskeletal and limb anomalies",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Congenital%20musculoskeletal%20and%20limb%20anomalies&intr=Bisphosphonate%20Therapy%20(e.g.%2C%20Pamidronate)%20for%20Osteogenesis%20Imperfecta"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Intravenous Pamidronate 0.5-1 mg/kg every 4-6 weeks; Zoledronic Acid 0.025-0.05 mg/kg every 3-6 months",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 300,
+          "totalAnnual": 6300
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": null,
+        "costPerResponder": 9000,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.4,
+        "vsComparator": null
+      },
+      "name": "Bisphosphonate Therapy (e.g., Pamidronate) for Osteogenesis Imperfecta",
+      "nnh": null,
+      "nnt": 8,
+      "participants": 5000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "remissionRate": 0,
+      "responseRate": 70,
+      "safetyScore": 65,
+      "sideEffects": [
+        {
+          "name": "Fever/flu-like symptoms (infusion related)",
+          "percentage": 30
+        },
+        {
+          "name": "Nausea/vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Bone/muscle pain",
+          "percentage": 5
+        },
+        {
+          "name": "Hypocalcemia",
+          "percentage": 5
+        },
+        {
+          "name": "Renal dysfunction (rare)",
+          "percentage": 1
+        },
+        {
+          "name": "Osteonecrosis of the jaw (rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "3-6 months for measurable bone density increase, longer for fracture reduction",
+      "treatmentDuration": "Years to lifetime, often with treatment breaks",
+      "trials": 100
+    }
+  ]
+}

@@ -1,0 +1,611 @@
+{
+  "conditionName": "Gonococcal infection",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T19:13:17.617Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9HqmaY5hJS77qGKp27Reo6oGDdbjwJv6UcBHLd0LR3VOvZCGeXWVac0wiYMd3VXx1iYzDgkZrKQX6AhPTPl5nNF1eW2RCBz8rruw6PQn07Ga0rjWNouLpvvqE6jBVaG1r-hQe3GY7cMqFD1NdO76KwSLXTNjkWjl_9KMC6LUvzQ_ZG7m7GOCT7VeWLnBM8_E-azYPfKvKiu-LGFxkFbuJ0NYyegUa-X98jikJLSTpTkojPaWBTz7WdGljik6R_AWCa9H_VO9r2W20EVWz_-uem14cef8OUfT3AMiRm1sRhWA8V2uEp-PByvEhgKOSbXSWdFtoiP1MhwWcvTAfIKi8AdZuOT6TR6Ez_3BFMru-4CoD"
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGU-7CAaJ3SsBCqhBt-m0m8uCPmY5zTu1SW06zQJz-A_sqFOfmoJHeiVzonaWloz-B1t_TCIUR3AaC3Ol6f26_qwx6zqqamwX_jpl0WqAEzJoQRGYRqLFThtox9U28Jl3RYZL252EWCZA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcXpouKrIokBYEVvnhDQqhlZdpkguaOASSHSuwwvHgEbcJ62eaPxC_1hWYdSsdzCw5OrtT_90yV5qCbZO2WYLPbKtJpZ6gTlsWsUZ6WxZTRXKdvAHF2ZS4JJm4t-SvJjmYUErg8gXBtYFOwayX"
+        },
+        {
+          "title": "ijclinmedcasereports.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP7su9DiD1_CGStWjI5HP23AOUo3HsXAEYbU3repm3lwyESBabHup8m2uLeVzC2n2QuAO_qYLkptQTL-ybn3fHofmIi6nB_YO-autpIhHxQ0nUlzb1mptEe1ozB1b-jNVTCEpDapIdwv7v0vMa8e7LkbEc"
+        },
+        {
+          "title": "cda-amc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFaFEyvPV-Qqx4E99K3LQJuDXBUiZ2afl-axZ5S8FGeyp1XI5vfvSqpTnP-0jBaKy858qHa6xLkz6w7D0Z0E2M1hdqQ68iQS-nlRlzSBo5Qwd12_tTPPqTDYDmRKiBnBGgMJow1dgzLbCgkLBQFahQ0KgNH8kF7FyExfkwu1_kxdd2y5J_EN-ndoTKCYOqc4G9UVifmJzk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsHhP4E1Odtgl-VBMV6ZOnbCd_5tqiJ1emcLgkKz5RR7jFL9sxXfpUxzbMYb__0bviv-uGS3uPPlxI7OZ5uSiRXj6ipCw8qwkTkif8Np9XVxVpAfR7oi45knZ5LMQonms818F9"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8gbpxswn5ofuLTZklsnOj5ejIe1IlvftsM4TifmjmvSZiyWMEFBuwVxuNafelR5It2B87u2myO03u-5NdenUDaLVyzt8Rcptf6Me4HV6ShCcSQS-QvhChQiCCa1A2yWlk-dBFX3UooOuvQdffg87VBfLQCfM5N6KRNfaN"
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone + Azithromycin (Dual Therapy) trials for Gonococcal infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonococcal%20infection&intr=Ceftriaxone%20%2B%20Azithromycin%20(Dual%20Therapy)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Ceftriaxone 500mg IM + Azithromycin 1g oral",
+      "effectiveness": 98,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25,
+          "monitoringCost": 150,
+          "sideEffectManagement": 20,
+          "totalAnnual": 195
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 199,
+        "costPerResponder": 199,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07
+      },
+      "name": "Ceftriaxone + Azithromycin (Dual Therapy)",
+      "nnh": 10,
+      "nnt": 1.1,
+      "participants": 22000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 98,
+      "responseRate": 98,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Injection site pain (Ceftriaxone)",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea (Azithromycin)",
+          "percentage": 14
+        },
+        {
+          "name": "Nausea (Azithromycin)",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain (Azithromycin)",
+          "percentage": 5
+        },
+        {
+          "name": "Rash",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 160
+    },
+    {
+      "citations": [
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGojSV-kApFx8mYg-6Ulv-5E6f82Tu1g6OyMsQ1KNOWkefakNJk7KBwles83GvXhBnUuWlSXyjwkitL7foll-cE-nQ6Dwajf31AXrLJvBcczJGZ3TkPOuzkNBxrVyjaNV22mscfXumgeeP9DVOceA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGnU1-9KDbQryAZbZTprU6lLBH9I2fcHhwRaKu2umO5rn6XTtSe8SCrBSrnW0eqB8RHfblTos0e_KdjjDr9m-KCZ18i59uNoc6f02WJ0PvFjIKmHLRErLNDEOlqbkkYL3kLKTBBR-8apliLUEw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEz0saDI5KgSSp7H4cLD8u7a_wj39Ke5rysMEEbRvtUxLnLT3IJTi4TnskzEaJfbGMqUlBoQFJa0KNWS_hI0m5Jl2FvgeZM4MQ18FzCVt2Nofo8j3voAMjulYkXPOT6Kb4hijmwj1__Zc9kTY8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG2PCyiwLPIkQGrwxxNy7NaF_PyFXtstzgAFP03sUfnHPYoXxhH_qX4Y7JsYrNwF91RsBKH0bEV7b6XS0h-QqEXqmFc66X5bgwpvuJH6XES5QS4r73O4-eY5cDutu6uP4TaAzH"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7wYI96YUBSF_W0X55ue82_z5jKYUN0gjsCmJu9tsIzsZXwzeKUBmxQq_5DU-ZG3QHXqueOsIIQptJF78LFIxXcXt4LIDvCeNwMGRO6ieQHDiAJ3oRH9TnVKMOa7PRZFcyxlS0-Hsz74MVyZU="
+        },
+        {
+          "title": "cda-amc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUufP9nPYjodDxKOPWyiz4FM7roeASZD4ZNruh6EUesnJ33Q9paD2nKoo2ebxxt9gnPIZIQTsNSG9oqj93GbreYooWsGQiaeqIXxnsasBBFbsoWZxbZAo4IVyeWqGvQjp29X8dnu-HRsIvKcheqyDEcRjEOFLk6ITmai8dYG_053wDAaW8oIuaKL2tWVUSiEBCnRgpoKY="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG54YzUscoxAW8C-6KUf-JUbRpugp4t7RvlI744Z6D0jFisrzgNRXTy78AtOOlMOUWcJ673GLur6NSP00txswiDsxh5GODMXxxhrA9Z-SceTaN6Ax6yHo3mKBEzyOk24RDlMoEhCFS-zA=="
+        },
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpCYdpCLUGK-GiNuNOzlT89TFx6gjzVxI8NCLuYIK2dATiDdtOKIvXDkW37A225lrCSIIjm503m8gAYxijEVilVAeAuOnrcemXttNOyWuuRkX1Ml8cRgAO3KDiFCFYdFPPO4RFFIc="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPcgTGfSlfL5Po10cP5zQDb_q3kCP_i3rSoe21mLGnn3oWHbRPeiFGd3DvKZf6k3t8F3IBiH5Y-VEf0W_GLJwS8j2wsbxjoNDSrHhTl3wJeYTl_FQ66cNGk8higgDcyQICfIhD0m13pCmyAjFjx1Oe7ii7C855Fw5Uh8xucZs2dwizd-xmau2BEyj5v9sS2SI8lxjg8bSqriMgu-a6IvfcrOZ9YcyyCg9_p0JE3NYLEm4OAaxvW-RF4__AdQfLsG_rUHGUh0IcG_NlMHCoVyuX0PakRQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN5e44ihlzehj6LnQyWskvD8-7zNFXGpEZ1AqihSYY3N6FZadh5B9Xy5esOVa73qNrTA0tdPtfFhGI3UVSac0Ygpnuihxu2M4gioga0qJx0a5y_Vc6FXLy4049tn6y-BG1zGWTjmDYCa3SJHo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Ceftriaxone + Doxycycline (Dual Therapy) trials for Gonococcal infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonococcal%20infection&intr=Ceftriaxone%20%2B%20Doxycycline%20(Dual%20Therapy)"
+        }
+      ],
+      "confidenceScore": 92,
+      "dosageRange": "Ceftriaxone 500mg IM + Doxycycline 100mg oral BID x 7 days",
+      "effectiveness": 97,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 35,
+          "monitoringCost": 150,
+          "sideEffectManagement": 30,
+          "totalAnnual": 215
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 222,
+        "costPerResponder": 222,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.07,
+        "vsComparator": {
+          "comparatorName": "Ceftriaxone + Azithromycin",
+          "costDifference": 20,
+          "dominates": false,
+          "qalysGainedDifference": 0
+        }
+      },
+      "name": "Ceftriaxone + Doxycycline (Dual Therapy)",
+      "nnh": 8,
+      "nnt": 1.2,
+      "participants": 16000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 97,
+      "responseRate": 97,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Injection site pain (Ceftriaxone)",
+          "percentage": 10
+        },
+        {
+          "name": "Nausea (Doxycycline)",
+          "percentage": 10
+        },
+        {
+          "name": "Photosensitivity (Doxycycline)",
+          "percentage": 15
+        },
+        {
+          "name": "Diarrhea (Doxycycline)",
+          "percentage": 5
+        },
+        {
+          "name": "Esophageal irritation (Doxycycline)",
+          "percentage": 1
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Ceftriaxone single dose, Doxycycline 7 days",
+      "trials": 110
+    },
+    {
+      "citations": [
+        {
+          "title": "bmj.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGhtaW4CM7r9uq0mioMVGYdi09amJoXcQxbdztkKPAjRNdDIg_rjYT0a2332jv_eIbLWfVoDU4OuDexd3mG0P6g1pKtnuE5kFc-MgmB_FjdJNP8MkzZnad1DSds9PL2rSYNL2gbkUpGA=="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQED5BZWv05PestS2MonCalwpQ6MrKmNYEK5_OBYOqI5FCRY3dmG3XT3_hS5hmtfP6TsaUK_Mvlu3AfnnvLFuiAGvU-aUsKNrFhDF3vgTP4Xf7ds4_5TR5GNknYJuBfLfhKmnBzbbRgURyjN-KqQq1GwM0nn34X5MRT-M5Zg"
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQERJDYqMpctEk6aZ1NSIZDND6OAxV7oHv6a_jX0NzAJj4agLE-z3zlr85ZPYrisozANM8lJnGItEmja-nHUtJUwmzQ8V9yq_58UIEoCMpGMvusvNIVhzDm7D9TQLLzlmppYmTpz-fRVWQr2UW3a01h_0GHByiU9yXuM7TzT96wf4ec6ZUm_S7Il6snDwEKhRokLbFNETGtUXIaIQS6RMNhsSph8uROoRsj02VV0o4-qhgbRF9gqx0mkJqIxULnXPYQ="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYDOJp1pRxehrS1OutZJ-Q5jfMetGsuYAK2BXEI5Hz1BcEYJS7slILBH1ZowgaDYsLELo1bvxjiXcw6YMdg8-yReMs7-cabUqYSM78ROGhDRGfloPKy3B7rfxrE7ayJCUrSai3E4wDxusBa_2lvkVqpC5MeDPQyezC608OaH_2t8XozSERybX7HKS14k-cqbypim0c2VF6DAPtxzc6ZDqtM8KTTFIDpS0axo2OsaHHBzWAHZ13ULov1b4jTizxHpRA8X1PVyj5wzuRBb_M6eCYJVF_n7AO_SrbD7j8pb8i0Ywi8I-DAwIaxRsGzkeekTOX"
+        },
+        {
+          "title": "clinician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2ZfARTudOEgIQxPGwmHDnkrImbKgP-0BGLKX07r-rm7mcPDjz6s-Dz15nWmD802vIg9ZbywUr7nawqedHWs8wkkaAx4EuMkSb8Oq2qqJmZDjl8_aPQrSMWo2YVeg5JoBBvO_zdv1dp8qTUK8LQmOo59m05OM_FJXCWsgrlcNUccJ_xevlx-Pq48N_Eg=="
+        },
+        {
+          "title": "jwatch.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGD1zsoM8oByRpPyDI1Amzawd8ZQMziDIAE5TYqBYJ_CAgj3jn6ZB6P0tIyGND-hp013XhlGiZzYlI8CmZWKNqCf6cgd5jre-gWaoSjOjrb6m6Z9HpvmzEPIEgjDCrw83ZZtjshDlFGGre6cgOe6RvxWGGlw6WxtgLrWrD4Clf9Vl1kJy1afQ-tNfp1ZitD4X2vCpwX4GSEM1KCbA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF-BBYKN2I8PC4ATKQAY6Nx6WtFa5ngq8wwUGURVwtHpVmjCEqRJJonywqC-F7kYyWc9D7sltAdTPXoXLF4FaASIyp7J9TjtSYL1c_tkNcQz40B7RotnJXRa9WS4e-zScWFxTIsLhJ97rWz_7rP5vclRseVl3j10USTYsvcrv5pzQLsmW_7pS0cK2SYCNUPCC-9KIdHcXZSjXBq3yQYZ-cMWk1OR6WWAPsqgeXwQkDF2NVxWwZR95bQwj-mYt0aI0maC4YbuIjA"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7Jv4kgi3aS_Kug-7pciq9p8ws3y-hHgmw8HvJzQUlg7a70sNrWdXZxo3EbtVtgcxhjF_DOucvGSrdfpFeB6l5qHtVO-HF0tseEkiqNumKb5KXatYdXyIsnslaHGLEJcNe_dPIRBEVSHl47B2wxicwQY0d2vmXw1bsVExHO_MpMDIyrKGINrNTruoLFY2jiWaTLSIa6GfnCzl4bx4_p8yjiM36SuJYd184ok1RezOoBFvtaLmp3XzAzMmkKud5LeJiBffQA5jpc5DlnHpBuKtA_GlUcOY7xfa720nsDQwR0Piqhhaoo8st_JXRP5Oj3QCDA6CtXFMQ-Z7nac-EcgYtVPh1r5_5txEGKREfWpbX_sch"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-gCzZ6Hf9yhebNDXakLYmTChIq5Af6Y7TYEU3WTGxS3A8BjLj1v8KR5k6HSPgbgLmXX-6n45iFpwYTq13A4XUJgiNFbuJ7hu7j9cSP7yLmHfxXSEbn4NUUvY_4XPwROs9628w-IFx_XzXJbA="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHS47dxJXr6iFWIrmsaeDGpCRrNNn6JqNLjoxrJBnUbvOiGatSHFbyWFiRaZbAUvB1aPbG1WIkd3BzA3XA3qGj_pVlNel4l8eX5AhNQgwTvnZX8W6F3VYYcfMXJwmcn8wfs9_s6rcFu2raopnHmYzY3q2XA08nDcK8_CKP_x_v8vQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWksYUT1gse5H7R6ZqSnp7-jlsr_mb1_ZyVR0BHi8LR4xrs26-NI3vDRRIJjAvvRM30ELfZHEGRNyXT3m6nDar6qUYyGJsgoCPBhozLQ-r08Abcgx5UzQhwTomt3P8azeGEvHV"
+        },
+        {
+          "title": "umn.edu",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYf5SiH6hV9A1PF2xxAjT7TuIZg85yQtCTe8TxTvOVl9YX9tMA74GdhlLWat_rsYMIybfW3IJxD5cNN4WY-pIRPCpG_RXUoIystvxKfLTtO8fn6ORbfFi_31sdzXcrxLqFxWvOj_uPLKZtEVycbpjbEp5hjPDWQo2SdaeM0WdwTyfT2ybTUdvwHudP9N2jLDLSXHbz5LlBYkr3esPHXA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8lUSK_UgUYfBah2Nsn8CuBjd3MOV-LB4wTfdiBdOy5amm6GfIZ1a5u79IbwcWThB08YcShBi_qDyo9aLg2GjtbXGtQ9gRm4Qgig6npFgJPN-EqcrIpYBKuvH4xqsgHGkozhaRfjuKbw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gentamicin + Azithromycin (Dual Therapy for Cephalosporin Allergy) trials for Gonococcal infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonococcal%20infection&intr=Gentamicin%20%2B%20Azithromycin%20(Dual%20Therapy%20for%20Cephalosporin%20Allergy)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "Gentamicin 240mg IM + Azithromycin 2g oral",
+      "effectiveness": 95,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 55,
+          "monitoringCost": 150,
+          "sideEffectManagement": 50,
+          "totalAnnual": 255
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 268,
+        "costPerResponder": 268,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.05,
+        "vsComparator": {
+          "comparatorName": "Ceftriaxone + Azithromycin",
+          "costDifference": 60,
+          "dominates": false,
+          "qalysGainedDifference": -0.02
+        }
+      },
+      "name": "Gentamicin + Azithromycin (Dual Therapy for Cephalosporin Allergy)",
+      "nnh": 5,
+      "nnt": 1.2,
+      "participants": 3500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 95,
+      "responseRate": 95,
+      "safetyScore": 68,
+      "sideEffects": [
+        {
+          "name": "Injection site pain (Gentamicin)",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea (Azithromycin 2g)",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea (Azithromycin 2g)",
+          "percentage": 12
+        },
+        {
+          "name": "Abdominal pain (Azithromycin 2g)",
+          "percentage": 8
+        },
+        {
+          "name": "Ototoxicity (Gentamicin, rare)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 25
+    },
+    {
+      "citations": [
+        {
+          "title": "iusti.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmkNkoiHUCDGI3wBPoOY2FBHzgtcKwgp6Q1bSeCyMaFxJSMnoqcW2L2v8k77N8JqXXKVXLG6Kia4SLWzjiHyA0A1Nih3Nk5KDuTucEo5h9S2VNwnfV3uynAiJSoPrTqGQg3y0ZCx3Oks17slyW7TWi8xeyLngE2fXvIMibdDOf_hhAgTi3RncaE5mDl4yPoXC0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw7BNGyGogOdYMgdfxZpq1TGtNDexj3SMTUEuiN7yIN64ispOmzq85CNhIJkM1H0pVgoA6U2iLIaGpIyA_ToXF6wyPTc-5_fzGbF1JtCRfsHbL5EoPOstcVfBT8o_3S_QT-nAT7XtNVw=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHWU1C_Uxu_pAs3NLXUH2-oqNyeuo75s-xLJocLXSolnfuDMLCCfw_6PhYEja2YPhAJcvkQku070AmGK4b-Gnis0lea45oDxVcodO-eUyPRDCEA_IJNeem8h_gg9w2b-NcJ9-mQk3c4M9o-iAEBQJJMSmM"
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOMilM8sWRvBSs71II_NK_UhBn4u5PsH7_kGPWKrywjH08PWM0aE68IKgrx-U6mSdJfJI2ncImY2kUuTRme4QCzolEV5AxtC6Pf_xpRb4332HxkratXneI-4zQCoqH69q0VRYXtldz-VnLu8PsBw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVL1PaKgJ3eQcgg8wDSl5zVsDD0usPtG6mAUYM1BXtoQIif-sJHCnlEFllwUBGQytxTTehpAbEFuyajc1X3Z1yq8-HMfhEoWgiGrZ4cLXmHRkvWW5o39B9kXIBbtY31oqHKyMgbW18v4arDyU="
+        },
+        {
+          "title": "internationalmedicaljournal.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjQl3RavNve8LSrtKY0g8U03U97EHhnuvkRxN5yvUWnXrJop1lGoyzTKLTvjjiKfe3DhcpGv4Mn6zCgCtsWXxyPF3X6AEeB7Q014HVM7f8BqBaOO_1eCR-7VM2bcQG9l7pdHkdHZA20kmn6CM0vYH1DwTQbFrwavvX6KrRnmwN_oA4zsg="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEHIwXkkdBcOBVQaQSUmdz1ADobYV9TIyF4KVKSNWEoP1lRd-9ztScReK0qoplONKBts3WGuT_IlLTuFiSpQExoArQui0n2hotsuGlKCvOy0GxEwANa2eKxCjzJ3jOffSPtbG5ypiCizZFeJGEOU6lBQgK1A3SJEbRTh_OlwvwVDQUysngsgtv8z98amTNG9mLVBe6VC_2Hwx3S6bhZMKO1OaWSbdo869lomYa7Z4KO_xs-M-KgUkYzWH3-k85-DbA5sMz2V2nq5_oOA5ghVY3hTxvfqEPF94x9U7_WknO-thJOqbFipQZSEIh1isa0T7VkCQE6h-lF-MsHegnPMQT0utU7sugH8kiEKZQsokBNZg=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN7ZcbLftD2ENWE2EGDypR5TKPFU9A_wWUbnxpAZGU3r5RG4M4V87nfc-FuL2PKsFFbZIWZQANwbBESZAmgAuXd3Ztz7hNJ1ehP_IJj0E9wPliEtsEZLDtSytEY7fXerDusZ6iFGU7svOhQCB5L9HPHw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjr3ii1Y2esk3IHkcG4R47A1XqZsiK_4jE0bpRLJUSazoLX9IGXf_3656CKfNcFKv0Qx13-qnquac-i2Mn1XLIs4t510Plr-62TWiXOelID4fjdU_vdln5RH3HRaaEWfMjj3AhgCZZtXpHyqY="
+        },
+        {
+          "title": "cdc.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7ySOGBjWJpxtoV4xiidUfOuht8GKB9jfgx3YJzjP05r2rLTvIQSTvsxQiGy69CYGlbOEKx-Xoj9tKq9Lq-OcRat0GWqXdQWhwBZQqn4XZX_9zeYckr8OUxMwON3mNIoY30P7EdRs_2BCABBYLKID4Aq2Z4U0H_NnkMKIG"
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELwS6hu7LqsJH_WUoj8DUZFvn9L7KaHcJhKauOSesT7ai1r0JmbMqBI1J9yLuErKfyyqdWkf27XM7GzbXLTsq0glUGikv_ng3G1zfmCQyHXISh028tyWA6wXc6U4GRO08wIMRtjSG7v56eQFsAX1Y6laM="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe2jzZ6K_i9lNj-C6V1rVdfEoL2w_R7nBB4bIb6r0NZcUQ1ir3lDACB-feo7ghj4VWRs5KJCinTRnjFXVeh-6CZNzXvD8tikezRpPcnthnjTTDZfoDpYduJj9sTn4GUnqVJWw-cyDLj2OJu8polz1ydOb3fOGS3jo8MOJDMgV-UB7AeCXXn43-P-QpOfqC72iI5_RHceeuKAzdcdY4xHs-erxL1uatdhq5--DVtzEVxnym"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEaPjHINFgr71hLcj5Hnbq6gibaTGTyZBdH4oqe1MxvWe9MenvY1DL4oaVFvyvsZXSF0f3nG7Y3-Zl-4I12AoZ9mt8ILW2O2QOAvGmRilQT3ZM0WkOxmfE8gcCO1Dsk2yQ_mfT7Ds62L_u25ko="
+        },
+        {
+          "title": "cda-amc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpdAX-whV6wvKjIyo0Xq7HKDdXdyc-OUI5Y59189XRoDuFYpBbplG-cCRPfTfMuM3Ztv8D6m2cVNm-uFFcqoqURDfTllAJJMBYhekzRQGXz4XebdB5Rwm9kIl4WYCz1LR627cvbBTwE2rCXYxCbPP_s_qQoyLfJ6q0hwqlCFpAduBXWMWbj3qMjhrD-pQMwxzasN7jsgo="
+        },
+        {
+          "title": "ClinicalTrials.gov: Cefixime + Azithromycin (Dual Therapy, Oral Alternative) trials for Gonococcal infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonococcal%20infection&intr=Cefixime%20%2B%20Azithromycin%20(Dual%20Therapy%2C%20Oral%20Alternative)"
+        }
+      ],
+      "confidenceScore": 80,
+      "dosageRange": "Cefixime 800mg oral + Azithromycin 1g oral",
+      "effectiveness": 93,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 150,
+          "sideEffectManagement": 30,
+          "totalAnnual": 220
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 236,
+        "costPerResponder": 236,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.04,
+        "vsComparator": {
+          "comparatorName": "Ceftriaxone + Azithromycin",
+          "costDifference": 25,
+          "dominates": false,
+          "qalysGainedDifference": -0.03
+        }
+      },
+      "name": "Cefixime + Azithromycin (Dual Therapy, Oral Alternative)",
+      "nnh": 7,
+      "nnt": 1.3,
+      "participants": 11000,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 93,
+      "responseRate": 93,
+      "safetyScore": 70,
+      "sideEffects": [
+        {
+          "name": "Diarrhea (Cefixime)",
+          "percentage": 18
+        },
+        {
+          "name": "Nausea (Cefixime)",
+          "percentage": 7
+        },
+        {
+          "name": "Abdominal pain (Cefixime)",
+          "percentage": 5
+        },
+        {
+          "name": "Diarrhea (Azithromycin)",
+          "percentage": 14
+        },
+        {
+          "name": "Headache",
+          "percentage": 2
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 85
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC9gOmlAWUI5bvKuk1KLZV86AHTOf59SEUf9a9uzmZLITb-VlgPpMSyoOUDwHHm93vCKyWn85rRhWWWQL0x6zV-eeIZbiwbh1DK3I9aCIikHP4hMBvhpOSzadKDU_uzSNw-xs="
+        },
+        {
+          "title": "clinician.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG88HMI1I8yNTBz8OlS7Pr9B0y5VCJ7Un5IvmzSk15Aoth--2VeNUgUfXpgMGpE3YyW4l-X6tylCYTvvMVZCCyZPbOHxRuorgmy56SMSBaCL8G_U48eWfq6lFg2Bn8Bb3MnW2hCJgwVa-IWCnsPiXyc-8_nlOAH53o8vMnctcAKg3ME6E0HFXUbLwmq"
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFanpgyHREI5PdnIDHTgeC2TNR-LlLMNvhgaSbPZy44Mq1MG54Tk4yBYoicV76ympbFs4Ur-BjUrcoyNV2D_9i-kKThU3yWsA69mzdvyBECYO-6gqP7UCpqTS5c-Q61lzUva5EKopDD_AmDw9AeZiMSv6WRJF_6KZ_DOLusJjc9mg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEazOIki_nmybtW9EEGhT6RlYRPhckmcKvoySJyIQH_ZtytbGpPvzA5IsKGNRnljzm0SAQPmbdYLyJwp-lzhPNCSGpOHSYYTilo6PpEb8wOo9Ki6h2CP5C48i2qxVDBB475qYpjvD_nAS-2FA=="
+        },
+        {
+          "title": "medscape.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYVS7KcclEsF0_1TtFMXqk0QEzRPh7bqTj_DDqcZ6-QYAe6u6xSZq_QNl5AtHKmRrmgJCzfXvSoUOWJXy-CVoo74GgYvUu1ig6pokgCUlKPuvEasyuAasSBPB9oXeHOYOF5Xiwng=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEyOdFFYfeCOEsiUQOp_joZuZwFejBtxEE2Y9ASGXSxwjiM3doIWk8oHf2YVWzLnCdwp--ACTzCJGCOLHq8HDCs6oy3LMwX1gmwnO4xeUPQ3ySC-l52rcMHHV1zboZNCyX8Lij3KoymxWWHr-cQnKOoDhrWP2Ghw-HWdzUGBiCJl8x5OnvgwG9F4mxhat50QDRwx4_VCu76uiaBSTXKQzxFhQidm4Qboe2lcKaJKOAe-WzfB0UKMmYo2AJbNVmTRcHfTcORTtLlK_sDnPAcX28-Rw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGwSEOfIC0xfQdidCar6yJH_ALzgpbQO3GY2UcHNBgMlO-k7fbX-J5WOP1f3OswyHfTSMKhwjh6NL1i8x8gNynUUYkmm0pHkevvspS84DxE3mhgj7_2oIciQqX8Xyv4o0xPPgapT-LHlPUVZZmQ4gm8MlIhwgwORYjJC8U4d5B_Kzci1cbH-qms2bjCivZjTW5cjtyvhQzyxlaEjZz2H7mUGnrPDQektBxJ2gMm4wKA_Z3I8Inyk4Zpzg28SgZsiQAyx_CVZ0iLggnjSHY_phJVk0_sknJBEa-IsYb99LvYLy1HIJZLJUnvAvuwaBZkH4="
+        },
+        {
+          "title": "the-hospitalist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkw7Vv8vuuu1UlU6u_bx4jCJe3LQluzskYbY--MTxBGcUAYS00n79YENQPclSMv-nHxFZBuS2YJh06qbjyr0ug1j6eEaaR0EmMmzGLDuO28GUNLmI-i3DGwyUtQGW3V9lYFev-MGB3cDKVTUKRW3bG_N6R9eN2inpeAciPaNOCWW0cWYIXKD520i6Hr8vw_gnqwzqSeUPzGQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnDd6BsPSi92EzsKI6tJZFYx3Jl5lrpWU_ueM8hkAcohDwtUk2-fOGUhOoZK9mNajHXeGGq0ghxrr-w7c9nk19cLzIjAJVoiijvur93m-mNlBf592VFLMd0I5Pk14yvmFV_D6-BtiMMO3Htw=="
+        },
+        {
+          "title": "cda-amc.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFd8L8oibxUPrdupCVLgAxteYzIsDXY2OZntnC9Vt5rlEYQGttvoPDwzibaOY7PxU_Oo4QQcCcUsrZVqLQiWDwfYJsQU09DfOUqlhdeOaPygt720CeqCB8E4Dzm-G3_v3ePRLwNTZF_A7bTCijb2XVU3kiGEtaSfFXjEV8DgDWG_I9499Ds3qPgjJD-ervu8M2Oq9vcVQ=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Gemifloxacin + Azithromycin (Dual Therapy, Oral Alternative) trials for Gonococcal infection",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Gonococcal%20infection&intr=Gemifloxacin%20%2B%20Azithromycin%20(Dual%20Therapy%2C%20Oral%20Alternative)"
+        }
+      ],
+      "confidenceScore": 75,
+      "dosageRange": "Gemifloxacin 320mg oral + Azithromycin 2g oral",
+      "effectiveness": 92,
+      "evidenceQuality": "moderate",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 160,
+          "monitoringCost": 150,
+          "sideEffectManagement": 100,
+          "totalAnnual": 410
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 446,
+        "costPerResponder": 446,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 0.03,
+        "vsComparator": {
+          "comparatorName": "Ceftriaxone + Azithromycin",
+          "costDifference": 215,
+          "dominates": false,
+          "qalysGainedDifference": -0.04
+        }
+      },
+      "name": "Gemifloxacin + Azithromycin (Dual Therapy, Oral Alternative)",
+      "nnh": 4,
+      "nnt": 1.4,
+      "participants": 2500,
+      "phase": [
+        "Phase 4"
+      ],
+      "remissionRate": 92,
+      "responseRate": 92,
+      "safetyScore": 60,
+      "sideEffects": [
+        {
+          "name": "Diarrhea (Azithromycin 2g)",
+          "percentage": 20
+        },
+        {
+          "name": "Nausea (Azithromycin 2g)",
+          "percentage": 12
+        },
+        {
+          "name": "Rash (Gemifloxacin)",
+          "percentage": 5
+        },
+        {
+          "name": "Tendon rupture (Gemifloxacin, rare)",
+          "percentage": 0.05
+        },
+        {
+          "name": "Peripheral neuropathy (Gemifloxacin, rare)",
+          "percentage": 0.05
+        }
+      ],
+      "timeToEffect": "1-3 days",
+      "treatmentDuration": "Single dose",
+      "trials": 18
+    }
+  ]
+}

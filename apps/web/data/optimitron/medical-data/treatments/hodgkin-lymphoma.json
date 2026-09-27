@@ -1,0 +1,1114 @@
+{
+  "conditionName": "Hodgkin lymphoma",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T20:00:00.687Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgL1sVX-uSZEbgmQ40OXSLfOeU-Cv3pJfbbqKk0lN6i-zoffh2l0nsyJonEAhxAI-8vS8rwsH2LRKjFkJ5FUOMxnWE14p1Wm2aRF2_SB7htEne6dAY5iaZuIte-8_M3BaXZ-1n"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPnG4YCSArggxEvkVbK2M1OgZ7Gs5EyBfilnXkqwbftdOkLZWsjOeiBdiNYpO4p9jWDXQO5pdrjejyleRwjSIT4Rhz0LeuXykYKey7GChNrBzU4njklRWnpDBjQCeQfFuW3FVkv-90ZextcpvpmFvnu6XRVZYCSLHTznMqHw=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGruECc47UuGsE_LEsVqgI_dC7-fzS2UeUGRDAybIOKM0Vv4toJiIe0Noz_9k7sSMGudfZBIrhYxGI7LEpa2t9a5qN8RBO_ao3dlVSJfoM3vjmkCHSSRfHzZPjKnwJSDaFQHl9C41H3Mwg915o8Y2dS55HFSXer5m9huKSEYqP5GCZ0N62vPsoowOJ-7bt9wOHLOHZK6g6TwLGlGRnd7xG_xL3tfvJt0A=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEqKzDmaVLH-fxB8BL6LmP6u7oDqnzyQWU_m9fqLdr7cwbfD1z_6t2e0XSv0DY2wIWvqsaQ29a3KaPT-L0Y8KkV734e0wYGEfj25syN_JOOMizOP2iiDSyjJC3j5wWyyxsciXc9GqXde37CiP49pzjZOQb0GmK3Jiyv6PhKKUdTTtJYx_EYdsTzB47lZR8ZH0J-OBWZz_rQFnZ3YLGaQmEsVfFPnIKY0P-Z5x4ODL2DnaoOxchXI2grtPikye7vqMEvHAklZjYP5nzFAJAb1pRur6jzrq66iRNHpYL8NuR-"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd_CdtjuZ6kFnvO47dukK1Bc4JaZcbGtr9X3uJHTZPnsRozlD2lYeEGu4HR9zQNurs4UO__Hdl6Jec3XVqQEOMLbFdorCvxFSno2mqy1j-E9m0uGRpPq7E7ASSVtMMo1nsDlmEkXFTHsNdC0s="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmJNZw-vvu2GWy_NAsOIP2EyI4HxrSp5bq8KCZoaPIXsEAh7Z6xhHJvJAKSd66dlmCMxXQ1Al7BduGh02gMvo3eofLazIDCljhadOmsR2TnZZu2Uc2QdONN41tO7ZrKHeyuZ6lJEufJbfpfJI="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHGGafuHsFG09eEBIU2r4wjGX20aWDH7FOhRDOrb3bxVkVzlbxl7HunHuY4qKnIDNJ6wsMm3vXfy4QxbP3V6U1w1BMmMAsjiN2076qIavrqq0eAdU3MGXFoMKOZztK6dPQ412rbsjfhjLnKkk="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtA0dVGi-uYu6lI38YtYQe3SNmHE-cRBnuPNNkPmGgn6t7QONcFRnPm7omTwOl-hHDQgyH2otq4JC06Yg51qPwU_59dalxWk-plVE-xczLbLkPqidT9cEX5BVvJtpFpVeGjSit1vU="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEZRa1RP4UsTH_zT1Ykpjc8gAa7uoeWGp6nUn1rn4Lpkwr7bqKMqijwDVhnMkYsC4jsUHyVVCDUxOpSmHlFKYiDs3AwykMQHv89m4OmLY3ca4fUR8wZ5CZacrXOOcCxwzELxXHvj7k="
+        },
+        {
+          "title": "cancerconnect.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHORaItE4nxw7HKAnKiuMs-RB1lMkGY-nQnH5sr7HJ_qP7dI8owh9u6Awcby1gOhpk0VbQcAbq-dD9tT-bbmPVE9q9wMpAOsbfVpbrlWwISrZtJ9ez9_LUKfPmMv9Gq__Z22cfB9MaorMJpC0qKwAxA4xpEOu4ViGi_mlGPkwJGept1qEq4Wky02Q=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4AnZUEX2skhjiOlE2Q2SIwhY3uzKMcILelWT4GBXDoP7vAk9v-xhfriM5pXyfZBUMhWYVpbCCegXCe402caLC6DIdgug78N0wVlQE5wgciHVYeFqgd_1Y89klckulHr8U1R8LfErLpcGYpuWPyUFJ5vyyYj8wMrKnvn_rpcBrGA7_aBMQfTAyc3In_1oRdFziNcY_v1tV8i-19UNYa5uHfaHZ5Cy8uaKMZ-6YomWDQ4L-6drgPixfcXk8jyp2VnG9A5jAtvKRA_Y1baN_r8GHabIOMJQJDALaD-tpGpp0Ix2RZ44DzPWuPQCSaTnxOFc="
+        },
+        {
+          "title": "springermedizin.de",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAFv7qJvgHZHQT8FxjOfLMBj4MXFC260qIuWXKi8T5VJYMF8Tkn3sf79UwwXIn1cgaJCW0ZDi-8lXF-W8_HhKFxYwcaJj05k-QltKR87hxlz-rr2dv3HEj65W8mvd9z7F7WiU0A7FdDrgCoe9HZ5zSEjxX-E-kddl3GRdqT_09QGziTXADb8yYNJxKJoRWhz0OCdU1eJY7wyx2Sea6C5R3-1Bc"
+        },
+        {
+          "title": "ClinicalTrials.gov: ABVD (Doxorubicin, Bleomycin, Vinblastine, Dacarbazine) trials for Hodgkin lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hodgkin%20lymphoma&intr=ABVD%20(Doxorubicin%2C%20Bleomycin%2C%20Vinblastine%2C%20Dacarbazine)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "Standardized regimen (e.g., Doxorubicin 25mg/m2, Bleomycin 10mg/m2, Vinblastine 6mg/m2, Dacarbazine 375mg/m2, on days 1 & 15 of 28-day cycles)",
+      "effectiveness": 85,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 12000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 7500,
+          "totalAnnual": 29500
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 39333,
+        "costPerResponder": 34706,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 25,
+        "vsComparator": null
+      },
+      "name": "ABVD (Doxorubicin, Bleomycin, Vinblastine, Dacarbazine)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 75000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "85% of patients achieve CR",
+          "baseline": "0% (pre-treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Remission (CR) Rate",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "80% of patients progression-free at 5 years",
+          "baseline": "0% without treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Progression-Free Survival (PFS) Rate",
+          "percentageChange": 80
+        },
+        {
+          "absoluteChange": "92% of patients alive at 5 years",
+          "baseline": "0% without treatment",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Overall Survival (OS) Rate",
+          "percentageChange": 92
+        },
+        {
+          "absoluteChange": "-10.2 SUVmax units (e.g., from 12 to 1.8)",
+          "baseline": "SUVmax 12 (Deauville 4-5, metabolically active disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FDG-PET SUVmax",
+          "percentageChange": -85
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 85,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points",
+          "baseline": "Score 90/136 (moderate impairment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-Lym Score (Quality of Life)",
+          "percentageChange": 11.1
+        },
+        {
+          "absoluteChange": "-1 point (e.g., from ECOG 2 to 1)",
+          "baseline": "ECOG score: 2 (symptomatic but ambulatory)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "85% of patients with B symptoms achieve resolution",
+          "baseline": "Presence of B symptoms (prior to treatment)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of B Symptoms",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "-45 mm/hr (from 60 mm/hr to 15 mm/hr)",
+          "baseline": "60 mm/hr (elevated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Erythrocyte Sedimentation Rate (ESR)",
+          "percentageChange": -75
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 80
+        },
+        {
+          "name": "Hair Loss",
+          "percentage": 100
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 75
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 60
+        },
+        {
+          "name": "Bleomycin-induced Lung Toxicity",
+          "percentage": 10
+        },
+        {
+          "name": "Cardiotoxicity (Doxorubicin)",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "4-6 months",
+      "trials": 48
+    },
+    {
+      "citations": [
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6rqUFda8b_nBabWp-uegQtIrh66heBY1HL8-c4CUUuNtRdUbIdMO0YweTPs-2CfcyWyQ4ofJzcDlYADxc-by-tmsWPfrjnrNkjZSIXcNMtrq2YC3Iulaqqcklgt_N3rQ33syw"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKg51cd1YEnYIFXjsTlG_z-GIy_7B4aZRiQXnUucS9t5oBmYUO1mRaRN1O_Yxl6jY-p-xyBwHKZPj7fdAhrDqPpU1R6T3qmtWRRNUKHgzosIr7DOuhXXaE39H8vwj2JXzAHltR"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExyfLya3cIuaHsKcykVfORhjdgMGgilmvk2JbV0cGH5fZVR2z6LfbI1xA6myhd7esTqnyx5BMpUVFM2YUqmLZvAHtdfr2XEgB02n89vqRpJSWzTGhFyQF-IDmcYUy49S66KyoLGS3738LynMaU"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXHTy3Pn30-8oy9g-dhW205rTL9HIGGZx8MlNqBEk_7LP5kD8TaDMQrfpqHnqufG9wST2Ac_i__TPIhvDKh1SBrs82dFeRnuo_T9TZRZuX2cljl_2zspsVGym3GmZj7gxAt7oFyMdAPkh-Bv0VAquUPGKmKCF5HzNdrQC5yw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmtxRQItrCYcqUTovkJ9vUhX_n0M3KOHg69IQJbGG9O0wwa8_cCEtXOTR2kGU6eew0KDzLkRhPcX4LnR4cz0Ix2uP6F29qDhvT25-kd3hQ_qy3oy4_SgW5DXSBNzr_2k0-DeWV"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTjfMliVlhQ3Bg0_9sbSiL8a0pTuL_Seb9UErXHvMD_9jwioGJmtgPuujbRdvW26PH9UtfXvGOruofrUjDgsAlfDYFHeTBp5DM-aS3iUgoESC3bnH732HmZcGZiY-ugHS8iSUmgRFcM7lkaBNBrmvlvIec5LsfMi0fNe72Mu7-xRnGXIOdvSCT5QwoMq1k3WkLgmhjlAfb-krpGUle_EoAG9JyAAJ61Jn61kMZ5Ml5ryekz7aLDBeqO80t9zh1CV8qqeHjNXL0bXos82n_odzT6pAnIaCfRQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELlqqY9dWWSZcmxRworb4P3hT1eLNdM1IwU7tSxanUeCvgmzOthj7Sq--HgYIiBHxaPfN5vkrVPhGADxBmMsthzC8gmejNVStOBtjjXkKsoFuiZJGe056ZQkn1eHIVH-eh_JGRFMtH5oA0qxA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmKmGVp0Q8V0k2fwTqszChSmmMseQU3jMHO6RbHXG-YAIixDt6FFvdaa0JaVGqL22_yoSB9n0XdbPd4PTEtlPq8t4gokrnbNNa9tKo6LxgVqXUsPsr978wTgXULpmyRgP7mv1o"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH6GsBPVxTFHejKRuSj8YwrF0IZYLBlfeUZ1jJwG01cPVQkpjI-uiIYAsKBA2OGZVWjjJKpLQGMeuEdQlMQSD1vr3vHGEysYX6KLeSZAJBxHkNzYp2Tho1b60MlN2GHA9o1BRxijJI6MWec-Q6P089RnLQFPQCbZM9TicflUAlfs8zxEXgv3vl8_NVFTLGY6OxOpUk2zYqV_xbcScf44t0f1gNnhpGj1w=="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE9P1pH4btFEw9S6Ns9DSrVglI2V8ZRmS1Q_j1NV5IEeAobcKENweB3CW9x_rhJuPPVoVdUXOGjEpU5Ll9YahbKV1c9Q2ehjYo22B_UCcklJV5LHmxUwAJCWtSlh7xZt1l-b_hOyv6MwsaMXZh367lSqtpFZoY47xbQaie5qr32Pov2nRodh_NVVq8l1IRQFgwfWmmEDk0znvNRd4n-_kkA3fu_lKd1QA=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHrnqHF4KzE7Q7dJ4nMmq61CXzZUoDcEgZimisI7j8uRCDTi4AATeGjVxs0Et6J3xsz5DFKnjFbaCBR2TCKOZsfgz0o-mav9uip71Az8dSxyKGm_Unl46lfHiWkVTgtNGPs4IByBmmTTHIS-4ZeZotMbwzZPD6n7YFH4CPWYv5AaYbk6XTgLd31J_1FFuXJPpuM-ZwRE9Z7h32bb5kbcicXAD5R951RIInMtIcnYC9UdVDN7P0JBs-V_qRbXKIKUFS0bgKiXo79SSlF-3xLbsufJh5sw6GwPSf9tTZr9BRzdlfZOKs24shgtW3mMygTzckLG3tAnR9YwvO6x-2CWkXXXg=="
+        },
+        {
+          "title": "youtube.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG_oeuDymFEaSDKrnR10D7eoMSEl820jh0WgzJss0tVIsklefaEr_wagWunnQkPik0_mngQgU78ScF8nGimFCKOWuRu0gl9Vy-RwnyvINjWeY-JPzWc2kj7p6jcd4jelkJEYxIxLCg="
+        },
+        {
+          "title": "ClinicalTrials.gov: BEACOPP (Bleomycin, Etoposide, Doxorubicin, Cyclophosphamide, Vincristine, Procarbazine, Prednisone) trials for Hodgkin lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hodgkin%20lymphoma&intr=BEACOPP%20(Bleomycin%2C%20Etoposide%2C%20Doxorubicin%2C%20Cyclophosphamide%2C%20Vincristine%2C%20Procarbazine%2C%20Prednisone)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Standardized regimen (e.g., EscBEACOPP: Bleomycin 10mg/m2, Etoposide 200mg/m2, Doxorubicin 35mg/m2, Cyclophosphamide 1250mg/m2, Vincristine 1.4mg/m2, Procarbazine 100mg/m2, Prednisone 40mg/m2)",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 25000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 18000,
+          "totalAnnual": 58000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 68235,
+        "costPerResponder": 64444,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 25.8,
+        "vsComparator": {
+          "comparatorName": "ABVD",
+          "costDifference": 28500,
+          "dominates": false,
+          "qalysGainedDifference": 0.8
+        }
+      },
+      "name": "BEACOPP (Bleomycin, Etoposide, Doxorubicin, Cyclophosphamide, Vincristine, Procarbazine, Prednisone)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 15000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "88% of patients",
+          "baseline": "Active Hodgkin Lymphoma disease (0% complete remission)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Remission Rate",
+          "percentageChange": 88
+        },
+        {
+          "absoluteChange": "85% of patients",
+          "baseline": "0% Progression-Free Survival at 5 years (hypothetical untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Progression-Free Survival Rate",
+          "percentageChange": 85
+        },
+        {
+          "absoluteChange": "90% of patients",
+          "baseline": "0% Overall Survival at 5 years (hypothetical untreated)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-Year Overall Survival Rate",
+          "percentageChange": 90
+        },
+        {
+          "absoluteChange": "80% of patients achieve Deauville 1-3",
+          "baseline": "Active disease (Deauville score 4-5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Early PET Response (Deauville Score 1-3) Rate",
+          "percentageChange": 80
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+10 points on scale",
+          "baseline": "50/100 (pre-treatment, symptomatic)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EORTC QLQ-C30 Global Health Status)",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-1 point (e.g., from 1 to 0)",
+          "baseline": "ECOG Performance Status: 1 (symptomatic)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status Improvement",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "Resolution in 95% of patients",
+          "baseline": "Presence of B symptoms in 100% of symptomatic patients",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of B Symptoms (Fever, Night Sweats, Weight Loss)",
+          "percentageChange": -95
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Severe Myelosuppression (Neutropenia, Thrombocytopenia)",
+          "percentage": 85
+        },
+        {
+          "name": "Hair Loss",
+          "percentage": 100
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 90
+        },
+        {
+          "name": "Infertility",
+          "percentage": 40
+        },
+        {
+          "name": "Secondary Malignancies",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "4-8 months",
+      "trials": 12
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH5SfdmxT44rZ5we1JrNlidr-BJsxJjPikZt-3VXgopwi7M05sjOh9gakLejig4cPJWLRGRJXlv6tas6YU9DzNtWRvq7MnY-1T0nmqltTIZHpiCcMp1S8gRkPU3Gu-KsW-hourBlOO97JRsmGo="
+        },
+        {
+          "title": "targetedonc.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEElz1boImnx7YyKKKedYiJYV1YDyKUKDwn5MIUY-AlrDP5XnjCLWR5cEbSB8uNKWazHveV2oW-7qF2qYtpeUxiS5S50_9RufIaRww784zv3wHB56O8Rs2GbZhGZekjnyznnVuVRxJf82LXFRralpVKtj9gDr77PdoIiKQZ7qaPcothBZYRunyj9cGIU-G06D2EW6Yklg7iwipqTTQRSs1F14HQN4dH"
+        },
+        {
+          "title": "thd.org.tr",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbiLcV94zOMtpM_vBcko8Oa9KbCLHc8Y-mhgALcr6HcOWcLAqTV08AJW0myEkgHTa5IwY6d87QgojUEUbmfhLpMbNWA1Sz-0MGc8KeeHB1JGzGHIeEN2tHQ_nACB6aVpncc8ohqgd_Uq97lasQ04Zs8YiOHTL8TwpcpLkdhoDyq9700IzFTAFgLZbMsBaJcNdSEjc="
+        },
+        {
+          "title": "theoncologypharmacist.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHDGwrVI3FLE-LamLtUXx1lYjN3TlEsnbuztQD39Gy97QA4OlIa_XLzWKxY3oFNrWnYngEvQsjvwmjhQS8P63MHcOLMoNTUoDMQd6Of392N6V8_x6VSpkvKUmrkbMmDv3M-nUO71MIydysKNtsu_0gRxAX2phSGROoI9U6eXi3jrktbNZYKq6EGwofFwpqESCOAWtDxOFS9WLdur7yalbqVPyHq4f0Zu71gIYEptuLvddI6w3p8VET2GKW2A=="
+        },
+        {
+          "title": "oncpracticemanagement.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH0xn8glJd261zW2N1cUrW9s305IRiFkDALo2TD1IW8B5tbrnrf0usHklqS5XlmMlY2ooGG2UxxZzGw4wcc5hOBLah_5D7KyZG_Dcsn91r6hL4Obok6BgOiPtViXZDdWJ5N5d8c5Wx62I29hpSKYEFTjcmP_iZdwDXNLBK8S4xpMtN3KXwhkFmyKccmMpi-7o8C9t0tc63gQG7U8ByehTtikb3aQ4XJUz4PGI1UtSSocxybv7GWFl1dyAH6D2JXi7VCO3rFBKg-fBfVQ_yDN-uMszRm5086duHXD0rmNxD6oEocMKOJKFKDoikb91qO-kSeTD6PMRhNosHKbYb7_eDBNjwvkNlVx7PM8FNNtIrXT8aVN5vp0-0="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFtcarmj9mBBZbH0XnUzEVJuE-vdUqinfxZdZi7Rv5Iv6IS8u4U0nHlLX1vKzPaqHsH8F_WWcQaQdsx4ASiILobw4mWGsGFe25tMTFeAZV-yAYTWsK9e4HZq0brolviVClgEwihe9YFWKKEJT9xhhQWAZf5rTHQDUf_aEOpea9EJPr4e-htUKeUD6-Yk9WsdY8P9C-n8ptUHhWpBA=="
+        },
+        {
+          "title": "withpower.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd2GULnAg64Z0dhC-zVt-D2itELFOsZGFOiXTSZloU-rL8D8mtnOK9jwkKG_zWK70yagpMC30OzF7vYj1NEJGbS1x5LuU-79WiohzJhZ6PMySn4flPVwHAot0gPDwb5ehG9fJ9k8efN5X1cK1a0PROz0V2qEY2fEs="
+        },
+        {
+          "title": "ascopubs.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0RtiQs7RETaoyKSR2mXD3QB51xwiKEPqHLfoppH_jnljonNv1i-T8PiFLxeV0RlVo-AMCENvWjyozYgspuKptDyxQizh567vHdi0P-iyCOjVbyYkU_WWBbCvPm_k57rNB9iCJmILbtYDdojk="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBd6L6dXSdcG04UE4UVfvvAaqSg94wjnPY8HlbDIPHnde-XEwbxKkZFgzdmWPRNGufVZ6-JcO8hRnZgo5jXqNBcl2INUsjZZVuJsgrcnqj2dokmBTOpUjiqY8MU9CR0Ddd7NRe"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpQRLapRlPFg2jAbNuluhYbF7dPx_zB20C8Wiwlk7iuQl0iR10wEzIJ-PnHJJslD_liLwCOtXko-7OvdTM3Qvd4jINs8ZTAUtvnTr04citrY_xOF855yupE5KxHegJyLQmct3F5vIwQ8MmnEwL"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSw7KhCfVxi9I2iOnlvs3jbHKrQBD03Wjtl5WEDCBYWgpUUSnYklQzsCeyaWoK8PtuAReh9IIzOx_pOM8yFHk3kTHnXZQkEHmSfz7txQbFexqsCoCurGUkCjOyXCIDppfj8gSApxbuToDcUVvgYPOkL5FqSr0HQ0yEEKOZyXWHA2_6ceBQs0hzHjcWoMZ1Gtw="
+        },
+        {
+          "title": "ClinicalTrials.gov: Brentuximab vedotin + AVD (Doxorubicin, Vinblastine, Dacarbazine) trials for Hodgkin lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hodgkin%20lymphoma&intr=Brentuximab%20vedotin%20%2B%20AVD%20(Doxorubicin%2C%20Vinblastine%2C%20Dacarbazine)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Brentuximab vedotin 1.2 mg/kg, Doxorubicin 25 mg/m2, Vinblastine 6 mg/m2, Dacarbazine 375 mg/m2, on days 1 & 15 of 21-day cycles",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 150000,
+          "monitoringCost": 10000,
+          "sideEffectManagement": 7500,
+          "totalAnnual": 167500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 223333,
+        "costPerResponder": 186111,
+        "icer": 197295,
+        "prescriptionAccess": null,
+        "qalysGained": 26,
+        "vsComparator": {
+          "comparatorName": "ABVD",
+          "costDifference": 138000,
+          "dominates": false,
+          "qalysGainedDifference": 1
+        }
+      },
+      "name": "Brentuximab vedotin + AVD (Doxorubicin, Vinblastine, Dacarbazine)",
+      "nnh": 11,
+      "nnt": 14,
+      "participants": 8000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+6.2 percentage points",
+          "baseline": "76.9% (with ABVD regimen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-Year Event-Free Survival (EFS) Rate",
+          "percentageChange": 8.06
+        },
+        {
+          "absoluteChange": "+7 percentage points",
+          "baseline": "75% (with ABVD regimen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Complete Remission (CR) Rate (End of Treatment)",
+          "percentageChange": 9.33
+        },
+        {
+          "absoluteChange": "+10 percentage points",
+          "baseline": "78% (with ABVD regimen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "PET-Negative Status Rate (Deauville 1-3) Post-Treatment",
+          "percentageChange": 12.82
+        }
+      ],
+      "remissionRate": 75,
+      "responseRate": 90,
+      "safetyScore": 30,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+1.3 percentage points",
+          "baseline": "90.9% (with ABVD regimen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "3-Year Overall Survival (OS) Rate",
+          "percentageChange": 1.43
+        },
+        {
+          "absoluteChange": "+15 percentage points",
+          "baseline": "60% (with ABVD regimen)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Rate of Resolution of B Symptoms (by Cycle 2)",
+          "percentageChange": 25
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Peripheral Neuropathy",
+          "percentage": 55
+        },
+        {
+          "name": "Neutropenia",
+          "percentage": 45
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea",
+          "percentage": 35
+        },
+        {
+          "name": "Hair Loss",
+          "percentage": 35
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "6 months",
+      "trials": 19
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG62BmJlJOZ7rk1okbksluom0ySt6nJMWF0CkXK9IS3yqrJbGVPeYO_VnRs9GNIXKE-4CZgY3C3LHefw-U4iX1lpNmzox5B6uUct5SO2aYpOkdy-FdC42uKfzXiyF5hWSJgiPRU"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGG8wRxG97qZx49R_MnIyykKcv3HU4jPpegUudRe_u9bgdAmtFw8vNA7ifncIgRrjNit9rShDdDBRjQBESYsNrXuXlNN1DSnyAfQfxmKaYJsh1VfgbqYDvM8V_ZqxT2hMGPPIuBvmVxSNtwYyk="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE3NrcNbSmtOdADf7k3pgebmbVTCwm6DorWE_t6f6uX6eMkLofMgpwiERKdvn4hYY7gGObMZZyPzPaytXIYyh-L67FzHfUAmzdIPyREtnw7j51xW6m6dsrzEanyg0xONpV4MR08orKKdi1UbBQtjKkTkXPrnBC4XESeJUWGGgqE176U8uFJkn92-XIkbtx5P5pUZc9ql9bBJ-GvEZPv6UULjn55"
+        },
+        {
+          "title": "iiarjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGPJi01sFj8ARnUKxfdqsuXqEXeaLrlucoaEM96SuukhsSuHHvY-5zHGBux-qzECtoUYhn-PkuMd8JdUXJD-PEfIgXiGf8KKFB9aoPn2aZqbY5Bg0DnC3w8Ibtri_o13K73EtQOR9JDQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE99jrYF7YpkEOZ8RaG4wREd2shC_WqPilpCRESAbTQ2bjzTgjDLOWyXI_uWZ92DyFOWyScsYz8-A1wel8B4ptswlEytUmqpRal0hlbq1Ern7lx3hNnm2D0YmLcAprr3NzUxPTh"
+        },
+        {
+          "title": "rockymountaincancercenters.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwsWSz36DL4_orTmFfnDSpBghWbGVTwrddtbLWtF12-iivjcAaLCAUl_CSDeE7_enRHmUI9b4ITHd_gkYZLZ_aUiEW14Tp2Yuww5Bjlm1esenGrV1iA6qwx5bXLdj3V3hQKPtxbKpfnIDTAoz7-msqv9DO7IgQcgNgpCpT7vGRfvCC9VD-EiA4aBM2gFa7Db0kwSzWybrxX_komRRs_IAGVmxM2L915P6p8aIg-nFuCqlpoO5jYdig9FYmPpmatVA0tQ=="
+        },
+        {
+          "title": "eviq.org.au",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEl4gNgsBIQAiDMN_roHUKrwm5NEkO49eNSWSN6C_jyuLnigFI5wHSOVIIjw-SQfOhWRThUoeucy5xEU-M1kJwKELBOELbEDmGt6Z8LWEi3N0wwYMI2KSh4sHONYpbP0_1Iv5Sn7PahFkV1VfvBkx_MkIhjbscVmq0hM_g76lxOwy3w530EI4ojxZ9w-n-bo_DLGQ1Z5vY96cl8I5saEG44RzKpfw=="
+        },
+        {
+          "title": "onclive.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXNm4NPSnNTBSEJzF52lwn9r7XClaKp4TmdHDdRCfDQmGtSe6HRvpPb1Cpa0XIhtJSdcxdLk2t0ReeBW4a4arGHZuvXWGvDiueYG8k0NIj78y4ohUzpSMEawXbSQMnfjfRlZdAxPOkhhPbG4uNJ96-knNw73wi6wuvosA6GvWQnA24bmd1PODNgDVEQ2msk70="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECnmJ46ALUlB3fy0kTwSggq8fO5HW9fQVf2G-hlCrgo6lKMiGl_07d1D4dQgDSVSujLXkpgGxA_XE4DAVyDnZewuF-vvWf7P0BkntPI-InEvo4z9XREI6n8AbAyQtAVtw0HgFY0cJmzww_c4g="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1kB_2wXe9T509LGrP9x8K8XyFeRuROWDsJxNO-bmunrx5HphVj_yGPmUB8wD2QBaK_31XT2CN6ubhQ-G4avlQ1K1NB0CvLLzB91XvKYBmkPZVhT1IEDn_saSUumqsy34qYq9HCbaFnuWtPy8="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG368-kBYMuRU1pIH0pPcbKind1toD79GqACzzYTNJUQQdr1oW9pw8KGcozpNhJxFXYTZ1zG2PQHgHKCwTwycNL64PcF5eL0f6QxDQu453gjtdUNongf7qwhw3PlHlygjt9zl_w2sCWMtORsWaUFIqHgJb_r1S7bINrgPDgaNAJln8reTJXnzYIIcNAWvNY008VsRF6g4W53Eekr7OiNHttA1ulDZBPIJXE_nax8g=="
+        },
+        {
+          "title": "cancer.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELsIego2pJg2L-E-JvKVDYaRR6Rvvnlt7QZ6nHZ-NxPnQqDYnh3v8rZT_FQ0ny3K7uJnPOL5LsU3c1AuKIa8sN0bzy7Ha3ET_E6VLqaJ0A-sxUdq-Iylu6TH8dk_1bqbRqcXNFp-BDEAK_smjE7VZ1nV55UU4Mar9BOCWOKSoIKyJ6y5Vbp5o="
+        },
+        {
+          "title": "aaem.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGwJq-kWkAm0sebPnKHl9mXIc5dpvRmrDegkLtqSGEF2vZRIEys2DPS8yti--VJnEd7wQG6mkE7TE-BeEqsZOgeB6N055aTGV_hM3q5-kw9pPCGrDPRvNdia5H7rQd89_-O_1qSh1fmmmwFvvoWkVeM1-KPv3cdtaSTKJQB_d2dsOPnNKEiqIgg1P160UD2FIPc5reQQf-C8v4TVsDFg_3v3V4AyBvfVyeVvgSFVooVmbwFvFDm2Q=="
+        },
+        {
+          "title": "aaem.pl",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhY1PwOW8zc_nr0q5SSWgronzWBS08FGw108LMKR-UKb0U1dE7shan8Qwi2ILQCGtuLE8nKo-8nigAN7twJtt-OtB8c8vYxldLZfqJObfcyyj7yKOwJnDH9R2inWe_yZTCgg8neU6IvFYy6d-eHtNkMfTPT_qjd7l78mv8DmKK0LXM3xtsHg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHT5i8IkLJ3k7pSp8Yto_3QZq67lYpUcBA9FmgpUGWzZdriXUbO3xzl85ev8Fc6cELng4tFfCMvB0KGZZpUOuaq3VF627nvhCdXvlLTRLG8waGqKuxfOfs017Mt2JQ5Eir_DAfk"
+        },
+        {
+          "title": "ClinicalTrials.gov: External Beam Radiation Therapy (EBRT) trials for Hodgkin lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hodgkin%20lymphoma&intr=External%20Beam%20Radiation%20Therapy%20(EBRT)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "20-36 Gy in 10-20 fractions",
+      "effectiveness": 80,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 5000,
+          "sideEffectManagement": 2500,
+          "totalAnnual": 42500
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 50000,
+        "costPerResponder": 47222,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 1.5,
+        "vsComparator": null
+      },
+      "name": "External Beam Radiation Therapy (EBRT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 50000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-8.5 units",
+          "baseline": "10.0 (typical for active Hodgkin lymphoma)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SUVmax of Target Lesion (PET-CT)",
+          "percentageChange": -85
+        },
+        {
+          "absoluteChange": "-7.0 cm",
+          "baseline": "10.0 cm (example sum for multiple nodes)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Longest Diameters of Target Lymph Nodes (RECIST)",
+          "percentageChange": -70
+        },
+        {
+          "absoluteChange": "-4.9 points on 0-10 scale",
+          "baseline": "7/10 (severe pain for affected patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Pain Intensity (NRS 0-10 scale)",
+          "percentageChange": -70
+        }
+      ],
+      "remissionRate": 85,
+      "responseRate": 90,
+      "safetyScore": 25,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-90 percentage points of affected patients",
+          "baseline": "100% of affected patients experiencing symptoms",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Resolution of Systemic Symptoms (B symptoms)",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+4.5 points on 0-52 scale",
+          "baseline": "15/52 (moderate-severe fatigue)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "FACT-G Fatigue Subscale Score (higher score indicates less fatigue)",
+          "percentageChange": 30
+        },
+        {
+          "absoluteChange": "+10 points on 0-100 scale",
+          "baseline": "50/100 (average for cancer patients)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status Score (higher score indicates better QoL)",
+          "percentageChange": 20
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 60
+        },
+        {
+          "name": "Skin Irritation",
+          "percentage": 70
+        },
+        {
+          "name": "Dysphagia (neck RT)",
+          "percentage": 40
+        },
+        {
+          "name": "Pneumonitis (chest RT)",
+          "percentage": 7
+        },
+        {
+          "name": "Hypothyroidism (neck RT, long-term)",
+          "percentage": 25
+        }
+      ],
+      "timeToEffect": "During/shortly after treatment",
+      "treatmentDuration": "2-4 weeks",
+      "trials": 13
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEx398w4-84-CESJz6a9zkXgKoyZ7zSzr_dFafDRQv0RC7dAI3m57b3_Yj3otT3X2uhghyvBSNyi74UgDCFZRGM3ZDBJNCwOkYUGTPzOv1z2ValMCBeeRKaegoq3HluqiNXzVNnn0zsSiwxKXriOHbPmKlL9IrWMKPL5teowqCkzdvqzX33UwjyH29yPdYBqG2K_zu7Kcn6PLijEK0gctZl4X9eCijA02pGPt2Hwg1SvlLOFL7fcC_pHGQ3XPs194W-hmj3CNGbq4WesOjcsX5YkEuxTw=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEUYKSqeZeb6yKse2HCD44hyjxeAkZuePvENexkLs_ErucgThooX1bGlI4F-uQXmwlK4KWHhrb6b0YK3riWP5Px_CRs6j_ldX-qSKWl9_6TYyqNST3Q8LxAdZy8_LeqZkMzaQvE8m7Rbzfgoy5T"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5xVbNNlRCkFvqOvo4WqPSjvTYp_Qp3kfJXHxEulDyDv870ZklSB_WNBLyQoGyMpe2Ll5T-TVcxv-vwTwPnr1qCfhKYjjDtuXNRzF9fq3EaxPl8hT9PxDU_MkQOmaTSyBpddIQBU0498aB6pJY7KN4pLMWNQ5WReuuTsdueT6RbHfmjti74E8JzOoyT5Mxxt8gXPtc1UGcbmKhEPMF5-Za0s9h6xs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVM0w9Gxaw999izJVE87iIgZuBU_KnVX2fHSO44EGv7QEKNx3kcJ3TZFvc9LCCgN50ZGQ8AFOrmWgBcfsuNWV-rJwTDtKhyXGPq3sAgnevv22MOtsT0VNFAbuVzGyr7hMVVtu005CE1ACEz8M="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLfWHWd6Bg1rlPi95Ou91dN6bN1WAjvfP01fHUoZ077coB6wmStN71dL-erm62xfxDPWwYEI9W-hilRWFcNAgg1g3ZBMUk6XaQvO9yqKh359NJyr5zNwJG3OdPuBL2QG-shc7U"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQHsgGk-UHEbk_iZjdPTAQKribq91ogGUv5mQBLmTkU374NoJ8t9Xqvvn45qypC6x4SGWbaqeGbeKdoAcnzLDNww1CSqltHJwa4OpGT3tfj5qF7hPlU7RSCWTe8chlGAvukbvNhOX_RMSEKq4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLoQNS3IOR1ZZ-LqV-YdLKycAiAG5hsG3vlcKYU6tJ7kTwLq16XVZkMB1TpZB-MemOug15DH5Y7X3xs9D1NNty-zdJbeBeuKBKseLhpLzs4SdwKydX60iz5x9KrhOqWqwtWBmJ"
+        },
+        {
+          "title": "dntb.gov.ua",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoIieGiTFc_ObsfJbXS45HybNX-DK3FosY-FZIkIMbBc0vZEfCajz5t47a1dpB-koYwkFK5rh3Evqd_HKls691NLCtKXrgUXjBGJLaOy5ywIZqmsHFUbv-v5TbsEw3NSxd5wHPV_g="
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZl8uYrt5TzI07pJoIeGMKYjrLXBpEzuQ4Unx1t2D55A7ch31143eQp4mXKlP1Ee9avJDkxStRtvtQIRqGs2DChNH1D0cETEaPmK9T6JAfhZk11dCz4dPj3APUwpXruRfM6Q5OrjpqS2-yACr-ueVlJqH9ExH6wiUkZgwOxTxOhrI4j2GJxKwTpeeW_Y6-KN5lRnFkQ7h8hNQbFn_N40qKip9f612EzqrJjFdfFbLp"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-PWuB2n5ChX0gykmz02ZoJ71Ust202YlKTRTxul0VNPvqBjz18zRqlnxEKJjySS-NMu4Q9AESrqIjwulpX-G2MrRI5Pe8ArS98kkhNSAvYyDvy0alYBLOQ3wn6uRj3V28c3sGXOVcP_FoS7mi7hRoqAuAug_Wp6__4Sv58sV7NIJn_a_EOYPJt4TaLtXfaGc="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1Qv1Vl3HJel5u1rIwlFaD51XfJCUZxJXgu6s8Uib6Xgt3u8QDazsfPkWILfphg_vUdQDXUoBC9TkT1BY0V0Ln0TH040QCVcvc4Z5x_FOOkJDlV0QFmw5mbsAFNIVO5iXTO2deis7wC4Iejk0="
+        },
+        {
+          "title": "haematologica.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEktTwwDJ13o4HkpTjDkho8ZVa5r1QtuPusfBL6zxgcopCAAwbEcwXW5R_MEOMkoV8fzPShIS-yeqnRClE88TAUYgtUREv2FiFv147pnZoap8vzwPX4FGMZPftiS-Dkk8b_0jE5Hsj5aCJYRtByNSpkXsKKa251"
+        },
+        {
+          "title": "esmed.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGc09wSNqyC0vIxiNphUWVFlktTgeI3018aGuSLorYoOUV_jNpP3-MGWEIp3HsMzaEtmDdG-2vrwRH_3tMELYTugo9hZnwAN4YzOgwqu1Wz3N2556WQJZS3SyEV3o842-HQ_V_yXc8="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEpa8CWOx44ED0JzpjC7m4D8v_2vuA3MKJzlmIZ6TGwMpIxGFa8E1CzhIzENfLfg-i2PqWdAz0_bd6rYYQZmm31xU42elj_EAlfsxiZsLmvjWqkucRTEonX5gjE7S7ADjFleZy_Zai0pL1WAUM="
+        },
+        {
+          "title": "ClinicalTrials.gov: Autologous Stem Cell Transplant (ASCT) trials for Hodgkin lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hodgkin%20lymphoma&intr=Autologous%20Stem%20Cell%20Transplant%20(ASCT)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "High-dose chemotherapy (e.g., BEAM regimen) followed by autologous stem cell infusion",
+      "effectiveness": 75,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 10000,
+          "monitoringCost": 15000,
+          "sideEffectManagement": 20000,
+          "totalAnnual": 195000
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 487500,
+        "costPerResponder": 325000,
+        "icer": null,
+        "prescriptionAccess": null,
+        "qalysGained": 5,
+        "vsComparator": null
+      },
+      "name": "Autologous Stem Cell Transplant (ASCT)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 10000,
+      "phase": [
+        "Phase 3",
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "+40 percentage points",
+          "baseline": "20% (estimated without ASCT for relapsed/refractory HL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Progression-Free Survival Probability",
+          "percentageChange": 200
+        },
+        {
+          "absoluteChange": "+50 percentage points",
+          "baseline": "30% (ORR after salvage chemotherapy prior to ASCT)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Overall Response Rate (Complete + Partial Remission)",
+          "percentageChange": 166.7
+        },
+        {
+          "absoluteChange": "-135 cm^3",
+          "baseline": "150 cm^3 (example for active disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Metabolic Tumor Volume (MTV) Reduction on PET",
+          "percentageChange": -90
+        },
+        {
+          "absoluteChange": "+30 percentage points",
+          "baseline": "40% (estimated without ASCT for relapsed/refractory HL)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "5-year Overall Survival Probability",
+          "percentageChange": 75
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 60,
+      "safetyScore": 20,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+0.13 points",
+          "baseline": "0.65 (active disease, scale 0-1)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EQ-5D Health-related Quality of Life Score",
+          "percentageChange": 20
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2 (symptomatic, in bed <50% of the day, scale 0-5)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status Score",
+          "percentageChange": -50
+        },
+        {
+          "absoluteChange": "-10.8 points",
+          "baseline": "18/30 (example score for active disease)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Lymphoma Symptom Scale Score",
+          "percentageChange": -60
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Severe Myelosuppression",
+          "percentage": 100
+        },
+        {
+          "name": "Mucositis",
+          "percentage": 85
+        },
+        {
+          "name": "Infection",
+          "percentage": 60
+        },
+        {
+          "name": "Fatigue",
+          "percentage": 90
+        },
+        {
+          "name": "Infertility",
+          "percentage": 70
+        },
+        {
+          "name": "Secondary Malignancies",
+          "percentage": 5
+        }
+      ],
+      "timeToEffect": "Engraftment in 2-4 weeks, recovery 3-6 months",
+      "treatmentDuration": "Hospitalization 3-4 weeks, full recovery 6-12 months",
+      "trials": 117
+    },
+    {
+      "citations": [
+        {
+          "title": "lymphomahub.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE_6CFNFHJp-ULDeKbjlQaWH6q0vat9NMd_dOe0sp-yWntekcVegRpr7kXVLlSLfWG-9sgoK64nX4SiuCFPjDCqXXuAY2oJ_96VUwmGNPBmTVx28nUvViEeEekFUStQleQBpXDdEQ1uK2hWNzewRIPpyX6pigs_qPCr2x5XYAbEvLKSNGzpk4c3uGVtk55hzizgWN7y98Q8BNcWIE90vzJYSwIbMk-"
+        },
+        {
+          "title": "ashpublications.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvQ-z8fXXNKbwg3MufmOJXgSQDfyujf9fEl7vebMDdcxRvjXj3aApIWiEezR5OwB8FutLZu7FeIj7eIoDtiwvK02aZ69p7kf38TLFdwtuCbKtGgcfvQrgyOlfCanFDIqanxvuY_hZlNDaofzZ0EbtUnV3P4hSeZZsohQZxmHQMoaCPj5YLkjNVo5vGMc4pmyb6yKZ7YE-oh0-1tuo7FapgxPRkJfdtWw7IramVkQHOqDHNgQk4rw=="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBDpX8OgC9LVloGUHF8hj598JA0_mKgtWDqncgtB5t1ia0dKAmoRY9YH6rSb9duMLcJTmN36yZP9nJijhFeMfyjg5Lgrzl5BlffAxdcdbL5h2Ae5gYpMwKoKztcq2nxeYDMWb4kiwRxtFH35Lm-_64FqVIOJPxJ2C5ObcPe8ScHUcZaFgTl3xPsaBaGLsAG0clQO2qrfXGK92FjeyT1trZF6zxx4bUuYn6azJ_7I-yffw="
+        },
+        {
+          "title": "aacrjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGITVD_UaKbvdawS-H7VeI_oIQLPWLojBDx_OD5eNu2b0PQXe2parvBHvffpK-0eBo_-hhwBhpfn-MveOBg8YYW0-cHDXkFQWmoe8DNe9mkRKxTDo3c7HMccM41G2jUL1wtBcFx_E8gRlVBpZKQRz2XHBbU76ETM1W6KoxMWD7V9hezhbnXzhGKNzRlFSBp02VF7YLSOlACoDAhNVKqiZIGivE_EJB7-ZJM"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFS0Jhj_S3m7sJhlj3o3qtI9iIzL8B6gYJdIhpvxbFmAGGyZ_IC5GjgZc-iIaWQd5HctfFz-AE125gXNt3UqVCeXFoNpRG4YrPee9UK3cdO1aVGe5r4MQ16aPzF7rdG2Q6WEPO1LXwKhTGqUw=="
+        },
+        {
+          "title": "oup.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyHEH8LCOM1ER_5JivAc0gXdXTjyokFOT1S6KiqLRt_akQLPvVAn-1jU-O0yTBb2V0ANu2bxZ1CsbaSPxnf82ByUAmncYNAhlpKg8ZnLzQfruuiKHH0PBNs6B8TgR4oiglGt6pb_YcqZuLsMJJXYfSYOQYkw0q3FtO54o="
+        },
+        {
+          "title": "oncology-central.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4AEA8STcjUVYj6UWo0a2zME2pbLOvvqFGJcvvLt9abN7GqIm_GyXGTvU5vrqZN0eVffGlx7YRugUj9Lnkdw0J1b41aEud9D09W2uAX7ad7XFjZWDjK7pDXWDgShS5Myj7MbNOIsN6CIZlm9OkJYqAZV2lNV41VrbVATtDAFfA2e-UMHJuNZSOa5AA-pXSdeGWmtEpWVkB6Mclv3dgGrNucNKrGQC8ndHv9WFUJEYBYYsHZooz7yYYVCZUQF6Qn4HDVkyl"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHjMwVgVup9-yXWhKr-vIW-AYXr8LIm6YkIJMWOQUiqgu-Qrkk2xBwwFYNh3Y8TmbR0fYF33vYOj7NSQgpkUC-w44kjoPJN5S6TduXyZ40yv8O2u5byATNANdlvmYm_E7hIkwjew8Me7EbxUQ="
+        },
+        {
+          "title": "cancerletter.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFKGzKvSXKiEnXSq-F5x_brQMGPl4qRp9tbV-BoTq2fMU7s6pI9R9TJaROWo56Gzq0NlRUmbW4ACsuDWZZye8d_JriJRpu4EaWnRVZ97uCC4smzNS_N_TvUnz1sAqB2E05RpwGFih5C"
+        },
+        {
+          "title": "ClinicalTrials.gov: Nivolumab (PD-1 inhibitor) trials for Hodgkin lymphoma",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Hodgkin%20lymphoma&intr=Nivolumab%20(PD-1%20inhibitor)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "240 mg IV every 2 weeks or 480 mg IV every 4 weeks",
+      "effectiveness": 70,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 160000,
+          "monitoringCost": 7500,
+          "sideEffectManagement": 5000,
+          "totalAnnual": 172500
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": 690000,
+        "costPerResponder": 265385,
+        "icer": 500000,
+        "prescriptionAccess": null,
+        "qalysGained": 2,
+        "vsComparator": null
+      },
+      "name": "Nivolumab (PD-1 inhibitor)",
+      "nnh": null,
+      "nnt": null,
+      "participants": 3000,
+      "phase": [
+        "Phase 2",
+        "Phase 3"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-90 mm",
+          "baseline": "150 mm",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Sum of Longest Diameters (SLD) of Target Lesions",
+          "percentageChange": -60
+        },
+        {
+          "absoluteChange": "-14.4",
+          "baseline": "18",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "SUVmax of Most Avid Lesion on PET",
+          "percentageChange": -80
+        },
+        {
+          "absoluteChange": "-4 points",
+          "baseline": "6 (on a 0-9 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "B-symptom Severity Score",
+          "percentageChange": -66.7
+        }
+      ],
+      "remissionRate": 25,
+      "responseRate": 65,
+      "safetyScore": 45,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+15 points",
+          "baseline": "40 (on a 0-100 scale, higher is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Global Health Status Score",
+          "percentageChange": 37.5
+        },
+        {
+          "absoluteChange": "-30 points",
+          "baseline": "70 (on a 0-100 scale, higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "EORTC QLQ-C30 Fatigue Scale Score",
+          "percentageChange": -42.8
+        },
+        {
+          "absoluteChange": "-1 point",
+          "baseline": "2 (on a 0-5 scale, lower is better)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "ECOG Performance Status",
+          "percentageChange": -50
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Fatigue",
+          "percentage": 35
+        },
+        {
+          "name": "Rash",
+          "percentage": 25
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 20
+        },
+        {
+          "name": "Pruritus",
+          "percentage": 25
+        },
+        {
+          "name": "Hypothyroidism (Immune-related)",
+          "percentage": 15
+        },
+        {
+          "name": "Pneumonitis (Immune-related)",
+          "percentage": 4
+        }
+      ],
+      "timeToEffect": "Weeks to months",
+      "treatmentDuration": "Until progression or unacceptable toxicity (can be years)",
+      "trials": 14
+    }
+  ]
+}

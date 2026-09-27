@@ -1,0 +1,1681 @@
+{
+  "conditionName": "Diabetes mellitus type 2",
+  "dataSource": "mixed",
+  "lastUpdated": "2025-11-04T17:18:37.880Z",
+  "treatments": [
+    {
+      "citations": [
+        {
+          "title": "jocmr.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUQbIm8T1sofdo_vqD5hSzvC3f3f4BId5LEZk3F9qCg6gjf5prXnv7d_WDuVMYgesypVnfH08V6joRQb0pdsGBr5OmWU25DVWd35Ybets9ryRQmu8C4PvZNieG2MoHYA1DWVFrU_RLMsGrQnIDSaWebCYmCds3MA4lg8g="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8lk_3r2bKPx66oSaGT5bHl2-3Oq-NJSVEYS_3aN33BxiI2XgO-_dCFrnTZOKs4dOLF254XwSqRp5RpEAS0ADDtYwCKAN-sTKzhEV1bgCuCUvo9YaI6QXHh5tw4FLp3VtFMMaoBSuIybX10CeELhg_AikyWiAEicKKhUFdEsL7ljC867XNxSX4JC-QXEriUXcustcFvnvQt_QvENdD0wQG5hA="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHDk8onx4_wApR454pazYM28h68zVkCAcJqet9XcyR03mVYHen_YJ7MieflysskMxNcyaN4wRa3iqXDCmS3pSOu380Eosd0ATBIEZTLwlOUT52xEeoq0rmeU21MsfzueYn3wEvE"
+        },
+        {
+          "title": "frontiersin.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHd3fg1LXKcYLBUFoYQldCMzi0NAL1XUnWZL19tenkH4pxUTsoO-N5p-F9xOc6sHRXSMh0KbGAQRNvjI6gj7lEyAR-lz79s_2kl5gnx-3KiuKdJS0cCNrVA_iGLO4-ex5olP1cMIQhaIqPjlcuEdOizXid57MLoc1RgoauarfYqodFp0Blnytm2TCD80euIzJVYy335jf4="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhBtoFLDtDZ0BGsnAYZRJBVgsP0TrPAcX82aaDUZFnMF8oikFlUmuAmtiAEeh0FYfiUtqXsC7vDryM54Z9Nned9m1fo6MSz9dH8-Et7qRCWm__lIblTx62zPbMCEukedoXxPcUcfProu-X27zCZZIhtiaUbn4DzfIzpgJAKeC00Z365JtpqlpWpFxFWVbOPturSA0WGpA4W_4Anny7NbjWTRJXlcYF0P9x3ZyYpzFO2c-p8JPt6DssTlDZs2bRjbkkT0LB9dtCISi9hxWYFDJuswksupjYUR7VtOzBGpiPSblmNDPrj5658e9a3R8vIOLQx210S2ddqeCi1DuL7WmBSVXCq2-PDpvysnjE9GkQAg=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Insulin (Basal) trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Insulin%20(Basal)"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "0.2-1.0 units/kg/day, individualized",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 6000,
+          "monitoringCost": 1000,
+          "sideEffectManagement": 200,
+          "totalAnnual": 7200
+        },
+        "costEffectivenessRating": "poor",
+        "costPerRemission": null,
+        "costPerResponder": 8181.82,
+        "icer": 180000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.8,
+        "vsComparator": {
+          "comparatorName": "Metformin",
+          "costDifference": 6685,
+          "dominates": false,
+          "qalysGainedDifference": 0.1
+        }
+      },
+      "name": "Insulin (Basal)",
+      "nnh": 7,
+      "nnt": 2,
+      "participants": 500000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5%",
+          "baseline": "8.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin A1c (HbA1c)",
+          "percentageChange": -17.6
+        },
+        {
+          "absoluteChange": "-60 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose (FPG)",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-40 mg/dL",
+          "baseline": "220 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Mean Daily Glucose",
+          "percentageChange": -18.2
+        },
+        {
+          "absoluteChange": "+0.5 events/patient-year",
+          "baseline": "0.5 events/patient-year",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Incidence of Severe Hypoglycemia",
+          "percentageChange": 100
+        }
+      ],
+      "remissionRate": null,
+      "responseRate": 88,
+      "safetyScore": 55,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Body Weight",
+          "percentageChange": 2.2
+        },
+        {
+          "absoluteChange": "-0.3 points",
+          "baseline": "3.0/5.0 (higher is worse)",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diabetes-Specific Quality of Life (DQOL score)",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-10 mg/dL",
+          "baseline": "45 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glucose Variability (Standard Deviation)",
+          "percentageChange": -22.2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypoglycemia (mild-moderate)",
+          "percentage": 30
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 8
+        },
+        {
+          "name": "Injection site reactions",
+          "percentage": 2
+        },
+        {
+          "name": "Lipohypertrophy",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "Immediate to hours",
+      "treatmentDuration": "Lifetime",
+      "trials": 392
+    },
+    {
+      "citations": [
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEnQkUoA8VTg2HuccxJP0DG3BdKyrD9lWsVus11GdEhRMe0b1L3E6Ha5gcPUJxNHB5K9SVW3EtBn767HxXSg5b2JExyXARZmbSC_5s_CbFiIAQBI3L_OYhDzvVT8jZ8ON1hgBi2ThZgct-M-kv7uaUhxmQQgeiTV7mxpMpjW3lWHW-1mM1522obwwRd3HciOLBggJTunbfE_csoLIxFzUwJ1jIe4kKAZQBXsFLDJAkA2t08EFAy39ppBl2jErwZO4nUDB0-zN7dcM3u-_gju5CbP0RijhXQS0EWRA=="
+        },
+        {
+          "title": "openaccessjournals.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGugdyIStCrZ84pBLWybKkdXyLKCJuGMf-z5-KmAMxbU0erTvQNAlWc0l18NSlDfwIMOfvA3fPWFoRAjcamTnrRyAJj6nBLFKvA89iWG6Ecq2fpE4CXqelt7xp2hcQ8D1gCCYyMgxo8uYZiR11RXkkrxlaBT-TiF-QC5Th6Y9VO3s2ctO7jXu8d3XwzWBjzmhOB_AEiOvI1GHFhOh0TvuirIxW841Q61wh8F5CpeOwHe6z1BmBDXi6TSmIkOlwylAZ4nb5m4uo8MhG2CYvpUJaBu7JwO0wwCkVv7PKBhcsf_ptn2FA="
+        },
+        {
+          "title": "theijmed.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5XNhnPX11xQ-IuZ4GVpbEffHpxo7ivRxDzZdY3Bt4yE_pPu9r_oNCkTU0tGHGDWpJ2dktfKHq1wTAYYRfsRZzC4qc4WBZONizzGBSKgQQR0Sn0VQFMD8AuadRZeabQcSAdSEFxZ_k1d9Ounvvq_Ee_uSsWyjnFw=="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzt3sVvY5tIueazzb7i9NQx7TVEBj6nK7nmtEoh8qYvUf5RVGuAj9WA-a4fnafbBpLigeZpsjmYk2Pocn-iImDypXw1EE25GSm49XbfYSQAQ1y3nefr5I-e5czC8fkSH8me5ZPrMwJVdJLsM4L0FCQlz2tx4ocloAZvjYi5RNOayMm8YbfxorZPkaLmP65NHUtyBdp7deqsCUyjcprdbJY8m8="
+        },
+        {
+          "title": "healthcare-bulletin.co.uk",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3Su18944Gx9kDox5BU0lJfpSzNuI4T26liWkw0LPjtrPirX_XFjq0Wp8a9pZzzeUC7rbAtyxhxUGDzwHu7zby0qHQF00Hv0gPikIUDcXFHv4UrLj71SNmmi7XS8AUhLzqJoa6mR9oZ_lDpkibJTJ4cD2ieKZWwgUQp9_0_20_EWqk_KNLf13iOEvX79dk81vqtA6YWyAb9kHnKlt3OoqtvWN5zIcs-cUy6qw1C3OySxHY4RaM8DRdCYKvlooR6xiScNPR8Rz8kfOZVi5XIGOEOvnzWZhQzhhFBqhRsArdn8kFLg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj8eKEDWK1zwFdTBABUudMAiDH6p4YMElhsNvOR-X1CCYhyKI-RD-XyHGW55XgLlIPZFpBECE3FHisI7xcX8fFID_Gdx3rMHikO-o2IBpJsk6fdVB_nTTZLRvaRUC_2hS5mX206rixMIPZ7xpWqDgequVHZosMqUg554Ex29iqNjIpdYrernnrce52FUDN5NcOiqSTJYBql53Nr8uKl2BinDcpoy4x5HzLVlEAaNI1yzGwOUPx0Oi8rUgWvTHTfEa8gZ82zdJvsZNOikL6XSLWPOyWE5P6wM8Mi7w7rEtYhWQNAlMLcgOBk7H-wrzmxqueKJnvFWmr"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQECZR2T7opC3ALBK5f9yQYbe4ctEgqPD1_xEhJ3Mla-2XzH1X_dVLCI90B20vB8lAV1JSLFLxmfeiTtF3oFPWqDfG1HCIdtkbVwcwvBSxCx6M6y2nzy7MpQPidK5CfQw3z4Tjvwgg6cVwU9SBw="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAxqu80a9k2b6Upn0L72Y1cWqYWc5Px2Onjt3qKtOgnrT6dkUQUe0nVqq0qAafqBf-i2e474qNDlcUE9N4SkwXxQ8wC_A8LvqthdVRZBujsw0xkwlzOQwuXsgKLpuywXRl9Vr4LGTKkaUcMbE="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsXSWOMv67Hqo-jzuXG6npmlYbrbEB1WObAl0uJDLmMwsnFwAcKvarLTUlZs7WjP5_mssWx8nlrKZK5Do4yGVLRUdXqBBZIVrloWBYIZ-201o1cv4GYisK-vDzlhaFNo5-cufeDNwPsd-BOLQ="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFXy9Zaw85BP8zag5P-MGtSP10zKhk3VlHI3gTFbMR-UVxi8006Ea76lyqBFGYB3Py9A4Rzn0oMALAZdgfaJyePziVbictIi7dGWkBK8xivV5qw2P17megaalUfZWJRCjTIdlt-fDoUruaPnWY="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfO1D8zXXJGHd-HuxMjLLmKmmAWUv5p_yIYxhjUoK41refbm8wg2orXkYb2FToq-q0c6UXRWPtFC7kDFZ9p7Kk5xUcbX0umB4_3m-jMgkGiNRs3hftQT_edtgrb-qowoPG3zPgOcFdLmJ3kUci2O1COspy4JwO-sQYU_To7LKm9bU8p_US--dVhJ-QN_vo3rm0L8BmKdq2VgcDDYhpiG842N8HZIwGgEnG45dAJVoi"
+        },
+        {
+          "title": "ClinicalTrials.gov: Lifestyle Modifications (Diet & Exercise) trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Lifestyle%20Modifications%20(Diet%20%26%20Exercise)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "30-60 minutes moderate-intensity exercise 5x/week, calorie-restricted balanced diet",
+      "effectiveness": 92,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 0,
+          "monitoringCost": 425,
+          "sideEffectManagement": 20,
+          "totalAnnual": 445
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 1112.5,
+        "costPerResponder": 556.25,
+        "icer": -5000,
+        "prescriptionAccess": {
+          "annualInsuranceAdminCost": null,
+          "annualOtcCost": null,
+          "annualPhysicianVisitCost": null,
+          "annualPrescriptionCost": null,
+          "annualTimeCost": null,
+          "earlyTreatmentBenefit": null,
+          "missedDiagnosisRisk": null,
+          "misuseRisk": null,
+          "netSocietalLossFromRxOnly": null,
+          "otcAvailable": true,
+          "prescriptionRequired": false,
+          "preventedComplicationCost": null,
+          "requiresMonitoring": null
+        },
+        "qalysGained": 1.75,
+        "vsComparator": null
+      },
+      "name": "Lifestyle Modifications (Diet & Exercise)",
+      "nnh": 10000,
+      "nnt": 4,
+      "participants": 2000000,
+      "phase": [],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.2%",
+          "baseline": "8.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-35 mg/dL",
+          "baseline": "180 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -19.4
+        },
+        {
+          "absoluteChange": "-15.4 lbs",
+          "baseline": "220 lbs",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -7
+        },
+        {
+          "absoluteChange": "-8/5 mmHg",
+          "baseline": "140/90 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Blood Pressure (Systolic/Diastolic)",
+          "percentageChange": -5.7
+        }
+      ],
+      "remissionRate": 40,
+      "responseRate": 80,
+      "safetyScore": 95,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-40 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+4 mg/dL",
+          "baseline": "40 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HDL Cholesterol",
+          "percentageChange": 10
+        },
+        {
+          "absoluteChange": "+7.2 points",
+          "baseline": "SF-36 Physical Functioning score: 60/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (SF-36 Physical Functioning)",
+          "percentageChange": 12
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Muscle soreness/injury",
+          "percentage": 7
+        },
+        {
+          "name": "Hypoglycemia (if on medication and diet/exercise not adjusted)",
+          "percentage": 0.5
+        },
+        {
+          "name": "Nutritional deficiencies (with poorly managed restrictive diets)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-4 weeks for glucose, 3-6 months for significant weight loss/remission",
+      "treatmentDuration": "Lifetime",
+      "trials": 7
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8e2tSla-vLm35p1f_yAXm0UMqlDMyyINLLwjng_lo6SWBpTEDUgxnOxXX-lXA2imR3LdOH2x-zQc2x4Bxoq8kki55EJqLDZiBympbCpCp-hERoDsXh3uqoKuYNx5ciLp0tcPt"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtILe0BD1ZTslU8H4Muaul4iY0cOilJBWpl_1whWWZRf2nKY1L09fmaA4K5hKmPhmY_qcfSWis9VPhxal873KH6z_vGsKUa2H1xr6yE0JRCTKfCcCVnwN-d7DsVeJ7ISBG-dVXE4Bk5PMiWstgeXhFeoJwDuk9QkghToV11AUQia_Cz9dVLy_HL2fzbPejn_pFkQ8qz8jV8ovmPBRcQ8vntL7cVSnIvpw-vwG34kcHY43i_dcyNoW9"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFfWUIyaDLmTxUpLS8fizFauAySWi8Z4NK353qFRsywU2vOp06hd-DtODIsTugEK8pmUcJHtGwghQJrnXF0inHDv3g35gmPokFbN3K59xViPf2K_kIZBukFeDkSgKrMwgpBqZt4NFcldJhBX3ljgfHCarua-_Zbzla9Xao6YfL4buFiVaqChOTqeglhiP6U_W1lwQJ6Nfm_RxQu_zXgx_YjP2sVCaa40rrwJARzlzcQSF9jgD9LjYQNb06n6q7UzTB8S-JRPefaDhdpNvcVpbI98Q_scrNYFecTFqDwaWF_KFoHspJuLGOm1GUJWEAnABzoXbmexFC2PgSQoWr2aeXZFY3bdA_rjQU_iC_eywddHlPXIbEQbiUECDdnwfErFHrk6PE7BQGarq46pTYTPGPGaDQJZN8YKg=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLA4CEABPLxy0aV7lplvIfpBux3L0L8ghLFMBVPdg_r1POiNJO6ooboBhyXR4E02uTkibZI0pMjEBTBCulucuU8RQ7AiaeL_LG1lyqFCyp9HdnUJTgH9bqdCjlID5yk7Mm1v79"
+        },
+        {
+          "title": "cochrane.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHcPlWqzaJLqhcQVHRmVWX6Ybm2Xy7qLZYXEOIwMNcldPQf62fDNDnWg8G8pUeWL5KQKF9gZVFxvfnMsicEZlU_McelFqU_qidwSU2A2dnw3o2OF0vHMsatL6mHDVpAGHVtR79BaIsuUMi2O8-11qHPxE8qrUnr2RI2qKX6W_zSXDqUcWs54OyInRULHzatMBBL9TPLId0w1DEa3oHr1NyV3d2k"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLn95fj5TfDyoIbr7XN_rsU00kflnuL9QSwb8a_cTygpngB_SNrUq42JZnkR6rHcbkZ9AzDQ6RFBCpv8GBJIbME5XeRtHB09bcFxXTOcgES6LqOOqU5MSSORtYbb2A8b4-d_7JtgBrRA=="
+        },
+        {
+          "title": "mdpi.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjc70bwzr4Yg2YhczPEBZQhcfhqdL27V2u5cLiDWJrfmyVsRedJi6eV9E81f0NFuwTt7z8clbM04yQzyZ-HgRI2QfLRZKUJnXKWiaHGbiQ_ApbbTNcGux0gm_M6VSnGYpf0A=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMFq9U1sh3XN4Ay8UIW9rEhLE37xujcB4bItFiXLdmuy8xbpS9ovB-zSmaZVp_DRRsiIsNuDo3agsBPzGGNe_mUwY5oqFQ4L9SlU4NOYh2Zio_YUqOkl7U5hRo2JRmaOQYIexU"
+        },
+        {
+          "title": "ClinicalTrials.gov: Semaglutide (GLP-1 Receptor Agonist) trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Semaglutide%20(GLP-1%20Receptor%20Agonist)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "Oral: 3-14 mg daily; Injectable: 0.25-2 mg weekly",
+      "effectiveness": 90,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 13000,
+          "monitoringCost": 450,
+          "sideEffectManagement": 100,
+          "totalAnnual": 13550
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 135500,
+        "costPerResponder": 17371.79,
+        "icer": 80000,
+        "prescriptionAccess": null,
+        "qalysGained": 1,
+        "vsComparator": {
+          "comparatorName": "Sitagliptin",
+          "costDifference": 8000,
+          "dominates": false,
+          "qalysGainedDifference": 0.2
+        }
+      },
+      "name": "Semaglutide (GLP-1 Receptor Agonist)",
+      "nnh": 1000,
+      "nnt": 4,
+      "participants": 100000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5 %",
+          "baseline": "8.1 %",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Hemoglobin A1c (HbA1c)",
+          "percentageChange": -18.5
+        },
+        {
+          "absoluteChange": "-10 kg",
+          "baseline": "95 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -10.5
+        },
+        {
+          "absoluteChange": "-50 mg/dL",
+          "baseline": "175 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "-6 mmHg",
+          "baseline": "138 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -4.3
+        }
+      ],
+      "remissionRate": 10,
+      "responseRate": 78,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-30 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -15
+        },
+        {
+          "absoluteChange": "-1.0 mg/L",
+          "baseline": "3.5 mg/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "High-sensitivity C-reactive protein (hs-CRP)",
+          "percentageChange": -28.6
+        },
+        {
+          "absoluteChange": "+5 points",
+          "baseline": "70/100",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Quality of Life (EQ-5D VAS Score)",
+          "percentageChange": 7.1
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nausea",
+          "percentage": 30
+        },
+        {
+          "name": "Vomiting",
+          "percentage": 10
+        },
+        {
+          "name": "Diarrhea",
+          "percentage": 15
+        },
+        {
+          "name": "Constipation",
+          "percentage": 10
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "2-4 weeks for glucose, 2-3 months for full effect",
+      "treatmentDuration": "Lifetime",
+      "trials": 27
+    },
+    {
+      "citations": [
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHoUOfSfyCzwqK9HYeD50rCbaeJvQN6ak9j2EHBRlzu32nvIQ5IeFPKjCSHXVCb65kengOTPKHkr_IWCSTG7nIRUuf-OfG_6tt62ZLm_O3PERukMpt31zwXY4q321AhD21PnaVL"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6QI0Si7AR4piSNifIO1nRi8Ab9b74WL3mkC-NUArSZlea5vkwUMQDirz1tGXcj8Vgz-J8cfsa-qI2HoHAKtpBV7haDH1R32Kv9W901YpaSdsj2cM4nuv3nsL8Yksh7Fioi-31u9_Jq9V_zehQpOzM32ABz7c5RKn_4U83uCIQnTrTeyB1vY8-faT2I7QZP5buM8d0GXOWm6St51olVbd-_2SXAURTsxrvIcpypGDMmykFBkTY_kbzoe0rT4dMeT134yOCznMUz-MUmaD6"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWdWzKO9L0OFp8vCacgJYlymnjp8m4CbcLEulKsmw0vpShvX8VP1WuzFZMrMQWdyDQuHUIgvksyZ4AkPGlRQoFhVIsWZOuraVMb_ZxlIVpi5xadUcqP1I9m37wqEh_sqwW52dQJv0MC7TmjFQ="
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEhGNv7BtnkGA9kL5kCVB8hHAS5voFxnosF3QemEpj4w7kRE009Fh_zccCLcQ0gs9aS7jBu90F3KVW2QmzDAAGRkrSM08f5SRaJluKT9oa4rtPZ2CN5ay3MDuuN-gV3loJMNLpMONBofRtANoGnIzLiEnz6_wfH8hl2JqL59UoJImDIhWZ2DcysaRmkoh5l__FB-tpAWYzDll6aBNl2SbIwca2Nvy3-pzmKBDu9bGiv8_y53fhFyg=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQKFahoHV1IE_ziGNrMMS7Ns9drpghfp5QolJfReTL2jeQ6JPedfap7I4-ht-xI1gbOymWR2slzUtgY2UXdHqgKgGRpRoG0Xs676t04ewr0v54Rm5SroxF6O4ubHIp-iTGiPLf7sGYnsrGls2qe6HwtycG06F0sCPn66ffTbhe1XR_Z2azYxwCm-ufsNjo63trWFwQTnmE5UzVw97Ayo358Fk-DkyWGWTV7PhrjoU1alEe892ancbexuE3VZbrQmMP9e3-3T5LoLk3EBKIf0Uef8GEeW9R_IoPpgEokuwzynlj5fsMD8uZofUlErpW4fI0"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHER_x1tmWf9o1NzxAGyN7Hm8zGNcNo4uzClRfIM4-nJ6shXjXGt2iXXpi3j_YhZfN8gvc-o2mWQ_y6rZ8k9ossr3aFax3SI27peWnbvZMnRdYQJ0L6tDBFTN4GKFx3-6fa5NNP"
+        },
+        {
+          "title": "ahajournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNzJ4kUlsht7E1nbecfsJ0Rwwe8M3bDJrl8Mx1og98S_Kk5dUXGX0Pgxw4cQ6YdkW_7AlDMABPes3q1aIQ7q7MHJEaNnXXifSk3auIJNcpKKYSLZGfmFTcS8c37JSAeb7vUyq6_PCFfBbz3rGLci2pXFhclgzg7u4_Pxav"
+        },
+        {
+          "title": "acc.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzJnic05fPYlCz6sp7BuX3focHWy3L0xV9TOZhfayROTkk2x43ypp9_aDO6lfwiKb_yN3YTIZbPGy4MLObJ-IJVUIIoYh73xroerJ5PS8nuYtBijA0eBFSk5G_mHc7ERo7kW5KilElggBos2LbTOUketB-9h2_5en5zP87Mgth_AiF6gGLBYDRenmjWFd-4YOsBIcqtw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHZELhCCMtEBQStsIcShVF-5xGTqEhsrhxXqaC_ZjH0EIb6vem7CBi_kt73bmfLmy1Lj5U69y4wgzMLOzwdKpEsQA4BjsroE486AaTY8oBFkGnkGT1ymClvceYJs4E1eAqHdB73OD5-oxsXtqX2ta7D_LUVtmEY4QvocvQRGSpmH6Pm6eNxeaLZ63WAqGXXrTpbzURoko1uYC4wasWKP7d6lrdWrU526bGHyLLq9wR9Bdbp8aAMUXCymaOrzCvP7dt50FjHLj6ClwQw_mih-qK6WA=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE61dj28OPueWUaoZGmUdZ188Dg207WJlgXtH0IFbX1ZryRbIXYZ4t9exhUjRABLGLtzYTGhdl3JGQeQr2E65M1kmY0tGsnxSyC2cJk74_2fgYQ_78Lcy5_WEo_j78nWcBGOKvp"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGMw0RTIUBDjvJWypgT_z1SlDBoWLvrh7YERtg8IlMrqYzo5wQAyHN8lMTTjeUXHhfwDhToCmKMYg0JpCsqDQKzUgCKbdiEfZFvmpxHibXcWK3X32N-3Qpm8IDw0P2xKZrL4IKx"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEV4DLteAECDuwSZ1p7Nhod3JTbSJd__-TDHPhGCpJbxDdph8aYbxPb6IMr8iwISSySPPubVoqeTIGiYjEqlWHD8qF8vWMKEq2l-Kkv5zC7YTg2GVFP6NmOoLC71a3tPgw_9u8K"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFc5yYEBvo4nhhNl8I-EAfnY2E3hF3_YE_XtgczvM8vmMjVm86iTyGj_l8gWRvLPhtM1RdWRZrZu0fX-YJRFMyAXnyKzly3q7g6SDLSlG-kwJchdpnA3HmCohdefRn3IiIIGrlRcGQOts8ZA7k="
+        },
+        {
+          "title": "aem-sbem.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEs4aqTlYo9M3JbeKxXqBX_X1YDpY1xzti7TCf_Dro2tldEkSQ9VBgJn48IcY4eAnDTFfdyw-o6hUb-EnLqK6IlRMMe5LLc_InU-Wk1uZmXTn-FVIcakwULiVuA3aker57dhmSEGqgUrkSFOqf5G-VERnPFeqBHrO5MWgoN9MKOBkbp9NVeVsDxNnP4-QXpuLpKMIDZeUY-oZF0yMu_I_gu-LGEY4ofY27vpcfQpvvenqgNKKR1jnlcAvH0yjBQtxoFP8hJ-Ol0w-bFoOZG"
+        },
+        {
+          "title": "ClinicalTrials.gov: Empagliflozin (SGLT2 Inhibitor) trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Empagliflozin%20(SGLT2%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "10-25 mg daily",
+      "effectiveness": 89,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 9000,
+          "monitoringCost": 450,
+          "sideEffectManagement": 150,
+          "totalAnnual": 9600
+        },
+        "costEffectivenessRating": "good",
+        "costPerRemission": 160000,
+        "costPerResponder": 13333.33,
+        "icer": 70000,
+        "prescriptionAccess": null,
+        "qalysGained": 1.2,
+        "vsComparator": {
+          "comparatorName": "Sitagliptin",
+          "costDifference": 4000,
+          "dominates": false,
+          "qalysGainedDifference": 0.3
+        }
+      },
+      "name": "Empagliflozin (SGLT2 Inhibitor)",
+      "nnh": 15,
+      "nnt": 6,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "name": "Number of Participants With Hospitalization for Heart Failure (HHF), Broad + Specific Definition"
+        },
+        {
+          "name": "Number of Participants With Hospitalization for Heart Failure (HHF), Broad Definition"
+        },
+        {
+          "name": "Number of Participants With Hospitalization for Heart Failure (HHF), Specific Definition"
+        },
+        {
+          "name": "Number of Participants With All-cause Mortality (ACM)"
+        },
+        {
+          "name": "Number of Participants With Composite Outcome, Including Hospitalization for Heart Failure (HHF) and All Cause Mortality (ACM)"
+        },
+        {
+          "name": "Number of Participants With Composite Outcome, Including Myocardial Infraction (MI), Stroke and All Cause Mortality (ACM)"
+        },
+        {
+          "name": "Number of Participants With Myocardial Infarction (MI)"
+        },
+        {
+          "name": "Number of Participants With Stroke"
+        },
+        {
+          "absoluteChange": "-571.0 Participants",
+          "baseline": "815 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of First Prescription of a Respective Modern Type 2 Diabetes (T2D) Medication According to Prescribing Specialist",
+          "percentageChange": -70
+        },
+        {
+          "name": "Number of Patients Initiated on a Modern Type 2 Diabetes (T2D) Medication Who Also Received Concomitant T2D Medications at Study Index Date 1 According to Prescribing Specialist"
+        },
+        {
+          "name": "Number of Patients Initiated on a Modern Type 2 Diabetes (T2D) Medication Who Also Received Concomitant Cardiovascular Disease (CVD) and/or Chronic Kidney Disease (CKD) Medication at Study Index Date 1 According to Prescribing Specialist"
+        },
+        {
+          "name": "Baseline Characteristic: Age According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist"
+        },
+        {
+          "absoluteChange": "-49.0 Participants",
+          "baseline": "432 Participants",
+          "dataSource": "trial",
+          "name": "Baseline Characteristic: Number of Patients in Each Category of Gender According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": -11
+        },
+        {
+          "name": "Baseline Characteristic: Body Mass Index (BMI) According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist"
+        },
+        {
+          "absoluteChange": "+795.0 Participants",
+          "baseline": "10 Participants",
+          "dataSource": "trial",
+          "name": "Baseline Characteristic: Number of Patients in Each Category of Race According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": 7950
+        },
+        {
+          "name": "Baseline Characteristic: Age According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist"
+        },
+        {
+          "absoluteChange": "+207.0 Participants",
+          "baseline": "433 Participants",
+          "dataSource": "trial",
+          "name": "Baseline Characteristic: Number of Patients in Each Category of Gender According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 48
+        },
+        {
+          "name": "Body Mass Index (BMI) According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist"
+        },
+        {
+          "absoluteChange": "+1067.0 Participants",
+          "baseline": "3 Participants",
+          "dataSource": "trial",
+          "name": "Baseline Characteristic: Number of Patients in Each Category of Race According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 35567
+        },
+        {
+          "name": "Baseline Characteristic: Age According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        },
+        {
+          "absoluteChange": "+8.0 Participants",
+          "baseline": "35 Participants",
+          "dataSource": "trial",
+          "name": "Baseline Characteristic: Number of Patients in Each Category of Gender According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": 23
+        },
+        {
+          "name": "Body Mass Index (BMI) According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        },
+        {
+          "name": "Baseline Characteristic: Number of Patients in Each Category of Race According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        },
+        {
+          "name": "Time Since Diagnosis of Type 2 Diabetes (T2D) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist"
+        },
+        {
+          "name": "Time Since Diagnosis of Type 2 Diabetes (T2D) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist"
+        },
+        {
+          "name": "Time Since Diagnosis of Type 2 Diabetes (T2D) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        },
+        {
+          "name": "Clinical Parameter Relevant for Type 2 Diabetes (T2D): Percentage of Glycosylated Hemoglobin (HbA1c [%]) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist"
+        },
+        {
+          "absoluteChange": "-104.0 Participants",
+          "baseline": "453 Participants",
+          "dataSource": "trial",
+          "name": "Clinical Parameter Relevant for T2D: Number of Patients in Each Category of Percentage of Glycosylated Hemoglobin (HbA1c) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": -23
+        },
+        {
+          "name": "Clinical Parameter Relevant for Type 2 Diabetes (T2D): Percentage of Glycosylated Hemoglobin (HbA1c [%]) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist"
+        },
+        {
+          "absoluteChange": "-364.0 Participants",
+          "baseline": "642 Participants",
+          "dataSource": "trial",
+          "name": "Clinical Parameter Relevant for Type 2 Diabetes (T2D): Number of Patients in Each Category of Percentage of Glycosylated Hemoglobin (HbA1c) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": -57
+        },
+        {
+          "name": "Clinical Parameter Relevant for Type 2 Diabetes (T2D): Percentage of Glycosylated Hemoglobin (HbA1c [%]) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        },
+        {
+          "absoluteChange": "-22.0 Participants",
+          "baseline": "36 Participants",
+          "dataSource": "trial",
+          "name": "Clinical Parameter Relevant for Type 2 Diabetes (T2D): Number of Patients in Each Category of Percentage of Glycosylated Hemoglobin (HbA1c) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": -61
+        },
+        {
+          "name": "10-year Risk for Fatal Cardiovascular Disease (CVD) According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist"
+        },
+        {
+          "name": "10-year Risk for Fatal Cardiovascular Disease (CVD) According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist"
+        },
+        {
+          "name": "10-year Risk for Fatal Cardiovascular Disease (CVD) According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        },
+        {
+          "name": "Number of Patients Per Type of Medical Specialty of Other Physicians Involved in Treatment Decision According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist"
+        },
+        {
+          "name": "Number of Patients Per Type of Medical Specialty of Other Physicians Involved in Treatment Decision According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist"
+        },
+        {
+          "name": "Number of Patients Per Type of Medical Specialty of Other Physicians Involved in Treatment Decision According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist"
+        }
+      ],
+      "remissionRate": 6,
+      "responseRate": 72,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "name": "Number of Participants With Cardiovascular Mortality (CM)"
+        },
+        {
+          "name": "Number of Participants With Composite Outcome Including Hospitalization for Heart Failure (HHF) and Cardiovascular (CV) Mortality"
+        },
+        {
+          "name": "Number of Participants With 3-point Major Adverse Cardiovascular (CV) Events (MACE), Defined as a Composite Outcome Including Myocardial Infarction (MI), Stroke and Cardiovascular (CV) Mortality"
+        },
+        {
+          "name": "Number of Participants With Coronary Revascularization Procedure"
+        },
+        {
+          "name": "Number of Participants With End-stage Renal Disease (ESRD)"
+        },
+        {
+          "name": "Number of Participants With Estimated Glomerular Filtration Rate (eGFR) Decline"
+        },
+        {
+          "name": "Number of Participants With Progression From Normoalbuminuria to Micro- or Macroalbuminuria"
+        },
+        {
+          "name": "Number of Participants With Composite Outcome Including eGFR Decline and Progression to Micro- or Macroalbuminuria"
+        },
+        {
+          "name": "Number of Participants With Bone Fracture"
+        },
+        {
+          "name": "Number of Participants With Diabetic Ketoacidosis"
+        },
+        {
+          "name": "Number of Participants With Severe Hypoglycemia"
+        },
+        {
+          "name": "Number of Participants With Lower-limb Amputation"
+        },
+        {
+          "name": "Number of Participants With Acute Kidney Injury Requiring Dialysis"
+        },
+        {
+          "name": "Healthcare Resource Utilization (HCRU): Number of Any Medical Visit"
+        },
+        {
+          "name": "Healthcare Resource Utilization (HCRU): Number of Any Prescription"
+        },
+        {
+          "name": "Total Healthcare Costs - Finland, Norway, Sweden"
+        },
+        {
+          "name": "Total Healthcare Cost - Japan"
+        },
+        {
+          "name": "Total Healthcare Cost - South Korea"
+        },
+        {
+          "name": "Total Healthcare Cost - Taiwan"
+        },
+        {
+          "name": "Number of Patients With Any Type of Cardiovascular Disease (CVD)"
+        },
+        {
+          "name": "Number of Patients With Chronic Kidney Disease (CKD) by Physician's Assessment"
+        },
+        {
+          "name": "Number of Patients With Documentation of Estimated Glomerular Filtration Rate (eGFR) / Urine Albumin Creatinine Ratio (UACR) Status"
+        },
+        {
+          "name": "Number of Patients With Chronic Kidney Disease (CKD) by Estimated Glomerular Filtration Rate (eGFR) and Urine Albumin Creatinine Ratio (UACR) Status"
+        },
+        {
+          "absoluteChange": "+3108.0 Participants",
+          "baseline": "450 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of the Different Types of Cardiovascular Disease",
+          "percentageChange": 691
+        },
+        {
+          "absoluteChange": "-159.0 Participants",
+          "baseline": "245 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of the Different Types of Congestive Heart Failure (CHF) - Confirmed by Echocardiography",
+          "percentageChange": -65
+        },
+        {
+          "absoluteChange": "+180.0 Participants",
+          "baseline": "736 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With Any Type of Cardiovascular Disease (CVD) and Without CVD According to Prescribing Specialist",
+          "percentageChange": 24
+        },
+        {
+          "absoluteChange": "+998.0 Participants",
+          "baseline": "327 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With Chronic Kidney (CKD) (Patients for Whom CKD Was Reported as a Comorbidity) or Without CKD by Physician's Assessment According to Prescribing Specialist",
+          "percentageChange": 305
+        },
+        {
+          "name": "Number of Patients With Chronic Kidney Disease (CKD) by eGFR and UACR Status According to Prescribing Specialist"
+        },
+        {
+          "absoluteChange": "+342.0 Participants",
+          "baseline": "812 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With or Without at Least One Cardiovascular Disease (CVD) Type According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 42
+        },
+        {
+          "absoluteChange": "+1391.0 Participants",
+          "baseline": "276 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Different Types of Cardiovascular Disease (CVD) According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 504
+        },
+        {
+          "absoluteChange": "-128.0 Participants",
+          "baseline": "164 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Congestive Heart Failure (CHF) Confirmed by Echocardiography According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": -78
+        },
+        {
+          "absoluteChange": "+55.0 Participants",
+          "baseline": "380 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With or Without at Least One Cardiovascular Disease (CVD) Type According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication From by Endocrinologist",
+          "percentageChange": 14
+        },
+        {
+          "absoluteChange": "+349.0 Participants",
+          "baseline": "362 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With or Without at Least One Cardiovascular Disease (CVD) Type According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 96
+        },
+        {
+          "absoluteChange": "-62.0 Participants",
+          "baseline": "70 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With or Without at Least One Cardiovascular Disease (CVD) Type According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": -89
+        },
+        {
+          "absoluteChange": "+1524.0 Participants",
+          "baseline": "221 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With Chronic Kidney (CKD) or Without CKD by Physician's Assessment According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 690
+        },
+        {
+          "absoluteChange": "+796.0 Participants",
+          "baseline": "386 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients With Chronic Kidney (CKD) and Without CKD by eGFR and UACR Status According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 206
+        },
+        {
+          "absoluteChange": "-88.0 Participants",
+          "baseline": "966 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Employment Status According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": -9
+        },
+        {
+          "absoluteChange": "+1215.0 Participants",
+          "baseline": "124 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Family Status According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 980
+        },
+        {
+          "absoluteChange": "+1675.0 Participants",
+          "baseline": "50 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Insurance Status According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 3350
+        },
+        {
+          "absoluteChange": "-93.0 Participants",
+          "baseline": "438 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Employment Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": -21
+        },
+        {
+          "absoluteChange": "+511.0 Participants",
+          "baseline": "55 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Family Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": 929
+        },
+        {
+          "absoluteChange": "+590.0 Participants",
+          "baseline": "40 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Insurance Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": 1475
+        },
+        {
+          "absoluteChange": "+9.0 Participants",
+          "baseline": "491 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Employment Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 2
+        },
+        {
+          "absoluteChange": "+671.0 Participants",
+          "baseline": "56 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Family Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 1198
+        },
+        {
+          "absoluteChange": "+1037.0 Participants",
+          "baseline": "2 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Insurance Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 51850
+        },
+        {
+          "absoluteChange": "-4.0 Participants",
+          "baseline": "37 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Employment Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": -11
+        },
+        {
+          "absoluteChange": "+33.0 Participants",
+          "baseline": "13 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Family Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": 254
+        },
+        {
+          "absoluteChange": "+48.0 Participants",
+          "baseline": "8 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Insurance Status According to Type 2 Diabetes (T2D) Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": 600
+        },
+        {
+          "absoluteChange": "+1429.0 Participants",
+          "baseline": "134 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Status of Type 2 Diabetes (T2D) Medication at Index Date 2 According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": 1066
+        },
+        {
+          "absoluteChange": "+647.0 Participants",
+          "baseline": "42 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Status of Type 2 Diabetes (T2D) Medication at Index Date 2 According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": 1540
+        },
+        {
+          "absoluteChange": "+732.0 Participants",
+          "baseline": "87 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Status of Type 2 Diabetes (T2D) Medication at Index Date 2 According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": 841
+        },
+        {
+          "absoluteChange": "+50.0 Participants",
+          "baseline": "5 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Status of Type 2 Diabetes (T2D) Medication at Index Date 2 According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": 1000
+        },
+        {
+          "absoluteChange": "-16.0 Participants",
+          "baseline": "17 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Reason for Discontinuation of Type 2 Diabetes (T2D) Medication by Country",
+          "percentageChange": -94
+        },
+        {
+          "absoluteChange": "-21.0 Participants",
+          "baseline": "29 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Reason for Discontinuation of Type 2 Diabetes (T2D) Medication According to Type 2 Diabetes (T2D) Medication Initiated at Study Index Date 1",
+          "percentageChange": -72
+        },
+        {
+          "absoluteChange": "-4.0 Participants",
+          "baseline": "10 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Reason for Discontinuation of Type 2 Diabetes (T2D) According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Endocrinologist",
+          "percentageChange": -40
+        },
+        {
+          "absoluteChange": "-17.0 Participants",
+          "baseline": "17 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Reason for Discontinuation of Type 2 Diabetes (T2D) Medication According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Diabetologist",
+          "percentageChange": -100
+        },
+        {
+          "absoluteChange": "0.0 Participants",
+          "baseline": "2 Participants",
+          "dataSource": "trial",
+          "name": "Number of Patients in Each Category of Reason for Discontinuation of Type 2 Diabetes (T2D) Medication According to T2D Medication for the Patients Who Were Initiated on T2D Medication by Cardiologist",
+          "percentageChange": 0
+        },
+        {
+          "name": "Number of Patients for Each Type of Physician Specialties Involved in Decision for T2D Therapy Discontinuation According to Prescribing Specialist"
+        },
+        {
+          "name": "Time to Discontinuation of Type 2 Diabetes (T2D) Treatment According to Study Medication"
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Genital mycotic infections",
+          "percentage": 7
+        },
+        {
+          "name": "Urinary tract infections",
+          "percentage": 4
+        },
+        {
+          "name": "Polyuria",
+          "percentage": 4
+        },
+        {
+          "name": "Volume depletion/hypotension",
+          "percentage": 1.5
+        },
+        {
+          "name": "Diabetic ketoacidosis (euglycemic DKA)",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "Days to 1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 69
+    },
+    {
+      "citations": [
+        {
+          "title": "elsevier.es",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGvFerBXAft6W5SZWLp8k0qjZ-1jNwJcJlEzjnPjTrdTbmv_KSdVaw2o9q7azW20OsD9FO7GXzdyZz1AdyvASZdbHmNEAqel1WnkriG0FtrfRksO-nVSZDVajPT8uPHf7bIOPEuvFreBHvFrjGTfKZUBohor9B5DXr49Yfz8X3xBRFJ1TBjNXGv1tfkv5QWjCKmvdwmOqtshPlSEg-DH8drw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEOSpG1YKx9CU7aFFxSI8xpWqppvlWnAPw0rF_8dqs9Zr8L8MhZrFfDa2e1HgU7KSs_wiTkG9_M1Gz0JL9OsW9YfV5LYOvqF8EKtQ3gA85WTeejN24x2aZwMQWkLh67m9KqMEN4P1aHqaC3DYSWrr_MG0rXXl6od2iyUUvjcKl0JKrCG0gdkH7WJVs4cLHEBgz8290QsQmXR1D-6fq7hT9LEl9s3HAaZ3P7a6UdjIoHxUYyq0okMncESaIh8hkswAHGoTelJ1OSTMHlKyL-FazpNxzUM07sWKvFK6Vyc6no7ggTymgETdUJkSXUQfSYZ-EN4N1bokj6PmqhPxjIJEolL83vZFFiiw728yDukvCtWW6muWzXqjLlGlHJSqJb2ZQ="
+        },
+        {
+          "title": "amazonaws.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuZIZT-vhYIj42vY09R9BJDiSJC_d2EPSt4mLAGnvgBYEYxzGd4UAW-QdZfMvq0qg_l_nXnF6eSyHLGUHUzHhavy5y5Gc_LO_E20AaVinh35Kaq1C_0hJRI-VitE0tUqVaikfuoIVGgVNGdBrw8KlIWhvMs8y1bDHiXClYSqlVyXmXRvWbu2esiG4O09LjVnwRY0L3fug-hF_m7Ik10NQOML8ojiPoxB06zcmg"
+        },
+        {
+          "title": "journaljammr.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEsLeGi6vjArhpGb6JIiLpyK6XsGg2lhbYGYpBoSCqF20QmMMxWoCQc2KMWRn91RAHAduTyAeyB_ucf0JX48a29FtV6AcHHGTQ6nBl7qZIG2mGnRDsOwfKAXtaBTsMeJbo-NPRu4Nd4C0n4bxrknQLOH2nIA=="
+        },
+        {
+          "title": "wikipedia.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHm6xnoSjOuPo2yhI6E4Ct4JJ5qeMT4mPfbsGls_3lCU1bKcQ2VdN4BaT7jeH2VIbM4GuWmQ3pXmAXqkYGn8TTyLZdYks9A7LHbGsJmPaQi9ExAh-8XQHPEQaz3n7pja9Gj"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCGh5Yk0P4NzEY43jMmfGeE2L4iYnwgMiUbJgoXh93DtQdPkyGFbxjOeFnrhLktTZafssgiKFImDTn1ABtFGwPQcAsBW6231XkyjoUgKyoZ_5UA51-QsRtqF-kXK8IFHppdwg="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiwDkyfzGEx358rsToNtb8_BmYxDDjUrCkejqqhvR0P-MCz_I0Nk2YZjiToMAf6zYqF3Wa8UTcrVTfy8CgHB_nz6aJJDU7WkFWzEsB2nkO5IKYMDgaYmVGKJJRvCMuONLnbBE="
+        },
+        {
+          "title": "emjreviews.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHTfuewloi_zp8UZ4ttb-sSmS5W4wfmQRilD0i07uFRDO2J4s1zv60bJwHOF78AlTUCu6msuWRFYzifp9DrhTzLaoC2wo8lUjdnqFuQ3eN-4Ffxay-ZioPJSZZHDVI8GlH9McdbbILC5j4I7GwDMaGVH9Cs8UhtKubLTaFb0X2CgQtxcRmU26QP2cr508YXqmAo6mNy3YPoeb48BbWp498Ph1Wth24m_7KCKAuoZmcNQ1jK1vxB235kW-_JDQT3-4kK91tEbStntqih7dd4qge9dpSV8-wK8hlRf6voQG0eQIOIf3RXM1owtDaa2KnAT5rJzHLYGTwSarqOmOt4bWuzWQ=="
+        },
+        {
+          "title": "acpjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXPYAUGVpHjSI10HTsT0BaYHAL1t9enAJikMQhNgQqcSZSywjhbgN9RIOPj0FdvDV5S7c4hw2Kj79g9bVcTAvf5ZwvytsC4nGaMliWi-RkeMxqStS3nlqQkALM6kXvPu9faoeG1jyYX0ch"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN6wPQWLlFLrMBdL1biyJRoywFS_J9RA_L2zON2_CMWeUIK3FfdYLwqg4oPcBhAAEFe8ck2mfry2ODUNjPtHYFNvm9R6favB2ryYPawnj7ey9YwDsqzRlVVJEGe-jM2tggx4mmyFzBL5qk87yu2f-Yj0_HOBl-1s_9jFd0eU3GnuLDLk-7mr1y1GxAGj8Mri6NBcF4HkIZNbaG1dSFiltqnuGhMqYYwsBXTaJ4g_HuBwLnMWmXwraD2KfozMkHzmBPTY0WXbSfyAXiikTdJBbEuBoQPhKIpGjum8BlP672bdktnXU="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQP2eyJ6OxLQSg3GFCceyZwezqVVm5ITzBSrZaprsBGxK5sRoeuIS35cboMGr6jvd4X9NN2oOsEgzdgVcOoU7cayBQ5Xs-DDwef_B4O6qjCp3J279EaUplJABb-hJZ5UPEjcs="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHSwrK_0fmM1VxsctmAgaBT0rSRgIB07ySkBSWnXPPtcrEbEXgNpVBa3Kv7WQ2ocBHuWrKeWEZtZYysVed78tm-X8Jvg9jsvNcoHSOS7P1oQT22AVVchA3HxcxgkHbEKzWw6MMrkKAM4l-9ZhM="
+        },
+        {
+          "title": "diabetesjournals.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGigckBMLGnn05P0qLUpAJh4M1PrbLrnq5IG4wy0qypu3Md8_taaql1_-6OcLoTZ7524u-1j1dDTtc3r--gmGP5DrNiuca4zLOCFCUVEpsTihy0p2v0C_FcxeQQZCvMus5vH0aYKzyDEYgsL-6W2kZSvPS1Y7MTiIDTLg58N0fTQtBXdxzlUQEIM__3OdbP03UMaYrkfHxqsXkgxj3EsoswGu5YhfI="
+        },
+        {
+          "title": "ClinicalTrials.gov: Metformin trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Metformin"
+        }
+      ],
+      "confidenceScore": 95,
+      "dosageRange": "500-2550 mg daily",
+      "effectiveness": 88,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 40,
+          "monitoringCost": 425,
+          "sideEffectManagement": 50,
+          "totalAnnual": 515
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 7357.14,
+        "costPerResponder": 686.67,
+        "icer": 5000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.75,
+        "vsComparator": null
+      },
+      "name": "Metformin",
+      "nnh": 10000,
+      "nnt": 3,
+      "participants": 2000000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.0 %",
+          "baseline": "8.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -12.5
+        },
+        {
+          "absoluteChange": "-40 mg/dL",
+          "baseline": "180 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-3 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -3.3
+        }
+      ],
+      "remissionRate": 7,
+      "responseRate": 75,
+      "safetyScore": 65,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-7 mg/dL",
+          "baseline": "130 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "LDL Cholesterol",
+          "percentageChange": -5.4
+        },
+        {
+          "absoluteChange": "-18 mg/dL",
+          "baseline": "180 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -10
+        },
+        {
+          "absoluteChange": "-5 mmHg",
+          "baseline": "135 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -3.7
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Diarrhea",
+          "percentage": 35
+        },
+        {
+          "name": "Nausea/Vomiting",
+          "percentage": 15
+        },
+        {
+          "name": "Abdominal discomfort",
+          "percentage": 18
+        },
+        {
+          "name": "Lactic acidosis",
+          "percentage": 0.1
+        },
+        {
+          "name": "B12 deficiency",
+          "percentage": 7
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 1523
+    },
+    {
+      "citations": [
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFbuHgjFZC3F1agOIuU9XZuZ7RaQ9veyQdrqnHbNZ7bHtWm5PB6A33H9FIGpiXXWbedmNZgfBvzxc_udNUzvDJ7w5amhnbup_Ss-K0YKxqDWccSgPIbfBNDe2MgldZS5c1P4YCsHbJmFIlsvYIOzXaYHEd_B7uyEA5LV4CTYOhpO-KSYlRrX3WMQb18lnnN0XZIxVoKkBe7s0D9JnH7BzqznReWsFIYcMDVpj2RFivkytfnuxVBnmG9-eY5juY3wlF96gk0ySs="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRyTSAv2TtYQpa8IJeATybfi6vNyCmGugkn1JtzzS5VGf21cYK0pDdibqEzcjQjzZ7EpcjgWpLnmO9j42b0exCQWXb9ncfUy_M7X-L4P3kynKRu3YCWbfKXWD7BYr6Q96Z0dra1AiOrLAqqDZduv541JI1gkeV2c9v1lbtdI1587xkYTPVK-e3Aki0ZNES3nGMUyl0AWAe_njPbe4-X2eWzF73iLFSTixZg_dGxwWbrdA3zsj6CfJjiQqmf9xN-LOI0YGjqPtSiP9Q"
+        },
+        {
+          "title": "tandfonline.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFn7ACarmm2k78dpezL2snSxeK1wshy0uWLe5C3A6gKhu9KT-Mu86eXG_zOaWP3FZoLK6zq9OCtbrx0DhZZ07-mszAVYAlpEZ_s4GVDxywoajGdiyGONXQ_nqEVt1h0ESYX3tItqHBZfXezD9um99C08-0="
+        },
+        {
+          "title": "droracle.ai",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE2m6a7xvgpVSq_LX472NxxPZen_Bp5oOcF6DAnJ_VyhidjZNjgZbB3i8Dt4ffxxo1Xb8OCIqh98SvWXnhaku3wmO81HpifkfdFUWigiOhBZ_0DNCOY5NBAo2CdY_m3cxBPkppNoEUaAr27vsT4rqypHu8MD9fDZXe2Q-ljntYUar9uABHWcK2BXo3n0eYWU6oSCZxKmSkZHO4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH3Nrf2TKmSwoWWmAdax9m0YD9lMGewcsHZpZ5UFzrO3sWM09h7V8_Pnc3qzT9YNonLTOj7PdDWP6Xbe4OYhvP173CXEotNidr7KvJUSCyhQzVPrRArLwVIeAzzXRQPswHGW_sroqUGmw=="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkStY6kbx5HQme4jn4D6Ui4aneyxlJIrJBJuiD2P7H1EcyLrNiFRnrLDlj7te1bWHv0vaBidW7V2JFNtcehc5Zl3IZ_jnLvjXkFGxNs7WCMMnDTU22x2ohHv0lQetZHamYbDF6xsa-Hi0xSeaMksY684xXIKuQbxwUzASq7oN6CHqT66vOpunMHdbnnGAOCrHPMzjfcEjEViNeQSgC-vHVDNDlGkFkuHbYcCBjuBzY7aSoD0c9rlQPtkwwTnoomIvF-csAY_GrNo34oO-BFbXMLS9YBi-Hp_QXEgYtzwfSrlWXjWyWqqKQymmNebDwVnAy_bdkaYE8Ed4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG8A90OXg9ah01dFD51wu8oMxslHetvA9v50eKnTZNbARCnVwyhkTKrLTh55zkUaWBHaRTgvJxRXZYrnAWqGO5V8pDFI3T8U6Mr8pAo1thq1iMY-HvjgX6LxQ1YhM9rZYSn59lk"
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNoHiJEZhY0KKLvzEv2XiGPLwho38OllA5RTYZPd-qmwdiPWH1Y10X3IqLXeTto1Af8JoqIbp9kDoWDGDwebSzc3YB-jFuORqaMZEEuCP7ZmyIn_fVOvsoUGDcK1Qq8mDCQDWo5-9tEkdmYDFNO47uBcnEjROG98PgHemeItIqSl7K2Jz0GhJnxW_navSmRTbX0f_ejVgu0s3LZjfKOt0cIMcRr20laNnOEB3ENyt1cJKvlkBdGTW1GAsFQW7z918ANCT2e844sL8A7Fo0HfDstfDH1qCgjtVHJFMW9hZVQdnITNNcMkDD_VDkHPCyTq_Wi24_rVssdvHTlBktsUQrE_lpCiiNp8jhYH3mEC2XpysM-wJ9lbpl1Q=="
+        },
+        {
+          "title": "cmajopen.ca",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_Glsf6QXMqzJ3Z5aBS_jPOqP2LUjKG79z4wKSPgfJNqVxseNKcGEgmC3ZrbEv6DiIX4RXgs2j8CmGRjvEoAI3g9PXBKljZF4U3TTPIvJJktFEUsPR87TaPKBdGJj04EFwlpo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGUdluSjJruqexRsNtLaHFsUgUy6YN15jLFBw96XAsheqIp2Glk2A4sn6p4Lz4yUQws5H6yoxtc52WWSWjvcZ1sQwmhyrX4pb552yxtmvaDaxFcmw5gOoVgh44ZexXb09epF_dvBNOuUn-XYy4="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN-uHQmqdXLllRr-H0zPQs8IVvjFh37yVxT7MrqPeL0ynfO3AmHzIXRnxxVkYXra8wzKfAUwi3vUk3P12J9Sn9_95eUiizdtdCpwOcOrc8wKztXEJG-Wy_H__Mdu6yyKV3wAGA"
+        },
+        {
+          "title": "scirp.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEMkF6E9Vmo3QfEEIoeDGbqjuZt29_j4bST5kNHuPPFH5YJGY6RlOjJOfsRYeHanECf4A22zP66RZ1Kf4-wOR1i_WyKE1TqZl6G7ui3HClTMJNDnednBxRMlwws-FxxRF39CafxuwRJCEXa2K4LmcS7Smyh-2mwPw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEfJi7yxFMpw7vpjMsEi7_564mEle_7ZgNeGZNA6SdqryTjxkKzuiOoN3U8Yle0jrbp2mDS8zysUmzyCsP_aebtoMVDL-cT_7DLFVVxF7LBScoDBLprJHZMv8FezP9zlh0d9N8NC92Jj1asMwo2DRMjxTyEVO4JOnpJalbYR_XOW8HLc8cw20sqw=="
+        },
+        {
+          "title": "ClinicalTrials.gov: Glimepiride (Sulfonylurea) trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Glimepiride%20(Sulfonylurea)"
+        }
+      ],
+      "confidenceScore": 90,
+      "dosageRange": "1-8 mg daily",
+      "effectiveness": 82,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 75,
+          "monitoringCost": 450,
+          "sideEffectManagement": 100,
+          "totalAnnual": 625
+        },
+        "costEffectivenessRating": "excellent",
+        "costPerRemission": 20833.33,
+        "costPerResponder": 801.28,
+        "icer": 25000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.7,
+        "vsComparator": {
+          "comparatorName": "Metformin",
+          "costDifference": 110,
+          "dominates": false,
+          "qalysGainedDifference": -0.05
+        }
+      },
+      "name": "Glimepiride (Sulfonylurea)",
+      "nnh": 35,
+      "nnt": 4,
+      "participants": 400000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-1.5%",
+          "baseline": "8.5%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HbA1c",
+          "percentageChange": -17.6
+        },
+        {
+          "absoluteChange": "-60 mg/dL",
+          "baseline": "200 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -30
+        },
+        {
+          "absoluteChange": "-90 mg/dL",
+          "baseline": "280 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Postprandial Glucose",
+          "percentageChange": -32.1
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 78,
+      "safetyScore": 60,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "+2 kg",
+          "baseline": "85 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Body Weight",
+          "percentageChange": 2.35
+        },
+        {
+          "absoluteChange": "-70 µmol/L",
+          "baseline": "350 µmol/L",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fructosamine",
+          "percentageChange": -20
+        },
+        {
+          "absoluteChange": "+2.0 events/patient-year",
+          "baseline": "0.5 events/patient-year",
+          "dataSource": "ai-estimated",
+          "isPositive": false,
+          "name": "Hypoglycemic Events (per patient-year)",
+          "percentageChange": 400
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Hypoglycemia",
+          "percentage": 12
+        },
+        {
+          "name": "Weight gain",
+          "percentage": 3
+        },
+        {
+          "name": "Nausea/Diarrhea",
+          "percentage": 3
+        }
+      ],
+      "timeToEffect": "Days to 1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 61
+    },
+    {
+      "citations": [
+        {
+          "title": "the-hospitalist.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHQjCsaGuoMpCwasBbuB7sIQcESCQobMuy1tOJewxpdK3Bj5W06Pln95_HQM43ylEAulb421w0OcHqh8sXrcaqjFE14odlgwC-p3-v98u9fgxkYBILp8toy9M9bp4Jw1i9ecHqk-TNCkOOxKS2Nim37sWB8IdoHBFdyQ-CXZaFxgnWSpXVavKky0v0ek6I9tnk="
+        },
+        {
+          "title": "mdedge.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx98QaAVCXeVPS7ilZz5AArNihzWC83FNSUanK3mVDpibQtOXr8lNf5E3D42Yfm30CDDePgytDQ1L0EaPfUe6AP0yZQTmCpAhvp514x3X2j6T43ieqSbTf6g2KiyvWaCT76r6LmhQM_DmQ0TvhyYCm_NQ763R5BlI1cvuPKn-48nGKXI1k"
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKgi4mCNgk6fME4m6EdkJSvMAzLpWlz2FwKwCZrgxXnGJhEY9Lo0pep9eFgFiwcl0TPC3pLxdMMVQb_0ILoOHC0MeZll7JgPkzxrlLJHvy22vXshy6b47iSqUSbj5DUkbOOhgX36SMCA=="
+        },
+        {
+          "title": "e-dmj.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQCJi_otCgE69DNSpxKMw9Z0_NzoOcGWe9qgGChVlBgVq4Db8zrestuN9Fk8qGwBgkc-gE3U8iWAdOlpfRVv9rkQgvnJqN9R_bdxRjoHAxudsnho1Awcb9Nim84s_Y-aB8168RM-j3n7R3Bw=="
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6n6eUcFafyDUB2zl4sfQhwXA3T46Ekfx9H_jnjSvb4y0jp_omysPLB70OAK1Eab9ssAObJJ8kKOI8f3nOzAt6YTZ-4v_srT2Dwddu3pu71a2xLqgQWRv23M6JkD2ypr9FnuAVvRJy6CLt26FDApAQGIDdJf0FzhbZjOEUoZj2btREDNeX2dr2TdjaiTRr_EbSffac2ffnC8eQJgjSA-g8rNf62BaBrdOEX9ewVkx1BijaZgVATHQYn06cmtiDnITPf8mlJRorMQ=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHk2OAnuZJY8ww9tIx-ZS5y_fImgweyttotX82aa50o63V33R1irZJdS-vtiQuJpPz9ORrGOp6LaghUZd6x2vjhL6IM3ekGVRpaIKQFBmDMhMFf7BauaW-N9021uP8LzBJAp8CfVnQ9T1zO7E="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe28x78ze8xdGVHZ7-I3uBVe8Mh4y8kQVhrBswssskhZfxZ-65K_XbEKf1wyFa_vQvI5vHf_wqUwnnE5-r8Tk2fQQ59m5-pwrLtLaIUGeBmyzl1HYZKQfu1o7wTaI3MAXEGUt99VJygCToQQjAYoSb39SyQP78tGSfqB_qieS9tvLbBvusverHUbU3qocQNTNeWuXiNp_XIFWB7uUnRcNkMkYfThmrOloqlmRhNvUjXT56kmFjBukMLX6GqDKFtTZUNrBbh18e-mJkj2Wlf5erXmh9SW71"
+        },
+        {
+          "title": "semanticscholar.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEM-MsqsmrwRmZhPMq4ZKSMnmxyZKgKVL6rYTu2V-UgZ91DiHb_cL_qbERSXFgUXZ9DGHS2ZObD0jfFxXlkyUliOVwgyiCLH0sCLVeR8gmoFrDJQQCk4drQgvBTVQRVSnVNExNm8pVhKC8lk4Necq_kww6Wno_z-FMp9NAFPDQpOh9gC1d6ZFtR2A=="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO9mp3X46L3gw422tKBjTTdLu8S-p3GNxcKf5HQYqdydcxKYKmn9jrWaYFm5gr9RWuBj52p_xM9Zq2ZCiFmAyKRg2ddUdwp-5ag5K87Y59vVrP0j4Jn4w6iJXSjNv8fxmaOALPYoXX76OZI4w="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4pbscyU9M9kUrc_dMAaSD1GwZG1U--iwF-vNP8r0VN_5W9cqqKeb61bZbwMoERpsMB004eOdV7ishMlsMfog3v1_4K1g5YghOlHqvIK8bd21PkaaXHxfnm1F2ZXDf1ZqLKKm_TPiK8or8Yt8="
+        },
+        {
+          "title": "researchgate.net",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHggqPcrU-VDNkdO--yX0wN4RPi3F9rGEjnefXUbUDtQWQZJCIFDsXMp2xHjNBdh0ET_pHdKgdHYnmIDfW_gF8S793Jk5bPEhPhz0XaDD1kLkHULtGyJ6zc1DELAWc0Jc7CJ0YrUiQ0rllvBX3EUtNGKPmjCm6KfNwIUH0gDZx_R-lTiVKh-b7R4sbU_owe_CPcbrfP2t7ffJNCTXP8_xAhKEhxuIglRXrORFAgYx8fhe0EwcClC0wbTiqANagPuRJsz6r395c4Zbi0AcNSD60X-b9UIdWmMT3y8li1pp8GXkAc6voO67xxnjleMLk0uZF1BBPOqlS3a8CyULbcONHWoDZBPvOlpYSCrRo="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER8Tuf6qiZv6TundPCtJrmJYl3EIiV2t3ERI7mrIB6_TxbcnOdu42iJnR3GCcoAnH0DCwhnqbRwJ9ecKu9OZ4FxTfHarHqSfwFVkE4713DB7AyeDQz_SnpLbov1y0oAXju0tkrHaRxA0zCAYQ="
+        },
+        {
+          "title": "unipi.it",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF1Im07ppXgbVk2Ztdtpcf0AtGAtJXjXL-C68D6iQn62R9Fy0mGQ3v1YmQsQCkron9sxvEBfwm2Ife_hXqQibh5t6cmvxAXXg1TmOSk4OkI5BxSyf7yTPHPrTWlvxson2Ssr21vcVIXt0YDHZCF3-Pgb2VF545mHgVKuzM="
+        },
+        {
+          "title": "nih.gov",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIOOyU1KyLgWjHHut5AurRYG8hUWhCQsllArYtj2_0O-9MHAGNKCPqE9yq9S_8IIN3Tnd3Hi-zbdnuWc9O1JP63_4oi3CWKko4p2Rb8BFDolRWNM1K_Vro-8P06FolR16thVaB"
+        },
+        {
+          "title": "japi.org",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHgXXUb1GVj5BhgMjGIBUn0pPtdftxY_SNVpx2NLIWeaJnkRNP3AyrUegGvVW-Qaw3jcpB2saTwJqffOePeiRcHmlxVp6-OU-j938vZbZ2GSAV5rZqmtuP22-8MQOym1f91lqjXgA=="
+        },
+        {
+          "title": "e-century.us",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEN-Lb5AXzV5yoq4dTPr3ZJ8uuCwnyfrciNJH5ennxHafaQT1V1yiIStFTOGUxk1GPPEYIIt8HyGklF72v7X3YW1qFSAhVaezKo74s5dm5R8c-KeKPq5HGOPYgwX8wHuvMzRvUb3bEYES4AhxnptdQ6"
+        },
+        {
+          "title": "medpagetoday.com",
+          "type": "literature",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE8TzmpXpYAfARJVsJaImzBQXQ5Oq8emII2-c7ar_C3uZKLlCf-zWoIX0HFYUQJcsbi57IQsV6VToeDCO1p1IzOk-eJiWNnFdrj79eU_iGueqhIu3XkxGD57hzxXyIWdII3SuY2UC23jrLB08UaU2gNNfs="
+        },
+        {
+          "title": "ClinicalTrials.gov: Sitagliptin (DPP-4 Inhibitor) trials for Diabetes mellitus type 2",
+          "type": "study",
+          "url": "https://clinicaltrials.gov/search?cond=Diabetes%20mellitus%20type%202&intr=Sitagliptin%20(DPP-4%20Inhibitor)"
+        }
+      ],
+      "confidenceScore": 85,
+      "dosageRange": "100 mg daily",
+      "effectiveness": 78,
+      "evidenceQuality": "high",
+      "healthEconomics": {
+        "annualCostOfCare": {
+          "drugCost": 5500,
+          "monitoringCost": 425,
+          "sideEffectManagement": 50,
+          "totalAnnual": 5975
+        },
+        "costEffectivenessRating": "moderate",
+        "costPerRemission": 199166.67,
+        "costPerResponder": 8786.76,
+        "icer": 120000,
+        "prescriptionAccess": null,
+        "qalysGained": 0.6,
+        "vsComparator": {
+          "comparatorName": "Glimepiride (Sulfonylurea)",
+          "costDifference": 5425,
+          "dominates": false,
+          "qalysGainedDifference": 0.05
+        }
+      },
+      "name": "Sitagliptin (DPP-4 Inhibitor)",
+      "nnh": 10000,
+      "nnt": 8,
+      "participants": 80000,
+      "phase": [
+        "Phase 4"
+      ],
+      "primaryOutcomes": [
+        {
+          "absoluteChange": "-0.7%",
+          "baseline": "8.0%",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Glycated Hemoglobin (HbA1c)",
+          "percentageChange": -8.8
+        },
+        {
+          "absoluteChange": "-25 mg/dL",
+          "baseline": "170 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Fasting Plasma Glucose",
+          "percentageChange": -14.7
+        },
+        {
+          "absoluteChange": "-60 mg/dL",
+          "baseline": "270 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "2-hour Postprandial Glucose",
+          "percentageChange": -22.2
+        },
+        {
+          "absoluteChange": "-0.5 kg",
+          "baseline": "90 kg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Body Weight",
+          "percentageChange": -0.6
+        }
+      ],
+      "remissionRate": 3,
+      "responseRate": 68,
+      "safetyScore": 68,
+      "secondaryOutcomes": [
+        {
+          "absoluteChange": "-2 mmHg",
+          "baseline": "135 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Systolic Blood Pressure",
+          "percentageChange": -1.5
+        },
+        {
+          "absoluteChange": "-1 mmHg",
+          "baseline": "85 mmHg",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Diastolic Blood Pressure",
+          "percentageChange": -1.2
+        },
+        {
+          "absoluteChange": "-9 mg/dL",
+          "baseline": "180 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "Triglycerides",
+          "percentageChange": -5
+        },
+        {
+          "absoluteChange": "+0.8 mg/dL",
+          "baseline": "40 mg/dL",
+          "dataSource": "ai-estimated",
+          "isPositive": true,
+          "name": "HDL Cholesterol",
+          "percentageChange": 2
+        }
+      ],
+      "sideEffects": [
+        {
+          "name": "Nasopharyngitis",
+          "percentage": 8
+        },
+        {
+          "name": "Headache",
+          "percentage": 7
+        },
+        {
+          "name": "Pancreatitis",
+          "percentage": 0.1
+        },
+        {
+          "name": "Joint pain",
+          "percentage": 0.1
+        }
+      ],
+      "timeToEffect": "1-2 weeks",
+      "treatmentDuration": "Lifetime",
+      "trials": 91
+    }
+  ]
+}
