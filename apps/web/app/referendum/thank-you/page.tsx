@@ -6,7 +6,7 @@ export default function ThankYouPage() {
       <div className="bg-white p-10 rounded-lg shadow-xl text-center">
         <h1 className="text-4xl font-bold text-green-600 mb-4">Thank You!</h1>
         <p className="text-lg text-gray-700 mb-6">
-          Your support for the Decentralized FDA initiative has been recorded.
+          Your support for the dFDA initiative has been recorded.
         </p>
         <Link
           href="/"

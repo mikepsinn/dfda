@@ -51,7 +51,7 @@ export function Step3Parameters({ nextStep, prevStep }: Step3Props) {
                   <span>$120 per patient</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span>The Decentralized FDA Fee (5%)</span>
+                  <span>dFDA Fee (5%)</span>
                   <span>$Y per patient</span>
                 </div>
                 <Separator className="my-2" />

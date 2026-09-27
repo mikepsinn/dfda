@@ -78,7 +78,6 @@ _Generated on: 2025-04-13T16:52:25.509Z_
 - `components\developers\CurlExamples.tsx`
 - `components\developers\DeveloperPricingPlans.tsx`
 - `components\developers\DeveloperTechnicalAdvantages.tsx`
-- `components\developers\DeveloperTestimonials.tsx`
 - `components\developers\DeveloperWhatYouCanBuild.tsx`
 - `components\developers\DocAuthenticationSection.tsx`
 - `components\developers\DocContent.tsx`

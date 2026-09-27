@@ -7,7 +7,7 @@ export function ReferendumSection() {
   return (
     <section className="band-soft -mb-6 py-12 md:-mb-10">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">Support the Decentralized FDA Initiative</h2>
+        <h2 className="text-3xl font-bold mb-4">Support the dFDA Initiative</h2>
         <p className="mb-8 text-lg text-muted-foreground">
           Show your support for a more transparent, efficient, and patient-centric approach to medical approvals and research.
           Your signature counts towards building a future where medical progress is accelerated through decentralization.
